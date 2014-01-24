@@ -1,45 +1,148 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package	PHPExcel_Worksheet
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license	http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version	1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Worksheet_RowIterator
+ *
+ * Used to iterate rows in a PHPExcel_Worksheet
+ *
+ * @category   PHPExcel
+ * @package	PHPExcel_Worksheet
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Worksheet_RowIterator implements Iterator
+{
+	/**
+	 * PHPExcel_Worksheet to iterate
+	 *
+	 * @var PHPExcel_Worksheet
+	 */
+	private $_subject;
+
+	/**
+	 * Current iterator position
+	 *
+	 * @var int
+	 */
+	private $_position = 1;
+
+	/**
+	 * Start position
+	 *
+	 * @var int
+	 */
+	private $_startRow = 1;
+
+
+	/**
+	 * Create a new row iterator
+	 *
+	 * @param	PHPExcel_Worksheet	$subject	The worksheet to iterate over
+	 * @param	integer				$startRow	The row number at which to start iterating
+	 */
+	public function __construct(PHPExcel_Worksheet $subject = null, $startRow = 1) {
+		// Set subject
+		$this->_subject = $subject;
+		$this->resetStart($startRow);
+	}
+
+	/**
+	 * Destructor
+	 */
+	public function __destruct() {
+		unset($this->_subject);
+	}
+
+	/**
+	 * (Re)Set the start row and the current row pointer
+	 *
+	 * @param integer	$startRow	The row number at which to start iterating
+	 */
+	public function resetStart($startRow = 1) {
+		$this->_startRow = $startRow;
+		$this->seek($startRow);
+	}
+
+	/**
+	 * Set the row pointer to the selected row
+	 *
+	 * @param integer	$row	The row number to set the current pointer at
+	 */
+	public function seek($row = 1) {
+		$this->_position = $row;
+	}
+
+	/**
+	 * Rewind the iterator to the starting row
+	 */
+	public function rewind() {
+		$this->_position = $this->_startRow;
+	}
+
+	/**
+	 * Return the current row in this worksheet
+	 *
+	 * @return PHPExcel_Worksheet_Row
+	 */
+	public function current() {
+		return new PHPExcel_Worksheet_Row($this->_subject, $this->_position);
+	}
+
+	/**
+	 * Return the current iterator key
+	 *
+	 * @return int
+	 */
+	public function key() {
+		return $this->_position;
+	}
+
+	/**
+	 * Set the iterator to its next value
+	 */
+	public function next() {
+		++$this->_position;
+	}
+
+	/**
+	 * Set the iterator to its previous value
+	 */
+	public function prev() {
+		if ($this->_position > 1)
+			--$this->_position;
+	}
+
+	/**
+	 * Indicate if more rows exist in the worksheet
+	 *
+	 * @return boolean
+	 */
+	public function valid() {
+		return $this->_position <= $this->_subject->getHighestRow();
+	}
+}

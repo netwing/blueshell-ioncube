@@ -1,51 +1,91 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP+baslCiopx4FTTFqCeP1YM4r3rFlKRIswQiu92gEMQupWPszUsB9Qnc4R4r2VrD+YXSidM2
-fAGO3T9XS65Py5P8tZyOikGeG6kB3ugtZ+c5uttFS4VqW323TNlCEVXN3hxC3HNHoYbqp8kZ8YyL
-Y+iNuE1tV7FDOFRh8GtMRcZ/c6WtNJ+tm7eoFex4dvo4NE8JKshqxlbEqildrPp0mwrxN16Ojxmu
-UBX1zF1QxMZthdtmvjQVhr4euJltSAgiccy4GDnfT6fgMLnt6GOAnMifbCZ0Mi1rkIwo4BLslmUE
-JVv7en2oveqC72yXgAOVSZslgUcxCwHScExeSkBTCTSoalul57Jc7NouRdguOABDlyINo4QOlW5T
-VIhQy8GZABzorb4kfpUZbFZ6+gQQC4bG+qeC0kSSk4HtFdAK2w9XxUTywE7FJIieitCnb1ZvS/k3
-9gxoUMXfWizJ+sOc/Yl+PYrXFyWVqJZN1p4Nnri9W5WOwww+CoXRmXrUh3j3A2lR+sVgH4RDY4yu
-pj8vnAAlbOr8HOUK8l1ZH/y0WplMnSFikrUstzRHskqvH0G1swjw1Niok8j7DBLHs6/SSFN+5Bm3
-kAzSwqEg0GN00SN/prOZPTvGaLyD1qJ/nc5kmWjOmD2cRgkFVsMmAP5SHCLHW48eawhR90O9PKy0
-MHJHlINqYc0hIgXa6K1TbOn5lWwgJhpCfY6kFMwOIGla/TBiVZWWgW5LNsJS5otsVsbWLjAoc8mj
-GQwoEWhH7UyPqjHnRWbJiHJFi9K0jzZ/QE+kdRt83Bpbe89bZgYU/61vYH4MszgsAra7BcoG5gam
-scPk9vDW8dM40j+wsMo+g1RP0QIj5BpHA69P4xw/o8p0CSO0Vv7hc2To+SVgCB2vM48rples1kCb
-jpz32Gq5j2pT2O6D1Jtvm3ALUxfTVaUSCSuQwJYVjd05jwfCWpUIazAt67hU1jHrXm/fNXBtwL0Y
-5/N5Mt6fApvv9EoYdk6Un7liYzUgWLEVVVRcQ5Tzv1Tyz2Yrouh+msqltANw6DZSzAVtsTJ+Fgo2
-Hzjv+X2gMekwpfCMs5XqmRHECGUPqHhjrWBWcK3IFI3xcnFyaHUhMN4UYwAYqxEJp0kQMfrxFyfd
-TIa4fCJ8gjZogZZJpOdJx7vJ1C6nGhEcTaZBD2t4HNJjNJiziHXyEO2mJybwY3XLCSLtx3cBotMd
-HP0Ug5/ZjCEKJMhNAT/DXmlWg4XeCdEkL/kkgGQmcoiSUAQxXK/R8fTsTj6WpTZPfguzJzsO2C5m
-no1+bBCTav559AGGT62jmBdBOTZQXqp4wOHc/mtDDFBL/HUQ6ok1B4w6bCGr2aZMJ5HDGOdNLS+G
-8/kBXGvfiq9bSkMw6yyCBMFcjUYbG5cDameJOXXZnL6nTzBZ7u2wFqkiH+Sa7KQNfnrQELW4Z1vJ
-UDnYSxD9iJ9iDQuN+U7yPIT65m+amG9tDyDeSf5gWTB6X6XWVj1IfSKtCwIAPpqkHUNdQv0K675h
-UDve72z3b3Boq9MH7+L5zn1LRW5mtRTj3EncXSSwn8nUfzDFvlwH/gCHyp4eIeVCBjzYLbtJJSoI
-lLK3kWC/wsD//+9DtMqpkMwtXTOksPe6uf6CorZzpbnbtGY963rb9vqqbXouqdKUlYwK8xWJnozl
-sCwVrocoHIFqAtzaI2ww+PMqv1ZJW/N1+H8hecIGIoKA0qodseSg0q8RuW9S2+vCYKvZ6GxG4aj5
-7XHOk7B1KDEBGupqwZYiZaVrv9aGBdOV5Uq5udfk0Gmwmj2/V54lgG6Ph0egfVENJ4aEQmXIZmjs
-2rI3uhda6eYMW9y3biy9W+cse3GrIOyjRf/RLHy7X97zPCxuLaqiSUTf/r/l9YGJP66/3509lCOC
-xn6TLY7tN7b6PnSVaVFBdGCBltKx9LGg7FO5QjbhGa/lT26Q9guZTMx+ZG4kKtSmqdx2L4XsxhRl
-fGWVMRGDjEnA1yojvobyjNzAdSJK2244qQfBgOczywwY0F+dcFnuM0n3dU683s+90vaPGBM0Bz/X
-9O3SHH/O7y0a8J8LAHPNSnW6KI7hYy270uMN1ZMUSBj5I++XJ8etnG18Dl7uTXhtCNN8rx9S8ZZH
-60EzDsioSr+qK9JdpbRNLDoky+A5Pv30w8hqSaICV2BThwO5vd/FTWDCdBYCRmFNUZe7sOccgyPR
-HoSO2/pe1Aqw2K62E/6GXuXAvxSXsCLFfaoW61hxGt53ofappHCxTdskEBPgxA7Llh6xCCYmUSmx
-FrjJhMswXCx1kYvp4GVOqq6avMnidXG3DMwTYjNA4NNNmp+Mn2ITPnzG35rGGCenun7Ay/WORoal
-4TpYvOGV11cWozgVo66LwdfBh/7rH6a8aRR0ccgEHiB/O+rCxraM+H1ElxYESmoFNxRT1Rzyq8kY
-zg0OGbRgOGFSLDydCiBv6RHFMey3kEjoVwookUnuMtN6ZQz3DBjFctl7tHmfGcX93RcmLaLPGb3a
-oNzf6EMi030XKuPGAAUjC+c0XtB3Ly1Bm75vSHhKMTruMG1rI9sUzmZwT7S/RY+dPc61EXzaJ1o0
-ZZsZjTaL/vRLMvku3Cxy91BxgzVGoR/znx3U+x/fqozcCqxAhUXKUdx+4Fmk0nEVgsJYnYF2i99f
-TME532jKH348MB1U3uYePWi3ZIrPHs0NL0d+7phr7fQscWnrBsjiVpe6eM7fabSfcg9KC6FUB352
-Y/mMh73XA4wbmwo0RwxkJMIaQNPXSxbvpRr5S9HhU5AIb/PBuxkiml6hIfGv7BZDWybk0TIsQBSh
-RAIaBb6BQmKCsmmfcHdbvRqrjX3vb0OgdHBIPNFh/N8q93/mZ6Xel5j7iuPJExMYoL427dJaFmTx
-u0HdmZiqGwelSLXAAyRHeNpgZmRAr9WpsCnIYiYDnQYjYH+7Gm89Q2B2URouzkHI78kqb8P+jjYS
-ewDWlrrHxSz3mDBPITrQKWUaBmynxc39aeabL2ovlMobmJW9pMp7SUYxKQeBdeAp6jOxqT8fBeEu
-E+Qnd7ur3hScjbUVSVEjdDc1q2vc3lyz/wxqhX3WYISWG1KGJGBIW6Fvgm+PQWRidyRCiiaXSjCp
-eSBTSyZSsCloVX+CFgTl3uPlbXEqTHFmKlxFW7C7IiPMZU4o1jwx7xAAerSmm3R2tBAbLoFXtvcA
-BhN/J0P6LnR54s0SrnWHUKTMOlZZ1iLrKP5iEw/RjovmIO5LwpUEnClkmr552O8CtpL541JN+xXf
-XDPnwFbCjW6PCA7ASroUymB0usWo5Vep8hoZ8fdTdr05VLqQX9gIfBVSaqUOjFoXULKARRxjBrE8
-CbaXngYsd8bZQhDIxKmcHQNHSQT5x3/JtSyGEPQsbflSHJrCsSZEGvlehOZ0KFdxKqTo5E6DRrSb
-+gfvt4UdIrw9thwWUOfaacKIAhIM4drC4fBb4pR/T5ClS8ufugP1Oy9CWunTJTouQtAfTKlnQcRN
-gAd7hP9dFJ2AlvfkPNMPlOg1OUl5qiq3sAYImzptLDPxIUI4qBrG220HrV0/g0RrVcyUDntcGS+m
-ui0jCm==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Command;
+
+use Symfony\Component\Console\Helper\DescriptorHelper;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * HelpCommand displays the help for a given command.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class HelpCommand extends Command
+{
+    private $command;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configure()
+    {
+        $this->ignoreValidationErrors();
+
+        $this
+            ->setName('help')
+            ->setDefinition(array(
+                new InputArgument('command_name', InputArgument::OPTIONAL, 'The command name', 'help'),
+                new InputOption('xml', null, InputOption::VALUE_NONE, 'To output help as XML'),
+                new InputOption('format', null, InputOption::VALUE_REQUIRED, 'To output help in other formats', 'txt'),
+                new InputOption('raw', null, InputOption::VALUE_NONE, 'To output raw command help'),
+            ))
+            ->setDescription('Displays help for a command')
+            ->setHelp(<<<EOF
+The <info>%command.name%</info> command displays help for a given command:
+
+  <info>php %command.full_name% list</info>
+
+You can also output the help in other formats by using the <comment>--format</comment> option:
+
+  <info>php %command.full_name% --format=xml list</info>
+
+To display the list of available commands, please use the <info>list</info> command.
+EOF
+            )
+        ;
+    }
+
+    /**
+     * Sets the command
+     *
+     * @param Command $command The command to set
+     */
+    public function setCommand(Command $command)
+    {
+        $this->command = $command;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        if (null === $this->command) {
+            $this->command = $this->getApplication()->find($input->getArgument('command_name'));
+        }
+
+        if ($input->getOption('xml')) {
+            $input->setOption('format', 'xml');
+        }
+
+        $helper = new DescriptorHelper();
+        $helper->describe($output, $this->command, array(
+            'format' => $input->getOption('format'),
+            'raw'    => $input->getOption('raw'),
+        ));
+
+        $this->command = null;
+    }
+}

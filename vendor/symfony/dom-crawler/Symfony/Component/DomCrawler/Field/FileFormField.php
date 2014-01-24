@@ -1,71 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/6O2N/8I/9mWLUSN1/5MdGA+TbD4ZWwkl8ui0jZgLzRrzGtcgPWqb7Qp3fmjbQ4WFrdXawp
-fgRNKPz4E6S6M2XEaoj0JnT+GEoP3Yw+PwD4XvodSmaw2luMKHASe67YxSg8CKiwe7igeG9PearG
-2NigHKph+jJOpOx1ZjdubGk/iFrzXwWVubACBSpwUfIAz/5h5jTx8FFrxtQS1ITEmUBRSO62eOL4
-12BRXwGPPOqrXr28O+JOlQzHAE4xzt2gh9fl143SQNH+OzqCMLH9Q9OkagF8m5h0VPzx5zhvTjw3
-iDy8khgErQ8iqVuGAQKr5OncsQntczMOlr7XqRhLTUIqu8YNC8NPn3DDvb/DlEQKlaQpZY/naBGD
-ri0j/6CdmlJNYjozpLBXnkn0FMwj+uVJcLjqIRYpNyH1Qoqrq37Dr6W0cfCt5lkOsIDynB0gXd0O
-oe/0WWZEx8rvsCRPyPYj13NcsmarlRrEjC3FcS3Ll+wuJ7jE3IkToNbVj8/AiE8OMWDEr2JNj8XY
-ds91NnQSNehNuWqSa03UeQeJyySw7lbQmYQE8BnYd6N/l04YgIF4I9JUbttIBsiY6xSt5PJGKZ5N
-R02F9iRB3lFzMN6Auj9xAqb/gMkI4Tvj/t/xLKy5Yp6M0srHdEl0cHZVZJITnRKFD4H/IAs+8Arn
-xbg7y9I8TWn975Ofch4OhvK00ziisYaW6ktB2gZqtefWgq+oPXrnkvurqcevo6dLYbzXgT9igBWQ
-J6Y9Z0UbK3PmS6JEGHgoZRLhVWP9fDxtVynJUZaUGqc5zizm0s2F0iDLBWtw3oNSm68/yJtj5bQU
-FKOtxpUH/shAWr8VTAdgdTDblyH/7Y2lpfi1P/B1xWPqpoQVj2VdQN2vS5aU8AbLjcH2sMTj10fV
-O5ctRMPqe/ZhBD4opZBxnfd8RTaNs94RpgkXMsBVjRHlMnCJeRDH72PYzOzVyVgKKlM1RaKxXRTe
-mQjxvhh+nh37EplF1NOM2GKIpcOUdtskkYF7aPyA3f4mE3ugRoBSvm1hwnN4/5mDGpAITu1ULfmv
-0QkPWId2umCVEeeSs3rVCIPmTWHxMGebOm5UpHj6984DyuEVED6EbqMeULkr33Rq1sGfOw4sgo2e
-KcoCDzdh0KodCe3wAlq2krTN+FOpav2Ov+9NXAepvlDgkdeAsUbEiM8MS+n3sL7+mDMKsP6EbCGc
-nnGVaZwJYDrdNBFGNT2NFZRB8Ng3mvkAlvi2W3rMqL/n9a8Vb0vzd+Ffd/anhd8gAl2gSzkUTAKv
-H5pH+TJtL1YZ3TJn2SRoHmgvk0bRR6w4iyXRh4G8PI3Qv5c2pU1XacUcqF8va7jf1nK+havqve62
-RlMM6wvf0gu7PDxovKRAE18Rvf5CyvxZB/NqHIqvgs/WJEHdwK+GDBJpHwecNqmE8I3FNVy9BmvP
-4Mnp40ZnQFFOiTjiDlH27flPY2qd3t0WSxseXro5JpIrbQZKIuVI1clwD6+eTqRbeplGvvRcYb/c
-dv3LYfIxH6+4D+f1ez8MlapBtHB6xCBRZhVscUabaDn2xGcy0U9KiZRB44JsStzPqw5GXRqwezjI
-l4Z/UHkt+aJtuDcKuWIekwjL9Dp3Cajol8k3Xn4sK/xkJePyPnsNOsKmuh3Jc4YYW/M1Bjc/D9fN
-RO/W5K9LtFsFfGLoaaU6L4DT2Y6aLF/9pUbC51FEesxcoZuBBTKu4x5mw/amXrVgjipBsI0SR/do
-kkd0sdWT67gpnNOJm4ecvEbgeybhDuzJ0ggy37SxxNn/z8J/oG1Da3yf/qVd0dvkQG6xMyf3lp1v
-glEoeF2PJm8Ueki2XSXYZ6FeMZ8PoxGfTEttHj6+r9gbwmb/bmZW/lMwQbzsDRVi9wKhOWBIddvO
-6smhSKcm4nv7pYPfAMSgPSz6ijkyIJG5NXiKomNq44TnZrkNTUmhvqe6vDCGpZv9tKOlNW2+8+nq
-lkGIIreqbffkpdYlhC8IYMXo2n6mk1V6oa9oZE0lEwbjPPj8jnVEAhM02Y0ovhCb0dd02wrGotfW
-k2d0OPaj5uIjlSuRjlKjQldZN8foVAz8wQPgW7xNJjuYt3ZzfoxLK5jMlVMyHQTNWT+J1fStwsQn
-3SUX6gTIx9z4a/SK3CXcp+YcO0h4la4na76CfkjJRZ6sn0Vk97nKT2Ptdrxl2MGV90H7EFDGkpTD
-AU8qTKmXpREZB34Z9oMEd4trWlSngiLAVjR0eKKUpLYVwALviLHAH/nnTaGUlVN3yL1Sgxk96Z+h
-cAbJzS5ekZFzXlt52PwQwBetq5DkGg0zGMwgdEa8BYmYs9/MGI1wFts/+Hc973gI247afBuFJl/M
-2Bzy8NXP7AEg7ZEZzKOj5YV6fvOK/rt4fIJedQus1DtPpPNx6mx7hXzYXIVqdSTGOaVjaCC/DDfV
-SC+aHLOT3E0lOfObC2eLhMQ4X9FfkonWRq6QekILN/OrANzm2nFO+jpzmtHzLA5H4Uldhf/XIgX7
-zsBnaNCjbbHu+cw9DK7KwTFtXlTlBFBgUc7FZYJFX4qlgm2er5thXPB4uIfOHOvk5cq+UOUKg7CG
-S+jgutxhpnQncG+HmIyZygIbVhgDxdxGmwtA1aPT2lM4lkaOzvcWws9NKw47K+cQGXx6XpzlCz7P
-OkqIiS7KLIi+Qs1X+/qlbAa88OGtp1qfSQJJumhWYdTCiDJGPONRdNLJQ+AssDBSbmj0hXWT1cDn
-1nJizU5CfS/mLtTCYmRSLfGDC/Qnr6epqvVK0QYOndRrqwD25K8nbpqlrOKDos87wabFtD18fybZ
-TOiZGRuZMQG48Y6MIk2FLEkF6mtWGhKVp4tmZ27pUkZREzZ2KXp5ulA2u1IMq/9FggSCSw9fiEea
-VJHe13I9of5kqKErnn8UzLbx6HEVdYWmJlmt4FhhJWqf2HiM/oTAoVPcDCTt7kgzqV4hTtkfTVGN
-JmcrozHCNaDVVplh1YCMGgIUgg+DmhzwR9KaMK6DJ7Fph+Q+C3LaqxUg2c6oxBRgfv6qR4USFR7S
-Sw7UDueCkLgLKao47m9SvQzBcVM8dX6v0A3kD6X6ouFkioUMYVN9WHy7f9hiZAfE8G0fG3K9wDOC
-xa1crERM2C/C6LdtW/e8AGFGLkmI2w6avpe977Lp1senCOs4cutpVDN+GBVK06ujy/0HA7QFlsZH
-12pDg/VdtiAlMln+qoD5VchpbR3CmJ7gyY1dMFYhtjV5JRVFsT/L4Jt1oormkS+ai9AGCKIYBNai
-dUaXwDEP3Qz09U+hesxsW1L8NdWom76zfNdJGF5lqFXsezcTkWFfgurb0vDgRQtrPuA5vFuHEvDG
-/9r8MxOsBblO+ZL85PlyLK5uVH9rWS5kW7tx3mFBwYaivUnvGG5EsB+hU8TrVgQ/YS0TGS9LoZa3
-FwKFo1Vwb1vY/EdJOM1qSki7aiAl9iaAVGmucR1Om0HRmv98oR6xiSBA2wCeHRsv+6ycdw9zfPE/
-cdocEfwLQuFgFI9ZbZQVM7CW+2F2ZpLtTQJPINPrVo+hnVMWWVzz2i5UHhLldT9x5j/65QQGAklT
-RjnZ0sBfjg6szEiVDaMRs483RhUJWZD2E5MwPVYRibuRdblrxXF/K9CLKOiRrqAdsJgaiAYxTSRp
-VJVKcDT0IqyzMKXWlJJI79lh5+jggCaIWemzI5rOlcex6t1U8kIBtY965naJS2OI5tMGYVr0JPub
-WEBrO6YWwEAUniDY5BDJWW/eRVnz4tysacC9WMrBlw7WGv00K7+C7Vwwndat0D4tLtHBuOTj2Fu7
-GV91Qt0TuMvKBgrDq5CYYrcv/Kuvi29mK46xmj8nSK3R1NNGLTsyGvCZbPbMPdjEFKk2Q4+ls2Jk
-zS5G97ITd31+imzfLWgUEVAjNmWQHju/c/A3d4QKnzNwlUApyUuDKtrxN5F8L6xICoqWubu2sHXF
-Ee5M+cWF+cQ9RqBf1p6ee86GucWnyMoqcNCQLzqkieAOQdq0eIocbfNnMFFM0DM7r24v03K0KeI6
-ibfBL71YTnL27DoK7ciS+E6SO+eQOUDr4xz/lRfD+tB5teZeRAmwyggsT6088rMpTTW0bnrJaoHp
-JUGsUkWsX55DanEgaOO91m+cYwbHFe9Uy5XYl1Mfjp2pP1pn/EkbaMTQ9SgCcWcm2dzqK+xjps4z
-4Eh1zvL/YPq+jy1EkhMBH4SQ3YOnIaeAPjwGyH5G49nIZe8SSDvvGiF9V62ttG9YJavGl1B72JGB
-oyY/vVYo9A8BMVBTc3icgrZQXc8h5K96hxKaHCqfmhq7yX0nVMHGdcK28k9jCWfOdzs+DZXemv5Z
-uOFVuRD8G2RX/IV6p4j/csaAgzM2I54ASCZZWuAUw+y7Tf6qKqwlbgMvsw6AasD6N1jel0z/87Vs
-MIrgE7FWE3uHw1YAIYdzn7FEs+vZ0wXQHkPaIXxImDR+kt5izLzMamuagUkYyqGg1EvVPTRLLUnd
-pCHf/xTfiWFIQAnl7S3V+gxvnK71mpf+pDDUGvyIouL7Q1WW1kfK9QWs3ry6v4GREPVZ6s5HeMXJ
-GtQ1lJ1ELjgWwGX5eR2qxO4eNu3blJwto4ignVEyZk0Of0Nu1Cw+nFLliPfeuTRVC+mrpiVSmh36
-2q7C6OwwfRqJYLRMJb6Ql7p9bM296ZuGgr5nInJNXMjVgrDdE0b5y7G0ZD83k0grlvLp+kjFx83u
-uezzZVPSfsuu8mmSVa4VMI2uXKAoCM7cbJMtd9NQGI65hKrrd8+EM2X5E1HWxeIN8TsbPrqnqx3d
-8qkXXmYoWZt5mkk6sRczAUbUtAo7vpx6ETJ2X4DJstX0yIdLVsXuAroOs2m9Ldv7k0iRTEwbqIWO
-jWIEqwjOnFOUAgNezQk8uJY1A9yRJJJPuZ+hez0i3HB0e/MvyPKACvZ9VQvFMdU37uwbx6WmSsDz
-/qu/K8Q5eK47IchWGPs8JQELrYyCbc/AStWQkwFLCJUmUxEFl/H6mEUEja/OO5WGCBmmlb2KM9oJ
-Rx0T0ic6Q65AsZj/DDfzPak5yOURlwdZcaPidiORVJlAeQuc8A/68DPYxttYeuB3+VK6oEKt7cxa
-+RtHt1ggiDycLRp0eycyevEmePiv59FQWHvv2DUzwUF/TqBjHgX7R7n6mTTa0UUxnYW0pW==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\DomCrawler\Field;
+
+/**
+ * FileFormField represents a file form field (an HTML file input tag).
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class FileFormField extends FormField
+{
+    /**
+     * Sets the PHP error code associated with the field.
+     *
+     * @param integer $error The error code (one of UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, UPLOAD_ERR_PARTIAL, UPLOAD_ERR_NO_FILE, UPLOAD_ERR_NO_TMP_DIR, UPLOAD_ERR_CANT_WRITE, or UPLOAD_ERR_EXTENSION)
+     *
+     * @throws \InvalidArgumentException When error code doesn't exist
+     */
+    public function setErrorCode($error)
+    {
+        $codes = array(UPLOAD_ERR_INI_SIZE, UPLOAD_ERR_FORM_SIZE, UPLOAD_ERR_PARTIAL, UPLOAD_ERR_NO_FILE, UPLOAD_ERR_NO_TMP_DIR, UPLOAD_ERR_CANT_WRITE, UPLOAD_ERR_EXTENSION);
+        if (!in_array($error, $codes)) {
+            throw new \InvalidArgumentException(sprintf('The error code %s is not valid.', $error));
+        }
+
+        $this->value = array('name' => '', 'type' => '', 'tmp_name' => '', 'error' => $error, 'size' => 0);
+    }
+
+    /**
+     * Sets the value of the field.
+     *
+     * @param string $value The value of the field
+     *
+     * @api
+     */
+    public function upload($value)
+    {
+        $this->setValue($value);
+    }
+
+    /**
+     * Sets the value of the field.
+     *
+     * @param string $value The value of the field
+     */
+    public function setValue($value)
+    {
+        if (null !== $value && is_readable($value)) {
+            $error = UPLOAD_ERR_OK;
+            $size = filesize($value);
+            $info = pathinfo($value);
+            $name = $info['basename'];
+
+            // copy to a tmp location
+            $tmp = sys_get_temp_dir().'/'.sha1(uniqid(mt_rand(), true));
+            if (array_key_exists('extension', $info)) {
+                $tmp .= '.'.$info['extension'];
+            }
+            if (is_file($tmp)) {
+                unlink($tmp);
+            }
+            copy($value, $tmp);
+            $value = $tmp;
+        } else {
+            $error = UPLOAD_ERR_NO_FILE;
+            $size = 0;
+            $name = '';
+            $value = '';
+        }
+
+        $this->value = array('name' => $name, 'type' => '', 'tmp_name' => $value, 'error' => $error, 'size' => $size);
+    }
+
+    /**
+     * Sets path to the file as string for simulating HTTP request
+     *
+     * @param string $path The path to the file
+     */
+    public function setFilePath($path)
+    {
+        parent::setValue($path);
+    }
+
+    /**
+     * Initializes the form field.
+     *
+     * @throws \LogicException When node type is incorrect
+     */
+    protected function initialize()
+    {
+        if ('input' != $this->node->nodeName) {
+            throw new \LogicException(sprintf('A FileFormField can only be created from an input tag (%s given).', $this->node->nodeName));
+        }
+
+        if ('file' != $this->node->getAttribute('type')) {
+            throw new \LogicException(sprintf('A FileFormField can only be created from an input tag with a type of file (given type is %s).', $this->node->getAttribute('type')));
+        }
+
+        $this->setValue(null);
+    }
+}

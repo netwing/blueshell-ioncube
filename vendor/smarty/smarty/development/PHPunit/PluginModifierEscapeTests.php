@@ -1,127 +1,213 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-wPjU/1BoiS8/hmeZnvdLkoie1mkszlIe74vfom==
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class PluginModifierEscapeTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testHtml()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"html"}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to ä be &quot;escaped&quot; or &amp;copy;", $this->smarty->fetch($tpl));
+    }
+
+    public function testHtmlWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"html"}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to ä be &quot;escaped&quot; or &amp;copy;", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testHtmlDouble()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"html":null:false}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to ä be &quot;escaped&quot; or &copy;", $this->smarty->fetch($tpl));
+    }
+
+    public function testHtmlDoubleWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"html":null:false}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to ä be &quot;escaped&quot; or &copy;", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testHtmlall()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"htmlall"}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to &auml; be &quot;escaped&quot; or &amp;copy;", $this->smarty->fetch($tpl));
+    }
+
+    public function testHtmlallWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"htmlall"}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to &auml; be &quot;escaped&quot; or &amp;copy;", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testHtmlallDouble()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"htmlall":null:false}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to &auml; be &quot;escaped&quot; or &copy;", $this->smarty->fetch($tpl));
+    }
+
+    public function testHtmlallDoubleWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"I\'m some <html> to ä be \"escaped\" or &copy;"|escape:"htmlall":null:false}');
+        $this->assertEquals("I&#039;m some &lt;html&gt; to &auml; be &quot;escaped&quot; or &copy;", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testUrl()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"http://some.encoded.com/url?parts#foo"|escape:"url"}');
+        $this->assertEquals("http%3A%2F%2Fsome.encoded.com%2Furl%3Fparts%23foo", $this->smarty->fetch($tpl));
+    }
+
+    public function testUrlWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"http://some.encoded.com/url?parts#foo"|escape:"url"}');
+        $this->assertEquals("http%3A%2F%2Fsome.encoded.com%2Furl%3Fparts%23foo", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testUrlpathinfo()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"http://some.encoded.com/url?parts#foo"|escape:"urlpathinfo"}');
+        $this->assertEquals("http%3A//some.encoded.com/url%3Fparts%23foo", $this->smarty->fetch($tpl));
+    }
+
+    public function testUrlpathinfoWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"http://some.encoded.com/url?parts#foo"|escape:"urlpathinfo"}');
+        $this->assertEquals("http%3A//some.encoded.com/url%3Fparts%23foo", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testHex()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"a/cäa"|escape:"hex"}');
+        $this->assertEquals("%61%2f%63%c3%a4%61", $this->smarty->fetch($tpl));
+    }
+
+    public function testHexWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"a/cäa"|escape:"hex"}');
+        $this->assertEquals("%61%2f%63%c3%a4%61", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testHexentity()
+    {
+        $q = "a&#228;&#1047;&#1076;&#1088;&#1072;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $r = html_entity_decode($q, ENT_NOQUOTES, 'UTF-8');
+        $tpl = $this->smarty->createTemplate('eval:{"' . $r . '"|escape:"hexentity"}');
+        $this->assertEquals("&#x61;&#xE4;&#x417;&#x434;&#x440;&#x430;&#x432;&#x441;&#x441;&#x442;&#x432;&#x443;&#x439;&#x442;&#x435;", $this->smarty->fetch($tpl));
+
+        $tpl = $this->smarty->createTemplate('eval:{"abc"|escape:"hexentity"}');
+        $this->assertEquals("&#x61;&#x62;&#x63;", $this->smarty->fetch($tpl));
+    }
+
+    public function testHexentityWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $q = "a&#228;&#1047;&#1076;&#1088;&#1072;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $r = html_entity_decode($q, ENT_NOQUOTES, 'UTF-8');
+        $tpl = $this->smarty->createTemplate('eval:{"' . $r . '"|escape:"hexentity"}');
+        $this->assertNotEquals("&#x61;&#xE4;&#x417;&#x434;&#x440;&#x430;&#x432;&#x441;&#x441;&#x442;&#x432;&#x443;&#x439;&#x442;&#x435;", $this->smarty->fetch($tpl));
+
+        $tpl = $this->smarty->createTemplate('eval:{"abc"|escape:"hexentity"}');
+        $this->assertEquals("&#x61;&#x62;&#x63;", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testDecentity()
+    {
+        $q = "a&#228;&#1047;&#1076;&#1088;&#1072;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $r = html_entity_decode($q, ENT_NOQUOTES, 'UTF-8');
+        $tpl = $this->smarty->createTemplate('eval:{"' . $r . '"|escape:"decentity"}');
+        $this->assertEquals("&#97;&#228;&#1047;&#1076;&#1088;&#1072;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;", $this->smarty->fetch($tpl));
+
+        $tpl = $this->smarty->createTemplate('eval:{"abc"|escape:"decentity"}');
+        $this->assertEquals("&#97;&#98;&#99;", $this->smarty->fetch($tpl));
+    }
+
+    public function testDecentityWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $q = "a&#228;&#1047;&#1076;&#1088;&#1072;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $r = html_entity_decode($q, ENT_NOQUOTES, 'UTF-8');
+        $tpl = $this->smarty->createTemplate('eval:{"' . $r . '"|escape:"decentity"}');
+        $this->assertNotEquals("&#97;&#228;&#1047;&#1076;&#1088;&#1072;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;", $this->smarty->fetch($tpl));
+
+        $tpl = $this->smarty->createTemplate('eval:{"abc"|escape:"decentity"}');
+        $this->assertEquals("&#97;&#98;&#99;", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testJavascript()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"var x = { foo : \"bar\n\" };"|escape:"javascript"}');
+        $this->assertEquals("var x = { foo : \\\"bar\\n\\\" };", $this->smarty->fetch($tpl));
+    }
+
+    public function testJavascriptWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"var x = { foo : \"bar\n\" };"|escape:"javascript"}');
+        $this->assertEquals("var x = { foo : \\\"bar\\n\\\" };", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testMail()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"smarty@example.com"|escape:"mail"}');
+        $this->assertEquals("smarty [AT] example [DOT] com", $this->smarty->fetch($tpl));
+    }
+
+    public function testMailWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"smarty@example.com"|escape:"mail"}');
+        $this->assertEquals("smarty [AT] example [DOT] com", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testNonstd()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{"sma\'rty|»example«.com"|escape:"nonstd"}');
+        $this->assertEquals("sma'rty|&#187;example&#171;.com", $this->smarty->fetch($tpl));
+    }
+
+    public function testNonstdWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $tpl = $this->smarty->createTemplate('eval:{"' . utf8_decode('sma\'rty@»example«.com') . '"|escape:"nonstd"}');
+        $this->assertEquals("sma'rty@&#187;example&#171;.com", $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+}

@@ -1,67 +1,171 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPxsMIcJjIazC/5ZVHsLCzNwKbn7qE7v4pFC3ldIKjQWLmgYSyTuDp4iFWSRgvf/TPJPtMMnz
-lqHp06tYH76+fWK4j8yh7Uog6W2Votnl7W1phPXzzyPu7RDhHWI6lxCp+aeuOT+4Mds0PraaJjkC
-mLpCocnI+CINiB2a0u7jRzk9lUu1FbN2p2ZVpugOzo1fk1mEggHuCpk8QBe9hj6cUxFZt3TCaB/9
-/Ik5+uOhnJ/PpJ20uubGeQzHAE4xzt2gh9fl143SQNHIP+NuJPDRmrUWaSdOUo/1M2TpHjaARPEd
-8Lx4553MMGuS9nbVHs7ejOFuy5GGioBGka/SIXTkENIO87S9q4/HitzM/b4nbvrP0sorNfax6AiY
-AABjPLsqhnEOT7BPVWB5gv4oBezFdbZoe0Jc8nRUpvu8HkiGAJFs8851LiBQu5NN3m/4dBOXd4Ql
-r8ae254Yk2vAsuVyU4q+u6xKsobEIXBxywnAn5VyuxrUh46McZcm7MJNVsJAjWwWPwFDxjDvp4kd
-mpR+6O+fybJclV/H6Vh5lqjVK1qCIi8vMsR/hTHF/RavzooDU+WOujbPleEzYi2tDe6swEOLMykO
-B5CTKtmz0eqUmhu47y3NBIeOhQ1ftNXXqmrNVzL1Qk8S/nTTeRTmOWB9ADvRaejDZyN8H3/YSgqS
-v8PH971PChl2Ouc3NAru8Q6COhWaKOtiSetfXqC857fvONgleSCmsIqGvZEHUdjaSOUfwvceGeA1
-hGwmT2Yaal+7lrS6B6XqhbJHm7Y1iV3H9D6nVZ0Jj+Le3wj21QSj7gctWgTHSaqOAhtUaOczgbv3
-BNVn49i59Fr6X0bKuX0N5O7MpNalKKe46PIgrRZYDU3HRkphoxhO1BAe/Vrtz7xTwFukXktKZCu8
-yQ6taKsB2755IXop2JbDTW1DdjizR0/R+XqzsovBV8yvWzoX+0fIqm9L0b1whony24QMCn1hLRuH
-bPAFVnt/Vg8imLJUGzFEMrPQKKLCrZ3HcOqkSQGSUhQN/a1cVF7Gl+psq3aeQ42QXCxOccr224Ah
-FGpEVzo4KImExAnXcBG2fGgBjcX/V24HzGoQpLDFtPBWN9pq09rqutxqRXaq3IvXK8LhZ1whvCXd
-B4V5707SPreLIrsZgX3B2cIsk8X0LM/FwcSIlCVTGcla5AYyvRoUDoAYoivsvz9fh4G40H9o+285
-R/hBbl4GQ0J7YRnU47xkixOMO4hUD9xfM6r6mLFnK/UpRT6FuaouALvOgNcfkqltOiPdkcdTlyLc
-q9TI5VjFkAJoQvJ45bA/VQBZzSHV3hiqAOBlIeeGIC/33ocLCWu474tpRAF2vdPUcCRNmv7MB67I
-+kdfzNRALcByNG5AYXuCBWbC7O/D8DNurbdeZVlVvIti0jnuP2bxqS1G4XhBynzSmWmeA0DKHCA0
-tJSi2BwjBIxWRQYwVbvlShFiDHyrBtNcR+HubSgfL5AfUHFCNGdPScrwf+uAml7xX1iEFfzqLGxu
-KaW70c89K/kt2Wb30A2CjxAKanVZbwt11wW4dhudGCQtHzopn2AWXPmkMpReXOU/Tii2cgNwkmEb
-VEETEg1T70oUxSThyPKpJMU5wHsm3ttlj3gNE5KL/1NZhqg6FS58W0qIVDIrXVFc7W0GBSLwVrRJ
-Z0gss8AE9z9PE/veZIBfiRRS352B17AyVpbeumr4LqFVJtR2x3SrMDSG5rYIgDLp8mID7/cIzPwB
-PNnf9KfoGWxgVklocJ4UmzaJkJ0+e7Z7yJw5RgTAIgfjOCpf/h9R53/ZsBQ9bkkQuqsOgfHDbUw2
-v0eL3VrqzZ6WabH0xXwqQcKP+8EAUdlOMkidFYruGzesTC262IFk/QMdA5G6nnq4JlBb+cOx1y+7
-plseZwHyBkvJkxHylgQF3S97v0Jaf2tR8XmhVh1lpCb+1B6rL6cJW/O7RtQIHmHwvlXSBHifnOYp
-oOEBPiEdSEoIVflVe314ETTtXTdpvHCMgBoLyy27FnAtYmnH32ISVXxxUwV4z/1WcZYO5RPovCPh
-TSu0LnYkpaWKB4/orLwe+EfzUPK5gDxVQKkzdctb+jB3IBPW6o+5hMV/fzJjY+Mv6rwP2Mfb+4kk
-d6MRzTIF4mofzEr3ArfImk+N8Oia16IXQcrxp4pN7YjY23i3m6yWXG28wvPtMqyV/QdkgmbOYaV0
-jLa5we1N3EQaCQgsAHJGZdhbVUD9Jk4NrAifr8raAISuDKEHQC4nbgyfR44EC364LP2UTPGPpKQ1
-V+km/eZeNj62+C+rkmC9y/IOMwqqv4BcwfjLIUQ3/oAbE8v8L7OtzMExTLar+e3ImZ90p7Lu4QqF
-SjWtbC6hsiIUmMy3wAof0VW/xCMeqfpyodoFqXW2irME1HiM30ZkOm2S8+vgjiGz5Kc2Ah8hVMtF
-3K144vCCtttCGYJgJzqRdcLW1B4VIKuiCj6Ggqq1u8cq9X5l4lDsh8Eug6RmqdMe3Sy6iinlkdX4
-52SX0Kdp9wEouuXb9Umad2PdTJIOtgMXKGbikqHLI7f8W/XOLsfIkL9774praZCm+Tkfig01+tkE
-RF3Lw6DvT6riZKjH8KSHD6qlKsC/98h1Rn+UcuHnkHRwy5DsX98SsT/XnOj60zdm4ZUUP382B9hq
-X+NH2PwDjVfcya53MqMWl/Zbq5aYi4ucnM4tDAGX9D80kVIu1840EGP0+SSlAV82BunWe8XmsaWQ
-iIsu5dwwajwx6fbtxYo7bkCArLgHovwYs2lXLawAdnEaZ756vhQGWcz646/YZFOjmnT5SD0R8h2w
-bRU6bnSQokVdmkKC5Z+U7/VZT1i0BCRk3hhSwtBp0bgNJJsZ67zENqWDrlnFMf4RelkfzZFtBVES
-dffcpnXMB2GSrugQFaYcdZECQHQIVtGLTViqaWrmwknnYE1PpitmoC6ZuLtOwoFWFs0OA7+tcfbY
-RSjhpbdidqRXmT8PComOT0Frdc0e75GHkVsbnISbIaJk/STGtkAtZllvPEsM4XejnyRQH7LQizsV
-ZRgUIO/nhky+1qGjmmtNiDrvRPMedPdSn8Fyf6x/2max7zCA4GnU4uypgfREQ8C4UBrdwO/FiaaI
-rc7Kn0AhljZ7kU0oC4Duw9/bN7jDYRny2udcQuIyWutF0gG16EaR4a/qyBLMlViLmiz9iLxHDG1O
-Ju5sJftFMms3cX/xL68sWU1AxR+mQlmJyI/p194hmrVaIt8U/faTk8jKGlE6stq0Mz/v8/VyvP3g
-E0B/5af9+SB5XrVXtWyMcPKkreU5UGGABpcEq1Kiv53Y544B8d6Hdim+7yBCxt1ZG+Mme/U9kIgJ
-R2XcGlVDXDDDNXaRtJLPyEAb0gCzkamseum0p3ZYcgbpH/boeoJ3lQrm9PFstNPa1RjD5Lpi+x2R
-RWX8JTRO3LXv88xWM8+JT7aPDw5tp6ix1VZHpUMRc2G15suSnf2HaCNCEjAliUsUaeitf4968q2o
-UoBSL8h+7789pcroh1+A6cl/+gj/KXXuYZNY51UuXuqctMILFgCvGbbmi0HPeXIoDY431Iu1MtXo
-rs60zy4MDoI82Qvwi/th6Z+1YiUrGI6jQKFD9HmzXuLq/LDSmJPkIZs349XaLsP3yWY8CCQ0rta9
-NPHfBlhq6NJGFx7Tn8UYT5d0mtQ2hmRFckJNFiB05X+1smRe90AO7Ee9+OBrMv2wqdZNqyNh2wvt
-OzMdNUOD2t1wbEFHHA1ZC/Yechwu9ggEp+XbgvVyn9Ef91Lw//P94zzm9SvcrB6JmY04EDNlRQQ3
-5l9M9NUXqmdRy2uAweaMQUJHYGgtSPRRuXixj6udWHvzpo6ndcQ2Qpztpo+hZmZUQFob36BDvB+j
-Ccpy5GPdOQIYvnkHw+zJDAqXRkMvZeMPmhrgdGYetXEK5A5Cp0om9mSXtKOZEPLa/Ht2+Y9qBQMh
-SairhUwGYEhLEbegOX+S9UFIkm56PxiEtxecWcseS9JeeVboHGh64LSsAGZCFaug6IyAztZFwf1L
-bxuZLShWBrSD4/L29TDuSvOzf5j2zsjlxEN7wTAPN00QCJhP82iqTlC1EDLwgApJoNtfInFs/ioV
-wY7QTO7q9rzmAEi4j9G5MpawHIoAVP3fP9/GnLe1eGZQDrHmMzRNiMM5nwFWc/tL0eRsBYBPJJeV
-qRjaCb3zwyWpByS6RsJ9RlywdhN1AjA/Jd1V9kNIKOsqks8aVpWJWq8x/kzGieg89MMgRmcYm81E
-RkXlJaBxff/kQuwMf7Fnwi3bIEi8DUDgZpZ0bTO7DSgQ28rMSm/Q8CEsiTb+7movPe6Hn5z5LntX
-nN2yDbMvbsHsm0ZTDmfpen/yA+dS5i3SQWSfjbqvMXeBvI9cGrgcD5h79bVApQbVeaO4kWIRcWk8
-vp3wdL/9NCZdcRA+VmW1bqtm9JsEj2Uz3Y1OUhIr7JFqYoLgLIDK4a9DiPfyCs/+TPOm7FDyV7rB
-VjZAWKiA2w3iDbDu5l7rAGDAvxrP7dtAkXQueC9bWHZiRIGm7GF2ZP2UNp6OTFgyeaYIQrMoQUiD
-odx6xfKs505h4moaE+HjwUESCi+Y3m7o4C5xoucDnatMR2mNop7V+Uh/lQn8bU9vDZHNJ/FSeEqk
-MILR3DsInAQGbKtqgWoXbkMMy81fGv0rM1MZ0fJ5gsi7Pido1auSU55gD++1auRgjoApEXAyZwQB
-Jt/CLc71+rUHALWasQy1Q7A7ONSf4v8CofnUauuruZW/oQtb2Me27ez8KacIYiLsjeDGUsoDTu0P
-taZDKBEeXyEQ
+<?php
+/**
+ * This file contains classes implementing the queue feature.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CQueue implements a queue.
+ *
+ * The typical queue operations are implemented, which include
+ * {@link enqueue()}, {@link dequeue()} and {@link peek()}. In addition,
+ * {@link contains()} can be used to check if an item is contained
+ * in the queue. To obtain the number of the items in the queue,
+ * check the {@link getCount Count} property.
+ *
+ * Items in the queue may be traversed using foreach as follows,
+ * <pre>
+ * foreach($queue as $item) ...
+ * </pre>
+ *
+ * @property Iterator $iterator An iterator for traversing the items in the queue.
+ * @property integer $count The number of items in the queue.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.collections
+ * @since 1.0
+ */
+class CQueue extends CComponent implements IteratorAggregate,Countable
+{
+	/**
+	 * internal data storage
+	 * @var array
+	 */
+	private $_d=array();
+	/**
+	 * number of items
+	 * @var integer
+	 */
+	private $_c=0;
+
+	/**
+	 * Constructor.
+	 * Initializes the queue with an array or an iterable object.
+	 * @param array $data the initial data. Default is null, meaning no initialization.
+	 * @throws CException If data is not null and neither an array nor an iterator.
+	 */
+	public function __construct($data=null)
+	{
+		if($data!==null)
+			$this->copyFrom($data);
+	}
+
+	/**
+	 * @return array the list of items in queue
+	 */
+	public function toArray()
+	{
+		return $this->_d;
+	}
+
+	/**
+	 * Copies iterable data into the queue.
+	 * Note, existing data in the list will be cleared first.
+	 * @param mixed $data the data to be copied from, must be an array or object implementing Traversable
+	 * @throws CException If data is neither an array nor a Traversable.
+	 */
+	public function copyFrom($data)
+	{
+		if(is_array($data) || ($data instanceof Traversable))
+		{
+			$this->clear();
+			foreach($data as $item)
+			{
+				$this->_d[]=$item;
+				++$this->_c;
+			}
+		}
+		elseif($data!==null)
+			throw new CException(Yii::t('yii','Queue data must be an array or an object implementing Traversable.'));
+	}
+
+	/**
+	 * Removes all items in the queue.
+	 */
+	public function clear()
+	{
+		$this->_c=0;
+		$this->_d=array();
+	}
+
+	/**
+	 * @param mixed $item the item
+	 * @return boolean whether the queue contains the item
+	 */
+	public function contains($item)
+	{
+		return array_search($item,$this->_d,true)!==false;
+	}
+
+	/**
+	 * Returns the item at the top of the queue.
+	 * @return mixed item at the top of the queue
+	 * @throws CException if the queue is empty
+	 */
+	public function peek()
+	{
+		if($this->_c===0)
+			throw new CException(Yii::t('yii','The queue is empty.'));
+		else
+			return $this->_d[0];
+	}
+
+	/**
+	 * Removes and returns the object at the beginning of the queue.
+	 * @return mixed the item at the beginning of the queue
+	 * @throws CException if the queue is empty
+	 */
+	public function dequeue()
+	{
+		if($this->_c===0)
+			throw new CException(Yii::t('yii','The queue is empty.'));
+		else
+		{
+			--$this->_c;
+			return array_shift($this->_d);
+		}
+	}
+
+	/**
+	 * Adds an object to the end of the queue.
+	 * @param mixed $item the item to be appended into the queue
+	 */
+	public function enqueue($item)
+	{
+		++$this->_c;
+		$this->_d[]=$item;
+	}
+
+	/**
+	 * Returns an iterator for traversing the items in the queue.
+	 * This method is required by the interface IteratorAggregate.
+	 * @return Iterator an iterator for traversing the items in the queue.
+	 */
+	public function getIterator()
+	{
+		return new CQueueIterator($this->_d);
+	}
+
+	/**
+	 * Returns the number of items in the queue.
+	 * @return integer the number of items in the queue
+	 */
+	public function getCount()
+	{
+		return $this->_c;
+	}
+
+	/**
+	 * Returns the number of items in the queue.
+	 * This method is required by Countable interface.
+	 * @return integer number of items in the queue.
+	 */
+	public function count()
+	{
+		return $this->getCount();
+	}
+}

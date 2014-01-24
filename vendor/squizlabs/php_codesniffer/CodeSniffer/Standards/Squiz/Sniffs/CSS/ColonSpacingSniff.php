@@ -1,49 +1,101 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_CSS_ColonSpacingSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_CSS_ColonSpacingSniff.
+ *
+ * Ensure there is no space before a colon and one space after it.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_CSS_ColonSpacingSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('CSS');
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_COLON);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $prev = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 1), null, true);
+        if ($tokens[$prev]['code'] !== T_STYLE) {
+            // The colon is not part of a style definition.
+            return;
+        }
+
+        if ($tokens[$prev]['content'] === 'progid') {
+            // Special case for IE filters.
+            return;
+        }
+
+        if ($tokens[($stackPtr - 1)]['code'] === T_WHITESPACE) {
+            $error = 'There must be no space before a colon in a style definition';
+            $phpcsFile->addError($error, $stackPtr, 'Before');
+        }
+
+        if ($tokens[($stackPtr + 1)]['code'] !== T_WHITESPACE) {
+            $error = 'Expected 1 space after colon in style definition; 0 found';
+            $phpcsFile->addError($error, $stackPtr, 'NoneAfter');
+        } else {
+            $content = $tokens[($stackPtr + 1)]['content'];
+            if (strpos($content, $phpcsFile->eolChar) === false) {
+                $length  = strlen($content);
+                if ($length !== 1) {
+                    $error = 'Expected 1 space after colon in style definition; %s found';
+                    $data  = array($length);
+                    $phpcsFile->addError($error, $stackPtr, 'After', $data);
+                }
+            } else {
+                $error = 'Expected 1 space after colon in style definition; newline found';
+                $phpcsFile->addError($error, $stackPtr, 'AfterNewline');
+            }
+        }//end if
+
+    }//end process()
+
+}//end class
 ?>
-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
-FQtaUbnL

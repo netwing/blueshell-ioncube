@@ -1,186 +1,622 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Command;
+
+use Symfony\Component\Console\Descriptor\TextDescriptor;
+use Symfony\Component\Console\Descriptor\XmlDescriptor;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\BufferedOutput;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Helper\HelperSet;
+
+/**
+ * Base class for all commands.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class Command
+{
+    private $application;
+    private $name;
+    private $aliases = array();
+    private $definition;
+    private $help;
+    private $description;
+    private $ignoreValidationErrors = false;
+    private $applicationDefinitionMerged = false;
+    private $applicationDefinitionMergedWithArgs = false;
+    private $code;
+    private $synopsis;
+    private $helperSet;
+
+    /**
+     * Constructor.
+     *
+     * @param string|null $name The name of the command; passing null means it must be set in configure()
+     *
+     * @throws \LogicException When the command name is empty
+     *
+     * @api
+     */
+    public function __construct($name = null)
+    {
+        $this->definition = new InputDefinition();
+
+        if (null !== $name) {
+            $this->setName($name);
+        }
+
+        $this->configure();
+
+        if (!$this->name) {
+            throw new \LogicException('The command name cannot be empty.');
+        }
+    }
+
+    /**
+     * Ignores validation errors.
+     *
+     * This is mainly useful for the help command.
+     */
+    public function ignoreValidationErrors()
+    {
+        $this->ignoreValidationErrors = true;
+    }
+
+    /**
+     * Sets the application instance for this command.
+     *
+     * @param Application $application An Application instance
+     *
+     * @api
+     */
+    public function setApplication(Application $application = null)
+    {
+        $this->application = $application;
+        if ($application) {
+            $this->setHelperSet($application->getHelperSet());
+        } else {
+            $this->helperSet = null;
+        }
+    }
+
+    /**
+     * Sets the helper set.
+     *
+     * @param HelperSet $helperSet A HelperSet instance
+     */
+    public function setHelperSet(HelperSet $helperSet)
+    {
+        $this->helperSet = $helperSet;
+    }
+
+    /**
+     * Gets the helper set.
+     *
+     * @return HelperSet A HelperSet instance
+     */
+    public function getHelperSet()
+    {
+        return $this->helperSet;
+    }
+
+    /**
+     * Gets the application instance for this command.
+     *
+     * @return Application An Application instance
+     *
+     * @api
+     */
+    public function getApplication()
+    {
+        return $this->application;
+    }
+
+    /**
+     * Checks whether the command is enabled or not in the current environment
+     *
+     * Override this to check for x or y and return false if the command can not
+     * run properly under the current conditions.
+     *
+     * @return Boolean
+     */
+    public function isEnabled()
+    {
+        return true;
+    }
+
+    /**
+     * Configures the current command.
+     */
+    protected function configure()
+    {
+    }
+
+    /**
+     * Executes the current command.
+     *
+     * This method is not abstract because you can use this class
+     * as a concrete class. In this case, instead of defining the
+     * execute() method, you set the code to execute by passing
+     * a Closure to the setCode() method.
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     *
+     * @return null|integer null or 0 if everything went fine, or an error code
+     *
+     * @throws \LogicException When this abstract method is not implemented
+     * @see    setCode()
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        throw new \LogicException('You must override the execute() method in the concrete command class.');
+    }
+
+    /**
+     * Interacts with the user.
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     */
+    protected function interact(InputInterface $input, OutputInterface $output)
+    {
+    }
+
+    /**
+     * Initializes the command just after the input has been validated.
+     *
+     * This is mainly useful when a lot of commands extends one main command
+     * where some things need to be initialized based on the input arguments and options.
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     */
+    protected function initialize(InputInterface $input, OutputInterface $output)
+    {
+    }
+
+    /**
+     * Runs the command.
+     *
+     * The code to execute is either defined directly with the
+     * setCode() method or by overriding the execute() method
+     * in a sub-class.
+     *
+     * @param InputInterface  $input  An InputInterface instance
+     * @param OutputInterface $output An OutputInterface instance
+     *
+     * @return integer The command exit code
+     *
+     * @throws \Exception
+     *
+     * @see setCode()
+     * @see execute()
+     *
+     * @api
+     */
+    public function run(InputInterface $input, OutputInterface $output)
+    {
+        // force the creation of the synopsis before the merge with the app definition
+        $this->getSynopsis();
+
+        // add the application arguments and options
+        $this->mergeApplicationDefinition();
+
+        // bind the input against the command specific arguments/options
+        try {
+            $input->bind($this->definition);
+        } catch (\Exception $e) {
+            if (!$this->ignoreValidationErrors) {
+                throw $e;
+            }
+        }
+
+        $this->initialize($input, $output);
+
+        if ($input->isInteractive()) {
+            $this->interact($input, $output);
+        }
+
+        $input->validate();
+
+        if ($this->code) {
+            $statusCode = call_user_func($this->code, $input, $output);
+        } else {
+            $statusCode = $this->execute($input, $output);
+        }
+
+        return is_numeric($statusCode) ? (int) $statusCode : 0;
+    }
+
+    /**
+     * Sets the code to execute when running this command.
+     *
+     * If this method is used, it overrides the code defined
+     * in the execute() method.
+     *
+     * @param callable $code A callable(InputInterface $input, OutputInterface $output)
+     *
+     * @return Command The current instance
+     *
+     * @throws \InvalidArgumentException
+     *
+     * @see execute()
+     *
+     * @api
+     */
+    public function setCode($code)
+    {
+        if (!is_callable($code)) {
+            throw new \InvalidArgumentException('Invalid callable provided to Command::setCode.');
+        }
+
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Merges the application definition with the command definition.
+     *
+     * This method is not part of public API and should not be used directly.
+     *
+     * @param Boolean $mergeArgs Whether to merge or not the Application definition arguments to Command definition arguments
+     */
+    public function mergeApplicationDefinition($mergeArgs = true)
+    {
+        if (null === $this->application || (true === $this->applicationDefinitionMerged && ($this->applicationDefinitionMergedWithArgs || !$mergeArgs))) {
+            return;
+        }
+
+        if ($mergeArgs) {
+            $currentArguments = $this->definition->getArguments();
+            $this->definition->setArguments($this->application->getDefinition()->getArguments());
+            $this->definition->addArguments($currentArguments);
+        }
+
+        $this->definition->addOptions($this->application->getDefinition()->getOptions());
+
+        $this->applicationDefinitionMerged = true;
+        if ($mergeArgs) {
+            $this->applicationDefinitionMergedWithArgs = true;
+        }
+    }
+
+    /**
+     * Sets an array of argument and option instances.
+     *
+     * @param array|InputDefinition $definition An array of argument and option instances or a definition instance
+     *
+     * @return Command The current instance
+     *
+     * @api
+     */
+    public function setDefinition($definition)
+    {
+        if ($definition instanceof InputDefinition) {
+            $this->definition = $definition;
+        } else {
+            $this->definition->setDefinition($definition);
+        }
+
+        $this->applicationDefinitionMerged = false;
+
+        return $this;
+    }
+
+    /**
+     * Gets the InputDefinition attached to this Command.
+     *
+     * @return InputDefinition An InputDefinition instance
+     *
+     * @api
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * Gets the InputDefinition to be used to create XML and Text representations of this Command.
+     *
+     * Can be overridden to provide the original command representation when it would otherwise
+     * be changed by merging with the application InputDefinition.
+     *
+     * This method is not part of public API and should not be used directly.
+     *
+     * @return InputDefinition An InputDefinition instance
+     */
+    public function getNativeDefinition()
+    {
+        return $this->getDefinition();
+    }
+
+    /**
+     * Adds an argument.
+     *
+     * @param string  $name        The argument name
+     * @param integer $mode        The argument mode: InputArgument::REQUIRED or InputArgument::OPTIONAL
+     * @param string  $description A description text
+     * @param mixed   $default     The default value (for InputArgument::OPTIONAL mode only)
+     *
+     * @return Command The current instance
+     *
+     * @api
+     */
+    public function addArgument($name, $mode = null, $description = '', $default = null)
+    {
+        $this->definition->addArgument(new InputArgument($name, $mode, $description, $default));
+
+        return $this;
+    }
+
+    /**
+     * Adds an option.
+     *
+     * @param string  $name        The option name
+     * @param string  $shortcut    The shortcut (can be null)
+     * @param integer $mode        The option mode: One of the InputOption::VALUE_* constants
+     * @param string  $description A description text
+     * @param mixed   $default     The default value (must be null for InputOption::VALUE_REQUIRED or InputOption::VALUE_NONE)
+     *
+     * @return Command The current instance
+     *
+     * @api
+     */
+    public function addOption($name, $shortcut = null, $mode = null, $description = '', $default = null)
+    {
+        $this->definition->addOption(new InputOption($name, $shortcut, $mode, $description, $default));
+
+        return $this;
+    }
+
+    /**
+     * Sets the name of the command.
+     *
+     * This method can set both the namespace and the name if
+     * you separate them by a colon (:)
+     *
+     *     $command->setName('foo:bar');
+     *
+     * @param string $name The command name
+     *
+     * @return Command The current instance
+     *
+     * @throws \InvalidArgumentException When the name is invalid
+     *
+     * @api
+     */
+    public function setName($name)
+    {
+        $this->validateName($name);
+
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Returns the command name.
+     *
+     * @return string The command name
+     *
+     * @api
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Sets the description for the command.
+     *
+     * @param string $description The description for the command
+     *
+     * @return Command The current instance
+     *
+     * @api
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Returns the description for the command.
+     *
+     * @return string The description for the command
+     *
+     * @api
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Sets the help for the command.
+     *
+     * @param string $help The help for the command
+     *
+     * @return Command The current instance
+     *
+     * @api
+     */
+    public function setHelp($help)
+    {
+        $this->help = $help;
+
+        return $this;
+    }
+
+    /**
+     * Returns the help for the command.
+     *
+     * @return string The help for the command
+     *
+     * @api
+     */
+    public function getHelp()
+    {
+        return $this->help;
+    }
+
+    /**
+     * Returns the processed help for the command replacing the %command.name% and
+     * %command.full_name% patterns with the real values dynamically.
+     *
+     * @return string  The processed help for the command
+     */
+    public function getProcessedHelp()
+    {
+        $name = $this->name;
+
+        $placeholders = array(
+            '%command.name%',
+            '%command.full_name%'
+        );
+        $replacements = array(
+            $name,
+            $_SERVER['PHP_SELF'].' '.$name
+        );
+
+        return str_replace($placeholders, $replacements, $this->getHelp());
+    }
+
+    /**
+     * Sets the aliases for the command.
+     *
+     * @param array $aliases An array of aliases for the command
+     *
+     * @return Command The current instance
+     *
+     * @throws \InvalidArgumentException When an alias is invalid
+     *
+     * @api
+     */
+    public function setAliases($aliases)
+    {
+        foreach ($aliases as $alias) {
+            $this->validateName($alias);
+        }
+
+        $this->aliases = $aliases;
+
+        return $this;
+    }
+
+    /**
+     * Returns the aliases for the command.
+     *
+     * @return array An array of aliases for the command
+     *
+     * @api
+     */
+    public function getAliases()
+    {
+        return $this->aliases;
+    }
+
+    /**
+     * Returns the synopsis for the command.
+     *
+     * @return string The synopsis
+     */
+    public function getSynopsis()
+    {
+        if (null === $this->synopsis) {
+            $this->synopsis = trim(sprintf('%s %s', $this->name, $this->definition->getSynopsis()));
+        }
+
+        return $this->synopsis;
+    }
+
+    /**
+     * Gets a helper instance by name.
+     *
+     * @param string $name The helper name
+     *
+     * @return mixed The helper value
+     *
+     * @throws \InvalidArgumentException if the helper is not defined
+     *
+     * @api
+     */
+    public function getHelper($name)
+    {
+        return $this->helperSet->get($name);
+    }
+
+    /**
+     * Returns a text representation of the command.
+     *
+     * @return string A string representing the command
+     *
+     * @deprecated Deprecated since version 2.3, to be removed in 3.0.
+     */
+    public function asText()
+    {
+        $descriptor = new TextDescriptor();
+        $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, true);
+        $descriptor->describe($output, $this, array('raw_output' => true));
+
+        return $output->fetch();
+    }
+
+    /**
+     * Returns an XML representation of the command.
+     *
+     * @param Boolean $asDom Whether to return a DOM or an XML string
+     *
+     * @return string|\DOMDocument An XML string representing the command
+     *
+     * @deprecated Deprecated since version 2.3, to be removed in 3.0.
+     */
+    public function asXml($asDom = false)
+    {
+        $descriptor = new XmlDescriptor();
+
+        if ($asDom) {
+            return $descriptor->getCommandDocument($this);
+        }
+
+        $output = new BufferedOutput();
+        $descriptor->describe($output, $this);
+
+        return $output->fetch();
+    }
+
+    /**
+     * Validates a command name.
+     *
+     * It must be non-empty and parts can optionally be separated by ":".
+     *
+     * @param string $name
+     *
+     * @throws \InvalidArgumentException When the name is invalid
+     */
+    private function validateName($name)
+    {
+        if (!preg_match('/^[^\:]++(\:[^\:]++)*$/', $name)) {
+            throw new \InvalidArgumentException(sprintf('Command name "%s" is invalid.', $name));
+        }
+    }
+}

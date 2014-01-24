@@ -1,40 +1,83 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Compile Config Load
+ *
+ * Compiles the {config load} tag
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Config Load Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Config_Load extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $required_attributes = array('file');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $shorttag_order = array('file','section');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('section', 'scope');
+
+    /**
+     * Compiles code for the {config_load} tag
+     *
+     * @param  array  $args     array with attributes from parser
+     * @param  object $compiler compiler object
+     * @return string compiled code
+     */
+    public function compile($args, $compiler)
+    {
+        static $_is_legal_scope = array('local' => true,'parent' => true,'root' => true,'global' => true);
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        if ($_attr['nocache'] === true) {
+            $compiler->trigger_template_error('nocache option not allowed', $compiler->lex->taglineno);
+        }
+
+        // save posible attributes
+        $conf_file = $_attr['file'];
+        if (isset($_attr['section'])) {
+            $section = $_attr['section'];
+        } else {
+            $section = 'null';
+        }
+        $scope = 'local';
+        // scope setup
+        if (isset($_attr['scope'])) {
+            $_attr['scope'] = trim($_attr['scope'], "'\"");
+            if (isset($_is_legal_scope[$_attr['scope']])) {
+                $scope = $_attr['scope'];
+           } else {
+                $compiler->trigger_template_error('illegal value for "scope" attribute', $compiler->lex->taglineno);
+           }
+        }
+        // create config object
+        $_output = "<?php  \$_config = new Smarty_Internal_Config($conf_file, \$_smarty_tpl->smarty, \$_smarty_tpl);";
+        $_output .= "\$_config->loadConfigVars($section, '$scope'); ?>";
+
+        return $_output;
+    }
+
+}

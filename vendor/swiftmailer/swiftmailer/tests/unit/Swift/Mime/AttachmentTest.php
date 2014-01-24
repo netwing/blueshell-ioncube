@@ -1,171 +1,298 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Mime/MimeEntity.php';
+require_once 'Swift/Mime/Attachment.php';
+require_once 'Swift/Mime/AbstractMimeEntityTest.php';
+require_once 'Swift/FileStream.php';
+require_once 'Swift/Mime/Grammar.php';
+
+class Swift_Mime_AttachmentTest extends Swift_Mime_AbstractMimeEntityTest
+{
+    public function testNestingLevelIsAttachment()
+    {
+        $attachment = $this->_createAttachment($this->_createHeaderSet(),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $this->assertEqual(
+            Swift_Mime_MimeEntity::LEVEL_MIXED, $attachment->getNestingLevel()
+            );
+    }
+
+    public function testDispositionIsReturnedFromHeader()
+    {
+        /* -- RFC 2183, 2.1, 2.2.
+     */
+
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment');
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $this->assertEqual('attachment', $attachment->getDisposition());
+    }
+
+    public function testDispositionIsSetInHeader()
+    {
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array(), false
+            );
+        $this->_checking(Expectations::create()
+            -> one($disposition)->setFieldBodyModel('inline')
+            -> ignoring($disposition)
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $attachment->setDisposition('inline');
+    }
+
+    public function testDispositionIsAddedIfNonePresent()
+    {
+        $headers = $this->_createHeaderSet(array(), false);
+        $this->_checking(Expectations::create()
+            -> one($headers)->addParameterizedHeader('Content-Disposition', 'inline')
+            -> ignoring($headers)
+            );
+        $attachment = $this->_createAttachment($headers, $this->_createEncoder(),
+            $this->_createCache()
+            );
+        $attachment->setDisposition('inline');
+    }
+
+    public function testDispositionIsAutoDefaultedToAttachment()
+    {
+        $headers = $this->_createHeaderSet(array(), false);
+        $this->_checking(Expectations::create()
+            -> one($headers)->addParameterizedHeader('Content-Disposition', 'attachment')
+            -> ignoring($headers)
+            );
+        $attachment = $this->_createAttachment($headers, $this->_createEncoder(),
+            $this->_createCache()
+            );
+    }
+
+    public function testDefaultContentTypeInitializedToOctetStream()
+    {
+        $cType = $this->_createHeader('Content-Type', '',
+            array(), false
+            );
+        $this->_checking(Expectations::create()
+            -> one($cType)->setFieldBodyModel('application/octet-stream')
+            -> ignoring($cType)
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Type' => $cType)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+    }
+
+    public function testFilenameIsReturnedFromHeader()
+    {
+        /* -- RFC 2183, 2.3.
+     */
+
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array('filename'=>'foo.txt')
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $this->assertEqual('foo.txt', $attachment->getFilename());
+    }
+
+    public function testFilenameIsSetInHeader()
+    {
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array('filename'=>'foo.txt'), false
+            );
+        $this->_checking(Expectations::create()
+            -> one($disposition)->setParameter('filename', 'bar.txt')
+            -> ignoring($disposition)
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $attachment->setFilename('bar.txt');
+    }
+
+    public function testSettingFilenameSetsNameInContentType()
+    {
+        /*
+     This is a legacy requirement which isn't covered by up-to-date RFCs.
+     */
+
+        $cType = $this->_createHeader('Content-Type', 'text/plain',
+            array(), false
+            );
+        $this->_checking(Expectations::create()
+            -> one($cType)->setParameter('name', 'bar.txt')
+            -> ignoring($cType)
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Type' => $cType)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $attachment->setFilename('bar.txt');
+    }
+
+    public function testSizeIsReturnedFromHeader()
+    {
+        /* -- RFC 2183, 2.7.
+     */
+
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array('size'=>1234)
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $this->assertEqual(1234, $attachment->getSize());
+    }
+
+    public function testSizeIsSetInHeader()
+    {
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array(), false
+            );
+        $this->_checking(Expectations::create()
+            -> one($disposition)->setParameter('size', 12345)
+            -> ignoring($disposition)
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $attachment->setSize(12345);
+    }
+
+    public function testFilnameCanBeReadFromFileStream()
+    {
+        $file = $this->_createFileStream('/bar/file.ext', '');
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array('filename'=>'foo.txt'), false
+            );
+        $this->_checking(Expectations::create()
+            -> one($disposition)->setParameter('filename', 'file.ext')
+            -> ignoring($disposition)
+            );
+        $attachment = $this->_createAttachment($this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition)),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $attachment->setFile($file);
+    }
+
+    public function testContentTypeCanBeSetViaSetFile()
+    {
+        $file = $this->_createFileStream('/bar/file.ext', '');
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array('filename'=>'foo.txt'), false
+            );
+        $ctype = $this->_createHeader('Content-Type', 'text/plain', array(), false);
+        $headers = $this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition,
+            'Content-Type' => $ctype
+            ));
+        $this->_checking(Expectations::create()
+            -> one($disposition)->setParameter('filename', 'file.ext')
+            -> one($ctype)->setFieldBodyModel('text/html')
+            -> ignoring($disposition)
+            -> ignoring($ctype)
+            );
+        $attachment = $this->_createAttachment($headers, $this->_createEncoder(),
+            $this->_createCache()
+            );
+        $attachment->setFile($file, 'text/html');
+    }
+
+    public function XtestContentTypeCanBeLookedUpFromCommonListIfNotProvided()
+    {
+        $file = $this->_createFileStream('/bar/file.zip', '');
+        $disposition = $this->_createHeader('Content-Disposition', 'attachment',
+            array('filename'=>'foo.zip'), false
+            );
+        $ctype = $this->_createHeader('Content-Type', 'text/plain', array(), false);
+        $headers = $this->_createHeaderSet(array(
+            'Content-Disposition' => $disposition,
+            'Content-Type' => $ctype
+            ));
+        $this->_checking(Expectations::create()
+            -> one($disposition)->setParameter('filename', 'file.zip')
+            -> one($ctype)->setFieldBodyModel('application/zip')
+            -> ignoring($disposition)
+            -> ignoring($ctype)
+            );
+        $attachment = $this->_createAttachment($headers, $this->_createEncoder(),
+            $this->_createCache(), array('zip'=>'application/zip', 'txt'=>'text/plain')
+            );
+        $attachment->setFile($file);
+    }
+
+    public function testDataCanBeReadFromFile()
+    {
+        $file = $this->_createFileStream('/foo/file.ext', '<some data>');
+        $attachment = $this->_createAttachment($this->_createHeaderSet(),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $attachment->setFile($file);
+        $this->assertEqual('<some data>', $attachment->getBody());
+    }
+
+    public function testFluidInterface()
+    {
+        $attachment = $this->_createAttachment($this->_createHeaderSet(),
+            $this->_createEncoder(), $this->_createCache()
+            );
+        $this->assertSame($attachment,
+            $attachment
+            ->setContentType('application/pdf')
+            ->setEncoder($this->_createEncoder())
+            ->setId('foo@bar')
+            ->setDescription('my pdf')
+            ->setMaxLineLength(998)
+            ->setBody('xx')
+            ->setBoundary('xyz')
+            ->setChildren(array())
+            ->setDisposition('inline')
+            ->setFilename('afile.txt')
+            ->setSize(123)
+            ->setFile($this->_createFileStream('foo.txt', ''))
+            );
+    }
+
+    // -- Private helpers
+
+    protected function _createEntity($headers, $encoder, $cache)
+    {
+        return $this->_createAttachment($headers, $encoder, $cache);
+    }
+
+    protected function _createAttachment($headers, $encoder, $cache,
+        $mimeTypes = array())
+    {
+        return new Swift_Mime_Attachment($headers, $encoder, $cache, new Swift_Mime_Grammar(), $mimeTypes);
+    }
+
+    protected function _createFileStream($path, $data, $stub = true)
+    {
+        $file = $this->_mock('Swift_FileStream');
+        $pos = $this->_mockery()->states('position')->startsAs('at start');
+        $this->_checking(Expectations::create()
+            -> ignoring($file)->getPath() -> returns($path)
+            -> ignoring($file)->read(optional()) -> returns($data)
+                -> when($pos->isNot('at end')) -> then($pos->is('at end'))
+            -> ignoring($file)->read(optional()) -> returns(false)
+            );
+        if ($stub) {
+            $this->_checking(Expectations::create()
+                -> ignoring($file)
+                );
+        }
+
+        return $file;
+    }
+}

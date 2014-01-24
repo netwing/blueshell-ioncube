@@ -1,55 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Service\Resource;
+
+use Guzzle\Service\Resource\Model;
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Common\Collection;
+
+/**
+ * @covers Guzzle\Service\Resource\Model
+ */
+class ModelTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testOwnsStructure()
+    {
+        $param = new Parameter(array('type' => 'object'));
+        $model = new Model(array('foo' => 'bar'), $param);
+        $this->assertSame($param, $model->getStructure());
+        $this->assertEquals('bar', $model->get('foo'));
+        $this->assertEquals('bar', $model['foo']);
+    }
+
+    public function testCanBeUsedWithoutStructure()
+    {
+        $model = new Model(array(
+            'Foo' => 'baz',
+            'Bar' => array(
+                'Boo' => 'Bam'
+            )
+        ));
+        $transform = function ($key, $value) {
+            return ($value && is_array($value)) ? new Collection($value) : $value;
+        };
+        $model = $model->map($transform);
+        $this->assertInstanceOf('Guzzle\Common\Collection', $model->getPath('Bar'));
+    }
+
+    public function testAllowsFiltering()
+    {
+        $model = new Model(array(
+            'Foo' => 'baz',
+            'Bar' => 'a'
+        ));
+        $model = $model->filter(function ($i, $v) {
+            return $v[0] == 'a';
+        });
+        $this->assertEquals(array('Bar' => 'a'), $model->toArray());
+    }
+
+    public function testDoesNotIncludeEmptyStructureInString()
+    {
+        $model = new Model(array('Foo' => 'baz'));
+        $str = (string) $model;
+        $this->assertContains('Debug output of model', $str);
+        $this->assertNotContains('Model structure', $str);
+    }
+
+    public function testDoesIncludeModelStructureInString()
+    {
+        $model = new Model(array('Foo' => 'baz'), new Parameter(array('name' => 'Foo')));
+        $str = (string) $model;
+        $this->assertContains('Debug output of Foo model', $str);
+        $this->assertContains('Model structure', $str);
+    }
+}

@@ -1,104 +1,347 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util_TestDox
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.3.0
+ */
+
+/**
+ * Base class for printers of TestDox documentation.
+ *
+ * @package    PHPUnit
+ * @subpackage Util_TestDox
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.1.0
+ */
+abstract class PHPUnit_Util_TestDox_ResultPrinter extends PHPUnit_Util_Printer implements PHPUnit_Framework_TestListener
+{
+    /**
+     * @var PHPUnit_Util_TestDox_NamePrettifier
+     */
+    protected $prettifier;
+
+    /**
+     * @var string
+     */
+    protected $testClass = '';
+
+    /**
+     * @var integer
+     */
+    protected $testStatus = FALSE;
+
+    /**
+     * @var array
+     */
+    protected $tests = array();
+
+    /**
+     * @var integer
+     */
+    protected $successful = 0;
+
+    /**
+     * @var integer
+     */
+    protected $failed = 0;
+
+    /**
+     * @var integer
+     */
+    protected $skipped = 0;
+
+    /**
+     * @var integer
+     */
+    protected $incomplete = 0;
+
+    /**
+     * @var string
+     */
+    protected $testTypeOfInterest = 'PHPUnit_Framework_TestCase';
+
+    /**
+     * @var string
+     */
+    protected $currentTestClassPrettified;
+
+    /**
+     * @var string
+     */
+    protected $currentTestMethodPrettified;
+
+    /**
+     * Constructor.
+     *
+     * @param  resource  $out
+     */
+    public function __construct($out = NULL)
+    {
+        parent::__construct($out);
+
+        $this->prettifier = new PHPUnit_Util_TestDox_NamePrettifier;
+        $this->startRun();
+    }
+
+    /**
+     * Flush buffer and close output.
+     *
+     */
+    public function flush()
+    {
+        $this->doEndClass();
+        $this->endRun();
+
+        parent::flush();
+    }
+
+    /**
+     * An error occurred.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     * @param  Exception              $e
+     * @param  float                  $time
+     */
+    public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
+    {
+        if ($test instanceof $this->testTypeOfInterest) {
+            $this->testStatus = PHPUnit_Runner_BaseTestRunner::STATUS_ERROR;
+            $this->failed++;
+        }
+    }
+
+    /**
+     * A failure occurred.
+     *
+     * @param  PHPUnit_Framework_Test                 $test
+     * @param  PHPUnit_Framework_AssertionFailedError $e
+     * @param  float                                  $time
+     */
+    public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
+    {
+        if ($test instanceof $this->testTypeOfInterest) {
+            $this->testStatus = PHPUnit_Runner_BaseTestRunner::STATUS_FAILURE;
+            $this->failed++;
+        }
+    }
+
+    /**
+     * Incomplete test.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     * @param  Exception              $e
+     * @param  float                  $time
+     */
+    public function addIncompleteTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+    {
+        if ($test instanceof $this->testTypeOfInterest) {
+            $this->testStatus = PHPUnit_Runner_BaseTestRunner::STATUS_INCOMPLETE;
+            $this->incomplete++;
+        }
+    }
+
+    /**
+     * Skipped test.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     * @param  Exception              $e
+     * @param  float                  $time
+     * @since  Method available since Release 3.0.0
+     */
+    public function addSkippedTest(PHPUnit_Framework_Test $test, Exception $e, $time)
+    {
+        if ($test instanceof $this->testTypeOfInterest) {
+            $this->testStatus = PHPUnit_Runner_BaseTestRunner::STATUS_SKIPPED;
+            $this->skipped++;
+        }
+    }
+
+    /**
+     * A testsuite started.
+     *
+     * @param  PHPUnit_Framework_TestSuite $suite
+     * @since  Method available since Release 2.2.0
+     */
+    public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
+    {
+    }
+
+    /**
+     * A testsuite ended.
+     *
+     * @param  PHPUnit_Framework_TestSuite $suite
+     * @since  Method available since Release 2.2.0
+     */
+    public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
+    {
+    }
+
+    /**
+     * A test started.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     */
+    public function startTest(PHPUnit_Framework_Test $test)
+    {
+        if ($test instanceof $this->testTypeOfInterest) {
+            $class = get_class($test);
+
+            if ($this->testClass != $class) {
+                if ($this->testClass != '') {
+                    $this->doEndClass();
+                }
+
+                $this->currentTestClassPrettified = $this->prettifier->prettifyTestClass($class);
+                $this->startClass($class);
+
+                $this->testClass = $class;
+                $this->tests     = array();
+            }
+
+            $prettified = FALSE;
+
+            if ($test instanceof PHPUnit_Framework_TestCase &&
+               !$test instanceof PHPUnit_Framework_Warning) {
+                $annotations = $test->getAnnotations();
+
+                if (isset($annotations['method']['testdox'][0])) {
+                    $this->currentTestMethodPrettified = $annotations['method']['testdox'][0];
+                    $prettified                        = TRUE;
+                }
+            }
+
+            if (!$prettified) {
+                $this->currentTestMethodPrettified = $this->prettifier->prettifyTestMethod($test->getName(FALSE));
+            }
+
+            $this->testStatus = PHPUnit_Runner_BaseTestRunner::STATUS_PASSED;
+        }
+    }
+
+    /**
+     * A test ended.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     * @param  float                  $time
+     */
+    public function endTest(PHPUnit_Framework_Test $test, $time)
+    {
+        if ($test instanceof $this->testTypeOfInterest) {
+            if (!isset($this->tests[$this->currentTestMethodPrettified])) {
+                if ($this->testStatus == PHPUnit_Runner_BaseTestRunner::STATUS_PASSED) {
+                    $this->tests[$this->currentTestMethodPrettified]['success'] = 1;
+                    $this->tests[$this->currentTestMethodPrettified]['failure'] = 0;
+                } else {
+                    $this->tests[$this->currentTestMethodPrettified]['success'] = 0;
+                    $this->tests[$this->currentTestMethodPrettified]['failure'] = 1;
+                }
+            } else {
+                if ($this->testStatus == PHPUnit_Runner_BaseTestRunner::STATUS_PASSED) {
+                    $this->tests[$this->currentTestMethodPrettified]['success']++;
+                } else {
+                    $this->tests[$this->currentTestMethodPrettified]['failure']++;
+                }
+            }
+
+            $this->currentTestClassPrettified  = NULL;
+            $this->currentTestMethodPrettified = NULL;
+        }
+    }
+
+    /**
+     * @since  Method available since Release 2.3.0
+     */
+    protected function doEndClass()
+    {
+        foreach ($this->tests as $name => $data) {
+            $this->onTest($name, $data['failure'] == 0);
+        }
+
+        $this->endClass($this->testClass);
+    }
+
+    /**
+     * Handler for 'start run' event.
+     *
+     */
+    protected function startRun()
+    {
+    }
+
+    /**
+     * Handler for 'start class' event.
+     *
+     * @param  string $name
+     */
+    protected function startClass($name)
+    {
+    }
+
+    /**
+     * Handler for 'on test' event.
+     *
+     * @param  string  $name
+     * @param  boolean $success
+     */
+    protected function onTest($name, $success = TRUE)
+    {
+    }
+
+    /**
+     * Handler for 'end class' event.
+     *
+     * @param  string $name
+     */
+    protected function endClass($name)
+    {
+    }
+
+    /**
+     * Handler for 'end run' event.
+     *
+     */
+    protected function endRun()
+    {
+    }
+}

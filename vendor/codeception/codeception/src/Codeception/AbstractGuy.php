@@ -1,66 +1,127 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception;
+
+use Codeception\Step\Action;
+
+abstract class AbstractGuy implements \ArrayAccess
+{
+    public static $methods = array();
+
+    /**
+     * @var \Codeception\Scenario
+     */
+    protected $scenario;
+
+    protected $running = false;
+
+    public function __construct(\Codeception\Scenario $scenario)
+    {
+        $this->scenario = $scenario;
+    }
+
+    /**
+     * Lazy-execution given anonymous function
+     * @param $callable \Closure
+     * @return null|void|bool|mixed
+     */
+    public function execute($callable)
+    {
+        $this->scenario->addStep(new \Codeception\Step\Executor($callable, array()));
+        if ($this->scenario->running()) {
+            $this->scenario->runStep();
+        }
+        return $this;
+    }
+
+    public function wantToTest($text)
+    {
+        return $this->wantTo('test ' . $text);
+    }
+
+    public function wantTo($text)
+    {
+        if ($this->scenario->running()) {
+            $this->scenario->runStep();
+            return $this;
+        }
+        $this->scenario->setFeature(mb_strtolower($text));
+        return $this;
+    }
+
+    public function expectTo($prediction)
+    {
+        return $this->comment('I expect to ' . $prediction);
+    }
+
+    public function expect($prediction)
+    {
+        return $this->comment('I expect ' . $prediction);
+    }
+
+    public function amGoingTo($argumentation)
+    {
+        return $this->comment('I am going to ' . $argumentation);
+    }
+
+    public function am($role) {
+        return $this->comment('As a ' . $role);
+    }
+
+    public function lookForwardTo($achieveValue)
+    {
+        return $this->comment('So that I ' . $achieveValue);
+    }
+
+    /**
+     * In order to have this nicely looking comments.
+     *
+     * ``` php
+     * <?php
+     *
+     * $I['click on a product'];
+     * $I['then I select Purchase'];
+     * $I['I select shipment delivery'];
+     * $I['purchase a product'];
+     *
+     * ```
+     *
+     * @param mixed $offset
+     * @return mixed|void
+     */
+    public function offsetGet($offset)
+    {
+        $this->comment($offset);
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        // not needed
+    }
+
+    public function offsetExists($offset)
+    {
+        return false;
+    }
+
+    public function offsetUnset($offset)
+    {
+       // not needed
+    }
+
+    protected function comment($description)
+    {
+        $this->scenario->comment($description);
+        if ($this->scenario->running()) {
+            $this->scenario->runStep();
+            return $this;
+        }
+    }
+
+    public function __call($method, $arguments) {
+        if ($this->scenario->running()) {
+            $class = get_class($this);
+            throw new \RuntimeException("Call to undefined method $class::$method");
+        }
+        $this->scenario->addStep(new Action($method, $arguments));
+    }
+}

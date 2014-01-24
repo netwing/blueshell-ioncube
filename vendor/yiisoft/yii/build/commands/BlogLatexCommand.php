@@ -1,63 +1,79 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPx3APsAXcrnMg0VoGPOW7G6qnTrJ3ea/LgQiyYRcuUPF7HpZzdo+Aq6pkk1LQU/BLx0AWa6L
-erkrMyGvPcLR/+UYgyEdBT1Eks2P7MaoJfXiIwFxXqDzxTsTBEoyJOY7nW0M/jElr7oUesrxomv6
-7r9yZ5AgWdd0ZC6vd7sg//vcj/iau+lvYjvwQew1uJg9mv205aGXJx5aYZblGiRPqOEDaY3jOuPL
-0CJhCPNw/AoHSG+DuB80hr4euJltSAgiccy4GDnfT7HfGR7qW9mGV0EgNq2nUBbggJIu24bKIHB+
-qL7Y4WYFJIqlv8+OptD9m1WCPBnyGELTxy+NqFwVxKW5dmnNmaJZlcGMZvgiPKePVw11KIwJ98XI
-u9D0tMyZuvjtUrKsx49mIt+vOYXRIePlynZvmpDRmL9ZCrU34g/BbLAkIdpm0RX31m/hDZxWpK2t
-JvU3q1BA+tZurNuQs5xapAvgnQDpjEaSLf1MQXrIbf88leHVh/PapVlaeFNhVY6Ax49LA/NQP2bl
-bggMSO0PWTYmOAlSBl3dVRjSjXtEQaQ31WDLdrFKuQP/W2MrVCK8JGs6x1ZjNo1Np9LZicuLjvAz
-oA/BI6VNKaXWvGjR3lj55uvQmUKlr27lHa1CjDH29r0p1vF76ycCVDzwPoEfnKBdLMuWHIftUjPi
-j3O+0ndFIORuQ/yjy48fwxDhV35uXUh+Vk07de9PnZ/ty/NeTAntLottRFI6mZ2Txgf6w+gdpMAs
-8QvhcMB5DpsTug5kyDeWWY2gHNKw6yTq78TZf80BPvXwov55+c5Goj1pA6UkEoBXndG/Mwf/XGiP
-kw9b+3kMVj2PI+PyvmirOABph4IrRmc7wS0KhRGjTIpcoKcEL1VdkqniloKbWWtEubGlG8OtL5/9
-C37/+2G3ntroD9Dz4mwnTTwHg/kkc4F6ZafqPZDd5x0Frcc1XdSFG4ieXe7q1dck80MObVKp91Om
-5Xb4SbCBzUQJ7hO6bNUnFtpsZCtHXDbFth43c1YUUw6MqAJvwl0fMVt+ZMWzc8Fq055fCLdLYKq6
-JDiGaHy3OR0OYXp82Ov45rBpXGYGUO3VNOLIxe0xiq0V2w1qIA9ai0prYYj6mepAJSzvwSMCKi6u
-MjdSf9c8cYtF04G/lJyLzo2sNf2TTzTpeI273YVqBPTJnxVKdB7/r/DAIv85r+mvdBduV7FnPE3M
-pd0JAuqr2g+wAQRUqEgzSXqou0451ajAjfop2FgSVFlfZFUBseD5pZ4pYdHeSRhPdXo5wZF4fQe7
-c4GcNdMrULCsK7kbj7Tw7xb3VSzxR0ddNJ3gV735ssT3a709pWqeb9simSquRMBVNRrcEc90QxjJ
-U+CiI9rWKdSkwxQRbNJqB3uj7YgTMPecYTQXmA/Urz0aT77ddnUFGXaQlRLIayyeDIRbdgoxTlHC
-DWIqsOWDGmrXrBss3B2AHiYgqPIwUbcxmhCO6QqBxoCxOzz14H9qs8c0DbDN8NHghYyNkihV21Hy
-sjPdX4xTnuDeCcw5dinwR0K9LtEM/XCFzCkIKle7/1s+ZnScPKbkIAjzQZW9yLcigHeBV7tuUBdv
-taZLEoESpFXL2/shcyf9DocbAcVeCa7idE8rQTNWOXAHgQAwelDsCol39JEjGJi+9/rqFk/jz9Jk
-UFiQjcmTmZqLvDwnd8xz37DqEr0T8Q3LI1BYWc88dJK4wQNTn7XHbCc+EDwnf4yiX9iNPldypgg6
-Gr7UfEhisHDOcNL56dE/qfwknpJ2aP9x9AP5PLI9o4d8axhsjUsRYFlTmw134Y81ybDMz5CeqGiT
-3QzpEGFjULOSZ0/JAlJu5AQJcQF/Gg13wsbeMJ1HXzhpAnan/NhRBN4X3Ki7oJrAfLPL26UJsqLX
-TH4twe5K6xm/SBnn1gk5mQAWMPdtZmCg60Gt4JM24aaRm8aW+msqGGYXTTNPFH5u5YdLTf45fsOD
-21bAmOll2O/buykAo3Osk+JpoGhZaN2Z8ch1Af2l3KlTptwpmPFvH//JS1qTE0Irp7ko0l3X7ReK
-rWLSMEsxxMqP1ab5gk6QVud82rsVoi27lGCDziCgoFBRf4rQOmDlq8PtRhbHEQR39OxfocBEnV+D
-HaW/MJdOCle689MqdMO+Vzb5BiqG1c25Pz8zBQ18YKk9n+5MLvwYbXbr4+Qgk43HQLEb2sua1aiz
-Dnz3AIkOSoBdGt8Cnm5rHBT7HUvrQn0pMzGhZosj9MS7rLFJqkDh7fEzrTnFwwcQPIT9i/Vj+MoJ
-V6nRla37N6dVwOTVhpRIb9JUOi1W5MOd8av43ac1vbwB08Gd+Ox8sbRVyjabaE0L7P6bQOSQyFfp
-FiLeelLHDBBhkoTP/s9zuy5EErSXgtWXDuv0xwvU1D0d4hqcbOjms4c9QTiqv0XPrT4Ktaz6Shjz
-zzEson6LzNrayzMOT5aUcR8/ohy4b+wprkLwZBJc4PkFtQICUhfYV2Bqh6bFoAnd8/sPzxPR5BK2
-Kyx6Nf66Aa3pHQRdzvUZ/+AudDu3qqx76okeDiLOq+i/bxHBwmjCDOuITSOZJu0l+WPeBbiAD3d/
-fNq9bxv/LxkPacDeevx+9qdlpb7sdtAeOV7sGkh+EcbEsosDj1hdpBx4bblbG6Hii0HvTONqE/C5
-eqhYirgE8X8peFMgv+1sSEbOSmIgPR2QOjHG58ivN4G0tJsRuzLrlJ3/9FJgwDBT3NZC3u/FyTi0
-RnyBDxV44ozhvq5ONvcmyLtoEcP+NiiD1S4G4PD/EyozOJhdpCrTyn+Zc7fbgqA/2UFRNOlpBxzA
-m+ouAQlZwwFgh2wp6GQ4GhJGLC4kd61COBVmtzMr3wJBUe0i73xPyfd0r250b/JtO8gSIB9EYLvF
-JgbqzBVmhbihwMpmuQCeCVO/UqcbszamwWcCaL7j2R36oKF8HmUYukuBsxGM7L2d21vfw1hPvWKd
-1kmJkHpBNzMaUlF0n1AmnEjTsTNIGcgDRHxqliUE2TtOE/ASueZbSICjGrUVMmSTEIBPIfMobrtT
-La5xPqew1QqYhTEA0+0kOmAAtGnxkz2viOZXGuzIwTI+Av6ZA2NzkGlqxJSwuH4wi5/QMq7L4/Iv
-WOwj2phU3IPT1u2aMoVZ6iUw1WSCHFAPWv2tgeBmU4CWivqWi84+ht07E4oetlQMnwrLTX0c18QL
-4uEp+Cp6cML/xPPQky33/KYBMBqz6Vg1IRng1v71Kosjp42m5kDh5OGB/5tmfnsyrWZ1JhQigEz3
-Tv3YQQuPM8kGgM+9STINJ12/wj8vrfWgAcejRfz/Q/CwA5m9+Z4a4q8TkWDo1dbb4IHqsiLCv0CQ
-RoE3MHI5gcPO8uEnPnv61OWh648CijP72ipsJX4ExQtcw85D4w6+ip8qPtPg/q0dzvfccGY2TZ+4
-0iDpBTxpJV3R1wlqT6ebbccjcV+XlxaoJ+bLw+181x6RJTgTr8Xnz2XLcDR/Od5/RKVnBhcnXow0
-wVEaouP+ZjmNVe0LgHce+zGEZhMYdfYfiVlqw+u8CzG/D4yzfou5wRIF5+5/yG2Qxu2w8SXsCVyW
-Sa9QLssekZvd44mRqL1fSW1wYPWlXaHvtRqrL+9XcaCRdzT90JNtlssBQVQyX8Y2LI1HYWGa3yAn
-66hqXfSxKRczWfYciHeUhWzeHL/FyCSIUNpVYk7hoZTv9w55UbCPI8L7xFS+nIjiB2V8EZdr7hB4
-8zHVkWhKudbmdGC4uv2BjcZ/DnddB47BndG90SJ4sy9fLU/3y0bXmfq/6uYHtnj7qnG+ARd+P5cN
-YkDjYRRQzUVlpvfoLEY7Y9kC8YAcei2zW1ixWCnOaQ833xc5T579ONf6mZcin9gIqm98m3UfovuY
-gIJJRRgwu0GjDegCPkJfiNCpxHAKC0xSfrf3yoWCL4AvFVKmKz/txUXheDJwtqQvL4w1zFGLw4x1
-pGFq+soOkmGvLAx+mYRjy+5QEs6+bX3iXC9C0JqA/LM2ygQD6cMdjPFj6ZzK+f+SjBV82yWLKol/
-drSOrGh97Z3LkADzpZBlvwXWEapGlMGmFLxWRrzk9VkR5kdJsUFS3ewePHEP17XGl+L+mpiffuhd
-NLtuFxVznJacN7m/dshAGlC0PdxbWZVy7aOrtKRZ/jnsT+9LLuZ0nNvGValee/RGnriiFnnjaWQe
-XoqIyBhH6v0iutc5V7+XM0pa/rv8iUVZp8n40EEuLsZg0P1mtCDoaZWvUcv5m2aDEe3G0Bc4JbQ6
-V9CcrzpCzybOAeTMdBsAV9FQxzFujOMhEzpJHkUqZ0XIJMi/3KeKA1r1AT4ntruaLIhG4SsT15qC
-x/EhCrFzH3q46T9E6kFJVM62E1BhjSKYK4HTSkzecQ2FWyptWPOb9crD01B6WhJ91X0EsQ7tratp
-bOJKQ0Pz2N4pVTVOhFsiuzcHmiimChAbZsnOakcwkffKCFQFLbGcYu6C8L7Y0pqCRW8JXKOX6r2i
-B3Bi+vljknD+9nx5HlO3fkShrjy=
+<?php
+
+class BlogLatexCommand extends CConsoleCommand
+{
+	function getHelp()
+	{
+		return <<<EOD
+USAGE
+  yiic bloglatex
+
+DESCRIPTION
+  This command generates latex files for the definitive guide.
+  The generated latex files are stored in the blog directory.
+
+EOD;
+	}
+
+	function getSourceDir()
+	{
+		return dirname(__FILE__).'/../../docs/blog';
+	}
+
+	function getOutputDir()
+	{
+		return dirname(__FILE__).'/blog';
+	}
+
+	function run($args)
+	{
+		require_once(dirname(__FILE__).'/markdown/MarkdownHtml2Tex.php');
+		$sourcePath=$this->getSourceDir();
+		$chapters=$this->getTopics();
+		$toc = '';
+		foreach($chapters as $chapter=>$sections)
+		{
+			$toc .= sprintf("\chapter{%s}\n", $chapter);
+			foreach($sections as $path=>$section)
+			{
+				echo "creating '$section'...";
+				$content=file_get_contents($sourcePath."/{$path}.txt");
+				$this->createLatexFile($chapter,$section,$content, $path);
+				echo "done\n";
+				$toc .= sprintf("\input{%s}\n", $path);
+			}
+		}
+		$main_file = sprintf('%s/main.tex', $this->getOutputDir());
+		file_put_contents($main_file, $toc);
+	}
+
+	function getTopics()
+	{
+		$file = $this->getSourceDir().'/toc.txt';
+		$lines=file($file);
+		$chapter='';
+		$guideTopics=array();
+		foreach($lines as $line)
+		{
+			if(($line=trim($line))==='')
+				continue;
+			if($line[0]==='*')
+				$chapter=trim($line,'* ');
+			else if($line[0]==='-' && preg_match('/\[(.*?)\]\((.*?)\)/',$line,$matches))
+				$guideTopics[$chapter][$matches[2]]=$matches[1];
+		}
+		return $guideTopics;
+	}
+
+	function createLatexFile($chapter, $section, $content, $path)
+	{
+		$parser=new MarkdownParserLatex;
+		$content=$parser->transform($content);
+		$img_src = $this->getSourceDir().'/images';
+		$img_dst = $this->getOutputDir();
+		$html2tex = new MarkdownHtml2Tex($img_src, $img_dst);
+		$tex = $html2tex->parse_html($content, $path);
+		$filename = sprintf('%s/%s.tex', $this->getOutputDir(), $path);
+		file_put_contents($filename, $tex);
+	}
+}

@@ -1,48 +1,117 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Debug_CSSLintSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Roman Levishchenko <index.0h@gmail.com>
+ * @copyright 2013 Roman Levishchenko
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_Debug_CSSLintSniff.
+ *
+ * Runs csslint on the file.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Roman Levishchenko <index.0h@gmail.com>
+ * @copyright 2013 Roman Levishchenko
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Debug_CSSLintSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('CSS');
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_OPEN_TAG);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $fileName = $phpcsFile->getFilename();
+
+        $csslintPath = PHP_CodeSniffer::getConfigData('csslint_path');
+        if ($csslintPath === null) {
+            return;
+        }
+
+        $cmd = $csslintPath.' '.escapeshellarg($fileName);
+        exec($cmd, $output, $retval);
+
+        if (is_array($output) === false) {
+            return;
+        }
+
+        $tokens = $phpcsFile->getTokens();
+        $count  = count($output);
+
+        for ($i = 0; $i < $count; $i++) {
+            $matches    = array();
+            $numMatches = preg_match(
+                '/(error|warning) at line (\d+)/',
+                $output[$i],
+                $matches
+            );
+
+            if ($numMatches === 0) {
+                continue;
+            }
+
+            $line    = (int) $matches[2];
+            $message = 'csslint says: '.$output[($i + 1)];
+            // 1-st line is message with error line and error code.
+            // 2-nd error message.
+            // 3-d wrong line in file.
+            // 4-th empty line.
+            $i += 4;
+
+            $lineToken = null;
+            foreach ($tokens as $ptr => $info) {
+                if ($info['line'] === $line) {
+                    $lineToken = $ptr;
+                    break;
+                }
+            }
+
+            if ($lineToken !== null) {
+                $phpcsFile->addWarning($message, $lineToken, 'ExternalTool');
+            }
+        }//end for
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

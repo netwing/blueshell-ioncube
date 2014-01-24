@@ -1,60 +1,148 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class Comment extends CActiveRecord
+{
+	/**
+	 * The followings are the available columns in table 'tbl_comment':
+	 * @var integer $id
+	 * @var string $content
+	 * @var integer $status
+	 * @var integer $create_time
+	 * @var string $author
+	 * @var string $email
+	 * @var string $url
+	 * @var integer $post_id
+	 */
+	const STATUS_PENDING=1;
+	const STATUS_APPROVED=2;
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * @return CActiveRecord the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{comment}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('content, author, email', 'required'),
+			array('author, email, url', 'length', 'max'=>128),
+			array('email','email'),
+			array('url','url'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'post' => array(self::BELONGS_TO, 'Post', 'post_id'),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => 'Id',
+			'content' => 'Comment',
+			'status' => 'Status',
+			'create_time' => 'Create Time',
+			'author' => 'Name',
+			'email' => 'Email',
+			'url' => 'Website',
+			'post_id' => 'Post',
+		);
+	}
+
+	/**
+	 * Approves a comment.
+	 */
+	public function approve()
+	{
+		$this->status=Comment::STATUS_APPROVED;
+		$this->update(array('status'));
+	}
+
+	/**
+	 * @param Post the post that this comment belongs to. If null, the method
+	 * will query for the post.
+	 * @return string the permalink URL for this comment
+	 */
+	public function getUrl($post=null)
+	{
+		if($post===null)
+			$post=$this->post;
+		return $post->url.'#c'.$this->id;
+	}
+
+	/**
+	 * @return string the hyperlink display for the current comment's author
+	 */
+	public function getAuthorLink()
+	{
+		if(!empty($this->url))
+			return CHtml::link(CHtml::encode($this->author),$this->url);
+		else
+			return CHtml::encode($this->author);
+	}
+
+	/**
+	 * @return integer the number of comments that are pending approval
+	 */
+	public function getPendingCommentCount()
+	{
+		return $this->count('status='.self::STATUS_PENDING);
+	}
+
+	/**
+	 * @param integer the maximum number of comments that should be returned
+	 * @return array the most recently added comments
+	 */
+	public function findRecentComments($limit=10)
+	{
+		return $this->with('post')->findAll(array(
+			'condition'=>'t.status='.self::STATUS_APPROVED,
+			'order'=>'t.create_time DESC',
+			'limit'=>$limit,
+		));
+	}
+
+	/**
+	 * This is invoked before the record is saved.
+	 * @return boolean whether the record should be saved.
+	 */
+	protected function beforeSave()
+	{
+		if(parent::beforeSave())
+		{
+			if($this->isNewRecord)
+				$this->create_time=time();
+			return true;
+		}
+		else
+			return false;
+	}
+}

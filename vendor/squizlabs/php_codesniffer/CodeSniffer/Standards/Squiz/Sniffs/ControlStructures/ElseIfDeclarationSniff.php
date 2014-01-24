@@ -1,30 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_ControlStructures_ElseIfDeclarationSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_ControlStructures_ElseIfDeclarationSniff.
+ *
+ * Verifies that there are not elseif statements. The else and the if should
+ * be separated by a space.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_ControlStructures_ElseIfDeclarationSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_ELSEIF);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $error = 'Usage of ELSEIF not allowed; use ELSE IF instead';
+        $phpcsFile->addError($error, $stackPtr, 'NotAllowed');
+
+    }//end process()
+
+
+}//end class
+
+
 ?>
-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

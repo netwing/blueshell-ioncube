@@ -1,237 +1,598 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Writer_Excel2007
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Writer_Excel2007_Drawing
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Writer_Excel2007
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Writer_Excel2007_Drawing extends PHPExcel_Writer_Excel2007_WriterPart
+{
+	/**
+	 * Write drawings to XML format
+	 *
+	 * @param 	PHPExcel_Worksheet	$pWorksheet
+	 * @param	int					&$chartRef		Chart ID
+	 * @param	boolean				$includeCharts	Flag indicating if we should include drawing details for charts
+	 * @return 	string 				XML Output
+	 * @throws 	Exception
+	 */
+	public function writeDrawings(PHPExcel_Worksheet $pWorksheet = null, &$chartRef, $includeCharts = FALSE)
+	{
+		// Create XML writer
+		$objWriter = null;
+		if ($this->getParentWriter()->getUseDiskCaching()) {
+			$objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+		} else {
+			$objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+		}
+
+		// XML header
+		$objWriter->startDocument('1.0','UTF-8','yes');
+
+		// xdr:wsDr
+		$objWriter->startElement('xdr:wsDr');
+		$objWriter->writeAttribute('xmlns:xdr', 'http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing');
+		$objWriter->writeAttribute('xmlns:a', 'http://schemas.openxmlformats.org/drawingml/2006/main');
+
+			// Loop through images and write drawings
+			$i = 1;
+			$iterator = $pWorksheet->getDrawingCollection()->getIterator();
+			while ($iterator->valid()) {
+				$this->_writeDrawing($objWriter, $iterator->current(), $i);
+
+				$iterator->next();
+				++$i;
+			}
+
+			if ($includeCharts) {
+				$chartCount = $pWorksheet->getChartCount();
+				// Loop through charts and write the chart position
+				if ($chartCount > 0) {
+					for ($c = 0; $c < $chartCount; ++$c) {
+						$this->_writeChart($objWriter, $pWorksheet->getChartByIndex($c), $c+$i);
+					}
+				}
+			}
+
+
+		$objWriter->endElement();
+
+		// Return
+		return $objWriter->getData();
+	}
+
+	/**
+	 * Write drawings to XML format
+	 *
+	 * @param 	PHPExcel_Shared_XMLWriter	$objWriter 		XML Writer
+	 * @param 	PHPExcel_Chart				$pChart
+	 * @param 	int							$pRelationId
+	 * @throws 	Exception
+	 */
+	public function _writeChart(PHPExcel_Shared_XMLWriter $objWriter = null, PHPExcel_Chart $pChart = null, $pRelationId = -1)
+	{
+		$tl = $pChart->getTopLeftPosition();
+		$tl['colRow'] = PHPExcel_Cell::coordinateFromString($tl['cell']);
+		$br = $pChart->getBottomRightPosition();
+		$br['colRow'] = PHPExcel_Cell::coordinateFromString($br['cell']);
+
+		$objWriter->startElement('xdr:twoCellAnchor');
+
+			$objWriter->startElement('xdr:from');
+				$objWriter->writeElement('xdr:col', PHPExcel_Cell::columnIndexFromString($tl['colRow'][0]) - 1);
+				$objWriter->writeElement('xdr:colOff', PHPExcel_Shared_Drawing::pixelsToEMU($tl['xOffset']));
+				$objWriter->writeElement('xdr:row', $tl['colRow'][1] - 1);
+				$objWriter->writeElement('xdr:rowOff', PHPExcel_Shared_Drawing::pixelsToEMU($tl['yOffset']));
+			$objWriter->endElement();
+			$objWriter->startElement('xdr:to');
+				$objWriter->writeElement('xdr:col', PHPExcel_Cell::columnIndexFromString($br['colRow'][0]) - 1);
+				$objWriter->writeElement('xdr:colOff', PHPExcel_Shared_Drawing::pixelsToEMU($br['xOffset']));
+				$objWriter->writeElement('xdr:row', $br['colRow'][1] - 1);
+				$objWriter->writeElement('xdr:rowOff', PHPExcel_Shared_Drawing::pixelsToEMU($br['yOffset']));
+			$objWriter->endElement();
+
+			$objWriter->startElement('xdr:graphicFrame');
+				$objWriter->writeAttribute('macro', '');
+				$objWriter->startElement('xdr:nvGraphicFramePr');
+					$objWriter->startElement('xdr:cNvPr');
+						$objWriter->writeAttribute('name', 'Chart '.$pRelationId);
+						$objWriter->writeAttribute('id', 1025 * $pRelationId);
+					$objWriter->endElement();
+					$objWriter->startElement('xdr:cNvGraphicFramePr');
+						$objWriter->startElement('a:graphicFrameLocks');
+						$objWriter->endElement();
+					$objWriter->endElement();
+				$objWriter->endElement();
+
+				$objWriter->startElement('xdr:xfrm');
+					$objWriter->startElement('a:off');
+						$objWriter->writeAttribute('x', '0');
+						$objWriter->writeAttribute('y', '0');
+					$objWriter->endElement();
+					$objWriter->startElement('a:ext');
+						$objWriter->writeAttribute('cx', '0');
+						$objWriter->writeAttribute('cy', '0');
+					$objWriter->endElement();
+				$objWriter->endElement();
+
+				$objWriter->startElement('a:graphic');
+					$objWriter->startElement('a:graphicData');
+						$objWriter->writeAttribute('uri', 'http://schemas.openxmlformats.org/drawingml/2006/chart');
+						$objWriter->startElement('c:chart');
+							$objWriter->writeAttribute('xmlns:c', 'http://schemas.openxmlformats.org/drawingml/2006/chart');
+							$objWriter->writeAttribute('xmlns:r', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships');
+							$objWriter->writeAttribute('r:id', 'rId'.$pRelationId);
+						$objWriter->endElement();
+					$objWriter->endElement();
+				$objWriter->endElement();
+			$objWriter->endElement();
+
+			$objWriter->startElement('xdr:clientData');
+			$objWriter->endElement();
+
+		$objWriter->endElement();
+	}
+
+	/**
+	 * Write drawings to XML format
+	 *
+	 * @param 	PHPExcel_Shared_XMLWriter			$objWriter 		XML Writer
+	 * @param 	PHPExcel_Worksheet_BaseDrawing		$pDrawing
+	 * @param 	int									$pRelationId
+	 * @throws 	Exception
+	 */
+	public function _writeDrawing(PHPExcel_Shared_XMLWriter $objWriter = null, PHPExcel_Worksheet_BaseDrawing $pDrawing = null, $pRelationId = -1)
+	{
+		if ($pRelationId >= 0) {
+			// xdr:oneCellAnchor
+			$objWriter->startElement('xdr:oneCellAnchor');
+				// Image location
+				$aCoordinates 		= PHPExcel_Cell::coordinateFromString($pDrawing->getCoordinates());
+				$aCoordinates[0] 	= PHPExcel_Cell::columnIndexFromString($aCoordinates[0]);
+
+				// xdr:from
+				$objWriter->startElement('xdr:from');
+					$objWriter->writeElement('xdr:col', $aCoordinates[0] - 1);
+					$objWriter->writeElement('xdr:colOff', PHPExcel_Shared_Drawing::pixelsToEMU($pDrawing->getOffsetX()));
+					$objWriter->writeElement('xdr:row', $aCoordinates[1] - 1);
+					$objWriter->writeElement('xdr:rowOff', PHPExcel_Shared_Drawing::pixelsToEMU($pDrawing->getOffsetY()));
+				$objWriter->endElement();
+
+				// xdr:ext
+				$objWriter->startElement('xdr:ext');
+					$objWriter->writeAttribute('cx', PHPExcel_Shared_Drawing::pixelsToEMU($pDrawing->getWidth()));
+					$objWriter->writeAttribute('cy', PHPExcel_Shared_Drawing::pixelsToEMU($pDrawing->getHeight()));
+				$objWriter->endElement();
+
+				// xdr:pic
+				$objWriter->startElement('xdr:pic');
+
+					// xdr:nvPicPr
+					$objWriter->startElement('xdr:nvPicPr');
+
+						// xdr:cNvPr
+						$objWriter->startElement('xdr:cNvPr');
+						$objWriter->writeAttribute('id', $pRelationId);
+						$objWriter->writeAttribute('name', $pDrawing->getName());
+						$objWriter->writeAttribute('descr', $pDrawing->getDescription());
+						$objWriter->endElement();
+
+						// xdr:cNvPicPr
+						$objWriter->startElement('xdr:cNvPicPr');
+
+							// a:picLocks
+							$objWriter->startElement('a:picLocks');
+							$objWriter->writeAttribute('noChangeAspect', '1');
+							$objWriter->endElement();
+
+						$objWriter->endElement();
+
+					$objWriter->endElement();
+
+					// xdr:blipFill
+					$objWriter->startElement('xdr:blipFill');
+
+						// a:blip
+						$objWriter->startElement('a:blip');
+						$objWriter->writeAttribute('xmlns:r', 'http://schemas.openxmlformats.org/officeDocument/2006/relationships');
+						$objWriter->writeAttribute('r:embed', 'rId' . $pRelationId);
+						$objWriter->endElement();
+
+						// a:stretch
+						$objWriter->startElement('a:stretch');
+							$objWriter->writeElement('a:fillRect', null);
+						$objWriter->endElement();
+
+					$objWriter->endElement();
+
+					// xdr:spPr
+					$objWriter->startElement('xdr:spPr');
+
+						// a:xfrm
+						$objWriter->startElement('a:xfrm');
+						$objWriter->writeAttribute('rot', PHPExcel_Shared_Drawing::degreesToAngle($pDrawing->getRotation()));
+						$objWriter->endElement();
+
+						// a:prstGeom
+						$objWriter->startElement('a:prstGeom');
+						$objWriter->writeAttribute('prst', 'rect');
+
+							// a:avLst
+							$objWriter->writeElement('a:avLst', null);
+
+						$objWriter->endElement();
+
+//						// a:solidFill
+//						$objWriter->startElement('a:solidFill');
+
+//							// a:srgbClr
+//							$objWriter->startElement('a:srgbClr');
+//							$objWriter->writeAttribute('val', 'FFFFFF');
+
+///* SHADE
+//								// a:shade
+//								$objWriter->startElement('a:shade');
+//								$objWriter->writeAttribute('val', '85000');
+//								$objWriter->endElement();
+//*/
+
+//							$objWriter->endElement();
+
+//						$objWriter->endElement();
+/*
+						// a:ln
+						$objWriter->startElement('a:ln');
+						$objWriter->writeAttribute('w', '88900');
+						$objWriter->writeAttribute('cap', 'sq');
+
+							// a:solidFill
+							$objWriter->startElement('a:solidFill');
+
+								// a:srgbClr
+								$objWriter->startElement('a:srgbClr');
+								$objWriter->writeAttribute('val', 'FFFFFF');
+								$objWriter->endElement();
+
+							$objWriter->endElement();
+
+							// a:miter
+							$objWriter->startElement('a:miter');
+							$objWriter->writeAttribute('lim', '800000');
+							$objWriter->endElement();
+
+						$objWriter->endElement();
+*/
+
+						if ($pDrawing->getShadow()->getVisible()) {
+							// a:effectLst
+							$objWriter->startElement('a:effectLst');
+
+								// a:outerShdw
+								$objWriter->startElement('a:outerShdw');
+								$objWriter->writeAttribute('blurRad', 		PHPExcel_Shared_Drawing::pixelsToEMU($pDrawing->getShadow()->getBlurRadius()));
+								$objWriter->writeAttribute('dist',			PHPExcel_Shared_Drawing::pixelsToEMU($pDrawing->getShadow()->getDistance()));
+								$objWriter->writeAttribute('dir',			PHPExcel_Shared_Drawing::degreesToAngle($pDrawing->getShadow()->getDirection()));
+								$objWriter->writeAttribute('algn',			$pDrawing->getShadow()->getAlignment());
+								$objWriter->writeAttribute('rotWithShape', 	'0');
+
+									// a:srgbClr
+									$objWriter->startElement('a:srgbClr');
+									$objWriter->writeAttribute('val',		$pDrawing->getShadow()->getColor()->getRGB());
+
+										// a:alpha
+										$objWriter->startElement('a:alpha');
+										$objWriter->writeAttribute('val', 	$pDrawing->getShadow()->getAlpha() * 1000);
+										$objWriter->endElement();
+
+									$objWriter->endElement();
+
+								$objWriter->endElement();
+
+							$objWriter->endElement();
+						}
+/*
+
+						// a:scene3d
+						$objWriter->startElement('a:scene3d');
+
+							// a:camera
+							$objWriter->startElement('a:camera');
+							$objWriter->writeAttribute('prst', 'orthographicFront');
+							$objWriter->endElement();
+
+							// a:lightRig
+							$objWriter->startElement('a:lightRig');
+							$objWriter->writeAttribute('rig', 'twoPt');
+							$objWriter->writeAttribute('dir', 't');
+
+								// a:rot
+								$objWriter->startElement('a:rot');
+								$objWriter->writeAttribute('lat', '0');
+								$objWriter->writeAttribute('lon', '0');
+								$objWriter->writeAttribute('rev', '0');
+								$objWriter->endElement();
+
+							$objWriter->endElement();
+
+						$objWriter->endElement();
+*/
+/*
+						// a:sp3d
+						$objWriter->startElement('a:sp3d');
+
+							// a:bevelT
+							$objWriter->startElement('a:bevelT');
+							$objWriter->writeAttribute('w', '25400');
+							$objWriter->writeAttribute('h', '19050');
+							$objWriter->endElement();
+
+							// a:contourClr
+							$objWriter->startElement('a:contourClr');
+
+								// a:srgbClr
+								$objWriter->startElement('a:srgbClr');
+								$objWriter->writeAttribute('val', 'FFFFFF');
+								$objWriter->endElement();
+
+							$objWriter->endElement();
+
+						$objWriter->endElement();
+*/
+					$objWriter->endElement();
+
+				$objWriter->endElement();
+
+				// xdr:clientData
+				$objWriter->writeElement('xdr:clientData', null);
+
+			$objWriter->endElement();
+		} else {
+			throw new Exception("Invalid parameters passed.");
+		}
+	}
+
+	/**
+	 * Write VML header/footer images to XML format
+	 *
+	 * @param 	PHPExcel_Worksheet				$pWorksheet
+	 * @return 	string 								XML Output
+	 * @throws 	Exception
+	 */
+	public function writeVMLHeaderFooterImages(PHPExcel_Worksheet $pWorksheet = null)
+	{
+		// Create XML writer
+		$objWriter = null;
+		if ($this->getParentWriter()->getUseDiskCaching()) {
+			$objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_DISK, $this->getParentWriter()->getDiskCachingDirectory());
+		} else {
+			$objWriter = new PHPExcel_Shared_XMLWriter(PHPExcel_Shared_XMLWriter::STORAGE_MEMORY);
+		}
+
+		// XML header
+		$objWriter->startDocument('1.0','UTF-8','yes');
+
+  		// Header/footer images
+  		$images = $pWorksheet->getHeaderFooter()->getImages();
+
+		// xml
+		$objWriter->startElement('xml');
+		$objWriter->writeAttribute('xmlns:v', 'urn:schemas-microsoft-com:vml');
+		$objWriter->writeAttribute('xmlns:o', 'urn:schemas-microsoft-com:office:office');
+		$objWriter->writeAttribute('xmlns:x', 'urn:schemas-microsoft-com:office:excel');
+
+			// o:shapelayout
+			$objWriter->startElement('o:shapelayout');
+			$objWriter->writeAttribute('v:ext', 		'edit');
+
+				// o:idmap
+				$objWriter->startElement('o:idmap');
+				$objWriter->writeAttribute('v:ext', 	'edit');
+				$objWriter->writeAttribute('data', 		'1');
+				$objWriter->endElement();
+
+			$objWriter->endElement();
+
+			// v:shapetype
+			$objWriter->startElement('v:shapetype');
+			$objWriter->writeAttribute('id', 					'_x0000_t75');
+			$objWriter->writeAttribute('coordsize', 			'21600,21600');
+			$objWriter->writeAttribute('o:spt', 				'75');
+			$objWriter->writeAttribute('o:preferrelative', 		't');
+			$objWriter->writeAttribute('path', 					'm@4@5l@4@11@9@11@9@5xe');
+			$objWriter->writeAttribute('filled',		 		'f');
+			$objWriter->writeAttribute('stroked',		 		'f');
+
+				// v:stroke
+				$objWriter->startElement('v:stroke');
+				$objWriter->writeAttribute('joinstyle', 		'miter');
+				$objWriter->endElement();
+
+				// v:formulas
+				$objWriter->startElement('v:formulas');
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'if lineDrawn pixelLineWidth 0');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'sum @0 1 0');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'sum 0 0 @1');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'prod @2 1 2');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'prod @3 21600 pixelWidth');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'prod @3 21600 pixelHeight');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'sum @0 0 1');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'prod @6 1 2');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'prod @7 21600 pixelWidth');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'sum @8 21600 0');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'prod @7 21600 pixelHeight');
+					$objWriter->endElement();
+
+					// v:f
+					$objWriter->startElement('v:f');
+					$objWriter->writeAttribute('eqn', 		'sum @10 21600 0');
+					$objWriter->endElement();
+
+				$objWriter->endElement();
+
+				// v:path
+				$objWriter->startElement('v:path');
+				$objWriter->writeAttribute('o:extrusionok', 	'f');
+				$objWriter->writeAttribute('gradientshapeok', 	't');
+				$objWriter->writeAttribute('o:connecttype', 	'rect');
+				$objWriter->endElement();
+
+				// o:lock
+				$objWriter->startElement('o:lock');
+				$objWriter->writeAttribute('v:ext', 			'edit');
+				$objWriter->writeAttribute('aspectratio', 		't');
+				$objWriter->endElement();
+
+			$objWriter->endElement();
+
+			// Loop through images
+			foreach ($images as $key => $value) {
+				$this->_writeVMLHeaderFooterImage($objWriter, $key, $value);
+			}
+
+		$objWriter->endElement();
+
+		// Return
+		return $objWriter->getData();
+	}
+
+	/**
+	 * Write VML comment to XML format
+	 *
+	 * @param 	PHPExcel_Shared_XMLWriter		$objWriter 			XML Writer
+	 * @param	string							$pReference			Reference
+	 * @param 	PHPExcel_Worksheet_HeaderFooterDrawing	$pImage		Image
+	 * @throws 	Exception
+	 */
+	public function _writeVMLHeaderFooterImage(PHPExcel_Shared_XMLWriter $objWriter = null, $pReference = '', PHPExcel_Worksheet_HeaderFooterDrawing $pImage = null)
+	{
+		// Calculate object id
+		preg_match('{(\d+)}', md5($pReference), $m);
+		$id = 1500 + (substr($m[1], 0, 2) * 1);
+
+		// Calculate offset
+		$width = $pImage->getWidth();
+		$height = $pImage->getHeight();
+		$marginLeft = $pImage->getOffsetX();
+		$marginTop = $pImage->getOffsetY();
+
+		// v:shape
+		$objWriter->startElement('v:shape');
+		$objWriter->writeAttribute('id', 			$pReference);
+		$objWriter->writeAttribute('o:spid', 		'_x0000_s' . $id);
+		$objWriter->writeAttribute('type', 			'#_x0000_t75');
+		$objWriter->writeAttribute('style', 		"position:absolute;margin-left:{$marginLeft}px;margin-top:{$marginTop}px;width:{$width}px;height:{$height}px;z-index:1");
+
+			// v:imagedata
+			$objWriter->startElement('v:imagedata');
+			$objWriter->writeAttribute('o:relid', 		'rId' . $pReference);
+			$objWriter->writeAttribute('o:title', 		$pImage->getName());
+			$objWriter->endElement();
+
+			// o:lock
+			$objWriter->startElement('o:lock');
+			$objWriter->writeAttribute('v:ext', 		'edit');
+			$objWriter->writeAttribute('rotation', 		't');
+			$objWriter->endElement();
+
+		$objWriter->endElement();
+	}
+
+
+	/**
+	 * Get an array of all drawings
+	 *
+	 * @param 	PHPExcel							$pPHPExcel
+	 * @return 	PHPExcel_Worksheet_Drawing[]		All drawings in PHPExcel
+	 * @throws 	Exception
+	 */
+	public function allDrawings(PHPExcel $pPHPExcel = null)
+	{
+		// Get an array of all drawings
+		$aDrawings	= array();
+
+		// Loop through PHPExcel
+		$sheetCount = $pPHPExcel->getSheetCount();
+		for ($i = 0; $i < $sheetCount; ++$i) {
+			// Loop through images and add to array
+			$iterator = $pPHPExcel->getSheet($i)->getDrawingCollection()->getIterator();
+			while ($iterator->valid()) {
+				$aDrawings[] = $iterator->current();
+
+  				$iterator->next();
+			}
+		}
+
+		return $aDrawings;
+	}
+}

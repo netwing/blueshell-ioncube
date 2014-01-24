@@ -1,30 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CGlobalStateCacheDependency class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CGlobalStateCacheDependency represents a dependency based on a global state value.
+ *
+ * CGlobalStateCacheDependency checks if a global state is changed or not.
+ * If the global state is changed, the dependency is reported as changed.
+ * To specify which global state this dependency should check with,
+ * set {@link stateName} to the name of the global state.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching.dependencies
+ * @since 1.0
+ */
+class CGlobalStateCacheDependency extends CCacheDependency
+{
+	/**
+	 * @var string the name of the global state whose value is to check
+	 * if the dependency has changed.
+	 * @see CApplication::setGlobalState
+	 */
+	public $stateName;
+
+	/**
+	 * Constructor.
+	 * @param string $name the name of the global state
+	 */
+	public function __construct($name=null)
+	{
+		$this->stateName=$name;
+	}
+
+	/**
+	 * Generates the data needed to determine if dependency has been changed.
+	 * This method returns the value of the global state.
+	 * @throws CException if {@link stateName} is empty
+	 * @return mixed the data needed to determine if dependency has been changed.
+	 */
+	protected function generateDependentData()
+	{
+		if($this->stateName!==null)
+			return Yii::app()->getGlobalState($this->stateName);
+		else
+			throw new CException(Yii::t('yii','CGlobalStateCacheDependency.stateName cannot be empty.'));
+	}
+}

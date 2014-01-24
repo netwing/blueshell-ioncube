@@ -1,65 +1,87 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CDateFormatterTest
+ */
+class CDateFormatterTest extends CTestCase
+{
+	public function testWeekInMonth()
+	{
+		for($year=1970; $year<=date('Y'); $year++)
+		{
+			for($month=1;$month<=12;$month++) {
+				$day=date('t',mktime(0,0,0,$month,1,$year));
+				$weekNum=Yii::app()->dateFormatter->format("W",mktime(0,0,0,$month,$day,$year));
+				//echo sprintf("%d/%d/%d\t%d\n",$year,$month,$day,$weekNum);
+			}
+		}
+
+		//echo "Week number for 2011/01/01 is ".Yii::app()->dateFormatter->format("W",mktime(0,0,0,1,1,2011));
+		//echo "Week number for 2011/01/07 is ".Yii::app()->dateFormatter->format("W",mktime(0,0,0,1,7,2011));
+	}
+
+	public function testStringIntegerDate()
+	{
+		date_default_timezone_set('UTC');
+		$this->assertEquals('2012 09 03 07:54:09', Yii::app()->dateFormatter->format("yyyy MM dd hh:mm:ss", 1346702049));
+		$this->assertEquals('2012 09 03 07:54:09', Yii::app()->dateFormatter->format("yyyy MM dd hh:mm:ss", '1346702049'));
+		$this->assertEquals('1927 04 30 04:05:51', Yii::app()->dateFormatter->format("yyyy MM dd hh:mm:ss", -1346702049));
+		$this->assertEquals('1927 04 30 04:05:51', Yii::app()->dateFormatter->format("yyyy MM dd hh:mm:ss", '-1346702049'));
+	}
+
+	public function testStrToTimeDate()
+	{
+		date_default_timezone_set('UTC');
+		$this->assertEquals('2012 09 03 09:54:09', Yii::app()->dateFormatter->format("yyyy MM dd hh:mm:ss", '2012-09-03 09:54:09 UTC'));
+		$this->assertEquals('1927 04 30 05:05:51', Yii::app()->dateFormatter->format("yyyy MM dd hh:mm:ss", '1927-04-30 05:05:51 UTC'));
+	}
+
+	public function providerFormatWeekInMonth()
+	{
+		return array(
+			array('2012.06.01',1),
+			array('2012.06.02',1),
+			array('2012.06.03',1),
+			array('2012.06.09',2),
+			array('2012.06.10',2),
+			array('2012.06.16',3),
+			array('2012.06.17',3),
+			array('2012.06.23',4),
+			array('2012.06.24',4),
+			array('2012.06.30',5),
+
+			array('2011.10.01',1),
+			array('2011.10.03',2),
+			array('2011.10.08',2),
+			array('2011.10.10',3),
+			array('2011.10.15',3),
+			array('2011.10.17',4),
+			array('2011.10.22',4),
+			array('2011.10.24',5),
+			array('2011.10.29',5),
+			array('2011.10.31',6),
+
+			array('2012.12.23',4),
+			array('2012.12.30',5),
+			array('2012.12.31',6),
+			array('2013.01.01',1),
+			array('2013.01.02',1),
+			array('2013.01.07',2),
+
+			array('2010.12.17',3),
+			array('2010.12.24',4),
+			array('2010.12.31',5),
+			array('2011.01.01',1),
+			array('2011.01.08',2),
+			array('2011.01.15',3),
+		);
+	}
+
+	/**
+	 * @dataProvider providerFormatWeekInMonth
+	 */
+	public function testFormatWeekInMonth($date,$expected)
+	{
+		list($year,$month,$day)=explode('.',$date);
+		$this->assertEquals($expected,Yii::app()->dateFormatter->format('W',mktime(12,0,0,(int)$month,(int)$day,(int)$year)));
+	}
+}

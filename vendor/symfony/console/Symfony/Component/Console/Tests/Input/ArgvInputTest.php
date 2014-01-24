@@ -1,250 +1,316 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Input;
+
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+
+class ArgvInputTest extends \PHPUnit_Framework_TestCase
+{
+    public function testConstructor()
+    {
+        $_SERVER['argv'] = array('cli.php', 'foo');
+        $input = new ArgvInput();
+        $r = new \ReflectionObject($input);
+        $p = $r->getProperty('tokens');
+        $p->setAccessible(true);
+
+        $this->assertEquals(array('foo'), $p->getValue($input), '__construct() automatically get its input from the argv server variable');
+    }
+
+    public function testParseArguments()
+    {
+        $input = new ArgvInput(array('cli.php', 'foo'));
+        $input->bind(new InputDefinition(array(new InputArgument('name'))));
+        $this->assertEquals(array('name' => 'foo'), $input->getArguments(), '->parse() parses required arguments');
+
+        $input->bind(new InputDefinition(array(new InputArgument('name'))));
+        $this->assertEquals(array('name' => 'foo'), $input->getArguments(), '->parse() is stateless');
+    }
+
+    /**
+     * @dataProvider provideOptions
+     */
+    public function testParseOptions($input, $options, $expectedOptions, $message)
+    {
+        $input = new ArgvInput($input);
+        $input->bind(new InputDefinition($options));
+
+        $this->assertEquals($expectedOptions, $input->getOptions(), $message);
+    }
+
+    public function provideOptions()
+    {
+        return array(
+            array(
+                array('cli.php', '--foo'),
+                array(new InputOption('foo')),
+                array('foo' => true),
+                '->parse() parses long options without a value'
+            ),
+            array(
+                array('cli.php', '--foo=bar'),
+                array(new InputOption('foo', 'f', InputOption::VALUE_REQUIRED)),
+                array('foo' => 'bar'),
+                '->parse() parses long options with a required value (with a = separator)'
+            ),
+            array(
+                array('cli.php', '--foo', 'bar'),
+                array(new InputOption('foo', 'f', InputOption::VALUE_REQUIRED)),
+                array('foo' => 'bar'),
+                '->parse() parses long options with a required value (with a space separator)'
+            ),
+            array(
+                array('cli.php', '-f'),
+                array(new InputOption('foo', 'f')),
+                array('foo' => true),
+                '->parse() parses short options without a value'
+            ),
+            array(
+                array('cli.php', '-fbar'),
+                array(new InputOption('foo', 'f', InputOption::VALUE_REQUIRED)),
+                array('foo' => 'bar'),
+                '->parse() parses short options with a required value (with no separator)'
+            ),
+            array(
+                array('cli.php', '-f', 'bar'),
+                array(new InputOption('foo', 'f', InputOption::VALUE_REQUIRED)),
+                array('foo' => 'bar'),
+                '->parse() parses short options with a required value (with a space separator)'
+            ),
+            array(
+                array('cli.php', '-f', ''),
+                array(new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL)),
+                array('foo' => ''),
+                '->parse() parses short options with an optional empty value'
+            ),
+            array(
+                array('cli.php', '-f', '', 'foo'),
+                array(new InputArgument('name'), new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL)),
+                array('foo' => ''),
+                '->parse() parses short options with an optional empty value followed by an argument'
+            ),
+            array(
+                array('cli.php', '-f', '', '-b'),
+                array(new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL), new InputOption('bar', 'b')),
+                array('foo' => '', 'bar' => true),
+                '->parse() parses short options with an optional empty value followed by an option'
+            ),
+            array(
+                array('cli.php', '-f', '-b', 'foo'),
+                array(new InputArgument('name'), new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL), new InputOption('bar', 'b')),
+                array('foo' => null, 'bar' => true),
+                '->parse() parses short options with an optional value which is not present'
+            ),
+            array(
+                array('cli.php', '-fb'),
+                array(new InputOption('foo', 'f'), new InputOption('bar', 'b')),
+                array('foo' => true, 'bar' => true),
+                '->parse() parses short options when they are aggregated as a single one'
+            ),
+            array(
+                array('cli.php', '-fb', 'bar'),
+                array(new InputOption('foo', 'f'), new InputOption('bar', 'b', InputOption::VALUE_REQUIRED)),
+                array('foo' => true, 'bar' => 'bar'),
+                '->parse() parses short options when they are aggregated as a single one and the last one has a required value'
+            ),
+            array(
+                array('cli.php', '-fb', 'bar'),
+                array(new InputOption('foo', 'f'), new InputOption('bar', 'b', InputOption::VALUE_OPTIONAL)),
+                array('foo' => true, 'bar' => 'bar'),
+                '->parse() parses short options when they are aggregated as a single one and the last one has an optional value'
+            ),
+            array(
+                array('cli.php', '-fbbar'),
+                array(new InputOption('foo', 'f'), new InputOption('bar', 'b', InputOption::VALUE_OPTIONAL)),
+                array('foo' => true, 'bar' => 'bar'),
+                '->parse() parses short options when they are aggregated as a single one and the last one has an optional value with no separator'
+            ),
+            array(
+                array('cli.php', '-fbbar'),
+                array(new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL), new InputOption('bar', 'b', InputOption::VALUE_OPTIONAL)),
+                array('foo' => 'bbar', 'bar' => null),
+                '->parse() parses short options when they are aggregated as a single one and one of them takes a value'
+            )
+        );
+    }
+
+    /**
+     * @dataProvider provideInvalidInput
+     */
+    public function testInvalidInput($argv, $definition, $expectedExceptionMessage)
+    {
+        $this->setExpectedException('RuntimeException', $expectedExceptionMessage);
+
+        $input = new ArgvInput($argv);
+        $input->bind($definition);
+    }
+
+    public function provideInvalidInput()
+    {
+        return array(
+            array(
+                array('cli.php', '--foo'),
+                new InputDefinition(array(new InputOption('foo', 'f', InputOption::VALUE_REQUIRED))),
+                'The "--foo" option requires a value.'
+            ),
+            array(
+                array('cli.php', '-f'),
+                new InputDefinition(array(new InputOption('foo', 'f', InputOption::VALUE_REQUIRED))),
+                'The "--foo" option requires a value.'
+            ),
+            array(
+                array('cli.php', '-ffoo'),
+                new InputDefinition(array(new InputOption('foo', 'f', InputOption::VALUE_NONE))),
+                'The "-o" option does not exist.'
+            ),
+            array(
+                array('cli.php', '--foo=bar'),
+                new InputDefinition(array(new InputOption('foo', 'f', InputOption::VALUE_NONE))),
+                'The "--foo" option does not accept a value.'
+            ),
+            array(
+                array('cli.php', 'foo', 'bar'),
+                new InputDefinition(),
+                'Too many arguments.'
+            ),
+            array(
+                array('cli.php', '--foo'),
+                new InputDefinition(),
+                'The "--foo" option does not exist.'
+            ),
+            array(
+                array('cli.php', '-f'),
+                new InputDefinition(),
+                'The "-f" option does not exist.'
+            ),
+            array(
+                array('cli.php', '-1'),
+                new InputDefinition(array(new InputArgument('number'))),
+                'The "-1" option does not exist.'
+            )
+        );
+    }
+
+    public function testParseArrayArgument()
+    {
+        $input = new ArgvInput(array('cli.php', 'foo', 'bar', 'baz', 'bat'));
+        $input->bind(new InputDefinition(array(new InputArgument('name', InputArgument::IS_ARRAY))));
+
+        $this->assertEquals(array('name' => array('foo', 'bar', 'baz', 'bat')), $input->getArguments(), '->parse() parses array arguments');
+    }
+
+    public function testParseArrayOption()
+    {
+        $input = new ArgvInput(array('cli.php', '--name=foo', '--name=bar', '--name=baz'));
+        $input->bind(new InputDefinition(array(new InputOption('name', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY))));
+
+        $this->assertEquals(array('name' => array('foo', 'bar', 'baz')), $input->getOptions(), '->parse() parses array options ("--option=value" syntax)');
+
+        $input = new ArgvInput(array('cli.php', '--name', 'foo', '--name', 'bar', '--name', 'baz'));
+        $input->bind(new InputDefinition(array(new InputOption('name', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY))));
+        $this->assertEquals(array('name' => array('foo', 'bar', 'baz')), $input->getOptions(), '->parse() parses array options ("--option value" syntax)');
+
+        $input = new ArgvInput(array('cli.php', '--name=foo', '--name=bar', '--name='));
+        $input->bind(new InputDefinition(array(new InputOption('name', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY))));
+        $this->assertSame(array('name' => array('foo', 'bar', null)), $input->getOptions(), '->parse() parses empty array options as null ("--option=value" syntax)');
+
+        $input = new ArgvInput(array('cli.php', '--name', 'foo', '--name', 'bar', '--name', '--anotherOption'));
+        $input->bind(new InputDefinition(array(
+            new InputOption('name', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY),
+            new InputOption('anotherOption', null, InputOption::VALUE_NONE),
+        )));
+        $this->assertSame(array('name' => array('foo', 'bar', null), 'anotherOption' => true), $input->getOptions(), '->parse() parses empty array options as null ("--option value" syntax)');
+    }
+
+    public function testParseNegativeNumberAfterDoubleDash()
+    {
+        $input = new ArgvInput(array('cli.php', '--', '-1'));
+        $input->bind(new InputDefinition(array(new InputArgument('number'))));
+        $this->assertEquals(array('number' => '-1'), $input->getArguments(), '->parse() parses arguments with leading dashes as arguments after having encountered a double-dash sequence');
+
+        $input = new ArgvInput(array('cli.php', '-f', 'bar', '--', '-1'));
+        $input->bind(new InputDefinition(array(new InputArgument('number'), new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL))));
+        $this->assertEquals(array('foo' => 'bar'), $input->getOptions(), '->parse() parses arguments with leading dashes as options before having encountered a double-dash sequence');
+        $this->assertEquals(array('number' => '-1'), $input->getArguments(), '->parse() parses arguments with leading dashes as arguments after having encountered a double-dash sequence');
+    }
+
+    public function testParseEmptyStringArgument()
+    {
+        $input = new ArgvInput(array('cli.php', '-f', 'bar', ''));
+        $input->bind(new InputDefinition(array(new InputArgument('empty'), new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL))));
+
+        $this->assertEquals(array('empty' => ''), $input->getArguments(), '->parse() parses empty string arguments');
+    }
+
+    public function testGetFirstArgument()
+    {
+        $input = new ArgvInput(array('cli.php', '-fbbar'));
+        $this->assertEquals('', $input->getFirstArgument(), '->getFirstArgument() returns the first argument from the raw input');
+
+        $input = new ArgvInput(array('cli.php', '-fbbar', 'foo'));
+        $this->assertEquals('foo', $input->getFirstArgument(), '->getFirstArgument() returns the first argument from the raw input');
+    }
+
+    public function testHasParameterOption()
+    {
+        $input = new ArgvInput(array('cli.php', '-f', 'foo'));
+        $this->assertTrue($input->hasParameterOption('-f'), '->hasParameterOption() returns true if the given short option is in the raw input');
+
+        $input = new ArgvInput(array('cli.php', '--foo', 'foo'));
+        $this->assertTrue($input->hasParameterOption('--foo'), '->hasParameterOption() returns true if the given short option is in the raw input');
+
+        $input = new ArgvInput(array('cli.php', 'foo'));
+        $this->assertFalse($input->hasParameterOption('--foo'), '->hasParameterOption() returns false if the given short option is not in the raw input');
+
+        $input = new ArgvInput(array('cli.php', '--foo=bar'));
+        $this->assertTrue($input->hasParameterOption('--foo'), '->hasParameterOption() returns true if the given option with provided value is in the raw input');
+    }
+
+    public function testToString()
+    {
+        $input = new ArgvInput(array('cli.php', '-f', 'foo'));
+        $this->assertEquals('-f foo', (string) $input);
+
+        $input = new ArgvInput(array('cli.php', '-f', '--bar=foo', 'a b c d', "A\nB'C"));
+        $this->assertEquals('-f --bar=foo '.escapeshellarg('a b c d').' '.escapeshellarg("A\nB'C"), (string) $input);
+    }
+
+    /**
+     * @dataProvider provideGetParameterOptionValues
+     */
+    public function testGetParameterOptionEqualSign($argv, $key, $expected)
+    {
+        $input = new ArgvInput($argv);
+        $this->assertEquals($expected, $input->getParameterOption($key), '->getParameterOption() returns the expected value');
+    }
+
+    public function provideGetParameterOptionValues()
+    {
+        return array(
+            array(array('app/console', 'foo:bar', '-e', 'dev'), '-e', 'dev'),
+            array(array('app/console', 'foo:bar', '--env=dev'), '--env', 'dev'),
+            array(array('app/console', 'foo:bar', '-e', 'dev'), array('-e', '--env'), 'dev'),
+            array(array('app/console', 'foo:bar', '--env=dev'), array('-e', '--env'), 'dev'),
+            array(array('app/console', 'foo:bar', '--env=dev', '--en=1'), array('--en'), '1'),
+        );
+    }
+
+    public function testParseSingleDashAsArgument()
+    {
+        $input = new ArgvInput(array('cli.php', '-'));
+        $input->bind(new InputDefinition(array(new InputArgument('file'))));
+        $this->assertEquals(array('file' => '-'), $input->getArguments(), '->parse() parses single dash as an argument');
+    }
+}

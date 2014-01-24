@@ -1,76 +1,107 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-4dnS8T2ifwboYrIU
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Iterator;
+
+abstract class RealIteratorTestCase extends IteratorTestCase
+{
+
+    protected static $tmpDir;
+    protected static $files;
+
+    public static function setUpBeforeClass()
+    {
+        self::$tmpDir = realpath(sys_get_temp_dir()).DIRECTORY_SEPARATOR.'symfony2_finder';
+
+        self::$files = array(
+            '.git/',
+            '.foo/',
+            '.foo/.bar',
+            '.foo/bar',
+            '.bar',
+            'test.py',
+            'foo/',
+            'foo/bar.tmp',
+            'test.php',
+            'toto/',
+            'foo bar'
+        );
+
+        self::$files = self::toAbsolute(self::$files);
+
+        if (is_dir(self::$tmpDir)) {
+            self::tearDownAfterClass();
+        } else {
+            mkdir(self::$tmpDir);
+        }
+
+        foreach (self::$files as $file) {
+            if (DIRECTORY_SEPARATOR === $file[strlen($file) - 1]) {
+                mkdir($file);
+            } else {
+                touch($file);
+            }
+        }
+
+        file_put_contents(self::toAbsolute('test.php'), str_repeat(' ', 800));
+        file_put_contents(self::toAbsolute('test.py'), str_repeat(' ', 2000));
+
+        touch(self::toAbsolute('foo/bar.tmp'), strtotime('2005-10-15'));
+        touch(self::toAbsolute('test.php'), strtotime('2005-10-15'));
+    }
+
+    public static function tearDownAfterClass()
+    {
+        foreach (array_reverse(self::$files) as $file) {
+            if (DIRECTORY_SEPARATOR === $file[strlen($file) - 1]) {
+                @rmdir($file);
+            } else {
+                @unlink($file);
+            }
+        }
+    }
+
+    protected static function toAbsolute($files = null)
+    {
+        /*
+         * Without the call to setUpBeforeClass() property can be null.
+         */
+        if (!self::$tmpDir) {
+            self::$tmpDir = realpath(sys_get_temp_dir()).DIRECTORY_SEPARATOR.'symfony2_finder';
+        }
+
+        if (is_array($files)) {
+            $f = array();
+            foreach ($files as $file) {
+                $f[] = self::$tmpDir.DIRECTORY_SEPARATOR.str_replace('/', DIRECTORY_SEPARATOR, $file);
+            }
+
+            return $f;
+        }
+
+        if (is_string($files)) {
+            return self::$tmpDir.DIRECTORY_SEPARATOR.str_replace('/', DIRECTORY_SEPARATOR, $files);
+        }
+
+        return self::$tmpDir;
+    }
+
+    protected static function toAbsoluteFixtures($files)
+    {
+        $f = array();
+        foreach ($files as $file) {
+            $f[] = realpath(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'Fixtures'.DIRECTORY_SEPARATOR.$file);
+        }
+
+        return $f;
+    }
+
+}

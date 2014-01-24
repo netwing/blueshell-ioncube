@@ -1,100 +1,153 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CTypeValidatorTest
+ */
+class CTypeValidatorTest extends CTestCase
+{
+	public function testInteger()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='integer';
+		$this->assertTrue($validator->validateValue(42));
+		$this->assertTrue($validator->validateValue(+42));
+		$this->assertTrue($validator->validateValue(-42));
+		$this->assertTrue($validator->validateValue('42'));
+		$this->assertTrue($validator->validateValue('+42'));
+		$this->assertTrue($validator->validateValue('-42'));
+		$this->assertFalse($validator->validateValue('42 is a good number!'));
+		$this->assertFalse($validator->validateValue(3.1415926));
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	public function testIntegerStrict()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='integer';
+		$validator->strict=true;
+		$this->assertTrue($validator->validateValue(42));
+		$this->assertTrue($validator->validateValue(+42));
+		$this->assertTrue($validator->validateValue(-42));
+		$this->assertFalse($validator->validateValue('42'));
+		$this->assertFalse($validator->validateValue('+42'));
+		$this->assertFalse($validator->validateValue('-42'));
+		$this->assertFalse($validator->validateValue('42 is a good number!'));
+		$this->assertFalse($validator->validateValue(3.1415926));
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	public function testFloat()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='float';
+		$this->assertTrue($validator->validateValue(42));
+		$this->assertTrue($validator->validateValue(42.0));
+		$this->assertTrue($validator->validateValue(+42.1));
+		$this->assertTrue($validator->validateValue(-42.2));
+		$this->assertTrue($validator->validateValue('42'));
+		$this->assertTrue($validator->validateValue('42.1'));
+		$this->assertTrue($validator->validateValue('+42.2'));
+		$this->assertTrue($validator->validateValue('-42.3'));
+		$this->assertFalse($validator->validateValue('42.3 is a good number!'));
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	public function testFloatStrict()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='float';
+		$validator->strict=true;
+		$this->assertFalse($validator->validateValue(42));
+		$this->assertTrue($validator->validateValue(42.0));
+		$this->assertTrue($validator->validateValue(+42.1));
+		$this->assertTrue($validator->validateValue(-42.2));
+		$this->assertFalse($validator->validateValue('42'));
+		$this->assertFalse($validator->validateValue('42.1'));
+		$this->assertFalse($validator->validateValue('+42.2'));
+		$this->assertFalse($validator->validateValue('-42.3'));
+		$this->assertFalse($validator->validateValue('42.3 is a good number!'));
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	public function testString()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='string';
+		$this->assertFalse($validator->validateValue(42));
+		$this->assertFalse($validator->validateValue(42.0));
+		$this->assertTrue($validator->validateValue('42'));
+		$this->assertTrue($validator->validateValue('42.3 is a good number!'));
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	public function testArray()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='array';
+		$this->assertFalse($validator->validateValue(42));
+		$this->assertFalse($validator->validateValue(42.0));
+		$this->assertFalse($validator->validateValue('42.3 is a good number!'));
+		$this->assertTrue($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	// TODO: the following three should be tested for actual pattern matching
+
+	public function testDate()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='date';
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(42));
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	public function testTime()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='time';
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(42));
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+
+	public function testDateTime()
+	{
+		$validator=new CTypeValidator();
+		$validator->type='datetime';
+		$this->assertFalse($validator->validateValue(array(13)));
+
+		$this->assertFalse($validator->validateValue(42));
+		$this->assertFalse($validator->validateValue(true));
+		$this->assertFalse($validator->validateValue(false));
+		$this->assertFalse($validator->validateValue(new stdClass()));
+	}
+}

@@ -1,57 +1,125 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Strings_UnnecessaryStringConcatSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_Strings_UnnecessaryStringConcatSniff.
+ *
+ * Checks that two strings are not concatenated together; suggests
+ * using one string instead.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Strings_UnnecessaryStringConcatSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array(
+                                   'PHP',
+                                   'JS',
+                                  );
+
+    /**
+     * If true, an error will be thrown; otherwise a warning.
+     *
+     * @var bool
+     */
+    public $error = true;
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_STRING_CONCAT,
+                T_PLUS,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        // Work out which type of file this is for.
+        $tokens = $phpcsFile->getTokens();
+        if ($tokens[$stackPtr]['code'] === T_STRING_CONCAT) {
+            if ($phpcsFile->tokenizerType === 'JS') {
+                return;
+            }
+        } else {
+            if ($phpcsFile->tokenizerType === 'PHP') {
+                return;
+            }
+        }
+
+        $prev = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
+        $next = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
+        if ($prev === false || $next === false) {
+            return;
+        }
+
+        $stringTokens = PHP_CodeSniffer_Tokens::$stringTokens;
+        if (in_array($tokens[$prev]['code'], $stringTokens) === true
+            && in_array($tokens[$next]['code'], $stringTokens) === true
+        ) {
+            if ($tokens[$prev]['content'][0] === $tokens[$next]['content'][0]) {
+                // Before we throw an error for PHP, allow strings to be
+                // combined if they would have < and ? next to each other because
+                // this trick is sometimes required in PHP strings.
+                if ($phpcsFile->tokenizerType === 'PHP') {
+                    $prevChar = substr($tokens[$prev]['content'], -2, 1);
+                    $nextChar = $tokens[$next]['content'][1];
+                    $combined = $prevChar.$nextChar;
+                    if ($combined === '?'.'>' || $combined === '<'.'?') {
+                        return;
+                    }
+                }
+
+                $error = 'String concat is not required here; use a single string instead';
+                if ($this->error === true) {
+                    $phpcsFile->addError($error, $stackPtr, 'Found');
+                } else {
+                    $phpcsFile->addWarning($error, $stackPtr, 'Found');
+                }
+            }
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-tTx9RAozMKBc

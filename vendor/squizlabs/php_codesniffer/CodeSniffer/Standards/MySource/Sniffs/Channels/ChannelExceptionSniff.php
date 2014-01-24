@@ -1,40 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Ensures that all action classes throw ChannelExceptions only.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Ensures that all action classes throw ChannelExceptions only.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class MySource_Sniffs_Channels_ChannelExceptionSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_THROW);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $fileName = strtolower($phpcsFile->getFilename());
+        $matches  = array();
+        if (preg_match('|/systems/(.*)/([^/]+)?actions.inc$|', $fileName, $matches) === 0) {
+            // This is not an actions.inc file.
+            return;
+        }
+
+        $tokens = $phpcsFile->getTokens();
+
+        $exception     = $phpcsFile->findNext(array(T_STRING, T_VARIABLE), ($stackPtr + 1));
+        $exceptionName = $tokens[$exception]['content'];
+
+        if ($exceptionName !== 'ChannelException') {
+            $data  = array($exceptionName);
+            $error = 'Channel actions can only throw ChannelException; found "%s"';
+            $phpcsFile->addError($error, $exception, 'WrongExceptionType', $data);
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-kzva4179AqR6uGjLKFoZutp14g56g6pk

@@ -1,398 +1,1062 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/*
+  +----------------------------------------------------------------------+
+  | PHP Version 5                                                        |
+  +----------------------------------------------------------------------+
+  | Copyright (c) 1997-2004 The PHP Group                                |
+  +----------------------------------------------------------------------+
+  | This source file is subject to version 3.0 of the PHP license,       |
+  | that is bundled with this package in the file LICENSE, and is        |
+  | available through the world-wide-web at the following url:           |
+  | http://www.php.net/license/3_0.txt.                                  |
+  | If you did not receive a copy of the PHP license and are unable to   |
+  | obtain it through the world-wide-web, please send a note to          |
+  | license@php.net so we can mail you a copy immediately.               |
+  +----------------------------------------------------------------------+
+  | Authors:    Thomas Schöfbeck <tom@php.net>                           |
+  |             Gabor Hojtsy <goba@php.net>                              |
+  |             Mark Kronsbein <mk@php.net>                              |
+  |             Jan Fabry <cheezy@php.net>
+  +----------------------------------------------------------------------+
+*/
+if ($argc < 2 || $argc > 3) {
 ?>
-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
+
+Check the revision of translated files against
+the actual english xml files, and print statistics
+
+  Usage:
+  <?php echo $argv[0]; ?> <language-code> [<maintainer>] [><revcheck.html>]
+
+  <language-code> must be a valid language code used
+  in the repository
+
+  If you specify <maintainer>, the script only checks
+  the files maintained by the person you add here
+
+  If you specify ><revcheck.html>, the output is an html file.
+  
+  Read more about Revision comments and related
+  functionality in the PHP Documentation Howto:
+    http://php.net/manual/howto/translation-revtrack.html
+   
+  Authors: Thomas Schöfbeck <tom@php.net>
+           Gabor Hojtsy <goba@php.net>
+           Mark Kronsbein <mk@php.net> 
+           Jan Fabry <cheezy@php.net>
+
+<?php
+  exit;
+}
+
+// Long runtime
+set_time_limit(0);
+
+// disable E_NOTICE
+error_reporting(E_ALL ^ E_NOTICE);
+
+// A file is criticaly "outdated' if
+define("ALERT_REV",   10); // translation is 10 or more revisions behind the en one
+define("ALERT_SIZE",   3); // translation is  3 or more kB smaller than the en one
+define("ALERT_DATE", -30); // translation is 30 or more days older than the en one
+
+// Revision marks used to flag files
+define("REV_UPTODATE", 1); // actual file
+define("REV_NOREV",    2); // file with revision comment without revision
+define("REV_CRITICAL", 3); // criticaly old / small / outdated
+define("REV_OLD",      4); // outdated file
+define("REV_NOTAG",    5); // file without revision comment
+define("REV_NOTRANS",  6); // file without translation
+
+define("REV_CREDIT",   7); // only used in translators list
+define("REV_WIP",      8); // only used in translators list
+
+// Colors used to mark files by status (colors for the above types)
+$CSS = array(
+  REV_UPTODATE => "act",
+  REV_NOREV    => "norev",
+  REV_CRITICAL => "crit",
+  REV_OLD      => "old",
+  REV_NOTAG    => "wip",
+  REV_NOTRANS  => "wip",
+  REV_CREDIT   => "wip",
+  REV_WIP      => "wip",
+);
+
+// Option for the link to cvs.php.net:
+define('CVS_OPT', '&amp;view=patch');
+define('CVS_OPT_NOWS', '&amp;view=diff&amp;diff_format=h');
+
+// Initializing variables from parameters
+$LANG = $argv[1];
+if ($argc == 3) {
+    $MAINT = $argv[2];
+} else {
+    $MAINT = "";
+}
+
+// Main directory of the PHP documentation (depends on the
+// sapi used). We do need the trailing slash!
+if ("cli" === php_sapi_name()) {
+	if (isset($PHPDOCDIR) && is_dir($PHPDOCDIR))
+		$DOCDIR = $PHPDOCDIR."/";
+	else
+		$DOCDIR = "./";
+} else
+	$DOCDIR = "../";
+
+// =========================================================================
+// Functions to get revision info and credits from a file
+// =========================================================================
+
+// Grabs the revision tag and stores credits from the file given
+function get_tags($file, $val = "en-rev")
+{
+    // Read the first 500 chars. The comment should be at
+    // the beginning of the file
+    $fp = @fopen($file, "r") or die ("Unable to read $file.");
+    $line = fread($fp, 500);
+    fclose($fp);
+
+    // Check for English CVS revision tag (. is for $ in the preg!),
+    // Return if this was needed (it should be there)
+    if ($val == "en-rev") {
+        preg_match("/<!-- .Revision: (\d+) . -->/", $line, $match);
+        return $match[1];
+    }
+
+    // Handle credits (only if no maintainer is specified)
+    if ($val == "\\S*") {
+    
+        global $files_by_maint;
+
+        // Find credits info, let more credits then one,
+        // using commas as list separator
+        if (preg_match("'<!--\s*CREDITS:\s*(.+)\s*-->'U", $line, $match_credit)) {
+          
+            // Explode with commas a separators
+            $credits = explode(",", $match_credit[1]);
+          
+            // Store all elements
+            foreach ($credits as $num => $credit) {
+                $files_by_maint[trim($credit)][REV_CREDIT]++;
+            }
+          
+        }
+    }
+
+    // No match before the preg
+    $match = array();
+    
+    // Check for the translations "revision tag"
+    preg_match ("/<!--\s*EN-Revision:\s*(\d+)\s*Maintainer:\s*("
+                . $val . ")\s*Status:\s*(.+)\s*-->/U", 
+                $line,
+                $match
+    );
+
+    // The tag with revision number is not found so search
+    // for n/a revision comment (comment where revision is not known)
+    if (count($match) == 0) {
+        preg_match ("'<!--\s*EN-Revision:\s*(n/a)\s*Maintainer:\s*("
+                    . $val . ")\s*Status:\s*(.+)\s*-->'U",
+                    $line,
+                    $match
+        );
+    }
+
+    // Return with found revision info (number, maint, status)
+    return $match;
+    
+} // get_tags() function end
+
+
+// =========================================================================
+// Functions to check file status in translated directory, and store info
+// =========================================================================
+
+// Checks a file, and gather status info
+function get_file_status($file)
+{
+    // The information is contained in these global arrays and vars
+    global $DOCDIR, $LANG, $MAINT, $files_by_mark, $files_by_maint;
+    global $file_sizes_by_mark;
+    global $missing_files, $missing_tags, $using_rev;
+
+    // Transform english file name to translated file name
+    $trans_file = preg_replace("'^".$DOCDIR."en/'", $DOCDIR.$LANG."/", $file);
+
+    // If we cannot find the file, we push it into the missing files list
+    if (!@file_exists($trans_file)) {
+        $files_by_mark[REV_NOTRANS]++;
+        $trans_name = substr($trans_file, strlen($DOCDIR) + strlen($LANG) + 1);
+        $size = intval(filesize($file)/1024);
+        $missing_files[$trans_name] = array( $size );
+        $file_sizes_by_mark[REV_NOTRANS] += $size;
+        // compute en-tags just if they're needed in the WIP-Table
+        if($using_rev) {
+        	$missing_files[$trans_name][] = get_tags($file);
+        }
+        return FALSE;
+    }
+
+    // No specific maintainer, check for a revision tag
+    if (empty($MAINT)) {
+        $trans_tag = get_tags($trans_file, "\\S*");
+    }
+    // If we need to check for a specific translator
+    else {
+        // Get translated files tag, with maintainer
+        $trans_tag = get_tags($trans_file, $MAINT);
+
+        // If this is a file belonging to another
+        // maintainer, than we would not like to
+        // deal with it anymore
+        if (count($trans_tag) == 0) {
+            $trans_tag = get_tags($trans_file, "\\S*");
+            // We found a tag for another maintainer
+            if (count($trans_tag) > 0) {
+                return FALSE;
+            }
+        }
+    }
+
+    // Compute sizes and diffs
+    $en_size    = intval(filesize($file) / 1024);
+    $trans_size = intval(filesize($trans_file) / 1024);
+    $size_diff  = intval($en_size) - intval($trans_size);
+    
+    // If we found no revision tag, then collect this
+    // file in the missing tags list
+    if (count($trans_tag) == 0) {
+        $files_by_mark[REV_NOTAG]++;
+        $file_sizes_by_mark[REV_NOTAG] += $en_size;
+        $missing_tags[] = array(substr($trans_file, strlen($DOCDIR)), $en_size, $trans_size, $size_diff);
+        return FALSE;
+    }
+
+    // Distribute values in separate vars for further processing
+    list(, $this_rev, $this_maint, $this_status) = $trans_tag;
+
+    // Get English file revision
+    $en_rev = get_tags($file);
+    
+    // If we have a numeric revision number (not n/a), compute rev. diff
+    if (is_numeric($this_rev)) {
+        $rev_diff   = intval($en_rev) - intval($this_rev);
+        $trans_rev  = $this_rev;
+    } else {
+        // If we have no numeric revision, make all revision
+        // columns hold the rev from the translated file
+        $rev_diff = $trans_rev = $this_rev;
+    }
+
+    // If the file is up-to-date
+    if ($rev_diff === 0) {
+        // Store file by status and maintainer
+        $files_by_mark[REV_UPTODATE]++;
+        $files_by_maint[$this_maint][REV_UPTODATE]++;
+        $file_sizes_by_mark[REV_UPTODATE] += $en_size;
+        
+        return FALSE;
+    } 
+
+    // Compute times and diffs
+    $en_date    = intval((time() - filemtime($file)) / 86400);
+    $trans_date = intval((time() - filemtime($trans_file)) / 86400);
+    $date_diff  = $en_date - $trans_date;
+
+    // Make decision on file category by revision, date and size
+    if ($rev_diff >= ALERT_REV || $size_diff >= ALERT_SIZE || $date_diff <= ALERT_DATE) {
+        $status_mark = REV_CRITICAL;
+    } elseif ($rev_diff === "n/a") {
+        $status_mark = REV_NOREV;
+    } else {
+        $status_mark = REV_OLD;
+    }
+
+    // Store files by status, and by maintainer too
+    $files_by_mark[$status_mark]++;
+    $files_by_maint[$this_maint][$status_mark]++;
+    $file_sizes_by_mark[$status_mark] += $en_size;
+
+    return array(
+        "full_name"  => $file,
+        "short_name" => basename($trans_file),
+        "revision"   => array($en_rev,  $trans_rev,  $rev_diff),
+        "size"       => array($en_size, $trans_size, $size_diff),
+        "date"       => array($en_date, $trans_date, $date_diff),
+        "maintainer" => $this_maint,
+        "status"     => $this_status,
+        "mark"       => $status_mark
+    );
+    
+} // get_file_status() function end
+
+// =========================================================================
+// A function to check directory status in translated directory
+// =========================================================================
+
+// Check the status of files in a diretory of smarty/doc XML files
+// The English directory is passed to this function to check
+function get_dir_status($dir)
+{
+    
+    // Collect files and diretcories in these arrays
+    $directories = array();
+    $files       = array();
+    
+    // Open the directory 
+    $handle = @opendir($dir);
+    
+    // Walk through all names in the directory
+    while ($file = @readdir($handle)) {
+
+      // If we found a file with one or two point as a name,
+      // or a CVS directory, skip the file
+      if (preg_match("/^\.{1,2}/",$file) || $file == 'CVS')
+        continue;
+
+      // Collect files and directories
+      if (is_dir($dir.$file)) { $directories[] = $file; }
+      else { $files[] = $file; }
+
+    }
+    
+    // Close the directory
+    @closedir($handle);
+      
+    // Sort files and directories
+    sort($directories);
+    sort($files);
+      
+    // Go through files first
+    $dir_status = array();
+    foreach ($files as $file) {
+        // If the file status is OK, append the status info
+        if ($file_status = get_file_status($dir.$file)) {
+            $dir_status[] = $file_status;
+        }
+    }
+
+    // Then go through subdirectories, merging all the info
+    // coming from subdirs to one array
+    foreach ($directories as $file) {
+        $dir_status = array_merge(
+            $dir_status, 
+            get_dir_status($dir.$file.'/')
+        );
+    }
+    
+    // Return with collected file info in
+    // this dir and subdirectories [if any]
+    return $dir_status;
+
+} // get_dir_status() function end
+
+
+// Check for files removed in the EN tree, but still living in the translation
+function get_old_files($dir)
+{
+
+    global $DOCDIR, $LANG;
+
+    // Collect files and diretcories in these arrays
+    $directories = array();
+    $files       = array();
+
+    $special_files = array(
+      // french
+      'LISEZ_MOI.txt',
+      'TRADUCTIONS.txt',
+      'Translators',
+      'translation.xml'
+
+      // todo: add all missing languages
+    );
+
+    // Open the directory
+    $handle = @opendir($dir);
+
+    // Walk through all names in the directory
+    while ($file = @readdir($handle)) {
+
+      // If we found a file with one or two point as a name,
+      // or a CVS directory, skip the file
+      if (preg_match("/^\.{1,2}/", $file) || $file == 'CVS')
+        continue;
+
+      // skip this files
+      if (in_array($file, $special_files)) {
+        continue;
+      }
+
+      // Collect files and directories
+      if (is_dir($dir.$file)) {
+        $directories[] = $file;
+      } else {
+        $files[] = $file;
+      }
+
+    }
+
+    // Close the directory
+    @closedir($handle);
+
+    // Sort files and directories
+    sort($directories);
+    sort($files);
+
+    // Go through files first
+    $old_files_status = array();
+    foreach ($files as $file) {
+
+      $en_dir = preg_replace("'^".$DOCDIR.$LANG."/'", $DOCDIR."en/", $dir);
+
+      if (!@file_exists($en_dir.$file) ) {
+        $old_files_status[$dir.$file] = array(0=>intval(filesize($dir.$file)/1024));
+      }
+
+    }
+
+    // Then go through subdirectories, merging all the info
+    // coming from subdirs to one array
+    foreach ($directories as $file) {
+        $old_files_status = array_merge(
+            $old_files_status, 
+            get_old_files($dir.$file.'/')
+        );
+    }
+
+    return $old_files_status;
+
+} // get_old_files() function end
+
+
+// =========================================================================
+// Functions to read in the translation.xml file and process contents
+// =========================================================================
+
+// Get a multidimensional array with tag attributes
+function parse_attr_string ($tags_attrs)
+{
+    $tag_attrs_processed = array();
+
+    // Go through the tag attributes
+    foreach($tags_attrs as $attrib_list) {
+
+      // Get attr name and values
+      preg_match_all("!(.+)=\\s*([\"'])\\s*(.+)\\2!U", $attrib_list, $attribs);
+
+      // Assign all attributes to one associative array
+      $attrib_array = array();
+      foreach ($attribs[1] as $num => $attrname) {
+        $attrib_array[trim($attrname)] = trim($attribs[3][$num]);
+      }
+
+      // Collect in order of tags received
+      $tag_attrs_processed[] = $attrib_array;
+
+    }
+
+    // Retrun with collected attributes
+    return $tag_attrs_processed;
+
+} // parse_attr_string() end
+
+// Parse the translation.xml file for
+// translation related meta information
+function parse_translation($DOCDIR, $LANG, $MAINT)
+{
+    global $files_by_mark;
+    
+    // Path to find translation.xml file, set default values,
+    // in case we can't find the translation file
+    $translation_xml = $DOCDIR.$LANG."/translation.xml";
+    $output_charset  = 'UTF-8';
+    $translation     = array(
+        "intro"    => "",
+        "persons"  => array(),
+        "files"    => array(),
+        "allfiles" => array(),
+    );
+    
+    // Check for file availability, return with default
+    // values, if we cannot find the file
+    if (!@file_exists($translation_xml)) {
+        return array($output_charset, $translation);
+    }
+    
+    // Else go on, and load in the file, replacing all
+    // space type chars with one space
+    $txml = join("", file($translation_xml));
+    $txml = preg_replace("/\\s+/", " ", $txml);
+
+    // Get intro text (different for a persons info and
+    // for a whole group info page)
+    if (empty($MAINT)) {
+        preg_match("!<intro>(.+)</intro>!s", $txml, $match);
+        $translation["intro"] = trim($match[1]);
+    } else {
+        $translation["intro"] = "Personal Statistics for ".$MAINT;
+    }
+    
+    // Get encoding for the output, from the translation.xml
+    // file encoding (should be the same as the used encoding
+    // in HTML)
+    preg_match("!<\?xml(.+)\?>!U", $txml, $match);
+    $xmlinfo = parse_attr_string($match);
+    $output_charset = $xmlinfo[1]["encoding"];
+    
+    // Get persons list preg pattern, only check for a specific
+    // maintainer, if the users asked for it
+    if (empty($MAINT)) {
+        $pattern = "!<person(.+)/\\s?>!U";
+    } else {
+        $pattern = "!<person([^<]+nick=\"".$MAINT."\".+)/\\s?>!U";
+    }
+    
+    // Find all persons matching the pattern
+    preg_match_all($pattern, $txml, $matches);
+    $translation['persons'] = parse_attr_string($matches[1]);
+    
+    // Get list of work in progress files
+    if (empty($MAINT)) {
+
+        // Get all wip files
+        preg_match_all("!<file(.+)/\\s?>!U", $txml, $matches);
+        $translation['files'] = parse_attr_string($matches[1]);
+
+        // Provide info about number of WIP files
+        $files_by_mark[REV_WIP] += count($translation['files']);
+
+    } else {
+        
+        // Only check for a specific maintainer, if we were asked to
+        preg_match_all("!<file([^<]+person=\"".$MAINT."\".+)/\\s?>!U", $txml, $matches);
+        $translation['files'] = parse_attr_string($matches[1]);
+
+        // Other maintainers wip files need to be cleared from
+        // available files list in the future, so store that info too.
+        preg_match_all("!<file(.+)/\\s?>!U", $txml, $matches);
+        $translation['allfiles'] = parse_attr_string($matches[1]);
+        
+        // Provide info about number of WIP files
+        $files_by_mark[REV_WIP] += count($translation['allfiles']);
+
+    }
+    
+    // Return with collected info in two vars
+    return array($output_charset, $translation);
+
+} // parse_translation() function end()
+
+// =========================================================================
+// Start of the program execution
+// =========================================================================
+
+// Check for directory validity
+if (!@is_dir($DOCDIR . $LANG)) {
+    die("The $LANG language code is not valid");
+}
+  
+// Parse translation.xml file for more information
+list($charset, $translation) = parse_translation($DOCDIR, $LANG, $MAINT);
+
+// Add WIP files to maintainers file count and figure out,
+// if we need to use optional date and revision columns
+$using_date = FALSE; $using_rev = FALSE;
+foreach ($translation["files"] as $num => $fileinfo) {
+    $files_by_maint[$fileinfo["person"]][REV_WIP]++;
+    if (isset($fileinfo["date"]))     { $using_date = TRUE; }
+    if (isset($fileinfo["revision"])) { $using_rev = TRUE; }
+}
+
+// Get all files status
+$files_status = get_dir_status($DOCDIR."en/");
+
+// Get all old files in <lang> directory
+$old_files = get_old_files($DOCDIR.$LANG."/");
+
+$navbar = "<p class=c><a href=\"#intro\">Introduction</a> | " .
+          "<a href=\"#translators\">Translators</a> | " .
+          "<a href=\"#filesummary\">File summary by type</a> | " .
+          "<a href=\"#files\">Files</a> | ";
+if (count($translation["files"]) != 0)
+	$navbar .= "<a href=\"#wip\">Work in progress</a> | ";
+$navbar .= "<a href=\"#misstags\">Missing revision numbers</a> | " .
+           "<a href=\"#missfiles\">Untranslated files</a> | " .
+           "<a href=\"#oldfiles\">Old files</a></p>\n";
+
+
+// Figure out generation date
+$date = date("r");
+  
+// =========================================================================
+// Start of HTML page
+// =========================================================================
+
+print <<<END_OF_MULTILINE
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html>
+<head>
+<title>Smarty Manual Revision-check</title>
+<meta http-equiv="Content-Type" content="text/html; charset={$charset}">
+<style type="text/css">
+<!--
+h2,td,a,p,a.ref,th { font-family:Arial,Helvetica,sans-serif; font-size:14px; }
+h2,th,a.ref { color:#FFFFFF; }
+td,a,p { color:#000000; }
+h2     { font-size:28px; }
+th     { font-weight:bold; }
+.blue  { background-color:#666699; }
+.act   { background-color:#68D888; }
+.norev { background-color:#f4a460; }
+.old   { background-color:#eee8aa; }
+.crit  { background-color:#ff6347; }
+.wip   { background-color:#dcdcdc; }
+.r     { text-align:right }
+.rb    { text-align:right; font-weight:bold; }
+.c     { text-align:center }
+body   { margin:0px 0px 0px 0px; background-color:#F0F0F0; }
+//-->
+</style>
+</head>
+<body>
+<table width="100%" border="0" cellspacing="0" bgcolor="#666699">
+<tr><td>
+<table width="100%" border="0" cellspacing="1" bgcolor="#9999CC">
+<tr><td><h2 class=c>Status of the translated Smarty Manual</h2><p class=c style="font-size:12px;">Generated: {$date} &nbsp; / &nbsp; Language: $LANG<br></p></td></tr>
+</table>
+</td></tr>
+</table>
+END_OF_MULTILINE;
+
+print ($navbar);
+
+// =========================================================================
+// Intro block goes here
+// =========================================================================
+
+// If we have an introduction text, print it out, with an anchor
+if (!empty($translation["intro"])) {
+    print '<a name="intro"></a>';
+    print '<table width="800" align="center"><tr><td class=c>' .
+           $translation['intro'] . '</td></tr></table>';
+}
+
+// =========================================================================
+// Translators table goes here
+// =========================================================================
+
+// If person list available (valid translation.xml file in lang), print out
+// the person list, with respect to the maintainer parameter specified
+if (!empty($translation["persons"])) {
+
+print <<<END_OF_MULTILINE
+<a name="translators"></a>
+<table width="820" border="0" cellpadding="4" cellspacing="1" align="center">
+<tr class=blue>
+<th rowspan=2>Translator's name</th>
+<th rowspan=2>Contact email</th>
+<th rowspan=2>Nick</th>
+<th rowspan=2>C<br>V<br>S</th>
+<th colspan=7>Files maintained</th>
+</tr>
+<tr>
+<th class="{$CSS[REV_CREDIT]}" style="color:#000000">cre-<br>dits</th>
+<th class="{$CSS[REV_UPTODATE]}" style="color:#000000">upto-<br>date</th>
+<th class="{$CSS[REV_OLD]}" style="color:#000000">old</th>
+<th class="{$CSS[REV_CRITICAL]}" style="color:#000000">cri-<br>tical</th>
+<th class="{$CSS[REV_NOREV]}" style="color:#000000">no<br>rev</th>
+<th class="{$CSS[REV_WIP]}" style="color:#000000">wip</th>
+<th class="blue">sum</th>
+</tr>
+END_OF_MULTILINE;
+
+    // ' Please leave this comment here
+
+    // We will collect the maintainers by nick here
+    $maint_by_nick = array();
+    
+    // Print out a line for each maintainer (with respect to
+    // maintainer setting provided in command line)
+    foreach($translation["persons"] as $num => $person) {
+        
+        // Do not print out this person, if a
+        // specific maintainer info is asked for
+        if (!empty($MAINT) && $person["nick"] != $MAINT) {
+            continue;
+        }
+        
+        // Put maintaner number into associative array
+        // [Used in further tables for referencing]
+        $maint_by_nick[$person["nick"]] = $num;
+        
+        // Decide on the CVS text and the color of the line
+        if ($person["cvs"] === "yes") {
+            $cvsu = "x";
+            $col = "old";
+        } else {
+            $cvsu = "&nbsp;";
+            $col = "wip";
+        }
+        
+        // Try to do some antispam actions
+        $person["email"] = str_replace(
+            "@",
+            "<small>:at:</small>",
+            $person["email"]
+        );
+        
+        // Get file info for this person
+        if (isset($files_by_maint[$person["nick"]])) {
+            $pi = $files_by_maint[$person["nick"]];
+        } else {
+            $pi = array();
+        }
+        
+        print("<tr class=$col>" .
+              "<td><a name=\"maint$num\">$person[name]</a></td>" .
+              "<td>$person[email]</td>" .
+              "<td>$person[nick]</td>" .
+              "<td class=c>$cvsu</td>" .
+              "<td class=c>" . $pi[REV_CREDIT]   . "</td>" .
+              "<td class=c>" . $pi[REV_UPTODATE] . "</td>" .
+              "<td class=c>" . $pi[REV_OLD]      . "</td>" .
+              "<td class=c>" . $pi[REV_CRITICAL] . "</td>" .
+              "<td class=c>" . $pi[REV_NOREV]    . "</td>" .
+              "<td class=c>" . $pi[REV_WIP]      . "</td>" .
+              "<th class=blue>" . array_sum($pi) . "</th>" .
+              "</tr>\n");
+    }
+  
+    print "</table>\n<p>&nbsp;</p>\n";
+} 
+
+// =========================================================================
+// Files summary table goes here
+// =========================================================================
+
+// Do not print out file summary table, if we are printing out a page
+// for only one maintainer (his personal summary is in the table above)
+if (empty($MAINT)) {
+
+	print <<<END_OF_MULTILINE
+<a name="filesummary"></a>
+<table width="450" border="0" cellpadding="4" cellspacing="1" align="center">
+<tr class=blue>
+<th>File status type</th>
+<th>Number of files</th>
+<th>Percent of files</th>
+<th>Size of files (kB)</th>
+<th>Percent of size</th>
+</tr>
+END_OF_MULTILINE;
+
+    $files_sum = array_sum($files_by_mark);
+    $file_sizes_sum = array_sum($file_sizes_by_mark);
+    
+    $file_types = array(
+      array (REV_UPTODATE, "Up to date files"),
+      array (REV_OLD,      "Old files"),
+      array (REV_CRITICAL, "Critical files"),
+      array (REV_WIP,      "Work in progress"),
+      array (REV_NOREV,    "Files without revision number"),
+      array (REV_NOTAG,    "Files without revision tag"),
+      array (REV_NOTRANS,  "Files available for translation")
+    );
+    
+    foreach ($file_types as $num => $type) {
+    	print "<tr class=".$CSS[$type[0]].">".
+    		  "<td>".$type[1]."</td>".
+    		  "<td class=c>".intval($files_by_mark[$type[0]])."</td>".
+    		  "<td class=c>".number_format($files_by_mark[$type[0]] * 100 / $files_sum, 2 ).
+    		  "%</td>".
+                  "<td class=c>".intval($file_sizes_by_mark[$type[0]])."</td>".
+                  "<td class=c>".number_format($file_sizes_by_mark[$type[0]] * 100 / $file_sizes_sum, 2).
+                  "%</td></tr>\n";
+    }
+
+	print "<tr class=blue><th>Files total</th><th>$files_sum</th><th>100%</th><th>$file_sizes_sum</th><th>100%</th></tr>\n".
+		  "</table>\n<p>&nbsp;</p>\n";
+
+}
+
+print ($navbar."<p>&nbsp;</p>\n");
+
+
+// =========================================================================
+// Files table goes here
+// =========================================================================
+
+if (count($files_status) != 0) {
+
+print <<<END_OF_MULTILINE
+<a name="files"></a>
+<table width="820" border="0" cellpadding="4" cellspacing="1" align="center">
+<tr class=blue>
+<th rowspan=2>Translated file</th>
+<th colspan=3>Revision</th>
+<th colspan=3>Size in kB</th>
+<th colspan=3>Age in days</th>
+<th rowspan=2>Maintainer</th>
+<th rowspan=2>Status</th>
+</tr>
+<tr class=blue>
+<th>en</th>
+<th>$LANG</th>
+<th>diff</th>
+<th>en</th>
+<th>$LANG</th>
+<th>diff</th>
+<th>en</th>
+<th>$LANG</th>
+<th>diff</th>
+</tr>
+END_OF_MULTILINE;
+
+    // This was the previous directory [first]
+    $prev_dir = $new_dir = $DOCDIR."en";
+
+    // Go through all files collected
+    foreach ($files_status as $num => $file) {
+
+        // Make the maintainer a link, if we have that maintainer in the list
+        if (isset($maint_by_nick[$file["maintainer"]])) {
+          $file["maintainer"] = '<a href="#maint' . $maint_by_nick[$file["maintainer"]] .
+                                '">' . $file["maintainer"] . '</a>';
+        }
+
+        // If we have a 'numeric' revision diff and it is not zero,
+        // make a link to the CVS repository's diff script
+        if ($file["revision"][2] != "n/a" && $file["revision"][2] !== 0) {
+            $url = 'http://code.google.com/p/smarty-php/source/diff?'
+                 . 'old=' . $file['revision'][1] . '&'
+                 . 'r=' . $file['revision'][0] . '&'
+                 . 'format=side&'
+                 . 'path=' . urlencode('/trunk/' . preg_replace("'^".$DOCDIR."'", 'documentation/', $file['full_name']));
+
+            $file['short_name'] = '<a href="' . $url . '">'. $file["short_name"] . '</a>';
+        }
+
+        // Guess the new directory from the full name of the file
+        $new_dir = dirname($file["full_name"]);
+
+        // If this is a new directory, put out old dir lines
+        if ($new_dir != $prev_dir && isset($lines)) {
+            echo $prev_diplay_dir;
+            echo " ($line_number)</th></tr>";
+    	echo $lines;
+    	
+    	$lines = '';
+    	$line_number = 0;
+            
+            // Store the new actual directory
+            $prev_dir = $new_dir;
+        }
+        // Drop out the unneeded parts from the dirname...
+        $display_dir = str_replace($DOCDIR."en/", "", dirname($file["full_name"]));
+        $prev_diplay_dir = "<tr class=blue><th colspan=12>$display_dir";
+        
+        // Save the line for the current file (get file name shorter)
+        $lines .= "<tr class={$CSS[$file['mark']]}><td>{$file['short_name']}</td>".
+              "<td> {$file['revision'][0]}</td>" .
+              "<td> {$file['revision'][1]}</td>".
+              "<td class=rb>{$file['revision'][2]} </td>".
+              "<td class=r>{$file['size'][0]} </td>".
+              "<td class=r>{$file['size'][1]} </td>".
+              "<td class=rb>{$file['size'][2]} </td>".
+              "<td class=r>{$file['date'][0]} </td>".
+              "<td class=r>{$file['date'][1]} </td>".
+              "<td class=rb>{$file['date'][2]} </td>".
+              "<td class=c>{$file['maintainer']}</td>".
+              "<td class=c>".trim($file['status'])."</td></tr>\n";
+         $line_number++;
+    
+    }
+    
+    // echo the last dir and $lines
+    echo "$prev_diplay_dir ($line_number)</th></tr>";
+    echo $lines;
+    
+    print("</table>\n<p>&nbsp;</p>\n$navbar<p>&nbsp;</p>\n");
+    
+}
+
+
+// =========================================================================
+// Work in progress table goes here
+// =========================================================================
+
+// If work-in-progress list is available (valid translation.xml file in lang)
+if (count($translation["files"]) != 0) {
+
+    // Print out files table header
+    print "<a name=\"wip\"></a>\n" .
+    "<table width=\"820\" border=\"0\" cellpadding=\"4\" cellspacing=\"1\" align=\"center\">\n" .
+    "<tr class=blue>".
+    "<th>Work in progress files</th>".
+    "<th>Translator</th>".
+    "<th>Type</th>";
+  
+    // Print out date and revision columns if needed
+    if ($using_date) {
+        print '<th>Date</th>';
+    }
+    if ($using_rev) {
+        print '<th>CO-Revision</th>' .
+              '<th>EN-Revision</th>';
+    }
+    print "</tr>\n";
+  
+    // Go through files, and print out lines for them
+    foreach($translation["files"] as $num => $finfo) {
+    
+        // If we have a valid maintainer, link to the summary
+        if (isset($maint_by_nick[$finfo["person"]])) {
+            $finfo["person"] = '<a href="#maint' . $maint_by_nick[$finfo["person"]] .
+                               '">' . $finfo["person"] . '</a>';
+        }
+       
+        // Print out the line with the first columns
+        print "<tr class=wip><td>$finfo[name]</td>" .
+              "<td>$finfo[person]</td><td>$finfo[type]</td>";
+
+        // If we need the date column, print it out
+        if ($using_date) {
+            print "<td>$finfo[date]</td>";
+        }
+
+        // If we need the revision column, print it out
+        if ($using_rev) {
+            print "<td>$finfo[revision]</td><td>" .
+                  $missing_files[$finfo["name"]][1] .
+                  "</td>";
+        }
+      
+        // End the line
+        print "</tr>\n";
+
+        // Collect files in WIP list
+        $wip_files[$finfo["name"]] = TRUE;
+    } 
+  
+    print "</table>\n<p>&nbsp;</p>\n$navbar<p>&nbsp;</p>\n";
+    
+} 
+
+// Files translated, but without a revision comment
+$count = count($missing_tags);
+if ($count > 0) {
+    print "<a name=\"misstags\"></a>" .
+          "<table width=\"400\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\" align=\"center\">\n".
+          "<tr class=blue><th rowspan=2>Files without Revision-comment ($count files):</th>".
+          "<th colspan=3>Sizes in kB</th></tr>\n".
+          "<tr class=blue><th>en</th><th>$LANG</th><th>diff</th></tr>\n";
+    foreach($missing_tags as $val) {
+        // Shorten the filename (we have directory headers)
+        $short_file = basename($val[0]);
+
+        // Guess the new directory from the full name of the file
+        $new_dir = dirname($val[0]);
+    
+        // If this is a new directory, put out dir headline
+        if ($new_dir != $prev_dir) {
+        
+            // Print out directory header
+            print "<tr class=blue><th colspan=4>$new_dir</th></tr>\n";
+        
+            // Store the new actual directory
+            $prev_dir = $new_dir;
+        }
+        print "<tr class=wip><td>$short_file</td><td class=r>$val[1]</td>".
+              "<td class=r>$val[2]</td><td class=r>$val[3]</td></tr>\n";
+    }
+    print "</table>\n<p>&nbsp;</p>\n$navbar<p>&nbsp;</p>\n";
+}
+
+// Merge all work in progress files collected
+$wip_files = array_merge(
+    $translation["files"],    // Files for this translator
+    $translation["allfiles"]  // Files for all the translators
+);
+
+// Delete wip entires from available files list
+foreach ($wip_files as $file) {
+    if (isset($missing_files[$file['name']])) {
+        unset($missing_files[$file['name']]);
+    }
+}
+
+// Files not translated and not "wip"
+$count = count($missing_files);
+if ($count > 0) {
+    print "<a name=\"missfiles\"></a>" .
+          "<table width=\"400\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\" align=\"center\">\n" .
+          "<tr class=blue><th><a name=\"avail\" class=\"ref\">" .
+          " Available for translation</a> ($count files):</th><th>kB</th></tr>\n";
+    foreach($missing_files as $file => $info) {
+        // Shorten the filename (we have directory headers)
+        $short_file = basename($file);
+
+        // Guess the new directory from the full name of the file
+        $new_dir = dirname($file);
+    
+        // If this is a new directory, put out dir headline
+        if ($new_dir != $prev_dir) {
+        
+            // Print out directory header if not "."
+            print "<tr class=blue><th colspan=2>$new_dir</th></tr>\n";
+        
+            // Store the new actual directory
+            $prev_dir = $new_dir;
+        }
+
+        print "<tr class=wip><td><a href=\"http://code.google.com/p/smarty-php/source/browse/trunk/docs/en/$file\">$short_file</a></td>" .
+              "<td class=r>$info[0]</td></tr>\n";
+    }
+    print "</table>\n<p>&nbsp;</p>\n$navbar<p>&nbsp;</p>\n";
+
+}
+
+// Files not in EN tree
+$count = count($old_files);
+if ($count > 0) {
+    print "<a name=\"oldfiles\"></a>" .
+          "<table width=\"400\" border=\"0\" cellpadding=\"3\" cellspacing=\"1\" align=\"center\">\n" .
+          "<tr class=blue><th><a name=\"notEn\" class=\"ref\">" .
+          " Not in EN Tree</a> ($count files):</th><th>kB</th></tr>\n";
+
+    foreach($old_files as $file => $info) {
+        // Shorten the filename (we have directory headers)
+        $short_file = basename($file);
+
+        // Guess the new directory from the full name of the file
+        $new_dir = dirname($file);
+    
+        // If this is a new directory, put out dir headline
+        if ($new_dir != $prev_dir) {
+        
+            // Print out directory header if not "."
+            print "<tr class=blue><th colspan=2>$new_dir</th></tr>\n";
+        
+            // Store the new actual directory
+            $prev_dir = $new_dir;
+        }
+
+        print "<tr class=wip><td>$short_file</td>" .
+              "<td class=r>$info[0]</td></tr>\n";
+    }
+    print "</table>\n<p>&nbsp;</p>\n$navbar<p>&nbsp;</p>\n";
+
+
+
+
+}
+
+
+// All OK, end the file
+print "</body>\n</html>\n";
+
+?>

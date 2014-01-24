@@ -1,29 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPpXJIp4ukKy7qUNU4WQc+GlGnSJr4ViVckA8sOfgpMjouPwoFLvRpLbWOzb8QhDOB5mVEOIP
-CyrYA5BMeMrurTCIHs0zR8MSD2jJivlCnay9EFh/mDonNOw7ZsJHM76vH3yhntNGgEUlL25fsXaX
-DjPjNe/kqQ0GdLb+PNqRT6mWpM9iILBtyHlO7I7NwhkvCqvS3qLTUp/Pc7R3P5MCnLc9iAKZw9nl
-binCk6CXBMvrKFxY3g5hkAzHAE4xzt2gh9fl143SQNJFOdkCNdFQwAPw5eVO+ptfOVyd0PrGHVKJ
-2uF+4p7xl8yN8Di1PIPwPrLnOxeu75ilR8o/QwHlebt0psiVZcHZj+hCseHpnUlkFWNmaZUV3bCj
-xD0uICHvBl2kEKr8z3MVfqsg0g9RXNix3wi5QLWNzGnywH9aNHcyGX5XRFG5wqpZFn7kOxOJrOsn
-BdQwpwT5JF96dSV9Y5G/dXvWIGZOHWB9TlgS3X5QItlTNCtHHGJHYFPSq+k9P3+V8ouKj/588lty
-Ve2VakSiRVORTKAlLMnSV4gXyeNWRoW2xHC/A2J/JSAScrBmMsqtlPLGgOh2Kq/KTlkhNO5WUJzD
-CamObHs6xgRGWts2aHQDcWqpO/CU/wB9HHnIyH6zCxLgk+H5c4pcrsDFqghjbXpvnEMw2YPVwbKT
-R95NTt0zk+WjOruVL2io4ej2Q8IIv9Yni33rIgaZ/9Jyv8XNUwXJ6F7fXgb4oJDLqHhdl/tMGTl8
-rfn1ZKv3UlKwsnPZAhQskYjH17kcgOB9W5UUdzgwjzXJHrz0C3rYTBNVI3scRNPU3LLNHBURtFKh
-tIdFDTZN25owhj5nMje2OX3sd9qafEN1+m6j3w5YtxPmPFEuo4GV1vDv++K4ZMMHnwXR7U425x82
-RkmCRvRqyXLnk0RektQwz1tAff12vxwSriaO8SUpYC7LcIpaJt5UCeAzErcxxVP8XJl/mqi5cKLN
-7PbDlteusa5/6AtzxfeqGvGBVhBpEp6dCLJHIZfe+ZEO43v7DXfEdYct+dJ3jkbFQ8BuGoJEmf7k
-NnaI9ChvQg226dhuPzZ+Ga8pyReqW4QtDglbN+DpCocOdb1jyWx1YGilX1uN3OaGpzZYiALs3doC
-8eAa74EsQReLglEe7bL489zEQtFQnDDq7DavDS8ZgC2VEeYxfmDUUsYgnmLJa6p0jyNIaIZJMswh
-lu2G9iBZtlCQAtX/y1Fez+QuZM0p25n5Du2tXP1aJU4ifBa9h6wuz0l2dGpOL0DvbGDlb19DzK9s
-usyNpxdU9kKbfw/NQH534NOTPjouPXAVxTi64dNhukvLJaYnYhIXjko62rp12jpQKZhuV8e6XR/X
-vdzf0a19iUxlRxvRXmKxacO1lUTWY6JotVElbgwgcEpSkb1zlKB7NjDTMon2C0Ez94ulf8YkujrJ
-QRrV3Y7yGNfB7ThyU8rxmLA8XI1Gz8jdhA+lnZss1Kag6uEL+zeozXta9aJ22B3iskCsSWDUrn20
-4XxWO1ulas6sb4B8bOm0NO3kN7c4fw83pwEm//3EqXNzlwZ/+adhjJfRdQXbz1RA1aHAqLoIw50d
-5zuwjtER4Oi+V9pm82egsZ46v8KxKBPy7lrPI+bakNqdn1HfbhA7Tkz4dtJq+p9U1NbbBSipn41/
-lA4IYkFrZnkxJlwCM/gFw8zKi9I3qAMGGOHzRtfowecTfApmC8qSDuL7FKPU2gphlpMJw1mZnMDi
-nqgyDAd0AI6uCdO5B0WhXaXNbUcW744Q4ksdXGTYhxXk+E8dgGt8PZZYbwyG9w2jm9pcEwbsnSAU
-v8GWwk3pMPw9MKZp87iZGmrdEV1WdM5KMl6FpGc0GeSqRxHuIFHEZMASr7cpnHahkaPMN9lHZh6d
-hGKdTVxezgysgU8xzwtDe+Lmlprb+C0=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Generated when a command is sent over an SMTP connection.
+ *
+ * @package    Swift
+ * @subpackage Events
+ * @author     Chris Corbyn
+ */
+class Swift_Events_CommandEvent extends Swift_Events_EventObject
+{
+    /**
+     * The command sent to the server.
+     *
+     * @var string
+     */
+    private $_command;
+
+    /**
+     * An array of codes which a successful response will contain.
+     *
+     * @var integer[]
+     */
+    private $_successCodes = array();
+
+    /**
+     * Create a new CommandEvent for $source with $command.
+     *
+     * @param Swift_Transport $source
+     * @param string          $command
+     * @param array           $successCodes
+     */
+    public function __construct(Swift_Transport $source, $command, $successCodes = array())
+    {
+        parent::__construct($source);
+        $this->_command = $command;
+        $this->_successCodes = $successCodes;
+    }
+
+    /**
+     * Get the command which was sent to the server.
+     *
+     * @return string
+     */
+    public function getCommand()
+    {
+        return $this->_command;
+    }
+
+    /**
+     * Get the numeric response codes which indicate success for this command.
+     *
+     * @return integer[]
+     */
+    public function getSuccessCodes()
+    {
+        return $this->_successCodes;
+    }
+}

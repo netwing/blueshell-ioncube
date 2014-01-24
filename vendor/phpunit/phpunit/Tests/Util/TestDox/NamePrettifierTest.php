@@ -1,55 +1,108 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPoVyVW/hOaCXvZ3hB3vY8ukCv804Q3iPwxEieat476vQc69DgEzNZr6Zq3aEkfupkElFBDeD
-aQ+zWsRA9BOVo+urIRMkxK2p2wfnk8ynOuYAOm8mI0WaVYxpSkQzUXgSPpMh6T8bwWgzJftL11A8
-SiQ+JOO1Em7vo5+LtaHngInG3HFdz2D03vKti71sNua106JvPPdcx+QL/HJraQJn7+fILBEccY7W
-3rnWOHo7qYSEj39RMA9Nhr4euJltSAgiccy4GDnfTFfTBea+JYCs5/oEZ33mVRzMA+tgtxp81yN9
-3a2D9tfZY2DEb4+0fyCx/TLLfPBda3gigQ9rjRpGKuCOnFoM9INJr+s9HQPmXuzOyBefXEOxZHxL
-ztGgQFCsMORG/VXVrt8XFUI62JjiZPlI9ROd4w7PWv5nNNoXmjZkd+nQymKq4SXOuscCkpxo3QQe
-tDO4SNTKri6EnKgdtJJx5DmiJS3GHpfcobXs2ztEIVUlwa9SuAXC62VWQm7jBwSdY4ohQ09TLzFd
-sZ25Yy9Jwqy1FSU1ByiEY6ckayMM9K1G4ThY8t0wdcTBd2e0WSVAgU3w56pwVGWHs5eqjv7bT/iO
-Zfk1uYjd1hgqL/yLzKpVfkTXJByPP0l/6jK5J4WsYivEmiYZL2OWhZHNOG/E72ZDs+s6dSlOhzKn
-eHh+Ddp8ntuvGAvJSODj21Jfx9V3cVCGKvcXvCpTIGslVuVSnBg4UYe+HjXPhfPJCbo2T17n9emh
-ZniU6/6587Z//kJS8LPysFhM7xx/xvoaioWYKMswJq//yArKzKwx+lKbzuG+rIUUlbR51KoScKz7
-czaTlqCGgqUL697uzS+8bUc02Zh+yIFsfurg0VLHeOvQKwRMuEKcoK6EvbYgT8b6tco5Ehre5H33
-s5uYboJ2Kni3SwMGKK/k7uMTR+79EVVu6t6W+I3arm3dnSg5w4Onhl19gw0HSlTMGQUh5Ug0srN2
-e2TPFp+JBPupoApyhrhwH+acFlrNbPt8xqpNQC4/TLVE7zM+q4MfXrO5qlyKyPKaWip00vPA8Nt0
-zqtB7JPKVvF9/cw0VaiJHgXDAMY4eHHOCVcDVuOYkEXHKUkkixSZTLn/TjKdFn8v9Ie/xnNFVFNw
-QIU3FYam2QNLcgogsUHpT6+NLoG42moELI0b1TZqBLQOHDGZYz7oMC8UTjoUV9xQXqdtBzk4do7g
-QMudfFlGleFnXffRepScF+scBbqEpQjO8FvrgrvJD4nHEi7qhPYeFhqNYPjPmLQXvrg7T2CNwoO9
-fecLioSKDtSTDLE/A//EMRzA12Kp4AF+nsu64ZGzxphZqYKc8eXiStqqYUc7MOQCOEpO0fbkQH/M
-JshYyanle7giGao2JHZjFggl5Uo9Xxt7UMDrUKJunuXICzVo7r8QUFBYgpE+M+4N/8+Nl4bvokS6
-IZbLRALEPGFPH8b271QBwqMHQ+wyVIxjGW6O8oO/ZGKX5boAOa767lu6ETNIJzdcXgdd4feRymKU
-+oxlwic5bYE9f0zVZLFiE/f1XLz4ALFE0Uxra8iInaTEknEvoyc1CtxSMlSo9r4oJ7dXLIiN7dVa
-jKppYZEM+sgAMB7x6tUWXtSCLl3XNH5MzGpnkX8e9YN7h7l2TtWltid6cakK1VWcXu43D1mAmY6R
-H2gE4R4a3FcaHpt/7GQ3Zd7ugYSn+LvRTH9lZY75eieNrkaeBkxnu1PKP7HZMp2DgxqVCnp3Jkhq
-UvVle/E1mQRY8Zi6My3BLoqTVg/YnWNo/Y7qrUo2bhH3tzhfDyECy/gswFnZ4tMFnN6vrolAoMpo
-lrPR4MapucZfzYdu6l3lsmNCMTLIw12peuBaNLxxreg34N1Z/GsdOA5ksqtmoii2S1GFfk4OLNI3
-Y4AYqYOWeQm00YwTxjPuz2CmGo0kum23Z0RzmYIQjkye06HR7jr6/lxlC8ovPLq2tAOiw5hhaEVV
-d75L0S+KBbnNuzhpocUEAQXl967MRWuROxgE4Wy15TUvO4SJshd8AInc9U8XjhzV9S0miGvKV4Y1
-QapO0FuYALb9Iaeg9UHdnLqSdkVa93sNHVATPSxRv/7ev7zr8bD+t8tspLTFsjAhPe3sPhUzXRNG
-tO2iQG9igetVgxQWuXKp+i+pOAXqHdjbsWX8vuyVuJIobBYCRY+VV58nwcc8vfLnMsNUC/rNMkK3
-imsEIwGZTqKIAiWNRLMvdBC49tVC8tcI9BjWQbQvAFnHY2s4L48v6Azd6l2/9QEM/h+S1ra2JpBe
-W0/gG/jOCwnhvtzIB+L74/QqFr0atMeb8bfIkc1H8DPcnBtOUlvnldr/Z1UHPNUMh4d6hcJf3Csx
-hEBn2B8xFzDn3j0zNorfT/NzpkpSu7DxaG84l19fR7ooi4dFwIFR4/WufcQlFq5ad1Uu4mILX6XZ
-SL74Ehv48t5hSaf97w8BtgrWTiE7uku9Ip2HMk7O9pbhyiBT97U3CyvJ0GPwcZ/oFs4OzbTsUwcE
-y1X9i6RNCPdFt06svFQEtgRdvfhwGUCxHl9Xhoy+RhVTlpqcQdNd9txL6729ZEYFiiHkVe35iuFE
-D39WCp+xukLW6dLMCSTYQAs+GSXUVXtgMM12HY4G1AOuRn+Mx8WK3YdNRHQFX4PPCspQqquQe6C1
-AJNsuF5v9es8hHny6j6t9vIDoU9it8tLMotrfi8maJXeZFo/W3MtRGUYi5skyH/L5n0HfWnrBOjB
-CO0HHy6i4sqRCo7Psexd4XDi0SUFz6yqSi9/auFSaDiJR142aD/QRwHPKQqIi+fGV4P/SamZS8k0
-SSLkTkHthzHIs9AIDyMTlbhsX3zV19QpYYstBOr65xmYKcVILu+oZyOkWi7YT53pKh8ZZ74OWsEB
-e32iTQC4lQ5lTN7SArsCpT1215TOkBcyznciIuKHeBQmWvMjeaIsDrGz3lPq6JAodLqvK1vFx0aC
-DLtCvO05arIffrQ+6BeR+TPNlywENDW4ThBjiFYjuVURH9m9J6Gb25nTBeWr5AFthEGm+6fMl8BT
-xiBW00DYYwgdQvx11379xkxm8aohpaEIvZUSNkoNNfor/yjghINb7QOlv9mJDbvZDc7jGgEZTAXo
-R9V1HoDhPQ0/jg8wxPqmaf3qG0thiOlJa3Vp23b4ctsmUk1pP6RWWkuViiV5TV7yB7m7q+tbIIeH
-C0tRGSGrgQqGaeKgHl3/IdjaT8ATYhR8Nnw65+tvEF49bqE1zdlAAVjMMdbb7ku/XDW2YXgf2cYV
-8q6PWq73mEozYjy9tFjlyIYEu6HqrUcqYiP2NZ+AaaLKNz9kXn9kRdWu0uYYeEEdTl2eA0LN65Ib
-rcQaHKb6lei06uSxPlq74SOUnXo7ecd55qvgo6yDVhkS+xTijkPAdoQg/AuU0K/vgtzBS9PBiEgH
-WoXFH166nKhGi9Y3WQxkWqn+QrahruBRSoJx/apcfdhjyVzBJrkFEWuCzgHGXrK2l3/tMp6//egr
-u5n5+Pt/vIhUMTn4UMJ9INhvNzy1tC8xPcFjN8LXzaDJ9a51g8XnOo++/rDzKIcVDBcBHo2EsOoy
-eh0/qYXkctvrfVlTDBJ63qQypKBRphItraNM218l2NdXbvESKBA2e3i6KjQ/OJNOL0bbmUb23g57
-PEGB0yhSmcKYU6dsBQ1hMUXqjtXq00zvffLy6lJ1ymXIRexZIx76rPGVBZ5kr4ElfuWkIVvYugw2
-rPLm9imNRAK8HSMzpOo8DEHGCSMJPQA1KpA7lPetLAe/7VJOxWzVIX84Hs3QJJ4sRDk0puglvrrS
-iQp56536BfJy1tQyYYY5UEkh8UaZ/oFdOeMF8KI0w6o15zusmcxBpuB5qP1o3zQDlrOXwv56wVwZ
-vPc93jEiIOygaFnI0myDIoOVuvYY6yycoc240b45dwpxkGiceQksy+dYpckyuSP5jkjTjiu=
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.3.0
+ */
+
+/**
+ *
+ *
+ * @package    PHPUnit
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.1.0
+ */
+class Util_TestDox_NamePrettifierTest extends PHPUnit_Framework_TestCase
+{
+    protected $namePrettifier;
+
+    protected function setUp()
+    {
+        $this->namePrettifier = new PHPUnit_Util_TestDox_NamePrettifier;
+    }
+
+    public function testTitleHasSensibleDefaults()
+    {
+        $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('FooTest'));
+        $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('TestFoo'));
+        $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('TestFooTest'));
+    }
+
+    public function testCaterForUserDefinedSuffix()
+    {
+        $this->namePrettifier->setSuffix('TestCase');
+        $this->namePrettifier->setPrefix(NULL);
+
+        $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('FooTestCase'));
+        $this->assertEquals('TestFoo', $this->namePrettifier->prettifyTestClass('TestFoo'));
+        $this->assertEquals('FooTest', $this->namePrettifier->prettifyTestClass('FooTest'));
+    }
+
+    public function testCaterForUserDefinedPrefix()
+    {
+        $this->namePrettifier->setSuffix(NULL);
+        $this->namePrettifier->setPrefix('XXX');
+
+        $this->assertEquals('Foo', $this->namePrettifier->prettifyTestClass('XXXFoo'));
+        $this->assertEquals('TestXXX', $this->namePrettifier->prettifyTestClass('TestXXX'));
+        $this->assertEquals('XXX', $this->namePrettifier->prettifyTestClass('XXXXXX'));
+    }
+
+    public function testTestNameIsConvertedToASentence()
+    {
+        $this->assertEquals('This is a test', $this->namePrettifier->prettifyTestMethod('testThisIsATest'));
+        $this->assertEquals('This is a test', $this->namePrettifier->prettifyTestMethod('testThisIsATest2'));
+        $this->assertEquals('this is a test', $this->namePrettifier->prettifyTestMethod('this_is_a_test'));
+        $this->assertEquals('Foo for bar is 0', $this->namePrettifier->prettifyTestMethod('testFooForBarIs0'));
+        $this->assertEquals('Foo for baz is 1', $this->namePrettifier->prettifyTestMethod('testFooForBazIs1'));
+    }
+
+    /**
+     * @ticket 224
+     */
+    public function testTestNameIsNotGroupedWhenNotInSequence()
+    {
+        $this->assertEquals('Sets redirect header on 301', $this->namePrettifier->prettifyTestMethod('testSetsRedirectHeaderOn301'));
+        $this->assertEquals('Sets redirect header on 302', $this->namePrettifier->prettifyTestMethod('testSetsRedirectHeaderOn302'));
+    }
+}

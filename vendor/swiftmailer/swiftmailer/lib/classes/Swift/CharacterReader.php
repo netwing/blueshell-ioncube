@@ -1,30 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPpiwvUd31jxEZenmoZQMA0vpjMwKzmiICTE5Qnjjv9tKHxED5ZzmpsIRIAmMSdthzF7YYJUd
-/UzylrAxhiwp/L4DrjFvAgrlUV7sPHFpdd8sLqlOFo/cab1Iy8ltQq0s64vhLLNw/vywIZdhJEzf
-Fir5ZHaiceT8bMGz6oVupIjjbM1oD8J50fcP7HU9QgVOHrqvbgrqssCtcCX6sGhGp8GcwQxsP/kW
-65zxXHdC/dZ8lpHWXxuCdwzHAE4xzt2gh9fl143SQNGkPaPiS+DgNdEVFczuR1EuS0CcC1oGQ0Fx
-IDQ5DUY01JUcFMyKe7C4qvuzjSx+Pk7rMLhNcQWHbgrviz2HiKVgcfE5Tnd2bOI+x5rfNP71fzeI
-t6Z/u8FmwcYU2dmiYNphPKOQFgH1FyWHbpSah/xMu0S7DawmLTi3I4mACE/ikX0IxUMrKHDk3Pc4
-f1N2A84/EX7CEmwwTbjggRPSnTthh6ejqU0rS2ywjIR9wWz3UAvxD5rTNGLJ3hTp4lLW59xxcuuQ
-ukvckESUQVzWj9fsyKMIELJIJGSQaFDlg5kbXJlCSsHJvYNDFNBQa8PY7nNic90HSNjPcpULTt79
-5v9taoH5aXj7WoILMcdD4fPAYAifeUv4bn7wLHkgikUbMwWkKhfBVQPEidbTSJkppsLbkTO4kr6b
-vobdWj/QoYc4RDoPxvW99SxxaRf9qjkOcV0Fdug0eiJgo5fossFYid7fBbG1oXdFmzHzkvrbCdpV
-9CU/Rt36sZyHEMgP3rtGeR6/rUXrj9xi62IP1Qd5KdSEKY0BJzdDArxabRPkE6KtzWtGo6unDyRi
-Euc+cx648XvdLy6+VrAji/8MRdQB+/+Tr/PXIxsc2l01tKr3AfhJial4vAKaclf1rd1VHHCHPmiG
-tetfr/+opkoofYFuZBULtUO92gx7WsGoZosMRJjfSGZHjn+tLnosXL51FfSd1zKSG7AAaPLlVHaI
-j6dz5dxdEGTJWluQ9BwcSroNcVuj3Q0U2602YXGriiWTPB+D0Xn5D9wn5RrniVDPWtvm2k6xGI3G
-x61LxZ6l2bJW2kUom5yPbnCfQPEc8QmqsSYlILyDpfYAwrgVS2+3yqLET15ZHnUSdRgCd7K98WPX
-zXyIhn411eaDIrIbypJAdk4oxyiTOgEacKZnJAcHG/c9i21NJPnaLjl2BXQ1JKAwkbP4AHrpn05v
-q/il2bR/xOv3d1CS+/PhgPmzeGS6ZNAvMsvqwlGk2LQ4/ZrPsSy8fmNMFa3ZlmDa6n+8e5ggYxc3
-ZUql0hcE1ge9W2HV1zvzqCfmKmsV0bCLO2+OzHl/n4SEWjdnsJlkzx5aBTEpVqYDaKIyqovUuZBB
-qtvn0eqq2bwIaOVuOlyHzs+7U1w+u2KFK7TLpkWrSnige8ym8vUnWNmB1/zOKmshQvRYAy7sc0nZ
-KJWTukoVzpqEoyGnCuJMkN1FXMtsnH+TnXwdPS89kYN8Dgr8qIPkhxzpyTFk0ZFUcrEejpQ/aKOv
-62allPdz7Z0pDDk0Qa3aMA177TVLHRxJoeU4Jz3dw/KuSDCLHu4Bx7MnvEf7BzFkdyg6WEmIifIy
-HA6B3nFS+SLWoZ2z7m2e08LEuUvXiTzUianmSqFqs0emtFZ0AWuCltK+4ow8XR4Xxr6p567a6d31
-wV/Gfd9/eSs4jUWTgCQaHn8pwOhBoebksAyNay6OvCHrPXHwhkZ3EPpDgkAzPdIeBSqbb0N9cXyI
-74/9oCX456LaNmwne2RAi3V80wMOHbAhxgxLHBA+ZHt99EAnM5JH5uiBy4I1XLCj4EaaUrrkO7pk
-C9/V/xO6hlQrgeUd4bamgnKBrPDQdLtLsGomXf6+XPnf+L5jRBupyZMLZ9LLtpVI3YuvDhP2TTcH
-rryBMCBowWuwxrk80lZPvAHkNd/pueMn+cmXIoCaUG499/mfYwdvCytMN7TZrApk7htU3ePbtywA
-n2+fdmwVRjXrOomT9hCjTrMp
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Analyzes characters for a specific character set.
+ *
+ * @package    Swift
+ * @subpackage Encoder
+ * @author     Chris Corbyn
+ * @author     Xavier De Cock <xdecock@gmail.com>
+ */
+interface Swift_CharacterReader
+{
+    const MAP_TYPE_INVALID = 0x01;
+    const MAP_TYPE_FIXED_LEN = 0x02;
+    const MAP_TYPE_POSITIONS = 0x03;
+
+    /**
+     * Returns the complete character map
+     *
+     * @param string  $string
+     * @param integer $startOffset
+     * @param array   $currentMap
+     * @param mixed   $ignoredChars
+     *
+     * @return integer
+     */
+    public function getCharPositions($string, $startOffset, &$currentMap, &$ignoredChars);
+
+    /**
+     * Returns the mapType, see constants.
+     *
+     * @return integer
+     */
+    public function getMapType();
+
+    /**
+     * Returns an integer which specifies how many more bytes to read.
+     *
+     * A positive integer indicates the number of more bytes to fetch before invoking
+     * this method again.
+     *
+     * A value of zero means this is already a valid character.
+     * A value of -1 means this cannot possibly be a valid character.
+     *
+     * @param integer[] $bytes
+     * @param integer   $size
+     *
+     * @return integer
+     */
+    public function validateByteSequence($bytes, $size);
+
+    /**
+     * Returns the number of bytes which should be read to start each character.
+     *
+     * For fixed width character sets this should be the number of octets-per-character.
+     * For multibyte character sets this will probably be 1.
+     *
+     * @return integer
+     */
+    public function getInitialByteSize();
+}

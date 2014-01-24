@@ -1,245 +1,492 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-KKzmi0wzxlnp6iX1IDA+iIhilW==
+<?php
+/**
+ * This file contains classes implementing security manager feature.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CSecurityManager provides private keys, hashing and encryption functions.
+ *
+ * CSecurityManager is used by Yii components and applications for security-related purpose.
+ * For example, it is used in cookie validation feature to prevent cookie data
+ * from being tampered.
+ *
+ * CSecurityManager is mainly used to protect data from being tampered and viewed.
+ * It can generate HMAC and encrypt the data. The private key used to generate HMAC
+ * is set by {@link setValidationKey ValidationKey}. The key used to encrypt data is
+ * specified by {@link setEncryptionKey EncryptionKey}. If the above keys are not
+ * explicitly set, random keys will be generated and used.
+ *
+ * To protected data with HMAC, call {@link hashData()}; and to check if the data
+ * is tampered, call {@link validateData()}, which will return the real data if
+ * it is not tampered. The algorithm used to generated HMAC is specified by
+ * {@link validation}.
+ *
+ * To encrypt and decrypt data, call {@link encrypt()} and {@link decrypt()}
+ * respectively, which uses 3DES encryption algorithm.  Note, the PHP Mcrypt
+ * extension must be installed and loaded.
+ *
+ * CSecurityManager is a core application component that can be accessed via
+ * {@link CApplication::getSecurityManager()}.
+ *
+ * @property string $validationKey The private key used to generate HMAC.
+ * If the key is not explicitly set, a random one is generated and returned.
+ * @property string $encryptionKey The private key used to encrypt/decrypt data.
+ * If the key is not explicitly set, a random one is generated and returned.
+ * @property string $validation
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+class CSecurityManager extends CApplicationComponent
+{
+	const STATE_VALIDATION_KEY='Yii.CSecurityManager.validationkey';
+	const STATE_ENCRYPTION_KEY='Yii.CSecurityManager.encryptionkey';
+
+	/**
+	 * @var string the name of the hashing algorithm to be used by {@link computeHMAC}.
+	 * See {@link http://php.net/manual/en/function.hash-algos.php hash-algos} for the list of possible
+	 * hash algorithms. Note that if you are using PHP 5.1.1 or below, you can only use 'sha1' or 'md5'.
+	 *
+	 * Defaults to 'sha1', meaning using SHA1 hash algorithm.
+	 * @since 1.1.3
+	 */
+	public $hashAlgorithm='sha1';
+	/**
+	 * @var mixed the name of the crypt algorithm to be used by {@link encrypt} and {@link decrypt}.
+	 * This will be passed as the first parameter to {@link http://php.net/manual/en/function.mcrypt-module-open.php mcrypt_module_open}.
+	 *
+	 * This property can also be configured as an array. In this case, the array elements will be passed in order
+	 * as parameters to mcrypt_module_open. For example, <code>array('rijndael-256', '', 'ofb', '')</code>.
+	 *
+	 * Defaults to 'des', meaning using DES crypt algorithm.
+	 * @since 1.1.3
+	 */
+	public $cryptAlgorithm='des';
+
+	private $_validationKey;
+	private $_encryptionKey;
+	private $_mbstring;
+
+	public function init()
+	{
+		parent::init();
+		$this->_mbstring=extension_loaded('mbstring');
+	}
+
+	/**
+	 * @return string a randomly generated private key.
+	 * @deprecated in favor of {@link generateRandomString()} since 1.1.14. Never use this method.
+	 */
+	protected function generateRandomKey()
+	{
+		return $this->generateRandomString(32);
+	}
+
+	/**
+	 * @return string the private key used to generate HMAC.
+	 * If the key is not explicitly set, a random one is generated and returned.
+	 * @throws CException in case random string cannot be generated.
+	 */
+	public function getValidationKey()
+	{
+		if($this->_validationKey!==null)
+			return $this->_validationKey;
+		else
+		{
+			if(($key=Yii::app()->getGlobalState(self::STATE_VALIDATION_KEY))!==null)
+				$this->setValidationKey($key);
+			else
+			{
+				if(($key=$this->generateRandomString(32,true))===false)
+					if(($key=$this->generateRandomString(32,false))===false)
+						throw new CException(Yii::t('yii',
+							'CSecurityManager::generateRandomString() cannot generate random string in the current environment.'));
+				$this->setValidationKey($key);
+				Yii::app()->setGlobalState(self::STATE_VALIDATION_KEY,$key);
+			}
+			return $this->_validationKey;
+		}
+	}
+
+	/**
+	 * @param string $value the key used to generate HMAC
+	 * @throws CException if the key is empty
+	 */
+	public function setValidationKey($value)
+	{
+		if(!empty($value))
+			$this->_validationKey=$value;
+		else
+			throw new CException(Yii::t('yii','CSecurityManager.validationKey cannot be empty.'));
+	}
+
+	/**
+	 * @return string the private key used to encrypt/decrypt data.
+	 * If the key is not explicitly set, a random one is generated and returned.
+	 * @throws CException in case random string cannot be generated.
+	 */
+	public function getEncryptionKey()
+	{
+		if($this->_encryptionKey!==null)
+			return $this->_encryptionKey;
+		else
+		{
+			if(($key=Yii::app()->getGlobalState(self::STATE_ENCRYPTION_KEY))!==null)
+				$this->setEncryptionKey($key);
+			else
+			{
+				if(($key=$this->generateRandomString(32,true))===false)
+					if(($key=$this->generateRandomString(32,false))===false)
+						throw new CException(Yii::t('yii',
+							'CSecurityManager::generateRandomString() cannot generate random string in the current environment.'));
+				$this->setEncryptionKey($key);
+				Yii::app()->setGlobalState(self::STATE_ENCRYPTION_KEY,$key);
+			}
+			return $this->_encryptionKey;
+		}
+	}
+
+	/**
+	 * @param string $value the key used to encrypt/decrypt data.
+	 * @throws CException if the key is empty
+	 */
+	public function setEncryptionKey($value)
+	{
+		if(!empty($value))
+			$this->_encryptionKey=$value;
+		else
+			throw new CException(Yii::t('yii','CSecurityManager.encryptionKey cannot be empty.'));
+	}
+
+	/**
+	 * This method has been deprecated since version 1.1.3.
+	 * Please use {@link hashAlgorithm} instead.
+	 * @return string -
+	 * @deprecated
+	 */
+	public function getValidation()
+	{
+		return $this->hashAlgorithm;
+	}
+
+	/**
+	 * This method has been deprecated since version 1.1.3.
+	 * Please use {@link hashAlgorithm} instead.
+	 * @param string $value -
+	 * @deprecated
+	 */
+	public function setValidation($value)
+	{
+		$this->hashAlgorithm=$value;
+	}
+
+	/**
+	 * Encrypts data.
+	 * @param string $data data to be encrypted.
+	 * @param string $key the decryption key. This defaults to null, meaning using {@link getEncryptionKey EncryptionKey}.
+	 * @return string the encrypted data
+	 * @throws CException if PHP Mcrypt extension is not loaded
+	 */
+	public function encrypt($data,$key=null)
+	{
+		$module=$this->openCryptModule();
+		$key=$this->substr($key===null ? md5($this->getEncryptionKey()) : $key,0,mcrypt_enc_get_key_size($module));
+		srand();
+		$iv=mcrypt_create_iv(mcrypt_enc_get_iv_size($module), MCRYPT_RAND);
+		mcrypt_generic_init($module,$key,$iv);
+		$encrypted=$iv.mcrypt_generic($module,$data);
+		mcrypt_generic_deinit($module);
+		mcrypt_module_close($module);
+		return $encrypted;
+	}
+
+	/**
+	 * Decrypts data
+	 * @param string $data data to be decrypted.
+	 * @param string $key the decryption key. This defaults to null, meaning using {@link getEncryptionKey EncryptionKey}.
+	 * @return string the decrypted data
+	 * @throws CException if PHP Mcrypt extension is not loaded
+	 */
+	public function decrypt($data,$key=null)
+	{
+		$module=$this->openCryptModule();
+		$key=$this->substr($key===null ? md5($this->getEncryptionKey()) : $key,0,mcrypt_enc_get_key_size($module));
+		$ivSize=mcrypt_enc_get_iv_size($module);
+		$iv=$this->substr($data,0,$ivSize);
+		mcrypt_generic_init($module,$key,$iv);
+		$decrypted=mdecrypt_generic($module,$this->substr($data,$ivSize,$this->strlen($data)));
+		mcrypt_generic_deinit($module);
+		mcrypt_module_close($module);
+		return rtrim($decrypted,"\0");
+	}
+
+	/**
+	 * Opens the mcrypt module with the configuration specified in {@link cryptAlgorithm}.
+	 * @throws CException if failed to initialize the mcrypt module or PHP mcrypt extension
+	 * @return resource the mycrypt module handle.
+	 * @since 1.1.3
+	 */
+	protected function openCryptModule()
+	{
+		if(extension_loaded('mcrypt'))
+		{
+			if(is_array($this->cryptAlgorithm))
+				$module=@call_user_func_array('mcrypt_module_open',$this->cryptAlgorithm);
+			else
+				$module=@mcrypt_module_open($this->cryptAlgorithm,'', MCRYPT_MODE_CBC,'');
+
+			if($module===false)
+				throw new CException(Yii::t('yii','Failed to initialize the mcrypt module.'));
+
+			return $module;
+		}
+		else
+			throw new CException(Yii::t('yii','CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.'));
+	}
+
+	/**
+	 * Prefixes data with an HMAC.
+	 * @param string $data data to be hashed.
+	 * @param string $key the private key to be used for generating HMAC. Defaults to null, meaning using {@link validationKey}.
+	 * @return string data prefixed with HMAC
+	 */
+	public function hashData($data,$key=null)
+	{
+		return $this->computeHMAC($data,$key).$data;
+	}
+
+	/**
+	 * Validates if data is tampered.
+	 * @param string $data data to be validated. The data must be previously
+	 * generated using {@link hashData()}.
+	 * @param string $key the private key to be used for generating HMAC. Defaults to null, meaning using {@link validationKey}.
+	 * @return string the real data with HMAC stripped off. False if the data
+	 * is tampered.
+	 */
+	public function validateData($data,$key=null)
+	{
+		$len=$this->strlen($this->computeHMAC('test'));
+		if($this->strlen($data)>=$len)
+		{
+			$hmac=$this->substr($data,0,$len);
+			$data2=$this->substr($data,$len,$this->strlen($data));
+			return $hmac===$this->computeHMAC($data2,$key)?$data2:false;
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * Computes the HMAC for the data with {@link getValidationKey validationKey}. This method has been made public
+	 * since 1.1.14.
+	 * @param string $data data to be generated HMAC.
+	 * @param string|null $key the private key to be used for generating HMAC. Defaults to null, meaning using
+	 * {@link validationKey} value.
+	 * @param string|null $hashAlgorithm the name of the hashing algorithm to be used.
+	 * See {@link http://php.net/manual/en/function.hash-algos.php hash-algos} for the list of possible
+	 * hash algorithms. Note that if you are using PHP 5.1.1 or below, you can only use 'sha1' or 'md5'.
+	 * Defaults to null, meaning using {@link hashAlgorithm} value.
+	 * @return string the HMAC for the data.
+	 * @throws CException on unsupported hash algorithm given.
+	 */
+	public function computeHMAC($data,$key=null,$hashAlgorithm=null)
+	{
+		if($key===null)
+			$key=$this->getValidationKey();
+		if($hashAlgorithm===null)
+			$hashAlgorithm=$this->hashAlgorithm;
+
+		if(function_exists('hash_hmac'))
+			return hash_hmac($hashAlgorithm,$data,$key);
+
+		if(0===strcasecmp($hashAlgorithm,'sha1'))
+		{
+			$pack='H40';
+			$func='sha1';
+		}
+		elseif(0===strcasecmp($hashAlgorithm,'md5'))
+		{
+			$pack='H32';
+			$func='md5';
+		}
+		else
+		{
+			throw new CException(Yii::t('yii','Only SHA1 and MD5 hashing algorithms are supported when using PHP 5.1.1 or below.'));
+		}
+		if($this->strlen($key)>64)
+			$key=pack($pack,$func($key));
+		if($this->strlen($key)<64)
+			$key=str_pad($key,64,chr(0));
+		$key=$this->substr($key,0,64);
+		return $func((str_repeat(chr(0x5C), 64) ^ $key) . pack($pack, $func((str_repeat(chr(0x36), 64) ^ $key) . $data)));
+	}
+
+	/**
+	 * Generate a random ASCII string. Generates only [0-9a-zA-z_~] characters which are all
+	 * transparent in raw URL encoding.
+	 * @param integer $length length of the generated string in characters.
+	 * @param boolean $cryptographicallyStrong set this to require cryptographically strong randomness.
+	 * @return string|boolean random string or false in case it cannot be generated.
+	 * @since 1.1.14
+	 */
+	public function generateRandomString($length,$cryptographicallyStrong=true)
+	{
+		if(($randomBytes=$this->generateRandomBytes($length+2,$cryptographicallyStrong))!==false)
+			return strtr($this->substr(base64_encode($randomBytes),0,$length),array('+'=>'_','/'=>'~'));
+		return false;
+	}
+
+	/**
+	 * Generates a string of random bytes.
+	 * @param integer $length number of random bytes to be generated.
+	 * @param boolean $cryptographicallyStrong whether to fail if a cryptographically strong
+	 * result cannot be generated. The method attempts to read from a cryptographically strong
+	 * pseudorandom number generator (CS-PRNG), see
+	 * {@link https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator#Requirements Wikipedia}.
+	 * However, in some runtime environments, PHP has no access to a CS-PRNG, in which case
+	 * the method returns false if $cryptographicallyStrong is true. When $cryptographicallyStrong is false,
+	 * the method always returns a pseudorandom result but may fall back to using {@link generatePseudoRandomBlock}.
+	 * This method does not guarantee that entropy, from sources external to the CS-PRNG, was mixed into
+	 * the CS-PRNG state between each successive call. The caller can therefore expect non-blocking
+	 * behavior, unlike, for example, reading from /dev/random on Linux, see
+	 * {@link http://eprint.iacr.org/2006/086.pdf Gutterman et al 2006}.
+	 * @return boolean|string generated random binary string or false on failure.
+	 * @since 1.1.14
+	 */
+	public function generateRandomBytes($length,$cryptographicallyStrong=true)
+	{
+		$bytes='';
+		if(function_exists('openssl_random_pseudo_bytes'))
+		{
+			$bytes=openssl_random_pseudo_bytes($length,$strong);
+			if($this->strlen($bytes)>=$length && ($strong || !$cryptographicallyStrong))
+				return $this->substr($bytes,0,$length);
+		}
+
+		if(function_exists('mcrypt_create_iv') &&
+			($bytes=mcrypt_create_iv($length, MCRYPT_DEV_URANDOM))!==false &&
+			$this->strlen($bytes)>=$length)
+		{
+			return $this->substr($bytes,0,$length);
+		}
+
+		if(($file=@fopen('/dev/urandom','rb'))!==false &&
+			($bytes=@fread($file,$length))!==false &&
+			(fclose($file) || true) &&
+			$this->strlen($bytes)>=$length)
+		{
+			return $this->substr($bytes,0,$length);
+		}
+
+		$i=0;
+		while($this->strlen($bytes)<$length &&
+			($byte=$this->generateSessionRandomBlock())!==false &&
+			++$i<3)
+		{
+			$bytes.=$byte;
+		}
+		if($this->strlen($bytes)>=$length)
+			return $this->substr($bytes,0,$length);
+
+		if ($cryptographicallyStrong)
+			return false;
+
+		while($this->strlen($bytes)<$length)
+			$bytes.=$this->generatePseudoRandomBlock();
+		return $this->substr($bytes,0,$length);
+	}
+
+	/**
+	 * Generate a pseudo random block of data using several sources. On some systems this may be a bit
+	 * better than PHP's {@link mt_rand} built-in function, which is not really random.
+	 * @return string of 64 pseudo random bytes.
+	 * @since 1.1.14
+	 */
+	public function generatePseudoRandomBlock()
+	{
+		$bytes='';
+
+		if (function_exists('openssl_random_pseudo_bytes')
+			&& ($bytes=openssl_random_pseudo_bytes(512))!==false
+			&& $this->strlen($bytes)>=512)
+		{
+			return $this->substr($bytes,0,512);
+		}
+
+		for($i=0;$i<32;++$i)
+			$bytes.=pack('S',mt_rand(0,0xffff));
+
+		// On UNIX and UNIX-like operating systems the numerical values in `ps`, `uptime` and `iostat`
+		// ought to be fairly unpredictable. Gather the non-zero digits from those.
+		foreach(array('ps','uptime','iostat') as $command) {
+			@exec($command,$commandResult,$retVal);
+			if(is_array($commandResult) && !empty($commandResult) && $retVal==0)
+				$bytes.=preg_replace('/[^1-9]/','',implode('',$commandResult));
+		}
+
+		// Gather the current time's microsecond part. Note: this is only a source of entropy on
+		// the first call! If multiple calls are made, the entropy is only as much as the
+		// randomness in the time between calls.
+		$bytes.=$this->substr(microtime(),2,6);
+
+		// Concatenate everything gathered, mix it with sha512. hash() is part of PHP core and
+		// enabled by default but it can be disabled at compile time but we ignore that possibility here.
+		return hash('sha512',$bytes,true);
+	}
+
+	/**
+	 * Get random bytes from the system entropy source via PHP session manager.
+	 * @return boolean|string 20-byte random binary string or false on error.
+	 * @since 1.1.14
+	 */
+	public function generateSessionRandomBlock()
+	{
+		ini_set('session.entropy_length',20);
+		if(ini_get('session.entropy_length')!=20)
+			return false;
+
+		// These calls are (supposed to be, according to PHP manual) safe even if
+		// there is already an active session for the calling script.
+		@session_start();
+		@session_regenerate_id();
+
+		$bytes=session_id();
+		if(!$bytes)
+			return false;
+
+		// $bytes has 20 bytes of entropy but the session manager converts the binary
+		// random bytes into something readable. We have to convert that back.
+		// SHA-1 should do it without losing entropy.
+		return sha1($bytes,true);
+	}
+
+	/**
+	 * Returns the length of the given string.
+	 * If available uses the multibyte string function mb_strlen.
+	 * @param string $string the string being measured for length
+	 * @return integer the length of the string
+	 */
+	private function strlen($string)
+	{
+		return $this->_mbstring ? mb_strlen($string,'8bit') : strlen($string);
+	}
+
+	/**
+	 * Returns the portion of string specified by the start and length parameters.
+	 * If available uses the multibyte string function mb_substr
+	 * @param string $string the input string. Must be one character or longer.
+	 * @param integer $start the starting position
+	 * @param integer $length the desired portion length
+	 * @return string the extracted part of string, or FALSE on failure or an empty string.
+	 */
+	private function substr($string,$start,$length)
+	{
+		return $this->_mbstring ? mb_substr($string,$start,$length,'8bit') : substr($string,$start,$length);
+	}
+}

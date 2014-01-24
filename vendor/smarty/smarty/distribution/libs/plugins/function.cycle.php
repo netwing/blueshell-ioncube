@@ -1,53 +1,105 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-XHu2Y0a/ihpB/11A
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsFunction
+ */
+
+/**
+ * Smarty {cycle} function plugin
+ *
+ * Type:     function<br>
+ * Name:     cycle<br>
+ * Date:     May 3, 2002<br>
+ * Purpose:  cycle through given values<br>
+ * Params:
+ * <pre>
+ * - name      - name of cycle (optional)
+ * - values    - comma separated list of values to cycle, or an array of values to cycle
+ *               (this can be left out for subsequent calls)
+ * - reset     - boolean - resets given var to true
+ * - print     - boolean - print var or not. default is true
+ * - advance   - boolean - whether or not to advance the cycle
+ * - delimiter - the value delimiter, default is ","
+ * - assign    - boolean, assigns to template var instead of printed.
+ * </pre>
+ * Examples:<br>
+ * <pre>
+ * {cycle values="#eeeeee,#d0d0d0d"}
+ * {cycle name=row values="one,two,three" reset=true}
+ * {cycle name=row}
+ * </pre>
+ *
+ * @link http://www.smarty.net/manual/en/language.function.cycle.php {cycle}
+ *       (Smarty online manual)
+ * @author Monte Ohrt <monte at ohrt dot com>
+ * @author credit to Mark Priatel <mpriatel@rogers.com>
+ * @author credit to Gerard <gerard@interfold.com>
+ * @author credit to Jason Sweat <jsweat_php@yahoo.com>
+ * @version  1.3
+ * @param array                    $params   parameters
+ * @param Smarty_Internal_Template $template template object
+ * @return string|null
+ */
+
+function smarty_function_cycle($params, $template)
+{
+    static $cycle_vars;
+
+    $name = (empty($params['name'])) ? 'default' : $params['name'];
+    $print = (isset($params['print'])) ? (bool) $params['print'] : true;
+    $advance = (isset($params['advance'])) ? (bool) $params['advance'] : true;
+    $reset = (isset($params['reset'])) ? (bool) $params['reset'] : false;
+
+    if (!isset($params['values'])) {
+        if (!isset($cycle_vars[$name]['values'])) {
+            trigger_error("cycle: missing 'values' parameter");
+
+            return;
+        }
+    } else {
+        if(isset($cycle_vars[$name]['values'])
+            && $cycle_vars[$name]['values'] != $params['values'] ) {
+            $cycle_vars[$name]['index'] = 0;
+        }
+        $cycle_vars[$name]['values'] = $params['values'];
+    }
+
+    if (isset($params['delimiter'])) {
+        $cycle_vars[$name]['delimiter'] = $params['delimiter'];
+    } elseif (!isset($cycle_vars[$name]['delimiter'])) {
+        $cycle_vars[$name]['delimiter'] = ',';
+    }
+
+    if (is_array($cycle_vars[$name]['values'])) {
+        $cycle_array = $cycle_vars[$name]['values'];
+    } else {
+        $cycle_array = explode($cycle_vars[$name]['delimiter'],$cycle_vars[$name]['values']);
+    }
+
+    if (!isset($cycle_vars[$name]['index']) || $reset ) {
+        $cycle_vars[$name]['index'] = 0;
+    }
+
+    if (isset($params['assign'])) {
+        $print = false;
+        $template->assign($params['assign'], $cycle_array[$cycle_vars[$name]['index']]);
+    }
+
+    if ($print) {
+        $retval = $cycle_array[$cycle_vars[$name]['index']];
+    } else {
+        $retval = null;
+    }
+
+    if ($advance) {
+        if ( $cycle_vars[$name]['index'] >= count($cycle_array) -1 ) {
+            $cycle_vars[$name]['index'] = 0;
+        } else {
+            $cycle_vars[$name]['index']++;
+        }
+    }
+
+    return $retval;
+}

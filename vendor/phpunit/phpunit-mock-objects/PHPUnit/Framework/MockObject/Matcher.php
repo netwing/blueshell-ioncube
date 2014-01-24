@@ -1,99 +1,308 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      File available since Release 1.0.0
+ */
+
+/**
+ * Main matcher which defines a full expectation using method, parameter and
+ * invocation matchers.
+ * This matcher encapsulates all the other matchers and allows the builder to
+ * set the specific matchers when the appropriate methods are called (once(),
+ * where() etc.).
+ *
+ * All properties are public so that they can easily be accessed by the builder.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version    Release: @package_version@
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      Class available since Release 1.0.0
+ */
+class PHPUnit_Framework_MockObject_Matcher implements PHPUnit_Framework_MockObject_Matcher_Invocation
+{
+    /**
+     * @var PHPUnit_Framework_MockObject_Matcher_Invocation
+     */
+    public $invocationMatcher;
+
+    /**
+     * @var mixed
+     */
+    public $afterMatchBuilderId = NULL;
+
+    /**
+     * @var boolean
+     */
+    public $afterMatchBuilderIsInvoked = FALSE;
+
+    /**
+     * @var PHPUnit_Framework_MockObject_Matcher_MethodName
+     */
+    public $methodNameMatcher = NULL;
+
+    /**
+     * @var PHPUnit_Framework_MockObject_Matcher_Parameters
+     */
+    public $parametersMatcher = NULL;
+
+    /**
+     * @var PHPUnit_Framework_MockObject_Stub
+     */
+    public $stub = NULL;
+
+    /**
+     * @param PHPUnit_Framework_MockObject_Matcher_Invocation $invocationMatcher
+     */
+    public function __construct(PHPUnit_Framework_MockObject_Matcher_Invocation $invocationMatcher)
+    {
+        $this->invocationMatcher = $invocationMatcher;
+    }
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        $list = array();
+
+        if ($this->invocationMatcher !== NULL) {
+            $list[] = $this->invocationMatcher->toString();
+        }
+
+        if ($this->methodNameMatcher !== NULL) {
+            $list[] = 'where ' . $this->methodNameMatcher->toString();
+        }
+
+        if ($this->parametersMatcher !== NULL) {
+            $list[] = 'and ' . $this->parametersMatcher->toString();
+        }
+
+        if ($this->afterMatchBuilderId !== NULL) {
+            $list[] = 'after ' . $this->afterMatchBuilderId;
+        }
+
+        if ($this->stub !== NULL) {
+            $list[] = 'will ' . $this->stub->toString();
+        }
+
+        return join(' ', $list);
+    }
+
+    /**
+     * @param  PHPUnit_Framework_MockObject_Invocation $invocation
+     * @return mixed
+     */
+    public function invoked(PHPUnit_Framework_MockObject_Invocation $invocation)
+    {
+        if ($this->invocationMatcher === NULL) {
+            throw new PHPUnit_Framework_Exception(
+              'No invocation matcher is set'
+            );
+        }
+
+        if ($this->methodNameMatcher === NULL) {
+            throw new PHPUnit_Framework_Exception('No method matcher is set');
+        }
+
+        if ($this->afterMatchBuilderId !== NULL) {
+            $builder = $invocation->object
+                                  ->__phpunit_getInvocationMocker()
+                                  ->lookupId($this->afterMatchBuilderId);
+
+            if (!$builder) {
+                throw new PHPUnit_Framework_Exception(
+                  sprintf(
+                    'No builder found for match builder identification <%s>',
+
+                    $this->afterMatchBuilderId
+                  )
+                );
+            }
+
+            $matcher = $builder->getMatcher();
+
+            if ($matcher && $matcher->invocationMatcher->hasBeenInvoked()) {
+                $this->afterMatchBuilderIsInvoked = TRUE;
+            }
+        }
+
+        $this->invocationMatcher->invoked($invocation);
+
+        try {
+            if ( $this->parametersMatcher !== NULL &&
+                !$this->parametersMatcher->matches($invocation)) {
+                $this->parametersMatcher->verify();
+            }
+        }
+
+        catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            throw new PHPUnit_Framework_ExpectationFailedException(
+              sprintf(
+                "Expectation failed for %s when %s\n%s",
+
+                $this->methodNameMatcher->toString(),
+                $this->invocationMatcher->toString(),
+                $e->getMessage()
+              ),
+              $e->getComparisonFailure()
+            );
+        }
+
+        if ($this->stub) {
+            return $this->stub->invoke($invocation);
+        }
+
+        return NULL;
+    }
+
+    /**
+     * @param  PHPUnit_Framework_MockObject_Invocation $invocation
+     * @return boolean
+     */
+    public function matches(PHPUnit_Framework_MockObject_Invocation $invocation)
+    {
+        if ($this->afterMatchBuilderId !== NULL) {
+            $builder = $invocation->object
+                                  ->__phpunit_getInvocationMocker()
+                                  ->lookupId($this->afterMatchBuilderId);
+
+            if (!$builder) {
+                throw new PHPUnit_Framework_Exception(
+                  sprintf(
+                    'No builder found for match builder identification <%s>',
+
+                    $this->afterMatchBuilderId
+                  )
+                );
+            }
+
+            $matcher = $builder->getMatcher();
+
+            if (!$matcher) {
+                return FALSE;
+            }
+
+            if (!$matcher->invocationMatcher->hasBeenInvoked()) {
+                return FALSE;
+            }
+        }
+
+        if ($this->invocationMatcher === NULL) {
+            throw new PHPUnit_Framework_Exception(
+              'No invocation matcher is set'
+            );
+        }
+
+        if ($this->methodNameMatcher === NULL) {
+            throw new PHPUnit_Framework_Exception('No method matcher is set');
+        }
+
+        if (!$this->invocationMatcher->matches($invocation)) {
+            return FALSE;
+        }
+
+        try {
+            if (!$this->methodNameMatcher->matches($invocation)) {
+                return FALSE;
+            }
+        }
+
+        catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            throw new PHPUnit_Framework_ExpectationFailedException(
+              sprintf(
+                "Expectation failed for %s when %s\n%s",
+
+                $this->methodNameMatcher->toString(),
+                $this->invocationMatcher->toString(),
+                $e->getMessage()
+              ),
+              $e->getComparisonFailure()
+            );
+        }
+
+        return TRUE;
+    }
+
+    /**
+     * @throws PHPUnit_Framework_Exception
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    public function verify()
+    {
+        if ($this->invocationMatcher === NULL) {
+            throw new PHPUnit_Framework_Exception(
+              'No invocation matcher is set'
+            );
+        }
+
+        if ($this->methodNameMatcher === NULL) {
+            throw new PHPUnit_Framework_Exception('No method matcher is set');
+        }
+
+        try {
+            $this->invocationMatcher->verify();
+
+            if ($this->parametersMatcher === NULL) {
+                $this->parametersMatcher = new PHPUnit_Framework_MockObject_Matcher_AnyParameters;
+            }
+
+            $invocationIsAny = get_class($this->invocationMatcher) === 'PHPUnit_Framework_MockObject_Matcher_AnyInvokedCount';
+            if (!$invocationIsAny) {
+                $this->parametersMatcher->verify();
+            }
+        }
+
+        catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            throw new PHPUnit_Framework_ExpectationFailedException(
+              sprintf(
+                "Expectation failed for %s when %s.\n%s",
+
+                $this->methodNameMatcher->toString(),
+                $this->invocationMatcher->toString(),
+                $e->getMessage()
+              )
+            );
+        }
+    }
+}

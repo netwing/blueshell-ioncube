@@ -1,119 +1,279 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-P1/m1mmDqvoXZpsGOm==
+<?php
+/**
+ * CValidator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CValidator is the base class for all validators.
+ *
+ * Child classes must implement the {@link validateAttribute} method.
+ *
+ * The following properties are defined in CValidator:
+ * <ul>
+ * <li>{@link attributes}: array, list of attributes to be validated;</li>
+ * <li>{@link message}: string, the customized error message. The message
+ *   may contain placeholders that will be replaced with the actual content.
+ *   For example, the "{attribute}" placeholder will be replaced with the label
+ *   of the problematic attribute. Different validators may define additional
+ *   placeholders.</li>
+ * <li>{@link on}: string, in which scenario should the validator be in effect.
+ *   This is used to match the 'on' parameter supplied when calling {@link CModel::validate}.</li>
+ * </ul>
+ *
+ * When using {@link createValidator} to create a validator, the following aliases
+ * are recognized as the corresponding built-in validator classes:
+ * <ul>
+ * <li>required: {@link CRequiredValidator}</li>
+ * <li>filter: {@link CFilterValidator}</li>
+ * <li>match: {@link CRegularExpressionValidator}</li>
+ * <li>email: {@link CEmailValidator}</li>
+ * <li>url: {@link CUrlValidator}</li>
+ * <li>unique: {@link CUniqueValidator}</li>
+ * <li>compare: {@link CCompareValidator}</li>
+ * <li>length: {@link CStringValidator}</li>
+ * <li>in: {@link CRangeValidator}</li>
+ * <li>numerical: {@link CNumberValidator}</li>
+ * <li>captcha: {@link CCaptchaValidator}</li>
+ * <li>type: {@link CTypeValidator}</li>
+ * <li>file: {@link CFileValidator}</li>
+ * <li>default: {@link CDefaultValueValidator}</li>
+ * <li>exist: {@link CExistValidator}</li>
+ * <li>boolean: {@link CBooleanValidator}</li>
+ * <li>date: {@link CDateValidator}</li>
+ * <li>safe: {@link CSafeValidator}</li>
+ * <li>unsafe: {@link CUnsafeValidator}</li>
+ * </ul>
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.validators
+ * @since 1.0
+ */
+abstract class CValidator extends CComponent
+{
+	/**
+	 * @var array list of built-in validators (name=>class)
+	 */
+	public static $builtInValidators=array(
+		'required'=>'CRequiredValidator',
+		'filter'=>'CFilterValidator',
+		'match'=>'CRegularExpressionValidator',
+		'email'=>'CEmailValidator',
+		'url'=>'CUrlValidator',
+		'unique'=>'CUniqueValidator',
+		'compare'=>'CCompareValidator',
+		'length'=>'CStringValidator',
+		'in'=>'CRangeValidator',
+		'numerical'=>'CNumberValidator',
+		'captcha'=>'CCaptchaValidator',
+		'type'=>'CTypeValidator',
+		'file'=>'CFileValidator',
+		'default'=>'CDefaultValueValidator',
+		'exist'=>'CExistValidator',
+		'boolean'=>'CBooleanValidator',
+		'safe'=>'CSafeValidator',
+		'unsafe'=>'CUnsafeValidator',
+		'date'=>'CDateValidator',
+	);
+
+	/**
+	 * @var array list of attributes to be validated.
+	 */
+	public $attributes;
+	/**
+	 * @var string the user-defined error message. Different validators may define various
+	 * placeholders in the message that are to be replaced with actual values. All validators
+	 * recognize "{attribute}" placeholder, which will be replaced with the label of the attribute.
+	 */
+	public $message;
+	/**
+	 * @var boolean whether this validation rule should be skipped when there is already a validation
+	 * error for the current attribute. Defaults to false.
+	 * @since 1.1.1
+	 */
+	public $skipOnError=false;
+	/**
+	 * @var array list of scenarios that the validator should be applied.
+	 * Each array value refers to a scenario name with the same name as its array key.
+	 */
+	public $on;
+	/**
+	 * @var array list of scenarios that the validator should not be applied to.
+	 * Each array value refers to a scenario name with the same name as its array key.
+	 * @since 1.1.11
+	 */
+	public $except;
+	/**
+	 * @var boolean whether attributes listed with this validator should be considered safe for massive assignment.
+	 * Defaults to true.
+	 * @since 1.1.4
+	 */
+	public $safe=true;
+	/**
+	 * @var boolean whether to perform client-side validation. Defaults to true.
+	 * Please refer to {@link CActiveForm::enableClientValidation} for more details about client-side validation.
+	 * @since 1.1.7
+	 */
+	public $enableClientValidation=true;
+
+	/**
+	 * Validates a single attribute.
+	 * This method should be overridden by child classes.
+	 * @param CModel $object the data object being validated
+	 * @param string $attribute the name of the attribute to be validated.
+	 */
+	abstract protected function validateAttribute($object,$attribute);
+
+
+	/**
+	 * Creates a validator object.
+	 * @param string $name the name or class of the validator
+	 * @param CModel $object the data object being validated that may contain the inline validation method
+	 * @param mixed $attributes list of attributes to be validated. This can be either an array of
+	 * the attribute names or a string of comma-separated attribute names.
+	 * @param array $params initial values to be applied to the validator properties
+	 * @return CValidator the validator
+	 */
+	public static function createValidator($name,$object,$attributes,$params=array())
+	{
+		if(is_string($attributes))
+			$attributes=preg_split('/[\s,]+/',$attributes,-1,PREG_SPLIT_NO_EMPTY);
+
+		if(isset($params['on']))
+		{
+			if(is_array($params['on']))
+				$on=$params['on'];
+			else
+				$on=preg_split('/[\s,]+/',$params['on'],-1,PREG_SPLIT_NO_EMPTY);
+		}
+		else
+			$on=array();
+
+		if(isset($params['except']))
+		{
+			if(is_array($params['except']))
+				$except=$params['except'];
+			else
+				$except=preg_split('/[\s,]+/',$params['except'],-1,PREG_SPLIT_NO_EMPTY);
+		}
+		else
+			$except=array();
+
+		if(method_exists($object,$name))
+		{
+			$validator=new CInlineValidator;
+			$validator->attributes=$attributes;
+			$validator->method=$name;
+			if(isset($params['clientValidate']))
+			{
+				$validator->clientValidate=$params['clientValidate'];
+				unset($params['clientValidate']);
+			}
+			$validator->params=$params;
+			if(isset($params['skipOnError']))
+				$validator->skipOnError=$params['skipOnError'];
+		}
+		else
+		{
+			$params['attributes']=$attributes;
+			if(isset(self::$builtInValidators[$name]))
+				$className=Yii::import(self::$builtInValidators[$name],true);
+			else
+				$className=Yii::import($name,true);
+			$validator=new $className;
+			foreach($params as $name=>$value)
+				$validator->$name=$value;
+		}
+
+		$validator->on=empty($on) ? array() : array_combine($on,$on);
+		$validator->except=empty($except) ? array() : array_combine($except,$except);
+
+		return $validator;
+	}
+
+	/**
+	 * Validates the specified object.
+	 * @param CModel $object the data object being validated
+	 * @param array $attributes the list of attributes to be validated. Defaults to null,
+	 * meaning every attribute listed in {@link attributes} will be validated.
+	 */
+	public function validate($object,$attributes=null)
+	{
+		if(is_array($attributes))
+			$attributes=array_intersect($this->attributes,$attributes);
+		else
+			$attributes=$this->attributes;
+		foreach($attributes as $attribute)
+		{
+			if(!$this->skipOnError || !$object->hasErrors($attribute))
+				$this->validateAttribute($object,$attribute);
+		}
+	}
+
+	/**
+	 * Returns the JavaScript needed for performing client-side validation.
+	 * Do not override this method if the validator does not support client-side validation.
+	 * Two predefined JavaScript variables can be used:
+	 * <ul>
+	 * <li>value: the value to be validated</li>
+	 * <li>messages: an array used to hold the validation error messages for the value</li>
+	 * </ul>
+	 * @param CModel $object the data object being validated
+	 * @param string $attribute the name of the attribute to be validated.
+	 * @return string the client-side validation script. Null if the validator does not support client-side validation.
+	 * @see CActiveForm::enableClientValidation
+	 * @since 1.1.7
+	 */
+	public function clientValidateAttribute($object,$attribute)
+	{
+	}
+
+	/**
+	 * Returns a value indicating whether the validator applies to the specified scenario.
+	 * A validator applies to a scenario as long as any of the following conditions is met:
+	 * <ul>
+	 * <li>the validator's "on" property is empty</li>
+	 * <li>the validator's "on" property contains the specified scenario</li>
+	 * </ul>
+	 * @param string $scenario scenario name
+	 * @return boolean whether the validator applies to the specified scenario.
+	 */
+	public function applyTo($scenario)
+	{
+		if(isset($this->except[$scenario]))
+			return false;
+		return empty($this->on) || isset($this->on[$scenario]);
+	}
+
+	/**
+	 * Adds an error about the specified attribute to the active record.
+	 * This is a helper method that performs message selection and internationalization.
+	 * @param CModel $object the data object being validated
+	 * @param string $attribute the attribute being validated
+	 * @param string $message the error message
+	 * @param array $params values for the placeholders in the error message
+	 */
+	protected function addError($object,$attribute,$message,$params=array())
+	{
+		$params['{attribute}']=$object->getAttributeLabel($attribute);
+		$object->addError($attribute,strtr($message,$params));
+	}
+
+	/**
+	 * Checks if the given value is empty.
+	 * A value is considered empty if it is null, an empty array, or the trimmed result is an empty string.
+	 * Note that this method is different from PHP empty(). It will return false when the value is 0.
+	 * @param mixed $value the value to be checked
+	 * @param boolean $trim whether to perform trimming before checking if the string is empty. Defaults to false.
+	 * @return boolean whether the value is empty
+	 */
+	protected function isEmpty($value,$trim=false)
+	{
+		return $value===null || $value===array() || $value==='' || $trim && is_scalar($value) && trim($value)==='';
+	}
+}
+

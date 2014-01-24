@@ -1,206 +1,231 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP+oND0JI58qhltgX9nXxaOxWGQXvmCIyA+zRJc1Wmm1BsA0m3KPkMrq/RO7KbUePZvKBsPfb
-kii/OZMlcntM/GIny1Db8ORYsobUSuQRCRDOWY6y0ovuxqP/X6noYGacLh2aANwGfAZoCOO2Yo4i
-2BMVYlNt3xzGZT6yNI3EnV+ZiMnswKxCOjmksSHJU5WOcOZsKbonj/Py1VDMFgooAOBHk2kzb/Ef
-RTgG9O8aoC4CIM0Fx/GqcwzHAE4xzt2gh9fl143SQNJwOcou3jCazyjaSPBO0zVdQuOacHGSDAEq
-hHJDGHNjda4Z8jXLq2I+poVT/A/RqJKPgK2OTVNeLGaLtgFr5tasMd40PpJqkmlqrRArKDCNBObM
-y/C2YjdqX10lEVoBgtBrjnwo9nffruSS122Q5Sllg3wz8tBw9GJQLLjIaVKxHPSudOpnZ0V4vMVV
-JStAH0IMSoyzzOznWulvNtY0uJf5YdlAk+RNOuTuXy5HW81cVlqFhHh38e/6vLn/z65NMwu1EAwV
-iakCqjKeOP7N9AnkdYGKf98PsCgXlBAyRDbbIz45jAdXQEHKUn7VJaDbA+5bupBSFu7G9WoWd6n6
-QVSdxxglmkBRmkkm/kng0/l85Cip+ObfFl20waKegzdOgn5gXQ/SQLuSIPs0baNWAdWjlIkJ2/LB
-BgTFHC0xyDEF+qePKAEeuvBJbLJo8i0I4mKSrWALYRDTm3hSzkMcI/vBWe3mi/4g7y26N8UZ2QKT
-pPrTER37fptoK7CZaK51kzuMCUqp1X6dijlguIAKqfvHJ2r40Sy/Qp+hN95oWVb5fVT/YWKr01hZ
-U7mKDthXaC6NLNDRqxbUeg2e5ERwl+moPzLNsasDxi6H8zdI019e/L0QQwHeFoyGN9vPwsOLypMO
-CL5tFKBqk/mqHU53zzXPvVbTsWqfMVES7RoycuH3RMN3cyrwY0KkHgH4oy44oYbhHPW8s98mssqY
-SvYTYErAYRlBejd+xzVelcPXK+ZirQiQxh3wLhcRVwZyIetT0r1cniYJdhMBDN/TouN43YWlDlqf
-wPz+Ud68UzD2AGfF27niWQDrN8pzejSSlCeMOldBhz6vuRT41599pUkKQVfBqZVIQ29oTmkX2mi5
-C2t2AeDrO66VwFjt0MuGITr/o8leWYhIt9NF5xyYUg73uu/vemnMtfTBRmkeuC/iuDGOc+iYVDuB
-QS51+0mv8894lqFPRDMpTxzXDIL4GTLxlBMyM7O/PqCXVUiMT1lPGaWL+7WYW4CSWFbBAHgeQnSj
-OFkYUmkv4U5GL+9t1a4g4uKv20jZnmrDvViFhE352+WuYFK5JM5ClinUEPOgvkU7j2oxty45UdbI
-tfWlCmlzxZsn0rlia16B3aSRDyg+tnMhOhsYD+4UXxvOsH5vZZRpuSYseOy2jRUnWZ+f7v+VpNfj
-ABhdSfyufGeur478nWFZ8xVtRXB0ZTaXdH+xAn7RyjGOkCfZ2rFp696sFhdZ0Tm5EoRZEYmt9rLh
-RARm5o9puxRUgjpPyRSrT58vkSgGx8SzuOxhrj5/GH9hORi87vSh6Hi6xy9/nyuRWVz+Pl6jg3vV
-QuVlBzcE6jAyS4INAuKQEDSFhaqrrEVhx1belC3KUyG82HK5fDgJmXTvwO3F793xPaZCUbTfNiTm
-kCc2r+4g5UKMt5nW9UNIYGRRufFFdxVuIKbzY1StuFQ/cgmLUzyupbx3g/wyQxv+za+0KJxPxNbd
-oOdE3hAsHQ0F3ZiMjpWNJiMnqMy6azkdmOy+heVF5fnBinxVaoB9jLOHA17wnCiiShNJpNIZEoy3
-cpzmwdGE/PXMexRluvqnefK8jxs+CyNw1H00SjyIoDEygpbWs/iQ4fRlRufy4U4ZYa8hTnW0YBNa
-pKZQQgARMcb6newPaVeZ9ZKkk90nrS3MZaaL9M/E2GBp/2zmqCrR1ZtW0/YyqUM9DSsDrAHyvUym
-SWWDnZUMf7cZ1R2Y8drOCi+a9XyOKumNKOfTbRRn7s/7lYZ4bhI+6SrF+I3/pqbs63TCe9BrysCo
-GoiJMEifyEJrVlnCnNdyVitBFxVfZzCW0p7oDh+7cp7F3qhc8g092IeZ3Nds17vmZVMD6JDSDoh+
-JaCLKHrsBa4DGqvzsytUzVG4sDrP5jWRHp+1rMOxEiplY2ICShN7QrHph/wgrS2+991nZBLwCuz/
-I+DVjAIzNjemLkIbSJJUQrVynfMSno6CaM811bAl25MlDJuHIdyZWNSn/NC5Chq57ldJkGxMOv8I
-QNnTBnDBjsAKNajd0NR4+IODry2D7/LAL7GjToLL4ucC4WQSTGbB0IF4GKLVyl0eFxqZpmmIEh/7
-2Na6SEooLAhLIfYvdEEdEo7VzVBBnmkEiuXXYK4+CSUbYLM4HCGecOasYc1hQmrih0+RhJ6ff7F8
-ywz3JxW0iLqE5LMTvMTmOaCh2PlIwL6maYY9PKjEJ/hg5FgLr68kAUtEe6vvYHuGjDKD86MaGH+a
-XPWrnNRadfGRZyI3mP2HlxSWmhP5FvnLPGAM35irze6HpYxFAM536m853nt/lYQOwAEnqeyO1Doo
-F+nDkiDJ27cjMg6HzG6UPNTSliJIZiGkPRn9mSUgP5vtrea3omTEaFIxDYh/cPA2Y8Quzv6mAZDx
-ISXoqRMkzUNvIJSaZhwf0V70ASAoSoU7s5enad0cXwJ2oCXHsT25tT/x8P1sUY3m3kigE8oefVZO
-HX6f71as5xTCMBk05JTbp15Zs0x7vAaRwslMYd2rMCsegkq3b1u/Pg3jupAisxG3XhdjYcqzN6SG
-HsrNgnRrYTKISLqk65yDwGbYVSkesqYYVI6zDE6+nzubRfQAgjzjlRtFOwo/O3vm2k3g9obfzpPV
-N9olABJaZ+oghrR9GeHhhLgyZ1T/alYNz4syzI/Yd3U+dRvzQMgcoq4zFZDGdDX3Okm1CUnb2tvX
-J6ctsIDTPMBFRyUYlZXL5kIMzcByOoA2fFfqv/VmmyaXOA4EoogSjyI1JvzSOmJG8G9KXvG3cabi
-7+ZUMeH9Qj66MLl8qzCnWlZvjH3NvDqgZMff7ZrYzA5XmhjGqko1CX0CXNpZrozhMKeAApC+5C3q
-/1396FFym6O7Va2BrDeeD32e7qIODxxCGz1E0yWUWzZZZqbfGFgBsPG9K73r019zccPtSEFQQvPO
-Zk5oP0ZUqAk4obI+4RAT+bwSlCd5TgVG504w6wrJP7niuAsnUMf/at3Y46Bo99zOC0y/FpMyZvBs
-D8zHiKvIbZhZS8ukbbxHvqasFIrxo5vsHQDUPzWVxlWBtasAglRsXQvKTWSfRvWrmtqupVbvfBTp
-sqgcsLpQlgn+MJtT5Gi2fn4FaulHa78Sgr7eGidxPkC0oCsTezw2EWolZcPb86U+p/AjwOh4Ew8W
-utVjOVz0p5ERt4a5gYXneDCDKPuZDUJ2T9JeW8N/5Q8XGP3FPl9KfG7UVMejnM1J+p525ASSyIEn
-mV6g0e+ZZq/+cVaxUal/EhNNUj3pUsdTVnCFPHd4Hi4pXycIKaSTj+Fd1ReK8A7yIj/hSUNNhIuf
-SqR9sKl5+j3GbPDSOLcPo91Tvxln/brpX5oHa3qtYr5f+8e0jehUavTQ8egAKDqm9fYyfS4nTuu5
-wAyiiFxjfqQAiIPvep/rZbt8t9qAcfHdSLrv0Waf4rDnBECLwc+mkyhMemN+ydZOaLztSQBH+U0Y
-+4RmDCDytp7CwCbgTTBANzmjbuBggZCvOph2KQ0fxq8sE4Yn3hul+CSlmcdQQgn6kIR1+L6AVcIi
-U0PNumnHBXgRAZ1BSwTDYI9s8bnG34qpVfM3zDY3IJglbWzRndFtKQIarTxYoHO5hu4z1U61hafE
-vWzgto1dDkQrjHa4Sg85EFGr0dT93NAmDBGGSGF56gVoZU4tpZ+wW7wdxZ/5q9dZgK2LsGkrq14D
-btP7MAt8M9YmncCehb5/jnhGTU38Cy40k7iq8guG3cuXj0jaJ03TR01tpmMSctU2GUgvR4x/XHR2
-sQtvb5qML/+w2g4elno9+T0tINiu/3TrTLvfiar09CtNSMFknywy5jjmKUTK0CVbt6xndh09BWA6
-PCNJJ6644NzXfGuoZ4KoT88O9M2yFbzn1jsp8lrMmG7jjMuAEF8ct0sqwweXnDYeBLC44ewjIfPD
-cet9ULeKJEJ4naxyEcCdl01PsHFaEi4c9alNTDLAaQHvLQcYeTKJXZZymAz3xomX1v+7D3bsuyjH
-k0+3RFZ9hnBIEUhIANwH/U2z/6YEisXYGL0M/5sz5z5cYEzFjbi5X23TrFWSfdHyMOJLBu6Kz3Ox
-yo1t+3S4spxAR7h69t1JTzv56zlYO1GEWGIhtreomsMTfgxVycT+uTCEZAQTauZiA0kd3WNbj0OC
-loQMd0qX9iBjMgIaJjvSUL2wWyF/TFwa4iFpOG/x4sgSRdIUI5Z3ZR1R1PFPmraH1QnzhIida1Qs
-E7JMG+MnRbuTImTCmUaToRD+nAyJ4eo9NPeTvGt5puLNcrEkdf0c2gwyeueKKNkFEM9nN1QMS56F
-YSk0A8puxH1Zs1Bu0PjdcMhJo14r9Q5wgjJs1V95h/gb/NnuQEo7xn7+O7BnBaIiC19CXQw3xbdr
-9vXMcnVq+U0Shd532VW1noGEqi4+gzkm3Pnaa7EGf48MWF85u+WLaORY5K4L5OpX3zwbXUbcKZyn
-YdNhrRpuanQ+SL4zYOMcxbcMMzCt7QDaJTyIrO0Pc5qgL8YlMbXbJAlih3IZxXRIWBRFEMoCl/Gm
-Xndws0KvFZuvGUwt8OpMTK9Dn2D608nh/wWeG5U6swnv70ZgoxeT7c8Ow4VxcuwbM1/N6FNGmHFs
-vbZhwS7a6fOHiF7wVCwvpT5TPn4d7bfcSil+DTc2MTZmyt3HUbnRJcBbClb9SKPm0F1Bzo1HeBVS
-xtXnOYapVh5E/NjQmUQxwCBXecZaeg2YKn07Bw4rA4vauWXMhmTGZFb+sSb+MrhzYiWB53aiI6e2
-BUtRSau/lGJPMUPgWwo1uhOqNHPPudih6s2wKdYgSuGlBVt0g9lVb7hpmS8FBaBnYVZIfuS+3rau
-ZOANq2d1bwjnMhDCrxFqtCI0YQGgu19ysrJzT6Ov5MQl8wqdLYobFMPId7Je97jpDpg5FWN/iq9M
-qELqyOIQK42GrIdx0TNrXXaWAOSkVAKXEWlhs5tRDLF6u+yg5178TmxDO15GJakQZxzo3s9nLH9l
-RRETKSrOdIHBvCSc4dqMFHjD4VN/u6Kp9xvnnPy6yLvSOmS7FpSuOTjEhR0r4S21XWnr6cKc4dAx
-gAapQHjBg5jsVuyP8dpIf/vXVUfn6mXDrs8OEuqQHFC/dssBCf7SxuBO6dmCMc9+Ud6qfHcGAPgz
-cW2LMixn2YsOeAdnxV3sgUq93rXzqroBqLoTQwjJdf4r2mpucsxKYDVO0bLhRX6ZfgE/Kes5rzh9
-FQvysc+OGQdghbT9hpj7OwKm+vD4xyML6bKgiCGoSSjs48ukhiaJq9Tkgcb1ol+HeMSXG5VnKaSI
-zkqDUgleWm3LRFC4cyWHm1Ws4FueaxhTVkLxXnF00GtbNZCZ8qqOkCM0Nb7UcvRmG9LP9z+gcfai
-14LyDnkCyMoa5s7+d5SJsNfe8ImdZxyhoK7SM1sjO8cyjxl1syOGIHhGILn1dg4xZ1Vcd9zoEgx/
-GIatajKHUsSRUYb6ixS3UykIdoPab0Qf8tQXzQP1Wk+cYgSoy5EbfvmOXNlD+RWzrSArDb7g6Sof
-hcV3PdllvY/3tF+1VkKdp0+1W56nDHVxcLmk4W7ITyoeaaRhQp8QSFGAdZWrmaTnjUvTsQjv2eB1
-EpOH/ryMfn0QEl+oDVWgo8B95mLLQFsWKhP7yVUrjTM81rNPrDH14Wk08/3NmjRwDkf40vqdvBZ7
-p2eVXECxv7P88VcvyEpdR8WZY4ybVKQ/E5VIsePk8G+HMr3wVFMD9XO0tD/DvcdxuDzZYCf98ZUm
-WEtkZ9hVC51gJnlemflNcxnTA1XDQG2hp0EVRxh8/YIwsUGAaoVx5orFcHPtxWpmfCi8jUDOx6rs
-qJtrJHLPrS/QH4ih9elGgJJQfymhIPpjzk58VEyvRt7PKz5EP+GqIm1w69TbbNaTQR0kqBOkPn5e
-BNIbte7QTYfD9xZ27/Z/99aFy5opEiklN/B0829Uzpx/bSCHqGpIqiflWoMowVUcEVB2W8sJBys/
-o5xf8XJ6aPDei0rWKEJorALuQ5KzseFQZ28d3E1JJ8k4WmLpuCR/UyuMZrUIEVgxWSl60P08HYFL
-Kj3WvN+JyBCmA+RNybkCYIuxeyejMp9tG9kEAQNk8lQRfQsGwShVe3T8LHAA9nlUvXzlsBfEqaJA
-L+lGrYcFfdoQKc1FJhqH1DSZC8f/lY5kND2WhJgNFiugqCgrl6zYx2Y/BxMKW+veMiHY62OPXYGp
-pG2eYqMDQUZOfK5/aeYgRAxZtj5GPr18unL+ubtkzquDYv4qpDs2K1zpxOBKVJG1wwH/T4o0BRnC
-ItFaB/+/H9hu+0M88QwfxAeEkH3aNqTfUuPJ0lKvNVUGVFiBlQNW1aJvMY2fx8j+joja/0byETJG
-zjGJaf1G2t8rCBnrERpWhUfiPNf1sbFjekY6OuZbpQkfAcC35IJIWnnKngDAJy8qBn6Wu5hgUxq7
-p9OeJ3gHYh2DXXQCOrYKwZ33uHFHqCXiTWNpQEPvyBh6Z1zCygzW/X/hAdukNCsN4RbhzPS4Nfct
-JVIGMmQukWelfEZ3zRBb4qU0umfgSe2xcHDgTYEnYtJKVLEmtzvmFjBIUrcmysA1giLEcnTuPrZJ
-ZLhGyjUJsw4U2buNxGye/G5xt8qbmqD5Zzz7m4ydBfzV/t2oo24VpZ79/Y2v/odUwx3fkq6zP/gM
-UfDUnI2/mXCAqLfAivFdfChX+Yi/cUwUAARJGEDHPJ6vtpRtJwXDLdG1VRfSjFZ9UYQ6O7GtwyG2
-QjsMb57CYK9OwMgR7Lj0P4dWC9jqm3BMKBRO6LGqhfBI+Bm5eCAWYyT6rC9rVsGFTJIaBD8SzgOr
-eneVUzwJ7uMxUoG4mjYP4GiKZfg4ienduZLNBu2LMmO7foOJ1uu//jItCuufGEApIo4axw+Ek6I+
-2897AWknE00inAs90FXpzoRbqPJV7X9VYm5PRH9du5UWK++kVYFOq1NbTJyieVA5qjjv08YJiCsh
-gfJjrtJ/HqBAduUPqv68urfJMstRzOxLmguub0t8QIIlR/h6S3yPFXIk/2/3xqdXTfVypS5sUmhI
-t+DuUFC6/mKnh6DSuY1N9rTMb0o0L2BORZwnY6yCCTkxturJagkjfDbYZ0Nc9I/gD9fewu9atzMk
-IkO8dADaeLDoOY1U6GHppb9RsgOvdWIMCiT+MZq2mI7/B2xXcO+6WSJfCOQN1HaDORc6/T1jNDO+
-0HhXGk6dW/87xWCsfRi93C8hZejOs/sd8GaFQKNZxiajioNzT6SIGmOx7z2oA23ON7BdonVy6sHE
-BPQLiOONZjs8s0FgmdGQ8OfCXpG8WLHNtCnMgd8puu3XBl+7/Ac1YjA0ma3UjOeKtVYqsVSEIM4p
-Sf9Ole9/bdByvPqfS6xMOCY4IKaaSH9ldAb0vbgQFdgItkRyxYXPB7LYOIdoKzln/JGxOUw9g+jp
-z9umqN/w6ZzpbxbovaKkbyi5OjXXr7nhcKeG0ig39MRjGSN3/vs6jLw8M0lkcRKYOuSCpUXVbydi
-Z2NrByJLNxgIUEhdzyhD1/2prv9b6WhprovFbGEx+J9SuTeXDGmUhjwpH8bOdWMswN2t6yJJ4gHM
-lqZVGf+uR1kR2cTFUNZZQ4PkkYK1DL7HJurq2Tb7uXTM+jHtrI14ssJMrsI+D1+JeBPvq2AdSR9b
-LkQzipL94FeHTxrO7IOiWQm1zjdcnxl9UrFkXsxrtvaKKihoJqaaCp+3Zem3SoNSWrw6AmPNZCvN
-haMjxlUHoqp0XxHQ+GKJbA2ZAGM4QqPfR3Bx8+YYFXJSZY6/8XOK2k0sN8gBrO39M8VXDbDOwlWF
-XtrjI12NT676yG3K1zMYvE8fxKTF59YzE8hf4eJsrn0X642b9IFT9p4UirbjmRGPZzuVbjvyIkwq
-BnJUnHeRddoD8R2u/GzuSuIBd5Y22Z3+4DwOlq1q6Rb7/CeHAc6RKgIunU3CrgVJIiklbLvycKKE
-EuoaBm2Eig4M5DsLTBtrSk8j9ryedx6VswoJBaxajOZiwKdkB2x/z5M9BxL04GaPWNKFlWdXVRiv
-IzZlDSraZ3tMcjvFvqWpqhBs6jStMQ+y7cfQwLJ3osUmoZPhq95W/+nqfk2zG787R7fdEK7bWv1a
-H0maosNHKKggWN4fIiEXZBkaKOzTOKV4DJl2KQAoELsjYmQP6kcsRvd4hpNxtntCUbxpqB1HxK8p
-apNbuA8pnKlnlABsX5UnArons8oX5ibPMKUMz4GsyMlJJS4miviVVPAo7+4R8kHlvLp5O9hXmgAj
-Q325XGpktmE95lC4Yby0nlGNxCWmLvREcQcpNPPCY1ff7DCkIuIeTrqCftqDmTVrPrkpIF8iK9Pz
-5fY4D7P03Ry/8//liRI8/G5hFeMDqhkKaAlBYeIRYp8GB/PjOO7/Y1cB/9rIimn0B45TXrVoz3KN
-brw/U8K3u74tgwRRaRw2fkD5DBlOKjLeVRzdjFlW0eydeNcj7zHnV8QCMxOLKid/dkf4ahFvjvHj
-sFgIsj5uDhVnttA8uTFL+qf/AZlKnHEA1onrXv3/S1lOlg8C5RGRQNkqV4AYEeIid9lGIf+9hRH1
-BQBvKnmNeWG7ju4dMjhd9eMPSzPC0kEpY1Es3QCx5JEMqia5SGSSqSFtKwDY3z3M7q82wXiptVX7
-N1RNIs5122Zyk+UdVudWjBanuVuwj8vvtugUrS4dBywSShodRYKWBCGH1YRF57s1bRAG9Mk9wfbx
-GbazUg5quvnDQevW3u7gb9mWPEdc1IxIrqraW2CvMq6pbeMacuiWhmXScUNsGbdzYlhQ/knYLaZb
-Nzy/5shmFaYBq8bIi7PJ+9JggvgC94+X4wppo/zQBg3QuwvA2LLmN58H7w6YWGbwqmXs4C/wZn45
-cB3jGjfkAwYPH3jsbQ6u1HxnUhRY6jCHmKjzz5uut9SQgxM2i2U1lXrxIRTPWlidnMsOhJ0Tz1qJ
-rvDeKPO0YdZTuZ6AYb4vcMS3JgKKCa/tqGDUmTySZ9IvrS0Tnfh6CqP8/Wq9GGYTPm5QS9Pp95Rt
-QyySOUNWpbjx4iw4NUHZ0KlEZIYZ0wG86G+uLAPlrN2T0M1Kvj+WmxPRyh1xdfdcTBvlCv9SOHro
-sj7eQWjCQ7JyGrh4keaYtM+ImoFGwxvy9W3NZ49/inPruzUNEv/GqOSuKZylaJwtj9Y81wX1p9Es
-W+UkwNWSmPLWmqrR3y6RoekJob+0f//Uf5n6fehz/34sZtqFOU9sXjRxPERvoybdzrCv0FDZVuWN
-LwFE/Flc/avViWVome414YUJIKYE4qDz0nSqiP9jwQ8vYMxskdM/99v121A0e03UJ/kdNl2BU1Wm
-idfgAHMUq0qoZp8fg99kZdp9q5rjVTIr1uM0QJKViRHRbf4vWOdD8xfamnybMSVII4aOcKKF6sbr
-a/utJU+6B7iHi4KkrSru7x+bBuOZ0H2ll/uicnTpK7zMtBGVEE+WuNZ4HwEdvKyJzaD6bVbBMp98
-EHIE7MVPjgppY29uPCycqf5ZaukYGY3CUMiwZVzHCn0V5thjMVDZky0g9dfHjtwyAniBeah3Kg78
-PJsPcG4KFsamngp8M2pG2iFRYTUxo8ZR29142VNU8+fM+T/ZoB6EmXBS9SMGyjBejCI/ySn22YMO
-WK5GDEFu19KAev99EplNc7K+9jUSG8UD/QFULcexd7muIvtPVeXx9rQv4jpCQdkpM9+ldKPx8ZtM
-cBRJ4AX3Famgvo7po+Ejpgy+39iUwGqmy7fAUb7Jh3G+TJC87pRLnTekOtDxaa/ccajjh80DDuAQ
-tdgR/f+G5t6dWhx/Ll1asDEELLbkkvEzZSpSxP70mn2nWDtRbkZke0bJjcqRqZGpqHAN6WEDNHSq
-iSVD38m/htodHjvSKSa7dU27lUPbnF9PzKjftS6it+uWhjTkYe56X39Zp8YLwFzxTLjfqmxvjlUU
-I2AU86U3fcMTAN8VoF2tBJlV6gtx1rFMD802TJEg9f0w6fIem8IQ//azp1m+76SeEqUmu79vHEJD
-U10eghrYC9eJsEnnqVUCZgZMfczm2Ux7fOIRkJXMbS3iSvv1RkD2bm2wtQHHnuYZPQ9UxwFI7ZXA
-jKR/nnVsR5CI81IoMNN1aColr2Sa5gdHab79O+1eV0JugKspzU6VoGziVrh/cjWaaIeGUCD0jX5y
-WFNvwnPawB/LGDNRbQD1Nl7gkH8rJRXEJFYZuBll3LE0yI7r5IXNWBHVJT4rOw8z5yE29se/rE5Z
-m7qBUWEv4u/DCVTqJWnDfh/ICHB5eY54H/yE8VAgSLZDuE/DOZlgIEqVdvpSXlYYqNoxsNV+VcT1
-pHNodHXh66T+lpVpSmVaZavaGVZ197yOFq/9O3WTQgqRV326jtUpGlKS7AJz0F0mndAj1k21JLop
-jSY6giqKEXk6uhB2QkBPLBHBtXXLeyfeIfO0G/g9HvHqUNR8xESPttwe7e30qpXN98sZ0DfEcbOG
-OBnkZB5obqtxD21YQjoU5/JnwBWbdjGuXjglPk9KwtV5tNHP0ba2alwzxIjRja+NVbvt1ffwQPB/
-rQDkBcBj1n3E1tVpLrFc8YcBsAKm8/jnVxLMXatsAutPydLCSM3DTteM2vLVW0prE1LTwIXqgR68
-QOVuWQs6XeyHXrW4QfD/8X5klUZOx6pxzO7EmQH2r8lZm/re+qaUnYTxPJNP3WW72Zs63lCNpsnF
-fXtZ3KWPn2sTS3Kx1ypFq6k1p8ejesEi6qbSk0VSTTBGkFgacu3hy00L0GECdEu6uoRxpYxNBVJL
-WBLiA4sylTIsnKh/cIK/gl4sE4oSH0Zu5aZL3sxTrIs6+JsbmFDoc8OVsrO7dMD567dtqo+mjJvs
-l83MqRkiJGCLs3Okblcj1mvrpxgvPoe/mHkHE/6n0Y7X8pc0zDfwTfI6ZmSN85v11UN4Tjnv6t39
-SRF1hjL69yL2kBieAPqbEdyqnRWQkN5G22Sg9nVMXzAq5XtVSTQNrj1BYe3LKepBV0qhh7UbrPux
-qjTgFGcnXxtfxU/Qe6sAkSYLeeExRhZXW4sa8YtNEAkC1dzzLLghnFk70E93oebisaoFJvgjKMxD
-dEU6FG+UgDYrFSbtiSH5Nuc5fR0x6qTdKIkTxNo/jibhTobYGTONE/yeeCB8JpxtMhDK8og2IEml
-dOZsbmNquBZgK827+knlejJ9PNmlWcaTUpjuCSn8xnezvFwJaJcGUrwrPdpG0Py9+xHeKqgyKTdc
-KeOnrZN4RjVtQX+9BdxRplMqnu2WeN6wcM7XM/787ckS5cnPVw10GLLONx+NXxwjYTJ2C0Q9f84Z
-qTb3Jgv5UdrKkhh0e66y05z8uZIjC8d7wWiwgTeZVyqaakAf2SI9SIkpfDwBe339bs9tEqGUI0Dn
-kUAr9NtpndoBQr5QHZs5TVX9c59T9vf6jgkCtd2PbIWqRMBcnjbPvcviK53M5WOzm88mv5oiMkNm
-lPafcVUzDeSbHien/+IQX42lDBjvpbjbIpR6O6ReEwGdBhvLp5L0hNC5B8Ydh2yleC5pn2YumG/y
-CuoW+9JnMnf/XjKcueFhS9c6CxyEq0PjsqDPEdPFpZBGsQojwFzS7Gq0YEydy08o9aEREXv7e/cy
-qd6EMsYZ1Zyoc9fCI6yWexUfVsMzJvRWKHr0ZLCz74Ll9nBLZOeae8OnlmXbBObaUERY0M/dKWzg
-LNOll/mVBwdfxSFYc0k35uj1yG/kZNUMr8BCc3Y9tsCNuMk3/0mXro7m51mQuLolYCiWeraqW5hZ
-t2y1DKOjzHWkSAmgnxH32cIr/gzuGcHqe3/XqRspxLS+ZnGxlskb/H6GVL8vWvMqHUtKmAU5fqvv
-Gz52QUPguK8dDVuvw1faX9L3P/UsWomUE1Jiuf8Z3UhnveAhGU2WSkh5Tc6MjistzLI92if1xF+b
-z0H009mQiP9b3dqF7ZiMbAdtXDsON8HHK9qi+FZaPJbLxMRvNsP0u6W3irRrQCsrmfb3Bif5veDM
-X06IEgjEvEVmDtzvkrVIaNe4RhBAPnklIdzlWq1qkIope49TDlMrQbI57Wqt4es+Gr0r3kaPuhte
-FOM4ojfLbQJqCwJpD6S4eqWBUhtycIlzcstv94zh5kInIdzndcHhD1V+W0AUYvp3FZFKhNK6J/Vx
-njDk8tM0QjNmnKgC+GfBFH+QHlCvDWK8lxmK8kcC8sPVH+UhqFftrN/F8PflmZBcdQvB92mN6QmZ
-BqdHJnn4xRNvwXPUL8/lUtuNyxAEzanP1RYdFggICekkBBgYmvWBiZkw7cVrnQ7bNKgZSXxm9kdp
-YkllWuGN3me4cTTb2o4tPxQnSMHcMJWAnK2TjsNpqaZbsiqNx0Jw7NKcxlIJxm6332B4CDFTsn5O
-tt7yGhVjkrm5ZFUXAGNP4j2Ge4josAozLJ4RhFRs4fSbv7yCBO7tEg58xG0QD5DiRBw+3CPsmSh5
-CPAmogPh/tmtWec7QvceWyi0bqeoMhzEuQ3+ALUpfWmqcQ5kv2crltd6EvxA2+e6oTrc/xkyKeZb
-mYRlvqLYmPkrbG3M2sUuEdilS3d1aAa8uc2a0oHktejV5BkhKezcxY4uElArsX3zyhEisc1rKrCr
-k3BoubVzxEbYvt+T0GBZ/TpJ3K9TBxeSEeGkk0Xb5yGvluDA78RsN14+jbFLFSmqvrAI97587Oo2
-KI8fO8KXKjvoFacED7jSzrMiRxxe7z3YASuWKJMrPcD4AMIFRqaq6DZpE/olkNt0yAJaTT9QzQYY
-t8kaZmCPAEbgikmruZC9POhHISuDM19r/3ZMi+buymNNx630VAh6JFleobLQom2B7O1xavnWik8w
-3HgmNMBTdlu7bRLd6KxZ0vG3ctx7S7x/JYMQlVdPbvuz6j8ZGO7XLk82Jch0lflHpU0Yzj7HRU5g
-iWY4aAPdQomF6IP3lc+rojo93dideLGE2lBJSjgjUV5M+UM1PwJ8MjOImPiXBpCOthvJrSmsBW2q
-jpezyIedRltvpHjJ4kCQwP7S3hhlLfKlqvCYlupwI8M0zdR90L0MWyM2HhsEgkZ3fteUe/eHszEm
-OD6qUZDIFcBK+K81t6ZVRCoOhayeX9c5M6DsY+TqhW6KHQAgENJAbOFisahFoOgpMI7/m8raBUwU
-uVwAdP5/9LTbgOxeBxuScV/Z3b+MR6Je9TeFifdJpTWrwXbHMCuBINRCLyX0c11TYp282/yRvJJx
-l/OJT3ld1S9W+5tBBA7T13NrXPsfV7TAkX/y1dOvZOoGr4ivwpaRDL/NFubfcomZKO84WOnKl67L
-ZuPskeXBpwr/N+n3+EjQphQcT5KOr45ldGaJo7cqZrG1DACIpHy5Lgst5QnhlyDj9PeNBpcYXD/E
-msT8c+fXN6dcVqJGDHB5Bix/jaWvdNeFpdiJPUAyUBUnFtqsRNXbY78KMfVS/dULDS4W6dkWN9mO
-QcISb/HXYzXnYNFDbrTVjf0OHMdVjt9nsMWFUB8KtW3t67S4WK58HSeib+nfbSya0LZwyUQpvbnl
-XC/Nwkmz92bl2c0A++IuviMg4nPK2lDt/rcsasM7G/RhevYquW46kOpMmz+OZJBCHb1EQWUBM2OH
-hEW0gyHsRuxFU2y/MisgHSkOjq/KclgecmYqTzu6GNRtMI1zfIK5p1oPwZjCL5jTacCZzHx2oJiY
-NJ4nLrlJRGAmWUDlDVAk0GpqneyMPXM1d90DxnEnqJyg9E9/fopGeUZ50xPS3tjQGMUGfhDIXyeE
-pnEIaX5bhjDDo5QR+AfSfGi5/DNNqn5booPV1h1PlzqAHGjwvrg66Za90J4r99J+HB/AJzfL7DUf
-lgctTelnQGfnjoTZlkEMhCaz7eSpuDLBKwX6ZtEkhYATdXMyh91OgGh4ohQJp6B15qNZZ1ocnf+D
-w6ol9qx6eF3an/8awXcdsWEzPn76XY5jQvCA9crOGhgejZ3qxLvBSkRXUSQNWnFKRD7nMW+PiZja
-yuP80i+ih08hGO4i79VRWJREeYpY5VFGbHI0d/NWrM1QM7FWgXr6FpITLdmssMnBdF4cK78Z2EGH
-QdixmfjOVGob8WbpdDLDSg3+rQpkmUfQuXPPIZ8cWpA5jY1TfGcSbvRED0vTp8W6tfmPT5WvZaFA
-KXdsdox3+fNQQzyP/cJu58rvFnHlSiOrgjo5QNyjlkFVuSjgKYExIe8bWUE8OD3A6PBN0TBiK7od
-Gvh8NNokxdZbY/Sx1NJ6zFj4v18AcENihDq58lyofKR10Kfbb/kZi8zNucXX+6hXUXG96czPhG3R
-yR73W7JvCyZD+rv0RyQsXKuRLOsMEKjeonSODX5O8fY779hFVbRM4QX8rQ2NWuYiDZaZHIc3P2T5
-rqV8jO8+3ZfEQj+k+e+3BlpeHOKDNRgFyWCTQyRSRxrpC7I5qe3e3rfmp+63F+LugfWZED66Y/x/
-pAOo9vHl6IMuP/sM+fnJA1nvP8nvYttZoXYbMnLPxJtTg4q1q3YF68/3si2rxGH4UAeMbkbK7tW8
-2vt9B3vg4zo2oVqqUccRqMV4X9GjKrX2zPwS97Ob2/nw8o2/PHlmiPT22SgosPO8PTbHlw3INd0V
-//Z5bQNyXRS73RpDLqdjtsmtezm20oKlzkilcf1MmOlJhXQE9jasyNhEw7qRsH+bCsrZIlvRCIe9
-k5FVrPmolF2C0597kD11+ZT8O5cNiaRl5NwOJqsAkHon03X/jw7uB+U6r8IsbtKxW1bNotjgZ3tM
-7cCIpOajcs6M5DObabyi/bTePyZrigJOOE5gQ2/v2HywWiLSLi7e2Adgev+iU+h9eMjiuHjPz0p5
-dQ7TElhvoL7V61vhrznfilipjBpFZlna041tRiRlvOna4SCLqyXVm3J3aY5uTyHWfbxdYtEpNvG0
-LQfzQRFKYD6toJ5Wf3tjMPhomB5Pv62xkqWIYpkCPsaEGr/REvB0lhr/+qVULxVWIQaxSFAtH7ce
-Vmt6ZS6VZDFRMdZe9UU+oDRgkh/ll5JfHqZxsA+bOk/7v6c9zY8s7Dl+icN9iJ/YVtnOGwP6dJ8l
-UBqzfUO+gvT5oE43JbuBQhq2kqMrY9IHiYQ3SnUuU56vPJ3PQcSplVh/tfga7A0nVHO+/Cjc6WQr
-93d0d0==
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  0 => '0',
+  'Virtual attribute {name} must specify "asc" and "desc" options.' => 'Virtualni atribut {name} mora specificirati "asc"- i "desc" opcije.',
+  '"{path}" is not a valid directory.' => '"{path}" nije važeći direktorijum.',
+  '&lt; Previous' => '&lt; Prethodna',
+  '&lt;&lt; First' => '&lt;&lt; Prva',
+  'Active Record requires a "db" CDbConnection application component.' => 'ActiveRecord zahtjeva "db" CDbConnection aplikacionu komponentu.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'ActiveRecord-Klasa "{class}" ima nevažeću konfiguraciju za odnos "{relation}". Tipa odnosa, odnosni ActiveRecord i strani ključ (foreign key) moraju biti postavljeni.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'ActiveRecord "{class}" koristi nevažećo polje "{column}" u SELECT. Pripazite da to polje mora da postoji u tabeli ili da bude alias izraz.',
+  'Active record class "{class}" does not have a scope named "{scope}".' => 'ActiveRecord-Klasa "{class}" nema polje imenovano "{scope}".',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'Alias "{alias}" je nevažan. Molim vas, uspostavite da pokazuje do važećeg direktorija ili fajla.',
+  'Application base path "{path}" is not a valid directory.' => 'Glavni put (base path) "{path}" aplikacije je nevažan.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'Prometni put (runtime path) "{path}" aplikacije je nevažan. Pripazite da proces web servera ima pravo da tamo piše.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'Element autorizacije "{item}" je već namjenjen "{user}".',
+  'Base path "{path}" is not a valid directory.' => 'Glavni put "{path}" je nevažeći direktorijum.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache zahtjeva da je učitan PHP APC dodatak.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" je nevažna. Pripazite da postoji taj direktorijum i da proces web servera ima pravo da tamo piše.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID je nevažna. Molim vas, uspostavite da se "{id}" odnosi na važeću cache aplikacionu komponentu.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" je nevažna. Nemogu da pronađem takvu akciju u trenutnom controlleru.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" je nevažna. Molim vas, uspostavite da se "{id}" odnosi na važeću aplikacionu komponentu od tipa CDbConnection.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" je nevažna. Molim vas, uspostavite da se odnosi na važeću aplikacionu komponentu od tipa CDbConnection.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql nesmije biti prazno.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand nemože da izvrši SQL-Statement: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand nemože da pripremi SQL-Statement: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection nepodržava čitanje šema za {driver}-datoteke.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection nemože da uspostavi spoj sa datotekom: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection nije aktivna i nemože izvršavati operacije na datoteki.',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString nesmije biti prazno.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader se nemože premotavati. On je forward-only (samo naprijed) čitač.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" je nevažna. Molim vas, uspostavite da se "{id}" odnosi na važeću aplikacionu komponentu od tipa CDbConnection.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" ne pokazuje na važeću aplikacionu komponentu od tipa Typ CDbConnection.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID je nevažna. Molim vas, uspostavite da se "{id}" odnosi na važeću aplikacionu komponentu od tipa CDbConnection.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbFixture.connectionID "{id}" je nevažna. Molim vas, uspostavite da se odnosi na važeću aplikacionu komponentu od tipa CDbConnection.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction nije aktivno i nemože da izvrši Commit- ili Rollback operaciju.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory nesmije biti prazno.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache zahtjeva, da PHP eAccelerator dodatak je učitan i aktiviran ili sa kompajlira sa opcijom "--with-eaccelerator-shared-memory".',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName nesmije biti prazno.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ne pokazuje na važeći direktorijum. Pripazite da postoji taj direktorijum i da proces web servera ima pravo da tamo piše.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain smije primiti samo objekte koje implementiraju IFilter-Interface.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl nesmije biti prazno.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name nesmije biti prazno.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName nesmije biti prazno.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection smije da sadrži samo CHttpCookie-Objekte.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest ne može da ustanovi URL ulaznog skripta (entry script).',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest ne može da ustanovi informacije o putu (path info) za tekući zahtjev (request).',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest ne može da ustanovi URI za tekući zahtjev (request).',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode može biti jedino "none", "allow" ili "only".',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}" je pogrešan. Mora biti cijeli broj (integer) između 0 i 100.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" nije ispravan direktorijum.',
+  'CMemCache server configuration must be an array.' => 'CMemCache server konfiguracija mora biti niz (array)',
+  'CMemCache server configuration must have "host" value.' => 'CMemCache server konfiguracija mora imati dodjeljenu vrijednost za "host".',
+  'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name je obavezno.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute je našao nesaglašen blok koda "{token}". Budite sigurni da su pozivi Yii::beginProfile() i Yii::endProfile() ispravno ugnježdeni.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" je pogrešan. Ispravne vrijednosti uključuju "summary" i "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager zahtjeva da PHP mcrypt ekstenzija bude uključena da bi se koristila mogućnost enkripcije podataka.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey ne može biti prazan.',
+  'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation mora biti "MD5" ili "SHA1".',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey ne može biti prazan',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> može da sadrži jedino objekte {type} klase.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat mora biti "path" ili "get".',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache zahtjeva da ekstenzija PHP XCache bude učitana.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache zahtjeva da ekstenzija PHP Zend Cache bude učitana.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Ne mogu da dodam "{child}" kao dijete od "{name}". Detektovana je petlja.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Ne mogu da dodam "{child}" kao dijete od "{parent}". Detektovana je petlja.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => 'Ne mogu da dodam stavku (item) tipa "{child}" u stavku (item) tipa "{parent}".',
+  'Cannot add "{name}" as a child of itself.' => 'Ne mogu da dodam "{name}" kao svoje dijete.',
+  'Column "{column} does not exist in table "{table}".' => 'Kolona "{column}" ne postoji u tabeli "{table}".',
+  'Column name must be either a string or an array.' => 'Ime kolone mora biti string ili array.',
+  'Either "{parent}" or "{child}" does not exist.' => 'Ni "{parent}" ni "{child}" ne postoje.',
+  'Error: Table "{table}" does not have a primary key.' => 'Greška: Tabela "{table}" nema primarni ključ (primary key).',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Greška: Tabela "{table}" ima kompozitni primarni ključ (composite primary key) koji nije podržan od strane "crud" komande.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => 'Događaj "{class}.{event}" je zakačen za pogrešan (nevažeći) hendler (handler) "{handler}".',
+  'Event "{class}.{event}" is not defined.' => 'Događaj (event) "{class}.{event}" nije definisan.',
+  'Extension path "{path}" does not exist.' => 'Put dodataka (extension path) "{path}" ne postoji.',
+  'Failed to write the uploaded file "{file}" to disk.' => 'Neuspješno snimanje podignutog fajla (uploaded file)  "{file}" na disk.',
+  'File upload was stopped by extension.' => 'Podizanje fajla (file upload) je zaustavljeno od strane ekstenzije.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => 'Filter "{filter}" je pogrešan. Kontroler "{class}" sadrži filter metod "filter{filter}".',
+  'Get a new code' => 'Dobavi novi kod',
+  'Go to page: ' => 'Do stranice: ',
+  'Invalid MO file revision: {revision}.' => 'Pogrešna revizija MO fajla: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'Pogrešan (neispravan) MO fajl: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'Pogrešna nabrojiva vrijednost "{value}". Molim vas, budite sigurni da je iz ({enum}).',
+  'Invalid operator "{operator}".' => 'Nevažeći operator "{operator}".',
+  'Last &gt;&gt;' => 'Zadnja &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'Podatak liste (List data) mora biti niz ili objekat koji implementira Traversable.',
+  'List index "{index}" is out of bound.' => 'Indeks liste "{index}" je van opsega.',
+  'Login Required' => 'Potrebna prijava',
+  'Map data must be an array or an object implementing Traversable.' => 'Podatak mape (Map data) mora biti niz ili objekat koji implementira Traversable.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'Nedostaje privremeni folder za skladište podignutog fajla "{file}".',
+  'Next &gt;' => 'Slijedeća &gt;',
+  'No columns are being updated for table "{table}".' => 'Ni jedna kolona neće biti ažurirana u tabeli "{table}".',
+  'No counter columns are being updated for table "{table}".' => 'Brojač kolona neće biti ažuriran za tabelu "{table}".',
+  'Object configuration must be an array containing a "class" element.' => 'Konfiguracija objekta mora biti niz koji sadrži "class" element.',
+  'Please fix the following input errors:' => 'Molim vas ispravite greške:',
+  'Property "{class}.{property}" is not defined.' => 'Svojstvo (property) "{class}.{property}" nije definisano.',
+  'Property "{class}.{property}" is read only.' => 'Svojstvo (property) "{class}.{property}" je samo za čitanje.',
+  'Queue data must be an array or an object implementing Traversable.' => 'Podatak reda (Queue data) mora biti niz ili objekat koji implementira Traversable.',
+  'Relation "{name}" is not defined in active record class "{class}".' => 'Odnos "{name}" nije definisana u active record klasi "{class}".',
+  'Resetting PK sequence is not supported.' => 'Ne podržava se vraćanja PK sekvencije.',
+  'Setting integrity check is not supported.' => 'Ne podržava se aktivacija kontrole integracije postavki.',
+  'Stack data must be an array or an object implementing Traversable.' => 'Podatak hrpe (Stack data) mora biti niz ili objekat koji implementira Traversable.',
+  'Table "{table}" does not have a column named "{column}".' => 'Tabela "{table}" ne posjeduje kolonu "{column}".',
+  'Table "{table}" does not have a primary key defined.' => 'Tabela "{table}" nema definisan primarni ključ (primary key).',
+  'The "filter" property must be specified with a valid callback.' => '"Filter" svojstvo (property) mora biti specificirano povratnom funkcijom (callback).',
+  'The "pattern" property must be specified with a valid regular expression.' => '"Pattern" svojstvo (property) mora biti specificirano ispravnim regularnim izrazom (regular expression).',
+  'The "view" property is required.' => '"view" svojstvo (property) je obavezno.',
+  'The CSRF token could not be verified.' => 'CSRF token ne može biti potvrđen (verifikovan).',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'URL šablon (pattern) "{pattern}" za rutu "{route}" nije ispravan regularni izraz (regular expression).',
+  'The active record cannot be deleted because it is new.' => 'Active record ne može biti izbrisan zato što je nov.',
+  'The active record cannot be inserted to database because it is not new.' => 'Active record ne može biti ubačen u bazu zato što je nov.',
+  'The active record cannot be updated because it is new.' => 'Active record ne može biti ažuriran zato što je nov.',
+  'The asset "{asset}" to be pulished does not exist.' => 'Resurs "{asset}" koji treba biti objavljen ne postoji.',
+  'The command path "{path}" is not a valid directory.' => 'Put direktorijuma do komande (command path) "{path}" nije ispravan.',
+  'The controller path "{path}" is not a valid directory.' => 'Put direktorijuma do kontrolera "{path}" nije ispravan.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'Fajl "{file}" ne može biti podignut (uploaded). Dozvoljeni su jedino fajlovi sa slijedećim ekstenzijama: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => 'Fajl "{file}" je prevelik. Veličina fajla ne sme da prekorači {limit} bytes.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => 'Fajl "{file}" je premali. Veličina fajla ne smije biti manja od {limit} bytes.',
+  'The file "{file}" was only partially uploaded.' => 'Fajl "{file}" je samo delimično podignut (uploaded).',
+  'The first element in a filter configuration must be the filter class.' => 'Prvi element u konfiguraciji filtera mora biti klasa filtera.',
+  'The item "{name}" does not exist.' => 'Stavka "{name}" ne postoji.',
+  'The item "{parent}" already has a child "{child}".' => 'Stavka "{parent}" već ima dijete "{child}".',
+  'The layout path "{path}" is not a valid directory.' => 'Put do direktorijuma layout "{path}" nije ispravan.',
+  'The list is read only.' => 'Lista (List) je samo za čitanje',
+  'The map is read only.' => 'Mapa (Map) je samo za čitanje',
+  'The module path "{path}" is not a valid directory.' => 'Put do modula "{path}" je nevažeći direktorijum.',
+  'The pattern for 12 hour format must be "h" or "hh".' => 'Šablona za 12 časovni format mora biti "h" ili "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => 'Šablona za 24 časovni format mora biti "H" ili "HH".',
+  'The pattern for AM/PM marker must be "a".' => 'Šablona za AM/PM marker mora biti "a".',
+  'The pattern for day in month must be "F".' => 'Šablona za dan u mjesecu mora biti "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'Šablona za dan u godini mora biti "D", "DD" ili "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => 'Šablona za dan mjeseca mora biti "d" ili "dd".',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE" or "EEEEE".' => 'Šablona za dan sedmice mora biti "E", "EE", "EEE", "EEEE" ili "EEEEE".',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'Šablona za doba mora biti "G", "GG", "GGG", "GGGG" ili "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'Šablona za čas u AM/PM mora biti "K" ili "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => 'Šablona za čas u danu mora biti "k" ili "kk".',
+  'The pattern for minutes must be "m" or "mm".' => 'Šablona za minute mora biti "m" ili "mm".',
+  'The pattern for month must be "M", "MM", "MMM", or "MMMM".' => 'Šablona za mjesec mora biti "M", "MM", "MMM" ili "MMMM".',
+  'The pattern for seconds must be "s" or "ss".' => 'Šablona za sekunde mora biti "s" ili "ss".',
+  'The pattern for time zone must be "z" or "v".' => 'Šablona za zonu mora biti "z" ili "v".',
+  'The pattern for week in month must be "W".' => 'Šablona za sedmicu u mjesecu mora biti "W".',
+  'The pattern for week in year must be "w".' => 'Šablona za sedmicu u godini mora biti "w".',
+  'The queue is empty.' => 'Red (queue) je prazan.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Odnos "{relation}" u active record klasi "{class}" nije specificirana ispravno: pridružena tabela (join table) "{joinTable}" zadata u spoljnom ključu (foreign key) ne može biti pronađena u bazi.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Odnos "{relation}" u active record klasi "{class}" nije specificirana ispravno: pridružena tabela (join table) "{joinTable}" zadata u spoljnom ključu (foreign key) ne može biti pronađena u bazi.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'Odnos "{relation}" u active record klasi "{class}" je ispisan sa spoljnim ključem "{key}", koji ne prikazuje na tabelu "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'Odnos "{relation}" u active record klasi "{class}" je specificirana sa nekompletnim spoljnim ključem (foreign key). Spoljni ključ (foreign key) mora se sastojati od kolona koje referenciraju obadvije tabele za spajanje (joining tables).',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => 'Odnos "{relation}" u active record klasi "{class}" je specificirana pogrešnim spoljnim ključem (foreign key) "{key}". Spoljni ključ (foreign key) ne pokazuje ni na jednu tabelu za spajanje (joining tables).',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'Odnos "{relation}" u active record klasi "{class}" je specificirana sa pogrešnim spoljnim ključem "{key}". U tabeli "{table}" ne postoji takva kolona.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'Odnos "{relation}" u active record klasi "{class}" je specificirana pogrešnim spoljnim ključem (foreign key). Kolone spoljnog ključa (foreign key) moraju biti iste kao i primarnog ključa od tabele "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'Odnos "{relation}" u active record klasi "{class}" je specificirana pogrešnim spoljnim ključem (foreign key). Format spoljnog ključa (foreign key) mora biti "joinTable(fk1,fk2,...)',
+  'The requested view "{name}" was not found.' => 'zahtjevani pogled (view) "{name}" nije pronađen.',
+  'The stack is empty.' => 'Hrpa (stack) je prazna.',
+  'The system is unable to find the requested action "{action}".' => 'Sistem ne može da pronađe zahtjevanu akciju "{action}".',
+  'The system view path "{path}" is not a valid directory.' => 'Put direktorijuma do sistemskog pogleda (system view) "{path}" nije ispravan.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'Tabela "{table}" za active record klasu "{class}" ne može biti pronađena u bazi.',
+  'The value for the primary key "{key}" is not supplied when querying the table "{table}".' => 'Vrijednost primarnog ključa (primary key) "{key}" nije prosljeđena prilikom izvršenja upita nad tabelom "{table}".',
+  'The verification code is incorrect.' => 'Verifikacioni kod je pogrešan.',
+  'The view path "{path}" is not a valid directory.' => 'Put do prikaznog direktorijuma (view path) "{path}" ne važi.',
+  'Theme directory "{directory}" does not exist.' => 'Direktorijum za teme (theme directory) "{directory}" ne postoji.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'Ovaj sadržaj zahtjeva <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => 'Ne mogu da dodam stavku sa istim imenom kao postojeća stavka.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'Ne mogu da promjenim ime stavke (item name). Ime "{name}" već koristi neka druga stavka.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'Ne mogu da kreiram aplikacioni fajl stanja (state file) "{file}". Budite sigurni da direktorijum koji sadrži fajl postoji i da je omogućeno pisanje od strane Web server procesa.',
+  'Unable to lock file "{file}" for reading.' => 'Ne mogu da zaključam fajl "{file}" za čitanje.',
+  'Unable to lock file "{file}" for writing.' => 'Ne mogu da zaključam fajl "{file}" za upisivanje.',
+  'Unable to read file "{file}".' => 'Ne mogu da pročitam fajl "{file}".',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => 'Ne mogu reproducirati (replay) "{object}.{method}". Metoda ne postoji.',
+  'Unable to resolve the request "{route}".' => 'Ne mogu da riješim "{route}" zahtjev.',
+  'Unable to write file "{file}".' => 'Ne mogu da upišem fajl "{file}".',
+  'Unknown authorization item "{name}".' => 'Nepoznata stavka ovlašćenja (authorization item) "{name}',
+  'Unrecognized locale "{locale}".' => 'Lokalizacija nije prepoznata (unrecognized locale) "{locale}".',
+  'View file "{file}" does not exist.' => 'Fajl pogleda (view file) "{file}" ne postoji.',
+  'Yii application can only be created once.' => 'Yii aplikacija može biti kreirana samo jedanput.',
+  'You are not authorized to perform this action.' => 'Niste autorizovani da izvršite ovu akciju.',
+  'Your request is not valid.' => 'Vaš zahtjev nije ispravan.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" je već uzeta.',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" je pogrešan (neispravan).',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} ne prihvata više nego {limit} fajlova.',
+  '{attribute} cannot be blank.' => 'Morate popuniti polje {attribute}.',
+  '{attribute} is invalid.' => '{attribute} je pogrešan (neispravan).',
+  '{attribute} is not a valid URL.' => '{attribute} nije ispravan URL.',
+  '{attribute} is not a valid email address.' => '{attribute} nije ispravna email adresa.',
+  '{attribute} is not in the list.' => '{attribute} nije u listi.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} je pogrešne dužine (treba biti {length} karaktera).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} je prevelik (maksimum je {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} je predugačak (maksimum je {max} karaktera).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} je prekratak (minimum je {min} karaktera).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} je premali (minimum je {min}).',
+  '{attribute} must be a number.' => '{attribute} mora biti broj.',
+  '{attribute} must be an integer.' => '{attribute} mora biti cijeli broj (integer).',
+  '{attribute} must be either {true} or {false}.' => '{attribute} mora biti makar {true} ili {false}.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} mora biti veći nego "{compareValue}".',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} mora biti veći nego "{compareValue}".',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} mora biti manji nego "{compareValue}".',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} mora biti manji ili isti nego "{compareValue}".',
+  '{attribute} must be repeated exactly.' => '{attribute} mora biti tačno ponovljen.',
+  '{attribute} must be {type}.' => '{attribute} mora biti {type}.',
+  '{attribute} must be {value}.' => '{attribute} mora biti {value}.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} nesmije biti isti kao "{compareValue}".',
+  '{className} does not support add() functionality.' => '{className} ne podržava add() funcionalnost.',
+  '{className} does not support delete() functionality.' => '{className} ne podržava delete() funkcionalnost.',
+  '{className} does not support flush() functionality.' => '{className} ne podržava flush() funkcionalnost.',
+  '{className} does not support get() functionality.' => '{className} ne podržava get() funkcionalnost.',
+  '{className} does not support set() functionality.' => '{className} ne podržava set() funkcionalnost.',
+  '{class} does not have a method named "{name}".' => '{class} nema metode imenom "{name}".',
+  '{class} does not have relation "{name}".' => '{class} nema odnosa "{name}".',
+  '{class} does not support fetching all table names.' => '{class} ne podržava dobavljanje svih naziva tabela.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} ima pogrešno ovjereno pravilo (validation rule). Pravilo mora da specificira atribute koji ce biti ovjereni i ime ovjerenja.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} mora da specificira "model" i "attribute" ili "name" svojstvo (property) vrijednosti.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin mora biti podešen na true da bi se koristila cookies autorizacija.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() mora biti implementirana.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} ne može da pronađe zahtjevani pogled (view) "{view}".',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} sadrži nepropisno ugnježdene widget tagove u svom pogledu (view) "{view}". {widget} widget nema endWidget() poziv.',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} ima suvišan endWidget({id}) poziv u svom pogledu (view).',
+  '{widget} cannot find the view "{view}".' => '{widget} ne može da pronađe pogled (view) "{view}".',
+);

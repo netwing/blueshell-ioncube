@@ -1,219 +1,583 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.1.0
+ */
+
+// @codeCoverageIgnoreStart
+if (!defined('T_TRAIT')) {
+    define('T_TRAIT', 1001);
+}
+
+if (!defined('T_INSTEADOF')) {
+    define('T_INSTEADOF', 1002);
+}
+
+if (!defined('T_CALLABLE')) {
+    define('T_CALLABLE', 1003);
+}
+// @codeCoverageIgnoreEnd
+
+/**
+ * Renders a PHP_CodeCoverage_Report_Node_File node.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.1.0
+ */
+class PHP_CodeCoverage_Report_HTML_Renderer_File extends PHP_CodeCoverage_Report_HTML_Renderer
+{
+    /**
+     * @var boolean
+     */
+    protected $highlight;
+
+    /**
+     * Constructor.
+     *
+     * @param string  $templatePath
+     * @param string  $charset
+     * @param string  $generator
+     * @param string  $date
+     * @param integer $lowUpperBound
+     * @param integer $highLowerBound
+     * @param boolean $highlight
+     */
+    public function __construct($templatePath, $charset, $generator, $date, $lowUpperBound, $highLowerBound, $highlight)
+    {
+        parent::__construct(
+          $templatePath,
+          $charset,
+          $generator,
+          $date,
+          $lowUpperBound,
+          $highLowerBound
+        );
+
+        $this->highlight = $highlight;
+    }
+
+    /**
+     * @param PHP_CodeCoverage_Report_Node_File $node
+     * @param string                            $file
+     */
+    public function render(PHP_CodeCoverage_Report_Node_File $node, $file)
+    {
+        $template = new Text_Template($this->templatePath . 'file.html');
+
+        $template->setVar(
+          array(
+            'items' => $this->renderItems($node),
+            'lines' => $this->renderSource($node)
+          )
+        );
+
+        $this->setCommonTemplateVariables($template, $node);
+
+        $template->renderTo($file);
+    }
+
+    /**
+     * @param  PHP_CodeCoverage_Report_Node_File $node
+     * @return string
+     */
+    protected function renderItems(PHP_CodeCoverage_Report_Node_File $node)
+    {
+        $template = new Text_Template($this->templatePath . 'file_item.html');
+
+        $methodItemTemplate = new Text_Template(
+          $this->templatePath . 'method_item.html'
+        );
+
+        $items = $this->renderItemTemplate(
+          $template,
+          array(
+            'name'                         => 'Total',
+            'numClasses'                   => $node->getNumClassesAndTraits(),
+            'numTestedClasses'             => $node->getNumTestedClassesAndTraits(),
+            'numMethods'                   => $node->getNumMethods(),
+            'numTestedMethods'             => $node->getNumTestedMethods(),
+            'linesExecutedPercent'         => $node->getLineExecutedPercent(FALSE),
+            'linesExecutedPercentAsString' => $node->getLineExecutedPercent(),
+            'numExecutedLines'             => $node->getNumExecutedLines(),
+            'numExecutableLines'           => $node->getNumExecutableLines(),
+            'testedMethodsPercent'         => $node->getTestedMethodsPercent(FALSE),
+            'testedMethodsPercentAsString' => $node->getTestedMethodsPercent(),
+            'testedClassesPercent'         => $node->getTestedClassesAndTraitsPercent(FALSE),
+            'testedClassesPercentAsString' => $node->getTestedClassesAndTraitsPercent(),
+            'crap'                         => '<abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr>'
+          )
+        );
+
+        $items .= $this->renderFunctionItems(
+          $node->getFunctions(), $methodItemTemplate
+        );
+
+        $items .= $this->renderTraitOrClassItems(
+          $node->getTraits(), $template, $methodItemTemplate
+        );
+
+        $items .= $this->renderTraitOrClassItems(
+          $node->getClasses(), $template, $methodItemTemplate
+        );
+
+        return $items;
+    }
+
+    /**
+     * @param  array         $items
+     * @param  Text_Template $template
+     * @return string
+     */
+    protected function renderTraitOrClassItems(array $items, Text_Template $template, Text_Template $methodItemTemplate)
+    {
+        if (empty($items)) {
+            return '';
+        }
+
+        $buffer = '';
+
+        foreach ($items as $name => $item) {
+            $numMethods       = count($item['methods']);
+            $numTestedMethods = 0;
+
+            foreach ($item['methods'] as $method) {
+                if ($method['executedLines'] == $method['executableLines']) {
+                    $numTestedMethods++;
+                }
+            }
+
+            $buffer .= $this->renderItemTemplate(
+              $template,
+              array(
+                'name'                         => $name,
+                'numClasses'                   => 1,
+                'numTestedClasses'             => $numTestedMethods == $numMethods ? 1 : 0,
+                'numMethods'                   => $numMethods,
+                'numTestedMethods'             => $numTestedMethods,
+                'linesExecutedPercent'         => PHP_CodeCoverage_Util::percent(
+                                                    $item['executedLines'],
+                                                    $item['executableLines'],
+                                                    FALSE
+                                                  ),
+                'linesExecutedPercentAsString' => PHP_CodeCoverage_Util::percent(
+                                                    $item['executedLines'],
+                                                    $item['executableLines'],
+                                                    TRUE
+                                                  ),
+                'numExecutedLines'             => $item['executedLines'],
+                'numExecutableLines'           => $item['executableLines'],
+                'testedMethodsPercent'         => PHP_CodeCoverage_Util::percent(
+                                                    $numTestedMethods,
+                                                    $numMethods,
+                                                    FALSE
+                                                  ),
+                'testedMethodsPercentAsString' => PHP_CodeCoverage_Util::percent(
+                                                    $numTestedMethods,
+                                                    $numMethods,
+                                                    TRUE
+                                                  ),
+                'testedClassesPercent'         => PHP_CodeCoverage_Util::percent(
+                                                    $numTestedMethods == $numMethods ? 1 : 0,
+                                                    1,
+                                                    FALSE
+                                                  ),
+                'testedClassesPercentAsString' => PHP_CodeCoverage_Util::percent(
+                                                    $numTestedMethods == $numMethods ? 1 : 0,
+                                                    1,
+                                                    TRUE
+                                                  ),
+                'crap'                         => $item['crap']
+              )
+            );
+
+            foreach ($item['methods'] as $method) {
+                $buffer .= $this->renderFunctionOrMethodItem(
+                  $methodItemTemplate, $method, '&nbsp;'
+                );
+            }
+        }
+
+        return $buffer;
+    }
+
+    /**
+     * @param  array         $functions
+     * @param  Text_Template $template
+     * @return string
+     */
+    protected function renderFunctionItems(array $functions, Text_Template $template)
+    {
+        if (empty($functions)) {
+            return '';
+        }
+
+        $buffer = '';
+
+        foreach ($functions as $function) {
+            $buffer .= $this->renderFunctionOrMethodItem(
+              $template, $function
+            );
+        }
+
+        return $buffer;
+    }
+
+    /**
+     * @param  Text_Template $template
+     * @return string
+     */
+    protected function renderFunctionOrMethodItem(Text_Template $template, array $item, $indent = '')
+    {
+        $numTestedItems = $item['executedLines'] == $item['executableLines'] ? 1 : 0;
+
+        return $this->renderItemTemplate(
+          $template,
+          array(
+            'name'                         => sprintf(
+                                                '%s<a href="#%d">%s</a>',
+                                                $indent,
+                                                $item['startLine'],
+                                                htmlspecialchars($item['signature'])
+                                              ),
+            'numMethods'                   => 1,
+            'numTestedMethods'             => $numTestedItems,
+            'linesExecutedPercent'         => PHP_CodeCoverage_Util::percent(
+                                                $item['executedLines'],
+                                                $item['executableLines'],
+                                                FALSE
+                                              ),
+            'linesExecutedPercentAsString' => PHP_CodeCoverage_Util::percent(
+                                                $item['executedLines'],
+                                                $item['executableLines'],
+                                                TRUE
+                                              ),
+            'numExecutedLines'             => $item['executedLines'],
+            'numExecutableLines'           => $item['executableLines'],
+            'testedMethodsPercent'         => PHP_CodeCoverage_Util::percent(
+                                                $numTestedItems,
+                                                1,
+                                                FALSE
+                                              ),
+            'testedMethodsPercentAsString' => PHP_CodeCoverage_Util::percent(
+                                                $numTestedItems,
+                                                1,
+                                                TRUE
+                                              ),
+            'crap'                         => $item['crap']
+          )
+        );
+    }
+
+    /**
+     * @param  PHP_CodeCoverage_Report_Node_File $node
+     * @return string
+     */
+    protected function renderSource(PHP_CodeCoverage_Report_Node_File $node)
+    {
+        $coverageData = $node->getCoverageData();
+        $ignoredLines = $node->getIgnoredLines();
+        $testData     = $node->getTestData();
+        $codeLines    = $this->loadFile($node->getPath());
+        $lines        = '';
+        $i            = 1;
+
+        foreach ($codeLines as $line) {
+            $numTests       = '';
+            $trClass        = '';
+            $popoverContent = '';
+            $popoverTitle   = '';
+
+            if (!isset($ignoredLines[$i]) && isset($coverageData[$i])) {
+                $numTests = count($coverageData[$i]);
+
+                if ($coverageData[$i] === NULL) {
+                    $trClass = ' class="warning"';
+                }
+
+                else if ($numTests == 0) {
+                    $trClass = ' class="danger"';
+                }
+
+                else {
+                    $trClass        = ' class="success popin"';
+                    $popoverContent = '<ul>';
+
+                    if ($numTests > 1) {
+                        $popoverTitle = $numTests . ' tests cover line ' . $i;
+                    } else {
+                        $popoverTitle = '1 test covers line ' . $i;
+                    }
+
+                    foreach ($coverageData[$i] as $test) {
+                        switch ($testData[$test]) {
+                            case 0: {
+                                $testCSS = ' class="success"';
+                            }
+                            break;
+
+                            case 1:
+                            case 2: {
+                                $testCSS = ' class="warning"';
+                            }
+                            break;
+
+                            case 3: {
+                                $testCSS = ' class="danger"';
+                            }
+                            break;
+
+                            case 4: {
+                                $testCSS = ' class="danger"';
+                            }
+                            break;
+
+                            default: {
+                                $testCSS = '';
+                            }
+                        }
+
+                        $popoverContent .= sprintf(
+                          '<li%s>%s</li>',
+
+                          $testCSS,
+                          htmlspecialchars($test)
+                        );
+                    }
+
+                    $popoverContent .= '</ul>';
+                }
+            }
+
+            if (!empty($popoverTitle)) {
+                $popover = sprintf(
+                  ' data-title="%s" data-content="%s" data-placement="bottom" data-html="true"',
+                  $popoverTitle,
+                  htmlspecialchars($popoverContent)
+                );
+            } else {
+                $popover = '';
+            }
+
+            $lines .= sprintf(
+              '     <tr%s%s><td><div align="right"><a name="%d"></a><a href="#%d">%d</a></div></td><td class="codeLine">%s</td></tr>' . "\n",
+              $trClass,
+              $popover,
+              $i,
+              $i,
+              $i,
+              !$this->highlight ? htmlspecialchars($line) : $line
+            );
+
+            $i++;
+        }
+
+        return $lines;
+    }
+
+    /**
+     * @param  string $file
+     * @return array
+     */
+    protected function loadFile($file)
+    {
+        $buffer = file_get_contents($file);
+        $lines  = explode("\n", str_replace("\t", '    ', $buffer));
+        $result = array();
+
+        if (count($lines) == 0) {
+            return $result;
+        }
+
+        $lines = array_map('rtrim', $lines);
+
+        if (!$this->highlight) {
+            unset($lines[count($lines)-1]);
+            return $lines;
+        }
+
+        $tokens     = token_get_all($buffer);
+        $stringFlag = FALSE;
+        $i          = 0;
+        $result[$i] = '';
+
+        foreach ($tokens as $j => $token) {
+            if (is_string($token)) {
+                if ($token === '"' && $tokens[$j - 1] !== '\\') {
+                    $result[$i] .= sprintf(
+                      '<span class="string">%s</span>',
+
+                      htmlspecialchars($token)
+                    );
+
+                    $stringFlag = !$stringFlag;
+                } else {
+                    $result[$i] .= sprintf(
+                      '<span class="keyword">%s</span>',
+
+                      htmlspecialchars($token)
+                    );
+                }
+
+                continue;
+            }
+
+            list ($token, $value) = $token;
+
+            $value = str_replace(
+              array("\t", ' '),
+              array('&nbsp;&nbsp;&nbsp;&nbsp;', '&nbsp;'),
+              htmlspecialchars($value)
+            );
+
+            if ($value === "\n") {
+                $result[++$i] = '';
+            } else {
+                $lines = explode("\n", $value);
+
+                foreach ($lines as $jj => $line) {
+                    $line = trim($line);
+
+                    if ($line !== '') {
+                        if ($stringFlag) {
+                            $colour = 'string';
+                        } else {
+                            switch ($token) {
+                                case T_INLINE_HTML: {
+                                    $colour = 'html';
+                                }
+                                break;
+
+                                case T_COMMENT:
+                                case T_DOC_COMMENT: {
+                                    $colour = 'comment';
+                                }
+                                break;
+
+                                case T_ABSTRACT:
+                                case T_ARRAY:
+                                case T_AS:
+                                case T_BREAK:
+                                case T_CALLABLE:
+                                case T_CASE:
+                                case T_CATCH:
+                                case T_CLASS:
+                                case T_CLONE:
+                                case T_CONTINUE:
+                                case T_DEFAULT:
+                                case T_ECHO:
+                                case T_ELSE:
+                                case T_ELSEIF:
+                                case T_EMPTY:
+                                case T_ENDDECLARE:
+                                case T_ENDFOR:
+                                case T_ENDFOREACH:
+                                case T_ENDIF:
+                                case T_ENDSWITCH:
+                                case T_ENDWHILE:
+                                case T_EXIT:
+                                case T_EXTENDS:
+                                case T_FINAL:
+                                case T_FOREACH:
+                                case T_FUNCTION:
+                                case T_GLOBAL:
+                                case T_IF:
+                                case T_IMPLEMENTS:
+                                case T_INCLUDE:
+                                case T_INCLUDE_ONCE:
+                                case T_INSTANCEOF:
+                                case T_INSTEADOF:
+                                case T_INTERFACE:
+                                case T_ISSET:
+                                case T_LOGICAL_AND:
+                                case T_LOGICAL_OR:
+                                case T_LOGICAL_XOR:
+                                case T_NAMESPACE:
+                                case T_NEW:
+                                case T_PRIVATE:
+                                case T_PROTECTED:
+                                case T_PUBLIC:
+                                case T_REQUIRE:
+                                case T_REQUIRE_ONCE:
+                                case T_RETURN:
+                                case T_STATIC:
+                                case T_THROW:
+                                case T_TRAIT:
+                                case T_TRY:
+                                case T_UNSET:
+                                case T_USE:
+                                case T_VAR:
+                                case T_WHILE: {
+                                    $colour = 'keyword';
+                                }
+                                break;
+
+                                default: {
+                                    $colour = 'default';
+                                }
+                            }
+                        }
+
+                        $result[$i] .= sprintf(
+                          '<span class="%s">%s</span>',
+
+                          $colour,
+                          $line
+                        );
+                    }
+
+                    if (isset($lines[$jj + 1])) {
+                        $result[++$i] = '';
+                    }
+                }
+            }
+        }
+
+        unset($result[count($result)-1]);
+
+        return $result;
+    }
+}

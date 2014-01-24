@@ -1,208 +1,339 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * This file is part of Guzzle's build process.
+ *
+ * @copyright 2012 Clay Loveless <clay@php.net>
+ * @license   http://claylo.mit-license.org/2012/ MIT License
+ */
+
+require_once 'phing/Task.php';
+require_once 'PEAR/PackageFileManager2.php';
+require_once 'PEAR/PackageFileManager/File.php';
+require_once 'PEAR/Packager.php';
+
+class GuzzlePearPharPackageTask extends Task
+{
+    private $dir;
+    private $version;
+    private $deploy = true;
+    private $makephar = true;
+
+    private $subpackages = array();
+
+    public function setVersion($str)
+    {
+        $this->version = $str;
+    }
+
+    public function getVersion()
+    {
+        return $this->version;
+    }
+
+    public function setDeploy($deploy)
+    {
+        $this->deploy = (bool) $deploy;
+    }
+
+    public function getDeploy()
+    {
+        return $this->deploy;
+    }
+
+    public function setMakephar($makephar)
+    {
+        $this->makephar = (bool) $makephar;
+    }
+
+    public function getMakephar()
+    {
+        return $this->makephar;
+    }
+
+    private $basedir;
+    private $guzzleinfo;
+    private $changelog_release_date;
+    private $changelog_notes = '-';
+
+    public function main()
+    {
+        $this->basedir = $this->getProject()->getBasedir();
+
+        if (!is_dir((string) $this->basedir.'/.subsplit')) {
+            throw new BuildException('PEAR packaging requires .subsplit directory');
+        }
+
+        // main composer file
+        $composer_file = file_get_contents((string) $this->basedir.'/.subsplit/composer.json');
+        $this->guzzleinfo = json_decode($composer_file, true);
+
+        // make sure we have a target
+        $pearwork = (string) $this->basedir . '/build/pearwork';
+        if (!is_dir($pearwork)) {
+            mkdir($pearwork, 0777, true);
+        }
+        $pearlogs = (string) $this->basedir . '/build/artifacts/logs';
+        if (!is_dir($pearlogs)) {
+            mkdir($pearlogs, 0777, true);
+        }
+
+        $version = $this->getVersion();
+        $this->grabChangelog();
+        if ($version[0] == '2') {
+            $this->log('building single PEAR package');
+            $this->buildSinglePackage();
+        } else {
+            // $this->log("building PEAR subpackages");
+            // $this->createSubPackages();
+            // $this->log("building PEAR bundle package");
+            $this->buildSinglePackage();
+        }
+
+        if ($this->getMakephar()) {
+            $this->log("building PHAR");
+            $this->getProject()->executeTarget('package-phar');
+        }
+
+        if ($this->getDeploy()) {
+            $this->doDeployment();
+        }
+    }
+
+    public function doDeployment()
+    {
+        $basedir = (string) $this->basedir;
+        $this->log('beginning PEAR/PHAR deployment');
+
+        chdir($basedir . '/build/pearwork');
+        if (is_dir($basedir . '/build/pearwork/guzzle.github.com')) {
+            exec('rm -rf guzzle.github.com');
+        }
+        passthru('git clone git@github.com:guzzle/guzzle.github.com');
+
+        // add PEAR packages
+        foreach (scandir($basedir . '/build/pearwork') as $file) {
+            if (substr($file, -4) == '.tgz') {
+                passthru('pirum add guzzle.github.com/pear '.$file);
+            }
+        }
+
+        // if we have a new phar, add it
+        if ($this->getMakephar() && file_exists($basedir.'/build/artifacts/guzzle.phar')) {
+            rename($basedir.'/build/artifacts/guzzle.phar', $basedir.'/build/pearwork/guzzle.github.com/guzzle.phar');
+        }
+
+        // add and commit
+        chdir($basedir . '/build/pearwork/guzzle.github.com');
+        passthru('git add --all .');
+        passthru('git commit -m "Pushing PEAR/PHAR release for '.$this->getVersion().'" && git push');
+    }
+
+    public function buildSinglePackage()
+    {
+        $v = $this->getVersion();
+        $apiversion = $v[0] . '.0.0';
+
+        $opts = array(
+            'packagedirectory' => (string) $this->basedir . '/.subsplit/src/',
+            'filelistgenerator' => 'file',
+            'ignore' => array('*composer.json'),
+            'baseinstalldir' => '/',
+            'packagefile' => 'package.xml'
+            //'outputdirectory' => (string) $this->basedir . '/build/pearwork/'
+        );
+        $pfm = new PEAR_PackageFileManager2();
+        $e = $pfm->setOptions($opts);
+        $pfm->addRole('md', 'doc');
+        $pfm->addRole('pem', 'php');
+        $pfm->setPackage('Guzzle');
+        $pfm->setSummary("Object-oriented PHP HTTP Client for PHP 5.3+");
+        $pfm->setDescription($this->guzzleinfo['description']);
+        $pfm->setPackageType('php');
+        $pfm->setChannel('guzzlephp.org/pear');
+        $pfm->setAPIVersion($apiversion);
+        $pfm->setReleaseVersion($this->getVersion());
+        $pfm->setAPIStability('stable');
+        $pfm->setReleaseStability('stable');
+        $pfm->setNotes($this->changelog_notes);
+        $pfm->setPackageType('php');
+        $pfm->setLicense('MIT', 'http://github.com/guzzle/guzzle/blob/master/LICENSE');
+        $pfm->addMaintainer('lead', 'mtdowling', 'Michael Dowling', 'mtdowling@gmail.com', 'yes');
+        $pfm->setDate($this->changelog_release_date);
+        $pfm->generateContents();
+
+        $phpdep = $this->guzzleinfo['require']['php'];
+        $phpdep = str_replace('>=', '', $phpdep);
+        $pfm->setPhpDep($phpdep);
+        $pfm->addExtensionDep('required', 'curl');
+        $pfm->setPearinstallerDep('1.4.6');
+        $pfm->addPackageDepWithChannel('required', 'EventDispatcher', 'pear.symfony.com', '2.1.0');
+        if (!empty($this->subpackages)) {
+            foreach ($this->subpackages as $package) {
+                $pkg = dirname($package);
+                $pkg = str_replace('/', '_', $pkg);
+                $pfm->addConflictingPackageDepWithChannel($pkg, 'guzzlephp.org/pear', false, $apiversion);
+            }
+        }
+
+        ob_start();
+        $startdir = getcwd();
+        chdir((string) $this->basedir . '/build/pearwork');
+
+        echo "DEBUGGING GENERATED PACKAGE FILE\n";
+        $result = $pfm->debugPackageFile();
+        if ($result) {
+            $out = $pfm->writePackageFile();
+            echo "\n\n\nWRITE PACKAGE FILE RESULT:\n";
+            var_dump($out);
+            // load up package file and build package
+            $packager = new PEAR_Packager();
+            echo "\n\n\nBUILDING PACKAGE FROM PACKAGE FILE:\n";
+            $dest_package = $packager->package($opts['packagedirectory'].'package.xml');
+            var_dump($dest_package);
+        } else {
+            echo "\n\n\nDEBUGGING RESULT:\n";
+            var_dump($result);
+        }
+        echo "removing package.xml";
+        unlink($opts['packagedirectory'].'package.xml');
+        $log = ob_get_clean();
+        file_put_contents((string) $this->basedir . '/build/artifacts/logs/pear_package.log', $log);
+        chdir($startdir);
+    }
+
+    public function createSubPackages()
+    {
+        $version = $this->getVersion();
+        $this->findComponents();
+
+        foreach ($this->subpackages as $package) {
+            $baseinstalldir = dirname($package);
+            $dir = (string) $this->basedir.'/.subsplit/src/' . $baseinstalldir;
+            $composer_file = file_get_contents((string) $this->basedir.'/.subsplit/src/'. $package);
+            $package_info = json_decode($composer_file, true);
+            $this->log('building ' . $package_info['target-dir'] . ' subpackage');
+            $this->buildSubPackage($dir, $baseinstalldir, $package_info);
+        }
+    }
+
+    public function buildSubPackage($dir, $baseinstalldir, $info)
+    {
+        $package = str_replace('/', '_', $baseinstalldir);
+        $opts = array(
+            'packagedirectory' => $dir,
+            'filelistgenerator' => 'file',
+            'ignore' => array('*composer.json', '*package.xml'),
+            'baseinstalldir' => '/' . $info['target-dir'],
+            'packagefile' => 'package.xml'
+        );
+        $pfm = new PEAR_PackageFileManager2();
+        $e = $pfm->setOptions($opts);
+        $pfm->setPackage($package);
+        $pfm->setSummary($info['description']);
+        $pfm->setDescription($info['description']);
+        $pfm->setPackageType('php');
+        $pfm->setChannel('guzzlephp.org/pear');
+        $pfm->setAPIVersion('3.0.0');
+        $pfm->setReleaseVersion($this->getVersion());
+        $pfm->setAPIStability('stable');
+        $pfm->setReleaseStability('stable');
+        $pfm->setNotes($this->changelog_notes);
+        $pfm->setPackageType('php');
+        $pfm->setLicense('MIT', 'http://github.com/guzzle/guzzle/blob/master/LICENSE');
+        $pfm->addMaintainer('lead', 'mtdowling', 'Michael Dowling', 'mtdowling@gmail.com', 'yes');
+        $pfm->setDate($this->changelog_release_date);
+        $pfm->generateContents();
+
+        $phpdep = $this->guzzleinfo['require']['php'];
+        $phpdep = str_replace('>=', '', $phpdep);
+        $pfm->setPhpDep($phpdep);
+        $pfm->setPearinstallerDep('1.4.6');
+
+        foreach ($info['require'] as $type => $version) {
+            if ($type == 'php') {
+                continue;
+            }
+            if ($type == 'symfony/event-dispatcher') {
+                $pfm->addPackageDepWithChannel('required', 'EventDispatcher', 'pear.symfony.com', '2.1.0');
+            }
+            if ($type == 'ext-curl') {
+                $pfm->addExtensionDep('required', 'curl');
+            }
+            if (substr($type, 0, 6) == 'guzzle') {
+                $gdep = str_replace('/', ' ', $type);
+                $gdep = ucwords($gdep);
+                $gdep = str_replace(' ', '_', $gdep);
+                $pfm->addPackageDepWithChannel('required', $gdep, 'guzzlephp.org/pear', $this->getVersion());
+            }
+        }
+
+        // can't have main Guzzle package AND sub-packages
+        $pfm->addConflictingPackageDepWithChannel('Guzzle', 'guzzlephp.org/pear', false, $apiversion);
+
+        ob_start();
+        $startdir = getcwd();
+        chdir((string) $this->basedir . '/build/pearwork');
+
+        echo "DEBUGGING GENERATED PACKAGE FILE\n";
+        $result = $pfm->debugPackageFile();
+        if ($result) {
+            $out = $pfm->writePackageFile();
+            echo "\n\n\nWRITE PACKAGE FILE RESULT:\n";
+            var_dump($out);
+            // load up package file and build package
+            $packager = new PEAR_Packager();
+            echo "\n\n\nBUILDING PACKAGE FROM PACKAGE FILE:\n";
+            $dest_package = $packager->package($opts['packagedirectory'].'/package.xml');
+            var_dump($dest_package);
+        } else {
+            echo "\n\n\nDEBUGGING RESULT:\n";
+            var_dump($result);
+        }
+        echo "removing package.xml";
+        unlink($opts['packagedirectory'].'/package.xml');
+        $log = ob_get_clean();
+        file_put_contents((string) $this->basedir . '/build/artifacts/logs/pear_package_'.$package.'.log', $log);
+        chdir($startdir);
+    }
+
+    public function findComponents()
+    {
+        $ds = new DirectoryScanner();
+        $ds->setBasedir((string) $this->basedir.'/.subsplit/src');
+        $ds->setIncludes(array('**/composer.json'));
+        $ds->scan();
+        $files = $ds->getIncludedFiles();
+        $this->subpackages = $files;
+    }
+
+    public function grabChangelog()
+    {
+        $cl = file((string) $this->basedir.'/.subsplit/CHANGELOG.md');
+        $notes = '';
+        $in_version = false;
+        $release_date = null;
+
+        foreach ($cl as $line) {
+            $line = trim($line);
+            if (preg_match('/^\* '.$this->getVersion().' \(([0-9\-]+)\)$/', $line, $matches)) {
+                $release_date = $matches[1];
+                $in_version = true;
+                continue;
+            }
+            if ($in_version && empty($line) && empty($notes)) {
+                continue;
+            }
+            if ($in_version && ! empty($line)) {
+                $notes .= $line."\n";
+            }
+            if ($in_version && empty($line) && !empty($notes)) {
+                $in_version = false;
+            }
+        }
+        $this->changelog_release_date = $release_date;
+
+        if (! empty($notes)) {
+            $this->changelog_notes = $notes;
+        }
+    }
+}

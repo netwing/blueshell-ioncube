@@ -1,49 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Service\Command;
+
+use Guzzle\Service\Client;
+use Guzzle\Service\Command\Factory\AliasFactory;
+use Guzzle\Service\Command\Factory\MapFactory;
+use Guzzle\Service\Command\Factory\CompositeFactory;
+
+/**
+ * @covers Guzzle\Service\Command\Factory\AliasFactory
+ */
+class AliasFactoryTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    private $factory;
+    private $client;
+
+    public function setup()
+    {
+        $this->client = new Client();
+
+        $map = new MapFactory(array(
+            'test'  => 'Guzzle\Tests\Service\Mock\Command\MockCommand',
+            'test1' => 'Guzzle\Tests\Service\Mock\Command\OtherCommand'
+        ));
+
+        $this->factory = new AliasFactory($this->client, array(
+            'foo'      => 'test',
+            'bar'      => 'sub',
+            'sub'      => 'test1',
+            'krull'    => 'test3',
+            'krull_2'  => 'krull',
+            'sub_2'    => 'bar',
+            'bad_link' => 'jarjar'
+        ));
+
+        $map2 = new MapFactory(array(
+            'test3'  => 'Guzzle\Tests\Service\Mock\Command\Sub\Sub'
+        ));
+
+        $this->client->setCommandFactory(new CompositeFactory(array($map, $this->factory, $map2)));
+    }
+
+    public function aliasProvider()
+    {
+        return array(
+            array('foo', 'Guzzle\Tests\Service\Mock\Command\MockCommand', false),
+            array('bar', 'Guzzle\Tests\Service\Mock\Command\OtherCommand', false),
+            array('sub', 'Guzzle\Tests\Service\Mock\Command\OtherCommand', false),
+            array('sub_2', 'Guzzle\Tests\Service\Mock\Command\OtherCommand', false),
+            array('krull', 'Guzzle\Tests\Service\Mock\Command\Sub\Sub', false),
+            array('krull_2', 'Guzzle\Tests\Service\Mock\Command\Sub\Sub', false),
+            array('missing', null, true),
+            array('bad_link', null, true)
+        );
+    }
+
+    /**
+     * @dataProvider aliasProvider
+     */
+    public function testAliasesCommands($key, $result, $exception)
+    {
+        try {
+            $command = $this->client->getCommand($key);
+            if (is_null($result)) {
+                $this->assertNull($command);
+            } else {
+                $this->assertInstanceof($result, $command);
+            }
+        } catch (\Exception $e) {
+            if (!$exception) {
+                $this->fail('Got exception when it was not expected');
+            }
+        }
+    }
+}

@@ -1,54 +1,180 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.0.0
+ */
+
+/**
+ * Abstract base class for constraints. which are placed upon any value.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Interface available since Release 3.0.0
+ */
+abstract class PHPUnit_Framework_Constraint implements Countable, PHPUnit_Framework_SelfDescribing
+{
+
+    /**
+     * Evaluates the constraint for parameter $other
+     *
+     * If $returnResult is set to FALSE (the default), an exception is thrown
+     * in case of a failure. NULL is returned otherwise.
+     *
+     * If $returnResult is TRUE, the result of the evaluation is returned as
+     * a boolean value instead: TRUE in case of success, FALSE in case of a
+     * failure.
+     *
+     * @param  mixed $other Value or object to evaluate.
+     * @param  string $description Additional information about the test
+     * @param  bool $returnResult Whether to return a result or throw an exception
+     * @return mixed
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    public function evaluate($other, $description = '', $returnResult = FALSE)
+    {
+        $success = FALSE;
+
+        if ($this->matches($other)) {
+            $success = TRUE;
+        }
+
+        if ($returnResult) {
+            return $success;
+        }
+
+        if (!$success) {
+            $this->fail($other, $description);
+        }
+    }
+
+    /**
+     * Evaluates the constraint for parameter $other. Returns TRUE if the
+     * constraint is met, FALSE otherwise.
+     *
+     * This method can be overridden to implement the evaluation algorithm.
+     *
+     * @param mixed $other Value or object to evaluate.
+     * @return bool
+     */
+    protected function matches($other)
+    {
+        return FALSE;
+    }
+
+    /**
+     * Counts the number of constraint elements.
+     *
+     * @return integer
+     * @since  Method available since Release 3.4.0
+     */
+    public function count()
+    {
+        return 1;
+    }
+
+    /**
+     * Throws an exception for the given compared value and test description
+     *
+     * @param  mixed $other Evaluated value or object.
+     * @param  string $description Additional information about the test
+     * @param  PHPUnit_Framework_ComparisonFailure $comparisonFailure
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    protected function fail($other, $description, PHPUnit_Framework_ComparisonFailure $comparisonFailure = NULL)
+    {
+        $failureDescription = sprintf(
+          'Failed asserting that %s.',
+          $this->failureDescription($other)
+        );
+
+        $additionalFailureDescription = $this->additionalFailureDescription($other);
+        if ($additionalFailureDescription) {
+            $failureDescription .= "\n" . $additionalFailureDescription;
+        }
+
+        if (!empty($description)) {
+            $failureDescription = $description . "\n" . $failureDescription;
+        }
+
+        throw new PHPUnit_Framework_ExpectationFailedException(
+          $failureDescription,
+          $comparisonFailure
+        );
+    }
+
+    /**
+     * Return additional failure description where needed
+     *
+     * The function can be overridden to provide additional failure
+     * information like a diff
+     *
+     * @param  mixed $other Evaluated value or object.
+     * @return string
+     */
+    protected function additionalFailureDescription($other)
+    {
+        return "";
+    }
+
+    /**
+     * Returns the description of the failure
+     *
+     * The beginning of failure messages is "Failed asserting that" in most
+     * cases. This method should return the second part of that sentence.
+     *
+     * To provide additional failure information additionalFailureDescription
+     * can be used.
+     *
+     * @param  mixed $other Evaluated value or object.
+     * @return string
+     */
+    protected function failureDescription($other)
+    {
+        return PHPUnit_Util_Type::export($other) . ' ' . $this->toString();
+    }
+}

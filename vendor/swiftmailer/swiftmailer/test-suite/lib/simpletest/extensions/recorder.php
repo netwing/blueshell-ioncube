@@ -1,35 +1,62 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *	base include file for SimpleTest
+ *	@package	SimpleTest
+ *	@subpackage	Extensions
+ *	@version	$Id: recorder.php 1802 2008-09-08 10:43:58Z maetl_ $
+ */
+
+/**
+ *	include other SimpleTest class files
+ */
+require_once(dirname(__FILE__) . '/../scorer.php');
+
+/**
+ *    Array-based test recorder. Returns an array
+ *    with timestamp, status, test name and message for each pass and failure.
+ *
+ *    This code is made available under the same terms as SimpleTest.  It is based
+ *    off of code that Rene vd O originally published in patch [ 1594212 ]
+ *    on the SimpleTest patches tracker. 
+ *
+ *    @author Rene vd O (original code)
+ *    @author Perrick Penet
+ *	  @package SimpleTest
+ *	  @subpackage Extensions
+ */
+class Recorder extends SimpleReporter {
+    var $results;
+  
+	function Recorder() {
+        $this->SimpleReporter();
+        $this->results = array();
+	}
+	
+	function paintPass($message) {
+        parent::paintPass($message);
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        $test = implode("->", $breadcrumb);
+    
+        $result["time"] = time();
+        $result["status"] = "Passed";
+        $result["test"] = $test;
+        $result["message"] = $message;
+        $this->results[] = $result;
+	}
+	
+	function paintFail($message) {
+        parent::paintFail($message);
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        $test = implode("->", $breadcrumb);
+    
+        $result["time"] = time();
+        $result["status"] = "Failed";
+        $result["test"] = $test;
+        $result["message"] = $message;
+        $this->results[] = $result;
+	}
+}
+
 ?>
-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

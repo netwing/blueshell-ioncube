@@ -1,333 +1,455 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-8UB4c73guwUUZw4gk2Oqc9i=
+<?php
+
+namespace Guzzle\Tests\Http\Curl;
+
+use Guzzle\Common\Event;
+use Guzzle\Http\Exception\BadResponseException;
+use Guzzle\Http\Exception\MultiTransferException;
+use Guzzle\Http\Client;
+use Guzzle\Http\Message\Request;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Message\RequestFactory;
+use Guzzle\Http\Curl\CurlMulti;
+use Guzzle\Http\Exception\CurlException;
+use Guzzle\Tests\Mock\MockMulti;
+
+/**
+ * @group server
+ * @covers Guzzle\Http\Curl\CurlMulti
+ */
+class CurlMultiTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    /** @var \Guzzle\Http\Curl\CurlMulti */
+    private $multi;
+
+    /**
+     * Prepares the environment before running a test.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->multi = new MockMulti();
+    }
+
+    public function tearDown()
+    {
+        unset($this->multi);
+    }
+
+    public function testConstructorCreateMultiHandle()
+    {
+        $this->assertInternalType('resource', $this->multi->getHandle());
+        $this->assertEquals('curl_multi', get_resource_type($this->multi->getHandle()));
+    }
+
+    public function testDestructorClosesMultiHandle()
+    {
+        $handle = $this->multi->getHandle();
+        $this->multi->__destruct();
+        $this->assertFalse(is_resource($handle));
+    }
+
+    public function testRequestsCanBeAddedAndCounted()
+    {
+        $multi = new CurlMulti();
+        $request1 = new Request('GET', 'http://www.google.com/');
+        $multi->add($request1);
+        $this->assertEquals(array($request1), $multi->all());
+        $request2 = new Request('POST', 'http://www.google.com/');
+        $multi->add($request2);
+        $this->assertEquals(array($request1, $request2), $multi->all());
+        $this->assertEquals(2, count($multi));
+    }
+
+    public function testRequestsCanBeRemoved()
+    {
+        $request1 = new Request('GET', 'http://www.google.com/');
+        $this->multi->add($request1);
+        $request2 = new Request('PUT', 'http://www.google.com/');
+        $this->multi->add($request2);
+        $this->assertEquals(array($request1, $request2), $this->multi->all());
+        $this->assertTrue($this->multi->remove($request1));
+        $this->assertFalse($this->multi->remove($request1));
+        $this->assertEquals(array($request2), $this->multi->all());
+    }
+
+    public function testsResetRemovesRequestsAndResetsState()
+    {
+        $this->multi->add(new Request('GET', 'http://www.google.com/'));
+        $this->multi->reset();
+        $this->assertEquals(array(), $this->multi->all());
+    }
+
+    public function testSendsRequestsThroughCurl()
+    {
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 204 No content\r\n" .
+            "Content-Length: 0\r\n" .
+            "Server: Jetty(6.1.3)\r\n\r\n",
+            "HTTP/1.1 200 OK\r\n" .
+            "Content-Type: text/html; charset=utf-8\r\n" .
+            "Content-Length: 4\r\n" .
+            "Server: Jetty(6.1.3)\r\n\r\n" .
+            "data"
+        ));
+
+        $request1 = new Request('GET', $this->getServer()->getUrl());
+        $request2 = new Request('GET', $this->getServer()->getUrl());
+        $this->multi->add($request1);
+        $this->multi->add($request2);
+        $this->multi->send();
+
+        $response1 = $request1->getResponse();
+        $response2 = $request2->getResponse();
+        $this->assertInstanceOf('Guzzle\\Http\\Message\\Response', $response1);
+        $this->assertInstanceOf('Guzzle\\Http\\Message\\Response', $response2);
+
+        $this->assertTrue($response1->getBody(true) == 'data' || $response2->getBody(true) == 'data');
+        $this->assertTrue($response1->getBody(true) == '' || $response2->getBody(true) == '');
+        $this->assertTrue($response1->getStatusCode() == '204' || $response2->getStatusCode() == '204');
+        $this->assertNotEquals((string) $response1, (string) $response2);
+    }
+
+    public function testSendsThroughCurlAndAggregatesRequestExceptions()
+    {
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\n" .
+            "Content-Type: text/html; charset=utf-8\r\n" .
+            "Content-Length: 4\r\n" .
+            "Server: Jetty(6.1.3)\r\n" .
+            "\r\n" .
+            "data",
+            "HTTP/1.1 204 No content\r\n" .
+            "Content-Length: 0\r\n" .
+            "Server: Jetty(6.1.3)\r\n" .
+            "\r\n",
+            "HTTP/1.1 404 Not Found\r\n" .
+            "Content-Length: 0\r\n" .
+            "\r\n"
+        ));
+
+        $request1 = new Request('GET', $this->getServer()->getUrl());
+        $request2 = new Request('HEAD', $this->getServer()->getUrl());
+        $request3 = new Request('GET', $this->getServer()->getUrl());
+        $this->multi->add($request1);
+        $this->multi->add($request2);
+        $this->multi->add($request3);
+
+        try {
+            $this->multi->send();
+            $this->fail('MultiTransferException not thrown when aggregating request exceptions');
+        } catch (MultiTransferException $e) {
+
+            $this->assertTrue($e->containsRequest($request1));
+            $this->assertTrue($e->containsRequest($request2));
+            $this->assertTrue($e->containsRequest($request3));
+            $this->assertInstanceOf('ArrayIterator', $e->getIterator());
+            $this->assertEquals(1, count($e));
+            $exceptions = $e->getIterator();
+
+            $response1 = $request1->getResponse();
+            $response2 = $request2->getResponse();
+            $response3 = $request3->getResponse();
+
+            $this->assertNotEquals((string) $response1, (string) $response2);
+            $this->assertNotEquals((string) $response3, (string) $response1);
+            $this->assertInstanceOf('Guzzle\\Http\\Message\\Response', $response1);
+            $this->assertInstanceOf('Guzzle\\Http\\Message\\Response', $response2);
+            $this->assertInstanceOf('Guzzle\\Http\\Message\\Response', $response3);
+
+            $failed = $exceptions[0]->getResponse();
+            $this->assertEquals(404, $failed->getStatusCode());
+            $this->assertEquals(1, count($e));
+
+            // Test the IteratorAggregate functionality
+            foreach ($e as $except) {
+                $this->assertEquals($failed, $except->getResponse());
+            }
+
+            $this->assertEquals(1, count($e->getFailedRequests()));
+            $this->assertEquals(2, count($e->getSuccessfulRequests()));
+            $this->assertEquals(3, count($e->getAllRequests()));
+        }
+    }
+
+    public function testCurlErrorsAreCaught()
+    {
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        try {
+            $request = RequestFactory::getInstance()->create('GET', 'http://127.0.0.1:9876/');
+            $request->setClient(new Client());
+            $request->getCurlOptions()->set(CURLOPT_FRESH_CONNECT, true);
+            $request->getCurlOptions()->set(CURLOPT_FORBID_REUSE, true);
+            $request->getCurlOptions()->set(CURLOPT_CONNECTTIMEOUT_MS, 5);
+            $request->send();
+            $this->fail('CurlException not thrown');
+        } catch (CurlException $e) {
+            $m = $e->getMessage();
+            $this->assertContains('[curl] ', $m);
+            $this->assertContains('[url] http://127.0.0.1:9876/', $m);
+            $this->assertInternalType('array', $e->getCurlInfo());
+        }
+    }
+
+    public function testRemovesQueuedRequests()
+    {
+        $request = RequestFactory::getInstance()->create('GET', 'http://127.0.0.1:9876/');
+        $r = new Response(200);
+        $request->setClient(new Client());
+        $request->setResponse($r, true);
+        $this->multi->add($request);
+        $this->multi->send();
+        $this->assertSame($r, $request->getResponse());
+    }
+
+    public function testRemovesQueuedRequestsAddedInTransit()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n"));
+        $client = new Client($this->getServer()->getUrl());
+        $r = $client->get();
+        $r->getEventDispatcher()->addListener('request.receive.status_line', function (Event $event) use ($client) {
+            // Create a request using a queued response
+            $request = $client->get()->setResponse(new Response(200), true);
+            $request->send();
+        });
+        $r->send();
+        $this->assertEquals(1, count($this->getServer()->getReceivedRequests(false)));
+    }
+
+    public function testCatchesExceptionsBeforeSendingSingleRequest()
+    {
+        $client = new Client($this->getServer()->getUrl());
+        $multi = new CurlMulti();
+        $client->setCurlMulti($multi);
+        $request = $client->get();
+        $request->getEventDispatcher()->addListener('request.before_send', function() {
+            throw new \RuntimeException('Testing!');
+        });
+        try {
+            $request->send();
+            $this->fail('Did not throw');
+        } catch (\RuntimeException $e) {
+            // Ensure it was removed
+            $this->assertEquals(0, count($multi));
+        }
+    }
+
+    /**
+     * @expectedException \Guzzle\Common\Exception\ExceptionCollection
+     * @expectedExceptionMessage Thrown before sending!
+     */
+    public function testCatchesExceptionsBeforeSendingMultipleRequests()
+    {
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->get();
+        $request->getEventDispatcher()->addListener('request.before_send', function() {
+            throw new \RuntimeException('Thrown before sending!');
+        });
+        $client->send(array($request));
+    }
+
+    public function testCatchesExceptionsWhenRemovingQueuedRequests()
+    {
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        $client = new Client($this->getServer()->getUrl());
+        $r = $client->get();
+        $r->getEventDispatcher()->addListener('request.sent', function() use ($client) {
+            // Create a request using a queued response
+            $client->get()->setResponse(new Response(404), true)->send();
+        });
+        try {
+            $r->send();
+            $this->fail('Did not throw');
+        } catch (BadResponseException $e) {
+            $this->assertCount(0, $client->getCurlMulti());
+        }
+    }
+
+    public function testCatchesExceptionsWhenRemovingQueuedRequestsBeforeSending()
+    {
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        $client = new Client($this->getServer()->getUrl());
+        $r = $client->get();
+        $r->getEventDispatcher()->addListener('request.before_send', function() use ($client) {
+            // Create a request using a queued response
+            $client->get()->setResponse(new Response(404), true)->send();
+        });
+        try {
+            $r->send();
+            $this->fail('Did not throw');
+        } catch (BadResponseException $e) {
+            $this->assertCount(0, $client->getCurlMulti());
+        }
+    }
+
+    /**
+     * @expectedException \RuntimeException
+     * @expectedExceptionMessage test
+     */
+    public function testDoesNotCatchRandomExceptionsThrownDuringPerform()
+    {
+        $client = new Client($this->getServer()->getUrl());
+        $multi = $this->getMock('Guzzle\\Http\\Curl\\CurlMulti', array('perform'));
+        $multi->expects($this->once())
+            ->method('perform')
+            ->will($this->throwException(new \RuntimeException('test')));
+        $multi->add($client->get());
+        $multi->send();
+    }
+
+    public function testDoesNotSendRequestsDecliningToBeSent()
+    {
+        if (!defined('CURLOPT_TIMEOUT_MS')) {
+            $this->markTestSkipped('Update curl');
+        }
+
+        // Create a client that is bound to fail connecting
+        $client = new Client('http://localhost:123', array(
+            'curl.CURLOPT_PORT'              => 123,
+            'curl.CURLOPT_CONNECTTIMEOUT_MS' => 1,
+        ));
+
+        $request = $client->get();
+        $multi = new CurlMulti();
+        $multi->add($request);
+
+        // Listen for request exceptions, and when they occur, first change the
+        // state of the request back to transferring, and then just allow it to
+        // exception out
+        $request->getEventDispatcher()->addListener('request.exception', function(Event $event) use ($multi) {
+            $retries = $event['request']->getParams()->get('retries');
+            // Allow the first failure to retry
+            if ($retries == 0) {
+                $event['request']->setState('transfer');
+                $event['request']->getParams()->set('retries', 1);
+                // Remove the request to try again
+                $multi->remove($event['request']);
+                $multi->add($event['request']);
+            }
+        });
+
+        try {
+            $multi->send();
+            $this->fail('Did not throw an exception at all!?!');
+        } catch (\Exception $e) {
+            $this->assertEquals(1, $request->getParams()->get('retries'));
+        }
+    }
+
+    public function testDoesNotThrowExceptionsWhenRequestsRecoverWithRetry()
+    {
+        $this->getServer()->flush();
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->get();
+        $request->getEventDispatcher()->addListener('request.before_send', function(Event $event) {
+            $event['request']->setResponse(new Response(200));
+        });
+
+        $multi = new CurlMulti();
+        $multi->add($request);
+        $multi->send();
+        $this->assertEquals(0, count($this->getServer()->getReceivedRequests(false)));
+    }
+
+    public function testDoesNotThrowExceptionsWhenRequestsRecoverWithSuccess()
+    {
+        // Attempt a port that 99.9% is not listening
+        $client = new Client('http://localhost:123');
+        $request = $client->get();
+        // Ensure it times out quickly if needed
+        $request->getCurlOptions()->set(CURLOPT_TIMEOUT_MS, 1)->set(CURLOPT_CONNECTTIMEOUT_MS, 1);
+
+        $request->getEventDispatcher()->addListener('request.exception', function(Event $event) use (&$count) {
+            $event['request']->setResponse(new Response(200));
+        });
+
+        $multi = new CurlMulti();
+        $multi->add($request);
+        $multi->send();
+
+        // Ensure that the exception was caught, and the response was set manually
+        $this->assertEquals(200, $request->getResponse()->getStatusCode());
+    }
+
+    public function testHardResetReopensMultiHandle()
+    {
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n"
+        ));
+
+        $stream = fopen('php://temp', 'w+');
+        $client = new Client($this->getServer()->getUrl());
+        $client->getConfig()->set('curl.CURLOPT_VERBOSE', true)->set('curl.CURLOPT_STDERR', $stream);
+
+        $request = $client->get();
+        $multi = new CurlMulti();
+        $multi->add($request);
+        $multi->send();
+        $multi->reset(true);
+        $multi->add($request);
+        $multi->send();
+
+        rewind($stream);
+        $this->assertNotContains('Re-using existing connection', stream_get_contents($stream));
+    }
+
+    public function testThrowsMeaningfulExceptionsForCurlMultiErrors()
+    {
+        $multi = new CurlMulti();
+
+        // Set the state of the multi object to sending to trigger the exception
+        $reflector = new \ReflectionMethod('Guzzle\Http\Curl\CurlMulti', 'checkCurlResult');
+        $reflector->setAccessible(true);
+
+        // Successful
+        $reflector->invoke($multi, 0);
+
+        // Known error
+        try {
+            $reflector->invoke($multi, CURLM_BAD_HANDLE);
+            $this->fail('Expected an exception here');
+        } catch (CurlException $e) {
+            $this->assertContains('The passed-in handle is not a valid CURLM handle.', $e->getMessage());
+            $this->assertContains('CURLM_BAD_HANDLE', $e->getMessage());
+            $this->assertContains(strval(CURLM_BAD_HANDLE), $e->getMessage());
+        }
+
+        // Unknown error
+        try {
+            $reflector->invoke($multi, 255);
+            $this->fail('Expected an exception here');
+        } catch (CurlException $e) {
+            $this->assertEquals('Unexpected cURL error: 255', $e->getMessage());
+        }
+    }
+
+    public function testRequestBeforeSendIncludesContentLengthHeaderIfEmptyBody()
+    {
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        $request = new Request('PUT', $this->getServer()->getUrl());
+        $that = $this;
+        $request->getEventDispatcher()->addListener('request.before_send', function ($event) use ($that) {
+            $that->assertEquals(0, $event['request']->getHeader('Content-Length'));
+        });
+        $this->multi->add($request);
+        $this->multi->send();
+    }
+
+    public function testRemovesConflictingTransferEncodingHeader()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 4\r\n\r\ntest",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n"
+        ));
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->put('/', null, fopen($this->getServer()->getUrl(), 'r'));
+        $request->setHeader('Content-Length', 4);
+        $request->send();
+        $received = $this->getServer()->getReceivedRequests(true);
+        $this->assertFalse($received[1]->hasHeader('Transfer-Encoding'));
+        $this->assertEquals(4, (string) $received[1]->getHeader('Content-Length'));
+    }
+}

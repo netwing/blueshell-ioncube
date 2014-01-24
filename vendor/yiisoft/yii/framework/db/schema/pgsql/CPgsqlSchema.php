@@ -1,215 +1,437 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CPgsqlSchema class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CPgsqlSchema is the class for retrieving metadata information from a PostgreSQL database.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.db.schema.pgsql
+ * @since 1.0
+ */
+class CPgsqlSchema extends CDbSchema
+{
+	const DEFAULT_SCHEMA='public';
+
+	/**
+	 * @var array the abstract column types mapped to physical column types.
+	 * @since 1.1.6
+	 */
+	public $columnTypes=array(
+		'pk' => 'serial NOT NULL PRIMARY KEY',
+		'string' => 'character varying (255)',
+		'text' => 'text',
+		'integer' => 'integer',
+		'float' => 'double precision',
+		'decimal' => 'numeric',
+		'datetime' => 'timestamp',
+		'timestamp' => 'timestamp',
+		'time' => 'time',
+		'date' => 'date',
+		'binary' => 'bytea',
+		'boolean' => 'boolean',
+		'money' => 'decimal(19,4)',
+	);
+
+	private $_sequences=array();
+
+	/**
+	 * Quotes a table name for use in a query.
+	 * A simple table name does not schema prefix.
+	 * @param string $name table name
+	 * @return string the properly quoted table name
+	 * @since 1.1.6
+	 */
+	public function quoteSimpleTableName($name)
+	{
+		return '"'.$name.'"';
+	}
+
+	/**
+	 * Resets the sequence value of a table's primary key.
+	 * The sequence will be reset such that the primary key of the next new row inserted
+	 * will have the specified value or max value of a primary key plus one (i.e. sequence trimming).
+	 * @param CDbTableSchema $table the table schema whose primary key sequence will be reset
+	 * @param integer|null $value the value for the primary key of the next new row inserted.
+	 * If this is not set, the next new row's primary key will have the max value of a primary
+	 * key plus one (i.e. sequence trimming).
+	 * @since 1.1
+	 */
+	public function resetSequence($table,$value=null)
+	{
+		if($table->sequenceName===null)
+			return;
+		$sequence='"'.$table->sequenceName.'"';
+		if(strpos($sequence,'.')!==false)
+			$sequence=str_replace('.','"."',$sequence);
+		if($value!==null)
+			$value=(int)$value;
+		else
+			$value="(SELECT COALESCE(MAX(\"{$table->primaryKey}\"),0) FROM {$table->rawName})+1";
+		$this->getDbConnection()
+			->createCommand("SELECT SETVAL('$sequence',$value,false)")
+			->execute();
+	}
+
+	/**
+	 * Enables or disables integrity check.
+	 * @param boolean $check whether to turn on or off the integrity check.
+	 * @param string $schema the schema of the tables. Defaults to empty string, meaning the current or default schema.
+	 * @since 1.1
+	 */
+	public function checkIntegrity($check=true,$schema='')
+	{
+		$enable=$check ? 'ENABLE' : 'DISABLE';
+		$tableNames=$this->getTableNames($schema);
+		$db=$this->getDbConnection();
+		foreach($tableNames as $tableName)
+		{
+			$tableName='"'.$tableName.'"';
+			if(strpos($tableName,'.')!==false)
+				$tableName=str_replace('.','"."',$tableName);
+			$db->createCommand("ALTER TABLE $tableName $enable TRIGGER ALL")->execute();
+		}
+	}
+
+	/**
+	 * Loads the metadata for the specified table.
+	 * @param string $name table name
+	 * @return CDbTableSchema driver dependent table metadata.
+	 */
+	protected function loadTable($name)
+	{
+		$table=new CPgsqlTableSchema;
+		$this->resolveTableNames($table,$name);
+		if(!$this->findColumns($table))
+			return null;
+		$this->findConstraints($table);
+
+		if(is_string($table->primaryKey) && isset($this->_sequences[$table->rawName.'.'.$table->primaryKey]))
+			$table->sequenceName=$this->_sequences[$table->rawName.'.'.$table->primaryKey];
+		elseif(is_array($table->primaryKey))
+		{
+			foreach($table->primaryKey as $pk)
+			{
+				if(isset($this->_sequences[$table->rawName.'.'.$pk]))
+				{
+					$table->sequenceName=$this->_sequences[$table->rawName.'.'.$pk];
+					break;
+				}
+			}
+		}
+
+		return $table;
+	}
+
+	/**
+	 * Generates various kinds of table names.
+	 * @param CPgsqlTableSchema $table the table instance
+	 * @param string $name the unquoted table name
+	 */
+	protected function resolveTableNames($table,$name)
+	{
+		$parts=explode('.',str_replace('"','',$name));
+		if(isset($parts[1]))
+		{
+			$schemaName=$parts[0];
+			$tableName=$parts[1];
+		}
+		else
+		{
+			$schemaName=self::DEFAULT_SCHEMA;
+			$tableName=$parts[0];
+		}
+
+		$table->name=$tableName;
+		$table->schemaName=$schemaName;
+		if($schemaName===self::DEFAULT_SCHEMA)
+			$table->rawName=$this->quoteTableName($tableName);
+		else
+			$table->rawName=$this->quoteTableName($schemaName).'.'.$this->quoteTableName($tableName);
+	}
+
+	/**
+	 * Collects the table column metadata.
+	 * @param CPgsqlTableSchema $table the table metadata
+	 * @return boolean whether the table exists in the database
+	 */
+	protected function findColumns($table)
+	{
+		$sql=<<<EOD
+SELECT a.attname, LOWER(format_type(a.atttypid, a.atttypmod)) AS type, d.adsrc, a.attnotnull, a.atthasdef,
+	pg_catalog.col_description(a.attrelid, a.attnum) AS comment
+FROM pg_attribute a LEFT JOIN pg_attrdef d ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+WHERE a.attnum > 0 AND NOT a.attisdropped
+	AND a.attrelid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+		AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace WHERE nspname = :schema))
+ORDER BY a.attnum
+EOD;
+		$command=$this->getDbConnection()->createCommand($sql);
+		$command->bindValue(':table',$table->name);
+		$command->bindValue(':schema',$table->schemaName);
+
+		if(($columns=$command->queryAll())===array())
+			return false;
+
+		foreach($columns as $column)
+		{
+			$c=$this->createColumn($column);
+			$table->columns[$c->name]=$c;
+
+			if(stripos($column['adsrc'],'nextval')===0 && preg_match('/nextval\([^\']*\'([^\']+)\'[^\)]*\)/i',$column['adsrc'],$matches))
+			{
+				if(strpos($matches[1],'.')!==false || $table->schemaName===self::DEFAULT_SCHEMA)
+					$this->_sequences[$table->rawName.'.'.$c->name]=$matches[1];
+				else
+					$this->_sequences[$table->rawName.'.'.$c->name]=$table->schemaName.'.'.$matches[1];
+				$c->autoIncrement=true;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Creates a table column.
+	 * @param array $column column metadata
+	 * @return CDbColumnSchema normalized column metadata
+	 */
+	protected function createColumn($column)
+	{
+		$c=new CPgsqlColumnSchema;
+		$c->name=$column['attname'];
+		$c->rawName=$this->quoteColumnName($c->name);
+		$c->allowNull=!$column['attnotnull'];
+		$c->isPrimaryKey=false;
+		$c->isForeignKey=false;
+		$c->comment=$column['comment']===null ? '' : $column['comment'];
+
+		$c->init($column['type'],$column['atthasdef'] ? $column['adsrc'] : null);
+
+		return $c;
+	}
+
+	/**
+	 * Collects the primary and foreign key column details for the given table.
+	 * @param CPgsqlTableSchema $table the table metadata
+	 */
+	protected function findConstraints($table)
+	{
+		$sql=<<<EOD
+SELECT conname, consrc, contype, indkey FROM (
+	SELECT
+		conname,
+		CASE WHEN contype='f' THEN
+			pg_catalog.pg_get_constraintdef(oid)
+		ELSE
+			'CHECK (' || consrc || ')'
+		END AS consrc,
+		contype,
+		conrelid AS relid,
+		NULL AS indkey
+	FROM
+		pg_catalog.pg_constraint
+	WHERE
+		contype IN ('f', 'c')
+	UNION ALL
+	SELECT
+		pc.relname,
+		NULL,
+		CASE WHEN indisprimary THEN
+				'p'
+		ELSE
+				'u'
+		END,
+		pi.indrelid,
+		indkey
+	FROM
+		pg_catalog.pg_class pc,
+		pg_catalog.pg_index pi
+	WHERE
+		pc.oid=pi.indexrelid
+		AND EXISTS (
+			SELECT 1 FROM pg_catalog.pg_depend d JOIN pg_catalog.pg_constraint c
+			ON (d.refclassid = c.tableoid AND d.refobjid = c.oid)
+			WHERE d.classid = pc.tableoid AND d.objid = pc.oid AND d.deptype = 'i' AND c.contype IN ('u', 'p')
+	)
+) AS sub
+WHERE relid = (SELECT oid FROM pg_catalog.pg_class WHERE relname=:table
+	AND relnamespace = (SELECT oid FROM pg_catalog.pg_namespace
+	WHERE nspname=:schema))
+EOD;
+		$command=$this->getDbConnection()->createCommand($sql);
+		$command->bindValue(':table',$table->name);
+		$command->bindValue(':schema',$table->schemaName);
+		foreach($command->queryAll() as $row)
+		{
+			if($row['contype']==='p') // primary key
+				$this->findPrimaryKey($table,$row['indkey']);
+			elseif($row['contype']==='f') // foreign key
+				$this->findForeignKey($table,$row['consrc']);
+		}
+	}
+
+	/**
+	 * Collects primary key information.
+	 * @param CPgsqlTableSchema $table the table metadata
+	 * @param string $indices pgsql primary key index list
+	 */
+	protected function findPrimaryKey($table,$indices)
+	{
+		$indices=implode(', ',preg_split('/\s+/',$indices));
+		$sql=<<<EOD
+SELECT attnum, attname FROM pg_catalog.pg_attribute WHERE
+	attrelid=(
+		SELECT oid FROM pg_catalog.pg_class WHERE relname=:table AND relnamespace=(
+			SELECT oid FROM pg_catalog.pg_namespace WHERE nspname=:schema
+		)
+	)
+	AND attnum IN ({$indices})
+EOD;
+		$command=$this->getDbConnection()->createCommand($sql);
+		$command->bindValue(':table',$table->name);
+		$command->bindValue(':schema',$table->schemaName);
+		foreach($command->queryAll() as $row)
+		{
+			$name=$row['attname'];
+			if(isset($table->columns[$name]))
+			{
+				$table->columns[$name]->isPrimaryKey=true;
+				if($table->primaryKey===null)
+					$table->primaryKey=$name;
+				elseif(is_string($table->primaryKey))
+					$table->primaryKey=array($table->primaryKey,$name);
+				else
+					$table->primaryKey[]=$name;
+			}
+		}
+	}
+
+	/**
+	 * Collects foreign key information.
+	 * @param CPgsqlTableSchema $table the table metadata
+	 * @param string $src pgsql foreign key definition
+	 */
+	protected function findForeignKey($table,$src)
+	{
+		$matches=array();
+		$brackets='\(([^\)]+)\)';
+		$pattern="/FOREIGN\s+KEY\s+{$brackets}\s+REFERENCES\s+([^\(]+){$brackets}/i";
+		if(preg_match($pattern,str_replace('"','',$src),$matches))
+		{
+			$keys=preg_split('/,\s+/', $matches[1]);
+			$tableName=$matches[2];
+			$fkeys=preg_split('/,\s+/', $matches[3]);
+			foreach($keys as $i=>$key)
+			{
+				$table->foreignKeys[$key]=array($tableName,$fkeys[$i]);
+				if(isset($table->columns[$key]))
+					$table->columns[$key]->isForeignKey=true;
+			}
+		}
+	}
+
+	/**
+	 * Returns all table names in the database.
+	 * @param string $schema the schema of the tables. Defaults to empty string, meaning the current or default schema.
+	 * If not empty, the returned table names will be prefixed with the schema name.
+	 * @return array all table names in the database.
+	 */
+	protected function findTableNames($schema='')
+	{
+		if($schema==='')
+			$schema=self::DEFAULT_SCHEMA;
+		$sql=<<<EOD
+SELECT table_name, table_schema FROM information_schema.tables
+WHERE table_schema=:schema AND table_type='BASE TABLE'
+EOD;
+		$command=$this->getDbConnection()->createCommand($sql);
+		$command->bindParam(':schema',$schema);
+		$rows=$command->queryAll();
+		$names=array();
+		foreach($rows as $row)
+		{
+			if($schema===self::DEFAULT_SCHEMA)
+				$names[]=$row['table_name'];
+			else
+				$names[]=$row['table_schema'].'.'.$row['table_name'];
+		}
+		return $names;
+	}
+
+	/**
+	 * Builds a SQL statement for renaming a DB table.
+	 * @param string $table the table to be renamed. The name will be properly quoted by the method.
+	 * @param string $newName the new table name. The name will be properly quoted by the method.
+	 * @return string the SQL statement for renaming a DB table.
+	 * @since 1.1.6
+	 */
+	public function renameTable($table, $newName)
+	{
+		return 'ALTER TABLE ' . $this->quoteTableName($table) . ' RENAME TO ' . $this->quoteTableName($newName);
+	}
+
+	/**
+	 * Builds a SQL statement for adding a new DB column.
+	 * @param string $table the table that the new column will be added to. The table name will be properly quoted by the method.
+	 * @param string $column the name of the new column. The name will be properly quoted by the method.
+	 * @param string $type the column type. The {@link getColumnType} method will be invoked to convert abstract column type (if any)
+	 * into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+	 * For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.
+	 * @return string the SQL statement for adding a new column.
+	 * @since 1.1.6
+	 */
+	public function addColumn($table, $column, $type)
+	{
+		$type=$this->getColumnType($type);
+		$sql='ALTER TABLE ' . $this->quoteTableName($table)
+			. ' ADD COLUMN ' . $this->quoteColumnName($column) . ' '
+			. $this->getColumnType($type);
+		return $sql;
+	}
+
+	/**
+	 * Builds a SQL statement for changing the definition of a column.
+	 * @param string $table the table whose column is to be changed. The table name will be properly quoted by the method.
+	 * @param string $column the name of the column to be changed. The name will be properly quoted by the method.
+	 * @param string $type the new column type. The {@link getColumnType} method will be invoked to convert abstract column type (if any)
+	 * into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+	 * For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.
+	 * @return string the SQL statement for changing the definition of a column.
+	 * @since 1.1.6
+	 */
+	public function alterColumn($table, $column, $type)
+	{
+		$type=$this->getColumnType($type);
+		$sql='ALTER TABLE ' . $this->quoteTableName($table) . ' ALTER COLUMN '
+			. $this->quoteColumnName($column) . ' TYPE ' . $this->getColumnType($type);
+		return $sql;
+	}
+
+	/**
+	 * Builds a SQL statement for dropping an index.
+	 * @param string $name the name of the index to be dropped. The name will be properly quoted by the method.
+	 * @param string $table the table whose index is to be dropped. The name will be properly quoted by the method.
+	 * @return string the SQL statement for dropping an index.
+	 * @since 1.1.6
+	 */
+	public function dropIndex($name, $table)
+	{
+		return 'DROP INDEX '.$this->quoteTableName($name);
+	}
+
+	/**
+	 * Creates a command builder for the database.
+	 * This method may be overridden by child classes to create a DBMS-specific command builder.
+	 * @return CPgsqlCommandBuilder command builder instance.
+	 */
+	protected function createCommandBuilder()
+	{
+		return new CPgsqlCommandBuilder($this);
+	}
+}

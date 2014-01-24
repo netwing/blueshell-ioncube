@@ -1,41 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../default_reporter.php');
+
+class TestOfCommandLineParsing extends UnitTestCase {
+    
+    function testDefaultsToEmptyStringToMeanNullToTheSelectiveReporter() {
+        $parser = new SimpleCommandLineParser(array());
+        $this->assertIdentical($parser->getTest(), '');
+        $this->assertIdentical($parser->getTestCase(), '');
+    }
+    
+    function testNotXmlByDefault() {
+        $parser = new SimpleCommandLineParser(array());
+        $this->assertFalse($parser->isXml());
+    }
+    
+    function testCanDetectRequestForXml() {
+        $parser = new SimpleCommandLineParser(array('--xml'));
+        $this->assertTrue($parser->isXml());
+    }
+    
+    function testCanReadAssignmentSyntax() {
+        $parser = new SimpleCommandLineParser(array('--test=myTest'));
+        $this->assertEqual($parser->getTest(), 'myTest');
+    }
+    
+    function testCanReadFollowOnSyntax() {
+        $parser = new SimpleCommandLineParser(array('--test', 'myTest'));
+        $this->assertEqual($parser->getTest(), 'myTest');
+    }
+    
+    function testCanReadShortForms() {
+        $parser = new SimpleCommandLineParser(array('-t', 'myTest', '-c', 'MyClass', '-x'));
+        $this->assertEqual($parser->getTest(), 'myTest');
+        $this->assertEqual($parser->getTestCase(), 'MyClass');
+        $this->assertTrue($parser->isXml());
+    }
+}
 ?>
-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
-t23PKPLvSrDsDCJ+Ix0cbzU+ix5VHm==

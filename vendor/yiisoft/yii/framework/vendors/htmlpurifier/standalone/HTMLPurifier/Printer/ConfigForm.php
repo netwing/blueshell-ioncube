@@ -1,225 +1,368 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * @todo Rewrite to use Interchange objects
+ */
+class HTMLPurifier_Printer_ConfigForm extends HTMLPurifier_Printer
+{
+
+    /**
+     * Printers for specific fields
+     */
+    protected $fields = array();
+
+    /**
+     * Documentation URL, can have fragment tagged on end
+     */
+    protected $docURL;
+
+    /**
+     * Name of form element to stuff config in
+     */
+    protected $name;
+
+    /**
+     * Whether or not to compress directive names, clipping them off
+     * after a certain amount of letters. False to disable or integer letters
+     * before clipping.
+     */
+    protected $compress = false;
+
+    /**
+     * @param $name Form element name for directives to be stuffed into
+     * @param $doc_url String documentation URL, will have fragment tagged on
+     * @param $compress Integer max length before compressing a directive name, set to false to turn off
+     */
+    public function __construct(
+        $name, $doc_url = null, $compress = false
+    ) {
+        parent::__construct();
+        $this->docURL = $doc_url;
+        $this->name   = $name;
+        $this->compress = $compress;
+        // initialize sub-printers
+        $this->fields[0]    = new HTMLPurifier_Printer_ConfigForm_default();
+        $this->fields[HTMLPurifier_VarParser::BOOL]       = new HTMLPurifier_Printer_ConfigForm_bool();
+    }
+
+    /**
+     * Sets default column and row size for textareas in sub-printers
+     * @param $cols Integer columns of textarea, null to use default
+     * @param $rows Integer rows of textarea, null to use default
+     */
+    public function setTextareaDimensions($cols = null, $rows = null) {
+        if ($cols) $this->fields['default']->cols = $cols;
+        if ($rows) $this->fields['default']->rows = $rows;
+    }
+
+    /**
+     * Retrieves styling, in case it is not accessible by webserver
+     */
+    public static function getCSS() {
+        return file_get_contents(HTMLPURIFIER_PREFIX . '/HTMLPurifier/Printer/ConfigForm.css');
+    }
+
+    /**
+     * Retrieves JavaScript, in case it is not accessible by webserver
+     */
+    public static function getJavaScript() {
+        return file_get_contents(HTMLPURIFIER_PREFIX . '/HTMLPurifier/Printer/ConfigForm.js');
+    }
+
+    /**
+     * Returns HTML output for a configuration form
+     * @param $config Configuration object of current form state, or an array
+     *        where [0] has an HTML namespace and [1] is being rendered.
+     * @param $allowed Optional namespace(s) and directives to restrict form to.
+     */
+    public function render($config, $allowed = true, $render_controls = true) {
+        if (is_array($config) && isset($config[0])) {
+            $gen_config = $config[0];
+            $config = $config[1];
+        } else {
+            $gen_config = $config;
+        }
+
+        $this->config = $config;
+        $this->genConfig = $gen_config;
+        $this->prepareGenerator($gen_config);
+
+        $allowed = HTMLPurifier_Config::getAllowedDirectivesForForm($allowed, $config->def);
+        $all = array();
+        foreach ($allowed as $key) {
+            list($ns, $directive) = $key;
+            $all[$ns][$directive] = $config->get($ns .'.'. $directive);
+        }
+
+        $ret = '';
+        $ret .= $this->start('table', array('class' => 'hp-config'));
+        $ret .= $this->start('thead');
+        $ret .= $this->start('tr');
+            $ret .= $this->element('th', 'Directive', array('class' => 'hp-directive'));
+            $ret .= $this->element('th', 'Value', array('class' => 'hp-value'));
+        $ret .= $this->end('tr');
+        $ret .= $this->end('thead');
+        foreach ($all as $ns => $directives) {
+            $ret .= $this->renderNamespace($ns, $directives);
+        }
+        if ($render_controls) {
+             $ret .= $this->start('tbody');
+             $ret .= $this->start('tr');
+                 $ret .= $this->start('td', array('colspan' => 2, 'class' => 'controls'));
+                     $ret .= $this->elementEmpty('input', array('type' => 'submit', 'value' => 'Submit'));
+                     $ret .= '[<a href="?">Reset</a>]';
+                 $ret .= $this->end('td');
+             $ret .= $this->end('tr');
+             $ret .= $this->end('tbody');
+        }
+        $ret .= $this->end('table');
+        return $ret;
+    }
+
+    /**
+     * Renders a single namespace
+     * @param $ns String namespace name
+     * @param $directive Associative array of directives to values
+     */
+    protected function renderNamespace($ns, $directives) {
+        $ret = '';
+        $ret .= $this->start('tbody', array('class' => 'namespace'));
+        $ret .= $this->start('tr');
+            $ret .= $this->element('th', $ns, array('colspan' => 2));
+        $ret .= $this->end('tr');
+        $ret .= $this->end('tbody');
+        $ret .= $this->start('tbody');
+        foreach ($directives as $directive => $value) {
+            $ret .= $this->start('tr');
+            $ret .= $this->start('th');
+            if ($this->docURL) {
+                $url = str_replace('%s', urlencode("$ns.$directive"), $this->docURL);
+                $ret .= $this->start('a', array('href' => $url));
+            }
+                $attr = array('for' => "{$this->name}:$ns.$directive");
+
+                // crop directive name if it's too long
+                if (!$this->compress || (strlen($directive) < $this->compress)) {
+                    $directive_disp = $directive;
+                } else {
+                    $directive_disp = substr($directive, 0, $this->compress - 2) . '...';
+                    $attr['title'] = $directive;
+                }
+
+                $ret .= $this->element(
+                    'label',
+                    $directive_disp,
+                    // component printers must create an element with this id
+                    $attr
+                );
+            if ($this->docURL) $ret .= $this->end('a');
+            $ret .= $this->end('th');
+
+            $ret .= $this->start('td');
+                $def = $this->config->def->info["$ns.$directive"];
+                if (is_int($def)) {
+                    $allow_null = $def < 0;
+                    $type = abs($def);
+                } else {
+                    $type = $def->type;
+                    $allow_null = isset($def->allow_null);
+                }
+                if (!isset($this->fields[$type])) $type = 0; // default
+                $type_obj = $this->fields[$type];
+                if ($allow_null) {
+                    $type_obj = new HTMLPurifier_Printer_ConfigForm_NullDecorator($type_obj);
+                }
+                $ret .= $type_obj->render($ns, $directive, $value, $this->name, array($this->genConfig, $this->config));
+            $ret .= $this->end('td');
+            $ret .= $this->end('tr');
+        }
+        $ret .= $this->end('tbody');
+        return $ret;
+    }
+
+}
+
+/**
+ * Printer decorator for directives that accept null
+ */
+class HTMLPurifier_Printer_ConfigForm_NullDecorator extends HTMLPurifier_Printer {
+    /**
+     * Printer being decorated
+     */
+    protected $obj;
+    /**
+     * @param $obj Printer to decorate
+     */
+    public function __construct($obj) {
+        parent::__construct();
+        $this->obj = $obj;
+    }
+    public function render($ns, $directive, $value, $name, $config) {
+        if (is_array($config) && isset($config[0])) {
+            $gen_config = $config[0];
+            $config = $config[1];
+        } else {
+            $gen_config = $config;
+        }
+        $this->prepareGenerator($gen_config);
+
+        $ret = '';
+        $ret .= $this->start('label', array('for' => "$name:Null_$ns.$directive"));
+        $ret .= $this->element('span', "$ns.$directive:", array('class' => 'verbose'));
+        $ret .= $this->text(' Null/Disabled');
+        $ret .= $this->end('label');
+        $attr = array(
+            'type' => 'checkbox',
+            'value' => '1',
+            'class' => 'null-toggle',
+            'name' => "$name"."[Null_$ns.$directive]",
+            'id' => "$name:Null_$ns.$directive",
+            'onclick' => "toggleWriteability('$name:$ns.$directive',checked)" // INLINE JAVASCRIPT!!!!
+        );
+        if ($this->obj instanceof HTMLPurifier_Printer_ConfigForm_bool) {
+            // modify inline javascript slightly
+            $attr['onclick'] = "toggleWriteability('$name:Yes_$ns.$directive',checked);toggleWriteability('$name:No_$ns.$directive',checked)";
+        }
+        if ($value === null) $attr['checked'] = 'checked';
+        $ret .= $this->elementEmpty('input', $attr);
+        $ret .= $this->text(' or ');
+        $ret .= $this->elementEmpty('br');
+        $ret .= $this->obj->render($ns, $directive, $value, $name, array($gen_config, $config));
+        return $ret;
+    }
+}
+
+/**
+ * Swiss-army knife configuration form field printer
+ */
+class HTMLPurifier_Printer_ConfigForm_default extends HTMLPurifier_Printer {
+    public $cols = 18;
+    public $rows = 5;
+    public function render($ns, $directive, $value, $name, $config) {
+        if (is_array($config) && isset($config[0])) {
+            $gen_config = $config[0];
+            $config = $config[1];
+        } else {
+            $gen_config = $config;
+        }
+        $this->prepareGenerator($gen_config);
+        // this should probably be split up a little
+        $ret = '';
+        $def = $config->def->info["$ns.$directive"];
+        if (is_int($def)) {
+            $type = abs($def);
+        } else {
+            $type = $def->type;
+        }
+        if (is_array($value)) {
+            switch ($type) {
+                case HTMLPurifier_VarParser::LOOKUP:
+                    $array = $value;
+                    $value = array();
+                    foreach ($array as $val => $b) {
+                        $value[] = $val;
+                    }
+                case HTMLPurifier_VarParser::ALIST:
+                    $value = implode(PHP_EOL, $value);
+                    break;
+                case HTMLPurifier_VarParser::HASH:
+                    $nvalue = '';
+                    foreach ($value as $i => $v) {
+                        $nvalue .= "$i:$v" . PHP_EOL;
+                    }
+                    $value = $nvalue;
+                    break;
+                default:
+                    $value = '';
+            }
+        }
+        if ($type === HTMLPurifier_VarParser::MIXED) {
+            return 'Not supported';
+            $value = serialize($value);
+        }
+        $attr = array(
+            'name' => "$name"."[$ns.$directive]",
+            'id' => "$name:$ns.$directive"
+        );
+        if ($value === null) $attr['disabled'] = 'disabled';
+        if (isset($def->allowed)) {
+            $ret .= $this->start('select', $attr);
+            foreach ($def->allowed as $val => $b) {
+                $attr = array();
+                if ($value == $val) $attr['selected'] = 'selected';
+                $ret .= $this->element('option', $val, $attr);
+            }
+            $ret .= $this->end('select');
+        } elseif (
+            $type === HTMLPurifier_VarParser::TEXT ||
+            $type === HTMLPurifier_VarParser::ITEXT ||
+            $type === HTMLPurifier_VarParser::ALIST ||
+            $type === HTMLPurifier_VarParser::HASH ||
+            $type === HTMLPurifier_VarParser::LOOKUP
+        ) {
+            $attr['cols'] = $this->cols;
+            $attr['rows'] = $this->rows;
+            $ret .= $this->start('textarea', $attr);
+            $ret .= $this->text($value);
+            $ret .= $this->end('textarea');
+        } else {
+            $attr['value'] = $value;
+            $attr['type'] = 'text';
+            $ret .= $this->elementEmpty('input', $attr);
+        }
+        return $ret;
+    }
+}
+
+/**
+ * Bool form field printer
+ */
+class HTMLPurifier_Printer_ConfigForm_bool extends HTMLPurifier_Printer {
+    public function render($ns, $directive, $value, $name, $config) {
+        if (is_array($config) && isset($config[0])) {
+            $gen_config = $config[0];
+            $config = $config[1];
+        } else {
+            $gen_config = $config;
+        }
+        $this->prepareGenerator($gen_config);
+        $ret = '';
+        $ret .= $this->start('div', array('id' => "$name:$ns.$directive"));
+
+        $ret .= $this->start('label', array('for' => "$name:Yes_$ns.$directive"));
+        $ret .= $this->element('span', "$ns.$directive:", array('class' => 'verbose'));
+        $ret .= $this->text(' Yes');
+        $ret .= $this->end('label');
+
+        $attr = array(
+            'type' => 'radio',
+            'name' => "$name"."[$ns.$directive]",
+            'id' => "$name:Yes_$ns.$directive",
+            'value' => '1'
+        );
+        if ($value === true) $attr['checked'] = 'checked';
+        if ($value === null) $attr['disabled'] = 'disabled';
+        $ret .= $this->elementEmpty('input', $attr);
+
+        $ret .= $this->start('label', array('for' => "$name:No_$ns.$directive"));
+        $ret .= $this->element('span', "$ns.$directive:", array('class' => 'verbose'));
+        $ret .= $this->text(' No');
+        $ret .= $this->end('label');
+
+        $attr = array(
+            'type' => 'radio',
+            'name' => "$name"."[$ns.$directive]",
+            'id' => "$name:No_$ns.$directive",
+            'value' => '0'
+        );
+        if ($value === false) $attr['checked'] = 'checked';
+        if ($value === null) $attr['disabled'] = 'disabled';
+        $ret .= $this->elementEmpty('input', $attr);
+
+        $ret .= $this->end('div');
+
+        return $ret;
+    }
+}
+
+// vim: et sw=4 sts=4

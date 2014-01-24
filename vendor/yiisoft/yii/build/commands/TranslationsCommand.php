@@ -1,85 +1,162 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-IvGD8tcErhui5Ifa8FqwNWOvDcK1oh9BfsiA
+<?php
+/**
+ * TranslationsCommand class file.
+ *
+ * @author Alexander Makarov <sam@rmcreative.ru>
+ * @link http://www.yiiframework.com/
+ * @copyright Copyright &copy; 2012 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * TranslationsCommand handles tasks related to framework translations.
+ *
+ * @author Alexander Makarov <sam@rmcreative.ru>
+ * @package system.build
+ * @since 1.1.11
+ */
+class TranslationsCommand extends CConsoleCommand
+{
+	public function getHelp()
+	{
+		return <<<EOD
+This command handles tasks related to framework translations.
+
+USAGE
+  build translations report --sourcePath=<path> --translationPath=<path>
+
+PARAMETERS
+  * sourcePath: required, the directory where the original documentation files are.
+  * translationPath: required, the directory where the translated documentation files are.
+  * title: optional, custom report title
+
+EXAMPLES
+  * build translations report --sourcePath="../docs/guide" --translationPath="../docs/guide/ru" --title="Russian guide translation report" > report_guide_ru.html
+  * build translations report --sourcePath="../docs/blog" --translationPath="../docs/blog/ru" --title="Russian blog translation report" > report_blog_ru.html
+  * build translations report --sourcePath="../framework/views" --translationPath="../framework/views/ru" --title="Russian framework views translation report" > report_views_ru.html
+
+EOD;
+	}
+
+	public function actionIndex()
+	{
+		echo $this->getHelp();
+	}
+
+	/**
+	 * Generates summary report for given translation and original directories
+	 *
+	 * @param string $sourcePath the directory where the original documentation files are
+	 * @param string $translationPath the directory where the translated documentation files are
+	 * @param string $title custom title to use for report
+	 */
+	public function actionReport($sourcePath, $translationPath, $title = 'Translation report')
+	{
+		$sourcePath=trim($sourcePath, '/\\');
+		$translationPath=trim($translationPath, '/\\');
+
+		$results = array();
+
+		$dir = new DirectoryIterator($sourcePath);
+		foreach ($dir as $fileinfo) {
+			if (!$fileinfo->isDot() && !$fileinfo->isDir()) {
+				$translatedFilePath = $translationPath.'/'.$fileinfo->getFilename();
+				$sourceFilePath = $sourcePath.'/'.$fileinfo->getFilename();
+
+				$errors = $this->checkFiles($translatedFilePath);
+				$diff = empty($errors) ? $this->getDiff($translatedFilePath, $sourceFilePath) : '';
+				if(!empty($diff)) {
+					$errors[] = 'Translation outdated.';
+				}
+
+				$result = array(
+					'errors' => $errors,
+					'diff' => $diff,
+				);
+
+				$results[$fileinfo->getFilename()] = $result;
+			}
+		}
+
+		// checking if there are obsolete translation files
+		$dir = new DirectoryIterator($translationPath);
+		foreach ($dir as $fileinfo) {
+			if (!$fileinfo->isDot() && !$fileinfo->isDir()) {
+				$translatedFilePath = $translationPath.'/'.$fileinfo->getFilename();
+
+				$errors = $this->checkFiles(null, $translatedFilePath);
+				if(!empty($errors)) {
+					$results[$fileinfo->getFilename()]['errors'] = $errors;
+				}
+			}
+		}
+
+		$this->renderFile(dirname(__FILE__).'/translations/report_html.php', array(
+			'results' => $results,
+			'sourcePath' => $sourcePath,
+			'translationPath' => $translationPath,
+			'title' => $title,
+		));
+	}
+
+	/**
+	 * Checks for files existence
+	 *
+	 * @param string $translatedFilePath
+	 * @param string $sourceFilePath
+	 * @return array errors
+	 */
+	protected function checkFiles($translatedFilePath = null, $sourceFilePath = null)
+	{
+		$errors = array();
+		if($translatedFilePath!==null && !file_exists($translatedFilePath)) {
+			$errors[] = 'Translation does not exist.';
+		}
+
+		if($sourceFilePath!==null && !file_exists($sourceFilePath)) {
+			$errors[] = 'Source does not exist.';
+		}
+
+		return $errors;
+	}
+
+	/**
+	 * Getting DIFF from git
+	 *
+	 * @param string $translatedFilePath path pointing to translated file
+	 * @param string $sourceFilePath path pointing to original file
+	 * @return string DIFF
+	 */
+	protected function getDiff($translatedFilePath, $sourceFilePath)
+	{
+		$lastTranslationHash = shell_exec('git log -1 --format=format:"%H" -- '.$translatedFilePath);
+		return shell_exec('git diff '.$lastTranslationHash.'..HEAD -- '.$sourceFilePath);
+	}
+
+	/**
+	 * Adds all necessary HTML tags and classes to diff output
+	 *
+	 * @param string $diff DIFF
+	 * @return string highlighted DIFF
+	 */
+	protected function highlightDiff($diff)
+	{
+		$lines = explode("\n", $diff);
+		foreach ($lines as $key => $val) {
+			if (mb_substr($val,0,1,'utf-8') === '@') {
+				$lines[$key] = '<span class="info">'.CHtml::encode($val).'</span>';
+			}
+			else if (mb_substr($val,0,1,'utf-8') === '+') {
+				$lines[$key] = '<ins>'.CHtml::encode($val).'</ins>';
+			}
+			else if (mb_substr($val,0,1,'utf-8') === '-') {
+				$lines[$key] = '<del>'.CHtml::encode($val).'</del>';
+			}
+			else {
+				$lines[$key] = CHtml::encode($val);
+			}
+		}
+
+		return implode("\n", $lines);
+	}
+}

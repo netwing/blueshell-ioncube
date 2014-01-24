@@ -1,347 +1,549 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: frames_test.php 1787 2008-04-26 20:35:39Z pp11 $
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../tag.php');
+require_once(dirname(__FILE__) . '/../page.php');
+require_once(dirname(__FILE__) . '/../frames.php');
+Mock::generate('SimplePage');
+Mock::generate('SimpleForm');
+
+class TestOfFrameset extends UnitTestCase {
+
+    function testTitleReadFromFramesetPage() {
+        $page = new MockSimplePage();
+        $page->setReturnValue('getTitle', 'This page');
+        $frameset = new SimpleFrameset($page);
+        $this->assertEqual($frameset->getTitle(), 'This page');
+    }
+
+    function TestHeadersReadFromFramesetByDefault() {
+        $page = new MockSimplePage();
+        $page->setReturnValue('getHeaders', 'Header: content');
+        $page->setReturnValue('getMimeType', 'text/xml');
+        $page->setReturnValue('getResponseCode', 401);
+        $page->setReturnValue('getTransportError', 'Could not parse headers');
+        $page->setReturnValue('getAuthentication', 'Basic');
+        $page->setReturnValue('getRealm', 'Safe place');
+
+        $frameset = new SimpleFrameset($page);
+
+        $this->assertIdentical($frameset->getHeaders(), 'Header: content');
+        $this->assertIdentical($frameset->getMimeType(), 'text/xml');
+        $this->assertIdentical($frameset->getResponseCode(), 401);
+        $this->assertIdentical($frameset->getTransportError(), 'Could not parse headers');
+        $this->assertIdentical($frameset->getAuthentication(), 'Basic');
+        $this->assertIdentical($frameset->getRealm(), 'Safe place');
+    }
+
+    function testEmptyFramesetHasNoContent() {
+        $page = new MockSimplePage();
+        $page->setReturnValue('getRaw', 'This content');
+        $frameset = new SimpleFrameset($page);
+        $this->assertEqual($frameset->getRaw(), '');
+    }
+
+    function testRawContentIsFromOnlyFrame() {
+        $page = new MockSimplePage();
+        $page->expectNever('getRaw');
+
+        $frame = new MockSimplePage();
+        $frame->setReturnValue('getRaw', 'Stuff');
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame);
+        $this->assertEqual($frameset->getRaw(), 'Stuff');
+    }
+
+    function testRawContentIsFromAllFrames() {
+        $page = new MockSimplePage();
+        $page->expectNever('getRaw');
+
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getRaw', 'Stuff1');
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getRaw', 'Stuff2');
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1);
+        $frameset->addFrame($frame2);
+        $this->assertEqual($frameset->getRaw(), 'Stuff1Stuff2');
+    }
+
+    function testTextContentIsFromOnlyFrame() {
+        $page = new MockSimplePage();
+        $page->expectNever('getText');
+
+        $frame = new MockSimplePage();
+        $frame->setReturnValue('getText', 'Stuff');
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame);
+        $this->assertEqual($frameset->getText(), 'Stuff');
+    }
+
+    function testTextContentIsFromAllFrames() {
+        $page = new MockSimplePage();
+        $page->expectNever('getText');
+
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getText', 'Stuff1');
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getText', 'Stuff2');
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1);
+        $frameset->addFrame($frame2);
+        $this->assertEqual($frameset->getText(), 'Stuff1 Stuff2');
+    }
+
+    function testFieldFoundIsFirstInFramelist() {
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getField', null);
+        $frame1->expectOnce('getField', array(new SimpleByName('a')));
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getField', 'A');
+        $frame2->expectOnce('getField', array(new SimpleByName('a')));
+
+        $frame3 = new MockSimplePage();
+        $frame3->expectNever('getField');
+
+        $page = new MockSimplePage();
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1);
+        $frameset->addFrame($frame2);
+        $frameset->addFrame($frame3);
+        $this->assertIdentical($frameset->getField(new SimpleByName('a')), 'A');
+    }
+
+    function testFrameReplacementByIndex() {
+        $page = new MockSimplePage();
+        $page->expectNever('getRaw');
+
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getRaw', 'Stuff1');
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getRaw', 'Stuff2');
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1);
+        $frameset->setFrame(array(1), $frame2);
+        $this->assertEqual($frameset->getRaw(), 'Stuff2');
+    }
+
+    function testFrameReplacementByName() {
+        $page = new MockSimplePage();
+        $page->expectNever('getRaw');
+
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getRaw', 'Stuff1');
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getRaw', 'Stuff2');
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1, 'a');
+        $frameset->setFrame(array('a'), $frame2);
+        $this->assertEqual($frameset->getRaw(), 'Stuff2');
+    }
+}
+
+class TestOfFrameNavigation extends UnitTestCase {
+
+    function testStartsWithoutFrameFocus() {
+        $page = new MockSimplePage();
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame(new MockSimplePage());
+        $this->assertFalse($frameset->getFrameFocus());
+    }
+
+    function testCanFocusOnSingleFrame() {
+        $page = new MockSimplePage();
+        $page->expectNever('getRaw');
+
+        $frame = new MockSimplePage();
+        $frame->setReturnValue('getFrameFocus', array());
+        $frame->setReturnValue('getRaw', 'Stuff');
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame);
+
+        $this->assertFalse($frameset->setFrameFocusByIndex(0));
+        $this->assertTrue($frameset->setFrameFocusByIndex(1));
+        $this->assertEqual($frameset->getRaw(), 'Stuff');
+        $this->assertFalse($frameset->setFrameFocusByIndex(2));
+        $this->assertIdentical($frameset->getFrameFocus(), array(1));
+    }
+
+    function testContentComesFromFrameInFocus() {
+        $page = new MockSimplePage();
+
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getRaw', 'Stuff1');
+        $frame1->setReturnValue('getFrameFocus', array());
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getRaw', 'Stuff2');
+        $frame2->setReturnValue('getFrameFocus', array());
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1);
+        $frameset->addFrame($frame2);
+
+        $this->assertTrue($frameset->setFrameFocusByIndex(1));
+        $this->assertEqual($frameset->getFrameFocus(), array(1));
+        $this->assertEqual($frameset->getRaw(), 'Stuff1');
+
+        $this->assertTrue($frameset->setFrameFocusByIndex(2));
+        $this->assertEqual($frameset->getFrameFocus(), array(2));
+        $this->assertEqual($frameset->getRaw(), 'Stuff2');
+
+        $this->assertFalse($frameset->setFrameFocusByIndex(3));
+        $this->assertEqual($frameset->getFrameFocus(), array(2));
+
+        $frameset->clearFrameFocus();
+        $this->assertEqual($frameset->getRaw(), 'Stuff1Stuff2');
+    }
+
+    function testCanFocusByName() {
+        $page = new MockSimplePage();
+
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getRaw', 'Stuff1');
+        $frame1->setReturnValue('getFrameFocus', array());
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getRaw', 'Stuff2');
+        $frame2->setReturnValue('getFrameFocus', array());
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1, 'A');
+        $frameset->addFrame($frame2, 'B');
+
+        $this->assertTrue($frameset->setFrameFocus('A'));
+        $this->assertEqual($frameset->getFrameFocus(), array('A'));
+        $this->assertEqual($frameset->getRaw(), 'Stuff1');
+
+        $this->assertTrue($frameset->setFrameFocusByIndex(2));
+        $this->assertEqual($frameset->getFrameFocus(), array('B'));
+        $this->assertEqual($frameset->getRaw(), 'Stuff2');
+
+        $this->assertFalse($frameset->setFrameFocus('z'));
+
+        $frameset->clearFrameFocus();
+        $this->assertEqual($frameset->getRaw(), 'Stuff1Stuff2');
+    }
+}
+
+class TestOfFramesetPageInterface extends UnitTestCase {
+    private $page_interface;
+    private $frameset_interface;
+
+    function __construct() {
+        parent::__construct();
+        $this->page_interface = $this->getPageMethods();
+        $this->frameset_interface = $this->getFramesetMethods();
+    }
+
+    function assertListInAnyOrder($list, $expected) {
+        sort($list);
+        sort($expected);
+        $this->assertEqual($list, $expected);
+    }
+
+    private function getPageMethods() {
+        $methods = array();
+        foreach (get_class_methods('SimplePage') as $method) {
+            if (strtolower($method) == strtolower('SimplePage')) {
+                continue;
+            }
+            if (strtolower($method) == strtolower('getFrameset')) {
+                continue;
+            }
+            if (strncmp($method, '_', 1) == 0) {
+                continue;
+            }
+            if (strncmp($method, 'accept', 6) == 0) {
+                continue;
+            }
+            $methods[] = $method;
+        }
+        return $methods;
+    }
+
+    private function getFramesetMethods() {
+        $methods = array();
+        foreach (get_class_methods('SimpleFrameset') as $method) {
+            if (strtolower($method) == strtolower('SimpleFrameset')) {
+                continue;
+            }
+            if (strncmp($method, '_', 1) == 0) {
+                continue;
+            }
+            if (strncmp($method, 'add', 3) == 0) {
+                continue;
+            }
+            $methods[] = $method;
+        }
+        return $methods;
+    }
+
+    function testFramsetHasPageInterface() {
+        $difference = array();
+        foreach ($this->page_interface as $method) {
+            if (! in_array($method, $this->frameset_interface)) {
+                $this->fail("No [$method] in Frameset class");
+                return;
+            }
+        }
+        $this->pass('Frameset covers Page interface');
+    }
+
+    function testHeadersReadFromFrameIfInFocus() {
+        $frame = new MockSimplePage();
+        $frame->setReturnValue('getUrl', new SimpleUrl('http://localhost/stuff'));
+
+        $frame->setReturnValue('getRequest', 'POST stuff');
+        $frame->setReturnValue('getMethod', 'POST');
+        $frame->setReturnValue('getRequestData', array('a' => 'A'));
+        $frame->setReturnValue('getHeaders', 'Header: content');
+        $frame->setReturnValue('getMimeType', 'text/xml');
+        $frame->setReturnValue('getResponseCode', 401);
+        $frame->setReturnValue('getTransportError', 'Could not parse headers');
+        $frame->setReturnValue('getAuthentication', 'Basic');
+        $frame->setReturnValue('getRealm', 'Safe place');
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame);
+        $frameset->setFrameFocusByIndex(1);
+
+        $url = new SimpleUrl('http://localhost/stuff');
+        $url->setTarget(1);
+        $this->assertIdentical($frameset->getUrl(), $url);
+
+        $this->assertIdentical($frameset->getRequest(), 'POST stuff');
+        $this->assertIdentical($frameset->getMethod(), 'POST');
+        $this->assertIdentical($frameset->getRequestData(), array('a' => 'A'));
+        $this->assertIdentical($frameset->getHeaders(), 'Header: content');
+        $this->assertIdentical($frameset->getMimeType(), 'text/xml');
+        $this->assertIdentical($frameset->getResponseCode(), 401);
+        $this->assertIdentical($frameset->getTransportError(), 'Could not parse headers');
+        $this->assertIdentical($frameset->getAuthentication(), 'Basic');
+        $this->assertIdentical($frameset->getRealm(), 'Safe place');
+    }
+
+    function testUrlsComeFromBothFrames() {
+        $page = new MockSimplePage();
+        $page->expectNever('getUrls');
+
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue(
+                'getUrls',
+                array('http://www.lastcraft.com/', 'http://myserver/'));
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue(
+                'getUrls',
+                array('http://www.lastcraft.com/', 'http://test/'));
+
+        $frameset = new SimpleFrameset($page);
+        $frameset->addFrame($frame1);
+        $frameset->addFrame($frame2);
+        $this->assertListInAnyOrder(
+                $frameset->getUrls(),
+                array('http://www.lastcraft.com/', 'http://myserver/', 'http://test/'));
+    }
+
+    function testLabelledUrlsComeFromBothFrames() {
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue(
+                'getUrlsByLabel',
+                array(new SimpleUrl('goodbye.php')),
+                array('a'));
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue(
+                'getUrlsByLabel',
+                array(new SimpleUrl('hello.php')),
+                array('a'));
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame1);
+        $frameset->addFrame($frame2, 'Two');
+
+        $expected1 = new SimpleUrl('goodbye.php');
+        $expected1->setTarget(1);
+        $expected2 = new SimpleUrl('hello.php');
+        $expected2->setTarget('Two');
+        $this->assertEqual(
+                $frameset->getUrlsByLabel('a'),
+                array($expected1, $expected2));
+    }
+
+    function testUrlByIdComesFromFirstFrameToRespond() {
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getUrlById', new SimpleUrl('four.php'), array(4));
+        $frame1->setReturnValue('getUrlById', false, array(5));
+
+        $frame2 = new MockSimplePage();
+        $frame2->setReturnValue('getUrlById', false, array(4));
+        $frame2->setReturnValue('getUrlById', new SimpleUrl('five.php'), array(5));
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame1);
+        $frameset->addFrame($frame2);
+
+        $four = new SimpleUrl('four.php');
+        $four->setTarget(1);
+        $this->assertEqual($frameset->getUrlById(4), $four);
+        $five = new SimpleUrl('five.php');
+        $five->setTarget(2);
+        $this->assertEqual($frameset->getUrlById(5), $five);
+    }
+
+    function testReadUrlsFromFrameInFocus() {
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getUrls', array('a'));
+        $frame1->setReturnValue('getUrlsByLabel', array(new SimpleUrl('l')));
+        $frame1->setReturnValue('getUrlById', new SimpleUrl('i'));
+
+        $frame2 = new MockSimplePage();
+        $frame2->expectNever('getUrls');
+        $frame2->expectNever('getUrlsByLabel');
+        $frame2->expectNever('getUrlById');
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame1, 'A');
+        $frameset->addFrame($frame2, 'B');
+        $frameset->setFrameFocus('A');
+
+        $this->assertIdentical($frameset->getUrls(), array('a'));
+        $expected = new SimpleUrl('l');
+        $expected->setTarget('A');
+        $this->assertIdentical($frameset->getUrlsByLabel('label'), array($expected));
+        $expected = new SimpleUrl('i');
+        $expected->setTarget('A');
+        $this->assertIdentical($frameset->getUrlById(99), $expected);
+    }
+
+    function testReadFrameTaggedUrlsFromFrameInFocus() {
+        $frame = new MockSimplePage();
+
+        $by_label = new SimpleUrl('l');
+        $by_label->setTarget('L');
+        $frame->setReturnValue('getUrlsByLabel', array($by_label));
+
+        $by_id = new SimpleUrl('i');
+        $by_id->setTarget('I');
+        $frame->setReturnValue('getUrlById', $by_id);
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame, 'A');
+        $frameset->setFrameFocus('A');
+
+        $this->assertIdentical($frameset->getUrlsByLabel('label'), array($by_label));
+        $this->assertIdentical($frameset->getUrlById(99), $by_id);
+    }
+
+    function testFindingFormsById() {
+        $frame = new MockSimplePage();
+        $form = new MockSimpleForm();
+        $frame->returns('getFormById', $form, array('a'));
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame(new MockSimplePage(), 'A');
+        $frameset->addFrame($frame, 'B');
+        $this->assertSame($frameset->getFormById('a'), $form);
+
+        $frameset->setFrameFocus('A');
+        $this->assertNull($frameset->getFormById('a'));
+
+        $frameset->setFrameFocus('B');
+        $this->assertSame($frameset->getFormById('a'), $form);
+    }
+
+    function testFindingFormsBySubmit() {
+        $frame = new MockSimplePage();
+        $form = new MockSimpleForm();
+        $frame->returns(
+                'getFormBySubmit',
+                $form,
+                array(new SimpleByLabel('a')));
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame(new MockSimplePage(), 'A');
+        $frameset->addFrame($frame, 'B');
+        $this->assertSame($frameset->getFormBySubmit(new SimpleByLabel('a')), $form);
+
+        $frameset->setFrameFocus('A');
+        $this->assertNull($frameset->getFormBySubmit(new SimpleByLabel('a')));
+
+        $frameset->setFrameFocus('B');
+        $this->assertSame($frameset->getFormBySubmit(new SimpleByLabel('a')), $form);
+    }
+
+    function testFindingFormsByImage() {
+        $frame = new MockSimplePage();
+        $form = new MockSimpleForm();
+        $frame->returns(
+                'getFormByImage',
+                $form,
+                array(new SimpleByLabel('a')));
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame(new MockSimplePage(), 'A');
+        $frameset->addFrame($frame, 'B');
+        $this->assertSame($frameset->getFormByImage(new SimpleByLabel('a')), $form);
+
+        $frameset->setFrameFocus('A');
+        $this->assertNull($frameset->getFormByImage(new SimpleByLabel('a')));
+
+        $frameset->setFrameFocus('B');
+        $this->assertSame($frameset->getFormByImage(new SimpleByLabel('a')), $form);
+    }
+
+    function testSettingAllFrameFieldsWhenNoFrameFocus() {
+        $frame1 = new MockSimplePage();
+        $frame1->expectOnce('setField', array(new SimpleById(22), 'A'));
+
+        $frame2 = new MockSimplePage();
+        $frame2->expectOnce('setField', array(new SimpleById(22), 'A'));
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame1, 'A');
+        $frameset->addFrame($frame2, 'B');
+        $frameset->setField(new SimpleById(22), 'A');
+    }
+
+    function testOnlySettingFieldFromFocusedFrame() {
+        $frame1 = new MockSimplePage();
+        $frame1->expectOnce('setField', array(new SimpleByLabelOrName('a'), 'A'));
+
+        $frame2 = new MockSimplePage();
+        $frame2->expectNever('setField');
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame1, 'A');
+        $frameset->addFrame($frame2, 'B');
+        $frameset->setFrameFocus('A');
+        $frameset->setField(new SimpleByLabelOrName('a'), 'A');
+    }
+
+    function testOnlyGettingFieldFromFocusedFrame() {
+        $frame1 = new MockSimplePage();
+        $frame1->setReturnValue('getField', 'f', array(new SimpleByName('a')));
+
+        $frame2 = new MockSimplePage();
+        $frame2->expectNever('getField');
+
+        $frameset = new SimpleFrameset(new MockSimplePage());
+        $frameset->addFrame($frame1, 'A');
+        $frameset->addFrame($frame2, 'B');
+        $frameset->setFrameFocus('A');
+        $this->assertIdentical($frameset->getField(new SimpleByName('a')), 'f');
+    }
+}
 ?>
-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

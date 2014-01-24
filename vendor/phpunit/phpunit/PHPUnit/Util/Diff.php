@@ -1,107 +1,292 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Kore Nordmann <mail@kore-nordmann.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.4.0
+ */
+
+/**
+ * Diff implementation.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Kore Nordmann <mail@kore-nordmann.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.4.0
+ */
+class PHPUnit_Util_Diff
+{
+    /**
+     * Returns the diff between two arrays or strings as string.
+     *
+     * @param  array|string $from
+     * @param  array|string $to
+     * @return string
+     */
+    public static function diff($from, $to)
+    {
+        $buffer= "--- Expected\n+++ Actual\n";
+        $diff  = self::diffToArray($from,$to);
+
+        $inOld = FALSE;
+        $i     = 0;
+        $old   = array();
+
+        foreach ($diff as $line) {
+            if ($line[1] ===  0 /* OLD */) {
+                if ($inOld === FALSE) {
+                    $inOld = $i;
+                }
+            }
+
+            else if ($inOld !== FALSE) {
+                if (($i - $inOld) > 5) {
+                    $old[$inOld] = $i - 1;
+                }
+
+                $inOld = FALSE;
+            }
+
+            ++$i;
+        }
+
+        $start = isset($old[0]) ? $old[0] : 0;
+        $end   = count($diff);
+        $i     = 0;
+
+        if ($tmp = array_search($end, $old)) {
+            $end = $tmp;
+        }
+
+        $newChunk = TRUE;
+
+        for ($i = $start; $i < $end; $i++) {
+            if (isset($old[$i])) {
+                $buffer  .= "\n";
+                $newChunk = TRUE;
+                $i        = $old[$i];
+            }
+
+            if ($newChunk) {
+                $buffer  .= "@@ @@\n";
+                $newChunk = FALSE;
+            }
+
+            if ($diff[$i][1] === 1 /* ADDED */) {
+                $buffer .= '+' . $diff[$i][0] . "\n";
+            }
+
+            else if ($diff[$i][1] === 2 /* REMOVED */) {
+                $buffer .= '-' . $diff[$i][0] . "\n";
+            }
+
+            else {
+                $buffer .= ' ' . $diff[$i][0] . "\n";
+            }
+        }
+
+        return $buffer;
+    }
+
+    /**
+     * Returns the diff between two arrays or strings as array.
+     *
+     * every array-entry containts two elements:
+     *   - [0] => string $token
+     *   - [1] => 2|1|0
+     *
+     * - 2: REMOVED: $token was removed from $from
+     * - 1: ADDED: $token was added to $from
+     * - 0: OLD: $token is not changed in $to
+     *
+     * @param  array|string $from
+     * @param  array|string $to
+     * @return array
+     */
+    public static function diffToArray($from, $to)
+    {
+        preg_match_all('(\r\n|\r|\n)', $from, $fromMatches);
+        preg_match_all('(\r\n|\r|\n)', $to, $toMatches);
+
+        if (is_string($from)) {
+            $from = preg_split('(\r\n|\r|\n)', $from);
+        }
+
+        if (is_string($to)) {
+            $to = preg_split('(\r\n|\r|\n)', $to);
+        }
+
+        $start      = array();
+        $end        = array();
+        $fromLength = count($from);
+        $toLength   = count($to);
+        $length     = min($fromLength, $toLength);
+
+        for ($i = 0; $i < $length; ++$i) {
+            if ($from[$i] === $to[$i]) {
+                $start[] = $from[$i];
+                unset($from[$i], $to[$i]);
+            } else {
+                break;
+            }
+        }
+
+        $length -= $i;
+
+        for ($i = 1; $i < $length; ++$i) {
+            if ($from[$fromLength - $i] === $to[$toLength - $i]) {
+                array_unshift($end, $from[$fromLength - $i]);
+                unset($from[$fromLength - $i], $to[$toLength - $i]);
+            } else {
+                break;
+            }
+        }
+
+        $common = self::longestCommonSubsequence(
+          array_values($from), array_values($to)
+        );
+
+        $diff = array();
+        $line = 0;
+
+        if (isset($fromMatches[0]) && $toMatches[0] &&
+            count($fromMatches[0]) === count($toMatches[0]) &&
+            $fromMatches[0] !== $toMatches[0]) {
+            $diff[] = array(
+              '#Warning: Strings contain different line endings!', 0
+            );
+        }
+
+        foreach ($start as $token) {
+            $diff[] = array($token, 0 /* OLD */);
+        }
+
+        reset($from);
+        reset($to);
+
+        foreach ($common as $token) {
+            while ((($fromToken = reset($from)) !== $token)) {
+                $diff[] = array(array_shift($from), 2 /* REMOVED */);
+            }
+
+            while ((($toToken = reset($to)) !== $token)) {
+                $diff[] = array(array_shift($to), 1 /* ADDED */);
+            }
+
+            $diff[] = array($token, 0 /* OLD */);
+
+            array_shift($from);
+            array_shift($to);
+        }
+
+        while (($token = array_shift($from)) !== NULL) {
+            $diff[] = array($token, 2 /* REMOVED */);
+        }
+
+        while (($token = array_shift($to)) !== NULL) {
+            $diff[] = array($token, 1 /* ADDED */);
+        }
+
+        foreach ($end as $token) {
+            $diff[] = array($token, 0 /* OLD */);
+        }
+
+        return $diff;
+    }
+
+    /**
+     * Calculates the longest common subsequence of two arrays.
+     *
+     * @param  array $from
+     * @param  array $to
+     * @return array
+     */
+    protected static function longestCommonSubsequence(array $from, array $to)
+    {
+        $common     = array();
+        $matrix     = array();
+        $fromLength = count($from);
+        $toLength   = count($to);
+
+        for ($i = 0; $i <= $fromLength; ++$i) {
+            $matrix[$i][0] = 0;
+        }
+
+        for ($j = 0; $j <= $toLength; ++$j) {
+            $matrix[0][$j] = 0;
+        }
+
+        for ($i = 1; $i <= $fromLength; ++$i) {
+            for ($j = 1; $j <= $toLength; ++$j) {
+                $matrix[$i][$j] = max(
+                  $matrix[$i-1][$j],
+                  $matrix[$i][$j-1],
+                  $from[$i-1] === $to[$j-1] ? $matrix[$i-1][$j-1] + 1 : 0
+                );
+            }
+        }
+
+        $i = $fromLength;
+        $j = $toLength;
+
+        while ($i > 0 && $j > 0) {
+            if ($from[$i-1] === $to[$j-1]) {
+                array_unshift($common, $from[$i-1]);
+                --$i;
+                --$j;
+            }
+
+            else if ($matrix[$i][$j-1] > $matrix[$i-1][$j]) {
+                --$j;
+            }
+
+            else {
+                --$i;
+            }
+        }
+
+        return $common;
+    }
+}

@@ -1,37 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-FMhut8/HXy3G301/lm2k1rTC03h6lDGtdtq=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Iterator;
+
+use Symfony\Component\Finder\Iterator\FilenameFilterIterator;
+
+class FilenameFilterIteratorTest extends IteratorTestCase
+{
+    /**
+     * @dataProvider getAcceptData
+     */
+    public function testAccept($matchPatterns, $noMatchPatterns, $expected)
+    {
+        $inner = new InnerNameIterator(array('test.php', 'test.py', 'foo.php'));
+
+        $iterator = new FilenameFilterIterator($inner, $matchPatterns, $noMatchPatterns);
+
+        $this->assertIterator($expected, $iterator);
+    }
+
+    public function getAcceptData()
+    {
+        return array(
+            array(array('test.*'), array(), array('test.php', 'test.py')),
+            array(array(), array('test.*'), array('foo.php')),
+            array(array('*.php'), array('test.*'), array('foo.php')),
+            array(array('*.php', '*.py'), array('foo.*'), array('test.php', 'test.py')),
+            array(array('/\.php$/'), array(), array('test.php', 'foo.php')),
+            array(array(), array('/\.php$/'), array('test.py')),
+        );
+    }
+}
+
+class InnerNameIterator extends \ArrayIterator
+{
+    public function current()
+    {
+        return new \SplFileInfo(parent::current());
+    }
+
+    public function getFilename()
+    {
+        return parent::current();
+    }
+}

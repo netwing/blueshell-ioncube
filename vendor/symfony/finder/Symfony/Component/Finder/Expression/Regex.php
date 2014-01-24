@@ -1,123 +1,317 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jjxOsGq1DT5s/vnyhiJRMSMIrSI/NjTlpG==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Expression;
+
+/**
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class Regex implements ValueInterface
+{
+    const START_FLAG = '^';
+    const END_FLAG   = '$';
+    const BOUNDARY   = '~';
+    const JOKER      = '.*';
+    const ESCAPING   = '\\';
+
+    /**
+     * @var string
+     */
+    private $pattern;
+
+    /**
+     * @var array
+     */
+    private $options;
+
+    /**
+     * @var bool
+     */
+    private $startFlag;
+
+    /**
+     * @var bool
+     */
+    private $endFlag;
+
+    /**
+     * @var bool
+     */
+    private $startJoker;
+
+    /**
+     * @var bool
+     */
+    private $endJoker;
+
+    /**
+     * @param string $expr
+     *
+     * @return Regex
+     *
+     * @throws \InvalidArgumentException
+     */
+    public static function create($expr)
+    {
+        if (preg_match('/^(.{3,}?)([imsxuADU]*)$/', $expr, $m)) {
+            $start = substr($m[1], 0, 1);
+            $end   = substr($m[1], -1);
+
+            if (($start === $end && !preg_match('/[*?[:alnum:] \\\\]/', $start)) || ($start === '{' && $end === '}')) {
+                return new self(substr($m[1], 1, -1), $m[2], $end);
+            }
+        }
+
+        throw new \InvalidArgumentException('Given expression is not a regex.');
+    }
+
+    /**
+     * @param string $pattern
+     * @param string $options
+     * @param string $delimiter
+     */
+    public function __construct($pattern, $options = '', $delimiter = null)
+    {
+        if (null !== $delimiter) {
+            // removes delimiter escaping
+            $pattern = str_replace('\\'.$delimiter, $delimiter, $pattern);
+        }
+
+        $this->parsePattern($pattern);
+        $this->options = $options;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->render();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function render()
+    {
+        return self::BOUNDARY
+            .$this->renderPattern()
+            .self::BOUNDARY
+            .$this->options;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function renderPattern()
+    {
+        return ($this->startFlag ? self::START_FLAG : '')
+            .($this->startJoker ? self::JOKER : '')
+            .str_replace(self::BOUNDARY, '\\'.self::BOUNDARY, $this->pattern)
+            .($this->endJoker ? self::JOKER : '')
+            .($this->endFlag ? self::END_FLAG : '');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isCaseSensitive()
+    {
+        return !$this->hasOption('i');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getType()
+    {
+        return Expression::TYPE_REGEX;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function prepend($expr)
+    {
+        $this->pattern = $expr.$this->pattern;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function append($expr)
+    {
+        $this->pattern .= $expr;
+
+        return $this;
+    }
+
+    /**
+     * @param string $option
+     *
+     * @return bool
+     */
+    public function hasOption($option)
+    {
+        return false !== strpos($this->options, $option);
+    }
+
+    /**
+     * @param string $option
+     *
+     * @return Regex
+     */
+    public function addOption($option)
+    {
+        if (!$this->hasOption($option)) {
+            $this->options.= $option;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param string $option
+     *
+     * @return Regex
+     */
+    public function removeOption($option)
+    {
+        $this->options = str_replace($option, '', $this->options);
+
+        return $this;
+    }
+
+    /**
+     * @param bool $startFlag
+     *
+     * @return Regex
+     */
+    public function setStartFlag($startFlag)
+    {
+        $this->startFlag = $startFlag;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasStartFlag()
+    {
+        return $this->startFlag;
+    }
+
+    /**
+     * @param bool $endFlag
+     *
+     * @return Regex
+     */
+    public function setEndFlag($endFlag)
+    {
+        $this->endFlag = (bool) $endFlag;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasEndFlag()
+    {
+        return $this->endFlag;
+    }
+
+    /**
+     * @param bool $startJoker
+     *
+     * @return Regex
+     */
+    public function setStartJoker($startJoker)
+    {
+        $this->startJoker = $startJoker;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasStartJoker()
+    {
+        return $this->startJoker;
+    }
+
+    /**
+     * @param bool $endJoker
+     *
+     * @return Regex
+     */
+    public function setEndJoker($endJoker)
+    {
+        $this->endJoker = (bool) $endJoker;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasEndJoker()
+    {
+        return $this->endJoker;
+    }
+
+    /**
+     * @param array $replacement
+     *
+     * @return Regex
+     */
+    public function replaceJokers($replacement)
+    {
+        $replace = function ($subject) use ($replacement) {
+            $subject = $subject[0];
+            $replace = 0 === substr_count($subject, '\\') % 2;
+
+            return $replace ? str_replace('.', $replacement, $subject) : $subject;
+        };
+
+        $this->pattern = preg_replace_callback('~[\\\\]*\\.~', $replace, $this->pattern);
+
+        return $this;
+    }
+
+    /**
+     * @param string $pattern
+     */
+    private function parsePattern($pattern)
+    {
+        if ($this->startFlag = self::START_FLAG === substr($pattern, 0, 1)) {
+            $pattern = substr($pattern, 1);
+        }
+
+        if ($this->startJoker = self::JOKER === substr($pattern, 0, 2)) {
+            $pattern = substr($pattern, 2);
+        }
+
+        if ($this->endFlag = (self::END_FLAG === substr($pattern, -1) && self::ESCAPING !== substr($pattern, -2, -1))) {
+            $pattern = substr($pattern, 0, -1);
+        }
+
+        if ($this->endJoker = (self::JOKER === substr($pattern, -2) && self::ESCAPING !== substr($pattern, -3, -2))) {
+            $pattern = substr($pattern, 0, -2);
+        }
+
+        $this->pattern = $pattern;
+    }
+}

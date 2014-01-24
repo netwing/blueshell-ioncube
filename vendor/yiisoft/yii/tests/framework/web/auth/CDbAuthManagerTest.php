@@ -1,43 +1,45 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Qj1WUmQV4gLcFsYAqQ7yY3sN/Ajx0EsX
+<?php
+
+require_once(dirname(__FILE__).'/AuthManagerTestBase.php');
+
+class CDbAuthManagerTest extends AuthManagerTestBase
+{
+	private $db;
+
+	public function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_pgsql'))
+			$this->markTestSkipped('PDO and PostgreSQL extensions are required.');
+
+		$schemaFile=realpath(Yii::getPathOfAlias('system.web.auth.schema-pgsql').'.sql');
+
+		$this->db=new CDbConnection('pgsql:host=localhost;dbname=yii','test','test');
+		try
+		{
+			$this->db->active=true;
+		}
+		catch(Exception $e)
+		{
+			$this->markTestSkipped("Please read $schemaFile for details on setting up the test environment for PostgreSQL test case.");
+		}
+
+		$sqls=preg_replace('/\/\*.*\*\//s', '', file_get_contents($schemaFile));
+		foreach(explode(';',$sqls) as $sql)
+		{
+			if(trim($sql)!=='')
+				$this->db->createCommand($sql)->execute();
+		}
+		$this->db->active=false;
+
+		$this->auth=new CDbAuthManager;
+		$this->auth->db=$this->db;
+		$this->auth->init();
+		$this->prepareData();
+	}
+
+	public function tearDown()
+	{
+		if($this->db)
+			$this->db->active=false;
+	}
+}

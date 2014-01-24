@@ -1,33 +1,74 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-l0==
+<?php
+/**
+ * CFilter class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFilter is the base class for all filters.
+ *
+ * A filter can be applied before and after an action is executed.
+ * It can modify the context that the action is to run or decorate the result that the
+ * action generates.
+ *
+ * Override {@link preFilter()} to specify the filtering logic that should be applied
+ * before the action, and {@link postFilter()} for filtering logic after the action.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.filters
+ * @since 1.0
+ */
+class CFilter extends CComponent implements IFilter
+{
+	/**
+	 * Performs the filtering.
+	 * The default implementation is to invoke {@link preFilter}
+	 * and {@link postFilter} which are meant to be overridden
+	 * child classes. If a child class needs to override this method,
+	 * make sure it calls <code>$filterChain->run()</code>
+	 * if the action should be executed.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
+	 */
+	public function filter($filterChain)
+	{
+		if($this->preFilter($filterChain))
+		{
+			$filterChain->run();
+			$this->postFilter($filterChain);
+		}
+	}
+
+	/**
+	 * Initializes the filter.
+	 * This method is invoked after the filter properties are initialized
+	 * and before {@link preFilter} is called.
+	 * You may override this method to include some initialization logic.
+	 * @since 1.1.4
+	 */
+	public function init()
+	{
+	}
+
+	/**
+	 * Performs the pre-action filtering.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
+	 * @return boolean whether the filtering process should continue and the action
+	 * should be executed.
+	 */
+	protected function preFilter($filterChain)
+	{
+		return true;
+	}
+
+	/**
+	 * Performs the post-action filtering.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
+	 */
+	protected function postFilter($filterChain)
+	{
+	}
+}

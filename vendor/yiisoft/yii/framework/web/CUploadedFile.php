@@ -1,129 +1,275 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CUploadedFile class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CUploadedFile represents the information for an uploaded file.
+ *
+ * Call {@link getInstance} to retrieve the instance of an uploaded file,
+ * and then use {@link saveAs} to save it on the server.
+ * You may also query other information about the file, including {@link name},
+ * {@link tempName}, {@link type}, {@link size} and {@link error}.
+ *
+ * @property string $name The original name of the file being uploaded.
+ * @property string $tempName The path of the uploaded file on the server.
+ * Note, this is a temporary file which will be automatically deleted by PHP
+ * after the current request is processed.
+ * @property string $type The MIME-type of the uploaded file (such as "image/gif").
+ * Since this MIME type is not checked on the server side, do not take this value for granted.
+ * Instead, use {@link CFileHelper::getMimeType} to determine the exact MIME type.
+ * @property integer $size The actual size of the uploaded file in bytes.
+ * @property integer $error The error code.
+ * @property boolean $hasError Whether there is an error with the uploaded file.
+ * Check {@link error} for detailed error code information.
+ * @property string $extensionName The file extension name for {@link name}.
+ * The extension name does not include the dot character. An empty string
+ * is returned if {@link name} does not have an extension name.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.0
+ */
+class CUploadedFile extends CComponent
+{
+	static private $_files;
+
+	private $_name;
+	private $_tempName;
+	private $_type;
+	private $_size;
+	private $_error;
+
+	/**
+	 * Returns an instance of the specified uploaded file.
+	 * The file should be uploaded using {@link CHtml::activeFileField}.
+	 * @param CModel $model the model instance
+	 * @param string $attribute the attribute name. For tabular file uploading, this can be in the format of "[$i]attributeName", where $i stands for an integer index.
+	 * @return CUploadedFile the instance of the uploaded file.
+	 * Null is returned if no file is uploaded for the specified model attribute.
+	 * @see getInstanceByName
+	 */
+	public static function getInstance($model, $attribute)
+	{
+		return self::getInstanceByName(CHtml::resolveName($model, $attribute));
+	}
+
+	/**
+	 * Returns all uploaded files for the given model attribute.
+	 * @param CModel $model the model instance
+	 * @param string $attribute the attribute name. For tabular file uploading, this can be in the format of "[$i]attributeName", where $i stands for an integer index.
+	 * @return CUploadedFile[] array of CUploadedFile objects.
+	 * Empty array is returned if no available file was found for the given attribute.
+	 */
+	public static function getInstances($model, $attribute)
+	{
+		return self::getInstancesByName(CHtml::resolveName($model, $attribute));
+	}
+
+	/**
+	 * Returns an instance of the specified uploaded file.
+	 * The name can be a plain string or a string like an array element (e.g. 'Post[imageFile]', or 'Post[0][imageFile]').
+	 * @param string $name the name of the file input field.
+	 * @return CUploadedFile the instance of the uploaded file.
+	 * Null is returned if no file is uploaded for the specified name.
+	 */
+	public static function getInstanceByName($name)
+	{
+		if(null===self::$_files)
+			self::prefetchFiles();
+
+		return isset(self::$_files[$name]) && self::$_files[$name]->getError()!=UPLOAD_ERR_NO_FILE ? self::$_files[$name] : null;
+	}
+
+	/**
+	 * Returns an array of instances starting with specified array name.
+	 *
+	 * If multiple files were uploaded and saved as 'Files[0]', 'Files[1]',
+	 * 'Files[n]'..., you can have them all by passing 'Files' as array name.
+	 * @param string $name the name of the array of files
+	 * @return CUploadedFile[] the array of CUploadedFile objects. Empty array is returned
+	 * if no adequate upload was found. Please note that this array will contain
+	 * all files from all subarrays regardless how deeply nested they are.
+	 */
+	public static function getInstancesByName($name)
+	{
+		if(null===self::$_files)
+			self::prefetchFiles();
+
+		$len=strlen($name);
+		$results=array();
+		foreach(array_keys(self::$_files) as $key)
+			if(0===strncmp($key, $name.'[', $len+1) && self::$_files[$key]->getError()!=UPLOAD_ERR_NO_FILE)
+				$results[] = self::$_files[$key];
+		return $results;
+	}
+
+	/**
+	 * Cleans up the loaded CUploadedFile instances.
+	 * This method is mainly used by test scripts to set up a fixture.
+	 * @since 1.1.4
+	 */
+	public static function reset()
+	{
+		self::$_files=null;
+	}
+
+	/**
+	 * Initially processes $_FILES superglobal for easier use.
+	 * Only for internal usage.
+	 */
+	protected static function prefetchFiles()
+	{
+		self::$_files = array();
+		if(!isset($_FILES) || !is_array($_FILES))
+			return;
+
+		foreach($_FILES as $class=>$info)
+			self::collectFilesRecursive($class, $info['name'], $info['tmp_name'], $info['type'], $info['size'], $info['error']);
+	}
+	/**
+	 * Processes incoming files for {@link getInstanceByName}.
+	 * @param string $key key for identifiing uploaded file: class name and subarray indexes
+	 * @param mixed $names file names provided by PHP
+	 * @param mixed $tmp_names temporary file names provided by PHP
+	 * @param mixed $types filetypes provided by PHP
+	 * @param mixed $sizes file sizes provided by PHP
+	 * @param mixed $errors uploading issues provided by PHP
+	 */
+	protected static function collectFilesRecursive($key, $names, $tmp_names, $types, $sizes, $errors)
+	{
+		if(is_array($names))
+		{
+			foreach($names as $item=>$name)
+				self::collectFilesRecursive($key.'['.$item.']', $names[$item], $tmp_names[$item], $types[$item], $sizes[$item], $errors[$item]);
+		}
+		else
+			self::$_files[$key] = new CUploadedFile($names, $tmp_names, $types, $sizes, $errors);
+	}
+
+	/**
+	 * Constructor.
+	 * Use {@link getInstance} to get an instance of an uploaded file.
+	 * @param string $name the original name of the file being uploaded
+	 * @param string $tempName the path of the uploaded file on the server.
+	 * @param string $type the MIME-type of the uploaded file (such as "image/gif").
+	 * @param integer $size the actual size of the uploaded file in bytes
+	 * @param integer $error the error code
+	 */
+	public function __construct($name,$tempName,$type,$size,$error)
+	{
+		$this->_name=$name;
+		$this->_tempName=$tempName;
+		$this->_type=$type;
+		$this->_size=$size;
+		$this->_error=$error;
+	}
+
+	/**
+	 * String output.
+	 * This is PHP magic method that returns string representation of an object.
+	 * The implementation here returns the uploaded file's name.
+	 * @return string the string representation of the object
+	 */
+	public function __toString()
+	{
+		return $this->_name;
+	}
+
+	/**
+	 * Saves the uploaded file.
+	 * Note: this method uses php's move_uploaded_file() method. As such, if the target file ($file) 
+	 * already exists it is overwritten.
+	 * @param string $file the file path used to save the uploaded file
+	 * @param boolean $deleteTempFile whether to delete the temporary file after saving.
+	 * If true, you will not be able to save the uploaded file again in the current request.
+	 * @return boolean true whether the file is saved successfully
+	 */
+	public function saveAs($file,$deleteTempFile=true)
+	{
+		if($this->_error==UPLOAD_ERR_OK)
+		{
+			if($deleteTempFile)
+				return move_uploaded_file($this->_tempName,$file);
+			elseif(is_uploaded_file($this->_tempName))
+				return copy($this->_tempName, $file);
+			else
+				return false;
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * @return string the original name of the file being uploaded
+	 */
+	public function getName()
+	{
+		return $this->_name;
+	}
+
+	/**
+	 * @return string the path of the uploaded file on the server.
+	 * Note, this is a temporary file which will be automatically deleted by PHP
+	 * after the current request is processed.
+	 */
+	public function getTempName()
+	{
+		return $this->_tempName;
+	}
+
+	/**
+	 * @return string the MIME-type of the uploaded file (such as "image/gif").
+	 * Since this MIME type is not checked on the server side, do not take this value for granted.
+	 * Instead, use {@link CFileHelper::getMimeType} to determine the exact MIME type.
+	 */
+	public function getType()
+	{
+		return $this->_type;
+	}
+
+	/**
+	 * @return integer the actual size of the uploaded file in bytes
+	 */
+	public function getSize()
+	{
+		return $this->_size;
+	}
+
+	/**
+	 * Returns an error code describing the status of this file uploading.
+	 * @return integer the error code
+	 * @see http://www.php.net/manual/en/features.file-upload.errors.php
+	 */
+	public function getError()
+	{
+		return $this->_error;
+	}
+
+	/**
+	 * @return boolean whether there is an error with the uploaded file.
+	 * Check {@link error} for detailed error code information.
+	 */
+	public function getHasError()
+	{
+		return $this->_error!=UPLOAD_ERR_OK;
+	}
+
+	/**
+	 * @return string the file extension name for {@link name}.
+	 * The extension name does not include the dot character. An empty string
+	 * is returned if {@link name} does not have an extension name.
+	 */
+	public function getExtensionName()
+	{
+		if(($pos=strrpos($this->_name,'.'))!==false)
+			return (string)substr($this->_name,$pos+1);
+		else
+			return '';
+	}
+}

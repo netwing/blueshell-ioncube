@@ -1,35 +1,84 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+lDPb0==
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2011 Fabien Potencier <fabien.potencier@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Stores Messages in memory.
+ *
+ * @package Swift
+ * @author  Fabien Potencier
+ */
+class Swift_MemorySpool implements Swift_Spool
+{
+    protected $messages = array();
+
+    /**
+     * Tests if this Transport mechanism has started.
+     *
+     * @return boolean
+     */
+    public function isStarted()
+    {
+        return true;
+    }
+
+    /**
+     * Starts this Transport mechanism.
+     */
+    public function start()
+    {
+    }
+
+    /**
+     * Stops this Transport mechanism.
+     */
+    public function stop()
+    {
+    }
+
+    /**
+     * Stores a message in the queue.
+     *
+     * @param Swift_Mime_Message $message The message to store
+     *
+     * @return boolean Whether the operation has succeeded
+     */
+    public function queueMessage(Swift_Mime_Message $message)
+    {
+        $this->messages[] = $message;
+
+        return true;
+    }
+
+    /**
+     * Sends messages using the given transport instance.
+     *
+     * @param Swift_Transport $transport        A transport instance
+     * @param string[]        $failedRecipients An array of failures by-reference
+     *
+     * @return integer The number of sent emails
+     */
+    public function flushQueue(Swift_Transport $transport, &$failedRecipients = null)
+    {
+        if (!$this->messages) {
+            return 0;
+        }
+
+        if (!$transport->isStarted()) {
+            $transport->start();
+        }
+
+        $count = 0;
+        while ($message = array_pop($this->messages)) {
+            $count += $transport->send($message, $failedRecipients);
+        }
+
+        return $count;
+    }
+}

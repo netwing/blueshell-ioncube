@@ -1,56 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/k0+7QzRFtwG
+<?php
+namespace Codeception\Util\Connector;
+
+use Goutte\Client;
+use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\BrowserKit\Response;
+
+class Universal extends Client
+{
+    protected $mockedResponse;
+    
+    public function setIndex($index) {
+        $this->index = $index;
+    }
+
+    public function mockResponse($response)
+    {
+        $this->mockedResponse = $response;
+    }
+
+    public function doRequest($request) {
+        if ($this->mockedResponse) {
+            $response = $this->mockedResponse;
+            $this->mockedResponse = null;
+            return $response;
+        }
+        
+        $_COOKIE = $request->getCookies();
+        $_SERVER = $request->getServer();
+        $_FILES = $request->getFiles();
+
+        $uri = str_replace('http://localhost','',$request->getUri());
+
+        if (strtoupper($request->getMethod()) == 'GET') {
+            $_GET = $request->getParameters();
+        } else {
+            $_POST = $request->getParameters();
+        }
+        $_REQUEST = $request->getParameters();
+
+        $_SERVER['REQUEST_METHOD'] = strtoupper($request->getMethod());
+        $_SERVER['REQUEST_URI'] = strtoupper($uri);
+
+        ob_start();
+        include $this->index;
+
+        $content = ob_get_contents();
+        ob_end_clean();
+
+        $headers = array();
+        $php_headers = headers_list();
+        foreach ($php_headers as $value) {
+            // Get the header name
+            $parts = explode(':', $value);
+            if (count($parts) > 1) {
+                $name = trim(array_shift($parts));
+                // Build the header hash map
+                $headers[$name] = trim(implode(':', $parts));
+            }
+        }
+        $headers['Content-type'] = isset($headers['Content-type']) ? $headers['Content-type']: "text/html; charset=UTF-8";
+
+        $response = new Response($content, 200, $headers);
+        return $response;
+    }
+}

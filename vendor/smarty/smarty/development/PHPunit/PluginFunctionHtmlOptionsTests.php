@@ -1,192 +1,502 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+require_once(dirname(__FILE__) . '/helpers/_object_tostring.php');
+
+/**
+* class for modifier tests
+*/
+class PluginFunctionHtmlOptionsTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testAssociativeArray()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect}');
+        $tpl->assign('mySelect', 9904);
+        $tpl->assign('myOptions', array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testSeparateArrays()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="56">Joe Schmoe</option>'
+            . $n . '<option value="92" selected="selected">Jane Johnson</option>'
+            . $n . '<option value="13">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" values=$cust_ids output=$cust_names selected=$customer_id}');
+        $tpl->assign('customer_id', 92);
+        $tpl->assign('cust_ids', array(56,92,13));
+        $tpl->assign('cust_names', array(
+            'Joe Schmoe',
+            'Jane Johnson',
+            'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testIterator()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect}');
+        $tpl->assign('mySelect', 9904);
+        $tpl->assign('myOptions', new ArrayIterator(array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        )));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testOptgroup()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<optgroup label="Sport">'
+            . $n . '<option value="6">Golf</option>'
+            . $n . '<option value="9">Cricket</option>'
+            . $n . '<option value="7" selected="selected">Swim</option>'
+            . $n . '</optgroup>'
+            . $n . '<optgroup label="Rest">'
+            . $n . '<option value="3">Sauna</option>'
+            . $n . '<option value="1">Massage</option>'
+            . $n . '</optgroup>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name=foo options=$lookups selected=$fav}');
+        $tpl->assign('fav', 7);
+        $tpl->assign('lookups', array(
+            'Sport' => array(
+                6 => 'Golf',
+                9 => 'Cricket',
+                7 => 'Swim'
+            ),
+            'Rest' => array(
+                3 => 'Sauna',
+                1 => 'Massage'
+            ),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testNullString()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="null" selected="selected">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '<optgroup label="optgroup">'
+            . $n . '<option value="null" selected="selected">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '</optgroup>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name=foo options=$array selected=$selected}');
+        $tpl->assign('selected', "null");
+        $tpl->assign('array', array(
+            'null' => 'null',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+            'optgroup' => array(
+                'null' => 'null',
+                0 => 'zero',
+                1 => 'one',
+                2 => 'two',
+            ),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testNullValue()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="" selected="selected">empty string</option>'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '<optgroup label="optgroup">'
+            . $n . '<option value="" selected="selected">empty string</option>'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '</optgroup>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name=foo options=$array selected=$selected}');
+        $tpl->assign('selected', null);
+        $tpl->assign('array', array(
+            '' => 'empty string',
+            'null' => 'null',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+            'optgroup' => array(
+                '' => 'empty string',
+                'null' => 'null',
+                0 => 'zero',
+                1 => 'one',
+                2 => 'two',
+            ),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testZeroValue()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0" selected="selected">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '<optgroup label="optgroup">'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0" selected="selected">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '</optgroup>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name=foo options=$array selected=$selected}');
+        $tpl->assign('selected', 0);
+        $tpl->assign('array', array(
+            'null' => 'null',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+            'optgroup' => array(
+                'null' => 'null',
+                0 => 'zero',
+                1 => 'one',
+                2 => 'two',
+            ),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+    public function testZeroStringValue()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0" selected="selected">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '<optgroup label="optgroup">'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0" selected="selected">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '</optgroup>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name=foo options=$array selected=$selected}');
+        $tpl->assign('selected', "0");
+        $tpl->assign('array', array(
+            'null' => "null",
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+            'optgroup' => array(
+                'null' => 'null',
+                0 => 'zero',
+                1 => 'one',
+                2 => 'two',
+            ),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testEmptyStringValue()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '<optgroup label="optgroup">'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '</optgroup>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name=foo options=$array selected=$selected}');
+        $tpl->assign('selected', "");
+        $tpl->assign('array', array(
+            'null' => 'null',
+            '0' => 'zero',
+            '1' => 'one',
+            '2' => 'two',
+            'optgroup' => array(
+                'null' => 'null',
+                0 => 'zero',
+                1 => 'one',
+                2 => 'two',
+            ),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testEmptyStringValues()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="" selected="selected">empty string</option>'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '<optgroup label="optgroup">'
+            . $n . '<option value="" selected="selected">empty string</option>'
+            . $n . '<option value="null">null</option>'
+            . $n . '<option value="0">zero</option>'
+            . $n . '<option value="1">one</option>'
+            . $n . '<option value="2">two</option>'
+            . $n . '</optgroup>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name=foo options=$array selected=$selected}');
+        $tpl->assign('selected', "");
+        $tpl->assign('array', array(
+            '' => 'empty string',
+            'null' => 'null',
+            '0' => 'zero',
+            '1' => 'one',
+            '2' => 'two',
+            'optgroup' => array(
+                '' => 'empty string',
+                'null' => 'null',
+                0 => 'zero',
+                1 => 'one',
+                2 => 'two',
+            ),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testObject()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect}');
+        $tpl->assign('mySelect', new _object_toString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testObjectList()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect}');
+        $tpl->assign('mySelect', new _object_toString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => new _object_toString('Joe Schmoe'),
+            9904 => new _object_toString('Jack Smith'),
+            2003 => new _object_toString('Charlie Brown'),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    protected $_errors = array();
+    public function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
+    {
+        $this->_errors[] = $errstr;
+    }
+
+    public function testObjectNoString()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect}');
+        $tpl->assign('mySelect', new _object_noString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        ));
+
+        $tpl->fetch();
+        $this->assertEquals(1, count($this->_errors));
+        $this->assertStringEndsWith("without __toString() method", $this->_errors[0]);
+
+        restore_error_handler();
+    }
+
+    public function testObjectListNoString()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect}');
+        $tpl->assign('mySelect', new _object_toString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => new _object_toString('Joe Schmoe'),
+            9904 => new _object_noString('Jack Smith'),
+            2003 => new _object_toString('Charlie Brown'),
+        ));
+
+        $tpl->fetch();
+        $this->assertEquals(1, count($this->_errors));
+        $this->assertStringEndsWith("without __toString() method", $this->_errors[0]);
+
+        restore_error_handler();
+    }
+
+    public function testDisabled()
+    {
+        $n = "\n";
+        $expected = '<select name="foo" disabled="1">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect disabled=1}');
+        $tpl->assign('mySelect', new _object_toString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testDisabledStrict()
+    {
+        $n = "\n";
+        $expected = '<select name="foo">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect disabled=1 strict=true}');
+        $tpl->assign('mySelect', new _object_toString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+
+        $n = "\n";
+        $expected = '<select name="foo" disabled="disabled">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect disabled=true strict=true}');
+        $tpl->assign('mySelect', new _object_toString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+
+        $n = "\n";
+        $expected = '<select name="foo" disabled="disabled">'
+            . $n . '<option value="1800">Joe Schmoe</option>'
+            . $n . '<option value="9904" selected="selected">Jack Smith</option>'
+            . $n . '<option value="2003">Charlie Brown</option>'
+            . $n . '</select>' . $n;
+
+        $tpl = $this->smarty->createTemplate('eval:{html_options name="foo" options=$myOptions selected=$mySelect disabled="disabled" strict=true}');
+        $tpl->assign('mySelect', new _object_toString(9904));
+        $tpl->assign('myOptions', array(
+            1800 => 'Joe Schmoe',
+            9904 => 'Jack Smith',
+            2003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+}

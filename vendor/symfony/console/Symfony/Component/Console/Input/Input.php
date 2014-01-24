@@ -1,85 +1,226 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Input;
+
+/**
+ * Input is the base class for all concrete Input classes.
+ *
+ * Three concrete classes are provided by default:
+ *
+ *  * `ArgvInput`: The input comes from the CLI arguments (argv)
+ *  * `StringInput`: The input is provided as a string
+ *  * `ArrayInput`: The input is provided as an array
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+abstract class Input implements InputInterface
+{
+    /**
+     * @var InputDefinition
+     */
+    protected $definition;
+    protected $options = array();
+    protected $arguments = array();
+    protected $interactive = true;
+
+    /**
+     * Constructor.
+     *
+     * @param InputDefinition $definition A InputDefinition instance
+     */
+    public function __construct(InputDefinition $definition = null)
+    {
+        if (null === $definition) {
+            $this->definition = new InputDefinition();
+        } else {
+            $this->bind($definition);
+            $this->validate();
+        }
+    }
+
+    /**
+     * Binds the current Input instance with the given arguments and options.
+     *
+     * @param InputDefinition $definition A InputDefinition instance
+     */
+    public function bind(InputDefinition $definition)
+    {
+        $this->arguments = array();
+        $this->options = array();
+        $this->definition = $definition;
+
+        $this->parse();
+    }
+
+    /**
+     * Processes command line arguments.
+     */
+    abstract protected function parse();
+
+    /**
+     * Validates the input.
+     *
+     * @throws \RuntimeException When not enough arguments are given
+     */
+    public function validate()
+    {
+        if (count($this->arguments) < $this->definition->getArgumentRequiredCount()) {
+            throw new \RuntimeException('Not enough arguments.');
+        }
+    }
+
+    /**
+     * Checks if the input is interactive.
+     *
+     * @return Boolean Returns true if the input is interactive
+     */
+    public function isInteractive()
+    {
+        return $this->interactive;
+    }
+
+    /**
+     * Sets the input interactivity.
+     *
+     * @param Boolean $interactive If the input should be interactive
+     */
+    public function setInteractive($interactive)
+    {
+        $this->interactive = (Boolean) $interactive;
+    }
+
+    /**
+     * Returns the argument values.
+     *
+     * @return array An array of argument values
+     */
+    public function getArguments()
+    {
+        return array_merge($this->definition->getArgumentDefaults(), $this->arguments);
+    }
+
+    /**
+     * Returns the argument value for a given argument name.
+     *
+     * @param string $name The argument name
+     *
+     * @return mixed The argument value
+     *
+     * @throws \InvalidArgumentException When argument given doesn't exist
+     */
+    public function getArgument($name)
+    {
+        if (!$this->definition->hasArgument($name)) {
+            throw new \InvalidArgumentException(sprintf('The "%s" argument does not exist.', $name));
+        }
+
+        return isset($this->arguments[$name]) ? $this->arguments[$name] : $this->definition->getArgument($name)->getDefault();
+    }
+
+    /**
+     * Sets an argument value by name.
+     *
+     * @param string $name  The argument name
+     * @param string $value The argument value
+     *
+     * @throws \InvalidArgumentException When argument given doesn't exist
+     */
+    public function setArgument($name, $value)
+    {
+        if (!$this->definition->hasArgument($name)) {
+            throw new \InvalidArgumentException(sprintf('The "%s" argument does not exist.', $name));
+        }
+
+        $this->arguments[$name] = $value;
+    }
+
+    /**
+     * Returns true if an InputArgument object exists by name or position.
+     *
+     * @param string|integer $name The InputArgument name or position
+     *
+     * @return Boolean true if the InputArgument object exists, false otherwise
+     */
+    public function hasArgument($name)
+    {
+        return $this->definition->hasArgument($name);
+    }
+
+    /**
+     * Returns the options values.
+     *
+     * @return array An array of option values
+     */
+    public function getOptions()
+    {
+        return array_merge($this->definition->getOptionDefaults(), $this->options);
+    }
+
+    /**
+     * Returns the option value for a given option name.
+     *
+     * @param string $name The option name
+     *
+     * @return mixed The option value
+     *
+     * @throws \InvalidArgumentException When option given doesn't exist
+     */
+    public function getOption($name)
+    {
+        if (!$this->definition->hasOption($name)) {
+            throw new \InvalidArgumentException(sprintf('The "%s" option does not exist.', $name));
+        }
+
+        return isset($this->options[$name]) ? $this->options[$name] : $this->definition->getOption($name)->getDefault();
+    }
+
+    /**
+     * Sets an option value by name.
+     *
+     * @param string $name  The option name
+     * @param string $value The option value
+     *
+     * @throws \InvalidArgumentException When option given doesn't exist
+     */
+    public function setOption($name, $value)
+    {
+        if (!$this->definition->hasOption($name)) {
+            throw new \InvalidArgumentException(sprintf('The "%s" option does not exist.', $name));
+        }
+
+        $this->options[$name] = $value;
+    }
+
+    /**
+     * Returns true if an InputOption object exists by name.
+     *
+     * @param string $name The InputOption name
+     *
+     * @return Boolean true if the InputOption object exists, false otherwise
+     */
+    public function hasOption($name)
+    {
+        return $this->definition->hasOption($name);
+    }
+
+    /**
+     * Escapes a token through escapeshellarg if it contains unsafe chars
+     *
+     * @param string $token
+     *
+     * @return string
+     */
+    public function escapeToken($token)
+    {
+        return preg_match('{^[\w-]+$}', $token) ? $token : escapeshellarg($token);
+    }
+}

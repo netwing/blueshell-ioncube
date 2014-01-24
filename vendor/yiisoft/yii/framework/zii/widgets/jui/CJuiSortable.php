@@ -1,49 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-mW==
+<?php
+/**
+ * CJuiSortable class file.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('zii.widgets.jui.CJuiWidget');
+
+/**
+ * CJuiSortable makes selected elements sortable by dragging with the mouse.
+ *
+ * CJuiSortable encapsulates the {@link http://jqueryui.com/sortable/ JUI Sortable}
+ * plugin.
+ *
+ * To use this widget, you may insert the following code in a view:
+ * <pre>
+ * $this->widget('zii.widgets.jui.CJuiSortable',array(
+ *     'items'=>array(
+ *         'id1'=>'Item 1',
+ *         'id2'=>'Item 2',
+ *         'id3'=>'Item 3',
+ *     ),
+ *     // additional javascript options for the JUI Sortable plugin
+ *     'options'=>array(
+ *         'delay'=>'300',
+ *     ),
+ * ));
+ * </pre>
+ *
+ * By configuring the {@link options} property, you may specify the options
+ * that need to be passed to the JUI Sortable plugin. Please refer to
+ * the {@link http://api.jqueryui.com/sortable/ JUI Sortable API} documentation
+ * for possible options (name-value pairs) and
+ * {@link http://jqueryui.com/sortable/ JUI Sortable page} for general
+ * description and demo.
+ *
+ * If you are using JavaScript expressions anywhere in the code, please wrap it
+ * with {@link CJavaScriptExpression} and Yii will use it as code.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @package zii.widgets.jui
+ * @since 1.1
+ */
+class CJuiSortable extends CJuiWidget
+{
+	/**
+	 * @var array list of sortable items (id=>item content).
+	 * Note that the item contents will not be HTML-encoded.
+	 */
+	public $items=array();
+	/**
+	 * @var string the name of the container element that contains all items. Defaults to 'ul'.
+	 */
+	public $tagName='ul';
+	/**
+	 * @var string the template that is used to generated every sortable item.
+	 * The token "{content}" in the template will be replaced with the item content,
+	 * while "{id}" be replaced with the item ID.
+	 */
+	public $itemTemplate='<li id="{id}">{content}</li>';
+
+	/**
+	 * Run this widget.
+	 * This method registers necessary javascript and renders the needed HTML code.
+	 */
+	public function run()
+	{
+		$id=$this->getId();
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
+		else
+			$this->htmlOptions['id']=$id;
+
+		$options=CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').sortable({$options});");
+
+		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+		foreach($this->items as $id=>$content)
+			echo strtr($this->itemTemplate,array('{id}'=>$id,'{content}'=>$content))."\n";
+		echo CHtml::closeTag($this->tagName);
+	}
+}

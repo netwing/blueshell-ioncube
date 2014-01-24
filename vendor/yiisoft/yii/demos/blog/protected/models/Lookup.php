@@ -1,44 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class Lookup extends CActiveRecord
+{
+	/**
+	 * The followings are the available columns in table 'tbl_lookup':
+	 * @var integer $id
+	 * @var string $object_type
+	 * @var integer $code
+	 * @var string $name_en
+	 * @var string $name_fr
+	 * @var integer $sequence
+	 * @var integer $status
+	 */
+
+	private static $_items=array();
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * @return CActiveRecord the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{lookup}}';
+	}
+
+	/**
+	 * Returns the items for the specified type.
+	 * @param string item type (e.g. 'PostStatus').
+	 * @return array item names indexed by item code. The items are order by their position values.
+	 * An empty array is returned if the item type does not exist.
+	 */
+	public static function items($type)
+	{
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return self::$_items[$type];
+	}
+
+	/**
+	 * Returns the item name for the specified type and code.
+	 * @param string the item type (e.g. 'PostStatus').
+	 * @param integer the item code (corresponding to the 'code' column value)
+	 * @return string the item name for the specified the code. False is returned if the item type or code does not exist.
+	 */
+	public static function item($type,$code)
+	{
+		if(!isset(self::$_items[$type]))
+			self::loadItems($type);
+		return isset(self::$_items[$type][$code]) ? self::$_items[$type][$code] : false;
+	}
+
+	/**
+	 * Loads the lookup items for the specified type from the database.
+	 * @param string the item type
+	 */
+	private static function loadItems($type)
+	{
+		self::$_items[$type]=array();
+		$models=self::model()->findAll(array(
+			'condition'=>'type=:type',
+			'params'=>array(':type'=>$type),
+			'order'=>'position',
+		));
+		foreach($models as $model)
+			self::$_items[$type][$model->code]=$model->name;
+	}
+}

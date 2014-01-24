@@ -1,43 +1,99 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Util;
+
+class XmlBuilder
+{
+    /**
+     * @var \DOMDocument
+     */
+    protected $__dom__;
+
+    /**
+     * @var \DOMElement
+     */
+    protected $__currentNode__;
+
+    public function __construct() {
+        $this->__dom__ = new \DOMDocument();
+        $this->__currentNode__ = $this->__dom__;
+    }
+
+    /**
+     * Appends child node
+     *
+     * @param $tag
+     * @return XmlBuilder
+     */
+    public function __get($tag) {
+        $node = $this->__dom__->createElement($tag);
+        $this->__currentNode__->appendChild($node);
+        $this->__currentNode__ = $node;
+        return $this;
+    }
+
+    /**
+     * @param $val
+     * @return XmlBuilder
+     */
+    public function val($val) {
+        $this->__currentNode__->nodeValue = $val;
+        return $this;
+    }
+
+    /**
+     * Sets attribute for current node
+     *
+     * @param $attr
+     * @param $val
+     * @return XmlBuilder
+     */
+    public function attr($attr, $val) {
+        $this->__currentNode__->setAttribute($attr, $val);
+        return $this;
+    }
+
+    /**
+     * Traverses to parent
+     *
+     * @return XmlBuilder
+     */
+    public function parent() {
+        $this->__currentNode__ = $this->__currentNode__->parentNode;
+        return $this;
+    }
+
+
+    /**
+     * Traverses to parent with $name
+     *
+     * @param $tag
+     * @return XmlBuilder
+     * @throws \Exception
+     */
+    public function parents($tag) {
+        $traverseNode = $this->__currentNode__;
+        $elFound = false;
+        while ($traverseNode->parentNode) {
+            $traverseNode = $traverseNode->parentNode;
+            if ($traverseNode->tagName == $tag) {
+                $this->__currentNode__ = $traverseNode;
+                $elFound = true;
+                break;
+            }
+        }
+        if (!$elFound) throw new \Exception("Parent $tag not found in XML");
+        return $this;
+    }
+
+    public function __toString() {
+        return $this->__dom__->saveXML();
+    }
+
+    /**
+     * @return \DOMDocument
+     */
+    public function getDom() {
+        return $this->__dom__;
+    }
+
+}

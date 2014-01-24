@@ -1,104 +1,182 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-L0LN8qMcMQ7eZi/W
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Formatter;
+
+/**
+ * @covers Monolog\Formatter\NormalizerFormatter
+ */
+class NormalizerFormatterTest extends \PHPUnit_Framework_TestCase
+{
+    public function testFormat()
+    {
+        $formatter = new NormalizerFormatter('Y-m-d');
+        $formatted = $formatter->format(array(
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'message' => 'foo',
+            'datetime' => new \DateTime,
+            'extra' => array('foo' => new TestFooNorm, 'bar' => new TestBarNorm, 'baz' => array(), 'res' => fopen('php://memory', 'rb')),
+            'context' => array(
+                'foo' => 'bar',
+                'baz' => 'qux',
+            ),
+        ));
+
+        $this->assertEquals(array(
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'message' => 'foo',
+            'datetime' => date('Y-m-d'),
+            'extra' => array(
+                'foo' => '[object] (Monolog\\Formatter\\TestFooNorm: {"foo":"foo"})',
+                'bar' => '[object] (Monolog\\Formatter\\TestBarNorm: {})',
+                'baz' => array(),
+                'res' => '[resource]',
+            ),
+            'context' => array(
+                'foo' => 'bar',
+                'baz' => 'qux',
+            )
+        ), $formatted);
+    }
+
+    public function testFormatExceptions()
+    {
+        $formatter = new NormalizerFormatter('Y-m-d');
+        $e = new \LogicException('bar');
+        $e2 = new \RuntimeException('foo', 0, $e);
+        $formatted = $formatter->format(array(
+            'exception' => $e2,
+        ));
+
+        $this->assertGreaterThan(5, count($formatted['exception']['trace']));
+        $this->assertTrue(isset($formatted['exception']['previous']));
+        unset($formatted['exception']['trace'], $formatted['exception']['previous']);
+
+        $this->assertEquals(array(
+            'exception' => array(
+                'class'   => get_class($e2),
+                'message' => $e2->getMessage(),
+                'file'   => $e2->getFile().':'.$e2->getLine(),
+            )
+        ), $formatted);
+    }
+
+    public function testBatchFormat()
+    {
+        $formatter = new NormalizerFormatter('Y-m-d');
+        $formatted = $formatter->formatBatch(array(
+            array(
+                'level_name' => 'CRITICAL',
+                'channel' => 'test',
+                'message' => 'bar',
+                'context' => array(),
+                'datetime' => new \DateTime,
+                'extra' => array(),
+            ),
+            array(
+                'level_name' => 'WARNING',
+                'channel' => 'log',
+                'message' => 'foo',
+                'context' => array(),
+                'datetime' => new \DateTime,
+                'extra' => array(),
+            ),
+        ));
+        $this->assertEquals(array(
+            array(
+                'level_name' => 'CRITICAL',
+                'channel' => 'test',
+                'message' => 'bar',
+                'context' => array(),
+                'datetime' => date('Y-m-d'),
+                'extra' => array(),
+            ),
+            array(
+                'level_name' => 'WARNING',
+                'channel' => 'log',
+                'message' => 'foo',
+                'context' => array(),
+                'datetime' => date('Y-m-d'),
+                'extra' => array(),
+            ),
+        ), $formatted);
+    }
+
+    /**
+     * Test issue #137
+     */
+    public function testIgnoresRecursiveObjectReferences()
+    {
+        // set up the recursion
+        $foo = new \stdClass();
+        $bar = new \stdClass();
+
+        $foo->bar = $bar;
+        $bar->foo = $foo;
+
+        // set an error handler to assert that the error is not raised anymore
+        $that = $this;
+        set_error_handler(function ($level, $message, $file, $line, $context) use ($that) {
+            if (error_reporting() & $level) {
+                restore_error_handler();
+                $that->fail("$message should not be raised");
+            }
+        });
+
+        $formatter = new NormalizerFormatter();
+        $reflMethod = new \ReflectionMethod($formatter, 'toJson');
+        $reflMethod->setAccessible(true);
+        $res = $reflMethod->invoke($formatter, array($foo, $bar), true);
+
+        restore_error_handler();
+
+        $this->assertEquals(@json_encode(array($foo, $bar)), $res);
+    }
+
+    public function testIgnoresInvalidTypes()
+    {
+        // set up the recursion
+        $resource = fopen(__FILE__, 'r');
+
+        // set an error handler to assert that the error is not raised anymore
+        $that = $this;
+        set_error_handler(function ($level, $message, $file, $line, $context) use ($that) {
+            if (error_reporting() & $level) {
+                restore_error_handler();
+                $that->fail("$message should not be raised");
+            }
+        });
+
+        $formatter = new NormalizerFormatter();
+        $reflMethod = new \ReflectionMethod($formatter, 'toJson');
+        $reflMethod->setAccessible(true);
+        $res = $reflMethod->invoke($formatter, array($resource), true);
+
+        restore_error_handler();
+
+        $this->assertEquals(@json_encode(array($resource)), $res);
+    }
+}
+
+class TestFooNorm
+{
+    public $foo = 'foo';
+}
+
+class TestBarNorm
+{
+    public function __toString()
+    {
+        return 'bar';
+    }
+}

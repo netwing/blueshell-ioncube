@@ -1,38 +1,42 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: shell_tester_test.php 1787 2008-04-26 20:35:39Z pp11 $
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../shell_tester.php');
+Mock::generate('SimpleShell');
+
+class TestOfShellTestCase extends ShellTestCase {
+    private $mock_shell = false;
+    
+    function getShell() {
+        return $this->mock_shell;
+    }
+    
+    function testGenericEquality() {
+        $this->assertEqual('a', 'a');
+        $this->assertNotEqual('a', 'A');
+    }
+    
+    function testExitCode() {
+        $this->mock_shell = new MockSimpleShell();
+        $this->mock_shell->setReturnValue('execute', 0);
+        $this->mock_shell->expectOnce('execute', array('ls'));
+        $this->assertTrue($this->execute('ls'));
+        $this->assertExitCode(0);
+    }
+    
+    function testOutput() {
+        $this->mock_shell = new MockSimpleShell();
+        $this->mock_shell->setReturnValue('execute', 0);
+        $this->mock_shell->setReturnValue('getOutput', "Line 1\nLine 2\n");
+        $this->assertOutput("Line 1\nLine 2\n");
+    }
+    
+    function testOutputPatterns() {
+        $this->mock_shell = new MockSimpleShell();
+        $this->mock_shell->setReturnValue('execute', 0);
+        $this->mock_shell->setReturnValue('getOutput', "Line 1\nLine 2\n");
+        $this->assertOutputPattern('/line/i');
+        $this->assertNoOutputPattern('/line 2/');
+    }
+}
 ?>
-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
-DKND9QzxBvrvXIDwXlk9tTUSy4pxpCEXPqN78W==

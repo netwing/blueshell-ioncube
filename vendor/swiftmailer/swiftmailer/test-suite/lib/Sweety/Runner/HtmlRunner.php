@@ -1,72 +1,160 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPuH3siJC1Z/hdOnFvmWXRBljdswDyQNGPVyh0NxgkXBPLM2DZycLHeCimiDjoMvcYHFIUPvx
-zaWY8sY0TmZPXIq+QxYSAxc0X9SIA2xNj/9CsPgzXH5syE2lPP49LmqxM5BG9YIZCTLsQxYMcgwM
-LTU0njCvScRAllsTklB+Ca+2jkK9kJ76jp7+4BS4HQdeaESbKAN6vuVGI3cPiO/GdQw/8c+OSdXq
-ihahxZ1K7GXDuZttFdpvqwzHAE4xzt2gh9fl143SQNJ3PzTaUdXUZhvujetO8yx04lykoC3qVsr2
-suLdshGEPVQ7O3hVtM2B66N+7iIQEgQL1t7sllqWoG70W8GAyPnh4JD/fnT5x+4EQMvGQaWXc92i
-pMXPCdsC5UHfZbfL4P7kfqAOy5eViT/nPi/fEoifknH9UBm9tYXJwGIAtKKVZERivZwyVKqInKuw
-HPxNL2bxjvs8q8iuLqBAAbg1Hrpf/2e4YVETL3iNdHOoaz+ZU8b3+d6fcGAnLtTskWMIUmMrOuFB
-Lin49yOrJhSO5AgA6tvaCjPjBIryPHzHGIT/0EOWe1g5aBlNcN3PXAqEnrh1Qdo+pBT0AjHbvzWu
-yaQJfe1X1oHULywR3tV71GVDRvfkZIXRMjS4xQuJ/DlPOx1CcbUfyPhqrWlr/gtOWPh4WoFHbJQB
-YSgckPHhG/VYGoRANXS2Ob+UjoLvZ3IxbhIZVwCo8PEqkQJ8nmtZ8AYrrRjIjj3MEa8VhKPWaNKV
-g6y9tnojKYEcLIJV5RyhoUL7vY2vaknnLWvsNp5lkTUwbzBoNUXtYYU3Ay+K7Jev0uwnOb9HRJ15
-GS06I/1QJSF0APQHgFVYV/etSWoOyI9iOWvZT8VSQsg/2dTZr2nQf9cpqGzPwdowoQb6YwX9ZFOj
-3Uky8nQChWhSscVsFcwm/lohRg8RWbfU7l4hiCm40hCr1tWxVPfACFe3+05Hm5TzZbnFM2H3ZL3/
-5y2AtDfJbadBETBRMa7gcECdXJuqOYXYV42+RPPlmzKD2spQ6C5h42vPm5tDq/f1SZ1Gx358VfUo
-EXZsVrU2px9jhhezJO32r2H6G3ZubiJJXu3H/4Bppq3jxqMtYCX8rKV+zRipBjwN1w7i2YzWDEjB
-1yRLX9dYf5vlgbBIVJet1dUF25rcTnO8zTSUq6z7ASah1gP2uwzTo3Ax/1f3RESwLy6ulUKzliWS
-Au5hW7EaUGvHlp4uqmBOMoMlcHxFw0B/I923JplubfctMDsBT1JpjJ61Z83qVLIRkkZzlt5Qfaam
-xYCd4r0USwBZD53ui7T4Z22EmOQcpZNxaZR4OF/3hsNyy9Lphrq0Y+kwxa6n9yIf6q7fEoB3i8nH
-Bx/7TACZybHYXfP1KLDQJOKPSkMOkVjzgTbmXfCaX7yoGgyBkHY2rzvOG9R30NqtAeF5Z+vn1vep
-vl8sbo3H8v/jTBCSHnC1S5YttjA7yy6ye72Hzq+w3ZXne9KMMIANqQf8rdtGa/Zwywa0brf4y3uq
-hUvWQmMLLvTaifkS5R9BcBLd+FfMci9uL88vV6QzTMYAu2Ci7PEhKifPEsvtCMe9Q4vOWIwYTnZR
-8HZ9NTp0Vvt4jxbaHaYo+WCb3ONOXE5tmtS1/mqmuc34NDKGjBDK67yP6dS4bdj2yx6rD07AFk9u
-/tSN2Z1Qos3ZOqRRmGDgUCbahVUhyLYk7FaVHjfFYzAdL3S4Nee1p93C6CujHssRLadyfLsQfcf1
-7QtfZWEETmZcXkX9U7H+rsHW0F92W/9y+XZv/YSrD9Jdyw3Vtz5thWx2iDktdUTX7lQud53cNWdr
-6dWdQIM0os8fhXgnIPW5oNfgAaFovSInEaiNifEZ/wXxnOGqe9IJGAmA8+Fx8mXvrTQmAnAtQLc/
-rQpf/zZwUtGmiYqUw9zmkY3KtYUm4fZEf9/824QKyqQc9useBOmjc8JiGH3FtUfKakk1ClmrJQnJ
-WUxioeXY2fqbb/BuKLAS5qi5r6g5g3hb3qg76IHlQScpcdon7EFUP2Rsz+Jf9S5B+e0ZxrNmDlsG
-DrlNN5Lc2/MXRrB+6MQpD5iHwRoxYZtCrEAPZ6j5QGeho5Q3JcGhIc8dWva7jcdYtm3PCuyb+lf4
-HvoGNAULhZfJWf9PoYETq8Rz4BLQShqIE3E7X0mgZrqVH29DVPxstg+CsvJva6vIVse4+aqXf7CN
-jDoPAC+KWZjSeykMDiblRQenVlP4Wd9ttNHCXWvQgxbU+ICtyHYKfAiA40N2zYWHX7U9Bym16+TH
-+yyqoxSqc695t+VN6ScYJZ62m9GEi001NC/pak4mHM6HRrd4xsnXntsSaJy4LpXZTS6PpbtLxRBd
-7DVnVonPnvizwIsJL1fv/JulLtlXi8YUdWDYnMirdol6FmCn3tCArMocAdmGtechSP/74TABtmqH
-3CWeaMqi5zNvzdd01z1L60GemQn3mr4YxZRx9S3pei30GdB4NwF5XkZxSKTvrCpb8/vr31RrYfIr
-kmZDnvermInrGAH0UAsX/Jg875cz4erDX8tZfI+IWJbb2zEWC4QeNpXzcby6C0z2/KXm4iqwGvdN
-TQq46EOStugu/0rlxIaAFdxHZX0CKehOncE6LoLKuQbdibQ7v9haol/gUazpSc6w6vu2HsHq7wuV
-OiMIORjxFNp2VnuklckrfpY8rlrLM7SNzpxrY8gF2KOls/L53uvT2zaEO9wjAEPNxf++TuLqR4bV
-X4aWFu7HECTjMBHEZuoWU+JfIT9vfCKjqZFJYSm3oIj/ukj7HuR+EPBac1K+8MV1JrNitUfcf8b8
-NGjYn7BU4BC8uwHC1Xg7ZErefKWn86yecDmJl4TmIipEy+ymfKkJjQpyDrtgCk5UL/q9ea7qcYm0
-WpeWnnDqpuGJ8kUCRwx3VAw5+t1sRSW/6knAJKHwEF6jA6sLpwBUGB7eMGE/cwgpn3+0Rh9dYUAK
-V7Fhsc8Q6psfUavgLBcCl7FWVAx99ZIJgd5N5pc95VtOKUmF+gKFrafDhMGnCNLb6m4orVyqGAax
-+xR/tUpFYO0oUjJdLN3/NWY78/mcnlXe0MJnvvDAl/oCeEOj9UjjY70d9sqCP64ozfCNfPAe9Qam
-fb9i8rOe6PCuungBOjEjANkr+QX37SWzcjl8Eq5qhQqlPVHXzyAae6RvCniK+O/RWfN5dBZ4mMKf
-foPGayPKIFnRLZvcKPTm3bQIwl6k1wvcoO/FaFtBvKYVSpbjTbD7T1wIMvEiEbXPPBb/e0poh3O+
-NZyU9z3kDntuSZ9MR6XZCREBhf/+nQLDJWpuWoApH1LcVxnEjqqXetXP1l/hfTqNHxoirK47M5c8
-B0GsBivv8pDZLurwmHr7/luZWvF940QLUTpKJRBJDbygulEF6JsLGLlQEV+BLFlBCMZCzM4YJOSc
-YsCYxeXBVFjzb8rUhKMnWSXsSSEh4wzPCp+qa3C2w31uXtFxGLoG5ijSkARFoTrOEP1PfmKncuvr
-QPyToXDQFnl40z6jUIf3tWyfYtLDeuDa2/x3V+cZiSkI0HL96v2wJSQro5PMClhOAuZnolsufCRL
-tBG1W8GniE1eCEm6P2DC2nWmgz0ob+Nu0ZzCvu81U9InjfMkMUz/T7ooXiqqV4RRbK7ofy7dZi9g
-QhMT+/+eSPmpBWaPy3ekmcZpY69AgzjiYNSjf11jsC0vMQPD2yiH6BxG3OWqsdz+LmqLO47tesA1
-1+3PPTzFclZdMp1jTAHn4hNSBB1pgTEpXsVWo90RT/cvt95k9GhrlJWUmZEExwfQXQ5C9R2rEfq2
-ilRWSFCSDFqu1OhngB9h3NvG+hId3JMX+XazziQOhd+CBM+xzhloClnQB+978CDmpsDIWvugCYNA
-JoGK66aDG7xlS3tp0xl831dLjBNGQdVq6bFyZdjKPW/E7I0r5XmO+IBH8TVeqV2BF/vjmyIdLhms
-IIl0zhsq9wEOQLB4QheJJKWFtqkEhWqRT7ta5ignqjNgsU+iXfrNmSCZPmCI5yDM6NbHeGtCMyGx
-cIoM2gZq8zWk+he5h42/B/+A4dLwOpsKfclZgR/ii9+fK//cBjrU78qxj/JXOYfRW61UVtW6Ug8u
-vuczcEHUJrT/veicJ9/fZQAC9TAu2EmpPD4uC8n8IBjjFmkc+Gs9JEzGCbpbmtAWN+XADe5TjK+4
-ivDOpbtaTUuteiBX4jonAu5ZUmsjnvlLwCfgTr2Ub6XQB/8anYZuPjIF/vh44kBP7iG+xTfyVg6d
-fkury4JXPKduTChDGzmchrzh47zggzSel/gOTkl1ZRDdcbNYpe3JHEsquuON484FFjNcrcEF0+o4
-qwfrPMZyFI99YDGZJLOoT9zfb2yobEmIVEX9ccct3+c9voNnziLFcRwJLJGG5TR7JyB0hYYzTzrk
-HMfp6cFmR0S0qApMPL8bVe8pMv3xLTebQYshayVTSzgx9V+lv1yB0KiZ2nvYUHjdrHY2DpDLM4Ki
-2y/KqOnar3xJztV/czPtwEj1o/kHqPf9ZBCacwG/SAy0ebzqKzS5pXIfibMbbdv8cHx0KN2BkZc9
-UyfhMF+XbAasKv7wuGhgjm1Dy+jnpfOc7jAcxIzfM5JiBxvuPqoSW+EkTLXock+OJ78DPAddQgxW
-ybUkUs0wPl1h1KET+FaceUYWCl5EaFGt0DGLEACkbdpCEJaMpd0tjUo9tOtXxHWnFvD6fowOQSsS
-FaM/UdpgJ0NvLPgBKoGdmsiROr1pMDZ1vekCvhsWBi/Q1upgvzurjFlK22TBtPOBBFft478XjnqA
-M/GN301KFNy1SzgiLP0FcUbK30T0K20DbeB8555Q55AyGzy6iQRgvtnWIEguIP4O+R8r31vvKHJm
-OqYApRO68mbDAnsKlMOoXfetogbgiVaOgBSeioBNzVV2NBwPMq+MnsgPbU3tMcYlI+JZO8wqq7Ro
-ziqzs/8QzQU6hd2EKVL/pPrFimuJerxLogxW61///rGkUcN+kbzF7V9i5qFhm3d6g3b4Ea+5wrxR
-NDvs0M4feXhZtipWTtYHI0gg+R25RhQR8zxhFsqBz+5R+qkwrlEE8GvMTsYOQaYrqArZLj0bnoB2
-/BVBU1EkQM2mundV5NErcfcfz7RW3zyGVD2GI791OTVTOFcLq26jaqGUTmn0AO5r4peOi8h6W/eJ
-9YHx00CZjCoR1ASj8jcLl6CmDaa=
+<?php
+
+require_once 'Sweety/Runner/AbstractTestRunner.php';
+
+/**
+ * Runs SimpleTest cases as a group through a JS enabled browser.
+ * @package Sweety
+ * @author Chris Corbyn
+ */
+class Sweety_Runner_HtmlRunner extends Sweety_Runner_AbstractTestRunner
+{
+  
+  /**
+   * The path to a valid template file.
+   * @var string
+   */
+  private $_template;
+  
+  /**
+   * The name of the test suite.
+   * @var string
+   */
+  private $_name;
+  
+  /**
+   * Creates a new HtmlRunner scanning the given directories.
+   * @param string[] $dirs
+   * @param string $template to load
+   * @param string $name of the test suite
+   */
+  public function __construct(array $dirs, $template, $name)
+  {
+      $this->_dirs = $dirs;
+      $this->_template = $template;
+      $this->_name = $name;
+  }
+  
+   /**
+   * Runs all test cases found under the given directories.
+   * @param string[] $directories to scan for test cases
+   * @param string To be prepended to class names
+   * @return int
+   */
+  public function runAllTests($dirs = array())
+  {
+    //We don't want test output to be cached
+    header("Cache-Control: no-cache, must-revalidate");
+    header("Pragma: no-cache");
+    header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+      
+    if (empty($dirs))
+    {
+      $dirs = $this->_dirs;
+    }
+    
+    $testCases = $this->findTests($dirs);
+    foreach ($testCases as $k => $testCase)
+    {
+      if (preg_match($this->getIgnoredClassRegex(), $testCase))
+      {
+        unset($testCases[$k]);
+      }
+    }
+    
+    usort($testCases, array($this, '_sort'));
+    
+    $vars = array(
+      //String
+      'testCases' => $testCases,
+      //String
+      'suiteName' => $this->_name,
+       // testCase => pass | fail | running
+      'runTests' => array(),
+      //Integer
+      'caseCount' => 0,
+      //Integer
+      'runCount' => 0,
+      //Integer
+      'passCount' => 0,
+      //Integer
+      'failCount' => 0,
+      //Integer
+      'exceptionCount' => 0,
+      // type => pass | fail | exception | output | internal, path => testCase, text => ...
+      'messages' => array(),
+      // pass | fail
+      'result' => 'idle'
+    );
+    
+    if (isset($_REQUEST['runtests']))
+    {
+      $reporter = $this->getReporter();
+      $reporter->setTemplateVars($vars);
+      
+      if (!$reporter->isStarted())
+      {
+        $reporter->start();
+      }
+      
+      $this->_runTestList((array)$_REQUEST['runtests'], $reporter);
+      
+      $reporter->finish();
+    }
+    else
+    {
+      foreach ($testCases as $testCase)
+      {
+        $vars['runTests'][$testCase] = 'idle'; //Show all checked by default
+      }
+    }
+    
+    $this->_render($vars);
+  }
+  
+  /**
+   * Run tests in the given array using the REST API (kind of).
+   * @param string[] $tests
+   * @param Sweety_Reporter $reporter
+   * @return int
+   */
+  protected function _runTestList(array $tests, Sweety_Reporter $reporter)
+  {
+    $protocol = !empty($_SERVER['HTTPS']) ? 'https://' : 'http://';
+    
+    //Most likely a HTTP/1.0 server not supporting HOST header
+    $server = !empty($_SERVER['SERVER_NAME']) ? $_SERVER['SERVER_NAME'] : '127.0.0.1';
+    
+    $path = '/';
+    if (!empty($_SERVER['REQUEST_URI']))
+    {
+      $path = preg_replace('/\?.*$/sD', '', $_SERVER['REQUEST_URI']);
+    }
+    
+    $baseUrl = $protocol . $server . $path;
+    
+    foreach ($tests as $testCase)
+    {
+      $url = $baseUrl . '?test=' . $testCase . '&format=xml';
+      $xml = file_get_contents($url);
+      $this->parseXml($xml, $testCase);
+    }
+    
+    return 0;
+  }
+  
+  /**
+   * Renders the view for the suite.
+   * @param string[] $templateVars
+   */
+  protected function _render($vars = array())
+  {
+    foreach ($vars as $k => $v)
+    {
+      $$k = $v;
+    }
+    
+    require_once $this->_template;
+  }
+  
+}

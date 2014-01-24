@@ -1,51 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-kuuDPEzE18bOaK7TtwgdVTEA3W==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Comparator;
+
+use Symfony\Component\Finder\Comparator\DateComparator;
+
+class DateComparatorTest extends \PHPUnit_Framework_TestCase
+{
+    public function testConstructor()
+    {
+        try {
+            new DateComparator('foobar');
+            $this->fail('__construct() throws an \InvalidArgumentException if the test expression is not valid.');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('InvalidArgumentException', $e, '__construct() throws an \InvalidArgumentException if the test expression is not valid.');
+        }
+
+        try {
+            new DateComparator('');
+            $this->fail('__construct() throws an \InvalidArgumentException if the test expression is not valid.');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('InvalidArgumentException', $e, '__construct() throws an \InvalidArgumentException if the test expression is not valid.');
+        }
+    }
+
+    /**
+     * @dataProvider getTestData
+     */
+    public function testTest($test, $match, $noMatch)
+    {
+        $c = new DateComparator($test);
+
+        foreach ($match as $m) {
+            $this->assertTrue($c->test($m), '->test() tests a string against the expression');
+        }
+
+        foreach ($noMatch as $m) {
+            $this->assertFalse($c->test($m), '->test() tests a string against the expression');
+        }
+    }
+
+    public function getTestData()
+    {
+        return array(
+            array('< 2005-10-10', array(strtotime('2005-10-09')), array(strtotime('2005-10-15'))),
+            array('until 2005-10-10', array(strtotime('2005-10-09')), array(strtotime('2005-10-15'))),
+            array('before 2005-10-10', array(strtotime('2005-10-09')), array(strtotime('2005-10-15'))),
+            array('> 2005-10-10', array(strtotime('2005-10-15')), array(strtotime('2005-10-09'))),
+            array('after 2005-10-10', array(strtotime('2005-10-15')), array(strtotime('2005-10-09'))),
+            array('since 2005-10-10', array(strtotime('2005-10-15')), array(strtotime('2005-10-09'))),
+            array('!= 2005-10-10', array(strtotime('2005-10-11')), array(strtotime('2005-10-10'))),
+        );
+
+    }
+}

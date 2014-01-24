@@ -1,47 +1,68 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class PluginModifierUnescapeTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testHtml()
+    {
+        $encoded = "a&#228;&#1047;&#1076;&#1088;&#1072;&gt;&lt;&amp;amp;&auml;&#228;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $result = "a&#228;&#1047;&#1076;&#1088;&#1072;><&amp;&auml;&#228;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|unescape:"html"}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testHtmlWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $encoded = "a&#228;&#1047;&#1076;&#1088;&#1072;&gt;&lt;&amp;amp;&auml;&#228;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $result = "a&#228;&#1047;&#1076;&#1088;&#1072;><&amp;&auml;&#228;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|unescape:"html"}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testHtmlall()
+    {
+        $encoded = "a&#228;&#1047;&#1076;&#1088;&#1072;&gt;&lt;&amp;amp;&auml;&#228;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $result = "aäЗдра><&amp;ääв�?�?твуйте";
+        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|unescape:"htmlall"}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testHtmlallWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $encoded = "a&#228;&#1047;&#1076;&#1088;&#1072;&gt;&lt;&amp;amp;&auml;&#228;&#1074;&#1089;&#1089;&#1090;&#1074;&#1091;&#1081;&#1090;&#1077;";
+        $result = "aäЗдра><&amp;ääв�?�?твуйте";
+        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|unescape:"htmlall"}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testUrl()
+    {
+        $encoded = "a%C3%A4%D0%97%D0%B4%D1%80%D0%B0%3E%3C%26amp%3B%C3%A4%C3%A4%D0%B2%D1%81%D1%81%D1%82%D0%B2%3F%3D%2B%D1%83%D0%B9%D1%82%D0%B5";
+        $result = "aäЗдра><&amp;ääв�?�?тв?=+уйте";
+        $tpl = $this->smarty->createTemplate('eval:{"' . $encoded . '"|unescape:"url"}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+}

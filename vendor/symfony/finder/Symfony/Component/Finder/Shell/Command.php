@@ -1,109 +1,294 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Shell;
+
+/**
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class Command
+{
+    /**
+     * @var Command|null
+     */
+    private $parent;
+
+    /**
+     * @var array
+     */
+    private $bits = array();
+
+    /**
+     * @var array
+     */
+    private $labels = array();
+
+    /**
+     * @var \Closure|null
+     */
+    private $errorHandler;
+
+    /**
+     * Constructor.
+     *
+     * @param Command|null $parent Parent command
+     */
+    public function __construct(Command $parent = null)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * Returns command as string.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->join();
+    }
+
+    /**
+     * Creates a new Command instance.
+     *
+     * @param Command|null $parent Parent command
+     *
+     * @return Command New Command instance
+     */
+    public static function create(Command $parent = null)
+    {
+        return new self($parent);
+    }
+
+    /**
+     * Escapes special chars from input.
+     *
+     * @param string $input A string to escape
+     *
+     * @return string The escaped string
+     */
+    public static function escape($input)
+    {
+        return escapeshellcmd($input);
+    }
+
+    /**
+     * Quotes input.
+     *
+     * @param string $input An argument string
+     *
+     * @return string The quoted string
+     */
+    public static function quote($input)
+    {
+        return escapeshellarg($input);
+    }
+
+    /**
+     * Appends a string or a Command instance.
+     *
+     * @param string|Command $bit
+     *
+     * @return Command The current Command instance
+     */
+    public function add($bit)
+    {
+        $this->bits[] = $bit;
+
+        return $this;
+    }
+
+    /**
+     * Prepends a string or a command instance.
+     *
+     * @param string|Command $bit
+     *
+     * @return Command The current Command instance
+     */
+    public function top($bit)
+    {
+        array_unshift($this->bits, $bit);
+
+        foreach ($this->labels as $label => $index) {
+            $this->labels[$label] += 1;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Appends an argument, will be quoted.
+     *
+     * @param string $arg
+     *
+     * @return Command The current Command instance
+     */
+    public function arg($arg)
+    {
+        $this->bits[] = self::quote($arg);
+
+        return $this;
+    }
+
+    /**
+     * Appends escaped special command chars.
+     *
+     * @param string $esc
+     *
+     * @return Command The current Command instance
+     */
+    public function cmd($esc)
+    {
+        $this->bits[] = self::escape($esc);
+
+        return $this;
+    }
+
+    /**
+     * Inserts a labeled command to feed later.
+     *
+     * @param string $label The unique label
+     *
+     * @return Command The current Command instance
+     *
+     * @throws \RuntimeException If label already exists
+     */
+    public function ins($label)
+    {
+        if (isset($this->labels[$label])) {
+            throw new \RuntimeException(sprintf('Label "%s" already exists.', $label));
+        }
+
+        $this->bits[] = self::create($this);
+        $this->labels[$label] = count($this->bits)-1;
+
+        return $this->bits[$this->labels[$label]];
+    }
+
+    /**
+     * Retrieves a previously labeled command.
+     *
+     * @param string $label
+     *
+     * @return Command The labeled command
+     *
+     * @throws \RuntimeException
+     */
+    public function get($label)
+    {
+        if (!isset($this->labels[$label])) {
+            throw new \RuntimeException(sprintf('Label "%s" does not exist.', $label));
+        }
+
+        return $this->bits[$this->labels[$label]];
+    }
+
+    /**
+     * Returns parent command (if any).
+     *
+     * @return Command Parent command
+     *
+     * @throws \RuntimeException If command has no parent
+     */
+    public function end()
+    {
+        if (null === $this->parent) {
+            throw new \RuntimeException('Calling end on root command doesn\'t make sense.');
+        }
+
+        return $this->parent;
+    }
+
+    /**
+     * Counts bits stored in command.
+     *
+     * @return int The bits count
+     */
+    public function length()
+    {
+        return count($this->bits);
+    }
+
+    /**
+     * @param \Closure $errorHandler
+     *
+     * @return Command
+     */
+    public function setErrorHandler(\Closure $errorHandler)
+    {
+        $this->errorHandler = $errorHandler;
+
+        return $this;
+    }
+
+    /**
+     * @return \Closure|null
+     */
+    public function getErrorHandler()
+    {
+        return $this->errorHandler;
+    }
+
+    /**
+     * Executes current command.
+     *
+     * @return array The command result
+     *
+     * @throws \RuntimeException
+     */
+    public function execute()
+    {
+        if (null === $this->errorHandler) {
+            exec($this->join(), $output);
+        } else {
+            $process = proc_open($this->join(), array(0 => array('pipe', 'r'), 1 => array('pipe', 'w'), 2 => array('pipe', 'w')), $pipes);
+            $output = preg_split('~(\r\n|\r|\n)~', stream_get_contents($pipes[1]), -1, PREG_SPLIT_NO_EMPTY);
+
+            if ($error = stream_get_contents($pipes[2])) {
+                call_user_func($this->errorHandler, $error);
+            }
+
+            proc_close($process);
+        }
+
+        return $output ?: array();
+    }
+
+    /**
+     * Joins bits.
+     *
+     * @return string
+     */
+    public function join()
+    {
+        return implode(' ', array_filter(
+            array_map(function ($bit) {
+                return $bit instanceof Command ? $bit->join() : ($bit ?: null);
+            }, $this->bits),
+            function ($bit) { return null !== $bit; }
+        ));
+    }
+
+    /**
+     * Insert a string or a Command instance before the bit at given position $index (index starts from 0).
+     *
+     * @param string|Command $bit
+     * @param integer        $index
+     *
+     * @return Command The current Command instance
+     */
+    public function addAtIndex($bit, $index)
+    {
+        array_splice($this->bits, $index, 0, $bit);
+
+        return $this;
+    }
+}

@@ -1,142 +1,242 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-IPd9G3Rl1fCrChO3gton
+<?php
+require_once dirname(__FILE__).'/NewModel.php';
+
+class CModelTest extends CTestCase
+{
+	public function testValidate()
+	{
+		$model=new NewModel;
+		$this->assertFalse($model->validate());
+		$model->attr1=4;
+		$this->assertTrue($model->validate());
+		$model->attr1=6;
+		$this->assertFalse($model->validate());
+		$model->attr2=6;
+		$this->assertFalse($model->validate());
+		$model->attr1=4;
+		$this->assertFalse($model->validate());
+		$model->attr2=4;
+		$this->assertTrue($model->validate());
+	}
+
+	function testBeforeValidate(){
+		$model=new NewModel;
+		$model->attr1=4;
+		$this->assertTrue($model->validate());
+
+		$model->onBeforeValidate = array($this, 'beforeValidate');
+		$this->assertFalse($model->validate());
+	}
+
+	function beforeValidate($event){
+		$event->isValid = false;
+	}
+
+	function testIsAttributeRequired(){
+		$model=new NewModel;
+		$this->assertTrue($model->isAttributeRequired('attr1'));
+		$this->assertFalse($model->isAttributeRequired('attr2'));
+	}
+
+	function testIsAttributeSafe(){
+		$model=new NewModel;
+		$this->assertTrue($model->isAttributeSafe('attr1'));
+		$this->assertFalse($model->isAttributeSafe('attr3'));
+		$this->assertFalse($model->isAttributeSafe('attr4'));
+	}
+
+	function testGetSafeAttributeNames(){
+		$model=new NewModel;
+		$safeAttributes = $model->getSafeAttributeNames();
+		$this->assertContains('attr2', $safeAttributes);
+		$this->assertContains('attr1', $safeAttributes);
+	}
+
+	public function testModifyValidators()
+	{
+		$model=new NewModel;
+		$model->attr1=2;
+		$model->attr2=2;
+		$this->assertTrue($model->validate());
+		$model->validatorList->insertAt(0,CValidator::createValidator('numerical',$model,'attr1,attr2',array('min'=>3)));
+		$this->assertFalse($model->validate());
+		$model->attr1=6;
+		$model->attr2=6;
+		$this->assertFalse($model->validate());
+		$model->attr1=4;
+		$model->attr2=4;
+		$this->assertTrue($model->validate());
+		$model=new NewModel;
+		$model->attr1=3;
+		$model->validatorList->add(CValidator::createValidator('required',$model,'attr2',array()));
+		$this->assertFalse($model->validate());
+		$model->attr2=3;
+		$this->assertTrue($model->validate());
+	}
+
+	function testErrors(){
+		$model=new NewModel;
+		$model->attr1=3;
+		$model->validatorList->add(CValidator::createValidator('required',$model,'attr2',array()));
+		$model->validatorList->add(CValidator::createValidator('required',$model,'attr4',array()));
+		$model->validate();
+
+		$this->assertTrue($model->hasErrors());
+		$this->assertTrue($model->hasErrors('attr2'));
+		$this->assertFalse($model->hasErrors('attr1'));
+
+		$model->clearErrors('attr2');
+		$this->assertFalse($model->hasErrors('attr2'));
+
+		$model->clearErrors();
+		$this->assertFalse($model->hasErrors());
+	}
+
+	function testGetAttributes(){
+		$model = new NewModel();
+		$model->attr1 = 1;
+		$model->attr2 = 2;
+
+		$attributes = $model->getAttributes();
+		$this->assertEquals(1, $attributes['attr1']);
+		$this->assertEquals(2, $attributes['attr2']);
+
+		$attributes = $model->getAttributes(array('attr1', 'non_existing'));
+		$this->assertEquals(1, $attributes['attr1']);
+		$this->assertNull($attributes['non_existing']);
+	}
+
+	function testUnsetAttributes(){
+		$model = new NewModel();
+		$model->attr1 = 1;
+		$model->attr2 = 2;
+
+		$model->unsetAttributes(array('attr1'));
+		$this->assertNull($model->attr1);
+		$this->assertEquals(2, $model->attr2);
+
+		$model->unsetAttributes();
+		$this->assertNull($model->attr1);
+		$this->assertNull($model->attr2);
+	}
+
+	public function testGeneratingAttributeLabel()
+	{
+		$model = new NewModel();
+		$this->assertSame('Department Name', $model->generateAttributeLabel('department_name'));
+		$this->assertSame('First Name', $model->generateAttributeLabel('firstName'));
+		$this->assertSame('Last Name', $model->generateAttributeLabel('LastName'));
+	}
+
+	public function testErrorsForAllAttributes()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$this->assertNotEmpty($model->getErrors());
+	}
+
+	public function testErrorsForSingleAttribute()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$this->assertNotEmpty($model->getErrors('attr1'));
+		$this->assertEmpty($model->getErrors('attr2'));
+	}
+
+	public function testAddingAnErrorToSpecifiedAttribute()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$model->clearErrors();
+		$model->addError('firstName', 'This field is required');
+		$this->assertSame(1, count($model->getErrors('firstName')));
+	}
+
+	public function testAddingAnErrorToASingleAttribute()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$model->clearErrors();
+		$model->addErrors(array('firstName' => 'This field is required'));
+		$this->assertSame(1, count($model->getErrors('firstName')));
+	}
+
+	public function testAddingAnErrorToMultipleAttributes()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$model->clearErrors();
+		$model->addErrors(array(
+			'firstName' => array('This attribute is required'),
+			'LastName' => array('This field is required'),
+		));
+		$this->assertSame(1, count($model->getErrors('firstName')));
+		$this->assertSame(1, count($model->getErrors('LastName')));
+	}
+
+	public function testAddingMultipleErrorsToASingleAttribute()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$model->clearErrors();
+		$model->addErrors(array('firstName' => array(
+			'This attribute is required',
+			'This field is required',
+		)));
+		$this->assertSame(2, count($model->getErrors('firstName')));
+	}
+
+	public function testAddingMultipleErrorsToMultipleAttributes()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$model->clearErrors();
+		$model->addErrors(array(
+			'firstName' => array(
+				'This attribute is required',
+				'This field is required',
+			),
+			'LastName' => array(
+				'This attribute is required',
+				'This field is required',
+			),
+		));
+		$this->assertSame(2, count($model->getErrors('firstName')));
+		$this->assertSame(2, count($model->getErrors('LastName')));
+	}
+
+	public function testFirstErrorMessageForInvalidAttribute()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$model->clearErrors();
+		$model->addErrors(array(
+			'attr1' => array(
+				'This attribute is required.',
+				'This field is required.',
+			),
+		));
+		$this->assertSame('This attribute is required.', $model->getError('attr1'));
+	}
+
+	public function testNoErrorMessageForValidAttribute()
+	{
+		$model = new NewModel();
+		$model->validate();
+		$this->assertNull($model->getError('attr2'));
+	}
+
+	public function testModelWithInvalidRules()
+	{
+		$model = new InvalidModel();
+		try {
+			$this->assertFalse($model->validate());
+		} catch (Exception $e) {
+			$this->assertInstanceOf('CException', $e);
+			$this->assertSame(
+				'InvalidModel has an invalid validation rule. '.
+				'The rule must specify attributes to be validated and the validator name.',
+				$e->getMessage());
+		}
+	}
+}

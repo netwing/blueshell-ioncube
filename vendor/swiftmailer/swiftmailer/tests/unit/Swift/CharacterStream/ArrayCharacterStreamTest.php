@@ -1,264 +1,375 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-uKCBEyDi1AajP9rn
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/CharacterStream/ArrayCharacterStream.php';
+require_once 'Swift/CharacterReaderFactory.php';
+require_once 'Swift/CharacterReader.php';
+require_once 'Swift/OutputByteStream.php';
+
+class Swift_CharacterStream_ArrayCharacterStreamTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testValidatorAlgorithmOnImportString()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*',
+            0xD0, 0x94,
+            0xD0, 0xB6,
+            0xD0, 0xBE,
+            0xD1, 0x8D,
+            0xD0, 0xBB,
+            0xD0, 0xB0
+            )
+        );
+    }
+
+    public function testCharactersWrittenUseValidator()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE));
+
+        $stream->write(pack('C*',
+            0xD0, 0xBB,
+            0xD1, 0x8E,
+            0xD0, 0xB1,
+            0xD1, 0x8B,
+            0xD1, 0x85
+            )
+        );
+    }
+
+    public function testReadCharactersAreInTact()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            //String
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            //Stream
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE));
+
+        $stream->write(pack('C*',
+            0xD0, 0xBB,
+            0xD1, 0x8E,
+            0xD0, 0xB1,
+            0xD1, 0x8B,
+            0xD1, 0x85
+            )
+        );
+
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0x94), $stream->read(1));
+        $this->assertIdenticalBinary(
+            pack('C*', 0xD0, 0xB6, 0xD0, 0xBE), $stream->read(2)
+            );
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0xBB), $stream->read(1));
+        $this->assertIdenticalBinary(
+            pack('C*', 0xD1, 0x8E, 0xD0, 0xB1, 0xD1, 0x8B), $stream->read(3)
+            );
+        $this->assertIdenticalBinary(pack('C*', 0xD1, 0x85), $stream->read(1));
+
+        $this->assertIdentical(false, $stream->read(1));
+    }
+
+    public function testCharactersCanBeReadAsByteArrays()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            //String
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            //Stream
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD1), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE));
+
+        $stream->write(pack('C*',
+            0xD0, 0xBB,
+            0xD1, 0x8E,
+            0xD0, 0xB1,
+            0xD1, 0x8B,
+            0xD1, 0x85
+            )
+        );
+
+        $this->assertEqual(array(0xD0, 0x94), $stream->readBytes(1));
+        $this->assertEqual(array(0xD0, 0xB6, 0xD0, 0xBE), $stream->readBytes(2));
+        $this->assertEqual(array(0xD0, 0xBB), $stream->readBytes(1));
+        $this->assertEqual(
+            array(0xD1, 0x8E, 0xD0, 0xB1, 0xD1, 0x8B), $stream->readBytes(3)
+            );
+        $this->assertEqual(array(0xD1, 0x85), $stream->readBytes(1));
+
+        $this->assertIdentical(false, $stream->readBytes(1));
+    }
+
+    public function testRequestingLargeCharCountPastEndOfStream()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE));
+
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE),
+            $stream->read(100)
+            );
+
+        $this->assertIdentical(false, $stream->read(1));
+    }
+
+    public function testRequestingByteArrayCountPastEndOfStream()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE));
+
+        $this->assertEqual(array(0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE),
+            $stream->readBytes(100)
+            );
+
+        $this->assertIdentical(false, $stream->readBytes(1));
+    }
+
+    public function testPointerOffsetCanBeSet()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE));
+
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0x94), $stream->read(1));
+
+        $stream->setPointer(0);
+
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0x94), $stream->read(1));
+
+        $stream->setPointer(2);
+
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0xBE), $stream->read(1));
+    }
+
+    public function testContentsCanBeFlushed()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-sequence');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importString(pack('C*', 0xD0, 0x94, 0xD0, 0xB6, 0xD0, 0xBE));
+
+        $stream->flushContents();
+
+        $this->assertIdentical(false, $stream->read(1));
+    }
+
+    public function testByteStreamCanBeImportingUsesValidator()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+        $os = $this->_getByteStream();
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-stream');
+        $this->_checking(Expectations::create()
+            -> between(0,1)->of($os)->setReadPointer(0)
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xD0))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0x94))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xD0))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xB6))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xD0))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xBE))
+            -> ignoring($os)->read(any()) -> returns(false)
+            );
+
+        $seq = $this->_mockery()->sequence('read-chars');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importByteStream($os);
+    }
+
+    public function testImportingStreamProducesCorrectCharArray()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+        $os = $this->_getByteStream();
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream($factory, 'utf-8');
+
+        $seq = $this->_mockery()->sequence('read-stream');
+        $this->_checking(Expectations::create()
+            -> between(0,1)->of($os)->setReadPointer(0)
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xD0))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0x94))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xD0))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xB6))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xD0))
+            -> one($os)->read(any()) -> inSequence($seq) -> returns(pack('C*', 0xBE))
+            -> ignoring($os)->read(any()) -> returns(false)
+            );
+
+        $seq = $this->_mockery()->sequence('read-chars');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            -> one($reader)->validateByteSequence(array(0xD0), 1) -> inSequence($seq) -> returns(1)
+            );
+
+        $stream->importByteStream($os);
+
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0x94), $stream->read(1));
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0xB6), $stream->read(1));
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0xBE), $stream->read(1));
+
+        $this->assertIdentical(false, $stream->read(1));
+    }
+
+    public function testAlgorithmWithFixedWidthCharsets()
+    {
+        $reader = $this->_getReader();
+        $factory = $this->_getFactory($reader);
+
+        $seq = $this->_mockery()->sequence('read-chars');
+        $this->_checking(Expectations::create()
+            -> ignoring($reader)->getInitialByteSize() -> returns(2)
+            -> one($reader)->validateByteSequence(array(0xD1, 0x8D), 2) -> inSequence($seq)
+            -> one($reader)->validateByteSequence(array(0xD0, 0xBB), 2) -> inSequence($seq)
+            -> one($reader)->validateByteSequence(array(0xD0, 0xB0), 2) -> inSequence($seq)
+            );
+
+        $stream = new Swift_CharacterStream_ArrayCharacterStream(
+            $factory, 'utf-8'
+        );
+        $stream->importString(pack('C*', 0xD1, 0x8D, 0xD0, 0xBB, 0xD0, 0xB0));
+
+        $this->assertIdenticalBinary(pack('C*', 0xD1, 0x8D), $stream->read(1));
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0xBB), $stream->read(1));
+        $this->assertIdenticalBinary(pack('C*', 0xD0, 0xB0), $stream->read(1));
+
+        $this->assertIdentical(false, $stream->read(1));
+    }
+
+    // -- Creation methods
+
+    private function _getReader()
+    {
+        return $this->_mock('Swift_CharacterReader');
+    }
+
+    private function _getFactory($reader)
+    {
+        $factory = $this->_mock('Swift_CharacterReaderFactory');
+        $this->_checking(Expectations::create()
+            -> allowing($factory)->getReaderFor('utf-8') -> returns($reader)
+            );
+
+        return $factory;
+    }
+
+    private function _getByteStream()
+    {
+        return $this->_mock('Swift_OutputByteStream');
+    }
+}

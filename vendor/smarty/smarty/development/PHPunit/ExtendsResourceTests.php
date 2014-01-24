@@ -1,64 +1,102 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-uIV7RCrVHszK8fLrWwbPjH8gmBI7GxAt
+<?php
+/**
+* Smarty PHPunit tests for Extendsresource
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for extends resource tests
+*/
+class ExtendsResourceTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->setTemplateDir(array('./templates/extendsresource/','./templates/'));
+//        $this->smarty->registerFilter(Smarty::FILTER_PRE,'prefilterextends');
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * clear folders
+    */
+    public function clear()
+    {
+        $this->smarty->clearAllCache();
+        $this->smarty->clearCompiledTemplate();
+    }
+    /**
+     * test  child/parent template chain with prepend
+     */
+    public function testCompileBlockChildPrepend_003()
+    {
+        $result = $this->smarty->fetch('extends:003_parent.tpl|003_child_prepend.tpl');
+        $this->assertContains("prepend - Default Title", $result);
+    }
+    /**
+     * test  child/parent template chain with apppend
+     */
+    public function testCompileBlockChildAppend_004()
+    {
+        $result = $this->smarty->fetch('extends:004_parent.tpl|004_child_append.tpl');
+        $this->assertContains("Default Title - append", $result);
+    }    /**
+ * test nocache on different levels
+ */
+    public function testNocacheBlock_030_1()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->assign('b1','b1_1');
+        $this->smarty->assign('b3','b3_1');
+        $this->smarty->assign('b4','b4_1');
+        $this->smarty->assign('b5','b5_1');
+        $this->smarty->assign('b6','b6_1');
+        $result = $this->smarty->fetch('extends:030_parent.tpl|030_child.tpl|030_grandchild.tpl');
+        $this->assertContains('parent b1 b1_1*parent b2*grandchild b3 b3_1*include b3 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b4 b4_1*grandchild b4 b4_1**', $result);
+        $this->assertContains('child b5 b5_1*grandchild b5 b5_1**', $result);
+        $this->assertContains('child b61 b6_1*include 61 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b62 b6_1*include 62 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b63 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b64 b6_1*include b64 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('parent include b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('parent include2 grandchild b6 b6_1*', $result);
+    }
+
+    /**
+     * test nocache on different levels
+     */
+    public function testNocacheBlock_030_2()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->assign('b1','b1_2');
+        $this->smarty->assign('b3','b3_2');
+        $this->smarty->assign('b4','b4_2');
+        $this->smarty->assign('b5','b5_2');
+        $this->smarty->assign('b6','b6_2');
+        $result = $this->smarty->fetch('extends:030_parent.tpl|030_child.tpl|030_grandchild.tpl');
+        $this->assertContains('parent b1 b1_2*parent b2*grandchild b3 b3_2*include b3 b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('child b4 b4_1*grandchild b4 b4_2**', $result);
+        $this->assertContains('child b5 b5_2*grandchild b5 b5_2**', $result);
+        $this->assertContains('child b61 b6_1*include 61 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b62 b6_2*include 62 b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('child b63 b6_1*grandchild b6 b6_2*', $result);
+        $this->assertContains('child b64 b6_1*include b64 b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('parent include b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('parent include2 grandchild b6 b6_2*', $result);
+    }
+
+ }
+
+function prefilterextends($input)
+{
+    return preg_replace('/{extends .*}/', '', $input);
+}
+

@@ -1,77 +1,106 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-VBuYg+kiaW4O490+ObA2kt5vksq=
+<?php
+
+/**
+ * Converts HTMLPurifier_ConfigSchema_Interchange to an XML format,
+ * which can be further processed to generate documentation.
+ */
+class HTMLPurifier_ConfigSchema_Builder_Xml extends XMLWriter
+{
+
+    protected $interchange;
+    private $namespace;
+
+    protected function writeHTMLDiv($html) {
+        $this->startElement('div');
+
+        $purifier = HTMLPurifier::getInstance();
+        $html = $purifier->purify($html);
+        $this->writeAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+        $this->writeRaw($html);
+
+        $this->endElement(); // div
+    }
+
+    protected function export($var) {
+        if ($var === array()) return 'array()';
+        return var_export($var, true);
+    }
+
+    public function build($interchange) {
+        // global access, only use as last resort
+        $this->interchange = $interchange;
+
+        $this->setIndent(true);
+        $this->startDocument('1.0', 'UTF-8');
+        $this->startElement('configdoc');
+        $this->writeElement('title', $interchange->name);
+
+        foreach ($interchange->directives as $directive) {
+            $this->buildDirective($directive);
+        }
+
+        if ($this->namespace) $this->endElement(); // namespace
+
+        $this->endElement(); // configdoc
+        $this->flush();
+    }
+
+    public function buildDirective($directive) {
+
+        // Kludge, although I suppose having a notion of a "root namespace"
+        // certainly makes things look nicer when documentation is built.
+        // Depends on things being sorted.
+        if (!$this->namespace || $this->namespace !== $directive->id->getRootNamespace()) {
+            if ($this->namespace) $this->endElement(); // namespace
+            $this->namespace = $directive->id->getRootNamespace();
+            $this->startElement('namespace');
+            $this->writeAttribute('id', $this->namespace);
+            $this->writeElement('name', $this->namespace);
+        }
+
+        $this->startElement('directive');
+        $this->writeAttribute('id', $directive->id->toString());
+
+        $this->writeElement('name', $directive->id->getDirective());
+
+        $this->startElement('aliases');
+            foreach ($directive->aliases as $alias) $this->writeElement('alias', $alias->toString());
+        $this->endElement(); // aliases
+
+        $this->startElement('constraints');
+            if ($directive->version) $this->writeElement('version', $directive->version);
+            $this->startElement('type');
+                if ($directive->typeAllowsNull) $this->writeAttribute('allow-null', 'yes');
+                $this->text($directive->type);
+            $this->endElement(); // type
+            if ($directive->allowed) {
+                $this->startElement('allowed');
+                    foreach ($directive->allowed as $value => $x) $this->writeElement('value', $value);
+                $this->endElement(); // allowed
+            }
+            $this->writeElement('default', $this->export($directive->default));
+            $this->writeAttribute('xml:space', 'preserve');
+            if ($directive->external) {
+                $this->startElement('external');
+                    foreach ($directive->external as $project) $this->writeElement('project', $project);
+                $this->endElement();
+            }
+        $this->endElement(); // constraints
+
+        if ($directive->deprecatedVersion) {
+            $this->startElement('deprecated');
+                $this->writeElement('version', $directive->deprecatedVersion);
+                $this->writeElement('use', $directive->deprecatedUse->toString());
+            $this->endElement(); // deprecated
+        }
+
+        $this->startElement('description');
+            $this->writeHTMLDiv($directive->description);
+        $this->endElement(); // description
+
+        $this->endElement(); // directive
+    }
+
+}
+
+// vim: et sw=4 sts=4

@@ -1,47 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Copyright 2004-2013 Facebook. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package WebDriver
+ *
+ * @author Justin Bishop <jubishop@gmail.com>
+ * @author Anthon Pang <apang@softwaredevelopment.ca>
+ * @author Fabrizio Branca <mail@fabrizio-branca.de>
+ */
+
+namespace WebDriver;
+
+/**
+ * WebDriver\Element class
+ *
+ * @package WebDriver
+ *
+ * @method void click() Click on an element.
+ * @method void submit() Submit a FORM element.
+ * @method string text() Returns the visible text for the element.
+ * @method void postValue($json) Send a sequence of key strokes to an element.
+ * @method string name() Query for an element's tag name.
+ * @method void clear() Clear a TEXTAREA or text INPUT element's value.
+ * @method boolean selected() Determine if an OPTION element, or an INPUT element of type checkbox or radiobutton is currently selected.
+ * @method boolean enabled() Determine if an element is currently enabled.
+ * @method string attribute($attributeName) Get the value of an element's attribute.
+ * @method boolean equals($otherId) Test if two element IDs refer to the same DOM element.
+ * @method boolean displayed() Determine if an element is currently displayed.
+ * @method array location() Determine an element's location on the page.
+ * @method array location_in_view() Determine an element's location on the screen once it has been scrolled into view.
+ * @method array size() Determine an element's size in pixels.
+ * @method string css($propertyName) Query the value of an element's computed CSS property.
+ */
+final class Element extends Container
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function methods()
+    {
+        return array(
+            'click' => array('POST'),
+            'submit' => array('POST'),
+            'text' => array('GET'),
+            'value' => array('POST'),
+            'name' => array('GET'),
+            'clear' => array('POST'),
+            'selected' => array('GET'),
+            'enabled' => array('GET'),
+            'attribute' => array('GET'),
+            'equals' => array('GET'),
+            'displayed' => array('GET'),
+            'location' => array('GET'),
+            'location_in_view' => array('GET'),
+            'size' => array('GET'),
+            'css' => array('GET'),
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function obsoleteMethods()
+    {
+        return array(
+            'value' => array('GET'),
+            'selected' => array('POST'),
+            'toggle' => array('POST'),
+            'hover' => array('POST'),
+            'drag' => array('POST'),
+        );
+    }
+
+    /**
+     * Element ID
+     *
+     * @var string
+     */
+    private $id;
+
+    /**
+     * Constructor
+     *
+     * @param string $url URL
+     * @param string $id  element ID
+     */
+    public function __construct($url, $id)
+    {
+        parent::__construct($url);
+
+        $this->id = $id;
+    }
+
+    /**
+     * Get element ID
+     *
+     * @return string
+     */
+    public function getID()
+    {
+        return $this->id;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getElementPath($elementId)
+    {
+        return preg_replace(sprintf('/%s$/', $this->id), $elementId, $this->url);
+    }
+}

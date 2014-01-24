@@ -1,64 +1,116 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-gbg68LFo/tu7xUGq6ZGvyWJb1BnZb16WbKoj90==
+<?php
+/**
+ * CGettextMessageSource class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CGettextMessageSource represents a message source that is based on GNU Gettext.
+ *
+ * Each CGettextMessageSource instance represents the message tranlations
+ * for a single domain. And each message category represents a message context
+ * in Gettext. Translated messages are stored as either a MO or PO file,
+ * depending on the {@link useMoFile} property value.
+ *
+ * All translations are saved under the {@link basePath} directory.
+ * Translations in one language are kept as MO or PO files under an individual
+ * subdirectory whose name is the language ID. The file name is specified via
+ * {@link catalog} property, which defaults to 'messages'.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.i18n
+ * @since 1.0
+ */
+class CGettextMessageSource extends CMessageSource
+{
+	const CACHE_KEY_PREFIX='Yii.CGettextMessageSource.';
+	const MO_FILE_EXT='.mo';
+	const PO_FILE_EXT='.po';
+
+	/**
+	 * @var integer the time in seconds that the messages can remain valid in cache.
+	 * Defaults to 0, meaning the caching is disabled.
+	 */
+	public $cachingDuration=0;
+	/**
+	 * @var string the ID of the cache application component that is used to cache the messages.
+	 * Defaults to 'cache' which refers to the primary cache application component.
+	 * Set this property to false if you want to disable caching the messages.
+	 */
+	public $cacheID='cache';
+	/**
+	 * @var string the base path for all translated messages. Defaults to null, meaning
+	 * the "messages" subdirectory of the application directory (e.g. "protected/messages").
+	 */
+	public $basePath;
+	/**
+	 * @var boolean whether to load messages from MO files. Defaults to true.
+	 * If false, messages will be loaded from PO files.
+	 */
+	public $useMoFile=true;
+	/**
+	 * @var boolean whether to use Big Endian to read and write MO files.
+	 * Defaults to false. This property is only used when {@link useMoFile} is true.
+	 */
+	public $useBigEndian=false;
+	/**
+	 * @var string the message catalog name. This is the name of the message file (without extension)
+	 * that stores the translated messages. Defaults to 'messages'.
+	 */
+	public $catalog='messages';
+
+	/**
+	 * Initializes the application component.
+	 * This method overrides the parent implementation by preprocessing
+	 * the user request data.
+	 */
+	public function init()
+	{
+		parent::init();
+		if($this->basePath===null)
+			$this->basePath=Yii::getPathOfAlias('application.messages');
+	}
+
+	/**
+	 * Loads the message translation for the specified language and category.
+	 * @param string $category the message category
+	 * @param string $language the target language
+	 * @return array the loaded messages
+	 */
+	protected function loadMessages($category, $language)
+	{
+        $messageFile=$this->basePath . DIRECTORY_SEPARATOR . $language . DIRECTORY_SEPARATOR . $this->catalog;
+        if($this->useMoFile)
+        	$messageFile.=self::MO_FILE_EXT;
+        else
+        	$messageFile.=self::PO_FILE_EXT;
+
+		if ($this->cachingDuration > 0 && $this->cacheID!==false && ($cache=Yii::app()->getComponent($this->cacheID))!==null)
+		{
+			$key = self::CACHE_KEY_PREFIX . $messageFile . "." . $category;
+			if (($data=$cache->get($key)) !== false)
+				return unserialize($data);
+		}
+
+		if (is_file($messageFile))
+		{
+			if($this->useMoFile)
+				$file=new CGettextMoFile($this->useBigEndian);
+			else
+				$file=new CGettextPoFile();
+			$messages=$file->load($messageFile,$category);
+			if(isset($cache))
+			{
+				$dependency=new CFileCacheDependency($messageFile);
+				$cache->set($key,serialize($messages),$this->cachingDuration,$dependency);
+			}
+			return $messages;
+		}
+		else
+			return array();
+	}
+}

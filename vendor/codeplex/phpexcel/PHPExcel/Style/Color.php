@@ -1,173 +1,510 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-KBwmTis9pvwx6acYoH/7um==
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package	PHPExcel_Style
+ * @copyright Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version 1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Style_Color
+ *
+ * @category   PHPExcel
+ * @package	PHPExcel_Style
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Style_Color implements PHPExcel_IComparable
+{
+	/* Colors */
+	const COLOR_BLACK						= 'FF000000';
+	const COLOR_WHITE						= 'FFFFFFFF';
+	const COLOR_RED							= 'FFFF0000';
+	const COLOR_DARKRED						= 'FF800000';
+	const COLOR_BLUE						= 'FF0000FF';
+	const COLOR_DARKBLUE					= 'FF000080';
+	const COLOR_GREEN						= 'FF00FF00';
+	const COLOR_DARKGREEN					= 'FF008000';
+	const COLOR_YELLOW						= 'FFFFFF00';
+	const COLOR_DARKYELLOW					= 'FF808000';
+
+	/**
+	 * Indexed colors array
+	 *
+	 * @var array
+	 */
+	private static $_indexedColors;
+
+	/**
+	 * ARGB - Alpha RGB
+	 *
+	 * @var string
+	 */
+	private $_argb	= NULL;
+
+	/**
+	 * Supervisor?
+	 *
+	 * @var boolean
+	 */
+	private $_isSupervisor;
+
+	/**
+	 * Parent. Only used for supervisor
+	 *
+	 * @var mixed
+	 */
+	private $_parent;
+
+	/**
+	 * Parent property name
+	 *
+	 * @var string
+	 */
+	private $_parentPropertyName;
+
+
+	/**
+	 * Create a new PHPExcel_Style_Color
+	 *
+	 * @param	string	$pARGB			ARGB value for the colour
+	 * @param	boolean	$isSupervisor	Flag indicating if this is a supervisor or not
+	 *									Leave this value at default unless you understand exactly what
+	 *										its ramifications are
+	 * @param	boolean	$isConditional	Flag indicating if this is a conditional style or not
+	 *									Leave this value at default unless you understand exactly what
+	 *										its ramifications are
+	 */
+	public function __construct($pARGB = PHPExcel_Style_Color::COLOR_BLACK, $isSupervisor = false, $isConditional = false)
+	{
+		//	Supervisor?
+		$this->_isSupervisor = $isSupervisor;
+
+		//	Initialise values
+		if (!$isConditional) {
+			$this->_argb = $pARGB;
+		}
+	}
+
+	/**
+	 * Bind parent. Only used for supervisor
+	 *
+	 * @param mixed $parent
+	 * @param string $parentPropertyName
+	 * @return PHPExcel_Style_Color
+	 */
+	public function bindParent($parent, $parentPropertyName)
+	{
+		$this->_parent = $parent;
+		$this->_parentPropertyName = $parentPropertyName;
+		return $this;
+	}
+
+	/**
+	 * Is this a supervisor or a real style component?
+	 *
+	 * @return boolean
+	 */
+	public function getIsSupervisor()
+	{
+		return $this->_isSupervisor;
+	}
+
+	/**
+	 * Get the shared style component for the currently active cell in currently active sheet.
+	 * Only used for style supervisor
+	 *
+	 * @return PHPExcel_Style_Color
+	 */
+	public function getSharedComponent()
+	{
+		switch ($this->_parentPropertyName) {
+			case '_endColor':
+				return $this->_parent->getSharedComponent()->getEndColor();		break;
+			case '_color':
+				return $this->_parent->getSharedComponent()->getColor();		break;
+			case '_startColor':
+				return $this->_parent->getSharedComponent()->getStartColor();	break;
+		}
+	}
+
+	/**
+	 * Get the currently active sheet. Only used for supervisor
+	 *
+	 * @return PHPExcel_Worksheet
+	 */
+	public function getActiveSheet()
+	{
+		return $this->_parent->getActiveSheet();
+	}
+
+	/**
+	 * Get the currently active cell coordinate in currently active sheet.
+	 * Only used for supervisor
+	 *
+	 * @return string E.g. 'A1'
+	 */
+	public function getSelectedCells()
+	{
+		return $this->getActiveSheet()->getSelectedCells();
+	}
+
+	/**
+	 * Get the currently active cell coordinate in currently active sheet.
+	 * Only used for supervisor
+	 *
+	 * @return string E.g. 'A1'
+	 */
+	public function getActiveCell()
+	{
+		return $this->getActiveSheet()->getActiveCell();
+	}
+
+	/**
+	 * Build style array from subcomponents
+	 *
+	 * @param array $array
+	 * @return array
+	 */
+	public function getStyleArray($array)
+	{
+		switch ($this->_parentPropertyName) {
+			case '_endColor':
+				$key = 'endcolor';
+				break;
+			case '_color':
+				$key = 'color';
+				break;
+			case '_startColor':
+				$key = 'startcolor';
+				break;
+
+		}
+		return $this->_parent->getStyleArray(array($key => $array));
+	}
+
+	/**
+	 * Apply styles from array
+	 *
+	 * <code>
+	 * $objPHPExcel->getActiveSheet()->getStyle('B2')->getFont()->getColor()->applyFromArray( array('rgb' => '808080') );
+	 * </code>
+	 *
+	 * @param	array	$pStyles	Array containing style information
+	 * @throws	Exception
+	 * @return PHPExcel_Style_Color
+	 */
+	public function applyFromArray($pStyles = NULL) {
+		if (is_array($pStyles)) {
+			if ($this->_isSupervisor) {
+				$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($this->getStyleArray($pStyles));
+			} else {
+				if (array_key_exists('rgb', $pStyles)) {
+					$this->setRGB($pStyles['rgb']);
+				}
+				if (array_key_exists('argb', $pStyles)) {
+					$this->setARGB($pStyles['argb']);
+				}
+			}
+		} else {
+			throw new Exception("Invalid style array passed.");
+		}
+		return $this;
+	}
+
+	/**
+	 * Get ARGB
+	 *
+	 * @return string
+	 */
+	public function getARGB() {
+		if ($this->_isSupervisor) {
+			return $this->getSharedComponent()->getARGB();
+		}
+		return $this->_argb;
+	}
+
+	/**
+	 * Set ARGB
+	 *
+	 * @param string $pValue
+	 * @return PHPExcel_Style_Color
+	 */
+	public function setARGB($pValue = PHPExcel_Style_Color::COLOR_BLACK) {
+		if ($pValue == '') {
+			$pValue = PHPExcel_Style_Color::COLOR_BLACK;
+		}
+		if ($this->_isSupervisor) {
+			$styleArray = $this->getStyleArray(array('argb' => $pValue));
+			$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+		} else {
+			$this->_argb = $pValue;
+		}
+		return $this;
+	}
+
+	/**
+	 * Get RGB
+	 *
+	 * @return string
+	 */
+	public function getRGB() {
+		if ($this->_isSupervisor) {
+			return $this->getSharedComponent()->getRGB();
+		}
+		return substr($this->_argb, 2);
+	}
+
+	/**
+	 * Set RGB
+	 *
+	 * @param	string	$pValue	RGB value
+	 * @return PHPExcel_Style_Color
+	 */
+	public function setRGB($pValue = '000000') {
+		if ($pValue == '') {
+			$pValue = '000000';
+		}
+		if ($this->_isSupervisor) {
+			$styleArray = $this->getStyleArray(array('argb' => 'FF' . $pValue));
+			$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+		} else {
+			$this->_argb = 'FF' . $pValue;
+		}
+		return $this;
+	}
+
+	/**
+	 * Get a specified colour component of an RGB value
+	 *
+	 * @private
+	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	int			$offset		Position within the RGB value to extract
+	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
+	 *									decimal value
+	 * @return	string		The extracted colour component
+	 */
+	private static function _getColourComponent($RGB,$offset,$hex=TRUE) {
+		$colour = substr($RGB, $offset, 2);
+		if (!$hex)
+			$colour = hexdec($colour);
+		return $colour;
+	}
+
+	/**
+	 * Get the red colour component of an RGB value
+	 *
+	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
+	 *									decimal value
+	 * @return	string		The red colour component
+	 */
+	public static function getRed($RGB,$hex=TRUE) {
+		if (strlen($RGB) == 8) {
+			return self::_getColourComponent($RGB, 2, $hex);
+		} elseif (strlen($RGB) == 6) {
+			return self::_getColourComponent($RGB, 0, $hex);
+		}
+	}
+
+	/**
+	 * Get the green colour component of an RGB value
+	 *
+	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
+	 *									decimal value
+	 * @return	string		The green colour component
+	 */
+	public static function getGreen($RGB,$hex=TRUE) {
+		if (strlen($RGB) == 8) {
+			return self::_getColourComponent($RGB, 4, $hex);
+		} elseif (strlen($RGB) == 6) {
+			return self::_getColourComponent($RGB, 2, $hex);
+		}
+	}
+
+	/**
+	 * Get the blue colour component of an RGB value
+	 *
+	 * @param	string		$RGB		The colour as an RGB value (e.g. FF00CCCC or CCDDEE
+	 * @param	boolean		$hex		Flag indicating whether the component should be returned as a hex or a
+	 *									decimal value
+	 * @return	string		The blue colour component
+	 */
+	public static function getBlue($RGB,$hex=TRUE) {
+		if (strlen($RGB) == 8) {
+			return self::_getColourComponent($RGB, 6, $hex);
+		} elseif (strlen($RGB) == 6) {
+			return self::_getColourComponent($RGB, 4, $hex);
+		}
+	}
+
+	/**
+	 * Adjust the brightness of a color
+	 *
+	 * @param	string		$hex	The colour as an RGBA or RGB value (e.g. FF00CCCC or CCDDEE)
+	 * @param	float		$adjustPercentage	The percentage by which to adjust the colour as a float from -1 to 1
+	 * @return	string		The adjusted colour as an RGBA or RGB value (e.g. FF00CCCC or CCDDEE)
+	 */
+	public static function changeBrightness($hex, $adjustPercentage) {
+		$rgba = (strlen($hex) == 8);
+
+		$red	= self::getRed($hex, FALSE);
+		$green	= self::getGreen($hex, FALSE);
+		$blue	= self::getBlue($hex, FALSE);
+		if ($adjustPercentage > 0) {
+			$red	+= (255 - $red) * $adjustPercentage;
+			$green	+= (255 - $green) * $adjustPercentage;
+			$blue	+= (255 - $blue) * $adjustPercentage;
+		} else {
+			$red	+= $red * $adjustPercentage;
+			$green	+= $green * $adjustPercentage;
+			$blue	+= $blue * $adjustPercentage;
+		}
+
+		if ($red < 0) $red = 0;
+		elseif ($red > 255) $red = 255;
+		if ($green < 0) $green = 0;
+		elseif ($green > 255) $green = 255;
+		if ($blue < 0) $blue = 0;
+		elseif ($blue > 255) $blue = 255;
+
+		$rgb = strtoupper(	str_pad(dechex($red), 2, '0', 0) .
+							str_pad(dechex($green), 2, '0', 0) .
+							str_pad(dechex($blue), 2, '0', 0)
+						 );
+		return (($rgba) ? 'FF' : '') . $rgb;
+	}
+
+	/**
+	 * Get indexed color
+	 *
+	 * @param	int			$pIndex			Index entry point into the colour array
+	 * @param	boolean		$background		Flag to indicate whether default background or foreground colour
+	 *											should be returned if the indexed colour doesn't exist
+	 * @return	PHPExcel_Style_Color
+	 */
+	public static function indexedColor($pIndex, $background=FALSE) {
+		// Clean parameter
+		$pIndex = intval($pIndex);
+
+		// Indexed colors
+		if (is_null(self::$_indexedColors)) {
+			self::$_indexedColors = array(
+					1	=> 'FF000000',	//	System Colour #1 - Black
+					2	=> 'FFFFFFFF',	//	System Colour #2 - White
+					3	=> 'FFFF0000',	//	System Colour #3 - Red
+					4	=> 'FF00FF00',	//	System Colour #4 - Green
+					5	=> 'FF0000FF',	//	System Colour #5 - Blue
+					6	=> 'FFFFFF00',	//	System Colour #6 - Yellow
+					7	=> 'FFFF00FF',	//	System Colour #7- Magenta
+					8	=> 'FF00FFFF',	//	System Colour #8- Cyan
+					9	=> 'FF800000',	//	Standard Colour #9
+					10	=> 'FF008000',	//	Standard Colour #10
+					11	=> 'FF000080',	//	Standard Colour #11
+					12	=> 'FF808000',	//	Standard Colour #12
+					13	=> 'FF800080',	//	Standard Colour #13
+					14	=> 'FF008080',	//	Standard Colour #14
+					15	=> 'FFC0C0C0',	//	Standard Colour #15
+					16	=> 'FF808080',	//	Standard Colour #16
+					17	=> 'FF9999FF',	//	Chart Fill Colour #17
+					18	=> 'FF993366',	//	Chart Fill Colour #18
+					19	=> 'FFFFFFCC',	//	Chart Fill Colour #19
+					20	=> 'FFCCFFFF',	//	Chart Fill Colour #20
+					21	=> 'FF660066',	//	Chart Fill Colour #21
+					22	=> 'FFFF8080',	//	Chart Fill Colour #22
+					23	=> 'FF0066CC',	//	Chart Fill Colour #23
+					24	=> 'FFCCCCFF',	//	Chart Fill Colour #24
+					25	=> 'FF000080',	//	Chart Line Colour #25
+					26	=> 'FFFF00FF',	//	Chart Line Colour #26
+					27	=> 'FFFFFF00',	//	Chart Line Colour #27
+					28	=> 'FF00FFFF',	//	Chart Line Colour #28
+					29	=> 'FF800080',	//	Chart Line Colour #29
+					30	=> 'FF800000',	//	Chart Line Colour #30
+					31	=> 'FF008080',	//	Chart Line Colour #31
+					32	=> 'FF0000FF',	//	Chart Line Colour #32
+					33	=> 'FF00CCFF',	//	Standard Colour #33
+					34	=> 'FFCCFFFF',	//	Standard Colour #34
+					35	=> 'FFCCFFCC',	//	Standard Colour #35
+					36	=> 'FFFFFF99',	//	Standard Colour #36
+					37	=> 'FF99CCFF',	//	Standard Colour #37
+					38	=> 'FFFF99CC',	//	Standard Colour #38
+					39	=> 'FFCC99FF',	//	Standard Colour #39
+					40	=> 'FFFFCC99',	//	Standard Colour #40
+					41	=> 'FF3366FF',	//	Standard Colour #41
+					42	=> 'FF33CCCC',	//	Standard Colour #42
+					43	=> 'FF99CC00',	//	Standard Colour #43
+					44	=> 'FFFFCC00',	//	Standard Colour #44
+					45	=> 'FFFF9900',	//	Standard Colour #45
+					46	=> 'FFFF6600',	//	Standard Colour #46
+					47	=> 'FF666699',	//	Standard Colour #47
+					48	=> 'FF969696',	//	Standard Colour #48
+					49	=> 'FF003366',	//	Standard Colour #49
+					50	=> 'FF339966',	//	Standard Colour #50
+					51	=> 'FF003300',	//	Standard Colour #51
+					52	=> 'FF333300',	//	Standard Colour #52
+					53	=> 'FF993300',	//	Standard Colour #53
+					54	=> 'FF993366',	//	Standard Colour #54
+					55	=> 'FF333399',	//	Standard Colour #55
+					56	=> 'FF333333'	//	Standard Colour #56
+				);
+		}
+
+		if (array_key_exists($pIndex, self::$_indexedColors)) {
+			return new PHPExcel_Style_Color(self::$_indexedColors[$pIndex]);
+		}
+
+		if ($background) {
+			return new PHPExcel_Style_Color('FFFFFFFF');
+		}
+		return new PHPExcel_Style_Color('FF000000');
+	}
+
+	/**
+	 * Get hash code
+	 *
+	 * @return string	Hash code
+	 */
+	public function getHashCode() {
+		if ($this->_isSupervisor) {
+			return $this->getSharedComponent()->getHashCode();
+		}
+		return md5(
+			  $this->_argb
+			. __CLASS__
+		);
+	}
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if ((is_object($value)) && ($key != '_parent')) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+}

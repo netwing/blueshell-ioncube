@@ -1,189 +1,223 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: dom_tester_test.php 1753 2008-04-14 15:41:02Z pp11 $
+
+require_once(dirname(__FILE__) . '/../../../autorun.php');
+require_once(dirname(__FILE__) . '/../../dom_tester.php');
+
+class TestOfLiveCssSelectors extends DomTestCase {
+    function setUp() {
+        $this->addHeader('User-Agent: SimpleTest ' . SimpleTest::getVersion());
+    }
+    
+    function testGet() {
+    	$url = 'file://'.dirname(__FILE__).'/support/dom_tester.html';
+        $this->assertTrue($this->get($url));
+        $this->assertElementsBySelector('h1', array('Test page'));
+        $this->assertElementsBySelector('ul#list li a[href]', array('link'));
+        $this->assertElementsBySelector('body  h1', array('Test page'));
+        $this->assertElementsBySelector('#mybar', array('myfoo bis'));
+    }
+}
+
+class TestOfCssSelectors extends UnitTestCase {
+
+	function TestOfCssSelectors() {
+		$html = file_get_contents(dirname(__FILE__) . '/support/dom_tester.html');
+		$this->dom = new DomDocument('1.0', 'utf-8');
+		$this->dom->validateOnParse = true;
+		$this->dom->loadHTML($html);
+	}
+	
+    function testBasicSelector() {
+        $expectation = new CssSelectorExpectation($this->dom, 'h1');
+        $this->assertTrue($expectation->test(array('Test page')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'h2');
+        $this->assertTrue($expectation->test(array('Title 1', 'Title 2')));
+
+		$expectation = new CssSelectorExpectation($this->dom, '#footer');
+        $this->assertTrue($expectation->test(array('footer')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'div#footer');
+        $this->assertTrue($expectation->test(array('footer')));
+
+		$expectation = new CssSelectorExpectation($this->dom, '.header');
+        $this->assertTrue($expectation->test(array('header')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'p.header');
+        $this->assertTrue($expectation->test(array('header')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'div.header');
+        $this->assertTrue($expectation->test(array()));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#mylist ul li');
+        $this->assertTrue($expectation->test(array('element 3', 'element 4')));
+
+		$expectation = new CssSelectorExpectation($this->dom, '#nonexistant');
+        $this->assertTrue($expectation->test(array()));
+    }
+    
+    function testAttributeSelectors() {
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[href]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[class~="foo1"]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[class~="bar1"]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[class~="foobar1"]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[class^="foo1"]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[class$="foobar1"]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[class*="oba"]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[href="http://www.google.com/"]');
+        $this->assertTrue($expectation->test(array('link')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#anotherlist li a[class|="bar1"]');
+        $this->assertTrue($expectation->test(array('another link')));  	
+
+		$expectation = new CssSelectorExpectation($this->dom, 'ul#list li a[class*="oba"][class*="ba"]');
+        $this->assertTrue($expectation->test(array('link')));  	
+
+		$expectation = new CssSelectorExpectation($this->dom, 'p[class="myfoo"][id="mybar"]');
+        $this->assertTrue($expectation->test(array('myfoo bis')));  	
+
+		$expectation = new CssSelectorExpectation($this->dom, 'p[onclick*="a . and a #"]');
+        $this->assertTrue($expectation->test(array('works great')));  	
+    }
+    
+    function testCombinators() {
+		$expectation = new CssSelectorExpectation($this->dom, 'body  h1');
+        $this->assertTrue($expectation->test(array('Test page')));  	
+
+		$expectation = new CssSelectorExpectation($this->dom, 'div#combinators > ul  >   li');
+        $this->assertTrue($expectation->test(array('test 1', 'test 2')));  	
+
+		$expectation = new CssSelectorExpectation($this->dom, 'div#combinators>ul>li');
+        $this->assertTrue($expectation->test(array('test 1', 'test 2')));
+        
+		$expectation = new CssSelectorExpectation($this->dom, 'div#combinators li  +   li');
+        $this->assertTrue($expectation->test(array('test 2', 'test 4')));
+        
+		$expectation = new CssSelectorExpectation($this->dom, 'div#combinators li+li');
+        $this->assertTrue($expectation->test(array('test 2', 'test 4')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'h1, h2');
+        $this->assertTrue($expectation->test(array('Test page', 'Title 1', 'Title 2')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'h1,h2');
+        $this->assertTrue($expectation->test(array('Test page', 'Title 1', 'Title 2')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'h1  ,   h2');
+        $this->assertTrue($expectation->test(array('Test page', 'Title 1', 'Title 2')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'h1, h1,h1');
+        $this->assertTrue($expectation->test(array('Test page')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'h1,h2,h1');
+        $this->assertTrue($expectation->test(array('Test page', 'Title 1', 'Title 2')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'p[onclick*="a . and a #"], div#combinators > ul li + li');
+        $this->assertTrue($expectation->test(array('works great', 'test 2', 'test 4')));
+    }
+    
+    function testChildSelectors() {
+    	$expectation = new CssSelectorExpectation($this->dom, '.myfoo:contains("bis")');
+        $this->assertTrue($expectation->test(array('myfoo bis')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '.myfoo:eq(1)');
+        $this->assertTrue($expectation->test(array('myfoo bis')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '.myfoo:last');
+        $this->assertTrue($expectation->test(array('myfoo bis')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '.myfoo:first');
+        $this->assertTrue($expectation->test(array('myfoo')));
+        
+    	$expectation = new CssSelectorExpectation($this->dom, 'h2:first');
+        $this->assertTrue($expectation->test(array('Title 1')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, 'h2:first');
+        $this->assertTrue($expectation->test(array('Title 1')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, 'p.myfoo:first');
+        $this->assertTrue($expectation->test(array('myfoo')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, 'p:lt(2)');
+        $this->assertTrue($expectation->test(array('header', 'multi-classes')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, 'p:gt(2)');
+        $this->assertTrue($expectation->test(array('myfoo bis', 'works great', 'First paragraph', 'Second paragraph', 'Third paragraph')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, 'p:odd');
+        $this->assertTrue($expectation->test(array('multi-classes', 'myfoo bis', 'First paragraph', 'Third paragraph')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, 'p:even');
+        $this->assertTrue($expectation->test(array('header', 'myfoo', 'works great', 'Second paragraph')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '#simplelist li:first-child');
+        $this->assertTrue($expectation->test(array('First', 'First')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '#simplelist li:nth-child(1)');
+        $this->assertTrue($expectation->test(array('First', 'First')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '#simplelist li:nth-child(2)');
+        $this->assertTrue($expectation->test(array('Second with a link', 'Second')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '#simplelist li:nth-child(3)');
+        $this->assertTrue($expectation->test(array('Third with another link')));
+        
+        $expectation = new CssSelectorExpectation($this->dom, '#simplelist li:last-child');
+        $this->assertTrue($expectation->test(array('Second with a link', 'Third with another link')));
+    }
+}
+
+class TestsOfChildAndAdjacentSelectors extends DomTestCase {
+	function TestsOfChildAndAdjacentSelectors() {
+		$html = file_get_contents(dirname(__FILE__) . '/support/child_adjacent.html');
+		$this->dom = new DomDocument('1.0', 'utf-8');
+		$this->dom->validateOnParse = true;
+		$this->dom->loadHTML($html);
+	}
+
+    function testFirstChild() {
+		$expectation = new CssSelectorExpectation($this->dom, 'p:first-child');
+        $this->assertTrue($expectation->test(array('First paragraph')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'body > p:first-child');
+        $this->assertTrue($expectation->test(array('First paragraph')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'body > p > a:first-child');
+        $this->assertTrue($expectation->test(array('paragraph')));
+    }
+
+    function testChildren() {
+		$expectation = new CssSelectorExpectation($this->dom, 'body > p');
+        $this->assertTrue($expectation->test(array('First paragraph', 'Second paragraph', 'Third paragraph')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'body > p > a');
+        $this->assertTrue($expectation->test(array('paragraph')));
+    }
+
+    function testAdjacents() {
+		$expectation = new CssSelectorExpectation($this->dom, 'p + p');
+        $this->assertTrue($expectation->test(array('Second paragraph', 'Third paragraph')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'body > p + p');
+        $this->assertTrue($expectation->test(array('Second paragraph', 'Third paragraph')));
+
+		$expectation = new CssSelectorExpectation($this->dom, 'body > p + p > a');
+        $this->assertTrue($expectation->test(array('paragraph')));
+    }
+}
+
 ?>
-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
-0KKClbfwO5JBVOiP3RdnZY/0hQ5ZkmqGk2O=

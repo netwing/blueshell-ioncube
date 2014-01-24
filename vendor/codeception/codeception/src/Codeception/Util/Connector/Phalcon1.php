@@ -1,109 +1,172 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPvsYbaIxFsjhLc83PvAxfwYiIHOc+Gtt28QijFLQKxd9DGHqHMDhkVndW2OdJdRluFNSDatV
-wS3a01vSeIyj6wUyIIZ8V75VMwQtO6NKndj6hi3+BzBEBXuTq+ZXsarY+gTPftsaMsIwq6KI9Xzo
-pW3nkHVy4L4ZN1TwJgtGO5xGaGpBFJD89Rof1npH+qfuYea5tvdeoX+AhYGgODKziVSU5cb7XYH1
-sIZowWFW+IV/vBIm6f+Ihr4euJltSAgiccy4GDnfT49YB0TecLu3/Zu/Vr1YOC5rd2RX80738PxD
-2iqTrw0Xyf1HaEyMX6svn5O3lBm4agGR/auR9n3zLFFCT+6XuOl4oqbq7d+aJcXwOYsO0l/beX7P
-ynx7s8snU+gKx3BGHYxN47qm/+Uudx1XCj+mQB3bfJtVwChLQgGKAAcSZadCmk13SA3lHfYwhwot
-h6+crwI80fDVXTz2Xv/L9eoumQ3Xgkb7GM4p421a4eEN29MAAsAv7FSriH4G83wb9Z008N5Yj/ej
-R8rF2Q5t4wrcTtGByaGRxUn2lt3Oh5D4VssRZBvzoVCJp4H+2mom8ERl3VbKbYOF/hYcYQuets2I
-zkhylcPC67SS7NH7ifD04U7cAs2Nv5smTg0AqyKttrTMBF9/5U1BfTO7+cV0/u5FWVUL5tZr4wGw
-qwfC4LbraS03JTB5NV/kgkN5TOUzOo+5Q6JjTweVGj6+SIIq/NI0tt1dRkljmZ88TLWUx9/O7LC0
-pv1ozyxPD43m7UPxMbIFGiJv+No/QFIbm4QhZZqQuV8TKMddGEOayY8cZTLftor5qQhz4WZI79Bv
-YLhgGyq7oyJOSBQaNGK8voib3dTVEEjg82EIh6kTmZ1ENfzVzj6zxEgfl+ikxNGRDhDHcVFEp4CX
-Sg2EWn4E2iqZU8MAj8onSc3cE05SvPEt1+4PUOvRAQE9Vcq8FcHvs2+oBo5sRSoz9/Dn9+qYVh5B
-+WyrrM4o0XA0GW/Rf6rutNX+vxIaJlbUryt/TvTKhpMXU8WqZbA09MPBXowfXMP2zEe1uLOsYY3W
-4dLA7XhlFVJI9dmGVHiwDUuZZz+3dYsRO0ljoK0WNRzmv6oig7QCMr83nAejPju14RAO3TdhIzjS
-899ntcnz0p1HRoRgfsjpwRCgCL4WYOHXnydpR4zqCXUZ27cTgpZkFkofOKLMeZ0HwktcUuJw1sFW
-sjW2qJQUCW1D4JNPcGwkE/rCkg+HkpJpscxZKSo/YCMDgANNZDxnt2m7QDOG8sT6zpgJd6i9TQNw
-/gRV3SalrG8DsqgMgMdTlRdkbdc2H3gSVQIRrLODEPmLkeYuenyWgx/inGiUI2zg1Cf/AzGFnUOg
-lKp9K9govmmnV0OKJNlP0Ur85lt6quDG+e3MdsX5tutwOLW7IAZ0R0l+/tFzCO9FRkH69ZZMP5t4
-A+TO2KC3px0OIBNN5fTIizFl6zPm+Swf/PNvrn5vshlFLAfxjHUbQwyYAMqgZUqVVDjozhWD9pkA
-pyZqKY9bQacdWLacR9yA93P6YtePtgNUW02btW9K1PAlwzoLzSRbDO71SPyRzWVuWqnfGXOZbt5K
-cZYbTGv6rmIGImHw5x4hrJw8XEvuqKd+5JQBUWrwdNCi/sEkIxWg71d1eh85eWGGbpvSitLjQFZ1
-zeKTpX/TKMfIscmfoQSOYW03lyX/OSZWfdXq2AlX0CyZyItwxa5crCqhrqdUhBjhbNMK8diTCPHX
-/xKB23UyBpeGD3SjhK1FD2ypiybJ/Z2DmPavAzpaTlfKT8e24XAuuYxvnoS763/jhE3VMeAugZQI
-KKAP7PICa5AVKVqiWiTLbECrQ7jZZ6fp2cnoAuF8BFPxZTXNUDV4qyADE+oc5f9VeKvSRCHbeRS2
-b0OOAIaNRnsmG7lOOpj/DHAMUefAeKw8uPeHNhgYJC/AB98DHQbTKfbpS2atkE2njw63Mw9m1pCI
-btvk4BCLtiIGQ91Jwor4D4fb4Sg9fvXqzRE8y3/JJyP3inQvLoJ0EtEvNiV+en8BD4jH3J/605Te
-YX4HHsYIP4yTyQ+fNnOEG0SvVIBJhwZ8WOPboI9hWcQ/SffM4Uedl0wX1Dp0SCI17uaorlEVySaJ
-fKDOgLo5ITRaGAIInxixLxvrvRV6Uq1AhxFpVddStHItv8ofpJ110q7NE6Dt5X/kthxKZQrZgQEY
-Ptna74/dQa6cRoBMrDNm83SigsnwdaTTYKgNikIl5r860n+DEryVbhC7AkOMd4rdCLQrPVKmLPVW
-7h2DG1ToyEfvlyj3oDjddlb3DpTSv9Lj0YS604cBKLW5xiYPV47R5lE2iZG+7L3ocuOsu08YfEWB
-tRtRUM3noUIhCLNMSBcKZkSQXKOnjvEUaStr4ZlBBkiJelGXLKlGNtOxOvrGCc/yP03bznHgigkS
-VuvAolgjXW3YZKwNBos1rQD8ZGfv3wo6t/aNd9cT3CPsWCDBroJcoOqxsI82mI5Hb9zkuaxdpDA7
-YloFIxSfYrd4wg8/jCIlLjsxdrs6BuBrNNKej1gETq+SMamT7YgQtaPVtEXbE1xWANprOukb/b+T
-RwY4t8XbUwJM4Z18IIWdBWR6EW+n/x2R1gVbVWI55uqYJtM6LqLuWpT6rzoSkdHk7/PYlIovG7Ld
-Fulg5QeIi3uf3zxSi9EchN7+yBC9Jgw6h6aPPTHTKKvd3v0UJU1jkhv4qLj6GzR8HeVF6IZv0nl2
-pGMUObjJWftMqJuuMf9f+RuLnk7JPmJYssCzNK0okZXY4xGXM5dFPdeddEMDLFFd5ba/0ftnM7I5
-EQf3cBREpx9yfVOjo7/rB2JX1QkM4mTL3U389RaU337L7XGcvw8UBTD2srEnLkidMz2lzTesIglj
-tB0Xa3AtTJ6cOQsqZvZEAzINbeonf1IMEfl3uu9qCVYMhVLlxKmvYp8+rB+cSK+sEK81aBEbccsk
-7e7IZTsDTuP9Rsh2GxmdORWZPqvoPEoESJiWFyqZbhCo7QZ2+776yme09HPwGQRTL2Ptip8PBSgl
-KM+hJ+7e7nc0qIkJ6bDQMvDcYE0l1MogQ/F96FytstJ1ccAYXkzf38Pq+bqTbsp3bN4XvhKgDzWc
-nRPZFw6bM4Y3XlRcrO2nCgptOki06RfrUbZejAxPLnT3TSUkiDPB0Txq8cLP0adcYaL8qmnu/xux
-6S4Y0kZ+cRt42Sdg/LbmEwabxNWIjOPz7s915KDwaz8fpMzmIYCErnzQrFY8WrrKrx5YI1zUiYme
-V9avV1llIoZPvPw1t0L1XM7eOYkpH8fr2QNAhjgT3XosM4fHgfH5WUI6PrdYfHVvsZ+SPDZQCHYL
-u34KQh0rYKojM1MU+6Ycggk8fWVxmAGc8ZZO52dxPuFYOnW6kSerPH78frvjAl0tqyzt8sFMoLLx
-IW7XgEXkd/XxlJ8p3KXK3r6EoET8E4uHmRYeJDzUCuaW6zvypnfHpKj2Jq4377mAbeMHahFxhZ6c
-IaVnUpzNp7JEeUzHbuJTGBm2cwD9Cp2PNQ5YQJFpeN5cql4urPAlTwz5sUwi5L/VcUq83KeqTe3v
-fz1SjLCK7y+RBwMJT8iLFObTTIGmwJ7wUCG8hKhLVGqmHoZ/NIXhT8o8Zg71rFgSIUTKaRn1HgAL
-R2fRPQblA163z/8QGe2mjgsBI0lGJYwXGbFdWdf1H5h5/jaJxsrkKCkaC3HfxUeMZQl+kdoIMVzw
-EMQNSNwHgLqGlpa2LvTg6PMwnJU2mh37fVgVrTZphHXv49YGYH//OIFaYWSKA1fWnpt25UaaLR5X
-zxanhgYDJ8rxaW3KkBaKw45n76kv0TMefM16skgnuJXXPVlUNnEP6OVoRHminbp3jj52R50mMek9
-iiyU/HwtYrmXwDgkGIeqD2uHMZ5hWruCWGq0JPPkqmfnn+FCyyfMh5m0DhU9JPz2ZyGZ3ujbfBQu
-QcklyY8xvqfxW8beBEHn3Xcn4sm9T7uNlYrkwsrJcFpi56Vi1qwcUrnymy5SzKdOmUPsnsSJDWgk
-9eWZksShBvSDRP7TjyFCKfTSmIlRjav3NsKSL81ZcZiq57ppqpszYOpCLObxvXSOm+XIoFbralBr
-BQ4XQhz73ZguTto7qM4bZWIbFfzr6lLG8TCDK1lYNwuzGEy1pQjMbP2LgK4WmAMafV6IxfTPL4Yp
-XgpnPi2yRbGIXIhfbfAN9CXYgSNMieEC8v4WZmMCc5SwJudmotGwb9GNLTRzdB+h0QDB4PiPNCmq
-TgSaVa/FLzXIT6qfBEKbHoDGdqNKbx1VWlXy7cTvX6jPGS2b/tRN/ZCneMesgpjt6F6QA0eCPcEN
-6GjEq8/0Ydi9TRWZE2KuAjK1k5qFCHp3iD83UO0w/iDYtp7QssW3JZt2CCYIhToMXHqtLOp9icfs
-ASqQFY/eqLB1wZcOI4TCrq6jzhxrDQ1jhy8GLPbXmPDqnw/MYrhGVO4Sx3KVI1Ed4KAMwxUu5Nyu
-qP+bbQt56uvTXWg2UE9pDEwiKmPlWYsS1IbSPaas982ExGrTfzMDSWKs3yFzEdstH6JOMc0NzfaE
-4NTImXma9XMIHFPjpSAPnCSCIacQ3d+a6MPGcuyC8dsY06JRc6ioUlBlxCaRWKvfUDZ6zVNGc7EE
-Pqx/swbESUrEWSQeBY6m7FwctavY5zUxLrrJci/weg1C2ef2xMIamUGmG9fvlN1Ia3A+Hh1Fl+IS
-0WEvpeGREQDJkk8+pz7guTExfe3nidBPUn2W/LFkptHQLJ2dLCIXx3qXQ6QjTVhLW/fzd7uw3Hc3
-Iv/836irUBRd7t6Qy5S4oszXi4M6/gdngr+l0rIVzHUEO9z2fjQ9e+QEDMIPYv6FOu1HwZibi/AW
-lcYQw25+lLTI/DEUdUIj0jgaq6NA+nIGaGbzw7PJuCzM32IJt6tMRgx7pEcjNPU2QvT+qMCcv2mR
-mebfaZzLaDqAX/K+H8VLhBq2wujEqZ3H/9euz8IwL0R6Vsf/oYHaL7E5JY5uYg+UUdW/lx0gCoFR
-e0VL7CwqEAAg7WyhdXMsO2Xn/w/txGc2jt+mWQmMBUNF3NzRr49Jb4QEfiD6ZDyAqP4e6nEhWDPs
-hSKenuvgKsUMT3dSkBMJOPgpVWdBLXVFiCnkGYDnzDILOmFMqcw37QUaQaqsy1Vno/GL5Fzcch2T
-3rxxa/E3fK6G/AWP9DaQKwmIm+HxPaw6FhUTw1kwZiNNXz5JQYNaqpvlb8zY9/QlkXw2uqFlpMPB
-bRNtmAUZ22vcusVJidpTtIhfBebswxik9UEdelvgJzIZR2rY4SF0t+v34Ajb+pM/ZwLWw0Oqea1G
-xxcCfK27X7DbwkkUDU+6YQrD5xzr/N4XMmL184hj/o9EFcFr1L8G1A6d4OFsXo1PEAZgj8pAE/ZA
-JqmQTTABp2NpyzttI8Iz86IrQsY2RKg3aLP5MjtDJIJ7zryjjlqKg88S/J7SgYu6VulSKhD+hxOJ
-4ZYxrRf0TsDTmFObIRVPLWYOjD3zvIAClqXXM2WUldx+K3DBL/0ckD4frjz6pw9ZJvwdOvkt5SR8
-RyPCTYvyhlxbZizFPcM7aU8fjXxxHkMJNi4770eTOqJDuTHkT36I4ODGM2Wq9tcH2HHMnZZqTq20
-2gFGqOtHulE/eeYsNPncAp3Yxz1nA9mraud3/a6xAI2YFhmJVwg84TGX+9+Z68FFfCaW40348aLW
-XoWGw7lH0WRoaSCYhtRfFYpz+tn8d8t5GGoK3YbzaPCH/y9dmL/FECzTFIIGjLnrEvYB+cwiw2gD
-PNghLBVuyJhFsUHmluBvA0dHxuIe/VDXMWecmmFbcQzaKZ4a27KEmq3REYYxYcVEiAGURMRb6ZTN
-jJhrVxtLKC+SgHxP4OnWmgq9ND43C6R33ro02vF/3e15UEMAehpJI4ujR+FnjrsjprK6XXlyf7JD
-7GFO0XMMTKh1jUNfdHoU+fGHWk2oYQKMv2zgFS42lrVn2lpRDrL9mTS4suGqZCymxoGSaHLYSCQr
-vYONUwvY1fJJ4aiVOf2BV3JKitR2h6IQa+Zw8g66xdQx3gZvOyIOmiQyzm9JysBMtsZp2rVmn/aU
-FMZG1zDi0+C6+fkNH1f94te2RLS3goOOuL1pLZrCT2jj0R9WmNwaHXYqogkH3W3vvk2GGeuHzmXh
-IDJEURG7xWhmmjQOOfPUNH51fATnm6CEI8kOfxHfFJJ/DGLrMw6qkVohqSvUCf8OlZNutf6S6qcP
-Oz4skQsoBAyu+ng84r87/3MAPPP8JvpSVswvesrIPhnlGN8tAIKj9dmLgfdALQ013104gW2i5cP1
-SPCmczO8KjeezHaeCIi7wDLQwZ2D1P9/sKOZ0gilvLcMvIk5Ex3jQZNaGP/BiL6tZF5k8fQJNiZP
-onuM2/kwQsD9CxO/2C+l0kICOE3fEng1NtREk5h8HraM/Pm0vr2i4n+F9QBhADRPEdeugy66euXE
-eHABpdf1UxSoKpwLAocvCG2xFHTyLA05kWmcFyd8EOXfSx5NXKpYqvNB0vxhipD36l4kqhK1pvwc
-SjfzCV/eCPt0LEoHKu95rsmX8+85r4jI8D/L6YtTe+94tfUOSB79fjmAnh3ePOQ8gPnq2MzDhTaX
-2vkVZ/nRPUJl5/EeRanZhkaGkz7KQksv+uc+Qb61QuyRlLV8NmVDtw0KrM2IrFERH8kfWXRxbQqo
-i9XbmHQUHulDhaLeYyNNlNSQdgm9MxvPBiEMkzlhZ9LaHO3l2tvRo9AAvMTA0R0/TJ4A3zGw+UZU
-psNJs4cTw4HJMkSaDXdRk7yzcw7EJ7IznZGuOhX33IbVC+2xRWSQGAC53fB7E4gxYAoSY+XAE3UU
-Kmui76vJ4O9YBF3gtCpungcczUEUlaYC+ykGvIX82RaTPYYfwkgchjhQvvEE+s+X1qTLyPHdjt7n
-T2KP7HI3McCq2ADNmUY+fye/ulkqNpq5TNFmaEt+gGaX0JPhbtGerEFZOx0XrihCl9wXn2oPZC3y
-K5IFgLmXp4tRN5I5e17fnOgfBr7wb9tsOvYri6wkx/N/CMKCNSgzmIeAti0b9/6Yc9NhxlkDUxSq
-Zv/wj66nDhrusY9cXgWXT720xMnGZKBlaj0lLludJhqRqif7uQr6VshvbYTXckJAt6n0SPEELMxr
-5T6s6ZIyDWp/KpBr/Ro0D43+xKtz3aFSapvDqetod984C7s5e3zLbHS5MF7k53euEKv420O4rT16
-Jf8OmrMLct4K/79v0q3iIgii0Jc6EfVaNq2Wy2QHA7BguLrF6MG0VI1Pk5+hbRKJsKw3k+A4L0P8
-0q4GNj7LNF+OGoZiZi5DQ7BK4J8V9gUFki7EPByaAMPG94tdju941JOIFacO2MeKb2LIuZjY24Ae
-00j6SamBn3qnzvwtjeIRTIUoyZqXdJd310oP3EdnjB9C+AITCE+k2NwooRd0g4ZZHZespXPvluHM
-X8WCngc/RtqQ55GUUMhhpwtoSdx6XXTibjprF/kW/pCWL/ncrrz2FbxdDkS7oBtYYJFHrOJIFevu
-LwHKwIfTWG/PxOihMNejNzAe8K1qWYeEf8yAjSDjpncpInuRBmMmG/+NVJWVHdWgmMS0+C3mbzLN
-EFQ1QbO0CbeseTq+w4UBk28tkSh2fWbYL3UwdH3wl7yF+nHJxqykfiwpnqD/eTXIKh2AUrfBpKT9
-9mgSScIV3iBtNcJth3hnGtQQBYePYnmHmC/GryoPMJrY3oJ2SF4CFo7CL1W61ABhryGEDjMqkYn9
-CkLqgRVQFwgpwfaIoInKYBGU1x5MSxvviFtF/DsPRUl69eIHF+IJz6cwVdEOsCsbrKRhITCWSnt7
-1xHCebC/rGI7WN2FNNMlLbd1aDdiih+GlEWZFM8tJYu/6DhRcSTkcEVRhXLsT3YA5Sv1r5lmzedL
-Mzq3p7cGWj0YYJH2J5UChuqUBCdFsFlqPyFaGOSlo4THpzvlmY38CJEtblnheHfbCXfIW8rG664U
-+LfGveQkBjiUkbyTUWB+nQdSSX1/0lLw4B8Z0yl+a4Iv7pjxMG==
+<?php
+
+namespace Codeception\Util\Connector;
+
+use Symfony\Component\BrowserKit\Request,
+    Symfony\Component\BrowserKit\Response,
+    Symfony\Component\BrowserKit\Cookie,
+    Symfony\Component\BrowserKit\Client,
+    Codeception\Util\Stub,
+    Phalcon\DI;
+
+class Phalcon1 extends Client
+{
+    private $application;
+
+    /**
+     * Set application by Phalcon\DI\Injectable, Closure or bootstrap file path
+     *
+     * @param mixed application
+     */
+    public function setApplication($application)
+    {
+        $this->application = $application;
+    }
+
+    public function getApplication()
+    {
+        $application = $this->application;
+
+        if ($application instanceof \Closure) {
+            return $application();
+
+        } elseif (is_string($application)) {
+            return require $application;
+
+        } else {
+            return $application;
+        }
+    }
+
+    /**
+     *
+     * @param \Symfony\Component\BrowserKit\Request $request
+     * @return \Symfony\Component\BrowserKit\Response
+     */
+    public function doRequest($request)
+    {
+        $application = $this->getApplication();
+        $di = $application->getDI();
+        DI::reset();
+        DI::setDefault($di);
+
+        $_SERVER = array();
+        foreach ($request->getServer() as $key => $value) {
+            $_SERVER[strtoupper(str_replace('-', '_', $key))] = $value;
+        }
+
+        if (!$application instanceof \Phalcon\MVC\Application && !$application instanceof \Phalcon\MVC\Micro) {
+            throw new \Exception('Unsupported application class');
+        }
+
+        $_COOKIE = $request->getCookies();
+        $_FILES = $request->getFiles();
+        $_SERVER['REQUEST_METHOD'] = strtoupper($request->getMethod());
+        if (strtoupper($request->getMethod()) == 'GET') {
+            $_GET = $request->getParameters();
+        } else {
+            $_POST = $request->getParameters();
+        }
+        $_REQUEST = $request->getParameters();
+        $uri = str_replace('http://localhost','',$request->getUri());
+        $_SERVER['REQUEST_URI'] = $uri;
+        $_GET['_url'] = strtok($uri, '?');
+        $_SERVER['QUERY_STRING'] = http_build_query($_GET);
+        $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+
+        $di['request'] = Stub::make($di->get('request'), array('getRawBody' => $request->getContent()));
+
+        $response = $application->handle();
+
+        $headers = $response->getHeaders();
+        $status = (int)$headers->get('Status');
+
+        $headersProperty = new \ReflectionProperty($headers, '_headers');
+        $headersProperty->setAccessible(true);
+        $headers = $headersProperty->getValue($headers);
+        if (!is_array($headers)) {
+            $headers = array();
+        }
+
+        $cookiesProperty = new \ReflectionProperty($di['cookies'], '_cookies');
+        $cookiesProperty->setAccessible(true);
+        $cookies = $cookiesProperty->getValue($di['cookies']);
+        if (is_array($cookies)) {
+            $restoredProperty = new \ReflectionProperty('\Phalcon\Http\Cookie', '_restored');
+            $restoredProperty->setAccessible(true);
+            $valueProperty = new \ReflectionProperty('\Phalcon\Http\Cookie', '_value');
+            $valueProperty->setAccessible(true);
+            foreach ($cookies as $name => $cookie) {
+                if (!$restoredProperty->getValue($cookie)) {
+                    $clientCookie = new Cookie(
+                        $name,
+                        $valueProperty->getValue($cookie),
+                        $cookie->getExpiration(),
+                        $cookie->getPath(),
+                        $cookie->getDomain(),
+                        $cookie->getSecure(),
+                        $cookie->getHttpOnly()
+                    );
+                    $headers['Set-Cookie'][] = (string)$clientCookie;
+                }
+            }
+        }
+
+        return new Response(
+            $response->getContent(),
+            $status ? $status : 200,
+            $headers);
+    }
+}
+
+class PhalconMemorySession extends \Phalcon\Session\Adapter implements \Phalcon\Session\AdapterInterface
+{
+    private $isStarted = false;
+    private $data = array();
+
+    public function start()
+    {
+        $this->isStarted = true;
+    }
+
+    public function get($index, $defaultValue = null)
+    {
+        return isset($this->data[$index]) ? $this->data[$index] : $defaultValue;
+    }
+
+    public function set($index, $value)
+    {
+        $this->data[$index] = $value;
+    }
+
+    public function has($index)
+    {
+        return isset($this->data[$index]);
+    }
+
+    public function remove($index)
+    {
+        unset($this->data[$index]);
+    }
+
+    public function getId()
+    {
+        return 'test';
+    }
+
+    public function isStarted()
+    {
+        return $this->isStarted;
+    }
+
+    public function destroy()
+    {
+        $this->isStarted = false;
+        $this->data = array();
+    }
+
+    public function getAll()
+    {
+        return $this->data;
+    }
+}

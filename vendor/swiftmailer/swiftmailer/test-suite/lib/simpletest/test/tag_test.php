@@ -1,388 +1,554 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: tag_test.php 1748 2008-04-14 01:50:41Z lastcraft $
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../tag.php');
+require_once(dirname(__FILE__) . '/../encoding.php');
+Mock::generate('SimpleMultipartEncoding');
+
+class TestOfTag extends UnitTestCase {
+    
+    function testStartValuesWithoutAdditionalContent() {
+        $tag = new SimpleTitleTag(array('a' => '1', 'b' => ''));
+        $this->assertEqual($tag->getTagName(), 'title');
+        $this->assertIdentical($tag->getAttribute('a'), '1');
+        $this->assertIdentical($tag->getAttribute('b'), '');
+        $this->assertIdentical($tag->getAttribute('c'), false);
+        $this->assertIdentical($tag->getContent(), '');
+    }
+    
+    function testTitleContent() {
+        $tag = new SimpleTitleTag(array());
+        $this->assertTrue($tag->expectEndTag());
+        $tag->addContent('Hello');
+        $tag->addContent('World');
+        $this->assertEqual($tag->getText(), 'HelloWorld');
+    }
+    
+    function testMessyTitleContent() {
+        $tag = new SimpleTitleTag(array());
+        $this->assertTrue($tag->expectEndTag());
+        $tag->addContent('<b>Hello</b>');
+        $tag->addContent('<em>World</em>');
+        $this->assertEqual($tag->getText(), 'HelloWorld');
+    }
+    
+    function testTagWithNoEnd() {
+        $tag = new SimpleTextTag(array());
+        $this->assertFalse($tag->expectEndTag());
+    }
+    
+    function testAnchorHref() {
+        $tag = new SimpleAnchorTag(array('href' => 'http://here/'));
+        $this->assertEqual($tag->getHref(), 'http://here/');
+        
+        $tag = new SimpleAnchorTag(array('href' => ''));
+        $this->assertIdentical($tag->getAttribute('href'), '');
+        $this->assertIdentical($tag->getHref(), '');
+        
+        $tag = new SimpleAnchorTag(array());
+        $this->assertIdentical($tag->getAttribute('href'), false);
+        $this->assertIdentical($tag->getHref(), '');
+    }
+    
+    function testIsIdMatchesIdAttribute() {
+        $tag = new SimpleAnchorTag(array('href' => 'http://here/', 'id' => 7));
+        $this->assertIdentical($tag->getAttribute('id'), '7');
+        $this->assertTrue($tag->isId(7));
+    }
+}
+
+class TestOfWidget extends UnitTestCase {
+    
+    function testTextEmptyDefault() {
+        $tag = new SimpleTextTag(array('type' => 'text'));
+        $this->assertIdentical($tag->getDefault(), '');
+        $this->assertIdentical($tag->getValue(), '');
+    }
+    
+    function testSettingOfExternalLabel() {
+        $tag = new SimpleTextTag(array('type' => 'text'));
+        $tag->setLabel('it');
+        $this->assertTrue($tag->isLabel('it'));
+    }
+    
+    function testTextDefault() {
+        $tag = new SimpleTextTag(array('value' => 'aaa'));
+        $this->assertEqual($tag->getDefault(), 'aaa');
+        $this->assertEqual($tag->getValue(), 'aaa');
+    }
+    
+    function testSettingTextValue() {
+        $tag = new SimpleTextTag(array('value' => 'aaa'));
+        $tag->setValue('bbb');
+        $this->assertEqual($tag->getValue(), 'bbb');
+        $tag->resetValue();
+        $this->assertEqual($tag->getValue(), 'aaa');
+    }
+    
+    function testFailToSetHiddenValue() {
+        $tag = new SimpleTextTag(array('value' => 'aaa', 'type' => 'hidden'));
+        $this->assertFalse($tag->setValue('bbb'));
+        $this->assertEqual($tag->getValue(), 'aaa');
+    }
+    
+    function testSubmitDefaults() {
+        $tag = new SimpleSubmitTag(array('type' => 'submit'));
+        $this->assertIdentical($tag->getName(), false);
+        $this->assertEqual($tag->getValue(), 'Submit');
+        $this->assertFalse($tag->setValue('Cannot set this'));
+        $this->assertEqual($tag->getValue(), 'Submit');
+        $this->assertEqual($tag->getLabel(), 'Submit');
+        
+        $encoding = new MockSimpleMultipartEncoding();
+        $encoding->expectNever('add');
+        $tag->write($encoding);
+    }
+    
+    function testPopulatedSubmit() {
+        $tag = new SimpleSubmitTag(
+                array('type' => 'submit', 'name' => 's', 'value' => 'Ok!'));
+        $this->assertEqual($tag->getName(), 's');
+        $this->assertEqual($tag->getValue(), 'Ok!');
+        $this->assertEqual($tag->getLabel(), 'Ok!');
+        
+        $encoding = new MockSimpleMultipartEncoding();
+        $encoding->expectOnce('add', array('s', 'Ok!'));
+        $tag->write($encoding);
+    }
+    
+    function testImageSubmit() {
+        $tag = new SimpleImageSubmitTag(
+                array('type' => 'image', 'name' => 's', 'alt' => 'Label'));
+        $this->assertEqual($tag->getName(), 's');
+        $this->assertEqual($tag->getLabel(), 'Label');
+        
+        $encoding = new MockSimpleMultipartEncoding();
+        $encoding->expectAt(0, 'add', array('s.x', 20));
+        $encoding->expectAt(1, 'add', array('s.y', 30));
+        $tag->write($encoding, 20, 30);
+    }
+    
+    function testImageSubmitTitlePreferredOverAltForLabel() {
+        $tag = new SimpleImageSubmitTag(
+                array('type' => 'image', 'name' => 's', 'alt' => 'Label', 'title' => 'Title'));
+        $this->assertEqual($tag->getLabel(), 'Title');
+    }
+    
+    function testButton() {
+        $tag = new SimpleButtonTag(
+                array('type' => 'submit', 'name' => 's', 'value' => 'do'));
+        $tag->addContent('I am a button');
+        $this->assertEqual($tag->getName(), 's');
+        $this->assertEqual($tag->getValue(), 'do');
+        $this->assertEqual($tag->getLabel(), 'I am a button');
+
+        $encoding = new MockSimpleMultipartEncoding();
+        $encoding->expectOnce('add', array('s', 'do'));
+        $tag->write($encoding);
+    }
+}
+
+class TestOfTextArea extends UnitTestCase {
+    
+    function testDefault() {
+        $tag = new SimpleTextAreaTag(array('name' => 'a'));
+        $tag->addContent('Some text');
+        $this->assertEqual($tag->getName(), 'a');
+        $this->assertEqual($tag->getDefault(), 'Some text');
+    }
+    
+    function testWrapping() {
+        $tag = new SimpleTextAreaTag(array('cols' => '10', 'wrap' => 'physical'));
+        $tag->addContent("Lot's of text that should be wrapped");
+        $this->assertEqual(
+                $tag->getDefault(),
+                "Lot's of\r\ntext that\r\nshould be\r\nwrapped");
+        $tag->setValue("New long text\r\nwith two lines");
+        $this->assertEqual(
+                $tag->getValue(),
+                "New long\r\ntext\r\nwith two\r\nlines");
+    }
+    
+    function testWrappingRemovesLeadingcariageReturn() {
+        $tag = new SimpleTextAreaTag(array('cols' => '20', 'wrap' => 'physical'));
+        $tag->addContent("\rStuff");
+        $this->assertEqual($tag->getDefault(), 'Stuff');
+        $tag->setValue("\nNew stuff\n");
+        $this->assertEqual($tag->getValue(), "New stuff\r\n");
+    }
+    
+    function testBreaksAreNewlineAndCarriageReturn() {
+        $tag = new SimpleTextAreaTag(array('cols' => '10'));
+        $tag->addContent("Some\nText\rwith\r\nbreaks");
+        $this->assertEqual($tag->getValue(), "Some\r\nText\r\nwith\r\nbreaks");
+    }
+}
+
+class TestOfCheckbox extends UnitTestCase {
+    
+    function testCanSetCheckboxToNamedValueWithBooleanTrue() {
+        $tag = new SimpleCheckboxTag(array('name' => 'a', 'value' => 'A'));
+        $this->assertEqual($tag->getValue(), false);
+        $tag->setValue(true);
+        $this->assertIdentical($tag->getValue(), 'A');
+    }
+}
+
+class TestOfSelection extends UnitTestCase {
+    
+    function testEmpty() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $this->assertIdentical($tag->getValue(), '');
+    }
+    
+    function testSingle() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $option = new SimpleOptionTag(array());
+        $option->addContent('AAA');
+        $tag->addTag($option);
+        $this->assertEqual($tag->getValue(), 'AAA');
+    }
+    
+    function testSingleDefault() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $option = new SimpleOptionTag(array('selected' => ''));
+        $option->addContent('AAA');
+        $tag->addTag($option);
+        $this->assertEqual($tag->getValue(), 'AAA');
+    }
+    
+    function testSingleMappedDefault() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $option = new SimpleOptionTag(array('selected' => '', 'value' => 'aaa'));
+        $option->addContent('AAA');
+        $tag->addTag($option);
+        $this->assertEqual($tag->getValue(), 'aaa');
+    }
+    
+    function testStartsWithDefault() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $a = new SimpleOptionTag(array());
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array('selected' => ''));
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $c = new SimpleOptionTag(array());
+        $c->addContent('CCC');
+        $tag->addTag($c);
+        $this->assertEqual($tag->getValue(), 'BBB');
+    }
+    
+    function testSettingOption() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $a = new SimpleOptionTag(array());
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array('selected' => ''));
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $c = new SimpleOptionTag(array());
+        $c->addContent('CCC');
+        $tag->setValue('AAA');
+        $this->assertEqual($tag->getValue(), 'AAA');
+    }
+    
+    function testSettingMappedOption() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $a = new SimpleOptionTag(array('value' => 'aaa'));
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array('value' => 'bbb', 'selected' => ''));
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $c = new SimpleOptionTag(array('value' => 'ccc'));
+        $c->addContent('CCC');
+        $tag->addTag($c);
+        $tag->setValue('AAA');
+        $this->assertEqual($tag->getValue(), 'aaa');
+        $tag->setValue('ccc');
+        $this->assertEqual($tag->getValue(), 'ccc');
+    }
+    
+    function testSelectionDespiteSpuriousWhitespace() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $a = new SimpleOptionTag(array());
+        $a->addContent(' AAA ');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array('selected' => ''));
+        $b->addContent(' BBB ');
+        $tag->addTag($b);
+        $c = new SimpleOptionTag(array());
+        $c->addContent(' CCC ');
+        $tag->addTag($c);
+        $this->assertEqual($tag->getValue(), ' BBB ');
+        $tag->setValue('AAA');
+        $this->assertEqual($tag->getValue(), ' AAA ');
+    }
+    
+    function testFailToSetIllegalOption() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $a = new SimpleOptionTag(array());
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array('selected' => ''));
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $c = new SimpleOptionTag(array());
+        $c->addContent('CCC');
+        $tag->addTag($c);
+        $this->assertFalse($tag->setValue('Not present'));
+        $this->assertEqual($tag->getValue(), 'BBB');
+    }
+    
+    function testNastyOptionValuesThatLookLikeFalse() {
+        $tag = new SimpleSelectionTag(array('name' => 'a'));
+        $a = new SimpleOptionTag(array('value' => '1'));
+        $a->addContent('One');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array('value' => '0'));
+        $b->addContent('Zero');
+        $tag->addTag($b);
+        $this->assertIdentical($tag->getValue(), '1');
+        $tag->setValue('Zero');
+        $this->assertIdentical($tag->getValue(), '0');
+    }
+    
+    function testBlankOption() {
+        $tag = new SimpleSelectionTag(array('name' => 'A'));
+        $a = new SimpleOptionTag(array());
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array());
+        $b->addContent('b');
+        $tag->addTag($b);
+        $this->assertIdentical($tag->getValue(), '');
+        $tag->setValue('b');
+        $this->assertIdentical($tag->getValue(), 'b');
+        $tag->setValue('');
+        $this->assertIdentical($tag->getValue(), '');
+    }
+    
+    function testMultipleDefaultWithNoSelections() {
+        $tag = new MultipleSelectionTag(array('name' => 'a', 'multiple' => ''));
+        $a = new SimpleOptionTag(array());
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array());
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $this->assertIdentical($tag->getDefault(), array());
+        $this->assertIdentical($tag->getValue(), array());
+    }
+    
+    function testMultipleDefaultWithSelections() {
+        $tag = new MultipleSelectionTag(array('name' => 'a', 'multiple' => ''));
+        $a = new SimpleOptionTag(array('selected' => ''));
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array('selected' => ''));
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $this->assertIdentical($tag->getDefault(), array('AAA', 'BBB'));
+        $this->assertIdentical($tag->getValue(), array('AAA', 'BBB'));
+    }
+    
+    function testSettingMultiple() {
+        $tag = new MultipleSelectionTag(array('name' => 'a', 'multiple' => ''));
+        $a = new SimpleOptionTag(array('selected' => ''));
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array());
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $c = new SimpleOptionTag(array('selected' => '', 'value' => 'ccc'));
+        $c->addContent('CCC');
+        $tag->addTag($c);
+        $this->assertIdentical($tag->getDefault(), array('AAA', 'ccc'));
+        $this->assertTrue($tag->setValue(array('BBB', 'ccc')));
+        $this->assertIdentical($tag->getValue(), array('BBB', 'ccc'));
+        $this->assertTrue($tag->setValue(array()));
+        $this->assertIdentical($tag->getValue(), array());
+    }
+    
+    function testFailToSetIllegalOptionsInMultiple() {
+        $tag = new MultipleSelectionTag(array('name' => 'a', 'multiple' => ''));
+        $a = new SimpleOptionTag(array('selected' => ''));
+        $a->addContent('AAA');
+        $tag->addTag($a);
+        $b = new SimpleOptionTag(array());
+        $b->addContent('BBB');
+        $tag->addTag($b);
+        $this->assertFalse($tag->setValue(array('CCC')));
+        $this->assertTrue($tag->setValue(array('AAA', 'BBB')));
+        $this->assertFalse($tag->setValue(array('AAA', 'CCC')));
+    }
+}
+
+class TestOfRadioGroup extends UnitTestCase {
+    
+    function testEmptyGroup() {
+        $group = new SimpleRadioGroup();
+        $this->assertIdentical($group->getDefault(), false);
+        $this->assertIdentical($group->getValue(), false);
+        $this->assertFalse($group->setValue('a'));
+    }
+    
+    function testReadingSingleButtonGroup() {
+        $group = new SimpleRadioGroup();
+        $group->addWidget(new SimpleRadioButtonTag(
+                array('value' => 'A', 'checked' => '')));
+        $this->assertIdentical($group->getDefault(), 'A');
+        $this->assertIdentical($group->getValue(), 'A');
+    }
+    
+    function testReadingMultipleButtonGroup() {
+        $group = new SimpleRadioGroup();
+        $group->addWidget(new SimpleRadioButtonTag(
+                array('value' => 'A')));
+        $group->addWidget(new SimpleRadioButtonTag(
+                array('value' => 'B', 'checked' => '')));
+        $this->assertIdentical($group->getDefault(), 'B');
+        $this->assertIdentical($group->getValue(), 'B');
+    }
+    
+    function testFailToSetUnlistedValue() {
+        $group = new SimpleRadioGroup();
+        $group->addWidget(new SimpleRadioButtonTag(array('value' => 'z')));
+        $this->assertFalse($group->setValue('a'));
+        $this->assertIdentical($group->getValue(), false);
+    }
+    
+    function testSettingNewValueClearsTheOldOne() {
+        $group = new SimpleRadioGroup();
+        $group->addWidget(new SimpleRadioButtonTag(
+                array('value' => 'A')));
+        $group->addWidget(new SimpleRadioButtonTag(
+                array('value' => 'B', 'checked' => '')));
+        $this->assertTrue($group->setValue('A'));
+        $this->assertIdentical($group->getValue(), 'A');
+    }
+    
+    function testIsIdMatchesAnyWidgetInSet() {
+        $group = new SimpleRadioGroup();
+        $group->addWidget(new SimpleRadioButtonTag(
+                array('value' => 'A', 'id' => 'i1')));
+        $group->addWidget(new SimpleRadioButtonTag(
+                array('value' => 'B', 'id' => 'i2')));
+        $this->assertFalse($group->isId('i0'));
+        $this->assertTrue($group->isId('i1'));
+        $this->assertTrue($group->isId('i2'));
+    }
+    
+    function testIsLabelMatchesAnyWidgetInSet() {
+        $group = new SimpleRadioGroup();
+        $button1 = new SimpleRadioButtonTag(array('value' => 'A'));
+        $button1->setLabel('one');
+        $group->addWidget($button1);
+        $button2 = new SimpleRadioButtonTag(array('value' => 'B'));
+        $button2->setLabel('two');
+        $group->addWidget($button2);
+        $this->assertFalse($group->isLabel('three'));
+        $this->assertTrue($group->isLabel('one'));
+        $this->assertTrue($group->isLabel('two'));
+    }
+}
+
+class TestOfTagGroup extends UnitTestCase {
+    
+    function testReadingMultipleCheckboxGroup() {
+        $group = new SimpleCheckboxGroup();
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'A')));
+        $group->addWidget(new SimpleCheckboxTag(
+                array('value' => 'B', 'checked' => '')));
+        $this->assertIdentical($group->getDefault(), 'B');
+        $this->assertIdentical($group->getValue(), 'B');
+    }
+    
+    function testReadingMultipleUncheckedItems() {
+        $group = new SimpleCheckboxGroup();
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'A')));
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'B')));            
+        $this->assertIdentical($group->getDefault(), false);
+        $this->assertIdentical($group->getValue(), false);
+    }
+    
+    function testReadingMultipleCheckedItems() {
+        $group = new SimpleCheckboxGroup();
+        $group->addWidget(new SimpleCheckboxTag(
+                array('value' => 'A', 'checked' => '')));
+        $group->addWidget(new SimpleCheckboxTag(
+                array('value' => 'B', 'checked' => '')));
+        $this->assertIdentical($group->getDefault(), array('A', 'B'));
+        $this->assertIdentical($group->getValue(), array('A', 'B'));
+    }
+    
+    function testSettingSingleValue() {
+        $group = new SimpleCheckboxGroup();
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'A')));
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'B')));
+        $this->assertTrue($group->setValue('A'));
+        $this->assertIdentical($group->getValue(), 'A');
+        $this->assertTrue($group->setValue('B'));
+        $this->assertIdentical($group->getValue(), 'B');
+    }
+    
+    function testSettingMultipleValues() {
+        $group = new SimpleCheckboxGroup();
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'A')));
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'B')));
+        $this->assertTrue($group->setValue(array('A', 'B')));
+        $this->assertIdentical($group->getValue(), array('A', 'B'));
+    }
+    
+    function testSettingNoValue() {
+        $group = new SimpleCheckboxGroup();
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'A')));
+        $group->addWidget(new SimpleCheckboxTag(array('value' => 'B')));
+        $this->assertTrue($group->setValue(false));
+        $this->assertIdentical($group->getValue(), false);
+    }
+    
+    function testIsIdMatchesAnyIdInSet() {
+        $group = new SimpleCheckboxGroup();
+        $group->addWidget(new SimpleCheckboxTag(array('id' => 1, 'value' => 'A')));
+        $group->addWidget(new SimpleCheckboxTag(array('id' => 2, 'value' => 'B')));
+        $this->assertFalse($group->isId(0));
+        $this->assertTrue($group->isId(1));
+        $this->assertTrue($group->isId(2));
+    }
+}
+
+class TestOfUploadWidget extends UnitTestCase {
+    
+    function testValueIsFilePath() {
+        $upload = new SimpleUploadTag(array('name' => 'a'));
+        $upload->setValue(dirname(__FILE__) . '/support/upload_sample.txt');
+        $this->assertEqual($upload->getValue(), dirname(__FILE__) . '/support/upload_sample.txt');
+    }
+    
+    function testSubmitsFileContents() {
+        $encoding = new MockSimpleMultipartEncoding();
+        $encoding->expectOnce('attach', array(
+                'a',
+                'Sample for testing file upload',
+                'upload_sample.txt'));
+        $upload = new SimpleUploadTag(array('name' => 'a'));
+        $upload->setValue(dirname(__FILE__) . '/support/upload_sample.txt');
+        $upload->write($encoding);
+    }
+}
+
+class TestOfLabelTag extends UnitTestCase {
+    
+    function testLabelShouldHaveAnEndTag() {
+        $label = new SimpleLabelTag(array());
+        $this->assertTrue($label->expectEndTag());
+    }
+    
+    function testContentIsTextOnly() {
+        $label = new SimpleLabelTag(array());
+        $label->addContent('Here <tag>are</tag> words');
+        $this->assertEqual($label->getText(), 'Here are words');
+    }
+}
 ?>
-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

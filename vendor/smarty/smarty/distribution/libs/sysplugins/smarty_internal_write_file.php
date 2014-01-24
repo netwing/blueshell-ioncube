@@ -1,42 +1,89 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty write file plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsInternal
+ * @author Monte Ohrt
+ */
+
+/**
+ * Smarty Internal Write File Class
+ *
+ * @package Smarty
+ * @subpackage PluginsInternal
+ */
+class Smarty_Internal_Write_File
+{
+    /**
+     * Writes file in a safe way to disk
+     *
+     * @param  string  $_filepath complete filepath
+     * @param  string  $_contents file content
+     * @param  Smarty  $smarty    smarty instance
+     * @return boolean true
+     */
+    public static function writeFile($_filepath, $_contents, Smarty $smarty)
+    {
+        $_error_reporting = error_reporting();
+        error_reporting($_error_reporting & ~E_NOTICE & ~E_WARNING);
+        if ($smarty->_file_perms !== null) {
+            $old_umask = umask(0);
+        }
+
+        $_dirpath = dirname($_filepath);
+        // if subdirs, create dir structure
+        if ($_dirpath !== '.' && !file_exists($_dirpath)) {
+            mkdir($_dirpath, $smarty->_dir_perms === null ? 0777 : $smarty->_dir_perms, true);
+        }
+
+        // write to tmp file, then move to overt file lock race condition
+        $_tmp_file = $_dirpath . DS . uniqid('wrt', true);
+        if (!file_put_contents($_tmp_file, $_contents)) {
+            error_reporting($_error_reporting);
+            throw new SmartyException("unable to write file {$_tmp_file}");
+
+            return false;
+        }
+
+        /*
+         * Windows' rename() fails if the destination exists,
+         * Linux' rename() properly handles the overwrite.
+         * Simply unlink()ing a file might cause other processes
+         * currently reading that file to fail, but linux' rename()
+         * seems to be smart enough to handle that for us.
+         */
+        if (Smarty::$_IS_WINDOWS) {
+            // remove original file
+            @unlink($_filepath);
+            // rename tmp file
+            $success = @rename($_tmp_file, $_filepath);
+        } else {
+            // rename tmp file
+            $success = @rename($_tmp_file, $_filepath);
+            if (!$success) {
+                // remove original file
+                @unlink($_filepath);
+                // rename tmp file
+                $success = @rename($_tmp_file, $_filepath);
+            }
+        }
+
+        if (!$success) {
+            error_reporting($_error_reporting);
+            throw new SmartyException("unable to write file {$_filepath}");
+
+            return false;
+        }
+
+        if ($smarty->_file_perms !== null) {
+            // set file permissions
+            chmod($_filepath, $smarty->_file_perms);
+            umask($old_umask);
+        }
+        error_reporting($_error_reporting);
+
+        return true;
+    }
+
+}

@@ -1,50 +1,89 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-EGWeBX2eHRXxbgb/svEhhC79i0==
+<?php
+
+namespace Guzzle\Service\Builder;
+
+use Guzzle\Service\AbstractConfigLoader;
+use Guzzle\Service\Exception\ServiceNotFoundException;
+
+/**
+ * Service builder config loader
+ */
+class ServiceBuilderLoader extends AbstractConfigLoader
+{
+    protected function build($config, array $options)
+    {
+        // A service builder class can be specified in the class field
+        $class = !empty($config['class']) ? $config['class'] : __NAMESPACE__ . '\\ServiceBuilder';
+
+        // Account for old style configs that do not have a services array
+        $services = isset($config['services']) ? $config['services'] : $config;
+
+        // Validate the configuration and handle extensions
+        foreach ($services as $name => &$service) {
+
+            $service['params'] = isset($service['params']) ? $service['params'] : array();
+
+            // Check if this client builder extends another client
+            if (!empty($service['extends'])) {
+
+                // Make sure that the service it's extending has been defined
+                if (!isset($services[$service['extends']])) {
+                    throw new ServiceNotFoundException(
+                        "{$name} is trying to extend a non-existent service: {$service['extends']}"
+                    );
+                }
+
+                $extended = &$services[$service['extends']];
+
+                // Use the correct class attribute
+                if (empty($service['class'])) {
+                    $service['class'] = isset($extended['class']) ? $extended['class'] : '';
+                }
+                if ($extendsParams = isset($extended['params']) ? $extended['params'] : false) {
+                    $service['params'] = $service['params'] + $extendsParams;
+                }
+            }
+
+            // Overwrite default values with global parameter values
+            if (!empty($options)) {
+                $service['params'] = $options + $service['params'];
+            }
+
+            $service['class'] = isset($service['class']) ? $service['class'] : '';
+        }
+
+        return new $class($services);
+    }
+
+    protected function mergeData(array $a, array $b)
+    {
+        $result = $b + $a;
+
+        // Merge services using a recursive union of arrays
+        if (isset($a['services']) && $b['services']) {
+
+            // Get a union of the services of the two arrays
+            $result['services'] = $b['services'] + $a['services'];
+
+            // Merge each service in using a union of the two arrays
+            foreach ($result['services'] as $name => &$service) {
+
+                // By default, services completely override a previously defined service unless it extends itself
+                if (isset($a['services'][$name]['extends'])
+                    && isset($b['services'][$name]['extends'])
+                    && $b['services'][$name]['extends'] == $name
+                ) {
+                    $service += $a['services'][$name];
+                    // Use the `extends` attribute of the parent
+                    $service['extends'] = $a['services'][$name]['extends'];
+                    // Merge parameters using a union if both have parameters
+                    if (isset($a['services'][$name]['params'])) {
+                        $service['params'] += $a['services'][$name]['params'];
+                    }
+                }
+            }
+        }
+
+        return $result;
+    }
+}

@@ -1,188 +1,531 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Parser\ParserRegistry;
+
+/**
+ * Parses and generates URLs based on URL parts. In favor of performance, URL parts are not validated.
+ */
+class Url
+{
+    protected $scheme;
+    protected $host;
+    protected $port;
+    protected $username;
+    protected $password;
+    protected $path = '';
+    protected $fragment;
+
+    /** @var QueryString Query part of the URL */
+    protected $query;
+
+    /**
+     * Factory method to create a new URL from a URL string
+     *
+     * @param string $url Full URL used to create a Url object
+     *
+     * @return Url
+     * @throws InvalidArgumentException
+     */
+    public static function factory($url)
+    {
+        static $defaults = array('scheme' => null, 'host' => null, 'path' => null, 'port' => null, 'query' => null,
+            'user' => null, 'pass' => null, 'fragment' => null);
+
+        if (false === ($parts = parse_url($url))) {
+            throw new InvalidArgumentException('Was unable to parse malformed url: ' . $url);
+        }
+
+        $parts += $defaults;
+
+        // Convert the query string into a QueryString object
+        if ($parts['query'] || 0 !== strlen($parts['query'])) {
+            $parts['query'] = QueryString::fromString($parts['query']);
+        }
+
+        return new self($parts['scheme'], $parts['host'], $parts['user'],
+            $parts['pass'], $parts['port'], $parts['path'], $parts['query'],
+            $parts['fragment']);
+    }
+
+    /**
+     * Build a URL from parse_url parts. The generated URL will be a relative URL if a scheme or host are not provided.
+     *
+     * @param array $parts Array of parse_url parts
+     *
+     * @return string
+     */
+    public static function buildUrl(array $parts)
+    {
+        $url = $scheme = '';
+
+        if (isset($parts['scheme'])) {
+            $scheme = $parts['scheme'];
+            $url .= $scheme . ':';
+        }
+
+        if (isset($parts['host'])) {
+            $url .= '//';
+            if (isset($parts['user'])) {
+                $url .= $parts['user'];
+                if (isset($parts['pass'])) {
+                    $url .= ':' . $parts['pass'];
+                }
+                $url .=  '@';
+            }
+
+            $url .= $parts['host'];
+
+            // Only include the port if it is not the default port of the scheme
+            if (isset($parts['port'])
+                && !(($scheme == 'http' && $parts['port'] == 80) || ($scheme == 'https' && $parts['port'] == 443))
+            ) {
+                $url .= ':' . $parts['port'];
+            }
+        }
+
+        // Add the path component if present
+        if (isset($parts['path']) && 0 !== strlen($parts['path'])) {
+            // Always ensure that the path begins with '/' if set and something is before the path
+            if ($url && $parts['path'][0] != '/' && substr($url, -1)  != '/') {
+                $url .= '/';
+            }
+            $url .= $parts['path'];
+        }
+
+        // Add the query string if present
+        if (isset($parts['query'])) {
+            $url .= '?' . $parts['query'];
+        }
+
+        // Ensure that # is only added to the url if fragment contains anything.
+        if (isset($parts['fragment'])) {
+            $url .= '#' . $parts['fragment'];
+        }
+
+        return $url;
+    }
+
+    /**
+     * Create a new URL from URL parts
+     *
+     * @param string                   $scheme   Scheme of the URL
+     * @param string                   $host     Host of the URL
+     * @param string                   $username Username of the URL
+     * @param string                   $password Password of the URL
+     * @param int                      $port     Port of the URL
+     * @param string                   $path     Path of the URL
+     * @param QueryString|array|string $query    Query string of the URL
+     * @param string                   $fragment Fragment of the URL
+     */
+    public function __construct($scheme, $host, $username = null, $password = null, $port = null, $path = null, QueryString $query = null, $fragment = null)
+    {
+        $this->scheme = $scheme;
+        $this->host = $host;
+        $this->port = $port;
+        $this->username = $username;
+        $this->password = $password;
+        $this->fragment = $fragment;
+        if (!$query) {
+            $this->query = new QueryString();
+        } else {
+            $this->setQuery($query);
+        }
+        $this->setPath($path);
+    }
+
+    /**
+     * Clone the URL
+     */
+    public function __clone()
+    {
+        $this->query = clone $this->query;
+    }
+
+    /**
+     * Returns the URL as a URL string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return self::buildUrl($this->getParts());
+    }
+
+    /**
+     * Get the parts of the URL as an array
+     *
+     * @return array
+     */
+    public function getParts()
+    {
+        return array(
+            'scheme' => $this->scheme,
+            'user' => $this->username,
+            'pass' => $this->password,
+            'host' => $this->host,
+            'port' => $this->port,
+            'path' => $this->getPath(),
+            'query' => (string) $this->query ?: null,
+            'fragment' => $this->fragment,
+        );
+    }
+
+    /**
+     * Set the host of the request.
+     *
+     * @param string $host Host to set (e.g. www.yahoo.com, yahoo.com)
+     *
+     * @return Url
+     */
+    public function setHost($host)
+    {
+        if (strpos($host, ':') === false) {
+            $this->host = $host;
+        } else {
+            list($host, $port) = explode(':', $host);
+            $this->host = $host;
+            $this->setPort($port);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the host part of the URL
+     *
+     * @return string
+     */
+    public function getHost()
+    {
+        return $this->host;
+    }
+
+    /**
+     * Set the scheme part of the URL (http, https, ftp, etc)
+     *
+     * @param string $scheme Scheme to set
+     *
+     * @return Url
+     */
+    public function setScheme($scheme)
+    {
+        $this->scheme = $scheme;
+
+        return $this;
+    }
+
+    /**
+     * Get the scheme part of the URL
+     *
+     * @return string
+     */
+    public function getScheme()
+    {
+        return $this->scheme;
+    }
+
+    /**
+     * Set the port part of the URL
+     *
+     * @param int $port Port to set
+     *
+     * @return Url
+     */
+    public function setPort($port)
+    {
+        $this->port = $port;
+
+        return $this;
+    }
+
+    /**
+     * Get the port part of the URl. Will return the default port for a given scheme if no port has been set.
+     *
+     * @return int|null
+     */
+    public function getPort()
+    {
+        if ($this->port) {
+            return $this->port;
+        } elseif ($this->scheme == 'http') {
+            return 80;
+        } elseif ($this->scheme == 'https') {
+            return 443;
+        }
+
+        return null;
+    }
+
+    /**
+     * Set the path part of the URL
+     *
+     * @param array|string $path Path string or array of path segments
+     *
+     * @return Url
+     */
+    public function setPath($path)
+    {
+        static $pathReplace = array(' ' => '%20', '?' => '%3F');
+        if (is_array($path)) {
+            $path = '/' . implode('/', $path);
+        }
+
+        $this->path = strtr($path, $pathReplace);
+
+        return $this;
+    }
+
+    /**
+     * Normalize the URL so that double slashes and relative paths are removed
+     *
+     * @return Url
+     */
+    public function normalizePath()
+    {
+        if (!$this->path || $this->path == '/' || $this->path == '*') {
+            return $this;
+        }
+
+        $results = array();
+        $segments = $this->getPathSegments();
+        foreach ($segments as $segment) {
+            if ($segment == '..') {
+                array_pop($results);
+            } elseif ($segment != '.' && $segment != '') {
+                $results[] = $segment;
+            }
+        }
+
+        // Combine the normalized parts and add the leading slash if needed
+        $this->path = ($this->path[0] == '/' ? '/' : '') . implode('/', $results);
+
+        // Add the trailing slash if necessary
+        if ($this->path != '/' && end($segments) == '') {
+            $this->path .= '/';
+        }
+
+        return $this;
+    }
+
+    /**
+     * Add a relative path to the currently set path
+     *
+     * @param string $relativePath Relative path to add
+     *
+     * @return Url
+     */
+    public function addPath($relativePath)
+    {
+        if (!$relativePath || $relativePath == '/') {
+            return $this;
+        }
+
+        // Add a leading slash if needed
+        if ($relativePath[0] != '/') {
+            $relativePath = '/' . $relativePath;
+        }
+
+        return $this->setPath(str_replace('//', '/', $this->getPath() . $relativePath));
+    }
+
+    /**
+     * Get the path part of the URL
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * Get the path segments of the URL as an array
+     *
+     * @return array
+     */
+    public function getPathSegments()
+    {
+        return array_slice(explode('/', $this->getPath()), 1);
+    }
+
+    /**
+     * Set the password part of the URL
+     *
+     * @param string $password Password to set
+     *
+     * @return Url
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get the password part of the URL
+     *
+     * @return null|string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Set the username part of the URL
+     *
+     * @param string $username Username to set
+     *
+     * @return Url
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * Get the username part of the URl
+     *
+     * @return null|string
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * Get the query part of the URL as a QueryString object
+     *
+     * @return QueryString
+     */
+    public function getQuery()
+    {
+        return $this->query;
+    }
+
+    /**
+     * Set the query part of the URL
+     *
+     * @param QueryString|string|array $query Query to set
+     *
+     * @return Url
+     */
+    public function setQuery($query)
+    {
+        if (is_string($query)) {
+            $output = null;
+            parse_str($query, $output);
+            $this->query = new QueryString($output);
+        } elseif (is_array($query)) {
+            $this->query = new QueryString($query);
+        } elseif ($query instanceof QueryString) {
+            $this->query = $query;
+        }
+
+        return $this;
+    }
+
+    /**
+     * Get the fragment part of the URL
+     *
+     * @return null|string
+     */
+    public function getFragment()
+    {
+        return $this->fragment;
+    }
+
+    /**
+     * Set the fragment part of the URL
+     *
+     * @param string $fragment Fragment to set
+     *
+     * @return Url
+     */
+    public function setFragment($fragment)
+    {
+        $this->fragment = $fragment;
+
+        return $this;
+    }
+
+    /**
+     * Check if this is an absolute URL
+     *
+     * @return bool
+     */
+    public function isAbsolute()
+    {
+        return $this->scheme && $this->host;
+    }
+
+    /**
+     * Combine the URL with another URL. Follows the rules specific in RFC 3986 section 5.4.
+     *
+     * @param string $url Relative URL to combine with
+     *
+     * @return Url
+     * @throws InvalidArgumentException
+     * @link http://tools.ietf.org/html/rfc3986#section-5.4
+     */
+    public function combine($url)
+    {
+        $url = self::factory($url);
+
+        // Use the more absolute URL as the base URL
+        if (!$this->isAbsolute() && $url->isAbsolute()) {
+            $url = $url->combine($this);
+        }
+
+        // Passing a URL with a scheme overrides everything
+        if ($buffer = $url->getScheme()) {
+            $this->scheme = $buffer;
+            $this->host = $url->getHost();
+            $this->port = $url->getPort();
+            $this->username = $url->getUsername();
+            $this->password = $url->getPassword();
+            $this->path = $url->getPath();
+            $this->query = $url->getQuery();
+            $this->fragment = $url->getFragment();
+            return $this;
+        }
+
+        // Setting a host overrides the entire rest of the URL
+        if ($buffer = $url->getHost()) {
+            $this->host = $buffer;
+            $this->port = $url->getPort();
+            $this->username = $url->getUsername();
+            $this->password = $url->getPassword();
+            $this->path = $url->getPath();
+            $this->fragment = $url->getFragment();
+            return $this;
+        }
+
+        $path = $url->getPath();
+        $query = $url->getQuery();
+
+        if (!$path) {
+            if (count($query)) {
+                $this->query = $query;
+            }
+        } else {
+            if ($path[0] == '/') {
+                $this->path = $path;
+            } else {
+                $this->path .= '/' . $path;
+            }
+            $this->normalizePath();
+            $this->query = $query;
+        }
+
+        $this->fragment = $url->getFragment();
+
+        return $this;
+    }
+}

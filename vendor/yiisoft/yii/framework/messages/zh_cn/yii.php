@@ -1,225 +1,260 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-i2yYIPscub5Gg/5ADzkZkynUhMenOCe=
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  'Active record class "{class}" does not have a scope named "{scope}".' => 'AR类 "{class}" 没有名为 "{scope}" 的命名范围。',
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => '别名 "{alias}" 无效。请确认它指向一个存在的PHP文件。',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory.' => '别名 "{alias}" 无效。请确认它指向一个存在的目录。',
+  'Application Log' => '程序日志',
+  'Base path "{path}" is not a valid directory.' => '基准路径 "{path}" 不是一个有效的目录。',
+  'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCacheDependency.connectionID "{id}" 无效。请确认它指向一个有效的CDbConnection应用组件的ID',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection连接数据库失败',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" 无效。请确认它指向一个有效的CDbConnection应用组件的ID',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache需要PHP的Accelerator扩展被调用，并且使用 "--with-eaccelerator-shared-memory" 选项启用或者编译。',
+  'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}>仅支持{type}类的对象。',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache需要PHP的wincache扩展被调用。',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache用户缓存北京永。请在php.ini中设置wincache.ucenabled启用。',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache需要PHP的Zend Data Cache扩展被调用。',
+  'Column name must be either a string or an array.' => '列名必须是一个字符串或者数组',
+  'Extension path "{path}" does not exist.' => '扩展路径 "{path}" 不存在。',
+  'Failed to initialize the mcrypt module.' => '初始化mcrypt模块失败。',
+  'Failed to set unsafe attribute "{attribute}".' => '设置非安全（unsafe）属性 "{attribute}" 失败。',
+  'GD and FreeType PHP extensions are required.' => 'PHP的GD和FreeType扩展需要被调用。',
+  'Invalid operator "{operator}".' => '无效操作符 "{operator}"。',
+  'Resetting PK sequence is not supported.' => '重置主键（PK）序列不支持。',
+  'Setting integrity check is not supported.' => '设置完整性检查不支持。',
+  'Table "{table}" does not exist.' => '数据表 "{table}" 不存在。',
+  'The "range" property must be specified with a list of values.' => '"range" 属性必须用一个列表值设定。',
+  'The STAT relation "{name}" cannot have child relations.' => 'STAT关联 "{name}" 不能有子关联。',
+  'The module path "{path}" is not a valid directory.' => '模块路径 "{path}" 不是一个有效的路径。',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => '星期几的格式必须是 "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" 或者 "ccccc"。',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => '月份的格式必须是 "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" 或者 "LLLL"。',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.'=>'AR类 "{class}" 的关联 "{relation}" 的设定不正确。通过外键连接的数据表 "{joinTable}" 在数据库中找不到。',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'AR类 "{class}" 的关联 "{relation}" 设定的外键 "{key}" 没有指向父表 "{table}"。',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'AR类 "{class}" 的关联 "{relation}" 设定了一个无效的外键 "{key}"。在数据表 "{table}" 中没有这样的列。',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'AR类 "{class}" 的关联 "{relation}" 设定了一个无效的外键 "{key}"。该键的列必须是数据表 "{table}" 的主键。',
+  'The requested view "{name}" was not found.' => '找不到请求的视图 "{name}"。',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => '查询数据表 "{table}" 时，不会提供列 "{column}" 的值。',
+  'Unable to import "{alias}". Please check your server configuration to make sure you are allowed to change PHP include_path.' => '无法导入 "{alias}"。请检查您的服务器配置，以确保允许您的程序更改PHP的include_path设置。',
+  'Unable to resolve the request "{route}".' => '无法解析请求 "{route}"。',
+  'Unknown type "{type}".' => '未知类型 "{type}"。',
+  'Your request is invalid.' => '您的请求无效。',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" 无效。',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} 仅接受 {limit} 个以内的文件。',
+  '{attribute} is in the list.' => '{attribute} 在列表中',
+  '{attribute} must be either {true} or {false}.' => '{attribute} 必须为{true}或者{false}',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute}必须大于 "{compareValue}"。',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute}必须大于或者等于 "{compareValue}"。',
+  '{attribute} must be less than "{compareValue}".' => '{attribute}必须小于 "{compareValue}"。',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute}必须小于或者等于 "{compareValue}"。',
+  '{attribute} must be {value}.' => '{attribute}必须为{value}。',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute}必须不等于"{compareValue}"。',
+  '{className} does not support flushValues() functionality.' => '{className} 不支持 flushValues() 功能。',
+  '{class} does not have a method named "{name}".' => '{class} 没有名为 "{name}" 的方法。',
+  'CDbLogRoute requires database table "{table}" to store log messages.' => '@@CDbLogRoute 要求数据库 table "{table}" 储存日志讯息.@@',
+  'CMemCache requires PHP memcache extension to be loaded.' => '@@CMemCache 要求 PHP memcache extension 必须先被载入.@@',
+  'CMultiFileUpload.name is required.' => '@@CMultiFileUpload.name 是必要的.@@',
+  'CSecurityManager.validation must be either "MD5" or "SHA1".' => '@@CSecurityManager.validation 必须是 "MD5" 或 "SHA1".@@',
+  'Cache table "{tableName}" does not exist.' => '@@Cache table "{tableName}" 不存在.@@',
+  'Table "{table}" does not have a primary key defined.' => '@@Table "{table}" 没有定义主键.@@',
+  'The "view" property is required.' => '@@需要 "view" 属性@@',
+  'The asset "{asset}" to be pulished does not exist.' => '@@欲发布的 asset "{asset}" 不存在.@@',
+  'The column "{column}" is not a foreign key in table "{table}".' => '@@栏位 "{column}" 并不是 table "{table}" 中的一个 foreign key.@@',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE" or "EEEEE".' => '@@代表 day of the week 的格式必须是 "E", "EE", "EEE", "EEEE" 或 "EEEEE".@@',
+  'The pattern for month must be "M", "MM", "MMM", or "MMMM".' => '@@代表月份的格式必须是 "M", "MM", "MMM", 或 "MMMM".@@',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => '@@active record class "{class}" 中的关联 "{relation}" 有一个无效的 foreign key "{key}". foreign key 未指到任一个 joining table.@@',
+  'The requested controller "{controller}" does not exist.' => '@@请求的控制器 "{controller}" 不存在.@@',
+  'The requested view "{name}" is not found.' => '@@请求的 view "{name}" 未找到.@@',
+  'The value for the primary key "{key}" is not supplied when querying the table "{table}".' => '@@查询 table "{table}" 时未提供 primary key "{key}" 的值.@@',
+  'Unable to find the decorator view "{view}".' => '@@无法找到 decorator view "{view}".@@',
+  'Unable to find the list item.' => '@@无法找到列表项目.@@',
+  '{className} does not support flush() functionality.' => '@@{className} 不支持 flush() 功能.@@',
+  '{class} does not have attribute "{name}".' => '@@{class} 中没有名为 "{name}" 的属性.@@',
+  '"{path}" is not a valid directory.' => '"{path}" 不是一个合法的目录.',
+  '&lt; Previous' => '&lt; 前页',
+  '&lt;&lt; First' => '&lt;&lt; 首页',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record 需要一个名为 "db" 的 CDbConnection 应用程序组件.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Active record "{class}" 对于关联 "{relation}" 有一个无效的配置. 必须给定关联种类, 相关的 active record class 以及 foreign key.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'Active record "{class}" 正尝试选择一个无效的栏位 "{column}". 注意, 该栏位必须存在于 table 中或者是一个具别名的 expression.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => '别名 "{alias}" 是无效的. 请确定它指向一个已存在的目录或文件.',
+  'Application base path "{path}" is not a valid directory.' => '应用程序基准路径 "{path}" 是无效的目录.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => '应用程序执行时的路径 "{path}" 是无效的. 请确定它是一个可被 Web server process 写入资料的目录.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => '授权项目 "{item}" 已经被指派给使用者 "{user}".',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache 要求 PHP apc extension 必须先被载入.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" 是无效的. 请确定它是一个可被 Web server process 写入资料的目录.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID 是无效的. 请确定 "{id}" 参照到一个有效的快取应用程序组件.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" 是无效的. 无法在目前的控制器中找到此一动作.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" 是无效的. 请确定它参照到一个 CDbConnection 应用程序组件的 ID.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" 是无效的. 请确定它参照到一个 CDbConnection 应用程序组件的 ID.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql 不能是空的.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand 无法执行 SQL 语句: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand 无法准备 SQL 语句: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection 不支持对 {driver} 数据库 schema 的读取.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection 无法开启数据库连线: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection 状态为未启用, 无法进行任何数据库动作.',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString 不能是空的.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader 无法倒回, 只允许向前读取.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" 是无效的. 请确定它参照到一个 CDbConnection 应用程序组件的 ID.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" 未指向一个有效的 CDbConnection 应用程序组件.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID 是无效的. 请确定 "{id}" 参照到一个有效的数据库应用程序组件.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction 状态为未启用, 无法进行 commit 或 roll back 动作.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory 不能是空的.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName 不能是空的.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" does not point to a valid directory. 请确定目录存在并且允许 Web server process 写入.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain 只能取得有实现 IFilter 接口的对象.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl 不能是空的.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name 不能是空的.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName 不能是空的.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection 只能持有 CHttpCookie 对象.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest 不能确认入口脚本的 URL.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest 不能确认请求的路径信息.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest 不能确认请求的 URI.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode 只能是 "none", "allow" 或 "only".',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}" 是无效的. 它必须是介于 0 与 100之间的整数.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" 不是一个有效的目录.',
+  'CMemCache server configuration must be an array.' => 'CMemCache 服务器配置必须是一个数组.',
+  'CMemCache server configuration must have "host" value.' => 'CMemCache 服务器配置必须有 "host" 的值.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute found a mismatching code block "{token}". 请确定对于 Yii::beginProfile() 与 Yii::endProfile() 的呼叫是适当地巢状套叠的.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" 是无效的. 有效值包含 "summary" 与 "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager 要求 PHP mcrypt extension 必须先被载入以便使用资料加密功能.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey 不能是空的.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey 不能是空的.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> 只能持有 {type} 类别的对象.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat 必须是 "path" 或 "get".',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache 要求 PHP XCache extension 必须先被载入.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '无法新增 "{child}" 成为 "{name}" 的子项. 侦测到有迴圈产生.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '无法新增 "{child}" 成为 "{parent}" 的子项. 侦测到有迴圈产生.',
+  'Cannot add "{name}" as a child of itself.' => '无法新增 "{name}" 成为它自己的子项.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => '无法新增一个种类为 "{child}" 的项目到一个种类为 "{parent}" 的项目.',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" 或 "{child}" 不存在.',
+  'Error: Table "{table}" does not have a primary key.' => '错误: Table "{table}" 没有定义主键.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => '错误: Table "{table}" 有一个不被 crud 命令所支持的合成主键.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => '事件 "{class}.{event}" 附加了一个无效的 handler "{handler}".',
+  'Event "{class}.{event}" is not defined.' => '事件 "{class}.{event}" 未定义.',
+  'Failed to write the uploaded file "{file}" to disk.' => '无法将已上传的文件 "{file}" 写入磁碟.',
+  'File upload was stopped by extension.' => '文件上传被 extension 所停止.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => '筛选器 "{filter}" 是无效的. 控制器 "{class}" 没有名为 "filter{filter}" 的筛选器方法.',
+  'Get a new code' => '取得一组新代码',
+  'Go to page: ' => '翻页: ',
+  'Invalid MO file revision: {revision}.' => '无效的 MO 文件修订: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => '无效的 MO 文件: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => '无效的 enumerable 值 "{value}". 请确定它在 ({enum}) 之中.',
+  'Last &gt;&gt;' => '末页 &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => '列表资料必须是一个数组或是有实现 Traversable 的一个对象.',
+  'List index "{index}" is out of bound.' => '列表索引 "{index}" 超出范围.',
+  'Login Required' => '需要先登入系统',
+  'Map data must be an array or an object implementing Traversable.' => '哈希表资料必须是一个数组或一个实现 Traversable 的对象.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => '缺乏暂存目录来储存已上传的文件 "{file}".',
+  'Next &gt;' => '后页 &gt;',
+  'No columns are being updated for table "{table}".' => 'table "{table}" 没有任何栏位将被更新.',
+  'No counter columns are being updated for table "{table}".' => 'table "{table}" 没有任何计数器栏位将被更新.',
+  'Object configuration must be an array containing a "class" element.' => '对象配置必须是内含有一个 "class" 元素的一个数组.',
+  'Please fix the following input errors:' => '请更正下列输入错误:',
+  'Property "{class}.{property}" is not defined.' => '属性 "{class}.{property}" 未被定义.',
+  'Property "{class}.{property}" is read only.' => '属性 "{class}.{property}" 是只读的.',
+  'Queue data must be an array or an object implementing Traversable.' => '队列资料必须是一个数组或一个实现 Traversable 的对象.',
+  'Relation "{name}" is not defined in active record class "{class}".' => '关联 "{name}" 未被定义在 active record class "{class}" 中.',
+  'Stack data must be an array or an object implementing Traversable.' => '堆栈资料必须是一个数组或一个实现 Traversable 的对象.',
+  'Table "{table}" does not have a column named "{column}".' => 'Table "{table}" 没有名为 "{column}" 的栏位.',
+  'The "filter" property must be specified with a valid callback.' => '属性 "filter" 必须以一个有效的 callback 指明.',
+  'The "pattern" property must be specified with a valid regular expression.' => '属性 "pattern" 必须以一个有效的 regular expression 指明.',
+  'The CSRF token could not be verified.' => 'CSRF token 无法被验证.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'route "{route}" 中的 URL 格式 "{pattern}" 不是有效的 regular expression.',
+  'The active record cannot be deleted because it is new.' => 'active record 由于是新的, 无法被删除.',
+  'The active record cannot be inserted to database because it is not new.' => 'active record 由于不是新的, 无法被新增到数据库.',
+  'The active record cannot be updated because it is new.' => 'active record 由于是新的, 无法被更新.',
+  'The asset "{asset}" to be published does not exist.' => 'Asset文件 "{asset}" 不存在.',
+  'The command path "{path}" is not a valid directory.' => '命令路径 "{path}" 不是一个有效的目录.',
+  'The controller path "{path}" is not a valid directory.' => '控制器路径 "{path}" 不是一个有效的目录.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => '文件 "{file}" 无法被上传. 只有附档名如下的文件是被允许的: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => '文件 "{file}" 太大. 文件大小不能超过 {limit} 位元组.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => '文件 "{file}" 太小. 文件大小不能少于 {limit} 位元组.',
+  'The file "{file}" was only partially uploaded.' => '文件 "{file}" 上传不完全.',
+  'The first element in a filter configuration must be the filter class.' => '筛选器配置中的第一个元素必须是筛选器类别.',
+  'The item "{name}" does not exist.' => '项目 "{name}" 不存在.',
+  'The item "{parent}" already has a child "{child}".' => '项目 "{parent}" 已有子项目 "{child}".',
+  'The layout path "{path}" is not a valid directory.' => '布局路径 "{path}" 不是一个有效的目录.',
+  'The list is read only.' => '列表是只读的.',
+  'The map is read only.' => '哈希表是只读的.',
+  'The pattern for 12 hour format must be "h" or "hh".' => '代表12小时制的格式必须是 "h" 或 "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => '代表24小时制的格式必须是 "H" 或 "HH".',
+  'The pattern for AM/PM marker must be "a".' => '代表 AM/PM 标记的格式必须是 "a".',
+  'The pattern for day in month must be "F".' => '代表 day in month 的格式必须是 "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => '代表 day in year 的格式必须是 "D", "DD" 或 "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => '代表 day of the month 的格式必须是 "d" 或 "dd".',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => '代表年代的格式必须是 "G", "GG", "GGG", "GGGG" 或 "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => '代表时(AM/PM格式)的格式必须是 "K" 或 "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => '代表该天第几小时的格式必须是 "k" 或 "kk".',
+  'The pattern for minutes must be "m" or "mm".' => '代表分的格式必须是 "m" 或 "mm".',
+  'The pattern for seconds must be "s" or "ss".' => '代表秒的格式必须是 "s" 或 "ss".',
+  'The pattern for time zone must be "z" or "v".' => '代表时区的格式必须是 "z" 或 "v".',
+  'The pattern for week in month must be "W".' => '代表 week in month 的格式必须是 "W".',
+  'The pattern for week in year must be "w".' => '代表 week in year 的格式必须是 "w".',
+  'The queue is empty.' => '队列状态为空.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'active record class "{class}" 中的关联 "{relation}" 未被正确指明: 数据库中无法找到 foreign key 中所给的 join table "{joinTable}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'active record class "{class}" 中的关联 "{relation}" 有一个不完整的 foreign key. foreign key 必须是参照 joining tables 中的栏位所构成.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'active record class "{class}" 中的关联 "{relation}" 有一个无效的 foreign key. foreign key 的格式必须是 "joinTable(fk1,fk2,...)".',
+  'The stack is empty.' => '堆栈状态为空.',
+  'The system is unable to find the requested action "{action}".' => '系统无法找到请求的 "{action}" 动作.',
+  'The system view path "{path}" is not a valid directory.' => '系统 view 路径 "{path}" 不是一个有效的目录.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => '数据库中无法找到 active record class "{class}" 对应的 table "{table}".',
+  'The verification code is incorrect.' => '验证码不正确.',
+  'The view path "{path}" is not a valid directory.' => 'view 路径 "{path}" 不是一个有效的目录.',
+  'Theme directory "{directory}" does not exist.' => 'Theme 目录 "{directory}" 不存在.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => '内容需有 <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => '无法新增与已存在项目名称相同的新项目.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => '无法变更项目名称. 名称 "{name}" 已被其它项目使用.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => '无法产生应用程序状态文件 "{file}". 请确认存放此文件的目录存在并且允许 Web server process 写入.',
+  'Unable to lock file "{file}" for reading.' => '无法锁定文件 "{file}" 进行读取.',
+  'Unable to lock file "{file}" for writing.' => '无法锁定文件 "{file}" 进行写入.',
+  'Unable to read file "{file}".' => '无法读取文件 "{file}".',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => '无法再次重演 "{object}.{method}" 动作. 这个方法不存在.',
+  'Unable to write file "{file}".' => '无法写入文件 "{file}".',
+  'Unknown authorization item "{name}".' => '未知的授权项目 "{name}".',
+  'Unrecognized locale "{locale}".' => '无法辨识的地区设定 "{locale}".',
+  'View file "{file}" does not exist.' => '名为 "{file}" 的 View 档不存在.',
+  'Yii application can only be created once.' => 'Yii 应用程序只能被产生一次.',
+  'You are not authorized to perform this action.' => '您未被授权执行这个动作',
+  'Your request is not valid.' => '您的请求无效',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" 已被取用.',
+  '{attribute} cannot be blank.' => '{attribute} 不可为空白.',
+  '{attribute} is invalid.' => '{attribute} 无效.',
+  '{attribute} is not a valid URL.' => '{attribute} 不是有效的 URL.',
+  '{attribute} is not a valid email address.' => '{attribute} 不是有效的电子邮件地址.',
+  '{attribute} is not in the list.' => '{attribute} 不在列表之中.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} 长度错误 (应为 {length} 字符串).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} 数值太大 (最大值为 {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} 太长 (最大值为 {max} 字符串).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} 太短 (最小值为 {min} 字符串).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} 数值太小 (最小值为 {min}).',
+  '{attribute} must be a number.' => '{attribute} 必须为数字.',
+  '{attribute} must be an integer.' => '{attribute} 必须为整数.',
+  '{attribute} must be repeated exactly.' => '{attribute} 必须被重复.',
+  '{attribute} must be {type}.' => '{attribute} 必须为 {type}.',
+  '{className} does not support add() functionality.' => '{className} 不支持 add() 功能.',
+  '{className} does not support delete() functionality.' => '{className} 不支持 delete() 功能.',
+  '{className} does not support get() functionality.' => '{className} 不支持 get() 功能.',
+  '{className} does not support set() functionality.' => '{className} 不支持 set() 功能.',
+  '{class} does not have relation "{name}".' => '{class} 中没有名为 "{name}" 的关联.',
+  '{class} does not support fetching all table names.' => '{class} 不支持撷取所有 table 名称.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} 有一个无效的确认规则. 规则必须指明要被确认的属性以及确认器名称.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} 必须给定 "model" 与 "attribute" 或 "name" 属性值.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin 必须设为 true 才能使用 cookie-based 认证.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() 必须被实现.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} 无法找到请求的视图 "{view}".',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} 在它的 view "{view}" 中含有未被适当巢状套叠的 widget 标签. {widget} widget 中没有呼叫 endWidget().',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} 在它的视图中有一个额外的 endWidget({id}) 呼叫.',
+  '{widget} cannot find the view "{view}".' => '{widget} 无法找到这个视图 "{view}".',
+);

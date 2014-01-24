@@ -1,40 +1,34 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Http;
+
+use Guzzle\Http\EntityBody;
+
+/**
+ * @covers Guzzle\Http\AbstractEntityBodyDecorator
+ */
+class AbstractEntityBodyDecoratorTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testDecoratesEntityBody()
+    {
+        $e = EntityBody::factory();
+        $mock = $this->getMockForAbstractClass('Guzzle\Http\AbstractEntityBodyDecorator', array($e));
+
+        $this->assertSame($e->getStream(), $mock->getStream());
+        $this->assertSame($e->getContentLength(), $mock->getContentLength());
+        $this->assertSame($e->getSize(), $mock->getSize());
+        $this->assertSame($e->getContentMd5(), $mock->getContentMd5());
+        $this->assertSame($e->getContentType(), $mock->getContentType());
+        $this->assertSame($e->__toString(), $mock->__toString());
+        $this->assertSame($e->getUri(), $mock->getUri());
+        $this->assertSame($e->getStreamType(), $mock->getStreamType());
+        $this->assertSame($e->getWrapper(), $mock->getWrapper());
+        $this->assertSame($e->getWrapperData(), $mock->getWrapperData());
+        $this->assertSame($e->isReadable(), $mock->isReadable());
+        $this->assertSame($e->isWritable(), $mock->isWritable());
+        $this->assertSame($e->isConsumed(), $mock->isConsumed());
+        $this->assertSame($e->isLocal(), $mock->isLocal());
+        $this->assertSame($e->isSeekable(), $mock->isSeekable());
+        $this->assertSame($e->getContentEncoding(), $mock->getContentEncoding());
+    }
+}

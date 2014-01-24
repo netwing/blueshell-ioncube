@@ -1,39 +1,101 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QqAESkfWn/Wtmq3TlE0QLoObUqf1owP9TDjD
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ */
+
+//require 'Yay/Expectations/AbstractExpectation.php';
+//require 'Yay/Invocation.php';
+
+/**
+ * An Expectation which wants at least a set number of matching Invocations.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_Expectations_AtLeastExpectation
+  extends Yay_Expectations_AbstractExpectation
+{
+
+  /**
+   * The expected Invocation count.
+   * @var int
+   * @access private
+   */
+  private $_count = 0;
+
+  /**
+   * The number of matched Invocations.
+   * @var int
+   * @access private
+   */
+  private $_matched = 0;
+
+  /**
+   * Create a new AtLeastExpectation expecting at least $n Invocations.
+   * @param integer $n
+   */
+  public function __construct($n)
+  {
+    $this->_count = $n;
+  }
+
+  /**
+   * Test if all conditions of the Invocation are satisfied.
+   * @return boolean
+   */
+  public function isSatisfied()
+  {
+    return ($this->_matched >= $this->_count);
+  }
+
+  /**
+   * Increment the match counter by 1.
+   * @param Yay_Invocation $invocation
+   */
+  public function notifyMatchedInvocation(Yay_Invocation $invocation)
+  {
+    $this->_matched++;
+  }
+
+  /**
+   * Describe the boundaries of how many invocations can occur.
+   * @param Yay_Description $description
+   */
+  public function describeBounds(Yay_Description $description)
+  {
+    if ($this->_count > 0)
+    {
+      $description->appendText(sprintf('At least %d', $this->_count));
+    }
+    else
+    {
+      $description->appendText('Any number');
+    }
+  }
+
+  /**
+   * Describe the current status of this expectation.
+   * @param Yay_Description $description
+   */
+  public function describeSatisfaction(Yay_Description $description)
+  {
+    if ($this->_matched >= $this->_count)
+    {
+      $description->appendText(' already');
+    }
+    $description->appendText(sprintf(' occurred %d times', $this->_matched));
+  }
+
+}

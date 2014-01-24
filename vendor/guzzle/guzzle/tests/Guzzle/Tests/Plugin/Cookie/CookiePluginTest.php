@@ -1,87 +1,128 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/hDgnf/c11T4WO+EKv+Ybl4GCCnqmOI0ST71XzMlDaRAS9NI6kAAa74zNKmB3xtL1EalzzQ
-FI/cTDrLsC8QzxP0cYxITlmjwgrqVFLSiqHSFzk+tBhD1ci8atvoRN9iV5gkPDKAewwJJOB/fu4Q
-FyyVkiBofb/II+pZay/0VwsnjURt6wGMAEdk2jy1GiuHQ5VVs9FKb94zwFkXGrWxYyeBAIoWfxVv
-saUJym/b8Ebh4c5rAkSThQzHAE4xzt2gh9fl143SQNH+P7pDI6H7zXzxFbBOTSc/72oybQbJanXu
-qQCYXkAzUM/6GsF/91PZLp3Gxz61eNGr1IjuEhnTlWy/NWr3UfmEBD9y+9AcgFXjqlr0j1IJP0ds
-EFWSu45qP8qkkYsswWZlqfU5MtRR3wGsSMQyXqyCnLWMw7b0XmJGMkelkKkeqneEpjL/8lokM364
-j+0YZvFL4uSbv94O7+b8pzS/AFD5dIbKGSZz9J1lP+KCSj47ZP+gA/0VL8cKcIlK9Qg1Ks//LRW4
-VjcKWLR4kFZEJjU9nuWiGYV4BaCw+L6btFnYFbE3vqnXk964kjx/NiIhZXLWz93mi2A4OMEilfK6
-txLCR6udxd5AAoQ6Fy7fbJROqnf7OxvzvBxM8OXkVxbBWZCK4e6i5a6DrbVEUdmGfZgvpRbIMNUN
-0qG7G6gZCiYQPXJH4L2cefCelhG9MtV0Dpb1ObhzEFoNVWq+fsvKEawnVVbLC58Zjtj5JcbhqMDc
-9L/RM4PXBzAbjC+3SZDg3ZinMJfvmgtxiTBrvgPC9iwRGNW9jRaR2plGbQUkGcVUIiHVjBN5AfXa
-GS/bDdAOpuDmUPNEALkxXZfPMn+glYLIcnGqnOUbc9XwcK6kU4IH1U67boFinfEI/T9/BiD0tbee
-89ejz3WEq/sNJu1ifq2fl+zow6y+H8C8LvqzQHgC+WZkwkihsK8fq7iWNM3HXniTdcmhnFG1sNJ/
-ogtAzX8ht2BvvvI0aEBvnl0PkUsBFJa6PXgK3zzqSgTNISIxxhvkI+1hxiY0k8US26ELOm1Upr/6
-JKxP9pAQgzjcoQBoY94gmvxiq0/f5JhYw6PzxCC906g6hJFQT5nXqV3KabFUPGemB40hsBAtaK3U
-Jno+zQIK4doPyIHHA56uehB7zoV7y8Ii5b9fpJWDf5Tjvur0k/bXgw8MoVr4A8+cDkdaGsc9K7Ip
-NLPFq7GAaivJ7K3450p0+VJrlS0Cirb+veuqpGDqddArutgLnZdVv7+6+URqCnyBhDUz0sdQeaMI
-tx6fS+NIQ4ZiIKGL4Zke8B9nay8iOMb8ICxb0/z7B/D6BmVT5L1d8RUM/caHscJG06dkhVyIaY17
-jirMDuN50Z6eeYWgLBOvSpXbGy4ZzBnnQ3zMQwr0BMWgGd5ClmoT0Olk0ktAtn5xSnqNwofXaW2M
-ATbovgHUIjTIvXSRHFpGUxulAPpDkIDt2zRD8MfTTS2AGyD3DGotC+imZTLN3h2rePv7c8O1LcWT
-NuJ6tkVtKhajzwVqcU6586x3xldMXlM+Skfn4n23/Laar6URJulW9YYx84syaAJMjWFBnhN/sVf4
-kXIo+Lhj8YkHH2J6czV/j18UgJEKb+bpBEbrIYD+0W+zN/FGe4mqW5ht4MlJwatvKOkDrLGoZu5F
-/qf8aLYwaWXgIxK4WXgzhnoFhlKlOPsk3tUjEpsJ8HHYmpNp3MW8QmYhiwTd9K95x5QVFkYNvPer
-akkqXe63DYv6n1f1ObjfSOGsb8FTzNOfqs2Car8kaQC7o6t/MuElO8maGlMUvk5Fhi6a1cpkj3Zm
-ysyxuZMhNztUE82wHlKJIBSOkp0F0ZSB6Hk4Ghh34T4sWRYKZ3f1bXNJ/8y3He+x6hqQVIg/e845
-ifqFmNBtuQiAUcuNBjX/2EQvt8YZpVoTbJjeYncU+FuFC98Cn4mauTVmFmPBEbjnRo71OGsOCXQZ
-4hPdkJE5nfJ9HYzpy/79PkJXzxaDTOze+oPP7s3/9dOunVo/K8T+ixVqMvtz5SKOsA/mT74OG5KJ
-zRc8tH2EspuJ5hccePxBI+AqBM8hqONKBvKbWiiARrvF7VvrJtvguZvpbfabEjmBKeuPxYH2QLRi
-sDJxclrjfajlCm8Qp4Zg8wp6a3jvhOwGCGxfj9oaW/8OkmJRsDj6BFRV8/wEj5W8griNEIOZiiAj
-0uwau9G4o6a4Dx57I/au4X1eDEfxAlbYoa6bfF9H9IA3XwhfKoAAs7xq/hUvxxeEg4sYRMpKS/BT
-2EzqeHgVif2Ux0AIlX2EUn2SjnaYQ2Ikq65xntb6Jd7eBp996EUjDLoTk36/aX4tPHguLsJ/WXcp
-BNpmuWLErV/KCzgBXIIsJDhOjOfNgFneCCf6FSwtuC/GoUUWxF55pnpMVQmF8HgERwYk+cCOl6ei
-zbIcY4vi0IThyRUDrCUJS2kVzHqtzMLItlm0xRyJMliEIJgyd8btStix/vGzvgvCW21Lpn7mRiM4
-sFvMaelJZIixMY5uZP5Q2Gxy32JFORgTGPhWNMU20OolA5al7l/234vRXK3GYMqEmIE0/lR0pncS
-o8pCrEBTA69NmUUbUOiTacfjSGa40j5kcsyLi3+KcKslV4LP0BYcQJkmouK/OkIwMfqDgUxThvfq
-6E3/iHLqfB/8ExycKNHxifWVdIjM43JEkO8DRYw/UElO4I4FmHTX/r/vQDOkHQd3tMYV3/WYsv31
-4bTUWkzbRb6i09dJ2rLbpQkYGD1GcSTYY39JOkaD9HYw15lpjYw6YfxyA/EIqPtas3dvvwQnH5xf
-93IyaMod4gP5J1RxWArop75v5p71RPCcj1XKD1IWoJ6SkGZ9zRV9ptshoiqSrmtURwpxpeNRZNee
-kQqzOchRLszN25Z5r6HGZ2AujI0X0Q1IUsycSlh2gbdRL2VUWB58QFcHlr92dj9vvtxbpxWdwjs1
-vyrerTVLjpLm7skv1igsaU4YdIDosm7ILOMY3Glai/IQhYPUmxZDkjE8TEPKVQ4bu/Be42Rn4wpw
-FkkABFiZbF4S4rwfJQQRhFrv9F5Y+jMsZkqszF2rDSn/DrCvdTf5mCU1ecFLAqpKIHGcqrK/9kOP
-hhmuemGYTyA9DwbLyBb9wIvZYn+oxnegAJ73gQ0wxCKCEbf451+MaAmjxfVBxu2qc+KrP6TIs7/b
-qaWV83+OwTX9J2m2ExEUWT2+jSEtKIBAGe2y89bzO24/4tmTrG2BUyzDJtLaykkhcIwZMtAy4Vst
-20s4qtPTLyKND9vW0IndUbhQneL7yCjqmj6pZWsb/CX7Kd9N9T9CFdEO5sDckFBCDaNoE5lAlmmD
-l86xUYXN3f24Dj9q8vglI4wproiSbkOR2KyeV35ybHFgldYK5QTHRA+W5msRDlygSZ137q1I98FF
-MO/j9Y3CJ2O8ixSa+IAws2q4J995b7LI8b6rGrFoYdyXKG/Sdjdv30ZNia453eneZfTGfANyJ/JV
-VgZc+d5CmedRRzAudW52Kb9PoGMErXnAMvSdnEcGJKQdyjs0s1cEtI9QfWhqHYudHFXnrAmhgUKC
-XnJwvwEJHIS6VGEJxQCjaniq+IrdLIn1ytVNvm3w13qKhTMfSYUMbGx2D1zLk+zzbMDcrkTpwtKq
-nnVD4iCKwsM5gQOjG7ujHgI8Pdfzyqkz8eSpuoy+CC6KP91oGP083ZHjSS6qnf9udEOpkaQKGrRY
-y/IZv+JDGbwB/74Gy/d76eWRgouTqOtK5i5xABxuymz/Ivw5Gls2Dt4hxUmcK+PfbflGT7cqCVWW
-y0H95wpZ80pf6wReXZKkRNzec4lljseibdqaM3vXRWFPSgzflvvw/m0SWbQmBiTHzmDskEDRqyQ5
-7EpVHsX1yjfBqTiMJlVnnXvuu4j2PjmA1f6kcn0h+7YOPsFqTFwvsZysAEK+5+0fjn3GrIIiGpez
-7uGI1waSUCS7+Bcg4GU7hGcT7PkMK5CsNitChjh1b697WqaiBL6tngc6o4nrSbpxs0juE+zmg/Dq
-0LZij+xEyt+ABuQUW4c/6Y9Ijo/md09qeSDabnqojulbhb5VKuYSB5hAWA9SVPhuSIB/yN3hvrSu
-gf1H61lnMfy8m+iHwkOaHC2VhV4cuAFq2wnFhx/ciq3ehQ6RVwZ7HxKWDhDl/5CeEBRCA2UaZVgQ
-UgdrGSMNJV9j9ROOImQ77JPxPtxPOMo0n4uKZSqrgm+LvLs+bAEE4LPwKVGnUusyIt7Q9jEJ11Uj
-BhSe0S2LUdbUHWk6v/bIkKtEVWP83/KZCyXLD1muzuyDUHUobzl2UJLHf1ZAcs5GRJG9kW8LBPQe
-D7jhbailg9zfoXpw4dIDFY/RYOxVPdInUHwYuIMdg2FEt+wYz8cLyp5Sjn7/UYzDvCciPk/BEky9
-pEPMwqSn9uJbf3XBtdEvm0/SUjFz1OY9XIS7j2P4vix5ZmM2fDQ2qoBQA9CrDCrXhD6qQuOEjbJv
-zJ7wjHgjtLuLDadCVxGHeiD36t7Idsjz83bUBYOZqjISUuuuSAAr0suvMmimA80/3tEldjJj+cEl
-4y+GrGx3ofoQR7Zr1cOJGcOsY9gP89bYRrO9CmnWlXBZbPAaSkk80LkncMzUXKSSBaYdv8+tWBDM
-yaVBcrL8FTI0GlQk8B3xENUowvs5IQ13XSSF6cjOm7k9EHOnbj+SDXSFDLqLU4POoeQjwdR/eXOm
-bx9eBfKbhBbmANOa5focx4YpkFdnwHVY8OXTEHHjZ2ObKRr+b4eCkL4nvKcL7uRs4uw8wry8hLFt
-FsKOer8Aj7MzwxNr4oQEsSNtDiU23vCEDBCXvJwT1w5k8STIk0YnViBMiP4l1kByNEPsx8oK4ryO
-GshexeonyqKb846SDvBKvlN1mRMc8jFjJPWh3wWQ4zLfP2tJXmn58cQWz4jElgKZ402IeobPGDbw
-HbGQsAoW7kikEKghZu9fxByuOmkwpE5lBwR+bZTv0VsvxsRifH25VASqawXtioVI/SUYjbHnRLP4
-dNYUiUUO5HfodVFUzLyX8eg5FaeNhrr4SBntiByAYEOYj7geXvc9zvjJtwG4hJkXxdk6YVk0qWy9
-TABb7TMrabwt04cFpaPsY8M8HG9UxScPQXbloDAmiBfO5dVre1//oUsBizQug/1PzBrgmCiLqKz8
-3higNoyv+th5AS1KG9qAJDnw7Elw4SWHIq30DITRq92xUjltUJil7MHRQ7n5MBFyj9lBzrWcH9D+
-Kim/KTn85lSAr54tiFVRROLG0Yai6kupMcrFWs2yLOpk+9OTlha0eu6eY+36S+7DVdxEWCTtl3Bt
-XjWOj6WMbGNZyVo75oYazCwGBoUdGwAHl7uISOU4OqMyJfjcBAbD8zwuT6I2t8YqCSzJt9oAYsKI
-DXAXeCrqZMOoNT6ofpcfWLiUgkzOL+yv5kg1qXMiYmax33hT3sVQOzdSWzpXGP/76RnDuIxrgEZN
-tHb+Ypgxi4aW4V/p9g+X7JHkcTVopo8OtmylrieCt8yFXdwReTYwwrOSuHPaeCeTNkKCukFQERG4
-LJq7MxnneypvzXc2dcmMX45yPttgEtAxpttcuT4RYqv362xRg8p3vTTUT3gk0GFRt6YT6spNvVl3
-OaShSrvzHJlZO/e313dyYt+NM4+4cB5TSiPT3GTgphyLFNJLzlue1wEV9FDxM8r2YT5ep5HsXQG5
-Azso0JJg2cj96kx0uif9IK50wEw6GYLW2mETmNQ7s4j4JTnb3NG8WvQWdvFSchzvan4GR7mF+E8N
-jBkpa19KasVjLT2FwOfbz9gCewjmqT4oGWkfp8LskyP5c/E5T0zAHiydJlzoGg3caxAJt8bOFKYZ
-k8FLebXVrCADgIx5vVz/j+Q/oNV62dZOPtW4RvwvSG7bi8D/ItBJeJIoOiTfvU9IrBSbs+sApYUu
-RpZMeteEaAUe4eruSZbGOh3MPJC1pLM+5BHe8fS1jmsYFXhm9GofsiXLL3/tBWe6nO/5LSHR6Ie1
-7cFE+uk2qC4nDlQreslc3NC49YrsojNp708JeIU5Ppx19U4+zq9z5rcxH/TGfRERWTcvr0c2cZ4G
-tK+eBPgx8pV3Ixikxko7j7/Gpodr8BLGu5VZw8AOiXPPMIGB/hEhcZ/5+4Fi1XaF6WLnbwkj1nkR
-jL4B/qjnwFZGq3dJNHoAGkSF6GBeV7osJoN5qS6pLdTF7YL1FcqnDcIEc4O0XvNEpRXkVApBz2eU
-vhfiQmQO2dK1Q0Y+E7ZLMPeS6Fcq30uKDpSofL34j5ji6EcEo5EtPVvY6smCYmhgQAEqPkgHJcA/
-5/OhkHLDgOeSFQ7GI0cW0GaaKsxRkbI7j6zVRGXkV2dfuRebKejvlOFM/KO=
+<?php
+
+namespace Guzzle\Tests\Plugin\Cookie;
+
+use Guzzle\Common\Event;
+use Guzzle\Plugin\Cookie\Cookie;
+use Guzzle\Plugin\Cookie\CookieJar\ArrayCookieJar;
+use Guzzle\Http\Client;
+use Guzzle\Http\Message\Response;
+use Guzzle\Plugin\Cookie\CookiePlugin;
+
+/**
+ * @group server
+ * @covers Guzzle\Plugin\Cookie\CookiePlugin
+ */
+class CookiePluginTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testExtractsAndStoresCookies()
+    {
+        $response = new Response(200);
+        $mock = $this->getMockBuilder('Guzzle\Plugin\Cookie\CookieJar\ArrayCookieJar')
+            ->setMethods(array('addCookiesFromResponse'))
+            ->getMock();
+
+        $mock->expects($this->exactly(1))
+            ->method('addCookiesFromResponse')
+            ->with($response);
+
+        $plugin = new CookiePlugin($mock);
+        $plugin->onRequestSent(new Event(array(
+            'response' => $response
+        )));
+    }
+
+    public function testAddsCookiesToRequests()
+    {
+        $cookie = new Cookie(array(
+            'name'  => 'foo',
+            'value' => 'bar'
+        ));
+
+        $mock = $this->getMockBuilder('Guzzle\Plugin\Cookie\CookieJar\ArrayCookieJar')
+            ->setMethods(array('getMatchingCookies'))
+            ->getMock();
+
+        $mock->expects($this->once())
+            ->method('getMatchingCookies')
+            ->will($this->returnValue(array($cookie)));
+
+        $plugin = new CookiePlugin($mock);
+
+        $client = new Client();
+        $client->getEventDispatcher()->addSubscriber($plugin);
+
+        $request = $client->get('http://www.example.com');
+        $plugin->onRequestBeforeSend(new Event(array(
+            'request' => $request
+        )));
+
+        $this->assertEquals('bar', $request->getCookie('foo'));
+    }
+
+    public function testCookiesAreExtractedFromRedirectResponses()
+    {
+        $plugin = new CookiePlugin(new ArrayCookieJar());
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 302 Moved Temporarily\r\n" .
+            "Set-Cookie: test=583551; expires=Wednesday, 23-Mar-2050 19:49:45 GMT; path=/\r\n" .
+            "Location: /redirect\r\n\r\n",
+            "HTTP/1.1 200 OK\r\n" .
+            "Content-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\n" .
+            "Content-Length: 0\r\n\r\n"
+        ));
+
+        $client = new Client($this->getServer()->getUrl());
+        $client->getEventDispatcher()->addSubscriber($plugin);
+
+        $client->get()->send();
+        $request = $client->get();
+        $request->send();
+        $this->assertEquals('test=583551', $request->getHeader('Cookie'));
+
+        $requests = $this->getServer()->getReceivedRequests(true);
+        // Confirm subsequent requests have the cookie.
+        $this->assertEquals('test=583551', $requests[2]->getHeader('Cookie'));
+        // Confirm the redirected request has the cookie.
+        $this->assertEquals('test=583551', $requests[1]->getHeader('Cookie'));
+    }
+
+    public function testCookiesAreNotAddedWhenParamIsSet()
+    {
+        $jar = new ArrayCookieJar();
+        $plugin = new CookiePlugin($jar);
+
+        $jar->add(new Cookie(array(
+            'domain'  => 'example.com',
+            'path'    => '/',
+            'name'    => 'test',
+            'value'   => 'hi',
+            'expires' => time() + 3600
+        )));
+
+        $client = new Client('http://example.com');
+        $client->getEventDispatcher()->addSubscriber($plugin);
+
+        // Ensure that it is normally added
+        $request = $client->get();
+        $request->setResponse(new Response(200), true);
+        $request->send();
+        $this->assertEquals('hi', $request->getCookie('test'));
+
+        // Now ensure that it is not added
+        $request = $client->get();
+        $request->getParams()->set('cookies.disable', true);
+        $request->setResponse(new Response(200), true);
+        $request->send();
+        $this->assertNull($request->getCookie('test'));
+    }
+
+    public function testProvidesCookieJar()
+    {
+        $jar = new ArrayCookieJar();
+        $plugin = new CookiePlugin($jar);
+        $this->assertSame($jar, $plugin->getCookieJar());
+    }
+}

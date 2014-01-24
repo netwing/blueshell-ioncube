@@ -1,67 +1,79 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+Yii::import('system.db.CDbConnection');
+Yii::import('system.db.ar.CActiveRecord');
+
+require_once(dirname(__FILE__).'/../../db/data/models.php');
+
+/**
+ * CJSON Test
+ */
+class CJSONTest extends CTestCase {
+	private $db;
+
+	protected function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->db=new CDbConnection('sqlite::memory:');
+		$this->db->active=true;
+		$this->db->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/../../db/data/sqlite.sql'));
+		CActiveRecord::$db=$this->db;
+	}
+
+	protected function tearDown()
+	{
+		$this->db->active=false;
+	}
+
+	/**
+	 * native json_encode can't do it
+	 * @return void
+	 */
+	public function testEncodeSingleAR(){
+		$post = Post::model()->findByPk(1);
+		$this->assertEquals(
+			'{"id":"1","title":"post 1","create_time":"100000","author_id":"1","content":"content 1"}',
+			CJSON::encode($post)
+		);
+	}
+
+	/**
+	 * native json_encode can't do it
+	 * @return void
+	 */
+	public function testEncodeMultipleARs(){
+		$posts=Post::model()->findAllByPk(array(1, 2));
+		$this->assertEquals(
+			'[{"id":"1","title":"post 1","create_time":"100000","author_id":"1","content":"content 1"},{"id":"2","title":"post 2","create_time":"100001","author_id":"2","content":"content 2"}]',
+			CJSON::encode($posts)
+		);
+	}
+
+	public function testEncodeSimple(){
+		$this->assertEquals("true", CJSON::encode(true));
+		$this->assertEquals("false", CJSON::encode(false));
+		$this->assertEquals("null", CJSON::encode(null));
+		$this->assertEquals("123", CJSON::encode(123));
+		$this->assertEquals("123.12", CJSON::encode(123.12));
+		$this->assertEquals('"test\\\\me"', CJSON::encode('test\me'));
+	}
+
+	public function testEncodeArray(){
+		$objArr = array('a' => 'b');
+		$arrArr = array('a', 'b');
+		$mixedArr = array('c', 'a' => 'b');
+		$nestedArr = array('a', 'b' => array('a', 'b' => 'c'));
+
+		$this->assertEquals('{"a":"b"}', CJSON::encode($objArr));
+		$this->assertEquals('["a","b"]', CJSON::encode($arrArr));
+		$this->assertEquals('{"0":"c","a":"b"}', CJSON::encode($mixedArr));
+		$this->assertEquals('{"0":"a","b":{"0":"a","b":"c"}}', CJSON::encode($nestedArr));
+	}
+
+	public function testDecode(){
+		$this->assertEquals(array('c', 'a' => 'b'), CJSON::decode('{"0":"c","a":"b"}'));
+		$this->assertEquals(array('a', 'b'), CJSON::decode('["a","b"]'));
+		$this->assertEquals(array('a', 'b' => array('a', 'b' => 'c')), CJSON::decode('{"0":"a","b":{"0":"a","b":"c"}}'));
+	}
+}

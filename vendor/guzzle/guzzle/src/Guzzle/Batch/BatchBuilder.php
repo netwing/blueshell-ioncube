@@ -1,71 +1,199 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-2LEM
+<?php
+
+namespace Guzzle\Batch;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Common\Exception\RuntimeException;
+
+/**
+ * Builder used to create custom batch objects
+ */
+class BatchBuilder
+{
+    /** @var bool Whether or not the batch should automatically flush*/
+    protected $autoFlush = false;
+
+    /** @var bool Whether or not to maintain a batch history */
+    protected $history = false;
+
+    /** @var bool Whether or not to buffer exceptions encountered in transfer */
+    protected $exceptionBuffering = false;
+
+    /** @var mixed Callable to invoke each time a flush completes */
+    protected $afterFlush;
+
+    /** @var BatchTransferInterface Object used to transfer items in the queue */
+    protected $transferStrategy;
+
+    /** @var BatchDivisorInterface Object used to divide the queue into batches */
+    protected $divisorStrategy;
+
+    /** @var array of Mapped transfer strategies by handle name */
+    protected static $mapping = array(
+        'request' => 'Guzzle\Batch\BatchRequestTransfer',
+        'command' => 'Guzzle\Batch\BatchCommandTransfer'
+    );
+
+    /**
+     * Create a new instance of the BatchBuilder
+     *
+     * @return BatchBuilder
+     */
+    public static function factory()
+    {
+        return new self();
+    }
+
+    /**
+     * Automatically flush the batch when the size of the queue reaches a certain threshold. Adds {@see FlushingBatch}.
+     *
+     * @param $threshold Number of items to allow in the queue before a flush
+     *
+     * @return BatchBuilder
+     */
+    public function autoFlushAt($threshold)
+    {
+        $this->autoFlush = $threshold;
+
+        return $this;
+    }
+
+    /**
+     * Maintain a history of all items that have been transferred using the batch. Adds {@see HistoryBatch}.
+     *
+     * @return BatchBuilder
+     */
+    public function keepHistory()
+    {
+        $this->history = true;
+
+        return $this;
+    }
+
+    /**
+     * Buffer exceptions thrown during transfer so that you can transfer as much as possible, and after a transfer
+     * completes, inspect each exception that was thrown. Enables the {@see ExceptionBufferingBatch} decorator.
+     *
+     * @return BatchBuilder
+     */
+    public function bufferExceptions()
+    {
+        $this->exceptionBuffering = true;
+
+        return $this;
+    }
+
+    /**
+     * Notify a callable each time a batch flush completes. Enables the {@see NotifyingBatch} decorator.
+     *
+     * @param mixed $callable Callable function to notify
+     *
+     * @return BatchBuilder
+     * @throws InvalidArgumentException if the argument is not callable
+     */
+    public function notify($callable)
+    {
+        $this->afterFlush = $callable;
+
+        return $this;
+    }
+
+    /**
+     * Configures the batch to transfer batches of requests. Associates a {@see \Guzzle\Http\BatchRequestTransfer}
+     * object as both the transfer and divisor strategy.
+     *
+     * @param int $batchSize Batch size for each batch of requests
+     *
+     * @return BatchBuilder
+     */
+    public function transferRequests($batchSize = 50)
+    {
+        $className = self::$mapping['request'];
+        $this->transferStrategy = new $className($batchSize);
+        $this->divisorStrategy = $this->transferStrategy;
+
+        return $this;
+    }
+
+    /**
+     * Configures the batch to transfer batches commands. Associates as
+     * {@see \Guzzle\Service\Command\BatchCommandTransfer} as both the transfer and divisor strategy.
+     *
+     * @param int $batchSize Batch size for each batch of commands
+     *
+     * @return BatchBuilder
+     */
+    public function transferCommands($batchSize = 50)
+    {
+        $className = self::$mapping['command'];
+        $this->transferStrategy = new $className($batchSize);
+        $this->divisorStrategy = $this->transferStrategy;
+
+        return $this;
+    }
+
+    /**
+     * Specify the strategy used to divide the queue into an array of batches
+     *
+     * @param BatchDivisorInterface $divisorStrategy Strategy used to divide a batch queue into batches
+     *
+     * @return BatchBuilder
+     */
+    public function createBatchesWith(BatchDivisorInterface $divisorStrategy)
+    {
+        $this->divisorStrategy = $divisorStrategy;
+
+        return $this;
+    }
+
+    /**
+     * Specify the strategy used to transport the items when flush is called
+     *
+     * @param BatchTransferInterface $transferStrategy How items are transferred
+     *
+     * @return BatchBuilder
+     */
+    public function transferWith(BatchTransferInterface $transferStrategy)
+    {
+        $this->transferStrategy = $transferStrategy;
+
+        return $this;
+    }
+
+    /**
+     * Create and return the instantiated batch
+     *
+     * @return BatchInterface
+     * @throws RuntimeException if no transfer strategy has been specified
+     */
+    public function build()
+    {
+        if (!$this->transferStrategy) {
+            throw new RuntimeException('No transfer strategy has been specified');
+        }
+
+        if (!$this->divisorStrategy) {
+            throw new RuntimeException('No divisor strategy has been specified');
+        }
+
+        $batch = new Batch($this->transferStrategy, $this->divisorStrategy);
+
+        if ($this->exceptionBuffering) {
+            $batch = new ExceptionBufferingBatch($batch);
+        }
+
+        if ($this->afterFlush) {
+            $batch = new NotifyingBatch($batch, $this->afterFlush);
+        }
+
+        if ($this->autoFlush) {
+            $batch = new FlushingBatch($batch, $this->autoFlush);
+        }
+
+        if ($this->history) {
+            $batch = new HistoryBatch($batch);
+        }
+
+        return $batch;
+    }
+}

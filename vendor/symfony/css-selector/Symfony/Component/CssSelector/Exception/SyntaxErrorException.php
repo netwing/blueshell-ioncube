@@ -1,36 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Exception;
+
+use Symfony\Component\CssSelector\Parser\Token;
+
+/**
+ * ParseException is thrown when a CSS selector syntax is not valid.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class SyntaxErrorException extends ParseException implements ExceptionInterface
+{
+    /**
+     * @param string $expectedValue
+     * @param Token  $foundToken
+     *
+     * @return SyntaxErrorException
+     */
+    public static function unexpectedToken($expectedValue, Token $foundToken)
+    {
+        return new self(sprintf('Expected %s, but %s found.', $expectedValue, $foundToken));
+    }
+
+    /**
+     * @param string $pseudoElement
+     * @param string $unexpectedLocation
+     *
+     * @return SyntaxErrorException
+     */
+    public static function pseudoElementFound($pseudoElement, $unexpectedLocation)
+    {
+        return new self(sprintf('Unexpected pseudo-element "::%s" found %s.', $pseudoElement, $unexpectedLocation));
+    }
+
+    /**
+     * @param int $position
+     *
+     * @return SyntaxErrorException
+     */
+    public static function unclosedString($position)
+    {
+        return new self(sprintf('Unclosed/invalid string at %s.', $position));
+    }
+
+    /**
+     * @return SyntaxErrorException
+     */
+    public static function nestedNot()
+    {
+        return new self('Got nested ::not().');
+    }
+
+    /**
+     * @return SyntaxErrorException
+     */
+    public static function stringAsFunctionArgument()
+    {
+        return new self('String not allowed as function argument.');
+    }
+}

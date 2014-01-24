@@ -1,281 +1,450 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-SU9FT8Pv6hZO7c43gT5MGxq=
+<?php
+/**
+* Smarty PHPunit tests for cache resource file
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for cache resource file tests
+*/
+class CacheResourceFileTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smartyBC = SmartyTests::$smartyBC;
+        // reset cache for unit test
+        Smarty_CacheResource::$resources = array();
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    protected function relative($path)
+    {
+        $path = str_replace( dirname(__FILE__), '.', $path );
+        if (DS == "\\") {
+            $path = str_replace( "\\", "/", $path );
+        }
+
+        return $path;
+    }
+
+    /**
+    * test getCachedFilepath with use_sub_dirs enabled
+    */
+    public function testGetCachedFilepathSubDirs()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $sha1 = sha1($this->smarty->getTemplateDir(0) . 'helloworld.tpl');
+        $expected = sprintf('./cache/%s/%s/%s/%s.helloworld.tpl.php',
+            substr($sha1, 0, 2),
+            substr($sha1, 2, 2),
+            substr($sha1, 4, 2),
+            $sha1
+        );
+        $this->assertEquals($expected, $this->relative($tpl->cached->filepath));
+    }
+    /**
+    * test getCachedFilepath with cache_id
+    */
+    public function testGetCachedFilepathCacheId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar');
+        $sha1 = sha1($this->smarty->getTemplateDir(0) . 'helloworld.tpl');
+        $expected = sprintf('./cache/foo/bar/%s/%s/%s/%s.helloworld.tpl.php',
+            substr($sha1, 0, 2),
+            substr($sha1, 2, 2),
+            substr($sha1, 4, 2),
+            $sha1
+        );
+        $this->assertEquals($expected, $this->relative($tpl->cached->filepath));
+    }
+    /**
+    * test getCachedFilepath with compile_id
+    */
+    public function testGetCachedFilepathCompileId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', null, 'blar');
+        $sha1 = sha1($this->smarty->getTemplateDir(0) . 'helloworld.tpl');
+        $expected = sprintf('./cache/blar/%s/%s/%s/%s.helloworld.tpl.php',
+            substr($sha1, 0, 2),
+            substr($sha1, 2, 2),
+            substr($sha1, 4, 2),
+            $sha1
+        );
+        $this->assertEquals($expected, $this->relative($tpl->cached->filepath));
+    }
+    /**
+    * test getCachedFilepath with cache_id and compile_id
+    */
+    public function testGetCachedFilepathCacheIdCompileId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $sha1 = sha1($this->smarty->getTemplateDir(0) . 'helloworld.tpl');
+        $expected = sprintf('./cache/foo/bar/blar/%s/%s/%s/%s.helloworld.tpl.php',
+            substr($sha1, 0, 2),
+            substr($sha1, 2, 2),
+            substr($sha1, 4, 2),
+            $sha1
+        );
+        $this->assertEquals($expected, $this->relative($tpl->cached->filepath));
+    }
+    /**
+    * test cache->clear_all with cache_id and compile_id
+    */
+    public function testClearCacheAllCacheIdCompileId()
+    {
+        $this->smarty->clearAllCache();
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertEquals(1, $this->smarty->clearAllCache());
+    }
+    /**
+    * test cache->clear with cache_id and compile_id
+    */
+    public function testClearCacheCacheIdCompileId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        $this->smarty->use_sub_dirs = false;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(2, $this->smarty->clearCache(null, 'foo|bar'));
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertFalse(file_exists($tpl3->cached->filepath));
+    }
+    public function testSmarty2ClearCacheCacheIdCompileId()
+    {
+        $this->smartyBC->caching = true;
+        $this->smartyBC->cache_lifetime = 1000;
+        $this->smartyBC->clearAllCache();
+        $this->smartyBC->use_sub_dirs = false;
+        $tpl = $this->smartyBC->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smartyBC->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smartyBC->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->smartyBC->clear_cache(null, 'foo|bar');
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertFalse(file_exists($tpl3->cached->filepath));
+    }
+
+    public function testSmarty2ClearCacheCacheIdCompileIdSub()
+    {
+        $this->smartyBC->caching = true;
+        $this->smartyBC->cache_lifetime = 1000;
+        $this->smartyBC->clearAllCache();
+        $this->smartyBC->use_sub_dirs = true;
+        $tpl = $this->smartyBC->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smartyBC->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smartyBC->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->smartyBC->clear_cache(null, 'foo|bar');
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertFalse(file_exists($tpl3->cached->filepath));
+    }
+
+    public function testClearCacheCacheIdCompileId2()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = false;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(2, $this->smarty->clearCache('helloworld.tpl'));
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+    }
+    public function testSmarty2ClearCacheCacheIdCompileId2()
+    {
+        $this->smartyBC->caching = true;
+        $this->smartyBC->cache_lifetime = 1000;
+        $this->smartyBC->use_sub_dirs = false;
+        $this->smartyBC->clearAllCache();
+        $tpl = $this->smartyBC->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smartyBC->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smartyBC->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->smartyBC->clear_cache('helloworld.tpl');
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+    }
+
+    public function testClearCacheCacheIdCompileId2Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(2, $this->smarty->clearCache('helloworld.tpl'));
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+    }
+    public function testClearCacheCacheIdCompileId3()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        $this->smarty->use_sub_dirs = false;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+    }
+    public function testClearCacheCacheIdCompileId3Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        $this->smarty->use_sub_dirs = true;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+    }
+    public function testClearCacheCacheIdCompileId4()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = false;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+    }
+    public function testClearCacheCacheIdCompileId4Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+    }
+    public function testClearCacheCacheIdCompileId5()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = false;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(2, $this->smarty->clearCache(null, null, 'blar'));
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertFalse(file_exists($tpl3->cached->filepath));
+    }
+    public function testClearCacheCacheIdCompileId5Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl',  'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertEquals(2, $this->smarty->clearCache(null, null, 'blar'));
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertFalse(file_exists($tpl3->cached->filepath));
+    }
+    public function testClearCacheCacheFile()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = false;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl',null,'bar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld.tpl','buh|blar');
+        $tpl3->writeCachedContent('hello world');
+        $tpl4 = $this->smarty->createTemplate('helloworld2.tpl');
+        $tpl4->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertTrue(file_exists($tpl4->cached->filepath));
+        $this->assertEquals(3, $this->smarty->clearCache('helloworld.tpl'));
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertFalse(file_exists($tpl3->cached->filepath));
+        $this->assertTrue(file_exists($tpl4->cached->filepath));
+    }
+    public function testClearCacheCacheFileSub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->use_sub_dirs = true;
+        $this->smarty->clearAllCache();
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl',null,'bar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld.tpl','buh|blar');
+        $tpl3->writeCachedContent('hello world');
+        $tpl4 = $this->smarty->createTemplate('helloworld2.tpl');
+        $tpl4->writeCachedContent('hello world');
+        $this->assertTrue(file_exists($tpl->cached->filepath));
+        $this->assertTrue(file_exists($tpl2->cached->filepath));
+        $this->assertTrue(file_exists($tpl3->cached->filepath));
+        $this->assertTrue(file_exists($tpl4->cached->filepath));
+        $this->assertEquals(3, $this->smarty->clearCache('helloworld.tpl'));
+        $this->assertFalse(file_exists($tpl->cached->filepath));
+        $this->assertFalse(file_exists($tpl2->cached->filepath));
+        $this->assertFalse(file_exists($tpl3->cached->filepath));
+        $this->assertTrue(file_exists($tpl4->cached->filepath));
+    }
+
+    public function testSharing()
+    {
+        $smarty = new Smarty();
+        $smarty->caching = true;
+        $_smarty = clone $smarty;
+        $smarty->fetch('string:foo');
+        $_smarty->fetch('string:foo');
+
+        $this->assertTrue($smarty->_cacheresource_handlers['file'] === $_smarty->_cacheresource_handlers['file']);
+    }
+
+    public function testExplicit()
+    {
+        $smarty = new Smarty();
+        $smarty->caching = true;
+        $_smarty = clone $smarty;
+        $smarty->fetch('string:foo');
+        $_smarty->registerCacheResource('file', new Smarty_Internal_CacheResource_File());
+        $_smarty->fetch('string:foo');
+
+        $this->assertFalse($smarty->_cacheresource_handlers['file'] === $_smarty->_cacheresource_handlers['file']);
+    }
+
+    /**
+    * final cleanup
+    */
+    public function testFinalCleanup2()
+    {
+        $this->smarty->clearCompiledTemplate();
+        $this->smarty->clearAllCache();
+    }
+}

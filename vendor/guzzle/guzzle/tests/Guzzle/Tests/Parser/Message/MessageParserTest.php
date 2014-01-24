@@ -1,42 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-bzGrs9fIhM6x+6sTfoIEErK6iV8bsJqegeZBYYi=
+<?php
+
+namespace Guzzle\Tests\Parser\Message;
+
+use Guzzle\Parser\Message\MessageParser;
+
+/**
+ * @covers Guzzle\Parser\Message\AbstractMessageParser
+ * @covers Guzzle\Parser\Message\MessageParser
+ */
+class MessageParserTest extends MessageParserProvider
+{
+    /**
+     * @dataProvider requestProvider
+     */
+    public function testParsesRequests($message, $parts)
+    {
+        $parser = new MessageParser();
+        $this->compareRequestResults($parts, $parser->parseRequest($message));
+    }
+
+    /**
+     * @dataProvider responseProvider
+     */
+    public function testParsesResponses($message, $parts)
+    {
+        $parser = new MessageParser();
+        $this->compareResponseResults($parts, $parser->parseResponse($message));
+    }
+
+    public function testParsesRequestsWithMissingProtocol()
+    {
+        $parser = new MessageParser();
+        $parts = $parser->parseRequest("GET /\r\nHost: Foo.com\r\n\r\n");
+        $this->assertEquals('GET', $parts['method']);
+        $this->assertEquals('HTTP', $parts['protocol']);
+        $this->assertEquals('1.1', $parts['version']);
+    }
+
+    public function testParsesRequestsWithMissingVersion()
+    {
+        $parser = new MessageParser();
+        $parts = $parser->parseRequest("GET / HTTP\r\nHost: Foo.com\r\n\r\n");
+        $this->assertEquals('GET', $parts['method']);
+        $this->assertEquals('HTTP', $parts['protocol']);
+        $this->assertEquals('1.1', $parts['version']);
+    }
+
+    public function testParsesResponsesWithMissingReasonPhrase()
+    {
+        $parser = new MessageParser();
+        $parts = $parser->parseResponse("HTTP/1.1 200\r\n\r\n");
+        $this->assertEquals('200', $parts['code']);
+        $this->assertEquals('', $parts['reason_phrase']);
+        $this->assertEquals('HTTP', $parts['protocol']);
+        $this->assertEquals('1.1', $parts['version']);
+    }
+}

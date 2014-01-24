@@ -1,53 +1,97 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CJuiAutoComplete class file.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('zii.widgets.jui.CJuiInputWidget');
+
+/**
+ * CJuiAutoComplete displays an autocomplete field.
+ *
+ * CJuiAutoComplete encapsulates the {@link http://jqueryui.com/autocomplete/ JUI
+ * autocomplete} plugin.
+ *
+ * To use this widget, you may insert the following code in a view:
+ * <pre>
+ * $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
+ *     'name'=>'city',
+ *     'source'=>array('ac1','ac2','ac3'),
+ *     // additional javascript options for the autocomplete plugin
+ *     'options'=>array(
+ *         'minLength'=>'2',
+ *     ),
+ *     'htmlOptions'=>array(
+ *         'style'=>'height:20px;',
+ *     ),
+ * ));
+ * </pre>
+ *
+ * By configuring the {@link options} property, you may specify the options
+ * that need to be passed to the JUI autocomplete plugin. Please refer to
+ * the {@link http://api.jqueryui.com/autocomplete/ JUI AutoComplete API}
+ * documentation for possible options (name-value pairs) and
+ * {@link http://jqueryui.com/autocomplete/ JUI AutoComplete page} for
+ * general description and demo.
+ *
+ * By configuring the {@link source} property, you may specify where to search
+ * the autocomplete options for each item. If source is an array, the list is
+ * used for autocomplete. You may also configure {@link sourceUrl} to retrieve
+ * autocomplete items from an ajax response.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @package zii.widgets.jui
+ * @since 1.1.2
+ */
+class CJuiAutoComplete extends CJuiInputWidget
+{
+	/**
+	 * @var mixed the entries that the autocomplete should choose from. This can be
+	 * <ul>
+	 * <li>an Array with local data</li>
+	 * <li>a String, specifying a URL that returns JSON data as the entries.</li>
+	 * <li>a javascript callback. Please make sure you wrap the callback with
+	 * {@link CJavaScriptExpression} in this case.</li>
+	 * </ul>
+	 */
+	public $source=array();
+	/**
+	 * @var mixed the URL that will return JSON data as the autocomplete items.
+	 * CHtml::normalizeUrl() will be applied to this property to convert the property
+	 * into a proper URL. When this property is set, the {@link source} property will be ignored.
+	 */
+	public $sourceUrl;
+
+	/**
+	 * Run this widget.
+	 * This method registers necessary javascript and renders the needed HTML code.
+	 */
+	public function run()
+	{
+		list($name,$id)=$this->resolveNameID();
+
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
+		else
+			$this->htmlOptions['id']=$id;
+		if(isset($this->htmlOptions['name']))
+			$name=$this->htmlOptions['name'];
+
+		if($this->hasModel())
+			echo CHtml::activeTextField($this->model,$this->attribute,$this->htmlOptions);
+		else
+			echo CHtml::textField($name,$this->value,$this->htmlOptions);
+
+		if($this->sourceUrl!==null)
+			$this->options['source']=CHtml::normalizeUrl($this->sourceUrl);
+		else
+			$this->options['source']=$this->source;
+
+		$options=CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').autocomplete($options);");
+	}
+}

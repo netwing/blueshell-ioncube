@@ -1,40 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-JqYlUiTt8sLmXN2/isAewuJQo0==
+<?php
+/**
+ * PHP_Timer
+ *
+ * Copyright (c) 2010-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHP
+ * @subpackage Timer
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-timer
+ * @since      File available since Release 1.1.0
+ */
+
+spl_autoload_register(
+  function ($class)
+  {
+      static $classes = NULL;
+      static $path = NULL;
+
+      if ($classes === NULL) {
+          $classes = array(
+            'php_timer' => '/Timer.php'
+          );
+
+          $path = dirname(dirname(__FILE__));
+      }
+
+      $cn = strtolower($class);
+
+      if (isset($classes[$cn])) {
+          require $path . $classes[$cn];
+      }
+  }
+);

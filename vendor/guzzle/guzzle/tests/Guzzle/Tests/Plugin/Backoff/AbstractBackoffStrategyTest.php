@@ -1,88 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Plugin\Backoff;
+
+use Guzzle\Http\Message\Request;
+use Guzzle\Plugin\Backoff\TruncatedBackoffStrategy;
+use Guzzle\Plugin\Backoff\CallbackBackoffStrategy;
+
+/**
+ * @covers Guzzle\Plugin\Backoff\AbstractBackoffStrategy
+ */
+class AbstractBackoffStrategyTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    protected function getMockStrategy()
+    {
+        return $this->getMockBuilder('Guzzle\Plugin\Backoff\AbstractBackoffStrategy')
+            ->setMethods(array('getDelay', 'makesDecision'))
+            ->getMockForAbstractClass();
+    }
+
+    public function testReturnsZeroWhenNoNextAndGotNull()
+    {
+        $request = new Request('GET', 'http://www.foo.com');
+        $mock = $this->getMockStrategy();
+        $mock->expects($this->atLeastOnce())->method('getDelay')->will($this->returnValue(null));
+        $this->assertEquals(0, $mock->getBackoffPeriod(0, $request));
+    }
+
+    public function testReturnsFalse()
+    {
+        $request = new Request('GET', 'http://www.foo.com');
+        $mock = $this->getMockStrategy();
+        $mock->expects($this->atLeastOnce())->method('getDelay')->will($this->returnValue(false));
+        $this->assertEquals(false, $mock->getBackoffPeriod(0, $request));
+    }
+
+    public function testReturnsNextValueWhenNullOrTrue()
+    {
+        $request = new Request('GET', 'http://www.foo.com');
+        $mock = $this->getMockStrategy();
+        $mock->expects($this->atLeastOnce())->method('getDelay')->will($this->returnValue(null));
+        $mock->expects($this->any())->method('makesDecision')->will($this->returnValue(false));
+
+        $mock2 = $this->getMockStrategy();
+        $mock2->expects($this->atLeastOnce())->method('getDelay')->will($this->returnValue(10));
+        $mock2->expects($this->atLeastOnce())->method('makesDecision')->will($this->returnValue(true));
+        $mock->setNext($mock2);
+
+        $this->assertEquals(10, $mock->getBackoffPeriod(0, $request));
+    }
+
+    public function testReturnsFalseWhenNullAndNoNext()
+    {
+        $request = new Request('GET', 'http://www.foo.com');
+        $s = new TruncatedBackoffStrategy(2);
+        $this->assertFalse($s->getBackoffPeriod(0, $request));
+    }
+
+    public function testHasNext()
+    {
+        $a = new TruncatedBackoffStrategy(2);
+        $b = new TruncatedBackoffStrategy(2);
+        $a->setNext($b);
+        $this->assertSame($b, $a->getNext());
+    }
+
+    public function testSkipsOtherDecisionsInChainWhenOneReturnsTrue()
+    {
+        $a = new CallbackBackoffStrategy(function () { return null; }, true);
+        $b = new CallbackBackoffStrategy(function () { return true; }, true);
+        $c = new CallbackBackoffStrategy(function () { return null; }, true);
+        $d = new CallbackBackoffStrategy(function () { return 10; }, false);
+        $a->setNext($b);
+        $b->setNext($c);
+        $c->setNext($d);
+        $this->assertEquals(10, $a->getBackoffPeriod(2, new Request('GET', 'http://www.foo.com')));
+    }
+
+    public function testReturnsZeroWhenDecisionMakerReturnsTrueButNoFurtherStrategiesAreInTheChain()
+    {
+        $a = new CallbackBackoffStrategy(function () { return null; }, true);
+        $b = new CallbackBackoffStrategy(function () { return true; }, true);
+        $a->setNext($b);
+        $this->assertSame(0, $a->getBackoffPeriod(2, new Request('GET', 'http://www.foo.com')));
+    }
+}

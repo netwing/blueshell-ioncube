@@ -1,82 +1,119 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-t6FKqfHSpU+bWltwWbkjG67S60==
+<?php
+
+Yii::import('system.collections.CStack');
+
+class CStackTest extends CTestCase
+{
+	public function testConstruct()
+	{
+		$stack = new CStack();
+		$this->assertEquals(array(), $stack->toArray());
+		$stack = new CStack(array(1, 2, 3));
+		$this->assertEquals(array(1, 2, 3), $stack->toArray());
+	}
+
+	public function testToArray()
+	{
+		$stack = new CStack(array(1, 2, 3));
+		$this->assertEquals(array(1, 2, 3), $stack->toArray());
+	}
+
+	public function testCopyFrom()
+	{
+		$stack = new CStack(array(1, 2, 3));
+		$data = array(4, 5, 6);
+		$stack->copyFrom($data);
+		$this->assertEquals(array(4, 5, 6), $stack->toArray());
+	}
+
+	public function testCanNotCopyFromNonTraversableTypes()
+	{
+		$stack = new CStack();
+		$data = new stdClass();
+		$this->setExpectedException('CException');
+		$stack->copyFrom($data);
+	}
+
+	public function testClear()
+	{
+		$stack = new CStack(array(1, 2, 3));
+		$stack->clear();
+		$this->assertEquals(array(), $stack->toArray());
+	}
+
+	public function testContains()
+	{
+		$stack = new CStack(array(1, 2, 3));
+		$this->assertTrue($stack->contains(2));
+		$this->assertFalse($stack->contains(4));
+	}
+
+	public function testPeek()
+	{
+		$stack = new CStack(array(1));
+		$this->assertEquals(1, $stack->peek());
+	}
+
+	public function testCanNotPeekAnEmptyStack()
+	{
+		$stack = new CStack();
+		$this->setExpectedException('CException');
+		$item = $stack->peek();
+	}
+
+	public function testPop()
+	{
+		$stack = new CStack(array(1, 2, 3));
+		$last = $stack->pop();
+		$this->assertEquals(3, $last);
+		$this->assertEquals(array(1, 2), $stack->toArray());
+	}
+
+	public function testCanNotPopAnEmptyStack()
+	{
+		$stack = new CStack();
+		$this->setExpectedException('CException');
+		$item = $stack->pop();
+	}
+
+	public function testPush()
+	{
+		$stack = new CStack();
+		$stack->push(1);
+		$this->assertEquals(array(1), $stack->toArray());
+	}
+
+ 	public function testGetIterator()
+ 	{
+		$stack = new CStack(array(1, 2));
+		$this->assertInstanceOf('CStackIterator', $stack->getIterator());
+		$n = 0;
+		$found = 0;
+		foreach($stack as $index => $item)
+		{
+			foreach($stack as $a => $b); // test of iterator
+			$n++;
+			if($index === 0 && $item === 1)
+				$found++;
+			if($index === 1 && $item === 2)
+				$found++;
+		}
+		$this->assertTrue($n == 2 && $found == 2);
+	}
+
+	public function testGetCount()
+	{
+		$stack = new CStack();
+		$this->assertEquals(0, $stack->getCount());
+		$stack = new CStack(array(1, 2, 3));
+		$this->assertEquals(3, $stack->getCount());
+	}
+
+	public function testCount()
+	{
+		$stack = new CStack();
+		$this->assertEquals(0, count($stack));
+		$stack = new CStack(array(1, 2, 3));
+		$this->assertEquals(3, count($stack));
+	}
+}

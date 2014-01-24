@@ -1,73 +1,126 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *	Extension file for SimpleTest
+ *  @package        SimpleTest
+ *  @subpackage     Extensions
+ *	@version	$Id: treemap_reporter.php 1802 2008-09-08 10:43:58Z maetl_ $
+ */
+require_once(dirname(__FILE__) . '/../scorer.php');
+require_once(dirname(__FILE__) . '/treemap_reporter/treemap_recorder.php');
+
+/**
+ * Constructs and renders a treemap visualization of a test run
+ *
+ * @package SimpleTest
+ * @subpackage Extensions
+ */
+class TreemapReporter extends SimpleReporterDecorator {
+
+	function TreemapReporter() {
+		$this->SimpleReporterDecorator(new TreemapRecorder());
+	}
+
+	/**
+	 * basic CSS for floating nested divs
+	 * @todo checkout some weird border bugs
+	 */
+	function _getCss() {
+		$css = ".pass{background-color:green;}.fail{background-color:red;}";
+		$css .= "body {background-color:white;margin:0;padding:1em;}";
+		$css .= "div{float:right;margin:0;color:black;}";
+		$css .= "div{border-left:1px solid white;border-bottom:1px solid white;}";
+		$css .= "h1 {font:normal 1.8em Arial;color:black;margin:0 0 0.3em 0.1em;}";
+		$css .= ".clear { clear:both; }";
+		return $css;
+	}	
+	
+	/**
+	 * paints the HTML header and sets up results
+	 */
+	function paintResultsHeader() {
+		$title = $this->_reporter->getTitle();
+		echo "<html><head>";
+		echo "<title>{$title}</title>";
+		echo "<style type=\"text/css\">" . $this->_getCss() . "</style>";
+		echo "</head><body>";
+		echo "<h1>{$title}</h1>";
+	}	
+	
+	/**
+	 * places a clearing break below the end of the test nodes
+	 */
+	function paintResultsFooter() {
+		echo "<br clear=\"all\">";
+		echo "</body></html>";
+	}
+	 
+	/**
+	 * paints start tag for div representing a test node
+	 */
+	function paintRectangleStart($node, $horiz, $vert) {
+		$name = $node->getName();
+		$description = $node->getDescription();
+		$status = $node->getStatus();
+		echo "<div title=\"$name: $description\" class=\"$status\" style=\"width:{$horiz}%;height:{$vert}%\">";
+	}
+	
+	/**
+	 * paints end tag for test node div
+	 */
+	function paintRectangleEnd() {
+		echo "</div>";
+	}	
+	
+	/**
+	 * paints wrapping treemap divs
+	 * @todo how to configure aspect and other parameters?
+	 */
+	function paintFooter($group) {
+		$aspect = 1;
+		$this->paintResultsHeader();
+		$this->paintRectangleStart($this->_reporter->getGraph(), 100, 100);
+		$this->divideMapNodes($this->_reporter->getGraph(), $aspect);
+		$this->paintRectangleEnd();
+		$this->paintResultsFooter();
+	}
+	
+	/**
+	 * divides the test results based on a slice and dice algorithm
+	 *
+	 * @param TreemapNode $map sorted 
+	 * @param boolean $aspect flips the aspect between horizontal and vertical
+	 * @private
+	 */
+	function divideMapNodes($map, $aspect) {
+		$aspect = !$aspect;
+		$divisions = $map->getSize();
+		$total = $map->getTotalSize();
+		foreach($map->getChildren() as $node) {
+			if (!$node->isLeaf()) {
+				$dist = $node->getTotalSize() / $total * 100;
+			} else {
+				$dist = 1 / $total * 100;
+			}
+			if ($aspect) {
+				$horiz = $dist;
+				$vert = 100;
+			} else {
+				$horiz = 100;
+				$vert = $dist;
+			}
+			$this->paintRectangleStart($node, $horiz, $vert);
+			$this->divideMapNodes($node, $aspect);
+			$this->paintRectangleEnd();
+		}
+	}
+	
+	function paintGroupEnd($group) {
+		$this->_reporter->paintGroupEnd($group);
+		if ($this->_reporter->isComplete()) {
+			$this->paintFooter($group);
+		}
+	}
+	
+}
+
 ?>
-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

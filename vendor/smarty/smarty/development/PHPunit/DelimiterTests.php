@@ -1,44 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xVGXwkpVti1Len/ocsi=
+<?php
+/**
+* Smarty PHPunit tests of delimiter
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for delimiter tests
+*/
+class DelimiterTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test <{ }> delimiter
+    */
+    public function testDelimiter1()
+    {
+        $this->smarty->left_delimiter = '<{';
+        $this->smarty->right_delimiter = '}>';
+        $tpl = $this->smarty->createTemplate('eval:<{* comment *}><{if true}><{"hello world"}><{/if}>');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test <-{ }-> delimiter
+    */
+    public function testDelimiter2()
+    {
+        $this->smarty->left_delimiter = '<-{';
+        $this->smarty->right_delimiter = '}->';
+        $tpl = $this->smarty->createTemplate('eval:<-{* comment *}-><-{if true}-><-{"hello world"}-><-{/if}->');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test <--{ }--> delimiter
+    */
+    public function testDelimiter3()
+    {
+        $this->smarty->left_delimiter = '<--{';
+        $this->smarty->right_delimiter = '}-->';
+        $tpl = $this->smarty->createTemplate('eval:<--{* comment *}--><--{if true}--><--{"hello world"}--><--{/if}-->');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test {{ }} delimiter
+    */
+    public function testDelimiter4()
+    {
+        $this->smarty->left_delimiter = '{{';
+        $this->smarty->right_delimiter = '}}';
+        $tpl = $this->smarty->createTemplate('eval:{{* comment *}}{{if true}}{{"hello world"}}{{/if}}');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test {= =} delimiter for conficts with option flags
+    */
+    public function testDelimiter5()
+    {
+        $this->smarty->left_delimiter = '{=';
+        $this->smarty->right_delimiter = '=}';
+        $tpl = $this->smarty->createTemplate('eval:{=assign var=foo value="hello world" nocache=}{=$foo=}');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+}

@@ -1,42 +1,74 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Behat\Mink\Exception;
+
+use Behat\Mink\Session;
+
+/*
+ * This file is part of the Behat\Mink.
+ * (c) Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Mink "element not found" exception.
+ *
+ * @author Konstantin Kudryashov <ever.zet@gmail.com>
+ */
+class ElementNotFoundException extends Exception
+{
+    /**
+     * Initializes exception.
+     *
+     * @param Session $session  session instance
+     * @param string  $type     element type
+     * @param string  $selector element selector type
+     * @param string  $locator  element locator
+     */
+    public function __construct(Session $session, $type = null, $selector = null, $locator = null)
+    {
+        $message = '';
+
+        if (null !== $type) {
+            $message .= ucfirst($type);
+        } else {
+            $message .= 'Tag';
+        }
+
+        if (null !== $locator) {
+            if (null === $selector || in_array($selector, array('css', 'xpath'))) {
+                $selector = 'matching '.($selector ?: 'locator');
+            } else {
+                $selector = 'with '.$selector;
+            }
+            $message .= ' '.$selector.' "' . $locator . '" ';
+        }
+
+        $message .= 'not found.';
+
+        parent::__construct($message, $session);
+    }
+
+    /**
+     * Returns exception message with additional context info.
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        try {
+            $pageText = $this->trimBody($this->getSession()->getPage()->getContent());
+            $string   = sprintf("%s\n\n%s%s",
+                $this->getMessage(),
+                $this->getResponseInfo(),
+                $this->pipeString($pageText."\n")
+            );
+        } catch (\Exception $e) {
+            return $this->getMessage();
+        }
+
+        return $string;
+    }
+}

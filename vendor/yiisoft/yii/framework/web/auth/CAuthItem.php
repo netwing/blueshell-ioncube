@@ -1,103 +1,277 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPqXlrXCYvIeaBwb3C8PrRS6JfJUjpBEZI9AizAlBmMmfI5RucuRlSpH1/K/l2Ty9HFASm6Z+
-tTDLkurCAh4SKGF5pXsXovppp0pIaYx4jWQgYetgZMOknq9NfAo7PFogwc1ZYzqdDS2YRfRCjpW+
-/SSwOHXWBMbGj/rxRI3yT7WgW+Nld4FmUsuLtC0JNce8Wc571ezbUXIDi4EJGk2fDgSSKJkvPp+N
-5d7ofOLbkLTl+34ui8slhr4euJltSAgiccy4GDnfT1fau8oVqDhka1vZKDXRXjao/z8uUcxkb8RH
-UP9DKYB3iT/oorNj8etJfaEtaUfMVBtb1SG2l9cMJPTBZwd65q5BrONMhZ5as1fiSGznWEHm+wjA
-gvqN1FvGByU8KTBoR+SbiiXtQFC5r0qIOsw1/O2MTIORMx5XgZcz5JhIqs+60FrDLcXJUhghoYDp
-JSJMdpTOwdpscgnu1rcbzjwvhJHug/A5ZpEWN4ARoMjQIE2pEP5vi9txmUZAhkcP3xHht7aXu2bR
-U9Oa96zuQGHxuixWnemD4tfIzq+v+pK4Y09kx3hRECwOCUwyohP1e4JQ6KrG1XYQA5NWZPUkMHf+
-TQRO3sCPTgU5Qi+QJ2pmOoCUc6Y0FX0p0R/+wl16lwO1wBgvTdHb2/8TcVAJxHBtDN/Mrz1fg3Pv
-GlMw6KYml8QbmqFZz02Uc3faNQpbft6glnDWvRrgTD6QxLUtTAVUNm2/2o0/amNlcvy+P7HUN0B+
-0QByksTP3aF3mG28+UBlo4z9lxRn6a43aTRFyxCniMX209E84nD+jKcJ1ieuaJregJfPxiYviVhW
-jw/9WRtjUtj1X4XCEVVParb/wH0IEG9zT0U1GC3IWnh61Ml99oIeAphDXIxatrcjvZevhTwp+KyS
-XijA0zIwmoj/4X7qU+2B5Git6bS8qqDlOKIvhP9ndbCpO5bY/IgYZ6t1PHH9Irn15BFmLWp+a/in
-ew4bRrmojP6Mf1rib63jdKbIvjxUh9sGz00Y8kzgFwFlNAYEsiDUMiO6NjFjytpS8S7hnQtd9Tj0
-BKVwrMTj/GN6VrgCP7oJGkIa763vCBFrVZv5cn58GqTE+hzlJVg8fUwO/3chjkJTmLoE34AcElp5
-7i6h7IU0dPrMXQcpkf8RHUng83ypohpNPJ6w9O9Jd1zTld+mXrTk4xU2lJ3PfPCxsRSc4N3ymK6f
-da/VYslyVcIdXfX9bbWjLDUHUp2dCrjpFk6Cz46+JyhsYKm5tdef55OaoACBeRLynKkf9zClnFFg
-H3JxAsFRJmgVAtPUU42N91wCP9lG9/ve4erKdant+oCd9LRyH7c435dR0BRRiTwLsFRcoElV7y7J
-AdEdm2JwIKNAiIjouRAGSbeN8ShXMzzMGPty9a+kxW+EM/84RTu3YAN77sCcDF9EtdS7rM8H5A77
-PRJzh4nMvpioLpyxXwYS7aqQ3W9mbYwcxzyUiZGZuLrwxcskdY40d4NYu8zSjqWGwD0HMrQ6p7eV
-E+QRbrIbCwwqJJ9eGGi2ZrkiE8xxk7B7BFr8yI2f5hNvQeHCU7KA8QZxctJ6WaLUTDsw+fQQGkgS
-+TbNaJbwKuV4kWKLvPEC3EObLx6t98m/MuXOQWkw4yf5ar57kVTMznBAhI3b9pU2FxniKJW6bmm7
-0xTteLIQrZFRXzvuS2D22ArPwv8pFUupI8awY0VTKaDuX7XPGfSuf9//QSSPql0vZg+c8wH2/enT
-ZtQZfBZ6Yhbu994ZRYa9XyxGUcskX2ncQcTRUI+PMZ5ChwzibM63lXlmT5uWLI6Zotg9BdcnvgB7
-VZrAaEqsBd+L5T0rucK7jSoCH47ZsFSgBW0ZwsoDc34g8uavTb6WTtMjaefrrPJ8C0eRQ2VMj8yF
-VBRSa3q8DHF2VdA1xCQYDfs9vYBcQjZrnCcbIG4zwxJbGXDZrLskvPLf8SHHtiuzv/hTYJhChXyA
-rNp9Y5b08pwgjc7oWTiiEkEe6rUZkOtCU6Cb4Jb6o6L8RO8rWoYEzV/26/VXhm10npFOIfARcEU3
-boaIWFz/B0X5AlBOWF+UgyaN13GSyXm2QoCS7ah3nPB9Ebz4ei/R7OO624FnVo6FElFjGpWJHRbP
-+B4/eL20DBCXZVqc/w92NjHnX5mVWKMI1oGTGrdt1yBO3aIJbJXQAzyMWrFPNam/Zv7h/FHxS+Zo
-xrgVP5AomKGJk66cqnMmghBzoVtwmwslHNfK1xLrpCLkrXaGh2XWJPqWlHnzomEqLHE+kfFwE/JU
-Pz2O+2c74Mx18nxiS187xaAb+twcZVoMMxLllzox1nrYvF9YZ4Tzw1KAfvY8lTchWvbnbYFbq5Ez
-IjjZ4N+5cszp1qrlaykad0fw1Yx5KwmmK9hmLlZbWEnbKCISJDpLYq8D36jQRD08XQfFVmKEynnf
-Kl+OUE1Fvv00AaG5ZKHWKDsCX757fksKBDJxpSfSIvpSzYGIQClIs2rGlmqpGbuXXzl9mEPD2etW
-RS4HT2kSX60qDTL/4i9waJuR9JwH4CtEqAIq0QKi7IWEhUVFAOol6kxhgHAQXnjpnzZ+pRnpAlPs
-HgHlPLCGb+EhwHIdkM3Vu3Ym87BjA4vO/MB6dSw21HuQsg9VXHradkorh2T+e8oU1CKPH+Kv4hWq
-kyrktu5tBDCflc8EW4hc5WvruQ0Skz6O31V7Ocwmjyhj2TjCPld6qf3HtqRMwv8tEtN/fVoby9Fe
-FXfGu/vY1awrNO+h4Yb1chV+bOMP8hPDrXWVtTT5TmPEec1EJSflmc5yhTLwUmj48/5cv39NHtx4
-fW0VbIWIXbeQf00nflkxvsjCzLuDSHY2MPaQ4JhctqfQ7l/WZYragFLh8s+1+YOsfm9haD5USdLx
-u/fv6j+cahm3C/dfAl3kAhsAQWm2ruz0gCUeKLS7lz51ooN2bjkQQOLZJG2hY7R86/3oz+g68j2G
-13axn6QOMMLJ/1HAjzSHv+u3OUTEv3kdk9tpq8I4eBN3OhKx+kKP+5gKenVca46naBmr0FuVTFeC
-zIutBBomvlq+mILsTJAM5WATbSH/A/tf2K43AN6u0Wrrnz8JmFPoXIgcwlN4ZB9fWdW2UzfTkynk
-SqP9KDtSfnrddDr99dpTnk4x2yjBGI7qu4/rKhUZgBtJekiqq0nE89BnZndzG6r8gz8DLM4viQH5
-KMC+vue4LYtcofGisg9vHWO64M2Ha+kmoz8xPP8NYlmk1ieohuV7Ed7wgwQJmv3SSSNlp3JMz9CE
-U36sMbfC595qzwB5eOEeTX084giNca7CsUvIo58Z4SFTW/VH9mju/9WGyQHqDXJCMLR0qzTzUGgR
-KpIUBRzs2W+xm8pMet6j8mor4X6RHTuVGq9bko6KkeXbEnZz2yuFgnxpxkXHRLwEYyeQ0Mmk/sk7
-5gLyqO9lXzetgG2w2B+UEs2u4OmkqCKlpN7HZC9+CKJ0FsYREUBk70+HZjI8ieNpPGO+v55KaqwV
-KMMMM/aHzRzx7cJtmm35DqV/BO4QJtvRGEell3ydvdeo+ghjCxLqLxWAiLQqr0n8dLZPl1QwL0am
-QhtnK8RAtsyWVjEzKPu05JGhCc7MOtpgto7Ez+Ba2b+kmzQo7rCoAbZx5ZDMn6ii7fEc+XULLIAc
-S2MrLG4soJjo0aLwWLcKS1vzQUXVCrZrahjo9xbW1LMJWfefDmSSK8adlYkWe2LqRZ9ybPtuAgo9
-oaNxGo9MUAluw31dvGnrCAD1Sm6HNoZZaN7/Al5tZsMGucHszKrD1ko2//gYn2gnu8dFVjtQOILH
-2vOSFbwNuU+XOzAJrVPRSMAMOeLDj08l/chsEghLFrM8qANlE25cNbmxsOBMZNDm/USPh0/5Ubna
-rxQK8ikfxbxyzOsDRyIXJm4lKKPjGJh8xualsXzArbcJcN/iZLCEomHZEI4YH7c4QVSVr5p/vELv
-uusDIcPYHK39jelODqEuZwWEMqP6KnnTllDBtuVgkImA08l3W/lfXcwol7940QnJgdGe2maWA8j0
-eOY/LQHgHBryXk4KGyzBXdMa9ea3sbB1NPplZcjYNdba+jylZj3CCO78GceIuo6+zjwBlVZb0l/P
-lmEmlZ9AuWH/yH8bqzWAgmAztMgBWuymoAKFsq9jt4NspVFVCf5WTaAVHlTgqNypkP/Ffg+hHxB4
-jO8mRWWjeJCwaWrgMUVs77MA6d9jFx/7v/yKWccpU76aplUSfxUZoyxvhxKRE2yCia1295NnTxBq
-10UpJFbBFthm7/LfBmwDj6RUHhRNNDjXIhw2c9dPEIY8e8OSqU9q5mImPidKiOIF7EnFQrVl/TbO
-V65tnOtoEjCx/CeHaY6au1LXinLQRU4lnlSuE1XMQ/40QwfLyo5rsy4xuh21gYOR3iG3WaYNeFyZ
-rscIE2Si4FD5VRVENjU/BtlSN5IQS3wpsCe0YcDjHPDRlFKL95X7TmQxUudKlbI447nNaTKQnHG3
-PPQloj4HkgJ0R4dYfsAyBYcVHeb5Kfwzy5ambGUdfM6ExumVpLRpsSB46s7fpcoPrNQcYkB+ZgSi
-Cgrgpqy2TbDoJ5wNdwyrtTDbXUwr+r58P+YHsyQrR5S0fJFxTbCr0yMuP5Z8/WrabZCGUu0k7MzP
-4DN/AZSqq/agslZLIDTRTWZlvamX72JM4dTOgYZam/LikYVyv13KByusFMnV0XYO2KT0UrogfyzZ
-6Vwqh2aVEllUw0NjZGAsywYqGaDEOH9oe2CY/H5VGdW2lTEWaS4/THCGWYBm5ZqZ219R2vYTBNm4
-kRkM9c7/VPazZbareSA4xc9pG1VGUBoV7YdT29VBIf/ZIf0aGM8q3yDn16h3zYv6UA3B5+5WiR1y
-ou5cX/G/SHjsabToer2HC1/wZQcMVEbtWlYkZ4EPNXGFEBYxV/FB+pkB6wcPqS3JL3TSELVMsWb3
-aS6yC7Y9JPoI27VTa2kUn5QQkwJ+h+XqBVrY6GksIB4Uapa6Y+zxG7xRdbHV5FWEKU/VpHLBvfrI
-K5q9RCBjoliOAjgOU+v05Pttk4U//ueMnC4QP/iVqjB76VibPxX0f/DMEh9/gsWvpsnHxd1Kakxq
-4kJwDqg8kKpf9Tq8VJv3BAt668W2kDzjEiXm5Tl0olJ6Il/8lEiFWb4pgBInT1t+WsoxIA+z+Kv7
-58e4rLJ6abrvCPLKhXjKiLf6RvDj7D8mK8w/VZUbekKOW4jFHWUtgvpr6l5xpPCzd4YcSpSKXF/e
-BQrYiDW+GWpu4FsGZMQ9G9OSOONsbOAVcY4a3mG6Agg6w2uqQ709FTqqvCL/CY4NYsx0RuxboaZS
-HMmI/qL1IBwxIaM/8YnIdv6h8J9W9TBaCnU/cHGXZPASG7c9CtDnpYmBwGmkS/kg5CZf7okB10jj
-j8SY5/kKbcCFo9v2zmLIfOLGXZhKE4li7HmC/Maru/npy0K9WlEx6Nw6oDPf7ajSicksJODtLCUY
-b49qbPn2//AMbggUJWCpE6/+Pf4pVU4Y6fOiizANhWbpNS31QfALCI98cPn9iXnYd6dB78vQZmXg
-0+DCCt3jrzVjHMqGlrSRk0KhVmgvG390EYQIhUspEu+TBAj36qmsgBoWBwdLzoA7+vdflBzk15G1
-J4mcfyD2Gae74BseOUx8wOlth2IActoaR87lQI2lZLYeloGf5Ovz/9gYGtv0r9sGfB27tH3nJXqH
-qb7A6kDnVYaUk4K7eC7tdxC2Tql48rO3GNPEezga2qgxhMQu5xq6RWvJ3HVer8RCjcgYOD60brM+
-ZFbPxAwiq05L4/Lw4X0MscTqO1Cqbct4GzMWuNZlFPeUbI2okb/uUqFii6Y3+vtFUL4w/QyJPzOp
-TnPFXwWsuUa+5pYJTipNE9I1TVRBKuUMPCYkUWhFXb9cvO2bpVXh9/MgpwrkmdtFTUuKTksw37n/
-ECIG+cjSARcgVtEgIlPL/nbykyzSj+qrQW9l9liicO4HvGkSg9nOCeVxlE7cqxsfJ2lJStFQaxJ5
-Oz2sLWPKqEYLPOg75V2iiageOx1yj4Rcj2UOBMOBR2Pt8vLoLkNvxHDVXu2DP4p+T6+DK7hpCQ5T
-YHK+lCf0NOqd7NE0YicL2q900EdsaxxRGCdwPCmoet6apnethJGN7k1Qfb9CX9UvhOhE3JXGDEnU
-oiSKy+yEj5k9Hs7Jli7yPEmzaZcpdzW9p6PUU3N5Fu60k+aKE/e4WFlzzYbtVmL0PQEfem7w0iTK
-M8WJ2+4TyxM4dClTqzwPhVm06eSID+ganfsiRjLV7TnfhI+XUBncHqIzxIfbGpX5kUOqX+1SdLr/
-1g1ZtGoBeM2kFv9bcRPAX3hFfi5YlNB1mN/QTCAomgadKmbnr8DEn7TyX6nCA0BCOEzRxeXfwZlW
-hQGotWXsCBNMWIgC/CqhbSLnFKuHAzSid2U34O0Q8ib1fZj8CZEPFmJpSQ63yfc0YNK88nXIOfll
-be8ihZY6PlIbQ2t/86BxnNOz064GZ+5MGmxj98ZpianwmfdJr6IEAW1j3KOG+3KgJx74Wr8HUWUD
-52ZnsFSMxgvNLvbSUQC01pquSGzThozVi5mry3CW3d4fv/j5C7XbG+2ur/KHNLdGEjf6X5Ys6VbN
-Jq9baZwl+WAnblZC/vbdZ31j8VMoiEsskwyubMavzFHWrMeSR9M5hy6f6zZ0eTA9ylG0zm/nYzOU
-SiX1gzuJW4R/zOA0SH11LwRVDokINsQJTdyLIWzQAMiheL5rNPn0TiKpsU+yMTJufvNEHehzCW26
-KHT/pD+helljZTiFrsf1KLLtlQPlv2uxWTqwT1OEBAgwxaXqco8lDqKRiPzs6Y8C+u0FBaRyOTkM
-3KVzxiAAEWD8AA9JtrDyHXK+1p5V1+bSUhD31mJeyItLIhilE4JUzdI5vjEmTi83S8MT6NwUpYJL
-ymAM2E2CbuQJ3DbgqISfS8fMC0gEViMLLYSIjrOLq2JBLcp71mvdjO4N3hcdXxbOHtvmtt+Efu0D
-fK5GyP3kS+eDDZLyk5CCMT5KG33nBnAV1XGlsiSejpOlic1Wj0WVA/5DJ59uMsEKdV2t7XZovRem
-o2hgxpvFc610PHkPX39YN4nJmK6C6wbLElTvUrCrxWoA6bQtbNuHFG2ezA13uOcyMgkH/EJSIrDH
-wH2xWU3J7vLB+u0GC1afrROav2w/VJ9n1mER1tyYG18xEF7TvSh8DLpOp/YgLglIqfUEahysPsch
-Dd42rDSsoL48iqAZePJEKcrEgUz3743a+LSNZKBA96hCDf50xtr4NHt9vlEsfyuKQWkEc18FG6HI
-tiU/iE1/Jf4puVJOBgr/34L7j9Q3mb0EHYM0timzUF/kpc8AssAUVxA0p7JE16I7zp6I5X9IkVrr
-07+m9QmXG+XQVS3oP33fDmIQlrx+YEJ5T/zJoFMP/RTw3m29ssmY2Ze13lguA+3nGPfLW8UkpXRh
-uzJ9t2vKzjcE8IXKWjCJNWX6sMpTVdgVYJ9/PRBRHC0gctAyu2Ok41oKvSINTULg0fpIXzUOvKyM
-mAzD5+Rx3KIrhYOU0Hqnb0XLre9nHKJ6AwQgcOnJu0==
+<?php
+/**
+ * CAuthItem class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CAuthItem represents an authorization item.
+ * An authorization item can be an operation, a task or a role.
+ * They form an authorization hierarchy. Items on higher levels of the hierarchy
+ * inherit the permissions represented by items on lower levels.
+ * A user may be assigned one or several authorization items (called {@link CAuthAssignment assignments}.
+ * He can perform an operation only when it is among his assigned items.
+ *
+ * @property IAuthManager $authManager The authorization manager.
+ * @property integer $type The authorization item type. This could be 0 (operation), 1 (task) or 2 (role).
+ * @property string $name The item name.
+ * @property string $description The item description.
+ * @property string $bizRule The business rule associated with this item.
+ * @property mixed $data The additional data associated with this item.
+ * @property array $children All child items of this item.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.auth
+ * @since 1.0
+ */
+class CAuthItem extends CComponent
+{
+	const TYPE_OPERATION=0;
+	const TYPE_TASK=1;
+	const TYPE_ROLE=2;
+
+	private $_auth;
+	private $_type;
+	private $_name;
+	private $_description;
+	private $_bizRule;
+	private $_data;
+
+	/**
+	 * Constructor.
+	 * @param IAuthManager $auth authorization manager
+	 * @param string $name authorization item name
+	 * @param integer $type authorization item type. This can be 0 (operation), 1 (task) or 2 (role).
+	 * @param string $description the description
+	 * @param string $bizRule the business rule associated with this item
+	 * @param mixed $data additional data for this item
+	 */
+	public function __construct($auth,$name,$type,$description='',$bizRule=null,$data=null)
+	{
+		$this->_type=(int)$type;
+		$this->_auth=$auth;
+		$this->_name=$name;
+		$this->_description=$description;
+		$this->_bizRule=$bizRule;
+		$this->_data=$data;
+	}
+
+	/**
+	 * Checks to see if the specified item is within the hierarchy starting from this item.
+	 * This method is expected to be internally used by the actual implementations
+	 * of the {@link IAuthManager::checkAccess}.
+	 * @param string $itemName the name of the item to be checked
+	 * @param array $params the parameters to be passed to business rule evaluation
+	 * @return boolean whether the specified item is within the hierarchy starting from this item.
+	 */
+	public function checkAccess($itemName,$params=array())
+	{
+		Yii::trace('Checking permission "'.$this->_name.'"','system.web.auth.CAuthItem');
+		if($this->_auth->executeBizRule($this->_bizRule,$params,$this->_data))
+		{
+			if($this->_name==$itemName)
+				return true;
+			foreach($this->_auth->getItemChildren($this->_name) as $item)
+			{
+				if($item->checkAccess($itemName,$params))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * @return IAuthManager the authorization manager
+	 */
+	public function getAuthManager()
+	{
+		return $this->_auth;
+	}
+
+	/**
+	 * @return integer the authorization item type. This could be 0 (operation), 1 (task) or 2 (role).
+	 */
+	public function getType()
+	{
+		return $this->_type;
+	}
+
+	/**
+	 * @return string the item name
+	 */
+	public function getName()
+	{
+		return $this->_name;
+	}
+
+	/**
+	 * @param string $value the item name
+	 */
+	public function setName($value)
+	{
+		if($this->_name!==$value)
+		{
+			$oldName=$this->_name;
+			$this->_name=$value;
+			$this->_auth->saveAuthItem($this,$oldName);
+		}
+	}
+
+	/**
+	 * @return string the item description
+	 */
+	public function getDescription()
+	{
+		return $this->_description;
+	}
+
+	/**
+	 * @param string $value the item description
+	 */
+	public function setDescription($value)
+	{
+		if($this->_description!==$value)
+		{
+			$this->_description=$value;
+			$this->_auth->saveAuthItem($this);
+		}
+	}
+
+	/**
+	 * @return string the business rule associated with this item
+	 */
+	public function getBizRule()
+	{
+		return $this->_bizRule;
+	}
+
+	/**
+	 * @param string $value the business rule associated with this item
+	 */
+	public function setBizRule($value)
+	{
+		if($this->_bizRule!==$value)
+		{
+			$this->_bizRule=$value;
+			$this->_auth->saveAuthItem($this);
+		}
+	}
+
+	/**
+	 * @return mixed the additional data associated with this item
+	 */
+	public function getData()
+	{
+		return $this->_data;
+	}
+
+	/**
+	 * @param mixed $value the additional data associated with this item
+	 */
+	public function setData($value)
+	{
+		if($this->_data!==$value)
+		{
+			$this->_data=$value;
+			$this->_auth->saveAuthItem($this);
+		}
+	}
+
+	/**
+	 * Adds a child item.
+	 * @param string $name the name of the child item
+	 * @return boolean whether the item is added successfully
+	 * @throws CException if either parent or child doesn't exist or if a loop has been detected.
+	 * @see IAuthManager::addItemChild
+	 */
+	public function addChild($name)
+	{
+		return $this->_auth->addItemChild($this->_name,$name);
+	}
+
+	/**
+	 * Removes a child item.
+	 * Note, the child item is not deleted. Only the parent-child relationship is removed.
+	 * @param string $name the child item name
+	 * @return boolean whether the removal is successful
+	 * @see IAuthManager::removeItemChild
+	 */
+	public function removeChild($name)
+	{
+		return $this->_auth->removeItemChild($this->_name,$name);
+	}
+
+	/**
+	 * Returns a value indicating whether a child exists
+	 * @param string $name the child item name
+	 * @return boolean whether the child exists
+	 * @see IAuthManager::hasItemChild
+	 */
+	public function hasChild($name)
+	{
+		return $this->_auth->hasItemChild($this->_name,$name);
+	}
+
+	/**
+	 * Returns the children of this item.
+	 * @return array all child items of this item.
+	 * @see IAuthManager::getItemChildren
+	 */
+	public function getChildren()
+	{
+		return $this->_auth->getItemChildren($this->_name);
+	}
+
+	/**
+	 * Assigns this item to a user.
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @param string $bizRule the business rule to be executed when {@link checkAccess} is called
+	 * for this particular authorization item.
+	 * @param mixed $data additional data associated with this assignment
+	 * @return CAuthAssignment the authorization assignment information.
+	 * @throws CException if the item has already been assigned to the user
+	 * @see IAuthManager::assign
+	 */
+	public function assign($userId,$bizRule=null,$data=null)
+	{
+		return $this->_auth->assign($this->_name,$userId,$bizRule,$data);
+	}
+
+	/**
+	 * Revokes an authorization assignment from a user.
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return boolean whether removal is successful
+	 * @see IAuthManager::revoke
+	 */
+	public function revoke($userId)
+	{
+		return $this->_auth->revoke($this->_name,$userId);
+	}
+
+	/**
+	 * Returns a value indicating whether this item has been assigned to the user.
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return boolean whether the item has been assigned to the user.
+	 * @see IAuthManager::isAssigned
+	 */
+	public function isAssigned($userId)
+	{
+		return $this->_auth->isAssigned($this->_name,$userId);
+	}
+
+	/**
+	 * Returns the item assignment information.
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return CAuthAssignment the item assignment information. Null is returned if
+	 * this item is not assigned to the user.
+	 * @see IAuthManager::getAuthAssignment
+	 */
+	public function getAssignment($userId)
+	{
+		return $this->_auth->getAuthAssignment($this->_name,$userId);
+	}
+}

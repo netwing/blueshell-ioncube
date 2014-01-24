@@ -1,34 +1,83 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http\Message\Header;
+
+use Guzzle\Common\ToArrayInterface;
+
+interface HeaderInterface extends ToArrayInterface, \Countable, \IteratorAggregate
+{
+    /**
+     * Convert the header to a string
+     *
+     * @return string
+     */
+    public function __toString();
+
+    /**
+     * Add a value to the list of header values
+     *
+     * @param string $value Value to add to the header
+     *
+     * @return self
+     */
+    public function add($value);
+
+    /**
+     * Get the name of the header
+     *
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * Change the name of the header
+     *
+     * @param string $name Name to change to
+     *
+     * @return self
+     */
+    public function setName($name);
+
+    /**
+     * Change the glue used to implode the values
+     *
+     * @param string $glue Glue used to implode multiple values
+     *
+     * @return self
+     */
+    public function setGlue($glue);
+
+    /**
+     * Get the glue used to implode multiple values into a string
+     *
+     * @return string
+     */
+    public function getGlue();
+
+    /**
+     * Check if the collection of headers has a particular value
+     *
+     * @param string $searchValue Value to search for
+     *
+     * @return bool
+     */
+    public function hasValue($searchValue);
+
+    /**
+     * Remove a specific value from the header
+     *
+     * @param string $searchValue Value to remove
+     *
+     * @return self
+     */
+    public function removeValue($searchValue);
+
+    /**
+     * Parse a header containing ";" separated data into an array of associative arrays representing the header
+     * key value pair data of the header. When a parameter does not contain a value, but just contains a key, this
+     * function will inject a key with a '' string value.
+     *
+     * @return array
+     */
+    public function parseParams();
+}

@@ -1,201 +1,558 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPy8SzDXeeimVOV1X+qIX8il5w4Cp96ka4jHY1npFdeKHEiUpMnuKRlt0POM8GEqj1Hmj89nX
-SlVzi+SLennVnam76kDBlRo+8T4Mwlmi+bSpq7h3wXTbnVPbesppLs08P2Fn2eH/iyZsTdUgHWAU
-IDgTdwSOCiGLjRB7+HV63NF+gqqzTIFX2Wceojp83/KDOgy0+tAK3ZB2sE8dBOWhTAWUT3OVGW/H
-SfcJX0Fjv18KIHzbgyofLoAfhr4euJltSAgiccy4GDnfT8HXdHzp9GRZrhqiJzWLpy05/wzx6GAQ
-8JLH9Z5AwAmEpRoY/I1ST4BTrSfzVce1aNIgxf2OohacQIib/zXwYLlDcJ0O3YxKXcPlUYvz59Zq
-v6vPgJZZP8pX5D2OkACftyMg7kJ8bw7ekT9eyrX2mRaM0gZpIjc4XEEkkCds++nAwRrd5sOTc2ZM
-1NeP5nuDAdP+EGt8qMa8Pu8ioiP5n/33eHg29nUToY4KwLlYBmW+e6ibZ70Oo8O7Vrd+kIozBiU7
-v39EGLGMGpKzNuBzYZ7oN6hkm6coB1OhdIx2KmfmAuH7X6i46xqnd6dRdydKEmzzs17mwK7qLnwl
-3Wl6W+hxfJcA1hM8TXs6JNY/zBQdX7V/FhQ41Nv+eRmcn/CJNDzF05beKaGZFV0UqB6V9WZxzZ8L
-xDYwnVpBcPSI7whxJXR7Ujq/aKuvmjTzKsCNyKNHojWXR6ZJLrDtT5NWUqnS9va6JDzdBIBHKJaG
-VcMfjSO3KrqxjvSihp7Am8emvfBegtGnBZ7cOPslPZlr4EzA9SsTisfQpn+yL3+sW2va/thYD9zx
-HFKTzoiDGr6YeZL29cE/etytEGhY9XfzVvK/fFVliU1LJIloywNZp9l1yB423Sxl+m8EgZiN+UX9
-A5NfEpwNZB2KFdiUSfrhVOlLSopgzXNEL9Fsq8YBgcAQlCeY5ilICK0CUc8tI5ZhfUvoLFzEVlvS
-s61Qz0NLiorkwN/rY0SPMpqmKOUV8uZJLxPS/1vIna2kIKnIdPRRwisFTO7VETLo18HgPOYJySIx
-EnQY9XOCKf8WrU5rh1GOC0Ws8ysq7jHjyopUz9HMgg1D+j4DpFeq0mJEGCbgSiiQdtdGlTaNSmwM
-3vumalx1qgdHV8LJFlF0Gk8NootkJs4iJcVOUgGq2drYbIMVIxnYGCZ8Vcuxl2QMCVNlQDBqy+mO
-YZ07kURHGjBS++t6sLowsL4WTnMaOmODWDyrspsCQRlndxXAw35m3XFWt6qUQFCgyvxRblNSXIcJ
-3Uo2tMlkwicZRUdGOoiZ92RoQy+fjs81EAegvcIKuIOBmVrwLYKTfrmXouxRWuo81T9mytmVADS3
-vaKWkTI+cF2MbH8UHWrzRRGZ8lAfaZRPWMSXB6AnpW5jrCm6dxCTSvEdOaZYO+zFyjxOzdwZoGD8
-1+VoIw2WpYCM7EPvvDSiWR1TcU9PU4IBxd+zK6drkakZKEwceIDla/DdBPhLzzu1utIzGWO9EjaL
-BrA0ZySLahBb2CJD/oRHnryCmgx9Nv0vFye20M7WxIsvatqTaqF7cdgvMg+RjlUFvcG/XGjK1I2g
-fMzc8GcYZBoE7CtSEqb6BKoNYG+6bfAvLN0KkQNHN6tj/hxam8SlALfAs31SJ0Lr0v/o+WgKEUeK
-EmB/FW/K2iLw7Vr5sWG+4g2ysGE514E6Y4vvY/Js250As0pK+ziYXJIpB988DOTz3gphk9LVAeH0
-8Lj7fs77//Fo6aQpWoVdhZdz5zADTbrlE+ZEctR4t4d4WdRZ5lhQYPP+KRXOpOmPevRy6yycM70U
-TNicn8Z9g+mj2hmQ43SXyeI2M1Tc5sIOrAbJTakCVdeR3gb7p+ZW8pyiL/1fUA1d1B7i4aIhCgaJ
-MFJNvyLbGUHIPVOIVA9bHK5RHiP75KzjkvFgen5ADi/aj4PB3AAY/Xvduh1c4LY0T64uywKUg/bu
-yBrcrA/Kl/oz5TRR+ZKwATqXSVXfedTTpdyWD1Lh2XZiTSLXKnLqFJPMoQA4MfRdLNY7e7rM2WwA
-qKtEmrHpUZenrGGOtbJVae0xmFMF+TEozWWIpzopUkQBCd8rQv5GeHmrdVBUGWQskTAoX8V1f5Zy
-3PgSH3r4Wo4T+AILBpRLf/5F6FbgMg7JiGC4hSx+ZtlBsf1Psn+F98i8AbCwU33EtS5z6wWxM1rR
-BEzt5F4YvjghU4kl9TJuav2fAE46Yv3sEoX2LLZM5rPhj2N1fLQgofP7XhlHMU8w/hCzcDvzxI2c
-DbM4HCUzZDyVLEMx9gS+egDf67RsDbV/dZkPurnB9MF9x3j4m5gDZaeN/UcbfcaDsunx1tZvuLLd
-hsy6lUChXij58yj6cQqEcgsTGyOS0/88rjSgfeRi0snJatPh2PhqrV5jogyWXHuk2oLY01P5r4/X
-Smk4Zhi2pmREuSf4JMCtg5YnobTXvxFw6M/oARVQVs6TGg6YUObKG/MODXXPh01LiCcdKSaCFVYN
-HVEmjgiiQKpbfL192Q+3VLqiR9izentrj6o+fvHQiPRH7lEylgLf7qCphpcxpeX/4RM1tfE6jQ2N
-DkdR5rbF+FUm3T6ZbCzJFHZVJyxvq8lGk0L/l96f8IhL+u6Tpc0W+DDiho+cHK99qCDAUWOQXS1i
-iVPnaKvxfUiP37JsXk1RGRA9J0lskJEy3MFJfL37oNf+PL3KCQK8yQsK3tV/ivT2yyOC37wO4hvb
-L3UmGZKHgDomV57MJykTbIt9/LfO0MwfqfPIcdN5D7YhbqsQeV69PP1bUg5yBF0Of1a7XkNTj0BH
-IjEX0PWQKCBZ6XoNHYWeOlbgdi9t8whO5TS+45OkLkEIZhQEIkNeewtxyqBtsqXDQItOil58P2he
-z6UfhnyTFxY4YRJ9RORdiLN6FTwEdCTUQW3RgaDdbt53TZJklWz7kzXqF+CSO33u8HuXBdXxlE35
-dd5VFq1XRIrOWSt8JJWliz/zxDDjHY444YnrHPLRNmtt3wELr4pVQiWuWg/2LTouAfxVPxYBXzfW
-2YSzar62sVxyyVAsplVhO60pmIfC2BM3uLib4YJ9EJaDGwanH+RtID8FvmEDQqurLrqKYxe7EVvf
-3Q9q6ntaFR2vfrhcL0E3g8mWbBL6RCJAwYn+pOqojV3CnnC1SgnyrChpGLtoPxM8PvRW18/bh2A0
-L3UUbu3UVQU6snkbJcKvH618vDX67+X11XHfyKNgTvwhVhFRIxXVfpI9H61PRZ/HX2SfeOf6HnPG
-PDt2EBV3qCez0mvrrBChzzfrwZ6pjYVthbLajurC9SYrTlh0VXevO9oNOTaV2ldUiIYd5XJadCpR
-9OoYjlG1yqYNxhzkkEY7cnF8WMI0pVLfB8CrQsjFVQlTaq9cxKb/inNNpQQAzFyreYuTVnldLeYv
-X0NG6m2JrRmevHgGQaXGwFmZM/waJmEelexJHxqPjxuvmSVfDT5cvvYPz3sZpgglzp4lVhsjIk8R
-WS8wi0BgIL0TkcsQYSjBkYFJA6SBay+9aEMwBrd1+qhecJRYojZ7/mtbPj0K+dBt9m1Iau/7aN41
-1vzmWfrZhhsUI0lSMQoMckmXNyn9VpMoDgHs5r9UqNMgiaGKfXxarfMNRLoe8GLTQwuVAdYlQAVP
-yIJ1tOVJGpvNsi8sYWTFaWADj2Yn0ubz7cWQl7gatG3AI61I0v4e/7hjN1b0sOm587ERfhEtQDFo
-ZySOI9eOPf/aCaPZn7N8HtEqyZLWnql/l7GZeO5n2RxBg6sK8dWmzC9Maqe8TVOZbqcdBJTeRWBs
-AKjB+LPjGccMDXiu0bK6NpTWHvAmAfHjc5/AoBCSwPpCChuO0tqpPUbqKLIqbXSmNAlQ5k+3s6h8
-fOnxhWlYZcrqja/1JJDPykdVdFNvrqEt4ITOSPY3nWW5Jpzc9ZJ+7wFM8VWHAMse2UmKrXlCc/Me
-Ej5kYRITEEMOVvgRxxtfeyxxmeOv73GdTbUmM3MQfqfV2kwRyaSddCInlgg7KtRW3kmbtTX+6LKV
-sy0DG3a8D0OCfnHtjz7V46ymjR2eUM8YuKZ+cpX/pjTT0N9v9pVOW/qOKkiZR2V+yCnP4Wk+oPnL
-fFTC0d8n5f9RSy9QzYYo7uKl+nsLdSagmaYikVZCHDXaHSRHcg2w0/iRoydnZPF/9Y9USgB+qqEv
-ZvkvH3Fp4d6lWtQEqsZSedDH+avc8DnX5hjZk1D15YkhtSboMHIcEesWBaZQ55c5JXMPuH7tTa4b
-+9LFrfV1InRMDvSKPC7JuHO2zxku6aLiwBXb2zRKPF+HAMQR0Id7X1FI0LJ+YhVVaHEYR06IDZ/N
-7HtFDXB/C8LanBD+Q2DOpTYlyyLGiEUWJ8GMbFXcxwdJqPCORJ3y2h+5gmLRhD5AY2v1+xxni27u
-X5BzsOh6l+4eT9f/H6o9JmwsDRTEBVRsuD8injGYd+V+RO1kWA4iXAdIA2WWIs5/CL5P0TP3HB3E
-3a5cx0VjxzeTuULVZw0qr4rRPGjHBhk3K1X2K1MmjOL2Vc0OXp1uETExBkP6HN1IyshJbIkRtuyc
-avVjXliEhWVXDQrH7p0lcoSYflRSujo6f/Imj3xXTdxU6t+WnX2prS5LBsWtTqP3XTcYOGpwoaSo
-4vFoePgkVxkrTBOEq/IYbQuSP88kTLyJQvJV0lZaGGe0c9ADk2oTvgW556ZWkQwsdFbavWE6EjU5
-Kp7URAckrsTxu7RB5Cor8BVMvDHHf0tkzYb2pUcOSlCptF31hDc1UKt919mlCJLC61+tlo6SMcLw
-WknaS6V/VvTbHKJv9ZSOvKDdscbCw64BzSnJqfMcDTgt0kai95va6kaWklfpv+AXbpzT9XOmzK2/
-fAk+GVZHoG4MJJKl0kcat57q/mu9QMgJilLeoPmT6sxv+TMT12PaHKY0B81F2cf/HcTXH+kp7jj0
-qmrJllz4XltcFtTMMfwFKOepATCmO1uuC4oEY+7HVo7YPAAUd49/WRg48ILw1EREohDR3KkYDpyO
-Lp8ZlzUDJz9Fi3tF9OkKg7OV23cBbDOHBqhK/UEHKE3e7iAh3GugoG2h926xZX/51Rj7lH3mqM3S
-0k6MV5zp3d9a7sktJ8FqVCBwWkvc45IScNEDfxcxSFXXDBQAecBZLb772ddXgJgrQR9Lu9qEsm1E
-emuTBwfpNxCxvExZQ9CkL0CNxTAyf0MHkp+u8xak0NBSsPXDswvJfg8hf05QQVvc15I5hyAuTTyT
-e1gXtKS5jw9Sofdml2Jz3JMMbqlL4N+fqztlJdNzo5OlNGoCu8sGtq79jyC2MwsTUydB0DJnT/8H
-EB+LBW67rdkFnLCM2QFdpKZpmsuiCJ0Oh6tyllxIRskEUAYRIcxvzQEoPquGjfGoJqXSBmUedvYV
-sG9xTOvEJZehrA3NSn93PCr39KbZf+RxesVLLDQvzJikLf5bmXJavS95H1Knh07gzBQmSoziiL2g
-uboeLaJpv+P02/7VQ1XVHUYg723nWDX4yqnsnHNOdFtptdVdsrcfFXKHl9EnQCZx70a8KQDqqlUu
-lT1CYTQKDAqJYSWvm9a83YCNJHdwx1BHEXplIcXqIf9CE1Nm7KJXjWYpvAQv+Hg8Ag1jwNLni0M8
-Q3egM/30P37pwws9ibm+RgwNqGtsUn9/DMxkGVXXKewhPlvO1VfkTkuTy9LPkE0xIoXtYVI+qe6V
-WNUbQ+loGAd2zOv1SMIhhtR0NCQCjzE8TKQ1JOrGi8EpChQg5dksGg9ek09cd/HxxSVTaDKoVWwA
-7ChE8lGNInZ+e81C5Kl9ZYPnYOsvQ46jygHLnzq+eJ07i+K8ghFjpKuXDN0Mf2MA4ZXQBcjAKFOg
-NiSaNnbGPEe0kJ/drtH6dF99ZZKatGR9TNRjat8i83+rMyI6uImaTZ8sJbIQaI6WJEjaiF2TSmnz
-R4cP2IBnLtzfgrVArPE9+dIgfNjTmEGOiSY2LPRzqjywqLLE3ooZlPjCwKo7sBfzh4SC9sDp0vMv
-0TJwNRG/DAQ/Jp8pn7KvwqV2I0JS62ypuZJ+A3Hbrn3acx+lSfLx4qGJfp3JZ9O0h1WRFfRp6c4k
-boZjsFrPoOxWpK7F6iwy5SzCAj/5oKiPemuIHk/gBPbLvOujFxdJQYHuoB/2MsFJuRLMMr1HLb47
-otklDmIHYZfDnCZLyIUVJVzwRTYGJy5ZzB2Kj99CLqxNWwi2VlCcuTy0xw2JiAq/kKrXat2Ydudo
-KLvQAsF54xKtOPgh0R+7d53DUhmj4Wdf9T+Zd10+rqiZK5oVSMnETMFaEJvNdSV+vo6zBZ9gjn/R
-3HUIVC4ZXerNSJ6sCfJjUVLM2hqRe6QwmeGhJckH6Ruj0keqfN6mOxE1BIJOalTkf6H7UjJuDVxt
-mLv1BLaDKVuu/z0zPyNJHPxwIyd/ojC67ZhfL52lgXOrojUlMxxBSdj8ibLacdSMFJYcoQ/v07th
-UJw4VLTymWIChBzYghWWFdr7li2r5o5Ziid7qAtVk7Fs9eZKsnzUxVGlSEDyxKE50JxoRSMLDGcH
-92sF912sAdjrzSGjk7HFpIdGojqD8dIxqhFst/hdV9JM9VLFog2h9vdZSWC2Z8Wf/VxARYICuoV8
-3HpmZW2ekB92CAVk6sXFa1CgWRPb8aJWFGQ7Uks3p2wt655q8jZ6AlLet4GzMLd6V97D0SeXpTKi
-4ergpVbr6rG9X8EdnBz78neFQEfYA7MtRsaAFhknQ967MRE1TL3KYjpKG63DbhAplMr/ZDnqyztI
-4T+i+PgGiakO28mb7zD/7BSYGFUu0nMJHCdt7FwDm/iQBXg0axeOmwUu2WjfkiGhH1llAkqbUPnQ
-SX79dXWKxpUH2Q2VDKabMagzxd7/+ID8nPrsXYlH8I4BnU/o2HxgPjq2HBbBhqnju8WoOGZnjDgG
-R5+5zChLAuQqIupon9nOFJLlmILxROxy9M5rxSdyDF6uySKg+MeB1J3MJJ6iHzLvGyfZ15e/sm/k
-yAMcf+GoZvPIfxvhyjPmB5ZvDJFiqZ0OpJ4Y2Y2oofsOfhsm+AzLegCY/wDADZy75tWI4e0aAVw7
-DVALTc0s5PN8i67/7wFxL7l9tMTX1FlVuVttGv/OOHqv36D0APMVeTMHU3DjUkKnSoSLE640W/lZ
-bQK7t88hQDPG4npC4Y5wTOPoQuEaOvh65tB1cwZKc/G/j/eanDNFXkSiTnB9oDaKHImiiLmVLIe9
-dH7JZRZIN//Sip0JJgAFUBuqjXJqYmG4GQevwk5WXjZb/7pCaeLgCmPUSz0YGvYJS4dBDaQkA/42
-NU7/Rn9TkbdDiiUqIVlJ/+PAKwlV/CaFZRaJ+cHsBQfeK+ApVSGn07b/PcuowzczkuS7kWVR2Yz6
-L1Owkm7ZWeqS/FMcG0FI16tNhzIFVZUyQIgVShUgT5OS1S3ij75dknSrDwpKCnlU1xHmHRwTOCkt
-Gqxu+Evsywy2VA1dv4JWPKwb2cdVDQfApkNQ2HIIvgZ/TLO+oIvrk/a7S/PX5qzr9+f5oIVVO+bR
-7oHIBo7ozBtd88djtcU3RZe9QpQC1PocPiGGokmSFgm3I5R1uPAESFXnZKRfT6/9IOZ7JH4bcvc8
-xkEMmkx679PS75MybnrOHscBiNRgjruIif23cJKufWMlWgvyCaWEk52Y7ZJUGJegr3tzle0XxUjU
-aBbTfrrs/0vVoYjbwzZ23kpG0HLZAkhqzR22ZAZnxWTKmNWcATcCNOeVIRdeCeu0QIidkoD7rKPl
-k/P4gOdF96BLWRfG/Fd/PRn06SVypMn/MP3+q6NsEljWVRfrzt/0mZ4P12TRjEzVAH5xwuT4jfrP
-hXsGvpuq5qKq3HACWqJGTjoxrA/WBzZzQFzLdvdtjtMEZPC16gX6IncotkOpqQAFtsGqwwQGkYUn
-U2lCtHQOhuQXHcLKsJ487bT7bNPGgIMtB6Vu2tqEeq5hgZ/5bkMIo8EVxb2nPxom93xvOgf7+1/F
-qw3EzHC3+OgqyPDMYNMPIe80eBn20a6b8V98kdljwsndbnJ/jp8rIIX7220oHs43ncTWHke7TTV+
-HcjEKxt559iJT1W26KCPgCBxsdUtfllsQkl/964NPLSF6f1ufCZGN4XLtwa05P9g0vBsevZBNTcd
-DaqnOdhWia+MIt8K02Gbsr3McY2/Yk4pGx27X+ALiEgc0l1MYxSACfSXr44hUftlnGxa/hLSAYSQ
-8L/YdmwbJiGCbAnuhbnfTKQqsguREEdRGqPEn2/fCaqdIIoK1C/+r4zavk9lkLzywPID1GnrMNh/
-ZRG6zPYbp3NuXXSFE9Y5p8OHYOIOPeaTRjBHbxU7S3sadbHvXNjMxeHlKf5B8Pyx6kzq+C1Kdsob
-ZHHP7usLee1ct8mgvvwwtiubNzYtmIscvB0kqbIaULENrAsPvPagKbp+TvRUa4+qdHQQoXPnrU8N
-o8vloCv53ap+AxdD1cMYWj88Vu1RI3fzabrhPyOBPv0CDvwP3tEn4pAWZUmRTvRkbeh7d002rfqw
-q6iGHEtIOqG9mx8J1TxqOqRz9DVUM3SAtlWXeCQDlPPiPwK0rTeWUmj4KEeSJTNuwtwCQg2mj/Hw
-H4NEnTAycob09w9cCN6BpfeQNLEaYKBVZT+P5iBMu0wCn8YIwiTrV9MKyMaljYjIte05A8IK/Sie
-fK4ZViu+jFxtFdW2/Y4D2K18a4qu8aGRzrWPsqTZAHZEd6PU1HYd4I9qa6vsv5H6dLXc6jgoWPXM
-g04lxMKRmD0diwBCLPRZ7Rg8stQihiACUjKEV0D6axaLIxnq5SRjT7IG4a69L0oV3bu421PgSEDA
-umfX43dFA296iermYjg8urOdg+5VUxLlZwyu5Hgxvulh1qaYpcHbwHrC1iogR0BRkKlL+R/jyLnp
-bYP5AkvWjtKuYQhvTSyjo9Z0nMDUDpNi40HzP74MjahY/qKx9jnE5YHyfYnTc4//wxbPSQilVyHb
-0Cy+o3sLOPGLkuQ/iVcrrb8x6Utqu/2+Ig9923QLCnZOaOB6otI/x/69uGXNGF5XVNi6Mur4KOvh
-m5VTTZ29sIbZH/LP4Ca74ANsqiRyDOCKxvlzRhev/x2T+8lZ6MOKY/vQUzgxYd6ppR9zsmachUf6
-A4dUMe7fDUI/Q48k+bp3qpizyKazFWZPBIiU2JLQGNHXvtpeyiUi6GsU7VsYrUmT2BgGxmuj7RMM
-L0KAf9PwzlSMJoA6XHUsDFAFtkT/vUNH/QsW/2Zt0QqI+Zj+qeKhUMv34xHo9F7FbdFUuE2n9H22
-ly6BpsgmouWYrHtyWG5aaOZWNWC+Fs2U/GNxgmTSmG5IhBieCDRkoc3k6dq6GB7HC81u8vBjGko0
-cB+mMvnfyyzal2F+ZRrEUm+TEcoj6aY6nuiZzfkfIFn4xEqQpoAU0raZ6Q6i2nh6FwsVMs0Ipjp/
-PdfjHm2BMlCIw/8JK8yVBx4b5605rX5XC/Bbgm1tJcA0C50W3WXZKtcrguZTFghIFb+ZlVIW3jB3
-NTkY5rnru5fTbVCowECTTFEBawsEJmgXPfjTvpY+yNK3SDiY4sZa/uLNwVlD1uOq/rZMd9fvYeab
-ExWvx65O4/03fzHuQS0VwGa366k2ZzfO0UxchUycnXh0P6Swt2W7awBKUcFRgWfS0uH36iE3gcS4
-0jJhPXxXbiM5EibwKWb9WuXDq6LoWsCav1anEf/bHPQ94H+4kDxXU7Rfrntxyq/3yNzlpk6nwcQv
-r8SQkxsOibFU3hPIrsdVphXUQzn3wocGCcUTJNg8EvkyqzC4IxSxXguf7ocr2B6Awzuvj6wjE7h0
-IINms3XmwBdcl/HqHMsA8WpcBKahVo3+fl6Ajzw37ibXaTHD788KOKE61eqsjWOqLnxrzTxkC10e
-zewFDL103Quj+y7V93C1tOcOuMukIBLqHqHzCQgziB4DdA5J6rMX0vc0tGUOFkeHhj6I0opKnsaY
-j4+wr+ps7ol9E+RuzE2kppPplFoW77q2hcbOr5a/c44aQfaF1EcUbnTVz/mu171X3DoDeuf5Cs1v
-T8hM9ITHUDEUI/prDPaZuC4608iIHcOv/kdIrE6pRlsq8M9MQgeD4F3XtRSOYPJLAreMiMzBWRm9
-IubCC3QVmGr7W5p7z+cb2ybc1Pgjt8v53sqCAs0XfzWiveB6jXk7ekKeuwFytACCW61LELy9kZ82
-zu2GQNblp+FvLq1eaiFVNC95dUw2XWi7fvtwfC/9FgHlF/tlxAxMqq+H6p2VdYRdHT4XMqvfwhve
-errECOfkLF7jzBzAlm0twUyY6axHkH6QCgJoaTJsq77fuztHuuZjs4hmfCl7HotC/Ig88b23o9Mu
-lKQCBtoneslzaRlYZpYa2GD0+zIvX0t9zlTB1r104l1oiIo/f9yUtQHisFKLSTqg/9Ktnn+59x/O
-kiE7/hb60LFDa0yX4GPpaVoXY5M8+TF7TZeQn/L5+Sue0FUYV23w72ZMEbYZTjRbIotzTtLVq6GF
-V0dCboDlNhKEBQ8ZxkgSZtTqLtMXcdEwWAKd9G/OtjWop5pJECvsKM4xui5VeD9eTPuHqBSzY81H
-vKD2bGmMGKpVrKd3q6EDvCH4KxM8/aJMal84dk2HYOXSTnn+Y04qsnNOHuTG9T03avJU1YhFyZOs
-wuFtEu1G5haIeaabNgMhmvThtkPWDhNi9m/kyu1ajT6f2fRBDhXwttSgnY7//5UkFLvfhfd1O+Rh
-+LWoaBSK+X2uVGyt0e2WKBbdBDAdnbc0JoWTb6c7sOKlYicBEglqCBwi0s6jRGvL3Gi8u6Fje/Uc
-shRV5W9Ef3ODS54iMzz4oK09tO4Li8CxMKkMRgcvhnp48/78qvf4oGrIVqymnr5h2ReL7zVtq40Z
-V2JxnsfDWTGnuZWGXi683A17aI/TsTe2iX3DuaUr6tSMIyjL2gw+4gAG/kqMM/8oPFbfBvI7vRZi
-1H3cY2pSjY4/zba/VM7OxU59oAtxgoF5m1c9DDnl2/NlqLMQW6SVCekIT73gei4VMNjVueI7wIk5
-/FwiZz+0Y0ZHewRl5xnFokUAMl/icIVBHqpVx1rPvNUxiAw0BE6zzYV/C0mEPc3IRc9gKpGNaYfU
-NoShXp/VuKSCnrs3BW3OlfC+RLkbxZPxXrlcsy1hjQimU6AsLO/uFjtSj01h30/5zWbVn529B4CM
-40YX+XxwQ1A4dxEMFzUmPHI9y3EI8IzEGf6tI4mqwmzEa74M4BI8ln9gMoZclj67YI2LyY+T+sB1
-pqj20MIpe4okUPnZn3At/6igMLcKrz5KydFShgFnpF6MGWs5o2pkxv6u4Wxo79k3qnkEbEeXS/A1
-KFYEtcJrnUiIv6SvOoqY6jGrjvoJfGbXGaE2a+Glk9SZE20d041eEgGIkIEBaZHZgEryj+mjU2Js
-9TXs4p3t9FyjnEgehlkLGrL1bXqISyjy63Ay44gvo/YV5/oScmDTyUecTPNEZYTH8pUYaiQ7LOml
-BlYszhX6Uz2snW6pKZVPHGYyCB1yYUhhpJ6+SlMIO5cOtJILbIVI4VmprtBh62OxYNOhc65+Ys3u
-vIwezsosfqLZYBAbEB1RCNFd5Ij602rS4IxIPa0oymTV97rd8NuXAU9VfBXV3OE3A5PGbcUqscJx
-OAI/KeIhlb4oHIofyBJvKW1MatjK6fqwu2QmrgrWtzAE834UpOMAXcf1hcsFaQM6Sm+KaDCJveUl
-irtzzhm+SOFILtWpnxvNCRHp4CFAhKc0JUSKTIfirmssValgQH9BLcwKHZ2aGC/htnXc0vtfgLbD
-O/inp33mNTuZZW4ZzbhntNKvI/+e7+vRnQ1u0e5Rrgn8jnfpFS5+qMQM4NfhLN3bqSQ0PKmdyTvn
-OkD/03Y8r3eIktJeg6P/VeE3yZEccgR5eAeEoV/DmH2fj804Y7Q9D4f8SWHDb2C28nT5BYXhei6C
-JqexOD9s0rMdAPp38Ty+dMq8tob7nKxTK+2JoPSAXQ/17OMsu+t0Ft0MxuHYoOW/JBtbSZwHCiJ1
-YdbcDJ/+eTk4Jn7AL6X8PNgJVtAbG9vlvnRbT/b4Ce7ZINTyaPvjxhlzpfgTqohHLTQAquY/mp9F
-ElzpOwlRWLvNW3bdPqWAO2HXCQZgtBpvBBD5ANbDhdMmRWGUNFX19lPIunbrUicaX9TJVOQmpkZ5
-OKugO7ktaU727Uv970XBO0lUZFbJZzd5/gS9YQ5AI41V33RlmBPMr+0jnFvyQ4TfFcGOGpHYJ1nM
-XSdHIPN8AXJaQwxx1F+mSrkMJLTjGUMC0qWqOfkG31EwykphpPdNo7W3W8iZa6dx0/tZ5XRV0xqV
-TxTs5udApb8sTjNPVjI775ZmdQHgmoa7X8QrB0VSS5VkxZIuBMqDqdH19+xCX4YYY7oc9H0Xg4qr
-zbf6WBbJLJgdT0E1MowygYE5kNF1EdUvUTX9m9jGTGnC1y9W3GAWV0pSCsU4VTjDFV6rwfYcARnl
-pjVtvdrSneGW6UsDVcrXhBo3mjU0TdnoBgG5VT75CyCEr1evoBZG5iiV3zWV3QP67/9B8IH6mUCh
-vJ+ZwR6fVV77vkWDNg6PJ/h5jFLpaVyqhMejYxUwwP61+93qM8ciC2GY9isuVgkGsFagU7Rp5oFg
-onS8pnKOsyPYl7RmGk6PVF/NctBYZZtNuGbWymRLknho4x5X5+U8CnAGVzVA+bUPcMnINvQTpdJ6
-VacKrnj9OadV+BO4wtSNzLd75E+r0ftfd5NhFx6G5/eqoGy3CDidhhi2AJDNuRrB5tdlmvrmzZO6
-6HhNhX3/v77zjiztO4xX8atRg8kzH1BDVchvujH+5nsQ72fbEMAgzwMpgpV5iiK0zL2EXong9u0P
-vfd0FIPeTw4+aaJDRXDxQ2dmkIg2cPh6WiuNPU+Zi8vIaVKAYIOljSVuVcjrQ7s9XyvGpiYZvQis
-4DQG7H69skQ29XnLm0HyjUmdPxrqXhhx07osX6jlcahEBAb7+rwurImDTmTZq+xZlTuQmSXX3Lcl
-zma8N8WKb8j1/nKw3LdvKF/fAyVQe6XREUnInURdB/EcZd1WzrBh5HPCgUIWDoimysmazI/gUcnJ
-tCWF9tXJDM//Kmdil/qq2u+V3bAlx6Pwfjj8ddxLHXEp9MvEulLYdOLbAgK6rvAuC6+oiKQkw6z7
-fqKqg9jJhAzC8Gn6pqbFerEdKrcD47G5EQFfVTf9kOeC16MYFc2P+rgLsrv6csGDhP26xR9OOycq
-AJdQA8rhCNZxEckO8bxjhR7nIF5kDAzyjr3vL3098uLbKoYDh++1eLrBXvdC5mJJAjmJ+27LlIF0
-6Re/eRrJFkaI5hXFDUrs8dmUaqa+PxCrJDv3d+oUfndNfPFzMLIoQw3YUhJZhCKHKtMzXQCD5swN
-dbyvcyHePx6/czYxw39ZRyeqKfIkRMc21vfStPneb7+ax4gPI0IMv/2sftRthpAKoKzQMVVOuopY
-FSsHjINIY17W6Kf8/pwvTIwsaVXWEohCoXTpFWuGh9nne3dzeMQSKJV8/XrM7qlysQwDxe5uryma
-AB0WrcWcJrP6Rz749CrF6rUXx1evRfGafV7PDcJ0kCP8aepcE6K7Oc51JAgQrMRByX0crxE6d/4B
-V8U5kumRgb+C9yi96tuAY3Jap2OYYm9RWZzBL2gqYmL3NEUj8l48HZWWTUGvQYNlGzZry1OoDGM9
-u2VwToqn+byKY3a9ZKVlZGcMDXi6pBQIcMfeSMC8wgK3aCqJ1mMCCqzpq1PuarptlRCMRbDw+NZf
-G0Wz2f7LSyJAsl0x+yba+MZkmNTn1nyQw01OscjldUOspF/sRGOde7ZyZhd1RhmqxxLnFwGpEXCC
-USuQRns5EFb/ea2eesqXYEn3Gs4oh4db/+DsqIw/uvY4sSbr6y9vChorXohv5xtjsWUiadC8yGac
-RkdGinCQqdussvbaDD2zkiKx+GxjC1ih7DzddIc6x+61YB6yXfdLuAaVXoOHPlcc9s/vIqGxVZMP
-c6Ox9W3Z489ohC0BsqFpXQbvTHq3yFEr4A3sUk7RPWn4CUMi6fEZMgatfL46ANG/zTUuCESoHUbf
-Xv88PI1cnOIkgcc54HJzO6C81JElcDQITvQpevVwGnvWGbwyO7MLT/E4ce4vuYJD5eHZi5USWiOe
-1A3y2Qlhe8w/c7rd0Y4BGAJ2vNxBptcJO4eWCas5d8wkqPDBZqMYRH5cqoxfAnqA/bJPHGECO/TQ
-YeKJcCsIeqKAw/3GSKIMmyseIq8v4V5EZrSxHDh/5A+C3+iPXTunDd6xYmwJlBT964fHWrPyPcA7
-UEAQRFei1Fc0tWbyR4KumniEzb9PUEEfZ6dMNz9/lDI/m0GZJJb5R+8z5UG/JOXxZ1ffnpYIdiLm
-j2Tdi9ZBlANl/e3f2LfuRDbkQmdukDYf6KBfy2rbfz1BrKu/Pyf8FoPlS+Ru1VQmpdL0uQGzKh/7
-ojMwy1gAaQL8iNHHq6M4dUD7gnpRcW8HhXgbMzL2gdG5Pj39gypBAtqP1gU5TxmgenmYAyd1PhM2
-3onFsAGWgKnaorV0n/kIviph5CL0B9FbQS9G3K8NGUq9pUrwIzuLQ2lNWnrFknULfWPxsY2IYwvM
-N5zzCk1exb6bB0rc8CpGbdyF7Ngzr0dES044hxaSEkr30CAvUFWaaDsUY6lF8dPb0uinoQNDkBcx
-bhMutbpug7EF315+dTnDxj6lHemedffHIQTMwHGOwEJQBYE+DAFhh+EA3sTRr/8znCXpjjJDTfXs
-/P1L/+9zUbUIINUrwWg2oezx9/eFfZUXzr0DHnPI4GdBukFTJrRUurTT+MfmNPzdhNBu2oB1gU2a
-20YsV84jwezEmbW7vAMdcc7XlJgst0rKqvSI9z7ycuGkQ8caDvfmT7v5NEr79zSlHMhdhvdPXeBu
-ag15PJ6Ev64jsDjkzQ8NT30iZ7a6U2+9ODssCra7Ekmeta96USml7fJIW/84+MYn3pdkZJH13hMB
-jC/SXXsulLK401Mojto93ZS=
+<?php
+
+namespace Guzzle\Tests\Service\Command\LocationVisitor\Request;
+
+use Guzzle\Service\Command\LocationVisitor\Request\XmlVisitor;
+use Guzzle\Service\Client;
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Service\Description\Operation;
+use Guzzle\Http\Message\EntityEnclosingRequest;
+
+/**
+ * @covers Guzzle\Service\Command\LocationVisitor\Request\XmlVisitor
+ */
+class XmlVisitorTest extends AbstractVisitorTestCase
+{
+    public function xmlProvider()
+    {
+        return array(
+            array(
+                array(
+                    'data' => array(
+                        'xmlRoot' => array(
+                            'name'       => 'test',
+                            'namespaces' => 'http://foo.com'
+                        )
+                    ),
+                    'parameters' => array(
+                        'Foo' => array('location' => 'xml', 'type' => 'string'),
+                        'Baz' => array('location' => 'xml', 'type' => 'string')
+                    )
+                ),
+                array('Foo' => 'test', 'Baz' => 'bar'),
+                '<test xmlns="http://foo.com"><Foo>test</Foo><Baz>bar</Baz></test>'
+            ),
+            // Ensure that the content-type is not added
+            array(array('parameters' => array('Foo' => array('location' => 'xml', 'type' => 'string'))), array(), ''),
+            // Test with adding attributes and no namespace
+            array(
+                array(
+                    'data' => array(
+                        'xmlRoot' => array(
+                            'name' => 'test'
+                        )
+                    ),
+                    'parameters' => array(
+                        'Foo' => array('location' => 'xml', 'type' => 'string', 'data' => array('xmlAttribute' => true))
+                    )
+                ),
+                array('Foo' => 'test', 'Baz' => 'bar'),
+                '<test Foo="test"/>'
+            ),
+            // Test adding with an array
+            array(
+                array(
+                    'parameters' => array(
+                        'Foo' => array('location' => 'xml', 'type' => 'string'),
+                        'Baz' => array(
+                            'type'     => 'array',
+                            'location' => 'xml',
+                            'items' => array(
+                                'type'   => 'numeric',
+                                'sentAs' => 'Bar'
+                            )
+                        )
+                    )
+                ),
+                array('Foo' => 'test', 'Baz' => array(1, 2)),
+                '<Request><Foo>test</Foo><Baz><Bar>1</Bar><Bar>2</Bar></Baz></Request>'
+            ),
+            // Test adding an object
+            array(
+                array(
+                    'parameters' => array(
+                        'Foo' => array('location' => 'xml', 'type' => 'string'),
+                        'Baz' => array(
+                            'type'     => 'object',
+                            'location' => 'xml',
+                            'properties' => array(
+                                'Bar' => array('type' => 'string'),
+                                'Bam' => array()
+                            )
+                        )
+                    )
+                ),
+                array('Foo' => 'test', 'Baz' => array('Bar' => 'abc', 'Bam' => 'foo')),
+                '<Request><Foo>test</Foo><Baz><Bar>abc</Bar><Bam>foo</Bam></Baz></Request>'
+            ),
+            // Add an array that contains an object
+            array(
+                array(
+                    'parameters' => array(
+                        'Baz' => array(
+                            'type'     => 'array',
+                            'location' => 'xml',
+                            'items' => array(
+                                'type'       => 'object',
+                                'sentAs'     => 'Bar',
+                                'properties' => array('A' => array(), 'B' => array())
+                            )
+                        )
+                    )
+                ),
+                array('Baz' => array(
+                    array('A' => '1', 'B' => '2'),
+                    array('A' => '3', 'B' => '4')
+                )),
+                '<Request><Baz><Bar><A>1</A><B>2</B></Bar><Bar><A>3</A><B>4</B></Bar></Baz></Request>'
+            ),
+            // Add an object of attributes
+            array(
+                array(
+                    'parameters' => array(
+                        'Foo' => array('location' => 'xml', 'type' => 'string'),
+                        'Baz' => array(
+                            'type'     => 'object',
+                            'location' => 'xml',
+                            'properties' => array(
+                                'Bar' => array('type' => 'string', 'data' => array('xmlAttribute' => true)),
+                                'Bam' => array()
+                            )
+                        )
+                    )
+                ),
+                array('Foo' => 'test', 'Baz' => array('Bar' => 'abc', 'Bam' => 'foo')),
+                '<Request><Foo>test</Foo><Baz Bar="abc"><Bam>foo</Bam></Baz></Request>'
+            ),
+            // Check order doesn't matter
+            array(
+                array(
+                    'parameters' => array(
+                        'Foo' => array('location' => 'xml', 'type' => 'string'),
+                        'Baz' => array(
+                            'type'     => 'object',
+                            'location' => 'xml',
+                            'properties' => array(
+                                'Bar' => array('type' => 'string', 'data' => array('xmlAttribute' => true)),
+                                'Bam' => array()
+                            )
+                        )
+                    )
+                ),
+                array('Foo' => 'test', 'Baz' => array('Bam' => 'foo', 'Bar' => 'abc')),
+                '<Request><Foo>test</Foo><Baz Bar="abc"><Bam>foo</Bam></Baz></Request>'
+            ),
+            // Add values with custom namespaces
+            array(
+                array(
+                    'parameters' => array(
+                        'Foo' => array(
+                            'location' => 'xml',
+                            'type' => 'string',
+                            'data' => array(
+                                'xmlNamespace' => 'http://foo.com'
+                            )
+                        )
+                    )
+                ),
+                array('Foo' => 'test'),
+                '<Request><Foo xmlns="http://foo.com">test</Foo></Request>'
+            ),
+            // Add attributes with custom namespace prefix
+            array(
+                array(
+                    'parameters' => array(
+                        'Wrap' => array(
+                            'type' => 'object',
+                            'location' => 'xml',
+                            'properties' => array(
+                                'Foo' => array(
+                                    'type' => 'string',
+                                    'sentAs' => 'xsi:baz',
+                                    'data' => array(
+                                        'xmlNamespace' => 'http://foo.com',
+                                        'xmlAttribute' => true
+                                    )
+                                )
+                            )
+                        ),
+                    )
+                ),
+                array('Wrap' => array(
+                    'Foo' => 'test'
+                )),
+                '<Request><Wrap xsi:baz="test" xmlns:xsi="http://foo.com"/></Request>'
+            ),
+            // Add nodes with custom namespace prefix
+            array(
+                array(
+                    'parameters' => array(
+                        'Wrap' => array(
+                            'type' => 'object',
+                            'location' => 'xml',
+                            'properties' => array(
+                                'Foo' => array(
+                                    'type' => 'string',
+                                    'sentAs' => 'xsi:Foo',
+                                    'data' => array(
+                                        'xmlNamespace' => 'http://foobar.com'
+                                    )
+                                )
+                            )
+                        ),
+                    )
+                ),
+                array('Wrap' => array(
+                    'Foo' => 'test'
+                )),
+                '<Request><Wrap><xsi:Foo xmlns:xsi="http://foobar.com">test</xsi:Foo></Wrap></Request>'
+            ),
+            array(
+                array(
+                    'parameters' => array(
+                        'Foo' => array(
+                            'location' => 'xml',
+                            'type' => 'string',
+                            'data' => array(
+                                'xmlNamespace' => 'http://foo.com'
+                            )
+                        )
+                    )
+                ),
+                array('Foo' => '<h1>This is a title</h1>'),
+                '<Request><Foo xmlns="http://foo.com"><![CDATA[<h1>This is a title</h1>]]></Foo></Request>'
+            ),
+            // Flat array at top level
+            array(
+                array(
+                    'parameters' => array(
+                        'Bars' => array(
+                            'type'     => 'array',
+                            'data'     => array('xmlFlattened' => true),
+                            'location' => 'xml',
+                            'items' => array(
+                                'type'       => 'object',
+                                'sentAs'     => 'Bar',
+                                'properties' => array(
+                                    'A' => array(),
+                                    'B' => array()
+                                )
+                            )
+                        ),
+                        'Boos' => array(
+                            'type'     => 'array',
+                            'data'     => array('xmlFlattened' => true),
+                            'location' => 'xml',
+                            'items'  => array(
+                                'sentAs' => 'Boo',
+                                'type' => 'string'
+                            )
+                        )
+                    )
+                ),
+                array(
+                    'Bars' => array(
+                        array('A' => '1', 'B' => '2'),
+                        array('A' => '3', 'B' => '4')
+                    ),
+                    'Boos' => array('test', '123')
+                ),
+                '<Request><Bar><A>1</A><B>2</B></Bar><Bar><A>3</A><B>4</B></Bar><Boo>test</Boo><Boo>123</Boo></Request>'
+            ),
+            // Nested flat arrays
+            array(
+                array(
+                    'parameters' => array(
+                        'Delete' => array(
+                            'type'     => 'object',
+                            'location' => 'xml',
+                            'properties' => array(
+                                'Items' => array(
+                                    'type' => 'array',
+                                    'data' => array('xmlFlattened' => true),
+                                    'items' => array(
+                                        'type'       => 'object',
+                                        'sentAs'     => 'Item',
+                                        'properties' => array(
+                                            'A' => array(),
+                                            'B' => array()
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                array(
+                    'Delete' => array(
+                        'Items' => array(
+                            array('A' => '1', 'B' => '2'),
+                            array('A' => '3', 'B' => '4')
+                        )
+                    )
+                ),
+                '<Request><Delete><Item><A>1</A><B>2</B></Item><Item><A>3</A><B>4</B></Item></Delete></Request>'
+            )
+        );
+    }
+
+    /**
+     * @dataProvider xmlProvider
+     */
+    public function testSerializesXml(array $operation, array $input, $xml)
+    {
+        $operation = new Operation($operation);
+        $command = $this->getMockBuilder('Guzzle\Service\Command\OperationCommand')
+            ->setConstructorArgs(array($input, $operation))
+            ->getMockForAbstractClass();
+        $command->setClient(new Client('http://www.test.com/some/path.php'));
+        $request = $command->prepare();
+        if (!empty($input)) {
+            $this->assertEquals('application/xml', (string) $request->getHeader('Content-Type'));
+        } else {
+            $this->assertNull($request->getHeader('Content-Type'));
+        }
+        $body = str_replace(array("\n", "<?xml version=\"1.0\"?>"), '', (string) $request->getBody());
+        $this->assertEquals($xml, $body);
+    }
+
+    public function testAddsContentTypeAndTopLevelValues()
+    {
+        $operation = new Operation(array(
+            'data' => array(
+                'xmlRoot'      => array(
+                    'name' => 'test',
+                    'namespaces' => array(
+                        'xsi' => 'http://foo.com'
+                    )
+                )
+            ),
+            'parameters' => array(
+                'Foo' => array('location' => 'xml', 'type' => 'string'),
+                'Baz' => array('location' => 'xml', 'type' => 'string')
+            )
+        ));
+
+        $command = $this->getMockBuilder('Guzzle\Service\Command\OperationCommand')
+            ->setConstructorArgs(array(array(
+                'Foo' => 'test',
+                'Baz' => 'bar'
+            ), $operation))
+            ->getMockForAbstractClass();
+
+        $command->setClient(new Client());
+        $request = $command->prepare();
+        $this->assertEquals('application/xml', (string) $request->getHeader('Content-Type'));
+        $this->assertEquals(
+            '<?xml version="1.0"?>' . "\n"
+            . '<test xmlns:xsi="http://foo.com"><Foo>test</Foo><Baz>bar</Baz></test>' . "\n",
+            (string) $request->getBody()
+        );
+    }
+
+    public function testCanChangeContentType()
+    {
+        $visitor = new XmlVisitor();
+        $visitor->setContentTypeHeader('application/foo');
+        $this->assertEquals('application/foo', $this->readAttribute($visitor, 'contentType'));
+    }
+
+    public function testCanAddArrayOfSimpleTypes()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://foo.com');
+        $visitor = new XmlVisitor();
+        $param = new Parameter(array(
+            'type'     => 'object',
+            'location' => 'xml',
+            'name'     => 'Out',
+            'properties' => array(
+                'Nodes' => array(
+                    'required' => true,
+                    'type'     => 'array',
+                    'min'      => 1,
+                    'items'    => array('type' => 'string', 'sentAs' => 'Node')
+                )
+            )
+        ));
+
+        $param->setParent(new Operation(array(
+            'data' => array(
+                'xmlRoot' => array(
+                    'name' => 'Test',
+                    'namespaces' => array(
+                        'https://foo/'
+                    )
+                )
+            )
+        )));
+
+        $value = array('Nodes' => array('foo', 'baz'));
+        $this->assertTrue($this->validator->validate($param, $value));
+        $visitor->visit($this->command, $request, $param, $value);
+        $visitor->after($this->command, $request);
+
+        $this->assertEquals(
+            "<?xml version=\"1.0\"?>\n"
+            . "<Test xmlns=\"https://foo/\"><Out><Nodes><Node>foo</Node><Node>baz</Node></Nodes></Out></Test>\n",
+            (string) $request->getBody()
+        );
+    }
+
+    public function testCanAddMultipleNamespacesToRoot()
+    {
+        $operation = new Operation(array(
+            'data' => array(
+                'xmlRoot' => array(
+                    'name' => 'Hi',
+                    'namespaces' => array(
+                        'xsi' => 'http://foo.com',
+                        'foo' => 'http://foobar.com'
+                    )
+                )
+            ),
+            'parameters' => array(
+                'Foo' => array('location' => 'xml', 'type' => 'string')
+            )
+        ));
+
+        $command = $this->getMockBuilder('Guzzle\Service\Command\OperationCommand')
+            ->setConstructorArgs(array(array(
+                'Foo' => 'test'
+            ), $operation))
+            ->getMockForAbstractClass();
+
+        $command->setClient(new Client());
+        $request = $command->prepare();
+        $this->assertEquals('application/xml', (string) $request->getHeader('Content-Type'));
+        $this->assertEquals(
+            '<?xml version="1.0"?>' . "\n"
+            . '<Hi xmlns:xsi="http://foo.com" xmlns:foo="http://foobar.com"><Foo>test</Foo></Hi>' . "\n",
+            (string) $request->getBody()
+        );
+    }
+
+    public function testValuesAreFiltered()
+    {
+        $operation = new Operation(array(
+            'parameters' => array(
+                'Foo' => array(
+                    'location' => 'xml',
+                    'type'     => 'string',
+                    'filters'  => array('strtoupper')
+                ),
+                'Bar' => array(
+                    'location' => 'xml',
+                    'type'     => 'object',
+                    'properties' => array(
+                        'Baz' => array(
+                            'filters'  => array('strtoupper')
+                        )
+                    )
+                )
+            )
+        ));
+
+        $command = $this->getMockBuilder('Guzzle\Service\Command\OperationCommand')
+            ->setConstructorArgs(array(array(
+                'Foo' => 'test',
+                'Bar' => array(
+                    'Baz' => 'abc'
+                )
+            ), $operation))
+            ->getMockForAbstractClass();
+
+        $command->setClient(new Client());
+        $request = $command->prepare();
+        $this->assertEquals(
+            '<?xml version="1.0"?>' . "\n"
+            . '<Request><Foo>TEST</Foo><Bar><Baz>ABC</Baz></Bar></Request>' . "\n",
+            (string) $request->getBody()
+        );
+    }
+
+    public function testSkipsNullValues()
+    {
+        $operation = new Operation(array(
+            'parameters' => array(
+                'Foo' => array(
+                    'location' => 'xml',
+                    'type'     => 'string'
+                ),
+                'Bar' => array(
+                    'location' => 'xml',
+                    'type'     => 'object',
+                    'properties' => array(
+                        'Baz' => array(),
+                        'Bam' => array(),
+                    )
+                ),
+                'Arr' => array(
+                    'type'  => 'array',
+                    'items' => array(
+                        'type' => 'string'
+                    )
+                )
+            )
+        ));
+
+        $command = $this->getMockBuilder('Guzzle\Service\Command\OperationCommand')
+            ->setConstructorArgs(array(array(
+                'Foo' => null,
+                'Bar' => array(
+                    'Bar' => null,
+                    'Bam' => 'test'
+                ),
+                'Arr' => array(null)
+            ), $operation))
+            ->getMockForAbstractClass();
+
+        $command->setClient(new Client());
+        $request = $command->prepare();
+        $this->assertEquals(
+            '<?xml version="1.0"?>' . "\n"
+            . '<Request><Bar><Bam>test</Bam></Bar></Request>' . "\n",
+            (string) $request->getBody()
+        );
+    }
+
+    public function testAllowsXmlEncoding()
+    {
+        $operation = new Operation(array(
+            'data' => array(
+                'xmlEncoding' => 'UTF-8'
+            ),
+            'parameters' => array(
+                'Foo' => array('location' => 'xml')
+            )
+        ));
+        $command = $this->getMockBuilder('Guzzle\Service\Command\OperationCommand')
+            ->setConstructorArgs(array(array('Foo' => 'test'), $operation))
+            ->getMockForAbstractClass();
+        $command->setClient(new Client());
+        $request = $command->prepare();
+        $this->assertEquals(
+            '<?xml version="1.0" encoding="UTF-8"?>' . "\n"
+                . '<Request><Foo>test</Foo></Request>' . "\n",
+            (string) $request->getBody()
+        );
+    }
+
+    public function testAllowsSendingXmlPayloadIfNoXmlParamsWereSet()
+    {
+        $operation = new Operation(array(
+            'httpMethod' => 'POST',
+            'data' => array('xmlAllowEmpty' => true),
+            'parameters' => array('Foo' => array('location' => 'xml'))
+        ));
+        $command = $this->getMockBuilder('Guzzle\Service\Command\OperationCommand')
+            ->setConstructorArgs(array(array(), $operation))
+            ->getMockForAbstractClass();
+        $command->setClient(new Client('http://foo.com'));
+        $request = $command->prepare();
+        $this->assertEquals(
+            '<?xml version="1.0"?>' . "\n"
+            . '<Request/>' . "\n",
+            (string) $request->getBody()
+        );
+    }
+}

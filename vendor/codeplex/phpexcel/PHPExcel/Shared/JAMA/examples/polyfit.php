@@ -1,57 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once "../Matrix.php";
+/*
+* @package JAMA
+* @author Michael Bommarito
+* @author Paul Meagher
+* @version 0.1
+*
+* Function to fit an order n polynomial function through
+* a series of x-y data points using least squares.
+*
+* @param $X array x values
+* @param $Y array y values
+* @param $n int order of polynomial to be used for fitting
+* @returns array $coeffs of polynomial coefficients
+* Pre-Conditions: the system is not underdetermined: sizeof($X) > $n+1
+*/
+function polyfit($X, $Y, $n) {
+	for ($i = 0; $i < sizeof($X); ++$i)
+		for ($j = 0; $j <= $n; ++$j)
+			$A[$i][$j] = pow($X[$i], $j);
+	for ($i=0; $i < sizeof($Y); ++$i)
+		$B[$i] = array($Y[$i]);
+	$matrixA = new Matrix($A);
+	$matrixB = new Matrix($B);
+	$C = $matrixA->solve($matrixB);
+	return $C->getMatrix(0, $n, 0, 1);
+}
+
+function printpoly( $C = null ) {
+	for($i = $C->m - 1; $i >= 0; --$i) {
+		$r = $C->get($i, 0);
+		if ( abs($r) <= pow(10, -9) )
+			$r = 0;
+		if ($i == $C->m - 1)
+			echo $r . "x<sup>$i</sup>";
+		else if ($i < $C->m - 1)
+			echo " + " . $r . "x<sup>$i</sup>";
+		else if ($i == 0)
+			echo " + " . $r;
+	}
+}
+
+$X = array(0,1,2,3,4,5);
+$Y = array(4,3,12,67,228, 579);
+$points = new Matrix(array($X, $Y));
+$points->toHTML();
+printpoly(polyfit($X, $Y, 4));
+
+echo '<hr />';
+
+$X = array(0,1,2,3,4,5);
+$Y = array(1,2,5,10,17, 26);
+$points = new Matrix(array($X, $Y));
+$points->toHTML();
+printpoly(polyfit($X, $Y, 2));
+
+echo '<hr />';
+
+$X = array(0,1,2,3,4,5,6);
+$Y = array(-90,-104,-178,-252,-26, 1160, 4446);
+$points = new Matrix(array($X, $Y));
+$points->toHTML();
+printpoly(polyfit($X, $Y, 5));
+
+echo '<hr />';
+
+$X = array(0,1,2,3,4);
+$Y = array(mt_rand(0, 10), mt_rand(40, 80), mt_rand(240, 400), mt_rand(1800, 2215), mt_rand(8000, 9000));
+$points = new Matrix(array($X, $Y));
+$points->toHTML();
+printpoly(polyfit($X, $Y, 3));
 ?>
-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

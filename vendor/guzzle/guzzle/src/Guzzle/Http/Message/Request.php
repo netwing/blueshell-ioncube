@@ -1,309 +1,638 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http\Message;
+
+use Guzzle\Common\Version;
+use Guzzle\Common\Event;
+use Guzzle\Common\Collection;
+use Guzzle\Common\Exception\RuntimeException;
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Http\Exception\RequestException;
+use Guzzle\Http\Exception\BadResponseException;
+use Guzzle\Http\ClientInterface;
+use Guzzle\Http\EntityBody;
+use Guzzle\Http\EntityBodyInterface;
+use Guzzle\Http\Message\Header\HeaderInterface;
+use Guzzle\Http\Url;
+use Guzzle\Parser\ParserRegistry;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * HTTP request class to send requests
+ */
+class Request extends AbstractMessage implements RequestInterface
+{
+    /** @var EventDispatcherInterface */
+    protected $eventDispatcher;
+
+    /** @var Url HTTP Url */
+    protected $url;
+
+    /** @var string HTTP method (GET, PUT, POST, DELETE, HEAD, OPTIONS, TRACE) */
+    protected $method;
+
+    /** @var ClientInterface */
+    protected $client;
+
+    /** @var Response Response of the request */
+    protected $response;
+
+    /** @var EntityBodyInterface Response body */
+    protected $responseBody;
+
+    /** @var string State of the request object */
+    protected $state;
+
+    /** @var string Authentication username */
+    protected $username;
+
+    /** @var string Auth password */
+    protected $password;
+
+    /** @var Collection cURL specific transfer options */
+    protected $curlOptions;
+
+    /** @var bool */
+    protected $isRedirect = false;
+
+    public static function getAllEvents()
+    {
+        return array(
+            // Called when receiving or uploading data through cURL
+            'curl.callback.read', 'curl.callback.write', 'curl.callback.progress',
+            // Cloning a request
+            'request.clone',
+            // About to send the request, sent request, completed transaction
+            'request.before_send', 'request.sent', 'request.complete',
+            // A request received a successful response
+            'request.success',
+            // A request received an unsuccessful response
+            'request.error',
+            // An exception is being thrown because of an unsuccessful response
+            'request.exception',
+            // Received response status line
+            'request.receive.status_line'
+        );
+    }
+
+    /**
+     * @param string           $method  HTTP method
+     * @param string|Url       $url     HTTP URL to connect to. The URI scheme, host header, and URI are parsed from the
+     *                                  full URL. If query string parameters are present they will be parsed as well.
+     * @param array|Collection $headers HTTP headers
+     */
+    public function __construct($method, $url, $headers = array())
+    {
+        parent::__construct();
+        $this->method = strtoupper($method);
+        $this->curlOptions = new Collection();
+        $this->setUrl($url);
+
+        if ($headers) {
+            // Special handling for multi-value headers
+            foreach ($headers as $key => $value) {
+                // Deal with collisions with Host and Authorization
+                if ($key == 'host' || $key == 'Host') {
+                    $this->setHeader($key, $value);
+                } elseif ($value instanceof HeaderInterface) {
+                    $this->addHeader($key, $value);
+                } else {
+                    foreach ((array) $value as $v) {
+                        $this->addHeader($key, $v);
+                    }
+                }
+            }
+        }
+
+        $this->setState(self::STATE_NEW);
+    }
+
+    public function __clone()
+    {
+        if ($this->eventDispatcher) {
+            $this->eventDispatcher = clone $this->eventDispatcher;
+        }
+        $this->curlOptions = clone $this->curlOptions;
+        $this->params = clone $this->params;
+        $this->url = clone $this->url;
+        $this->response = $this->responseBody = null;
+        $this->headers = clone $this->headers;
+
+        $this->setState(RequestInterface::STATE_NEW);
+        $this->dispatch('request.clone', array('request' => $this));
+    }
+
+    /**
+     * Get the HTTP request as a string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getRawHeaders() . "\r\n\r\n";
+    }
+
+    /**
+     * Default method that will throw exceptions if an unsuccessful response is received.
+     *
+     * @param Event $event Received
+     * @throws BadResponseException if the response is not successful
+     */
+    public static function onRequestError(Event $event)
+    {
+        $e = BadResponseException::factory($event['request'], $event['response']);
+        $event['request']->setState(self::STATE_ERROR, array('exception' => $e) + $event->toArray());
+        throw $e;
+    }
+
+    public function setClient(ClientInterface $client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    public function getRawHeaders()
+    {
+        $protocolVersion = $this->protocolVersion ?: '1.1';
+
+        return trim($this->method . ' ' . $this->getResource()) . ' '
+            . strtoupper(str_replace('https', 'http', $this->url->getScheme()))
+            . '/' . $protocolVersion . "\r\n" . implode("\r\n", $this->getHeaderLines());
+    }
+
+    public function setUrl($url)
+    {
+        if ($url instanceof Url) {
+            $this->url = $url;
+        } else {
+            $this->url = Url::factory($url);
+        }
+
+        // Update the port and host header
+        $this->setPort($this->url->getPort());
+
+        if ($this->url->getUsername() || $this->url->getPassword()) {
+            $this->setAuth($this->url->getUsername(), $this->url->getPassword());
+            // Remove the auth info from the URL
+            $this->url->setUsername(null);
+            $this->url->setPassword(null);
+        }
+
+        return $this;
+    }
+
+    public function send()
+    {
+        if (!$this->client) {
+            throw new RuntimeException('A client must be set on the request');
+        }
+
+        return $this->client->send($this);
+    }
+
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    public function getQuery($asString = false)
+    {
+        return $asString
+            ? (string) $this->url->getQuery()
+            : $this->url->getQuery();
+    }
+
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    public function getScheme()
+    {
+        return $this->url->getScheme();
+    }
+
+    public function setScheme($scheme)
+    {
+        $this->url->setScheme($scheme);
+
+        return $this;
+    }
+
+    public function getHost()
+    {
+        return $this->url->getHost();
+    }
+
+    public function setHost($host)
+    {
+        $this->url->setHost($host);
+        $this->setPort($this->url->getPort());
+
+        return $this;
+    }
+
+    public function getProtocolVersion()
+    {
+        return $this->protocolVersion;
+    }
+
+    public function setProtocolVersion($protocol)
+    {
+        $this->protocolVersion = $protocol;
+
+        return $this;
+    }
+
+    public function getPath()
+    {
+        return '/' . ltrim($this->url->getPath(), '/');
+    }
+
+    public function setPath($path)
+    {
+        $this->url->setPath($path);
+
+        return $this;
+    }
+
+    public function getPort()
+    {
+        return $this->url->getPort();
+    }
+
+    public function setPort($port)
+    {
+        $this->url->setPort($port);
+
+        // Include the port in the Host header if it is not the default port for the scheme of the URL
+        $scheme = $this->url->getScheme();
+        if (($scheme == 'http' && $port != 80) || ($scheme == 'https' && $port != 443)) {
+            $this->headers['host'] = $this->headerFactory->createHeader('Host', $this->url->getHost() . ':' . $port);
+        } else {
+            $this->headers['host'] = $this->headerFactory->createHeader('Host', $this->url->getHost());
+        }
+
+        return $this;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function setAuth($user, $password = '', $scheme = CURLAUTH_BASIC)
+    {
+        static $authMap = array(
+            'basic'  => CURLAUTH_BASIC,
+            'digest' => CURLAUTH_DIGEST,
+            'ntlm'   => CURLAUTH_NTLM,
+            'any'    => CURLAUTH_ANY
+        );
+
+        // If we got false or null, disable authentication
+        if (!$user) {
+            $this->password = $this->username = null;
+            $this->removeHeader('Authorization');
+            $this->getCurlOptions()->remove(CURLOPT_HTTPAUTH);
+            return $this;
+        }
+
+        if (!is_numeric($scheme)) {
+            $scheme = strtolower($scheme);
+            if (!isset($authMap[$scheme])) {
+                throw new InvalidArgumentException($scheme . ' is not a valid authentication type');
+            }
+            $scheme = $authMap[$scheme];
+        }
+
+        $this->username = $user;
+        $this->password = $password;
+
+        // Bypass CURL when using basic auth to promote connection reuse
+        if ($scheme == CURLAUTH_BASIC) {
+            $this->getCurlOptions()->remove(CURLOPT_HTTPAUTH);
+            $this->setHeader('Authorization', 'Basic ' . base64_encode($this->username . ':' . $this->password));
+        } else {
+            $this->getCurlOptions()
+                ->set(CURLOPT_HTTPAUTH, $scheme)
+                ->set(CURLOPT_USERPWD, $this->username . ':' . $this->password);
+        }
+
+        return $this;
+    }
+
+    public function getResource()
+    {
+        $resource = $this->getPath();
+        if ($query = (string) $this->url->getQuery()) {
+            $resource .= '?' . $query;
+        }
+
+        return $resource;
+    }
+
+    public function getUrl($asObject = false)
+    {
+        return $asObject ? clone $this->url : (string) $this->url;
+    }
+
+    public function getState()
+    {
+        return $this->state;
+    }
+
+    public function setState($state, array $context = array())
+    {
+        $oldState = $this->state;
+        $this->state = $state;
+
+        switch ($state) {
+            case self::STATE_NEW:
+                $this->response = null;
+                break;
+            case self::STATE_TRANSFER:
+                if ($oldState !== $state) {
+                    // Fix Content-Length and Transfer-Encoding collisions
+                    if ($this->hasHeader('Transfer-Encoding') && $this->hasHeader('Content-Length')) {
+                        $this->removeHeader('Transfer-Encoding');
+                    }
+                    $this->dispatch('request.before_send', array('request' => $this));
+                }
+                break;
+            case self::STATE_COMPLETE:
+                if ($oldState !== $state) {
+                    $this->processResponse($context);
+                    $this->responseBody = null;
+                }
+                break;
+            case self::STATE_ERROR:
+                if (isset($context['exception'])) {
+                    $this->dispatch('request.exception', array(
+                        'request'   => $this,
+                        'response'  => isset($context['response']) ? $context['response'] : $this->response,
+                        'exception' => isset($context['exception']) ? $context['exception'] : null
+                    ));
+                }
+        }
+
+        return $this->state;
+    }
+
+    public function getCurlOptions()
+    {
+        return $this->curlOptions;
+    }
+
+    public function startResponse(Response $response)
+    {
+        $this->state = self::STATE_TRANSFER;
+        $response->setEffectiveUrl((string) $this->getUrl());
+        $this->response = $response;
+
+        return $this;
+    }
+
+    public function setResponse(Response $response, $queued = false)
+    {
+        $response->setEffectiveUrl((string) $this->url);
+
+        if ($queued) {
+            $ed = $this->getEventDispatcher();
+            $ed->addListener('request.before_send', $f = function ($e) use ($response, &$f, $ed) {
+                $e['request']->setResponse($response);
+                $ed->removeListener('request.before_send', $f);
+            }, -9999);
+        } else {
+            $this->response = $response;
+            // If a specific response body is specified, then use it instead of the response's body
+            if ($this->responseBody && !$this->responseBody->getCustomData('default') && !$response->isRedirect()) {
+                $this->getResponseBody()->write((string) $this->response->getBody());
+            } else {
+                $this->responseBody = $this->response->getBody();
+            }
+            $this->setState(self::STATE_COMPLETE);
+        }
+
+        return $this;
+    }
+
+    public function setResponseBody($body)
+    {
+        // Attempt to open a file for writing if a string was passed
+        if (is_string($body)) {
+            // @codeCoverageIgnoreStart
+            if (!($body = fopen($body, 'w+'))) {
+                throw new InvalidArgumentException('Could not open ' . $body . ' for writing');
+            }
+            // @codeCoverageIgnoreEnd
+        }
+
+        $this->responseBody = EntityBody::factory($body);
+
+        return $this;
+    }
+
+    public function getResponseBody()
+    {
+        if ($this->responseBody === null) {
+            $this->responseBody = EntityBody::factory()->setCustomData('default', true);
+        }
+
+        return $this->responseBody;
+    }
+
+    /**
+     * Determine if the response body is repeatable (readable + seekable)
+     *
+     * @return bool
+     * @deprecated Use getResponseBody()->isSeekable()
+     * @codeCoverageIgnore
+     */
+    public function isResponseBodyRepeatable()
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use $request->getResponseBody()->isRepeatable()');
+        return !$this->responseBody ? true : $this->responseBody->isRepeatable();
+    }
+
+    public function getCookies()
+    {
+        if ($cookie = $this->getHeader('Cookie')) {
+            $data = ParserRegistry::getInstance()->getParser('cookie')->parseCookie($cookie);
+            return $data['cookies'];
+        }
+
+        return array();
+    }
+
+    public function getCookie($name)
+    {
+        $cookies = $this->getCookies();
+
+        return isset($cookies[$name]) ? $cookies[$name] : null;
+    }
+
+    public function addCookie($name, $value)
+    {
+        if (!$this->hasHeader('Cookie')) {
+            $this->setHeader('Cookie', "{$name}={$value}");
+        } else {
+            $this->getHeader('Cookie')->add("{$name}={$value}");
+        }
+
+        // Always use semicolons to separate multiple cookie headers
+        $this->getHeader('Cookie')->setGlue(';');
+
+        return $this;
+    }
+
+    public function removeCookie($name)
+    {
+        if ($cookie = $this->getHeader('Cookie')) {
+            foreach ($cookie as $cookieValue) {
+                if (strpos($cookieValue, $name . '=') === 0) {
+                    $cookie->removeValue($cookieValue);
+                }
+            }
+        }
+
+        return $this;
+    }
+
+    public function setEventDispatcher(EventDispatcherInterface $eventDispatcher)
+    {
+        $this->eventDispatcher = $eventDispatcher;
+        $this->eventDispatcher->addListener('request.error', array(__CLASS__, 'onRequestError'), -255);
+
+        return $this;
+    }
+
+    public function getEventDispatcher()
+    {
+        if (!$this->eventDispatcher) {
+            $this->setEventDispatcher(new EventDispatcher());
+        }
+
+        return $this->eventDispatcher;
+    }
+
+    public function dispatch($eventName, array $context = array())
+    {
+        $context['request'] = $this;
+
+        return $this->getEventDispatcher()->dispatch($eventName, new Event($context));
+    }
+
+    public function addSubscriber(EventSubscriberInterface $subscriber)
+    {
+        $this->getEventDispatcher()->addSubscriber($subscriber);
+
+        return $this;
+    }
+
+    /**
+     * Get an array containing the request and response for event notifications
+     *
+     * @return array
+     */
+    protected function getEventArray()
+    {
+        return array(
+            'request'  => $this,
+            'response' => $this->response
+        );
+    }
+
+    /**
+     * Process a received response
+     *
+     * @param array $context Contextual information
+     * @throws RequestException|BadResponseException on unsuccessful responses
+     */
+    protected function processResponse(array $context = array())
+    {
+        if (!$this->response) {
+            // If no response, then processResponse shouldn't have been called
+            $e = new RequestException('Error completing request');
+            $e->setRequest($this);
+            throw $e;
+        }
+
+        $this->state = self::STATE_COMPLETE;
+
+        // A request was sent, but we don't know if we'll send more or if the final response will be successful
+        $this->dispatch('request.sent', $this->getEventArray() + $context);
+
+        // Some response processors will remove the response or reset the state (example: ExponentialBackoffPlugin)
+        if ($this->state == RequestInterface::STATE_COMPLETE) {
+
+            // The request completed, so the HTTP transaction is complete
+            $this->dispatch('request.complete', $this->getEventArray());
+
+            // If the response is bad, allow listeners to modify it or throw exceptions. You can change the response by
+            // modifying the Event object in your listeners or calling setResponse() on the request
+            if ($this->response->isError()) {
+                $event = new Event($this->getEventArray());
+                $this->getEventDispatcher()->dispatch('request.error', $event);
+                // Allow events of request.error to quietly change the response
+                if ($event['response'] !== $this->response) {
+                    $this->response = $event['response'];
+                }
+            }
+
+            // If a successful response was received, dispatch an event
+            if ($this->response->isSuccessful()) {
+                $this->dispatch('request.success', $this->getEventArray());
+            }
+        }
+    }
+
+    /**
+     * @deprecated Use Guzzle\Plugin\Cache\DefaultCanCacheStrategy
+     * @codeCoverageIgnore
+     */
+    public function canCache()
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use Guzzle\Plugin\Cache\DefaultCanCacheStrategy.');
+        if (class_exists('Guzzle\Plugin\Cache\DefaultCanCacheStrategy')) {
+            $canCache = new \Guzzle\Plugin\Cache\DefaultCanCacheStrategy();
+            return $canCache->canCacheRequest($this);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @deprecated Use the history plugin (not emitting a warning as this is built-into the RedirectPlugin for now)
+     * @codeCoverageIgnore
+     */
+    public function setIsRedirect($isRedirect)
+    {
+        $this->isRedirect = $isRedirect;
+
+        return $this;
+    }
+
+    /**
+     * @deprecated Use the history plugin
+     * @codeCoverageIgnore
+     */
+    public function isRedirect()
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use the HistoryPlugin to track this.');
+        return $this->isRedirect;
+    }
+}

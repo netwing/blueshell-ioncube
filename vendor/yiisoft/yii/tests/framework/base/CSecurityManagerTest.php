@@ -1,96 +1,177 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPvj2vJve6zunOOTm7HrhrxRaCFvuDcgUuzrPxWynx1UOmJk5r8z1Kg+fCzG7p4jUJ1vEYZEl
-fmwcNR+RHzfqsXnXMriepokd1qs0wSTXPoL9sMPUk1Tyx/h3tntLCHcUweW7XG8eIcfxtX0YYwqG
-8BkK1n2RKhNkXzBxz3RJ1qQd9fyDid9CbrDm+1kTQX23e9Z3p04ZzntLp/WpNNsOlTlSvtwQmvt7
-eiUZKlWh/4eFZm0b0P86lwzHAE4xzt2gh9fl143SQNJdODnOmL5rcw8ViY/8Xs9GV/+aVr4ckNNt
-3kbNOpAxci5lVQ7ky0yDSw1vB1uW1I7Rh7ThFMNcKqwXb/lFKFrsdcCRmf8VRLuApanfcmNufIhS
-zYvcgVZSaDFYIc5mazHUrscQEb7iz77kXzdn3Ty8TDqGXxByAhRnQzCXCz9Q+Yg3BxpEYiQ/UgE5
-PTUoznioHBKz/uiO85HyAN/jwI+dKCztd2txfkWWhvfpcVJ31lFvoq3qdOq2t1cf6O7EuFZ/4CCA
-chq1QDW43MnNeqdOhlzDhhu93us7XwJciuV86fSZkz2l9f1BlxLn9ymENz13Q0okN8eih0Ha8MP4
-vQBVMfv85MGc6YRZIG1MyIwC74jG/uoxh9Aw70FoB0dLY0xCWKv0cx3hbsbiYEDKCM59BvW8kmyA
-8y9l9g2Hsba3D4KMRdG0m/a9j1spxwYMflL+VBGTgL9mlWtot8SmATVMJ5Cti0CVB/TxKWktReFZ
-0MPA1zzsl8nu9aT2iujXfI5TGOh6cgKdeWGaoX8YcjZQ3ORmfFogN+PGK1od1ZQpQhiIOsucwdHj
-PR/nQsya2Wx4CDQmPW2bHhpM4+Gx2VJK51+GKE119F/6qBjnOsiIAkr5RFxlJzxNkN6rWwgUDaMO
-RbS1HL5k3ySvd3YG0SDmMAO0ZwE+wKPFDttJ8hq3aj1jJ71MkSJ+nQZlX+z1DuXer4jTFcP6OXbc
-cH/SpTqfvL5Wp4PU01A3/JespSwoCJXvAilZT+1018bJvpO+t+K6ain1ELRnBL9hHvDgk+znu/52
-U+2EwWsbpYle58AFZ0ZMkA1t/Yv9ynCciCIfjw7XYomteJbvZfcSCdLi5+iXFYaJ9oAp630KptXe
-N1DjxI5R1GUkJkio2EXNsFnkKEbBXqOjGi27pty8FYuNbPulsVUykxYeUEX7uWCpIkO4jX/mv1Ld
-+F4kh1ZWfBgtXWe176nti4tkHc8ahuIRd8gXvsTC8WTWiIV92SXMwImtScxbd0pTgOPu5SAdUtCk
-O6BATBkkDwsy472fbwrJL/m1Oo2YtYrNByXDhVbqomzj926AfwKLJObU0UsOHk1N0G+wbjPHxHIO
-2jZm4iMamfjDDRrENsIwUeWUasMO8Z6EZ2RQm8YK5+DRkvsnZv9Ano7IVaxOOsgCagTQjVWka92P
-9xH/4rnSkBwiPxCwOdFTMRdy4Ec0J3jJkwWSQny+d1midm5ouu2mJNk6q2Nk/Js+yGTvjllCnIZK
-iKOpWRlzovFYOVjyE4rE8B9requCmx1xImILTtjlrDxY5vM3NWP29sUHye8OZNQZjcV9EZJwJuyw
-6JPmg7DAfFuv5pUxy/1G+AbD4VguDIa3zergeJyjvzh0Ib94uKQDKEkRbuA/Rd2xB6PvueQq4VWT
-U7fJTNfccXMzJygKS4vqguC0TiVknWWcbj5njV/K83IUlxWcVTpq/AbzMka6ys6oV2SQXwkci/75
-AKNctkgFBMhut4vl2A54s9kLnIW2VRwe6zR3N2w+IfciZJlYtGgNZXEcUdM7954b2Q2q4Y0ajV9E
-UzETBCLIM9qhM8Q9rwQYDududiZYBSjEMeTi8ic/RyWSj+oJBGfriRunUHL2419EDpdhssQEicPF
-UoG9nvppwxuWJBdL3MH7gfpv+6Crq/Bg/Q9T7Drwto4qgO6HEEj/hoMrs78uBpg+MEnF2zGjwkjt
-2XsGLvRrYdvCsnbwy2JKrHeRl8ZZGlZ0/mXx+KJPw43/NlilxDRkaosrQFesQgFhGtBI7tcHfmja
-yd58KX7L5PRugrGYUEkRqXi0sOsE9IV9krA/OsMOVp4atUDSteU2HH4mJKofh3UDREv7PEYRPRBn
-+AXrkeLCxnNWwOWjsGnH3C+7wXY0R+Ih3KbYYNM5O+zN7pVqQw9mLowalM34jtuGyG5DOA1oeXAQ
-De7goYj6OIjAXw8ghjICUQKiD8AcS4yt4M3uTfM59OzaPG35UUNWWwvUTa+s+BcDOvxlPw+3Xdr+
-PMG6ZMkio4/JW/8kB5Qf/cAV8/u3se9m78LP81Cq6ve7tCs1GdjpSCAZrRTdd+UTpU+kg3LuIeIG
-9zRT1l+AxT8hGIa+cTS0f4ZFH5eteSiZaSzrYZBdyJ/KFilIksNCGEyweeqjmNMzLjVUzja2Aaad
-n2B3IfDDth+t+eG/lGExSIrzILKpRajzuDHVT6VBWHJvDxlmLYCOgbnaPBta/dUrPHzsj9IRLNhe
-AzcNCtfx2mYQzXSPwvK1PHtwkXxCzhHslUemmQ4bRwSlyJZ6ksYKSMKXWbyeR8Nrr/YuOJWTbhpe
-4QIds7l27A/M2yteD+xs/DHRDpGuEyIzwx+eC6/3+RVmnCO4BcoeBHMGXjm8RfLVMCKPFK5JoeWP
-ptQhL+fi4hnSDR40FTks4L7Gb54cUjwr89PqwiEs3S0PcEVoKuvMHUP8AsVgQeDfq+UeZe4VuXNk
-TSklI3cwZUjQUBai1p1AEe5IZM56DnRMg+glraOxmr2on3zpCojoUpwEdxNcM8vWzuixKZAsNCvZ
-GTRrTr5loTMu/UOZihtM8IPp3BDm3b12+YW5UQRT6YhCjbYlEhRBLI93PtkJtoRIRHat7lJjkLBD
-hVaJgKiAg1uAaCTPBgQhcSnQPXDQy7b1GYOQp8buIgs+zhNz8WCnS7hWyqTIHsKiCCZ3/zl+v1Ft
-fQnGHz3Vz1jzYUjq36OKGQTFrxFehN+DDdCNWKK7UFG2AqPPI4oN7vAqTEarKoZ8iKqaGlNc+y59
-yn5j3LrmNMZ/WrcPS5IDMc0XqcBb3c0YwkJfyt2d9F7uLMGz/AiZ0wYjS1P57O4SZCv0xJIfzGfn
-I0kh12+ARQNSq9LRZvM2EnX+vjI4h5zkUDHKWSAbAS69Tx5j+KZ4QY483s5D4dkfFyhYo7ICZwvW
-g2e3/l5lVDEVABKuuwuwrHP1q+bzTV1ShPc4yuo93F3MYnB1rD+VXrFlxZlpEC353MLT6cJVX8Cb
-mCuClEBAXJwyGYyOVIwx6W/B0EdVlHw3D3KkjVYLC4pLNXH9imut3XGtAlnxv57FflD9HIiIE17n
-m5SGxiTHZ2ebgFUe6tXGiWhJ4tUlpnjo4F62z7C6OrS5iMd/5FyUr1VtAyLR02qFKwqUJNfroWTL
-YNmhT0mkVMODw3Z7KyNNt6eSpDbPdl5CG172EcT8QWpMQoOiJRb2r3YrVhzGzN9YinOolqoRlm2y
-Al0SjmHJInp9pdQZG0kOzVbBJ1a3a9QK2ONPwnTf6EKgG1H4tNVlXX/Buwgo0TtN8nUu7RWglw04
-Fide6CPsI2Zo1eIaipx8AidDR3YKzTO5aT8C9AZUQXltNkiqgXKbIeezLSMnSgjvYtIpeAc9Sx8a
-tfxnKGe1Ku3sj2R1evu0lm9TrbahKHGEr4G8l5kjHE6NNbL4aP/DGaDnMBtKcbEtePLNH2s6t4uF
-/KVNOvhDv/mk7ZjHY5pQ7z4eqeTJRV+PsWFz8rTsn92B/InxEqvDKOvzP4PRS0YPPOIig4QzdWTz
-Vez9ZsdIcx25NWhb3foAskUn84dqNb5GOoh9bvy0PZ6lmVl26V3gVk5yNoHQJcPTjjvMhYd45C/U
-X4K6cLSO7VTGkcTNK5+Oxsyw/A3gsaAWe207Xiwv1C4DO2RGPjfxmOCQOhqUTn6t1xHvv0A2NTeX
-3o90DtHsFwCtA4xff5cnAmYH9Nv+8gHOJFSdOV54CI7O2EsGdDxsjWtqfhaP1fgBmuALq0vGtPlh
-CXm//CpM1jrLcH4lqSL9nrHGwLFLnJGxqc/oDixEqE02sNGOBuQJUbuEX6t/FRdj9gcYI5Qree7r
-l04WkFP5XZXNh9MsSOlW/h4gs8xO2Mk1YEhWsoD+DuveJAgiJ4jmoz2hWFQHHmAbAfnm9RXPj81r
-qYKifVDvHBO3e3z5wX6h/xy9BL1bsTUqaOQWqCCtLktRuZ1Rdf9BTKOGZfnoMDaViYYuGWIb4bjy
-pEkifTtZ5CB0WNTvf27zwjjaQ3ET7wdjfLoChOziux4weUwfgH7nAJImfwv7FInc2sPwMC5bu0QH
-a1Sm9+Blz15M2OnLGfLFMmpUVbO+a7HlGr5d3S2godpw9rYYYeCpkXsvhr2wIF6pXRWrQuK87p5W
-Fd6TRQYhI/PHLGl5dzzjCmyNfY7MMHThU04d7UE38egJt5XdpSg8cA/Drhkc2YptofYT9Fo/5lja
-1+nhzU4eECI11nRH4Rxs4Siek+8IQD4+ao3wY6U9i0PGn4yv4WMQikrsIQSB6cspyfG64j738cfJ
-6VbdTVP0NDwuiELTwTzwmUpc91DikXgUQ9YSBuV0cbBN04LCGAAeviN0iFIawnasT/rOhryIpYHp
-XVilEI9MLxgYXIrnOxvoJv5HifOrtThsvVgJXzwK8fvCnpH7mVuwR09LjbraqYb7lTQU5fwDe2Su
-H+BpwWVxHx23Xnher5q7CxE0pct7dl8jTkp2NdQ/EEB+JAOJQ/bWIwNOjRmfV60gD/Hj/+F0qoI8
-7CJfDcjurra94neViG6EiVJtfFIaoW5VFMLoT+DWMga7kXEiLxMBIcJw2LEX0aZkOy0wKW4CySjO
-SpAMfHNlvxP0nAR0W/GiWZ9i6y+z1qTOj6byDsgsJDt9LRqJiGDYhqkZ9lDRJbwWFvnN/XgI90fT
-b7yEuXwK2nJgShtayTxPSxZPebRr9i+TgJSM9UNepDSAs29u+Y8T035dd6TM0JAyT2MJ4LL1H2t1
-Vl6kRHhE77S0wIt3Pi8ZZQUOHqa5i88T3e6ZCN0QaOzO/eAERlvOgRX0qAgZ6q/Ym6hc9K9GQ1pO
-QS7vcpYoMzDzhrjwBdjDmuLKxQQgO0t/9eUfBg99RUakQex9KdAkIyghKfE5N7Kt5PJczKznie+5
-1axGfUD6azMDRpJavI2zuvi13AnvkUsBLFJRyDObACaXb/rC9MsjVP+kc7lGvaYadcdYbvD5/gOW
-b9/qDtXlJtXZD3RzveLS0dntCsYznUS7XJG3xFJYva1f2H5NNB/lioLA1TWxh2uLJD0rFYW2BxzZ
-q2yrfk4KLikneNObjsGdT8v/lJ83TwP8qhEIm58Y1i+aQMhvGsoMzIpH0e/6s9LyPiLYAaIeoURj
-5o9tUR4X36sLoIPDlJ/MKba6Nd/VR4kY7Cp9DEiwk0kYfX5arcU+zDveY2cW7180ZrBqH8xGljha
-22CDW9Brgbyj0kjFUt+1m9rm34vdic3glYtUITzVXEkU6c3UGyJPee5GYYD52nn2UM8DlYkJOcIJ
-nskQD9mM4+8LmU4DVxNI9/C9d5fA6w6Xyy6Va1FSgQRBANDGVKNDHYmp3ryP+DxfxtRzCE6fGoxX
-4KLgPQwF1HWsQA9kX4jr7Wg91hbZnJNaX5KBS0bOIMXxT0xGrEIn1IPZqvDs06t6ySJbWp9kZ6L/
-9M3DLNIiPvUBGDtQF/KV9JwFTN0S/k0DW3kW0GrMVBx4oRUWiSpZwV+r0xT2kgVeEj6P3g5cbc/V
-nT+zTioBOjqPdPoD6vQ1M8F8p8qoTafRkAj55qpLz9WGX7iq77jBmPGQz9WxgsgEFOQFXV0mvxcD
-hRtlWroQYrqm+dCsm7ugurQO4iwa3nOU8/no12TBJCIQ3MsiJvP8PaJx+vLMLl1GAqT8CUInsPo6
-fnoxkfAMSCQGKEN0c0Ol4vAboz3jmNJCnFwEw3kFxdje54TggWfym+iJk6hkzxudjyEyLSaTHPeA
-1D3CXa3wCBI6J4MwYqVJFZZqRnf1eOJhur1QAKdVnJwtxWbnJJRqJLFVE+TJUY845rH4LkSKxLms
-bvqQIhvAgnpKrNYjDzGC2YxE1dPxN7JUnP2E5ouQ3AioaHM6qUmvdGEhKMRJ7EXFgT1x7mOCPcEZ
-B7qImNzMSsoF6OrjhbG8SMAM1XdKdQiGxA6qeQUpn8coYugwbkFyGx22E2XugQ61upNJK52klLEU
-qQBcJZLGheyaQTybImNtBwCwmrJdIMl7VbFejmMe9sFHWPv0I8/kxcL5AMaULge9JIWbZ3EcmNNA
-37XexPNIO/NBH8hXwX5EcwOiRshbPcU4Az740yj/Qheu3c9Eh65rfJC9CUZ4x/k/6cVKKfpSCMQy
-XQtWrr+bCbIATvgoRWvAOfnXfRyiWWHMpByf1yxE2P/8t6ur3vNhCfV6TluBKf5hOACOd1p0mqNy
-P57o/PqdknugflAyp556yPUDOTpy442GoMG16NaJ+VuiL//1LxTk8XPjlCVv5D0Smkenq2FZpUZq
-SKCsPpS9dAE4x5QxX81WxUlZmmZl78YYD7cIfHpufcsDcCS1rtOfdsHnSzip9TxJ6rY5hKy4s55g
-+ci5Omrj7+kgec1K/XK7uY8Rekh20X5ELi/NTSs2QqQsaWhMbv0S9CqmMi9JVu5pcwlrRWu3GiOE
-bjIGJGb6B5EXoIJZCWwScHK6x2yYd3t7GODADFdMtxjGSbJfDCN/Po3WR7OH2A1j91dnVM9WMmbO
-wg/vnWfEZHbqh7LfG424Cm9tsTNrUfUwOu3iiz5xhi/vXao/qZhQM6ePcmHqPmr8lK/xHBY4VuJf
-kVciGjTwVrdFEzlBy2MfWGhitulXoeuGuWpbNSTrrwoVjNIdXH/x1WriNaENXeMX4A6ZenWRuQbv
-Sd0pV61kL0c/3a3UVHubK+Taxfm1Ihgc/QOtAWFEFLfchOs86whM65lTaJUzVnO2UWS1HIWHsB6V
-nGH6MYnyYzu8IBoIsp5ur4blU7Evqhko9G==
+<?php
+
+class CSecurityManagerTest extends CTestCase
+{
+	public function setUp()
+	{
+		// clean up runtime directory
+		$app=new TestApplication;
+		$app->reset();
+	}
+
+	public function testValidationKey()
+	{
+		$sm=new CSecurityManager;
+		$key='123456';
+		$sm->validationKey=$key;
+		$this->assertEquals($key,$sm->validationKey);
+
+		$app=new TestApplication;
+		$key=$app->securityManager->validationKey;
+		$app->saveGlobalState();
+		$app2=new TestApplication;
+		$this->assertEquals($app2->securityManager->validationKey,$key);
+	}
+
+	public function testEncryptionKey()
+	{
+		$sm=new CSecurityManager;
+		$key='123456';
+		$sm->encryptionKey=$key;
+		$this->assertEquals($key,$sm->encryptionKey);
+
+		$app=new TestApplication;
+		$key=$app->securityManager->encryptionKey;
+		$app->saveGlobalState();
+		$app2=new TestApplication;
+		$this->assertEquals($app2->securityManager->encryptionKey,$key);
+	}
+
+	public function testValidation()
+	{
+		$sm=new CSecurityManager;
+		$mode='SHA1';
+		$sm->hashAlgorithm=$mode;
+		$this->assertEquals($mode,$sm->hashAlgorithm);
+	}
+
+	public function testValidateData()
+	{
+		$sm=new CSecurityManager;
+		$sm->validationKey='123456';
+		$sm->hashAlgorithm='SHA1';
+		$data='this is raw data';
+		$hashedData=$sm->hashData($data);
+		$this->assertEquals($data,$sm->validateData($hashedData));
+		$hashedData[3]='c'; // tamper the data
+		$this->assertTrue($sm->validateData($hashedData)===false);
+
+		$sm->hashAlgorithm='MD5';
+		$data='this is raw data';
+		$hashedData=$sm->hashData($data);
+		$this->assertEquals($data,$sm->validateData($hashedData));
+		$hashedData[3]='c'; // tamper the data
+		$this->assertTrue($sm->validateData($hashedData)===false);
+	}
+
+	public function testEncryptData()
+	{
+		if(!extension_loaded('mcrypt'))
+			$this->markTestSkipped('mcrypt extension is required to test encrypt feature.');
+		$sm=new CSecurityManager;
+		$sm->encryptionKey='123456';
+		$data='this is raw data';
+		$encryptedData=$sm->encrypt($data);
+		$this->assertTrue($data!==$encryptedData);
+		$data2=$sm->decrypt($encryptedData);
+		$this->assertEquals($data,$data2);
+	}
+
+	public function providerComputeHMAC()
+	{
+		return array(
+			array(
+				'7638cbf5b66f451a5dab87fa26f45025fa661f82',
+				'data1',
+				'123456',
+				'sha1',
+			),
+			array(
+				'7e9a30dd2e3c568499a0786ca776d29ee9fb00f6',
+				'data2',
+				'123456',
+				'SHA1',
+			),
+			array(
+				'289beb389d31d327eb87fd8f102970d1',
+				'data1',
+				'123456',
+				'md5',
+			),
+			array(
+				'4fb0dd0081ce2681f479d42ec8db5537',
+				'data2',
+				'123456',
+				'MD5',
+			),
+		);
+	}
+
+	/**
+	 * @dataProvider providerComputeHMAC
+	 */
+	public function testComputeHMAC($assertion,$data,$key,$hashAlgorithm)
+	{
+		$sm1=new CSecurityManager;
+		$sm1->validationKey=$key;
+		$sm1->hashAlgorithm=$hashAlgorithm;
+		$this->assertEquals($assertion,$sm1->computeHMAC($data));
+
+		$sm2=new CSecurityManager;
+		$this->assertEquals($assertion,$sm2->computeHMAC($data,$key,$hashAlgorithm));
+	}
+
+	public function testGenerateRandomString()
+	{
+		$sm=new CSecurityManager;
+		// loop to be sure always get the expected pattern.
+		// student-t test that the distribution of chars is uniform would be nice.
+		for ($i=1; $i<999; $i+=1){
+			$ran=$sm->generateRandomString($i,false);
+			$this->assertInternalType('string', $ran);
+			$this->assertEquals(1, preg_match('{[a-zA-Z0-9_~]{' . $i . '}}', $ran));
+		}
+	}
+
+	public function testGenerateRandomBytes()
+	{
+		$sm=new CSecurityManager;
+		// any char is allowed so only string length is important
+		$mbStrlen = function_exists('mb_strlen');
+		for ($i=1; $i<255; $i+=1){
+			$ran=$sm->generateRandomBytes($i,false);
+			$this->assertInternalType('string', $ran);
+			$this->assertEquals($i, $mbStrlen ? mb_strlen($ran, '8bit') : strlen($ran));
+		}
+	}
+
+	/*
+	 * Expected to fail on some systems!
+	 */
+	public function testGenerateRandomStringCS()
+	{
+		$sm=new CSecurityManager;
+		// loop to be sure always get the expected pattern.
+		// student-t test that the distribution of chars is uniform would be nice.
+		for ($i=1; $i<999; $i+=1){
+			$ran=$sm->generateRandomString($i,true);
+			$this->assertInternalType('string', $ran);
+			$this->assertEquals(1, preg_match('{[a-zA-Z0-9_~]{' . $i . '}}', $ran));
+		}
+	}
+
+	/*
+	 * Expected to fail on some systems!
+	 */
+	public function testGenerateRandomBytesCS()
+	{
+		$sm=new CSecurityManager;
+		// any char is allowed so only string length is important
+		$mbStrlen = function_exists('mb_strlen');
+		for ($i=1; $i<255; $i+=1){
+			$ran=$sm->generateRandomBytes($i,true);
+			$this->assertInternalType('string', $ran);
+			$this->assertEquals($i, $mbStrlen ? mb_strlen($ran, '8bit') : strlen($ran));
+		}
+	}
+}

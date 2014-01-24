@@ -1,266 +1,628 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *  base include file for SimpleTest
+ *  @package    SimpleTest
+ *  @subpackage WebTester
+ *  @version    $Id: http.php 1797 2008-06-28 16:53:03Z pp11 $
+ */
+
+/**#@+
+ *  include other SimpleTest class files
+ */
+require_once(dirname(__FILE__) . '/socket.php');
+require_once(dirname(__FILE__) . '/cookies.php');
+require_once(dirname(__FILE__) . '/url.php');
+/**#@-*/
+
+/**
+ *    Creates HTTP headers for the end point of
+ *    a HTTP request.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleRoute {
+    private $url;
+    
+    /**
+     *    Sets the target URL.
+     *    @param SimpleUrl $url   URL as object.
+     *    @access public
+     */
+    function __construct($url) {
+        $this->url = $url;
+    }
+    
+    /**
+     *    Resource name.
+     *    @return SimpleUrl        Current url.
+     *    @access protected
+     */
+    function getUrl() {
+        return $this->url;
+    }
+    
+    /**
+     *    Creates the first line which is the actual request.
+     *    @param string $method   HTTP request method, usually GET.
+     *    @return string          Request line content.
+     *    @access protected
+     */
+    protected function getRequestLine($method) {
+        return $method . ' ' . $this->url->getPath() .
+                $this->url->getEncodedRequest() . ' HTTP/1.0';
+    }
+    
+    /**
+     *    Creates the host part of the request.
+     *    @return string          Host line content.
+     *    @access protected
+     */
+    protected function getHostLine() {
+        $line = 'Host: ' . $this->url->getHost();
+        if ($this->url->getPort()) {
+            $line .= ':' . $this->url->getPort();
+        }
+        return $line;
+    }
+    
+    /**
+     *    Opens a socket to the route.
+     *    @param string $method      HTTP request method, usually GET.
+     *    @param integer $timeout    Connection timeout.
+     *    @return SimpleSocket       New socket.
+     *    @access public
+     */
+    function createConnection($method, $timeout) {
+        $default_port = ('https' == $this->url->getScheme()) ? 443 : 80;
+        $socket = $this->createSocket(
+                $this->url->getScheme() ? $this->url->getScheme() : 'http',
+                $this->url->getHost(),
+                $this->url->getPort() ? $this->url->getPort() : $default_port,
+                $timeout);
+        if (! $socket->isError()) {
+            $socket->write($this->getRequestLine($method) . "\r\n");
+            $socket->write($this->getHostLine() . "\r\n");
+            $socket->write("Connection: close\r\n");
+        }
+        return $socket;
+    }
+    
+    /**
+     *    Factory for socket.
+     *    @param string $scheme                   Protocol to use.
+     *    @param string $host                     Hostname to connect to.
+     *    @param integer $port                    Remote port.
+     *    @param integer $timeout                 Connection timeout.
+     *    @return SimpleSocket/SimpleSecureSocket New socket.
+     *    @access protected
+     */
+    protected function createSocket($scheme, $host, $port, $timeout) {
+        if (in_array($scheme, array('file'))) {
+            return new SimpleFileSocket($this->url);
+        } elseif (in_array($scheme, array('https'))) {
+            return new SimpleSecureSocket($host, $port, $timeout);
+        } else {
+            return new SimpleSocket($host, $port, $timeout);
+        }
+    }
+}
+
+/**
+ *    Creates HTTP headers for the end point of
+ *    a HTTP request via a proxy server.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleProxyRoute extends SimpleRoute {
+    private $proxy;
+    private $username;
+    private $password;
+    
+    /**
+     *    Stashes the proxy address.
+     *    @param SimpleUrl $url     URL as object.
+     *    @param string $proxy      Proxy URL.
+     *    @param string $username   Username for autentication.
+     *    @param string $password   Password for autentication.
+     *    @access public
+     */
+    function __construct($url, $proxy, $username = false, $password = false) {
+        parent::__construct($url);
+        $this->proxy = $proxy;
+        $this->username = $username;
+        $this->password = $password;
+    }
+    
+    /**
+     *    Creates the first line which is the actual request.
+     *    @param string $method   HTTP request method, usually GET.
+     *    @param SimpleUrl $url   URL as object.
+     *    @return string          Request line content.
+     *    @access protected
+     */
+    function getRequestLine($method) {
+        $url = $this->getUrl();
+        $scheme = $url->getScheme() ? $url->getScheme() : 'http';
+        $port = $url->getPort() ? ':' . $url->getPort() : '';
+        return $method . ' ' . $scheme . '://' . $url->getHost() . $port .
+                $url->getPath() . $url->getEncodedRequest() . ' HTTP/1.0';
+    }
+    
+    /**
+     *    Creates the host part of the request.
+     *    @param SimpleUrl $url   URL as object.
+     *    @return string          Host line content.
+     *    @access protected
+     */
+    function getHostLine() {
+        $host = 'Host: ' . $this->proxy->getHost();
+        $port = $this->proxy->getPort() ? $this->proxy->getPort() : 8080;
+        return "$host:$port";
+    }
+    
+    /**
+     *    Opens a socket to the route.
+     *    @param string $method       HTTP request method, usually GET.
+     *    @param integer $timeout     Connection timeout.
+     *    @return SimpleSocket        New socket.
+     *    @access public
+     */
+    function createConnection($method, $timeout) {
+        $socket = $this->createSocket(
+                $this->proxy->getScheme() ? $this->proxy->getScheme() : 'http',
+                $this->proxy->getHost(),
+                $this->proxy->getPort() ? $this->proxy->getPort() : 8080,
+                $timeout);
+        if ($socket->isError()) {
+            return $socket;
+        }
+        $socket->write($this->getRequestLine($method) . "\r\n");
+        $socket->write($this->getHostLine() . "\r\n");
+        if ($this->username && $this->password) {
+            $socket->write('Proxy-Authorization: Basic ' .
+                    base64_encode($this->username . ':' . $this->password) .
+                    "\r\n");
+        }
+        $socket->write("Connection: close\r\n");
+        return $socket;
+    }
+}
+
+/**
+ *    HTTP request for a web page. Factory for
+ *    HttpResponse object.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleHttpRequest {
+    private $route;
+    private $encoding;
+    private $headers;
+    private $cookies;
+    
+    /**
+     *    Builds the socket request from the different pieces.
+     *    These include proxy information, URL, cookies, headers,
+     *    request method and choice of encoding.
+     *    @param SimpleRoute $route              Request route.
+     *    @param SimpleFormEncoding $encoding    Content to send with
+     *                                           request.
+     *    @access public
+     */
+    function __construct($route, $encoding) {
+        $this->route = $route;
+        $this->encoding = $encoding;
+        $this->headers = array();
+        $this->cookies = array();
+    }
+    
+    /**
+     *    Dispatches the content to the route's socket.
+     *    @param integer $timeout      Connection timeout.
+     *    @return SimpleHttpResponse   A response which may only have
+     *                                 an error, but hopefully has a
+     *                                 complete web page.
+     *    @access public
+     */
+    function fetch($timeout) {
+        $socket = $this->route->createConnection($this->encoding->getMethod(), $timeout);
+        if (! $socket->isError()) {
+            $this->dispatchRequest($socket, $this->encoding);
+        }
+        return $this->createResponse($socket);
+    }
+    
+    /**
+     *    Sends the headers.
+     *    @param SimpleSocket $socket           Open socket.
+     *    @param string $method                 HTTP request method,
+     *                                          usually GET.
+     *    @param SimpleFormEncoding $encoding   Content to send with request.
+     *    @access private
+     */
+    protected function dispatchRequest($socket, $encoding) {
+        foreach ($this->headers as $header_line) {
+            $socket->write($header_line . "\r\n");
+        }
+        if (count($this->cookies) > 0) {
+            $socket->write("Cookie: " . implode(";", $this->cookies) . "\r\n");
+        }
+        $encoding->writeHeadersTo($socket);
+        $socket->write("\r\n");
+        $encoding->writeTo($socket);
+    }
+    
+    /**
+     *    Adds a header line to the request.
+     *    @param string $header_line    Text of full header line.
+     *    @access public
+     */
+    function addHeaderLine($header_line) {
+        $this->headers[] = $header_line;
+    }
+    
+    /**
+     *    Reads all the relevant cookies from the
+     *    cookie jar.
+     *    @param SimpleCookieJar $jar     Jar to read
+     *    @param SimpleUrl $url           Url to use for scope.
+     *    @access public
+     */
+    function readCookiesFromJar($jar, $url) {
+        $this->cookies = $jar->selectAsPairs($url);
+    }
+    
+    /**
+     *    Wraps the socket in a response parser.
+     *    @param SimpleSocket $socket   Responding socket.
+     *    @return SimpleHttpResponse    Parsed response object.
+     *    @access protected
+     */
+    protected function createResponse($socket) {
+        $response = new SimpleHttpResponse(
+                $socket,
+                $this->route->getUrl(),
+                $this->encoding);
+        $socket->close();
+        return $response;
+    }
+}
+
+/**
+ *    Collection of header lines in the response.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleHttpHeaders {
+    private $raw_headers;
+    private $response_code;
+    private $http_version;
+    private $mime_type;
+    private $location;
+    private $cookies;
+    private $authentication;
+    private $realm;
+    
+    /**
+     *    Parses the incoming header block.
+     *    @param string $headers     Header block.
+     *    @access public
+     */
+    function __construct($headers) {
+        $this->raw_headers = $headers;
+        $this->response_code = false;
+        $this->http_version = false;
+        $this->mime_type = '';
+        $this->location = false;
+        $this->cookies = array();
+        $this->authentication = false;
+        $this->realm = false;
+        foreach (split("\r\n", $headers) as $header_line) {
+            $this->parseHeaderLine($header_line);
+        }
+    }
+    
+    /**
+     *    Accessor for parsed HTTP protocol version.
+     *    @return integer           HTTP error code.
+     *    @access public
+     */
+    function getHttpVersion() {
+        return $this->http_version;
+    }
+    
+    /**
+     *    Accessor for raw header block.
+     *    @return string        All headers as raw string.
+     *    @access public
+     */
+    function getRaw() {
+        return $this->raw_headers;
+    }
+    
+    /**
+     *    Accessor for parsed HTTP error code.
+     *    @return integer           HTTP error code.
+     *    @access public
+     */
+    function getResponseCode() {
+        return (integer)$this->response_code;
+    }
+    
+    /**
+     *    Returns the redirected URL or false if
+     *    no redirection.
+     *    @return string      URL or false for none.
+     *    @access public
+     */
+    function getLocation() {
+        return $this->location;
+    }
+    
+    /**
+     *    Test to see if the response is a valid redirect.
+     *    @return boolean       True if valid redirect.
+     *    @access public
+     */
+    function isRedirect() {
+        return in_array($this->response_code, array(301, 302, 303, 307)) &&
+                (boolean)$this->getLocation();
+    }
+    
+    /**
+     *    Test to see if the response is an authentication
+     *    challenge.
+     *    @return boolean       True if challenge.
+     *    @access public
+     */
+    function isChallenge() {
+        return ($this->response_code == 401) &&
+                (boolean)$this->authentication &&
+                (boolean)$this->realm;
+    }
+    
+    /**
+     *    Accessor for MIME type header information.
+     *    @return string           MIME type.
+     *    @access public
+     */
+    function getMimeType() {
+        return $this->mime_type;
+    }
+    
+    /**
+     *    Accessor for authentication type.
+     *    @return string        Type.
+     *    @access public
+     */
+    function getAuthentication() {
+        return $this->authentication;
+    }
+    
+    /**
+     *    Accessor for security realm.
+     *    @return string        Realm.
+     *    @access public
+     */
+    function getRealm() {
+        return $this->realm;
+    }
+    
+    /**
+     *    Writes new cookies to the cookie jar.
+     *    @param SimpleCookieJar $jar   Jar to write to.
+     *    @param SimpleUrl $url         Host and path to write under.
+     *    @access public
+     */
+    function writeCookiesToJar($jar, $url) {
+        foreach ($this->cookies as $cookie) {
+            $jar->setCookie(
+                    $cookie->getName(),
+                    $cookie->getValue(),
+                    $url->getHost(),
+                    $cookie->getPath(),
+                    $cookie->getExpiry());
+        }
+    }
+
+    /**
+     *    Called on each header line to accumulate the held
+     *    data within the class.
+     *    @param string $header_line        One line of header.
+     *    @access protected
+     */
+    protected function parseHeaderLine($header_line) {
+        if (preg_match('/HTTP\/(\d+\.\d+)\s+(\d+)/i', $header_line, $matches)) {
+            $this->http_version = $matches[1];
+            $this->response_code = $matches[2];
+        }
+        if (preg_match('/Content-type:\s*(.*)/i', $header_line, $matches)) {
+            $this->mime_type = trim($matches[1]);
+        }
+        if (preg_match('/Location:\s*(.*)/i', $header_line, $matches)) {
+            $this->location = trim($matches[1]);
+        }
+        if (preg_match('/Set-cookie:(.*)/i', $header_line, $matches)) {
+            $this->cookies[] = $this->parseCookie($matches[1]);
+        }
+        if (preg_match('/WWW-Authenticate:\s+(\S+)\s+realm=\"(.*?)\"/i', $header_line, $matches)) {
+            $this->authentication = $matches[1];
+            $this->realm = trim($matches[2]);
+        }
+    }
+    
+    /**
+     *    Parse the Set-cookie content.
+     *    @param string $cookie_line    Text after "Set-cookie:"
+     *    @return SimpleCookie          New cookie object.
+     *    @access private
+     */
+    protected function parseCookie($cookie_line) {
+        $parts = split(";", $cookie_line);
+        $cookie = array();
+        preg_match('/\s*(.*?)\s*=(.*)/', array_shift($parts), $cookie);
+        foreach ($parts as $part) {
+            if (preg_match('/\s*(.*?)\s*=(.*)/', $part, $matches)) {
+                $cookie[$matches[1]] = trim($matches[2]);
+            }
+        }
+        return new SimpleCookie(
+                $cookie[1],
+                trim($cookie[2]),
+                isset($cookie["path"]) ? $cookie["path"] : "",
+                isset($cookie["expires"]) ? $cookie["expires"] : false);
+    }
+}
+
+/**
+ *    Basic HTTP response.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleHttpResponse extends SimpleStickyError {
+    private $url;
+    private $encoding;
+    private $sent;
+    private $content;
+    private $headers;
+    
+    /**
+     *    Constructor. Reads and parses the incoming
+     *    content and headers.
+     *    @param SimpleSocket $socket   Network connection to fetch
+     *                                  response text from.
+     *    @param SimpleUrl $url         Resource name.
+     *    @param mixed $encoding        Record of content sent.
+     *    @access public
+     */
+    function __construct($socket, $url, $encoding) {
+        parent::__construct();
+        $this->url = $url;
+        $this->encoding = $encoding;
+        $this->sent = $socket->getSent();
+        $this->content = false;
+        $raw = $this->readAll($socket);
+        if ($socket->isError()) {
+            $this->setError('Error reading socket [' . $socket->getError() . ']');
+            return;
+        }
+        $this->parse($raw);
+    }
+    
+    /**
+     *    Splits up the headers and the rest of the content.
+     *    @param string $raw    Content to parse.
+     *    @access private
+     */
+    protected function parse($raw) {
+        if (! $raw) {
+            $this->setError('Nothing fetched');
+            $this->headers = new SimpleHttpHeaders('');
+        } elseif ('file' == $this->url->getScheme()) {
+            $this->headers = new SimpleHttpHeaders('');
+            $this->content = $raw;
+        } elseif (! strstr($raw, "\r\n\r\n")) {
+            $this->setError('Could not split headers from content');
+            $this->headers = new SimpleHttpHeaders($raw);
+        } else {
+            list($headers, $this->content) = split("\r\n\r\n", $raw, 2);
+            $this->headers = new SimpleHttpHeaders($headers);
+        }
+    }
+    
+    /**
+     *    Original request method.
+     *    @return string        GET, POST or HEAD.
+     *    @access public
+     */
+    function getMethod() {
+        return $this->encoding->getMethod();
+    }
+    
+    /**
+     *    Resource name.
+     *    @return SimpleUrl        Current url.
+     *    @access public
+     */
+    function getUrl() {
+        return $this->url;
+    }
+    
+    /**
+     *    Original request data.
+     *    @return mixed              Sent content.
+     *    @access public
+     */
+    function getRequestData() {
+        return $this->encoding;
+    }
+    
+    /**
+     *    Raw request that was sent down the wire.
+     *    @return string        Bytes actually sent.
+     *    @access public
+     */
+    function getSent() {
+        return $this->sent;
+    }
+    
+    /**
+     *    Accessor for the content after the last
+     *    header line.
+     *    @return string           All content.
+     *    @access public
+     */
+    function getContent() {
+        return $this->content;
+    }
+    
+    /**
+     *    Accessor for header block. The response is the
+     *    combination of this and the content.
+     *    @return SimpleHeaders        Wrapped header block.
+     *    @access public
+     */
+    function getHeaders() {
+        return $this->headers;
+    }
+    
+    /**
+     *    Accessor for any new cookies.
+     *    @return array       List of new cookies.
+     *    @access public
+     */
+    function getNewCookies() {
+        return $this->headers->getNewCookies();
+    }
+    
+    /**
+     *    Reads the whole of the socket output into a
+     *    single string.
+     *    @param SimpleSocket $socket  Unread socket.
+     *    @return string               Raw output if successful
+     *                                 else false.
+     *    @access private
+     */
+    protected function readAll($socket) {
+        $all = '';
+        while (! $this->isLastPacket($next = $socket->read())) {
+            $all .= $next;
+        }
+        return $all;
+    }
+    
+    /**
+     *    Test to see if the packet from the socket is the
+     *    last one.
+     *    @param string $packet    Chunk to interpret.
+     *    @return boolean          True if empty or EOF.
+     *    @access private
+     */
+    protected function isLastPacket($packet) {
+        if (is_string($packet)) {
+            return $packet === '';
+        }
+        return ! $packet;
+    }
+}
 ?>
-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

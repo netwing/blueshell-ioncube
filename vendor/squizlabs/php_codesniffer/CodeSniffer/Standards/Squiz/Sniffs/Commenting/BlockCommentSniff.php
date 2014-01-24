@@ -1,122 +1,246 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Commenting_BlockCommentSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_Commenting_BlockCommentSniff.
+ *
+ * Verifies that block comments are used appropriately.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Commenting_BlockCommentSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_COMMENT,
+                T_DOC_COMMENT,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The current file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // If its an inline comment return.
+        if (substr($tokens[$stackPtr]['content'], 0, 2) !== '/*') {
+            return;
+        }
+
+        // If this is a function/class/interface doc block comment, skip it.
+        // We are only interested in inline doc block comments.
+        if ($tokens[$stackPtr]['code'] === T_DOC_COMMENT) {
+            $nextToken = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr + 1), null, true);
+            $ignore    = array(
+                          T_CLASS,
+                          T_INTERFACE,
+                          T_TRAIT,
+                          T_FUNCTION,
+                          T_PUBLIC,
+                          T_PRIVATE,
+                          T_FINAL,
+                          T_PROTECTED,
+                          T_STATIC,
+                          T_ABSTRACT,
+                          T_CONST,
+                         );
+            if (in_array($tokens[$nextToken]['code'], $ignore) === true) {
+                return;
+            }
+
+            $prevToken = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 1), null, true);
+            if ($tokens[$prevToken]['code'] === T_OPEN_TAG) {
+                return;
+            }
+        }//end if
+
+        $commentLines = array($stackPtr);
+        $nextComment  = $stackPtr;
+        $lastLine     = $tokens[$stackPtr]['line'];
+
+        // Construct the comment into an array.
+        while (($nextComment = $phpcsFile->findNext($tokens[$stackPtr]['code'], ($nextComment + 1), null, false)) !== false) {
+            if (($tokens[$nextComment]['line'] - 1) !== $lastLine) {
+                // Not part of the block.
+                break;
+            }
+
+            $lastLine       = $tokens[$nextComment]['line'];
+            $commentLines[] = $nextComment;
+        }
+
+        if (count($commentLines) <= 2) {
+            // Small comment. Can't be right.
+            if (count($commentLines) === 1) {
+                $error = 'Single line block comment not allowed; use inline ("// text") comment instead';
+                $phpcsFile->addError($error, $stackPtr, 'SingleLine');
+                return;
+            }
+
+            if (trim($tokens[$commentLines[1]]['content']) === '*/') {
+                if (trim($tokens[$stackPtr]['content']) === '/*') {
+                    $error = 'Empty block comment not allowed';
+                    $phpcsFile->addError($error, $stackPtr, 'Empty');
+                    return;
+                }
+            }
+        }
+
+        $content = trim($tokens[$stackPtr]['content']);
+        if ($content !== '/*' && $content !== '/**') {
+            $error = 'Block comment text must start on a new line';
+            $phpcsFile->addError($error, $stackPtr, 'NoNewLine');
+            return;
+        }
+
+        $starColumn = ($tokens[$stackPtr]['column'] + 3);
+
+        // Make sure first line isn't blank.
+        if (trim($tokens[$commentLines[1]]['content']) === '') {
+            $error = 'Empty line not allowed at start of comment';
+            $phpcsFile->addError($error, $commentLines[1], 'HasEmptyLine');
+        } else {
+            // Check indentation of first line.
+            $content      = $tokens[$commentLines[1]]['content'];
+            $commentText  = ltrim($content);
+            $leadingSpace = (strlen($content) - strlen($commentText));
+            if ($leadingSpace !== $starColumn) {
+                $expected  = $starColumn;
+                $expected .= ($starColumn === 1) ? ' space' : ' spaces';
+                $data      = array(
+                              $expected,
+                              $leadingSpace,
+                             );
+
+                $error = 'First line of comment not aligned correctly; expected %s but found %s';
+                $phpcsFile->addError($error, $commentLines[1], 'FirstLineIndent', $data);
+            }
+
+            if (preg_match('|\p{Lu}|u', $commentText[0]) === 0) {
+                $error = 'Block comments must start with a capital letter';
+                $phpcsFile->addError($error, $commentLines[1], 'NoCapital');
+            }
+        }
+
+        // Check that each line of the comment is indented past the star.
+        foreach ($commentLines as $line) {
+            $leadingSpace = (strlen($tokens[$line]['content']) - strlen(ltrim($tokens[$line]['content'])));
+            // First and last lines (comment opener and closer) are handled separately.
+            if ($line === $commentLines[(count($commentLines) - 1)] || $line === $commentLines[0]) {
+                continue;
+            }
+
+            // First comment line was handled above.
+            if ($line === $commentLines[1]) {
+                continue;
+            }
+
+            // If it's empty, continue.
+            if (trim($tokens[$line]['content']) === '') {
+                continue;
+            }
+
+            if ($leadingSpace < $starColumn) {
+                $expected  = $starColumn;
+                $expected .= ($starColumn === 1) ? ' space' : ' spaces';
+                $data      = array(
+                              $expected,
+                              $leadingSpace,
+                             );
+
+                $error = 'Comment line indented incorrectly; expected at least %s but found %s';
+                $phpcsFile->addError($error, $line, 'LineIndent', $data);
+            }
+        }//end foreach
+
+        // Finally, test the last line is correct.
+        $lastIndex = (count($commentLines) - 1);
+        $content   = trim($tokens[$commentLines[$lastIndex]]['content']);
+        if ($content !== '*/' && $content !== '**/') {
+            $error = 'Comment closer must be on a new line';
+            $phpcsFile->addError($error, $commentLines[$lastIndex]);
+        } else {
+            $content      = $tokens[$commentLines[$lastIndex]]['content'];
+            $commentText  = ltrim($content);
+            $leadingSpace = (strlen($content) - strlen($commentText));
+            if ($leadingSpace !== ($tokens[$stackPtr]['column'] - 1)) {
+                $expected  = ($tokens[$stackPtr]['column'] - 1);
+                $expected .= ($expected === 1) ? ' space' : ' spaces';
+                $data      = array(
+                              $expected,
+                              $leadingSpace,
+                             );
+
+                $error = 'Last line of comment aligned incorrectly; expected %s but found %s';
+                $phpcsFile->addError($error, $commentLines[$lastIndex], 'LastLineIndent', $data);
+            }
+
+        }
+
+        // Check that the lines before and after this comment are blank.
+        $contentBefore = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
+        if (isset($tokens[$contentBefore]['scope_closer']) === true
+            && $tokens[$contentBefore]['scope_opener'] === $contentBefore
+        ) {
+            if (($tokens[$stackPtr]['line'] - $tokens[$contentBefore]['line']) !== 1) {
+                $error = 'Empty line not required before block comment';
+                $phpcsFile->addError($error, $stackPtr, 'HasEmptyLineBefore');
+            }
+        } else {
+            if (($tokens[$stackPtr]['line'] - $tokens[$contentBefore]['line']) < 2) {
+                $error = 'Empty line required before block comment';
+                $phpcsFile->addError($error, $stackPtr, 'NoEmptyLineBefore');
+            }
+        }
+
+        $commentCloser = $commentLines[$lastIndex];
+        $contentAfter  = $phpcsFile->findNext(T_WHITESPACE, ($commentCloser + 1), null, true);
+        if (($tokens[$contentAfter]['line'] - $tokens[$commentCloser]['line']) < 2) {
+            $error = 'Empty line required after block comment';
+            $phpcsFile->addError($error, $commentCloser, 'NoEmptyLineAfter');
+        }
+
+    }//end process()
+
+
+}//end class
+
+
 ?>
-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

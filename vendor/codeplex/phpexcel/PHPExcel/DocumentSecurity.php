@@ -1,55 +1,218 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_DocumentSecurity
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_DocumentSecurity
+{
+	/**
+	 * LockRevision
+	 *
+	 * @var boolean
+	 */
+	private $_lockRevision;
+
+	/**
+	 * LockStructure
+	 *
+	 * @var boolean
+	 */
+	private $_lockStructure;
+
+	/**
+	 * LockWindows
+	 *
+	 * @var boolean
+	 */
+	private $_lockWindows;
+
+	/**
+	 * RevisionsPassword
+	 *
+	 * @var string
+	 */
+	private $_revisionsPassword;
+
+	/**
+	 * WorkbookPassword
+	 *
+	 * @var string
+	 */
+	private $_workbookPassword;
+
+    /**
+     * Create a new PHPExcel_DocumentSecurity
+     */
+    public function __construct()
+    {
+    	// Initialise values
+    	$this->_lockRevision		= false;
+    	$this->_lockStructure		= false;
+    	$this->_lockWindows			= false;
+    	$this->_revisionsPassword	= '';
+    	$this->_workbookPassword	= '';
+    }
+
+    /**
+     * Is some sort of dcument security enabled?
+     *
+     * @return boolean
+     */
+    function isSecurityEnabled() {
+    	return 	$this->_lockRevision ||
+		    	$this->_lockStructure ||
+		    	$this->_lockWindows;
+    }
+
+    /**
+     * Get LockRevision
+     *
+     * @return boolean
+     */
+    function getLockRevision() {
+    	return $this->_lockRevision;
+    }
+
+    /**
+     * Set LockRevision
+     *
+     * @param boolean $pValue
+     * @return PHPExcel_DocumentSecurity
+     */
+    function setLockRevision($pValue = false) {
+    	$this->_lockRevision = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get LockStructure
+     *
+     * @return boolean
+     */
+    function getLockStructure() {
+    	return $this->_lockStructure;
+    }
+
+    /**
+     * Set LockStructure
+     *
+     * @param boolean $pValue
+     * @return PHPExcel_DocumentSecurity
+     */
+    function setLockStructure($pValue = false) {
+		$this->_lockStructure = $pValue;
+		return $this;
+    }
+
+    /**
+     * Get LockWindows
+     *
+     * @return boolean
+     */
+    function getLockWindows() {
+    	return $this->_lockWindows;
+    }
+
+    /**
+     * Set LockWindows
+     *
+     * @param boolean $pValue
+     * @return PHPExcel_DocumentSecurity
+     */
+    function setLockWindows($pValue = false) {
+    	$this->_lockWindows = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get RevisionsPassword (hashed)
+     *
+     * @return string
+     */
+    function getRevisionsPassword() {
+    	return $this->_revisionsPassword;
+    }
+
+    /**
+     * Set RevisionsPassword
+     *
+     * @param string 	$pValue
+     * @param boolean 	$pAlreadyHashed If the password has already been hashed, set this to true
+     * @return PHPExcel_DocumentSecurity
+     */
+    function setRevisionsPassword($pValue = '', $pAlreadyHashed = false) {
+    	if (!$pAlreadyHashed) {
+    		$pValue = PHPExcel_Shared_PasswordHasher::hashPassword($pValue);
+    	}
+    	$this->_revisionsPassword = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get WorkbookPassword (hashed)
+     *
+     * @return string
+     */
+    function getWorkbookPassword() {
+    	return $this->_workbookPassword;
+    }
+
+    /**
+     * Set WorkbookPassword
+     *
+     * @param string 	$pValue
+     * @param boolean 	$pAlreadyHashed If the password has already been hashed, set this to true
+     * @return PHPExcel_DocumentSecurity
+     */
+    function setWorkbookPassword($pValue = '', $pAlreadyHashed = false) {
+    	if (!$pAlreadyHashed) {
+    		$pValue = PHPExcel_Shared_PasswordHasher::hashPassword($pValue);
+    	}
+		$this->_workbookPassword = $pValue;
+		return $this;
+    }
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if (is_object($value)) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+}

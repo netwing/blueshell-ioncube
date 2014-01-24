@@ -1,47 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+use Monolog\Formatter\JsonFormatter;
+
+/**
+ * Sends errors to Loggly.
+ *
+ * @author Przemek Sobstel <przemek@sobstel.org>
+ */
+class LogglyHandler extends AbstractProcessingHandler
+{
+    const HOST = 'logs-01.loggly.com';
+
+    protected $token;
+
+    protected $tag;
+
+    public function __construct($token, $level = Logger::DEBUG, $bubble = true)
+    {
+        if (!extension_loaded('curl')) {
+            throw new \LogicException('The curl extension is needed to use the LogglyHandler');
+        }
+
+        $this->token = $token;
+
+        parent::__construct($level, $bubble);
+    }
+
+    public function setTag($tag)
+    {
+        $this->tag = $tag;
+    }
+
+    protected function write(array $record)
+    {
+        $url = sprintf("http://%s/inputs/%s/", self::HOST, $this->token);
+        if ($this->tag) {
+            $url .= sprintf("tag/%s/", $this->tag);
+        }
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $record["formatted"]);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        curl_exec($ch);
+        curl_close($ch);
+    }
+
+    protected function getDefaultFormatter()
+    {
+        return new JsonFormatter();
+    }
+}

@@ -1,35 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/CharacterReader/GenericFixedWidthReader.php';
+
+class Swift_CharacterReader_GenericFixedWidthReaderTest
+    extends UnitTestCase
+{
+    public function testInitialByteSizeMatchesWidth()
+    {
+        $reader = new Swift_CharacterReader_GenericFixedWidthReader(1);
+        $this->assertIdentical(1, $reader->getInitialByteSize());
+
+        $reader = new Swift_CharacterReader_GenericFixedWidthReader(4);
+        $this->assertIdentical(4, $reader->getInitialByteSize());
+    }
+
+    public function testValidationValueIsBasedOnOctetCount()
+    {
+        $reader = new Swift_CharacterReader_GenericFixedWidthReader(4);
+
+        $this->assertIdentical(
+            1, $reader->validateByteSequence(array(0x01, 0x02, 0x03), 3)
+            ); //3 octets
+
+        $this->assertIdentical(
+            2, $reader->validateByteSequence(array(0x01, 0x0A), 2)
+            ); //2 octets
+
+        $this->assertIdentical(
+            3, $reader->validateByteSequence(array(0xFE), 1)
+            ); //1 octet
+
+        $this->assertIdentical(
+            0, $reader->validateByteSequence(array(0xFE, 0x03, 0x67, 0x9A), 4)
+            ); //All 4 octets
+    }
+
+    public function testValidationFailsIfTooManyOctets()
+    {
+        $reader = new Swift_CharacterReader_GenericFixedWidthReader(6);
+
+        $this->assertIdentical(-1, $reader->validateByteSequence(
+            array(0xFE, 0x03, 0x67, 0x9A, 0x10, 0x09, 0x85), 7
+            )); //7 octets
+    }
+}

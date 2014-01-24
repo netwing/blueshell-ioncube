@@ -1,93 +1,183 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-nmwkDNZuaG==
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Formatter\ChromePHPFormatter;
+use Monolog\Logger;
+
+/**
+ * Handler sending logs to the ChromePHP extension (http://www.chromephp.com/)
+ *
+ * @author Christophe Coevoet <stof@notk.org>
+ */
+class ChromePHPHandler extends AbstractProcessingHandler
+{
+    /**
+     * Version of the extension
+     */
+    const VERSION = '4.0';
+
+    /**
+     * Header name
+     */
+    const HEADER_NAME = 'X-ChromeLogger-Data';
+
+    protected static $initialized = false;
+
+    /**
+     * Tracks whether we sent too much data
+     *
+     * Chrome limits the headers to 256KB, so when we sent 240KB we stop sending
+     *
+     * @var Boolean
+     */
+    protected static $overflowed = false;
+
+    protected static $json = array(
+        'version' => self::VERSION,
+        'columns' => array('label', 'log', 'backtrace', 'type'),
+        'rows' => array(),
+    );
+
+    protected static $sendHeaders = true;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handleBatch(array $records)
+    {
+        $messages = array();
+
+        foreach ($records as $record) {
+            if ($record['level'] < $this->level) {
+                continue;
+            }
+            $messages[] = $this->processRecord($record);
+        }
+
+        if (!empty($messages)) {
+            $messages = $this->getFormatter()->formatBatch($messages);
+            self::$json['rows'] = array_merge(self::$json['rows'], $messages);
+            $this->send();
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultFormatter()
+    {
+        return new ChromePHPFormatter();
+    }
+
+    /**
+     * Creates & sends header for a record
+     *
+     * @see sendHeader()
+     * @see send()
+     * @param array $record
+     */
+    protected function write(array $record)
+    {
+        self::$json['rows'][] = $record['formatted'];
+
+        $this->send();
+    }
+
+    /**
+     * Sends the log header
+     *
+     * @see sendHeader()
+     */
+    protected function send()
+    {
+        if (self::$overflowed) {
+            return;
+        }
+
+        if (!self::$initialized) {
+            self::$sendHeaders = $this->headersAccepted();
+            self::$json['request_uri'] = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+
+            self::$initialized = true;
+        }
+
+        $json = @json_encode(self::$json);
+        $data = base64_encode(utf8_encode($json));
+        if (strlen($data) > 240*1024) {
+            self::$overflowed = true;
+
+            $record = array(
+                'message' => 'Incomplete logs, chrome header size limit reached',
+                'context' => array(),
+                'level' => Logger::WARNING,
+                'level_name' => Logger::getLevelName(Logger::WARNING),
+                'channel' => 'monolog',
+                'datetime' => new \DateTime(),
+                'extra' => array(),
+            );
+            self::$json['rows'][count(self::$json['rows']) - 1] = $this->getFormatter()->format($record);
+            $json = @json_encode(self::$json);
+            $data = base64_encode(utf8_encode($json));
+        }
+
+        $this->sendHeader(self::HEADER_NAME, $data);
+    }
+
+    /**
+     * Send header string to the client
+     *
+     * @param string $header
+     * @param string $content
+     */
+    protected function sendHeader($header, $content)
+    {
+        if (!headers_sent() && self::$sendHeaders) {
+            header(sprintf('%s: %s', $header, $content));
+        }
+    }
+
+    /**
+     * Verifies if the headers are accepted by the current user agent
+     *
+     * @return Boolean
+     */
+    protected function headersAccepted()
+    {
+        return !isset($_SERVER['HTTP_USER_AGENT'])
+               || preg_match('{\bChrome/\d+[\.\d+]*\b}', $_SERVER['HTTP_USER_AGENT']);
+    }
+
+    /**
+     * BC getter for the sendHeaders property that has been made static
+     */
+    public function __get($property)
+    {
+        if ('sendHeaders' !== $property) {
+            throw new \InvalidArgumentException('Undefined property '.$property);
+        }
+
+        return static::$sendHeaders;
+    }
+
+    /**
+     * BC setter for the sendHeaders property that has been made static
+     */
+    public function __set($property, $value)
+    {
+        if ('sendHeaders' !== $property) {
+            throw new \InvalidArgumentException('Undefined property '.$property);
+        }
+
+        static::$sendHeaders = $value;
+    }
+}

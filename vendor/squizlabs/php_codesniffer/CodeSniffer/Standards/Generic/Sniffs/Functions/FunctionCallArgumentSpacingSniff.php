@@ -1,73 +1,141 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Functions_FunctionCallArgumentSpacingSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_Functions_FunctionCallArgumentSpacingSniff.
+ *
+ * Checks that calls to methods and functions are spaced correctly.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Functions_FunctionCallArgumentSpacingSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_STRING);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Skip tokens that are the names of functions or classes
+        // within their definitions. For example:
+        // function myFunction...
+        // "myFunction" is T_STRING but we should skip because it is not a
+        // function or method *call*.
+        $functionName    = $stackPtr;
+        $ignoreTokens    = PHP_CodeSniffer_Tokens::$emptyTokens;
+        $ignoreTokens[]  = T_BITWISE_AND;
+        $functionKeyword = $phpcsFile->findPrevious($ignoreTokens, ($stackPtr - 1), null, true);
+        if ($tokens[$functionKeyword]['code'] === T_FUNCTION || $tokens[$functionKeyword]['code'] === T_CLASS) {
+            return;
+        }
+
+        // If the next non-whitespace token after the function or method call
+        // is not an opening parenthesis then it cant really be a *call*.
+        $openBracket = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($functionName + 1), null, true);
+        if ($tokens[$openBracket]['code'] !== T_OPEN_PARENTHESIS) {
+            return;
+        }
+
+        $closeBracket = $tokens[$openBracket]['parenthesis_closer'];
+
+        $nextSeparator = $openBracket;
+        while (($nextSeparator = $phpcsFile->findNext(array(T_COMMA, T_VARIABLE, T_CLOSURE), ($nextSeparator + 1), $closeBracket)) !== false) {
+            if ($tokens[$nextSeparator]['code'] === T_CLOSURE) {
+                $nextSeparator = $tokens[$nextSeparator]['scope_closer'];
+                continue;
+            }
+
+            // Make sure the comma or variable belongs directly to this function call,
+            // and is not inside a nested function call or array.
+            $brackets    = $tokens[$nextSeparator]['nested_parenthesis'];
+            $lastBracket = array_pop($brackets);
+            if ($lastBracket !== $closeBracket) {
+                continue;
+            }
+
+            if ($tokens[$nextSeparator]['code'] === T_COMMA) {
+                if ($tokens[($nextSeparator - 1)]['code'] === T_WHITESPACE) {
+                    $error = 'Space found before comma in function call';
+                    $phpcsFile->addError($error, $stackPtr, 'SpaceBeforeComma');
+                }
+
+                if ($tokens[($nextSeparator + 1)]['code'] !== T_WHITESPACE) {
+                    $error = 'No space found after comma in function call';
+                    $phpcsFile->addError($error, $stackPtr, 'NoSpaceAfterComma');
+                } else {
+                    // If there is a newline in the space, then the must be formatting
+                    // each argument on a newline, which is valid, so ignore it.
+                    if (strpos($tokens[($nextSeparator + 1)]['content'], $phpcsFile->eolChar) === false) {
+                        $space = strlen($tokens[($nextSeparator + 1)]['content']);
+                        if ($space > 1) {
+                            $error = 'Expected 1 space after comma in function call; %s found';
+                            $data  = array($space);
+                            $phpcsFile->addError($error, $stackPtr, 'TooMuchSpaceAfterComma', $data);
+                        }
+                    }
+                }
+            } else {
+                // Token is a variable.
+                $nextToken = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($nextSeparator + 1), $closeBracket, true);
+                if ($nextToken !== false) {
+                    if ($tokens[$nextToken]['code'] === T_EQUAL) {
+                        if (($tokens[($nextToken - 1)]['code']) !== T_WHITESPACE) {
+                            $error = 'Expected 1 space before = sign of default value';
+                            $phpcsFile->addError($error, $stackPtr, 'NoSpaceBeforeEquals');
+                        }
+
+                        if ($tokens[($nextToken + 1)]['code'] !== T_WHITESPACE) {
+                            $error = 'Expected 1 space after = sign of default value';
+                            $phpcsFile->addError($error, $stackPtr, 'NoSpaceAfterEquals');
+                        }
+                    }
+                }
+            }//end if
+        }//end while
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

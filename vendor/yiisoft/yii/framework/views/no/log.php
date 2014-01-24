@@ -1,32 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<!-- start log messages -->
+<table class="yiiLog" width="100%" cellpadding="2" style="border-spacing:1px;font:11px Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;color:#666666;">
+	<tr>
+		<th style="background:black;color:white;" colspan="5">
+			Applikasjonslogg
+		</th>
+	</tr>
+	<tr style="background-color: #ccc;">
+	    <th style="width:120px">Tid</th>
+		<th>Nivå</th>
+		<th>Kategori</th>
+		<th>Melding</th>
+	</tr>
+<?php
+$colors=array(
+	CLogger::LEVEL_PROFILE=>'#DFFFE0',
+	CLogger::LEVEL_INFO=>'#FFFFDF',
+	CLogger::LEVEL_WARNING=>'#FFDFE5',
+	CLogger::LEVEL_ERROR=>'#FFC0CB',
+);
+foreach($data as $index=>$log)
+{
+	$color=($index%2)?'#F5F5F5':'#FFFFFF';
+	if(isset($colors[$log[1]]))
+		$color=$colors[$log[1]];
+	$message='<pre>'.CHtml::encode(wordwrap($log[0])).'</pre>';
+	$time=date('H:i:s.',$log[3]).(int)(($log[3]-(int)$log[3])*1000000);
+
+	echo <<<EOD
+	<tr style="background:{$color}">
+		<td align="center">{$time}</td>
+		<td>{$log[1]}</td>
+		<td>{$log[2]}</td>
+		<td>{$message}</td>
+	</tr>
+EOD;
+}
 ?>
-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
+</table>
+<!-- end of log messages -->

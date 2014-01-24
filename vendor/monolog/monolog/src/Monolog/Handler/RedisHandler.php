@@ -1,34 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-yRj75uYw2Tmf+AtxwQYj
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+use Monolog\Formatter\LineFormatter;
+
+/**
+ * Logs to a Redis key using rpush
+ *
+ * usage example:
+ *
+ *   $log = new Logger('application');
+ *   $redis = new RedisHandler(new Predis\Client("tcp://localhost:6379"), "logs", "prod");
+ *   $log->pushHandler($redis);
+ *
+ * @author Thomas Tourlourat <thomas@tourlourat.com>
+ */
+class RedisHandler extends AbstractProcessingHandler
+{
+    private $redisClient;
+    private $redisKey;
+
+    # redis instance, key to use
+    public function __construct($redis, $key, $level = Logger::DEBUG, $bubble = true)
+    {
+        if (!(($redis instanceof \Predis\Client) || ($redis instanceof \Redis))) {
+            throw new \InvalidArgumentException('Predis\Client or Redis instance required');
+        }
+
+        $this->redisClient = $redis;
+        $this->redisKey = $key;
+
+        parent::__construct($level, $bubble);
+    }
+
+    protected function write(array $record)
+    {
+        $this->redisClient->rpush($this->redisKey, $record["formatted"]);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultFormatter()
+    {
+        return new LineFormatter();
+    }
+}

@@ -1,31 +1,42 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPwieli4Sy0BspPuhuYtAVZjooxu38XBvsCmqR3FjntBo2PE/loc3KY98CSraPlTzPP38Ic7h
-avr8ptdaSHy6kkEgT/OWWy67qUeJDagbjkbQ1lXU3G0GKcPd3tBzEYVoeAlBsKv6UvFkZpdTbhE2
-DA0h10MeYm4JbzK1ZGyLdLAdrh7Wz0Z2tyzor85t2784k6VwVLwLI1M2wqD+wECkutW0YwtwYBfT
-kV/4Z1ntwjoHllU/QeGx6pYlKIZXE/TmggoQRmH0t6bqAsRluNwP4LbEc7q+s7N9ln/T2EbgYn4a
-VEm9nLnUVYbZ4W9y1AN+R5TDjnub5gLz3TOKDGqZ9lnyny2IXdjjsMPolRfKAi+/a3guvLDqmN2B
-L4npYoprzQ6WAOt6BrxXOvtDJQOTw6SWJqi4Fjrur8sE59CbGpvEh3HfL/A2Dp6aW7yI8FXBb75a
-q9wiGC+wtmihLPjym9ZKof6p8twK19C42tbRFwVZ3tlTFgaIJcT0y+JnJ7+8zXOxwR3cOq7efzSS
-PjbYKa4fC9Ewm05fBRl2nFCcaIZsnqPnfMrfUlNYyoltHQ8OGXlR2K6B9WYV8q0Xcc1PJ2hfQnlz
-umydDn5oHHhHWDQwwMrLLHjyotEPWQGTPjprjawKBBjf463I06vYLyE8ju3RS2IWxEihtR4t44v+
-1ItOH9dfjli7eYR+Y0vCtquIJgOjcrNGkeTOOZx61dghnlNCj9dPT7XT+7GbAq155SGX5OE6/1Aq
-88/Lybm0a0WEW72eQo4orjuH+KNVAfYJxMW4L7HWgYh8Fqs5JZdJgsMIkFK5FsHuEorZ6atvSCGb
-TpaNfIsKhTvR7zZZMwgYsOfgTznX7kpf03Nja17QMYoP+4XGFji0SSwz5OBuh2HCpWnynw9iCRiA
-xczODar4dVqO6zdFxfWtkJgMXb4+8eNp0tc/TfiRMClsSy7b6gRfu9MnA0aH3ox0nnrLtGfWStKG
-TAHmUU+Ar09ZMQ5tuHAT3cVq8YMEHmlw6dLHK2QdRw5eaEwP6uKky0qJ02U/jSJgitrj0ghWO2xf
-QwJPFfHGykNKKgpxjKrB/JA3gGhnxt3SCGDp4wApZbJakW8eh55CZnb4+5J7xKKk0RZtAcIt1Jup
-toAGa2DGYZaQiPzekZdy0ENKonS4VL1frTPW1WwQPQe7rOuxM4+alEr0JyTn6jgmhf6yVgoMwNod
-OJIRWmOxKqqFj+sBEFYVDKqak83FJAkhB0Xhc1RwIIL2pkHt0PjkncoAJK/v1ynuPHbpJY4tN64K
-sRKzq55VXhvF9Hxs5sWDRmYrlAwCaUd0lZRu7gA842aotyfeOcshoThPneiJxD0l1Wr0lY/bYJ2l
-Tjm7wz+AQYu6fStU0iw6Ze83lSk1EGKoJJU9LmWqXKoXz9X6gmJ40JlMgWVEPB+AAUAId+fpumh+
-vQo6rD40114jTDWFJp91bNyJikn0kHo89OZc5nYXWiEcPem080iGhy75LzZ8Dd1z/reYeFoN5X8M
-IR5ohOE2qkMpzGbNTMeeKYqiIXvrhfAN8cUr8RMvXi+Z3gTueQVHVRW4ApJqmcJqZAe5Feug3Irs
-yEMTLihs7EFuvEsO3A7TjMQ0wTmWwIN4vUQa9HWcvT4wKcGTbXLAMGqHh002eay+ZaIU6e/+fOqx
-8uzXh6kJ0Uq16K3HZiv+TVzAWCjxGNlxCNS5DetxHYNgg8ADqcHE0XAcVaBdy/0sVeuwcOEK3ipR
-08ezsnRzLfvAZPqNLnelIpdJAnXxJMT4VkpKc97Hdro+3Nbrnwlik5LgpDu8NfVX2CfD243ByPk9
-aZvrJqxPuGHGxukxWczcN53ZSDS/l9F2zkDGeV31stvHBenqni1dhrpkFgs/NNR36nOg0rI7qCjT
-bDVDJ0XKefwCrgh7s+WoeLR0Lri5sjWUeudpex5EFb4BBg5FhRSvYlun3ANQiI9zp6nDeA81+RZA
-xXn4+86C9ERUiIdBf/dL5tjkV/S3fdL760htCKgj7w0MWYNk6mA32QkKfD1zB03ANTRsmug7OE+K
-dU0OiaSX69Dk+Y0aDCAylGCp9FuBZruPSI4oEM6Tsw8DkH+9wmi=
+<?php
+
+namespace Guzzle\Tests\Service\Mock\Model;
+
+use Guzzle\Service\Resource\ResourceIterator;
+
+class MockCommandIterator extends ResourceIterator
+{
+    public $calledNext = 0;
+
+    protected function sendRequest()
+    {
+        if ($this->nextToken) {
+            $this->command->set('next_token', $this->nextToken);
+        }
+
+        $this->command->set('page_size', (int) $this->calculatePageSize());
+        $this->command->execute();
+
+        $data = json_decode($this->command->getResponse()->getBody(true), true);
+
+        $this->nextToken = $data['next_token'];
+
+        return $data['resources'];
+    }
+
+    public function next()
+    {
+        $this->calledNext++;
+        parent::next();
+    }
+
+    public function getResources()
+    {
+        return $this->resources;
+    }
+
+    public function getIteratedCount()
+    {
+        return $this->iteratedCount;
+    }
+}

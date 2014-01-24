@@ -1,38 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-A7roNjksNCQRMai54MNkv0sj9tAGY0==
+<?php
+/**
+* Smarty PHPunit tests compilation of the {include_php} tag
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for {include_php} tests
+*/
+class CompileIncludePhpTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smartyBC = SmartyTests::$smartyBC;
+        SmartyTests::init();
+        $this->smartyBC->force_compile = true;
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test include_php string file_name function
+    */
+    public function testIncludePhpStringFileName()
+    {
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:start {include_php file='scripts/test_include_php.php'} end");
+        $result= $this->smartyBC->fetch($tpl);
+        $this->assertContains("test include php", $result);
+    }
+    /**
+    * test include_php string file_name function
+    */
+    public function testIncludePhpVariableFileName()
+    {
+        $this->smartyBC->disableSecurity();
+         $tpl = $this->smartyBC->createTemplate('eval:start {include_php file=$filename once=false} end');
+        $tpl->assign('filename','scripts/test_include_php.php');
+        $result= $this->smartyBC->fetch($tpl);
+        $this->assertContains("test include php", $result);
+    }
+    public function testIncludePhpVariableFileNameShortag()
+    {
+        $this->smartyBC->disableSecurity();
+         $tpl = $this->smartyBC->createTemplate('eval:start {include_php $filename once=false} end');
+        $tpl->assign('filename','scripts/test_include_php.php');
+        $result= $this->smartyBC->fetch($tpl);
+        $this->assertContains("test include php", $result);
+    }
+}

@@ -1,39 +1,34 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xo4=
+<?php
+/**
+ * CMultiFileUploadTest
+ */
+class CMultiFileUploadTest extends CTestCase
+{
+	public function testCallbackEncoding()
+	{
+		$expected = "'onFileSelect':function() { /* callback */ }";
+
+		$out=$this->getWidgetScript('js:function() { /* callback */ }');
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (js:): ".$out);
+
+		$out=$this->getWidgetScript('function() { /* callback */ }');
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (w/o js:): ".$out);
+
+		$out=$this->getWidgetScript(new CJavaScriptExpression('function() { /* callback */ }'));
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (wrap): ".$out);
+	}
+
+	private function getWidgetScript($callback)
+	{
+		Yii::app()->clientScript->scripts = array();
+		ob_start();
+		$widget = new CMultiFileUpload(null);
+		$widget->name = 'test';
+		$widget->options['onFileSelect'] = $callback;
+		$widget->init();
+		$widget->run();
+		Yii::app()->clientScript->render($out);
+		ob_end_clean();
+		return $out;
+	}
+}

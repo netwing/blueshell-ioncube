@@ -1,67 +1,157 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-WPohEgBaz0==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Expression;
+
+/**
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class Glob implements ValueInterface
+{
+    /**
+     * @var string
+     */
+    private $pattern;
+
+    /**
+     * @param string $pattern
+     */
+    public function __construct($pattern)
+    {
+        $this->pattern = $pattern;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function render()
+    {
+        return $this->pattern;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function renderPattern()
+    {
+        return $this->pattern;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getType()
+    {
+        return Expression::TYPE_GLOB;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isCaseSensitive()
+    {
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function prepend($expr)
+    {
+        $this->pattern = $expr.$this->pattern;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function append($expr)
+    {
+        $this->pattern .= $expr;
+
+        return $this;
+    }
+
+    /**
+     * Tests if glob is expandable ("*.{a,b}" syntax).
+     *
+     * @return bool
+     */
+    public function isExpandable()
+    {
+        return false !== strpos($this->pattern, '{')
+            && false !== strpos($this->pattern, '}');
+    }
+
+    /**
+     * @param bool $strictLeadingDot
+     * @param bool $strictWildcardSlash
+     *
+     * @return Regex
+     */
+    public function toRegex($strictLeadingDot = true, $strictWildcardSlash = true)
+    {
+        $firstByte = true;
+        $escaping = false;
+        $inCurlies = 0;
+        $regex = '';
+        $sizeGlob = strlen($this->pattern);
+        for ($i = 0; $i < $sizeGlob; $i++) {
+            $car = $this->pattern[$i];
+            if ($firstByte) {
+                if ($strictLeadingDot && '.' !== $car) {
+                    $regex .= '(?=[^\.])';
+                }
+
+                $firstByte = false;
+            }
+
+            if ('/' === $car) {
+                $firstByte = true;
+            }
+
+            if ('.' === $car || '(' === $car || ')' === $car || '|' === $car || '+' === $car || '^' === $car || '$' === $car) {
+                $regex .= "\\$car";
+            } elseif ('*' === $car) {
+                $regex .= $escaping ? '\\*' : ($strictWildcardSlash ? '[^/]*' : '.*');
+            } elseif ('?' === $car) {
+                $regex .= $escaping ? '\\?' : ($strictWildcardSlash ? '[^/]' : '.');
+            } elseif ('{' === $car) {
+                $regex .= $escaping ? '\\{' : '(';
+                if (!$escaping) {
+                    ++$inCurlies;
+                }
+            } elseif ('}' === $car && $inCurlies) {
+                $regex .= $escaping ? '}' : ')';
+                if (!$escaping) {
+                    --$inCurlies;
+                }
+            } elseif (',' === $car && $inCurlies) {
+                $regex .= $escaping ? ',' : '|';
+            } elseif ('\\' === $car) {
+                if ($escaping) {
+                    $regex .= '\\\\';
+                    $escaping = false;
+                } else {
+                    $escaping = true;
+                }
+
+                continue;
+            } else {
+                $regex .= $car;
+            }
+            $escaping = false;
+        }
+
+        return new Regex('^'.$regex.'$');
+    }
+}

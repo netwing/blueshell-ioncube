@@ -1,37 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Functions_LowercaseFunctionKeywordsSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_Functions_LowercaseFunctionKeywordsSniff.
+ *
+ * Ensures all class keywords are lowercase.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Functions_LowercaseFunctionKeywordsSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_FUNCTION,
+                T_PUBLIC,
+                T_PRIVATE,
+                T_PROTECTED,
+                T_STATIC,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $content = $tokens[$stackPtr]['content'];
+        if ($content !== strtolower($content)) {
+            $error = '%s keyword must be lowercase; expected "%s" but found "%s"';
+            $data  = array(
+                      strtoupper($content),
+                      strtolower($content),
+                      $content,
+                     );
+            $phpcsFile->addError($error, $stackPtr, 'FoundUppercase', $data);
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-f3T3sTW=

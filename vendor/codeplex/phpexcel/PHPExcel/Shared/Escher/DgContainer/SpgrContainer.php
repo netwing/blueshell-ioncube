@@ -1,33 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared_Escher
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+/**
+ * PHPExcel_Shared_Escher_DgContainer_SpgrContainer
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared_Escher
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Shared_Escher_DgContainer_SpgrContainer
+{
+	/**
+	 * Parent Shape Group Container
+	 *
+	 * @var PHPExcel_Shared_Escher_DgContainer_SpgrContainer
+	 */
+	private $_parent;
+
+	/**
+	 * Shape Container collection
+	 *
+	 * @var array
+	 */
+	private $_children = array();
+
+	/**
+	 * Set parent Shape Group Container
+	 *
+	 * @param PHPExcel_Shared_Escher_DgContainer_SpgrContainer $parent
+	 */
+	public function setParent($parent)
+	{
+		$this->_parent = $parent;
+	}
+
+	/**
+	 * Get the parent Shape Group Container if any
+	 *
+	 * @return PHPExcel_Shared_Escher_DgContainer_SpgrContainer|null
+	 */
+	public function getParent()
+	{
+		return $this->_parent;
+	}
+
+	/**
+	 * Add a child. This will be either spgrContainer or spContainer
+	 *
+	 * @param mixed $child
+	 */
+	public function addChild($child)
+	{
+		$this->_children[] = $child;
+		$child->setParent($this);
+	}
+
+	/**
+	 * Get collection of Shape Containers
+	 */
+	public function getChildren()
+	{
+		return $this->_children;
+	}
+
+	/**
+	 * Recursively get all spContainers within this spgrContainer
+	 *
+	 * @return PHPExcel_Shared_Escher_DgContainer_SpgrContainer_SpContainer[]
+	 */
+	public function getAllSpContainers()
+	{
+		$allSpContainers = array();
+
+		foreach ($this->_children as $child) {
+			if ($child instanceof PHPExcel_Shared_Escher_DgContainer_SpgrContainer) {
+				$allSpContainers = array_merge($allSpContainers, $child->getAllSpContainers());
+			} else {
+				$allSpContainers[] = $child;
+			}
+		}
+
+		return $allSpContainers;
+	}
+}

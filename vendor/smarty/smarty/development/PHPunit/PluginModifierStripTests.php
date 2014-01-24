@@ -1,35 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-GWKzaCzV5xEy2npt
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class PluginModifierStripTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testDefault()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{" hello     spaced words  "|strip}');
+        $this->assertEquals(" hello spaced words ", $this->smarty->fetch($tpl));
+    }
+
+    public function testUnicodeSpaces()
+    {
+        // Some Unicode Spaces
+        $string = "&#8199;hello      spaced&#8196; &#8239;  &#8197;&#8199;  words  ";
+        $string = mb_convert_encoding($string, 'UTF-8', "HTML-ENTITIES");
+        $tpl = $this->smarty->createTemplate('eval:{"' . $string . '"|strip}');
+        $this->assertEquals(" hello spaced words ", $this->smarty->fetch($tpl));
+    }
+
+    public function testLinebreak()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{" hello
+            spaced words  "|strip}');
+        $this->assertEquals(" hello spaced words ", $this->smarty->fetch($tpl));
+    }
+}

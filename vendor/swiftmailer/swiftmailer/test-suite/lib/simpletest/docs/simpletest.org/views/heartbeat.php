@@ -1,103 +1,174 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: adapter_test.php 1505 2007-04-30 23:39:59Z lastcraft $
+
+$log_directory = dirname(__FILE__)."/../logs";
+
+$heartbeat = new SimpleHeartBeat($log_directory);
+echo $heartbeat->view($_SERVER['QUERY_STRING']);
+
+class SimpleHeartBeat {
+    public $log_directory;
+    public $tests_directory;
+    
+    function __construct($log_directory) {
+        $this->log_directory = $log_directory;
+    }
+    
+    function view($querystring) {
+        switch ($querystring) {
+            case "last-commits":
+                return $this->displayLastCommits();
+            case "tests-results":
+                return $this->displayTestsResults();
+            case "commits":
+            default:
+                return $this->displaySparkline("commits last week");
+        }
+    }
+
+    function displayTestsResults() {
+        foreach(new DirectoryIterator($this->log_directory) as $node) {
+            if (preg_match("/simpletest\..*\.log/", $node->getFilename())) {
+                $log = new SimpleHeartBeatLog($node);
+                if (!isset($html)) {
+                    $html = "<dl>";
+                }
+                $html .= "<dt>".$log->details()."</dt>";
+                $html .= "<dd>".$log->info()."</dd>";
+            }
+        }
+        if (isset($html)) {
+            $html .= "</dl>";
+        } else {
+            $html = $this->dataUnavailable();
+        }
+        
+        return $html;
+    }
+    
+    function displayLastCommits($number=5) {
+        $entries = array();
+        $xml = simplexml_load_file($this->log_directory."/svn.xml");
+        foreach ($xml->logentry as $logentry) {
+            $dt = $logentry->msg;
+            $dd = $logentry['revision']." - ".$logentry->author. " - ".$logentry->date;
+            $entries[] = array('dt' => $dt, 'dd' => $dd);
+        }
+
+        if (count($entries) > 0) {
+            $html = "<dl>";
+            krsort($entries);
+	        $i = 0;
+	        foreach($entries as $entry) {
+	            if ($i < $number) {
+	                $i++;
+	                $html .= "<dt>".$entry['dt']."</dt>";
+	                $html .= "<dd>".$entry['dd']."</dd>";
+	            } else {
+	                break;
+	            }
+	        }
+	
+	        $html .= "</dl>";
+        } else {
+            $html = $this->dataUnavailable();
+        }
+        
+        return $html;
+    }
+    
+    function displaySparkline($name="commits last week") {
+        $method = $this->findMethod($name);
+        $data = $this->$method();
+
+        if (is_array($data)) {
+	        $html = "<div>";
+	        $html .= "<span class=\"sparkline\">";
+	        $html .= join(",", $data);
+	        $html .= "</span>";
+	        $html .= " ".array_pop($data)." ".$name;
+	        $html .= "</div>";
+        } else {
+            $html = $this->dataUnavailable();
+        }
+        
+        return $html;
+    }
+    
+    function dataUnavailable() {
+        return "<div><em>data unavailable</em></div>";
+    }
+    function findMethod($name) {
+        switch ($name) {
+            default:
+                return "commitsPerWeek";
+        }
+    }
+    
+    function commitsPerWeek() {
+        $data = array();
+        $xml = simplexml_load_file($this->log_directory."/svn.xml");
+        foreach ($xml->logentry as $logentry) {
+            $timestamp = strtotime($logentry->date);
+            $weekly = strtotime("last monday", $timestamp);
+            if (!isset($data[$weekly])) {
+                $data[$weekly] = 0;
+            }
+            $data[$weekly]++;
+        }
+        
+        $data = $this->normalizeData($data, "week");
+        
+        return $data;
+    }
+    
+    function normalizeData($data, $period="week") {
+        $min = min(array_keys($data));
+        $max = max(array_keys($data));
+        
+        $normalized = array();
+        $current = $min;
+        while ($current <= $max) {
+            $normalized[$current] = 0;
+            $current = strtotime("+1 ".$period, $current);
+        }
+        
+        foreach ($data as $timestamp => $value) {
+            $normalized[$timestamp] = $value;
+        }
+        
+        return $normalized;
+    }
+}
+
+class SimpleHeartBeatLog {
+    public $node;
+    public $content = "";
+    
+    function __construct($node) {
+        $this->node = $node;
+        $this->content = file_get_contents($this->node->getPathname());
+    }
+
+    function result() {
+        if (preg_match("/OK/", $this->content)) {
+            return "pass"; 
+        } else {
+            return "fail";
+        }
+    }
+
+    function info() {
+        return nl2br($this->content);
+    }
+    
+    function details() {
+        $details = substr($this->node->getFilename(), 11);
+        $details = $this->result(). " with ".substr($details, 0, -4);
+        $details .= " - ".date("c", $this->node->getCTime());
+        
+        return "<div class=\"".$this->result()."\">".$details."</div>";
+    }
+}
+
 ?>
-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
-/ku/ygic11BdPvV0ezolejW=

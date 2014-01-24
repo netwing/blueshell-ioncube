@@ -1,366 +1,1039 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.2.0
+ */
+
+/**
+ * Wrapper for the PHPUnit XML configuration file.
+ *
+ * Example XML configuration file:
+ * <code>
+ * <?xml version="1.0" encoding="utf-8" ?>
+ *
+ * <phpunit backupGlobals="true"
+ *          backupStaticAttributes="false"
+ *          bootstrap="/path/to/bootstrap.php"
+ *          cacheTokens="false"
+ *          colors="false"
+ *          convertErrorsToExceptions="true"
+ *          convertNoticesToExceptions="true"
+ *          convertWarningsToExceptions="true"
+ *          forceCoversAnnotation="false"
+ *          mapTestClassNameToCoveredClassName="false"
+ *          printerClass="PHPUnit_TextUI_ResultPrinter"
+ *          processIsolation="false"
+ *          stopOnError="false"
+ *          stopOnFailure="false"
+ *          stopOnIncomplete="false"
+ *          stopOnSkipped="false"
+ *          testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+ *          timeoutForSmallTests="1"
+ *          timeoutForMediumTests="10"
+ *          timeoutForLargeTests="60"
+ *          strict="false"
+ *          verbose="false">
+ *   <testsuites>
+ *     <testsuite name="My Test Suite">
+ *       <directory suffix="Test.php" phpVersion="5.3.0" phpVersionOperator=">=">/path/to/files</directory>
+ *       <file phpVersion="5.3.0" phpVersionOperator=">=">/path/to/MyTest.php</file>
+ *       <exclude>/path/to/files/exclude</exclude>
+ *     </testsuite>
+ *   </testsuites>
+ *
+ *   <groups>
+ *     <include>
+ *       <group>name</group>
+ *     </include>
+ *     <exclude>
+ *       <group>name</group>
+ *     </exclude>
+ *   </groups>
+ *
+ *   <filter>
+ *     <blacklist>
+ *       <directory suffix=".php">/path/to/files</directory>
+ *       <file>/path/to/file</file>
+ *       <exclude>
+ *         <directory suffix=".php">/path/to/files</directory>
+ *         <file>/path/to/file</file>
+ *       </exclude>
+ *     </blacklist>
+ *     <whitelist addUncoveredFilesFromWhitelist="true"
+ *                processUncoveredFilesFromWhitelist="false">
+ *       <directory suffix=".php">/path/to/files</directory>
+ *       <file>/path/to/file</file>
+ *       <exclude>
+ *         <directory suffix=".php">/path/to/files</directory>
+ *         <file>/path/to/file</file>
+ *       </exclude>
+ *     </whitelist>
+ *   </filter>
+ *
+ *   <listeners>
+ *     <listener class="MyListener" file="/optional/path/to/MyListener.php">
+ *       <arguments>
+ *         <array>
+ *           <element key="0">
+ *             <string>Sebastian</string>
+ *           </element>
+ *         </array>
+ *         <integer>22</integer>
+ *         <string>April</string>
+ *         <double>19.78</double>
+ *         <null/>
+ *         <object class="stdClass"/>
+ *         <file>MyRelativeFile.php</file>
+ *         <directory>MyRelativeDir</directory>
+ *       </arguments>
+ *     </listener>
+ *   </listeners>
+ *
+ *   <logging>
+ *     <log type="coverage-html" target="/tmp/report"
+            charset="UTF-8" highlight="false"
+ *          lowUpperBound="35" highLowerBound="70"/>
+ *     <log type="coverage-clover" target="/tmp/clover.xml"/>
+ *     <log type="json" target="/tmp/logfile.json"/>
+ *     <log type="plain" target="/tmp/logfile.txt"/>
+ *     <log type="tap" target="/tmp/logfile.tap"/>
+ *     <log type="junit" target="/tmp/logfile.xml" logIncompleteSkipped="false"/>
+ *     <log type="testdox-html" target="/tmp/testdox.html"/>
+ *     <log type="testdox-text" target="/tmp/testdox.txt"/>
+ *   </logging>
+ *
+ *   <php>
+ *     <includePath>.</includePath>
+ *     <ini name="foo" value="bar"/>
+ *     <const name="foo" value="bar"/>
+ *     <var name="foo" value="bar"/>
+ *     <env name="foo" value="bar"/>
+ *     <post name="foo" value="bar"/>
+ *     <get name="foo" value="bar"/>
+ *     <cookie name="foo" value="bar"/>
+ *     <server name="foo" value="bar"/>
+ *     <files name="foo" value="bar"/>
+ *     <request name="foo" value="bar"/>
+ *   </php>
+ *
+ *   <selenium>
+ *     <browser name="Firefox on Linux"
+ *              browser="*firefox /usr/lib/firefox/firefox-bin"
+ *              host="my.linux.box"
+ *              port="4444"
+ *              timeout="30000"/>
+ *   </selenium>
+ * </phpunit>
+ * </code>
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.2.0
+ */
+class PHPUnit_Util_Configuration
+{
+    private static $instances = array();
+
+    protected $document;
+    protected $xpath;
+    protected $filename;
+
+    /**
+     * Loads a PHPUnit configuration file.
+     *
+     * @param  string $filename
+     */
+    protected function __construct($filename)
+    {
+        $this->filename = $filename;
+        $this->document = PHPUnit_Util_XML::loadFile($filename, FALSE, TRUE);
+        $this->xpath    = new DOMXPath($this->document);
+    }
+
+    /**
+     * @since  Method available since Release 3.4.0
+     */
+    private final function __clone()
+    {
+    }
+
+    /**
+     * Returns a PHPUnit configuration object.
+     *
+     * @param  string $filename
+     * @return PHPUnit_Util_Configuration
+     * @since  Method available since Release 3.4.0
+     */
+    public static function getInstance($filename)
+    {
+        $realpath = realpath($filename);
+
+        if ($realpath === FALSE) {
+            throw new PHPUnit_Framework_Exception(
+              sprintf(
+                'Could not read "%s".',
+                $filename
+              )
+            );
+        }
+
+        if (!isset(self::$instances[$realpath])) {
+            self::$instances[$realpath] = new PHPUnit_Util_Configuration($realpath);
+        }
+
+        return self::$instances[$realpath];
+    }
+
+    /**
+     * Returns the realpath to the configuration file.
+     *
+     * @return string
+     * @since  Method available since Release 3.6.0
+     */
+    public function getFilename()
+    {
+        return $this->filename;
+    }
+
+    /**
+     * Returns the configuration for SUT filtering.
+     *
+     * @return array
+     * @since  Method available since Release 3.2.1
+     */
+    public function getFilterConfiguration()
+    {
+        $addUncoveredFilesFromWhitelist     = TRUE;
+        $processUncoveredFilesFromWhitelist = FALSE;
+
+        $tmp = $this->xpath->query('filter/whitelist');
+
+        if ($tmp->length == 1) {
+            if ($tmp->item(0)->hasAttribute('addUncoveredFilesFromWhitelist')) {
+                $addUncoveredFilesFromWhitelist = $this->getBoolean(
+                  (string)$tmp->item(0)->getAttribute(
+                    'addUncoveredFilesFromWhitelist'
+                  ),
+                  TRUE
+                );
+            }
+
+            if ($tmp->item(0)->hasAttribute('processUncoveredFilesFromWhitelist')) {
+                $processUncoveredFilesFromWhitelist = $this->getBoolean(
+                  (string)$tmp->item(0)->getAttribute(
+                    'processUncoveredFilesFromWhitelist'
+                  ),
+                  FALSE
+                );
+            }
+        }
+
+        return array(
+          'blacklist' => array(
+            'include' => array(
+              'directory' => $this->readFilterDirectories(
+                'filter/blacklist/directory'
+              ),
+              'file' => $this->readFilterFiles(
+                'filter/blacklist/file'
+              )
+            ),
+            'exclude' => array(
+              'directory' => $this->readFilterDirectories(
+                'filter/blacklist/exclude/directory'
+               ),
+              'file' => $this->readFilterFiles(
+                'filter/blacklist/exclude/file'
+              )
+            )
+          ),
+          'whitelist' => array(
+            'addUncoveredFilesFromWhitelist' => $addUncoveredFilesFromWhitelist,
+            'processUncoveredFilesFromWhitelist' => $processUncoveredFilesFromWhitelist,
+            'include' => array(
+              'directory' => $this->readFilterDirectories(
+                'filter/whitelist/directory'
+              ),
+              'file' => $this->readFilterFiles(
+                'filter/whitelist/file'
+              )
+            ),
+            'exclude' => array(
+              'directory' => $this->readFilterDirectories(
+                'filter/whitelist/exclude/directory'
+              ),
+              'file' => $this->readFilterFiles(
+                'filter/whitelist/exclude/file'
+              )
+            )
+          )
+        );
+    }
+
+    /**
+     * Returns the configuration for groups.
+     *
+     * @return array
+     * @since  Method available since Release 3.2.1
+     */
+    public function getGroupConfiguration()
+    {
+        $groups = array(
+          'include' => array(),
+          'exclude' => array()
+        );
+
+        foreach ($this->xpath->query('groups/include/group') as $group) {
+            $groups['include'][] = (string)$group->nodeValue;
+        }
+
+        foreach ($this->xpath->query('groups/exclude/group') as $group) {
+            $groups['exclude'][] = (string)$group->nodeValue;
+        }
+
+        return $groups;
+    }
+
+    /**
+     * Returns the configuration for listeners.
+     *
+     * @return array
+     * @since  Method available since Release 3.4.0
+     */
+    public function getListenerConfiguration()
+    {
+        $result = array();
+
+        foreach ($this->xpath->query('listeners/listener') as $listener) {
+            $class     = (string)$listener->getAttribute('class');
+            $file      = '';
+            $arguments = array();
+
+            if ($listener->hasAttribute('file')) {
+                $file = $this->toAbsolutePath(
+                  (string)$listener->getAttribute('file'), TRUE
+                );
+            }
+
+            foreach ($listener->childNodes as $node) {
+              if ($node instanceof DOMElement && $node->tagName == 'arguments') {
+                foreach ($node->childNodes as $argument) {
+                    if ($argument instanceof DOMElement) {
+                        if ($argument->tagName == 'file' ||
+                            $argument->tagName == 'directory') {
+                            $arguments[] = $this->toAbsolutePath((string)$argument->nodeValue);
+                        } else {
+                            $arguments[] = PHPUnit_Util_XML::xmlToVariable($argument);
+                        }
+                    }
+                }
+              }
+            }
+
+            $result[] = array(
+              'class'     => $class,
+              'file'      => $file,
+              'arguments' => $arguments
+            );
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns the logging configuration.
+     *
+     * @return array
+     */
+    public function getLoggingConfiguration()
+    {
+        $result = array();
+
+        foreach ($this->xpath->query('logging/log') as $log) {
+            $type = (string)$log->getAttribute('type');
+
+            $target = $this->toAbsolutePath(
+              (string)$log->getAttribute('target')
+            );
+
+            if ($type == 'coverage-html') {
+                if ($log->hasAttribute('title')) {
+                    $result['title'] = (string)$log->getAttribute('title');
+                }
+
+                if ($log->hasAttribute('charset')) {
+                    $result['charset'] = (string)$log->getAttribute('charset');
+                }
+
+                if ($log->hasAttribute('lowUpperBound')) {
+                    $result['lowUpperBound'] = (string)$log->getAttribute('lowUpperBound');
+                }
+
+                if ($log->hasAttribute('highLowerBound')) {
+                    $result['highLowerBound'] = (string)$log->getAttribute('highLowerBound');
+                }
+
+                if ($log->hasAttribute('highlight')) {
+                    $result['highlight'] = $this->getBoolean(
+                      (string)$log->getAttribute('highlight'),
+                      FALSE
+                    );
+                }
+            }
+
+            else if ($type == 'junit') {
+                if ($log->hasAttribute('logIncompleteSkipped')) {
+                    $result['logIncompleteSkipped'] = $this->getBoolean(
+                      (string)$log->getAttribute('logIncompleteSkipped'),
+                      FALSE
+                    );
+                }
+            }
+
+            else if ($type == 'coverage-text') {
+                if ($log->hasAttribute('showUncoveredFiles')) {
+                    $result['coverageTextShowUncoveredFiles'] = $this->getBoolean(
+                      (string)$log->getAttribute('showUncoveredFiles'),
+                      FALSE
+                    );
+                }
+            }
+
+            $result[$type] = $target;
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns the PHP configuration.
+     *
+     * @return array
+     * @since  Method available since Release 3.2.1
+     */
+    public function getPHPConfiguration()
+    {
+        $result = array(
+          'include_path' => array(),
+          'ini'          => array(),
+          'const'        => array(),
+          'var'          => array(),
+          'env'          => array(),
+          'post'         => array(),
+          'get'          => array(),
+          'cookie'       => array(),
+          'server'       => array(),
+          'files'        => array(),
+          'request'      => array()
+        );
+
+        foreach ($this->xpath->query('php/includePath') as $includePath) {
+            $path = (string)$includePath->nodeValue;
+
+            $result['include_path'][] = $this->toAbsolutePath($path);
+        }
+
+        foreach ($this->xpath->query('php/ini') as $ini) {
+            $name  = (string)$ini->getAttribute('name');
+            $value = (string)$ini->getAttribute('value');
+
+            $result['ini'][$name] = $value;
+        }
+
+        foreach ($this->xpath->query('php/const') as $const) {
+            $name  = (string)$const->getAttribute('name');
+            $value = (string)$const->getAttribute('value');
+
+            $result['const'][$name] = $this->getBoolean($value, $value);
+        }
+
+        foreach (array('var', 'env', 'post', 'get', 'cookie', 'server', 'files', 'request') as $array) {
+            foreach ($this->xpath->query('php/' . $array) as $var) {
+                $name  = (string)$var->getAttribute('name');
+                $value = (string)$var->getAttribute('value');
+
+                $result[$array][$name] = $this->getBoolean($value, $value);
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Handles the PHP configuration.
+     *
+     * @since  Method available since Release 3.2.20
+     */
+    public function handlePHPConfiguration()
+    {
+        $configuration = $this->getPHPConfiguration();
+
+        if (! empty($configuration['include_path'])) {
+            ini_set(
+              'include_path',
+              implode(PATH_SEPARATOR, $configuration['include_path']) .
+              PATH_SEPARATOR .
+              ini_get('include_path')
+            );
+        }
+
+        foreach ($configuration['ini'] as $name => $value) {
+            if (defined($value)) {
+                $value = constant($value);
+            }
+
+            ini_set($name, $value);
+        }
+
+        foreach ($configuration['const'] as $name => $value) {
+            if (!defined($name)) {
+                define($name, $value);
+            }
+        }
+
+        foreach (array('var', 'env', 'post', 'get', 'cookie', 'server', 'files', 'request') as $array) {
+            // See https://github.com/sebastianbergmann/phpunit/issues/277
+            switch ($array) {
+                case 'var':
+                    $target = &$GLOBALS;
+                    break;
+
+                case 'env':
+                    $target = &$_ENV;
+                    break;
+
+                case 'server':
+                    $target = &$_SERVER;
+                    break;
+
+                default:
+                    $target = &$GLOBALS['_' . strtoupper($array)];
+                    break;
+            }
+
+            foreach ($configuration[$array] as $name => $value) {
+                $target[$name] = $value;
+            }
+        }
+
+        foreach ($configuration['env'] as $name => $value) {
+            putenv("$name=$value");
+        }
+    }
+
+    /**
+     * Returns the PHPUnit configuration.
+     *
+     * @return array
+     * @since  Method available since Release 3.2.14
+     */
+    public function getPHPUnitConfiguration()
+    {
+        $result = array();
+        $root   = $this->document->documentElement;
+
+        if ($root->hasAttribute('cacheTokens')) {
+            $result['cacheTokens'] = $this->getBoolean(
+              (string)$root->getAttribute('cacheTokens'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('colors')) {
+            $result['colors'] = $this->getBoolean(
+              (string)$root->getAttribute('colors'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('backupGlobals')) {
+            $result['backupGlobals'] = $this->getBoolean(
+              (string)$root->getAttribute('backupGlobals'), TRUE
+            );
+        }
+
+        if ($root->hasAttribute('backupStaticAttributes')) {
+            $result['backupStaticAttributes'] = $this->getBoolean(
+              (string)$root->getAttribute('backupStaticAttributes'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('bootstrap')) {
+            $result['bootstrap'] = $this->toAbsolutePath(
+              (string)$root->getAttribute('bootstrap')
+            );
+        }
+
+        if ($root->hasAttribute('convertErrorsToExceptions')) {
+            $result['convertErrorsToExceptions'] = $this->getBoolean(
+              (string)$root->getAttribute('convertErrorsToExceptions'), TRUE
+            );
+        }
+
+        if ($root->hasAttribute('convertNoticesToExceptions')) {
+            $result['convertNoticesToExceptions'] = $this->getBoolean(
+              (string)$root->getAttribute('convertNoticesToExceptions'), TRUE
+            );
+        }
+
+        if ($root->hasAttribute('convertWarningsToExceptions')) {
+            $result['convertWarningsToExceptions'] = $this->getBoolean(
+              (string)$root->getAttribute('convertWarningsToExceptions'), TRUE
+            );
+        }
+
+        if ($root->hasAttribute('forceCoversAnnotation')) {
+            $result['forceCoversAnnotation'] = $this->getBoolean(
+              (string)$root->getAttribute('forceCoversAnnotation'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('mapTestClassNameToCoveredClassName')) {
+            $result['mapTestClassNameToCoveredClassName'] = $this->getBoolean(
+              (string)$root->getAttribute('mapTestClassNameToCoveredClassName'),
+              FALSE
+            );
+        }
+
+        if ($root->hasAttribute('processIsolation')) {
+            $result['processIsolation'] = $this->getBoolean(
+              (string)$root->getAttribute('processIsolation'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('stopOnError')) {
+            $result['stopOnError'] = $this->getBoolean(
+              (string)$root->getAttribute('stopOnError'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('stopOnFailure')) {
+            $result['stopOnFailure'] = $this->getBoolean(
+              (string)$root->getAttribute('stopOnFailure'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('stopOnIncomplete')) {
+            $result['stopOnIncomplete'] = $this->getBoolean(
+              (string)$root->getAttribute('stopOnIncomplete'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('stopOnSkipped')) {
+            $result['stopOnSkipped'] = $this->getBoolean(
+              (string)$root->getAttribute('stopOnSkipped'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('testSuiteLoaderClass')) {
+            $result['testSuiteLoaderClass'] = (string)$root->getAttribute(
+              'testSuiteLoaderClass'
+            );
+        }
+
+        if ($root->hasAttribute('testSuiteLoaderFile')) {
+            $result['testSuiteLoaderFile'] = (string)$root->getAttribute(
+              'testSuiteLoaderFile'
+            );
+        }
+
+        if ($root->hasAttribute('printerClass')) {
+            $result['printerClass'] = (string)$root->getAttribute(
+              'printerClass'
+            );
+        }
+
+        if ($root->hasAttribute('printerFile')) {
+            $result['printerFile'] = (string)$root->getAttribute(
+              'printerFile'
+            );
+        }
+
+        if ($root->hasAttribute('timeoutForSmallTests')) {
+            $result['timeoutForSmallTests'] = $this->getInteger(
+              (string)$root->getAttribute('timeoutForSmallTests'), 1
+            );
+        }
+
+        if ($root->hasAttribute('timeoutForMediumTests')) {
+            $result['timeoutForMediumTests'] = $this->getInteger(
+              (string)$root->getAttribute('timeoutForMediumTests'), 10
+            );
+        }
+
+        if ($root->hasAttribute('timeoutForLargeTests')) {
+            $result['timeoutForLargeTests'] = $this->getInteger(
+              (string)$root->getAttribute('timeoutForLargeTests'), 60
+            );
+        }
+
+        if ($root->hasAttribute('strict')) {
+            $result['strict'] = $this->getBoolean(
+              (string)$root->getAttribute('strict'), FALSE
+            );
+        }
+
+        if ($root->hasAttribute('verbose')) {
+            $result['verbose'] = $this->getBoolean(
+              (string)$root->getAttribute('verbose'), FALSE
+            );
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns the SeleniumTestCase browser configuration.
+     *
+     * @return array
+     * @since  Method available since Release 3.2.9
+     */
+    public function getSeleniumBrowserConfiguration()
+    {
+        $result = array();
+
+        foreach ($this->xpath->query('selenium/browser') as $config) {
+            $name    = (string)$config->getAttribute('name');
+            $browser = (string)$config->getAttribute('browser');
+
+            if ($config->hasAttribute('host')) {
+                $host = (string)$config->getAttribute('host');
+            } else {
+                $host = 'localhost';
+            }
+
+            if ($config->hasAttribute('port')) {
+                $port = $this->getInteger(
+                  (string)$config->getAttribute('port'), 4444
+                );
+            } else {
+                $port = 4444;
+            }
+
+            if ($config->hasAttribute('timeout')) {
+                $timeout = $this->getInteger(
+                  (string)$config->getAttribute('timeout'), 30000
+                );
+            } else {
+                $timeout = 30000;
+            }
+
+            $result[] = array(
+              'name'    => $name,
+              'browser' => $browser,
+              'host'    => $host,
+              'port'    => $port,
+              'timeout' => $timeout
+            );
+        }
+
+        return $result;
+    }
+
+    /**
+     * Returns the test suite configuration.
+     *
+     * @return PHPUnit_Framework_TestSuite
+     * @since  Method available since Release 3.2.1
+     */
+    public function getTestSuiteConfiguration($testSuiteFilter=null)
+    {
+        $testSuiteNodes = $this->xpath->query('testsuites/testsuite');
+
+        if ($testSuiteNodes->length == 0) {
+            $testSuiteNodes = $this->xpath->query('testsuite');
+        }
+
+        if ($testSuiteNodes->length == 1) {
+            return $this->getTestSuite($testSuiteNodes->item(0), $testSuiteFilter);
+        }
+
+        if ($testSuiteNodes->length > 1) {
+            $suite = new PHPUnit_Framework_TestSuite;
+
+            foreach ($testSuiteNodes as $testSuiteNode) {
+                $suite->addTestSuite(
+                  $this->getTestSuite($testSuiteNode, $testSuiteFilter)
+                );
+            }
+
+            return $suite;
+        }
+    }
+
+    /**
+     * @param  DOMElement $testSuiteNode
+     * @return PHPUnit_Framework_TestSuite
+     * @since  Method available since Release 3.4.0
+     */
+    protected function getTestSuite(DOMElement $testSuiteNode, $testSuiteFilter=null)
+    {
+        if ($testSuiteNode->hasAttribute('name')) {
+            $suite = new PHPUnit_Framework_TestSuite(
+              (string)$testSuiteNode->getAttribute('name')
+            );
+        } else {
+            $suite = new PHPUnit_Framework_TestSuite;
+        }
+
+        $exclude = array();
+
+        foreach ($testSuiteNode->getElementsByTagName('exclude') as $excludeNode) {
+            $exclude[] = (string)$excludeNode->nodeValue;
+        }
+
+        $fileIteratorFacade = new File_Iterator_Facade;
+
+        foreach ($testSuiteNode->getElementsByTagName('directory') as $directoryNode) {
+            if ($testSuiteFilter && $directoryNode->parentNode->getAttribute('name') != $testSuiteFilter) {
+                continue;
+            }
+
+            $directory = (string)$directoryNode->nodeValue;
+
+            if (empty($directory)) {
+                continue;
+            }
+
+            if ($directoryNode->hasAttribute('phpVersion')) {
+                $phpVersion = (string)$directoryNode->getAttribute('phpVersion');
+            } else {
+                $phpVersion = PHP_VERSION;
+            }
+
+            if ($directoryNode->hasAttribute('phpVersionOperator')) {
+                $phpVersionOperator = (string)$directoryNode->getAttribute('phpVersionOperator');
+            } else {
+                $phpVersionOperator = '>=';
+            }
+
+            if (!version_compare(PHP_VERSION, $phpVersion, $phpVersionOperator)) {
+                continue;
+            }
+
+            if ($directoryNode->hasAttribute('prefix')) {
+                $prefix = (string)$directoryNode->getAttribute('prefix');
+            } else {
+                $prefix = '';
+            }
+
+            if ($directoryNode->hasAttribute('suffix')) {
+                $suffix = (string)$directoryNode->getAttribute('suffix');
+            } else {
+                $suffix = 'Test.php';
+            }
+
+            $files = $fileIteratorFacade->getFilesAsArray(
+              $this->toAbsolutePath($directory),
+              $suffix,
+              $prefix,
+              $exclude
+            );
+            $suite->addTestFiles($files);
+        }
+
+        foreach ($testSuiteNode->getElementsByTagName('file') as $fileNode) {
+            if ($testSuiteFilter && $fileNode->parentNode->getAttribute('name') != $testSuiteFilter) {
+                continue;
+            }
+
+            $file = (string)$fileNode->nodeValue;
+
+            if (empty($file)) {
+                continue;
+            }
+
+            // Get the absolute path to the file
+            $file = $fileIteratorFacade->getFilesAsArray($file);
+
+            if (!isset($file[0])) {
+                continue;
+            }
+
+            $file = $file[0];
+
+            if ($fileNode->hasAttribute('phpVersion')) {
+                $phpVersion = (string)$fileNode->getAttribute('phpVersion');
+            } else {
+                $phpVersion = PHP_VERSION;
+            }
+
+            if ($fileNode->hasAttribute('phpVersionOperator')) {
+                $phpVersionOperator = (string)$fileNode->getAttribute('phpVersionOperator');
+            } else {
+                $phpVersionOperator = '>=';
+            }
+
+            if (!version_compare(PHP_VERSION, $phpVersion, $phpVersionOperator)) {
+                continue;
+            }
+
+            $suite->addTestFile($file);
+        }
+
+        return $suite;
+    }
+
+    /**
+     * @param  string  $value
+     * @param  boolean $default
+     * @return boolean
+     * @since  Method available since Release 3.2.3
+     */
+    protected function getBoolean($value, $default)
+    {
+        if (strtolower($value) == 'false') {
+            return FALSE;
+        }
+
+        else if (strtolower($value) == 'true') {
+            return TRUE;
+        }
+
+        return $default;
+    }
+
+    /**
+     * @param  string  $value
+     * @param  boolean $default
+     * @return boolean
+     * @since  Method available since Release 3.6.0
+     */
+    protected function getInteger($value, $default)
+    {
+        if (is_numeric($value)) {
+            return (int)$value;
+        }
+
+        return $default;
+    }
+
+    /**
+     * @param  string $query
+     * @return array
+     * @since  Method available since Release 3.2.3
+     */
+    protected function readFilterDirectories($query)
+    {
+        $directories = array();
+
+        foreach ($this->xpath->query($query) as $directory) {
+            if ($directory->hasAttribute('prefix')) {
+                $prefix = (string)$directory->getAttribute('prefix');
+            } else {
+                $prefix = '';
+            }
+
+            if ($directory->hasAttribute('suffix')) {
+                $suffix = (string)$directory->getAttribute('suffix');
+            } else {
+                $suffix = '.php';
+            }
+
+            if ($directory->hasAttribute('group')) {
+                $group = (string)$directory->getAttribute('group');
+            } else {
+                $group = 'DEFAULT';
+            }
+
+            $directories[] = array(
+              'path'   => $this->toAbsolutePath((string)$directory->nodeValue),
+              'prefix' => $prefix,
+              'suffix' => $suffix,
+              'group'  => $group
+            );
+        }
+
+        return $directories;
+    }
+
+    /**
+     * @param  string $query
+     * @return array
+     * @since  Method available since Release 3.2.3
+     */
+    protected function readFilterFiles($query)
+    {
+        $files = array();
+
+        foreach ($this->xpath->query($query) as $file) {
+            $files[] = $this->toAbsolutePath((string)$file->nodeValue);
+        }
+
+        return $files;
+    }
+
+    /**
+     * @param  string  $path
+     * @param  boolean $useIncludePath
+     * @return string
+     * @since  Method available since Release 3.5.0
+     */
+    protected function toAbsolutePath($path, $useIncludePath = FALSE)
+    {
+        // Check whether the path is already absolute.
+        if ($path[0] === '/' || $path[0] === '\\' ||
+            (strlen($path) > 3 && ctype_alpha($path[0]) &&
+             $path[1] === ':' && ($path[2] === '\\' || $path[2] === '/'))) {
+            return $path;
+        }
+
+        // Check whether a stream is used.
+        if (strpos($path, '://') !== FALSE) {
+            return $path;
+        }
+
+        $file = dirname($this->filename) . DIRECTORY_SEPARATOR . $path;
+
+        if ($useIncludePath && !file_exists($file)) {
+            $includePathFile = stream_resolve_include_path($path);
+
+            if ($includePathFile) {
+                $file = $includePathFile;
+            }
+        }
+
+        return $file;
+    }
+}

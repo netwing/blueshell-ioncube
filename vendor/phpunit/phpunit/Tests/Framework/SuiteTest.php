@@ -1,90 +1,185 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.0.0
+ */
+
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'InheritedTestCase.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'NoTestCaseClass.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'NoTestCases.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'NotPublicTestCase.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'NotVoidTestCase.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'OneTestCase.php';
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'OverrideTestCase.php';
+
+/**
+ *
+ *
+ * @package    PHPUnit
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ */
+class Framework_SuiteTest extends PHPUnit_Framework_TestCase {
+    protected $result;
+
+    protected function setUp()
+    {
+        $this->result = new PHPUnit_Framework_TestResult;
+    }
+
+    public static function suite()
+    {
+        $suite = new PHPUnit_Framework_TestSuite;
+
+        $suite->addTest(new Framework_SuiteTest('testAddTestSuite'));
+        $suite->addTest(new Framework_SuiteTest('testInheritedTests'));
+        $suite->addTest(new Framework_SuiteTest('testNoTestCases'));
+        $suite->addTest(new Framework_SuiteTest('testNoTestCaseClass'));
+        $suite->addTest(new Framework_SuiteTest('testNotExistingTestCase'));
+        $suite->addTest(new Framework_SuiteTest('testNotPublicTestCase'));
+        $suite->addTest(new Framework_SuiteTest('testNotVoidTestCase'));
+        $suite->addTest(new Framework_SuiteTest('testOneTestCase'));
+        $suite->addTest(new Framework_SuiteTest('testShadowedTests'));
+
+        return $suite;
+    }
+
+    public function testAddTestSuite()
+    {
+        $suite = new PHPUnit_Framework_TestSuite(
+          'OneTestCase'
+        );
+
+        $suite->run($this->result);
+
+        $this->assertEquals(1, count($this->result));
+    }
+
+    public function testInheritedTests()
+    {
+        $suite = new PHPUnit_Framework_TestSuite(
+          'InheritedTestCase'
+        );
+
+        $suite->run($this->result);
+
+        $this->assertTrue($this->result->wasSuccessful());
+        $this->assertEquals(2, count($this->result));
+    }
+
+    public function testNoTestCases()
+    {
+        $suite = new PHPUnit_Framework_TestSuite(
+          'NoTestCases'
+        );
+
+        $suite->run($this->result);
+
+        $this->assertTrue(!$this->result->wasSuccessful());
+        $this->assertEquals(1, $this->result->failureCount());
+        $this->assertEquals(1, count($this->result));
+    }
+
+    /**
+     * @expectedException PHPUnit_Framework_Exception
+     */
+    public function testNoTestCaseClass()
+    {
+        $suite = new PHPUnit_Framework_TestSuite('NoTestCaseClass');
+    }
+
+    public function testNotExistingTestCase()
+    {
+        $suite = new Framework_SuiteTest('notExistingMethod');
+
+        $suite->run($this->result);
+
+        $this->assertEquals(0, $this->result->errorCount());
+        $this->assertEquals(1, $this->result->failureCount());
+        $this->assertEquals(1, count($this->result));
+    }
+
+    public function testNotPublicTestCase()
+    {
+        $suite = new PHPUnit_Framework_TestSuite(
+          'NotPublicTestCase'
+        );
+
+        $this->assertEquals(2, count($suite));
+    }
+
+    public function testNotVoidTestCase()
+    {
+        $suite = new PHPUnit_Framework_TestSuite(
+          'NotVoidTestCase'
+        );
+
+        $this->assertEquals(1, count($suite));
+    }
+
+    public function testOneTestCase()
+    {
+        $suite = new PHPUnit_Framework_TestSuite(
+          'OneTestCase'
+        );
+
+        $suite->run($this->result);
+
+        $this->assertEquals(0, $this->result->errorCount());
+        $this->assertEquals(0, $this->result->failureCount());
+        $this->assertEquals(1, count($this->result));
+        $this->assertTrue($this->result->wasSuccessful());
+    }
+
+    public function testShadowedTests()
+    {
+        $suite = new PHPUnit_Framework_TestSuite(
+          'OverrideTestCase'
+        );
+
+        $suite->run($this->result);
+
+        $this->assertEquals(1, count($this->result));
+    }
+}

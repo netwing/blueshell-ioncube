@@ -1,29 +1,36 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPvj/7q2KnEDtTScAOwOnjiWACv8v01yp5ugijYVSUkS7nA9+GOPeAqvPUu5KpI0GRgdWKAf/
-9Vd+nQbNWGtkx4Bfk6KJg5av7o/dVN5dPCFvgwA1ia3aHENjTjWKO9gynjYtjiBJHy3LI/JHOVMZ
-mZRYbTYXC7uq1p12/pVWTmjCySIkvRwP1aGpMx9b8gzKl4m31rJhjVm//OrAD80Ha/BgKlkn97EP
-UKoqQFZu6VaXn8y1Pvochr4euJltSAgiccy4GDnfT5vcHYwcsTI/bcIKub0s1hz+BaS9BWFM9TU/
-FYvO2EOJGTSzdmYHTaEJHoG4lnXGt66Uflp8cH4lnPPTMH32ge+Ust8St0otJ9isemZKfKjemF1o
-FdU12YKz3W0Hj3kwSv9GTBDdB/qoYXoVTvZp4CNt3wkkMIwpL6w/6CC1UB4RP5HjMejkLIfJU7Lh
-iH33S3KKcFggqxExQzOX+mBuoaRDGanAk1Wa5yQYeNpMfSR1Qe8djc0ZUpEveDVVb0c8ksAv79Xi
-SdSux1K+EAsxurzY7qLkEzPlcuN+3w9hjGZhmxrLEFVgjeQsPk74rJN+VAMHABFw+EIPTibjLdgz
-KbZDXtn84jTj+dpAgIfdHop51aKTHrFuCG5X9muA/sPtvdFOuJdvuU6pc/gz6NIoeOIeoEE44JOW
-6f0JBdfVfWZ+0ClMO1kKssnjmoRMgS2GT1qqIS4D8668ocRCbBM2NF1AOIbK+aDH22XxkSKsxyia
-/YSok3JXNbJqhO4J19tvsF7dh+Lz5RSHGe5Tcxiug0xlo+AkSqTX2aQYv+halfQJLhoYLtnY3JP4
-tikGp82uldv5qnG1QYohjbFCRFiv1qr5+U+J6C1ImPW2gDl1dwdne/PCkijwLAYSU684nZ24/X1G
-amnrdZ0QigDYeOnKGtjeAwdL48LhdEp84UZt1nFAdP6nzs7TinzipV/ZjaDF2c68eKY8YC1nYrhS
-L3Pv28FsUPduB204GM4MSm6aJcEUr8pwPMr3Va9KuEIUBUzzK9OKefao1XBeZ0CstmK3NNUTPJUK
-b1386Uy76T2DvB6i1PTebJAAyEw2AFzDCiDfAkCFQ/Z08AumezJeFwKA88nE79lSdmSvQBHKP5Xi
-ALMoqRyZX2JTG3XhtH69eaHC/9yfMIrXHrhR+tMNKzLlAB219Bw4U67DRh5e8OMU/KnmpSzGuP4c
-wcFYq+KAs0+emgF5yFYzPqHtleHwbQsfcdycWF+4skAa8ZtKa5AJNpiYq6FRdrBUQj6c4usAk23g
-E6lXcqkDK/jBfFWFltUYux472zwfrrJvUCZYP23AGIbZ/tcLRxMZ7vZIswnsJC7ACL0oaHdxq7Ti
-u8y38FK7Un5ERzVwiPaS6VJvbkPlpi5Yz3RwDAN1l+r5P9/Lpc0nJhdozp8XI6MqbM5tSpDs0bIT
-Fq6EQZEoC29Ta5JZoVTjCA1vV7nO44k2jkXqAJAVusxLjqOkjvEFx9aCxrA1ilHfTw9PncjKOB87
-uNawbMX7cETF1iWEiNLcWITLcwwRXaKP06jSzC80j4MnGmgEU3MUxKEjsXc7+YAXQnovA5xfyImX
-1dZxh18JQRdoy2CWd5gGHXyxv7mzMi38Lp7CXWO28EqNxYA4g2f2dONGOzHmh69Wfa45zt/wnf1F
-GesyU2MV1z3EgJPs3R5VVXiiZaUDumiYc6Ehec4qrFMZK+k2kNKX6mFngVL2DF1ctkFGYyA3EpWA
-ExbV0gff5Y1kQm9iwdbRJAjJRnm7CvCZEofqYU2JfwVwakQDN5NNkXrpTTmVJGXVs6l7mpjUAsHR
-l0rOpw1+9t6MfMnXRXpp1A2vQzXnx3WD6GKqRUt8VvfQxtL6BeRXMqjhtWZsjYqAaKdrXRe+3INB
-tJTz2WeUjFf+/zUdA5V6dm==
+<?php
+
+namespace Guzzle\Plugin\Backoff;
+
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Exception\HttpException;
+
+/**
+ * Strategy that will not retry more than a certain number of times.
+ */
+class TruncatedBackoffStrategy extends AbstractBackoffStrategy
+{
+    /** @var int Maximum number of retries per request */
+    protected $max;
+
+    /**
+     * @param int                      $maxRetries Maximum number of retries per request
+     * @param BackoffStrategyInterface $next The optional next strategy
+     */
+    public function __construct($maxRetries, BackoffStrategyInterface $next = null)
+    {
+        $this->max = $maxRetries;
+        $this->next = $next;
+    }
+
+    public function makesDecision()
+    {
+        return true;
+    }
+
+    protected function getDelay($retries, RequestInterface $request, Response $response = null, HttpException $e = null)
+    {
+        return $retries < $this->max ? null : false;
+    }
+}

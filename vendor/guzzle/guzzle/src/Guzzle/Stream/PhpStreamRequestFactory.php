@@ -1,151 +1,270 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPnduNpsBVAGoHY7A7ll5OPvpRWXaR7XjYyLPyiviKnIXJzg0eQo7/CH8ZbvrVuyQc5hUm5nC
-W4uK2aib9kRifPWRjHM6ek3qMwLvCn/2TchKmx0bPlYZYufTzmmUZYTnIUgbUnDqgg46nkLK0cI9
-hJXiD+B82z6G5KMw9kXvCXyqcKOu0upXYgs1vYzagiNHVklnkmUEFQiOSG4zdTW7a8sOUr6o4mMX
-GedoZZWxCxf978yDjNgC1OMlKIZXE/TmggoQRmH0t6bqzrxZsV1p+FNcG+cGs07Els4s/+f1a2Jn
-D5hX4RcqrK1B5kjDUwGEwiaSWgG4Hgy6JbmzZXsA27H+lxciB/sE8sXPFID84XmNWS8fo3PwRYcY
-BcQvrSShYnrqPKDvv+z16qAEQiGt9JhrOklihx3qSZ781wAR/CdpXmj86Ga3asjE+SVGzLlbiN1m
-A/xT1ifd4mvm8242CxmYQTbF6+1FJ2570jWXKpTLLU8qLoUphF6ARvVfmC4YhjGEqkjE0za3/C62
-k1VTigjyUnFcKsxyd02Ppvk0f8dYVNIG8N6bsCFO42nwd9HbGQDOyezaTfCfs4tbQxgMziWIQ2pp
-qDaKlA7p8XYLHTvIByRUo1qLg0lTs/uFU//G9hHS9hT1XDggA55Q1BBoTjWUZ3KuNu9fxf5hPlRL
-/WCNishGxs32TNEM8//Rswhu7K3rn2+oobFJHprhmeWNWGbhWcoHOffTzR9w9A17PKH46kzcjQzy
-86ANG7zhSsvEmLDVOV3HoRZpwOXeT/dhm8AMr5MN2mWuhfPC4wsxu8xjLTyg0XeOR986TiGMCkxf
-iD3WC9SGB4+kNSUVQ+URHQ/uwHRDlmJ2ZU9qH4OvpyXck067p53IB7d75vS8Z/qpcZzJflGDvxOC
-QlQG0Ak0tbzncD5Pmljy9IINPF0BNkXPkVb7Npv3L2R3Nav88wM/yApUm7JLIFAh2L5sD1iR5J5+
-kG1mdZxI3QHkPQexDckmkHNvq9kz4+bXNZsZ9fl09odPbflKan8Ke0yQu1OgzMan1EJFZC1KNxg+
-AkjXZtd799bQO9H/WMC9ulMoreJGfbFQqHpPlnVZ+FMdwRXI1ey6Khfsp/gdmBjfCxiGB1/Lz12S
-LBJBS4tvGUxV90jVk0MlSAdsAEPwbd2RkPhrksRRdhjQrQMM86zYyxdxxy3IItDpGuJzzJAfcdmg
-d8ZaBgwlSqChI/kMvq57V9f4Dh8r3pH9lguTmsuvzu492OCqpuLqhDPU6z0H1+VLtq/++BfQZ8pA
-6/dTV30iAg6Mcz5oaCtFvgINu1EIp3H8psLcTYnb7sE1vuD1BBV5QxXmN+wJUPt46OurRcmMhimG
-8qwFHZAhyLuUBJxdcnqiOYwnoYjmzF9olmELJNFEQJ7qQmgw+rdXchH7s0nM64H66U5FWXn8wmLH
-IEA9pxDEjhub1ANxS9QXLWoCy0IPvCPPDftwdxOQ6MZNFWaXySgD2fD8OPeYriwFGwetMmtx8N6d
-u39jPUTXjCsQ9PN9DelNjribEKQozFvcU/RDpHhM5UsSnU7EJu3YZwqmiILLHo0sgl0ipZW1Q9hQ
-7LKgyFWeflFPv6OOmBIKQ/ITX1mwZ2qoVbZrxNreqJyH6PO2rvWxO1sBWJwrpXtIGaoLM/AZrGWZ
-ILxsBy2xKelZQftLgLJQjClZMZ5kBN9tlOh6N7qC3LlVfvy9Yt4QwZJEd3S7MUoCBMCBYx3ZYEcY
-3ywqzDU0Eh0AyV1yk9Gl7cvm+aFAgbEmc5AT+0nEq+J9Z6PYmdBNGu8vq1FIPDr39bvb46B2cmEC
-zFPBW4SMEbWJUwlp6CfKJS+SVDYqLdIupukPdXp1ed1dlQqp0FK80n/E2fEgRRe6TBWVemupuKpG
-Bwj5GtDzZ3XXvF+9rDmAa9sfPlR16aSQT7+F1nCfGHdisfFmnpNhLIy948RpmaGrme8IYZvH4SyI
-27RIuj6B2miX7avgwigJx1eK3vz5oz9ILgz4oB7fAPmX3tmBijbJ99LvMKiXYT85T420O17OLx5o
-pusKOfCnRXK1BZIt0HFWXR0gj9ElPt+7qigduSw9MXLcYKFdx5Lb/RjntBK739OYmrqvXOziql9r
-usQLZqXkclPUJOool+qsSU4v/b61pg+RRPUwsAzwaOyEkynjW1QwPLZ+ZaBNWDVfyEkwU2dQmnZd
-wUcxHCm/0xrgAAkINF3wuykWSOYAAesrqMxm8+JwcGeVaAwLXwzvMfwZdi4nq7HiBm1TvUOm6QAn
-uOhDiE+xd/OEzZ7ZDd1oJxFUPWP8sC1aAuOHdoTY6wFrngJXEKQiHW0xZgzVw7I2+NctVx0u1VDK
-O80TchvD7UcZzUZvNVUV7H0fyuswc7OXK7aL5iTOWWe7syAXBUz5fJKWho49qchVpvIJJwoCZMdi
-4WcG4XtL7UzlZaVdeTx1Env002Uk2n7XtxxP6T5FiJ9+GYldGFFiRplzw0OT2MvM2wElD1mKLoFo
-hixYLcHN5nx97XEifmCgqAeFFe6tklciePPKC4Gfx0pkuwckeFMCo1/eXZ798UNd+vdy07kVfdBR
-P4E4M57c1v0YEfWMhQuAvsbSUVlx4zH7RKg2FzCcsdWsEC2RjEhorSA1CuDOXiIFNMcW2G3DBrUq
-3qKmOB1+qMbhKn1TUWl9x28Swj+lntcNvbLDh4gzOLJKM6JS7hH7oB5Vs0bk3w82SLzOjDvCEP3Z
-0r95k6Oi73RP+x5rmO3RpRrzezj8P10fXQLNkrzyfOYk/L/Dn3/SVM4xQWs/S7Gkf+pGRdJ/3Pbm
-lZlTXa5kgSQvtudGbhhKNYOsJrudsUjV/yecRKRv59485v+AEPvzds5ST0x2gcHMlTHzdJHs3hne
-9XCkFusgauVxXNVAEMNXb3lz5Z7u21FUk6BKN5OiBcVz3E3OHvaxTGlyYh3GVanlqrh13yphiwfM
-sdJvKt9GRf+j2acRMkL+HDCPnl915Ui7i2/N3rKiLwlzwqkY5JQoz+xdADGaAA/ND+HfMyHcTZIT
-O9JVK1QsH82eyj7qA6D+Vs3155GajWShaQBimnZf3YyD+03n5LDc+CaOCiBC/Y4WX1ek9KIwGZ1D
-b8QzvcoSrOXFMgJxnYlm6wJOBovvVgcc+FBJorPUQfxFhocg/QbPDgHosLqSDBSZqQaJHKBbhJE6
-XYxjU3UPOBCpczJrNlhBNZGuvOAtHrALKUr+NQQUS2U2xaN1KdW3hv/+QCTzE9VTQhSdZ+BcZRQB
-a3rjO/VJJIt/9Cz55Qva9oHlUH7oFNvDrRw4LHs6n8JN/kBx2Eh/qISlXpXiH47USXRBArOYzv+g
-O5nXxWcYE0RrNP+ToMHeCP/cOF2br+g3bYhriLozTh7IAvQUpzHwAxUdTGV7627s5WyTWIidlqHn
-071S9mosWfYpoupLqVCL1Yd6rtb07mEYbmouasNyiu9aJPXEP1ZZp015dEU5Vrfh6tOfoJKYgTqB
-9dtdWZa82xRNf06oSeK6n+1GBxMjACUIBWaiJy/WPgtqCmGQYTc0IhbG8B/LQnOZxJdwNACdHOs4
-UJsDZyPBedAveJyUh64uyRx4zrFEdrBLKTKALkEJ9R10GLqPh9EJlhydm1OQuvPd64oHkSr98LSY
-/kCllBdLwMWRvLHJ40Dg7g3r0w/wmJu/7cHZL0X/9j6NpNQIZtjZAPaP/1ldgXjnhYy8bA/qbQSG
-Ik4EgVE/zxn1S3f7ra/XKwy0Qj5Aa4h52hqaKcwq3l+d2ducvT9qSJK8/1cmRrEHaLrII27JCjrS
-YqzOHbxXkyLGnzFYL2iZlgjJI+1U1CtRdvjQekjz+OWnZPwzxdRVH1zo56BSELMQWOClWSG9XP4i
-stYBFiDjQSJ/ZUO96AI5dfSaTMhsbeFrNa4LiNcyLgYVMZsDp6ySXG4343b8fy12b3rffvEvPtR5
-qw/SyQIeT7UsI1w94RlTj5UY69OpBc+Ol1bbqibsfqNpy2Ek/ZjVrQD7uvumDC83G9eqDCR3sqpW
-5pDHAToTbNLvTGmYI1gxz1jzTuBOfMzkBbSu+kz8NNIbkuTU+B9FLkkLYgf0caxOx4bSybj97w4k
-Qq0cOCynOGiZY0zOmXF32iQuPKP88Svff9MxfNjm8V/JfFU9dGk5bZ5UdklNuVEMrMSS/KC/7qOk
-c3AI6HerzzD0lz2EmIwp3klTeqeJs9bYoPk+i/MRrYq9GTU8b7IMFljg6eQ76fRAXBsgFl8uSis6
-gjcyXnocQS1vnJSEdb8ccx/mE2wTfpZERtRsCXlcGOd4pdmWBOgkGosFocfUnn9NnVZ7mP0tJGkF
-4bfytaBWujg1dj+ZMY9RgTs3yoLJvmmWOjaJQE2RQxGJ+QDbrAZrLzr7aaeORyQVhHFMKXfJTgSW
-Qr2WgdGwvPmZpFdoTbqK5hAF/uS/n+koa3YQJbS7zvbCOl+HJ43cguPWBm4PnBMGFv3k/MqKoUFn
-T/1eRzacEKrkjg4ki16bKj8NfiDRLnARH/w0t9BoAVYKIUcKRo4BoMwUx/lt36SoKkziQ7OYZ1yF
-9wSbRIiLphkgRAZRoktEdsW6UY0PpEwru2rytHeb8JfTn5bIY0YuMPv7SqKkYbp46aUy/luX81AC
-wudolldOVdictH6HgGSiS256aO+Ew+Wifo5+2PammVA5X5H6ELmiQAcoBYmI3Jq1bqUbaY+BS2Fi
-IuXE297v+ZTFoVVxAlnRd3Ac/QfNGp1sw5cm1FrMwGp70adb3pXYCWs0kYSOx/daTFPok/8amCgv
-1na2XdFhBLwwsORIUV/A4Xf1wXfm1EtIaeGsP6cvY/p9KM2KmtUstYp1Iu0JrtksLVUpWPyt3Bb/
-hrB6J0uTMgGp2rOtzsEvK8XK7RoKxv2GKr69c2oDgSI9elIVAruJpEkmO7qbPUWDPP1MZcweDCRd
-IFz1sLe2umsdJXn+jfNAcgmrLTYU5rimqvhwEJ0bNmjesTZY1NncZ/gF9VnU+Xn7En06T5Y9EpRw
-I8b13pSI0G4V5EQXQFwXpnat8X9MgTFyO84waQrh6hkjWZAnP3VjHNhbYUceg2tSyKBWrCNW0SZg
-fvZMnan+DTSugWWg27fncfx0iGfx3cqJ5W1dNbzSjKjP/ZR4XxWVlqv5//FwNcNsWm7ewPYga3Dy
-yQnzq+gkEnPvdCH7dKINkPw0cdtonmGoC4Iw7sGPUMmf3aaXRMiBENZti7a+TgK0+yzRpDjiGywJ
-g3ugpHzO16tIbMO9sg7G97/PjQAgV9w+kch9uNiT+aqsO8F3W6HyVhErl0hpmYUPubrwV3u3sCzy
-gXwadDW5lKQyov5NS+2Zq1xi7C3y3XRi743W8XqSvw+X2JOcJlahi1cebWnrPK1ao8u67kLgSdmr
-tK8POPdx7XNb4LEVrPJhgaN/Bz8ZBuLD5NfweinBLpVzw7PdCmFeuxf2jn4+LNUYZpw5N/G9dgyz
-iUSaiYdvXI4QVjtVqq544fkPKfKNkzM6Rm1K2BJEFvFZfEHleE53fMAXIGMuBXPYtUDNJlR5mJBd
-30S59i4DOMhPG5QMyaoSPL5G8sHFEQs0RBs1CK2wKuLKKyYr7gDjgeF0NB8QoIEYI3TMbnDvdAAL
-yPuOsyb5RQnsm8zsIR8kgLhrPmxfXnC0X+dY1/7IgG1SYQmG3G8kQe6BeS930a/eYVRbN7D3hkoU
-a/FrxaRUyYtULtsZTL7gbcnuw4/FlXpIYnWrln0do0NxIRtcU/Etj9Oelb9vJJMrRBEdALmgC73z
-6uVAc432j5+5Azf/rx7StuMjmPfX4C9v5nrQEEnOvb5YoQnL6tDLg9CZ63IZ9J3uDUH8rHCKYU1X
-+kQwKbcbCpO0HAWrawOqVEIDTMKMxJI9L1Bsl0tyMD1UpS3S5Wg5FI64/x+5kjc1xji9YOmzA64I
-BKAD5jadmIFPrSO4gP7z+x9hFMteOx/AzXLqMIPvx7jrYMZw0ZAfVexiuQ0TaxMtkMS3RkxB/iYA
-Biqh90rspSOD5cRV4FDAoMIiW4vZ4KMQ0pACNZiTnXd0wYmCoyeMCSu3QZBPmAqK46MRo3b40BoR
-HLWjWHaiIGuo9MZcj74HUXBJVInRlY2tr1OhcaR6cSKBBEh7bEK7wE087h3QCzfnKUfvE+MXRTc9
-Hdf5SrLTb8pnqj85dorm8B+FZpGmvfDW/v/toNSraakZ33D8G9pcvw+8TGNKZo9Ha1qYOo83VUWn
-dFFsJoSMCAc+31nZS/yGQE//fg4vxmSbP0TFmhUs7CYwi8n3QOl8eT3PqwuMln6W3s7odUHd1a3U
-XtMQn/mlqTE/osp/TkIE+6wh5Yn/iDvtsMB3C2ZobOw3MQTljLspV3Zt1AdvBEfb/lPqGPLGb6sI
-WN3JsKcJyqEo/AQxHkuSNEYj97Mb5s/ywRMYBZTzxtBTuF4aHEVoU/zo+nJghqoOQJGecKPJBvRK
-kQboTqS5d++6n8DUifywKX7CM3/Eix1suWWSLzPg/PspAKXY1S/IZT1jac3CTgrCkBDDZqkNrcJt
-D78iLW8dSAxbQVh50OaYsbHptZLfsQjpss5qJfop5aNppqTuI6fmCnX/Y8Q0ePuGTsUfDyxNmNke
-aM9W+5dmVfv79Sl8VNO3v6ZNngM/TQ3gwfUKyjGhwY0qtHm/VDYcTRh5TmZ/Rif93P+6gBSh0W9D
-vZupjmt2HvF+AvLPFT+hJnz04S15LYToflxZoumN6EZmyeiBUcVyhrw/6HCSqII2yF9eEKELvjmf
-Yb2jwhAl9LgDcOwR4cnA6gxhD4bXKH60AUj/7FEdy3AIOhMB276ngipqmR09W+fD+LFOwO+yhZ+7
-I5PmwOInb0TK/Wj+D0uXn3SHwg4pk35mxOsj66vcPLQHKCeaH6K13w31cBhE329VmUaQkoMAUhaF
-kBPo4z+yZz0wAmb/O2qR4YVrN1laXx1yIXZUxlARbFZ8TxYbiPWF9grl0+T3aVPY3X7DOKEeoE6k
-tCHnLufORMcSIY7zoUtE90eI70mfG3dybfXMDf0L1gcgRCWUwcZxSYXVx4/DIKc9JQYe5nTDX5yb
-q+wabpQ4gOXwgHzeXnFCDKM1M6t0WuSjxZjdJwGGBA/V9kRVWetnUH1kAsMNacKYquUs5WPY0Fki
-Ou+vezHnzg43woGTeDr5zP/TlkJ92H+3iMWbgMxi05W7eld/HlDJBsMhq5tOhbpcTZJQRdK6BLzp
-cCjdnGvNYK+/9glCZejW07Fvr8dQu6VJqsQ/g3dn4jWSwIXGjG45UMBF48JTghAoGmi4kbJzIRrU
-OG+0fxEzibQceb3804z0dLkPytL0PunUEw/cbhbOWMd5hmO6OBPQ0VMErThTNwSQedPZ5HextXiL
-HcOgeD2Y3i2uX4d3D7e3b2aZ3AKUxF8xLMgSUSJdz35QskSL3LoIB0loqr+Ds5MBltX0sqI8+T2l
-yvNDxc9DVPC2DvU94gfVTa/qii5wRjyxeHfj/LTDXnGpERPVxCu5pnvYQpK700cuD2c5r8mmYkW2
-A3vhGXSf74ChUKf7SLyNVTr123AE/PgJPU9+R6wktKpgN2LpRONsy6GnURGW11AJJrK3A81QcyK/
-O+htTQKAxifQ5yLHmqadJABEk7Vn/vRlIqC74YGURwbnyWIKQN9h8v7AQuqR4fLUyL97zAIzTlta
-ddT/gXpKZ4JbEdSke5ahisVlqbfRUwLGes2AbiDApxfElFPQ+8MACX6/IQIV+vJ4rQosOLWkZ1DE
-rPAfNddvVRPnVeoPMOES4MWAUD6dRzMJwHyHOfv4Rvh0+DF/oE4K67T5CtgR/OXcViN0r2KtB+jm
-kZjG87CoSI+hSOisFY4zdMxdRNnh0lPIQGtfilfziDCJTik/wPo99in0WJfsSu+so2cg9RKWv3L1
-wjXRXOyNeoPrlQrZQ72b+dCGHrf9+AUWyGb8xpKwz4m4cVQkT7NXVRraMPqb89TfKa7bsAUT4FVT
-dnsITImIL+637avPMxbeoTWgDrMQdEmx8bmEbg1fQlRmXYTfG19vWLPLisEjdsTh5wfJfwr5qMs6
-2YNbIMYUVGumh+guY6vtTVkKeN/yaZXvpAKXaw5A7LfFj2PyVF7noSxd6CTDJqRFD8/YfqL5Oh/C
-Edtqae3mVKu94ObzxdjQo939qlAlMsqMQGMgFYBB5U2H70E+WxeCW+xTQHUxF//5ye42QTmBIBje
-2eazu7eUwTiC9Z9XfNu8TnzoOvUv51WPatol1Dqzs6Yj9gS6O0bmIiLhf5LkiCaVVqUwtg4EIdDB
-nB3cV7hvIZyhfBl2jLrY2QvDBNbjc54SsZPmqQOz/1xuIsBy/Y93II3SlPMlIw7fh19c/kNh0/FN
-wX3wre7Yp7kyY9qfDK38h4cWarF9qHtGFOy495p8veCO5bxUmaE8fNWDv42HyoBZXv2ETjy17Dus
-PNlSWKcVMGn9fCSvoSsGYjZ4dnpd8rw33K24NmvnzBoAEKebvUMiiOfVmTKeFU2b/KME/v6QxWgp
-ub7AebhicU65OFfAE3Auyh8kbEi1sCoRPunxD3N+hRbViLs97N1J3yN8NPSUojlye/yEaToY+HSE
-UoAE02PN7oAxdjP2wlMeLKHy8wVSkYJFQMp/31wA3irtyRBtcXTsoypIJBPL8BUW1+lv3RkFu9ma
-L/vQjhd/5XSvlbLzx//K5qX7hnBP9RT1yGTR2z5XEobie54QyIpXgHvU0Mjfkt06K6Mu7PdIgWZ6
-JHlbiD6q6bUFsy5qJw1WEncudRvzDM92E4ryIlrWd2bvie4aGfxfxAnM5XWZolnbSjorRwWnbDRj
-PlAfKcD6ATY1SuWlsONsdbsRlNtLYjIXP7jTzuXFcRifpC4axzmRO5XcZIjcAJK+gI9zghRZPA12
-lg7Ecmj06mzvKfJXye6F20ogN4gORYK0I7O40ig4uawbWGxpNVCa4wyYYLcbHzN6SRwHRXquV2fV
-MA1Y/WDrVamnYkmEAJE41GqdeOLf1y7fAFLnlC4v5CUs4DEqxs4H9U+SKttKagtj0i8iXM1weU5o
-M44VOKs3zpJKHb6TBqIZ6gcBs0ddR6FqbvXDRtepvPyiaJHxts6rmooLS2VQqADGeYGC1KDzTK5H
-pFNtMTmdRnqmiTr5AfI7GQkXSgIQAMkbGmafp1XFA/xdjMQHV0BeW1iahLhGvtVyMxo3lkxPWuxA
-R9q7mQPegyyI7D/qUeTKa5+ja9X441XWc29rYcFxD1scXYx+cIkvdb4qRpg9GywMwoI1X/naAnqt
-sqQevNdWiSsu9UCm+0He/Ck2NemUPtCPvtSF4si8a7trllPGweaJHV+FxISrSUCt2OEX7wG4rfTd
-OoUBQqY1nIXu++TzeMRnm9MuALud5LXsniOHJPUzfA0KXWiWO8EozwoEMadABMJvAV7DYjQjYvTO
-9Hnzi2OPoGkCrFXIsJjXBwdMcRMEBjSlKEiJkGu/oi4g7YLP7q0pPHj11sNC/9BkVBGwdsKYkcjx
-l7g8XeYVCZiuPbvfrPLxBpfK1FaGTtQ2KOEOudpKlNMNtkwtHz4zIPS1bswYmeaAoZEc2NvYqLKa
-xQZCqmnnJr9ZNPAQB3AS67QQS5apd45gUafOexDf0LkX6/ReSL4MBqjM0LCeOT3rUpq7v5u9sCNh
-DCh4m0WTKKKWKJDMRZEENHza/g25zKFFdVsOpGhQO+iEcXFfxcTPyy25N7ZEx9G84Xri/oRrh184
-PcsGZ8tENHOb/aItXsN8ewK0io3zGlVyI8Pbh8Ro5dSw5walu0L+cPCIHynM0unDRUETqvTFjuoW
-zprqiw1q3QYqvhIVzlex2K8Tq1FiYi8O5Gh1vxM7MDcSLV0qKBppIVq7tWxCMq0D0LI1ZmuNNqdk
-AdAcjoTsYl10oYQz307tGKFeXKPS6bH2B9dMU0cIkmp9AX6w6ycAYYox2SRZG6gFvMnDMsd3ZMCb
-LvLfsHe0dqCJD4DGu4cHGqqLnbCVPQwOEWKF9l3UQT+AIg6IYdLl4V4a3l+Mx45BBFv1DkrG/gA/
-maNN1Pm9oezhsBXqYSE5lggqownspkwktuFdH/g7UKi6vKiajv2zYIFDUopKCGH/6hf8gV2UGIT9
-wZ0GI3lBs2O+YzeOXNeSd0Mx8oXi9c4IiD1DlbzUn8xORdi+cA/ek8FlP8iaB0hMTn0aNibyaaKi
-5NCBW4hCy/AjZpXeULEFkdhCH0tN3Lco0n0OWZi/hoSPd6c/ZuwIoq7p3zg7GsOMseoFS3F5dHFC
-TrU/YdACOGWdZouYPEVbpzaaAYuS3RfSNegqJ4cUqujCiIk7ArySHEu3IHQjO4wlnTY90qwcCvDT
-WiPoYpuEkEZ03IrOt0i9GKKY8rl3FdH23okQJwna4JQl3HlQqhgR1mc1E1C/xVPioWRPAmGlQwma
-/zPnWLzv20Oiw+hHYREDXMUACUx+bKfcYJuflIVGDCJIf8SYEahqTn9CQJcKL3wYVNLng8/SS+uA
-BPQYy20MtmDg/BTJX1cU0xCavKJYZ94sSDykTk/tjTtlzqMaDtKqYSQyB5M8itQ0vD2Hdtqr6OtC
-KI+AkW7LbY156eLDaqMx5QMxwgUdPBEZW5N1ecJ+9TTt7o7pH0jwR0U4jMzxxYY89D3TUejXsQ9+
-/D6/pa4NeAhv4zQ5KQyYv68oohfAJQSfHus1AQw95WsZ5DzMtordd5FFD4vOEm0gcOVJ8RIYuEZI
-RaxuB8eKiUqVqCwUmkF71V2QepLU3HIKh8a+AKKEQk4GW4PwREBl1uhqBYUmj9Ve4TyD9idsAPK5
-Wv7Nm/cA7HdzvznA9cRYBQeoMPKD2dJsjuE/v49jw3qBp8k6kvh93FVw5mnkZ+MxpihuaD2jti1h
-iMR6TVBRIx3bZcRy+hCUkngb9iJ/NOiuxE2pi7jOePhAEsTCQbJbVis60BtbKB2Dd7HmqdZDgc3a
-0u7lWP87xrSRm4j7P+w3WVn6vrObCxy2FNzomAxIYB+NXanKbEJsBJQJoYVefYsfC+c/fjXWKeo+
-wq3jGTiD0V5fLCiFnFIXNl2013Wn1i8xhi6RcF0fVopbBnRSSOmkWWcI/QKZQ4LI+BjMaANPusuA
-VwI061RCvOoynihoXh3MNhbQCBF8BpJOY8ia+S6inov5fF9BYY5J3iCDi9B69TLqQYBBN9GKI7Rl
-xn2hjEHzbLbPn6V8aoeuZY8FYd/W+9CGEz3aZJ4SSkh+nfsr2xd/2dT9iis98d02ueUZsE1WM0==
+<?php
+
+namespace Guzzle\Stream;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Common\Exception\RuntimeException;
+use Guzzle\Http\Message\EntityEnclosingRequestInterface;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Url;
+
+/**
+ * Factory used to create fopen streams using PHP's http and https stream wrappers
+ *
+ * Note: PHP's http stream wrapper only supports streaming downloads. It does not support streaming uploads.
+ */
+class PhpStreamRequestFactory implements StreamRequestFactoryInterface
+{
+    /** @var resource Stream context options */
+    protected $context;
+
+    /** @var array Stream context */
+    protected $contextOptions;
+
+    /** @var Url Stream URL */
+    protected $url;
+
+    /** @var array Last response headers received by the HTTP request */
+    protected $lastResponseHeaders;
+
+    /**
+     * {@inheritdoc}
+     *
+     * The $params array can contain the following custom keys specific to the PhpStreamRequestFactory:
+     * - stream_class: The name of a class to create instead of a Guzzle\Stream\Stream object
+     */
+    public function fromRequest(RequestInterface $request, $context = array(), array $params = array())
+    {
+        if (is_resource($context)) {
+            $this->contextOptions = stream_context_get_options($context);
+            $this->context = $context;
+        } elseif (is_array($context) || !$context) {
+            $this->contextOptions = $context;
+            $this->createContext($params);
+        } elseif ($context) {
+            throw new InvalidArgumentException('$context must be an array or resource');
+        }
+
+        // Dispatch the before send event
+        $request->dispatch('request.before_send', array(
+            'request'         => $request,
+            'context'         => $this->context,
+            'context_options' => $this->contextOptions
+        ));
+
+        $this->setUrl($request);
+        $this->addDefaultContextOptions($request);
+        $this->addSslOptions($request);
+        $this->addBodyOptions($request);
+        $this->addProxyOptions($request);
+
+        // Create the file handle but silence errors
+        return $this->createStream($params)
+            ->setCustomData('request', $request)
+            ->setCustomData('response_headers', $this->getLastResponseHeaders());
+    }
+
+    /**
+     * Set an option on the context and the internal options array
+     *
+     * @param string $wrapper   Stream wrapper name of http
+     * @param string $name      Context name
+     * @param mixed  $value     Context value
+     * @param bool   $overwrite Set to true to overwrite an existing value
+     */
+    protected function setContextValue($wrapper, $name, $value, $overwrite = false)
+    {
+        if (!isset($this->contextOptions[$wrapper])) {
+            $this->contextOptions[$wrapper] = array($name => $value);
+        } elseif (!$overwrite && isset($this->contextOptions[$wrapper][$name])) {
+            return;
+        }
+        $this->contextOptions[$wrapper][$name] = $value;
+        stream_context_set_option($this->context, $wrapper, $name, $value);
+    }
+
+    /**
+     * Create a stream context
+     *
+     * @param array $params Parameter array
+     */
+    protected function createContext(array $params)
+    {
+        $options = $this->contextOptions;
+        $this->context = $this->createResource(function () use ($params, $options) {
+            return stream_context_create($options, $params);
+        });
+    }
+
+    /**
+     * Get the last response headers received by the HTTP request
+     *
+     * @return array
+     */
+    public function getLastResponseHeaders()
+    {
+        return $this->lastResponseHeaders;
+    }
+
+    /**
+     * Adds the default context options to the stream context options
+     *
+     * @param RequestInterface $request Request
+     */
+    protected function addDefaultContextOptions(RequestInterface $request)
+    {
+        $this->setContextValue('http', 'method', $request->getMethod());
+        $this->setContextValue('http', 'header', $request->getHeaderLines());
+        // Force 1.0 for now until PHP fully support chunked transfer-encoding decoding
+        $this->setContextValue('http', 'protocol_version', '1.0');
+        $this->setContextValue('http', 'ignore_errors', true);
+    }
+
+    /**
+     * Set the URL to use with the factory
+     *
+     * @param RequestInterface $request Request that owns the URL
+     */
+    protected function setUrl(RequestInterface $request)
+    {
+        $this->url = $request->getUrl(true);
+
+        // Check for basic Auth username
+        if ($request->getUsername()) {
+            $this->url->setUsername($request->getUsername());
+        }
+
+        // Check for basic Auth password
+        if ($request->getPassword()) {
+            $this->url->setPassword($request->getPassword());
+        }
+    }
+
+    /**
+     * Add SSL options to the stream context
+     *
+     * @param RequestInterface $request Request
+     */
+    protected function addSslOptions(RequestInterface $request)
+    {
+        if ($verify = $request->getCurlOptions()->get(CURLOPT_SSL_VERIFYPEER)) {
+            $this->setContextValue('ssl', 'verify_peer', true, true);
+            if ($cafile = $request->getCurlOptions()->get(CURLOPT_CAINFO)) {
+                $this->setContextValue('ssl', 'cafile', $cafile, true);
+            }
+        } else {
+            $this->setContextValue('ssl', 'verify_peer', false, true);
+        }
+    }
+
+    /**
+     * Add body (content) specific options to the context options
+     *
+     * @param RequestInterface $request
+     */
+    protected function addBodyOptions(RequestInterface $request)
+    {
+        // Add the content for the request if needed
+        if (!($request instanceof EntityEnclosingRequestInterface)) {
+            return;
+        }
+
+        if (count($request->getPostFields())) {
+            $this->setContextValue('http', 'content', (string) $request->getPostFields(), true);
+        } elseif ($request->getBody()) {
+            $this->setContextValue('http', 'content', (string) $request->getBody(), true);
+        }
+
+        // Always ensure a content-length header is sent
+        if (isset($this->contextOptions['http']['content'])) {
+            $headers = isset($this->contextOptions['http']['header']) ? $this->contextOptions['http']['header'] : array();
+            $headers[] = 'Content-Length: ' . strlen($this->contextOptions['http']['content']);
+            $this->setContextValue('http', 'header', $headers, true);
+        }
+    }
+
+    /**
+     * Add proxy parameters to the context if needed
+     *
+     * @param RequestInterface $request Request
+     */
+    protected function addProxyOptions(RequestInterface $request)
+    {
+        if ($proxy = $request->getCurlOptions()->get(CURLOPT_PROXY)) {
+            $this->setContextValue('http', 'proxy', $proxy);
+        }
+    }
+
+    /**
+     * Create the stream for the request with the context options
+     *
+     * @param array $params Parameters of the stream
+     *
+     * @return StreamInterface
+     */
+    protected function createStream(array $params)
+    {
+        $http_response_header = null;
+        $url = $this->url;
+        $context = $this->context;
+        $fp = $this->createResource(function () use ($context, $url, &$http_response_header) {
+            return fopen((string) $url, 'r', false, $context);
+        });
+
+        // Determine the class to instantiate
+        $className = isset($params['stream_class']) ? $params['stream_class'] : __NAMESPACE__ . '\\Stream';
+
+        /** @var $stream StreamInterface */
+        $stream = new $className($fp);
+
+        // Track the response headers of the request
+        if (isset($http_response_header)) {
+            $this->lastResponseHeaders = $http_response_header;
+            $this->processResponseHeaders($stream);
+        }
+
+        return $stream;
+    }
+
+    /**
+     * Process response headers
+     *
+     * @param StreamInterface $stream
+     */
+    protected function processResponseHeaders(StreamInterface $stream)
+    {
+        // Set the size on the stream if it was returned in the response
+        foreach ($this->lastResponseHeaders as $header) {
+            if (($pos = stripos($header, 'Content-Length:')) === 0) {
+                $stream->setSize(trim(substr($header, 15)));
+            }
+        }
+    }
+
+    /**
+     * Create a resource and check to ensure it was created successfully
+     *
+     * @param callable $callback Closure to invoke that must return a valid resource
+     *
+     * @return resource
+     * @throws RuntimeException on error
+     */
+    protected function createResource($callback)
+    {
+        // Turn off error reporting while we try to initiate the request
+        $level = error_reporting(0);
+        $resource = call_user_func($callback);
+        error_reporting($level);
+
+        // If the resource could not be created, then grab the last error and throw an exception
+        if (false === $resource) {
+            $message = 'Error creating resource. ';
+            foreach (error_get_last() as $key => $value) {
+                $message .= "[{$key}] {$value} ";
+            }
+            throw new RuntimeException(trim($message));
+        }
+
+        return $resource;
+    }
+}

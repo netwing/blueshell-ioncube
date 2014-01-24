@@ -1,39 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-q7z3U5iox2VUC8X0Iyqg1AhIsyfzGnBKgSfm/Ay=
+<?php
+
+namespace Guzzle\Service\Resource;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Service\Command\CommandInterface;
+
+/**
+ * Factory that utilizes multiple factories for creating iterators
+ */
+class CompositeResourceIteratorFactory implements ResourceIteratorFactoryInterface
+{
+    /** @var array Array of factories */
+    protected $factories;
+
+    /** @param array $factories Array of factories used to instantiate iterators */
+    public function __construct(array $factories)
+    {
+        $this->factories = $factories;
+    }
+
+    public function build(CommandInterface $command, array $options = array())
+    {
+        if (!($factory = $this->getFactory($command))) {
+            throw new InvalidArgumentException('Iterator was not found for ' . $command->getName());
+        }
+
+        return $factory->build($command, $options);
+    }
+
+    public function canBuild(CommandInterface $command)
+    {
+        return $this->getFactory($command) !== false;
+    }
+
+    /**
+     * Add a factory to the composite factory
+     *
+     * @param ResourceIteratorFactoryInterface $factory Factory to add
+     *
+     * @return self
+     */
+    public function addFactory(ResourceIteratorFactoryInterface $factory)
+    {
+        $this->factories[] = $factory;
+
+        return $this;
+    }
+
+    /**
+     * Get the factory that matches the command object
+     *
+     * @param CommandInterface $command Command retrieving the iterator for
+     *
+     * @return ResourceIteratorFactoryInterface|bool
+     */
+    protected function getFactory(CommandInterface $command)
+    {
+        foreach ($this->factories as $factory) {
+            if ($factory->canBuild($command)) {
+                return $factory;
+            }
+        }
+
+        return false;
+    }
+}

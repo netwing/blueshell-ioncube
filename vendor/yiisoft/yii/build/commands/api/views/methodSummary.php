@@ -1,30 +1,28 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-W56w96frrgWHY3EC
+<?php if($protected && !$class->protectedMethodCount || !$protected && !$class->publicMethodCount) return; ?>
+
+<div class="summary docMethod">
+<h2><?php echo $protected ? 'Protected Methods' : 'Public Methods'; ?></h2>
+
+<p><a href="#" class="toggle">Hide inherited methods</a></p>
+
+<table class="summaryTable">
+<colgroup>
+	<col class="col-method" />
+	<col class="col-description" />
+	<col class="col-defined" />
+</colgroup>
+<tr>
+  <th>Method</th><th>Description</th><th>Defined By</th>
+</tr>
+<?php foreach($class->methods as $method): ?>
+<?php if($protected && $method->isProtected || !$protected && !$method->isProtected): ?>
+<?php $methodAnchor=$this->fixMethodAnchor($method->definedBy,$method->name); ?>
+<tr<?php echo $method->isInherited?' class="inherited"':''; ?> id="<?php echo $methodAnchor; ?>">
+  <td><?php echo $this->renderSubjectUrl($method->definedBy,$methodAnchor,$method->name.'()'); ?></td>
+  <td><?php echo $method->introduction; ?></td>
+  <td><?php echo $this->renderTypeUrl($method->definedBy); ?></td>
+</tr>
+<?php endif; ?>
+<?php endforeach; ?>
+</table>
+</div>

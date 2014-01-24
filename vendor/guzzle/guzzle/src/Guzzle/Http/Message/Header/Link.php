@@ -1,46 +1,93 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/xCpK0==
+<?php
+
+namespace Guzzle\Http\Message\Header;
+
+use Guzzle\Http\Message\Header;
+
+/**
+ * Provides helpful functionality for link headers
+ */
+class Link extends Header
+{
+    /**
+     * Add a link to the header
+     *
+     * @param string $url    Link URL
+     * @param string $rel    Link rel
+     * @param array  $params Other link parameters
+     *
+     * @return self
+     */
+    public function addLink($url, $rel, array $params = array())
+    {
+        $values = array("<{$url}>", "rel=\"{$rel}\"");
+
+        foreach ($params as $k => $v) {
+            $values[] = "{$k}=\"{$v}\"";
+        }
+
+        return $this->add(implode('; ', $values));
+    }
+
+    /**
+     * Check if a specific link exists for a given rel attribute
+     *
+     * @param string $rel rel value
+     *
+     * @return bool
+     */
+    public function hasLink($rel)
+    {
+        return $this->getLink($rel) !== null;
+    }
+
+    /**
+     * Get a specific link for a given rel attribute
+     *
+     * @param string $rel Rel value
+     *
+     * @return array|null
+     */
+    public function getLink($rel)
+    {
+        foreach ($this->getLinks() as $link) {
+            if (isset($link['rel']) && $link['rel'] == $rel) {
+                return $link;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     * Get an associative array of links
+     *
+     * For example:
+     * Link: <http:/.../front.jpeg>; rel=front; type="image/jpeg", <http://.../back.jpeg>; rel=back; type="image/jpeg"
+     *
+     * <code>
+     * var_export($response->getLinks());
+     * array(
+     *     array(
+     *         'url' => 'http:/.../front.jpeg',
+     *         'rel' => 'back',
+     *         'type' => 'image/jpeg',
+     *     )
+     * )
+     * </code>
+     *
+     * @return array
+     */
+    public function getLinks()
+    {
+        $links = $this->parseParams();
+
+        foreach ($links as &$link) {
+            $key = key($link);
+            unset($link[$key]);
+            $link['url'] = trim($key, '<> ');
+        }
+
+        return $links;
+    }
+}

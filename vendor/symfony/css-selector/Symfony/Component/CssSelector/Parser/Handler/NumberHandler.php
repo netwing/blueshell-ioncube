@@ -1,33 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Parser\Handler;
+
+use Symfony\Component\CssSelector\Parser\Reader;
+use Symfony\Component\CssSelector\Parser\Token;
+use Symfony\Component\CssSelector\Parser\TokenStream;
+use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerPatterns;
+
+/**
+ * CSS selector comment handler.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class NumberHandler implements HandlerInterface
+{
+    /**
+     * @var TokenizerPatterns
+     */
+    private $patterns;
+
+    /**
+     * @param TokenizerPatterns $patterns
+     */
+    public function __construct(TokenizerPatterns $patterns)
+    {
+        $this->patterns = $patterns;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handle(Reader $reader, TokenStream $stream)
+    {
+        $match = $reader->findPattern($this->patterns->getNumberPattern());
+
+        if (!$match) {
+            return false;
+        }
+
+        $stream->push(new Token(Token::TYPE_NUMBER, $match[0], $reader->getPosition()));
+        $reader->moveForward(strlen($match[0]));
+
+        return true;
+    }
+}

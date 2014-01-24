@@ -1,70 +1,165 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-IVGqMv+j3PTZbKK+Oh7CiWhlzRu=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Output;
+
+use Symfony\Component\Console\Formatter\OutputFormatterInterface;
+use Symfony\Component\Console\Formatter\OutputFormatter;
+
+/**
+ * Base class for output classes.
+ *
+ * There are five levels of verbosity:
+ *
+ *  * normal: no option passed (normal output)
+ *  * verbose: -v (more output)
+ *  * very verbose: -vv (highly extended output)
+ *  * debug: -vvv (all debug output)
+ *  * quiet: -q (no output)
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+abstract class Output implements OutputInterface
+{
+    private $verbosity;
+    private $formatter;
+
+    /**
+     * Constructor.
+     *
+     * @param integer                       $verbosity The verbosity level (one of the VERBOSITY constants in OutputInterface)
+     * @param Boolean                       $decorated Whether to decorate messages
+     * @param OutputFormatterInterface|null $formatter Output formatter instance (null to use default OutputFormatter)
+     *
+     * @api
+     */
+    public function __construct($verbosity = self::VERBOSITY_NORMAL, $decorated = false, OutputFormatterInterface $formatter = null)
+    {
+        $this->verbosity = null === $verbosity ? self::VERBOSITY_NORMAL : $verbosity;
+        $this->formatter = $formatter ?: new OutputFormatter();
+        $this->formatter->setDecorated($decorated);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setFormatter(OutputFormatterInterface $formatter)
+    {
+        $this->formatter = $formatter;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getFormatter()
+    {
+        return $this->formatter;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDecorated($decorated)
+    {
+        $this->formatter->setDecorated($decorated);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isDecorated()
+    {
+        return $this->formatter->isDecorated();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setVerbosity($level)
+    {
+        $this->verbosity = (int) $level;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getVerbosity()
+    {
+        return $this->verbosity;
+    }
+
+    public function isQuiet()
+    {
+        return self::VERBOSITY_QUIET === $this->verbosity;
+    }
+
+    public function isVerbose()
+    {
+        return self::VERBOSITY_VERBOSE <= $this->verbosity;
+    }
+
+    public function isVeryVerbose()
+    {
+        return self::VERBOSITY_VERY_VERBOSE <= $this->verbosity;
+    }
+
+    public function isDebug()
+    {
+        return self::VERBOSITY_DEBUG <= $this->verbosity;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function writeln($messages, $type = self::OUTPUT_NORMAL)
+    {
+        $this->write($messages, true, $type);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function write($messages, $newline = false, $type = self::OUTPUT_NORMAL)
+    {
+        if (self::VERBOSITY_QUIET === $this->verbosity) {
+            return;
+        }
+
+        $messages = (array) $messages;
+
+        foreach ($messages as $message) {
+            switch ($type) {
+                case OutputInterface::OUTPUT_NORMAL:
+                    $message = $this->formatter->format($message);
+                    break;
+                case OutputInterface::OUTPUT_RAW:
+                    break;
+                case OutputInterface::OUTPUT_PLAIN:
+                    $message = strip_tags($this->formatter->format($message));
+                    break;
+                default:
+                    throw new \InvalidArgumentException(sprintf('Unknown output type given (%s)', $type));
+            }
+
+            $this->doWrite($message, $newline);
+        }
+    }
+
+    /**
+     * Writes a message to the output.
+     *
+     * @param string  $message A message to write to the output
+     * @param Boolean $newline Whether to add a newline or not
+     */
+    abstract protected function doWrite($message, $newline);
+}

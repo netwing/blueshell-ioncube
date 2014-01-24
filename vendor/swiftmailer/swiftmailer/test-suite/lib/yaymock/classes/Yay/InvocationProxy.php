@@ -1,39 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-KeGgDWpngJzi3TSkbYTCz2wbQecV5G==
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+//require 'Yay/ExpectationProvider.php';
+//require 'Yay/InvocationRecorder.php';
+//require 'Yay/MockObject.php';
+//require 'Yay/SimpleInvocation.php';
+
+/**
+ * Proxies Invocations on a Mock object to the recorder.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_InvocationProxy implements Yay_ExpectationProvider
+{
+  
+  /**
+   * The InvocationRecorder which is using this InvocationProxy.
+   * @var Yay_InvocationRecorder
+   * @access private
+   */
+  private $_recorder;
+  
+  /**
+   * The Mock object where Invocations are recorded from.
+   * @var Yay_MockObject
+   * @access private
+   */
+  private $_mock;
+  
+  /**
+   * Create a new InvocationProxy for $recorder and $mock.
+   * @param Yay_InvocationRecorder $recorder
+   * @param Yay_MockObject $mock
+   */
+  public function __construct(Yay_InvocationRecorder $recorder, Yay_MockObject $mock)
+  {
+    $this->_recorder = $recorder;
+    $this->_mock = $mock;
+  }
+  
+  /**
+   * Direct all invocations to the recorder.
+   * @param string $method
+   * @param array $args
+   * @return Yay_InvocationRecorder
+   */
+  public function __call($method, $args)
+  {
+    if (is_callable(array($this->_mock, $method)))
+    {
+      $invocation = new Yay_SimpleInvocation($this->_mock, $method, $args);
+      $this->_recorder->recordInvocation($invocation);
+      return $this->_recorder;
+    }
+    elseif (is_callable(array($this->_recorder, $method)))
+    {
+      return call_user_func_array(array($this->_recorder, $method), $args);
+    }
+    else
+    {
+      throw new BadMethodCallException('Mock method ' . $method . ' does not exist');
+    }
+  }
+  
+  /**
+   * Returns the Expectation list.
+   * @return array of Yay_Expectation
+   */
+  public function getExpectations()
+  {
+    return $this->__call(__FUNCTION__, array());
+  }
+  
+}

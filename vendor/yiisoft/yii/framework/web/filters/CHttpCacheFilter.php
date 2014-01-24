@@ -1,98 +1,209 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmSP9OYLiPslTDomgrohvVMNxzzXWl/dgiiTG68EdKl3yKBgVTdn6tlV5DwPWuZzSofUWJTa
-q4th0LpVAWWx3F1/4lKZb4dr0DqjywrAOp/9mFO9ypxpcw9w0huGDtDkyvTahp1xiA5XRw1OBuIQ
-JWQULVeZMumxaW+lV54YI93l2wbo/RSHbQd0xw6ipUM7wPYeHKIlQ5vo8WP4vRrKWa52gdAhgKjF
-m3ad5dXlckyj/gFRnBwrl7Dlhr4euJltSAgiccy4GDnfT71d8b5KyZD2lqgApDXRXjbhCsPL87at
-zfkWrF59oG+Pm5V1cYXpdaE11hFREYzRgrohTR+Hi3sNb2u/mUbb2MkWUfx5sujB6tHrItCW0Q1H
-5NU93hL6iFdwn2xYVMntS0pzSjMAKEArm6q5eVC6SK9D2WojuKSVY9YL922T3UMDs4UlNKH1y0RO
-6qi1E8+02vfS4JRsvTHWu+4EQRraEdMSELL7BgUu0M1H2Bw7CO+8ezll3fUudDO9prTWBPi2JbO1
-1S4kJFYdQwOx7D5qoxIsN4G053x+9PXIk1IHj8ezgocoHp2AWr4RXex6KCEUgfXwoSzvL0oNOW/S
-1GBh/+Ht7aAm4eJvs/iUWbh4bJbZJYu7IL6cnKV/hxR5PXdw0DPHXYO9nZvyIapNajLpyOlZw2Nq
-T29omu9zW2kB0gzsD2wK0F0NsAalRWjVHXetwzSEfGLfcovoNnFKvo/A5yJrWZDT9ewAjqxSP+KL
-JhuvU99kGGwxZ/9wy/iFnRC9xDUjrSQTvP+CPUZIZdkfuQB4pE/fcnvKELzo1EVcHxDxVkwyKwJI
-/kpZCskWuVM+YbuUwrkADPh2mtraLHsibT9WWs8YQGo36xlKjuhwIKPwasrqnJ3XSUkIK2nol1vi
-wWK5OHelvYn7L+uleopZQ5Tge757Lf+O9Vu2nrYp7bNXzk9FMb/zJrDo+APwcxwI5260slwE8+Th
-C0btjem5aG0w8p2GoJIbdkZjc5nUYmGip+kpMICHWYQf8X2fcxD9RNzUrXZMprSvcbjIikseIzVo
-JSV5+lcwS6OpPtPjg/TgRgq2SzzniY4WnH2HggVfTCiJ3GdxS3C45uiMxN7YNOOofxeZFId0PbIF
-zGUf/niqUIKnp/pJIJQhE532H2byhXDEyJ4ws8SbHv87EqmUnOxl2YJigquDly7XvTzyb+5XU2W7
-31BtTUZ0ANC6b8GIIsrTVo2FJD12bgWR+KKEN8G3h9oZV9y4M45hEGVZGURahoDPumrNSHNdwo4B
-0MnXLxoP3ADbbqH9iKMRwkd/nyrrZVw0aLK48oLLq99rB0FPvWKO/uyhYJbQIFhaXMov9s4hLc/5
-v2y+cWnaERVBqo6GNhpSSt8MIH9RHaq/iKkd6yhFT+jn+4nPcfor9RO50uFz3ZX+ZtREfyDufcqY
-O8lqLchbvVGZJPEfr5yMf9bktoeEl5HcrTlt6242xXSXaMhCvbho+pNdJUWDEP2fe/omu+YwubfZ
-ZoJChqygmOQZ1nP51HjlvzUTAp3/+qVbmGz/c56uGV9oqHj8YaXsEqu1B1MbuCkSZ+RWah5Ex+Tq
-sItUdFB3B+/LInrZpLdFb2QkiYo7lplbJDhhdru04cq0Q3iZl20CIp/OA7YKG3VXHQXNvmtNM1Ur
-QRGiAHKU/bm0/6sa/3MFvGIX7+18TSpHm4exe3/Ng6S8ytBYtXhJToUmAG7uI6mKtjGx3RvW+b7n
-59et/hkqBHTD2i8neaHL4RQ1VhqTE4NOPwTs6FPlf2smAT7mIHXrirZ1FnFswiIuGd/YGnLUQhoG
-W4TDraESA4Nr4XgQ8rIngCGdhuX4Bjt1ezE4maqNHCL2OG5XAMjgwCSgwL8HnUZ9zPjqz9EbUZeS
-yhVPW2+DXMLQAFC624WFXzrEoOpPlKKFp2rtc1wlEjcZMG8cW9XrsbmTnBkpcAPY2p+acVmNtsWg
-G5DspfP567Xl8TyVCAUKfxtFsjViXaikbQyNNjpWwJkUaSQ8MN6qpnNS08jBavNFvACqqbk6sbWe
-675EnqAN7TNzq7xcw6MQwms5kOry1Hbi3tejqBb0gQCeY7jAo6xoj79BXGpEBp7l8MQhNhZHvblj
-jjSf/Se03AcK9N/HBiXtPhLCvyPJcjYcgEHRjMG5nj8t0/+cRLV4nuTeAmlM1mJUNw0QNehIEKNk
-udm6RXb7LnnSW9QLWBX0Ss+JWF/1S2I8IBOtIdiI+8k+0VLF2dul7hEaXc+liP78SEyXK5Vj39ob
-tqlRVJQHw4Or0FYL+9dS4v6tCTHMTECEPj4kCYx3iuPG+V+BkizxbQXY6DdG9qvnGD8nxoLh4BAp
-DWZYRFcyAvaLejatnuMblLiYTT15cYH96V0aLGXhSf1IZH+5HdHVH/h6Thdtwuf7bRRBa9Ut2E7D
-Xmx1mC3eTLcP+qqp44BKkVGjUQL4k2BT95Gwef0olH9ZVWcIC6iCE/CMH28O/k00pooEYZGhCRF5
-Oy1AeiZ6frLkQ9pbbfJo0LPjExnJcOAJFLveGlq2LaplUciQnmKrzBt4LTX/xWr8xlwWWQXpSizK
-8Mwqb5I5vm1IwLvQxYo7MCrX2GN6XAliRDrWzsYHqkUugR1atkQkhfuW4YnZQC02ed/9BBj2ZmwC
-WyP4zGundRbOAZ72BOTIf7pzCQtbW7LDxlqpNpZQ2g3rPseuu+YMV4Vhzpf3uM65HmcObm3ip61c
-BIvsI8JcINtC4EzSjquHtYSnIdksCwPu72gj3AWtORZ0XufOy8cVkF+srO7N97DvAmxDBlZwTVyo
-hQ2ZLRn2JjGKe48APMIwwAJp8g7k9SAxl7Pd4XPZkXrI1WwNjLJeURo3kNp87Xq+hc8MX6N5YuNa
-hXQomLEnAKLfgu/O+QW0Q+tOK0+FT8igDGatXlYsR0YTuPWEZR880PxCR4xn+rLlo6XiPdmAlMYr
-ZanKkb+JsAidn6UQ8JkqLPRrmy8c5WBWenPdiX59QHGKnhFj/9BgyKGrYTC6dIyFIm2Vgrm2Xiw8
-vl65OA+0ttmIzrzejEM5Z0FK8p7lcTiqFU9OTyqPj24oV5UWujGxIV773ocgij8dfb887yJkBJbz
-yzsqIoF7HIrHjH/wMS0++6WzNdjEaAnDrj0RLD+zGesF1aY+c96sOvh6ds7QOabooN3kzoJ1e1xM
-/Rn8Ff6SwKCakKinP+xJNBG2+jixbEM/Zv+CmrtbKn1cLyoCpQbU/BCAUIsghN9abE7QnaJesu8A
-9xEWHE7NlkGj5XvFD0angABQwF2zaTHqJEZtSa3BLrMgt+vIH9a0sA+emQN0tO/UfQqlWGL3131B
-jqUODcgcbpXxCRFIwQUpnTbmXNqbnH190eKSSzkl4G1F+OuVK1k91PG4EfSF8LeXoGvHi8AgmIj1
-1Qu2/yweswcf/ApTWmqmrYgaQlwkx+c9NUu2j7qoDuqtHsqVvKSwlxmNnK+2VHys4TLU2I91FdBZ
-VdKQsi6+gEMFCQZdl/pc9guHMdPg8lv7mblVNMMeidvLh2uBvX4IYK68vUmHpGgMc65oB5OxFHiE
-Izv2Iz03WqlWxK+C4+bYVSIt1LwE34PNYfidW5sCTgp099ISjlINWw49bMj+Xv1M75Qz0T4D/7jl
-ZTQ1cVB5bLEVMnTE7qnTKztP1HfYgqndcxpmyZ9jZzjwzch5KOjgtC+qZQ6ePpCLLHb3kx7GqOLq
-4GI/827DYxuhctGsJ56NzzMdQgNCVVWOjg+Qf252rKB/ri6im5fp3l0FmE44hHWPMr1MJcrcREu0
-Ds3WxEqgeWDoLEf7njkw+KIOYofIea2TEcvTK6VJMnKZAhvmrj3xqWI5BSoWvnRr4HR0sS2qvWQ1
-ZZdUtwtX5GkQZtx2rwX3/9wWq4OCCxPajh8aHsjvr0NZMMrcO40v80xcxS5TedLow+GqNqAZI+Pf
-TZ4A2RftdN7ph2VjatJmA386TX0OUqck0OvATbp1cp9ySMA+fk5Pn2KeSvcKrrJCXmSRR2a2X+lf
-KC+/+EQlqTknjWNfFhRQctGaK1Wc2oUVdtiZHf5Xv+fJ/RnAWbwXhbkj06jV7pczUqElwWCRaOUQ
-aQbQAVz7yDDxa5wZ4x+9La2dQhcWZcOLBFMB4Ey7faRd0uJV2w8sxQmNriliW9tNStIdpn/1x47l
-Y7ywP8U+doUMtoqiKsM7nOmR9+zPvdcbiHZpqFOMQRoqLk8AejwVpD2xfYdVNEC7URGPfncA/gfS
-L/CeRfECkkRyJuCd0BP7MREin4Gui2Eg+9NbGUXPQwJPVLDed5r/KctVWVPsRP3N5Cq4A67394OJ
-11q3xXwQvMrlSPC0N+kQymGBBUvyosO0GyZIRiWSzrTkhcpxXYO+GRstT3d5B9hqJzu4JRbQFxfG
-U17GBMuayJF+WSbSvNHOvD8SmgU8Sw0Jd0YtYbg/r5e0rsu5/yqRXnSrjo4uafoDfeY/OD08IfEt
-NZMuo1m+vOhwW95nBZhxTShDliDq2Un7ZaSRqxbrtBoSS+KiPVH0+UeH4BbQK/7MAizgiMfGittg
-2n2sI5S++TzUQjBi/pShCWTMjRvq5yIRTryd3iI0Uw+MeiKSHouoyW11nOMK7c09EkhwXapx6dyp
-PYxDKp6oHsGnuwQ1cDlT2bpUydZv5UaGTHVNScSVERmgc4yKSJ2yzH0CnAA/dVIufvp93krI4t0t
-fxmImbBDGuAEfUY0wcMj7srgMVfTW1ii9oYzY8zAUAULCgjfPREvs3a74s+SmTqMx6RvbsXKch38
-ZuwXffQd5q5OMhavslE91I/0S1N+ba7OYc4/Kf+uFUGO/EgXJHn7JRKQ5Y7a5FeQMeG/3k+LnTUx
-PJA1Rj953gKzH8tXeCEMbSZC3hPGSad4J4jSm517ayx+btXXm1R7se6q8YEwe7ljq2PSyLPmp/Gb
-QC3Hul4tmq4nW0fWFPm7PF/8JZyjqu9U9eBcg08VtyiZQmsp/FjTYFkP8wMTkQMLyrdyGFgTmk03
-e64AuXC8zWyVt1Q/RlYuttAe0bSUlSMg2FXYq2cZDqCZw77MRan/isHi0tcTQJRiZ2v2bIWg65Wr
-Gm1cqEBBcYrpL1z9/8XLziLbSlLUXHYGPnJpNwncn9qqguBUm8Ouc/UZRF//ssfKD+L/CR2N3PG0
-0AxE1k7xWT5RbRgEqxRT1q+r/Ps94aH+jHr3+FJGq8dRaASQa/nu1D81dt4dOjFl39H9alV2hsB+
-S9Y06Udi22Yn/MjyB+Rktb3uzgHJTOk2g+oy3wqp62PzIu901QNjnEuwjlxzgdoVqAmOsvFA1Mls
-VmWnLrkD2PoGkQ0O5xIRWyljQCtAlqGr4v1A4Vq8qSFlhtnm0Xd4fWEKA7zm79I/CQmER/aKom2r
-gOGn3XPfGrFzkWbVZ9mYeRlhPVARIXO0rkmC5V0LlhUklJQlPyWGEqwiz2XHOZRnA/eDG7EFPloj
-gxYpZHtgsXZ9fRm50sCV/qKQR6bvxmHZJBl5e8g8r7SU8pvZau3b5/wkcXQdu4GWGmIzv5HvpKhE
-jcJUWjaldMJ6fwxUaRq0xYFUOxKSbbR3d1D7AlPOsK06uXhEnaDUHV4r9Gf2QOUpB3ck1C+KBVOw
-Kw3NjD60MHylKrklORhCcZT+KjcAE5WXNPgF3WSNH2k+ITsnlBw5hKgOM8EyMrFZJI4kaujLmjO5
-47+fW4+oj9M4etu8yZBNx8JpeUVUt4PGi7zLWxbn+fEvCxtXeaSJyYuqm2l20X8P4BJNw9WEzkk+
-epJTHOOZMUd8qIf5gh22s0Pf7QNIJSmdoeafNbY0Xd/efb/PLD7HPqnLENNFxWvGt6bsI2onuQPg
-ZxCbGZvSfSM08HLGCfAG/LjsZa7Fit5fJKWP/EKoTciDvNST6YRDgE70ihpoRWHAnm0msLOhSoE3
-wlm4Y58aB4ZSX0hXEpqIy9LFlbVquKK9/PjDAk7MrB1rLuDX+ODWMahivhBhVZr/ERwzlPak5XY4
-tmtaPPdxE1gsUMUs6qKndA8uE6sVDdANSNCC+8+vorqsBn7/Q67QtagoVZ2Wd1WpTbyCM3dIwze7
-XTJH3kn0O03EgHMpeORqd99Eh9zT6NxkbN8D4gyxo3ergVtWurZXsQRXENS9MOqVJ1mR4+Uf86to
-tINvRgvWi7jLDAe0Uzgf1TbCUPVVPl+hiDeT6xfxsZ7ZAsZXpIHtoIm/8R5o4DMse9IXUTTl8m4X
-6ckTUs2/WSxaXuwYBRyvw3gsRBc2XZvxSQhLm7a8FcCet4SvMWEd11nz+ifGv+zODXzy0bocv/tm
-csxfy0UxL31I90G3+8GTH692hS0PJhzAg5fypwI9jfy+P+ZtpEtECWm5MSdjCPfzXFVn+jBwidW4
-/sY1569V9v9PH8jmvno81HBZlbA7V7YJg58tm1dV8z1kzFCzweH18/K8hzmK0c831wQ3ufBPYBvi
-HtMpV5ZF+QNO2Pwn203duWfJ1lXl88SALcZ1eyI9NgPfQWzMeGkcM0BUmWN+u/pNC+r520vbTfCS
-P9IOXJ8HovTQXmD5E/Mbxt4WAkrDCjHIAAMznMvjjzotD4CUJQL+5oQimzCXHcczV1DrgkN5L/mB
-CmxOIjZegkGZnLgIboZeruQKmLTxGDf9jQwcMOFp/BGTblv5xhms1Y1AqiRNR91l5qvXA22cG6n6
-rsSgA3kHPXrSfNvWYHLNsXAJb3K0pKWLBEEF36swV8i7P9mpot1tZsXlz00xjm5KkPOJBngoAJId
-O9R0fCGiuvxKGbAcV7PTVQ4/LmL81zkUlTLoamXEcyjM2m/HpJ85aTu9AcMpmLrCCwK9xaEJTARF
-UMa8nwnUnACW006wmZa0ufS3IhtncLxEUUQ87q3n3lro+2nGcJC2Y0R7tEnyoEbX5njgKuCbubkJ
-6O/eaqyYqtXeuQawmlJXpb8aTTTtZMKu+igxLdaFsoTJrVvXon1typ1+tARi6NliIqRdM5oglGx1
-TtuldkbNDYQbIye9XtIrWL85jED7d50f5pNMrfLBNwzMBpPyg8JZemcR7pt+BoNb4GIvDkhybHUc
-MNM6TGLMZkdnLxUFt7gu+Lfna3NOPyBvXzxpwlgDWTZMvhXANXZMCciFYPi5HYMgmnYcV/kkAqLj
-suHXhHKAYj1kFsjCzo205GIlUdWSNULzuGkXd75Zv7Lpo63oKwI+UZTMih/70aEW
+<?php
+/**
+ * CHttpCacheFilter class file.
+ *
+ * @author Da:Sourcerer <webmaster@dasourcerer.net>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CHttpCacheFilter implements http caching. It works a lot like {@link COutputCache}
+ * as a filter, except that content caching is being done on the client side.
+ *
+ * @author Da:Sourcerer <webmaster@dasourcerer.net>
+ * @package system.web.filters
+ * @since 1.1.11
+ */
+class CHttpCacheFilter extends CFilter
+{
+	/**
+	 * @var string|integer Timestamp for the last modification date.
+	 * Must be either a string parsable by {@link http://php.net/strtotime strtotime()}
+	 * or an integer representing a unix timestamp.
+	 */
+	public $lastModified;
+	/**
+	 * @var string|callback PHP Expression for the last modification date.
+	 * If set, this takes precedence over {@link lastModified}.
+	 *
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $lastModifiedExpression;
+	/**
+	 * @var mixed Seed for the ETag.
+	 * Can be anything that passes through {@link http://php.net/serialize serialize()}.
+	 */
+	public $etagSeed;
+	/**
+	 * @var string|callback Expression for the ETag seed.
+	 * If set, this takes precedence over {@link etagSeed}.
+	 *
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $etagSeedExpression;
+	/**
+	 * @var string Http cache control headers. Set this to an empty string in order to keep this
+	 * header from being sent entirely.
+	 */
+	public $cacheControl='max-age=3600, public';
+
+	/**
+	 * Performs the pre-action filtering.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
+	 * @return boolean whether the filtering process should continue and the action should be executed.
+	 */
+	public function preFilter($filterChain)
+	{
+		// Only cache GET and HEAD requests
+		if(!in_array(Yii::app()->getRequest()->getRequestType(), array('GET', 'HEAD')))
+			return true;
+
+		$lastModified=$this->getLastModifiedValue();
+		$etag=$this->getEtagValue();
+
+		if($etag===false&&$lastModified===false)
+			return true;
+
+		if($etag)
+			header('ETag: '.$etag);
+
+		if(isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])&&isset($_SERVER['HTTP_IF_NONE_MATCH']))
+		{
+			if($this->checkLastModified($lastModified)&&$this->checkEtag($etag))
+			{
+				$this->send304Header();
+				$this->sendCacheControlHeader();
+				return false;
+			}
+		}
+		elseif(isset($_SERVER['HTTP_IF_MODIFIED_SINCE']))
+		{
+			if($this->checkLastModified($lastModified))
+			{
+				$this->send304Header();
+				$this->sendCacheControlHeader();
+				return false;
+			}
+		}
+		elseif(isset($_SERVER['HTTP_IF_NONE_MATCH']))
+		{
+			if($this->checkEtag($etag))
+			{
+				$this->send304Header();
+				$this->sendCacheControlHeader();
+				return false;
+			}
+
+		}
+
+		if($lastModified)
+			header('Last-Modified: '.gmdate('D, d M Y H:i:s', $lastModified).' GMT');
+
+		$this->sendCacheControlHeader();
+		return true;
+	}
+
+	/**
+	 * Gets the last modified value from either {@link lastModifiedExpression} or {@link lastModified}
+	 * and converts it into a unix timestamp if necessary
+	 * @throws CException
+	 * @return integer|boolean A unix timestamp or false if neither lastModified nor
+	 * lastModifiedExpression have been set
+	 */
+	protected function getLastModifiedValue()
+	{
+		if($this->lastModifiedExpression)
+		{
+			$value=$this->evaluateExpression($this->lastModifiedExpression);
+			if(is_numeric($value)&&$value==(int)$value)
+				return $value;
+			elseif(($lastModified=strtotime($value))===false)
+				throw new CException(Yii::t('yii','Invalid expression for CHttpCacheFilter.lastModifiedExpression: The evaluation result "{value}" could not be understood by strtotime()',
+					array('{value}'=>$value)));
+			return $lastModified;
+		}
+
+		if($this->lastModified)
+		{
+			if(is_numeric($this->lastModified)&&$this->lastModified==(int)$this->lastModified)
+				return $this->lastModified;
+			elseif(($lastModified=strtotime($this->lastModified))===false)
+				throw new CException(Yii::t('yii','CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()'));
+			return $lastModified;
+		}
+		return false;
+	}
+
+	/**
+	 *  Gets the ETag out of either {@link etagSeedExpression} or {@link etagSeed}
+	 *  @return string|boolean Either a quoted string serving as ETag or false if neither etagSeed nor etagSeedExpression have been set
+	 */
+	protected function getEtagValue()
+	{
+		if($this->etagSeedExpression)
+			return $this->generateEtag($this->evaluateExpression($this->etagSeedExpression));
+		elseif($this->etagSeed)
+			return $this->generateEtag($this->etagSeed);
+		return false;
+	}
+
+	/**
+	 * Check if the etag supplied by the client matches our generated one
+	 * @param string $etag the supplied etag
+	 * @return boolean true if the supplied etag matches $etag
+	 */
+	protected function checkEtag($etag)
+	{
+		return isset($_SERVER['HTTP_IF_NONE_MATCH'])&&$_SERVER['HTTP_IF_NONE_MATCH']==$etag;
+	}
+
+	/**
+	 * Checks if the last modified date supplied by the client is still up to date
+	 * @param integer $lastModified the last modified date
+	 * @return boolean true if the last modified date sent by the client is newer or equal to $lastModified
+	 */
+	protected function checkLastModified($lastModified)
+	{
+		return isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])&&@strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE'])>=$lastModified;
+	}
+
+	/**
+	 * Sends the 304 HTTP status code to the client
+	 */
+	protected function send304Header()
+	{
+		header('HTTP/1.1 304 Not Modified');
+	}
+
+	/**
+	 * Sends the cache control header to the client
+	 * @see cacheControl
+	 * @since 1.1.12
+	 */
+	protected function sendCacheControlHeader()
+	{
+		if(Yii::app()->session->isStarted)
+		{
+			session_cache_limiter('public');
+			header('Pragma:',true);
+		}
+		header('Cache-Control: '.$this->cacheControl,true);
+	}
+
+	/**
+	 * Generates a quoted string out of the seed
+	 * @param mixed $seed Seed for the ETag
+	 */
+	protected function generateEtag($seed)
+	{
+		return '"'.base64_encode(sha1(serialize($seed),true)).'"';
+	}
+}

@@ -1,35 +1,93 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmlWEaA+IfzrKrUlOLr6agqWmtWxz+R8RwkigTMh6Q8NcmrxdfEFEKIQKURs84WAdojd+hv5
-4chJfM0YEfoavhe7GleNaoh34L3VqKlGxNfhV8AdU/BRZ2UTrj15gHIBsWiUulSUdUYRY5M+83g6
-etMfCZaSZRlTeXFJNbHZ+vcsp5ItV5o4oZDg4BfIBgv7OBgIOhEAVW2Ra4tKzqb0Qb1mnN6I4g0i
-Kbj3cdMcmxKIXJYAc0bdhr4euJltSAgiccy4GDnfT7TXyq51+/VEUNmZNDYpYmiGFxHSfxUcRgkv
-v/cAyVtb6aWffRoOv8UfABCxn9R23SagAwcyP8eWn2Gn78W3GWThHuGk6p90XT17WsYWmGDBYv29
-3ba4pPN7qmBAuwYNLCjcP21ejPNPk4Y+vzbFX0OxolV1ODUVcfXj2vA9K1WYJ3tTMjZNNBqWVV7Z
-9k/yDSlK7K07TXYcQ7yvKUnrpo0Ywbf9aOVGmK/kNp2igevPPJCPRS+GN+YzYLQqH4bzrT2idXXy
-nKNyZzmiLWS2+KCwwT23hw2Xb2m21dKXv4lwav6DdbE50MinO+6WaOHtJk8HjgdK8bX5y+IGumOe
-vopyf7GrWhLbdLaHdzoA2/Ec3EMS7JyrgcKvMWjylwMVIDBy8uE3UYhq0/UHLQfN0hlYGr8jzg02
-6f4Q4wnNsSsGhgIo5F5QmjyWTN00dlPplIxk66QsOVrUJF0E3hAxNaVt+WRETrcNrRy4JOlu/3jk
-seIB+RuhwnEt9AgwkRfn/FN8hkWAzGvMNW8VEttCgZ3Nbe1U0+IbAej3KZ58HH8qkwAwwtzMeE5J
-KBeGkBwLaOjkJLqjOdXNdaL8io6xl6TPSjMXIWpumaN/5I8zaZznJz+8J0nz1S3YSifKXuk7dTyl
-qDYciSv4M3EYolnlg5eVYTHXuhRc1xbvjqRQzNN3jwx7n6Q/ZFFwQcrNChOuBEu8MElDrIzswOVD
-Pm3SBbgH1IP6K4wZPGbzZQgWJgn62K1numdEsrBPHUt95Ee+X8tThXjhZv6X8hUpL+5TrWrFknJq
-pYZxcdV/sBYulCRYm1cd5j8NseG/PuPEAvsrky5cQJzQYUfYn8Rqn2i1mFDOv3YPmVxfrDet+jJf
-SbRDFlzQQjGPPUMhUup2+sHw1dbnPayxXRlvkWW9R0B6O9X/OONli+8OJicRJhHY4NOkl2DklUt3
-hjBMovR6PinGGcxgDXDLEJYNguIGdGs9hobBQXjqGicsefEodfN2DA/6i5+09caVvP6AV34jNjqI
-W47vzmCompj4Gg57Ys1T6fhT8C3fLVXCT8cqgrzs0DeccoCNSQnYvYUAIGSsaQBpcW1wYSDcBYqM
-iQEiBGuOVBA7xHDBC4ZlvHJLENfI1r4sKX/zltuv/rBerW4Ap4qQvk9VNq26lZCJDA2TQsibK5LW
-Jtu/M2nMB4XzDvCNMhJb+CjCZnO7P/dteLn3W85ef0AoAXgRdpihuIn+3mjRx4GxjmsQ6iJmewNx
-kM6agIl1i9TmjRHyCLdurn9crLqnJbNByo5/xwukOFetD+GwF+wet/UmrmdLDlao1wktHDRJqhNv
-BhmZXmm+RKSIOLRbahscI5jXkC5UjtBYLS/tlYIlRakcrPEON4zrGU+x4+jlEDf0Q4qOpc0HiaOL
-VNN3yJzEaLq7aAI7WDaLcLoJgIQqzNrPsoBwQBE7c7vPhLyGalY11+3BpfJG7snj2lNR+JxqObdA
-2KWAEMHKEJ6+RVhm19ifNHEsWi7V4W2ubIYu6h6gi1Swn0yffHoIILyKM4oWxi1BOq0bp8qiSAUF
-PqX8RLm1qJbRbyPY5NzlG9/1tkGGTvYk+QqBilMkTY0Aadf+PCPx4RIbrUo3Cor1XMVJwz9oQWN5
-mpIRIFzIJPW5rDESaMGpgmpzncchjN7DOgtL5nSOTSL1juFuSPOuKHJu7oFFgYFhwMb459vNfJGA
-d37kRuINHCUokc7yKSzxtfd472DHdezSHHHntg5aj7DfHMrmSWQ+zP6BfJZhZ5N+CR+balns/IJl
-tltTpGUfCBJKloeRFHSbHRuuqarm2zUMexJ1nLw97wsLpd6F1bpDJDjKEhWqIMKHktIw0dtnZI/L
-D1AfZ2klOngErkM8V6yeukwZMwhwldIZ85SQJgLPYuQVq1+OT98dW/KWkrUtQBUqY4lfSCZUgGDZ
-zfihGY63IYf1FKthZd4jhcxiRzOphMu33I52mxU5q1YDAXoML2mba2UEcoEtwHPwS6quYaUy28fn
-lpvMQMUDLBLvrKhA+POqSrxmm4xNQxCooLcCkZk+NJhnArpWtssuOfI9blMdrpObCGHpyyt+gjzq
-/OFV2dtd7xBeGzguOmiaeG==
+<?php
+/**
+ * CQueueIterator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CQueueIterator implements an iterator for {@link CQueue}.
+ *
+ * It allows CQueue to return a new iterator for traversing the items in the queue.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.collections
+ * @since 1.0
+ */
+class CQueueIterator implements Iterator
+{
+	/**
+	 * @var array the data to be iterated through
+	 */
+	private $_d;
+	/**
+	 * @var integer index of the current item
+	 */
+	private $_i;
+	/**
+	 * @var integer count of the data items
+	 */
+	private $_c;
+
+	/**
+	 * Constructor.
+	 * @param array $data the data to be iterated through
+	 */
+	public function __construct(&$data)
+	{
+		$this->_d=&$data;
+		$this->_i=0;
+		$this->_c=count($this->_d);
+	}
+
+	/**
+	 * Rewinds internal array pointer.
+	 * This method is required by the interface Iterator.
+	 */
+	public function rewind()
+	{
+		$this->_i=0;
+	}
+
+	/**
+	 * Returns the key of the current array item.
+	 * This method is required by the interface Iterator.
+	 * @return integer the key of the current array item
+	 */
+	public function key()
+	{
+		return $this->_i;
+	}
+
+	/**
+	 * Returns the current array item.
+	 * This method is required by the interface Iterator.
+	 * @return mixed the current array item
+	 */
+	public function current()
+	{
+		return $this->_d[$this->_i];
+	}
+
+	/**
+	 * Moves the internal pointer to the next array item.
+	 * This method is required by the interface Iterator.
+	 */
+	public function next()
+	{
+		$this->_i++;
+	}
+
+	/**
+	 * Returns whether there is an item at current position.
+	 * This method is required by the interface Iterator.
+	 * @return boolean
+	 */
+	public function valid()
+	{
+		return $this->_i<$this->_c;
+	}
+}

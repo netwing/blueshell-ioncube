@@ -1,36 +1,74 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_PHP_DisallowBooleanStatementSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_PHP_DisallowBooleanStatementSniff.
+ *
+ * Ensures that boolean operators are only used inside control structure conditions.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_PHP_DisallowBooleanStatementSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return PHP_CodeSniffer_Tokens::$booleanOperators;
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+        if (isset($tokens[$stackPtr]['nested_parenthesis']) === true) {
+            $foundOwner = false;
+            foreach ($tokens[$stackPtr]['nested_parenthesis'] as $open => $close) {
+                if (isset($tokens[$open]['parenthesis_owner']) === true) {
+                    // Any owner means we are not just a simple statement.
+                    return;
+                }
+            }
+        }
+
+        $error = 'Boolean operators are not allowed outside of control structure conditions';
+        $phpcsFile->addError($error, $stackPtr, 'Found');
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

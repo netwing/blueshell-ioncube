@@ -1,48 +1,83 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Processor;
+
+use Monolog\TestCase;
+
+class WebProcessorTest extends TestCase
+{
+    public function testProcessor()
+    {
+        $server = array(
+            'REQUEST_URI'    => 'A',
+            'REMOTE_ADDR'    => 'B',
+            'REQUEST_METHOD' => 'C',
+            'HTTP_REFERER'   => 'D',
+            'SERVER_NAME'    => 'F',
+            'UNIQUE_ID'      => 'G',
+        );
+
+        $processor = new WebProcessor($server);
+        $record = $processor($this->getRecord());
+        $this->assertEquals($server['REQUEST_URI'], $record['extra']['url']);
+        $this->assertEquals($server['REMOTE_ADDR'], $record['extra']['ip']);
+        $this->assertEquals($server['REQUEST_METHOD'], $record['extra']['http_method']);
+        $this->assertEquals($server['HTTP_REFERER'], $record['extra']['referrer']);
+        $this->assertEquals($server['SERVER_NAME'], $record['extra']['server']);
+        $this->assertEquals($server['UNIQUE_ID'], $record['extra']['unique_id']);
+    }
+
+    public function testProcessorDoNothingIfNoRequestUri()
+    {
+        $server = array(
+            'REMOTE_ADDR'    => 'B',
+            'REQUEST_METHOD' => 'C',
+        );
+        $processor = new WebProcessor($server);
+        $record = $processor($this->getRecord());
+        $this->assertEmpty($record['extra']);
+    }
+
+    public function testProcessorReturnNullIfNoHttpReferer()
+    {
+        $server = array(
+            'REQUEST_URI'    => 'A',
+            'REMOTE_ADDR'    => 'B',
+            'REQUEST_METHOD' => 'C',
+            'SERVER_NAME'    => 'F',
+        );
+        $processor = new WebProcessor($server);
+        $record = $processor($this->getRecord());
+        $this->assertNull($record['extra']['referrer']);
+    }
+
+    public function testProcessorDoesNotAddUniqueIdIfNotPresent()
+    {
+        $server = array(
+            'REQUEST_URI'    => 'A',
+            'REMOTE_ADDR'    => 'B',
+            'REQUEST_METHOD' => 'C',
+            'SERVER_NAME'    => 'F',
+        );
+        $processor = new WebProcessor($server);
+        $record = $processor($this->getRecord());
+        $this->assertFalse(isset($record['extra']['unique_id']));
+    }
+
+    /**
+     * @expectedException UnexpectedValueException
+     */
+    public function testInvalidData()
+    {
+        new WebProcessor(new \stdClass);
+    }
+}

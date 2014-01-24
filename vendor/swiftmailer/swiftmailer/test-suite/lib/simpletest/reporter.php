@@ -1,196 +1,446 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *  base include file for SimpleTest
+ *  @package    SimpleTest
+ *  @subpackage UnitTester
+ *  @version    $Id: reporter.php 1788 2008-04-27 11:01:59Z pp11 $
+ */
+
+/**#@+
+ *  include other SimpleTest class files
+ */
+require_once(dirname(__FILE__) . '/scorer.php');
+/**#@-*/
+
+/**
+ *    Sample minimal test displayer. Generates only
+ *    failure messages and a pass count.
+ *    @package SimpleTest
+ *    @subpackage UnitTester
+ */
+class HtmlReporter extends SimpleReporter {
+    private $character_set;
+
+    /**
+     *    Does nothing yet. The first output will
+     *    be sent on the first test start. For use
+     *    by a web browser.
+     *    @access public
+     */
+    function __construct($character_set = 'ISO-8859-1') {
+        parent::__construct();
+        $this->character_set = $character_set;
+    }
+
+    /**
+     *    Paints the top of the web page setting the
+     *    title to the name of the starting test.
+     *    @param string $test_name      Name class of test.
+     *    @access public
+     */
+    function paintHeader($test_name) {
+        $this->sendNoCacheHeaders();
+        print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">";
+        print "<html>\n<head>\n<title>$test_name</title>\n";
+        print "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=" .
+                $this->character_set . "\">\n";
+        print "<style type=\"text/css\">\n";
+        print $this->getCss() . "\n";
+        print "</style>\n";
+        print "</head>\n<body>\n";
+        print "<h1>$test_name</h1>\n";
+        flush();
+    }
+
+    /**
+     *    Send the headers necessary to ensure the page is
+     *    reloaded on every request. Otherwise you could be
+     *    scratching your head over out of date test data.
+     *    @access public
+     */
+    static function sendNoCacheHeaders() {
+        if (! headers_sent()) {
+            header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+            header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
+            header("Cache-Control: no-store, no-cache, must-revalidate");
+            header("Cache-Control: post-check=0, pre-check=0", false);
+            header("Pragma: no-cache");
+        }
+    }
+
+    /**
+     *    Paints the CSS. Add additional styles here.
+     *    @return string            CSS code as text.
+     *    @access protected
+     */
+    protected function getCss() {
+        return ".fail { background-color: inherit; color: red; }" .
+                ".pass { background-color: inherit; color: green; }" .
+                " pre { background-color: lightgray; color: inherit; }";
+    }
+
+    /**
+     *    Paints the end of the test with a summary of
+     *    the passes and failures.
+     *    @param string $test_name        Name class of test.
+     *    @access public
+     */
+    function paintFooter($test_name) {
+        $colour = ($this->getFailCount() + $this->getExceptionCount() > 0 ? "red" : "green");
+        print "<div style=\"";
+        print "padding: 8px; margin-top: 1em; background-color: $colour; color: white;";
+        print "\">";
+        print $this->getTestCaseProgress() . "/" . $this->getTestCaseCount();
+        print " test cases complete:\n";
+        print "<strong>" . $this->getPassCount() . "</strong> passes, ";
+        print "<strong>" . $this->getFailCount() . "</strong> fails and ";
+        print "<strong>" . $this->getExceptionCount() . "</strong> exceptions.";
+        print "</div>\n";
+        print "</body>\n</html>\n";
+    }
+
+    /**
+     *    Paints the test failure with a breadcrumbs
+     *    trail of the nesting test suites below the
+     *    top level test.
+     *    @param string $message    Failure message displayed in
+     *                              the context of the other tests.
+     *    @access public
+     */
+    function paintFail($message) {
+        parent::paintFail($message);
+        print "<span class=\"fail\">Fail</span>: ";
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        print implode(" -&gt; ", $breadcrumb);
+        print " -&gt; " . $this->htmlEntities($message) . "<br />\n";
+    }
+
+    /**
+     *    Paints a PHP error.
+     *    @param string $message        Message is ignored.
+     *    @access public
+     */
+    function paintError($message) {
+        parent::paintError($message);
+        print "<span class=\"fail\">Exception</span>: ";
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        print implode(" -&gt; ", $breadcrumb);
+        print " -&gt; <strong>" . $this->htmlEntities($message) . "</strong><br />\n";
+    }
+
+    /**
+     *    Paints a PHP exception.
+     *    @param Exception $exception        Exception to display.
+     *    @access public
+     */
+    function paintException($exception) {
+        parent::paintException($exception);
+        print "<span class=\"fail\">Exception</span>: ";
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        print implode(" -&gt; ", $breadcrumb);
+        $message = 'Unexpected exception of type [' . get_class($exception) .
+                '] with message ['. $exception->getMessage() .
+                '] in ['. $exception->getFile() .
+                ' line ' . $exception->getLine() . ']';
+        print " -&gt; <strong>" . $this->htmlEntities($message) . "</strong><br />\n";
+    }
+    
+    /**
+     *    Prints the message for skipping tests.
+     *    @param string $message    Text of skip condition.
+     *    @access public
+     */
+    function paintSkip($message) {
+        parent::paintSkip($message);
+        print "<span class=\"pass\">Skipped</span>: ";
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        print implode(" -&gt; ", $breadcrumb);
+        print " -&gt; " . $this->htmlEntities($message) . "<br />\n";
+    }
+
+    /**
+     *    Paints formatted text such as dumped privateiables.
+     *    @param string $message        Text to show.
+     *    @access public
+     */
+    function paintFormattedMessage($message) {
+        print '<pre>' . $this->htmlEntities($message) . '</pre>';
+    }
+
+    /**
+     *    Character set adjusted entity conversion.
+     *    @param string $message    Plain text or Unicode message.
+     *    @return string            Browser readable message.
+     *    @access protected
+     */
+    protected function htmlEntities($message) {
+        return htmlentities($message, ENT_COMPAT, $this->character_set);
+    }
+}
+
+/**
+ *    Sample minimal test displayer. Generates only
+ *    failure messages and a pass count. For command
+ *    line use. I've tried to make it look like JUnit,
+ *    but I wanted to output the errors as they arrived
+ *    which meant dropping the dots.
+ *    @package SimpleTest
+ *    @subpackage UnitTester
+ */
+class TextReporter extends SimpleReporter {
+
+    /**
+     *    Does nothing yet. The first output will
+     *    be sent on the first test start.
+     *    @access public
+     */
+    function __construct() {
+        parent::__construct();
+    }
+
+    /**
+     *    Paints the title only.
+     *    @param string $test_name        Name class of test.
+     *    @access public
+     */
+    function paintHeader($test_name) {
+        if (! SimpleReporter::inCli()) {
+            header('Content-type: text/plain');
+        }
+        print "$test_name\n";
+        flush();
+    }
+
+    /**
+     *    Paints the end of the test with a summary of
+     *    the passes and failures.
+     *    @param string $test_name        Name class of test.
+     *    @access public
+     */
+    function paintFooter($test_name) {
+        if ($this->getFailCount() + $this->getExceptionCount() == 0) {
+            print "OK\n";
+        } else {
+            print "FAILURES!!!\n";
+        }
+        print "Test cases run: " . $this->getTestCaseProgress() .
+                "/" . $this->getTestCaseCount() .
+                ", Passes: " . $this->getPassCount() .
+                ", Failures: " . $this->getFailCount() .
+                ", Exceptions: " . $this->getExceptionCount() . "\n";
+    }
+
+    /**
+     *    Paints the test failure as a stack trace.
+     *    @param string $message    Failure message displayed in
+     *                              the context of the other tests.
+     *    @access public
+     */
+    function paintFail($message) {
+        parent::paintFail($message);
+        print $this->getFailCount() . ") $message\n";
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        print "\tin " . implode("\n\tin ", array_reverse($breadcrumb));
+        print "\n";
+    }
+
+    /**
+     *    Paints a PHP error or exception.
+     *    @param string $message        Message to be shown.
+     *    @access public
+     *    @abstract
+     */
+    function paintError($message) {
+        parent::paintError($message);
+        print "Exception " . $this->getExceptionCount() . "!\n$message\n";
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        print "\tin " . implode("\n\tin ", array_reverse($breadcrumb));
+        print "\n";
+    }
+
+    /**
+     *    Paints a PHP error or exception.
+     *    @param Exception $exception      Exception to describe.
+     *    @access public
+     *    @abstract
+     */
+    function paintException($exception) {
+        parent::paintException($exception);
+        $message = 'Unexpected exception of type [' . get_class($exception) .
+                '] with message ['. $exception->getMessage() .
+                '] in ['. $exception->getFile() .
+                ' line ' . $exception->getLine() . ']';
+        print "Exception " . $this->getExceptionCount() . "!\n$message\n";
+        $breadcrumb = $this->getTestList();
+        array_shift($breadcrumb);
+        print "\tin " . implode("\n\tin ", array_reverse($breadcrumb));
+        print "\n";
+    }
+    
+    /**
+     *    Prints the message for skipping tests.
+     *    @param string $message    Text of skip condition.
+     *    @access public
+     */
+    function paintSkip($message) {
+        parent::paintSkip($message);
+        print "Skip: $message\n";
+    }
+
+    /**
+     *    Paints formatted text such as dumped privateiables.
+     *    @param string $message        Text to show.
+     *    @access public
+     */
+    function paintFormattedMessage($message) {
+        print "$message\n";
+        flush();
+    }
+}
+
+/**
+ *    Runs just a single test group, a single case or
+ *    even a single test within that case.
+ *    @package SimpleTest
+ *    @subpackage UnitTester
+ */
+class SelectiveReporter extends SimpleReporterDecorator {
+    private $just_this_case = false;
+    private $just_this_test = false;
+    private $on;
+    
+    /**
+     *    Selects the test case or group to be run,
+     *    and optionally a specific test.
+     *    @param SimpleScorer $reporter    Reporter to receive events.
+     *    @param string $just_this_case    Only this case or group will run.
+     *    @param string $just_this_test    Only this test method will run.
+     */
+    function __construct($reporter, $just_this_case = false, $just_this_test = false) {
+        if (isset($just_this_case) && $just_this_case) {
+            $this->just_this_case = strtolower($just_this_case);
+            $this->off();
+        } else {
+            $this->on();
+        }
+        if (isset($just_this_test) && $just_this_test) {
+            $this->just_this_test = strtolower($just_this_test);
+        }
+        parent::__construct($reporter);
+    }
+
+    /**
+     *    Compares criteria to actual the case/group name.
+     *    @param string $test_case    The incoming test.
+     *    @return boolean             True if matched.
+     *    @access protected
+     */
+    protected function matchesTestCase($test_case) {
+        return $this->just_this_case == strtolower($test_case);
+    }
+
+    /**
+     *    Compares criteria to actual the test name. If no
+     *    name was specified at the beginning, then all tests
+     *    can run.
+     *    @param string $method       The incoming test method.
+     *    @return boolean             True if matched.
+     *    @access protected
+     */
+    protected function shouldRunTest($test_case, $method) {
+        if ($this->isOn() || $this->matchesTestCase($test_case)) {
+            if ($this->just_this_test) {
+                return $this->just_this_test == strtolower($method);
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    /**
+     *    Switch on testing for the group or subgroup.
+     *    @access private
+     */
+    protected function on() {
+        $this->on = true;
+    }
+    
+    /**
+     *    Switch off testing for the group or subgroup.
+     *    @access private
+     */
+    protected function off() {
+        $this->on = false;
+    }
+    
+    /**
+     *    Is this group actually being tested?
+     *    @return boolean     True if the current test group is active.
+     *    @access private
+     */
+    protected function isOn() {
+        return $this->on;
+    }
+
+    /**
+     *    Veto everything that doesn't match the method wanted.
+     *    @param string $test_case       Name of test case.
+     *    @param string $method          Name of test method.
+     *    @return boolean                True if test should be run.
+     *    @access public
+     */
+    function shouldInvoke($test_case, $method) {
+        if ($this->shouldRunTest($test_case, $method)) {
+            return $this->reporter->shouldInvoke($test_case, $method);
+        }
+        return false;
+    }
+
+    /**
+     *    Paints the start of a group test.
+     *    @param string $test_case     Name of test or other label.
+     *    @param integer $size         Number of test cases starting.
+     *    @access public
+     */
+    function paintGroupStart($test_case, $size) {
+        if ($this->just_this_case && $this->matchesTestCase($test_case)) {
+            $this->on();
+        }
+        $this->reporter->paintGroupStart($test_case, $size);
+    }
+
+    /**
+     *    Paints the end of a group test.
+     *    @param string $test_case     Name of test or other label.
+     *    @access public
+     */
+    function paintGroupEnd($test_case) {
+        $this->reporter->paintGroupEnd($test_case);
+        if ($this->just_this_case && $this->matchesTestCase($test_case)) {
+            $this->off();
+        }
+    }
+}
+
+/**
+ *    Suppresses skip messages.
+ *    @package SimpleTest
+ *    @subpackage UnitTester
+ */
+class NoSkipsReporter extends SimpleReporterDecorator {
+    
+    /**
+     *    Does nothing.
+     *    @param string $message    Text of skip condition.
+     *    @access public
+     */
+    function paintSkip($message) { }
+}
 ?>
-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

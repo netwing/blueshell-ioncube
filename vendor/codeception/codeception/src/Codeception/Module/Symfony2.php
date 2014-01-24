@@ -1,109 +1,172 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jO2lhKokv4nmo+k+Iuiji+Wtvim=
+<?php
+namespace Codeception\Module;
+
+use Codeception\Exception\ModuleRequire;
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpKernel\Exception\FlattenException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * This module uses Symfony2 Crawler and HttpKernel to emulate requests and get response.
+ *
+ * It implements common Framework interface.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: codecept@davert.mail.ua
+ *
+ * ## Config
+ *
+ * * app_path: 'app' - specify custom path to your app dir, where bootstrap cache and kernel interface is located.
+ * * environment: 'local' - environment used for load kernel
+* 
+ * ### Example (`functional.suite.yml`)
+ *
+ *     modules: 
+ *        enabled: [Symfony2]
+ *        config:
+ *           Symfony2:
+ *              app_path: 'app/front'
+ *              environment: 'local_test'
+ *
+ * ## Public Properties
+ *
+ * * kernel - HttpKernel instance
+ * * client - current Crawler instance
+ *
+ */
+
+class Symfony2 extends \Codeception\Util\Framework
+{
+    /**
+     * @var \Symfony\Component\HttpKernel\Kernel
+     */
+    public $kernel;
+
+    /**
+     * @var \Symfony\Component\DependencyInjection\ContainerInterface
+     */
+    public $container;
+
+    public $config = array('app_path' => 'app', 'environment' => 'test');
+    
+    /**
+     * @var
+     */
+    protected $kernelClass;
+
+    protected $clientClass = '\Symfony\Component\HttpKernel\Client';
+
+
+    public function _initialize() {
+        $cache = \Codeception\Configuration::projectDir() . $this->config['app_path'] . DIRECTORY_SEPARATOR . 'bootstrap.php.cache';
+        if (!file_exists($cache)) throw new ModuleRequire(__CLASS__, 'Symfony2 bootstrap file not found in '.$cache);
+        require_once $cache;
+        $this->kernelClass = $this->getKernelClass();
+        $this->kernel = new $this->kernelClass($this->config['environment'], true);
+    }
+    
+    public function _before(\Codeception\TestCase $test) {
+        $this->kernel->boot();
+        $this->container = $this->kernel->getContainer();
+        if ($this->container->has('test.client')) { // it is Symfony2.2
+            $this->client = $this->container->get('test.client');
+        } else {
+            $this->client = new $this->clientClass($this->kernel);
+        }
+        $this->client->followRedirects(true);
+    }
+
+    public function _after(\Codeception\TestCase $test) {
+        $this->kernel->shutdown();
+        parent::_after($test);
+    }
+
+    /**
+     * Attempts to guess the kernel location.
+     *
+     * When the Kernel is located, the file is required.
+     *
+     * @return string The Kernel class name
+     */
+    protected function getKernelClass()
+    {
+        $finder = new Finder();
+        $finder->name('*Kernel.php')->depth('0')->in(\Codeception\Configuration::projectDir() . $this->config['app_path']);
+        $results = iterator_to_array($finder);
+        if (!count($results)) {
+            throw new ModuleRequire(__CLASS__, 'AppKernel was not found. Specify directory where Kernel class for your application is located in "app_dir" parameter.');
+        }
+
+        $file = current($results);
+        $class = $file->getBasename('.php');
+
+        require_once $file;
+
+        return $class;
+    }
+
+    /**
+     * Checks if any email were sent by last request
+     *
+     * @throws \LogicException
+     */
+    public function seeEmailIsSent() {
+        $profile = $this->getProfiler();
+        if (!$profile) \PHPUnit_Framework_Assert::fail('Emails can\'t be tested without Profiler');
+        if (!$profile->hasCollector('swiftmailer')) \PHPUnit_Framework_Assert::fail('Emails can\'t be tested without SwiftMailer connector');
+
+        \PHPUnit_Framework_Assert::assertGreaterThan(0, $profile->getCollector('swiftmailer')->getMessageCount());
+    }
+
+    /**
+     * Grabs a service from Symfony DIC container.
+     * Recommended to use for unit testing.
+     *
+     * ``` php
+     * <?php
+     * $em = $I->grabServiceFromContainer('doctrine');
+     * ?>
+     * ```
+     *
+     * @param $service
+     * @return mixed
+     */
+    public function grabServiceFromContainer($service) {
+        if (!$this->kernel->getContainer()->has($service)) $this->fail("Service $service is not available in container");
+        return $this->kernel->getContainer()->get($service);
+    }
+
+    /**
+     * @return \Symfony\Component\HttpKernel\Profiler\Profile
+     */
+    protected function getProfiler()
+    {
+        if (!$this->kernel->getContainer()->has('profiler')) return null;
+        $profiler = $this->kernel->getContainer()->get('profiler');
+        return $profiler->loadProfileFromResponse($this->client->getResponse());
+    }
+
+    protected function debugResponse()
+    {
+        $this->debugSection('Page', $this->client->getHistory()->current()->getUri());
+        if ($profile = $this->getProfiler()) {
+            if ($profile->hasCollector('security')) {
+                if ($profile->getCollector('security')->isAuthenticated()) {
+                    $this->debugSection('User', $profile->getCollector('security')->getUser() . ' [' . implode(',', $profile->getCollector('security')->getRoles()) . ']');
+                } else {
+                    $this->debugSection('User', 'Anonymous');
+                }
+            }
+            if ($profile->hasCollector('swiftmailer')) {
+                $messages = $profile->getCollector('swiftmailer')->getMessageCount();
+                if ($messages) $this->debugSection('Emails', $messages . ' sent');
+            }
+            if ($profile->hasCollector('timer'))    $this->debugSection('Time', $profile->getCollector('timer')->getTime());
+            if ($profile->hasCollector('db'))       $this->debugSection('Db', $profile->getCollector('db')->getQueryCount() . ' queries');
+        }
+    }
+}

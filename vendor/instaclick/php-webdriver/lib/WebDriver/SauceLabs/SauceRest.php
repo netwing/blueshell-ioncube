@@ -1,99 +1,286 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Copyright 2012-2013 Anthon Pang. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package WebDriver
+ *
+ * @author Anthon Pang <apang@softwaredevelopment.ca>
+ * @author Fabrizio Branca <mail@fabrizio-branca.de>
+ */
+
+namespace WebDriver\SauceLabs;
+
+use WebDriver\ServiceFactory;
+
+/**
+ * WebDriver\SauceLabs\SauceRest class
+ *
+ * @package WebDriver
+ */
+class SauceRest
+{
+    /**
+     * @var string
+     */
+    private $userId;
+
+    /**
+     * @var string
+     */
+    private $accessKey;
+
+    /**
+     * Constructor
+     *
+     * @param string $userId    Your Sauce user name
+     * @param string $accessKey Your Sauce API key
+     */
+    public function __construct($userId, $accessKey)
+    {
+        $this->userId = $userId;
+        $this->accessKey = $accessKey;
+    }
+
+    /**
+     * Execute Sauce Labs REST API command
+     *
+     * @param string $requestMethod HTTP request method
+     * @param string $url           URL
+     * @param mixed  $parameters    Parameters
+     * 
+     * @return mixed
+     *
+     * @see http://saucelabs.com/docs/saucerest
+     */
+    protected function execute($requestMethod, $url, $parameters = null)
+    {
+        $extraOptions = array(
+            CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
+            CURLOPT_USERPWD => $this->userId . ':' . $this->accessKey,
+        );
+
+        $url = 'https://saucelabs.com/rest/v1/' . $url;
+
+        list($rawResults, $info) = ServiceFactory::getInstance()->getService('service.curl')->execute($requestMethod, $url, $parameters, $extraOptions);
+
+        return json_decode($rawResults, true);
+    }
+
+    /**
+     * Get account details: /rest/v1/users/:userId (GET)
+     *
+     * @param string $userId
+     *
+     * @return array
+     */
+    public function getAccountDetails($userId)
+    {
+        return $this->execute('GET', 'users/' . $userId);
+    }
+
+    /**
+     * Check account limits: /rest/v1/limits (GET)
+     *
+     * @return array
+     */
+    public function getAccountLimits()
+    {
+        return $this->execute('GET', 'limits');
+    }
+
+    /**
+     * Create new sub-account: /rest/v1/users/:userId (POST)
+     *
+     * For "partners", $accountInfo also contains 'plan' => (one of 'free', 'small', 'team', 'com', or 'complus')
+     *
+     * @param array $accountInfo array('username' => ..., 'password' => ..., 'name' => ..., 'email' => ...)
+     *
+     * @return array array('access_key' => ..., 'minutes' => ..., 'id' => ...)
+     */
+    public function createSubAccount($accountInfo)
+    {
+        return $this->execute('POST', 'users/' . $this->userId, $accountInfo);
+    }
+
+    /**
+     * Update sub-account service plan: /rest/v1/users/:userId/subscription (POST)
+     *
+     * @param string $userId User ID
+     * @param string $plan   Plan
+     *
+     * @return array
+     */
+    public function updateSubAccount($userId, $plan)
+    {
+        return $this->execute('POST', 'users/' . $userId . '/subscription', array('plan' => $plan));
+    }
+
+    /**
+     * Unsubscribe a sub-account: /rest/v1/users/:userId/subscription (DELETE)
+     *
+     * @param string $userId User ID
+     *
+     * @return array
+     */
+    public function unsubscribeSubAccount($userId)
+    {
+        return $this->execute('DELETE', 'users/' . $userId . '/subscription');
+    }
+
+    /**
+     * Get current account activity: /rest/v1/:userId/activity (GET)
+     *
+     * @return array
+     */
+    public function getActivity()
+    {
+        return $this->execute('GET', $this->userId . '/activity');
+    }
+
+    /**
+     * Get historical account usage: /rest/v1/:userId/usage (GET)
+     *
+     * @param string $start Optional start date YYYY-MM-DD
+     * @param string $end   Optional end date YYYY-MM-DD
+     *
+     * @return array
+     */
+    public function getUsage($start = null, $end = null)
+    {
+        $query = http_build_query(array(
+            'start' => $start,
+            'end' => $end,
+        ));
+
+        return $this->execute('GET', $this->userId . '/usage' . (strlen($query) ? '?' . $query : ''));
+    }
+
+    /**
+     * Get jobs: /rest/v1/:userId/jobs (GET)
+     *
+     * @param boolean $full
+     *
+     * @return array
+     */
+    public function getJobs($full = null)
+    {
+        $query = http_build_query(array(
+            'full' => (isset($full) && $full) ? 'true' : null,
+        ));
+
+        return $this->execute('GET', $this->userId . '/jobs' . (strlen($query) ? '?' . $query : ''));
+    }
+
+    /**
+     * Get full information for job: /rest/v1/:userId/jobs/:jobId (GET)
+     *
+     * @param string $jobId
+     *
+     * @return array
+     */
+    public function getJob($jobId)
+    {
+        return $this->execute('GET', $this->userId . '/jobs/' . $jobId);
+    }
+
+    /**
+     * Update existing job: /rest/v1/:userId/jobs/:jobId (PUT)
+     *
+     * @param string $jobId   Job ID
+     * @param array  $jobInfo Job information
+     *
+     * @return array
+     */
+    public function updateJob($jobId, $jobInfo)
+    {
+        return $this->execute('PUT', $this->userId . '/jobs/' . $jobId, $jobInfo);
+    }
+
+    /**
+     * Stop job: /rest/v1/:userId/jobs/:jobId/stop (PUT)
+     *
+     * @param string $jobId
+     *
+     * @return array
+     */
+    public function stopJob($jobId)
+    {
+        return $this->execute('PUT', $this->userId . '/jobs/' . $jobId . '/stop');
+    }
+
+    /**
+     * Get running tunnels for a given user: /rest/v1/:userId/tunnels (GET)
+     *
+     * @return array
+     */
+    public function getTunnels()
+    {
+        return $this->execute('GET', $this->userId . '/tunnels');
+    }
+
+    /**
+     * Get full information for a tunnel: /rest/v1/:userId/tunnels/:tunnelId (GET)
+     *
+     * @param string $tunnelId
+     *
+     * @return array
+     */
+    public function getTunnel($tunnelId)
+    {
+        return $this->execute('GET', $this->userId . '/tunnels/' . $tunnelId);
+    }
+
+    /**
+     * Shut down a tunnel: /rest/v1/:userId/tunnels/:tunnelId (DELETE)
+     *
+     * @param string $tunnelId
+     *
+     * @return array
+     */
+    public function shutdownTunnel($tunnelId)
+    {
+        return $this->execute('DELETE', $this->userId . '/tunnels/' . $tunnelId);
+    }
+
+    /**
+     * Get current status of Sauce Labs' services: /rest/v1/info/status (GET)
+     *
+     * @return array array('wait_time' => ..., 'service_operational' => ..., 'status_message' => ...)
+     */
+    public function getStatus()
+    {
+        return $this->execute('GET', 'info/status');
+    }
+
+    /**
+     * Get currently supported browsers: /rest/v1/info/browsers (GET)
+     *
+     * @return array
+     */
+    public function getBrowsers()
+    {
+        return $this->execute('GET', 'info/browsers');
+    }
+
+    /**
+     * Get number of tests executed so far on Sauce Labs: /rest/v1/info/counter (GET)
+     *
+     * @return array
+     */
+    public function getCounter()
+    {
+        return $this->execute('GET', 'info/counter');
+    }
+}

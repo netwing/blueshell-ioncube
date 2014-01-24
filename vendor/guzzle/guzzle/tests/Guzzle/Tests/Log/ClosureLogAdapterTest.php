@@ -1,32 +1,30 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Log;
+
+use Guzzle\Log\ClosureLogAdapter;
+
+/**
+ * @covers Guzzle\Log\ClosureLogAdapter
+ */
+class ClosureLogAdapterTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testClosure()
+    {
+        $that = $this;
+        $modified = null;
+        $this->adapter = new ClosureLogAdapter(function($message, $priority, $extras = null) use ($that, &$modified) {
+            $modified = array($message, $priority, $extras);
+        });
+        $this->adapter->log('test', LOG_NOTICE, 'localhost');
+        $this->assertEquals(array('test', LOG_NOTICE, 'localhost'), $modified);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testThrowsExceptionWhenNotCallable()
+    {
+        $this->adapter = new ClosureLogAdapter(123);
+    }
+}

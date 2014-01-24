@@ -1,48 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Fluent interface for validating the contents of member variables.
+ * This should be immutable. See HTMLPurifier_ConfigSchema_Validator for
+ * use-cases. We name this an 'atom' because it's ONLY for validations that
+ * are independent and usually scalar.
+ */
+class HTMLPurifier_ConfigSchema_ValidatorAtom
+{
+
+    protected $context, $obj, $member, $contents;
+
+    public function __construct($context, $obj, $member) {
+        $this->context     = $context;
+        $this->obj         = $obj;
+        $this->member      = $member;
+        $this->contents    =& $obj->$member;
+    }
+
+    public function assertIsString() {
+        if (!is_string($this->contents)) $this->error('must be a string');
+        return $this;
+    }
+
+    public function assertIsBool() {
+        if (!is_bool($this->contents)) $this->error('must be a boolean');
+        return $this;
+    }
+
+    public function assertIsArray() {
+        if (!is_array($this->contents)) $this->error('must be an array');
+        return $this;
+    }
+
+    public function assertNotNull() {
+        if ($this->contents === null) $this->error('must not be null');
+        return $this;
+    }
+
+    public function assertAlnum() {
+        $this->assertIsString();
+        if (!ctype_alnum($this->contents)) $this->error('must be alphanumeric');
+        return $this;
+    }
+
+    public function assertNotEmpty() {
+        if (empty($this->contents)) $this->error('must not be empty');
+        return $this;
+    }
+
+    public function assertIsLookup() {
+        $this->assertIsArray();
+        foreach ($this->contents as $v) {
+            if ($v !== true) $this->error('must be a lookup array');
+        }
+        return $this;
+    }
+
+    protected function error($msg) {
+        throw new HTMLPurifier_ConfigSchema_Exception(ucfirst($this->member) . ' in ' . $this->context . ' ' . $msg);
+    }
+
+}
+
+// vim: et sw=4 sts=4

@@ -1,45 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPyK++2IW0y4BgOzj1yoPpvz6esxnwu0wxETqQQ4RBT++aD4tjb8VmQ9HWzOgzz73DmroWW41
-evSaXZJZ5nMILi+MZ8YA5z5JT5mm5a3oE8kqj+axc8mQZRI+KixVuBe+deRI6+Rk2Vb6zOv8hrGo
-IL5PJh7BG0Fp0QBIyMmVTgytt0UomDQexvexZr326LszDuE3kEcZyAGLOrRTvCS67RmQg9jl/Gom
-2582qOlgXB9GBsCg7PA8KQzHAE4xzt2gh9fl143SQNGHP7Xtc6TVbN0e5YVOVCc/M/zVXbY9Bjt5
-OWcOlzuO4AMityWX8HNUcdnC9c0L5fyIZcZPVgitvBUs98jb/UA07VwWuFnxkH5jc/MCvOwZBuvy
-cpPOJkFTkxJm1QmUOm1k3nXUfHVk38NIgWhskR4+HkGCbzDYB3wo8P1Vg/8lt+PPUo+9xNGPGYFK
-RzPmohIuf9SFyjMf6PFfRruUewVSBNEN3lxYxPUSbFwJXdNnamlbasPik7qehnv6Df61ARhmCVeJ
-srj4yckt2fA31e8TT9SP1yzqlzf3tc02KzcToTMd0NcomqsxlHZLyFL+D4Jq47NDWO8QE9m7Uhjr
-6fiaOZHvCQVVLu6fB6XPps6Rv5ul/oGjY5mehF9MDzW609GtAN0Ft0XULIV5THMA0T+bSzKQJXgn
-/aGg18fs2sXfFjGKd9zG5Aaqu5Kab032dFWvqWaLE6bWlO5ngDeFpXI0D7TOSl9hMETnPVNlTC2d
-WXdF/mNiACG0GVd/R9kxePiJ5HXaP3SGwwJUNC1Aec7Mxh07dU/WGiYK5iIFxvZUn2+JavGLQY4M
-tn5N/zrTurH99t9gAVV3PQu0wjdQ/KlEKwbGhIRbVJffb7G3w6q/JsRu6J493dOFpKq4tc9EruDv
-JhmLdRjFAC+mE8SgxU2QxONpvdJxfJl+HUEVQhgKItJyGpHDfynwX7P9KBecBhG+HX/DYHpTWpZ2
-1PON2Bp7fy8BC9ILNpCMfgYFrFrHKNDnXQVnEb2jnW/3BhrQhOjn9kVbw6hfsUyFbXRF0AHBS6/X
-J1Urr3V9uaPklyCaZQ6XtduwGP0EeAyZrNgE/JZjUnbGdCdTRWnGAm0Zd06MoK2sWy7iUHHkUWne
-hq8PpgReuL/GT4kUf2ISeRCr2Qzrlkz62loONM7fwn8JMMzCPi2GPLf8mabI7/NBspV9RGzwbX19
-YisE+kkOHApAgOKj5/KCeE0GRJdGnVe3pYENzvzPIZ7aJ5kU1oVVsF40/OvUL7Bj1yLbjYbeu4sG
-1btw7jajJ6UAV0Qs9qSGbDCFWnvYTK/aGeTrbhpig4GXtu7tnT0jHEPavR1JmSlnAcUejb86hc4V
-vuT2IZ5W0fr7uTXsnn9biNf0elXcOvLG85G13NAqDhfb6OlpOLq55KCtSmxhKm1O05b9Wei5R4Dp
-Nt+HZHteY4iKrwMSFs+/8R04PcMJhHuDAVMpVIagGce4/zdl32t6yu6QQT97QYg2gIHtnO3LwI2W
-m92rv8M8laP/sn/IilLSLdJ98FssFmmkAsKhoup4ZRuC4IXIZypNWPXZJqPgrh+kyq4NIRnOXMC+
-oWYF+NfjKm9doixiEv/6P0/P7Qukjs9tSjhmCbH67djpH+SE7VxcYHm/GmdyeTTVvJOIrCnjuF8I
-cxZziiqcaoECoWp9VA4Ve2OvS1GpPybaMk3T1CcSmhVPpZvbMHKUpQtQtgMx1AAzf/uMlDbfbw/k
-CAA2YWUMmN3bjiH6oLEWKY8gb5rlfZM+PnGXrHngfhCClyuGnhDijxOGlzYRZzeggQhVtregCQRN
-Ctyc4PY31b62elCtN+GoTT1Dmuqn+FLuGz9Z3i9LRy49aeKog0qFmJ34aeq2OqyT0f2FSN+jYt2h
-cm1Rm/OfB1hCumVOh4GlNF85KbzTe2MOxaXzkn1dTXm7dc2MtdZaSpL0EVSO1f8YHf3oqR1vpeSv
-/eXSKEyqC9x0kZqQMZ5O88Ffxx7//TilTlP8N3hbfmTMKChJDBsySXm0eHtPhl1jM48dWSCuQi84
-AT/qWZ4wKHF4hg1NFlFDtP5klZvd20l+Wa9J3xIwjLGECpkopFIqmG41mogg/0f8+8jQNIJ8duIZ
-0C5Yyb67Bdbabwu+BYpA2qCKCYr/Ss0VMxr2VTarIPSJkFSf0q78w0+4SZDoC6k1D7MPvq5z2+gL
-ybr/xvtJG+qYTbVAp8jrKnlpoVL/aGi8C+IAYv8muYdSix7I5PRiigX2qFBJW7yeVHVoH9cPA4CK
-07l8ohHq//jSVRAMn3QsvIL/p/7Fb+WtmdLxSpBoZOZ0/Czp4IMf7H3xmau1d7ZFE2rXULI/Mo7x
-yUZTRQdj0qrCNFz6zd0OLJ+8xzDrdekSU6gJ2Xkds/0n2WiHRXOX66t4hWdM8EsWpd4DY2NIKiny
-+iP6C3GjVaT0VDU9FtkfiVmgoHssafJyqstosos3Nqnhl4lDmsvaNYqIoTyzzGKtnTTfhIZNUgsk
-OOlo7xiXe15i9+P8xAvq+PHFvrF3S9xqwnhWgKtUAFskXLm5Z2pW6kbcqyXQeL85UXHA4WXDS2J2
-MXJHXlQ7GydVs7vjmSn1ti2clA1NI2wkR3WvsKnk9ZGSVeeDdmLmqg1DNddBtzIF/ZSnNWwVVhNI
-uDJKAh3ZppGdK+8UH4KFCyV6hCp9EEqoamY+KDjdRoc+abKwBYbu7QVAf1OpAOjm/v1hmim7AoZi
-E/eo/GJlVLYr+IvGc38D3Uz5zxQkM8wZQDnQRMQDg1tJfhfjANMLa04RmQPXuIE8e/aJ/wb77/V6
-KaQqsa/lz3PI7qpP83sDUYmixOHn83vTDmZd8nDFcWf6bH973ZLjIwwP9IsrXHrF/fwiZ8Ezzj+s
-Ib862gS8BRtg1mU8UMUU89TK4HkZ2Hj72CqvpWVhyrrSGd8G881UAFeqVI6oppK8c0kklvZO+BKQ
-85qg4v+iBjuWX0JroA8CtofXOWHbKyyCQZ0L+yU2dD2iq/cVrSl5OfukhUZVjexXh1J5z2sYN1Bv
-gYfYIdBuqsewnlYGoSYmFqOa3w+SkjJVmQYgOZ3oS+bsxsbdcIv89emUMP8+flggGQTVlnAyfsmD
-oua=
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class PluginModifierCountWordsTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testDefault()
+    {
+        $result = "7";
+        $tpl = $this->smarty->createTemplate('eval:{"Dealers Will Hear Car Talk at Noon."|count_words}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testDefaultWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = "7";
+        $tpl = $this->smarty->createTemplate('eval:{"Dealers Will Hear Car Talk at Noon."|count_words}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testDashes()
+    {
+        $result = "7";
+        $tpl = $this->smarty->createTemplate('eval:{"Smalltime-Dealers Will Hear Car Talk at Noon."|count_words}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testDashesWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = "7";
+        $tpl = $this->smarty->createTemplate('eval:{"Smalltime-Dealers Will Hear Car Talk at Noon."|count_words}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testUmlauts()
+    {
+        $result = "7";
+        $tpl = $this->smarty->createTemplate('eval:{"Dealers Will Hear Cär Talk at Nöön."|count_words}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testUmlautsWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = "7";
+        $tpl = $this->smarty->createTemplate('eval:{"Dealers Will Hear Cär Talk at Nöön."|count_words}');
+        $this->assertNotEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+}

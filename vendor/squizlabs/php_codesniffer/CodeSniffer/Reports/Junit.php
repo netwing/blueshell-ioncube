@@ -1,75 +1,147 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * JUnit report for PHP_CodeSniffer.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Oleg Lobach <oleg@lobach.info>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * JUnit report for PHP_CodeSniffer.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Oleg Lobach <oleg@lobach.info>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_Reports_Junit implements PHP_CodeSniffer_Report
+{
+
+    /**
+     * A count of tests that have been performed.
+     *
+     * @var int
+     */
+    private $_tests = 0;
+
+
+    /**
+     * Generate a partial report for a single processed file.
+     *
+     * Function should return TRUE if it printed or stored data about the file
+     * and FALSE if it ignored the file. Returning TRUE indicates that the file and
+     * its data should be counted in the grand totals.
+     *
+     * @param array   $report      Prepared report data.
+     * @param boolean $showSources Show sources?
+     * @param int     $width       Maximum allowed line width.
+     *
+     * @return boolean
+     */
+    public function generateFileReport(
+        $report,
+        $showSources=false,
+        $width=80
+    ) {
+        if (count($report['messages']) === 0) {
+            $this->_tests++;
+        } else {
+            $this->_tests += ($report['errors'] + $report['warnings']);
+        }
+
+        $out = new XMLWriter;
+        $out->openMemory();
+        $out->setIndent(true);
+
+        $out->startElement('testsuite');
+        $out->writeAttribute('name', $report['filename']);
+
+        if (count($report['messages']) === 0) {
+            $out->writeAttribute('tests', 1);
+            $out->writeAttribute('failures', 0);
+
+            $out->startElement('testcase');
+            $out->writeAttribute('name', $report['filename']);
+            $out->endElement();
+        } else {
+            $failures = ($report['errors'] + $report['warnings']);
+            $out->writeAttribute('tests', $failures);
+            $out->writeAttribute('failures', $failures);
+
+            foreach ($report['messages'] as $line => $lineErrors) {
+                foreach ($lineErrors as $column => $colErrors) {
+                    foreach ($colErrors as $error) {
+                        $out->startElement('testcase');
+                        $out->writeAttribute('name', $error['source'].' at '.$report['filename']." ($line:$column)");
+
+                        $error['type'] = strtolower($error['type']);
+                        if (PHP_CODESNIFFER_ENCODING !== 'utf-8') {
+                            $error['message'] = iconv(PHP_CODESNIFFER_ENCODING, 'utf-8', $error['message']);
+                        }
+
+                        $out->startElement('failure');
+                        $out->writeAttribute('type', $error['type']);
+                        $out->writeAttribute('message', $error['message']);
+                        $out->endElement();
+
+                        $out->endElement();
+                    }
+                }
+            }
+        }//end if
+
+        $out->endElement();
+        echo $out->flush();
+        return true;
+
+    }//end generateFileReport()
+
+
+    /**
+     * Prints all violations for processed files, in a proprietary XML format.
+     *
+     * @param string  $cachedData    Any partial report data that was returned from
+     *                               generateFileReport during the run.
+     * @param int     $totalFiles    Total number of files processed during the run.
+     * @param int     $totalErrors   Total number of errors found during the run.
+     * @param int     $totalWarnings Total number of warnings found during the run.
+     * @param boolean $showSources   Show sources?
+     * @param int     $width         Maximum allowed line width.
+     * @param boolean $toScreen      Is the report being printed to screen?
+     *
+     * @return void
+     */
+    public function generate(
+        $cachedData,
+        $totalFiles,
+        $totalErrors,
+        $totalWarnings,
+        $showSources=false,
+        $width=80,
+        $toScreen=true
+    ) {
+        $failures = ($totalErrors + $totalWarnings);
+        echo '<?xml version="1.0" encoding="UTF-8"?>'.PHP_EOL;
+        echo '<testsuites name="PHP_CodeSniffer '.PHP_CodeSniffer::VERSION.'" tests="'.$this->_tests.'" failures="'.$failures.'">'.PHP_EOL;
+        echo $cachedData;
+        echo '</testsuites>'.PHP_EOL;
+
+    }//end generate()
+
+
+}//end class
+
 ?>
-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
-jcXCRIWIP4SzvejQIO/QgZwOtVO=

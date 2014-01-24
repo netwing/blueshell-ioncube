@@ -1,40 +1,72 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Ensures that widgets are not manually created.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Ensures that widgets are not manually created.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class MySource_Sniffs_Objects_DisallowNewWidgetSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_NEW);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $className = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
+        if ($tokens[$className]['code'] !== T_STRING) {
+            return;
+        }
+
+        if (substr(strtolower($tokens[$className]['content']), -10) === 'widgettype') {
+            $widgetType = substr($tokens[$className]['content'], 0, -10);
+            $error      = 'Manual creation of widget objects is banned; use Widget::getWidget(\'%s\'); instead';
+            $data       = array($widgetType);
+            $phpcsFile->addError($error, $stackPtr, 'Found', $data);
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-eYcY6r6oxyAW35vaZR3bTQhiPQuFaR2P

@@ -1,95 +1,137 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: interfaces_test.php 1781 2008-04-22 10:43:01Z lastcraft $
+require_once(dirname(__FILE__) . '/../autorun.php');
+if (function_exists('spl_classes')) {
+    include(dirname(__FILE__) . '/support/spl_examples.php');
+}
+if (version_compare(PHP_VERSION, '5.1', '>=')) {
+    include(dirname(__FILE__) . '/interfaces_test_php5_1.php');
+}
+
+interface DummyInterface {
+    function aMethod();
+    function anotherMethod($a);
+    function &referenceMethod(&$a);
+}
+
+Mock::generate('DummyInterface');
+Mock::generatePartial('DummyInterface', 'PartialDummyInterface', array());
+
+class TestOfMockInterfaces extends UnitTestCase {
+
+    function testCanMockAnInterface() {
+        $mock = new MockDummyInterface();
+        $this->assertIsA($mock, 'SimpleMock');
+        $this->assertIsA($mock, 'MockDummyInterface');
+        $this->assertTrue(method_exists($mock, 'aMethod'));
+        $this->assertTrue(method_exists($mock, 'anotherMethod'));
+        $this->assertNull($mock->aMethod());
+    }
+
+    function testMockedInterfaceExpectsParameters() {
+        $mock = new MockDummyInterface();
+        $this->expectError();
+        $mock->anotherMethod();
+    }
+
+    function testCannotPartiallyMockAnInterface() {
+        $this->assertFalse(class_exists('PartialDummyInterface'));
+    }
+}
+
+class TestOfSpl extends UnitTestCase {
+    
+    function skip() {
+        $this->skipUnless(function_exists('spl_classes'), 'No SPL module loaded');
+    }
+
+    function testCanMockAllSplClasses() {
+        if (! function_exists('spl_classes')) {
+            return;
+        }
+        foreach(spl_classes() as $class) {
+            if ($class == 'SplHeap') {
+                continue;
+            }
+            if (version_compare(PHP_VERSION, '5.1', '<') &&
+                $class == 'CachingIterator' ||
+                $class == 'CachingRecursiveIterator' ||
+                $class == 'FilterIterator' ||
+                $class == 'LimitIterator' ||
+                $class == 'ParentIterator') {
+                // These iterators require an iterator be passed to them during
+                // construction in PHP 5.0; there is no way for SimpleTest
+                // to supply such an iterator, however, so support for it is
+                // disabled.
+                continue;
+            }
+            $mock_class = "Mock$class";
+            Mock::generate($class);
+            $this->assertIsA(new $mock_class(), $mock_class);
+        }
+    }
+
+    function testExtensionOfCommonSplClasses() {
+        Mock::generate('IteratorImplementation');
+        $this->assertIsA(
+                new IteratorImplementation(),
+                'IteratorImplementation');
+        Mock::generate('IteratorAggregateImplementation');
+        $this->assertIsA(
+                new IteratorAggregateImplementation(),
+                'IteratorAggregateImplementation');
+   }
+}
+
+class WithHint {
+    function hinted(DummyInterface $object) { }
+}
+
+class ImplementsDummy implements DummyInterface {
+    function aMethod() { }
+    function anotherMethod($a) { }
+    function &referenceMethod(&$a) { }
+    function extraMethod($a = false) { }
+}
+Mock::generate('ImplementsDummy');
+
+class TestOfImplementations extends UnitTestCase {
+
+    function testMockedInterfaceCanPassThroughTypeHint() {
+        $mock = new MockDummyInterface();
+        $hinter = new WithHint();
+        $hinter->hinted($mock);
+    }
+
+    function testImplementedInterfacesAreCarried() {
+        $mock = new MockImplementsDummy();
+        $hinter = new WithHint();
+        $hinter->hinted($mock);
+    }
+    
+    function testNoSpuriousWarningsWhenSkippingDefaultedParameter() {
+        $mock = new MockImplementsDummy();
+        $mock->extraMethod();
+    }
+}
+
+interface SampleInterfaceWithConstruct {
+    function __construct($something);
+}
+
+class TestOfInterfaceMocksWithConstruct extends UnitTestCase {
+    function TODO_testBasicConstructOfAnInterface() {   // Fails in PHP 5.3dev
+        Mock::generate('SampleInterfaceWithConstruct');
+    }
+}
+
+interface SampleInterfaceWithClone {
+    function __clone();
+}
+
+class TestOfSampleInterfaceWithClone extends UnitTestCase {
+    function testCanMockWithoutErrors() {
+        Mock::generate('SampleInterfaceWithClone');
+    }
+}
 ?>
-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

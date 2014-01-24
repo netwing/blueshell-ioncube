@@ -1,42 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-z7iOybEljjxHXge=
+<?php
+
+namespace Guzzle\Tests\Service\Command;
+
+use Guzzle\Http\Message\RequestFactory;
+use Guzzle\Service\Command\ClosureCommand;
+use Guzzle\Service\Client;
+
+/**
+ * @covers Guzzle\Service\Command\ClosureCommand
+ */
+class ClosureCommandTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    /**
+     * @expectedException InvalidArgumentException
+     * @expectedExceptionMessage A closure must be passed in the parameters array
+     */
+    public function testConstructorValidatesClosure()
+    {
+        $c = new ClosureCommand();
+    }
+
+    public function testExecutesClosure()
+    {
+        $c = new ClosureCommand(array(
+            'closure' => function($command, $api) {
+                $command->set('testing', '123');
+                $request = RequestFactory::getInstance()->create('GET', 'http://www.test.com/');
+                return $request;
+            }
+        ));
+
+        $client = $this->getServiceBuilder()->get('mock');
+        $c->setClient($client)->prepare();
+        $this->assertEquals('123', $c->get('testing'));
+        $this->assertEquals('http://www.test.com/', $c->getRequest()->getUrl());
+    }
+
+    /**
+     * @expectedException UnexpectedValueException
+     * @expectedExceptionMessage Closure command did not return a RequestInterface object
+     */
+    public function testMustReturnRequest()
+    {
+        $c = new ClosureCommand(array(
+            'closure' => function($command, $api) {
+                return false;
+            }
+        ));
+
+        $client = $this->getServiceBuilder()->get('mock');
+        $c->setClient($client)->prepare();
+    }
+}

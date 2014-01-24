@@ -1,265 +1,314 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPz62FK8oCePrts2eOMuQc4oz/3lK1bThEi0jVAJ5VVY9Mns0waaC8zAqn5frjxjzG01tdONd
-le3Yi7Ew5ccGD3SrkYxKB9Cjk7vs76hPC9sAgzsO6/orxfC3JFEb/gSSuECCgECFay9ehBnGLnXI
-q6NvxgvXYenHTheZ5jq02VyqKnuk1xMkvexncrbqd6auS0tVS5P6R0lmRUnnCCxGIMXxgeP1TWuY
-a3VSjwjpo70ttfUdwvvW6wzHAE4xzt2gh9fl143SQNJxOig3De/lt/SE58pOWyY/SXBH+44ki9G3
-9INy+uBhZ16Gyv+ImX3it9w1StBdxGwZ1SBrwuPBEFswlmGwJSkgF+Z69/UkNhXuf6I+8F4MwnAn
-Zmt2Hq8VU6I2+PqvIHcteyC82rlJoFRQittag3Lh3ClvZ2aMIFlqgYvXex3plTuejBP2hMwTmqAX
-lxzb74je4j2Q5/0io85w58Dt0gGlrsAQPAwQpJTKu1Y6RPqtGj5rtlcLL1Ou7nsQm9Zp9Zv2uO2R
-fAqj8NtULctGkv6KUAQuJ6IeR8KRM50UaLv7TbTizdeCV77ozpVjNJL8L8R5U1o22+4B0Sh/0v2v
-uPGTAXN4VCAq82z761oyNn7fPdBGyFzFuE0h9bJFQWPh7Bzyf4k4h4X2yq4KZn7hCGzcdBKib0v3
-JZ10oZ2DuTscb68igh9FPwN5XHlJEsOr5BnyxtD4MaMDMIuu2c5XGuVQG0kOXIAKzciRPtNMZdpf
-KOGaYomqFk2RHvHMeiJRtqCLMVMulixBRGnlM8yhn+Avzcq7bToBAP8SH6EmBQcBORgwztdWT8+E
-dUstkdhxL/JqOp8+iSPPeR/Y+IgeLiiSR1c/VUWsb8x4S9tp7rDiygX4BCKFqJPPMeckZcxsaJNd
-FKFyqUiDkjFtiS4C2VR9Urtd0Fy7ZueC7WfVi5NqDpJNk2b7BVgLOqQlMOf9GcpRmf0hFGCMTX//
-v7ZG2QYqUDqe4xK8v4FdYB19R5K2k15da3VSA/y9jliMULsDzjBUMhj7ITLswCH9qcuSuXNTalZd
-ApwjWHoBKa+6qGf8E4X8mFovkba4p7q3i0Q29Zq//dv1otr5Ull88wFepjhV/ImqmQD17lhHCRTo
-43IP+Npfw3Y8NEjoa7D98dyi0dBVhACrhcJhukBvyBA4wYvZtBTSluM+gKSUZKUwwyGPH9u0hA26
-n+A/sujTzV2ugtS2HVDjKiYYpjIrSfsk7BoxTCVehy33GsbqtuJU69y8HSV5G7JmyfbK0WiZxKG6
-nQH0Pg/FrRgWOPINOGmfikcLfhFG7iNwAci7I18iXrqcmc1++8m86n7Trh8cMTk8r77iQXmGC+EK
-KrPGjDx0Ob8sgkRw05FC1LJoswpaG5sTINCbcDkmyxbq8Qg4ZijwA1aju20Ur3az1iQc71XQsmWb
-iTp73GIOvSSMNfeCr4Y8jA0uelt7EkjbZpSBuSMT43WtpG01mh09WQxxDdF3Zo52innNtSapHYW0
-/R3wJ4r9/rR10e9JkvnR2Tu3w71GK3KtSACHVA+SO4hVFSoO5eIzuuDvt2w1ovIbbzmJHfsjuLZm
-UzDyYEY6TFjCM4pTRj5zykhGVZ65hrfasfKrE+yodz3luFJ8IcNHHVCWKNRr55qTo23bkuZ4RCwy
-HQ5vATQCiALU2tYNvKa4jqgJ5vTeOr5/ymFFDl/sM2jJJ2WPLAivNk6+UbSrcU8srQ4XhNc89dHR
-uG7FOm4Hx0HHcAsEWzDrl/SoV8DwNMd10RbiSFYSpgoDqzhjA2m2hVoGyFk6Hi8PxFlfWRPD0kn7
-HuXjRdb+VGefJb3IomxLqXeMxq/OgulWsTxFLgV1Eg3DsJikUbVEqrTP1v4iMfWlpZJe3vViNe6Z
-Z9Jxqpv2fTbSybOk4lYK1eLsnUgNHzryDp18f/4+sWAe6eq8MdiATLsr06d08OCDd56owAkUg17P
-YvaRO/aWGm/Z1aHEEyuOFoONCmFTpf12eD+PtPT1t8zuQ3vfhFg5NthGdUX/VeSzG+qf6Ko4heub
-qFN4LaiRQWbL8TDB0t7wRzFQzKFvKd6Mtlc+KcWbDBghT4RIr7ipThLZyy9FhNseXH/8LbGP/X5D
-i4Z/X37uUkGNjHhP4n0zcHGLH94XzMfjszY/di4WbHhsVdZGp3DeuTE1pbRfQuIL0tek4JRtrBTi
-oiMf7wDWOPrK3GkjGwX/hNZkYVWDJgAcCH+XP3Cmz8GX+Iw9MGyisA9eI8hMjdYRAmpYAOEsCoEY
-ahCN0I8uJlUKQt35QxC1C90WpTJ9DJODHjn8qi84Y6pCT1TtdKnSdYxNDpuBSHlBtNMXO1dwKaLy
-sYObWuseGrzIFHSmtFuuCoKgr0JPHFpDzsP/B1oiqO6rLvs4Lrfd78M/LpNb3kwhK9fvPMoyAdnA
-3WP/xMslPpxF9lmYI7o4ylDSDU+N7xytDKXUk0sBteNJNhjKjJ+pNC3NLw4XkQrqbActVF9MxVru
-i/BCpqYSOViLDn3HT9QNRLsCXU8FXmkLocRUjszojhosBPHcD3rJrIURs8dsvuRqhMU2E+bhmjga
-l854poba0xappH5qGu9bBH8oInG6yRCtjeCPDiWM2AYWWjQzOJZrISJIz1nPPjnQ3x4Sl6wJ4m49
-NOrmTlPbrYVzOF5a9zgrA5J8OgSmswLh5UyXDlmLdhifnNN82eheNig/nsTNs79KdA4hI2V+U3O2
-aankRQvn5uNpKmBXoUriHiASJXh1UWEgBFapchC3D0fJs88m2BIK/WTir8bZ3G9aUshSUViSMWUS
-oqeKDKvMusXUDXJKIwxDGmg6HC8jEeonD7fw1yxfXbMQKjX6FmGdFl6baY8rJqZO7aVPgOLbGoB4
-TO0rgEqR/vMy0KS8U22xPCfvaH8s+34roA/vzCiOwRNiPBDk43XIZ0tXRyD3xp59CZ/ELK6jMV35
-KKtIN6kerHwDuXIa7qdZ6+pJFLx81JicTCgyhXR/SDHM8PTvTXOk4239oT51uwB0+GwElxhqkBLw
-HiombhLW3qiRDuJ7WYJDwBCIyBwSH2t/TJjwZcE79A7a6Jq3cfYDtMcVCW9VyQ7q8ewpaAjm8MWA
-hGX+KGq3ZzCTm9Vly36g7T41+Skb6M/hYxgaVHpo11eOfTUVrtzJ1SXzk0w2dGei479JVqEhYApB
-83aZesK4lwQKM79chFCYR9N9xsTUveR2nu7f3u4bvDl8MSEPbNUwlM2lT5HW2MUAygRVtTyz6r6L
-8SSnWn9Oe0uUxkzU1vv4bxlJZnTMYJ9Nz+crcxvugNE22U75G6y4hRA6TSQHy1rPyMu48FQCazMj
-7jq8QHD5JEOT31BWYwH3waNLIis+/ln1HF/XdkL5iwSVmUdoDcMzCa3fTX1CErY0cJ3XPlyo+Xe3
-HniAJQkMpTDonihtMLaVd3rBs5lZVgKZWroxPTvIiHazDA8uDm1wiuJ6CcloyXtgGk5HrfjgNeXV
-XSLXEim+X2xd/TuiUftZz2c8bDI+OYJ87o3sFeorl9JEGJiHV7wunR9z5GX0iMWpGQWRSpXazgWS
-lYHhxqjvMY3TJ2Fe0mZm5urfsxQNKlLpNmkDARPYpws23HWWA9jJCho98R0i6zL6pkHfMN2+ifQC
-J6T4qKa0IxDia0Wfmd0jem/iK430acklI3T54KjxnrrB9h6zmOmYeuuSR7WXonNODM81cV46IG6q
-1FmFsMyQuhFA8rc4c6xQuQi/NHosXiKI2Fp1J9PWnURDaWWkEukM8BMSLDm9K0GBz+JGDllhouEx
-X8gnnCnVTeE3NhYY1PR11oMdRRnVj91LmjoTJamc1mOrNKpm3Mb0ZaylCLcwDw3aRsOZNAShjYwQ
-qbwHMsPpRWLMjWPUkr1AgtatYnXdT6I9v/gf8oCNShGhAL2FRH+8Zi6RTQkLTgnvNd0vAZ61NGOM
-x8vRMt4nqdcI71DKViomHE16kSpBDyQApZ4FBChBZA2GE8kspK6PzAiQRbyuo4EZv1kaD/NzQbMm
-TDX32BbFOaSkMnLj17biEcxKRutAxL7gndkJixw3Cs1MrCk/DCGBScQWclEAnwJC56Bkg34WcI74
-vEPB5tt/XOoqHYymdQKcOm0KNCU/C06XEnlL0NwVQv3jt/0/e2pJ0jrGy0RYnxX4SVebLU1Ayb1P
-Ff3jyOIhMBeG6rQ5xr6lGKEr25bVEhisWkCQPF2hAed1ES+PAi937nTAuFu8HE/mNGvUOuB0fjTO
-xlw6VbOn7J1lJj0cgyc/9Dq3xGhLVZ+eb3GSfnwpwO+46GmRAJa1llRahx8nGA7yefjdLbqiUBa8
-NMCiTFk91hk0eVu1Q7vVe/egavsVoEMx6OM9ntk3tvGlLwU9AKoNlpqMbvM+lxpiDxkwCAOkxYNV
-ywwTDJwBGPKG/19AyD090mPAWiRBeLTkYnocmU3ywwIVMFyX/GwFhXDbBXDwL5qJGSO2lD9fxmCl
-hdwl7wuMKZUNDfBrzDJqi1HRsdB7Yo1F07f9ty8/q4dP3EcaHgIiKc1LdwDxTeV06uy4SzL/lxbU
-HJEgYMaRWrFqA6YqcPxNtyhBLAfUJLh+DskbWhptieN/l/RsoRpcpkvr0mkARhN/X6R4DrfnwQwC
-uCj4v1/TsIcC4RAyxcyJ7UqDgcWUJC4mJF6ZGif7TOHTsTicBvNcW/nzaP7XZkNs5V4rk95jzhC6
-cTL1h2AMoR8DUt59Te6F9J0vLobbshjC2vots7pjkwA4JL//Xw6Kn5LGLNDS/Cu3CkGbiahvvopH
-ady7XjTG/uOvLRs0Xh6+GlJdIJ/w7bSKdhE8t67zSJZMKpbaDXkyGoNP2Mq4sa9DwnNqRprQsFzV
-ipfh8si70W+KwiIirQPClR84kynj77Y4kdJJnXd0mVrK0l+TdOc6q/a4TpZfleAfyrZ3FOT8qgK7
-PqkRX6HKY1Zu+eQZV05tfrQVCPlmlxFSIKQkKPgffXiDJTsHDKnj9Gw0wCAYbeYIElGop2FODohb
-v9ARHDsmTRsq5+XToOd7zodd8gvQYP6f8vm11BeDjpLnOYBTPSUXfwqcmub5wmzJbU7dxyq0rxQ+
-RZeBPu+0ym/rqZy/P6OJFh2pVan+5RZ1z6jQdBwcyN8feaZ/FmwbFSpvyMxKu7ieUU5eS84pa7cN
-jSxKAd4JDak9qba45wQuuAvoTlx8a6Hf9e1xn7p0XuJTwWJ8oQ/G1BHB/+kjrQgCw5Hql5skucPm
-a2T0yMEdtaQuOe5bqe16l17szwiQyh7odFASNZV209GJJbm4YQG6SMKdnxxY07PQfWKLK4pg8RpD
-Dc/pz4d35A0HQdcsvwsEh1OoNzfRBB6r2yrPTq2xFWRH84XrSZycso6ExsbQ6epi8MV4rGhwKgCX
-jmEJIiPNI/+AJPbB+wUXU6vLZcH1Y+v+a0/T8PMgMdX7lnmo6wOw8XRC2w6QOd+Q6b5mNdU+wHSt
-WpPADHDSLccGl2JK6cm1m7k0qXYLDJ8b9+Z5dv81yjpEvThZX71Ntu93j0czl1U8Cu2pRmoUeWHX
-nIhsuaF3Bj5EGOVsWqFnOBl7Pa0+mpb8irfbKL1lpb1y0yIVvcQlBJMVgVpBDNXs+sRG1wtZcFoM
-PpELKgScPdxMDker4El4u+CDjfe8Mu5a0PIQikM+oB0hD7wMuJbXhOKUinuMCZzYiFYTKT2NdKkq
-XMgaGu+r/7V3q46lcCkm15MiJfp0Vvr7JLJm7prHek7iZKNUNl+3I8BrOJi4Yyn4SvMz3+tOphpB
-yYuxzM9alib1VgiqcNGuvAxC4/eE2YA/slXCWuOahdJ9ufUaqPbmLV4kYwHjy/EPlKS2peHsY06m
-RoazL6O5IJaDglCUHRebTcvOV5O4ONJZUTw1J+D2lIOimef7o1ioCs0l6e4L+uO6CqB0L8mshzLz
-VmSx56f0qqVO0G+GjIgf5nyzoTu5+yuuo6c144y7MrAMLUOtLf5ehcQOZA2iUFmenIVhvrROvBdG
-UrtF9zJQd749vvpc1G3Zv0Y976LcPEVIKJgshsTz5J7vT3cKNhs68hBR6OQhTDJhzY21b4N6RNTH
-0r2RI6kx/rODGZ/GJS9mVzrX8/YzsQKzAPujchvV95HAbI1mQaohWTvEeA7JBtjzivTGcBny++3U
-upBCrmltx3keRqvs2ZqLaa1JozeBC3HUaeG82cepKjWtTmuHdS9LwH5QDd8V/tD7nQhXTLI3+zGQ
-NUHAwUP0pH7dKjmdurHJ0wx1iNrqOsf+RrgDkgHYbFiDT0aVSUB2A7B8om0iBPgaEo111j14kJSg
-JjXjf9ExucOfV7+E1GZLD65YIAwp/tyvBneKpwtPr8jQMkEYBXTyu7XLQymdzy+lH7eosqeTIZ/0
-HC8SxS45RoOaM1u7j5raYIq/86buqFtRiFqpfnqTDYVcN09kqwar8kvBy+ETvbdupycoORQeLKSj
-+BI3xjZR3TM528gGonZ8GS8QmxggbC96dE46ZtOsKJbAGQHvXoJDd1W7AGRk5WZ1aIAit1z9q9QX
-A9XjoLxMjkOc/m45eIbSiJepb/E8eYbPyitjaxBGR+gWjcnngRSnGpVaOh+dsvITyRkV6ROadvZo
-TjBq4aLoxCEHwvM83/XfPLLfUn5XNv7d8l8+QkCYMmfz/wTSXCWTe1Jsu0YMxFRQhbWPtwj0/SH1
-Bpd7dXxNvjPjSDn/bWGfQ+XvExHweFvH4aEukEm9ZUAiHjTQ6j9TFeYd405QaBjqM/tg9HrOew15
-I3GPfzzHshwiuuzi7//dcO0jMqYxJ/9SMkU5QgCZeuAHLUyaQ5d9ZBOf6Z3issuc12qTaLnMp12G
-ZRvrOTbIQl8ZiAd+3XJqYS8RZSeLeV0rXjXT/tEAaLSDyUHjGPEH6ePseqh288PuOmM8w+dbJxpW
-mZ9wRY7C+XDbi12/eXk74ICuMXtDguOuz9lTu6V3Br7cBJtgp1kZOBwGn1QMFLeVEHVsHqjsf1af
-GW5yX1S6l07F8cPAMmaXRAyiq+Kzcp7RI8v3JIAFPOVsLIWf6aGPiDcOvXhh0bfKxUXXk1UopQ50
-BfLmJu92D6jRECmiC8GP6ZzLv8xP8EF/DvIl3ifz3OM0peNrKjuwNb4vJAMT2Z00//ItGPFwVnR6
-jnES0gSJcj3sMg6CYYNlx5nUv5YkYURL+2J3wckwAK1yP9Wu7r+ncbQGY160e1hRSH+nfLwtoKDW
-kNZUvlUxm3tvzqMTTNLQLB5guv1X4cZ2jlGa3YCnsE2G8mKvZ7eYMtSYFwpo90YeJSN7A8McYmNd
-Ky30Gt7cewHQBwmsaObMeDgUUH4kKhhhyRXmuKWlAg8ejUO/PibKWx48Kf810S40spJJASp5PZan
-1+JpIbkUPsisCf83A4Wl2hZcR29h1EcgPW5w8hWaUvZ/khDVkKGOaG/Ih3QLM0r15H/7rvrxLNOS
-J/HA2ohY/DgwJfk8unHBf3URq3ZgRaBP1nj+gpCArv+oV3y0yGGvfZINs4XdfkTLLQMJkOzpTeQ7
-PkM4irWD98SgC5rbnFEKU+Rnc0Mt4Uk+//ufSm2bq5z9EqUwWQQJpXKhd1ZE9f+lNt7TwQCGipBf
-Tc8fCPFk5/VXc/am3WxnvxuWTkAhywPFOaRFfKCargF3A0kydm9NrhRaxXaNDla+Bflw9BThhaOf
-y584JkR5la069lFQYkuPcCFisbk7nG4u9jAzAPU0HTpZviC9joGXvVCfd7vgmB1JY8PZWy+O+FwI
-yXKwrCjtGxq/5etJqTD3WtMX0JVqVIDxEHi45MPcPqSI21ubhp/JpIEF1RFaVzjVViCimBwS+gLb
-qMDr1a2+KBchVlXMBBFy924OtzIWf6jrBXDZItLEAbtZlitR4zqBBf25FYYsaC0dALc+7DQzKlIa
-jIdk7QTUZ4nor/ZHP9H3wnl/a1C8KZSuKzIyd73FAHkCBTrK5KD7a9hQlef7qyhO9RzDKfvGM2ES
-7jK3wRW2B9eLPvoGmZDZd2uJe1205tRmiQzeyVURaEbhnLcbtoZ1chJ8tSyhoS7cbfaRwh7981d3
-NM13YGYf4HnI2KUITdOzgxYI/bpj/0hLQFeCZb7re0YIuPrpTIspoxqie54Nfq8qHWRiEJ8Oj1rF
-Hga/i3cvf4WhkHxHQ95KPz4g6+ANM4p9VIFLnpdUXvIXLX6hgc04EdkIl0aJN+roGL7UVowfajPx
-9v1V1GbljzvqT8zMExrbEuiqixGje3cF8cElzVFvCUQ4uzCNSym6QZ9IsbJgHIk9DEbq4c/Ojy3W
-/tIsUK86gdipEAmALGN+sq6EBP7rRM6Y5l2U2zYcN2TmUkzCm42XcE2oOZ7XDUMJM6KHR+dnMbc2
-ARJVdTOkTQt4Av9s4gnRaSup7/zls1TNFoaNUzpkPxH2vxuDl2oV1Bo4LyFdkGrBqfcI8rtKWu4E
-5ZDLy3VKdMZa0S49m8bEM4rgTQkTAw2zwccqYnA60w9cp7t1vzKFnah0DAgz167cKXKXRTadOA/k
-4WwJWQGZBfUY/I3RK99H3GARSlENpBrVLpGgg/5mQ/mJWu3lh5W2PVVHrYCOupYahxnoYhRU08Zh
-XT8aWg72o3d0vt5TGguK9lyMwO7iRx7VrWATp7fs+13ee9TS6sv6lHQGgQMUtbdV7LboT4sh5rZx
-dqEAh7DvR9Flf022ogW4MLxTsqyx3abfDkGJreOHhKE1VMlWTE98Da91camg1AJYppjFjdwEW5XK
-G+vHPYODJHe78q+T9hnnr/rFx4un0bp5o5cj26OSBvAOG7vWOnZEo6bdbM84VRrfrLC+i+ezT8SL
-jpYCKeuC6Rvfp/e/7wH5SjgxsjDbhmN1GMx9+PwXrdKnWowefv4Bh3luLdRCOZ1WBO6dFlarpi1W
-eu3nNnLKzzvmdImkMIzt+3XIiRp/wcAWaTJI2HB3TLrWNcyNQFvY8O1T4OSD//ioLjPbWpXq5EOF
-gKyn1g96qKcCIeySOKBKm9+fJUqDqSegtFAr4lMzK3gmGilpsvAw0GErq5pnb3OZN/WGSAoSPUFv
-fwpV3vSSgwciCKKa+pwfCW3KIgwTb0Mj/q/TBwhQHH9qVhqAL0Cumcs7W/FLBtG+K19z7Hmd7vS1
-YFEyuR3i9PozHSlfT3DVpHpVerbf7eWVp4MzXmM7/RWI6skJNfoK+AFTdtmO0/Y4UfVw/j0pQOxC
-1SH4vE/bC/o6cjEqeGhJfzYYL/YbRimRJX6XBGssEoibIXSP5nWhUiC6hzbozk3tThp/dUVUoOKE
-TtkVBuukRWQJL+tTqdLaRmoCYkuF+yskOvvfpH3KGqc97sbHkdSRdjvoHSzyzPTGMd9+JQOZh+AR
-pYqi8gOZ10+6uEG2svY2/uZKyipjL8qK020S4kZF5bdaipSZfpfFTt9yPa9f6jiCgiNpPlY48wX5
-0PHepFI9rKuRhCDmhTIU6zDOb1l1VCKUFKx3bSIzsMIHQZz3sdpPnbkfZUsCi314yvEnoUNV7/+q
-9sc+CCkFEx1dVDk1lHdywBlWAQC9UDQTb9+RBlVfPG7VzAZnj2NtTRvVSOjNPzvfjjgl7sXOqf98
-EWsGDbejFnFVYZR1SVSI+zYM6AE8Uc3+nvQ9L6FOSlmPt62Q8xfaZPg+yox56Bq1j7HRBV+aCi/c
-ACpq7om74RSZPTq4VI7nmdTq+OXVm7ebvODa6xCF9AHTIEOKJAP5fmo7Ly0W4SZzuJBTSISLDZXS
-HJyCwKChmIRiWNzFcLvwJDXjROLQT2v4RLDIH7G/joQObs/2+EzwfScNh5iUiWenMvc0gZesCPWZ
-IX0g0Whi0PKNO8GHFP8rU7pOWtMu4OEfjTkOyMs0Oh6kryrwyjsH7JDifQCcI6hYyr1qM46MPks3
-1FiY4gYlNhFZxi7swgCeJzFUX+uY4ojW5MqZezOVdhLEOJ6QlzgcqCVh7fYk8+f7IZ6prOg5Bau3
-yzNxZY49a8QH6Jgyomghat3XeNKQPaGe8cmv99tjRVkl471xwzNWVKHIIU9uUCwWkx23ys7TbapM
-1Bg8QIukwzHi6egUcnh1MMS5EK9Xg9X7gnAgQtTBEnmVwVBv5+2DW74ftkvTRETdQMZUtexyEb3L
-zeJzZLLYkdLXvlgvMoW/wLR93Rvshp67Dvbgfq3dyFqin3xK8DRkXLAAxtJLsdjozziIpBm3mk8v
-FOOMc+6Mopitov0xARXWjgSuwj+hsvgIGZ7KHxp9h59cAxPPGKvDM5XoVgUHlT+zq90xjPwbBtoa
-6kag/DuzQlSj2FUK9yvnXpKhWluVAl9KIqG2x8JrDw2/If9zxmi3DVszaLjkkkHQYQNMIqkaMmej
-sgP8rJvrZryJgN/y/h81D9xiHzsUAm7uxBCYxP+tQPcTMslwudOUM7gjFG0TJotHGZLbZcp5IfUm
-vjNmmeOYDszHtsCV1YOOktWNF+m1u2IdDQaobIWZHwkng117UKXi96t/R4MHuefYob8LR2MnWfjn
-MnyMH/9dOggki2tNZfmljTELPiA6q+gLtdARfr7pkwjBeBM2eXmk7OBTLgZiT64jgGN02GDGab62
-GcBZ+hSzjcQdRL4ri2g93I1HGoWUbRUMiTup5s33myml4c1VnsYADsG/QGrNElKZFow6cArkPHbb
-DGtGP7jyxCwnPS4ahdpSQd5AEwCpu1rRkV/RHKlNyCiT9GZ1z2f3hcGXI39ZoGtjgX5mU0N+QF0I
-mTSe2tIbvu/viSAOuLq1EGaLk/H2jWckKYDURt3gjdtUQ558U8Y1RwPtHWop2KxoVRJ8BbXc+Yqi
-Mp5HSTxY8XFjyDvrIe+LOAUasRg1j6ewZM7NUBR/o5lxMpc3K/TCPu4LFsmGsBP313OcQrA2UEZ/
-TSkJbDesV5Eoznrp+Cv8hsTBN6mvBkC3zw3h4gl6A7OgNfxjSVX9JuGTOsdlNSjtcA5z26u309J0
-mAZjIsdtwXI9NvPU3LSNhq/dREmSnF3s9AfNwvnw7C0fNTFCZpWV9UoL2lmlO/k59A7QtH20QmbU
-9CkDCyOk+Sbm6XTqCplbH/5n6DWvQlloEROLl1UZHGaP7zJinzfWYhQwk7bn7QoQ+WfjPoEPaz6e
-2uYoqUz/rjkAvNEbo0yKxUK3B9dUo8l6TxzbsuB4NA/DVMRrM1VDfl74UQVW2BumYQY8tlcXRDYH
-pMMIRgGkGd9HcVbqR22PbQhvruU3FvHzu42uQ9HR61mI83Mpxe4IL0lF1Y6J3Ja6fGQzIv6ElBMo
-a+HdXxI6/KjI0O0t9oj4WNt9Za46CTA3f6eW+CoULGx0NE/bvm1sjJ+P60PWVdUV2Y7tjNhmRSOY
-4dpAkvTYoHa+AzWVjH7IdOvDkVAyYh8rWRp5dpaKuFWCVgNZYYI3PUPpxNFPQlQsAmLKxPzlSs3S
-Capb8lLrNKgkNFyacJ40bjUc2RVfxSI3wv2OgtrTu99YGdFmfC0lXVOcEUTsDZJiLBsAz4Zyi5zb
-7Iw1DiMSmw0+zoNXXjO5rkLE2gzeabmC4K3z7HYLWYPdwTk6S5+aZq+xZ3zBXX6nu2tj2xU0R+Me
-NxK84Z71jM+HN3kOwxQlU8XWXW06vrqmCf/vdroz8FuR6p8JcGWoejhB9rLk7OOMVYslthinlOGP
-1H/7vvq6QTGWEdyutQZDaxI4hByZUiPDA+QoHmLKbfJt0nFOfWFL6HOdPstDKUDU+Nrvu8bwZhjP
-mue9YtLfg3jWYnOf6VNNE3tQdLEOGLYZ2dIL8CsQpygMwxXtY8zL5hRRZYwQPNnPIzprLjnrUmji
-5cAl/sgLEYNewtHYlsXSVlmU48JG2N2s1Zg/BSRLeVAe8PJF25EKy5xCFlhG0EppKAomfjMZ5ZbW
-I3Ak1F0tdJB9pnnqXS89HBNX1+eDqWtjacRsVxw2hEfO3vFhTvzMkeVQQYgT6zbI4wQukEJlQb/R
-nirQwNUlcI5gCtClgT3cVrRIkl7XNU8q6NPZ09Q0OoM843uMxHqIWPGJzw5GKUQ+bmgUY0tRACdv
-ctyMnCtJsL50WuTgnbEx6OCDdan3Jc08+W/G+3A/N2WHdh7Ls8gNxwKnnn8xAtdrrm9kJz70oyJq
-zXLgDDGny09qg1Qc6o1gILoJe8MTjICIqvnGx5ZeJfpmYiEhtsQAHzHb7I7lKdFkomwOdFoFNK0s
-h7BWpgnJZpBxjVQ0o6b3nkNnI06fffktgfgA2ZHp8bBfacHoLc9fl0iPdhZOKkBlxmhU7o/Av3hV
-28DYHqgo2O3s9PJzYHcaess1LJ/tdkrcQvZrN09iayX5KDKwGnd8A6xq0SDpDTJPV1CpvHemF/PX
-pPKm+RY5oxmqgY+S8q+knx3+EHaNaDJbrw5W+jmUaweShk53UEtSPlH4RBh+4VHLDDUB6PJYIxSx
-4+UOOWH7h3TpRalhyAhiBPijbJTE15qXg3YH76pCXTV0oqs+qRb08diLIhnTNmi4vuWzjD+b7/Yz
-eP+uSmlzuUci8pHC2xTkGvFm8kUx3Zr31nRSmIH0iDX0gverUgW80CuO1UDRpOdLyxttN7iTUUaA
-OvtWZcFjMjGgFrh0pTsYYpVqzgvEcDPvT5/OCHLSZ6ytw1SAOiRUUSlvKRY9/Gd0vta2aWB0r8T2
-B0SebdjnvvsIZ5c6+/etANoLV1MIOZ4BnqVpY164CRmUB8ubG21MnbV2hxxSFnHhXeMHpNOaAYML
-YkeX1wM2HN/IbdsQWiuIczyRXHX5/7RiCTyZbajFYrV3WhgKGWViouby8BjxXmbgNer9Si1CUhPa
-9Z4iEHEjB5HErhRCeSI9ieUFPyiiK1v0/mV0JMBu5PcvHpafYGraktAIr8Q1u4ZI86aFapZ/7J8J
-7plORT9nKxgMitSuwoGOXkV2UtBuYSnhHH9Qz2iv7J/ispb5jPUnGudFRKei1il4Z+aQA2aS6tp2
-Vx/oIcfy7I2f7uSTP58vJNAfN/gdoqjlkMYezv8PYjZBThTlmS+ktDyzObO/+W7EGtSwFTv5uZun
-0PwJTQ6+mCNRIW5i6IpKIH69lPRGbXF5xg/qFqVBdRqAnRvP0sqJdodaqclnFb6d7ji1EN+qEj3F
-n5XtPx4Mko5pxyZEVhqS4njjan3mUeyGZNN2lwVAU/IHjlW/eZeefBJsIHQ70gnn/yX7t1x/HKTx
-Fl7htCdKQJHSvVZsdX+M+R8LFSy6ofNkx2BZlptf+nzFbY6xUP6Ku09zdn+2orYPYB5J44Hu5nsW
-3oiXgcOzBLDel+nlOyQBmCj7CBzVwyNPc8s3PUoMsbTrO4s3oiIOiJLp1g/9fnCpxmJiCyNtngos
-Kcd7lmcncWUeK6Zz+rxZwS25NhU09sWdSJv96smKHz5ouuqFW/DFRkBdY8ZVhhN15nVPXYkFdy8Q
-txFAuDFGqNahg9B4RnhTd+SQfREQHl8uHkflDAlj2MXANpHYJ+RNTU1U/A6K8oSZIFg46KBuKwVp
-3OeZljSLlf28ANGwfpITwokwqoVtSXSDJcYe0O2EaqwbTUmWJMI4nK2KBhJVjTL2L3bd5fLaMrll
-xG0fADIVVSwomQJA1PB4mM/5S+aC68SxT8aud59u0GSPL5BAFo5DFJksBO/5D7Z0uVIwR+yoaXmH
-GnebX05Yl2/kyssdPNow2uwv0mTE2IxgERhcWuX0VGIaaLBEdLmhFaxzjTocIuTRsdH47gOuKGq9
-8GtdzpRAKyqcHscZ10MU7JxN4HRC4EYuGfZAZaSBcA48pKT+tQtBgLlU4ARyNWimJFrNqPD/6tho
-KX1VYOW/M+GIS1/wPTaFhzwDDKi2WXHWWaAEphvbiT3qg4afQxL6nLaqWCHc4AN60SdkA6dJPeqz
-Mutz7RyJ3CfM/jKVpx2PtkdDe9CBR3Q4FbEnfHdqZP2fNJFLNPob82qF5p3vVVlve9DGhoscdoTK
-JWjVQ6W9fn6OiIXXOB+QGXv2+5QCUoYxmFm2zoek75ZTGMLsvojJ+1jY9fg/aNR5HOUCz7iUqKFc
-1IUTtB9ctS6qJmkqoBaiQDwb503XezIdH+zaD2N39rkiu7keXcEAep7eZ7sYMkE4or7zCfTT7o8w
-4ERhzZ8LmNdGsZ7zEsNiY3ygoN26k5+/90rzx9tTacstYQw1uIL+5jkfYqK06GliKE6nT2x70MNV
-XjhkvFW7hoVWDPVK3AjNpbY4hzCrcqkqeqLRw6PYZq2exZXR3L50uHDskrP/m1EZ+BLsjJ++5USc
-PUxmeXRUTM7ZyLiC3HlM4OvxEyKuz8glll9ke40lMLppWEJYu3Yz3VlCZnrT3AjYELGSqBcHmn67
-qL3iPvZEc7bDx1oWs4Qyt3AERpUV4AnJ6KIQHkm8dPEjZBu0l9cRpmgBWwYg7vFz9dqn+FnB0zQ2
-woHbJiagU1GwE1YGBDA26HjL+mtv6PFDemGna4R0yDDpD1NM53UinpcTkALg/RXf7XEPNzixw7q3
-5qPbHghEQYsWzif48oYMH1zmJDqJVJHWcTfRCN8dYHum7TgNsD4Z7BkV1/JEAbXQ+XP0xabyNtnK
-+uXI78Q9D0ez/5+ADm93rE858/yQYujKAsDR7VT6ctjQol9mCdVvwiiGi0mwaSHmzWnjpl9W6vKj
-NqvU1dkdtwZv5PtgazGKnM0p4OljNx8wuzIR8f1/0CunS8Y7Fvj7VrR2PtXRuAVO+0cG3zr1Wm1n
-/7TP4++RVhBPOwYEMbpSEy8ajBTzxmJwStopONoynVDsAfEQj2vTj5G7tpHDI02QqQsF9LoHZ1Ck
-gTTfQp2pVB3XNXMDPWFF0hRjgY5xmdwNvFiu7y+XaPwOl/vZCg28UBRuaJwBgcNZYKWIkS7sp2b1
-bQEQJevrixB6+IrORS3sqU6pAi0nbw4SOa73nN8nqfMZz0FstdcTTYM184gwXVHtpvDDmauciCjk
-nrPih4wsT+F1EgTohXI75iFWr0k0sd0twjSb2R2egDWsXWVbo+1KwM5ytfj8/QHIGKjZLjRKvs7D
-6r7Dd2FbPxmGd5Bz60brMX76FaW91ZKWRFg/GEXefp3eyi6Me+lOa6YQezgvIiN1XZYLxiFld2uw
-JWSGkVoy7M4NDLZ/jTJm5WSOENnWS+dVGHkd1fu6rt2c6IvOZJXbam/E4vBRr8LDZ771MUxWBTkW
-bIOJcIq9j5oXly/ne5IgP/Q5vqSTxKCPFuwkafUA5Wp6OVLdYHCOuMskAEMMeWmYKgMMK22qWcJW
-xdLI78C3LEvc/8N4NggqIMgGLAt4xR4GNrN/ZTu1fxO2qLUg2wS4R6aP7Mw8W7au64rA9O0147mT
-1pQqk+Wst/sK1+7RC9vnbRfX9/YR6mr7gPm6UM4JQEg6idoj1rLzSNpFL2mn+7UKb6ug0KQQibqr
-VH3MWbFVX10WZMws3/R/c/i6VSL5e7a/bgKPfQqm06x1FXr8jCTVGV6Rzcq/U9jZV+cgSaud37hQ
-zU5WDlBMEBglTjrsmLsg+mjAQJdH/C5Mg16EE2kM9NCEnv+Ce45u9W8nHeUQVvjGfDGaTAXLH22P
-RhRDquKXLE+Xa/A5POt62CQf7msJeZjwahla9oCWDgHe82sqCZH0WNTPNmNXB7qh7xDE/j3DYdSz
-/erumTv62BMx1o5tk1T6Xz5zj26E9604mlm2bpfwxlooaWqXLdBUwrDsUltBs6G6BILjkCPJgRot
-ynu/44TytmZepYsjRtXGD8XSUSXQZrgPcBYFYW3xuyXcfOTkHXSYBuFkZWL7ES/T5INr7lReodO7
-hr8iyJYCa3u51raOTAvl5kEog6lmKn1InLd2PxRdrkwTDZFGyzSNAXmW30DslpyNTMTlui9FIPcC
-waV3VgBduhvWETPiRpzik99dKHfxNUhuB4d1PG8jAVu4EsxFfgDw6PMQ9QN0TVsrwa0OuY5j9/Nn
-01k1lUXFBeANos/zygBG9184HaIaAfWw+NYZ73vvql12LM9b3S7ACrGPu04OLtNLav28hGiVD42D
-BvO9PyS3FjJ+feUNUm73o4EDeZLlPL1lmmMrJrshDcnZWvp26C2HMnmd7TdAhQzXAG4cxHdMinHh
-6RjtnkJrQQ3QYC1wU8Ag9d4Ltajmjk1sBQC+QmCt0iLqDEq4RxodMZ0sWS5nvAEwkT50JMi1N0k1
-YwDcEMY/tEBnHWnDINdIlVk7vn3vpsYcbuec3DclUrRzWkh7/xgauaDPaegnU8Jd+iy9/TZUJvsi
-/RRVCjZSdVScI1ALeeM82g5nOHWmc6WkYZYm7KO3KGi6xp5Kx5AYsU+vjR+WwBj/rXZl9hhhJq8I
-3jGo/+W7OSmRXbsITlNl1orZRYtBViQpWhy/0HAfkN9VkCO+x7SVfORLvLxhzdXc8LM7uGnSZiaL
-YOLkOXYbuX6ACFSB8/206Pp3+2cbnFC14oHir99iGJsAkyTPX0wgmnPqTFav+QOA/7O80Fs/CcdZ
-Y+2flV8R4KIFp0yLGubSwrZRf1RkK0Dp39qqPmr/5ykXvFoxvgiO4qXMPdcX07JTKLWRYKs2PLno
-bYZ9Tq1ooV8koKbNxaCerYQGgtkT12sxXBbvX6QDbevtlu3zcBTL0fUA/klSYTuKLkPR0ulM8N8L
-aANYCy/CpBzPgsMGPkirHPqt1zPxBynw1lE61E2O6cXRH3caqZup1ic6DSK9DRKEfodAmEmNP+7e
-QDG7XhtZv9JbqojxNoJHiyp0W5B1w9GTnvsjY38PMdblcPQ++Vjufv5Y9kJ83HfVEXY4XrLijxtr
-GuLc6edhi1N0PeZv6wEgJL9SztcGADn0y6ArtyA7KpywvIBuBsSAEF7014VCbjY/p27wVdDrCoRR
-bvEqnW3xzSrwGFSXJnxB/bz/5xVIdXz1VqLEZiGOrzGqd6hsoKi315OPrXNnQ40+5fqrB5g0haHy
-w+EYta0UIcGj59tgdLaFBIRQYQJxdM1e85OIwRJNxbYiX5MRTIugDtHXg9DnfNuBl04SPV4Ma74w
-kZViGzUYQrk4VwshN0552ENEiCMBMFuU9TDW8e6zMqHExR4KWUWCdK3RFjW2yYBvsxnPuXI8IRA0
-bM1H3N0pje/L3/qhrQRAlSJbM2XynH+EvTmOawqn2hz6D283R59kHErUYq5feuGdrRVYCuMv/SuM
-RZYeU4Gf4l5yAhgrE+0iwjUp8CtfZmwJgLOH2ZvhaMf3UrvwlTOsVLB3QPKpLC6jrx9Ioeyoh2Bj
-+z9HTYFoywPLSFqVY6w+jmsEeEVEQbkWOaCUS2r0WOa8UqZnrJqG7Gghnz5FQbWFJ4YPZ1/rgOnc
-FqPlFseQucQEiul7u4bjVDQIN1qQTQ0wBK+qahghjjEi9H6UycWj5AZ4LEcLj/TSoxL1r6Yr/BEs
-zOupZPrysr6JgEKuleeC1SlexNhNErGrkRAN9CKscJui8Vgc0k3owMuLruhk5jsPAnPhlCHXfUAG
-CwnFlu3m2uX8gig5wbi9dLAfowv+zKsqH7XLQDEW4mnckBv9PFXxLzZFuraUfo/PKnEq+83g4qdg
-poLBhO56e+RjWSYRrk/bXmdY2meOE98F9gUxWUAVC7esUujUcQQ2tB2M6dtDFREj7tUGkEUgAFGR
-lQIxWDhUMqTPtyzaGlhhoHOATacC/v9u2Qqat9s+K69DPoabKivHYWkV9WhfXU2QfNPUrhreDfnN
-FGq7Srt3bh9Sck2YqT2tdHjH/wpT7HrIPA2BVS00X2K7LAePaTNCDieian3WQkmcqIQ6/D78ow/Q
-PfpoYkZdKmrYqRmeSc5XDwCa24m4oPmJh26gOiybqGxfjePaBOjSIqw/idtIljzluyr0ChdRcdUS
-x3LWbc3KnmEr0lmHsHZH8fO1D/lK9QNmXh43xKObLaPaJRsFCvvjdvddKSkqdU4NQRaOfNF8gquh
-jbs5o6hmj9T+2vsW5qXcP7jzHIaHexX2TgiV8FwxzpxyVcKUjTQZpP3RkiABtjEhZRdnO5/8Pe1t
-qsnycTAwS1iFePTN1LMBcZLlXPWeGZ/L9YBbMmaoDbdhXIwDtV6Xj1/j/xqcm4n23WE14k8oYV0m
-/TwcwNW6QZ699eJsR28A29pYL74Gg+NKUVOTfz6eIeJsHZZHr3NSJBxQl5SLApQDLRgTnZfrBsHt
-Z4WwDXkSHq19ADH70rb8NpO0KC+EGH9yawTDjgTKo8Kl+cHllxM4UJTXjwZ+7/V9uJteO/Zg95k0
-3fhY7OK6yH5QbkM/BtnGxoT9ohC3zBy0dXFvGVjz6O9t81NvwLqXLM6ltLexSR6eBH+vWtbhLT92
-UucZmjZCoEl5o4rTnPL0gcjj36sxMlHaj05UWXnkasNAMr2gIPgxVUmWCBHmMf/pUtIHc9l1s1/i
-tzxf9CEbWy+y4OR+XaePmd56smdKmMxl0lyXBqPWS9HDkAdKJji0yB778JdfyYmmcSKlp+W8l2KB
-6I4xyLEfUTVimBtXY9cV+Tx9mQBrSwdHW1Y+d++Jpm5WkqPuDQ/a4fUvOeUFIqyP7FVZyvOmgpW8
-t04tAkv4imtLmqBMOF4n5wcVGRPETtcKKEJv6q4Y41o/mtcakv2vqsenYpf4oBoq/qJRMYwn/RV+
-xAFy1y40KsFKeTNNrN85l9QwXnxN0Aw9N598qjf4poF9NqCUDGTaMzBDouG3AbKPs8NSTpXhmDai
-IysU2t4is0xuMQfhhxK3StwX3D/l9aFQiRCcqEo4Wu8Vz86xNUEwlVtQ3IQ5MKGJF+HO/rPJ/wCu
-51C32g8Pn+bHtgZdQjMQXrf502wamowCN2lCGyACraVbzevmSNxHD9+rrI/bpRpG600F0eqCsfeg
-jaFxD17dLtAO7n7e2GqkJpRpkO0OLQZ8x3klr3lNZ8v8KsnwGj6qZ1cbnqtTzl/LMkScKNwlC6Df
-9ImpAl4kDcUFoxwd6MavleAK4EMWWZzLtTNSU2xNK6NUmx+2yPrTqb71sU/+UPT2j7WCD6XqUZXl
-NezD6wvmlSmrCljRA4u5eu0jiUzF/NH4qooa/2+foPivniZVirlYeb6tb5LLzhUDPzGRYprzWv1+
-Uobis0Oaid4Z/axY9UvbXPk5db4cxhP2ipI93XPdASiJb197O9e9eVwdcnFSLKnYR2kEvS+aui4h
-bokKkLchAJAx4RJOboNFyP8AVKiY4O9l6iCcVHhRsp7cJ3MlKRwkrHLGGp+tyQtyBUg892egMzkw
-C6aDODod9SGRg8C07TCCvIUpWjx8JaKZNc/AChrQp//IjWZ53dbQx7Lo4Kxyn85VcDMK+Ya2QZ+9
-NrmoubQmJtJgad+8dwtA1kbFUOQGDF5kW5ASaxHQI59m2Q0WsuO3nxTkwyGAx5Q1klY3hvISYJy/
-cACtyxHUzOPOEpIyoP3ZfbkZMVNp0yoOwfICZoudQjvhwGb6oJMLavpoyrOeWp0MWlOieaRTdGKJ
-YYN2jKZR0V+hcRnEaEft+Dl15Il9J9yAmcSL2EFZv74FZRNDwCt/IvvaRfqrrMzQ0OA1IokRUrlF
-pMGdLSz4UEAXIndY9oEa/qQG2rD38yf2WGmhx2G2SSoyVxqJMJfm/1kbiQTYTS/lwNJsDOG7KBu7
-MXdacpM3wOQa3u52KcZFJbM/5RppnEsKm+eJXhL/y/nhFt/bZr8QrlpmEYXGAoRvy0ItUnprC4Rb
-CK5sifEkYuYfyV9p/d73diMp+8HQeBzrqiKb5OYxGFdI9xUIx2YVilrGyFX7Btzq0buGwN7XD/OS
-nfrKWex1ifmv15xEfm0F4FG3HkQ65fVAJerb+sDetiUcvqCvR0DUY2I1nDV721F0pypa6DbD6vhZ
-Hv94kqieWWxQxZVEUqF7mXI6RDPfLkqf5KzC+tO/22xrMbSf5rH59Spg1pF/d901WURX6cxSvrER
-Th31QzNeck4YtM4XEF+f6/TLqWP0HIpetOZeC0j9pBT2Wt+9
+<?php
+
+require_once 'Swift/Transport/EsmtpTransportTest.php';
+require_once 'Swift/Transport/EsmtpTransport.php';
+require_once 'Swift/Transport/EsmtpHandler.php';
+require_once 'Swift/Events/EventDispatcher.php';
+
+interface Swift_Transport_EsmtpHandlerMixin extends Swift_Transport_EsmtpHandler
+{
+    public function setUsername($user);
+    public function setPassword($pass);
+}
+
+class Swift_Transport_EsmtpTransport_ExtensionSupportTest
+    extends Swift_Transport_EsmtpTransportTest
+{
+    public function testExtensionHandlersAreSortedAsNeeded()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $this->_checking(Expectations::create()
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> allowing($ext1)->getPriorityOver('STARTTLS') -> returns(0)
+            -> allowing($ext2)->getHandledKeyword() -> returns('STARTTLS')
+            -> allowing($ext2)->getPriorityOver('AUTH') -> returns(-1)
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2));
+        $this->assertEqual(array($ext2, $ext1), $smtp->getExtensionHandlers());
+    }
+
+    public function testHandlersAreNotifiedOfParams()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $s = $this->_sequence('Initiation-sequence');
+        $this->_checking(Expectations::create()
+            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 server.com foo\r\n")
+            -> one($buf)->write(pattern('~^EHLO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-ServerName.tld\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-AUTH PLAIN LOGIN\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250 SIZE=123456\r\n")
+
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> one($ext1)->setKeywordParams(array('PLAIN', 'LOGIN'))
+            -> allowing($ext2)->getHandledKeyword() -> returns('SIZE')
+            -> allowing($ext2)->setKeywordParams(array('123456'))
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2));
+        $smtp->start();
+    }
+
+    public function testSupportedExtensionHandlersAreRunAfterEhlo()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext3 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $s = $this->_sequence('Initiation-sequence');
+        $this->_checking(Expectations::create()
+            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 server.com foo\r\n")
+            -> one($buf)->write(pattern('~^EHLO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-ServerName.tld\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-AUTH PLAIN LOGIN\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250 SIZE=123456\r\n")
+
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> one($ext1)->afterEhlo($smtp)
+            -> allowing($ext2)->getHandledKeyword() -> returns('SIZE')
+            -> allowing($ext2)->afterEhlo($smtp)
+            -> allowing($ext3)->getHandledKeyword() -> returns('STARTTLS')
+            -> never($ext3)->afterEhlo(any())
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            -> ignoring($ext3)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2, $ext3));
+        $smtp->start();
+    }
+
+    public function testExtensionsCanModifyMailFromParams()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext3 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $message = $this->_createMessage();
+        $s = $this->_sequence('Initiation-sequence');
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('me@domain'=>'Me'))
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
+            -> ignoring($message)
+
+            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 server.com foo\r\n")
+            -> one($buf)->write(pattern('~^EHLO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-ServerName.tld\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-AUTH PLAIN LOGIN\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250 SIZE=123456\r\n")
+            -> one($buf)->write("MAIL FROM: <me@domain> FOO ZIP\r\n") -> inSequence($s) -> returns(2)
+            -> one($buf)->readLine(2) -> inSequence($s) -> returns("250 OK\r\n")
+            -> one($buf)->write("RCPT TO: <foo@bar>\r\n") -> inSequence($s) -> returns(3)
+            -> one($buf)->readLine(3) -> inSequence($s) -> returns("250 OK\r\n")
+
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> one($ext1)->getMailParams() -> returns('FOO')
+            -> allowing($ext1)->getPriorityOver('AUTH') -> returns(-1)
+            -> allowing($ext2)->getHandledKeyword() -> returns('SIZE')
+            -> one($ext2)->getMailParams() -> returns('ZIP')
+            -> allowing($ext2)->getPriorityOver('AUTH') -> returns(1)
+            -> allowing($ext3)->getHandledKeyword() -> returns('STARTTLS')
+            -> never($ext3)->getMailParams()
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            -> ignoring($ext3)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2, $ext3));
+        $smtp->start();
+        $smtp->send($message);
+    }
+
+    public function testExtensionsCanModifyRcptParams()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext3 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $message = $this->_createMessage();
+        $s = $this->_sequence('Initiation-sequence');
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('me@domain'=>'Me'))
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null))
+            -> ignoring($message)
+
+            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 server.com foo\r\n")
+            -> one($buf)->write(pattern('~^EHLO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-ServerName.tld\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-AUTH PLAIN LOGIN\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250 SIZE=123456\r\n")
+            -> one($buf)->write("MAIL FROM: <me@domain>\r\n") -> inSequence($s) -> returns(2)
+            -> one($buf)->readLine(2) -> inSequence($s) -> returns("250 OK\r\n")
+            -> one($buf)->write("RCPT TO: <foo@bar> FOO ZIP\r\n") -> inSequence($s) -> returns(3)
+            -> one($buf)->readLine(3) -> inSequence($s) -> returns("250 OK\r\n")
+
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> one($ext1)->getRcptParams() -> returns('FOO')
+            -> allowing($ext1)->getPriorityOver('AUTH') -> returns(-1)
+            -> allowing($ext2)->getHandledKeyword() -> returns('SIZE')
+            -> one($ext2)->getRcptParams() -> returns('ZIP')
+            -> allowing($ext2)->getPriorityOver('AUTH') -> returns(1)
+            -> allowing($ext3)->getHandledKeyword() -> returns('STARTTLS')
+            -> never($ext3)->getRcptParams()
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            -> ignoring($ext3)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2, $ext3));
+        $smtp->start();
+        $smtp->send($message);
+    }
+
+    public function testExtensionsAreNotifiedOnCommand()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext3 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $s = $this->_sequence('Initiation-sequence');
+        $this->_checking(Expectations::create()
+            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 server.com foo\r\n")
+            -> one($buf)->write(pattern('~^EHLO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-ServerName.tld\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-AUTH PLAIN LOGIN\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250 SIZE=123456\r\n")
+            -> one($buf)->write("FOO\r\n") -> inSequence($s) -> returns(2)
+            -> one($buf)->readLine(2) -> inSequence($s) -> returns("250 Cool\r\n")
+
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> one($ext1)->onCommand($smtp, "FOO\r\n", array(250, 251), optional())
+            -> allowing($ext2)->getHandledKeyword() -> returns('SIZE')
+            -> one($ext2)->onCommand($smtp, "FOO\r\n", array(250, 251), optional())
+            -> allowing($ext3)->getHandledKeyword() -> returns('STARTTLS')
+            -> never($ext3)->onCommand(any(), any(), any(), optional())
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            -> ignoring($ext3)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2, $ext3));
+        $smtp->start();
+        $smtp->executeCommand("FOO\r\n", array(250, 251));
+    }
+
+    public function testChainOfCommandAlgorithmWhenNotifyingExtensions()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $ext3 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $s = $this->_sequence('Initiation-sequence');
+        $this->_checking(Expectations::create()
+            -> one($buf)->readLine(0) -> inSequence($s) -> returns("220 server.com foo\r\n")
+            -> one($buf)->write(pattern('~^EHLO .*?\r\n$~D')) -> inSequence($s) -> returns(1)
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-ServerName.tld\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250-AUTH PLAIN LOGIN\r\n")
+            -> one($buf)->readLine(1) -> inSequence($s) -> returns("250 SIZE=123456\r\n")
+            -> never($buf)->write("FOO\r\n")
+
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> one($ext1)->onCommand($smtp, "FOO\r\n", array(250, 251), optional()) -> calls(array($this, 'cbStopCommand'))
+            -> allowing($ext2)->getHandledKeyword() -> returns('SIZE')
+            -> never($ext2)->onCommand(any(), any(), any(), optional())
+            -> allowing($ext3)->getHandledKeyword() -> returns('STARTTLS')
+            -> never($ext3)->onCommand(any(), any(), any(), optional())
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            -> ignoring($ext3)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2, $ext3));
+        $smtp->start();
+        $smtp->executeCommand("FOO\r\n", array(250, 251));
+    }
+
+    public function cbStopCommand(Yay_Invocation $invocation)
+    {
+        $args =& $invocation->getArguments();
+        $stop =& $args[4];
+        $stop = true;
+
+        return "250 ok";
+    }
+
+    public function testExtensionsCanExposeMixinMethods()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandlerMixin');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $this->_checking(Expectations::create()
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> allowing($ext1)->exposeMixinMethods() -> returns(array('setUsername', 'setPassword'))
+            -> one($ext1)->setUsername('mick')
+            -> one($ext1)->setPassword('pass')
+            -> allowing($ext2)->getHandledKeyword() -> returns('STARTTLS')
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2));
+        $smtp->setUsername('mick');
+        $smtp->setPassword('pass');
+    }
+
+    public function testMixinMethodsBeginningWithSetAndNullReturnAreFluid()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandlerMixin');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $this->_checking(Expectations::create()
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> allowing($ext1)->exposeMixinMethods() -> returns(array('setUsername', 'setPassword'))
+            -> one($ext1)->setUsername('mick') -> returns(NULL)
+            -> one($ext1)->setPassword('pass') -> returns(NULL)
+            -> allowing($ext2)->getHandledKeyword() -> returns('STARTTLS')
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2));
+        $ret = $smtp->setUsername('mick');
+        $this->assertReference($smtp, $ret);
+        $ret = $smtp->setPassword('pass');
+        $this->assertReference($smtp, $ret);
+    }
+
+    public function testMixinSetterWhichReturnValuesAreNotFluid()
+    {
+        $buf = $this->_getBuffer();
+        $smtp = $this->_getTransport($buf);
+        $ext1 = $this->_mock('Swift_Transport_EsmtpHandlerMixin');
+        $ext2 = $this->_mock('Swift_Transport_EsmtpHandler');
+        $this->_checking(Expectations::create()
+            -> allowing($ext1)->getHandledKeyword() -> returns('AUTH')
+            -> allowing($ext1)->exposeMixinMethods() -> returns(array('setUsername', 'setPassword'))
+            -> one($ext1)->setUsername('mick') -> returns('x')
+            -> one($ext1)->setPassword('pass') -> returns('x')
+            -> allowing($ext2)->getHandledKeyword() -> returns('STARTTLS')
+            -> ignoring($ext1)
+            -> ignoring($ext2)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->setExtensionHandlers(array($ext1, $ext2));
+        $this->assertEqual('x', $smtp->setUsername('mick'));
+        $this->assertEqual('x', $smtp->setPassword('pass'));
+    }
+}

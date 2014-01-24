@@ -1,46 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests assignGlobal methode  and {assignGlobal} tag
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for assignGlobal methode  and {assignGlobal} tag tests
+*/
+class AssignGlobalTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test  assignGlobal and getGlobal
+    */
+    public function testAssignGlobalGetGlobal()
+    {
+        $this->smarty->assignGlobal('foo', 'bar');
+        $this->assertEquals('bar', $this->smarty->getGlobal('foo'));
+    }
+    /**
+    * test  assignGlobal and getGlobal on arrays
+    */
+    public function testAssignGlobalGetGlobalArray()
+    {
+        $this->smarty->assignGlobal('foo', array('foo' => 'bar', 'foo2' => 'bar2'));
+        $a1 = array('foo' => array('foo' => 'bar', 'foo2' => 'bar2'));
+        $a2 = $this->smarty->getGlobal();
+        $diff = array_diff($a1, $a2);
+        $cmp = empty($diff);
+        $this->assertTrue($cmp);
+    }
+    /**
+    * test assignGlobal tag
+    */
+    public function testAssignGlobalTag()
+    {
+        $this->smarty->assignGlobal('foo', 'bar');
+        $this->assertEquals('bar', $this->smarty->fetch('eval:{$foo}'));
+        $this->assertEquals('buh', $this->smarty->fetch('eval:{assign var=foo value=buh scope=global}{$foo}'));
+        $this->assertEquals('buh', $this->smarty->fetch('eval:{$foo}'));
+        $this->assertEquals('buh', $this->smarty->getGlobal('foo'));
+    }
+    /**
+    * test global var array element tag
+    */
+    public function testGlobalVarArrayTag()
+    {
+        $this->smarty->assignGlobal('foo', array('foo' => 'bar', 'foo2' => 'bar2'));
+        $this->assertEquals('bar2', $this->smarty->fetch('eval:{$foo.foo2}'));
+        $this->assertEquals('bar', $this->smarty->fetch('eval:{$foo.foo}'));
+    }
+}

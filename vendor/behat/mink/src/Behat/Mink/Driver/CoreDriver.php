@@ -1,97 +1,306 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Mink.
+ * (c) Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Behat\Mink\Driver;
+
+use Behat\Mink\Exception\UnsupportedDriverActionException;
+
+/*
+ * This file is part of the Behat\Mink.
+ * (c) Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Core driver.
+ * All other drivers should extend this class for future compatibility.
+ *
+ * @author Konstantin Kudryashov <ever.zet@gmail.com>
+ */
+abstract class CoreDriver implements DriverInterface
+{
+    /**
+     * Reloads current page.
+     */
+    public function reload()
+    {
+        throw new UnsupportedDriverActionException('Page reloading is not supported by %s', $this);
+    }
+
+    /**
+     * Moves browser forward 1 page.
+     */
+    public function forward()
+    {
+        throw new UnsupportedDriverActionException('Forward action is not supported by %s', $this);
+    }
+
+    /**
+     * Moves browser backward 1 page.
+     */
+    public function back()
+    {
+        throw new UnsupportedDriverActionException('Backward action is not supported by %s', $this);
+    }
+
+    /**
+     * Sets HTTP Basic authentication parameters
+     *
+     * @param string|Boolean $user     user name or false to disable authentication
+     * @param string         $password password
+     */
+    public function setBasicAuth($user, $password)
+    {
+        throw new UnsupportedDriverActionException('Basic auth setup is not supported by %s', $this);
+    }
+
+    /**
+     * Switches to specific browser window.
+     *
+     * @param string $name window name (null for switching back to main window)
+     */
+    public function switchToWindow($name = null)
+    {
+        throw new UnsupportedDriverActionException('Windows management is not supported by %s', $this);
+    }
+
+    /**
+     * Switches to specific iFrame.
+     *
+     * @param string $name iframe name (null for switching back)
+     */
+    public function switchToIFrame($name = null)
+    {
+        throw new UnsupportedDriverActionException('iFrames management is not supported by %s', $this);
+    }
+
+    /**
+     * Sets specific request header on client.
+     *
+     * @param string $name
+     * @param string $value
+     */
+    public function setRequestHeader($name, $value)
+    {
+        throw new UnsupportedDriverActionException('Request headers manipulation is not supported by %s', $this);
+    }
+
+    /**
+     * Returns last response headers.
+     *
+     * @return array
+     */
+    public function getResponseHeaders()
+    {
+        throw new UnsupportedDriverActionException('Response headers are not available from %s', $this);
+    }
+
+    /**
+     * Sets cookie.
+     *
+     * @param string $name
+     * @param string $value
+     */
+    public function setCookie($name, $value = null)
+    {
+        throw new UnsupportedDriverActionException('Cookies manipulation is not supported by %s', $this);
+    }
+
+    /**
+     * Returns cookie by name.
+     *
+     * @param string $name
+     *
+     * @return string|null
+     */
+    public function getCookie($name)
+    {
+        throw new UnsupportedDriverActionException('Cookies are not available from %s', $this);
+    }
+
+    /**
+     * Returns last response status code.
+     *
+     * @return integer
+     */
+    public function getStatusCode()
+    {
+        throw new UnsupportedDriverActionException('Status code is not available from %s', $this);
+    }
+
+    /**
+     * Capture a screenshot of the current window.
+     *
+     * @return  string  screenshot of MIME type image/* depending
+     *   on driver (e.g., image/png, image/jpeg)
+     */
+    public function getScreenshot()
+    {
+        throw new UnsupportedDriverActionException('Screenshots are not supported by %s', $this);
+    }
+
+    /**
+     * Double-clicks button or link located by it's XPath query.
+     *
+     * @param string $xpath
+     */
+    public function doubleClick($xpath)
+    {
+        throw new UnsupportedDriverActionException('Double-clicking is not supported by %s', $this);
+    }
+
+    /**
+     * Right-clicks button or link located by it's XPath query.
+     *
+     * @param string $xpath
+     */
+    public function rightClick($xpath)
+    {
+        throw new UnsupportedDriverActionException('Right-clicking is not supported by %s', $this);
+    }
+
+    /**
+     * Checks whether element visible located by it's XPath query.
+     *
+     * @param string $xpath
+     *
+     * @return Boolean
+     */
+    public function isVisible($xpath)
+    {
+        throw new UnsupportedDriverActionException('Element visibility check is not supported by %s', $this);
+    }
+
+    /**
+     * Simulates a mouse over on the element.
+     *
+     * @param string $xpath
+     */
+    public function mouseOver($xpath)
+    {
+        throw new UnsupportedDriverActionException('Mouse manipulations are not supported by %s', $this);
+    }
+
+    /**
+     * Brings focus to element.
+     *
+     * @param string $xpath
+     */
+    public function focus($xpath)
+    {
+        throw new UnsupportedDriverActionException('Mouse manipulations are not supported by %s', $this);
+    }
+
+    /**
+     * Removes focus from element.
+     *
+     * @param string $xpath
+     */
+    public function blur($xpath)
+    {
+        throw new UnsupportedDriverActionException('Mouse manipulations are not supported by %s', $this);
+    }
+
+    /**
+     * Presses specific keyboard key.
+     *
+     * @param string $xpath
+     * @param mixed  $char     could be either char ('b') or char-code (98)
+     * @param string $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function keyPress($xpath, $char, $modifier = null)
+    {
+        throw new UnsupportedDriverActionException('Keyboard manipulations are not supported by %s', $this);
+    }
+
+    /**
+     * Pressed down specific keyboard key.
+     *
+     * @param string $xpath
+     * @param mixed  $char     could be either char ('b') or char-code (98)
+     * @param string $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function keyDown($xpath, $char, $modifier = null)
+    {
+        throw new UnsupportedDriverActionException('Keyboard manipulations are not supported by %s', $this);
+    }
+
+    /**
+     * Pressed up specific keyboard key.
+     *
+     * @param string $xpath
+     * @param mixed  $char     could be either char ('b') or char-code (98)
+     * @param string $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function keyUp($xpath, $char, $modifier = null)
+    {
+        throw new UnsupportedDriverActionException('Keyboard manipulations are not supported by %s', $this);
+    }
+
+    /**
+     * Drag one element onto another.
+     *
+     * @param string $sourceXpath
+     * @param string $destinationXpath
+     */
+    public function dragTo($sourceXpath, $destinationXpath)
+    {
+        throw new UnsupportedDriverActionException('Mouse manipulations are not supported by %s', $this);
+    }
+
+    /**
+     * Executes JS script.
+     *
+     * @param string $script
+     */
+    public function executeScript($script)
+    {
+        throw new UnsupportedDriverActionException('JS is not supported by %s', $this);
+    }
+
+    /**
+     * Evaluates JS script.
+     *
+     * @param string $script
+     *
+     * @return mixed
+     */
+    public function evaluateScript($script)
+    {
+        throw new UnsupportedDriverActionException('JS is not supported by %s', $this);
+    }
+
+    /**
+     * Waits some time or until JS condition turns true.
+     *
+     * @param integer $time      time in milliseconds
+     * @param string  $condition JS condition
+     *
+     * @throws UnsupportedDriverActionException
+     */
+    public function wait($time, $condition)
+    {
+        throw new UnsupportedDriverActionException('JS is not supported by %s', $this);
+    }
+
+    /**
+     * Set the dimensions of the window.
+     *
+     * @param integer $width  set the window width, measured in pixels
+     * @param integer $height set the window height, measured in pixels
+     * @param string  $name   window name (null for the main window)
+     */
+    public function resizeWindow($width, $height, $name = null)
+    {
+        throw new UnsupportedDriverActionException('Window resizing is not supported by %s', $this);
+    }
+}

@@ -1,366 +1,1124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPwxNkPQAim7PHzuijMjr8XRdzMYVO/bm+OMikLYDyE9qgeavHQk8bndH8Mo86hC7VzlTmf2s
-Kyf5fDZ4EVp5MOgJhMpZZw9GN8mTGLNgEUslceyNptXGn+GAtH46lSKAKbt0R9Lvkl7/zDi+U3Rx
-l9MVugD5NEP7UYUBwVJfi48IPXqSYVV+WUU2c9aWCl04+Lxvcis3IuCZyBRuv2lgR1wm52K0z/1d
-+aMwtLviqTbhFz2CoI16hr4euJltSAgiccy4GDnfT69i2uWWJvLbhAyL+TXZPqee/uxd5Rs+HHtw
-lgulB99HyjseeV9R2B/XpTQM6UADz1rYrUdb1PmCJqWQLjtwyMogbm8BsI+Hvg4bilooWjX63Ts3
-3YPkDdaMfV5nbE+t6wd8ANUR2OF8TJ1QpCfyDrLfmdoacf1Vh6IwSFgdEGnAKKLv2dONjgbEnzQq
-jy2kae/sxlZ6HjHEAX8l4MusCaT632jQ28bwSbD+vnKoOTy/DF7eLbd+4DB1LeeFPGD+JHE+AkoY
-4hyT3Lxxw1VI6h/IAFX65/e7g5/gplsPwB+Js5et7Fl9AqcGn13pJmLl70lz6G8/6S7ZH8WBkpgj
-blh4u/WXsxHpRuzPw+/mjTJJ5Wnu2MfwmjkhDkpCZb7Iium+9pBkytjQK0ZvCANEVfmJlwlllTGR
-9fv8JNQDClB7pL9nD1eagKZBfOLFK6UXnCPJ4N3bClN5ndPWrrCRyt1Cc1snVJKI1eAmXyYWlo3C
-zgThl1JJot8wYGMQfVag2hVICKubQHehPJziZFfHXjVNzwrOlJIFBp2EtYQYvK+siCguIcWxNr7F
-XstoDoIcJgK8wPW0MfvQMFupbJ2nzXhhOv13iozjNUmJC+LO/NqtxvA2ktFl9d9nAdPZ7P480Ll3
-e47nQAh+fcWvoOgQeNmkqWN0Bw0TnF0+dKcd1GwhlsZaWcnY6LzTe8dp6JUp7FxhDJS0DLmkiDnL
-tsQy0ViVWrbNYIahFfgmxwGkJeIQ75MAWIVizoYeQp46xq281CFdWalCnkuw//+r8fBgxwVQgi4n
-D9WDguSWWPKHTF9hnXeB7NfODOGbc5Fho2HiAMjyg9LwHILGUmjzIAgkXKdNqSOa1mOh4TWMK+Ea
-QVNxkR401u7qWK3Zmn8ZXTnfV1sEmlXAPSeuK9AVfrdw3Z1o5uPGkNv1JC0NARth3UuV57E0HlT5
-bceu/+nlLff+WB410aY84MMXLhkNmlK9028bIEftkyhQRYABOZGVzC28mHaxjbKK88RedpF8Tqr8
-wFJL0fuucbXErADp/qQWg/KKKr/O5z0E5Ee7gTyY9DdOlLe2nXDtzVRxNuWrqsNaJNumwb8GE6IA
-gpt4iWC6zqxS8eBgRTeuKuXaHIzq/+cousDN7EfHKKPRRH6VBlpxqPScj4AEnOjB0PLux5LRMCcm
-f5iTOtO7GM/rz7GP6XnPqgDcactjlBDnlpX+IpHaDFX5G6XafbN/VkRXzdSJcW4v5xHKdD2frbfl
-4bHl0P2CG8If/GEwg17+Kwa2q+m/Yd1LvFN2Lhv5VMPKoBuGfXsOKooRplZJofrfRyAXqzGY3VNV
-hPW9Ud4lOH7n+QMPWI4Plszj0thAvYplbVNyByCWjk3KBcqiwxpmsvLc3TIh4NF8kjxJFvCBDi2A
-A5K8Zb9XWzpVKPRmTE7xsL9iqT9WN7A6H1i5OMfiSobJwpTSVANknY/+wlWhDjUoIKaE2F8VwMpi
-qxVImwcATNaWzyBJgxx3h+lG1aOgg9jiNYThvm2ADxBaP2FC81kBVQoW3VFYYP9nDfsoTNNKHIID
-1eMfcxKSarrmVpPpwmGbk5vKVEWrh8XQdsCANKmGhhCDOtGFxHFjAwbi05ULBWwifMVkeTOIpTbB
-sdhGRtQuv2fVtN47WXJAUBntOxp41Vu/3knfI/0+cPlLJGXAPuFcNI+9G1j3pJu02YlfuA1YIMzT
-8gDACCYUYWqlnQxPqu/B2r86ZrUjU0RYCkrIVl7kLkULMrI8N0mA8stLxIQk+r9ISSISipto0OqL
-mRPH0l8/Beotq+qVa+HBzagG/zEPIjM3I/S57V+1BC4PSHWVUnKWXXPoYqz8ErOlXdE0pkdaap/I
-k3TSLfZJTOxLEUqSFHdPTxfV2AoEU4pdoZ6NRJDFvnq3UiDd5z4/6ffIwmmI09CkUe/mkBUHlMPt
-fDVY98GGZPUcDFnKdyQ5tV74/9WHxL+4nf9v+Kb8xkQA73WpYlJZHnq1Cu6YJeGqxdcGTavAkjAi
-M32pnnQScn8sSZ/bycOv56HdlkUMr4h/2JvykBGHhxeFdNnBoxJjd06RB6kzL+Y917iEMx6JZ9fe
-04ZGwdYd2FxFvyvd/+BYJvafo2hg1tXFhVkleuJUwnxIYcOVaXOiFJZWLwStnwCWfHTWfyB4CDR4
-kOTi66IE6wKs9DJ+Oy6jt0+Y//lzpDmGqDB8r2qodLYiNMz9o2S9/kSe6Dwh2ZwLh3D1J38pHUmN
-v9gHsL+UhcMSmbQmBki2CeVOVsbZWL/nS1VSdhfqMBEPiEQhxmnACbGJWftNjMFu8O0ie5XJtfv6
-/WunYGE3JSVcqUle73yoshT4j+sdAwZAc/D82YjCwXli2CWQ9TUsUdLZEIMnffIG8oXYnXwP4/ho
-8p+3uBpSqYFV9NIOMvs3K6dqs99Y6uRMERlywPH2vgB810GEhH77oGKYHYuQbDoLf3I3R1tmUl5h
-+/GApGuZ+A96PdFO7kIrJn/yfuN4RICFbPKBALS5OwOBC0lnJYvwFHkxEt0zge/te6KUZQBaTznq
-AuskNRZbsmraTH4iXSifkN4sMc+W2rNPXDtqPOvh7Vrpzczj/OAbhCbUOuba3rPr/5KObG3fYXe4
-CD4Su8jNbkBG67u0tw4OFnN22pM1Q7JY/iS9d3L6365A7HcFq3r8wPejbF/u8HdPLaNQyzjHuLK/
-JB684+saRXB9Ok1GPljxMBofgQl9suWa7tE4HFG3XuTWQSQIim0lq1Cc3SCFVQ9pXAUmzpkhQqED
-N3QXWBMFiq0SaIpwIUnmtPMm9//MMdcIwKVWBavXNiUUkdHoUaT7P2yo7MfA5d9FWS7gwA9McWjN
-NG5MRS1AOYucp2nxTri5LsqOE1B6D6XcUbvTMvcGl8z1OgoukmgQGtifHmX9L4YbtuHD+OqncIwI
-kdbHCsk0knk6iL3DR74bJbScsk6ahFFxu7Mgy98k14A+rDDO94mGxyVRKc3tg8uVRe0Ix9fk0TQM
-gGMaE9k9KnvbN7zk8Q9/TUSrhQLZBeJJEMntD4NPLXnOzP2cyBBaLF1n/+KCgqj5SKLcYjME0HvN
-4xcdMxYf4r8JPtCHvPjLJzW9lQXYLKVQ+4b/ekxvCr39c05i/wbkkbd2rVsSIcv00a+YWAPl/FqE
-xlG8PFzdfHPBd4Fu45oryW8R88uGDYtHBOHxvyi19aMdmGFMfklEJHIMWbcO1nOrhictmZIHTmN0
-i4nlDbvLGWReAdLxe02NAP4HZBY24X+zQSi9fTFh2mwqn/jtTl/zrte0isdDT2FHJrBTWN0uHJ04
-ufe82T4NXYc2O3jb27So/n1Jee7q1qEZW6e8yQ1M837tk/kj9W2DbAffsdeBDrwvddIs0jrw+85l
-9n+b1a6EUX1hAaxRSpQ8f4YdSB4fVUbP3WPhnEmWSIscsdb29YEbjZMMpgI18bUaC+qZOg+QkH+U
-kHbgm+p6i3sbmzB3jSKbYzUkPIJRtsOxtuKP3bM0L4+YPz8NOIxRrEU1K7a16isR4Rax3eVHR8nD
-6pSDR5n8Vo9RG0Y1eMVke9py8r8B53FxfIk6arDIrVEQubZ1hks+BuitYZ3xKgSmylPpgTKGveBx
-/Bo+f4Dh+vsk2esrOiMcGSPWwycvo4S8QTl30iNwoac5Ocn7IjiX/+isA3fo0nbfNZEycuR9n9FJ
-5t2QpoBny2YWGMlNcMHmfmqzoJXAbe44yZUqu4MtZUlePG1KZKoB0Ep759h9Mulwg1K64aBEjOMz
-yB6hLMq2kX+P9IhuISiqPnswJwpumxn+RLy8VersI4q2vnVTODLDecKl4oHMm4+A+QHYXW4Jkszm
-UF/OqCRi2+99T8piagoPACz2eKiCKHPHl/h+pG/DkGDUG2Zmhb8pPAWmXCh09n8f+kufPa4MoDmf
-B00vpPsh4HE/4151/m0fFtffmy+oS01NveU8VDl2pKj8dufsSNwsJfWpSJl9TiUBhF8FyOQm7DDW
-BgUSFxWbvyjcxB05IjUYqAZAPVSSTXHbJCr8aybauGQGAFcrPPnOmBscFHLkDryZ9mzRWvqafbpT
-TgpGy6Ixg8hiaIzJbPa6sJ2LSE72OioO8B5MuTwatKy+vAZV8cDa6MUSff0RV49J726s+GJb4XSD
-YVbqOy+z+fzr9oBdV3cn4MBI5GFsCoCqxbaVCzOToDp7vdPwNnrOdutYmyGAiFpm63iYL1fK1l6l
-A2eY7D6NTnwcH4Bj0Grmjf0dbvLpyKUV8d0Hwj6b03JJmZquClzeXbxuDHy8fI7yv+YdQRn83Kjk
-QfewqfgDafUi/klHiLykMZX5e7/Q5NFLawnup0rAbniqJG45QS0bRygwGZaEsMqpr70lt6andsAF
-FNDgBd1LwGFAN2d3zDTPUfcSZPI4FkclzxmWuk1Ia24c4liMbHRaL2O3z0EseNGgQgZhAtK5CCoY
-0fcrdOacDaANmS85V5+kYYer7oxj6lu4vHzTbgZwY1KnrD0Lx1UYXMex6xyfUzVTWoCd+Yh35iEn
-HOn0o6lO+tHOaNbQdVXKY0R8LXRAFHi80PUTFb5OA/AgH/M1GY9+w4U6GXNLjJ5mx7KzklBppuo/
-KuwbAG3tOn8qKnxCPgBq1n3FQ51phXBNWej6tAmXgaJfLmGesYrqd0wTE2QCf2iS1ZqbfFmUSdaH
-D7JIyeymoc3swcZEcoafgWFOEMqEw1Fn+Iwkm+CTnGLMOTxRbq2k9TeEdmgKV3dcS+fBngyb7mvy
-UIuczrdX2Hn085jGwDU+paryVMuApVCm43U8W8C5YZiNXnGcgbQD4FxCa5+diUEXFX20Yuvi9Xpw
-VgrQbny+p6Pp/4M8gkzLxlDoyRxSR3G0yVnaZ+QD8vAvObSx9XrkgbJ/EAv4/gr76eFGmdV8OeRm
-ybo7VVcjiEGs4uRWDcWQWaVyPLvWizswvnrbTLGFHcBZz5xY9v1f3PvaRwgJXre5ZBLl1k5bwgxK
-ELa4AyRrkqzULTGZqvDbiK2VhxfV6GLyEVB9KRpqS7Wh1ds6FnLXpcTvuCtPLzT+9eLeuOHN2oF6
-Afa2t9PfJtWKi4JwAKVDV8xdzQhmDpy/usOq8emMOvNAk26dtVnOzunbzFvNQpwdj/M8b4SsidJk
-l5hys1MSBt7UADv+RWTzGP72r3S8kh5HiOvLub9wrsLXD2puB4UQ5Mjm5OBTg0AFeBXdrLxjYdk7
-cy0ikLbuIO3nl9cvJvP1/pUos0V/DfKZLFbBNfb3WMeC5ihBqCKONvWOd08Y2JapRNgYcM1KKS/4
-6nTxR2Irx1Mydm4LH/7xyFJTE0a64kGUxA2FfQkIN9ZDp56/71p+Y0dUYQCEkQPhhhQDyGFKo533
-W7wI4sEEkwLXMTpksk4nnQp25ztt+vmthagILq+2e0ONUHKvFlOwvIcNajPNWlwhnqIDiN3wztc9
-+C+gRIvGAfndUT7+nPpdN1QJiHqKOG8pdlzV86iO9t/XsLM00WBPsZzEgdMVidxMNfBjw6orDwxP
-1mDDZhs7+yhgdNJIN/O8KCzdat2Owt0ZJKD2iuUBliU2q4hHT8q37r8jZbB/ToWmaZXK1TPyyM9f
-g8pjx4cRjuU1XKv2GjSgXgl72fwwGCIY+qFNHUsWPgVnvAqJs3I6pSv8zrW62iTdK9E1LJbqHLdn
-aKepX992Op6ohJ26r50Gi6XLuL0tvpNVE/52E14swV3snSp0uLx8EHRxoFbKIK96m8jGK95F+SOW
-x5m+xhCOXK1n0bLQ4rgfoWQHJnz0KZD9rfZNv7avr5gz7xBFPQl4XJwww62C7HHpQcvDcVzycbfb
-HiiWKAr3v/qR6UnZfpbF3ZBQCttl8PDjt1QWuFypRd/j0N+jy28ikEslqVZWGL201BLX4Z+d241A
-5Y0YGNggaaK9CBIW97z33l+S+pOkira8X2il8Tx+27ErxSPhegOPpEZesj7rIal3WuttVma5sSQj
-Kx/zTVPYd3VT3ZlE7YtxhiBZLCwe2o/FLFOsfXX6z3DyAP71wiuwHqbPbsQDpF6I2z625r+ZmS9l
-owsLpXpU2hLR9VPfgdF0MQobbkyI9RR3/d7tlSx6AEjM1h2joTQChTJQ6YVvTdx6+2AorA4X/4m1
-8JELZ6EU++3VsIjADs7eHnR746vcOq0OM8JuAJC2SYnsue3jbGEimxAW2QZtQqitZozbgC055tJe
-gkBBHVEJwc/b7WRsId0dqtvRpsqKrB4pAgd3p/vzui61xTVWqDU2am9z7nOv/mFw3cAN2AeRkz6T
-SRjpIV01AyE+4wa+eI7aF/1M3PbRb/jJJfvqUMNJ/EDYpgOOVrf5z34fAFiRG01RZ1FnTJSg/lvq
-+O+g8FE0lE7GwxU/gN6JEh2DlfA2c7GE8mxUDygtvDvC5xW3xkAKEFMEHN72CN9yEzxX9+AsDyJn
-vzF59xsuvYhbNqgZYy03yvrq10lBh/0plvOIZKCNLzgJd3ZcfQsDxhO7u6HiAJlNjD3V8vOegyja
-2Ti0lO6tdJJAG/UXIidxkU7Ki2hcavwcOOv7UFmjleKBTWlNUmRl9tW1vyoxnT2zMiXp/lPPTTn+
-iYHyUv2QYz5spGaah9ra26B/FZyzDmri073v5mD2M1aS5Ryowl99bfUUUxh6JEFp8cpi1iGVj1uA
-j6NIQg/vxn9YDbm7ZwGqrvf3ZWRv8ldvdDaLEeE2ew9uOLo+vemuEcCnSRQrwrkO64KEHs4q1Zva
-KaqIrSLqZsind7klbPEesVA9KUmCvc251xUO0AHgJQB4oWUdOjmqKr2mh13zgHJs/WDnNo702EYM
-QNpoNLGwznrW1aBCxm9LcaeNQqV+qWI3Z4v5GuI3bLQovWlxpINLQE7C9bOxl0maxAegj4kthbAU
-7/8dJDPbi2F1vH9yfftnZYUxe3uYeaNo57QT5bmsMwXfyOSHhcDLn6lG87gyC1BqOHFbc+2nKXtW
-a3IK8lY6I5oGdJdibcR+D9H6tMl6FVHENy4YBNguEvliII/B95txAbSVX/y4LoKmPD+vZZaQMBvw
-uDrH94Wb4hSzKx8CcGOCrKkLAIM9L/SLm3zpOd4Yspsj/JLwbYkswywx4j/sXtiIyjZEmZF8FOU8
-8OzgDgLUjWEaMqKSzGWCXiF7Da39XXAmzp3sPb7ZMrw3h934gtmOb/UcS0IIr+6zw8G5zns2N2SY
-00haY0NiCGB56noJ+RC1mHXONzVdwQMbCucoZ4wIfMSBnvV1YNX6PVkAOwtxr746CXhQZ/vZp9dx
-d8p0Q6Ca+LFrtamdRjQ/RHVlOW45OvQd/NAYoBaipU5Sm0tVIBB05dsvAGbrXHM0BGPcmKfFYi43
-aYBf3yJfhSrJW8uVpKvf+r0DymrgyhMhc1jQGNZwTpwgQwvqHDDha946o5qvU36naD5fZTg1bFJR
-fJunn96UQeKeJviZXTfQxNFUKsnFyeDHm3dnBw1Rr6/jm6FE6ORIp9v7Ml2AdMIS5iJ6Q45PGpsz
-vDF8MxCb+txlBc8EfwjT+0CDVpjKHZGVAeyqOztCDYPFjnlAzrTyfOLK81qPgDeZHchFl3qHC0EA
-SRhLd0Jn94GbUfIYGnsN+hvwxtSIs7sQ/+cZcuUhfdAiCWcSZ9QdubLVzd5emvtCy5omnra7Ahih
-nJed6PcyJBVGjSeOv3q8xS8D2LeJCyxtk74efVjsK+Wt7EUJzz6Sa76MWlgEddrPIP8leuHzCzgq
-+99TDH0VBME3b6RstMuvxh+gQ/D1hTYGqn0wCSfTcEgf98MZmeprUYYuTp5faF69EFKlLGLih/pj
-JPwaeWu3BTlHpkY1E00D9LJrrjmLKAYg6AsPdpWwhnSdT8ZpDz2D3mFHeO0OaoK5UFbvy4l++aFU
-pHta+W+AlktmSIpZKr7xYOjzxsgCTcW/730dQuFDP3w4bWKdtg80/LZgyejv24r52rID+qrOc/nQ
-0SQeOerYlomZLC3sB69BxYtHSPGSEH4cypKSgGUhUu3+HlTjd9mpmVjrDTfBgMJSYkzpEeLMwBkL
-lNhhj4nHUE7+n6b+G5b78/CsYy90mOgsMcJns0RL5L1eKg2kHwcxhLp0KT25bxIBSI+e6yY6jJby
-tBeAnVmw80TMklCWqo1atSTs7X3j949Omg9EwETFAJydunNNGrbVYv75q2axp9io5NwtBU6e4368
-4ufIOCeaU+Dm5uEGlEwB8up5LnlbDKvO2bE3Zr5pP8r2B7dILM/XMAX8EcLfg4512xj8y639Z1bY
-719SFSfrt/1jkJqsEOIHXFDsREDeMrz3lHiJiByZAKidCYjn78irRyO15LEOE0o0WGuipHzMV33/
-j9SQ8qn6bIvBk51UkbQmNkHiNLBg3uvFBQFSVjooHXzB6AbVMbVhCjPBuWFuXfhxNRT+dvWmlcag
-eZtWhrcpmoPOmfuC064wVS4J1Is7rn37UBn9Kajo20nmRy0asNss/GaAjbr299IKhpUgw1cjPD6g
-V1/CDJwa7jwO0Lsn/TBMXDUga9zF83bt76EGvSAjyj5C0lWB3XatXOwuXkqEQGs2rjicpMnDbRUS
-iDNykUIpRc+yib08qD2oe4EHfNMuKBoaey6ork97v2FJPP4DvftL/p4kbwm9MgTpZCWrerqgIDKs
-/HJz9vEuj+OaNW/yUMVBcDB1HlfJ+6yoQIKP9ve2xkOvP1w3/o1krv18gAluvn3BI2mTVwG8Cnpw
-xFpifk8O3D+z1jtXmmq9+nh4CIUGpBp+0WtZnhDeSEk+IubjiAsiJOv0Kn6zalTWs1DXb0PH2l8T
-2/GaKqjaf/YNuYErBn2c8ejWD6DFzyjqORRcjeNo+Z3q0Do0naq9n5drV95qvHCCZNnWXeJhASeA
-cZRncPcjv038SLBUT6kjo8o8mxsWeUIF7ej2FQSnY9WDAV6spz9/qlTj+iVjIf8LVCqpcSZjiyS+
-ASCTlgVzpZBRQVhDPUvAK/TQ4/kSKN0ctiHo85g5AUZ1awolGgPIwVnTwLBHChuaXNJ7w1S2Fjyk
-DD4CRBLOvgVpPyhPYit6NV+grzB0GFl191ZBUnlKaJVOKtuTiBlGVIYwtwwdqL+/h2fFUHbnZnZ5
-d5ncrM0WFmyXJ0MS/14sYuw0SAhnZQw391BCS/+LvjmRM+BSSDQ2d5LBAw1n36x83jBhFrCpZ0Fc
-egZzrXaCOtiOL5Nk4GkgEyEbE5h8Xmpgk+YcRaiPT6RVQIaBRvi0zBdYcutKf2mzCcKjSan4Gk2N
-Wfv8Ihf0jwEUkdA+Rj7GAKJTAP3ydZymHuwuhWjfHtEPEKWSvC0QaFTlpLSOIkXhAxg4e39aKvvU
-7Xt3C9R3ZsFoBC0A4w/7T8FQKyEGwxWtau8aENAaznVrnpMWiCIdUdvc/biVRCmO1rs9dG2akjw8
-0HYEz92wVW5Y+e8F1jHykNDWhyBQElvP9WfROxcdHdbvm9Mhf8dNPiTftM1u38TH4PYt1YKVHYEa
-P3fMU19GAo+Byj8dYPAY2kWNLxSkv3Mup5uNSYTEJ8JSFmDEuoNeNf+jONEF+RQ74AM7ZcrvXmr0
-5Rx0QfxAFH2VR5w8erZwhNKNCiIA7rXapEnMrH6OUQk8TQ/VOoauNcbwiXKOKZgoK3qdU1Lv7BGd
-ViPJyjS8nBeWRp23d9nxY4SQ9jJQBf/ojJ5W8/laPYCEgJPQYXUyHuZbpgEkWUj67YnZIh98PV6W
-EGQV8PL/4DVksaephl7rwy5YwUa7tqOTcPRygqoLXJck+k6+hcrzRgHLK2cOertxQHF42jM6xMHH
-2D6fPzz5WbZtuTJiiTbCIv+b2M/QcBIPpNplCXqb0WuJtuHK1xlj1DPVgeX1ZLH7rquUSoNqmrS0
-p08mY4QEeo8Odbh7WDMeg3WpUAY01m2UX1OfIX6eE2j9CzeWR1IuAuysiXQwXR11zAbFGy8kC1nk
-6oT7GPPGPgd6BzImfmJ8Kaa/JcHOPRRcsW6gYmTpUuzN8LhzaUNWJJI2f8/wYHT6H7UFf0eFkhc7
-lJSKUYsgPHnJWmHX38Ep2sPYYrptD3+3cmBN94Qe9nzt/WXafKrzNJ5gWwPJ1sUMGPBfD88eS/Aw
-Vv08LYe1T73Z2JzP/7oPDmzKpAi+S0Duhhh4eE7TOFmgZaZxQ0zXbMZyE9tFR0AM+t3K6m+asWlf
-4WHiLdHGNMCCkURIRnRvT7EgVgW0nTMnbzObq8pARtYz45GDCeZY0qW7/8oNhapUZkudrUUkIf9H
-4djEu1uZhwan40z2JuLSWN+yn0bz/R7UzQarCa0ij7JjRpCZR2GjbqH0NaI60ngUdGHLrK0U0v/z
-iq8XovoqP6ObqfIff5etQz03vdwjV6+8zSZGEyhj3OV/6iE1LxXJNUqQjknoWPkd3Izu8B8RcP9i
-IZL+94GnCty+48NxKN9mfD2ZKnoA8MzyNdmmhYk0/D5F+FTM/rP1hd3c9Y1K8F7AENJ+Lz977Pi7
-e49HrcH4UUcA/gDHorgKn4iGPSds/i4PzzTfA7vNescCTxJ0EJ6UcwheOSmH95GU45AfrHMBEIjW
-pkgGtS4SeXQE6DY0Sp+CojQj8fcSnrqXJqPZ4GwHtc192jnEFNUEz9hJanERKxwlsbeE/Njglcvy
-rvRyxBWtqcKpo4Cgc7GNQkPM+CB2jIuilgBIJ+O/WVy6qeZkI8z7Yl6iyfrP2OqNeV9zda4J86x9
-R14UQoSx4ioTK0udNrWqMKTUH/pSSYCRbBiQAlC+97huarZG8yh2fpE9Gl/HO1kBoMQON/j6XAJ0
-sgKC1T/a5A31WEy8EV/0WahXcIViJzjmX2pnCIDBpFDMlcswd5F8WYG4mca3Cl671tvG+1AZSnF5
-37QLe+sGVnRAr4unoxVsFmBMyxtvHc4iHSzR0G2ddESIUeUQyxTFj4Fwvhv4h8pKupvIaiZiFWSw
-EuNRsptIR+IE57EQJfyJY3DvtzLZrOWM8d4S5zvhcscF2pq0xGhlmnuuno9rHkDO7MtqFZukpwGt
-CKUyE+Ue8ATf+8m9IwueEEyg/PGeaKxV+beqIibcvSTg7xhc1ybCq26vSBsP5RNy4FnZ3bcVkfbY
-knB0h/xMSQUMRw4hMFBM3PtXTN3yZhHIfwUm4pARTfh/q5VOqsWZieuC8aMm7/o2XZ0XBcdXHpwi
-f9tra0GYYiOmEmrAFtmvS9ZTab6C2G2pTqQF1XpizP7/4Dg2RxCeAB+VRn+T5CtneR//MD0BY7jB
-sxVhMZr2RAr6c/1jo0WNlipbLSXoafSF918CK9GoWLUJdu74x+CTZZrv4DWWaVhvtLoFx3tv1nSA
-ZBIije6bSmpjL/O1GY5gBcliayzgikyOCYNsI8etPne0XsWucWlreBq0Ba7IJtuZZ9fZwBbM4qC+
-AWwzd8G7ukuXtP4wZKS+J2alzo78ocxXYSBS5sSmt+k0/0meQCK/GB6DDzF34bJTRRKBKxDg4ntg
-jEwnNG24Xy4PZlpf69Ue8vDUyXd/dLfZGA0ujXM6dZlU+ami+bU5LzQ+A0kqC345JaqKUtw0PdnK
-uHjB8Vmns/M5C4pujEz2cssXx8Au0dsz8CSCtRKNZdvZ4ZAI4IlM9rmi7Xykeqx+qiZ7izP+BXaV
-sRYtZSo0W7qJS873A79s7v+n1xq5uKQzRgxH1cf+P9OemaK9lKkzYuYPlObwvo8jMq4bWTs7aL+f
-zauQBDMxUdmh+VA3KUZgJv8Ar3NB+EXWLS+/JceETpfb0k21Nr441JgGkhRm152gqybKqH6a3MTj
-9ddbqZfAUP3ebhgfjzOAdzAssos5vxEqh9RB8iCAqOKANVj23Z+9R/ThELi0RpJ6IfK49ZDuWxhB
-6+JoNh77bVRDiwhv5/V8fmb1tRVEKAyvjsivsC4UG/8qaEEIE/JIh7+tBw78u0YVKS9S7mRR3p29
-rTEPHaj8kw7hGT0rCywHnjTl4ohwvrZfHn83zkT1tbB21sbsZvUjFMdhL4qwxCm4xyOTJ1mNJ70S
-7Ri70IAJkWh5N7WmNw7Henj/jUttlBPwkWKVB8f29cQ8x4syeqdwRHy9Ct0i1g2rdzzg9UTs3KxQ
-s9i/fNncWkAJo9AcGUf430MEkqdlhBjRClPHYuazGEPGuDEKDO2k/lX74p1gw7EhlrVTVqWDS+kN
-At8hd5MLucc7drEM0z13xdBK7l+645i2dxfc1sIG5XB3ako624BtxHh/HcWeMcaPZ5c0oc8tKUPj
-7EWOIoNZ+9SEo3Sb2tf+ZoH2sXVdQckncqenBaVB+Y0PWRoHmQxxbqYLI04jWv6TCUVV+kkpmzv1
-nrxU1gj9Hft+1o6JEQYG4rFXGxLJkAlEG0SRGTub+Ose/AqBOMxE53Y86An43uhvskKFm1paC7RE
-Ss3TxjpV9xODXeozCmdTEb7mMzdjyVad7pMH2gt7o1VXvl5fj7dKL1v57KmSYlmlHgIlE0GG0Nsb
-WeYd19mE62eNQMNJ/RWIhAPP4duMkmZM9p8YylTEVhs0I566ikLjcJiM4mfPvR9GDE+ma3djXNc4
-EZRTG1GGnbo82y+qCSSAwwnA8bXMUw0N3hAQ2FLMnzQ7T5McCgT5grKTsgZQdH/fbZCu2RVlh77m
-dlLxNgvlRKxcOp0LhnIPVxF0sFPk5s403qMGN7/x77kJBZYNhsX88bxduASBY41fp/hK73VQQmYW
-9R/DLYpcuA4d6W/so9c/rMreQsQPj0J95zwn/ncDi82w/UVjf+EZd1cNAiI4+OvMKiEaeOM1Umvc
-jLa27HoJ+yFOcDjuGs3R9TDpTazMCJg94QcvojHRILGUCjbd/yH34Iy4uSr9JmZFpe4F6GQMvYiX
-WABz0DTWnsMSsE/RlPCHf0P8IFQql6/NJN33jAKmcNaUBV+BZEwAa4JeOfgnXmEFpUaYlLl62vtP
-3bw3+N6RwRK0LMZOsXDHeEbD9KUznSaJ2tYRkTb89fnM/N9J4k98W9BTm1Ida1P675hVYkBfg7DI
-10KPGZDdPe7PW8csomuq/droqX3RBJwzH1O8/bCNFRfZKgzgHBButZ7MqxVG7d6dHpVXgghtqGyK
-3Lbe2xLkOnI+59V6pfsBDHiBjAbM7NoqKvx7aW7Pk2BHB/HYnQK8y1BrhtnoGsUFWXcGUm0InaPT
-Ddr/dHIi3AfFnnnAQy4pZpsWk/Dpm/xJkBhxBav3vaIdIQdMlOxDgTudAKNT7CA1YrBSs1R8Sr1y
-ZgUTKPbW/pjt8yUTDwUv3ygnfuPN5c3AHj2AbZxq1VDyrGKghhCQAxyHdYBLgX+tVUjrka/kOIpK
-tUFcvT0zDDzWMJZOjjg2C8BcRBOVzuNR3roVoYbpOXop9Iyhi0Yi4+QrdfXHG9zjCgeNmcVzDk6N
-Xqiq73L3NE5lXnmiVe4L8EVF1xd13hvDYkq2VOrKVYuzdLRtRIJep/rXJ3Bt0VcIJ7HR9nfq3WNI
-u+cWavbI4fsYWHemYGaGk9P4XU2UoM/CBKAIJJVT/ZG43oqXNgkoiGBA8pQMDLmesEXvqKOqfWHT
-RUstDhnf+I+3dQ/Z9tn5OZ5cduJwjldXZR6kryeeEjgBHH6h/SyQwK8kY3rNN2ZjOkULm+nnsD/o
-d0ailptRKwkMFdV5bqBP16ix4drfUd4tpv5/zPyFEIBZQR05RRVSMr3dGxEvo0h83iZWasEj6jCT
-4w5+gTSjnCUhbsYIyWPAfiFmNEGvWVHVG74rSCxcx0zpvVkq2WSf3GyqQVqF5ZjadJWavoo8FnFe
-BdVuJbBd0E0TESMSurLw8HtZ1R1b7a49eQYNRHHRGxM+fGQNaLiCKtfhbs5++wnRXJhFJsaSCriX
-c+w7MkW0NwocPZ5d1jsHlDsqVsRDbvdbs7ddUuaOnQSLCWPOjyTS/OR6WqPbSgE27ClT2dibnAqE
-kGhb7zZi3o4bCmrx77V1pOVBc+iVttdkambi8+m+zfBEOIN53uY9oSSMZgVMBP6utHD7xk3w+6EM
-w9vSn6maZB8QL4aS20OVOEtE52RmzRZtmo+0bJ669tQFDW6+8P/Fh/BtUrAuRYJw+ATyYB1+cDW/
-PrN8YE8QEPWhecC4RWSV/XXUOGQgSCVaxoQp2OaQFfvKuKzS1fhT4tZ4bYpWaQYpIdJaklnOMK5K
-idpw9SUINYi3zkUrX0/M9dQDf8PvI2KZHIZkrSUkL6s7MhX+WscL/T+OFM1n6kNyGpd7RIOzJL8n
-C6PftMIElmkTJ4WtWLZQFjCFY3PWW7/Zs1cmnwo5BVJK/z+u/ymn/pwAQgVR+aqx/ziFBDlFncav
-7N1iypR/GXaZOKhW7sdARSful6Ois/BC30Ww0sZ79ZuLYl1wk2RJhHHuXqkU2PtR5xcC7TK59Rwu
-EOAuy7QHubgDTgJeMIfKsdwZVEIOfbAKv/iKqjbtdkOUhT0NBqtb4eMNUu/TQOHK2mzEq6+48XNI
-OsrGi2SwI62ERMe6ByZES5kBzn7KqUplJEz45KBGAAq6DZ62Obgeve+7xkYsjj3ioNfXiXSC+nfb
-4GvIa54Iejz1VxVBrNH68FbLfQNEI+ZAMaXSW4qnraKIS+Peg2xQV4Eo4wmPqndqwvuAMwQwa0bV
-fECFwxEzf2Ewzds+vDPCfUydrc5bFm2PAtdnnwP7t4B2t0RCdDzS+osxP8QNY1PLe1+bPr7fhFlW
-wpEsfTsqBB7tijbTHGIIBggKGlgmkiEi6j/f1vDes4NVh55BplJ54F3+vfmREd6JSbClG3XFo3ds
-PVnu74ua20Y1MafPhaG5M5BjqxYJVztKIDJu23+RGqS4nG/FE78XFYudUvKASJ0eGC4oo+S2HEYM
-gmOZmaHc6C9lKEqk8gt5SAroEW4oX4UkW/Hgci49VlO+APvZcSCbh663MpUAU4m/+38dk5AA0luX
-ZlIND+yIg4NM5MXPsbibLki3+opdA1wM3QlK/IhQXK7E7OVgFpx3lp2XvSimnUMQMWBtzxEDK2N7
-i85kCYwommx8pZwGU7xLNPI7rLiiuf3blNHabEkB1X2JTO1AaAv4Zyb8NWNoL0xNWyURciRG8fwj
-6Rb/zTjS+aDV0MWX62XnknMN+ZzfeaO1IbSc7hh3YiJMofSzcVsXoVArzmLhAPBDO84hWHg9dN0u
-eH8XbUnZ/vtubv2oHOwMw3zSCtumESeAuFJEFg/PKbePpRvp0Y9R4fZJrR4pFZsNAr8lQ6vmw8Au
-56d8a6cANHAMIEUlX8PeIPt303j81jtrGSzIIiw1LkrcehyjUFYxdhN+yBs0pBIjLjuQ48ZKYkJA
-Y5HJgcYmHKApaJOlWaC5gHtTVe56wpxut4pMlZ+9uPK7Bhl181eEWsb2aZRXEnPDmGna+sYmI8bc
-QQ2WJxoXZq7oMglzAXpvV6bXsB32P0E7wbQwwlTS/kGf4J9ixA6nev5RgLOIk9VUvJ3wwhWTNRYQ
-1yikMvJCYQtZKZY/L6DvqLpI2EKNaXSa7QcwhzlRHtbiyGl4nkwqV+33IJ6RSxThTS1tUGGWE8iH
-zhtDE0FMkudFLUUWKA9HKPTawpWwH67UEdTtuKC0ztM0yRTcC3LamNroaUEPSiGHIGET18ZO2gKG
-XBp/IuLaVM49MjB+WXWueKwPuKVbE3NplwX8y+FW2/8apvxxoVb366tYblDr5M3SEjoUbdaToI+M
-PNDSUqp4tEVmRZ//xo3bnlBUvBaeg+FkUI69QncmThgx7To4mzpSsr2Mz30eMyDKHLtmhXaM5hr8
-8o9m+9CAodMPB1q6lAvieKa6doFfjIIE1jGxQ4n9DosBkRFoFVmQup6QgT1/1gDVPeY8Hfc+sKPD
-TX/jJwBKVKQ7oyM/CtQMUVZ20PvMNooisVn7cfigSbJO+bagiXo2A96LU+7lynqq80jn8dJINr1n
-qntDq046Z7USdz9GnWT8S2ZXnPHvu+TTs2mirgJjFuxZMiW0RYLwDoTjcaQHaFwBfxx58r5Nr8t+
-CY8tgeqSBUuG7knGEHQc+WOhyyvNiGw6b1hWBCI+MTYopQnAecC/R4XCt/vEz+NSAgeLJmzQ6x8v
-Me7tIBzCb8vmKoPu9n2sBbrsCwIRPHA/wPsuAHf4oV4C/vr2D4CHK1jeTG1QmhOtJc7lc5Yn3VYC
-L0WwFPmKfbVi6GO0lyiGlY679Zu0K/VnZdEvBlt9VQy/VAjKnedPregKlZRbZwY50I26/lxzxmdj
-fqhNI8ZgJ67PNC7LCujWQY1RAfC+5iw4yR3limgJbmUVw6FXblqJVkDiqPcHVTc31xDQGaLMO1db
-NG3S6Ue/3L8PMY3xVlqJxGPM2Thv686NwilRt+lJ8g6MMLTX727h1qtn642NKfOvZ3Pt6PMj6TUx
-Xel1+nM90ZSGIOOLyOnlG3PYClS9/zcZC/Q82BHn+6giHX98u3+zMtiWgH1LenaBluTQmxXCLuFB
-/bhZ+5D7A2NCsynkXZDpdJA/aoAWMsmQ3F5cJfW3yKtERDRykFibDCVKI+E+93FVH0Ew4uhlfvlt
-p6Ys+v+vHTrYUONvilj2G4+UPL6AK44OK4XVivEO0QRK+hs+z3gzxbi0cyxujo+jQYnGnxWimtdE
-Qi/173xM7xkbD+ygOGtqh8f59Gbhb64nK/S3cj8meiLXoVmjrj3kHqlLJtt1SCr9FGGqzIsbKzxX
-BpYaOwHwKEeO/c2DEM0ZfqguV+VjeLUqjgvAbF6C/lFEkuGhKtU6lKasNC6ej305UdESHkHaemn1
-NAGqVZTKJs4fbpYo25Jv/2qNqru4mK5FhThAZKiJkZVqLZgbn5EGTuZaBgmas9104Fmw5KpivHKI
-AbTwVDwvbl8JcI5UHCExpzw8Aogq2L7os68tk8nTr7g6XrDctTOgEyTs5Qt8HbYnf53ZdXSLr078
-njnHAM9t+E0+AKF39HMJW/InIMZiUhuj/K8W3vcVof0CA/FLatCKOhMCaIxFXT6vx4CJdJ1wiEcS
-5E6tskjz4b17AZTRDb0DUaUqBPFOB2vUCFeSYciMqWJNCI/oDbdPYDhzkwlhD+K6jrN/sC+zezTo
-C+sie7QQavOruScUCsrYm0YMxdJ6ZEkhQlzGS04q43K7JHp3J+5j3odW0pDRqjuj0uhs9KLYpBmd
-XOh3aJ9Fp0q8V1vBUtIoPDcaEpSmMLRH48sTK41gpP2vAlmWH1ocTS3uO7jpzGzXx64MUIpH9ecY
-wBzilf3NbRnMXlux5elB1GFyScpsETUwgITQzo1FBzgUDUkEj08XI6Tuf9Vlmj6iyGNEZ6/nFbMh
-RRK2iJVu63Uk4TuSzxQria7qKXtbeG50BZCQ1iNolyBFiton1tF0rtsS74pulsYLkz7H4Wp7gnNw
-V7HGTHS3GvpbnjBncKOvfMMQvmzNZ/qk679ndLFxKfZSgyHFPPncC4LZnFET5kohsPMQASfi7sd5
-KrDJsIomR6gu6j0bfNtZqntgMcw2wzvbgyDveUoC21nDb28k2mzo48fqakgT33dA69xhv8/VpgN4
-Qqs5WNUVs6nsXoRz1G36hZi4ct3jACNkW05Lzgdsjdp2qj4jVT7R5quhdVfeLtd28DwOrlcSPXAH
-0tQYcEj2BQcFyTTxNU+dC3vwrqrUYyInyY5P+n1QW6C7Qn6Q+mX1KGyTAai4TzlW7giq4x0dGQEI
-VdoWHQ4HGGZCJm/NZZH6Au/pLhT+Nk88DIuVXfnkmVR0o4/IQ3widWeSz6NKGq4E+o/aLJOIzlT6
-WfkU8N9ZXvokY9ksiacbXQPOSejAxyezX8qMjuuJqcq9pE3PioNyNbFbZOL5HuDJYk3JrHPumbcH
-Bh+ND+BFl/4SJxaCSJ/CXYfYi7TZFGx08DrkyCVhPo8/defbgAYQDkMdlscbEgA26PpDqvs5m2hS
-xW2GXQC1hQo8n/R10fuA+enwdMn1i12qUX18ZOO2op4Y/SNA5yFpBGQb0Y0JOmWAZf8d2i9lM43y
-KuB/7EEzr00Rp4kOS+b/bKP2o+F8MsG4G7sCgCl3W2QTSSL7ajGhNC+tpf2l+C1CRkQ8IzWBx1yf
-rFVIBKaRkiDh7wrvRIHTZJlgAj7MbDXC1ekXVIokIIzqqBDf7Qg7T1U10l5qamVUyzz6hfFdlQUH
-jVpWv41VM4GAMF/Z6cPgT4bFMrKo91+rLFsR3Ll+U0d1Dh3vda+uniN71af2cDuSnn0ERba3a4Dg
-kx4JtAvZgp5nNtHQZmBiV0aPcvTODKjjPpeIVpDEhGRazo8PQNE7TeDoc7+FlmDwGLD24WW3aZjW
-xCHr7MQ8NLRmGAJTCQm8WA4b7sUdSjCX9vLoq5jOZeTxCYqbs9w8aW/n/PJA1gWL0WY9jpa2Pmr7
-nPBZCwoZIGAYoye5Z7UhCcoKI9PQHoCRIZH7GeDbTIruIHo7BNqBLxR+hOKA9P570lrOtczzD4pb
-/KQI0+PjHXcQl3GE/jfZ+Ah1ERNhm1f43p3660mvkC+Wpg3S9wC+87AQYcz+eIDmi/f5xoIDypyH
-Ukkb7JyJNEAOQaOVTS2VtdjstjPlvTpgC9WEOkT3t2M5CHXhlLjyHjPiMHe0c2F13a1ySLpn7L9L
-qseDnI6pyLgG45nS8Hyl2AyHZSm6IO1u9OscH/9/ZpXX8POggjLYT7aSYXuWapgpJD8pxvbUbMhB
-5eZNYAc5tGFOgqTYWzOVRlnYb99cI8HnrOcqmgbhNYBFIqdgvCvqCK7xgfd13JifqtG66vrcjgSZ
-w3Ph8CmEVjKXQ4Wv7vqmxEiwoatSwT+uqxWbpsveA5aLyMgtQZMVY2P2sSv8G3dIp5Zg4nvBHiaw
-bNyh0lNnRcXXSRy780O50Xo244M68KSdEM//JrgvIA3jRmb5SGjN4r2WeiIPr2P2zWeq2AgR6Wc3
-khVDjEiHX+H6qV0EkMsdRalG8M9IYzU2PyiuUG74w6+8yiVMBamzbbO3QVxeMsA2tpTEnilX/Kei
-WHaaJRg985y/H+LA/j4BLg0ElOgMfkAfHLNSvnbqW7KZjY593H16fhqHyNY5/O/zPVETYq83sq8x
-lPmbg16/4E1aKc0nVntC6M2xlRlx4+TNOkJRdxZ+HlQvn08WdbfG6vQsYUiOvsVQEmO9VQhNraVa
-govPLQdCDWrBwTDH6Arow3xOcR07kx+kFZQ2UYxcvvgUYch8xQRLt+ICn4sJEQ0kTFyqeBgPcOH6
-GTSUx/iHrNdFw/dl1DQCHWOJZZdGL8VM4mKfCehqS36fw+/kxwUXuMuJMQdibj9KFlRKfLs6Qfmk
-BtoIheKxhPm7LBhtL0qgRi5xSy5nQ+jPe5aXH+r0bCU+qFZZ41G6oiml8rFVFSsvV5+BhU71b7l9
-swd1AfbXHOLr5I2SrV4ldZR6vWsAu8OoIMLBul6a1rG3ONigpwa48yNsKAtL/CT0firKBGkrKYqr
-j7sxzxHcO0fYHaW5Av2UbxkTvttr7ST7aYeTjxPP4I9GBZMX2yKKHjg+A31/lILEvH8K9WIy4lqX
-lVdw7SI3FqQWWYF9YDicvXEQyyT1/njT79mk5ljnh8V+/zNV3mq9aihHNq9ncc1765yDrW0XmTn6
-HjSQQ9LEIi1mfZypeiKwe21F3GWiXFXd6J0VjHq8gvuOwaxbqKud99Cpn9b4JDxtz92fHjoeWUBH
-dPaYeddQA/BYpLbexC6yMAWj3yCZ5UQHmI7UykGj9JNLe+n4goA2gdtJXQ2Kd0FtxwJLtBMPkJuV
-u5fBGcXJ0yvKnTE0Bv9vHHCrVOEIuaiB7QZxb7JGsRdDLfmIX7KJnIzY+5LRsyvnvjIyaY+gp8cB
-wzhstDVtGfs/lt7DjB5Zjs9dtyEYys7rb9Mg8jhEUJ6fbWH4VjAsHbvJBN3icHTPRnd/w4dHPTHo
-yCgXJR/YcYku4SWlP2hrg5CNlBlz8GD5O6rTWL12RnvOyaddkABJRohnYaGLzVur0ynmljkVmP7z
-xHSxRdEenq9sE2+wZflx3Akq6eOw0x0YtgOi5TUD7/udJa4xA8JGDi6hYyQdaSsotcV5jszDsN37
-aKZHSC4gEXzgBz5C+EUk92IMrrKJTQyKeFA9RYKEgoTv5sO93nzjXf7nqMBWxQAXpZN0CGED8x+h
-i6aHOrgTgJN40aw/wpapcaX/r/tWcqRSFgFQIRV71hq+NzsB67BfJXE91uLIQ6sZ4RQR5059Gr6O
-ekAgkPmhAQJJ/UIcbLyUa+o7GTaD1IMPsY72tgg5wE+nkviuE6h5OTg+ZEXwV0/1PG91OHW43/Cm
-8zB4XP1s9FVUbawdGHHoGwH3Se7zW2d/vaTcxXL+tcmaUgBrB4j9O/phAvRFIhGMwDyJa+c+6B9T
-YeP0pyEeDIGOHvP3G/rVQrf9pLB/kBQGc2m7cr4zfFaTrSTwZKXcBgeGQzn9PytYXVtBDKCStDwO
-zknp6EPdSfKuqDJtmHwr0ebthBSsXD1hrWi9mqCci0lxSPtAASjjwFX2Frq9enqlvMqiLcym+rMt
-JGpbiAK4Luaob8SCv/sh2/jMbR7mmR01KHhDjmdb9a9vpvOI6f1Zac8JFOt2C8sk7B5RGyAKLxXV
-nHyrDOgJI6N/iwGNeS9R58lq4tatYK3OEncy1j2WfpXHOAkj3a+YZ4t3Qi5bO8qLO07KQsdsRrMG
-ByiDp3qvQqlscHOA/ESLYoGgaSz/tNE0D1iNbJM7hEosynL6Cty/CkTQPa+bMQL2/A3tccoyfK6S
-BiHhgOg1vB/7WzjEVy2rK3aiH5fNAw6MZfauaU80IlooLn0M1psrWHM+cd3741KsZc4cwj9KnOk2
-ciWvaU5wdDRy114RTgavXfyDx6JXxmoD2fRvdwaFEO/YDaaBPaGbsYNlafBRAb8iACPLjFBqEepm
-FghaLsfm1b3AYAnHvCF9OEzII2J1oMl/acNZe11RaW0ajfVNdmmGh+tPFkP/7PMVhlR9CvSo6cF0
-qDtfYOGi9C/DbqM4WBWvLkTNj8MoCf7wnjV8kyFcJ//9KRQ/4hOVdSWCsbQOtKLFKpZULypXIlXb
-kQqLwtGAwMVdAqTNlGEgz79UhDn6GVv4PSu7bTENfU0ZojUXAkRZ4WESWt6tcNegWmid1mQ01aJU
-W5GJZA7CongeRxkpQ1n/80L+W6dibeR+S5e3MQtRuw4ABXQeHVd+E8Ob3WyJzwpS0VeKQGFaRvx1
-Wbo8jvco9SryrszZwESIg//1Vi/0FYA8dz2vY1iolNrdwnE7Wx++bLRwqj8INUZ8YlhZy8nND7YW
-Opell7uOtSdqOl+IVJ3SzUwOvBz9rlxEXPcjVj4Mj9bAl9XTKNTBnoU1V7yY5il8KOomrQSg2E4q
-KBNPonCrZCR+fqpUvnpN23JsiEmCFQmErd4hkhwGyMP04gNV3GF0TkvUC/UFjToZZxTuODjw92h4
-ecGjdZuSdhYVA4hp6RSlyDslYNUIUARBO/sZotGMI5yul9tiLq1eqRn7yVkyq4ITZ7TAtnqCIHvz
-As5PXgmToXeWvT4vbPgsHmkwlgbdu8QjSLFZL5u7nf4OkTJOMJTTVFTyiOUKSL2mjhZzWgVcQHpA
-qmE8hd9PTR3mncCxy9ltR6cdydVfryNOFYdXzwScPMP3qW68OFQycILDy7NIntquH8JnOTA2pjdx
-Nq3RXfB2byfROzkSS8i6+fsYG15igqFJPwSuUENPFw9NM3/cwXcWYQjNxWSCT+1rfCJ5ayPeP1kr
-bIXHwJ/fbz3vPFzKp/gjgFZMUWbxVMTLOjqXdKypDllUy78Ev4C0mADDAANk8ZXLNB4E6QrWqe6G
-Jj/Y+UQb3FJMGvD2/6UFjU/jLSNVm7FUBpa7DgEtRn9NM4uPO14AMRXJ9wDfyecVep0S4epTCwDG
-llsySwVxH7cJhD2zmF9mSRMnmfO3gVri94fLbGzIB5allg0Acx1e49Sm5676R/XlNwKLJpWJjheK
-lEWZd44s5Tna+0ZrSBhwf/zk4V++ol0/AMI++/3m0ttqz09F4qjX1HDVBTLYFQvEooAx0/KDRR8V
-QYG4rpcpHaeSmmvJgYflDs002ioEmIE0f9S79MGL8i9Y82oIdLmhNCGB7ej2jEOHLdsstfSelzli
-vwI9ZCBOXXdqeMTuQ2bsBUQyAZu6oHBqxY5rlsFSUb2RaDGi+Qbl2c1k8eHdA0YMMwPUKMk5D2wi
-SQOewh23yT3Ig8OkVHg8KQdakqlLUI0IeSGhWR+WbJJNg0z2xhp7mnfIDjvQ7w9gFxHpnb2u3/wL
-L81iIyxiZq27cDhh6AFn/oqmzgAWmWmhHybb5sv7l+I8oKh/okNW4x9nsgWlL9bGicy6/783ooWK
-Blu5PC9F/xYWtU7T5WNN1XOfd1WNC3CcHxRjapRpla6TKHbpzv9d/tHcW+yR+DpnPsX/pbrmdVkS
-mQiWq9L9fk9fUnLRjdHovigMPG9fvIehB2ugTKDpnZSzLqCri3RtAu4wIJ8FG9ZHPVBNWBO0oTtJ
-hlhfU7/B9z1De2xt1cMIghOoff1FuuJ4rG4nsK8VLFzLUJ0RGW61W7e9KYXyaXJwwQTSTBux6FAG
-A1nCUTYL6hR/lWdykoEUjVCD47eA4WB4a3XQoKofYBVEpOa3EYQjXYQCk5A4cUzJWI1Mv00ftPNT
-s6hNHz0KYJ7nYwud9oyegX12pUn1tNCuhfOvPdU06XoqYYBLrE+M0WaMQhcduA+Tq69nQJAmEogm
-lDq2hHwr4DWTGyIQiIWWJYIIliTdqWMJpY36baA4OwVUAkPe47u5cN7PY1bKgrkolr2xFyBA3h2g
-2hYYdzeW1Sw8b+Ms5iJstC7FKLxsCj62eDjvIG9U8d6c2Z7iMl1YRXJ3mxsxj/zZk2VN4MJlCp2L
-7oJNJm1pkVhlUjieUwcQDCQkSnuJ5RHkzygFQxU6Y4V92FW3nO7FFPP3NMfoZTJmX9/n7EO3fRkQ
-Gir3rjw6NUDIBlY7NXl/jVDjL+WMXaKgjdyMYWdi1fwqTP24+Fm319/6oT9ly6Bc0AGsIMo0Aw2a
-QfqnLa7zsTDIxZ7nrc2WVALt5axJgYD1vM6uAtOh7ybA4+eCw9HYmuygEXxY3HUiiWHdSJeu5qam
-V7wfGx6xGyLMw+emKcOFHktNJXlmqt5wYqFOeK3HKO7iCSwwLEp+7AsiU8VnPZEc+58vWakpBq1x
-4oirjMp4pgli6WsNzGAbyTlgLKQXfxaAZeJnv0Sf+C2FgKDAX9EPE41rZGLGYnDINW9Ed5sh3EXU
-QT/HqCkRQCyGPco4SgffvvUiWsg6eG2mXPeu0VN7cckFfX7ru6/7qmssTZl9sWzua7hMf8YVHoxT
-bJLz/2ExM/UbPVSVrsl8gbva9I6Rk9b9LlMMtzrgPn+/rTGhwAotMFzEPc8o5Rar3uPi4Fi01HnO
-vKrYP2HYpWVhMWvhuWX3uwsSCr9EIGezHkj2jENZ6VtZSEJkA9XS7cZ+28aZzR+Ihe5EgHJEDEQV
-DeEAnCfpvMj+kadEHedM3vjiQY6A2boN6yuE0SZDSvSqPMsDkce6KGXNbOi5rxvtQ1ZxMNb6TqgI
-RN4kaa3eKe0MVYdhOTyZQh4eaONTH3Gwkz0+dD6VyDO5fdneXZZTrjs/0xP5cFjMtE2E6anPTH4w
-cwK+Zy9LgkHZs2NuoFx3G8E1PmMXWIgZUN8Eq79r65l7nebUvwwSlpCj2dZzesjFSnBKXZjFs2uW
-uXFP0Kh/S2Vt6mWFtslN8yR8j0DaqF49SfGND3qrzmS0tWPEkyPmWY/0WweEfjgBrSMtkVMIi7Pk
-Pv1bariGpxHv9K+sn5GuIqHMzbXMiol7mqa1BFtx6OkNsqJ0WJennC99gAy8Q9umJ7pQQXHkkWxa
-fw0Uhf0LIvQFjt61JK+T8pAFQZN/msEWpclal34TI3UitQrcYo7hZgMEmY0XASwWdEcfZorzzhgR
-erzxb3z0wRBZnGyp5+bnCaPhEP82YmWMzMQkIUqrLf39dyduuej54Cjt6PxRjn/O05MLpLmkOshp
-oxWa12SS36WiMwCePOHuAl/bz3YecRY9PHsG26qF6WYlMMHQCykA+7L9yBWg6b9iAzTfczdkbtZT
-1A/SRW5FWd/ltkb6lB5Be38TNvmSncsaMTe44/the54CjBTGbqOfSgLxoCmwEvvWPIsEOShadQWY
-91r3qyv3pHEHpqetljgvc7DIXjNscIz7BktIppw7b2km4+5b9UZUtx3gt1IxX16B8eWB4m71Zjzi
-yMuKJ3ZtTm6LqYKjVyg7uJjhYz96RcLy+qSMlLKFfI3p9EQF02yfj6fupF1eImE/XaaVMC781ICQ
-JHZRCO+/23rpw8fAQupqwdn6pTNlJWqSpaoNGxlZgSsOfOAmcReg8szzyuFiA3LYio1u0MpMelLE
-j7QLYUZ/jIQMKgrm9kUeccXJWWedmzuGY3G10bmDhYyHal/ZGQ3XGmj+8gTLbCzovU4/a30Ls5AP
-fJDPSy4/FTYo5telra6Xg9kjn9RF8RFr7f4txCFuVsux6JHD1fY18QOp0corlLbnAnBY7GfF3480
-PlEd8iF9HpyVwdF3a25nJbXH4hGDhZtIYBoFN78gUr9E7LcjbwJS6MKO+wRG7VmGh4tWMi3clBEC
-HWLgNPaBcL0FPuOnNYl3erHd992ZEqYJL4pnPRHHDI2Q4Lz6o5N1PN61l4MUHRcWsND5W07RgK4/
-uLRevpu5a10WzNKZPH3eWe8YCO1ZWq0Wf37sAaL1KNpumbHJNKfG5ZlFo4d/w54LXDIPnpw03f4M
-jYGIZgPLhio4zRL3PUMR9NHclGaKokufLspdKFgZdLX1W2mbfKob4pjCR0v3z23icCKAgnYnfl9O
-MhndVGPs18JTlJa4qmz+EQgd9VjDjTKQpfV/uv2+geyW/3djwLXEi5iMLdS+IuwIf1K00ysENZZC
-367W5330JavqGKpXijBiqp3pFmWFs3E2UGmQ+wn2BUog5bUAe+Z76gXI83EdmjTUeuHDgqqpd1aH
-KZE4Uqs5hQhRUyFTUIi5FqRun1huSBExEXTnyyLAQSG3wd+c0Skq3NtNHAZSvdI4jkpFpDGnMy2E
-nS0rw9SuERH8LloFmzAVQt9LHaKJf/vN5HTELTvcebEG/3KACvn3zr5sUSJgkvGTx3PZOtIGoCts
-+a0PPVPsUzD7fhOepfuTaOq+AmvQdozlfzXKaNOa+ySUbqatnIkyNYgBl2ZdUQedZ7rmMBtBytlz
-GZT7CNx8iL8YOFyTvCjW6zcBVtSSKFkQ5lNJwdK59h+NxVl6SVHW+UxH6hcO06+bgvT22Jzei13Y
-iK53U0+X6b/i2tZHrufL2Eg0r4/jkcjhDuM4sCE6EJ4qRR5E9M6u/KAQvODjtrVrooGfus6p/2p4
-LYs9g2ilUnfIVavKs9OHKDycTN8MGTqxthL3m2/LezVyeGRA0aH+OW/wbN01VLlE0yIJQ0yX3JUv
-nn1mDiQ5+Kww66I12689gY322M8seCZzWX86PR8eKzKatpjmRVCHhS0IkFmMneb9v6M+69CJmzX6
-7m+i3libseIpfZY22ztLmjep+9qBFjwtHBNVHY1SOX9vuVnq30dp5Kk7AKNS7ZYZm9PzXlPCN5RY
-RNgm7XffdhTiPUUJOwcJXdScWG9mmexocsnwPwLTd4GvulK3VBjI/VEyLswxvRgnzkuV3/uTa1/v
-SmqDvm8DcWwS1oHhniiY4dcBmeGApKq9GXVIUhNf3SqfeTAeg2rvn0FFGHeVKU2G9MZ7XNuWVxSw
-DW4OnTZzlJvEN9pa+620wdy7Ml5Qu63+aq2jmdSSUaZ3Y3fSilwOFIL2JCj6u+OfNtCrq+ts/Co1
-Oz3kuhiGrk2BKt91cyLjWNJUceV4ODmPjRWAwEqE+5b6INlSFMDrjW/uHzHI6qDsMEXlGoCsohnD
-h8IL5xIFjTqmNoK9xUYQyXIYaeuIyCkgauF0bsvyVI2x0Xaq4WUmPqDPzFISQgrU5G/HFsd8vJLo
-8v3T7KSIggGuga9hWkRgd6I89UR1vvEnpYRsq/q3Ry44GwLCm17akrSa7buixzirQhdvoUcUhaMA
-QL4/Fx9ka4h6mNmSmaY/YchaYEyfylEagUQwcV1T3xUAw2usaDe32jqL4R0lLdQhUWY8gQJqquxg
-zP0FIScleF8G4ABnLqJbAXKUc04GBpANd/Obq2AnegxSfa+h9ik7vSi7Boc2ZQiXXlF2qiZ6DXpF
-oNRYFNrkj7oiMRNhRUvZrUtcH2HpA3r7Y/N2uL2KPBEZqCGCroRqE2iZRg8CrELN7EK5boaE3150
-a5Dnx/zR7n+ImdxhOqhPCEwcIOuqxDqNz63T83+MAe81e8J+IB5jcmbs/hDXsKhG0VHAjn/ckLIN
-6VAGqcW1NOXn70wZAGZpAMdEDx99ciTnfPnM7ajLbZiiaIvnwWVnZ8ylYRZSY0ZYrrkxsGjjZitP
-uBlzejJxYPx6JEOngAFiMTJZgZ/0t7NPWJdu3sRrX8eRvhmaCbyrWiG1zLggNHjPmCpOOkSjqtqO
-KnZRAgjLmOCtkNRklADxjRfqf0rI53Se8Z0Mv+6p1aJPSmG/Qw+1hSzHjqXmtoLRIhkJfANDvJO3
-3dxK5rKW89XAn37TMnj/YVfWHKDTjgxh/Q6/LXcXEfgDVvBj+3lRn1yrhJhnsa3RAAGl0ePIhjsR
-btOc+4B2DDwqC1JK+5swQMcm0N4a8QomCw9FV0e/QoPDI//WXLILy3xDVk3M9/evYyZJSDiOG27p
-GCLigbfez6jPhwnY8fai23uzTsGNtypeL1d+7i2G2JC+G+RLl5CeT0CmIBllrZdjVdlyg2wdbf3K
-oKlzityW8TroqANqnxvpENwdcT89zLcmD7ya0bFY7ilM7x3PvjXEES8EymBSWJ026SPw9HG5zye8
-W0CR41CWW5OxnP+UN/40nOKo944uN/4lk40DRU6tyRI51eqChTqqixAGQd88U7yEHs6qItmIQopZ
-kfcZ85JiwBcunceF7SBwLYxu+ma+XPwrQOxjMurgAFG/dINMHkdoeG+lVK+VKsCBZoE6cZ0zLz4f
-yl4cjtfk2ovViLWKSwWrLLNXzWIFsXc59gaqpE6P1qnEZHXiJPhWtxjtr+wiC2mHSwgQebJXyZ42
-Hn4Zq4lmECy4whxSyrKNh/irXhuPRZx6SYGlvqYsWdIkM8I88V+I+8HChKgos2a0NW72XC6J91iM
-psGwKqculTKe5PVeOrSe2uBldsxJu79AgLE4ObH4/xLiEYiKcJiiRTGYXe0AngtZKhLSc4KUcC5G
-JP61T4yjZX2sSgUC4vVYFvwdh0SfUXO0myNzLFBdaLmfAGdFMGwYU/UKDs0LTjVdXCIAyDf9qUTT
-Ws2y6h3fW+j6iebg9JC=
+<?php
+/**
+ * Locale data for 'pt'.
+ *
+ * This file is automatically generated by yiic cldr command.
+ *
+ * Copyright © 1991-2007 Unicode, Inc. All rights reserved.
+ * Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
+ *
+ * @copyright 2008-2013 Yii Software LLC (http://www.yiiframework.com/license/)
+ */
+return array (
+  'version' => '6546',
+  'numberSymbols' => 
+  array (
+    'alias' => '',
+    'decimal' => ',',
+    'group' => '.',
+    'list' => ';',
+    'percentSign' => '%',
+    'plusSign' => '+',
+    'minusSign' => '-',
+    'exponential' => 'E',
+    'perMille' => '‰',
+    'infinity' => '∞',
+    'nan' => 'NaN',
+  ),
+  'decimalFormat' => '#,##0.###',
+  'scientificFormat' => '#E0',
+  'percentFormat' => '#,##0%',
+  'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
+  'currencySymbols' => 
+  array (
+    'AUD' => 'AU$',
+    'BRL' => 'R$',
+    'CAD' => 'CA$',
+    'CNY' => 'CN¥',
+    'EUR' => '€',
+    'GBP' => '£',
+    'HKD' => 'HK$',
+    'ILS' => '₪',
+    'INR' => '₹',
+    'JPY' => 'JP¥',
+    'KRW' => '₩',
+    'MXN' => 'MX$',
+    'NZD' => 'NZ$',
+    'THB' => '฿',
+    'TWD' => 'NT$',
+    'USD' => 'US$',
+    'VND' => '₫',
+    'XAF' => 'FCFA',
+    'XCD' => 'EC$',
+    'XOF' => 'CFA',
+    'XPF' => 'CFPF',
+    'PTE' => 'Esc.',
+  ),
+  'monthNames' => 
+  array (
+    'wide' => 
+    array (
+      1 => 'janeiro',
+      2 => 'fevereiro',
+      3 => 'março',
+      4 => 'abril',
+      5 => 'maio',
+      6 => 'junho',
+      7 => 'julho',
+      8 => 'agosto',
+      9 => 'setembro',
+      10 => 'outubro',
+      11 => 'novembro',
+      12 => 'dezembro',
+    ),
+    'abbreviated' => 
+    array (
+      1 => 'jan',
+      2 => 'fev',
+      3 => 'mar',
+      4 => 'abr',
+      5 => 'mai',
+      6 => 'jun',
+      7 => 'jul',
+      8 => 'ago',
+      9 => 'set',
+      10 => 'out',
+      11 => 'nov',
+      12 => 'dez',
+    ),
+  ),
+  'monthNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      1 => 'J',
+      2 => 'F',
+      3 => 'M',
+      4 => 'A',
+      5 => 'M',
+      6 => 'J',
+      7 => 'J',
+      8 => 'A',
+      9 => 'S',
+      10 => 'O',
+      11 => 'N',
+      12 => 'D',
+    ),
+  ),
+  'weekDayNames' => 
+  array (
+    'wide' => 
+    array (
+      0 => 'domingo',
+      1 => 'segunda-feira',
+      2 => 'terça-feira',
+      3 => 'quarta-feira',
+      4 => 'quinta-feira',
+      5 => 'sexta-feira',
+      6 => 'sábado',
+    ),
+    'abbreviated' => 
+    array (
+      0 => 'dom',
+      1 => 'seg',
+      2 => 'ter',
+      3 => 'qua',
+      4 => 'qui',
+      5 => 'sex',
+      6 => 'sáb',
+    ),
+  ),
+  'weekDayNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      0 => 'D',
+      1 => 'S',
+      2 => 'T',
+      3 => 'Q',
+      4 => 'Q',
+      5 => 'S',
+      6 => 'S',
+    ),
+  ),
+  'eraNames' => 
+  array (
+    'abbreviated' => 
+    array (
+      0 => 'a.C.',
+      1 => 'd.C.',
+    ),
+    'wide' => 
+    array (
+      0 => 'Antes de Cristo',
+      1 => 'Ano do Senhor',
+    ),
+    'narrow' => 
+    array (
+      0 => 'a.C.',
+      1 => 'd.C.',
+    ),
+  ),
+  'dateFormats' => 
+  array (
+    'full' => 'EEEE, d \'de\' MMMM \'de\' y',
+    'long' => 'd \'de\' MMMM \'de\' y',
+    'medium' => 'dd/MM/yyyy',
+    'short' => 'dd/MM/yy',
+  ),
+  'timeFormats' => 
+  array (
+    'full' => 'HH\'h\'mm\'min\'ss\'s\' zzzz',
+    'long' => 'HH\'h\'mm\'min\'ss\'s\' z',
+    'medium' => 'HH:mm:ss',
+    'short' => 'HH:mm',
+  ),
+  'dateTimeFormat' => '{1} {0}',
+  'amName' => 'AM',
+  'pmName' => 'PM',
+  'orientation' => 'ltr',
+  'languages' => 
+  array (
+    'aa' => 'afar',
+    'ab' => 'abcázio',
+    'ace' => 'achém',
+    'ach' => 'acoli',
+    'ada' => 'adangme',
+    'ady' => 'adigue',
+    'ae' => 'avéstico',
+    'af' => 'africâner',
+    'afa' => 'idioma afro-asiático',
+    'afh' => 'afrihili',
+    'ain' => 'ainu',
+    'ak' => 'akan',
+    'akk' => 'acadiano',
+    'ale' => 'aleúte',
+    'alg' => 'idioma algonquiano',
+    'alt' => 'altai do sul',
+    'am' => 'amárico',
+    'an' => 'aragonês',
+    'ang' => 'inglês arcaico',
+    'anp' => 'angika',
+    'apa' => 'idioma apache',
+    'ar' => 'árabe',
+    'arc' => 'aramaico',
+    'arn' => 'araucano',
+    'arp' => 'arapaho',
+    'art' => 'idioma artificial',
+    'arw' => 'arauaqui',
+    'as' => 'assamês',
+    'asa' => 'asa',
+    'ast' => 'asturiano',
+    'ath' => 'idioma atabascano',
+    'aus' => 'idioma australiano',
+    'av' => 'avaric',
+    'awa' => 'awadhi',
+    'ay' => 'aimara',
+    'az' => 'azeri',
+    'ba' => 'bashkir',
+    'bad' => 'banda',
+    'bai' => 'idioma bamileke',
+    'bal' => 'balúchi',
+    'ban' => 'balinês',
+    'bas' => 'basa',
+    'bat' => 'idioma báltico',
+    'be' => 'bielo-russo',
+    'bej' => 'beja',
+    'bem' => 'bemba',
+    'ber' => 'berbere',
+    'bg' => 'búlgaro',
+    'bh' => 'biari',
+    'bho' => 'bhojpuri',
+    'bi' => 'bislamá',
+    'bik' => 'bikol',
+    'bin' => 'bini',
+    'bla' => 'siksika',
+    'bm' => 'bambara',
+    'bn' => 'bengali',
+    'bnt' => 'banto',
+    'bo' => 'tibetano',
+    'br' => 'bretão',
+    'bra' => 'braj',
+    'brx' => 'bodo',
+    'bs' => 'bósnio',
+    'btk' => 'bataque',
+    'bua' => 'buriat',
+    'bug' => 'buguinês',
+    'byn' => 'blin',
+    'ca' => 'catalão',
+    'cad' => 'caddo',
+    'cai' => 'idioma indígena centro-americano',
+    'car' => 'caribe',
+    'cau' => 'idioma caucásico',
+    'cch' => 'atsam',
+    'ce' => 'checheno',
+    'ceb' => 'cebuano',
+    'cel' => 'idioma celta',
+    'ch' => 'chamorro',
+    'chb' => 'chibcha',
+    'chg' => 'chagatai',
+    'chk' => 'chuukese',
+    'chm' => 'mari',
+    'chn' => 'chinook jargon',
+    'cho' => 'choctaw',
+    'chp' => 'chipewyan',
+    'chr' => 'cherokee',
+    'chy' => 'cheiene',
+    'cmc' => 'idioma chamic',
+    'co' => 'córsico',
+    'cop' => 'copta',
+    'cpe' => 'crioulo ou pidgin baseado no inglês',
+    'cpf' => 'crioulo ou pidgin baseado no francês',
+    'cpp' => 'crioulo ou pidgin baseado no português',
+    'cr' => 'cree',
+    'crh' => 'turco da Crimeia',
+    'crp' => 'crioulo ou pidgin',
+    'cs' => 'tcheco',
+    'csb' => 'kashubian',
+    'cu' => 'eslavo eclesiástico',
+    'cus' => 'idioma cuchítico',
+    'cv' => 'chuvash',
+    'cy' => 'galês',
+    'da' => 'dinamarquês',
+    'dak' => 'dacota',
+    'dar' => 'dargwa',
+    'day' => 'dayak',
+    'de' => 'alemão',
+    'de_at' => 'alemão austríaco',
+    'de_ch' => 'alto alemão suíço',
+    'del' => 'delaware',
+    'den' => 'slave',
+    'dgr' => 'dogrib',
+    'din' => 'dinka',
+    'doi' => 'dogri',
+    'dra' => 'idioma dravidiano',
+    'dsb' => 'sérvio baixo',
+    'dua' => 'duala',
+    'dum' => 'holandês médio',
+    'dv' => 'divehi',
+    'dyu' => 'diúla',
+    'dz' => 'dzonga',
+    'ebu' => 'embu',
+    'ee' => 'eve',
+    'efi' => 'efique',
+    'egy' => 'egípcio arcaico',
+    'eka' => 'ekajuk',
+    'el' => 'grego',
+    'elx' => 'elamite',
+    'en' => 'inglês',
+    'en_au' => 'inglês australiano',
+    'en_ca' => 'inglês canadense',
+    'en_gb' => 'inglês britânico',
+    'en_us' => 'inglês americano',
+    'enm' => 'inglês médio',
+    'eo' => 'esperanto',
+    'es' => 'espanhol',
+    'es_419' => 'espanhol latino-americano',
+    'es_es' => 'espanhol ibérico',
+    'et' => 'estoniano',
+    'eu' => 'basco',
+    'ewo' => 'ewondo',
+    'fa' => 'persa',
+    'fan' => 'fangue',
+    'fat' => 'fanti',
+    'ff' => 'fula',
+    'fi' => 'finlandês',
+    'fil' => 'filipino',
+    'fiu' => 'idioma fino-úgrico',
+    'fj' => 'fijiano',
+    'fo' => 'feroês',
+    'fon' => 'fom',
+    'fr' => 'francês',
+    'fr_ca' => 'francês canadense',
+    'fr_ch' => 'francês suíço',
+    'frm' => 'francês médio',
+    'fro' => 'francês arcaico',
+    'frr' => 'frísio setentrional',
+    'frs' => 'frisão oriental',
+    'fur' => 'friulano',
+    'fy' => 'frísio ocidental',
+    'ga' => 'irlandês',
+    'gaa' => 'ga',
+    'gay' => 'gayo',
+    'gba' => 'gbaia',
+    'gd' => 'gaélico escocês',
+    'gem' => 'idioma germânico',
+    'gez' => 'geez',
+    'gil' => 'gilbertês',
+    'gl' => 'galego',
+    'gmh' => 'alemão médio-alto',
+    'gn' => 'guarani',
+    'goh' => 'alemão arcaico alto',
+    'gon' => 'gondi',
+    'gor' => 'gorontalo',
+    'got' => 'gótico',
+    'grb' => 'grebo',
+    'grc' => 'grego arcaico',
+    'gsw' => 'alemão suíço',
+    'gu' => 'guzerate',
+    'gv' => 'manx',
+    'gwi' => 'gwichʼin',
+    'ha' => 'hauçá',
+    'hai' => 'haida',
+    'haw' => 'havaiano',
+    'he' => 'hebraico',
+    'hi' => 'híndi',
+    'hil' => 'hiligaynon',
+    'him' => 'himachali',
+    'hit' => 'hitita',
+    'hmn' => 'hmong',
+    'ho' => 'hiri motu',
+    'hr' => 'croata',
+    'hsb' => 'sorábio superior',
+    'ht' => 'haitiano',
+    'hu' => 'húngaro',
+    'hup' => 'hupa',
+    'hy' => 'armênio',
+    'hz' => 'herero',
+    'ia' => 'interlíngua',
+    'iba' => 'iban',
+    'id' => 'indonésio',
+    'ie' => 'interlingue',
+    'ig' => 'ibo',
+    'ii' => 'sichuan yi',
+    'ijo' => 'ijo',
+    'ik' => 'inupiaque',
+    'ilo' => 'ilocano',
+    'inc' => 'idioma índico',
+    'ine' => 'idioma indo-europeu',
+    'inh' => 'inguche',
+    'io' => 'ido',
+    'ira' => 'iraniano',
+    'iro' => 'idioma iroquês',
+    'is' => 'islandês',
+    'it' => 'italiano',
+    'iu' => 'inuktitut',
+    'ja' => 'japonês',
+    'jbo' => 'lojban',
+    'jpr' => 'judaico-persa',
+    'jrb' => 'judaico-arábico',
+    'jv' => 'javanês',
+    'ka' => 'georgiano',
+    'kaa' => 'kara-kalpak',
+    'kab' => 'kabyle',
+    'kac' => 'kachin',
+    'kaj' => 'jju',
+    'kam' => 'kamba',
+    'kar' => 'karen',
+    'kaw' => 'kawi',
+    'kbd' => 'kabardiano',
+    'kcg' => 'tyap',
+    'kea' => 'kabuverdianu',
+    'kfo' => 'koro',
+    'kg' => 'congolês',
+    'kha' => 'khasi',
+    'khi' => 'idioma coisã',
+    'kho' => 'khotanês',
+    'ki' => 'quicuio',
+    'kj' => 'kuanyama',
+    'kk' => 'cazaque',
+    'kl' => 'groenlandês',
+    'km' => 'cmer',
+    'kmb' => 'quimbundo',
+    'kn' => 'canarês',
+    'ko' => 'coreano',
+    'kok' => 'concani',
+    'kos' => 'kosraean',
+    'kpe' => 'kpelle',
+    'kr' => 'canúri',
+    'krc' => 'karachay-balkar',
+    'krl' => 'idioma carélio',
+    'kro' => 'kru',
+    'kru' => 'kurukh',
+    'ks' => 'caxemira',
+    'ku' => 'curdo',
+    'kum' => 'kumyk',
+    'kut' => 'kutenai',
+    'kv' => 'komi',
+    'kw' => 'córnico',
+    'ky' => 'quirguiz',
+    'la' => 'latim',
+    'lad' => 'ladino',
+    'lah' => 'lahnda',
+    'lam' => 'lamba',
+    'lb' => 'luxemburguês',
+    'lez' => 'lezghian',
+    'lg' => 'luganda',
+    'li' => 'limburguês',
+    'ln' => 'lingala',
+    'lo' => 'laosiano',
+    'lol' => 'mongo',
+    'loz' => 'lozi',
+    'lt' => 'lituano',
+    'lu' => 'luba-catanga',
+    'lua' => 'luba-lulua',
+    'lui' => 'luiseno',
+    'lun' => 'lunda',
+    'luo' => 'luo',
+    'lus' => 'lushai',
+    'lv' => 'letão',
+    'mad' => 'madurês',
+    'mag' => 'magahi',
+    'mai' => 'maithili',
+    'mak' => 'makasar',
+    'man' => 'mandinga',
+    'map' => 'austronésio',
+    'mas' => 'massai',
+    'mdf' => 'mocsa',
+    'mdr' => 'mandar',
+    'men' => 'mende',
+    'mg' => 'malgaxe',
+    'mga' => 'irlandês médio',
+    'mh' => 'marshalês',
+    'mi' => 'maori',
+    'mic' => 'miquemaque',
+    'min' => 'minangkabau',
+    'mis' => 'idiomas diversos',
+    'mk' => 'macedônio',
+    'mkh' => 'idioma mon-khmer',
+    'ml' => 'malaiala',
+    'mn' => 'mongol',
+    'mnc' => 'manchu',
+    'mni' => 'manipuri',
+    'mno' => 'idioma manobo',
+    'mo' => 'moldávio',
+    'moh' => 'mohawk',
+    'mos' => 'mossi',
+    'mr' => 'marata',
+    'ms' => 'malaio',
+    'mt' => 'maltês',
+    'mul' => 'idiomas múltiplos',
+    'mun' => 'idiomas munda',
+    'mus' => 'creek',
+    'mwl' => 'mirandês',
+    'mwr' => 'marwari',
+    'my' => 'birmanês',
+    'myn' => 'maia',
+    'myv' => 'erzya',
+    'na' => 'nauruano',
+    'nah' => 'náuatle',
+    'nai' => 'idioma indígena norte-americano',
+    'nap' => 'napolitano',
+    'nb' => 'bokmål norueguês',
+    'nd' => 'ndebele do norte',
+    'nds' => 'baixo-alemão',
+    'ne' => 'nepali',
+    'new' => 'newari',
+    'ng' => 'dongo',
+    'nia' => 'nias',
+    'nic' => 'idioma cordofano-nigeriano',
+    'niu' => 'niueano',
+    'nl' => 'holandês',
+    'nl_be' => 'flamengo',
+    'nn' => 'nynorsk norueguês',
+    'no' => 'norueguês',
+    'nog' => 'nogai',
+    'non' => 'nórdico arcaico',
+    'nqo' => 'n\'ko',
+    'nr' => 'ndebele do sul',
+    'nso' => 'soto setentrional',
+    'nub' => 'idioma núbio',
+    'nv' => 'navajo',
+    'nwc' => 'newari clássico',
+    'ny' => 'nianja',
+    'nym' => 'nyamwezi',
+    'nyn' => 'nyankole',
+    'nyo' => 'nyoro',
+    'nzi' => 'nzima',
+    'oc' => 'occitânico',
+    'oj' => 'ojibwa',
+    'om' => 'oromo',
+    'or' => 'oriya',
+    'os' => 'ossetic',
+    'osa' => 'osage',
+    'ota' => 'turco otomano',
+    'oto' => 'idioma otomano',
+    'pa' => 'panjabi',
+    'paa' => 'idioma papuano',
+    'pag' => 'pangasinã',
+    'pal' => 'pálavi',
+    'pam' => 'pampanga',
+    'pap' => 'papiamento',
+    'pau' => 'palauano',
+    'peo' => 'persa arcaico',
+    'phi' => 'idioma filipino',
+    'phn' => 'fenício',
+    'pi' => 'páli',
+    'pl' => 'polonês',
+    'pon' => 'pohnpeian',
+    'pra' => 'idioma prácrito',
+    'pro' => 'provençal arcaico',
+    'ps' => 'pushto',
+    'pt' => 'português',
+    'pt_br' => 'português do Brasil',
+    'pt_pt' => 'português ibérico',
+    'qu' => 'quíchua',
+    'raj' => 'rajastani',
+    'rap' => 'rapanui',
+    'rar' => 'rarotongano',
+    'rm' => 'reto-romano',
+    'rn' => 'rundi',
+    'ro' => 'romeno',
+    'roa' => 'idioma românico',
+    'rof' => 'rombo',
+    'rom' => 'romani',
+    'ru' => 'russo',
+    'rup' => 'aromeno',
+    'rw' => 'kinyarwanda',
+    'rwk' => 'rwa',
+    'sa' => 'sânscrito',
+    'sad' => 'sandawe',
+    'sah' => 'iacuto',
+    'sai' => 'idioma indígena sul-americano',
+    'sal' => 'idioma salisano',
+    'sam' => 'aramaico samaritano',
+    'sas' => 'sasak',
+    'sat' => 'santali',
+    'sc' => 'sardo',
+    'scn' => 'siciliano',
+    'sco' => 'escocês',
+    'sd' => 'sindi',
+    'se' => 'sami do norte',
+    'sel' => 'selkup',
+    'sem' => 'idioma semítico',
+    'sg' => 'sango',
+    'sga' => 'irlandês arcaico',
+    'sgn' => 'linguagem de sinais',
+    'sh' => 'servo-croata',
+    'shn' => 'shan',
+    'si' => 'cingalês',
+    'sid' => 'sidamo',
+    'sio' => 'idioma sioux',
+    'sit' => 'idioma sino-tibetano',
+    'sk' => 'eslovaco',
+    'sl' => 'esloveno',
+    'sla' => 'idioma eslavo',
+    'sm' => 'samoano',
+    'sma' => 'sami do sul',
+    'smi' => 'idioma sami',
+    'smj' => 'lule sami',
+    'smn' => 'inari sami',
+    'sms' => 'skolt sami',
+    'sn' => 'shona',
+    'snk' => 'soninquê',
+    'so' => 'somali',
+    'sog' => 'sogdiano',
+    'son' => 'songai',
+    'sq' => 'albanês',
+    'sr' => 'sérvio',
+    'srn' => 'idioma surinamês',
+    'srr' => 'serere',
+    'ss' => 'swati',
+    'ssa' => 'idioma nilo-saariano',
+    'st' => 'soto do sul',
+    'su' => 'sundanês',
+    'suk' => 'sukuma',
+    'sus' => 'sosso',
+    'sux' => 'sumério',
+    'sv' => 'sueco',
+    'sw' => 'suaili',
+    'swb' => 'comoriano',
+    'syc' => 'siríaco clássico',
+    'syr' => 'siríaco',
+    'ta' => 'tâmil',
+    'tai' => 'idioma tailandês',
+    'te' => 'telugu',
+    'tem' => 'timne',
+    'ter' => 'tereno',
+    'tet' => 'tétum',
+    'tg' => 'tadjique',
+    'th' => 'tailandês',
+    'ti' => 'tigrínia',
+    'tig' => 'tigré',
+    'tiv' => 'tiv',
+    'tk' => 'turcomano',
+    'tkl' => 'toquelauano',
+    'tl' => 'tagalo',
+    'tlh' => 'klingon',
+    'tli' => 'tlinguite',
+    'tmh' => 'tamaxeque',
+    'tn' => 'tswana',
+    'to' => 'tonganês',
+    'tog' => 'tonganês de Nyasa',
+    'tpi' => 'tok pisin',
+    'tr' => 'turco',
+    'ts' => 'tsonga',
+    'tsi' => 'tsimshian',
+    'tt' => 'tatar',
+    'tum' => 'tumbuka',
+    'tup' => 'idioma tupi',
+    'tut' => 'idioma altaico',
+    'tvl' => 'tuvaluano',
+    'tw' => 'twi',
+    'ty' => 'taitiano',
+    'tyv' => 'tuvinian',
+    'udm' => 'udmurt',
+    'ug' => 'uyghur',
+    'uga' => 'ugarítico',
+    'uk' => 'ucraniano',
+    'umb' => 'umbundu',
+    'und' => 'idioma inválido ou desconhecido',
+    'ur' => 'urdu',
+    'uz' => 'usbeque',
+    'vai' => 'vai',
+    've' => 'venda',
+    'vi' => 'vietnamita',
+    'vo' => 'volapuque',
+    'vot' => 'votic',
+    'wa' => 'valão',
+    'wae' => 'walser',
+    'wak' => 'idioma wakashan',
+    'wal' => 'walamo',
+    'war' => 'waray',
+    'was' => 'washo',
+    'wen' => 'idioma sorábio',
+    'wo' => 'uólofe',
+    'xal' => 'kalmyk',
+    'xh' => 'xosa',
+    'yao' => 'yao',
+    'yap' => 'yapese',
+    'yi' => 'iídiche',
+    'yo' => 'ioruba',
+    'ypk' => 'idioma iúpique',
+    'yue' => 'cantonês',
+    'za' => 'zhuang',
+    'zap' => 'zapoteca',
+    'zbl' => 'símbolos blis',
+    'zen' => 'zenaga',
+    'zh' => 'chinês',
+    'zh_hans' => 'chinês simplificado',
+    'zh_hant' => 'chinês tradicional',
+    'znd' => 'zande',
+    'zu' => 'zulu',
+    'zun' => 'zunhi',
+    'zxx' => 'sem conteúdo linguístico',
+    'zza' => 'zaza',
+  ),
+  'scripts' => 
+  array (
+    'arab' => 'Perso-árabe',
+    'armi' => 'armi',
+    'armn' => 'armênio',
+    'avst' => 'avéstico',
+    'bali' => 'balinês',
+    'batk' => 'bataque',
+    'beng' => 'bengali',
+    'blis' => 'símbolos bliss',
+    'bopo' => 'bopomofo',
+    'brah' => 'brahmi',
+    'brai' => 'braille',
+    'bugi' => 'buginês',
+    'buhd' => 'buhid',
+    'cakm' => 'cakm',
+    'cans' => 'escrita silábica unificada dos aborígenes canadenses',
+    'cari' => 'cariano',
+    'cham' => 'cham',
+    'cher' => 'cherokee',
+    'cirt' => 'cirth',
+    'copt' => 'cóptico',
+    'cprt' => 'cipriota',
+    'cyrl' => 'cirílico',
+    'cyrs' => 'cirílico eslavo eclesiástico',
+    'deva' => 'devanágari',
+    'dsrt' => 'deseret',
+    'egyd' => 'demótico egípcio',
+    'egyh' => 'hierático egípcio',
+    'egyp' => 'hieróglifos egípcios',
+    'ethi' => 'etiópico',
+    'geok' => 'khutsuri georgiano',
+    'geor' => 'georgiano',
+    'glag' => 'glagolítico',
+    'goth' => 'gótico',
+    'grek' => 'grego',
+    'gujr' => 'gujerati',
+    'guru' => 'gurmuqui',
+    'hang' => 'hangul',
+    'hani' => 'han',
+    'hano' => 'hanunoo',
+    'hans' => 'han simplificado',
+    'hant' => 'han tradicional',
+    'hebr' => 'hebraico',
+    'hira' => 'hiragana',
+    'hmng' => 'pahawh hmong',
+    'hrkt' => 'katakana ou hiragana',
+    'hung' => 'húngaro antigo',
+    'inds' => 'indo',
+    'ital' => 'itálico antigo',
+    'java' => 'javanês',
+    'jpan' => 'japonês',
+    'kali' => 'kayah li',
+    'kana' => 'katakana',
+    'khar' => 'kharoshthi',
+    'khmr' => 'khmer',
+    'knda' => 'kannada',
+    'kore' => 'coreano',
+    'kthi' => 'kthi',
+    'lana' => 'lanna',
+    'laoo' => 'lao',
+    'latf' => 'latim fraktur',
+    'latg' => 'latim gaélico',
+    'latn' => 'latim',
+    'lepc' => 'lepcha',
+    'limb' => 'limbu',
+    'lina' => 'A linear',
+    'linb' => 'B linear',
+    'lyci' => 'lício',
+    'lydi' => 'lídio',
+    'mand' => 'mandaico',
+    'mani' => 'maniqueano',
+    'maya' => 'hieróglifos maias',
+    'mero' => 'meroítico',
+    'mlym' => 'malaiala',
+    'mong' => 'mongol',
+    'moon' => 'moon',
+    'mtei' => 'meitei mayek',
+    'mymr' => 'birmanês',
+    'nkoo' => 'n\'ko',
+    'ogam' => 'ogâmico',
+    'olck' => 'ol chiki',
+    'orkh' => 'orkhon',
+    'orya' => 'oriya',
+    'osma' => 'osmania',
+    'perm' => 'pérmico antigo',
+    'phag' => 'phags-pa',
+    'phli' => 'phli',
+    'phlp' => 'phlp',
+    'phlv' => 'pahlavi antigo',
+    'phnx' => 'fenício',
+    'plrd' => 'fonético pollard',
+    'prti' => 'prti',
+    'rjng' => 'rejang',
+    'roro' => 'rongorongo',
+    'runr' => 'rúnico',
+    'samr' => 'samaritano',
+    'sara' => 'sarati',
+    'saur' => 'saurashtra',
+    'sgnw' => 'signwriting',
+    'shaw' => 'shaviano',
+    'sinh' => 'cingalês',
+    'sund' => 'sundanês',
+    'sylo' => 'syloti nagri',
+    'syrc' => 'siríaco',
+    'syre' => 'siríaco estrangelo',
+    'syrj' => 'siríaco ocidental',
+    'syrn' => 'siríaco oriental',
+    'tagb' => 'tagbanwa',
+    'tale' => 'tai Le',
+    'talu' => 'novo tai lue',
+    'taml' => 'tâmil',
+    'tavt' => 'tavt',
+    'telu' => 'télugo',
+    'teng' => 'tengwar',
+    'tfng' => 'tifinagh',
+    'tglg' => 'tagalo',
+    'thaa' => 'thaana',
+    'thai' => 'tailandês',
+    'tibt' => 'tibetano',
+    'ugar' => 'ugarítico',
+    'vaii' => 'vai',
+    'visp' => 'visible speech',
+    'xpeo' => 'persa antigo',
+    'xsux' => 'sumério-acadiano cuneiforme',
+    'yiii' => 'yi',
+    'zinh' => 'herdado',
+    'zmth' => 'zmth',
+    'zsym' => 'zsym',
+    'zxxx' => 'ágrafo',
+    'zyyy' => 'comum',
+    'zzzz' => 'escrita desconhecida ou inválida',
+  ),
+  'territories' => 
+  array (
+    '001' => 'Mundo',
+    '002' => 'África',
+    '003' => 'América do Norte',
+    '005' => 'América do Sul',
+    '009' => 'Oceania',
+    '011' => 'África Ocidental',
+    '013' => 'América Central',
+    '014' => 'África Oriental',
+    '015' => 'África do Norte',
+    '017' => 'África Central',
+    '018' => 'África Austral',
+    '019' => 'Américas',
+    '021' => 'América Setentrional',
+    '029' => 'Caribe',
+    '030' => 'Ásia Oriental',
+    '034' => 'Ásia do Sul',
+    '035' => 'Ásia Centro-Oriental',
+    '039' => 'Europa do Sul',
+    '053' => 'Austrália e Nova Zelândia',
+    '054' => 'Melanésia',
+    '057' => 'Região da Micronésia',
+    '061' => 'Polinésia',
+    142 => 'Ásia',
+    143 => 'Ásia Central',
+    145 => 'Ásia Ocidental',
+    150 => 'Europa',
+    151 => 'Europa Oriental',
+    154 => 'Europa Setentrional',
+    155 => 'Europa Ocidental',
+    419 => 'América Latina',
+    'ac' => 'Ilha de Ascensão',
+    'ad' => 'Andorra',
+    'ae' => 'Emirados Árabes Unidos',
+    'af' => 'Afeganistão',
+    'ag' => 'Antígua e Barbuda',
+    'ai' => 'Anguilla',
+    'al' => 'Albânia',
+    'am' => 'Armênia',
+    'an' => 'Antilhas Holandesas',
+    'ao' => 'Angola',
+    'aq' => 'Antártida',
+    'ar' => 'Argentina',
+    'as' => 'Samoa Americana',
+    'at' => 'Áustria',
+    'au' => 'Austrália',
+    'aw' => 'Aruba',
+    'ax' => 'Ilhas Aland',
+    'az' => 'Azerbaijão',
+    'ba' => 'Bósnia-Herzegovina',
+    'bb' => 'Barbados',
+    'bd' => 'Bangladesh',
+    'be' => 'Bélgica',
+    'bf' => 'Burquina Faso',
+    'bg' => 'Bulgária',
+    'bh' => 'Bahrain',
+    'bi' => 'Burundi',
+    'bj' => 'Benin',
+    'bl' => 'São Bartolomeu',
+    'bm' => 'Bermudas',
+    'bn' => 'Brunei',
+    'bo' => 'Bolívia',
+    'br' => 'Brasil',
+    'bs' => 'Bahamas',
+    'bt' => 'Butão',
+    'bv' => 'Ilha Bouvet',
+    'bw' => 'Botsuana',
+    'by' => 'Belarus',
+    'bz' => 'Belize',
+    'ca' => 'Canadá',
+    'cc' => 'Ilhas Coco',
+    'cd' => 'República Democrática do Congo',
+    'cf' => 'República Centro-Africana',
+    'cg' => 'Congo',
+    'ch' => 'Suíça',
+    'ci' => 'Costa do Marfim',
+    'ck' => 'Ilhas Cook',
+    'cl' => 'Chile',
+    'cm' => 'República dos Camarões',
+    'cn' => 'China',
+    'co' => 'Colômbia',
+    'cp' => 'Ilha de Clipperton',
+    'cr' => 'Costa Rica',
+    'cs' => 'Sérvia e Montenegro',
+    'cu' => 'Cuba',
+    'cv' => 'Cabo Verde',
+    'cx' => 'Ilhas Natal',
+    'cy' => 'Chipre',
+    'cz' => 'República Tcheca',
+    'de' => 'Alemanha',
+    'dg' => 'Diego Garcia',
+    'dj' => 'Djibuti',
+    'dk' => 'Dinamarca',
+    'dm' => 'Dominica',
+    'do' => 'República Dominicana',
+    'dz' => 'Argélia',
+    'ea' => 'Ceuta e Melilha',
+    'ec' => 'Equador',
+    'ee' => 'Estônia',
+    'eg' => 'Egito',
+    'eh' => 'Saara Ocidental',
+    'er' => 'Eritreia',
+    'es' => 'Espanha',
+    'et' => 'Etiópia',
+    'eu' => 'União Europeia',
+    'fi' => 'Finlândia',
+    'fj' => 'Fiji',
+    'fk' => 'Ilhas Malvinas',
+    'fm' => 'Micronésia',
+    'fo' => 'Ilhas Faroe',
+    'fr' => 'França',
+    'ga' => 'Gabão',
+    'gb' => 'Reino Unido',
+    'gd' => 'Granada',
+    'ge' => 'Geórgia',
+    'gf' => 'Guiana Francesa',
+    'gg' => 'Guernsey',
+    'gh' => 'Gana',
+    'gi' => 'Gibraltar',
+    'gl' => 'Groênlandia',
+    'gm' => 'Gâmbia',
+    'gn' => 'Guiné',
+    'gp' => 'Guadalupe',
+    'gq' => 'Guiné Equatorial',
+    'gr' => 'Grécia',
+    'gs' => 'Geórgia do Sul e Ilhas Sandwich do Sul',
+    'gt' => 'Guatemala',
+    'gu' => 'Guam',
+    'gw' => 'Guiné Bissau',
+    'gy' => 'Guiana',
+    'hk' => 'Hong Kong',
+    'hm' => 'Ilha Heard e Ilhas McDonald',
+    'hn' => 'Honduras',
+    'hr' => 'Croácia',
+    'ht' => 'Haiti',
+    'hu' => 'Hungria',
+    'ic' => 'Ilhas Canárias',
+    'id' => 'Indonésia',
+    'ie' => 'Irlanda',
+    'il' => 'Israel',
+    'im' => 'Ilha de Man',
+    'in' => 'Índia',
+    'io' => 'Território Britânico do Oceano Índico',
+    'iq' => 'Iraque',
+    'ir' => 'Irã',
+    'is' => 'Islândia',
+    'it' => 'Itália',
+    'je' => 'Jersey',
+    'jm' => 'Jamaica',
+    'jo' => 'Jordânia',
+    'jp' => 'Japão',
+    'ke' => 'Quênia',
+    'kg' => 'Quirguistão',
+    'kh' => 'Camboja',
+    'ki' => 'Quiribati',
+    'km' => 'Comores',
+    'kn' => 'São Cristovão e Nevis',
+    'kp' => 'Coreia do Norte',
+    'kr' => 'Coreia do Sul',
+    'kw' => 'Kuwait',
+    'ky' => 'Ilhas Caiman',
+    'kz' => 'Casaquistão',
+    'la' => 'República Popular Democrática do Laos',
+    'lb' => 'Líbano',
+    'lc' => 'Santa Lúcia',
+    'li' => 'Liechtenstein',
+    'lk' => 'Sri Lanka',
+    'lr' => 'Libéria',
+    'ls' => 'Lesoto',
+    'lt' => 'Lituânia',
+    'lu' => 'Luxemburgo',
+    'lv' => 'Letônia',
+    'ly' => 'Líbia',
+    'ma' => 'Marrocos',
+    'mc' => 'Mônaco',
+    'md' => 'Moldávia',
+    'me' => 'Montenegro',
+    'mf' => 'São Martinho',
+    'mg' => 'Madagascar',
+    'mh' => 'Ilhas Marshall',
+    'mk' => 'Macedônia [Antiga República Iugoslava da Macedônia - ARIM]',
+    'ml' => 'Mali',
+    'mm' => 'Mianmar [Birmânia]',
+    'mn' => 'Mongólia',
+    'mo' => 'Macau',
+    'mp' => 'Ilhas Marianas do Norte',
+    'mq' => 'Martinica',
+    'mr' => 'Mauritânia',
+    'ms' => 'Montserrat',
+    'mt' => 'Malta',
+    'mu' => 'Maurício',
+    'mv' => 'Maldivas',
+    'mw' => 'Malawi',
+    'mx' => 'México',
+    'my' => 'Malásia',
+    'mz' => 'Moçambique',
+    'na' => 'Namíbia',
+    'nc' => 'Nova Caledônia',
+    'ne' => 'Níger',
+    'nf' => 'Ilha Norfolk',
+    'ng' => 'Nigéria',
+    'ni' => 'Nicarágua',
+    'nl' => 'Holanda',
+    'no' => 'Noruega',
+    'np' => 'Nepal',
+    'nr' => 'Nauru',
+    'nu' => 'Niue',
+    'nz' => 'Nova Zelândia',
+    'om' => 'Omã',
+    'pa' => 'Panamá',
+    'pe' => 'Peru',
+    'pf' => 'Polinésia Francesa',
+    'pg' => 'Papua-Nova Guiné',
+    'ph' => 'Filipinas',
+    'pk' => 'Paquistão',
+    'pl' => 'Polônia',
+    'pm' => 'Saint Pierre e Miquelon',
+    'pn' => 'Pitcairn',
+    'pr' => 'Porto Rico',
+    'ps' => 'Territórios palestinos',
+    'pt' => 'Portugal',
+    'pw' => 'Palau',
+    'py' => 'Paraguai',
+    'qa' => 'Catar',
+    'qo' => 'Oceania Remota',
+    're' => 'Reunião',
+    'ro' => 'Romênia',
+    'rs' => 'Sérvia',
+    'ru' => 'Rússia',
+    'rw' => 'Ruanda',
+    'sa' => 'Arábia Saudita',
+    'sb' => 'Ilhas Salomão',
+    'sc' => 'Seychelles',
+    'sd' => 'Sudão',
+    'se' => 'Suécia',
+    'sg' => 'Cingapura',
+    'sh' => 'Santa Helena',
+    'si' => 'Eslovênia',
+    'sj' => 'Svalbard e Jan Mayen',
+    'sk' => 'Eslováquia',
+    'sl' => 'Serra Leoa',
+    'sm' => 'San Marino',
+    'sn' => 'Senegal',
+    'so' => 'Somália',
+    'sr' => 'Suriname',
+    'st' => 'São Tomé e Príncipe',
+    'sv' => 'El Salvador',
+    'sy' => 'Síria',
+    'sz' => 'Suazilândia',
+    'ta' => 'Tristão da Cunha',
+    'tc' => 'Ilhas Turks e Caicos',
+    'td' => 'Chade',
+    'tf' => 'Territórios Franceses do Sul',
+    'tg' => 'Togo',
+    'th' => 'Tailândia',
+    'tj' => 'Tadjiquistão',
+    'tk' => 'Tokelau',
+    'tl' => 'Timor-Leste',
+    'tm' => 'Turcomenistão',
+    'tn' => 'Tunísia',
+    'to' => 'Tonga',
+    'tr' => 'Turquia',
+    'tt' => 'Trinidad e Tobago',
+    'tv' => 'Tuvalu',
+    'tw' => 'Taiwan',
+    'tz' => 'Tanzânia',
+    'ua' => 'Ucrânia',
+    'ug' => 'Uganda',
+    'um' => 'Ilhas Menores Distantes dos Estados Unidos',
+    'us' => 'Estados Unidos',
+    'uy' => 'Uruguai',
+    'uz' => 'Uzbequistão',
+    'va' => 'Vaticano',
+    'vc' => 'São Vicente e Granadinas',
+    've' => 'Venezuela',
+    'vg' => 'Ilhas Virgens Britânicas',
+    'vi' => 'Ilhas Virgens dos EUA',
+    'vn' => 'Vietnã',
+    'vu' => 'Vanuatu',
+    'wf' => 'Wallis e Futuna',
+    'ws' => 'Samoa',
+    'ye' => 'Iêmen',
+    'yt' => 'Mayotte',
+    'za' => 'África do Sul',
+    'zm' => 'Zâmbia',
+    'zw' => 'Zimbábue',
+    'zz' => 'Região desconhecida ou inválida',
+  ),
+  'pluralRules' => 
+  array (
+    0 => 'n==1',
+    1 => 'true',
+  ),
+);

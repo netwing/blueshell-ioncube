@@ -1,60 +1,126 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Ensures that eval() is not used to create objects.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Ensures that eval() is not used to create objects.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class MySource_Sniffs_PHP_EvalObjectFactorySniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_EVAL);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        /*
+            We need to find all strings that will be in the eval
+            to determine if the "new" keyword is being used.
+        */
+
+        $openBracket  = $phpcsFile->findNext(T_OPEN_PARENTHESIS, ($stackPtr + 1));
+        $closeBracket = $tokens[$openBracket]['parenthesis_closer'];
+
+        $strings = array();
+        $vars    = array();
+
+        for ($i = ($openBracket + 1); $i < $closeBracket; $i++) {
+            if (in_array($tokens[$i]['code'], PHP_CodeSniffer_Tokens::$stringTokens) === true) {
+                $strings[$i] = $tokens[$i]['content'];
+            } else if ($tokens[$i]['code'] === T_VARIABLE) {
+                $vars[$i] = $tokens[$i]['content'];
+            }
+        }
+
+        /*
+            We now have some variables that we need to expand into
+            the strings that were assigned to them, if any.
+        */
+
+        foreach ($vars as $varPtr => $varName) {
+            while (($prev = $phpcsFile->findPrevious(T_VARIABLE, ($varPtr - 1))) !== false) {
+                // Make sure this is an assignment of the variable. That means
+                // it will be the first thing on the line.
+                $prevContent = $phpcsFile->findPrevious(T_WHITESPACE, ($prev - 1), null, true);
+                if ($tokens[$prevContent]['line'] === $tokens[$prev]['line']) {
+                    $varPtr = $prevContent;
+                    continue;
+                }
+
+                if ($tokens[$prev]['content'] !== $varName) {
+                    // This variable has a different name.
+                    $varPtr = $prevContent;
+                    continue;
+                }
+
+                // We found one.
+                break;
+            }//end while
+
+            if ($prev !== false) {
+                // Find all strings on the line.
+                $lineEnd = $phpcsFile->findNext(T_SEMICOLON, ($prev + 1));
+                for ($i = ($prev + 1); $i < $lineEnd; $i++) {
+                    if (in_array($tokens[$i]['code'], PHP_CodeSniffer_Tokens::$stringTokens) === true) {
+                        $strings[$i] = $tokens[$i]['content'];
+                    }
+                }
+            }
+        }//end foreach
+
+        foreach ($strings as $string) {
+            // If the string has "new" in it, it is not allowed.
+            // We don't bother checking if the word "new" is echo'd
+            // because that is unlikely to happen. We assume the use
+            // of "new" is for object instantiation.
+            if (strstr($string, ' new ') !== false) {
+                $error = 'Do not use eval() to create objects dynamically; use reflection instead';
+                $phpcsFile->addWarning($error, $stackPtr, 'Found');
+            }
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

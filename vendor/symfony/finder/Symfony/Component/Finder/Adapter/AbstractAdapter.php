@@ -1,74 +1,236 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Adapter;
+
+/**
+ * Interface for finder engine implementations.
+ *
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+abstract class AbstractAdapter implements AdapterInterface
+{
+    protected $followLinks = false;
+    protected $mode        = 0;
+    protected $minDepth    = 0;
+    protected $maxDepth    = PHP_INT_MAX;
+    protected $exclude     = array();
+    protected $names       = array();
+    protected $notNames    = array();
+    protected $contains    = array();
+    protected $notContains = array();
+    protected $sizes       = array();
+    protected $dates       = array();
+    protected $filters     = array();
+    protected $sort        = false;
+    protected $paths       = array();
+    protected $notPaths    = array();
+    protected $ignoreUnreadableDirs = false;
+
+    private static $areSupported = array();
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isSupported()
+    {
+        $name = $this->getName();
+
+        if (!array_key_exists($name, self::$areSupported)) {
+            self::$areSupported[$name] = $this->canBeUsed();
+        }
+
+        return self::$areSupported[$name];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setFollowLinks($followLinks)
+    {
+        $this->followLinks = $followLinks;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setMode($mode)
+    {
+        $this->mode = $mode;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDepths(array $depths)
+    {
+        $this->minDepth = 0;
+        $this->maxDepth = PHP_INT_MAX;
+
+        foreach ($depths as $comparator) {
+            switch ($comparator->getOperator()) {
+                case '>':
+                    $this->minDepth = $comparator->getTarget() + 1;
+                    break;
+                case '>=':
+                    $this->minDepth = $comparator->getTarget();
+                    break;
+                case '<':
+                    $this->maxDepth = $comparator->getTarget() - 1;
+                    break;
+                case '<=':
+                    $this->maxDepth = $comparator->getTarget();
+                    break;
+                default:
+                    $this->minDepth = $this->maxDepth = $comparator->getTarget();
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setExclude(array $exclude)
+    {
+        $this->exclude = $exclude;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setNames(array $names)
+    {
+        $this->names = $names;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setNotNames(array $notNames)
+    {
+        $this->notNames = $notNames;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setContains(array $contains)
+    {
+        $this->contains = $contains;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setNotContains(array $notContains)
+    {
+        $this->notContains = $notContains;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setSizes(array $sizes)
+    {
+        $this->sizes = $sizes;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDates(array $dates)
+    {
+        $this->dates = $dates;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setFilters(array $filters)
+    {
+        $this->filters = $filters;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setPath(array $paths)
+    {
+        $this->paths = $paths;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setNotPath(array $notPaths)
+    {
+        $this->notPaths = $notPaths;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function ignoreUnreadableDirs($ignore = true)
+    {
+        $this->ignoreUnreadableDirs = (Boolean) $ignore;
+
+        return $this;
+    }
+
+    /**
+     * Returns whether the adapter is supported in the current environment.
+     *
+     * This method should be implemented in all adapters. Do not implement
+     * isSupported in the adapters as the generic implementation provides a cache
+     * layer.
+     *
+     * @see isSupported
+     *
+     * @return Boolean Whether the adapter is supported
+     */
+    abstract protected function canBeUsed();
+}

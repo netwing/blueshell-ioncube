@@ -1,59 +1,148 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared_Trend
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+require_once(PHPEXCEL_ROOT . 'PHPExcel/Shared/trend/bestFitClass.php');
+
+
+/**
+ * PHPExcel_Exponential_Best_Fit
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared_Trend
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Exponential_Best_Fit extends PHPExcel_Best_Fit
+{
+	/**
+	 * Algorithm type to use for best-fit
+	 * (Name of this trend class)
+	 *
+	 * @var	string
+	 **/
+	protected $_bestFitType		= 'exponential';
+
+
+	/**
+	 * Return the Y-Value for a specified value of X
+	 *
+	 * @param	 float		$xValue			X-Value
+	 * @return	 float						Y-Value
+	 **/
+	public function getValueOfYForX($xValue) {
+		return $this->getIntersect() * pow($this->getSlope(),($xValue - $this->_Xoffset));
+	}	//	function getValueOfYForX()
+
+
+	/**
+	 * Return the X-Value for a specified value of Y
+	 *
+	 * @param	 float		$yValue			Y-Value
+	 * @return	 float						X-Value
+	 **/
+	public function getValueOfXForY($yValue) {
+		return log(($yValue + $this->_Yoffset) / $this->getIntersect()) / log($this->getSlope());
+	}	//	function getValueOfXForY()
+
+
+	/**
+	 * Return the Equation of the best-fit line
+	 *
+	 * @param	 int		$dp		Number of places of decimal precision to display
+	 * @return	 string
+	 **/
+	public function getEquation($dp=0) {
+		$slope = $this->getSlope($dp);
+		$intersect = $this->getIntersect($dp);
+
+		return 'Y = '.$intersect.' * '.$slope.'^X';
+	}	//	function getEquation()
+
+
+	/**
+	 * Return the Slope of the line
+	 *
+	 * @param	 int		$dp		Number of places of decimal precision to display
+	 * @return	 string
+	 **/
+	public function getSlope($dp=0) {
+		if ($dp != 0) {
+			return round(exp($this->_slope),$dp);
+		}
+		return exp($this->_slope);
+	}	//	function getSlope()
+
+
+	/**
+	 * Return the Value of X where it intersects Y = 0
+	 *
+	 * @param	 int		$dp		Number of places of decimal precision to display
+	 * @return	 string
+	 **/
+	public function getIntersect($dp=0) {
+		if ($dp != 0) {
+			return round(exp($this->_intersect),$dp);
+		}
+		return exp($this->_intersect);
+	}	//	function getIntersect()
+
+
+	/**
+	 * Execute the regression and calculate the goodness of fit for a set of X and Y data values
+	 *
+	 * @param	 float[]	$yValues	The set of Y-values for this regression
+	 * @param	 float[]	$xValues	The set of X-values for this regression
+	 * @param	 boolean	$const
+	 */
+	private function _exponential_regression($yValues, $xValues, $const) {
+		foreach($yValues as &$value) {
+			if ($value < 0.0) {
+				$value = 0 - log(abs($value));
+			} elseif ($value > 0.0) {
+				$value = log($value);
+			}
+		}
+		unset($value);
+
+		$this->_leastSquareFit($yValues, $xValues, $const);
+	}	//	function _exponential_regression()
+
+
+	/**
+	 * Define the regression and calculate the goodness of fit for a set of X and Y data values
+	 *
+	 * @param	float[]		$yValues	The set of Y-values for this regression
+	 * @param	float[]		$xValues	The set of X-values for this regression
+	 * @param	boolean		$const
+	 */
+	function __construct($yValues, $xValues=array(), $const=True) {
+		if (parent::__construct($yValues, $xValues) !== False) {
+			$this->_exponential_regression($yValues, $xValues, $const);
+		}
+	}	//	function __construct()
+
+}	//	class exponentialBestFit

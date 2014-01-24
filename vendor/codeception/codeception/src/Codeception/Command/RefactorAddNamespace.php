@@ -1,96 +1,107 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-K3zdmh03eoFCtt4sMIKnKE0MnkJiEZ9zkDtXcD8=
+<?php
+namespace Codeception\Command;
+
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Finder\Finder;
+
+class RefactorAddNamespace extends Base {
+
+    protected $namespace;
+
+    public function getDescription() {
+        return 'Introduces namespace into the current configuration';
+    }
+
+    protected function configure()
+    {
+        $this->setDefinition(array(
+            new InputArgument('namespace', InputArgument::REQUIRED, 'namespace to add for guy classes and helpers'),
+            new InputOption('force', '',InputOption::VALUE_NONE, 'skip verification question'),
+            new InputOption('config', 'c', InputOption::VALUE_OPTIONAL, 'Use custom path for config'),
+        ));
+        parent::configure();
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $output->writeln('This command adds namespaces to your Helper and Guy classes and Cepts');
+        $output->writeln('It will files of your tests. Use with care.');
+        $output->writeln('Please do not execute this command twice on a project.');
+
+        $config = \Codeception\Configuration::config($input->getOption('config'));
+        if ($config['namespace']) {
+            $output->writeln("<info>Config already contains namespace, exiting....</info>");
+            return;
+        }
+
+        if (!$input->getOption('force')) {
+            $dialog = $this->getHelperSet()->get('dialog');
+            if (!$dialog->askConfirmation($output, '<question>Do you want to proceed?</question>', false)) {
+                return;
+            }
+        }
+
+        $this->namespace = $input->getArgument('namespace');
+
+        $this->updateConfigs();
+        $output->writeln("+ Config file updated with namespace {$this->namespace}");
+
+        $this->getApplication()->find('build')->run(new ArrayInput(array('command' => 'build', '-c' => $input->getOption('config'))), $output);
+        $output->writeln('+ Guy classes rebuilt');
+
+        $this->updateHelpers();
+        $output->writeln("+ Helpers updated with namespace {$this->namespace}\\Codeception\\Module)");
+
+        $counter = $this->updateCepts();
+        $output->writeln("+ Cept tests updated (total $counter files changed)");
+        $output->writeln("\nNamespace {$this->namespace} injected to current tests");
+    }
+
+    protected function updateConfigs()
+    {
+        $config_file = \Codeception\Configuration::projectDir().'codeception.dist.yml';
+        if (!file_exists($config_file)) {
+            $config_file = \Codeception\Configuration::projectDir().'codeception.yml';
+            if (!file_exists($config_file)) {
+                throw new \RuntimeException("Config file $config_file does not exists");
+            }
+        }
+        $config_body = file_get_contents($config_file);
+        $prepend_line = "namespace: {$this->namespace}\n";
+        $config_body = $prepend_line . $config_body;
+        $this->save($config_file, $config_body, true);
+    }
+
+    protected function updateHelpers()
+    {
+        $helpers = Finder::create()->files()->name('*Helper.php')->in(\Codeception\Configuration::helpersDir());
+        foreach ($helpers as $helper_file) {
+            $helper_body = file_get_contents($helper_file);
+            $helper_body = preg_replace('~namespace Codeception\\\\Module;~',"namespace {$this->namespace}\\Codeception\\Module;", $helper_body);
+            $this->save($helper_file, $helper_body, true);
+        }
+    }
+
+    protected function updateCepts()
+    {
+        $counter = 0;
+        $suites = \Codeception\Configuration::suites();
+        $config = \Codeception\Configuration::config();
+        foreach ($suites as $suite) {
+            $settings = \Codeception\Configuration::suiteSettings($suite, $config);
+            $cepts = Finder::create()->files()->name('*Cept.php')->in($settings['path']);
+            $prepend_line = "use {$this->namespace}\\{$settings['class_name']};\n\n";
+            foreach ($cepts as $cept) {
+                $cept_body = file_get_contents($cept);
+                $cept_body = str_replace('<?php', '<?php '.$prepend_line,$cept_body);
+                $this->save($cept, $cept_body, true);
+                $counter++;
+            }
+        }
+        return $counter;
+    }
+}

@@ -1,30 +1,96 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPs9tJW4otR8sty7R8XrZjr0BB6fhl/b98PAio+E+P8+g6aqRL3KPgomE2msI6F0l7zJszxy3
-mY6Rd0bGvodzJYdvklsNFYpaAEkNKWcBZovTUsOxQJI2NHcEIFkMr+c/8QV8aljANW2cfQKu6PWC
-sDb5Xz//ismS8F5ts3NLwqpihWvQQA0Ja+7Y0Qqc4HZfa/h9Oqj2HdNyqJfmOrdEYP0RdT2yBn0+
-Qg5yvHUek3XQ7393Vg+ehr4euJltSAgiccy4GDnfT1fV2rZnC3AxuRZQfX0api1MvH3LXKwMU2sS
-Ekn98PdCQD4wyPj0x8YSJUFfH3LZxgstN2iV241a9MxATPi6OUef9MhTx8dFqoOgHib7ztXWQt39
-r9QB+QEnQ8FnNMyVe2s0BKcz3fVyWMGbG9+BoREap3v0Wb9UDPyWaYnoEUF9lgvbaEzjBDeGdB4T
-SnqL6T/THAzzJHFiApv2i1Q+fNknIEgIR+d7LzZo1bF/vDmcXOuuUrPxJlLC1iuxrgJKB4ANwa/U
-z5tb/O6+4kqHM9Ug8ddaDS+TAx0dRccGMSeWTqs4h2+Qi0d9+0pWobCDdRUnO5X+gJMMSXeFwM04
-WOsmVMohgk9a4zD8chOw2LWKhPjV6EhUenB//bPTOfrc0eRykKBueHFdDdM0LKDkeE8h+EkidKYJ
-hI9lxCJ1Mip8lUEtZHDet7ufFwPanH+M9lxvL3iFEXkM+lcgGArkPKbXlN31U/1k7xC165e5ANfD
-UnMC3F22gxU7IwD3akZePGaHvm+cCGvPbi4RNZKb+j5yf73u2ISc4bySMjYXIKfdOaT2Wca8aYqA
-Fdmgorh9jJNLHFMzkik1iCQG7cJF32JM189Q3LKtvFz04h2rVypJEOxXohdE31dijsl9mLXZIGqK
-K6A8OW1mjh4bLKXY+IVuiLSkcSjSk8kGGmT61UJFxBGz/RjRBXMhXuW3T6R7exZElHjWSqgr9CHr
-xsQDIMLRHypAzTUU0yIqmYtTcxygnW9WTtEeHbbgFHw4f99LGLLZxxz0jbcHPhRoy3LFL/bsHc/s
-0vR618e4/b/Fbigv7MZLERP5O8iSuj86GodRp3quG6luQRuNT2ZsWg3JEIK/R/84zAyf5vPRHGgy
-C4rh9Q6+ql41ptLvkSo2/nU31SjJubOEvMFIpSabHNsuplqXVCR8dknL00ksJzsUCXSxCMJlad27
-d1SR8cXnCtp3j9U11hginepJhCnGRQOQX5L8Ec1ITk2z7CsTFVXFM2Db66HGizm0G2IZ9A+NtnOW
-HUZ6rcl+DXeULQunYTXgFJ5ilJ6hyX5hYzk06HTpAfdONcQ2pDUv0WhrqEXso0j+nZGKMc38zdb7
-U1a1KHx38UQFq3Hd41NUX9FVR3smhPk3cEy9W/ZhOnEvqcMkSnIl/pSAA2gyfIbJXAAaCrHWkEC/
-ry04lVLYIpcoB3cmDN0HYLfpgSo32TqoZAnJbWGnK8/x/BzllLv80hj/IwneDRNKRXO/1dm7EE0e
-qydcXqNUXegyZGASWGWGFrUOkSUTn79TzzNqPh627yj73Y7+kRpbKJ3qNmTfsUyvxlg149+GxOgr
-q4kR4hgB4L4cYc3JLR9DPJYE8ucquedHs1oR9dpyXrz7hjFpkS+fp4ZG3KEj9AKBitD7aRBiyMty
-nwrbJHGrma3WWGkQpZzCAPBRzHp8tJsC8yQov4hA+aSuTYUPGNzPgc5qqr/mYMa3l08Gu3wRUM5f
-tCCA9etrMGfjovgsh2oRCfCj/DMDL40fEUgmv92S/RfW7Bg1N/JZmPP+2HRf+Kolso4VypxMAWRQ
-pNHquqhcjD3Q/22WtO2EKuj+83/+wRzUE4j1Zqr/WIDy7F8PtBOheur7p0r3Go2twiRoQEgNbkDp
-mOtSkmmvYTbGVSnCg8xUcwEmsBr8vrjJAISkIznqvSqfB2f9pDpqQ9CjHGbvvAVmjWM799BBu4uo
-7U4GQb+nytNJjm==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      File available since Release 1.0.0
+ */
+
+/**
+ * Invocation matcher which does not care about previous state from earlier
+ * invocations.
+ *
+ * This abstract class can be implemented by matchers which does not care about
+ * state but only the current run-time value of the invocation itself.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version    Release: @package_version@
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      Class available since Release 1.0.0
+ * @abstract
+ */
+abstract class PHPUnit_Framework_MockObject_Matcher_StatelessInvocation implements PHPUnit_Framework_MockObject_Matcher_Invocation
+{
+    /**
+     * Registers the invocation $invocation in the object as being invoked.
+     * This will only occur after matches() returns true which means the
+     * current invocation is the correct one.
+     *
+     * The matcher can store information from the invocation which can later
+     * be checked in verify(), or it can check the values directly and throw
+     * and exception if an expectation is not met.
+     *
+     * If the matcher is a stub it will also have a return value.
+     *
+     * @param  PHPUnit_Framework_MockObject_Invocation $invocation
+     *         Object containing information on a mocked or stubbed method which
+     *         was invoked.
+     * @return mixed
+     */
+    public function invoked(PHPUnit_Framework_MockObject_Invocation $invocation)
+    {
+    }
+
+    /**
+     * Checks if the invocation $invocation matches the current rules. If it does
+     * the matcher will get the invoked() method called which should check if an
+     * expectation is met.
+     *
+     * @param  PHPUnit_Framework_MockObject_Invocation $invocation
+     *         Object containing information on a mocked or stubbed method which
+     *         was invoked.
+     * @return bool
+     */
+    public function verify()
+    {
+    }
+}

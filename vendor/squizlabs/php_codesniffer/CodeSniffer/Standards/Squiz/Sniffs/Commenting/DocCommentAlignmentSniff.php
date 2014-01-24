@@ -1,74 +1,151 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Commenting_EmptyCatchCommentSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_Commenting_DocCommentAlignmentSniff.
+ *
+ * Tests that the stars in a doc comment align correctly.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Commenting_DocCommentAlignmentSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_DOC_COMMENT);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                         in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // We are only interested in function/class/interface doc block comments.
+        $nextToken = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr + 1), null, true);
+        $ignore    = array(
+                      T_CLASS,
+                      T_INTERFACE,
+                      T_FUNCTION,
+                      T_PUBLIC,
+                      T_PRIVATE,
+                      T_PROTECTED,
+                      T_STATIC,
+                      T_ABSTRACT,
+                     );
+
+        if (in_array($tokens[$nextToken]['code'], $ignore) === false) {
+            // Could be a file comment.
+            $prevToken = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 1), null, true);
+            if ($tokens[$prevToken]['code'] !== T_OPEN_TAG) {
+                return;
+            }
+        }
+
+        // We only want to get the first comment in a block. If there is
+        // a comment on the line before this one, return.
+        $docComment = $phpcsFile->findPrevious(T_DOC_COMMENT, ($stackPtr - 1));
+        if ($docComment !== false) {
+            if ($tokens[$docComment]['line'] === ($tokens[$stackPtr]['line'] - 1)) {
+                return;
+            }
+        }
+
+        $comments       = array($stackPtr);
+        $currentComment = $stackPtr;
+        $lastComment    = $stackPtr;
+        while (($currentComment = $phpcsFile->findNext(T_DOC_COMMENT, ($currentComment + 1))) !== false) {
+            if ($tokens[$lastComment]['line'] === ($tokens[$currentComment]['line'] - 1)) {
+                $comments[]  = $currentComment;
+                $lastComment = $currentComment;
+            } else {
+                break;
+            }
+        }
+
+        // The $comments array now contains pointers to each token in the
+        // comment block.
+        $requiredColumn  = strpos($tokens[$stackPtr]['content'], '*');
+        $requiredColumn += $tokens[$stackPtr]['column'];
+
+        foreach ($comments as $commentPointer) {
+            // Check the spacing after each asterisk.
+            $content   = $tokens[$commentPointer]['content'];
+            $firstChar = substr($content, 0, 1);
+            $lastChar  = substr($content, -1);
+            if ($firstChar !== '/' &&  $lastChar !== '/') {
+                $matches = array();
+                preg_match('|^(\s+)?\*(\s+)?@|', $content, $matches);
+                if (empty($matches) === false) {
+                    if (isset($matches[2]) === false) {
+                        $error = 'Expected 1 space between asterisk and tag; 0 found';
+                        $phpcsFile->addError($error, $commentPointer, 'NoSpaceBeforeTag');
+                    } else {
+                        $length = strlen($matches[2]);
+                        if ($length !== 1) {
+                            $error = 'Expected 1 space between asterisk and tag; %s found';
+                            $data  = array($length);
+                            $phpcsFile->addError($error, $commentPointer, 'SpaceBeforeTag', $data);
+                        }
+                    }
+                }
+            }//end foreach
+
+            // Check the alignment of each asterisk.
+            $currentColumn  = strpos($content, '*');
+            $currentColumn += $tokens[$commentPointer]['column'];
+
+            if ($currentColumn === $requiredColumn) {
+                // Star is aligned correctly.
+                continue;
+            }
+
+            $error = 'Expected %s space(s) before asterisk; %s found';
+            $data  = array(
+                      ($requiredColumn - 1),
+                      ($currentColumn - 1),
+                     );
+            $phpcsFile->addError($error, $commentPointer, 'SpaceBeforeAsterisk', $data);
+        }//end foreach
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-e+DYRqibzV1wg0jKA4gFeRZZhuDmNEm=

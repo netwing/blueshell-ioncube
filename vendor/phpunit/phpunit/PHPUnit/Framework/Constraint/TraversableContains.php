@@ -1,54 +1,152 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/9nRRKpwHxu1RakMbxYK6Slc
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.0.0
+ */
+
+/**
+ * Constraint that asserts that the Traversable it is applied to contains
+ * a given value.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
+ */
+class PHPUnit_Framework_Constraint_TraversableContains extends PHPUnit_Framework_Constraint
+{
+    /**
+     * @var boolean
+     */
+    protected $checkForObjectIdentity;
+
+    /**
+     * @var mixed
+     */
+    protected $value;
+
+    /**
+     * @param  boolean $value
+     * @param  mixed   $checkForObjectIdentity
+     * @throws PHPUnit_Framework_Exception
+     */
+    public function __construct($value, $checkForObjectIdentity = TRUE)
+    {
+        if (!is_bool($checkForObjectIdentity)) {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(2, 'boolean');
+        }
+
+        $this->checkForObjectIdentity = $checkForObjectIdentity;
+        $this->value                  = $value;
+    }
+
+    /**
+     * Evaluates the constraint for parameter $other. Returns TRUE if the
+     * constraint is met, FALSE otherwise.
+     *
+     * @param mixed $other Value or object to evaluate.
+     * @return bool
+     */
+    protected function matches($other)
+    {
+        if ($other instanceof SplObjectStorage) {
+            return $other->contains($this->value);
+        }
+
+        if (is_object($this->value)) {
+            foreach ($other as $element) {
+                if (($this->checkForObjectIdentity &&
+                     $element === $this->value) ||
+                    (!$this->checkForObjectIdentity &&
+                     $element == $this->value)) {
+                    return TRUE;
+                }
+            }
+        } else {
+            foreach ($other as $element) {
+                if ($element == $this->value) {
+                    return TRUE;
+                }
+            }
+        }
+
+        return FALSE;
+    }
+
+    /**
+     * Returns a string representation of the constraint.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        if (is_string($this->value) && strpos($this->value, "\n") !== FALSE) {
+            return 'contains "' . $this->value . '"';
+        } else {
+            return 'contains ' . PHPUnit_Util_Type::export($this->value);
+        }
+    }
+
+    /**
+     * Returns the description of the failure
+     *
+     * The beginning of failure messages is "Failed asserting that" in most
+     * cases. This method should return the second part of that sentence.
+     *
+     * @param  mixed $other Evaluated value or object.
+     * @return string
+     */
+    protected function failureDescription($other)
+    {
+        return sprintf(
+          'an %s %s',
+
+           is_array($other) ? 'array' : 'iterator',
+           $this->toString()
+        );
+    }
+}

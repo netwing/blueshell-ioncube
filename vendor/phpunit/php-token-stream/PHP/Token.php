@@ -1,281 +1,727 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * php-token-stream
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package   PHP_TokenStream
+ * @author    Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @since     File available since Release 1.0.0
+ */
+
+/**
+ * A PHP token.
+ *
+ * @author    Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version   Release: @package_version@
+ * @link      http://github.com/sebastianbergmann/php-token-stream/tree
+ * @since     Class available since Release 1.0.0
+ */
+abstract class PHP_Token
+{
+    /**
+     * @var string
+     */
+    protected $text;
+
+    /**
+     * @var integer
+     */
+    protected $line;
+
+    /**
+     * @var PHP_Token_Stream
+     */
+    protected $tokenStream;
+
+    /**
+     * @var integer
+     */
+    protected $id;
+
+    /**
+     * Constructor.
+     *
+     * @param string           $text
+     * @param integer          $line
+     * @param PHP_Token_Stream $tokenStream
+     * @param integer          $id
+     */
+    public function __construct($text, $line, PHP_Token_Stream $tokenStream, $id)
+    {
+        $this->text        = $text;
+        $this->line        = $line;
+        $this->tokenStream = $tokenStream;
+        $this->id          = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->text;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getLine()
+    {
+        return $this->line;
+    }
+}
+
+abstract class PHP_TokenWithScope extends PHP_Token
+{
+    protected $endTokenId;
+
+    /**
+     * Get the docblock for this token
+     *
+     * This method will fetch the docblock belonging to the current token. The
+     * docblock must be placed on the line directly above the token to be
+     * recognized.
+     *
+     * @return string|null Returns the docblock as a string if found
+     */
+    public function getDocblock()
+    {
+        $tokens            = $this->tokenStream->tokens();
+        $currentLineNumber = $tokens[$this->id]->getLine();
+        $prevLineNumber    = $currentLineNumber - 1;
+
+        for ($i = $this->id - 1; $i; $i--) {
+            if (!isset($tokens[$i])) {
+                return;
+            }
+
+            if ($tokens[$i] instanceof PHP_Token_FUNCTION ||
+                $tokens[$i] instanceof PHP_Token_CLASS ||
+                $tokens[$i] instanceof PHP_Token_TRAIT) {
+                // Some other trait, class or function, no docblock can be
+                // used for the current token
+                break;
+            }
+
+            $line = $tokens[$i]->getLine();
+
+            if ($line == $currentLineNumber ||
+                ($line == $prevLineNumber &&
+                 $tokens[$i] instanceof PHP_Token_WHITESPACE)) {
+                continue;
+            }
+
+            if ($line < $currentLineNumber &&
+                !$tokens[$i] instanceof PHP_Token_DOC_COMMENT) {
+                break;
+            }
+
+            return (string)$tokens[$i];
+        }
+    }
+
+    public function getEndTokenId()
+    {
+        $block  = 0;
+        $i      = $this->id;
+        $tokens = $this->tokenStream->tokens();
+
+        while ($this->endTokenId === NULL && isset($tokens[$i])) {
+            if ($tokens[$i] instanceof PHP_Token_OPEN_CURLY ||
+                $tokens[$i] instanceof PHP_Token_CURLY_OPEN) {
+                $block++;
+            }
+
+            else if ($tokens[$i] instanceof PHP_Token_CLOSE_CURLY) {
+                $block--;
+
+                if ($block === 0) {
+                    $this->endTokenId = $i;
+                }
+            }
+
+            else if (($this instanceof PHP_Token_FUNCTION ||
+                $this instanceof PHP_Token_NAMESPACE) &&
+                $tokens[$i] instanceof PHP_Token_SEMICOLON) {
+                if ($block === 0) {
+                    $this->endTokenId = $i;
+                }
+            }
+
+            $i++;
+        }
+
+        if ($this->endTokenId === NULL) {
+            $this->endTokenId = $this->id;
+        }
+
+        return $this->endTokenId;
+    }
+
+    public function getEndLine()
+    {
+        return $this->tokenStream[$this->getEndTokenId()]->getLine();
+    }
+
+}
+
+abstract class PHP_TokenWithScopeAndVisibility extends PHP_TokenWithScope {
+
+    public function getVisibility()
+    {
+        $tokens = $this->tokenStream->tokens();
+
+        for ($i = $this->id - 2; $i > $this->id - 7; $i -= 2) {
+            if (isset($tokens[$i]) &&
+               ($tokens[$i] instanceof PHP_Token_PRIVATE ||
+                $tokens[$i] instanceof PHP_Token_PROTECTED ||
+                $tokens[$i] instanceof PHP_Token_PUBLIC)) {
+                return strtolower(
+                  str_replace('PHP_Token_', '', get_class($tokens[$i]))
+                );
+            }
+            if (isset($tokens[$i]) &&
+              !($tokens[$i] instanceof PHP_Token_STATIC ||
+                $tokens[$i] instanceof PHP_Token_FINAL ||
+                $tokens[$i] instanceof PHP_Token_ABSTRACT)) {
+                // no keywords; stop visibility search
+                break;
+            }
+        }
+    }
+
+    public function getKeywords()
+    {
+        $keywords = array();
+        $tokens = $this->tokenStream->tokens();
+
+        for ($i = $this->id - 2; $i > $this->id - 7; $i -= 2) {
+            if (isset($tokens[$i]) &&
+               ($tokens[$i] instanceof PHP_Token_PRIVATE ||
+                $tokens[$i] instanceof PHP_Token_PROTECTED ||
+                $tokens[$i] instanceof PHP_Token_PUBLIC)) {
+                continue;
+            }
+
+            if (isset($tokens[$i]) &&
+               ($tokens[$i] instanceof PHP_Token_STATIC ||
+                $tokens[$i] instanceof PHP_Token_FINAL ||
+                $tokens[$i] instanceof PHP_Token_ABSTRACT)) {
+                $keywords[] = strtolower(
+                  str_replace('PHP_Token_', '', get_class($tokens[$i]))
+                );
+            }
+        }
+
+        return implode(',', $keywords);
+    }
+
+}
+
+abstract class PHP_Token_Includes extends PHP_Token
+{
+    protected $name;
+    protected $type;
+
+    public function getName()
+    {
+        if ($this->name !== NULL) {
+            return $this->name;
+        }
+
+        $tokens = $this->tokenStream->tokens();
+
+        if ($tokens[$this->id+2] instanceof PHP_Token_CONSTANT_ENCAPSED_STRING) {
+            $this->name = trim($tokens[$this->id+2], "'\"");
+            $this->type = strtolower(
+              str_replace('PHP_Token_', '', get_class($tokens[$this->id]))
+            );
+        }
+
+        return $this->name;
+    }
+
+    public function getType()
+    {
+        $this->getName();
+        return $this->type;
+    }
+}
+
+class PHP_Token_REQUIRE_ONCE extends PHP_Token_Includes {}
+class PHP_Token_REQUIRE extends PHP_Token_Includes {}
+class PHP_Token_EVAL extends PHP_Token {}
+class PHP_Token_INCLUDE_ONCE extends PHP_Token_Includes {}
+class PHP_Token_INCLUDE extends PHP_Token_Includes {}
+class PHP_Token_LOGICAL_OR extends PHP_Token {}
+class PHP_Token_LOGICAL_XOR extends PHP_Token {}
+class PHP_Token_LOGICAL_AND extends PHP_Token {}
+class PHP_Token_PRINT extends PHP_Token {}
+class PHP_Token_SR_EQUAL extends PHP_Token {}
+class PHP_Token_SL_EQUAL extends PHP_Token {}
+class PHP_Token_XOR_EQUAL extends PHP_Token {}
+class PHP_Token_OR_EQUAL extends PHP_Token {}
+class PHP_Token_AND_EQUAL extends PHP_Token {}
+class PHP_Token_MOD_EQUAL extends PHP_Token {}
+class PHP_Token_CONCAT_EQUAL extends PHP_Token {}
+class PHP_Token_DIV_EQUAL extends PHP_Token {}
+class PHP_Token_MUL_EQUAL extends PHP_Token {}
+class PHP_Token_MINUS_EQUAL extends PHP_Token {}
+class PHP_Token_PLUS_EQUAL extends PHP_Token {}
+class PHP_Token_BOOLEAN_OR extends PHP_Token {}
+class PHP_Token_BOOLEAN_AND extends PHP_Token {}
+class PHP_Token_IS_NOT_IDENTICAL extends PHP_Token {}
+class PHP_Token_IS_IDENTICAL extends PHP_Token {}
+class PHP_Token_IS_NOT_EQUAL extends PHP_Token {}
+class PHP_Token_IS_EQUAL extends PHP_Token {}
+class PHP_Token_IS_GREATER_OR_EQUAL extends PHP_Token {}
+class PHP_Token_IS_SMALLER_OR_EQUAL extends PHP_Token {}
+class PHP_Token_SR extends PHP_Token {}
+class PHP_Token_SL extends PHP_Token {}
+class PHP_Token_INSTANCEOF extends PHP_Token {}
+class PHP_Token_UNSET_CAST extends PHP_Token {}
+class PHP_Token_BOOL_CAST extends PHP_Token {}
+class PHP_Token_OBJECT_CAST extends PHP_Token {}
+class PHP_Token_ARRAY_CAST extends PHP_Token {}
+class PHP_Token_STRING_CAST extends PHP_Token {}
+class PHP_Token_DOUBLE_CAST extends PHP_Token {}
+class PHP_Token_INT_CAST extends PHP_Token {}
+class PHP_Token_DEC extends PHP_Token {}
+class PHP_Token_INC extends PHP_Token {}
+class PHP_Token_CLONE extends PHP_Token {}
+class PHP_Token_NEW extends PHP_Token {}
+class PHP_Token_EXIT extends PHP_Token {}
+class PHP_Token_IF extends PHP_Token {}
+class PHP_Token_ELSEIF extends PHP_Token {}
+class PHP_Token_ELSE extends PHP_Token {}
+class PHP_Token_ENDIF extends PHP_Token {}
+class PHP_Token_LNUMBER extends PHP_Token {}
+class PHP_Token_DNUMBER extends PHP_Token {}
+class PHP_Token_STRING extends PHP_Token {}
+class PHP_Token_STRING_VARNAME extends PHP_Token {}
+class PHP_Token_VARIABLE extends PHP_Token {}
+class PHP_Token_NUM_STRING extends PHP_Token {}
+class PHP_Token_INLINE_HTML extends PHP_Token {}
+class PHP_Token_CHARACTER extends PHP_Token {}
+class PHP_Token_BAD_CHARACTER extends PHP_Token {}
+class PHP_Token_ENCAPSED_AND_WHITESPACE extends PHP_Token {}
+class PHP_Token_CONSTANT_ENCAPSED_STRING extends PHP_Token {}
+class PHP_Token_ECHO extends PHP_Token {}
+class PHP_Token_DO extends PHP_Token {}
+class PHP_Token_WHILE extends PHP_Token {}
+class PHP_Token_ENDWHILE extends PHP_Token {}
+class PHP_Token_FOR extends PHP_Token {}
+class PHP_Token_ENDFOR extends PHP_Token {}
+class PHP_Token_FOREACH extends PHP_Token {}
+class PHP_Token_ENDFOREACH extends PHP_Token {}
+class PHP_Token_DECLARE extends PHP_Token {}
+class PHP_Token_ENDDECLARE extends PHP_Token {}
+class PHP_Token_AS extends PHP_Token {}
+class PHP_Token_SWITCH extends PHP_Token {}
+class PHP_Token_ENDSWITCH extends PHP_Token {}
+class PHP_Token_CASE extends PHP_Token {}
+class PHP_Token_DEFAULT extends PHP_Token {}
+class PHP_Token_BREAK extends PHP_Token {}
+class PHP_Token_CONTINUE extends PHP_Token {}
+class PHP_Token_GOTO extends PHP_Token {}
+class PHP_Token_CALLABLE extends PHP_Token {}
+class PHP_Token_INSTEADOF extends PHP_Token {}
+
+class PHP_Token_FUNCTION extends PHP_TokenWithScopeAndVisibility
+{
+    protected $arguments;
+    protected $ccn;
+    protected $name;
+    protected $signature;
+
+    public function getArguments()
+    {
+        if ($this->arguments !== NULL) {
+            return $this->arguments;
+        }
+
+        $this->arguments = array();
+        $i               = $this->id + 2;
+        $tokens          = $this->tokenStream->tokens();
+        $typeHint        = NULL;
+
+        while (!$tokens[$i] instanceof PHP_Token_CLOSE_BRACKET) {
+            if ($tokens[$i] instanceof PHP_Token_STRING) {
+                $typeHint = (string)$tokens[$i];
+            }
+
+            else if ($tokens[$i] instanceof PHP_Token_VARIABLE) {
+                $this->arguments[(string)$tokens[$i]] = $typeHint;
+                $typeHint                             = NULL;
+            }
+
+            $i++;
+        }
+
+        return $this->arguments;
+    }
+
+    public function getName()
+    {
+        if ($this->name !== NULL) {
+            return $this->name;
+        }
+
+        $tokens = $this->tokenStream->tokens();
+
+        for ($i = $this->id + 1; $i < count($tokens); $i++) {
+            if ($tokens[$i] instanceof PHP_Token_STRING) {
+                $this->name = (string)$tokens[$i];
+                break;
+            }
+
+            else if ($tokens[$i] instanceof PHP_Token_AMPERSAND &&
+                     $tokens[$i+1] instanceof PHP_Token_STRING) {
+                $this->name = (string)$tokens[$i+1];
+                break;
+            }
+
+            else if ($tokens[$i] instanceof PHP_Token_OPEN_BRACKET) {
+                $this->name = 'anonymous function';
+                break;
+            }
+        }
+
+        if ($this->name != 'anonymous function') {
+            for ($i = $this->id; $i; --$i) {
+                if ($tokens[$i] instanceof PHP_Token_NAMESPACE) {
+                    $this->name = $tokens[$i]->getName() . '\\' . $this->name;
+                    break;
+                }
+
+                if ($tokens[$i] instanceof PHP_Token_INTERFACE) {
+                    break;
+                }
+            }
+        }
+
+        return $this->name;
+    }
+
+    public function getCCN()
+    {
+        if ($this->ccn !== NULL) {
+            return $this->ccn;
+        }
+
+        $this->ccn = 1;
+        $end       = $this->getEndTokenId();
+        $tokens    = $this->tokenStream->tokens();
+
+        for ($i = $this->id; $i <= $end; $i++) {
+            switch (get_class($tokens[$i])) {
+                case 'PHP_Token_IF':
+                case 'PHP_Token_ELSEIF':
+                case 'PHP_Token_FOR':
+                case 'PHP_Token_FOREACH':
+                case 'PHP_Token_WHILE':
+                case 'PHP_Token_CASE':
+                case 'PHP_Token_CATCH':
+                case 'PHP_Token_BOOLEAN_AND':
+                case 'PHP_Token_LOGICAL_AND':
+                case 'PHP_Token_BOOLEAN_OR':
+                case 'PHP_Token_LOGICAL_OR':
+                case 'PHP_Token_QUESTION_MARK': {
+                    $this->ccn++;
+                }
+                break;
+            }
+        }
+
+        return $this->ccn;
+    }
+
+    public function getSignature()
+    {
+        if ($this->signature !== NULL) {
+            return $this->signature;
+        }
+
+        if ($this->getName() == 'anonymous function') {
+            $this->signature = 'anonymous function';
+            $i               = $this->id + 1;
+        } else {
+            $this->signature = '';
+            $i               = $this->id + 2;
+        }
+
+        $tokens = $this->tokenStream->tokens();
+
+        while (isset($tokens[$i]) &&
+               !$tokens[$i] instanceof PHP_Token_OPEN_CURLY &&
+               !$tokens[$i] instanceof PHP_Token_SEMICOLON) {
+            $this->signature .= $tokens[$i++];
+        }
+
+        $this->signature = trim($this->signature);
+
+        return $this->signature;
+    }
+}
+
+class PHP_Token_CONST extends PHP_Token {}
+class PHP_Token_RETURN extends PHP_Token {}
+class PHP_Token_YIELD extends PHP_Token {}
+class PHP_Token_TRY extends PHP_Token {}
+class PHP_Token_CATCH extends PHP_Token {}
+class PHP_Token_FINALLY extends PHP_Token {}
+class PHP_Token_THROW extends PHP_Token {}
+class PHP_Token_USE extends PHP_Token {}
+class PHP_Token_GLOBAL extends PHP_Token {}
+class PHP_Token_PUBLIC extends PHP_Token {}
+class PHP_Token_PROTECTED extends PHP_Token {}
+class PHP_Token_PRIVATE extends PHP_Token {}
+class PHP_Token_FINAL extends PHP_Token {}
+class PHP_Token_ABSTRACT extends PHP_Token {}
+class PHP_Token_STATIC extends PHP_Token {}
+class PHP_Token_VAR extends PHP_Token {}
+class PHP_Token_UNSET extends PHP_Token {}
+class PHP_Token_ISSET extends PHP_Token {}
+class PHP_Token_EMPTY extends PHP_Token {}
+class PHP_Token_HALT_COMPILER extends PHP_Token {}
+
+class PHP_Token_INTERFACE extends PHP_TokenWithScopeAndVisibility
+{
+    protected $interfaces;
+
+    public function getName()
+    {
+        return (string)$this->tokenStream[$this->id + 2];
+    }
+
+    public function hasParent()
+    {
+        return $this->tokenStream[$this->id + 4] instanceof PHP_Token_EXTENDS;
+    }
+
+    public function getPackage()
+    {
+        $className  = $this->getName();
+        $docComment = $this->getDocblock();
+
+        $result = array(
+          'namespace'   => '',
+          'fullPackage' => '',
+          'category'    => '',
+          'package'     => '',
+          'subpackage'  => ''
+        );
+
+        for ($i = $this->id; $i; --$i) {
+            if ($this->tokenStream[$i] instanceof PHP_Token_NAMESPACE) {
+                $result['namespace'] = $this->tokenStream[$i]->getName();
+                break;
+            }
+        }
+
+        if (preg_match('/@category[\s]+([\.\w]+)/', $docComment, $matches)) {
+            $result['category'] = $matches[1];
+        }
+
+        if (preg_match('/@package[\s]+([\.\w]+)/', $docComment, $matches)) {
+            $result['package']     = $matches[1];
+            $result['fullPackage'] = $matches[1];
+        }
+
+        if (preg_match('/@subpackage[\s]+([\.\w]+)/', $docComment, $matches)) {
+            $result['subpackage']   = $matches[1];
+            $result['fullPackage'] .= '.' . $matches[1];
+        }
+
+        if (empty($result['fullPackage'])) {
+            $result['fullPackage'] = $this->arrayToName(
+              explode('_', str_replace('\\', '_', $className)), '.'
+            );
+        }
+
+        return $result;
+    }
+
+    protected function arrayToName(array $parts, $join = '\\')
+    {
+        $result = '';
+
+        if (count($parts) > 1) {
+            array_pop($parts);
+
+            $result = join($join, $parts);
+        }
+
+        return $result;
+    }
+
+    public function getParent()
+    {
+        if (!$this->hasParent()) {
+            return FALSE;
+        }
+
+        $i         = $this->id + 6;
+        $tokens    = $this->tokenStream->tokens();
+        $className = (string)$tokens[$i];
+
+        while (isset($tokens[$i+1]) &&
+               !$tokens[$i+1] instanceof PHP_Token_WHITESPACE) {
+            $className .= (string)$tokens[++$i];
+        }
+
+        return $className;
+    }
+
+    public function hasInterfaces()
+    {
+        return (isset($this->tokenStream[$this->id + 4]) &&
+                $this->tokenStream[$this->id + 4] instanceof PHP_Token_IMPLEMENTS) ||
+               (isset($this->tokenStream[$this->id + 8]) &&
+                $this->tokenStream[$this->id + 8] instanceof PHP_Token_IMPLEMENTS);
+    }
+
+    public function getInterfaces()
+    {
+        if ($this->interfaces !== NULL) {
+            return $this->interfaces;
+        }
+
+        if (!$this->hasInterfaces()) {
+            return ($this->interfaces = FALSE);
+        }
+
+        if ($this->tokenStream[$this->id + 4] instanceof PHP_Token_IMPLEMENTS) {
+            $i = $this->id + 3;
+        } else {
+            $i = $this->id + 7;
+        }
+
+        $tokens = $this->tokenStream->tokens();
+
+        while (!$tokens[$i+1] instanceof PHP_Token_OPEN_CURLY) {
+            $i++;
+
+            if ($tokens[$i] instanceof PHP_Token_STRING) {
+                $this->interfaces[] = (string)$tokens[$i];
+            }
+        }
+
+        return $this->interfaces;
+    }
+}
+
+class PHP_Token_CLASS extends PHP_Token_INTERFACE {}
+class PHP_Token_CLASS_NAME_CONSTANT extends PHP_Token {}
+class PHP_Token_TRAIT extends PHP_Token_INTERFACE {}
+class PHP_Token_EXTENDS extends PHP_Token {}
+class PHP_Token_IMPLEMENTS extends PHP_Token {}
+class PHP_Token_OBJECT_OPERATOR extends PHP_Token {}
+class PHP_Token_DOUBLE_ARROW extends PHP_Token {}
+class PHP_Token_LIST extends PHP_Token {}
+class PHP_Token_ARRAY extends PHP_Token {}
+class PHP_Token_CLASS_C extends PHP_Token {}
+class PHP_Token_TRAIT_C extends PHP_Token {}
+class PHP_Token_METHOD_C extends PHP_Token {}
+class PHP_Token_FUNC_C extends PHP_Token {}
+class PHP_Token_LINE extends PHP_Token {}
+class PHP_Token_FILE extends PHP_Token {}
+class PHP_Token_COMMENT extends PHP_Token {}
+class PHP_Token_DOC_COMMENT extends PHP_Token {}
+class PHP_Token_OPEN_TAG extends PHP_Token {}
+class PHP_Token_OPEN_TAG_WITH_ECHO extends PHP_Token {}
+class PHP_Token_CLOSE_TAG extends PHP_Token {}
+class PHP_Token_WHITESPACE extends PHP_Token {}
+class PHP_Token_START_HEREDOC extends PHP_Token {}
+class PHP_Token_END_HEREDOC extends PHP_Token {}
+class PHP_Token_DOLLAR_OPEN_CURLY_BRACES extends PHP_Token {}
+class PHP_Token_CURLY_OPEN extends PHP_Token {}
+class PHP_Token_PAAMAYIM_NEKUDOTAYIM extends PHP_Token {}
+
+class PHP_Token_NAMESPACE extends PHP_TokenWithScope
+{
+    public function getName()
+    {
+        $tokens    = $this->tokenStream->tokens();
+        $namespace = (string)$tokens[$this->id+2];
+
+        for ($i = $this->id + 3; ; $i += 2) {
+            if (isset($tokens[$i]) &&
+                $tokens[$i] instanceof PHP_Token_NS_SEPARATOR) {
+                $namespace .= '\\' . $tokens[$i+1];
+            } else {
+                break;
+            }
+        }
+
+        return $namespace;
+    }
+}
+
+class PHP_Token_NS_C extends PHP_Token {}
+class PHP_Token_DIR extends PHP_Token {}
+class PHP_Token_NS_SEPARATOR extends PHP_Token {}
+class PHP_Token_DOUBLE_COLON extends PHP_Token {}
+class PHP_Token_OPEN_BRACKET extends PHP_Token {}
+class PHP_Token_CLOSE_BRACKET extends PHP_Token {}
+class PHP_Token_OPEN_SQUARE extends PHP_Token {}
+class PHP_Token_CLOSE_SQUARE extends PHP_Token {}
+class PHP_Token_OPEN_CURLY extends PHP_Token {}
+class PHP_Token_CLOSE_CURLY extends PHP_Token {}
+class PHP_Token_SEMICOLON extends PHP_Token {}
+class PHP_Token_DOT extends PHP_Token {}
+class PHP_Token_COMMA extends PHP_Token {}
+class PHP_Token_EQUAL extends PHP_Token {}
+class PHP_Token_LT extends PHP_Token {}
+class PHP_Token_GT extends PHP_Token {}
+class PHP_Token_PLUS extends PHP_Token {}
+class PHP_Token_MINUS extends PHP_Token {}
+class PHP_Token_MULT extends PHP_Token {}
+class PHP_Token_DIV extends PHP_Token {}
+class PHP_Token_QUESTION_MARK extends PHP_Token {}
+class PHP_Token_EXCLAMATION_MARK extends PHP_Token {}
+class PHP_Token_COLON extends PHP_Token {}
+class PHP_Token_DOUBLE_QUOTES extends PHP_Token {}
+class PHP_Token_AT extends PHP_Token {}
+class PHP_Token_AMPERSAND extends PHP_Token {}
+class PHP_Token_PERCENT extends PHP_Token {}
+class PHP_Token_PIPE extends PHP_Token {}
+class PHP_Token_DOLLAR extends PHP_Token {}
+class PHP_Token_CARET extends PHP_Token {}
+class PHP_Token_TILDE extends PHP_Token {}
+class PHP_Token_BACKTICK extends PHP_Token {}

@@ -1,113 +1,254 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Formatting_OperationBracketSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_Formatting_OperationBracketSniff.
+ *
+ * Tests that all arithmetic operations are bracketed.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Formatting_OperatorBracketSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array(
+                                   'PHP',
+                                   'JS',
+                                  );
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return PHP_CodeSniffer_Tokens::$operators;
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if ($phpcsFile->tokenizerType === 'JS' && $tokens[$stackPtr]['code'] === T_PLUS) {
+            // JavaScript uses the plus operator for string concatenation as well
+            // so we cannot accurately determine if it is a string concat or addition.
+            // So just ignore it.
+            return;
+        }
+
+        // If the & is a reference, then we don't want to check for brackets.
+        if ($tokens[$stackPtr]['code'] === T_BITWISE_AND && $phpcsFile->isReference($stackPtr) === true) {
+            return;
+        }
+
+        // There is one instance where brackets aren't needed, which involves
+        // the minus sign being used to assign a negative number to a variable.
+        if ($tokens[$stackPtr]['code'] === T_MINUS) {
+            // Check to see if we are trying to return -n.
+            $prev = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 1), null, true);
+            if ($tokens[$prev]['code'] === T_RETURN) {
+                return;
+            }
+
+            $number = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
+            if ($tokens[$number]['code'] === T_LNUMBER || $tokens[$number]['code'] === T_DNUMBER) {
+                $previous = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
+                if ($previous !== false) {
+                    $isAssignment = in_array($tokens[$previous]['code'], PHP_CodeSniffer_Tokens::$assignmentTokens);
+                    $isEquality   = in_array($tokens[$previous]['code'], PHP_CodeSniffer_Tokens::$equalityTokens);
+                    $isComparison = in_array($tokens[$previous]['code'], PHP_CodeSniffer_Tokens::$comparisonTokens);
+                    if ($isAssignment === true || $isEquality === true || $isComparison === true) {
+                        // This is a negative assignment or comparison.
+                        // We need to check that the minus and the number are
+                        // adjacent.
+                        if (($number - $stackPtr) !== 1) {
+                            $error = 'No space allowed between minus sign and number';
+                            $phpcsFile->addError($error, $stackPtr, 'SpacingAfterMinus');
+                        }
+
+                        return;
+                    }
+                }
+            }
+        }//end if
+
+        $lastBracket = false;
+        if (isset($tokens[$stackPtr]['nested_parenthesis']) === true) {
+            $parenthesis = array_reverse($tokens[$stackPtr]['nested_parenthesis'], true);
+            foreach ($parenthesis as $bracket => $endBracket) {
+                $prevToken = $phpcsFile->findPrevious(T_WHITESPACE, ($bracket - 1), null, true);
+                $prevCode  = $tokens[$prevToken]['code'];
+
+                if ($prevCode === T_ISSET) {
+                    // This operation is inside an isset() call, but has
+                    // no bracket of it's own.
+                    break;
+                }
+
+                if ($prevCode === T_STRING || $prevCode === T_SWITCH) {
+                    // We allow very simple operations to not be bracketed.
+                    // For example, ceil($one / $two).
+                    $allowed = array(
+                                T_VARIABLE,
+                                T_LNUMBER,
+                                T_DNUMBER,
+                                T_STRING,
+                                T_WHITESPACE,
+                                T_THIS,
+                                T_OBJECT_OPERATOR,
+                                T_OPEN_SQUARE_BRACKET,
+                                T_CLOSE_SQUARE_BRACKET,
+                                T_MODULUS,
+                               );
+
+                    for ($prev = ($stackPtr - 1); $prev > $bracket; $prev--) {
+                        if (in_array($tokens[$prev]['code'], $allowed) === true) {
+                            continue;
+                        }
+
+                        if ($tokens[$prev]['code'] === T_CLOSE_PARENTHESIS) {
+                            $prev = $tokens[$prev]['parenthesis_opener'];
+                        } else {
+                            break;
+                        }
+                    }
+
+                    if ($prev !== $bracket) {
+                        break;
+                    }
+
+                    for ($next = ($stackPtr + 1); $next < $endBracket; $next++) {
+                        if (in_array($tokens[$next]['code'], $allowed) === true) {
+                            continue;
+                        }
+
+                        if ($tokens[$next]['code'] === T_OPEN_PARENTHESIS) {
+                            $next = $tokens[$next]['parenthesis_closer'];
+                        } else {
+                            break;
+                        }
+                    }
+
+                    if ($next !== $endBracket) {
+                        break;
+                    }
+                }//end if
+
+                if (in_array($prevCode, PHP_CodeSniffer_Tokens::$scopeOpeners) === true) {
+                    // This operation is inside a control structure like FOREACH
+                    // or IF, but has no bracket of it's own.
+                    // The only control structure allowed to do this is SWITCH.
+                    if ($prevCode !== T_SWITCH) {
+                        break;
+                    }
+                }
+
+                if ($prevCode === T_OPEN_PARENTHESIS) {
+                    // These are two open parenthesis in a row. If the current
+                    // one doesn't enclose the operator, go to the previous one.
+                    if ($endBracket < $stackPtr) {
+                        continue;
+                    }
+                }
+
+                $lastBracket = $bracket;
+                break;
+            }//end foreach
+        }//end if
+
+        if ($lastBracket === false) {
+            // It is not in a bracketed statement at all.
+            $previousToken = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true, null, true);
+            if ($previousToken !== false) {
+                // A list of tokens that indicate that the token is not
+                // part of an arithmetic operation.
+                $invalidTokens = array(
+                                  T_COMMA,
+                                  T_COLON,
+                                  T_OPEN_PARENTHESIS,
+                                  T_OPEN_SQUARE_BRACKET,
+                                  T_CASE,
+                                 );
+
+                if (in_array($tokens[$previousToken]['code'], $invalidTokens) === false) {
+                    $error = 'Arithmetic operation must be bracketed';
+                    $phpcsFile->addError($error, $stackPtr, 'MissingBrackets');
+                }
+
+                return;
+            }
+        } else if ($tokens[$lastBracket]['parenthesis_closer'] < $stackPtr) {
+            // There are a set of brackets in front of it that don't include it.
+            $error = 'Arithmetic operation must be bracketed';
+            $phpcsFile->addError($error, $stackPtr, 'MissingBrackets');
+            return;
+        } else {
+            // We are enclosed in a set of bracket, so the last thing to
+            // check is that we are not also enclosed in square brackets
+            // like this: ($array[$index + 1]), which is invalid.
+            $brackets = array(
+                         T_OPEN_SQUARE_BRACKET,
+                         T_CLOSE_SQUARE_BRACKET,
+                        );
+
+            $squareBracket = $phpcsFile->findPrevious($brackets, ($stackPtr - 1), $lastBracket);
+            if ($squareBracket !== false && $tokens[$squareBracket]['code'] === T_OPEN_SQUARE_BRACKET) {
+                $closeSquareBracket = $phpcsFile->findNext($brackets, ($stackPtr + 1));
+                if ($closeSquareBracket !== false && $tokens[$closeSquareBracket]['code'] === T_CLOSE_SQUARE_BRACKET) {
+                    $error = 'Arithmetic operation must be bracketed';
+                    $phpcsFile->addError($error, $stackPtr, 'MissingBrackets');
+                }
+            }
+
+            return;
+        }//end if
+
+        $lastAssignment = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$assignmentTokens, $stackPtr, null, false, null, true);
+        if ($lastAssignment !== false && $lastAssignment > $lastBracket) {
+            $error = 'Arithmetic operation must be bracketed';
+            $phpcsFile->addError($error, $stackPtr, 'MissingBrackets');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

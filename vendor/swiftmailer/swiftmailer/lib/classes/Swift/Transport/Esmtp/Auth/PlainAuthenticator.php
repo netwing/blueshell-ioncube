@@ -1,30 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Handles PLAIN authentication.
+ *
+ * @package    Swift
+ * @subpackage Transport
+ * @author     Chris Corbyn
+ */
+class Swift_Transport_Esmtp_Auth_PlainAuthenticator implements Swift_Transport_Esmtp_Authenticator
+{
+    /**
+     * Get the name of the AUTH mechanism this Authenticator handles.
+     *
+     * @return string
+     */
+    public function getAuthKeyword()
+    {
+        return 'PLAIN';
+    }
+
+    /**
+     * Try to authenticate the user with $username and $password.
+     *
+     * @param Swift_Transport_SmtpAgent $agent
+     * @param string                    $username
+     * @param string                    $password
+     *
+     * @return boolean
+     */
+    public function authenticate(Swift_Transport_SmtpAgent $agent, $username, $password)
+    {
+        try {
+            $message = base64_encode($username . chr(0) . $username . chr(0) . $password);
+            $agent->executeCommand(sprintf("AUTH PLAIN %s\r\n", $message), array(235));
+
+            return true;
+        } catch (Swift_TransportException $e) {
+            $agent->executeCommand("RSET\r\n", array(250));
+
+            return false;
+        }
+    }
+}

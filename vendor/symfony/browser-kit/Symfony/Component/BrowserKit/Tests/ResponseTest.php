@@ -1,57 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-DkdCp7/fsQowRxuI
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\BrowserKit\Tests;
+
+use Symfony\Component\BrowserKit\Response;
+
+class ResponseTest extends \PHPUnit_Framework_TestCase
+{
+    public function testGetUri()
+    {
+        $response = new Response('foo');
+        $this->assertEquals('foo', $response->getContent(), '->getContent() returns the content of the response');
+    }
+
+    public function testGetStatus()
+    {
+        $response = new Response('foo', 304);
+        $this->assertEquals('304', $response->getStatus(), '->getStatus() returns the status of the response');
+    }
+
+    public function testGetHeaders()
+    {
+        $response = new Response('foo', 200, array('foo' => 'bar'));
+        $this->assertEquals(array('foo' => 'bar'), $response->getHeaders(), '->getHeaders() returns the headers of the response');
+    }
+
+    public function testGetHeader()
+    {
+        $response = new Response('foo', 200, array(
+            'Content-Type' => 'text/html',
+            'Set-Cookie'   => array('foo=bar', 'bar=foo'),
+        ));
+
+        $this->assertEquals('text/html', $response->getHeader('Content-Type'), '->getHeader() returns a header of the response');
+        $this->assertEquals('text/html', $response->getHeader('content-type'), '->getHeader() returns a header of the response');
+        $this->assertEquals('text/html', $response->getHeader('content_type'), '->getHeader() returns a header of the response');
+        $this->assertEquals('foo=bar', $response->getHeader('Set-Cookie'), '->getHeader() returns the first header value');
+        $this->assertEquals(array('foo=bar', 'bar=foo'), $response->getHeader('Set-Cookie', false), '->getHeader() returns all header values if first is false');
+
+        $this->assertNull($response->getHeader('foo'), '->getHeader() returns null if the header is not defined');
+        $this->assertEquals(array(), $response->getHeader('foo', false), '->getHeader() returns an empty array if the header is not defined and first is set to false');
+    }
+
+    public function testMagicToString()
+    {
+        $response = new Response('foo', 304, array('foo' => 'bar'));
+
+        $this->assertEquals("foo: bar\n\nfoo", $response->__toString(), '->__toString() returns the headers and the content as a string');
+    }
+
+    public function testMagicToStringWithMultipleSetCookieHeader()
+    {
+        $headers = array(
+            'content-type' => 'text/html; charset=utf-8',
+            'set-cookie'   => array('foo=bar', 'bar=foo')
+        );
+
+        $expected = 'content-type: text/html; charset=utf-8'."\n";
+        $expected.= 'set-cookie: foo=bar'."\n";
+        $expected.= 'set-cookie: bar=foo'."\n\n";
+        $expected.= 'foo';
+
+        $response = new Response('foo', 304, $headers);
+
+        $this->assertEquals($expected, $response->__toString(), '->__toString() returns the headers and the content as a string');
+    }
+}

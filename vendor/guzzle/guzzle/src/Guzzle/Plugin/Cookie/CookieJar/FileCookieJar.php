@@ -1,37 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Plugin\Cookie\CookieJar;
+
+use Guzzle\Common\Exception\RuntimeException;
+
+/**
+ * Persists non-session cookies using a JSON formatted file
+ */
+class FileCookieJar extends ArrayCookieJar
+{
+    /** @var string filename */
+    protected $filename;
+
+    /**
+     * Create a new FileCookieJar object
+     *
+     * @param string $cookieFile File to store the cookie data
+     *
+     * @throws RuntimeException if the file cannot be found or created
+     */
+    public function __construct($cookieFile)
+    {
+        $this->filename = $cookieFile;
+        $this->load();
+    }
+
+    /**
+     * Saves the file when shutting down
+     */
+    public function __destruct()
+    {
+        $this->persist();
+    }
+
+    /**
+     * Save the contents of the data array to the file
+     *
+     * @throws RuntimeException if the file cannot be found or created
+     */
+    protected function persist()
+    {
+        if (false === file_put_contents($this->filename, $this->serialize())) {
+            // @codeCoverageIgnoreStart
+            throw new RuntimeException('Unable to open file ' . $this->filename);
+            // @codeCoverageIgnoreEnd
+        }
+    }
+
+    /**
+     * Load the contents of the json formatted file into the data array and discard any unsaved state
+     */
+    protected function load()
+    {
+        $json = file_get_contents($this->filename);
+        if (false === $json) {
+            // @codeCoverageIgnoreStart
+            throw new RuntimeException('Unable to open file ' . $this->filename);
+            // @codeCoverageIgnoreEnd
+        }
+
+        $this->unserialize($json);
+        $this->cookies = $this->cookies ?: array();
+    }
+}

@@ -1,169 +1,315 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-kJ+uZHW=
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+
+class Swift_Transport_MailTransportTest extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testTransportInvokesMailOncePerMessage()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $headers = $this->_createHeaders();
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> one($invoker)->mail(any(), any(), any(), any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testTransportUsesToFieldBodyInSending()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $to = $this->_createHeader();
+        $headers = $this->_createHeaders(array(
+            'To' => $to
+        ));
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> allowing($to)->getFieldBody() -> returns("Foo <foo@bar>")
+            -> one($invoker)->mail("Foo <foo@bar>", any(), any(), any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+            -> ignoring($to)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testTransportUsesSubjectFieldBodyInSending()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $subj = $this->_createHeader();
+        $headers = $this->_createHeaders(array(
+            'Subject' => $subj
+        ));
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> allowing($subj)->getFieldBody() -> returns("Thing")
+            -> one($invoker)->mail(any(), "Thing", any(), any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+            -> ignoring($subj)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testTransportUsesBodyOfMessage()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $headers = $this->_createHeaders();
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->toString() -> returns(
+                "To: Foo <foo@bar>\r\n" .
+                "\r\n" .
+                "This body"
+                )
+            -> one($invoker)->mail(any(), any(), "This body", any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testTransportUsesHeadersFromMessage()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $headers = $this->_createHeaders();
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->toString() -> returns(
+                "Subject: Stuff\r\n" .
+                "\r\n" .
+                "This body"
+                )
+            -> one($invoker)->mail(any(), any(), any(), "Subject: Stuff" . PHP_EOL, optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testTransportReturnsCountOfAllRecipientsIfInvokerReturnsTrue()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $headers = $this->_createHeaders();
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null, 'zip@button'=>null))
+            -> allowing($message)->getCc() -> returns(array('test@test'=>null))
+            -> one($invoker)->mail(any(), any(), any(), any(), optional()) -> returns(true)
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+        );
+
+        $this->assertEqual(3, $transport->send($message));
+    }
+
+    public function testTransportReturnsZeroIfInvokerReturnsFalse()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $headers = $this->_createHeaders();
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>null, 'zip@button'=>null))
+            -> allowing($message)->getCc() -> returns(array('test@test'=>null))
+            -> one($invoker)->mail(any(), any(), any(), any(), optional()) -> returns(false)
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+        );
+
+        $this->assertEqual(0, $transport->send($message));
+    }
+
+    public function testToHeaderIsRemovedFromHeaderSetDuringSending()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $to = $this->_createHeader();
+        $headers = $this->_createHeaders(array(
+            'To' => $to
+        ));
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> one($headers)->remove('To')
+            -> one($invoker)->mail(any(), any(), any(), any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+            -> ignoring($to)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testSubjectHeaderIsRemovedFromHeaderSetDuringSending()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $subject = $this->_createHeader();
+        $headers = $this->_createHeaders(array(
+            'Subject' => $subject
+        ));
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> one($headers)->remove('Subject')
+            -> one($invoker)->mail(any(), any(), any(), any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+            -> ignoring($subject)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testToHeaderIsPutBackAfterSending()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $to = $this->_createHeader();
+        $headers = $this->_createHeaders(array(
+            'To' => $to
+        ));
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> one($headers)->set($to, optional())
+            -> one($invoker)->mail(any(), any(), any(), any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+            -> ignoring($to)
+        );
+
+        $transport->send($message);
+    }
+
+    public function testSubjectHeaderIsPutBackAfterSending()
+    {
+        $invoker = $this->_createInvoker();
+        $dispatcher = $this->_createEventDispatcher();
+        $transport = $this->_createTransport($invoker, $dispatcher);
+
+        $subject = $this->_createHeader();
+        $headers = $this->_createHeaders(array(
+            'Subject' => $subject
+        ));
+        $message = $this->_createMessage($headers);
+
+        $this->_checking(Expectations::create()
+            -> one($headers)->set($subject, optional())
+            -> one($invoker)->mail(any(), any(), any(), any(), optional())
+            -> ignoring($dispatcher)
+            -> ignoring($headers)
+            -> ignoring($message)
+            -> ignoring($subject)
+        );
+
+        $transport->send($message);
+    }
+
+    // -- Creation Methods
+
+    private function _createTransport($invoker, $dispatcher)
+    {
+        return new Swift_Transport_MailTransport($invoker, $dispatcher);
+    }
+
+    private function _createEventDispatcher()
+    {
+        return $this->_mock('Swift_Events_EventDispatcher');
+    }
+
+    private function _createInvoker()
+    {
+        return $this->_mock('Swift_Transport_MailInvoker');
+    }
+
+    private function _createMessage($headers)
+    {
+        $message = $this->_mock('Swift_Mime_Message');
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getHeaders() -> returns($headers)
+            );
+
+        return $message;
+    }
+
+    private function _createHeaders($headers = array())
+    {
+        $set = $this->_mock('Swift_Mime_HeaderSet');
+
+        if (count($headers) > 0) {
+            foreach ($headers as $name => $header) {
+                $this->_checking(Expectations::create()
+                    -> allowing($set)->get($name) -> returns($header)
+                    -> allowing($set)->has($name) -> returns(true)
+                );
+            }
+        }
+
+        $header = $this->_createHeader();
+        $this->_checking(Expectations::create()
+            -> allowing($set)->get(any()) -> returns($header)
+            -> allowing($set)->has(any()) -> returns(true)
+            -> ignoring($header)
+        );
+
+        return $set;
+    }
+
+    private function _createHeader()
+    {
+        return $this->_mock('Swift_Mime_Header');
+    }
+}

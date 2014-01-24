@@ -1,50 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Common\Exception;
+
+use Guzzle\Common\Exception\ExceptionCollection;
+
+class ExceptionCollectionTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    private function getExceptions()
+    {
+        return array(
+            new \Exception('Test'),
+            new \Exception('Testing')
+        );
+    }
+
+    public function testAggregatesExceptions()
+    {
+        $e = new ExceptionCollection();
+        $exceptions = $this->getExceptions();
+        $e->add($exceptions[0]);
+        $e->add($exceptions[1]);
+        $this->assertEquals("(Exception) Test\n(Exception) Testing", $e->getMessage());
+        $this->assertSame($exceptions[0], $e->getFirst());
+    }
+
+    public function testCanSetExceptions()
+    {
+        $ex = new \Exception('foo');
+        $e = new ExceptionCollection();
+        $e->setExceptions(array($ex));
+        $this->assertSame($ex, $e->getFirst());
+    }
+
+    public function testActsAsArray()
+    {
+        $e = new ExceptionCollection();
+        $exceptions = $this->getExceptions();
+        $e->add($exceptions[0]);
+        $e->add($exceptions[1]);
+        $this->assertEquals(2, count($e));
+        $this->assertEquals($exceptions, $e->getIterator()->getArrayCopy());
+    }
+
+    public function testCanAddSelf()
+    {
+        $e1 = new ExceptionCollection();
+        $e1->add(new \Exception("Test"));
+        $e2 = new ExceptionCollection('Meta description!');
+        $e2->add(new \Exception("Test 2"));
+        $e3 = new ExceptionCollection();
+        $e3->add(new \Exception('Baz'));
+        $e2->add($e3);
+        $e1->add($e2);
+        $message = $e1->getMessage();
+        $this->assertEquals("(Exception) Test\n"
+            . "(Guzzle\\Common\\Exception\\ExceptionCollection)\n"
+            . "    Meta description!\n"
+            . "    (Exception) Test 2\n"
+            . "    (Guzzle\\Common\\Exception\\ExceptionCollection)\n"
+            . "        (Exception) Baz", $message);
+    }
+}

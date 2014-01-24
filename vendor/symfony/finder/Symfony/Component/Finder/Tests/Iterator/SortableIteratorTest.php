@@ -1,48 +1,91 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-GCzHwgBcuBVDr3lhBPk+uOTRkm==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Iterator;
+
+use Symfony\Component\Finder\Iterator\SortableIterator;
+
+class SortableIteratorTest extends RealIteratorTestCase
+{
+    public function testConstructor()
+    {
+        try {
+            new SortableIterator(new Iterator(array()), 'foobar');
+            $this->fail('__construct() throws an \InvalidArgumentException exception if the mode is not valid');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('InvalidArgumentException', $e, '__construct() throws an \InvalidArgumentException exception if the mode is not valid');
+        }
+    }
+
+    /**
+     * @dataProvider getAcceptData
+     */
+    public function testAccept($mode, $expected)
+    {
+        $inner = new Iterator(self::$files);
+
+        $iterator = new SortableIterator($inner, $mode);
+
+        $this->assertOrderedIterator($expected, $iterator);
+    }
+
+    public function getAcceptData()
+    {
+
+        $sortByName = array(
+            '.bar',
+            '.foo',
+            '.foo/.bar',
+            '.foo/bar',
+            '.git',
+            'foo',
+            'foo bar',
+            'foo/bar.tmp',
+            'test.php',
+            'test.py',
+            'toto',
+        );
+
+        $sortByType = array(
+            '.foo',
+            '.git',
+            'foo',
+            'toto',
+            '.bar',
+            '.foo/.bar',
+            '.foo/bar',
+            'foo bar',
+            'foo/bar.tmp',
+            'test.php',
+            'test.py',
+        );
+
+        $customComparison = array(
+            '.bar',
+            '.foo',
+            '.foo/.bar',
+            '.foo/bar',
+            '.git',
+            'foo',
+            'foo bar',
+            'foo/bar.tmp',
+            'test.php',
+            'test.py',
+            'toto',
+        );
+
+        return array(
+            array(SortableIterator::SORT_BY_NAME, $this->toAbsolute($sortByName)),
+            array(SortableIterator::SORT_BY_TYPE, $this->toAbsolute($sortByType)),
+            array(function (\SplFileInfo $a, \SplFileInfo $b) { return strcmp($a->getRealpath(), $b->getRealpath()); }, $this->toAbsolute($customComparison)),
+        );
+    }
+}

@@ -1,41 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * PSR2_Sniffs_Methods_FunctionCallSignatureSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * PSR2_Sniffs_Methods_FunctionCallSignatureSniff.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PSR2_Sniffs_Methods_FunctionCallSignatureSniff extends PEAR_Sniffs_Functions_FunctionCallSignatureSniff
+{
+
+    /**
+     * If TRUE, multiple arguments can be defined per line in a multi-line call.
+     *
+     * @var bool
+     */
+    public $allowMultipleArguments = false;
+
+
+    /**
+     * Processes single-line calls.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile   The file being scanned.
+     * @param int                  $stackPtr    The position of the current token
+     *                                          in the stack passed in $tokens.
+     * @param int                  $openBracket The position of the opening bracket
+     *                                          in the stack passed in $tokens.
+     * @param array                $tokens      The stack of tokens that make up
+     *                                          the file.
+     *
+     * @return void
+     */
+    public function isMultiLineCall(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $openBracket, $tokens)
+    {
+        $closeBracket = $tokens[$openBracket]['parenthesis_closer'];
+        $compareLine  = $tokens[$openBracket]['line'];
+
+        for ($i = ($openBracket + 1); $i < $closeBracket; $i++) {
+            if ($tokens[$i]['code'] === T_OPEN_PARENTHESIS) {
+                $i = $tokens[$i]['parenthesis_closer'];
+                $compareLine = $tokens[$i]['line'];
+                continue;
+            } else if ($tokens[$i]['code'] === T_CLOSURE) {
+                $i = $tokens[$i]['scope_closer'];
+                $compareLine = $tokens[$i]['line'];
+                continue;
+            } else if ($tokens[$i]['code'] === T_OPEN_SHORT_ARRAY) {
+                $i = $tokens[$i]['bracket_closer'];
+                $compareLine = $tokens[$i]['line'];
+                continue;
+            }
+
+            if ($tokens[$i]['line'] !== $compareLine) {
+                return true;
+            }
+        }//end for
+
+        return false;
+
+    }//end isMultiLineCall()
+
+
+}//end class
 ?>
-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
-Jwy=

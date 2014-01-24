@@ -1,32 +1,45 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<h1>Controller Generator</h1>
+
+<p>This generator helps you to quickly generate a new controller class,
+one or several controller actions and their corresponding views.</p>
+
+<?php $form=$this->beginWidget('CCodeForm', array('model'=>$model)); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'controller'); ?>
+		<?php echo $form->textField($model,'controller',array('size'=>65)); ?>
+		<div class="tooltip">
+			Controller ID is case-sensitive. Below are some examples:
+			<ul>
+				<li><code>post</code> generates <code>PostController.php</code></li>
+				<li><code>postTag</code> generates <code>PostTagController.php</code></li>
+				<li><code>admin/user</code> generates <code>admin/UserController.php</code>.
+					If the application has an <code>admin</code> module enabled,
+					it will generate <code>UserController</code> within the module instead.
+					Make sure to write module name in the correct case if it has a camelCase name.
+				</li>
+			</ul>
+		</div>
+		<?php echo $form->error($model,'controller'); ?>
+	</div>
+
+	<div class="row sticky">
+		<?php echo $form->labelEx($model,'baseClass'); ?>
+		<?php echo $form->textField($model,'baseClass',array('size'=>65)); ?>
+		<div class="tooltip">
+			This is the class that the new controller class will extend from.
+			Please make sure the class exists and can be autoloaded.
+		</div>
+		<?php echo $form->error($model,'baseClass'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'actions'); ?>
+		<?php echo $form->textField($model,'actions',array('size'=>65)); ?>
+		<div class="tooltip">
+			Action IDs are case-insensitive. Separate multiple action IDs with commas or spaces.
+		</div>
+		<?php echo $form->error($model,'actions'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>

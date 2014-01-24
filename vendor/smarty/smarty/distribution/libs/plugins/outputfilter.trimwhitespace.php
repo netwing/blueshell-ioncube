@@ -1,52 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsFilter
+ */
+
+/**
+ * Smarty trimwhitespace outputfilter plugin
+ *
+ * Trim unnecessary whitespace from HTML markup.
+ *
+ * @author   Rodney Rehm
+ * @param string                   $source input string
+ * @param Smarty_Internal_Template $smarty Smarty object
+ * @return string filtered output
+ * @todo substr_replace() is not overloaded by mbstring.func_overload - so this function might fail!
+ */
+function smarty_outputfilter_trimwhitespace($source, Smarty_Internal_Template $smarty)
+{
+    $store = array();
+    $_store = 0;
+    $_offset = 0;
+
+    // Unify Line-Breaks to \n
+    $source = preg_replace("/\015\012|\015|\012/", "\n", $source);
+
+    // capture Internet Explorer Conditional Comments
+    if (preg_match_all('#<!--\[[^\]]+\]>.*?<!\[[^\]]+\]-->#is', $source, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER)) {
+        foreach ($matches as $match) {
+            $store[] = $match[0][0];
+            $_length = strlen($match[0][0]);
+            $replace = '@!@SMARTY:' . $_store . ':SMARTY@!@';
+            $source = substr_replace($source, $replace, $match[0][1] - $_offset, $_length);
+
+            $_offset += $_length - strlen($replace);
+            $_store++;
+        }
+    }
+
+    // Strip all HTML-Comments
+    // yes, even the ones in <script> - see http://stackoverflow.com/a/808850/515124
+    $source = preg_replace( '#<!--.*?-->#ms', '', $source );
+
+    // capture html elements not to be messed with
+    $_offset = 0;
+    if (preg_match_all('#<(script|pre|textarea)[^>]*>.*?</\\1>#is', $source, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER)) {
+        foreach ($matches as $match) {
+            $store[] = $match[0][0];
+            $_length = strlen($match[0][0]);
+            $replace = '@!@SMARTY:' . $_store . ':SMARTY@!@';
+            $source = substr_replace($source, $replace, $match[0][1] - $_offset, $_length);
+
+            $_offset += $_length - strlen($replace);
+            $_store++;
+        }
+    }
+
+    $expressions = array(
+        // replace multiple spaces between tags by a single space
+        // can't remove them entirely, becaue that might break poorly implemented CSS display:inline-block elements
+        '#(:SMARTY@!@|>)\s+(?=@!@SMARTY:|<)#s' => '\1 \2',
+        // remove spaces between attributes (but not in attribute values!)
+        '#(([a-z0-9]\s*=\s*(["\'])[^\3]*?\3)|<[a-z0-9_]+)\s+([a-z/>])#is' => '\1 \4',
+        // note: for some very weird reason trim() seems to remove spaces inside attributes.
+        // maybe a \0 byte or something is interfering?
+        '#^\s+<#Ss' => '<',
+        '#>\s+$#Ss' => '>',
+    );
+
+    $source = preg_replace( array_keys($expressions), array_values($expressions), $source );
+    // note: for some very weird reason trim() seems to remove spaces inside attributes.
+    // maybe a \0 byte or something is interfering?
+    // $source = trim( $source );
+
+    $_offset = 0;
+    if (preg_match_all('#@!@SMARTY:([0-9]+):SMARTY@!@#is', $source, $matches, PREG_OFFSET_CAPTURE | PREG_SET_ORDER)) {
+        foreach ($matches as $match) {
+            $_length = strlen($match[0][0]);
+            $replace = $store[$match[1][0]];
+            $source = substr_replace($source, $replace, $match[0][1] + $_offset, $_length);
+
+            $_offset += strlen($replace) - $_length;
+            $_store++;
+        }
+    }
+
+    return $source;
+}

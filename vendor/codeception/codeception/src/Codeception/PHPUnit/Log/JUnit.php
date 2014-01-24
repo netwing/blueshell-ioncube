@@ -1,37 +1,41 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmAs8OagdPgk9m6qgYALuyZbprJc9Z/8POEilj/bUk8hULwcuStTG5nQLyvKuAB/Kho3GCJG
-8li0qxmi0th5vPUJU7C0Mkr/c4p3JGO3NRKU1u+Y2CFJTEsg/4SZUBFknPLium+z7mmTJtIoK8Ft
-CzKZ0Z4KRSpkf0JP/aeNfiqo1WAW04VvlQ+WArvpai0HHsxZJ1EUTK/2I189H+Ioxru+s4ePns6Y
-2v1u6ulFmHr8JP6TQfaphr4euJltSAgiccy4GDnfTAHWKjZF39p+RakMjs1bOC4G/u+RDnj097YN
-YLy0COCnmLQ6jZUcBCz41CCq0oq/wIKGrfUUulgC52b4aNHlEdNt6vGk6AQADK+gEtr4rtbIbwNu
-YrY0LV59oRoK9IqU397GACizjQH81oprbA8cjuo1nEFGxcSW0kpJu9bshj1VJ+wmKJsGxOHNGUng
-6Vt4i5mpu7mY9rNqQLakYZ3yTpGN5zN1LfTU/MbsYqBR1BSTxYaICLHgnc3q4GUZ3y+2Gw+zt8+H
-K8mC/xr+wRl9MO8J/WvGGGlwrFdlLdXSW4Qg8DzLbNuIc1kltHA7omV6sYeOV3Xgi94RA8w2XdsF
-712NrsFU/p4GDGXZ5tAclk1JIsrPgNAGM9+qo7V002Do0fFPhRR2St/RCQByt0JEuemO2kh3nx7K
-Loub8JX2A/rZAz42kReBMJwJ6cjHKJsiEIpZ+9aWzOnT5uI4Q8y5oeNPKLPWWVHXCHlCHtIDlLkb
-TYy9warE/8nmhkFOxB5R6Bb/f2TiP4BXln4c9kcDMirXAiP6sxj4EEN+Zth4wkz9scIS9ctYEe1V
-dUN2Gq96k68P64OblXJ/arCkIm0S3qQyl1FOoXbPM5IDcFtHovh8ZmyQgXbvV8jy3cW492Ui50oQ
-QUB98HF6gpNSgyJDOzWQBhEA/dZ7YBFxeH+vz2JjjgU16lAPpRu6NE9GoY8VzBmO83as6vkoCdw1
-M/B1YvWQmohmL2/Rb9eERo63kiHpORv8WqbdEKM9CnMcXxOwnM8rIVdl/ubrUwEl/bnmfdICMcV4
-RlnminURl1s9BOa+xC4AaPDL+X0mcWZF9lWr8gsSq7LiH8zZjbVEUHpxzW22aHX1ICuKtASOwPO0
-Ia/pbPHmt7781zkMoLpOM6R8BpBVLuKGNMm3aMdmBbw5JpblE9laCHokuvgcfj+Cq7OwdVng0+4o
-yDfnPKYVLs+cFn+uaU0xHkcEqLBIHS+4lCsMTbXeay1efybum7TKpQEvme7L8aOebKmDoENswlQJ
-54UsiiJU10n3Fgvq5ixssfv3HtEGjfana4Ft3EHq1y/u7nh9Ii+KLID5T+Rr9+6IQ/aaQtwOdUfs
-rsSbfUtal498wKbJ0cao8fbZwy3NyyI+iJreUPM5khEGw5ucQRPpLnJUAEufpbfRxai1WifeWxiM
-JJiLF/8o4IICdcpbygqtpAUw+R/MA98X/veMlvhJL9DJQmXYJwJWprSDTCxc+XFHZoZHIQw3ireg
-fwmsh31AUMxqPXAE1PNPY5uCCDMDbdaLOyYt6yIpYfATW1eDqhgmbK4W2YnBaPdWjLpyDPypVq51
-u1l+rrRTb2GhLwXma2pNYRN2889fncr7Kw3Knm7p1CNx+FZYsnw421F9Zb+8PekKa8uGieVMZ5qH
-dDkozykVgDFsUK3/KszIP6pzbbDcD6X/sXtGa/UhZ1zr4xc7YrW6w2O0hZzcxlrOxDTehPbj+9cS
-JWigHlQZvZS2VRgV90Jf20VubH4KLzp73NDZc1QWBjFRe4AOyZCpkiYZCBBwNAdZ+C58v+DK0Pj2
-ORokHo79BL8nJEB5nDcozLQd8Rx6FGrJOS+WJSEbPEP4I/aTyY1CQH2v0i9YIMVw8Mt9+EeS1Drj
-DWtfkdnvX/czgwG+RwWBIvUW4Q6wJZFu0aZjNO8g6qriSTk35eM1uE9q+yMYFOkA1WuRB3AdfgsY
-W3JY5H2aHhiqfrEb3ErGII6K3O1Gwdlea3L++7MnGkuGoWHaOCsbEGz6hTMniij3UbfUrmhj3v+P
-NZ7lq9bKMpz6zDgDJTx/K//1vzkZnjRqFy+DOs94I4dXhEdz6/SgTzLwtXq517YYmANVNMyWGIuq
-0W/Q6Mj7j/wR7Zzp90z7Mnf+z3ts7zWugVag4h5YcLE0V2Bm5bWk0TzP/RKNpHQb88I24dlt8Sj3
-seNAfhn50FnZsdBUkFhMiRLx+m5LsSyZ7mbD14WYjhhyMRPlFvn1qQmbkXmh8j0qGJ0cW5PPkcTe
-xfMrEFYbRGFUB0GuaK8geSL2JRJvl79WtTMR1Tx9BGHMPbe1pgnUFf/cQqwr0LW12cfy1110/a/5
-kBpBES057q1GzhpkQFbhRrPh5zplv6yYeP5Akiuk/HsQ7JfzNcvrJfaBm2xlbfjXh0+b3d1vbUrC
-tD1WPdQrbR811DeEhwv1PJ+nfSZM3XkEiYY63Z6LvzTidj+ld0IojtHIxJ4hbH+dAuHXqYZm8f/v
-eBE6ZPcZ7LmW2VR+vR3Y/+/sr0==
+<?php
+namespace Codeception\PHPUnit\Log;
+
+class JUnit extends \PHPUnit_Util_Log_JUnit
+{
+    public function startTest(\PHPUnit_Framework_Test $test)
+    {
+        if (!($test instanceof \Codeception\TestCase\Cept)) return parent::startTest($test);
+
+
+        $this->currentTestCase = $this->document->createElement('testcase');
+
+        if ($test instanceof \Codeception\TestCase\Cept) {
+            $this->currentTestCase->setAttribute('file', $test->getFileName());
+            return;
+        }
+
+        if ($test instanceof \Codeception\TestCase) {
+            $class = new \ReflectionClass($test->getTestClass());
+            $methodName = $test->getTestMethod();
+
+            if ($class->hasMethod($methodName)) {
+                $method = $class->getMethod($methodName);
+
+                $this->currentTestCase->setAttribute('class', $class->getName());
+                $this->currentTestCase->setAttribute('file', $class->getFileName());
+                $this->currentTestCase->setAttribute('line', $method->getStartLine());
+            }
+        }
+    }
+
+    public function endTest(\PHPUnit_Framework_Test $test, $time) {
+
+        if ($test instanceof \Codeception\TestCase\Cept) {
+            $this->currentTestCase->setAttribute(
+              'name', $test->toString()
+            );
+        }
+        return parent::endTest($test, $time);
+    }
+}

@@ -1,95 +1,202 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+MqEtFcKxm1x7lmeqVpaI4nVzwk1g+F/zW==
+<?php
+
+class Post extends CActiveRecord
+{
+	/**
+	 * The followings are the available columns in table 'tbl_post':
+	 * @var integer $id
+	 * @var string $title
+	 * @var string $content
+	 * @var string $tags
+	 * @var integer $status
+	 * @var integer $create_time
+	 * @var integer $update_time
+	 * @var integer $author_id
+	 */
+	const STATUS_DRAFT=1;
+	const STATUS_PUBLISHED=2;
+	const STATUS_ARCHIVED=3;
+
+	private $_oldTags;
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * @return CActiveRecord the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{post}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('title, content, status', 'required'),
+			array('status', 'in', 'range'=>array(1,2,3)),
+			array('title', 'length', 'max'=>128),
+			array('tags', 'match', 'pattern'=>'/^[\w\s,]+$/', 'message'=>'Tags can only contain word characters.'),
+			array('tags', 'normalizeTags'),
+
+			array('title, status', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'author' => array(self::BELONGS_TO, 'User', 'author_id'),
+			'comments' => array(self::HAS_MANY, 'Comment', 'post_id', 'condition'=>'comments.status='.Comment::STATUS_APPROVED, 'order'=>'comments.create_time DESC'),
+			'commentCount' => array(self::STAT, 'Comment', 'post_id', 'condition'=>'status='.Comment::STATUS_APPROVED),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => 'Id',
+			'title' => 'Title',
+			'content' => 'Content',
+			'tags' => 'Tags',
+			'status' => 'Status',
+			'create_time' => 'Create Time',
+			'update_time' => 'Update Time',
+			'author_id' => 'Author',
+		);
+	}
+
+	/**
+	 * @return string the URL that shows the detail of the post
+	 */
+	public function getUrl()
+	{
+		return Yii::app()->createUrl('post/view', array(
+			'id'=>$this->id,
+			'title'=>$this->title,
+		));
+	}
+
+	/**
+	 * @return array a list of links that point to the post list filtered by every tag of this post
+	 */
+	public function getTagLinks()
+	{
+		$links=array();
+		foreach(Tag::string2array($this->tags) as $tag)
+			$links[]=CHtml::link(CHtml::encode($tag), array('post/index', 'tag'=>$tag));
+		return $links;
+	}
+
+	/**
+	 * Normalizes the user-entered tags.
+	 */
+	public function normalizeTags($attribute,$params)
+	{
+		$this->tags=Tag::array2string(array_unique(Tag::string2array($this->tags)));
+	}
+
+	/**
+	 * Adds a new comment to this post.
+	 * This method will set status and post_id of the comment accordingly.
+	 * @param Comment the comment to be added
+	 * @return boolean whether the comment is saved successfully
+	 */
+	public function addComment($comment)
+	{
+		if(Yii::app()->params['commentNeedApproval'])
+			$comment->status=Comment::STATUS_PENDING;
+		else
+			$comment->status=Comment::STATUS_APPROVED;
+		$comment->post_id=$this->id;
+		return $comment->save();
+	}
+
+	/**
+	 * This is invoked when a record is populated with data from a find() call.
+	 */
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$this->_oldTags=$this->tags;
+	}
+
+	/**
+	 * This is invoked before the record is saved.
+	 * @return boolean whether the record should be saved.
+	 */
+	protected function beforeSave()
+	{
+		if(parent::beforeSave())
+		{
+			if($this->isNewRecord)
+			{
+				$this->create_time=$this->update_time=time();
+				$this->author_id=Yii::app()->user->id;
+			}
+			else
+				$this->update_time=time();
+			return true;
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * This is invoked after the record is saved.
+	 */
+	protected function afterSave()
+	{
+		parent::afterSave();
+		Tag::model()->updateFrequency($this->_oldTags, $this->tags);
+	}
+
+	/**
+	 * This is invoked after the record is deleted.
+	 */
+	protected function afterDelete()
+	{
+		parent::afterDelete();
+		Comment::model()->deleteAll('post_id='.$this->id);
+		Tag::model()->updateFrequency($this->tags, '');
+	}
+
+	/**
+	 * Retrieves the list of posts based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the needed posts.
+	 */
+	public function search()
+	{
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('title',$this->title,true);
+
+		$criteria->compare('status',$this->status);
+
+		return new CActiveDataProvider('Post', array(
+			'criteria'=>$criteria,
+			'sort'=>array(
+				'defaultOrder'=>'status, update_time DESC',
+			),
+		));
+	}
+}

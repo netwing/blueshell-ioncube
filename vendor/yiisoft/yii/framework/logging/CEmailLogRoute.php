@@ -1,83 +1,174 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CEmailLogRoute class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CEmailLogRoute sends selected log messages to email addresses.
+ *
+ * The target email addresses may be specified via {@link setEmails emails} property.
+ * Optionally, you may set the email {@link setSubject subject}, the
+ * {@link setSentFrom sentFrom} address and any additional {@link setHeaders headers}.
+ *
+ * @property array $emails List of destination email addresses.
+ * @property string $subject Email subject. Defaults to CEmailLogRoute::DEFAULT_SUBJECT.
+ * @property string $sentFrom Send from address of the email.
+ * @property array $headers Additional headers to use when sending an email.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.logging
+ * @since 1.0
+ */
+class CEmailLogRoute extends CLogRoute
+{
+	/**
+	 * @var boolean set this property to true value in case log data you're going to send through emails contains
+	 * non-latin or UTF-8 characters. Emails would be UTF-8 encoded.
+	 * @since 1.1.13
+	 */
+	public $utf8=false;
+	/**
+	 * @var array list of destination email addresses.
+	 */
+	private $_email=array();
+	/**
+	 * @var string email subject
+	 */
+	private $_subject;
+	/**
+	 * @var string email sent from address
+	 */
+	private $_from;
+	/**
+	 * @var array list of additional headers to use when sending an email.
+	 */
+	private $_headers=array();
+
+	/**
+	 * Sends log messages to specified email addresses.
+	 * @param array $logs list of log messages
+	 */
+	protected function processLogs($logs)
+	{
+		$message='';
+		foreach($logs as $log)
+			$message.=$this->formatLogMessage($log[0],$log[1],$log[2],$log[3]);
+		$message=wordwrap($message,70);
+		$subject=$this->getSubject();
+		if($subject===null)
+			$subject=Yii::t('yii','Application Log');
+		foreach($this->getEmails() as $email)
+			$this->sendEmail($email,$subject,$message);
+	}
+
+	/**
+	 * Sends an email.
+	 * @param string $email single email address
+	 * @param string $subject email subject
+	 * @param string $message email content
+	 */
+	protected function sendEmail($email,$subject,$message)
+	{
+		$headers=$this->getHeaders();
+		if($this->utf8)
+		{
+			$headers[]="MIME-Version: 1.0";
+			$headers[]="Content-Type: text/plain; charset=UTF-8";
+			$subject='=?UTF-8?B?'.base64_encode($subject).'?=';
+		}
+		if(($from=$this->getSentFrom())!==null)
+		{
+			$matches=array();
+			preg_match_all('/([^<]*)<([^>]*)>/iu',$from,$matches);
+			if(isset($matches[1][0],$matches[2][0]))
+			{
+				$name=$this->utf8 ? '=?UTF-8?B?'.base64_encode(trim($matches[1][0])).'?=' : trim($matches[1][0]);
+				$from=trim($matches[2][0]);
+				$headers[]="From: {$name} <{$from}>";
+			}
+			else
+				$headers[]="From: {$from}";
+			$headers[]="Reply-To: {$from}";
+		}
+		mail($email,$subject,$message,implode("\r\n",$headers));
+	}
+
+	/**
+	 * @return array list of destination email addresses
+	 */
+	public function getEmails()
+	{
+		return $this->_email;
+	}
+
+	/**
+	 * @param mixed $value list of destination email addresses. If the value is
+	 * a string, it is assumed to be comma-separated email addresses.
+	 */
+	public function setEmails($value)
+	{
+		if(is_array($value))
+			$this->_email=$value;
+		else
+			$this->_email=preg_split('/[\s,]+/',$value,-1,PREG_SPLIT_NO_EMPTY);
+	}
+
+	/**
+	 * @return string email subject. Defaults to CEmailLogRoute::DEFAULT_SUBJECT
+	 */
+	public function getSubject()
+	{
+		return $this->_subject;
+	}
+
+	/**
+	 * @param string $value email subject.
+	 */
+	public function setSubject($value)
+	{
+		$this->_subject=$value;
+	}
+
+	/**
+	 * @return string send from address of the email
+	 */
+	public function getSentFrom()
+	{
+		return $this->_from;
+	}
+
+	/**
+	 * @param string $value send from address of the email
+	 */
+	public function setSentFrom($value)
+	{
+		$this->_from=$value;
+	}
+
+	/**
+	 * @return array additional headers to use when sending an email.
+	 * @since 1.1.4
+	 */
+	public function getHeaders()
+	{
+		return $this->_headers;
+	}
+
+	/**
+	 * @param mixed $value list of additional headers to use when sending an email.
+	 * If the value is a string, it is assumed to be line break separated headers.
+	 * @since 1.1.4
+	 */
+	public function setHeaders($value)
+	{
+		if (is_array($value))
+			$this->_headers=$value;
+		else
+			$this->_headers=preg_split('/\r\n|\n/',$value,-1,PREG_SPLIT_NO_EMPTY);
+	}
+}

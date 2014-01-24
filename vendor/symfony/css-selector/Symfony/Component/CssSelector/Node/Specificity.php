@@ -1,32 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-dnUmlSRWCjAFeiMxzA8=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Node;
+
+/**
+ * Represents a node specificity.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @see http://www.w3.org/TR/selectors/#specificity
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class Specificity
+{
+    const A_FACTOR = 100;
+    const B_FACTOR = 10;
+    const C_FACTOR = 1;
+
+    /**
+     * @var int
+     */
+    private $a;
+
+    /**
+     * @var int
+     */
+    private $b;
+
+    /**
+     * @var int
+     */
+    private $c;
+
+    /**
+     * Constructor.
+     *
+     * @param int $a
+     * @param int $b
+     * @param int $c
+     */
+    public function __construct($a, $b, $c)
+    {
+        $this->a = $a;
+        $this->b = $b;
+        $this->c = $c;
+    }
+
+    /**
+     * @param Specificity $specificity
+     *
+     * @return Specificity
+     */
+    public function plus(Specificity $specificity)
+    {
+        return new self($this->a + $specificity->a, $this->b + $specificity->b, $this->c + $specificity->c);
+    }
+
+    /**
+     * Returns global specificity value.
+     *
+     * @return int
+     */
+    public function getValue()
+    {
+        return $this->a * self::A_FACTOR + $this->b * self::B_FACTOR + $this->c * self::C_FACTOR;
+    }
+}

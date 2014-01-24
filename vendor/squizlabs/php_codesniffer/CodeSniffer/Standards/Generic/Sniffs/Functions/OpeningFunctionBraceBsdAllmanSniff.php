@@ -1,53 +1,121 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Methods_OpeningMethodBraceBsdAllmanSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_Functions_OpeningFunctionBraceBsdAllmanSniff.
+ *
+ * Checks that the opening brace of a function is on the line after the
+ * function declaration.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Functions_OpeningFunctionBraceBsdAllmanSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Registers the tokens that this sniff wants to listen for.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        return array(T_FUNCTION);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if (isset($tokens[$stackPtr]['scope_opener']) === false) {
+            return;
+        }
+
+        $openingBrace = $tokens[$stackPtr]['scope_opener'];
+
+        // The end of the function occurs at the end of the argument list. Its
+        // like this because some people like to break long function declarations
+        // over multiple lines.
+        $functionLine = $tokens[$tokens[$stackPtr]['parenthesis_closer']]['line'];
+        $braceLine    = $tokens[$openingBrace]['line'];
+
+        $lineDifference = ($braceLine - $functionLine);
+
+        if ($lineDifference === 0) {
+            $error = 'Opening brace should be on a new line';
+            $phpcsFile->addError($error, $openingBrace, 'BraceOnSameLine');
+            return;
+        }
+
+        if ($lineDifference > 1) {
+            $error = 'Opening brace should be on the line after the declaration; found %s blank line(s)';
+            $data  = array(($lineDifference - 1));
+            $phpcsFile->addError($error, $openingBrace, 'BraceSpacing', $data);
+            return;
+        }
+
+        // We need to actually find the first piece of content on this line,
+        // as if this is a method with tokens before it (public, static etc)
+        // or an if with an else before it, then we need to start the scope
+        // checking from there, rather than the current token.
+        $lineStart = $stackPtr;
+        while (($lineStart = $phpcsFile->findPrevious(array(T_WHITESPACE), ($lineStart - 1), null, false)) !== false) {
+            if (strpos($tokens[$lineStart]['content'], $phpcsFile->eolChar) !== false) {
+                break;
+            }
+        }
+
+        // We found a new line, now go forward and find the first non-whitespace
+        // token.
+        $lineStart = $phpcsFile->findNext(array(T_WHITESPACE), $lineStart, null, true);
+
+        // The opening brace is on the correct line, now it needs to be
+        // checked to be correctly indented.
+        $startColumn = $tokens[$lineStart]['column'];
+        $braceIndent = $tokens[$openingBrace]['column'];
+
+        if ($braceIndent !== $startColumn) {
+            $error = 'Opening brace indented incorrectly; expected %s spaces, found %s';
+            $data  = array(
+                      ($startColumn - 1),
+                      ($braceIndent - 1),
+                     );
+            $phpcsFile->addError($error, $openingBrace, 'BraceIndent', $data);
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

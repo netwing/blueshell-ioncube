@@ -1,60 +1,177 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util_TestDox
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.3.0
+ */
+
+/**
+ * Prettifies class and method names for use in TestDox documentation.
+ *
+ * @package    PHPUnit
+ * @subpackage Util_TestDox
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.1.0
+ */
+class PHPUnit_Util_TestDox_NamePrettifier
+{
+    /**
+     * @var    string
+     */
+    protected $prefix = 'Test';
+
+    /**
+     * @var    string
+     */
+    protected $suffix = 'Test';
+
+    /**
+     * @var    array
+     */
+    protected $strings = array();
+
+    /**
+     * Prettifies the name of a test class.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    public function prettifyTestClass($name)
+    {
+        $title = $name;
+
+        if ($this->suffix !== NULL &&
+            $this->suffix == substr($name, -1 * strlen($this->suffix))) {
+            $title = substr($title, 0, strripos($title, $this->suffix));
+        }
+
+        if ($this->prefix !== NULL &&
+            $this->prefix == substr($name, 0, strlen($this->prefix))) {
+            $title = substr($title, strlen($this->prefix));
+        }
+
+        return $title;
+    }
+
+    /**
+     * Prettifies the name of a test method.
+     *
+     * @param  string  $name
+     * @return string
+     */
+    public function prettifyTestMethod($name)
+    {
+        $buffer = '';
+
+        if (!is_string($name) || strlen($name) == 0) {
+            return $buffer;
+        }
+
+        $string = preg_replace('#\d+$#', '', $name, -1, $count);
+
+        if (in_array($string, $this->strings)) {
+            $name = $string;
+        } else if ($count == 0) {
+            $this->strings[] = $string;
+        }
+
+        if (strpos($name, '_') !== FALSE) {
+            return str_replace('_', ' ', $name);
+        }
+
+        $max = strlen($name);
+
+        if (substr($name, 0, 4) == 'test') {
+            $offset = 4;
+        } else {
+            $offset  = 0;
+            $name[0] = strtoupper($name[0]);
+        }
+
+        $wasNumeric = FALSE;
+
+        for ($i = $offset; $i < $max; $i++) {
+            if ($i > $offset &&
+                ord($name[$i]) >= 65 &&
+                ord($name[$i]) <= 90) {
+                $buffer .= ' ' . strtolower($name[$i]);
+            } else {
+                $isNumeric = is_numeric($name[$i]);
+
+                if (!$wasNumeric && $isNumeric) {
+                    $buffer    .= ' ';
+                    $wasNumeric = TRUE;
+                }
+
+                if ($wasNumeric && !$isNumeric) {
+                    $wasNumeric = FALSE;
+                }
+
+                $buffer .= $name[$i];
+            }
+        }
+
+        return $buffer;
+    }
+
+    /**
+     * Sets the prefix of test names.
+     *
+     * @param  string  $prefix
+     */
+    public function setPrefix($prefix)
+    {
+        $this->prefix = $prefix;
+    }
+
+    /**
+     * Sets the suffix of test names.
+     *
+     * @param  string  $prefix
+     */
+    public function setSuffix($suffix)
+    {
+        $this->suffix = $suffix;
+    }
+}

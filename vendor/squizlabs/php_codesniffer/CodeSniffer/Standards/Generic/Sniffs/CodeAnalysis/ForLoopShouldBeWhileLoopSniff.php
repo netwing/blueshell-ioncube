@@ -1,46 +1,104 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * This file is part of the CodeAnalysis addon for PHP_CodeSniffer.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Manuel Pichler <mapi@manuel-pichler.de>
+ * @copyright 2007-2008 Manuel Pichler. All rights reserved.
+ * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Detects for-loops that can be simplified to a while-loop.
+ *
+ * This rule is based on the PMD rule catalog. Detects for-loops that can be
+ * simplified as a while-loop.
+ *
+ * <code>
+ * class Foo
+ * {
+ *     public function bar($x)
+ *     {
+ *         for (;true;) true; // No Init or Update part, may as well be: while (true)
+ *     }
+ * }
+ * </code>
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Manuel Pichler <mapi@manuel-pichler.de>
+ * @copyright 2007-2008 Manuel Pichler. All rights reserved.
+ * @license   http://www.opensource.org/licenses/bsd-license.php  BSD License
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_CodeAnalysis_ForLoopShouldBeWhileLoopSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Registers the tokens that this sniff wants to listen for.
+     *
+     * @return array(integer)
+     */
+    public function register()
+    {
+        return array(T_FOR);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+        $token  = $tokens[$stackPtr];
+
+        // Skip invalid statement.
+        if (isset($token['parenthesis_opener']) === false) {
+            return;
+        }
+
+        $next = ++$token['parenthesis_opener'];
+        $end  = --$token['parenthesis_closer'];
+
+        $parts = array(
+                  0,
+                  0,
+                  0,
+                 );
+        $index = 0;
+
+        for (; $next <= $end; ++$next) {
+            $code = $tokens[$next]['code'];
+            if ($code === T_SEMICOLON) {
+                ++$index;
+            } else if (in_array($code, PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
+                ++$parts[$index];
+            }
+        }
+
+        if ($parts[0] === 0 && $parts[2] === 0 && $parts[1] > 0) {
+            $error = 'This FOR loop can be simplified to a WHILE loop';
+            $phpcsFile->addWarning($error, $stackPtr, 'CanSimplify');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

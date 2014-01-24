@@ -1,56 +1,125 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Zend_Sniffs_Debug_CodeAnalyzerSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Holger Kral <holger.kral@zend.com>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Zend_Sniffs_Debug_CodeAnalyzerSniff.
+ *
+ * Runs the Zend Code Analyzer (from Zend Studio) on the file.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Holger Kral <holger.kral@zend.com>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Zend_Sniffs_Debug_CodeAnalyzerSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_OPEN_TAG);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        // Because we are analyzing the whole file in one step, execute this method
+        // only on first occurrence of a T_OPEN_TAG.
+        $prevOpenTag = $phpcsFile->findPrevious(T_OPEN_TAG, ($stackPtr - 1));
+        if ($prevOpenTag !== false) {
+            return;
+        }
+
+        $fileName = $phpcsFile->getFilename();
+
+        $analyzerPath = PHP_CodeSniffer::getConfigData('zend_ca_path');
+        if (is_null($analyzerPath) === true) {
+            return;
+        }
+
+        // In the command, 2>&1 is important because the code analyzer sends its
+        // findings to stderr. $output normally contains only stdout, so using 2>&1
+        // will pipe even stderr to stdout.
+        $cmd = $analyzerPath.' '.$fileName.' 2>&1';
+
+        // There is the possibility to pass "--ide" as an option to the analyzer.
+        // This would result in an output format which would be easier to parse.
+        // The problem here is that no cleartext error messages are returnwd; only
+        // error-code-labels. So for a start we go for cleartext output.
+        $exitCode = exec($cmd, $output, $retval);
+
+        // $exitCode is the last line of $output if no error occures, on error it
+        // is numeric. Try to handle various error conditions and provide useful
+        // error reporting.
+        if (is_numeric($exitCode) === true && $exitCode > 0) {
+            if (is_array($output) === true) {
+                $msg = join('\n', $output);
+            }
+
+            throw new PHP_CodeSniffer_Exception("Failed invoking ZendCodeAnalyzer, exitcode was [$exitCode], retval was [$retval], output was [$msg]");
+        }
+
+        if (is_array($output) === true) {
+            $tokens = $phpcsFile->getTokens();
+
+            foreach ($output as $finding) {
+                // The first two lines of analyzer output contain
+                // something like this:
+                // > Zend Code Analyzer 1.2.2
+                // > Analyzing <filename>...
+                // So skip these...
+                $res = preg_match("/^.+\(line ([0-9]+)\):(.+)$/", $finding, $regs);
+                if (empty($regs) === true || $res === false) {
+                    continue;
+                }
+
+                // Find the token at the start of the line.
+                $lineToken = null;
+                foreach ($tokens as $ptr => $info) {
+                    if ($info['line'] == $regs[1]) {
+                        $lineToken = $ptr;
+                        break;
+                    }
+                }
+
+                if ($lineToken !== null) {
+                    $phpcsFile->addWarning(trim($regs[2]), $ptr, 'ExternalTool');
+                }
+            }//end foreach
+        }//end if
+
+    }//end process()
+
+}//end class
 ?>
-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
-XGpoXRx7Mpfd

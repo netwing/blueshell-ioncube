@@ -1,129 +1,409 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package	PHPExcel_Style
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license	http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version	1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Style_Fill
+ *
+ * @category   PHPExcel
+ * @package	PHPExcel_Style
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Style_Fill implements PHPExcel_IComparable
+{
+	/* Fill types */
+	const FILL_NONE							= 'none';
+	const FILL_SOLID						= 'solid';
+	const FILL_GRADIENT_LINEAR				= 'linear';
+	const FILL_GRADIENT_PATH				= 'path';
+	const FILL_PATTERN_DARKDOWN				= 'darkDown';
+	const FILL_PATTERN_DARKGRAY				= 'darkGray';
+	const FILL_PATTERN_DARKGRID				= 'darkGrid';
+	const FILL_PATTERN_DARKHORIZONTAL		= 'darkHorizontal';
+	const FILL_PATTERN_DARKTRELLIS			= 'darkTrellis';
+	const FILL_PATTERN_DARKUP				= 'darkUp';
+	const FILL_PATTERN_DARKVERTICAL			= 'darkVertical';
+	const FILL_PATTERN_GRAY0625				= 'gray0625';
+	const FILL_PATTERN_GRAY125				= 'gray125';
+	const FILL_PATTERN_LIGHTDOWN			= 'lightDown';
+	const FILL_PATTERN_LIGHTGRAY			= 'lightGray';
+	const FILL_PATTERN_LIGHTGRID			= 'lightGrid';
+	const FILL_PATTERN_LIGHTHORIZONTAL		= 'lightHorizontal';
+	const FILL_PATTERN_LIGHTTRELLIS			= 'lightTrellis';
+	const FILL_PATTERN_LIGHTUP				= 'lightUp';
+	const FILL_PATTERN_LIGHTVERTICAL		= 'lightVertical';
+	const FILL_PATTERN_MEDIUMGRAY			= 'mediumGray';
+
+	/**
+	 * Fill type
+	 *
+	 * @var string
+	 */
+	private $_fillType	= PHPExcel_Style_Fill::FILL_NONE;
+
+	/**
+	 * Rotation
+	 *
+	 * @var double
+	 */
+	private $_rotation	= 0;
+
+	/**
+	 * Start color
+	 *
+	 * @var PHPExcel_Style_Color
+	 */
+	private $_startColor;
+
+	/**
+	 * End color
+	 *
+	 * @var PHPExcel_Style_Color
+	 */
+	private $_endColor;
+
+	/**
+	 * Parent Borders
+	 *
+	 * @var _parentPropertyName string
+	 */
+	private $_parentPropertyName;
+
+	/**
+	 * Supervisor?
+	 *
+	 * @var boolean
+	 */
+	private $_isSupervisor;
+
+	/**
+	 * Parent. Only used for supervisor
+	 *
+	 * @var PHPExcel_Style
+	 */
+	private $_parent;
+
+	/**
+	 * Create a new PHPExcel_Style_Fill
+	 *
+	 * @param	boolean	$isSupervisor	Flag indicating if this is a supervisor or not
+	 *									Leave this value at default unless you understand exactly what
+	 *										its ramifications are
+	 * @param	boolean	$isConditional	Flag indicating if this is a conditional style or not
+	 *									Leave this value at default unless you understand exactly what
+	 *										its ramifications are
+	 */
+	public function __construct($isSupervisor = false, $isConditional = false)
+	{
+		// Supervisor?
+		$this->_isSupervisor = $isSupervisor;
+
+		// Initialise values
+		if ($isConditional) {
+			$this->_fillType = NULL;
+		}
+		$this->_startColor			= new PHPExcel_Style_Color(PHPExcel_Style_Color::COLOR_WHITE, $isSupervisor, $isConditional);
+		$this->_endColor			= new PHPExcel_Style_Color(PHPExcel_Style_Color::COLOR_BLACK, $isSupervisor, $isConditional);
+
+		// bind parent if we are a supervisor
+		if ($isSupervisor) {
+			$this->_startColor->bindParent($this, '_startColor');
+			$this->_endColor->bindParent($this, '_endColor');
+		}
+	}
+
+	/**
+	 * Bind parent. Only used for supervisor
+	 *
+	 * @param PHPExcel_Style $parent
+	 * @return PHPExcel_Style_Fill
+	 */
+	public function bindParent($parent)
+	{
+		$this->_parent = $parent;
+		return $this;
+	}
+
+	/**
+	 * Is this a supervisor or a real style component?
+	 *
+	 * @return boolean
+	 */
+	public function getIsSupervisor()
+	{
+		return $this->_isSupervisor;
+	}
+
+	/**
+	 * Get the shared style component for the currently active cell in currently active sheet.
+	 * Only used for style supervisor
+	 *
+	 * @return PHPExcel_Style_Fill
+	 */
+	public function getSharedComponent()
+	{
+		return $this->_parent->getSharedComponent()->getFill();
+	}
+
+	/**
+	 * Get the currently active sheet. Only used for supervisor
+	 *
+	 * @return PHPExcel_Worksheet
+	 */
+	public function getActiveSheet()
+	{
+		return $this->_parent->getActiveSheet();
+	}
+
+	/**
+	 * Get the currently active cell coordinate in currently active sheet.
+	 * Only used for supervisor
+	 *
+	 * @return string E.g. 'A1'
+	 */
+	public function getSelectedCells()
+	{
+		return $this->getActiveSheet()->getSelectedCells();
+	}
+
+	/**
+	 * Get the currently active cell coordinate in currently active sheet.
+	 * Only used for supervisor
+	 *
+	 * @return string E.g. 'A1'
+	 */
+	public function getActiveCell()
+	{
+		return $this->getActiveSheet()->getActiveCell();
+	}
+
+	/**
+	 * Build style array from subcomponents
+	 *
+	 * @param array $array
+	 * @return array
+	 */
+	public function getStyleArray($array)
+	{
+		return array('fill' => $array);
+	}
+
+	/**
+	 * Apply styles from array
+	 *
+	 * <code>
+	 * $objPHPExcel->getActiveSheet()->getStyle('B2')->getFill()->applyFromArray(
+	 *		array(
+	 *			'type'	   => PHPExcel_Style_Fill::FILL_GRADIENT_LINEAR,
+	 *			'rotation'   => 0,
+	 *			'startcolor' => array(
+	 *				'rgb' => '000000'
+	 *			),
+	 *			'endcolor'   => array(
+	 *				'argb' => 'FFFFFFFF'
+	 *			)
+	 *		)
+	 * );
+	 * </code>
+	 *
+	 * @param	array	$pStyles	Array containing style information
+	 * @throws	Exception
+	 * @return PHPExcel_Style_Fill
+	 */
+	public function applyFromArray($pStyles = null) {
+		if (is_array($pStyles)) {
+			if ($this->_isSupervisor) {
+				$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($this->getStyleArray($pStyles));
+			} else {
+				if (array_key_exists('type', $pStyles)) {
+					$this->setFillType($pStyles['type']);
+				}
+				if (array_key_exists('rotation', $pStyles)) {
+					$this->setRotation($pStyles['rotation']);
+				}
+				if (array_key_exists('startcolor', $pStyles)) {
+					$this->getStartColor()->applyFromArray($pStyles['startcolor']);
+				}
+				if (array_key_exists('endcolor', $pStyles)) {
+					$this->getEndColor()->applyFromArray($pStyles['endcolor']);
+				}
+				if (array_key_exists('color', $pStyles)) {
+					$this->getStartColor()->applyFromArray($pStyles['color']);
+				}
+			}
+		} else {
+			throw new Exception("Invalid style array passed.");
+		}
+		return $this;
+	}
+
+	/**
+	 * Get Fill Type
+	 *
+	 * @return string
+	 */
+	public function getFillType() {
+		if ($this->_isSupervisor) {
+			return $this->getSharedComponent()->getFillType();
+		}
+		return $this->_fillType;
+	}
+
+	/**
+	 * Set Fill Type
+	 *
+	 * @param string $pValue	PHPExcel_Style_Fill fill type
+	 * @return PHPExcel_Style_Fill
+	 */
+	public function setFillType($pValue = PHPExcel_Style_Fill::FILL_NONE) {
+		if ($this->_isSupervisor) {
+			$styleArray = $this->getStyleArray(array('type' => $pValue));
+			$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+		} else {
+			$this->_fillType = $pValue;
+		}
+		return $this;
+	}
+
+	/**
+	 * Get Rotation
+	 *
+	 * @return double
+	 */
+	public function getRotation() {
+		if ($this->_isSupervisor) {
+			return $this->getSharedComponent()->getRotation();
+		}
+		return $this->_rotation;
+	}
+
+	/**
+	 * Set Rotation
+	 *
+	 * @param double $pValue
+	 * @return PHPExcel_Style_Fill
+	 */
+	public function setRotation($pValue = 0) {
+		if ($this->_isSupervisor) {
+			$styleArray = $this->getStyleArray(array('rotation' => $pValue));
+			$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+		} else {
+			$this->_rotation = $pValue;
+		}
+		return $this;
+	}
+
+	/**
+	 * Get Start Color
+	 *
+	 * @return PHPExcel_Style_Color
+	 */
+	public function getStartColor() {
+		return $this->_startColor;
+	}
+
+	/**
+	 * Set Start Color
+	 *
+	 * @param	PHPExcel_Style_Color $pValue
+	 * @throws	Exception
+	 * @return PHPExcel_Style_Fill
+	 */
+	public function setStartColor(PHPExcel_Style_Color $pValue = null) {
+		// make sure parameter is a real color and not a supervisor
+		$color = $pValue->getIsSupervisor() ? $pValue->getSharedComponent() : $pValue;
+
+		if ($this->_isSupervisor) {
+			$styleArray = $this->getStartColor()->getStyleArray(array('argb' => $color->getARGB()));
+			$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+		} else {
+			$this->_startColor = $color;
+		}
+		return $this;
+	}
+
+	/**
+	 * Get End Color
+	 *
+	 * @return PHPExcel_Style_Color
+	 */
+	public function getEndColor() {
+		return $this->_endColor;
+	}
+
+	/**
+	 * Set End Color
+	 *
+	 * @param	PHPExcel_Style_Color $pValue
+	 * @throws	Exception
+	 * @return PHPExcel_Style_Fill
+	 */
+	public function setEndColor(PHPExcel_Style_Color $pValue = null) {
+		// make sure parameter is a real color and not a supervisor
+		$color = $pValue->getIsSupervisor() ? $pValue->getSharedComponent() : $pValue;
+
+		if ($this->_isSupervisor) {
+			$styleArray = $this->getEndColor()->getStyleArray(array('argb' => $color->getARGB()));
+			$this->getActiveSheet()->getStyle($this->getSelectedCells())->applyFromArray($styleArray);
+		} else {
+			$this->_endColor = $color;
+		}
+		return $this;
+	}
+
+	/**
+	 * Get hash code
+	 *
+	 * @return string	Hash code
+	 */
+	public function getHashCode() {
+		if ($this->_isSupervisor) {
+			return $this->getSharedComponent()->getHashCode();
+		}
+		return md5(
+			  $this->getFillType()
+			. $this->getRotation()
+			. $this->getStartColor()->getHashCode()
+			. $this->getEndColor()->getHashCode()
+			. __CLASS__
+		);
+	}
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if ((is_object($value)) && ($key != '_parent')) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+}

@@ -1,31 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+class RequirementsTest extends PHPUnit_Framework_TestCase
+{
+    public function testOne()
+    {
+    }
+
+    /**
+     * @requires PHPUnit 1.0
+     */
+    public function testTwo()
+    {
+    }
+
+    /**
+     * @requires PHP 2.0
+     */
+    public function testThree()
+    {
+    }
+
+    /**
+     * @requires PHPUnit 2.0
+     * @requires PHP 1.0
+     */
+    public function testFour()
+    {
+    }
+
+    /**
+     * @requires PHP 5.4.0RC6
+     */
+    public function testFive()
+    {
+    }
+
+    /**
+     * @requires PHP 5.4.0-alpha1
+     */
+    public function testSix()
+    {
+    }
+
+    /**
+     * @requires PHP 5.4.0beta2
+     */
+    public function testSeven()
+    {
+    }
+
+    /**
+     * @requires PHP 5.4-dev
+     */
+    public function testEight()
+    {
+    }
+
+
+    /**
+     * @requires function testFunc
+     */
+    public function testNine()
+    {
+    }
+
+    /**
+     * @requires extension testExt
+     */
+    public function testTen()
+    {
+    }
+
+    /**
+     * @requires PHP 99-dev
+     * @requires PHPUnit 9-dev
+     * @requires function testFuncOne
+     * @requires function testFuncTwo
+     * @requires extension testExtOne
+     * @requires extension testExtTwo
+     */
+    public function testAllPossibleRequirements()
+    {
+    }
+
+    /**
+     * @requires function array_merge
+     */
+    public function testExistingFunction()
+    {
+    }
+
+    /**
+     * @requires extension spl
+     */
+    public function testExistingExtension()
+    {
+    }
+
+    /**
+     * @requires PHPUnit 1111111
+     */
+    public function testAlwaysSkip()
+    {
+    }
+
+    /**
+     * @requires PHP 9999999
+     */
+    public function testAlwaysSkip2()
+    {
+    }
+}

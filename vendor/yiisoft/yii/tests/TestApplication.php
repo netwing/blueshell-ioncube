@@ -1,42 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class TestApplication extends CWebApplication
+{
+	public function __construct($config=null)
+	{
+		Yii::setApplication(null);
+		clearstatcache();
+		parent::__construct($config);
+	}
+
+	public function reset()
+	{
+		$this->removeDirectory($this->getRuntimePath());
+		$this->removeDirectory($this->getAssetPath());
+	}
+
+	protected function removeDirectory($path)
+	{
+		if(is_dir($path) && ($folder=@opendir($path))!==false)
+		{
+			while($entry=@readdir($folder))
+			{
+				if($entry[0]==='.')
+					continue;
+				$p=$path.DIRECTORY_SEPARATOR.$entry;
+				if(is_dir($p))
+					$this->removeDirectory($p);
+				@unlink($p);
+			}
+			@closedir($folder);
+		}
+	}
+
+	public function getAssetPath()
+	{
+		return dirname(__FILE__).DIRECTORY_SEPARATOR.'assets';
+	}
+
+	public function getRuntimePath()
+	{
+		return dirname(__FILE__).DIRECTORY_SEPARATOR.'runtime';
+	}
+
+	public function getBasePath()
+	{
+		return dirname(__FILE__);
+	}
+
+	public function setBasePath($value)
+	{
+	}
+
+	public function loadGlobalState()
+	{
+		parent::loadGlobalState();
+	}
+
+	public function saveGlobalState()
+	{
+		parent::saveGlobalState();
+	}
+}

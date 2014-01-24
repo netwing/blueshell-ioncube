@@ -1,40 +1,56 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-sFYekPXDZ0==
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+
+/**
+ * @covers Monolog\Handler\TestHandler
+ */
+class TestHandlerTest extends TestCase
+{
+    /**
+     * @dataProvider methodProvider
+     */
+    public function testHandler($method, $level)
+    {
+        $handler = new TestHandler;
+        $record = $this->getRecord($level, 'test'.$method);
+        $this->assertFalse($handler->{'has'.$method}($record));
+        $this->assertFalse($handler->{'has'.$method.'Records'}());
+        $handler->handle($record);
+
+        $this->assertFalse($handler->{'has'.$method}('bar'));
+        $this->assertTrue($handler->{'has'.$method}($record));
+        $this->assertTrue($handler->{'has'.$method}('test'.$method));
+        $this->assertTrue($handler->{'has'.$method.'Records'}());
+
+        $records = $handler->getRecords();
+        unset($records[0]['formatted']);
+        $this->assertEquals(array($record), $records);
+    }
+
+    public function methodProvider()
+    {
+        return array(
+            array('Emergency', Logger::EMERGENCY),
+            array('Alert'    , Logger::ALERT),
+            array('Critical' , Logger::CRITICAL),
+            array('Error'    , Logger::ERROR),
+            array('Warning'  , Logger::WARNING),
+            array('Info'     , Logger::INFO),
+            array('Notice'   , Logger::NOTICE),
+            array('Debug'    , Logger::DEBUG),
+        );
+    }
+}

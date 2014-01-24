@@ -1,165 +1,192 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPvyr2YS/lOu8qk6V10PxrwskSpKAmainW/ysXT7qi4i/fv+XMlztuI4woSJAKohcbQg+M6AS
-Bx5s2sY2TIffuMMUhvm+77T2f0XhX1jD+7YYtLGJSn1lgilzEOfZzy8o6SacUFIIEYPCPxvd9wBO
-XxLXPotViE7u7wdM4wQDLQNB1lehtKxq0uHPGGMVtyECRXZh7kUbQG5LJxAx2BWu0mYsgqv/GWZr
-2mvogjMtcCr0bwkZYXJZnrvShr4euJltSAgiccy4GDnfTFXXlemf61JhwlzWzCZextvIEP4xMTkl
-oiTz9SAkeWPA8t/ggFwEaZfmVJBdwKMEQarzUammf/HzbsqMTAJswB3Flrc4r7+2jK49gP8jTcWl
-wK4KGsAu5jMlCqtuYojafPCWqleseQah5QgOL+0StUTjodUxlyQ4Wdd8yaT715SlwgGXJ35mZJbu
-O0M/JrIbsKTmoGq2U9ACKysLujZO4+8KImOpI9Gt3dkEPf4LWmGBY4Gz4QFXbPQz6nxAn7Eqsmim
-PBTFijFzNboTLLfAxq4+mPTuMyYo6/gRdnOzXNtrG6tPy7limJfH1xSNMFOIiOluRnzLyY4gUr8G
-ayKPtVDsMl4BKJTYiIwdXEEpDCBaaceZIyTLQgEG5n7NP5QN+KoZZ79LiFE9uAAA1uLfdfFMIIXy
-/kORcgQxCYDjEa+KhmfapUDs3YTkmgzHoiJuwDpMzbud1TUij02kioPCC0gcMVAjWdWHlIuwoKeP
-yQEuVnqeM9oku0eDRzO/QDHiUFu5DxpmQ4GdP5GHbiR1BYTqMI3E4RTTg/Kc5PvlZnEffifM+WAB
-wAY451kvXTzfrHSrR552OrIDtpS8uQ70UW6hH1lOaCHHUcEzyb6edoUq8rczP2svCIK8lpSTrGMY
-Nd0eFi9wbrMYmqW3PO25Ak8fuVAHFJKdM6TITyCVYvbrY98YGhv1pgXjQFXTRwoN/pzjyhbdvgBJ
-rAonWoJuR/yrXttjsKm723PMU1iALkepDYuJP9kwyZ3F7Pnj8Bpw5xai3uumqNgjcHVcoHSQNKHj
-re0iVlSKXmPhscW/Lg604E03YdPoiEI/BFA0FjcxcNXzmr3V7WUpxxQVn1fMB7OFe7YOSptwDLwC
-4tL8+UvXiheOk71qJsRnwxtZljHUp80A8vF/kXydC9jrbJ64nD6TXyNdkUiPes0JLRW5OonR6Tgq
-fKLhRLmA6jsV+bSDxJdJ3t7Oxx8SoUF3RK4h3+vaGoTbMQJGPJIzOIGH29X/ZvEbpAdD2pKUb2SK
-oH0Zzg0jyHidVyUD7rG+tm+AH5wKDtTk5hElXCr/ei3VW+uU/pl3OSBeKYORcfYSRVsFqDAvYfNl
-vNcBWUCQ7zxye0ehWEidkjdO881SQe5oO5zfMkh/X9W/MDC1w1WCcS1P4Vwzmn8mv0eZ2qr8PCvy
-FIbHCCDH0EDgX25dRXaFLObMuhScxXphZQSYis0fVTF7p0UGwoN4awx/OwgnCNWmzvLBAt5F95xE
-7LMjnbz4bAyVH5wSpigTYwexQZxr1Nr6ZkIVB94WidS8jKXKItdOXjLI8VTIqR2x/WwijSeYSUEA
-S6oGgBDcpZz0BbUh9hVhCrALJp8RPUuspYZl0EymJeGkodwwf2g1tqSpTzwhrLDQ5vidj0PE2ZQn
-1Z+skJr/R6p/hXSxwrmAbWsOY4A+i/zu1oMvqnx/hWBQTlj7PT2j4JjL7sq4XPpQ1fmEKz8PIORz
-KQAKFZS0P+Yu2iBbHJbULynL2p98YyB5jLLQPHInLPwTaEpJ0P8nWNAKGiIZkFQIg0vO2A3bpmKk
-BXo8Z5GSnhv13sG6ETReh5/9obvW5i1rLJkVzI74lw1ZXik0ZsEoxDbvzUvArRUOQMbI/v41f26a
-s7FZAIpkaHzJM/MJR7KVgIxkywAD5i/oRDBso9KMAUTeRkR+qA2MxvsjINFK4+WT6qYORbvQ34VK
-NwKdw9ErpcDy1dKT4BKzxekMdjdTRLZwxzktbzd6ha0+YlEbPBzu7sQS6C+FdcPox9DLiQGXBsAO
-dXrSx8GY6rnkOL7+LjapU19ZJtMyiKo1AW15/VqIs8MJPtszzKDU9VlcrtKSUqVn/8Qgk393EBVJ
-fDOwRt5CW/N5wPSfphD5c4NeBEtE1GGsRE+MKW6lKjUtSdw+TEUzDkt3AkYJ6kbv8PH5aSeN51x5
-TaHR6jm/jdB+zo4ZwBd6yyTSi/Qk3wtlzcU65HAxxE4aC8I9OLcGQj8lgf1XNBIuxXYPD6Lq6Z2b
-O8J3LJzrsFK7yv0jBtzWFz1AdPDnc6S5MNUPnGofzvQJ/XtVBL1BRi1rnefWz7jrVzfA3zxZTMZK
-oLDyv5rBedggK1zjU+oNo7a/5NyM5tj8pw2pU250ZKiXDmhF1e+r6lcw2/j85D86RUqgpHvOqbDx
-FvEFbyoPRze7jNxGyzkOnZz1Yb7f6HWU+hnLmyzvCJKRT7bKqGqeM1w95zinTrCgxOQRBSoU7sek
-extfXznT0qUNY6gKYizPbjrSrlP2O8tyVNEAGlepn4fNYM/ug77Vu8jzJUqwOHR06aiq9d1QwDAT
-7law8qi0zW+wh7KxCU8ddCn4q2V0Qd5YJE9n32BrJyOiEPaD3fmG/mhfvMGMfR793lqUt1y9Bvbo
-E7xxIj2Px430lRpLErbZ34xLiD/uvXF4VfdPdPP03zGI8Z/iqXTPVfgbjxptaGUM5FMFWBH3uuWP
-khoUVTQUd/bhRhLEQhxZVscJ+aQ3KDXclnE9jTqHsjlHuuvbjtJ4/bt0QNJdmz5mSeufsyypHBi3
-XPZqRQEjOKIaeY59DsPJd7X8YrmK6d9BS3tYDXmKa6jf/Eo+ONWcPqLF3aTGYAG6LSw/olrbzAHi
-9jNu9fxjFVj5Qp1+x2Jnj+wFWCY1qafwyX1yXmaz2SlaKCo+aw09Tvsx1rx9NxRZMhuSqHo4ge1M
-rckIdFx1DjWB6qxINClqbhYMVbbmLyGsfYmkvoJR+XUOhwMHpyXiKxxuYFRuaGjMR2sOzRrAglwc
-bFAlSmDHn+WT7HZDgnzl+DPvLM/A4fda3fHtEOHap8XbLWZgq57it1N2TD9YGXZiLlofkSU5E8rD
-/ai6Yc7rNMA8xg1AV6dpX4lehclLLuTTEYFk/Zz6tDCxKbxJnLC73/9YaEvwtC5vySchElLTMmBg
-NUv/Tc2sXpE3hKr7dEYPPi7qN41dNjc+Vfy3dbSSQGPYbVuEIujQw+W77geBMkxV4GsByxg0Ktvl
-oZrfZle0Qcb/NLgeZ+fS2Xbp4xN5gnoFXCLI5EuWMFM4DdbG+tIDXF75X6sWszrlkd+wJoBx+EzH
-XW58Fq4B0ux6fKsCbCm/bVP3oQbuuatBB7hAj+1Kwe67zuDkxBbbHFS5R1rYhN++ud0B1oAqWifU
-D1G6jo35vbDRfi5F7Drr4yP+Qs0WJldbg6RdhKORI+XhITD/GRgARvAhG9vBl6MLizEZp6AUcpki
-WPmiVMfOIyhFtTMU+1JHjy+SsOB1INyz6yFOUufP1LgNjD2XoBSG609wOQy5nbUBs1PgIdaNYBnT
-yU0VPHD4i56OU+IIwdHuBsMDq6lcQ582oc/aYL2y6s9o6gvlTHzk7L1Himoh8wstFS9yRyDCSSsZ
-2qhjP3aREhIg2vjjKatvoOUBEMmOWDFPykgRijGtoPGzOluZheQSSX2DXgz9zaJatMXHzIRiEUTh
-QfiY3ntn4I2Ca5IIUiK5v5SKKHo4SNnCLUXAaYVSQivBVozRfMLvYssPHO8r9lAF3LJgTOBKPNsn
-Gc+UgkBQmqkH6DQz3leIOj9bm91JnZcTRmOra21Rg/k4wJ7Nxy8g5gGDBYXrwO4ja8yion3vpo0D
-tpTp8OY3PLgY23RGYuzw2AFlAHNNdlyZAAzRV8MthiiX97IDvhmf9/XAAGxxtzZpQcbgDqOxiqmr
-onSoG8fByZM4mHeKjtzEpLiPVIVDmHCifeWQ38ZNg+mt6r9JZNcPsx065ZWokvJ7GcVt2+ztJkHZ
-B/PXoQZonzRcxRJ78E334huh9dUihKNZfICoGJDvrL9QYckcGF867gKcMMSZcIAEeU3r8HTnh5pj
-gFvbn3zyzfKoIGJPHPMNYUyn+iBLIoROMLhpMryHB2ojU1z2ILJqHOJKMibyvQ9NEaOkS05Xn2Ax
-MR1dSwuzTM+/41srWQu2iN/ROmgsJmfCM+ItcWZ+rwzyYCD2JNPGfNFoJhXIOH0Tf2HxZ/gMqvEv
-boXsQUU8CUFioi0MZitcV7GmY0qhSKkCfW1zQBigxsEE62DRTmN84zrfLoVCL0lFmYkAV8xqa9Dg
-kzBVpVq/mXGDRcHxafIS+FBa9NgXbKUxW8kFo5zN9f9D/SCMlXBGL1WnrjB+kQ18SqnU2OFAnSPa
-6Y5l9dGCoMZ1cYDlf0E2asENozqWIwgg/mh7m7U9EZvqCpCIN+UQp7K0/zjogIWb5OuUqSI48Kl1
-dSR/otPJI1busrf6+1LCFRYtBtdP7GAtPcbibe4uEQp5umEhcKh3KQFvppiHxaDPRjWeDR6bBGNi
-DInaVzgVt4aakgRdkEBohQ0PkcqI3lyvBkxXtw4gk3LQHws60ZKeMsY73A4Mv6SmsXL16FM9Zr2t
-d0F2JINX5/ACoH71f6QRru3yTpEGu5sLixBmIpDDL90WPtnOrq+z9LnkWk4XMTmePetbzrBBeSoM
-ntA+PmmuU7ERhpDvtbj6y0NwcyUa0tIU9xXc5pOWGAB3Tgbi/lCMNhHywBGohdgodF8jcwG1qrZG
-mIJn6nL016FCc8OfPJjq8ZjrgqwBD0cuxFu6r5kLP2mlJkp3kdRhCPiioEnGH4NKh1FdOPn8aJev
-O4PS07rvrB05ikJqlL78fcIRpN0IY4Ghh6jqf7ComPvyHIjQMrTtK2F2ZGISIj4Ydz4u8+nYfuMh
-1HSeS5P/9pwPZ5+IhH3tsi+RurIAFodYW+jWYzGewr+QbnZDdHTcQqFBsYmgnpzvXYRmQvzAlD5I
-BqZXPiAHT1WLO0FW12dVxyD6YT5GkJkJc4JByImI24O4XIbEGN1MnJDFxOce03rirqy7iJAw5ua2
-d8Q5zv67B1SBcSym2LGI2ef491xHzpeYNDLveh7ADtMCP2ejnCD8TDqD+jJWFV/ymeIlDuYbBpZI
-UlrD8cdaQxQCAOjSIXb7qoMS5QURRhDiTpH5NBMVAdCm2HxEuMDHqLFIqtv6LFycmuzmDocE7LWf
-5OjsB6L+XgPaPvtUgVVU0j+Y+I6NQXDp9CLBqdP6TWt77WSWoB96NAqb03iKMptC7Xc0vKHju4ro
-u2UqYWeQSGdCQHfq4QBm/kT4gWTOS+wpo6fNLEL65F+3GtUnllQaofCPjaKUPCEsiYcSN3D3za7a
-LWcqZj0cx4sjoVV3YFjFtd83dFtRoeoBoCzOuerXp8d7IJ3QAbJSLM+OKRGYkhn+ertDQrlKUW3w
-gcot/aUs9yfwpMxIy8ig9Oe1/wJUoyTR6EQK/fR4IBTIIe59kcWoE43ahLH4MbXbHL/LO01hnIuI
-nKUh/foyus86CLvjaGhtrszWlhsZHwweFk2bYJ2t1zDhl8KKxpY+WqJb7Z4zIfazJHr5Q90wQJgL
-GoxNRSAkHmVYiFYfLJse39PpdNV1O82+e5CEAk67v7UiTSrHb8IDCCrEkHNhMbhoXgHdGBwBgvUk
-P8Cs+e7TKLzL+wvg6NqgBq7muXrZX0rpUVipgnYdjNg7QobJUv5Mp1YfZu2k2l0iYNy+FTtj9oNf
-BUSFuC86Sg5jj+/fzfZwTbo7VbfKNTvdcii9CBr2RXXbFNPofgDGXBbGfehB1GV/txSgLt3mNOHZ
-2zUu7aYqrUAG6xmLaX7Be8joFfBJybiwH3LLKnQhJY0q0SAY3NudB6jOwYo5JuQjhFHAzOvbVRz1
-PCjqspcuAvKu+KCvVdLzKsGt5WHKfc+lu65b7hIcBADAonAyxOZLtCXYV/eN6fBgj+DJIQB/N+6M
-gQDKKIFA1QLJG4qOA6lERUaNwdjGJUCXJ/5FYCNzwT+AQcIZAYdmwoDkQb9eooiZk/2sQ0xe9e/x
-Sn1e8zJzMDdYEaJtzh+9dcPXuatIW9bau+EqnxjsqZCqwUu+zBNADDXp7gl8RsTKkfZODzVSKDVR
-rE63lFWhfTtMIXwQ6RYlW3CNB/yIJHsZWX7DsT7B3/DKO2LNFnEA6K7KxqEYGpVtGxpZA00CYBnc
-uPL4LuKwvIAqP9DuhnrIamxKfmgUraisN5U05EbTwKR8LcH77Gd0U57mTHeKCs2yhFH/xjXtao9S
-Yhm/0waklW5Ob40J1SWulZBwq1VkZyv5YV2DAlKxi3Ud0Isw+GKkQjU/yx6Y5cRlaQ+qEpRAWe+E
-FSxjmojdDswGmiFWaecjCXO+0DWoXfLLnaEFjPbKa/ZndRH82BKGxRVYDa1UmUhlj28ISwUWsRU8
-HC95dnX2LLzCVIKShNh0CkF1kVVHQdDyDK22O3Q7jt/UZ3ZkbsrUUlCsfpzddPH5/uV7nL/NTjb2
-8zxkGcfSUYtrplTdggL13jYXHFYSjvHgAPlYBMFNzPPn+16tJxUWej1dN93mC9beQeE2lxgWfMeJ
-q3AxbydgpB7WW/0qAdb3eO8j8SxuLmrD/v8Dnmsn0inMGeQ6BWTmi4kWP5bYOsONWIWwZpX5mrbM
-YmyeE4MeTf68xCnYgPmJAtAkQxZ2VMID/+sue5HalghIDs4ptxrW21bHolZcd0uJ5d2/7D2uiGVk
-WQ5nTJ+dZHsFfk/wotsXUmgpPBUQrQQQ4oMw4kRHgaQ44NABDIeHoljarsUhL+CZm/jH+7lMtQZv
-la4SS2in8wHLYGebA4ScutvCocuA5TEahJL0NDDkKuvNE/Jw0XUhPPLHIp5cW2xtb8+w7d1H5RdB
-5HX7UDEz1wGqqw1ZFPo3CVjo8nEdBU8znRa3pHSCfqOnszhejjskPmzVNaBiu1sX+eHeYX3MR2l1
-iiP1p0KmhzaOfmiEUntuYt6Q0eOKw8UHUeENP+pcArUB74hnbagg7QCkFQRbyTjsHkKSjeirzgtw
-GSymmB/M074LgFUlPwqndeexRqCq3M6VPvenaUsXvRPStazsKsCATPsCSOnbCbNA2j5vwMiXZYdp
-UnIdbFx3JVZ2DWvfi++3VtTS765uzfL8xXqmbdpE6VobzI9HEbi+cnwZkc+rT3IP+G7REFzHwf/L
-N1Tl1SMM9ijjaFa3Q1anR0i92fZ9l0C1rh/TKAy7XR8hFK6A7kAV5rDUmrqYtQ/PyUBKgRUdI8Aw
-7xUTAthfCzTjKE8HX/r0LbnsDl7XlevQf4ql2zUheG2OpOPMfb/PpmSr+SIQ5s75qahC1tLoS3Xg
-sr2ZE+IMBv4SDrylbdFLOAR6OCHg6g7mt2aB9MsXkwx2olpqpykg12+VeBh6w9sgfqvEIyj7wswj
-rNzCxUfTZ4nLyAH95QNX29oMOJD2ZKjwO2ZVJNKjd7EWe+DL8G4LED21WWPljGjmLaKDCHoWu7XG
-n8ctdCWFHp3/NGC8kRmqRz71hCiaINTT/ze1ndwD5prD5VkfEUw13j7g5/5VB+/doxbgKEhd14mj
-63zyrVZBQ5G/Ox2XJLAUc+J20uqkpwwm5n+nAPh7wp8LvHymoa2N4aS/cH0WbY4hMr31UNlpKFpU
-el/JRy4//YmzMan3LfBFyyNbKPaxzBqbkJd/+2vJMi4U1/RcGvQYBY32BPIqZUOcJXu8YbtUpOAs
-HB5VALjDhMbjX/Sscr00BiXSmQPav7VFQMtFwFX4verSOgkb1zvew9ww0dkHScnK7zvhBqMXIBKW
-pUG53JasG9F+wke++wAElec0OimfyGWhGAbUNjfRLrFIV0pdELDTxcciSs64Yku8dkGj5sZ/m9S/
-sW4mp+EbdzaM34xjKaWEtHlYDllCnSpD8tW7P+vpkNx8pwPo5IU2fiaqVVMsz0siewG37YC72IdV
-FWPxb0SQgLBkHKLdVZyYUe7FdKWKOjU/ZugB7Tz4qbNpK+gjpsFLtjEj4nNzQoNj3iEOwwsxGHTh
-3neSqVEH0oVJVzcQXSZbqItv6NYXKy47Y8Ymtg4USo4xeRhlotkFbkQmDN4vs0g15mPKjUkqO5YY
-ci2dfUSXZCJRqiVLW6OucKsquRWVoPwX8wTcNHNkSveaYfnq20hDWASijyGeeO18N7/dZiGtQyZC
-gyhKHfDfzBesFtUCSC8DOtpK0IcWEwNeMSeFZFVfqv3h3RX6bNtc0l3yAFEjiFUlrW4qamn5abFd
-38tUaakKehzpl8GuxnKB6k8JrjDtT4RVvOYUH9P+7EpQDeyF5N8O2oO8fNBYlpuJ6D2QzNdKccln
-XYtOMN5jpm5TIXZI0kxY4MOdA96N8fV+JYPjRc0c/DgrKayDug23wVUscVV6MnKbL5rxor31hDpA
-Xg+TblLRGX3n012Ov1qdom6fp4X71cM4iVY393W0pSCGglWVLJzpLLXvCsHNJXsxjsjsAMYVvhVi
-cJ1/D4UZwKCfTjtjRkRgQtVd2GjAnPuP7yrOchSeB1zZDlIhe9aZqpJf7TWouBo0XXuEu1Pb3UaD
-/uqT/V3c51wobow7n23BfNtCu9R3fTnNEKK8uPYPJYTSkBRAh1J6Q9i4fJKs4pHe4Bz3mo1Ikqkm
-WYW69LYHJ3zUyXhlGGNQHC3enUnfRdwXywdg/WXQvrCVjUpL29VG7+lYvFHQlBdYpJZS8uXN+LPA
-qwkU8HTIz5f4l73exmWnzKRsSrtOa0aO1bwQ7I6ks9tkxPv3ybmY8loLlivlERCZfT3Oa8SFv+yv
-MyW2y0DXNBNAtnSKfsDjmMbboOH245NB1Be88hNO3RRyHsCRX7wXsB9qgG/AALgDN0diTjkGpbqF
-LsmfcIrxKQKaXdN2Iz+LAosiaUyz1lxRKMKlJrKrxJwz4k5TUgsg4XsNYZ3MZKGFjFs0G4N7rb0x
-uuvZirjpBizneVfZqx1yNJ/dxOsDgJUaXN2L+rB9jxGchT9oMg5AYJwfUPCYZfExndR6blD2l9Cv
-PuyEnc9VQLC/Y9B8tM57U/+Or2j9pvuLj5mFWX++nwnsoZK6ejkP7Z1XL92VPpgXYQ6etsFDgP6s
-ULm6hZHoQm+II9uhYK9YTAQ+yEeFXYUXVMX16fSDMUzEfuxRd/Xv/MGns6MzZZOrk/iJQbBcGX2c
-zT31QEfn8/jeXd98wt+lTeIcVvB5es5eR7PLHZfkjfaM5ulBbvRPeNfkX/tzBEmCVEAL4OAYOZjE
-LhNTHnvXAoPIkeYaZoD058CbMcFLhaZXAgKC5bqXUlmdWwU7r1FWCGCzL3PaMHSUVnjZJjOthjN+
-XXkGqpbch4lF4AEruWPswg74/yRRjwjZufBhMLKBw+93/YkoZn6NDcCcQ5HG7hZUb7jQgRWbd1C2
-no6o3VwqnDvCSIZc6XO8Hx+2TdAv1lhXa4ViuHrPWonau6AawN74DvxIfdRRM62oGzXzsI2htazD
-WaeRO8huIyafDTDADGSf5n+VrEIy+HEEQrnMCMao+D67ccURiiQl3CBkyfq/4BxfLluCZbPhfELm
-yR/TUGkdqqi8mu3VTsaVJfY1ajZvL8HeUSTjFKPVwKl8XniN0PENm1ea46+wnpiSRffwURyYiysM
-dcBKhFeOEnbk4vfTyHJycuJgJ6Zgci9xQj7Kk++BaQPv14mR+Tco4vIfvWQq62rLRZjfhl8ISFJx
-Mg2pRtxs+kW6cSvQHEOIr6DPjLgVS26vXULbVOkfDraFfk7l3C3xfixIzXevgvepngOf5GLdnSZ8
-gZjz1Zep3ZHnhtLIokoskr+RbsPjiQ/smjJKWL+hqDy5LFCMknT5GYxXXKLsKEz761w5aiZk8+rd
-Z4p1bklMgeYFphqmFlWl75h3REEvYNkXDDdTGTfhxkp+CW1mwDgGVSyhBb3Nvhn2iVQikq0uojf1
-WNZh3YYLpcHfSop2DURuIITDtf5cj/CUfbALbRddmMue2MWo1ikZ/O3lIwn47ntGeYQeYTw71GJH
-4lc4vpQ3p6tw7WP+uNcvGE5DClLE3Lq2+tFn2dUKSpjaqFSZzis7esS+ufKgRxCUz+8bDrb8UB30
-wvkpoUneb66ofImTu3yRgvsOcy0BSKpUeo+36QtU3if0x1t5JGGHXbyjrJPqVO27oq5oJFdq802m
-FOozQsFEQvBHhm5/13SpNtbYXknzEjBz2LHnes83gwhg/piNsGmwfKi0oZhXkJUVthCe7JK1LI19
-16uL/+MlMmV187bOJ4D0M88gzvfaPfzfrMy68awcDfer8a6LkMTWxjpFdTn2mbxVfrKeNbK9FYuR
-PcCxKm9szfYC9aRHPc+6RytrZaiREvMe7x1HZW0TDoOX2cBUfrpd4Ju3tcHv5skp2gq0NHKm1+uj
-uMRt0GFpYXjyu9BpAz9vnBFH5Wwhxv9xdlS5WXBPRwTFJljLXINwMiQSv3HLnsy8oEOgY5F1oyFB
-XUvmE3qqUD6tqmNpOxhBOuZYnLfudXeBq2NqAo4u/0jwbj7MiwCdBXl3+Z2mZLDodMDjBLFe4v80
-bLa12AUkH6QqKU35QUYXQcDAWZA/a3ROmJ/NmZ98Ka33dKsWBlbU8YyJHPg54NScKwcXX2fPDsR+
-XNnvDfUW7x+o52WLujVeaiQcHN8c7lD6IBf6tS5V/x2GGChSk1Ezl1oghZ+FlFvwyoxJGJsYMMDj
-Z1/Jfhr/5seIyB2OgGgAx4sNrGPHNPJBbX9NvKi5FviadrtHKbRLEizmDDZaAxSRTfSLfuHkbN2z
-3bvUUIxnijVEHy2M0jqSDxNkxR3w2XeY/bHZsx6MwjHQAch/LFMQOeqf0h5PwuEaEhWVJR+DDZGu
-dmTKTmpPVEPTh5AfPQfeAZTt5oAtnH/Sg7X28bRu2RcrT3jPgVgpQWwdQP0LO1CPVfmzkl7jK5Ep
-Pk5gAvkZ1iOhZYfwtmQbVdXXDaqlQ3srQK5npPAxoIe9n+SuydbvikhdWKZOaRQnF+2b60hp44T7
-bKWMqBsHOXwP8wfI6j00KvJDpu4jfPogxuXb84l9BxHfSjlhPeKtWNEHJTQMhyRJeVF65SCxPG7c
-v2tsAsBhS6S7+r7Gm1FlRDOhcYGZsxf+hvzyLPBC58DE7MlKUPa0XGiFggcWrDQ0hgXhp9bnVvnc
-bzngtJDYNK+LBwQHYLK6VCI/aKzXH8UJ349fMrUag/IhyJVfa231Di5XD2MH1O+VAZK2TRbR5fkF
-tTsGcQ2wxoj+b9XKrIRMXnL9U/nLU8u/qHsX8zfCMLthzNt+jEuUdagx9kcyFH6NKn0VaU25m3Fc
-PhsQ+6kSCBIfi5WzpwuaSUvFATX8UN9s8N4qN2Z5p1T+a5kiWdlw3B0s/wqucuZngC0vywPLTt2D
-mGLocm4+CWpcBy98ZZS2JgxQY9nBtIepFtMbPEApXV39YHO05YADWJJFUhR9wIWVCNQv4UMYgwva
-onGUZuJ8cnqDvJ7DhyZrqm4ApMEwAGg6n/tJ/Vd6s8S/wjL0ty6z19KsT4vx/pzaXdv68b4fWfWq
-thta3SypV97ztf+PkDLidcSguJ4mXVkwRE9xnszkrXBmWeo60KGGDoqELrcnV7WQ59CCJ+6IuT6C
-jxexj80k9Hbjb9wCSwVk0q6lIKspnp6eni8VzKJLl3al/r7hp/BluYeRY8Z0feYpU3rUeuv0ERYI
-3NhJ+TFrSAiTAGhb+a3/eQgDosI4fkyqbOwA0wdwCqmfVWq/XUOdEsUcGbSPj3ecgb7jf/jovfQw
-0rEtOhSZsinJlg1y+cO6/+BXmxNW55qK5AVZKItOfAsFE9lJ93+0FwmgH7nah8bwgLyYG/Hb6zGP
-/mwbcHseZ/PS92DQatvLPJc0eXuJwQfhPNST578pAOHp2pBodSwyaAkIbmtFNkuYIX+TRJhUOWYL
-rX+2cyCYlvzdnHCpYNMYsIaxP5euo5+TMpt0IqgBMsmkvuyxVXSgqN0hlwgp7IJk5dw+bFX8/Jux
-l60x5RjKiOJBcLSqWMI4SbT4c8zbPyYHTTIhOOkkJnsTKCcgCo16d9CoIQNYvfhngAsxAg8PCcmd
-a37h6C6ZDJYDi81DZx8GsbuCjvHy4kgkCMK7WqwW1mXQyoJXQvt5G/D4RML3Ej2d3r5+duK5NKh6
-xZwoaZQH5wzhG6+fg1nQJmaROhE1q1h/yEVn7VGmoOvity8fjCbmZCIEfcjm34Fef5v8uiyh4Yxk
-UgqpJDDsM3CJNf8kyKlGTj+MJSXwyj/Xr8KZ10nmtpyqGtAw+GYnIMdsoW==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Helper;
+
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Helper\DialogHelper;
+use Symfony\Component\Console\Helper\HelperSet;
+use Symfony\Component\Console\Helper\FormatterHelper;
+use Symfony\Component\Console\Output\StreamOutput;
+
+class DialogHelperTest extends \PHPUnit_Framework_TestCase
+{
+    public function testSelect()
+    {
+        $dialog = new DialogHelper();
+
+        $helperSet = new HelperSet(array(new FormatterHelper()));
+        $dialog->setHelperSet($helperSet);
+
+        $heroes = array('Superman', 'Batman', 'Spiderman');
+
+        $dialog->setInputStream($this->getInputStream("\n1\n  1  \nFabien\n1\nFabien\n1\n0,2\n 0 , 2  \n\n\n"));
+        $this->assertEquals('2', $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes, '2'));
+        $this->assertEquals('1', $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes));
+        $this->assertEquals('1', $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes));
+        $this->assertEquals('1', $dialog->select($output = $this->getOutputStream(), 'What is your favorite superhero?', $heroes, null, false, 'Input "%s" is not a superhero!', false));
+
+        rewind($output->getStream());
+        $this->assertContains('Input "Fabien" is not a superhero!', stream_get_contents($output->getStream()));
+
+        try {
+            $this->assertEquals('1', $dialog->select($output = $this->getOutputStream(), 'What is your favorite superhero?', $heroes, null, 1));
+            $this->fail();
+        } catch (\InvalidArgumentException $e) {
+            $this->assertEquals('Value "Fabien" is invalid', $e->getMessage());
+        }
+
+        $this->assertEquals(array('1'), $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes, null, false, 'Input "%s" is not a superhero!', true));
+        $this->assertEquals(array('0', '2'), $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes, null, false, 'Input "%s" is not a superhero!', true));
+        $this->assertEquals(array('0', '2'), $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes, null, false, 'Input "%s" is not a superhero!', true));
+        $this->assertEquals(array('0', '1'), $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes, '0,1', false, 'Input "%s" is not a superhero!', true));
+        $this->assertEquals(array('0', '1'), $dialog->select($this->getOutputStream(), 'What is your favorite superhero?', $heroes, ' 0 , 1 ', false, 'Input "%s" is not a superhero!', true));
+    }
+
+    public function testAsk()
+    {
+        $dialog = new DialogHelper();
+
+        $dialog->setInputStream($this->getInputStream("\n8AM\n"));
+
+        $this->assertEquals('2PM', $dialog->ask($this->getOutputStream(), 'What time is it?', '2PM'));
+        $this->assertEquals('8AM', $dialog->ask($output = $this->getOutputStream(), 'What time is it?', '2PM'));
+
+        rewind($output->getStream());
+        $this->assertEquals('What time is it?', stream_get_contents($output->getStream()));
+    }
+
+    public function testAskWithAutocomplete()
+    {
+        if (!$this->hasSttyAvailable()) {
+            $this->markTestSkipped('`stty` is required to test autocomplete functionality');
+        }
+
+        // Acm<NEWLINE>
+        // Ac<BACKSPACE><BACKSPACE>s<TAB>Test<NEWLINE>
+        // <NEWLINE>
+        // <UP ARROW><UP ARROW><NEWLINE>
+        // <UP ARROW><UP ARROW><UP ARROW><UP ARROW><UP ARROW><TAB>Test<NEWLINE>
+        // <DOWN ARROW><NEWLINE>
+        // S<BACKSPACE><BACKSPACE><DOWN ARROW><DOWN ARROW><NEWLINE>
+        // F00<BACKSPACE><BACKSPACE>oo<TAB><NEWLINE>
+        $inputStream = $this->getInputStream("Acm\nAc\177\177s\tTest\n\n\033[A\033[A\n\033[A\033[A\033[A\033[A\033[A\tTest\n\033[B\nS\177\177\033[B\033[B\nF00\177\177oo\t\n");
+
+        $dialog = new DialogHelper();
+        $dialog->setInputStream($inputStream);
+
+        $bundles = array('AcmeDemoBundle', 'AsseticBundle', 'SecurityBundle', 'FooBundle');
+
+        $this->assertEquals('AcmeDemoBundle', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+        $this->assertEquals('AsseticBundleTest', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+        $this->assertEquals('FrameworkBundle', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+        $this->assertEquals('SecurityBundle', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+        $this->assertEquals('FooBundleTest', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+        $this->assertEquals('AcmeDemoBundle', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+        $this->assertEquals('AsseticBundle', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+        $this->assertEquals('FooBundle', $dialog->ask($this->getOutputStream(), 'Please select a bundle', 'FrameworkBundle', $bundles));
+    }
+
+    /**
+     * @group tty
+     */
+    public function testAskHiddenResponse()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('This test is not supported on Windows');
+        }
+
+        $dialog = new DialogHelper();
+
+        $dialog->setInputStream($this->getInputStream("8AM\n"));
+
+        $this->assertEquals('8AM', $dialog->askHiddenResponse($this->getOutputStream(), 'What time is it?'));
+    }
+
+    public function testAskConfirmation()
+    {
+        $dialog = new DialogHelper();
+
+        $dialog->setInputStream($this->getInputStream("\n\n"));
+        $this->assertTrue($dialog->askConfirmation($this->getOutputStream(), 'Do you like French fries?'));
+        $this->assertFalse($dialog->askConfirmation($this->getOutputStream(), 'Do you like French fries?', false));
+
+        $dialog->setInputStream($this->getInputStream("y\nyes\n"));
+        $this->assertTrue($dialog->askConfirmation($this->getOutputStream(), 'Do you like French fries?', false));
+        $this->assertTrue($dialog->askConfirmation($this->getOutputStream(), 'Do you like French fries?', false));
+
+        $dialog->setInputStream($this->getInputStream("n\nno\n"));
+        $this->assertFalse($dialog->askConfirmation($this->getOutputStream(), 'Do you like French fries?', true));
+        $this->assertFalse($dialog->askConfirmation($this->getOutputStream(), 'Do you like French fries?', true));
+    }
+
+    public function testAskAndValidate()
+    {
+        $dialog = new DialogHelper();
+        $helperSet = new HelperSet(array(new FormatterHelper()));
+        $dialog->setHelperSet($helperSet);
+
+        $question ='What color was the white horse of Henry IV?';
+        $error = 'This is not a color!';
+        $validator = function ($color) use ($error) {
+            if (!in_array($color, array('white', 'black'))) {
+                throw new \InvalidArgumentException($error);
+            }
+
+            return $color;
+        };
+
+        $dialog->setInputStream($this->getInputStream("\nblack\n"));
+        $this->assertEquals('white', $dialog->askAndValidate($this->getOutputStream(), $question, $validator, 2, 'white'));
+        $this->assertEquals('black', $dialog->askAndValidate($this->getOutputStream(), $question, $validator, 2, 'white'));
+
+        $dialog->setInputStream($this->getInputStream("green\nyellow\norange\n"));
+        try {
+            $this->assertEquals('white', $dialog->askAndValidate($this->getOutputStream(), $question, $validator, 2, 'white'));
+            $this->fail();
+        } catch (\InvalidArgumentException $e) {
+            $this->assertEquals($error, $e->getMessage());
+        }
+    }
+
+    public function testNoInteraction()
+    {
+        $dialog = new DialogHelper();
+
+        $input = new ArrayInput(array());
+        $input->setInteractive(false);
+
+        $dialog->setInput($input);
+
+        $this->assertEquals('not yet', $dialog->ask($this->getOutputStream(), 'Do you have a job?', 'not yet'));
+    }
+
+    protected function getInputStream($input)
+    {
+        $stream = fopen('php://memory', 'r+', false);
+        fputs($stream, $input);
+        rewind($stream);
+
+        return $stream;
+    }
+
+    protected function getOutputStream()
+    {
+        return new StreamOutput(fopen('php://memory', 'r+', false));
+    }
+
+    private function hasSttyAvailable()
+    {
+        exec('stty 2>&1', $output, $exitcode);
+
+        return $exitcode === 0;
+    }
+}

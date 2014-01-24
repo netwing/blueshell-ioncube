@@ -1,33 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Processes bytes as they pass through a buffer and replaces sequences in it.
+ *
+ * @package Swift
+ * @author  Chris Corbyn
+ */
+class Swift_StreamFilters_StringReplacementFilter implements Swift_StreamFilter
+{
+    /** The needle(s) to search for */
+    private $_search;
+
+    /** The replacement(s) to make */
+    private $_replace;
+
+    /**
+     * Create a new StringReplacementFilter with $search and $replace.
+     *
+     * @param string|array $search
+     * @param string|array $replace
+     */
+    public function __construct($search, $replace)
+    {
+        $this->_search = $search;
+        $this->_replace = $replace;
+    }
+
+    /**
+     * Returns true if based on the buffer passed more bytes should be buffered.
+     *
+     * @param string $buffer
+     *
+     * @return boolean
+     */
+    public function shouldBuffer($buffer)
+    {
+        $endOfBuffer = substr($buffer, -1);
+        foreach ((array) $this->_search as $needle) {
+            if (false !== strpos($needle, $endOfBuffer)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Perform the actual replacements on $buffer and return the result.
+     *
+     * @param string $buffer
+     *
+     * @return string
+     */
+    public function filter($buffer)
+    {
+        return str_replace($this->_search, $this->_replace, $buffer);
+    }
+}

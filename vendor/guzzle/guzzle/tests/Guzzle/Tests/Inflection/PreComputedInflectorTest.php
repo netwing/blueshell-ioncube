@@ -1,53 +1,45 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OLnEv9QcZWMU+W==
+<?php
+
+namespace Guzzle\Tests\Inflection;
+
+use Guzzle\Inflection\PreComputedInflector;
+
+/**
+ * @covers Guzzle\Inflection\PreComputedInflector
+ */
+class PreComputedInflectorTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testUsesPreComputedHash()
+    {
+        $mock = $this->getMock('Guzzle\Inflection\Inflector', array('snake', 'camel'));
+        $mock->expects($this->once())->method('snake')->with('Test')->will($this->returnValue('test'));
+        $mock->expects($this->once())->method('camel')->with('Test')->will($this->returnValue('Test'));
+        $inflector = new PreComputedInflector($mock, array('FooBar' => 'foo_bar'), array('foo_bar' => 'FooBar'));
+        $this->assertEquals('FooBar', $inflector->camel('foo_bar'));
+        $this->assertEquals('foo_bar', $inflector->snake('FooBar'));
+        $this->assertEquals('Test', $inflector->camel('Test'));
+        $this->assertEquals('test', $inflector->snake('Test'));
+    }
+
+    public function testMirrorsPrecomputedValues()
+    {
+        $mock = $this->getMock('Guzzle\Inflection\Inflector', array('snake', 'camel'));
+        $mock->expects($this->never())->method('snake');
+        $mock->expects($this->never())->method('camel');
+        $inflector = new PreComputedInflector($mock, array('Zeep' => 'zeep'), array(), true);
+        $this->assertEquals('Zeep', $inflector->camel('zeep'));
+        $this->assertEquals('zeep', $inflector->snake('Zeep'));
+    }
+
+    public function testMirrorsPrecomputedValuesByMerging()
+    {
+        $mock = $this->getMock('Guzzle\Inflection\Inflector', array('snake', 'camel'));
+        $mock->expects($this->never())->method('snake');
+        $mock->expects($this->never())->method('camel');
+        $inflector = new PreComputedInflector($mock, array('Zeep' => 'zeep'), array('foo' => 'Foo'), true);
+        $this->assertEquals('Zeep', $inflector->camel('zeep'));
+        $this->assertEquals('zeep', $inflector->snake('Zeep'));
+        $this->assertEquals('Foo', $inflector->camel('foo'));
+        $this->assertEquals('foo', $inflector->snake('Foo'));
+    }
+}

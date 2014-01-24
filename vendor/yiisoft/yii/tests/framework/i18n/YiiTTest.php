@@ -1,126 +1,191 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Tests for various usages of Yii::t
+ *
+ * http://code.google.com/p/yii/issues/detail?id=1875
+ * http://code.google.com/p/yii/issues/detail?id=1987
+ *
+ * http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html
+ */
+class YiiTTest extends CTestCase
+{
+	function setUp()
+	{
+		$config = array(
+			'sourceLanguage' => 'es',
+			'components' => array(
+				'messages' => array(
+					'class' => 'CPhpMessageSource',
+					'basePath' => dirname(__FILE__).'/data',
+					//'forceTranslation' => true,
+				),
+			),
+		);
+
+		new TestApplication($config);
+		Yii::app()->configure($config);
+	}
+
+	function tearDown()
+	{
+		Yii::app()->sourceLanguage = 'en_us';
+	}
+
+	// Simple: 'msg'
+	function testSimple(){
+		Yii::app()->setLanguage('ru');
+		$this->assertEquals('апельсины', Yii::t('test', 'oranges'));
+	}
+
+	function testSimpleSameLanguage(){
+		Yii::app()->setLanguage('es');
+		$this->assertEquals('no_changes', Yii::t('test', 'no_changes'));
+	}
+
+	function testSimplePlaceholders(){
+		Yii::app()->setLanguage('ru');
+		$this->assertEquals('сумочки caviar', Yii::t('test', '{brand} bags', array('{brand}' => 'caviar')));
+		$this->assertEquals('в корзине: 10', Yii::t('test', 'in the cart: {n}', 10));
+	}
+
+	function testSimplePlaceholdersSameLanguage(){
+		Yii::app()->setLanguage('es');
+		$this->assertEquals('10 changes', Yii::t('test', '{n} changes', 10));
+	}
+
+	// Plural: 'msg1|msg2|msg3'
+	function testPlural(){
+		// CLDR
+		Yii::app()->setLanguage('ru');
+
+		// array notation
+		$this->assertEquals('огурец', Yii::t('test', 'cucumber|cucumbers', array(1)));
+
+		//ru
+		$this->assertEquals('огурец', Yii::t('test', 'cucumber|cucumbers', 1));
+		$this->assertEquals('огурец', Yii::t('test', 'cucumber|cucumbers', 101));
+		$this->assertEquals('огурец', Yii::t('test', 'cucumber|cucumbers', 51));
+		$this->assertEquals('огурца', Yii::t('test', 'cucumber|cucumbers', 2));
+		$this->assertEquals('огурца', Yii::t('test', 'cucumber|cucumbers', 62));
+		$this->assertEquals('огурца', Yii::t('test', 'cucumber|cucumbers', 104));
+		$this->assertEquals('огурцов', Yii::t('test', 'cucumber|cucumbers', 5));
+		$this->assertEquals('огурцов', Yii::t('test', 'cucumber|cucumbers', 78));
+		$this->assertEquals('огурцов', Yii::t('test', 'cucumber|cucumbers', 320));
+		$this->assertEquals('огурцов', Yii::t('test', 'cucumber|cucumbers', 0));
+
+		// fractions (you should specify fourh variant to use these in Russian)
+		$this->assertEquals('огурца', Yii::t('test', 'cucumber|cucumbers', 1.5));
+
+		// en
+		Yii::app()->setLanguage('en');
+
+        $this->assertEquals('cucumber', Yii::t('test', 'cucumber|cucumbers', 1));
+        $this->assertEquals('cucumbers', Yii::t('test', 'cucumber|cucumbers', 2));
+        $this->assertEquals('cucumbers', Yii::t('test', 'cucumber|cucumbers', 0));
+
+		// short forms
+		Yii::app()->setLanguage('ru');
+
+		$this->assertEquals('огурец', Yii::t('test', 'cucumber|cucumbers', 1));
+
+		// explicit params
+		$this->assertEquals('огурец', Yii::t('test', 'cucumber|cucumbers', array(0 => 1)));
+	}
+
+	function testPluralPlaceholders(){
+		Yii::app()->setLanguage('ru');
+
+		$this->assertEquals('1 огурец', Yii::t('test', '{n} cucumber|{n} cucumbers', 1));
+		$this->assertEquals('2 огурца', Yii::t('test', '{n} cucumber|{n} cucumbers', 2));
+		$this->assertEquals('5 огурцов', Yii::t('test', '{n} cucumber|{n} cucumbers', 5));
+
+		// more placeholders
+		$this->assertEquals('+ 5 огурцов', Yii::t('test', '{sign} {n} cucumber|{sign} {n} cucumbers', array(5, '{sign}' => '+')));
+
+		// placeholder swapping
+		$this->assertEquals('один огурец', Yii::t('test', '{n} cucumber|{n} cucumbers', array(1, '{n}' => 'один')));
+	}
+
+	/**
+	 * If there are useless params in translation just ignore them.
+	 */
+	function testPluralMoreVariants(){
+		Yii::app()->setLanguage('ru');
+		$this->assertEquals('шляпы', Yii::t('test', 'hat|hats', array(2)));
+	}
+
+	/**
+	 * If there are less variants in translation like
+	 * 'zombie|zombies' => 'зомби' (CLDR requires 3 variants for Russian
+	 * but zombie is too special to be plural)
+	 *
+	 * Same for Chinese but there are no plurals at all.
+	 */
+	function testPluralLessVariants(){
+		// three variants are required and only one specified (still valid for
+		// Russian in some special cases)
+		Yii::app()->setLanguage('ru');
+		$this->assertEquals('зомби', Yii::t('test', 'zombie|zombies', 10));
+		$this->assertEquals('зомби', Yii::t('test', 'zombie|zombies', 1));
+
+		// language with no plurals
+		Yii::app()->setLanguage('zh_cn');
+		$this->assertEquals('k-s', Yii::t('test', 'kiss|kisses', 1));
+
+		// 3 variants are required while only 2 specified
+		// this one is synthetic but still good to know it at least does not
+		// produce error
+		Yii::app()->setLanguage('ru');
+		$this->assertEquals('син1', Yii::t('test', 'syn1|syn2|syn3', 1));
+		$this->assertEquals('син2', Yii::t('test', 'syn1|syn2|syn3', 2));
+		$this->assertEquals('син2', Yii::t('test', 'syn1|syn2|syn3', 5));
+	}
+
+	function pluralLessVariantsInSource(){
+		// new doesn't have two forms in English
+		Yii::app()->setLanguage('ru');
+		$this->assertEquals('новости', Yii::t('test', 'news', 2));
+	}
+
+	function testPluralSameLanguage(){
+		Yii::app()->setLanguage('es');
+
+		$this->assertEquals('cucumbez', Yii::t('test', 'cucumbez|cucumberz', 1));
+        $this->assertEquals('cucumberz', Yii::t('test', 'cucumbez|cucumberz', 2));
+        $this->assertEquals('cucumberz', Yii::t('test', 'cucumbez|cucumberz', 0));
+	}
+
+	function testPluralPlaceholdersSameLanguage(){
+		Yii::app()->setLanguage('es');
+
+		$this->assertEquals('1 cucumbez', Yii::t('test', '{n} cucumbez|{n} cucumberz', 1));
+		$this->assertEquals('2 cucumberz', Yii::t('test', '{n} cucumbez|{n} cucumberz', 2));
+		$this->assertEquals('5 cucumberz', Yii::t('test', '{n} cucumbez|{n} cucumberz', 5));
+	}
+
+	// Choice: 'expr1#msg1|expr2#msg2|expr3#msg3'
+	function testChoice(){
+		Yii::app()->setLanguage('ru');
+
+		// simple choices
+		$this->assertEquals('одна книга', Yii::t('test', 'n==1#one book|n>1#many books', 1));
+		$this->assertEquals('много книг', Yii::t('test', 'n==1#one book|n>1#many books', 10));
+		$this->assertEquals('одна книга', Yii::t('test', '1#one book|n>1#many books', 1));
+		$this->assertEquals('много книг', Yii::t('test', '1#one book|n>1#many books', 10));
+	}
+
+	function testChoiceSameLanguage(){
+		Yii::app()->setLanguage('es');
+
+		$this->assertEquals('one book', Yii::t('test', 'n==1#one book|n>1#many books', 1));
+		$this->assertEquals('many books', Yii::t('test', 'n==1#one book|n>1#many books', 10));
+	}
+
+	function testChoicePlaceholders(){
+		//$this->assertEquals('51 apples', Yii::t('app', '1#1apple|n>1|{n} apples', array(51, 'n'=>51)));
+	}
+
+	function testChoicePlaceholdersSameLanguage(){
+
+	}
+}

@@ -1,66 +1,95 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-I+oL9hxyI2c+8bm8Ym==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Tests\Parser;
+
+use Symfony\Component\CssSelector\Parser\Token;
+use Symfony\Component\CssSelector\Parser\TokenStream;
+
+class TokenStreamTest extends \PHPUnit_Framework_TestCase
+{
+    public function testGetNext()
+    {
+        $stream = new TokenStream();
+        $stream->push($t1 = new Token(Token::TYPE_IDENTIFIER, 'h1', 0));
+        $stream->push($t2 = new Token(Token::TYPE_DELIMITER, '.', 2));
+        $stream->push($t3 = new Token(Token::TYPE_IDENTIFIER, 'title', 3));
+
+        $this->assertSame($t1, $stream->getNext());
+        $this->assertSame($t2, $stream->getNext());
+        $this->assertSame($t3, $stream->getNext());
+    }
+
+    public function testGetPeek()
+    {
+        $stream = new TokenStream();
+        $stream->push($t1 = new Token(Token::TYPE_IDENTIFIER, 'h1', 0));
+        $stream->push($t2 = new Token(Token::TYPE_DELIMITER, '.', 2));
+        $stream->push($t3 = new Token(Token::TYPE_IDENTIFIER, 'title', 3));
+
+        $this->assertSame($t1, $stream->getPeek());
+        $this->assertSame($t1, $stream->getNext());
+        $this->assertSame($t2, $stream->getPeek());
+        $this->assertSame($t2, $stream->getPeek());
+        $this->assertSame($t2, $stream->getNext());
+    }
+
+    public function testGetNextIdentifier()
+    {
+        $stream = new TokenStream();
+        $stream->push(new Token(Token::TYPE_IDENTIFIER, 'h1', 0));
+
+        $this->assertEquals('h1', $stream->getNextIdentifier());
+    }
+
+    public function testFailToGetNextIdentifier()
+    {
+        $this->setExpectedException('Symfony\Component\CssSelector\Exception\SyntaxErrorException');
+
+        $stream = new TokenStream();
+        $stream->push(new Token(Token::TYPE_DELIMITER, '.', 2));
+        $stream->getNextIdentifier();
+    }
+
+    public function testGetNextIdentifierOrStar()
+    {
+        $stream = new TokenStream();
+
+        $stream->push(new Token(Token::TYPE_IDENTIFIER, 'h1', 0));
+        $this->assertEquals('h1', $stream->getNextIdentifierOrStar());
+
+        $stream->push(new Token(Token::TYPE_DELIMITER, '*', 0));
+        $this->assertNull($stream->getNextIdentifierOrStar());
+    }
+
+    public function testFailToGetNextIdentifierOrStar()
+    {
+        $this->setExpectedException('Symfony\Component\CssSelector\Exception\SyntaxErrorException');
+
+        $stream = new TokenStream();
+        $stream->push(new Token(Token::TYPE_DELIMITER, '.', 2));
+        $stream->getNextIdentifierOrStar();
+    }
+
+    public function testSkipWhitespace()
+    {
+        $stream = new TokenStream();
+        $stream->push($t1 = new Token(Token::TYPE_IDENTIFIER, 'h1', 0));
+        $stream->push($t2 = new Token(Token::TYPE_WHITESPACE, ' ', 2));
+        $stream->push($t3 = new Token(Token::TYPE_IDENTIFIER, 'h1', 3));
+
+        $stream->skipWhitespace();
+        $this->assertSame($t1, $stream->getNext());
+
+        $stream->skipWhitespace();
+        $this->assertSame($t3, $stream->getNext());
+    }
+}

@@ -1,231 +1,619 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CModel class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+
+/**
+ * CModel is the base class providing the common features needed by data model objects.
+ *
+ * CModel defines the basic framework for data models that need to be validated.
+ *
+ * @property CList $validatorList All the validators declared in the model.
+ * @property array $validators The validators applicable to the current {@link scenario}.
+ * @property array $errors Errors for all attributes or the specified attribute. Empty array is returned if no error.
+ * @property array $attributes Attribute values (name=>value).
+ * @property string $scenario The scenario that this model is in.
+ * @property array $safeAttributeNames Safe attribute names.
+ * @property CMapIterator $iterator An iterator for traversing the items in the list.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+abstract class CModel extends CComponent implements IteratorAggregate, ArrayAccess
+{
+	private $_errors=array();	// attribute name => array of errors
+	private $_validators;  		// validators
+	private $_scenario='';  	// scenario
+
+	/**
+	 * Returns the list of attribute names of the model.
+	 * @return array list of attribute names.
+	 */
+	abstract public function attributeNames();
+
+	/**
+	 * Returns the validation rules for attributes.
+	 *
+	 * This method should be overridden to declare validation rules.
+	 * Each rule is an array with the following structure:
+	 * <pre>
+	 * array('attribute list', 'validator name', 'on'=>'scenario name', ...validation parameters...)
+	 * </pre>
+	 * where
+	 * <ul>
+	 * <li>attribute list: specifies the attributes (separated by commas) to be validated;</li>
+	 * <li>validator name: specifies the validator to be used. It can be the name of a model class
+	 *   method, the name of a built-in validator, or a validator class (or its path alias).
+	 *   A validation method must have the following signature:
+	 * <pre>
+	 * // $params refers to validation parameters given in the rule
+	 * function validatorName($attribute,$params)
+	 * </pre>
+	 *   A built-in validator refers to one of the validators declared in {@link CValidator::builtInValidators}.
+	 *   And a validator class is a class extending {@link CValidator}.</li>
+	 * <li>on: this specifies the scenarios when the validation rule should be performed.
+	 *   Separate different scenarios with commas. If this option is not set, the rule
+	 *   will be applied in any scenario that is not listed in "except". Please see {@link scenario} for more details about this option.</li>
+	 * <li>except: this specifies the scenarios when the validation rule should not be performed.
+	 *   Separate different scenarios with commas. Please see {@link scenario} for more details about this option.</li>
+	 * <li>additional parameters are used to initialize the corresponding validator properties.
+	 *   Please refer to individal validator class API for possible properties.</li>
+	 * </ul>
+	 *
+	 * The following are some examples:
+	 * <pre>
+	 * array(
+	 *     array('username', 'required'),
+	 *     array('username', 'length', 'min'=>3, 'max'=>12),
+	 *     array('password', 'compare', 'compareAttribute'=>'password2', 'on'=>'register'),
+	 *     array('password', 'authenticate', 'on'=>'login'),
+	 * );
+	 * </pre>
+	 *
+	 * Note, in order to inherit rules defined in the parent class, a child class needs to
+	 * merge the parent rules with child rules using functions like array_merge().
+	 *
+	 * @return array validation rules to be applied when {@link validate()} is called.
+	 * @see scenario
+	 */
+	public function rules()
+	{
+		return array();
+	}
+
+	/**
+	 * Returns a list of behaviors that this model should behave as.
+	 * The return value should be an array of behavior configurations indexed by
+	 * behavior names. Each behavior configuration can be either a string specifying
+	 * the behavior class or an array of the following structure:
+	 * <pre>
+	 * 'behaviorName'=>array(
+	 *     'class'=>'path.to.BehaviorClass',
+	 *     'property1'=>'value1',
+	 *     'property2'=>'value2',
+	 * )
+	 * </pre>
+	 *
+	 * Note, the behavior classes must implement {@link IBehavior} or extend from
+	 * {@link CBehavior}. Behaviors declared in this method will be attached
+	 * to the model when it is instantiated.
+	 *
+	 * For more details about behaviors, see {@link CComponent}.
+	 * @return array the behavior configurations (behavior name=>behavior configuration)
+	 */
+	public function behaviors()
+	{
+		return array();
+	}
+
+	/**
+	 * Returns the attribute labels.
+	 * Attribute labels are mainly used in error messages of validation.
+	 * By default an attribute label is generated using {@link generateAttributeLabel}.
+	 * This method allows you to explicitly specify attribute labels.
+	 *
+	 * Note, in order to inherit labels defined in the parent class, a child class needs to
+	 * merge the parent labels with child labels using functions like array_merge().
+	 *
+	 * @return array attribute labels (name=>label)
+	 * @see generateAttributeLabel
+	 */
+	public function attributeLabels()
+	{
+		return array();
+	}
+
+	/**
+	 * Performs the validation.
+	 *
+	 * This method executes the validation rules as declared in {@link rules}.
+	 * Only the rules applicable to the current {@link scenario} will be executed.
+	 * A rule is considered applicable to a scenario if its 'on' option is not set
+	 * or contains the scenario.
+	 *
+	 * Errors found during the validation can be retrieved via {@link getErrors}.
+	 *
+	 * @param array $attributes list of attributes that should be validated. Defaults to null,
+	 * meaning any attribute listed in the applicable validation rules should be
+	 * validated. If this parameter is given as a list of attributes, only
+	 * the listed attributes will be validated.
+	 * @param boolean $clearErrors whether to call {@link clearErrors} before performing validation
+	 * @return boolean whether the validation is successful without any error.
+	 * @see beforeValidate
+	 * @see afterValidate
+	 */
+	public function validate($attributes=null, $clearErrors=true)
+	{
+		if($clearErrors)
+			$this->clearErrors();
+		if($this->beforeValidate())
+		{
+			foreach($this->getValidators() as $validator)
+				$validator->validate($this,$attributes);
+			$this->afterValidate();
+			return !$this->hasErrors();
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * This method is invoked after a model instance is created by new operator.
+	 * The default implementation raises the {@link onAfterConstruct} event.
+	 * You may override this method to do postprocessing after model creation.
+	 * Make sure you call the parent implementation so that the event is raised properly.
+	 */
+	protected function afterConstruct()
+	{
+		if($this->hasEventHandler('onAfterConstruct'))
+			$this->onAfterConstruct(new CEvent($this));
+	}
+
+	/**
+	 * This method is invoked before validation starts.
+	 * The default implementation calls {@link onBeforeValidate} to raise an event.
+	 * You may override this method to do preliminary checks before validation.
+	 * Make sure the parent implementation is invoked so that the event can be raised.
+	 * @return boolean whether validation should be executed. Defaults to true.
+	 * If false is returned, the validation will stop and the model is considered invalid.
+	 */
+	protected function beforeValidate()
+	{
+		$event=new CModelEvent($this);
+		$this->onBeforeValidate($event);
+		return $event->isValid;
+	}
+
+	/**
+	 * This method is invoked after validation ends.
+	 * The default implementation calls {@link onAfterValidate} to raise an event.
+	 * You may override this method to do postprocessing after validation.
+	 * Make sure the parent implementation is invoked so that the event can be raised.
+	 */
+	protected function afterValidate()
+	{
+		$this->onAfterValidate(new CEvent($this));
+	}
+
+	/**
+	 * This event is raised after the model instance is created by new operator.
+	 * @param CEvent $event the event parameter
+	 */
+	public function onAfterConstruct($event)
+	{
+		$this->raiseEvent('onAfterConstruct',$event);
+	}
+
+	/**
+	 * This event is raised before the validation is performed.
+	 * @param CModelEvent $event the event parameter
+	 */
+	public function onBeforeValidate($event)
+	{
+		$this->raiseEvent('onBeforeValidate',$event);
+	}
+
+	/**
+	 * This event is raised after the validation is performed.
+	 * @param CEvent $event the event parameter
+	 */
+	public function onAfterValidate($event)
+	{
+		$this->raiseEvent('onAfterValidate',$event);
+	}
+
+	/**
+	 * Returns all the validators declared in the model.
+	 * This method differs from {@link getValidators} in that the latter
+	 * would only return the validators applicable to the current {@link scenario}.
+	 * Also, since this method return a {@link CList} object, you may
+	 * manipulate it by inserting or removing validators (useful in behaviors).
+	 * For example, <code>$model->validatorList->add($newValidator)</code>.
+	 * The change made to the {@link CList} object will persist and reflect
+	 * in the result of the next call of {@link getValidators}.
+	 * @return CList all the validators declared in the model.
+	 * @since 1.1.2
+	 */
+	public function getValidatorList()
+	{
+		if($this->_validators===null)
+			$this->_validators=$this->createValidators();
+		return $this->_validators;
+	}
+
+	/**
+	 * Returns the validators applicable to the current {@link scenario}.
+	 * @param string $attribute the name of the attribute whose validators should be returned.
+	 * If this is null, the validators for ALL attributes in the model will be returned.
+	 * @return array the validators applicable to the current {@link scenario}.
+	 */
+	public function getValidators($attribute=null)
+	{
+		if($this->_validators===null)
+			$this->_validators=$this->createValidators();
+
+		$validators=array();
+		$scenario=$this->getScenario();
+		foreach($this->_validators as $validator)
+		{
+			if($validator->applyTo($scenario))
+			{
+				if($attribute===null || in_array($attribute,$validator->attributes,true))
+					$validators[]=$validator;
+			}
+		}
+		return $validators;
+	}
+
+	/**
+	 * Creates validator objects based on the specification in {@link rules}.
+	 * This method is mainly used internally.
+	 * @throws CException if current class has an invalid validation rule
+	 * @return CList validators built based on {@link rules()}.
+	 */
+	public function createValidators()
+	{
+		$validators=new CList;
+		foreach($this->rules() as $rule)
+		{
+			if(isset($rule[0],$rule[1]))  // attributes, validator name
+				$validators->add(CValidator::createValidator($rule[1],$this,$rule[0],array_slice($rule,2)));
+			else
+				throw new CException(Yii::t('yii','{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.',
+					array('{class}'=>get_class($this))));
+		}
+		return $validators;
+	}
+
+	/**
+	 * Returns a value indicating whether the attribute is required.
+	 * This is determined by checking if the attribute is associated with a
+	 * {@link CRequiredValidator} validation rule in the current {@link scenario}.
+	 * @param string $attribute attribute name
+	 * @return boolean whether the attribute is required
+	 */
+	public function isAttributeRequired($attribute)
+	{
+		foreach($this->getValidators($attribute) as $validator)
+		{
+			if($validator instanceof CRequiredValidator)
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Returns a value indicating whether the attribute is safe for massive assignments.
+	 * @param string $attribute attribute name
+	 * @return boolean whether the attribute is safe for massive assignments
+	 * @since 1.1
+	 */
+	public function isAttributeSafe($attribute)
+	{
+		$attributes=$this->getSafeAttributeNames();
+		return in_array($attribute,$attributes);
+	}
+
+	/**
+	 * Returns the text label for the specified attribute.
+	 * @param string $attribute the attribute name
+	 * @return string the attribute label
+	 * @see generateAttributeLabel
+	 * @see attributeLabels
+	 */
+	public function getAttributeLabel($attribute)
+	{
+		$labels=$this->attributeLabels();
+		if(isset($labels[$attribute]))
+			return $labels[$attribute];
+		else
+			return $this->generateAttributeLabel($attribute);
+	}
+
+	/**
+	 * Returns a value indicating whether there is any validation error.
+	 * @param string $attribute attribute name. Use null to check all attributes.
+	 * @return boolean whether there is any error.
+	 */
+	public function hasErrors($attribute=null)
+	{
+		if($attribute===null)
+			return $this->_errors!==array();
+		else
+			return isset($this->_errors[$attribute]);
+	}
+
+	/**
+	 * Returns the errors for all attribute or a single attribute.
+	 * @param string $attribute attribute name. Use null to retrieve errors for all attributes.
+	 * @return array errors for all attributes or the specified attribute. Empty array is returned if no error.
+	 */
+	public function getErrors($attribute=null)
+	{
+		if($attribute===null)
+			return $this->_errors;
+		else
+			return isset($this->_errors[$attribute]) ? $this->_errors[$attribute] : array();
+	}
+
+	/**
+	 * Returns the first error of the specified attribute.
+	 * @param string $attribute attribute name.
+	 * @return string the error message. Null is returned if no error.
+	 */
+	public function getError($attribute)
+	{
+		return isset($this->_errors[$attribute]) ? reset($this->_errors[$attribute]) : null;
+	}
+
+	/**
+	 * Adds a new error to the specified attribute.
+	 * @param string $attribute attribute name
+	 * @param string $error new error message
+	 */
+	public function addError($attribute,$error)
+	{
+		$this->_errors[$attribute][]=$error;
+	}
+
+	/**
+	 * Adds a list of errors.
+	 * @param array $errors a list of errors. The array keys must be attribute names.
+	 * The array values should be error messages. If an attribute has multiple errors,
+	 * these errors must be given in terms of an array.
+	 * You may use the result of {@link getErrors} as the value for this parameter.
+	 */
+	public function addErrors($errors)
+	{
+		foreach($errors as $attribute=>$error)
+		{
+			if(is_array($error))
+			{
+				foreach($error as $e)
+					$this->addError($attribute, $e);
+			}
+			else
+				$this->addError($attribute, $error);
+		}
+	}
+
+	/**
+	 * Removes errors for all attributes or a single attribute.
+	 * @param string $attribute attribute name. Use null to remove errors for all attribute.
+	 */
+	public function clearErrors($attribute=null)
+	{
+		if($attribute===null)
+			$this->_errors=array();
+		else
+			unset($this->_errors[$attribute]);
+	}
+
+	/**
+	 * Generates a user friendly attribute label.
+	 * This is done by replacing underscores or dashes with blanks and
+	 * changing the first letter of each word to upper case.
+	 * For example, 'department_name' or 'DepartmentName' becomes 'Department Name'.
+	 * @param string $name the column name
+	 * @return string the attribute label
+	 */
+	public function generateAttributeLabel($name)
+	{
+		return ucwords(trim(strtolower(str_replace(array('-','_','.'),' ',preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $name)))));
+	}
+
+	/**
+	 * Returns all attribute values.
+	 * @param array $names list of attributes whose value needs to be returned.
+	 * Defaults to null, meaning all attributes as listed in {@link attributeNames} will be returned.
+	 * If it is an array, only the attributes in the array will be returned.
+	 * @return array attribute values (name=>value).
+	 */
+	public function getAttributes($names=null)
+	{
+		$values=array();
+		foreach($this->attributeNames() as $name)
+			$values[$name]=$this->$name;
+
+		if(is_array($names))
+		{
+			$values2=array();
+			foreach($names as $name)
+				$values2[$name]=isset($values[$name]) ? $values[$name] : null;
+			return $values2;
+		}
+		else
+			return $values;
+	}
+
+	/**
+	 * Sets the attribute values in a massive way.
+	 * @param array $values attribute values (name=>value) to be set.
+	 * @param boolean $safeOnly whether the assignments should only be done to the safe attributes.
+	 * A safe attribute is one that is associated with a validation rule in the current {@link scenario}.
+	 * @see getSafeAttributeNames
+	 * @see attributeNames
+	 */
+	public function setAttributes($values,$safeOnly=true)
+	{
+		if(!is_array($values))
+			return;
+		$attributes=array_flip($safeOnly ? $this->getSafeAttributeNames() : $this->attributeNames());
+		foreach($values as $name=>$value)
+		{
+			if(isset($attributes[$name]))
+				$this->$name=$value;
+			elseif($safeOnly)
+				$this->onUnsafeAttribute($name,$value);
+		}
+	}
+
+	/**
+	 * Sets the attributes to be null.
+	 * @param array $names list of attributes to be set null. If this parameter is not given,
+	 * all attributes as specified by {@link attributeNames} will have their values unset.
+	 * @since 1.1.3
+	 */
+	public function unsetAttributes($names=null)
+	{
+		if($names===null)
+			$names=$this->attributeNames();
+		foreach($names as $name)
+			$this->$name=null;
+	}
+
+	/**
+	 * This method is invoked when an unsafe attribute is being massively assigned.
+	 * The default implementation will log a warning message if YII_DEBUG is on.
+	 * It does nothing otherwise.
+	 * @param string $name the unsafe attribute name
+	 * @param mixed $value the attribute value
+	 * @since 1.1.1
+	 */
+	public function onUnsafeAttribute($name,$value)
+	{
+		if(YII_DEBUG)
+			Yii::log(Yii::t('yii','Failed to set unsafe attribute "{attribute}" of "{class}".',array('{attribute}'=>$name, '{class}'=>get_class($this))),CLogger::LEVEL_WARNING);
+	}
+
+	/**
+	 * Returns the scenario that this model is used in.
+	 *
+	 * Scenario affects how validation is performed and which attributes can
+	 * be massively assigned.
+	 *
+	 * A validation rule will be performed when calling {@link validate()}
+	 * if its 'except' value does not contain current scenario value while
+	 * 'on' option is not set or contains the current scenario value.
+	 *
+	 * And an attribute can be massively assigned if it is associated with
+	 * a validation rule for the current scenario. Note that an exception is
+	 * the {@link CUnsafeValidator unsafe} validator which marks the associated
+	 * attributes as unsafe and not allowed to be massively assigned.
+	 *
+	 * @return string the scenario that this model is in.
+	 */
+	public function getScenario()
+	{
+		return $this->_scenario;
+	}
+
+	/**
+	 * Sets the scenario for the model.
+	 * @param string $value the scenario that this model is in.
+	 * @see getScenario
+	 */
+	public function setScenario($value)
+	{
+		$this->_scenario=$value;
+	}
+
+	/**
+	 * Returns the attribute names that are safe to be massively assigned.
+	 * A safe attribute is one that is associated with a validation rule in the current {@link scenario}.
+	 * @return array safe attribute names
+	 */
+	public function getSafeAttributeNames()
+	{
+		$attributes=array();
+		$unsafe=array();
+		foreach($this->getValidators() as $validator)
+		{
+			if(!$validator->safe)
+			{
+				foreach($validator->attributes as $name)
+					$unsafe[]=$name;
+			}
+			else
+			{
+				foreach($validator->attributes as $name)
+					$attributes[$name]=true;
+			}
+		}
+
+		foreach($unsafe as $name)
+			unset($attributes[$name]);
+		return array_keys($attributes);
+	}
+
+	/**
+	 * Returns an iterator for traversing the attributes in the model.
+	 * This method is required by the interface IteratorAggregate.
+	 * @return CMapIterator an iterator for traversing the items in the list.
+	 */
+	public function getIterator()
+	{
+		$attributes=$this->getAttributes();
+		return new CMapIterator($attributes);
+	}
+
+	/**
+	 * Returns whether there is an element at the specified offset.
+	 * This method is required by the interface ArrayAccess.
+	 * @param mixed $offset the offset to check on
+	 * @return boolean
+	 */
+	public function offsetExists($offset)
+	{
+		return property_exists($this,$offset);
+	}
+
+	/**
+	 * Returns the element at the specified offset.
+	 * This method is required by the interface ArrayAccess.
+	 * @param integer $offset the offset to retrieve element.
+	 * @return mixed the element at the offset, null if no element is found at the offset
+	 */
+	public function offsetGet($offset)
+	{
+		return $this->$offset;
+	}
+
+	/**
+	 * Sets the element at the specified offset.
+	 * This method is required by the interface ArrayAccess.
+	 * @param integer $offset the offset to set element
+	 * @param mixed $item the element value
+	 */
+	public function offsetSet($offset,$item)
+	{
+		$this->$offset=$item;
+	}
+
+	/**
+	 * Unsets the element at the specified offset.
+	 * This method is required by the interface ArrayAccess.
+	 * @param mixed $offset the offset to unset element
+	 */
+	public function offsetUnset($offset)
+	{
+		unset($this->$offset);
+	}
+}

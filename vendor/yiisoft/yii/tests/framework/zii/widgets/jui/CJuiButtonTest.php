@@ -1,39 +1,35 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-SosXSMEHqm==
+<?php
+/**
+ * CJuiButtonTest
+ */
+class CJuiButtonTest extends CTestCase
+{
+	public function testCallbackEncoding()
+	{
+		$expected = ".click(function() { /* callback */ });";
+
+		$out=$this->getWidgetScript('js:function() { /* callback */ }');
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (js:): ".$out);
+
+		$out=$this->getWidgetScript('function() { /* callback */ }');
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (w/o js:): ".$out);
+
+		$out=$this->getWidgetScript(new CJavaScriptExpression('function() { /* callback */ }'));
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (wrap): ".$out);
+	}
+
+	private function getWidgetScript($callback)
+	{
+		Yii::import('zii.widgets.jui.CJuiButton');
+		Yii::app()->clientScript->scripts = array();
+		ob_start();
+		$widget = new CJuiButton(null);
+		$widget->name = 'test';
+		$widget->onclick = $callback;
+		$widget->init();
+		$widget->run();
+		Yii::app()->clientScript->render($out);
+		ob_end_clean();
+		return $out;
+	}
+}

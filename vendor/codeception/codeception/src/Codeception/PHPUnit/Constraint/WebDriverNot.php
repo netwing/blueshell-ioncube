@@ -1,35 +1,33 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\PHPUnit\Constraint;
+
+class WebDriverNot extends WebDriver {
+
+    protected function matches($nodes)
+    {
+        return !parent::matches($nodes);
+    }
+
+    protected function fail($nodes, $selector, \PHPUnit_Framework_ComparisonFailure $comparisonFailure = NULL)
+    {
+        if (!$this->string) {
+            throw new \PHPUnit_Framework_ExpectationFailedException("Element '$selector' was found", $comparisonFailure);
+        }
+
+        $output = "There was '$selector' element";
+        $output .= $this->uriMessage("on page");
+        $output .= str_replace($this->string,"<bold>{$this->string}</bold>",$this->nodesList($nodes, $this->string));
+        $output .= "\ncontaining '{$this->string}'";
+
+        throw new \PHPUnit_Framework_ExpectationFailedException(
+          $output,
+          $comparisonFailure
+        );
+
+    }
+
+    public function toString()
+    {
+        if ($this->string) return 'that contains text "'.$this->string.'"';
+    }
+}

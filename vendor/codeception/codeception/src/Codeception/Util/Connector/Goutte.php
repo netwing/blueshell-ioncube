@@ -1,31 +1,38 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPzBHaqdqEsXkbMS6QX8IDb0PrNC/gur8XFebZMqReMU69ELqh9/F7pC7GXaIO2GPw54JZbaC
-kdCFMwfRHtpl//9b0T2JX2jiteLXSF/4NR3wf3rI4hd02VkazcMBGCBy6sSBUVvmT8M26I5dHFdL
-1K6oOjtHQh3EvyRQTpvm6ZFumLeBii0d6BPS66G/4HVFBmWEM1V2Ii63lUYhnmbLu+EDLbGtHGIk
-8EKKoIS7RYYnb2EbEniPEkMlKIZXE/TmggoQRmH0t6bqlrlh0rsMEHQXdLU6KEu7lqICy/OKNR82
-sgHKBLZLFi5R21oLrmG2AVFe9Pc3Lcg67gwcmV2Ls9Vd7f2EVEjmkaI1VHRh/b7GbLkzxNepe99h
-uXTcrR/HFnZx82eGZkYF4drp1hV5E1NQ971jksLHLW9dSxNoU7t9KSzMp49noJNflTwsj4W8sZF9
-VeexYyqF5BBbvB8gkasus1BqKr64WNvodoNVdaDZ+92LoXoMj3/8v6QC1oqvAJ8jeW8JC8VEnGfl
-tz7y8kXqPxwl3e45N6cEOFoWSsDwGXuWs1mL6lL1wnOV//ol19GdgblsT5OE5oz7hB7GubWuB2gU
-nwbBm3rT2Qt7HXQlVpQt9Gu8CQ9T4jSpHPn3vU7olCYp+szCdwVoV3+JCN1V7zh+qIFuy7ZEIxAY
-B/D0wgemGh4gpUeLJY85H0FwTKTYmYY2eGsmuVnm1YACBRo+ehEO0MQ9NxiB7e9AHhROAGMdNo/0
-d+FHUoZ5V+bcCBEoR4qY/2IDwlYqgVICHiJXYvJa9EzrXSIBGyCK0Hbmzv0V10puDEVbLKVq6dF2
-1yfULuFIudYy+Yw5GZWAXvK6cZCb1uKp9PYh5rSuOCEKHfzAP/0TxVjrHZgTWB2Crhttjl3YTskF
-IkGCcqbf8ZJ0pj7lb4uLHx4mzumxe4Am8EIkp9EoVbD0/VQiRX5u2gx77+L30pghrcBAu7MGsNxZ
-g2Gj/mnIcWUQwIgxphcfj8ycfyiHQ7mS+hGdKSEN9YBEFokE3XN0cFgIh0eZ29UyCwlijs191o6x
-gNa2czQq5gb72hj89LPebYlt11tg6aIypyfFpCfrpRFUI11Mo2LJSK73pXWk3lNKj+wjT5TpOK24
-cTm6uQioRvQ/YvfZXVE0YyaTuouwM/EVNGBud8EFc/mfjtG9PVZssJU4YF+R1qKXtwBPD2s8Dhxy
-21hqa5ZHO2rl9R/VNIRbyAMCnKoh08Yx+Er9rvuEMPZz/535kkAFC+k608SfzLQpmxi2jJd4H4fA
-ZP/se8NNR21Ht6ntXKnLPfV1q3OiSd87OWAJAGNLC2m8xbpgxCewrrcCkJls2BKoieHCArsjxT7O
-qCHW7UEKraZUme5QM1jWe3O94FqKQXj9zmrA2L6ZAPj5VyxV9wjXC8OSrbh+lxbApAEZgi/xVdxB
-DnGpkncELREFCDPeJmnDGlVvt0IaIV7NkIKVmspMXrdtVUGdxNjLIF33J8dZB5p6es+bEbws1b28
-8rf2PGCLPUOT9cB6DWV5dqfwniq1sI1s2XoJjoP/Nz+8DEftcx0cQGCUR4CVPsyQS2CkSZghCKLl
-mNyqL5QBwPg3WKdWZhNX4K2O6NQxoDLxEA+xJCwqaT32xlLegnAkID1cD6M34ko4Jo2eXS7T1GvU
-t8Rxgg1CNlypUY2Y/HL61bcpc5t8Sjb4wrDZUKGv2xDGX4c8pdlCfBTdv3IYL1L/nuqovycqRdnt
-EkRRm1pGQTos88/3mGIW/99bi9NTtOsfoINo/t6DkTH4BClZ2aohLX3fiq/+VUfSdqp5Cf4RcdMJ
-pVzI5nB501nGM7seAO6MdCThdixZ/J+s0n+aJdidVDW39LKwWoz0KDgxU/f4abgmxd8Ix6xR2hFH
-a9AVsvzTsco8UHa65xtOJqYWgvhqSbqdrwOx9J3twwTAmRV2zVEdGc3BCAQ1/BtQD/cW+TnsGanf
-txNKNYFeT7uxViAHtHgmwouf57VfePtUWTQkKlMi1Cvjh2fO5gghMIl3OkGreCf0ZjPKW7TJ+Sr8
-q2EjifP9x0==
+<?php
+
+namespace Codeception\Util\Connector;
+
+use Guzzle\Http\Url;
+use Behat\Mink\Driver\Goutte\Client;
+use Symfony\Component\BrowserKit\Request;
+
+class Goutte extends Client {
+
+    // HOST header should include port.
+
+    protected function filterRequest(Request $request)
+    {
+        $server = $request->getServer();
+        $uri = Url::factory($request->getUri());
+        $server['HTTP_HOST'] = $uri->getHost();
+        $port = $uri->getPort();
+        if ($port !== null && $port !== 443 && $port != 80) {
+            $server['HTTP_HOST'] .= ':' . $port;
+        }
+
+        return new Request(
+            $request->getUri(),
+            $request->getMethod(),
+            $request->getParameters(),
+            $request->getFiles(),
+            $request->getCookies(),
+            $server,
+            $request->getContent());
+    }
+
+    public function resetAuth()
+    {
+        $this->auth = null;
+    }
+
+}

@@ -1,58 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Parser\Cookie;
+
+/**
+ * Default Guzzle implementation of a Cookie parser
+ */
+class CookieParser implements CookieParserInterface
+{
+    /** @var array Cookie part names to snake_case array values */
+    protected static $cookieParts = array(
+        'domain'      => 'Domain',
+        'path'        => 'Path',
+        'max_age'     => 'Max-Age',
+        'expires'     => 'Expires',
+        'version'     => 'Version',
+        'secure'      => 'Secure',
+        'port'        => 'Port',
+        'discard'     => 'Discard',
+        'comment'     => 'Comment',
+        'comment_url' => 'Comment-Url',
+        'http_only'   => 'HttpOnly'
+    );
+
+    public function parseCookie($cookie, $host = null, $path = null, $decode = false)
+    {
+        // Explode the cookie string using a series of semicolons
+        $pieces = array_filter(array_map('trim', explode(';', $cookie)));
+
+        // The name of the cookie (first kvp) must include an equal sign.
+        if (empty($pieces) || !strpos($pieces[0], '=')) {
+            return false;
+        }
+
+        // Create the default return array
+        $data = array_merge(array_fill_keys(array_keys(self::$cookieParts), null), array(
+            'cookies'   => array(),
+            'data'      => array(),
+            'path'      => $path ?: '/',
+            'http_only' => false,
+            'discard'   => false,
+            'domain'    => $host
+        ));
+        $foundNonCookies = 0;
+
+        // Add the cookie pieces into the parsed data array
+        foreach ($pieces as $part) {
+
+            $cookieParts = explode('=', $part, 2);
+            $key = trim($cookieParts[0]);
+
+            if (count($cookieParts) == 1) {
+                // Can be a single value (e.g. secure, httpOnly)
+                $value = true;
+            } else {
+                // Be sure to strip wrapping quotes
+                $value = trim($cookieParts[1], " \n\r\t\0\x0B\"");
+                if ($decode) {
+                    $value = urldecode($value);
+                }
+            }
+
+            // Only check for non-cookies when cookies have been found
+            if (!empty($data['cookies'])) {
+                foreach (self::$cookieParts as $mapValue => $search) {
+                    if (!strcasecmp($search, $key)) {
+                        $data[$mapValue] = $mapValue == 'port' ? array_map('trim', explode(',', $value)) : $value;
+                        $foundNonCookies++;
+                        continue 2;
+                    }
+                }
+            }
+
+            // If cookies have not yet been retrieved, or this value was not found in the pieces array, treat it as a
+            // cookie. IF non-cookies have been parsed, then this isn't a cookie, it's cookie data. Cookies then data.
+            $data[$foundNonCookies ? 'data' : 'cookies'][$key] = $value;
+        }
+
+        // Calculate the expires date
+        if (!$data['expires'] && $data['max_age']) {
+            $data['expires'] = time() + (int) $data['max_age'];
+        }
+
+        return $data;
+    }
+}

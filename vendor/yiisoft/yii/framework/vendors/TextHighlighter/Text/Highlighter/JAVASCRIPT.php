@@ -1,104 +1,613 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Auto-generated class. JAVASCRIPT syntax highlighting 
+ *
+ * PHP version 4 and 5
+ *
+ * LICENSE: This source file is subject to version 3.0 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @link       http://pear.php.net/package/Text_Highlighter
+ * @category   Text
+ * @package    Text_Highlighter
+ * @version    generated from: : javascript.xml,v 1.3 2008/01/01 23:43:36 ssttoo Exp 
+ * @author Andrey Demenev <demenev@gmail.com>
+ *
+ */
+
+/**
+ * Auto-generated class. JAVASCRIPT syntax highlighting
+ *
+ * @author Andrey Demenev <demenev@gmail.com>
+ * @category   Text
+ * @package    Text_Highlighter
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @version    Release: 0.7.1
+ * @link       http://pear.php.net/package/Text_Highlighter
+ */
+class  Text_Highlighter_JAVASCRIPT extends Text_Highlighter
+{
+    var $_language = 'javascript';
+
+    /**
+     *  Constructor
+     *
+     * @param array  $options
+     * @access public
+     */
+    function __construct($options=array())
+    {
+
+        $this->_options = $options;
+        $this->_regs = array (
+            -1 => '/((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)\\/\\*)|((?i)")|((?i)\')|((?i)\\/\\/)|((?i)[a-z_]\\w*)|((?i)0x\\d*|\\d*\\.?\\d+)/',
+            0 => '/((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)\\/\\*)|((?i)")|((?i)\')|((?i)\\/\\/)|((?i)[a-z_]\\w*)|((?i)0x\\d*|\\d*\\.?\\d+)/',
+            1 => '/((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)\\/\\*)|((?i)")|((?i)\')|((?i)\\/\\/)|((?i)[a-z_]\\w*)|((?i)0x\\d*|\\d*\\.?\\d+)/',
+            2 => '/((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)\\/\\*)|((?i)")|((?i)\')|((?i)\\/\\/)|((?i)[a-z_]\\w*)|((?i)0x\\d*|\\d*\\.?\\d+)/',
+            3 => '/((?i)((https?|ftp):\\/\\/[\\w\\?\\.\\-\\&=\\/%+]+)|(^|[\\s,!?])www\\.\\w+\\.\\w+[\\w\\?\\.\\&=\\/%+]*)|((?i)\\w+[\\.\\w\\-]+@(\\w+[\\.\\w\\-])+)|((?i)\\b(note|fixme):)|((?i)\\$\\w+:.+\\$)/',
+            4 => '/((?i)\\\\\\\\|\\\\"|\\\\\'|\\\\`|\\\\t|\\\\n|\\\\r)/',
+            5 => '/((?i)\\\\\\\\|\\\\"|\\\\\'|\\\\`)/',
+            6 => '/((?i)((https?|ftp):\\/\\/[\\w\\?\\.\\-\\&=\\/%+]+)|(^|[\\s,!?])www\\.\\w+\\.\\w+[\\w\\?\\.\\&=\\/%+]*)|((?i)\\w+[\\.\\w\\-]+@(\\w+[\\.\\w\\-])+)|((?i)\\b(note|fixme):)|((?i)\\$\\w+:.+\\$)/',
+        );
+        $this->_counts = array (
+            -1 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+            ),
+            0 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+            ),
+            1 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+            ),
+            2 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+            ),
+            3 => 
+            array (
+                0 => 3,
+                1 => 1,
+                2 => 1,
+                3 => 0,
+            ),
+            4 => 
+            array (
+                0 => 0,
+            ),
+            5 => 
+            array (
+                0 => 0,
+            ),
+            6 => 
+            array (
+                0 => 3,
+                1 => 1,
+                2 => 1,
+                3 => 0,
+            ),
+        );
+        $this->_delim = array (
+            -1 => 
+            array (
+                0 => 'brackets',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'comment',
+                4 => 'quotes',
+                5 => 'quotes',
+                6 => 'comment',
+                7 => '',
+                8 => '',
+            ),
+            0 => 
+            array (
+                0 => 'brackets',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'comment',
+                4 => 'quotes',
+                5 => 'quotes',
+                6 => 'comment',
+                7 => '',
+                8 => '',
+            ),
+            1 => 
+            array (
+                0 => 'brackets',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'comment',
+                4 => 'quotes',
+                5 => 'quotes',
+                6 => 'comment',
+                7 => '',
+                8 => '',
+            ),
+            2 => 
+            array (
+                0 => 'brackets',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'comment',
+                4 => 'quotes',
+                5 => 'quotes',
+                6 => 'comment',
+                7 => '',
+                8 => '',
+            ),
+            3 => 
+            array (
+                0 => '',
+                1 => '',
+                2 => '',
+                3 => '',
+            ),
+            4 => 
+            array (
+                0 => '',
+            ),
+            5 => 
+            array (
+                0 => '',
+            ),
+            6 => 
+            array (
+                0 => '',
+                1 => '',
+                2 => '',
+                3 => '',
+            ),
+        );
+        $this->_inner = array (
+            -1 => 
+            array (
+                0 => 'code',
+                1 => 'code',
+                2 => 'code',
+                3 => 'comment',
+                4 => 'string',
+                5 => 'string',
+                6 => 'comment',
+                7 => 'identifier',
+                8 => 'number',
+            ),
+            0 => 
+            array (
+                0 => 'code',
+                1 => 'code',
+                2 => 'code',
+                3 => 'comment',
+                4 => 'string',
+                5 => 'string',
+                6 => 'comment',
+                7 => 'identifier',
+                8 => 'number',
+            ),
+            1 => 
+            array (
+                0 => 'code',
+                1 => 'code',
+                2 => 'code',
+                3 => 'comment',
+                4 => 'string',
+                5 => 'string',
+                6 => 'comment',
+                7 => 'identifier',
+                8 => 'number',
+            ),
+            2 => 
+            array (
+                0 => 'code',
+                1 => 'code',
+                2 => 'code',
+                3 => 'comment',
+                4 => 'string',
+                5 => 'string',
+                6 => 'comment',
+                7 => 'identifier',
+                8 => 'number',
+            ),
+            3 => 
+            array (
+                0 => 'url',
+                1 => 'url',
+                2 => 'inlinedoc',
+                3 => 'inlinedoc',
+            ),
+            4 => 
+            array (
+                0 => 'special',
+            ),
+            5 => 
+            array (
+                0 => 'special',
+            ),
+            6 => 
+            array (
+                0 => 'url',
+                1 => 'url',
+                2 => 'inlinedoc',
+                3 => 'inlinedoc',
+            ),
+        );
+        $this->_end = array (
+            0 => '/(?i)\\}/',
+            1 => '/(?i)\\)/',
+            2 => '/(?i)\\]/',
+            3 => '/(?i)\\*\\//',
+            4 => '/(?i)"/',
+            5 => '/(?i)\'/',
+            6 => '/(?mi)$/',
+        );
+        $this->_states = array (
+            -1 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => 4,
+                5 => 5,
+                6 => 6,
+                7 => -1,
+                8 => -1,
+            ),
+            0 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => 4,
+                5 => 5,
+                6 => 6,
+                7 => -1,
+                8 => -1,
+            ),
+            1 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => 4,
+                5 => 5,
+                6 => 6,
+                7 => -1,
+                8 => -1,
+            ),
+            2 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => 4,
+                5 => 5,
+                6 => 6,
+                7 => -1,
+                8 => -1,
+            ),
+            3 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+            ),
+            4 => 
+            array (
+                0 => -1,
+            ),
+            5 => 
+            array (
+                0 => -1,
+            ),
+            6 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+            ),
+        );
+        $this->_keywords = array (
+            -1 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => 
+                array (
+                    'builtin' => '/^(String|Array|RegExp|Function|Math|Number|Date|Image|window|document|navigator|onAbort|onBlur|onChange|onClick|onDblClick|onDragDrop|onError|onFocus|onKeyDown|onKeyPress|onKeyUp|onLoad|onMouseDown|onMouseOver|onMouseOut|onMouseMove|onMouseUp|onMove|onReset|onResize|onSelect|onSubmit|onUnload)$/',
+                    'reserved' => '/^(break|continue|do|while|export|for|in|if|else|import|return|label|switch|case|var|with|delete|new|this|typeof|void|abstract|boolean|byte|catch|char|class|const|debugger|default|double|enum|extends|false|final|finally|float|function|implements|goto|instanceof|int|interface|long|native|null|package|private|protected|public|short|static|super|synchronized|throw|throws|transient|true|try|volatile)$/',
+                ),
+                8 => 
+                array (
+                ),
+            ),
+            0 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => 
+                array (
+                    'builtin' => '/^(String|Array|RegExp|Function|Math|Number|Date|Image|window|document|navigator|onAbort|onBlur|onChange|onClick|onDblClick|onDragDrop|onError|onFocus|onKeyDown|onKeyPress|onKeyUp|onLoad|onMouseDown|onMouseOver|onMouseOut|onMouseMove|onMouseUp|onMove|onReset|onResize|onSelect|onSubmit|onUnload)$/',
+                    'reserved' => '/^(break|continue|do|while|export|for|in|if|else|import|return|label|switch|case|var|with|delete|new|this|typeof|void|abstract|boolean|byte|catch|char|class|const|debugger|default|double|enum|extends|false|final|finally|float|function|implements|goto|instanceof|int|interface|long|native|null|package|private|protected|public|short|static|super|synchronized|throw|throws|transient|true|try|volatile)$/',
+                ),
+                8 => 
+                array (
+                ),
+            ),
+            1 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => 
+                array (
+                    'builtin' => '/^(String|Array|RegExp|Function|Math|Number|Date|Image|window|document|navigator|onAbort|onBlur|onChange|onClick|onDblClick|onDragDrop|onError|onFocus|onKeyDown|onKeyPress|onKeyUp|onLoad|onMouseDown|onMouseOver|onMouseOut|onMouseMove|onMouseUp|onMove|onReset|onResize|onSelect|onSubmit|onUnload)$/',
+                    'reserved' => '/^(break|continue|do|while|export|for|in|if|else|import|return|label|switch|case|var|with|delete|new|this|typeof|void|abstract|boolean|byte|catch|char|class|const|debugger|default|double|enum|extends|false|final|finally|float|function|implements|goto|instanceof|int|interface|long|native|null|package|private|protected|public|short|static|super|synchronized|throw|throws|transient|true|try|volatile)$/',
+                ),
+                8 => 
+                array (
+                ),
+            ),
+            2 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => 
+                array (
+                    'builtin' => '/^(String|Array|RegExp|Function|Math|Number|Date|Image|window|document|navigator|onAbort|onBlur|onChange|onClick|onDblClick|onDragDrop|onError|onFocus|onKeyDown|onKeyPress|onKeyUp|onLoad|onMouseDown|onMouseOver|onMouseOut|onMouseMove|onMouseUp|onMove|onReset|onResize|onSelect|onSubmit|onUnload)$/',
+                    'reserved' => '/^(break|continue|do|while|export|for|in|if|else|import|return|label|switch|case|var|with|delete|new|this|typeof|void|abstract|boolean|byte|catch|char|class|const|debugger|default|double|enum|extends|false|final|finally|float|function|implements|goto|instanceof|int|interface|long|native|null|package|private|protected|public|short|static|super|synchronized|throw|throws|transient|true|try|volatile)$/',
+                ),
+                8 => 
+                array (
+                ),
+            ),
+            3 => 
+            array (
+                0 => 
+                array (
+                ),
+                1 => 
+                array (
+                ),
+                2 => 
+                array (
+                ),
+                3 => 
+                array (
+                ),
+            ),
+            4 => 
+            array (
+                0 => 
+                array (
+                ),
+            ),
+            5 => 
+            array (
+                0 => 
+                array (
+                ),
+            ),
+            6 => 
+            array (
+                0 => 
+                array (
+                ),
+                1 => 
+                array (
+                ),
+                2 => 
+                array (
+                ),
+                3 => 
+                array (
+                ),
+            ),
+        );
+        $this->_parts = array (
+            0 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+                6 => NULL,
+                7 => NULL,
+                8 => NULL,
+            ),
+            1 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+                6 => NULL,
+                7 => NULL,
+                8 => NULL,
+            ),
+            2 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+                6 => NULL,
+                7 => NULL,
+                8 => NULL,
+            ),
+            3 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+            ),
+            4 => 
+            array (
+                0 => NULL,
+            ),
+            5 => 
+            array (
+                0 => NULL,
+            ),
+            6 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+            ),
+        );
+        $this->_subst = array (
+            -1 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+            ),
+            0 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+            ),
+            1 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+            ),
+            2 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+            ),
+            3 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+            ),
+            4 => 
+            array (
+                0 => false,
+            ),
+            5 => 
+            array (
+                0 => false,
+            ),
+            6 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+            ),
+        );
+        $this->_conditions = array (
+        );
+        $this->_kwmap = array (
+            'builtin' => 'builtin',
+            'reserved' => 'reserved',
+        );
+        $this->_defClass = 'code';
+        $this->_checkDefines();
+    }
+    
+}

@@ -1,64 +1,89 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+
+class GroupHandlerTest extends TestCase
+{
+    /**
+     * @covers Monolog\Handler\GroupHandler::__construct
+     * @expectedException InvalidArgumentException
+     */
+    public function testConstructorOnlyTakesHandler()
+    {
+        new GroupHandler(array(new TestHandler(), "foo"));
+    }
+
+    /**
+     * @covers Monolog\Handler\GroupHandler::__construct
+     * @covers Monolog\Handler\GroupHandler::handle
+     */
+    public function testHandle()
+    {
+        $testHandlers = array(new TestHandler(), new TestHandler());
+        $handler = new GroupHandler($testHandlers);
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::INFO));
+        foreach ($testHandlers as $test) {
+            $this->assertTrue($test->hasDebugRecords());
+            $this->assertTrue($test->hasInfoRecords());
+            $this->assertTrue(count($test->getRecords()) === 2);
+        }
+    }
+
+    /**
+     * @covers Monolog\Handler\GroupHandler::handleBatch
+     */
+    public function testHandleBatch()
+    {
+        $testHandlers = array(new TestHandler(), new TestHandler());
+        $handler = new GroupHandler($testHandlers);
+        $handler->handleBatch(array($this->getRecord(Logger::DEBUG), $this->getRecord(Logger::INFO)));
+        foreach ($testHandlers as $test) {
+            $this->assertTrue($test->hasDebugRecords());
+            $this->assertTrue($test->hasInfoRecords());
+            $this->assertTrue(count($test->getRecords()) === 2);
+        }
+    }
+
+    /**
+     * @covers Monolog\Handler\GroupHandler::isHandling
+     */
+    public function testIsHandling()
+    {
+        $testHandlers = array(new TestHandler(Logger::ERROR), new TestHandler(Logger::WARNING));
+        $handler = new GroupHandler($testHandlers);
+        $this->assertTrue($handler->isHandling($this->getRecord(Logger::ERROR)));
+        $this->assertTrue($handler->isHandling($this->getRecord(Logger::WARNING)));
+        $this->assertFalse($handler->isHandling($this->getRecord(Logger::DEBUG)));
+    }
+
+    /**
+     * @covers Monolog\Handler\GroupHandler::handle
+     */
+    public function testHandleUsesProcessors()
+    {
+        $test = new TestHandler();
+        $handler = new GroupHandler(array($test));
+        $handler->pushProcessor(function ($record) {
+            $record['extra']['foo'] = true;
+
+            return $record;
+        });
+        $handler->handle($this->getRecord(Logger::WARNING));
+        $this->assertTrue($test->hasWarningRecords());
+        $records = $test->getRecords();
+        $this->assertTrue($records[0]['extra']['foo']);
+    }
+}

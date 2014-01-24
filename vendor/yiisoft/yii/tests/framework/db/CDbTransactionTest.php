@@ -1,51 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('system.db.CDbConnection');
+
+class CDbTransactionTest extends CTestCase
+{
+	private $_connection;
+
+	public function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->_connection=new CDbConnection('sqlite::memory:');
+		$this->_connection->active=true;
+		$this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/data/sqlite.sql'));
+	}
+
+	public function tearDown()
+	{
+		$this->_connection->active=false;
+	}
+
+	public function testBeginTransaction()
+	{
+		$sql='INSERT INTO posts(id,title,create_time,author_id) VALUES(10,\'test post\',11000,1)';
+		$transaction=$this->_connection->beginTransaction();
+		try
+		{
+			$this->_connection->createCommand($sql)->execute();
+			$this->_connection->createCommand($sql)->execute();
+			$this->fail('Expected exception not raised');
+			$transaction->commit();
+		}
+		catch(Exception $e)
+		{
+			$transaction->rollback();
+			$reader=$this->_connection->createCommand('SELECT * FROM posts WHERE id=10')->query();
+			$this->assertFalse($reader->read());
+		}
+	}
+
+	public function testCommit()
+	{
+		$sql='INSERT INTO posts(id,title,create_time,author_id) VALUES(10,\'test post\',11000,1)';
+		$transaction=$this->_connection->beginTransaction();
+		try
+		{
+			$this->_connection->createCommand($sql)->execute();
+			$this->assertTrue($transaction->active);
+			$transaction->commit();
+			$this->assertFalse($transaction->active);
+		}
+		catch(Exception $e)
+		{
+			$transaction->rollback();
+			$this->fail('Unexpected exception');
+		}
+		$n=$this->_connection->createCommand('SELECT COUNT(*) FROM posts WHERE id=10')->queryScalar();
+		$this->assertEquals($n,1);
+	}
+}
+

@@ -1,66 +1,97 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ODedlqy2xvoqZLDmxjpNYNJOt4qJ3YY/OdepSG==
+<?php
+namespace Codeception\PHPUnit;
+
+use Codeception\Configuration;
+use Codeception\PHPUnit\Log\JUnit;
+use Codeception\PHPUnit\Overrides\Filter;
+use Codeception\PHPUnit\ResultPrinter\HTML;
+use Codeception\PHPUnit\ResultPrinter\Report;
+
+class Runner extends \PHPUnit_TextUI_TestRunner {
+
+    public static $persistentListeners = array();
+    protected $defaultListeners = array('xml' => false, 'html' => false, 'tap' => false, 'json' => false);
+    protected $config = array();
+    protected $log_dir = null;
+    protected $defaultArguments = array(
+        'report' => false,
+    );
+
+    public function __construct()
+    {
+        $this->config = Configuration::config();
+        $this->log_dir = Configuration::logDir(); // prepare log dir
+        $this->phpUnitOverriders();
+        parent::__construct();
+    }
+
+    public function phpUnitOverriders()
+    {
+        require_once __DIR__.DIRECTORY_SEPARATOR.'Overrides/Filter.php';
+    }
+
+    /**
+     * @return null|\PHPUnit_TextUI_ResultPrinter
+     */
+    public function getPrinter() {
+        return $this->printer;
+    }
+
+	public function doEnhancedRun(\PHPUnit_Framework_Test $suite, \PHPUnit_Framework_TestResult $result, array $arguments = array())
+	{
+        unset($GLOBALS['app']); // hook for not to serialize globals
+
+        $arguments = array_merge($this->defaultArguments, $arguments);
+	    $this->handleConfiguration($arguments);
+        $result->convertErrorsToExceptions(false);
+        
+        if ($arguments['report']) $this->printer = new Report();
+
+        if (empty(self::$persistentListeners)) $this->applyReporters($result, $arguments);
+
+        $arguments['listeners'][] = $this->printer;
+
+        // clean up listeners between suites
+	    foreach ($arguments['listeners'] as $listener) {
+	        $result->addListener($listener);
+	    }
+
+	    $suite->run(
+	      $result,
+	      $arguments['filter'],
+	      $arguments['groups'],
+	      $arguments['excludeGroups'],
+	      $arguments['processIsolation']
+	    );
+
+	    unset($suite);
+
+        foreach ($arguments['listeners'] as $listener) {
+   	        $result->removeListener($listener);
+   	    }
+
+	    return $result;
+	}
+
+    /**
+     * @param \PHPUnit_Framework_TestResult $result
+     * @param array $arguments
+     * @return array
+     */
+    protected function applyReporters(\PHPUnit_Framework_TestResult $result, array $arguments)
+    {
+        foreach ($this->defaultListeners as $listener => $value) {
+            if (!isset($arguments[$listener])) $arguments[$listener] = $value;
+        }
+
+        if ($arguments['html']) self::$persistentListeners[] = new HTML($this->log_dir . 'report.html');
+        if ($arguments['xml']) self::$persistentListeners[] = new JUnit($this->log_dir . 'report.xml', false);
+        if ($arguments['tap']) self::$persistentListeners[] = new \PHPUnit_Util_Log_TAP($this->log_dir . 'report.tap.log');
+        if ($arguments['json']) self::$persistentListeners[] = new \PHPUnit_Util_Log_JSON($this->log_dir . 'report.json');
+
+        foreach (self::$persistentListeners as $listener) {
+            $result->addListener($listener);
+        }
+    }
+
+}

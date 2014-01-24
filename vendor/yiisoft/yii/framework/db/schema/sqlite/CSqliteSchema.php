@@ -1,152 +1,333 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPzv5BfxUzfBHivoxlJH9kMs8JMozO6t869YiFUXR81P3Hg8PkyKmcLWdY2TSRCeso3tctBrp
-AyKA2YBcWr3EYZkcrCCfPju/EPWWIeYcE1253Tws3jpphX4l2688Uh3ch4vbN9F93iLAn9rm6Z2U
-slE7Bvo4arFp+e9vy5hKNJL6tugYpXi14ujBAeymivwqLaNX6xMpp+O9lEZcEHolqZlch3LNJIKi
-XMv3WWlrxn51Pt/j6Rgkhr4euJltSAgiccy4GDnfTCTWOwdfr6LW3zJaizXRpaiHuVxK2KnKLFSA
-A+tpLVoCdh3Qptd54cI0DfqlEp5fYyw65Dn/jEH/XfxPWS0tW/+kiKZEB7aTbuSeO2zLIRtsK9NO
-yQCbYcnHwGrL4xUTUtSGK/xJ75iGazRrgei7VC+p2uODTkGZppGOaAXUXQQxaYOUrEOh3to8M7F6
-Mu9HEX1uPVDDa4GpnEr+SLCAj/J9tRtGf4K9EMbSOOtimOY0Mn5FHsby0XNswtfFsVfRCRoqSqCG
-SNVfvANhffIZtEX6bMTynWG924/uJTRRXeAxUqHVfi5hTtQMLCGa3iFeCXE6S94cSHqICJOhTBNR
-b4ScxouPHifjZdpmPry2KrrTCAU4B0//yMKl6B5EHSMSlVWllf7rd2QJIjd8o7WxhZ8hTwDVOTKq
-CtfUEQzTGQaPJVOrvd6InfmXcHofMV8kf52TiLpk6ekms00HJ0CLJnVuZ1ej4gyM/aJ386OrX7hu
-2D8GF+HXIlMDHX4VOm8MIp28EgKlGgQXlyPkD0H48qqwWxOswbGSS+sOUz6e5hI7JQVoxcPvLzGj
-T12n6IrYPEm1SpagLGxeHAyGyMb3pRJbI+JmPc+dt9UFzJ2OS2m/4Zy1/2XOInsOspJW1qz3xN87
-lTiqQw+nLOTZ60Byi0jgLNHNmIA5zMAtowwGoPCkI7+/rZXL/dqKZvg46khNVL61rNtBAoF/c02V
-2T2ZRViY35gAnGanqb6JvG6WGR/snsHOEo1WTvbSBOjLFzkIeAdpzn3WlyNmlLw6fL0K4YtXyW2l
-8uOsg35FLQX9Ii3AQxXy1PV4w7+pgEvD8VhBxWNIDnXIgOL8nBTKNY/1Gz/CVI4KTJNUT8IQWRDQ
-kt59aVAZdsBx4LRZK0NllwtMiXoqw86BQUDHKs0ep9Fg3evPVbYJngcUXNUXcNWbHd2rlwnIBzuY
-m/6Jv6JLrnyMtfx1Ido3I7vdu+hrJoVY0V18QsRkL0hSE2dlje2qJBJnS9hvhaSAzTCNhjQiuWZx
-+seTQkly6f07IUEz3nqeRL0GKyf/sGdrOb83/yEm5N1Y/avAEo+7cdMvNAfZFZaqFM9ImPBEIyGf
-jgcr3LOiv+wIaX5ZoqC8kOEC6Xd5lg/c6Ir4YoHkkS6etl4vOug/0YeQ7/+0hdpObBNttyaXZbXa
-HDboyYNZt8AA2NH28uElV2jFbzX8RDsR1pHLF+rFOCYO6vD1yNLf65yJP1mU0f0QmxcPCtLIDwOz
-O+xbaEID9IZR4Tz0mMOSbk8oQMzBj1AjoczLAfjhvhCnmBOewCQhvvKn8TVIQzxrFOdEqV8s02j8
-XEieBCoI/mAg2mDAfpVXlftY0FdiSL0BLizlCKnsAhB9zXSQdZ2vOzMClpqJcuy+UVe/acbLQMh/
-mj+E5RATBvfO0DTcj4u9y26VVvQzmSECrcutSQG2c7qUzkn9v9eLHHZgvWGlpRkR/Shl5RLxKFMr
-IvjKVfCDtashcNZkimsUfzE8M7rzoJDk/o3DZvGcQZgnMlWgofMy+yQKNgJ1dy0wUysGqcMLVHB4
-qvflqQf1467I69AyoIxKFf+oYm513UiiOloC27fHthb6qjGmrcoi2HKdQ0B667mmCc4OeI47IZ1z
-RgJXSi2EDI9d4wFq2AHqx7DiyLgFmWwPZoUyE0xCRmXykFnU0lhchitNAuIEl1BlCS4lnHf2UCIJ
-UnJ2X60kygrNbhVr10eXeE3SHLQTOFAW9PYXMFsR+VLWFKZx3QnhbOPP9Oys/JwblBkjDuvqzgyx
-tL7JDvOnUWOlPIcfhpgI5Gc8bfYXf3Clu4+tsNoAa1q6TA0/whpNv8MMtkLR4fuApnj+FN68KHXJ
-fS6gPAoPgDrRWFMmTfEmL+AbS/2ZtcaqORHV8Q7+RvcuYbyw3yDQzun3o5P5ofi5f1MsjFUeETA2
-YyO9of8eGNkUipkexUQRJEgpI6mWQj4+xkyYNY6WWNBgiI1psVqTrNTeTR4MERO7WrMt49AzKKwA
-8EYi6nz+FRAcUsWd74MQ8YIq5yrIgP3O+uqK3U+iYHn5bPJI6L1LJXPad+DTZlfmkdPVVWj5c3Xz
-0USg/t2T0sfkCmlihcL/DVUTK64/Q8Ya2SKdiEWPENZATnzMJOdF9nnPDuxrhcPjanMytwzbdMQs
-EG1KnE6kpbaHil4E3G31k80aoZYRiNVmsZ00S/sSmfOUuhTuitcI6GrJ7xrV4Vrly3OaiZrM31Mc
-Df/8SB9sdvQ+U9L802uB87Prl2X4UlS3j5SkYzmVhW1DglTfAJUWT/bufFOO9xWrt8cejXFWAg3u
-CLfzU+yrLELj5/Y6QtOtoWSP8Ri8WgSLdtp097AP5wBM1y4Y5vvtdpvusoU13rLe2G97XvjqBOpN
-BwwbTDRQP8Fq1QSJ06dIhb8Cn3aejKUSCs7qlKyrAcNUXQpo4mzQXjFZuzWnrcKBGEuVvpuwxiUP
-k4Q2zycWPvUr1Emlikp2PBRLH167KbJUwjlsiNC5fyCFxXNC9PtqfFAs9U59JNfYUfuBBZQ8zRO8
-pKizfHZWe/eqIiKMwcE+OBilc1jAK/2Ns04rCIoBO5TZKJQW0q4EQd+DP/Ci2t561HKNjXQM7VQs
-O+rI8yN41aSjsiG8/qcI+/nJDnFUiVCBI4we/eeDP/QQAfqfOTMTBRhO6y+Qe3HMSWy60ymJCDau
-J8tfbir6IMnkh1w/dbgFn4WnWh6U3dJmswsoXU5D81mu3S7FnXSepffFtIW3GO5JtDDpfg1iIPin
-YFQXJcI1JxQP611jbNxu0M6g7js+mLRXl9r7HFuPQVP2PQaa/l8WnNR5OpyIk9Pp9r9uJqNbhrPX
-XKmzGl7B2IIRzUs61PaPdxLBm7R9IIsOxG0MaRnoWeKzEZtnaYIawgSI4KbKtdQoUNlIpUtMuJU0
-HwUBWYVrW7hByfZAU+DDtHDPjt+lKjGKm8fXrvK34Ia2+xwOQrlcveZvo2JLBFVcDBBHzr6g4kFH
-Ad7IpsRMWJGpS1BU5aK/n+sMee/OOaWFGeqPBj/XIRiZOrbO+yIRaPTCnqjm6Xe8vtgUvzDs6GaC
-IHq4n7zmoNMu2bw3Wdfnsmx8AB5xzEJuJiDzpuShbXIyNyPFV/C//waj/GkeMjmVItRSPayOTSXZ
-mteD3QLLD3J61EgZADPLY4I3TLTCITJL8DG/V/vKHiT71oEw1q7G3GUBiFSbW1eHUaeYZoy1eIar
-7rGQ5ZMfbfS9CwNzcQRU3D1Yx6zJ/u+A87hhlrYB+LhRCczmLtbl3+PW9C34fW2KIOoXEg6aiFpo
-in4fxXt6vh9sVK8+6S07oNT4G5Aujbetr5+Yp513Bd5cwESXktm+xNn4pftuiEPyq7cM/bpu4oIp
-omAqpdJiPdBmdPE0QbWAeyAqV9YybbnMOcNLtzEWLD13Hj5Yn+VaBvqAIYuUheuNMBxRfr8fqGcR
-ANU1v5r/SQAa4m3/bWJX8mo9BHQRBOaWk46vMlgq5smgNdslNT7ybDChp81GtudcGAHJBQSdY65u
-xzyBsrAYRiOjJ+O7k+qA09r1lRpiVh1KzLaYQXu2/YQzzrHrZ+qJnwJwX52sEX/ub+GJvUdJVeHe
-TdpUEkwyP+11oirCgJy8w5I5Q9I9GZchuP4zcpjFOzeFx4sxROCxq20KZ2+vWM3PJA07d/XoSSpU
-g3YWCZCIR6yv6/VX15kO8Kh4OuF/Y0a0wnnzpenFGunZIQtTnH5pTuprUdIkxH26oyIw9ymRGEc+
-wcfFz0t46ziGRiKh8IaPN6dMbF0OxlrB7ODKbbwfgFbulxyrZLhJQF+qeDy6Es+xc8T+ppbdmEeM
-pCTim5tVKiaeLUAPhOZ1x587PWYnNIg8JsA82ErFFV5jJ30I1RwLMMyC2cC86HglpJS1e1amaF1G
-/mJcqrZEvSY7/tTGhvU44Q6J5nGH3dfyusN0qCNsLbqvlXiNlBR4aHzmaTdIQtQJL8voUgTerbd4
-8KzwTUMVz58fQtL1cxyXZgiSyO/AILy6bdARaD6MmF1dZBRFWAnODiSTfHqldpwvMAwPCsqrlz5+
-KTyRHkMpH1iX4qx332ne8VOlwps4FpBXUVDfs0jNmAMpH1DEbB3tO2ZIdfmwsLwSJkWNsyeEDnx2
-gjSrMdKCgtD/u65A/sLDtftDIc45Q+iJ0+u7ae/gFsJU2P1JZvRoQ1F9DNCa/oU0U7Roanl8DpcH
-guA9ObOwunTCpmM3TL6u28eDOBh5XkESKh/WXDo5joVQBIAPrhsgtD8e7mO7CsT5LVVMITi4wH6R
-UupgTqs7NNzKBfj6fKBKEmma9h30sD3s4+VOiFwN+tIuIuyp1e0KWxIPPwQJJZZHE+MpABV8iApV
-9WjiyjKiYg20pvdNZUMCODbu1zS0Eh9MIt8T7ncSba1lcvYQJ38IET0lhByHL9+ONpBVLEvLzBh2
-MsLlR5sufztJQaQniIqAEUSLm6B7p1HVm+Vvmc7fZT3KJqQG4yxVLWR/+oMIUcZDLd6WeBbr8VVJ
-4Jdk37GUumKL3IqUC//wtEoYGjcTD2xyKrD5LZ3ntD3ol0VpjFnQRvWD3TIqzOUDPi7ehZxmwCZm
-+IxiG29OHCrZzb3jy9YtuaZ3Mh9vTOjQOQNBRgS80yMVAQIVL1xotqK1+NNex5V3dMHkfSDe7Tyi
-gdRKEIORoG0j6+22kRhUyy5sw3LCPsOudUAxyHJnQ59RPQ/Y3rbqHdSHDu7LfCNLs+T4E9J4cBwP
-+LbhVyhjGQtY4mzaxkUcmBaVAB1iQMH3b2LAp0icqjoTfw8fbfC8bKtNmRiQorFspxfacaHxrxvV
-/sUybWVIX0WSqiFe91h2lyDu+ePyCMDyt1RHQucrWSCOYut+3a2Cb8JRDkHHuUGIaHFP+KchqCrT
-HQ/vyBPjSvz/1ysHnIh8mNTnvFkCsqy/HVkkxc19099TztmujXc698rxRXUmbqYaGM/26PBEN/jM
-x3LI08x/ezdoCc8BJMkl6SYQ47iVuEqzaqJ6Q0FyE6JslFeLnONzAiwsCjaKcNToQ1HjNmW1Tyue
-J6AVwVPbSNJVhi1k1cb0uWzPGw46ZuNWsVKO1eyPwSMWJm8zUVY5JyY4vb3NHf8w5y1OgwlY9Sx5
-kfzSuRPVyOikboDGdKQ7FoS/r7msAB6VNbsbTxfxS8V7DWmdIlygpuI7Pff3ilU6qLhFETUbv78D
-LlyTk0EtdSzLRlOXw5oAT0Fp38gykvGOic3EtIvZkhk9p9Nia95efcLT51mZO18ejiTY4BgmEDE5
-epNUXuPSHuiSgx3y1k3XQ/S/hsVGNjEaZsnrkIxqx368qx2Wu9LS3WVCwRBDt/dxtuyzh0O7/Zwd
-FTJVuZBc72WA2+hhhmGFAScejcJejJvbNP/BaHie1t5ClnNpCj3dReSalKEiM1vo+zVfuIs3KXLC
-XyPFPtakVQdBX3JFhn7wl8AjRVMHHUwmGxDHPdthMtYuJ2LRx68/PBNi+xfKjKiMDBN3AI1JSySf
-yCbkLjBiOCkkXW/nEgxLPmRBLH//uVknLxQXfLjNPqr5t3KDvZyGpHBkd8NGlw5OG8ORLbzI6ayI
-WltYd8Q9GUdq5QSMXfHIENpi4SkS952xDQKv7BDmUMvqSeVVOwSwQ2WNP6ygkH/BIEWMitvcZZ7H
-H+aQ3tUVzg/WO1/ZcFcbgfoYGNEwbOCFztzdO5Mw7MEJFv9fqrTVpVu5nb/fvWVCqPUSd8ri2YSP
-HPqJQKY+YuGeeFQaRb6xgXvyqiP4zTKVlAGQ0OFvNQQRiUNSy0Kw7wamQXEthBoIpICxmYOLuBC8
-Ou5Di17TsARFpTqxkCFcuzaqEaxPPyV4ITYjD2W10Zd5zuTuFvIEOtIku+DmRETM3nEnd7EMp6Mg
-nk2TTEiPh2D5q1TiZrHiKTXVfoeotxeNa7knC2ne5z71J6xM41H+TlRTg4b6n5L/CtWGM4WTWAvs
-YqdODI/Njt1vPmNsWje1njqU9u9gygjt+CzmWO9UJxD6up1YfoStaun9VPaG5wRYj5Vp5gleLK3h
-sPPS/3z5MzKMPu46yw4tL9/iBmPrHSXDn7Q2GlcGbnqxnPNRSy/qzdLOFx8hCojAsEF1IuLQhBM1
-0qD0RLAMk7UW0hB4KvcQsOABwEdEhoMgPKJBTIVVd9YY4avD/6MI3E0rKXmuzg3c1BJXGz42Vw0S
-FMwG3qVJQDSiSeiYb7zkR6N6QcKdrl2vyqy+/rrFYizsMQsQQOMYdjJBc2DuZifnDY4Tfh+nLFdO
-RsEIYKbWbCTo0oziJXj8Z7sjxL/oKfzLib95YLhFA8hG9d/ZFsQZnmuWY1BVr52pqzKGNeC+yGbm
-hn708H1EcUUoFdUdD6vRS1yLHcPYsAHHhLSQ08Wl+lMojA6D5/fHCUsxY7a2g7Q9H3Wz2ruL654f
-bDyi/ugNe3a4p4QxhGIkABPExOhq+Ygyi/d5JgWJl8kkZpMNVu84PAglUv93vsxq7gn+vhuTkMPb
-6HLPIGv+8qGJpcEBQ6ELje8Phe4nGMubodLgfE0649RZNic0+MRpdgwpnVFW6/ploUoAybRxsbcL
-rRUPOgQqwpC3eABgQlRU88L/7VgNn5Yf5o43/WAbmxQ9o4UGW8nuBfcA31Tl+NhYptVsvn6bToBf
-Y1GEnLj3WJdKMWB0gljBgCIz0PS76K9tV7taIuNNT97cB0lS/uULM7AiZBxWw45WMEzuLAN4OT5l
-qqk/4rwHRW2dSCA5h98FAbWIOTp98zi8dK13++uuOsR1bGgPSonfuDwc44hZXzrQMAAyZEZbOPdj
-tcgIPb8jgS6PCow7xknUQesUnLdObopfdB5qwsHx0P/nEGKvFdt3A2PxG6e3E6otlNcHQmr+uK/U
-48kVMs2CvzCi6uGEUuEZ2SttLk/JI96NAKHEJEugA1GcIqU5nGPru6xtyAKZhu7wvc3rC8WC8Ehk
-VuHlQf/0oFd21GNaLm/8KWc/Utr9Yn7q7d1m5FILeySH77mBAzuH6dIKsHIHrVGleLY3xDDLw8c6
-rhYh099ZwnG7H+/c2ynPk+G4ysvbcTSoxFP5FM2G0ki8xqapy4eu5cEs7oE0+R2AeAwuPB/60pa6
-px+1VufOp7WVa1KDu4WB12ghGuj2Cst+3+8JRwfmweGzse+OvLDMkjC9qdU1f4doitSf49EBc6V9
-2aPtGyemsFcof3K7rW7ztIMz1TQMfx6+alV7SX/pGBb13t+MYW6FveDf0SP2ab4CHqEnXeWClRMB
-qx6cZ9bo/vAZDr172QV/IdrmzfLAKa2e9OIj99z9zcztayhJBXcGvDIc1l5Cn0MOX66Nc9HRxN0n
-SWSBGqe8bCeQ9TZbU1wSxLd6Hfv9sYvbEfV7lDbRmhb4LXnf+yVaQI3VMymnHEuqWfCU3F3agoyh
-GFQmb+eJTqgNQwW02YAFTKFkUeTqma69UzYeFtVLQS6ePHH+0OsQQornH5AuA6uNUDK7ThDvKqnA
-G6kiHtesMTuZBfMIYTPM/DwMpZzHKCNWquoPETG6pXFKbnDmgO4Jdx+XtoP2DjjrEp2fxcKJxWU1
-NJGcC02s+2Qpf8/elR/t/jnBokRwuXYyAbjH1QIeaxHiP2Z/7MEWjlHnps3rDm14ipGJZQoUwvIF
-MIvEKnQ9Mz7UW7jojPF/VjgqM/LCLoyHXwrmq5mZM6HAJEnWt4njT92/+2/0ZQMjrfpKzMtI5gzt
-R49E8aI+PE+pAKnlBDbT1MP5y1goEk/pf9H4/OKTGLe7FSPC/dDVPw1C2cpMaDzqf+U3Juf+L5aH
-5hN9dnr+RFS9fjgLjFVID2phmnGX/jWZ42qC/IOLsBOQOrN/ZMBfJEvEK6JrbtsLohgLIaExy91i
-mWZ04fK40/WjjNv66uDSOXvb7OTTNp1vfXZ5HfjGK41cGu55ydubxFNzNjOBZgT6yDImwn5FCR8C
-JHbfXXEV53rJp+IUVUwZr/oCrHjUAo59iIkjBpGqKXLJv+VKOo0UJaFoKg5ulFfZKV9lOs6Y14Il
-zfJ+pK7TWCp0G9o/b843mVxybINmqTMEW9QZYuLjrDmIM/kXasxWRGOU1lMiay4uh99JK35K53Wo
-s9vZbAx4ZloO3PyHoxe+LGv28RYuybaD76E+3TfARzvtm5v9/kZrXvStMr9tpkU9MxpYY/Jw/PQ8
-gVsBz/8C3/3vq45H2PuF2BvEL7mRXZAy+Qz4eGRjFLFDgV6jTKIOY9f5qv26Hxqp3A+Y8RXowDXz
-giC6fBe5Fc0Ty5xF+tQe4qKibPe3D5+yRzMXpKczs56lFno3a+9fy7AQlv1Ch3CYkmIUQYU5V5fu
-a4bN9cM0E0R3BWX3uajHAKZLTIvA/1Xr06wpCVy/3KJmwEWfqmjZCAskd6zvXY12SPDBXqmRClrN
-9sPDYqZS8IUFviwNCsiKYPTIHF3cHJf/lj6vb6irKm4z2BJ9Ur8sD901131ZpNBWpYS0y14JLAm0
-ZiMUNeFM9SyhwAKOA9NNGAvhwfcv2h7ZzQHtFgFYUV6VHJjnhoHm1BfgRakxyONSeUS4QbGK7WBq
-2WJWM61xK5qBC1PNNzciVRnTMexp8evly+riQfU+dusyk7wdIGAVG4WuRTfG9BMOxthoTOc5CGvC
-3XDAVpboKfjDd3Ypd699dZWaCvMh/UUywzpzZ0HLWygoqKfwAzk8eIBK9XGGq2Y9hqAgvvzG6Avy
-BqlwRsrp13w1uYxadebO1XND+AyZKYwlZlfs9pLmX88L7NUREoWo6U5z/yZpzFHtgtvq55uqQm6C
-oLdBGl13+8Q7K3t9YOeWxh96IC3OSSw8TJxNa6TbYLJv4wrekisoQjdcOKmzD9uWCjCB/5P7JuY5
-UKzpUfs4zlN9+noHAfRO0DUlDBe4MfoNAk6RJDg6r0WwblSV7iuOVPsyCZqmjTzyEoKPt3dydDQE
-91GvarOng5HQdUd+HgwoRToXURNvMAqbWECGwN14ezK36D/GexcYLYtE4PQFDjo63ZxVBp0oNrHt
-MGWcMkFWet5CRDKkt7yQwBwbW0Wr65k/YRaHNFEtpQYJ/nTGFddAr+V9jx+WeyKM5MSlW+BOouuM
-74TyMeMx+qua1NhhGLQulQd+va5NUNduXOnR9EGVwCGenQ+8W7MHiqPBtep1SfTiv4zGt9Q30omx
-cVOR4ZB6dlEAW0aLBuoNXvo53H7Q8FsvzXTn3VKqC1QtS27ve8q20LTjuRoSksuwJsPUxoSdPjsg
-8dzbiAb6QdpmDw3h+1CHEoF/sg7qtFzzRezX2rvZtz1vv8vyFbkJA5Lga7l+v6igBjYbTKE/QdgT
-xMQWfVa6oDYozXDi2V+121qEe9P2B714/Eou+svuvCri6ZtEX8vNyHh12ac+l4pk9hP5xT9rUJYs
-VtoPZD5NDuX/PhiFk/Pzy99buNVnxiYOGJ1m62zKi9xJ9N5vYwGv0xz/0s4sT/wh+PUclwigGTbh
-33+1XPwNEqEiGOHiPu/RTwdarKYort0MnIsWpOGe/gF0Ihcw6S52Q8iB6yfoCUCNqI3mC+PE7yiC
-a8fNETTfRmwnyy2/gboCRJekOu88lDqcE5ZJtZ8S5SvVBnPx4oBHQ/u7nD2RxIEwpgGHnM8FKXEt
-zCMNSFyrci9LoGctmiagJcD53y+0Jd+IBTrAtTzP5YKhWjo9Rud9hKICEAo0oJITJ6m/8rCpA0Kq
-8xYFT7AFrRPWMtZ/fk03vgigUjCcnlF5EvcrpLmCDhzr6VdBahC8vHcFSeMbwA6WFzsRqv9TDEVl
-G3cftX2T7nTpu42wxRZSE7A8YPobvSbhRcm+79macEFfCRz4zEs8eX/R71nEP/rGlvnCNGdRCEwX
-lZEDsBhoxjowp9Jut6BPuKTpRfzHZFnhnyYT7XxiThreOtL2L52Jz9OOxucoJka5ThHCtX+GR58k
-j03VbqzZysCXWeGVURXV2SvOszEJq6x2Tle8Odw4cH3KW0lo5ioJ1ZYHCDgkzSPodV2ylz9CC9pJ
-UXC3osEggeApyTz4iF2xoLkH0ZImUsMTOpMNtDicpRswvo3Upb4G2VyvjStZGr/tolvsVlVdCanZ
-8ebLlFnljuwGZguURdSCHpyR7fXiKGmY5t6qSEytpxXd2rRxrnemeaJo/MjphMrkIROQD/jI2D5C
-3fSsFLwsLRlgl3qZzcpc7/gHG/kWSi85ekw8aGQqECVeqn0qV1sJoc6A1PACqEGLesmULX8W1aSQ
-IfpE7/4qVoAFyPVT06D6hXqz1/VA/UrvaxiEWgyeMzEz+46x2YQQKlgl3YbINjyhY0//6CUAbdmu
-BFZx1PfsqalO1QdErmuKax8YdIw8U6Gvbt6zORarHYblqyVSPHIEktN6ZTXIeNZrtN57XZzpA1tY
-T4X+2Jur2yXamMvsAjM8P6AUr+JUTb87OURXM3HxlUscDgANCBQlKWA51LpxIHi7b/s0wNKlgfOv
-LjJzMr3NLpY6wY9x5uKWemq1XAwXAWOt8efVymzj2KQFjPjAY6LUnNR1U/S/wdvKmfqoSGKAiOfr
-YoTlxAEWoIWAkwhr34kA4O2+fYWhxwVvX3sv7OJs1BIUmoaKcLbdVkS3P9lQ/1gGFRr2HdC60oUd
-snSu69J5F/iat8O7ybVy3Qoo/69+FUnAJwuUNpdbN+oTQNqUC7aOtjG5ZujFZlyFb2lFYIQSLX97
-eAz0VvejPgsXJwh1QmLy9XQe/krLLGhq51vKeX5EDvM7gCD+jivnOZPQngTzbiarPT6rJioMgpHP
-Pk3FPjX33HKn9L2sVtwDS9hVw4v0Gz4A5NypU/kYKShKuFLf95gNB+LwdGoUbXzRVs9+sgtZk5G5
-6eZdSKWwxvvlN5g5X7Fy1A6nQE4PGoTFUulwA8b0gD93qJqnb84YGgz9ZqByKBW4Icec8Cxn54+Z
-7qXgu9oO4hSWgPBFKFkO7N12b7NIf5jQUvRU5A7mAfmqw9GJJYZ8p4E1CxYEsaSpM8gVWHVmlnBt
-8znJ0EXzBGsccpzdlh332jK/5yRINHX7AZOeRP24beMpFGUaeByafGWheKl/RKbr
+<?php
+/**
+ * CSqliteSchema class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CSqliteSchema is the class for retrieving metadata information from a SQLite (2/3) database.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.db.schema.sqlite
+ * @since 1.0
+ */
+class CSqliteSchema extends CDbSchema
+{
+	/**
+	 * @var array the abstract column types mapped to physical column types.
+	 * @since 1.1.6
+	 */
+    public $columnTypes=array(
+        'pk' => 'integer PRIMARY KEY AUTOINCREMENT NOT NULL',
+        'string' => 'varchar(255)',
+        'text' => 'text',
+        'integer' => 'integer',
+        'float' => 'float',
+        'decimal' => 'decimal',
+        'datetime' => 'datetime',
+        'timestamp' => 'timestamp',
+        'time' => 'time',
+        'date' => 'date',
+        'binary' => 'blob',
+        'boolean' => 'tinyint(1)',
+		'money' => 'decimal(19,4)',
+	);
+
+	/**
+	 * Resets the sequence value of a table's primary key.
+	 * The sequence will be reset such that the primary key of the next new row inserted
+	 * will have the specified value or max value of a primary key plus one (i.e. sequence trimming).
+	 * @param CDbTableSchema $table the table schema whose primary key sequence will be reset
+	 * @param integer|null $value the value for the primary key of the next new row inserted.
+	 * If this is not set, the next new row's primary key will have the max value of a primary
+	 * key plus one (i.e. sequence trimming).
+	 * @since 1.1
+	 */
+	public function resetSequence($table,$value=null)
+	{
+		if($table->sequenceName===null)
+			return;
+		if($value!==null)
+			$value=(int)($value)-1;
+		else
+			$value=(int)$this->getDbConnection()
+				->createCommand("SELECT MAX(`{$table->primaryKey}`) FROM {$table->rawName}")
+				->queryScalar();
+		try
+		{
+			// it's possible that 'sqlite_sequence' does not exist
+			$this->getDbConnection()
+				->createCommand("UPDATE sqlite_sequence SET seq='$value' WHERE name='{$table->name}'")
+				->execute();
+		}
+		catch(Exception $e)
+		{
+		}
+	}
+
+	/**
+	 * Enables or disables integrity check. Note that this method used to do nothing before 1.1.14. Since 1.1.14
+	 * it changes integrity check state as expected.
+	 * @param boolean $check whether to turn on or off the integrity check.
+	 * @param string $schema the schema of the tables. Defaults to empty string, meaning the current or default schema.
+	 * @since 1.1
+	 */
+	public function checkIntegrity($check=true,$schema='')
+	{
+		$this->getDbConnection()->createCommand('PRAGMA foreign_keys='.(int)$check)->execute();
+	}
+
+	/**
+	 * Returns all table names in the database.
+	 * @param string $schema the schema of the tables. This is not used for sqlite database.
+	 * @return array all table names in the database.
+	 */
+	protected function findTableNames($schema='')
+	{
+		$sql="SELECT DISTINCT tbl_name FROM sqlite_master WHERE tbl_name<>'sqlite_sequence'";
+		return $this->getDbConnection()->createCommand($sql)->queryColumn();
+	}
+
+	/**
+	 * Creates a command builder for the database.
+	 * @return CSqliteCommandBuilder command builder instance
+	 */
+	protected function createCommandBuilder()
+	{
+		return new CSqliteCommandBuilder($this);
+	}
+
+	/**
+	 * Loads the metadata for the specified table.
+	 * @param string $name table name
+	 * @return CDbTableSchema driver dependent table metadata. Null if the table does not exist.
+	 */
+	protected function loadTable($name)
+	{
+		$table=new CDbTableSchema;
+		$table->name=$name;
+		$table->rawName=$this->quoteTableName($name);
+
+		if($this->findColumns($table))
+		{
+			$this->findConstraints($table);
+			return $table;
+		}
+		else
+			return null;
+	}
+
+	/**
+	 * Collects the table column metadata.
+	 * @param CDbTableSchema $table the table metadata
+	 * @return boolean whether the table exists in the database
+	 */
+	protected function findColumns($table)
+	{
+		$sql="PRAGMA table_info({$table->rawName})";
+		$columns=$this->getDbConnection()->createCommand($sql)->queryAll();
+		if(empty($columns))
+			return false;
+
+		foreach($columns as $column)
+		{
+			$c=$this->createColumn($column);
+			$table->columns[$c->name]=$c;
+			if($c->isPrimaryKey)
+			{
+				if($table->primaryKey===null)
+					$table->primaryKey=$c->name;
+				elseif(is_string($table->primaryKey))
+					$table->primaryKey=array($table->primaryKey,$c->name);
+				else
+					$table->primaryKey[]=$c->name;
+			}
+		}
+		if(is_string($table->primaryKey) && !strncasecmp($table->columns[$table->primaryKey]->dbType,'int',3))
+		{
+			$table->sequenceName='';
+			$table->columns[$table->primaryKey]->autoIncrement=true;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Collects the foreign key column details for the given table.
+	 * @param CDbTableSchema $table the table metadata
+	 */
+	protected function findConstraints($table)
+	{
+		$foreignKeys=array();
+		$sql="PRAGMA foreign_key_list({$table->rawName})";
+		$keys=$this->getDbConnection()->createCommand($sql)->queryAll();
+		foreach($keys as $key)
+		{
+			$column=$table->columns[$key['from']];
+			$column->isForeignKey=true;
+			$foreignKeys[$key['from']]=array($key['table'],$key['to']);
+		}
+		$table->foreignKeys=$foreignKeys;
+	}
+
+	/**
+	 * Creates a table column.
+	 * @param array $column column metadata
+	 * @return CDbColumnSchema normalized column metadata
+	 */
+	protected function createColumn($column)
+	{
+		$c=new CSqliteColumnSchema;
+		$c->name=$column['name'];
+		$c->rawName=$this->quoteColumnName($c->name);
+		$c->allowNull=!$column['notnull'];
+		$c->isPrimaryKey=$column['pk']!=0;
+		$c->isForeignKey=false;
+		$c->comment=null; // SQLite does not support column comments at all
+
+		$c->init(strtolower($column['type']),$column['dflt_value']);
+		return $c;
+	}
+
+	/**
+	 * Builds a SQL statement for renaming a DB table.
+	 * @param string $table the table to be renamed. The name will be properly quoted by the method.
+	 * @param string $newName the new table name. The name will be properly quoted by the method.
+	 * @return string the SQL statement for renaming a DB table.
+	 * @since 1.1.13
+	 */
+	public function renameTable($table, $newName)
+	{
+		return 'ALTER TABLE ' . $this->quoteTableName($table) . ' RENAME TO ' . $this->quoteTableName($newName);
+	}
+
+	/**
+	 * Builds a SQL statement for truncating a DB table.
+	 * @param string $table the table to be truncated. The name will be properly quoted by the method.
+	 * @return string the SQL statement for truncating a DB table.
+	 * @since 1.1.6
+	 */
+	public function truncateTable($table)
+	{
+		return "DELETE FROM ".$this->quoteTableName($table);
+	}
+
+	/**
+	 * Builds a SQL statement for dropping a DB column.
+	 * Because SQLite does not support dropping a DB column, calling this method will throw an exception.
+	 * @param string $table the table whose column is to be dropped. The name will be properly quoted by the method.
+	 * @param string $column the name of the column to be dropped. The name will be properly quoted by the method.
+	 * @return string the SQL statement for dropping a DB column.
+	 * @since 1.1.6
+	 */
+	public function dropColumn($table, $column)
+	{
+		throw new CDbException(Yii::t('yii', 'Dropping DB column is not supported by SQLite.'));
+	}
+
+	/**
+	 * Builds a SQL statement for renaming a column.
+	 * Because SQLite does not support renaming a DB column, calling this method will throw an exception.
+	 * @param string $table the table whose column is to be renamed. The name will be properly quoted by the method.
+	 * @param string $name the old name of the column. The name will be properly quoted by the method.
+	 * @param string $newName the new name of the column. The name will be properly quoted by the method.
+	 * @return string the SQL statement for renaming a DB column.
+	 * @since 1.1.6
+	 */
+	public function renameColumn($table, $name, $newName)
+	{
+		throw new CDbException(Yii::t('yii', 'Renaming a DB column is not supported by SQLite.'));
+	}
+
+	/**
+	 * Builds a SQL statement for adding a foreign key constraint to an existing table.
+	 * Because SQLite does not support adding foreign key to an existing table, calling this method will throw an exception.
+	 * @param string $name the name of the foreign key constraint.
+	 * @param string $table the table that the foreign key constraint will be added to.
+	 * @param string $columns the name of the column to that the constraint will be added on. If there are multiple columns, separate them with commas.
+	 * @param string $refTable the table that the foreign key references to.
+	 * @param string $refColumns the name of the column that the foreign key references to. If there are multiple columns, separate them with commas.
+	 * @param string $delete the ON DELETE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL
+	 * @param string $update the ON UPDATE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL
+	 * @return string the SQL statement for adding a foreign key constraint to an existing table.
+	 * @since 1.1.6
+	 */
+	public function addForeignKey($name, $table, $columns, $refTable, $refColumns, $delete=null, $update=null)
+	{
+		throw new CDbException(Yii::t('yii', 'Adding a foreign key constraint to an existing table is not supported by SQLite.'));
+	}
+
+	/**
+	 * Builds a SQL statement for dropping a foreign key constraint.
+	 * Because SQLite does not support dropping a foreign key constraint, calling this method will throw an exception.
+	 * @param string $name the name of the foreign key constraint to be dropped. The name will be properly quoted by the method.
+	 * @param string $table the table whose foreign is to be dropped. The name will be properly quoted by the method.
+	 * @return string the SQL statement for dropping a foreign key constraint.
+	 * @since 1.1.6
+	 */
+	public function dropForeignKey($name, $table)
+	{
+		throw new CDbException(Yii::t('yii', 'Dropping a foreign key constraint is not supported by SQLite.'));
+	}
+
+	/**
+	 * Builds a SQL statement for changing the definition of a column.
+	 * Because SQLite does not support altering a DB column, calling this method will throw an exception.
+	 * @param string $table the table whose column is to be changed. The table name will be properly quoted by the method.
+	 * @param string $column the name of the column to be changed. The name will be properly quoted by the method.
+	 * @param string $type the new column type. The {@link getColumnType} method will be invoked to convert abstract column type (if any)
+	 * into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+	 * For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.
+	 * @return string the SQL statement for changing the definition of a column.
+	 * @since 1.1.6
+	 */
+	public function alterColumn($table, $column, $type)
+	{
+		throw new CDbException(Yii::t('yii', 'Altering a DB column is not supported by SQLite.'));
+	}
+
+	/**
+	 * Builds a SQL statement for dropping an index.
+	 * @param string $name the name of the index to be dropped. The name will be properly quoted by the method.
+	 * @param string $table the table whose index is to be dropped. The name will be properly quoted by the method.
+	 * @return string the SQL statement for dropping an index.
+	 * @since 1.1.6
+	 */
+	public function dropIndex($name, $table)
+	{
+		return 'DROP INDEX '.$this->quoteTableName($name);
+	}
+
+	/**
+	 * Builds a SQL statement for adding a primary key constraint to an existing table.
+	 * Because SQLite does not support adding a primary key on an existing table this method will throw an exception.
+	 * @param string $name the name of the primary key constraint.
+	 * @param string $table the table that the primary key constraint will be added to.
+	 * @param string|array $columns comma separated string or array of columns that the primary key will consist of.
+	 * @return string the SQL statement for adding a primary key constraint to an existing table.
+	 * @since 1.1.13
+	 */
+	public function addPrimaryKey($name,$table,$columns)
+	{
+		throw new CDbException(Yii::t('yii', 'Adding a primary key after table has been created is not supported by SQLite.'));
+	}
+
+
+	/**
+	 * Builds a SQL statement for removing a primary key constraint to an existing table.
+	 * Because SQLite does not support dropping a primary key from an existing table this method will throw an exception
+	 * @param string $name the name of the primary key constraint to be removed.
+	 * @param string $table the table that the primary key constraint will be removed from.
+	 * @return string the SQL statement for removing a primary key constraint from an existing table.
+	 * @since 1.1.13
+	 */
+	public function dropPrimaryKey($name,$table)
+	{
+		throw new CDbException(Yii::t('yii', 'Removing a primary key after table has been created is not supported by SQLite.'));
+
+	}
+}

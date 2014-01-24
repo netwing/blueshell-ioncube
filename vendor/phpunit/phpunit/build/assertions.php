@@ -1,48 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+#!/usr/bin/env php
+<?php
+require dirname(__DIR__) . '/PHPUnit/Autoload.php';
+
+$buffer  = '';
+$class   = new ReflectionClass('PHPUnit_Framework_Assert');
+$methods = array();
+
+foreach ($class->getMethods() as $method) {
+    $docblock = $method->getDocComment();
+    $name     = $method->getName();
+
+    if (strpos($name, 'assert') === 0 ||
+        strpos($docblock, '@return PHPUnit_Framework_Constraint') !== FALSE) {
+        $methods[$name] = array(
+          'class'    => 'PHPUnit_Framework_Assert',
+          'docblock' => $docblock,
+          'sigDecl'  => str_replace(
+            array('= false', '= true'),
+            array('= FALSE', '= TRUE'),
+            PHPUnit_Util_Class::getMethodParameters($method)
+          ),
+          'sigCall'  => PHPUnit_Util_Class::getMethodParameters($method, TRUE)
+        );
+    }
+}
+
+$class = new ReflectionClass('PHPUnit_Framework_TestCase');
+
+foreach ($class->getMethods() as $method) {
+    $docblock = $method->getDocComment();
+    $name     = $method->getName();
+
+    if (strpos($docblock, '@return PHPUnit_Framework_MockObject_Matcher') !== FALSE ||
+        strpos($docblock, '@return PHPUnit_Framework_MockObject_Stub') !== FALSE) {
+        $methods[$name] = array(
+          'class'    => 'PHPUnit_Framework_TestCase',
+          'docblock' => $docblock,
+          'sigDecl'  => str_replace(
+            array('= false', '= true'),
+            array('= FALSE', '= TRUE'),
+            PHPUnit_Util_Class::getMethodParameters($method)
+          ),
+          'sigCall'  => PHPUnit_Util_Class::getMethodParameters($method, TRUE)
+        );
+    }
+}
+
+ksort($methods);
+
+foreach ($methods as $name => $data) {
+    $buffer .= sprintf(
+      "\n\n%s\nfunction %s(%s)\n{\n    return call_user_func_array(\n      '%s::%s',\n      func_get_args()\n    );\n}",
+      str_replace('    ', '', $data['docblock']),
+      $name,
+      $data['sigDecl'],
+      $data['class'],
+      $name,
+      $data['sigCall']
+    );
+}
+
+$template = new Text_Template(dirname(__DIR__) . '/PHPUnit/Framework/Assert/Functions.php.in');
+$template->setVar(array('functions' => $buffer));
+$template->renderTo(dirname(__DIR__) . '/PHPUnit/Framework/Assert/Functions.php');

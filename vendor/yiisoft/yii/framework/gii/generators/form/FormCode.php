@@ -1,70 +1,94 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-YwrtqbrLVG5r6YuP9Gj795mejbhiqxC=
+<?php
+
+class FormCode extends CCodeModel
+{
+	public $model;
+	public $viewPath='application.views';
+	public $viewName;
+	public $scenario;
+
+	private $_modelClass;
+
+	public function rules()
+	{
+		return array_merge(parent::rules(), array(
+			array('model, viewName, scenario', 'filter', 'filter'=>'trim'),
+			array('model, viewName, viewPath', 'required'),
+			array('model, viewPath', 'match', 'pattern'=>'/^\w+[\.\w+]*$/', 'message'=>'{attribute} should only contain word characters and dots.'),
+			array('viewName', 'match', 'pattern'=>'/^\w+[\\/\w+]*$/', 'message'=>'{attribute} should only contain word characters and slashes.'),
+			array('model', 'validateModel'),
+			array('viewPath', 'validateViewPath'),
+			array('scenario', 'match', 'pattern'=>'/^\w+$/', 'message'=>'{attribute} should only contain word characters.'),
+			array('viewPath', 'sticky'),
+		));
+	}
+
+	public function attributeLabels()
+	{
+		return array_merge(parent::attributeLabels(), array(
+			'model'=>'Model Class',
+			'viewName'=>'View Name',
+			'viewPath'=>'View Path',
+			'scenario'=>'Scenario',
+		));
+	}
+
+	public function requiredTemplates()
+	{
+		return array(
+			'form.php',
+			'action.php',
+		);
+	}
+
+	public function successMessage()
+	{
+		$output=<<<EOD
+<p>The form has been generated successfully.</p>
+<p>You may add the following code in an appropriate controller class to invoke the view:</p>
+EOD;
+		$code="<?php\n".$this->render($this->templatePath.'/action.php');
+		return $output.highlight_string($code,true);
+	}
+
+	public function validateModel($attribute,$params)
+	{
+		if($this->hasErrors('model'))
+			return;
+		$class=@Yii::import($this->model,true);
+		if(!is_string($class) || !$this->classExists($class))
+			$this->addError('model', "Class '{$this->model}' does not exist or has syntax error.");
+		elseif(!is_subclass_of($class,'CModel'))
+			$this->addError('model', "'{$this->model}' must extend from CModel.");
+		else
+			$this->_modelClass=$class;
+	}
+
+	public function validateViewPath($attribute,$params)
+	{
+		if($this->hasErrors('viewPath'))
+			return;
+		if(Yii::getPathOfAlias($this->viewPath)===false)
+			$this->addError('viewPath','View Path must be a valid path alias.');
+	}
+
+	public function prepare()
+	{
+		$templatePath=$this->templatePath;
+		$this->files[]=new CCodeFile(
+			Yii::getPathOfAlias($this->viewPath).'/'.$this->viewName.'.php',
+			$this->render($templatePath.'/form.php')
+		);
+	}
+
+	public function getModelClass()
+	{
+		return $this->_modelClass;
+	}
+
+	public function getModelAttributes()
+	{
+		$model=new $this->_modelClass($this->scenario);
+		return $model->getSafeAttributeNames();
+	}
+}

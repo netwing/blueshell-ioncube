@@ -1,86 +1,140 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-IcvqTJBwg1obcIi=
+<?php
+/**
+ * CVarDumper class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CVarDumper is intended to replace the buggy PHP function var_dump and print_r.
+ * It can correctly identify the recursively referenced objects in a complex
+ * object structure. It also has a recursive depth control to avoid indefinite
+ * recursive display of some peculiar variables.
+ *
+ * CVarDumper can be used as follows,
+ * <pre>
+ * CVarDumper::dump($var);
+ * </pre>
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.utils
+ * @since 1.0
+ */
+class CVarDumper
+{
+	private static $_objects;
+	private static $_output;
+	private static $_depth;
+
+	/**
+	 * Displays a variable.
+	 * This method achieves the similar functionality as var_dump and print_r
+	 * but is more robust when handling complex objects such as Yii controllers.
+	 * @param mixed $var variable to be dumped
+	 * @param integer $depth maximum depth that the dumper should go into the variable. Defaults to 10.
+	 * @param boolean $highlight whether the result should be syntax-highlighted
+	 */
+	public static function dump($var,$depth=10,$highlight=false)
+	{
+		echo self::dumpAsString($var,$depth,$highlight);
+	}
+
+	/**
+	 * Dumps a variable in terms of a string.
+	 * This method achieves the similar functionality as var_dump and print_r
+	 * but is more robust when handling complex objects such as Yii controllers.
+	 * @param mixed $var variable to be dumped
+	 * @param integer $depth maximum depth that the dumper should go into the variable. Defaults to 10.
+	 * @param boolean $highlight whether the result should be syntax-highlighted
+	 * @return string the string representation of the variable
+	 */
+	public static function dumpAsString($var,$depth=10,$highlight=false)
+	{
+		self::$_output='';
+		self::$_objects=array();
+		self::$_depth=$depth;
+		self::dumpInternal($var,0);
+		if($highlight)
+		{
+			$result=highlight_string("<?php\n".self::$_output,true);
+			self::$_output=preg_replace('/&lt;\\?php<br \\/>/','',$result,1);
+		}
+		return self::$_output;
+	}
+
+	/*
+	 * @param mixed $var variable to be dumped
+	 * @param integer $level depth level
+	 */
+	private static function dumpInternal($var,$level)
+	{
+		switch(gettype($var))
+		{
+			case 'boolean':
+				self::$_output.=$var?'true':'false';
+				break;
+			case 'integer':
+				self::$_output.="$var";
+				break;
+			case 'double':
+				self::$_output.="$var";
+				break;
+			case 'string':
+				self::$_output.="'".addslashes($var)."'";
+				break;
+			case 'resource':
+				self::$_output.='{resource}';
+				break;
+			case 'NULL':
+				self::$_output.="null";
+				break;
+			case 'unknown type':
+				self::$_output.='{unknown}';
+				break;
+			case 'array':
+				if(self::$_depth<=$level)
+					self::$_output.='array(...)';
+				elseif(empty($var))
+					self::$_output.='array()';
+				else
+				{
+					$keys=array_keys($var);
+					$spaces=str_repeat(' ',$level*4);
+					self::$_output.="array\n".$spaces.'(';
+					foreach($keys as $key)
+					{
+						self::$_output.="\n".$spaces.'    ';
+						self::dumpInternal($key,0);
+						self::$_output.=' => ';
+						self::dumpInternal($var[$key],$level+1);
+					}
+					self::$_output.="\n".$spaces.')';
+				}
+				break;
+			case 'object':
+				if(($id=array_search($var,self::$_objects,true))!==false)
+					self::$_output.=get_class($var).'#'.($id+1).'(...)';
+				elseif(self::$_depth<=$level)
+					self::$_output.=get_class($var).'(...)';
+				else
+				{
+					$id=array_push(self::$_objects,$var);
+					$className=get_class($var);
+					$members=(array)$var;
+					$spaces=str_repeat(' ',$level*4);
+					self::$_output.="$className#$id\n".$spaces.'(';
+					foreach($members as $key=>$value)
+					{
+						$keyDisplay=strtr(trim($key),array("\0"=>':'));
+						self::$_output.="\n".$spaces."    [$keyDisplay] => ";
+						self::$_output.=self::dumpInternal($value,$level+1);
+					}
+					self::$_output.="\n".$spaces.')';
+				}
+				break;
+		}
+	}
+}

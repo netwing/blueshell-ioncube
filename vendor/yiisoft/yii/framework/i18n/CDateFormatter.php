@@ -1,245 +1,559 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CDateFormatter class file.
+ *
+ * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDateFormatter provides date/time localization functionalities.
+ *
+ * CDateFormatter allows you to format dates and times in a locale-sensitive manner.
+ * Patterns are interpreted in the locale that the CDateFormatter instance
+ * is associated with. For example, month names and weekday names may vary
+ * under different locales, which yields different formatting results.
+ * The patterns that CDateFormatter recognizes are as defined in
+ * {@link http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns CLDR}.
+ *
+ * CDateFormatter supports predefined patterns as well as customized ones:
+ * <ul>
+ * <li>The method {@link formatDateTime()} formats date or time or both using
+ *   predefined patterns which include 'full', 'long', 'medium' (default) and 'short'.</li>
+ * <li>The method {@link format()} formats datetime using the specified pattern.
+ *   See {@link http://www.unicode.org/reports/tr35/#Date_Format_Patterns} for
+ *   details about the recognized pattern characters.</li>
+ * </ul>
+ *
+ * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.i18n
+ * @since 1.0
+ */
+class CDateFormatter extends CComponent
+{
+	/**
+	 * @var array pattern characters mapping to the corresponding translator methods
+	 */
+	private static $_formatters=array(
+		'G'=>'formatEra',
+		'y'=>'formatYear',
+		'M'=>'formatMonth',
+		'L'=>'formatMonth',
+		'd'=>'formatDay',
+		'h'=>'formatHour12',
+		'H'=>'formatHour24',
+		'm'=>'formatMinutes',
+		's'=>'formatSeconds',
+		'E'=>'formatDayInWeek',
+		'c'=>'formatDayInWeek',
+		'e'=>'formatDayInWeek',
+		'D'=>'formatDayInYear',
+		'F'=>'formatDayInMonth',
+		'w'=>'formatWeekInYear',
+		'W'=>'formatWeekInMonth',
+		'a'=>'formatPeriod',
+		'k'=>'formatHourInDay',
+		'K'=>'formatHourInPeriod',
+		'z'=>'formatTimeZone',
+		'Z'=>'formatTimeZone',
+		'v'=>'formatTimeZone',
+	);
+
+	private $_locale;
+
+	/**
+	 * Constructor.
+	 * @param mixed $locale locale ID (string) or CLocale instance
+	 */
+	public function __construct($locale)
+	{
+		if(is_string($locale))
+			$this->_locale=CLocale::getInstance($locale);
+		else
+			$this->_locale=$locale;
+	}
+
+	/**
+	 * Formats a date according to a customized pattern.
+	 * @param string $pattern the pattern (See {@link http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Format_Patterns})
+	 * @param mixed $time UNIX timestamp or a string in strtotime format
+	 * @return string formatted date time. Null if $time is null. (the null value check is available since Yii 1.1.11)
+	 */
+	public function format($pattern,$time)
+	{
+		if($time===null)
+			return null;
+
+		if(is_string($time))
+		{
+			if(ctype_digit($time) || ($time{0}=='-' && ctype_digit(substr($time, 1))))
+				$time=(int)$time;
+			else
+				$time=strtotime($time);
+		}
+		$date=CTimestamp::getDate($time,false,false);
+		$tokens=$this->parseFormat($pattern);
+		foreach($tokens as &$token)
+		{
+			if(is_array($token)) // a callback: method name, sub-pattern
+				$token=$this->{$token[0]}($token[1],$date);
+		}
+		return implode('',$tokens);
+	}
+
+	/**
+	 * Formats a date according to a predefined pattern.
+	 * The predefined pattern is determined based on the date pattern width and time pattern width.
+	 * @param mixed $timestamp UNIX timestamp or a string in strtotime format
+	 * @param string $dateWidth width of the date pattern. It can be 'full', 'long', 'medium' and 'short'.
+	 * If null, it means the date portion will NOT appear in the formatting result
+	 * @param string $timeWidth width of the time pattern. It can be 'full', 'long', 'medium' and 'short'.
+	 * If null, it means the time portion will NOT appear in the formatting result
+	 * @return string formatted date time.
+	 */
+	public function formatDateTime($timestamp,$dateWidth='medium',$timeWidth='medium')
+	{
+		if(!empty($dateWidth))
+			$date=$this->format($this->_locale->getDateFormat($dateWidth),$timestamp);
+
+		if(!empty($timeWidth))
+			$time=$this->format($this->_locale->getTimeFormat($timeWidth),$timestamp);
+
+		if(isset($date) && isset($time))
+		{
+			$dateTimePattern=$this->_locale->getDateTimeFormat();
+			return strtr($dateTimePattern,array('{0}'=>$time,'{1}'=>$date));
+		}
+		elseif(isset($date))
+			return $date;
+		elseif(isset($time))
+			return $time;
+	}
+
+	/**
+	 * Parses the datetime format pattern.
+	 * @param string $pattern the pattern to be parsed
+	 * @return array tokenized parsing result
+	 */
+	protected function parseFormat($pattern)
+	{
+		static $formats=array();  // cache
+		if(isset($formats[$pattern]))
+			return $formats[$pattern];
+		$tokens=array();
+		$n=strlen($pattern);
+		$isLiteral=false;
+		$literal='';
+		for($i=0;$i<$n;++$i)
+		{
+			$c=$pattern[$i];
+			if($c==="'")
+			{
+				if($i<$n-1 && $pattern[$i+1]==="'")
+				{
+					$tokens[]="'";
+					$i++;
+				}
+				elseif($isLiteral)
+				{
+					$tokens[]=$literal;
+					$literal='';
+					$isLiteral=false;
+				}
+				else
+				{
+					$isLiteral=true;
+					$literal='';
+				}
+			}
+			elseif($isLiteral)
+				$literal.=$c;
+			else
+			{
+				for($j=$i+1;$j<$n;++$j)
+				{
+					if($pattern[$j]!==$c)
+						break;
+				}
+				$p=str_repeat($c,$j-$i);
+				if(isset(self::$_formatters[$c]))
+					$tokens[]=array(self::$_formatters[$c],$p);
+				else
+					$tokens[]=$p;
+				$i=$j-1;
+			}
+		}
+		if($literal!=='')
+			$tokens[]=$literal;
+
+		return $formats[$pattern]=$tokens;
+	}
+
+	/**
+	 * Get the year.
+ 	 * "yy" will return the last two digits of year.
+ 	 * "y...y" will pad the year with 0 in the front, e.g. "yyyyy" will generate "02008" for year 2008.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @return string formatted year
+	 */
+	protected function formatYear($pattern,$date)
+	{
+		$year=$date['year'];
+		if($pattern==='yy')
+			return str_pad($year%100,2,'0',STR_PAD_LEFT);
+		else
+			return str_pad($year,strlen($pattern),'0',STR_PAD_LEFT);
+	}
+
+	/**
+	 * Get the month.
+	 * "M" will return integer 1 through 12;
+	 * "MM" will return two digits month number with necessary zero padding, e.g. 05;
+	 * "MMM" will return the abrreviated month name, e.g. "Jan";
+	 * "MMMM" will return the full month name, e.g. "January";
+	 * "MMMMM" will return the narrow month name, e.g. "J";
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "month" pattern is unknown
+	 * @return string month name
+	 */
+	protected function formatMonth($pattern,$date)
+	{
+		$month=$date['mon'];
+		switch($pattern)
+		{
+			case 'M':
+				return $month;
+			case 'MM':
+				return str_pad($month,2,'0',STR_PAD_LEFT);
+			case 'MMM':
+				return $this->_locale->getMonthName($month,'abbreviated');
+			case 'MMMM':
+				return $this->_locale->getMonthName($month,'wide');
+			case 'MMMMM':
+				return $this->_locale->getMonthName($month,'narrow');
+			case 'L':
+				return $month;
+			case 'LL':
+				return str_pad($month,2,'0',STR_PAD_LEFT);
+			case 'LLL':
+				return $this->_locale->getMonthName($month,'abbreviated', true);
+			case 'LLLL':
+				return $this->_locale->getMonthName($month,'wide', true);
+			case 'LLLLL':
+				return $this->_locale->getMonthName($month,'narrow', true);
+			default:
+				throw new CException(Yii::t('yii','The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".'));
+		}
+	}
+
+	/**
+	 * Get the day of the month.
+ 	 * "d" for non-padding, "dd" will always return 2 digits day numbers, e.g. 05.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "day" pattern is unknown
+	 * @return string day of the month
+	 */
+	protected function formatDay($pattern,$date)
+	{
+		$day=$date['mday'];
+		if($pattern==='d')
+			return $day;
+		elseif($pattern==='dd')
+			return str_pad($day,2,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for day of the month must be "d" or "dd".'));
+	}
+
+	/**
+	 * Get the day in the year, e.g. [1-366]
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException is "dayInYear" pattern is unknown
+	 * @return integer hours in AM/PM format.
+	 */
+	protected function formatDayInYear($pattern,$date)
+	{
+		$day=$date['yday'];
+		if(($n=strlen($pattern))<=3)
+			return str_pad($day,$n,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for day in year must be "D", "DD" or "DDD".'));
+	}
+
+	/**
+	 * Get day of week in the month, e.g. 2nd Wed in July.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "dayInMonth" pattern is unknown
+	 * @return integer day in month
+	 * @see http://www.unicode.org/reports/tr35/#Date_Format_Patterns
+	 */
+	protected function formatDayInMonth($pattern,$date)
+	{
+		if($pattern==='F')
+			return (int)(($date['mday']+6)/7);
+		else
+			throw new CException(Yii::t('yii','The pattern for day in month must be "F".'));
+	}
+
+	/**
+	 * Get the day of the week.
+ 	 * "E", "EE", "EEE" will return abbreviated week day name, e.g. "Tues";
+ 	 * "EEEE" will return full week day name;
+ 	 * "EEEEE" will return the narrow week day name, e.g. "T";
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "dayInWeek" pattern is unknown
+	 * @return string day of the week.
+	 * @see http://www.unicode.org/reports/tr35/#Date_Format_Patterns
+	 */
+	protected function formatDayInWeek($pattern,$date)
+	{
+		$day=$date['wday'];
+		switch($pattern)
+		{
+			case 'E':
+			case 'EE':
+			case 'EEE':
+			case 'eee':
+				return $this->_locale->getWeekDayName($day,'abbreviated');
+			case 'EEEE':
+			case 'eeee':
+				return $this->_locale->getWeekDayName($day,'wide');
+			case 'EEEEE':
+			case 'eeeee':
+				return $this->_locale->getWeekDayName($day,'narrow');
+			case 'e':
+			case 'ee':
+			case 'c':
+				return $day ? $day : 7;
+			case 'ccc':
+				return $this->_locale->getWeekDayName($day,'abbreviated',true);
+			case 'cccc':
+				return $this->_locale->getWeekDayName($day,'wide',true);
+			case 'ccccc':
+				return $this->_locale->getWeekDayName($day,'narrow',true);
+			default:
+				throw new CException(Yii::t('yii','The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".'));
+		}
+	}
+
+	/**
+	 * Get the AM/PM designator, 12 noon is PM, 12 midnight is AM.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "period" pattern is unknown
+	 * @return string AM or PM designator
+	 */
+	protected function formatPeriod($pattern,$date)
+	{
+		if($pattern==='a')
+		{
+			if(intval($date['hours']/12))
+				return $this->_locale->getPMName();
+			else
+				return $this->_locale->getAMName();
+		}
+		else
+			throw new CException(Yii::t('yii','The pattern for AM/PM marker must be "a".'));
+	}
+
+	/**
+	 * Get the hours in 24 hour format, i.e. [0-23].
+	 * "H" for non-padding, "HH" will always return 2 characters.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "hour24" pattern is unknown
+	 * @return string hours in 24 hour format.
+	 */
+	protected function formatHour24($pattern,$date)
+	{
+		$hour=$date['hours'];
+		if($pattern==='H')
+			return $hour;
+		elseif($pattern==='HH')
+			return str_pad($hour,2,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for 24 hour format must be "H" or "HH".'));
+	}
+
+	/**
+	 * Get the hours in 12 hour format, i.e., [1-12]
+	 * "h" for non-padding, "hh" will always return 2 characters.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "hour12" pattern is unknown
+	 * @return string hours in 12 hour format.
+	 */
+	protected function formatHour12($pattern,$date)
+	{
+		$hour=$date['hours'];
+		$hour=($hour==12|$hour==0)?12:($hour)%12;
+		if($pattern==='h')
+			return $hour;
+		elseif($pattern==='hh')
+			return str_pad($hour,2,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for 12 hour format must be "h" or "hh".'));
+	}
+
+	/**
+	 * Get the hours [1-24].
+	 * 'k' for non-padding, and 'kk' with 2 characters padding.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "hourInDay" pattern is unknown
+	 * @return integer hours [1-24]
+	 */
+	protected function formatHourInDay($pattern,$date)
+	{
+		$hour=$date['hours']==0?24:$date['hours'];
+		if($pattern==='k')
+			return $hour;
+		elseif($pattern==='kk')
+			return str_pad($hour,2,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for hour in day must be "k" or "kk".'));
+	}
+
+	/**
+	 * Get the hours in AM/PM format, e.g [0-11]
+	 * "K" for non-padding, "KK" will always return 2 characters.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "hourInPeriod" pattern is unknown
+	 * @return integer hours in AM/PM format.
+	 */
+	protected function formatHourInPeriod($pattern,$date)
+	{
+		$hour=$date['hours']%12;
+		if($pattern==='K')
+			return $hour;
+		elseif($pattern==='KK')
+			return str_pad($hour,2,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for hour in AM/PM must be "K" or "KK".'));
+	}
+
+	/**
+	 * Get the minutes.
+	 * "m" for non-padding, "mm" will always return 2 characters.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "minutes" pattern is unknown
+	 * @return string minutes.
+	 */
+	protected function formatMinutes($pattern,$date)
+	{
+		$minutes=$date['minutes'];
+		if($pattern==='m')
+			return $minutes;
+		elseif($pattern==='mm')
+			return str_pad($minutes,2,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for minutes must be "m" or "mm".'));
+	}
+
+	/**
+	 * Get the seconds.
+	 * "s" for non-padding, "ss" will always return 2 characters.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "seconds" pattern is unknown
+	 * @return string seconds
+	 */
+	protected function formatSeconds($pattern,$date)
+	{
+		$seconds=$date['seconds'];
+		if($pattern==='s')
+			return $seconds;
+		elseif($pattern==='ss')
+			return str_pad($seconds,2,'0',STR_PAD_LEFT);
+		else
+			throw new CException(Yii::t('yii','The pattern for seconds must be "s" or "ss".'));
+	}
+
+	/**
+	 * Get the week in the year.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "weekInYear" pattern is unknown
+	 * @return integer week in year
+	 */
+	protected function formatWeekInYear($pattern,$date)
+	{
+		if($pattern==='w')
+			return @date('W',@mktime(0,0,0,$date['mon'],$date['mday'],$date['year']));
+		else
+			throw new CException(Yii::t('yii','The pattern for week in year must be "w".'));
+	}
+
+	/**
+	 * Get week in the month.
+	 * @param array $pattern result of {@link CTimestamp::getdate}.
+	 * @param string $date a pattern.
+	 * @throws CException if "weekInMonth" pattern is unknown
+	 * @return integer week in month
+	 */
+	protected function formatWeekInMonth($pattern,$date)
+	{
+		if($pattern==='W')
+		{
+			$weekDay=date('N',mktime(0,0,0,$date['mon'],1,$date['year']));
+			return floor(($weekDay+$date['mday']-2)/7)+1;
+		}
+		else
+			throw new CException(Yii::t('yii','The pattern for week in month must be "W".'));
+	}
+
+	/**
+	 * Get the timezone of the server machine.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "timeZone" pattern is unknown
+	 * @return string time zone
+	 * @todo How to get the timezone for a different region?
+	 */
+	protected function formatTimeZone($pattern,$date)
+	{
+		if($pattern[0]==='z' || $pattern[0]==='v')
+			return @date('T', @mktime($date['hours'], $date['minutes'], $date['seconds'], $date['mon'], $date['mday'], $date['year']));
+		elseif($pattern[0]==='Z')
+			return @date('O', @mktime($date['hours'], $date['minutes'], $date['seconds'], $date['mon'], $date['mday'], $date['year']));
+		else
+			throw new CException(Yii::t('yii','The pattern for time zone must be "z" or "v".'));
+	}
+
+	/**
+	 * Get the era. i.e. in gregorian, year > 0 is AD, else BC.
+	 * @param string $pattern a pattern.
+	 * @param array $date result of {@link CTimestamp::getdate}.
+	 * @throws CException if "era" pattern is unknown
+	 * @return string era
+	 * @todo How to support multiple Eras?, e.g. Japanese.
+	 */
+	protected function formatEra($pattern,$date)
+	{
+		$era=$date['year']>0 ? 1 : 0;
+		switch($pattern)
+		{
+			case 'G':
+			case 'GG':
+			case 'GGG':
+				return $this->_locale->getEraName($era,'abbreviated');
+			case 'GGGG':
+				return $this->_locale->getEraName($era,'wide');
+			case 'GGGGG':
+				return $this->_locale->getEraName($era,'narrow');
+			default:
+				throw new CException(Yii::t('yii','The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".'));
+		}
+	}
+}

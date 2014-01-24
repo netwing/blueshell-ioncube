@@ -1,40 +1,85 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_WhiteSpace_PropertyLabelSpacingSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_WhiteSpace_PropertyLabelSpacingSniff.
+ *
+ * Ensures that the colon in a property or label definition has a single
+ * space after it and no space before it.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_WhiteSpace_PropertyLabelSpacingSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('JS');
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_PROPERTY,
+                T_LABEL,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $colon = $phpcsFile->findNext(T_COLON, ($stackPtr + 1));
+
+        if ($colon !== ($stackPtr + 1)) {
+            $error = 'There must be no space before the colon in a property/label declaration';
+            $phpcsFile->addError($error, $stackPtr, 'Before');
+        }
+
+        if ($tokens[($colon + 1)]['code'] !== T_WHITESPACE || $tokens[($colon + 1)]['content'] !== ' ') {
+            $error = 'There must be a single space after the colon in a property/label declaration';
+            $phpcsFile->addError($error, $stackPtr, 'After');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-Tj/bfaL/gbG=

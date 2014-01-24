@@ -1,30 +1,50 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ByaR1jiuQ3Z7GpqPsS4JRAaRVs1M
+<?php
+
+namespace Guzzle\Batch;
+
+use Guzzle\Batch\Exception\BatchTransferException;
+
+/**
+ * BatchInterface decorator used to buffer exceptions encountered during a transfer.  The exceptions can then later be
+ * processed after a batch flush has completed.
+ */
+class ExceptionBufferingBatch extends AbstractBatchDecorator
+{
+    /** @var array Array of BatchTransferException exceptions */
+    protected $exceptions = array();
+
+    public function flush()
+    {
+        $items = array();
+
+        while (!$this->decoratedBatch->isEmpty()) {
+            try {
+                $transferredItems = $this->decoratedBatch->flush();
+            } catch (BatchTransferException $e) {
+                $this->exceptions[] = $e;
+                $transferredItems = $e->getTransferredItems();
+            }
+            $items = array_merge($items, $transferredItems);
+        }
+
+        return $items;
+    }
+
+    /**
+     * Get the buffered exceptions
+     *
+     * @return array Array of BatchTransferException objects
+     */
+    public function getExceptions()
+    {
+        return $this->exceptions;
+    }
+
+    /**
+     * Clear the buffered exceptions
+     */
+    public function clearExceptions()
+    {
+        $this->exceptions = array();
+    }
+}

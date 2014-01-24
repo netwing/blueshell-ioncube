@@ -1,42 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_CSS_SemicolonSpacingSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_CSS_SemicolonSpacingSniff.
+ *
+ * Ensure each style definition has a semi-colon and it is spaced correctly.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_CSS_SemicolonSpacingSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('CSS');
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_STYLE);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $semicolon = $phpcsFile->findNext(T_SEMICOLON, ($stackPtr + 1));
+        if ($semicolon === false || $tokens[$semicolon]['line'] !== $tokens[$stackPtr]['line']) {
+            $error = 'Style definitions must end with a semicolon';
+            $phpcsFile->addError($error, $stackPtr, 'NotAtEnd');
+            return;
+        }
+
+        if ($tokens[($semicolon - 1)]['code'] === T_WHITESPACE) {
+            $length  = strlen($tokens[($semicolon - 1)]['content']);
+            $error = 'Expected 0 spaces before semicolon in style definition; %s found';
+            $data  = array($length);
+            $phpcsFile->addError($error, $stackPtr, 'SpaceFound', $data);
+        }
+
+    }//end process()
+
+}//end class
 ?>
-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
-+wBymLmg

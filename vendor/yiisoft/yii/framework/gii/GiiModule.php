@@ -1,123 +1,244 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * GiiModule class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('system.gii.CCodeGenerator');
+Yii::import('system.gii.CCodeModel');
+Yii::import('system.gii.CCodeFile');
+Yii::import('system.gii.CCodeForm');
+
+/**
+ * GiiModule is a module that provides Web-based code generation capabilities.
+ *
+ * To use GiiModule, you must include it as a module in the application configuration like the following:
+ * <pre>
+ * return array(
+ *     ......
+ *     'modules'=>array(
+ *         'gii'=>array(
+ *             'class'=>'system.gii.GiiModule',
+ *             'password'=>***choose a password***
+ *         ),
+ *     ),
+ * )
+ * </pre>
+ *
+ * Because GiiModule generates new code files on the server, you should only use it on your own
+ * development machine. To prevent other people from using this module, it is required that
+ * you specify a secret password in the configuration. Later when you access
+ * the module via browser, you will be prompted to enter the correct password.
+ *
+ * By default, GiiModule can only be accessed by localhost. You may configure its {@link ipFilters}
+ * property if you want to make it accessible on other machines.
+ *
+ * With the above configuration, you will be able to access GiiModule in your browser using
+ * the following URL:
+ *
+ * http://localhost/path/to/index.php?r=gii
+ *
+ * If your application is using path-format URLs with some customized URL rules, you may need to add
+ * the following URLs in your application configuration in order to access GiiModule:
+ * <pre>
+ * 'components'=>array(
+ *     'urlManager'=>array(
+ *         'urlFormat'=>'path',
+ *         'rules'=>array(
+ *             'gii'=>'gii',
+ *             'gii/<controller:\w+>'=>'gii/<controller>',
+ *             'gii/<controller:\w+>/<action:\w+>'=>'gii/<controller>/<action>',
+ *             ...other rules...
+ *         ),
+ *     )
+ * )
+ * </pre>
+ *
+ * You can then access GiiModule via:
+ *
+ * http://localhost/path/to/index.php/gii
+ *
+ * @property string $assetsUrl The base URL that contains all published asset files of gii.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.gii
+ * @since 1.1.2
+ */
+class GiiModule extends CWebModule
+{
+	/**
+	 * @var string the password that can be used to access GiiModule.
+	 * If this property is set false, then GiiModule can be accessed without password
+	 * (DO NOT DO THIS UNLESS YOU KNOW THE CONSEQUENCE!!!)
+	 */
+	public $password;
+	/**
+	 * @var array the IP filters that specify which IP addresses are allowed to access GiiModule.
+	 * Each array element represents a single filter. A filter can be either an IP address
+	 * or an address with wildcard (e.g. 192.168.0.*) to represent a network segment.
+	 * If you want to allow all IPs to access gii, you may set this property to be false
+	 * (DO NOT DO THIS UNLESS YOU KNOW THE CONSEQUENCE!!!)
+	 * The default value is array('127.0.0.1', '::1'), which means GiiModule can only be accessed
+	 * on the localhost.
+	 */
+	public $ipFilters=array('127.0.0.1','::1');
+	/**
+	 * @var array a list of path aliases that refer to the directories containing code generators.
+	 * The directory referred by a single path alias may contain multiple code generators, each stored
+	 * under a sub-directory whose name is the generator name.
+	 * Defaults to array('application.gii').
+	 */
+	public $generatorPaths=array('application.gii');
+	/**
+	 * @var integer the permission to be set for newly generated code files.
+	 * This value will be used by PHP chmod function.
+	 * Defaults to 0666, meaning the file is read-writable by all users.
+	 */
+	public $newFileMode=0666;
+	/**
+	 * @var integer the permission to be set for newly generated directories.
+	 * This value will be used by PHP chmod function.
+	 * Defaults to 0777, meaning the directory can be read, written and executed by all users.
+	 */
+	public $newDirMode=0777;
+
+	private $_assetsUrl;
+
+	/**
+	 * Initializes the gii module.
+	 */
+	public function init()
+	{
+		parent::init();
+		Yii::setPathOfAlias('gii',dirname(__FILE__));
+		Yii::app()->setComponents(array(
+			'errorHandler'=>array(
+				'class'=>'CErrorHandler',
+				'errorAction'=>$this->getId().'/default/error',
+			),
+			'user'=>array(
+				'class'=>'CWebUser',
+				'stateKeyPrefix'=>'gii',
+				'loginUrl'=>Yii::app()->createUrl($this->getId().'/default/login'),
+			),
+			'widgetFactory' => array(
+				'class'=>'CWidgetFactory',
+				'widgets' => array()
+			)
+		), false);
+		$this->generatorPaths[]='gii.generators';
+		$this->controllerMap=$this->findGenerators();
+	}
+
+	/**
+	 * @return string the base URL that contains all published asset files of gii.
+	 */
+	public function getAssetsUrl()
+	{
+		if($this->_assetsUrl===null)
+			$this->_assetsUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('gii.assets'));
+		return $this->_assetsUrl;
+	}
+
+	/**
+	 * @param string $value the base URL that contains all published asset files of gii.
+	 */
+	public function setAssetsUrl($value)
+	{
+		$this->_assetsUrl=$value;
+	}
+
+	/**
+	 * Performs access check to gii.
+	 * This method will check to see if user IP and password are correct if they attempt
+	 * to access actions other than "default/login" and "default/error".
+	 * @param CController $controller the controller to be accessed.
+	 * @param CAction $action the action to be accessed.
+	 * @throws CHttpException if access denied
+	 * @return boolean whether the action should be executed.
+	 */
+	public function beforeControllerAction($controller, $action)
+	{
+		if(parent::beforeControllerAction($controller, $action))
+		{
+			$route=$controller->id.'/'.$action->id;
+			if(!$this->allowIp(Yii::app()->request->userHostAddress) && $route!=='default/error')
+				throw new CHttpException(403,"You are not allowed to access this page.");
+
+			$publicPages=array(
+				'default/login',
+				'default/error',
+			);
+			if($this->password!==false && Yii::app()->user->isGuest && !in_array($route,$publicPages))
+				Yii::app()->user->loginRequired();
+			else
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Checks to see if the user IP is allowed by {@link ipFilters}.
+	 * @param string $ip the user IP
+	 * @return boolean whether the user IP is allowed by {@link ipFilters}.
+	 */
+	protected function allowIp($ip)
+	{
+		if(empty($this->ipFilters))
+			return true;
+		foreach($this->ipFilters as $filter)
+		{
+			if($filter==='*' || $filter===$ip || (($pos=strpos($filter,'*'))!==false && !strncmp($ip,$filter,$pos)))
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Finds all available code generators and their code templates.
+	 * @return array
+	 */
+	protected function findGenerators()
+	{
+		$generators=array();
+		$n=count($this->generatorPaths);
+		for($i=$n-1;$i>=0;--$i)
+		{
+			$alias=$this->generatorPaths[$i];
+			$path=Yii::getPathOfAlias($alias);
+			if($path===false || !is_dir($path))
+				continue;
+
+			$names=scandir($path);
+			foreach($names as $name)
+			{
+				if($name[0]!=='.' && is_dir($path.'/'.$name))
+				{
+					$className=ucfirst($name).'Generator';
+					if(is_file("$path/$name/$className.php"))
+					{
+						$generators[$name]=array(
+							'class'=>"$alias.$name.$className",
+						);
+					}
+
+					if(isset($generators[$name]) && is_dir("$path/$name/templates"))
+					{
+						$templatePath="$path/$name/templates";
+						$dirs=scandir($templatePath);
+						foreach($dirs as $dir)
+						{
+							if($dir[0]!=='.' && is_dir($templatePath.'/'.$dir))
+								$generators[$name]['templates'][$dir]=strtr($templatePath.'/'.$dir,array('/'=>DIRECTORY_SEPARATOR,'\\'=>DIRECTORY_SEPARATOR));
+						}
+					}
+				}
+			}
+		}
+		return $generators;
+	}
+}

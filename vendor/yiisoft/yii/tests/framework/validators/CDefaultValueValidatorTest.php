@@ -1,42 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'ModelMock.php';
+
+/**
+ * CDateValidatorTest
+ * 
+ * @author   Kevin Bradwick <kbradwick@gmail.com>
+ */
+class CDefaultValueValidatorTest extends CTestCase
+{
+    /**
+     * When value is empty|null, ensure a default value is set
+     *
+     * @return null
+     */
+    public function testDefaultValueIsSetWhenSetOnEmptyIsTrue()
+    {
+        $model = $this->getModelMock(array('value' => 'foo'));
+        $this->assertTrue($model->validate());
+        $this->assertEquals('foo', $model->foo);
+
+        $model->foo = 'bar';
+        $this->assertTrue($model->validate());
+        $this->assertEquals('bar', $model->foo);
+
+    }
+
+    /**
+     * By setting setOnEmpty to false, the value will always be overriden
+     *
+     * @return null
+     */
+    public function testDefaultValueIsSetWhenSetOnEmptyIsFalse()
+    {
+        $model = $this->getModelMock(array('value' => 'foo', 'setOnEmpty' => false));
+        $model->foo = 'bar';
+        $this->assertTrue($model->validate());
+        $this->assertEquals('foo', $model->foo);
+    }
+
+    /**
+     * Mocks up an object to test with
+     *
+     * @param array $operator optional parameters to configure rule
+     *
+     * @return null
+     */
+    protected function getModelMock($params=array())
+    {
+        $rules = array(
+            array('foo', 'default')
+        );
+
+        foreach ($params as $rule => $value) {
+            $rules[0][$rule] = $value;
+        }
+
+        $stub = $this->getMock('ModelMock', array('rules'));
+        $stub->expects($this->any())
+             ->method('rules')
+             ->will($this->returnValue($rules));
+
+        return $stub;
+    }
+}

@@ -1,44 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-GF+Fw97a8FAkfG0YEUmSKIohFm4Og9dqYO8=
+<?php
+
+namespace Guzzle\Cache;
+
+/**
+ * Cache adapter that defers to closures for implementation
+ */
+class ClosureCacheAdapter implements CacheAdapterInterface
+{
+    /**
+     * @var array Mapping of method names to callables
+     */
+    protected $callables;
+
+    /**
+     * The callables array is an array mapping the actions of the cache adapter to callables.
+     * - contains: Callable that accepts an $id and $options argument
+     * - delete:   Callable that accepts an $id and $options argument
+     * - fetch:    Callable that accepts an $id and $options argument
+     * - save:     Callable that accepts an $id, $data, $lifeTime, and $options argument
+     *
+     * @param array $callables array of action names to callable
+     *
+     * @throws \InvalidArgumentException if the callable is not callable
+     */
+    public function __construct(array $callables)
+    {
+        // Validate each key to ensure it exists and is callable
+        foreach (array('contains', 'delete', 'fetch', 'save') as $key) {
+            if (!array_key_exists($key, $callables) || !is_callable($callables[$key])) {
+                throw new \InvalidArgumentException("callables must contain a callable {$key} key");
+            }
+        }
+
+        $this->callables = $callables;
+    }
+
+    public function contains($id, array $options = null)
+    {
+        return call_user_func($this->callables['contains'], $id, $options);
+    }
+
+    public function delete($id, array $options = null)
+    {
+        return call_user_func($this->callables['delete'], $id, $options);
+    }
+
+    public function fetch($id, array $options = null)
+    {
+        return call_user_func($this->callables['fetch'], $id, $options);
+    }
+
+    public function save($id, $data, $lifeTime = false, array $options = null)
+    {
+        return call_user_func($this->callables['save'], $id, $data, $lifeTime, $options);
+    }
+}

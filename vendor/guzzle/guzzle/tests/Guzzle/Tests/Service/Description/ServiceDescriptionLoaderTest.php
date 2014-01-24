@@ -1,92 +1,177 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OS0CanY/o+j78OFbRtM2ZH5/g6wAyORAkNTrg+O=
+<?php
+
+namespace Guzzle\Tests\Service\Description;
+
+use Guzzle\Service\Description\ServiceDescription;
+use Guzzle\Service\Description\ServiceDescriptionLoader;
+
+/**
+ * @covers Guzzle\Service\Description\ServiceDescriptionLoader
+ */
+class ServiceDescriptionLoaderTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testAllowsExtraData()
+    {
+        $d = ServiceDescription::factory(array(
+            'foo' => true,
+            'baz' => array('bar'),
+            'apiVersion' => '123',
+            'operations' => array()
+        ));
+
+        $this->assertEquals(true, $d->getData('foo'));
+        $this->assertEquals(array('bar'), $d->getData('baz'));
+        $this->assertEquals('123', $d->getApiVersion());
+    }
+
+    public function testAllowsDeepNestedInheritance()
+    {
+        $d = ServiceDescription::factory(array(
+            'operations' => array(
+                'abstract' => array(
+                    'httpMethod' => 'HEAD',
+                    'parameters' => array(
+                        'test' => array('type' => 'string', 'required' => true)
+                    )
+                ),
+                'abstract2' => array('uri' => '/test', 'extends' => 'abstract'),
+                'concrete'  => array('extends' => 'abstract2'),
+                'override'  => array('extends' => 'abstract', 'httpMethod' => 'PUT'),
+                'override2'  => array('extends' => 'override', 'httpMethod' => 'POST', 'uri' => '/')
+            )
+        ));
+
+        $c = $d->getOperation('concrete');
+        $this->assertEquals('/test', $c->getUri());
+        $this->assertEquals('HEAD', $c->getHttpMethod());
+        $params = $c->getParams();
+        $param = $params['test'];
+        $this->assertEquals('string', $param->getType());
+        $this->assertTrue($param->getRequired());
+
+        // Ensure that merging HTTP method does not make an array
+        $this->assertEquals('PUT', $d->getOperation('override')->getHttpMethod());
+        $this->assertEquals('POST', $d->getOperation('override2')->getHttpMethod());
+        $this->assertEquals('/', $d->getOperation('override2')->getUri());
+    }
+
+    /**
+     * @expectedException RuntimeException
+     */
+    public function testThrowsExceptionWhenExtendingMissingCommand()
+    {
+        ServiceDescription::factory(array(
+            'operations' => array(
+                'concrete' => array(
+                    'extends' => 'missing'
+                )
+            )
+        ));
+    }
+
+    public function testAllowsMultipleInheritance()
+    {
+        $description = ServiceDescription::factory(array(
+            'operations' => array(
+                'a' => array(
+                    'httpMethod' => 'GET',
+                    'parameters' => array(
+                        'a1' => array(
+                            'default'  => 'foo',
+                            'required' => true,
+                            'prepend'  => 'hi'
+                        )
+                    )
+                ),
+                'b' => array(
+                    'extends' => 'a',
+                    'parameters' => array(
+                        'b2' => array()
+                    )
+                ),
+                'c' => array(
+                    'parameters' => array(
+                        'a1' => array(
+                            'default'     => 'bar',
+                            'required'    => true,
+                            'description' => 'test'
+                        ),
+                        'c3' => array()
+                    )
+                ),
+                'd' => array(
+                    'httpMethod' => 'DELETE',
+                    'extends'    => array('b', 'c'),
+                    'parameters' => array(
+                        'test' => array()
+                    )
+                )
+            )
+        ));
+
+        $command = $description->getOperation('d');
+        $this->assertEquals('DELETE', $command->getHttpMethod());
+        $this->assertContains('a1', $command->getParamNames());
+        $this->assertContains('b2', $command->getParamNames());
+        $this->assertContains('c3', $command->getParamNames());
+        $this->assertContains('test', $command->getParamNames());
+
+        $this->assertTrue($command->getParam('a1')->getRequired());
+        $this->assertEquals('bar', $command->getParam('a1')->getDefault());
+        $this->assertEquals('test', $command->getParam('a1')->getDescription());
+    }
+
+    public function testAddsOtherFields()
+    {
+        $description = ServiceDescription::factory(array(
+            'operations'  => array(),
+            'description' => 'Foo',
+            'apiVersion'  => 'bar'
+        ));
+        $this->assertEquals('Foo', $description->getDescription());
+        $this->assertEquals('bar', $description->getApiVersion());
+    }
+
+    public function testCanLoadNestedExtends()
+    {
+        $description = ServiceDescription::factory(array(
+            'operations'  => array(
+                'root' => array(
+                    'class' => 'foo'
+                ),
+                'foo' => array(
+                    'extends' => 'root',
+                    'parameters' => array(
+                        'baz' => array('type' => 'string')
+                    )
+                ),
+                'foo_2' => array(
+                    'extends' => 'foo',
+                    'parameters' => array(
+                        'bar' => array('type' => 'string')
+                    )
+                ),
+                'foo_3' => array(
+                    'class' => 'bar',
+                    'parameters' => array(
+                        'bar2' => array('type' => 'string')
+                    )
+                ),
+                'foo_4' => array(
+                    'extends' => array('foo_2', 'foo_3'),
+                    'parameters' => array(
+                        'bar3' => array('type' => 'string')
+                    )
+                )
+            )
+        ));
+
+        $this->assertTrue($description->hasOperation('foo_4'));
+        $foo4 = $description->getOperation('foo_4');
+        $this->assertTrue($foo4->hasParam('baz'));
+        $this->assertTrue($foo4->hasParam('bar'));
+        $this->assertTrue($foo4->hasParam('bar2'));
+        $this->assertTrue($foo4->hasParam('bar3'));
+        $this->assertEquals('bar', $foo4->getClass());
+    }
+}

@@ -1,38 +1,114 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CActiveRecordBehavior class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CActiveRecordBehavior is the base class for behaviors that can be attached to {@link CActiveRecord}.
+ * Compared with {@link CModelBehavior}, CActiveRecordBehavior attaches to more events
+ * that are only defined by {@link CActiveRecord}.
+ *
+ * @property CActiveRecord $owner The owner AR that this behavior is attached to.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.db.ar
+ */
+class CActiveRecordBehavior extends CModelBehavior
+{
+	/**
+	 * Declares events and the corresponding event handler methods.
+	 * If you override this method, make sure you merge the parent result to the return value.
+	 * @return array events (array keys) and the corresponding event handler methods (array values).
+	 * @see CBehavior::events
+	 */
+	public function events()
+	{
+		return array_merge(parent::events(), array(
+			'onBeforeSave'=>'beforeSave',
+			'onAfterSave'=>'afterSave',
+			'onBeforeDelete'=>'beforeDelete',
+			'onAfterDelete'=>'afterDelete',
+			'onBeforeFind'=>'beforeFind',
+			'onAfterFind'=>'afterFind',
+			'onBeforeCount'=>'beforeCount',
+		));
+	}
+
+	/**
+	 * Responds to {@link CActiveRecord::onBeforeSave} event.
+	 * Override this method and make it public if you want to handle the corresponding
+	 * event of the {@link CBehavior::owner owner}.
+	 * You may set {@link CModelEvent::isValid} to be false to quit the saving process.
+	 * @param CModelEvent $event event parameter
+	 */
+	protected function beforeSave($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CActiveRecord::onAfterSave} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link CBehavior::owner owner}.
+	 * @param CModelEvent $event event parameter
+	 */
+	protected function afterSave($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CActiveRecord::onBeforeDelete} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link CBehavior::owner owner}.
+	 * You may set {@link CModelEvent::isValid} to be false to quit the deletion process.
+	 * @param CEvent $event event parameter
+	 */
+	protected function beforeDelete($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CActiveRecord::onAfterDelete} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link CBehavior::owner owner}.
+	 * @param CEvent $event event parameter
+	 */
+	protected function afterDelete($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CActiveRecord::onBeforeFind} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link CBehavior::owner owner}.
+	 * @param CEvent $event event parameter
+	 */
+	protected function beforeFind($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CActiveRecord::onAfterFind} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link CBehavior::owner owner}.
+	 * @param CEvent $event event parameter
+	 */
+	protected function afterFind($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CActiveRecord::onBeforeCount} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link CBehavior::owner owner}.
+	 * @param CEvent $event event parameter
+	 * @since 1.1.14
+	 */
+	protected function beforeCount($event)
+	{
+	}
+}

@@ -1,36 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-wptJzzIAu2WEijATAIerYSuf8KQWiAM8GGhS
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Iterator;
+
+/**
+ * ExcludeDirectoryFilterIterator filters out directories.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class ExcludeDirectoryFilterIterator extends FilterIterator
+{
+    private $patterns = array();
+
+    /**
+     * Constructor.
+     *
+     * @param \Iterator $iterator    The Iterator to filter
+     * @param array     $directories An array of directories to exclude
+     */
+    public function __construct(\Iterator $iterator, array $directories)
+    {
+        foreach ($directories as $directory) {
+            $this->patterns[] = '#(^|/)'.preg_quote($directory, '#').'(/|$)#';
+        }
+
+        parent::__construct($iterator);
+    }
+
+    /**
+     * Filters the iterator values.
+     *
+     * @return Boolean true if the value should be kept, false otherwise
+     */
+    public function accept()
+    {
+        $path = $this->isDir() ? $this->current()->getRelativePathname() : $this->current()->getRelativePath();
+        $path = strtr($path, '\\', '/');
+        foreach ($this->patterns as $pattern) {
+            if (preg_match($pattern, $path)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}

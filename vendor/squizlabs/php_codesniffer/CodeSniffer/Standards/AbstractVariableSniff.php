@@ -1,86 +1,245 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * A class to find T_VARIABLE tokens.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_Standards_AbstractScopeSniff', true) === false) {
+    $error = 'Class PHP_CodeSniffer_Standards_AbstractScopeSniff not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+/**
+ * A class to find T_VARIABLE tokens.
+ *
+ * This class can distinguish between normal T_VARIABLE tokens, and those tokens
+ * that represent class members. If a class member is encountered, then then
+ * processMemberVar method is called so the extending class can process it. If
+ * the token is found to be a normal T_VARIABLE token, then processVariable is
+ * called.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+abstract class PHP_CodeSniffer_Standards_AbstractVariableSniff extends PHP_CodeSniffer_Standards_AbstractScopeSniff
+{
+
+    /**
+     * The end token of the current function that we are in.
+     *
+     * @var int
+     */
+    private $_endFunction = -1;
+
+    /**
+     * true if a function is currently open.
+     *
+     * @var boolean
+     */
+    private $_functionOpen = false;
+
+    /**
+     * The current PHP_CodeSniffer file that we are processing.
+     *
+     * @var PHP_CodeSniffer_File
+     */
+    protected $currentFile = null;
+
+
+    /**
+     * Constructs an AbstractVariableTest.
+     */
+    public function __construct()
+    {
+        $scopes = array(
+                   T_CLASS,
+                   T_INTERFACE,
+                  );
+
+        $listen = array(
+                   T_FUNCTION,
+                   T_VARIABLE,
+                   T_DOUBLE_QUOTED_STRING,
+                   T_HEREDOC,
+                  );
+
+        parent::__construct($scopes, $listen, true);
+
+    }//end __construct()
+
+
+    /**
+     * Processes the token in the specified PHP_CodeSniffer_File.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     *                                        token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     * @param array                $currScope The current scope opener token.
+     *
+     * @return void
+     */
+    protected final function processTokenWithinScope(
+        PHP_CodeSniffer_File $phpcsFile,
+        $stackPtr,
+        $currScope
+    ) {
+        if ($this->currentFile !== $phpcsFile) {
+            $this->currentFile   = $phpcsFile;
+            $this->_functionOpen = false;
+            $this->_endFunction  = -1;
+        }
+
+        $tokens = $phpcsFile->getTokens();
+
+        if ($stackPtr > $this->_endFunction) {
+            $this->_functionOpen = false;
+        }
+
+        if ($tokens[$stackPtr]['code'] === T_FUNCTION
+            && $this->_functionOpen === false
+        ) {
+            $this->_functionOpen = true;
+
+            $methodProps = $phpcsFile->getMethodProperties($stackPtr);
+
+            // If the function is abstract, or is in an interface,
+            // then set the end of the function to it's closing semicolon.
+            if ($methodProps['is_abstract'] === true
+                || $tokens[$currScope]['code'] === T_INTERFACE
+            ) {
+                $this->_endFunction
+                    = $phpcsFile->findNext(array(T_SEMICOLON), $stackPtr);
+            } else {
+                if (isset($tokens[$stackPtr]['scope_closer']) === false) {
+                    $error = 'Possible parse error: non-abstract method defined as abstract';
+                    $phpcsFile->addWarning($error, $stackPtr);
+                    return;
+                }
+
+                $this->_endFunction = $tokens[$stackPtr]['scope_closer'];
+            }
+        }
+
+        if ($tokens[$stackPtr]['code'] === T_DOUBLE_QUOTED_STRING
+            || $tokens[$stackPtr]['code'] === T_HEREDOC
+        ) {
+            // Check to see if this string has a variable in it.
+            $pattern = '|(?<!\\\\)(?:\\\\{2})*\${?[a-zA-Z0-9_]+}?|';
+            if (preg_match($pattern, $tokens[$stackPtr]['content']) !== 0) {
+                $this->processVariableInString($phpcsFile, $stackPtr);
+            }
+
+            return;
+        }
+
+        if ($this->_functionOpen === true) {
+            if ($tokens[$stackPtr]['code'] === T_VARIABLE) {
+                $this->processVariable($phpcsFile, $stackPtr);
+            }
+        } else {
+            // What if we assign a member variable to another?
+            // ie. private $_count = $this->_otherCount + 1;.
+            $this->processMemberVar($phpcsFile, $stackPtr);
+        }
+
+    }//end processTokenWithinScope()
+
+
+    /**
+     * Processes the token outside the scope in the file.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     *                                        token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     *
+     * @return void
+     */
+    protected final function processTokenOutsideScope(
+        PHP_CodeSniffer_File $phpcsFile,
+        $stackPtr
+    ) {
+        $tokens = $phpcsFile->getTokens();
+        // These variables are not member vars.
+        if ($tokens[$stackPtr]['code'] === T_VARIABLE) {
+            $this->processVariable($phpcsFile, $stackPtr);
+        } else if ($tokens[$stackPtr]['code'] === T_DOUBLE_QUOTED_STRING
+            || $tokens[$stackPtr]['code'] === T_HEREDOC
+        ) {
+            // Check to see if this string has a variable in it.
+            $pattern = '|(?<!\\\\)(?:\\\\{2})*\${?[a-zA-Z0-9_]+}?|';
+            if (preg_match($pattern, $tokens[$stackPtr]['content']) !== 0) {
+                $this->processVariableInString($phpcsFile, $stackPtr);
+            }
+        }
+
+    }//end processTokenOutsideScope()
+
+
+    /**
+     * Called to process class member vars.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     *                                        token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     *
+     * @return void
+     */
+    abstract protected function processMemberVar(
+        PHP_CodeSniffer_File $phpcsFile,
+        $stackPtr
+    );
+
+
+    /**
+     * Called to process normal member vars.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     *                                        token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     *
+     * @return void
+     */
+    abstract protected function processVariable(
+        PHP_CodeSniffer_File $phpcsFile,
+        $stackPtr
+    );
+
+
+    /**
+     * Called to process variables found in double quoted strings or heredocs.
+     *
+     * Note that there may be more than one variable in the string, which will
+     * result only in one call for the string or one call per line for heredocs.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where this
+     *                                        token was found.
+     * @param int                  $stackPtr  The position where the double quoted
+     *                                        string was found.
+     *
+     * @return void
+     */
+    abstract protected function processVariableInString(
+        PHP_CodeSniffer_File
+        $phpcsFile,
+        $stackPtr
+    );
+
+
+}//end class
+
 ?>
-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

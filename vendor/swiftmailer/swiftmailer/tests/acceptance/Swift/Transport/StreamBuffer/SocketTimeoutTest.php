@@ -1,50 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-4KW=
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Transport/StreamBuffer.php';
+require_once 'Swift/ReplacementFilterFactory.php';
+require_once 'Swift/InputByteStream.php';
+require_once 'Swift/IoException.php';
+
+class Swift_Transport_StreamBuffer_SocketTimeoutTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    protected $_buffer;
+
+    protected $_server;
+
+    public function setUp()
+    {
+        $this->_buffer = new Swift_Transport_StreamBuffer(
+            $this->_stub('Swift_ReplacementFilterFactory')
+            );
+    }
+
+    public function skip()
+    {
+        $serverStarted=false;
+        for ($i=0; $i<5; ++$i) {
+            $this->_randomHighPort=rand(50000,65000);
+            $this->_server = stream_socket_server('tcp://127.0.0.1:' . $this->_randomHighPort);
+            if ($this->_server) {
+                $serverStarted=true;
+            }
+        }
+        $this->skipUnless(SWIFT_SMTP_HOST,
+            'Cannot run test without an SMTP host to connect to (define ' .
+            'SWIFT_SMTP_HOST in tests/acceptance.conf.php if you wish to run this test)'
+            );
+        parent::skip();
+    }
+
+    protected function _initializeBuffer()
+    {
+        $host = '127.0.0.1';
+        $port = $this->_randomHighPort;
+
+        $this->_buffer->initialize(array(
+            'type' => Swift_Transport_IoBuffer::TYPE_SOCKET,
+            'host' => $host,
+            'port' => $port,
+            'protocol' => 'tcp',
+            'blocking' => 1,
+            'timeout' => 1
+            ));
+    }
+
+    public function testTimeoutException()
+    {
+        $this->_initializeBuffer();
+        $e=null;
+        try {
+            $line = $this->_buffer->readLine(0);
+        } catch (Exception $e) {
+        }
+        $this->assertIsA($e, 'Swift_IoException', 'IO Exception Not Thrown On Connection Timeout');
+        $this->assertPattern('/Connection to .* Timed Out/', $e->getMessage());
+    }
+
+    public function tearDown()
+    {
+        if ($this->_server) {
+            stream_socket_shutdown($this->_server, STREAM_SHUT_RDWR);
+        }
+    }
+}

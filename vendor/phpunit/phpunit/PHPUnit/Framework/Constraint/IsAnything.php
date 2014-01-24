@@ -1,31 +1,102 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.0.0
+ */
+
+/**
+ * Constraint that accepts any input value.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
+ */
+class PHPUnit_Framework_Constraint_IsAnything extends PHPUnit_Framework_Constraint
+{
+    /**
+     * Evaluates the constraint for parameter $other
+     *
+     * If $returnResult is set to FALSE (the default), an exception is thrown
+     * in case of a failure. NULL is returned otherwise.
+     *
+     * If $returnResult is TRUE, the result of the evaluation is returned as
+     * a boolean value instead: TRUE in case of success, FALSE in case of a
+     * failure.
+     *
+     * @param  mixed $other Value or object to evaluate.
+     * @param  string $description Additional information about the test
+     * @param  bool $returnResult Whether to return a result or throw an exception
+     * @return mixed
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    public function evaluate($other, $description = '', $returnResult = FALSE)
+    {
+        return $returnResult ? TRUE : NULL;
+    }
+
+    /**
+     * Returns a string representation of the constraint.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'is anything';
+    }
+
+    /**
+     * Counts the number of constraint elements.
+     *
+     * @return integer
+     * @since  Method available since Release 3.5.0
+     */
+    public function count()
+    {
+        return 0;
+    }
+}

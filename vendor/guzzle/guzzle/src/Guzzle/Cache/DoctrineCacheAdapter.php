@@ -1,30 +1,41 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-JZReUWZ+g6M0+34=
+<?php
+
+namespace Guzzle\Cache;
+
+use Doctrine\Common\Cache\Cache;
+
+/**
+ * Doctrine 2 cache adapter
+ *
+ * @link http://www.doctrine-project.org/
+ */
+class DoctrineCacheAdapter extends AbstractCacheAdapter
+{
+    /**
+     * @param Cache $cache Doctrine cache object
+     */
+    public function __construct(Cache $cache)
+    {
+        $this->cache = $cache;
+    }
+
+    public function contains($id, array $options = null)
+    {
+        return $this->cache->contains($id);
+    }
+
+    public function delete($id, array $options = null)
+    {
+        return $this->cache->delete($id);
+    }
+
+    public function fetch($id, array $options = null)
+    {
+        return $this->cache->fetch($id);
+    }
+
+    public function save($id, $data, $lifeTime = false, array $options = null)
+    {
+        return $this->cache->save($id, $data, $lifeTime);
+    }
+}

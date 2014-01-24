@@ -1,35 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Node;
+
+/**
+ * Represents a "<selector>#<id>" node.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class HashNode extends AbstractNode
+{
+    /**
+     * @var NodeInterface
+     */
+    private $selector;
+
+    /**
+     * @var string
+     */
+    private $id;
+
+    /**
+     * @param NodeInterface $selector
+     * @param string        $id
+     */
+    public function __construct(NodeInterface $selector, $id)
+    {
+        $this->selector = $selector;
+        $this->id = $id;
+    }
+
+    /**
+     * @return NodeInterface
+     */
+    public function getSelector()
+    {
+        return $this->selector;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSpecificity()
+    {
+        return $this->selector->getSpecificity()->plus(new Specificity(1, 0, 0));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString()
+    {
+        return sprintf('%s[%s#%s]', $this->getNodeName(), $this->selector, $this->id);
+    }
+}

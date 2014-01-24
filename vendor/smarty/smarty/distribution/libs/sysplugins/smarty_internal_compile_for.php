@@ -1,82 +1,150 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Compile For
+ *
+ * Compiles the {for} {forelse} {/for} tags
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile For Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_For extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {for} tag
+     *
+     * Smarty 3 does implement two different sytaxes:
+     *
+     * - {for $var in $array}
+     * For looping over arrays or iterators
+     *
+     * - {for $x=0; $x<$y; $x++}
+     * For general loops
+     *
+     * The parser is gereration different sets of attribute by which this compiler can
+     * determin which syntax is used.
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        if ($parameter == 0) {
+            $this->required_attributes = array('start', 'to');
+            $this->optional_attributes = array('max', 'step');
+        } else {
+            $this->required_attributes = array('start', 'ifexp', 'var', 'step');
+            $this->optional_attributes = array();
+        }
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        $output = "<?php ";
+        if ($parameter == 1) {
+            foreach ($_attr['start'] as $_statement) {
+                $output .= " \$_smarty_tpl->tpl_vars[$_statement[var]] = new Smarty_Variable;";
+                $output .= " \$_smarty_tpl->tpl_vars[$_statement[var]]->value = $_statement[value];\n";
+            }
+            $output .= "  if ($_attr[ifexp]) { for (\$_foo=true;$_attr[ifexp]; \$_smarty_tpl->tpl_vars[$_attr[var]]->value$_attr[step]) {\n";
+        } else {
+            $_statement = $_attr['start'];
+            $output .= "\$_smarty_tpl->tpl_vars[$_statement[var]] = new Smarty_Variable;";
+            if (isset($_attr['step'])) {
+                $output .= "\$_smarty_tpl->tpl_vars[$_statement[var]]->step = $_attr[step];";
+            } else {
+                $output .= "\$_smarty_tpl->tpl_vars[$_statement[var]]->step = 1;";
+            }
+            if (isset($_attr['max'])) {
+                $output .= "\$_smarty_tpl->tpl_vars[$_statement[var]]->total = (int) min(ceil((\$_smarty_tpl->tpl_vars[$_statement[var]]->step > 0 ? $_attr[to]+1 - ($_statement[value]) : $_statement[value]-($_attr[to])+1)/abs(\$_smarty_tpl->tpl_vars[$_statement[var]]->step)),$_attr[max]);\n";
+            } else {
+                $output .= "\$_smarty_tpl->tpl_vars[$_statement[var]]->total = (int) ceil((\$_smarty_tpl->tpl_vars[$_statement[var]]->step > 0 ? $_attr[to]+1 - ($_statement[value]) : $_statement[value]-($_attr[to])+1)/abs(\$_smarty_tpl->tpl_vars[$_statement[var]]->step));\n";
+            }
+            $output .= "if (\$_smarty_tpl->tpl_vars[$_statement[var]]->total > 0) {\n";
+            $output .= "for (\$_smarty_tpl->tpl_vars[$_statement[var]]->value = $_statement[value], \$_smarty_tpl->tpl_vars[$_statement[var]]->iteration = 1;\$_smarty_tpl->tpl_vars[$_statement[var]]->iteration <= \$_smarty_tpl->tpl_vars[$_statement[var]]->total;\$_smarty_tpl->tpl_vars[$_statement[var]]->value += \$_smarty_tpl->tpl_vars[$_statement[var]]->step, \$_smarty_tpl->tpl_vars[$_statement[var]]->iteration++) {\n";
+            $output .= "\$_smarty_tpl->tpl_vars[$_statement[var]]->first = \$_smarty_tpl->tpl_vars[$_statement[var]]->iteration == 1;";
+            $output .= "\$_smarty_tpl->tpl_vars[$_statement[var]]->last = \$_smarty_tpl->tpl_vars[$_statement[var]]->iteration == \$_smarty_tpl->tpl_vars[$_statement[var]]->total;";
+        }
+        $output .= "?>";
+
+        $this->openTag($compiler, 'for', array('for', $compiler->nocache));
+        // maybe nocache because of nocache variables
+        $compiler->nocache = $compiler->nocache | $compiler->tag_nocache;
+        // return compiled code
+        return $output;
+    }
+
+}
+
+/**
+ * Smarty Internal Plugin Compile Forelse Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Forelse extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {forelse} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr  = $this->getAttributes($compiler, $args);
+
+        list($openTag, $nocache) = $this->closeTag($compiler, array('for'));
+        $this->openTag($compiler, 'forelse', array('forelse', $nocache));
+
+        return "<?php }} else { ?>";
+    }
+
+}
+
+/**
+ * Smarty Internal Plugin Compile Forclose Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Forclose extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {/for} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        // must endblock be nocache?
+        if ($compiler->nocache) {
+            $compiler->tag_nocache = true;
+        }
+
+        list($openTag, $compiler->nocache) = $this->closeTag($compiler, array('for', 'forelse'));
+
+        if ($openTag == 'forelse') {
+            return "<?php }  ?>";
+        } else {
+            return "<?php }} ?>";
+        }
+    }
+
+}

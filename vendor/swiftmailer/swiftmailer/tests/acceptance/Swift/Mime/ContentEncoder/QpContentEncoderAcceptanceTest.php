@@ -1,95 +1,170 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-zqPyxpPyzHthRCVcmXXAXWbRvETGfPgr5vqU7G==
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Mime/ContentEncoder/QpContentEncoder.php';
+require_once 'Swift/CharacterStream/ArrayCharacterStream.php';
+require_once 'Swift/CharacterReaderFactory/SimpleCharacterReaderFactory.php';
+require_once 'Swift/ByteStream/ArrayByteStream.php';
+
+class Swift_Mime_ContentEncoder_QpContentEncoderAcceptanceTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    private $_samplesDir;
+    private $_factory;
+
+    public function setUp()
+    {
+        $this->_samplesDir = realpath(dirname(__FILE__) . '/../../../../_samples/charsets');
+        $this->_factory = new Swift_CharacterReaderFactory_SimpleCharacterReaderFactory();
+    }
+
+    public function testEncodingAndDecodingSamples()
+    {
+        $sampleFp = opendir($this->_samplesDir);
+        while (false !== $encodingDir = readdir($sampleFp)) {
+            if (substr($encodingDir, 0, 1) == '.') {
+                continue;
+            }
+
+            $encoding = $encodingDir;
+            $charStream = new Swift_CharacterStream_NgCharacterStream(
+                $this->_factory, $encoding);
+            $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+
+            $sampleDir = $this->_samplesDir . '/' . $encodingDir;
+
+            if (is_dir($sampleDir)) {
+
+                $fileFp = opendir($sampleDir);
+                while (false !== $sampleFile = readdir($fileFp)) {
+                    if (substr($sampleFile, 0, 1) == '.') {
+                        continue;
+                    }
+
+                    $text = file_get_contents($sampleDir . '/' . $sampleFile);
+
+                    $os = new Swift_ByteStream_ArrayByteStream();
+                    $os->write($text);
+
+                    $is = new Swift_ByteStream_ArrayByteStream();
+                    $encoder->encodeByteStream($os, $is);
+
+                    $encoded = '';
+                    while (false !== $bytes = $is->read(8192)) {
+                        $encoded .= $bytes;
+                    }
+
+                    $this->assertEqual(
+                        quoted_printable_decode($encoded), $text,
+                        '%s: Encoded string should decode back to original string for sample ' .
+                        $sampleDir . '/' . $sampleFile
+                        );
+                }
+                closedir($fileFp);
+            }
+
+        }
+        closedir($sampleFp);
+    }
+
+    public function testEncodingAndDecodingSamplesFromDiConfiguredInstance()
+    {
+        $sampleFp = opendir($this->_samplesDir);
+        while (false !== $encodingDir = readdir($sampleFp)) {
+            if (substr($encodingDir, 0, 1) == '.') {
+                continue;
+            }
+
+            $encoding = $encodingDir;
+            $encoder = $this->_createEncoderFromContainer();
+
+            $sampleDir = $this->_samplesDir . '/' . $encodingDir;
+
+            if (is_dir($sampleDir)) {
+
+                $fileFp = opendir($sampleDir);
+                while (false !== $sampleFile = readdir($fileFp)) {
+                    if (substr($sampleFile, 0, 1) == '.') {
+                        continue;
+                    }
+
+                    $text = file_get_contents($sampleDir . '/' . $sampleFile);
+
+                    $os = new Swift_ByteStream_ArrayByteStream();
+                    $os->write($text);
+
+                    $is = new Swift_ByteStream_ArrayByteStream();
+                    $encoder->encodeByteStream($os, $is);
+
+                    $encoded = '';
+                    while (false !== $bytes = $is->read(8192)) {
+                        $encoded .= $bytes;
+                    }
+
+                    $this->assertEqual(
+                        str_replace("\r\n", "\n", quoted_printable_decode($encoded)), str_replace("\r\n", "\n", $text),
+                        '%s: Encoded string should decode back to original string for sample ' .
+                        $sampleDir . '/' . $sampleFile
+                        );
+                }
+                closedir($fileFp);
+            }
+
+        }
+        closedir($sampleFp);
+    }
+
+    public function testEncodingLFTextWithDiConfiguredInstance()
+    {
+        $encoder = $this->_createEncoderFromContainer();
+        $this->assertEqual("a\r\nb\r\nc", $encoder->encodeString("a\nb\nc"));
+    }
+
+    public function testEncodingCRTextWithDiConfiguredInstance()
+    {
+        $encoder = $this->_createEncoderFromContainer();
+        $this->assertEqual("a\r\nb\r\nc", $encoder->encodeString("a\rb\rc"));
+    }
+
+    public function testEncodingLFCRTextWithDiConfiguredInstance()
+    {
+        $encoder = $this->_createEncoderFromContainer();
+        $this->assertEqual("a\r\n\r\nb\r\n\r\nc", $encoder->encodeString("a\n\rb\n\rc"));
+    }
+
+    public function testEncodingCRLFTextWithDiConfiguredInstance()
+    {
+        $encoder = $this->_createEncoderFromContainer();
+        $this->assertEqual("a\r\nb\r\nc", $encoder->encodeString("a\r\nb\r\nc"));
+    }
+
+    public function testEncodingDotStuffingWithDiConfiguredInstance()
+    {
+        // Enable DotEscaping
+        Swift_Preferences::getInstance()->setQPDotEscape(true);
+        $encoder = $this->_createEncoderFromContainer();
+        $this->assertEqual("a=2E\r\n=2E\r\n=2Eb\r\nc", $encoder->encodeString("a.\r\n.\r\n.b\r\nc"));
+        // Return to default
+        Swift_Preferences::getInstance()->setQPDotEscape(false);
+        $encoder = $this->_createEncoderFromContainer();
+        $this->assertEqual("a.\r\n.\r\n.b\r\nc", $encoder->encodeString("a.\r\n.\r\n.b\r\nc"));
+    }
+
+    public function testDotStuffingEncodingAndDecodingSamplesFromDiConfiguredInstance()
+    {
+        // Enable DotEscaping
+        Swift_Preferences::getInstance()->setQPDotEscape(true);
+        $this->testEncodingAndDecodingSamplesFromDiConfiguredInstance();
+        // Disable DotStuffing to continue
+        Swift_Preferences::getInstance()->setQPDotEscape(false);
+    }
+
+    // -- Private Methods
+
+    private function _createEncoderFromContainer()
+    {
+        return Swift_DependencyContainer::getInstance()
+            ->lookup('mime.qpcontentencoder')
+            ;
+    }
+}

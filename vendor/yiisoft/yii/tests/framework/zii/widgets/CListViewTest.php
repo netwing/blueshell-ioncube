@@ -1,44 +1,37 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-IhWELNRFlBONjIi=
+<?php
+/**
+ * CListViewTest
+ */
+class CListViewTest extends CTestCase
+{
+	public function testCallbackEncoding()
+	{
+		$expected = "'beforeAjaxUpdate':function() { /* callback1 */ },'afterAjaxUpdate':function() { /* callback2 */ }";
+
+		$out=$this->getWidgetScript('js:function() { /* callback1 */ }', 'js:function() { /* callback2 */ }');
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (js:): ".$out);
+
+		$out=$this->getWidgetScript('function() { /* callback1 */ }', 'function() { /* callback2 */ }');
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (w/o js:): ".$out);
+
+		$out=$this->getWidgetScript(new CJavaScriptExpression('function() { /* callback1 */ }'), new CJavaScriptExpression('function() { /* callback2 */ }'));
+		$this->assertTrue(mb_strpos($out,$expected, null, Yii::app()->charset)!==false, "Unexpected JavaScript (wrap): ".$out);
+	}
+
+	private function getWidgetScript($callback1, $callback2)
+	{
+		Yii::import('zii.widgets.CListView');
+		Yii::app()->clientScript->scripts = array();
+		ob_start();
+		$widget = new CListView(null);
+		$widget->beforeAjaxUpdate = $callback1;
+		$widget->afterAjaxUpdate = $callback2;
+		$widget->itemView = 'dummy';
+		$widget->dataProvider = new CArrayDataProvider(array(1, 2, 3));
+		$widget->init();
+		$widget->registerClientScript();
+		Yii::app()->clientScript->render($out);
+		ob_end_clean();
+		return $out;
+	}
+}

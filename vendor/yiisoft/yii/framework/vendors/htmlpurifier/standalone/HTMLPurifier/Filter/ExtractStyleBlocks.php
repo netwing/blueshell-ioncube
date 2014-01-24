@@ -1,128 +1,289 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+// why is this a top level function? Because PHP 5.2.0 doesn't seem to
+// understand how to interpret this filter if it's a static method.
+// It's all really silly, but if we go this route it might be reasonable
+// to coalesce all of these methods into one.
+function htmlpurifier_filter_extractstyleblocks_muteerrorhandler() {}
+
+/**
+ * This filter extracts <style> blocks from input HTML, cleans them up
+ * using CSSTidy, and then places them in $purifier->context->get('StyleBlocks')
+ * so they can be used elsewhere in the document.
+ *
+ * @note
+ *      See tests/HTMLPurifier/Filter/ExtractStyleBlocksTest.php for
+ *      sample usage.
+ *
+ * @note
+ *      This filter can also be used on stylesheets not included in the
+ *      document--something purists would probably prefer. Just directly
+ *      call HTMLPurifier_Filter_ExtractStyleBlocks->cleanCSS()
+ */
+class HTMLPurifier_Filter_ExtractStyleBlocks extends HTMLPurifier_Filter
+{
+
+    public $name = 'ExtractStyleBlocks';
+    private $_styleMatches = array();
+    private $_tidy;
+
+    private $_id_attrdef;
+    private $_class_attrdef;
+    private $_enum_attrdef;
+
+    public function __construct() {
+        $this->_tidy = new csstidy();
+        $this->_tidy->set_cfg('lowercase_s', false);
+        $this->_id_attrdef = new HTMLPurifier_AttrDef_HTML_ID(true);
+        $this->_class_attrdef = new HTMLPurifier_AttrDef_CSS_Ident();
+        $this->_enum_attrdef = new HTMLPurifier_AttrDef_Enum(array('first-child', 'link', 'visited', 'active', 'hover', 'focus'));
+    }
+
+    /**
+     * Save the contents of CSS blocks to style matches
+     * @param $matches preg_replace style $matches array
+     */
+    protected function styleCallback($matches) {
+        $this->_styleMatches[] = $matches[1];
+    }
+
+    /**
+     * Removes inline <style> tags from HTML, saves them for later use
+     * @todo Extend to indicate non-text/css style blocks
+     */
+    public function preFilter($html, $config, $context) {
+        $tidy = $config->get('Filter.ExtractStyleBlocks.TidyImpl');
+        if ($tidy !== null) $this->_tidy = $tidy;
+        $html = preg_replace_callback('#<style(?:\s.*)?>(.+)</style>#isU', array($this, 'styleCallback'), $html);
+        $style_blocks = $this->_styleMatches;
+        $this->_styleMatches = array(); // reset
+        $context->register('StyleBlocks', $style_blocks); // $context must not be reused
+        if ($this->_tidy) {
+            foreach ($style_blocks as &$style) {
+                $style = $this->cleanCSS($style, $config, $context);
+            }
+        }
+        return $html;
+    }
+
+    /**
+     * Takes CSS (the stuff found in <style>) and cleans it.
+     * @warning Requires CSSTidy <http://csstidy.sourceforge.net/>
+     * @param $css     CSS styling to clean
+     * @param $config  Instance of HTMLPurifier_Config
+     * @param $context Instance of HTMLPurifier_Context
+     * @return Cleaned CSS
+     */
+    public function cleanCSS($css, $config, $context) {
+        // prepare scope
+        $scope = $config->get('Filter.ExtractStyleBlocks.Scope');
+        if ($scope !== null) {
+            $scopes = array_map('trim', explode(',', $scope));
+        } else {
+            $scopes = array();
+        }
+        // remove comments from CSS
+        $css = trim($css);
+        if (strncmp('<!--', $css, 4) === 0) {
+            $css = substr($css, 4);
+        }
+        if (strlen($css) > 3 && substr($css, -3) == '-->') {
+            $css = substr($css, 0, -3);
+        }
+        $css = trim($css);
+        set_error_handler('htmlpurifier_filter_extractstyleblocks_muteerrorhandler');
+        $this->_tidy->parse($css);
+        restore_error_handler();
+        $css_definition = $config->getDefinition('CSS');
+        $html_definition = $config->getDefinition('HTML');
+        $new_css = array();
+        foreach ($this->_tidy->css as $k => $decls) {
+            // $decls are all CSS declarations inside an @ selector
+            $new_decls = array();
+            foreach ($decls as $selector => $style) {
+                $selector = trim($selector);
+                if ($selector === '') continue; // should not happen
+                // Parse the selector
+                // Here is the relevant part of the CSS grammar:
+                //
+                // ruleset
+                //   : selector [ ',' S* selector ]* '{' ...
+                // selector
+                //   : simple_selector [ combinator selector | S+ [ combinator? selector ]? ]?
+                // combinator
+                //   : '+' S*
+                //   : '>' S*
+                // simple_selector
+                //   : element_name [ HASH | class | attrib | pseudo ]*
+                //   | [ HASH | class | attrib | pseudo ]+
+                // element_name
+                //   : IDENT | '*'
+                //   ;
+                // class
+                //   : '.' IDENT
+                //   ;
+                // attrib
+                //   : '[' S* IDENT S* [ [ '=' | INCLUDES | DASHMATCH ] S*
+                //     [ IDENT | STRING ] S* ]? ']'
+                //   ;
+                // pseudo
+                //   : ':' [ IDENT | FUNCTION S* [IDENT S*]? ')' ]
+                //   ;
+                //
+                // For reference, here are the relevant tokens:
+                //
+                // HASH         #{name}
+                // IDENT        {ident}
+                // INCLUDES     ==
+                // DASHMATCH    |=
+                // STRING       {string}
+                // FUNCTION     {ident}\(
+                //
+                // And the lexical scanner tokens
+                //
+                // name         {nmchar}+
+                // nmchar       [_a-z0-9-]|{nonascii}|{escape}
+                // nonascii     [\240-\377]
+                // escape       {unicode}|\\[^\r\n\f0-9a-f]
+                // unicode      \\{h}}{1,6}(\r\n|[ \t\r\n\f])?
+                // ident        -?{nmstart}{nmchar*}
+                // nmstart      [_a-z]|{nonascii}|{escape}
+                // string       {string1}|{string2}
+                // string1      \"([^\n\r\f\\"]|\\{nl}|{escape})*\"
+                // string2      \'([^\n\r\f\\"]|\\{nl}|{escape})*\'
+                //
+                // We'll implement a subset (in order to reduce attack
+                // surface); in particular:
+                //
+                //      - No Unicode support
+                //      - No escapes support
+                //      - No string support (by proxy no attrib support)
+                //      - element_name is matched against allowed
+                //        elements (some people might find this
+                //        annoying...)
+                //      - Pseudo-elements one of :first-child, :link,
+                //        :visited, :active, :hover, :focus
+
+                // handle ruleset
+                $selectors = array_map('trim', explode(',', $selector));
+                $new_selectors = array();
+                foreach ($selectors as $sel) {
+                    // split on +, > and spaces
+                    $basic_selectors = preg_split('/\s*([+> ])\s*/', $sel, -1, PREG_SPLIT_DELIM_CAPTURE);
+                    // even indices are chunks, odd indices are
+                    // delimiters
+                    $nsel = null;
+                    $delim = null; // guaranteed to be non-null after
+                                   // two loop iterations
+                    for ($i = 0, $c = count($basic_selectors); $i < $c; $i++) {
+                        $x = $basic_selectors[$i];
+                        if ($i % 2) {
+                            // delimiter
+                            if ($x === ' ') {
+                                $delim = ' ';
+                            } else {
+                                $delim = ' ' . $x . ' ';
+                            }
+                        } else {
+                            // simple selector
+                            $components = preg_split('/([#.:])/', $x, -1, PREG_SPLIT_DELIM_CAPTURE);
+                            $sdelim = null;
+                            $nx = null;
+                            for ($j = 0, $cc = count($components); $j < $cc; $j ++) {
+                                $y = $components[$j];
+                                if ($j === 0) {
+                                    if ($y === '*' || isset($html_definition->info[$y = strtolower($y)])) {
+                                        $nx = $y;
+                                    } else {
+                                        // $nx stays null; this matters
+                                        // if we don't manage to find
+                                        // any valid selector content,
+                                        // in which case we ignore the
+                                        // outer $delim
+                                    }
+                                } elseif ($j % 2) {
+                                    // set delimiter
+                                    $sdelim = $y;
+                                } else {
+                                    $attrdef = null;
+                                    if ($sdelim === '#') {
+                                        $attrdef = $this->_id_attrdef;
+                                    } elseif ($sdelim === '.') {
+                                        $attrdef = $this->_class_attrdef;
+                                    } elseif ($sdelim === ':') {
+                                        $attrdef = $this->_enum_attrdef;
+                                    } else {
+                                        throw new HTMLPurifier_Exception('broken invariant sdelim and preg_split');
+                                    }
+                                    $r = $attrdef->validate($y, $config, $context);
+                                    if ($r !== false) {
+                                        if ($r !== true) {
+                                            $y = $r;
+                                        }
+                                        if ($nx === null) {
+                                            $nx = '';
+                                        }
+                                        $nx .= $sdelim . $y;
+                                    }
+                                }
+                            }
+                            if ($nx !== null) {
+                                if ($nsel === null) {
+                                    $nsel = $nx;
+                                } else {
+                                    $nsel .= $delim . $nx;
+                                }
+                            } else {
+                                // delimiters to the left of invalid
+                                // basic selector ignored
+                            }
+                        }
+                    }
+                    if ($nsel !== null) {
+                        if (!empty($scopes)) {
+                            foreach ($scopes as $s) {
+                                $new_selectors[] = "$s $nsel";
+                            }
+                        } else {
+                            $new_selectors[] = $nsel;
+                        }
+                    }
+                }
+                if (empty($new_selectors)) continue;
+                $selector = implode(', ', $new_selectors);
+                foreach ($style as $name => $value) {
+                    if (!isset($css_definition->info[$name])) {
+                        unset($style[$name]);
+                        continue;
+                    }
+                    $def = $css_definition->info[$name];
+                    $ret = $def->validate($value, $config, $context);
+                    if ($ret === false) unset($style[$name]);
+                    else $style[$name] = $ret;
+                }
+                $new_decls[$selector] = $style;
+            }
+            $new_css[$k] = $new_decls;
+        }
+        // remove stuff that shouldn't be used, could be reenabled
+        // after security risks are analyzed
+        $this->_tidy->css = $new_css;
+        $this->_tidy->import = array();
+        $this->_tidy->charset = null;
+        $this->_tidy->namespace = null;
+        $css = $this->_tidy->print->plain();
+        // we are going to escape any special characters <>& to ensure
+        // that no funny business occurs (i.e. </style> in a font-family prop).
+        if ($config->get('Filter.ExtractStyleBlocks.Escaping')) {
+            $css = str_replace(
+                array('<',    '>',    '&'),
+                array('\3C ', '\3E ', '\26 '),
+                $css
+            );
+        }
+        return $css;
+    }
+
+}
+
+// vim: et sw=4 sts=4

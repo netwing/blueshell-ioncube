@@ -1,29 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPo312581A/5bo7UTSRZLndXfknn2D8U70QUiK2r7KE7N+K5hx9kebuHsdz5Al7SdS6GE/Uwl
-RxdPdXfGSDkbYSP9xuwkqRH95k2wbnsfbcbYL2ivuqH6/SYzFiQdXjN7bF0cyHn69swOhQwbV0BY
-rKSr0cXadrLGnOkk1xeWMEphkVcywpDPSBWS2oADn1W1FY6oGYtvUKwWZtU8t+DoRbkcx3udutrI
-KlukiBR7iv/Qbk/80jjOhr4euJltSAgiccy4GDnfT5fclduztGVy69rZua1zBy4LBQn6Im3I5LCX
-n/Loje/QkkUfgBn8XrKxjxHIPfO03m02sWjg3WpgJE9JQ/6IWfLU9T7jCBVLGMJND3a1eSMRUovO
-Yz7hJ+1gFfyAcgG38bLNWNEUMUOMxmPG3HibK4HmtLuqDckunRdOOK83j8IPcgmxXxIWTxZltV2X
-x3BhxohhIDXshjDP6bf/wz14Kfc9yNu9PwcfTLSxSGELPvlktpNAHDARAHQH145CHh8n6hjntfmu
-RxGdSY2ghXFs4VkXk8gVBYOpIV9+pOo3NX2NE0Lqp0BpUmubOKaCl0dSa8nGzd2FlZ7mcmc2Co8S
-h2vgnz54GIXFrrB32K6HYBgLGXR4Urln+N9WNq71SHl0vuOzAmkMPUhC/TMyQ86qfhd4gSo3DE/V
-U3VQQz8PVydrVxTWt/p8l2yaeIbudv7eStwYxFO/4aXmKmrga+jROI8OlaN6wccSgkY8zOp1NIkf
-a+Qn6/0jM7Silj7WmmcCC3DkA3yGWCDMAiYeR+HYIbGNUsoT/wwzd6XyWXHhrwSeJuLxiH0z1chm
-KXAXvMr6L+KLo/t/7sNFxJ+mqXfbK/XZLo6j/NgTLh8o5fu8+CginTYISUHA0b8Qbyxzut3HiUaw
-WvE+a8iEE3ALTZPCuaSQubYTSHtZXngmS1iRmrh9zEKjjDeOQvi0GGq7FjwHGs6HTBwzUlcDRV+e
-SzlMRtq7d6K6VOP8PHXsK+W0z+e9ewNWAcECPfXeYhfwGqqfX7CYUfd107Jre/LbRWv4d/BAWK1d
-OnRo3hKRwOHI8Z5s8wUu+GZXfYit1+Rd4HyA3LjyRRCXevO0UlPGwcGB0eRkkHLZxEkcfzuYECKO
-zuCxhVCzz3Aryfk5gQB6B5+Dh94UUHfGR/3bu2a7QiTk2f4CytCm895NMoFbUxegNZHTsWZF9a7H
-UDcfiILGIqjZYvmuuwFxHXqzPltJlkkNMu27lK7KYpJaA1fg94Slh45fZQnrjdbX+LVBe2NTlMTv
-Eik/V1Twr0HdZJBAx4s7QOKvsTs98SJ9jVKJ/pDy/sadzzlkDXYSr9YMYjOs1UTPcaxsH8V0bvhD
-1qFT+LypK7KYCKhZ6AC+a1rKXVBeZLCNU1ouNQ0N2RENbXRnO9oZxcuSn/73NhNqLIsrxlU+YMUb
-wDPYKJMevwDHNOL6iywVkAa/K6RM3HnPEHGUenIuZ7iIvZvspXooUAW9C4SSeLQmj3uqCFbu/H5O
-jUvOoYLBnmJkg0xzWNIzZMHv+AB9mVDrw2BOGP4Y3rlzQv1ILDieCLMf83K90HmIMGPVsHIoBaYV
-b9Cb8TMoOEqWD2hQb1lmXECsXtFiGGcyXlOxVb41yGOq1vbFdeE0TNNBKH2jLIy9e00A1RvrKbQy
-yoCe0MjfiKX6FVJVix/z3an+ygRKC7ADqwAmABPKYug2OzKf1RxGjW1xlkKar6BRHBGZxRIB2ypX
-6U9Ei25srDPjG4RKaBPt/AYCn0M2R8JFu3Ztnhnq0tJs5Dd5stQ0wbH05W5UwwYDcqpoSK5fc6vQ
-XCAeK74HKb75RMQqiAajx2lEOhUqFJWSZWK/jsxTHCGW6BKsfhgRypVBEbDSDO+QzB5eNOFq7OhJ
-AfdyZPEnXV9wgdgrqx7frzkt2Lrc0m==
+<?php
+/**
+ * This file contains the base application component class.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CApplicationComponent is the base class for application component classes.
+ *
+ * CApplicationComponent implements the basic methods required by {@link IApplicationComponent}.
+ *
+ * When developing an application component, try to put application component initialization code in
+ * the {@link init()} method instead of the constructor. This has the advantage that
+ * the application component can be customized through application configuration.
+ *
+ * @property boolean $isInitialized Whether this application component has been initialized (ie, {@link init()} is invoked).
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+abstract class CApplicationComponent extends CComponent implements IApplicationComponent
+{
+	/**
+	 * @var array the behaviors that should be attached to this component.
+	 * The behaviors will be attached to the component when {@link init} is called.
+	 * Please refer to {@link CModel::behaviors} on how to specify the value of this property.
+	 */
+	public $behaviors=array();
+
+	private $_initialized=false;
+
+	/**
+	 * Initializes the application component.
+	 * This method is required by {@link IApplicationComponent} and is invoked by application.
+	 * If you override this method, make sure to call the parent implementation
+	 * so that the application component can be marked as initialized.
+	 */
+	public function init()
+	{
+		$this->attachBehaviors($this->behaviors);
+		$this->_initialized=true;
+	}
+
+	/**
+	 * Checks if this application component has been initialized.
+	 * @return boolean whether this application component has been initialized (ie, {@link init()} is invoked).
+	 */
+	public function getIsInitialized()
+	{
+		return $this->_initialized;
+	}
+}

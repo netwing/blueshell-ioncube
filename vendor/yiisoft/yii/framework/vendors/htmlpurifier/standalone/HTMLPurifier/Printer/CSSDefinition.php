@@ -1,35 +1,38 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class HTMLPurifier_Printer_CSSDefinition extends HTMLPurifier_Printer
+{
+
+    protected $def;
+
+    public function render($config) {
+        $this->def = $config->getCSSDefinition();
+        $ret = '';
+
+        $ret .= $this->start('div', array('class' => 'HTMLPurifier_Printer'));
+        $ret .= $this->start('table');
+
+        $ret .= $this->element('caption', 'Properties ($info)');
+
+        $ret .= $this->start('thead');
+        $ret .= $this->start('tr');
+        $ret .= $this->element('th', 'Property', array('class' => 'heavy'));
+        $ret .= $this->element('th', 'Definition', array('class' => 'heavy', 'style' => 'width:auto;'));
+        $ret .= $this->end('tr');
+        $ret .= $this->end('thead');
+
+        ksort($this->def->info);
+        foreach ($this->def->info as $property => $obj) {
+            $name = $this->getClass($obj, 'AttrDef_');
+            $ret .= $this->row($property, $name);
+        }
+
+        $ret .= $this->end('table');
+        $ret .= $this->end('div');
+
+        return $ret;
+    }
+
+}
+
+// vim: et sw=4 sts=4

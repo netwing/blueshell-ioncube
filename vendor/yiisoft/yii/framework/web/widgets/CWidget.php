@@ -1,119 +1,249 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CWidget class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CWidget is the base class for widgets.
+ *
+ * A widget is a self-contained component that may generate presentation
+ * based on model data.  It can be viewed as a micro-controller that embeds
+ * into the controller-managed views.
+ *
+ * Compared with {@link CController controller}, a widget has neither actions nor filters.
+ *
+ * Usage is described at {@link CBaseController} and {@link CBaseController::widget}.
+ *
+ * @property CBaseController $owner Owner/creator of this widget. It could be either a widget or a controller.
+ * @property string $id Id of the widget.
+ * @property CController $controller The controller that this widget belongs to.
+ * @property string $viewPath The directory containing the view files for this widget.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CWidget extends CBaseController
+{
+	/**
+	 * @var string the prefix to the IDs of the {@link actions}.
+	 * When a widget is declared an action provider in {@link CController::actions},
+	 * a prefix can be specified to differentiate its action IDs from others.
+	 * The same prefix should then also be used to configure this property
+	 * when the widget is used in a view of the controller.
+	 */
+	public $actionPrefix;
+	/**
+	 * @var mixed the name of the skin to be used by this widget. Defaults to 'default'.
+	 * If this is set as false, no skin will be applied to this widget.
+	 * @see CWidgetFactory
+	 * @since 1.1
+	 */
+	public $skin='default';
+
+	/**
+	 * @var array view paths for different types of widgets
+	 */
+	private static $_viewPaths;
+	/**
+	 * @var integer the counter for generating implicit IDs.
+	 */
+	private static $_counter=0;
+	/**
+	 * @var string id of the widget.
+	 */
+	private $_id;
+	/**
+	 * @var CBaseController owner/creator of this widget. It could be either a widget or a controller.
+	 */
+	private $_owner;
+
+	/**
+	 * Returns a list of actions that are used by this widget.
+	 * The structure of this method's return value is similar to
+	 * that returned by {@link CController::actions}.
+	 *
+	 * When a widget uses several actions, you can declare these actions using
+	 * this method. The widget will then become an action provider, and the actions
+	 * can be easily imported into a controller.
+	 *
+	 * Note, when creating URLs referring to the actions listed in this method,
+	 * make sure the action IDs are prefixed with {@link actionPrefix}.
+	 *
+	 * @return array
+	 *
+	 * @see actionPrefix
+	 * @see CController::actions
+	 */
+	public static function actions()
+	{
+		return array();
+	}
+
+	/**
+	 * Constructor.
+	 * @param CBaseController $owner owner/creator of this widget. It could be either a widget or a controller.
+	 */
+	public function __construct($owner=null)
+	{
+		$this->_owner=$owner===null?Yii::app()->getController():$owner;
+	}
+
+	/**
+	 * Returns the owner/creator of this widget.
+	 * @return CBaseController owner/creator of this widget. It could be either a widget or a controller.
+	 */
+	public function getOwner()
+	{
+		return $this->_owner;
+	}
+
+	/**
+	 * Returns the ID of the widget or generates a new one if requested.
+	 * @param boolean $autoGenerate whether to generate an ID if it is not set previously
+	 * @return string id of the widget.
+	 */
+	public function getId($autoGenerate=true)
+	{
+		if($this->_id!==null)
+			return $this->_id;
+		elseif($autoGenerate)
+			return $this->_id='yw'.self::$_counter++;
+	}
+
+	/**
+	 * Sets the ID of the widget.
+	 * @param string $value id of the widget.
+	 */
+	public function setId($value)
+	{
+		$this->_id=$value;
+	}
+
+	/**
+	 * Returns the controller that this widget belongs to.
+	 * @return CController the controller that this widget belongs to.
+	 */
+	public function getController()
+	{
+		if($this->_owner instanceof CController)
+			return $this->_owner;
+		else
+			return Yii::app()->getController();
+	}
+
+	/**
+	 * Initializes the widget.
+	 * This method is called by {@link CBaseController::createWidget}
+	 * and {@link CBaseController::beginWidget} after the widget's
+	 * properties have been initialized.
+	 */
+	public function init()
+	{
+	}
+
+	/**
+	 * Executes the widget.
+	 * This method is called by {@link CBaseController::endWidget}.
+	 */
+	public function run()
+	{
+	}
+
+	/**
+	 * Returns the directory containing the view files for this widget.
+	 * The default implementation returns the 'views' subdirectory of the directory containing the widget class file.
+	 * If $checkTheme is set true, the directory "ThemeID/views/ClassName" will be returned when it exists.
+	 * @param boolean $checkTheme whether to check if the theme contains a view path for the widget.
+	 * @return string the directory containing the view files for this widget.
+	 */
+	public function getViewPath($checkTheme=false)
+	{
+		$className=get_class($this);
+		$scope=$checkTheme?'theme':'local';
+		if(isset(self::$_viewPaths[$className][$scope]))
+			return self::$_viewPaths[$className][$scope];
+		else
+		{
+			if($checkTheme && ($theme=Yii::app()->getTheme())!==null)
+			{
+				$path=$theme->getViewPath().DIRECTORY_SEPARATOR;
+				if(strpos($className,'\\')!==false) // namespaced class
+					$path.=str_replace('\\','_',ltrim($className,'\\'));
+				else
+					$path.=$className;
+				if(is_dir($path))
+					return self::$_viewPaths[$className]['theme']=$path;
+			}
+
+			$class=new ReflectionClass($className);
+			return self::$_viewPaths[$className]['local']=dirname($class->getFileName()).DIRECTORY_SEPARATOR.'views';
+		}
+	}
+
+	/**
+	 * Looks for the view script file according to the view name.
+	 * This method will look for the view under the widget's {@link getViewPath viewPath}.
+	 * The view script file is named as "ViewName.php". A localized view file
+	 * may be returned if internationalization is needed. See {@link CApplication::findLocalizedFile}
+	 * for more details.
+	 * The view name can also refer to a path alias if it contains dot characters.
+	 * @param string $viewName name of the view (without file extension)
+	 * @return string the view file path. False if the view file does not exist
+	 * @see CApplication::findLocalizedFile
+	 */
+	public function getViewFile($viewName)
+	{
+		if(($renderer=Yii::app()->getViewRenderer())!==null)
+			$extension=$renderer->fileExtension;
+		else
+			$extension='.php';
+		if(strpos($viewName,'.')) // a path alias
+			$viewFile=Yii::getPathOfAlias($viewName);
+		else
+		{
+			$viewFile=$this->getViewPath(true).DIRECTORY_SEPARATOR.$viewName;
+			if(is_file($viewFile.$extension))
+				return Yii::app()->findLocalizedFile($viewFile.$extension);
+			elseif($extension!=='.php' && is_file($viewFile.'.php'))
+				return Yii::app()->findLocalizedFile($viewFile.'.php');
+			$viewFile=$this->getViewPath(false).DIRECTORY_SEPARATOR.$viewName;
+		}
+
+		if(is_file($viewFile.$extension))
+			return Yii::app()->findLocalizedFile($viewFile.$extension);
+		elseif($extension!=='.php' && is_file($viewFile.'.php'))
+			return Yii::app()->findLocalizedFile($viewFile.'.php');
+		else
+			return false;
+	}
+
+	/**
+	 * Renders a view.
+	 *
+	 * The named view refers to a PHP script (resolved via {@link getViewFile})
+	 * that is included by this method. If $data is an associative array,
+	 * it will be extracted as PHP variables and made available to the script.
+	 *
+	 * @param string $view name of the view to be rendered. See {@link getViewFile} for details
+	 * about how the view script is resolved.
+	 * @param array $data data to be extracted into PHP variables and made available to the view script
+	 * @param boolean $return whether the rendering result should be returned instead of being displayed to end users
+	 * @return string the rendering result. Null if the rendering result is not required.
+	 * @throws CException if the view does not exist
+	 * @see getViewFile
+	 */
+	public function render($view,$data=null,$return=false)
+	{
+		if(($viewFile=$this->getViewFile($view))!==false)
+			return $this->renderFile($viewFile,$data,$return);
+		else
+			throw new CException(Yii::t('yii','{widget} cannot find the view "{view}".',
+				array('{widget}'=>get_class($this), '{view}'=>$view)));
+	}
+}

@@ -1,36 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class SiteTest extends WebTestCase
+{
+	public function testIndex()
+	{
+		$this->open('');
+		$this->assertTextPresent('Welcome');
+	}
+
+	public function testContact()
+	{
+		$this->open('?r=site/contact');
+		$this->assertTextPresent('Contact Us');
+		$this->assertElementPresent('name=ContactForm[name]');
+
+		$this->type('name=ContactForm[name]','tester');
+		$this->type('name=ContactForm[email]','tester@example.com');
+		$this->type('name=ContactForm[subject]','test subject');
+		$this->click("//input[@value='Submit']");
+		$this->waitForTextPresent('Body cannot be blank.');
+	}
+
+	public function testLoginLogout()
+	{
+		$this->open('');
+		// ensure the user is logged out
+		if($this->isTextPresent('Logout'))
+			$this->clickAndWait('link=Logout (demo)');
+
+		// test login process, including validation
+		$this->clickAndWait('link=Login');
+		$this->assertElementPresent('name=LoginForm[username]');
+		$this->type('name=LoginForm[username]','demo');
+		$this->click("//input[@value='Login']");
+		$this->waitForTextPresent('Password cannot be blank.');
+		$this->type('name=LoginForm[password]','demo');
+		$this->clickAndWait("//input[@value='Login']");
+		$this->assertTextNotPresent('Password cannot be blank.');
+		$this->assertTextPresent('Logout');
+
+		// test logout process
+		$this->assertTextNotPresent('Login');
+		$this->clickAndWait('link=Logout (demo)');
+		$this->assertTextPresent('Login');
+	}
+}

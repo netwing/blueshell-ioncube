@@ -1,49 +1,95 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ZPL0R0==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Command;
+
+use Symfony\Component\Console\Helper\DescriptorHelper;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputDefinition;
+
+/**
+ * ListCommand displays the list of all available commands for the application.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class ListCommand extends Command
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function configure()
+    {
+        $this
+            ->setName('list')
+            ->setDefinition($this->createDefinition())
+            ->setDescription('Lists commands')
+            ->setHelp(<<<EOF
+The <info>%command.name%</info> command lists all commands:
+
+  <info>php %command.full_name%</info>
+
+You can also display the commands for a specific namespace:
+
+  <info>php %command.full_name% test</info>
+
+You can also output the information in other formats by using the <comment>--format</comment> option:
+
+  <info>php %command.full_name% --format=xml</info>
+
+It's also possible to get raw list of commands (useful for embedding command runner):
+
+  <info>php %command.full_name% --raw</info>
+EOF
+            )
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getNativeDefinition()
+    {
+        return $this->createDefinition();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        if ($input->getOption('xml')) {
+            $input->setOption('format', 'xml');
+        }
+
+        $helper = new DescriptorHelper();
+        $helper->describe($output, $this->getApplication(), array(
+            'format'    => $input->getOption('format'),
+            'raw_text'  => $input->getOption('raw'),
+            'namespace' => $input->getArgument('namespace'),
+        ));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    private function createDefinition()
+    {
+        return new InputDefinition(array(
+            new InputArgument('namespace', InputArgument::OPTIONAL, 'The namespace name'),
+            new InputOption('xml', null, InputOption::VALUE_NONE, 'To output list as XML'),
+            new InputOption('raw', null, InputOption::VALUE_NONE, 'To output raw command list'),
+            new InputOption('format', null, InputOption::VALUE_REQUIRED, 'To output list in other formats', 'txt'),
+        ));
+    }
+}

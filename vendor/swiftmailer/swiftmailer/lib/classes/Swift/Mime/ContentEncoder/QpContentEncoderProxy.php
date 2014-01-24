@@ -1,42 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPndd+HJaIC9RvLPiDo30YsNFqsJSK+PdsjK37xXVYgZVHkad0q3LquRM5wqqohrhUSO1KeQX
-v56H+cHk79T+xxGDbuXL7sSz3/D8j2REWoDo++SBNfw+nTTyvhiOk5Eujm/yXUdlDozI/ZLWZ6Y6
-Fv6INAhfX98cJ5B7RXwIIYisNF4UkDkDIZu1cBPoLNoD7nkMfX29hza7ya63u6w7fE3PwEX9HJO2
-2x/nAJanEwscU7deOMG9bwzHAE4xzt2gh9fl143SQNJDOrFUA7F+24G1IHDmr5JUV/yRHWz1u3T3
-OI7+KunR/S4lGk9RFkANaWcDOXXpbzdOBQ1MsMvJd91Zhk8hgWhLktDzBmesiPXnIeNFu3jan8BM
-yRyQ+LxPQHKdBuEgsEKsJBbGt4/kpnPs2ux5BAaCAdJwvO+W5hjy58DHHNiAPHYTms8NJYMNjoDT
-qqDHYNkDvjk+b779IU6pvZcDIA2SGWVLG07umu6qlNJlc8DS3gR45Ya/k5mwZd4FuXlBm3sqMnlD
-RCuSCX5uSfEjLZMR0r6hW/hbmqLgc0s9I6Q+JgxAin7eujOcepIRyvvZxowKatcq77XYaJdJzvcK
-1rn0Ryw3vQ9veTl/JbDmBEZYWRnQnFNGawzU/ynd5WVGO0eaRnVoXxI0a56sclYb0K3xRtq4tl59
-Wlu9P+uBD38R4vGFa5ABRY9zH8JB7V51DEetmdCf0TQ+TWVxVZPOlNPydVY/E/1DE5lWhlPlngUM
-reJVSPL6Tn8rHicN5uD657wkMCRkxxnEeAwQOxrmSb6KJnf8vJANVNkqf//WJf5UO3RqMcYryYIf
-p4jz6lk6ByQlDMLytGqzur/1H6uQwAJ8qbatkGJw5/tOLM3n07+7K/eR3KY5+E2QL2GwH1hW5ZJP
-IJBI6R6OXQ6YCHC6UFXoqPsP3YTQJXdRQ2CdP3ZB/yt93x+raVZKU0aMjVBF9ibiK49c3XfYPmPS
-ogc1EZwB4caV9bVERxbmijjB99/DPS/VioU3BTFlPI1aC/qqS49rsF0P9GEA2mqutRr0SNPz9qXc
-/DAog0IxEnxSXhf1UCZrstP86xO1W4zbNECYi6e7wGXQ+kmcxbkQY4qS6BpyEMhASClpltHQ3+LY
-TBY75kDOx05RDP4Fyet3Dt/FebI5ZpFE1NtveO5kCXUbKdKKQ2EdnOyl9K8zlG4BrdkYRMitwFK0
-9hO/FYS0uUFpaic6nXHAS4vluUZf3XSiJW+GHHTq4k+SGkvFo3zWbbhddgB5HjRdaEpzBQaJlmhU
-+EQ0hTKPdlRiUicGotf2pPWPYhVh7QRE2mt+J+UYS9BpmsdSu8fIqq+QkrGlIBLpS/cLsc12vE8S
-gsAfxhrpu4tW/EoBbw717fLPrsX1r1XBb/yuTTamJQkSl5D/NIZZWTYBYnQhWDUo156i/x9B/vTN
-PmZUSjtgJwtJy6uT6UQCnBHJ4uo+E8xNEGcygCO9V3UcZOByU+OrL/olAVBqrsFGgrkRZZ7os6Z0
-4vmDbdCdy91nVMp66/yf4MC08k1jzmJkkUFwS7DbDauEMAhGo0budphrA6tWSNRCENI60zmzqPlW
-xtEsyVXa7wU+P3Uzcl9yvMZlaIjEDQgCHDGoP+sGwTZ+W9IGM8U2vmx6DCRk2S81/oHunpvqPeMl
-q6K37tT4//TW4oc6QCtt449O0EeIQf4VMvF2Bgga6MdYzbWSC0tFDdztAQfeuHbQmVhxLj4Dxgud
-CLLWKEuJTXWmOddH6O5Q6KJYy0+EKeAFvnhePz6YWn4IUW302Q1B5zrj6CP7ZL5WXwJp7BBKBTYx
-/OT+1jGRbgn1XWPlKiwKnVdzjwOnRacg+14L0xfFjZUs0ZLxn1TVA08IA3fjDuh9QEVQ2Ls+zi36
-JhATt36BB5TJKs3TrnX5POZns0g2tNRtchzSvg01e1qN8XqSoQCgXXX3xPK2srg6pvLpH8m3iwv6
-ETozQano6uAaNxXbX6GDnfDL80e8K3EhPPlz9rP4+fYgqJkB9KWE20bMXH398phULpCzCcSniLfv
-vBmoxAVnHyDaU3Jmop/36+8Q+7ERPw8E3JRu3m7WlLWOxPYsJUwC3EEh5euaTLxU1g/PZFYA6cRP
-sxU2SnF/uSOvCRJesf4ZTWojnE7Fd443H5VCSlCmwntvwrTy4R52dtquf2WRz9VhH/v6vHUPaxAc
-22KOwPi3H1dlQqqMbBJ26DluXZ3+cMh+0Pfsf3hf8CpMX4rAMU+RL+x41dRdyzAmQnWnFj9+dDQX
-gMc52rr1GSbZwZgw5BfB2EIYEJxat3A9D7r90O2d5PCgK/N+RcmXXH2U2yu7QiaRM6UnrhKIAQMR
-0k8saGVKKrp5GVA+6+L+CyQgIWVBCz7xX3AxgzhsECdfLZNS5TTYBMPPIlc7i96GP6R/oDz5weMK
-MSeb1WmApeW1PsMLqGYcD/iDuHPzkCiPTOECWU2qS2pIqOCBSu2yJsy/VkZwWXCRU6Qe74aLG0b7
-kQPVgiMkB5513YqhlJwvuV+I/RFUmDXGBEq+dLV/MYYtqKgWnD1wKe5hfCubQ2pIt7IFHD6kddZg
-8802Vh+MeUOK/BnL3kwCeIrr6xLybVVOBmJ/MVBFGktN15IPu318MjJ7AMNC21yYZm0LwyKE2Fm8
-pgLAzBOIXpZqMf3E839scx8d6PKuH9GXB3xVlBE4JNqhaZND3herbew5KczVSgX43GzfYaQ9pQGZ
-BQVy26ICZviJr2IO0HG8w46qohqQBHLAj3IsM8OCNwSINqsUnt0uPfH0pP5++xKOzPcBplzLR43k
-GLMD+b/gMEeQ7yVcQ+CN7GLlkOLj7pEhyVihYkzlYvshePpBPIV6COrf0OeFSvzLBnzshdHxWGf9
-0ifMU9awe3aaN790F/gnDeav8E9Hqo0Zeg3B6Yu=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Proxy for quoted-printable content encoders.
+ *
+ * Switches on the best QP encoder implementation for current charset.
+ *
+ * @package    Swift
+ * @subpackage Mime
+ * @author     Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class Swift_Mime_ContentEncoder_QpContentEncoderProxy implements Swift_Mime_ContentEncoder
+{
+    /**
+     * @var Swift_Mime_ContentEncoder_QpContentEncoder
+     */
+    private $safeEncoder;
+
+    /**
+     * @var Swift_Mime_ContentEncoder_NativeQpContentEncoder
+     */
+    private $nativeEncoder;
+
+    /**
+     * @var null|string
+     */
+    private $charset;
+
+    /**
+     * Constructor.
+     *
+     * @param Swift_Mime_ContentEncoder_QpContentEncoder       $safeEncoder
+     * @param Swift_Mime_ContentEncoder_NativeQpContentEncoder $nativeEncoder
+     * @param string|null                                      $charset
+     */
+    public function __construct(Swift_Mime_ContentEncoder_QpContentEncoder $safeEncoder, Swift_Mime_ContentEncoder_NativeQpContentEncoder $nativeEncoder, $charset)
+    {
+        $this->safeEncoder = $safeEncoder;
+        $this->nativeEncoder = $nativeEncoder;
+        $this->charset = $charset;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function charsetChanged($charset)
+    {
+        $this->charset = $charset;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function encodeByteStream(Swift_OutputByteStream $os, Swift_InputByteStream $is, $firstLineOffset = 0, $maxLineLength = 0)
+    {
+        $this->getEncoder()->encodeByteStream($os, $is, $firstLineOffset, $maxLineLength);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'quoted-printable';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
+    {
+        return $this->getEncoder()->encodeString($string, $firstLineOffset, $maxLineLength);
+    }
+
+    /**
+     * @return Swift_Mime_ContentEncoder
+     */
+    private function getEncoder()
+    {
+        return 'utf-8' === $this->charset ? $this->nativeEncoder : $this->safeEncoder;
+    }
+}

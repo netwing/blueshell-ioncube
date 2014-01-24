@@ -1,30 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Common;
+
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * Class that holds an event dispatcher
+ */
+class AbstractHasDispatcher implements HasDispatcherInterface
+{
+    /** @var EventDispatcherInterface */
+    protected $eventDispatcher;
+
+    public static function getAllEvents()
+    {
+        return array();
+    }
+
+    public function setEventDispatcher(EventDispatcherInterface $eventDispatcher)
+    {
+        $this->eventDispatcher = $eventDispatcher;
+
+        return $this;
+    }
+
+    public function getEventDispatcher()
+    {
+        if (!$this->eventDispatcher) {
+            $this->eventDispatcher = new EventDispatcher();
+        }
+
+        return $this->eventDispatcher;
+    }
+
+    public function dispatch($eventName, array $context = array())
+    {
+        return $this->getEventDispatcher()->dispatch($eventName, new Event($context));
+    }
+
+    public function addSubscriber(EventSubscriberInterface $subscriber)
+    {
+        $this->getEventDispatcher()->addSubscriber($subscriber);
+
+        return $this;
+    }
+}

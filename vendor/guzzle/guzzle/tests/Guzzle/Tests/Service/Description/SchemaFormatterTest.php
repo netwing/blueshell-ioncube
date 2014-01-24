@@ -1,49 +1,61 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-absBOpLNQZfmLxKObs8C
+<?php
+
+namespace Guzzle\Tests\Service\Description;
+
+use Guzzle\Service\Description\SchemaFormatter;
+
+/**
+ * @covers Guzzle\Service\Description\SchemaFormatter
+ */
+class SchemaFormatterTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function dateTimeProvider()
+    {
+        $dateUtc = 'October 13, 2012 16:15:46 UTC';
+        $dateOffset = 'October 13, 2012 10:15:46 -06:00';
+        $expectedDateTime = '2012-10-13T16:15:46Z';
+
+        return array(
+            array('foo', 'does-not-exist', 'foo'),
+            array($dateUtc, 'date-time', $expectedDateTime),
+            array($dateUtc, 'date-time-http', 'Sat, 13 Oct 2012 16:15:46 GMT'),
+            array($dateUtc, 'date', '2012-10-13'),
+            array($dateUtc, 'timestamp', strtotime($dateUtc)),
+            array(new \DateTime($dateUtc), 'timestamp', strtotime($dateUtc)),
+            array($dateUtc, 'time', '16:15:46'),
+            array(strtotime($dateUtc), 'time', '16:15:46'),
+            array(strtotime($dateUtc), 'timestamp', strtotime($dateUtc)),
+            array('true', 'boolean-string', 'true'),
+            array(true, 'boolean-string', 'true'),
+            array('false', 'boolean-string', 'false'),
+            array(false, 'boolean-string', 'false'),
+            array('1350144946', 'date-time', $expectedDateTime),
+            array(1350144946, 'date-time', $expectedDateTime),
+            array($dateOffset, 'date-time', $expectedDateTime)
+        );
+    }
+
+    /**
+     * @dataProvider dateTimeProvider
+     */
+    public function testFilters($value, $format, $result)
+    {
+        $this->assertEquals($result, SchemaFormatter::format($format, $value));
+    }
+
+    /**
+     * @expectedException \Guzzle\Common\Exception\InvalidArgumentException
+     */
+    public function testValidatesDateTimeInput()
+    {
+        SchemaFormatter::format('date-time', false);
+    }
+
+    public function testEnsuresTimestampsAreIntegers()
+    {
+        $t = time();
+        $result = SchemaFormatter::format('timestamp', $t);
+        $this->assertSame($t, $result);
+        $this->assertInternalType('int', $result);
+    }
+}

@@ -1,32 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-5AZFMG==
+<?php
+
+namespace Guzzle\Batch;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+
+/**
+ * Batch transfer strategy where transfer logic can be defined via a Closure.
+ * This class is to be used with {@see Guzzle\Batch\BatchInterface}
+ */
+class BatchClosureTransfer implements BatchTransferInterface
+{
+    /** @var callable A closure that performs the transfer */
+    protected $callable;
+
+    /** @var mixed $context Context passed to the callable */
+    protected $context;
+
+    /**
+     * @param mixed $callable Callable that performs the transfer. This function should accept two arguments:
+     *                        (array $batch, mixed $context).
+     * @param mixed $context  Optional context to pass to the batch divisor
+     *
+     * @throws InvalidArgumentException
+     */
+    public function __construct($callable, $context = null)
+    {
+        if (!is_callable($callable)) {
+            throw new InvalidArgumentException('Argument must be callable');
+        }
+
+        $this->callable = $callable;
+        $this->context = $context;
+    }
+
+    public function transfer(array $batch)
+    {
+        return empty($batch) ? null : call_user_func($this->callable, $batch, $this->context);
+    }
+}

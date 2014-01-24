@@ -1,83 +1,223 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http;
+
+use Guzzle\Common\HasDispatcherInterface;
+use Guzzle\Common\Collection;
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Http\Message\EntityEnclosingRequestInterface;
+use Guzzle\Http\Message\RequestInterface;
+
+/**
+ * Client interface for send HTTP requests
+ */
+interface ClientInterface extends HasDispatcherInterface
+{
+    const CREATE_REQUEST = 'client.create_request';
+
+    /** @var string RFC 1123 HTTP-Date */
+    const HTTP_DATE = 'D, d M Y H:i:s \G\M\T';
+
+    /**
+     * Set the configuration object to use with the client
+     *
+     * @param array|Collection $config Parameters that define how the client behaves
+     *
+     * @return self
+     */
+    public function setConfig($config);
+
+    /**
+     * Get a configuration setting or all of the configuration settings. The Collection result of this method can be
+     * modified to change the configuration settings of a client.
+     *
+     * A client should honor the following special values:
+     *
+     * - request.options: Associative array of default RequestFactory options to apply to each request
+     * - request.params: Associative array of request parameters (data values) to apply to each request
+     * - curl.options: Associative array of cURL configuration settings to apply to each request
+     * - ssl.certificate_authority: Path a CAINFO, CAPATH, true to use strict defaults, or false to disable verification
+     * - redirect.disable: Set to true to disable redirects
+     *
+     * @param bool|string $key Configuration value to retrieve. Set to FALSE to retrieve all values of the client.
+     *                         The object return can be modified, and modifications will affect the client's config.
+     * @return mixed|Collection
+     * @see \Guzzle\Http\Message\RequestFactoryInterface::applyOptions for a full list of request.options options
+     */
+    public function getConfig($key = false);
+
+    /**
+     * Create and return a new {@see RequestInterface} configured for the client.
+     *
+     * Use an absolute path to override the base path of the client, or a relative path to append to the base path of
+     * the client. The URI can contain the query string as well. Use an array to provide a URI template and additional
+     * variables to use in the URI template expansion.
+     *
+     * @param string                                    $method  HTTP method. Defaults to GET
+     * @param string|array                              $uri     Resource URI.
+     * @param array|Collection                          $headers HTTP headers
+     * @param string|resource|array|EntityBodyInterface $body    Entity body of request (POST/PUT) or response (GET)
+     * @param array                                     $options Array of options to apply to the request
+     *
+     * @return RequestInterface
+     * @throws InvalidArgumentException if a URI array is passed that does not contain exactly two elements: the URI
+     *                                  followed by template variables
+     */
+    public function createRequest(
+        $method = RequestInterface::GET,
+        $uri = null,
+        $headers = null,
+        $body = null,
+        array $options = array()
+    );
+
+    /**
+     * Create a GET request for the client
+     *
+     * @param string|array     $uri     Resource URI
+     * @param array|Collection $headers HTTP headers
+     * @param array            $options Options to apply to the request. For BC compatibility, you can also pass a
+     *                                  string to tell Guzzle to download the body of the response to a particular
+     *                                  location. Use the 'body' option instead for forward compatibility.
+     * @return RequestInterface
+     * @see    Guzzle\Http\ClientInterface::createRequest()
+     */
+    public function get($uri = null, $headers = null, $options = array());
+
+    /**
+     * Create a HEAD request for the client
+     *
+     * @param string|array     $uri     Resource URI
+     * @param array|Collection $headers HTTP headers
+     * @param array            $options Options to apply to the request
+     *
+     * @return RequestInterface
+     * @see    Guzzle\Http\ClientInterface::createRequest()
+     */
+    public function head($uri = null, $headers = null, array $options = array());
+
+    /**
+     * Create a DELETE request for the client
+     *
+     * @param string|array                        $uri     Resource URI
+     * @param array|Collection                    $headers HTTP headers
+     * @param string|resource|EntityBodyInterface $body    Body to send in the request
+     * @param array                               $options Options to apply to the request
+     *
+     * @return EntityEnclosingRequestInterface
+     * @see    Guzzle\Http\ClientInterface::createRequest()
+     */
+    public function delete($uri = null, $headers = null, $body = null, array $options = array());
+
+    /**
+     * Create a PUT request for the client
+     *
+     * @param string|array                        $uri     Resource URI
+     * @param array|Collection                    $headers HTTP headers
+     * @param string|resource|EntityBodyInterface $body    Body to send in the request
+     * @param array                               $options Options to apply to the request
+     *
+     * @return EntityEnclosingRequestInterface
+     * @see    Guzzle\Http\ClientInterface::createRequest()
+     */
+    public function put($uri = null, $headers = null, $body = null, array $options = array());
+
+    /**
+     * Create a PATCH request for the client
+     *
+     * @param string|array                        $uri     Resource URI
+     * @param array|Collection                    $headers HTTP headers
+     * @param string|resource|EntityBodyInterface $body    Body to send in the request
+     * @param array                               $options Options to apply to the request
+     *
+     * @return EntityEnclosingRequestInterface
+     * @see    Guzzle\Http\ClientInterface::createRequest()
+     */
+    public function patch($uri = null, $headers = null, $body = null, array $options = array());
+
+    /**
+     * Create a POST request for the client
+     *
+     * @param string|array                                $uri      Resource URI
+     * @param array|Collection                            $headers  HTTP headers
+     * @param array|Collection|string|EntityBodyInterface $postBody POST body. Can be a string, EntityBody, or
+     *                                                    associative array of POST fields to send in the body of the
+     *                                                    request. Prefix a value in the array with the @ symbol to
+     *                                                    reference a file.
+     * @param array                                       $options Options to apply to the request
+     *
+     * @return EntityEnclosingRequestInterface
+     * @see    Guzzle\Http\ClientInterface::createRequest()
+     */
+    public function post($uri = null, $headers = null, $postBody = null, array $options = array());
+
+    /**
+     * Create an OPTIONS request for the client
+     *
+     * @param string|array $uri     Resource URI
+     * @param array        $options Options to apply to the request
+     *
+     * @return RequestInterface
+     * @see    Guzzle\Http\ClientInterface::createRequest()
+     */
+    public function options($uri = null, array $options = array());
+
+    /**
+     * Sends a single request or an array of requests in parallel
+     *
+     * @param array|RequestInterface $requests One or more RequestInterface objects to send
+     *
+     * @return \Guzzle\Http\Message\Response|array Returns a single Response or an array of Response objects
+     */
+    public function send($requests);
+
+    /**
+     * Get the client's base URL as either an expanded or raw URI template
+     *
+     * @param bool $expand Set to FALSE to get the raw base URL without URI template expansion
+     *
+     * @return string|null
+     */
+    public function getBaseUrl($expand = true);
+
+    /**
+     * Set the base URL of the client
+     *
+     * @param string $url The base service endpoint URL of the webservice
+     *
+     * @return self
+     */
+    public function setBaseUrl($url);
+
+    /**
+     * Set the User-Agent header to be used on all requests from the client
+     *
+     * @param string $userAgent      User agent string
+     * @param bool   $includeDefault Set to true to prepend the value to Guzzle's default user agent string
+     *
+     * @return self
+     */
+    public function setUserAgent($userAgent, $includeDefault = false);
+
+    /**
+     * Set SSL verification options.
+     *
+     * Setting $certificateAuthority to TRUE will result in the bundled cacert.pem being used to verify against the
+     * remote host.
+     *
+     * Alternate certificates to verify against can be specified with the $certificateAuthority option set to the full
+     * path to a certificate file, or the path to a directory containing certificates.
+     *
+     * Setting $certificateAuthority to FALSE will turn off peer verification, unset the bundled cacert.pem, and
+     * disable host verification. Please don't do this unless you really know what you're doing, and why you're doing
+     * it.
+     *
+     * @param string|bool $certificateAuthority bool, file path, or directory path
+     * @param bool        $verifyPeer           FALSE to stop from verifying the peer's certificate.
+     * @param int         $verifyHost           Set to 1 to check the existence of a common name in the SSL peer
+     *                                          certificate. 2 to check the existence of a common name and also verify
+     *                                          that it matches the hostname provided.
+     * @return self
+     */
+    public function setSslVerification($certificateAuthority = true, $verifyPeer = true, $verifyHost = 2);
+}

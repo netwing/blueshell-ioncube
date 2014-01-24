@@ -1,51 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests append methode
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for append tests
+*/
+class AppendTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test append
+    */
+    public function testAppend()
+    {
+            $this->smarty->assign('foo','bar');
+            $this->smarty->append('foo','bar2');
+        $this->assertEquals('bar bar2', $this->smarty->fetch('eval:{$foo[0]} {$foo[1]}'));
+    }
+    /**
+    * test append to unassigned variable
+    */
+    public function testAppendUnassigned()
+    {
+            $this->smarty->append('foo','bar');
+        $this->assertEquals('bar', $this->smarty->fetch('eval:{$foo[0]}'));
+    }
+    /**
+    * test append merge
+    */
+    public function testAppendMerge()
+    {
+            $this->smarty->assign('foo',array('a'=>'a','b'=>'b','c'=>'c'));
+            $this->smarty->append('foo',array('b'=>'d'),true);
+        $this->assertEquals('a d c', $this->smarty->fetch('eval:{$foo["a"]} {$foo["b"]} {$foo["c"]}'));
+    }
+    /**
+    * test append array merge
+    */
+    public function testAppendArrayMerge()
+    {
+            $this->smarty->assign('foo',array('b'=>'d'));
+            $this->smarty->append('foo',array('a'=>'a','b'=>'b','c'=>'c'),true);
+        $this->assertEquals('a b c', $this->smarty->fetch('eval:{$foo["a"]} {$foo["b"]} {$foo["c"]}'));
+    }
+    /**
+    * test array append
+    */
+    public function testArrayAppend()
+    {
+            $this->smarty->assign('foo','foo');
+            $this->smarty->append(array('bar'=>'bar2','foo'=>'foo2'));
+        $this->assertEquals('foo foo2 bar2', $this->smarty->fetch('eval:{$foo[0]} {$foo[1]} {$bar[0]}'));
+    }
+    /**
+    * test array append array merge
+    */
+    public function testArrayAppendArrayMerge()
+    {
+            $this->smarty->assign('foo',array('b'=>'d'));
+            $this->smarty->append(array('bar'=>'bar','foo'=>array('a'=>'a','b'=>'b','c'=>'c')),null,true);
+        $this->assertEquals('a b c bar', $this->smarty->fetch('eval:{$foo["a"]} {$foo["b"]} {$foo["c"]} {$bar[0]}'));
+    }
+}

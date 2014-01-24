@@ -1,39 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-TCCAvnygjfhLqqiaXkC0ul7Va/rby0QiadiR+m==
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="content-language" content="en"/>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<title>Проверка на соответствие требованиям Yii</title>
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<h1>Проверка на соответствие требованиям Yii</h1>
+</div><!-- header-->
+
+<div id="content">
+<h2>Описание</h2>
+<p>
+Данный скрипт проверяет соответствие конфигурации Вашего веб-сервера требованиям, 
+предъявляемым веб-приложениями <a href="http://www.yiiframework.com/">Yii</a>.
+В частности, проверяются версия РНР и загруженные расширения РНР, а также 
+корректность настроек файла php.ini. 
+</p>
+
+<h2>Заключение</h2>
+<p>
+<?php if($result>0): ?>
+Поздравляем! Конфигурация Вашего веб-сервера полностью удовлетворяет требованиям Yii.
+<?php elseif($result<0): ?>
+Конфигурация Вашего веб-сервера удовлетворяет минимально необходимым требованиям Yii. Обратите внимание на предупреждения в таблице ниже, если предполагается использование соответствующего функционала. 
+<?php else: ?>
+К сожалению, конфигурация Вашего веб-сервера не удовлетворяет требованиям Yii.
+<?php endif; ?>
+</p>
+
+<h2>Результаты проверки</h2>
+
+<table class="result">
+<tr><th>Название</th><th>Итог</th><th>Требуется для</th><th>Пояснение</th></tr>
+<?php foreach($requirements as $requirement): ?>
+<tr>
+	<td>
+		<?php echo $requirement[0]; ?>
+	</td>
+	<td class="<?php echo $requirement[2] ? 'passed' : ($requirement[1] ? 'failed' : 'warning'); ?>">
+		<?php echo $requirement[2] ? 'Да' : ($requirement[1] ? 'Нет' : 'Предупреждение'); ?>
+	</td>
+	<td>
+		<?php echo $requirement[3]; ?>
+	</td>
+	<td>
+		<?php echo $requirement[4]; ?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<table>
+<tr>
+<td class="passed">&nbsp;</td><td>Да</td>
+<td class="failed">&nbsp;</td><td>Нет</td>
+<td class="warning">&nbsp;</td><td>Предупреждение</td>
+</tr>
+</table>
+
+</div><!-- content -->
+
+<div id="footer">
+<?php echo $serverInfo; ?>
+</div><!-- footer -->
+
+</div><!-- page -->
+</body>
+</html>

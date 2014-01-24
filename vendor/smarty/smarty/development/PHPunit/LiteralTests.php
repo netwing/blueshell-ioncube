@@ -1,39 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-nnYctLS8dOJ2YAj39h2on7m9ym==
+<?php
+/**
+* Smarty PHPunit tests appendByRef methode
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for appendByRef tests
+*/
+class LiteralTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smartyBC = SmartyTests::$smartyBC;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+    
+    /*
+    *  Test literal tag
+    */
+    public function testLiteralTag()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{literal} {\$foo} {/literal}");
+        $this->assertEquals(' {$foo} ', $this->smarty->fetch($tpl));
+    }
+
+    /*
+    *  Test auto literal space
+    */
+    public function testAutoLiteralSpace()
+    {
+        $tpl = $this->smarty->createTemplate("eval: { \$foo} ");
+        $tpl->assign('foo','literal');
+        $this->assertEquals(' { $foo} ', $this->smarty->fetch($tpl));
+    }
+
+    /*
+    *  Test auto literal line break
+    */
+    public function testAutoLiteralLineBreak()
+    {
+        $tpl = $this->smarty->createTemplate("eval: {\n\$foo} ");
+        $tpl->assign('foo','literal');
+        $this->assertEquals(" {\n\$foo} ", $this->smarty->fetch($tpl));
+    }
+
+    /*
+    *  Test auto literal disabled
+    */
+    public function testAutoLiteralDisabled()
+    {
+        $this->smarty->auto_literal = false;
+        $tpl = $this->smarty->createTemplate("eval: { \$foo} ");
+        $tpl->assign('foo','literal');
+        $this->assertEquals(' literal ', $this->smarty->fetch($tpl));
+    }
+}

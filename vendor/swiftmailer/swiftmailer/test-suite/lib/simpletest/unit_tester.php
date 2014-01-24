@@ -1,144 +1,402 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *  base include file for SimpleTest
+ *  @package    SimpleTest
+ *  @subpackage UnitTester
+ *  @version    $Id: unit_tester.php 1794 2008-06-28 12:55:41Z pp11 $
+ */
+
+/**#@+
+ *  include other SimpleTest class files
+ */
+require_once(dirname(__FILE__) . '/test_case.php');
+require_once(dirname(__FILE__) . '/dumper.php');
+/**#@-*/
+
+/**
+ *    Standard unit test class for day to day testing
+ *    of PHP code XP style. Adds some useful standard
+ *    assertions.
+ *    @package  SimpleTest
+ *    @subpackage   UnitTester
+ */
+class UnitTestCase extends SimpleTestCase {
+
+    /**
+     *    Creates an empty test case. Should be subclassed
+     *    with test methods for a functional test case.
+     *    @param string $label     Name of test case. Will use
+     *                             the class name if none specified.
+     *    @access public
+     */
+    function __construct($label = false) {
+        if (! $label) {
+            $label = get_class($this);
+        }
+        parent::__construct($label);
+    }
+
+    /**
+     *    Called from within the test methods to register
+     *    passes and failures.
+     *    @param boolean $result    Pass on true.
+     *    @param string $message    Message to display describing
+     *                              the test state.
+     *    @return boolean           True on pass
+     *    @access public
+     */
+    function assertTrue($result, $message = '%s') {
+        return $this->assert(new TrueExpectation(), $result, $message);
+    }
+
+    /**
+     *    Will be true on false and vice versa. False
+     *    is the PHP definition of false, so that null,
+     *    empty strings, zero and an empty array all count
+     *    as false.
+     *    @param boolean $result    Pass on false.
+     *    @param string $message    Message to display.
+     *    @return boolean           True on pass
+     *    @access public
+     */
+    function assertFalse($result, $message = '%s') {
+        return $this->assert(new FalseExpectation(), $result, $message);
+    }
+
+    /**
+     *    Will be true if the value is null.
+     *    @param null $value       Supposedly null value.
+     *    @param string $message   Message to display.
+     *    @return boolean                        True on pass
+     *    @access public
+     */
+    function assertNull($value, $message = '%s') {
+        $dumper = new SimpleDumper();
+        $message = sprintf(
+                $message,
+                '[' . $dumper->describeValue($value) . '] should be null');
+        return $this->assertTrue(! isset($value), $message);
+    }
+
+    /**
+     *    Will be true if the value is set.
+     *    @param mixed $value           Supposedly set value.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass.
+     *    @access public
+     */
+    function assertNotNull($value, $message = '%s') {
+        $dumper = new SimpleDumper();
+        $message = sprintf(
+                $message,
+                '[' . $dumper->describeValue($value) . '] should not be null');
+        return $this->assertTrue(isset($value), $message);
+    }
+
+    /**
+     *    Type and class test. Will pass if class
+     *    matches the type name or is a subclass or
+     *    if not an object, but the type is correct.
+     *    @param mixed $object         Object to test.
+     *    @param string $type          Type name as string.
+     *    @param string $message       Message to display.
+     *    @return boolean              True on pass.
+     *    @access public
+     */
+    function assertIsA($object, $type, $message = '%s') {
+        return $this->assert(
+                new IsAExpectation($type),
+                $object,
+                $message);
+    }
+
+    /**
+     *    Type and class mismatch test. Will pass if class
+     *    name or underling type does not match the one
+     *    specified.
+     *    @param mixed $object         Object to test.
+     *    @param string $type          Type name as string.
+     *    @param string $message       Message to display.
+     *    @return boolean              True on pass.
+     *    @access public
+     */
+    function assertNotA($object, $type, $message = '%s') {
+        return $this->assert(
+                new NotAExpectation($type),
+                $object,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the two parameters have
+     *    the same value only. Otherwise a fail.
+     *    @param mixed $first          Value to compare.
+     *    @param mixed $second         Value to compare.
+     *    @param string $message       Message to display.
+     *    @return boolean              True on pass
+     *    @access public
+     */
+    function assertEqual($first, $second, $message = '%s') {
+        return $this->assert(
+                new EqualExpectation($first),
+                $second,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the two parameters have
+     *    a different value. Otherwise a fail.
+     *    @param mixed $first           Value to compare.
+     *    @param mixed $second          Value to compare.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass
+     *    @access public
+     */
+    function assertNotEqual($first, $second, $message = '%s') {
+        return $this->assert(
+                new NotEqualExpectation($first),
+                $second,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the if the first parameter
+     *    is near enough to the second by the margin.
+     *    @param mixed $first          Value to compare.
+     *    @param mixed $second         Value to compare.
+     *    @param mixed $margin         Fuzziness of match.
+     *    @param string $message       Message to display.
+     *    @return boolean              True on pass
+     *    @access public
+     */
+    function assertWithinMargin($first, $second, $margin, $message = '%s') {
+        return $this->assert(
+                new WithinMarginExpectation($first, $margin),
+                $second,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the two parameters differ
+     *    by more than the margin.
+     *    @param mixed $first          Value to compare.
+     *    @param mixed $second         Value to compare.
+     *    @param mixed $margin         Fuzziness of match.
+     *    @param string $message       Message to display.
+     *    @return boolean              True on pass
+     *    @access public
+     */
+    function assertOutsideMargin($first, $second, $margin, $message = '%s') {
+        return $this->assert(
+                new OutsideMarginExpectation($first, $margin),
+                $second,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the two parameters have
+     *    the same value and same type. Otherwise a fail.
+     *    @param mixed $first           Value to compare.
+     *    @param mixed $second          Value to compare.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass
+     *    @access public
+     */
+    function assertIdentical($first, $second, $message = '%s') {
+        return $this->assert(
+                new IdenticalExpectation($first),
+                $second,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the two parameters have
+     *    the different value or different type.
+     *    @param mixed $first           Value to compare.
+     *    @param mixed $second          Value to compare.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass
+     *    @access public
+     */
+    function assertNotIdentical($first, $second, $message = '%s') {
+        return $this->assert(
+                new NotIdenticalExpectation($first),
+                $second,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if both parameters refer
+     *    to the same object or value. Fail otherwise.
+     *    This will cause problems testing objects under
+     *    E_STRICT.
+     *    TODO: Replace with expectation.
+     *    @param mixed $first           Reference to check.
+     *    @param mixed $second          Hopefully the same variable.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass
+     *    @access public
+     */
+    function assertReference(&$first, &$second, $message = '%s') {
+        $dumper = new SimpleDumper();
+        $message = sprintf(
+                $message,
+                '[' . $dumper->describeValue($first) .
+                        '] and [' . $dumper->describeValue($second) .
+                        '] should reference the same object');
+        return $this->assertTrue(
+                SimpleTestCompatibility::isReference($first, $second),
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if both parameters refer
+     *    to the same object. Fail otherwise. This has
+     *    the same semantics at the PHPUnit assertSame.
+     *    That is, if values are passed in it has roughly
+     *    the same affect as assertIdentical.
+     *    TODO: Replace with expectation.
+     *    @param mixed $first           Object reference to check.
+     *    @param mixed $second          Hopefully the same object.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass
+     *    @access public
+     */
+    function assertSame($first, $second, $message = '%s') {
+        $dumper = new SimpleDumper();
+        $message = sprintf(
+                $message,
+                '[' . $dumper->describeValue($first) .
+                        '] and [' . $dumper->describeValue($second) .
+                        '] should reference the same object');
+        return $this->assertTrue($first === $second, $message);
+    }
+
+    /**
+     *    Will trigger a pass if both parameters refer
+     *    to different objects. Fail otherwise. The objects
+     *    have to be identical though.
+     *    @param mixed $first           Object reference to check.
+     *    @param mixed $second          Hopefully not the same object.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass
+     *    @access public
+     */
+    function assertClone($first, $second, $message = '%s') {
+        $dumper = new SimpleDumper();
+        $message = sprintf(
+                $message,
+                '[' . $dumper->describeValue($first) .
+                        '] and [' . $dumper->describeValue($second) .
+                        '] should not be the same object');
+        $identical = new IdenticalExpectation($first);
+        return $this->assertTrue(
+                $identical->test($second) && ! ($first === $second),
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if both parameters refer
+     *    to different variables. Fail otherwise. The objects
+     *    have to be identical references though.
+     *    This will fail under E_STRICT with objects. Use
+     *    assertClone() for this.
+     *    @param mixed $first           Object reference to check.
+     *    @param mixed $second          Hopefully not the same object.
+     *    @param string $message        Message to display.
+     *    @return boolean               True on pass
+     *    @access public
+     */
+    function assertCopy(&$first, &$second, $message = "%s") {
+        $dumper = new SimpleDumper();
+        $message = sprintf(
+                $message,
+                "[" . $dumper->describeValue($first) .
+                        "] and [" . $dumper->describeValue($second) .
+                        "] should not be the same object");
+        return $this->assertFalse(
+                SimpleTestCompatibility::isReference($first, $second),
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the Perl regex pattern
+     *    is found in the subject. Fail otherwise.
+     *    @param string $pattern    Perl regex to look for including
+     *                              the regex delimiters.
+     *    @param string $subject    String to search in.
+     *    @param string $message    Message to display.
+     *    @return boolean           True on pass
+     *    @access public
+     */
+    function assertPattern($pattern, $subject, $message = '%s') {
+        return $this->assert(
+                new PatternExpectation($pattern),
+                $subject,
+                $message);
+    }
+
+    /**
+     *    Will trigger a pass if the perl regex pattern
+     *    is not present in subject. Fail if found.
+     *    @param string $pattern    Perl regex to look for including
+     *                              the regex delimiters.
+     *    @param string $subject    String to search in.
+     *    @param string $message    Message to display.
+     *    @return boolean           True on pass
+     *    @access public
+     */
+    function assertNoPattern($pattern, $subject, $message = '%s') {
+        return $this->assert(
+                new NoPatternExpectation($pattern),
+                $subject,
+                $message);
+    }
+
+    /**
+     *    Prepares for an error. If the error mismatches it
+     *    passes through, otherwise it is swallowed. Any
+     *    left over errors trigger failures.
+     *    @param SimpleExpectation/string $expected   The error to match.
+     *    @param string $message                      Message on failure.
+     *    @access public
+     */
+    function expectError($expected = false, $message = '%s') {
+        $queue = SimpleTest::getContext()->get('SimpleErrorQueue');
+        $queue->expectError($this->coerceExpectation($expected), $message);
+    }
+
+    /**
+     *    Prepares for an exception. If the error mismatches it
+     *    passes through, otherwise it is swallowed. Any
+     *    left over errors trigger failures.
+     *    @param SimpleExpectation/Exception $expected  The error to match.
+     *    @param string $message                        Message on failure.
+     *    @access public
+     */
+    function expectException($expected = false, $message = '%s') {
+        $queue = SimpleTest::getContext()->get('SimpleExceptionTrap');
+        $line = $this->getAssertionLine();
+        $queue->expectException($expected, $message . $line);
+    }
+
+    /**
+     *    Creates an equality expectation if the
+     *    object/value is not already some type
+     *    of expectation.
+     *    @param mixed $expected      Expected value.
+     *    @return SimpleExpectation   Expectation object.
+     *    @access private
+     */
+    protected function coerceExpectation($expected) {
+        if ($expected == false) {
+            return new TrueExpectation();
+        }
+        if (SimpleTestCompatibility::isA($expected, 'SimpleExpectation')) {
+            return $expected;
+        }
+        return new EqualExpectation(
+                is_string($expected) ? str_replace('%', '%%', $expected) : $expected);
+    }
+}
 ?>
-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
-JIgrYQtE5Rfw

@@ -1,293 +1,851 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPu2WpygtD3JjMbbQwQSaRm2JpioqJyqTsQUicr9EasHnNKMo0KWgTlVuu6sIvV5XU7XjgKdL
-d7zeJoIe5y5d16pckw3eWiezVa5KxdViiekRRhIh1ah5K/1CSdikA+geGHdK3dtWV5cfjmp5PpY1
-XT19o3EjI9b7XFJjixh/VSUuWmm/w3a3nxEV/ZCCIsNK0KKN9DkvJXJdYcUchXFAhw6E5ZTg+zqW
-LRh/Sp4mNbDd4Sg7WUNvhr4euJltSAgiccy4GDnfT6vbbkOzJ3BXdtpcEM0v1hze/vTWbUTlwMci
-G/BUoIhDI24urvDcJ/2/20EzEjQdV0uwE0oavnBvJfvA99Wom4pWpvLWkCI0VwdTi3wtGo8DAMkD
-UiI6q38rRImufqShbX8qTmNk0oAUvEDheDHV2EhN3Eg8XjkA2GX21dYHyzWdANbJ+C4X6bJ9MKg6
-nAYcPznYuKJIQCeYT6M1D72ZxkmFgN16qjgxD5LgxfNEmygVDPNp/FSzgx8Mrxi4d256Jaylswb7
-P5v/T7HbFM5EL3JRIsy9KN008kXJ9UUd36tFPmO1hrRDQhXHFRrIUjpn+aOUQiK3O6JLL4Npkyrt
-OL2Y1Xtj7YF+qFO8YO6OAtpPXsN/ioVA3PYZ9dZV7fgn9mzOU2HMMaVpkNKCfi4S5a2OV+rNZh4i
-4BdU/7NK01URU4Mb2aXCofY8U753jBK/miVgkkUIQBL6k6ABFrmB5Z+nq0jT3KGL+DUOBQ9OMxHV
-eUPv/LxRUtV/RYt+Q2klIfUVmzOGObhhT9I1ADBpwR4+jMhEi9otu/v/wSbEsPZyfo300pTarWcI
-Stntea9nReSsXOpafhNCHNaTJVTb5p6DICKC40JuHbunFgzKnsLwD6mmzVeuSg5QmLhDPeEmBKkv
-xtt8YEiwS5mKIqdC4UKTL/asFMHJMRa/W7ZcN8P11WcxmJad19ZNY1h0i5AwyRUUNl+M3zdta33V
-D9MuAXFEKXa5riwYaCgIozXtTXywzLCoO9VvGh16aKvScmmJRj3L7aS0JfMqLXe1AV6++tEWnpFX
-8Pqw95Os0fk/Cnie6VPRMb4EvHNF44r/rMr4g+1tswulnGieskP4iGZFPFNrd2f6tMmF8PIGM/WX
-ocoBd1kaz321j3H1zjC/M6hHvpEjV4Pz1cDJQXbnH7CQfC7QvtUI4lzq8MdJ/iCU9UDm2h2EcrOj
-5MJYSbeR8QQSSiX8nmkIAKQXkBVc6MGwvVxEX+MzyBivDf73lkodWe2qo4DjVnAjql/L7XIpDG4n
-2TsYbpIQBABSASyGiOIsMi983kn49DbEPhZpNXEimdhPz5vIQL00PL2LdJbuJhl0bZXNO9zKVBp4
-VeJ6SDhJ7EMCYwOIt+zZlb/dW+sdZTDqxLZmRh+fC0ZjbKCrhgqUt7FFsjEP/djpMq1GHPtE2sGC
-D89g6Sqm/+XuM62375eqtaF4K0/mVJaetddYeBnRXX4HkETtrFo0XqYrqbGW3tA2ajvzv+tB8c8g
-UjcK4wjx4wzL5ZjDSr4pIaWPdTf9Mr3p64Ja50KKCUKt6+VGQKEr86ZlDpqi0uuf+REC0ElSQiyV
-Bvefia8z07zQxzVbuY3lLCXMa+zV/8L0cIW/aiG6XRSwXKUVeVAM1Nh/hH+LhSAghbx94pN/ydTn
-k9bUY4E8+ch/397gMPOGvSdyRg3ISHzw50pTqmLPEjpkG5vDoDpnNj93s/VTwyevIZDbCcV//sfw
-NPZrLAmHXm91qiKHx5EcXXtUhhsEFU1qbJvKh8HovWt62G6IpNstWbLaMgjsVlok1hbH3rLIdQ4N
-TM6m9KRUkrHn8UJpqAq1ETRtne4BVhY1QYfFkn/1mYvfK7FO2HppSKYrD9BrMkIxZLNniFxSNDJm
-+mxJVsws1b1e47jp2NZ768GFew9EajG0JqqNzDrt/pWn4ps78N9YzsSQU/fhsF1175viKIJXfZ5w
-6Fqqx83hYuuXwg8lPnUh0HX/anAY/T6QDF/hCrY2N36IqqYh+8Mhtv8Heg/6hORfvDHa18orI9Fo
-Zb3MZX1MN43qGKLBIGDO55Z2cgD90sSVPvJOJw1zHF+Ml+dIIov/Vzv4tM9bJJS32cSLT6gLgaWR
-+qlvvo3+teXiKaFO1RjZc52lfSdlMRR+uUglzWMdfnow0mwwGKqa2F51cGGqOQ4RAhP9nceGBO7Q
-91GuPNnV5wQjd9SCwvNC3sN/0Kdp4sMCSx/zvZEuXXfLCQDLEyzZ2rTYoa1q9kterI5ZHLE1TTvd
-0RbPbedN6UubGiF+yQlkBGxfrlP6JcIsPtXh1G3Ck4aVGYOcO+NLviUK0wiTK1Kfurx63v1B/w+z
-A0XJLGP7W53W/MeD2qqqVZ9ESHKNYB7/VPDjOKNkpjXBvxNysdJc0VR5Qq1ymHi28Z4W8nvPumZd
-Ym9NP7/uzU7e1GXyuAg543CsNsSMqNzMKRMMGVvfIYBiAFxCV38nIkGcwXgUaFNJBtvTGOkgzwkX
-efB7Q1T/RMn9JHTFC7T06K5rL7DGHbhGkj6bZKfijEbLGImifDRoTPIu1tPzpe90Bo3S3LH6nN2o
-jto150xWjDu0t9xF2BbBBY9HLeLdMv4HppCH5ZCOrgox8IUnliu2U2RRnfqmajLcXdB4+s+d9tH/
-w9UVZpEptUmOPXTOhVfppnE+eMMBXpMc3NAQOZSNh9T14DWsS5NvgEVl+3qMtNgT/G9TlgEtyPnY
-uzv4/89doJ0fBSyCMI8fOb0V+E+V6K78FuZ1VPclgZB/Cvs6KHTfMrs/cGJKVkI250JW1VNvYbN9
-JnOH54Szzkf9r4OYtxytDbQxUmXjNzSUXdpwQiWBXgjrq8F06OwQM/Z8fG5mcNCdggDJYC6V34RC
-1nt1J/NnCwmn6PANA6H3Rdf+pn4mP8m+LV//ia7hvGmxbkU+4/yTKlAhgHoDUpgO/Kr+e0fEJZV5
-0ChAA6raV+TCBuw2B+FADoAAacBSpGbIf6a7ZJPSrN7/3XnHDvNcgO5ccv2Vh72x1xmmoiVi9Mwu
-4lOh0qCZiqhymjuYDnFoy5KcCuec/R5ZPrKQ4UnbggDzwSDpZBj8YwAVqgeWAN+J6d/h8QQs0T+m
-aRgRdOa+kbwQCgZshaZ5K8eqErVBqyQGVjT8EsPzyf0sXTqeHwhF+wjl0igDV//gcjsjPxwyoUQI
-7rVpyzOiEIcyq4dRqbeD1no2ctnAnUJ5xZ+O/fYJk0ZjOvO7VvmcfLuM55Lsvk/+sJfUQ/xcbrrn
-aNEs53VNj2WiUNAemW0bJ7h3b6g6hCfH4YiTn9gwffO44iNrcFv7o2egmu+D9zdPwX9WlmrDD15Y
-jrZoFSuxFuzO9jslgHYi4DvJhjMIlq08PM1Jq0G3QcOw/w6x0byFy4trwVP54Ln5G3HsEUz4ZO1u
-wu1MBZVVTcuao2PiELMTq33oI0Gv1GYPKU8umEVBz/yTkhOsNGLlpIY54k++/hZR5deJi+GTaOpb
-uUwL2Wx3unLc8DqpK1gBGuTnZpVu91xLYy0TLvs510CBTBRE0XX2W2UNWLHAcngMMnMS6ZWrxUW+
-ebuWZfVVMDRscfMZB2kxIFysC4TUXTd+ygB5k/nqYLqilZPkiS0LyCOzUHEq9J0KzaEHXfhhGGVP
-MqyEwEV9lKxsZJw54o1MbJRcXXZyJxsLBrXqb0M1UKRKFMiQcDjv78vglhgqzg6kladVJOeCyssM
-A92u14B/ZKn8AiSeHGSzArtNFLMRhu6OkFqIa0FxTameQfVQxpXvQGCZLSxM3TaHo0cTePkxDR1h
-C40+JkhayPTU3qrxHBdv6dMpsGHw6uGSGNxGnnsYQZG/uaBjqGQCFzL3MRBU8p70YaKbFqy90r1X
-PcDqzTaTVti+wgG3EZ6NuEYS/F3RRHiG1atINwzECzAYQS9plTbRDGThmvCavnLNwKh5GUOzATW0
-eVCCCpdZa5bALwUa94TLFOZqZ2daDJhO16/5gdlzX8GDhOoeHSFBddC0Tyki7HYcZmX/yfhteHxt
-1eSP/bTEARQhjjmudDIiJqy3bwblePZhIiXi09KrcBxMU6fcVMIQRclsmw5MfGcFYpgeoqIDdD2R
-MIV+/ZLv7jWNqeyBvfu+SQnVTq6EeqEvLsP0CzrN7OdC3dtydirmdPIGSIKsbykPtSHvaEaf+hBl
-Oph9g0UGuGan58Flgne0QG+q9GjVFnSH+C1mc0ylbDPP9wM5wOaxaeQLrxms/eD4y61ZNhQVOH9t
-MSeZWkCSw5NhyoMTt+UzDMX7ydCVuovqhvFKSX5ZnGXZCt9Ij67O6/+muwDN9O7lwVX+bkH/hJgi
-Ed7M56f8eJ80DvObR5wpB9mBjMjOc/E6pNxJEILw/Rj2Ax+K/lepr5gBwktOpbCqGaQnRQAKw00w
-qzGoZ38QtBHt/rWjmcDc7DVHjPlr+d2KhprPwn8eaj4YCkBfFL+Ncr3j2OHF88wHq12drq4PWHSu
-YJyvkm1Gb/k+VfrtXaFEuRXQTdzYETG4WEno2TICK5dSO3xB+U8jNXhqR5/PJTWfG6dw61E3mpcs
-ah1yoWnX5DFW3my2m/c8cxcaU8XiVBoC8JCpMv9Jr4n9Zu0H/M3SWBLXjdfsQg89C/Olu0BCdi2C
-Z8CWgQCv5nNR5hZyI7HxJ14e0o3M7dJaQUxhOX5WQIjbNZB/shElj99UkUycMk8+Q5ZgYaYIfo1N
-UO/glPl97BIO57ORIlYgbb0RZxlAjnFxnBqEShI/u+eUdGDYJNarmHODEq1OnHbVFOeXSvcQa6HG
-0pOS3ZQE+BiZYe3uNpTKGD5mmGM/xatuh4xUT64ag1M1+HEPbmgpNcb/55FoqTa01D6Zp0vcvrj9
-xcwljsK9Pf8GBTvgvSSTMAtXuNBbOxZkT1agwdflOmKI/gUmDYmI2L2CcXLl/UqxrQ9g8BOKIlgH
-DrV3ED06eTdlacNCFVCUFVC2JZT94K99L6UTVaYs+G09UhahIbfvLKcsYq+vbT4AjzLl+1ysPK7W
-gXSwMegCQOzY0BpFXONrBG/UCrp5mmiufbIPDxM8JEtBlFFDmbipoGZ9paz1zG+AQqqLsCvh1YTB
-L6pNed0BR+Qr0DAJrI3+T/++nTkdLXkWMHdqxRLo/CdwTCdjIz6Fke7sVNznfCQfI4fkeKf9Dujn
-YUwZs7WPEqF04OMEU7NWYkpBKgptjO57rcnVuMYbCbiry4vInQ1eVOAC8t7GYfMLvVjpuR0JLjpW
-PW90ItnWFgEMmD8tGwK0+3h9A9QYxMlcDYJUk20xbzjANE6MFJObnlJIbUECLUIIm60Jhi9wKhAe
-d+H4HqUlTv97ejo5cEZqmRhMnS29kxZLqINC8sugnJjkMYZsHYfNPQRmko1hQyzV9B93LIIoEyA8
-fVFWWDbC3hUUamPdFupaOn9NZKT4chjs23eHIFjbzLahX47QT1TLdvS+icG+6p/TVquFUUvTiPY5
-yaE4Uzawqut3HS3KQtM68fvXPkERlhat7QH5uJNKs0oonXU8I1/9Z0leMXGTHyCOKjsn9Oz+XYZe
-eDaNa0Amq3xyRNTedxjdTkaf4quUqCSEsJ3+n4hQ0mZUERNTgPbyf82R6WZRvfFIAKGJycsmDjzl
-xZOqSfHjQl0zAHdfJcAC6+lTNVvIkFzH6q2VqwDMWOCdqu6vuvTEIQz/lMD/8a0ve3WjHir4s0nz
-omYODgAE+a9vtxZrDDQKMzFlUQj9NKG0k8LDgmUdbBaQjlIzKMRgLpQAaTd29VPSqCvayrwV/2sC
-3wMZqfYCv4Y+3SR//0vzqDsnDmPjYOpsxKI9R6ZG8OjldD5p0R1dV+vlMMhgl9rFmWPg4wud835j
-aopUw8C0sIOoXinlaQ6EZIoomJsTp9lXzJy35/VCQzVvWpKJbNtISdGGczxnuQ5dXO8mGRZFLIIm
-E/a3Gof05zNhrUJOZiHUw8Q7Df7WNAJvSFZ7rMxFL5UQE8fbnmG9JC9P81k23BMDGZrauHeU/xgU
-b1FDZZ5DqzFuWg8/wzmO7bM/euR98lEwNQZf5L3gHVHUa40948voH2XjxHx5aKVpXEUEni0wxY1P
-3biPNl1qOwWKBfmK0q0l5p4t+m5aVqVXnWPy6sAdrm5g5yPLZDKVaTXkJmovrmeVOwiBMctf1EJs
-9Ogdi5g3jlATgKpqjckobhhhqF7fy36pTvQhapCnFr/Uklr3Ci5jTg3A0Yx/ch5kaP7RLOkneJeJ
-BCPpghPYi7AWyzga1d3/hvkNE5IFpdTnRq6kEw8D/hgUs4HKxm9B8VVCFiYFS82wclzAaK2DI2Kf
-yTgE9bbYw3MnzWSSdqlD1+n4pYxXMiFl+P6JGCqOB968U7NDKEywyWPH25S7scEYHK105QQ+qG+e
-SCDIo75kvtNBSiSIrb8TbU2gfbK4/jyxkGyQlGmF0o8kJSn6ZiqaV3cbBRnhfjLz0Qr5Ga8124tj
-FVqJv085BD830TecuIYNHcYxuu729YyI10ve/qX9OH81yWJGGz0nlBng+6M5otymimwaEeOjAuLs
-y1HyqsjtmHROtfZL7FQGE44PAGQVkvS7Ff9f2V5WT+Pm0NPf1FyBlmKVHPN92w+z89uCedR9dIdX
-fMbIdEyvKaBLU42g9CXgcdV24ZPkeVBSwSaompWwr0ds1rDsYDlSEzKD0zh9LGS8f8I7tQEGdOFw
-CjpO2k0rXY5mXfh0ozfkTVdeUIvTLDH6nQA7bQdHSnOk/8oQMhspxCBZ+XKpiF6KObEbciBjZSa2
-HCCnGyWuOlvCnCaUzXTfFSRkT6k974kVkvNSxnGJoqoThGZfRV8ul5q3RK22zFBbnxAVUR4vDYR/
-G/zkO7JRNZxpuXgyEqQMuftEvpbwKa+FqDG+45KQ3eAcNVBUlDH7cyLSsyBJ5PScLYSAEui5pMjs
-Vg9sm8rY/ylJjVr5Z5XTYGcDmP7dZ7z4kt62N5hWAlO3C1rh4vFW1nnUGgU4LpD9e8lKvYMBu4K5
-FvC2zZl4KMj870NUXlq2BfjihbW9ueE8M+c8qI0wKrhNDdEVW6YsQoLYA8LaCHqlJ1C4EQBgWkoJ
-UhBOnXvIXOPXAlpY7+XjegjJmJfEOo7M0j6A7WZP2L9Buo7936dybmfWd+kcuiyLiqINlkv3+RMK
-6t3znpXv91oIX6dDvWQHEYIhOaDFwGBJDRvsUcSx8v+WYjw0rZqdBwH2M7hyOdA20k8WGzGpAfDN
-ipM9e0GtL5lhVYF/XMUxAILfW0bkDWiYmnXNe/ywr+21LNF7/4oRff/nh3PIazZqKG49fl4l50u6
-RWL+k3EKDucRyZYyoa+4vGJ1caKmbu5c/mlqldiBfEIxfB0/9Hk3EEh7ZAxYcNf96GSa6Y9VfaJU
-aleLfTMXmSgXJDMYyk+d18Jj+XXky/HWdvVoH59d+FdXoyphZA4GdoWCvsadJkGAfuqHLc5dZZd8
-aoBH37j14M7sXCJcGyhqPi3VP5FsK1ojreCEIIIa4UVMC5MYOJ2NIzlufFOck6GfyUdyLggELSNU
-tOOWgrNqJufcdQAIzfKTtBkNuaIynpq+hqDVLZLZBwa5n5lhxCugkjYy3A+WX8qWrP5Wq7agKS4G
-X9grZjZ0x6uDM1Hnrjj6A7YZkROwKCuesZ97HunAXwB84b+lE3IXU0KB3BQPCGMpQkT14wHfJYFC
-24v/5UmXDH4d9PZe18Ihjd+16A0uNa118LUujo/Lzq6xJQlrdDpOzuhvZmPBGY9kyfXO8g5UOR3Q
-pKHiA80iH4t/b/Gj0ymZkfm5pXMYa6Nlh0s4CN+Svrw8rAWPJGBURUb9FMdUx7OSGK7I7rd5bGoc
-OFjKjX19IMLSarrMbYWc7XmZjrCTalALLOtuk8HPVWKu7ZR0toFBBDU3HeJ4O16mzENb0VEel7z+
-KCq16oxpxs+9VUl6kd4XEoCm2bAgGMMgPm/RG/1SHsrCm7MpxI9rsrO5DJcBUFBglGcEtz9LYGXs
-NS5R/uJGI2U/ym2bKTCI40sAhFlVSyAggK7ucbOmrg3NzBC386KNnNUQP3N6JwKPLVT4z7uWcmAg
-+pcAoai5OKNp+vLO7futZBiXCU2v02fLjI7roUYSqlnKwnUtFp1uppNDnK5ahMP9nsCaloCZrDIs
-BOaUPFBz9qdFkdheA7U3QcCpWuW4X7Ryzp6rdPMfuMgWY32cLim1bBGVJquqeRLtehrKhYxXjdkr
-e/tV6KoDaLIqDfIl8ly1k9tWZ+o2Aj7E1ovDggmGOaXokV+w45AZvHzLkPoRe7TxWMovL0Zbiu/W
-y2jA0fP6iQlcXbcM1ODUsU6FGuSKytcTMbHOunIO5/3zRI6sOnJyZe81bKRqBzRmDCleQlzCXxIT
-4x10n+7E+++eGFdnj8k8o3bDfYOKmsnqOTMGBV5tfdqw2qS/OXkROp+YNTZV73tF1tKm7HGCJSZy
-uCzFqUMQc6EpnSLf+pfhU8efGX5lUmqnATLwg9/xuvFFa1S8Zy9Oufv2zP/UUjTnTpEniRAG5AMf
-fdoNQmeNKSUVRaxD5yc5i5QAqMDPi91Qe57U5Xpb12+n2/FKffXf9iKkbDAjKkQHLyCIZ+WBtDOU
-ZBiKjP1f8BJFzB119D/JNnTZ/rcGJuglVKyMdINhhaQ6rzefMD9WTxP/IFPcaIPBtgRwHgL0WDcH
-GliqupTVaQdg3rJk1bifIMxBCvceaVxGLSjCrvZiP1SU17jn3mD3Xf3M4itD5h24BAB9NfUz31VI
-bPn+DHlHkYi+R6zVzIcsIk2WbeQE3mPg0svrjibJs7x8Jf1OT9mmid8pMZYlIBgo2ROn3SKENy5t
-e28JwqdiG5HcB3JOH3bNBPWqWHpers1c77Uum91yk86KVNXT8Ye6ULqvY4sa6FMGcSVF/4plXoTP
-LpT2k1hFYg7o8s2zEx1xOX3/4o9uEiZMcs0H5IxJwH4rUD4v27O7wVYntgFFkMEaLN7bQETdraxB
-IbpjNAwBbK9AT1hJDss/5ZbJi0iVOjM1QxIeQnmo908IqvS7JNTJHk1u2+AzRhmiwDs7w6qTOjWU
-WspFiCoDlphdDrYVp1q1WoLFNiZg3W8mvXxkiINQU1HRfZj8LlyR5LfypkZz00POra2KTmZZ4VPk
-rcHEZUCmfcj6P2szYtah0T5RBfCdDktqTllynXmI2xzKHcKAO2CelDpRiEyRQpXK56WRB/fP0ESK
-NqrVDNdRaJJZ+Wi21LHgChxzmAkIl7A3ecfmoO8fZatbVf2TSd5pG8BAxaalCHW4C0M0efa69SJJ
-+VumlUVfxiM07m+Bbl2HT068V7qjRqQStehuQja8oeShY07MRTBciRYwGzopIOpJubp+ueMk5r7J
-585QmKcslBclG0YjkGbF2gCw0P/DNw5qc5F9kTXxvpKRwK0L5VKP8iHUCbpBWU7Gy0h7yYtqoD62
-JE23K1EdapaUdF33HzVmhbp+FIdYe7oKO+aY2lL7HrKrezJrcNXZlu4zNWKCa37Tsfv/45TFpej8
-9jXjTHNMljmTnJyOMYiLQRGK6BGIrj0FtFzB//G54IQCFyOtTvJ/Yb/E7cvErCytZx0lVnopVxFF
-3W2Fxon9wsuqmqeg1Lg5hWf1yiQ4MuXRsKXlL8gPvt97B0AHZevegDHrHjQmRjDZDenfd6ypRe8w
-fbhsbyLkSdoqa2/zfbiOBEPu95Tbsua52djRoBsUCZJL8MYc1nUUjEsJcytWUIhiuhHBZoAT38yZ
-1Agadygz7h/rY7w1rkFdjvYGev2kbXQ1OBDMs4O7nIK+nd+C3FpZ9ZyadQflX58SLQ0QQsyzcvOD
-8Obsga7FjgTV+B/ywnZazBbDLSM5PUC3hWCiRxtxsRyZL28E4A/x8ZXADoEGc1G66zTAdSLmf4d5
-nP/YLxq5rhi9rZTL/h/TibNn9emO0a8RgE2/WEjLBv/vP2Yzl2BmG0bf/2X3Q6CGYnsbLwFubXAB
-E7rDs5ePuTpa16YVXvPAuE/+lAK57MTJNQi5+dCF8+CnNEbYBeaKeL4DHe9nnkMnpYbU1Q3DUHAN
-61YqId1gcGWBvWQDKjHCyECHQj/ihy2TSconJ/pSDmt9rt5HPUeTeU+wWA3/gkeaPRDOOeDgM4sN
-0YBWgIdQVrJ1QA6mq60lnbP+M9dHQ9B+mX4EAjges5/RIv1YWE9nNr50kspwlUqg8cNDM3qUEFZL
-nX1WR94RArodsqqYKxZibQgFB4O+gDubscnHPgi85SZdtkH4Ef6+Nx2k0oRUxE+I7cmzpXl257Uz
-Cgm85f9rWIZf2LSqN3Avq0/l8qcgu/xcMN4bcwGicsCMJkXrXewmAQ3aHJV9H/wyIeyutSjJR7oW
-sbeE8D+97HVIFeWESLD3a7aSg+23XV6ZL1SmxPMKgh14QpfhKgMYl53xlcjwMVpbcu4KQSvrONQX
-5KgGeVJa1W91rHCgEe7zPwZTyzg/E50EcLMiFNbv91Pd63b31osUUBzxO7l505t47vvKfZh1fxrR
-7C9QXhSpuAqgm/Dunu/mrinHsmvvhNg3BuKsxDq5EZKmd34zV+bnli7T+Xtxqm6V6NAgHVcPEeZ/
-Ec65UUMi1JVsbGppUayCsDPijUeuAF/IXOEHjSiFq6cCjBzT5Vj4ZcCx5dvAwAu1vPAavEY5yAgr
-xQTlNwP96wy/LshTsx/DpVxAi3SwyqESEWVx3j5unAIPz8+E2M4GJPDHWV5JLrijXrBX/Or3dunY
-cbcjbNmVJREGez2wIe2o6KGtlqY5C2ncK5udSxOO9r6OvimIoT7r0P+P0wT0rRspCxkb9yVqkp20
-NQ6YSVZdZ80g/Mz3iPJmpZk6U4enag8TdMob9zF9t6WGsBIrisxg1ZhLjXYw7xOATgxWbagHf5FZ
-NdIM/cMdkSN2KZuhlu16WRzhNfa40YI1HTuq5SFMtG3sXmgtgm+OsXhZOt4Y3ujkl8YFHYUUR76u
-VZjIicsO16iTCmXXEgNrP4BjwCxKv1aGgX7iUVbln0dS/36bYvPcA7bkbVL6uRzWbPMweDGEOTfh
-PSxiOmfQrecRiCHLRM+Zr0EjKSN2baJs7wCbmIDU92O/QmVl8qmRSjvYqV00weOfTNI+XG1uxSuA
-0TIaIAnH+wD0YYrLI0kXfFPoLTCeEMb9RQAm8O0rchJFKydw3b2PVZiNS65hteTph6DG5DmFk9Gr
-8QVpxLjKZooRjATImrTmVJwb/Us5x2cQ1pJNwa1VUUh10k4XO/9I3NsloT6+iGzbzau5W3xn+sIw
-6ObVsB/eO/qGcnTNekqpG/rUvCwyK9rnUpaOuhbEjCYTmQ+8EI2kf4v1rXwCp6B10pA/pOhHoajp
-AsZ27W6IydJtzQaY85dbiOW8pqikTbC91nKc/nc5mv9Xxn2vHkOaJweth/hFQUAnsTcWNg1kWjal
-Asmmyrd0TcVTYMqhuFow3+fhCn0Gl/S3RjznZo3dTsvZ/99v7LSRyL6/dk3ZutzuBm7Ehq2tXNaM
-7W+9Lsygx1fUCddF7336TMzjyAjYBRpUlrampGOEmnvDeMZGhIzb7lfvUfIa8UCGVz0MBe/C16ip
-gGBwVtzw/qOj2Z3e5gaiAqCseUDSA/pH6Udkts3/VGVHO4oaq4fl2mjP8NOtIa2r/G640kUilleT
-uhyvFiw4t2/kMoPxQLQUVzavXe/nv1iA/xdjuddRDKEfYtEtUgktnJY3weaYIT3vqN5b1Ljn67yP
-xa9jFxyXpUJGcno0Rm4zPrFRdTwTC4Uwmv+FATNy5bBGdJBW6duKmaX9yRIKdNOTazbtVRz6zEMs
-Mfti72PyVj7dKFe40sm34Bro1pFqDZT+I7GKWL8uOb4S7Ere6upo2GJS+0ZWhTM5goVbV9yN9GvO
-cIl9jxc6WG4L+1DHWfbuBFq04UFQl0mIbfKjtEyAUIlKRaB4ax/KNhVf9MZqs9ME4JGFJjdQmRdW
-k39ND1nHDnF9LSFF8pfWLUk98PNsX/OKzgO4zbW9aMr0yBKLHalLKoYOBSHryiPAepUADU6l039Q
-G+v/OMf9wnib4W50x729R7SFl6WzeL0KPy3t85M6NsnaPstXRO6FSJfeGRiTzPdpkAPL1SAxV/jC
-QhhPysN6ajljdcXsDnGTA/cc9Y8qZFUAk5rGBnM7LqPB0Fb7sIZHCCYj2kABSCSo37a0LHgUpCgt
-GVpFFinwZEn8K+klbLrvUJ3eyJlyb9gn1AqJoqB9X/0ULF3jRH5hg2gAqWADwmyYY18al/EPkASe
-WwWQeAcA8gpWlCyx9HHxuGwDShz7X+5tg/fDgj2Bq9soOdPKdD5xYKcOirHBQ9b2UsYH0BYh2xlI
-DM81dvxtFH8/fWm5PYg4DQaUTd6nvkAAogQTy4Wfhp6yyfTGT2sWFYzpJINb2zsQla1tVKARXiGR
-SyHcOa97Ou2MbsiX8qCO/x0Ve2wz99hz8XRHWcdxL8QwzmreaYHDnQG2o7ElQD2KKs9TksI9rbw7
-SURnrikE1RmF7BPHsjXViCmej+pMndOYtkY+irOSG0wX0WrlhAc5FTjUvJcn+EDe4ROQjbCQSdzB
-ZfAB/jrFQxwAPVFTtuYZYIwoIuTmQZGjuKb0WKvFqlI3S23YA5D/Ybp9qn7divySYN8heWgYlxoc
-luI6q/UOcOEmXqd8KFNWIpBY6EqQ7nfzGdQLPG6ljIhe5zmA7ZZ+hRsUKd7DgYzHe7zNwrRXJJQz
-62c5+KTY3wGDUDXChpNBSRTcZdcqFd6jN0ezB2jVuMKpkpTEgOzEtwpJmMAcaCWo50Mm1wJ+R/Tt
-H7MfAXd2EefssgC84CsddoocLsNV5gL69TwRdYuhq/XETI2FmSxYJb5d5mrm7cx8I/T8hDpW2H0b
-ZrFvsV/uDi8mshoXT/EmgkryG+UPe2g/us5rk9qIvAZmOtghNiKNTCLbCIpLOVfxdtxpjiHEIMMs
-FUnCsNpV2HUA5EK5eNFVuE6YG6PBa0qzwaONc+EC/pwJbKLJgGEXsuA7RLZm2Nk46KOwYCvldGJN
-WFZtw2I1ytihZ1rNNeEkMbMrW3wSuuLI9PnhkALL36BCpQO7q+T1ACfmeY1A0nG1VYeYKM2G6q6v
-oWqhsBc9mvvbVZ3YvNw+SKwjIlzbGT89tc0L5v51SGHUlK2sewqn7dED79cVjhlxNjdDwLJ2SaiE
-8YiiE/GNQagv3hEjebKzXhOFhSVf1Mlyus6N4iM2aq3IUuE5SnoVdyR02/SEAY4TcrdxrGKPvwcu
-Kj+uuQoPXWCdJezRP8lHyR2UlNC/05Z8qGyxTZXjnuRD63O+vHkE2+EhZItadR444PqVy8Eh6bgs
-Pfc1TNdkUwl8ZMfz+f0o3EHNVXQ45d3zqUVR3GzS8tf+dCHzm8o8LBcv7OnD1V54+io4TE8BBjs3
-Tg1ExD/6r0whCE8fSE6F+ONHWdYriIv4HNEoHS9XdrnG7TMY57Y9Np4E2HN/BVmn/u0Y06547/+k
-z34mwddrT0bmK8vldVKVL7URXOUyW3PjfrQxiRku7YAbm/gN2UnMYpXn1UsITEjqyoOqn16vuv53
-V5YpydQxHM820l5iBDpv2HB1GHl9IHkLVOWHZNHiN4LnuAVENXUHa8adpTpT+vLVWK71yk2m+aeI
-X7KGvCHW07h9W4+JQJ2wPbGlqdLZxx0PEExZNYcv3WF0HKjpmHWjd1jGuby44jwDCblmPCDH6q65
-e/g2C7FFJ7ZJ66HbfJTNQhMMIvxYwJiHwCUdVbAKxWPkciJgr+JO8gCZq1mB47jceG7Au95AoAN2
-tqmaYt2WGHLZ/23t4FTplkLfNmCGmq8QiW5MnQ+hjIyJprsWz8ErI2/R0hTuhfM5hzrbA2zjv109
-jmGwkBXw0i5jw08Cl0U0pqxWLl+gNThDYxDVVHIarOX+NxxRBtbhfPFOMqtpNnka9P8lUq6EmoCG
-uRCWE3zQCc/jkFy+gF6w8SQifjfEwP71quVCpHahs+qgiPLPcbD16i1ZljrjxcnuX3zXoEeQ6m5N
-gvG1f9bjt1fgBTHRttpsLY7w+10XuzIOeXAg8/b/qy5WNBqvcZEed3+zq2LF7kVw+3GdlbQy2JK+
-VYmc8lZWnJ1CWDxK1VD2AvTXPmF8cgLTQ54Jr5mI2nbZD/yCq417+gYfpja7G/gm5hZoLczoFQOJ
-yOUS+aJdac1Jcn7AiOLY1x+MqRwOa4HzOkOtpHNnsAtBPR9ubz718BXXwu3CJCSAqpWlRuECiuuY
-Vd68xBepqOUOW9Kq0foMu86fN/dVYpR0vm3HE4xgy6Gq5iGjkGAv2rrtuCG8b2HOpnd9hjXEETdd
-8c066pE2qGzXdDtHukht9KkDg6DuzTii7sbj0ITq0mX3Ue+vE6Il9dLePxZolNdC0ah1dRS33QTc
-eZB1GAW/YX50WWk31nfAKlbcS5U+yHBjR5/+39mWgZl39VfJeAPjV+Kzf6vexHz/JZXzs/P5R9el
-SkORVc1wqPAsKbNKiBSSgMWciFLD6l1ylzWcfe+pS2DPW4vKhwsBKygX3D7y4ebNg7CktkDDGggV
-I/gHx0JRX2pypNXsy3Is9Gap9qvr7ioszxpsH77gMcNSDW2oUKPaHxYXHi1wLrL8laL3SpwLKYZX
-Hyxtn9oq2EQhQ4t/5t9CzFPwHdCmxy9gESQQDGrzDfD0mleVhgUXKCJt9sxD8+AocRWUVe0SbkPm
-pNib/DxHahUus3q4WpEg0t/F/5WXVKoz/12p1puCb2TNlVaDlqFaFgkrQR2xb8arg8YH327ESRW5
-PC/Gry4F/41ibOuTX3sqlD9MIZDjcZP7PJr8y0/iN9h7Sx5UR4obhnk3TnP3DJWvRI+KsEGbT3J5
-X/uiYbwcHXCcRO1xKaO1NbNT5DA6N67MUj5UyJ7azHv+2fokdkCTG9Hragt7Wo2JD1/BM4iYqObt
-KL5ZkOchjypGhtJkMQMURhBS/EeriT9m0g/DdAhutcCvnzRV0c8+CLA7eztZzxoNYYmg1niGoZZH
-tphciTnKSXL2ZVazy+AuhWipOh7Pw09hPvYCwl/dCrvcb/DUE2WGElks1GhxmjrKkSfYLdSk2bwg
-iVJhlZLMqGec7Jwy4zD3l0wmbsiA1Qcm073Zv4sKCVQ+lVm5mqbOJC5TYzvoB38dnZ9Uc7eN7RTm
-45ZVKQrcCB7sQT63785qMh9DClHr8IVtqTMVoI0CyuAIvn0dnwzbNEDMKl/SFTlmOkX9Mkbbi7lA
-Xfqe171xBZXEOX7x692VmNh5CbW6nmxvnQBQqO/fMo+FbcLDILS68P4KcBa7WpWT7RIhhNZRw7xT
-+gcM4F0/1lNqKrPrd0+T4i42ntBa0LosjSSSvg/SAqWvicy6TEPHUAiWq2+Om8l5ajgownk5TgO4
-YPZGSt6e/mxhr8l25xnEUMSuRiS1+UkKFJdvBykmHSGME41BMx+9qDnGewHum9IsEdPA38TlBl/U
-wRDoTEmSl2w94f2G6gVwO/rRmOMj6FRvRY8a5hzmhFnKc+cmJ3UGqxv4ThZne7mYMPbajnRjKgKa
-D9nRY7KeegT7Goykk+ip/vwUZO4Hd9u34Ub9jLDElxakulkz6a56P0U27cW8OUYiGxrR311rsm9/
-xnKdYQynyGSbEP0PsgP6ngquYVuT6nPdaoo7Xmq8vEnvy6IhIQv7/twKhuKacMcqno8ENP8Ra424
-DkgnqvGYtvukAI9gHRmjU0A/LHBX7SjiTPDVjZbbARXJxxPYiRk7O4OKdXSO5MkOP87eWCCp3igu
-pMmdUKHjXk0guYwatVcIPTqUN8a2LYhL/uJimcQegK3bzCGC2wV6/7CCWxZ1UUU2P+7QpCpWAVJG
-iqQKAkAHwdf/yV141dzSQsAQ7oZsNm+Utgtr7WmltPSIAUZ8Z7fTq+rDiK7/09tPrVgV5PAxLKEQ
-7P3ncZz9E82AmisngkgpRdVNGXfZGy2+2qT+O17V17sOkv45T0orGB9L7+dAfBmgXl73WeSbsalY
-9T5ftnY35QQIsQm4IEfkuDvRIMVotM8GXUNBqpTEltuEOr3u2Gw46fvuYFkjzFqcIPJWNH3cT+1B
-pLZ1bUqUE4gjEJcycXHzlE5oonIVnyIZrZ8rLnGC3lsr259EzegnoSowWwN0vT78V2G+Dju52U2X
-aUIpcKss6xPstIgsZYItt16P13zW0nuVg9fp13j5iYN+asqEilJaCw7/4DjRpgcQZ39f8wJ8CicO
-FdqFkEgtAZGZr4rhR/M/CId/7fhTkCdQ7fRfk5UckaU0eEZAlfSzuOC8KawSb3MIbA+J3IjyU96N
-y96PG7Lhes0haUyGZ4hTVv4ZAaIrWz3aKyYA+3P26aCJWUNfuRL5Z/j24/3+oua5Obs24wsJNGjw
-/cjUoyIGw431B0BAac+SBmaMaxw1JDYbmbgTJs+wmVRTB7O+LzAz0RpmZD5ZSo77SXvxtZ+Jhtum
-ZyDMk9QSuN20MpzMLoIL/49h4sd4KbGWQaRKnJbVKiL/FJIOiZ5hgEXPjPaeueEZ5A38GyV6rZA2
-NaOjhEt8xnMCGQykx+cwCk5zI6r52hSP91rkNVTOf1BzJO6ykx9V5a2VUaK8+6wVUlpg+90aESEf
-yvk56jhCY2x+u1qZNAXiR7uO+rBjzgWPt7DZ3Gy6aSTRlDQ1sAyAttBhzH0lhLyc4fOLa2XRweHN
-M51IqRczhA76KmkDQR/Gs38qrQAgwLzIsV5D+oq+hlbG4HAT3YY+4IHP1vVWR730MbXzralQbyjy
-7iER6t13fKoqf8JSOWLKyqqDPE5MfOxFy9YwQKTMKH53SmjLPlaE1yuPuXE4fInNUbDRlL06otPg
-rsTA8/w3kLV5mqS7kBNCWUu+PGaI51wf3jCGpth6Ew9krTNFr3uV6HPVhOdyTYpx/s9QuBcqdUKZ
-NXF5NgH8uAI4PnR2jhnvpyHF6p+vwmcS4jdB/s6GzWnev7R/k3CQ9egxBVHwVE3Q+V44j5Yjz6OG
-vCzQq9fipLY+b2AKNAfHg23UxDYgDXPyjj0+usHsWJ1hDxfLAcokBgJ2QMbgoAIRu0AW5wQ+VKfI
-rwitwiSCeMpvVAja9PG+8UNtxkqqvR1Yfy0viyEEbHjL8J3+hjW4LRXoORNoRG+oCfJ/mzym0gzC
-HjH5StB8ZRLfW000ORR/Om1hEDFHMJP4NgnP4CWtH2gtOheroYPogxlqWLdHMQiQwi+s+A7ExUgp
-+143+XdKnr13+mb0MWDGx0Xu0WVGQ9PnJgCQA+TuIXMIkWme+fxPzdI77ciGWFtt11U44ZX2/4dV
-lp/dJsARJYB0pqoyu4eALKRxsTzEu3lpO/iNYjbvLJEUuZ8l4ZgqCfTsZb4rBZX7AYBtNQwGp6hQ
-rPFN/DNUnB6I8uIrJFGouPPUVh1xDkVxMpJU/8wbMWFCbLILfckjtReh1zF0RMsAettvX80uqc3u
-YKP+zXEs9GVJa94HgE4KUQPFVwi5vcXeBJXRqsv/1jfiQfu12XGgEZ+FIIcFYuHpBlj4Sy1WNlNM
-EX25SFjOpROqY6s25+0Slk4vPQxqbs70MUaMusK9gYBz93AaeM4rsDH4scqe/TBlt8QoKud32Zcq
-lCBG2xgBKf0TqhhgSqdpn9aE+0q7tpDPuPV1ZFIdrQv4IW5M2wghsA5TCsOj8bKVSUUnfN1kSoCv
-YS7c+9q8KMpgiYUI7DNwraoK9JMRwruC0h/WCGSthcXeieAoQfqG2X5y/23ytENINdxSp+OfiykS
-FegX70lTJpxhaw75r9E5FPn+8grTtg76ZCEjHHTVNHhwojYcjNNODADbA53F78yjtBBDjyfJ5CFp
-jfRRDvuC0XIhGwnt2NnAYFrY5Sf78Cyr3GYf09yz2wr8bNV3Cky6EJAGrPhUkFQtAwxeaFqiJsN0
-3hP6UeFjysz5BhmDbiDYt2/y1eCUgLBUlU91ferZvarr3AcRiCbndLdCpy5XyEYpHxaORQsfCaHR
-AGreykqOHlFXHIOS1xnQFQY+GIpUCdd/c8z5p8UrbiH+E8T2Kt20waegsURKH+l/5HljxyvRN5FC
-tQYbrR2HAIRhzOyixPuenNiapYALl/E/wGG1I+eY9IHSL7GDpFdJN9u332cFDNWOcSPFwGk9XE8N
-smaagb1J6vbqAZXNFkzeb96y8iN/xkT/TexuAsqq3zPPJePyJtouo3II+COzNg3kTD6Sat4qtCe3
-AniQp2MOj1W6+sX3yiIWnhT8JiZ6ioeIg2fFhSr2Gb1hEStoembDCa98Dtj5paoGNZc+BNRleFH+
-xBhh45vSFX5Kvs5LQtMAPkzsHr54/9Cvh3RR3PEVeRGVk+/uaRPNg0Qk4r62eBDnVr+sHsrCCx2/
-of8201bhQLn4dafle16VhwpZvmUR8vsW6SRssrU+pHUAxh4Pyk4zHjdRlImuAiapDzgr73yv4MsO
-uL69TRByfsHUQYhWzr6LxFap4Rht+u0V73NP87dfRwOFbaP6pbquzOvZiBBnNPV5Xy0haOF/XA+0
-61x0V1LDrSo3vcnczFyqjCp7SQq2jn9/Hncu8vwJY3SSXPy/t+SmR4h74dsnKVaefXcHH+Zi7cqo
-KYGZD3GjcFf5sFeYTJJFPX9UsoQ9z7H2la6fOW6y+DHVNjT0v+ieqf4iwPzSISBLULlgzkIrrasQ
-FjHlxhDq1yL0srcZl92sQ22u7Ucyu4E6TyfF/ebR9GeBk4glTTFRsKddSGlG1bdABdhzfWTj98Dd
-Niyoz+ojR34gpx7v36jHXC9DJLm26yAXcdM67J5mrSjurMEDkwmayqvzdbTZ+EnSlyA9KNvR0zLu
-7UR10jlZpvnzLdDs+FWcRgdYt1Ra20G1bq6ETegibZvV6vdf7R6aRLwtZVyFv4maLz8S7O1u6Cts
-LVFphLQ2x33FMVZzRKh6aM4zKqzbEMdTvJ8dzeXMz1YufOkpdt10JdIbCzgH2ch590lFAcSLmyT1
-cR6UcLxAXw0TgcZ1DWHsB/pd/HczU1vN5j6RXcgldkMJQnrGIcU7CHHfgvat4Q9G1ub8skJ6Zxnp
-UB+nK19Ep0ZJRDr2WOU8WWDu3eeZoaaRklqr8vUW8bfQoUYZJkor3BHA612KgpSA+4fORvoVLV8m
-8y1wCP52zGFMsGobtUEEFRee7Z2jn+veJOwGz7dVT9HMgyZ09c2G5uwgcj7hhyJt2txXUv/TElt1
-dWTfNqo/w9E/KtA2uSSBfGl6VPckeVNqc/WNCUDKzBz4aEOrkwbcuCe4Fbc777NBaiyKbAJ2GwwS
-///u9sltq2pjLLRInpbS1rT3JP8RaM/6yeh34Lzv2cq8MpQVKrNNB2IvSFkF1JEQQy17kxPvqoXm
-+kdp6lp2fmnBe9wJLN8JU5Q6Z+qOvCIoQu5XcLjfgXMyK0t/zBK6P/uK1XRNQa24gq/Pw4eFBnqx
-EaXceg5/r6Wi/oSs9xyoXD3l4wQJQ7xRAwor+inGzHqGIFG6plnRsVg2ofZZ4FqsZNWjG4TWlVBj
-ZsmFjxS6b2b6Ku8A34g5pLy/VFxuxgmMcqxn4yFy4FEbxPvd45dgkoGqubPG2HltP3CqG1tYKwak
-yH/W1KHdwM/fAlk+PGZgIWbd2Umumc+ZgJLt1fX2ll7u8teiw1b9+OdbS/ARC0sB1l/IjQbyL9xJ
-AUjymFfWbKj95Kzosw1YlrDbf/AK8xdjynmHBmxB3rJnarca+jIDwuTLfciiHE/K5BI95KFyOwLF
-fFQwk1eYO4xaKAq1QKtb+40bKSkDHhFW3O9AnJRklKgbmwtlatH7EjBTv9WvWw2Jx4Cdhbf0HFU4
-aHXhLZWfRnTzv0eTQhetCc6PxYYwaRRn7H3TUyU0lNvStjYzYkxLUx+hPT/MbaVdHwpwyh9PY8jz
-X1mEFsS86jj6tQcdljdptr4iP/DrwfcDyyCnZ0WLHJynXEdXrsSYalc1KpVaYj4sMpNJrwSjJTlR
-2JlVQFFxL1fIEQUUYWfJiCdxKCdnBCx6aLLcXbwHiuYlEC14FfIDfOnQsP6oTvnYPCeLmP0REI3q
-J1Kv+KcmgrdgVpzsQRUeJu3dg4tP+qmNR4w5wrHJGXpt54eun2BwUDSHfclhdpiYA+h/GcU0IyiC
-F+j+yqlrNrcRrLYairH160aDSKQNOX9Um/mLW+B4zDqaU1GiNIUKn1IbfYECtak9/c9KhjwQCg1X
-gLjClP/vqERUoUTGZJ33IrTO8Wu+OB/MPjoWpTMo5D1jiJa4wjGnhp7SPbnFbogU8/SrtIAm1K3g
-JX6CVp5F6/lyTg8VlSiv2JD1NJcaFV8svm12qStzD3d6AENXNHwHxMySb4xVErE2iKi6FNboJXv/
-HtEfB/Quy71uNxxNS8zGLGH+7xPXbMye2HIVk5VsheX3VOYu1YpXIjygpFaRoayclxor2gLuR90L
-QSLeBjDu4x8hVHMmSLdZryavRxkLPqt6RJt/hpO42bo5amFGz7/HAJtICimwUkSoUW1vT1UTkPzZ
-0ZgxPpKFpUN055jITPPtlSfNh7lzvXv8dBIG4L1yrWmggru+h40OXBi38OOgySSGnqrIWnasKOm+
-IiUkun9SHA0EMcPxC1uQdpyFnSbyFp6cabrKC6D/NCOpaoj7KYwZTXqHtkjbM0RfGFiRS+Rg8wLF
-23I72gIfBIvQGXIsfL91GmaAaQFZOqL4FZetCEQgqeQodvc0ZwJIDI+fGjdW4/uXpcBa2b/Q8C0z
-JqsLAS1VtQDULbm5xhUivv0VTD/qaCj2Wn0QPKbJ5TRTc/e+6cU8CGz/wpAyCjOOnGjFZTrUCBUM
-/14VeTcigZ8bHVUUpAHLFRRe9IUyG1p/Q71EWOusCcv/bUXJj8gRMfZC1IQkJnabIsenn1BzfG6k
-GQdqtEF5R42Vqz/WHVoLmskfi+E/KyRqfzcK6zsp7z3OZP8JwZKIoPQnee+xK/5tAs3W1Eoed/s1
-ybBvJOyx7zZ4qY7iLz0RmWGLiCb/DIQmwFMvJTRUs2NPz2+LydzX2WhyP1HwbDFZjIQDoMhZp9Hd
-dZvNKhc+lEixoCIGrrj7O9l3lItENaCVADqgrHn7szqOvHCh4tgX0V1Hcc5W9+8LK8GYDEy7k1vc
-4vqOrXFv+TtJ9uBbk1fJELoQNtZ058AwcOECb3yYpoT31U+38Q0AqUfj9J9G5E/jxpLw6YW9a1MV
-36BtYtoEXt3u/1BuJAR1SiBt934N1iFr+3HPuykXkDe2ads0zdGMv+fz1C3LyfGCisTjTvn93CmW
-Oi0EsLvT95T2ZARTc9EeUd/BdOrN/15qqEn3vyEQfKiiyOBLJbz/SsQdP+z+J9Di2avKpn4uy9YA
-LdEWgOJiyUqqHD48Ij1LX3dsJ9T0TKMItSrs34/GsCtqWc/puwg1szBGnAgDE1AthI1/Roe7TRfm
-JqCFRu4rKtB0g89sP2/g9WVABer2EKSSG/zc9TDQWcNAbIhhNT+6g9vEt1XfqGMz/IxucoMAlCi9
-hOwsKZRVwHbh+B+QwZV/IwkO4nNlUBafI+xiWNr8m/vbknu0vBfSRj9coj5TBbyQXWr86BqIrp5L
-bK5kyjd2/yKdVOEyl9r8cANI/UKmM5uRdShz3DrdZIC00DYsW6PBaNx42OTFr6VLlQBCzSlL/pF1
-WkglUBTA0uNk+xVuO3VRskgGTUvLX0+y3umopd4L74sX+i3+2NYoImkHADVlRrtrX7fW1SSJYh1S
-XiFb5mRR3TG6BdEFeDRrZeeP3lzeYUxLDWd1lm2xgiCC67/DgKm3QKyzegvjNI7K+DW0pm4BmgSl
-PvPhAXz56ewhCgc9T7MTvkOuDAmephCFsiKWaj+uuYfnQBGuUtjsGkHZLjRpN19cGaw8yTXtSVsE
-xBr0NJldI5kiHKdFo+X7H2m7rXcMXCAnhmYZWZq6tUjCdpezlm59yLF8+Hl9Y7eHBgde3mfNO9Hi
-OUOv7+rqWzj1ox3C2v9z2daVZTqOgXs73JPHsRauLOLzBifP8ZI3KIn7FVVfrWURDsaThEjD8yaP
-gqaoeDsNfBSWrvvqXrtsjYRF+gRm1PQsj9Z++m==
+<?php
+
+namespace Tests\Behat\Mink;
+
+use Behat\Mink\WebAssert;
+
+/**
+ * @group unittest
+ */
+class WebAssertTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject
+     */
+    private $session;
+    /**
+     * @var WebAssert
+     */
+    private $assert;
+
+    public function setUp()
+    {
+        $this->session = $this->getMockBuilder('Behat\\Mink\\Session')
+            ->disableOriginalConstructor()
+            ->getMock();
+        $this->assert  = new WebAssert($this->session);
+    }
+
+    public function testAddressEquals()
+    {
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getCurrentUrl')
+            ->will($this->returnValue('http://example.com/script.php/sub/url'))
+        ;
+
+        $this->assertCorrectAssertion('addressEquals', array('/sub/url'));
+        $this->assertWrongAssertion(
+            'addressEquals', array('sub_url'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'Current page is "/sub/url", but "sub_url" expected.'
+        );
+    }
+
+    public function testAddressNotEquals()
+    {
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getCurrentUrl')
+            ->will($this->returnValue('http://example.com/script.php/sub/url'))
+        ;
+
+        $this->assertCorrectAssertion('addressNotEquals', array('sub_url'));
+        $this->assertWrongAssertion(
+            'addressNotEquals', array('/sub/url'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'Current page is "/sub/url", but should not be.'
+        );
+    }
+
+    public function testAddressMatches()
+    {
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getCurrentUrl')
+            ->will($this->returnValue('http://example.com/script.php/sub/url'))
+        ;
+
+        $this->assertCorrectAssertion('addressMatches', array('/su.*rl/'));
+        $this->assertWrongAssertion(
+            'addressMatches', array('/suburl/'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'Current page "/sub/url" does not match the regex "/suburl/".'
+        );
+    }
+
+    /**
+     * @covers Behat\Mink\WebAssert::cookieEquals
+     */
+    public function testCookieEquals()
+    {
+        $this->session->
+            expects($this->any())->
+            method('getCookie')->
+            will($this->returnValueMap(
+                array(
+                    array('foo', 'bar'),
+                    array('bar', 'baz'),
+                )
+            ));
+
+        $this->assertCorrectAssertion('cookieEquals', array('foo', 'bar'));
+        $this->assertWrongAssertion(
+            'cookieEquals', array('bar', 'foo'),
+            'Behat\Mink\Exception\ExpectationException',
+            'Cookie "bar" value is "baz", but should be "foo".'
+        );
+    }
+
+    /**
+     * @covers Behat\Mink\WebAssert::cookieExists
+     */
+    public function testCookieExists()
+    {
+        $this->session->
+            expects($this->any())->
+            method('getCookie')->
+            will($this->returnValueMap(
+                array(
+                    array('foo', '1'),
+                    array('bar', null),
+                )
+            ));
+
+        $this->assertCorrectAssertion('cookieExists', array('foo'));
+        $this->assertWrongAssertion(
+            'cookieExists', array('bar'),
+            'Behat\Mink\Exception\ExpectationException',
+            'Cookie "bar" is not set, but should be.'
+        );
+    }
+
+    public function testStatusCodeEquals()
+    {
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getStatusCode')
+            ->will($this->returnValue(200))
+        ;
+
+        $this->assertCorrectAssertion('statusCodeEquals', array(200));
+        $this->assertWrongAssertion(
+            'statusCodeEquals', array(404),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'Current response status code is 200, but 404 expected.'
+        );
+    }
+
+    public function testPageTextContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getText')
+            ->will($this->returnValue("Some  page\n\ttext"))
+        ;
+
+        $this->assertCorrectAssertion('pageTextContains', array('PAGE text'));
+        $this->assertWrongAssertion(
+            'pageTextContains', array('html text'),
+            'Behat\\Mink\\Exception\\ResponseTextException',
+            'The text "html text" was not found anywhere in the text of the current page.'
+        );
+    }
+
+    public function testPageTextNotContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getText')
+            ->will($this->returnValue("Some  html\n\ttext"))
+        ;
+
+        $this->assertCorrectAssertion('pageTextNotContains', array('PAGE text'));
+        $this->assertWrongAssertion(
+            'pageTextNotContains', array('HTML text'),
+            'Behat\\Mink\\Exception\\ResponseTextException',
+            'The text "HTML text" appears in the text of this page, but it should not.'
+        );
+    }
+
+    public function testPageTextMatches()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getText')
+            ->will($this->returnValue('Some page text'))
+        ;
+
+        $this->assertCorrectAssertion('pageTextMatches', array('/PA.E/i'));
+        $this->assertWrongAssertion(
+            'pageTextMatches', array('/html/'),
+            'Behat\\Mink\\Exception\\ResponseTextException',
+            'The pattern /html/ was not found anywhere in the text of the current page.'
+        );
+    }
+
+    public function testPageTextNotMatches()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getText')
+            ->will($this->returnValue('Some html text'))
+        ;
+
+        $this->assertCorrectAssertion('pageTextNotMatches', array('/PA.E/i'));
+        $this->assertWrongAssertion(
+            'pageTextNotMatches', array('/HTML/i'),
+            'Behat\\Mink\\Exception\\ResponseTextException',
+            'The pattern /HTML/i was found in the text of the current page, but it should not.'
+        );
+    }
+
+
+    public function testResponseContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getContent')
+            ->will($this->returnValue('Some page text'))
+        ;
+
+        $this->assertCorrectAssertion('responseContains', array('PAGE text'));
+        $this->assertWrongAssertion(
+            'responseContains', array('html text'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The string "html text" was not found anywhere in the HTML response of the current page.'
+        );
+    }
+
+    public function testResponseNotContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getContent')
+            ->will($this->returnValue('Some html text'))
+        ;
+
+        $this->assertCorrectAssertion('responseNotContains', array('PAGE text'));
+        $this->assertWrongAssertion(
+            'responseNotContains', array('HTML text'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The string "HTML text" appears in the HTML response of this page, but it should not.'
+        );
+    }
+
+    public function testResponseMatches()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getContent')
+            ->will($this->returnValue('Some page text'))
+        ;
+
+        $this->assertCorrectAssertion('responseMatches', array('/PA.E/i'));
+        $this->assertWrongAssertion(
+            'responseMatches', array('/html/'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The pattern /html/ was not found anywhere in the HTML response of the page.'
+        );
+    }
+
+    public function testResponseNotMatches()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('getContent')
+            ->will($this->returnValue('Some html text'))
+        ;
+
+        $this->assertCorrectAssertion('responseNotMatches', array('/PA.E/i'));
+        $this->assertWrongAssertion(
+            'responseNotMatches', array('/HTML/i'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The pattern /HTML/i was found in the HTML response of the page, but it should not.'
+        );
+    }
+
+    public function testElementsCount()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('findAll')
+            ->with('css', 'h2 > span')
+            ->will($this->returnValue(array(1, 2)))
+        ;
+
+        $this->assertCorrectAssertion('elementsCount', array('css', 'h2 > span', 2));
+        $this->assertWrongAssertion(
+            'elementsCount', array('css', 'h2 > span', 3),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            '2 elements matching css "h2 > span" found on the page, but should be 3.'
+        );
+    }
+
+    public function testElementExists()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(4))
+            ->method('find')
+            ->with('css', 'h2 > span')
+            ->will($this->onConsecutiveCalls(1, null, 1, null))
+        ;
+
+        $this->assertCorrectAssertion('elementExists', array('css', 'h2 > span'));
+        $this->assertWrongAssertion(
+            'elementExists', array('css', 'h2 > span'),
+            'Behat\\Mink\\Exception\\ElementNotFoundException',
+            'Element matching css "h2 > span" not found.'
+        );
+
+        $this->assertCorrectAssertion('elementExists', array('css', 'h2 > span', $page));
+        $this->assertWrongAssertion(
+            'elementExists', array('css', 'h2 > span', $page),
+            'Behat\\Mink\\Exception\\ElementNotFoundException',
+            'Element matching css "h2 > span" not found.'
+        );
+    }
+
+    public function testElementNotExists()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(4))
+            ->method('find')
+            ->with('css', 'h2 > span')
+            ->will($this->onConsecutiveCalls(null, 1, null, 1))
+        ;
+
+        $this->assertCorrectAssertion('elementNotExists', array('css', 'h2 > span'));
+        $this->assertWrongAssertion(
+            'elementNotExists', array('css', 'h2 > span'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'An element matching css "h2 > span" appears on this page, but it should not.'
+        );
+
+        $this->assertCorrectAssertion('elementNotExists', array('css', 'h2 > span', $page));
+        $this->assertWrongAssertion(
+            'elementNotExists', array('css', 'h2 > span', $page),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'An element matching css "h2 > span" appears on this page, but it should not.'
+        );
+    }
+
+    public function testElementTextContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('find')
+            ->with('css', 'h2 > span')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('getText')
+            ->will($this->returnValue('element text'))
+        ;
+
+        $this->assertCorrectAssertion('elementTextContains', array('css', 'h2 > span', 'text'));
+        $this->assertWrongAssertion(
+            'elementTextContains', array('css', 'h2 > span', 'html'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The text "html" was not found in the text of the element matching css "h2 > span".'
+        );
+    }
+
+    public function testElementTextNotContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('find')
+            ->with('css', 'h2 > span')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('getText')
+            ->will($this->returnValue('element text'))
+        ;
+
+        $this->assertCorrectAssertion('elementTextNotContains', array('css', 'h2 > span', 'html'));
+        $this->assertWrongAssertion(
+            'elementTextNotContains', array('css', 'h2 > span', 'text'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The text "text" appears in the text of the element matching css "h2 > span", but it should not.'
+        );
+    }
+
+    public function testElementContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('find')
+            ->with('css', 'h2 > span')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('getHtml')
+            ->will($this->returnValue('element html'))
+        ;
+
+        $this->assertCorrectAssertion('elementContains', array('css', 'h2 > span', 'html'));
+        $this->assertWrongAssertion(
+            'elementContains', array('css', 'h2 > span', 'text'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The string "text" was not found in the HTML of the element matching css "h2 > span".'
+        );
+    }
+
+    public function testElementNotContains()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('find')
+            ->with('css', 'h2 > span')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('getHtml')
+            ->will($this->returnValue('element html'))
+        ;
+
+        $this->assertCorrectAssertion('elementNotContains', array('css', 'h2 > span', 'text'));
+        $this->assertWrongAssertion(
+            'elementNotContains', array('css', 'h2 > span', 'html'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The string "html" appears in the HTML of the element matching css "h2 > span", but it should not.'
+        );
+    }
+
+    public function testFieldExists()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('findField')
+            ->with('username')
+            ->will($this->onConsecutiveCalls($element, null))
+        ;
+
+        $this->assertCorrectAssertion('fieldExists', array('username'));
+        $this->assertWrongAssertion(
+            'fieldExists', array('username'),
+            'Behat\\Mink\\Exception\\ElementNotFoundException',
+            'Form field with id|name|label|value "username" not found.'
+        );
+    }
+
+    public function testFieldNotExists()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('findField')
+            ->with('username')
+            ->will($this->onConsecutiveCalls(null, $element))
+        ;
+
+        $this->assertCorrectAssertion('fieldNotExists', array('username'));
+        $this->assertWrongAssertion(
+            'fieldNotExists', array('username'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'A field "username" appears on this page, but it should not.'
+        );
+    }
+
+    public function testFieldValueEquals()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('findField')
+            ->with('username')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('getValue')
+            ->will($this->returnValue(234))
+        ;
+
+        $this->assertCorrectAssertion('fieldValueEquals', array('username', 234));
+        $this->assertWrongAssertion(
+            'fieldValueEquals', array('username', 235),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The field "username" value is "234", but "235" expected.'
+        );
+    }
+
+    public function testFieldValueNotEquals()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('findField')
+            ->with('username')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('getValue')
+            ->will($this->returnValue(235))
+        ;
+
+        $this->assertCorrectAssertion('fieldValueNotEquals', array('username', 234));
+        $this->assertWrongAssertion(
+            'fieldValueNotEquals', array('username', 235),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'The field "username" value is "235", but it should not be.'
+        );
+    }
+
+    public function testCheckboxChecked()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('findField')
+            ->with('remember_me')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('isChecked')
+            ->will($this->onConsecutiveCalls(true, false))
+        ;
+
+        $this->assertCorrectAssertion('checkboxChecked', array('remember_me'));
+        $this->assertWrongAssertion(
+            'checkboxChecked', array('remember_me'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'Checkbox "remember_me" is not checked, but it should be.'
+        );
+    }
+
+    public function testCheckboxNotChecked()
+    {
+        $page = $this->getMockBuilder('Behat\\Mink\\Element\\DocumentElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $element = $this->getMockBuilder('Behat\\Mink\\Element\\NodeElement')
+            ->disableOriginalConstructor()
+            ->getMock()
+        ;
+
+        $this->session
+            ->expects($this->exactly(2))
+            ->method('getPage')
+            ->will($this->returnValue($page))
+        ;
+
+        $page
+            ->expects($this->exactly(2))
+            ->method('findField')
+            ->with('remember_me')
+            ->will($this->returnValue($element))
+        ;
+
+        $element
+            ->expects($this->exactly(2))
+            ->method('isChecked')
+            ->will($this->onConsecutiveCalls(false, true))
+        ;
+
+        $this->assertCorrectAssertion('checkboxNotChecked', array('remember_me'));
+        $this->assertWrongAssertion(
+            'checkboxNotChecked', array('remember_me'),
+            'Behat\\Mink\\Exception\\ExpectationException',
+            'Checkbox "remember_me" is checked, but it should not be.'
+        );
+    }
+
+    protected function assertCorrectAssertion($assertion, $arguments)
+    {
+        try {
+            call_user_func_array(array($this->assert, $assertion), $arguments);
+        } catch (\Exception $e) {
+            $this->fail('Correct assertion should not throw an exception: '.$e->getMessage());
+        }
+    }
+
+    protected function assertWrongAssertion($assertion, $arguments, $exceptionClass, $exceptionMessage)
+    {
+        try {
+            call_user_func_array(array($this->assert, $assertion), $arguments);
+            $this->fail('Wrong assertion should throw an exception');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf($exceptionClass, $e);
+            $this->assertSame($exceptionMessage, $e->getMessage());
+        }
+    }
+}

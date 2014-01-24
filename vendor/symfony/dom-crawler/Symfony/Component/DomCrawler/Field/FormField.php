@@ -1,45 +1,122 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\DomCrawler\Field;
+
+/**
+ * FormField is the abstract class for all form fields.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+abstract class FormField
+{
+    /**
+     * @var \DOMNode
+     */
+    protected $node;
+    /**
+     * @var string
+     */
+    protected $name;
+    /**
+     * @var string
+     */
+    protected $value;
+    /**
+     * @var \DOMDocument
+     */
+    protected $document;
+    /**
+     * @var \DOMXPath
+     */
+    protected $xpath;
+    /**
+     * @var Boolean
+     */
+    protected $disabled;
+
+    /**
+     * Constructor.
+     *
+     * @param \DOMNode $node The node associated with this field
+     */
+    public function __construct(\DOMNode $node)
+    {
+        $this->node = $node;
+        $this->name = $node->getAttribute('name');
+
+        $this->document = new \DOMDocument('1.0', 'UTF-8');
+        $this->node = $this->document->importNode($this->node, true);
+
+        $root = $this->document->appendChild($this->document->createElement('_root'));
+        $root->appendChild($this->node);
+        $this->xpath = new \DOMXPath($this->document);
+
+        $this->initialize();
+    }
+
+    /**
+     * Returns the name of the field.
+     *
+     * @return string The name of the field
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Gets the value of the field.
+     *
+     * @return string|array The value of the field
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * Sets the value of the field.
+     *
+     * @param string $value The value of the field
+     *
+     * @api
+     */
+    public function setValue($value)
+    {
+        $this->value = (string) $value;
+    }
+
+    /**
+     * Returns true if the field should be included in the submitted values.
+     *
+     * @return Boolean true if the field should be included in the submitted values, false otherwise
+     */
+    public function hasValue()
+    {
+        return true;
+    }
+
+    /**
+     * Check if the current field is disabled
+     *
+     * @return Boolean
+     */
+    public function isDisabled()
+    {
+        return $this->node->hasAttribute('disabled');
+    }
+
+    /**
+     * Initializes the form field.
+     */
+    abstract protected function initialize();
+}

@@ -1,52 +1,117 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CCacheDependency class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CCacheDependency is the base class for cache dependency classes.
+ *
+ * CCacheDependency implements the {@link ICacheDependency} interface.
+ * Child classes should override its {@link generateDependentData} for
+ * actual dependency checking.
+ *
+ * @property boolean $hasChanged Whether the dependency has changed.
+ * @property mixed $dependentData The data used to determine if dependency has been changed.
+ * This data is available after {@link evaluateDependency} is called.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching.dependencies
+ * @since 1.0
+ */
+class CCacheDependency extends CComponent implements ICacheDependency
+{
+	/**
+	 * @var boolean Whether this dependency is reusable or not.
+	 * If set to true, dependent data for this cache dependency will only be generated once per request.
+	 * You can then use the same cache dependency for multiple separate cache calls on the same page
+	 * without the overhead of re-evaluating the dependency each time.
+	 * Defaults to false;
+	 * @since 1.1.11
+	 */
+	public $reuseDependentData=false;
+
+	/**
+	 * @var array cached data for reusable dependencies.
+	 * @since 1.1.11
+	 */
+	private static $_reusableData=array();
+
+	private $_hash;
+	private $_data;
+
+	/**
+	 * Evaluates the dependency by generating and saving the data related with dependency.
+	 * This method is invoked by cache before writing data into it.
+	 */
+	public function evaluateDependency()
+	{
+		if ($this->reuseDependentData)
+		{
+			$hash=$this->getHash();
+			if(!isset(self::$_reusableData[$hash]['dependentData']))
+				self::$_reusableData[$hash]['dependentData']=$this->generateDependentData();
+			$this->_data=self::$_reusableData[$hash]['dependentData'];
+		}
+		else
+			$this->_data=$this->generateDependentData();
+	}
+
+	/**
+	 * @return boolean whether the dependency has changed.
+	 */
+	public function getHasChanged()
+	{
+		if ($this->reuseDependentData)
+		{
+			$hash=$this->getHash();
+			if(!isset(self::$_reusableData[$hash]['dependentData']))
+				self::$_reusableData[$hash]['dependentData']=$this->generateDependentData();
+			return self::$_reusableData[$hash]['dependentData']!=$this->_data;
+		}
+		else
+			return $this->generateDependentData()!=$this->_data;
+	}
+
+	/**
+	 * @return mixed the data used to determine if dependency has been changed.
+	 * This data is available after {@link evaluateDependency} is called.
+	 */
+	public function getDependentData()
+	{
+		return $this->_data;
+	}
+
+	/**
+	 * Resets cached data for reusable dependencies.
+	 * @since 1.1.14
+	 */
+	public static function resetReusableData()
+	{
+		self::$_reusableData=array();
+	}
+
+	/**
+	 * Generates the data needed to determine if dependency has been changed.
+	 * Derived classes should override this method to generate actual dependent data.
+	 * @return mixed the data needed to determine if dependency has been changed.
+	 */
+	protected function generateDependentData()
+	{
+		return null;
+	}
+	/**
+	 * Generates a unique hash that identifies this cache dependency.
+	 * @return string the hash for this cache dependency
+	 */
+	private function getHash()
+	{
+		if($this->_hash===null)
+			$this->_hash=sha1(serialize($this));
+		return $this->_hash;
+	}
+}

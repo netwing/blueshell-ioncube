@@ -1,54 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+YpxpffMU2teewn0SC1H3PjhHsHgvgh95zlc
+<?php
+
+namespace Guzzle\Service\Description;
+
+use Guzzle\Service\AbstractConfigLoader;
+use Guzzle\Service\Exception\DescriptionBuilderException;
+
+/**
+ * Loader for service descriptions
+ */
+class ServiceDescriptionLoader extends AbstractConfigLoader
+{
+    protected function build($config, array $options)
+    {
+        $operations = array();
+        if (!empty($config['operations'])) {
+            foreach ($config['operations'] as $name => $op) {
+                $name = $op['name'] = isset($op['name']) ? $op['name'] : $name;
+                // Extend other operations
+                if (!empty($op['extends'])) {
+                    $this->resolveExtension($name, $op, $operations);
+                }
+                $op['parameters'] = isset($op['parameters']) ? $op['parameters'] : array();
+                $operations[$name] = $op;
+            }
+        }
+
+        return new ServiceDescription(array(
+            'apiVersion'  => isset($config['apiVersion']) ? $config['apiVersion'] : null,
+            'baseUrl'     => isset($config['baseUrl']) ? $config['baseUrl'] : null,
+            'description' => isset($config['description']) ? $config['description'] : null,
+            'operations'  => $operations,
+            'models'      => isset($config['models']) ? $config['models'] : null
+        ) + $config);
+    }
+
+    /**
+     * @param string $name       Name of the operation
+     * @param array  $op         Operation value array
+     * @param array  $operations Currently loaded operations
+     * @throws DescriptionBuilderException when extending a non-existent operation
+     */
+    protected function resolveExtension($name, array &$op, array &$operations)
+    {
+        $resolved = array();
+        $original = empty($op['parameters']) ? false: $op['parameters'];
+        $hasClass = !empty($op['class']);
+        foreach ((array) $op['extends'] as $extendedCommand) {
+            if (empty($operations[$extendedCommand])) {
+                throw new DescriptionBuilderException("{$name} extends missing operation {$extendedCommand}");
+            }
+            $toArray = $operations[$extendedCommand];
+            $resolved = empty($resolved)
+                ? $toArray['parameters']
+                : array_merge($resolved, $toArray['parameters']);
+
+            $op = $op + $toArray;
+            if (!$hasClass && isset($toArray['class'])) {
+                $op['class'] = $toArray['class'];
+            }
+        }
+        $op['parameters'] = $original ? array_merge($resolved, $original) : $resolved;
+    }
+}

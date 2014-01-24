@@ -1,37 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-IE+zmktxECBWgeIsi4QLzm==
+<?php if(!$class->nativeMethodCount) return; ?>
+<h2>Method Details</h2>
+
+<?php foreach($class->methods as $method): ?>
+<?php if($method->isInherited) continue; ?>
+<div class="detailHeader" id="<?php echo $this->fixMethodAnchor($method->definedBy,$method->name).'-detail'; ?>">
+<?php echo $method->name; ?>()
+<span class="detailHeaderTag">
+method
+<?php if(!empty($method->since)): ?>
+(available since v<?php echo $method->since; ?>)
+<?php endif; ?>
+</span>
+</div>
+
+<table class="summaryTable">
+<tr><td colspan="3">
+<div class="signature2">
+<?php echo preg_replace('/\{\{([^\{\}]*?)\|([^\{\}]*?)\}\}\(/','$2(',$method->signature); ?>
+</div>
+</td></tr>
+<?php if(!empty($method->input) || !empty($method->output)): ?>
+<?php foreach($method->input as $param): ?>
+<tr>
+  <td class="paramNameCol">$<?php echo $param->name; ?></td>
+  <td class="paramTypeCol"><?php echo $this->renderTypeUrl($param->type); ?></td>
+  <td class="paramDescCol"><?php echo $param->description; ?></td>
+</tr>
+<?php endforeach; ?>
+<?php if(!empty($method->output)): ?>
+<tr>
+  <td class="paramNameCol"><?php echo '{return}'; ?></td>
+  <td class="paramTypeCol"><?php echo $this->renderTypeUrl($method->output->type); ?></td>
+  <td class="paramDescCol"><?php echo $method->output->description; ?></td>
+</tr>
+<?php endif; ?>
+<?php endif; ?>
+</table>
+
+<?php $this->renderPartial('sourceCode',array('object'=>$method)); ?>
+
+<p><?php echo $method->description; ?></p>
+
+<?php $this->renderPartial('seeAlso',array('object'=>$method)); ?>
+
+<?php endforeach; ?>

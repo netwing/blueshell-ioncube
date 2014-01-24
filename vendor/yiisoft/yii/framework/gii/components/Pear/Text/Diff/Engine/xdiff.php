@@ -1,38 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-fdZavwApwB/vSIDIBqBG80Pzg+tB8sQc6t46qW==
+<?php
+/**
+ * Class used internally by Diff to actually compute the diffs.
+ *
+ * This class uses the xdiff PECL package (http://pecl.php.net/package/xdiff)
+ * to compute the differences between the two input arrays.
+ *
+ * $Horde: framework/Text_Diff/Diff/Engine/xdiff.php,v 1.4.2.3 2008/01/04 10:37:27 jan Exp $
+ *
+ * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
+ *
+ * See the enclosed file COPYING for license information (LGPL). If you did
+ * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
+ *
+ * @author  Jon Parise <jon@horde.org>
+ * @package Text_Diff
+ */
+class Text_Diff_Engine_xdiff {
+
+    /**
+     */
+    function diff($from_lines, $to_lines)
+    {
+        array_walk($from_lines, array('Text_Diff', 'trimNewlines'));
+        array_walk($to_lines, array('Text_Diff', 'trimNewlines'));
+
+        /* Convert the two input arrays into strings for xdiff processing. */
+        $from_string = implode("\n", $from_lines);
+        $to_string = implode("\n", $to_lines);
+
+        /* Diff the two strings and convert the result to an array. */
+        $diff = xdiff_string_diff($from_string, $to_string, count($to_lines));
+        $diff = explode("\n", $diff);
+
+        /* Walk through the diff one line at a time.  We build the $edits
+         * array of diff operations by reading the first character of the
+         * xdiff output (which is in the "unified diff" format).
+         *
+         * Note that we don't have enough information to detect "changed"
+         * lines using this approach, so we can't add Text_Diff_Op_changed
+         * instances to the $edits array.  The result is still perfectly
+         * valid, albeit a little less descriptive and efficient. */
+        $edits = array();
+        foreach ($diff as $line) {
+            switch ($line[0]) {
+            case ' ':
+                $edits[] = new Text_Diff_Op_copy(array(substr($line, 1)));
+                break;
+
+            case '+':
+                $edits[] = new Text_Diff_Op_add(array(substr($line, 1)));
+                break;
+
+            case '-':
+                $edits[] = new Text_Diff_Op_delete(array(substr($line, 1)));
+                break;
+            }
+        }
+
+        return $edits;
+    }
+
+}

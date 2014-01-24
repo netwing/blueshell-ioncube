@@ -1,40 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+class PHPUnit_Util_Filter {
+
+    public static function getFilteredStacktrace(Exception $e, $asString = TRUE)
+    {
+        $stacktrace = $asString ? '' : array();
+
+        $trace = $e->getPrevious() ?  $e->getPrevious()->getTrace() : $e->getTrace();
+
+        foreach ($trace as $step) {
+            if (!isset($step['file'])) continue;
+            if (self::classIsFiltered($step)) continue;
+            if (self::fileIsFiltered($step)) continue;
+
+            if (!$asString) {
+                $stacktrace[] = $step;
+                continue;
+            }
+            $stacktrace .= $step['file'] . ':' . $step['line']."\n";
+        }
+
+        return $stacktrace;
+    }
+
+    protected static function classIsFiltered($step)
+    {
+        if (!isset($step['class'])) return false;
+        $className = $step['class'];
+        if (strpos($className, 'Symfony\Component\Console') === 0) return true;
+        if (strpos($className, 'Codeception\Command\\') === 0) return true;
+        return false;
+    }
+
+    protected static function fileIsFiltered($step)
+    {
+        if (!isset($step['file'])) return false;
+        if (strpos($step['file'], 'codecept.phar/') !== false) return true;
+        if (strpos($step['file'], 'vendor'.DIRECTORY_SEPARATOR.'phpunit') !== false) return true;
+        if (strpos($step['file'], 'vendor'.DIRECTORY_SEPARATOR.'codeception') !== false) return true;
+        if (strpos($step['file'], 'src'.DIRECTORY_SEPARATOR.'Codeception'.DIRECTORY_SEPARATOR) !== false) return true;
+        return false;
+    }
+}

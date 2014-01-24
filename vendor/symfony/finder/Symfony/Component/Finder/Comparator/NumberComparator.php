@@ -1,44 +1,82 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-K4nsGLW570a4XV+5Iw2v2I1+
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Comparator;
+
+/**
+ * NumberComparator compiles a simple comparison to an anonymous
+ * subroutine, which you can call with a value to be tested again.
+ *
+ * Now this would be very pointless, if NumberCompare didn't understand
+ * magnitudes.
+ *
+ * The target value may use magnitudes of kilobytes (k, ki),
+ * megabytes (m, mi), or gigabytes (g, gi).  Those suffixed
+ * with an i use the appropriate 2**n version in accordance with the
+ * IEC standard: http://physics.nist.gov/cuu/Units/binary.html
+ *
+ * Based on the Perl Number::Compare module.
+ *
+ * @author    Fabien Potencier <fabien@symfony.com> PHP port
+ * @author    Richard Clamp <richardc@unixbeard.net> Perl version
+ *
+ * @copyright 2004-2005 Fabien Potencier <fabien@symfony.com>
+ * @copyright 2002 Richard Clamp <richardc@unixbeard.net>
+ *
+ * @see       http://physics.nist.gov/cuu/Units/binary.html
+ */
+class NumberComparator extends Comparator
+{
+    /**
+     * Constructor.
+     *
+     * @param string $test A comparison string
+     *
+     * @throws \InvalidArgumentException If the test is not understood
+     */
+    public function __construct($test)
+    {
+        if (!preg_match('#^\s*(==|!=|[<>]=?)?\s*([0-9\.]+)\s*([kmg]i?)?\s*$#i', $test, $matches)) {
+            throw new \InvalidArgumentException(sprintf('Don\'t understand "%s" as a number test.', $test));
+        }
+
+        $target = $matches[2];
+        if (!is_numeric($target)) {
+            throw new \InvalidArgumentException(sprintf('Invalid number "%s".', $target));
+        }
+        if (isset($matches[3])) {
+            // magnitude
+            switch (strtolower($matches[3])) {
+                case 'k':
+                    $target *= 1000;
+                    break;
+                case 'ki':
+                    $target *= 1024;
+                    break;
+                case 'm':
+                    $target *= 1000000;
+                    break;
+                case 'mi':
+                    $target *= 1024*1024;
+                    break;
+                case 'g':
+                    $target *= 1000000000;
+                    break;
+                case 'gi':
+                    $target *= 1024*1024*1024;
+                    break;
+            }
+        }
+
+        $this->setTarget($target);
+        $this->setOperator(isset($matches[1]) ? $matches[1] : '==');
+    }
+}

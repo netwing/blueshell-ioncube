@@ -1,115 +1,270 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-P6rcjp/1xRO=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\XPath\Extension;
+
+use Symfony\Component\CssSelector\Node;
+use Symfony\Component\CssSelector\XPath\Translator;
+use Symfony\Component\CssSelector\XPath\XPathExpr;
+
+/**
+ * XPath expression translator node extension.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class NodeExtension extends AbstractExtension
+{
+    const ELEMENT_NAME_IN_LOWER_CASE    = 1;
+    const ATTRIBUTE_NAME_IN_LOWER_CASE  = 2;
+    const ATTRIBUTE_VALUE_IN_LOWER_CASE = 4;
+
+    /**
+     * @var Translator
+     */
+    private $translator;
+
+    /**
+     * @var int
+     */
+    private $flags;
+
+    /**
+     * Constructor.
+     *
+     * @param Translator $translator
+     * @param int        $flags
+     */
+    public function __construct(Translator $translator, $flags = 0)
+    {
+        $this->translator = $translator;
+        $this->flags = $flags;
+    }
+
+    /**
+     * @param int     $flag
+     * @param boolean $on
+     *
+     * @return NodeExtension
+     */
+    public function setFlag($flag, $on)
+    {
+        if ($on && !$this->hasFlag($flag)) {
+            $this->flags += $flag;
+        }
+
+        if (!$on && $this->hasFlag($flag)) {
+            $this->flags -= $flag;
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param int $flag
+     *
+     * @return boolean
+     */
+    public function hasFlag($flag)
+    {
+        return $this->flags & $flag;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getNodeTranslators()
+    {
+        return array(
+            'Selector'         => array($this, 'translateSelector'),
+            'CombinedSelector' => array($this, 'translateCombinedSelector'),
+            'Negation'         => array($this, 'translateNegation'),
+            'Function'         => array($this, 'translateFunction'),
+            'Pseudo'           => array($this, 'translatePseudo'),
+            'Attribute'        => array($this, 'translateAttribute'),
+            'Class'            => array($this, 'translateClass'),
+            'Hash'             => array($this, 'translateHash'),
+            'Element'          => array($this, 'translateElement'),
+        );
+    }
+
+    /**
+     * @param Node\SelectorNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateSelector(Node\SelectorNode $node)
+    {
+        return $this->translator->nodeToXPath($node->getTree());
+    }
+
+    /**
+     * @param Node\CombinedSelectorNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateCombinedSelector(Node\CombinedSelectorNode $node)
+    {
+        return $this->translator->addCombination($node->getCombinator(), $node->getSelector(), $node->getSubSelector());
+    }
+
+    /**
+     * @param Node\NegationNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateNegation(Node\NegationNode $node)
+    {
+        $xpath = $this->translator->nodeToXPath($node->getSelector());
+        $subXpath = $this->translator->nodeToXPath($node->getSubSelector());
+        $subXpath->addNameTest();
+
+        if ($subXpath->getCondition()) {
+            return $xpath->addCondition(sprintf('not(%s)', $subXpath->getCondition()));
+        }
+
+        return $xpath->addCondition('0');
+    }
+
+    /**
+     * @param Node\FunctionNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateFunction(Node\FunctionNode $node)
+    {
+        $xpath = $this->translator->nodeToXPath($node->getSelector());
+
+        return $this->translator->addFunction($xpath, $node);
+    }
+
+    /**
+     * @param Node\PseudoNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translatePseudo(Node\PseudoNode $node)
+    {
+        $xpath = $this->translator->nodeToXPath($node->getSelector());
+
+        return $this->translator->addPseudoClass($xpath, $node->getIdentifier());
+    }
+
+    /**
+     * @param Node\AttributeNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateAttribute(Node\AttributeNode $node)
+    {
+        $name = $node->getAttribute();
+        $safe = $this->isSafeName($name);
+
+        if ($this->hasFlag(self::ATTRIBUTE_NAME_IN_LOWER_CASE)) {
+            $name = strtolower($name);
+        }
+
+        if ($node->getNamespace()) {
+            $name = sprintf('%s:%s', $node->getNamespace(), $name);
+            $safe = $safe && $this->isSafeName($node->getNamespace());
+        }
+
+        $attribute = $safe ? '@'.$name : sprintf('attribute::*[name() = %s]', Translator::getXpathLiteral($name));
+        $value = $node->getValue();
+        $xpath = $this->translator->nodeToXPath($node->getSelector());
+
+        if ($this->hasFlag(self::ATTRIBUTE_VALUE_IN_LOWER_CASE)) {
+            $value = strtolower($value);
+        }
+
+        return $this->translator->addAttributeMatching($xpath, $node->getOperator(), $attribute, $value);
+    }
+
+    /**
+     * @param Node\ClassNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateClass(Node\ClassNode $node)
+    {
+        $xpath = $this->translator->nodeToXPath($node->getSelector());
+
+        return $this->translator->addAttributeMatching($xpath, '~=', '@class', $node->getName());
+    }
+
+    /**
+     * @param Node\HashNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateHash(Node\HashNode $node)
+    {
+        $xpath = $this->translator->nodeToXPath($node->getSelector());
+
+        return $this->translator->addAttributeMatching($xpath, '=', '@id', $node->getId());
+    }
+
+    /**
+     * @param Node\ElementNode $node
+     *
+     * @return XPathExpr
+     */
+    public function translateElement(Node\ElementNode $node)
+    {
+        $element = $node->getElement();
+
+        if ($this->hasFlag(self::ELEMENT_NAME_IN_LOWER_CASE)) {
+            $element = strtolower($element);
+        }
+
+        if ($element) {
+            $safe = $this->isSafeName($element);
+        } else {
+            $element = '*';
+            $safe = true;
+        }
+
+        if ($node->getNamespace()) {
+            $element = sprintf('%s:%s', $node->getNamespace(), $element);
+            $safe = $safe && $this->isSafeName($node->getNamespace());
+        }
+
+        $xpath = new XPathExpr('', $element);
+
+        if (!$safe) {
+            $xpath->addNameTest();
+        }
+
+        return $xpath;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'node';
+    }
+
+    /**
+     * Tests if given name is safe.
+     *
+     * @param string $name
+     *
+     * @return boolean
+     */
+    private function isSafeName($name)
+    {
+        return 0 < preg_match('~^[a-zA-Z_][a-zA-Z0-9_.-]*$~', $name);
+    }
+}

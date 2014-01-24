@@ -1,181 +1,264 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPzXFzcyN2ij0+fXZJEwJOA3zqfTveduOAwUix2D/4l8TKBZNRRH/lsCbbUYfGahYeFSss6Qg
-QQeQnCAxj/Nwin+BmOIMDBmpDR9+vr4twiGNtzp0y3SRJsyj0XJ42vhleaYBV3H2xBlrlCuHlNdp
-LBdPq2nmU5Zzz03+4+V2wrqH0cHcCp1XenohBSg+Z9W+ub7Hey1h2FqvMu+BMCqcSjSg+6V/PEyi
-YlSCOLsT81UJ5NZONeyshr4euJltSAgiccy4GDnfT5jdN40O+qGVUNyADCXOsLm9/yzIhV4bNzIo
-f72Tiy+TnZRmbBKzzBADomF8MkZQvu7GZpWfKnPLBtexzGvtqD/FUm2r94R4GM4De4gRXUZ0yDwK
-z3qC9skuXvidMV+vYfWe2wo5E8HxYi9kDbY8YZ31lPlZIUx27PEzsGUXne+xktSreArCPWs8AGK1
-g5dMHup2wtotyy5sORRu4y7yTLxXjwplf/PUUtwYTuL5WQlrV8dA5KpNg7a+3sqJ7qg69EXgmNWk
-1C80/fH7BB3NSSuNjk8XyBvQq27hnWfDbI0UBhhPTapQMgXsYudnfoAZW5oX126qo3a9hdgcuePX
-qTIvTyMUfuNAtcilbOFry+5bQJWBb9DrhR5VORD8xXwOkI2qz9/1HezkRv/sGBu4+GtK2RAt4uT1
-731YVJvzRJfLFs04C6XGCEjm1fLVDzlGBG1EC/UVzJgAnneL081aLrKwWiatjoU8fObha5CUjbir
-OHpWzEOQR6GDDrxCKKEYzYq9E8ZuoADpyfZR+JyUPeg7Cb8Hz9N4BVn5G65NhvnvMI6yUADiD5Eo
-nrETyuLk1k2bDkz3Wgxe+KxKD+oVNiHLAh7mI18edj7F76TMmbATzc0mUym0WB5LFfCD26PgQ+Jj
-fDsXa6XNcs/YRr8ciD1y+WAj4mdfuDAymfXR3vSonSG0zJEeUdtK6yjVAQavX+dx2zGPFbXe44eD
-8atmr3CIjTvjkw4YWuMQ3mJtNb0Y+abEOA8Lo5S+dV1w0bvy4laocQzVJljaSXKtVBZCawGbnzal
-I3lCwh9TZH+TflwyBQqAYf3z1hINdQm1088fBn9pzLObRSFedFXlpsU6uv9KyjmhjgmlrbQP6gNb
-7Vm3NC3Q9krpWtDjJNcTUVpgl40jdZV90Qu5X1/L3r7UMOXblkp3WTn0PUCBL+KafUUc+LDwYpUU
-27Ymx5/U8Zl5mUYYHTludbufyoR1RfdpeccLJx6jOeJqzHGNf7lRBaopChjzMpg7tlt/0xdbrIS4
-bVB/3rbaEqXrAEN0H4tMgiXWQ3lCqHMF7cvyje8rXu9p5g4AXymi0ARdennrUoE1+OCEJGsHPtn/
-MvpNDMtWT1b7S3NPoYG4WZxbxUNI4k+ph39Hr0BP/pvSGSm6JnDR+08KUL5HMiaM0IUSajQpEudZ
-DMWjy3RtHly+iMTQJ18JdCO/qQqIyCVUwf4fFUijJb7sQFAxocX3j2fEcQflL9TevoIzWPNL97Ul
-QDg/Jr7QOOzAWtYCZ6xjDSJfmmbib3dd++1AjvWmOCdr9UvrNgFmlp03ivOuG7zZv/eb+wg/jdtp
-7LPD9tpw12W6M3QHzRktT1RyVn34b+BkoZk6XD1uGe+UAh9qUlvdpvh2iNQU9sy3FOq48rnYkfHP
-B1sKmIXHSKa4T0uChYr4G0fvQ3rMccKWld5rIaLSagwWDxiIiZSLcNO7uiNFOofALexcXSpOURfa
-O1XRCJMa2lM3oPgcKU2f3cUIw0WpP6II7HtSavi7Y7WSRidNrXeGtCYDvHo2qEqtPStQkxmrFqYC
-mMAU9g9GaCe8WHQbnx4XZZO0YD/fBq82eF8DpaANPi3YhXX5vDVJiXIl3BEvEKIbyY/NiLsLp8xM
-aSTcCjWGQRhhu3Je72QHYtUNOM3wUdyBhSbdB1AndDez2OOb/sjfGjzYt9q/U3IQ8Gr6mhkWpSL8
-LnR7n085khwj8gRfU/0Six/C0o4nD8oPxjHOAdChfhQ5b62TavXOtS3UVFzKv+V9jQzua8Y9LKR0
-AN/NJt3lmTUu0QmCnlUvCTPyY6t7oh6N6N0eWSjDGQSGlRyzZAR42NLUhu9g6AXST0gNWh1TSeIO
-LeLE+4jie3Si8uhKeOaZBqpRMPAl1Cdkq9L52n1lWBYxIsKkEDzX5EeJnZbScJKcXoOb3WsplvFZ
-Qz3wbgVsgt6LCQ1nrGhThkp+SLfh/wjU1HdtQ3gtIRQgRrYiZnLJ9Ul8Jn77zmvyv/nS5ghxOfB7
-/DxTofTDdsh6wTUoG0mk/3NSta9EdgKseQadACbxa4JVrrwir7h9QUjd7q3oe7ZNSsjhQaTEOvYo
-Oq6gL4ZUgDMvZg4CBZCEYq25voGac60ink6aE7Bs8z7VhNMOCCBg4l9vMPQ54/Lokr6w1phnrGlv
-6yngHh/kTsTYaE2u4ONipj0ksG9OfP17Z8BhJeYbC/DfSn21eE+BrA28I+IF8cQ03itwcVx8lCjt
-MwQgASawSBud3u5urSQVu3L/Mt8FdbCdhT/MWi6z4Mv82v0sgpJj2JcEEqj9sICKzYwkC73yu7C5
-v9nu2nIgzmwTpMg4y5tdyQP4jTwhfU2nULRKW6R/3f15l6pGsEC3pOKldJ7f4XiHGnUyIMchJ+g5
-eQvoZuiVCYafh8fVQH5YQN8J+EH/VlDE9wfBrmnabHBy5IRGlKnQhDzf5E+LbmZ1ybz9+9wv0zv3
-L3WrAyI/yni0/ekKzQ/Pbduzr36Tmnq96qqiwq5i6Yat5wFCCYqj1oKPfctJAN+HinLGjBUozaAn
-LCs5z4Ukwk4b+v/nAmi7FLmVhioj/qwv68i5RNZ/eMa5OLNi8rYiiS2FGBlZZTpeH9CcC086Cs05
-URuNoduCHz23RcqM+DQ5PeZ09WomxXIud84W27jj6HkCLmVoiQEdCWR6OLde33Pp5FkzPGK0ISC6
-p8AtkLUak3uo9F9OcdZ2RetO1AhNp/izzorMjtmi8W/UrT2D5riHKa3bzJu7Pgeio4il3E5S0jIR
-TIeUj9EDygYMa8dWEWXyOcCZWqqvPyQtSZQdBLuxmN37VSyphvw2hALtJdi0BQIs/M7Rz7El3VdV
-+KY1I6RTG+VBLxPkxE6q+bTlxKoIGCCmSBgoXgiZkow17dB3K4nWorMHy+K+yIgr0mKRgvRvZaLZ
-Q4vjHzOzZEkz6ryWZEChgbTlPdLk+b4BskKVU301O3ejbGTw0yCFjwlMTbAVm3WtHDemeEcd0AoN
-MONhoFGrhltwMr+1gw1GpOVnjAGNpqRPHl2O1pBjaWNTUFzSy6RrmR32VA1gMWWYPcMHJqGDyP5W
-pEEI59KG2md1dH+P7u+Th40lxfxUgkfI2XYFP7uKjGKJtLqLoljkMniuxFGRiiFuHwosI/tAj/bO
-vLtjmXl9Uj9i/x0JJlDkvdb3omYEQ33jOp+A6/M6pk5bKmNMLFhv/78mfImIzC7zDlencZlkUeU+
-OmO68pVjfSdhE1mt944n8Plg3i8+DmNwWOgj4PyBMeAYpMjOL75N2BHdLguX9rWWma8sQZQ8+myN
-KFwjmPab8n/Rr6UioTbM/IYOK3RBTqacNSbXRhcF8ACLY0o3XAC94zGm/f9jD9hUlTBk3OwFnZFx
-vWNiicmwv7fwUiO3DexxpPARSFRtRIeDlZ4NDoOHsZSWTlvuT2DobiglxH4K9U1BP5dsDTwBLmVe
-Xu1o6LcyVrIY964nMLS98le9/Zywee3TKcSrDwYHIwDZj5ITWZt/y/47wPLIB6ly38F0hqRmsq+J
-yzHHIGix68+m2sMr4cuTxsTR9B/8226bzlS4x7jpSylBywIzFfaqEg+bnr5aCHwEo9Hx6EyJha9w
-sGl3GxHzXFvA5xoKMxLr+e5Bw36oGLfYwEftf/I19zNiwoMLENMSCP89gewbDDchTzr1iIPa/m9X
-OXSswdPmIhp2h4kbg53t+dDRbYYHxNZqwQCvFz2ITwJ9chMehIFRo9HRNAJ9ibKc0RSzviQykok5
-RSu4m7c7gWTW2lUwodiefpS1dL/jKRXZMBZE2jCVI36jz24xQ8XGgKUg0TMAphbHtK0tu0Dh83BY
-nRg5XmmqblFYIV/EYqvydlNYkbE/Baw/35Cd2VW0pm/xVn04ivjWbWEIf4DOPMZlkGDk4s3LoHa7
-9lsMoM9x9UWaq5lO2srD9iVI5JyaQclLnXwaSOOjv1JjcCLEeFvqsuAakIIJWQNgEV8WI3qPG9tj
-5tAFqKCcWrvden5VGwfEYh+i1baXfEyNsoCl/X9I9rY2rpIjr9gtncSrNXYlXgALgB2Vyye4wlx+
-e7lhLov3JyG+qsSlvtbp0CZRYn4kKK9JO7r9ZooS7HouBnp/Id1sS/yAPnhx5rXwNvX1s2PmHEWh
-QF3NIj+ejaXkPWST3ZCQAYn633qY3PIvmyBdlovDhWWJCov1MmSj0jP5ZJez/BCOfpajbAEkWYZQ
-6LnWEMRNFnoBqsqoBxhueHztkLQ1rEPO1xC5sye50jS6zoa7YytGEWWAIDGg4B3f8C0aOlwc55d1
-EmJxQXiTYGK73dCWR2AbySXED6S2CQHy7Z5PUas4jDNA9rl4RkZOwlI6n5iZUqpbnH57aIjvECvI
-fH99YWHySMNo/VZgFuB3KQ/DJtM054LxRbY5J8MVrfauVjTZBDONMCEelPvVlzaMx3O/0dNom83q
-HRvaAWLsLOGMAu4qv5/wqUuPLNFZMAgllzllAsczC16GRnaIGhiClGHjLdcq/KoCfq1jCOLsKbIt
-qDdiQA65DOdfC2WCJbqjlkKPC6mFmziIRvb6L6G7H53kwRPBibGALtVnKeq0rEGA0kgnDchpL5aJ
-gVpVdM1NRkPzxFp5nuTOkc3816wesivNYgl7J/RVwvGUmTB5ZjB9NAK1x5kIivrRglpdLrpqcFkD
-dMrAzbjRYpzNs9ZMZyJkR/orjSVIweTT29fvps1xBSijJiBtIW88t1zT9LPZS59X/P2Uy+PMAWJF
-pwDGbxK53oOzWIuABsyq6xnitiF8ieMKNL91xuTNqn1gAHkFc3l4e25br7E6ckhWay4YlmRc/Jlz
-n50VJng28G75U3VSQUwohfslb3PyQjMdCslvUcpaNSOVBHB700Qq065tPwGdsPVlhstRD2Jw69pf
-O3vWxwu3iblhhQsMzWfXqzy/JNCJoJtUyrKXx6aWaVMK6nkSpqKXnarcl6VsCtQqc/zRtsy7t72h
-o31XqPj1ow+By57Z+PQ2sKfkrLM/8cRSs/7nPJP5M7F3AzFEIJcJK2AsMD1rydo+JHDxCVxADrrb
-C01mDSW5MOwWPcrSdaMiCf9BKcoF3PF3m216gHxawDVUhdDElSxlzbU667Wx/pMNFID2R5sJo6OZ
-68rchKVvbeDKoq7M7ee0sUjlPSREcrm+FMxDhY2UlCowOhS5jVdqi8shp4ssC39lGH5WM6xXB0xu
-Nn5JiEybnUcUU1jU933t1mYX+gVqClbqNalz+fazrmgKefNix0h4zjaegPzFKtVJSf7SbBjaef62
-H7htXaBbg8gOPrYKu7M6GZu3T66kTCDR6NtRvj/xZPYwa/VMeUeaFURzI6rnHhwUBTkKCbdMShPa
-dwvngypRO+QE2RebHzZjGERhbJY9ibLlykxeQWAvun692g0FyYgLUj6FXdmfGW883mXA/79Q89xA
-TfhR+V5TPmYSlY7HYUbflcI2uGiIz5U50SyiS+Cj0rXj1wEash97Uz2QeRF4w0TJTLbsZrAInEoJ
-avy5IcOQskfyGYsTFQPcm16gdQWk9+OmZ4EsHIxZ5/ttQZ+tXhnXJ1OQ60FhUaiAKnCJWUIzffla
-8pe8i37/JAhWGjo4b0KUDNxEpNtnOMlxude25bHvAAkcxbT4pb+/bopUaVNkXGiC2kM58pF5GPB8
-HPoagnMlJwOkipx5fl/jDXKMMnVtDOkcDlR+6L4hD/RZ7JuS0wpIybRF0YLqOy6m8hb2DlJbeSBc
-4EBSaYPPKblk0J+79rCYoFT/t2/5TMydYRrMwWr5DIR8F/gnw4nc6uMlMu+r7bmLfJ3QfKnYm36D
-GPdGQWi/JcvG0Jx23R82ES3VzB9e3koHI5AcjeI3DK61CbGQDKdyMgwxYfOT0KGPLG6UgMr/R6N/
-PxYgwo9vxabR6D5n46mVz/n897LzDK/lw+vPgKOfmPCKSn466wlW25ncZD5twp+O7c8ag9DNBKoW
-8Q9YzCOcpdIGVCdDSgLkh1iztFXDETmvm9amAkdz/gPGZkWXpt7ssnchTFKhJGNoBe2WgfKvnZ1K
-NHY3CHd2jBw2VaUdPIDMoMMyZJSe15SlTrM8hGsRVGlbduPRmwkTkBIWJIeO+D/rydEBhYaVp8Pf
-I2fzLPUD0U7dltKi6tSV/TDRczXJOtYL/ZdOb4orIgTP9jmrt9mKiIUVaBTNduBEDzHasNsk8igI
-KTsFVaw/fTVnHn35TKdwuRAJLyUivJYbqB9vutx4wtr12SxLyj3GMvtbG/3kEFfw05dOUyuTYBPZ
-iZswtxqJPpdAh0mUn45EqSPltrleavCTdWVx8vmsVR1Nos436mpJ+Pmvu2SZVkDnc5ZGy2Qi9cBq
-rkaSOas7LhXtbGrq1DPBESoI11/MNe4HxKMkZ0ORJxGTRB7epTrlsBMNdpEOhkNIZ+wZ6iDGodmC
-0DG+5jkzvXnLp1SQGEq8sYJSd1pKrfpoCsQF9ShnCyL92Dti0wdwOxe1IDARQNn8D74YwTHMPWfS
-8xITlrSh+/PB8Eu2GSDyc5Ww6yHMGU85FkRwHQakOR2vT3LdyTkzGfAP3WumAG9wZbtjYJXnZXf/
-BLMnBLIS6lEM87WXtPaSQmu9SUanbdS1R1SvtbLcgYeLqo6N9HUvXfr7JLqnZNx/bKoNS0h1kt9x
-u11+8LmFMAjGu8pZWygC3GnuOm0CN/VoadCgMrD8eVCsr8CL9ybEXb921lxnMV7vIosm7hfVFn/L
-UUVbcDKEDwwP9U/AR7VC782H9rQ5RA0luql5TBMtl1e7V5VdYHsbtTWdcNJqKJs+EQY2zMGH+fD8
-enzg0qIHlha0rQJBgYbtNFlsnguFcQugnuXJuNc/su9s+pVZwuZpZKGEIQuZQ/DA9Nt0vn9zNl2D
-ye9OVK7X5xDbn0MiI1QqEUv6XmQOSpPQyGkcuF4Ou5hbJCl8wiAjhUsuXcZGdsi9miVdbgKrA3ID
-ID351QKcNdTcVl/33hCdpr5L53eCVo59FjCdGVq0v1CfyY4e6drXgF1HLPIO98ERliyBnFJqy/qe
-cQ9BXnTdk27JJrZPLTBzKlzXbFIvbBXsJse/JR6PvttBtoOMqrBzlkTNvNm30UiNAQu/yOn07iV8
-/eMmCOEEEh72yRYeZ1qSgEzjwst7SqhGcTiEIJihq0c5jS1c8cqIYaJiEh2B7r6MH3rquCL3dzyQ
-RhKrIRpiko9AbkLFbSAVUsxG0hP2hvMKWOjETLpL5HU7jX9DwxwUZe3CLrfCVZOX79uvJ6z2GF95
-Iao3JGCjP9dwdU9M7WwEgCDImTaBbFIti6+yYci8jpBJ8O1k2TBoM1EPzxfF7L6FaMEWsh4r6x23
-q6b+aN36ujLa5x9NMNQyHz7+BW39eBLwbvK+LM6vlA5et89nRJN3k3CiS8xDafrbBX7czA4ej+qk
-xxaR/bEfLkc6kezx8E+44MnQEpZ4naZMJZOnZskuV3xc8ca6UQsvwCdDpu0hb6bgIJu1tziUKY43
-VuMkRCDKn6BcqrOcbLL8WJwLbntMm49fVVPNY/BUsy9bt5hdgj1Nl1YDTrpJJk029JDvzNmeMUOD
-n9nWC7B8c2mSMt9X9I4UK3JkYju4AOgRfcP2fOaIYI8lZ9jwxhgCfdZs6WYlHpTaUIJ54kTYaJy+
-h+5TwEidAuTm6BskHthY/By/yORRaoEoJef2pchm5tw5dyRWr9VUBnsBkgpG8WqTIjLq1ClDta9N
-EKCctxjrvMX1KKOIa75jat/WeIP3hnk/ZsCwBFiGEMDCCYk5aCefa7xtNFqV8Drukp3GAmzo0Yvm
-uSKXCVebBZ5N25yRb+g4BwgwYnA9hK+z2kA/wSVDpbUfButDRLLdhvo24ra0oMf5o2hebvwTRddQ
-IlucuvNJRdhtdhDxofQn6rdeAgtccXyFzxpdhPl516ZRAZHYpQFwgY8RvsJHPYYB/l5A25L4L9RO
-uY954IMX8TdQZsxjNh8woQY3g4rGSetDstvRrYDMmI6A+5JzKywOMXEo7s/jW6cq1jknIcvp32Z1
-dPqT/Uh7DUpWsCqmtymzDMhi7xYEEyg+7S9rqlMbkqUis9z6cbFj/HaENQmZi8x7ypAUAgVZyLzw
-VWbBzXIo94BYEUqPi3Brxebsk/ldI5cIiYq0LuhG798zX5Y+cHZt7wmLMtOCh+blUrlIMFJMRYs0
-PfpjyDIlhfwvScNt/ccG+0f0k59T0f7RGCKROga8w5Fz+HkcJUBuYqz1w+S/U+abU5/5veV6DkVu
-BzB1BpL8N+G1l1qwqmp+rFC0jjvWXydMf2jw4fdSIMML5i3ZChZpM3B4OeR8c2dUvpyFTGNL4YZD
-9HfxpTkZj1jF1fjbGez7IPMj8n8M+DPBYnPa/ew5prUqu9hZNMXT/+ZgXJL0Vbz61fu8h5tgVtvI
-mSWNZJM6oSK8lfzGGEQVCU7hrMRD5RLXAgCL3MsoTSll59DDGTYyopAOHoh2Akeg35idQVxMNnB3
-Jo57meaiabTKkEbKWnrUzMAUjcUXicYmOlu/AqTnMv9CVM31bw5y9uH/Rlz+SlBM4o+6DHDSa9yP
-YkWVcipyVStg8LWm6/eiLwv7TRnPj+ba67eRB/0j+Cvg0AhPh5okMDAIKokln8KwU+w5GYQkywKc
-2/7t7j/88ADnEN8OMZ9N/xXBLvpaLUeH1FLwKF5C3BQc2C8YIlMv7KPbdq5sw0VSB5zBCfJSGtVp
-eoBRUNCvSA3XpY17S2oni0NcWbY3lk6NfILlr1iP1hUwnIiCbctYKm6louSYdZtBT3k0kQDc6KXP
-UShnlXi/cswjVrEbCfJ8Mm+nudgrNZwJ8LQ07nQt8HrlUj0sWRMio0urDezhoSDCA9y94tCoajE4
-wV9ZnacOidKL+PGt42Mhb8XyhjJPr3tFBb22tUrDtMJIvY+sUud4ijjXkf/TycoHnxegfP081Ffv
-5Ae3MH0R2CXGRbmwuF9CeK2nxagBzJWfEAL7o93ugLA1CWG5pbvjPozzCaU3rEdZjZ8l1VQ6MZh+
-C1TISni0f75t0dpWNtOe+8B6AASFXaLCXHief4HY7pyKlh36KtySjGuTHgN+6DWXeDSftMJnGfm5
-LJxh6b2+e0DHL0aJQR6SxC5So7ntAoxRf+b/d51JSwFUqYnmd+/zvo4/NxmAiX8X9Nk14EwysUtx
-OARkCzOmwhfmDsnZqquLYR7r9a1SEuG/7dSj+vS8zlWkqaoIoSwzgzvpiLjUna1dCRN9jysyqUyG
-qPieuGXF47D6EsSBNtpVNn/nzj+lXupIHy19drZPf8E4m4l6ntE6IWSZclcjD2hZ7tAyWb8N2B9i
-bnFJwX8jgk0gsg+h2kGmIC3tel+78sO5LRS0xfs6nNel49znAQ20cRZc3ncINwVmLtkyuldwoEac
-6hsKh405Lc3NnGuFRjHheVx/EfCNWC1y6vDhMPtz72eQ+1rRVxPpQZ6zfQk5YXD9NgW89fm2Oq6S
-M8wqhWb5H87QEQ/4wf0qmOE5Cb30NvOkcCoacUIQBFsS4ZK6ZChvSQT5Iu1lubTuj9xRyU+nBFlh
-bbrgMmn63OCpPA6Qp1we4kikJMNUMv7E8nMdnAsrpI+dUghSezUICUVWHxztcfahdFeXW7UdxBNI
-K8q/hbIZzbdfvI7ZYQwBqh3F7gSFmiJUxLB6UIxMFyMCEfnfyNyPmlEbxP1j/adalJUllEhtM4Pc
-Kf3wRcTV1iATS+VEL8NF3wps32tn7M2eevISUAkHusV3awTCO/RC6BPhrSisGMw8O4VC/MpXwsrp
-o1CrTE/PkKeRf/Xm+FoFZcn4dJ3icls1YUZhkMgjpFihZvQ5uraFH0K3uFud9Phbc8ziKzia4EEJ
-Uq9G0jOQCglblTgG25xGTrm78ZAFUTdVZz8IBVvz9Riu8NeN1zxURjWR0xV5XWK7VbCglPJYQKTs
-2YoVAUcJiqWB8LeIqghNoytiIiycwZS7bkU28tXuO+ll5TuACrM1+r+xt6xFSbXMMS8TO7h/Dhkw
-ZgJYup2p5aqTsrigxcS7TAQX7nWdSd2ZzoItNv0nNWWqeidF8fsZfMqYYOSSpgXaIETwI9hI+kp8
-JpAu7HCEL1VJFZuwDjZv7VqszMlxkLhNAN0veGACbX7CesQJ7tOMLBnAYBscuP6uFmoAKBx5kQbA
-EDs0BSuVPGiuw32Wv0d//KTyJHQxhYNK4bH572NYrOHU0E9dns4nKuxvHpUGS34h3WLrncruoe++
-2yv7Yv1HIKaflEaN2VbhC8xmCrmjOb8rBNfZlmKZVRdxeD0+berGUS7MduqfY3KIFugAKvlH+ySV
-k175n1kq/TtYHHN8zo3gf8jewglXLVKDE0sQsnCswJrbzNwjRpU4tJRRBmgdUcXkqvF6+ILPfSUW
-9IU3f8/BFxo5SsDUb8q4f/zlKJaL5mTSs4bdXqvRQqOtxvVAxkitatUsStk59vzerPnof4ZkqD9e
-Slt6LPe8KVwVsx1q/saFEA9+/IOSaBp6wIpAdEzGNKkj/sSVPRN5bWScKApNy2NLtQKDElANHn5a
-9qJqbxltjTylyaTYw3Kqjo1HruXrnBpyqH1UG7J1hHStIJUO2DJ4BpHn0HZ34dGhhRIGOSt/eA7m
-oZyo+Anj3LNhH3l7PW8vMNUV6I25JN8wIHSh0BbI1vrRpei/ZcTQARR2dCJOKWEzipKXd7TdXEv0
-86r7vOw8rQpKNnDGn5IjHJLeii+Bs46ES7BTrNN/ChHUTiAdN+ESmCzoHI67cDRnbNZAlx0sraft
-KgNJSYmNKf6830WPqB7y+E3GyPlsCAAc6BB2Ua8Tr+kHDVBhwPfmsbyUmHR+zNc/hlam9ETwffBY
-w+Who/naXkraKdPBgxpRdpMtUDJ4QJFW9ieezlo/ljdDDgPAEiTjebau5k6SNq8SB4y1h1oy9ibM
-IlmKljyGoPjo0xfmBd5h1XlWuxTqUVjf0i5R97IWPeTDeLBAXL/laCqFuJ9Pw5XnXhhr4hfakSyo
-jbesVejYV9GkDtqeUx34UhFJXZ2ij8QYUlo0PKcazBFP6dYSkltSUxmwpJucM1inirGaNClN97C3
-o5fU18fQ0k8ZKp/m2l4CQ760vkJDrokoFStxqH48GKTGodP/i/xk9J0MzaDremRGGmLh4S87ltG2
-Vrfg+r4qKYeHWb9oRQbiv+hGnpzk//IRU9jbW3gFjeJhCkCnQhpiRVlOASlesc0hWM5QZu8+AGD2
-fNsImK89OzxR/FxFfUf76sLJ7zndMXeDyU8n0dybQ8NHHYh39bb2nhOij2lbJ0PSwf+G4sa+N9TX
-ifwPQGf2WmUNG6xTjg7uqIm/RRN/yjnR0ARbcsP7qnWIHF81r5HHblnM8t0RpikTHP66+XPbqlfm
-6LjbYySffZ7NMf/LdNNP7XLeHD6WyOJWB42A2LoXe86Om0wWCrGtgj8k8L9WW80VXcVB6oUhj6T7
-qd/brh5rNayxAap8IowBNHNSpLUg+ljtTTVFO1CCmjnlCYFm/rXm81XhKqoNV9fwWIV/XI6LlbgG
-pwB2UxegcEK/LQ0jSQROml3MmLX5XKvPO1AYo0Jph+Y/GNaz8XvaqRqhHJ9qRYpgzWTQaSyhKLir
-3F3lgKBeQHnDQv1ir6k0OGL5DoKcxbpKBd3JvE3TV5oYAaa7RMB0kvlTLnFAl4uNvY5jBhk/cKZa
-eS0Vjpu+CrYUbFyiRdrhh+J5fEkEp+c32s9SuA0omI4BAlND9gyVm9dwzaTSf3SWLJNpj11q+Wee
-k+7J9cjSQQet7N6yQ16d0bq2go9zbx4WUKnH+sdjLLyZTpO0AyFk7Hy15Cz6BgnuuEw+YVtwu9NC
-31ZSSCsl6ebGn008a+1jiqiemcwvJgaah9YfSVP0tograSG58nl8Odnj1DrkVncZ6gNCacurmj/l
-kd4jSh31QOaZ+uPIw0m6Y1Z34KUjBULNJX63HVX5Mp7LKPndo4+tEBqO/1bcCKFHoEdxfphmgL/x
-csW7Q2vZjjMAriIakqsZPXr53xM8hnA3pXTzzuswfGdLLizLV2UF/dqcuQMBaA3ln64Mv6L7YB99
-VFmcERQLQYsPTaSFhVYmABzfEdgdZby/4em0hs0SRdVq8CwylCyiVuKzef+OOK8UrCtRoCFEtobJ
-i8r4uHiP8Gk6mt8s2DGcGs3+uVHdNxLMib+lOhKTyInrOTt+5pIoe63Js7uVyxvBuo5hrVcpAWu2
-GK9soKq7VVvq2dbcG2NE7qpYgsPG5JQyEfwEYVvGY03uJ2UkUgmBiweE4ig4+WSRNrtWbpuazzFJ
-MSwRDusNulJYWkT6lGTO1xHhBy5ngBUgPcFiiHbIhP/hpDQkvORbCZD0d4H50CvDDvAdtI9IzWX4
-12Hhwy3yncZycxM1WfqF8EealVbrvLXekT1GqP9s5vvOvIXgyS5sWJffTqizkg0iukb1iyNXbD1d
-3EqpTTpFcm4raHAW2ayI4yoyU/Xa7xlPmi5o/YocIMLBhLynt4GGOOJJHzYc6JR8VHBvNbEqMwJA
-nnUY36sc465YxRWdGP2SErsGJKkASv/EQhLD/noe1OVVBdIkVe4z3xNKMTxIoMA+ejnTQR4TUHel
-I0b4U3wbQ5GqEGMuLBPVb+FBbzPAvnznX2HiiB/aHOKh7NbDSbjnlf7If6kWdfMY8aPHFHYISL27
-I83IGgYQKcX8nvSrE+J3X+MIRlCGcKtEK7eUNNaERMQia/aAt8vHEcU2yi4PrgF71CzXFzDfK7v6
-rIaLnXScG9IVs1At+J3gEOPml6HPo4i/TCrSBfY4FyYxr8t3engxnxN3nNiFeWOR/m8SY0sSVZv4
-/pyJuWGBI+a2KwAoaXCZakvP3zAlu6fYjNw4fbjPcjfS8HqIK/esmU2Mdzl/buJL1Dy6ksvhaM5D
-gHNu9jhJdbOC9Lo+aIT5IbQy7NKh77e5KvUtfSJkiY+KZUrbpkX2CEKqH+0RNaKc+oni6j1s6/98
-TEbIVWeGHglv3ieojYYOw2Ggivydl4kJSAmlf3E/UpXXSc/IcuDez66p8EwJ7AU2llRnfU3mP1rg
-5Sh1Us8i9k5oVE6YAN2TjIvFHNxJXSDdL9xzPYA3Pccv9yY+9aNzeq212vedo/NBt90thlz2cPfa
-hD+NXJMIvmxzhvtRInVNO5FjMBrAoMpgp87on/mqWfmtAWzYPS2KRldHcvrlvENcyfsAzL02FWUs
-/J5+wm==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Descriptor;
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputOption;
+
+/**
+ * XML descriptor.
+ *
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class XmlDescriptor extends Descriptor
+{
+    /**
+     * @param InputDefinition $definition
+     *
+     * @return \DOMDocument
+     */
+    public function getInputDefinitionDocument(InputDefinition $definition)
+    {
+        $dom = new \DOMDocument('1.0', 'UTF-8');
+        $dom->appendChild($definitionXML = $dom->createElement('definition'));
+
+        $definitionXML->appendChild($argumentsXML = $dom->createElement('arguments'));
+        foreach ($definition->getArguments() as $argument) {
+            $this->appendDocument($argumentsXML, $this->getInputArgumentDocument($argument));
+        }
+
+        $definitionXML->appendChild($optionsXML = $dom->createElement('options'));
+        foreach ($definition->getOptions() as $option) {
+            $this->appendDocument($optionsXML, $this->getInputOptionDocument($option));
+        }
+
+        return $dom;
+    }
+
+    /**
+     * @param Command $command
+     *
+     * @return \DOMDocument
+     */
+    public function getCommandDocument(Command $command)
+    {
+        $dom = new \DOMDocument('1.0', 'UTF-8');
+        $dom->appendChild($commandXML = $dom->createElement('command'));
+
+        $command->getSynopsis();
+        $command->mergeApplicationDefinition(false);
+
+        $commandXML->setAttribute('id', $command->getName());
+        $commandXML->setAttribute('name', $command->getName());
+
+        $commandXML->appendChild($usageXML = $dom->createElement('usage'));
+        $usageXML->appendChild($dom->createTextNode(sprintf($command->getSynopsis(), '')));
+
+        $commandXML->appendChild($descriptionXML = $dom->createElement('description'));
+        $descriptionXML->appendChild($dom->createTextNode(str_replace("\n", "\n ", $command->getDescription())));
+
+        $commandXML->appendChild($helpXML = $dom->createElement('help'));
+        $helpXML->appendChild($dom->createTextNode(str_replace("\n", "\n ", $command->getProcessedHelp())));
+
+        $commandXML->appendChild($aliasesXML = $dom->createElement('aliases'));
+        foreach ($command->getAliases() as $alias) {
+            $aliasesXML->appendChild($aliasXML = $dom->createElement('alias'));
+            $aliasXML->appendChild($dom->createTextNode($alias));
+        }
+
+        $definitionXML = $this->getInputDefinitionDocument($command->getNativeDefinition());
+        $this->appendDocument($commandXML, $definitionXML->getElementsByTagName('definition')->item(0));
+
+        return $dom;
+    }
+
+    /**
+     * @param Application $application
+     * @param string|null $namespace
+     *
+     * @return \DOMDocument
+     */
+    public function getApplicationDocument(Application $application, $namespace = null)
+    {
+        $dom = new \DOMDocument('1.0', 'UTF-8');
+        $dom->appendChild($rootXml = $dom->createElement('symfony'));
+
+        if ($application->getName() !== 'UNKNOWN') {
+            $rootXml->setAttribute('name', $application->getName());
+            if ($application->getVersion() !== 'UNKNOWN') {
+                $rootXml->setAttribute('version', $application->getVersion());
+            }
+        }
+
+        $rootXml->appendChild($commandsXML = $dom->createElement('commands'));
+
+        $description = new ApplicationDescription($application, $namespace);
+
+        if ($namespace) {
+            $commandsXML->setAttribute('namespace', $namespace);
+        }
+
+        foreach ($description->getCommands() as $command) {
+            $this->appendDocument($commandsXML, $this->getCommandDocument($command));
+        }
+
+        if (!$namespace) {
+            $rootXml->appendChild($namespacesXML = $dom->createElement('namespaces'));
+
+            foreach ($description->getNamespaces() as $namespaceDescription) {
+                $namespacesXML->appendChild($namespaceArrayXML = $dom->createElement('namespace'));
+                $namespaceArrayXML->setAttribute('id', $namespaceDescription['id']);
+
+                foreach ($namespaceDescription['commands'] as $name) {
+                    $namespaceArrayXML->appendChild($commandXML = $dom->createElement('command'));
+                    $commandXML->appendChild($dom->createTextNode($name));
+                }
+            }
+        }
+
+        return $dom;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function describeInputArgument(InputArgument $argument, array $options = array())
+    {
+        $this->writeDocument($this->getInputArgumentDocument($argument));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function describeInputOption(InputOption $option, array $options = array())
+    {
+        $this->writeDocument($this->getInputOptionDocument($option));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function describeInputDefinition(InputDefinition $definition, array $options = array())
+    {
+        $this->writeDocument($this->getInputDefinitionDocument($definition));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function describeCommand(Command $command, array $options = array())
+    {
+        $this->writeDocument($this->getCommandDocument($command));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function describeApplication(Application $application, array $options = array())
+    {
+        $this->writeDocument($this->getApplicationDocument($application, isset($options['namespace']) ? $options['namespace'] : null));
+    }
+
+    /**
+     * Appends document children to parent node.
+     *
+     * @param \DOMNode $parentNode
+     * @param \DOMNode $importedParent
+     */
+    private function appendDocument(\DOMNode $parentNode, \DOMNode $importedParent)
+    {
+        foreach ($importedParent->childNodes as $childNode) {
+            $parentNode->appendChild($parentNode->ownerDocument->importNode($childNode, true));
+        }
+    }
+
+    /**
+     * Writes DOM document.
+     *
+     * @param \DOMDocument $dom
+     *
+     * @return \DOMDocument|string
+     */
+    private function writeDocument(\DOMDocument $dom)
+    {
+        $dom->formatOutput = true;
+        $this->write($dom->saveXML());
+    }
+
+    /**
+     * @param InputArgument $argument
+     *
+     * @return \DOMDocument
+     */
+    private function getInputArgumentDocument(InputArgument $argument)
+    {
+        $dom = new \DOMDocument('1.0', 'UTF-8');
+
+        $dom->appendChild($objectXML = $dom->createElement('argument'));
+        $objectXML->setAttribute('name', $argument->getName());
+        $objectXML->setAttribute('is_required', $argument->isRequired() ? 1 : 0);
+        $objectXML->setAttribute('is_array', $argument->isArray() ? 1 : 0);
+        $objectXML->appendChild($descriptionXML = $dom->createElement('description'));
+        $descriptionXML->appendChild($dom->createTextNode($argument->getDescription()));
+
+        $objectXML->appendChild($defaultsXML = $dom->createElement('defaults'));
+        $defaults = is_array($argument->getDefault()) ? $argument->getDefault() : (is_bool($argument->getDefault()) ? array(var_export($argument->getDefault(), true)) : ($argument->getDefault() ? array($argument->getDefault()) : array()));
+        foreach ($defaults as $default) {
+            $defaultsXML->appendChild($defaultXML = $dom->createElement('default'));
+            $defaultXML->appendChild($dom->createTextNode($default));
+        }
+
+        return $dom;
+    }
+
+    /**
+     * @param InputOption $option
+     *
+     * @return \DOMDocument
+     */
+    private function getInputOptionDocument(InputOption $option)
+    {
+        $dom = new \DOMDocument('1.0', 'UTF-8');
+
+        $dom->appendChild($objectXML = $dom->createElement('option'));
+        $objectXML->setAttribute('name', '--'.$option->getName());
+        $pos = strpos($option->getShortcut(), '|');
+        if (false !== $pos) {
+            $objectXML->setAttribute('shortcut', '-'.substr($option->getShortcut(), 0, $pos));
+            $objectXML->setAttribute('shortcuts', '-'.implode('|-', explode('|', $option->getShortcut())));
+        } else {
+            $objectXML->setAttribute('shortcut', $option->getShortcut() ? '-'.$option->getShortcut() : '');
+        }
+        $objectXML->setAttribute('accept_value', $option->acceptValue() ? 1 : 0);
+        $objectXML->setAttribute('is_value_required', $option->isValueRequired() ? 1 : 0);
+        $objectXML->setAttribute('is_multiple', $option->isArray() ? 1 : 0);
+        $objectXML->appendChild($descriptionXML = $dom->createElement('description'));
+        $descriptionXML->appendChild($dom->createTextNode($option->getDescription()));
+
+        if ($option->acceptValue()) {
+            $defaults = is_array($option->getDefault()) ? $option->getDefault() : (is_bool($option->getDefault()) ? array(var_export($option->getDefault(), true)) : ($option->getDefault() ? array($option->getDefault()) : array()));
+            $objectXML->appendChild($defaultsXML = $dom->createElement('defaults'));
+
+            if (!empty($defaults)) {
+                foreach ($defaults as $default) {
+                    $defaultsXML->appendChild($defaultXML = $dom->createElement('default'));
+                    $defaultXML->appendChild($dom->createTextNode($default));
+                }
+            }
+        }
+
+        return $dom;
+    }
+}

@@ -1,38 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ef3XlyKtfBTNN6T4
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * General utility class in Swift Mailer, not to be instantiated.
+ *
+ * @package Swift
+ *
+ * @author Chris Corbyn
+ */
+abstract class Swift
+{
+    public static $initialized = false;
+    public static $inits = array();
+
+    /** Swift Mailer Version number generated during dist release process */
+    const VERSION = '@SWIFT_VERSION_NUMBER@';
+
+    /**
+     * Registers an initializer callable that will be called the first time
+     * a SwiftMailer class is autoloaded.
+     *
+     * This enables you to tweak the default configuration in a lazy way.
+     *
+     * @param mixed $callable A valid PHP callable that will be called when autoloading the first Swift class
+     */
+    public static function init($callable)
+    {
+        self::$inits[] = $callable;
+    }
+
+    /**
+     * Internal autoloader for spl_autoload_register().
+     *
+     * @param string $class
+     */
+    public static function autoload($class)
+    {
+        // Don't interfere with other autoloaders
+        if (0 !== strpos($class, 'Swift_')) {
+            return;
+        }
+
+        $path = dirname(__FILE__).'/'.str_replace('_', '/', $class).'.php';
+
+        if (!file_exists($path)) {
+            return;
+        }
+
+        require $path;
+
+        if (self::$inits && !self::$initialized) {
+            self::$initialized = true;
+            foreach (self::$inits as $init) {
+                call_user_func($init);
+            }
+        }
+    }
+
+    /**
+     * Configure autoloading using Swift Mailer.
+     *
+     * This is designed to play nicely with other autoloaders.
+     *
+     * @param mixed $callable A valid PHP callable that will be called when autoloading the first Swift class
+     */
+    public static function registerAutoload($callable = null)
+    {
+        if (null !== $callable) {
+            self::$inits[] = $callable;
+        }
+        spl_autoload_register(array('Swift', 'autoload'));
+    }
+}

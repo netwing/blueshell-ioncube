@@ -1,38 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Service;
+
+use Guzzle\Cache\DoctrineCacheAdapter;
+use Guzzle\Service\CachingConfigLoader;
+use Doctrine\Common\Cache\ArrayCache;
+
+/**
+ * @covers Guzzle\Service\CachingConfigLoader
+ */
+class CachingConfigLoaderTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testLoadsPhpFileIncludes()
+    {
+        $cache = new DoctrineCacheAdapter(new ArrayCache());
+        $loader = $this->getMockBuilder('Guzzle\Service\ConfigLoaderInterface')
+            ->setMethods(array('load'))
+            ->getMockForAbstractClass();
+        $data = array('foo' => 'bar');
+        $loader->expects($this->once())
+            ->method('load')
+            ->will($this->returnValue($data));
+        $cache = new CachingConfigLoader($loader, $cache);
+        $this->assertEquals($data, $cache->load('foo'));
+        $this->assertEquals($data, $cache->load('foo'));
+    }
+
+    public function testDoesNotCacheArrays()
+    {
+        $cache = new DoctrineCacheAdapter(new ArrayCache());
+        $loader = $this->getMockBuilder('Guzzle\Service\ConfigLoaderInterface')
+            ->setMethods(array('load'))
+            ->getMockForAbstractClass();
+        $data = array('foo' => 'bar');
+        $loader->expects($this->exactly(2))
+            ->method('load')
+            ->will($this->returnValue($data));
+        $cache = new CachingConfigLoader($loader, $cache);
+        $this->assertEquals($data, $cache->load(array()));
+        $this->assertEquals($data, $cache->load(array()));
+    }
+}

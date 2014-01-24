@@ -1,64 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-yWuM2afMJFJSNflvnB1MFNON
+<?php
+
+namespace Guzzle\Tests\Http\Curl;
+
+use Guzzle\Http\Client;
+use Guzzle\Http\Message\EntityEnclosingRequest;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Curl\RequestMediator;
+
+/**
+ * @covers Guzzle\Http\Curl\RequestMediator
+ */
+class RequestMediatorTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public $events = array();
+
+    public function event($event)
+    {
+        $this->events[] = $event;
+    }
+
+    public function testEmitsEvents()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://www.example.com');
+        $request->setBody('foo');
+        $request->setResponse(new Response(200));
+
+        // Ensure that IO events are emitted
+        $request->getCurlOptions()->set('emit_io', true);
+
+        // Attach listeners for each event type
+        $request->getEventDispatcher()->addListener('curl.callback.progress', array($this, 'event'));
+        $request->getEventDispatcher()->addListener('curl.callback.read', array($this, 'event'));
+        $request->getEventDispatcher()->addListener('curl.callback.write', array($this, 'event'));
+
+        $mediator = new RequestMediator($request, true);
+
+        $mediator->progress('a', 'b', 'c', 'd');
+        $this->assertEquals(1, count($this->events));
+        $this->assertEquals('curl.callback.progress', $this->events[0]->getName());
+
+        $this->assertEquals(3, $mediator->writeResponseBody('foo', 'bar'));
+        $this->assertEquals(2, count($this->events));
+        $this->assertEquals('curl.callback.write', $this->events[1]->getName());
+        $this->assertEquals('bar', $this->events[1]['write']);
+        $this->assertSame($request, $this->events[1]['request']);
+
+        $this->assertEquals('foo', $mediator->readRequestBody('a', 'b', 3));
+        $this->assertEquals(3, count($this->events));
+        $this->assertEquals('curl.callback.read', $this->events[2]->getName());
+        $this->assertEquals('foo', $this->events[2]['read']);
+        $this->assertSame($request, $this->events[2]['request']);
+    }
+
+    public function testDoesNotUseRequestResponseBodyWhenNotCustom()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 307 Foo\r\nLocation: /foo\r\nContent-Length: 2\r\n\r\nHI",
+            "HTTP/1.1 301 Foo\r\nLocation: /foo\r\nContent-Length: 2\r\n\r\nFI",
+            "HTTP/1.1 200 OK\r\nContent-Length: 4\r\n\r\ntest",
+        ));
+        $client = new Client($this->getServer()->getUrl());
+        $response = $client->get()->send();
+        $this->assertEquals('test', $response->getBody(true));
+    }
+}

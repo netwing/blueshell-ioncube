@@ -1,85 +1,122 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-2j3p9NK1Fhkxecri
+<?php
+
+namespace Guzzle\Tests\Service\Command;
+
+use Guzzle\Service\Command\DefaultRequestSerializer;
+use Guzzle\Http\Message\EntityEnclosingRequest;
+use Guzzle\Service\Client;
+use Guzzle\Service\Description\ServiceDescription;
+use Guzzle\Service\Description\Operation;
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Service\Command\LocationVisitor\Request\HeaderVisitor;
+use Guzzle\Service\Command\LocationVisitor\VisitorFlyweight;
+
+/**
+ * @covers Guzzle\Service\Command\DefaultRequestSerializer
+ */
+class DefaultRequestSerializerTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    /** @var EntityEnclosingRequest */
+    protected $request;
+
+    /** @var \Guzzle\Service\Command\AbstractCommand */
+    protected $command;
+
+    /** @var Client */
+    protected $client;
+
+    /** @var DefaultRequestSerializer */
+    protected $serializer;
+
+    /** @var Operation */
+    protected $operation;
+
+    public function setUp()
+    {
+        $this->serializer = DefaultRequestSerializer::getInstance();
+        $this->client = new Client('http://foo.com/baz');
+        $this->operation = new Operation(array('httpMethod' => 'POST'));
+        $this->command = $this->getMockBuilder('Guzzle\Service\Command\AbstractCommand')
+            ->setConstructorArgs(array(array(), $this->operation))
+            ->getMockForAbstractClass();
+        $this->command->setClient($this->client);
+    }
+
+    public function testAllowsCustomVisitor()
+    {
+        $this->serializer->addVisitor('custom', new HeaderVisitor());
+        $this->command['test'] = '123';
+        $this->operation->addParam(new Parameter(array('name' => 'test', 'location' => 'custom')));
+        $request = $this->serializer->prepare($this->command);
+        $this->assertEquals('123', (string) $request->getHeader('test'));
+    }
+
+    public function testUsesRelativePath()
+    {
+        $this->operation->setUri('bar');
+        $request = $this->serializer->prepare($this->command);
+        $this->assertEquals('http://foo.com/baz/bar', (string) $request->getUrl());
+    }
+
+    public function testUsesRelativePathWithUriLocations()
+    {
+        $this->command['test'] = '123';
+        $this->operation->setUri('bar/{test}');
+        $this->operation->addParam(new Parameter(array('name' => 'test', 'location' => 'uri')));
+        $request = $this->serializer->prepare($this->command);
+        $this->assertEquals('http://foo.com/baz/bar/123', (string) $request->getUrl());
+    }
+
+    public function testAllowsCustomFactory()
+    {
+        $f = new VisitorFlyweight();
+        $serializer = new DefaultRequestSerializer($f);
+        $this->assertSame($f, $this->readAttribute($serializer, 'factory'));
+    }
+
+    public function testMixedParams()
+    {
+        $this->operation->setUri('bar{?limit,fields}');
+        $this->operation->addParam(new Parameter(array(
+            'name' => 'limit',
+            'location' => 'uri',
+            'required' => false,
+        )));
+        $this->operation->addParam(new Parameter(array(
+            'name' => 'fields',
+            'location' => 'uri',
+            'required' => true,
+        )));
+
+        $this->command['fields'] = array('id', 'name');
+
+        $request = $this->serializer->prepare($this->command);
+        $this->assertEquals('http://foo.com/baz/bar?fields='.urlencode('id,name'), (string) $request->getUrl());
+    }
+
+    public function testValidatesAdditionalParameters()
+    {
+        $description = ServiceDescription::factory(array(
+            'operations' => array(
+                'foo' => array(
+                    'httpMethod' => 'PUT',
+                    'parameters' => array(
+                        'bar' => array('location' => 'header')
+                    ),
+                    'additionalParameters' => array(
+                        'location' => 'json'
+                    )
+                )
+            )
+        ));
+
+        $client = new Client();
+        $client->setDescription($description);
+        $command = $client->getCommand('foo');
+        $command['bar'] = 'test';
+        $command['hello'] = 'abc';
+        $request = $command->prepare();
+        $this->assertEquals('test', (string) $request->getHeader('bar'));
+        $this->assertEquals('{"hello":"abc"}', (string) $request->getBody());
+    }
+}

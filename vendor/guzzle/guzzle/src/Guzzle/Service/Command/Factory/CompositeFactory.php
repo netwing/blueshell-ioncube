@@ -1,74 +1,154 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Service\Command\Factory;
+
+use Guzzle\Service\Command\CommandInterface;
+use Guzzle\Service\ClientInterface;
+
+/**
+ * Composite factory used by a client object to create command objects utilizing multiple factories
+ */
+class CompositeFactory implements \IteratorAggregate, \Countable, FactoryInterface
+{
+    /** @var array Array of command factories */
+    protected $factories;
+
+    /**
+     * Get the default chain to use with clients
+     *
+     * @param ClientInterface $client Client to base the chain on
+     *
+     * @return self
+     */
+    public static function getDefaultChain(ClientInterface $client)
+    {
+        $factories = array();
+        if ($description = $client->getDescription()) {
+            $factories[] = new ServiceDescriptionFactory($description);
+        }
+        $factories[] = new ConcreteClassFactory($client);
+
+        return new self($factories);
+    }
+
+    /**
+     * @param array $factories Array of command factories
+     */
+    public function __construct(array $factories = array())
+    {
+        $this->factories = $factories;
+    }
+
+    /**
+     * Add a command factory to the chain
+     *
+     * @param FactoryInterface        $factory Factory to add
+     * @param string|FactoryInterface $before  Insert the new command factory before a command factory class or object
+     *                                         matching a class name.
+     * @return CompositeFactory
+     */
+    public function add(FactoryInterface $factory, $before = null)
+    {
+        $pos = null;
+
+        if ($before) {
+            foreach ($this->factories as $i => $f) {
+                if ($before instanceof FactoryInterface) {
+                    if ($f === $before) {
+                        $pos = $i;
+                        break;
+                    }
+                } elseif (is_string($before)) {
+                    if ($f instanceof $before) {
+                        $pos = $i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        if ($pos === null) {
+            $this->factories[] = $factory;
+        } else {
+            array_splice($this->factories, $i, 0, array($factory));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Check if the chain contains a specific command factory
+     *
+     * @param FactoryInterface|string $factory Factory to check
+     *
+     * @return bool
+     */
+    public function has($factory)
+    {
+        return (bool) $this->find($factory);
+    }
+
+    /**
+     * Remove a specific command factory from the chain
+     *
+     * @param string|FactoryInterface $factory Factory to remove by name or instance
+     *
+     * @return CompositeFactory
+     */
+    public function remove($factory = null)
+    {
+        if (!($factory instanceof FactoryInterface)) {
+            $factory = $this->find($factory);
+        }
+
+        $this->factories = array_values(array_filter($this->factories, function($f) use ($factory) {
+            return $f !== $factory;
+        }));
+
+        return $this;
+    }
+
+    /**
+     * Get a command factory by class name
+     *
+     * @param string|FactoryInterface $factory Command factory class or instance
+     *
+     * @return null|FactoryInterface
+     */
+    public function find($factory)
+    {
+        foreach ($this->factories as $f) {
+            if ($factory === $f || (is_string($factory) && $f instanceof $factory)) {
+                return $f;
+            }
+        }
+    }
+
+    /**
+     * Create a command using the associated command factories
+     *
+     * @param string $name Name of the command
+     * @param array  $args Command arguments
+     *
+     * @return CommandInterface
+     */
+    public function factory($name, array $args = array())
+    {
+        foreach ($this->factories as $factory) {
+            $command = $factory->factory($name, $args);
+            if ($command) {
+                return $command;
+            }
+        }
+    }
+
+    public function count()
+    {
+        return count($this->factories);
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->factories);
+    }
+}

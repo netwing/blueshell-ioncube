@@ -1,101 +1,216 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class PostController extends Controller
+{
+	public $layout='column2';
+
+	/**
+	 * @var CActiveRecord the currently loaded data model instance.
+	 */
+	private $_model;
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to access 'index' and 'view' actions.
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated users to access all actions
+				'users'=>array('@'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
+
+	/**
+	 * Displays a particular model.
+	 */
+	public function actionView()
+	{
+		$post=$this->loadModel();
+		$comment=$this->newComment($post);
+
+		$this->render('view',array(
+			'model'=>$post,
+			'comment'=>$comment,
+		));
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreate()
+	{
+		$model=new Post;
+		if(isset($_POST['Post']))
+		{
+			$model->attributes=$_POST['Post'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionUpdate()
+	{
+		$model=$this->loadModel();
+		if(isset($_POST['Post']))
+		{
+			$model->attributes=$_POST['Post'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'index' page.
+	 */
+	public function actionDelete()
+	{
+		if(Yii::app()->request->isPostRequest)
+		{
+			// we only allow deletion via POST request
+			$this->loadModel()->delete();
+
+			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+			if(!isset($_GET['ajax']))
+				$this->redirect(array('index'));
+		}
+		else
+			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$criteria=new CDbCriteria(array(
+			'condition'=>'status='.Post::STATUS_PUBLISHED,
+			'order'=>'update_time DESC',
+			'with'=>'commentCount',
+		));
+		if(isset($_GET['tag']))
+			$criteria->addSearchCondition('tags',$_GET['tag']);
+
+		$dataProvider=new CActiveDataProvider('Post', array(
+			'pagination'=>array(
+				'pageSize'=>Yii::app()->params['postsPerPage'],
+			),
+			'criteria'=>$criteria,
+		));
+
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new Post('search');
+		if(isset($_GET['Post']))
+			$model->attributes=$_GET['Post'];
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Suggests tags based on the current user input.
+	 * This is called via AJAX when the user is entering the tags input.
+	 */
+	public function actionSuggestTags()
+	{
+		if(isset($_GET['q']) && ($keyword=trim($_GET['q']))!=='')
+		{
+			$tags=Tag::model()->suggestTags($keyword);
+			if($tags!==array())
+				echo implode("\n",$tags);
+		}
+	}
+
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 */
+	public function loadModel()
+	{
+		if($this->_model===null)
+		{
+			if(isset($_GET['id']))
+			{
+				if(Yii::app()->user->isGuest)
+					$condition='status='.Post::STATUS_PUBLISHED.' OR status='.Post::STATUS_ARCHIVED;
+				else
+					$condition='';
+				$this->_model=Post::model()->findByPk($_GET['id'], $condition);
+			}
+			if($this->_model===null)
+				throw new CHttpException(404,'The requested page does not exist.');
+		}
+		return $this->_model;
+	}
+
+	/**
+	 * Creates a new comment.
+	 * This method attempts to create a new comment based on the user input.
+	 * If the comment is successfully created, the browser will be redirected
+	 * to show the created comment.
+	 * @param Post the post that the new comment belongs to
+	 * @return Comment the comment instance
+	 */
+	protected function newComment($post)
+	{
+		$comment=new Comment;
+		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
+		{
+			echo CActiveForm::validate($comment);
+			Yii::app()->end();
+		}
+		if(isset($_POST['Comment']))
+		{
+			$comment->attributes=$_POST['Comment'];
+			if($post->addComment($comment))
+			{
+				if($comment->status==Comment::STATUS_PENDING)
+					Yii::app()->user->setFlash('commentSubmitted','Thank you for your comment. Your comment will be posted once it is approved.');
+				$this->refresh();
+			}
+		}
+		return $comment;
+	}
+}

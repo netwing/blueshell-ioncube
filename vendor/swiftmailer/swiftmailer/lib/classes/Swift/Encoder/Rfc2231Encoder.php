@@ -1,44 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Handles RFC 2231 specified Encoding in Swift Mailer.
+ *
+ * @package    Swift
+ * @subpackage Encoder
+ * @author     Chris Corbyn
+ */
+class Swift_Encoder_Rfc2231Encoder implements Swift_Encoder
+{
+    /**
+     * A character stream to use when reading a string as characters instead of bytes.
+     *
+     * @var Swift_CharacterStream
+     */
+    private $_charStream;
+
+    /**
+     * Creates a new Rfc2231Encoder using the given character stream instance.
+     *
+     * @param Swift_CharacterStream
+     */
+    public function __construct(Swift_CharacterStream $charStream)
+    {
+        $this->_charStream = $charStream;
+    }
+
+    /**
+     * Takes an unencoded string and produces a string encoded according to
+     * RFC 2231 from it.
+     *
+     * @param string  $string
+     * @param integer $firstLineOffset
+     * @param integer $maxLineLength   optional, 0 indicates the default of 75 bytes
+     *
+     * @return string
+     */
+    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
+    {
+        $lines = array(); $lineCount = 0;
+        $lines[] = '';
+        $currentLine =& $lines[$lineCount++];
+
+        if (0 >= $maxLineLength) {
+            $maxLineLength = 75;
+        }
+
+        $this->_charStream->flushContents();
+        $this->_charStream->importString($string);
+
+        $thisLineLength = $maxLineLength - $firstLineOffset;
+
+        while (false !== $char = $this->_charStream->read(4)) {
+            $encodedChar = rawurlencode($char);
+            if (0 != strlen($currentLine)
+                && strlen($currentLine . $encodedChar) > $thisLineLength)
+            {
+                $lines[] = '';
+                $currentLine =& $lines[$lineCount++];
+                $thisLineLength = $maxLineLength;
+            }
+            $currentLine .= $encodedChar;
+        }
+
+        return implode("\r\n", $lines);
+    }
+
+    /**
+     * Updates the charset used.
+     *
+     * @param string $charset
+     */
+    public function charsetChanged($charset)
+    {
+        $this->_charStream->setCharacterSet($charset);
+    }
+}

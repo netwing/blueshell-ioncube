@@ -1,33 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the PhpunitMarkupValidators package.
+ *
+ * (c) Kevin Weber <kevintweber@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace kevintweber\PhpunitMarkupValidators\Util;
+
+/**
+ * A singleton designed to throttle the calls to the W3C servers.
+ *
+ * Each service specifically states that no more than 1 call per second is
+ * allowed.  This class will throttle calls on a per service basis to less
+ * than 1 call per second.
+ */
+class Throttle
+{
+    protected $timeAccessed = array();
+
+    static protected $instance = null;
+
+    /**
+     * Constructor
+     */
+    protected function __construct() {}
+    protected function __clone() {}
+
+    /**
+     * Will instantiate the class if not already.
+     *
+     * @return An instance of this object.
+     */
+    protected static function instance()
+    {
+        if (self::$instance === null) {
+            self::$instance = new Throttle();
+        }
+
+        return self::$instance;
+    }
+
+    public static function delay($service)
+    {
+        $instance = self::instance();
+
+        if (isset($instance->timeAccessed[$service])) {
+            $timeDifference = microtime(true) - $instance->timeAccessed[$service];
+
+            // If this service has been called less than 1 second ago,
+            // then we wait the rest of the second.
+            if ($timeDifference < 1.0) {
+                usleep((1.0 - $timeDifference) * 1000000);
+            }
+        }
+
+        $instance->timeAccessed[$service] = microtime(true);
+    }
+}

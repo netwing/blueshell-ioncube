@@ -1,32 +1,51 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-KdcVxrmmJpJ7rYDvLW1+KVkaYxzUjIUxz4i=
+<?php
+/**
+ * Smarty Internal Plugin Compile Append
+ *
+ * Compiles the {append} tag
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Append Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Append extends Smarty_Internal_Compile_Assign
+{
+    /**
+     * Compiles code for the {append} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // the following must be assigned at runtime because it will be overwritten in parent class
+        $this->required_attributes = array('var', 'value');
+        $this->shorttag_order = array('var', 'value');
+        $this->optional_attributes = array('scope', 'index');
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        // map to compile assign attributes
+        if (isset($_attr['index'])) {
+            $_params['smarty_internal_index'] = '[' . $_attr['index'] . ']';
+            unset($_attr['index']);
+        } else {
+            $_params['smarty_internal_index'] = '[]';
+        }
+        $_new_attr = array();
+        foreach ($_attr as $key => $value) {
+            $_new_attr[] = array($key => $value);
+        }
+        // call compile assign
+        return parent::compile($_new_attr, $compiler, $_params);
+    }
+
+}

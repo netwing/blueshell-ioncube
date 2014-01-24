@@ -1,57 +1,104 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Events/SendEvent.php';
+require_once 'Swift/Mime/Message.php';
+require_once 'Swift/Transport.php';
+
+class Swift_Events_SendEventTest extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testMessageCanBeFetchedViaGetter()
+    {
+        $message = $this->_createMessage();
+        $transport = $this->_createTransport();
+
+        $evt = $this->_createEvent($transport, $message);
+
+        $ref = $evt->getMessage();
+        $this->assertReference($message, $ref,
+            '%s: Message should be returned from getMessage()'
+            );
+    }
+
+    public function testTransportCanBeFetchViaGetter()
+    {
+        $message = $this->_createMessage();
+        $transport = $this->_createTransport();
+
+        $evt = $this->_createEvent($transport, $message);
+
+        $ref = $evt->getTransport();
+        $this->assertReference($transport, $ref,
+            '%s: Transport should be returned from getTransport()'
+            );
+    }
+
+    public function testTransportCanBeFetchViaGetSource()
+    {
+        $message = $this->_createMessage();
+        $transport = $this->_createTransport();
+
+        $evt = $this->_createEvent($transport, $message);
+
+        $ref = $evt->getSource();
+        $this->assertReference($transport, $ref,
+            '%s: Transport should be returned from getSource()'
+            );
+    }
+
+    public function testResultCanBeSetAndGet()
+    {
+        $message = $this->_createMessage();
+        $transport = $this->_createTransport();
+
+        $evt = $this->_createEvent($transport, $message);
+
+        $evt->setResult(
+            Swift_Events_SendEvent::RESULT_SUCCESS | Swift_Events_SendEvent::RESULT_TENTATIVE
+            );
+
+        $this->assertTrue($evt->getResult() & Swift_Events_SendEvent::RESULT_SUCCESS);
+        $this->assertTrue($evt->getResult() & Swift_Events_SendEvent::RESULT_TENTATIVE);
+    }
+
+    public function testFailedRecipientsCanBeSetAndGet()
+    {
+        $message = $this->_createMessage();
+        $transport = $this->_createTransport();
+
+        $evt = $this->_createEvent($transport, $message);
+
+        $evt->setFailedRecipients(array('foo@bar', 'zip@button'));
+
+        $this->assertEqual(array('foo@bar', 'zip@button'), $evt->getFailedRecipients(),
+            '%s: FailedRecipients should be returned from getter'
+            );
+    }
+
+    public function testFailedRecipientsGetsPickedUpCorrectly()
+    {
+        $message = $this->_createMessage();
+        $transport = $this->_createTransport();
+
+        $evt = $this->_createEvent($transport, $message);
+        $this->assertEqual(array(), $evt->getFailedRecipients());
+    }
+
+    // -- Creation Methods
+
+    private function _createEvent(Swift_Transport $source,
+        Swift_Mime_Message $message)
+    {
+        return new Swift_Events_SendEvent($source, $message);
+    }
+
+    private function _createTransport()
+    {
+        return $this->_stub('Swift_Transport');
+    }
+
+    private function _createMessage()
+    {
+        return $this->_stub('Swift_Mime_Message');
+    }
+}

@@ -1,325 +1,952 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-j4FPPhdTvQbutbJUN65Pk7NmXQUl6rZk
+<?php
+
+namespace Behat\Mink\Driver;
+
+use Behat\Mink\Session,
+    Behat\Mink\Element\NodeElement,
+    Behat\Mink\Exception\DriverException;
+
+use WebDriver\WebDriver;
+use WebDriver\Key;
+
+/*
+ * This file is part of the Behat\Mink.
+ * (c) Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Selenium2 driver.
+ *
+ * @author Pete Otaqui <pete@otaqui.com>
+ */
+class Selenium2Driver extends CoreDriver
+{
+    /**
+     * The current Mink session
+     * @var \Behat\Mink\Session
+     */
+    private $session;
+
+    /**
+     * Whether the browser has been started
+     * @var Boolean
+     */
+    private $started = false;
+
+    /**
+     * The WebDriver instance
+     * @var WebDriver
+     */
+    private $webDriver;
+
+    /**
+     * @var string
+     */
+    private $browserName;
+
+    /**
+     * @var array
+     */
+    private $desiredCapabilities;
+
+    /**
+     * The WebDriverSession instance
+     * @var \WebDriver\Session
+     */
+    private $wdSession;
+
+    /**
+     * Instantiates the driver.
+     *
+     * @param string    $browserName Browser name
+     * @param array     $desiredCapabilities The desired capabilities
+     * @param string    $wdHost The WebDriver host
+     */
+    public function __construct($browserName = 'firefox', $desiredCapabilities = null, $wdHost = 'http://localhost:4444/wd/hub')
+    {
+        $this->setBrowserName($browserName);
+        $this->setDesiredCapabilities($desiredCapabilities);
+        $this->setWebDriver(new WebDriver($wdHost));
+    }
+
+    /**
+     * Sets the browser name
+     *
+     * @param string $browserName the name of the browser to start, default is 'firefox'
+     */
+    protected function setBrowserName($browserName = 'firefox')
+    {
+        $this->browserName = $browserName;
+    }
+
+    /**
+     * Sets the desired capabilities - called on construction.  If null is provided, will set the
+     * defaults as dsesired.
+     *
+     * See http://code.google.com/p/selenium/wiki/DesiredCapabilities
+     *
+     * @param   array $desiredCapabilities  an array of capabilities to pass on to the WebDriver server
+     */
+    public function setDesiredCapabilities($desiredCapabilities = null)
+    {
+        if (null === $desiredCapabilities) {
+            $desiredCapabilities = self::getDefaultCapabilities();
+        }
+
+        if (isset($desiredCapabilities['firefox'])) {
+            foreach ($desiredCapabilities['firefox'] as $capability => $value) {
+                switch ($capability) {
+                    case 'profile':
+                        $desiredCapabilities['firefox_'.$capability] = base64_encode(file_get_contents($value));
+                        break;
+                    default:
+                        $desiredCapabilities['firefox_'.$capability] = $value;
+                }
+            }
+
+            unset($desiredCapabilities['firefox']);
+        }
+
+        if (isset($desiredCapabilities['chrome'])) {
+            foreach ($desiredCapabilities['chrome'] as $capability => $value) {
+                $desiredCapabilities['chrome.'.$capability] = $value;
+            }
+
+            unset($desiredCapabilities['chrome']);
+        }
+
+        $this->desiredCapabilities = $desiredCapabilities;
+    }
+
+    /**
+     * Sets the WebDriver instance
+     *
+     * @param WebDriver $webDriver An instance of the WebDriver class
+     */
+    public function setWebDriver(WebDriver $webDriver)
+    {
+        $this->webDriver = $webDriver;
+    }
+
+    /**
+     * Gets the WebDriverSession instance
+     *
+     * @return \WebDriver\Session
+     */
+    public function getWebDriverSession()
+    {
+        return $this->wdSession;
+    }
+
+    /**
+     * Returns the default capabilities
+     *
+     * @return array
+     */
+    public static function getDefaultCapabilities()
+    {
+        return array(
+            'browserName'       => 'firefox',
+            'version'           => '9',
+            'platform'          => 'ANY',
+            'browserVersion'    => '9',
+            'browser'           => 'firefox',
+            'name'              => 'Behat Test',
+            'deviceOrientation' => 'portrait',
+            'deviceType'        => 'tablet',
+            'selenium-version'  => '2.31.0'
+        );
+    }
+
+    /**
+     * Makes sure that the Syn event library has been injected into the current page,
+     * and return $this for a fluid interface,
+     *
+     *     $this->withSyn()->executeJsOnXpath($xpath, $script);
+     *
+     * @return Selenium2Driver
+     */
+    protected function withSyn()
+    {
+        $hasSyn = $this->wdSession->execute(array(
+            'script' => 'return typeof window["Syn"]!=="undefined"',
+            'args'   => array()
+        ));
+
+        if (!$hasSyn) {
+            $synJs = file_get_contents(__DIR__.'/Selenium2/syn.js');
+            $this->wdSession->execute(array(
+                'script' => $synJs,
+                'args'   => array()
+            ));
+        }
+
+        return $this;
+    }
+
+    /**
+     * Creates some options for key events
+     *
+     * @param  string $event         the type of event ('keypress', 'keydown', 'keyup');
+     * @param  string $char          the character or code
+     * @param  string $modifier=null one of 'shift', 'alt', 'ctrl' or 'meta'
+     *
+     * @return string a json encoded options array for Syn
+     */
+    protected static function charToOptions($event, $char, $modifier=null)
+    {
+        $ord = ord($char);
+        if (is_numeric($char)) {
+            $ord  = $char;
+            $char = chr($char);
+        }
+
+        $options = array(
+            'keyCode'  => $ord,
+            'charCode' => $ord
+        );
+
+        if ($modifier) {
+            $options[$modifier.'Key'] = 1;
+        }
+
+        return json_encode($options);
+    }
+
+    /**
+     * Executes JS on a given element - pass in a js script string and {{ELEMENT}} will
+     * be replaced with a reference to the result of the $xpath query
+     *
+     * @example $this->executeJsOnXpath($xpath, 'return {{ELEMENT}}.childNodes.length');
+     *
+     * @param  string   $xpath  the xpath to search with
+     * @param  string   $script the script to execute
+     * @param  Boolean  $sync   whether to run the script synchronously (default is TRUE)
+     *
+     * @return mixed
+     */
+    protected function executeJsOnXpath($xpath, $script, $sync = true)
+    {
+        $element   = $this->wdSession->element('xpath', $xpath);
+        $elementID = $element->getID();
+        $subscript = "arguments[0]";
+
+        $script  = str_replace('{{ELEMENT}}', $subscript, $script);
+        $execute = ($sync) ? 'execute' : 'execute_async';
+
+        return $this->wdSession->$execute(array(
+            'script' => $script,
+            'args'   => array(array('ELEMENT' => $elementID))
+        ));
+    }
+
+    /**
+     * @see Behat\Mink\Driver\DriverInterface::setSession()
+     */
+    public function setSession(Session $session)
+    {
+        $this->session = $session;
+    }
+
+    /**
+     * Starts driver.
+     */
+    public function start()
+    {
+        try {
+            $this->wdSession = $this->webDriver->session($this->browserName, $this->desiredCapabilities);
+        } catch (\Exception $e) {
+            throw new DriverException('Could not open connection', 0, $e);
+        }
+
+        if (!$this->wdSession) {
+            throw new DriverException('Could not connect to a Selenium 2 / WebDriver server');
+        }
+        $this->started = true;
+    }
+
+    /**
+     * Checks whether driver is started.
+     *
+     * @return  Boolean
+     */
+    public function isStarted()
+    {
+        return $this->started;
+    }
+
+    /**
+     * Stops driver.
+     */
+    public function stop()
+    {
+        if (!$this->wdSession) {
+            throw new DriverException('Could not connect to a Selenium 2 / WebDriver server');
+        }
+
+        $this->started = false;
+        try {
+            $this->wdSession->close();
+        } catch (\Exception $e) {
+            throw new DriverException('Could not close connection', 0, $e);
+        }
+    }
+
+    /**
+     * Resets driver.
+     */
+    public function reset()
+    {
+        $this->wdSession->deleteAllCookies();
+    }
+
+    /**
+     * Visit specified URL.
+     *
+     * @param   string  $url    url of the page
+     */
+    public function visit($url)
+    {
+        $this->wdSession->open($url);
+    }
+
+    /**
+     * Returns current URL address.
+     *
+     * @return  string
+     */
+    public function getCurrentUrl()
+    {
+        return $this->wdSession->url();
+    }
+
+    /**
+     * Reloads current page.
+     */
+    public function reload()
+    {
+        $this->wdSession->refresh();
+    }
+
+    /**
+     * Moves browser forward 1 page.
+     */
+    public function forward()
+    {
+        $this->wdSession->forward();
+    }
+
+    /**
+     * Moves browser backward 1 page.
+     */
+    public function back()
+    {
+        $this->wdSession->back();
+    }
+
+    /**
+     * Switches to specific browser window.
+     *
+     * @param string $name window name (null for switching back to main window)
+     */
+    public function switchToWindow($name = null)
+    {
+        $this->wdSession->focusWindow($name ? $name : '');
+    }
+
+    /**
+     * Switches to specific iFrame.
+     *
+     * @param string $name iframe name (null for switching back)
+     */
+    public function switchToIFrame($name = null)
+    {
+        $this->wdSession->frame(array('id' => $name));
+    }
+
+    /**
+     * Sets cookie.
+     *
+     * @param   string  $name
+     * @param   string  $value
+     */
+    public function setCookie($name, $value = null)
+    {
+        if (null === $value) {
+            $this->wdSession->deleteCookie($name);
+
+            return;
+        }
+
+        $cookieArray = array(
+            'name'   => $name,
+            'value'  => (string) $value,
+            'secure' => false, // thanks, chibimagic!
+        );
+
+        $this->wdSession->setCookie($cookieArray);
+    }
+
+    /**
+     * Returns cookie by name.
+     *
+     * @param   string  $name
+     *
+     * @return  string|null
+     */
+    public function getCookie($name)
+    {
+        $cookies = $this->wdSession->getAllCookies();
+        foreach ($cookies as $cookie) {
+            if ($cookie['name'] === $name) {
+                return urldecode($cookie['value']);
+            }
+        }
+    }
+
+    /**
+     * Returns last response content.
+     *
+     * @return  string
+     */
+    public function getContent()
+    {
+        return $this->wdSession->source();
+    }
+
+    /**
+     * Capture a screenshot of the current window.
+     *
+     * @return  string  screenshot of MIME type image/* depending
+     *   on driver (e.g., image/png, image/jpeg)
+     */
+    public function getScreenshot()
+    {
+        return base64_decode($this->wdSession->screenshot());
+    }
+
+    /**
+     * Finds elements with specified XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  array           array of Behat\Mink\Element\NodeElement
+     */
+    public function find($xpath)
+    {
+        $nodes = $this->wdSession->elements('xpath', $xpath);
+
+        $elements = array();
+        foreach ($nodes as $i => $node) {
+            $elements[] = new NodeElement(sprintf('(%s)[%d]', $xpath, $i+1), $this->session);
+        }
+
+        return $elements;
+    }
+
+    /**
+     * Returns element's tag name by it's XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  string
+     */
+    public function getTagName($xpath)
+    {
+        return $this->wdSession->element('xpath', $xpath)->name();
+    }
+
+    /**
+     * Returns element's text by it's XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  string
+     */
+    public function getText($xpath)
+    {
+        $node = $this->wdSession->element('xpath', $xpath);
+        $text = $node->text();
+        $text = (string) str_replace(array("\r", "\r\n", "\n"), ' ', $text);
+
+        return $text;
+    }
+
+    /**
+     * Returns element's html by it's XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  string
+     */
+    public function getHtml($xpath)
+    {
+        return $this->executeJsOnXpath($xpath, 'return {{ELEMENT}}.innerHTML;');
+    }
+
+    /**
+     * Returns element's attribute by it's XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  mixed
+     */
+    public function getAttribute($xpath, $name)
+    {
+        $attribute = $this->wdSession->element('xpath', $xpath)->attribute($name);
+        if ('' !== $attribute) {
+            return $attribute;
+        }
+    }
+
+    /**
+     * Returns element's value by it's XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  mixed
+     */
+    public function getValue($xpath)
+    {
+        $script = <<<JS
+var node = {{ELEMENT}},
+    tagName = node.tagName;
+
+if (tagName == "INPUT" || "TEXTAREA" == tagName) {
+    var type = node.getAttribute('type');
+    if (type == "checkbox") {
+        value = "boolean:" + node.checked;
+    } else if (type == "radio") {
+        var name = node.getAttribute('name');
+        if (name) {
+            var fields = window.document.getElementsByName(name);
+            var i, l = fields.length;
+            for (i = 0; i < l; i++) {
+                var field = fields.item(i);
+                if (field.checked) {
+                    value = "string:" + field.value;
+                }
+            }
+        }
+    } else {
+        value = "string:" + node.value;
+    }
+} else if (tagName == "SELECT") {
+    if (node.getAttribute('multiple')) {
+        options = [];
+        for (var i = 0; i < node.options.length; i++) {
+            if (node.options[ i ].selected) {
+                options.push(node.options[ i ].value);
+            }
+        }
+        value = "array:" + options.join(',');
+    } else {
+        var idx = node.selectedIndex;
+        if (idx >= 0) {
+            value = "string:" + node.options.item(idx).value;
+        } else {
+            value = null;
+        }
+    }
+} else {
+    attributeValue = node.getAttribute('value');
+    if (attributeValue != null) {
+        value = "string:" + attributeValue;
+    } else if (node.value) {
+        value = "string:" + node.value;
+    } else {
+        return null;
+    }
+}
+
+return value;
+JS;
+
+        $value = $this->executeJsOnXpath($xpath, $script);
+        if ($value) {
+            if (preg_match('/^string:(.*)$/ms', $value, $vars)) {
+                return $vars[1];
+            }
+            if (preg_match('/^boolean:(.*)$/', $value, $vars)) {
+                return 'true' === strtolower($vars[1]);
+            }
+            if (preg_match('/^array:(.*)$/', $value, $vars)) {
+                if ('' === trim($vars[1])) {
+                    return array();
+                }
+
+                return explode(',', $vars[1]);
+            }
+        }
+    }
+
+    /**
+     * Sets element's value by it's XPath query.
+     *
+     * @param   string  $xpath
+     * @param   string  $value
+     */
+    public function setValue($xpath, $value)
+    {
+        $value = strval($value);
+        $element = $this->wdSession->element('xpath', $xpath);
+        $elementname = strtolower($element->name());
+
+        switch (true) {
+            case ($elementname == 'input' && strtolower($element->attribute('type')) == 'text'):
+                for ($i = 0; $i < strlen($element->attribute('value')); $i++) {
+                    $value = Key::BACKSPACE . $value;
+                }
+                break;
+            case ($elementname == 'textarea'):
+            case ($elementname == 'input' && strtolower($element->attribute('type')) != 'file'):
+                $element->clear();
+                break;
+            case ($elementname == 'select'):
+                $this->selectOption($xpath, $value);
+                return;
+        }
+
+        $element->value(array('value' => array($value)));
+        $script = "Syn.trigger('change', {}, {{ELEMENT}})";
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Checks checkbox by it's XPath query.
+     *
+     * @param   string  $xpath
+     */
+    public function check($xpath)
+    {
+        $this->executeJsOnXpath($xpath, '{{ELEMENT}}.checked = true');
+        $script = "Syn.trigger('change', {}, {{ELEMENT}})";
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Unchecks checkbox by it's XPath query.
+     *
+     * @param   string  $xpath
+     */
+    public function uncheck($xpath)
+    {
+        $this->executeJsOnXpath($xpath, '{{ELEMENT}}.checked = false');
+        $script = "Syn.trigger('change', {}, {{ELEMENT}})";
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Checks whether checkbox checked located by it's XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  Boolean
+     */
+    public function isChecked($xpath)
+    {
+        return $this->wdSession->element('xpath', $xpath)->selected();
+    }
+
+    /**
+     * Selects option from select field located by it's XPath query.
+     *
+     * @param   string  $xpath
+     * @param   string  $value
+     * @param   Boolean $multiple
+     */
+    public function selectOption($xpath, $value, $multiple = false)
+    {
+        $valueEscaped = str_replace('"', '\"', $value);
+        $multipleJS   = $multiple ? 'true' : 'false';
+
+        $script = <<<JS
+// Function to triger an event. Cross-browser compliant. See http://stackoverflow.com/a/2490876/135494
+var triggerEvent = function (element, eventName) {
+    var event;
+    if (document.createEvent) {
+        event = document.createEvent("HTMLEvents");
+        event.initEvent(eventName, true, true);
+    } else {
+        event = document.createEventObject();
+        event.eventType = eventName;
+    }
+
+    event.eventName = eventName;
+
+    if (document.createEvent) {
+        element.dispatchEvent(event);
+    } else {
+        element.fireEvent("on" + event.eventType, event);
+    }
+}
+
+var node = {{ELEMENT}}
+if (node.tagName == 'SELECT') {
+    var i, l = node.length;
+    for (i = 0; i < l; i++) {
+        if (node[i].value == "$valueEscaped") {
+            node[i].selected = true;
+        } else if (!$multipleJS) {
+            node[i].selected = false;
+        }
+    }
+    triggerEvent(node, 'change');
+
+} else {
+    var nodes = window.document.getElementsByName(node.getAttribute('name'));
+    var i, l = nodes.length;
+    for (i = 0; i < l; i++) {
+        if (nodes[i].getAttribute('value') == "$valueEscaped") {
+            node.checked = true;
+        }
+    }
+    if (node.tagName == 'INPUT') {
+      var type = node.getAttribute('type');
+      if (type == 'radio') {
+        triggerEvent(node, 'change');
+      }
+    }
+}
+JS;
+
+
+        $this->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Clicks button or link located by it's XPath query.
+     *
+     * @param   string  $xpath
+     */
+    public function click($xpath)
+    {
+        $this->wdSession->element('xpath', $xpath)->click('');
+    }
+
+    /**
+     * Double-clicks button or link located by it's XPath query.
+     *
+     * @param   string  $xpath
+     */
+    public function doubleClick($xpath)
+    {
+        $script = 'Syn.dblclick({{ELEMENT}})';
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Right-clicks button or link located by it's XPath query.
+     *
+     * @param   string  $xpath
+     */
+    public function rightClick($xpath)
+    {
+        $script = 'Syn.rightClick({{ELEMENT}})';
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Attaches file path to file field located by it's XPath query.
+     *
+     * @param   string  $xpath
+     * @param   string  $path
+     */
+    public function attachFile($xpath, $path)
+    {
+        $this->wdSession->element('xpath', $xpath)->value(array('value'=>str_split($path)));
+    }
+
+    /**
+     * Checks whether element visible located by it's XPath query.
+     *
+     * @param   string  $xpath
+     *
+     * @return  Boolean
+     */
+    public function isVisible($xpath)
+    {
+        return $this->wdSession->element('xpath', $xpath)->displayed();
+    }
+
+    /**
+     * Simulates a mouse over on the element.
+     *
+     * @param   string  $xpath
+     */
+    public function mouseOver($xpath)
+    {
+        $script = 'Syn.trigger("mouseover", {}, {{ELEMENT}})';
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Brings focus to element.
+     *
+     * @param   string  $xpath
+     */
+    public function focus($xpath)
+    {
+        $script = 'Syn.trigger("focus", {}, {{ELEMENT}})';
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Removes focus from element.
+     *
+     * @param   string  $xpath
+     */
+    public function blur($xpath)
+    {
+        $script = 'Syn.trigger("blur", {}, {{ELEMENT}})';
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Presses specific keyboard key.
+     *
+     * @param   string  $xpath
+     * @param   mixed   $char       could be either char ('b') or char-code (98)
+     * @param   string  $modifier   keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function keyPress($xpath, $char, $modifier = null)
+    {
+        $options = self::charToOptions('keypress', $char, $modifier);
+        $script = "Syn.trigger('keypress', $options, {{ELEMENT}})";
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Pressed down specific keyboard key.
+     *
+     * @param   string  $xpath
+     * @param   mixed   $char       could be either char ('b') or char-code (98)
+     * @param   string  $modifier   keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function keyDown($xpath, $char, $modifier = null)
+    {
+        $options = self::charToOptions('keydown', $char, $modifier);
+        $script = "Syn.trigger('keydown', $options, {{ELEMENT}})";
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+    /**
+     * Pressed up specific keyboard key.
+     *
+     * @param   string  $xpath
+     * @param   mixed   $char       could be either char ('b') or char-code (98)
+     * @param   string  $modifier   keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function keyUp($xpath, $char, $modifier = null)
+    {
+        $options = self::charToOptions('keyup', $char, $modifier);
+        $script = "Syn.trigger('keyup', $options, {{ELEMENT}})";
+        $this->withSyn()->executeJsOnXpath($xpath, $script);
+    }
+
+
+    /**
+     * Drag one element onto another.
+     *
+     * @param   string  $sourceXpath
+     * @param   string  $destinationXpath
+     */
+    public function dragTo($sourceXpath, $destinationXpath)
+    {
+        $source      = $this->wdSession->element('xpath', $sourceXpath);
+        $destination = $this->wdSession->element('xpath', $destinationXpath);
+
+        $this->wdSession->moveto(array(
+            'element' => $source->getID()
+        ));
+
+        $script = <<<JS
+(function (element) {
+    var event = document.createEvent("HTMLEvents");
+
+    event.initEvent("dragstart", true, true);
+    event.dataTransfer = {};
+
+    element.dispatchEvent(event);
+}({{ELEMENT}}));
+JS;
+        $this->withSyn()->executeJsOnXpath($sourceXpath, $script);
+
+        $this->wdSession->buttondown();
+        $this->wdSession->moveto(array(
+            'element' => $destination->getID()
+        ));
+        $this->wdSession->buttonup();
+
+        $script = <<<JS
+(function (element) {
+    var event = document.createEvent("HTMLEvents");
+
+    event.initEvent("drop", true, true);
+    event.dataTransfer = {};
+
+    element.dispatchEvent(event);
+}({{ELEMENT}}));
+JS;
+        $this->withSyn()->executeJsOnXpath($destinationXpath, $script);
+    }
+
+    /**
+     * Executes JS script.
+     *
+     * @param   string  $script
+     */
+    public function executeScript($script)
+    {
+        $this->wdSession->execute(array('script' => $script, 'args' => array()));
+    }
+
+    /**
+     * Evaluates JS script.
+     *
+     * @param   string  $script
+     *
+     * @return  mixed           script return value
+     */
+    public function evaluateScript($script)
+    {
+        return $this->wdSession->execute(array('script' => $script, 'args' => array()));
+    }
+
+    /**
+     * Waits some time or until JS condition turns true.
+     *
+     * @param   integer $time       time in milliseconds
+     * @param   string  $condition  JS condition
+     *
+     * @return boolean
+     */
+    public function wait($time, $condition)
+    {
+        $script = "return $condition;";
+        $start = microtime(true);
+        $end = $start + $time / 1000.0;
+
+        do {
+            $result = $this->wdSession->execute(array('script' => $script, 'args' => array()));
+            usleep(100000);
+        } while ( microtime(true) < $end && !$result );
+
+        return (bool)$result;
+    }
+
+    /**
+     * Set the dimensions of the window.
+     *
+     * @param integer $width set the window width, measured in pixels
+     * @param integer $height set the window height, measured in pixels
+     * @param string $name window name (null for the main window)
+     */
+    public function resizeWindow($width, $height, $name = null)
+    {
+        return $this->wdSession->window($name ? $name : 'current')->postSize(array('width' => $width, 'height' => $height));
+    }
+}

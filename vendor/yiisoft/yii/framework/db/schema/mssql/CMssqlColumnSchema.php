@@ -1,48 +1,88 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CMssqlColumnSchema class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @author Christophe Boulain <Christophe.Boulain@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CMssqlColumnSchema class describes the column meta data of a MSSQL table.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @author Christophe Boulain <Christophe.Boulain@gmail.com>
+ * @package system.db.schema.mssql
+ */
+class CMssqlColumnSchema extends CDbColumnSchema
+{
+
+	/**
+	 * Initializes the column with its DB type and default value.
+	 * This sets up the column's PHP type, size, precision, scale as well as default value.
+	 * @param string $dbType the column's DB type
+	 * @param mixed $defaultValue the default value
+	 */
+	public function init($dbType, $defaultValue)
+	{
+		if ($defaultValue=='(NULL)')
+		{
+			$defaultValue=null;
+		}
+		parent::init($dbType, $defaultValue);
+	}
+
+
+	/**
+	 * Extracts the PHP type from DB type.
+	 * @param string $dbType DB type
+	 */
+	protected function extractType($dbType)
+	{
+		if(strpos($dbType,'float')!==false || strpos($dbType,'real')!==false)
+			$this->type='double';
+		elseif(strpos($dbType,'bigint')===false && (strpos($dbType,'int')!==false || strpos($dbType,'smallint')!==false || strpos($dbType,'tinyint')))
+			$this->type='integer';
+		elseif(strpos($dbType,'bit')!==false)
+			$this->type='boolean';
+		else
+			$this->type='string';
+	}
+
+	/**
+	 * Extracts the default value for the column.
+	 * The value is typecasted to correct PHP type.
+	 * @param mixed $defaultValue the default value obtained from metadata
+	 */
+	protected function extractDefault($defaultValue)
+	{
+		if($this->dbType==='timestamp' )
+			$this->defaultValue=null;
+		else
+			parent::extractDefault(str_replace(array('(',')',"'"), '', $defaultValue));
+	}
+
+	/**
+	 * Extracts size, precision and scale information from column's DB type.
+	 * We do nothing here, since sizes and precisions have been computed before.
+	 * @param string $dbType the column's DB type
+	 */
+	protected function extractLimit($dbType)
+	{
+	}
+
+	/**
+	 * Converts the input value to the type that this column is of.
+	 * @param mixed $value input value
+	 * @return mixed converted value
+	 */
+	public function typecast($value)
+	{
+		if($this->type==='boolean')
+			return $value ? 1 : 0;
+		else
+			return parent::typecast($value);
+	}
+}

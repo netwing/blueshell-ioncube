@@ -1,66 +1,120 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPoeNXfxCjNhHdTaJlKc/wETAaDULfEzu4hsicKrxGxcsWiOBVQapTv134sEPBzxRhRjv5+VE
-n+z5gVIH+2aekMVtDTnl7dS7E86vkyPq8DsD4sPF2n13+e7JwbmrLshooFDOiU39kUDQ8hRGqCrH
-fXsrMo5FIwOXfMGTj8mK77rVJ5V5p2yMoXxKuoP0wLjLtkLc9q4D6EAOuULPu79Ixx6+ZUJ7GLXg
-/MDfA1QpOjoN2gn3NPh8hr4euJltSAgiccy4GDnfTC5chwt4EZJ/1G1O/c1HNy0NlCSGMwa1yRpl
-2P3+BdqR5wSK7KV26Kvvp9Wk2QLZT2dpcwe3wj49W55ypgnwQRGW6r1OVcN4lOwKQwSTgVeUEa6c
-SkD/oC5bI8V6mfoP+v0G3nueE8J0SrPHwt+fOiwVu+XRHbJ6QDw3so5lq/ElUndsSe+GDSb8KeU1
-1J2ft4aufPV5aL/WM71zbONUwxsK9VkVzm9E6ekSWt6nigJUoCfHMF+Y+6yagL2HGRI19YhK9ucT
-4gHmofHi62M/btOVGgrCpCOvyScWNRvZCpE04Y6BlrnmvEpOJR0a14THIlLKuIsH/vyZywzSSKXV
-6qxdOdBOMYEo6CNAzuj1gthm/i1YKq//stuDgUofo9vi1C3XK+ZOn4ORAqz0aCM79RItDSXHHvPh
-0Tk4hZLXT1jgXF1P8Mq2ltScIdoRZ0X+49xvP5B8w7Uj6WmBwcUe6Mdg0xq7S6+XN9BwEPB4rMep
-yJZJ/kBgqFUP1n5laXR5UZ3VSJx8ufoU5ZBZ7J+Fwm/JxQFg8FpTRRSR+GIVaSaHj5Csd3j4NZiX
-XQEl/PkZhUrcREdRQZsoqhqfej43oSHIbptEUoRNDa66eB1GmXcGfK4vSEZtMhU8BUW0gwVe0LF9
-O55NKTXkfADiLgysZDTYe27jOoLkjaI4pIfzw1jW0BlzFst8iqBJti9g+OQR/KgVyz+c6D2v7teh
-ldekZuAMV+FPc1askuuqXFEaIfterD+CBmGh5w4wScJTsjaibmq276HGKNTdVS+fnCqJIPhMbrCn
-w2AJkNj5jIr9z738+qp4R8Ui5DYGLWfolgtOLI+USzIOq8WV7W27BGxbjxgVjeonGjs6M4nCSGNv
-Ygcu4iCR2B3ViwTmyIwp/dkL7mpdjWAobiZWz/wdiS0kVCqsKmBIUbJveGApixuhAJ4zGEB0KVyN
-CKyV/JYJhmdbPMnL55/HfB8VMLJdW7DfDaeVwVHRX3Skc5ndBZG8J2ux5oNdxyV0HdPDXdBAUFBe
-cEFL2md8tawL/Vp6g1mjHen7CCeJg9y+aKTCb3a8KgSED5ZJZeSLJV/+7kgLIu20S/DSzTRnFpWv
-8swAja5tnSPGBYyFO+OU7YjytfcFS3CT7gLpgKzkJSR1BybA2CCny2i7fErVVdyaaxNHT9qf4Xie
-jvvF0I8pilum7ywPUpAZuz3uDhW+IQT4TA5Xrj34YHbGd61bU5eWgNFu4SCUHK5HMZzMdLQ3EVRb
-gN+FBzsCWovgOtn2f6NiVSMfHeI3SiQd/leizkiGumkTsfavbRYnc0bp7oXFQfIzpBiAuPrx5roK
-0vZW9mbecqT34fkh/Jjy25FoCjTEwxlW70YnaqgDmoVXXPqZHwv/IKaS0F2J/mleBvVBtDd2wq/z
-ft7dKjqfljBpx0/I6vFA5m8RELujPxak+ubYRnBbivlDYbB88ZbtDHwlqwNVs+LRPcOX8p/DQqwX
-NJiUk+NrpXfTzKedQSu01qzmbuCOjcOnfGCMpYF3oaBu1KHaK+UAvlwBYwDWe6DWAEWOmYhqr/l+
-Kkhg570iI6WxOqFATZzoyUAv7D2YBnbrCv7iy9LNAT6OeGS8u3ttE+b8GRdqDE0w2W2mStN+SkH2
-BEyPUE8P94bN9SdUW7dEHizxE3e0MkLpLdvKHwn02wIpxIabWeLYoiav80Qzb/LhttCSyPF2pthW
-vYMKxp0ZaOSP5v2q1YZgwmwDxWB3nzMzt74i+7cTX9wc1/+j/3LiA6wuCyB3JNTi9CXsCL0RHtCI
-1MHU9oO38FlaZ/p2nL/oQELdPPBB/DHK783qaaPzSfahdubgsN9yyQcnGbZgrmePTjoDT7wcmuEi
-+lPe+ugn5YWxYXrVEeNNi5AA7+V1dzobGQB81S6cxPJvam6l1yiSVNhmeoxWAAFnbDAI95xaLW4o
-izNC2fUYCjdG3lmnlddoQVHylF532lGMZSezvzvKv6wWGbyEy9J64DXZbV/milxV1CcfZJhB0dkQ
-NiWwo2A0JwwNcrVzrbIhjfjB+90Licnyp2e++MRojwO142sj52uZxFsyelsp/MiDtbcSPnpnihzQ
-+ERjkYOdOhcVyMCwBTyYgjq+8j0C19Ny8Qnq3dD5h1u0XIPoL6WWoDidPz/yThhL56J/oXPW3PBY
-YPAAd5W8CEuMxVcQNR6BzCPq33+kwWgy4+5ILtrCoEOJNP/sM2SUidSwLFcyQP5nXtDmBrcfOG/6
-Z9eASlTIrVz5DgupnHGXS0c8sXcn0IvI8yKC21OYUF2ua/RYMP7Qi/I1a3T6MLrn0j/0fJZbzKjs
-T0flQz1sEMe/HLprwYXI/qbyAHzXgk1igUQNxj9v0OukRGdKoTZ/9HWF76Ju0Ue+Mayd9RO3LMRG
-i/4SUskpaR3eA3WCqeaFQEm09EroXiCM4lvtnXADouUiRMq8q65UXUEUhWR/NuGc+kunj0HiKyVj
-DMlxmgjdNm++kbUurFB8fHCXVSqQSfC37UKt5VYFO3gSTptqpmbwj6DNRt1d6r8VIDV73fFoYlZG
-M/wb1DbO0MiNYmprzm4kFc6AU5GvVT6lPC+7/xD3xAmR9I9NlShCyxoDAwJcK0btANue4h7PDjMN
-G8piaFAU3wVsj9xq5hYWErvm/aXDiCZdmCGhBBvamRN2oQ9p1Voo6ctgytgnAf3GyhI/VQc4Jsnl
-QAViqa7+fOQ+isy7dpi20tE1zjF0K5G+GPQ2YMljDZYqTsGcZx8JO6xWfsocBgbNkF5UVARzfe8i
-aNVFAMp7Q4qnbTBB2WYoDxXPZ3OEiKcNkf1uL1ngX0p8s7u/1LslOLiO9IX2/66nQEomXlGmIpMM
-91PaQwcetodIJHOkWjgIvDmcy4HDHd62Q4GzwCQMZhHV3Jj5/0GabQddYqDcmg8Wbx+7uBa9qWnh
-RSBz8VrRUSOCkDGci3aDRqSeUJiUV5Y+D2qMXYDUdqw+9CAMyBYJkKOVbqzHdDqOst7AA7RXv09l
-BDICjqEEBi5IWpqAMQOijkIWcG/CqJrBih6liDSgboLCGhkSARG1M8RtR30ICv15vEOQjxh94gnt
-Ug2FLgR7Sr5GpT0AS4KlFiX4uDGuOYCtCqSHS5tpMpbcGPRkLFr578lO0epYLGD2W8LEmufpj82L
-EIKgxqdP4gD5Nh0jVNs6Js+jZw0kBQLQCdRPeB54unOHigg67DdWQXbivEttDaoWX06yNh3eVsQy
-O1/cb2TK9M3r/g+P7IG32FZ7mNMl6Lf97r/HesPbv7bQ/cUZUZYslTvsKRGQvjItFgc3t0W94dvB
-3qGR181o1VujQ2k0WU3AUp77rSHFzX6Kr+9NTHN8XhTRLGjqY7bHI7wnBA7o0AZ+6UFSDZggebyZ
-ycuDOfvzxtuU3g/4jor7Fs/st8xHTJjXrbKZtoCx/Tq59xbO9KDfqaJsVGbw4XopMf67fuOILkQD
-2Bx5zbziQUDQFXhhbKLCAUUONHvKl+xBoGB/3uHxTSyFlO20eCA6Wd1Vh2HFO1eXseulb9IFbhbC
-Mh4AyFhPdoBrcjQo+Oyj9maGCvoTSFWGkmoFuSSqcvNXFJRosHqSmo01qRMDGNW1kn2kbbTDeZ+m
-/2sGny3/birLZcdT8h7E42A44rxGWiu72eVFBuDKGGohRi/PcA4vHYeJdCign8RfCphR4VVCOgwE
-LaFF5dsdH1XGfX0aRYVCZhXD/8gIgU/gS2pF9dzHtaqwFVD4MYsE/VXfnE/PgOhtkGWl/khv9+mT
-XD/hyxmJH4vaIhUKdvPqm9to8ICflonbDO0ZVrZdxAFReUqDAK1BY0sbDVQVkHpi9RPQq/8QQ9KB
-BRBNmcC3zy/yIKE3mIaSekEBkmTYsZ1T6HWtN3y9RO4ibFGza8abk7wyrVQNqLZAoAWSxcdnbhEq
-txi2gKYK/ZWFNeOHvB5hyElzfW/7VKg5DqhTpp9X8lnYnu1FH7IaGq9zEP72isSb2UIfE0HhAiRu
-8xav+zbL8YAOO+C1Q7FP1YBr8UO/NcHyfI1+Kno9mA0SNOZuEsc777tmEBR1RkWvYZzi3tBNmx5a
-qHBe5qx4LU1XeED+H6FCCOhLVPf4cSeojzzmdUoovIqnv/PYmd9Pb4vjojAs+b9WTzWcOgmv5C8M
-vpAusNfvIuxZAcAlOT1c1yJpw+JKsS7qUJQ8F/O88/ZfbsMZkGxnJuOCoI5563FGo7gt9IyRd2qR
-npjaWw1Ujn7CY6CDfMtIn6Uut5m0T4j8MxhsZ8U85wInwefO9PcuVumm2YcCfvQnbGHv9aM+pjYb
-oV7OVobFHhuSQrqxHKcH62veassulw+nmyzqKi55zikN/mYY7OIN11wgYO1Lm8K0d+t6xHp7jDHS
-oFcCqARyCXb8mBpbW547TkdrtJK44UX6mR9rm8WLn3fJGfPoYK5eifGRHm7XwpBb2UmMra/lzAIO
-UNcnvBEURwMnV1ja
+<?php
+namespace Codeception\Module;
+
+/**
+ *
+ * Uses Mink to launch and manipulate Selenium Server (formerly the Selenium RC Server).
+ *
+ *
+ * <div class="alert alert-info">
+ * To use this module with Composer you need <em>"behat/mink-selenium-driver": "1.1.*"</em> package.
+ * This module is considered <strong>deprecated</strong> and will be replaced with WebDriver module.
+ * </div>
+ *
+ *
+ * But we recommend you to use **Selenium 2 WebDriver** as it is an evolution of SeleniumRC and grants you more stable results.
+ * For manipulation with Selenium WebDriver use [Selenium2](/docs/modules/Selenium2) module
+ *
+ * Note, all method takes CSS selectors to fetch elements.
+ * For links, buttons, fields you can use names/values/ids of elements.
+ * For form fields you can use name of matched label.
+ *
+ * Will save a screenshot of browser window to log directory on fail.
+ *
+ * ## Installation
+ *
+ * [Download Selenium RC Server](http://seleniumhq.org/download)
+ *
+ * Execute it: `java -jar selenium-server-standalone-x.xx.xxx.jar`
+ *
+ * Best used with Firefox browser.
+ *
+ * Don't forget to turn on Db repopulation if you are using database.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: codecept@davert.mail.ua
+ * * relies on [Mink](http://mink.behat.org)
+ *
+ * ## Configuration
+ *
+ * * url *required* - start url for your app
+ * * browser *required* - browser that would be launched
+ * * host  - Selenium server host (localhost by default)
+ * * port - Selenium server port (4444 by default)
+ * * delay - set delay between actions in milliseconds (1/1000 of second) if they run too fast
+ *
+ * ### Example (`acceptance.suite.yml`)
+ *
+ *     modules:
+ *        enabled: [Selenium]
+ *        config:
+ *           Selenium:
+ *              url: 'http://localhost/'
+ *              browser: firefox
+ *
+ * ## Public Properties
+ *
+ * * session - contains Mink Session
+ */
+
+use Behat\Mink\Driver\SeleniumDriver;
+use Codeception\Util\MinkJS;
+
+class Selenium extends MinkJS
+{
+    protected $requiredFields = array('browser', 'url');
+
+    protected $config = array('host' => '127.0.0.1', 'port' => '4444', 'delay' => 0);
+
+
+    public function _initialize() {
+        $client = new \Selenium\Client($this->config['host'], $this->config['port']);
+        $driver = new SeleniumDriver(
+            $this->config['browser'], $this->config['url'], $client
+        );
+
+        $this->session = new \Behat\Mink\Session($driver);
+
+    }
+
+    public function _failed(\Codeception\TestCase $test, $error) {
+        $this->_saveScreenshot(\Codeception\Configuration::logDir().basename($test->getFileName()).'.fail.png');
+        $this->debug("Screenshot was saved into 'log' dir");
+        $this->session->stop();
+    }
+
+    /**
+     * Low-level API method.
+     * If Codeception commands are not enough, use Selenium RC methods directly
+     *
+     * ``` php
+     * $I->executeInSelenium(function(\Selenium\Browser $browser) {
+     *   $browser->open('/');
+     * });
+     * ```
+     *
+     * Use [Browser Selenium API](https://github.com/alexandresalome/PHP-Selenium)
+     * Not recommended this command too be used on regular basis.
+     * If Codeception lacks important Selenium methods implement then and submit patches.
+     *
+     * @param callable $function
+     */
+    public function executeInSelenium(\Closure $function)
+    {
+        $function($this->session->getDriver()->getBrowser());
+    }
+
+    // please, add more custom Selenium functions here
+    public function _afterStep(\Codeception\Step $step) {
+        if ($this->config['delay']) usleep($this->config['delay'] * 1000);
+    }
+
+    public function _saveScreenshot($filename)
+    {
+        $this->session->getDriver()->getBrowser()->captureEntirePageScreenshot($filename,'');
+    }
+
+}

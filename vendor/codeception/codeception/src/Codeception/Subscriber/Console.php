@@ -1,240 +1,377 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Subscriber;
+
+use Codeception\Exception\ConditionalAssertionFailed;
+use Codeception\SuiteManager;
+use Codeception\TestCase\ScenarioDriven;
+use Codeception\TestCase;
+use Codeception\Util\Console\Message;
+use Codeception\Util\Console\Output;
+use Codeception\Util\Debug;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class Console implements EventSubscriberInterface
+{
+    protected $steps = true;
+    protected $debug = false;
+    protected $color = true;
+    protected $silent = false;
+    protected $lastTestFailed = false;
+    protected $printedTest = null;
+
+    protected $traceLength = 5;
+
+    protected $columns = array(40, 5);
+
+    public function __construct($options)
+    {
+        $this->debug = $options['debug'] || $options['verbosity'] >= OutputInterface::VERBOSITY_VERY_VERBOSE;
+        $this->steps = $this->debug || $options['steps'];
+        $this->output = new Output($options);
+        if ($this->debug) {
+            Debug::setOutput($this->output);
+        }
+    }
+
+    // triggered for scenario based tests: cept, cest
+    public function beforeSuite(\Codeception\Event\Suite $e)
+    {
+        $this->buildResultsTable($e);
+
+        $this->message("%s Tests (%d) ")
+            ->with(ucfirst($e->getSuite()->getName()), count($e->getSuite()->tests()))
+            ->style('bold')
+            ->width(array_sum($this->columns), '-')
+            ->prepend("\n")
+            ->writeln();
+
+        $message = $this->message(implode(', ',array_map(function ($module) {
+            return $module->getName();
+        }, SuiteManager::$modules)));
+        $message->style('info')
+            ->prepend('Modules: ')
+            ->writeln(OutputInterface::VERBOSITY_VERBOSE);
+        
+        $this->message('')->width(array_sum($this->columns), '-')->writeln(OutputInterface::VERBOSITY_VERBOSE);
+
+    }
+
+    // triggered for all tests
+    public function startTest(\Codeception\Event\Test $e)
+    {
+        $test = $e->getTest();
+        $this->printedTest = $test;
+
+        if ($test instanceof TestCase) {
+            if ($test->getFeature()) return;
+        }
+
+        $this->message($test->toString())
+            ->style('focus')
+            ->prepend('Running ')
+            ->width($this->columns[0])
+            ->write();
+    }
+
+    public function before(\Codeception\Event\Test $e)
+    {
+        $test = $e->getTest();
+        $filename = $test->getFileName();
+
+        if ($test->getFeature()) {
+            $this->message("Trying to <focus>%s</focus> (%s) ")
+                ->with($test->getFeature(), $filename)
+                ->width($this->columns[0])
+                ->write();
+ 
+        } else {
+            $this->message("Running <focus>%s</focus> ")
+                ->with($filename)
+                ->width($this->columns[0])
+                ->write();
+        }
+
+        if ($this->steps && count($e->getTest()->getScenario()->getSteps())) {
+            $this->output->writeln("\nScenario:");
+        }
+        
+    }
+
+    public function afterTest(\Codeception\Event\Test $e)
+    {
+    }
+
+    public function testSuccess(\Codeception\Event\Test $e)
+    {
+        if ($this->isDetailed($e->getTest())) {
+            $this->message('PASSED')->center(' ')->style('ok')->append("\n")->writeln();
+            return;
+        }
+        $this->message('Ok')->writeln();
+    }
+
+    public function endTest(\Codeception\Event\Test $e)
+    {
+        $this->printedTest = null;
+    }
+
+    public function testFail(\Codeception\Event\Fail $e)
+    {
+        if (!$this->steps && ($e->getFail() instanceof ConditionalAssertionFailed)) {
+            $this->message('[F]')->style('error')->prepend(' ')->write();
+            return;
+        }
+        if ($this->isDetailed($e->getTest())) {
+            $this->message('FAIL')->center(' ')->style('error')->append("\n")->writeln();
+            return;
+        }
+        $this->message('Fail')->style('error')->writeln();
+    }
+
+    public function testError(\Codeception\Event\Fail $e)
+    {
+        if ($this->isDetailed($e->getTest())) {
+            $this->message('ERROR')->center(' ')->style('error')->append("\n")->writeln();
+            return;
+        }
+        $this->message('Error')->style('error')->writeln();
+    }
+
+    public function testSkipped(\Codeception\Event\Fail $e)
+    {
+        if (!$this->printedTest) {
+            return;
+        }
+        $message = $this->message('Skipped');
+        if ($this->isDetailed($e->getTest())) {
+            $message->apply('strtoupper')->append("\n");
+        }
+        $message->writeln();
+    }
+
+    public function testIncomplete(\Codeception\Event\Fail $e)
+    {
+        $message = $this->message('Incomplete');
+        if ($this->isDetailed($e->getTest())) {
+            $message->apply('strtoupper')->append("\n");
+        }
+        $message->writeln();
+    }
+
+    protected function isDetailed($test)
+    {
+        if (!($test instanceof ScenarioDriven)) {
+            return false;
+        }
+        if (!$this->steps or (!count($test->getScenario()->getSteps()))) {
+            return false;
+        }
+        return true;
+    }
+
+    public function beforeStep(\Codeception\Event\Step $e)
+    {
+        if (!$this->steps or !$e->getTest() instanceof ScenarioDriven) {
+            return;
+        }
+        $this->output->writeln("* " . $e->getStep());
+    }
+
+    public function afterStep(\Codeception\Event\Step $e)
+    {
+    }
+
+    public function afterSuite(\Codeception\Event\Suite $e)
+    {
+        $this->message()->width(array_sum($this->columns), '-')->writeln();
+    }
+
+    public function printFail(\Codeception\Event\Fail $e)
+    {
+        $failedTest = $e->getTest();
+        $fail = $e->getFail();
+        $this->output->write($e->getCount() . ") ");
+
+        if ($e->getTest() instanceof ScenarioDriven) {
+            $this->printScenarioFail($failedTest, $fail);
+            return;
+        }
+
+        $failToString = \PHPUnit_Framework_TestFailure::exceptionToString($fail);
+        $this->message(get_class($failedTest))
+            ->append('::')
+            ->append($failedTest->getName())
+            ->style('bold')
+            ->append("\n")
+            ->append($failToString)
+            ->writeln();
+
+        $this->printException($fail);
+    }
+
+    protected function printScenarioFail(ScenarioDriven $failedTest, $fail)
+    {
+        $feature = $failedTest->getScenario()->getFeature();
+        $failToString = \PHPUnit_Framework_TestFailure::exceptionToString($fail);
+        $failMessage = $this->message($failedTest->getFilename())->style('bold');
+
+        if ($fail instanceof \PHPUnit_Framework_SkippedTest or $fail instanceof \PHPUnit_Framework_IncompleteTest) {
+            $this->printSkippedTest($feature, $failedTest->getFileName(), $failToString);
+            return;
+        }
+        if ($feature) {
+            $failMessage->prepend("Failed to $feature in ");
+        }
+        $failMessage->writeln();
+        $this->printScenarioTrace($failedTest, $failToString);
+        if ($this->output->getVerbosity() == OutputInterface::VERBOSITY_DEBUG) {
+            $this->printException($fail);
+            return;
+        }
+        if (!$fail instanceof \PHPUnit_Framework_AssertionFailedError) {
+            $this->printException($fail);
+            return;
+        }
+    }
+
+    public function printException(\Exception $e)
+    {
+        static $limit = 10;
+        $this->message("[%s] %s")->with(get_class($e), $e->getMessage())->block('error')->writeln(
+            $e instanceof \PHPUnit_Framework_AssertionFailedError
+                ? OutputInterface::VERBOSITY_DEBUG
+                : OutputInterface::VERBOSITY_VERBOSE
+        );
+
+        $trace = \PHPUnit_Util_Filter::getFilteredStacktrace($e, false);
+        $i = 0;
+        foreach ($trace as $step) {
+            $i++;
+
+            $message = $this->message($i)->prepend('#')->width(4);
+            $message->append($step['file'] . ':' . $step['line']);
+            $message->writeln();
+
+            if ($i >= $limit) {
+                break;
+            }
+        }
+    }
+
+    protected function message($text = '')
+    {
+        return new Message($text, $this->output);
+    }
+
+    /**
+     * Sample Message: create user in CreateUserCept.php is not ready for release
+     *
+     * @param $feature
+     * @param $fileName
+     * @param $failToString
+     */
+    public function printSkippedTest($feature, $fileName, $failToString)
+    {
+        $message = $this->message();
+        if ($feature) {
+            $message->append($feature)->style('focus')->append(' in ');
+        }
+        $message->append($fileName);
+        if ($failToString) {
+            $message->append(": $failToString");
+        }
+        $message->write(OutputInterface::VERBOSITY_VERBOSE);
+    }
+
+    /**
+     * @param $action
+     * @param $failToString
+     */
+    public function printFailMessage($action, $failToString)
+    {
+        if (strpos($action, "don't") === 0) {
+            $action = substr($action, 6);
+            $this->output->writeln("Sorry, I unexpectedly managed to $action:\n$failToString");
+        } else {
+            $this->output->writeln("Sorry, I couldn't $action:\n$failToString");
+        }
+    }
+
+    /**
+     * @param $failedTest
+     * @param $fail
+     */
+    public function printScenarioTrace($failedTest, $failToString)
+    {
+        $trace = array_reverse($failedTest->getTrace());
+        $length = $i = count($trace);
+        $last = array_shift($trace);
+        if (!method_exists($last, 'getHumanizedAction')) {
+            return;
+        }
+        $this->printFailMessage($last->getHumanizedAction(), $failToString);
+
+        $this->output->writeln("Scenario Steps:");
+        $this->message($last)->style('error')->prepend("$i. ")->writeln();
+        foreach ($trace as $step) {
+            $i--;
+            $this->message($i)->width(strlen($length))->append(". $step")->writeln();
+            if (($length - $i - 1) >= $this->traceLength) {
+                break;
+            }
+        }
+        $this->output->writeln("");
+    }
+
+    /**
+     * @param \Codeception\Event\Suite $e
+     */
+    protected function buildResultsTable(\Codeception\Event\Suite $e)
+    {
+        $this->columns = array(40, 5);
+        foreach ($e->getSuite()->tests() as $test) {
+            if ($test instanceof TestCase) {
+                $this->columns[0] = max(
+                    $this->columns[0],
+                    20 + strlen($test->getFeature()) + strlen($test->getFileName())
+                );
+                continue;
+            }
+            if ($test instanceof \PHPUnit_Framework_TestSuite_DataProvider) {
+                $test = $test->testAt(0);
+                $output_length = $test instanceof \Codeception\TestCase
+                    ? strlen($test->getFeature()) + strlen($test->getFileName())
+                    : $test->toString();
+
+                $this->columns[0] = max(
+                    $this->columns[0],
+                    15 +$output_length
+                );
+                continue;
+            }
+            $this->columns[0] = max($this->columns[0], 10 + strlen($test->toString()));
+        }
+    }
+
+    // events
+    static function getSubscribedEvents()
+    {
+        return array(
+            'suite.before' => 'beforeSuite',
+            'suite.after' => 'afterSuite',
+            'test.before' => 'before',
+            'test.after' => 'afterTest',
+            'test.start' => 'startTest',
+            'test.end' => 'endTest',
+            'step.before' => 'beforeStep',
+            'step.after' => 'afterStep',
+            'test.success' => 'testSuccess',
+            'test.fail' => 'testFail',
+            'test.error' => 'testError',
+            'test.incomplete' => 'testIncomplete',
+            'test.skipped' => 'testSkipped',
+            'test.fail.print' => 'printFail',
+        );
+    }
+}

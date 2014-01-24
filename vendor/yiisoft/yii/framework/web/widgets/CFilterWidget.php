@@ -1,35 +1,74 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Y9VzffMkleCh3CG0D4iwsYEkOSFWJgSq8VTU
+<?php
+/**
+ * CFilterWidget class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFilterWidget is the base class for widgets that can also be used as filters.
+ *
+ * Derived classes may need to override the following methods:
+ * <ul>
+ * <li>{@link CWidget::init()} : called when this is object is used as a widget and needs initialization.</li>
+ * <li>{@link CWidget::run()} : called when this is object is used as a widget.</li>
+ * <li>{@link filter()} : the filtering method called when this object is used as an action filter.</li>
+ * </ul>
+ *
+ * CFilterWidget provides all properties and methods of {@link CWidget} and {@link CFilter}.
+ *
+ * @property boolean $isFilter Whether this widget is used as a filter.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CFilterWidget extends CWidget implements IFilter
+{
+	/**
+	 * @var boolean whether to stop the action execution when this widget is used as a filter.
+	 * This property should be changed only in {@link CWidget::init} method.
+	 * Defaults to false, meaning the action should be executed.
+	 */
+	public $stopAction=false;
+
+	private $_isFilter;
+
+	/**
+	 * Constructor.
+	 * @param CBaseController $owner owner/creator of this widget. It could be either a widget or a controller.
+	 */
+	public function __construct($owner=null)
+	{
+		parent::__construct($owner);
+		$this->_isFilter=($owner===null);
+	}
+
+	/**
+	 * @return boolean whether this widget is used as a filter.
+	 */
+	public function getIsFilter()
+	{
+		return $this->_isFilter;
+	}
+
+	/**
+	 * Performs the filtering.
+	 * The default implementation simply calls {@link init()},
+	 * {@link CFilterChain::run()} and {@link run()} in order
+	 * Derived classes may want to override this method to change this behavior.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
+	 */
+	public function filter($filterChain)
+	{
+		$this->init();
+		if(!$this->stopAction)
+		{
+			$filterChain->run();
+			$this->run();
+		}
+	}
+}

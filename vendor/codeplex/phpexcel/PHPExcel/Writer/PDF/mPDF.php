@@ -1,77 +1,135 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Writer
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version		1.7.8, 2012-10-12
+ */
+
+
+/** Require mPDF library */
+$pdfRendererClassFile = PHPExcel_Settings::getPdfRendererPath() . '/mpdf.php';
+if (file_exists($pdfRendererClassFile)) {
+	require_once $pdfRendererClassFile;
+} else {
+	throw new Exception('Unable to load PDF Rendering library');
+}
+
+/**
+ * PHPExcel_Writer_PDF_mPDF
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Writer
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Writer_PDF_mPDF extends PHPExcel_Writer_PDF_Core implements PHPExcel_Writer_IWriter {
+	/**
+	 * Create a new PHPExcel_Writer_PDF
+	 *
+	 * @param 	PHPExcel	$phpExcel	PHPExcel object
+	 */
+	public function __construct(PHPExcel $phpExcel) {
+		parent::__construct($phpExcel);
+	}
+
+	/**
+	 * Save PHPExcel to file
+	 *
+	 * @param 	string 		$pFileName
+	 * @throws 	Exception
+	 */
+	public function save($pFilename = null) {
+		// garbage collect
+		$this->_phpExcel->garbageCollect();
+
+		$saveArrayReturnType = PHPExcel_Calculation::getArrayReturnType();
+		PHPExcel_Calculation::setArrayReturnType(PHPExcel_Calculation::RETURN_ARRAY_AS_VALUE);
+
+		// Open file
+		$fileHandle = fopen($pFilename, 'w');
+		if ($fileHandle === false) {
+			throw new Exception("Could not open file $pFilename for writing.");
+		}
+
+		// Set PDF
+		$this->_isPdf = true;
+		// Build CSS
+		$this->buildCSS(true);
+
+		// Default PDF paper size
+		$paperSize = 'LETTER';	//	Letter	(8.5 in. by 11 in.)
+
+		// Check for paper size and page orientation
+		if (is_null($this->getSheetIndex())) {
+			$orientation = ($this->_phpExcel->getSheet(0)->getPageSetup()->getOrientation() == PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE) ? 'L' : 'P';
+			$printPaperSize = $this->_phpExcel->getSheet(0)->getPageSetup()->getPaperSize();
+			$printMargins = $this->_phpExcel->getSheet(0)->getPageMargins();
+		} else {
+			$orientation = ($this->_phpExcel->getSheet($this->getSheetIndex())->getPageSetup()->getOrientation() == PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE) ? 'L' : 'P';
+			$printPaperSize = $this->_phpExcel->getSheet($this->getSheetIndex())->getPageSetup()->getPaperSize();
+			$printMargins = $this->_phpExcel->getSheet($this->getSheetIndex())->getPageMargins();
+		}
+		$this->setOrientation($orientation);
+
+		//	Override Page Orientation
+		if (!is_null($this->getOrientation())) {
+			$orientation = ($this->getOrientation() == PHPExcel_Worksheet_PageSetup::ORIENTATION_DEFAULT) ?
+				PHPExcel_Worksheet_PageSetup::ORIENTATION_PORTRAIT : $this->getOrientation();
+		}
+		$orientation = strtoupper($orientation);
+
+		//	Override Paper Size
+		if (!is_null($this->getPaperSize())) {
+			$printPaperSize = $this->getPaperSize();
+		}
+
+		if (isset(self::$_paperSizes[$printPaperSize])) {
+			$paperSize = self::$_paperSizes[$printPaperSize];
+		}
+
+		// Create PDF
+		$pdf = new mpdf();
+		$pdf->_setPageSize(strtoupper($paperSize), $orientation);
+        $pdf->DefOrientation = $orientation;
+		// Document info
+		$pdf->SetTitle($this->_phpExcel->getProperties()->getTitle());
+		$pdf->SetAuthor($this->_phpExcel->getProperties()->getCreator());
+		$pdf->SetSubject($this->_phpExcel->getProperties()->getSubject());
+		$pdf->SetKeywords($this->_phpExcel->getProperties()->getKeywords());
+		$pdf->SetCreator($this->_phpExcel->getProperties()->getCreator());
+
+		$pdf->WriteHTML(
+			$this->generateHTMLHeader(false) .
+			$this->generateSheetData() .
+			$this->generateHTMLFooter()
+		);
+
+		// Write to file
+		fwrite($fileHandle, $pdf->Output('','S'));
+
+		// Close file
+		fclose($fileHandle);
+
+		PHPExcel_Calculation::setArrayReturnType($saveArrayReturnType);
+	}
+
+}

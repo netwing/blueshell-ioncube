@@ -1,71 +1,189 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * The base class for all PHP_CodeSniffer documentation generators.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * The base class for all PHP_CodeSniffer documentation generators.
+ *
+ * Documentation generators are used to print documentation about code sniffs
+ * in a standard.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_DocGenerators_Generator
+{
+
+    /**
+     * The name of the coding standard we are generating docs for.
+     *
+     * @var string
+     */
+    private $_standard = '';
+
+    /**
+     * An array of sniffs that we are limiting the generated docs to.
+     *
+     * If this array is empty, docs are generated for all sniffs in the
+     * supplied coding standard.
+     *
+     * @var string
+     */
+    private $_sniffs = array();
+
+
+    /**
+     * Constructs a PHP_CodeSniffer_DocGenerators_Generator object.
+     *
+     * @param string $standard The name of the coding standard to generate
+     *                         docs for.
+     * @param array  $sniffs   An array of sniffs that we are limiting the
+     *                         generated docs to.
+     *
+     * @see generate()
+     */
+    public function __construct($standard, array $sniffs=array())
+    {
+        $this->_standard = $standard;
+        $this->_sniffs   = $sniffs;
+
+    }//end __construct()
+
+
+    /**
+     * Retrieves the title of the sniff from the DOMNode supplied.
+     *
+     * @param DOMNode $doc The DOMNode object for the sniff.
+     *                     It represents the "documentation" tag in the XML
+     *                     standard file.
+     *
+     * @return string
+     */
+    protected function getTitle(DOMNode $doc)
+    {
+        return $doc->getAttribute('title');
+
+    }//end getTitle()
+
+
+    /**
+     * Retrieves the name of the standard we are generating docs for.
+     *
+     * @return string
+     */
+    protected function getStandard()
+    {
+        return $this->_standard;
+
+    }//end getStandard()
+
+
+    /**
+     * Generates the documentation for a standard.
+     *
+     * It's probably wise for doc generators to override this method so they
+     * have control over how the docs are produced. Otherwise, the processSniff
+     * method should be overridden to output content for each sniff.
+     *
+     * @return void
+     * @see processSniff()
+     */
+    public function generate()
+    {
+        $standardFiles = $this->getStandardFiles();
+
+        foreach ($standardFiles as $standard) {
+            $doc = new DOMDocument();
+            $doc->load($standard);
+            $documentation = $doc->getElementsByTagName('documentation')->item(0);
+            $this->processSniff($documentation);
+        }
+
+    }//end generate()
+
+
+    /**
+     * Returns a list of paths to XML standard files for all sniffs in a standard.
+     *
+     * Any sniffs that do not have an XML standard file are obviously not included
+     * in the returned array. If documentation is only being generated for some
+     * sniffs (ie. $this->_sniffs is not empty) then all others sniffs will
+     * be filtered from the results as well.
+     *
+     * @return array(string)
+     */
+    protected function getStandardFiles()
+    {
+        $phpcs = new PHP_CodeSniffer();
+        $phpcs->process(array(), $this->_standard);
+        $sniffs = $phpcs->getSniffs();
+
+        $standardFiles = array();
+        foreach ($sniffs as $className => $sniffClass) {
+            $object = new ReflectionObject($sniffClass);
+            $sniff  = $object->getFilename();
+            if (empty($this->_sniffs) === false) {
+                // We are limiting the docs to certain sniffs only, so filter
+                // out any unwanted sniffs.
+                $parts     = explode('_', $className);
+                $sniffName = $parts[0].'.'.$parts[2].'.'.substr($parts[3], 0, -5);
+                if (in_array($sniffName, $this->_sniffs) === false) {
+                    continue;
+                }
+            }
+
+            $standardFile = str_replace(
+                DIRECTORY_SEPARATOR.'Sniffs'.DIRECTORY_SEPARATOR,
+                DIRECTORY_SEPARATOR.'Docs'.DIRECTORY_SEPARATOR,
+                $sniff
+            );
+            $standardFile = str_replace('Sniff.php', 'Standard.xml', $standardFile);
+
+            if (is_file($standardFile) === true) {
+                $standardFiles[] = $standardFile;
+            }
+        }//end foreach
+
+        return $standardFiles;
+
+    }//end getStandardFiles()
+
+
+    /**
+     * Process the documentation for a single sniff.
+     *
+     * Doc generators should override this function to produce output.
+     *
+     * @param DOMNode $doc The DOMNode object for the sniff.
+     *                     It represents the "documentation" tag in the XML
+     *                     standard file.
+     *
+     * @return void
+     * @see generate()
+     */
+    protected function processSniff(DOMNode $doc)
+    {
+
+    }//end processSniff()
+
+
+}//end class
+
 ?>
-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

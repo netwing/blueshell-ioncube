@@ -1,36 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Plugin\Cache;
+
+use Guzzle\Http\Message\Request;
+use Guzzle\Http\Message\Response;
+use Guzzle\Plugin\Cache\DefaultCanCacheStrategy;
+
+/**
+ * @covers Guzzle\Plugin\Cache\DefaultCanCacheStrategy
+ */
+class DefaultCanCacheStrategyTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testReturnsRequestcanCacheRequest()
+    {
+        $strategy = new DefaultCanCacheStrategy();
+        $request = new Request('GET', 'http://foo.com');
+        $this->assertTrue($strategy->canCacheRequest($request));
+    }
+
+    public function testDoesNotCacheNoStore()
+    {
+        $strategy = new DefaultCanCacheStrategy();
+        $request = new Request('GET', 'http://foo.com', array('cache-control' => 'no-store'));
+        $this->assertFalse($strategy->canCacheRequest($request));
+    }
+
+    public function testCanCacheResponse()
+    {
+        $response = $this->getMockBuilder('Guzzle\Http\Message\Response')
+            ->setMethods(array('canCache'))
+            ->setConstructorArgs(array(200))
+            ->getMock();
+        $response->expects($this->once())
+            ->method('canCache')
+            ->will($this->returnValue(true));
+        $strategy = new DefaultCanCacheStrategy();
+        $this->assertTrue($strategy->canCacheResponse($response));
+    }
+}

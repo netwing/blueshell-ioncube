@@ -1,47 +1,80 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * YiiInitTask class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+require_once 'phing/Task.php';
+require_once 'phing/tasks/system/PropertyTask.php';
+
+/**
+ * YiiInitTask initializes a few property values.
+ *
+ * The following properties are created:
+ * <pre>
+ * <li>yii.version: the version number of Yii</li>
+ * <li>yii.revision: the SVN revision number of Yii</li>
+ * <li>yii.winbuild: whether this build is on Windows (true) or not (false)</li>
+ * </pre>
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package build.tasks
+ * @since 1.0
+ */
+class YiiInitTask extends PropertyTask
+{
+	/**
+	 * Execute lint check against PhingFile or a FileSet
+	 */
+	public function main()
+	{
+		$this->addProperty('yii.version',$this->getYiiVersion());
+		$this->addProperty('yii.revision',$this->getYiiRevision());
+		$this->addProperty('yii.winbuild', substr(PHP_OS, 0, 3) == 'WIN' ? 'true' : 'false');
+		$this->addProperty('yii.release',$this->getYiiRelease());
+		$this->addProperty('yii.date',date('M j, Y'));
+	}
+
+	/**
+	 * @return string Yii version
+	 */
+	private function getYiiVersion()
+	{
+		$coreFile=dirname(__FILE__).'/../../framework/YiiBase.php';
+		if(is_file($coreFile))
+		{
+			$contents=file_get_contents($coreFile);
+			$matches=array();
+			if(preg_match('/public static function getVersion.*?return \'(.*?)\'/ms',$contents,$matches)>0)
+				return $matches[1];
+		}
+		return 'unknown';
+	}
+
+	private function getYiiRelease()
+	{
+		$changelog=dirname(__FILE__).'/../../CHANGELOG';
+		if(preg_match('/Version ([\d.a-z]+) .*\d{4}\s/', file_get_contents($changelog), $matches)>0)
+			return $matches[1];
+		return '0.0.0';
+	}
+
+	/**
+	 * @return string Yii GIT revision
+	 */
+	private function getYiiRevision()
+	{
+		$gitFile=dirname(__FILE__).'/../../.git/HEAD';
+		if(is_file($gitFile))
+		{
+			$contents=file_get_contents($gitFile);
+			return substr($contents, 0, 6);
+		}
+		else
+			return 'unknown';
+	}
+}

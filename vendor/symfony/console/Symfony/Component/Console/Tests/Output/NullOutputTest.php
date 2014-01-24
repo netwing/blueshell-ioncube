@@ -1,31 +1,39 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Output;
+
+use Symfony\Component\Console\Output\NullOutput;
+use Symfony\Component\Console\Output\OutputInterface;
+
+class NullOutputTest extends \PHPUnit_Framework_TestCase
+{
+    public function testConstructor()
+    {
+        $output = new NullOutput();
+
+        ob_start();
+        $output->write('foo');
+        $buffer = ob_get_clean();
+
+        $this->assertSame('', $buffer, '->write() does nothing (at least nothing is printed)');
+        $this->assertFalse($output->isDecorated(), '->isDecorated() returns false');
+    }
+
+    public function testVerbosity()
+    {
+        $output = new NullOutput();
+        $this->assertSame(OutputInterface::VERBOSITY_QUIET, $output->getVerbosity(), '->getVerbosity() returns VERBOSITY_QUIET for NullOutput by default');
+
+        $output->setVerbosity(OutputInterface::VERBOSITY_VERBOSE);
+        $this->assertSame(OutputInterface::VERBOSITY_QUIET, $output->getVerbosity(), '->getVerbosity() always returns VERBOSITY_QUIET for NullOutput');
+    }
+}

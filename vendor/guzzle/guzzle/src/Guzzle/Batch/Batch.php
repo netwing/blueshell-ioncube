@@ -1,58 +1,92 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmALV+gBD4JEHbdgoPg+XEQaa9+SuXn658siwi0vob0YCYTLr8aYIwvytHtgaysWhxJuP58t
-/DO0BW0NCAvZ2WyqhzsHISOHHJ/EuBtR/mXRZtPEJKCY/fT/j41eFJCZ2xjbmA2vr0I57eyPxGZo
-VDBnyvBcsiV3Z/kaAiCTcQ9JRuxQQxp4miFmkklz9cqmQ3gxs5X5vxlsuOYrRFRQUow8W+wiBzEA
-o+kJjVQfD3UBQumMdb1Hhr4euJltSAgiccy4GDnfT3jfYUIrQ+b6AqbZljWb4hWKchbp6NVjRTUG
-/2jOuAducJGr64fIxoP0jb49++6pJU2NVo41tX9DR/tbWlPyC1Jh3Re+lUG+foIcu06lR/RIRves
-L7jurbwXBlVxhli8vLSGkyXrEgoT3FLlyH9FUKrCIBVNbB/9oMA+HxuBMv7Z8XVYQWWlAq6iouAA
-lXnP/oI3PDA6bxhgc6OUx0zDFaBp/7W12tpBpaimY7+KmcDaOTzsizeobqUmzGjLJXIS4eBRkx07
-CiqX0fprlspAYbbU0zCOT1lj7gF/qdOq5nfS3pa3mF7CL1D+eK6DdE+2bkV/YkxJqgmL16vvUyX5
-frc3I73KHqh4uoJfbuVsuXrCnHK7y2Lxvnc9pOwn3IMPKFURpqPvZIZJxlWGRh/tAOQD72kmmLX5
-AJgFBII7VKP3Qy4L9bKHokH7Zt3tGmA+sYHYoG+N641jiO5FGKLO6GcPamM+hWFF9QovDj8htWZL
-9nizN9fZlIg9va82QlHAxaXV4BGZB4NjxKEAfcWQ67iMXOK4Ww/6g64LuBQwzunr90LcquRJdGoA
-eojx+qkQtgBcHuPzCW7uEHaMuoBx9vI74pEFp8E23j74ePe9YjeFuHN6yUCMRP9GUqDjcSwfUnAX
-XUnkGEdRVekKcmtCgkflTZEACJY6CaVn2fxQO8ICPdEBMVXH1E5TicRu8KCwQWhgyS4Hzoq8O/yY
-QNpNTUIVUpDhSv59cQ9jKkkYWNU6DQnjkOgII5y06D1M+21cvK6hC96snfGu/YwlsO31U3hiMdRU
-T6WsNlJFemaqhpHjwWC+7H6WezTwNZed9mGg4rrOpdGAV0CcYiz/HR4weR4GOYlPtxyUMkAteH0J
-4QWVr8ELz/2vU8nDQIwu0D2lRpZFHs84qwjvy28397MeO2brZS2EB62XCDjQJTMYZ1ElWyGNSWJf
-hmjG/cvsWYwR7J0hhZOqDTXHc/heVsxkyIuOFZT+6kucu3gXUhqOeXV0p85nQlG+WiCUQ8iztNlj
-EdfFnugm7hgP20RCCvfiyhnKlOhKTulKJW4q/zqlvltX5NbMTA43//nVqL1juot5yzqDYcP0P7ab
-BN0+sG9KLbo4+a8noUiN9nUfNFPo0cdhPL22P883tCze16LBZwiYhv9+XRIbuwMBrTSJUEmeN0mf
-aYjwu2wCr56eM7dQCuJgl8HWZOZVrhPExzV0zzgXn754CzO4ECF+ABKfU9umIVdJW/khPma/B8BK
-ixQG1NBK+/L7xjJTnr3mqbbtlzgG1k1kyOnXTw8notrRqDlRvqou86yv0clt5+uswoyN89DynL+W
-RMqoIrJL4LAgRkn/7WgYGtm8VXCNIPpt0HS0CdblXjmDyzuanpOGtY6dPwbHQe49lC8KM/HzY3eE
-Fql3kp1uJOWXhLBVGWYQJ5tmvw1pPs504k51Ig0VZUxucqeYGbpGJpBcmMpJ3hGLP8nNJC8XGP4j
-RKSJ3LMtzHslGwa+41Z7oFpbPOraB/qhDOXtmvCMM8Hh5o07AeCQHLP9VrtYIU88yqwgePLT2dW2
-CzM5AqEnBwd+vtJ8Zidovi9tofcY2d/bjtGHwm31sscs/fDAQjXaiacNMorb2BeIrxwMgb1hiNcq
-JsynEXEMe6HCSfz5S8ZAKHVf07EtINys5JaWJs5Nju9lg5T2psRfh34wpZ4xBA8bqEryYEFdXraK
-7E9YXtZbH2blgW1Jjda5XWXbUtpw7hxW9uc9jq0lPFyvuKxbQSTInxg7fVnrqQ+f8VfWdOVXDBK3
-xdJHoSa6tmMTZt/0XT8j9xr28oYb1rxNqX1Eqlg2Podw+kcu8rU+ap+hXA830uVOm78MWYDBS7Wf
-umD+LAm57vH7dvsaF+Gxua76NWl8m9bspFvKlejSTYSii7Kb/Z7rVwJGk5srZou97bibIMGGLpVL
-R1+9ytr7pc+O3CKhli71huz/SrZ+T0Om49Zn99snLN3pGxg9BbWSVDJYpKhXYdSw2Aa1LIAb4eum
-w90LqeBW/8JvWoctOsQ7YPHGXjT0amv4AZqVhmszuouzCEwcIsaR1C4JdSao9ZJ0m42hOIgbWsDC
-KVSgLDTaH7nQn1XAxr8fVAyXAeZmHHFH/zxf0/e5oS9bA7kYkYbxd2xpDxRuxeN5r0QtdCdHNULg
-tTEVTfJiCa6brM1jlyUyUVFXkRc57hJyQYB/7CF/gOeeK3/vVJNRf4fkeLlRO/mYvv+2URfsWHHO
-d/Q7oSAyuoVq5O0vi/a/IFy0erFLUiC+Ey8HZMmp6m4fCtRtusjbv+IGyZrgLhlGyy4+IoB2ASL8
-tjTkpEBe1P813n6Bu063kBDv1045P4GPz0pWQjeaaWAY0Iwd9ghf9KaWVqpCBgJ3uEbndwaDJI+G
-/4n9RLvqoM9oir/NsTf21vLgLIuxfmn+UPpx3IHNzq4oUf8Dg3EaAb+PHtOcbola9RTVa1pHf87M
-dltnbJ0Z0XbqdqOgaembPdN0g0iX6GOBKWsuRDFTmxdX9ygLDg0t39sc+U7X1gtbzMal+bIhhWVl
-iD84x0y5G6J+MHCv1rW1EcztTNZOCDeMnWrYXNvRJ5mK14wAI2u+yFckgBKkV0CrcHgXWe8XusW6
-UOi82qX6ma7e8D582rF/GuClwF2eWRxeqQBa1NoRb7kJfMau0bIjxBX0aWS8FeTSbSzGiE7LEhvn
-4+oI64oJlpewZ/7w8o2hZjpsup2BUCOMLXsew/e9liH/ad+9nNuXf0FOke0fTHmNPIGj5Lkh50x8
-LzRfxVFBvvSuXXcHrKU4SGynB/Z57XkhG3hup4Od3kwHFmv1Lo6G+5p5h5uw2MPb34t68oaFlMfl
-T00qvhbhQ5ZcyGruLiEhcguDuySTkyk2UWJtwFwIUImTuOA2rbfFToLcK+2EumqUlkiJxLPGlEMk
-WQbNPv4SmArnUbsOZZ7cHAXxsUfTZG9kQY35mV6dCz4icqbvfhsXmLuDhbmCtNOnCkGk/Zrb83/O
-REtul0CX3MvWn1pv+Ov7b7HFsSdudnKrG4vHhdv1e/nboV1AM2WsRBqdvgEJQ6zoeHwZ5Ezz68Fl
-vNCIvwVoJshZUOPW2eQGQyQEubeVq184ofGrYtnLJMb2PgM8C+0nl4jV+Opiy/iwpwuolPecJWFt
-SPuaHUT6elMWMv4F5hNkxVqSTtGulWuFI5rS+H9G5VBR+9sOvAi0mqv+4lFsY238PncOLR6Vi9V0
-SvW1UubkJJOzIgl8sI79I8I5SXy7CKtXNK7OtiOMEukfxXBFPidcN+evi1MVjAu0L3IHagi/cNHf
-e/1OuYqJAjDWEJCecNtW5M/2LynU/xfXsYCES0wLdwpUwRn7frT1hMpm8A8ucdB9rYkS9dQkElRY
-13/+Wt+z0V54c0bxHIwGJuMx4m+QXkRzkqFBv9ixS4ePHzDmr/QRIqzfJwn+tOoU2H3HnIckiBF4
-s3urDZ/xpJ2GAyRfwhkxAs6mZEexATf5vuze6Fy72X1nvgz1/W7hJsxk1rW80CO6n0JC6fuE6Gne
-fStKp3ibR/SGyDimEK5a19SIFzUN72UvTJ3kgav2BTrMKx5QenWlMo5QpU5Kk2OM9LoxKp0xJHJG
-6SHPwtrYpEJob1kaBRPGBb65EUvDsxbIVB7p3/oP42WxQLD2fqaYs80VIW01rPIOgubK8pJqMdDg
-aR5PgwdoNsu2v23ZdYM/skd7Wmdztm8NI5HPWKQmz8JqLewj9su5IxFrqIdWIuNLFiITVPmhxDjg
-g75HQNo6rINMYEiZ1/V285/KQcH+yuA+46Vv8Oqv2YtJaeSz+sUrDYR3B2TbS85CRGURHci1ku9y
-hmjiDCy=
+<?php
+
+namespace Guzzle\Batch;
+
+use Guzzle\Batch\Exception\BatchTransferException;
+
+/**
+ * Default batch implementation used to convert queued items into smaller chunks of batches using a
+ * {@see BatchDivisorIterface} and transfers each batch using a {@see BatchTransferInterface}.
+ *
+ * Any exception encountered during a flush operation will throw a {@see BatchTransferException} object containing the
+ * batch that failed. After an exception is encountered, you can flush the batch again to attempt to finish transferring
+ * any previously created batches or queued items.
+ */
+class Batch implements BatchInterface
+{
+    /** @var \SplQueue Queue of items in the queue */
+    protected $queue;
+
+    /** @var array Divided batches to be transferred */
+    protected $dividedBatches;
+
+    /** @var BatchTransferInterface */
+    protected $transferStrategy;
+
+    /** @var BatchDivisorInterface */
+    protected $divisionStrategy;
+
+    /**
+     * @param BatchTransferInterface $transferStrategy Strategy used to transfer items
+     * @param BatchDivisorInterface  $divisionStrategy Divisor used to create batches
+     */
+    public function __construct(BatchTransferInterface $transferStrategy, BatchDivisorInterface $divisionStrategy)
+    {
+        $this->transferStrategy = $transferStrategy;
+        $this->divisionStrategy = $divisionStrategy;
+        $this->queue = new \SplQueue();
+        $this->queue->setIteratorMode(\SplQueue::IT_MODE_DELETE);
+        $this->dividedBatches = array();
+    }
+
+    public function add($item)
+    {
+        $this->queue->enqueue($item);
+
+        return $this;
+    }
+
+    public function flush()
+    {
+        $this->createBatches();
+
+        $items = array();
+        foreach ($this->dividedBatches as $batchIndex => $dividedBatch) {
+            while ($dividedBatch->valid()) {
+                $batch = $dividedBatch->current();
+                $dividedBatch->next();
+                try {
+                    $this->transferStrategy->transfer($batch);
+                    $items = array_merge($items, $batch);
+                } catch (\Exception $e) {
+                    throw new BatchTransferException($batch, $items, $e, $this->transferStrategy, $this->divisionStrategy);
+                }
+            }
+            // Keep the divided batch down to a minimum in case of a later exception
+            unset($this->dividedBatches[$batchIndex]);
+        }
+
+        return $items;
+    }
+
+    public function isEmpty()
+    {
+        return count($this->queue) == 0 && count($this->dividedBatches) == 0;
+    }
+
+    /**
+     * Create batches for any queued items
+     */
+    protected function createBatches()
+    {
+        if (count($this->queue)) {
+            if ($batches = $this->divisionStrategy->createBatches($this->queue)) {
+                // Convert arrays into iterators
+                if (is_array($batches)) {
+                    $batches = new \ArrayIterator($batches);
+                }
+                $this->dividedBatches[] = $batches;
+            }
+        }
+    }
+}

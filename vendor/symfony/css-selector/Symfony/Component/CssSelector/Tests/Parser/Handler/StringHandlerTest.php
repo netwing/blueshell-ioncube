@@ -1,36 +1,50 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-UIGc1AZzi+5NG3O7K+3ifLwe3IQ8Rm==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Tests\Parser\Handler;
+
+use Symfony\Component\CssSelector\Parser\Handler\StringHandler;
+use Symfony\Component\CssSelector\Parser\Token;
+use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerPatterns;
+use Symfony\Component\CssSelector\Parser\Tokenizer\TokenizerEscaping;
+
+class StringHandlerTest extends AbstractHandlerTest
+{
+    public function getHandleValueTestData()
+    {
+        return array(
+            array('"hello"', new Token(Token::TYPE_STRING, 'hello', 1), ''),
+            array('"1"', new Token(Token::TYPE_STRING, '1', 1), ''),
+            array('" "', new Token(Token::TYPE_STRING, ' ', 1), ''),
+            array('""', new Token(Token::TYPE_STRING, '', 1), ''),
+            array("'hello'", new Token(Token::TYPE_STRING, 'hello', 1), ''),
+
+            array("'foo'bar", new Token(Token::TYPE_STRING, 'foo', 1), 'bar'),
+        );
+    }
+
+    public function getDontHandleValueTestData()
+    {
+        return array(
+            array('hello'),
+            array('>'),
+            array('1'),
+            array(' '),
+        );
+    }
+
+    protected function generateHandler()
+    {
+        $patterns = new TokenizerPatterns();
+
+        return new StringHandler($patterns, new TokenizerEscaping($patterns));
+    }
+}

@@ -1,51 +1,153 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ho3jMESgDbSfMS6GnV2Layg36xZvp7/L
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * Execute touch commands for RemoteWebDriver.
+ */
+class RemoteTouchScreen implements WebDriverTouchScreen {
+
+  private $executor;
+
+  public function __construct($executor) {
+    $this->executor = $executor;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function tap(WebDriverElement $element) {
+    $this->executor->execute('touchTap', array('element' => $element->getID()));
+
+    return $this;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function doubleTap(WebDriverElement $element) {
+    $this->executor->execute(
+      'touchDoubleTap',
+      array('element' => $element->getID())
+    );
+
+    return $this;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function down($x, $y) {
+    $this->executor->execute('touchDown', array(
+      'x' => $x,
+      'y' => $y,
+    ));
+
+    return $this;
+  }
+
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function flick($xspeed, $yspeed) {
+    $this->executor->execute('touchFlick', array(
+      'xspeed' => $xspeed,
+      'yspeed' => $yspeed,
+    ));
+
+    return $this;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function flickFromElement(
+    WebDriverElement $element, $xoffset, $yoffset, $speed
+  ) {
+    $this->executor->execute('touchFlick', array(
+      'xoffset' => $xoffset,
+      'yoffset' => $yoffset,
+      'element' => $element->getID(),
+      'speed'   => $speed,
+    ));
+
+    return $this;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function longPress(WebDriverElement $element) {
+    $this->executor->execute(
+      'touchLongPress',
+      array('element' => $element->getID())
+    );
+
+    return $this;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function move($x, $y) {
+    $this->executor->execute('touchMove', array(
+      'x' => $x,
+      'y' => $y,
+    ));
+
+    return $this;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function scroll($xoffset, $yoffset) {
+    $this->executor->execute('touchScroll', array(
+      'xoffset' => $xoffset,
+      'yoffset' => $yoffset,
+    ));
+
+    return $this;
+  }
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function scrollFromElement(
+    WebDriverElement $element, $xoffset, $yoffset
+  ) {
+    $this->executor->execute('touchScroll', array(
+      'element' => $element->getID(),
+      'xoffset' => $xoffset,
+      'yoffset' => $yoffset,
+    ));
+
+    return $this;
+  }
+
+
+  /**
+   * @return RemoteTouchScreen The instance.
+   */
+  public function up($x, $y) {
+    $this->executor->execute('touchUp', array(
+      'x' => $x,
+      'y' => $y,
+    ));
+
+    return $this;
+  }
+
+}

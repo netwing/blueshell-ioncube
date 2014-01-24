@@ -1,91 +1,197 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-7Tmtv/IbFd29h6z3sEW=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\DomCrawler;
+
+/**
+ * Link represents an HTML link (an HTML a tag).
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class Link
+{
+    /**
+     * @var \DOMNode A \DOMNode instance
+     */
+    protected $node;
+    /**
+     * @var string The method to use for the link
+     */
+    protected $method;
+    /**
+     * @var string The URI of the page where the link is embedded (or the base href)
+     */
+    protected $currentUri;
+
+    /**
+     * Constructor.
+     *
+     * @param \DOMNode $node       A \DOMNode instance
+     * @param string   $currentUri The URI of the page where the link is embedded (or the base href)
+     * @param string   $method     The method to use for the link (get by default)
+     *
+     * @throws \InvalidArgumentException if the node is not a link
+     *
+     * @api
+     */
+    public function __construct(\DOMNode $node, $currentUri, $method = 'GET')
+    {
+        if (!in_array(strtolower(substr($currentUri, 0, 4)), array('http', 'file'))) {
+            throw new \InvalidArgumentException(sprintf('Current URI must be an absolute URL ("%s").', $currentUri));
+        }
+
+        $this->setNode($node);
+        $this->method = $method ? strtoupper($method) : null;
+        $this->currentUri = $currentUri;
+    }
+
+    /**
+     * Gets the node associated with this link.
+     *
+     * @return \DOMNode A \DOMNode instance
+     */
+    public function getNode()
+    {
+        return $this->node;
+    }
+
+    /**
+     * Gets the method associated with this link.
+     *
+     * @return string The method
+     *
+     * @api
+     */
+    public function getMethod()
+    {
+        return $this->method;
+    }
+
+    /**
+     * Gets the URI associated with this link.
+     *
+     * @return string The URI
+     *
+     * @api
+     */
+    public function getUri()
+    {
+        $uri = trim($this->getRawUri());
+
+        // absolute URL?
+        if (null !== parse_url($uri, PHP_URL_SCHEME)) {
+            return $uri;
+        }
+
+        // empty URI
+        if (!$uri) {
+            return $this->currentUri;
+        }
+
+        // only an anchor
+        if ('#' === $uri[0]) {
+            $baseUri = $this->currentUri;
+            if (false !== $pos = strpos($baseUri, '#')) {
+                $baseUri = substr($baseUri, 0, $pos);
+            }
+
+            return $baseUri.$uri;
+        }
+
+        // only a query string
+        if ('?' === $uri[0]) {
+            $baseUri = $this->currentUri;
+
+            // remove the query string from the current URI
+            if (false !== $pos = strpos($baseUri, '?')) {
+                $baseUri = substr($baseUri, 0, $pos);
+            }
+
+            return $baseUri.$uri;
+        }
+
+        // absolute URL with relative schema
+        if (0 === strpos($uri, '//')) {
+            return preg_replace('#^([^/]*)//.*$#', '$1', $this->currentUri).$uri;
+        }
+
+        $baseUri = preg_replace('#^(.*?//[^/]*)(?:\/.*)?$#', '$1', $this->currentUri);
+
+        // absolute path
+        if ('/' === $uri[0]) {
+            return $baseUri.$uri;
+        }
+
+        // relative path
+        $path = parse_url(substr($this->currentUri, strlen($baseUri)), PHP_URL_PATH);
+        $path = $this->canonicalizePath(substr($path, 0, strrpos($path, '/')).'/'.$uri);
+
+        return $baseUri.('' === $path || '/' !== $path[0] ? '/' : '').$path;
+    }
+
+    /**
+     * Returns raw URI data.
+     *
+     * @return string
+     */
+    protected function getRawUri()
+    {
+        return $this->node->getAttribute('href');
+    }
+
+    /**
+     * Returns the canonicalized URI path (see RFC 3986, section 5.2.4)
+     *
+     * @param string $path URI path
+     *
+     * @return string
+     */
+    protected function canonicalizePath($path)
+    {
+        if ('' === $path || '/' === $path) {
+            return $path;
+        }
+
+        if ('.' === substr($path, -1)) {
+            $path = $path.'/';
+        }
+
+        $output = array();
+
+        foreach (explode('/', $path) as $segment) {
+            if ('..' === $segment) {
+                array_pop($output);
+            } elseif ('.' !== $segment) {
+                array_push($output, $segment);
+            }
+        }
+
+        return implode('/', $output);
+    }
+
+    /**
+     * Sets current \DOMNode instance.
+     *
+     * @param \DOMNode $node A \DOMNode instance
+     *
+     * @throws \LogicException If given node is not an anchor
+     */
+    protected function setNode(\DOMNode $node)
+    {
+        if ('a' != $node->nodeName) {
+            throw new \LogicException(sprintf('Unable to click on a "%s" tag.', $node->nodeName));
+        }
+
+        $this->node = $node;
+    }
+}

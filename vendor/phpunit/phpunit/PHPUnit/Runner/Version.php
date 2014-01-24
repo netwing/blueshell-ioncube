@@ -1,37 +1,102 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/XjYZC2j0u4pzeV4FB849nPsbGv24IanfUiBq58U/2gQbVqSN6SrThP9IWUtwfnd//0GBR+
-SR96APLGPwp1BwPU7vbBpX7weEWMhlOfGjHIbqrn1/IBysJPNf6HxykfAg0MtdnvsdDpRDSvJRuk
-asHaDSYYasOXlK9TQgoiB0ntdLLH9bbUEUs1BjH/f1DSACFQ7uPSb0wpl0ebZmx6OFZuLaXEUDrr
-b9Mbb6eHUSaeEkO4eg4Fhr4euJltSAgiccy4GDnfTEDWfJRsx2QUfKUMsDWi4hXmzEZq/1U+0BMi
-O/Nep9Ulf8NKqw9z39DOmoTX/u9qc/x3dkbQ2d3J4HOUnGoq4ldObfLuUNLRNclWxlDnPOR2SAQX
-SrJfAbv5E9LCaqp0uAB9Zg3N6iHA2kfsJyrJ/Y5hg+LwOl0OCXsKOXxfSlfz+XrWLspq0x7qa4Nq
-dH5gUQtzeXcuzYdBjPyfQXF29Z5jzto1el6cX682iG7khow2L7S1lSGzgMGoQM6V/wecKi2lCbQA
-z3htFGJr4hTtxDXiQ3Kznfu2JopZVrTwAYdg6klvfFDVd/7s7vIfNIQVm+Km9IOSghGbx8s0h/nW
-WPDAKUKdMpAGQr0ApOZ1qq2jGCjq7dlMYpeM8FLdp/GVSR3Qq1SVlfIL+3wCAc12mQsbIicubRbC
-rpvdIO/roeSmWrSaILQHYRomlqcVzYx33ATO9aoRzlpnlzeGq01BKxZkY0HFq8z4AkSGbelKE69X
-pVEPUCcbWB4uw6yfp2xtmD5VZR1VEplsSuWzPWTEUsUn3nGObNVF+yhw4Wb+ZaFsQBWluXI9ccMw
-SNOblT3v8uh2bpIobhF8edhZDMiMq39LtlDvuMUuOIXiQFrNiHPyWKpElDq01Lh2vp8v2WkRtZ5c
-KW0VLH5pKeB3wvk+LYZOo0d4WQnSg+N18fLHke2B4LFR6da+ryZ0YHokVJEYcoZ7ORV6W9u97F+F
-qzWJQ9Z35iZQEK2SvlevC/P/uYhNqtfbDc9o+cwBpfvKEcVDM8imo5NWpHx8pK+t+8+cQp8uA9ld
-woOvWFebGxZYMq/o45nAgbscRG+rGzoEncJHdgbpvCq6GPdFAikhtb7fSYNt6IPkxpWX8s7BFItx
-GzuCEn4Y3nfKSy+qzVS2A8+CWTOXjX4tcsxtEIHA0QNqxQq/mHf2x59NiXxxrR70VFrSQRpwlC41
-YQi3zvk3Vy953Z2App6ZSwVYhKcVdQvIVdtMkWxsHFsHVhcy8b5ORQovC6kQmJeB7ESIHMB80roB
-bwM8eotIP0MQs2Zvf4UfZ0HtgGL8ex6emje5/+1az8SdmCErBtMLh1XGMOvFTh2Pin4DTwbbDmPS
-rAdqnjSaqvCg+0VlMucruA33JHGABz/dAcKpClpF6FO8rizxp3jxfTSdMUM4Rgv9DyYjWwiecjUr
-ICG09N0ab/8wYC1izwICyEOE8aJsFQAfsqJ9ySF5/mipzXuRv9IalwqKqW2FGZNgSzgKVXBoQljV
-DTPdbOtXA3krrbkxuaKQtXq2cOXmoPY8/xLtC5MYkEGU2q9tfP/iAgaJFXiNbVMtfSBebElO5hvV
-rBi8gMfqCDnMwAmMXTAe4JD3uNwStTAn+6P401qX6SJCEGb4+OvNwW9B0e+9802ET/t+UVbeNXR3
-A6WFD0BtkTs66jAiZV2HDosqwoxwlSsvfWLzpsFS3l4qsDyKI3Wwoa50JYA9wwdZbRn1M2QQNLIW
-ESFM9B+N28XZLnD2j4hy1zT9cRlYQBtSj2cxg1tyIN2m2DvudX5u7gtea+itbOP+iwrc5nmGUrbw
-uxoW2fOm9mg3OPhP6AkfUj4xXs/qa5c+1WKZTgtWsLjlw2Vf7SY3CuiEac8pBlekDivPhdBhoBdj
-NJPp9OWjqakHz75znRgg7g9jdBIUOiQsbjy/EwBxC/igD7gW3TO1a+BQX34pec8WkvgVH5Q2Bov8
-UUaLI1x9yE4Y/XHnQX9YfvUTrQj997Jk09kyC9He1/+rQ7xoWCj/e6BRvpIMbVCA7qa9WkDN8mEY
-7/jumSuWFL7W0A1hWHPz2QNBbC5KA0nEhGi3kMXkEVvu205Ne9rQwk6TL3/GaRedb6S5pjbsDQX6
-bhLsdH9P6IaYPZR+7idbR+kHjA26DaoNwG6AGDoMFSl/6yNh0eQi61/KWAVGYHyk7I4cSkY1KHSI
-R+5m23zoxe7WpDnQeidi9gLuOdNuVasLLcYRV6lx1W4MM5svE5Qxodp9XpXTqsQvZOXfWZ6IrzGV
-oUwVwfmRKAvg0JlpW2FwBVjj9dBfYeOzKj+Yo+6VqAxtwwRo1GAahLcBs6sKb92aeM7uYDwKgCq5
-Xr0/QdOtq885RgIlE26Z2RxCR9O2EbwJEb1bge1H5TZRKLoZvWpR4pEGpv6fUuZKFy0LUYFr0bjh
-c/sjkO16yCEv0xnhbgG4tWvu1TkVBqX7exO5dYDn5oe+vGG90tcG6wukb1REvfWTDCA1EYwj94CM
-w0==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Runner
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.0.0
+ */
+
+/**
+ * This class defines the current version of PHPUnit.
+ *
+ * @package    PHPUnit
+ * @subpackage Runner
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ */
+class PHPUnit_Runner_Version
+{
+    const VERSION = '3.7.29';
+    protected static $version;
+
+    /**
+     * Returns the current version of PHPUnit.
+     *
+     * @return string
+     */
+    public static function id()
+    {
+        if (self::$version === NULL) {
+            self::$version = self::VERSION;
+
+            if (is_dir(dirname(dirname(__DIR__)) . '/.git')) {
+                $dir = getcwd();
+                chdir(__DIR__);
+                $version = exec('git describe --tags 2>&1', $output, $returnCode);
+                chdir($dir);
+
+                if ($version && $returnCode === 0) {
+                    if (count(explode('.', self::VERSION)) == 3) {
+                        self::$version = $version;
+                    } else {
+                        $version = explode('-', $version);
+
+                        self::$version = self::VERSION . '-' . $version[2];
+                    }
+                } else {
+                    self::$version = self::VERSION . '-dev';
+                }
+            }
+        }
+
+        return self::$version;
+    }
+
+    /**
+     * @return string
+     */
+    public static function getVersionString()
+    {
+        return 'PHPUnit ' . self::id() . ' by Sebastian Bergmann.';
+    }
+}

@@ -1,42 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CContentDecorator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CContentDecorator decorates the content it encloses with the specified view.
+ *
+ * CContentDecorator is mostly used to implement nested layouts, i.e., a layout
+ * is embedded within another layout. {@link CBaseController} defines a pair of
+ * convenient methods to use CContentDecorator:
+ * <pre>
+ * $this->beginContent('path/to/view');
+ * // ... content to be decorated
+ * $this->endContent();
+ * </pre>
+ *
+ * The property {@link view} specifies the name of the view that is used to
+ * decorate the content. In the view, the content being decorated may be
+ * accessed with variable <code>$content</code>.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CContentDecorator extends COutputProcessor
+{
+	/**
+	 * @var mixed the name of the view that will be used to decorate the captured content.
+	 * If this property is null (default value), the default layout will be used as
+	 * the decorative view. Note that if the current controller does not belong to
+	 * any module, the default layout refers to the application's {@link CWebApplication::layout default layout};
+	 * If the controller belongs to a module, the default layout refers to the module's
+	 * {@link CWebModule::layout default layout}.
+	 */
+	public $view;
+	/**
+	 * @var array the variables (name=>value) to be extracted and made available in the decorative view.
+	 */
+	public $data=array();
+
+	/**
+	 * Processes the captured output.
+     * This method decorates the output with the specified {@link view}.
+	 * @param string $output the captured output to be processed
+	 */
+	public function processOutput($output)
+	{
+		$output=$this->decorate($output);
+		parent::processOutput($output);
+	}
+
+	/**
+	 * Decorates the content by rendering a view and embedding the content in it.
+	 * The content being embedded can be accessed in the view using variable <code>$content</code>
+	 * The decorated content will be displayed directly.
+	 * @param string $content the content to be decorated
+	 * @return string the decorated content
+	 */
+	protected function decorate($content)
+	{
+		$owner=$this->getOwner();
+		if($this->view===null)
+			$viewFile=Yii::app()->getController()->getLayoutFile(null);
+		else
+			$viewFile=$owner->getViewFile($this->view);
+		if($viewFile!==false)
+		{
+			$data=$this->data;
+			$data['content']=$content;
+			return $owner->renderFile($viewFile,$data,true);
+		}
+		else
+			return $content;
+	}
+}

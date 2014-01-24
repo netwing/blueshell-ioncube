@@ -1,67 +1,135 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmOriTrrbmaI5Fia/cM8U9QGAOIPbu7EY/H2OugmfZyqH0dXbO2weW6AbxTS6ocprzvTI7oU
-iMquEF2YfooJMBa78cBAzN9C63dCxMrVZVcjUag+vEXg9uGCHupgnJ9rmru9roCLgpXGnggpYKG4
-YKzjIog6y14VNMU2nTGDUjJUKbGlz+N0xeWM+lcKTht0TfGsbtNTNo0IDHn9gioagRmRkTQW2kpq
-TmhTy2P8uktj8t3S9F5DDEMlKIZXE/TmggoQRmH0t6bqdcGNbCByeMULwaRv67qlmK7/QoNAdz41
-Yhyg/tWxaPggOmV7cZ5aBE6W0nv6gfSdE+RCI4r3AHMjSsF/6t4ifsJl+ZMHl7ff4/hAVK+fgLFT
-nlvF69ye4f8QN78fQ96CeT087bVT8M2AS/kzE+3bGEexd5zoQM0w1bvgxfjgIEmTkiLlm5YwC0O4
-L7RgcwI7tQF+0+DMC5cqEAkTmBSb+ICG9yOq+12Aj37ub61rq3lneBj3MwFe+v8orM0l8RnWw7+2
-FZsomgKzKsPQaLVb0Pe3pZwiMHNv/a6h4xu7E+JUJQVY2+LDxAHrImX9LVcEv/dSCW9txZRn7OEK
-PX5Zcfd0/SEpISMkM35w733XRbUgNBzBUUvo8l9kN8yLLVtQnmB4GZtSS0bLbkX898LiiT6OYHdZ
-Vg7g6V4ZQBSIyJRV1NesqBevkPYy/rp3tmkRS571T2oXR6+qEE4S2mdtJLfMjmhqdHxC3si2AaLw
-qs1BnB5ThUkLgYioS1eqsWZ6KTkK35RXq7GAFOO2gcVj2HQVaPWiFkf4RL/3v1QwYTMZ6MvA+KMs
-pTBKufdW9vi+4unDPSdRvybbc0JXiSxuPYNUB0/krPVdD8zScAy3ZYw969nSTZ/ZHn0TXGMlzXkl
-ePfDYMf1ZQF6ZjInbtVEvTDnay12oKUz4KniUdGPAv45sk/hvYTgbc8bl39Z+xw2g0eHtZGLOU4a
-Irlhhe4azQjKme1LpxsTFq4YT0w1WqrKNpT8Nk/LFW4YTR8ZgoJ+Rwzh0kEDslMj1DthYvOh/gGQ
-sDgjUiFbT0koV8nmUpS+H1QJA+SKEgnP5niEV3jzfY6v4z1pfi2L4M+TTZK+FJKD56KUujeZc4Zd
-xNCJIsf8PNg+8FNi7JDZhB1L8CH9zFKY0Rsmk1dFFTdu7H+L/N9P8F5uet21sybfcQMRw0Ibn3+8
-JyMTLsIP9bnIcHTYnAo6znZ2Pmn/5XMipRqp2DuxGXXAu+diBbdJ71WtomXvaVpWThs6FO8skIgv
-r/u/EExxVJCqt0ob8yiDpEmOv9vFauGpQKsIl3YLx21YZpguH+Ej8JHDELrVrKmiPcAA4pwiNdmt
-OE8T7ISGdjnAFavYDUsHCFkJayEtzau4cUOgPllt/4dH6DA6+fyniNp90nGmSENrNJw6ru6rop6Q
-nt9S766d0vE/5VqAmZW2eh+CTwoC6pRhFkf44gLjoiwQOWKK9snx2mpoV3fMw/Ct2ODg+zgwdXGl
-F/nroQF71C2OBH9d2q4Z6y2tudtWcySsdZ022fRYyA2+SyDhs9tr4MOj0xXwKd5Lvg2ciBUzTUNc
-ZPCZXAdmMVWvI+wJZIVvgj5ZFV+Tj3N0Vkv3ElxZE5Qb/ftM38t4531n02pK98CziQ+WG/8OkX7P
-2vAN304aM/yeq+KKJI4qSVXDXhNPHorP08V+LI1yxShE7F4vxrvNRx6a/orfQe5/dcT1QcxMjPet
-YEjU8eCi3wevUrbun6eZCLPTBIddeI6kig4a+PRRH6Bt0bKiI+SAf9537cNNRAIEhOH+m7cVhOps
-vujfv7OB3JPHqgO6smhG2E6TZfEbE95MRYGgm6Ok+OPfOIQskNhvnvUecruEnluRP7U8w4wP2nz+
-vt5RK0pvyDgcVJAtIrNBgyl68Zc5j/NwSZGmq6KRYHP3GU3jptZQPfk+1z5vUsPEZJv+x35G/JSK
-9tUyWuIFuOnmPFIXUE3kXe15DSg5HG8Qv3leCAmwZgp7Hp1l/t5apY0o9FTt3h6suoPXwgOa+oyB
-6OUwno2tqQhYxH2QJmTagcTvgZ6oZ1E3xsH2Vf+vIY2UBSWECMLblUnE/FEMvgvQYQVt9Sdcb00A
-UUMQCbvZXjk98oyKY7OR8z8DgWaBrYbd3/+XlUO2Dc0jPdRt1VuvJsJ+itJexffuTUHLRCDXEwd8
-K6tECd0dOlvMhQ1OZh1mQcBtcAZ73zoHlhNyaZ0iXJCbD2zV57yglL3X5PjwN9tv8Z5dwuBKCbhI
-ThXTy+PqprutmIAmThL9o8sU6bdWUK9HcEc8Dwx/Hf2nsgowKbzv15ZyvvjCO1OqGDmnTrH2jzkS
-Sw7FHzD26psNBzFlaOszZNn2pzZDBj1pAJ+YAuinIay7ARQf6D7m2xBgguoLcqGW9KtsCHEGiK5t
-gOfw4DtRVem+r35S1soTkwEYAXcdm9KblUmeScdvbscu0QypPnLCasCxBSHM2ZLYr5WAES+lD6xw
-N2/hKh4Y5mUv6FAKWvYvqAh0Dq3vZLDiAh2T4L3+3vusagf/07j0HqxpYOgwBfrxFnjhRAhBP3tt
-LYo0CXJ5cZWXZwJUWDrErulhqoEV4nKb/1JB9Bhas3YxBF0Ap165yzC7DAn6poBJaAJjWg1Lv6af
-1VKW+9N772K9MILyhshPmyL7GmqGavj2bwGEm+vY1EZnnBSA7titJKVM3a/JA1bCvrn4kciqvskY
-CU+M+ZjPgYryJ4LXq1OxYF+H/t/98SW38zQXTspAoi30N+YCuRFaQRdxlVLoZcuieAPqAZuPrt5B
-nvHA1xFLz5BJorvVhgFHHK/UmiWgvSoferSs+IoFe1q3uLo5CcFPtQDm9dhLhtrSHIupMsXEcs0X
-G9UkrsD+gyxBFMhqmKBNcSwH6M6lNThsEjfGeVGM/1EJtt4xEkfSIUfnfjDY5+iICH0ZD/v6rdX+
-v+h96OvhFJS1Z+PlTB2sLCfD6SIQ5XDESR4JBbGQf3Tl0MLm4QuXG05eX4WWaLUZGN71d/Tr6hWO
-XG9KLFfOIS8QuiEm84+grfUUj+GeEdqH9//S2WNjcBRLjyo3sBSX5ZCg2Zi8KJj/8yncmzzlA4Qa
-xnvjdi5SvHUMwnsQYCW0pHhK2zR21TIsSU4j1+iNsCwekn+qYrU6qABh62msw50uQTKo9lsi3IZL
-X2VhMozptN6VInAR64JblAIpAy6SmVVasPwe18qAdHFaRuTSQRoCL/rIgGhkun/06nEB/nCVKP3T
-G9C8gin3mQAP6NDgMlPGhBJlfSNfZAY1I++bg3+1XIIVeVlXHRSmooi0n1T1yGLJmTP8u6lMyLg9
-3PPTT4szXx1lWhOUmjMeAm9r8rQ8+squIYGu9Qynz1jHngZMz2zCWfz0cOV+YJbkH5W0w+jbbrqR
-IefX2nmwmQ8iyKbvN6NTQ1E8e7jpjHEg91EmoAZLklFKfImHBun9eLH0utEkFjrA6u8ZrZ7oR3FU
-RP2fX5ZBNDkjHG9f06l90lKidMS4geRE7HpqIczNpvIFYnDL+ARQhEFckKfq6LNctbFGoLhbptPd
-Zpxa5lOL0o1fU1N2m+XhxAh1d7ccyY1jomCTuBGxAPcfamA5/tTdHRP+ogiOuC9g+Tgy8Wmrv5Jd
-n03CqW6YfHFLgOC1ijr8hEUJZTsP/xpYhNV34JNY42hBJsYiEPz26avc11XhwvqwO5mAryxsVVX8
-iWLf7iF7/jXUgKZcpZZ7Flwqiix7nOJWDcR4LpyeVYlesXAg0YGufJYJCfXZOjTViWTGSZi8RAfk
-owYqaHw9V1g6Y6Wgdf+hQNJoJvHE8nWKgEpyPKcFxrW2frVLoaVAZqvGkqcJyGRL7Yu+fteaPYbd
-GqYAnte85+I0gKj3IMX6ofMKm3PpxSzIzLVqAEC9Pzkm5trpm4n2BPn1n5taCzGTMM71+fcloKQb
-n/EAvVdXblQYsL2/geDk0MPw+8dzFM5rJbG+5PrZnRYK4dkcW9HktxocwWOcQQNkB14E0pcBYtj2
-5WjraeT2P/VFd099cDG0U0UmnEBFo9elkIzCnq8VjO4wKmP85nh25Plk6NnQkG+u9QK44OEQIVwF
-9qim8UZyESZXLUEQw6/woS9MTSHkGKf6wNxc53GarVS4SwIXM2D8hWryUpSzA8PjIj/kQfIOxKhJ
-sGADxZ19N2RIHtRlN0PO+nkAybSntcCIuRTL16hYWp5hWEMItOKHphRxPBCO0oCDNo4g64vZulbx
-yWS2ZrTUjJf+yH51fW2Rq7gN53Amdke/sGYq9C7O1pMpsNGj4l/aftO/b+iqK12Dr5DCLMBx4Wwh
-a0RC7HWKif+E4gjzVXuLZIH0ahspiRBEJwoncAEAcOnuz0I6LPcFPpQQRIqQWt6UsSnMrJX8qQZ6
-hDjOS8/43qKeWI2rAFDwz9TAQLBBRZ0F4EBO6iQ6hdnPJ9NrWOqh+rPsWWO0rzLd7q7ZkbUn9kut
-EsucLn5kowrZqmj7Gmm+aTCx3ygBfIwpxmzWzJQZiaeBkqpAX/ggc7v3RdWJ4AFQRvDRtFc06pso
-anSomSaHd+IlwthWJamuq87xavyukI0HGRI805jRqqYOZqWFgIpWJWgWQNlNVZhixSvf613IyU9X
-pK9OnwDnQGNaw/0XB0lbH4D1UdhFnNFQJecW3kU2K3iSY05I6N2XEU5g6YQbHAyXssHbH6d15j69
-FwISz1NyqsUs/oGCj/NUv/JcLEGs2Ldi1sFnLUg5ldQLevpctD2pCPFSJ0SPDbY7uYk12BBkx9U3
-OvqmqXpGYqeL0yV5e6GYufKBWybhInQKvI2jofyRdHFeR6GpErC3/Y+BqhRCPLdtiAVca0Yh
+<?php
+/**
+ * CDirectoryCacheDependency class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDirectoryCacheDependency represents a dependency based on change of a directory.
+ *
+ * CDirectoryCacheDependency performs dependency checking based on the
+ * modification time of the files contained in the specified directory.
+ * The directory being checked is specified via {@link directory}.
+ *
+ * By default, all files under the specified directory and subdirectories
+ * will be checked. If the last modification time of any of them is changed
+ * or if different number of files are contained in a directory, the dependency
+ * is reported as changed. By specifying {@link recursiveLevel},
+ * one can limit the checking to a certain depth of the directory.
+ *
+ * Note, dependency checking for a directory is expensive because it involves
+ * accessing modification time of multiple files under the directory.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching.dependencies
+ * @since 1.0
+ */
+class CDirectoryCacheDependency extends CCacheDependency
+{
+	/**
+	 * @var string the directory whose change is used to determine if the dependency has been changed.
+	 * If any of the files under the directory is changed, the dependency is considered as changed.
+	 */
+	public $directory;
+	/**
+	 * @var integer the depth of the subdirectories to be recursively checked.
+	 * If the value is less than 0, it means unlimited depth.
+	 * If the value is 0, it means checking the files directly under the specified directory.
+	 */
+	public $recursiveLevel=-1;
+	/**
+	 * @var string the regular expression matching valid file/directory names.
+	 * Only the matching files or directories will be checked for changes.
+	 * Defaults to null, meaning all files/directories will qualify.
+	 */
+	public $namePattern;
+
+	/**
+	 * Constructor.
+	 * @param string $directory the directory to be checked
+	 */
+	public function __construct($directory=null)
+	{
+		$this->directory=$directory;
+	}
+
+	/**
+	 * Generates the data needed to determine if dependency has been changed.
+	 * This method returns the modification timestamps for files under the directory.
+	 * @throws CException if {@link directory} is empty
+	 * @return mixed the data needed to determine if dependency has been changed.
+	 */
+	protected function generateDependentData()
+	{
+		if($this->directory!==null)
+			return $this->generateTimestamps($this->directory);
+		else
+			throw new CException(Yii::t('yii','CDirectoryCacheDependency.directory cannot be empty.'));
+	}
+
+	/**
+	 * Determines the last modification time for files under the directory.
+	 * This method may go recursively into subdirectories if {@link recursiveLevel} is not 0.
+	 * @param string $directory the directory name
+	 * @param integer $level level of the recursion
+	 * @throws CException if given directory is not valid
+	 * @return array list of file modification time indexed by the file path
+	 */
+	protected function generateTimestamps($directory,$level=0)
+	{
+		if(($dir=@opendir($directory))===false)
+			throw new CException(Yii::t('yii','"{path}" is not a valid directory.',
+				array('{path}'=>$directory)));
+		$timestamps=array();
+		while(($file=readdir($dir))!==false)
+		{
+			$path=$directory.DIRECTORY_SEPARATOR.$file;
+			if($file==='.' || $file==='..')
+				continue;
+			if($this->namePattern!==null && !preg_match($this->namePattern,$file))
+				continue;
+			if(is_file($path))
+			{
+				if($this->validateFile($path))
+					$timestamps[$path]=filemtime($path);
+			}
+			else
+			{
+				if(($this->recursiveLevel<0 || $level<$this->recursiveLevel) && $this->validateDirectory($path))
+					$timestamps=array_merge($timestamps, $this->generateTimestamps($path,$level+1));
+			}
+		}
+		closedir($dir);
+		return $timestamps;
+	}
+
+	/**
+	 * Checks to see if the file should be checked for dependency.
+	 * This method is invoked when dependency of the whole directory is being checked.
+	 * By default, it always returns true, meaning the file should be checked.
+	 * You may override this method to check only certain files.
+	 * @param string $fileName the name of the file that may be checked for dependency.
+	 * @return boolean whether this file should be checked.
+	 */
+	protected function validateFile($fileName)
+	{
+		return true;
+	}
+
+	/**
+	 * Checks to see if the specified subdirectory should be checked for dependency.
+	 * This method is invoked when dependency of the whole directory is being checked.
+	 * By default, it always returns true, meaning the subdirectory should be checked.
+	 * You may override this method to check only certain subdirectories.
+	 * @param string $directory the name of the subdirectory that may be checked for dependency.
+	 * @return boolean whether this subdirectory should be checked.
+	 */
+	protected function validateDirectory($directory)
+	{
+		return true;
+	}
+}

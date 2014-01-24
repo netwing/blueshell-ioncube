@@ -1,154 +1,213 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: encoding_test.php 1788 2008-04-27 11:01:59Z pp11 $
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../url.php');
+require_once(dirname(__FILE__) . '/../socket.php');
+
+Mock::generate('SimpleSocket');
+
+class TestOfEncodedParts extends UnitTestCase {
+    
+    function testFormEncodedAsKeyEqualsValue() {
+        $pair = new SimpleEncodedPair('a', 'A');
+        $this->assertEqual($pair->asRequest(), 'a=A');
+    }
+    
+    function testMimeEncodedAsHeadersAndContent() {
+        $pair = new SimpleEncodedPair('a', 'A');
+        $this->assertEqual(
+                $pair->asMime(),
+                "Content-Disposition: form-data; name=\"a\"\r\n\r\nA");
+    }
+    
+    function testAttachmentEncodedAsHeadersWithDispositionAndContent() {
+        $part = new SimpleAttachment('a', 'A', 'aaa.txt');
+        $this->assertEqual(
+                $part->asMime(),
+                "Content-Disposition: form-data; name=\"a\"; filename=\"aaa.txt\"\r\n" .
+                        "Content-Type: text/plain\r\n\r\nA");
+    }
+}
+
+class TestOfEncoding extends UnitTestCase {
+    private $content_so_far;
+    
+    function write($content) {
+        $this->content_so_far .= $content;
+    }
+    
+    function clear() {
+        $this->content_so_far = '';
+    }
+    
+    function assertWritten($encoding, $content, $message = '%s') {
+        $this->clear();
+        $encoding->writeTo($this);
+        $this->assertIdentical($this->content_so_far, $content, $message);
+    }
+    
+    function testGetEmpty() {
+        $encoding = new SimpleGetEncoding();
+        $this->assertIdentical($encoding->getValue('a'), false);
+        $this->assertIdentical($encoding->asUrlRequest(), '');
+    }
+    
+    function testPostEmpty() {
+        $encoding = new SimplePostEncoding();
+        $this->assertIdentical($encoding->getValue('a'), false);
+        $this->assertWritten($encoding, '');
+    }
+    
+    function testPrefilled() {
+        $encoding = new SimplePostEncoding(array('a' => 'aaa'));
+        $this->assertIdentical($encoding->getValue('a'), 'aaa');
+        $this->assertWritten($encoding, 'a=aaa');
+    }
+    
+    function testPrefilledWithTwoLevels() {
+        $query = array('a' => array('aa' => 'aaa'));
+        $encoding = new SimplePostEncoding($query);
+        $this->assertTrue($encoding->hasMoreThanOneLevel($query));
+        $this->assertEqual($encoding->rewriteArrayWithMultipleLevels($query), array('a[aa]' => 'aaa'));
+        $this->assertIdentical($encoding->getValue('a[aa]'), 'aaa');
+        $this->assertWritten($encoding, 'a%5Baa%5D=aaa');
+    }
+    
+    function testPrefilledWithThreeLevels() {
+        $query = array('a' => array('aa' => array('aaa' => 'aaaa')));
+        $encoding = new SimplePostEncoding($query);
+        $this->assertTrue($encoding->hasMoreThanOneLevel($query));
+        $this->assertEqual($encoding->rewriteArrayWithMultipleLevels($query), array('a[aa][aaa]' => 'aaaa'));
+        $this->assertIdentical($encoding->getValue('a[aa][aaa]'), 'aaaa');
+        $this->assertWritten($encoding, 'a%5Baa%5D%5Baaa%5D=aaaa');
+    }
+    
+    function testPrefilledWithObject() {
+        $encoding = new SimplePostEncoding(new SimpleEncoding(array('a' => 'aaa')));
+        $this->assertIdentical($encoding->getValue('a'), 'aaa');
+        $this->assertWritten($encoding, 'a=aaa');
+    }
+    
+    function testMultiplePrefilled() {
+        $query = array('a' => array('a1', 'a2'));
+        $encoding = new SimplePostEncoding($query);
+        $this->assertTrue($encoding->hasMoreThanOneLevel($query));
+        $this->assertEqual($encoding->rewriteArrayWithMultipleLevels($query), array('a[0]' => 'a1', 'a[1]' => 'a2'));
+        $this->assertIdentical($encoding->getValue('a[0]'), 'a1');
+        $this->assertIdentical($encoding->getValue('a[1]'), 'a2');
+        $this->assertWritten($encoding, 'a%5B0%5D=a1&a%5B1%5D=a2');
+    }
+    
+    function testSingleParameter() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a', 'Hello');
+        $this->assertEqual($encoding->getValue('a'), 'Hello');
+        $this->assertWritten($encoding, 'a=Hello');
+    }
+    
+    function testFalseParameter() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a', false);
+        $this->assertEqual($encoding->getValue('a'), false);
+        $this->assertWritten($encoding, '');
+    }
+    
+    function testUrlEncoding() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a', 'Hello there!');
+        $this->assertWritten($encoding, 'a=Hello+there%21');
+    }
+    
+    function testUrlEncodingOfKey() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a!', 'Hello');
+        $this->assertWritten($encoding, 'a%21=Hello');
+    }
+    
+    function testMultipleParameter() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a', 'Hello');
+        $encoding->add('b', 'Goodbye');
+        $this->assertWritten($encoding, 'a=Hello&b=Goodbye');
+    }
+    
+    function testEmptyParameters() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a', '');
+        $encoding->add('b', '');
+        $this->assertWritten($encoding, 'a=&b=');
+    }
+    
+    function testRepeatedParameter() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a', 'Hello');
+        $encoding->add('a', 'Goodbye');
+        $this->assertIdentical($encoding->getValue('a'), array('Hello', 'Goodbye'));
+        $this->assertWritten($encoding, 'a=Hello&a=Goodbye');
+    }
+    
+    function testAddingLists() {
+        $encoding = new SimplePostEncoding();
+        $encoding->add('a', array('Hello', 'Goodbye'));
+        $this->assertIdentical($encoding->getValue('a'), array('Hello', 'Goodbye'));
+        $this->assertWritten($encoding, 'a=Hello&a=Goodbye');
+    }
+    
+    function testMergeInHash() {
+        $encoding = new SimpleGetEncoding(array('a' => 'A1', 'b' => 'B'));
+        $encoding->merge(array('a' => 'A2'));
+        $this->assertIdentical($encoding->getValue('a'), array('A1', 'A2'));
+        $this->assertIdentical($encoding->getValue('b'), 'B');
+    }
+    
+    function testMergeInObject() {
+        $encoding = new SimpleGetEncoding(array('a' => 'A1', 'b' => 'B'));
+        $encoding->merge(new SimpleEncoding(array('a' => 'A2')));
+        $this->assertIdentical($encoding->getValue('a'), array('A1', 'A2'));
+        $this->assertIdentical($encoding->getValue('b'), 'B');
+    }
+    
+    function testPrefilledMultipart() {
+        $encoding = new SimpleMultipartEncoding(array('a' => 'aaa'), 'boundary');
+        $this->assertIdentical($encoding->getValue('a'), 'aaa');
+        $this->assertwritten($encoding,
+                "--boundary\r\n" .
+                "Content-Disposition: form-data; name=\"a\"\r\n" .
+                "\r\n" .
+                "aaa\r\n" .
+                "--boundary--\r\n");
+    }
+    
+    function testAttachment() {
+        $encoding = new SimpleMultipartEncoding(array(), 'boundary');
+        $encoding->attach('a', 'aaa', 'aaa.txt');
+        $this->assertIdentical($encoding->getValue('a'), 'aaa.txt');
+        $this->assertwritten($encoding,
+                "--boundary\r\n" .
+                "Content-Disposition: form-data; name=\"a\"; filename=\"aaa.txt\"\r\n" .
+                "Content-Type: text/plain\r\n" .
+                "\r\n" .
+                "aaa\r\n" .
+                "--boundary--\r\n");
+    }
+}
+
+class TestOfFormHeaders extends UnitTestCase {
+    
+    function testEmptyEncodingWritesZeroContentLength() {
+        $socket = new MockSimpleSocket();
+        $socket->expectAt(0, 'write', array("Content-Length: 0\r\n"));
+        $socket->expectAt(1, 'write', array("Content-Type: application/x-www-form-urlencoded\r\n"));
+        $encoding = new SimplePostEncoding();
+        $encoding->writeHeadersTo($socket);
+    }
+    
+    function testEmptyMultipartEncodingWritesEndBoundaryContentLength() {
+        $socket = new MockSimpleSocket();
+        $socket->expectAt(0, 'write', array("Content-Length: 14\r\n"));
+        $socket->expectAt(1, 'write', array("Content-Type: multipart/form-data, boundary=boundary\r\n"));
+        $encoding = new SimpleMultipartEncoding(array(), 'boundary');
+        $encoding->writeHeadersTo($socket);
+    }
+}
 ?>
-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

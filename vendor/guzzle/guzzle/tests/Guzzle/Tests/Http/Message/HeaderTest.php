@@ -1,96 +1,157 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Http\Message;
+
+use Guzzle\Http\Message\Header;
+use Guzzle\Http\Message\Response;
+
+/**
+ * @covers Guzzle\Http\Message\Header
+ */
+class HeaderTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    protected $test = array(
+        'zoo'   => array('foo', 'Foo'),
+        'Zoo'   => 'bar',
+    );
+
+    public function testStoresHeaderName()
+    {
+        $i = new Header('Zoo', $this->test);
+        $this->assertEquals('Zoo', $i->getName());
+    }
+
+    public function testConvertsToString()
+    {
+        $i = new Header('Zoo', $this->test);
+        $this->assertEquals('foo, Foo, bar', (string) $i);
+        $i->setGlue(';');
+        $this->assertEquals('foo; Foo; bar', (string) $i);
+    }
+
+    public function testNormalizesGluedHeaders()
+    {
+        $h = new Header('Zoo', array('foo, Faz', 'bar'));
+        $result = $h->normalize(true)->toArray();
+        natsort($result);
+        $this->assertEquals(array('bar', 'foo', 'Faz'), $result);
+    }
+
+    public function testCanSearchForValues()
+    {
+        $h = new Header('Zoo', $this->test);
+        $this->assertTrue($h->hasValue('foo'));
+        $this->assertTrue($h->hasValue('Foo'));
+        $this->assertTrue($h->hasValue('bar'));
+        $this->assertFalse($h->hasValue('moo'));
+        $this->assertFalse($h->hasValue('FoO'));
+    }
+
+    public function testIsCountable()
+    {
+        $h = new Header('Zoo', $this->test);
+        $this->assertEquals(3, count($h));
+    }
+
+    public function testCanBeIterated()
+    {
+        $h = new Header('Zoo', $this->test);
+        $results = array();
+        foreach ($h as $key => $value) {
+            $results[$key] = $value;
+        }
+        $this->assertEquals(array(
+            'foo', 'Foo', 'bar'
+        ), $results);
+    }
+
+    public function testAllowsFalseyValues()
+    {
+        // Allows 0
+        $h = new Header('Foo', 0, ';');
+        $this->assertEquals('0', (string) $h);
+        $this->assertEquals(1, count($h));
+        $this->assertEquals(';', $h->getGlue());
+
+        // Does not add a null header by default
+        $h = new Header('Foo');
+        $this->assertEquals('', (string) $h);
+        $this->assertEquals(0, count($h));
+
+        // Allows null array for a single null header
+        $h = new Header('Foo', array(null));
+        $this->assertEquals('', (string) $h);
+
+        // Allows empty string
+        $h = new Header('Foo', '');
+        $this->assertEquals('', (string) $h);
+        $this->assertEquals(1, count($h));
+    }
+
+    public function testCanRemoveValues()
+    {
+        $h = new Header('Foo', array('Foo', 'baz', 'bar'));
+        $h->removeValue('bar');
+        $this->assertTrue($h->hasValue('Foo'));
+        $this->assertFalse($h->hasValue('bar'));
+        $this->assertTrue($h->hasValue('baz'));
+    }
+
+    public function testAllowsArrayInConstructor()
+    {
+        $h = new Header('Foo', array('Testing', '123', 'Foo=baz'));
+        $this->assertEquals(array('Testing', '123', 'Foo=baz'), $h->toArray());
+    }
+
+    public function parseParamsProvider()
+    {
+        $res1 = array(
+            array(
+                '<http:/.../front.jpeg>' => '',
+                'rel' => 'front',
+                'type' => 'image/jpeg',
+            ),
+            array(
+                '<http://.../back.jpeg>' => '',
+                'rel' => 'back',
+                'type' => 'image/jpeg',
+            ),
+        );
+
+        return array(
+            array(
+                '<http:/.../front.jpeg>; rel="front"; type="image/jpeg", <http://.../back.jpeg>; rel=back; type="image/jpeg"',
+                $res1
+            ),
+            array(
+                '<http:/.../front.jpeg>; rel="front"; type="image/jpeg",<http://.../back.jpeg>; rel=back; type="image/jpeg"',
+                $res1
+            ),
+            array(
+                'foo="baz"; bar=123, boo, test="123", foobar="foo;bar"',
+                array(
+                    array('foo' => 'baz', 'bar' => '123'),
+                    array('boo' => ''),
+                    array('test' => '123'),
+                    array('foobar' => 'foo;bar')
+                )
+            ),
+            array(
+                '<http://.../side.jpeg?test=1>; rel="side"; type="image/jpeg",<http://.../side.jpeg?test=2>; rel=side; type="image/jpeg"',
+                array(
+                    array('<http://.../side.jpeg?test=1>' => '', 'rel' => 'side', 'type' => 'image/jpeg'),
+                    array('<http://.../side.jpeg?test=2>' => '', 'rel' => 'side', 'type' => 'image/jpeg')
+                )
+            )
+        );
+    }
+
+    /**
+     * @dataProvider parseParamsProvider
+     */
+    public function testParseParams($header, $result)
+    {
+        $response = new Response(200, array('Link' => $header));
+        $this->assertEquals($result, $response->getHeader('Link')->parseParams());
+    }
+}

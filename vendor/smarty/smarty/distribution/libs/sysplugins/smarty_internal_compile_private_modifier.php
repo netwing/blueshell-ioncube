@@ -1,90 +1,140 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-0qyl5DzmJhyqI1+XaECvGHyYgK7Nb+4vioWQKOO=
+<?php
+
+/**
+ * Smarty Internal Plugin Compile Modifier
+ *
+ * Compiles code for modifier execution
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Modifier Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Private_Modifier extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for modifier execution
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        $output = $parameter['value'];
+        // loop over list of modifiers
+        foreach ($parameter['modifierlist'] as $single_modifier) {
+            $modifier = $single_modifier[0];
+            $single_modifier[0] = $output;
+            $params = implode(',', $single_modifier);
+            // check if we know already the type of modifier
+            if (isset($compiler->known_modifier_type[$modifier])) {
+                $modifier_types = array($compiler->known_modifier_type[$modifier]);
+            } else {
+                $modifier_types = array(1, 2, 3, 4, 5, 6);
+            }
+            foreach ($modifier_types as $type) {
+                switch ($type) {
+                    case 1:
+                        // registered modifier
+                        if (isset($compiler->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER][$modifier])) {
+                            $function = $compiler->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER][$modifier][0];
+                            if (!is_array($function)) {
+                                $output = "{$function}({$params})";
+                            } else {
+                                if (is_object($function[0])) {
+                                    $output = '$_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER][\'' . $modifier . '\'][0][0]->' . $function[1] . '(' . $params . ')';
+                                } else {
+                                    $output = $function[0] . '::' . $function[1] . '(' . $params . ')';
+                                }
+                            }
+                            $compiler->known_modifier_type[$modifier] = $type;
+                            break 2;
+                        }
+                        break;
+                    case 2:
+                        // registered modifier compiler
+                        if (isset($compiler->smarty->registered_plugins[Smarty::PLUGIN_MODIFIERCOMPILER][$modifier][0])) {
+                            $output = call_user_func($compiler->smarty->registered_plugins[Smarty::PLUGIN_MODIFIERCOMPILER][$modifier][0], $single_modifier, $compiler->smarty);
+                            $compiler->known_modifier_type[$modifier] = $type;
+                            break 2;
+                        }
+                        break;
+                    case 3:
+                        // modifiercompiler plugin
+                        if ($compiler->smarty->loadPlugin('smarty_modifiercompiler_' . $modifier)) {
+                            // check if modifier allowed
+                            if (!is_object($compiler->smarty->security_policy) || $compiler->smarty->security_policy->isTrustedModifier($modifier, $compiler)) {
+                                $plugin = 'smarty_modifiercompiler_' . $modifier;
+                                $output = $plugin($single_modifier, $compiler);
+                            }
+                            $compiler->known_modifier_type[$modifier] = $type;
+                            break 2;
+                        }
+                        break;
+                    case 4:
+                        // modifier plugin
+                        if ($function = $compiler->getPlugin($modifier, Smarty::PLUGIN_MODIFIER)) {
+                            // check if modifier allowed
+                            if (!is_object($compiler->smarty->security_policy) || $compiler->smarty->security_policy->isTrustedModifier($modifier, $compiler)) {
+                                $output = "{$function}({$params})";
+                            }
+                            $compiler->known_modifier_type[$modifier] = $type;
+                            break 2;
+                        }
+                        break;
+                    case 5:
+                        // PHP function
+                        if (is_callable($modifier)) {
+                            // check if modifier allowed
+                            if (!is_object($compiler->smarty->security_policy) || $compiler->smarty->security_policy->isTrustedPhpModifier($modifier, $compiler)) {
+                                $output = "{$modifier}({$params})";
+                            }
+                            $compiler->known_modifier_type[$modifier] = $type;
+                            break 2;
+                        }
+                        break;
+                    case 6:
+                        // default plugin handler
+                        if (isset($compiler->default_handler_plugins[Smarty::PLUGIN_MODIFIER][$modifier]) || (is_callable($compiler->smarty->default_plugin_handler_func) && $compiler->getPluginFromDefaultHandler($modifier, Smarty::PLUGIN_MODIFIER))) {
+                            $function = $compiler->default_handler_plugins[Smarty::PLUGIN_MODIFIER][$modifier][0];
+                            // check if modifier allowed
+                            if (!is_object($compiler->smarty->security_policy) || $compiler->smarty->security_policy->isTrustedModifier($modifier, $compiler)) {
+                                if (!is_array($function)) {
+                                    $output = "{$function}({$params})";
+                                } else {
+                                    if (is_object($function[0])) {
+                                        $output = '$_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_MODIFIER][\'' . $modifier . '\'][0][0]->' . $function[1] . '(' . $params . ')';
+                                    } else {
+                                        $output = $function[0] . '::' . $function[1] . '(' . $params . ')';
+                                    }
+                                }
+                            }
+                            if (isset($compiler->template->required_plugins['nocache'][$modifier][Smarty::PLUGIN_MODIFIER]['file']) || isset($compiler->template->required_plugins['compiled'][$modifier][Smarty::PLUGIN_MODIFIER]['file'])) {
+                                // was a plugin
+                                $compiler->known_modifier_type[$modifier] = 4;
+                            } else {
+                                $compiler->known_modifier_type[$modifier] = $type;
+                            }
+                            break 2;
+                        }
+                }
+            }
+            if (!isset($compiler->known_modifier_type[$modifier])) {
+                $compiler->trigger_template_error("unknown modifier \"" . $modifier . "\"", $compiler->lex->taglineno);
+            }
+        }
+
+        return $output;
+    }
+
+}

@@ -1,54 +1,113 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Dk3Mg8DHZhzgnLsCewzdlpg9iHp/joPJ
+<?php
+
+namespace Behat\Mink\Exception;
+
+use Behat\Mink\Session;
+
+/*
+ * This file is part of the Behat\Mink.
+ * (c) Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Mink base exception class.
+ *
+ * @author Konstantin Kudryashov <ever.zet@gmail.com>
+ */
+abstract class Exception extends \Exception
+{
+    private $session;
+
+    /**
+     * Initializes Mink exception.
+     *
+     * @param string     $message
+     * @param Session    $session
+     * @param integer    $code
+     * @param \Exception $previous
+     */
+    public function __construct($message, Session $session = null, $code = 0, \Exception $previous = null)
+    {
+        $this->session = $session;
+
+        parent::__construct($message, $code, $previous);
+    }
+
+    /**
+     * Returns exception session.
+     *
+     * @return Session
+     */
+    protected function getSession()
+    {
+        return $this->session;
+    }
+
+    /**
+     * Prepends every line in a string with pipe (|).
+     *
+     * @param string $string
+     *
+     * @return string
+     */
+    protected function pipeString($string)
+    {
+        return '|  ' . strtr($string, array("\n" => "\n|  "));
+    }
+
+    /**
+     * Removes response header/footer, letting only <body /> content and trim it.
+     *
+     * @param string  $string response content
+     * @param integer $count  trim count
+     *
+     * @return string
+     */
+    protected function trimBody($string, $count = 1000)
+    {
+        $string = preg_replace(array('/^.*<body>/s', '/<\/body>.*$/s'), array('<body>', '</body>'), $string);
+        $string = $this->trimString($string, $count);
+
+        return $string;
+    }
+
+    /**
+     * Trims string to specified number of chars.
+     *
+     * @param string  $string response content
+     * @param integer $count  trim count
+     *
+     * @return string
+     */
+    protected function trimString($string, $count = 1000)
+    {
+        $string = trim($string);
+
+        if ($count < mb_strlen($string)) {
+            return mb_substr($string, 0, $count - 3) . '...';
+        }
+
+        return $string;
+    }
+
+    /**
+     * Returns response information string.
+     *
+     * @return string
+     */
+    protected function getResponseInfo()
+    {
+        $driver = basename(str_replace('\\', '/', get_class($this->session->getDriver())));
+
+        $info = '+--[ ';
+        if (!in_array($driver, array('SahiDriver', 'SeleniumDriver', 'Selenium2Driver'))) {
+            $info .= 'HTTP/1.1 '.$this->session->getStatusCode().' | ';
+        }
+        $info .= $this->session->getCurrentUrl().' | '.$driver." ]\n|\n";
+
+        return $info;
+    }
+}

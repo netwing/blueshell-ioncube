@@ -1,49 +1,56 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Command;
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Tester\CommandTester;
+
+
+class GenerateCept extends Base
+{
+    protected $template  = "<?php%s\n\$I = new %s(\$scenario);\n\$I->wantTo('perform actions and see result');\n";
+
+    protected function configure()
+    {
+        $this->setDefinition(array(
+            new InputArgument('suite', InputArgument::REQUIRED, 'suite to be tested'),
+            new InputArgument('test', InputArgument::REQUIRED, 'test to be run'),
+            new InputOption('config', 'c', InputOption::VALUE_OPTIONAL, 'Use custom path for config'),
+        ));
+        parent::configure();
+    }
+
+    public function getDescription() {
+        return 'Generates empty Cept file in suite';
+    }
+
+    public function execute(InputInterface $input, OutputInterface $output)
+    {
+        $suite = $input->getArgument('suite');
+        $filename = $input->getArgument('test');
+
+        $suiteconf = $this->getSuiteConfig($suite, $input->getOption('config'));
+
+        $guy = $suiteconf['class_name'];
+        $use = $suiteconf['namespace'] ? " use ".$suiteconf['namespace'].'\\'.$guy.";\n" : '';
+
+        $file = sprintf($this->template, $use, $guy);
+
+        $this->buildPath($suiteconf['path'], $filename);
+
+        $filename = $this->completeSuffix($filename, 'Cept');
+
+        $res = $this->save($suiteconf['path'].DIRECTORY_SEPARATOR . $filename, $file);
+        if (!$res) {
+            $output->writeln("<error>Test $filename already exists</error>");
+            return;
+        }
+        $output->writeln("<info>Test was created in $filename</info>");
+    }
+
+
+}

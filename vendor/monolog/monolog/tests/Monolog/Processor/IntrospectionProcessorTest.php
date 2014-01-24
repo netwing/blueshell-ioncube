@@ -1,60 +1,123 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Acme;
+
+class Tester
+{
+    public function test($handler, $record)
+    {
+        $handler->handle($record);
+    }
+}
+
+function tester($handler, $record)
+{
+    $handler->handle($record);
+}
+
+namespace Monolog\Processor;
+
+use Monolog\Logger;
+use Monolog\TestCase;
+use Monolog\Handler\TestHandler;
+
+class IntrospectionProcessorTest extends TestCase
+{
+    public function getHandler()
+    {
+        $processor = new IntrospectionProcessor();
+        $handler = new TestHandler();
+        $handler->pushProcessor($processor);
+
+        return $handler;
+    }
+
+    public function testProcessorFromClass()
+    {
+        $handler = $this->getHandler();
+        $tester = new \Acme\Tester;
+        $tester->test($handler, $this->getRecord());
+        list($record) = $handler->getRecords();
+        $this->assertEquals(__FILE__, $record['extra']['file']);
+        $this->assertEquals(18, $record['extra']['line']);
+        $this->assertEquals('Acme\Tester', $record['extra']['class']);
+        $this->assertEquals('test', $record['extra']['function']);
+    }
+
+    public function testProcessorFromFunc()
+    {
+        $handler = $this->getHandler();
+        \Acme\tester($handler, $this->getRecord());
+        list($record) = $handler->getRecords();
+        $this->assertEquals(__FILE__, $record['extra']['file']);
+        $this->assertEquals(24, $record['extra']['line']);
+        $this->assertEquals(null, $record['extra']['class']);
+        $this->assertEquals('Acme\tester', $record['extra']['function']);
+    }
+
+    public function testLevelTooLow()
+    {
+        $input = array(
+            'level' => Logger::DEBUG,
+            'extra' => array(),
+        );
+
+        $expected = $input;
+
+        $processor = new IntrospectionProcessor(Logger::CRITICAL);
+        $actual = $processor($input);
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testLevelEqual()
+    {
+        $input = array(
+            'level' => Logger::CRITICAL,
+            'extra' => array(),
+        );
+
+        $expected = $input;
+        $expected['extra'] = array(
+            'file' => null,
+            'line' => null,
+            'class' => 'ReflectionMethod',
+            'function' => 'invokeArgs',
+        );
+
+        $processor = new IntrospectionProcessor(Logger::CRITICAL);
+        $actual = $processor($input);
+
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function testLevelHigher()
+    {
+        $input = array(
+            'level' => Logger::EMERGENCY,
+            'extra' => array(),
+        );
+
+        $expected = $input;
+        $expected['extra'] = array(
+            'file' => null,
+            'line' => null,
+            'class' => 'ReflectionMethod',
+            'function' => 'invokeArgs',
+        );
+
+        $processor = new IntrospectionProcessor(Logger::CRITICAL);
+        $actual = $processor($input);
+
+        $this->assertEquals($expected, $actual);
+    }
+}

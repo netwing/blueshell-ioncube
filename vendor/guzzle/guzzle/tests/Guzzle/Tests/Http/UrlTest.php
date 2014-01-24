@@ -1,173 +1,248 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-CnN/ATShpdcdbkJva2LQ7sCxBsiVNZ2laMwS/W==
+<?php
+
+namespace Guzzle\Tests\Http;
+
+use Guzzle\Http\QueryString;
+use Guzzle\Http\Url;
+
+/**
+ * @covers Guzzle\Http\Url
+ */
+class UrlTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testEmptyUrl()
+    {
+        $url = Url::factory('');
+        $this->assertEquals('', (string) $url);
+    }
+
+    public function testPortIsDeterminedFromScheme()
+    {
+        $this->assertEquals(80, Url::factory('http://www.test.com/')->getPort());
+        $this->assertEquals(443, Url::factory('https://www.test.com/')->getPort());
+        $this->assertEquals(null, Url::factory('ftp://www.test.com/')->getPort());
+        $this->assertEquals(8192, Url::factory('http://www.test.com:8192/')->getPort());
+    }
+
+    public function testCloneCreatesNewInternalObjects()
+    {
+        $u1 = Url::factory('http://www.test.com/');
+        $u2 = clone $u1;
+        $this->assertNotSame($u1->getQuery(), $u2->getQuery());
+    }
+
+    public function testValidatesUrlPartsInFactory()
+    {
+        $url = Url::factory('/index.php');
+        $this->assertEquals('/index.php', (string) $url);
+        $this->assertFalse($url->isAbsolute());
+
+        $url = 'http://michael:test@test.com:80/path/123?q=abc#test';
+        $u = Url::factory($url);
+        $this->assertEquals('http://michael:test@test.com/path/123?q=abc#test', (string) $u);
+        $this->assertTrue($u->isAbsolute());
+    }
+
+    public function testAllowsFalsyUrlParts()
+    {
+        $url = Url::factory('http://0:50/0?0#0');
+        $this->assertSame('0', $url->getHost());
+        $this->assertEquals(50, $url->getPort());
+        $this->assertSame('/0', $url->getPath());
+        $this->assertEquals('0=', (string) $url->getQuery());
+        $this->assertSame('0', $url->getFragment());
+        $this->assertEquals('http://0:50/0?0=#0', (string) $url);
+
+        $url = Url::factory('');
+        $this->assertSame('', (string) $url);
+
+        $url = Url::factory('0');
+        $this->assertSame('0', (string) $url);
+    }
+
+    public function testBuildsRelativeUrlsWithFalsyParts()
+    {
+        $url = Url::buildUrl(array(
+                'host' => '0',
+                'path' => '0',
+            ));
+
+        $this->assertSame('//0/0', $url);
+
+        $url = Url::buildUrl(array(
+                'path' => '0',
+            ));
+        $this->assertSame('0', $url);
+    }
+
+    public function testUrlStoresParts()
+    {
+        $url = Url::factory('http://test:pass@www.test.com:8081/path/path2/?a=1&b=2#fragment');
+        $this->assertEquals('http', $url->getScheme());
+        $this->assertEquals('test', $url->getUsername());
+        $this->assertEquals('pass', $url->getPassword());
+        $this->assertEquals('www.test.com', $url->getHost());
+        $this->assertEquals(8081, $url->getPort());
+        $this->assertEquals('/path/path2/', $url->getPath());
+        $this->assertEquals('fragment', $url->getFragment());
+        $this->assertEquals('a=1&b=2', (string) $url->getQuery());
+
+        $this->assertEquals(array(
+            'fragment' => 'fragment',
+            'host' => 'www.test.com',
+            'pass' => 'pass',
+            'path' => '/path/path2/',
+            'port' => 8081,
+            'query' => 'a=1&b=2',
+            'scheme' => 'http',
+            'user' => 'test'
+        ), $url->getParts());
+    }
+
+    public function testHandlesPathsCorrectly()
+    {
+        $url = Url::factory('http://www.test.com');
+        $this->assertEquals('', $url->getPath());
+        $url->setPath('test');
+        $this->assertEquals('test', $url->getPath());
+
+        $url->setPath('/test/123/abc');
+        $this->assertEquals(array('test', '123', 'abc'), $url->getPathSegments());
+
+        $parts = parse_url('http://www.test.com/test');
+        $parts['path'] = '';
+        $this->assertEquals('http://www.test.com', Url::buildUrl($parts));
+        $parts['path'] = 'test';
+        $this->assertEquals('http://www.test.com/test', Url::buildUrl($parts));
+    }
+
+    public function testAddsQueryStringIfPresent()
+    {
+        $this->assertEquals('?foo=bar', Url::buildUrl(array(
+            'query' => 'foo=bar'
+        )));
+    }
+
+    public function testAddsToPath()
+    {
+        // Does nothing here
+        $this->assertEquals('http://e.com/base?a=1', (string) Url::factory('http://e.com/base?a=1')->addPath(false));
+        $this->assertEquals('http://e.com/base?a=1', (string) Url::factory('http://e.com/base?a=1')->addPath(''));
+        $this->assertEquals('http://e.com/base?a=1', (string) Url::factory('http://e.com/base?a=1')->addPath('/'));
+
+        $this->assertEquals('http://e.com/base/relative?a=1', (string) Url::factory('http://e.com/base?a=1')->addPath('relative'));
+        $this->assertEquals('http://e.com/base/relative?a=1', (string) Url::factory('http://e.com/base?a=1')->addPath('/relative'));
+    }
+
+    /**
+     * URL combination data provider
+     *
+     * @return array
+     */
+    public function urlCombineDataProvider()
+    {
+        return array(
+            array('http://www.example.com/', 'http://www.example.com/', 'http://www.example.com/'),
+            array('http://www.example.com/path', '/absolute', 'http://www.example.com/absolute'),
+            array('http://www.example.com/path', '/absolute?q=2', 'http://www.example.com/absolute?q=2'),
+            array('http://www.example.com/path', 'more', 'http://www.example.com/path/more'),
+            array('http://www.example.com/path', 'more?q=1', 'http://www.example.com/path/more?q=1'),
+            array('http://www.example.com/', '?q=1', 'http://www.example.com/?q=1'),
+            array('http://www.example.com/path', 'http://test.com', 'http://test.com'),
+            array('http://www.example.com:8080/path', 'http://test.com', 'http://test.com'),
+            array('http://www.example.com:8080/path', '?q=2#abc', 'http://www.example.com:8080/path?q=2#abc'),
+            array('http://u:a@www.example.com/path', 'test', 'http://u:a@www.example.com/path/test'),
+            array('http://www.example.com/path', 'http://u:a@www.example.com/', 'http://u:a@www.example.com/'),
+            array('/path?q=2', 'http://www.test.com/', 'http://www.test.com/path?q=2'),
+            array('http://api.flickr.com/services/', 'http://www.flickr.com/services/oauth/access_token', 'http://www.flickr.com/services/oauth/access_token')
+        );
+    }
+
+    /**
+     * @dataProvider urlCombineDataProvider
+     */
+    public function testCombinesUrls($a, $b, $c)
+    {
+        $this->assertEquals($c, (string) Url::factory($a)->combine($b));
+    }
+
+    public function testHasGettersAndSetters()
+    {
+        $url = Url::factory('http://www.test.com/');
+        $this->assertEquals('example.com', $url->setHost('example.com')->getHost());
+        $this->assertEquals('8080', $url->setPort(8080)->getPort());
+        $this->assertEquals('/foo/bar', $url->setPath(array('foo', 'bar'))->getPath());
+        $this->assertEquals('a', $url->setPassword('a')->getPassword());
+        $this->assertEquals('b', $url->setUsername('b')->getUsername());
+        $this->assertEquals('abc', $url->setFragment('abc')->getFragment());
+        $this->assertEquals('https', $url->setScheme('https')->getScheme());
+        $this->assertEquals('a=123', (string) $url->setQuery('a=123')->getQuery());
+        $this->assertEquals('https://b:a@example.com:8080/foo/bar?a=123#abc', (string) $url);
+        $this->assertEquals('b=boo', (string) $url->setQuery(new QueryString(array(
+            'b' => 'boo'
+        )))->getQuery());
+        $this->assertEquals('https://b:a@example.com:8080/foo/bar?b=boo#abc', (string) $url);
+    }
+
+    public function testSetQueryAcceptsArray()
+    {
+        $url = Url::factory('http://www.test.com');
+        $url->setQuery(array('a' => 'b'));
+        $this->assertEquals('http://www.test.com?a=b', (string) $url);
+    }
+
+    public function urlProvider()
+    {
+        return array(
+            array('/foo/..', '/'),
+            array('//foo//..', '/'),
+            array('/foo/../..', '/'),
+            array('/foo/../.', '/'),
+            array('/./foo/..', '/'),
+            array('/./foo', '/foo'),
+            array('/./foo/', '/foo/'),
+            array('/./foo/bar/baz/pho/../..', '/foo/bar'),
+            array('*', '*'),
+            array('/foo', '/foo'),
+            array('/abc/123/../foo/', '/abc/foo/'),
+            array('/a/b/c/./../../g', '/a/g'),
+            array('/b/c/./../../g', '/g'),
+            array('/b/c/./../../g', '/g'),
+            array('/c/./../../g', '/g'),
+            array('/./../../g', '/g'),
+        );
+    }
+
+    /**
+     * @dataProvider urlProvider
+     */
+    public function testNormalizesPaths($path, $result)
+    {
+        $url = Url::factory('http://www.example.com/');
+        $url->setPath($path)->normalizePath();
+        $this->assertEquals($result, $url->getPath());
+    }
+
+    public function testSettingHostWithPortModifiesPort()
+    {
+        $url = Url::factory('http://www.example.com');
+        $url->setHost('foo:8983');
+        $this->assertEquals('foo', $url->getHost());
+        $this->assertEquals(8983, $url->getPort());
+    }
+
+    /**
+     * @expectedException \Guzzle\Common\Exception\InvalidArgumentException
+     */
+    public function testValidatesUrlCanBeParsed()
+    {
+        Url::factory('foo:////');
+    }
+
+    public function testConvertsSpecialCharsInPathWhenCastingToString()
+    {
+        $url = Url::factory('http://foo.com/baz bar?a=b');
+        $url->addPath('?');
+        $this->assertEquals('http://foo.com/baz%20bar/%3F?a=b', (string) $url);
+    }
+}

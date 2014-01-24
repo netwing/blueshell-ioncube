@@ -1,95 +1,220 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http\Message;
+
+use Guzzle\Common\Version;
+use Guzzle\Common\Collection;
+use Guzzle\Http\Message\Header\HeaderCollection;
+use Guzzle\Http\Message\Header\HeaderFactory;
+use Guzzle\Http\Message\Header\HeaderFactoryInterface;
+use Guzzle\Http\Message\Header\HeaderInterface;
+
+/**
+ * Abstract HTTP request/response message
+ */
+abstract class AbstractMessage implements MessageInterface
+{
+    /** @var array HTTP header collection */
+    protected $headers;
+
+    /** @var HeaderFactoryInterface $headerFactory */
+    protected $headerFactory;
+
+    /** @var Collection Custom message parameters that are extendable by plugins */
+    protected $params;
+
+    /** @var string Message protocol */
+    protected $protocol = 'HTTP';
+
+    /** @var string HTTP protocol version of the message */
+    protected $protocolVersion = '1.1';
+
+    public function __construct()
+    {
+        $this->params = new Collection();
+        $this->headerFactory = new HeaderFactory();
+        $this->headers = new HeaderCollection();
+    }
+
+    /**
+     * Set the header factory to use to create headers
+     *
+     * @param HeaderFactoryInterface $factory
+     *
+     * @return self
+     */
+    public function setHeaderFactory(HeaderFactoryInterface $factory)
+    {
+        $this->headerFactory = $factory;
+
+        return $this;
+    }
+
+    public function getParams()
+    {
+        return $this->params;
+    }
+
+    public function addHeader($header, $value)
+    {
+        if (isset($this->headers[$header])) {
+            $this->headers[$header]->add($value);
+        } elseif ($value instanceof HeaderInterface) {
+            $this->headers[$header] = $value;
+        } else {
+            $this->headers[$header] = $this->headerFactory->createHeader($header, $value);
+        }
+
+        return $this;
+    }
+
+    public function addHeaders(array $headers)
+    {
+        foreach ($headers as $key => $value) {
+            $this->addHeader($key, $value);
+        }
+
+        return $this;
+    }
+
+    public function getHeader($header)
+    {
+        return $this->headers[$header];
+    }
+
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+
+    public function getHeaderLines()
+    {
+        $headers = array();
+        foreach ($this->headers as $value) {
+            $headers[] = $value->getName() . ': ' . $value;
+        }
+
+        return $headers;
+    }
+
+    public function setHeader($header, $value)
+    {
+        unset($this->headers[$header]);
+        $this->addHeader($header, $value);
+
+        return $this;
+    }
+
+    public function setHeaders(array $headers)
+    {
+        $this->headers->clear();
+        foreach ($headers as $key => $value) {
+            $this->addHeader($key, $value);
+        }
+
+        return $this;
+    }
+
+    public function hasHeader($header)
+    {
+        return isset($this->headers[$header]);
+    }
+
+    public function removeHeader($header)
+    {
+        unset($this->headers[$header]);
+
+        return $this;
+    }
+
+    /**
+     * @deprecated Use $message->getHeader()->parseParams()
+     * @codeCoverageIgnore
+     */
+    public function getTokenizedHeader($header, $token = ';')
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use $message->getHeader()->parseParams()');
+        if ($this->hasHeader($header)) {
+            $data = new Collection();
+            foreach ($this->getHeader($header)->parseParams() as $values) {
+                foreach ($values as $key => $value) {
+                    if ($value === '') {
+                        $data->set($data->count(), $key);
+                    } else {
+                        $data->add($key, $value);
+                    }
+                }
+            }
+            return $data;
+        }
+    }
+
+    /**
+     * @deprecated
+     * @codeCoverageIgnore
+     */
+    public function setTokenizedHeader($header, $data, $token = ';')
+    {
+        Version::warn(__METHOD__ . ' is deprecated.');
+        return $this;
+    }
+
+    /**
+     * @deprecated
+     * @codeCoverageIgnore
+     */
+    public function getCacheControlDirective($directive)
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use $message->getHeader(\'Cache-Control\')->getDirective()');
+        if (!($header = $this->getHeader('Cache-Control'))) {
+            return null;
+        }
+
+        return $header->getDirective($directive);
+    }
+
+    /**
+     * @deprecated
+     * @codeCoverageIgnore
+     */
+    public function hasCacheControlDirective($directive)
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use $message->getHeader(\'Cache-Control\')->hasDirective()');
+        if ($header = $this->getHeader('Cache-Control')) {
+            return $header->hasDirective($directive);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * @deprecated
+     * @codeCoverageIgnore
+     */
+    public function addCacheControlDirective($directive, $value = true)
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use $message->getHeader(\'Cache-Control\')->addDirective()');
+        if (!($header = $this->getHeader('Cache-Control'))) {
+            $this->addHeader('Cache-Control', '');
+            $header = $this->getHeader('Cache-Control');
+        }
+
+        $header->addDirective($directive, $value);
+
+        return $this;
+    }
+
+    /**
+     * @deprecated
+     * @codeCoverageIgnore
+     */
+    public function removeCacheControlDirective($directive)
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use $message->getHeader(\'Cache-Control\')->removeDirective()');
+        if ($header = $this->getHeader('Cache-Control')) {
+            $header->removeDirective($directive);
+        }
+
+        return $this;
+    }
+}

@@ -1,68 +1,87 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xeU/OdeR0FAPfZ/Nld+pmB4=
+<?php
+/**
+ * Smarty Internal Plugin Compile Assign
+ *
+ * Compiles the {assign} tag
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Assign Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Assign extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {assign} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // the following must be assigned at runtime because it will be overwritten in Smarty_Internal_Compile_Append
+        $this->required_attributes = array('var', 'value');
+        $this->shorttag_order = array('var', 'value');
+        $this->optional_attributes = array('scope');
+        $_nocache = 'null';
+        $_scope = Smarty::SCOPE_LOCAL;
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        // nocache ?
+        if ($compiler->tag_nocache || $compiler->nocache) {
+            $_nocache = 'true';
+            // create nocache var to make it know for further compiling
+            if (isset($compiler->template->tpl_vars[trim($_attr['var'], "'")])) {
+                $compiler->template->tpl_vars[trim($_attr['var'], "'")]->nocache = true;
+            } else {
+                $compiler->template->tpl_vars[trim($_attr['var'], "'")] = new Smarty_variable(null, true);
+            }
+        }
+        // scope setup
+        if (isset($_attr['scope'])) {
+            $_attr['scope'] = trim($_attr['scope'], "'\"");
+            if ($_attr['scope'] == 'parent') {
+                $_scope = Smarty::SCOPE_PARENT;
+            } elseif ($_attr['scope'] == 'root') {
+                $_scope = Smarty::SCOPE_ROOT;
+            } elseif ($_attr['scope'] == 'global') {
+                $_scope = Smarty::SCOPE_GLOBAL;
+            } else {
+                $compiler->trigger_template_error('illegal value for "scope" attribute', $compiler->lex->taglineno);
+            }
+        }
+        // compiled output
+        if (isset($parameter['smarty_internal_index'])) {
+            $output = "<?php \$_smarty_tpl->createLocalArrayVariable($_attr[var], $_nocache, $_scope);\n\$_smarty_tpl->tpl_vars[$_attr[var]]->value$parameter[smarty_internal_index] = $_attr[value];";
+        } else {
+            // implement Smarty2's behaviour of variables assigned by reference
+            if ($compiler->template->smarty instanceof SmartyBC) {
+                $output = "<?php if (isset(\$_smarty_tpl->tpl_vars[$_attr[var]])) {\$_smarty_tpl->tpl_vars[$_attr[var]] = clone \$_smarty_tpl->tpl_vars[$_attr[var]];";
+                $output .= "\n\$_smarty_tpl->tpl_vars[$_attr[var]]->value = $_attr[value]; \$_smarty_tpl->tpl_vars[$_attr[var]]->nocache = $_nocache; \$_smarty_tpl->tpl_vars[$_attr[var]]->scope = $_scope;";
+                $output .= "\n} else \$_smarty_tpl->tpl_vars[$_attr[var]] = new Smarty_variable($_attr[value], $_nocache, $_scope);";
+            } else {
+                $output = "<?php \$_smarty_tpl->tpl_vars[$_attr[var]] = new Smarty_variable($_attr[value], $_nocache, $_scope);";
+            }
+        }
+        if ($_scope == Smarty::SCOPE_PARENT) {
+            $output .= "\nif (\$_smarty_tpl->parent != null) \$_smarty_tpl->parent->tpl_vars[$_attr[var]] = clone \$_smarty_tpl->tpl_vars[$_attr[var]];";
+        } elseif ($_scope == Smarty::SCOPE_ROOT || $_scope == Smarty::SCOPE_GLOBAL) {
+            $output .= "\n\$_ptr = \$_smarty_tpl->parent; while (\$_ptr != null) {\$_ptr->tpl_vars[$_attr[var]] = clone \$_smarty_tpl->tpl_vars[$_attr[var]]; \$_ptr = \$_ptr->parent; }";
+        }
+        if ($_scope == Smarty::SCOPE_GLOBAL) {
+            $output .= "\nSmarty::\$global_tpl_vars[$_attr[var]] = clone \$_smarty_tpl->tpl_vars[$_attr[var]];";
+        }
+        $output .= '?>';
+
+        return $output;
+    }
+
+}

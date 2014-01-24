@@ -1,32 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\DomCrawler\Field;
+
+/**
+ * InputFormField represents an input form field (an HTML input tag).
+ *
+ * For inputs with type of file, checkbox, or radio, there are other more
+ * specialized classes (cf. FileFormField and ChoiceFormField).
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class InputFormField extends FormField
+{
+    /**
+     * Initializes the form field.
+     *
+     * @throws \LogicException When node type is incorrect
+     */
+    protected function initialize()
+    {
+        if ('input' != $this->node->nodeName && 'button' != $this->node->nodeName) {
+            throw new \LogicException(sprintf('An InputFormField can only be created from an input or button tag (%s given).', $this->node->nodeName));
+        }
+
+        if ('checkbox' == $this->node->getAttribute('type')) {
+            throw new \LogicException('Checkboxes should be instances of ChoiceFormField.');
+        }
+
+        if ('file' == $this->node->getAttribute('type')) {
+            throw new \LogicException('File inputs should be instances of FileFormField.');
+        }
+
+        $this->value = $this->node->getAttribute('value');
+    }
+}

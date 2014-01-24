@@ -1,56 +1,104 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Adapter;
+
+use Symfony\Component\Finder\Shell\Shell;
+use Symfony\Component\Finder\Shell\Command;
+use Symfony\Component\Finder\Iterator\SortableIterator;
+use Symfony\Component\Finder\Expression\Expression;
+
+/**
+ * Shell engine implementation using GNU find command.
+ *
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class GnuFindAdapter extends AbstractFindAdapter
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'gnu_find';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function buildFormatSorting(Command $command, $sort)
+    {
+        switch ($sort) {
+            case SortableIterator::SORT_BY_NAME:
+                $command->ins('sort')->add('| sort');
+
+                return;
+            case SortableIterator::SORT_BY_TYPE:
+                $format = '%y';
+                break;
+            case SortableIterator::SORT_BY_ACCESSED_TIME:
+                $format = '%A@';
+                break;
+            case SortableIterator::SORT_BY_CHANGED_TIME:
+                $format = '%C@';
+                break;
+            case SortableIterator::SORT_BY_MODIFIED_TIME:
+                $format = '%T@';
+                break;
+            default:
+                throw new \InvalidArgumentException(sprintf('Unknown sort options: %s.', $sort));
+        }
+
+        $command
+            ->get('find')
+            ->add('-printf')
+            ->arg($format.' %h/%f\\n')
+            ->add('| sort | cut')
+            ->arg('-d ')
+            ->arg('-f2-')
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function canBeUsed()
+    {
+        return $this->shell->getType() === Shell::TYPE_UNIX && parent::canBeUsed();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function buildFindCommand(Command $command, $dir)
+    {
+      return parent::buildFindCommand($command, $dir)->add('-regextype posix-extended');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function buildContentFiltering(Command $command, array $contains, $not = false)
+    {
+        foreach ($contains as $contain) {
+            $expr = Expression::create($contain);
+
+            // todo: avoid forking process for each $pattern by using multiple -e options
+            $command
+                ->add('| xargs -I{} -r grep -I')
+                ->add($expr->isCaseSensitive() ? null : '-i')
+                ->add($not ? '-L' : '-l')
+                ->add('-Ee')->arg($expr->renderPattern())
+                ->add('{}')
+            ;
+        }
+    }
+}

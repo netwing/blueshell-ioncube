@@ -1,53 +1,71 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-REhaBGdEgE5P6Iy+Ehpm3awDgHKC+iq=
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+
+/**
+ * NativeMailerHandler uses the mail() function to send the emails
+ *
+ * @author Christophe Coevoet <stof@notk.org>
+ */
+class NativeMailerHandler extends MailHandler
+{
+    protected $to;
+    protected $subject;
+    protected $headers = array(
+        'Content-type: text/plain; charset=utf-8'
+    );
+    protected $maxColumnWidth;
+
+    /**
+     * @param string|array $to             The receiver of the mail
+     * @param string       $subject        The subject of the mail
+     * @param string       $from           The sender of the mail
+     * @param integer      $level          The minimum logging level at which this handler will be triggered
+     * @param boolean      $bubble         Whether the messages that are handled can bubble up the stack or not
+     * @param int          $maxColumnWidth The maximum column width that the message lines will have
+     */
+    public function __construct($to, $subject, $from, $level = Logger::ERROR, $bubble = true, $maxColumnWidth = 70)
+    {
+        parent::__construct($level, $bubble);
+        $this->to = is_array($to) ? $to : array($to);
+        $this->subject = $subject;
+        $this->addHeader(sprintf('From: %s', $from));
+        $this->maxColumnWidth = $maxColumnWidth;
+    }
+
+    /**
+     * @param string|array $headers Custom added headers
+     */
+    public function addHeader($headers)
+    {
+        foreach ((array) $headers as $header) {
+            if (strpos($header, "\n") !== false || strpos($header, "\r") !== false) {
+                throw new \InvalidArgumentException('Headers can not contain newline characters for security reasons');
+            }
+            $this->headers[] = $header;
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function send($content, array $records)
+    {
+        $content = wordwrap($content, $this->maxColumnWidth);
+        $headers = implode("\r\n", $this->headers) . "\r\n";
+        foreach ($this->to as $to) {
+            mail($to, $this->subject, $content, $headers);
+        }
+    }
+}

@@ -1,107 +1,159 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+
+/**
+ * @author Rafael Dohms <rafael@doh.ms>
+ * @see    https://www.hipchat.com/docs/api
+ */
+class HipChatHandlerTest extends TestCase
+{
+
+    private $res;
+    private $handler;
+
+    public function testWriteHeader()
+    {
+        $this->createHandler();
+        $this->handler->handle($this->getRecord(Logger::CRITICAL, 'test1'));
+        fseek($this->res, 0);
+        $content = fread($this->res, 1024);
+
+        $this->assertRegexp('/POST \/v1\/rooms\/message\?format=json&auth_token=.* HTTP\/1.1\\r\\nHost: api.hipchat.com\\r\\nContent-Type: application\/x-www-form-urlencoded\\r\\nContent-Length: \d{2,4}\\r\\n\\r\\n/', $content);
+
+        return $content;
+    }
+
+    /**
+     * @depends testWriteHeader
+     */
+    public function testWriteContent($content)
+    {
+        $this->assertRegexp('/from=Monolog&room_id=room1&notify=0&message=test1&message_format=text&color=red$/', $content);
+    }
+
+    public function testWriteWithComplexMessage()
+    {
+        $this->createHandler();
+        $this->handler->handle($this->getRecord(Logger::CRITICAL, 'Backup of database "example" finished in 16 minutes.'));
+        fseek($this->res, 0);
+        $content = fread($this->res, 1024);
+
+        $this->assertRegexp('/message=Backup\+of\+database\+%22example%22\+finished\+in\+16\+minutes\./', $content);
+    }
+
+    /**
+     * @dataProvider provideLevelColors
+     */
+    public function testWriteWithErrorLevelsAndColors($level, $expectedColor)
+    {
+        $this->createHandler();
+        $this->handler->handle($this->getRecord($level, 'Backup of database "example" finished in 16 minutes.'));
+        fseek($this->res, 0);
+        $content = fread($this->res, 1024);
+
+        $this->assertRegexp('/color='.$expectedColor.'/', $content);
+    }
+
+    public function provideLevelColors()
+    {
+        return array(
+            array(Logger::DEBUG,    'gray'),
+            array(Logger::INFO,     'green'),
+            array(Logger::WARNING,  'yellow'),
+            array(Logger::ERROR,    'red'),
+            array(Logger::CRITICAL, 'red'),
+            array(Logger::ALERT,    'red'),
+            array(Logger::EMERGENCY,'red'),
+            array(Logger::NOTICE,   'green'),
+        );
+    }
+
+    /**
+     * @dataProvider provideBatchRecords
+     */
+    public function testHandleBatch($records, $expectedColor)
+    {
+        $this->createHandler();
+
+        $this->handler->handleBatch($records);
+
+        fseek($this->res, 0);
+        $content = fread($this->res, 1024);
+
+        $this->assertRegexp('/color='.$expectedColor.'/', $content);
+    }
+
+    public function provideBatchRecords()
+    {
+        return array(
+            array(
+                array(
+                    array('level' => Logger::WARNING, 'message' => 'Oh bugger!', 'level_name' => 'warning', 'datetime' => new \DateTime()),
+                    array('level' => Logger::NOTICE, 'message' => 'Something noticeable happened.', 'level_name' => 'notice', 'datetime' => new \DateTime()),
+                    array('level' => Logger::CRITICAL, 'message' => 'Everything is broken!', 'level_name' => 'critical', 'datetime' => new \DateTime())
+                ),
+                'red',
+            ),
+            array(
+                array(
+                    array('level' => Logger::WARNING, 'message' => 'Oh bugger!', 'level_name' => 'warning', 'datetime' => new \DateTime()),
+                    array('level' => Logger::NOTICE, 'message' => 'Something noticeable happened.', 'level_name' => 'notice', 'datetime' => new \DateTime()),
+                ),
+                'yellow',
+            ),
+            array(
+                array(
+                    array('level' => Logger::DEBUG, 'message' => 'Just debugging.', 'level_name' => 'debug', 'datetime' => new \DateTime()),
+                    array('level' => Logger::NOTICE, 'message' => 'Something noticeable happened.', 'level_name' => 'notice', 'datetime' => new \DateTime()),
+                ),
+                'green',
+            ),
+            array(
+                array(
+                    array('level' => Logger::DEBUG, 'message' => 'Just debugging.', 'level_name' => 'debug', 'datetime' => new \DateTime()),
+                ),
+                'gray',
+            ),
+        );
+    }
+
+    private function createHandler($token = 'myToken', $room = 'room1', $name = 'Monolog', $notify = false)
+    {
+        $constructorArgs = array($token, $room, $name, $notify, Logger::DEBUG);
+        $this->res = fopen('php://memory', 'a');
+        $this->handler = $this->getMock(
+            '\Monolog\Handler\HipChatHandler',
+            array('fsockopen', 'streamSetTimeout', 'closeSocket'),
+            $constructorArgs
+        );
+
+        $reflectionProperty = new \ReflectionProperty('\Monolog\Handler\SocketHandler', 'connectionString');
+        $reflectionProperty->setAccessible(true);
+        $reflectionProperty->setValue($this->handler, 'localhost:1234');
+
+        $this->handler->expects($this->any())
+            ->method('fsockopen')
+            ->will($this->returnValue($this->res));
+        $this->handler->expects($this->any())
+            ->method('streamSetTimeout')
+            ->will($this->returnValue(true));
+        $this->handler->expects($this->any())
+            ->method('closeSocket')
+            ->will($this->returnValue(true));
+
+        $this->handler->setFormatter($this->getIdentityFormatter());
+    }
+}

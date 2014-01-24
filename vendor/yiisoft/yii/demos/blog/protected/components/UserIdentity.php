@@ -1,31 +1,39 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-j6UaC98X0W==
+<?php
+
+/**
+ * UserIdentity represents the data needed to identity a user.
+ * It contains the authentication method that checks if the provided
+ * data can identity the user.
+ */
+class UserIdentity extends CUserIdentity
+{
+	private $_id;
+
+	/**
+	 * Authenticates a user.
+	 * @return boolean whether authentication succeeds.
+	 */
+	public function authenticate()
+	{
+		$user=User::model()->find('LOWER(username)=?',array(strtolower($this->username)));
+		if($user===null)
+			$this->errorCode=self::ERROR_USERNAME_INVALID;
+		else if(!$user->validatePassword($this->password))
+			$this->errorCode=self::ERROR_PASSWORD_INVALID;
+		else
+		{
+			$this->_id=$user->id;
+			$this->username=$user->username;
+			$this->errorCode=self::ERROR_NONE;
+		}
+		return $this->errorCode==self::ERROR_NONE;
+	}
+
+	/**
+	 * @return integer the ID of the user record
+	 */
+	public function getId()
+	{
+		return $this->_id;
+	}
+}

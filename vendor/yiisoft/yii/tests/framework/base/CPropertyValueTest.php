@@ -1,93 +1,152 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class TextAlign extends CEnumerable
+{
+	const Left='Left';
+	const Right='Right';
+}
+
+class CPropertyValueTest extends CTestCase
+{
+	public function testEnsureBoolean()
+	{
+		$entries=array
+		(
+			array(true,true),
+			array(false,false),
+			array(null,false),
+			array(0,false),
+			array(1,true),
+			array(-1,true),
+			array(2.1,true),
+			array('',false),
+			array('abc',false),
+			array('0',false),
+			array('1',true),
+			array('123',true),
+			array('false',false),
+			array('true',true),
+			array('tRue',true),
+			array(array(),false),
+			array(array(0),true),
+			array(array(1),true),
+		);
+		foreach($entries as $index=>$entry)
+			$this->assertTrue(CPropertyValue::ensureBoolean($entry[0])===$entry[1],
+				"Comparison $index: {$this->varToString($entry[0])}=={$this->varToString($entry[1])}");
+	}
+
+	public function testEnsureString()
+	{
+		$entries=array
+		(
+			array('',''),
+			array('abc','abc'),
+			array(null,''),
+			array(0,'0'),
+			array(1,'1'),
+			array(-1.1,'-1.1'),
+			array(true,'true'),
+			array(false,'false'),
+		);
+
+		if(version_compare(PHP_VERSION, '5.4.0', '<'))
+		{
+			$entries = array_merge($entries, array(
+				array(array(),'Array'),
+				array(array(0),'Array'),
+			));
+		}
+
+		foreach($entries as $index=>$entry)
+			$this->assertTrue(CPropertyValue::ensureString($entry[0])===$entry[1],
+				"Comparison $index: {$this->varToString($entry[0])}=={$this->varToString($entry[1])}");
+	}
+
+	public function testEnsureInteger()
+	{
+		$entries=array
+		(
+			array(123,123),
+			array(1.23,1),
+			array(null,0),
+			array('',0),
+			array('abc',0),
+			array('123',123),
+			array('1.23',1),
+			array(' 1.23',1),
+			array(' 1.23abc',1),
+			array('abc1.23abc',0),
+			array(true,1),
+			array(false,0),
+			array(array(),0),
+			array(array(0),1),
+		);
+		foreach($entries as $index=>$entry)
+			$this->assertTrue(CPropertyValue::ensureInteger($entry[0])===$entry[1],
+				"Comparison $index: {$this->varToString($entry[0])}=={$this->varToString($entry[1])}");
+	}
+
+	public function testEnsureFloat()
+	{
+		$entries=array
+		(
+			array(123,123.0),
+			array(1.23,1.23),
+			array(null,0.0),
+			array('',0.0),
+			array('abc',0.0),
+			array('123',123.0),
+			array('1.23',1.23),
+			array(' 1.23',1.23),
+			array(' 1.23abc',1.23),
+			array('abc1.23abc',0.0),
+			array(true,1.0),
+			array(false,0.0),
+			array(array(),0.0),
+			array(array(0),1.0),
+		);
+		foreach($entries as $index=>$entry)
+			$this->assertTrue(CPropertyValue::ensureFloat($entry[0])===$entry[1],
+				"Comparison $index: {$this->varToString($entry[0])}=={$this->varToString($entry[1])}");
+	}
+
+	public function testEnsureArray()
+	{
+		$entries=array
+		(
+			array(123,array(123)),
+			array(null,array()),
+			array('',array()),
+			array('abc',array('abc')),
+			array('(1,2)',array(1,2)),
+			array('("key"=>"value",2=>3)',array("key"=>"value",2=>3)),
+			array(true,array(true)),
+			array(array(),array()),
+			array(array(0),array(0)),
+		);
+		foreach($entries as $index=>$entry)
+			$this->assertTrue(CPropertyValue::ensureArray($entry[0])===$entry[1],
+				"Comparison $index: {$this->varToString($entry[0])}=={$this->varToString($entry[1])}");
+	}
+
+	private function varToString($var)
+	{
+		if(is_array($var))
+			return 'Array';
+		return (string)$var;
+	}
+
+	public function testEnsureObject()
+	{
+		$obj=new stdClass;
+		$this->assertTrue(CPropertyValue::ensureObject($obj)===$obj);
+	}
+
+	public function testEnsureEnum()
+	{
+		$this->assertTrue(CPropertyValue::ensureEnum('Left','TextAlign')==='Left');
+		$this->setExpectedException('CException');
+		$this->assertTrue(CPropertyValue::ensureEnum('left','TextAlign')==='Left');
+	}
+}

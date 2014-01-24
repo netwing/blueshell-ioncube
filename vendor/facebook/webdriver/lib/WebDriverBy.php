@@ -1,42 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * The basic 8 mechanisms supported by webdriver to locate a web element.
+ * ie. 'class name', 'css selector', 'id', 'name', 'link text',
+ *     'partial link text', 'tag name' and 'xpath'.
+ *
+ * @see WebDriver::findElement, WebDriverElement::findElement
+ */
+class WebDriverBy {
+
+  private $mechanism;
+  private $value;
+
+  protected function __construct($mechanism, $value) {
+    $this->mechanism = $mechanism;
+    $this->value = $value;
+  }
+
+  public function getMechanism() {
+    return $this->mechanism;
+  }
+
+  public function getValue() {
+    return $this->value;
+  }
+
+  /**
+   * Locates elements whose class name contains the search value; compound class
+   * names are not permitted.
+   *
+   * @return WebDriverBy
+   */
+  public static function className($class_name) {
+    return new WebDriverBy('class name', $class_name);
+  }
+
+  /**
+   * Locates elements matching a CSS selector.
+   *
+   * @return WebDriverBy
+   */
+  public static function cssSelector($css_selector) {
+    return new WebDriverBy('css selector', $css_selector);
+  }
+
+  /**
+   * Locates elements whose ID attribute matches the search value.
+   *
+   * @return WebDriverBy
+   */
+  public static function id($id) {
+    return new WebDriverBy('id', $id);
+  }
+
+  /**
+   * Locates elements whose NAME attribute matches the search value.
+   */
+  public static function name($name) {
+    return new WebDriverBy('name', $name);
+  }
+
+  /**
+   * Locates anchor elements whose visible text matches the search value.
+   *
+   * @return WebDriverBy
+   */
+  public static function linkText($link_text) {
+    return new WebDriverBy('link text', $link_text);
+  }
+
+  /**
+   * Locates anchor elements whose visible text partially matches the search
+   * value.
+   *
+   * @return WebDriverBy
+   */
+  public static function partialLinkText($partial_link_text) {
+    return new WebDriverBy('partial link text', $partial_link_text);
+  }
+
+  /**
+   * Locates elements whose tag name matches the search value.
+   *
+   * @return WebDriverBy
+   */
+  public static function tagName($tag_name) {
+    return new WebDriverBy('tag name', $tag_name);
+  }
+
+  /**
+   * Locates elements matching an XPath expression.
+   *
+   * @return WebDriverBy
+   */
+  public static function xpath($xpath) {
+    return new WebDriverBy('xpath', $xpath);
+  }
+}

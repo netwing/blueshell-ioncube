@@ -1,77 +1,126 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-SC0iha51u8b0KYBv+y1UhlOxWxOdkGk/pTm=
+<?php
+
+Yii::import('system.collections.CAttributeCollection');
+
+class CAttributeCollectionTest extends CTestCase
+{
+	public function testCanGetProperty()
+	{
+		$collection = new CAttributeCollection();
+		$collection->Property = 'value';
+		$this->assertEquals('value', $collection->Property);
+		$this->assertTrue($collection->canGetProperty('Property'));
+	}
+
+	public function testCanNotGetUndefinedProperty()
+	{
+		$collection = new CAttributeCollection(array(), true);
+		$this->assertFalse($collection->canGetProperty('Property'));
+		$this->setExpectedException('CException');
+		$value=$collection->Property;
+	}
+
+	public function testCanSetProperty()
+	{
+		$collection = new CAttributeCollection();
+		$collection->Property = 'value';
+		$this->assertEquals('value', $collection->itemAt('Property'));
+		$this->assertTrue($collection->canSetProperty('Property'));
+	}
+
+	public function testCanNotSetPropertyIfReadOnly()
+	{
+		$collection = new CAttributeCollection(array(), true);
+		$this->setExpectedException('CException');
+		$collection->Property = 'value';
+	}
+
+	public function testGetCaseSensitive()
+	{
+		$collection = new CAttributeCollection();
+		$collection->caseSensitive=false;
+		$this->assertFalse($collection->caseSensitive);
+		$collection->caseSensitive=true;
+		$this->assertTrue($collection->caseSensitive);
+	}
+
+	public function testSetCaseSensitive()
+	{
+		$collection = new CAttributeCollection();
+		$collection->Property = 'value';
+		$collection->caseSensitive=false;
+		$this->assertEquals('value', $collection->itemAt('property'));
+	}
+
+	public function testItemAt()
+	{
+		$collection = new CAttributeCollection();
+		$collection->Property = 'value';
+		$this->assertEquals('value', $collection->itemAt('Property'));
+	}
+
+	public function testAdd()
+	{
+		$collection = new CAttributeCollection();
+		$collection->add('Property', 'value');
+		$this->assertEquals('value', $collection->itemAt('Property'));
+	}
+
+	public function testRemove()
+	{
+		$collection = new CAttributeCollection();
+		$collection->add('Property', 'value');
+		$collection->remove('Property');
+		$this->assertEquals(0, count($collection));
+	}
+
+	public function testUnset(){
+		$collection = new CAttributeCollection();
+		$collection->add('Property', 'value');
+		unset($collection->Property);
+		$this->assertEquals(0, count($collection));
+	}
+
+	public function testIsset(){
+		$collection = new CAttributeCollection();
+		$this->assertFalse(isset($collection->Property));
+		$collection->Property = 'value';
+		$this->assertTrue(isset($collection->Property));
+	}
+
+	public function testContains()
+	{
+		$collection = new CAttributeCollection();
+		$this->assertFalse($collection->contains('Property'));
+		$collection->Property = 'value';
+		$this->assertTrue($collection->contains('Property'));
+	}
+
+	public function testHasProperty()
+	{
+		$collection = new CAttributeCollection();
+		$this->assertFalse($collection->hasProperty('Property'));
+		$collection->Property = 'value';
+		$this->assertTrue($collection->hasProperty('Property'));
+	}
+
+  public function testMergeWithCaseSensitive()
+  {
+    $collection = new CAttributeCollection();
+    $item = array('Test'=>'Uppercase');
+    $collection->mergeWith($item);
+    $this->assertEquals('Uppercase', $collection->itemAt('test'));
+  }
+
+  public function testMergeWithCaseInSensitive()
+  {
+    $collection = new CAttributeCollection();
+    $collection->caseSensitive = true;
+    $collection->add('k1','item');
+
+    $item = array('K1'=>'ITEM');
+    $collection->mergeWith($item);
+    $this->assertEquals('item', $collection->itemAt('k1'));
+    $this->assertEquals('ITEM', $collection->itemAt('K1'));
+  }
+}

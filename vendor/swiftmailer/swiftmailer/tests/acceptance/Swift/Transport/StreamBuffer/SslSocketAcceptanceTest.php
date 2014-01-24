@@ -1,33 +1,36 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-iNl9j/q=
+<?php
+
+require_once 'Swift/Transport/StreamBuffer/AbstractStreamBufferAcceptanceTest.php';
+
+class Swift_Transport_StreamBuffer_SslSocketAcceptanceTest
+    extends Swift_Transport_StreamBuffer_AbstractStreamBufferAcceptanceTest
+{
+    public function skip()
+    {
+        $streams = stream_get_transports();
+        $this->skipIf(!in_array('ssl', $streams),
+            'SSL is not configured for your system.  It is not possible to run this test'
+            );
+        $this->skipIf(!SWIFT_SSL_HOST,
+            'Cannot run test without an SSL enabled SMTP host to connect to (define ' .
+            'SWIFT_SSL_HOST in tests/acceptance.conf.php if you wish to run this test)'
+            );
+        parent::skip();
+    }
+
+    protected function _initializeBuffer()
+    {
+        $parts = explode(':', SWIFT_SSL_HOST);
+        $host = $parts[0];
+        $port = isset($parts[1]) ? $parts[1] : 25;
+
+        $this->_buffer->initialize(array(
+            'type' => Swift_Transport_IoBuffer::TYPE_SOCKET,
+            'host' => $host,
+            'port' => $port,
+            'protocol' => 'ssl',
+            'blocking' => 1,
+            'timeout' => 15
+            ));
+    }
+}

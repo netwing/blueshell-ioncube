@@ -1,105 +1,248 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Lxj7jX7FdQW=
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.5.0
+ */
+
+if (defined('PHPUNIT_COMPOSER_INSTALL')) {
+    return;
+}
+
+$paths = array(
+  __DIR__ . '/../vendor',
+  __DIR__ . '/../../..'
+);
+
+foreach ($paths as $path) {
+    if (@is_dir($path . '/composer') &&
+        @is_file($path . '/autoload.php')) {
+        require_once $path . '/autoload.php';
+        define('PHPUNIT_COMPOSER_INSTALL', $path . '/autoload.php');
+
+        return;
+    }
+}
+
+require_once 'File/Iterator/Autoload.php';
+require_once 'PHP/CodeCoverage/Autoload.php';
+require_once 'PHP/Timer/Autoload.php';
+require_once 'PHPUnit/Framework/MockObject/Autoload.php';
+require_once 'Text/Template/Autoload.php';
+
+spl_autoload_register(
+  function ($class)
+  {
+      static $classes = NULL;
+      static $path    = NULL;
+
+      if ($classes === NULL) {
+          $classes = array(
+            'phpunit_extensions_grouptestsuite' => '/Extensions/GroupTestSuite.php',
+            'phpunit_extensions_phpttestcase' => '/Extensions/PhptTestCase.php',
+            'phpunit_extensions_phpttestcase_logger' => '/Extensions/PhptTestCase/Logger.php',
+            'phpunit_extensions_phpttestsuite' => '/Extensions/PhptTestSuite.php',
+            'phpunit_extensions_repeatedtest' => '/Extensions/RepeatedTest.php',
+            'phpunit_extensions_testdecorator' => '/Extensions/TestDecorator.php',
+            'phpunit_extensions_ticketlistener' => '/Extensions/TicketListener.php',
+            'phpunit_framework_assert' => '/Framework/Assert.php',
+            'phpunit_framework_assertionfailederror' => '/Framework/AssertionFailedError.php',
+            'phpunit_framework_comparator' => '/Framework/Comparator.php',
+            'phpunit_framework_comparator_array' => '/Framework/Comparator/Array.php',
+            'phpunit_framework_comparator_domdocument' => '/Framework/Comparator/DOMDocument.php',
+            'phpunit_framework_comparator_double' => '/Framework/Comparator/Double.php',
+            'phpunit_framework_comparator_exception' => '/Framework/Comparator/Exception.php',
+            'phpunit_framework_comparator_mockobject' => '/Framework/Comparator/MockObject.php',
+            'phpunit_framework_comparator_numeric' => '/Framework/Comparator/Numeric.php',
+            'phpunit_framework_comparator_object' => '/Framework/Comparator/Object.php',
+            'phpunit_framework_comparator_resource' => '/Framework/Comparator/Resource.php',
+            'phpunit_framework_comparator_scalar' => '/Framework/Comparator/Scalar.php',
+            'phpunit_framework_comparator_splobjectstorage' => '/Framework/Comparator/SplObjectStorage.php',
+            'phpunit_framework_comparator_type' => '/Framework/Comparator/Type.php',
+            'phpunit_framework_comparatorfactory' => '/Framework/ComparatorFactory.php',
+            'phpunit_framework_comparisonfailure' => '/Framework/ComparisonFailure.php',
+            'phpunit_framework_constraint' => '/Framework/Constraint.php',
+            'phpunit_framework_constraint_and' => '/Framework/Constraint/And.php',
+            'phpunit_framework_constraint_arrayhaskey' => '/Framework/Constraint/ArrayHasKey.php',
+            'phpunit_framework_constraint_attribute' => '/Framework/Constraint/Attribute.php',
+            'phpunit_framework_constraint_callback' => '/Framework/Constraint/Callback.php',
+            'phpunit_framework_constraint_classhasattribute' => '/Framework/Constraint/ClassHasAttribute.php',
+            'phpunit_framework_constraint_classhasstaticattribute' => '/Framework/Constraint/ClassHasStaticAttribute.php',
+            'phpunit_framework_constraint_composite' => '/Framework/Constraint/Composite.php',
+            'phpunit_framework_constraint_count' => '/Framework/Constraint/Count.php',
+            'phpunit_framework_constraint_exception' => '/Framework/Constraint/Exception.php',
+            'phpunit_framework_constraint_exceptioncode' => '/Framework/Constraint/ExceptionCode.php',
+            'phpunit_framework_constraint_exceptionmessage' => '/Framework/Constraint/ExceptionMessage.php',
+            'phpunit_framework_constraint_fileexists' => '/Framework/Constraint/FileExists.php',
+            'phpunit_framework_constraint_greaterthan' => '/Framework/Constraint/GreaterThan.php',
+            'phpunit_framework_constraint_isanything' => '/Framework/Constraint/IsAnything.php',
+            'phpunit_framework_constraint_isempty' => '/Framework/Constraint/IsEmpty.php',
+            'phpunit_framework_constraint_isequal' => '/Framework/Constraint/IsEqual.php',
+            'phpunit_framework_constraint_isfalse' => '/Framework/Constraint/IsFalse.php',
+            'phpunit_framework_constraint_isidentical' => '/Framework/Constraint/IsIdentical.php',
+            'phpunit_framework_constraint_isinstanceof' => '/Framework/Constraint/IsInstanceOf.php',
+            'phpunit_framework_constraint_isjson' => '/Framework/Constraint/IsJson.php',
+            'phpunit_framework_constraint_isnull' => '/Framework/Constraint/IsNull.php',
+            'phpunit_framework_constraint_istrue' => '/Framework/Constraint/IsTrue.php',
+            'phpunit_framework_constraint_istype' => '/Framework/Constraint/IsType.php',
+            'phpunit_framework_constraint_jsonmatches' => '/Framework/Constraint/JsonMatches.php',
+            'phpunit_framework_constraint_jsonmatches_errormessageprovider' => '/Framework/Constraint/JsonMatches/ErrorMessageProvider.php',
+            'phpunit_framework_constraint_lessthan' => '/Framework/Constraint/LessThan.php',
+            'phpunit_framework_constraint_not' => '/Framework/Constraint/Not.php',
+            'phpunit_framework_constraint_objecthasattribute' => '/Framework/Constraint/ObjectHasAttribute.php',
+            'phpunit_framework_constraint_or' => '/Framework/Constraint/Or.php',
+            'phpunit_framework_constraint_pcrematch' => '/Framework/Constraint/PCREMatch.php',
+            'phpunit_framework_constraint_samesize' => '/Framework/Constraint/SameSize.php',
+            'phpunit_framework_constraint_stringcontains' => '/Framework/Constraint/StringContains.php',
+            'phpunit_framework_constraint_stringendswith' => '/Framework/Constraint/StringEndsWith.php',
+            'phpunit_framework_constraint_stringmatches' => '/Framework/Constraint/StringMatches.php',
+            'phpunit_framework_constraint_stringstartswith' => '/Framework/Constraint/StringStartsWith.php',
+            'phpunit_framework_constraint_traversablecontains' => '/Framework/Constraint/TraversableContains.php',
+            'phpunit_framework_constraint_traversablecontainsonly' => '/Framework/Constraint/TraversableContainsOnly.php',
+            'phpunit_framework_constraint_xor' => '/Framework/Constraint/Xor.php',
+            'phpunit_framework_error' => '/Framework/Error.php',
+            'phpunit_framework_error_deprecated' => '/Framework/Error/Deprecated.php',
+            'phpunit_framework_error_notice' => '/Framework/Error/Notice.php',
+            'phpunit_framework_error_warning' => '/Framework/Error/Warning.php',
+            'phpunit_framework_exception' => '/Framework/Exception.php',
+            'phpunit_framework_expectationfailedexception' => '/Framework/ExpectationFailedException.php',
+            'phpunit_framework_incompletetest' => '/Framework/IncompleteTest.php',
+            'phpunit_framework_incompletetesterror' => '/Framework/IncompleteTestError.php',
+            'phpunit_framework_outputerror' => '/Framework/OutputError.php',
+            'phpunit_framework_selfdescribing' => '/Framework/SelfDescribing.php',
+            'phpunit_framework_skippedtest' => '/Framework/SkippedTest.php',
+            'phpunit_framework_skippedtesterror' => '/Framework/SkippedTestError.php',
+            'phpunit_framework_skippedtestsuiteerror' => '/Framework/SkippedTestSuiteError.php',
+            'phpunit_framework_syntheticerror' => '/Framework/SyntheticError.php',
+            'phpunit_framework_test' => '/Framework/Test.php',
+            'phpunit_framework_testcase' => '/Framework/TestCase.php',
+            'phpunit_framework_testfailure' => '/Framework/TestFailure.php',
+            'phpunit_framework_testlistener' => '/Framework/TestListener.php',
+            'phpunit_framework_testresult' => '/Framework/TestResult.php',
+            'phpunit_framework_testsuite' => '/Framework/TestSuite.php',
+            'phpunit_framework_testsuite_dataprovider' => '/Framework/TestSuite/DataProvider.php',
+            'phpunit_framework_warning' => '/Framework/Warning.php',
+            'phpunit_runner_basetestrunner' => '/Runner/BaseTestRunner.php',
+            'phpunit_runner_standardtestsuiteloader' => '/Runner/StandardTestSuiteLoader.php',
+            'phpunit_runner_testsuiteloader' => '/Runner/TestSuiteLoader.php',
+            'phpunit_runner_version' => '/Runner/Version.php',
+            'phpunit_textui_command' => '/TextUI/Command.php',
+            'phpunit_textui_resultprinter' => '/TextUI/ResultPrinter.php',
+            'phpunit_textui_testrunner' => '/TextUI/TestRunner.php',
+            'phpunit_util_class' => '/Util/Class.php',
+            'phpunit_util_configuration' => '/Util/Configuration.php',
+            'phpunit_util_deprecatedfeature' => '/Util/DeprecatedFeature.php',
+            'phpunit_util_deprecatedfeature_logger' => '/Util/DeprecatedFeature/Logger.php',
+            'phpunit_util_diff' => '/Util/Diff.php',
+            'phpunit_util_errorhandler' => '/Util/ErrorHandler.php',
+            'phpunit_util_fileloader' => '/Util/Fileloader.php',
+            'phpunit_util_filesystem' => '/Util/Filesystem.php',
+            'phpunit_util_filter' => '/Util/Filter.php',
+            'phpunit_util_getopt' => '/Util/Getopt.php',
+            'phpunit_util_globalstate' => '/Util/GlobalState.php',
+            'phpunit_util_invalidargumenthelper' => '/Util/InvalidArgumentHelper.php',
+            'phpunit_util_log_json' => '/Util/Log/JSON.php',
+            'phpunit_util_log_junit' => '/Util/Log/JUnit.php',
+            'phpunit_util_log_tap' => '/Util/Log/TAP.php',
+            'phpunit_util_php' => '/Util/PHP.php',
+            'phpunit_util_php_default' => '/Util/PHP/Default.php',
+            'phpunit_util_php_windows' => '/Util/PHP/Windows.php',
+            'phpunit_util_printer' => '/Util/Printer.php',
+            'phpunit_util_string' => '/Util/String.php',
+            'phpunit_util_test' => '/Util/Test.php',
+            'phpunit_util_testdox_nameprettifier' => '/Util/TestDox/NamePrettifier.php',
+            'phpunit_util_testdox_resultprinter' => '/Util/TestDox/ResultPrinter.php',
+            'phpunit_util_testdox_resultprinter_html' => '/Util/TestDox/ResultPrinter/HTML.php',
+            'phpunit_util_testdox_resultprinter_text' => '/Util/TestDox/ResultPrinter/Text.php',
+            'phpunit_util_testsuiteiterator' => '/Util/TestSuiteIterator.php',
+            'phpunit_util_type' => '/Util/Type.php',
+            'phpunit_util_xml' => '/Util/XML.php'
+          );
+
+          $path = dirname(__FILE__);
+      }
+
+      $cn = strtolower($class);
+
+      if (isset($classes[$cn])) {
+          require $path . $classes[$cn];
+      }
+  }
+);
+
+// Symfony Yaml autoloader
+spl_autoload_register(
+  function ($class) {
+      if (0 === strpos(ltrim($class, '/'), 'Symfony\Component\Yaml')) {
+          $file = sprintf(
+            'Symfony/Component/Yaml%s.php',
+
+            substr(
+              str_replace('\\', '/', $class),
+              strlen('Symfony\Component\Yaml')
+            )
+          );
+
+          if (stream_resolve_include_path($file)) {
+              require_once $file;
+          }
+      }
+  }
+);
+
+if (stream_resolve_include_path('PHP/Invoker/Autoload.php')) {
+    require_once 'PHP/Invoker/Autoload.php';
+}
+
+if (stream_resolve_include_path('PHPUnit/Extensions/Database/Autoload.php')) {
+    require_once 'PHPUnit/Extensions/Database/Autoload.php';
+}
+
+if (stream_resolve_include_path('PHPUnit/Extensions/SeleniumCommon/Autoload.php')) {
+    require_once 'PHPUnit/Extensions/SeleniumCommon/Autoload.php';
+}
+
+else if (stream_resolve_include_path('PHPUnit/Extensions/SeleniumTestCase/Autoload.php')) {
+    require_once 'PHPUnit/Extensions/SeleniumTestCase/Autoload.php';
+}
+
+if (stream_resolve_include_path('PHPUnit/Extensions/Story/Autoload.php')) {
+    require_once 'PHPUnit/Extensions/Story/Autoload.php';
+}

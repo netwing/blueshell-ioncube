@@ -1,46 +1,120 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-RWc4r6vlvxU6go4e+8y=
+<?php
+
+namespace Psr\Log;
+
+/**
+ * This is a simple Logger implementation that other Loggers can inherit from.
+ *
+ * It simply delegates all log-level-specific methods to the `log` method to
+ * reduce boilerplate code that a simple Logger that does the same thing with
+ * messages regardless of the error level has to implement.
+ */
+abstract class AbstractLogger implements LoggerInterface
+{
+    /**
+     * System is unusable.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function emergency($message, array $context = array())
+    {
+        $this->log(LogLevel::EMERGENCY, $message, $context);
+    }
+
+    /**
+     * Action must be taken immediately.
+     *
+     * Example: Entire website down, database unavailable, etc. This should
+     * trigger the SMS alerts and wake you up.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function alert($message, array $context = array())
+    {
+        $this->log(LogLevel::ALERT, $message, $context);
+    }
+
+    /**
+     * Critical conditions.
+     *
+     * Example: Application component unavailable, unexpected exception.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function critical($message, array $context = array())
+    {
+        $this->log(LogLevel::CRITICAL, $message, $context);
+    }
+
+    /**
+     * Runtime errors that do not require immediate action but should typically
+     * be logged and monitored.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function error($message, array $context = array())
+    {
+        $this->log(LogLevel::ERROR, $message, $context);
+    }
+
+    /**
+     * Exceptional occurrences that are not errors.
+     *
+     * Example: Use of deprecated APIs, poor use of an API, undesirable things
+     * that are not necessarily wrong.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function warning($message, array $context = array())
+    {
+        $this->log(LogLevel::WARNING, $message, $context);
+    }
+
+    /**
+     * Normal but significant events.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function notice($message, array $context = array())
+    {
+        $this->log(LogLevel::NOTICE, $message, $context);
+    }
+
+    /**
+     * Interesting events.
+     *
+     * Example: User logs in, SQL logs.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function info($message, array $context = array())
+    {
+        $this->log(LogLevel::INFO, $message, $context);
+    }
+
+    /**
+     * Detailed debug information.
+     *
+     * @param string $message
+     * @param array $context
+     * @return null
+     */
+    public function debug($message, array $context = array())
+    {
+        $this->log(LogLevel::DEBUG, $message, $context);
+    }
+}

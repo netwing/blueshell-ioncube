@@ -1,96 +1,179 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-bHIlkqSJDls2hcx6+Mq=
+<?php
+
+namespace Guzzle\Log;
+
+use Guzzle\Http\Curl\CurlHandle;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\EntityEnclosingRequestInterface;
+use Guzzle\Http\Message\Response;
+
+/**
+ * Message formatter used in various places in the framework
+ *
+ * Format messages using a template that can contain the the following variables:
+ *
+ * - {request}:       Full HTTP request message
+ * - {response}:      Full HTTP response message
+ * - {ts}:            Timestamp
+ * - {host}:          Host of the request
+ * - {method}:        Method of the request
+ * - {url}:           URL of the request
+ * - {host}:          Host of the request
+ * - {protocol}:      Request protocol
+ * - {version}:       Protocol version
+ * - {resource}:      Resource of the request (path + query + fragment)
+ * - {port}:          Port of the request
+ * - {hostname}:      Hostname of the machine that sent the request
+ * - {code}:          Status code of the response (if available)
+ * - {phrase}:        Reason phrase of the response  (if available)
+ * - {curl_error}:    Curl error message (if available)
+ * - {curl_code}:     Curl error code (if available)
+ * - {curl_stderr}:   Curl standard error (if available)
+ * - {connect_time}:  Time in seconds it took to establish the connection (if available)
+ * - {total_time}:    Total transaction time in seconds for last transfer (if available)
+ * - {req_header_*}:  Replace `*` with the lowercased name of a request header to add to the message
+ * - {res_header_*}:  Replace `*` with the lowercased name of a response header to add to the message
+ * - {req_body}:      Request body
+ * - {res_body}:      Response body
+ */
+class MessageFormatter
+{
+    const DEFAULT_FORMAT = "{hostname} {req_header_User-Agent} - [{ts}] \"{method} {resource} {protocol}/{version}\" {code} {res_header_Content-Length}";
+    const DEBUG_FORMAT = ">>>>>>>>\n{request}\n<<<<<<<<\n{response}\n--------\n{curl_stderr}";
+    const SHORT_FORMAT = '[{ts}] "{method} {resource} {protocol}/{version}" {code}';
+
+    /**
+     * @var string Template used to format log messages
+     */
+    protected $template;
+
+    /**
+     * @param string $template Log message template
+     */
+    public function __construct($template = self::DEFAULT_FORMAT)
+    {
+        $this->template = $template ?: self::DEFAULT_FORMAT;
+    }
+
+    /**
+     * Set the template to use for logging
+     *
+     * @param string $template Log message template
+     *
+     * @return self
+     */
+    public function setTemplate($template)
+    {
+        $this->template = $template;
+
+        return $this;
+    }
+
+    /**
+     * Returns a formatted message
+     *
+     * @param RequestInterface $request    Request that was sent
+     * @param Response         $response   Response that was received
+     * @param CurlHandle       $handle     Curl handle associated with the message
+     * @param array            $customData Associative array of custom template data
+     *
+     * @return string
+     */
+    public function format(
+        RequestInterface $request,
+        Response $response = null,
+        CurlHandle $handle = null,
+        array $customData = array()
+    ) {
+        $cache = $customData;
+
+        return preg_replace_callback(
+            '/{\s*([A-Za-z_\-\.0-9]+)\s*}/',
+            function (array $matches) use ($request, $response, $handle, &$cache) {
+
+                if (array_key_exists($matches[1], $cache)) {
+                    return $cache[$matches[1]];
+                }
+
+                $result = '';
+                switch ($matches[1]) {
+                    case 'request':
+                        $result = (string) $request;
+                        break;
+                    case 'response':
+                        $result = (string) $response;
+                        break;
+                    case 'req_body':
+                        $result = $request instanceof EntityEnclosingRequestInterface
+                            ? (string) $request->getBody() : '';
+                        break;
+                    case 'res_body':
+                        $result = $response ? $response->getBody(true) : '';
+                        break;
+                    case 'ts':
+                        $result = gmdate('c');
+                        break;
+                    case 'method':
+                        $result = $request->getMethod();
+                        break;
+                    case 'url':
+                        $result = (string) $request->getUrl();
+                        break;
+                    case 'resource':
+                        $result = $request->getResource();
+                        break;
+                    case 'protocol':
+                        $result = 'HTTP';
+                        break;
+                    case 'version':
+                        $result = $request->getProtocolVersion();
+                        break;
+                    case 'host':
+                        $result = $request->getHost();
+                        break;
+                    case 'hostname':
+                        $result = gethostname();
+                        break;
+                    case 'port':
+                        $result = $request->getPort();
+                        break;
+                    case 'code':
+                        $result = $response ? $response->getStatusCode() : '';
+                        break;
+                    case 'phrase':
+                        $result = $response ? $response->getReasonPhrase() : '';
+                        break;
+                    case 'connect_time':
+                        $result = $handle && $handle->getInfo(CURLINFO_CONNECT_TIME)
+                            ? $handle->getInfo(CURLINFO_CONNECT_TIME)
+                            : ($response ? $response->getInfo('connect_time') : '');
+                        break;
+                    case 'total_time':
+                        $result = $handle && $handle->getInfo(CURLINFO_TOTAL_TIME)
+                            ? $handle->getInfo(CURLINFO_TOTAL_TIME)
+                            : ($response ? $response->getInfo('total_time') : '');
+                        break;
+                    case 'curl_error':
+                        $result = $handle ? $handle->getError() : '';
+                        break;
+                    case 'curl_code':
+                        $result = $handle ? $handle->getErrorNo() : '';
+                        break;
+                    case 'curl_stderr':
+                        $result =  $handle ? $handle->getStderr() : '';
+                        break;
+                    default:
+                        if (strpos($matches[1], 'req_header_') === 0) {
+                            $result = $request->getHeader(substr($matches[1], 11));
+                        } elseif ($response && strpos($matches[1], 'res_header_') === 0) {
+                            $result = $response->getHeader(substr($matches[1], 11));
+                        }
+                }
+
+                $cache[$matches[1]] = $result;
+                return $result;
+            },
+            $this->template
+        );
+    }
+}

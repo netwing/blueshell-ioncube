@@ -1,72 +1,341 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Parses Class doc comments.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_CommentParser_AbstractParser', true) === false) {
+    $error = 'Class PHP_CodeSniffer_CommentParser_AbstractParser not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+/**
+ * Parses Class doc comments.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_CommentParser_ClassCommentParser extends PHP_CodeSniffer_CommentParser_AbstractParser
+{
+
+    /**
+     * The package element of this class.
+     *
+     * @var SingleElement
+     */
+    private $_package = null;
+
+    /**
+     * The subpackage element of this class.
+     *
+     * @var SingleElement
+     */
+    private $_subpackage = null;
+
+    /**
+     * The version element of this class.
+     *
+     * @var SingleElement
+     */
+    private $_version = null;
+
+    /**
+     * The category element of this class.
+     *
+     * @var SingleElement
+     */
+    private $_category = null;
+
+    /**
+     * The copyright elements of this class.
+     *
+     * @var array(SingleElement)
+     */
+    private $_copyrights = array();
+
+    /**
+     * The licence element of this class.
+     *
+     * @var PairElement
+     */
+    private $_license = null;
+
+    /**
+     * The author elements of this class.
+     *
+     * @var array(SingleElement)
+     */
+    private $_authors = array();
+
+
+    /**
+     * Returns the allowed tags withing a class comment.
+     *
+     * @return array(string => int)
+     */
+    protected function getAllowedTags()
+    {
+        return array(
+                'category'   => false,
+                'package'    => true,
+                'subpackage' => true,
+                'author'     => false,
+                'copyright'  => true,
+                'license'    => false,
+                'version'    => true,
+               );
+
+    }//end getAllowedTags()
+
+
+    /**
+     * Parses the license tag of this class comment.
+     *
+     * @param array $tokens The tokens that comprise this tag.
+     *
+     * @return PHP_CodeSniffer_CommentParser_PairElement
+     */
+    protected function parseLicense($tokens)
+    {
+        $this->_license = new PHP_CodeSniffer_CommentParser_PairElement(
+            $this->previousElement,
+            $tokens,
+            'license',
+            $this->phpcsFile
+        );
+
+        return $this->_license;
+
+    }//end parseLicense()
+
+
+    /**
+     * Parses the copyright tags of this class comment.
+     *
+     * @param array $tokens The tokens that comprise this tag.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    protected function parseCopyright($tokens)
+    {
+        $copyright = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'copyright',
+            $this->phpcsFile
+        );
+
+        $this->_copyrights[] = $copyright;
+        return $copyright;
+
+    }//end parseCopyright()
+
+
+    /**
+     * Parses the category tag of this class comment.
+     *
+     * @param array $tokens The tokens that comprise this tag.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    protected function parseCategory($tokens)
+    {
+        $this->_category = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'category',
+            $this->phpcsFile
+        );
+
+        return $this->_category;
+
+    }//end parseCategory()
+
+
+    /**
+     * Parses the author tag of this class comment.
+     *
+     * @param array $tokens The tokens that comprise this tag.
+     *
+     * @return array(PHP_CodeSniffer_CommentParser_SingleElement)
+     */
+    protected function parseAuthor($tokens)
+    {
+        $author = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'author',
+            $this->phpcsFile
+        );
+
+        $this->_authors[] = $author;
+        return $author;
+
+    }//end parseAuthor()
+
+
+    /**
+     * Parses the version tag of this class comment.
+     *
+     * @param array $tokens The tokens that comprise this tag.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    protected function parseVersion($tokens)
+    {
+        $this->_version = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'version',
+            $this->phpcsFile
+        );
+
+        return $this->_version;
+
+    }//end parseVersion()
+
+
+    /**
+     * Parses the package tag found in this test.
+     *
+     * @param array $tokens The tokens that comprise this var.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    protected function parsePackage($tokens)
+    {
+        $this->_package = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'package',
+            $this->phpcsFile
+        );
+
+        return $this->_package;
+
+    }//end parsePackage()
+
+
+    /**
+     * Parses the package tag found in this test.
+     *
+     * @param array $tokens The tokens that comprise this var.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    protected function parseSubpackage($tokens)
+    {
+        $this->_subpackage = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'subpackage',
+            $this->phpcsFile
+        );
+
+        return $this->_subpackage;
+
+    }//end parseSubpackage()
+
+
+    /**
+     * Returns the authors of this class comment.
+     *
+     * @return array(PHP_CodeSniffer_CommentParser_SingleElement)
+     */
+    public function getAuthors()
+    {
+        return $this->_authors;
+
+    }//end getAuthors()
+
+
+    /**
+     * Returns the version of this class comment.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    public function getVersion()
+    {
+        return $this->_version;
+
+    }//end getVersion()
+
+
+    /**
+     * Returns the license of this class comment.
+     *
+     * @return PHP_CodeSniffer_CommentParser_PairElement
+     */
+    public function getLicense()
+    {
+        return $this->_license;
+
+    }//end getLicense()
+
+
+    /**
+     * Returns the copyrights of this class comment.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    public function getCopyrights()
+    {
+        return $this->_copyrights;
+
+    }//end getCopyrights()
+
+
+    /**
+     * Returns the category of this class comment.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    public function getCategory()
+    {
+        return $this->_category;
+
+    }//end getCategory()
+
+
+    /**
+     * Returns the package that this class belongs to.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    public function getPackage()
+    {
+        return $this->_package;
+
+    }//end getPackage()
+
+
+    /**
+     * Returns the subpackage that this class belongs to.
+     *
+     * @return PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    public function getSubpackage()
+    {
+        return $this->_subpackage;
+
+    }//end getSubpackage()
+
+
+}//end class
+
 ?>
-HR+cP/KRYsV+pWz8azGUH25N21kIPQh9nAV0c/fXW0/zRIRsLktfZEIIFesayVDMlD7sMBN1taEB
-ePFPeHZBMcH05o/FvLEWwWXszhSRVdXTvBdvqx/8XlSq3XSr4VztQYEyNqh5f9P2qHQr0k8wJhrn
-4vLYIxAjOHlxj2pGe9rANyXcoHGpTH022vdxdZMIugbdusBata/YMmiEVxfq/NoKws/A0pIllzWJ
-OLjn0WS+JnIO8bA3yXTecQzHAE4xzt2gh9fl143SQNG5PQpxhQwQi8ibB3beD2tyTtMkqLpqs61I
-c6TgvxexGhUBlORoQTXqYvNDD+pBb8PWeoU30NvlW+ip6GIUzv5vFfgATZxNJxvSYzu3w1AOfN4B
-HBJrvn8+bqNKFbXUrpwJLYwjMY1qlvcce/vmFICB/URNwB3LgUQcUSXLX2jta6TGKLD1Ll+NDW42
-2XU16Hg6fQdLaBxn/Fbd7HD7Q5gwrBWCG/4hkTGdPlrPyblHLrsSUxMDqP1VxrfflacWXmJUN4IS
-NBd7jaSkKG44+6WR6A9Q/Bl2dclH/t4KtvK6GvXPMuyu0hThXwV7sJ6IdV6S6n25ban+soPLv+uO
-qwVcwXPtb8bvISmHwQxuCtkrrp44zSZYLFTT/yS28ARTtabkTHgNFcUNq6kwoXsChl3Hgs7NGl1D
-G+DHMhcEarceMSFxO5sejFPZrCBtqWI/fHdD3iZk2ujxdbOw4o4so4GOsP8XWIh5PrXPH0fw9ARU
-fkfrSfY3eX4JaS44uOushANU84NjGjLJXXu8Cm/RTUZQpaf57mo+jy4PQxozq4LVwlQe3bW+z7rm
-GIzJAuJcz8R6tv46dlzLBpwnp1WO3vTJoecCHXlU/tbbb9Qe+Y4T0kIdoXxRJOqGyO6Jv8d63BtZ
-WOrlNRfftnDlOPp/V3Eol1i9RimGfUCQ9FP9vhMpbw9Stcoy9i9L3uwxYZ27nXA94Ab1R6s9KIJ/
-nGIKsRPZToV7OBKN6sfLymS51yhIpcn/UeNy83CSdS2iaakwJxTRCbdlZFx2666+ffPvdwuhAhVL
-XO4B+f5U+kg/4TLMEmKk169zdA+ZVa7xQoH1XJbneGFxLlC8kdq8xl4SXhriyzQHextWbTcPpICY
-+N8M414IRMCaU7CihNIA+CByV34/cx3vUN5m12KUzjhN0OTa4eZNUbdubjjMEyBIn3Cm78AVIy9H
-Ee1gEjbLPQw4eVvaY3kh6DB4lxaa3MiHH2+B7qnKN15BIhSaNm37dRMl4r0asVLBuzy86V2Zm3KP
-gelnpEpeHMA1+MAZI1p10KEuMXUaggLkVeBxGFzIpI+wUeaVQNlogzclD1O3dS72JxcPc4w2wLm+
-8zyEUkP8k/7v30QIHcgScfjjr2s3sBIAQ/KDwLaswC3ugaNVbuOllCIu/RdPtRe4BCdfaFHrwmSe
-uVBmySoxlWGtWm8H+tJ+TfnJXGogCFpncbxL2haDFJV4iiCMlZffRfh1k19cGzCA8zxjMdRGSkf6
-Uwr1AJ6ns8wC5JZVgKwbFRjDOQmdJRCdciNW/UpC+z+11YFpHTfMBsw/KdNc+GK3drzEv4wt8iVB
-rORGzPUkUl+S7Jleacqbr0FvzWTW4exyHH6QC6ndyomS9ZOx8tjLTGhsgyJX8hfXbAnCRrMNlNOi
-/orkAxmshBStVjLwV8Ifu+UynaDs23W0YmsXa7Ql8FAsxGu1Ec+UyF0YZRuGwRZNOQXoq2VR8Qtz
-DZV5KEZ0Xkyo8g0vZcsyfL2sxO7VZXEB11fHbtQ8xUtIxcIpPWsCqopC/VqRejJExFq1LvAWibWQ
-Ug6zOAF+RqsC7dHG+KZoQ3w1IZ+kBYga6zjwlqO1X9Z5/4TEN7D4SI4hYb3HSdLvg49JQt2GZ5py
-qARllK7sGIeKYhJr9BegnLG1hztpPxLUSM7bYEnfVLpnvYgJqfuSJarXWtmlX0s0OsFuuscga+Fw
-OozrocSmKLA4fgML/Wpt1y+E2Hwi/EHM9yw0Amd/fuYH5E3P/D2aZSlQzi6rmq4l0euLTOu9CjbG
-YY1pH84LxbQGx51DxJ/ErYAB04r0ufm52R4JbhZwtF2xC0N1Js2I0V6lsUOviEG9CfuLE/jF0kjY
-kmW6KbKLdarMNd8F82Ss1YqqCfXe6HgUmtOglEsLemt1C8WVHvhZR6zRK2k6h6wyK04c1cvd8RGK
-Fg0Ju0jOFYVpLxw90tVi0aK6wrhd7yMqoHRGlB2jRFJOhnTwjOKZNj3UqAxYaZgdwQJBKdsc75gg
-eexnc8axg26HYPs0ZDSDkKXomV6pVlZ1ZbtALh1JGt+VGsCoFZbll8MZ6zHVryr0UVaS3UUqOxzP
-AEqTrqk1onp63SAVIJ3/Jb65W5U+K31IwNp0uXHsM09G2fRlGUpgcI8WympmGcskQVd2zls7YQdQ
-heBgCYWmuUm9oIHse3q3k0f6m78HrvgV8xUCiSyoVfbGYIKLXog+/TCdcwyZltfenLg4MNFWbKzV
-E7EE42rb4BUkB1NWhoV2Dk0Ev6dGe+E1J0BbOa2/4bqIu+KdxSKWvZPepcDXPPsNyDkZoLJaDIT1
-B9ZeBUiDcq8qmo8OxoO++CkY5hXBZHBT/uw295ApLSQMcAFpAEiRYNWiyTUbm7b3ij5zPSxofxC1
-rGmO8KvFHY5KfKk8LsSHLtOr7MQdcHgV7zdQYYKVv2OrpZ+SWOfLb/MD5yH6x4FI4kLma0BZox1W
-MS6PJ0hwhui7gXg2UAjH8eYewsgSLdsPNrrKyinBKzB4hSEufn2IMjtCy9K4r41ZIDmSlRPoVzm6
-47aDw3D9Q1jgXNJjY3IFtCV/MRjlkcWgLq19v18W0M8Pyfo8D4cMBmKJM3ZUZrxwmo0315C70gtd
-DO8axrYNTeG00LY1Gw9G2WP0qOm8JdRVuuA6sW9GSKgMZfoZeisT+BdyD6bw1XUGjNSMfFvSORxW
-uic3vTgwCLN7FlM/bRTX0dLzWT17BRI8WArNJtlQ9V94VZ/wC7nUTGR2AlEnCKqWRQyho/mwPjS0
-mw7NpQGPu76HnZZ/VyGMg8khdCXtdwxybyI4Ram+xV/0zfY3pbXusXaRYBnxUPbi3dX6tKWml5wy
-Wd1USSlC0e/ReWHWLTv/4N0pSlIccQYqx6wPgqbBBRHq3wf1o0k3GxSIkcY8XjGDlXfOKULHrWX8
-BDkKWvKphU9hCNNb+QJEwB0vp9md930gkT0eJMdKKTu4LSlCFa2wEZH/x+UIgOik/7OzM8SaIZWg
-36ZMsBu++q973C74djMO7ScWfNQdsFaMwIheBazUudjDpgXJbYEiWrUdM7ES8ViqYxXU9kAAwrbp
-5I/Umvo0HgD85zmUy6fBtQ6avHGuVWsqmzba4rDBxG3dDtptF/JHP6ahAqye8gzIOMcDKV8fbIH+
-vp2eCudXfWwFze+p0oXGOI5ynL9qdEeGc/zh7sO4fEnu1pfDEsUti9TaQIz/lZZxiMRp5SZfb7Vw
-YNyI52v2xMc1j4D5z7EHXsWHuaytFOkbW3rTbm/6/YE4ib6LiU6ydU2WL3ahZT89n/WQYipoqV5E
-hr6qvb/MHekg3tDSZ7GGPObXiRv7c4q8goxsr/zWrO6OEJhA0+vlsIp3sG1vyTq43rvSk/OzfPoR
-hT6BSGBLkutX0awPe4fwt+0XgT0e3TGfBr04RJbiCxQ9QUITww8Rt8YLDDKsiHGzhSiNycX7hFw3
-xZ71da+Mas58yKD7dqXx/sOopV26ZeQGjZw80n0IryfxrQuUUNNrHEp2Yp55NgU54Q/VrEKMmejp
-Cg/dj+luio5lfBX5DPTeAbnXqwxql47ZfkBKnol2xlSb1Lq9yKCxHukPJ5KFIq7jugXSCVuO5xPN
-76PijhoazQRBK1ETN7rB/qIfhOKX6OpzNYof6T4PydCDK9+cmeMV560pkvJcmaMydlcbLO4rmodF
-oypA3AjR4FyvkgU263/MZOVz0KFBYO8u3GZXo9iAabXxHRHpvRySFlnY+6bbtf4x9yKlfmX8eCkm
-4voHzqJrpJDt41nHNBH64vbSRIS1uf5vCMc4I1J2Dg6m25cvbAvm8YXJd5B7UWPCM0gxD/9R0IWj
-zj04kVOTB0S3UbYN+e5fuDh5Fud4BWcHfF9WxqiMQp6yw+MrhR/hg3dfjO/EUq15kKXSZmSPgU62
-KSQPv4Ppg8mtfogOsE/VpU5+GRd0QbMx1NSWTDLwQn6WHdWKHnctBJ9Kw1YRXbSv94ocqViUhYtH
-VfuFdEOiHgXbSfr35go56A7AvWLsQ3Ys9sScSmEVZkMjJOiAzSF87Gv0zggnnSKecvd7SBw4a1uq
-9Z+YWLlNSpI82ZwclC+ZRf8K1JUKiaiPy/GWik99tkI5u2NOvaSO18N7yctzj8pscZczml8Pmvju
-T4WQmcunKzt75FJm4xwLIxnjTmgBOlWeYYMnQmlBbqnzVMsb5FqKNFfIqPwwnGh9O1CmiWfwFkgV
-l0/Kzx80Jw8b7j6DXciIp1aWhZ5y6L7OYyCqMT+HG4Y6nxUF6Xmh9hGYDzaX5pEMlpEQ1A3urkDt
-C321cxfrgGHv2wPISLTqnHRoubXaLYJIpZtf0fXRM5HugDSd6r+bpI6crLDsdGmJTZ7lt0g0em+/
-EJlmJRh6JRqKzzEFWo4DKpd3pVYy5GzepWGBkoJIstkE703rpg92CjEIUUwgr6UBOmo9/PLjA/BQ
-M5cfBzzle7GbNtceHolgdp8jpXks6kQWXSSQA3aSTgFgOYx0gG+OS1h8Bmyz2+QKHbtGZQeikJA0
-sGKSIRpt8P6q/W/mo3/wNDavGu0F9SMIyO8BOZvr/idwGHtzUxRglcjNhzw4E5dYwc/8VFoFsAcr
-FRPxSWzwBdXUzKtWvpBfa0V/C+hgHVF52FqZx8zfokAnTZD2MKON8Qk7rR8dszaRzQROdJFQNFTd
-/Hj8yk/Op+ypPdxaf2NM2WVPc0d2g6rqzBmgam70u93WQCx6pbGMX7BWZ78V0YpywNju7AN6itJX
-uajiBp4r9ivZDpNsZDH2HMigYcDSpA+uyuzf6KrJWoCBFiy67/0mVXbBdoQu4NfhqRkEJqgVQv5P
-3SYNyjHn7OvArNz361XBdXHtQD/XG8r98Y3c6aSRGtC9j5a7zea+drbC1X9lRL2e0+CTVDsd+ff9
-kJqWCFq=

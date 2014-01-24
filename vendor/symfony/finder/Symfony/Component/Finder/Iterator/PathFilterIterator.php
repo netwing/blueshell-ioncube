@@ -1,40 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-lLptc6p6lbik4Vs1R8MfoT04xciUfb2XTE4=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Iterator;
+
+/**
+ * PathFilterIterator filters files by path patterns (e.g. some/special/dir).
+ *
+ * @author Fabien Potencier  <fabien@symfony.com>
+ * @author Włodzimierz Gajda <gajdaw@gajdaw.pl>
+ */
+class PathFilterIterator extends MultiplePcreFilterIterator
+{
+
+    /**
+     * Filters the iterator values.
+     *
+     * @return Boolean true if the value should be kept, false otherwise
+     */
+    public function accept()
+    {
+        $filename = $this->current()->getRelativePathname();
+
+        if (defined('PHP_WINDOWS_VERSION_MAJOR')) {
+            $filename = strtr($filename, '\\', '/');
+        }
+
+        // should at least not match one rule to exclude
+        foreach ($this->noMatchRegexps as $regex) {
+            if (preg_match($regex, $filename)) {
+                return false;
+            }
+        }
+
+        // should at least match one rule
+        $match = true;
+        if ($this->matchRegexps) {
+            $match = false;
+            foreach ($this->matchRegexps as $regex) {
+                if (preg_match($regex, $filename)) {
+                    return true;
+                }
+            }
+        }
+
+        return $match;
+    }
+
+    /**
+     * Converts strings to regexp.
+     *
+     * PCRE patterns are left unchanged.
+     *
+     * Default conversion:
+     *     'lorem/ipsum/dolor'  ==>  'lorem\/ipsum\/dolor/'
+     *
+     * Use only / as directory separator (on Windows also).
+     *
+     * @param string $str Pattern: regexp or dirname.
+     *
+     * @return string regexp corresponding to a given string or regexp
+     */
+    protected function toRegex($str)
+    {
+        return $this->isRegex($str) ? $str : '/'.preg_quote($str, '/').'/';
+    }
+}

@@ -1,140 +1,248 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-8hQaPpMTEUheJPz28b6uWlzT/5ZSLxP3iHWl
+<?php
+
+namespace Guzzle\Http\Message;
+
+use Guzzle\Http\EntityBody;
+use Guzzle\Http\EntityBodyInterface;
+use Guzzle\Http\QueryString;
+use Guzzle\Http\RedirectPlugin;
+use Guzzle\Http\Exception\RequestException;
+use Guzzle\Http\Mimetypes;
+
+/**
+ * HTTP request that sends an entity-body in the request message (POST, PUT, PATCH, DELETE)
+ */
+class EntityEnclosingRequest extends Request implements EntityEnclosingRequestInterface
+{
+    /** @var int When the size of the body is greater than 1MB, then send Expect: 100-Continue */
+    protected $expectCutoff = 1048576;
+
+    /** @var EntityBodyInterface $body Body of the request */
+    protected $body;
+
+    /** @var QueryString POST fields to use in the EntityBody */
+    protected $postFields;
+
+    /** @var array POST files to send with the request */
+    protected $postFiles = array();
+
+    public function __construct($method, $url, $headers = array())
+    {
+        $this->postFields = new QueryString();
+        parent::__construct($method, $url, $headers);
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        // Only attempt to include the POST data if it's only fields
+        if (count($this->postFields) && empty($this->postFiles)) {
+            return parent::__toString() . (string) $this->postFields;
+        }
+
+        return parent::__toString() . $this->body;
+    }
+
+    public function setState($state, array $context = array())
+    {
+        parent::setState($state, $context);
+        if ($state == self::STATE_TRANSFER && !$this->body && !count($this->postFields) && !count($this->postFiles)) {
+            $this->setHeader('Content-Length', 0)->removeHeader('Transfer-Encoding');
+        }
+
+        return $this->state;
+    }
+
+    public function setBody($body, $contentType = null)
+    {
+        $this->body = EntityBody::factory($body);
+
+        // Auto detect the Content-Type from the path of the request if possible
+        if ($contentType === null && !$this->hasHeader('Content-Type')) {
+            $contentType = $this->body->getContentType();
+        }
+
+        if ($contentType) {
+            $this->setHeader('Content-Type', $contentType);
+        }
+
+        // Always add the Expect 100-Continue header if the body cannot be rewound. This helps with redirects.
+        if (!$this->body->isSeekable() && $this->expectCutoff !== false) {
+            $this->setHeader('Expect', '100-Continue');
+        }
+
+        // Set the Content-Length header if it can be determined
+        $size = $this->body->getContentLength();
+        if ($size !== null && $size !== false) {
+            $this->setHeader('Content-Length', $size);
+            if ($size > $this->expectCutoff) {
+                $this->setHeader('Expect', '100-Continue');
+            }
+        } elseif (!$this->hasHeader('Content-Length')) {
+            if ('1.1' == $this->protocolVersion) {
+                $this->setHeader('Transfer-Encoding', 'chunked');
+            } else {
+                throw new RequestException(
+                    'Cannot determine Content-Length and cannot use chunked Transfer-Encoding when using HTTP/1.0'
+                );
+            }
+        }
+
+        return $this;
+    }
+
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    /**
+     * Set the size that the entity body of the request must exceed before adding the Expect: 100-Continue header.
+     *
+     * @param int|bool $size Cutoff in bytes. Set to false to never send the expect header (even with non-seekable data)
+     *
+     * @return self
+     */
+    public function setExpectHeaderCutoff($size)
+    {
+        $this->expectCutoff = $size;
+        if ($size === false || !$this->body) {
+            $this->removeHeader('Expect');
+        } elseif ($this->body && $this->body->getSize() && $this->body->getSize() > $size) {
+            $this->setHeader('Expect', '100-Continue');
+        }
+
+        return $this;
+    }
+
+    public function configureRedirects($strict = false, $maxRedirects = 5)
+    {
+        $this->getParams()->set(RedirectPlugin::STRICT_REDIRECTS, $strict);
+        if ($maxRedirects == 0) {
+            $this->getParams()->set(RedirectPlugin::DISABLE, true);
+        } else {
+            $this->getParams()->set(RedirectPlugin::MAX_REDIRECTS, $maxRedirects);
+        }
+
+        return $this;
+    }
+
+    public function getPostField($field)
+    {
+        return $this->postFields->get($field);
+    }
+
+    public function getPostFields()
+    {
+        return $this->postFields;
+    }
+
+    public function setPostField($key, $value)
+    {
+        $this->postFields->set($key, $value);
+        $this->processPostFields();
+
+        return $this;
+    }
+
+    public function addPostFields($fields)
+    {
+        $this->postFields->merge($fields);
+        $this->processPostFields();
+
+        return $this;
+    }
+
+    public function removePostField($field)
+    {
+        $this->postFields->remove($field);
+        $this->processPostFields();
+
+        return $this;
+    }
+
+    public function getPostFiles()
+    {
+        return $this->postFiles;
+    }
+
+    public function getPostFile($fieldName)
+    {
+        return isset($this->postFiles[$fieldName]) ? $this->postFiles[$fieldName] : null;
+    }
+
+    public function removePostFile($fieldName)
+    {
+        unset($this->postFiles[$fieldName]);
+        $this->processPostFields();
+
+        return $this;
+    }
+
+    public function addPostFile($field, $filename = null, $contentType = null)
+    {
+        $data = null;
+
+        if ($field instanceof PostFileInterface) {
+            $data = $field;
+        } elseif (is_array($filename)) {
+            // Allow multiple values to be set in a single key
+            foreach ($filename as $file) {
+                $this->addPostFile($field, $file, $contentType);
+            }
+            return $this;
+        } elseif (!is_string($filename)) {
+            throw new RequestException('The path to a file must be a string');
+        } elseif (!empty($filename)) {
+            // Adding an empty file will cause cURL to error out
+            $data = new PostFile($field, $filename, $contentType);
+        }
+
+        if ($data) {
+            if (!isset($this->postFiles[$data->getFieldName()])) {
+                $this->postFiles[$data->getFieldName()] = array($data);
+            } else {
+                $this->postFiles[$data->getFieldName()][] = $data;
+            }
+            $this->processPostFields();
+        }
+
+        return $this;
+    }
+
+    public function addPostFiles(array $files)
+    {
+        foreach ($files as $key => $file) {
+            if ($file instanceof PostFileInterface) {
+                $this->addPostFile($file, null, null, false);
+            } elseif (is_string($file)) {
+                // Convert non-associative array keys into 'file'
+                if (is_numeric($key)) {
+                    $key = 'file';
+                }
+                $this->addPostFile($key, $file, null, false);
+            } else {
+                throw new RequestException('File must be a string or instance of PostFileInterface');
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Determine what type of request should be sent based on post fields
+     */
+    protected function processPostFields()
+    {
+        if (!$this->postFiles) {
+            $this->removeHeader('Expect')->setHeader('Content-Type', self::URL_ENCODED);
+        } else {
+            $this->setHeader('Content-Type', self::MULTIPART);
+            if ($this->expectCutoff !== false) {
+                $this->setHeader('Expect', '100-Continue');
+            }
+        }
+    }
+}

@@ -1,63 +1,95 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OFhZjh2z/Mfr
+<?php
+require_once dirname(__FILE__) . '/NewComponent.php';
+require_once dirname(__FILE__) . '/NewBehavior.php';
+
+require_once dirname(__FILE__) . '/NewBeforeValidateBehavior.php';
+require_once dirname(__FILE__) . '/NewFormModel.php';
+
+require_once dirname(__FILE__) . '/BehaviorTestController.php';
+require_once dirname(__FILE__) . '/TestBehavior.php';
+
+class CBehaviorTest extends CTestCase {
+
+	public function testAttachBehavior() {
+		$component=new NewComponent;
+		$component->attachBehavior('a',new NewBehavior);
+		$this->assertFalse($component->behaviorCalled);
+		$this->assertFalse(method_exists($component,'test'));
+		$this->assertEquals(2,$component->test());
+		$this->assertTrue($component->behaviorCalled);
+		$this->setExpectedException('CException');
+		$component->test2();
+	}
+
+    public function testDisableBehaviors(){
+        $component=new NewComponent;
+        $component->attachBehavior('a',new NewBehavior);
+        $component->disableBehaviors();
+        $this->setExpectedException('CException');
+        // test should not be called since behavior is disabled
+        echo $component->test();
+    }
+
+    /**
+     * Since disableBehaviors() was called, validate() should not call beforeValidate() from behavior.
+     * @return void
+     */
+    public function testDisableBehaviorsAndModels(){
+        $model = new NewFormModel();
+        $model->disableBehaviors();
+        $model->validate();
+    }
+
+    /**
+     * enableBehaviors() should work after disableBehaviors().
+     * @return void
+     */
+    public function testDisableAndEnableBehaviorsAndModels(){
+        $this->setExpectedException('NewBeforeValidateBehaviorException');
+        $model = new NewFormModel();
+        $model->disableBehaviors();
+        $model->enableBehaviors();
+        $model->validate();
+    }
+
+	/**
+	 * https://github.com/yiisoft/yii/issues/162
+	 */
+	public function testDuplicateEventHandlers()
+	{
+		$controller = new BehaviorTestController('behaviorTest');
+
+		$b = new TestBehavior();
+		$this->assertFalse($b->enabled);
+
+		$b->attach($controller);
+		$this->assertTrue($b->enabled);
+
+		$b->setEnabled(true);
+		$this->assertTrue($b->enabled);
+
+		$controller->onTestEvent();
+		$this->assertEquals(1, $controller->behaviorEventHandled);
+
+		$b->setEnabled(false);
+		$this->assertFalse($b->enabled);
+		$controller->onTestEvent();
+		$this->assertEquals(1, $controller->behaviorEventHandled);
+
+		$b->setEnabled(true);
+		$this->assertTrue($b->enabled);
+		$controller->onTestEvent();
+		$this->assertEquals(2, $controller->behaviorEventHandled);
+
+		$b->detach($controller);
+		$this->assertFalse($b->enabled);
+		$controller->onTestEvent();
+		$this->assertEquals(2, $controller->behaviorEventHandled);
+
+		$b->setEnabled(true);
+		$this->assertTrue($b->enabled);
+		$controller->onTestEvent();
+		$this->assertEquals(2, $controller->behaviorEventHandled);
+	}
+}
+

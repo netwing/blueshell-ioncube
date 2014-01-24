@@ -1,80 +1,147 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http\Curl;
+
+use Guzzle\Common\AbstractHasDispatcher;
+use Guzzle\Http\Message\RequestInterface;
+
+/**
+ * Proxies requests and connections to a pool of internal curl_multi handles. Each recursive call will add requests
+ * to the next available CurlMulti handle.
+ */
+class CurlMultiProxy extends AbstractHasDispatcher implements CurlMultiInterface
+{
+    protected $handles = array();
+    protected $groups = array();
+    protected $queued = array();
+    protected $maxHandles;
+
+    /**
+     * @param int $maxHandles The maximum number of idle CurlMulti handles to allow to remain open
+     */
+    public function __construct($maxHandles = 3)
+    {
+        $this->maxHandles = $maxHandles;
+        // You can get some weird "Too many open files" errors when sending a large amount of requests in parallel.
+        // These two statements autoload classes before a system runs out of file descriptors so that you can get back
+        // valuable error messages if you run out.
+        class_exists('Guzzle\Http\Message\Response');
+        class_exists('Guzzle\Http\Exception\CurlException');
+    }
+
+    public function add(RequestInterface $request)
+    {
+        $this->queued[] = $request;
+
+        return $this;
+    }
+
+    public function all()
+    {
+        $requests = $this->queued;
+        foreach ($this->handles as $handle) {
+            $requests = array_merge($requests, $handle->all());
+        }
+
+        return $requests;
+    }
+
+    public function remove(RequestInterface $request)
+    {
+        foreach ($this->queued as $i => $r) {
+            if ($request === $r) {
+                unset($this->queued[$i]);
+                return true;
+            }
+        }
+
+        foreach ($this->handles as $handle) {
+            if ($handle->remove($request)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function reset($hard = false)
+    {
+        $this->queued = array();
+        $this->groups = array();
+        foreach ($this->handles as $handle) {
+            $handle->reset();
+        }
+        if ($hard) {
+            $this->handles = array();
+        }
+
+        return $this;
+    }
+
+    public function send()
+    {
+        if ($this->queued) {
+            $group = $this->getAvailableHandle();
+            // Add this handle to a list of handles than is claimed
+            $this->groups[] = $group;
+            while ($request = array_shift($this->queued)) {
+                $group->add($request);
+            }
+            try {
+                $group->send();
+                array_pop($this->groups);
+                $this->cleanupHandles();
+            } catch (\Exception $e) {
+                // Remove the group and cleanup if an exception was encountered and no more requests in group
+                if (!$group->count()) {
+                    array_pop($this->groups);
+                    $this->cleanupHandles();
+                }
+                throw $e;
+            }
+        }
+    }
+
+    public function count()
+    {
+        return count($this->all());
+    }
+
+    /**
+     * Get an existing available CurlMulti handle or create a new one
+     *
+     * @return CurlMulti
+     */
+    protected function getAvailableHandle()
+    {
+        // Grab a handle that is not claimed
+        foreach ($this->handles as $h) {
+            if (!in_array($h, $this->groups, true)) {
+                return $h;
+            }
+        }
+
+        // All are claimed, so create one
+        $handle = new CurlMulti();
+        $handle->setEventDispatcher($this->getEventDispatcher());
+        $this->handles[] = $handle;
+
+        return $handle;
+    }
+
+    /**
+     * Trims down unused CurlMulti handles to limit the number of open connections
+     */
+    protected function cleanupHandles()
+    {
+        if ($diff = max(0, count($this->handles) - $this->maxHandles)) {
+            for ($i = count($this->handles) - 1; $i > 0 && $diff > 0; $i--) {
+                if (!count($this->handles[$i])) {
+                    unset($this->handles[$i]);
+                    $diff--;
+                }
+            }
+            $this->handles = array_values($this->handles);
+        }
+    }
+}

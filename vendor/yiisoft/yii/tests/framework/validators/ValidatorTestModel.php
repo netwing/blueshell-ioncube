@@ -1,32 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+class ValidatorTestModel extends CFormModel
+{
+	public $string1;
+	public $string2;
+	public $string3;
+
+	public $email;
+
+	public $url;
+
+	public $number;
+
+	public $username;
+	public $address;
+
+	public function rules()
+	{
+		return array(
+			array('string1', 'length', 'min'=>10, 'tooShort'=>'Too short message.', 'allowEmpty'=>false,
+				'on'=>'CStringValidatorTest'),
+			array('string2', 'length', 'max'=>10, 'tooLong'=>'Too long message.', 'allowEmpty'=>false,
+				'on'=>'CStringValidatorTest'),
+			array('string3', 'length', 'is'=>10, 'message'=>'Error message.', 'allowEmpty'=>false,
+				'on'=>'CStringValidatorTest'),
+
+			array('email', 'email', 'allowEmpty'=>false, 'on'=>'CEmailValidatorTest'),
+
+			array('url', 'url', 'allowEmpty'=>false, 'on'=>'CUrlValidatorTest'),
+
+			array('number', 'numerical', 'min'=>5, 'max'=>15, 'integerOnly'=>true, 'on'=>'CNumberValidatorTest'),
+
+			array('username', 'required', 'trim' => false, 'on' => 'CRequiredValidatorTest'),
+			array('address', 'required', 'on' => 'CRequiredValidatorTest'),
+
+			array('string1', 'in', 'allowEmpty' => false, 'range' => array(0,1,7,13), 'on' => 'CRangeValidatorTest'),
+			array('string2', 'in', 'allowEmpty' => false, 'range' => array('',1,7,13), 'on' => 'CRangeValidatorTest'),
+		);
+	}
+}

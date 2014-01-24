@@ -1,33 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Nocache Insert
+ *
+ * Compiles the {insert} tag into the cache file
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Insert Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Nocache_Insert
+{
+    /**
+     * Compiles code for the {insert} tag into cache file
+     *
+     * @param  string                   $_function insert function name
+     * @param  array                    $_attr     array with parameter
+     * @param  Smarty_Internal_Template $_template template object
+     * @param  string                   $_script   script name to load or 'null'
+     * @param  string                   $_assign   optional variable name
+     * @return string                   compiled code
+     */
+    public static function compile($_function, $_attr, $_template, $_script, $_assign = null)
+    {
+        $_output = '<?php ';
+        if ($_script != 'null') {
+            // script which must be included
+            // code for script file loading
+            $_output .= "require_once '{$_script}';";
+        }
+        // call insert
+        if (isset($_assign)) {
+            $_output .= "\$_smarty_tpl->assign('{$_assign}' , {$_function} (" . var_export($_attr, true) . ",\$_smarty_tpl), true);?>";
+        } else {
+            $_output .= "echo {$_function}(" . var_export($_attr, true) . ",\$_smarty_tpl);?>";
+        }
+        $_tpl = $_template;
+        while ($_tpl->parent instanceof Smarty_Internal_Template) {
+            $_tpl = $_tpl->parent;
+        }
+
+        return "/*%%SmartyNocache:{$_tpl->properties['nocache_hash']}%%*/" . $_output . "/*/%%SmartyNocache:{$_tpl->properties['nocache_hash']}%%*/";
+    }
+
+}

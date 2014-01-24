@@ -1,49 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests for clearing the cache
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for clearing the cache tests
+*/
+class ClearCacheTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smartyBC = SmartyTests::$smartyBC;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test cache->clear_all method
+    */
+    public function testClearCacheAll()
+    {
+        $this->smarty->clearAllCache();
+        file_put_contents($this->smarty->getCacheDir() . 'dummy.php', 'test');
+        $this->assertEquals(1, $this->smarty->clearAllCache());
+    }
+    /**
+    * test cache->clear_all method not expired
+    */
+    public function testClearCacheAllNotExpired()
+    {
+        file_put_contents($this->smarty->getCacheDir() . 'dummy.php', 'test');
+        touch($this->smarty->getCacheDir() . 'dummy.php', time()-1000);
+        $this->assertEquals(0, $this->smarty->clearAllCache(2000));
+    }
+    public function testSmarty2ClearCacheAllNotExpired()
+    {
+        file_put_contents($this->smartyBC->getCacheDir() . 'dummy.php', 'test');
+        touch($this->smartyBC->getCacheDir() . 'dummy.php', time()-1000);
+        $this->smartyBC->clear_all_cache(2000);
+        $this->assertEquals(1, $this->smartyBC->clearAllCache());
+    }
+    /**
+    * test cache->clear_all method expired
+    */
+    public function testClearCacheAllExpired()
+    {
+        file_put_contents($this->smarty->getCacheDir() . 'dummy.php', 'test');
+        touch($this->smarty->getCacheDir() . 'dummy.php', time()-1000);
+        $this->assertEquals(1, $this->smarty->clearAllCache(500));
+    }
+    public function testSmarty2ClearCacheAllExpired()
+    {
+        file_put_contents($this->smartyBC->getCacheDir() . 'dummy.php', 'test');
+        touch($this->smartyBC->getCacheDir() . 'dummy.php', time()-1000);
+        $this->smartyBC->clear_all_cache(500);
+        $this->assertEquals(0, $this->smartyBC->clearAllCache());
+    }
+}

@@ -1,70 +1,129 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Compile Function_Call
+ *
+ * Compiles the calls of user defined tags defined by {function}
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Function_Call Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Call extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $required_attributes = array('name');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $shorttag_order = array('name');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('_any');
+
+    /**
+     * Compiles the calls of user defined tags defined by {function}
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        // save possible attributes
+        if (isset($_attr['assign'])) {
+            // output will be stored in a smarty variable instead of beind displayed
+            $_assign = $_attr['assign'];
+        }
+        $_name = $_attr['name'];
+        if ($compiler->compiles_template_function) {
+            $compiler->called_functions[] = trim($_name, "'\"");
+        }
+        unset($_attr['name'], $_attr['assign'], $_attr['nocache']);
+        // set flag (compiled code of {function} must be included in cache file
+        if ($compiler->nocache || $compiler->tag_nocache) {
+            $_nocache = 'true';
+        } else {
+            $_nocache = 'false';
+        }
+        $_paramsArray = array();
+        foreach ($_attr as $_key => $_value) {
+            if (is_int($_key)) {
+                $_paramsArray[] = "$_key=>$_value";
+            } else {
+                $_paramsArray[] = "'$_key'=>$_value";
+            }
+        }
+        if (isset($compiler->template->properties['function'][$_name]['parameter'])) {
+            foreach ($compiler->template->properties['function'][$_name]['parameter'] as $_key => $_value) {
+                if (!isset($_attr[$_key])) {
+                    if (is_int($_key)) {
+                        $_paramsArray[] = "$_key=>$_value";
+                    } else {
+                        $_paramsArray[] = "'$_key'=>$_value";
+                    }
+                }
+            }
+        } elseif (isset($compiler->smarty->template_functions[$_name]['parameter'])) {
+            foreach ($compiler->smarty->template_functions[$_name]['parameter'] as $_key => $_value) {
+                if (!isset($_attr[$_key])) {
+                    if (is_int($_key)) {
+                        $_paramsArray[] = "$_key=>$_value";
+                    } else {
+                        $_paramsArray[] = "'$_key'=>$_value";
+                    }
+                }
+            }
+        }
+        //varibale name?
+        if (!(strpos($_name, '$') === false)) {
+            $call_cache = $_name;
+            $call_function = '$tmp = "smarty_template_function_".' . $_name . '; $tmp';
+        } else {
+            $_name = trim($_name, "'\"");
+            $call_cache = "'{$_name}'";
+            $call_function = 'smarty_template_function_' . $_name;
+        }
+
+        $_params = 'array(' . implode(",", $_paramsArray) . ')';
+        $_hash = str_replace('-', '_', $compiler->template->properties['nocache_hash']);
+        // was there an assign attribute
+        if (isset($_assign)) {
+            if ($compiler->template->caching) {
+                $_output = "<?php ob_start(); Smarty_Internal_Function_Call_Handler::call ({$call_cache},\$_smarty_tpl,{$_params},'{$_hash}',{$_nocache}); \$_smarty_tpl->assign({$_assign}, ob_get_clean());?>\n";
+            } else {
+                $_output = "<?php ob_start(); {$call_function}(\$_smarty_tpl,{$_params}); \$_smarty_tpl->assign({$_assign}, ob_get_clean());?>\n";
+            }
+        } else {
+            if ($compiler->template->caching) {
+                $_output = "<?php Smarty_Internal_Function_Call_Handler::call ({$call_cache},\$_smarty_tpl,{$_params},'{$_hash}',{$_nocache});?>\n";
+            } else {
+                $_output = "<?php {$call_function}(\$_smarty_tpl,{$_params});?>\n";
+            }
+        }
+
+        return $_output;
+    }
+
+}

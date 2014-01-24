@@ -1,30 +1,120 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared_Escher
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+/**
+ * PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared_Escher
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE
+{
+	const BLIPTYPE_ERROR	= 0x00;
+	const BLIPTYPE_UNKNOWN	= 0x01;
+	const BLIPTYPE_EMF		= 0x02;
+	const BLIPTYPE_WMF		= 0x03;
+	const BLIPTYPE_PICT		= 0x04;
+	const BLIPTYPE_JPEG		= 0x05;
+	const BLIPTYPE_PNG		= 0x06;
+	const BLIPTYPE_DIB		= 0x07;
+	const BLIPTYPE_TIFF		= 0x11;
+	const BLIPTYPE_CMYKJPEG	= 0x12;
+
+	/**
+	 * The parent BLIP Store Entry Container
+	 *
+	 * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer
+	 */
+	private $_parent;
+
+	/**
+	 * The BLIP (Big Large Image or Picture)
+	 *
+	 * @var PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip
+	 */
+	private $_blip;
+
+	/**
+	 * The BLIP type
+	 *
+	 * @var int
+	 */
+	private $_blipType;
+
+	/**
+	 * Set parent BLIP Store Entry Container
+	 *
+	 * @param PHPExcel_Shared_Escher_DggContainer_BstoreContainer $parent
+	 */
+	public function setParent($parent)
+	{
+		$this->_parent = $parent;
+	}
+
+	/**
+	 * Get the BLIP
+	 *
+	 * @return PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip
+	 */
+	public function getBlip()
+	{
+		return $this->_blip;
+	}
+
+	/**
+	 * Set the BLIP
+	 *
+	 * @param PHPExcel_Shared_Escher_DggContainer_BstoreContainer_BSE_Blip $blip
+	 */
+	public function setBlip($blip)
+	{
+		$this->_blip = $blip;
+		$blip->setParent($this);
+	}
+
+	/**
+	 * Get the BLIP type
+	 *
+	 * @return int
+	 */
+	public function getBlipType()
+	{
+		return $this->_blipType;
+	}
+
+	/**
+	 * Set the BLIP type
+	 *
+	 * @param int
+	 */
+	public function setBlipType($blipType)
+	{
+		$this->_blipType = $blipType;
+	}
+
+}

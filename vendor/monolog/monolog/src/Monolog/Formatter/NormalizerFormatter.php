@@ -1,78 +1,137 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-AtA3rzEEqfkfGDeH5UBwblf4nV3dLgUruHMq
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Formatter;
+
+use Exception;
+
+/**
+ * Normalizes incoming records to remove objects/resources so it's easier to dump to various targets
+ *
+ * @author Jordi Boggiano <j.boggiano@seld.be>
+ */
+class NormalizerFormatter implements FormatterInterface
+{
+    const SIMPLE_DATE = "Y-m-d H:i:s";
+
+    protected $dateFormat;
+
+    /**
+     * @param string $dateFormat The format of the timestamp: one supported by DateTime::format
+     */
+    public function __construct($dateFormat = null)
+    {
+        $this->dateFormat = $dateFormat ?: static::SIMPLE_DATE;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function format(array $record)
+    {
+        return $this->normalize($record);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function formatBatch(array $records)
+    {
+        foreach ($records as $key => $record) {
+            $records[$key] = $this->format($record);
+        }
+
+        return $records;
+    }
+
+    protected function normalize($data)
+    {
+        if (null === $data || is_scalar($data)) {
+            return $data;
+        }
+
+        if (is_array($data) || $data instanceof \Traversable) {
+            $normalized = array();
+
+            $count = 1;
+            foreach ($data as $key => $value) {
+                if ($count++ >= 1000) {
+                    $normalized['...'] = 'Over 1000 items, aborting normalization';
+                    break;
+                }
+                $normalized[$key] = $this->normalize($value);
+            }
+
+            return $normalized;
+        }
+
+        if ($data instanceof \DateTime) {
+            return $data->format($this->dateFormat);
+        }
+
+        if (is_object($data)) {
+            if ($data instanceof Exception) {
+                return $this->normalizeException($data);
+            }
+
+            return sprintf("[object] (%s: %s)", get_class($data), $this->toJson($data, true));
+        }
+
+        if (is_resource($data)) {
+            return '[resource]';
+        }
+
+        return '[unknown('.gettype($data).')]';
+    }
+
+    protected function normalizeException(Exception $e)
+    {
+        $data = array(
+            'class' => get_class($e),
+            'message' => $e->getMessage(),
+            'file' => $e->getFile().':'.$e->getLine(),
+        );
+
+        $trace = $e->getTrace();
+        array_shift($trace);
+        foreach ($trace as $frame) {
+            if (isset($frame['file'])) {
+                $data['trace'][] = $frame['file'].':'.$frame['line'];
+            } else {
+                $data['trace'][] = json_encode($frame);
+            }
+        }
+
+        if ($previous = $e->getPrevious()) {
+            $data['previous'] = $this->normalizeException($previous);
+        }
+
+        return $data;
+    }
+
+    protected function toJson($data, $ignoreErrors = false)
+    {
+        // suppress json_encode errors since it's twitchy with some inputs
+        if ($ignoreErrors) {
+            if (version_compare(PHP_VERSION, '5.4.0', '>=')) {
+                return @json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            }
+
+            return @json_encode($data);
+        }
+
+        if (version_compare(PHP_VERSION, '5.4.0', '>=')) {
+            return json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
+
+        return json_encode($data);
+    }
+}

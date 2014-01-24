@@ -1,31 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-WHI2
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2011 Fabien Potencier
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Stores all sent emails for further usage.
+ *
+ * @package    Swift
+ * @subpackage Plugins
+ * @author     Fabien Potencier
+ */
+class Swift_Plugins_MessageLogger implements Swift_Events_SendListener
+{
+    /**
+     * @var array
+     */
+    private $messages;
+
+    public function __construct()
+    {
+        $this->messages = array();
+    }
+
+    /**
+     * Get the message list
+     *
+     * @return array
+     */
+    public function getMessages()
+    {
+        return $this->messages;
+    }
+
+    /**
+     * Get the message count
+     *
+     * @return integer count
+     */
+    public function countMessages()
+    {
+        return count($this->messages);
+    }
+
+    /**
+     * Empty the message list
+     *
+     */
+    public function clear()
+    {
+        $this->messages = array();
+    }
+
+    /**
+     * Invoked immediately before the Message is sent.
+     *
+     * @param Swift_Events_SendEvent $evt
+     */
+    public function beforeSendPerformed(Swift_Events_SendEvent $evt)
+    {
+        $this->messages[] = clone $evt->getMessage();
+    }
+
+    /**
+     * Invoked immediately after the Message is sent.
+     *
+     * @param Swift_Events_SendEvent $evt
+     */
+    public function sendPerformed(Swift_Events_SendEvent $evt)
+    {
+    }
+}

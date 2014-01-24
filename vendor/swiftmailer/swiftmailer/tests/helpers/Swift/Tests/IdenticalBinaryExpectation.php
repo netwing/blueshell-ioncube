@@ -1,44 +1,79 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * A binary safe string comparison.
+ * @package Swift
+ * @subpackage Tests
+ * @author Chris Corbyn
+ */
+class Swift_Tests_IdenticalBinaryExpectation extends SimpleExpectation
+{
+    /**
+     * The subject to compare with.
+     * @var string
+     * @access private
+     */
+    private $_left;
+
+    /**
+     * Creates a new IdenticalBinaryExpectation comparing with $left.
+     * @param string $left    hand side of comparison
+     * @param string $message for expecation
+     */
+    public function __construct($left, $message = '%s')
+    {
+        parent::__construct($message);
+        $this->_left = $left;
+    }
+
+    /**
+     * Get the given string of bytes as a stirng of Hexadecimal sequences.
+     * @param  string $binary
+     * @return string
+     */
+    public function asHexString($binary)
+    {
+        $hex = '';
+
+        $bytes = unpack('H*', $binary);
+
+        foreach ($bytes as &$byte) {
+            $byte = strtoupper($byte);
+        }
+
+        return implode('', $bytes);
+    }
+
+    /**
+     * Test that the passed subject ($right) is identical to $left.
+     * @param  string  $right, subject
+     * @return boolean
+     */
+    public function test($right)
+    {
+        $aHex = $this->asHexString($this->_left);
+        $bHex = $this->asHexString($right);
+
+        return $aHex === $bHex;
+    }
+
+    /**
+     * Get the message depending upon whether this expectation is satisfied.
+     * @param $right subject to compare against
+     * @return string
+     */
+    public function testMessage($right)
+    {
+        if ($this->test($right)) {
+            return 'Identical binary expectation [' . $this->asHexString($right) . ']';
+        } else {
+            $this->_dumper=new SimpleDumper();
+
+            return 'Identical binary expectation fails ' .
+                $this->_dumper->describeDifference(
+                    $this->asHexString($this->_left),
+                    $this->asHexString($right)
+                    );
+        }
+    }
+}

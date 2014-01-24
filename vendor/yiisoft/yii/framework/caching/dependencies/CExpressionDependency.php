@@ -1,29 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPzbNlVSzlGNuBE4er8VuwTK5etyiplCOsQAiyHhN46PVSqzzCmDM5IVQ8tLUZQYD4fWSjNau
-S/61p9E5JYFyyScvgj57mkY+KqvVlrwuakVTbu87aNwm3EwFOnkppial20YXGiatvpOLl377d04i
-FrB7gz4K01tdLDx8KmwPAnqZ3QpMlgRK1rEY8iUNTT8O6a6OkVdAqjtV/jid2v758cjb3tdfqPjK
-U4U8089GKlK5ySkGhYtNhr4euJltSAgiccy4GDnfTDXZyK6ekEokl4ZStnXTpainObbWtpxbp21B
-eTS8kz4G8+zezRjjdUgMNGajMnWO5z8T5STMKekOIHPE35SgoXrqgRR5Bw79mqzJ/r6mRLwJw9v1
-qo4FoV8wV4e4jTytwmyb1oKLrQ4cOZA3JdM7Qyva6s7VaVSJd3HmZvebEejjkUlj3VFGY///ceg/
-KFP7/h4is45F5dAvKYb63+sPufsF/0DQnhCtR1/ProPkozua2riNbiTtcO9qj4XUv2I5LOVtf4az
-6cx9c22flOme+mPccqKQIFzFwfjDwof+qT6xC8pXgV0vqf/fXjRAoV9cahOKVJA4FcjR6YPLPGD3
-js+Q6ylwtJknKLod2LoyiTEtoLrEIntnqJRAgi1SC47YWGYI3Wkuz9PhAkKGNLYqrQyivhHcTOfz
-XjRUevuh9XSTJaHB9SemvU57lEJQySfX32We9Xgu2NW8cPSpnwgvT/3TWhwVH7lHkLe+nKtoIbmm
-cVZK7sxMJa34SiZ5IO7PndglwsJpiklFtO5soXE13zMNQv4M+T/nQzuFO34u3prCXQ2iILwEzWRU
-7ETF4yxe6ZBj8clXyKCNbW9DxUfJZMfsn/fH05HMJHneeh5e0bbtD85UwFyQFsxUdUtSQveAtk3M
-gt3lKlsFG+ReQEZqPYJNX28Ef+3Prml13nGK3qK3WUTGqDOZ0frBR0rraMMFzf/FW5cfr1/rD8zY
-ifAxpdIqh0Q4k6z3ly/rgWEL9FR6vEGoOp4/DSsCVz6YnU6aUwBqz5bdxKsVdfK2IrI7+py167ru
-zwMBvPuM6IscmU57rnPRIgK1uijIGHD1AhpYpBjijqYREHbdP/DzzdCYB6OWyUZHFa7RPGztGmeR
-J1CVdvs7oeeCgR/vd6aeUBi7FH+zvW6qehqUSfJDPM+ICEdzDNfcWXqDsesUV0KPugsKN0ciPCvV
-/pDr+f4MsPQpBgwnZNlmdOyNduNZh/1V/a5zNNT3G5Q1hZFSjNT2b0+ycyssq/Il9v4BslzwTmPe
-/ZY+xDQ/h7CXdEXHhwENyJkRzp5kPXvgN1wFPeau/+jiR5501XqjLVs9ECTfcCxKD0v/REi8jFHZ
-/RIkdx3e4zuZVtMXJTj1Ps3thjRCggXUYic5xl+w3XyLoI0+CHnyqJJCJqxIyQPVYrrljJV9OBKC
-w+hryDWo/RR42v1frrDqJokYqmEWduMOJbb2xA89HBkFS7s0knp44w9T4hxDFkNB7CjJr6MFkCuq
-byuSzgljgggXUcwba49LUZUTDy+5/kh4ToTXDvN7mSMfdvU/2Fa/KKyr6qOmVQ9YVrnGrTrKKvfP
-M8YToAxNn0f3eOYVEpHLrBzJoeTsyy4W724+v4uUrzImClEQ773ph/OW5vVe2WO3y07GUEhyUwus
-CasknptjayEg3XX50RoZcNBprccJnaGNlRM+KWBzapCa24pXtEkmbEIeXbRsKeBbyBk7y5SdyJDd
-6Q6kwC+U22CaKh9sNNi/cQ1X8fa13nEP0H8athfkNO5tglL2WAyTBwWrwxl1Pw3s8fleWaxwM2Ed
-OjkS8zDnWF+1USHMRMnY2vrjVMznSOqzSWQnH+3ljnuVRgfGcg0m+WcbyBX2ObcspKkFHAOmWV70
-XGA2frLHlX5d9Ba=
+<?php
+/**
+ * CExpressionDependency class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CExpressionDependency represents a dependency based on the result of a PHP expression.
+ *
+ * CExpressionDependency performs dependency checking based on the
+ * result of a PHP {@link expression}.
+ * The dependency is reported as unchanged if and only if the result is
+ * the same as the one evaluated when storing the data to cache.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching.dependencies
+ * @since 1.0
+ */
+class CExpressionDependency extends CCacheDependency
+{
+	/**
+	 * @var string the PHP expression whose result is used to determine the dependency.
+	 * The expression can also be a valid serializable PHP callback.
+	 * It will be passed with a parameter which is the dependency object itself.
+	 *
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $expression;
+
+	/**
+	 * Constructor.
+	 * @param string $expression the PHP expression whose result is used to determine the dependency.
+	 */
+	public function __construct($expression='true')
+	{
+		$this->expression=$expression;
+	}
+
+	/**
+	 * Generates the data needed to determine if dependency has been changed.
+	 * This method returns the result of the PHP expression.
+	 * @return mixed the data needed to determine if dependency has been changed.
+	 */
+	protected function generateDependentData()
+	{
+		return $this->evaluateExpression($this->expression);
+	}
+}

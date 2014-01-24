@@ -1,35 +1,118 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-W+wWRri8MnHwRwMNTRzw1ml3EMjqrqIdamYZTW==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.6.0
+ */
+
+/**
+ * String helpers.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.6.0
+ */
+class PHPUnit_Util_String
+{
+    /**
+     * Converts a string to UTF-8 encoding.
+     *
+     * @param  string $string
+     * @return string
+     */
+    public static function convertToUtf8($string)
+    {
+        if (!self::isUtf8($string)) {
+            if (function_exists('mb_convert_encoding')) {
+                $string = mb_convert_encoding($string, 'UTF-8');
+            } else {
+                $string = utf8_encode($string);
+            }
+        }
+
+        return $string;
+    }
+
+    /**
+     * Checks a string for UTF-8 encoding.
+     *
+     * @param  string $string
+     * @return boolean
+     */
+    protected static function isUtf8($string)
+    {
+        $length = strlen($string);
+
+        for ($i = 0; $i < $length; $i++) {
+            if (ord($string[$i]) < 0x80) {
+                $n = 0;
+            }
+
+            else if ((ord($string[$i]) & 0xE0) == 0xC0) {
+                $n = 1;
+            }
+
+            else if ((ord($string[$i]) & 0xF0) == 0xE0) {
+                $n = 2;
+            }
+
+            else if ((ord($string[$i]) & 0xF0) == 0xF0) {
+                $n = 3;
+            }
+
+            else {
+                return FALSE;
+            }
+
+            for ($j = 0; $j < $n; $j++) {
+                if ((++$i == $length) || ((ord($string[$i]) & 0xC0) != 0x80)) {
+                    return FALSE;
+                }
+            }
+        }
+
+        return TRUE;
+    }
+}

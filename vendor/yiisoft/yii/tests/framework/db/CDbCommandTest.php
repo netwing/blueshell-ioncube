@@ -1,164 +1,255 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('system.db.CDbConnection');
+
+class CDbCommandTest extends CTestCase
+{
+	/** @var CDbConnection */
+	private $_connection;
+
+	public function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->_connection=new CDbConnection('sqlite::memory:');
+		$this->_connection->active=true;
+		$this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/data/sqlite.sql'));
+	}
+
+	public function tearDown()
+	{
+		$this->_connection->active=false;
+	}
+
+	public function testGetText()
+	{
+		$sql='SELECT * FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$this->assertEquals($command->text,$sql);
+	}
+
+	public function testSetText()
+	{
+		$sql='SELECT title FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$this->assertEquals($command->queryScalar(),'post 1');
+
+		$newSql='SELECT id FROM posts';
+		$command->text=$newSql;
+		$this->assertEquals($command->text,$newSql);
+		$this->assertEquals($command->queryScalar(),1);
+	}
+
+	public function testConnection()
+	{
+		$sql='SELECT title FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$this->assertEquals($command->connection,$this->_connection);
+	}
+
+	public function testPrepare()
+	{
+		$sql='SELECT title FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$this->assertEquals($command->pdoStatement,null);
+		$command->prepare();
+		$this->assertTrue($command->pdoStatement instanceof PDOStatement);
+		$this->assertEquals($command->queryScalar(),'post 1');
+
+		$command->text='Bad SQL';
+		$this->setExpectedException('CException');
+		$command->prepare();
+	}
+
+	public function testCancel()
+	{
+		$sql='SELECT title FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$command->prepare();
+		$this->assertTrue($command->pdoStatement instanceof PDOStatement);
+		$command->cancel();
+		$this->assertEquals($command->pdoStatement,null);
+	}
+
+	public function testExecute()
+	{
+		$sql='INSERT INTO comments(content,post_id,author_id) VALUES (\'test comment\', 1, 1)';
+		$command=$this->_connection->createCommand($sql);
+		$this->assertEquals($command->execute(),1);
+		$this->assertEquals($command->execute(),1);
+		$command=$this->_connection->createCommand('SELECT * FROM comments WHERE content=\'test comment\'');
+		$this->assertEquals($command->execute(),0);
+		$command=$this->_connection->createCommand('SELECT COUNT(*) FROM comments WHERE content=\'test comment\'');
+		$this->assertEquals($command->queryScalar(),2);
+
+		$command=$this->_connection->createCommand('bad SQL');
+		$this->setExpectedException('CException');
+		$command->execute();
+	}
+
+	public function testQuery()
+	{
+		$sql='SELECT * FROM posts';
+		$reader=$this->_connection->createCommand($sql)->query();
+		$this->assertTrue($reader instanceof CDbDataReader);
+
+		$sql='SELECT * FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$command->prepare();
+		$reader=$command->query();
+		$this->assertTrue($reader instanceof CDbDataReader);
+
+		$command=$this->_connection->createCommand('bad SQL');
+		$this->setExpectedException('CException');
+		$command->query();
+	}
+
+	public function testBindParam()
+	{
+		$sql='INSERT INTO posts(title,create_time,author_id) VALUES (:title, :create_time, 1)';
+		$command=$this->_connection->createCommand($sql);
+		$title='test title';
+		$createTime=time();
+		$command->bindParam(':title',$title);
+		$command->bindParam(':create_time',$createTime);
+		$command->execute();
+
+		$sql='SELECT create_time FROM posts WHERE title=:title';
+		$command=$this->_connection->createCommand($sql);
+		$command->bindParam(':title',$title);
+		$this->assertEquals($command->queryScalar(),$createTime);
+
+		$sql='INSERT INTO types (int_col, char_col, float_col, blob_col, numeric_col, bool_col) VALUES (:int_col, :char_col, :float_col, :blob_col, :numeric_col, :bool_col)';
+		$command=$this->_connection->createCommand($sql);
+		$intCol=123;
+		$charCol='abc';
+		$floatCol=1.23;
+		$blobCol="\x10\x11\x12";
+		$numericCol='1.23';
+		$boolCol=false;
+		$command->bindParam(':int_col',$intCol);
+		$command->bindParam(':char_col',$charCol);
+		$command->bindParam(':float_col',$floatCol);
+		$command->bindParam(':blob_col',$blobCol);
+		$command->bindParam(':numeric_col',$numericCol);
+		$command->bindParam(':bool_col',$boolCol);
+		$this->assertEquals(1,$command->execute());
+
+		$sql='SELECT * FROM types';
+		$row=$this->_connection->createCommand($sql)->queryRow();
+		$this->assertEquals($row['int_col'],$intCol);
+		$this->assertEquals($row['char_col'],$charCol);
+		$this->assertEquals($row['float_col'],$floatCol);
+		$this->assertEquals($row['blob_col'],$blobCol);
+		$this->assertEquals($row['numeric_col'],$numericCol);
+	}
+
+	public function testBindValue()
+	{
+		$sql='INSERT INTO comments(content,post_id,author_id) VALUES (:content, 1, 1)';
+		$command=$this->_connection->createCommand($sql);
+		$command->bindValue(':content','test comment');
+		$command->execute();
+
+		$sql='SELECT post_id FROM comments WHERE content=:content';
+		$command=$this->_connection->createCommand($sql);
+		$command->bindValue(':content','test comment');
+		$this->assertEquals($command->queryScalar(),1);
+	}
+
+	public function testQueryAll()
+	{
+		$rows=$this->_connection->createCommand('SELECT * FROM posts')->queryAll();
+		$this->assertEquals(count($rows),5);
+		$row=$rows[2];
+		$this->assertEquals($row['id'],3);
+		$this->assertEquals($row['title'],'post 3');
+
+		$rows=$this->_connection->createCommand('SELECT * FROM posts WHERE id=10')->queryAll();
+		$this->assertEquals($rows,array());
+	}
+
+	public function testQueryRow()
+	{
+		$sql='SELECT * FROM posts';
+		$row=$this->_connection->createCommand($sql)->queryRow();
+		$this->assertEquals($row['id'],1);
+		$this->assertEquals($row['title'],'post 1');
+
+		$sql='SELECT * FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$command->prepare();
+		$row=$command->queryRow();
+		$this->assertEquals($row['id'],1);
+		$this->assertEquals($row['title'],'post 1');
+
+		$sql='SELECT * FROM posts WHERE id=10';
+		$command=$this->_connection->createCommand($sql);
+		$this->assertFalse($command->queryRow());
+
+		$command=$this->_connection->createCommand('bad SQL');
+		$this->setExpectedException('CException');
+		$command->queryRow();
+	}
+
+	public function testQueryColumn()
+	{
+		$sql='SELECT * FROM posts';
+		$column=$this->_connection->createCommand($sql)->queryColumn();
+		$this->assertEquals($column,range(1,5));
+
+		$command=$this->_connection->createCommand('SELECT id FROM posts WHERE id=10');
+		$this->assertEquals($command->queryColumn(),array());
+
+		$command=$this->_connection->createCommand('bad SQL');
+		$this->setExpectedException('CException');
+		$command->queryColumn();
+	}
+
+	public function testQueryScalar()
+	{
+		$sql='SELECT * FROM posts';
+		$this->assertEquals($this->_connection->createCommand($sql)->queryScalar(),1);
+
+		$sql='SELECT id FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$command->prepare();
+		$this->assertEquals($command->queryScalar(),1);
+
+		$command=$this->_connection->createCommand('SELECT id FROM posts WHERE id=10');
+		$this->assertFalse($command->queryScalar());
+
+		$command=$this->_connection->createCommand('bad SQL');
+		$this->setExpectedException('CException');
+		$command->queryScalar();
+	}
+
+	public function testFetchModeDefault()
+	{
+		$sql='SELECT * FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$result = $command->queryRow();
+		$this->assertTrue(is_array($result));
+	}
+
+	public function testFetchModeObject()
+	{
+		$sql='SELECT * FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$command->setFetchMode(PDO::FETCH_OBJ);
+		$result = $command->queryRow();
+		$this->assertTrue(is_object($result));
+	}
+
+	public function testFetchModeClass()
+	{
+		$sql='SELECT * FROM posts';
+		$command=$this->_connection->createCommand($sql);
+		$command->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'TestClass');
+		$result = $command->queryRow();
+		$this->assertTrue($result instanceof TestClass);
+	}
+}
+
+class TestClass {}

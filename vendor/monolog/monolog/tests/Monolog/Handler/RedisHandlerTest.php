@@ -1,45 +1,71 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Yd+C++sG15H5LLlSFeP0EB/e8GnB
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+use Monolog\Formatter\LineFormatter;
+
+class RedisHandlerTest extends TestCase
+{
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testConstructorShouldThrowExceptionForInvalidRedis()
+    {
+        new RedisHandler(new \stdClass(), 'key');
+    }
+
+    public function testConstructorShouldWorkWithPredis()
+    {
+        $redis = $this->getMock('Predis\Client');
+        $this->assertInstanceof('Monolog\Handler\RedisHandler', new RedisHandler($redis, 'key'));
+    }
+
+    public function testConstructorShouldWorkWithRedis()
+    {
+        $redis = $this->getMock('Redis');
+        $this->assertInstanceof('Monolog\Handler\RedisHandler', new RedisHandler($redis, 'key'));
+    }
+
+    public function testPredisHandle()
+    {
+        $redis = $this->getMock('Predis\Client', array('rpush'));
+
+        // Predis\Client uses rpush
+        $redis->expects($this->once())
+            ->method('rpush')
+            ->with('key', 'test');
+
+        $record = $this->getRecord(Logger::WARNING, 'test', array('data' => new \stdClass, 'foo' => 34));
+
+        $handler = new RedisHandler($redis, 'key');
+        $handler->setFormatter(new LineFormatter("%message%"));
+        $handler->handle($record);
+    }
+
+    public function testRedisHandle()
+    {
+        $redis = $this->getMock('Redis', array('rpush'));
+
+        // Redis uses rPush
+        $redis->expects($this->once())
+            ->method('rPush')
+            ->with('key', 'test');
+
+        $record = $this->getRecord(Logger::WARNING, 'test', array('data' => new \stdClass, 'foo' => 34));
+
+        $handler = new RedisHandler($redis, 'key');
+        $handler->setFormatter(new LineFormatter("%message%"));
+        $handler->handle($record);
+    }
+}

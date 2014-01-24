@@ -1,31 +1,36 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Subscriber;
+
+use \Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class Cest implements EventSubscriberInterface
+{
+    public function beforeTest(\Codeception\Event\Test $e) {
+        if (!($e->getTest() instanceof \Codeception\TestCase\Cest)) return;
+        $test = $e->getTest();
+        if (method_exists($test->getTestClass(), '_before')) $test->getTestClass()->_before($e);
+    }
+
+    public function afterTest(\Codeception\Event\Test $e) {
+        if (!($e->getTest() instanceof \Codeception\TestCase\Cest)) return;
+        $test = $e->getTest();
+        if (method_exists($test->getTestClass(), '_after')) $test->getTestClass()->_after($e);
+    }
+
+    public function failedTest(\Codeception\Event\Fail $e) {
+        if (!($e->getTest() instanceof \Codeception\TestCase\Cest)) return;
+        $test = $e->getTest();
+        if (method_exists($test->getTestClass(), '_failed')) $test->getTestClass()->_failed($e);
+    }
+
+    static function getSubscribedEvents()
+    {
+        return array(
+            'test.before'	=> 'beforeTest',
+            'test.after'	=> 'afterTest',
+            'test.fail'	=> 'failedTest'
+        );
+    }
+
+
+}

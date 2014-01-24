@@ -1,55 +1,156 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-uoKZKtAWFad4y0==
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * The interface for WebDriver.
+ */
+interface WebDriver extends WebDriverSearchContext {
+
+  /**
+   * Close the current window.
+   *
+   * @return WebDriver The current instance.
+   */
+  public function close();
+
+  /**
+   * Find the first WebDriverElement using the given mechanism.
+   *
+   * @param WebDriverBy $locator
+   * @return WebDriverElement NoSuchElementWebDriverError is thrown in
+   *    HttpCommandExecutor if no element is found.
+   * @see WebDriverBy
+   */
+  public function findElement(WebDriverBy $locator);
+
+  /**
+   * Find all WebDriverElements within the current page using the given
+   * mechanism.
+   *
+   * @param WebDriverBy $locator
+   * @return array A list of all WebDriverElements, or an empty array if
+   *    nothing matches
+   * @see WebDriverBy
+   */
+  public function findElements(WebDriverBy $locator);
+
+  /**
+   * Load a new web page in the current browser window.
+   *
+   * @return WebDriver The current instance.
+   */
+  public function get($url);
+
+  /**
+   * Get a string representing the current URL that the browser is looking at.
+   *
+   * @return string The current URL.
+   */
+  public function getCurrentURL();
+
+  /**
+   * Get the source of the last loaded page.
+   *
+   * @return string The current page source.
+   */
+  public function getPageSource();
+
+  /**
+   * Get the title of the current page.
+   *
+   * @return string The title of the current page.
+   */
+  public function getTitle();
+
+  /**
+   * Return an opaque handle to this window that uniquely identifies it within
+   * this driver instance.
+   *
+   * @return string The current window handle.
+   */
+  public function getWindowHandle();
+
+  /**
+   * Get all window handles available to the current session.
+   *
+   * @return array An array of string containing all available window handles.
+   */
+  public function getWindowHandles();
+
+  /**
+   * Quits this driver, closing every associated window.
+   *
+   * @return void
+   */
+  public function quit();
+
+  /**
+   * Inject a snippet of JavaScript into the page for execution in the context
+   * of the currently selected frame. The executed script is assumed to be
+   * synchronous and the result of evaluating the script will be returned.
+   *
+   * @param string $script The script to inject.
+   * @param array $arguments The arguments of the script.
+   * @return mixed The return value of the script.
+   */
+  public function executeScript($script, array $arguments = array());
+
+  /**
+   * Take a screenshot of the current page.
+   *
+   * @param string $save_as The path of the screenshot to be saved.
+   * @return string The screenshot in PNG format.
+   */
+  public function takeScreenshot($save_as = null);
+
+  /**
+   * Construct a new WebDriverWait by the current WebDriver instance.
+   * Sample usage:
+   *
+   *   $driver->wait(20, 1000)->until(
+   *     WebDriverExpectedCondition::titleIs('WebDriver Page')
+   *   );
+   *
+   * @return WebDriverWait
+   */
+  public function wait(
+      $timeout_in_second = 30,
+      $interval_in_millisecond = 250);
+
+  /**
+   * An abstraction for managing stuff you would do in a browser menu. For
+   * example, adding and deleting cookies.
+   *
+   * @return WebDriverOptions
+   */
+  public function manage();
+
+  /**
+   * An abstraction allowing the driver to access the browser's history and to
+   * navigate to a given URL.
+   *
+   * @return WebDriverNavigation
+   * @see WebDriverNavigation
+   */
+  public function navigate();
+
+  /**
+   * Switch to a different window or frame.
+   *
+   * @return WebDriverTargetLocator
+   * @see WebDriverTargetLocator
+   */
+  public function switchTo();
+}

@@ -1,35 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * JSON renderer.
+ *
+ * Based on the HTML renderer by Andrey Demenev.
+ *
+ * LICENSE: This source file is subject to version 3.0 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @category   Text
+ * @package    Text_Highlighter
+ * @author     Stoyan Stefanov <ssttoo@gmail.com>
+ * @copyright  2006 Stoyan Stefanov
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @version    CVS: $Id: JSON.php,v 1.1 2007/06/03 02:37:09 ssttoo Exp $
+ * @link       http://pear.php.net/package/Text_Highlighter
+ */
+
+/**
+ * @ignore
+ */
+
+require_once dirname(__FILE__).'/../Renderer.php';
+require_once dirname(__FILE__).'/../Renderer/Array.php';
+
+/**
+ * JSON renderer, based on Andrey Demenev's HTML renderer.
+ *
+ * @author     Stoyan Stefanov <ssttoo@gmail.com>
+ * @category   Text
+ * @package    Text_Highlighter
+ * @copyright  2006 Stoyan Stefanov
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @version    Release: 0.5.0
+ * @link       http://pear.php.net/package/Text_Highlighter
+ */
+
+class Text_Highlighter_Renderer_JSON extends Text_Highlighter_Renderer_Array
+{
+
+    /**
+     * Signals that no more tokens are available
+     *
+     * @abstract
+     * @access public
+     */
+    function finalize()
+    {
+
+        parent::finalize();
+        $output = parent::getOutput();
+
+        $json_array = array();
+
+        foreach ($output AS $token) {
+
+            if ($this->_enumerated) {
+                $json_array[] = '["' . $token[0] . '","' . $token[1] . '"]';
+            } else {
+                $key = key($token);
+                $json_array[] = '{"class": "' . $key . '","content":"' . $token[$key] . '"}';
+            }
+
+        }
+
+        $this->_output  = '['. implode(',', $json_array) .']';
+        $this->_output = str_replace("\n", '\n', $this->_output);
+
+    }
+
+
+}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */
+
 ?>
-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

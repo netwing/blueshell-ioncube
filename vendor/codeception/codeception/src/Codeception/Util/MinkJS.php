@@ -1,102 +1,244 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-7sGYdmfUaHUuaGB5fdUjFg4ZYjdI
+<?php
+namespace Codeception\Util;
+
+class MinkJS extends Mink
+{
+
+    public function checkOption($option)
+    {
+        $field = $this->findField($option);
+        $isChecked = $field->isChecked();
+        // overriding to use click
+        if (!$isChecked) $field->click();
+    }
+
+    public function uncheckOption($option)
+    {
+        $field = $this->findField($option);
+        $isChecked = $field->isChecked();
+        // overriding to use click
+        if ($isChecked) $field->click();
+    }
+
+    /**
+     * Double clicks on link or button or any node found by CSS or XPath
+     *
+     * @param $link
+     */
+    public function doubleClick($link) {
+        $el = $this->findEl($link);
+        $el->doubleClick();
+    }
+
+    /**
+     * Clicks with right button on link or button or any node found by CSS or XPath
+     *
+     * @param $link
+     */
+    public function clickWithRightButton($link) {
+        $el = $this->findEl($link);
+        $el->rightClick();
+
+    }
+
+    /**
+     * Moves mouse over link or button or any node found by CSS or XPath
+     *
+     * @param $link
+     */
+    public function moveMouseOver($link) {
+        $el = $this->findEl($link);
+        $el->mouseOver();
+    }
+
+    /**
+     * Moves focus to link or button or any node found by CSS or XPath
+     *
+     * @param $el
+     */
+    public function focus($el) {
+        $el = $this->findEl($el);
+        $el->focus();
+    }
+
+    /**
+     * Removes focus from link or button or any node found by CSS or XPath
+     * XPath or CSS selectors are accepted.
+     *
+     * @param $el
+     */
+    public function blur($el) {
+        $el = $this->findEl($el);
+        $el->blur();
+    }
+
+    /**
+     * Drag first element to second
+     * XPath or CSS selectors are accepted.
+     *
+     * @param $el1
+     * @param $el2
+     */
+    public function dragAndDrop($el1, $el2) {
+        $el1 = $this->findEl($el1);
+        $el2 = $this->findEl($el2);
+        $el1->dragTo($el2);
+    }
+
+    /**
+     * Checks element visibility.
+     * Fails if element exists but is invisible to user.
+     * Eiter CSS or XPath can be used.
+     *
+     * Example:
+     * 
+     * ``` php
+     * <?php
+     * $I->seeElement("//input[@type='button']");
+     * ?>
+     * ``` 
+     * 
+     * @param $selector
+     */
+    public function seeElement($selector) {
+        $el = $this->findEl($selector);
+
+        if (!$el) \PHPUnit_Framework_Assert::fail("Element $selector not found");
+        \PHPUnit_Framework_Assert::assertTrue($this->session->getDriver()->isVisible($el->getXpath()));
+    }
+
+    /**
+     * We use 'see' command only on visible elements
+     *
+     * @param $text
+     * @param null $selector
+     * @return array
+     */
+    protected function proceedSee($text, $selector = null) {
+        if (!$selector) return parent::proceedSee($this->escape($text), $selector);
+        try {
+            $nodes = $this->session->getPage()->findAll('css', $selector);
+        } catch (\Symfony\Component\CssSelector\Exception\ParseException $e) {
+            $nodes = @$this->session->getPage()->findAll('xpath', $selector);
+        }
+
+		$values = array();
+		foreach ($nodes as $node) {
+            if (!$this->session->getDriver()->isVisible($node->getXpath())) continue;
+
+            $values []= $node->getText();
+        }
+        $values = implode("-->\n",$values);
+        return array($text, $values, "'$selector' selector.");
+    }
+
+    /**
+     * Presses key on element found by css, xpath is focused
+     * A char and modifier (ctrl, alt, shift, meta) can be provided.
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->pressKey('#page','u');
+     * $I->pressKey('#page','u','ctrl');
+     * $I->pressKey('descendant-or-self::*[@id='page']','u');
+     * ?>
+     * ```
+     *
+     * @param $element
+     * @param $char char can be either char ('b') or char-code (98)
+     * @param null $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function pressKey($element, $char, $modifier = null)
+    {
+        $el = $this->findEl($element);
+        $this->session->getDriver()->keyPress($el->getXpath(), $char, $modifier);
+    }
+
+    /**
+     * Presses key up on element found by CSS or XPath.
+     *
+     * For example see 'pressKey'.
+     *
+     * @param $element
+     * @param $char char can be either char ('b') or char-code (98)
+     * @param null $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+    public function pressKeyUp($element, $char, $modifier = null) {
+        $el = $this->findEl($element);
+        $this->session->getDriver()->keyUp($el->getXpath(), $char, $modifier);
+    }
+
+    /**
+     * Presses key down on element found by CSS or XPath.
+     *
+     * For example see 'pressKey'.
+     *
+     * @param $element
+     * @param $char char can be either char ('b') or char-code (98)
+     * @param null $modifier keyboard modifier (could be 'ctrl', 'alt', 'shift' or 'meta')
+     */
+
+    public function pressKeyDown($element, $char, $modifier = null) {
+        $el = $this->findEl($element);
+        $this->session->getDriver()->keyDown($el->getXpath(), $char, $modifier);
+    }
+
+    /**
+     * Wait for x milliseconds
+     *
+     * Example:
+     * 
+     * ``` php
+     * <?php
+     * $I->wait(1000);	// waits 1000 milliseconds (one second)
+     * ?>
+     * ```
+     * 
+     * @param $milliseconds
+     */
+    public function wait($milliseconds) {
+        $this->session->getDriver()->wait($milliseconds, null);
+    }
+
+    /**
+     * Waits for x milliseconds or until a given JS condition turns true.
+     * The function will keep asserting the javascript condition, but will
+     * continue regardless of its validity once the x milliseconds time has
+     * been passed.
+     * 
+     * See the example below on how to embed javascript functions as the
+     * condition.
+     *
+     * Example:
+     * 
+     * ``` php
+     * <?php
+     * $I->waitForJS(1000, "(function myJavascriptFunction() {
+     * 		// Javascript function code
+     * 		if (some statement) {
+     *			return true;	// waitForJS() function will finish
+     *		} else {
+     *			return false;	// keep asserting (some statement)
+     *		}
+     *	})()");
+     * ?>
+     * ```
+     * 
+     * @param $milliseconds
+     * @param $jsCondition
+     */
+    public function waitForJS($milliseconds, $jsCondition) {
+        $this->session->getDriver()->wait($milliseconds, $jsCondition);
+    }
+
+    /**
+     * Executes any JS code.
+     *
+     * @param $jsCode
+     */
+    public function executeJs($jsCode) {
+        $this->session->getDriver()->executeScript($jsCode);
+    }
+}

@@ -1,89 +1,151 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CUniqueValidator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CUniqueValidator validates that the attribute value is unique in the corresponding database table.
+ *
+ * When using the {@link message} property to define a custom error message, the message
+ * may contain additional placeholders that will be replaced with the actual content. In addition
+ * to the "{attribute}" placeholder, recognized by all validators (see {@link CValidator}),
+ * CUniqueValidator allows for the following placeholders to be specified:
+ * <ul>
+ * <li>{value}: replaced with current value of the attribute.</li>
+ * </ul>
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.validators
+ * @since 1.0
+ */
+class CUniqueValidator extends CValidator
+{
+	/**
+	 * @var boolean whether the comparison is case sensitive. Defaults to true.
+	 * Note, by setting it to false, you are assuming the attribute type is string.
+	 */
+	public $caseSensitive=true;
+	/**
+	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
+	 * meaning that if the attribute is empty, it is considered valid.
+	 */
+	public $allowEmpty=true;
+	/**
+	 * @var string the ActiveRecord class name that should be used to
+	 * look for the attribute value being validated. Defaults to null, meaning using
+	 * the class of the object currently being validated.
+	 * You may use path alias to reference a class name here.
+	 * @see attributeName
+	 */
+	public $className;
+	/**
+	 * @var string the ActiveRecord class attribute name that should be
+	 * used to look for the attribute value being validated. Defaults to null,
+	 * meaning using the name of the attribute being validated.
+	 * @see className
+	 */
+	public $attributeName;
+	/**
+	 * @var mixed additional query criteria. Either an array or CDbCriteria.
+	 * This will be combined with the condition that checks if the attribute
+	 * value exists in the corresponding table column.
+	 * This array will be used to instantiate a {@link CDbCriteria} object.
+	 */
+	public $criteria=array();
+	/**
+	 * @var string the user-defined error message. The placeholders "{attribute}" and "{value}"
+	 * are recognized, which will be replaced with the actual attribute name and value, respectively.
+	 */
+	public $message;
+	/**
+	 * @var boolean whether this validation rule should be skipped if when there is already a validation
+	 * error for the current attribute. Defaults to true.
+	 * @since 1.1.1
+	 */
+	public $skipOnError=true;
+
+
+	/**
+	 * Validates the attribute of the object.
+	 * If there is any error, the error message is added to the object.
+	 * @param CModel $object the object being validated
+	 * @param string $attribute the attribute being validated
+	 * @throws CException if given table does not have specified column name
+	 */
+	protected function validateAttribute($object,$attribute)
+	{
+		$value=$object->$attribute;
+		if($this->allowEmpty && $this->isEmpty($value))
+			return;
+
+		if(is_array($value))
+		{
+			// https://github.com/yiisoft/yii/issues/1955
+			$this->addError($object,$attribute,Yii::t('yii','{attribute} is invalid.'));
+			return;
+		}
+
+		$className=$this->className===null?get_class($object):Yii::import($this->className);
+		$attributeName=$this->attributeName===null?$attribute:$this->attributeName;
+		$finder=$this->getModel($className);
+		$table=$finder->getTableSchema();
+		if(($column=$table->getColumn($attributeName))===null)
+			throw new CException(Yii::t('yii','Table "{table}" does not have a column named "{column}".',
+				array('{column}'=>$attributeName,'{table}'=>$table->name)));
+
+		$columnName=$column->rawName;
+		$criteria=new CDbCriteria();
+		if($this->criteria!==array())
+			$criteria->mergeWith($this->criteria);
+		$tableAlias = empty($criteria->alias) ? $finder->getTableAlias(true) : $criteria->alias;
+		$valueParamName = CDbCriteria::PARAM_PREFIX.CDbCriteria::$paramCount++;
+		$criteria->addCondition($this->caseSensitive ? "{$tableAlias}.{$columnName}={$valueParamName}" : "LOWER({$tableAlias}.{$columnName})=LOWER({$valueParamName})");
+		$criteria->params[$valueParamName] = $value;
+
+		if(!$object instanceof CActiveRecord || $object->isNewRecord || $object->tableName()!==$finder->tableName())
+			$exists=$finder->exists($criteria);
+		else
+		{
+			$criteria->limit=2;
+			$objects=$finder->findAll($criteria);
+			$n=count($objects);
+			if($n===1)
+			{
+				if($column->isPrimaryKey)  // primary key is modified and not unique
+					$exists=$object->getOldPrimaryKey()!=$object->getPrimaryKey();
+				else
+				{
+					// non-primary key, need to exclude the current record based on PK
+					$exists=array_shift($objects)->getPrimaryKey()!=$object->getOldPrimaryKey();
+				}
+			}
+			else
+				$exists=$n>1;
+		}
+
+		if($exists)
+		{
+			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} "{value}" has already been taken.');
+			$this->addError($object,$attribute,$message,array('{value}'=>CHtml::encode($value)));
+		}
+	}
+	
+	/**
+	 * Given active record class name returns new model instance.
+	 *
+	 * @param string $className active record class name.
+	 * @return CActiveRecord active record model instance.
+	 *
+	 * @since 1.1.14
+	 */
+	protected function getModel($className)
+	{
+		return CActiveRecord::model($className);
+	}
+}
+

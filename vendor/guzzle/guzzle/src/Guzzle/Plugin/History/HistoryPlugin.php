@@ -1,74 +1,163 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPpb1u2sz1Ta2h8br3ZNu77LY8ozXRM3zJFL8QiB0lX67IAsaWRmEqflXRDS62ifUAHh1qvlj
-35wbt8Q+a/GpX0WgGkZ3t18Tg/8apbKLqduJcy/oAkUpGyc8kydPrKrJ6JI6ksFN7YGvlujJShVz
-fnbLTqb/eE72xmgAaPcQUeCfUPTVENxo2cZWzl5NsL6V+5WZvu+WLTTfzOhwFaet6flyqDNzX6md
-En6wsqwv/AiA2GXsK1d1kQzHAE4xzt2gh9fl143SQNGVPS/IdjiCtBP3p8ROwNI+4DFNDsWcO3hG
-Mp2u4MX5qy45zutKwYFuibN6hI1lW32xycpLb2u9IXcwOcYOQG+IWH/eE7ApwOtKCWRClzCDe02M
-WOSWlsxoQNO9I9jqVy+0tVrKHwhCigyev/ImnuOnRVurMIuEf1sEKXiZgEh6v6zZFrg6VbLUN02L
-HprJgifSjBaT1C5I55/ikS8i9ByxwC4vlbCBIEE+uzEB+uqlJu2DeL2Eq/wygtSSePu9Ps0rBu5v
-fCL7Tz6UIIFoM8oSBRB/K655UMQLCh7NoAPuwvsfcMg8a9uoAy9XRq0Z0fOCD4RX2aaMBXw6D+Ix
-8uIHzXzmkXFWehsrXDzzABKpJzLVhIPE/ulRKr/r1UB6Em7rjhFj5i79OPRlPfTe86v65cYan+pC
-OwfJsUAfRDZdQylPYArUz44gA331J2x2dySYRwKKzkGPI30nbA3Ax3BPvOssb5zTUgSUCYfcwxIr
-oT4HWOIdg2OMqHcFPB7s5ozL2RQs5NEatLx9EiVukgkkg+Z56keUogWs88sUmkKjHbBpp7CAur83
-PwR4G9la6UFflerMSQNfOTr99bmpdNVY9EG2BibxsilIyvxQ3+Nl/aDH9gGHoGpjwnMrCKjygXMk
-f7bndolF+GJvg0zZUd1m6KTQeFe7rLmJOTQb1qN7aCM4/dJCQd0riwyXGtUvMZNXwOLTcHEeb9iO
-m0Wht8yQTHMjPie+AqIT01YYde7vbv5IQNc34f8SiH0/q0md51P/N68u2x+psCmExoQE0Hsk5Ixd
-5k8h4l9gkt1GAFQE2pVXqjzZmfz/hKdC2myQ/qvomsQA3nWAkfbxXFXtGoW7/7BjyA5cQUrMrMOT
-l9IsoRZjH8I9GHw47ug2SG5nF/Xpcsv20g5mzpS2oQ5ryoQmRQqlHaWx95EnKZ4gULMNamikLeJR
-HD3LQ4rD1EOxk63wU1kOUP0eOdhhDOfVIeq6Y9mQXKbo71GNN/7TQw/PbOhOliHWvkuegIKSezrA
-6ofh5c9cvrP5m3ffYvKRFUkdytXhMsqdSHmaPl+0M4c4ZZTbd9mEA26fCkLMPYME1rmCUts8COa2
-j3IRYMacJjGXSFqVLlpH7CGu1CgixQPO+La6/BT1WgBUqkkYG/OuytGmuhux8H2lzcrmwOWdrwvS
-QynMhKCdtaVvvUHG60tGxIrIBIFvuuSKKr/peCu0hgKOLfYqkZJSsQA6PtS9FNnD78K2xIk5PnOK
-AQB8UmmBtLBw5Oif/g2tOFIYu4BySsWGgIut6fsq6KpPXUf6Osu7YPoZRjRftkhf/A3gPgQrD9ZZ
-ZqWDw27YJ6DGEDpi70uRomjx5Zi2OrbE4jEP2g1bGhgYbIyhFqeYuUJ3WzH/H6fre9y/fugIzwLt
-ec32RrpTAa33bOEoY7yVhCjdCo+D6fjUjHIHIgjo+R/JprEm3QVzUAjr6Od/oQlkXiEuJ1+1j5pj
-ZUfp67bSB3Ql5r/31Xvj9zV2MP9tPk8bZe13Yj7U6aG6X/QjW1W4KaEHiCHuD3TPJcMB0K9QciHQ
-ne6f8XCWXC6IxeXr8cZKXFlopJ/tcfyOtgsAS6zaD3UuzsOipOEIn6Drj7xlav7Wa9UxFJawfXAh
-PX/pi53551ebNE7LGTFWDh1DN+zS2Qw9XRYjZV41wmh7bQw8i5YhOuRxBU9vCaCSH4N1f9AT2t0Y
-k5KFntCCA/Mq/J1l5AaGIZ4fbJw52g9qsWmEliN+iW3HwYaPmBmp3LpwTwm7eaCUGVNxCp3EfpuP
-BeafwubUN1Ee0FjVusax6OBnBDmZ5DA1vNiudBPsqVtI4+FobIqmqRBEsdvYYrBdx/i7kUyjhqQO
-MVLF28iiphNXctxpYF3FiUg9+HC106wjDBEOJb9cwb03ooDEbYLgV6OuFQnKMPOUPh4WKum8p/WO
-vj3lKiL/CsyuY7J1ZYfFBEvngI6d1S/8r9Fzu/prP9kNhucmcJImvjmgEQ1NaKTj300n+u1D6x6R
-8bYfdATJqOBZ9J1uAmIIgydVbU+bkQhJomkWjpMUyDmtCbnS506YoiwHNun4a9ikpeT61o8f6K/7
-ob056+zN7n3Y0Nvp5GXEXheMTuFJN9KrHlPJmaMVxtM0s+5blTEm6ofsZgBPlEmHZTnGzKrm5Be/
-vjZ/m4vn1ao1QccYIQw4B2vPxe5JoOaZ+MnoUnU6aquipery439N+P9tg4u0B2741wbUb2Jq7Nsl
-dj1/UgwEOGhX+nMeapUYG+eiVlx11YsHO7Xd0vBsmxrq4P/5zcB28VJCXSI3+OZA8J4rYN2DQgJd
-sO3WJ5REGT6Nr8ikYQ3OQ5IddeKPzAS3U8u7FIRG8ZB2Cy4lZJIrQUBdVX5kHbZdSKj/lPQ87Ngs
-HS6vcRm9p97KNaQTarni8bj/VyBUJ3ESAy4o8XUZgyolhTHo7XEif7Xbf4je//DsRRvrLjAoxdUo
-nJLr5+ELVtk/9bTNQnb1RqSQujMp+glfBKkopz0EW1P7mgThc7cSHiB0vNqx5v5ZRkxVM/JftLpq
-wR1Gqx4p83ZHtwQ6XHK8j3s3BqHC9hPQ43+tndz/P2IgSO7WnD4aTZ6yaDI2vEiX7hHTvfMqzCsF
-1IRq/m/N1J8EfIIe+MBvRHvq06rAjpXRDp2kd+vUMUkO3brL/636Wk3gndFhM8mkqtajLsaNcMsb
-pQS3iE0PGOWApk+NEFe8Ty1IQAxxXzhq4QF3jcatxa2ZCUN/v2zgHMlHjpqMYdx8YhdD5FfxfQQ8
-Hn8YpGiAMx9uKaOfTpBYoNWMQjmq7hAenb61IXFl4JvLtWjbdhRpb9WeE26LAdUsCwG7Yl9V6Z6u
-uI9znOU4uPHgGfHCRjxxAobNj1kOSXvO1bjvrs6Bsd+EB+dQmrMhgH5nlcXAReJP4yH/cX/t164+
-EH+DE+DEoio02gd1Fuw6D+aDRGDlVi0JAm6skrAb7ZSr2Fix/kRTfbHwN9Z5UthplpIVUsnRffwO
-2sspcn5rtADYAcqELrn5o2dgRBSSvEZ7rL29YDhkw8drAQrxJj5kzoecQMKKeQqp7AuxhjAJS5bU
-D5gI+eaTj7xaZWyDI0AGMeDZ/+v7aCvRQr3hXM0hFt3F2cObk+WQheLYOZ8i51EDN+9pp8WMPF+O
-Y/mkfiGENDTQIQPf5wlhjM70HqtvFrR39zAZyhP7bczT21d57QildYB0lEnGxGXkX8zVzE34O3P+
-YKGuStqUpHwKeo5CjSwJatenDvDA11W3eFENj0Lp44CznJimjQW7pN9gvVDxZ15zMZAdr7pvxLq9
-DTw/ZJ/2xe+5Xkn+UwDuN8t4aPrsLILBgsYZvF+V5VmDihmh6xLNPZlk6r4g+lXOBJRLWpXAtXJm
-OUHjOPjjSoLpDB5h++qLy6yhckd/Lc5wJmv7gy0qsoNMI/M++UdlwZJQh2PBPCjrEy345idh4mXX
-7Om+pcI7NAHBcJVLSaV75MICkXVSK4opYUKA/pq/x/5TnJj/Ok/5zuPES79tkixuwAAsMSTvqPmo
-REy99zDNvypbUen+hMvP+BTpfhitTk/UE4ts8NtCgWGZBUr8S8CSuxhVbr8Ia2PWKrxSSaj1Kwf/
-64nxzBmb4rjfkylbeFMpbLsQLFlvIM0cNzgZey3rLUk4KDwDr+Z55qo3z7Q0z+ZddSw2YfaW0Ohy
-1Ybjn7WAu6oD3XsvKoZPrCV1ismV6Y/8WwgdP7me7QFd2JqMOn/sehl85BCQy6NgCMyEvHkaby3W
-LxJD+zvHquJQEgtk7K8IG+OCHPfA7L7bM2Qb/9OCXqY2NHAvswKLcVWbz8cKKsf5DFI00Wph/0p/
-zBktcvYOfHz0YE/SKMrrOPyomXDBYCxvvh4++4XQrMBc+bLKUrz06cMCOmqEw0H71DWUVJlDbJLH
-u5gBBVF6eqJxbng8vVyJUj+c977n67X6vBFvhOvnVrSCvVkdtZ6GJLWq7jgvQF/DowCS/oNlXru7
-fFPy/YvsnV2dnb+hQCrw/eG/M6nIC1m11eluKPntmG3jTDpv9r+g0+OhlR4daVd/jVVkBXiEpoex
-VJH5J49eqQu2juyN6SGUjVZ2OWbGT+VbwP2h19aq/7kQCmtUFyPP+Ch6xM4T6HGEjj3ZEq+IQbgc
-JbuNR7HpJqxrvKhZ0Yaw8pj8YnMzkcK/B9t/EuZhQ84PrYmCX2SDUHceArmmNJNyTVC8bhp9p+6T
-NZapuMDXSYXdR4P5zXsqpapU+2tuiLPNY2InH2e6Gq3TiRmV+W7HRbP8jd5X0C62MPTgP/bh9UbV
-l2LXSf3YqVSqPQnVQaQuhjJb/dmO9EQSLQn4pedBQatijEfuPSTGr+wOu28uyhAWp1AYcpGQRMY8
-bMwI82Rr84UT0stGoZA382tdABkr7c/IIRYQ1MKsNKAKhzZSOi9EaRluO1oWGEvWrnxwkJBeWzMu
-kPchl4JRRskDEGW+xsWCo8eenlvggxgVBG6GWFabCybk7BG6HX8GT2bR45xCrJ3NQKgQR6e8vuHa
-UO0hxIvT/yeWQJEYNlhy3L8ftUd7mAYpajG0McAv7juZ+2H1sX4gINpwjy7QYFyRICrsMO6XsV6k
-myXdMRC/a/t6geiAYwl8HmDYE2xqqG0qVCfL3JE0OBsABh5UaNUlb7Et7Zfi9Neojq0523uiTnpz
-5azXvYE31sl2cD1s4QW9En2SQ/VzguMmdY7x9yURx0AtwUnyTb1J+47OGc5q6ytlEtPBdujtyNkC
-jvQdsS0UuESwFfiNpF2Wn6+9km7xMH7Ci4pBvB82A4i2LZ4Z8ntcYJMPJ/g353UwMpPd7pfA/ePe
-yvZVeTBFEJZYWfc/aACHM7wvYDeDdt+U1dwl5oovXP/bicsemodZT2HXSls8whu9EDQWQ2ImmH48
-6IT2H2SAUwSoCSxcXLRp+1ejXrBojopUR9anzThD9cDL0Sz1gnwaoIgIuFAVVKWJABrqC+7Sv8gD
-8pcmaHFRjMUugna4Z+CLCjEQGvkrvzyBuj848/LXA/QI6OpmjluVHQpZQhbx963Ffwg+XkAVUwqN
-bf9+tiyqPyoBSWD5XUDnW38YzrUVY97SMiHBsUqe5WsfivzZd5m=
+<?php
+
+namespace Guzzle\Plugin\History;
+
+use Guzzle\Common\Event;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * Maintains a list of requests and responses sent using a request or client
+ */
+class HistoryPlugin implements EventSubscriberInterface, \IteratorAggregate, \Countable
+{
+    /** @var int The maximum number of requests to maintain in the history */
+    protected $limit = 10;
+
+    /** @var array Requests and responses that have passed through the plugin */
+    protected $transactions = array();
+
+    public static function getSubscribedEvents()
+    {
+        return array('request.sent' => array('onRequestSent', 9999));
+    }
+
+    /**
+     * Convert to a string that contains all request and response headers
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $lines = array();
+        foreach ($this->transactions as $entry) {
+            $response = isset($entry['response']) ? $entry['response'] : '';
+            $lines[] = '> ' . trim($entry['request']) . "\n\n< " . trim($response) . "\n";
+        }
+
+        return implode("\n", $lines);
+    }
+
+    /**
+     * Add a request to the history
+     *
+     * @param RequestInterface $request  Request to add
+     * @param Response         $response Response of the request
+     *
+     * @return HistoryPlugin
+     */
+    public function add(RequestInterface $request, Response $response = null)
+    {
+        if (!$response && $request->getResponse()) {
+            $response = $request->getResponse();
+        }
+
+        $this->transactions[] = array('request' => $request, 'response' => $response);
+        if (count($this->transactions) > $this->getlimit()) {
+            array_shift($this->transactions);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Set the max number of requests to store
+     *
+     * @param int $limit Limit
+     *
+     * @return HistoryPlugin
+     */
+    public function setLimit($limit)
+    {
+        $this->limit = (int) $limit;
+
+        return $this;
+    }
+
+    /**
+     * Get the request limit
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->limit;
+    }
+
+    /**
+     * Get all of the raw transactions in the form of an array of associative arrays containing
+     * 'request' and 'response' keys.
+     *
+     * @return array
+     */
+    public function getAll()
+    {
+        return $this->transactions;
+    }
+
+    /**
+     * Get the requests in the history
+     *
+     * @return \ArrayIterator
+     */
+    public function getIterator()
+    {
+        // Return an iterator just like the old iteration of the HistoryPlugin for BC compatibility (use getAll())
+        return new \ArrayIterator(array_map(function ($entry) {
+            $entry['request']->getParams()->set('actual_response', $entry['response']);
+            return $entry['request'];
+        }, $this->transactions));
+    }
+
+    /**
+     * Get the number of requests in the history
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->transactions);
+    }
+
+    /**
+     * Get the last request sent
+     *
+     * @return RequestInterface
+     */
+    public function getLastRequest()
+    {
+        $last = end($this->transactions);
+
+        return $last['request'];
+    }
+
+    /**
+     * Get the last response in the history
+     *
+     * @return Response|null
+     */
+    public function getLastResponse()
+    {
+        $last = end($this->transactions);
+
+        return isset($last['response']) ? $last['response'] : null;
+    }
+
+    /**
+     * Clears the history
+     *
+     * @return HistoryPlugin
+     */
+    public function clear()
+    {
+        $this->transactions = array();
+
+        return $this;
+    }
+
+    public function onRequestSent(Event $event)
+    {
+        $this->add($event['request'], $event['response']);
+    }
+}

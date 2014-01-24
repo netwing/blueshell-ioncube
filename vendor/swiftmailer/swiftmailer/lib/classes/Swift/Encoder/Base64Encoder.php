@@ -1,32 +1,60 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Handles Base 64 Encoding in Swift Mailer.
+ *
+ * @package    Swift
+ * @subpackage Encoder
+ * @author     Chris Corbyn
+ */
+class Swift_Encoder_Base64Encoder implements Swift_Encoder
+{
+    /**
+     * Takes an unencoded string and produces a Base64 encoded string from it.
+     *
+     * Base64 encoded strings have a maximum line length of 76 characters.
+     * If the first line needs to be shorter, indicate the difference with
+     * $firstLineOffset.
+     *
+     * @param string  $string          to encode
+     * @param integer $firstLineOffset
+     * @param integer $maxLineLength   optional, 0 indicates the default of 76 bytes
+     *
+     * @return string
+     */
+    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
+    {
+        if (0 >= $maxLineLength || 76 < $maxLineLength) {
+            $maxLineLength = 76;
+        }
+
+        $encodedString = base64_encode($string);
+        $firstLine = '';
+
+        if (0 != $firstLineOffset) {
+            $firstLine = substr(
+                $encodedString, 0, $maxLineLength - $firstLineOffset
+                ) . "\r\n";
+            $encodedString = substr(
+                $encodedString, $maxLineLength - $firstLineOffset
+                );
+        }
+
+        return $firstLine . trim(chunk_split($encodedString, $maxLineLength, "\r\n"));
+    }
+
+    /**
+     * Does nothing.
+     */
+    public function charsetChanged($charset)
+    {
+    }
+}

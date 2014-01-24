@@ -1,40 +1,85 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-WN12zt28abHWHmTeqXP5p49SaPMjvvZjYG==
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * The Message class for building emails.
+ *
+ * @package    Swift
+ * @subpackage Mime
+ * @author     Chris Corbyn
+ */
+class Swift_Message extends Swift_Mime_SimpleMessage
+{
+    /**
+     * Create a new Message.
+     *
+     * Details may be optionally passed into the constructor.
+     *
+     * @param string $subject
+     * @param string $body
+     * @param string $contentType
+     * @param string $charset
+     */
+    public function __construct($subject = null, $body = null, $contentType = null, $charset = null)
+    {
+        call_user_func_array(
+            array($this, 'Swift_Mime_SimpleMessage::__construct'),
+            Swift_DependencyContainer::getInstance()
+                ->createDependenciesFor('mime.message')
+            );
+
+        if (!isset($charset)) {
+            $charset = Swift_DependencyContainer::getInstance()
+                ->lookup('properties.charset');
+        }
+        $this->setSubject($subject);
+        $this->setBody($body);
+        $this->setCharset($charset);
+        if ($contentType) {
+            $this->setContentType($contentType);
+        }
+    }
+
+    /**
+     * Create a new Message.
+     *
+     * @param string $subject
+     * @param string $body
+     * @param string $contentType
+     * @param string $charset
+     *
+     * @return Swift_Message
+     */
+    public static function newInstance($subject = null, $body = null, $contentType = null, $charset = null)
+    {
+        return new self($subject, $body, $contentType, $charset);
+    }
+
+    /**
+     * Add a MimePart to this Message.
+     *
+     * @param string|Swift_OutputByteStream $body
+     * @param string                        $contentType
+     * @param string                        $charset
+     *
+     * @return Swift_Mime_SimpleMessage
+     */
+    public function addPart($body, $contentType = null, $charset = null)
+    {
+        return $this->attach(Swift_MimePart::newInstance(
+            $body, $contentType, $charset
+            ));
+    }
+
+    public function __wakeup()
+    {
+        Swift_DependencyContainer::getInstance()->createDependenciesFor('mime.message');
+    }
+}

@@ -1,82 +1,99 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-vkB6unLNSI3Swy0ixOKvvYxZhSitKou=
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+
+/**
+ * @covers Monolog\Handler\RotatingFileHandler
+ */
+class RotatingFileHandlerTest extends TestCase
+{
+    public function setUp()
+    {
+        $dir = __DIR__.'/Fixtures';
+        chmod($dir, 0777);
+        if (!is_writable($dir)) {
+            $this->markTestSkipped($dir.' must be writeable to test the RotatingFileHandler.');
+        }
+    }
+
+    public function testRotationCreatesNewFile()
+    {
+        touch(__DIR__.'/Fixtures/foo-'.date('Y-m-d', time() - 86400).'.rot');
+
+        $handler = new RotatingFileHandler(__DIR__.'/Fixtures/foo.rot');
+        $handler->setFormatter($this->getIdentityFormatter());
+        $handler->handle($this->getRecord());
+
+        $log = __DIR__.'/Fixtures/foo-'.date('Y-m-d').'.rot';
+        $this->assertTrue(file_exists($log));
+        $this->assertEquals('test', file_get_contents($log));
+    }
+
+    /**
+     * @dataProvider rotationTests
+     */
+    public function testRotation($createFile)
+    {
+        touch($old1 = __DIR__.'/Fixtures/foo-'.date('Y-m-d', time() - 86400).'.rot');
+        touch($old2 = __DIR__.'/Fixtures/foo-'.date('Y-m-d', time() - 86400 * 2).'.rot');
+        touch($old3 = __DIR__.'/Fixtures/foo-'.date('Y-m-d', time() - 86400 * 3).'.rot');
+        touch($old4 = __DIR__.'/Fixtures/foo-'.date('Y-m-d', time() - 86400 * 4).'.rot');
+
+        $log = __DIR__.'/Fixtures/foo-'.date('Y-m-d').'.rot';
+
+        if ($createFile) {
+            touch($log);
+        }
+
+        $handler = new RotatingFileHandler(__DIR__.'/Fixtures/foo.rot', 2);
+        $handler->setFormatter($this->getIdentityFormatter());
+        $handler->handle($this->getRecord());
+
+        $handler->close();
+
+        $this->assertTrue(file_exists($log));
+        $this->assertTrue(file_exists($old1));
+        $this->assertEquals($createFile, file_exists($old2));
+        $this->assertEquals($createFile, file_exists($old3));
+        $this->assertEquals($createFile, file_exists($old4));
+        $this->assertEquals('test', file_get_contents($log));
+    }
+
+    public function rotationTests()
+    {
+        return array(
+            'Rotation is triggered when the file of the current day is not present'
+                => array(true),
+            'Rotation is not triggered when the file is already present'
+                => array(false),
+        );
+    }
+
+    public function testReuseCurrentFile()
+    {
+        $log = __DIR__.'/Fixtures/foo-'.date('Y-m-d').'.rot';
+        file_put_contents($log, "foo");
+        $handler = new RotatingFileHandler(__DIR__.'/Fixtures/foo.rot');
+        $handler->setFormatter($this->getIdentityFormatter());
+        $handler->handle($this->getRecord());
+        $this->assertEquals('footest', file_get_contents($log));
+    }
+
+    public function tearDown()
+    {
+        foreach (glob(__DIR__.'/Fixtures/*.rot') as $file) {
+            unlink($file);
+        }
+    }
+}

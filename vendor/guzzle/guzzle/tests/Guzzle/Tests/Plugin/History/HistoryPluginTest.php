@@ -1,96 +1,140 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Plugin\History;
+
+use Guzzle\Http\Client;
+use Guzzle\Http\Message\Request;
+use Guzzle\Http\Message\Response;
+use Guzzle\Plugin\History\HistoryPlugin;
+use Guzzle\Plugin\Mock\MockPlugin;
+
+/**
+ * @covers Guzzle\Plugin\History\HistoryPlugin
+ */
+class HistoryPluginTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    /**
+     * Adds multiple requests to a plugin
+     *
+     * @param HistoryPlugin $h Plugin
+     * @param int $num Number of requests to add
+     *
+     * @return array
+     */
+    protected function addRequests(HistoryPlugin $h, $num)
+    {
+        $requests = array();
+        $client = new Client('http://localhost/');
+        for ($i = 0; $i < $num; $i++) {
+            $requests[$i] = $client->get();
+            $requests[$i]->setResponse(new Response(200), true);
+            $requests[$i]->send();
+            $h->add($requests[$i]);
+        }
+
+        return $requests;
+    }
+
+    public function testDescribesSubscribedEvents()
+    {
+        $this->assertInternalType('array', HistoryPlugin::getSubscribedEvents());
+    }
+
+    public function testMaintainsLimitValue()
+    {
+        $h = new HistoryPlugin();
+        $this->assertSame($h, $h->setLimit(10));
+        $this->assertEquals(10, $h->getLimit());
+    }
+
+    public function testAddsRequests()
+    {
+        $h = new HistoryPlugin();
+        $requests = $this->addRequests($h, 1);
+        $this->assertEquals(1, count($h));
+        $i = $h->getIterator();
+        $this->assertEquals(1, count($i));
+        $this->assertEquals($requests[0], $i[0]);
+    }
+
+    /**
+     * @depends testAddsRequests
+     */
+    public function testMaintainsLimit()
+    {
+        $h = new HistoryPlugin();
+        $h->setLimit(2);
+        $requests = $this->addRequests($h, 3);
+        $this->assertEquals(2, count($h));
+        $i = 0;
+        foreach ($h as $request) {
+            if ($i > 0) {
+                $this->assertSame($requests[$i], $request);
+            }
+        }
+    }
+
+    public function testReturnsLastRequest()
+    {
+        $h = new HistoryPlugin();
+        $requests = $this->addRequests($h, 5);
+        $this->assertSame(end($requests), $h->getLastRequest());
+    }
+
+    public function testReturnsLastResponse()
+    {
+        $h = new HistoryPlugin();
+        $requests = $this->addRequests($h, 5);
+        $this->assertSame(end($requests)->getResponse(), $h->getLastResponse());
+    }
+
+    public function testClearsHistory()
+    {
+        $h = new HistoryPlugin();
+        $requests = $this->addRequests($h, 5);
+        $this->assertEquals(5, count($h));
+        $h->clear();
+        $this->assertEquals(0, count($h));
+    }
+
+    /**
+     * @depends testAddsRequests
+     */
+    public function testUpdatesAddRequests()
+    {
+        $h = new HistoryPlugin();
+        $client = new Client('http://localhost/');
+        $client->getEventDispatcher()->addSubscriber($h);
+
+        $request = $client->get();
+        $request->setResponse(new Response(200), true);
+        $request->send();
+
+        $this->assertSame($request, $h->getLastRequest());
+    }
+
+    public function testCanCastToString()
+    {
+        $client = new Client('http://localhost/');
+        $h = new HistoryPlugin();
+        $client->getEventDispatcher()->addSubscriber($h);
+
+        $mock = new MockPlugin(array(
+            new Response(301, array('Location' => '/redirect1', 'Content-Length' => 0)),
+            new Response(307, array('Location' => '/redirect2', 'Content-Length' => 0)),
+            new Response(200, array('Content-Length' => '2'), 'HI')
+        ));
+
+        $client->getEventDispatcher()->addSubscriber($mock);
+        $request = $client->get();
+        $request->send();
+        $this->assertEquals(3, count($h));
+        $this->assertEquals(3, count($mock->getReceivedRequests()));
+
+        $h = str_replace("\r", '', $h);
+        $this->assertContains("> GET / HTTP/1.1\nHost: localhost\nUser-Agent:", $h);
+        $this->assertContains("< HTTP/1.1 301 Moved Permanently\nLocation: /redirect1", $h);
+        $this->assertContains("< HTTP/1.1 307 Temporary Redirect\nLocation: /redirect2", $h);
+        $this->assertContains("< HTTP/1.1 200 OK\nContent-Length: 2\n\nHI", $h);
+    }
+}

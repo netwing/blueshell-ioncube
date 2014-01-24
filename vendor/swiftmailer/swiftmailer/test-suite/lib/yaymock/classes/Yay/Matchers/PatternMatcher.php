@@ -1,37 +1,88 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+//require 'Yay/Matcher.php';
+
+/**
+ * Compares values against a PCRE pattern.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_Matchers_PatternMatcher implements Yay_Matcher
+{
+  
+  /**
+   * The expected pattern.
+   * @var string
+   * @access private
+   */
+  private $_pattern;
+  
+  /**
+   * The desired return value.
+   * @var boolean
+   * @access private
+   */
+  private $_result;
+  
+  /**
+   * Create a new PatternMatcher expecting $pattern.
+   * @param string $pattern
+   * @param boolean $result to be expected
+   */
+  public function __construct($pattern, $result = true)
+  {
+    $this->_pattern = $pattern;
+    $this->_result = $result;
+  }
+  
+  /**
+   * Compare $value with the expected pattern and return true if it matches.
+   * @param string $value
+   * @return boolean
+   */
+  public function matches(&$value)
+  {
+    $return = (
+      (is_string($value) || is_numeric($value))
+        && preg_match($this->_pattern, $value)
+      );
+    return (($this->_result && $return) || (!$this->_result && !$return));
+  }
+  
+  /**
+   * Returns true if the argument doesn't need to be present.
+   * @return boolean
+   */
+  public function isOptional()
+  {
+    return false;
+  }
+  
+  /**
+   * Writes the match description as a string following $format.
+   * $format is a sprintf() string with %s, $s as $matcherName, $value respectively.
+   * @param string $format
+   * @return string
+   */
+  public function describeMatch($format)
+  {
+    return sprintf($format, 'pattern', $this->_pattern);
+  }
+  
+}

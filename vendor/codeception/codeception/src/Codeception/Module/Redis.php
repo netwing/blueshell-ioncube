@@ -1,43 +1,88 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-d2siES6u8jV8Pm==
+<?php
+
+namespace Codeception\Module;
+
+use Codeception\Exception\Module as ModuleException;
+use \Codeception\Util\Driver\Redis as RedisDriver;
+
+/**
+ * Works with Redis database.
+ *
+ * Cleans up Redis database after each run.
+ *
+ * ## Status
+ *
+ * * Maintainer: **judgedim**
+ * * Stability: **beta**
+ * * Contact: https://github.com/judgedim
+ *
+ * ## Configuration
+ *
+ * * host *required* - redis host to connect
+ * * port *required* - redis port.
+ * * database *required* - redis database.
+ * * cleanup: true - defined data will be purged before running every test.
+ *
+ * ## Public Properties
+ * * driver - contains Connection Driver
+ *
+ * ### Beta Version
+ *
+ * Report an issue if this module doesn't work for you.
+ *
+ * @author judgedim
+ */
+class Redis extends \Codeception\Module
+{
+    protected $config = array(
+        'cleanup' => true
+    );
+
+    /**
+     * @var RedisDriver
+     */
+    public $driver;
+
+    protected $requiredFields = array('host', 'port', 'database');
+
+    public function _initialize()
+    {
+        try {
+            $this->driver = new RedisDriver($this->config['host'], $this->config['port']);
+            $this->driver->select_db($this->config['database']);
+        } catch (\Exception $e) {
+            throw new ModuleException(__CLASS__, $e->getMessage());
+        }
+
+    }
+
+    public function _before(\Codeception\TestCase $test)
+    {
+        if ($this->config['cleanup']) {
+            $this->cleanup();
+        }
+        parent::_before($test);
+    }
+
+    public function _after(\Codeception\TestCase $test)
+    {
+        parent::_after($test);
+    }
+
+    /**
+     * Cleans up Redis database.
+     */
+    public function cleanupRedis() {
+        $this->cleanup();
+    }
+
+    protected function cleanup()
+    {
+        try {
+            $this->driver->flushdb();
+        } catch (\Exception $e) {
+            throw new ModuleException(__CLASS__, $e->getMessage());
+        }
+    }
+
+}

@@ -1,108 +1,276 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http;
+
+use Guzzle\Common\Collection;
+use Guzzle\Http\QueryAggregator\DuplicateAggregator;
+use Guzzle\Http\QueryAggregator\QueryAggregatorInterface;
+use Guzzle\Http\QueryAggregator\PhpAggregator;
+
+/**
+ * Query string object to handle managing query string parameters and aggregating those parameters together as a string.
+ */
+class QueryString extends Collection
+{
+    /** @var string Used to URL encode with rawurlencode */
+    const RFC_3986 = 'RFC 3986';
+
+    /** @var string Used to encode with urlencode */
+    const FORM_URLENCODED = 'application/x-www-form-urlencoded';
+
+    /** @var string Constant used to create blank query string values (e.g. ?foo) */
+    const BLANK = "_guzzle_blank_";
+
+    /** @var string The query string field separator (e.g. '&') */
+    protected $fieldSeparator = '&';
+
+    /** @var string The query string value separator (e.g. '=') */
+    protected $valueSeparator = '=';
+
+    /** @var bool URL encode fields and values */
+    protected $urlEncode = 'RFC 3986';
+
+    /** @var QueryAggregatorInterface */
+    protected $aggregator;
+
+    /** @var array Cached PHP aggregator */
+    private static $defaultAggregator = null;
+
+    /**
+     * Parse a query string into a QueryString object
+     *
+     * @param string $query Query string to parse
+     *
+     * @return self
+     */
+    public static function fromString($query)
+    {
+        $q = new static();
+        if ($query === '') {
+            return $q;
+        }
+
+        $foundDuplicates = $foundPhpStyle = false;
+
+        foreach (explode('&', $query) as $kvp) {
+            $parts = explode('=', $kvp, 2);
+            $key = rawurldecode($parts[0]);
+            if ($paramIsPhpStyleArray = substr($key, -2) == '[]') {
+                $foundPhpStyle = true;
+                $key = substr($key, 0, -2);
+            }
+            if (isset($parts[1])) {
+                $value = rawurldecode(str_replace('+', '%20', $parts[1]));
+                if (isset($q[$key])) {
+                    $q->add($key, $value);
+                    $foundDuplicates = true;
+                } elseif ($paramIsPhpStyleArray) {
+                    $q[$key] = array($value);
+                } else {
+                    $q[$key] = $value;
+                }
+            } else {
+                $q->add($key, null);
+            }
+        }
+
+        // Use the duplicate aggregator if duplicates were found and not using PHP style arrays
+        if ($foundDuplicates && !$foundPhpStyle) {
+            $q->setAggregator(new DuplicateAggregator());
+        }
+
+        return $q;
+    }
+
+    /**
+     * Convert the query string parameters to a query string string
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        if (!$this->data) {
+            return '';
+        }
+
+        $queryString = '';
+
+        foreach ($this->prepareData($this->data) as $name => $value) {
+            foreach ((array) $value as $v) {
+                if ($queryString) {
+                    $queryString .= $this->fieldSeparator;
+                }
+                $queryString .= $name;
+                if ($v !== self::BLANK) {
+                    $queryString .= $this->valueSeparator . $v;
+                }
+            }
+        }
+
+        return $queryString;
+    }
+
+    /**
+     * Get the query string field separator
+     *
+     * @return string
+     */
+    public function getFieldSeparator()
+    {
+        return $this->fieldSeparator;
+    }
+
+    /**
+     * Get the query string value separator
+     *
+     * @return string
+     */
+    public function getValueSeparator()
+    {
+        return $this->valueSeparator;
+    }
+
+    /**
+     * Returns the type of URL encoding used by the query string
+     *
+     * One of: false, "RFC 3986", or "application/x-www-form-urlencoded"
+     *
+     * @return bool|string
+     */
+    public function getUrlEncoding()
+    {
+        return $this->urlEncode;
+    }
+
+    /**
+     * Returns true or false if using URL encoding
+     *
+     * @return bool
+     */
+    public function isUrlEncoding()
+    {
+        return $this->urlEncode !== false;
+    }
+
+    /**
+     * Provide a function for combining multi-valued query string parameters into a single or multiple fields
+     *
+     * @param null|QueryAggregatorInterface $aggregator Pass in a QueryAggregatorInterface object to handle converting
+     *                                                  deeply nested query string variables into a flattened array.
+     *                                                  Pass null to use the default PHP style aggregator. For legacy
+     *                                                  reasons, this function accepts a callable that must accepts a
+     *                                                  $key, $value, and query object.
+     * @return self
+     * @see \Guzzle\Http\QueryString::aggregateUsingComma()
+     */
+    public function setAggregator(QueryAggregatorInterface $aggregator = null)
+    {
+        // Use the default aggregator if none was set
+        if (!$aggregator) {
+            if (!self::$defaultAggregator) {
+                self::$defaultAggregator = new PhpAggregator();
+            }
+            $aggregator = self::$defaultAggregator;
+        }
+
+        $this->aggregator = $aggregator;
+
+        return $this;
+    }
+
+    /**
+     * Set whether or not field names and values should be rawurlencoded
+     *
+     * @param bool|string $encode Set to TRUE to use RFC 3986 encoding (rawurlencode), false to disable encoding, or
+     *                            form_urlencoding to use application/x-www-form-urlencoded encoding (urlencode)
+     * @return self
+     */
+    public function useUrlEncoding($encode)
+    {
+        $this->urlEncode = ($encode === true) ? self::RFC_3986 : $encode;
+
+        return $this;
+    }
+
+    /**
+     * Set the query string separator
+     *
+     * @param string $separator The query string separator that will separate fields
+     *
+     * @return self
+     */
+    public function setFieldSeparator($separator)
+    {
+        $this->fieldSeparator = $separator;
+
+        return $this;
+    }
+
+    /**
+     * Set the query string value separator
+     *
+     * @param string $separator The query string separator that will separate values from fields
+     *
+     * @return self
+     */
+    public function setValueSeparator($separator)
+    {
+        $this->valueSeparator = $separator;
+
+        return $this;
+    }
+
+    /**
+     * Returns an array of url encoded field names and values
+     *
+     * @return array
+     */
+    public function urlEncode()
+    {
+        return $this->prepareData($this->data);
+    }
+
+    /**
+     * URL encodes a value based on the url encoding type of the query string object
+     *
+     * @param string $value Value to encode
+     *
+     * @return string
+     */
+    public function encodeValue($value)
+    {
+        if ($this->urlEncode == self::RFC_3986) {
+            return rawurlencode($value);
+        } elseif ($this->urlEncode == self::FORM_URLENCODED) {
+            return urlencode($value);
+        } else {
+            return (string) $value;
+        }
+    }
+
+    /**
+     * Url encode parameter data and convert nested query strings into a flattened hash.
+     *
+     * @param array $data The data to encode
+     *
+     * @return array Returns an array of encoded values and keys
+     */
+    protected function prepareData(array $data)
+    {
+        // If no aggregator is present then set the default
+        if (!$this->aggregator) {
+            $this->setAggregator(null);
+        }
+
+        $temp = array();
+        foreach ($data as $key => $value) {
+            if (is_array($value)) {
+                $temp = array_merge($temp, $this->aggregator->aggregate($key, $value, $this));
+            } else {
+                $temp[$this->encodeValue($key)] = $this->encodeValue($value);
+            }
+        }
+
+        return $temp;
+    }
+}

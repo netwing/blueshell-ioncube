@@ -1,34 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPu53UarGhbvZEVJlRfxctZgVYroGvAC0GVwNOdO6g5FQqdbg33S8LP543x5L2iMPA+am3wxV
-4PXqDhl1Dl4pXy3o43ZNPdC8jozepi65tMtY+wzCSj/U3x0fVlSQ7+gKdcJ0NYYYy1qgcrGqyNVy
-91/d69dOZwJtWUwi3mIzzWfbxjIqiAQ/Cx9W39+lnL+/ZPJ92SoXmQC7ggdmgH1liu/dsca2Rvm0
-PAPMJTvzJHmMCweK+kKMiwzHAE4xzt2gh9fl143SQNGFPOGlHRn+CZ3oNM3O5S/04vFCyLcLVY9O
-kbaTfxlCl6uWG8fNnOEJjpfG+QZzepg+t2zvGEkSXLtbBwlkHBY659IVS+JF+N9ByHQ1MJFXygM1
-Qpf7ExUaviNNzN5yX4WvdvndBr5dCI9644WrwkTvsRHrWw3EsLXnrbB1Xm6qfaoM8dxfIsR8U6Kd
-Jff9VHWPawGJBorOUovnCcUzbfpxV18lq4kJoKzhKAgDM0dSZlxFfPGP/LLE869UKO+q+H2AzTFE
-gEoROXTTOoPRufuANB1+XjzLIzl+07k/RkfqoOHBT4F5TAxuG2yAoYcBE+4uGotEGzFdNYSFbQlD
-/F6SHGwCQwur6slsgTT/6nW7LVlEpHHpPYAWUHFW7pZspWioi5oK++LNZPBUGtrPgsAuG8uavXjQ
-c6kYp3CItufVgygDrg6ku8ezOiJDRXd2NEWNvPIVQWNaCKBXBcAIFU56dt0/Mp0QWFAP6bktyjqw
-b535RRAHEnZxdrajmPF01nC3qqUmMTWmYpI7uOLjeUSObIPwXy5s2hKhgZzgI6F+dcEMytzvwBym
-VLhgoDsfyS1oJ49S0jR22P8UL1/Q/AxXkvBE0nmcIaanIZNIOqxO/hlsciO28Tsj8g1pxvEE6kLC
-f5zK231wc2WdbsqgjWTbXQ3WEx+DZveDhDEorjuSQq1x03HM1wkNM3vlaZe5xS7eQVX1P4cvhUAn
-SEQdqdt/21rVnYKzcXIiVIYaAzl8hOYldJqIjHeril5llQiLmCuiSNvvhhuaztTJJmf1lIDYpkQS
-AKtWw1BO6jLRVLFboWSaJYA2fgJMyDz8ck2wXn9ak1CNSBkic8oAGebHqnBc6IxkHojEE9Ds7XqL
-og0i6PvobJOI62sEQ2DsXsqFacfsbP1HLMJITQwR4vbkysfUmjkVyQtQr8l0QDxJtvX8WubfK5GO
-VnRKM3O6A819BEWDemWCBIlwZToXZsyCxIzg1VYZZGYAZvMTi8q8J6GJgklTIyt31/0DiPGOlk4Y
-l099CTBzo9uYQCPIwPFRR7pktNqKSTWXofLuodRW7DoyGNoi1DlXSfjkGhFaVFuhnBtH3BdwQoEN
-7rKDoS0bKlD/hSsGKXr6y/+fgIodIscsb9eDJsMGGODfiN2be3qROh8O8Oj8xQNbrtx7/oFZNf/g
-rWYMVGXJoHPp1rSh6vG0gqG6fYyVZtKpDW0vM4CQ6aiCEpk6iJxQdW0ZuwWIWQ5JWfw/a2SNtRoy
-KVESp5eiA9vDr5Mo+HuUMP4IFeqpdwtl5J+Em/n7VpYQVVqJY3M//EdfsguvRxE5JDdJrc3ZwdCL
-z3Z84xe6yrltPKQUd/ovRbSgYxqCXz9zQZE1QkbOr9QP3KCHXZNjTrFb+jGEfNp5vrxl6Tit3T7Q
-Ti/dmfSfXt1e/xFpqA1co61USGtXWIeYQBM+9YJETjhdAq2FvCKGg5oV0xlonF6wrwFCp0uQ293E
-x02cIwETDJ6uUVaqaXJPhYt1HvW6nqNRvTvjSsmgxogZ60SVksJKq235AM6qpOgjinYoVSVzTIVi
-RH8EKWJW9GlOjk9gKw0aXNkk7XwmfN7PkZs5u+fRAXgfjTwzQyjC8t2hpMu82WWXxd2W7t04/vpv
-2dADou6ICuF1qb2jM4PXB7Qq+Tvte1kYQ89jomIppsFLqZJnYngOWzL4C3AezYkvaXOTkb8eUR0B
-eF6vn0YL4exg0rfQpiPKYInIxYTdaCC49HEJCd9TZ09cns0o53FXY2Kjc096X0CbNIXMQeZkcIW9
-1ZhHBfPjPFaLH/vSsLI4oJQWEqrandLBA5oAq9Jd6aTSkayi86gV6oOg+/ROSkLtw8mkwwUwfE8d
-63q86sc15KHWeVQ3JWGh+yNmO3+L5jB3tMY7vkvOzJqSKTIoMpIP0smr3nCAwuUpZgMMqQR/ntdH
-svU64ETuRmFZAr5Dd52dlYYlM+SpJXCfzrrH860gRFQoshNAauE6hGiQauOOp6LpDN7SIUKZJrUF
-GN5ZPbXerRjqiXPxpEOZbxfT/B1nJ+/FVCRFjADlwkTEAs0ffsBn4Ty=
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Formatter\FormatterInterface;
+
+/**
+ * Interface that all Monolog Handlers must implement
+ *
+ * @author Jordi Boggiano <j.boggiano@seld.be>
+ */
+interface HandlerInterface
+{
+    /**
+     * Checks whether the given record will be handled by this handler.
+     *
+     * This is mostly done for performance reasons, to avoid calling processors for nothing.
+     *
+     * Handlers should still check the record levels within handle(), returning false in isHandling()
+     * is no guarantee that handle() will not be called, and isHandling() might not be called
+     * for a given record.
+     *
+     * @param array $record
+     *
+     * @return Boolean
+     */
+    public function isHandling(array $record);
+
+    /**
+     * Handles a record.
+     *
+     * All records may be passed to this method, and the handler should discard
+     * those that it does not want to handle.
+     *
+     * The return value of this function controls the bubbling process of the handler stack.
+     * Unless the bubbling is interrupted (by returning true), the Logger class will keep on
+     * calling further handlers in the stack with a given log record.
+     *
+     * @param  array   $record The record to handle
+     * @return Boolean true means that this handler handled the record, and that bubbling is not permitted.
+     *                 false means the record was either not processed or that this handler allows bubbling.
+     */
+    public function handle(array $record);
+
+    /**
+     * Handles a set of records at once.
+     *
+     * @param array $records The records to handle (an array of record arrays)
+     */
+    public function handleBatch(array $records);
+
+    /**
+     * Adds a processor in the stack.
+     *
+     * @param  callable $callback
+     * @return self
+     */
+    public function pushProcessor($callback);
+
+    /**
+     * Removes the processor on top of the stack and returns it.
+     *
+     * @return callable
+     */
+    public function popProcessor();
+
+    /**
+     * Sets the formatter.
+     *
+     * @param  FormatterInterface $formatter
+     * @return self
+     */
+    public function setFormatter(FormatterInterface $formatter);
+
+    /**
+     * Gets the formatter.
+     *
+     * @return FormatterInterface
+     */
+    public function getFormatter();
+}

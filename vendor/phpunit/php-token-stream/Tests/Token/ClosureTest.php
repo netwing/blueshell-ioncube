@@ -1,65 +1,129 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-GaHChBHdgAo9qcAPGhEsFyONuZzAHd2a987cPm==
+<?php
+/**
+ * php-token-stream
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHP_TokenStream
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @since      File available since Release 1.0.0
+ */
+
+if (!defined('TEST_FILES_PATH')) {
+    define(
+      'TEST_FILES_PATH',
+      dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR .
+      '_files' . DIRECTORY_SEPARATOR
+    );
+}
+
+require_once 'PHP/Token/Stream.php';
+
+/**
+ * Tests for the PHP_Token_FUNCTION class.
+ *
+ * @package    PHP_TokenStream
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version    Release: @package_version@
+ * @link       http://github.com/sebastianbergmann/php-token-stream/
+ * @since      Class available since Release 1.0.0
+ */
+class PHP_Token_ClosureTest extends PHPUnit_Framework_TestCase
+{
+    protected $functions;
+
+    protected function setUp()
+    {
+        $ts = new PHP_Token_Stream(TEST_FILES_PATH . 'closure.php');
+
+        foreach ($ts as $token) {
+            if ($token instanceof PHP_Token_FUNCTION) {
+                $this->functions[] = $token;
+            }
+        }
+    }
+
+    /**
+     * @covers PHP_Token_FUNCTION::getArguments
+     */
+    public function testGetArguments()
+    {
+        $this->assertEquals(array('$foo' => null, '$bar' => null), $this->functions[0]->getArguments());
+        $this->assertEquals(array('$foo' => 'Foo', '$bar' => null), $this->functions[1]->getArguments());
+        $this->assertEquals(array('$foo' => null, '$bar' => null, '$baz' => null), $this->functions[2]->getArguments());
+        $this->assertEquals(array('$foo' => 'Foo', '$bar' => null, '$baz' => null), $this->functions[3]->getArguments());
+        $this->assertEquals(array(), $this->functions[4]->getArguments());
+        $this->assertEquals(array(), $this->functions[5]->getArguments());
+    }
+
+    /**
+     * @covers PHP_Token_FUNCTION::getName
+     */
+    public function testGetName()
+    {
+        $this->assertEquals('anonymous function', $this->functions[0]->getName());
+        $this->assertEquals('anonymous function', $this->functions[1]->getName());
+        $this->assertEquals('anonymous function', $this->functions[2]->getName());
+        $this->assertEquals('anonymous function', $this->functions[3]->getName());
+        $this->assertEquals('anonymous function', $this->functions[4]->getName());
+        $this->assertEquals('anonymous function', $this->functions[5]->getName());
+    }
+
+    /**
+     * @covers PHP_Token::getLine
+     */
+    public function testGetLine()
+    {
+        $this->assertEquals(2, $this->functions[0]->getLine());
+        $this->assertEquals(3, $this->functions[1]->getLine());
+        $this->assertEquals(4, $this->functions[2]->getLine());
+        $this->assertEquals(5, $this->functions[3]->getLine());
+    }
+
+    /**
+     * @covers PHP_TokenWithScope::getEndLine
+     */
+    public function testGetEndLine()
+    {
+        $this->assertEquals(2, $this->functions[0]->getLine());
+        $this->assertEquals(3, $this->functions[1]->getLine());
+        $this->assertEquals(4, $this->functions[2]->getLine());
+        $this->assertEquals(5, $this->functions[3]->getLine());
+    }
+}

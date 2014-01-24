@@ -1,85 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-VWX503jslKDlvRnTdnXl
+<?php
+/**
+ * Smarty Internal Plugin Compile Registered Block
+ *
+ * Compiles code for the execution of a registered block function
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Registered Block Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Private_Registered_Block extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('_any');
+
+    /**
+     * Compiles code for the execution of a block function
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @param  string $tag       name of block function
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter, $tag)
+    {
+        if (!isset($tag[5]) || substr($tag,-5) != 'close') {
+            // opening tag of block plugin
+            // check and get attributes
+            $_attr = $this->getAttributes($compiler, $args);
+            if ($_attr['nocache']) {
+                $compiler->tag_nocache = true;
+            }
+               unset($_attr['nocache']);
+               if (isset($compiler->smarty->registered_plugins[Smarty::PLUGIN_BLOCK][$tag])) {
+                   $tag_info = $compiler->smarty->registered_plugins[Smarty::PLUGIN_BLOCK][$tag];
+               } else {
+                   $tag_info = $compiler->default_handler_plugins[Smarty::PLUGIN_BLOCK][$tag];
+               }
+            // convert attributes into parameter array string
+            $_paramsArray = array();
+            foreach ($_attr as $_key => $_value) {
+                if (is_int($_key)) {
+                    $_paramsArray[] = "$_key=>$_value";
+                } elseif ($compiler->template->caching && in_array($_key,$tag_info[2])) {
+                    $_value = str_replace("'","^#^",$_value);
+                    $_paramsArray[] = "'$_key'=>^#^.var_export($_value,true).^#^";
+                } else {
+                    $_paramsArray[] = "'$_key'=>$_value";
+                }
+            }
+            $_params = 'array(' . implode(",", $_paramsArray) . ')';
+
+            $this->openTag($compiler, $tag, array($_params, $compiler->nocache));
+            // maybe nocache because of nocache variables or nocache plugin
+            $compiler->nocache = !$tag_info[1] | $compiler->nocache | $compiler->tag_nocache;
+            $function = $tag_info[0];
+            // compile code
+            if (!is_array($function)) {
+                $output = "<?php \$_smarty_tpl->smarty->_tag_stack[] = array('{$tag}', {$_params}); \$_block_repeat=true; echo {$function}({$_params}, null, \$_smarty_tpl, \$_block_repeat);while (\$_block_repeat) { ob_start();?>";
+            } elseif (is_object($function[0])) {
+                $output = "<?php \$_smarty_tpl->smarty->_tag_stack[] = array('{$tag}', {$_params}); \$_block_repeat=true; echo \$_smarty_tpl->smarty->registered_plugins['block']['{$tag}'][0][0]->{$function[1]}({$_params}, null, \$_smarty_tpl, \$_block_repeat);while (\$_block_repeat) { ob_start();?>";
+            } else {
+                $output = "<?php \$_smarty_tpl->smarty->_tag_stack[] = array('{$tag}', {$_params}); \$_block_repeat=true; echo {$function[0]}::{$function[1]}({$_params}, null, \$_smarty_tpl, \$_block_repeat);while (\$_block_repeat) { ob_start();?>";
+            }
+        } else {
+            // must endblock be nocache?
+            if ($compiler->nocache) {
+                $compiler->tag_nocache = true;
+            }
+            $base_tag = substr($tag, 0, -5);
+            // closing tag of block plugin, restore nocache
+            list($_params, $compiler->nocache) = $this->closeTag($compiler, $base_tag);
+            // This tag does create output
+            $compiler->has_output = true;
+               if (isset($compiler->smarty->registered_plugins[Smarty::PLUGIN_BLOCK][$base_tag])) {
+                   $function = $compiler->smarty->registered_plugins[Smarty::PLUGIN_BLOCK][$base_tag][0];
+               } else {
+                   $function = $compiler->default_handler_plugins[Smarty::PLUGIN_BLOCK][$base_tag][0];
+               }
+            // compile code
+            if (!isset($parameter['modifier_list'])) {
+                $mod_pre = $mod_post ='';
+            } else {
+                $mod_pre = ' ob_start(); ';
+                $mod_post = 'echo '.$compiler->compileTag('private_modifier',array(),array('modifierlist'=>$parameter['modifier_list'],'value'=>'ob_get_clean()')).';';
+            }
+            if (!is_array($function)) {
+                $output = "<?php \$_block_content = ob_get_clean(); \$_block_repeat=false;".$mod_pre." echo {$function}({$_params}, \$_block_content, \$_smarty_tpl, \$_block_repeat);".$mod_post." } array_pop(\$_smarty_tpl->smarty->_tag_stack);?>";
+            } elseif (is_object($function[0])) {
+                $output = "<?php \$_block_content = ob_get_clean(); \$_block_repeat=false;".$mod_pre." echo \$_smarty_tpl->smarty->registered_plugins['block']['{$base_tag}'][0][0]->{$function[1]}({$_params}, \$_block_content, \$_smarty_tpl, \$_block_repeat); ".$mod_post."} array_pop(\$_smarty_tpl->smarty->_tag_stack);?>";
+            } else {
+                $output = "<?php \$_block_content = ob_get_clean(); \$_block_repeat=false;".$mod_pre." echo {$function[0]}::{$function[1]}({$_params}, \$_block_content, \$_smarty_tpl, \$_block_repeat); ".$mod_post."} array_pop(\$_smarty_tpl->smarty->_tag_stack);?>";
+            }
+        }
+
+        return $output . "\n";
+    }
+
+}

@@ -1,259 +1,476 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPz0Qnsvdbpj1QljIJSuS3unpoorTDlqKzQgiSPrIjWcaQqXmgm8r6KmnuytgmHZLWeg5idOG
-19pNIat9P/LcRsCj0xzR5o3c6wy4Kf3azYawW6rUcAaojCQzowg4C0zA0yQh7AkuvidxrBl2RkTx
-T9vPLE+dd2gYu0DcoaTdcLMHzGhpeM4KkyMWwc45XkbmGbfiWsJTcRiBBbaCOHjBCSPGnp1Nnitm
-L0mHl8ZH6vJdaJD5Mq1dhr4euJltSAgiccy4GDnfT0zWhIzRpoWoZKXUyjXZPqeV//pznV2Ng+4Z
-xHRqdU8DZWkF/Refnup30LVg74E3BEpHX3hHfWlwY8Iu5w4wUQyfPPUucOS4CuvRqxQ5Shvu1RsP
-QmHHhIqg/FCbiVfxr4J3ZXsVM6c9O8oSruRyD3EkSh83ktHxqdrqosMUK6zVBtlwVlB4BF4A4Q6q
-Oa8u3t5N6pTbDXDrgS5JtYPM/E7mXzhI2UEvNnY48vqJ7EEw12UhFvwSfUuaaDjKqNXeq4aNuOj9
-ihhnSPUJlTl8DHUgZtXY/MnsC/NgZlUyfWDr7K7JvnTdcvz75136Y6U1qHTMdG+QRVXSEwv6D52U
-2a5mI5c0JMvY2FxiUsx5Ld0vz5p/xDGglyEn66W72FB4NXoqxEke1+4BVNltH8oIbKa6Vwo2Gigb
-70CMGmTKHojz28gralv1N4qbtF40ij8XUii9jWTceOLcw8uJLKb1582If6FOxrQsj4V5ZqZ/1Fnk
-31fETGfhOsfiY0e3CFCb/zw5Bi3nuUnBMd9Rh5RbB1n0Gh/zfcFzaVWcDP5IKiHEkhxw45+iglQ1
-yhd8zTGrl3/aNIRCCI1QT8qSvPJfvhEeLHpVg4Yqv79l3/japs5KvfMX8xZOKoAki+cZVb3fHHuQ
-9u0jhi423XEMbuJ0+2lj3zdbGdZe/xgkBqy6ZEpESpJC10G96z0xbMlcP5CU+sVA0JggFsJLon3y
-nMgtG1Bvg4llE7fJ1gLvzzR0NMmWJ8XwKHi+xEpY/Art9OD9pL7OqzFNY75cggCossgPWRGCA+cR
-PVKxUQaWWklfzBHFKABXQO0LfDV5XtCHsNeaWvpr9QBGHKtDahA4aXACkrEOp7dnEuag0iJLKFO5
-QHPmvh4qeBm/j0MsKF2jQSsldE3bUems2vz1xtEFCV5t5Nmp5oiJOJJVCuLLMtF0Ezbkkdcqh695
-Mp8JAHLiQxFZ/dl/rNXi+TxOCRkltYR+AwUTE//n0C7IFPKLv3xxVugnm5k+xDolNW6ykgzp+0WM
-pq+ON7WXRhfOvRnZgdyXzC8aeWBaIRjZPjThEXa2YSDIQxvTLyfVnEGs7ZCv//o6D8ojCcXh86Pb
-uCS4XwqQabOu7NArERLXCYZVL1EKapCst/xNTgwBzKl4lTRaORESanQSpdx9pzZiKe09zDr19FqI
-RJ/nX2SozdgV+KgarD2gw6M/xDK5QCjRoPQZkVpzmSooLy2YCyPxSQeBAYZ7M/fIpV2UsIokFHmG
-mQKoiJ3DCxs1+nZm7yYOmzEMYGTKvM3vbxOvc7GmwPm3UBzS7vEv2/Xrq3uKfQp95qXhVsS7ZMBC
-OoCZ0yQJDS47Lcyux8Yqmh8Q6fGeulJQduNSFdEbnvUbjoG1RWzxTNWv9k6d5zyUHXBo9IMiG6s8
-+MbGajm/6VoX59sj78mUwpdNUc3MXPKBHTsbmqK8h1012QRdcDK8R+2vBfe8fyEMsdMeAZEaqASR
-1m3DTdESisj59XdbKm68vQ0Any7Pq8ZH8wE9Mp2kcD+VWS34XkKUlUfFiwNUuyl/SZV67zHaa8wR
-ujisaoQgO/KLQBXvrV5AXO3hUbRj8XCVQXoUAYmFFlLDqWrW21dT10RwzGh87Z7kwSO/SEpaUDT3
-FU3k+xCjo2fx1yRrPqXmyyvqwR7BuKfgAEOfkcREtgN/l0zt7BMTHagK8v2q7TFzwny7OLcL1NK4
-eBoq2VncjfpvfOc3STtaxi17cBGvE6QF62fkyM2f3PD7KES+KVhiqlgBcD5nU0tsWAbX8ioLyxMz
-8XhntujXWioZ6dIjif0P1jb2eH+MjPuJYkPvaZQKVh/JDEGrknZeK8tVukr2H9D46wWFtH8mnO44
-o/dtq22M6YAFjWIunEWTNPeu0aFKVL5kkeSOPpRac3z0P9v+ekjb0lWWVqfA+KJ4kMWkAksF8yr8
-N4Vy9GGePuLOntugA8DxeknxKbPAMLdFT5MUSk0funu7Bp//jLroH5Y74CZiYkRTtbrhEaRd8R7Y
-5Dgy/C9Cb1AmXxMpEDIZ/2bFY3D/WgHDC7Quk2OS0MIUOJbESBkGsomNf5W9vLtAvVVS95AftuwA
-3JZRaGTx42PRLurApHyjHTJhmvx+k4ShOQIKBMshQhjHic+dBF339WhtfgmiefbuHixxNI4byIYp
-2Wme/TSNwsIDAcJn7W+3dNT/MfY6ACn9aE8bxeBzJ0u8jNgchKqAofkrMn+GcFQ+wEOrFWJoB7d3
-68HjJqciand98mBSMmGtFtmfcruYNctDRll6d3hYebQ9Q/hpN4A2qzLZy0TbryyZTjbZxaktERRL
-9OdDeuKXLwVoFdhQZAEKfS1nShpO8xVHRKRnjtnto4z/aHLyZykxiC0cFgnZP5a0Z9y0tmeL7oKW
-bQk2kaOe491IjpiJEF6pDcHfLnwVqJzk9bdH6ivsOxtQQP7M0oQGlwrxUy2sqGy3fwrEZ+vYQLrr
-5sldPUpB8QwQrTa1++fIPATYtnAVp3Vk5SEI9TwXHqNGRkFwMgWGMVsXVINNWjs5hgxVNpJ1mSf9
-ZYaPQLD1VtONvWW0ilsJWWM7knG5oozkRql1AEpOrKlEBKJcMoT+vfqiBRCWve8F7M1kyluQTUbD
-tq21B3MRHlyryjE8LIY0KAvTgJB1RkASk3hzhnB70u9B78tpc+XNOOAimmwUuuQQ5yysZ1UCZ6oR
-uy23nRKtdcZ67pfLB5ewIkYAez0nxxTU7hGB3rMAPQcTk6mmIxLGCt8iFa9cfbUfWzzqMly+ROGY
-pSEOPwT3WW2TMHOkOr5ZrgY38r6VCLFLQsNQDF/zGFWFeEUQ5KPYaQ2QThoy1cTA2dxX5rZdzGyQ
-bLn9yAqhKYbRZPfCXiDHoPG75BZoeumK2uSCcRJOlS4A9tqhiWqeKSo1KPanQY27AUqx/2TVtSW1
-S6R+6y73VaphFT6UnEwCi99JCxtAK7t5DOmbLXpL8otslZYOtLbSN9jgulSCtaE2UIut5FoCuYGl
-zLH4sgucBCaWGtA5LFl12IJ81L1+E2UQT9P9oMO/5IxzOIyMx0hqBBb4HznwBBw+ihAxCb10EBHC
-wum1n64KZ6mOiVUxaAuRO+xkTezg2YthewEkHjETApj5Hc61Hn3RXtacM/OFGT06ifOIB34PgQKg
-dXUOTH2fHpq5Vbfu37EXyNAi5jX7oc5H96nUlZEZvx5eZYRhNsQ6YUavWNWHFl96kxhkNJ0ublsv
-/2HIlmjLdoeID5yL5X+Awe4eygk3QoHrXjJ3HajiRJusr3/jlDkqSgO05q2u1OWiIX8L6ZrFl9jI
-CeajXnMM14jCgnkPPKBYrQV/NNUlHyMZDE+orGDMvgBva2Tlu3NJE1+ozL2FYXukOFwndnNT07LC
-BxMOKdzDjT+s45SxKYLWahj1ykRNweLrlB4tgciFLjHs7uOhfpcTftxXXL8n9NQ2S2cK1nhp9BKV
-MPMRLpdOwmBH69kWeU8eEprGJOSoxCCpnBpsnyCTkdfoKcphdnn8QddiipxmHSMG5au7Rl/kHvoq
-WXg+/x68GMsTMROmA8Mds+wZ3a723YRI36/PbA7KxZMVDB6s3idr46Cccb+YU8APVwDR5OwJMzTw
-loMt/V9+RDB0TamxroDzYhpu6SGrkvXmoUIbCeL3XTEScffyDYc62N0ZsOxXZqn9pRHTeL+g42eK
-hPpNEIoDdplejr4Iq+HOGTN2vzAOt3xY2QVaMdGtU0y+gPp1KLL5vL7IwZHL87BtKmnMo3vVS6Bx
-JP5D3mH02THWu4SMqEMgC7WHD65bZoftExjR1zUTb/oPYN0leK6QNIGzouxqUeEd9jTsQDq55k42
-+yTE2Jeuq0V+L3ZbNY2sOM8F+kmT2gfUnUYbJyQxkSj3qodmiQq9kCi5hSYb795bVTryAoCIGVJS
-7AHuYx0+AnH2QvI9MyQPRIw7orhcflj1MwG2MwXRuZcr8v2WfJ6DEfZDLKvdbn1czZyVY20jGk+Z
-YUhxvboMz32psFH7Q4FyVH1kAw2ndJzzGU6iwRqags0xBu4ROqVuURZN5GJUdxhruImoQFOSYVhg
-W7R7kM3mIEQheByt5fw5FIBVexu9adz48u1XgQX2aoMS911SkzNtr0sIxI0YW2R1VZO5ZZcYwkYi
-pFON+0okPIaapdrqmoqjmRJq0PIoq4rGFmlwYTg634mxzYy7XXsNv2md/qMprZSFO2zSI1nb8efK
-SqQTYPlR1oiDPz2QNfEhwdOj7AHhO1GLhV/s3GH3vMC/dOb7+NEBe6obaPa+b5IiDGdFNBCPqAab
-M/T2EWt1yqxF1qQ6jM+RWqPofK1heeyUAvx3vcSpbyGATIicGqJ2+FivcnlMTtfkMXAqmtV6kl1M
-b1iekKd3TInlZE/Ymq4ts6p0qMMzi23zsRsgapvsOMQ79sPWwwEUxPKL+0O52zpmX1PGOWHfwfHR
-x4b7CyJgDisCNn7EadcprxUX+g5zxYaAruFBfIWAzXwcYx+mnb9+N1EGWTEW7VjdKjkbgSPUHMTR
-LerIxJdXFm7ezIIRm2SnfWjou2zUUHKEaFCgMeu3K/oJ40SSTZhqtKsd371PXTL3YEt/E8MQldTf
-GuzPmpZynOSs3B90CP7e7uO5VAMHU/CS1NFbOLp76yRn5jROt0vGJw0uEVZA+Ro4i0pfihSwvB+X
-As0jZ4qpFUR4oPhCK1uvRpN+PNXF/oQ9DnTvhvCxF/T1WJf1naj92HzpIz/QxHx/1QvdAfw0D+tu
-QbdJuiV9AzaERcusBoGBRNClWvm0SNCg/+9tzSdao8IcgSXhWmX2b3M9bRh+6LLVD8Jit+PW/4Ak
-ez9XlD4DHQoCpXwD9hY61ak7Z6DT6cl4zILbJt+AFVwDxclf6kkeARmRLoyO5E7yUFYDBqIobPoz
-xtzhvzJSoP2JevIjiNfb1w2iyri6GAAi2jDMZPBrcv61Ua4Pp6qV3Kc0zWnJl2J64qXG9iuhCGeJ
-uUw9/8VfKg7tQOng/gVp+0rzQHfC3tbHByNPjQ8i9IXO3xyWJMyKE1YEBpe3WN0vhjw9TiNtZf2J
-vuXDnPjaMWq7bc5JHU6s5sUcHstHpZxjhwk1vqH75vVx9ioDxTEZQYlcqGHw36le1FKdwKzF99yC
-Ipjo+T+M2VkXmvdqkTWfyGKhSaRfXtR92EWaMsCQZrLQYdg29EoOFRfmS5e3PkMq1CwlbtMbv83F
-39VCg6eE5ypYvwMCI9YZ0WPY7FLH4hv8x9LRsqYPrGw+/1Ahn3/NSdZ/S0YjjU0zHhmCs9vDro9T
-o52HhI+7S+cg/Bd2KK91ABQvChKH525f0alyo7Sh7JglnS+DazmFGRzTaKj4jP6D9N/ezLE7LfLX
-j9eVCnRJmZw3nc2bNaAMNvXCP1kYJzkdijObdWeUJpj5UC+z/SK3SocHhOTKBTkLlcPpv6HHcF3Y
-mr1+/FMURWfFnds5cuFUuAOpO4OcZszK7TgwXRITGw5JIQV5kN9Vt19LTLFxdhYhaH2G6cBBrxKB
-ew+xyop+BUbbm9u6y6yg9op0uYbl86qp518OPLgFxcedY1P74YmxkNGC3VGx1F2fX8I2k81v903/
-5jjmKnRDPXsyfJ6r5wFU97ToEGNQD1fEA4GgiZPsMbHIrBhP1DPpAQfPT84JwrY1ND22SqmD5D8I
-qqafAWa5Ymnjkn8rOEkkCv6NQX4qBDc03RsHrRoHs2aAdNoThFOQv/llPQOw62GGq5QVe3eNuCwl
-4nK72XioenekjYHvScXGpraadw7luwSq+dUka93Hk+dBqzUH0kCYCmwtInmhoo07hVhs23xK+lCX
-gUO9XcLMFuWFZZ4eRYTM8RkGm105p/ycNoDo1+Wxvb4nS8T+Hh4WJpDjk5UbR0J7pDH8dSfPT0Na
-NqXN0GOnsTi5b/DdI5cEvwvXEIFWDGVnf97bJeG104SgRnz9Iw6EfE8ZqNOZzmulOfsrd6ue819L
-NU0NgQ96GMIBmOPLakRYOvUBdR8uiyA6/cq39HSisOzHJ3CKI8U4W541B1I214Hd+R1kFm7QNezZ
-4HCooKYGnCiUAE/dH+BXwVelwFoSC2U4jCBx7WiM7CQn4yRDKI3Jm6hRCOoUDe6Ebt5sPy7022Jt
-3uRzPDLORRrE8XMwNz/imTckOFOBKh+/NgT4y1iPwB6AoBkaNX8O0k75dabL5rC4u4nTQgpEFlxv
-CcbQvcisATWvSPYyZDtMBjbf9UW6icepUm2uZK30pETjpjDGObcAcz2Xyl+mqdJb9EEo2/d5dP6N
-7mCW00ecTONYm+kXqmeDIelUIJ4hHSqD/QvpFJc69Ibo8iGpa+AEgmLuNEooN65AS2cYtpYEPbHj
-7kAhOCHXzEIk5ABF4709NaL2ipvi/97uFMZeRiKX4bGhcN6bN9v77Uv+K7UjtHJsLLiJaABupiNv
-PU/cxJEmn75bJuQnAec/0K794npsl0oU5deDUhnVxquAzHjt4amTnCpcz3jcFUhXgeRcTcSecSVD
-8/7B6EeRLHcpaN6pcGVkaOfk7qeHGsS+fdhkze4AgZtKK0dUlTHty8NBJYotGTa6jISFbHOFmsSU
-drMBh78Huk95pQf5vZiGTw4m8MBnHa27YXCC/M4YZgJE4BbNNbR/6sjM1qYaZ2qOSJb0TcGwq45c
-rWpMdN2LTk7OM1CxakD9hvSqZ/97HD/dRnxSWgsuO4WAh35d26IWtN1T0ZjI+3aQJJNXel45IABK
-4XjFCmV5pbUuirGEozmG9I06WHp9crSJp6nl7ouE7nuGvdQC0OIB5uDzRdYWjTHPI+4SN7RCr86t
-n3Pc3qnJi35zmXteXitRivhCsAEFzULOIqx4QlpeXEt8mXrvBkY2XlJhvGtF2Ze09OvQCLWb2H8L
-IEUfCIXWjUkRSunZe4KUIkaJN0NVQyORIuIqJOA2sNqjTOZGTqy4WcVs7FUZ7BGIhFPnNTtj8twM
-KQPpPVSWlrx3V47A5zoIpe4+gfCPEE811YLOm9IVrGwysjEeiu+9y2CfGPLygCjfz9vaQGaTr7pj
-wK8LgYF7dBQkXeIyt+RhgJ5/Ufnh7ofrO/u/ErH6wRP0jKWWIOM2esw/ZyQR5B5mMwoKQiv2DkIO
-BwuCkOy9CQ+VQIsIdkHBgR1jnQ76QQv8Ouap9gUe+uPKlrt4IDHserxqh7jH5fmNozp3+l1DFjL/
-j2+EJHnGpNUh8Z55TE043yYCFfWdK9CTubr3O49yIvH/c/cMlCTJ9f5NHlyq5dSJM4FRxlwlI5C+
-OvTCLEBMQ2t2WV6olg7u4pBTiYqYYpzIf7p3UwjeOakyLbOpkHLbTSgPOQWmXhV42uTFcVJVZ+B7
-2VzncEQxvDkYLXep51yohUAvT7CKtHRzwjKbHOL+6Cn9xI85NVUnQwYaEWau2MonTkjkLAvwOf4I
-vwv8uoHOXm+iKPG4iZvS5FpZ0uzUmklHyBGdnaEiCX4p+lMki6rjsA7XyYx1B5TmoIXX20RzChWt
-fDhkPE+ATBEuaFSGDmxX+CmeW1uQgO39k8H039deGF2MFt5Lz2fJAUEhefZ5ZWnRELIMDF2kZfhf
-NK88+gIVtS1F1egGhM10wXAjey0O7jhqRpz3wKELSh5IA0pOe/H5jgPUwQ1kZ4eAyB0LY8oynSo+
-0+Eni8VHfvMeR91Wrerz4HQus6LoOqRr2GDn4I0OOluNgdYWthid0PLliEjsuG+1z3T5i79jJkiS
-MG9oub81rz7ATakcWoEOsVBIEO634LtCO460plgfTj3oNyEEoPY92KxyB0SLm1Cx/UgOyzd0kVbg
-u1lHnD8hyKa3xFnYvnswQd70svQsr+9KGGbOs+qnvP3GtvT3D9HaxrC5Va6+XnhlL1Djdvz4mwFk
-nvy7XwGpkk7/fK3K76s8cE3uhCn3Avn8GAFLrxjVz0M3R6VN3FeJsJ/6tqtWHVZe27tauCTWxIzV
-JEcTd9sfoe4pMV5wFaZ5u4AOOI5sLuaalX8RKKty40JSS64jUSjRfIk69ZG9Kax1pW5v3oYVCX1x
-yMkBFNh8DJIGLbcByS/7ahXpfv6OQkxGG11vG1Y5e1pICjVUvOJ9Yx+G9CVZJXzo+iNo6zEmcIIE
-ImrWQmuaURf7+E6u5OraMFeLaiR54yKWq/a8EAfvAvoEv/PVFM6R7sisZ/CPnCxlo948op06UoHv
-cIdk0Mvvmlvb6XIlaNGkhSsQEoALNOVTFfkT3zTC7haL60FAkEmtmNrlyycPY6gydNw/bW4pSC1W
-E/7+oP01jbN85ym1P7jiapHmHlaRaJALgHFrv5ODbM2hr8kDOHXg3lZA4+fpdz9/QXdBhcuaoopH
-hvmH5QljLHMV9eacMsyBrtbxgFL1X6WQyG5yRyzD434S/p5xcPTGWVX94pl+ZwCd73Tp4frR21xX
-lvtE+fJgYrcTXFUMYNXiybPYOKbN/kTdYh5hpc8F+V+8r/UwAoUHOeOCjveIf8IDcHydehUYn2Au
-hsjTu76chs5537QFJeJz5/i3HQ649YmtjVkNyenWWRrzkpqPWOzrcQrgZKPYm4hKvskUK22kEcqR
-bEVOhUPgeDQ2NVuqqmu47fS+m0ik0w4WO401oP6pEMPfDvQFK7NxI1B73H5V5GNQsXAzDnFyAqpB
-ZoNf2HUtKVgSFs7CXlG3Nx2CV3yZ02HHk9tEqmWB4/YMcnVF+UXNaLKJmSoSnVEwZ02DqlSTEFE5
-pYkWyKWJhNCdq0zQrvi00ubwTPy3iRY/8uY9RQ02iRsgH1UABIkzrqzR4WEETuc4pqQghg4z5K42
-ospazWi9FmahxRItXRM7zl1MQvAo2WUOVj9X+m7fwHLZqpu9bZC5qcQcn7a6+CXIcmoqvyAk0rar
-NvAVRXKb0U0ir2QsxteISX9UQFacETmLRdTmZ6qSMpLFTFmEE2h88z17qI/V9D/2+1mUq3J8AsVL
-d+QLPqSENcvhrneB1YjMllmTZJXN3ZlNlla3PtwEaNHi+KgNbxyiEyTLyRpzSB1DuebLThQEo+FP
-qARMYzwbkdybd+qoHT0SYfGefZzVcNV5H1ICJDbI3SmY3JEQMcNzq8qKVTCzPmxURAp2djC/YinI
-BZsqjF95kP6CjklNUgwi57J2vmhhn5x7xlepz8VnzU9iBg4nBokkWLHfUSGtcKOstjeQ4qjQkdw9
-9Xz/DzTRNSqbmQgDyCsISxF0DRTjR7QGlYx59fw9QbectU4dpLM0T7LtbCczKG7qb8PKCIrlyIbk
-7NdsW5J0YEcyeVMaHaVZ+hKNVQNMxDBxBM6wxuEBs7hhFtWa9ijfERYAuoeW7tRHnjavjN82BA5p
-GtyQ4Q+pkYbbETZQCFp+BzSbZZsCg6r0lvO3dGT/ArDs3fVR/339j48qoUGWnevMWpvpEUYBjAp7
-9wpfAF5xRedaHw5elSARY50N/xLP3k00Gjw3sNd/kVYjnFRZPvbxi5jBfO2go0LLoWB9hg/1kuPA
-XgThPekBevRr53ty6BBhD45pCTaBvFz1h4UX3vJWEAdp+2WnAZ19vQRIbNkDz5mRt94LU6prue7J
-1zFY1yjF4GrSxRPDyMDmKBM3e75SopcNrCu1vOGW5kjuks/MOCJkQ/2+RrhtpCKtQm5o0NLFX0Wk
-+NGSK2OD7hCjjyGilKr2zqDYnvffdmKbcaxSacxmpKTHwgJ1g/WrtW+tXzoN7N5nVzrxRvoY5Xk7
-R4nTgpNB+GWsBX9FfkLTfQKxfoAEnXsVuF/4OjQKNiPxu75fytQkxR1ETg0zhnl/ol1j/yiUe3lC
-pc6KBBpKARAP78xBDErhY2A4Mgytd0jiKz9AFnbhxNNSemQtqVfVqvWYzaG0qiHDeuDc7hkGzzuO
-whQRlq4+8jicZiLIjgTIGsgwEIWFLRi2FTQlDizeRe1BH/+mZuVpFXlb3gsW4qaumVnDl9wEL0Ec
-pfF0lW3Rc/mE/xsvrIWIU007UE1KwgVaMCcWVLhgYVdSnU16+1q0osGkn/BkMS7QIzzgAqECQq4Q
-bHaX3G2WqQozsdTjJOk1uNmeLKo1cs8XNQPTEHlO46wyAcBt/wqVP0/oQYXB1+0ee6fatMFDZVk5
-AYp0TRku4nQXBDXTIVKTpGtRDcUKD8343DkRQb0crWn0Zwb/m+2sCem0NoJZ86gH8zf7GxcYd8nx
-mSZnc2rV9M9HC0K0ZK9k9exFCU5O/ETwq5JBpHGmURNjTbWUZMwhUiNhg52FT8/AmBj9d/WrGvdB
-AOCvUN3UWvsFbYWwOx7t/VbsXT++ROoxNp88/xe+vWFPJ0Ybc4OQdEJNwdx6P/D3TYja5Lf1u6Md
-RaFDXtaEAPgNzWphddEhyjwY7SjmEtgo6QqnY+awxJ8nAfTkCLS8NmJATvABENNCa09KIQKpgveC
-CJFo7h79FKYXkdwzu9cPGC2KSgAVLceWwwDJT0GuvdvjJeisP7psoGGDR2qaCqQuxW6GLVy2kDlv
-1awMzWU0lqm3oRHeHP76qTagBeBXk0IU3NFMEGjLWQf6nxDGwr8QeMBcXB5cyDLNU7qA3MrBMFRe
-J3vt0Hib+pgKk5TFFYl8Ays2h55anuB7Kuu8xa5oOrQcImIdt0Y+kuWgRJRDyWSFCL5pcXUNySCg
-5s/O+oJlEk/TAfVmguWeCYrhdL2bWmvyKtjDtqZQSO86EpIu3zI6pn8gJ3swAvQDT5CHWFoRBEKK
-kFq95DsM5MJ3fEk2hN16bUmFhZOnY2z7pO9a/LW2TAf3Ko7TG8ZyoFdpgPslUdL5vHgVblv8OIk4
-okBpIKw0IlZmUfwY4zKbMV7MEnoJsiOrQSzYKQSTcVwLAiGiOAlGN7zCHrTeSJtbbqRzseeOcItN
-S+55g2zxRS+v157rpBJ1V9DbBHJj+X/rN9wYTDG76RErzXzTX4OGnqqYhmIkG4aqrU5UwYZb7BT8
-DtNwxhO2ODPs8ojINtLUsmfvDoBdd7lSGxrnKTzfOAOinvtmQfe1Cplg7liuXH+ozBBAU7YUeJk4
-kCQa7DVH4XmiBgNPpWWEcwwDxBrKQvBkgoNJVWod6Ma1Gn6fh68Z2a+8AyPMIuZGYohh9Mx0Z4IB
-9S/yYWfBEf8VM7YLwQfy7BmOuH1rGXf31ZWCpg67cJcSTxcOUB4BRRsvrqOgvgJwsqPxDGP2lzUh
-xJI/Hp3gTWy2u2T58EESwOd7dQuK1SULaLMVUJ3IeW0wLMMGgI1xyGngmQ5QLAeriurbx9NLxf2l
-KloJ9ko5rbU9iYAcQgO8WQeQMSjBspg/X9wXffr0r1Kmkj6J8z938BFH+GCQs4iStNHq+n5Gcuv5
-/59CHeTelOPN29orvJwSiAeU2A8rcIgeVNmhtBV6+gGAJCWvd42EaynjQWYdoVhrvyJAcOhlHyXn
-e0lBBE/4U1GCi202GqYtcWFZVpfv4YERvaaS0YFZNmeRdDEi+1/jXd88Y/ljpuDz6whTGSs68LXY
-N3geschQWi1P7WLHmmT3SjeDLp/Ub8lGikwTrJC6N5qD0SQGINeePXF/71sXClRIcfvjxvLHSxbW
-iY5ac4eobNnwqnV63mQrqW33HuboYU1HiZSOcAb2XyuV9iukzjHzNJNIcQ21tOUFYnMjSKpcx0fI
-B03zSAf+VHtWgEh5KyeMSQBuIjZzP4p1dNxnscQ5HDxPz/YpocQ7A0G7vq/7YY+Y84nRMqrzXx4N
-RzFHRJjCvEqSKuW7HwIX5/JiXfVE5Yxi7OmCs3rWSRZm72XDG3O3ODLFejCkJma1bJlIJ2yMTao1
-wMlPuzbPjH4ACe7sdHn1oC8vzbCHDudXVhRl89f7+wgb/ZPhaA4TJovbhvRXB1NnxHe0kZO4ku+2
-5XWlZSx0HBtYSjsMJUSE4z2tZmiOwZwqRovOcICxAIMrp2tobUC6raaVop/Lq9tCl1+PcD5rTGk9
-VtNVwdYWWDocRFXPvmSFWllNoXwWvoSshNS36P5yNYtoQknlRKWnCjSfFOAbNf2vi5mmxd+n1m/G
-dZg/sRpnTMNHY/h9knPOYG4lnQAz9nR3bjMutN3/qv4A8vM7u90PZDYGlqPT6rT8Nn+sCZ4oyMHX
-1+PnVzXyaIerf8yhVyLTkv6FRo8PRriRCN8fsVwIz7yMm29eS7zihClA9b6f77lrIGpJGverWNkj
-3HgvVnVW37iFaY17HG9MTzIDUtiN9AqBMar1OLN3Mx1DRioNI5wAQqfU02b6//+2ldOnsT7J/BtT
-MnTva0EWgmL1jsdvCdmUxYdI/KkXPyuwAeX/Izh0ZPWCgJhaFtcPk748CJJ1NOQtvdhpW7+39Uo3
-c/hFfMIT7VkZnV/5Y7xQUGMw6QA6JiB+8a2nV+zqjnM3kMTB7TeAIo3+LNU3/GZK2/cux0o8cFY0
-2qxD/5ccjLhfVTHhsBMrMTV/cHjT+vOqhMatqXLo9qgKc5F0Htfhc+wMFwaCncCZ71tJB+3XZAIL
-tkZqfwFLYOnHxLujFPle5yIiVBm8B2zMDNULUB9u5TiVFMFicNClQLnXeUkhoPsHSw4zhJzZPKsr
-/8uPZ1kiLLkXVi1+a2Q/1td/RqeKCVoC+TX5513/Vr9dS50P3JxdKHoirhql4GNzvmhD2T7LVBoh
-rOLdSBTzYZ4zrALIs1I0TotUfLIZh3zTGI4A7moqErzfOBntKl4qCgX6P1jliFJMEArxso6acDQn
-MVnRi8CiAXnrlzj1PwMhtAYfrLuFEBePh0KGSEALAVa+d8t7zZ86/6or8GAQrI3TR6O3JUw6WKe+
-6t4zx2lSpGeesw1UbdR4i5PgnonQLXkcJGRS09JQ9e1omHY9AtZ0UpLOuybX5n14LMHGEAOH4sw1
-aa3o+nqdMv4maQ7pcLPckYzaXhvxXTp6iSYLJCtjikjb8yk88ACCi5VebmEDMFyG0Cr/T17MVdiI
-bicphyIVuei1Sk9ABdVNxLQFLTH9ud641y/6oqVKvkZagJs/0yuZDrLj3bIbwCNk51OuXgb7rZZG
-0S3Kfh8MCl25kXxETnfVPb43MIvD7q9PfI+3gdmtgQA0i0LJX0PCMt1AvSiBLgASe+Sf14L8EfEP
-XlruwRhvvPDp7/Ir3yEncB/t4lH4kXtBZmktkj2l8C5l1MndvT2Okr6+sW2cmpUWVqTe5/MIdxYM
-+5nViaLz6956tqsE6lTQeeYgoAvzYaBLIUxPnnuEhfxq5LNey9a+Mhp3BheDkDP+ZyEJUD9pMrD0
-rGlCkQhch97lJy4gvdnaGW8+/z27p8/i3zRpSXOAwifN2OgZvFyKxMwG7ZkB1Y5VKGKlhau0jlKB
-4FiIJshQQwXydM1iaFZCy5gI9igRnvXI/Qnv9F8r6b3azqNUqUxX995LoV3QHfZkotdlmPnBn6x8
-qLqp0SZiOX8YhnHIlldRdyISSUoQalGdU6pfDRNYr2fhx4BvbNPlQhDHDTRGf7nA1nV4mVE63Xbz
-s39gmgux0GTKPmZhc+Hz1V7iKTn9HvU4TvGRfoOFtekwzgiIY9hbvMMp/voMlmo1iTN+cmdkKati
-MAOj3SJOhSZ/0+iLMD2Zom9LCudO/jYy5G7p7tMkn763nI7gwsmHHdwv7A3BRo/WMv6qs65V60Nz
-6UjCtLaxE6qna8HWzgfjM9LvYAmFbahv6mW2WjyFGdPyJo3/kDNACBBs7fr41qfhT7NqMCEcd0rM
-acfPWqEEtEUdr3KAv/UE805mpVMsSwVYkobkHzzHbMXzl8rfndjgnfL7py4+pl85qD7SyYNbfR29
-8S+uh4jACxOLS6IQaKun0Oqq2/r3xDBQ2GXFhs0/lXMsLZddvKMvx/kLYQhLld1QZq0+L2082gn2
-uj8JPIKDQeYJM2nvvxcbArywDmKXk+i+47CexuRZ+G214e492hBVAuf9CSMFvLSUPbOStrmpeT31
-ZRU3xb0zoAIQIFPBV/0gRRyrs4ik5IvB6W6ivBLKQEqMB3xoYBvjxo4EbjgUdK/4fCuA/v3Xyf5J
-rk+q5WqUpPIP4qR3bMS3q86A940mWJWHwARLIJiEy1qkEPNlGpSiOZjdKt82rRvifuEcoCryvuXW
-pHZpLFb6QyvKADB3ZEclDf1jh/j2efwj1zKdUjJ6fGgDs3bSaTqlMEsB0NosXUvZ5MaP20gPPPPi
-M4+k8+HTqBpZ/faM7nEe3pSwmunpnvqNbGscNqpGByglZgWkgv2GD94B88LvCY+ZjzmjhlgUSnyZ
-8rkquRfAuXeCJeE/pfhhq9A9jwf4h8642YKTnmYLL+qOY7nteod8mZv58sf2xEwEBuv6BmKM2zyU
-kthP/c78KO2LbWmnJS44d7WM/8RRoQssW9L2kHMmVuuqiwyoA0+oOxlBAGUi6hmZhars4q8gAxFv
-o1IyiWOAZmG2DK5DTFeailkSEFsBo44cd8qAAoc4XoQkaK5jfSOEKRb8zutEvyJtnUnJHjWlPw/N
-R+3AjtAJWm9Hd+BDTJZMQQJs/zuUn6EW8U41hvU43cUHOv0brT5pWf19uTt4IAGTVhsrrSNqqI06
-KjIraRalFnOzpQ6D9ECwIu2tdxoMdF5i+ElSNaKDaTU24QnPPYhLk1ZJV0JcmMmWLO5x0xPHWB9e
-oRBg6XsgiQcdGtydP2ZuW0SkCiVN528lE+LPCcQeiIeWi7kKoZTzqI5Qq95ITCwmjj1Ysz2SR080
-bvtjo3/QNqIAqGKCFhuk1hAvKqgaYoQxXIrtJHjm7uCx1bwsBKYb3Pq1OCq2AQUYwIhJC+LHrxWD
-YT01YA/FlfxTrX40StcTD89UAm1x0a7Dyn3eGWGawyEWMvx3k/ykpGC8JNG4VyU2boW7Wxf4mO0D
-E1+T1Ux4h5nBzDX2guz6ZYMGuEg46I8ujF7SKzPqwDgMythXDYiaAFyhxr+VH/d8MtkczCys1xpX
-9g/c7/gHwe1RBft00mcsia+kJcHSLN5bKEURLJKgf5J5XFk+HlkeYZk25SQamrnniKqcJ+r4nAmX
-8q//rOyWlIGlftu90bqX0itOUFvsYFbTz8PrnZlP9CxPVfqblVGDAyNBQPmnv6BigdppoYutuy7w
-zv8cN5vrh36+Z/6LD9iD5ZkH/vIGYj43WI5E5ClRzrSwLqzGjfwChclu1EDaSBShE/g2qIAXI2Iq
-cY4ZwHDWalMGhCmJUipk9OU2GldSIQWGYm8prs5YMZyp0wIw5JG+5xhoIzN86Np0NwOFjVLQIiKn
-QYO0MFlvKBk5xnye0jNIcanI0r6jsqm7HIYwxHZxqfaBMaEAcVpQ4x84gAAex/TLKrLT97n7VZO0
-vRmuIGAhIDeAoDjuBoCXQtT0zhjLkA7QVLG1fyZKBngY6rkthETTHNMfqHf6/t4tPwoFvZZZ++TW
-Gza2Djd79UqJhO5L+PnHp4g9hcPONsrzIEOxU6MvosQWDeJng6/9svNlz42pVUVHsEClRYsflJNn
-oyWAq+tB3KyOn9epi366qNxncazasAC4M2cql5A2DT1k3RvuqY54bGKqFjKrRRPTG3TFUbo216sH
-KC0mdVy6KO2+FYV0JMHiTikBunMC1P1asMn0QX4/JWctGlYXJdm4415p8wPFe9uRsTQXIobhWru2
-KM6KAb2luLkMpQevSnlVRbCAYj3+VgUZ7D7VAxb7EWG2NFz7UQdCeDjMOlg2d2br7jm1IYud71qJ
-YV89j25jCO4d1nGlQqJhqrR/QqInCgj/FileyBkuy1REOt2x1tySwAEZLpqHrtcsV1177n6US/Ms
-ZvSuNRCGWBqvyVtYjUbBmZ1TT9JFEH0IGrU1Rh4oKS0wIbN9/c5hdkIdDNQebdI+aYl5fa+5QKfk
-JnxriVj7B85wwrwhwKJ6LC+3ci6pfwLsSE4p5LS2NfV209dYP7wC2HXBqHhsk6gVHs5sczkia57S
-NoSLUbgz7EB97UDPoZX9qGGhXEEIbHLV3oKd/ya3h1M0p37Z40xE+pR7j01aBAL7E0PSdRXauAJP
-uhZbh9etIaMl9gHjat1r06N2z6ASFls78vA2hD7q9pPZlfVfJkvskv66x9iYJacVVUIKzdGRUk6V
-dTolmC9Ga3b3Nwx6fY4UB+LyLky1tCkTmVPs49jMDWajSBWqh5cbD9VIZpi82EllyzN9d828PRUQ
-7AJ1Ei5IZaqWjVjokysSx+vVu5f0OYNJkkMY1umL6xjR22tads27dFF5BCUz4rHXjEggKp1mUzrT
-b0YPL71HRFRnMcN6f7CDknHKzCL65nru6w9mx2410LhD1aIUbKljdyfA2YJC/UHnGYCW5hyNsVHv
-01vAmhc8cbqL2zRlezfL9QogK2y/cS8qOCZpuy1J/SoWJuJxrmD2yU/4U/iAOCE/kJRYvuVtuRw5
-Y4/X29mZ4CsmJZxpqYE/jXbMp6fVzE+PGxvhCgk4NsGKnDEqTM6keZuacECT4HgRQWPa+UkqYpxn
-ibtNrP2NdHX5IfQxx1YHUMWdvMXix+jjD5oRJM0xnVBpXW5SKQroPgFi3KYqV9alFvNRDzBNIrT1
-k3Tz7XPJXQWwEgM6treI7/FORRVOgFRtVeEXNtZvATAUzD9sEYQNZ1TO64SS9HGsp/RuKoanbyxH
-0Y8pKssfLaLUKJ6OKB3nm/RunwLT6uKP6ape2805Eg/fFR3/FJt2mvkGI/HFmxjeI037qk2+9Aby
-qZxWesgmzs6bMryzUfC6dtSU4KYlj8WuOKhXNqn8Q6zbrNgGIF+V478AP+z32I2unv+kmbZjd1jI
-eXnnBPliqQbSAE+u9+VRjbkuhqvSWJbah6UKJLZe9+OAQ+vu3YvF29Kc9r5y+elqtOUe8lqC3oUE
-lU2v9m4UGsf0+FxpWPI9cKqAp7z/P4J6UpPExCfAj9cHx+XiE3NCrUhxNXvzT5l+ai8KldCFrsmv
-cH8WDLeBZQBW+mmAg1rMOJfX83f+1dgPtKGWKtHuAYTkfzmcqkqs8AySx6QhQxAPsTvdMjLHRtC5
-7N2jZOpOk3GfOTn9SwhQ6LWIvBBXq41GZlEcfvFbLtUG2w1th3dYBqF74fMokKrPGqsF55pP7zmk
-uEV1aoYoc9vN4OMGS3yjcPPdVDZuu8cn80r00cBN343DDkGXbGQMSFNpW2HIdNZB12+plHm6r8Jl
-+v/okNYiJ+VMWo4OPN+nVvOZDzva/w9OFHyqh5fHCl+VXs9Nvxr7Q+oc67lNZSxABIGGgKOY7bOx
-QBtGaL9o9QoMOpc6x88c8rq2SXOmCU91shgk6dFTI0kXekV8EdYhnnbrS1+inkEt1nTzERkil3/v
-RE7Sbls+DNg+FleVRq2B65jgKl3okDBwxlJQTKePScQQW1JfSjaVRxsYo5y7qsy+7TJmL7U35KSk
-n9ny1425CIQtB7+JDRamLUi25sn/ey3UI+TJcdnrOo0K2/XOby+4PF6HVVreYOSkH0yh969m6hCZ
-FzgcR4i2BpDarxKOS19m99JYkV0RsPxBbxt26NEIMMSJODtijT0KodG/lCMovobUyebAJWhqDEC/
-xANqdrAUeIpQmPWFNSwDdj/WBITYiZOct6NFSwRO3vBkVaAUsL4XyJWHXTx78V8L/CRaJO2KGaoe
-TtnzNjlfUU2Cg0PXt3jmYhCa/C7BQhre/T5pqfuDLdhG5dOEbKPEe/vBRmyMOsyMpYZj7piDtPdM
-nWgngF+CnS2yj08A/qjBrv92FOItnL0QKPdgMwe7vRHD3drnACRjBvYf3cNzkLnx82PotFxjXCnr
-9vv8zh65Q0854nW0WvNYOQOkI1gS8f+n+THlGsGgz5S1aL/bW6CX2mp/aiPxnJAuVfMs7H+NWr7K
-N5kmLmnjEgSWJlCurg9z6xdZGZBuUVKAvw01Ii0MFKIELwFnU7ojnVUfW2kdPM2Bnt7WnfXS1LtW
-YDcIEyDRtQ+KtIeWpxUfcXnsDnsX8bUDqUumbatvts89z+w7Hbfh3XNdSH/F9UUuvPJgLrvVzyOE
-FwZSg5Ey3DUBTDitMrqtm78RVvog4SfBBB5i+BydLhAmp0X5NCRrXZOB2J/ck+aWHHDEOF/A9df8
-vA5aONOHSkbVrcSRqTaEdi29SARgHmRFyPg9gpFpwCXroaD9pH6VE1MRE35f7+LSqy1EMGMBRkrI
-CAyPQMOvW5g40aj+TlyhqJHLaXH0bvouVar9dK7sI662f+FcGM6TY9qfxwXr60jo8a/aEEgx7H8t
-jmfXNcgHNQKDTZSRMsl79vy95jx/5436QcuQs/qilqY9XbF94t4pcbViKH4iUJeqNm6c3jh904o8
-EG9qnX45sqfqP/wXpwghi6zK6g2od+D/HXXp7H2x6xjuvKbcbb1314eWY9zHYkqN7x2CBYwmeT10
-WPqqdLy3Cy+0LHGm0L8B7gNT+mQOsHgdH5k5aBncNYDrRaiW2lgrHDP78co5YHNRgoH+nliBqnwO
-4O2QwpTgOLFQGKo66Tc9p9/k/y5lTchByeAJT2rDIu4Lv7UxGO+iiTfqMQO05zVKORTI8+geRXGZ
-0vwpncbI6/c5twCh/N3PW9CsrR2VDC1PZkll24k994qBk1SM1DoRsTmiWsSo8YGWav060dv3i5QT
-UJPmSKPZXTtfdSAqzM6mTUthb6DeUTM55Y5D/p1Zu1aP8/KtEuLpQTqsQTOgwSJeJG13Vr+RPPN4
-BKYcc66tAZXMykVmP5LKOXo3gduY5foHXsdK+F33DEdA9iixzvvqZFogpyUgor04aHCj460Jifh3
-8SMsdo6vjh6fIjgp0H4z0ks68V8tXhssx1IrRek8CcOhcMlFwkHblJO3KjdsxUA4cu4h0IoIuiB+
-jPGR/KM7fZ0mdNKO6b7okl8vdtq1DPrV4ltBeh0J0ZjWVWktRk1avhZllzt2pV4esejnmN2Oynf3
-aqwHNyOptYG9yHuOE+BMsPnfokYHde6s4gpvli8vvfumGokOzqdQPIhsyEOoMM2/CQ/3YP/31QMO
-fpafw/xBh+kFgmmDAn5R+CnoqroAqZ5Fws+PE52gP3yW5pkvLMRNCrVWpZ9DgdA1ECmImlg9W3ik
-mAoQuB4/hFD+NQG8iNcun6c9THnRyAhCdrOoOUh/zKOcRPJj/rFrjui9pnq2jdAFnqFolE+9kAG0
-MOZdHjiiri6iVvPjh1sy/KqQ45Iwhus54y/JduABSqG/IUiw3za/iZwUDibT3qqJXv4lQWtEhb5J
-tfwioc1DK3CWlUscGJu=
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Mime/ContentEncoder/QpContentEncoder.php';
+require_once 'Swift/InputByteStream.php';
+require_once 'Swift/OutputByteStream.php';
+require_once 'Swift/CharacterStream.php';
+
+class Swift_StreamCollector implements Yay_Action
+{
+    public $content = '';
+    public function &invoke(Yay_Invocation $inv) {
+        $args = $inv->getArguments();
+        $this->content .= current($args);
+    }
+    public function describeTo(Yay_Description $description)
+    {
+        $description->appendText(' gathers input;');
+    }
+}
+
+class Swift_Mime_ContentEncoder_QpContentEncoderTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testNameIsQuotedPrintable()
+    {
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder(
+            $this->_createCharacterStream(true)
+            );
+        $this->assertEqual('quoted-printable', $encoder->getName());
+    }
+
+    /* -- RFC 2045, 6.7 --
+    (1)   (General 8bit representation) Any octet, except a CR or
+                    LF that is part of a CRLF line break of the canonical
+                    (standard) form of the data being encoded, may be
+                    represented by an "=" followed by a two digit
+                    hexadecimal representation of the octet's value.  The
+                    digits of the hexadecimal alphabet, for this purpose,
+                    are "0123456789ABCDEF".  Uppercase letters must be
+                    used; lowercase letters are not allowed.  Thus, for
+                    example, the decimal value 12 (US-ASCII form feed) can
+                    be represented by "=0C", and the decimal value 61 (US-
+                    ASCII EQUAL SIGN) can be represented by "=3D".  This
+                    rule must be followed except when the following rules
+                    allow an alternative encoding.
+                    */
+
+    public function testPermittedCharactersAreNotEncoded()
+    {
+        /* -- RFC 2045, 6.7 --
+        (2)   (Literal representation) Octets with decimal values of
+                    33 through 60 inclusive, and 62 through 126, inclusive,
+                    MAY be represented as the US-ASCII characters which
+                    correspond to those octets (EXCLAMATION POINT through
+                    LESS THAN, and GREATER THAN through TILDE,
+                    respectively).
+                    */
+
+        foreach (array_merge(range(33, 60), range(62, 126)) as $ordinal) {
+            $char = chr($ordinal);
+
+            $os = $this->_createOutputByteStream(true);
+            $charStream = $this->_createCharacterStream();
+            $is = $this->_createInputByteStream();
+            $collection = new Swift_StreamCollector();
+
+            $this->_checking(Expectations::create()
+                -> one($charStream)->flushContents()
+                -> one($charStream)->importByteStream($os)
+                -> one($charStream)->readBytes(any()) -> returns(array($ordinal))
+                -> allowing($charStream)->readBytes(any()) -> returns(false)
+
+                -> allowing($is)->write(any(), optional()) -> will($collection)
+                -> ignoring($is)
+
+                -> ignoring($os)
+                );
+
+            $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+            $encoder->encodeByteStream($os, $is);
+            $this->assertIdenticalBinary($char, $collection->content);
+        }
+    }
+
+    public function testLinearWhiteSpaceAtLineEndingIsEncoded()
+    {
+        /* -- RFC 2045, 6.7 --
+        (3)   (White Space) Octets with values of 9 and 32 MAY be
+                    represented as US-ASCII TAB (HT) and SPACE characters,
+                    respectively, but MUST NOT be so represented at the end
+                    of an encoded line.  Any TAB (HT) or SPACE characters
+                    on an encoded line MUST thus be followed on that line
+                    by a printable character.  In particular, an "=" at the
+                    end of an encoded line, indicating a soft line break
+                    (see rule #5) may follow one or more TAB (HT) or SPACE
+                    characters.  It follows that an octet with decimal
+                    value 9 or 32 appearing at the end of an encoded line
+                    must be represented according to Rule #1.  This rule is
+                    necessary because some MTAs (Message Transport Agents,
+                    programs which transport messages from one user to
+                    another, or perform a portion of such transfers) are
+                    known to pad lines of text with SPACEs, and others are
+                    known to remove "white space" characters from the end
+                    of a line.  Therefore, when decoding a Quoted-Printable
+                    body, any trailing white space on a line must be
+                    deleted, as it will necessarily have been added by
+                    intermediate transport agents.
+                    */
+
+        $HT = chr(0x09); //9
+        $SPACE = chr(0x20); //32
+
+        //HT
+        $os = $this->_createOutputByteStream(true);
+        $charStream = $this->_createCharacterStream();
+        $is = $this->_createInputByteStream();
+        $collection = new Swift_StreamCollector();
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->flushContents()
+            -> one($charStream)->importByteStream($os)
+            -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x09))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x09))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0D))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0A))
+            -> one($charStream)->readBytes(any()) -> returns(array(ord('b')))
+            -> allowing($charStream)->readBytes(any()) -> returns(false)
+
+            -> allowing($is)->write(any(), optional()) -> will($collection)
+            -> ignoring($is)
+
+            -> ignoring($os)
+            );
+
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+        $encoder->encodeByteStream($os, $is);
+
+        $this->assertEqual("a\t=09\r\nb", $collection->content);
+
+        //SPACE
+        $os = $this->_createOutputByteStream(true);
+        $charStream = $this->_createCharacterStream();
+        $is = $this->_createInputByteStream();
+        $collection = new Swift_StreamCollector();
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->flushContents()
+            -> one($charStream)->importByteStream($os)
+            -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x20))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x20))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0D))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0A))
+            -> one($charStream)->readBytes(any()) -> returns(array(ord('b')))
+            -> allowing($charStream)->readBytes(any()) -> returns(false)
+
+            -> allowing($is)->write(any(), optional()) -> will($collection)
+            -> ignoring($is)
+
+            -> ignoring($os)
+            );
+
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+        $encoder->encodeByteStream($os, $is);
+
+        $this->assertEqual("a =20\r\nb", $collection->content);
+    }
+
+    public function testCRLFIsLeftAlone()
+    {
+        /*
+        (4)   (Line Breaks) A line break in a text body, represented
+                    as a CRLF sequence in the text canonical form, must be
+                    represented by a (RFC 822) line break, which is also a
+                    CRLF sequence, in the Quoted-Printable encoding.  Since
+                    the canonical representation of media types other than
+                    text do not generally include the representation of
+                    line breaks as CRLF sequences, no hard line breaks
+                    (i.e. line breaks that are intended to be meaningful
+                    and to be displayed to the user) can occur in the
+                    quoted-printable encoding of such types.  Sequences
+                    like "=0D", "=0A", "=0A=0D" and "=0D=0A" will routinely
+                    appear in non-text data represented in quoted-
+                    printable, of course.
+
+                    Note that many implementations may elect to encode the
+                    local representation of various content types directly
+                    rather than converting to canonical form first,
+                    encoding, and then converting back to local
+                    representation.  In particular, this may apply to plain
+                    text material on systems that use newline conventions
+                    other than a CRLF terminator sequence.  Such an
+                    implementation optimization is permissible, but only
+                    when the combined canonicalization-encoding step is
+                    equivalent to performing the three steps separately.
+                    */
+
+        $os = $this->_createOutputByteStream(true);
+        $charStream = $this->_createCharacterStream();
+        $is = $this->_createInputByteStream();
+        $collection = new Swift_StreamCollector();
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->flushContents()
+            -> one($charStream)->importByteStream($os)
+            -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0D))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0A))
+            -> one($charStream)->readBytes(any()) -> returns(array(ord('b')))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0D))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0A))
+            -> one($charStream)->readBytes(any()) -> returns(array(ord('c')))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0D))
+            -> one($charStream)->readBytes(any()) -> returns(array(0x0A))
+            -> allowing($charStream)->readBytes(any()) -> returns(false)
+
+            -> allowing($is)->write(any(), optional()) -> will($collection)
+            -> ignoring($is)
+
+            -> ignoring($os)
+            );
+
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+        $encoder->encodeByteStream($os, $is);
+        $this->assertEqual("a\r\nb\r\nc\r\n", $collection->content);
+    }
+
+    public function testLinesLongerThan76CharactersAreSoftBroken()
+    {
+        /*
+        (5)   (Soft Line Breaks) The Quoted-Printable encoding
+                    REQUIRES that encoded lines be no more than 76
+                    characters long.  If longer lines are to be encoded
+                    with the Quoted-Printable encoding, "soft" line breaks
+                    must be used.  An equal sign as the last character on a
+                    encoded line indicates such a non-significant ("soft")
+                    line break in the encoded text.
+                    */
+
+        $os = $this->_createOutputByteStream(true);
+        $charStream = $this->_createCharacterStream();
+        $is = $this->_createInputByteStream();
+        $collection = new Swift_StreamCollector();
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->flushContents()
+            -> one($charStream)->importByteStream($os)
+
+            -> allowing($is)->write(any(), optional()) -> will($collection)
+            -> ignoring($is)
+
+            -> ignoring($os)
+            );
+
+        for ($seq = 0; $seq <= 140; ++$seq) {
+            $this->_checking(Expectations::create()
+                -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
+                );
+        }
+        $this->_checking(Expectations::create()
+            -> allowing($charStream)->readBytes(any()) -> returns(false)
+            );
+
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+        $encoder->encodeByteStream($os, $is);
+        $this->assertEqual(str_repeat('a', 75) . "=\r\n" . str_repeat('a', 66), $collection->content);
+    }
+
+    public function testMaxLineLengthCanBeSpecified()
+    {
+        $os = $this->_createOutputByteStream(true);
+        $charStream = $this->_createCharacterStream();
+        $is = $this->_createInputByteStream();
+        $collection = new Swift_StreamCollector();
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->flushContents()
+            -> one($charStream)->importByteStream($os)
+
+            -> allowing($is)->write(any(), optional()) -> will($collection)
+            -> ignoring($is)
+
+            -> ignoring($os)
+            );
+
+
+        for ($seq = 0; $seq <= 100; ++$seq) {
+            $this->_checking(Expectations::create()
+                -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
+                );
+        }
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->readBytes(any()) -> returns(false)
+            );
+
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+        $encoder->encodeByteStream($os, $is, 0, 54);
+        $this->assertEqual(str_repeat('a', 53) . "=\r\n" . str_repeat('a', 48), $collection->content);
+    }
+
+    public function testBytesBelowPermittedRangeAreEncoded()
+    {
+        /*
+        According to Rule (1 & 2)
+        */
+
+        foreach (range(0, 32) as $ordinal) {
+            $char = chr($ordinal);
+
+            $os = $this->_createOutputByteStream(true);
+            $charStream = $this->_createCharacterStream();
+            $is = $this->_createInputByteStream();
+            $collection = new Swift_StreamCollector();
+
+            $this->_checking(Expectations::create()
+                -> one($charStream)->flushContents()
+                -> one($charStream)->importByteStream($os)
+
+                -> one($charStream)->readBytes(any()) -> returns(array($ordinal))
+                -> allowing($charStream)->readBytes(any()) -> returns(false)
+
+                -> allowing($is)->write(any(), optional()) -> will($collection)
+                -> ignoring($is)
+
+                -> ignoring($os)
+                );
+
+            $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+            $encoder->encodeByteStream($os, $is);
+            $this->assertEqual(sprintf('=%02X', $ordinal), $collection->content);
+        }
+    }
+
+    public function testDecimalByte61IsEncoded()
+    {
+        /*
+        According to Rule (1 & 2)
+        */
+
+        $char = chr(61);
+
+        $os = $this->_createOutputByteStream(true);
+        $charStream = $this->_createCharacterStream();
+        $is = $this->_createInputByteStream();
+        $collection = new Swift_StreamCollector();
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->flushContents()
+            -> one($charStream)->importByteStream($os)
+
+            -> one($charStream)->readBytes(any()) -> returns(array(61))
+            -> allowing($charStream)->readBytes(any()) -> returns(false)
+
+            -> allowing($is)->write(any(), optional()) -> will($collection)
+            -> ignoring($is)
+
+            -> ignoring($os)
+            );
+
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+        $encoder->encodeByteStream($os, $is);
+        $this->assertEqual(sprintf('=%02X', 61), $collection->content);
+    }
+
+    public function testBytesAbovePermittedRangeAreEncoded()
+    {
+        /*
+        According to Rule (1 & 2)
+        */
+
+        foreach (range(127, 255) as $ordinal) {
+            $char = chr($ordinal);
+
+            $os = $this->_createOutputByteStream(true);
+            $charStream = $this->_createCharacterStream();
+            $is = $this->_createInputByteStream();
+            $collection = new Swift_StreamCollector();
+
+            $this->_checking(Expectations::create()
+                -> one($charStream)->flushContents()
+                -> one($charStream)->importByteStream($os)
+
+                -> one($charStream)->readBytes(any()) -> returns(array($ordinal))
+                -> allowing($charStream)->readBytes(any()) -> returns(false)
+
+                -> allowing($is)->write(any(), optional()) -> will($collection)
+                -> ignoring($is)
+
+                -> ignoring($os)
+                );
+
+            $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+            $encoder->encodeByteStream($os, $is);
+            $this->assertEqual(sprintf('=%02X', $ordinal), $collection->content);
+        }
+    }
+
+    public function testFirstLineLengthCanBeDifferent()
+    {
+        $os = $this->_createOutputByteStream(true);
+        $charStream = $this->_createCharacterStream();
+        $is = $this->_createInputByteStream();
+        $collection = new Swift_StreamCollector();
+
+        $this->_checking(Expectations::create()
+            -> one($charStream)->flushContents()
+            -> one($charStream)->importByteStream($os)
+
+            -> allowing($is)->write(any(), optional()) -> will($collection)
+            -> ignoring($is)
+
+            -> ignoring($os)
+            );
+
+        for ($seq = 0; $seq <= 140; ++$seq) {
+            $this->_checking(Expectations::create()
+                -> one($charStream)->readBytes(any()) -> returns(array(ord('a')))
+                );
+        }
+        $this->_checking(Expectations::create()
+            -> one($charStream)->readBytes(any()) -> returns(false)
+            );
+
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($charStream);
+        $encoder->encodeByteStream($os, $is, 22);
+        $this->assertEqual(
+            str_repeat('a', 53) . "=\r\n" . str_repeat('a', 75) . "=\r\n" . str_repeat('a', 13),
+            $collection->content
+            );
+    }
+
+    public function testObserverInterfaceCanChangeCharset()
+    {
+        $stream = $this->_createCharacterStream();
+        $this->_checking(Expectations::create()
+            -> one($stream)->setCharacterSet('windows-1252')
+            -> ignoring($stream)
+            );
+        $encoder = new Swift_Mime_ContentEncoder_QpContentEncoder($stream);
+        $encoder->charsetChanged('windows-1252');
+    }
+
+    // -- Creation Methods
+
+    private function _createCharacterStream($stub = false)
+    {
+        return $stub
+            ? $this->_stub('Swift_CharacterStream')
+            : $this->_mock('Swift_CharacterStream')
+            ;
+    }
+
+    private function _createEncoder($charStream)
+    {
+        return new Swift_Mime_HeaderEncoder_QpHeaderEncoder($charStream);
+    }
+
+    private function _createOutputByteStream($stub = false)
+    {
+        return $stub
+            ? $this->_stub('Swift_OutputByteStream')
+            : $this->_mock('Swift_OutputByteStream')
+            ;
+    }
+
+    private function _createInputByteStream($stub = false)
+    {
+        return $stub
+            ? $this->_stub('Swift_InputByteStream')
+            : $this->_mock('Swift_InputByteStream')
+            ;
+    }
+}

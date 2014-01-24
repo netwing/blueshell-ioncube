@@ -1,68 +1,175 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Encoder/Base64Encoder.php';
+
+class Swift_Encoder_Base64EncoderTest extends UnitTestCase
+{
+    private $_encoder;
+
+    public function setUp()
+    {
+        $this->_encoder = new Swift_Encoder_Base64Encoder();
+    }
+
+    /*
+    There's really no point in testing the entire base64 encoding to the
+    level QP encoding has been tested.  base64_encode() has been in PHP for
+    years.
+    */
+
+    public function testInputOutputRatioIs3to4Bytes()
+    {
+        /*
+        RFC 2045, 6.8
+
+         The encoding process represents 24-bit groups of input bits as output
+         strings of 4 encoded characters.  Proceeding from left to right, a
+         24-bit input group is formed by concatenating 3 8bit input groups.
+         These 24 bits are then treated as 4 concatenated 6-bit groups, each
+         of which is translated into a single digit in the base64 alphabet.
+         */
+
+        $this->assertEqual(
+            'MTIz', $this->_encoder->encodeString('123'),
+            '%s: 3 bytes of input should yield 4 bytes of output'
+            );
+        $this->assertEqual(
+            'MTIzNDU2', $this->_encoder->encodeString('123456'),
+            '%s: 6 bytes in input should yield 8 bytes of output'
+            );
+        $this->assertEqual(
+            'MTIzNDU2Nzg5', $this->_encoder->encodeString('123456789'),
+            '%s: 9 bytes in input should yield 12 bytes of output'
+            );
+    }
+
+    public function testPadLength()
+    {
+        /*
+        RFC 2045, 6.8
+
+       Special processing is performed if fewer than 24 bits are available
+       at the end of the data being encoded.  A full encoding quantum is
+       always completed at the end of a body.  When fewer than 24 input bits
+       are available in an input group, zero bits are added (on the right)
+       to form an integral number of 6-bit groups.  Padding at the end of
+       the data is performed using the "=" character.  Since all base64
+       input is an integral number of octets, only the following cases can
+       arise: (1) the final quantum of encoding input is an integral
+       multiple of 24 bits; here, the final unit of encoded output will be
+       an integral multiple of 4 characters with no "=" padding, (2) the
+       final quantum of encoding input is exactly 8 bits; here, the final
+       unit of encoded output will be two characters followed by two "="
+       padding characters, or (3) the final quantum of encoding input is
+       exactly 16 bits; here, the final unit of encoded output will be three
+       characters followed by one "=" padding character.
+       */
+
+        for ($i = 0; $i < 30; ++$i) {
+            $input = pack('C', rand(0, 255));
+            $this->assertPattern(
+                '~^[a-zA-Z0-9/\+]{2}==$~', $this->_encoder->encodeString($input),
+                '%s: A single byte should have 2 bytes of padding'
+                );
+        }
+
+        for ($i = 0; $i < 30; ++$i) {
+            $input = pack('C*', rand(0, 255), rand(0, 255));
+            $this->assertPattern(
+                '~^[a-zA-Z0-9/\+]{3}=$~', $this->_encoder->encodeString($input),
+                '%s: Two bytes should have 1 byte of padding'
+                );
+        }
+
+        for ($i = 0; $i < 30; ++$i) {
+            $input  = pack('C*', rand(0, 255), rand(0, 255), rand(0, 255));
+            $this->assertPattern(
+                '~^[a-zA-Z0-9/\+]{4}$~', $this->_encoder->encodeString($input),
+                '%s: Three bytes should have no padding'
+                );
+        }
+    }
+
+    public function testMaximumLineLengthIs76Characters()
+    {
+        /*
+         The encoded output stream must be represented in lines of no more
+         than 76 characters each.  All line breaks or other characters not
+         found in Table 1 must be ignored by decoding software.
+         */
+
+        $input =
+        'abcdefghijklmnopqrstuvwxyz' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+        '1234567890' .
+        'abcdefghijklmnopqrstuvwxyz' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+        '1234567890' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        $output =
+        'YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXpBQk' .          //38
+        'NERUZHSElKS0xNTk9QUVJTVFVWV1hZWjEyMzQ1' . "\r\n" . //76 *
+        'Njc4OTBhYmNkZWZnaGlqa2xtbm9wcXJzdHV2d3' .          //38
+        'h5ekFCQ0RFRkdISUpLTE1OT1BRUlNUVVZXWFla' . "\r\n" . //76 *
+        'MTIzNDU2Nzg5MEFCQ0RFRkdISUpLTE1OT1BRUl' .          //38
+        'NUVVZXWFla';                                       //48
+
+        $this->assertEqual(
+            $output, $this->_encoder->encodeString($input),
+            '%s: Lines should be no more than 76 characters'
+            );
+    }
+
+    public function testMaximumLineLengthCanBeSpecified()
+    {
+        $input =
+        'abcdefghijklmnopqrstuvwxyz' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+        '1234567890' .
+        'abcdefghijklmnopqrstuvwxyz' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+        '1234567890' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        $output =
+        'YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXpBQk' .          //38
+        'NERUZHSElKS0' . "\r\n" .                           //50 *
+        'xNTk9QUVJTVFVWV1hZWjEyMzQ1Njc4OTBhYmNk' .          //38
+        'ZWZnaGlqa2xt' . "\r\n" .                           //50 *
+        'bm9wcXJzdHV2d3h5ekFCQ0RFRkdISUpLTE1OT1' .          //38
+        'BRUlNUVVZXWF' . "\r\n" .                           //50 *
+        'laMTIzNDU2Nzg5MEFCQ0RFRkdISUpLTE1OT1BR' .          //38
+        'UlNUVVZXWFla';                                     //50 *
+
+        $this->assertEqual(
+            $output, $this->_encoder->encodeString($input, 0, 50),
+            '%s: Lines should be no more than 100 characters'
+            );
+    }
+
+    public function testFirstLineLengthCanBeDifferent()
+    {
+        $input =
+        'abcdefghijklmnopqrstuvwxyz' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+        '1234567890' .
+        'abcdefghijklmnopqrstuvwxyz' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ' .
+        '1234567890' .
+        'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+        $output =
+        'YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXpBQk' .          //38
+        'NERUZHSElKS0xNTk9QU' . "\r\n" .                    //57 *
+        'VJTVFVWV1hZWjEyMzQ1Njc4OTBhYmNkZWZnaGl' .          //38
+        'qa2xtbm9wcXJzdHV2d3h5ekFCQ0RFRkdISUpLT' . "\r\n" . //76 *
+        'E1OT1BRUlNUVVZXWFlaMTIzNDU2Nzg5MEFCQ0R' .          //38
+        'FRkdISUpLTE1OT1BRUlNUVVZXWFla';                    //67
+
+        $this->assertEqual(
+            $output, $this->_encoder->encodeString($input, 19),
+            '%s: First line offset is 19 so first line should be 57 chars long'
+            );
+    }
+}

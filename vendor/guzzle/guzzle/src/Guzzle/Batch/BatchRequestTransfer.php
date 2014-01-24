@@ -1,43 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/iShq6Mu1DsUwqwOd340piSnht/sdsm7E50eukrt8V8uxWFaYMF0ogSLGaDyBSXXRm2x+28
-ahj78CIVyHkTtwUfdqCmlYcI8By3eRXuvR12DoQ0UNENK7j2r8zhkyai2/gknfrDEnC6JFnLkW63
-mbRcr56PWOYFCKOMNAiZd53Y99+XSc1iaNJer+AytZjPtWGKEnsS/muQVyvxsbxcsxSe3Cr+QAbi
-OvPCoMVmwcEGCPl3g2JfWAzHAE4xzt2gh9fl143SQNGbPF7gZOZdf3bt11hOwNI+6l/AQSi4Qkvq
-siKppU4NcqFYUQPjfujELeQcjB3h6Ya2zte+K7gSCh2fLrSv5Y/07rgWxdmd0289f9DAjKWRC7/B
-Z6sH+WzJGrszwJI5sn9/5/tXUPsQ6SLTUTIvxWAZDAMCb8PhjThvG9h3q9L2UuBAXqEH0gv1Ytzn
-NXKniR/95Sfrsx77+DLLUdHxzq9SLWK+0JJ+o0yiMwbM5tBNCOX70RCfaf+IMKHbnNUOefJURqnI
-y7fLyve4000Z/RQn+i5zO41E00Bhd/XWzvWdZuuVVNkFuI0UaY/ZvcRBf04dvSCaqmEIdov3ci9U
-GXrxbWSxWDsHMyJ6gL01awS2oGvL/n5p7Q5Oo+NgwsAtCiYjSP66ZCtQcEam2Sa+8eDHp3+M3XWU
-ApGhWvnnl5bam+hDS1nkoccLoAzt+63VMF9YqPKuzzvKbhkRCeM0Z0/GxvOzmtEV75hi/kxmO2cw
-KfvYmixaR6U1Z/LXjWF/dcVh8v/68fY5q27JmtxKkz0DhWhUkGsb03qEb0yT7vWojeFHTNZJO0oO
-gqWnRh1wtFu9zcNmPxghTBlQubEkc3uq1fXHdR7FvDQocVYcU4mA76HMtEYC2jO693ij7jRUzAj2
-9YGf8zINdsv8O0uj4+Q8d5bDVPs6tIIh6Mw5qq7OSHq3y5Kbukk+ThVS+eTVXBmfhc1PqbZQ+dpl
-+a2GdoK0QXXkmi54EEF/L8nqhdsQK/kL2tPqcxMWT2/Ddqurp5enLpO2GYzCude4VqZ7tBoWdbsd
-/H8dYbNg7b4srnzRgX0kdBqYlUTC/aztTLk0t7OrmGl+W5Nx4mdrTgh6SOH9IIQrET2EHUbduN01
-a9GxVAEtmCWtBgOo0S5/cB+0CpKbGEd8yiQMs2S6pptj18emX/CdQ6hKEHTbu35VupKeoPrsaMAo
-G0QzNHr/JD2dqcscSQCJCGj55ZxfGN5Pix2MUwt5bxB5MuewERYdoZDJrfTNBNqEgho/lsRTfSuz
-RD7kVAmCEiB5kRDWZXacrUfJhPGGmXwqBkQwmDym6F+Xr5kO7+qV6qe/FUOVYm8a17BS89uPZy10
-IGvaTJu50sMhLUgm/B0w9YUKad+lfv2IvArSUlzHpPv098pSPuZBO4QfsT1ZYU7gFh2Dc26Ywu9r
-1o3vMsVMtgCiN3SeeKUaoCcVHIUgZKiwgWPjAJPKNP6XbavRWevGDmclfHjSuXIM3ReouyENPKRB
-rvtGR3xhaj+TqviaLq+soxywPi5n17CkGcGXR3QvMymkOpMNAErI6anI6VqkJd0WLpu/3K4692rk
-oB824y5KBsHeSwq7qC0C9zQdWFUw4jAOElwZjKaOkMNZrrtdOXi/gy6MYpdiN1atJz/CNjr900Z0
-1Dr7/s2VRjgCPPv/P7i13F1PBZeWNpxvcuJTqJDUW3zvaeUt5lQ2coyY/Qs8kPZecyWBf45MZeJx
-UyAeO5hqtXcIT9XgkVRIYRn5z9Qcj8ZDfMd/9ZGZDLTIpBM5GWxwRV9PGLcBlcaD9wVBogwJSh3P
-G2zvjP2deNy8763ksOAqVSGYAFWr/+R40eH79i/xAvjtU55SVwGeWnsXf9O6kQymkivVpmH2/QiS
-twkpGzbeKHtTDTAf5tZU7oEdLQ6X/1K9wmua18HerjLAPxdbIdtT67MJOskqZ1bbr2VnsuCwaJq4
-T45k7edTTVH8Y7YpVUco1QWuwBx3Cpw507kcJ5RRjKqPFjqbb5wF2vB5ck995FLZn3tPKPLjvdK8
-sOrAQUKAzy9LwIszGSnuWdN/VYNIHRk4CSXk4zTpRvtMLfod6VbnYE2D2Oh3eL4mDUHfXpH58PAJ
-rJrzlUZ9Am8+X1qf/i1hG6UOf3qTs8be5VJk2uE2z2mmdW3KWmOLrlZUxDG/egzjhalCwcV2cAdS
-XL00PCDlCazE/f6FjZYhHPwkSZK9TfF16XxB+Prol/+ieQgjgRZsZuOOzInpfqe62PfB8qaELIYU
-uJRH7bl/3/w3C4iRuCxT2+nBzM/o4/gDkPAOwo7bWeRlnKlF3DSD1WcQI0Cbkk1qdeysbvfxJZDj
-an1cAg0cBRykZat8A1VF97m58oC2Weahg8c0zeP4IIuDDuOu7CmXVqOTX0iNR6tcb6osatiPTLky
-CjSzP40bm267XP+T7yttyDVnEV/JkXWcyU2jdLirgvBXLSCH5dCkx36rlwdUfAt6P5JWv0Di9tEF
-Xe6pmj2a2xTrkGiXamMuBZgUZY/G6nPRxqxkHYL/twePRghI39MEDS2ioKOOG9idXmDM8tuwYItE
-UlwXZ0HMauyPjPra1VYH2bKt85ctG0Qgv3EHgeqeR3+1bESUw30LHqNXlr2g8dIA2nLEzS+0ajlj
-gKSx7vSq+db9+0Uj83NzduE8RzEnIG4II+U+VLiP1eCu3kVf0/SzegqxYOecyxfEOCpr4ZUjTL6I
-0j+Y02zHJo3UVZv2HXRxfXAq2U9s5j0/uHcBK80XpleVzIPgsAsU4BCCWQpFjjyUygET9MB9rjiK
-Oeczaj4wrieJUu24M6F/9sy4JySAlYz3X0g7n8WAndhXIPQCpGDD1bxlOO0o8NVjhPQV65bNd0oh
-5sOIqdvZRUee13U6anhm8fYr29gddM5eMRyY2t1Ge9qIVJ2jkgYzq1STYFi1gv9lu41onE9zzJPY
-uIR3d0Te3A6yYfRvVu1liA6WhS9hE/WBw0M+dDx/Isq=
+<?php
+
+namespace Guzzle\Batch;
+
+use Guzzle\Batch\BatchTransferInterface;
+use Guzzle\Batch\BatchDivisorInterface;
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Http\Message\RequestInterface;
+
+/**
+ * Batch transfer strategy used to efficiently transfer a batch of requests.
+ * This class is to be used with {@see Guzzle\Batch\BatchInterface}
+ */
+class BatchRequestTransfer implements BatchTransferInterface, BatchDivisorInterface
+{
+    /** @var int Size of each command batch */
+    protected $batchSize;
+
+    /**
+     * Constructor used to specify how large each batch should be
+     *
+     * @param int $batchSize Size of each batch
+     */
+    public function __construct($batchSize = 50)
+    {
+        $this->batchSize = $batchSize;
+    }
+
+    /**
+     * Creates batches of requests by grouping requests by their associated curl multi object.
+     * {@inheritdoc}
+     */
+    public function createBatches(\SplQueue $queue)
+    {
+        // Create batches by client objects
+        $groups = new \SplObjectStorage();
+        foreach ($queue as $item) {
+            if (!$item instanceof RequestInterface) {
+                throw new InvalidArgumentException('All items must implement Guzzle\Http\Message\RequestInterface');
+            }
+            $client = $item->getClient();
+            if (!$groups->contains($client)) {
+                $groups->attach($client, array($item));
+            } else {
+                $current = $groups[$client];
+                $current[] = $item;
+                $groups[$client] = $current;
+            }
+        }
+
+        $batches = array();
+        foreach ($groups as $batch) {
+            $batches = array_merge($batches, array_chunk($groups[$batch], $this->batchSize));
+        }
+
+        return $batches;
+    }
+
+    public function transfer(array $batch)
+    {
+        if ($batch) {
+            reset($batch)->getClient()->send($batch);
+        }
+    }
+}

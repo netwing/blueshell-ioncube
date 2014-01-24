@@ -1,155 +1,394 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CAccessControlFilter class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CAccessControlFilter performs authorization checks for the specified actions.
+ *
+ * By enabling this filter, controller actions can be checked for access permissions.
+ * When the user is not denied by one of the security rules or allowed by a rule explicitly,
+ * he will be able to access the action.
+ *
+ * For maximum security consider adding
+ * <pre>array('deny')</pre>
+ * as a last rule in a list so all actions will be denied by default.
+ *
+ * To specify the access rules, set the {@link setRules rules} property, which should
+ * be an array of the rules. Each rule is specified as an array of the following structure:
+ * <pre>
+ * array(
+ *   'allow',  // or 'deny'
+ * 
+ *   // optional, list of action IDs (case insensitive) that this rule applies to
+ *   // if not specified or empty, rule applies to all actions
+ *   'actions'=>array('edit', 'delete'),
+ * 
+ *   // optional, list of controller IDs (case insensitive) that this rule applies to
+ *   'controllers'=>array('post', 'admin/user'),
+ * 
+ *   // optional, list of usernames (case insensitive) that this rule applies to
+ *   // Use * to represent all users, ? guest users, and @ authenticated users
+ *   'users'=>array('thomas', 'kevin'),
+ * 
+ *   // optional, list of roles (case sensitive!) that this rule applies to.
+ *   'roles'=>array('admin', 'editor'),
+ * 
+ *   // since version 1.1.11 you can pass parameters for RBAC bizRules
+ *   'roles'=>array('updateTopic'=>array('topic'=>$topic))
+ * 
+ *   // optional, list of IP address/patterns that this rule applies to
+ *   // e.g. 127.0.0.1, 127.0.0.*
+ *   'ips'=>array('127.0.0.1'),
+ * 
+ *   // optional, list of request types (case insensitive) that this rule applies to
+ *   'verbs'=>array('GET', 'POST'),
+ * 
+ *   // optional, a PHP expression whose value indicates whether this rule applies
+ *   // The PHP expression will be evaluated using {@link evaluateExpression}.
+ *   // A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+ *   // please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+ *   'expression'=>'!$user->isGuest && $user->level==2',
+ * 
+ *   // optional, the customized error message to be displayed
+ *   // This option is available since version 1.1.1.
+ *   'message'=>'Access Denied.',
+ * 
+ *   // optional, the denied method callback name, that will be called once the
+ *   // access is denied, instead of showing the customized error message. It can also be
+ *   // a valid PHP callback, including class method name (array(ClassName/Object, MethodName)),
+ *   // or anonymous function (PHP 5.3.0+). The function/method signature should be as follows:
+ *   // function foo($user, $rule) { ... }
+ *   // where $user is the current application user object and $rule is this access rule.
+ *   // This option is available since version 1.1.11.
+ *   'deniedCallback'=>'redirectToDeniedMethod',
+  * )
+ * </pre>
+ *
+ * @property array $rules List of access rules.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.auth
+ * @since 1.0
+ */
+class CAccessControlFilter extends CFilter
+{
+	/**
+	 * @var string the error message to be displayed when authorization fails.
+	 * This property can be overridden by individual access rule via {@link CAccessRule::message}.
+	 * If this property is not set, a default error message will be displayed.
+	 * @since 1.1.1
+	 */
+	public $message;
+
+	private $_rules=array();
+
+	/**
+	 * @return array list of access rules.
+	 */
+	public function getRules()
+	{
+		return $this->_rules;
+	}
+
+	/**
+	 * @param array $rules list of access rules.
+	 */
+	public function setRules($rules)
+	{
+		foreach($rules as $rule)
+		{
+			if(is_array($rule) && isset($rule[0]))
+			{
+				$r=new CAccessRule;
+				$r->allow=$rule[0]==='allow';
+				foreach(array_slice($rule,1) as $name=>$value)
+				{
+					if($name==='expression' || $name==='roles' || $name==='message' || $name==='deniedCallback')
+						$r->$name=$value;
+					else
+						$r->$name=array_map('strtolower',$value);
+				}
+				$this->_rules[]=$r;
+			}
+		}
+	}
+
+	/**
+	 * Performs the pre-action filtering.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
+	 * @return boolean whether the filtering process should continue and the action
+	 * should be executed.
+	 */
+	protected function preFilter($filterChain)
+	{
+		$app=Yii::app();
+		$request=$app->getRequest();
+		$user=$app->getUser();
+		$verb=$request->getRequestType();
+		$ip=$request->getUserHostAddress();
+
+		foreach($this->getRules() as $rule)
+		{
+			if(($allow=$rule->isUserAllowed($user,$filterChain->controller,$filterChain->action,$ip,$verb))>0) // allowed
+				break;
+			elseif($allow<0) // denied
+			{
+				if(isset($rule->deniedCallback))
+					call_user_func($rule->deniedCallback, $rule);
+				else
+					$this->accessDenied($user,$this->resolveErrorMessage($rule));
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Resolves the error message to be displayed.
+	 * This method will check {@link message} and {@link CAccessRule::message} to see
+	 * what error message should be displayed.
+	 * @param CAccessRule $rule the access rule
+	 * @return string the error message
+	 * @since 1.1.1
+	 */
+	protected function resolveErrorMessage($rule)
+	{
+		if($rule->message!==null)
+			return $rule->message;
+		elseif($this->message!==null)
+			return $this->message;
+		else
+			return Yii::t('yii','You are not authorized to perform this action.');
+	}
+
+	/**
+	 * Denies the access of the user.
+	 * This method is invoked when access check fails.
+	 * @param IWebUser $user the current user
+	 * @param string $message the error message to be displayed
+	 */
+	protected function accessDenied($user,$message)
+	{
+		if($user->getIsGuest())
+			$user->loginRequired();
+		else
+			throw new CHttpException(403,$message);
+	}
+}
+
+
+/**
+ * CAccessRule represents an access rule that is managed by {@link CAccessControlFilter}.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.auth
+ * @since 1.0
+ */
+class CAccessRule extends CComponent
+{
+	/**
+	 * @var boolean whether this is an 'allow' rule or 'deny' rule.
+	 */
+	public $allow;
+	/**
+	 * @var array list of action IDs that this rule applies to. The comparison is case-insensitive.
+	 * If no actions are specified, rule applies to all actions.
+	 */
+	public $actions;
+	/**
+	 * @var array list of controller IDs that this rule applies to. The comparison is case-insensitive.
+	 */
+	public $controllers;
+	/**
+	 * @var array list of user names that this rule applies to. The comparison is case-insensitive.
+	 * If no user names are specified, rule applies to all users.
+	 */
+	public $users;
+	/**
+	 * @var array list of roles this rule applies to. For each role, the current user's
+	 * {@link CWebUser::checkAccess} method will be invoked. If one of the invocations
+	 * returns true, the rule will be applied.
+	 * Note, you should mainly use roles in an "allow" rule because by definition,
+	 * a role represents a permission collection.
+	 * @see CAuthManager
+	 */
+	public $roles;
+	/**
+	 * @var array IP patterns.
+	 */
+	public $ips;
+	/**
+	 * @var array list of request types (e.g. GET, POST) that this rule applies to.
+	 */
+	public $verbs;
+	/**
+	 * @var string a PHP expression whose value indicates whether this rule should be applied.
+	 * In this expression, you can use <code>$user</code> which refers to <code>Yii::app()->user</code>.
+	 * The expression can also be a valid PHP callback,
+	 * including class method name (array(ClassName/Object, MethodName)),
+	 * or anonymous function (PHP 5.3.0+). The function/method signature should be as follows:
+	 * <pre>
+	 * function foo($user, $rule) { ... }
+	 * </pre>
+	 * where $user is the current application user object and $rule is this access rule.
+	 *
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $expression;
+	/**
+	 * @var string the error message to be displayed when authorization is denied by this rule.
+	 * If not set, a default error message will be displayed.
+	 * @since 1.1.1
+	 */
+	public $message;
+	/**
+	 * @var mixed the denied method callback that will be called once the
+	 * access is denied. It replaces the behavior that shows an error message.
+	 * It can be a valid PHP callback including class method name (array(ClassName/Object, MethodName)),
+	 * or anonymous function (PHP 5.3.0+). For more information, on different options, check
+	 * @link http://www.php.net/manual/en/language.pseudo-types.php#language.types.callback
+	 * The function/method signature should be as follows:
+	 * <pre>
+	 * function foo($rule) { ... }
+	 * </pre>
+	 * where $rule is this access rule.
+	 *
+	 * @since 1.1.11
+	 */
+	public $deniedCallback;
+
+
+	/**
+	 * Checks whether the Web user is allowed to perform the specified action.
+	 * @param CWebUser $user the user object
+	 * @param CController $controller the controller currently being executed
+	 * @param CAction $action the action to be performed
+	 * @param string $ip the request IP address
+	 * @param string $verb the request verb (GET, POST, etc.)
+	 * @return integer 1 if the user is allowed, -1 if the user is denied, 0 if the rule does not apply to the user
+	 */
+	public function isUserAllowed($user,$controller,$action,$ip,$verb)
+	{
+		if($this->isActionMatched($action)
+			&& $this->isUserMatched($user)
+			&& $this->isRoleMatched($user)
+			&& $this->isIpMatched($ip)
+			&& $this->isVerbMatched($verb)
+			&& $this->isControllerMatched($controller)
+			&& $this->isExpressionMatched($user))
+			return $this->allow ? 1 : -1;
+		else
+			return 0;
+	}
+
+	/**
+	 * @param CAction $action the action
+	 * @return boolean whether the rule applies to the action
+	 */
+	protected function isActionMatched($action)
+	{
+		return empty($this->actions) || in_array(strtolower($action->getId()),$this->actions);
+	}
+
+	/**
+	 * @param CController $controller the controller
+	 * @return boolean whether the rule applies to the controller
+	 */
+	protected function isControllerMatched($controller)
+	{
+		return empty($this->controllers) || in_array(strtolower($controller->getUniqueId()),$this->controllers);
+	}
+
+	/**
+	 * @param IWebUser $user the user
+	 * @return boolean whether the rule applies to the user
+	 */
+	protected function isUserMatched($user)
+	{
+		if(empty($this->users))
+			return true;
+		foreach($this->users as $u)
+		{
+			if($u==='*')
+				return true;
+			elseif($u==='?' && $user->getIsGuest())
+				return true;
+			elseif($u==='@' && !$user->getIsGuest())
+				return true;
+			elseif(!strcasecmp($u,$user->getName()))
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @param IWebUser $user the user object
+	 * @return boolean whether the rule applies to the role
+	 */
+	protected function isRoleMatched($user)
+	{
+		if(empty($this->roles))
+			return true;
+		foreach($this->roles as $key=>$role)
+		{
+			if(is_numeric($key))
+			{
+				if($user->checkAccess($role))
+					return true;
+			}
+			else
+			{
+				if($user->checkAccess($key,$role))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * @param string $ip the IP address
+	 * @return boolean whether the rule applies to the IP address
+	 */
+	protected function isIpMatched($ip)
+	{
+		if(empty($this->ips))
+			return true;
+		foreach($this->ips as $rule)
+		{
+			if($rule==='*' || $rule===$ip || (($pos=strpos($rule,'*'))!==false && !strncmp($ip,$rule,$pos)))
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * @param string $verb the request method
+	 * @return boolean whether the rule applies to the request
+	 */
+	protected function isVerbMatched($verb)
+	{
+		return empty($this->verbs) || in_array(strtolower($verb),$this->verbs);
+	}
+
+	/**
+	 * @param IWebUser $user the user
+	 * @return boolean the expression value. True if the expression is not specified.
+	 */
+	protected function isExpressionMatched($user)
+	{
+		if($this->expression===null)
+			return true;
+		else
+			return $this->evaluateExpression($this->expression, array('user'=>$user));
+	}
+}

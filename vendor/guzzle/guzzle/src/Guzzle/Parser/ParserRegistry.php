@@ -1,37 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-0UmkpG6a0vVvu7lmZhIqeKDri0==
+<?php
+
+namespace Guzzle\Parser;
+
+/**
+ * Registry of parsers used by the application
+ */
+class ParserRegistry
+{
+    /** @var ParserRegistry Singleton instance */
+    protected static $instance;
+
+    /** @var array Array of parser instances */
+    protected $instances = array();
+
+    /** @var array Mapping of parser name to default class */
+    protected $mapping = array(
+        'message'      => 'Guzzle\\Parser\\Message\\MessageParser',
+        'cookie'       => 'Guzzle\\Parser\\Cookie\\CookieParser',
+        'url'          => 'Guzzle\\Parser\\Url\\UrlParser',
+        'uri_template' => 'Guzzle\\Parser\\UriTemplate\\UriTemplate',
+    );
+
+    /**
+     * @return self
+     * @codeCoverageIgnore
+     */
+    public static function getInstance()
+    {
+        if (!self::$instance) {
+            self::$instance = new static;
+        }
+
+        return self::$instance;
+    }
+
+    public function __construct()
+    {
+        // Use the PECL URI template parser if available
+        if (extension_loaded('uri_template')) {
+            $this->mapping['uri_template'] = 'Guzzle\\Parser\\UriTemplate\\PeclUriTemplate';
+        }
+    }
+
+    /**
+     * Get a parser by name from an instance
+     *
+     * @param string $name Name of the parser to retrieve
+     *
+     * @return mixed|null
+     */
+    public function getParser($name)
+    {
+        if (!isset($this->instances[$name])) {
+            if (!isset($this->mapping[$name])) {
+                return null;
+            }
+            $class = $this->mapping[$name];
+            $this->instances[$name] = new $class();
+        }
+
+        return $this->instances[$name];
+    }
+
+    /**
+     * Register a custom parser by name with the register
+     *
+     * @param string $name   Name or handle of the parser to register
+     * @param mixed  $parser Instantiated parser to register
+     */
+    public function registerParser($name, $parser)
+    {
+        $this->instances[$name] = $parser;
+    }
+}

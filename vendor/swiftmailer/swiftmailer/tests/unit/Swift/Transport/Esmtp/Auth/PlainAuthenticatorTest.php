@@ -1,49 +1,71 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-kw4fUB8I
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Transport/SmtpAgent.php';
+require_once 'Swift/Transport/Esmtp/Auth/PlainAuthenticator.php';
+require_once 'Swift/TransportException.php';
+
+class Swift_Transport_Esmtp_Auth_PlainAuthenticatorTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    private $_agent;
+
+    public function setUp()
+    {
+        $this->_agent = $this->_mock('Swift_Transport_SmtpAgent');
+    }
+
+    public function testKeywordIsPlain()
+    {
+        /* -- RFC 4616, 1.
+        The name associated with this mechanism is "PLAIN".
+        */
+
+        $login = $this->_getAuthenticator();
+        $this->assertEqual('PLAIN', $login->getAuthKeyword());
+    }
+
+    public function testSuccessfulAuthentication()
+    {
+        /* -- RFC 4616, 2.
+        The client presents the authorization identity (identity to act as),
+        followed by a NUL (U+0000) character, followed by the authentication
+        identity (identity whose password will be used), followed by a NUL
+        (U+0000) character, followed by the clear-text password.
+        */
+
+        $plain = $this->_getAuthenticator();
+        $this->_checking(Expectations::create()
+            -> one($this->_agent)->executeCommand('AUTH PLAIN ' . base64_encode(
+                'jack' . chr(0) . 'jack' . chr(0) . 'pass'
+                ) . "\r\n", array(235))
+            );
+
+        $this->assertTrue($plain->authenticate($this->_agent, 'jack', 'pass'),
+            '%s: The buffer accepted all commands authentication should succeed'
+            );
+    }
+
+    public function testAuthenticationFailureSendRsetAndReturnFalse()
+    {
+        $plain = $this->_getAuthenticator();
+        $this->_checking(Expectations::create()
+            -> one($this->_agent)->executeCommand('AUTH PLAIN ' . base64_encode(
+                'jack' . chr(0) . 'jack' . chr(0) . 'pass'
+                ) . "\r\n", array(235)) -> throws(new Swift_TransportException(""))
+
+            -> one($this->_agent)->executeCommand("RSET\r\n", array(250))
+            );
+
+        $this->assertFalse($plain->authenticate($this->_agent, 'jack', 'pass'),
+            '%s: Authentication fails, so RSET should be sent'
+            );
+    }
+
+    // -- Private helpers
+
+    private function _getAuthenticator()
+    {
+        return new Swift_Transport_Esmtp_Auth_PlainAuthenticator();
+    }
+}

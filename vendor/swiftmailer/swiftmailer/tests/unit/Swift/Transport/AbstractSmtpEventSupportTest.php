@@ -1,229 +1,378 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-SRaOEbaVEH9CBXDab0nh1G9M95XigD6F/Km=
+<?php
+
+require_once 'Swift/Transport/AbstractSmtpTest.php';
+require_once 'Swift/Events/EventDispatcher.php';
+require_once 'Swift/Events/EventListener.php';
+require_once 'Swift/Events/EventObject.php';
+require_once 'Swift/Events/EventListener.php';
+
+abstract class Swift_Transport_AbstractSmtpEventSupportTest
+    extends Swift_Transport_AbstractSmtpTest
+{
+    public function testRegisterPluginLoadsPluginInEventDispatcher()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $listener = $this->_mock('Swift_Events_EventListener');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> one($dispatcher)->bindEventListener($listener)
+            );
+        $smtp->registerPlugin($listener);
+    }
+
+    public function testSendingDispatchesBeforeSendEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $message = $this->_createMessage();
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('chris@swiftmailer.org'=>null))
+            -> allowing($message)->getTo() -> returns(array('mark@swiftmailer.org'=>'Mark'))
+            -> ignoring($message)
+            -> one($dispatcher)->createSendEvent(optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'beforeSendPerformed')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $this->assertEqual(1, $smtp->send($message));
+    }
+
+    public function testSendingDispatchesSendEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $message = $this->_createMessage();
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('chris@swiftmailer.org'=>null))
+            -> allowing($message)->getTo() -> returns(array('mark@swiftmailer.org'=>'Mark'))
+            -> ignoring($message)
+            -> one($dispatcher)->createSendEvent(optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'sendPerformed')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $this->assertEqual(1, $smtp->send($message));
+    }
+
+    public function testSendEventCapturesFailures()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $message = $this->_createMessage();
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('chris@swiftmailer.org'=>null))
+            -> allowing($message)->getTo() -> returns(array('mark@swiftmailer.org'=>'Mark'))
+            -> ignoring($message)
+            -> one($buf)->write("MAIL FROM: <chris@swiftmailer.org>\r\n") -> returns(1)
+            -> one($buf)->readLine(1) -> returns("250 OK\r\n")
+            -> one($buf)->write("RCPT TO: <mark@swiftmailer.org>\r\n") -> returns(2)
+            -> one($buf)->readLine(2) -> returns("500 Not now\r\n")
+            -> allowing($dispatcher)->createSendEvent($smtp, optional()) -> returns($evt)
+            -> one($evt)->setFailedRecipients(array('mark@swiftmailer.org'))
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $this->assertEqual(0, $smtp->send($message));
+    }
+
+    public function testSendEventHasResultFailedIfAllFailures()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $message = $this->_createMessage();
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('chris@swiftmailer.org'=>null))
+            -> allowing($message)->getTo() -> returns(array('mark@swiftmailer.org'=>'Mark'))
+            -> ignoring($message)
+            -> one($buf)->write("MAIL FROM: <chris@swiftmailer.org>\r\n") -> returns(1)
+            -> one($buf)->readLine(1) -> returns("250 OK\r\n")
+            -> one($buf)->write("RCPT TO: <mark@swiftmailer.org>\r\n") -> returns(2)
+            -> one($buf)->readLine(2) -> returns("500 Not now\r\n")
+            -> allowing($dispatcher)->createSendEvent($smtp, optional()) -> returns($evt)
+            -> one($evt)->setResult(Swift_Events_SendEvent::RESULT_FAILED)
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $this->assertEqual(0, $smtp->send($message));
+    }
+
+    public function testSendEventHasResultTentativeIfSomeFailures()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $message = $this->_createMessage();
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('chris@swiftmailer.org'=>null))
+            -> allowing($message)->getTo() -> returns(array(
+                'mark@swiftmailer.org'=>'Mark', 'chris@site.tld'=>'Chris'
+                ))
+            -> ignoring($message)
+            -> one($buf)->write("MAIL FROM: <chris@swiftmailer.org>\r\n") -> returns(1)
+            -> one($buf)->readLine(1) -> returns("250 OK\r\n")
+            -> one($buf)->write("RCPT TO: <mark@swiftmailer.org>\r\n") -> returns(2)
+            -> one($buf)->readLine(2) -> returns("500 Not now\r\n")
+            -> allowing($dispatcher)->createSendEvent($smtp, optional()) -> returns($evt)
+            -> one($evt)->setResult(Swift_Events_SendEvent::RESULT_TENTATIVE)
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $this->assertEqual(1, $smtp->send($message));
+    }
+
+    public function testSendEventHasResultSuccessIfNoFailures()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $message = $this->_createMessage();
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('chris@swiftmailer.org'=>null))
+            -> allowing($message)->getTo() -> returns(array(
+                'mark@swiftmailer.org'=>'Mark', 'chris@site.tld'=>'Chris'
+                ))
+            -> ignoring($message)
+            -> allowing($dispatcher)->createSendEvent($smtp, optional()) -> returns($evt)
+            -> one($evt)->setResult(Swift_Events_SendEvent::RESULT_SUCCESS)
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $this->assertEqual(2, $smtp->send($message));
+    }
+
+    public function testCancellingEventBubbleBeforeSendStopsEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $message = $this->_createMessage();
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getFrom() -> returns(array('chris@swiftmailer.org'=>null))
+            -> allowing($message)->getTo() -> returns(array('mark@swiftmailer.org'=>'Mark'))
+            -> ignoring($message)
+            -> allowing($dispatcher)->createSendEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'beforeSendPerformed')
+            -> ignoring($dispatcher)
+            -> atLeast(1)->of($evt)->bubbleCancelled() -> returns(true)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $this->assertEqual(0, $smtp->send($message));
+    }
+
+    public function testStartingTransportDispatchesTransportChangeEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportChangeEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createTransportChangeEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'transportStarted')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+    }
+
+    public function testStartingTransportDispatchesBeforeTransportChangeEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportChangeEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createTransportChangeEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'beforeTransportStarted')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+    }
+
+    public function testCancellingBubbleBeforeTransportStartStopsEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportChangeEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createTransportChangeEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'beforeTransportStarted')
+            -> allowing($evt)->bubbleCancelled() -> returns(true)
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+
+        $this->assertFalse($smtp->isStarted(),
+            '%s: Transport should not be started since event bubble was cancelled'
+        );
+    }
+
+    public function testStoppingTransportDispatchesTransportChangeEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportChangeEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createTransportChangeEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'transportStopped')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $smtp->stop();
+    }
+
+    public function testStoppingTransportDispatchesBeforeTransportChangeEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportChangeEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createTransportChangeEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'beforeTransportStopped')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $smtp->stop();
+    }
+
+    public function testCancellingBubbleBeforeTransportStoppedStopsEvent()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportChangeEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $seq = $this->_sequence('stopping transport');
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createTransportChangeEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'beforeTransportStopped') -> inSequence($seq)
+            -> allowing($evt)->bubbleCancelled() -> inSequence($seq) -> returns(true)
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+        $smtp->stop();
+
+        $this->assertTrue($smtp->isStarted(),
+            '%s: Transport should not be stopped since event bubble was cancelled'
+        );
+    }
+
+    public function testResponseEventsAreGenerated()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_ResponseEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createResponseEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'responseReceived')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+    }
+
+    public function testCommandEventsAreGenerated()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_CommandEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> allowing($dispatcher)->createCommandEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'commandSent')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+    }
+
+    public function testExceptionsCauseExceptionEvents()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportExceptionEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> atLeast(1)->of($buf)->readLine(any()) -> returns("503 I'm sleepy, go away!\r\n")
+            -> allowing($dispatcher)->createTransportExceptionEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'exceptionThrown')
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        try {
+            $smtp->start();
+            $this->fail('TransportException should be thrown on invalid response');
+        } catch (Swift_TransportException $e) {
+        }
+    }
+
+    public function testExceptionBubblesCanBeCancelled()
+    {
+        $buf = $this->_getBuffer();
+        $dispatcher = $this->_createEventDispatcher(false);
+        $evt = $this->_mock('Swift_Events_TransportExceptionEvent');
+        $smtp = $this->_getTransport($buf, $dispatcher);
+        $this->_checking(Expectations::create()
+            -> atLeast(1)->of($buf)->readLine(any()) -> returns("503 I'm sleepy, go away!\r\n")
+            -> allowing($dispatcher)->createTransportExceptionEvent($smtp, optional()) -> returns($evt)
+            -> one($dispatcher)->dispatchEvent($evt, 'exceptionThrown')
+            -> atLeast(1)->of($evt)->bubbleCancelled() -> returns(true)
+            -> ignoring($dispatcher)
+            -> ignoring($evt)
+            );
+        $this->_finishBuffer($buf);
+        $smtp->start();
+    }
+
+    // -- Creation Methods
+
+    protected function _createEventDispatcher($stub = true)
+    {
+        return $stub
+            ? $this->_stub('Swift_Events_EventDispatcher')
+            : $this->_mock('Swift_Events_EventDispatcher')
+            ;
+    }
+}

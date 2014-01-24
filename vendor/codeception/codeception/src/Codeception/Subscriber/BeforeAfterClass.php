@@ -1,34 +1,42 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-GEuMekdlIGy=
+<?php
+namespace Codeception\Subscriber;
+
+use Codeception\Event\Suite;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class BeforeAfterClass implements EventSubscriberInterface {
+
+    public function setUpBeforeClass(Suite $e)
+    {
+        $this->processClassHooks($e->getSuite()->tests(), 'setUpBeforeClass');
+    }
+
+    public function tearDownAfterClass(Suite $e)
+    {
+        $this->processClassHooks($e->getSuite()->tests(), 'tearDownAfterClass');
+    }
+
+    protected function processClassHooks($tests, $method)
+    {
+        $processedClasses = array();
+        foreach ($tests as $test) {
+            $class = get_class($test);
+            if (in_array($class, $processedClasses)) {
+                continue;
+            }
+            if (is_callable(array($class, $method))) {
+                call_user_func(array($class, $method));
+            }
+        }
+    }
+
+    static function getSubscribedEvents()
+    {
+        return array(
+            'suite.before'	=> 'setUpBeforeClass',
+            'suite.after'	=> 'tearDownAfterClass'
+        );
+    }
+
+
+}

@@ -1,76 +1,144 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_ControlStructures_ForEachLoopDeclarationSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_ControlStructures_ForEachLoopDeclarationSniff.
+ *
+ * Verifies that there is a space between each condition of foreach loops.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_ControlStructures_ForEachLoopDeclarationSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_FOREACH);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $openingBracket = $phpcsFile->findNext(T_OPEN_PARENTHESIS, $stackPtr);
+        $closingBracket = $tokens[$openingBracket]['parenthesis_closer'];
+
+        if ($tokens[($openingBracket + 1)]['code'] === T_WHITESPACE) {
+            $error = 'Space found after opening bracket of FOREACH loop';
+            $phpcsFile->addError($error, $stackPtr, 'SpaceAfterOpen');
+        }
+
+        if ($tokens[($closingBracket - 1)]['code'] === T_WHITESPACE) {
+            $error = 'Space found before closing bracket of FOREACH loop';
+            $phpcsFile->addError($error, $stackPtr, 'SpaceBeforeClose');
+        }
+
+        $asToken = $phpcsFile->findNext(T_AS, $openingBracket);
+        $content = $tokens[$asToken]['content'];
+        if ($content !== strtolower($content)) {
+            $expected = strtolower($content);
+            $error    = 'AS keyword must be lowercase; expected "%s" but found "%s"';
+            $data     = array(
+                         $expected,
+                         $content,
+                        );
+            $phpcsFile->addError($error, $stackPtr, 'AsNotLower', $data);
+        }
+
+        $doubleArrow = $phpcsFile->findNext(T_DOUBLE_ARROW, $openingBracket, $closingBracket);
+
+        if ($doubleArrow !== false) {
+            if ($tokens[($doubleArrow - 1)]['code'] !== T_WHITESPACE) {
+                $error = 'Expected 1 space before "=>"; 0 found';
+                $phpcsFile->addError($error, $stackPtr, 'NoSpaceBeforeArrow');
+            } else {
+                if (strlen($tokens[($doubleArrow - 1)]['content']) !== 1) {
+                    $spaces = strlen($tokens[($doubleArrow - 1)]['content']);
+                    $error  = 'Expected 1 space before "=>"; %s found';
+                    $data   = array($spaces);
+                    $phpcsFile->addError($error, $stackPtr, 'SpacingBeforeArrow', $data);
+                }
+
+            }
+
+            if ($tokens[($doubleArrow + 1)]['code'] !== T_WHITESPACE) {
+                $error = 'Expected 1 space after "=>"; 0 found';
+                $phpcsFile->addError($error, $stackPtr, 'NoSpaceAfterArrow');
+            } else {
+                if (strlen($tokens[($doubleArrow + 1)]['content']) !== 1) {
+                    $spaces = strlen($tokens[($doubleArrow + 1)]['content']);
+                    $error  = 'Expected 1 space after "=>"; %s found';
+                    $data   = array($spaces);
+                    $phpcsFile->addError($error, $stackPtr, 'SpacingAfterArrow', $data);
+                }
+
+            }
+
+        }//end if
+
+        if ($tokens[($asToken - 1)]['code'] !== T_WHITESPACE) {
+            $error = 'Expected 1 space before "as"; 0 found';
+            $phpcsFile->addError($error, $stackPtr, 'NoSpaceBeforeAs');
+        } else {
+            if (strlen($tokens[($asToken - 1)]['content']) !== 1) {
+                $spaces = strlen($tokens[($asToken - 1)]['content']);
+                $error  = 'Expected 1 space before "as"; %s found';
+                $data   = array($spaces);
+                $phpcsFile->addError($error, $stackPtr, 'SpacingBeforeAs', $data);
+            }
+        }
+
+        if ($tokens[($asToken + 1)]['code'] !== T_WHITESPACE) {
+            $error = 'Expected 1 space after "as"; 0 found';
+            $phpcsFile->addError($error, $stackPtr, 'NoSpaceAfterAs');
+        } else {
+            if (strlen($tokens[($asToken + 1)]['content']) !== 1) {
+                $spaces = strlen($tokens[($asToken + 1)]['content']);
+                $error  = 'Expected 1 space after "as"; %s found';
+                $data   = array($spaces);
+                $phpcsFile->addError($error, $stackPtr, 'SpacingAfterAs', $data);
+            }
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-KhIWqdtQUG==

@@ -1,52 +1,149 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-pJBirEFpWAd/XyvYxW==
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+class EventFiringWebDriverNavigation {
+
+  /**
+   * @var WebDriverNavigation
+   */
+  protected $navigator;
+
+  /**
+   * @var WebDriverDispatcher
+   */
+  protected $dispatcher;
+
+  /**
+   * @param WebDriverNavigation $navigator
+   * @param WebDriverDispatcher $dispatcher
+   */
+  public function __construct(WebDriverNavigation $navigator,
+                              WebDriverDispatcher $dispatcher) {
+    $this->navigator  = $navigator;
+    $this->dispatcher = $dispatcher;
+    return $this;
+  }
+
+  /**
+   * @return WebDriverDispatcher
+   */
+  public function getDispatcher() {
+    return $this->dispatcher;
+  }
+
+  /**
+   * @param $method
+   */
+  protected function dispatch($method) {
+    if (!$this->dispatcher) {
+      return;
+    }
+
+    $arguments = func_get_args();
+    unset($arguments[0]);
+    $this->dispatcher->dispatch($method, $arguments);
+  }
+
+  /**
+   * @return WebDriverNavigation
+   */
+  public function getNavigator() {
+    return $this->navigator;
+  }
+
+  /**
+   * @return $this
+   * @throws WebDriverException
+   */
+  public function back() {
+    $this->dispatch(
+      'beforeNavigateBack',
+      $this->getDispatcher()->getDefaultDriver()
+    );
+    try {
+      $this->navigator->back();
+    } catch (WebDriverException $exception) {
+      $this->dispatchOnException($exception);
+    }
+    $this->dispatch(
+      'afterNavigateBack',
+      $this->getDispatcher()->getDefaultDriver()
+    );
+    return $this;
+  }
+
+  /**
+   * @return $this
+   * @throws WebDriverException
+   */
+  public function forward() {
+    $this->dispatch(
+      'beforeNavigateForward',
+      $this->getDispatcher()->getDefaultDriver()
+    );
+    try {
+      $this->navigator->forward();
+    } catch (WebDriverException $exception) {
+      $this->dispatchOnException($exception);
+    }
+    $this->dispatch(
+      'afterNavigateForward',
+      $this->getDispatcher()->getDefaultDriver()
+    );
+    return $this;
+  }
+
+  /**
+   * @return $this
+   * @throws WebDriverException
+   */
+  public function refresh() {
+    try {
+      $this->navigator->refresh();
+      return $this;
+    } catch (WebDriverException $exception) {
+      $this->dispatchOnException($exception);
+    }
+  }
+
+  /**
+   * @param $url
+   * @return $this
+   * @throws WebDriverException
+   */
+  public function to($url) {
+    $this->dispatch(
+      'beforeNavigateTo',
+      $url,
+      $this->getDispatcher()->getDefaultDriver()
+    );
+    try {
+      $this->navigator->to($url);
+    } catch (WebDriverException $exception) {
+      $this->dispatchOnException($exception);
+    }
+    $this->dispatch(
+      'afterNavigateTo',
+      $url,
+      $this->getDispatcher()->getDefaultDriver()
+    );
+    return $this;
+  }
+
+  private function dispatchOnException($exception) {
+    $this->dispatch('onException', $exception);
+    throw $exception;
+  }
+}

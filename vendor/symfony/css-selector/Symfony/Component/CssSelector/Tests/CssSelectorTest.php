@@ -1,50 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Tests;
+
+use Symfony\Component\CssSelector\CssSelector;
+
+class CssSelectorTest extends \PHPUnit_Framework_TestCase
+{
+    public function testCssToXPath()
+    {
+        $this->assertEquals('descendant-or-self::*', CssSelector::toXPath(''));
+        $this->assertEquals('descendant-or-self::h1', CssSelector::toXPath('h1'));
+        $this->assertEquals("descendant-or-self::h1[@id = 'foo']", CssSelector::toXPath('h1#foo'));
+        $this->assertEquals("descendant-or-self::h1[@class and contains(concat(' ', normalize-space(@class), ' '), ' foo ')]", CssSelector::toXPath('h1.foo'));
+        $this->assertEquals('descendant-or-self::foo:h1', CssSelector::toXPath('foo|h1'));
+    }
+
+    /** @dataProvider getCssToXPathWithoutPrefixTestData */
+    public function testCssToXPathWithoutPrefix($css, $xpath)
+    {
+        $this->assertEquals($xpath, CssSelector::toXPath($css, ''), '->parse() parses an input string and returns a node');
+    }
+
+    public function testParseExceptions()
+    {
+        try {
+            CssSelector::toXPath('h1:');
+            $this->fail('->parse() throws an Exception if the css selector is not valid');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('\Symfony\Component\CssSelector\Exception\ParseException', $e, '->parse() throws an Exception if the css selector is not valid');
+            $this->assertEquals("Expected identifier, but <eof at 3> found.", $e->getMessage(), '->parse() throws an Exception if the css selector is not valid');
+        }
+    }
+
+    public function getCssToXPathWithoutPrefixTestData()
+    {
+        return array(
+            array('h1', "h1"),
+            array('foo|h1', "foo:h1"),
+            array('h1, h2, h3', "h1 | h2 | h3"),
+            array('h1:nth-child(3n+1)', "*/*[name() = 'h1' and (position() - 1 >= 0 and (position() - 1) mod 3 = 0)]"),
+            array('h1 > p', "h1/p"),
+            array('h1#foo', "h1[@id = 'foo']"),
+            array('h1.foo', "h1[@class and contains(concat(' ', normalize-space(@class), ' '), ' foo ')]"),
+            array('h1[class*="foo bar"]', "h1[@class and contains(@class, 'foo bar')]"),
+            array('h1[foo|class*="foo bar"]', "h1[@foo:class and contains(@foo:class, 'foo bar')]"),
+            array('h1[class]', "h1[@class]"),
+            array('h1 .foo', "h1/descendant-or-self::*/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' foo ')]"),
+            array('h1 #foo', "h1/descendant-or-self::*/*[@id = 'foo']"),
+            array('h1 [class*=foo]', "h1/descendant-or-self::*/*[@class and contains(@class, 'foo')]"),
+            array('div>.foo', "div/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' foo ')]"),
+            array('div > .foo', "div/*[@class and contains(concat(' ', normalize-space(@class), ' '), ' foo ')]"),
+        );
+    }
+}

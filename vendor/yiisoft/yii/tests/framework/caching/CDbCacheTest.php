@@ -1,121 +1,197 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+if(!defined('DBCACHE_TEST_DBFILE'))
+	define('DBCACHE_TEST_DBFILE',Yii::app()->getRuntimePath().'/CDbCacheTest_database.db');
+
+if(!defined('DBCACHE_TEST_DB'))
+	define('DBCACHE_TEST_DB','sqlite:'.DBCACHE_TEST_DBFILE);
+
+
+class CDbCacheTest extends CTestCase
+{
+	private $_config1=array(
+		'id'=>'testApp',
+		'components'=>array(
+			'cache'=>array(
+				'class'=>'CDbCache',
+			),
+		),
+	);
+	private $_config2=array(
+		'id'=>'testApp',
+		'components'=>array(
+			'db'=>array(
+				'connectionString'=>DBCACHE_TEST_DB,
+			),
+			'cache'=>array(
+				'class'=>'system.caching.CDbCache',
+				'connectionID'=>'db',
+			),
+		),
+	);
+
+	public function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+	}
+
+	public function testKeyPrefix()
+	{
+		$cache=new CDbCache;
+		$this->assertEquals($cache->keyPrefix,'');
+		$cache->keyPrefix='key';
+		$this->assertEquals($cache->keyPrefix,'key');
+
+		$app=new TestApplication($this->_config1);
+		$app->reset();
+		$this->assertTrue($app->cache instanceof CDbCache);
+		$this->assertEquals($app->cache->keyPrefix,$app->id);
+	}
+
+	public function testGetAndSet()
+	{
+		$app=new TestApplication($this->_config1);
+		$app->reset();
+		$cache=$app->cache;
+
+		$data=array('abc'=>1,2=>'def');
+		$key='data1';
+
+		$this->assertFalse($cache->get($key));
+		$cache->set($key,$data);
+		$this->assertTrue($cache->get($key)===$data);
+
+		$app2=new TestApplication($this->_config1);
+		$this->assertTrue($app2->cache->get($key)===$data);
+	}
+
+	public function testMGet()
+	{
+		$app=new TestApplication($this->_config1);
+		$app->reset();
+		$cache=$app->cache;
+
+		$key1='multidata1';
+		$data1='abc';
+		$key2='multidata2';
+		$data2=34;
+
+		$this->assertEquals($cache->mget(array($key1,$key2)), array($key1=>false,$key2=>false));
+		$cache->set($key1,$data1);
+		$cache->set($key2,$data2);
+		$this->assertEquals($cache->mget(array($key1,$key2)), array($key1=>$data1,$key2=>$data2));
+		$app2=new TestApplication($this->_config1);
+		$this->assertEquals($app2->cache->mget(array($key1,$key2)), array($key1=>$data1,$key2=>$data2));
+	}
+
+	public function testArrayAccess()
+	{
+		$app=new TestApplication($this->_config1);
+		$app->reset();
+		$cache=$app->cache;
+		$data=array('abc'=>1,2=>'def');
+		$key='data2';
+		$cache[$key]=$data;
+		$this->assertTrue($cache->get($key)===$data);
+		$this->assertTrue($cache[$key]===$data);
+		unset($cache[$key]);
+		$this->assertFalse($cache[$key]);
+	}
+
+	public function testExpire()
+	{
+		$app=new TestApplication($this->_config1);
+		$app->reset();
+		$cache=$app->cache;
+		$data=array('abc'=>1,2=>'def');
+		$key='data3';
+		$cache->set($key,$data,2);
+		$this->assertTrue($cache->get($key)===$data);
+		sleep(4);
+		$app2=new TestApplication($this->_config1);
+		$this->assertFalse($app2->cache->get($key));
+	}
+
+	public function testUseDbConnection()
+	{
+		@unlink(DBCACHE_TEST_DBFILE);
+		$app=new TestApplication($this->_config2);
+		$cache=$app->cache;
+
+		$data=array('abc'=>1,2=>'def');
+		$key='data4';
+		$this->assertFalse($cache->get($key));
+		$cache->set($key,$data);
+		$this->assertTrue($cache->get($key)===$data);
+
+		$app2=new TestApplication($this->_config2);
+		$this->assertTrue($app2->cache->get($key)===$data);
+	}
+
+	public function testDependency()
+	{
+		@unlink(DBCACHE_TEST_DBFILE);
+		$app=new TestApplication($this->_config2);
+		$cache=$app->cache;
+
+		$data=array('abc'=>1,2=>'def');
+		$key='data5';
+
+		$cache->set($key,$data,0,new CFileCacheDependency(__FILE__));
+		$this->assertTrue($cache->get($key)===$data);
+		$app=new TestApplication($this->_config2);
+		$this->assertTrue($app->cache->get($key)===$data);
+
+		$key2='data6';
+		$cache->set($key2,$data,0,new CFileCacheDependency(DBCACHE_TEST_DBFILE));
+		sleep(2); // sleep to ensure timestamp is changed for the db file
+		$cache->set('data7',$data);
+		$app=new TestApplication($this->_config2);
+		$this->assertFalse($app->cache->get($key2));
+	}
+
+	public function testAdd()
+	{
+		@unlink(DBCACHE_TEST_DBFILE);
+		$app=new TestApplication($this->_config2);
+		$cache=$app->cache;
+
+		$data=array('abc'=>1,2=>'def');
+		$key='data8';
+
+		$cache->set($key,$data);
+		$this->assertTrue($cache->set($key,$data));
+		$this->assertFalse($cache->add($key,$data));
+		$this->assertTrue($cache->add('data9',$data));
+	}
+
+	public function testDelete()
+	{
+		@unlink(DBCACHE_TEST_DBFILE);
+		$app=new TestApplication($this->_config2);
+		$cache=$app->cache;
+
+		$data=array('abc'=>1,2=>'def');
+		$key='data10';
+		$cache->set($key,$data);
+		$cache->delete($key);
+		$this->assertFalse($cache->get($key));
+	}
+
+	public function testFlush()
+	{
+		@unlink(DBCACHE_TEST_DBFILE);
+		$app=new TestApplication($this->_config2);
+		$cache=$app->cache;
+
+		$data=array('abc'=>1,2=>'def');
+		$key1='data11';
+		$key2='data12';
+		$cache->set($key1,$data);
+		$cache->set($key2,$data);
+		$cache->flush();
+		$this->assertFalse($cache->get($key1));
+		$this->assertFalse($cache->get($key2));
+	}
+}

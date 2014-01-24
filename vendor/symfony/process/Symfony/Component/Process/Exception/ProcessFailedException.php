@@ -1,29 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmWSZE/xv7J0bgePp1eZdTaHh6v+R6bfXfcidNynD1MeL16BHlGLqOC/nK7nuiOzVWA4Nx4+
-CDEAGcbyApCpQ5HYxuw6sHtiJ49ge5mhrO/0RQ9sh8sOzPQyySA2bT53/bJo9uJi0bs2WANQwjuC
-dViPNHvoBcw9CAohT4NzXGovKIRswi297jgAwZ6eBOHJ0orU6f3K31s+BAW7rRYVW4FbmAE7/zcI
-RT0ZbQbMQfG3SeI4GN9shr4euJltSAgiccy4GDnfTEXYpr2Zc7+Xj0oeAiZextuu4LDCw/po9vhJ
-0aCSV35Bvg0/c90gxTZTG7/IBTh+dkbnoSeAz1TO042dyBBuIKP21IZIwB3uU2xxSTgxG5jXcrY3
-OKs3vP8bQ2TQtA08vu2M1Rdw8sN9jZIT29uszmY3MNQ+/9IzhfToQvRGDUB9elDq9LCdSKl4Um7m
-1CNHWOlE2aaP+CyoCxhlJfa143hqWIcvErEMrw9QhFJZ26TvqA9qOp8XeceXmWph184ddArHUEr6
-Tv0wNt5EgB89NeJlacSa0iLMPWyAPBH4DfmEHmPPZbeSSFQPTHscFzQKo+kC9HGnZXPWTe+WDuhw
-URqGgW1/3XQWc18wit2e+4Q2/6Ydd2l/2B91bJ/Zh5z9Baya6u3W1qbOEyO931hUq16ANldZ6m6t
-B4E3hlvlgcldwX6D4Lrgu1yiMOf12hUSUSWZNnmMZf9ZCDxnMpsHc3XjiDV5s9SPozVx/WF+mpul
-Vy/5mKtR/zrk67CaIQXxmtnlUd17/jVzHbJdv3E5fMLbfZClaeqz8VHVPdvhEWJ8BtFZwG+L8KLD
-g9OaUYWSFrBvsp6EgLLbeqplcuxKTvSh+HRMExcKrKHBD7ctVVlU0ClHeDXKdF4fr0Un/WKgpTfL
-/F939aVa1Zz0Ve+CSn8eI54okW+GFG0XvpJxm1C++++MD+Cu2Ksi3OvG2ZxRrTFvhmCZPV+onIs/
-Vurh6YYIx7XFwnTuME66K4yqjydH8xX6rAwQ3MGeBebMVtoHgGzVYUwqEHIbCDw/tWrRYcSdK5mO
-LVAwfUCzxkUKkYsIl0fufDAkU69ozO3/IrmYRgm9KHk43KqfuxxFpGzrQVH32AQ21z0c7jk18YTk
-2EjAj5lFN0z+XygzStdYmN8XPKLR3J/TLpih4KXwMGPEuuDEstjdGjDtPcpBmbYmfWMtf6pb7mdL
-YGHbxYWExhx/1DvDBqdfsTJPxGC0nsZFJcaKJY5iduvW37AtiGros2f7Y2Qr9eAmLIv4SPQ8fV9H
-X9BICCYK5oLEHUy5RzL216UJHrAHqGOASDMC2Gfq83MmWglqW69T32SrhtIQ1I+aNCn0OXif/B8/
-3JiEWSoYxep3NQSXwyJj+LEXTYTwT3+RSJaHRVTrkHtNAb197J95mrlkSbvNUBpVnx1NhE21VmgP
-2opQpFzZV55lTkaeFIbjk93ZFUVMITcAlM2EWae27mZ/Pa3SDCFqishMKlyMRSlRBGGR96hjfVL0
-aWnPf0WJTsAacs2w6ptuboNMveif32wdgJfhxOmf8qw8ku1YtAH8x6SdSFsGS1FCyxG3BkzJi8iq
-NtsmJhm/OOPwNOJSjFbJnVLDGjyl2fBF427IRtsk1AV79jQNfdJhO1suy0AkGYWdU/QN183xZayH
-4e2fN+7d9QHCnL26wRT6dckFsnMn938ES/T7wM+nRD3OByYSAnaUSFv7XBd00BBNGcAzobW425Oz
-Iq8Kp/3Id1sqK4NGzbrfM3y0lfBQExOEWEtyMCCVhfHfJfqhGBQRSVBOV82bYaCphKRO4fh+/5Ra
-gqyWRkJxdYjOcRndChYZH2dCmurPRuG3y9CiC6xDgAM5Llr6iTyibGkyiS8N8oDFJrmAarhbzkqt
-DpVzIGQjQZI4rAyJQOITLsHwTN2ITHcMDtaThjnG7ey=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Process\Exception;
+
+use Symfony\Component\Process\Process;
+
+/**
+ * Exception for failed processes.
+ *
+ * @author Johannes M. Schmitt <schmittjoh@gmail.com>
+ */
+class ProcessFailedException extends RuntimeException
+{
+    private $process;
+
+    public function __construct(Process $process)
+    {
+        if ($process->isSuccessful()) {
+            throw new InvalidArgumentException('Expected a failed process, but the given process was successful.');
+        }
+
+        parent::__construct(
+            sprintf(
+                'The command "%s" failed.'."\nExit Code: %s(%s)\n\nOutput:\n================\n%s\n\nError Output:\n================\n%s",
+                $process->getCommandLine(),
+                $process->getExitCode(),
+                $process->getExitCodeText(),
+                $process->getOutput(),
+                $process->getErrorOutput()
+            )
+        );
+
+        $this->process = $process;
+    }
+
+    public function getProcess()
+    {
+        return $this->process;
+    }
+}

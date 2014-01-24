@@ -1,37 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once "../Matrix.php";
+
+/**
+ * Given n points (x0,y0)...(xn-1,yn-1), the following methid computes
+ * the polynomial factors of the n-1't degree polynomial passing through
+ * the n points.
+ *
+ * Example: Passing in three points (2,3) (1,4) and (3,7) will produce
+ * the results [2.5, -8.5, 10] which means that the points are on the
+ * curve y = 2.5x² - 8.5x + 10.
+ *
+ * @see http://geosoft.no/software/lagrange/LagrangeInterpolation.java.html
+ * @author Jacob Dreyer
+ * @author Paul Meagher (port to PHP and minor changes)
+ *
+ * @param x[] float
+ * @param y[] float
+ */
+class LagrangeInterpolation {
+
+	public function findPolynomialFactors($x, $y) {
+		$n = count($x);
+
+		$data = array();  // double[n][n];
+		$rhs  = array();  // double[n];
+
+		for ($i = 0; $i < $n; ++$i) {
+			$v = 1;
+			for ($j = 0; $j < $n; ++$j) {
+				$data[$i][$n-$j-1] = $v;
+				$v *= $x[$i];
+			}
+			$rhs[$i] = $y[$i];
+		}
+
+		// Solve m * s = b
+		$m = new Matrix($data);
+		$b = new Matrix($rhs, $n);
+
+		$s = $m->solve($b);
+
+		return $s->getRowPackedCopy();
+	}	//	function findPolynomialFactors()
+
+}	//	class LagrangeInterpolation
+
+
+$x = array(2.0, 1.0, 3.0);
+$y = array(3.0, 4.0, 7.0);
+
+$li = new LagrangeInterpolation;
+$f = $li->findPolynomialFactors($x, $y);
+
+
+for ($i = 0; $i < 3; ++$i) {
+	echo $f[$i]."<br />";
+}

@@ -1,56 +1,87 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: compatibility_test.php 1748 2008-04-14 01:50:41Z lastcraft $
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../compatibility.php');
+
+class ComparisonClass { }
+class ComparisonSubclass extends ComparisonClass { }
+interface ComparisonInterface { }
+class ComparisonClassWithInterface implements ComparisonInterface { }
+
+class TestOfCompatibility extends UnitTestCase {
+    
+    function testIsA() {
+        $this->assertTrue(SimpleTestCompatibility::isA(
+                new ComparisonClass(),
+                'ComparisonClass'));
+        $this->assertFalse(SimpleTestCompatibility::isA(
+                new ComparisonClass(),
+                'ComparisonSubclass'));
+        $this->assertTrue(SimpleTestCompatibility::isA(
+                new ComparisonSubclass(),
+                'ComparisonClass'));
+    }
+    
+    function testIdentityOfNumericStrings() {
+        $numericString1 = "123";
+        $numericString2 = "00123";
+        $this->assertNotIdentical($numericString1, $numericString2);
+    }
+    
+    function testIdentityOfObjects() {
+        $object1 = new ComparisonClass();
+        $object2 = new ComparisonClass();
+        $this->assertIdentical($object1, $object2);
+    }
+    
+    function testReferences () {
+        $thing = "Hello";
+        $thing_reference = &$thing;
+        $thing_copy = $thing;
+        $this->assertTrue(SimpleTestCompatibility::isReference(
+                $thing,
+                $thing));
+        $this->assertTrue(SimpleTestCompatibility::isReference(
+                $thing,
+                $thing_reference));
+        $this->assertFalse(SimpleTestCompatibility::isReference(
+                $thing,
+                $thing_copy));
+    }
+    
+    function testObjectReferences () {
+        $object = new ComparisonClass();
+        $object_reference = $object;
+        $object_copy = new ComparisonClass();
+        $object_assignment = $object;
+        $this->assertTrue(SimpleTestCompatibility::isReference(
+                $object,
+                $object));
+        $this->assertTrue(SimpleTestCompatibility::isReference(
+                $object,
+                $object_reference));
+        $this->assertFalse(SimpleTestCompatibility::isReference(
+                $object,
+                $object_copy));
+        if (version_compare(phpversion(), '5', '>=')) {
+            $this->assertTrue(SimpleTestCompatibility::isReference(
+                    $object,
+                    $object_assignment));
+        } else {
+            $this->assertFalse(SimpleTestCompatibility::isReference(
+                    $object,
+                    $object_assignment));
+        }
+    }
+    
+    function testInteraceComparison() {
+        $object = new ComparisonClassWithInterface();
+        $this->assertFalse(SimpleTestCompatibility::isA(
+                new ComparisonClass(),
+                'ComparisonInterface'));
+        $this->assertTrue(SimpleTestCompatibility::isA(
+                new ComparisonClassWithInterface(),
+                'ComparisonInterface'));
+    }
+}
 ?>
-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

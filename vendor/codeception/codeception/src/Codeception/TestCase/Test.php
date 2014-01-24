@@ -1,58 +1,96 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/rKOmle2bWjuPZsA9sLpGAEFxrqp4/KRe+i7N9O3KR0gu0+dLEWR3kCXka/nlBkScnwwCVs
-CQD8If+iXS3TfTpYifmuutHvzL+h2rVWvdDDOaUeTqu7u0UscGwxpj6hRsIYe+WSkUiXh8HQWxJu
-AiC2UKs4H5RdbbZ/0AUfiV0IM3e6iUcCdrDp6kwSqywRGkZ+qXDVv/eqaivfz5MVUoCseiIvruWY
-HntBYRpC4++W8soOp5ENhr4euJltSAgiccy4GDnfT7XfGkK6bwIix+Bu/b3k1xyL/y5YkiNWOVEH
-NU04YcnPr77AZTLBzG3jde5M+TDcsytxkgO8STpaeKogu9BDTtZrxB3aK9pv1uxWcqmX1rmJ0H0a
-hW/iEPrRCDpByY0BIW2HaqHGKQJljQJLiVjVRP0Ixlr2Y12besp8txWgygA5hYMnAJXIbjU9ktm6
-0dI8gBITixetnBCDN6DFhgtvaa1SyuKcTii1Gy7GkWNq0tKwol68u5NqSiQGISir6MBtARUQwM6a
-rq8aIn3EO9P1aMawvli+jjsMKIUUL6MUbbVyj/o7L/KPW1NKufBtNB/uKnHOC9L46p+/n2D5IXsw
-6VH1JHf5yq/6NTraj3Z/yiC2B3V/ssj/8N5ZA+qVWumcPi1WLDxdN1qD3dNYroNBIONc8KBlw99o
-KeMmEE+W7xrzxYapMQGMpsAe1Sk/7hTRxNnkbVSB0gD9XjhJVJE2QhJRAdRXadIAhXAlA7SQmNoR
-JeNxq/QodA0ltfZfolrNc/dDc5DehG39d6WYMLvL1ffkaX3U0T9K7JRiajixTxV+kOKN5O99l/2g
-zsqsYEUoipCs/E7NPRz6nNnwWBtE7X+rViVkD4Yg+9fjBC51xVLRtiGZoyLnMqymrU75GkbzTpKp
-G3KJ24AP0bi9Kk0/Wt0mSzU8Gd//Y5AaYFTMsdTp5UON1v2aIZy2D5dU66nv6kTg2l+E/MBGBpc2
-LjJ/Jk7m5K7wwfDSpLzUng8i7Q7No2MIhfX/Mgg1tH1qKPlvOf5utjtYvY+PsA/IRGWT0aJsoLjg
-bF840K/+eynmPEIgoTZTxQv1UrjLoPPeluDGWMtecqEHo/DbWYLyC4avboimHNkMJZkl3PGmFQaC
-gARGMO9179lCk6R8SSC/j0yihKbx6Z2KTGCNeYsG0hhAm1+GA4vRMYiDNTLOM14UQLEQMVsFuSOV
-YxUJATXAc7WPqu5xd1QTTuzIN4WGb5IrNjuT1wOfb9KLgG7hvOvRanKUqaCWChVwSYWCcK6mXekZ
-O9mMoDsWEGxrOhiv/jViPFQNBiew/++BRoYYzzEhTAzERh6+ES+WJGL+7e/vRLlM5iBJNfYzezZW
-xo2ecAUnyckphWKF/djg+KndEaIGFbNCIErUj5bfouYlkfyUfN4Pl3WIeambcrzBV5t/KvZF7iea
-mtbs7OIRS/9PjNi+aKWGtpF8cFqZuGTZploTJDYoolS45shP2R8G+ct+EK+z4fYngQx5rLdtjfMe
-aSFOonnjI2eOYGSvXE+TTqNkJBndg09aOjKs8LWUu8LSXxvigtQVVq/q0ILr6zSobiLN3t1K+nxm
-MhiPwNSvosMBmT3O5vL3Bw/XGTgs/lbGA5Yea2Pw5i2BpvYDq978iY7AlNFt+Le1kaqhTOcIL1Ih
-b03ytwRgCetC12pL9pUjrHCptNHDlrsoXQXJ6HCPu77j2AXaxetfUTDmScyz6ShmtQRoTy478d98
-46jhr8DHmy1qACFiDfeg8WqxdDoAQvNKUTbBqgreOywbr52p9CHkVITYCof+cWILsSqZEkAnI3Z2
-N3aKHQHReLX4AzovPO5pgMRExGPdTnM+n4FyMesCvRRqoHUvQ0jqfG0F0CRIRsSJoAOMaQh4dCpI
-oJBlT9fo3ATDV/J7z8RKAqkPb8s3Xvp+0dF09lf5lBwSltdKahhrnqjSXKzMI0A7u9AykVuk/7Jy
-IDlwjZQBa1i4opVGjUHZDKbCZ/dhwQ88Fq331k2KiThBboe9dOyD5gq9uJ0q0NfXv3Mc3KYd+2tJ
-UWB92mw9PmfYrmcsCLaYhSnPMdy1e8ouNW2Quy1BuURwdoyAlg2GRfpWTijdn757857xQIeZVuUQ
-UvsqoRijzu057piZXki0RdWaLC1tqz8UlXqaO/c3Z+l1CVcJKYetDtScl55/G6N5PTqZM7ypvI6c
-1XL4+mw46me2FxeV4wmuv9LpIdV62PAFopHVAz+hxK+2kW21DmE1iXss7dIuThuT+JZKyTZi5O0+
-riM98NKiE8F1s4XGaIpPc0PpFKiSAbgWMCQgxX2FVK/XuNJgs/tWn3/1jUiPZKroGDuTmW7o03u9
-/t3GsXGJiZWUmNJWA4K6hq+79u//vGhkq1VCKuhTeZhrNfpFOG3J7jxNSY0m0d5jY/r87lkePwm2
-Q+iu/ZQOaZv1HJT6+aYRc7cU6sB5GoGJb2lxPLLXeK+An7An1GSII8h+aoacHYaxthTtkoATC4C9
-77+0EUG7o7NjT7QuFRJZ41JQmfjyju0Mt/fS5MsjTCfw745/z7KM+v5BnoUU2GznNq72v8l431ez
-uUXnrvHttjfmARmVecQr63G/vm8dQQyjyhSqMSWHkD6I1y0zvEmrWFo/bbwIOyWZhVPBOWTqb+Em
-R5ZItRxgw3eHHkHByoByNdRwSDZJEwDb1HP7+tMfTKpcGk/+sxmurb4Gp5W0+wYIQd3fRzDeBDJ+
-1LRvVHJkheZ0A812Qy3l8XV1XfKwW1yagkfDoU9wh11W35LUkq5XFQHXDAaKgRUNmhZ7o4pvyMBH
-M5vSrZTwWiRPbNwlSpEoBDHVdcjp2l56Q4EnSAEedMJPnuYesNasdMJLMbWvYlh/0HYBr06+XV0B
-g7S1cvSWGZToiw+zPUQH7wgTiiaKjO+9Wh10wvNn0LM3AryurE9KRhQg777yDuWeyvx6PTujcXgu
-OAvZfhd5dzgSVH4Z6Wdn6IKeeOU2RMmwfk4AoYXizN5KWQoirej3abGmYCsSBhR0VkhLL9wlHD7G
-sHo484u3ZDb/j1+tBG7rWxCkeE2GQ3L+b+TxyOSICx7zif1Dl3kVuovyx36jQtg0XDJhFwjOeoUw
-zRGu3Bq6Qmq7LlMBa+xvUEQJPDlYg9mxdR+0OpUmb71K/ROhp0Fn2gA9/hSrB3Wxd8sLrcoXZW0K
-4uWrQ2LpUDdx+RkJemm2tO8M+OXPOlA5LT5hcPm5EUO+BqirHu3O89UEtKCNjpaqdyuMy4/IDrD7
-y+kQRtlKvzN+G13pGd3q7cEIxRp2xMRaqM5Ii9RO8IKpLXFhDOEM/UPs8Ep7O7i4e2OR4hkacV8i
-KnZPX/5RHFw1qgtoV4VzLUnAOgIqyBFX61IAZCncr8lF1HyWgqU69R0amNQDAdLioexFkqLcNZJU
-YNXnzJK2ufqQIZDIZOZEPWKjaX9RMW1I3X2F6FYtsxp++PlC5y+KxVjUx4ZlgZOGmY2vLGdEqp29
-PnaljCZ0UVGkw+KxBxRYbwngoom8QXv2FHukOqL9qnMc83LTKJQHfte4Ct+Vv172e2/BBQNRw7Xr
-o9BBAuffvt/mgFsuXanMC7t8QS/fRu0IEZ7zjGpyjH94ym2U8O3UQLFY/2ODkVx5RtTFc6iG7qPO
-fvtfY6T2zL/xzQ3mo+Kd1W9J0/VuyFPAJLmeTlHdpvP3a6P4gHPf2Dy0nOJfKwnXcrCc8YeqNO2g
-ddSGKrAR/J6b55TnxivhQDtYEPE2T9l1uqz1hQmbBH3MuftjCVdHgSsUtn8nwAi8FR8VJ6rUglCK
-eEE692eh1tkQi0HaWius3cY54yQ0R2TCExzqcXf8oJICgCIhxYspkxMR2mFRczyp2IwSoKBdnnSL
-tDBUAtZdWIao42YNxtfhqD876UXGN3CkZFEAgZfY5MKZCzz+WvjWzb5sqaCVx7UTe4MlcPen2Ad6
-DrQsXPQg8mzzlmcYiek15H/Y9ApYmRyUxgcOhCCQPqkQJT/RkSsSsa/vSJq6V5lvt5LHaHloIuFl
-W+zRqZETJsQQCbyXtEMsFKCFkUZPiS8p44c2QKeUhw5pB+iSpukJq3t9efl4UJ8g+M7rbqDbFhki
-vWDgY/Q/OU2FZAgf8kZgKPhoV3yNUc7wTr9y3Nyaw0IAYdGl1tRcJxeWinjZ
+<?php
+namespace Codeception\TestCase;
+
+use Codeception\Exception\TestRuntime;
+
+class Test extends \Codeception\TestCase
+{
+    /**
+     * @var \Symfony\Component\EventDispatcher\EventDispatcher
+     */
+    protected $dispatcher = null;
+    protected $bootstrap = null;
+
+    /**
+     * @var \CodeGuy
+     */
+    protected $codeGuy = null;
+
+    protected $guyClass;
+
+    public function setDispatcher($dispatcher) {
+        $this->dispatcher = $dispatcher;
+    }
+
+    public function setBootstrap($bootstrap) {
+        $this->bootstrap = $bootstrap;
+    }
+
+    public function setGuyClass($guy)
+    {
+        $this->guyClass = $guy;
+    }
+
+    protected function setUp()
+    {
+        if ($this->bootstrap) require $this->bootstrap;
+        $this->scenario = new \Codeception\Scenario($this);
+        $guy = $this->guyClass;
+        if ($guy) { 
+            $property = lcfirst($guy);
+            $this->codeGuy = $this->$property = new $guy($this->scenario);
+        }
+        $this->scenario->run();
+        $this->fire('test.before', new \Codeception\Event\Test($this));
+        $this->_before();
+    }
+
+    /**
+     * @Override
+     */
+    protected function _before()
+    {
+
+    }
+
+    protected function tearDown()
+    {
+        $this->_after();
+        $this->fire('test.after', new \Codeception\Event\Test($this));
+    }
+
+    /**
+     * @Override
+     */
+    protected function _after()
+    {
+
+    }
+
+    public function __construct($name = NULL, array $data = array(), $dataName = '') {
+        parent::__construct($name, $data, $dataName);
+        $this->scenario = new \Codeception\Scenario($this);
+    }
+    
+    public function getFeature() {
+        $text = $this->getName();
+        $text = preg_replace('/([A-Z]+)([A-Z][a-z])/', '\\1 \\2', $text);
+        $text = preg_replace('/([a-z\d])([A-Z])/', '\\1 \\2', $text);
+        return strtolower($text);
+    }
+
+    /**
+     * @param $module
+     * @return \Codeception\Module
+     * @throws \Codeception\Exception\TestRuntime
+     */
+    public function getModule($module)
+    {
+        if (isset(\Codeception\SuiteManager::$modules[$module])) {
+            return \Codeception\SuiteManager::$modules[$module];
+        }
+        throw new TestRuntime("Module $module is not enabled for this test suite");
+    }
+
+
+}

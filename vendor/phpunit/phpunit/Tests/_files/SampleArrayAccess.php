@@ -1,30 +1,32 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Sample class that implements ArrayAccess copied from
+ * http://www.php.net/manual/en/class.arrayaccess.php
+ * with some minor changes
+ * This class required for PHPUnit_Framework_Constraint_ArrayHasKey testing
+ */
+
+class SampleArrayAccess implements ArrayAccess
+{
+    private $container;
+
+    public function __construct() {
+        $this->container = array();
+    }
+    public function offsetSet($offset, $value) {
+        if (is_null($offset)) {
+            $this->container[] = $value;
+        } else {
+            $this->container[$offset] = $value;
+        }
+    }
+    public function offsetExists($offset) {
+        return isset($this->container[$offset]);
+    }
+    public function offsetUnset($offset) {
+        unset($this->container[$offset]);
+    }
+    public function offsetGet($offset) {
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
+    }
+}

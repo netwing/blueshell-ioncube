@@ -1,89 +1,222 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * GameController class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+
+/**
+ * GameController implements the {@link http://en.wikipedia.org/wiki/Hangman_(game) Hangman game}.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @version $Id: CController.php 131 2008-11-02 01:32:57Z qiang.xue $
+ * @package demos.hangman
+ * @since 1.0
+ */
+class GameController extends CController
+{
+	/**
+	 * @var string sets the default action to be 'play'
+	 */
+	public $defaultAction='play';
+
+	/**
+	 * The 'play' action.
+	 * In this action, users are asked to choose a difficulty level
+	 * of the game.
+	 */
+	public function actionPlay()
+	{
+		static $levels=array(
+			'10'=>'Easy game; you are allowed 10 misses.',
+			'5'=>'Medium game; you are allowed 5 misses.',
+			'3'=>'Hard game; you are allowed 3 misses.',
+		);
+
+		// if a difficulty level is correctly chosen
+		if(isset($_POST['level']) && isset($levels[$_POST['level']]))
+		{
+			$this->word=$this->generateWord();
+			$this->guessWord=str_repeat('_',strlen($this->word));
+			$this->level=$_POST['level'];
+			$this->misses=0;
+			$this->setPageState('guessed',null);
+			// show the guess page
+			$this->render('guess');
+		}
+		else
+		{
+			$params=array(
+				'levels'=>$levels,
+				// if this is a POST request, it means the level is not chosen
+				'error'=>Yii::app()->request->isPostRequest,
+			);
+			// show the difficulty level page
+			$this->render('play',$params);
+		}
+	}
+
+	/**
+	 * The 'guess' action.
+	 * This action is invoked each time when the user makes a guess.
+	 */
+	public function actionGuess()
+	{
+		// check to see if the letter is guessed correctly
+		if(isset($_GET['g'][0]) && ($result=$this->guess($_GET['g'][0]))!==null)
+			$this->render($result ? 'win' : 'lose');
+		else // the letter is guessed correctly, but not win yet
+		{
+			$guessed=$this->getPageState('guessed',array());
+			$guessed[$_GET['g'][0]]=true;
+			$this->setPageState('guessed',$guessed,array());
+			$this->render('guess');
+		}
+	}
+
+	/**
+	 * The 'guess' action.
+	 * This action is invoked when the user gives up the game.
+	 */
+	public function actionGiveup()
+	{
+		$this->render('lose');
+	}
+
+	/**
+	 * Checks to see if a letter is already guessed.
+	 * @param string the letter
+	 * @return boolean whether the letter is already guessed.
+	 */
+	public function isGuessed($letter)
+	{
+		$guessed=$this->getPageState('guessed',array());
+		return isset($guessed[$letter]);
+	}
+
+	/**
+	 * Generates a word to be guessed.
+	 * @return string the word to be guessed
+	 */
+	protected function generateWord()
+	{
+		$wordFile=dirname(__FILE__).'/words.txt';
+		$words=preg_split("/[\s,]+/",file_get_contents($wordFile));
+		do
+		{
+			$i=rand(0,count($words)-1);
+			$word=$words[$i];
+		} while(strlen($word)<5 || !ctype_alpha($word));
+		return strtoupper($word);
+	}
+
+	/**
+	 * Checks to see if a letter is guessed correctly.
+	 * @param string the letter
+	 * @return mixed true if the word is guessed correctly, false
+	 * if the user has used up all guesses and the word is guessed
+	 * incorrectly, and null if the letter is guessed correctly but
+	 * the whole word is guessed correctly yet.
+	 */
+	protected function guess($letter)
+	{
+		$word=$this->word;
+		$guessWord=$this->guessWord;
+		$pos=0;
+		$success=false;
+		while(($pos=strpos($word,$letter,$pos))!==false)
+		{
+			$guessWord[$pos]=$letter;
+			$success=true;
+			$pos++;
+		}
+		if($success)
+		{
+			$this->guessWord=$guessWord;
+			if($guessWord===$word)
+				return true;
+		}
+		else
+		{
+			$this->misses++;
+			if($this->misses>=$this->level)
+				return false;
+		}
+	}
+
+	/**
+	 * @return integer the difficulty level. This value is persistent
+	 * during the whole game session.
+	 */
+	public function getLevel()
+	{
+		return $this->getPageState('level');
+	}
+
+	/**
+	 * @param integer the difficulty level. This value is persistent
+	 * during the whole game session.
+	 */
+	public function setLevel($value)
+	{
+		$this->setPageState('level',$value);
+	}
+
+	/**
+	 * @return string the word to be guessed. This value is persistent
+	 * during the whole game session.
+	 */
+	public function getWord()
+	{
+		return $this->getPageState('word');
+	}
+
+	/**
+	 * @param string the word to be guessed. This value is persistent
+	 * during the whole game session.
+	 */
+	public function setWord($value)
+	{
+		$this->setPageState('word',$value);
+	}
+
+	/**
+	 * @return string the word being guessed. This value is persistent
+	 * during the whole game session.
+	 */
+	public function getGuessWord()
+	{
+		return $this->getPageState('guessWord');
+	}
+
+	/**
+	 * @param string the word being guessed. This value is persistent
+	 * during the whole game session.
+	 */
+	public function setGuessWord($value)
+	{
+		$this->setPageState('guessWord',$value);
+	}
+
+	/**
+	 * @return integer the number of misses. This value is persistent
+	 * during the whole game session.
+	 */
+	public function getMisses()
+	{
+		return $this->getPageState('misses');
+	}
+
+	/**
+	 * @param integer the number of misses. This value is persistent
+	 * during the whole game session.
+	 */
+	public function setMisses($value)
+	{
+		$this->setPageState('misses',$value);
+	}
+}

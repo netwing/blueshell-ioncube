@@ -1,201 +1,631 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-4HefS+6Wd/4sfUiUeRAg//XSPCq=
+<?php
+/**
+ * This file contains core interfaces for Yii framework.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * IApplicationComponent is the interface that all application components must implement.
+ *
+ * After the application completes configuration, it will invoke the {@link init()}
+ * method of every loaded application component.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+interface IApplicationComponent
+{
+	/**
+	 * Initializes the application component.
+	 * This method is invoked after the application completes configuration.
+	 */
+	public function init();
+	/**
+	 * @return boolean whether the {@link init()} method has been invoked.
+	 */
+	public function getIsInitialized();
+}
+
+/**
+ * ICache is the interface that must be implemented by cache components.
+ *
+ * This interface must be implemented by classes supporting caching feature.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching
+ * @since 1.0
+ */
+interface ICache
+{
+	/**
+	 * Retrieves a value from cache with a specified key.
+	 * @param string $id a key identifying the cached value
+	 * @return mixed the value stored in cache, false if the value is not in the cache or expired.
+	 */
+	public function get($id);
+	/**
+	 * Retrieves multiple values from cache with the specified keys.
+	 * Some caches (such as memcache, apc) allow retrieving multiple cached values at one time,
+	 * which may improve the performance since it reduces the communication cost.
+	 * In case a cache doesn't support this feature natively, it will be simulated by this method.
+	 * @param array $ids list of keys identifying the cached values
+	 * @return array list of cached values corresponding to the specified keys. The array
+	 * is returned in terms of (key,value) pairs.
+	 * If a value is not cached or expired, the corresponding array value will be false.
+	 */
+	public function mget($ids);
+	/**
+	 * Stores a value identified by a key into cache.
+	 * If the cache already contains such a key, the existing value and
+	 * expiration time will be replaced with the new ones.
+	 *
+	 * @param string $id the key identifying the value to be cached
+	 * @param mixed $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labelled invalid.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	public function set($id,$value,$expire=0,$dependency=null);
+	/**
+	 * Stores a value identified by a key into cache if the cache does not contain this key.
+	 * Nothing will be done if the cache already contains the key.
+	 * @param string $id the key identifying the value to be cached
+	 * @param mixed $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labelled invalid.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	public function add($id,$value,$expire=0,$dependency=null);
+	/**
+	 * Deletes a value with the specified key from cache
+	 * @param string $id the key of the value to be deleted
+	 * @return boolean whether the deletion is successful
+	 */
+	public function delete($id);
+	/**
+	 * Deletes all values from cache.
+	 * Be careful of performing this operation if the cache is shared by multiple applications.
+	 * @return boolean whether the flush operation was successful.
+	 */
+	public function flush();
+}
+
+/**
+ * ICacheDependency is the interface that must be implemented by cache dependency classes.
+ *
+ * This interface must be implemented by classes meant to be used as
+ * cache dependencies.
+ *
+ * Objects implementing this interface must be able to be serialized and unserialized.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching
+ * @since 1.0
+ */
+interface ICacheDependency
+{
+	/**
+	 * Evaluates the dependency by generating and saving the data related with dependency.
+	 * This method is invoked by cache before writing data into it.
+	 */
+	public function evaluateDependency();
+	/**
+	 * @return boolean whether the dependency has changed.
+	 */
+	public function getHasChanged();
+}
+
+
+/**
+ * IStatePersister is the interface that must be implemented by state persister classes.
+ *
+ * This interface must be implemented by all state persister classes (such as
+ * {@link CStatePersister}.
+ *
+ * @package system.base
+ * @since 1.0
+ */
+interface IStatePersister
+{
+	/**
+	 * Loads state data from a persistent storage.
+	 * @return mixed the state
+	 */
+	public function load();
+	/**
+	 * Saves state data into a persistent storage.
+	 * @param mixed $state the state to be saved
+	 */
+	public function save($state);
+}
+
+
+/**
+ * IFilter is the interface that must be implemented by action filters.
+ *
+ * @package system.base
+ * @since 1.0
+ */
+interface IFilter
+{
+	/**
+	 * Performs the filtering.
+	 * This method should be implemented to perform actual filtering.
+	 * If the filter wants to continue the action execution, it should call
+	 * <code>$filterChain->run()</code>.
+	 * @param CFilterChain $filterChain the filter chain that the filter is on.
+	 */
+	public function filter($filterChain);
+}
+
+
+/**
+ * IAction is the interface that must be implemented by controller actions.
+ *
+ * @package system.base
+ * @since 1.0
+ */
+interface IAction
+{
+	/**
+	 * @return string id of the action
+	 */
+	public function getId();
+	/**
+	 * @return CController the controller instance
+	 */
+	public function getController();
+}
+
+
+/**
+ * IWebServiceProvider interface may be implemented by Web service provider classes.
+ *
+ * If this interface is implemented, the provider instance will be able
+ * to intercept the remote method invocation (e.g. for logging or authentication purpose).
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+interface IWebServiceProvider
+{
+	/**
+	 * This method is invoked before the requested remote method is invoked.
+	 * @param CWebService $service the currently requested Web service.
+	 * @return boolean whether the remote method should be executed.
+	 */
+	public function beforeWebMethod($service);
+	/**
+	 * This method is invoked after the requested remote method is invoked.
+	 * @param CWebService $service the currently requested Web service.
+	 */
+	public function afterWebMethod($service);
+}
+
+
+/**
+ * IViewRenderer interface is implemented by a view renderer class.
+ *
+ * A view renderer is {@link CWebApplication::viewRenderer viewRenderer}
+ * application component whose wants to replace the default view rendering logic
+ * implemented in {@link CBaseController}.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+interface IViewRenderer
+{
+	/**
+	 * Renders a view file.
+	 * @param CBaseController $context the controller or widget who is rendering the view file.
+	 * @param string $file the view file path
+	 * @param mixed $data the data to be passed to the view
+	 * @param boolean $return whether the rendering result should be returned
+	 * @return mixed the rendering result, or null if the rendering result is not needed.
+	 */
+	public function renderFile($context,$file,$data,$return);
+}
+
+
+/**
+ * IUserIdentity interface is implemented by a user identity class.
+ *
+ * An identity represents a way to authenticate a user and retrieve
+ * information needed to uniquely identity the user. It is normally
+ * used with the {@link CWebApplication::user user application component}.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+interface IUserIdentity
+{
+	/**
+	 * Authenticates the user.
+	 * The information needed to authenticate the user
+	 * are usually provided in the constructor.
+	 * @return boolean whether authentication succeeds.
+	 */
+	public function authenticate();
+	/**
+	 * Returns a value indicating whether the identity is authenticated.
+	 * @return boolean whether the identity is valid.
+	 */
+	public function getIsAuthenticated();
+	/**
+	 * Returns a value that uniquely represents the identity.
+	 * @return mixed a value that uniquely represents the identity (e.g. primary key value).
+	 */
+	public function getId();
+	/**
+	 * Returns the display name for the identity (e.g. username).
+	 * @return string the display name for the identity.
+	 */
+	public function getName();
+	/**
+	 * Returns the additional identity information that needs to be persistent during the user session.
+	 * @return array additional identity information that needs to be persistent during the user session (excluding {@link id}).
+	 */
+	public function getPersistentStates();
+}
+
+
+/**
+ * IWebUser interface is implemented by a {@link CWebApplication::user user application component}.
+ *
+ * A user application component represents the identity information
+ * for the current user.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+interface IWebUser
+{
+	/**
+	 * Returns a value that uniquely represents the identity.
+	 * @return mixed a value that uniquely represents the identity (e.g. primary key value).
+	 */
+	public function getId();
+	/**
+	 * Returns the display name for the identity (e.g. username).
+	 * @return string the display name for the identity.
+	 */
+	public function getName();
+	/**
+	 * Returns a value indicating whether the user is a guest (not authenticated).
+	 * @return boolean whether the user is a guest (not authenticated)
+	 */
+	public function getIsGuest();
+	/**
+	 * Performs access check for this user.
+	 * @param string $operation the name of the operation that need access check.
+	 * @param array $params name-value pairs that would be passed to business rules associated
+	 * with the tasks and roles assigned to the user.
+	 * @return boolean whether the operations can be performed by this user.
+	 */
+	public function checkAccess($operation,$params=array());
+	/**
+	 * Redirects the user browser to the login page.
+	 * Before the redirection, the current URL (if it's not an AJAX url) will be
+	 * kept in {@link returnUrl} so that the user browser may be redirected back
+	 * to the current page after successful login. Make sure you set {@link loginUrl}
+	 * so that the user browser can be redirected to the specified login URL after
+	 * calling this method.
+	 * After calling this method, the current request processing will be terminated.
+	 */
+	public function loginRequired();
+}
+
+
+/**
+ * IAuthManager interface is implemented by an auth manager application component.
+ *
+ * An auth manager is mainly responsible for providing role-based access control (RBAC) service.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+interface IAuthManager
+{
+	/**
+	 * Performs access check for the specified user.
+	 * @param string $itemName the name of the operation that we are checking access to
+	 * @param mixed $userId the user ID. This should be either an integer or a string representing
+	 * the unique identifier of a user. See {@link IWebUser::getId}.
+	 * @param array $params name-value pairs that would be passed to biz rules associated
+	 * with the tasks and roles assigned to the user.
+	 * @return boolean whether the operations can be performed by the user.
+	 */
+	public function checkAccess($itemName,$userId,$params=array());
+
+	/**
+	 * Creates an authorization item.
+	 * An authorization item represents an action permission (e.g. creating a post).
+	 * It has three types: operation, task and role.
+	 * Authorization items form a hierarchy. Higher level items inheirt permissions representing
+	 * by lower level items.
+	 * @param string $name the item name. This must be a unique identifier.
+	 * @param integer $type the item type (0: operation, 1: task, 2: role).
+	 * @param string $description description of the item
+	 * @param string $bizRule business rule associated with the item. This is a piece of
+	 * PHP code that will be executed when {@link checkAccess} is called for the item.
+	 * @param mixed $data additional data associated with the item.
+	 * @return CAuthItem the authorization item
+	 * @throws CException if an item with the same name already exists
+	 */
+	public function createAuthItem($name,$type,$description='',$bizRule=null,$data=null);
+	/**
+	 * Removes the specified authorization item.
+	 * @param string $name the name of the item to be removed
+	 * @return boolean whether the item exists in the storage and has been removed
+	 */
+	public function removeAuthItem($name);
+	/**
+	 * Returns the authorization items of the specific type and user.
+	 * @param integer $type the item type (0: operation, 1: task, 2: role). Defaults to null,
+	 * meaning returning all items regardless of their type.
+	 * @param mixed $userId the user ID. Defaults to null, meaning returning all items even if
+	 * they are not assigned to a user.
+	 * @return array the authorization items of the specific type.
+	 */
+	public function getAuthItems($type=null,$userId=null);
+	/**
+	 * Returns the authorization item with the specified name.
+	 * @param string $name the name of the item
+	 * @return CAuthItem the authorization item. Null if the item cannot be found.
+	 */
+	public function getAuthItem($name);
+	/**
+	 * Saves an authorization item to persistent storage.
+	 * @param CAuthItem $item the item to be saved.
+	 * @param string $oldName the old item name. If null, it means the item name is not changed.
+	 */
+	public function saveAuthItem($item,$oldName=null);
+
+	/**
+	 * Adds an item as a child of another item.
+	 * @param string $itemName the parent item name
+	 * @param string $childName the child item name
+	 * @throws CException if either parent or child doesn't exist or if a loop has been detected.
+	 */
+	public function addItemChild($itemName,$childName);
+	/**
+	 * Removes a child from its parent.
+	 * Note, the child item is not deleted. Only the parent-child relationship is removed.
+	 * @param string $itemName the parent item name
+	 * @param string $childName the child item name
+	 * @return boolean whether the removal is successful
+	 */
+	public function removeItemChild($itemName,$childName);
+	/**
+	 * Returns a value indicating whether a child exists within a parent.
+	 * @param string $itemName the parent item name
+	 * @param string $childName the child item name
+	 * @return boolean whether the child exists
+	 */
+	public function hasItemChild($itemName,$childName);
+	/**
+	 * Returns the children of the specified item.
+	 * @param mixed $itemName the parent item name. This can be either a string or an array.
+	 * The latter represents a list of item names.
+	 * @return array all child items of the parent
+	 */
+	public function getItemChildren($itemName);
+
+	/**
+	 * Assigns an authorization item to a user.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @param string $bizRule the business rule to be executed when {@link checkAccess} is called
+	 * for this particular authorization item.
+	 * @param mixed $data additional data associated with this assignment
+	 * @return CAuthAssignment the authorization assignment information.
+	 * @throws CException if the item does not exist or if the item has already been assigned to the user
+	 */
+	public function assign($itemName,$userId,$bizRule=null,$data=null);
+	/**
+	 * Revokes an authorization assignment from a user.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return boolean whether removal is successful
+	 */
+	public function revoke($itemName,$userId);
+	/**
+	 * Returns a value indicating whether the item has been assigned to the user.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return boolean whether the item has been assigned to the user.
+	 */
+	public function isAssigned($itemName,$userId);
+	/**
+	 * Returns the item assignment information.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return CAuthAssignment the item assignment information. Null is returned if
+	 * the item is not assigned to the user.
+	 */
+	public function getAuthAssignment($itemName,$userId);
+	/**
+	 * Returns the item assignments for the specified user.
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return array the item assignment information for the user. An empty array will be
+	 * returned if there is no item assigned to the user.
+	 */
+	public function getAuthAssignments($userId);
+	/**
+	 * Saves the changes to an authorization assignment.
+	 * @param CAuthAssignment $assignment the assignment that has been changed.
+	 */
+	public function saveAuthAssignment($assignment);
+
+	/**
+	 * Removes all authorization data.
+	 */
+	public function clearAll();
+	/**
+	 * Removes all authorization assignments.
+	 */
+	public function clearAuthAssignments();
+
+	/**
+	 * Saves authorization data into persistent storage.
+	 * If any change is made to the authorization data, please make
+	 * sure you call this method to save the changed data into persistent storage.
+	 */
+	public function save();
+
+	/**
+	 * Executes a business rule.
+	 * A business rule is a piece of PHP code that will be executed when {@link checkAccess} is called.
+	 * @param string $bizRule the business rule to be executed.
+	 * @param array $params additional parameters to be passed to the business rule when being executed.
+	 * @param mixed $data additional data that is associated with the corresponding authorization item or assignment
+	 * @return boolean whether the execution returns a true value.
+	 * If the business rule is empty, it will also return true.
+	 */
+	public function executeBizRule($bizRule,$params,$data);
+}
+
+
+/**
+ * IBehavior interfaces is implemented by all behavior classes.
+ *
+ * A behavior is a way to enhance a component with additional methods that
+ * are defined in the behavior class and not available in the component class.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ */
+interface IBehavior
+{
+	/**
+	 * Attaches the behavior object to the component.
+	 * @param CComponent $component the component that this behavior is to be attached to.
+	 */
+	public function attach($component);
+	/**
+	 * Detaches the behavior object from the component.
+	 * @param CComponent $component the component that this behavior is to be detached from.
+	 */
+	public function detach($component);
+	/**
+	 * @return boolean whether this behavior is enabled
+	 */
+	public function getEnabled();
+	/**
+	 * @param boolean $value whether this behavior is enabled
+	 */
+	public function setEnabled($value);
+}
+
+/**
+ * IWidgetFactory is the interface that must be implemented by a widget factory class.
+ *
+ * When calling {@link CBaseController::createWidget}, if a widget factory is available,
+ * it will be used for creating the requested widget.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.1
+ */
+interface IWidgetFactory
+{
+	/**
+	 * Creates a new widget based on the given class name and initial properties.
+	 * @param CBaseController $owner the owner of the new widget
+	 * @param string $className the class name of the widget. This can also be a path alias (e.g. system.web.widgets.COutputCache)
+	 * @param array $properties the initial property values (name=>value) of the widget.
+	 * @return CWidget the newly created widget whose properties have been initialized with the given values.
+	 */
+	public function createWidget($owner,$className,$properties=array());
+}
+
+/**
+ * IDataProvider is the interface that must be implemented by data provider classes.
+ *
+ * Data providers are components that can feed data for widgets such as data grid, data list.
+ * Besides providing data, they also support pagination and sorting.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.1
+ */
+interface IDataProvider
+{
+	/**
+	 * @return string the unique ID that identifies the data provider from other data providers.
+	 */
+	public function getId();
+	/**
+	 * Returns the number of data items in the current page.
+	 * This is equivalent to <code>count($provider->getData())</code>.
+	 * When {@link pagination} is set false, this returns the same value as {@link totalItemCount}.
+	 * @param boolean $refresh whether the number of data items should be re-calculated.
+	 * @return integer the number of data items in the current page.
+	 */
+	public function getItemCount($refresh=false);
+	/**
+	 * Returns the total number of data items.
+	 * When {@link pagination} is set false, this returns the same value as {@link itemCount}.
+	 * @param boolean $refresh whether the total number of data items should be re-calculated.
+	 * @return integer total number of possible data items.
+	 */
+	public function getTotalItemCount($refresh=false);
+	/**
+	 * Returns the data items currently available.
+	 * @param boolean $refresh whether the data should be re-fetched from persistent storage.
+	 * @return array the list of data items currently available in this data provider.
+	 */
+	public function getData($refresh=false);
+	/**
+	 * Returns the key values associated with the data items.
+	 * @param boolean $refresh whether the keys should be re-calculated.
+	 * @return array the list of key values corresponding to {@link data}. Each data item in {@link data}
+	 * is uniquely identified by the corresponding key value in this array.
+	 */
+	public function getKeys($refresh=false);
+	/**
+	 * @return CSort the sorting object. If this is false, it means the sorting is disabled.
+	 */
+	public function getSort();
+	/**
+	 * @return CPagination the pagination object. If this is false, it means the pagination is disabled.
+	 */
+	public function getPagination();
+}
+
+
+/**
+ * ILogFilter is the interface that must be implemented by log filters.
+ *
+ * A log filter preprocesses the logged messages before they are handled by a log route.
+ * You can attach classes that implement ILogFilter to {@link CLogRoute::$filter}.
+ *
+ * @package system.logging
+ * @since 1.1.11
+ */
+interface ILogFilter
+{
+	/**
+	 * This method should be implemented to perform actual filtering of log messages
+	 * by working on the array given as the first parameter.
+	 * Implementation might reformat, remove or add information to logged messages.
+	 * @param array $logs list of messages. Each array element represents one message
+	 * with the following structure:
+	 * array(
+	 *   [0] => message (string)
+	 *   [1] => level (string)
+	 *   [2] => category (string)
+	 *   [3] => timestamp (float, obtained by microtime(true));
+	 */
+	public function filter(&$logs);
+}
+

@@ -1,59 +1,98 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Hwz7YBeITSWbKltDoW/1kvEqfVC=
+<?php
+
+namespace Guzzle\Tests\Service\Command\LocationVisitor\Response;
+
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Http\Message\Response;
+use Guzzle\Service\Command\LocationVisitor\Response\HeaderVisitor as Visitor;
+
+/**
+ * @covers Guzzle\Service\Command\LocationVisitor\Response\HeaderVisitor
+ */
+class HeaderVisitorTest extends AbstractResponseVisitorTest
+{
+    public function testVisitsLocation()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location' => 'header',
+            'name'     => 'ContentType',
+            'sentAs'   => 'Content-Type'
+        ));
+        $visitor->visit($this->command, $this->response, $param, $this->value);
+        $this->assertEquals('text/plain', $this->value['ContentType']);
+    }
+
+    public function testVisitsLocationWithFilters()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location' => 'header',
+            'name'     => 'Content-Type',
+            'filters'  => array('strtoupper')
+        ));
+        $visitor->visit($this->command, $this->response, $param, $this->value);
+        $this->assertEquals('TEXT/PLAIN', $this->value['Content-Type']);
+    }
+
+    public function testVisitsMappedPrefixHeaders()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location'             => 'header',
+            'name'                 => 'Metadata',
+            'sentAs'               => 'X-Baz-',
+            'type'                 => 'object',
+            'additionalProperties' => array(
+                'type' => 'string'
+            )
+        ));
+        $response = new Response(200, array(
+            'X-Baz-Test'     => 'ABC',
+            'X-Baz-Bar'      => array('123', '456'),
+            'Content-Length' => 3
+        ), 'Foo');
+        $visitor->visit($this->command, $response, $param, $this->value);
+        $this->assertEquals(array(
+            'Metadata' => array(
+                'Test' => 'ABC',
+                'Bar'  => array('123', '456')
+            )
+        ), $this->value);
+    }
+
+    /**
+     * @group issue-399
+     * @link  https://github.com/guzzle/guzzle/issues/399
+     */
+    public function testDiscardingUnknownHeaders()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location'             => 'header',
+            'name'                 => 'Content-Type',
+            'additionalParameters' => false
+        ));
+        $visitor->visit($this->command, $this->response, $param, $this->value);
+        $this->assertEquals('text/plain', $this->value['Content-Type']);
+        $this->assertArrayNotHasKey('X-Foo', $this->value);
+    }
+
+    /**
+     * @group issue-399
+     * @link  https://github.com/guzzle/guzzle/issues/399
+     */
+    public function testDiscardingUnknownPropertiesWithAliasing()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location'             => 'header',
+            'name'                 => 'ContentType',
+            'sentAs'               => 'Content-Type',
+            'additionalParameters' => false
+        ));
+        $visitor->visit($this->command, $this->response, $param, $this->value);
+        $this->assertEquals('text/plain', $this->value['ContentType']);
+        $this->assertArrayNotHasKey('X-Foo', $this->value);
+    }
+}

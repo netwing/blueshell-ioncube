@@ -1,46 +1,114 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Checks the nesting level for methods.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Checks the nesting level for methods.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Johann-Peter Hartmann <hartmann@mayflower.de>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2007 Mayflower GmbH
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Metrics_NestingLevelSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A nesting level than this value will throw a warning.
+     *
+     * @var int
+     */
+    public $nestingLevel = 5;
+
+    /**
+     * A nesting level than this value will throw an error.
+     *
+     * @var int
+     */
+    public $absoluteNestingLevel = 10;
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_FUNCTION);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Ignore abstract methods.
+        if (isset($tokens[$stackPtr]['scope_opener']) === false) {
+            return;
+        }
+
+        // Detect start and end of this function definition.
+        $start = $tokens[$stackPtr]['scope_opener'];
+        $end   = $tokens[$stackPtr]['scope_closer'];
+
+        $nestingLevel = 0;
+
+        // Find the maximum nesting level of any token in the function.
+        for ($i = ($start + 1); $i < $end; $i++) {
+            $level = $tokens[$i]['level'];
+            if ($nestingLevel < $level) {
+                $nestingLevel = $level;
+            }
+        }
+
+        // We subtract the nesting level of the function itself.
+        $nestingLevel = ($nestingLevel - $tokens[$stackPtr]['level'] - 1);
+
+        if ($nestingLevel > $this->absoluteNestingLevel) {
+            $error = 'Function\'s nesting level (%s) exceeds allowed maximum of %s';
+            $data  = array(
+                      $nestingLevel,
+                      $this->absoluteNestingLevel,
+                     );
+            $phpcsFile->addError($error, $stackPtr, 'MaxExceeded', $data);
+        } else if ($nestingLevel > $this->nestingLevel) {
+            $warning = 'Function\'s nesting level (%s) exceeds %s; consider refactoring the function';
+            $data    = array(
+                        $nestingLevel,
+                        $this->nestingLevel,
+                       );
+            $phpcsFile->addWarning($warning, $stackPtr, 'TooHigh', $data);
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-HR+cPqLsr4HasonhPST1Psng0BUu9E98EpHKsgcijvDP1FY3COPDH4eAgkuzW7KrxLheAPH3i5I4
-1a0kefWD5xuiWXMd1uc/dRNkQ2DvElJVDK8x4tlSgyqWwy/zslT/fNuIaIS7JAln4R7Q5GUDyGpF
-XIfbDNGBdwVsm8SwZat3YkFK+q3kbu/LNU8NZfBMNjHBQU4Epcfzh5GA6Xyu/i66IYUMhNTvmJDY
-2W4MCExg2+pNjKWENFGjhr4euJltSAgiccy4GDnfT6TVduMxdosU80G+4sZKLDu5LbhE+yI9NTKh
-6ipzyKFy72nuJebS/UgV7CRZ99AVBqz+kMhTe6vgCrP10y9QY/BOHMnKkBgOce6J/lWRIPQCDvz/
-w1FsBy41eMvqdXYInuqWvD44EaZwXQ5Yg9zRsop+TWnHrUdlqDTnhUAlxsmIKntEyRBnXtzLSt0B
-PQQ4unCSDaDmwdLPfstvf1IfNTUjy/ikCxDclUGHFraA0KqMysa9YQVgvATJ6PRW8uEHdvOfhm/X
-utnj9hKzl5kK6TmX5BB8nQsC/Ma4wDcu3V7xr0Liw6oB0ett9hCkg4q1K4gHJf4xnSSdnTzN1oui
-f2sNR+N6UnqhE6stjYvYyfC4pf0WJZDbFpiSPQjn8pgo2OxOSU93K2BY5ESC75fQW5XsYr3NHgBK
-KghvOtZGquKJv4eoNKX9aPkRr4s1Dr3MhJNUs5TQ9rq5nAxsHef3aKzPjOXVn35oM5j7Aa//AaVU
-4DN620g6Vt0OMngJcKAPFU9ZqWJJNRLaqB++lChhpNIOZAz1h+8c7XYdO0LQHm+AIX3C7Fpu5OEA
-w1U8gmMjOJe5vwxuleAK0bDftg9a2FkArqXgkK5p/ltTEFf/KG92OAxKJbcCFgi1A6DtM+phnfJt
-f8BQhp3z8E08pk3KQEmgGUbmfO2AOuIyLKiY245ClXkClMNz7M3mEmWC16GFtxFgxWOCNqm579e+
-XltnCSFaNH19CgBDsmqI+Hu09vlbRZEihuzXBWIyEIYxsG69zZXNVJfPeJAOjUzFDC76d7yDftwF
-jb0jUdd6QicMNf0Rpae+QWMZv1Fv5ZxGfFH+1LGlqyVmm4kyZ1uRPhKZBAAARBqtecrlRfDDrBoT
-0eKRjhFYE6oMPPvV5usRFQ4EDvLndSRFbyX/B8g/yKHAejooRUf2dCO6P2FlWKKiCNFuIzpRg4Bh
-6YcauVAaN0GPFllEFW8BIo1wELYA7aSQLCPM384XJzCiiLDM2iTBhEIX9/KFQyMqKobXDGTpruIV
-kJgybX20FkDxxB1+CtI95VrSue3/ky2bXN7pWM4C/sknZmqmp28HCR5391a9D8kcOxgBF/S0JIst
-YTcFreOESSBSf/rcbsEgfG9AKwJ9fX4+RQpfqms1zoYiNWlT3gTp+JuSuGhvxm29/XjsWJU1ndu4
-rrGmygDRaM8csgEzNPAC+JkwHEKkUtfvv0Om1tN+AlU5DcCOmonz5FvRo7RxX9/e9bXFAwLcec8E
-hdSBQd2oAkDSFWNO20HK5p6GiXOm0Vfkvoxt5528gHCTAsOA7kqo7s1X/bg+GL9FPHpDzgtQ8QmW
-UIaSKcQRcvLJxRyPdOgvIqNX2vv9zbM1IDRsFp1oWNRgQcB25Vin9gPUX17kZGNpGnZziURA+egp
-76p/Y3ZGhxM9N40TUloOppqZ0SaRHCmBxGm1SMHbXlWlWDkdrpWhDmHiPKjK8XDbWtwosn4AdBir
-9hixJyIGvwHHpAiZ7M35r49hEZUlC2nbsvWB3SF3oOhLDTotnstts0o+q7cLDfu7I/AsNfKlqFpU
-PkN536ix9vZyVHfhq4o38vDmRMzclCroRLhoenFo75FSWBGuB4rVOBvATD/hV6m+ZJ9nV5idSdGJ
-vt09ba6AYYczRbbOmTRjebWw28fCTpjmWsn9TR9Vt8rkfy/qBkSNyxyq/zs/Yd00+uR1cn7wQK6J
-yq5CKzrOz0QJm0TfZIU7d3k/p2Hn0omTSCviCeVyOfrAxFckkNqr0WLXWRK0ZX14ctvfG0XLApUp
-OrmvNh/7GbFYKWnO9i3lgS1WGhyF6qem0xg19Km/7M109hoHzSjZQ3O2y2SPg0zVC/VuRFP9u7So
-uaN9VvJ1gFrfIilo007aBt98KTQa/6yCXXX3iHceD1ixMY3TyiTcNuLHhKgRMs3U4+1YE68r9501
-gGw+9uzrRqvXLXZAGkwEZHzsWZbGOJx4c8CNoDIDuYoAU51YtV3EjqrGXcc/xmK/uLJM0OBO3Vji
-DcI/1JdgPenubmzPY8ZTDi+56pgJVrsaPSNhunT0+a1TXnbUNLeuDL1il3AAfu+F8Y8vrvWeqcHV
-inZWahXn/nVKP9wpOFqxAsxHbp82Yxhslfa0qj/5RMq0LhdSywtl/v9eZ1iqqD9/tHqw96KlVcbj
-w97fgae30x7YzWESms/eIPzsvtPayCVykgjMKpcpQLjaOGQyeUuvq2HgWVt9lnmN7mwx2QNhsPBd
-7OuMky0cQhNH5XhObIbEAfWN/4s4ZrRxeC02yVgyZXEwb/zhpR35Zfdc8sVhPSXoNyrWoQtfyW//
-0pIKsU+s6jTtFylvRjs0w+YmADpG5wuW6zeoQRJb4ib1IfqWDNximgyQJg4T1pUijqpCGbj7ZvnT
-SbGAnMMyroCojQbYfG4TyaarRzwNqwmTYC7cRZtIwar/VnR/Tyu96PevmrN3SWh7pch4Yaz4Yt2p
-EKNDuO9irPibZKWdHHaRzazaaTQeVI1VmUlNgsmhCDaUl2ywe+qsIwGlHjEvjMx5NrQ/ZalRSuHE
-WFj906l6zRYt3YOlas1LALaR1DqDta30Vvltswp0f9GlCwwqOf7bKCo/HAYxrZCGEAFequXtZJlF
-gnFfbfAwuTScq8ouJnh0LnKUgexCCb6yRXK7GNr779P2CpKOvatbGKcDPXW18ncHE9a0L2kRtSX1
-5GDo+zeCKkDkDCJjNKwH/bXbEVta9L/hXNHHbj+ct8PioXRpQOmHQBDBD0GYkFpn9InVPg0lRYWB
-0e1Pxn+QCpUHi0f4GF8FzwRJDdthhgGE9VYjGpd6C2/do9ycLnad5wU05fwWI1Otd68cdrV9evvx
-xwBSpZshauXFFz4wn+7OzdtJVaYhWfPRKUhRN7ZmBMZBfLDvVcTRyytCc/UG9yHfF/tERFt1yh9b
-Dllf+3wkZuVkLkcW7RnsEBEcB4FZ

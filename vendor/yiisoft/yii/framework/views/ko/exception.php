@@ -1,71 +1,242 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title><?php echo CHtml::encode($data['type'])?></title>
+
+<style type="text/css">
+/*<![CDATA[*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;margin:0;padding:0;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+:focus{outline:0;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
+
+body {
+	font: normal 9pt "Verdana";
+	color: #000;
+	background: #fff;
+}
+
+h1 {
+	font: normal 18pt "Verdana";
+	color: #f00;
+	margin-bottom: .5em;
+}
+
+h2 {
+	font: normal 14pt "Verdana";
+	color: #800000;
+	margin-bottom: .5em;
+}
+
+h3 {
+	font: bold 11pt "Verdana";
+}
+
+pre {
+	font: normal 11pt Menlo, Consolas, "Lucida Console";
+}
+
+pre span.error {
+	display: block;
+	background: #fce3e3;
+}
+
+pre span.ln {
+	color: #999;
+	padding-right: 0.5em;
+	border-right: 1px solid #ccc;
+}
+
+pre span.error-ln {
+	font-weight: bold;
+}
+
+.container {
+	margin: 1em 4em;
+}
+
+.version {
+	color: gray;
+	font-size: 8pt;
+	border-top: 1px solid #aaa;
+	padding-top: 1em;
+	margin-bottom: 1em;
+}
+
+.message {
+	color: #000;
+	padding: 1em;
+	font-size: 11pt;
+	background: #f3f3f3;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-bottom: 1em;
+	line-height: 160%;
+}
+
+.source {
+	margin-bottom: 1em;
+}
+
+.code pre {
+	background-color: #ffe;
+	margin: 0.5em 0;
+    padding: 0.5em;
+    line-height: 125%;
+    border: 1px solid #eee;
+}
+
+.source .file {
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.traces {
+	margin: 2em 0;
+}
+
+.trace {
+	margin: 0.5em 0;
+	padding: 0.5em;
+}
+
+.trace.app {
+	border: 1px dashed #c00;
+}
+
+.trace .number {
+	text-align: right;
+	width: 2em;
+	padding: 0.5em;
+}
+
+.trace .content {
+	padding: 0.5em;
+}
+
+.trace .plus,
+.trace .minus {
+	display:inline;
+	vertical-align:middle;
+	text-align:center;
+	border:1px solid #000;
+	color:#000;
+	font-size:10px;
+	line-height:10px;
+	margin:0;
+	padding:0 1px;
+	width:10px;
+	height:10px;
+}
+
+.trace.collapsed .minus,
+.trace.expanded .plus,
+.trace.collapsed pre {
+	display: none;
+}
+
+.trace-file {
+	cursor: pointer;
+	padding: 0.2em;
+}
+
+.trace-file:hover {
+	background: #f0ffff;
+}
+/*]]>*/
+</style>
+</head>
+
+<body>
+<div class="container">
+	<h1><?php echo $data['type']?></h1>
+
+	<p class="message">
+		<?php echo nl2br(CHtml::encode($data['message']))?>
+	</p>
+
+	<div class="source">
+		<p class="file"><?php echo CHtml::encode($data['file'])."({$data['line']})"?></p>
+		<?php echo $this->renderSourceCode($data['file'],$data['line'],$this->maxSourceLines); ?>
+	</div>
+
+	<div class="traces">
+		<h2>Stack Trace</h2>
+		<?php $count=0; ?>
+		<table style="width:100%;">
+		<?php foreach($data['traces'] as $n => $trace): ?>
+		<?php
+			if($this->isCoreCode($trace))
+				$cssClass='core collapsed';
+			elseif(++$count>3)
+				$cssClass='app collapsed';
+			else
+				$cssClass='app expanded';
+			$hasCode=$trace['file']!=='unknown' && is_file($trace['file']);
+		?>
+		<tr class="trace <?php echo $cssClass; ?>">
+			<td class="number">
+				#<?php echo $n; ?>
+			</td>
+			<td class="content">
+				<div class="trace-file">
+					<?php if($hasCode): ?>
+						<div class="plus">+</div>
+						<div class="minus">–</div>
+					<?php endif; ?>
+					<?php
+						echo '&nbsp;';
+						echo CHtml::encode($trace['file'])."(".$trace['line'].")";
+						echo ': ';
+						if(!empty($trace['class']))
+							echo "<strong>{$trace['class']}</strong>{$trace['type']}";
+						echo "<strong>{$trace['function']}</strong>(";
+						if(!empty($trace['args']))
+							echo CHtml::encode($this->argumentsToString($trace['args']));
+						echo ')';
+					?>
+				</div>
+
+				<?php if($hasCode) echo $this->renderSourceCode($trace['file'],$trace['line'],$this->maxTraceSourceLines); ?>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+		</table>
+	</div>
+
+	<div class="version">
+		<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
+	</div>
+</div>
+
+<script type="text/javascript">
+/*<![CDATA[*/
+var traceReg = new RegExp("(^|\\s)trace-file(\\s|$)");
+var collapsedReg = new RegExp("(^|\\s)collapsed(\\s|$)");
+
+var e = document.getElementsByTagName("div");
+for(var j=0,len=e.length;j<len;j++){
+	if(traceReg.test(e[j].className)){
+		e[j].onclick = function(){
+			var trace = this.parentNode.parentNode;
+			if(collapsedReg.test(trace.className))
+				trace.className = trace.className.replace("collapsed", "expanded");
+			else
+				trace.className = trace.className.replace("expanded", "collapsed");
+		}
+	}
+}
+/*]]>*/
+</script>
+
+</body>
+</html>

@@ -1,49 +1,98 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CZendDataCache class file
+ *
+ * @author Steffen Dietz <steffo.dietz[at]googlemail[dot]com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CZendDataCache implements a cache application module based on the Zend Data Cache
+ * delivered with {@link http://www.zend.com/en/products/server/ ZendServer}.
+ *
+ * To use this application component, the Zend Data Cache PHP extension must be loaded.
+ *
+ * See {@link CCache} manual for common cache operations that are supported by CZendDataCache.
+ *
+ * @author Steffen Dietz <steffo.dietz[at]googlemail[dot]com>
+ * @package system.caching
+ */
+class CZendDataCache extends CCache
+{
+	/**
+	 * Initializes this application component.
+	 * This method is required by the {@link IApplicationComponent} interface.
+	 * It checks the availability of Zend Data Cache.
+	 * @throws CException if Zend Data Cache extension is not loaded.
+	 */
+	public function init()
+	{
+		parent::init();
+		if(!function_exists('zend_shm_cache_store'))
+			throw new CException(Yii::t('yii','CZendDataCache requires PHP Zend Data Cache extension to be loaded.'));
+	}
+
+	/**
+	 * Retrieves a value from cache with a specified key.
+	 * This is the implementation of the method declared in the parent class.
+	 * @param string $key a unique key identifying the cached value
+	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
+	 */
+	protected function getValue($key)
+	{
+		$result = zend_shm_cache_fetch($key);
+		return $result !== NULL ? $result : false;
+	}
+
+	/**
+	 * Stores a value identified by a key in cache.
+	 * This is the implementation of the method declared in the parent class.
+	 *
+	 * @param string $key the key identifying the value to be cached
+	 * @param string $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	protected function setValue($key,$value,$expire)
+	{
+		return zend_shm_cache_store($key,$value,$expire);
+	}
+
+	/**
+	 * Stores a value identified by a key into cache if the cache does not contain this key.
+	 * This is the implementation of the method declared in the parent class.
+	 *
+	 * @param string $key the key identifying the value to be cached
+	 * @param string $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	protected function addValue($key,$value,$expire)
+	{
+		return (NULL === zend_shm_cache_fetch($key)) ? $this->setValue($key,$value,$expire) : false;
+	}
+
+	/**
+	 * Deletes a value with the specified key from cache
+	 * This is the implementation of the method declared in the parent class.
+	 * @param string $key the key of the value to be deleted
+	 * @return boolean if no error happens during deletion
+	 */
+	protected function deleteValue($key)
+	{
+		return zend_shm_cache_delete($key);
+	}
+
+	/**
+	 * Deletes all values from cache.
+	 * This is the implementation of the method declared in the parent class.
+	 * @return boolean whether the flush operation was successful.
+	 * @since 1.1.5
+	 */
+	protected function flushValues()
+	{
+		return zend_shm_cache_clear();
+	}
+}

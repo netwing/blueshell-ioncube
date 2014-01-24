@@ -1,40 +1,108 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ */
+
+/**
+ * Provides a means for Expectations to verify they are called in the correct order.
+ * This allows Invocations to be forced in a particular order.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_SimpleSequence implements Yay_Sequence
+{
+
+  /**
+   * The name of this sequence.
+   * @var string
+   * @access private
+   */
+  private $_name;
+
+  /**
+   * The list of sequence IDs expected.
+   * @var array
+   * @access private
+   */
+  private $_sequenceIds = array();
+
+  /**
+   * An internal sequence counter.
+   * @var int
+   * @access private
+   */
+  private $_counter = 0;
+
+  /**
+   * The current position in the sequence.
+   * @var int
+   * @access private
+   */
+  private $_currentId = null;
+
+  /**
+   * Create a new Sequence with $name.
+   * @param string $name
+   */
+  public function __construct($name)
+  {
+    $this->_name = $name;
+  }
+
+  /**
+   * Ask for a new Sequence Id and register the new sequence.
+   * @return integer $id
+   */
+  public function requestSequenceId()
+  {
+    $id = $this->_counter++;
+    $this->_sequenceIds[] = $id;
+    return $id;
+  }
+
+  /**
+   * Check if the sequence has progressed far enough for this sequence ID to be used.
+   * @param integer $id
+   * @return boolean
+   */
+  public function isInSequence($sequenceId)
+  {
+    if ($this->_currentId === $sequenceId)
+    {
+      $inSequence = true;
+    }
+    elseif (current($this->_sequenceIds) === $sequenceId)
+    {
+      $this->_currentId = array_shift($this->_sequenceIds);
+      $inSequence = true;
+    }
+    else
+    {
+      $inSequence = false;
+    }
+    return $inSequence;
+  }
+
+  /**
+   * Write a description of this self describing object to Description.
+   * @param Yay_Description $description
+   */
+  public function describeTo(Yay_Description $description)
+  {
+    $description->appendText(sprintf(' sequence %s;', $this->_name));
+  }
+
+}

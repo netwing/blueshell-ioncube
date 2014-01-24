@@ -1,77 +1,130 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Codeception\Util\Connector;
+
+use Symfony\Component\BrowserKit\Response;
+use Yii;
+
+/**
+ *
+ *
+ *
+ *
+ */
+class Yii1 extends \Symfony\Component\BrowserKit\Client
+{
+
+	/**
+	 * http://localhost/path/to/your/app/index.php
+	 * @var string url of the entry Yii script
+	 */
+	public $url;
+
+	/**
+	 * Current application settings {@see Codeception\Module\Yii1::$appSettings}
+	 * @var array
+	 */
+	public $appSettings;
+
+	/**
+	 * Full path to your application
+	 * @var string
+	 */
+	public $appPath;
+
+	/**
+	 * Current request headers
+	 * @var array
+	 */
+	private $_headers;
+
+	/**
+	 *
+	 * @param Symfony\Component\BrowserKit\Request $request
+	 * @return \Symfony\Component\BrowserKit\Response
+	 */
+	public function doRequest($request)
+	{
+		$this->_headers = array();
+		$_COOKIE = array_merge($_COOKIE,$request->getCookies());
+		$_SERVER = array_merge($_SERVER,$request->getServer());
+		$_FILES = $request->getFiles();
+		$_REQUEST = $request->getParameters();
+
+		if (strtoupper($request->getMethod()) == 'GET')
+			$_GET = $request->getParameters();
+		else
+			$_POST = $request->getParameters();
+
+		// Parse url parts
+		$uriPath = trim(parse_url($request->getUri(), PHP_URL_PATH), '/');
+		$uriQuery = ltrim(parse_url($request->getUri(), PHP_URL_QUERY), '?');
+		$scriptName = trim(parse_url($this->url, PHP_URL_PATH), '/');
+		if (!empty($uriQuery)) {
+
+		    $uriPath .= "?{$uriQuery}";
+
+		    parse_str($uriQuery, $params);
+		    foreach ($params as $k => $v) {
+		        $_GET[$k] = $v;
+		    }
+		}
+
+		// Add script name to request if none
+		if (strpos($uriPath, $scriptName) === false) {
+		    $uriPath = "/{$scriptName}/{$uriPath}";
+		}
+
+		// Add forward slash if not exists
+		if (strpos($uriPath, '/') !== 0) {
+		    $uriPath = "/{$uriPath}";
+		}
+
+		$_SERVER['REQUEST_METHOD'] = strtoupper($request->getMethod());
+		$_SERVER['REQUEST_URI'] = $uriPath;
+
+		/**
+		 * Hack to be sure that CHttpRequest will resolve route correctly
+		 */
+		$_SERVER['SCRIPT_NAME'] = "/{$scriptName}";
+		$_SERVER['SCRIPT_FILENAME'] = $this->appPath;
+
+		ob_start();
+		Yii::setApplication(null);
+		Yii::createApplication($this->appSettings['class'],$this->appSettings['config']);
+		Yii::app()->onEndRequest->add(array($this,'setHeaders'));
+		Yii::app()->run();
+
+		$content = ob_get_clean();
+
+        $headers = $this->getHeaders();
+        $statusCode = 200;
+        foreach ($headers as $header => $val) {
+            if ($header == 'Location') {
+                $statusCode = 302;
+            }
+        }
+
+        $response = new Response($content, $statusCode, $this->getHeaders());
+
+		return $response;
+	}
+
+	/**
+	 * Set current client headers when terminating yii application (onEndRequest)
+	 */
+	public function setHeaders()
+	{
+		$this->_headers = Yii::app()->request->getAllHeaders();
+	}
+
+	/**
+	 * Returns current client headers
+	 * @return array headers
+	 */
+	public function getHeaders()
+	{
+		return $this->_headers;
+	}
+
+}

@@ -1,217 +1,239 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  0 => '',
+  '&lt; Previous' => '&lt; הקודם',
+  '&lt;&lt; First' => '&lt;&lt; הראשון',
+  'Active record class "{class}" does not have a scope named "{scope}".' => 'מחלקת AR "{class}" לא מכילה סקופ בשם "{scope}".',
+  'Base path "{path}" is not a valid directory.' => 'נתיב ראשי "{path}" לא הוגדר מאחר והנתיב הוא לא תקני.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache דורש את התוסף של PHP בשם eAccelerator שיהיה מותקן, פעיל או מקומפל עם ערך "--with-eaccelerator-shared-memory".',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache דורש תוסף ב PHP בשם Zend Data Cache שיהיה מותקן ופעיל.',
+  'Column "{column} does not exist in table "{table}".' => 'עמודה "{column} לא קיימת בטבלה "{table}".',
+  'Column name must be either a string or an array.' => 'שם העמודה צריך להיות סטרינג או מערך',
+  'Extension path "{path}" does not exist.' => 'נתיב התוספים שהוגדר "{path}" לא קיים.',
+  'Go to page: ' => 'עבור לעמוד:',
+  'Invalid operator "{operator}".' => 'אופרטור לא תקני "{operator}".',
+  'Last &gt;&gt;' => 'אחרון &gt;&gt;',
+  'Next &gt;' => 'הבא &gt;',
+  'Table "{table}" does not exist.' => 'טבלה "{table}" לא קיימת במסד הנתונים.',
+  'The STAT relation "{name}" cannot have child relations.' => 'היחוס STAT בשם "{name}" לא יכול להכיל יחוסים נוספים תחתיו.',
+  'The asset "{asset}" to be published does not exist.' => 'הכנס לפרסום "{asset}" לא קיים.',
+  'The module path "{path}" is not a valid directory.' => 'תיקית המודלים "{path}" אינה תקיה תקינה.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'יחוס בשם "{relation}" במחלקת ה AR "{class}" לא מוגדר כראוי. טבלת הקישור "{joinTable}" שהוגדרה לא נמצאה במסד הנתונים.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'יחוס בשם "{relation}" במחלקת ה AR "{class}" הוגדרה עם שדה מפתח בשם "{key}" שאינו מקושר לטבלת האב "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'יחוס בשם "{relation}" במחלקת ה AR "{class}" is הוגדרה עם שדה מפתח לא תקני בשם "{key}". לא קיימת עמודה בשם זה בטבלה "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'יחוס בשם "{relation}" במחלקת ה AR "{class}" הוגדרה עם שדה מפתח לא תקני. העמודות במפתח צריכות להיות תואמות לשדות המפתח בטבלה "{table}".',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => 'הערך לעמודה "{column}" לא מתקבל בעת ביצוע שאילתה לטבלה "{table}".',
+  'Unable to import "{alias}". Please check your server configuration to make sure you are allowed to change PHP include_path.' => 'לא ניתן לייבא "{alias}". אנא בדוק את הגדרות ה PHP שלך בשרת שהינך אכן רשאי לשנות  את נתיב הוספת הקבצים.',
+  'Unable to resolve the request "{route}".' => 'לא ניתן לאתר את הנתיב המבוקש "{route}".',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" אינו תקני.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} צריך להיות {true} או {false}.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} צריך להיות גדול מ "{compareValue}".',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} צריך להיות גדול מ או שווה ל "{compareValue}".',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} צריך להיות קטן מ "{compareValue}".',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} צריך להיות קטן מ או שווה ל "{compareValue}".',
+  '{attribute} must be {value}.' => '{attribute} צריך להיות {value}.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} חייב להיות לא שווה ל "{compareValue}".',
+  '{class} does not have a method named "{name}".' => '{class} לא מכיל פונקציה בשם "{name}".',
+  '{class} does not support fetching all table names.' => '{class} לא תומך בשליפה של כל שמות הטבלאות.',
+  'CDbLogRoute requires database table "{table}" to store log messages.' => '@@CDbLogRoute דורש טבלת מסד נתונים בשם "{table}" כדי לשמור לוגים.@@',
+  'CMemCache requires PHP memcache extension to be loaded.' => '@@CMemCache דורש תוסף בשם memcache של PHP כדי לתפקד.@@',
+  'Cache table "{tableName}" does not exist.' => '@@טבלת המטמון "{tableName}" לא קיימת.@@',
+  'Table "{table}" does not have a primary key defined.' => '@@טבלה "{table}" לא מוגדר מפתח ראשי.@@',
+  'The "view" property is required.' => '@@ערך בשם "view" חייב להיות מוגדר.@@',
+  'The asset "{asset}" to be pulished does not exist.' => '@@הנכס "{asset}" לפרסום אינו קיים.@@',
+  'The column "{column}" is not a foreign key in table "{table}".' => '@@העמודה "{column}" אינה מפתח חיצוני בטבלת "{table}".@@',
+  'The requested controller "{controller}" does not exist.' => '@@הקונטרולר "{controller}" לא קיים.@@',
+  'The value for the primary key "{key}" is not supplied when querying the table "{table}".' => '@@הנתון שהוזן לערך המפתח הראשי "{key}" לא מוגדר כשמריצים שאילתה לטבלה "{table}".@@',
+  'Unable to find the decorator view "{view}".' => '@@לא ניתן למצוא את קובץ התצוגה "{view}".@@',
+  'Unable to find the list item.' => '@@לא ניתן למצוא את הערך ברשימה.@@',
+  '{class} does not have attribute "{name}".' => '@@{class} לא מכילה ערך בשם "{name}".@@',
+  '"{path}" is not a valid directory.' => 'הנתיב "{path}" אינו חוקי',
+  'Active Record requires a "db" CDbConnection application component.' => 'שימוש ב AR דורש חיבור זמין למסד על ידי שימוש במחלקת CDbConnection',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'מחלקת ה AR בשם "{class}" מכילה יחוס לא נכון בשם "{relation}". היחוס צריך להכיל את סוג היחוס, מחלקת ה AR אליה זה מיוחס והמפתח הזר.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'מחלקת ה AR בשם "{class}" מנסה לשלוף עמודה בשם "{column}" שאינה קיימת. זכור, העמודה חייבת להיות קיימת בטבלה או להיות ביטוי עם שם קישור.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'שם הקישור "{alias}" לא תקין. וודא שהוא מכוון לתיקיה או קובץ אשר קיימים בשרת.',
+  'Application base path "{path}" is not a valid directory.' => 'התיקיה הראשית של המערכת "{path}" אינה תקנית.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'תיקית המערכת הזמנית בה נשמרים כל קבצי המטמון והקבצים הזמניים "{path}" אינה תקינה. אנא וודא שהיא אכן קיימת ובעלת הרשאות כתיבה לתיקיה.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'הרשאה בשם "{item}" כבר הוגדרה למשתמש בשם "{user}".',
+  'CApcCache requires PHP apc extension to be loaded.' => 'שימוש במטמון מסוג CApcCache דורש שהתוסף APC של PHP יהיה מותקן ומופעל.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'נתיב התיקיה "{path}" למחלקה CAssetManager.basePath אינו תקין. אנא וודא שהוא אכן קיים ובעל הרשאות כתיבה.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'הערך שהוגדר ל CCacheHttpSession.cacheID אינו תקין. אנא וודא שערך "{id}" אכן קיים והוגדר בהגדרות המערכת.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'לא ניתן לאתר את הפעולה CCaptchaValidator.action "{id}". לא ניתן היה לאתר פעולה (פונקציה) כזאת בקונטרולר.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" אינו תקין. אנא וודא שהוא מוגדר ומכוון למזהה יחודי של המחלקה CDbConnection.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" אינו תקין. אנא וודא שהוא מוגדר ומכוון למזהה יחודי של המחלקה CDbConnection.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql לא יכול להיות ריק.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'התרחשה שגיאה בעת הרצת שאילתה בעזרת CDbCommand. השגיאה: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'התרחשה שגיאה בעת הכנת שאילתה בעזרת CDbCommand. השגיאה: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection לא תומך בקריאת תרשים מסד הנתונים למסד נתונים מסוגד {driver}.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection נכשל בעת ניסיון פתיחת חיבור למסד הנתונים. השגיאה: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection לא פעיל ולכן לא ניתן לבצע בעזרתו פעולות הקשורות למסד הנתונים.',
+  'CDbConnection.connectionString cannot be empty.' => 'הערך CDbConnection.connectionString לא יכול להיות ריק.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader לא יכול לבצע פעולת חזרה אחורה, רק קריאה ישירה קדימה.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" לא תקין. אנא וודא שהוא קיים והמזהה היחודי שלו מכוון למחלקה CDbConnection.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" לא מכוון למחלקה מסוג CDbConnection.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID לא תקין. אנא וודא שהערך "{id}" מכוון לרכיב מסד נתונים תקני.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction לא פעיל לכן לא יהיה ניתן לבצע בו פעולות כלשהן.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory לא יכול להיות ריק.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName לא יכול להיות ריק.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" לא מכוון לתיקיה תקינה בשרת. אנא וודא שהתיקיה קיימת וניתנת לכתיבה על ידי השרת..',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain יכול להכיל אובייקטים אשר משתמשים בממשק מסוג IFilter.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl לא יכול להיות מוגדר כריק.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name לא יכול להיות מוגדר כריק.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName לא יכול להיות מוגדר כריק.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection יכול להכיל אובייקטים מסוג CHttpCookie.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest לא הצליח לזהות את קובץ הבקשה הראשונה.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest לא הצליח לזהות את פרטי הבקשה.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest לא זהה את הקישור שהתבקש.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode חייב להיות מוגדר לאחד מהערכים "none", "allow" או "only".',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}" אינו תקין. הוא חייב להיות ערך מספרי בין 0 ל 100.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" הוא אינו נתיב תקני אשר נתן לשמור בו קבצים.',
+  'CMemCache server configuration must be an array.' => 'CMemCache הגדרות השרת חייבות להיות מערך.',
+  'CMemCache server configuration must have "host" value.' => 'CMemCache הגדרות השרת חייבות להכיל ערך בשם "host".',
+  'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name הוא ערך שחובה להגדירו.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute מצא בלוק אשר לא תואם בשרשור שלו "{token}". אנא וודא שקריאות ל Yii::beginProfile() ו Yii::endProfile() משורשרות בהתאם.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" אינו תקין. ערכים תקנים יכולים להיות "summary" ו "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager דורש תוסף בשם mcrypt של PHP כדי לתפקד.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey לא יכול להיות ריק.',
+  'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation חייב להיות מוגדר כ "MD5" או "SHA1".',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey לא יכול להיות ריק.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> יכול להכיל אובייקטים מסוג {type}.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat חייב להיות מוגדר בתור "path" או "get".',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache דורש תוסף בשם XCache של PHP כדי לתפקד.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'לא ניתן להוסיף "{child}" תחת "{name}". ניתן היה לאתר לולאה אין סופית.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'לא ניתן להוסיף "{child}" תחת "{parent}". ניתן היה לאתר לולאה אין סופית.',
+  'Cannot add "{name}" as a child of itself.' => 'לא ניתן להוסיף "{name}" בתור תת של עצמו.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => 'לא ניתן להוסיף רשומה מסוג "{child}" תחת רשומה מסוג "{parent}".',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" או "{child}" לא קיים.',
+  'Error: Table "{table}" does not have a primary key.' => 'שגיאה: הטבלה "{table}" לא מכילה מפתח ראשי.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'שגיאה: הטבלה "{table}" מכיל ריבוי של מפתחות ראשיים אשר לא נתמך על ידי פקודות CRUD.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => 'מחלקת אירוע "{class}.{event}" מצורפת עם פונקצית ניהול לא תקינה  "{handler}".',
+  'Event "{class}.{event}" is not defined.' => 'אירוע "{class}.{event}" לא מוגדר.',
+  'Failed to write the uploaded file "{file}" to disk.' => 'לא ניתן היה לכתוב את הקובץ שהועלה "{file}" לדיסק.',
+  'File upload was stopped by extension.' => 'העלאת הקובץ הופסקה על ידי גורם שלישי.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => 'הפילטר "{filter}" לא תקין. הקונטרולר "{class}" מכיל מתודת פילטר בשם "filter{filter}".',
+  'Get a new code' => 'קבל קוד חדש',
+  'Invalid MO file revision: {revision}.' => 'רביזית קובץ MO לא תקינה: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'קבצי MO לא תקינים: {file} ({magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'ערך לא תקני "{value}". אנא וודא שהוא נמצא בין הערכים ({enum}).',
+  'List data must be an array or an object implementing Traversable.' => 'רשימת הנתונים צריך להיות מערך.',
+  'List index "{index}" is out of bound.' => 'אינדקס הרשימה "{index}" נמצא מחוץ לטווח.',
+  'Login Required' => 'יש צורך להתחבר',
+  'Map data must be an array or an object implementing Traversable.' => 'מפת הנתונים צריכך להיות מערך.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'התיקיה הזמנית לשמירת הקובץ לא נמצאה "{file}".',
+  'No columns are being updated for table "{table}".' => 'אין עמודות אשר מתעדכנות בטבלה "{table}".',
+  'No counter columns are being updated for table "{table}".' => 'אין עמודות מספור אשר מתעדכנות לטבלה "{table}".',
+  'Object configuration must be an array containing a "class" element.' => 'אובייקט הגדרות חייב להיות מערך אשר מכיל אלמנט בשם "class".',
+  'Please fix the following input errors:' => 'אנא תקן את השגיאות הבאות:',
+  'Property "{class}.{property}" is not defined.' => 'הערך "{class}.{property}" לא הוגדר.',
+  'Property "{class}.{property}" is read only.' => 'הערך "{class}.{property}" הוא לקריאה בלבד.',
+  'Queue data must be an array or an object implementing Traversable.' => 'הנתונים צריכים להיות מסוג מערך.',
+  'Relation "{name}" is not defined in active record class "{class}".' => 'יחוס בשם "{name}" לא מוגדר במחלקת AR "{class}".',
+  'Stack data must be an array or an object implementing Traversable.' => 'הנתונים צריכים להיות מסוג מערך.',
+  'Table "{table}" does not have a column named "{column}".' => 'טבלה "{table}" לא מכיל עמודה בשם "{column}".',
+  'The "filter" property must be specified with a valid callback.' => 'ערך בשם "filter" חייב להיות מוגדר עם קריאה תקינה לפונקציה.',
+  'The "pattern" property must be specified with a valid regular expression.' => 'ערך בשם "pattern" חייב להיות מוגדר עם ביטוי רגולרי תקני.',
+  'The CSRF token could not be verified.' => 'אסימון CSRF לא ניתן לזיהוי.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'תבנית הקישור "{pattern}" לנתב "{route}" אינו ביטוי רגולרי תקני.',
+  'The active record cannot be deleted because it is new.' => 'לא ניתן למחוק את רשומת ה AR מאחר והיא חדשה.',
+  'The active record cannot be inserted to database because it is not new.' => 'לא נתן להוסיף את רשומת ה AR למסד מאחר והיא חדשה.',
+  'The active record cannot be updated because it is new.' => 'לא נתן לעדכן את רשומת ה AR מאחר והיא רשומה חדשה.',
+  'The command path "{path}" is not a valid directory.' => 'נתיב הפקודות "{path}" לא תקני.',
+  'The controller path "{path}" is not a valid directory.' => 'נתיב הקונטרולרים "{path}" לא תקני.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'הקובץ "{file}" מכיל סיומת לא תקינה. ניתן לעלות קבצים עם סיומות: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => 'הקובץ "{file}" גדול מדי. גודלו לא יכול להיות גדול מ {limit} בתים.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => 'הקובץ "{file}" קטן מדי. גודלו לא יכול להיות קטן יותר מ {limit} בתים.',
+  'The file "{file}" was only partially uploaded.' => 'הקובץ "{file}" הועלה בצורה חלקית בלבד.',
+  'The first element in a filter configuration must be the filter class.' => 'הערך הראשון בהגדרות פילטר חייב להיות שם המחלקה של הפילטר.',
+  'The item "{name}" does not exist.' => 'הערך "{name}" לא קיים.',
+  'The item "{parent}" already has a child "{child}".' => 'הערך "{parent}" כבר מכיל ערך בשם "{child}" תחתיו.',
+  'The layout path "{path}" is not a valid directory.' => 'תיקית תבניות התצוגה "{path}" אינה תקינה.',
+  'The list is read only.' => 'הרשימה היא לקריאה בלבד.',
+  'The map is read only.' => 'המפה היא לקריאה בלבד.',
+  'The pattern for 12 hour format must be "h" or "hh".' => 'התבנית לשעה בפורמט 12 שעות צריך להיות "h" או "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => 'התבנית לשעה בפורמט 24 שעות צריך להיות "H" או "HH".',
+  'The pattern for AM/PM marker must be "a".' => 'התבנית ל AM/PM צריך להיות "a".',
+  'The pattern for day in month must be "F".' => 'התבנית ליום בחודש צריך להיות "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'התבנית ליום בשנה צריך להיות "D", "DD" או "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => 'התבנית ליום בחודש צריך להיות "d" או "dd".',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE" or "EEEEE".' => 'התבנית ליום בשבוע צריך להיות "E", "EE", "EEE", "EEEE" או "EEEEE".',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'התקנית לעידן צריך להיות "G", "GG", "GGG", "GGGG" או "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'התבנית לשעה ב AM/PM צריך להיות "K" או "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => 'התבנית לשעה ביום צריך להיות "k" או "kk".',
+  'The pattern for minutes must be "m" or "mm".' => 'התבנית לדקות צריך להיות "m" או "mm".',
+  'The pattern for month must be "M", "MM", "MMM", or "MMMM".' => 'התבנית לחודש צריך להיות "M", "MM", "MMM", או "MMMM".',
+  'The pattern for seconds must be "s" or "ss".' => 'התבנית לשניות צריך להיות "s" או "ss".',
+  'The pattern for time zone must be "z" or "v".' => 'התבנית לאיזור זמן צריך להיות "z" or "v".',
+  'The pattern for week in month must be "W".' => 'התבנית לשבוע בחודש צריך להיות "W".',
+  'The pattern for week in year must be "w".' => 'התבנית לשבוע בשנה צריך להיות "w".',
+  'The queue is empty.' => 'התור ריק.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'היחוס "{relation}" במחלקת AR "{class}" לא מוגדר כמו שצריך: הטבלה המקשרת "{joinTable}" אשר הוגדרה במפתח החיצוני לא נמצאה במסד.',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'היחוס "{relation}" במחלקת AR "{class}" מוגדר עם מפתח חיצוני לא שלם. המפתח החיצוני חייב להכיל עמודות אשר מכוונות לשני הטבלאות המקשרות.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => 'היחוס "{relation}" במחלקת AR "{class}" מוגדר עם מפתח חיצוני לא תקני "{key}". המפתח החיצוני לא מכוון לשום טבלה מקשרת.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'היחוס "{relation}" במחלקת AR "{class}" אינו כתוב בצורה תקנית. הפורמט המתאים של המפתח החיצוני צריך להיות "joinTable(fk1,fk2,...)".',
+  'The requested view "{name}" is not found.' => 'קובץ התצוגה המבוקש "{name}" לא נמצא.',
+  'The stack is empty.' => 'ערמת המידע ריקה.',
+  'The system is unable to find the requested action "{action}".' => 'המערכת לא הצליחה לאתר פעולה בשם "{action}".',
+  'The system view path "{path}" is not a valid directory.' => 'תיקית קבצי התצוגה "{path}" אינה תקינה.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'הטבלה "{table}" למחלקת AR "{class}" לא נמצאה במסד הנתונים.',
+  'The verification code is incorrect.' => 'קוד האימות שגוי.',
+  'The view path "{path}" is not a valid directory.' => 'תיקית קבצי התצוגה "{path}" אינה תקינה.',
+  'Theme directory "{directory}" does not exist.' => 'תיקית העיצובים "{directory}" לא קיימת.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'תוכן זה דורש <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => 'לא ניתן להוסיף רשומה עם שם זהה לרשומה שכבר קיימת.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'לא ניתן לשנות את שמה של הרשומה. רשומה בשם "{name}" נמצאת בשימוש תחת רשומה אחרת.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'לא ניתן ליצור קובץ סטאטוס לאפליקציה תחת "{file}". וודא שתיקית המערכת הזמנית קיימת וניתנת לכתיבה.',
+  'Unable to lock file "{file}" for reading.' => 'לא ניתן לנעול את הקובץ "{file}" לקריאה.',
+  'Unable to lock file "{file}" for writing.' => 'לא ניתן לנעול את הקובץ "{file}" לכתיבה.',
+  'Unable to read file "{file}".' => 'לא ניתן לקרוא את הקובץ "{file}".',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => 'לא ניתן להריץ את הפעולה "{object}.{method}". הפונקציה לא קיימת.',
+  'Unable to write file "{file}".' => 'לא ניתן לכתוב לקובץ "{file}".',
+  'Unknown authorization item "{name}".' => 'ערך אימות לא מזוהה "{name}".',
+  'Unrecognized locale "{locale}".' => ' "{locale}" לא קיים.',
+  'View file "{file}" does not exist.' => 'קובץ התצוגה "{file}" לא קיים.',
+  'Yii application can only be created once.' => 'ניתן ליצור אפליקציה רק פעם אחת.',
+  'You are not authorized to perform this action.' => 'אינך מורשה לבצע פעולה זו.',
+  'Your request is not valid.' => 'הבקשה שלך לא חוקית.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" כבר נמצא בשימוש.',
+  '{attribute} cannot be blank.' => '{attribute} לא יכול להיות ריק.',
+  '{attribute} is invalid.' => '{attribute} אינו תקין.',
+  '{attribute} is not a valid URL.' => '{attribute} הוא אינו קישור תקין.',
+  '{attribute} is not a valid email address.' => '{attribute} הוא אינו אימייל תקין.',
+  '{attribute} is not in the list.' => '{attribute} לא נמצא ברשימה.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} מכיל מספר תווים לא נכון (צריך להיות {length} תווים).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} גדול מדי (המקסימום הוא {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} ארוך מדי (המקסימום הוא {max} תווים).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} קצר מדי (המינימום הוא {min} תווים).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} קטן מדי (המינימום {min}).',
+  '{attribute} must be a number.' => '{attribute} חייב להיות מספר.',
+  '{attribute} must be an integer.' => '{attribute} לחייב להיות מספר שלם.',
+  '{attribute} must be repeated exactly.' => '{attribute} חייב להיות מוחזר בידיוק.',
+  '{attribute} must be {type}.' => '{attribute} חייב להיות {type}.',
+  '{className} does not support add() functionality.' => '{className} לא תומך בפונקצית add().',
+  '{className} does not support delete() functionality.' => '{className} לא תומך בפונקצית delete().',
+  '{className} does not support flush() functionality.' => '{className} לא תומך בפונקצית flush().',
+  '{className} does not support get() functionality.' => '{className} לא תומך בפונקצית get().',
+  '{className} does not support set() functionality.' => '{className} לא תומך בפונקצית set().',
+  '{class} does not have relation "{name}".' => '{class} לא מכילה יחוס של "{name}".',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} מכיל ערך אימות לא תקני. הערך צריך להגדיר את שמות העמודות שאותם הוא צריך לאמת ואת שם סוג האימות שעליו לבצע.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} חייב להגדיר את הערכים "model" ו "attribute" או "name".',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin חייב להיות מוגדר בתור TRUE כדי לאפשר אימות על בסיס עוגיות. ',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() חייב להיות מיושם.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} לא יכל היה לאתר את קובץ התצוגה "{view}',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} מכיל שרשור תגים לא נכון של וידגטים בקובץ התצוגה "{view}". וידגט {widget} לא קורא לפקודה endWidget().',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} מכיל קריאה נוספת של endWidget({id}) בקובץ התצוגה שלו.',
+  '{widget} cannot find the view "{view}".' => '{widget} לא יכול לאתר את קובץ התצוגה "{view}',
+);

@@ -1,43 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-S+/bbW==
+<?php
+/**
+ * CHelpCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CHelpCommand represents a console help command.
+ *
+ * CHelpCommand displays the available command list or the help instructions
+ * about a specific command.
+ *
+ * To use this command, enter the following on the command line:
+ * <pre>
+ * php path/to/entry_script.php help [command name]
+ * </pre>
+ * In the above, if the command name is not provided, it will display all
+ * available commands.
+ *
+ * @property string $help The command description.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.console
+ * @since 1.0
+ */
+class CHelpCommand extends CConsoleCommand
+{
+	/**
+	 * Execute the action.
+	 * @param array $args command line parameters specific for this command
+	 * @return integer non zero application exit code after printing help
+	 */
+	public function run($args)
+	{
+		$runner=$this->getCommandRunner();
+		$commands=$runner->commands;
+		if(isset($args[0]))
+			$name=strtolower($args[0]);
+		if(!isset($args[0]) || !isset($commands[$name]))
+		{
+			if(!empty($commands))
+			{
+				echo "Yii command runner (based on Yii v".Yii::getVersion().")\n";
+				echo "Usage: ".$runner->getScriptName()." <command-name> [parameters...]\n";
+				echo "\nThe following commands are available:\n";
+				$commandNames=array_keys($commands);
+				sort($commandNames);
+				echo ' - '.implode("\n - ",$commandNames);
+				echo "\n\nTo see individual command help, use the following:\n";
+				echo "   ".$runner->getScriptName()." help <command-name>\n";
+			}
+			else
+			{
+				echo "No available commands.\n";
+				echo "Please define them under the following directory:\n";
+				echo "\t".Yii::app()->getCommandPath()."\n";
+			}
+		}
+		else
+			echo $runner->createCommand($name)->getHelp();
+		return 1;
+	}
+
+	/**
+	 * Provides the command description.
+	 * @return string the command description.
+	 */
+	public function getHelp()
+	{
+		return parent::getHelp().' [command-name]';
+	}
+}

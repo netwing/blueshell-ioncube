@@ -1,65 +1,127 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Author: davert
+ * Date: 14.09.12
+ *
+ * Class Locator
+ * Description: Provides basic methods for building complex CSS and XPath locators.
+ *
+ */
+
+namespace Codeception\Util;
+use Symfony\Component\CssSelector\CssSelector;
+use Symfony\Component\CssSelector\Exception\ParseException;
+use Symfony\Component\CssSelector\XPath\Translator;
+
+class Locator
+{
+
+    /**
+     * Applies OR operator to any number of CSS or XPath selectors.
+     * You can mix up CSS and XPath selectors here.
+     *
+     * @static
+     * @param $selector1
+     * @param $selector2
+     * @return string
+     */
+    public static function combine($selector1, $selector2) {
+        $selectors = func_get_args();
+        foreach ($selectors as $k => $v) {
+            $selectors[$k] = self::toXPath($v);
+            if (!$selectors[$k]) throw new \Exception("$v is invalid CSS or XPath");
+        }
+        return implode(' | ', $selectors);
+    }
+
+    /**
+     * Matches the *a* element with given URL
+     *
+     * @static
+     * @param $url
+     * @return string
+     */
+    public static function href($url)
+    {
+        return sprintf('//a[@href=normalize-space(%s)]', Translator::getXpathLiteral($url));
+    }
+
+    /**
+     * Matches the element with given tab index
+     *
+     * @static
+     * @param $index
+     * @return string
+     */
+    public static function tabIndex($index)
+    {
+        return sprintf('//*[@tabindex = normalize-space(%d)]', $index);
+    }
+
+    /**
+     * Matches option by text
+     *
+     * @param $value
+     * @return string
+     */
+    public static function option($value)
+    {
+        return sprintf('//option[.=normalize-space("%s")]', $value);
+    }
+
+
+    protected static function toXPath($selector)
+    {
+        try {
+            $xpath = CssSelector::toXPath($selector);
+            return $xpath;
+        } catch (ParseException $e) {
+            if (self::isXPath($selector)) return $selector;
+        }
+        return null;
+    }
+
+    /**
+     * Finds element by it's attribute(s)
+     *
+     * @static
+     * @param $element
+     * @param $attributes
+     * @return string
+     */
+    public static function find($element, array $attributes)
+    {
+        $operands = array();
+        foreach ($attributes as $attribute => $value) {
+            if (is_int($attribute)) {
+                $operands[] = '@'.$value;
+            } else {
+                $operands[] = '@'.$attribute.' = '. Translator::getXpathLiteral($value);
+            }
+        }
+        return sprintf('//%s[%s]', $element, implode(' and ', $operands));
+    }
+
+    public static function isCSS($selector)
+    {
+        try {
+            CssSelector::toXPath($selector);
+        } catch (ParseException $e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static function isXPath($locator)
+    {
+        $document = new \DOMDocument('1.0', 'UTF-8');
+        $xpath = new \DOMXPath($document);
+        return @$xpath->evaluate($locator, $document) !== false;
+    }
+
+    public static function isID($id)
+    {
+        return (bool)preg_match('~^#[\w\.\-\[\]\=\^\~\:]+$~', $id);
+    }
+
+}

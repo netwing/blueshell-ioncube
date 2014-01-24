@@ -1,259 +1,614 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Calculation
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/*
+PARTLY BASED ON:
+	Copyright (c) 2007 E. W. Bachtal, Inc.
+
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+	and associated documentation files (the "Software"), to deal in the Software without restriction,
+	including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
+	and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so,
+	subject to the following conditions:
+
+	  The above copyright notice and this permission notice shall be included in all copies or substantial
+	  portions of the Software.
+
+	The software is provided "as is", without warranty of any kind, express or implied, including but not
+	limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In
+	no event shall the authors or copyright holders be liable for any claim, damages or other liability,
+	whether in an action of contract, tort or otherwise, arising from, out of or in connection with the
+	software or the use or other dealings in the software.
+
+	http://ewbi.blogs.com/develops/2007/03/excel_formula_p.html
+	http://ewbi.blogs.com/develops/2004/12/excel_formula_p.html
+*/
+
+/**
+ * PHPExcel_Calculation_FormulaParser
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Calculation
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Calculation_FormulaParser {
+	/* Character constants */
+	const QUOTE_DOUBLE  = '"';
+	const QUOTE_SINGLE  = '\'';
+	const BRACKET_CLOSE = ']';
+	const BRACKET_OPEN  = '[';
+	const BRACE_OPEN    = '{';
+	const BRACE_CLOSE   = '}';
+	const PAREN_OPEN    = '(';
+	const PAREN_CLOSE   = ')';
+	const SEMICOLON     = ';';
+	const WHITESPACE    = ' ';
+	const COMMA         = ',';
+	const ERROR_START   = '#';
+
+	const OPERATORS_SN 			= "+-";
+	const OPERATORS_INFIX 		= "+-*/^&=><";
+	const OPERATORS_POSTFIX 	= "%";
+
+	/**
+	 * Formula
+	 *
+	 * @var string
+	 */
+	private $_formula;
+
+	/**
+	 * Tokens
+	 *
+	 * @var PHPExcel_Calculation_FormulaToken[]
+	 */
+	private $_tokens = array();
+
+    /**
+     * Create a new PHPExcel_Calculation_FormulaParser
+     *
+     * @param 	string		$pFormula	Formula to parse
+     * @throws 	Exception
+     */
+    public function __construct($pFormula = '')
+    {
+    	// Check parameters
+    	if (is_null($pFormula)) {
+    		throw new Exception("Invalid parameter passed: formula");
+    	}
+
+    	// Initialise values
+    	$this->_formula = trim($pFormula);
+    	// Parse!
+    	$this->_parseToTokens();
+    }
+
+    /**
+     * Get Formula
+     *
+     * @return string
+     */
+    public function getFormula() {
+    	return $this->_formula;
+    }
+
+    /**
+     * Get Token
+     *
+     * @param 	int		$pId	Token id
+     * @return	string
+     * @throws  Exception
+     */
+    public function getToken($pId = 0) {
+    	if (isset($this->_tokens[$pId])) {
+    		return $this->_tokens[$pId];
+    	} else {
+    		throw new Exception("Token with id $pId does not exist.");
+    	}
+    }
+
+    /**
+     * Get Token count
+     *
+     * @return string
+     */
+    public function getTokenCount() {
+    	return count($this->_tokens);
+    }
+
+    /**
+     * Get Tokens
+     *
+     * @return PHPExcel_Calculation_FormulaToken[]
+     */
+    public function getTokens() {
+    	return $this->_tokens;
+    }
+
+    /**
+     * Parse to tokens
+     */
+    private function _parseToTokens() {
+		// No attempt is made to verify formulas; assumes formulas are derived from Excel, where
+		// they can only exist if valid; stack overflows/underflows sunk as nulls without exceptions.
+
+		// Check if the formula has a valid starting =
+		$formulaLength = strlen($this->_formula);
+		if ($formulaLength < 2 || $this->_formula{0} != '=') return;
+
+		// Helper variables
+		$tokens1	= $tokens2 	= $stack = array();
+		$inString	= $inPath 	= $inRange 	= $inError = false;
+		$token		= $previousToken	= $nextToken	= null;
+
+		$index	= 1;
+		$value	= '';
+
+		$ERRORS 			= array("#NULL!", "#DIV/0!", "#VALUE!", "#REF!", "#NAME?", "#NUM!", "#N/A");
+		$COMPARATORS_MULTI 	= array(">=", "<=", "<>");
+
+		while ($index < $formulaLength) {
+			// state-dependent character evaluation (order is important)
+
+			// double-quoted strings
+			// embeds are doubled
+			// end marks token
+			if ($inString) {
+				if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::QUOTE_DOUBLE) {
+					if ((($index + 2) <= $formulaLength) && ($this->_formula{$index + 1} == PHPExcel_Calculation_FormulaParser::QUOTE_DOUBLE)) {
+						$value .= PHPExcel_Calculation_FormulaParser::QUOTE_DOUBLE;
+						++$index;
+					} else {
+						$inString = false;
+						$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_TEXT);
+						$value = "";
+					}
+				} else {
+					$value .= $this->_formula{$index};
+				}
+				++$index;
+				continue;
+			}
+
+			// single-quoted strings (links)
+			// embeds are double
+			// end does not mark a token
+			if ($inPath) {
+				if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::QUOTE_SINGLE) {
+					if ((($index + 2) <= $formulaLength) && ($this->_formula{$index + 1} == PHPExcel_Calculation_FormulaParser::QUOTE_SINGLE)) {
+						$value .= PHPExcel_Calculation_FormulaParser::QUOTE_SINGLE;
+						++$index;
+					} else {
+						$inPath = false;
+					}
+				} else {
+					$value .= $this->_formula{$index};
+				}
+				++$index;
+				continue;
+			}
+
+			// bracked strings (R1C1 range index or linked workbook name)
+			// no embeds (changed to "()" by Excel)
+			// end does not mark a token
+			if ($inRange) {
+				if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::BRACKET_CLOSE) {
+					$inRange = false;
+				}
+				$value .= $this->_formula{$index};
+				++$index;
+				continue;
+			}
+
+			// error values
+			// end marks a token, determined from absolute list of values
+			if ($inError) {
+				$value .= $this->_formula{$index};
+				++$index;
+				if (in_array($value, $ERRORS)) {
+					$inError = false;
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_ERROR);
+					$value = "";
+				}
+				continue;
+			}
+
+			// scientific notation check
+			if (strpos(PHPExcel_Calculation_FormulaParser::OPERATORS_SN, $this->_formula{$index}) !== false) {
+				if (strlen($value) > 1) {
+					if (preg_match("/^[1-9]{1}(\.[0-9]+)?E{1}$/", $this->_formula{$index}) != 0) {
+						$value .= $this->_formula{$index};
+						++$index;
+						continue;
+					}
+				}
+			}
+
+			// independent character evaluation (order not important)
+
+			// establish state-dependent character evaluations
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::QUOTE_DOUBLE) {
+				if (strlen($value > 0)) {  // unexpected
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_UNKNOWN);
+					$value = "";
+				}
+				$inString = true;
+				++$index;
+				continue;
+ 			}
+
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::QUOTE_SINGLE) {
+				if (strlen($value) > 0) { // unexpected
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_UNKNOWN);
+					$value = "";
+				}
+				$inPath = true;
+				++$index;
+				continue;
+			}
+
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::BRACKET_OPEN) {
+				$inRange = true;
+				$value .= PHPExcel_Calculation_FormulaParser::BRACKET_OPEN;
+				++$index;
+				continue;
+			}
+
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::ERROR_START) {
+				if (strlen($value) > 0) { // unexpected
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_UNKNOWN);
+					$value = "";
+				}
+				$inError = true;
+				$value .= PHPExcel_Calculation_FormulaParser::ERROR_START;
+				++$index;
+				continue;
+			}
+
+			// mark start and end of arrays and array rows
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::BRACE_OPEN) {
+				if (strlen($value) > 0) { // unexpected
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_UNKNOWN);
+					$value = "";
+				}
+
+				$tmp = new PHPExcel_Calculation_FormulaToken("ARRAY", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_START);
+				$tokens1[] = $tmp;
+				$stack[] = clone $tmp;
+
+				$tmp = new PHPExcel_Calculation_FormulaToken("ARRAYROW", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_START);
+				$tokens1[] = $tmp;
+				$stack[] = clone $tmp;
+
+				++$index;
+				continue;
+			}
+
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::SEMICOLON) {
+				if (strlen($value) > 0) {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+					$value = "";
+				}
+
+				$tmp = array_pop($stack);
+				$tmp->setValue("");
+				$tmp->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP);
+				$tokens1[] = $tmp;
+
+				$tmp = new PHPExcel_Calculation_FormulaToken(",", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_ARGUMENT);
+				$tokens1[] = $tmp;
+
+				$tmp = new PHPExcel_Calculation_FormulaToken("ARRAYROW", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_START);
+				$tokens1[] = $tmp;
+				$stack[] = clone $tmp;
+
+				++$index;
+				continue;
+			}
+
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::BRACE_CLOSE) {
+				if (strlen($value) > 0) {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+					$value = "";
+				}
+
+				$tmp = array_pop($stack);
+				$tmp->setValue("");
+				$tmp->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP);
+				$tokens1[] = $tmp;
+
+				$tmp = array_pop($stack);
+				$tmp->setValue("");
+				$tmp->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP);
+				$tokens1[] = $tmp;
+
+				++$index;
+				continue;
+			}
+
+			// trim white-space
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::WHITESPACE) {
+				if (strlen($value) > 0) {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+					$value = "";
+				}
+				$tokens1[] = new PHPExcel_Calculation_FormulaToken("", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_WHITESPACE);
+				++$index;
+				while (($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::WHITESPACE) && ($index < $formulaLength)) {
+					++$index;
+				}
+				continue;
+			}
+
+			// multi-character comparators
+			if (($index + 2) <= $formulaLength) {
+				if (in_array(substr($this->_formula, $index, 2), $COMPARATORS_MULTI)) {
+					if (strlen($value) > 0) {
+						$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+						$value = "";
+					}
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken(substr($this->_formula, $index, 2), PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORINFIX, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_LOGICAL);
+					$index += 2;
+					continue;
+				}
+			}
+
+			// standard infix operators
+			if (strpos(PHPExcel_Calculation_FormulaParser::OPERATORS_INFIX, $this->_formula{$index}) !== false) {
+				if (strlen($value) > 0) {
+					$tokens1[] =new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+					$value = "";
+				}
+				$tokens1[] = new PHPExcel_Calculation_FormulaToken($this->_formula{$index}, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORINFIX);
+				++$index;
+				continue;
+			}
+
+			// standard postfix operators (only one)
+			if (strpos(PHPExcel_Calculation_FormulaParser::OPERATORS_POSTFIX, $this->_formula{$index}) !== false) {
+				if (strlen($value) > 0) {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+					$value = "";
+				}
+				$tokens1[] = new PHPExcel_Calculation_FormulaToken($this->_formula{$index}, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORPOSTFIX);
+				++$index;
+				continue;
+			}
+
+			// start subexpression or function
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::PAREN_OPEN) {
+				if (strlen($value) > 0) {
+					$tmp = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_START);
+					$tokens1[] = $tmp;
+					$stack[] = clone $tmp;
+					$value = "";
+				} else {
+					$tmp = new PHPExcel_Calculation_FormulaToken("", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_SUBEXPRESSION, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_START);
+					$tokens1[] = $tmp;
+					$stack[] = clone $tmp;
+				}
+				++$index;
+				continue;
+			}
+
+			// function, subexpression, or array parameters, or operand unions
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::COMMA) {
+				if (strlen($value) > 0) {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+					$value = "";
+				}
+
+				$tmp = array_pop($stack);
+				$tmp->setValue("");
+				$tmp->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP);
+				$stack[] = $tmp;
+
+				if ($tmp->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION) {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken(",", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORINFIX, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_UNION);
+				} else {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken(",", PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_ARGUMENT);
+				}
+				++$index;
+				continue;
+			}
+
+			// stop subexpression
+			if ($this->_formula{$index} == PHPExcel_Calculation_FormulaParser::PAREN_CLOSE) {
+				if (strlen($value) > 0) {
+					$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+					$value = "";
+				}
+
+				$tmp = array_pop($stack);
+				$tmp->setValue("");
+				$tmp->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP);
+				$tokens1[] = $tmp;
+
+				++$index;
+				continue;
+			}
+
+        	// token accumulation
+			$value .= $this->_formula{$index};
+			++$index;
+		}
+
+		// dump remaining accumulation
+		if (strlen($value) > 0) {
+			$tokens1[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND);
+		}
+
+		// move tokenList to new set, excluding unnecessary white-space tokens and converting necessary ones to intersections
+		$tokenCount = count($tokens1);
+		for ($i = 0; $i < $tokenCount; ++$i) {
+			$token = $tokens1[$i];
+			if (isset($tokens1[$i - 1])) {
+				$previousToken = $tokens1[$i - 1];
+			} else {
+				$previousToken = null;
+			}
+			if (isset($tokens1[$i + 1])) {
+				$nextToken = $tokens1[$i + 1];
+			} else {
+				$nextToken = null;
+			}
+
+			if (is_null($token)) {
+				continue;
+			}
+
+			if ($token->getTokenType() != PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_WHITESPACE) {
+				$tokens2[] = $token;
+				continue;
+			}
+
+			if (is_null($previousToken)) {
+				continue;
+			}
+
+			if (! (
+					(($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION) && ($previousToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP)) ||
+					(($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_SUBEXPRESSION) && ($previousToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP)) ||
+					($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND)
+				  ) ) {
+				continue;
+			}
+
+			if (is_null($nextToken)) {
+				continue;
+			}
+
+			if (! (
+					(($nextToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION) && ($nextToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_START)) ||
+					(($nextToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_SUBEXPRESSION) && ($nextToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_START)) ||
+					($nextToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND)
+				  ) ) {
+				continue;
+			}
+
+			$tokens2[] = new PHPExcel_Calculation_FormulaToken($value, PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORINFIX, PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_INTERSECTION);
+		}
+
+		// move tokens to final list, switching infix "-" operators to prefix when appropriate, switching infix "+" operators
+		// to noop when appropriate, identifying operand and infix-operator subtypes, and pulling "@" from function names
+		$this->_tokens = array();
+
+		$tokenCount = count($tokens2);
+		for ($i = 0; $i < $tokenCount; ++$i) {
+			$token = $tokens2[$i];
+			if (isset($tokens2[$i - 1])) {
+				$previousToken = $tokens2[$i - 1];
+			} else {
+				$previousToken = null;
+			}
+			if (isset($tokens2[$i + 1])) {
+				$nextToken = $tokens2[$i + 1];
+			} else {
+				$nextToken = null;
+			}
+
+			if (is_null($token)) {
+				continue;
+			}
+
+			if ($token->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORINFIX && $token->getValue() == "-") {
+				if ($i == 0) {
+					$token->setTokenType(PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORPREFIX);
+				} else if (
+							(($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION) && ($previousToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP)) ||
+							(($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_SUBEXPRESSION) && ($previousToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP)) ||
+							($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORPOSTFIX) ||
+							($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND)
+						) {
+					$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_MATH);
+				} else {
+					$token->setTokenType(PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORPREFIX);
+				}
+
+				$this->_tokens[] = $token;
+				continue;
+			}
+
+			if ($token->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORINFIX && $token->getValue() == "+") {
+				if ($i == 0) {
+					continue;
+				} else if (
+							(($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION) && ($previousToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP)) ||
+							(($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_SUBEXPRESSION) && ($previousToken->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_STOP)) ||
+							($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORPOSTFIX) ||
+							($previousToken->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND)
+						) {
+					$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_MATH);
+				} else {
+					continue;
+				}
+
+				$this->_tokens[] = $token;
+				continue;
+			}
+
+			if ($token->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERATORINFIX && $token->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_NOTHING) {
+				if (strpos("<>=", substr($token->getValue(), 0, 1)) !== false) {
+					$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_LOGICAL);
+				} else if ($token->getValue() == "&") {
+					$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_CONCATENATION);
+				} else {
+					$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_MATH);
+				}
+
+				$this->_tokens[] = $token;
+				continue;
+			}
+
+			if ($token->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_OPERAND && $token->getTokenSubType() == PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_NOTHING) {
+				if (!is_numeric($token->getValue())) {
+					if (strtoupper($token->getValue()) == "TRUE" || strtoupper($token->getValue() == "FALSE")) {
+						$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_LOGICAL);
+					} else {
+						$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_RANGE);
+					}
+				} else {
+					$token->setTokenSubType(PHPExcel_Calculation_FormulaToken::TOKEN_SUBTYPE_NUMBER);
+				}
+
+				$this->_tokens[] = $token;
+				continue;
+			}
+
+			if ($token->getTokenType() == PHPExcel_Calculation_FormulaToken::TOKEN_TYPE_FUNCTION) {
+				if (strlen($token->getValue() > 0)) {
+					if (substr($token->getValue(), 0, 1) == "@") {
+						$token->setValue(substr($token->getValue(), 1));
+					}
+				}
+			}
+
+        	$this->_tokens[] = $token;
+		}
+    }
+}

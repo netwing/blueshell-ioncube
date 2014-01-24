@@ -1,76 +1,149 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-0N2gYxfgbG==
+<?php
+
+namespace Guzzle\Service\Command\LocationVisitor\Response;
+
+use Guzzle\Http\Message\Response;
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Service\Command\CommandInterface;
+
+/**
+ * Location visitor used to marshal XML response data into a formatted array
+ */
+class XmlVisitor extends AbstractResponseVisitor
+{
+    public function before(CommandInterface $command, array &$result)
+    {
+        // Set the result of the command to the array conversion of the XML body
+        $result = json_decode(json_encode($command->getResponse()->xml()), true);
+    }
+
+    public function visit(
+        CommandInterface $command,
+        Response $response,
+        Parameter $param,
+        &$value,
+        $context =  null
+    ) {
+        $sentAs = $param->getWireName();
+        $name = $param->getName();
+        if (isset($value[$sentAs])) {
+            $this->recursiveProcess($param, $value[$sentAs]);
+            if ($name != $sentAs) {
+                $value[$name] = $value[$sentAs];
+                unset($value[$sentAs]);
+            }
+        }
+    }
+
+    /**
+     * Recursively process a parameter while applying filters
+     *
+     * @param Parameter $param API parameter being processed
+     * @param mixed     $value Value to validate and process. The value may change during this process.
+     */
+    protected function recursiveProcess(Parameter $param, &$value)
+    {
+        $type = $param->getType();
+
+        if (!is_array($value)) {
+            if ($type == 'array') {
+                // Cast to an array if the value was a string, but should be an array
+                $this->recursiveProcess($param->getItems(), $value);
+                $value = array($value);
+            }
+        } elseif ($type == 'object') {
+            $this->processObject($param, $value);
+        } elseif ($type == 'array') {
+            $this->processArray($param, $value);
+        }
+
+        if ($value !== null) {
+            $value = $param->filter($value);
+        }
+    }
+
+    /**
+     * Process an array
+     *
+     * @param Parameter $param API parameter being parsed
+     * @param mixed     $value Value to process
+     */
+    protected function processArray(Parameter $param, &$value)
+    {
+        // Convert the node if it was meant to be an array
+        if (!isset($value[0])) {
+            // Collections fo nodes are sometimes wrapped in an additional array. For example:
+            // <Items><Item><a>1</a></Item><Item><a>2</a></Item></Items> should become:
+            // array('Items' => array(array('a' => 1), array('a' => 2))
+            // Some nodes are not wrapped. For example: <Foo><a>1</a></Foo><Foo><a>2</a></Foo>
+            // should become array('Foo' => array(array('a' => 1), array('a' => 2))
+            if ($param->getItems() && isset($value[$param->getItems()->getWireName()])) {
+                // Account for the case of a collection wrapping wrapped nodes: Items => Item[]
+                $value = $value[$param->getItems()->getWireName()];
+                // If the wrapped node only had one value, then make it an array of nodes
+                if (!isset($value[0]) || !is_array($value)) {
+                    $value = array($value);
+                }
+            } elseif (!empty($value)) {
+                // Account for repeated nodes that must be an array: Foo => Baz, Foo => Baz, but only if the
+                // value is set and not empty
+                $value = array($value);
+            }
+        }
+
+        foreach ($value as &$item) {
+            $this->recursiveProcess($param->getItems(), $item);
+        }
+    }
+
+    /**
+     * Process an object
+     *
+     * @param Parameter $param API parameter being parsed
+     * @param mixed     $value Value to process
+     */
+    protected function processObject(Parameter $param, &$value)
+    {
+        // Ensure that the array is associative and not numerically indexed
+        if (!isset($value[0]) && ($properties = $param->getProperties())) {
+            $knownProperties = array();
+            foreach ($properties as $property) {
+                $name = $property->getName();
+                $sentAs = $property->getWireName();
+                $knownProperties[$name] = 1;
+                if ($property->getData('xmlAttribute')) {
+                    $this->processXmlAttribute($property, $value);
+                } elseif (isset($value[$sentAs])) {
+                    $this->recursiveProcess($property, $value[$sentAs]);
+                    if ($name != $sentAs) {
+                        $value[$name] = $value[$sentAs];
+                        unset($value[$sentAs]);
+                    }
+                }
+            }
+
+            // Remove any unknown and potentially unsafe properties
+            if ($param->getAdditionalProperties() === false) {
+                $value = array_intersect_key($value, $knownProperties);
+            }
+        }
+    }
+
+    /**
+     * Process an XML attribute property
+     *
+     * @param Parameter $property Property to process
+     * @param array     $value    Value to process and update
+     */
+    protected function processXmlAttribute(Parameter $property, array &$value)
+    {
+        $sentAs = $property->getWireName();
+        if (isset($value['@attributes'][$sentAs])) {
+            $value[$property->getName()] = $value['@attributes'][$sentAs];
+            unset($value['@attributes'][$sentAs]);
+            if (empty($value['@attributes'])) {
+                unset($value['@attributes']);
+            }
+        }
+    }
+}

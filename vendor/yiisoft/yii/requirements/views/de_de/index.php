@@ -1,36 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-gNo+aCjv7RwrhgTx8Ls1
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="content-language" content="en"/>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<title>Yii Anforderungs-Tester</title>
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<h1>Yii Anforderungs-Tester</h1>
+</div><!-- header-->
+
+<div id="content">
+<h2>Beschreibung</h2>
+<p>
+Dieses Script ermittelt, ob Ihre Serverkonfiguration die Anforderungen zum
+Ausführen von <a href="http://www.yiiframework.com/">Yii</a> Webanwendungen
+erfüllt.
+Es prüft auf die korrekte PHP Version, ob die benötigten Erweiterungen
+geladen wurden und ob die Einstellungen in der php.ini korrekt sind
+</p>
+
+<h2>Zusammenfassung</h2>
+<p>
+<?php if($result>0): ?>
+Gratulation! Ihr Server erfüllt alle Anforderungen von Yii.
+<?php elseif($result<0): ?>
+Ihr Server erfüllt die minimalen Anforderungen von Yii. Bitte beachten Sie die untenstehenden Warnungen, wenn Ihre Anwendungen einige dieser Features verwenden sollen.
+ <?php else: ?>
+Unglücklicherweise erfüllt Ihr Server die Anforderungen von Yii nicht.
+<?php endif; ?>
+</p>
+
+<h2>Details</h2>
+
+<table class="result">
+<tr><th>Name</th><th>Resultat</th><th>Benötigt von</th><th>Memo</th></tr>
+<?php foreach($requirements as $requirement): ?>
+<tr>
+	<td>
+	<?php echo $requirement[0]; ?>
+	</td>
+	<td class="<?php echo $requirement[2] ? 'passed' : ($requirement[1] ? 'failed' : 'warning'); ?>">
+	<?php echo $requirement[2] ? 'Bestanden' : ($requirement[1] ? 'Verfehlt' : 'Warnung'); ?>
+	</td>
+	<td>
+	<?php echo $requirement[3]; ?>
+	</td>
+	<td>
+	<?php echo $requirement[4]; ?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<table>
+<tr>
+<td class="passed">&nbsp;</td><td>Bestanden</td>
+<td class="failed">&nbsp;</td><td>Verfehlt</td>
+<td class="warning">&nbsp;</td><td>Warnung</td>
+</tr>
+</table>
+
+</div><!-- content -->
+
+<div id="footer">
+<?php echo $serverInfo; ?>
+</div><!-- footer -->
+
+</div><!-- page -->
+</body>
+</html>

@@ -1,30 +1,28 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-DHkwbNiXLBm0VV/Egm==
+<?php
+
+namespace Guzzle\Tests\Iterator;
+
+use Guzzle\Iterator\MapIterator;
+
+/**
+ * @covers Guzzle\Iterator\MapIterator
+ */
+class MapIteratorTest extends \PHPUnit_Framework_TestCase
+{
+    public function testFiltersValues()
+    {
+        $i = new MapIterator(new \ArrayIterator(range(0, 100)), function ($value) {
+            return $value * 10;
+        });
+
+        $this->assertEquals(range(0, 1000, 10), iterator_to_array($i, false));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testValidatesCallable()
+    {
+        $i = new MapIterator(new \ArrayIterator(), new \stdClass());
+    }
+}

@@ -1,154 +1,227 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-x8zz/jCegDpQl3/wc+6rVxE8N8sb
+<?php
+
+namespace Guzzle\Tests\Plugin\Redirect;
+
+use Guzzle\Http\Client;
+use Guzzle\Http\EntityBody;
+use Guzzle\Http\RedirectPlugin;
+use Guzzle\Http\Exception\TooManyRedirectsException;
+use Guzzle\Plugin\History\HistoryPlugin;
+
+/**
+ * @covers Guzzle\Http\RedirectPlugin
+ */
+class RedirectPluginTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testRedirectsRequests()
+    {
+        // Flush the server and queue up a redirect followed by a successful response
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect1\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect2\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+        ));
+
+        // Create a client that uses the default redirect behavior
+        $client = new Client($this->getServer()->getUrl());
+        $history = new HistoryPlugin();
+        $client->addSubscriber($history);
+
+        $request = $client->get('/foo');
+        $response = $request->send();
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertContains('/redirect2', $response->getEffectiveUrl());
+
+        // Ensure that two requests were sent
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals('/foo', $requests[0]->getResource());
+        $this->assertEquals('GET', $requests[0]->getMethod());
+        $this->assertEquals('/redirect1', $requests[1]->getResource());
+        $this->assertEquals('GET', $requests[1]->getMethod());
+        $this->assertEquals('/redirect2', $requests[2]->getResource());
+        $this->assertEquals('GET', $requests[2]->getMethod());
+
+        // Ensure that the redirect count was incremented
+        $this->assertEquals(2, $request->getParams()->get(RedirectPlugin::REDIRECT_COUNT));
+        $this->assertCount(3, $history);
+        $requestHistory = $history->getAll();
+
+        $this->assertEquals(301, $requestHistory[0]['response']->getStatusCode());
+        $this->assertEquals('/redirect1', (string) $requestHistory[0]['response']->getHeader('Location'));
+        $this->assertEquals(301, $requestHistory[1]['response']->getStatusCode());
+        $this->assertEquals('/redirect2', (string) $requestHistory[1]['response']->getHeader('Location'));
+        $this->assertEquals(200, $requestHistory[2]['response']->getStatusCode());
+    }
+
+    public function testCanLimitNumberOfRedirects()
+    {
+        // Flush the server and queue up a redirect followed by a successful response
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect1\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect2\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect3\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect4\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect5\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect6\r\nContent-Length: 0\r\n\r\n"
+        ));
+
+        try {
+            $client = new Client($this->getServer()->getUrl());
+            $client->get('/foo')->send();
+            $this->fail('Did not throw expected exception');
+        } catch (TooManyRedirectsException $e) {
+            $this->assertContains(
+                "5 redirects were issued for this request:\nGET /foo HTTP/1.1\r\n",
+                $e->getMessage()
+            );
+        }
+    }
+
+    public function testDefaultBehaviorIsToRedirectWithGetForEntityEnclosingRequests()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+        ));
+
+        $client = new Client($this->getServer()->getUrl());
+        $client->post('/foo', array('X-Baz' => 'bar'), 'testing')->send();
+
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals('POST', $requests[0]->getMethod());
+        $this->assertEquals('GET', $requests[1]->getMethod());
+        $this->assertEquals('bar', (string) $requests[1]->getHeader('X-Baz'));
+        $this->assertEquals('GET', $requests[2]->getMethod());
+    }
+
+    public function testCanRedirectWithStrictRfcCompliance()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+        ));
+
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->post('/foo', array('X-Baz' => 'bar'), 'testing');
+        $request->getParams()->set(RedirectPlugin::STRICT_REDIRECTS, true);
+        $request->send();
+
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals('POST', $requests[0]->getMethod());
+        $this->assertEquals('POST', $requests[1]->getMethod());
+        $this->assertEquals('bar', (string) $requests[1]->getHeader('X-Baz'));
+        $this->assertEquals('POST', $requests[2]->getMethod());
+    }
+
+    public function testRewindsStreamWhenRedirectingIfNeeded()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+        ));
+
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->put();
+        $request->configureRedirects(true);
+        $body = EntityBody::factory('foo');
+        $body->read(1);
+        $request->setBody($body);
+        $request->send();
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals('foo', (string) $requests[0]->getBody());
+    }
+
+    /**
+     * @expectedException \Guzzle\Http\Exception\CouldNotRewindStreamException
+     */
+    public function testThrowsExceptionWhenStreamCannotBeRewound()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 2\r\n\r\nhi",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect\r\nContent-Length: 0\r\n\r\n"
+        ));
+
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->put();
+        $request->configureRedirects(true);
+        $body = EntityBody::factory(fopen($this->getServer()->getUrl(), 'r'));
+        $body->read(1);
+        $request->setBody($body)->send();
+    }
+
+    public function testRedirectsCanBeDisabledPerRequest()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array("HTTP/1.1 301 Foo\r\nLocation: /foo\r\nContent-Length: 0\r\n\r\n"));
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->put();
+        $request->configureRedirects(false, 0);
+        $this->assertEquals(301, $request->send()->getStatusCode());
+    }
+
+    public function testCanRedirectWithNoLeadingSlashAndQuery()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: redirect?foo=bar\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+        ));
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->get('?foo=bar');
+        $request->send();
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals($this->getServer()->getUrl() . '?foo=bar', $requests[0]->getUrl());
+        $this->assertEquals($this->getServer()->getUrl() . 'redirect?foo=bar', $requests[1]->getUrl());
+        // Ensure that the history on the actual request is correct
+        $this->assertEquals($this->getServer()->getUrl() . '?foo=bar', $request->getUrl());
+    }
+
+    public function testResetsHistoryEachSend()
+    {
+        // Flush the server and queue up a redirect followed by a successful response
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect1\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect2\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n"
+        ));
+
+        // Create a client that uses the default redirect behavior
+        $client = new Client($this->getServer()->getUrl());
+        $history = new HistoryPlugin();
+        $client->addSubscriber($history);
+
+        $request = $client->get('/foo');
+        $response = $request->send();
+        $this->assertEquals(3, count($history));
+        $this->assertTrue($request->getParams()->hasKey('redirect.count'));
+        $this->assertContains('/redirect2', $response->getEffectiveUrl());
+
+        $request->send();
+        $this->assertFalse($request->getParams()->hasKey('redirect.count'));
+    }
+
+    public function testHandlesRedirectsWithSpacesProperly()
+    {
+        // Flush the server and queue up a redirect followed by a successful response
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 301 Moved Permanently\r\nLocation: /redirect 1\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n"
+        ));
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->get('/foo');
+        $request->send();
+        $reqs = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals('/redirect%201', $reqs[1]->getResource());
+    }
+}

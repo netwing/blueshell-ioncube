@@ -1,199 +1,409 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog;
+
+use Monolog\Processor\WebProcessor;
+use Monolog\Handler\TestHandler;
+
+class LoggerTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers Monolog\Logger::getName
+     */
+    public function testGetName()
+    {
+        $logger = new Logger('foo');
+        $this->assertEquals('foo', $logger->getName());
+    }
+
+    /**
+     * @covers Monolog\Logger::getLevelName
+     */
+    public function testGetLevelName()
+    {
+        $this->assertEquals('ERROR', Logger::getLevelName(Logger::ERROR));
+    }
+
+    /**
+     * @covers Monolog\Logger::getLevelName
+     * @expectedException InvalidArgumentException
+     */
+    public function testGetLevelNameThrows()
+    {
+        Logger::getLevelName(5);
+    }
+
+    /**
+     * @covers Monolog\Logger::__construct
+     */
+    public function testChannel()
+    {
+        $logger = new Logger('foo');
+        $handler = new TestHandler;
+        $logger->pushHandler($handler);
+        $logger->addWarning('test');
+        list($record) = $handler->getRecords();
+        $this->assertEquals('foo', $record['channel']);
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testLog()
+    {
+        $logger = new Logger(__METHOD__);
+
+        $handler = $this->getMock('Monolog\Handler\NullHandler', array('handle'));
+        $handler->expects($this->once())
+            ->method('handle');
+        $logger->pushHandler($handler);
+
+        $this->assertTrue($logger->addWarning('test'));
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testLogNotHandled()
+    {
+        $logger = new Logger(__METHOD__);
+
+        $handler = $this->getMock('Monolog\Handler\NullHandler', array('handle'), array(Logger::ERROR));
+        $handler->expects($this->never())
+            ->method('handle');
+        $logger->pushHandler($handler);
+
+        $this->assertFalse($logger->addWarning('test'));
+    }
+
+    public function testHandlersInCtor()
+    {
+        $handler1 = new TestHandler;
+        $handler2 = new TestHandler;
+        $logger = new Logger(__METHOD__, array($handler1, $handler2));
+
+        $this->assertEquals($handler1, $logger->popHandler());
+        $this->assertEquals($handler2, $logger->popHandler());
+    }
+
+    public function testProcessorsInCtor()
+    {
+        $processor1 = new WebProcessor;
+        $processor2 = new WebProcessor;
+        $logger = new Logger(__METHOD__, array(), array($processor1, $processor2));
+
+        $this->assertEquals($processor1, $logger->popProcessor());
+        $this->assertEquals($processor2, $logger->popProcessor());
+    }
+
+    /**
+     * @covers Monolog\Logger::pushHandler
+     * @covers Monolog\Logger::popHandler
+     * @expectedException LogicException
+     */
+    public function testPushPopHandler()
+    {
+        $logger = new Logger(__METHOD__);
+        $handler1 = new TestHandler;
+        $handler2 = new TestHandler;
+
+        $logger->pushHandler($handler1);
+        $logger->pushHandler($handler2);
+
+        $this->assertEquals($handler2, $logger->popHandler());
+        $this->assertEquals($handler1, $logger->popHandler());
+        $logger->popHandler();
+    }
+
+    /**
+     * @covers Monolog\Logger::pushProcessor
+     * @covers Monolog\Logger::popProcessor
+     * @expectedException LogicException
+     */
+    public function testPushPopProcessor()
+    {
+        $logger = new Logger(__METHOD__);
+        $processor1 = new WebProcessor;
+        $processor2 = new WebProcessor;
+
+        $logger->pushProcessor($processor1);
+        $logger->pushProcessor($processor2);
+
+        $this->assertEquals($processor2, $logger->popProcessor());
+        $this->assertEquals($processor1, $logger->popProcessor());
+        $logger->popProcessor();
+    }
+
+    /**
+     * @covers Monolog\Logger::pushProcessor
+     * @expectedException InvalidArgumentException
+     */
+    public function testPushProcessorWithNonCallable()
+    {
+        $logger = new Logger(__METHOD__);
+
+        $logger->pushProcessor(new \stdClass());
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testProcessorsAreExecuted()
+    {
+        $logger = new Logger(__METHOD__);
+        $handler = new TestHandler;
+        $logger->pushHandler($handler);
+        $logger->pushProcessor(function($record) {
+            $record['extra']['win'] = true;
+
+            return $record;
+        });
+        $logger->addError('test');
+        list($record) = $handler->getRecords();
+        $this->assertTrue($record['extra']['win']);
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testProcessorsAreCalledOnlyOnce()
+    {
+        $logger = new Logger(__METHOD__);
+        $handler = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler->expects($this->any())
+            ->method('isHandling')
+            ->will($this->returnValue(true))
+        ;
+        $handler->expects($this->any())
+            ->method('handle')
+            ->will($this->returnValue(true))
+        ;
+        $logger->pushHandler($handler);
+
+        $processor = $this->getMockBuilder('Monolog\Processor\WebProcessor')
+            ->disableOriginalConstructor()
+            ->setMethods(array('__invoke'))
+            ->getMock()
+        ;
+        $processor->expects($this->once())
+            ->method('__invoke')
+            ->will($this->returnArgument(0))
+        ;
+        $logger->pushProcessor($processor);
+
+        $logger->addError('test');
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testProcessorsNotCalledWhenNotHandled()
+    {
+        $logger = new Logger(__METHOD__);
+        $handler = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler->expects($this->once())
+            ->method('isHandling')
+            ->will($this->returnValue(false))
+        ;
+        $logger->pushHandler($handler);
+        $that = $this;
+        $logger->pushProcessor(function($record) use ($that) {
+            $that->fail('The processor should not be called');
+        });
+        $logger->addAlert('test');
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testHandlersNotCalledBeforeFirstHandling()
+    {
+        $logger = new Logger(__METHOD__);
+
+        $handler1 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler1->expects($this->never())
+            ->method('isHandling')
+            ->will($this->returnValue(false))
+        ;
+        $handler1->expects($this->once())
+            ->method('handle')
+            ->will($this->returnValue(false))
+        ;
+        $logger->pushHandler($handler1);
+
+        $handler2 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler2->expects($this->once())
+            ->method('isHandling')
+            ->will($this->returnValue(true))
+        ;
+        $handler2->expects($this->once())
+            ->method('handle')
+            ->will($this->returnValue(false))
+        ;
+        $logger->pushHandler($handler2);
+
+        $handler3 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler3->expects($this->once())
+            ->method('isHandling')
+            ->will($this->returnValue(false))
+        ;
+        $handler3->expects($this->never())
+            ->method('handle')
+        ;
+        $logger->pushHandler($handler3);
+
+        $logger->debug('test');
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testBubblingWhenTheHandlerReturnsFalse()
+    {
+        $logger = new Logger(__METHOD__);
+
+        $handler1 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler1->expects($this->any())
+            ->method('isHandling')
+            ->will($this->returnValue(true))
+        ;
+        $handler1->expects($this->once())
+            ->method('handle')
+            ->will($this->returnValue(false))
+        ;
+        $logger->pushHandler($handler1);
+
+        $handler2 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler2->expects($this->any())
+            ->method('isHandling')
+            ->will($this->returnValue(true))
+        ;
+        $handler2->expects($this->once())
+            ->method('handle')
+            ->will($this->returnValue(false))
+        ;
+        $logger->pushHandler($handler2);
+
+        $logger->debug('test');
+    }
+
+    /**
+     * @covers Monolog\Logger::addRecord
+     */
+    public function testNotBubblingWhenTheHandlerReturnsTrue()
+    {
+        $logger = new Logger(__METHOD__);
+
+        $handler1 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler1->expects($this->any())
+            ->method('isHandling')
+            ->will($this->returnValue(true))
+        ;
+        $handler1->expects($this->never())
+            ->method('handle')
+        ;
+        $logger->pushHandler($handler1);
+
+        $handler2 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler2->expects($this->any())
+            ->method('isHandling')
+            ->will($this->returnValue(true))
+        ;
+        $handler2->expects($this->once())
+            ->method('handle')
+            ->will($this->returnValue(true))
+        ;
+        $logger->pushHandler($handler2);
+
+        $logger->debug('test');
+    }
+
+    /**
+     * @covers Monolog\Logger::isHandling
+     */
+    public function testIsHandling()
+    {
+        $logger = new Logger(__METHOD__);
+
+        $handler1 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler1->expects($this->any())
+            ->method('isHandling')
+            ->will($this->returnValue(false))
+        ;
+
+        $logger->pushHandler($handler1);
+        $this->assertFalse($logger->isHandling(Logger::DEBUG));
+
+        $handler2 = $this->getMock('Monolog\Handler\HandlerInterface');
+        $handler2->expects($this->any())
+            ->method('isHandling')
+            ->will($this->returnValue(true))
+        ;
+
+        $logger->pushHandler($handler2);
+        $this->assertTrue($logger->isHandling(Logger::DEBUG));
+    }
+
+    /**
+     * @dataProvider logMethodProvider
+     * @covers Monolog\Logger::addDebug
+     * @covers Monolog\Logger::addInfo
+     * @covers Monolog\Logger::addNotice
+     * @covers Monolog\Logger::addWarning
+     * @covers Monolog\Logger::addError
+     * @covers Monolog\Logger::addCritical
+     * @covers Monolog\Logger::addAlert
+     * @covers Monolog\Logger::addEmergency
+     * @covers Monolog\Logger::debug
+     * @covers Monolog\Logger::info
+     * @covers Monolog\Logger::notice
+     * @covers Monolog\Logger::warn
+     * @covers Monolog\Logger::err
+     * @covers Monolog\Logger::crit
+     * @covers Monolog\Logger::alert
+     * @covers Monolog\Logger::emerg
+     */
+    public function testLogMethods($method, $expectedLevel)
+    {
+        $logger = new Logger('foo');
+        $handler = new TestHandler;
+        $logger->pushHandler($handler);
+        $logger->{$method}('test');
+        list($record) = $handler->getRecords();
+        $this->assertEquals($expectedLevel, $record['level']);
+    }
+
+    public function logMethodProvider()
+    {
+        return array(
+            // monolog methods
+            array('addDebug',     Logger::DEBUG),
+            array('addInfo',      Logger::INFO),
+            array('addNotice',    Logger::NOTICE),
+            array('addWarning',   Logger::WARNING),
+            array('addError',     Logger::ERROR),
+            array('addCritical',  Logger::CRITICAL),
+            array('addAlert',     Logger::ALERT),
+            array('addEmergency', Logger::EMERGENCY),
+
+            // ZF/Sf2 compat methods
+            array('debug',  Logger::DEBUG),
+            array('info',   Logger::INFO),
+            array('notice', Logger::NOTICE),
+            array('warn',   Logger::WARNING),
+            array('err',    Logger::ERROR),
+            array('crit',   Logger::CRITICAL),
+            array('alert',  Logger::ALERT),
+            array('emerg',  Logger::EMERGENCY),
+        );
+    }
+}

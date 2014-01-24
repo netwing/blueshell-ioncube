@@ -1,103 +1,165 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Compile Function
+ *
+ * Compiles the {function} {/function} tags
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Function Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Function extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $required_attributes = array('name');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $shorttag_order = array('name');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('_any');
+
+    /**
+     * Compiles code for the {function} tag
+     *
+     * @param  array   $args      array with attributes from parser
+     * @param  object  $compiler  compiler object
+     * @param  array   $parameter array with compilation parameter
+     * @return boolean true
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        if ($_attr['nocache'] === true) {
+            $compiler->trigger_template_error('nocache option not allowed', $compiler->lex->taglineno);
+        }
+        unset($_attr['nocache']);
+        $save = array($_attr, $compiler->parser->current_buffer,
+            $compiler->template->has_nocache_code, $compiler->template->required_plugins);
+        $this->openTag($compiler, 'function', $save);
+        $_name = trim($_attr['name'], "'\"");
+        unset($_attr['name']);
+        // set flag that we are compiling a template function
+        $compiler->compiles_template_function = true;
+        $compiler->template->properties['function'][$_name]['parameter'] = array();
+        $_smarty_tpl = $compiler->template;
+        foreach ($_attr as $_key => $_data) {
+            eval ('$tmp='.$_data.';');
+            $compiler->template->properties['function'][$_name]['parameter'][$_key] = $tmp;
+        }
+        $compiler->smarty->template_functions[$_name]['parameter'] = $compiler->template->properties['function'][$_name]['parameter'];
+        if ($compiler->template->caching) {
+            $output = '';
+        } else {
+            $output = "<?php if (!function_exists('smarty_template_function_{$_name}')) {
+    function smarty_template_function_{$_name}(\$_smarty_tpl,\$params) {
+    \$saved_tpl_vars = \$_smarty_tpl->tpl_vars;
+    foreach (\$_smarty_tpl->smarty->template_functions['{$_name}']['parameter'] as \$key => \$value) {\$_smarty_tpl->tpl_vars[\$key] = new Smarty_variable(\$value);};
+    foreach (\$params as \$key => \$value) {\$_smarty_tpl->tpl_vars[\$key] = new Smarty_variable(\$value);}?>";
+        }
+        // Init temporay context
+        $compiler->template->required_plugins = array('compiled' => array(), 'nocache' => array());
+        $compiler->parser->current_buffer = new _smarty_template_buffer($compiler->parser);
+        $compiler->parser->current_buffer->append_subtree(new _smarty_tag($compiler->parser, $output));
+        $compiler->template->has_nocache_code = false;
+        $compiler->has_code = false;
+        $compiler->template->properties['function'][$_name]['compiled'] = '';
+        return true;
+    }
+
+}
+
+/**
+ * Smarty Internal Plugin Compile Functionclose Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Functionclose extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {/function} tag
+     *
+     * @param  array   $args      array with attributes from parser
+     * @param  object  $compiler  compiler object
+     * @param  array   $parameter array with compilation parameter
+     * @return boolean true
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        $_attr = $this->getAttributes($compiler, $args);
+        $saved_data = $this->closeTag($compiler, array('function'));
+        $_name = trim($saved_data[0]['name'], "'\"");
+        // build plugin include code
+        $plugins_string = '';
+        if (!empty($compiler->template->required_plugins['compiled'])) {
+            $plugins_string = '<?php ';
+            foreach ($compiler->template->required_plugins['compiled'] as $tmp) {
+                foreach ($tmp as $data) {
+                    $plugins_string .= "if (!is_callable('{$data['function']}')) include '{$data['file']}';\n";
+                }
+            }
+            $plugins_string .= '?>';
+        }
+        if (!empty($compiler->template->required_plugins['nocache'])) {
+            $plugins_string .= "<?php echo '/*%%SmartyNocache:{$compiler->template->properties['nocache_hash']}%%*/<?php ";
+            foreach ($compiler->template->required_plugins['nocache'] as $tmp) {
+                foreach ($tmp as $data) {
+                    $plugins_string .= "if (!is_callable(\'{$data['function']}\')) include \'{$data['file']}\';\n";
+                }
+            }
+            $plugins_string .= "?>/*/%%SmartyNocache:{$compiler->template->properties['nocache_hash']}%%*/';?>\n";
+        }
+         // remove last line break from function definition
+         $last = count($compiler->parser->current_buffer->subtrees) - 1;
+         if ($compiler->parser->current_buffer->subtrees[$last] instanceof _smarty_linebreak) {
+             unset($compiler->parser->current_buffer->subtrees[$last]);
+         }
+        // if caching save template function for possible nocache call
+        if ($compiler->template->caching) {
+            $compiler->template->properties['function'][$_name]['compiled'] .= $plugins_string
+             . $compiler->parser->current_buffer->to_smarty_php();
+            $compiler->template->properties['function'][$_name]['nocache_hash'] = $compiler->template->properties['nocache_hash'];
+            $compiler->template->properties['function'][$_name]['has_nocache_code'] = $compiler->template->has_nocache_code;
+            $compiler->template->properties['function'][$_name]['called_functions'] = $compiler->called_functions;
+            $compiler->called_functions = array();
+            $compiler->smarty->template_functions[$_name] = $compiler->template->properties['function'][$_name];
+            $compiler->has_code = false;
+            $output = true;
+        } else {
+            $output = $plugins_string . $compiler->parser->current_buffer->to_smarty_php() . "<?php \$_smarty_tpl->tpl_vars = \$saved_tpl_vars;
+foreach (Smarty::\$global_tpl_vars as \$key => \$value) if(!isset(\$_smarty_tpl->tpl_vars[\$key])) \$_smarty_tpl->tpl_vars[\$key] = \$value;}}?>\n";
+        }
+        // reset flag that we are compiling a template function
+        $compiler->compiles_template_function = false;
+        // restore old compiler status
+        $compiler->parser->current_buffer = $saved_data[1];
+        $compiler->template->has_nocache_code = $compiler->template->has_nocache_code | $saved_data[2];
+        $compiler->template->required_plugins = $saved_data[3];
+
+        return $output;
+    }
+
+}

@@ -1,30 +1,102 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-vdT9KX1Nh2gRlZAre8crINqCIG==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.0.0
+ */
+
+/**
+ * Constraint that checks if the file(name) that it is evaluated for exists.
+ *
+ * The file path to check is passed as $other in evaluate().
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
+ */
+class PHPUnit_Framework_Constraint_FileExists extends PHPUnit_Framework_Constraint
+{
+    /**
+     * Evaluates the constraint for parameter $other. Returns TRUE if the
+     * constraint is met, FALSE otherwise.
+     *
+     * @param mixed $other Value or object to evaluate.
+     * @return bool
+     */
+    protected function matches($other)
+    {
+        return file_exists($other);
+    }
+
+    /**
+     * Returns the description of the failure
+     *
+     * The beginning of failure messages is "Failed asserting that" in most
+     * cases. This method should return the second part of that sentence.
+     *
+     * @param  mixed $other Evaluated value or object.
+     * @return string
+     */
+    protected function failureDescription($other)
+    {
+        return sprintf(
+          'file "%s" exists',
+
+          $other
+        );
+    }
+
+    /**
+     * Returns a string representation of the constraint.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'file exists';
+    }
+}

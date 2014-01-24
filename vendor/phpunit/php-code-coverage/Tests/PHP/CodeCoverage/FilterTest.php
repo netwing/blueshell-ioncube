@@ -1,120 +1,303 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-PoTFYehiX1K+SAzj6ohSxAAtZu8Zwm==
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.0.0
+ */
+
+if (!defined('TEST_FILES_PATH')) {
+    define(
+      'TEST_FILES_PATH',
+      dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR .
+      '_files' . DIRECTORY_SEPARATOR
+    );
+}
+
+/**
+ * Tests for the PHP_CodeCoverage_Filter class.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.0.0
+ */
+class PHP_CodeCoverage_FilterTest extends PHPUnit_Framework_TestCase
+{
+    protected $filter;
+    protected $files;
+
+    protected function setUp()
+    {
+        $this->filter = unserialize('O:23:"PHP_CodeCoverage_Filter":0:{}');
+
+        $this->files = array(
+          TEST_FILES_PATH . 'BankAccount.php',
+          TEST_FILES_PATH . 'BankAccountTest.php',
+          TEST_FILES_PATH . 'CoverageClassExtendedTest.php',
+          TEST_FILES_PATH . 'CoverageClassTest.php',
+          TEST_FILES_PATH . 'CoverageFunctionParenthesesTest.php',
+          TEST_FILES_PATH . 'CoverageFunctionParenthesesWhitespaceTest.php',
+          TEST_FILES_PATH . 'CoverageFunctionTest.php',
+          TEST_FILES_PATH . 'CoverageMethodOneLineAnnotationTest.php',
+          TEST_FILES_PATH . 'CoverageMethodParenthesesTest.php',
+          TEST_FILES_PATH . 'CoverageMethodParenthesesWhitespaceTest.php',
+          TEST_FILES_PATH . 'CoverageMethodTest.php',
+          TEST_FILES_PATH . 'CoverageNoneTest.php',
+          TEST_FILES_PATH . 'CoverageNotPrivateTest.php',
+          TEST_FILES_PATH . 'CoverageNotProtectedTest.php',
+          TEST_FILES_PATH . 'CoverageNotPublicTest.php',
+          TEST_FILES_PATH . 'CoverageNothingTest.php',
+          TEST_FILES_PATH . 'CoveragePrivateTest.php',
+          TEST_FILES_PATH . 'CoverageProtectedTest.php',
+          TEST_FILES_PATH . 'CoveragePublicTest.php',
+          TEST_FILES_PATH . 'CoverageTwoDefaultClassAnnotations.php',
+          TEST_FILES_PATH . 'CoveredClass.php',
+          TEST_FILES_PATH . 'CoveredFunction.php',
+          TEST_FILES_PATH . 'NamespaceCoverageClassExtendedTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageClassTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageCoversClassPublicTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageCoversClassTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageMethodTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageNotPrivateTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageNotProtectedTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageNotPublicTest.php',
+          TEST_FILES_PATH . 'NamespaceCoveragePrivateTest.php',
+          TEST_FILES_PATH . 'NamespaceCoverageProtectedTest.php',
+          TEST_FILES_PATH . 'NamespaceCoveragePublicTest.php',
+          TEST_FILES_PATH . 'NamespaceCoveredClass.php',
+          TEST_FILES_PATH . 'NotExistingCoveredElementTest.php',
+          TEST_FILES_PATH . 'source_with_class_and_anonymous_function.php',
+          TEST_FILES_PATH . 'source_with_ignore.php',
+          TEST_FILES_PATH . 'source_with_namespace.php',
+          TEST_FILES_PATH . 'source_with_oneline_annotations.php',
+          TEST_FILES_PATH . 'source_without_ignore.php',
+          TEST_FILES_PATH . 'source_without_namespace.php'
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::addFileToBlacklist
+     * @covers PHP_CodeCoverage_Filter::getBlacklist
+     */
+    public function testAddingAFileToTheBlacklistWorks()
+    {
+        $this->filter->addFileToBlacklist($this->files[0]);
+
+        $this->assertEquals(
+          array($this->files[0]), $this->filter->getBlacklist()
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::removeFileFromBlacklist
+     * @covers PHP_CodeCoverage_Filter::getBlacklist
+     */
+    public function testRemovingAFileFromTheBlacklistWorks()
+    {
+        $this->filter->addFileToBlacklist($this->files[0]);
+        $this->filter->removeFileFromBlacklist($this->files[0]);
+
+        $this->assertEquals(array(), $this->filter->getBlacklist());
+    }
+
+    /**
+     * @covers  PHP_CodeCoverage_Filter::addDirectoryToBlacklist
+     * @covers  PHP_CodeCoverage_Filter::getBlacklist
+     * @depends testAddingAFileToTheBlacklistWorks
+     */
+    public function testAddingADirectoryToTheBlacklistWorks()
+    {
+        $this->filter->addDirectoryToBlacklist(TEST_FILES_PATH);
+
+        $blacklist = $this->filter->getBlacklist();
+        sort($blacklist);
+
+        $this->assertEquals($this->files, $blacklist);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::addFilesToBlacklist
+     * @covers PHP_CodeCoverage_Filter::getBlacklist
+     */
+    public function testAddingFilesToTheBlacklistWorks()
+    {
+        $facade = new File_Iterator_Facade;
+        $files  = $facade->getFilesAsArray(
+          TEST_FILES_PATH, $suffixes = '.php'
+        );
+
+        $this->filter->addFilesToBlacklist($files);
+
+        $blacklist = $this->filter->getBlacklist();
+        sort($blacklist);
+
+        $this->assertEquals($this->files, $blacklist);
+    }
+
+    /**
+     * @covers  PHP_CodeCoverage_Filter::removeDirectoryFromBlacklist
+     * @covers  PHP_CodeCoverage_Filter::getBlacklist
+     * @depends testAddingADirectoryToTheBlacklistWorks
+     */
+    public function testRemovingADirectoryFromTheBlacklistWorks()
+    {
+        $this->filter->addDirectoryToBlacklist(TEST_FILES_PATH);
+        $this->filter->removeDirectoryFromBlacklist(TEST_FILES_PATH);
+
+        $this->assertEquals(array(), $this->filter->getBlacklist());
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::addFileToWhitelist
+     * @covers PHP_CodeCoverage_Filter::getWhitelist
+     */
+    public function testAddingAFileToTheWhitelistWorks()
+    {
+        $this->filter->addFileToWhitelist($this->files[0]);
+
+        $this->assertEquals(
+          array($this->files[0]), $this->filter->getWhitelist()
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::removeFileFromWhitelist
+     * @covers PHP_CodeCoverage_Filter::getWhitelist
+     */
+    public function testRemovingAFileFromTheWhitelistWorks()
+    {
+        $this->filter->addFileToWhitelist($this->files[0]);
+        $this->filter->removeFileFromWhitelist($this->files[0]);
+
+        $this->assertEquals(array(), $this->filter->getWhitelist());
+    }
+
+    /**
+     * @covers  PHP_CodeCoverage_Filter::addDirectoryToWhitelist
+     * @covers  PHP_CodeCoverage_Filter::getWhitelist
+     * @depends testAddingAFileToTheWhitelistWorks
+     */
+    public function testAddingADirectoryToTheWhitelistWorks()
+    {
+        $this->filter->addDirectoryToWhitelist(TEST_FILES_PATH);
+
+        $whitelist = $this->filter->getWhitelist();
+        sort($whitelist);
+
+        $this->assertEquals($this->files, $whitelist);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::addFilesToWhitelist
+     * @covers PHP_CodeCoverage_Filter::getBlacklist
+     */
+    public function testAddingFilesToTheWhitelistWorks()
+    {
+        $facade = new File_Iterator_Facade;
+        $files  = $facade->getFilesAsArray(
+          TEST_FILES_PATH, $suffixes = '.php'
+        );
+
+        $this->filter->addFilesToWhitelist($files);
+
+        $whitelist = $this->filter->getWhitelist();
+        sort($whitelist);
+
+        $this->assertEquals($this->files, $whitelist);
+    }
+
+    /**
+     * @covers  PHP_CodeCoverage_Filter::removeDirectoryFromWhitelist
+     * @covers  PHP_CodeCoverage_Filter::getWhitelist
+     * @depends testAddingADirectoryToTheWhitelistWorks
+     */
+    public function testRemovingADirectoryFromTheWhitelistWorks()
+    {
+        $this->filter->addDirectoryToWhitelist(TEST_FILES_PATH);
+        $this->filter->removeDirectoryFromWhitelist(TEST_FILES_PATH);
+
+        $this->assertEquals(array(), $this->filter->getWhitelist());
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::isFile
+     */
+    public function testIsFile()
+    {
+        $this->assertFalse($this->filter->isFile('eval()\'d code'));
+        $this->assertFalse($this->filter->isFile('runtime-created function'));
+        $this->assertFalse($this->filter->isFile('assert code'));
+        $this->assertFalse($this->filter->isFile('regexp code'));
+        $this->assertTrue($this->filter->isFile('filename'));
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::isFiltered
+     */
+    public function testBlacklistedFileIsFiltered()
+    {
+        $this->filter->addFileToBlacklist($this->files[0]);
+        $this->assertTrue($this->filter->isFiltered($this->files[0]));
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::isFiltered
+     */
+    public function testWhitelistedFileIsNotFiltered()
+    {
+        $this->filter->addFileToWhitelist($this->files[0]);
+        $this->assertFalse($this->filter->isFiltered($this->files[0]));
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Filter::isFiltered
+     */
+    public function testNotWhitelistedFileIsFiltered()
+    {
+        $this->filter->addFileToWhitelist($this->files[0]);
+        $this->assertTrue($this->filter->isFiltered($this->files[1]));
+    }
+}

@@ -1,88 +1,222 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-aBr4uQR/2m==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Formatter;
+
+/**
+ * Formatter style class for defining styles.
+ *
+ * @author Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * @api
+ */
+class OutputFormatterStyle implements OutputFormatterStyleInterface
+{
+    private static $availableForegroundColors = array(
+        'black'     => 30,
+        'red'       => 31,
+        'green'     => 32,
+        'yellow'    => 33,
+        'blue'      => 34,
+        'magenta'   => 35,
+        'cyan'      => 36,
+        'white'     => 37
+    );
+    private static $availableBackgroundColors = array(
+        'black'     => 40,
+        'red'       => 41,
+        'green'     => 42,
+        'yellow'    => 43,
+        'blue'      => 44,
+        'magenta'   => 45,
+        'cyan'      => 46,
+        'white'     => 47
+    );
+    private static $availableOptions = array(
+        'bold'          => 1,
+        'underscore'    => 4,
+        'blink'         => 5,
+        'reverse'       => 7,
+        'conceal'       => 8
+    );
+
+    private $foreground;
+    private $background;
+    private $options = array();
+
+    /**
+     * Initializes output formatter style.
+     *
+     * @param string|null $foreground The style foreground color name
+     * @param string|null $background The style background color name
+     * @param array       $options    The style options
+     *
+     * @api
+     */
+    public function __construct($foreground = null, $background = null, array $options = array())
+    {
+        if (null !== $foreground) {
+            $this->setForeground($foreground);
+        }
+        if (null !== $background) {
+            $this->setBackground($background);
+        }
+        if (count($options)) {
+            $this->setOptions($options);
+        }
+    }
+
+    /**
+     * Sets style foreground color.
+     *
+     * @param string|null $color The color name
+     *
+     * @throws \InvalidArgumentException When the color name isn't defined
+     *
+     * @api
+     */
+    public function setForeground($color = null)
+    {
+        if (null === $color) {
+            $this->foreground = null;
+
+            return;
+        }
+
+        if (!isset(static::$availableForegroundColors[$color])) {
+            throw new \InvalidArgumentException(sprintf(
+                'Invalid foreground color specified: "%s". Expected one of (%s)',
+                $color,
+                implode(', ', array_keys(static::$availableForegroundColors))
+            ));
+        }
+
+        $this->foreground = static::$availableForegroundColors[$color];
+    }
+
+    /**
+     * Sets style background color.
+     *
+     * @param string|null $color The color name
+     *
+     * @throws \InvalidArgumentException When the color name isn't defined
+     *
+     * @api
+     */
+    public function setBackground($color = null)
+    {
+        if (null === $color) {
+            $this->background = null;
+
+            return;
+        }
+
+        if (!isset(static::$availableBackgroundColors[$color])) {
+            throw new \InvalidArgumentException(sprintf(
+                'Invalid background color specified: "%s". Expected one of (%s)',
+                $color,
+                implode(', ', array_keys(static::$availableBackgroundColors))
+            ));
+        }
+
+        $this->background = static::$availableBackgroundColors[$color];
+    }
+
+    /**
+     * Sets some specific style option.
+     *
+     * @param string $option The option name
+     *
+     * @throws \InvalidArgumentException When the option name isn't defined
+     *
+     * @api
+     */
+    public function setOption($option)
+    {
+        if (!isset(static::$availableOptions[$option])) {
+            throw new \InvalidArgumentException(sprintf(
+                'Invalid option specified: "%s". Expected one of (%s)',
+                $option,
+                implode(', ', array_keys(static::$availableOptions))
+            ));
+        }
+
+        if (false === array_search(static::$availableOptions[$option], $this->options)) {
+            $this->options[] = static::$availableOptions[$option];
+        }
+    }
+
+    /**
+     * Unsets some specific style option.
+     *
+     * @param string $option The option name
+     *
+     * @throws \InvalidArgumentException When the option name isn't defined
+     *
+     */
+    public function unsetOption($option)
+    {
+        if (!isset(static::$availableOptions[$option])) {
+            throw new \InvalidArgumentException(sprintf(
+                'Invalid option specified: "%s". Expected one of (%s)',
+                $option,
+                implode(', ', array_keys(static::$availableOptions))
+            ));
+        }
+
+        $pos = array_search(static::$availableOptions[$option], $this->options);
+        if (false !== $pos) {
+            unset($this->options[$pos]);
+        }
+    }
+
+    /**
+     * Sets multiple style options at once.
+     *
+     * @param array $options
+     */
+    public function setOptions(array $options)
+    {
+        $this->options = array();
+
+        foreach ($options as $option) {
+            $this->setOption($option);
+        }
+    }
+
+    /**
+     * Applies the style to a given text.
+     *
+     * @param string $text The text to style
+     *
+     * @return string
+     */
+    public function apply($text)
+    {
+        $codes = array();
+
+        if (null !== $this->foreground) {
+            $codes[] = $this->foreground;
+        }
+        if (null !== $this->background) {
+            $codes[] = $this->background;
+        }
+        if (count($this->options)) {
+            $codes = array_merge($codes, $this->options);
+        }
+
+        if (0 === count($codes)) {
+            return $text;
+        }
+
+        return sprintf("\033[%sm%s\033[0m", implode(';', $codes), $text);
+    }
+}

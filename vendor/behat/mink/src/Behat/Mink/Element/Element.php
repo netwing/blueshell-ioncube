@@ -1,47 +1,113 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-GHCnQhPYL+Pm
+<?php
+
+namespace Behat\Mink\Element;
+
+use Behat\Mink\Session;
+
+/*
+ * This file is part of the Behat\Mink.
+ * (c) Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Base element.
+ *
+ * @author Konstantin Kudryashov <ever.zet@gmail.com>
+ */
+abstract class Element implements ElementInterface
+{
+    private $session;
+
+    /**
+     * Initialize element.
+     *
+     * @param Session $session
+     */
+    public function __construct(Session $session)
+    {
+        $this->session = $session;
+    }
+
+    /**
+     * Returns element session.
+     *
+     * @return Session
+     */
+    public function getSession()
+    {
+        return $this->session;
+    }
+
+    /**
+     * Checks whether element with specified selector exists.
+     *
+     * @param string $selector selector engine name
+     * @param string $locator  selector locator
+     *
+     * @return Boolean
+     */
+    public function has($selector, $locator)
+    {
+        return null !== $this->find($selector, $locator);
+    }
+
+    /**
+     * Finds first element with specified selector.
+     *
+     * @param string $selector selector engine name
+     * @param string $locator  selector locator
+     *
+     * @return NodeElement|null
+     */
+    public function find($selector, $locator)
+    {
+        $items = $this->findAll($selector, $locator);
+
+        return count($items) ? current($items) : null;
+    }
+
+    /**
+     * Finds all elements with specified selector.
+     *
+     * @param string $selector selector engine name
+     * @param string $locator  selector locator
+     *
+     * @return array
+     */
+    public function findAll($selector, $locator)
+    {
+        $xpath = $this->getSession()->getSelectorsHandler()->selectorToXpath($selector, $locator);
+
+        // add parent xpath before element selector
+        if (0 === strpos($xpath, '/')) {
+            $xpath = $this->getXpath().$xpath;
+        } else {
+            $xpath = $this->getXpath().'/'.$xpath;
+        }
+
+        return $this->getSession()->getDriver()->find($xpath);
+    }
+
+    /**
+     * Returns element text (inside tag).
+     *
+     * @return string|null
+     */
+    public function getText()
+    {
+        return $this->getSession()->getDriver()->getText($this->getXpath());
+    }
+
+    /**
+     * Returns element html.
+     *
+     * @return string|null
+     */
+    public function getHtml()
+    {
+        return $this->getSession()->getDriver()->getHtml($this->getXpath());
+    }
+}

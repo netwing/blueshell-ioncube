@@ -1,39 +1,42 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-RinBvuez6aoIdnwiuDWd8e0bldrYf+G=
+<?php
+
+if (!isset($argv[1]))
+{
+  die('You must provide the version (1.0.0)');
+}
+
+if (!isset($argv[2]))
+{
+  die('You must provide the stability (alpha, beta, or stable)');
+}
+
+$context = array(
+  'date'          => date('Y-m-d'),
+  'time'          => date('H:m:00'),
+  'version'       => $argv[1],
+  'api_version'   => $argv[1],
+  'stability'     => $argv[2],
+  'api_stability' => $argv[2],
+);
+
+$context['files'] = '';
+$path = realpath(dirname(__FILE__).'/lib/classes/Swift');
+foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::LEAVES_ONLY) as $file)
+{
+  if (preg_match('/\.php$/', $file))
+  {
+    $name = str_replace($path.'/', '', $file);
+    $context['files'] .= '        <file install-as="Swift/'.$name.'" name="'.$name.'" role="php" />'."\n";
+  }
+}
+
+$template = file_get_contents(dirname(__FILE__).'/package.xml.tpl');
+$content = preg_replace_callback('/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/', 'replace_parameters', $template);
+file_put_contents(dirname(__FILE__).'/package.xml', $content);
+
+function replace_parameters($matches)
+{
+  global $context;
+
+  return isset($context[$matches[1]]) ? $context[$matches[1]] : null;
+}

@@ -1,44 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * LoginForm class.
+ * LoginForm is the data structure for keeping
+ * user login form data. It is used by the 'login' action of 'SiteController'.
+ */
+class LoginForm extends CFormModel
+{
+	public $username;
+	public $password;
+	public $rememberMe;
+
+	private $_identity;
+
+	/**
+	 * Declares the validation rules.
+	 * The rules state that username and password are required,
+	 * and password needs to be authenticated.
+	 */
+	public function rules()
+	{
+		return array(
+			// username and password are required
+			array('username, password', 'required'),
+			// rememberMe needs to be a boolean
+			array('rememberMe', 'boolean'),
+			// password needs to be authenticated
+			array('password', 'authenticate'),
+		);
+	}
+
+	/**
+	 * Declares attribute labels.
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'rememberMe'=>'Remember me next time',
+		);
+	}
+
+	/**
+	 * Authenticates the password.
+	 * This is the 'authenticate' validator as declared in rules().
+	 */
+	public function authenticate($attribute,$params)
+	{
+		if(!$this->hasErrors())
+		{
+			$this->_identity=new UserIdentity($this->username,$this->password);
+			if(!$this->_identity->authenticate())
+				$this->addError('password','Incorrect username or password.');
+		}
+	}
+
+	/**
+	 * Logs in the user using the given username and password in the model.
+	 * @return boolean whether login is successful
+	 */
+	public function login()
+	{
+		if($this->_identity===null)
+		{
+			$this->_identity=new UserIdentity($this->username,$this->password);
+			$this->_identity->authenticate();
+		}
+		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+		{
+			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+			Yii::app()->user->login($this->_identity,$duration);
+			return true;
+		}
+		else
+			return false;
+	}
+}

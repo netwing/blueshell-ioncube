@@ -1,31 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-TFqfsG/6YbeMViojpehnwm==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Process;
+
+/**
+ * ProcessUtils is a bunch of utility methods.
+ *
+ * This class contains static methods only and is not meant to be instantiated.
+ *
+ * @author Martin Hasoň <martin.hason@gmail.com>
+ */
+class ProcessUtils
+{
+    /**
+     * This class should not be instantiated
+     */
+    private function __construct()
+    {
+    }
+
+    /**
+     * Escapes a string to be used as a shell argument.
+     *
+     * @param string $argument The argument that will be escaped
+     *
+     * @return string The escaped argument
+     */
+    public static function escapeArgument($argument)
+    {
+        //Fix for PHP bug #43784 escapeshellarg removes % from given string
+        //Fix for PHP bug #49446 escapeshellarg doesn't work on Windows
+        //@see https://bugs.php.net/bug.php?id=43784
+        //@see https://bugs.php.net/bug.php?id=49446
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            if ('' === $argument) {
+                return escapeshellarg($argument);
+            }
+
+            $escapedArgument = '';
+            foreach (preg_split('/([%"])/i', $argument, -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE) as $part) {
+                if ('"' === $part) {
+                    $escapedArgument .= '\\"';
+                } elseif ('%' === $part) {
+                    $escapedArgument .= '^%';
+                } else {
+                    $escapedArgument .= escapeshellarg($part);
+                }
+            }
+
+            return $escapedArgument;
+        }
+
+        return escapeshellarg($argument);
+    }
+}

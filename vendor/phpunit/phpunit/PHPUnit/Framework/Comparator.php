@@ -1,32 +1,97 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPxWoWrQd7dYPgeGMTKQhOSWqivksFRBPfS90C3x/w+iAhUyK9a0x9S+17SDrwXx9slk26If0
-V2MzFMww9v+mhSfIJvQ1TgRhlEZBNgu2zGQHQWdnzg+k+AOwSfLhST1U7Scsi8v4dti6TGFv1T5v
-XbuDB02W+LvS+K7ztVu9/3LeJ1UXyi74zVUC7g9Hsr+x1lLqA5uhouqP+rZDkVBWVMGDc+nuNN8m
-jBxVGN5smXPwwDvTVJgPrQzHAE4xzt2gh9fl143SQNIiP/hyShKSVa3HRChO2Cw/IC9tPFrnJzVs
-PKMUUxE5s64MNcAM7flVXIo/nP4E8pwwxFIZH8IrCj2jkMwI3m893XPUmo4UqAM5Zy/5N8p4faYs
-4AnWTwNvqSg4QfTv40871qkg1eQC/Lp23jZUQlhnkNxSYk2uenuO8LOwkNNvxEF3QTWsjtGmq19x
-0eJz6W7uo1vMqznXuvFluyifxDBs+ezXnlWjaHCRlRolOTcRgCGgncqwusnDmm2PBywTLbjnsfpI
-a9rK5Lw8Q30L06dSC9LVLeWkBplzJZtW4dI6NO0bO/21qeINZO78j3WTkO/CKwZFxw1NOTsbS0Dw
-BGTreCzg4/RzgI/fa/ZpNGtv645kPYe1K1x/E5ut+RqTS7fAZdwBdQs7hrcSBy9HNyyoIS+shBnw
-Oi8MDIc6FrV0Lna2p4W564j4GC/iBtyno3EgsoWlRygKvfTnR7abFlvExpRX9QSb+Xffq/l5xPyh
-B3tULrrWGJXrkET7nzCIxDzm3UkkHgFPbLRNbqjO1xje2UDLoA2OMLjAvCRaIMLUtMIZhRdefrg4
-zaQ84Iy5SOcNeDPYPf36Elgso7nsLLaslDDOmhQudfbKofw2zyJC03uCV5Usu5IPDZW9OcnBGnQX
-aYzzbsUZdKTxdaghZof6CkDupnxQXHb0huTnenag/0CrKbcFUXL9m/ab8keVi7HQztAcfmf6Mrns
-XE1vgkVgYe2NsiwlxqnqrXHpmjRBNdBw/zLF0tHo4GD3FIwI15jC2BVX8CNjrbMW5voKwpk54+Na
-YvHF3/UoDjXjYZ+V9WiTio7XJry/KJt+b9ywEVUEc4R9a9is2QBsKTsqfqy2KZQpMzq18TVtwb3m
-1++aEk1xDXN9l5xZNORcW2HQsoa6L5XMMbhESOPc9wIVKDCNHPkiShphwM7jq8geikXSgA4m9Lfy
-p2Pk4krS61JivqUVXKO+pRLHpK+bYHMzg5Z8ElDHg1RPMll8TQDD3/HgnS+ooAscFJVhEvUHNGD0
-ulHyrVAMoBN4excujiS8O7OxVntPTRu926nl0u1D/+gwzcavGh4STk4+D6mf6VGY8XlLtMNqqP65
-AnlWKO45cNxEVouPMkLfSMGQ5GrzZ1JzXL2AVzeDk9ZeH615rNzcGaFYTzM33LPfrjfC4zsAVoJT
-jgTnUBSJlKIKTfY7pcSLb5bMgdU6bU8r4bbw0EHsitGJD4WO4QS79T1u/3Q4gfxK/z+eVTvoPa+/
-Zp3ttjYN7PCa3acZ42vGpEkb+aU6LSqH4sltHE8d3wTwyg+FEpYgGg4bEVCb+/iB0lSE1tECyf9a
-DIBQdlVYy2ce4QTxnDoEukISamfLv3LuqH13ZTaZSThfWPLgzNssCF9j/hkmXNsSTX0nShB1T3if
-O4EEXtv/T3VM92vJr415g+OB/agoOlYb2S7O4hrRE0IfpLfV4JkrE6Q5FfF14BCMHb0+LdxCHMfR
-6cwBCpB2Dgy+h38EYDrfVATUyGHcZQwBnFwprnygd/LaYowKLmRt4JHsKPuO6pQGhrlTQfKNEMcM
-0oKeuYEmzKRQW3iPVIOittBQmUSXb94NIFXkP//EW8EC1710pEGv1ZK0YbBtTRCfGNajDldBc2A5
-3BP3jCNo62xXlZITig6utWD4ed7J503Pk1K29wA4K0n9i+jYuUqZqBWMpq0LZvHoa7a0pM/IJSLo
-ufAo4q1I83s3C3rNESJ7+fDfCOWq9YKBgCO9xpcQ8iKPCqk8mCnxabBJg6NM6OMiHas0nO7qlhXP
-XZq5tMLxB6auiLJ00BFXdJG4nrvtmSgUZ7jD9mnYBwMEpMUzlhe4ob5NxmjLSEmzOrMHpKMqhgDk
-Fm==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.6.0
+ */
+
+/**
+ * Abstract base class for comparators which compare values for equality.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.6.0
+ */
+abstract class PHPUnit_Framework_Comparator
+{
+    /**
+     * @var PHPUnit_Framework_ComparatorFactory
+     */
+    protected $factory;
+
+    /**
+     * @param PHPUnit_Framework_ComparatorFactory $factory
+     */
+    public function setFactory(PHPUnit_Framework_ComparatorFactory $factory)
+    {
+        $this->factory = $factory;
+    }
+
+    /**
+     * Returns whether the comparator can compare two values.
+     *
+     * @param  mixed $expected The first value to compare
+     * @param  mixed $actual The second value to compare
+     * @return boolean
+     */
+    abstract public function accepts($expected, $actual);
+
+    /**
+     * Asserts that two values are equal.
+     *
+     * @param  mixed $expected The first value to compare
+     * @param  mixed $actual The second value to compare
+     * @param  float $delta The allowed numerical distance between two values to
+     *                      consider them equal
+     * @param  bool  $canonicalize If set to TRUE, arrays are sorted before
+     *                             comparison
+     * @param  bool  $ignoreCase If set to TRUE, upper- and lowercasing is
+     *                           ignored when comparing string values
+     * @throws PHPUnit_Framework_ComparisonFailure Thrown when the comparison
+     *                           fails. Contains information about the
+     *                           specific errors that lead to the failure.
+     */
+    abstract public function assertEquals($expected, $actual, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE);
+}

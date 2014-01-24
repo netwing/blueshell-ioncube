@@ -1,56 +1,84 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests compilation of capture tags
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for capture tags tests
+*/
+class CompileCaptureTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test capture tag
+    */
+    public function testCapture1()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{capture assign=foo}hello world{/capture}');
+        $this->assertEquals("", $this->smarty->fetch($tpl));
+    }
+    public function testCapture2()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=bar}{capture assign=foo}hello world{/capture}{$foo}');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+    public function testCapture3()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{capture name=foo}hello world{/capture}{$smarty.capture.foo}');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+    public function testCapture4()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{capture name=foo assign=bar}hello world{/capture}{$smarty.capture.foo} {$bar}');
+        $this->assertEquals("hello world hello world", $this->smarty->fetch($tpl));
+    }
+    public function testCapture5()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{capture}hello world{/capture}{$smarty.capture.default}');
+        $this->assertEquals("hello world", $this->smarty->fetch($tpl));
+    }
+    public function testCapture6()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{capture short}hello shorttag{/capture}{$smarty.capture.short}');
+        $this->assertEquals("hello shorttag", $this->smarty->fetch($tpl));
+    }
+    public function testCapture7()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{capture append=foo}hello{/capture}bar{capture append=foo}world{/capture}{foreach $foo item} {$item@key} {$item}{/foreach}');
+        $this->assertEquals("bar 0 hello 1 world", $this->smarty->fetch($tpl));
+    }
+    /*
+    *  The following test has been disabled. It fails only in PHPunit
+    */
+    public function testCapture8()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{capture assign=foo}hello {capture assign=bar}this is my {/capture}world{/capture}{$foo} {$bar}');
+        $this->assertEquals("hello world this is my ", $this->smarty->fetch($tpl),'This failure pops up only during PHPunit test ?????');
+    }
+    public function testCompileCaptureNocache1()
+    {
+        $this->smarty->assign('foo', 1);
+        $this->smarty->caching = 1;
+        $this->assertContains('foo 1', $this->smarty->fetch('test_capture_nocache.tpl'));
+    }
+    public function testCompileCaptureNocache2()
+    {
+        $this->smarty->assign('foo', 2);
+        $this->smarty->caching = 1;
+        $this->assertTrue($this->smarty->isCached('test_capture_nocache.tpl'));
+        $this->assertContains('foo 2', $this->smarty->fetch('test_capture_nocache.tpl'));
+    }
+}

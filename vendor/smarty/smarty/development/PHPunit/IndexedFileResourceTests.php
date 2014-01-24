@@ -1,73 +1,99 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests for File resources
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+class IndexedFileResourceTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->addTemplateDir(dirname(__FILE__) .'/templates_2');
+        // note that 10 is a string!
+        $this->smarty->addTemplateDir(dirname(__FILE__) .'/templates_3', '10');
+        $this->smarty->addTemplateDir(dirname(__FILE__) .'/templates_4', 'foo');
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    protected function relative($path)
+    {
+        $path = str_replace( dirname(__FILE__), '.', $path );
+        if (DS == "\\") {
+            $path = str_replace( "\\", "/", $path );
+        }
+
+        return $path;
+    }
+
+    public function testGetTemplateFilepath()
+    {
+        $tpl = $this->smarty->createTemplate('dirname.tpl');
+        $this->assertEquals('./templates/dirname.tpl', $this->relative($tpl->source->filepath));
+    }
+    public function testGetTemplateFilepathNumber()
+    {
+        $tpl = $this->smarty->createTemplate('[1]dirname.tpl');
+        $this->assertEquals('./templates_2/dirname.tpl', $this->relative($tpl->source->filepath));
+    }
+    public function testGetTemplateFilepathNumeric()
+    {
+        $tpl = $this->smarty->createTemplate('[10]dirname.tpl');
+        $this->assertEquals('./templates_3/dirname.tpl', $this->relative($tpl->source->filepath));
+    }
+    public function testGetTemplateFilepathName()
+    {
+        $tpl = $this->smarty->createTemplate('[foo]dirname.tpl');
+        $this->assertEquals('./templates_4/dirname.tpl', $this->relative($tpl->source->filepath));
+    }
+
+    public function testFetch()
+    {
+        $tpl = $this->smarty->createTemplate('dirname.tpl');
+        $this->assertEquals('templates', $this->smarty->fetch($tpl));
+    }
+    public function testFetchNumber()
+    {
+        $tpl = $this->smarty->createTemplate('[1]dirname.tpl');
+        $this->assertEquals('templates_2', $this->smarty->fetch($tpl));
+    }
+    public function testFetchNumeric()
+    {
+        $tpl = $this->smarty->createTemplate('[10]dirname.tpl');
+        $this->assertEquals('templates_3', $this->smarty->fetch($tpl));
+    }
+    public function testFetchName()
+    {
+        $tpl = $this->smarty->createTemplate('[foo]dirname.tpl');
+        $this->assertEquals('templates_4', $this->smarty->fetch($tpl));
+    }
+
+    public function testGetCompiledFilepath()
+    {
+        $tpl = $this->smarty->createTemplate('[foo]dirname.tpl');
+        $expected = './templates_c/'.sha1($this->smarty->getTemplateDir('foo').'dirname.tpl').'.file.dirname.tpl.php';
+        $this->assertEquals($expected, $this->relative($tpl->compiled->filepath));
+    }
+
+    public function testGetCachedFilepath()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('[foo]dirname.tpl');
+        $expected = './cache/'.sha1($this->smarty->getTemplateDir('foo').'dirname.tpl').'.dirname.tpl.php';
+        $this->assertEquals($expected, $this->relative($tpl->cached->filepath));
+    }
+
+    public function testFinalCleanup()
+    {
+        $this->smarty->clearCompiledTemplate();
+      $this->smarty->clearAllCache();
+    }
+}

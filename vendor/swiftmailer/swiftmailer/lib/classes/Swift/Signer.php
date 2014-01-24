@@ -1,13 +1,22 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPsnqcK14m65t1SuCOqrm7/dV4t7eSFnz4A+i793EGWzS4G/EgwPUMv5c5jXb9JuWji6Z6m1G
-4peagSYgdsdtd1Ggafr38iHoudNzEt9GwEBCewR1Ee2CHlRHio9VtBHRPhA4cwEe9KD35svP2FCh
-oEuYziqkhdT7xuxUNkSMtJJ5XRNwjsuvgd/ehWyLmrwzIuNvSHMTjzxJv3L9bic457yKEBVjflxo
-Z3XkM1pt/xS6HL0qXJjWhr4euJltSAgiccy4GDnfT9zY0ZP/pjnwFfRV2zWVKzuDraDR47u8ecpo
-cz1ag5ZbqlDl1DrPGrOMv/b7GPxYL4RM0wIMUrCxx9M1XOGq+KL+PBgS3S0/UWplYcXR51bFQSx5
-G8Grwe+m11hAqhtqR7AoSe1c+cck1QUEvYBTVABkuX5oUKht/Th/vLos6aRjHVJxakpXe8Za8ja/
-tIVMwST6iGGBFREQD9RrU3R5bXB/+oqAKkDmpZFAioshtQQHosFCTVJFNVFCtD3rJ2NXm9YnhGok
-L80eHTDmDct2RDlzlna0vrni+z+Kxk+NtTtxAyrPNnG295cDqYqedUmUUVllXIdGVI+d7fy2GCYz
-VfvfnZaVp6/fG69x+rDIsFRNYkU6aJH3Ofp9XzLpJ+qFNKQDQcOL8AV3liWkoUZsRdvAOWDjJR66
-fCR5mew7uYACIdrU1k/qCSo5spcazh9n6Goba6LeZwXXIB9Ni8MA
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Base Class of Signer Infrastructure.
+ *
+ * @package    Swift
+ * @subpackage Signatures
+ *
+ * @author     Xavier De Cock <xdecock@gmail.com>
+ */
+interface Swift_Signer
+{
+    public function reset();
+}

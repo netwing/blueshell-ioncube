@@ -1,39 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Http\Exception;
+
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Message\Request;
+use Guzzle\Http\Exception\RequestException;
+use Guzzle\Http\Exception\BadResponseException;
+
+class ExceptionTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    /**
+     * @covers Guzzle\Http\Exception\RequestException
+     */
+    public function testRequestException()
+    {
+        $e = new RequestException('Message');
+        $request = new Request('GET', 'http://www.guzzle-project.com/');
+        $e->setRequest($request);
+        $this->assertEquals($request, $e->getRequest());
+    }
+
+    /**
+     * @covers Guzzle\Http\Exception\BadResponseException
+     */
+    public function testBadResponseException()
+    {
+        $e = new BadResponseException('Message');
+        $response = new Response(200);
+        $e->setResponse($response);
+        $this->assertEquals($response, $e->getResponse());
+    }
+
+    /**
+     * @covers Guzzle\Http\Exception\BadResponseException::factory
+     */
+    public function testCreatesGenericErrorExceptionOnError()
+    {
+        $request = new Request('GET', 'http://www.example.com');
+        $response = new Response(307);
+        $e = BadResponseException::factory($request, $response);
+        $this->assertInstanceOf('Guzzle\Http\Exception\BadResponseException', $e);
+    }
+
+    /**
+     * @covers Guzzle\Http\Exception\BadResponseException::factory
+     */
+    public function testCreatesClientErrorExceptionOnClientError()
+    {
+        $request = new Request('GET', 'http://www.example.com');
+        $response = new Response(404);
+        $e = BadResponseException::factory($request, $response);
+        $this->assertInstanceOf('Guzzle\Http\Exception\ClientErrorResponseException', $e);
+    }
+
+    /**
+     * @covers Guzzle\Http\Exception\BadResponseException::factory
+     */
+    public function testCreatesServerErrorExceptionOnServerError()
+    {
+        $request = new Request('GET', 'http://www.example.com');
+        $response = new Response(503);
+        $e = BadResponseException::factory($request, $response);
+        $this->assertInstanceOf('Guzzle\Http\Exception\ServerErrorResponseException', $e);
+    }
+}

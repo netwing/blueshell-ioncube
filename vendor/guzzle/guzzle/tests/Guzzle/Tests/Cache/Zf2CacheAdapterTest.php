@@ -1,42 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-39aBsaC7geJwD5fb2AWGvU6h
+<?php
+
+namespace Guzzle\Tests\Cache;
+
+use Guzzle\Cache\Zf2CacheAdapter;
+use Zend\Cache\StorageFactory;
+
+/**
+ * @covers Guzzle\Cache\Zf2CacheAdapter
+ */
+class Zf2CacheAdapterTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    private $cache;
+    private $adapter;
+
+    /**
+     * Prepares the environment before running a test.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+        $this->cache = StorageFactory::factory(array(
+            'adapter' => 'memory'
+        ));
+        $this->adapter = new Zf2CacheAdapter($this->cache);
+    }
+
+    /**
+     * Cleans up the environment after running a test.
+     */
+    protected function tearDown()
+    {
+        $this->adapter = null;
+        $this->cache = null;
+        parent::tearDown();
+    }
+
+    public function testCachesDataUsingCallables()
+    {
+        $this->assertTrue($this->adapter->save('test', 'data', 1000));
+        $this->assertEquals('data', $this->adapter->fetch('test'));
+    }
+
+    public function testChecksIfCacheContainsKeys()
+    {
+        $this->adapter->save('test', 'data', 1000);
+        $this->assertTrue($this->adapter->contains('test'));
+        $this->assertFalse($this->adapter->contains('foo'));
+    }
+
+    public function testDeletesFromCacheByKey()
+    {
+        $this->adapter->save('test', 'data', 1000);
+        $this->assertTrue($this->adapter->contains('test'));
+        $this->adapter->delete('test');
+        $this->assertFalse($this->adapter->contains('test'));
+    }
+}

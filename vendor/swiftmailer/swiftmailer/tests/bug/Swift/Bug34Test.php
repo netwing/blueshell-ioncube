@@ -1,60 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-3pIulOjiCnb2+oC9euAqBt8=
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+
+class Swift_Bug34Test extends Swift_Tests_SwiftUnitTestCase
+{
+    public function setUp()
+    {
+        Swift_Preferences::getInstance()->setCharset('utf-8');
+    }
+
+    public function testEmbeddedFilesWithMultipartDataCreateMultipartRelatedContentAsAnAlternative()
+    {
+        $message = Swift_Message::newInstance();
+        $message->setCharset('utf-8');
+        $message->setSubject('test subject');
+        $message->addPart('plain part', 'text/plain');
+
+        $image = Swift_Image::newInstance('<image data>', 'image.gif', 'image/gif');
+        $cid = $message->embed($image);
+
+        $message->setBody('<img src="' . $cid . '" />', 'text/html');
+
+        $message->setTo(array('user@domain.tld' => 'User'));
+
+        $message->setFrom(array('other@domain.tld' => 'Other'));
+        $message->setSender(array('other@domain.tld' => 'Other'));
+
+        $id = $message->getId();
+        $date = preg_quote(date('r', $message->getDate()), '~');
+        $boundary = $message->getBoundary();
+        $cidVal = $image->getId();
+
+        $this->assertPattern(
+        '~^' .
+        'Sender: Other <other@domain.tld>' . "\r\n" .
+        'Message-ID: <' . $id . '>' . "\r\n" .
+        'Date: ' . $date . "\r\n" .
+        'Subject: test subject' . "\r\n" .
+        'From: Other <other@domain.tld>' . "\r\n" .
+        'To: User <user@domain.tld>' . "\r\n" .
+        'MIME-Version: 1.0' . "\r\n" .
+        'Content-Type: multipart/alternative;' . "\r\n" .
+        ' boundary="' . $boundary . '"' . "\r\n" .
+        "\r\n\r\n" .
+        '--' . $boundary . "\r\n" .
+        'Content-Type: text/plain; charset=utf-8' . "\r\n" .
+        'Content-Transfer-Encoding: quoted-printable' . "\r\n" .
+        "\r\n" .
+        'plain part' .
+        "\r\n\r\n" .
+        '--' . $boundary . "\r\n" .
+        'Content-Type: multipart/related;' . "\r\n" .
+        ' boundary="(.*?)"' . "\r\n" .
+        "\r\n\r\n" .
+        '--\\1' . "\r\n" .
+        'Content-Type: text/html; charset=utf-8' . "\r\n" .
+        'Content-Transfer-Encoding: quoted-printable' . "\r\n" .
+        "\r\n" .
+        '<img.*?/>' .
+        "\r\n\r\n" .
+        '--\\1' . "\r\n" .
+        'Content-Type: image/gif; name=image.gif' . "\r\n" .
+        'Content-Transfer-Encoding: base64' . "\r\n" .
+        'Content-Disposition: inline; filename=image.gif' . "\r\n" .
+        'Content-ID: <' . $cidVal . '>' . "\r\n" .
+        "\r\n" .
+        preg_quote(base64_encode('<image data>'), '~') .
+        "\r\n\r\n" .
+        '--\\1--' . "\r\n" .
+        "\r\n\r\n" .
+        '--' . $boundary . '--' . "\r\n" .
+        '$~D',
+        $message->toString()
+        );
+    }
+}

@@ -1,95 +1,293 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-4FgzsvWN2m==
+<?php
+/**
+ * PHP_ParserGenerator, a php 5 parser generator.
+ *
+ * This is a direct port of the Lemon parser generator, found at
+ * {@link http://www.hwaci.com/sw/lemon/}
+ *
+ * PHP version 5
+ *
+ * LICENSE:
+ *
+ * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in
+ *       the documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the PHP_ParserGenerator nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   php
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    CVS: $Id: ActionTable.php,v 1.1 2006/07/18 00:53:10 cellog Exp $
+ * @since      File available since Release 0.1.0
+ */
+/**
+ * The state of the yy_action table under construction is an instance of
+ * the following structure
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    0.1.5
+ * @since      Class available since Release 0.1.0
+ */
+class PHP_ParserGenerator_ActionTable
+{
+    /**
+     * Number of used slots in {@link $aAction}
+     * @var int
+     */
+    public $nAction = 0;
+    /**
+     * The $yy_action table under construction.
+     *
+     * Each entry is of format:
+     * <code>
+     *  array(
+     *      'lookahead' => -1, // Value of the lookahead token (symbol index)
+     *      'action' => -1     // Action to take on the given lookahead (action index)
+     *  );
+     * </code>
+     * @see PHP_ParserGenerator_Data::compute_action()
+     * @var array
+     */
+    public $aAction =
+        array(array(
+            'lookahead' => -1,
+            'action' => -1
+        ));
+    /**
+     * A single new transaction set.
+     *
+     * @see $aAction format of the internal array is described here
+     * @var array
+     */
+    public $aLookahead =
+        array(array(
+            'lookahead' => 0,
+            'action' => 0
+        ));
+    /**
+     * The smallest (minimum) value of any lookahead token in {@link $aLookahead}
+     *
+     * The lowest non-terminal is always introduced earlier in the parser file,
+     * and is therefore a more significant token.
+     * @var int
+     */
+    public $mnLookahead = 0;
+    /**
+     * The action associated with the smallest lookahead token.
+     * @see $mnLookahead
+     * @var int
+     */
+    public $mnAction = 0;
+    /**
+     * The largest (maximum) value of any lookahead token in {@link $aLookahead}
+     * @var int
+     */
+    public $mxLookahead = 0;
+    /**
+     * The number of slots used in {@link $aLookahead}.
+     *
+     * This is the same as count($aLookahead), but there was no pressing reason
+     * to change this when porting from C.
+     * @see $mnLookahead
+     * @var int
+     */
+    public $nLookahead = 0;
+
+    /**
+     * Add a new action to the current transaction set
+     * @param int
+     * @param int
+     */
+    public function acttab_action($lookahead, $action)
+    {
+        if ($this->nLookahead === 0) {
+            $this->aLookahead = array();
+            $this->mxLookahead = $lookahead;
+            $this->mnLookahead = $lookahead;
+            $this->mnAction = $action;
+        } else {
+            if ($this->mxLookahead < $lookahead) {
+                $this->mxLookahead = $lookahead;
+            }
+            if ($this->mnLookahead > $lookahead) {
+                $this->mnLookahead = $lookahead;
+                $this->mnAction = $action;
+            }
+        }
+        $this->aLookahead[$this->nLookahead] = array(
+            'lookahead' => $lookahead,
+            'action' => $action);
+        $this->nLookahead++;
+    }
+
+    /**
+     * Add the transaction set built up with prior calls to acttab_action()
+     * into the current action table.  Then reset the transaction set back
+     * to an empty set in preparation for a new round of acttab_action() calls.
+     *
+     * Return the offset into the action table of the new transaction.
+     * @return int Return the offset that should be added to the lookahead in
+     * order to get the index into $yy_action of the action.  This will be used
+     * in generation of $yy_ofst tables (reduce and shift)
+     * @throws Exception
+     */
+    public function acttab_insert()
+    {
+        if ($this->nLookahead <= 0) {
+            throw new Exception('nLookahead is not set up?');
+        }
+
+        /* Scan the existing action table looking for an offset where we can
+        ** insert the current transaction set.  Fall out of the loop when that
+        ** offset is found.  In the worst case, we fall out of the loop when
+        ** i reaches $this->nAction, which means we append the new transaction set.
+        **
+        ** i is the index in $this->aAction[] where $this->mnLookahead is inserted.
+        */
+        for ($i = 0; $i < $this->nAction + $this->mnLookahead; $i++) {
+            if (!isset($this->aAction[$i])) {
+                $this->aAction[$i] = array(
+                    'lookahead' => -1,
+                    'action' => -1,
+                );
+            }
+            if ($this->aAction[$i]['lookahead'] < 0) {
+                for ($j = 0; $j < $this->nLookahead; $j++) {
+                    if (!isset($this->aLookahead[$j])) {
+                        $this->aLookahead[$j] = array(
+                            'lookahead' => 0,
+                            'action' => 0,
+                        );
+                    }
+                    $k = $this->aLookahead[$j]['lookahead'] -
+                        $this->mnLookahead + $i;
+                    if ($k < 0) {
+                        break;
+                    }
+                    if (!isset($this->aAction[$k])) {
+                        $this->aAction[$k] = array(
+                            'lookahead' => -1,
+                            'action' => -1,
+                        );
+                    }
+                    if ($this->aAction[$k]['lookahead'] >= 0) {
+                        break;
+                    }
+                }
+                if ($j < $this->nLookahead) {
+                    continue;
+                }
+                for ($j = 0; $j < $this->nAction; $j++) {
+                    if (!isset($this->aAction[$j])) {
+                        $this->aAction[$j] = array(
+                            'lookahead' => -1,
+                            'action' => -1,
+                        );
+                    }
+                    if ($this->aAction[$j]['lookahead'] == $j +
+                          $this->mnLookahead - $i) {
+                        break;
+                    }
+                }
+                if ($j == $this->nAction) {
+                    break;  /* Fits in empty slots */
+                }
+            } elseif ($this->aAction[$i]['lookahead'] == $this->mnLookahead) {
+                if ($this->aAction[$i]['action'] != $this->mnAction) {
+                    continue;
+                }
+                for ($j = 0; $j < $this->nLookahead; $j++) {
+                    $k = $this->aLookahead[$j]['lookahead'] -
+                        $this->mnLookahead + $i;
+                    if ($k < 0 || $k >= $this->nAction) {
+                        break;
+                    }
+                    if (!isset($this->aAction[$k])) {
+                        $this->aAction[$k] = array(
+                            'lookahead' => -1,
+                            'action' => -1,
+                        );
+                    }
+                    if ($this->aLookahead[$j]['lookahead'] !=
+                          $this->aAction[$k]['lookahead']) {
+                        break;
+                    }
+                    if ($this->aLookahead[$j]['action'] !=
+                          $this->aAction[$k]['action']) {
+                        break;
+                    }
+                }
+                if ($j < $this->nLookahead) {
+                    continue;
+                }
+                $n = 0;
+                for ($j = 0; $j < $this->nAction; $j++) {
+                    if (!isset($this->aAction[$j])) {
+                        $this->aAction[$j] = array(
+                            'lookahead' => -1,
+                            'action' => -1,
+                        );
+                    }
+                    if ($this->aAction[$j]['lookahead'] < 0) {
+                        continue;
+                    }
+                    if ($this->aAction[$j]['lookahead'] == $j +
+                          $this->mnLookahead - $i) {
+                        $n++;
+                    }
+                }
+                if ($n == $this->nLookahead) {
+                    break;  /* Same as a prior transaction set */
+                }
+            }
+        }
+        /* Insert transaction set at index i. */
+        for ($j = 0; $j < $this->nLookahead; $j++) {
+            if (!isset($this->aLookahead[$j])) {
+                $this->aLookahead[$j] = array(
+                    'lookahead' => 0,
+                    'action' => 0,
+                );
+            }
+            $k = $this->aLookahead[$j]['lookahead'] - $this->mnLookahead + $i;
+            $this->aAction[$k] = $this->aLookahead[$j];
+            if ($k >= $this->nAction) {
+                $this->nAction = $k + 1;
+            }
+        }
+        $this->nLookahead = 0;
+        $this->aLookahead = array();
+
+        /* Return the offset that is added to the lookahead in order to get the
+        ** index into yy_action of the action */
+
+        return $i - $this->mnLookahead;
+    }
+}

@@ -1,42 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Parser\Tokenizer;
+
+/**
+ * CSS selector tokenizer escaping applier.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class TokenizerEscaping
+{
+    /**
+     * @var TokenizerPatterns
+     */
+    private $patterns;
+
+    /**
+     * @param TokenizerPatterns $patterns
+     */
+    public function __construct(TokenizerPatterns $patterns)
+    {
+        $this->patterns = $patterns;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return string
+     */
+    public function escapeUnicode($value)
+    {
+        $value = $this->replaceUnicodeSequences($value);
+
+        return preg_replace($this->patterns->getSimpleEscapePattern(), '$1', $value);
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return string
+     */
+    public function escapeUnicodeAndNewLine($value)
+    {
+        $value = preg_replace($this->patterns->getNewLineEscapePattern(), '', $value);
+
+        return $this->escapeUnicode($value);
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return string
+     */
+    private function replaceUnicodeSequences($value)
+    {
+        return preg_replace_callback($this->patterns->getUnicodeEscapePattern(), function (array $match) {
+            $code = $match[1];
+
+            if (bin2hex($code) > 0xFFFD) {
+                $code = '\\FFFD';
+            }
+
+            return mb_convert_encoding(pack('H*', $code), 'UTF-8', 'UCS-2BE');
+        }, $value);
+    }
+}

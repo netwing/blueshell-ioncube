@@ -1,42 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Plugin\Md5;
+
+use Guzzle\Common\Event;
+use Guzzle\Http\Message\EntityEnclosingRequestInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * Listener used to add a ContentMD5 header to the body of a command and adds ContentMD5 validation if the
+ * ValidateMD5 option is not set to false on a command
+ */
+class CommandContentMd5Plugin  implements EventSubscriberInterface
+{
+    /** @var string Parameter used to check if the ContentMD5 value is being added */
+    protected $contentMd5Param;
+
+    /** @var string Parameter used to check if validation should occur on the response */
+    protected $validateMd5Param;
+
+    /**
+     * @param string $contentMd5Param  Parameter used to check if the ContentMD5 value is being added
+     * @param string $validateMd5Param Parameter used to check if validation should occur on the response
+     */
+    public function __construct($contentMd5Param = 'ContentMD5', $validateMd5Param = 'ValidateMD5')
+    {
+        $this->contentMd5Param = $contentMd5Param;
+        $this->validateMd5Param = $validateMd5Param;
+    }
+
+    public static function getSubscribedEvents()
+    {
+        return array('command.before_send' => array('onCommandBeforeSend', -255));
+    }
+
+    public function onCommandBeforeSend(Event $event)
+    {
+        $command = $event['command'];
+        $request = $command->getRequest();
+
+        // Only add an MD5 is there is a MD5 option on the operation and it has a payload
+        if ($request instanceof EntityEnclosingRequestInterface && $request->getBody()
+            && $command->getOperation()->hasParam($this->contentMd5Param)) {
+            // Check if an MD5 checksum value should be passed along to the request
+            if ($command[$this->contentMd5Param] === true) {
+                if (false !== ($md5 = $request->getBody()->getContentMd5(true, true))) {
+                    $request->setHeader('Content-MD5', $md5);
+                }
+            }
+        }
+
+        // Check if MD5 validation should be used with the response
+        if ($command[$this->validateMd5Param] === true) {
+            $request->addSubscriber(new Md5ValidatorPlugin(true, false));
+        }
+    }
+}

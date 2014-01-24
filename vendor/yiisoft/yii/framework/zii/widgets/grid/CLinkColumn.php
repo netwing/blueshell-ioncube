@@ -1,50 +1,111 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ArR+dfPHG6NF2GJ5uEMqngWQvm==
+<?php
+/**
+ * CLinkColumn class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('zii.widgets.grid.CGridColumn');
+
+/**
+ * CLinkColumn represents a grid view column that renders a hyperlink in each of its data cells.
+ *
+ * The {@link label} and {@link url} properties determine how each hyperlink will be rendered.
+ * The {@link labelExpression}, {@link urlExpression} properties may be used instead if they are available.
+ * In addition, if {@link imageUrl} is set, an image link will be rendered.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package zii.widgets.grid
+ * @since 1.1
+ */
+class CLinkColumn extends CGridColumn
+{
+	/**
+	 * @var string the label to the hyperlinks in the data cells. Note that the label will not
+	 * be HTML-encoded when rendering. This property is ignored if {@link labelExpression} is set.
+	 * @see labelExpression
+	 */
+	public $label='Link';
+	/**
+	 * @var string a PHP expression that will be evaluated for every data cell and whose result will be rendered
+	 * as the label of the hyperlink of the data cell.
+	 * In this expression, you can use the following variables:
+	 * <ul>
+	 *   <li><code>$row</code> the row number (zero-based).</li>
+	 *   <li><code>$data</code> the data model for the row.</li>
+	 * 	 <li><code>$this</code> the column object.</li>
+	 * </ul>
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $labelExpression;
+	/**
+	 * @var string the URL to the image. If this is set, an image link will be rendered.
+	 */
+	public $imageUrl;
+	/**
+	 * @var string the URL of the hyperlinks in the data cells.
+	 * This property is ignored if {@link urlExpression} is set.
+	 * @see urlExpression
+	 */
+	public $url='javascript:void(0)';
+	/**
+	 * @var string a PHP expression that will be evaluated for every data cell and whose result will be rendered
+	 * as the URL of the hyperlink of the data cells.
+	 * In this expression, you can use the following variables:
+	 * <ul>
+	 *   <li><code>$row</code> the row number (zero-based).</li>
+	 *   <li><code>$data</code> the data model for the row.</li>
+	 * 	 <li><code>$this</code> the column object.</li>
+	 * </ul>
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $urlExpression;
+	/**
+	 * @var array the HTML options for the data cell tags.
+	 */
+	public $htmlOptions=array('class'=>'link-column');
+	/**
+	 * @var array the HTML options for the header cell tag.
+	 */
+	public $headerHtmlOptions=array('class'=>'link-column');
+	/**
+	 * @var array the HTML options for the footer cell tag.
+	 */
+	public $footerHtmlOptions=array('class'=>'link-column');
+	/**
+	 * @var array the HTML options for the hyperlinks
+	 */
+	public $linkHtmlOptions=array();
+
+	/**
+	 * Renders the data cell content.
+	 * This method renders a hyperlink in the data cell.
+	 * @param integer $row the row number (zero-based)
+	 * @param mixed $data the data associated with the row
+	 */
+	protected function renderDataCellContent($row,$data)
+	{
+		if($this->urlExpression!==null)
+			$url=$this->evaluateExpression($this->urlExpression,array('data'=>$data,'row'=>$row));
+		else
+			$url=$this->url;
+		if($this->labelExpression!==null)
+			$label=$this->evaluateExpression($this->labelExpression,array('data'=>$data,'row'=>$row));
+		else
+			$label=$this->label;
+		$options=$this->linkHtmlOptions;
+		if(is_string($this->imageUrl))
+			echo CHtml::link(CHtml::image($this->imageUrl,$label),$url,$options);
+		else
+			echo CHtml::link($label,$url,$options);
+	}
+}

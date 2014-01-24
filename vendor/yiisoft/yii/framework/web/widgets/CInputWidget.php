@@ -1,44 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CInputWidget class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CInputWidget is the base class for widgets that collect user inputs.
+ *
+ * CInputWidget declares properties common among input widgets. An input widget
+ * can be associated with a data model and an attribute, or a name and a value.
+ * If the former, the name and the value will be generated automatically.
+ * Child classes may use {@link resolveNameID} and {@link hasModel}.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+abstract class CInputWidget extends CWidget
+{
+	/**
+	 * @var CModel the data model associated with this widget.
+	 */
+	public $model;
+	/**
+	 * @var string the attribute associated with this widget.
+	 * The name can contain square brackets (e.g. 'name[1]') which is used to collect tabular data input.
+	 */
+	public $attribute;
+	/**
+	 * @var string the input name. This must be set if {@link model} is not set.
+	 */
+	public $name;
+	/**
+	 * @var string the input value
+	 */
+	public $value;
+	/**
+	 * @var array additional HTML options to be rendered in the input tag
+	 */
+	public $htmlOptions=array();
+
+
+	/**
+	 * @return array the name and the ID of the input.
+	 * @throws CException in case input name and ID cannot be resolved.
+	 */
+	protected function resolveNameID()
+	{
+		if($this->name!==null)
+			$name=$this->name;
+		elseif(isset($this->htmlOptions['name']))
+			$name=$this->htmlOptions['name'];
+		elseif($this->hasModel())
+			$name=CHtml::activeName($this->model,$this->attribute);
+		else
+			throw new CException(Yii::t('yii','{class} must specify "model" and "attribute" or "name" property values.',array('{class}'=>get_class($this))));
+
+		if(($id=$this->getId(false))===null)
+		{
+			if(isset($this->htmlOptions['id']))
+				$id=$this->htmlOptions['id'];
+			else
+				$id=CHtml::getIdByName($name);
+		}
+
+		return array($name,$id);
+	}
+
+	/**
+	 * @return boolean whether this widget is associated with a data model.
+	 */
+	protected function hasModel()
+	{
+		return $this->model instanceof CModel && $this->attribute!==null;
+	}
+}

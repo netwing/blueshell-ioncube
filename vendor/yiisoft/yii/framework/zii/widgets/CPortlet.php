@@ -1,57 +1,128 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CPortlet class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CPortlet is the base class for portlet widgets.
+ *
+ * A portlet displays a fragment of content, usually in terms of a block
+ * on the side bars of a Web page.
+ *
+ * To specify the content of the portlet, override the {@link renderContent}
+ * method, or insert the content code between the {@link CController::beginWidget}
+ * and {@link CController::endWidget} calls. For example,
+ *
+ * <pre>
+ * <?php $this->beginWidget('zii.widgets.CPortlet'); ?>
+ *     ...insert content here...
+ * <?php $this->endWidget(); ?>
+ * </pre>
+ *
+ * A portlet also has an optional {@link title}. One may also override {@link renderDecoration}
+ * to further customize the decorative display of a portlet (e.g. adding min/max buttons).
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package zii.widgets
+ * @since 1.1
+ */
+class CPortlet extends CWidget
+{
+	/**
+	 * @var string the tag name for the portlet container tag. Defaults to 'div'.
+	 */
+	public $tagName='div';
+	/**
+	 * @var array the HTML attributes for the portlet container tag.
+	 */
+	public $htmlOptions=array('class'=>'portlet');
+	/**
+	 * @var string the title of the portlet. Defaults to null.
+	 * When this is not set, Decoration will not be displayed.
+	 * Note that the title will not be HTML-encoded when rendering.
+	 */
+	public $title;
+	/**
+	 * @var string the CSS class for the decoration container tag. Defaults to 'portlet-decoration'.
+	 */
+	public $decorationCssClass='portlet-decoration';
+	/**
+	 * @var string the CSS class for the portlet title tag. Defaults to 'portlet-title'.
+	 */
+	public $titleCssClass='portlet-title';
+	/**
+	 * @var string the CSS class for the content container tag. Defaults to 'portlet-content'.
+	 */
+	public $contentCssClass='portlet-content';
+	/**
+	 * @var boolean whether to hide the portlet when the body content is empty. Defaults to true.
+	 * @since 1.1.4
+	 */
+	public $hideOnEmpty=true;
+
+	private $_openTag;
+
+	/**
+	 * Initializes the widget.
+	 * This renders the open tags needed by the portlet.
+	 * It also renders the decoration, if any.
+	 */
+	public function init()
+	{
+		ob_start();
+		ob_implicit_flush(false);
+
+		if(isset($this->htmlOptions['id']))
+			$this->id=$this->htmlOptions['id'];
+		else
+			$this->htmlOptions['id']=$this->id;
+		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+		$this->renderDecoration();
+		echo "<div class=\"{$this->contentCssClass}\">\n";
+
+		$this->_openTag=ob_get_contents();
+		ob_clean();
+	}
+
+	/**
+	 * Renders the content of the portlet.
+	 */
+	public function run()
+	{
+		$this->renderContent();
+		$content=ob_get_clean();
+		if($this->hideOnEmpty && trim($content)==='')
+			return;
+		echo $this->_openTag;
+		echo $content;
+		echo "</div>\n";
+		echo CHtml::closeTag($this->tagName);
+	}
+
+	/**
+	 * Renders the decoration for the portlet.
+	 * The default implementation will render the title if it is set.
+	 */
+	protected function renderDecoration()
+	{
+		if($this->title!==null)
+		{
+			echo "<div class=\"{$this->decorationCssClass}\">\n";
+			echo "<div class=\"{$this->titleCssClass}\">{$this->title}</div>\n";
+			echo "</div>\n";
+		}
+	}
+
+	/**
+	 * Renders the content of the portlet.
+	 * Child classes should override this method to render the actual content.
+	 */
+	protected function renderContent()
+	{
+	}
+}

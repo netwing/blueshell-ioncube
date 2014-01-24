@@ -1,37 +1,106 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Service\Description;
+
+/**
+ * A ServiceDescription stores service information based on a service document
+ */
+interface ServiceDescriptionInterface extends \Serializable
+{
+    /**
+     * Get the basePath/baseUrl of the description
+     *
+     * @return string
+     */
+    public function getBaseUrl();
+
+    /**
+     * Get the API operations of the service
+     *
+     * @return array Returns an array of {@see OperationInterface} objects
+     */
+    public function getOperations();
+
+    /**
+     * Check if the service has an operation by name
+     *
+     * @param string $name Name of the operation to check
+     *
+     * @return bool
+     */
+    public function hasOperation($name);
+
+    /**
+     * Get an API operation by name
+     *
+     * @param string $name Name of the command
+     *
+     * @return OperationInterface|null
+     */
+    public function getOperation($name);
+
+    /**
+     * Get a specific model from the description
+     *
+     * @param string $id ID of the model
+     *
+     * @return Parameter|null
+     */
+    public function getModel($id);
+
+    /**
+     * Get all service description models
+     *
+     * @return array
+     */
+    public function getModels();
+
+    /**
+     * Check if the description has a specific model by name
+     *
+     * @param string $id ID of the model
+     *
+     * @return bool
+     */
+    public function hasModel($id);
+
+    /**
+     * Get the API version of the service
+     *
+     * @return string
+     */
+    public function getApiVersion();
+
+    /**
+     * Get the name of the API
+     *
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * Get a summary of the purpose of the API
+     *
+     * @return string
+     */
+    public function getDescription();
+
+    /**
+     * Get arbitrary data from the service description that is not part of the Guzzle spec
+     *
+     * @param string $key Data key to retrieve
+     *
+     * @return null|mixed
+     */
+    public function getData($key);
+
+    /**
+     * Set arbitrary data on the service description
+     *
+     * @param string $key   Data key to set
+     * @param mixed  $value Value to set
+     *
+     * @return self
+     */
+    public function setData($key, $value);
+}

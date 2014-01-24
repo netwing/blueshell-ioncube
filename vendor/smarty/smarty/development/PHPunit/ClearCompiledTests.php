@@ -1,191 +1,436 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests for deleting compiled templates
+*
+* @package PHPunit
+* @author Uwe Tews
+* @author Rodney Rehm
+*/
+
+/**
+* class for delete compiled template tests
+*/
+class ClearCompiledTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->addTemplateDir('./templates_2/');
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    // helpers
+    /**
+     * clear $smarty->compile_dir
+     *
+     * @return void
+     */
+    protected function clearFiles()
+    {
+        $directory = realpath($this->smarty->getCompileDir());
+        if (!$directory) {
+            return;
+        }
+
+        $di = new RecursiveDirectoryIterator($directory);
+        // $it = new RecursiveIteratorIterator($di, RecursiveIteratorIterator::CHILD_FIRST | FilesystemIterator::SKIP_DOTS);
+        $it = new RecursiveIteratorIterator($di, RecursiveIteratorIterator::CHILD_FIRST);
+        foreach ($it as $file) {
+           $_file = $file->__toString();
+
+            if (preg_match("#[\\\\/]\.#", $_file)) {
+                continue;
+            }
+
+            if ($file->isDir()) {
+                rmdir($_file);
+            } else {
+                unlink($_file);
+            }
+
+        }
+    }
+    /**
+     * list of compiled files
+     * @var array
+     */
+    protected $_files = array();
+    /**
+     * generate compiled files
+     * @uses $_files to store references
+     * @return array list of files array( id => path )
+     */
+    protected function makeFiles()
+    {
+        $this->_files = array();
+        $directory_length = strlen($this->smarty->getCompileDir());
+        $templates = array(
+            'helloworld.tpl' => array(null, 'compile1', 'compile2'),
+            'helloworld2.tpl' => array(null, 'compile1', 'compile2'),
+            'ambiguous/case1/foobar.tpl' => array(null, 'compile1', 'compile2'),
+            '[1]ambiguous/case1/foobar.tpl' => array(null, 'compile1', 'compile2'),
+        );
+
+        foreach ($templates as $template => $compile_ids) {
+            foreach ($compile_ids as $compile_id) {
+                $tpl = $this->smarty->createTemplate($template, null, $compile_id);
+                $tpl->fetch();
+                $this->_files[$template . '#' . $compile_id] = substr($tpl->compiled->filepath, $directory_length - 1);
+            }
+        }
+
+        Smarty_Resource::$sources = array();
+        $this->smarty->template_objects = array();
+
+        return $this->_files;
+    }
+    /**
+     * Transform $id to $path
+     *
+     * @param  array $keys IDs like "template#compile_id"
+     * @return array list of (sorted) compiled file paths
+     */
+    protected function expectFiles($keys)
+    {
+        $files = array();
+        foreach ($keys as $key) {
+            if (isset($this->_files[$key])) {
+                $files[] = $this->_files[$key];
+            }
+        }
+        sort($files);
+
+        return $files;
+    }
+    /**
+     * update mtime of compiled files
+     *
+     * @param  array  $keys   IDs like "template#compile_id"
+     * @param  string $offset time offset added to time()
+     * @return void
+     */
+    protected function touchFiles($keys, $offset=0)
+    {
+        $base = rtrim($this->smarty->getCompileDir(), "\\/");
+        $time = time();
+        foreach ($keys as $key) {
+            if (isset($this->_files[$key])) {
+                touch($base . $this->_files[$key], $time + $offset);
+            }
+        }
+    }
+    /**
+     * find all compiled files
+     *
+     * @return array list of (sorted) compiled file paths
+     */
+    protected function getFiles()
+    {
+        $directory = realpath($this->smarty->getCompileDir());
+        if (!$directory) {
+            return array();
+        }
+
+        $directory_length = strlen($directory);
+        $files = array();
+
+        $di = new RecursiveDirectoryIterator($directory);
+        $it = new RecursiveIteratorIterator($di);
+        foreach ($it as $file) {
+            $_file = $file->__toString();
+            // skip anything with a /. in it.
+            if (preg_match("#[\\\\/]\.#", $_file) || !$file->isFile()) {
+                continue;
+            }
+
+            $files[] = substr($file->__toString(), $directory_length);
+        }
+        sort($files);
+
+        return $files;
+    }
+
+    // Smarty::clearCompiledTemplate(null, null, null)
+    public function testClearAll()
+    {
+        $this->runClearAll(false);
+    }
+    public function testSubsClearAll()
+    {
+        $this->runClearAll(true);
+    }
+    public function runClearAll($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array();
+        $this->assertEquals(12, $this->smarty->clearCompiledTemplate());
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    // Smarty::clearCompiledTemplate($template, null, null)
+    public function testClearTemplate()
+    {
+        $this->runClearTemplate(false);
+    }
+    public function testSubsClearTemplate()
+    {
+        $this->runClearTemplate(true);
+    }
+    public function testClearOtherTemplate()
+    {
+        $this->runClearOtherTemplate(false);
+    }
+    public function testSubsClearOtherTemplate()
+    {
+        $this->runClearOtherTemplate(true);
+    }
+    public function runClearTemplate($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array(
+            'helloworld2.tpl#', 'helloworld2.tpl#compile1', 'helloworld2.tpl#compile2',
+            'ambiguous/case1/foobar.tpl#', 'ambiguous/case1/foobar.tpl#compile1', 'ambiguous/case1/foobar.tpl#compile2',
+            '[1]ambiguous/case1/foobar.tpl#', '[1]ambiguous/case1/foobar.tpl#compile1', '[1]ambiguous/case1/foobar.tpl#compile2',
+        );
+        $this->assertEquals(3, $this->smarty->clearCompiledTemplate('helloworld.tpl'));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+    public function runClearOtherTemplate($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array_keys($this->_files);
+        $this->assertEquals(0, $this->smarty->clearCompiledTemplate('foobar.tpl'));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    // Smarty::clearCompiledTemplate(null, $cache_id, null)
+    public function testClearCompileid()
+    {
+        $this->runClearCompileid(false);
+    }
+    public function testSubsClearCompileid()
+    {
+        $this->runClearCompileid(true);
+    }
+    public function testClearOtherCompileid()
+    {
+        $this->runClearOtherCompileid(false);
+    }
+    public function testSubsClearOtherCompileid()
+    {
+        $this->runClearOtherCompileid(true);
+    }
+    public function runClearCompileid($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array(
+            'helloworld.tpl#', 'helloworld.tpl#compile2',
+            'helloworld2.tpl#', 'helloworld2.tpl#compile2',
+            'ambiguous/case1/foobar.tpl#', 'ambiguous/case1/foobar.tpl#compile2',
+            '[1]ambiguous/case1/foobar.tpl#', '[1]ambiguous/case1/foobar.tpl#compile2',
+        );
+        $this->assertEquals(4, $this->smarty->clearCompiledTemplate(null, 'compile1'));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+
+    }
+    public function runClearOtherCompileid($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array_keys($this->_files);
+        $this->assertEquals(0, $this->smarty->clearCompiledTemplate(null, 'other'));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    // Smarty::clearCompiledTemplate(null, null, $expired)
+    public function testClearExpired()
+    {
+        $this->runClearExpired(false);
+    }
+    public function testSubsClearExpired()
+    {
+        $this->runClearExpired(true);
+    }
+    public function runClearExpired($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array('helloworld.tpl#', 'helloworld2.tpl#');
+        $this->touchFiles(array_diff(array_keys($this->_files), $expected), -1000);
+        $this->assertEquals(10, $this->smarty->clearCompiledTemplate(null, null, 500));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    // Smarty::clearCompiledTemplate($template, null, $expired)
+    public function testClearTemplateExpired()
+    {
+        $this->runClearTemplateExpired(false);
+    }
+    public function testSubsClearTemplateExpired()
+    {
+        $this->runClearTemplateExpired(true);
+    }
+    public function runClearTemplateExpired($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array(
+            'helloworld.tpl#', 'helloworld.tpl#compile2',
+            'helloworld2.tpl#', 'helloworld2.tpl#compile1', 'helloworld2.tpl#compile2',
+            'ambiguous/case1/foobar.tpl#', 'ambiguous/case1/foobar.tpl#compile1', 'ambiguous/case1/foobar.tpl#compile2',
+            '[1]ambiguous/case1/foobar.tpl#', '[1]ambiguous/case1/foobar.tpl#compile1', '[1]ambiguous/case1/foobar.tpl#compile2',
+        );
+        $this->touchFiles(array('helloworld.tpl#compile1'), -1000);
+        $this->assertEquals(1, $this->smarty->clearCompiledTemplate("helloworld.tpl", null, 500));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    // Smarty::clearCompiledTemplate($template, $cache_id, $expired)
+    public function testClearTemplateCacheidExpired()
+    {
+        $this->runClearTemplateCacheidExpired(false);
+    }
+    public function testSubsClearTemplateCacheidExpired()
+    {
+        $this->runClearTemplateCacheidExpired(true);
+    }
+    public function runClearTemplateCacheidExpired($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array(
+            'helloworld.tpl#', 'helloworld.tpl#compile2',
+            'helloworld2.tpl#', 'helloworld2.tpl#compile1', 'helloworld2.tpl#compile2',
+            'ambiguous/case1/foobar.tpl#', 'ambiguous/case1/foobar.tpl#compile1', 'ambiguous/case1/foobar.tpl#compile2',
+            '[1]ambiguous/case1/foobar.tpl#', '[1]ambiguous/case1/foobar.tpl#compile1', '[1]ambiguous/case1/foobar.tpl#compile2',
+        );
+        $this->touchFiles(array('helloworld.tpl#compile1', 'helloworld.tpl#compile2'), -1000);
+        $this->assertEquals(1, $this->smarty->clearCompiledTemplate("helloworld.tpl", "compile1", 500));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    // Smarty::clearCompiledTemplate(null, $cache_id, $expired)
+    public function testClearCacheidExpired()
+    {
+        $this->runClearCacheidExpired(false);
+    }
+    public function testSubsClearCacheidExpired()
+    {
+        $this->runClearCacheidExpired(true);
+    }
+    public function runClearCacheidExpired($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array(
+            'helloworld.tpl#', 'helloworld.tpl#compile2',
+            'helloworld2.tpl#', 'helloworld2.tpl#compile1', 'helloworld2.tpl#compile2',
+            'ambiguous/case1/foobar.tpl#', 'ambiguous/case1/foobar.tpl#compile1', 'ambiguous/case1/foobar.tpl#compile2',
+            '[1]ambiguous/case1/foobar.tpl#', '[1]ambiguous/case1/foobar.tpl#compile1', '[1]ambiguous/case1/foobar.tpl#compile2',
+        );
+        $this->touchFiles(array('helloworld.tpl#compile1'), -1000);
+        $this->assertEquals(1, $this->smarty->clearCompiledTemplate(null, "compile1", 500));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    // Smarty::clearCompiledTemplate($template, $cache_id, null)
+    public function testClearTemplateCacheid()
+    {
+        $this->runClearTemplateCacheid(false);
+    }
+    public function testSubsClearTemplateCacheid()
+    {
+        $this->runClearTemplateCacheid(true);
+    }
+    public function runClearTemplateCacheid($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        $expected = array(
+            'helloworld.tpl#', 'helloworld.tpl#compile2',
+            'helloworld2.tpl#', 'helloworld2.tpl#compile1', 'helloworld2.tpl#compile2',
+            'ambiguous/case1/foobar.tpl#', 'ambiguous/case1/foobar.tpl#compile1', 'ambiguous/case1/foobar.tpl#compile2',
+            '[1]ambiguous/case1/foobar.tpl#', '[1]ambiguous/case1/foobar.tpl#compile1', '[1]ambiguous/case1/foobar.tpl#compile2',
+        );
+        $this->assertEquals(1, $this->smarty->clearCompiledTemplate("helloworld.tpl", "compile1"));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+    public function testClearAmbiguousTemplate()
+    {
+        $this->runClearAmbiguousTemplate(false);
+    }
+    public function testSubsAmbiguousTemplate()
+    {
+        $this->runClearAmbiguousTemplate(true);
+    }
+    public function runClearAmbiguousTemplate($use_sub_dirs)
+    {
+        $this->smarty->use_sub_dirs = $use_sub_dirs;
+        $this->clearFiles();
+        $this->makeFiles();
+
+        // TODO: uwe.tews - shouldn't clearCompiledTemplate("foo.tpl") remove "{$template_dir[0]}/foo.tpl" AND "{$template_dir[1]}/foo.tpl"?
+        // currently it kills only the first one found (through regular template file identification methods)
+
+        $expected = array(
+            'helloworld.tpl#', 'helloworld.tpl#compile1', 'helloworld.tpl#compile2',
+            'helloworld2.tpl#', 'helloworld2.tpl#compile1', 'helloworld2.tpl#compile2',
+            '[1]ambiguous/case1/foobar.tpl#', '[1]ambiguous/case1/foobar.tpl#compile1', '[1]ambiguous/case1/foobar.tpl#compile2',
+        );
+        $this->assertEquals(3, $this->smarty->clearCompiledTemplate("ambiguous/case1/foobar.tpl"));
+
+        $this->assertEquals($this->expectFiles($expected), $this->getFiles());
+        $this->clearFiles();
+    }
+
+}

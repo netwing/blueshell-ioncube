@@ -1,72 +1,138 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Module;
+
+/**
+ * Uses Mink to manipulate Zombie.js headless browser (http://zombie.labnotes.org/)
+ *
+ * Note, all methods take CSS selectors to fetch elements.
+ * For links, buttons, fields you can use names/values/ids of elements.
+ * For form fields you can use input[name=fieldname] notation.
+ *
+ * <div class="alert alert-info">
+ * To use this module with Composer you need <em>"behat/mink-zombie-driver": "1.1.*"</em> package.
+ * This module is considered <strong>deprecated</strong> and will be replaced with WebDriver module.
+ * </div>
+ *
+ * ## Status
+ *
+ * * Maintainer: **synchrone**
+ * * Stability: **stable**
+ * * Contact: https://github.com/synchrone
+ * * relies on [Mink](http://mink.behat.org)
+ *
+ *
+ * ## Installation
+ *
+ * In order to talk with zombie.js server, you should install and configure zombie.js first:
+ *
+ * * Install node.js by following instructions from the official site: http://nodejs.org/.
+ * * Install npm (node package manager) by following instructions from the http://npmjs.org/.
+ * * Install zombie.js with npm:
+ * ``` $ npm install -g zombie@1```
+ *
+ * After installing npm and zombie.js, you’ll need to add npm libs to your **NODE_PATH**. The easiest way to do this is to add:
+ *
+ * ``` export NODE_PATH="/PATH/TO/NPM/node_modules" ```
+ * into your **.bashrc**.
+ *
+ * Don't forget to turn on Db repopulation if you are using database.
+ *
+ * ## Configuration
+ *
+ * * url  *required*- url of your site
+ * * host - simply defines the host on which zombie.js will be started. It’s **127.0.0.1** by default.
+ * * port - defines a zombie.js port. Default one is **8124**.
+ * * node_bin - defines full path to node.js binary. Default one is just **node**
+ * * script - defines a node.js script to start zombie.js server. If you pass a **null** the default script will be used. Use this option carefully!
+ * * threshold - amount of milliseconds (1/1000 of second) for the process to wait  (as of \Behat\Mink\Driver\Zombie\Server)
+ * * autostart - whether zombie.js should be started automatically. Defaults to **true**
+ *
+ * ### Example (`acceptance.suite.yml`)
+ *
+ *     modules:
+ *        enabled: [ZombieJS]
+ *        config:
+ *           ZombieJS:
+ *              url: 'http://localhost/'
+ *              host: '127.0.0.1'
+ *              port: 8124
+ *
+ * ## Public Properties
+ *
+ * * session - contains Mink Session
+ */
+
+use Behat\Mink\Mink,
+    Behat\Mink\Session,
+    Behat\Mink\Driver\ZombieDriver,
+    Behat\Mink\Driver\NodeJS\Server\ZombieServer;
+
+class ZombieJS extends \Codeception\Util\MinkJS
+{
+    protected $requiredFields = array('url');
+    protected $config = array(
+        'host' => '127.0.0.1', 'port' => 8124,
+        'node_bin' => null, 'script' => null,
+        'threshold' => 20000,
+        'autostart' => true
+    );
+
+    /** @var Session */
+    public $session;
+
+    /** @var ZombieServer */
+    protected $server;
+
+    /** @var ZombieDriver */
+    protected $driver;
+
+    public function _initialize()
+    {
+        $this->server = new ZombieServer(
+            $this->config['host'],$this->config['port'],
+            $this->config['node_bin'],$this->config['script'],
+            $this->config['threshold'] * 1000
+        );
+
+        $this->driver = new ZombieDriver($this->server);
+        $this->session = new Session($this->driver);
+        parent::_initialize();
+    }
+
+    public function _failed(\Codeception\TestCase $test, $error) {
+        $this->_after($test);
+    }
+
+    public function _getUrl() {
+        return 'http://'.$this->config['host'].':'.$this->config['port'];
+    }
+
+    /**
+     * @param string $url The URL to make HEAD request to
+     * @return array Header-Name => Value array
+     */
+    public function headRequest($url){
+        $headers = $this->server->evalJS(sprintf(<<<JS
+        var http = new browser.window.XMLHttpRequest();
+        http.open('HEAD', '%s');
+        http.onreadystatechange = function(){
+            if(http.readyState==4){
+                stream.end('HTTP/1.0 '+http.status+' '+http.statusText+'\\n'+http.getAllResponseHeaders());
+            }
+        };
+        http.send(null);
+JS
+            ,addslashes($url))
+        );
+
+        if(class_exists('\Guzzle\Parser\Message\MessageParser'))
+        {
+            $p = new \Guzzle\Parser\Message\MessageParser();
+            $parts = $p->parseResponse($headers);
+            return $parts['headers'];
+        }
+        else{
+            throw new \Exception("Could not parse response headers. Please install Guzzle");
+        }
+    }
+}

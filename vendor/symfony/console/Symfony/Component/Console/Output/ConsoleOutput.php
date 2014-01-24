@@ -1,51 +1,113 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Output;
+
+use Symfony\Component\Console\Formatter\OutputFormatterInterface;
+
+/**
+ * ConsoleOutput is the default class for all CLI output. It uses STDOUT.
+ *
+ * This class is a convenient wrapper around `StreamOutput`.
+ *
+ *     $output = new ConsoleOutput();
+ *
+ * This is equivalent to:
+ *
+ *     $output = new StreamOutput(fopen('php://stdout', 'w'));
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class ConsoleOutput extends StreamOutput implements ConsoleOutputInterface
+{
+    private $stderr;
+
+    /**
+     * Constructor.
+     *
+     * @param integer                       $verbosity The verbosity level (one of the VERBOSITY constants in OutputInterface)
+     * @param Boolean|null                  $decorated Whether to decorate messages (null for auto-guessing)
+     * @param OutputFormatterInterface|null $formatter Output formatter instance (null to use default OutputFormatter)
+     *
+     * @api
+     */
+    public function __construct($verbosity = self::VERBOSITY_NORMAL, $decorated = null, OutputFormatterInterface $formatter = null)
+    {
+        $outputStream = 'php://stdout';
+        if (!$this->hasStdoutSupport()) {
+            $outputStream = 'php://output';
+        }
+
+        parent::__construct(fopen($outputStream, 'w'), $verbosity, $decorated, $formatter);
+
+        $this->stderr = new StreamOutput(fopen('php://stderr', 'w'), $verbosity, $decorated, $formatter);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setDecorated($decorated)
+    {
+        parent::setDecorated($decorated);
+        $this->stderr->setDecorated($decorated);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setFormatter(OutputFormatterInterface $formatter)
+    {
+        parent::setFormatter($formatter);
+        $this->stderr->setFormatter($formatter);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setVerbosity($level)
+    {
+        parent::setVerbosity($level);
+        $this->stderr->setVerbosity($level);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getErrorOutput()
+    {
+        return $this->stderr;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setErrorOutput(OutputInterface $error)
+    {
+        $this->stderr = $error;
+    }
+
+    /**
+     * Returns true if current environment supports writing console output to
+     * STDOUT.
+     *
+     * IBM iSeries (OS400) exhibits character-encoding issues when writing to
+     * STDOUT and doesn't properly convert ASCII to EBCDIC, resulting in garbage
+     * output.
+     *
+     * @return boolean
+     */
+    protected function hasStdoutSupport()
+    {
+        return ('OS400' != php_uname('s'));
+    }
+}

@@ -1,150 +1,339 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Zs9F12vpC4gcfEROv0==
+<?php
+/**
+ * CFormatter class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFormatter provides a set of commonly used data formatting methods.
+ *
+ * The formatting methods provided by CFormatter are all named in the form of <code>formatXyz</code>.
+ * The behavior of some of them may be configured via the properties of CFormatter. For example,
+ * by configuring {@link dateFormat}, one may control how {@link formatDate} formats the value into a date string.
+ *
+ * For convenience, CFormatter also implements the mechanism of calling formatting methods with their shortcuts (called types).
+ * In particular, if a formatting method is named <code>formatXyz</code>, then its shortcut method is <code>xyz</code>
+ * (case-insensitive). For example, calling <code>$formatter->date($value)</code> is equivalent to calling
+ * <code>$formatter->formatDate($value)</code>.
+ *
+ * Currently, the following types are recognizable:
+ * <ul>
+ * <li>raw: the attribute value will not be changed at all.</li>
+ * <li>text: the attribute value will be HTML-encoded when rendering.</li>
+ * <li>ntext: the {@link formatNtext} method will be called to format the attribute value as a HTML-encoded plain text with newlines converted as the HTML &lt;br /&gt; or &lt;p&gt;&lt;/p&gt; tags.</li>
+ * <li>html: the attribute value will be purified and then returned.</li>
+ * <li>date: the {@link formatDate} method will be called to format the attribute value as a date.</li>
+ * <li>time: the {@link formatTime} method will be called to format the attribute value as a time.</li>
+ * <li>datetime: the {@link formatDatetime} method will be called to format the attribute value as a date with time.</li>
+ * <li>boolean: the {@link formatBoolean} method will be called to format the attribute value as a boolean display.</li>
+ * <li>number: the {@link formatNumber} method will be called to format the attribute value as a number display.</li>
+ * <li>email: the {@link formatEmail} method will be called to format the attribute value as a mailto link.</li>
+ * <li>image: the {@link formatImage} method will be called to format the attribute value as an image tag where the attribute value is the image URL.</li>
+ * <li>url: the {@link formatUrl} method will be called to format the attribute value as a hyperlink where the attribute value is the URL.</li>
+ * <li>size: the {@link formatSize} method will be called to format the attribute value, interpreted as a number of bytes, as a size in human readable form.</li>
+ * </ul>
+ *
+ * By default, {@link CApplication} registers {@link CFormatter} as an application component whose ID is 'format'.
+ * Therefore, one may call <code>Yii::app()->format->boolean(1)</code>.
+ * You might want to replace this component with {@link CLocalizedFormatter} to enable formatting based on the
+ * current locale settings.
+ *
+ * @property CHtmlPurifier $htmlPurifier The HTML purifier instance.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.utils
+ * @since 1.1.0
+ */
+class CFormatter extends CApplicationComponent
+{
+	/**
+	 * @var CHtmlPurifier
+	 */
+	private $_htmlPurifier;
+
+	/**
+	 * @var string the format string to be used to format a date using PHP date() function. Defaults to 'Y/m/d'.
+	 */
+	public $dateFormat='Y/m/d';
+	/**
+	 * @var string the format string to be used to format a time using PHP date() function. Defaults to 'h:i:s A'.
+	 */
+	public $timeFormat='h:i:s A';
+	/**
+	 * @var string the format string to be used to format a date and time using PHP date() function. Defaults to 'Y/m/d h:i:s A'.
+	 */
+	public $datetimeFormat='Y/m/d h:i:s A';
+	/**
+	 * @var array the format used to format a number with PHP number_format() function.
+	 * Three elements may be specified: "decimals", "decimalSeparator" and "thousandSeparator".
+	 * They correspond to the number of digits after the decimal point, the character displayed as the decimal point
+	 * and the thousands separator character.
+	 */
+	public $numberFormat=array('decimals'=>null, 'decimalSeparator'=>null, 'thousandSeparator'=>null);
+	/**
+	 * @var array the text to be displayed when formatting a boolean value. The first element corresponds
+	 * to the text display for false, the second element for true. Defaults to <code>array('No', 'Yes')</code>.
+	 */
+	public $booleanFormat=array('No','Yes');
+	/**
+	 * @var array the options to be passed to CHtmlPurifier instance used in this class. CHtmlPurifier is used
+	 * in {@link formatHtml} method, so this property could be useful to customize HTML filtering behavior.
+	 * @since 1.1.13
+	 */
+	public $htmlPurifierOptions=array();
+	/**
+	 * @var array the format used to format size (bytes). Three elements may be specified: "base", "decimals" and "decimalSeparator".
+	 * They correspond to the base at which a kilobyte is calculated (1000 or 1024 bytes per kilobyte, defaults to 1024),
+	 * the number of digits after the decimal point (defaults to 2) and the character displayed as the decimal point.
+	 * "decimalSeparator" is available since version 1.1.13
+	 * @since 1.1.11
+	 */
+	public $sizeFormat=array(
+		'base'=>1024,
+		'decimals'=>2,
+		'decimalSeparator'=>null,
+	);
+
+	/**
+	 * Calls the format method when its shortcut is invoked.
+	 * This is a PHP magic method that we override to implement the shortcut format methods.
+	 * @param string $name the method name
+	 * @param array $parameters method parameters
+	 * @return mixed the method return value
+	 */
+	public function __call($name,$parameters)
+	{
+		if(method_exists($this,'format'.$name))
+			return call_user_func_array(array($this,'format'.$name),$parameters);
+		else
+			return parent::__call($name,$parameters);
+	}
+
+	/**
+	 * Formats a value based on the given type.
+	 * @param mixed $value the value to be formatted
+	 * @param string $type the data type. This must correspond to a format method available in CFormatter.
+	 * For example, we can use 'text' here because there is method named {@link formatText}.
+	 * @throws CException if given type is unknown
+	 * @return string the formatted data
+	 */
+	public function format($value,$type)
+	{
+		$method='format'.$type;
+		if(method_exists($this,$method))
+			return $this->$method($value);
+		else
+			throw new CException(Yii::t('yii','Unknown type "{type}".',array('{type}'=>$type)));
+	}
+
+	/**
+	 * Formats the value as is without any formatting.
+	 * This method simply returns back the parameter without any format.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 */
+	public function formatRaw($value)
+	{
+		return $value;
+	}
+
+	/**
+	 * Formats the value as a HTML-encoded plain text.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 */
+	public function formatText($value)
+	{
+		return CHtml::encode($value);
+	}
+
+	/**
+	 * Formats the value as a HTML-encoded plain text and converts newlines with HTML &lt;br /&gt; or
+	 * &lt;p&gt;&lt;/p&gt; tags.
+	 * @param mixed $value the value to be formatted
+	 * @param boolean $paragraphs whether newlines should be converted to HTML &lt;p&gt;&lt;/p&gt; tags,
+	 * false by default meaning that HTML &lt;br /&gt; tags will be used
+	 * @param boolean $removeEmptyParagraphs whether empty paragraphs should be removed, defaults to true;
+	 * makes sense only when $paragraphs parameter is true
+	 * @return string the formatted result
+	 */
+	public function formatNtext($value,$paragraphs=false,$removeEmptyParagraphs=true)
+	{
+		$value=CHtml::encode($value);
+		if($paragraphs)
+		{
+			$value='<p>'.str_replace(array("\r\n", "\n", "\r"), '</p><p>',$value).'</p>';
+			if($removeEmptyParagraphs)
+     			$value=preg_replace('/(<\/p><p>){2,}/i','</p><p>',$value);
+			return $value;
+		}
+		else
+		{
+			return nl2br($value);
+		}
+	}
+
+	/**
+	 * Formats the value as HTML text without any encoding.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 */
+	public function formatHtml($value)
+	{
+		return $this->getHtmlPurifier()->purify($value);
+	}
+
+	/**
+	 * Formats the value as a date.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 * @see dateFormat
+	 */
+	public function formatDate($value)
+	{
+		return date($this->dateFormat,$this->normalizeDateValue($value));
+	}
+
+	/**
+	 * Formats the value as a time.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 * @see timeFormat
+	 */
+	public function formatTime($value)
+	{
+		return date($this->timeFormat,$this->normalizeDateValue($value));
+	}
+
+	/**
+	 * Formats the value as a date and time.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 * @see datetimeFormat
+	 */
+	public function formatDatetime($value)
+	{
+		return date($this->datetimeFormat,$this->normalizeDateValue($value));
+	}
+
+	/**
+	 * Normalizes an expression as a timestamp.
+	 * @param mixed $time the time expression to be normalized
+	 * @return int the normalized result as a UNIX timestamp
+	 */
+	protected function normalizeDateValue($time)
+	{
+		if(is_string($time))
+		{
+			if(ctype_digit($time) || ($time{0}=='-' && ctype_digit(substr($time, 1))))
+				return (int)$time;
+			else
+				return strtotime($time);
+		}
+		return (int)$time;
+	}
+
+	/**
+	 * Formats the value as a boolean.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 * @see booleanFormat
+	 */
+	public function formatBoolean($value)
+	{
+		return $value ? $this->booleanFormat[1] : $this->booleanFormat[0];
+	}
+
+	/**
+	 * Formats the value as a mailto link.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 */
+	public function formatEmail($value)
+	{
+		return CHtml::mailto($value);
+	}
+
+	/**
+	 * Formats the value as an image tag.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 */
+	public function formatImage($value)
+	{
+		return CHtml::image($value);
+	}
+
+	/**
+	 * Formats the value as a hyperlink.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 */
+	public function formatUrl($value)
+	{
+		$url=$value;
+		if(strpos($url,'http://')!==0 && strpos($url,'https://')!==0)
+			$url='http://'.$url;
+		return CHtml::link(CHtml::encode($value),$url);
+	}
+
+	/**
+	 * Formats the value as a number using PHP number_format() function.
+	 * @param mixed $value the value to be formatted
+	 * @return string the formatted result
+	 * @see numberFormat
+	 */
+	public function formatNumber($value)
+	{
+		return number_format($value,$this->numberFormat['decimals'],$this->numberFormat['decimalSeparator'],$this->numberFormat['thousandSeparator']);
+	}
+
+	/**
+	 * @return CHtmlPurifier the HTML purifier instance
+	 */
+	public function getHtmlPurifier()
+	{
+		if($this->_htmlPurifier===null)
+			$this->_htmlPurifier=new CHtmlPurifier;
+		$this->_htmlPurifier->options=$this->htmlPurifierOptions;
+		return $this->_htmlPurifier;
+	}
+
+	/**
+	 * Formats the value in bytes as a size in human readable form.
+	 * @param integer $value value in bytes to be formatted
+	 * @param boolean $verbose if full names should be used (e.g. bytes, kilobytes, ...).
+	 * Defaults to false meaning that short names will be used (e.g. B, KB, ...).
+	 * @return string the formatted result
+	 * @see sizeFormat
+	 * @since 1.1.11
+	 */
+	public function formatSize($value,$verbose=false)
+	{
+		$base=$this->sizeFormat['base'];
+		for($i=0; $base<=$value && $i<5; $i++)
+			$value=$value/$base;
+
+		$value=round($value, $this->sizeFormat['decimals']);
+		$formattedValue=isset($this->sizeFormat['decimalSeparator']) ? str_replace('.',$this->sizeFormat['decimalSeparator'],$value) : $value;
+		$params=array($value,'{n}'=>$formattedValue);
+
+		switch($i)
+		{
+			case 0:
+				return $verbose ? Yii::t('yii','{n} byte|{n} bytes',$params) : Yii::t('yii', '{n} B',$params);
+			case 1:
+				return $verbose ? Yii::t('yii','{n} kilobyte|{n} kilobytes',$params) : Yii::t('yii','{n} KB',$params);
+			case 2:
+				return $verbose ? Yii::t('yii','{n} megabyte|{n} megabytes',$params) : Yii::t('yii','{n} MB',$params);
+			case 3:
+				return $verbose ? Yii::t('yii','{n} gigabyte|{n} gigabytes',$params) : Yii::t('yii','{n} GB',$params);
+			default:
+				return $verbose ? Yii::t('yii','{n} terabyte|{n} terabytes',$params) : Yii::t('yii','{n} TB',$params);
+		}
+	}
+}

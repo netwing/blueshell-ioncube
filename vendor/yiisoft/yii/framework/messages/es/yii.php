@@ -1,243 +1,285 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-hmeGB7K=
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * Message string can be used with plural forms format. Check i18n section
+ * of the guide for details.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  '"{path}" is not a valid directory.' => '"{path}" no es un directorio válido.',
+  '&lt; Previous' => '&lt; Anterior',
+  '&lt;&lt; First' => '&lt;&lt; Primero',
+  'Action class {class} must implement the "run" method.' => 'La clase de acción {class} debe implementar el método "run".',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record requiere un componente de aplicación "db" del tipo CDbConnection.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'La clase Active Record "{class}" contiene una configuración inválida para la relación "{relation}". La misma debe especificar el tipo de relación, la clase active record relacionada y la clave foránea.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'La clase Active record "{class}" esta intentando seleccionar una columna inválida "{column}". Nota: la columna debe existir en la tabla o ser una expresion con alias.',
+  'Adding a foreign key constraint to an existing table is not supported by SQLite.' => 'Agregar una restricción de clave foránea a una tabla existente no es soportado por SQLite.',
+  'Adding a primary key after table has been created is not supported by SQLite.' => 'Agregar una clave primaria después de que la tabla ha sido creada no es soportado por SQLite.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => 'El alias "{alias}" es inválido. Asegúrese de que apunta a un archivo PHP existente y que el archivo tiene permisos de lectura.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'El alias "{alias}" es inválido. Asegúrese de que apunta a un directorio o archivo existente.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory.' => 'El alias "{alias}" es inválido. Asegúrese de que apunta a un directorio existente.',
+  'Altering a DB column is not supported by SQLite.' => 'Alterar una columna de la BD no esta soportado por SQLite.',
+  'Application Log' => 'Registro de Aplicación',
+  'Application base path "{path}" is not a valid directory.' => 'La ruta base de la aplicación "{path}" no es un directorio válido.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'La ruta de tiempo de ejecución de la aplicación "{path}" es inválida. Por favor asegúrese de que sea un directorio con permisos de escritura por el proceso que corre el servidor Web.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'El elemento de autorización "{item}" ya ha sido asignado con anterioridad al usuario "{user}".',
+  'Base path "{path}" is not a valid directory.' => 'La ruta base "{path}" no es un directorio válido',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache requiere que la extensión apc de PHP se encuentre cargada.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" es inválido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID es inválido. Por favor, asegúrese que "{id}" hace referencia a un componente de aplicación de cache válido.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" es inválido. No se ha podido encontrar dicha acción en el controlador actual.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" es inválido. Por favor, asegúrese de que hace referencia a un ID de un componente de aplicación CDbConnection.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" es inválido. Por favor, asegúrese de que hace referencia a un ID de un componente de aplicación CDbConnection.',
+  'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCacheDependency.connectionID "{id}" es inválido. Por favor, asegúrese de que hace referencia al ID de un componente de aplicación CDbConnection.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql no puede ser vacío.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand falló al ejecutar la sentencia SQL: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand falló al preparar la sentencia SQL: {error}',
+  'CDbCommand::execute() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::execute() falló: {error}. La sentencia SQL ejecutada fue: {sql}.',
+  'CDbCommand::{method}() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::{method}() falló: {error}. La sentencia SQL ejecutada fue: {sql}.',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection no soporta la lectura del esquema para la base de datos {driver}.',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection falló al abrir la conexión con la BD',
+  'CDbConnection is unable to find PDO class "{className}". Make sure PDO is installed correctly.' => 'CDbConnection no puede encontrar la clase PDO "{className}". Asegúrate de que PDO esté instalado correctamente',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader no puede rebobinar. Se trata de un lector de solo avance.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" es inválido. Por favor, asegúrese de que hace referencia a un ID de un componente de aplicación CDbConnection',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" no hace referencia a un componente de aplicación CDbConnection válido.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID es inválido. Por favor, asegúrese que "{id}" hace referencia a un componente de aplicación de base de datos válido.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" es inválido. Por favor, asegúrese de que hace referencia al ID de un componente de aplicación CDbConnection.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction se encuentra inactiva y no puede realizar las operacines commit ni roll back.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory no puede ser vacío.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache requiere que la extensión eAccelerator de PHP esté cargada, activada o compilada con la opción "--with-eaccelerator-shared-memory".',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName no puede ser vacío.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" no apunta a un directorio válido. Asegúrese que el directorio exista y tenga permisos de escritura por el proceso que corre el servidor Web.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain solamente puede tomar objetos que implementen la interfaz IFilter.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl no puede ser vacío.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name no puede ser vacío.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName no puede ser vacío.',
+  'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified tuvo un valor que no pudo ser entendido por strtotime()',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection solo puede contener objetos CHttpCookie.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest no puede determinar la URL del script de entrada.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest no puede determinar la información de la ruta de la solicitud.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest no puede derminar la URI de la solicitud.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode solo puede ser "none", "allow" u "only".',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be a float between 0 and 100.' => 'CHttpSession.gcProbability "{value}" es inválido. Debe ser un flotante entre 0 y 100.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" no es un directorio válido.',
+  'CMemCache requires PHP {extension} extension to be loaded.' => 'CMemCache requiere que la extensión de PHP {extension} esté cargada.',
+  'CMemCache server configuration must be an array.' => 'La configuración del servidor CMemCache debe ser un array.',
+  'CMemCache server configuration must have "host" value.' => 'La configuración del servidor CMemCache debe contener un "host".',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute ha encontrado un bloque de código "{token}" no coincidente. Asegúrese que las llamadas a Yii::beginProfile() y a Yii::endProfile() esten correctamente anidadas.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" es inválido. Los valores válidos son "summary" y "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager requiere que la extensión mcrypt de PHP esté cargada para utilizar la característica de encriptación de datos.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey no puede ser vacío.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey no puede ser vacío.',
+  'CSecurityManager::generateRandomString() cannot generate random string in the current environment.' => 'CSecurityManager::generateRandomString() no puede generar una cadena aleatoria en el entorno actual.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> solo puede contener objetos de la clase {type}.',
+  'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}> solo puede tener objetos de clase {type}.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat debe ser "path" o "get".',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache requiere que la extensión wincache de PHP esté cargada.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'La caché de usuario de CWinCache está desactivada. Por favor, cambie wincache.ucenabled a On en su php.ini.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache requiere que la extensión XCache de PHP esté cargada.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache requiere que la extensión PHP Zend Data Cache esté cargada.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'No se puede agregar "{child}" como hijo de "{name}". Un ciclo infinito se ha detectado.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'No se puede agregar "{child}" como hijo de "{parent}". Un ciclo infinito se ha detectado.',
+  'Cannot add "{name}" as a child of itself.' => 'No se puede agregar "{name}" como hijo de sí mismo.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => 'No se puede agregar un elemento del tipo "{child}" a un elemento del tipo "{parent}".',
+  'Cannot hash a password that is empty or not a string.' => 'No se puede generar un hash de un password que es vacío o que no es una cadena',
+  'Class name "{class}" does not match class file "{file}".' => 'El nombre de la clase "{class}" no coincide con el archivo de la clase "{file}".',
+  'Column name must be either a string or an array.' => 'El nombre de la columna debe ser una cadena o un array.',
+  'Dropping DB column is not supported by SQLite.' => 'La eliminación de columnas de BD no es soportado por SQLite.',
+  'Dropping a foreign key constraint is not supported by SQLite.' => 'La eliminación de una restricción de clave foránea no es soportado por SQLite.',
+  'Either "{parent}" or "{child}" does not exist.' => 'No existe "{parent}" ni "{child}"',
+  'Error: Table "{table}" does not have a primary key.' => 'Error: Tabla "{table}" no tiene una clave primaria.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Error: Tabla "{table}" tiene una clave primaria compuesta que no es soportada por el comando crud.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => 'Evento "{class}"."{event}" tiene asociado un manejador "{handler}" inválido.',
+  'Event "{class}.{event}" is not defined.' => 'Evento "{class}"."{event}" no se encuentra definido.',
+  'Extension path "{path}" does not exist.' => 'La ruta "{path}" de la extensión no existe.',
+  'Failed to initialize the mcrypt module.' => 'Error al inicializar el módulo mcrypt.',
+  'Failed to set unsafe attribute "{attribute}" of "{class}".' => 'Error al establecer unsafe al atributo "{attribute}" de "{class}".',
+  'Failed to start session.' => 'Error al iniciar sesión.',
+  'Failed to write the uploaded file "{file}" to disk.' => 'No se pudo escribir el archivo subido "{file}" en el disco',
+  'File upload was stopped by extension.' => 'La subida del archivo fue detenida debido a una extensión PHP.',
+  'Filter "{filter}" is invalid. Controller "{class}" does not have the filter method "filter{filter}".' => 'El filtro "{filter}" es inválido. El controlador "{class}" no contiene el método de filtro "filter{filter}".',
+  'GD with FreeType or ImageMagick PHP extensions are required.' => 'Las extensiones de PHP GD con FreeType o ImageMagick son requeridas.',
+  'Get a new code' => 'Obtenga un nuevo código',
+  'Go to page: ' => 'Ir a página: ',
+  'In order to use MIME-type validation provided by CFileValidator fileinfo PECL extension should be installed.' => 'Con el fin de usar la validación de tipos MIME provista por CFileValidator, la extensión de PECL fileinfo debe estar instalada.',
+  'Internal error while generating hash.' => 'Hubo un error interno al generar el hash',
+  'Invalid MO file revision: {revision}.' => 'Revisión de archivo MO inválido: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'Archivo MO inválido: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'Valor de enumerador inválido "{value}". Asegúrese que este entre ({enum}).',
+  'Invalid expression for CHttpCacheFilter.lastModifiedExpression: The evaluation result "{value}" could not be understood by strtotime()' => 'Expresión inválida para CHttpCacheFilter.lastModifiedExpression: El resultado de la evaluación "{value}" no pudo ser entendido por strtotime()',
+  'Invalid operator "{operator}".' => 'Operador inválido "{operator}".',
+  'Last &gt;&gt;' => 'Último &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'Los datos de la lista deben ser un array o un objeto que implemente Traversable.',
+  'List index "{index}" is out of bound.' => 'El índice de la lista "{index}" está fuera del límite.',
+  'Login Required' => 'Inicio de sesión necesario',
+  'Map data must be an array or an object implementing Traversable.' => 'Los datos del mapa deben ser un array o un objeto que implementa Traversable',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'No se encuentra la carpeta temoporaria para almacenar el archivo subido "{file}".',
+  'Next &gt;' => 'Siguiente &gt;',
+  'No' => 'No',
+  'No columns are being updated for table "{table}".' => 'No se actualizó ninguna columna para la tabla "{table}".',
+  'No counter columns are being updated for table "{table}".' => 'Ningun contador de columnas ha sido actualizado para la tabla "{table}".',
+  'Object configuration must be an array containing a "class" element.' => 'La configuración del objeto debe ser un array conteniendo un elemento "class".',
+  'Only SHA1 and MD5 hashing algorithms are supported when using PHP 5.1.1 or below.' => 'Solo los algoritmos de hash SHA1 y MD5 son soportados cuando se usa PHP 5.1.1 o menor',
+  'Please fix the following input errors:' => 'Por favor corrija los siguientes errores de ingreso:',
+  'Powered by {yii}.' => 'Potenciado por {yii}.',
+  'Property "{class}.{property}" is not defined.' => 'La propiedad "{class}"."{property}" no se encuentra definida.',
+  'Property "{class}.{property}" is read only.' => 'La propiedad "{class}"."{property}" es de solo lectura..',
+  'Property CMaskedTextField.mask cannot be empty.' => 'La propiedad CMaskedTextField.mask no puede estar vacía.',
+  'Queue data must be an array or an object implementing Traversable.' => 'Los datos de la cola deben ser un array o un objeto que implementa Traversable',
+  'Relation "{name}" is not defined in active record class "{class}".' => 'La relación "{name}" no se encuentra definida en la clase active record "{class}".',
+  'Removing a primary key after table has been created is not supported by SQLite.' => 'Remover una clave primaria después de que una tabla ha sido creada, no es soportado por SQLite.',
+  'Renaming a DB column is not supported by SQLite.' => 'Renombrar una columna de la BD no es soportado por SQLite.',
+  'Script HTML options are not allowed for "CClientScript::POS_LOAD" and "CClientScript::POS_READY".' => 'Las opciones de Script de HTML no son permitidas para "CClientScript::POS_LOAD" ni "CClientScript::POS_READY".',
+  'Stack data must be an array or an object implementing Traversable.' => 'Los datos de la pila deben ser un array o un objeto que implementa Traversable',
+  'Table "{table}" does not exist.' => 'La tabla "{table}" no existe.',
+  'Table "{table}" does not have a column named "{column}".' => 'Tabla "{table}" no contiene la columna con nombre "{column}".',
+  'The "db" application component must be configured to be a CDbConnection object.' => 'El componente de la aplicación "db" debe estar configurado para ser un objeto CDbConnection.',
+  'The "filter" property must be specified with a valid callback.' => 'La propiedad "filter" debe ser especificada con un callback válido.',
+  'The "forceCopy" and "linkAssets" cannot be both true.' => 'Los parámetros "forceCopy" y "linkAssets" no pueden ser a la vez verdaderos',
+  'The "pattern" property must be specified with a valid regular expression.' => 'La propiedad "pattern" debe ser especificada con una expresión regular válida.',
+  'The "range" property must be specified with a list of values.' => 'La propiedad "range" debe ser especificada con una lista de valores.',
+  'The $converter argument must be a valid callback or null.' => 'El argumento $converter debe tener un callback válido o nulo',
+  'The CSRF token could not be verified.' => 'El token CSRF no puede ser verificado.',
+  'The DB query must contain the "from" portion.' => 'La consulta de BD debe contener la parte "from".',
+  'The STAT relation "{name}" cannot have child relations.' => 'La relación STAT "{name}" no puede tener relaciones hijas.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'El patrón de URL "{pattern}" para la ruta "{route}" no es una expresión regular válida.',
+  'The active record cannot be deleted because it is new.' => 'El active record no puede ser eliminado porque es nuevo.',
+  'The active record cannot be inserted to database because it is not new.' => 'El active record no puede ser insertado a la base de datos porque no es nuevo.',
+  'The active record cannot be updated because it is new.' => 'El active record no puede ser actualizado porque es nuevo.',
+  'The asset "{asset}" to be published does not exist.' => 'El asset "{asset} a ser publicado no existe.',
+  'The command path "{path}" is not a valid directory.' => 'La ruta del comando "{path}" no es un directorio válido.',
+  'The controller path "{path}" is not a valid directory.' => 'La ruta del controlador "{path}" no es un directorio válido.',
+  'The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.' => 'El archivo "{file}" no puede ser subido. Solo los archivos de estos tipo MIME están permitidos: {mimeTypes}.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'El archivo "{file}" no puede ser subido. Solo los archivos con estas extensiones son permitidos: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => 'El archivo "{file}" es muy grande. Su tamaño no puede exceder {limit} bytes.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => 'El archivo "{file}" es muy chico. Su tamaño no puede ser menor que {limit} bytes.',
+  'The file "{file}" was only partially uploaded.' => 'El archivo "{file}" ha sido subido parcialmente.',
+  'The first element in a filter configuration must be the filter class.' => 'El primer elemento en la configuración de un filtro debe ser la clase del filtro.',
+  'The format of {attribute} is invalid.' => 'El formato de {attribute} es inválido.',
+  'The item "{name}" does not exist.' => 'El elemento "{name}" es inexistente.',
+  'The item "{parent}" already has a child "{child}".' => 'El elemento "{parent}" ya contiene un hijo "{child}".',
+  'The layout path "{path}" is not a valid directory.' => 'La ruta del diseño "{path}" no es un directorio válido.',
+  'The list is read only.' => 'La lista es de solo lectura',
+  'The map is read only.' => 'El mapa es de solo lectura',
+  'The module path "{path}" is not a valid directory.' => 'La ruta del módulo "{path}" no es un directorio válido.',
+  'The pattern for 12 hour format must be "h" or "hh".' => 'El patrón para hora en formato 12 debe ser "h" o "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => 'El patrón para hora en formato 24 debe ser "H" o "HH".',
+  'The pattern for AM/PM marker must be "a".' => 'El patrón para el marcador AM/PM debe ser "a".',
+  'The pattern for day in month must be "F".' => 'El patrón para día en el mes debe ser "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'El patrón para día en el año debe ser "D", "DD", "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => 'El patrón para día del mes debe ser "d" o "dd".',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => 'El patrón para el día de la semana de ser "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" o "ccccc".',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'El patrón para era debe ser "G", "GG", "GGG", "GGGG" o "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'El patrón para hora en AM/PM debe ser "K" o "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => 'El patrón para hora del día debe ser "k" o "kk".',
+  'The pattern for minutes must be "m" or "mm".' => 'El patrón para minutos debe ser "m" o "mm".',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => 'El patrón para mes debe ser "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" o "LLLL".',
+  'The pattern for seconds must be "s" or "ss".' => 'El patrón para segundos debe ser "s" o "ss".',
+  'The pattern for time zone must be "z" or "v".' => 'El patrón para zona horaria debe ser "z" o "v".',
+  'The pattern for week in month must be "W".' => 'El patron para semana del mes debe ser "W".',
+  'The pattern for week in year must be "w".' => 'El patrón para semana del año debe ser "w".',
+  'The queue is empty.' => 'La cola está vacía',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'La relación "{relation}" en la clase active record "{class}" no se encuentra especificada correctamente. La tabla de combinacion "{joinTable}" dada en la clave foránea no se encuentra en la base de datos.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'La relación "{relation}" en la clase active record "{class}" no se encuentra especificada correctamente: la tabla de combinacion "{joinTable}" dada en la clave foránea no se encuentra en la base de datos.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'La relación "{relation}" en la clase active record "{class}" es especificada con una clave foránea "{key}" que no apunta a la tabla padre "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'La relación "{relation}" en la clase active record "{class}" se encuentra especificada con una clave foranea incompleta. La clave foranea debe consistir de las columnas que referencian la combinación de tablas.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'La relación "{relation}" en la clase active record "{class}" es especificada con una clave foránea inválida "{key}". No hay tal columna en la tabla "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'La relación "{relation}" en la clase active record "{class}" es especificada con una clave foránea inválida. Las columnas en la clave deben coincidir con las claves primarias de la tabla "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'La relación "{relation}" en la clase active record "{class}" se encuentra especificada con una clave foranea inválida. El formato de la clave foranea debe ser "joinTable(fk1,fk2,...)".',
+  'The requested view "{name}" was not found.' => 'La vista solicitada "{name}" no fue encontrada.',
+  'The stack is empty.' => 'La pila está vacía',
+  'The system is unable to find the requested action "{action}".' => 'El sistema no ha podido encontrar la acción "{action}" solicitada.',
+  'The system view path "{path}" is not a valid directory.' => 'La ruta de vistas de sistema "{path}" no es un directorio válido.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'La tabla "{table}" definida en la clase active record "{class}" no se ha podido encontrar en la base de datos.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => 'El valor para la columna "{column}" no es suministrado cuando se consulta la tabla "{table}".',
+  'The verification code is incorrect.' => 'El código de verificación es incorrecto.',
+  'The view path "{path}" is not a valid directory.' => 'La ruta de la vista "{path}" no es un directorio válido.',
+  'Theme directory "{directory}" does not exist.' => 'El directorio de tema "{directory}" no existe.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'Este contenido requiere el <a href="http://www.adobe.com/go/getflash/">Reproductor de Adobe Flash</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => 'No se puede agregar un elemento cuyo nombre es el mismo que el de un elemento existente.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'No se puede modificar el nombre del elemento. El nombre "{name}" ya se encuentra utilizado por otro elemento.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'No se ha podido crear el archivo de estado de aplicación "{file}". Asegúrese que el directorio que contiene el archivo exista y sea un directorio con permisos de escritura por el proceso que corre el servidor Web.',
+  'Unable to find "{column}" in table "{table}".' => 'No se ha podido encontrar "{column}" en la tabla "{table}".',
+  'Unable to generate random string.' => 'No se puede generar una cadena aleatoria.',
+  'Unable to lock file "{file}" for reading.' => 'No se ha podido bloquear el archivo "{file}" para lectura.',
+  'Unable to lock file "{file}" for writing.' => 'No se ha podido bloquear el archivo "{file}" para escritura.',
+  'Unable to read file "{file}".' => 'No se ha podido leer el archivo "{file}".',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => 'No se puede reproducir la acción "{object}.{method}". El método es inexistente.',
+  'Unable to resolve the request "{route}".' => 'No es posible resolver la solicitud "{route}"',
+  'Unable to write file "{file}".' => 'No se ha podido escribir el archivo "{file}".',
+  'Unknown authorization item "{name}".' => 'Elemento de autorización "{name}" desconocido.',
+  'Unknown operator "{operator}".' => 'Operador desconocido "{operator}".',
+  'Unknown type "{type}".' => 'Tipo desconocido "{type}".',
+  'Unrecognized locale "{locale}".' => 'Configuración regional no reconocida "{locale}".',
+  'View file "{file}" does not exist.' => 'El archivo de vista "{view}" no existe.',
+  'Yes' => 'Si',
+  'Yii application can only be created once.' => 'La aplicación Yii puede ser creada solo una vez.',
+  'You are not authorized to perform this action.' => 'Usted no se encuentra autorizado a realizar esta acción.',
+  'Your request is invalid.' => 'Su solicitud es inválida.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" ya ha sido tomado.',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" es inválido.',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} no puede aceptar más de {limit} archivos.',
+  '{attribute} cannot be blank.' => '{attribute} no puede ser nulo.',
+  '{attribute} is in the list.' => '{attribute} está en la lista.',
+  '{attribute} is invalid.' => '{attribute} es inválido.',
+  '{attribute} is not a valid URL.' => '{attribute} no es una URL válida.',
+  '{attribute} is not a valid email address.' => '{attribute} no es una dirección de email válida.',
+  '{attribute} is not in the list.' => '{attribute} no se encuentra en la lista.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} tiene un largo incorrecto (debe ser de {length} caracteres)',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} es muy grande (el máximo es {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} es muy largo (el máximo es de {max} caracteres)',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} es muy corto (el mínimo es de {min} caracteres)',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} es muy chico (el mínimo es {min}).',
+  '{attribute} must be a number.' => '{attribute} debe ser un número.',
+  '{attribute} must be an integer.' => '{attribute} debe ser entero.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} debe ser {true} o {false}.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} debe ser mayor que "{compareValue}".',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} debe ser mayor o igual que "{compareValue}".',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} debe ser menor que "{compareValue}".',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} debe ser menor o igual que "{compareValue}".',
+  '{attribute} must be repeated exactly.' => '{attribute} debe ser repetido exactamente.',
+  '{attribute} must be {type}.' => '{attribute} debe ser {type}.',
+  '{attribute} must be {value}.' => '{attribute} debe ser {value}.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} no debe ser igual a "{compareValue}".',
+  '{className} does not support add() functionality.' => '{className} no soporta la funcionalidad add().',
+  '{className} does not support delete() functionality.' => '{className} no soporta la funcionalidad delete().',
+  '{className} does not support flushValues() functionality.' => '{className} no soporta la funcionalidad flushValues().',
+  '{className} does not support get() functionality.' => '{className} no soporta la funcionalidad get().',
+  '{className} does not support set() functionality.' => '{className} no soporta la funcionalidad set().',
+  '{class} and its behaviors do not have a method or closure named "{name}".' => '{class} y sus behaviors no tienen un método o closure llamado "{name}".',
+  '{class} does not have relation "{name}".' => '{class} no tiene la relación "{name}".',
+  '{class} does not support fetching all table names.' => '{class} no soporta traer todos los nombres de las tablas.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} tiene una regla de validación inválida. La regla se debe especificar attributos para ser validados y el nombre de su validador.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} debe especificar los valores de propiedad "model" y "attribute" o "name".',
+  '{class} requires the Blowfish option of the PHP crypt() function. This system does not have it.' => '{class} requiere la opción Blowfish de la función PHP crypt(). Este sistema no la tiene.',
+  '{class} requires the PHP crypt() function. This system does not have it.' => '{class} requiere la función PHP crypt(). Este sistema no la tiene.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin debe ser asignado true para poder utilizar la autenticación basada en cookies.',
+  '{class}::$cost must be a number.' => '{class}::$cost debe ser un número.',
+  '{class}::$cost must be between 4 and 31.' => '{class}::$cost debe estar entre 4 y 31.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() debe ser implementada.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} no ha podido encontrar la vista "{view}" solicitada.',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} contiene etiquetas de widget en la vista "{view}" anidadas incorrectamente. {widget} widget no contiene la llamada a endWidget().',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} tiene una llamada extra a endWidget({id}) en su vista.',
+  '{n} B' => '{n} B',
+  '{n} GB' => '{n} GB',
+  '{n} KB' => '{n} KB',
+  '{n} MB' => '{n} MB',
+  '{n} TB' => '{n} TB',
+  '{n} byte|{n} bytes' => '{n} byte|{n} bytes',
+  '{n} gigabyte|{n} gigabytes' => '{n} gigabyte|{n} gigabytes',
+  '{n} kilobyte|{n} kilobytes' => '{n} kilobyte|{n} kilobytes',
+  '{n} megabyte|{n} megabytes' => '{n} megabyte|{n} megabytes',
+  '{n} terabyte|{n} terabytes' => '{n} terabyte|{n} terabytes',
+  '{widget} cannot find the view "{view}".' => '{widget} no ha podido encontrar la vista "{view}".',
+);

@@ -1,128 +1,213 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-5P79b2b9lyOH6Rcp5rpTWQBPIhZlIZtz
+<?php
+/**
+ * WebAppCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * WebAppCommand creates an Yii Web application at the specified location.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.cli.commands
+ * @since 1.0
+ */
+class WebAppCommand extends CConsoleCommand
+{
+	private $_rootPath;
+
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  yiic webapp <app-path> [<vcs>]
+
+DESCRIPTION
+  This command generates an Yii Web Application at the specified location.
+
+PARAMETERS
+ * app-path: required, the directory where the new application will be created.
+   If the directory does not exist, it will be created. After the application
+   is created, please make sure the directory can be accessed by Web users.
+ * vcs: optional, version control system you're going to use in the new project.
+   Application generator will create all needed files to the specified VCS
+   (such as .gitignore, .gitkeep, etc.). Possible values: git, hg. Do not
+   use this argument if you're going to create VCS files yourself.
+
+EOD;
+	}
+
+	/**
+	 * Execute the action.
+	 * @param array $args command line parameters specific for this command
+	 */
+	public function run($args)
+	{
+		$vcs=false;
+		if(isset($args[1]))
+		{
+			if($args[1]!='git' && $args[1]!='hg')
+				$this->usageError('Unsupported VCS specified. Currently only git and hg supported.');
+			$vcs=$args[1];
+		}
+		if(!isset($args[0]))
+			$this->usageError('the Web application location is not specified.');
+		$path=strtr($args[0],'/\\',DIRECTORY_SEPARATOR);
+		if(strpos($path,DIRECTORY_SEPARATOR)===false)
+			$path='.'.DIRECTORY_SEPARATOR.$path;
+		if(basename($path)=='..')
+			$path.=DIRECTORY_SEPARATOR.'.';
+		$dir=rtrim(realpath(dirname($path)),'\\/');
+		if($dir===false || !is_dir($dir))
+			$this->usageError("The directory '$path' is not valid. Please make sure the parent directory exists.");
+		if(basename($path)==='.')
+			$this->_rootPath=$path=$dir;
+		else
+			$this->_rootPath=$path=$dir.DIRECTORY_SEPARATOR.basename($path);
+		if($this->confirm("Create a Web application under '$path'?"))
+		{
+			$sourceDir=$this->getSourceDir();
+			if($sourceDir===false)
+				die("\nUnable to locate the source directory.\n");
+			$ignoreFiles=array();
+			$renameMap=array();
+			switch($vcs)
+			{
+				case 'git':
+					$renameMap=array('git-gitignore'=>'.gitignore','git-gitkeep'=>'.gitkeep'); // move with rename git files
+					$ignoreFiles=array('hg-hgignore','hg-hgkeep'); // ignore only hg files
+					break;
+				case 'hg':
+					$renameMap=array('hg-hgignore'=>'.hgignore','hg-hgkeep'=>'.hgkeep'); // move with rename hg files
+					$ignoreFiles=array('git-gitignore','git-gitkeep'); // ignore only git files
+					break;
+				default:
+					// no files for renaming
+					$ignoreFiles=array('git-gitignore','git-gitkeep','hg-hgignore','hg-hgkeep'); // ignore both git and hg files
+					break;
+			}
+			$list=$this->buildFileList($sourceDir,$path,'',$ignoreFiles,$renameMap);
+			$this->addFileModificationCallbacks($list);
+			$this->copyFiles($list);
+			$this->setPermissions($path);
+			echo "\nYour application has been created successfully under {$path}.\n";
+		}
+	}
+
+	/**
+	 * Adjusts created application file and directory permissions
+	 *
+	 * @param string $targetDir path to created application
+	 */
+	protected function setPermissions($targetDir)
+	{
+		@chmod($targetDir.'/assets',0777);
+		@chmod($targetDir.'/protected/runtime',0777);
+		@chmod($targetDir.'/protected/data',0777);
+		@chmod($targetDir.'/protected/data/testdrive.db',0777);
+		@chmod($targetDir.'/protected/yiic',0755);
+	}
+
+	/**
+	 * @return string path to application bootstrap source files
+	 */
+	protected function getSourceDir()
+	{
+		return realpath(dirname(__FILE__).'/../views/webapp');
+	}
+
+	/**
+	 * Adds callbacks that will modify source files
+	 *
+	 * @param array $fileList
+	 */
+	protected function addFileModificationCallbacks(&$fileList)
+	{
+		$fileList['index.php']['callback']=array($this,'generateIndex');
+		$fileList['index-test.php']['callback']=array($this,'generateIndex');
+		$fileList['protected/tests/bootstrap.php']['callback']=array($this,'generateTestBoostrap');
+		$fileList['protected/yiic.php']['callback']=array($this,'generateYiic');
+	}
+
+	/**
+	 * Inserts path to framework's yii.php into application's index.php
+	 *
+	 * @param string $source source file path
+	 * @param array $params
+	 * @return string modified source file content
+	 */
+	public function generateIndex($source,$params)
+	{
+		$content=file_get_contents($source);
+		$yii=realpath(dirname(__FILE__).'/../../yii.php');
+		$yii=$this->getRelativePath($yii,$this->_rootPath.DIRECTORY_SEPARATOR.'index.php');
+		$yii=str_replace('\\','\\\\',$yii);
+		return preg_replace('/\$yii\s*=(.*?);/',"\$yii=$yii;",$content);
+	}
+
+	/**
+	 * Inserts path to framework's yiit.php into application's index-test.php
+	 *
+	 * @param string $source source file path
+	 * @param array $params
+	 * @return string modified source file content
+	 */
+	public function generateTestBoostrap($source,$params)
+	{
+		$content=file_get_contents($source);
+		$yii=realpath(dirname(__FILE__).'/../../yiit.php');
+		$yii=$this->getRelativePath($yii,$this->_rootPath.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'tests'.DIRECTORY_SEPARATOR.'bootstrap.php');
+		$yii=str_replace('\\','\\\\',$yii);
+		return preg_replace('/\$yiit\s*=(.*?);/',"\$yiit=$yii;",$content);
+	}
+
+	/**
+	 * Inserts path to framework's yiic.php into application's yiic.php
+	 *
+	 * @param string $source source file path
+	 * @param array $params
+	 * @return string modified source file content
+	 */
+	public function generateYiic($source,$params)
+	{
+		$content=file_get_contents($source);
+		$yiic=realpath(dirname(__FILE__).'/../../yiic.php');
+		$yiic=$this->getRelativePath($yiic,$this->_rootPath.DIRECTORY_SEPARATOR.'protected'.DIRECTORY_SEPARATOR.'yiic.php');
+		$yiic=str_replace('\\','\\\\',$yiic);
+		return preg_replace('/\$yiic\s*=(.*?);/',"\$yiic=$yiic;",$content);
+	}
+
+	/**
+	 * Returns variant of $path1 relative to $path2
+	 *
+	 * @param string $path1
+	 * @param string $path2
+	 * @return string $path1 relative to $path2
+	 */
+	protected function getRelativePath($path1,$path2)
+	{
+		$segs1=explode(DIRECTORY_SEPARATOR,$path1);
+		$segs2=explode(DIRECTORY_SEPARATOR,$path2);
+		$n1=count($segs1);
+		$n2=count($segs2);
+
+		for($i=0;$i<$n1 && $i<$n2;++$i)
+		{
+			if($segs1[$i]!==$segs2[$i])
+				break;
+		}
+
+		if($i===0)
+			return "'".$path1."'";
+		$up='';
+		for($j=$i;$j<$n2-1;++$j)
+			$up.='/..';
+		for(;$i<$n1-1;++$i)
+			$up.='/'.$segs1[$i];
+
+		return 'dirname(__FILE__).\''.$up.'/'.basename($path1).'\'';
+	}
+}

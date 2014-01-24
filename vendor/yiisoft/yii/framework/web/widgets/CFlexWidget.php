@@ -1,58 +1,121 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-XgEEWBMazIli3Uq56VOsjS5/lki=
+<?php
+/**
+ * CFlexWidget class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFlexWidget embeds a Flex 3.x application into a page.
+ *
+ * To use CFlexWidget, set {@link name} to be the Flex application name
+ * (without the .swf suffix), and set {@link baseUrl} to be URL (without the ending slash)
+ * of the directory containing the SWF file of the Flex application.
+ *
+ * @property string $flashVarsAsString The flash parameter string.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CFlexWidget extends CWidget
+{
+	/**
+	 * @var string name of the Flex application.
+	 * This should be the SWF file name without the ".swf" suffix.
+	 */
+	public $name;
+	/**
+	 * @var string the base URL of the Flex application.
+	 * This refers to the URL of the directory containing the SWF file.
+	 */
+	public $baseUrl;
+	/**
+	 * @var string width of the application region. Defaults to 450.
+	 */
+	public $width='100%';
+	/**
+	 * @var string height of the application region. Defaults to 300.
+	 */
+	public $height='100%';
+	/**
+	 * @var string quality of the animation. Defaults to 'high'.
+	 */
+	public $quality='high';
+	/**
+	 * @var string background color of the application region. Defaults to '#FFFFFF', meaning white.
+	 */
+	public $bgColor='#FFFFFF';
+	/**
+	 * @var string align of the application region. Defaults to 'middle'.
+	 */
+	public $align='middle';
+	/**
+	 * @var string the access method of the script. Defaults to 'sameDomain'.
+	 */
+	public $allowScriptAccess='sameDomain';
+	/**
+	 * @var boolean whether to allow running the Flash in full screen mode. Defaults to false.
+	 * @since 1.1.1
+	 */
+	public $allowFullScreen=false;
+	/**
+	 * @var string the HTML content to be displayed if Flash player is not installed.
+	 */
+	public $altHtmlContent;
+	/**
+	 * @var boolean whether history should be enabled. Defaults to true.
+	 */
+	public $enableHistory=true;
+	/**
+	 * @var array parameters to be passed to the Flex application.
+	 */
+	public $flashVars=array();
+
+	/**
+	 * Renders the widget.
+	 */
+	public function run()
+	{
+		if(empty($this->name))
+			throw new CException(Yii::t('yii','CFlexWidget.name cannot be empty.'));
+		if(empty($this->baseUrl))
+			throw new CException(Yii::t('yii','CFlexWidget.baseUrl cannot be empty.'));
+		if($this->altHtmlContent===null)
+			$this->altHtmlContent=Yii::t('yii','This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.');
+
+		$this->registerClientScript();
+
+		$this->render('flexWidget');
+	}
+
+	/**
+	 * Registers the needed CSS and JavaScript.
+	 */
+	public function registerClientScript()
+	{
+		$cs=Yii::app()->getClientScript();
+		$cs->registerScriptFile($this->baseUrl.'/AC_OETags.js');
+
+		if($this->enableHistory)
+		{
+			$cs->registerCssFile($this->baseUrl.'/history/history.css');
+			$cs->registerScriptFile($this->baseUrl.'/history/history.js');
+		}
+	}
+
+	/**
+	 * Generates the properly quoted flash parameter string.
+	 * @return string the flash parameter string.
+	 */
+	public function getFlashVarsAsString()
+	{
+		$params=array();
+		foreach($this->flashVars as $k=>$v)
+			$params[]=urlencode($k).'='.urlencode($v);
+		return CJavaScript::quote(implode('&',$params));
+	}
+}

@@ -1,41 +1,51 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-9OhiABtNHAW/kbGK
+<?php
+
+Yii::import('system.caching.dependencies.CFileCacheDependency');
+
+class CFileCacheDependencyTest extends CTestCase
+{
+	public function testFileName()
+	{
+		$dependency=new CFileCacheDependency(__FILE__);
+		$this->assertEquals($dependency->fileName,__FILE__);
+		$dependency->evaluateDependency();
+		$this->assertEquals($dependency->dependentData,filemtime(__FILE__));
+
+		$dependency=new CFileCacheDependency(dirname(__FILE__).'/foo.txt');
+		$dependency->evaluateDependency();
+		$this->assertFalse($dependency->dependentData);
+	}
+
+	public function testHasChanged()
+	{
+		$tempFile=Yii::app()->getRuntimePath().'/CFileCacheDependencyTest_foo.txt';
+		@unlink($tempFile);
+		$fw=fopen($tempFile,"w");
+		fwrite($fw,"test");
+		fclose($fw);
+		clearstatcache();
+
+		$dependency=new CFileCacheDependency($tempFile);
+		$dependency->evaluateDependency();
+		$str=serialize($dependency);
+
+		// test file not changed
+		sleep(2);
+		$dependency=unserialize($str);
+		$this->assertFalse($dependency->hasChanged);
+
+		// change file
+		$fw=fopen($tempFile,"w");
+		fwrite($fw,"test again");
+		fclose($fw);
+		clearstatcache();
+
+		// test file changed
+		sleep(2);
+		$dependency->evaluateDependency();
+		$dependency=unserialize($str);
+		$this->assertTrue($dependency->hasChanged);
+
+		@unlink($tempFile);
+	}
+}

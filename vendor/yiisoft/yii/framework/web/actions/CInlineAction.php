@@ -1,31 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-pE0D6t16tlRDTURHMJ64GvWBkCIPoIK=
+<?php
+/**
+ * CInlineAction class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+
+/**
+ * CInlineAction represents an action that is defined as a controller method.
+ *
+ * The method name is like 'actionXYZ' where 'XYZ' stands for the action name.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.actions
+ * @since 1.0
+ */
+class CInlineAction extends CAction
+{
+	/**
+	 * Runs the action.
+	 * The action method defined in the controller is invoked.
+	 * This method is required by {@link CAction}.
+	 */
+	public function run()
+	{
+		$method='action'.$this->getId();
+		$this->getController()->$method();
+	}
+
+	/**
+	 * Runs the action with the supplied request parameters.
+	 * This method is internally called by {@link CController::runAction()}.
+	 * @param array $params the request parameters (name=>value)
+	 * @return boolean whether the request parameters are valid
+	 * @since 1.1.7
+	 */
+	public function runWithParams($params)
+	{
+		$methodName='action'.$this->getId();
+		$controller=$this->getController();
+		$method=new ReflectionMethod($controller, $methodName);
+		if($method->getNumberOfParameters()>0)
+			return $this->runWithParamsInternal($controller, $method, $params);
+		else
+			return $controller->$methodName();
+	}
+
+}

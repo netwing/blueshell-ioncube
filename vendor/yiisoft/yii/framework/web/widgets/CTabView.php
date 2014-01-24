@@ -1,100 +1,222 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CTabView class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CTabView displays contents in multiple tabs.
+ *
+ * At any time, only one tab is visible. Users can click on the tab header
+ * to switch to see another tab of content.
+ *
+ * JavaScript is used to control the tab switching. If JavaScript is disabled,
+ * CTabView still manages to display the content in a semantically appropriate way.
+ *
+ * To specify contents and their tab structure, configure the {@link tabs} property.
+ * The {@link tabs} property takes an array with tab ID being mapped tab definition.
+ * Each tab definition is an array of the following structure:
+ * <ul>
+ * <li>title: the tab title.</li>
+ * <li>content: the content to be displayed in the tab.</li>
+ * <li>view: the name of the view to be displayed in this tab.
+ * The view will be rendered using the current controller's
+ * {@link CController::renderPartial} method.
+ * When both 'content' and 'view' are specified, 'content' will take precedence.
+ * </li>
+ * <li>url: a URL that the user browser will be redirected to when clicking on this tab.</li>
+ * <li>data: array (name=>value), this will be passed to the view when 'view' is specified.</li>
+ * </ul>
+ *
+ * For example, the {@link tabs} property can be configured as follows,
+ * <pre>
+ * $this->widget('CTabView', array(
+ *     'tabs'=>array(
+ *         'tab1'=>array(
+ *             'title'=>'tab 1 title',
+ *             'view'=>'view1',
+ *             'data'=>array('model'=>$model),
+ *         ),
+ *         'tab2'=>array(
+ *             'title'=>'tab 2 title',
+ *             'url'=>'http://www.yiiframework.com/',
+ *         ),
+ *     ),
+ * ));
+ * </pre>
+ *
+ * By default, the first tab will be activated. To activate a different tab
+ * when the page is initially loaded, set {@link activeTab} to be the ID of the desired tab.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CTabView extends CWidget
+{
+	/**
+	 * Default CSS class for the tab container
+	 */
+	const CSS_CLASS='yiiTab';
+
+	/**
+	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
+	 * using the default CSS file included together with the widget.
+	 * If false, no CSS file will be used. Otherwise, the specified CSS file
+	 * will be included when using this widget.
+	 */
+	public $cssFile;
+	/**
+	 * @var string the ID of the tab that should be activated when the page is initially loaded.
+	 * If not set, the first tab will be activated.
+	 */
+	public $activeTab;
+	/**
+	 * @var array the data that will be passed to the partial view rendered by each tab.
+	 */
+	public $viewData;
+	/**
+	 * @var array additional HTML options to be rendered in the container tag.
+	 */
+	public $htmlOptions;
+	/**
+	 * @var array tab definitions. The array keys are the IDs,
+	 * and the array values are the corresponding tab contents.
+	 * Each array value must be an array with the following elements:
+	 * <ul>
+	 * <li>title: the tab title. You need to make sure this is HTML-encoded.</li>
+	 * <li>content: the content to be displayed in the tab.</li>
+	 * <li>view: the name of the view to be displayed in this tab.
+	 * The view will be rendered using the current controller's
+	 * {@link CController::renderPartial} method.
+	 * When both 'content' and 'view' are specified, 'content' will take precedence.
+	 * </li>
+	 * <li>url: a URL that the user browser will be redirected to when clicking on this tab.</li>
+	 * <li>data: array (name=>value), this will be passed to the view when 'view' is specified.
+	 * This option is available since version 1.1.1.</li>
+	 * <li>visible: whether this tab is visible. Defaults to true.
+	 * this option is available since version 1.1.11.</li>
+	 * </ul>
+	 * <pre>
+	 * array(
+	 *     'tab1'=>array(
+	 *           'title'=>'tab 1 title',
+	 *           'view'=>'view1',
+	 *     ),
+	 *     'tab2'=>array(
+	 *           'title'=>'tab 2 title',
+	 *           'url'=>'http://www.yiiframework.com/',
+	 *     ),
+	 * )
+	 * </pre>
+	 */
+	public $tabs=array();
+
+	/**
+	 * Runs the widget.
+	 */
+	public function run()
+	{
+		foreach($this->tabs as $id=>$tab)
+			if(isset($tab['visible']) && $tab['visible']==false)
+				unset($this->tabs[$id]);
+
+		if(empty($this->tabs))
+			return;
+
+		if($this->activeTab===null || !isset($this->tabs[$this->activeTab]))
+		{
+			reset($this->tabs);
+			list($this->activeTab, )=each($this->tabs);
+		}
+
+		$htmlOptions=$this->htmlOptions;
+		if(isset($this->htmlOptions['id']))
+			$this->id=$this->htmlOptions['id'];
+		else
+			$htmlOptions['id']=$this->id;
+		if(!isset($htmlOptions['class']))
+			$htmlOptions['class']=self::CSS_CLASS;
+
+		$this->registerClientScript();
+
+		echo CHtml::openTag('div',$htmlOptions)."\n";
+		$this->renderHeader();
+		$this->renderBody();
+		echo CHtml::closeTag('div');
+	}
+
+	/**
+	 * Registers the needed CSS and JavaScript.
+	 */
+	public function registerClientScript()
+	{
+		$cs=Yii::app()->getClientScript();
+		$cs->registerCoreScript('yiitab');
+		$id=$this->getId();
+		$cs->registerScript('Yii.CTabView#'.$id,"jQuery(\"#{$id}\").yiitab();");
+
+		if($this->cssFile!==false)
+			self::registerCssFile($this->cssFile);
+	}
+
+	/**
+	 * Registers the needed CSS file.
+	 * @param string $url the CSS URL. If null, a default CSS URL will be used.
+	 */
+	public static function registerCssFile($url=null)
+	{
+		$cs=Yii::app()->getClientScript();
+		if($url===null)
+			$url=$cs->getCoreScriptUrl().'/yiitab/jquery.yiitab.css';
+		$cs->registerCssFile($url,'screen');
+	}
+
+	/**
+	 * Renders the header part.
+	 */
+	protected function renderHeader()
+	{
+		echo "<ul class=\"tabs\">\n";
+		foreach($this->tabs as $id=>$tab)
+		{
+			$title=isset($tab['title'])?$tab['title']:'undefined';
+			$active=$id===$this->activeTab?' class="active"' : '';
+			$url=isset($tab['url'])?$tab['url']:"#{$id}";
+			echo "<li><a href=\"{$url}\"{$active}>{$title}</a></li>\n";
+		}
+		echo "</ul>\n";
+	}
+
+	/**
+	 * Renders the body part.
+	 */
+	protected function renderBody()
+	{
+		foreach($this->tabs as $id=>$tab)
+		{
+			$inactive=$id!==$this->activeTab?' style="display:none"' : '';
+			echo "<div class=\"view\" id=\"{$id}\"{$inactive}>\n";
+			if(isset($tab['content']))
+				echo $tab['content'];
+			elseif(isset($tab['view']))
+			{
+				if(isset($tab['data']))
+				{
+					if(is_array($this->viewData))
+						$data=array_merge($this->viewData, $tab['data']);
+					else
+						$data=$tab['data'];
+				}
+				else
+					$data=$this->viewData;
+				$this->getController()->renderPartial($tab['view'], $data);
+			}
+			echo "</div><!-- {$id} -->\n";
+		}
+	}
+}

@@ -1,30 +1,53 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jwA3VDZ+
+<?php
+/**
+ * CFileCacheDependency class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFileCacheDependency represents a dependency based on a file's last modification time.
+ *
+ * CFileCacheDependency performs dependency checking based on the
+ * last modification time of the file specified via {@link fileName}.
+ * The dependency is reported as unchanged if and only if the file's
+ * last modification time remains unchanged.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching.dependencies
+ * @since 1.0
+ */
+class CFileCacheDependency extends CCacheDependency
+{
+	/**
+	 * @var string the name of the file whose last modification time is used to
+	 * check if the dependency has been changed.
+	 */
+	public $fileName;
+
+	/**
+	 * Constructor.
+	 * @param string $fileName name of the file whose change is to be checked.
+	 */
+	public function __construct($fileName=null)
+	{
+		$this->fileName=$fileName;
+	}
+
+	/**
+	 * Generates the data needed to determine if dependency has been changed.
+	 * This method returns the file's last modification time.
+	 * @throws CException if {@link fileName} is empty
+	 * @return mixed the data needed to determine if dependency has been changed.
+	 */
+	protected function generateDependentData()
+	{
+		if($this->fileName!==null)
+			return @filemtime($this->fileName);
+		else
+			throw new CException(Yii::t('yii','CFileCacheDependency.fileName cannot be empty.'));
+	}
+}

@@ -1,74 +1,110 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Plugin\Backoff;
+
+use Guzzle\Common\Event;
+use Guzzle\Log\ClosureLogAdapter;
+use Guzzle\Http\Curl\CurlHandle;
+use Guzzle\Plugin\Backoff\BackoffLogger;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Message\RequestFactory;
+
+/**
+ * @covers Guzzle\Plugin\Backoff\BackoffLogger
+ */
+class BackoffLoggerTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public $message;
+
+    public function setUp()
+    {
+        $this->message = '';
+    }
+
+    public function testHasEventList()
+    {
+        $this->assertEquals(1, count(BackoffLogger::getSubscribedEvents()));
+    }
+
+    public function testLogsEvents()
+    {
+        list($logPlugin, $request, $response) = $this->getMocks();
+
+        $response = $this->getMockBuilder('Guzzle\Http\Message\Response')
+            ->setConstructorArgs(array(503))
+            ->setMethods(array('getInfo'))
+            ->getMock();
+
+        $response->expects($this->any())
+            ->method('getInfo')
+            ->will($this->returnValue(2));
+
+        $handle = $this->getMockHandle();
+
+        $event = new Event(array(
+            'request'  => $request,
+            'response' => $response,
+            'retries'  => 1,
+            'delay'    => 3,
+            'handle'   => $handle
+        ));
+
+        $logPlugin->onRequestRetry($event);
+        $this->assertContains(
+            '] PUT http://www.example.com - 503 Service Unavailable - Retries: 1, Delay: 3, Time: 2, 2, cURL: 30 Foo',
+            $this->message
+        );
+    }
+
+    public function testCanSetTemplate()
+    {
+        $l = new BackoffLogger(new ClosureLogAdapter(function () {}));
+        $l->setTemplate('foo');
+        $t = $this->readAttribute($l, 'formatter');
+        $this->assertEquals('foo', $this->readAttribute($t, 'template'));
+    }
+
+    /**
+     * @return array
+     */
+    protected function getMocks()
+    {
+        $that = $this;
+        $logger = new ClosureLogAdapter(function ($message) use ($that) {
+            $that->message .= $message . "\n";
+        });
+        $logPlugin = new BackoffLogger($logger);
+        $response = new Response(503);
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.example.com', array(
+            'Content-Length' => 3,
+            'Foo'            => 'Bar'
+        ));
+
+        return array($logPlugin, $request, $response);
+    }
+
+    /**
+     * @return CurlHandle
+     */
+    protected function getMockHandle()
+    {
+        $handle = $this->getMockBuilder('Guzzle\Http\Curl\CurlHandle')
+            ->disableOriginalConstructor()
+            ->setMethods(array('getError', 'getErrorNo', 'getInfo'))
+            ->getMock();
+
+        $handle->expects($this->once())
+            ->method('getError')
+            ->will($this->returnValue('Foo'));
+
+        $handle->expects($this->once())
+            ->method('getErrorNo')
+            ->will($this->returnValue(30));
+
+        $handle->expects($this->any())
+            ->method('getInfo')
+            ->will($this->returnValue(2));
+
+        return $handle;
+    }
+}

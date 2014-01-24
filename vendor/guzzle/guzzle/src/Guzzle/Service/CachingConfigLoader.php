@@ -1,33 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-MGy=
+<?php
+
+namespace Guzzle\Service;
+
+use Guzzle\Cache\CacheAdapterInterface;
+
+/**
+ * Decorator that adds caching to a service description loader
+ */
+class CachingConfigLoader implements ConfigLoaderInterface
+{
+    /** @var ConfigLoaderInterface */
+    protected $loader;
+
+    /** @var CacheAdapterInterface */
+    protected $cache;
+
+    /**
+     * @param ConfigLoaderInterface $loader Loader used to load the config when there is a cache miss
+     * @param CacheAdapterInterface $cache  Object used to cache the loaded result
+     */
+    public function __construct(ConfigLoaderInterface $loader, CacheAdapterInterface $cache)
+    {
+        $this->loader = $loader;
+        $this->cache = $cache;
+    }
+
+    public function load($config, array $options = array())
+    {
+        if (!is_string($config)) {
+            $key = false;
+        } else {
+            $key = 'loader_' . crc32($config);
+            if ($result = $this->cache->fetch($key)) {
+                return $result;
+            }
+        }
+
+        $result = $this->loader->load($config, $options);
+        if ($key) {
+            $this->cache->save($key, $result);
+        }
+
+        return $result;
+    }
+}

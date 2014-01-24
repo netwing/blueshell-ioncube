@@ -1,44 +1,74 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-6Pwbi0NNjG==
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+
+/**
+ * @covers Monolog\Handler\RotatingFileHandler
+ */
+class AmqpHandlerTest extends TestCase
+{
+    public function setUp()
+    {
+        if (!class_exists('AMQPConnection') || !class_exists('AMQPExchange')) {
+            $this->markTestSkipped("amqp-php not installed");
+        }
+
+        if (!class_exists('AMQPChannel')) {
+            $this->markTestSkipped("Please update AMQP to version >= 1.0");
+        }
+    }
+
+    public function testHandle()
+    {
+        $exchange = $this->getExchange();
+
+        $handler = new AmqpHandler($exchange, 'log');
+
+        $record = $this->getRecord(Logger::WARNING, 'test', array('data' => new \stdClass, 'foo' => 34));
+
+        $expected = array(
+            array(
+                'message' => 'test',
+                'context' => array(
+                    'data' => array(),
+                    'foo' => 34,
+                ),
+                'level' => 300,
+                'level_name' => 'WARNING',
+                'channel' => 'test',
+                'extra' => array(),
+            ),
+            'warn.test',
+            0,
+            array(
+                'delivery_mode' => 2,
+                'Content-type' => 'application/json'
+            )
+        );
+
+        $handler->handle($record);
+
+        $messages = $exchange->getMessages();
+        $this->assertCount(1, $messages);
+        $messages[0][0] = json_decode($messages[0][0], true);
+        unset($messages[0][0]['datetime']);
+        $this->assertEquals($expected, $messages[0]);
+    }
+
+    protected function getExchange()
+    {
+        return new AmqpExchangeMock();
+    }
+}

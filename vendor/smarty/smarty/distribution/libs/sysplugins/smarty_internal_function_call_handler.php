@@ -1,40 +1,53 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Function Call Handler
+ *
+ * @package Smarty
+ * @subpackage PluginsInternal
+ * @author Uwe Tews
+ */
+
+/**
+ * This class does call function defined with the {function} tag
+ *
+ * @package Smarty
+ * @subpackage PluginsInternal
+ */
+class Smarty_Internal_Function_Call_Handler
+{
+    /**
+     * This function handles calls to template functions defined by {function}
+     * It does create a PHP function at the first call
+     *
+     * @param string                   $_name     template function name
+     * @param Smarty_Internal_Template $_template template object
+     * @param array                    $_params   Smarty variables passed as call parameter
+     * @param string                   $_hash     nocache hash value
+     * @param bool                     $_nocache  nocache flag
+     */
+    public static function call($_name, Smarty_Internal_Template $_template, $_params, $_hash, $_nocache)
+    {
+        if ($_nocache) {
+            $_function = "smarty_template_function_{$_name}_nocache";
+        } else {
+            $_function = "smarty_template_function_{$_hash}_{$_name}";
+        }
+        if (!is_callable($_function)) {
+            $_code = "function {$_function}(\$_smarty_tpl,\$params) {
+    \$saved_tpl_vars = \$_smarty_tpl->tpl_vars;
+    foreach (\$_smarty_tpl->smarty->template_functions['{$_name}']['parameter'] as \$key => \$value) {\$_smarty_tpl->tpl_vars[\$key] = new Smarty_variable(\$value);};
+    foreach (\$params as \$key => \$value) {\$_smarty_tpl->tpl_vars[\$key] = new Smarty_variable(\$value);}?>";
+            if ($_nocache) {
+                $_code .= preg_replace(array("!<\?php echo \\'/\*%%SmartyNocache:{$_template->smarty->template_functions[$_name]['nocache_hash']}%%\*/|/\*/%%SmartyNocache:{$_template->smarty->template_functions[$_name]['nocache_hash']}%%\*/\\';\?>!",
+                        "!\\\'!"), array('', "'"), $_template->smarty->template_functions[$_name]['compiled']);
+                $_template->smarty->template_functions[$_name]['called_nocache'] = true;
+            } else {
+                $_code .= preg_replace("/{$_template->smarty->template_functions[$_name]['nocache_hash']}/", $_template->properties['nocache_hash'], $_template->smarty->template_functions[$_name]['compiled']);
+            }
+            $_code .= "<?php \$_smarty_tpl->tpl_vars = \$saved_tpl_vars;}";
+            eval($_code);
+        }
+        $_function($_template, $_params);
+    }
+
+}

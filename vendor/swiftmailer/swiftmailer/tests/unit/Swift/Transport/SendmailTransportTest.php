@@ -1,81 +1,135 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Transport/AbstractSmtpEventSupportTest.php';
+require_once 'Swift/Transport/SendmailTransport.php';
+require_once 'Swift/Mime/Message.php';
+require_once 'Swift/Events/EventDispatcher.php';
+
+class Swift_Transport_SendmailTransportTest
+    extends Swift_Transport_AbstractSmtpEventSupportTest
+{
+    protected function _getTransport($buf, $dispatcher = null, $command = '/usr/sbin/sendmail -bs')
+    {
+        if (!$dispatcher) {
+            $dispatcher = $this->_createEventDispatcher();
+        }
+        $transport = new Swift_Transport_SendmailTransport($buf, $dispatcher);
+        $transport->setCommand($command);
+
+        return $transport;
+    }
+
+    protected function _getSendmail($buf, $dispatcher = null)
+    {
+        if (!$dispatcher) {
+            $dispatcher = $this->_createEventDispatcher();
+        }
+        $sendmail = new Swift_Transport_SendmailTransport($buf, $dispatcher);
+
+        return $sendmail;
+    }
+
+    public function testCommandCanBeSetAndFetched()
+    {
+        $buf = $this->_getBuffer();
+        $sendmail = $this->_getSendmail($buf);
+
+        $sendmail->setCommand('/usr/sbin/sendmail -bs');
+        $this->assertEqual('/usr/sbin/sendmail -bs', $sendmail->getCommand());
+        $sendmail->setCommand('/usr/sbin/sendmail -oi -t');
+        $this->assertEqual('/usr/sbin/sendmail -oi -t', $sendmail->getCommand());
+    }
+
+    public function testSendingMessageIn_t_ModeUsesSimplePipe()
+    {
+        $buf = $this->_getBuffer();
+        $sendmail = $this->_getSendmail($buf);
+        $message = $this->_createMessage();
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>'Foobar', 'zip@button'=>'Zippy'))
+            -> one($message)->toByteStream($buf)
+            -> ignoring($message)
+            -> one($buf)->initialize()
+            -> one($buf)->terminate()
+            -> one($buf)->setWriteTranslations(array("\r\n"=>"\n", "\n." => "\n.."))
+            -> one($buf)->setWriteTranslations(array())
+            -> ignoring($buf)
+            );
+
+        $sendmail->setCommand('/usr/sbin/sendmail -t');
+        $this->assertEqual(2, $sendmail->send($message));
+    }
+
+    public function testSendingIn_t_ModeWith_i_FlagDoesntEscapeDot()
+    {
+        $buf = $this->_getBuffer();
+        $sendmail = $this->_getSendmail($buf);
+        $message = $this->_createMessage();
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>'Foobar', 'zip@button'=>'Zippy'))
+            -> one($message)->toByteStream($buf)
+            -> ignoring($message)
+            -> one($buf)->initialize()
+            -> one($buf)->terminate()
+            -> one($buf)->setWriteTranslations(array("\r\n"=>"\n"))
+            -> one($buf)->setWriteTranslations(array())
+            -> ignoring($buf)
+            );
+
+        $sendmail->setCommand('/usr/sbin/sendmail -i -t');
+        $this->assertEqual(2, $sendmail->send($message));
+    }
+
+    public function testSendingInTModeWith_oi_FlagDoesntEscapeDot()
+    {
+        $buf = $this->_getBuffer();
+        $sendmail = $this->_getSendmail($buf);
+        $message = $this->_createMessage();
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>'Foobar', 'zip@button'=>'Zippy'))
+            -> one($message)->toByteStream($buf)
+            -> ignoring($message)
+            -> one($buf)->initialize()
+            -> one($buf)->terminate()
+            -> one($buf)->setWriteTranslations(array("\r\n"=>"\n"))
+            -> one($buf)->setWriteTranslations(array())
+            -> ignoring($buf)
+            );
+
+        $sendmail->setCommand('/usr/sbin/sendmail -oi -t');
+        $this->assertEqual(2, $sendmail->send($message));
+    }
+
+    public function testSendingMessageRegeneratesId()
+    {
+        $buf = $this->_getBuffer();
+        $sendmail = $this->_getSendmail($buf);
+        $message = $this->_createMessage();
+
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getTo() -> returns(array('foo@bar'=>'Foobar', 'zip@button'=>'Zippy'))
+            -> one($message)->generateId()
+            -> ignoring($message)
+            -> one($buf)->initialize()
+            -> one($buf)->terminate()
+            -> one($buf)->setWriteTranslations(array("\r\n"=>"\n", "\n." => "\n.."))
+            -> one($buf)->setWriteTranslations(array())
+            -> ignoring($buf)
+            );
+
+        $sendmail->setCommand('/usr/sbin/sendmail -t');
+        $this->assertEqual(2, $sendmail->send($message));
+    }
+
+    public function testFluidInterface()
+    {
+        $buf = $this->_getBuffer();
+        $sendmail = $this->_getTransport($buf);
+
+        $ref = $sendmail->setCommand('/foo');
+        $this->assertReference($ref, $sendmail);
+    }
+}

@@ -1,29 +1,36 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/LEkK5FgW5s0lWiOdePk6USCYmzzcqdi/D1rUIr75vbzvO8jmjWVIQfC357AHkzP9N6n9Hf
-AvNCR0syBASAwmUtkkef+rOjxtxe9lTOyUPKupyc6A/dKVNEAflg2vNTEaQX4SJorpMlcbvcq8HT
-cAHLucOmgI0NxGWDdJaDq1rs/QWhTkwtXARjcK12zgQ4Vz8Kcl/9aDjqZJcDOE/eslQ8wiwZqnk9
-5P4EiGm6UkZwPv180S6DV7glKIZXE/TmggoQRmH0t6bqhcLqqqHQ+oFb7ps1s8F8lr9of3hv6Ebe
-Z6327s/LeckZ5dbdUcL5OAEtLlxNbUb3n0yDhoJJFbQbfujd+L0Bw6sCF/XUTzzCPyzJIlG2JpU6
-M9v8rvc47ZElv+HJJh5PNwb2z8eZu0FtbvMQJlyelvd30miSwkuR/OcAtj9MsKiOw0ObabaMZ6NW
-ZBI7q5/2+iN0MRQmii1jbMbxC5+SgH9P5SZf1lz+Fs2Wd3r2CYJszGzVjfpkfqdZdfqWzMCRGEyO
-WU48CRYiiht04sWcWnfGdtQtWJiXECj/zZaYYU/gk2Q9763b70cKYCELHw6lw+wdO55ENaIRJZNY
-X/rpLU8tjln9gk26nXEXyG9AsGX2DFQdB8cqqFxvZZLoD66cq8o41IHEFjHjwin/URAISes+TwFd
-VT1WYqy//v1KHJiAvf4Ltp3NQMbxhDcDMFEqPfYKisIpZcAagRAqnBrfRns79BKdIK0PqnyE+49n
-INW6XwOzYl+6iXQ22BqGTOYj+lgUsUjc4/ldKaEd+ZiIDRVQf+O+rtYbzXY0DFYAFeoE8Yqbil5n
-oHbR7+/XsVEu4c49KYXNL1O7gxJDzvliax4J/S6AlqDD/ux7POOk4+w2LI1734uMDerk+NPB7LTB
-Brdp6b2fQlEW4FCLM0Zff4tf3YRjRKCHZOnL/7XZSN+ccO08Qkt/Iiz/eyDXa1xbcXcxh1Tv1IMA
-Z2LgO9n/GMxPo0ME1N1fz+YOYrQ9nzFNIHbTATly4QYMZNvIdt9j55ZAwNACVbQsiQbO8nM/7dmN
-WrLNi4MgPec7IAZQr+NEtUrpnG1Brd39nnud5Js/Dgpwpk4rxXzU24bXoueZ6pgjpLB9NLzXMvvI
-ohXTTnaPzv//7s0MGboJI9Z6SD1AGx80c9D0fJAGV/EV3z/hk+VUARla0798Hfb0c/iSO/0SB+hM
-FpxKUf8KuUmiS5D0SOwywEMnxpEuKFOM+ES9+NbG6aF+cv3ap+TRdC2voypxGeUd9pys3YoQJ7hx
-zWtvDp4/B/Q/PElm/6iGk0GLeF2+R7zmzHB/RuShAhoQNhZANoDK05S9YIMhi2B4u1T4qTlTcebt
-ELQUu6Vov7DuqhUrDzej/DZtXaL7SaGg3BHfAt46kkWpbpZRHzMFwkrQKpJLg1Fx3Xy2MEc72pVg
-y2GrDkyDgCRkW+y9gWJgALM61JPjbVl9Q8VepWMkwkgHvd96skRaZWWbrLxqv5Ok5LT39JFc6BxY
-DiQWVBZlHXpq0PN/RKOl/FOP1tamLxvK9cShaasb7TaXLWhtzJYga/q0ZehcgpG4M72SBEvvcBuz
-zapq+r4lgqVWQz1iyrOPWz/8uvJDdNj1pjGKhoW1v/QMupaAmJ5Fxr3Nxs1xer+zLypeN8vwlZAr
-ruWaZ97PMafZxdB39qrwYrvOU2MurQOXC2iJReR1JAvSpfkC0gNbq/2fnZE+WClobZ2bHsEfrB4u
-WsKxNehPfUYfsobA2mLhXVkTQdUl/ty4oFhLWlIFa6HHWOT1Nr0J+cGCKjIR4GnNXhrR1chWpzjQ
-ScZ270P+kmQIuGNPHn04Jg3yZ40WOhs9JSZ+vpHDU7NT4g1+zdmEtiM4phcPbrbPbIBTKEcHaLOt
-u25A0B2wPHzy
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Events/TransportChangeEvent.php';
+require_once 'Swift/Transport.php';
+
+class Swift_Events_TransportChangeEventTest extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testGetTransportReturnsTransport()
+    {
+        $transport = $this->_createTransport();
+        $evt = $this->_createEvent($transport);
+        $ref = $evt->getTransport();
+        $this->assertReference($transport, $ref);
+    }
+
+    public function testSourceIsTransport()
+    {
+        $transport = $this->_createTransport();
+        $evt = $this->_createEvent($transport);
+        $ref = $evt->getSource();
+        $this->assertReference($transport, $ref);
+    }
+
+    // -- Creation Methods
+
+    private function _createEvent(Swift_Transport $source)
+    {
+        return new Swift_Events_TransportChangeEvent($source);
+    }
+
+    private function _createTransport()
+    {
+        return $this->_stub('Swift_Transport');
+    }
+}

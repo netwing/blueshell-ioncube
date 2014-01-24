@@ -1,46 +1,220 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ug1JKWfpyskyPhwAIj9P
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Worksheet
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Worksheet_PageMargins
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Worksheet
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Worksheet_PageMargins
+{
+	/**
+	 * Left
+	 *
+	 * @var double
+	 */
+	private $_left		= 0.7;
+
+	/**
+	 * Right
+	 *
+	 * @var double
+	 */
+	private $_right		= 0.7;
+
+	/**
+	 * Top
+	 *
+	 * @var double
+	 */
+	private $_top		= 0.75;
+
+	/**
+	 * Bottom
+	 *
+	 * @var double
+	 */
+	private $_bottom	= 0.75;
+
+	/**
+	 * Header
+	 *
+	 * @var double
+	 */
+	private $_header 	= 0.3;
+
+	/**
+	 * Footer
+	 *
+	 * @var double
+	 */
+	private $_footer 	= 0.3;
+
+    /**
+     * Create a new PHPExcel_Worksheet_PageMargins
+     */
+    public function __construct()
+    {
+    }
+
+    /**
+     * Get Left
+     *
+     * @return double
+     */
+    public function getLeft() {
+    	return $this->_left;
+    }
+
+    /**
+     * Set Left
+     *
+     * @param double $pValue
+     * @return PHPExcel_Worksheet_PageMargins
+     */
+    public function setLeft($pValue) {
+    	$this->_left = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Right
+     *
+     * @return double
+     */
+    public function getRight() {
+    	return $this->_right;
+    }
+
+    /**
+     * Set Right
+     *
+     * @param double $pValue
+     * @return PHPExcel_Worksheet_PageMargins
+     */
+    public function setRight($pValue) {
+    	$this->_right = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Top
+     *
+     * @return double
+     */
+    public function getTop() {
+    	return $this->_top;
+    }
+
+    /**
+     * Set Top
+     *
+     * @param double $pValue
+     * @return PHPExcel_Worksheet_PageMargins
+     */
+    public function setTop($pValue) {
+    	$this->_top = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Bottom
+     *
+     * @return double
+     */
+    public function getBottom() {
+    	return $this->_bottom;
+    }
+
+    /**
+     * Set Bottom
+     *
+     * @param double $pValue
+     * @return PHPExcel_Worksheet_PageMargins
+     */
+    public function setBottom($pValue) {
+    	$this->_bottom = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Header
+     *
+     * @return double
+     */
+    public function getHeader() {
+    	return $this->_header;
+    }
+
+    /**
+     * Set Header
+     *
+     * @param double $pValue
+     * @return PHPExcel_Worksheet_PageMargins
+     */
+    public function setHeader($pValue) {
+    	$this->_header = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Footer
+     *
+     * @return double
+     */
+    public function getFooter() {
+    	return $this->_footer;
+    }
+
+    /**
+     * Set Footer
+     *
+     * @param double $pValue
+     * @return PHPExcel_Worksheet_PageMargins
+     */
+    public function setFooter($pValue) {
+    	$this->_footer = $pValue;
+    	return $this;
+    }
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if (is_object($value)) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+}

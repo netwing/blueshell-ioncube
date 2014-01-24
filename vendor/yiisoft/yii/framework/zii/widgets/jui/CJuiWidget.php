@@ -1,75 +1,144 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-dy0dLZFG3dfJa/S5iwSlQVhk
+<?php
+/**
+ * CJuiWidget class file.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * This is the base class for all JUI widget classes.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package zii.widgets.jui
+ * @since 1.1
+ */
+abstract class CJuiWidget extends CWidget
+{
+	/**
+	 * @var string the root URL that contains all JUI JavaScript files.
+	 * If this property is not set (default), Yii will publish the JUI package included in the zii release and use
+	 * that to infer the root script URL. You should set this property if you intend to use
+	 * a JUI package whose version is different from the one included in zii.
+	 * Note that under this URL, there must be a file whose name is specified by {@link scriptFile}.
+	 * Do not append any slash character to the URL.
+	 */
+	public $scriptUrl;
+	/**
+	 * @var string the root URL that contains all JUI theme folders.
+	 * If this property is not set (default), Yii will publish the JUI package included in the zii release and use
+	 * that to infer the root theme URL. You should set this property if you intend to use
+	 * a theme that is not found in the JUI package included in zii.
+	 * Note that under this URL, there must be a directory whose name is specified by {@link theme}.
+	 * Do not append any slash character to the URL.
+	 */
+	public $themeUrl;
+	/**
+	 * @var string the JUI theme name. Defaults to 'base'. Make sure that under {@link themeUrl} there
+	 * is a directory whose name is the same as this property value (case-sensitive).
+	 */
+	public $theme='base';
+	/**
+	 * @var mixed the main JUI JavaScript file. Defaults to 'jquery-ui.min.js'.
+	 * Note the file must exist under the URL specified by {@link scriptUrl}.
+	 * If you need to include multiple script files (e.g. during development, you want to include individual
+	 * plugin script files rather than the minized JUI script file), you may set this property
+	 * as an array of the script file names.
+	 * This property can also be set as false, which means the widget will not include any script file,
+	 * and it is your responsibility to explicitly include it somewhere else.
+	 */
+	public $scriptFile='jquery-ui.min.js';
+	/**
+	 * @var mixed the theme CSS file name. Defaults to 'jquery-ui.css'.
+	 * Note the file must exist under the URL specified by {@link themeUrl}/{@link theme}.
+	 * If you need to include multiple theme CSS files (e.g. during development, you want to include individual
+	 * plugin CSS files), you may set this property as an array of the CSS file names.
+	 * This property can also be set as false, which means the widget will not include any theme CSS file,
+	 * and it is your responsibility to explicitly include it somewhere else.
+	 */
+	public $cssFile='jquery-ui.css';
+	/**
+	 * @var array the initial JavaScript options that should be passed to the JUI plugin.
+	 */
+	public $options=array();
+	/**
+	 * @var array the HTML attributes that should be rendered in the HTML tag representing the JUI widget.
+	 */
+	public $htmlOptions=array();
+
+	/**
+	 * Initializes the widget.
+	 * This method will publish JUI assets if necessary.
+	 * It will also register jquery and JUI JavaScript files and the theme CSS file.
+	 * If you override this method, make sure you call the parent implementation first.
+	 */
+	public function init()
+	{
+		$this->resolvePackagePath();
+		$this->registerCoreScripts();
+		parent::init();
+	}
+
+	/**
+	 * Determine the JUI package installation path.
+	 * This method will identify the JavaScript root URL and theme root URL.
+	 * If they are not explicitly specified, it will publish the included JUI package
+	 * and use that to resolve the needed paths.
+	 */
+	protected function resolvePackagePath()
+	{
+		if($this->scriptUrl===null || $this->themeUrl===null)
+		{
+			$cs=Yii::app()->getClientScript();
+			if($this->scriptUrl===null)
+				$this->scriptUrl=$cs->getCoreScriptUrl().'/jui/js';
+			if($this->themeUrl===null)
+				$this->themeUrl=$cs->getCoreScriptUrl().'/jui/css';
+		}
+	}
+
+	/**
+	 * Registers the core script files.
+	 * This method registers jquery and JUI JavaScript files and the theme CSS file.
+	 */
+	protected function registerCoreScripts()
+	{
+		$cs=Yii::app()->getClientScript();
+		if(is_string($this->cssFile))
+			$cs->registerCssFile($this->themeUrl.'/'.$this->theme.'/'.$this->cssFile);
+		elseif(is_array($this->cssFile))
+		{
+			foreach($this->cssFile as $cssFile)
+				$cs->registerCssFile($this->themeUrl.'/'.$this->theme.'/'.$cssFile);
+		}
+
+		$cs->registerCoreScript('jquery');
+		if(is_string($this->scriptFile))
+			$this->registerScriptFile($this->scriptFile);
+		elseif(is_array($this->scriptFile))
+		{
+			foreach($this->scriptFile as $scriptFile)
+				$this->registerScriptFile($scriptFile);
+		}
+	}
+
+	/**
+	 * Registers a JavaScript file under {@link scriptUrl}.
+	 * Note that by default, the script file will be rendered at the end of a page to improve page loading speed.
+	 * @param string $fileName JavaScript file name
+	 * @param integer $position the position of the JavaScript file. Valid values include the following:
+	 * <ul>
+	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
+	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
+	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
+	 * </ul>
+	 */
+	protected function registerScriptFile($fileName,$position=CClientScript::POS_END)
+	{
+		Yii::app()->getClientScript()->registerScriptFile($this->scriptUrl.'/'.$fileName,$position);
+	}
+}

@@ -1,55 +1,114 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-eMJnJAkq+3Ovx0==
+<?php
+/**
+ * CBehavior class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CBehavior is a convenient base class for behavior classes.
+ *
+ * @property CComponent $owner The owner component that this behavior is attached to.
+ * @property boolean $enabled Whether this behavior is enabled.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ */
+class CBehavior extends CComponent implements IBehavior
+{
+	private $_enabled=false;
+	private $_owner;
+
+	/**
+	 * Declares events and the corresponding event handler methods.
+	 * The events are defined by the {@link owner} component, while the handler
+	 * methods by the behavior class. The handlers will be attached to the corresponding
+	 * events when the behavior is attached to the {@link owner} component; and they
+	 * will be detached from the events when the behavior is detached from the component.
+	 * Make sure you've declared handler method as public.
+	 * @return array events (array keys) and the corresponding event handler methods (array values).
+	 */
+	public function events()
+	{
+		return array();
+	}
+
+	/**
+	 * Attaches the behavior object to the component.
+	 * The default implementation will set the {@link owner} property
+	 * and attach event handlers as declared in {@link events}.
+	 * This method will also set {@link enabled} to true.
+	 * Make sure you've declared handler as public and call the parent implementation if you override this method.
+	 * @param CComponent $owner the component that this behavior is to be attached to.
+	 */
+	public function attach($owner)
+	{
+		$this->_enabled=true;
+		$this->_owner=$owner;
+		$this->_attachEventHandlers();
+	}
+
+	/**
+	 * Detaches the behavior object from the component.
+	 * The default implementation will unset the {@link owner} property
+	 * and detach event handlers declared in {@link events}.
+	 * This method will also set {@link enabled} to false.
+	 * Make sure you call the parent implementation if you override this method.
+	 * @param CComponent $owner the component that this behavior is to be detached from.
+	 */
+	public function detach($owner)
+	{
+		foreach($this->events() as $event=>$handler)
+			$owner->detachEventHandler($event,array($this,$handler));
+		$this->_owner=null;
+		$this->_enabled=false;
+	}
+
+	/**
+	 * @return CComponent the owner component that this behavior is attached to.
+	 */
+	public function getOwner()
+	{
+		return $this->_owner;
+	}
+
+	/**
+	 * @return boolean whether this behavior is enabled
+	 */
+	public function getEnabled()
+	{
+		return $this->_enabled;
+	}
+
+	/**
+	 * @param boolean $value whether this behavior is enabled
+	 */
+	public function setEnabled($value)
+	{
+		$value=(bool)$value;
+		if($this->_enabled!=$value && $this->_owner)
+		{
+			if($value)
+				$this->_attachEventHandlers();
+			else
+			{
+				foreach($this->events() as $event=>$handler)
+					$this->_owner->detachEventHandler($event,array($this,$handler));
+			}
+		}
+		$this->_enabled=$value;
+	}
+
+	private function _attachEventHandlers()
+	{
+		$class=new ReflectionClass($this);
+		foreach($this->events() as $event=>$handler)
+		{
+			if($class->getMethod($handler)->isPublic())
+				$this->_owner->attachEventHandler($event,array($this,$handler));
+		}
+	}
+}

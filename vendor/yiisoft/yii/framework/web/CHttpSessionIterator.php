@@ -1,37 +1,91 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xgJduARoGja5
+<?php
+/**
+ * CHttpSessionIterator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CHttpSessionIterator implements an iterator for {@link CHttpSession}.
+ *
+ * It allows CHttpSession to return a new iterator for traversing the session variables.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.0
+ */
+class CHttpSessionIterator implements Iterator
+{
+	/**
+	 * @var array list of keys in the map
+	 */
+	private $_keys;
+	/**
+	 * @var mixed current key
+	 */
+	private $_key;
+
+	/**
+	 * Constructor.
+	 * @param array the data to be iterated through
+	 */
+	public function __construct()
+	{
+		$this->_keys=array_keys($_SESSION);
+	}
+
+	/**
+	 * Rewinds internal array pointer.
+	 * This method is required by the interface Iterator.
+	 */
+	public function rewind()
+	{
+		$this->_key=reset($this->_keys);
+	}
+
+	/**
+	 * Returns the key of the current array element.
+	 * This method is required by the interface Iterator.
+	 * @return mixed the key of the current array element
+	 */
+	public function key()
+	{
+		return $this->_key;
+	}
+
+	/**
+	 * Returns the current array element.
+	 * This method is required by the interface Iterator.
+	 * @return mixed the current array element
+	 */
+	public function current()
+	{
+		return isset($_SESSION[$this->_key])?$_SESSION[$this->_key]:null;
+	}
+
+	/**
+	 * Moves the internal pointer to the next array element.
+	 * This method is required by the interface Iterator.
+	 */
+	public function next()
+	{
+		do
+		{
+			$this->_key=next($this->_keys);
+		}
+		while(!isset($_SESSION[$this->_key]) && $this->_key!==false);
+	}
+
+	/**
+	 * Returns whether there is an element at current position.
+	 * This method is required by the interface Iterator.
+	 * @return boolean
+	 */
+	public function valid()
+	{
+		return $this->_key!==false;
+	}
+}

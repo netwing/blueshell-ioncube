@@ -1,158 +1,215 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Kt43PrP3iEA+Wl8=
+<?php
+
+Yii::import('system.collections.CList');
+
+class ListItem
+{
+	public $data='data';
+}
+
+class CListTest extends CTestCase
+{
+	protected $list;
+	protected $item1, $item2, $item3;
+
+	public function setUp()
+	{
+		$this->list=new CList;
+		$this->item1=new ListItem;
+		$this->item2=new ListItem;
+		$this->item3=new ListItem;
+		$this->list->add($this->item1);
+		$this->list->add($this->item2);
+	}
+
+	public function tearDown()
+	{
+		$this->list=null;
+		$this->item1=null;
+		$this->item2=null;
+		$this->item3=null;
+	}
+
+	public function testConstruct()
+	{
+		$a=array(1,2,3);
+		$list=new CList($a);
+		$this->assertEquals(3,$list->getCount());
+		$list2=new CList($this->list);
+		$this->assertEquals(2,$list2->getCount());
+	}
+
+	public function testGetReadOnly()
+	{
+		$list = new CList(null, true);
+		$this->assertTrue($list->getReadOnly(), 'List is not read-only');
+		$list = new CList(null, false);
+		$this->assertFalse($list->getReadOnly(), 'List is read-only');
+	}
+
+	public function testGetCount()
+	{
+		$this->assertEquals(2,$this->list->getCount());
+		$this->assertEquals(2,$this->list->Count);
+	}
+
+	public function testAdd()
+	{
+		$this->list->add(null);
+		$this->list->add($this->item3);
+		$this->assertEquals(4,$this->list->getCount());
+		$this->assertEquals(3,$this->list->indexOf($this->item3));
+	}
+
+	public function testInsertAt()
+	{
+		$this->list->insertAt(0,$this->item3);
+		$this->assertEquals(3,$this->list->getCount());
+		$this->assertEquals(2,$this->list->indexOf($this->item2));
+		$this->assertEquals(0,$this->list->indexOf($this->item3));
+		$this->assertEquals(1,$this->list->indexOf($this->item1));
+		$this->setExpectedException('CException');
+		$this->list->insertAt(4,$this->item3);
+	}
+
+	public function testCanNotInsertWhenReadOnly()
+	{
+		$list = new CList(array(), true);
+		$this->setExpectedException('CException');
+		$list->insertAt(1, 2);
+	}
+
+	public function testRemove()
+	{
+		$this->list->remove($this->item1);
+		$this->assertEquals(1,$this->list->getCount());
+		$this->assertEquals(-1,$this->list->indexOf($this->item1));
+		$this->assertEquals(0,$this->list->indexOf($this->item2));
+		
+		$this->assertFalse($this->list->remove($this->item1));
+
+	}
+
+	public function testRemoveAt()
+	{
+		$this->list->add($this->item3);
+		$this->list->removeAt(1);
+		$this->assertEquals(-1,$this->list->indexOf($this->item2));
+		$this->assertEquals(1,$this->list->indexOf($this->item3));
+		$this->assertEquals(0,$this->list->indexOf($this->item1));
+		$this->setExpectedException('CException');
+		$this->list->removeAt(2);
+	}
+
+	public function testCanNotRemoveWhenReadOnly()
+	{
+		$list = new CList(array(1, 2, 3), true);
+		$this->setExpectedException('CException');
+		$list->removeAt(2);
+	}
+
+	public function testClear()
+	{
+		$this->list->clear();
+		$this->assertEquals(0,$this->list->getCount());
+		$this->assertEquals(-1,$this->list->indexOf($this->item1));
+		$this->assertEquals(-1,$this->list->indexOf($this->item2));
+	}
+
+	public function testContains()
+	{
+		$this->assertTrue($this->list->contains($this->item1));
+		$this->assertTrue($this->list->contains($this->item2));
+		$this->assertFalse($this->list->contains($this->item3));
+	}
+
+	public function testIndexOf()
+	{
+		$this->assertEquals(0,$this->list->indexOf($this->item1));
+		$this->assertEquals(1,$this->list->indexOf($this->item2));
+		$this->assertEquals(-1,$this->list->indexOf($this->item3));
+	}
+
+	public function testCopyFrom()
+	{
+		$array=array($this->item3,$this->item1);
+		$this->list->copyFrom($array);
+		$this->assertTrue(count($array)==2 && $this->list[0]===$this->item3 && $this->list[1]===$this->item1);
+		$this->setExpectedException('CException');
+		$this->list->copyFrom($this);
+	}
+
+	public function testMergeWith()
+	{
+		$array=array($this->item3,$this->item1);
+		$this->list->mergeWith($array);
+		$this->assertTrue($this->list->getCount()==4 && $this->list[0]===$this->item1 && $this->list[3]===$this->item1);
+		$this->setExpectedException('CException');
+		$this->list->mergeWith($this);
+	}
+
+	public function testToArray()
+	{
+		$array=$this->list->toArray();
+		$this->assertTrue(count($array)==2 && $array[0]===$this->item1 && $array[1]===$this->item2);
+	}
+
+	public function testArrayRead()
+	{
+		$this->assertTrue($this->list[0]===$this->item1);
+		$this->assertTrue($this->list[1]===$this->item2);
+		$this->setExpectedException('CException');
+		$a=$this->list[2];
+	}
+
+	public function testGetIterator()
+	{
+		$n=0;
+		$found=0;
+		foreach($this->list as $index=>$item)
+		{
+			foreach($this->list as $a=>$b);	// test of iterator
+			$n++;
+			if($index===0 && $item===$this->item1)
+				$found++;
+			if($index===1 && $item===$this->item2)
+				$found++;
+		}
+		$this->assertTrue($n==2 && $found==2);
+	}
+
+	public function testArrayMisc()
+	{
+		$this->assertEquals($this->list->Count,count($this->list));
+		$this->assertTrue(isset($this->list[1]));
+		$this->assertFalse(isset($this->list[2]));
+	}
+
+	public function testOffsetSetAdd()
+	{
+		$list = new CList(array(1, 2, 3));
+		$list->offsetSet(null, 4);
+		$this->assertEquals(array(1, 2, 3, 4), $list->toArray());
+	}
+
+	public function testOffsetSetReplace()
+	{
+		$list = new CList(array(1, 2, 3));
+		$list->offsetSet(1, 4);
+		$this->assertEquals(array(1, 4, 3), $list->toArray());
+	}
+
+	public function testOffsetUnset()
+	{
+		$list = new CList(array(1, 2, 3));
+		$list->offsetUnset(1);
+		$this->assertEquals(array(1, 3), $list->toArray());
+	}
+
+	public function testIteratorCurrent()
+	{
+		$list = new CList(array('value1', 'value2'));
+		$val = $list->getIterator()->current();
+		$this->assertEquals('value1', $val);
+	}
+}

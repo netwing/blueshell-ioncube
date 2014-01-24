@@ -1,53 +1,107 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_CSS_OpacitySniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_CSS_OpacitySniff.
+ *
+ * Ensure that opacity values start with a 0 if it is not a whole number.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_CSS_OpacitySniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('CSS');
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_STYLE);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if ($tokens[$stackPtr]['content'] !== 'opacity') {
+            return;
+        }
+
+        $next    = $phpcsFile->findNext(array(T_COLON, T_WHITESPACE), ($stackPtr + 1), null, true);
+        $numbers = array(
+                    T_DNUMBER,
+                    T_LNUMBER,
+                   );
+
+        if ($next === false || in_array($tokens[$next]['code'], $numbers) === false) {
+            return;
+        }
+
+        $value = $tokens[$next]['content'];
+        if ($tokens[$next]['code'] === T_LNUMBER) {
+            if ($value !== '0' && $value !== '1') {
+                $error = 'Opacity values must be between 0 and 1';
+                $phpcsFile->addError($error, $next, 'Invalid');
+            }
+        } else {
+            if (strlen($value) > 3) {
+                $error = 'Opacity values must have a single value after the decimal point';
+                $phpcsFile->addError($error, $next, 'SpacingAfterPoint');
+            } else if ($value === '0.0' || $value === '1.0') {
+                $error = 'Opacity value does not require decimal point; use %s instead';
+                $data  = array($value{0});
+                $phpcsFile->addError($error, $next, 'PointNotRequired', $data);
+            } else if ($value{0} === '.') {
+                $error = 'Opacity values must not start with a decimal point; use 0%s instead';
+                $data  = array($value);
+                $phpcsFile->addError($error, $next, 'StartWithPoint', $data);
+            } else if ($value{0} !== '0') {
+                $error = 'Opacity values must be between 0 and 1';
+                $phpcsFile->addError($error, $next, 'Invalid');
+            }
+        }//end if
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

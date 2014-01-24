@@ -1,60 +1,266 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Worksheet
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Worksheet_ColumnDimension
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Worksheet
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Worksheet_ColumnDimension
+{
+	/**
+	 * Column index
+	 *
+	 * @var int
+	 */
+	private $_columnIndex;
+
+	/**
+	 * Column width
+	 *
+	 * When this is set to a negative value, the column width should be ignored by IWriter
+	 *
+	 * @var double
+	 */
+	private $_width			= -1;
+
+	/**
+	 * Auto size?
+	 *
+	 * @var bool
+	 */
+	private $_autoSize		= false;
+
+	/**
+	 * Visible?
+	 *
+	 * @var bool
+	 */
+	private $_visible		= true;
+
+	/**
+	 * Outline level
+	 *
+	 * @var int
+	 */
+	private $_outlineLevel	= 0;
+
+	/**
+	 * Collapsed
+	 *
+	 * @var bool
+	 */
+	private $_collapsed		= false;
+
+	/**
+	 * Index to cellXf
+	 *
+	 * @var int
+	 */
+	private $_xfIndex;
+
+    /**
+     * Create a new PHPExcel_Worksheet_ColumnDimension
+     *
+     * @param string $pIndex Character column index
+     */
+    public function __construct($pIndex = 'A')
+    {
+    	// Initialise values
+    	$this->_columnIndex		= $pIndex;
+
+		// set default index to cellXf
+		$this->_xfIndex = 0;
+    }
+
+    /**
+     * Get ColumnIndex
+     *
+     * @return string
+     */
+    public function getColumnIndex() {
+    	return $this->_columnIndex;
+    }
+
+    /**
+     * Set ColumnIndex
+     *
+     * @param string $pValue
+     * @return PHPExcel_Worksheet_ColumnDimension
+     */
+    public function setColumnIndex($pValue) {
+    	$this->_columnIndex = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Width
+     *
+     * @return double
+     */
+    public function getWidth() {
+    	return $this->_width;
+    }
+
+    /**
+     * Set Width
+     *
+     * @param double $pValue
+     * @return PHPExcel_Worksheet_ColumnDimension
+     */
+    public function setWidth($pValue = -1) {
+    	$this->_width = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Auto Size
+     *
+     * @return bool
+     */
+    public function getAutoSize() {
+    	return $this->_autoSize;
+    }
+
+    /**
+     * Set Auto Size
+     *
+     * @param bool $pValue
+     * @return PHPExcel_Worksheet_ColumnDimension
+     */
+    public function setAutoSize($pValue = false) {
+    	$this->_autoSize = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Visible
+     *
+     * @return bool
+     */
+    public function getVisible() {
+    	return $this->_visible;
+    }
+
+    /**
+     * Set Visible
+     *
+     * @param bool $pValue
+     * @return PHPExcel_Worksheet_ColumnDimension
+     */
+    public function setVisible($pValue = true) {
+    	$this->_visible = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Outline Level
+     *
+     * @return int
+     */
+    public function getOutlineLevel() {
+    	return $this->_outlineLevel;
+    }
+
+    /**
+     * Set Outline Level
+     *
+     * Value must be between 0 and 7
+     *
+     * @param int $pValue
+     * @throws Exception
+     * @return PHPExcel_Worksheet_ColumnDimension
+     */
+    public function setOutlineLevel($pValue) {
+    	if ($pValue < 0 || $pValue > 7) {
+    		throw new Exception("Outline level must range between 0 and 7.");
+    	}
+
+    	$this->_outlineLevel = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Collapsed
+     *
+     * @return bool
+     */
+    public function getCollapsed() {
+    	return $this->_collapsed;
+    }
+
+    /**
+     * Set Collapsed
+     *
+     * @param bool $pValue
+     * @return PHPExcel_Worksheet_ColumnDimension
+     */
+    public function setCollapsed($pValue = true) {
+    	$this->_collapsed = $pValue;
+    	return $this;
+    }
+
+	/**
+	 * Get index to cellXf
+	 *
+	 * @return int
+	 */
+	public function getXfIndex()
+	{
+		return $this->_xfIndex;
+	}
+
+	/**
+	 * Set index to cellXf
+	 *
+	 * @param int $pValue
+	 * @return PHPExcel_Worksheet_ColumnDimension
+	 */
+	public function setXfIndex($pValue = 0)
+	{
+		$this->_xfIndex = $pValue;
+		return $this;
+	}
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if (is_object($value)) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+
+}

@@ -1,168 +1,412 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xu2+gQoLxIS=
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+require_once(dirname(__FILE__) . '/helpers/_object_tostring.php');
+
+/**
+* class for modifier tests
+*/
+class PluginFunctionHtmlRadiosTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testAssociativeArray()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', 1001);
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testSeparateArrays()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" values=$cust_ids output=$cust_names selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', 1001);
+        $tpl->assign('cust_ids', array(1000,1001,1002,1003));
+        $tpl->assign('cust_names', array(
+            'Joe Schmoe',
+            'Jack Smith',
+            'Jane Johnson',
+            'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testIterator()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" values=$cust_ids output=$cust_names selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', 1001);
+        $tpl->assign('cust_ids', array(1000,1001,1002,1003));
+        $tpl->assign('cust_names', new ArrayIterator(array(
+            'Joe Schmoe',
+            'Jack Smith',
+            'Jane Johnson',
+            'Charlie Brown',
+        )));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testNoLabels()
+    {
+        $n = "\n";
+        $expected = '<input type="radio" name="id" value="1000" />Joe Schmoe<br />'
+            . $n . '<input type="radio" name="id" value="1001" checked="checked" />Jack Smith<br />'
+            . $n . '<input type="radio" name="id" value="1002" />Jane Johnson<br />'
+            . $n . '<input type="radio" name="id" value="1003" />Charlie Brown<br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios labels=false selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', 1001);
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testWithId()
+    {
+        $n = "\n";
+        $expected = '<label for="id_1000"><input type="radio" name="id" value="1000" id="id_1000" />Joe Schmoe</label><br />'
+            . $n . '<label for="id_1001"><input type="radio" name="id" value="1001" id="id_1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label for="id_1002"><input type="radio" name="id" value="1002" id="id_1002" />Jane Johnson</label><br />'
+            . $n . '<label for="id_work_s_ä"><input type="radio" name="id" value="work s ä" id="id_work_s_ä" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id label_ids=true separator="<br />"}');
+        $tpl->assign('customer_id', 1001);
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            'work s ä' => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testNullString()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="null" checked="checked" />null</label><br />'
+            . $n . '<label><input type="radio" name="id" value="" />empty string</label><br />'
+            . $n . '<label><input type="radio" name="id" value="0" />zero</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1" />one</label><br />'
+            . $n . '<label><input type="radio" name="id" value="2" />two</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$options selected=$selected separator="<br />"}');
+        $tpl->assign('selected', "null");
+        $tpl->assign('options', array(
+            "null" => 'null',
+            '' => 'empty string',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testNullValue()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="null" />null</label><br />'
+            . $n . '<label><input type="radio" name="id" value="" checked="checked" />empty string</label><br />'
+            . $n . '<label><input type="radio" name="id" value="0" />zero</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1" />one</label><br />'
+            . $n . '<label><input type="radio" name="id" value="2" />two</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$options selected=$selected separator="<br />"}');
+        $tpl->assign('selected', null);
+        $tpl->assign('options', array(
+            "null" => 'null',
+            '' => 'empty string',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testZeroValue()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="null" />null</label><br />'
+            . $n . '<label><input type="radio" name="id" value="" />empty string</label><br />'
+            . $n . '<label><input type="radio" name="id" value="0" checked="checked" />zero</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1" />one</label><br />'
+            . $n . '<label><input type="radio" name="id" value="2" />two</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$options selected=$selected separator="<br />"}');
+        $tpl->assign('selected', 0);
+        $tpl->assign('options', array(
+            "null" => 'null',
+            '' => 'empty string',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testZeroStringValue()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="null" />null</label><br />'
+            . $n . '<label><input type="radio" name="id" value="" />empty string</label><br />'
+            . $n . '<label><input type="radio" name="id" value="0" checked="checked" />zero</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1" />one</label><br />'
+            . $n . '<label><input type="radio" name="id" value="2" />two</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$options selected=$selected separator="<br />"}');
+        $tpl->assign('selected', "0");
+        $tpl->assign('options', array(
+            "null" => 'null',
+            '' => 'empty string',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testEmptyStringValue()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="null" />null</label><br />'
+            . $n . '<label><input type="radio" name="id" value="" checked="checked" />empty string</label><br />'
+            . $n . '<label><input type="radio" name="id" value="0" />zero</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1" />one</label><br />'
+            . $n . '<label><input type="radio" name="id" value="2" />two</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$options selected=$selected separator="<br />"}');
+        $tpl->assign('selected', "");
+        $tpl->assign('options', array(
+            "null" => 'null',
+            '' => 'empty string',
+            0 => 'zero',
+            1 => 'one',
+            2 => 'two',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testObject()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', new _object_toString(1001));
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testObjectList()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', 1001);
+        $tpl->assign('cust_radios', array(
+            1000 => new _object_toString('Joe Schmoe'),
+            1001 => new _object_toString('Jack Smith'),
+            1002 => new _object_toString('Jane Johnson'),
+            1003 => new _object_toString('Charlie Brown'),
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    protected $_errors = array();
+    public function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
+    {
+        $this->_errors[] = $errstr;
+    }
+
+    public function testObjectNoString()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', new _object_noString(1001));
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $tpl->fetch();
+        $this->assertEquals(1, count($this->_errors));
+        $this->assertStringEndsWith("without __toString() method", $this->_errors[0]);
+
+        restore_error_handler();
+    }
+
+    public function testObjectListNoString()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />"}');
+        $tpl->assign('customer_id', 1001);
+        $tpl->assign('cust_radios', array(
+            1000 => new _object_toString('Joe Schmoe'),
+            1001 => new _object_noString('Jack Smith'),
+            1002 => new _object_toString('Jane Johnson'),
+            1003 => new _object_toString('Charlie Brown'),
+        ));
+
+        $tpl->fetch();
+        $this->assertEquals(1, count($this->_errors));
+        $this->assertStringEndsWith("without __toString() method", $this->_errors[0]);
+
+        restore_error_handler();
+    }
+
+    public function testDisabled()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" disabled="1" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" disabled="1" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" disabled="1" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" disabled="1" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />" disabled=1}');
+        $tpl->assign('customer_id', new _object_toString(1001));
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+
+    public function testDisabledStrict()
+    {
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" disabled="disabled" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" disabled="disabled" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" disabled="disabled" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" disabled="disabled" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />" disabled=true strict=true}');
+        $tpl->assign('customer_id', new _object_toString(1001));
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />" disabled=1 strict=true}');
+        $tpl->assign('customer_id', new _object_toString(1001));
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+
+        $n = "\n";
+        $expected = '<label><input type="radio" name="id" value="1000" disabled="disabled" />Joe Schmoe</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1001" checked="checked" disabled="disabled" />Jack Smith</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1002" disabled="disabled" />Jane Johnson</label><br />'
+            . $n . '<label><input type="radio" name="id" value="1003" disabled="disabled" />Charlie Brown</label><br />';
+
+        $tpl = $this->smarty->createTemplate('eval:{html_radios name="id" options=$cust_radios selected=$customer_id separator="<br />" disabled="disabled" strict=true}');
+        $tpl->assign('customer_id', new _object_toString(1001));
+        $tpl->assign('cust_radios', array(
+            1000 => 'Joe Schmoe',
+            1001 => 'Jack Smith',
+            1002 => 'Jane Johnson',
+            1003 => 'Charlie Brown',
+        ));
+
+        $this->assertEquals($expected, $tpl->fetch());
+    }
+}

@@ -1,66 +1,239 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Writer
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version		1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Writer_PDF_Core
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Writer
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+abstract class PHPExcel_Writer_PDF_Core extends PHPExcel_Writer_HTML {
+	/**
+	 * Temporary storage directory
+	 *
+	 * @var string
+	 */
+	private $_tempDir = '';
+
+	/**
+	 * Font
+	 *
+	 * @var string
+	 */
+	private $_font = 'freesans';
+
+	/**
+	 * Orientation (Over-ride)
+	 *
+	 * @var string
+	 */
+	private $_orientation	= null;
+
+	/**
+	 * Paper size (Over-ride)
+	 *
+	 * @var int
+	 */
+	private $_paperSize	= null;
+
+
+	/**
+	 * Paper Sizes xRef List
+	 *
+	 * @var array
+	 */
+	protected static $_paperSizes = array(
+		//	Excel Paper Size													TCPDF Paper Size
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER							=> 'LETTER',				//	(8.5 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER_SMALL					=> 'LETTER',				//	(8.5 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_TABLOID							=> array(792.00,1224.00),	//	(11 in. by 17 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LEDGER							=> array(1224.00,792.00),	//	(17 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LEGAL							=> 'LEGAL',					//	(8.5 in. by 14 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_STATEMENT						=> array(396.00,612.00),	//	(5.5 in. by 8.5 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_EXECUTIVE						=> 'EXECUTIVE',				//	(7.25 in. by 10.5 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A3								=> 'A3',					//	(297 mm by 420 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4								=> 'A4',					//	(210 mm by 297 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4_SMALL						=> 'A4',					//	(210 mm by 297 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A5								=> 'A5',					//	(148 mm by 210 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_B4								=> 'B4',					//	(250 mm by 353 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_B5								=> 'B5',					//	(176 mm by 250 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_FOLIO							=> 'FOLIO',					//	(8.5 in. by 13 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_QUARTO							=> array(609.45,779.53),	//	(215 mm by 275 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_STANDARD_1						=> array(720.00,1008.00),	//	(10 in. by 14 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_STANDARD_2						=> array(792.00,1224.00),	//	(11 in. by 17 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_NOTE							=> 'LETTER',				//	(8.5 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_NO9_ENVELOPE					=> array(279.00,639.00),	//	(3.875 in. by 8.875 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_NO10_ENVELOPE					=> array(297.00,684.00),	//	(4.125 in. by 9.5 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_NO11_ENVELOPE					=> array(324.00,747.00),	//	(4.5 in. by 10.375 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_NO12_ENVELOPE					=> array(342.00,792.00),	//	(4.75 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_NO14_ENVELOPE					=> array(360.00,828.00),	//	(5 in. by 11.5 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_C								=> array(1224.00,1584.00),	//	(17 in. by 22 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_D								=> array(1584.00,2448.00),	//	(22 in. by 34 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_E								=> array(2448.00,3168.00),	//	(34 in. by 44 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_DL_ENVELOPE						=> array(311.81,623.62),	//	(110 mm by 220 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_C5_ENVELOPE						=> 'C5',					//	(162 mm by 229 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_C3_ENVELOPE						=> 'C3',					//	(324 mm by 458 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_C4_ENVELOPE						=> 'C4',					//	(229 mm by 324 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_C6_ENVELOPE						=> 'C6',					//	(114 mm by 162 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_C65_ENVELOPE					=> array(323.15,649.13),	//	(114 mm by 229 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_B4_ENVELOPE						=> 'B4',					//	(250 mm by 353 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_B5_ENVELOPE						=> 'B5',					//	(176 mm by 250 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_B6_ENVELOPE						=> array(498.90,354.33),	//	(176 mm by 125 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_ITALY_ENVELOPE					=> array(311.81,651.97),	//	(110 mm by 230 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_MONARCH_ENVELOPE				=> array(279.00,540.00),	//	(3.875 in. by 7.5 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_6_3_4_ENVELOPE					=> array(261.00,468.00),	//	(3.625 in. by 6.5 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_US_STANDARD_FANFOLD				=> array(1071.00,792.00),	//	(14.875 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_GERMAN_STANDARD_FANFOLD			=> array(612.00,864.00),	//	(8.5 in. by 12 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_GERMAN_LEGAL_FANFOLD			=> 'FOLIO',					//	(8.5 in. by 13 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_ISO_B4							=> 'B4',					//	(250 mm by 353 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_JAPANESE_DOUBLE_POSTCARD		=> array(566.93,419.53),	//	(200 mm by 148 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_STANDARD_PAPER_1				=> array(648.00,792.00),	//	(9 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_STANDARD_PAPER_2				=> array(720.00,792.00),	//	(10 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_STANDARD_PAPER_3				=> array(1080.00,792.00),	//	(15 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_INVITE_ENVELOPE					=> array(623.62,623.62),	//	(220 mm by 220 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER_EXTRA_PAPER				=> array(667.80,864.00),	//	(9.275 in. by 12 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LEGAL_EXTRA_PAPER				=> array(667.80,1080.00),	//	(9.275 in. by 15 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_TABLOID_EXTRA_PAPER				=> array(841.68,1296.00),	//	(11.69 in. by 18 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4_EXTRA_PAPER					=> array(668.98,912.76),	//	(236 mm by 322 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER_TRANSVERSE_PAPER			=> array(595.80,792.00),	//	(8.275 in. by 11 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4_TRANSVERSE_PAPER				=> 'A4',					//	(210 mm by 297 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER_EXTRA_TRANSVERSE_PAPER	=> array(667.80,864.00),	//	(9.275 in. by 12 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_SUPERA_SUPERA_A4_PAPER			=> array(643.46,1009.13),	//	(227 mm by 356 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_SUPERB_SUPERB_A3_PAPER			=> array(864.57,1380.47),	//	(305 mm by 487 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER_PLUS_PAPER				=> array(612.00,913.68),	//	(8.5 in. by 12.69 in.)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A4_PLUS_PAPER					=> array(595.28,935.43),	//	(210 mm by 330 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A5_TRANSVERSE_PAPER				=> 'A5',					//	(148 mm by 210 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_JIS_B5_TRANSVERSE_PAPER			=> array(515.91,728.50),	//	(182 mm by 257 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A3_EXTRA_PAPER					=> array(912.76,1261.42),	//	(322 mm by 445 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A5_EXTRA_PAPER					=> array(493.23,666.14),	//	(174 mm by 235 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_ISO_B5_EXTRA_PAPER				=> array(569.76,782.36),	//	(201 mm by 276 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A2_PAPER						=> 'A2',					//	(420 mm by 594 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A3_TRANSVERSE_PAPER				=> 'A3',					//	(297 mm by 420 mm)
+		PHPExcel_Worksheet_PageSetup::PAPERSIZE_A3_EXTRA_TRANSVERSE_PAPER		=> array(912.76,1261.42)	//	(322 mm by 445 mm)
+	);
+
+	/**
+	 * Create a new PHPExcel_Writer_PDF
+	 *
+	 * @param 	PHPExcel	$phpExcel	PHPExcel object
+	 */
+	public function __construct(PHPExcel $phpExcel) {
+		parent::__construct($phpExcel);
+		$this->setUseInlineCss(true);
+		$this->_tempDir = PHPExcel_Shared_File::sys_get_temp_dir();
+	}
+
+    /**
+     * Get Font
+     *
+     * @return string
+     */
+    public function getFont() {
+    	return $this->_font;
+    }
+
+	/**
+	 * Set font. Examples:
+	 *   'arialunicid0-chinese-simplified'
+	 *   'arialunicid0-chinese-traditional'
+	 *   'arialunicid0-korean'
+	 *   'arialunicid0-japanese'
+	 *
+	 * @param	string	$fontName
+	 */
+	public function setFont($fontName) {
+		$this->_font = $fontName;
+		return $this;
+	}
+
+    /**
+     * Get Paper Size
+     *
+     * @return int
+     */
+    public function getPaperSize() {
+    	return $this->_paperSize;
+    }
+
+    /**
+     * Set Paper Size
+     *
+     * @param int $pValue
+     * @return PHPExcel_Writer_PDF
+     */
+    public function setPaperSize($pValue = PHPExcel_Worksheet_PageSetup::PAPERSIZE_LETTER) {
+    	$this->_paperSize = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Orientation
+     *
+     * @return string
+     */
+    public function getOrientation() {
+    	return $this->_orientation;
+    }
+
+    /**
+     * Set Orientation
+     *
+     * @param string $pValue
+     * @return PHPExcel_Writer_PDF
+     */
+    public function setOrientation($pValue = PHPExcel_Worksheet_PageSetup::ORIENTATION_DEFAULT) {
+    	$this->_orientation = $pValue;
+    	return $this;
+    }
+
+	/**
+	 * Get temporary storage directory
+	 *
+	 * @return string
+	 */
+	public function getTempDir() {
+		return $this->_tempDir;
+	}
+
+	/**
+	 * Set temporary storage directory
+	 *
+	 * @param 	string	$pValue		Temporary storage directory
+	 * @throws 	Exception	Exception when directory does not exist
+	 * @return PHPExcel_Writer_PDF
+	 */
+	public function setTempDir($pValue = '') {
+		if (is_dir($pValue)) {
+			$this->_tempDir = $pValue;
+		} else {
+			throw new Exception("Directory does not exist: $pValue");
+		}
+		return $this;
+	}
+}

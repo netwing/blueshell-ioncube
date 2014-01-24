@@ -1,240 +1,506 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ugf4/igQvRhPKu9tdR3jCPCRwT6ekaR8c68=
+<?php
+/**
+ * CPhpAuthManager class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CPhpAuthManager represents an authorization manager that stores authorization information in terms of a PHP script file.
+ *
+ * The authorization data will be saved to and loaded from a file
+ * specified by {@link authFile}, which defaults to 'protected/data/auth.php'.
+ *
+ * CPhpAuthManager is mainly suitable for authorization data that is not too big
+ * (for example, the authorization data for a personal blog system).
+ * Use {@link CDbAuthManager} for more complex authorization data.
+ *
+ * @property array $authItems The authorization items of the specific type.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.auth
+ * @since 1.0
+ */
+class CPhpAuthManager extends CAuthManager
+{
+	/**
+	 * @var string the path of the PHP script that contains the authorization data.
+	 * If not set, it will be using 'protected/data/auth.php' as the data file.
+	 * Make sure this file is writable by the Web server process if the authorization
+	 * needs to be changed.
+	 * @see loadFromFile
+	 * @see saveToFile
+	 */
+	public $authFile;
+
+	private $_items=array();			// itemName => item
+	private $_children=array();			// itemName, childName => child
+	private $_assignments=array();		// userId, itemName => assignment
+
+	/**
+	 * Initializes the application component.
+	 * This method overrides parent implementation by loading the authorization data
+	 * from PHP script.
+	 */
+	public function init()
+	{
+		parent::init();
+		if($this->authFile===null)
+			$this->authFile=Yii::getPathOfAlias('application.data.auth').'.php';
+		$this->load();
+	}
+
+	/**
+	 * Performs access check for the specified user.
+	 * @param string $itemName the name of the operation that need access check
+	 * @param mixed $userId the user ID. This can be either an integer or a string representing
+	 * the unique identifier of a user. See {@link IWebUser::getId}.
+	 * @param array $params name-value pairs that would be passed to biz rules associated
+	 * with the tasks and roles assigned to the user.
+	 * Since version 1.1.11 a param with name 'userId' is added to this array, which holds the value of <code>$userId</code>.
+	 * @return boolean whether the operations can be performed by the user.
+	 */
+	public function checkAccess($itemName,$userId,$params=array())
+	{
+		if(!isset($this->_items[$itemName]))
+			return false;
+		$item=$this->_items[$itemName];
+		Yii::trace('Checking permission "'.$item->getName().'"','system.web.auth.CPhpAuthManager');
+		if(!isset($params['userId']))
+		    $params['userId'] = $userId;
+		if($this->executeBizRule($item->getBizRule(),$params,$item->getData()))
+		{
+			if(in_array($itemName,$this->defaultRoles))
+				return true;
+			if(isset($this->_assignments[$userId][$itemName]))
+			{
+				$assignment=$this->_assignments[$userId][$itemName];
+				if($this->executeBizRule($assignment->getBizRule(),$params,$assignment->getData()))
+					return true;
+			}
+			foreach($this->_children as $parentName=>$children)
+			{
+				if(isset($children[$itemName]) && $this->checkAccess($parentName,$userId,$params))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Adds an item as a child of another item.
+	 * @param string $itemName the parent item name
+	 * @param string $childName the child item name
+	 * @return boolean whether the item is added successfully
+	 * @throws CException if either parent or child doesn't exist or if a loop has been detected.
+	 */
+	public function addItemChild($itemName,$childName)
+	{
+		if(!isset($this->_items[$childName],$this->_items[$itemName]))
+			throw new CException(Yii::t('yii','Either "{parent}" or "{child}" does not exist.',array('{child}'=>$childName,'{name}'=>$itemName)));
+		$child=$this->_items[$childName];
+		$item=$this->_items[$itemName];
+		$this->checkItemChildType($item->getType(),$child->getType());
+		if($this->detectLoop($itemName,$childName))
+			throw new CException(Yii::t('yii','Cannot add "{child}" as a child of "{parent}". A loop has been detected.',
+				array('{child}'=>$childName,'{parent}'=>$itemName)));
+		if(isset($this->_children[$itemName][$childName]))
+			throw new CException(Yii::t('yii','The item "{parent}" already has a child "{child}".',
+				array('{child}'=>$childName,'{parent}'=>$itemName)));
+		$this->_children[$itemName][$childName]=$this->_items[$childName];
+		return true;
+	}
+
+	/**
+	 * Removes a child from its parent.
+	 * Note, the child item is not deleted. Only the parent-child relationship is removed.
+	 * @param string $itemName the parent item name
+	 * @param string $childName the child item name
+	 * @return boolean whether the removal is successful
+	 */
+	public function removeItemChild($itemName,$childName)
+	{
+		if(isset($this->_children[$itemName][$childName]))
+		{
+			unset($this->_children[$itemName][$childName]);
+			return true;
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * Returns a value indicating whether a child exists within a parent.
+	 * @param string $itemName the parent item name
+	 * @param string $childName the child item name
+	 * @return boolean whether the child exists
+	 */
+	public function hasItemChild($itemName,$childName)
+	{
+		return isset($this->_children[$itemName][$childName]);
+	}
+
+	/**
+	 * Returns the children of the specified item.
+	 * @param mixed $names the parent item name. This can be either a string or an array.
+	 * The latter represents a list of item names.
+	 * @return array all child items of the parent
+	 */
+	public function getItemChildren($names)
+	{
+		if(is_string($names))
+			return isset($this->_children[$names]) ? $this->_children[$names] : array();
+
+		$children=array();
+		foreach($names as $name)
+		{
+			if(isset($this->_children[$name]))
+				$children=array_merge($children,$this->_children[$name]);
+		}
+		return $children;
+	}
+
+	/**
+	 * Assigns an authorization item to a user.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @param string $bizRule the business rule to be executed when {@link checkAccess} is called
+	 * for this particular authorization item.
+	 * @param mixed $data additional data associated with this assignment
+	 * @return CAuthAssignment the authorization assignment information.
+	 * @throws CException if the item does not exist or if the item has already been assigned to the user
+	 */
+	public function assign($itemName,$userId,$bizRule=null,$data=null)
+	{
+		if(!isset($this->_items[$itemName]))
+			throw new CException(Yii::t('yii','Unknown authorization item "{name}".',array('{name}'=>$itemName)));
+		elseif(isset($this->_assignments[$userId][$itemName]))
+			throw new CException(Yii::t('yii','Authorization item "{item}" has already been assigned to user "{user}".',
+				array('{item}'=>$itemName,'{user}'=>$userId)));
+		else
+			return $this->_assignments[$userId][$itemName]=new CAuthAssignment($this,$itemName,$userId,$bizRule,$data);
+	}
+
+	/**
+	 * Revokes an authorization assignment from a user.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return boolean whether removal is successful
+	 */
+	public function revoke($itemName,$userId)
+	{
+		if(isset($this->_assignments[$userId][$itemName]))
+		{
+			unset($this->_assignments[$userId][$itemName]);
+			return true;
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * Returns a value indicating whether the item has been assigned to the user.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return boolean whether the item has been assigned to the user.
+	 */
+	public function isAssigned($itemName,$userId)
+	{
+		return isset($this->_assignments[$userId][$itemName]);
+	}
+
+	/**
+	 * Returns the item assignment information.
+	 * @param string $itemName the item name
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return CAuthAssignment the item assignment information. Null is returned if
+	 * the item is not assigned to the user.
+	 */
+	public function getAuthAssignment($itemName,$userId)
+	{
+		return isset($this->_assignments[$userId][$itemName])?$this->_assignments[$userId][$itemName]:null;
+	}
+
+	/**
+	 * Returns the item assignments for the specified user.
+	 * @param mixed $userId the user ID (see {@link IWebUser::getId})
+	 * @return array the item assignment information for the user. An empty array will be
+	 * returned if there is no item assigned to the user.
+	 */
+	public function getAuthAssignments($userId)
+	{
+		return isset($this->_assignments[$userId])?$this->_assignments[$userId]:array();
+	}
+
+	/**
+	 * Returns the authorization items of the specific type and user.
+	 * @param integer $type the item type (0: operation, 1: task, 2: role). Defaults to null,
+	 * meaning returning all items regardless of their type.
+	 * @param mixed $userId the user ID. Defaults to null, meaning returning all items even if
+	 * they are not assigned to a user.
+	 * @return array the authorization items of the specific type.
+	 */
+	public function getAuthItems($type=null,$userId=null)
+	{
+		if($type===null && $userId===null)
+			return $this->_items;
+		$items=array();
+		if($userId===null)
+		{
+			foreach($this->_items as $name=>$item)
+			{
+				if($item->getType()==$type)
+					$items[$name]=$item;
+			}
+		}
+		elseif(isset($this->_assignments[$userId]))
+		{
+			foreach($this->_assignments[$userId] as $assignment)
+			{
+				$name=$assignment->getItemName();
+				if(isset($this->_items[$name]) && ($type===null || $this->_items[$name]->getType()==$type))
+					$items[$name]=$this->_items[$name];
+			}
+		}
+		return $items;
+	}
+
+	/**
+	 * Creates an authorization item.
+	 * An authorization item represents an action permission (e.g. creating a post).
+	 * It has three types: operation, task and role.
+	 * Authorization items form a hierarchy. Higher level items inheirt permissions representing
+	 * by lower level items.
+	 * @param string $name the item name. This must be a unique identifier.
+	 * @param integer $type the item type (0: operation, 1: task, 2: role).
+	 * @param string $description description of the item
+	 * @param string $bizRule business rule associated with the item. This is a piece of
+	 * PHP code that will be executed when {@link checkAccess} is called for the item.
+	 * @param mixed $data additional data associated with the item.
+	 * @return CAuthItem the authorization item
+	 * @throws CException if an item with the same name already exists
+	 */
+	public function createAuthItem($name,$type,$description='',$bizRule=null,$data=null)
+	{
+		if(isset($this->_items[$name]))
+			throw new CException(Yii::t('yii','Unable to add an item whose name is the same as an existing item.'));
+		return $this->_items[$name]=new CAuthItem($this,$name,$type,$description,$bizRule,$data);
+	}
+
+	/**
+	 * Removes the specified authorization item.
+	 * @param string $name the name of the item to be removed
+	 * @return boolean whether the item exists in the storage and has been removed
+	 */
+	public function removeAuthItem($name)
+	{
+		if(isset($this->_items[$name]))
+		{
+			foreach($this->_children as &$children)
+				unset($children[$name]);
+			foreach($this->_assignments as &$assignments)
+				unset($assignments[$name]);
+			unset($this->_items[$name]);
+			return true;
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * Returns the authorization item with the specified name.
+	 * @param string $name the name of the item
+	 * @return CAuthItem the authorization item. Null if the item cannot be found.
+	 */
+	public function getAuthItem($name)
+	{
+		return isset($this->_items[$name])?$this->_items[$name]:null;
+	}
+
+	/**
+	 * Saves an authorization item to persistent storage.
+	 * @param CAuthItem $item the item to be saved.
+	 * @param string $oldName the old item name. If null, it means the item name is not changed.
+	 */
+	public function saveAuthItem($item,$oldName=null)
+	{
+		if($oldName!==null && ($newName=$item->getName())!==$oldName) // name changed
+		{
+			if(isset($this->_items[$newName]))
+				throw new CException(Yii::t('yii','Unable to change the item name. The name "{name}" is already used by another item.',array('{name}'=>$newName)));
+			if(isset($this->_items[$oldName]) && $this->_items[$oldName]===$item)
+			{
+				unset($this->_items[$oldName]);
+				$this->_items[$newName]=$item;
+				if(isset($this->_children[$oldName]))
+				{
+					$this->_children[$newName]=$this->_children[$oldName];
+					unset($this->_children[$oldName]);
+				}
+				foreach($this->_children as &$children)
+				{
+					if(isset($children[$oldName]))
+					{
+						$children[$newName]=$children[$oldName];
+						unset($children[$oldName]);
+					}
+				}
+				foreach($this->_assignments as &$assignments)
+				{
+					if(isset($assignments[$oldName]))
+					{
+						$assignments[$newName]=$assignments[$oldName];
+						unset($assignments[$oldName]);
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * Saves the changes to an authorization assignment.
+	 * @param CAuthAssignment $assignment the assignment that has been changed.
+	 */
+	public function saveAuthAssignment($assignment)
+	{
+	}
+
+	/**
+	 * Saves authorization data into persistent storage.
+	 * If any change is made to the authorization data, please make
+	 * sure you call this method to save the changed data into persistent storage.
+	 */
+	public function save()
+	{
+		$items=array();
+		foreach($this->_items as $name=>$item)
+		{
+			$items[$name]=array(
+				'type'=>$item->getType(),
+				'description'=>$item->getDescription(),
+				'bizRule'=>$item->getBizRule(),
+				'data'=>$item->getData(),
+			);
+			if(isset($this->_children[$name]))
+			{
+				foreach($this->_children[$name] as $child)
+					$items[$name]['children'][]=$child->getName();
+			}
+		}
+
+		foreach($this->_assignments as $userId=>$assignments)
+		{
+			foreach($assignments as $name=>$assignment)
+			{
+				if(isset($items[$name]))
+				{
+					$items[$name]['assignments'][$userId]=array(
+						'bizRule'=>$assignment->getBizRule(),
+						'data'=>$assignment->getData(),
+					);
+				}
+			}
+		}
+
+		$this->saveToFile($items,$this->authFile);
+	}
+
+	/**
+	 * Loads authorization data.
+	 */
+	public function load()
+	{
+		$this->clearAll();
+
+		$items=$this->loadFromFile($this->authFile);
+
+		foreach($items as $name=>$item)
+			$this->_items[$name]=new CAuthItem($this,$name,$item['type'],$item['description'],$item['bizRule'],$item['data']);
+
+		foreach($items as $name=>$item)
+		{
+			if(isset($item['children']))
+			{
+				foreach($item['children'] as $childName)
+				{
+					if(isset($this->_items[$childName]))
+						$this->_children[$name][$childName]=$this->_items[$childName];
+				}
+			}
+			if(isset($item['assignments']))
+			{
+				foreach($item['assignments'] as $userId=>$assignment)
+				{
+					$this->_assignments[$userId][$name]=new CAuthAssignment($this,$name,$userId,$assignment['bizRule'],$assignment['data']);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Removes all authorization data.
+	 */
+	public function clearAll()
+	{
+		$this->clearAuthAssignments();
+		$this->_children=array();
+		$this->_items=array();
+	}
+
+	/**
+	 * Removes all authorization assignments.
+	 */
+	public function clearAuthAssignments()
+	{
+		$this->_assignments=array();
+	}
+
+	/**
+	 * Checks whether there is a loop in the authorization item hierarchy.
+	 * @param string $itemName parent item name
+	 * @param string $childName the name of the child item that is to be added to the hierarchy
+	 * @return boolean whether a loop exists
+	 */
+	protected function detectLoop($itemName,$childName)
+	{
+		if($childName===$itemName)
+			return true;
+		if(!isset($this->_children[$childName], $this->_items[$itemName]))
+			return false;
+
+		foreach($this->_children[$childName] as $child)
+		{
+			if($this->detectLoop($itemName,$child->getName()))
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Loads the authorization data from a PHP script file.
+	 * @param string $file the file path.
+	 * @return array the authorization data
+	 * @see saveToFile
+	 */
+	protected function loadFromFile($file)
+	{
+		if(is_file($file))
+			return require($file);
+		else
+			return array();
+	}
+
+	/**
+	 * Saves the authorization data to a PHP script file.
+	 * @param array $data the authorization data
+	 * @param string $file the file path.
+	 * @see loadFromFile
+	 */
+	protected function saveToFile($data,$file)
+	{
+		file_put_contents($file,"<?php\nreturn ".var_export($data,true).";\n");
+	}
+}

@@ -1,33 +1,152 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
+/**
+ * Abstract base class for Highlighter renderers
+ *
+ * PHP versions 4 and 5
+ *
+ * LICENSE: This source file is subject to version 3.0 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @category   Text
+ * @package    Text_Highlighter
+ * @author     Andrey Demenev <demenev@gmail.com>
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @version    CVS: $Id: Renderer.php,v 1.1 2007/06/03 02:36:35 ssttoo Exp $
+ * @link       http://pear.php.net/package/Text_Highlighter
+ */
+
+/**
+ * Abstract base class for Highlighter renderers
+ *
+ * @author Andrey Demenev <demenev@gmail.com>
+ * @category   Text
+ * @package    Text_Highlighter
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @version    Release: 0.7.1
+ * @link       http://pear.php.net/package/Text_Highlighter
+ * @abstract
+ */
+
+class Text_Highlighter_Renderer
+{
+    /**
+     * Renderer options
+     *
+     * @var array
+     * @access protected
+     */
+    public $_options = array();
+
+    /**
+     * Current language
+     *
+     * @var string
+     * @access protected
+     */
+    public $_language = '';
+
+    /**
+     * Constructor
+     *
+     * @access public
+     *
+     * @param  array $options  Rendering options. Renderer-specific.
+     */
+    function __construct($options = array())
+    {
+        $this->_options = $options;
+    }
+
+    /**
+     * Resets renderer state
+     *
+     * @access public
+     *
+     * @param  array $options  Rendering options. Renderer-specific.
+     */
+    function reset()
+    {
+        return;
+    }
+
+    /**
+     * Preprocesses code
+     *
+     * @access public
+     *
+     * @param  string $str Code to preprocess
+     * @return string Preprocessed code
+     */
+    function preprocess($str)
+    {
+        return $str;
+    }
+
+    /**
+     * Accepts next token
+     *
+     * @abstract
+     * @access public
+     *
+     * @param  string $class   Token class
+     * @param  string $content Token content
+     */
+    function acceptToken($class, $content)
+    {
+        return;
+    }
+
+    /**
+     * Signals that no more tokens are available
+     *
+     * @access public
+     *
+     */
+    function finalize()
+    {
+        return;
+    }
+
+    /**
+     * Get generated output
+     *
+     * @abstract
+     * @return mixed Renderer-specific
+     * @access public
+     *
+     */
+    function getOutput()
+    {
+        return;
+    }
+
+    /**
+     * Set current language
+     *
+     * @abstract
+     * @return void
+     * @access public
+     *
+     */
+    function setCurrentLanguage($lang)
+    {
+        $this->_language = $lang;
+    }
+
+}
+
+/*
+ * Local variables:
+ * tab-width: 4
+ * c-basic-offset: 4
+ * c-hanging-comment-ender-p: nil
+ * End:
+ */
+
 ?>
-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

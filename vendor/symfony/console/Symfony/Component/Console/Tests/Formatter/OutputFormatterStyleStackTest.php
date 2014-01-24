@@ -1,49 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Formatter;
+
+use Symfony\Component\Console\Formatter\OutputFormatterStyleStack;
+use Symfony\Component\Console\Formatter\OutputFormatterStyle;
+
+class OutputFormatterStyleStackTest extends \PHPUnit_Framework_TestCase
+{
+    public function testPush()
+    {
+        $stack = new OutputFormatterStyleStack();
+        $stack->push($s1 = new OutputFormatterStyle('white', 'black'));
+        $stack->push($s2 = new OutputFormatterStyle('yellow', 'blue'));
+
+        $this->assertEquals($s2, $stack->getCurrent());
+
+        $stack->push($s3 = new OutputFormatterStyle('green', 'red'));
+
+        $this->assertEquals($s3, $stack->getCurrent());
+    }
+
+    public function testPop()
+    {
+        $stack = new OutputFormatterStyleStack();
+        $stack->push($s1 = new OutputFormatterStyle('white', 'black'));
+        $stack->push($s2 = new OutputFormatterStyle('yellow', 'blue'));
+
+        $this->assertEquals($s2, $stack->pop());
+        $this->assertEquals($s1, $stack->pop());
+    }
+
+    public function testPopEmpty()
+    {
+        $stack = new OutputFormatterStyleStack();
+        $style = new OutputFormatterStyle();
+
+        $this->assertEquals($style, $stack->pop());
+    }
+
+    public function testPopNotLast()
+    {
+        $stack = new OutputFormatterStyleStack();
+        $stack->push($s1 = new OutputFormatterStyle('white', 'black'));
+        $stack->push($s2 = new OutputFormatterStyle('yellow', 'blue'));
+        $stack->push($s3 = new OutputFormatterStyle('green', 'red'));
+
+        $this->assertEquals($s2, $stack->pop($s2));
+        $this->assertEquals($s1, $stack->pop());
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInvalidPop()
+    {
+        $stack = new OutputFormatterStyleStack();
+        $stack->push(new OutputFormatterStyle('white', 'black'));
+        $stack->pop(new OutputFormatterStyle('yellow', 'blue'));
+    }
+}

@@ -1,53 +1,106 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OR/1SDiWe8m7HNW=
+<?php
+/**
+ * Smarty Internal Plugin Compile Include PHP
+ *
+ * Compiles the {include_php} tag
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Insert Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Include_Php extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $required_attributes = array('file');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $shorttag_order = array('file');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('once', 'assign');
+
+    /**
+     * Compiles code for the {include_php} tag
+     *
+     * @param  array  $args     array with attributes from parser
+     * @param  object $compiler compiler object
+     * @return string compiled code
+     */
+    public function compile($args, $compiler)
+    {
+        if (!($compiler->smarty instanceof SmartyBC)) {
+            throw new SmartyException("{include_php} is deprecated, use SmartyBC class to enable");
+        }
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        $_output = '<?php ';
+
+        $_smarty_tpl = $compiler->template;
+        $_filepath = false;
+        eval('$_file = ' . $_attr['file'] . ';');
+        if (!isset($compiler->smarty->security_policy) && file_exists($_file)) {
+            $_filepath = $_file;
+        } else {
+            if (isset($compiler->smarty->security_policy)) {
+                $_dir = $compiler->smarty->security_policy->trusted_dir;
+            } else {
+                $_dir = $compiler->smarty->trusted_dir;
+            }
+            if (!empty($_dir)) {
+                foreach ((array) $_dir as $_script_dir) {
+                    $_script_dir = rtrim($_script_dir, '/\\') . DS;
+                    if (file_exists($_script_dir . $_file)) {
+                        $_filepath = $_script_dir .  $_file;
+                        break;
+                    }
+                }
+            }
+        }
+        if ($_filepath == false) {
+            $compiler->trigger_template_error("{include_php} file '{$_file}' is not readable", $compiler->lex->taglineno);
+        }
+
+        if (isset($compiler->smarty->security_policy)) {
+            $compiler->smarty->security_policy->isTrustedPHPDir($_filepath);
+        }
+
+        if (isset($_attr['assign'])) {
+            // output will be stored in a smarty variable instead of being displayed
+            $_assign = $_attr['assign'];
+        }
+        $_once = '_once';
+        if (isset($_attr['once'])) {
+            if ($_attr['once'] == 'false') {
+                $_once = '';
+            }
+        }
+
+        if (isset($_assign)) {
+            return "<?php ob_start(); include{$_once} ('{$_filepath}'); \$_smarty_tpl->assign({$_assign},ob_get_contents()); ob_end_clean();?>";
+        } else {
+            return "<?php include{$_once} ('{$_filepath}');?>\n";
+        }
+    }
+
+}

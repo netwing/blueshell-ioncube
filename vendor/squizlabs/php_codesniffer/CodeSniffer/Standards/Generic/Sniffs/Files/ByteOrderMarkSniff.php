@@ -1,43 +1,93 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Files_ByteOrderMarkSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_Files_ByteOrderMarkSniff.
+ *
+ * A simple sniff for detecting BOMs that may corrupt application work.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Piotr Karas <office@mediaself.pl>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2010-2011 mediaSELF Sp. z o.o.
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ * @see       http://en.wikipedia.org/wiki/Byte_order_mark
+ */
+class Generic_Sniffs_Files_ByteOrderMarkSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * List of supported BOM definitions.
+     *
+     * Use encoding names as keys and hex BOM representations as values.
+     *
+     * @var array
+     */
+    public $bomDefinitions = array(
+                              'UTF-8'       => 'efbbbf',
+                              'UTF-16 (BE)' => 'feff',
+                              'UTF-16 (LE)' => 'fffe',
+                             );
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_INLINE_HTML);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process( PHP_CodeSniffer_File $phpcsFile, $stackPtr )
+    {
+        // The BOM will be the very first token in the file.
+        if ($stackPtr !== 0) {
+            return;
+        }
+
+        $tokens = $phpcsFile->getTokens();
+
+        foreach ($this->bomDefinitions as $bomName => $expectedBomHex) {
+            $bomByteLength = (strlen($expectedBomHex) / 2);
+            $htmlBomHex    = bin2hex(substr($tokens[$stackPtr]['content'], 0, $bomByteLength));
+            if ($htmlBomHex === $expectedBomHex) {
+                $errorData = array($bomName);
+                $error     = 'File contains %s byte order mark, which may corrupt your application';
+                $phpcsFile->addError($error, $stackPtr, 'Found', $errorData);
+                break;
+            }
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

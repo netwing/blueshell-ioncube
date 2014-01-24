@@ -1,30 +1,72 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CMssqlPdo class file
+ *
+ * @author Christophe Boulain <Christophe.Boulain@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * This is an extension of default PDO class for mssql driver only
+ * It provides some missing functionalities of pdo driver
+ * @author Christophe Boulain <Christophe.Boulain@gmail.com>
+ * @package system.db.schema.mssql
+ */
+class CMssqlPdoAdapter extends PDO
+{
+	/**
+	 * Get the last inserted id value
+	 * MSSQL doesn't support sequence, so, argument is ignored
+	 *
+	 * @param string|null sequence name. Defaults to null
+	 * @return integer last inserted id
+	 */
+	public function lastInsertId ($sequence=NULL)
+	{
+		return $this->query('SELECT CAST(COALESCE(SCOPE_IDENTITY(), @@IDENTITY) AS bigint)')->fetchColumn();
+	}
+
+	/**
+	 * Begin a transaction
+	 *
+	 * Is is necessary to override pdo's method, as mssql pdo drivers
+	 * does not support transaction
+	 *
+	 * @return boolean
+	 */
+	public function beginTransaction ()
+	{
+		$this->exec('BEGIN TRANSACTION');
+		return true;
+	}
+
+	/**
+	 * Commit a transaction
+	 *
+	 * Is is necessary to override pdo's method, as mssql pdo drivers
+	 * does not support transaction
+	 *
+	 * @return boolean
+	 */
+	public function commit ()
+	{
+		$this->exec('COMMIT TRANSACTION');
+		return true;
+	}
+
+	/**
+	 * Rollback a transaction
+	 *
+	 * Is is necessary to override pdo's method, ac mssql pdo drivers
+	 * does not support transaction
+	 *
+	 * @return boolean
+	 */
+	public function rollBack ()
+	{
+		$this->exec('ROLLBACK TRANSACTION');
+		return true;
+	}
+}

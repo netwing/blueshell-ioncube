@@ -1,35 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPp/dsew6JJ+XIr1FhUBgzAcJDbNBaBy09lSGwsVQz+aCe1lAz3gl88h0kzfQ0Hrwc9mmXjtC
-hmegp+N/CIYKzrZ/26boHsxj81ijaf7pkQ80IN4XYrNdMQ7Ef/wObjlME7Vqt6ZJBa96uR6Ps2kn
-H0M2eVZ0CMGeTIZ2DUA3clSfSZJYvT56fa3kVLUXiFlJ+MiC9OhVhPZQ6dG01lhit6mOcSr2XbkM
-txDo7vNbV8r2ThBnXEYEjVUlKIZXE/TmggoQRmH0t6bqn6l62bXjkDrw1eWIsE5+lnh/uzjiwEp6
-RvwCU0fXpieGGBcXV9zHPjf6CimEh11swDQ9KYYaMeLUPJHIk1UX4eSPaou2MuTKCEj3qW0Wl5ZI
-jC1RZ2R8cFe+UxyrDah2c8duvLAolm2vonAjuacoLQBNu6dD/H/Ta/N8duRXdk+XC/1R8JdrpPAG
-Crnhav7xDrgYEz1j4J3iYrQCX0rd0pOkixBsTvpuyd9wB3wm0bXUKHiatKNY4xBCNkK5fjztYrxT
-PyQBgxCZuEAPMk8+qO+jZMPrldVePJYUitBAwMcyUfuCNRDd2xBkBXwWo+yX2UsAIuIkGrVhEayA
-Ow1HSxLu6ILOBnq3AL8seitDUn8C7iCDJqzXedEL2Earr9crwLYhfle3s3cuPcGVhcOTimNxdcde
-t9K6U5TtDXSLEEBUv/WsQHiVVSNOoUO800cn6PXGD1ib0bfn5WA+IFcrt1HNEuSBKW5bDBmZQMRA
-1nN7jqo4lj11gfwHoDlKgExKjxOxhqnhKj8dzhYLjdre1fWnwm0TId08kb5VLu5PTIgNIest59+e
-limv1hqvTcYAjuqhSaSMHD4AXkUJ5nj9YE9RS1lwgG1u8SO8ySiTGqGJxl3jDJwU6cSunx8I1YQl
-IinE/iD6FpS3tdFAq/OeFKiXy47D6q7twYmtQ7SqfFQhPwsRdRF2gwaWsr3ldA9oKkE7NK82+YTp
-3oEf5d9MVuJxJPQN0q4/3fDnO+ztt0dBZxYSZcaFp74YhI2xStm+NFIgcyFUrQtIYLFQTAhafbvw
-cQV4nvURwAysYPwYBM/3lmmqPlrMRhEfxBgrvshQygSNQbWlQjFjHHO4r/AGTFGBGnkArewJyDFs
-PQmIbicHToO8DXEu/rTjO6ohfbpyBl3IgBFS3kHi6UoWmTuewv4ZkAI0wxaLjHgYCxn+945HqUZa
-+oaWzw9B9Sr/SDCIghDUnnEVUQE3+vHucTxEjWlMZQPmBchoQrVacc1ircsIfFjhgrDvZkyocAb8
-932z+ZiQYnIWGoMviLVujPz5RemRY1RHpMKC4w6hDf4s8R1K9o1EnOFNWsqTUzT40laNq7C1xy4O
-rgiY3zO1XsX5qmgTmMNB3+K9m6FyFgBa6oqk2YqwgZtzO6zPlioA6NQvK/B+shP3zb0hRN0A5bU5
-/5sqzm7x68Mn6/8uy62RhWZHVRhUiAppM0eRWrW+3xW3MY+X/Utp94yPCjOMj5XebjZvPfGf1aPc
-Oq1DxmOAgRT+A7Pmsmuwz7FRpq6wdLXDOwzgNP7Tum6olnE4HsBhZO4+Pa9IpKezY6C3MKhMdU5T
-hpU0w+M4NHFMLz+kJGOC7+UImuN6eeoqFPTNL36lquQigysfUtZdeoMYmhYL5AivjAJ1Ltc6BLmA
-M/mPdPEAhtfIFL4/W70zNcFV7i47Um0IfFaT4wSageB7qSl9bttybn/XWdB5zc6ROMMubJ3kvF11
-WsqdugKEy6TSBbCar00q7A4aaHDEZBUTJZdMS89j6ZCu7zwir9lzLbS1tF7Bwu472es4oQiVqfzf
-h46ytTfYSEyx2DCGOkTvDDiSMa7hm5yuqkBzUXmbdz+JAnSRApKubnCMyf7WISYS0CNwP5ic9rCC
-hq26mgcJBaTs2JR8D3RslaaUmpUCXLEAFKk4qD+YGVQ8jjNF1szWb+Y3mdc/Ko+UZYu3Ce7NilTX
-Vvnd+UP0SUz/jEGtbxoY2esY/OsxoUIX3OAZ7G1ZKedaB8/VzDeNDnBnEddlIV/br4iH8v/jUDfy
-dKeA7i5biBwVKxJIIn51ELJL0o0/u8g12mzejCKmH6/elk9HCKXypvs0H9wuipSjHKJlgV4oDWS/
-pH4XVgsngitdH6fCeSEsGJ3BOqNFPeL55TzUGodVe5SEY+dF8TnjPFGG4o1MBZFx/SpYlwokB4vE
-hzsCIagHgWgwOkcb9DlcQMDqDjQpjbUZKoLTVXSXG23CqKmZ53JB9J4RA1Gp+C4uX7LnkQ0O7/dS
-/0s8CV9++x2gBJsgOylb5OqLlR7w0RWDFmAhYdpT6gtPu9X0yevbk9DiQmVWarenRdnWN4lCkjdO
-0EngrnuVhVY8BVwwAHqwY/HX7AAHEmRMyRaGHGj5sAoPppXtpnzOprV7Mo39YHgjQ1A52m==
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog;
+
+use Monolog\Handler\TestHandler;
+use Monolog\Formatter\LineFormatter;
+use Monolog\Processor\PsrLogMessageProcessor;
+use Psr\Log\Test\LoggerInterfaceTest;
+
+class PsrLogCompatTest extends LoggerInterfaceTest
+{
+    private $handler;
+
+    public function getLogger()
+    {
+        $logger = new Logger('foo');
+        $logger->pushHandler($handler = new TestHandler);
+        $logger->pushProcessor(new PsrLogMessageProcessor);
+        $handler->setFormatter(new LineFormatter('%level_name% %message%'));
+
+        $this->handler = $handler;
+
+        return $logger;
+    }
+
+    public function getLogs()
+    {
+        $convert = function ($record) {
+            $lower = function ($match) {
+                return strtolower($match[0]);
+            };
+
+            return preg_replace_callback('{^[A-Z]+}', $lower, $record['formatted']);
+        };
+
+        return array_map($convert, $this->handler->getRecords());
+    }
+}

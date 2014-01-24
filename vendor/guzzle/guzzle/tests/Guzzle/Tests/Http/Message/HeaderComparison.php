@@ -1,75 +1,135 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OJvDrucfG/ExUySfPdhi/ALvSYn8
+<?php
+
+namespace Guzzle\Tests\Http\Message;
+
+use Guzzle\Common\Collection;
+use Guzzle\Http\Message\Header\HeaderCollection;
+
+/**
+ * Class used to compare HTTP headers using a custom DSL
+ */
+class HeaderComparison
+{
+    /**
+     * Compare HTTP headers and use special markup to filter values
+     * A header prefixed with '!' means it must not exist
+     * A header prefixed with '_' means it must be ignored
+     * A header value of '*' means anything after the * will be ignored
+     *
+     * @param array $filteredHeaders Array of special headers
+     * @param array $actualHeaders   Array of headers to check against
+     *
+     * @return array|bool Returns an array of the differences or FALSE if none
+     */
+    public function compare($filteredHeaders, $actualHeaders)
+    {
+        $expected = array();
+        $ignore = array();
+        $absent = array();
+
+        if ($actualHeaders instanceof HeaderCollection) {
+            $actualHeaders = $actualHeaders->toArray();
+        }
+
+        foreach ($filteredHeaders as $k => $v) {
+            if ($k[0] == '_') {
+                // This header should be ignored
+                $ignore[] = str_replace('_', '', $k);
+            } elseif ($k[0] == '!') {
+                // This header must not be present
+                $absent[] = str_replace('!', '', $k);
+            } else {
+                $expected[$k] = $v;
+            }
+        }
+
+        return $this->compareArray($expected, $actualHeaders, $ignore, $absent);
+    }
+
+    /**
+     * Check if an array of HTTP headers matches another array of HTTP headers while taking * into account as a wildcard
+     *
+     * @param array            $expected Expected HTTP headers (allows wildcard values)
+     * @param array|Collection $actual   Actual HTTP header array
+     * @param array            $ignore   Headers to ignore from the comparison
+     * @param array            $absent   Array of headers that must not be present
+     *
+     * @return array|bool Returns an array of the differences or FALSE if none
+     */
+    public function compareArray(array $expected, $actual, array $ignore = array(), array $absent = array())
+    {
+        $differences = array();
+
+        // Add information about headers that were present but weren't supposed to be
+        foreach ($absent as $header) {
+            if ($this->hasKey($header, $actual)) {
+                $differences["++ {$header}"] = $actual[$header];
+                unset($actual[$header]);
+            }
+        }
+
+        // Check if expected headers are missing
+        foreach ($expected as $header => $value) {
+            if (!$this->hasKey($header, $actual)) {
+                $differences["- {$header}"] = $value;
+            }
+        }
+
+        // Flip the ignore array so it works with the case insensitive helper
+        $ignore = array_flip($ignore);
+        // Allow case-insensitive comparisons in wildcards
+        $expected = array_change_key_case($expected);
+
+        // Compare the expected and actual HTTP headers in no particular order
+        foreach ($actual as $key => $value) {
+
+            // If this is to be ignored, the skip it
+            if ($this->hasKey($key, $ignore)) {
+                continue;
+            }
+
+            // If the header was not expected
+            if (!$this->hasKey($key, $expected)) {
+                $differences["+ {$key}"] = $value;
+                continue;
+            }
+
+            // Check values and take wildcards into account
+            $lkey = strtolower($key);
+            $pos = is_string($expected[$lkey]) ? strpos($expected[$lkey], '*') : false;
+
+            foreach ((array) $actual[$key] as $v) {
+                if (($pos === false && $v != $expected[$lkey]) || $pos > 0 && substr($v, 0, $pos) != substr($expected[$lkey], 0, $pos)) {
+                    $differences[$key] = "{$value} != {$expected[$lkey]}";
+                }
+            }
+        }
+
+        return empty($differences) ? false : $differences;
+    }
+
+    /**
+     * Case insensitive check if an array have a key
+     *
+     * @param string $key   Key to check
+     * @param array  $array Array to check
+     *
+     * @return bool
+     */
+    protected function hasKey($key, $array)
+    {
+        if ($array instanceof Collection) {
+            $keys = $array->getKeys();
+        } else {
+            $keys = array_keys($array);
+        }
+
+        foreach ($keys as $k) {
+            if (!strcasecmp($k, $key)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}

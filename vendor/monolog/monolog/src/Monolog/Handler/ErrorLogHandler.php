@@ -1,40 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-aKhObBfrc8vuxtsh4KgaDzcrVQIt5W==
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+
+/**
+ * Stores to PHP error_log() handler.
+ *
+ * @author Elan Ruusamäe <glen@delfi.ee>
+ */
+class ErrorLogHandler extends AbstractProcessingHandler
+{
+    const OPERATING_SYSTEM = 0;
+    const SAPI = 4;
+
+    protected $messageType;
+
+    /**
+     * @param integer $messageType Says where the error should go.
+     * @param integer $level       The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble      Whether the messages that are handled can bubble up the stack or not
+     */
+    public function __construct($messageType = self::OPERATING_SYSTEM, $level = Logger::DEBUG, $bubble = true)
+    {
+        parent::__construct($level, $bubble);
+
+        if (false === in_array($messageType, self::getAvailableTypes())) {
+            $message = sprintf('The given message type "%s" is not supported', print_r($messageType, true));
+            throw new \InvalidArgumentException($message);
+        }
+
+        $this->messageType = $messageType;
+    }
+
+    /**
+     * @return array With all available types
+     */
+    public static function getAvailableTypes()
+    {
+        return array(
+            self::OPERATING_SYSTEM,
+            self::SAPI,
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function write(array $record)
+    {
+        error_log((string) $record['formatted'], $this->messageType);
+    }
+}

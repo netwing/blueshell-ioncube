@@ -1,39 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-cIgWqJav6BiXo1wsfx+cXOIP
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Mailer/ArrayRecipientIterator.php';
+
+class Swift_Mailer_ArrayRecipientIteratorTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testHasNextReturnsFalseForEmptyArray()
+    {
+        $it = new Swift_Mailer_ArrayRecipientIterator(array());
+        $this->assertFalse($it->hasNext());
+    }
+
+    public function testHasNextReturnsTrueIfItemsLeft()
+    {
+        $it = new Swift_Mailer_ArrayRecipientIterator(array('foo@bar' => 'Foo'));
+        $this->assertTrue($it->hasNext());
+    }
+
+    public function testReadingToEndOfListCausesHasNextToReturnFalse()
+    {
+        $it = new Swift_Mailer_ArrayRecipientIterator(array('foo@bar' => 'Foo'));
+        $this->assertTrue($it->hasNext());
+        $it->nextRecipient();
+        $this->assertFalse($it->hasNext());
+    }
+
+    public function testReturnedValueHasPreservedKeyValuePair()
+    {
+        $it = new Swift_Mailer_ArrayRecipientIterator(array('foo@bar' => 'Foo'));
+        $this->assertEqual(array('foo@bar' => 'Foo'), $it->nextRecipient());
+    }
+
+    public function testIteratorMovesNextAfterEachIteration()
+    {
+        $it = new Swift_Mailer_ArrayRecipientIterator(array(
+            'foo@bar' => 'Foo',
+            'zip@button' => 'Zip thing',
+            'test@test' => null
+            ));
+        $this->assertEqual(array('foo@bar' => 'Foo'), $it->nextRecipient());
+        $this->assertEqual(array('zip@button' => 'Zip thing'), $it->nextRecipient());
+        $this->assertEqual(array('test@test' => null), $it->nextRecipient());
+    }
+}

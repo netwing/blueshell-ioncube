@@ -1,109 +1,503 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * The Tokens class contains weightings for tokens based on their
+ * probability of occurrence in a file.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+define('T_NONE', 0);
+define('T_OPEN_CURLY_BRACKET', 1000);
+define('T_CLOSE_CURLY_BRACKET', 1001);
+define('T_OPEN_SQUARE_BRACKET', 1002);
+define('T_CLOSE_SQUARE_BRACKET', 1003);
+define('T_OPEN_PARENTHESIS', 1004);
+define('T_CLOSE_PARENTHESIS', 1005);
+define('T_COLON', 1006);
+define('T_STRING_CONCAT', 1007);
+define('T_INLINE_THEN', 1008);
+define('T_INLINE_ELSE', 1009);
+define('T_NULL', 1010);
+define('T_FALSE', 1011);
+define('T_TRUE', 1012);
+define('T_SEMICOLON', 1013);
+define('T_EQUAL', 1014);
+define('T_MULTIPLY', 1015);
+define('T_DIVIDE', 1016);
+define('T_PLUS', 1017);
+define('T_MINUS', 1018);
+define('T_MODULUS', 1019);
+define('T_POWER', 1020);
+define('T_BITWISE_AND', 1021);
+define('T_BITWISE_OR', 1022);
+define('T_ARRAY_HINT', 1023);
+define('T_GREATER_THAN', 1024);
+define('T_LESS_THAN', 1025);
+define('T_BOOLEAN_NOT', 1026);
+define('T_SELF', 1027);
+define('T_PARENT', 1028);
+define('T_DOUBLE_QUOTED_STRING', 1029);
+define('T_COMMA', 1030);
+define('T_HEREDOC', 1031);
+define('T_PROTOTYPE', 1032);
+define('T_THIS', 1033);
+define('T_REGULAR_EXPRESSION', 1034);
+define('T_PROPERTY', 1035);
+define('T_LABEL', 1036);
+define('T_OBJECT', 1037);
+define('T_COLOUR', 1038);
+define('T_HASH', 1039);
+define('T_URL', 1040);
+define('T_STYLE', 1041);
+define('T_ASPERAND', 1042);
+define('T_DOLLAR', 1043);
+define('T_TYPEOF', 1044);
+define('T_CLOSURE', 1045);
+define('T_BACKTICK', 1046);
+define('T_START_NOWDOC', 1047);
+define('T_NOWDOC', 1048);
+define('T_END_NOWDOC', 1049);
+define('T_OPEN_SHORT_ARRAY', 1050);
+define('T_CLOSE_SHORT_ARRAY', 1051);
+define('T_GOTO_LABEL', 1052);
+
+// Some PHP 5.3 tokens, replicated for lower versions.
+if (defined('T_NAMESPACE') === false) {
+    define('T_NAMESPACE', 1053);
+}
+
+if (defined('T_NS_SEPARATOR') === false) {
+    define('T_NS_SEPARATOR', 1054);
+}
+
+if (defined('T_GOTO') === false) {
+    define('T_GOTO', 1055);
+}
+
+// Some PHP 5.4 tokens, replicated for lower versions.
+if (defined('T_TRAIT') === false) {
+    define('T_TRAIT', 1056);
+}
+
+if (defined('T_INSTEADOF') === false) {
+    define('T_INSTEADOF', 1057);
+}
+
+if (defined('T_CALLABLE') === false) {
+    define('T_CALLABLE', 1058);
+}
+
+// Some PHP 5.5 tokens, replicated for lower versions.
+if (defined('T_FINALLY') === false) {
+    define('T_FINALLY', 1059);
+}
+
+/**
+ * The Tokens class contains weightings for tokens based on their
+ * probability of occurrence in a file.
+ *
+ * The less the chance of a high occurrence of an arbitrary token, the higher
+ * the weighting.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+final class PHP_CodeSniffer_Tokens
+{
+
+    /**
+     * The token weightings.
+     *
+     * @var array(int => int)
+     */
+    public static $weightings = array(
+                                 T_CLASS               => 1000,
+                                 T_INTERFACE           => 1000,
+                                 T_TRAIT               => 1000,
+                                 T_NAMESPACE           => 1000,
+                                 T_FUNCTION            => 100,
+                                 T_CLOSURE             => 100,
+
+                                 /*
+                                     Conditions.
+                                 */
+
+                                 T_WHILE               => 50,
+                                 T_FOR                 => 50,
+                                 T_FOREACH             => 50,
+                                 T_IF                  => 50,
+                                 T_ELSE                => 50,
+                                 T_ELSEIF              => 50,
+                                 T_WHILE               => 50,
+                                 T_DO                  => 50,
+                                 T_TRY                 => 50,
+                                 T_CATCH               => 50,
+                                 T_SWITCH              => 50,
+
+                                 T_SELF                => 25,
+                                 T_PARENT              => 25,
+
+                                 /*
+                                     Operators and arithmetic.
+                                 */
+
+                                 T_BITWISE_AND         => 8,
+                                 T_BITWISE_OR          => 8,
+
+                                 T_MULTIPLY            => 5,
+                                 T_DIVIDE              => 5,
+                                 T_PLUS                => 5,
+                                 T_MINUS               => 5,
+                                 T_MODULUS             => 5,
+                                 T_POWER               => 5,
+
+                                 T_EQUAL               => 5,
+                                 T_AND_EQUAL           => 5,
+                                 T_CONCAT_EQUAL        => 5,
+                                 T_DIV_EQUAL           => 5,
+                                 T_MINUS_EQUAL         => 5,
+                                 T_MOD_EQUAL           => 5,
+                                 T_MUL_EQUAL           => 5,
+                                 T_OR_EQUAL            => 5,
+                                 T_PLUS_EQUAL          => 5,
+                                 T_XOR_EQUAL           => 5,
+
+                                 T_BOOLEAN_AND         => 5,
+                                 T_BOOLEAN_OR          => 5,
+
+                                 /*
+                                     Equality.
+                                 */
+
+                                 T_IS_EQUAL            => 5,
+                                 T_IS_NOT_EQUAL        => 5,
+                                 T_IS_IDENTICAL        => 5,
+                                 T_IS_NOT_IDENTICAL    => 5,
+                                 T_IS_SMALLER_OR_EQUAL => 5,
+                                 T_IS_GREATER_OR_EQUAL => 5,
+                                );
+
+    /**
+     * Tokens that represent assignments.
+     *
+     * @var array(int)
+     */
+    public static $assignmentTokens = array(
+                                       T_EQUAL,
+                                       T_AND_EQUAL,
+                                       T_CONCAT_EQUAL,
+                                       T_DIV_EQUAL,
+                                       T_MINUS_EQUAL,
+                                       T_MOD_EQUAL,
+                                       T_MUL_EQUAL,
+                                       T_PLUS_EQUAL,
+                                       T_XOR_EQUAL,
+                                       T_DOUBLE_ARROW,
+                                      );
+
+    /**
+     * Tokens that represent equality comparisons.
+     *
+     * @var array(int)
+     */
+    public static $equalityTokens = array(
+                                     T_IS_EQUAL,
+                                     T_IS_NOT_EQUAL,
+                                     T_IS_IDENTICAL,
+                                     T_IS_NOT_IDENTICAL,
+                                     T_IS_SMALLER_OR_EQUAL,
+                                     T_IS_GREATER_OR_EQUAL,
+                                    );
+
+    /**
+     * Tokens that represent comparison operator.
+     *
+     * @var array(int)
+     */
+    public static $comparisonTokens = array(
+                                       T_IS_EQUAL,
+                                       T_IS_IDENTICAL,
+                                       T_IS_NOT_EQUAL,
+                                       T_IS_NOT_IDENTICAL,
+                                       T_LESS_THAN,
+                                       T_GREATER_THAN,
+                                       T_IS_SMALLER_OR_EQUAL,
+                                       T_IS_GREATER_OR_EQUAL,
+                                      );
+
+    /**
+     * Tokens that represent arithmetic operators.
+     *
+     * @var array(int)
+     */
+    public static $arithmeticTokens = array(
+                                       T_PLUS,
+                                       T_MINUS,
+                                       T_MULTIPLY,
+                                       T_DIVIDE,
+                                       T_MODULUS,
+                                      );
+
+    /**
+     * Tokens that represent casting.
+     *
+     * @var array(int)
+     */
+    public static $castTokens = array(
+                                 T_INT_CAST,
+                                 T_STRING_CAST,
+                                 T_DOUBLE_CAST,
+                                 T_ARRAY_CAST,
+                                 T_BOOL_CAST,
+                                 T_OBJECT_CAST,
+                                 T_UNSET_CAST,
+                                );
+
+    /**
+     * Token types that open parenthesis.
+     *
+     * @var array(int)
+     */
+    public static $parenthesisOpeners = array(
+                                         T_ARRAY,
+                                         T_FUNCTION,
+                                         T_CLOSURE,
+                                         T_WHILE,
+                                         T_FOR,
+                                         T_FOREACH,
+                                         T_SWITCH,
+                                         T_IF,
+                                         T_ELSEIF,
+                                         T_CATCH,
+                                        );
+
+    /**
+     * Tokens that are allowed to open scopes.
+     *
+     * @var array(int)
+     */
+    public static $scopeOpeners = array(
+                                   T_CLASS,
+                                   T_INTERFACE,
+                                   T_TRAIT,
+                                   T_NAMESPACE,
+                                   T_FUNCTION,
+                                   T_CLOSURE,
+                                   T_IF,
+                                   T_SWITCH,
+                                   T_CASE,
+                                   T_DEFAULT,
+                                   T_WHILE,
+                                   T_ELSE,
+                                   T_ELSEIF,
+                                   T_FOR,
+                                   T_FOREACH,
+                                   T_DO,
+                                   T_TRY,
+                                   T_CATCH,
+                                  );
+
+    /**
+     * Tokens that represent scope modifiers.
+     *
+     * @var array(int)
+     */
+    public static $scopeModifiers = array(
+                                     T_PRIVATE,
+                                     T_PUBLIC,
+                                     T_PROTECTED,
+                                    );
+
+    /**
+     * Tokens that can prefix a method name
+     *
+     * @var array(int)
+     */
+    public static $methodPrefixes = array(
+                                     T_PRIVATE,
+                                     T_PUBLIC,
+                                     T_PROTECTED,
+                                     T_ABSTRACT,
+                                     T_STATIC,
+                                     T_FINAL,
+                                    );
+
+    /**
+     * Tokens that perform operations.
+     *
+     * @var array(int)
+     */
+    public static $operators = array(
+                                T_MINUS,
+                                T_PLUS,
+                                T_MULTIPLY,
+                                T_DIVIDE,
+                                T_MODULUS,
+                                T_POWER,
+                                T_BITWISE_AND,
+                                T_BITWISE_OR,
+                               );
+
+    /**
+     * Tokens that perform boolean operations.
+     *
+     * @var array(int)
+     */
+    public static $booleanOperators = array(
+                                       T_BOOLEAN_AND,
+                                       T_BOOLEAN_OR,
+                                       T_LOGICAL_AND,
+                                       T_LOGICAL_OR,
+                                       T_LOGICAL_XOR,
+                                      );
+
+    /**
+     * Tokens that open code blocks.
+     *
+     * @var array(int)
+     */
+    public static $blockOpeners = array(
+                                   T_OPEN_CURLY_BRACKET,
+                                   T_OPEN_SQUARE_BRACKET,
+                                   T_OPEN_PARENTHESIS,
+                                  );
+
+    /**
+     * Tokens that don't represent code.
+     *
+     * @var array(int)
+     */
+    public static $emptyTokens = array(
+                                  T_WHITESPACE,
+                                  T_COMMENT,
+                                  T_DOC_COMMENT,
+                                 );
+
+    /**
+     * Tokens that are comments.
+     *
+     * @var array(int)
+     */
+    public static $commentTokens = array(
+                                    T_COMMENT,
+                                    T_DOC_COMMENT,
+                                   );
+
+    /**
+     * Tokens that represent strings.
+     *
+     * Note that T_STRINGS are NOT represented in this list.
+     *
+     * @var array(int)
+     */
+    public static $stringTokens = array(
+                                   T_CONSTANT_ENCAPSED_STRING,
+                                   T_DOUBLE_QUOTED_STRING,
+                                  );
+
+    /**
+     * Tokens that represent brackets and parenthesis.
+     *
+     * @var array(int)
+     */
+    public static $bracketTokens = array(
+                                    T_OPEN_CURLY_BRACKET,
+                                    T_CLOSE_CURLY_BRACKET,
+                                    T_OPEN_SQUARE_BRACKET,
+                                    T_CLOSE_SQUARE_BRACKET,
+                                    T_OPEN_PARENTHESIS,
+                                    T_CLOSE_PARENTHESIS,
+                                   );
+
+    /**
+     * Tokens that include files.
+     *
+     * @var array(int)
+     */
+    public static $includeTokens = array(
+                                    T_REQUIRE_ONCE,
+                                    T_REQUIRE,
+                                    T_INCLUDE_ONCE,
+                                    T_INCLUDE,
+                                   );
+
+    /**
+     * Tokens that make up a heredoc string.
+     *
+     * @var array(int)
+     */
+    public static $heredocTokens = array(
+                                    T_START_HEREDOC,
+                                    T_END_HEREDOC,
+                                    T_HEREDOC,
+                                   );
+
+
+    /**
+     * A PHP_CodeSniffer_Tokens class cannot be constructed.
+     *
+     * Only static calls are allowed.
+     */
+    private function __construct()
+    {
+
+    }//end __construct()
+
+
+    /**
+     * Returns the highest weighted token type.
+     *
+     * Tokens are weighted by their approximate frequency of appearance in code
+     * - the less frequently they appear in the code, the higher the weighting.
+     * For example T_CLASS tokens appear very infrequently in a file, and
+     * therefore have a high weighting.
+     *
+     * Returns false if there are no weightings for any of the specified tokens.
+     *
+     * @param array(int) $tokens The token types to get the highest weighted
+     *                           type for.
+     *
+     * @return int The highest weighted token.
+     */
+    public static function getHighestWeightedToken(array $tokens)
+    {
+        $highest     = -1;
+        $highestType = false;
+
+        $weights = self::$weightings;
+
+        foreach ($tokens as $token) {
+            if (isset($weights[$token]) === true) {
+                $weight = $weights[$token];
+            } else {
+                $weight = 0;
+            }
+
+            if ($weight > $highest) {
+                $highest     = $weight;
+                $highestType = $token;
+            }
+        }
+
+        return $highestType;
+
+    }//end getHighestWeightedToken()
+
+
+}//end class
+
 ?>
-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

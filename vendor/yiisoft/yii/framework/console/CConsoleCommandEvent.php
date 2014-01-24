@@ -1,29 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPrShfVlRyHtyjfqms4NOR1gdVku9GsCLeU1BUtvaLvioc2Rs2coDiynesR9urvTzNfVR4o+0
-+ZsydIgTuiYkwQk+77hjRj7mMJ0dGQWCZID8bSpGNCR3q8rY8DbvPKvStEH02LSwbc25mH5I8tNa
-4lpfrqp72ZcXbbsxcFiIeyo+u7z+vtNdXNqWgApk8+qATbcz711bSYgTPRdCO4A+oFeEFUggS0eE
-+iM4P86Du5v2UWeEAh9NFgzHAE4xzt2gh9fl143SQNIUPTINI0Ybtk0nPKlOiuiB0VzJPdi/KUwI
-C+uHG7Ezi4mXh8hXp4g9lmKDy9k5rOWRN2F+4jS7kMfSMowM/W5ciDfMaRKDNlHnCc5FrEbt+PQC
-JLocSoiHNWNmmVBJvBNavI0+jMqXWG00Zd2bMGxVTL1bRRacnWYSg2TbwJkmHoaMwwl34wqfzipt
-2hJ9aI2rRhHaWuUvLfNfIrr2jmQD5RJBleLPqJj3j42AKIdZ54jA2pYXuNhaerod4OPAJUbPTo+L
-FfuWJrun7EKu55vTYzhfDqlswiobjkHDOjrMLIaN/bL5HKff/ihqlgDnM5SFoTW5lpb8XQ53RDWx
-j5K7H6MjgTJ0tJ1eV84QP57ysva8/pf7VIe7Tn32fZui59QxMASVWqqpMPoU5omZOMYtIRAF5+zE
-3Ilo2mMe8XCq+rVLcGbgyNueAPK9SeXD2uWOmk0vxhCDd+oEgezodHZzqM0mAPWS4+x+/bEYf5IA
-nC63JmrNnTW87N3DC5bf6Q1wTWIET1yWOEShitmxCnwyZD5phcDazyUkG8poFtD4MSxvE9LvKfCX
-U55v1ATswJiYokgrpyBo3TbQI+xGjL/ZJaH2+wvQqS/a5iLzh1Xp8jtU2u8LSb75cUPPBxZ6vCVV
-HkbhQQgP05/h1YkBLs4iCz2vQzB0kJbYMajWZOdF3Uko5kRdTgAxbMA5qDJvahpKoZw4esOKHw2M
-3fjE27QRe2pCGLwJ+BZc34N/OfYFqwKD495XmhuJY/p0QkE3w+IRHzFYPDLz44jah8JXnXqtD8mZ
-SNHkb/NCcW8+vwkgdr0R/Edm41zkDbsabxj7h1Cgyfe5gYW6o3i80T+RaeHuK1FJoiNP04wRfgTN
-sLVG6HYL+pU8PIhHdjavUdUvLTMcePIHJ1yZwZjdK7L8wmrpjhmCD9VEGxBPBmmdEEhl9mqp7D4Y
-JhaxSYDJUX6YKShLKoFJBz/TxeXEgMrcyzITSmcgsOiMcbYujs5z5wQDpuxthGDh+YwwkSKG+pUn
-jjylrC+olrNGCeZXaTtogHRABHSQjiVRRNU4R6svr8Isj2bRsoHBrAT+7GLF7SMlPLcrh0eKQKCw
-wjH48xmlw2IS8L3l+o1WNoky4JhTSw70hK4IFdhHpdp2q21+zCZudxaNIyb81qss1leZRQROvyno
-Gls5jEv3fHERqyXps+sUyl8j3iQvfosJi5iBY1dEyetS6GFVVxgPTHjUnr+eQMJdkcQDanSaBNvF
-3qqzXLoozwvDAELCJhGYL4spNc6LAZi+Htdzykw4t9E1ZotoomHiBvcFa8TrkUyRSsV35h3/GtlK
-E5kmyt1tq+D0mPflwREWQIJtXbUaJvls1oHr2Tde84v/Bp9jh97Ql0ONbp1Wx9z24W98p+4qHCd6
-UNdS2sGalcn3jM+9gkyx60cyfL26UoGL4ZuqjwbSuLaKErmitw+mTeS/R2HnzI/cRY0ih3sbwZD+
-ZIcBn0T2DD9s6j6PRuNLeMJ57S2GZqDqDHJSUaWfxEZu+3DvS5x9EFqSxXqo7/QOMJc9uTaEDoAM
-kt+nZGqc1Y6hmWfEtvG3m1QWx9wdeo0nXo/N+XCNjtpnaFMY4KiRLSCJEnjEo/wVNyc0Zzl8yHmR
-1OefWIiEfH40AQRA4HpYFJv2Z3yeg0LLo1Ys0bcXXW==
+<?php
+/**
+ * CConsoleCommandEvent class file.
+ *
+ * @author Evgeny Blinov <e.a.blinov@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CConsoleCommandEvent class.
+ *
+ * CConsoleCommandEvent represents the event parameters needed by events raised by a console command.
+ *
+ * @author Evgeny Blinov <e.a.blinov@gmail.com>
+ * @package system.console
+ * @since 1.1.11
+ */
+class CConsoleCommandEvent extends CEvent
+{
+	/**
+	 * @var string the action name
+	 */
+	public $action;
+	/**
+	 * @var boolean whether the action should be executed.
+	 * If this property is set true by the event handler, the console command action will quit after handling this event.
+	 * If false, which is the default, the normal execution cycles will continue, including performing the action and calling
+	 * {@link CConsoleCommand::afterAction}.
+	 */
+	public $stopCommand=false;
+	/**
+	 * @var integer exit code of application.
+	 * This property is available in {@link CConsoleCommand::onAfterAction} event and will be set to the exit code
+	 * returned by the console command action. You can set it to change application exit code.
+	 */
+	public $exitCode;
+
+	/**
+	 * Constructor.
+	 * @param mixed $sender sender of the event
+	 * @param string $params the parameters to be passed to the action method.
+	 * @param string $action the action name
+	 * @param integer $exitCode the application exit code
+	 */
+	public function __construct($sender=null,$params=null,$action=null,$exitCode=0){
+		parent::__construct($sender,$params);
+		$this->action=$action;
+		$this->exitCode=$exitCode;
+	}
+}

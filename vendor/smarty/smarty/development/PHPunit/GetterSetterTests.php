@@ -1,43 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-lmtXDEjIOlDyBgVr5JtX
+<?php
+/**
+* Smarty PHPunit tests of generic getter/setter
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for generic getter/setter tests
+*/
+class GetterSetterTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test setter on Smarty object
+    */
+    public function testSmartySetter()
+    {
+        $this->smarty->setLeftDelimiter('<{');
+        $this->smarty->setRightDelimiter('}>');
+        $this->assertEquals('<{', $this->smarty->left_delimiter);
+        $this->assertEquals('}>', $this->smarty->right_delimiter);
+    }
+    /**
+    * test getter on Smarty object
+    */
+    public function testSmartyGetter()
+    {
+        $this->smarty->setLeftDelimiter('<{');
+        $this->smarty->setRightDelimiter('}>');
+        $this->assertEquals('<{', $this->smarty->getLeftDelimiter());
+        $this->assertEquals('}>', $this->smarty->getRightDelimiter());
+    }
+    /**
+    * test setter on Template object
+    */
+    public function testTemplateSetter()
+    {
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $tpl->setLeftDelimiter('<{');
+        $tpl->setRightDelimiter('}>');
+        $this->assertEquals('<{', $tpl->smarty->left_delimiter);
+        $this->assertEquals('}>', $tpl->smarty->right_delimiter);
+        $this->assertEquals('{', $this->smarty->left_delimiter);
+        $this->assertEquals('}', $this->smarty->right_delimiter);
+    }
+    /**
+    * test getter on Template object
+    */
+    public function testTemplateGetter()
+    {
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $tpl->setLeftDelimiter('<{');
+        $tpl->setRightDelimiter('}>');
+        $this->assertEquals('<{', $tpl->getLeftDelimiter());
+        $this->assertEquals('}>', $tpl->getRightDelimiter());
+    }
+}

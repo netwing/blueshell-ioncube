@@ -1,124 +1,185 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-h0VM7Je=
+<?php
+
+namespace Guzzle\Tests\Service\Resource;
+
+use Guzzle\Service\Resource\ResourceIterator;
+use Guzzle\Tests\Service\Mock\Model\MockCommandIterator;
+
+/**
+ * @group server
+ * @covers Guzzle\Service\Resource\ResourceIterator
+ */
+class ResourceIteratorTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testDescribesEvents()
+    {
+        $this->assertInternalType('array', ResourceIterator::getAllEvents());
+    }
+
+    public function testConstructorConfiguresDefaults()
+    {
+        $ri = $this->getMockForAbstractClass('Guzzle\\Service\\Resource\\ResourceIterator', array(
+            $this->getServiceBuilder()->get('mock')->getCommand('iterable_command'),
+            array(
+                'limit' => 10,
+                'page_size' => 3
+            )
+        ), 'MockIterator');
+
+        $this->assertEquals(false, $ri->getNextToken());
+        $this->assertEquals(false, $ri->current());
+    }
+
+    public function testSendsRequestsForNextSetOfResources()
+    {
+        // Queue up an array of responses for iterating
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"g\", \"resources\": [\"d\", \"e\", \"f\"] }",
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"j\", \"resources\": [\"g\", \"h\", \"i\"] }",
+            "HTTP/1.1 200 OK\r\nContent-Length: 41\r\n\r\n{ \"next_token\": \"\", \"resources\": [\"j\"] }"
+        ));
+
+        // Create a new resource iterator using the IterableCommand mock
+        $ri = new MockCommandIterator($this->getServiceBuilder()->get('mock')->getCommand('iterable_command'), array(
+            'page_size' => 3
+        ));
+
+        // Ensure that no requests have been sent yet
+        $this->assertEquals(0, count($this->getServer()->getReceivedRequests(false)));
+
+        //$this->assertEquals(array('d', 'e', 'f', 'g', 'h', 'i', 'j'), $ri->toArray());
+        $ri->toArray();
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals(3, count($requests));
+
+        $this->assertEquals(3, $requests[0]->getQuery()->get('page_size'));
+        $this->assertEquals(3, $requests[1]->getQuery()->get('page_size'));
+        $this->assertEquals(3, $requests[2]->getQuery()->get('page_size'));
+
+        // Reset and resend
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"g\", \"resources\": [\"d\", \"e\", \"f\"] }",
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"j\", \"resources\": [\"g\", \"h\", \"i\"] }",
+            "HTTP/1.1 200 OK\r\nContent-Length: 41\r\n\r\n{ \"next_token\": \"\", \"resources\": [\"j\"] }",
+        ));
+
+        $d = array();
+        reset($ri);
+        foreach ($ri as $data) {
+            $d[] = $data;
+        }
+        $this->assertEquals(array('d', 'e', 'f', 'g', 'h', 'i', 'j'), $d);
+    }
+
+    public function testCalculatesPageSize()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"g\", \"resources\": [\"d\", \"e\", \"f\"] }",
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"j\", \"resources\": [\"g\", \"h\", \"i\"] }",
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"j\", \"resources\": [\"j\", \"k\"] }"
+        ));
+
+        $ri = new MockCommandIterator($this->getServiceBuilder()->get('mock')->getCommand('iterable_command'), array(
+            'page_size' => 3,
+            'limit' => 7
+        ));
+
+        $this->assertEquals(array('d', 'e', 'f', 'g', 'h', 'i', 'j'), $ri->toArray());
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals(3, count($requests));
+        $this->assertEquals(3, $requests[0]->getQuery()->get('page_size'));
+        $this->assertEquals(3, $requests[1]->getQuery()->get('page_size'));
+        $this->assertEquals(1, $requests[2]->getQuery()->get('page_size'));
+    }
+
+    public function testUseAsArray()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"g\", \"resources\": [\"d\", \"e\", \"f\"] }",
+            "HTTP/1.1 200 OK\r\nContent-Length: 52\r\n\r\n{ \"next_token\": \"\", \"resources\": [\"g\", \"h\", \"i\"] }"
+        ));
+
+        $ri = new MockCommandIterator($this->getServiceBuilder()->get('mock')->getCommand('iterable_command'));
+
+        // Ensure that the key is never < 0
+        $this->assertEquals(0, $ri->key());
+        $this->assertEquals(0, count($ri));
+
+        // Ensure that the iterator can be used as KVP array
+        $data = array();
+        foreach ($ri as $key => $value) {
+            $data[$key] = $value;
+        }
+
+        // Ensure that the iterate is countable
+        $this->assertEquals(6, count($ri));
+        $this->assertEquals(array('d', 'e', 'f', 'g', 'h', 'i'), $data);
+    }
+
+    public function testBailsWhenSendReturnsNoResults()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\n\r\n{ \"next_token\": \"g\", \"resources\": [\"d\", \"e\", \"f\"] }",
+            "HTTP/1.1 200 OK\r\n\r\n{ \"next_token\": \"\", \"resources\": [] }"
+        ));
+
+        $ri = new MockCommandIterator($this->getServiceBuilder()->get('mock')->getCommand('iterable_command'));
+
+        // Ensure that the iterator can be used as KVP array
+        $data = $ri->toArray();
+
+        // Ensure that the iterate is countable
+        $this->assertEquals(3, count($ri));
+        $this->assertEquals(array('d', 'e', 'f'), $data);
+
+        $this->assertEquals(2, $ri->getRequestCount());
+    }
+
+    public function testHoldsDataOptions()
+    {
+        $ri = new MockCommandIterator($this->getServiceBuilder()->get('mock')->getCommand('iterable_command'));
+        $this->assertNull($ri->get('foo'));
+        $this->assertSame($ri, $ri->set('foo', 'bar'));
+        $this->assertEquals('bar', $ri->get('foo'));
+    }
+
+    public function testSettingLimitOrPageSizeClearsData()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\n\r\n{ \"next_token\": \"\", \"resources\": [\"d\", \"e\", \"f\"] }",
+            "HTTP/1.1 200 OK\r\n\r\n{ \"next_token\": \"\", \"resources\": [\"d\", \"e\", \"f\"] }",
+            "HTTP/1.1 200 OK\r\n\r\n{ \"next_token\": \"\", \"resources\": [\"d\", \"e\", \"f\"] }"
+        ));
+
+        $ri = new MockCommandIterator($this->getServiceBuilder()->get('mock')->getCommand('iterable_command'));
+        $ri->toArray();
+        $this->assertNotEmpty($this->readAttribute($ri, 'resources'));
+
+        $ri->setLimit(10);
+        $this->assertEmpty($this->readAttribute($ri, 'resources'));
+
+        $ri->toArray();
+        $this->assertNotEmpty($this->readAttribute($ri, 'resources'));
+        $ri->setPageSize(10);
+        $this->assertEmpty($this->readAttribute($ri, 'resources'));
+    }
+
+    public function testWorksWithCustomAppendIterator()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\n\r\n{ \"next_token\": \"\", \"resources\": [\"d\", \"e\", \"f\"] }"
+        ));
+        $ri = new MockCommandIterator($this->getServiceBuilder()->get('mock')->getCommand('iterable_command'));
+        $a = new \Guzzle\Iterator\AppendIterator();
+        $a->append($ri);
+        $results = iterator_to_array($a, false);
+        $this->assertEquals(4, $ri->calledNext);
+    }
+}

@@ -1,41 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Compile Break
+ *
+ * Compiles the {break} tag
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+/**
+ * Smarty Internal Plugin Compile Break Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Break extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('levels');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $shorttag_order = array('levels');
+
+    /**
+     * Compiles code for the {break} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        static $_is_loopy = array('for' => true, 'foreach' => true, 'while' => true, 'section' => true);
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        if ($_attr['nocache'] === true) {
+            $compiler->trigger_template_error('nocache option not allowed', $compiler->lex->taglineno);
+        }
+
+        if (isset($_attr['levels'])) {
+            if (!is_numeric($_attr['levels'])) {
+                $compiler->trigger_template_error('level attribute must be a numeric constant', $compiler->lex->taglineno);
+            }
+            $_levels = $_attr['levels'];
+        } else {
+            $_levels = 1;
+        }
+        $level_count = $_levels;
+        $stack_count = count($compiler->_tag_stack) - 1;
+        while ($level_count > 0 && $stack_count >= 0) {
+            if (isset($_is_loopy[$compiler->_tag_stack[$stack_count][0]])) {
+                $level_count--;
+            }
+            $stack_count--;
+        }
+        if ($level_count != 0) {
+            $compiler->trigger_template_error("cannot break {$_levels} level(s)", $compiler->lex->taglineno);
+        }
+
+        return "<?php break {$_levels}?>";
+    }
+
+}

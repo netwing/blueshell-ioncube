@@ -1,42 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-oL6Kkpl4bQG=
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Processor;
+
+/**
+ * Injects url/method and remote IP of the current web request in all records
+ *
+ * @author Jordi Boggiano <j.boggiano@seld.be>
+ */
+class WebProcessor
+{
+    protected $serverData;
+
+    /**
+     * @param mixed $serverData array or object w/ ArrayAccess that provides access to the $_SERVER data
+     */
+    public function __construct($serverData = null)
+    {
+        if (null === $serverData) {
+            $this->serverData =& $_SERVER;
+        } elseif (is_array($serverData) || $serverData instanceof \ArrayAccess) {
+            $this->serverData = $serverData;
+        } else {
+            throw new \UnexpectedValueException('$serverData must be an array or object implementing ArrayAccess.');
+        }
+    }
+
+    /**
+     * @param  array $record
+     * @return array
+     */
+    public function __invoke(array $record)
+    {
+        // skip processing if for some reason request data
+        // is not present (CLI or wonky SAPIs)
+        if (!isset($this->serverData['REQUEST_URI'])) {
+            return $record;
+        }
+
+        $record['extra'] = array_merge(
+            $record['extra'],
+            array(
+                'url'         => $this->serverData['REQUEST_URI'],
+                'ip'          => isset($this->serverData['REMOTE_ADDR']) ? $this->serverData['REMOTE_ADDR'] : null,
+                'http_method' => isset($this->serverData['REQUEST_METHOD']) ? $this->serverData['REQUEST_METHOD'] : null,
+                'server'      => isset($this->serverData['SERVER_NAME']) ? $this->serverData['SERVER_NAME'] : null,
+                'referrer'    => isset($this->serverData['HTTP_REFERER']) ? $this->serverData['HTTP_REFERER'] : null,
+            )
+        );
+
+        if (isset($this->serverData['UNIQUE_ID'])) {
+            $record['extra']['unique_id'] = $this->serverData['UNIQUE_ID'];
+        }
+
+        return $record;
+    }
+}

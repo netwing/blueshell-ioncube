@@ -1,90 +1,142 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CDataColumn class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('zii.widgets.grid.CGridColumn');
+
+/**
+ * CDataColumn represents a grid view column that is associated with a data attribute or PHP expression.
+ *
+ * Either {@link name} or {@link value} should be specified. The former specifies
+ * a data attribute name, while the latter a PHP expression whose value should be rendered instead.
+ *
+ * The property {@link sortable} determines whether the grid view can be sorted according to this column.
+ * Note that the {@link name} should always be set if the column needs to be sortable. The {@link name}
+ * value will be used by {@link CSort} to render a clickable link in the header cell to trigger the sorting.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package zii.widgets.grid
+ * @since 1.1
+ */
+class CDataColumn extends CGridColumn
+{
+	/**
+	 * @var string the attribute name of the data model. Used for column sorting, filtering and to render the corresponding
+	 * attribute value in each data cell. If {@link value} is specified it will be used to rendered the data cell instead of the attribute value.
+	 * @see value
+	 * @see sortable
+	 */
+	public $name;
+	/**
+	 * @var string a PHP expression that will be evaluated for every data cell using {@link evaluateExpression} and whose result will be rendered
+	 * as the content of the data cell.
+	 * In this expression, you can use the following variables:
+	 * <ul>
+	 *   <li><code>$row</code> the row number (zero-based).</li>
+	 *   <li><code>$data</code> the data model for the row.</li>
+	 * 	 <li><code>$this</code> the column object.</li>
+	 * </ul>
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $value;
+	/**
+	 * @var string the type of the attribute value. This determines how the attribute value is formatted for display.
+	 * Valid values include those recognizable by {@link CGridView::formatter}, such as: raw, text, ntext, html, date, time,
+	 * datetime, boolean, number, email, image, url. For more details, please refer to {@link CFormatter}.
+	 * Defaults to 'text' which means the attribute value will be HTML-encoded.
+	 */
+	public $type='text';
+	/**
+	 * @var boolean whether the column is sortable. If so, the header cell will contain a link that may trigger the sorting.
+	 * Defaults to true. Note that if {@link name} is not set, or if {@link name} is not allowed by {@link CSort},
+	 * this property will be treated as false.
+	 * @see name
+	 */
+	public $sortable=true;
+	/**
+	 * @var mixed the HTML code representing a filter input (eg a text field, a dropdown list)
+	 * that is used for this data column. This property is effective only when
+	 * {@link CGridView::filter} is set.
+	 * If this property is not set, a text field will be generated as the filter input;
+	 * If this property is an array, a dropdown list will be generated that uses this property value as
+	 * the list options.
+	 * If you don't want a filter for this data column, set this value to false.
+	 * @since 1.1.1
+	 */
+	public $filter;
+
+	/**
+	 * Initializes the column.
+	 */
+	public function init()
+	{
+		parent::init();
+		if($this->name===null)
+			$this->sortable=false;
+		if($this->name===null && $this->value===null)
+			throw new CException(Yii::t('zii','Either "name" or "value" must be specified for CDataColumn.'));
+	}
+
+	/**
+	 * Renders the filter cell content.
+	 * This method will render the {@link filter} as is if it is a string.
+	 * If {@link filter} is an array, it is assumed to be a list of options, and a dropdown selector will be rendered.
+	 * Otherwise if {@link filter} is not false, a text field is rendered.
+	 * @since 1.1.1
+	 */
+	protected function renderFilterCellContent()
+	{
+		if(is_string($this->filter))
+			echo $this->filter;
+		elseif($this->filter!==false && $this->grid->filter!==null && $this->name!==null && strpos($this->name,'.')===false)
+		{
+			if(is_array($this->filter))
+				echo CHtml::activeDropDownList($this->grid->filter, $this->name, $this->filter, array('id'=>false,'prompt'=>''));
+			elseif($this->filter===null)
+				echo CHtml::activeTextField($this->grid->filter, $this->name, array('id'=>false));
+		}
+		else
+			parent::renderFilterCellContent();
+	}
+
+	/**
+	 * Renders the header cell content.
+	 * This method will render a link that can trigger the sorting if the column is sortable.
+	 */
+	protected function renderHeaderCellContent()
+	{
+		if($this->grid->enableSorting && $this->sortable && $this->name!==null)
+			echo $this->grid->dataProvider->getSort()->link($this->name,$this->header,array('class'=>'sort-link'));
+		elseif($this->name!==null && $this->header===null)
+		{
+			if($this->grid->dataProvider instanceof CActiveDataProvider)
+				echo CHtml::encode($this->grid->dataProvider->model->getAttributeLabel($this->name));
+			else
+				echo CHtml::encode($this->name);
+		}
+		else
+			parent::renderHeaderCellContent();
+	}
+
+	/**
+	 * Renders the data cell content.
+	 * This method evaluates {@link value} or {@link name} and renders the result.
+	 * @param integer $row the row number (zero-based)
+	 * @param mixed $data the data associated with the row
+	 */
+	protected function renderDataCellContent($row,$data)
+	{
+		if($this->value!==null)
+			$value=$this->evaluateExpression($this->value,array('data'=>$data,'row'=>$row));
+		elseif($this->name!==null)
+			$value=CHtml::value($data,$this->name);
+		echo $value===null ? $this->grid->nullDisplay : $this->grid->getFormatter()->format($value,$this->type);
+	}
+}

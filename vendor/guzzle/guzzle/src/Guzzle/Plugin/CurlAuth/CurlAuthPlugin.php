@@ -1,33 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Plugin\CurlAuth;
+
+use Guzzle\Common\Event;
+use Guzzle\Common\Version;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * Adds specified curl auth to all requests sent from a client. Defaults to CURLAUTH_BASIC if none supplied.
+ * @deprecated Use $client->getConfig()->setPath('request.options/auth', array('user', 'pass', 'Basic|Digest');
+ */
+class CurlAuthPlugin implements EventSubscriberInterface
+{
+    private $username;
+    private $password;
+    private $scheme;
+
+    /**
+     * @param string $username HTTP basic auth username
+     * @param string $password Password
+     * @param int    $scheme   Curl auth scheme
+     */
+    public function __construct($username, $password, $scheme=CURLAUTH_BASIC)
+    {
+        Version::warn(__CLASS__ . " is deprecated. Use \$client->getConfig()->setPath('request.options/auth', array('user', 'pass', 'Basic|Digest');");
+        $this->username = $username;
+        $this->password = $password;
+        $this->scheme = $scheme;
+    }
+
+    public static function getSubscribedEvents()
+    {
+        return array('client.create_request' => array('onRequestCreate', 255));
+    }
+
+    /**
+     * Add basic auth
+     *
+     * @param Event $event
+     */
+    public function onRequestCreate(Event $event)
+    {
+        $event['request']->setAuth($this->username, $this->password, $this->scheme);
+    }
+}

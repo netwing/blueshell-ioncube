@@ -1,74 +1,273 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class CHttpRequestTest extends CTestCase
+{
+	/**
+	 * @covers CHttpRequest::parseAcceptHeader
+	 * @dataProvider acceptHeaderDataProvider
+	 */
+	public function testParseAcceptHeader($header,$result,$errorString='Parse of header did not give expected result')
+	{
+		$this->assertEquals($result,CHttpRequest::parseAcceptHeader($header),$errorString);
+	}
+
+	/**
+	 * @covers CHttpRequest::compareAcceptTypes
+	 * @dataProvider acceptContentTypeArrayMapDataProvider
+	 */
+	public function testCompareAcceptTypes($a,$b,$result,$errorString='Compare of content type array maps did not give expected preference')
+	{
+		$this->assertEquals($result,CHttpRequest::compareAcceptTypes($a,$b),$errorString);
+		// make sure that inverse comparison holds
+		$this->assertEquals($result*-1,CHttpRequest::compareAcceptTypes($b,$a),'(Inverse) '.$errorString);
+	}
+
+	public function acceptHeaderDataProvider()
+	{
+		return array(
+			// null header
+			array(
+				null,
+				array(),
+				'Parsing null Accept header did not return empty array',
+			),
+			// empty header
+			array(
+				'',
+				array(),
+				'Parsing empty Accept header did not return empty array',
+			),
+			// nonsense header, containing no valid accept types (but containing the characters that the header is split on)
+			array(
+				'gsf,\'yas\'erys"rt;,";s,y s;,',
+				array(),
+				'Parsing completely invalid Accept header did not return empty array',
+			),
+			// valid header containing only content types
+			array(
+				'application/xhtml+xml,text/html,*/json,image/png',
+				array(
+					array(
+						'type'=>'application',
+						'subType'=>'xhtml',
+						'baseType'=>'xml',
+						'params'=>array(
+							'q'=>1,
+						),
+					),
+					array(
+						'type'=>'text',
+						'subType'=>'html',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+						),
+					),
+					array(
+						'type'=>'*',
+						'subType'=>'json',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+						),
+					),
+					array(
+						'type'=>'image',
+						'subType'=>'png',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+						),
+					),
+				),
+				'Parsing valid Accept header containing only content types did not return correct result',
+			),
+			// valid header containing all details
+			array(
+				'application/xhtml+xml;q=0.9,text/html,*/json;q=4;level=three,image/png;a=1;b=2;c=3',
+				array(
+					array(
+						'type'=>'application',
+						'subType'=>'xhtml',
+						'baseType'=>'xml',
+						'params'=>array(
+							'q'=>0.9,
+						),
+					),
+					array(
+						'type'=>'text',
+						'subType'=>'html',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+						),
+					),
+					array(
+						'type'=>'*',
+						'subType'=>'json',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+							'level'=>'three',
+						),
+					),
+					array(
+						'type'=>'image',
+						'subType'=>'png',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+							'a'=>1,
+							'b'=>2,
+							'c'=>3,
+						),
+					),
+				),
+				'Parsing valid Accept header containing all details did not return correct result',
+			),
+			// partially valid header containing all details (no , after */json)
+			array(
+				'application/xhtml+xml;q=0.9,text/html,*/json;q=4;level=three image/png;a=1;b=2;c=3',
+				array(
+					array(
+						'type'=>'application',
+						'subType'=>'xhtml',
+						'baseType'=>'xml',
+						'params'=>array(
+							'q'=>0.9,
+						),
+					),
+					array(
+						'type'=>'text',
+						'subType'=>'html',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+						),
+					),
+					array(
+						'type'=>'*',
+						'subType'=>'json',
+						'baseType'=>null,
+						'params'=>array(
+							'q'=>1,
+							'level'=>'three',
+						),
+					),
+				),
+				'Parsing partially valid Accept header containing all details did not return correct result',
+			),
+		);
+	}
+
+	public function acceptContentTypeArrayMapDataProvider()
+	{
+		return array(
+			array(
+				array(
+					'type'=>'application',
+					'subType'=>'xhtml',
+					'baseType'=>'xml',
+					'params'=>array(
+						'q'=>0.99,
+					),
+				),
+				array(
+					'type'=>'text',
+					'subType'=>'html',
+					'baseType'=>null,
+					'params'=>array(
+						'q'=>(double)1,
+					),
+				),
+				1,
+				'Comparing different q did not assign correct preference',
+			),
+			array(
+				array(
+					'type'=>'application',
+					'subType'=>'xhtml',
+					'baseType'=>'xml',
+					'params'=>array(
+						'q'=>0.5,
+					),
+				),
+				array(
+					'type'=>'*',
+					'subType'=>'html',
+					'baseType'=>null,
+					'params'=>array(
+						'q'=>0.5,
+					),
+				),
+				-1,
+				'Comparing type wildcard with specific type did not assign correct preference',
+			),
+			array(
+				array(
+					'type'=>'application',
+					'subType'=>'*',
+					'baseType'=>'xml',
+					'params'=>array(
+						'q'=>0.5,
+					),
+				),
+				array(
+					'type'=>'text',
+					'subType'=>'html',
+					'baseType'=>null,
+					'params'=>array(
+						'q'=>0.5,
+					),
+				),
+				1,
+				'Comparing subType wildcard with specific subType did not assign correct preference',
+			),
+			array(
+				array(
+					'type'=>'*',
+					'subType'=>'xhtml',
+					'baseType'=>'xml',
+					'params'=>array(
+						'q'=>0.9,
+						'foo'=>'bar2',
+					),
+				),
+				array(
+					'type'=>'*',
+					'subType'=>'html',
+					'baseType'=>null,
+					'params'=>array(
+						'q'=>0.9,
+						'foo'=>'bar',
+						'test'=>'drive',
+					),
+				),
+				1,
+				'Comparing different number of params did not assign correct preference',
+			),
+			array(
+				array(
+					'type'=>'*',
+					'subType'=>'xhtml',
+					'baseType'=>'xml',
+					'params'=>array(
+						'q'=>0.9,
+						'foo'=>'bar',
+					),
+				),
+				array(
+					'type'=>'*',
+					'subType'=>'html',
+					'baseType'=>null,
+					'params'=>array(
+						'q'=>0.9,
+						'foo'=>'bar',
+					),
+				),
+				0,
+				'Comparing equal type, subType, q and number of params did not return equality',
+			),
+		);
+	}
+}

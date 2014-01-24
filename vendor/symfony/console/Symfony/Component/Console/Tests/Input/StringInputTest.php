@@ -1,75 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Input;
+
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\StringInput;
+
+class StringInputTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @dataProvider getTokenizeData
+     */
+    public function testTokenize($input, $tokens, $message)
+    {
+        $input = new StringInput($input);
+        $r = new \ReflectionClass('Symfony\Component\Console\Input\ArgvInput');
+        $p = $r->getProperty('tokens');
+        $p->setAccessible(true);
+        $this->assertEquals($tokens, $p->getValue($input), $message);
+    }
+
+    public function testInputOptionWithGivenString()
+    {
+        $definition = new InputDefinition(
+            array(new InputOption('foo', null, InputOption::VALUE_REQUIRED))
+        );
+
+        // call to bind
+        $input = new StringInput('--foo=bar');
+        $input->bind($definition);
+        $this->assertEquals('bar', $input->getOption('foo'));
+
+        // definition in constructor
+        $input = new StringInput('--foo=bar', $definition);
+        $this->assertEquals('bar', $input->getOption('foo'));
+    }
+
+    public function getTokenizeData()
+    {
+        return array(
+            array('', array(), '->tokenize() parses an empty string'),
+            array('foo', array('foo'), '->tokenize() parses arguments'),
+            array('  foo  bar  ', array('foo', 'bar'), '->tokenize() ignores whitespaces between arguments'),
+            array('"quoted"', array('quoted'), '->tokenize() parses quoted arguments'),
+            array("'quoted'", array('quoted'), '->tokenize() parses quoted arguments'),
+            array("'a\rb\nc\td'", array("a\rb\nc\td"), '->tokenize() parses whitespace chars in strings'),
+            array("'a'\r'b'\n'c'\t'd'", array('a','b','c','d'), '->tokenize() parses whitespace chars between args as spaces'),
+            array('\"quoted\"', array('"quoted"'), '->tokenize() parses escaped-quoted arguments'),
+            array("\'quoted\'", array('\'quoted\''), '->tokenize() parses escaped-quoted arguments'),
+            array('-a', array('-a'), '->tokenize() parses short options'),
+            array('-azc', array('-azc'), '->tokenize() parses aggregated short options'),
+            array('-awithavalue', array('-awithavalue'), '->tokenize() parses short options with a value'),
+            array('-a"foo bar"', array('-afoo bar'), '->tokenize() parses short options with a value'),
+            array('-a"foo bar""foo bar"', array('-afoo barfoo bar'), '->tokenize() parses short options with a value'),
+            array('-a\'foo bar\'', array('-afoo bar'), '->tokenize() parses short options with a value'),
+            array('-a\'foo bar\'\'foo bar\'', array('-afoo barfoo bar'), '->tokenize() parses short options with a value'),
+            array('-a\'foo bar\'"foo bar"', array('-afoo barfoo bar'), '->tokenize() parses short options with a value'),
+            array('--long-option', array('--long-option'), '->tokenize() parses long options'),
+            array('--long-option=foo', array('--long-option=foo'), '->tokenize() parses long options with a value'),
+            array('--long-option="foo bar"', array('--long-option=foo bar'), '->tokenize() parses long options with a value'),
+            array('--long-option="foo bar""another"', array('--long-option=foo baranother'), '->tokenize() parses long options with a value'),
+            array('--long-option=\'foo bar\'', array('--long-option=foo bar'), '->tokenize() parses long options with a value'),
+            array("--long-option='foo bar''another'", array("--long-option=foo baranother"), '->tokenize() parses long options with a value'),
+            array("--long-option='foo bar'\"another\"", array("--long-option=foo baranother"), '->tokenize() parses long options with a value'),
+            array('foo -a -ffoo --long bar', array('foo', '-a', '-ffoo', '--long', 'bar'), '->tokenize() parses when several arguments and options'),
+        );
+    }
+
+    public function testToString()
+    {
+        $input = new StringInput('-f foo');
+        $this->assertEquals('-f foo', (string) $input);
+
+        $input = new StringInput('-f --bar=foo "a b c d"');
+        $this->assertEquals('-f --bar=foo '.escapeshellarg('a b c d'), (string) $input);
+
+        $input = new StringInput('-f --bar=foo \'a b c d\' '."'A\nB\\'C'");
+        $this->assertEquals('-f --bar=foo '.escapeshellarg('a b c d').' '.escapeshellarg("A\nB'C"), (string) $input);
+    }
+}

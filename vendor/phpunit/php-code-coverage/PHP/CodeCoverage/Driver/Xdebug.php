@@ -1,34 +1,97 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.0.0
+ */
+
+/**
+ * Driver for Xdebug's code coverage functionality.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.0.0
+ * @codeCoverageIgnore
+ */
+class PHP_CodeCoverage_Driver_Xdebug implements PHP_CodeCoverage_Driver
+{
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        if (!extension_loaded('xdebug')) {
+            throw new PHP_CodeCoverage_Exception('Xdebug is not loaded.');
+        }
+
+        if (version_compare(phpversion('xdebug'), '2.2.0-dev', '>=') &&
+            !ini_get('xdebug.coverage_enable')) {
+            throw new PHP_CodeCoverage_Exception(
+              'You need to set xdebug.coverage_enable=On in your php.ini.'
+            );
+        }
+    }
+
+    /**
+     * Start collection of code coverage information.
+     */
+    public function start()
+    {
+        xdebug_start_code_coverage(XDEBUG_CC_UNUSED | XDEBUG_CC_DEAD_CODE);
+    }
+
+    /**
+     * Stop collection of code coverage information.
+     *
+     * @return array
+     */
+    public function stop()
+    {
+        $codeCoverage = xdebug_get_code_coverage();
+        xdebug_stop_code_coverage();
+
+        return $codeCoverage;
+    }
+}

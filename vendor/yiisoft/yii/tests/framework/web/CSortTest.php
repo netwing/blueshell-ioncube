@@ -1,54 +1,84 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPu6tZEh+ddNDamGPoML5MV0LSKxhEv1pleMit691NxJ35bkkI+N2mYMd3eiZ97B7muESvl21
-NL9Tse0qbErLamn7DKlHe+n5k9rA6CLyGiOW7NptN8PuH6ncUCqVZnKD2+K7j8BsxANY8LVbIu+P
-GsyUdF9AwujHQAxq00pfqsv8rIVRcOa0ty2hhnbLLON9fClN42dyCBAwS2hzvm7ahoVKK7NVQgUI
-NsJchKcrBMpNTAUso+6bhr4euJltSAgiccy4GDnfTADcwMVqwxjaBOZONK194ASHjGA2eLaGFy39
-zZYGqA3c/RHk5H2lyPaPHw0K5G8d1+99tK33aZyitzgciVE0eISumY8DHVFzYXttmHXcU3Km6dL6
-+v86MNvek/+LLj9p5zQRrvLO5XR6OqyGcitSsycjqpwnTfQkD+6aXNeYKXS9FlEipIFPHNl4avB6
-Et8UGYAcRTaB0+N2ADz32/3AfIo0PR3tbDmBGN8NVIasPKiL02YS2ST5R4Lw5MYVMU1Wjmd7ZSid
-7qUHwnCWKh/L+VrC5cIJblCd3eK9pL9qnggZu+HQCXBcY7MtkSEJNJOeB1BDVFINoOogMin0rNgX
-zOLexJkGCmJHjUl2nGohu5TW/Cj072Ntj4//4yJOQlQjdpfs7J3an5j8KZi2NTEFt52/mZTVjq2F
-+HQPHNj8fGRzDKQAsBQr+P2e/Hq5j4EKMJZiELAWnqoybAGUsIXacieLdsvIF/TbYWZSFyCXwPw2
-//lQT9dsYrYkEWPZ0A1r1hIIy6I16DU/z52OeURspSIFbl/WECv1CNvbPwRxncVKi3r2KKn8p1LZ
-QQPqyi2QwUB9TWAsxDsFTpQS6qMvdqaVkNPiZha55RdSdXLb+EJCWkmKW/YfYjoqCgTofkADkUZS
-VjGYSOQ5lB7JpgraSwzBMVRuIP7k7foWeyE5YPg91rhjqS1ZSGfsA5yarklZyxgPEIcmGnjcQMsa
-WF41rfuBmqxi/7btlYpaVxtA7rCYahEyA0I44AVgmp7WSRkn9o5/5u2FrmPCptB+twQ2YJNb1TaR
-ge2trlJr50cBAGAL4x197GL5V+Jtz/LuHWLGssRvNrWz1spw8zUabsGB4u1wFxPmfsXnYJ4QaHsx
-CGDEzWVjVoZ83ZOednvs+nNE/dHYDAXUhjSBteTRnwxPBSeuRMuFreb3Sm5qnRNruFjF4nWGLVuf
-3tg4uHDl9iN+Zp09V8pCgr4ULEA4K3Bx+yR2XKIfV6umb/ebw5UpRlcRprWuyhN5eFgO9npJQRfz
-MJNp5q4/f1uozeYDhaglJaGi4HRvFLhj+jnVeNe7/wYz9+73w8EfNXeOxXuvWivl66uwbL80bLTF
-eoafQuiu2X54nIhCUA5aT+CJLUHdjc2gbvexWyGqV4mF3fQOhIteSRoIKWTQRN71dN+fYVkvKbyv
-A8T5n771Iz+0faLovVff82Enzw5Hh6jf/+g1kWCzH7b9PD08Ea9ioF6F+c3/BIV/Zx/3S1C41rtJ
-9FQKXYxFsKTRnCp6IUlfozIYWqjLKebBH3BgCsthkpRhvmclPv8Io0dltuPjZKttU7TqhLI+5xiK
-rqZW0FDVy6EavgV1vXOdDTW8ZhI5IWOQXsXR9MqqjpzPqksv5xZYjf5+AImSbCHTQRvl2+f7RRI5
-J4LIhGgP2UNFWsNSjeBGUuNXWBqvPhbgP1XxJtOuhHPq+eyl0HAHnlxg8sBvFVZ6Vh0V8JTgOCrO
-HiPCJUU4JIPqItuAJ5uPTNKOJ4KGyRIOn2tiCuL9QwpBWpvva8uWwnFl8r7EeuLzTsS/7A6ywQn/
-qvf3kZ7xvqBzbU1xp0P+P22pA7TExkV/i8YoP2JIJTKMRV2suioyhsalZVJw2RbOSC9NW7m30oDF
-RMzsDI0t5/ljEfyvrGkpuyCMVaTZHVjIP0NqJiOQ6tyVa5ompOu2MzWdBehlamplomV9M0qHn0LO
-voqdjt0jYfp7jfhmi2hKeo/2hyKBOLXIczLnPneVicMaGg8uqMeQVizFaFQ+ZSXOyPmJQfQtEmbj
-Rjp5tS3pOZGzU4yGDGrinvD0xWhmh69m9BvGzreP81tiHopLXK26ZURo42NSPdWGSRQLsouhxgl/
-oPCs1enyS5TZIBjf7dDutrSU8OHby5+oTALA1LZWSCHklZKGRfUNwYnhUWw5vki5a/zx6Tfpep3C
-jVJsiyVuVORG02Bogaqrfq8cWD2BU7T0XG629WTS9AUa5nyZw+c3xXClXQUgbr5NDd/w6CkEzJaD
-6OEMa2vreWFv0POYGzTqKA6i+Y/49CQC9SmJVUMXjzlFOntwstfIYb5X+xYO/g+JOu1Vfybg7tot
-0kXMzqedOMPn/mEu8ypJujc0nPIx83c0D1SIFSCSh9uNAGkFdbeOTaUBipanJVe0XhEYTt4wVZMl
-jqysSgZqNShy/x2te5gGBgrXiN9Az1nJ2s7CB+QkqW7Tw6uTJW+T+MRYhwXeDsIcSA+adM8lGNR1
-w5XoUMYGhvGmzL9HbK7ruSmb35M109QXPrnTjmFJTqq8FLSJSQvy6dwUTfbp7Htodlkz4vhNtw9U
-5dZP68TxTxx7VALUplZbpUV8/9OUjQFFSPdLLwbDjJ6FVkUgtOxBgYtNfQcXpVP30VKBrUyEEyv7
-P7E5GeMVpebjUk6UC57lTRwgRRfOu1mQ8keLBWToCfB51W0RObGDyrc9jaM6+NsxZ3HggPHbJF51
-BSSuNWMsrsvhlxG0nVI/X91GTrM+xa6vIbgizCiHYgGR12kdnQT4SnVo+5GUchRnKcuQr/hPli0g
-sAjBVWJVl1b0ogmY1O3hYaVKjVhwWOApS2KYnjE760VZ+UIZle8gJEANLEY2WG9pJg04UCGNirRb
-53fYfBGYNJMFm+wP7+wuZcKSfONCSnjYQtHJyLr0ycO8/hZbhyaNqSdI8O6Yz8HBfKUDRS7rkGMg
-WpHu5R9osw3ZR+Ubz/2JKqOneHKTo1PhvpdyWXtSp+e9gCdeRq3sPSCq1q7nTKjlkmox3/RsBdE9
-sGnhMWnuMhUt9ElWQST7vt1YXD9qu4xVsrUhCF/Z46L3J8kf4vAhE7Q5xjr9xlzkcmWtEYowwSqQ
-e/x2thMiYH62Dw0rd1/FjB+0kr2YoDjf3GMqytOo3cfOB/JYhzu1JXall3z4TgRYmsfbmWRmGuDX
-MCPtL8SzX/ZaquDcBcbJfoAyc8IYVtNmR4aksfgtk5nB6ym96226EmfsYlLsydQFuSDIvL0dLKLE
-mTtrUelw6UCrenzUczg/TG2/vrahipikl6Z2nkIc3F2eMUicyI91VsaFYTq9Dto1pO8q9zDNf2ow
-XaxCgBtH5UL5OQ57mIqJGyoK1xcD/2qKmk/3aZcBIwn/cBTdeXk+E9Ctkp5ar+sQpyF9GRjO8W4q
-b//YmbOXaEhUwfd/dXSW3ne+gK2VVoShJ12GekMHLRtKizfNq7CbL14XkYmdRsSnpZccRR8TEs0q
-2e6XcYjaIFuF7a7RINaXJ7cknAr/cfM8DC2AeW8jetRPrGF1Gvy6CHSGHeXDKgpemTKBJTmCzvkr
-t/siqQWIR7YoSUA2Xv6YZYEUHx9/oQVw2ozSBngKFR/CiSc+TQxyxpbxzhGEHYJNjhKgZWhdNjQU
-pcOE0I16fKTXu8LNstFOiPngJYgdKh/iLsM6Ijr0I4ntXFm89qa1gr0952UV9yKwxToeki+A4zxp
-wPR252kCTwfcnFKvwiRpa7PXj60wh9OaI6eedablxBmI1HIRJffATLH3pwZsEzaTMrGlSPboHc4U
-UDJu6YoJnQjEnbn2ulZ2S4cWQKPn+R3BCap2
+<?php
+/**
+ * CSortTest
+ */
+
+Yii::import('system.db.CDbConnection');
+Yii::import('system.db.ar.CActiveRecord');
+
+class CSortTest extends CTestCase {
+	private $db;
+
+	public function setUp(){
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->db=new CDbConnection('sqlite::memory:');
+		$this->db->active=true;
+		$this->db->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/CSortTest.sql'));
+		CActiveRecord::$db=$this->db;
+	}
+
+	public function tearDown(){
+		$this->db->active=false;
+	}
+
+	/**
+	 * Tests for acceptance of fields with dots in
+	 * CSort::attributes.
+	 *
+	 * @return void
+	 */
+	function testGetDirectionsWithDots(){
+		$_GET['sort'] = 'comments.id';
+
+		$criteria = new CDbCriteria();
+		$criteria->with = 'comments';
+
+		$sort = new CSort('TestPost');
+		$sort->attributes = array(
+			'id',
+			'comments.id' => array(
+			  'asc'=>'comments.id',
+			  'desc'=>'comments.id desc',
+			),
+		);
+		$sort->applyOrder($criteria);
+		$directions = $sort->getDirections();
+
+		$this->assertTrue(isset($directions['comments.id']));
+	}
+}
+
+
+class TestPost extends CActiveRecord {
+	public static function model($className=__CLASS__) {
+        return parent::model($className);
+    }
+
+	public function tableName() {
+        return 'post';
+    }
+
+	public function relations() {
+        return array(
+           'comments'=>array(self::HAS_MANY, 'TestComment', 'post_id'),
+        );
+    }
+}
+
+class TestComment extends CActiveRecord {
+	public static function model($className=__CLASS__) {
+        return parent::model($className);
+    }
+
+	public function tableName() {
+        return 'comment';
+    }
+
+	public function relations() {
+        return array(
+           'post'=>array(self::BELONGS_TO, 'TestPost', 'post_id'),
+        );
+    }
+}

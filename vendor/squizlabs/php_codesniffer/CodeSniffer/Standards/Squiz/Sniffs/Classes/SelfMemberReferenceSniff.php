@@ -1,84 +1,171 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Classes_ClassFileNameSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_Standards_AbstractScopeSniff', true) === false) {
+    $error = 'Class PHP_CodeSniffer_Standards_AbstractScopeSniff not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+/**
+ * Tests self member references.
+ *
+ * Verifies that :
+ * <ul>
+ *  <li>self:: is used instead of Self::</li>
+ *  <li>self:: is used for local static member reference</li>
+ *  <li>self:: is used instead of self ::</li>
+ * </ul>
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Classes_SelfMemberReferenceSniff extends PHP_CodeSniffer_Standards_AbstractScopeSniff
+{
+
+
+    /**
+     * Constructs a Squiz_Sniffs_Classes_SelfMemberReferenceSniff.
+     */
+    public function __construct()
+    {
+        parent::__construct(array(T_CLASS), array(T_DOUBLE_COLON));
+
+    }//end __construct()
+
+
+    /**
+     * Processes the function tokens within the class.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     * @param int                  $currScope The current scope opener token.
+     *
+     * @return void
+     */
+    protected function processTokenWithinScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $currScope)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $className = ($stackPtr - 1);
+        if ($tokens[$className]['code'] === T_SELF) {
+            if (strtolower($tokens[$className]['content']) !== $tokens[$className]['content']) {
+                $error = 'Must use "self::" for local static member reference; found "%s::"';
+                $data  = array($tokens[$className]['content']);
+                $phpcsFile->addError($error, $className, 'IncorrectCase', $data);
+                return;
+            }
+        } else if ($tokens[$className]['code'] === T_STRING) {
+            // Make sure this is another class reference.
+            $declarationName        = $phpcsFile->getDeclarationName($currScope);
+            $fullQualifiedClassName = $tokens[$className]['content'];
+
+            // If the class is called with a namespace prefix, build fully qualified
+            // namespace calls for both current scope class and requested class.
+            if ($tokens[($className - 1)]['code'] === T_NS_SEPARATOR) {
+                $declarationName         = $this->getDeclarationNameWithNamespace($tokens, $className);
+                $declarationName         = substr($declarationName, 1);
+                $fullQualifiedClassName  = $this->getNamespaceOfScope($phpcsFile, $currScope);
+                $fullQualifiedClassName .= '\\'.$tokens[$className]['content'];
+            }
+
+            if ($declarationName === $fullQualifiedClassName) {
+                // Class name is the same as the current class, which is not allowed
+                // except if being used inside a closure.
+                if ($phpcsFile->hasCondition($stackPtr, T_CLOSURE) === false) {
+                    $error = 'Must use "self::" for local static member reference';
+                    $phpcsFile->addError($error, $className, 'NotUsed');
+                    return;
+                }
+            }
+        }//end if
+
+        if ($tokens[($stackPtr - 1)]['code'] === T_WHITESPACE) {
+            $found = strlen($tokens[($stackPtr - 1)]['content']);
+            $error = 'Expected 0 spaces before double colon; %s found';
+            $data  = array($found);
+            $phpcsFile->addError($error, $className, 'SpaceBefore', $data);
+        }
+
+        if ($tokens[($stackPtr + 1)]['code'] === T_WHITESPACE) {
+            $found = strlen($tokens[($stackPtr + 1)]['content']);
+            $error = 'Expected 0 spaces after double colon; %s found';
+            $data  = array($found);
+            $phpcsFile->addError($error, $className, 'SpaceAfter', $data);
+        }
+
+    }//end processTokenWithinScope()
+
+
+    /**
+     * Returns the declaration names for classes/interfaces/functions with a namespace.
+     *
+     * @param array $tokens   Token stack for this file
+     * @param int   $stackPtr The position where the namespace building will start.
+     *
+     * @return string
+     */
+    protected function getDeclarationNameWithNamespace(array $tokens, $stackPtr)
+    {
+        $nameParts      = array();
+        $currentPointer = $stackPtr;
+        while ($tokens[$currentPointer]['code'] === T_NS_SEPARATOR
+            || $tokens[$currentPointer]['code'] === T_STRING
+        ) {
+            $nameParts[] = $tokens[$currentPointer]['content'];
+            $currentPointer--;
+        }
+
+        $nameParts = array_reverse($nameParts);
+        return implode('', $nameParts);
+
+    }//end getDeclarationNameWithNamespace()
+
+
+    /**
+     * Returns the namespace declaration of a file.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
+     * @param int                  $stackPtr  The position where the search for the
+     *                                        namespace declaration will start.
+     *
+     * @return string
+     */
+    protected function getNamespaceOfScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $namespace = '\\';
+        $namespaceDeclaration = $phpcsFile->findPrevious(T_NAMESPACE, $stackPtr);
+
+        if ($namespaceDeclaration !== false) {
+            $endOfNamespaceDeclaration = $phpcsFile->findNext(T_SEMICOLON, $namespaceDeclaration);
+            $namespace = $this->getDeclarationNameWithNamespace(
+                $phpcsFile->getTokens(),
+                ($endOfNamespaceDeclaration - 1)
+            );
+        }
+
+        return $namespace;
+
+    }//end getNamespaceOfScope
+
+
+}//end class
+
 ?>
-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
-aZuCedgTwlO=

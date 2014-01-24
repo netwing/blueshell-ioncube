@@ -1,63 +1,163 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-XWGe88HMAQT7Qv/vdwT9fqXa2SrngOa6/rcz
+<?php
+/**
+ * CDummyCache class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDummyCache is a placeholder cache component.
+ *
+ * CDummyCache does not cache anything. It is provided so that one can always configure
+ * a 'cache' application component and he does not need to check if Yii::app()->cache is null or not.
+ * By replacing CDummyCache with some other cache component, one can quickly switch from
+ * non-caching mode to caching mode.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching
+ * @since 1.0
+ */
+class CDummyCache extends CApplicationComponent implements ICache, ArrayAccess
+{
+	/**
+	 * @var string a string prefixed to every cache key so that it is unique. Defaults to {@link CApplication::getId() application ID}.
+	 */
+	public $keyPrefix;
+
+	/**
+	 * Initializes the application component.
+	 * This method overrides the parent implementation by setting default cache key prefix.
+	 */
+	public function init()
+	{
+		parent::init();
+		if($this->keyPrefix===null)
+			$this->keyPrefix=Yii::app()->getId();
+	}
+
+	/**
+	 * Retrieves a value from cache with a specified key.
+	 * @param string $id a key identifying the cached value
+	 * @return mixed the value stored in cache, false if the value is not in the cache, expired or the dependency has changed.
+	 */
+	public function get($id)
+	{
+		return false;
+	}
+
+	/**
+	 * Retrieves multiple values from cache with the specified keys.
+	 * Some caches (such as memcache, apc) allow retrieving multiple cached values at one time,
+	 * which may improve the performance since it reduces the communication cost.
+	 * In case a cache doesn't support this feature natively, it will be simulated by this method.
+	 * @param array $ids list of keys identifying the cached values
+	 * @return array list of cached values corresponding to the specified keys. The array
+	 * is returned in terms of (key,value) pairs.
+	 * If a value is not cached or expired, the corresponding array value will be false.
+	 */
+	public function mget($ids)
+	{
+		$results=array();
+		foreach($ids as $id)
+			$results[$id]=false;
+		return $results;
+	}
+
+	/**
+	 * Stores a value identified by a key into cache.
+	 * If the cache already contains such a key, the existing value and
+	 * expiration time will be replaced with the new ones.
+	 *
+	 * @param string $id the key identifying the value to be cached
+	 * @param mixed $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labeled invalid.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	public function set($id,$value,$expire=0,$dependency=null)
+	{
+		return true;
+	}
+
+	/**
+	 * Stores a value identified by a key into cache if the cache does not contain this key.
+	 * Nothing will be done if the cache already contains the key.
+	 * @param string $id the key identifying the value to be cached
+	 * @param mixed $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @param ICacheDependency $dependency dependency of the cached item. If the dependency changes, the item is labeled invalid.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	public function add($id,$value,$expire=0,$dependency=null)
+	{
+		return true;
+	}
+
+	/**
+	 * Deletes a value with the specified key from cache
+	 * @param string $id the key of the value to be deleted
+	 * @return boolean if no error happens during deletion
+	 */
+	public function delete($id)
+	{
+		return true;
+	}
+
+	/**
+	 * Deletes all values from cache.
+	 * Be careful of performing this operation if the cache is shared by multiple applications.
+	 * @return boolean whether the flush operation was successful.
+	 * @throws CException if this method is not overridden by child classes
+	 */
+	public function flush()
+	{
+		return true;
+	}
+
+	/**
+	 * Returns whether there is a cache entry with a specified key.
+	 * This method is required by the interface ArrayAccess.
+	 * @param string $id a key identifying the cached value
+	 * @return boolean
+	 */
+	public function offsetExists($id)
+	{
+		return false;
+	}
+
+	/**
+	 * Retrieves the value from cache with a specified key.
+	 * This method is required by the interface ArrayAccess.
+	 * @param string $id a key identifying the cached value
+	 * @return mixed the value stored in cache, false if the value is not in the cache or expired.
+	 */
+	public function offsetGet($id)
+	{
+		return false;
+	}
+
+	/**
+	 * Stores the value identified by a key into cache.
+	 * If the cache already contains such a key, the existing value will be
+	 * replaced with the new ones. To add expiration and dependencies, use the set() method.
+	 * This method is required by the interface ArrayAccess.
+	 * @param string $id the key identifying the value to be cached
+	 * @param mixed $value the value to be cached
+	 */
+	public function offsetSet($id, $value)
+	{
+	}
+
+	/**
+	 * Deletes the value with the specified key from cache
+	 * This method is required by the interface ArrayAccess.
+	 * @param string $id the key of the value to be deleted
+	 * @return boolean if no error happens during deletion
+	 */
+	public function offsetUnset($id)
+	{
+	}
+}

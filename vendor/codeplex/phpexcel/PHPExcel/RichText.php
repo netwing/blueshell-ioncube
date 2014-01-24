@@ -1,64 +1,196 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-SqCjuWTgzDFZdQG2nxgcY3MhG13wCg6ZiQH9JRa=
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_RichText
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_RichText
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_RichText
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_RichText implements PHPExcel_IComparable
+{
+	/**
+	 * Rich text elements
+	 *
+	 * @var PHPExcel_RichText_ITextElement[]
+	 */
+	private $_richTextElements;
+
+    /**
+     * Create a new PHPExcel_RichText instance
+     *
+     * @param 	PHPExcel_Cell	$pParent
+     * @throws	Exception
+     */
+    public function __construct(PHPExcel_Cell $pCell = null)
+    {
+    	// Initialise variables
+    	$this->_richTextElements = array();
+
+    	// Rich-Text string attached to cell?
+    	if ($pCell !== NULL) {
+	    	// Add cell text and style
+	    	if ($pCell->getValue() != "") {
+	    		$objRun = new PHPExcel_RichText_Run($pCell->getValue());
+	    		$objRun->setFont(clone $pCell->getParent()->getStyle($pCell->getCoordinate())->getFont());
+	    		$this->addText($objRun);
+	    	}
+
+	    	// Set parent value
+	    	$pCell->setValueExplicit($this, PHPExcel_Cell_DataType::TYPE_STRING);
+    	}
+    }
+
+    /**
+     * Add text
+     *
+     * @param 	PHPExcel_RichText_ITextElement		$pText		Rich text element
+     * @throws 	Exception
+     * @return PHPExcel_RichText
+     */
+    public function addText(PHPExcel_RichText_ITextElement $pText = null)
+    {
+    	$this->_richTextElements[] = $pText;
+    	return $this;
+    }
+
+    /**
+     * Create text
+     *
+     * @param 	string	$pText	Text
+     * @return	PHPExcel_RichText_TextElement
+     * @throws 	Exception
+     */
+    public function createText($pText = '')
+    {
+    	$objText = new PHPExcel_RichText_TextElement($pText);
+    	$this->addText($objText);
+    	return $objText;
+    }
+
+    /**
+     * Create text run
+     *
+     * @param 	string	$pText	Text
+     * @return	PHPExcel_RichText_Run
+     * @throws 	Exception
+     */
+    public function createTextRun($pText = '')
+    {
+    	$objText = new PHPExcel_RichText_Run($pText);
+    	$this->addText($objText);
+    	return $objText;
+    }
+
+    /**
+     * Get plain text
+     *
+     * @return string
+     */
+    public function getPlainText()
+    {
+    	// Return value
+    	$returnValue = '';
+
+    	// Loop through all PHPExcel_RichText_ITextElement
+    	foreach ($this->_richTextElements as $text) {
+    		$returnValue .= $text->getText();
+    	}
+
+    	// Return
+    	return $returnValue;
+    }
+
+    /**
+     * Convert to string
+     *
+     * @return string
+     */
+    public function __toString() {
+    	return $this->getPlainText();
+    }
+
+    /**
+     * Get Rich Text elements
+     *
+     * @return PHPExcel_RichText_ITextElement[]
+     */
+    public function getRichTextElements()
+    {
+    	return $this->_richTextElements;
+    }
+
+    /**
+     * Set Rich Text elements
+     *
+     * @param 	PHPExcel_RichText_ITextElement[]	$pElements		Array of elements
+     * @throws 	Exception
+     * @return PHPExcel_RichText
+     */
+    public function setRichTextElements($pElements = null)
+    {
+    	if (is_array($pElements)) {
+    		$this->_richTextElements = $pElements;
+    	} else {
+    		throw new Exception("Invalid PHPExcel_RichText_ITextElement[] array passed.");
+    	}
+    	return $this;
+    }
+
+	/**
+	 * Get hash code
+	 *
+	 * @return string	Hash code
+	 */
+	public function getHashCode() {
+		$hashElements = '';
+		foreach ($this->_richTextElements as $element) {
+			$hashElements .= $element->getHashCode();
+		}
+
+    	return md5(
+    		  $hashElements
+    		. __CLASS__
+    	);
+    }
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if (is_object($value)) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+}

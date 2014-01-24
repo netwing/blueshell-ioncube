@@ -1,410 +1,809 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+SQIkQIPKa2stXzvlidAYL2vl8kSMVu=
+<?php
+
+/**
+ * Smarty Internal Plugin Smarty Template Compiler Base
+ *
+ * This file contains the basic classes and methodes for compiling Smarty templates with lexer/parser
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Main abstract compiler class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+abstract class Smarty_Internal_TemplateCompilerBase
+{
+    /**
+     * hash for nocache sections
+     *
+     * @var mixed
+     */
+    private $nocache_hash = null;
+
+    /**
+     * suppress generation of nocache code
+     *
+     * @var bool
+     */
+    public $suppressNocacheProcessing = false;
+
+    /**
+     * suppress generation of merged template code
+     *
+     * @var bool
+     */
+    public $suppressMergedTemplates = false;
+
+    /**
+     * compile tag objects
+     *
+     * @var array
+     */
+    public static $_tag_objects = array();
+
+    /**
+     * tag stack
+     *
+     * @var array
+     */
+    public $_tag_stack = array();
+
+    /**
+     * current template
+     *
+     * @var Smarty_Internal_Template
+     */
+    public $template = null;
+
+    /**
+     * merged templates
+     *
+     * @var array
+     */
+    public $merged_templates = array();
+
+    /**
+     * sources which must be compiled
+     *
+     * @var array
+     */
+    public $sources = array();
+
+    /**
+     * flag that we are inside {block}
+     *
+     * @var bool
+     */
+    public $inheritance = false;
+
+    /**
+     * flag when compiling inheritance child template
+     *
+     * @var bool
+     */
+    public $inheritance_child = false;
+
+    /**
+     * uid of templates called by {extends} for recursion check
+     *
+     * @var array
+     */
+    public $extends_uid = array();
+
+    /**
+     * source line offset for error messages
+     *
+     * @var int
+     */
+    public $trace_line_offset = 0;
+
+    /**
+     * trace uid
+     *
+     * @var string
+     */
+    public $trace_uid = '';
+
+    /**
+     * trace file path
+     *
+     * @var string
+     */
+    public $trace_filepath = '';
+    /**
+     * stack for tracing file and line of nested {block} tags
+     *
+     * @var array
+     */
+    public $trace_stack = array();
+
+    /**
+     * plugins loaded by default plugin handler
+     *
+     * @var array
+     */
+    public $default_handler_plugins = array();
+
+    /**
+     * saved preprocessed modifier list
+     *
+     * @var mixed
+     */
+    public $default_modifier_list = null;
+
+    /**
+     * force compilation of complete template as nocache
+     * @var boolean
+     */
+    public $forceNocache = false;
+
+    /**
+     * suppress Smarty header code in compiled template
+     * @var bool
+     */
+    public $suppressHeader = false;
+
+    /**
+     * suppress template property header code in compiled template
+     * @var bool
+     */
+    public $suppressTemplatePropertyHeader = false;
+
+    /**
+     * suppress pre and post filter
+     * @var bool
+     */
+    public $suppressFilter = false;
+
+    /**
+     * flag if compiled template file shall we written
+     * @var bool
+     */
+    public $write_compiled_code = true;
+
+    /**
+     * flag if currently a template function is compiled
+     * @var bool
+     */
+    public $compiles_template_function = false;
+
+    /**
+     * called subfuntions from template function
+     * @var array
+     */
+    public $called_functions = array();
+
+    /**
+     * flags for used modifier plugins
+     * @var array
+     */
+    public $modifier_plugins = array();
+
+    /**
+     * type of already compiled modifier
+     * @var array
+     */
+    public $known_modifier_type = array();
+
+    /**
+     * Methode to compile a Smarty template
+     *
+     * @param  mixed $_content template source
+     * @return bool  true if compiling succeeded, false if it failed
+     */
+    abstract protected function doCompile($_content);
+
+    /**
+     * Initialize compiler
+     */
+    public function __construct()
+    {
+        $this->nocache_hash = str_replace('.', '-', uniqid(rand(), true));
+    }
+
+    /**
+     * Method to compile a Smarty template
+     *
+     * @param  Smarty_Internal_Template $template template object to compile
+     * @param  bool $nocache    true is shall be compiled in nocache mode
+     * @return bool             true if compiling succeeded, false if it failed
+     */
+    public function compileTemplate(Smarty_Internal_Template $template, $nocache = false)
+    {
+        if (empty($template->properties['nocache_hash'])) {
+            $template->properties['nocache_hash'] = $this->nocache_hash;
+        } else {
+            $this->nocache_hash = $template->properties['nocache_hash'];
+        }
+        // flag for nochache sections
+        $this->nocache = $nocache;
+        $this->tag_nocache = false;
+        // save template object in compiler class
+        $this->template = $template;
+        // reset has nocache code flag
+        $this->template->has_nocache_code = false;
+        $save_source = $this->template->source;
+        // template header code
+        $template_header = '';
+        if (!$this->suppressHeader) {
+            $template_header .= "<?php /* Smarty version " . Smarty::SMARTY_VERSION . ", created on " . strftime("%Y-%m-%d %H:%M:%S") . "\n";
+            $template_header .= "         compiled from \"" . $this->template->source->filepath . "\" */ ?>\n";
+        }
+
+        if (empty($this->template->source->components)) {
+            $this->sources = array($template->source);
+        } else {
+            // we have array of inheritance templates by extends: resource
+            $this->sources = array_reverse($template->source->components);
+        }
+        $loop = 0;
+        // the $this->sources array can get additional elements while compiling by the {extends} tag
+        while ($this->template->source = array_shift($this->sources)) {
+            $this->smarty->_current_file = $this->template->source->filepath;
+            if ($this->smarty->debugging) {
+                Smarty_Internal_Debug::start_compile($this->template);
+            }
+            $no_sources = count($this->sources);
+            if ($loop || $no_sources) {
+                $this->template->properties['file_dependency'][$this->template->source->uid] = array($this->template->source->filepath, $this->template->source->timestamp, $this->template->source->type);
+            }
+            $loop++;
+            if ($no_sources) {
+                $this->inheritance_child = true;
+            } else {
+                $this->inheritance_child = false;
+            }
+            do {
+                $_compiled_code = '';
+                // flag for aborting current and start recompile
+                $this->abort_and_recompile = false;
+                // get template source
+                $_content = $this->template->source->content;
+                if ($_content != '') {
+                    // run prefilter if required
+                    if ((isset($this->smarty->autoload_filters['pre']) || isset($this->smarty->registered_filters['pre'])) && !$this->suppressFilter) {
+                        $_content = Smarty_Internal_Filter_Handler::runFilter('pre', $_content, $template);
+                    }
+                    // call compiler
+                    $_compiled_code = $this->doCompile($_content);
+                }
+            } while ($this->abort_and_recompile);
+            if ($this->smarty->debugging) {
+                Smarty_Internal_Debug::end_compile($this->template);
+            }
+        }
+        // restore source
+        $this->template->source = $save_source;
+        unset($save_source);
+        $this->smarty->_current_file = $this->template->source->filepath;
+        // free memory
+        unset($this->parser->root_buffer, $this->parser->current_buffer, $this->parser, $this->lex, $this->template);
+        self::$_tag_objects = array();
+        // return compiled code to template object
+        $merged_code = '';
+        if (!$this->suppressMergedTemplates && !empty($this->merged_templates)) {
+            foreach ($this->merged_templates as $code) {
+                $merged_code .= $code;
+            }
+        }
+        // run postfilter if required on compiled template code
+        if ((isset($this->smarty->autoload_filters['post']) || isset($this->smarty->registered_filters['post'])) && !$this->suppressFilter && $_compiled_code != '') {
+            $_compiled_code = Smarty_Internal_Filter_Handler::runFilter('post', $_compiled_code, $template);
+        }
+        if ($this->suppressTemplatePropertyHeader) {
+            $code = $_compiled_code . $merged_code;
+        } else {
+            $code = $template_header . $template->createTemplateCodeFrame($_compiled_code) . $merged_code;
+        }
+        // unset content because template inheritance could have replace source with parent code
+        unset ($template->source->content);
+
+        return $code;
+    }
+
+    /**
+     * Compile Tag
+     *
+     * This is a call back from the lexer/parser
+     * It executes the required compile plugin for the Smarty tag
+     *
+     * @param  string $tag       tag name
+     * @param  array $args      array with tag attributes
+     * @param  array $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compileTag($tag, $args, $parameter = array())
+    {
+        // $args contains the attributes parsed and compiled by the lexer/parser
+        // assume that tag does compile into code, but creates no HTML output
+        $this->has_code = true;
+        $this->has_output = false;
+        // log tag/attributes
+        if (isset($this->smarty->get_used_tags) && $this->smarty->get_used_tags) {
+            $this->template->used_tags[] = array($tag, $args);
+        }
+        // check nocache option flag
+        if (in_array("'nocache'", $args) || in_array(array('nocache' => 'true'), $args)
+            || in_array(array('nocache' => '"true"'), $args) || in_array(array('nocache' => "'true'"), $args)
+        ) {
+            $this->tag_nocache = true;
+        }
+        // compile the smarty tag (required compile classes to compile the tag are autoloaded)
+        if (($_output = $this->callTagCompiler($tag, $args, $parameter)) === false) {
+            if (isset($this->smarty->template_functions[$tag])) {
+                // template defined by {template} tag
+                $args['_attr']['name'] = "'" . $tag . "'";
+                $_output = $this->callTagCompiler('call', $args, $parameter);
+            }
+        }
+        if ($_output !== false) {
+            if ($_output !== true) {
+                // did we get compiled code
+                if ($this->has_code) {
+                    // Does it create output?
+                    if ($this->has_output) {
+                        $_output .= "\n";
+                    }
+                    // return compiled code
+                    return $_output;
+                }
+            }
+            // tag did not produce compiled code
+            return null;
+        } else {
+            // map_named attributes
+            if (isset($args['_attr'])) {
+                foreach ($args['_attr'] as $key => $attribute) {
+                    if (is_array($attribute)) {
+                        $args = array_merge($args, $attribute);
+                    }
+                }
+            }
+            // not an internal compiler tag
+            if (strlen($tag) < 6 || substr($tag, -5) != 'close') {
+                // check if tag is a registered object
+                if (isset($this->smarty->registered_objects[$tag]) && isset($parameter['object_methode'])) {
+                    $methode = $parameter['object_methode'];
+                    if (!in_array($methode, $this->smarty->registered_objects[$tag][3]) &&
+                        (empty($this->smarty->registered_objects[$tag][1]) || in_array($methode, $this->smarty->registered_objects[$tag][1]))
+                    ) {
+                        return $this->callTagCompiler('private_object_function', $args, $parameter, $tag, $methode);
+                    } elseif (in_array($methode, $this->smarty->registered_objects[$tag][3])) {
+                        return $this->callTagCompiler('private_object_block_function', $args, $parameter, $tag, $methode);
+                    } else {
+                        return $this->trigger_template_error('unallowed methode "' . $methode . '" in registered object "' . $tag . '"', $this->lex->taglineno);
+                    }
+                }
+                // check if tag is registered
+                foreach (array(Smarty::PLUGIN_COMPILER, Smarty::PLUGIN_FUNCTION, Smarty::PLUGIN_BLOCK) as $plugin_type) {
+                    if (isset($this->smarty->registered_plugins[$plugin_type][$tag])) {
+                        // if compiler function plugin call it now
+                        if ($plugin_type == Smarty::PLUGIN_COMPILER) {
+                            $new_args = array();
+                            foreach ($args as $key => $mixed) {
+                                if (is_array($mixed)) {
+                                    $new_args = array_merge($new_args, $mixed);
+                                } else {
+                                    $new_args[$key] = $mixed;
+                                }
+                            }
+                            if (!$this->smarty->registered_plugins[$plugin_type][$tag][1]) {
+                                $this->tag_nocache = true;
+                            }
+                            $function = $this->smarty->registered_plugins[$plugin_type][$tag][0];
+                            if (!is_array($function)) {
+                                return $function($new_args, $this);
+                            } elseif (is_object($function[0])) {
+                                return $this->smarty->registered_plugins[$plugin_type][$tag][0][0]->$function[1]($new_args, $this);
+                            } else {
+                                return call_user_func_array($function, array($new_args, $this));
+                            }
+                        }
+                        // compile registered function or block function
+                        if ($plugin_type == Smarty::PLUGIN_FUNCTION || $plugin_type == Smarty::PLUGIN_BLOCK) {
+                            return $this->callTagCompiler('private_registered_' . $plugin_type, $args, $parameter, $tag);
+                        }
+                    }
+                }
+                // check plugins from plugins folder
+                foreach ($this->smarty->plugin_search_order as $plugin_type) {
+                    if ($plugin_type == Smarty::PLUGIN_COMPILER && $this->smarty->loadPlugin('smarty_compiler_' . $tag) && (!isset($this->smarty->security_policy) || $this->smarty->security_policy->isTrustedTag($tag, $this))) {
+                        $plugin = 'smarty_compiler_' . $tag;
+                        if (is_callable($plugin)) {
+                            // convert arguments format for old compiler plugins
+                            $new_args = array();
+                            foreach ($args as $key => $mixed) {
+                                if (is_array($mixed)) {
+                                    $new_args = array_merge($new_args, $mixed);
+                                } else {
+                                    $new_args[$key] = $mixed;
+                                }
+                            }
+
+                            return $plugin($new_args, $this->smarty);
+                        }
+                        if (class_exists($plugin, false)) {
+                            $plugin_object = new $plugin;
+                            if (method_exists($plugin_object, 'compile')) {
+                                return $plugin_object->compile($args, $this);
+                            }
+                        }
+                        throw new SmartyException("Plugin \"{$tag}\" not callable");
+                    } else {
+                        if ($function = $this->getPlugin($tag, $plugin_type)) {
+                            if (!isset($this->smarty->security_policy) || $this->smarty->security_policy->isTrustedTag($tag, $this)) {
+                                return $this->callTagCompiler('private_' . $plugin_type . '_plugin', $args, $parameter, $tag, $function);
+                            }
+                        }
+                    }
+                }
+                if (is_callable($this->smarty->default_plugin_handler_func)) {
+                    $found = false;
+                    // look for already resolved tags
+                    foreach ($this->smarty->plugin_search_order as $plugin_type) {
+                        if (isset($this->default_handler_plugins[$plugin_type][$tag])) {
+                            $found = true;
+                            break;
+                        }
+                    }
+                    if (!$found) {
+                        // call default handler
+                        foreach ($this->smarty->plugin_search_order as $plugin_type) {
+                            if ($this->getPluginFromDefaultHandler($tag, $plugin_type)) {
+                                $found = true;
+                                break;
+                            }
+                        }
+                    }
+                    if ($found) {
+                        // if compiler function plugin call it now
+                        if ($plugin_type == Smarty::PLUGIN_COMPILER) {
+                            $new_args = array();
+                            foreach ($args as $mixed) {
+                                $new_args = array_merge($new_args, $mixed);
+                            }
+                            $function = $this->default_handler_plugins[$plugin_type][$tag][0];
+                            if (!is_array($function)) {
+                                return $function($new_args, $this);
+                            } elseif (is_object($function[0])) {
+                                return $this->default_handler_plugins[$plugin_type][$tag][0][0]->$function[1]($new_args, $this);
+                            } else {
+                                return call_user_func_array($function, array($new_args, $this));
+                            }
+                        } else {
+                            return $this->callTagCompiler('private_registered_' . $plugin_type, $args, $parameter, $tag);
+                        }
+                    }
+                }
+            } else {
+                // compile closing tag of block function
+                $base_tag = substr($tag, 0, -5);
+                // check if closing tag is a registered object
+                if (isset($this->smarty->registered_objects[$base_tag]) && isset($parameter['object_methode'])) {
+                    $methode = $parameter['object_methode'];
+                    if (in_array($methode, $this->smarty->registered_objects[$base_tag][3])) {
+                        return $this->callTagCompiler('private_object_block_function', $args, $parameter, $tag, $methode);
+                    } else {
+                        return $this->trigger_template_error('unallowed closing tag methode "' . $methode . '" in registered object "' . $base_tag . '"', $this->lex->taglineno);
+                    }
+                }
+                // registered block tag ?
+                if (isset($this->smarty->registered_plugins[Smarty::PLUGIN_BLOCK][$base_tag]) || isset($this->default_handler_plugins[Smarty::PLUGIN_BLOCK][$base_tag])) {
+                    return $this->callTagCompiler('private_registered_block', $args, $parameter, $tag);
+                }
+                // block plugin?
+                if ($function = $this->getPlugin($base_tag, Smarty::PLUGIN_BLOCK)) {
+                    return $this->callTagCompiler('private_block_plugin', $args, $parameter, $tag, $function);
+                }
+                // registered compiler plugin ?
+                if (isset($this->smarty->registered_plugins[Smarty::PLUGIN_COMPILER][$tag])) {
+                    // if compiler function plugin call it now
+                    $args = array();
+                    if (!$this->smarty->registered_plugins[Smarty::PLUGIN_COMPILER][$tag][1]) {
+                        $this->tag_nocache = true;
+                    }
+                    $function = $this->smarty->registered_plugins[Smarty::PLUGIN_COMPILER][$tag][0];
+                    if (!is_array($function)) {
+                        return $function($args, $this);
+                    } elseif (is_object($function[0])) {
+                        return $this->smarty->registered_plugins[Smarty::PLUGIN_COMPILER][$tag][0][0]->$function[1]($args, $this);
+                    } else {
+                        return call_user_func_array($function, array($args, $this));
+                    }
+                }
+                if ($this->smarty->loadPlugin('smarty_compiler_' . $tag)) {
+                    $plugin = 'smarty_compiler_' . $tag;
+                    if (is_callable($plugin)) {
+                        return $plugin($args, $this->smarty);
+                    }
+                    if (class_exists($plugin, false)) {
+                        $plugin_object = new $plugin;
+                        if (method_exists($plugin_object, 'compile')) {
+                            return $plugin_object->compile($args, $this);
+                        }
+                    }
+                    throw new SmartyException("Plugin \"{$tag}\" not callable");
+                }
+            }
+            $this->trigger_template_error("unknown tag \"" . $tag . "\"", $this->lex->taglineno);
+        }
+    }
+
+    /**
+     * lazy loads internal compile plugin for tag and calls the compile methode
+     *
+     * compile objects cached for reuse.
+     * class name format:  Smarty_Internal_Compile_TagName
+     * plugin filename format: Smarty_Internal_Tagname.php
+     *
+     * @param  string $tag    tag name
+     * @param  array $args   list of tag attributes
+     * @param  mixed $param1 optional parameter
+     * @param  mixed $param2 optional parameter
+     * @param  mixed $param3 optional parameter
+     * @return string compiled code
+     */
+    public function callTagCompiler($tag, $args, $param1 = null, $param2 = null, $param3 = null)
+    {
+        // re-use object if already exists
+        if (isset(self::$_tag_objects[$tag])) {
+            // compile this tag
+            return self::$_tag_objects[$tag]->compile($args, $this, $param1, $param2, $param3);
+        }
+        // lazy load internal compiler plugin
+        $class_name = 'Smarty_Internal_Compile_' . $tag;
+        if ($this->smarty->loadPlugin($class_name)) {
+            // check if tag allowed by security
+            if (!isset($this->smarty->security_policy) || $this->smarty->security_policy->isTrustedTag($tag, $this)) {
+                // use plugin if found
+                self::$_tag_objects[$tag] = new $class_name;
+                // compile this tag
+                return self::$_tag_objects[$tag]->compile($args, $this, $param1, $param2, $param3);
+            }
+        }
+        // no internal compile plugin for this tag
+        return false;
+    }
+
+    /**
+     * Check for plugins and return function name
+     *
+     * @param  string $pugin_name  name of plugin or function
+     * @param  string $plugin_type type of plugin
+     * @return string call name of function
+     */
+    public function getPlugin($plugin_name, $plugin_type)
+    {
+        $function = null;
+        if ($this->template->caching && ($this->nocache || $this->tag_nocache)) {
+            if (isset($this->template->required_plugins['nocache'][$plugin_name][$plugin_type])) {
+                $function = $this->template->required_plugins['nocache'][$plugin_name][$plugin_type]['function'];
+            } elseif (isset($this->template->required_plugins['compiled'][$plugin_name][$plugin_type])) {
+                $this->template->required_plugins['nocache'][$plugin_name][$plugin_type] = $this->template->required_plugins['compiled'][$plugin_name][$plugin_type];
+                $function = $this->template->required_plugins['nocache'][$plugin_name][$plugin_type]['function'];
+            }
+        } else {
+            if (isset($this->template->required_plugins['compiled'][$plugin_name][$plugin_type])) {
+                $function = $this->template->required_plugins['compiled'][$plugin_name][$plugin_type]['function'];
+            } elseif (isset($this->template->required_plugins['nocache'][$plugin_name][$plugin_type])) {
+                $this->template->required_plugins['compiled'][$plugin_name][$plugin_type] = $this->template->required_plugins['nocache'][$plugin_name][$plugin_type];
+                $function = $this->template->required_plugins['compiled'][$plugin_name][$plugin_type]['function'];
+            }
+        }
+        if (isset($function)) {
+            if ($plugin_type == 'modifier') {
+                $this->modifier_plugins[$plugin_name] = true;
+            }
+
+            return $function;
+        }
+        // loop through plugin dirs and find the plugin
+        $function = 'smarty_' . $plugin_type . '_' . $plugin_name;
+        $file = $this->smarty->loadPlugin($function, false);
+
+        if (is_string($file)) {
+            if ($this->template->caching && ($this->nocache || $this->tag_nocache)) {
+                $this->template->required_plugins['nocache'][$plugin_name][$plugin_type]['file'] = $file;
+                $this->template->required_plugins['nocache'][$plugin_name][$plugin_type]['function'] = $function;
+            } else {
+                $this->template->required_plugins['compiled'][$plugin_name][$plugin_type]['file'] = $file;
+                $this->template->required_plugins['compiled'][$plugin_name][$plugin_type]['function'] = $function;
+            }
+            if ($plugin_type == 'modifier') {
+                $this->modifier_plugins[$plugin_name] = true;
+            }
+
+            return $function;
+        }
+        if (is_callable($function)) {
+            // plugin function is defined in the script
+            return $function;
+        }
+
+        return false;
+    }
+
+    /**
+     * Check for plugins by default plugin handler
+     *
+     * @param  string $tag         name of tag
+     * @param  string $plugin_type type of plugin
+     * @return boolean true if found
+     */
+    public function getPluginFromDefaultHandler($tag, $plugin_type)
+    {
+        $callback = null;
+        $script = null;
+        $cacheable = true;
+        $result = call_user_func_array(
+            $this->smarty->default_plugin_handler_func, array($tag, $plugin_type, $this->template, &$callback, &$script, &$cacheable)
+        );
+        if ($result) {
+            $this->tag_nocache = $this->tag_nocache || !$cacheable;
+            if ($script !== null) {
+                if (is_file($script)) {
+                    if ($this->template->caching && ($this->nocache || $this->tag_nocache)) {
+                        $this->template->required_plugins['nocache'][$tag][$plugin_type]['file'] = $script;
+                        $this->template->required_plugins['nocache'][$tag][$plugin_type]['function'] = $callback;
+                    } else {
+                        $this->template->required_plugins['compiled'][$tag][$plugin_type]['file'] = $script;
+                        $this->template->required_plugins['compiled'][$tag][$plugin_type]['function'] = $callback;
+                    }
+                    include_once $script;
+                } else {
+                    $this->trigger_template_error("Default plugin handler: Returned script file \"{$script}\" for \"{$tag}\" not found");
+                }
+            }
+            if (!is_string($callback) && !(is_array($callback) && is_string($callback[0]) && is_string($callback[1]))) {
+                $this->trigger_template_error("Default plugin handler: Returned callback for \"{$tag}\" must be a static function name or array of class and function name");
+            }
+            if (is_callable($callback)) {
+                $this->default_handler_plugins[$plugin_type][$tag] = array($callback, true, array());
+
+                return true;
+            } else {
+                $this->trigger_template_error("Default plugin handler: Returned callback for \"{$tag}\" not callable");
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Inject inline code for nocache template sections
+     *
+     * This method gets the content of each template element from the parser.
+     * If the content is compiled code and it should be not cached the code is injected
+     * into the rendered output.
+     *
+     * @param  string $content content of template element
+     * @param  boolean $is_code true if content is compiled code
+     * @return string  content
+     */
+    public function processNocacheCode($content, $is_code)
+    {
+        // If the template is not evaluated and we have a nocache section and or a nocache tag
+        if ($is_code && !empty($content)) {
+            // generate replacement code
+            if ((!($this->template->source->recompiled) || $this->forceNocache) && $this->template->caching && !$this->suppressNocacheProcessing &&
+                ($this->nocache || $this->tag_nocache)
+            ) {
+                $this->template->has_nocache_code = true;
+                $_output = addcslashes($content, '\'\\');
+                $_output = str_replace("^#^", "'", $_output);
+                $_output = "<?php echo '/*%%SmartyNocache:{$this->nocache_hash}%%*/" . $_output . "/*/%%SmartyNocache:{$this->nocache_hash}%%*/';?>\n";
+                // make sure we include modifier plugins for nocache code
+                foreach ($this->modifier_plugins as $plugin_name => $dummy) {
+                    if (isset($this->template->required_plugins['compiled'][$plugin_name]['modifier'])) {
+                        $this->template->required_plugins['nocache'][$plugin_name]['modifier'] = $this->template->required_plugins['compiled'][$plugin_name]['modifier'];
+                    }
+                }
+            } else {
+                $_output = $content;
+            }
+        } else {
+            $_output = $content;
+        }
+        $this->modifier_plugins = array();
+        $this->suppressNocacheProcessing = false;
+        $this->tag_nocache = false;
+
+        return $_output;
+    }
+
+    /**
+     *  push current file and line offset on stack for tracing {block} source lines
+     *
+     * @param string $file new filename
+     * @param string $uid uid of file
+     * @param string $debug false debug end_compile shall not be called
+     * @param int $line line offset to source
+     */
+    public function pushTrace($file, $uid, $line, $debug = true)
+    {
+        if ($this->smarty->debugging && $debug) {
+            Smarty_Internal_Debug::end_compile($this->template);
+        }
+        array_push($this->trace_stack, array($this->smarty->_current_file, $this->trace_filepath, $this->trace_uid, $this->trace_line_offset));
+        $this->trace_filepath = $this->smarty->_current_file = $file;
+        $this->trace_uid = $uid;
+        $this->trace_line_offset = $line ;
+        if ($this->smarty->debugging) {
+            Smarty_Internal_Debug::start_compile($this->template);
+        }
+    }
+
+    /**
+     *  restore file and line offset
+     *
+     */
+    public function popTrace()
+    {
+        if ($this->smarty->debugging) {
+            Smarty_Internal_Debug::end_compile($this->template);
+        }
+        $r = array_pop($this->trace_stack);
+        $this->smarty->_current_file = $r[0];
+        $this->trace_filepath = $r[1];
+        $this->trace_uid = $r[2];
+        $this->trace_line_offset = $r[3];
+        if ($this->smarty->debugging) {
+            Smarty_Internal_Debug::start_compile($this->template);
+        }
+    }
+
+    /**
+     * display compiler error messages without dying
+     *
+     * If parameter $args is empty it is a parser detected syntax error.
+     * In this case the parser is called to obtain information about expected tokens.
+     *
+     * If parameter $args contains a string this is used as error message
+     *
+     * @param  string $args individual error message or null
+     * @param  string $line line-number
+     * @throws SmartyCompilerException when an unexpected token is found
+     */
+    public function trigger_template_error($args = null, $line = null)
+    {
+        // get template source line which has error
+        if (!isset($line)) {
+            $line = $this->lex->line;
+        }
+//        $line += $this->trace_line_offset;
+        $match = preg_split("/\n/", $this->lex->data);
+        $error_text = 'Syntax error in template "' . (empty($this->trace_filepath) ? $this->template->source->filepath : $this->trace_filepath) . '"  on line ' . ($line + $this->trace_line_offset)  . ' "' . trim(preg_replace('![\t\r\n]+!', ' ', $match[$line - 1])) . '" ';
+        if (isset($args)) {
+            // individual error message
+            $error_text .= $args;
+        } else {
+            // expected token from parser
+            $error_text .= ' - Unexpected "' . $this->lex->value . '"';
+            if (count($this->parser->yy_get_expected_tokens($this->parser->yymajor)) <= 4) {
+                foreach ($this->parser->yy_get_expected_tokens($this->parser->yymajor) as $token) {
+                    $exp_token = $this->parser->yyTokenName[$token];
+                    if (isset($this->lex->smarty_token_names[$exp_token])) {
+                        // token type from lexer
+                        $expect[] = '"' . $this->lex->smarty_token_names[$exp_token] . '"';
+                    } else {
+                        // otherwise internal token name
+                        $expect[] = $this->parser->yyTokenName[$token];
+                    }
+                }
+                $error_text .= ', expected one of: ' . implode(' , ', $expect);
+            }
+        }
+        $e = new SmartyCompilerException($error_text);
+        $e->line = $line;
+        $e->source = trim(preg_replace('![\t\r\n]+!', ' ', $match[$line - 1]));
+        $e->desc = $args;
+        $e->template = $this->template->source->filepath;
+        throw $e;
+    }
+
+}

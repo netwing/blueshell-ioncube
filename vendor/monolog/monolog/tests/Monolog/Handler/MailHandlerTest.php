@@ -1,47 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-eeykFWzXKl0f7zmPiOX4q2N9cGwdDr+QO0==
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+use Monolog\TestCase;
+
+class MailHandlerTest extends TestCase
+{
+    /**
+     * @covers Monolog\Handler\MailHandler::handleBatch
+     */
+    public function testHandleBatch()
+    {
+        $formatter = $this->getMock('Monolog\\Formatter\\FormatterInterface');
+        $formatter->expects($this->once())
+            ->method('formatBatch'); // Each record is formatted
+
+        $handler = $this->getMockForAbstractClass('Monolog\\Handler\\MailHandler');
+        $handler->expects($this->once())
+            ->method('send');
+        $handler->expects($this->never())
+            ->method('write'); // write is for individual records
+
+        $handler->setFormatter($formatter);
+
+        $handler->handleBatch($this->getMultipleRecords());
+    }
+
+    /**
+     * @covers Monolog\Handler\MailHandler::handleBatch
+     */
+    public function testHandleBatchNotSendsMailIfMessagesAreBelowLevel()
+    {
+        $records = array(
+            $this->getRecord(Logger::DEBUG, 'debug message 1'),
+            $this->getRecord(Logger::DEBUG, 'debug message 2'),
+            $this->getRecord(Logger::INFO, 'information'),
+        );
+
+        $handler = $this->getMockForAbstractClass('Monolog\\Handler\\MailHandler');
+        $handler->expects($this->never())
+            ->method('send');
+        $handler->setLevel(Logger::ERROR);
+
+        $handler->handleBatch($records);
+    }
+
+    /**
+     * @covers Monolog\Handler\MailHandler::write
+     */
+    public function testHandle()
+    {
+        $handler = $this->getMockForAbstractClass('Monolog\\Handler\\MailHandler');
+
+        $record = $this->getRecord();
+        $records = array($record);
+        $records[0]['formatted'] = '['.$record['datetime']->format('Y-m-d H:i:s').'] test.WARNING: test [] []'."\n";
+
+        $handler->expects($this->once())
+            ->method('send')
+            ->with($records[0]['formatted'], $records);
+
+        $handler->handle($record);
+    }
+}

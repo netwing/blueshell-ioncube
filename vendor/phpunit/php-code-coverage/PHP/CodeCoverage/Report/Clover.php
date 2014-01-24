@@ -1,137 +1,346 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.0.0
+ */
+
+/**
+ * Generates a Clover XML logfile from an PHP_CodeCoverage object.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.0.0
+ */
+class PHP_CodeCoverage_Report_Clover
+{
+    /**
+     * @param  PHP_CodeCoverage $coverage
+     * @param  string           $target
+     * @param  string           $name
+     * @return string
+     */
+    public function process(PHP_CodeCoverage $coverage, $target = NULL, $name = NULL)
+    {
+        $xmlDocument = new DOMDocument('1.0', 'UTF-8');
+        $xmlDocument->formatOutput = TRUE;
+
+        $xmlCoverage = $xmlDocument->createElement('coverage');
+        $xmlCoverage->setAttribute('generated', (int)$_SERVER['REQUEST_TIME']);
+        $xmlDocument->appendChild($xmlCoverage);
+
+        $xmlProject = $xmlDocument->createElement('project');
+        $xmlProject->setAttribute('timestamp', (int)$_SERVER['REQUEST_TIME']);
+
+        if (is_string($name)) {
+            $xmlProject->setAttribute('name', $name);
+        }
+
+        $xmlCoverage->appendChild($xmlProject);
+
+        $packages = array();
+        $report   = $coverage->getReport();
+        unset($coverage);
+
+        foreach ($report as $item) {
+            $namespace = 'global';
+
+            if (!$item instanceof PHP_CodeCoverage_Report_Node_File) {
+                continue;
+            }
+
+            $xmlFile = $xmlDocument->createElement('file');
+            $xmlFile->setAttribute('name', $item->getPath());
+
+            $classes      = $item->getClassesAndTraits();
+            $coverage     = $item->getCoverageData();
+            $lines        = array();
+            $ignoredLines = $item->getIgnoredLines();
+
+            foreach ($classes as $className => $class) {
+                $classStatements        = 0;
+                $coveredClassStatements = 0;
+                $coveredMethods         = 0;
+
+                foreach ($class['methods'] as $methodName => $method) {
+                    $methodCount        = 0;
+                    $methodLines        = 0;
+                    $methodLinesCovered = 0;
+
+                    for ($i  = $method['startLine'];
+                         $i <= $method['endLine'];
+                         $i++) {
+                        if (isset($ignoredLines[$i])) {
+                            continue;
+                        }
+
+                        $add   = TRUE;
+                        $count = 0;
+
+                        if (isset($coverage[$i])) {
+                            if ($coverage[$i] !== NULL) {
+                                $classStatements++;
+                                $methodLines++;
+                            } else {
+                                $add = FALSE;
+                            }
+
+                            $count = count($coverage[$i]);
+
+                            if ($count > 0) {
+                                $coveredClassStatements++;
+                                $methodLinesCovered++;
+                            }
+                        } else {
+                            $add = FALSE;
+                        }
+
+                        $methodCount = max($methodCount, $count);
+
+                        if ($add) {
+                            $lines[$i] = array(
+                              'count' => $count, 'type'  => 'stmt'
+                            );
+                        }
+                    }
+
+                    if ($methodCount > 0) {
+                        $coveredMethods++;
+                    }
+
+                    $lines[$method['startLine']] = array(
+                      'count' => $methodCount,
+                      'crap'  => $method['crap'],
+                      'type'  => 'method',
+                      'name'  => $methodName
+                    );
+                }
+
+                if (!empty($class['package']['namespace'])) {
+                    $namespace = $class['package']['namespace'];
+                }
+
+                $xmlClass = $xmlDocument->createElement('class');
+                $xmlClass->setAttribute('name', $className);
+                $xmlClass->setAttribute('namespace', $namespace);
+
+                if (!empty($class['package']['fullPackage'])) {
+                    $xmlClass->setAttribute(
+                      'fullPackage', $class['package']['fullPackage']
+                    );
+                }
+
+                if (!empty($class['package']['category'])) {
+                    $xmlClass->setAttribute(
+                      'category', $class['package']['category']
+                    );
+                }
+
+                if (!empty($class['package']['package'])) {
+                    $xmlClass->setAttribute(
+                      'package', $class['package']['package']
+                    );
+                }
+
+                if (!empty($class['package']['subpackage'])) {
+                    $xmlClass->setAttribute(
+                      'subpackage', $class['package']['subpackage']
+                    );
+                }
+
+                $xmlFile->appendChild($xmlClass);
+
+                $xmlMetrics = $xmlDocument->createElement('metrics');
+                $xmlMetrics->setAttribute('methods', count($class['methods']));
+                $xmlMetrics->setAttribute('coveredmethods', $coveredMethods);
+                $xmlMetrics->setAttribute('conditionals', 0);
+                $xmlMetrics->setAttribute('coveredconditionals', 0);
+                $xmlMetrics->setAttribute('statements', $classStatements);
+                $xmlMetrics->setAttribute(
+                  'coveredstatements', $coveredClassStatements
+                );
+                $xmlMetrics->setAttribute(
+                  'elements',
+                  count($class['methods']) +
+                  $classStatements
+                  /* + conditionals */);
+                $xmlMetrics->setAttribute(
+                  'coveredelements',
+                  $coveredMethods +
+                  $coveredClassStatements
+                  /* + coveredconditionals */
+                );
+                $xmlClass->appendChild($xmlMetrics);
+            }
+
+            foreach ($coverage as $line => $data) {
+                if ($data === NULL ||
+                    isset($lines[$line]) ||
+                    isset($ignoredLines[$line])) {
+                    continue;
+                }
+
+                $lines[$line] = array(
+                  'count' => count($data), 'type' => 'stmt'
+                );
+            }
+
+            ksort($lines);
+
+            foreach ($lines as $line => $data) {
+                if (isset($ignoredLines[$line])) {
+                    continue;
+                }
+
+                $xmlLine = $xmlDocument->createElement('line');
+                $xmlLine->setAttribute('num', $line);
+                $xmlLine->setAttribute('type', $data['type']);
+
+                if (isset($data['name'])) {
+                    $xmlLine->setAttribute('name', $data['name']);
+                }
+
+                if (isset($data['crap'])) {
+                    $xmlLine->setAttribute('crap', $data['crap']);
+                }
+
+                $xmlLine->setAttribute('count', $data['count']);
+                $xmlFile->appendChild($xmlLine);
+            }
+
+            $linesOfCode = $item->getLinesOfCode();
+
+            $xmlMetrics = $xmlDocument->createElement('metrics');
+            $xmlMetrics->setAttribute('loc', $linesOfCode['loc']);
+            $xmlMetrics->setAttribute('ncloc', $linesOfCode['ncloc']);
+            $xmlMetrics->setAttribute('classes', $item->getNumClassesAndTraits());
+            $xmlMetrics->setAttribute('methods', $item->getNumMethods());
+            $xmlMetrics->setAttribute(
+              'coveredmethods', $item->getNumTestedMethods()
+            );
+            $xmlMetrics->setAttribute('conditionals', 0);
+            $xmlMetrics->setAttribute('coveredconditionals', 0);
+            $xmlMetrics->setAttribute(
+              'statements', $item->getNumExecutableLines()
+            );
+            $xmlMetrics->setAttribute(
+              'coveredstatements', $item->getNumExecutedLines()
+            );
+            $xmlMetrics->setAttribute(
+              'elements',
+              $item->getNumMethods() +
+              $item->getNumExecutableLines()
+              /* + conditionals */
+            );
+            $xmlMetrics->setAttribute(
+              'coveredelements',
+              $item->getNumTestedMethods() +
+              $item->getNumExecutedLines()
+              /* + coveredconditionals */
+            );
+            $xmlFile->appendChild($xmlMetrics);
+
+            if ($namespace == 'global') {
+                $xmlProject->appendChild($xmlFile);
+            } else {
+                if (!isset($packages[$namespace])) {
+                    $packages[$namespace] = $xmlDocument->createElement(
+                      'package'
+                    );
+
+                    $packages[$namespace]->setAttribute('name', $namespace);
+                    $xmlProject->appendChild($packages[$namespace]);
+                }
+
+                $packages[$namespace]->appendChild($xmlFile);
+            }
+        }
+
+        $linesOfCode = $report->getLinesOfCode();
+
+        $xmlMetrics = $xmlDocument->createElement('metrics');
+        $xmlMetrics->setAttribute('files', count($report));
+        $xmlMetrics->setAttribute('loc', $linesOfCode['loc']);
+        $xmlMetrics->setAttribute('ncloc', $linesOfCode['ncloc']);
+        $xmlMetrics->setAttribute(
+          'classes', $report->getNumClassesAndTraits()
+        );
+        $xmlMetrics->setAttribute('methods', $report->getNumMethods());
+        $xmlMetrics->setAttribute(
+          'coveredmethods', $report->getNumTestedMethods()
+        );
+        $xmlMetrics->setAttribute('conditionals', 0);
+        $xmlMetrics->setAttribute('coveredconditionals', 0);
+        $xmlMetrics->setAttribute(
+          'statements', $report->getNumExecutableLines()
+        );
+        $xmlMetrics->setAttribute(
+          'coveredstatements', $report->getNumExecutedLines()
+        );
+        $xmlMetrics->setAttribute(
+          'elements',
+          $report->getNumMethods() +
+          $report->getNumExecutableLines()
+          /* + conditionals */
+        );
+        $xmlMetrics->setAttribute(
+          'coveredelements',
+          $report->getNumTestedMethods() +
+          $report->getNumExecutedLines()
+          /* + coveredconditionals */
+        );
+        $xmlProject->appendChild($xmlMetrics);
+
+        if ($target !== NULL) {
+            if (!is_dir(dirname($target))) {
+                mkdir(dirname($target), 0777, TRUE);
+            }
+
+            return $xmlDocument->save($target);
+        } else {
+            return $xmlDocument->saveXML();
+        }
+    }
+}

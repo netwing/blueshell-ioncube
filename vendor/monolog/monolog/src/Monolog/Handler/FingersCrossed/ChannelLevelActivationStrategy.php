@@ -1,32 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+*
+* (c) Jordi Boggiano <j.boggiano@seld.be>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
+namespace Monolog\Handler\FingersCrossed;
+
+/**
+ * Channel and Error level based monolog activation strategy. Allows to trigger activation
+ * based on level per channel. e.g. trigger activation on level 'ERROR' by default, except
+ * for records of the 'sql' channel; those should trigger activation on level 'WARN'.
+ *
+ * Example:
+ *
+ * <code>
+ *   $activationStrategy = new ChannelLevelActivationStrategy(
+ *       Logger::CRITICAL,
+ *       array(
+ *           'request' => Logger::ALERT,
+ *           'sensitive' => Logger::ERROR,
+ *       )
+ *   );
+ *   $handler = new FingersCrossedHandler(new StreamHandler('php://stderr'), $activationStrategy);
+ * </code>
+ *
+ * @author Mike Meessen <netmikey@gmail.com>
+ */
+class ChannelLevelActivationStrategy implements ActivationStrategyInterface
+{
+    private $defaultActionLevel;
+    private $channelToActionLevel;
+
+    /**
+     * @param int   $defaultActionLevel    The default action level to be used if the record's category doesn't match any
+     * @param array $categoryToActionLevel An array that maps channel names to action levels.
+     */
+    public function __construct($defaultActionLevel, $channelToActionLevel = array())
+    {
+        $this->defaultActionLevel = $defaultActionLevel;
+        $this->channelToActionLevel = $channelToActionLevel;
+    }
+
+    public function isHandlerActivated(array $record)
+    {
+        if (isset($this->channelToActionLevel[$record['channel']])) {
+            return $record['level'] >= $this->channelToActionLevel[$record['channel']];
+        }
+
+        return $record['level'] >= $this->defaultActionLevel;
+    }
+}

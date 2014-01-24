@@ -1,29 +1,23 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPpEplhEZcGE4hWKha0TUkNKA0h+JlI3LAkeB53+iFsknGXuEtN/ROspv+mbIKtmrsC98/R2C
-QaTqgt0Rx6VjcPKeqodZbFAwIyCFoqvVRvSRIlPNro6G4c2i+f+rYIdc5y33+rBdW3ZyHEXQPVSJ
-vfyYQavRi4gLcL6Iag8aYWsDB+33uM6Jjs0xNu8xW+axUbSDh9ohENmguLvjn2Gl1X99+FgXNKOa
-RrLvaEkojF6NJ90omPWkegElKIZXE/TmggoQRmH0t6cg0NHKO+qFK/E6TPWvK8eGXCY/8FzXRAOA
-gv0/voJFaySwHb600SRQSW2YOBWsbHS2XVTKZQNbwLrOeNreifviTCM33i5tflBrnRN1FnQ/PY7x
-GiRnJgFl6wKV5dlfdkimXX/fqQIJe0EUnf0mAgWaOrXOcVAPfcXH5A7REZ61MfA8vwEAc0a3xAbQ
-cjpVxB3pUX+DW+zNnsMgPWdgLEq0+eX91uynInP5Pt75v7Ru0Gzm7H+1idVBOiEKEOhT8kMUwIHA
-EwFmox6O7ptj5PCQynjto5CWq9WnUbRFnhqu/Nn/Gf5A9aol/OLlSE9ZbXDpwdaiQPtQ93YjLYTy
-wfeWAD/qj2tdXFUWPQ4gLSBHgYHPNUeepCR8M4umHvnmaXpaGFh2bYXv273Y96gjgvAH/H0JH5LI
-vXUZGeKhzMk2rLAF0a/dYIy6ZI6CqxYRjUMH9THanmZNEGMBzeszQkzbBQl/lKqr0+NC6MkgXq8B
-fVurKTXrGygbImOxC6LfghiqxgeGWBfOh9veq795+CMSnYO8D01uyYUO0VgH2sYh9dnIlvZVTzUA
-mvhzwe7JciRI3fEkOgNlPGdy1x/pQ+HRhZzL6CNQz6h5bk3XOAapdsPGTtmvxd0mP+vNf8+sPejL
-YuXlAHxKfhC1fbgUWrAYah79h/iqU9SR6/aP6PJnIJbBXLI9WtiJgZWQHYteVduva8x2Z4pnoFMo
-pcq3ULfZZKin+xLAXcgyNtN/7Sq++VGheFrpl+AcZn8W6EO1EDrWIoMvcMqLQ9iLWf1DYtXKkvJt
-2H+OhMsAPSZ/DVgr9eIzZ4joI2D58IABc9NPwlJHwlCTjMuXOLpr5A36r0eKHJro7iftgdcQWsJ8
-//0shK8QfXDNW5ZUvZbtFr24b8ZhVdPtcN/6eg9wrZAcK6/53giXq80u3SIcQVoJDX5UXj82xRBZ
-uE4p/e/Fc53T7PpLIOk8sT5Iv4WPOnnznrvydo4fxiHrwClim332QWt/Oa47oNFR1CfUzXa4j0xY
-gOsM7dslXm4qclPDmpSZ3RvxFbro8UqkkXz2401A1NsLEhbet7BtGMHV30iJ01mjo5Xmt2jSqHXD
-mo7ZOW4VWGn3VDIp5tpj9vMyAfUiNBTWytoCcvprs4DGik334QlWokpJNvmr1FE5FwdgN49H58xK
-9m2VuzbvvsRPfIbVSDa1EbEXxfLzOF2C1+2HHelmTPquAWZHRDbuMV3zNh9URVaQ19u8i0/gvnW4
-eIxzMerRNuHbSSgaO1ybsdBn5bVaLxKqm0kUSKjt+ysR/37AXiOj478k+9fuzxzMfffu0KNA3jm0
-wcYSevHrOgiunxpjbdyh93QnvqXW4ETWHsAZP+vIKOwwcSp/0XanJlJeX2iSK9O6iPram1WsyQ0v
-mScMcKknPNLPlvq7q5qiT05J/NPZfTOImTsdOnVAuZ1PyrLW+BrCMSopqIgQU9+WD0FE2FS6tV+Y
-XaBrgxpU4bmDN9vKj2ajJzIHjVtMNmVj9xOkZ3KzPxClf+FLbqsjJ/leM0YqfxGjy5wuCNEiwun/
-Be0ZfBGE1zNzPqAPPn2UxefIExiNwjZZPso1sixK9DxNejr9vt5PJCDNw32XQqaLeeAav7YV0DC2
-rkZcVjroCU8SgUEIYcOrUpALFsy6hycKScdvMACai+fjRna=
+<?php 
+class ExceptionStackTestException extends Exception { }
+
+class ExceptionStackTest extends PHPUnit_Framework_TestCase
+{
+    public function testPrintingChildException()
+    {
+        try {
+            $this->assertEquals(array(1), array(2), 'message');
+        } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            $message = $e->getMessage() . "\n" . $e->getComparisonFailure()->getDiff();
+            throw new ExceptionStackTestException("Child exception\n$message", 101, $e);
+        }
+    }
+
+    public function testNestedExceptions()
+    {
+        $exceptionThree = new Exception('Three');
+        $exceptionTwo = new InvalidArgumentException('Two', 0, $exceptionThree);
+        $exceptionOne = new Exception('One', 0, $exceptionTwo);
+        throw $exceptionOne;
+    }
+}

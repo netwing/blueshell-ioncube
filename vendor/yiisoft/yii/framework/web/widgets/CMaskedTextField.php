@@ -1,68 +1,114 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CMaskedTextField class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CMaskedTextField generates a masked text field.
+ *
+ * CMaskedTextField is similar to {@link CHtml::textField} except that
+ * an input mask will be used to help users enter properly formatted data.
+ * The masked text field is implemented based on the jQuery masked input plugin
+ * (see {@link http://digitalbush.com/projects/masked-input-plugin}).
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CMaskedTextField extends CInputWidget
+{
+	/**
+	 * @var string the input mask (e.g. '99/99/9999' for date input). The following characters are predefined:
+	 * <ul>
+	 * <li>a: represents an alpha character (A-Z,a-z).</li>
+	 * <li>9: represents a numeric character (0-9).</li>
+	 * <li>*: represents an alphanumeric character (A-Z,a-z,0-9).</li>
+	 * <li>?: anything listed after '?' within the mask is considered optional user input.</li>
+	 * </ul>
+	 * Additional characters can be defined by specifying the {@link charMap} property.
+	 */
+	public $mask;
+	/**
+	 * @var array the mapping between mask characters and the corresponding patterns.
+	 * For example, array('~'=>'[+-]') specifies that the '~' character expects '+' or '-' input.
+	 * Defaults to null, meaning using the map as described in {@link mask}.
+	 */
+	public $charMap;
+	/**
+	 * @var string the character prompting for user input. Defaults to underscore '_'.
+	 */
+	public $placeholder;
+	/**
+	 * @var string a JavaScript function callback that will be invoked when user finishes the input.
+	 */
+	public $completed;
+
+	/**
+	 * Executes the widget.
+	 * This method registers all needed client scripts and renders
+	 * the text field.
+	 */
+	public function run()
+	{
+		if($this->mask=='')
+			throw new CException(Yii::t('yii','Property CMaskedTextField.mask cannot be empty.'));
+
+		list($name,$id)=$this->resolveNameID();
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
+		else
+			$this->htmlOptions['id']=$id;
+		if(isset($this->htmlOptions['name']))
+			$name=$this->htmlOptions['name'];
+
+		$this->registerClientScript();
+
+		if($this->hasModel())
+			echo CHtml::activeTextField($this->model,$this->attribute,$this->htmlOptions);
+		else
+			echo CHtml::textField($name,$this->value,$this->htmlOptions);
+	}
+
+	/**
+	 * Registers the needed CSS and JavaScript.
+	 */
+	public function registerClientScript()
+	{
+		$id=$this->htmlOptions['id'];
+		$miOptions=$this->getClientOptions();
+		$options=$miOptions!==array() ? ','.CJavaScript::encode($miOptions) : '';
+		$js='';
+		if(is_array($this->charMap))
+			$js.='jQuery.mask.definitions='.CJavaScript::encode($this->charMap).";\n";
+		$js.="jQuery(\"#{$id}\").mask(\"{$this->mask}\"{$options});";
+
+		$cs=Yii::app()->getClientScript();
+		$cs->registerCoreScript('maskedinput');
+		$cs->registerScript('Yii.CMaskedTextField#'.$id,$js);
+	}
+
+	/**
+	 * @return array the options for the text field
+	 */
+	protected function getClientOptions()
+	{
+		$options=array();
+		if($this->placeholder!==null)
+			$options['placeholder']=$this->placeholder;
+
+		if($this->completed!==null)
+		{
+			if($this->completed instanceof CJavaScriptExpression)
+				$options['completed']=$this->completed;
+			else
+				$options['completed']=new CJavaScriptExpression($this->completed);
+		}
+
+		return $options;
+	}
+}

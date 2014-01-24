@@ -1,211 +1,236 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPoYEwgknFU+CM61/YBFbdK8i5KZbEbA9SOkiS9b41RCQdrG+Al4e1EiB3xsOVL1vVOGHSEwd
-uWzfyaVwgrwaKYAIEQuvgAoZ1g1gmrVwGHgzhdmMib6OwjIBG5G1hWfYXnsLI7DtOQcio/GmsMgM
-XOmcNPjAMG9vaklmLvn8bm6NZ0GHadTpsD+/55r3xdm/zjb9jV3tXtTcfOSV/Rpd31I9jiH1VdWB
-8DhbBo+0G+2NASwa4LGghr4euJltSAgiccy4GDnfTETVHlWcxJ3YB5LjBDYt4RXPiaSWGzs/jPJY
-gW6cSN5dM5Cj7yjuWRx+auoJ8e6X00OHAZKp8XAzWg0hNrbxz3N1bhcwwL1vWn3g4n/xGnmnMBG1
-vnRCGy8YgDcQlEbq8GTEo8ao8lSmplb9V27pc9QZ/v1R7AcuVN7n34RrRJ+fpw4AYrxpg+6C/RKq
-iWFCzfYaPD1NsWgTpW0h1hWNkKzzYeeM+Nb2erSZEhKA4FGXq+MRaF6Oln7U6TV09uMeGVCivScP
-m2fCO+roCbz/eRdSgsLANXwUoUfg18Vsxn48jQadX2HVd5y8rjZPsyyC2t48lf/7xKAEI4VmcfDn
-fBolEN+LTS411rT0NN5j7+EffmrNFJt/VBnoYlNxhXFlLTU8ULzUCKHYCEcXZSEj19WN1mbRJwxA
-xk9lDVqdl7f2NuEcv8KMSK1uGIeZciPjzYV2bFs19BH2Df4IN1iw40rer3KkWhN22bKAliKSy5gD
-/yuDxYfGXOhWAvtTP7VrsaattrUbm4pQ3UDVvWZqpbrZb4Gv3nMMjt+cUauFPb1KUdhwz5kcVWYn
-NIDu5qnBHzRYOUODAAX5iZGnBurRbBFfd4POkUyS2IewZAxMGAToy6YbiqjYBTXtMPVmrOLgE1aN
-AtJLlROniGXxRASQhUwBZIpHe0x6A6UBhJ2jfjcvV6Y4BDJd+bx1BvzDpDWfLrwYSyAc0oPBxNwS
-mfSGZdAQ2jeXo+DLjn7h1Ri61o7of6sOIdbj1ZgmKqUDguCTDDY1FoKhm0dz0ENsTFAI9EnqBGXc
-mNBZaSxYzsJp1kNyaaNrN6KEwmofkNP6fIVE1FlScQID0JMASRdZwNZIo6Pj/3FKK5V7gyKYLDqE
-JwJZzRBdu6bPV5I85bnWdcTX3N7eaUQdVWHeRd8WNg9Jhn2lX87Qm+z4Kg8u+s/aL6NrS+x1sJw6
-VnjRrxP+8iOBpH3j80rogkyut42HvCCXKuGr031VcUQ8IduXCgz9HcPOZRyLLx3i5CCETNFEJG7E
-vopEsgqNeWuJ4VUQGcgfI7ZMFKnOIt57x7LJrkb8bwtDIrWC2E4mGvWWOZQbqoeuKlEU6EfDmiht
-dC4Tm0AdYwmno1uRLbzJ6MrgVBTwUgtCBeVZS9OsXUzRWVQvxjsRcl8cqWhKJfv+kG5ommD3i6Qm
-UeWJpxwk/qROztMfTP+f+301sXhYNNKUQYHuC2wP6IjyQPR7XYghIR6ByrOMWnO7Zm2I2rDeOUtH
-fPvSDVaNWPtNuVNyn9OkV0oZNaixtU6JWvksNzE9K7GkuBnH3NgFdQf+rAhrlQ8rRDi3o/73IiL3
-BvFX3KO5ro3RmMN0qGQJs18eivbuJ17Ev0ETWXTK2M1Dpw3Zx/0o0b/Udbnu45YJGWXtYW544ftQ
-5KnoOnVtdDBP807x680K9qHceli1eJ5AtMyf2UMxVRZgUNnHnP6AmI8zVn2QKFZzBHhi0HKdH+6m
-cvIZ57ZCHcYAwWt3uGJPdDdpS6mq5SY9BDZFXloc+3J5uPLWUe6psHiho0s+5XOQ/3Wd8r2pABsn
-CyMZZ4vtS2M9et+w8z8fSRBTwIz5LXusb59aFteBFLJGdMLdQcFDpfjLBfcz8ewyKsSwz1PH5Vvc
-IAz3blwfgFSliiYKijNT/z6jrucPTbaxTFJUpdxtUqwHPDzHu9J20btU+8TmbCvoO7M3hmWDKvZS
-+K7Sk9UNO4uRMtkeWNTIZU7QKGNGDaONTo9Ra6r6VpMN4n0tCLcYepb125rTTzFj/PO/SQF00cus
-6ZPFSkvZ9HZuGIq/ueonMX8fGtn97x0M7uOLgElwABKdbtWauYiNoh9js2Bs8/YokTCbWmJUo+9N
-6pDt/P2+qwaq8cqpk94SKf7Cg5buWoJza/r/GsA35dg7ZOpTGwAGz2zeQaheAGAtU5YE2BKiVdnF
-vQmoZ8/qWdDlsynk8/ypIaeij7orvoUhdkhJhijKhUyc1M6YDPWlVmIy8FIlKmZlbQxdXYZ1ZSIT
-z9eLLjZDaO8Shtqj4k7m1/Q2u1mEWr+FwcrrL8DEV4gj5MTUpUzylxmTxI8zPLtiacOZ0IM36pKH
-C3h0RVoVb8kleLJyJxNsX0XiHC7ItYr/S5ReaQNsYbVZJTQwdbyZvboeD1CThXUwY/lhRs9btRkY
-zTqtp2UuPJctEBk050QK3zGKqOnQSc5jKlWmh+vxZCaYCJD/ft9rxZvCf+zVDXQXgBB/BM/Dn6sX
-hLMrY2RdnWe1EUv2UIZfwExAQVBb/sCw+IY2mqw8L//yA+Yv5Pd8ma6/qmf4HW6WjKXfDSCzw9b7
-9gtPpoRXdKRmHzZmBF85RP12RX3LAHh55+XufBj1xQ/VoIXbQpCAI/AHCrklmfzMY3K5RlNH0L6s
-ypcnRm6vwN7f7p4VAIfKM1/NVZI2PAnbD1WMyYNGZatQxvBj2XiP2iZ8NwFMghc24Y4bLcN/ECVJ
-9ThYItknoRhS/1rS7sem+en9VTC1K07ifoeBAGMIAy86ZWH03uysv+KcJub5rdx4Pi6AveV+NtVR
-oMsxOKE2ZsJMDO/KnRg7BesEDlLUkKWBYpLGVsAWm6HfRnSkX1yUnJSmSR7inq1bj5Gx7QR6Ls+z
-4Z5RMR6vTTnOZ1vkWRRIZRdvSLhsSXY59n9Fi6WeeuBMIcTCdbmKTBKKWHUHGDhtwyZiP5+bv2Ap
-zvXvTdadgxPFpFZbe5qGMhJw2L847fgwMgrTqVb3fDb7uLylNhwziqxqy9MchV6oLRjY9bdC2EXi
-7qO51jbuus39414qq5YJs/Iy/W195bblTDaxH0RM/if4vDQdYq3CkPIsQhhZ3kxi2gpEkyc3FxAg
-ej6EbZqEnQ+WuqhixuMjtZqKBrQ20fKuL7dp2lsmnFCorevnMfwxnw07bVjwSgJoCpb2/d7WBZvs
-xv9OJCXyJQ1CbvKzvKvKrUwoWwEp8sfumTNI6pfMyi7bwB7GzrS04Ws9ON4e2DMwbADk/rsSY1EB
-sFb5ooN59foJUpqxPll81Bk6lsq2Hyx+gsA1J8EITXZgYs3758dXGYctCfHG+wgTtAgl39BvvlTw
-uwuReNhdEY+aUjUarLICbFqE9I1bc/6JfQv1BzURh1jS1+W3gd3ch7bcFIRg9UHdGCt9ifW3UBjc
-/yC26/vIlMvtl++jKG7qrlkeckfgtxqSd/WXiztsohs7RdFfVwOTyHHSLC+zbb2RfnMBI51GcmIo
-6YfWBm2xUDo66i0ixCK5NIw+qAw/viAbEW7cbIFVBckimB/5qfLdAgUbdvNmMLVD/gmVxMHJdYbt
-0DSke4Zu2s4ucyZLqhT8OIakWAbmL6dSqrEUKO5YdPAPXt1iPMqb7f6ScyRCBvFEpxXYg/Ii5ZQf
-To3nzOlpk529H1ANrTAUf7dlNJtYlVDkdGgGAMuMg1Vzb2ILJgpt5X3hsuoK8YXXMcn+cuOM/Ufh
-rYRWeMfuPFL0nTu8EBP1NGXZ5MIjOhERpJf2oYWgJGDivFsvrGMY/18UoqCGf4OpRP/C9MVf0yfW
-ItXuXy8Ldyd2Pbq3BQaMY25cr8A1LduVJ3Tp3/yEfu6U6YH+WXNY3SuZ9TilvZv7OWU2ds2smzYd
-261CkFrylEftymos5ymBc3IX6IJ9fbqfN3tPtD8FuNtSg4/OIa8hI0ve+1ynDD2o6xqMLKDE5jZn
-+V4vR10nPlr8vQpPSL4KCaJHckZi1mPj47MO6eHbQYNfAjAteshIuY/DnyRTrN4nlqehTBYk4UYu
-zXihH8ud68ttC4qJsuzZFMj4uQbvy83P3iSZSZ8m/AOqyOssiQo2ZIkdLN2ngvWWd172qczKGZs1
-EIQAN3R5UdQPSqvfYVTeJLyLBSar3HJ49207ervF7V7JjPqHW/qwS7n66ZSizIkOhyk4zZ7Mtt0h
-leQSTKIqMl1oKAzBOMSdHd3rJeFrgNTHWXCpIvlfdzD+YL8lUlBg6p3U14GwOiohgAqEntRYCj5s
-l4/2EG57PbTYwMEkTRHlGdkUB6FmeZxP2yQjfSQ+4jzhZt1m6iZmbt99nLB+vxd9cB2gi9VOtmXx
-G9HdEL6l6kdE5TqGB+0FMB+VXmqTSaKgY6PV1oxt5E/OQdL4lXJ9SqGX44/Byit+v36PIqePJdkF
-39huhIcPPI1vwBJPgc7KX9eP4xhhNmUZ4xVChmr3ZCmk57LCqqKV/yXFHgHJauROL56bDoTRu2ET
-8HjXJ7IQyG2K7xJa1e+rs6lIhVK5Qtb/AyoM9EFOkodsO8CgeMcVGUMfJ6lh6/raY8eGG+jK3S1A
-wkQTZKWQSfjGRJH3UzpoQ5yjElhltY6fZWJc/wHx2RQv6hTMkkyRH1aM+WZK0NOubsmGswy577ST
-HCEgW57F/J72RXoG6swKwqMUyF6u2FtwnmPu2dF/hiHk4yzOvKEvMFNg7t7NVRyQb0DDTqZQ06Oh
-Os46unD2cSFyuZf3oak8+8ycRon2IrWPAlfEKtmP3XOxcLukEK0rB1AjR88uMPDJt3yGWVBKP8dG
-dquq5xzcdws/hWGXOBNWEKQMuMogCMhTbZDJtRdkW7TbUj/ActDhP6/CuK+nX4CDtScQiHfiV1sy
-70/6oYh3K0ufYVNLa6ugAve6Z3siX3GUDsDfLcFR/T8CZdk8nkoe2LKtnYypu9kNIxKI8QlHqjTN
-f+/5iUxp8llCm5hpgabdIbBp7vDw42LQOOj5r6vd/f036YdjekkYmlYyLg4XjmaYYVgA+IrgOur7
-9u0bDPoEdoDoESEkNAxlGRpvxAG8nYVyAACZj6yXoc8k6VjQA8XSHLxStxptCiPk4C8JbBfJD073
-d7rwYEAr+kqc7qC5w6BMPqM0nBClITyQ7zUK6nyD580/1jxQbb4E63t3VOmgTl8YB3Cfd2T1UJIZ
-7kVp5+6vkPq+Sj1oTh5rT3YhjDVILS7H9Zj4y07u3rfkfH7ALYHXBkf2adchuflzFxXsRJRG/w3J
-IbUCIFGgw77wTJ7KDGWP03jG3h2YIHvBVUdLDUwtaU7kvKl/nAUYLo+sHZQF9eNFjRKCvSiPPyuG
-w4H1We30S29rdNDkxPrBQMW6G+rSOAMKrVCsYAc9TUxK0A4hMJe0hF8Es8U9mv3N/nLmSecHutvJ
-gg998bFCNZ6vDKuvmk0Jxkt5RWi8ARkewVjiJfQG74FKripIhDtbqHMToRcNu0b7nILzrPBNFJGk
-/tX0FKuaIOblL0bEYLRfSAJ5v/wJ07R+FxXI5WebMUtnmO5abeh4JqbGGWAv47Tvz+mQPAGNp5AJ
-fMBqhVNGjMkeBGR8GTZSfckga0qJuqNDJ7UqD+g82FvhW1h1bzBjhbJxIUf32uA22O/4ola5aECH
-CTIPUAvbBRET9mc13kRqflXDDUZknJHE3KmXSgOuemOU0yp/iZ/9cJ5OZmHeotQkXRT3xWiopw/p
-H7x7E6BgqdlUla75OgfrmFX7d7mtUesJCqsv8LYlcitOIooOK+oZTNU4KZPwLi/IdGQ/MACW4yeo
-8s0DiUJ+Qp3oFZwvjkwM0lvQckS5wkj7ExWRGD7W03RiUMZ4MNCSShxC9vwafUlfbWDedl6aZcoF
-6KUOmHkigBiAuznnJzQ6xD2MJJCTJgrYDFWbleBqa33JOIgYrivCXZAcaSO2Np9s7n/R5/qjiYi1
-HKPdgll9LMqwgnrrV9ygHEL4m2MvCWVIGC23UztErK6zyoD3rOnRWcfze+92llKHovSALFeFa9z0
-VdH0B5fJe9FIEMrAH6SVLZ+JK4JJckkU1GXbLUk3lDe+lfTh4/pHY0ygODSihcTzDpjuRi1un+Lh
-77MrmyorVSr8zcKTKos5qXSQmN+kDqg0QPFCUycvNaAnRwAT4XwON5PJD4GjiNcDlosQKxdpo7tk
-Jv08BbiYP/O/LtiezH/J3DDrOwVs4UFRDnknaWkn2kz0Fs3bOQL8Z2tQmMMrmjlMjNbyJ4KDc0nZ
-wNTB6iT0PB+vqOIu6gkUmJVR4Knf6hltDou8P9YhepbXOU+WraMA9wwSA7Q13EMFPc87uMa/iOR4
-6uOxmlZg9MzSE9i+SiMBwKSFJaKADIqse444NSBhkKZ5K6ZHQB1RFzm/JR/KC+ca/jdmbsQdB6K7
-OIhzsdQSOcJ+Qtx5+69mcIHc4FB+gvilHdueaSNls1PEcpWEJQTPG+5ZCBJO3Q+DV85AkReMfWVI
-RNEWWXTargA1Dg6G8aBaAt0cS8mP+HvDGCavSuA3DRDP/Ex9oKQUMjh+VZ3VqBCLI4LZ/FVf0RvB
-N/zFp72KGnjU3FadkwT0osVTCK7DYbj3aNHF29DHZVdyWFgPW0RCgfxpRojnf2vs05REwj+JCDh+
-ZgOi9+5eHk4zE8Gc7tWpc93hqV56Z821b8ZVYuHRZjkLKHEenzuE4jt0d1IT58EwQbjpbsOC0mM8
-uEWUCqplb0hJNUg8o9DW2XwtajHg33WNsEfSaJybLDKsy7dcgZhKOXXPk7XVdW+zArSnjWdCQbCI
-opb9Bh0srt2wfwi1W9F5f78xPW7+hdXoUlGl1I0BM8BKRtmSDS+ZdZ+APT2IqOchDkwbE1DSP3QQ
-V+DtTgRjbjxma5fpgh/Yi0zdseoxRfMLxrun81bj/uMoEVl6kPgKmYarA6vLkt8qySgP+nG8zm4C
-xQqc78hLXUPRFibNByLGvU6D1XEGQkHhbfzSv52IzgsbzrKW3xkaC/anSHr3u1hyHzV+eXRDwV2u
-wpY6xmW4WnqLhyxh4BLzVb7e4NEd6mUDO7PjPvTnsIHtrmrQCGVgO7lnT4wr6F8Cl7Hrqv3HqZkq
-XvtlqnLZHCbvr0uEffKvVp/dE2e877oZtlnqrVHq/1DINy73+yObW2ZBtPoDYBoxPFvwM05N7miL
-N2ZSXtBK0hXp+zYY/Tr8LLV5PuA5FokabBhX+d74uUbYQ1Pqa0ober7eSBQtfbbrim7BWxFv2b3l
-YrT9FlpNXohTIXp41X7CyBMcv9I+WnY34KGQYOJZ9eh3jyV9H+TN1eho6EInZIkHc6UcHU5zX6T0
-AJjfTKfShTEuvfcbHLvLts+G99UrH8W8iki0LfhqRLusP51bUgKPZEYZqiiPMOgmOJlBm1YBFozb
-yN9+tlcoIBjoZeuiN9L+QN5M4hSnk0I+fblT2u0BwI8Xa3vNmX+LWzUgh9xnUJf9xVaHsdN66QpS
-sV47CGKYaVAcSVtEQdmpnMiR4rlVOWEL14qIOVBH9qsRwM5strj8ODdoXvPsXEC5B8yAXtehn52w
-xULPMMx8BjdyBnpAJROlMVqgRkpeRs+YnvWENe4VB/5barUj7F/keszP0SMAoxH1B8HDIUf6R+zI
-PcsYyUGxYgD0Lws3aQHomQWO0fPvLCUKT8wWxEnB7tI65vKOPmVC1vGQZCR17PhyuQPqVF4+sRfC
-ji2uLI1n/LamehyNCwDwZWUZ8t8icXK/BLXn7Bg+qOiiEjtN2eUZZhgkCeHiWcZJyMoi2u/xAbM8
-JA1T6SuFZ/5A3ndoVN4PEh7nOZw1XZzHgznhrzpTUcrAaNdwevXrUTbSaHkWeo6s00/JLOvXRDsH
-/Degjo2r6OoOINANlEhAo3uSqa6QYxnSUErLjuKINxorKK65Xc9joXiJ/AoC/plYElOuo8w2lQDH
-+0pGAs9yAHmf/vZ08mzLYZ+PXvqVCItvhA3I9MomlWfOm0FoBX0fTq76cad50NPffbfJWWtoGnTm
-4B81tbTV3gyk+S9tGj8ENg3wuFTlre8dW1lNIELegUrQzDVgZNWC4vBBtZ65StZQDRbrjlq/kZGN
-//d2+m2fUIKHZiajfP9ZuGPDa7e0mQQX2tBN4DJcphwgoc4lPVp1tBjgx2YYrPfdPDSS4k5Wv9xx
-DbIN1SlgMJ+pFg17AELDq8eB+hF/rWYvccgC8VBMCPGW67jxUHb1vzuCpfLeaWMaYhoRtdGnonIx
-Kp19IyE2LxXOFnAaDKIMDhtiQKnHA/9FmZJ+bQZzcBwV7ycup4d/GfRJeoo+wYRGf6RkGSl1+pNQ
-dHL1lXim4UHfi9W+mbHUajC7Vx1vPjWC2JxY8J6WrfMZjMTgzK2ZNXvgmSzjvgByRLvFAs2l/72/
-kcCvzazBWm3UVcuKjA8/dT3IqCrWqRk1ZS5IYV/C9X5f1WXryeGFT9nkl7g4b0XYpO6pvRMvGWmZ
-mrW+idgOjEwfvvMLHZj0fpk22ZU6tHG+jWjmmoY5fpv5WXfOwL8qghz2B31KGXy+df+fs20gzAi1
-qTO0W1jkJ229jXSw7b+Rq5TuznnAgSzcnko528b1oaDRhVlc6gV/AsL/aV0tYrE+kwtO+aEjLIIQ
-9EU5fm1AkyGG5racH87xhviN9wFXqCks1KvfHiv5dkQXbc54FKEm7yr+5Z98+esXaYtj5lUXOGnW
-VfHUEwsXdcPPhRxrXGGENDo8kYgMeYTZYC6fC/iE1L2pDcKjnozwHZ8Y1PTJAHnjTTDyg2QE2U/m
-BOUfYwmANFgWJnI19sSqIjDcYLGEYFcQESF2PRwyPq6EUy63E2rXgucmPSGfcXRuO0fcRxbc07c+
-JoetWIsYM/ds+vOYCOjOOKFI3Hee9sOvwjvTOXrv70EyMrhDivEqVIBAzo9WShSONhrHaG8NQbNu
-ZtvpM5g0hOP+gtsFjQFP0GwHgT2xBkv33V99eSS/WwklZnbbpQR18W56pO5ISHYZ2ruSHEKj1rku
-XULA1tzo3bH+Fhf6BhVau1jcqN728/pT1XddpEehO8xWU0xIJheEVsYE/unx5i6x9SgfQKIhmDLL
-Y6vfL9mPraNwgBB/GN0hzw/znVOQPD9X8Pw4mAdyQgok+InXcE+8ZtlchJ1Haii7MvDh6mIIB6Ku
-rIASawby45x0ujKADeuRdF/oy4aG5aqkJ811aI0LRIgJMHvqToQY1kMSgbSZNtMDBO81JrzRNHDZ
-eDfPz6pmiX55bECtrAK6SL+ygoCCWtd1u6c7h0mnne3xB0sRUjq60F2LUw1DbUoyrB8Ocu8VuevB
-0tmfzpNG5X13zIqnahImLyqvru9yKcv/uz+4br00eeUBbDFeqjzq2tqRxU9ZdtKEOjzyV95ytCsx
-+TBd/B1RP+GYXP8pN9wjmKQo+s1R3B/Kk/vMNxWFLodKvTLs/g92IA+jLek2o21zTpQJtTo2wCEt
-AkLaUYCcR81LQrmf65cPziZ+mxLEN5IuJI5uwGUK0DdCrKUcTOxiCN/42qXLM+3ABSmZzt4Xv8fo
-lk5WYw2ytDTUAzx/yJcDbGbQo493YyzGuDBXaI6xG5v7YrH/Q+Xz7AzWpyaicnmZ8PkNucP7VMMD
-YcOIbHjglM8Ko7wBzLCGfH8PPCFEYv6yfCyel2PMokw1sMbTKmtNorQR8Fe4LQcGNfKUElhn4kIm
-ulGSDCcrzzfXqe9kGdVK+qrTPFJVDF1jH9QJYd6ju7JXqydXgoXmu7454MgPSGO7+1SxIecLqBIO
-cR0NCK+Av0WCpjaER9vFPCAKzIG2c9AxvwDIo1MxxSrOkpIk+vdmGqyf/g4M86wK5lRmvCLf6vo7
-fEcXUOphrH9itlMFlB/6k5kfeyURXV7S3I9uaBxKika6DPK6SYUdtk8AOQgj+SYzyNgD+YlViWWJ
-BveKnS+0It1kM4Gc8/ocy/l/l+o8W1CVLj87qkgUp+09AsMvUPcV/wA+1XYrcdPQQYRhdASeX2AI
-lXmQD8WcHwXPUS5Q67NpMzClBzJrAES3RJHEg9Wwx0e8Cbd4RDteMJYx39OsY6bLI3XKf50vlbdY
-8x0ak07dtyp/11foCpGW/Aco5v1xHWbA7eUXSFYE04XsJ+n3U5QGjRj48YlReY57Hm8O/CWr1vEq
-W/oMyAMVwkCU14WQquu81PQf+kFy/gsfdPaVHU02JjHs4jDlSYQJstz4OfwSOOcn7y1Hovxacv/8
-bLx2YsBwruGNKHNK+9/ddKbXugN/p8Ro6qKiEU5f5NwjzyxS51rzYJONZ6lMRtMC/I2NEkK4ROnS
-reShB0knST1lyNTd9rFTcbZKaSNJqKI85qScg96rFkhfCJEV1Cu9cabD4eFPxWsaUVXQCm5ps6i0
-3NzuRX//CHZM9pPD3s/Nk1TSxALhpSIq8qXcqM5TEMk6S3sNpmwKIvYsNZJh1wZTGD8cqP0zOI5h
-6ylZKMECXQxm9i2uDPuBH4Gj5WUlX/yQaAqQ1mQj2KEt5zJOlUgpLRoSWSXqhk9+RCy6HXJPlQPj
-LU1G8xDKLKTADq1qEFNVa4svjQxIGuvi0oFBUAgjEV7w7RyPpQa5SDLVeaz40Fjyohr8tlbWQnrQ
-Bb5o83tXVtZkL73u9CzByzHE7HRHxkaI8OftaRrBP5OI8R/nZQwA9imgVoar+IurZNVOxtlqksVF
-A9v7f5+bKvnVsDFO/J+Vbx1gR/EO6v01k+Se04zenqhdGFyxrNYMFjgZ5BLSE1ArACQ5O+Fio1AQ
-WBJDBYGapuCfCHZHxVjk1XIc48HHnp9nxvGQyvavKQNZkPY/6rJXwurKQHD2LymBjdOt5Gd+8pVC
-CnrKyrMaHrYUgG6uwupP8XoThfkekCjdD69LS1l8wrGjBHj5N2/M0pW8NUrMLOQq9AaDTzbIbx0t
-rryD+D/YmvuLv6acpKAAHgwQupSk1BMzhepdpKOfYFsZ8srvJ9SqakguSVi/Nyksf1WOOCZbnNqq
-9z+A2eBTa7Ik8yEOaKNXY4KavPD20B+3yJd1vWEQObMVPmy8zpe6Fc7EpaQ4h0vs8RHMnDtizCsH
-yFN9s5UWBAJVeIR/Lp1PSgAfESVl6TpFrqBWEkwlMWjL/3ZzfwitxhTBzGoECHLAiedbWArPSo6R
-GwgdgJDEPCADkweLPVFuKPfoNDYswC42vCTJ4fFrGG/UGkwL8VzYz9iOmbyZtKwGvHGsgmJalD6b
-6G5Hn1nGiDQrpIYpJRrQCRGT8dgUrWkrh6aQ06486AKU60uRRWERL1+mzudcgoVOgoJqDc9IE//T
-yVPkMFW4G+nk5suKBsspTOTr1JAAppiA0SQZxrSK6ybGmicxUUIofVGcGXOtDHnxzEMV/ZDv18Ku
-1ohkaYSs+xvwb989xdvmWjz2LCzcFga5UVdSacSd6yPzFUqbbabuTq4icV+3dQb66zEQj6UNiMEP
-Un3q0pLeXLejL3EXJeC0ylde8YwjNTY5JneiEQiccYVXa/XaHioTSAozsTx+p9or09TpRhrVdWV3
-ibDN1aENIhjuBpPUxYbDe4vyzEc+qeGj+LeRWUHnLPvMwrP7u53V0rGwP4c/PJO564HQS5lo9xAK
-+dcYi3xvPnZEqHJeBJq4fANOfmK44ru8PgyXHIE5/WuJHa8rnMOXCIWWArTicGL7dhvZSPmcrq9B
-zs+HOdCrQae1L+U+nkNfs20ZrqYybFgQBzG2pFlXPMfxDoqBJQyFHu4Lr7SaVM/GNBnJvu97FxzM
-KgOY6T/nCfHRhmX8eJz1jCjPrYeCigh6yhiCWadAwjEC8iB3+AhgPJAj0DwClE7xA7HLlHMTd/F2
-i3CeP91lLHhriogCn12HnnpkUJ8c8zORCrdvd0SzLXdkWNHMYwEepseCBipWLQUcXb3ys4yLUlCY
-zIfwMD/QxMwNMIktzjh8uUfyFeJFnigWLsr7yultI1Uzc2m7V8afz+dcXTwsxv7dxYhBu4Dn3EEM
-pLJt5R6s5+6/xDJGMRyv8SIcqaioalz0au5H5ohaAJXv5DiqKFV5Bp3bZc0Bi0oy5mWd3xoWwqoy
-ms54AEn6km0MqUlYAn2NL4yVoN1Zjg7I9tDeZ74plZ1Alh42qbB1iEcy3xANfDhDK4h/SI5rsVdM
-17w3tNML4xErmEgCEfDF40pEAbdlDmizu4anQ1oxQm2+liQdPG4G67nX9DJvN3DQgC8BJvDVZbpv
-2Kya1tB2kKr8t8rfaIFqsZJiuQtng4UWUmUKVelvZ/ktei2avIZE0c3mwcvlgwCAEKuPgS80/6s3
-csmKMQB0rBSGO/8TXeIX0ufbSp8lu1KRlqExabuimcH432wmXkwcwTCT0PzIYlM0ojgpD5V9Rp2Z
-G/cyvtUaVc5Qk+C2mC87LkfFwY5SsN+kNUbXbd8HYycdQEAdDrils+H/y2ZaY41qmWmwHuEFtBYk
-OCdkJ4Yno0VVg7hxNOzsVDby1HuF7xsqGaRCspwdgWaQANvkkR1ooexMZAIupe3ObK4WPFSjdwhQ
-miA60A0VHVS4NHlktLEY2zoqrdZZqz5pwvy4HaJmPJBwREVJ3N/DE8brDtTUECXyS7iq2thB+QWc
-yKCMMY8vHqozgcSlfRSOhPrMldtb5RQA7BGV8mt8QYQSczXlBBTeJQbtN/m2m4PQommc0XAuQAjE
-zyTMSQDhehU4nLL307gB500KpHW0brkTHDnfeFDu/zqPs4Uz6dKwbywVv5r1sndEVADCTb9myQEl
-HqoIEhfdbqt1liJUrxQ1H8BNWutUuXvxo1RomZb2bXgvJbrJpwm0tiooBk6lES1FC5Mkb0r8kHos
-MI+QoncuRanymK29blrLNX2+AnJERIF+WpwSac5uqpSM2e65O1GHtASfGo0KY4QxjjspVRSJYalg
-R1SqNZGeBKlDo8k8kFyEk9gEeU9bQQR4IRWL5Ly/CeU8EK3/xqMXcmddYWY5WVIlM/YOnVNhfYA/
-mHfzqMu93HXj55z9hdXT8gg504kbtotvv6HzN+8L3o5HDfPwPcZnELVGqFesJvR5cd3DNBS+KBBl
-L/5j10aUATlZto69Y4bgHN593eghGzV8GBqSzNTJhVcWlf2+TjnONW8zxFtX61mLl9vGgjbT1Yf8
-sfJHNQukX/d/OK9UIQKWq2F18Gv5gJZb0+PlYaq6CqF+f0TGZMnQhE6Hflr4gSVadWdP306gHMwE
-tOVBJ/wNDcRJzV+36MpbNB6JEhmEGUbGKv6SrhJF8ZAB/elRlxcvI9R7h4cahdyav/FT0hpqBbnR
-0nWrwImtpdlqnXx2EcK4L8KbngP5eZLvmD8oH//KXEpZKcbT4LQ/Y2vxsgX3kbmv9WCMhkUsRkEP
-T7/znln94WSRVGfPaHyHHK734uvUrhQZHmyg+y1lud+9lQGD7c1+N9sQAmS3yv6AXxmsHmbzl9ru
-+6ZFasdo3RMP+KNtmpTys5fanFkgkrJlqyX08YVkafFP/RAEx+AZhv832C65dJlvNzoFV/MRuBIA
-swTjXtx/cZDE32EyQgFMODCEGXce5dhXPom9E8Sfi68t6qX1uO0vcMxNkh+EZOmw0KHLtycN2G2l
-+OEHJROIreMKVPkK3Vz/QSLzxwUV7qu2hg+iMMftjQUiR3fBWAqscJXfXREpwlAe5TG1NgFzTvw1
-MlYP785xJfRfFTmUIsAoifcLwihtZh8OmjTXlZi+kAFgfcbi6ZTHiiE2W0SpwFD0M5LZRMBCCOuv
-E7WaBpGGxU+zkuAxRb7/yeGd1ebHVmNFYwqYQ1PjYeezulmNTprMox/yy2FrjUkl4jgFj5zBjq7v
-Lno8Js+MpnVpWccXCC4EK2/cXZ0J2aL+oI0ZGTS1XK4EtnVdZAX1Oj35TC0F1YvPc6hbcO//0+9o
-DAf0YFim9KpRAA2oVbZpGTExmuYNgGBLhiTCFTnmq/lbLQsN5dSg7ANEGnICxzH/gvTsICqxnkGD
-tEsjL7tXh1MCvK3i7vfPlzlGxoxrFiqxkaJYJUdgm53t6Zzg3Hht5K/oJl8xlPjU2qHGR0LqBrJJ
-mARiVLDJVMBC6iOoNSNHirbjTA1SG6BK+EzK4848I54sZWk+nC4DUmhWItsc2HppNTRVQh8OTGfA
-fr0MvDdGKGaaH6/DUSXpTha0FvpFBpLXB2yAXh6/8VGehR0mRY+PLbze7hfAAQA9zLKLV8rVmtjr
-5OOKNszyE23HHBi/vlFeG7Kw8ASQVZaLoWZUi8iW8XzVyMxEmSuzFb1MoynMcHeQU0gIAhjQvPEm
-n8r9fapMPsEZMRNFyAM0REra/qAbQY4jkllkb31Bngm7kFwDfgLYzNfjW773EvM5Cym2Ww9b3K0J
-YlUz4XlbDUr36A4xYDypCiPpQQLqg662XyXgtpNg8oGsP3kAf9Z24PfO8HW+Mypq+hDhl1qhMPfa
-1b+czWDPrGTBLTHcWnEp6GeU2ldtSaIVEQ3glBjFoa9dEGKQwQ58yqtLFrI2tTXj0ykFnyhmn1KX
-0XUA8fLiFnIoX5WzA8AxmTv9xF4dKl0xa9bfhM0072zKe6iXgGQ4UePw3H3HDCXO7ORR+7YpFiBg
-/OxQCSYlt6uo3Ord6l5ZOtHKpRMtlt3//PHU6WyMNk3R5RPd1FQVZfRWFi9UxipMEKIuxtIKaTwG
-xY0HvC/sDsPMUsH/xTIPhqa55cskpKdAtwH9iwaB9khz7EnV786bkPK+T/LfzGLk8hU5g/iQa38T
-2MbZL16r9/dE1pD+rNIGWgEMXira4eIeLHrkM5F7rLzaZWt5uoQGUg1Tn0v8NMCbZQckeS8Sd/H9
-Ms5lkWydQgl83/2A/JCLULw1MM6Rb+erEp0kENMatFI+9f4b5ZOiGQ2ohu6HPvMzTSPeqL1SjBLG
-ONyZC36LLnVbIwWLjmQZaFM5ETXkG73hmswgngqRWL7uwXa+Eyt8Qjo9/MtIpb5luXqEICJLCQ3k
-zUNpIFO6M+ap0nixyzh1wt9tFYC9kLCIlUC9x6i/6NfEqxT8jmHoVW5jdiGXme8u+5bbTr7aJSuE
-fgcRBRZMeQVw4gJdelNwXz1n66I/2vN/O8hCew+YERfkoLaJD8jhL3BXYSz+rNjLcCQgO4QKCTMB
-UU4dm22iGBA+irubpTfxBDE/cV1Dha1amHm5lpYsI83fMNb2bBDy+xtwBZi1i04k1J8qMyl1/4yF
-unvuFSqbUAieaNBA87ZVvRoCKGwpkBc93O2c/YiBNB+9OFDKnSSFb8Ock49AOSGlHSOaG8qejrHE
-y+7ReG1+5QzLJW+yUV/KjpYSqbkc1kSSx6jEUNlyXjnbvzw+it7ZA8o4M7QiAJwQ0g72WhNfXtLs
-T5s5D4kD++UOhwY8bX8fsxTdIMwAlgCcGLmW/FLK3KvEaPj7xGEtS12lpQoHPzOZ5gOg8r7j+d5C
-gZFcRVUfD+XrZ8WP0VWP5EtJ2ywTW4i8XmJ5Mf7hxErngFuISwZ/p0rGJIg6JsjkyKafQk5D+ic+
-IL4iZABU4Hdfy+aJb9jj9TNlSozNTvCpTnZBczxanIzi8paOydZ7RblFt/dFNUyZwH8EudLJmOnT
-WUJUG01Qvb7IJwb8d67xxGdvCCMymPUMKJ/mtVvSRxPSYdGPPYT/vxS1WmmN8kaJfh/IV+TtzGph
-AR0MK5ef5C6pHr42BCYTIQUahI1gyGhGZM4NH+PvwY3LdFTe2RtSBnMYv5W48YO/DB+cWo9IAVsI
-RhJGBHEHE4wwmdbRj03DmsJz4v0v32EZmUsaATECBLSWL0nhKO+LxFi49cCTPGhIl1tzkit+dSUd
-4ebxhLnw1KS=
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  '"{path}" is not a valid directory.' => '{path} geçerli bir dizin değil.',
+  '&lt; Previous' => '&lt; Önceki',
+  '&lt;&lt; First' => '&lt;&lt; İlk',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record için "db" CDbConnection uygulama bileşeni gerekli.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Active record "{class}" isimli sınıfında "{relation}" ilişkilendiremesi için geçersiz bir yapılandırmaya sahip. Yapılandırma kapsamında ilişkilendirme tipi, ilgili active record sınıfı ve yabancı anahtarın belirtilmiş olması gerekmektedir.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'Active record "{class}" isimli sınıfı, "{column}" isimli geçersiz bir sütuna erişmeye çalışıyor. Not: Bu sütunun tabloda tanımlı olması veya aliaslarda tanımlı bir ifade olması gerekmetedir.',
+  'Active record class "{class}" does not have a scope named "{scope}".' => 'Active record "{class}" isimli sınıfı "{scope}" isimli bir kapsam tanımına sahip değil.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => '"{alias}" geçersiz bir alias. Varolan bir php dosyasına işaret ettiğine emin olun.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => '"{alias}" geçersiz bir alias. Varolan bir dosya veya dizine işaret ettiğine emin olun.',
+  'Application Log' => 'Uygulama Kütüğü',
+  'Application base path "{path}" is not a valid directory.' => 'Uygulama tabanı dizini (base path) "{path}" geçersiz.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'Uygulama runtime yolu "{path}" geçersiz. Web sunucusu işlemi tarafından yazma izni olduğuna emin olun.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => '"{item}" için gereçli olan yetkilendirme zaten "{user}" kullanıcısına atanmış durumda.',
+  'Base path "{path}" is not a valid directory.' => 'Taban dizini (base path) geçerli bir yol(path) değildir.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCachenin başlatılması için PHP apc eklentisi gerekli',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" yolu geçersiz. Web sunucusu işlemi tarafından yazma izni olduğuna emin olun.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID geçersiz. "{id}" nin geçerli bir cache uygulama bileşenini ifade ettiğine emin olun.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" geçersiz. Kontrolcü sınıfta (controller) böyle bir action bulunamadı.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" geçersiz. CDbConnection uygulama bileşeninin ID \'sini ifade ettiğine emin olun.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" geçersiz. CDbConnection uygulama bileşeninin ID \'sini ifade ettiğine emin olun.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql içeriği boş olamaz.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand bir SQL cümleciğini çalıştıramadı: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand bir SQL cümleciğini oluşturamadı: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection {driver} \'i için şema okuma desteğine sahip değil.',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection DB bağlantısını açarken bir hata oluştu.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection DB bağlantısını açarken bir hata oluştu: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection şu anda pasif durumda ve hiçbir DB operasyonunu gerçekleştiremez.',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString boş olamaz.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader geri sarılamaz (cannot rewind). Sadece ileri yöndeki(forward-only) okumalar için kullanılabilinir.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" geçersiz. CDbConnection uygulama bileşeninin ID \'sini ifade ettiğine emin olun.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" geçerli bir CDbConnection uygulama bileşenini işaret etmiyor.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID geçersiz. "{id}" nin geçerli bir DB uygulama bileşenini ifade ettiğine emin olun.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" geçersiz. CDbConnection uygulama bileşeninin ID \'sini ifade ettiğine emin olun.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction pasif durumda ve şuanda commit, rollback operasyonlarını gerçekleştiremez.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory boş bırakılamaz.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache yüklenmesi için PHP eAccelerator uzantısı gerekli, "--with-eaccelerator-shared-memory" opsiyonu ile aktif edilebilir veya derlenebilir.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName boş bırakılamaz.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" yolu geçerli bir dizini işaret etmiyor. Web sunucusu işlemi tarafından yazma izni olduğuna emin olun.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain sadece IFilter arayüzünü implement eden objecleri kullanabilir.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl boş bırakılamaz.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name boş bırakılamaz.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName boş bırakılamaz.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection sadece CHttpCookie objelerini tutabilir.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest giriş komut dosyası URL \'sini anlayamıyor.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest isteğin yol bilgisini(path info) anlayamıyor.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest istek URI \'ı anlayamıyor.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode sadece "none", "allow" veya "only" olabilir.',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}" geçersiz. 0 ile 100 arasında nümerik bir değer olmalıdır.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" geçerli bir dizin değil.',
+  'CMemCache server configuration must be an array.' => 'CMemCache sunucu ayarları bir dizi olmak zorundadır.',
+  'CMemCache server configuration must have "host" value.' => 'CMemCache sunucu ayarları "host" değerini içermek zorundadır.',
+  'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name gerekli.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute eşleşmeyen bir kod bloğu buldu "{token}". Yii::beginProfile() ve Yii::endProfile() methodlarına yapılan call isteklerinin düzgün bir şekilde sıralandığına (nested) emin olun. ',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" geçersiz. Geçerli değerler "summary" ve "callstack" içerir.',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager data şifreleme özelliğini kullanabilmek için PHP mcrypt uzantısına ihtiyaç duyar.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey boş bırakılamaz.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey boş bırakılamaz.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> sadece {type} sınıfı objelerini tutabilir.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat "path" veya "get" olmak zorundadır.',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache PHP wincache uzantısına ihtiyaç duyar.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache user cache pasif. Lütfen php.ini dosyasındaki wincache.ucenabled değerini On olarak değiştirin.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache PHP XCache uzantısına ihtiyaç duyar.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache PHP Zend Data Cache uzantısına ihtiyaç duyar.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{child}" değeri "{name}" \'nin çocuğu olarak eklenemedi. Bir döngü tespit edildi.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{child}" değeri "{parent}" \'nin çocuğu olarak eklenemedi. Bir döngü tespit edildi.',
+  'Cannot add "{name}" as a child of itself.' => '"{name}" kensininin çocuğu olarak eklenemez.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => '"{child}" elementi "{parent}" için element olarak eklenemez.',
+  'Column name must be either a string or an array.' => 'Sütun adı bir string veya array olmalıdır.',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" ve "{child}", ikiside yok. ',
+  'Error: Table "{table}" does not have a primary key.' => 'Hata: "{table}" tablosunda primary key yok.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Hata: "{table}" tablosu crud komutunun desteklemediği bir karşıt primary key sahip.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => '"{class}.{event}" olayı geçersiz "{handler}" işleyicisine bağlandı.',
+  'Event "{class}.{event}" is not defined.' => '"{class}.{event}" olayı tanımlanmadı.',
+  'Extension path "{path}" does not exist.' => '"{path}" isimli bir uzantı yolu yok.',
+  'Failed to initialize the mcrypt module.' => 'mcrypt modülü başlangıç için hazırlanırken bir hata oluştu.',
+  'Failed to set unsafe attribute "{attribute}".' => 'Güvenli olmayan "{attribute}" atanırken hata oluştu.',
+  'Failed to write the uploaded file "{file}" to disk.' => 'Karşıya yüklenen "{file}" dosyası diske yazılırken hata oluştu.',
+  'File upload was stopped by extension.' => 'Karşıya dosya yükleme işlemi bir uzantı tarafından durduruldu.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => '"{filter}" filtresi geçersiz. Kontrolcü sınıf "{class}", "filter{filter}" isimli bir filtre methoduna sahip değil.',
+  'Get a new code' => 'Yeni kod getir',
+  'Go to page: ' => 'Sayfaya git:',
+  'Invalid MO file revision: {revision}.' => 'Geçersiz MO dosya revizyonu: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'Geçersiz MO dosyası: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => "{value}", 'geçersiz sayılabilir(enumerable) değer. Lütfen bu aralıkta olduğuna emin olun ({enum}).',
+  'Invalid operator "{operator}".' => '"{operator}", geçersiz bir operatör.',
+  'Last &gt;&gt;' => 'Son &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'List datası, array veya Traversable implement eden bir obje olmalıdır.',
+  'List index "{index}" is out of bound.' => 'List indeksi "{index}", sınırların dışında.',
+  'Login Required' => 'Üye Girişi Gerekli',
+  'Map data must be an array or an object implementing Traversable.' => 'Map datası, array veya Traversable implement eden bir obje olmalıdır.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'Karşıya yüklenen, "{file}" dosyasını kaydetmek için gerekli geçici dosya bulunamıyor.',
+  'Next &gt;' => 'Sonraki &gt;',
+  'No columns are being updated for table "{table}".' => '"{table}" tablosuna ait hiçbir sütun güncellenmedi.',
+  'No counter columns are being updated for table "{table}".' => '"{table}" tablosu için sayaç sütunları güncellenmedi.',
+  'Object configuration must be an array containing a "class" element.' => 'Obje konfigürasyonu "class" elemanını içeren bir dizi olmalıdır.',
+  'Please fix the following input errors:' => 'Lütfen veri giriş hatalarını düzeltin:',
+  'Property "{class}.{property}" is not defined.' => '"{class}.{property}" özelliği tanımlanmamıştır.',
+  'Property "{class}.{property}" is read only.' => '"{class}.{property}" özelliği read only durumdadır.',
+  'Queue data must be an array or an object implementing Traversable.' => 'Kuyruk verisi bir dizi veya Traversable sınıfını implement eden bir obje olmalıdır.',
+  'Relation "{name}" is not defined in active record class "{class}".' => '"{name}" ilişkisi active record sınıfında ("{class}") belirtilmemiştir. ',
+  'Resetting PK sequence is not supported.' => 'Birincil anahtar sıfırlama desteklenmemektedir.',
+  'Setting integrity check is not supported.' => 'Ayar bütünlüğü kontrolü desteklenmemektedir.',
+  'Stack data must be an array or an object implementing Traversable.' => 'Yığın verisi bir dizi veya Traversable sınıfını implement eden bir obje olmalıdır.',
+  'Table "{table}" does not exist.' => '"{table}" diye bir tablo yok.',
+  'Table "{table}" does not have a column named "{column}".' => '"{table}" tablosunda "{column}" sütunu yok.',
+  'The "filter" property must be specified with a valid callback.' => '"filter" özelliği geçerli bir callback ile belirtilmelidir.',
+  'The "pattern" property must be specified with a valid regular expression.' => '"pattern" özelliği geçerli bir kurallı ifade ile belirtilmelidir.',
+  'The CSRF token could not be verified.' => 'CSRF token doğrulanamadı.',
+  'The STAT relation "{name}" cannot have child relations.' => 'STAT ilişkisi "{name}" çocuğa sahip olamaz.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => '"{route}" rotası için geçerli "{pattern}" URL modeli geçerli bir kurallı ifade değil.',
+  'The active record cannot be deleted because it is new.' => 'Active record yeni olduğundan dolayı silinemez.',
+  'The active record cannot be inserted to database because it is not new.' => 'Active record yeni olmadığından dolayı veritabanına girilemez.',
+  'The active record cannot be updated because it is new.' => 'Active record yeni olduğundan dolayı güncellenemez.',
+  'The asset "{asset}" to be published does not exist.' => 'Yayınlanacak "{asset}" değeri bulunamadı.',
+  'The command path "{path}" is not a valid directory.' => 'Komut yolu "{path}" geçerli bir dizin değil.',
+  'The controller path "{path}" is not a valid directory.' => 'Kontrolcü yolu "{path}" geçerli bir dizin değil.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'Dosya karşıya yüklenemedi. Yüklenebilinen uzantılar şunlardır: {extensions}',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => '"{file}" dosyası çok büyük. Boyutu {limit} bytes değerinden daha büyük olamaz.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => '"{file}" dosyası çok küçük. Boyutu {limit} bytes değerinden daha küçük olamaz.',
+  'The file "{file}" was only partially uploaded.' => '"{file}" dosyası kısmen karşıya yüklenebildi.',
+  'The first element in a filter configuration must be the filter class.' => 'Filtre konfigürasyonundaki ilk eleman filtre sınıfı olmalıdır.',
+  'The item "{name}" does not exist.' => '"{name}" öğesi bulunamadı.',
+  'The item "{parent}" already has a child "{child}".' => '"{parent}" öğesi zaten "{child}" çocuğuna sahip.',
+  'The layout path "{path}" is not a valid directory.' => 'Layout yolu "{path}" geçerli bir dizin değil.',
+  'The list is read only.' => 'Liste sadece okunabilir.',
+  'The map is read only.' => 'Harita sadece okunabilir.',
+  'The module path "{path}" is not a valid directory.' => 'Modül yolu "{path}" geçerli bir dizin değil.',
+  'The pattern for 12 hour format must be "h" or "hh".' => '12 saat formatı için model "h" veya "hh" şeklindedir.',
+  'The pattern for 24 hour format must be "H" or "HH".' => '24 saat formatı için model "H" veya "HH" şeklindedir.',
+  'The pattern for AM/PM marker must be "a".' => 'AM/PM belirleyicisi için model "a" şeklindedir.',
+  'The pattern for day in month must be "F".' => 'Ayın günleri için model "F" şeklindedir.',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'Yılın günleri için model "D", "DD" veya "DDD" şeklindedir.',
+  'The pattern for day of the month must be "d" or "dd".' => 'O anki ayın günleri için model "d" veya "dd" şeklindedir.',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => 'O anki haftanın günleri için model "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" veya "ccccc" şeklindedir.',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'Asırlar için model "G", "GG", "GGG", "GGGG" veya "GGGGG" şeklindedir.',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'AM/PM formatındaki saat modeli "K" veya "KK" şeklindedir.',
+  'The pattern for hour in day must be "k" or "kk".' => 'Günün saatleri için model "k" veya "kk" şeklindedir.',
+  'The pattern for minutes must be "m" or "mm".' => 'Dakikalar için model "m" veya "mm" şeklindedir.',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => 'Aylar için model "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" veya "LLLL" şeklindedir.',
+  'The pattern for seconds must be "s" or "ss".' => 'Saniyeler için model "s" veya "ss" şeklindedir.',
+  'The pattern for time zone must be "z" or "v".' => 'Saat dilimi modeli "z" veya "v" şeklindedir.',
+  'The pattern for week in month must be "W".' => 'Ayın haftaları için model "W" şeklindedir.',
+  'The pattern for week in year must be "w".' => 'Yılın haftaları için model "w" şeklindedir.',
+  'The queue is empty.' => 'Kuyruk boş.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Active record sınıfı "{class}" dahilindeki "{relation}" ilişkisi doğru şekilde belirtilmedi. "{joinTable}" katılım tablosunda belirtilen yabancı anahtar veritabanında bulunamadı.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Active record sınıfı "{class}" dahilindeki "{relation}" ilişkisi doğru şekilde belirtilmedi: "{joinTable}" katılım tablosunda belirtilen yabancı anahtar veritabanında bulunamadı.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'Active record sınıfı "{class}" dahilindeki "{relation}" ilişkisi, "{table}" ana tablosuna işaret etmeyen "{key}" yabancı anahtarı ile belirtildi.',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'Active record sınıfı "{class}" dahilindeki "{relation}" ilişkisi, tam olmayan bir foreign key ile belirtildi. Yabancı anahtar katılım tablosunu refere eden sütunlardan oluşmalıdır.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'Active record sınıfı "{class}" dahilindeki "{relation}" ilişkisi, geçersiz "{key}" yabancı anahtarı ile belirtildi. "{table}" tablosunda böyle bir sütun yok.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'Active record sınıfı "{class}" dahilindeki "{relation}" ilişkisi geçersiz bir yabancı anahtar ile belirtildi. Foreign keydeki sütunlar "{table}" tablosundaki birincil anahtarlar ile uyuşmalıdır.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'Active record sınıfı "{class}" dahilindeki "{relation}" ilişkisi geçersiz bir yabancı anahtar ile belirtildi. Yabancı anahtar formatı "joinTable(fk1,fk2,...)" şeklinde olmalıdır.',
+  'The requested view "{name}" was not found.' => 'Istek yapılan "{name}" görünümü bulunamadı.',
+  'The stack is empty.' => 'Yığın boş.',
+  'The system is unable to find the requested action "{action}".' => 'Sistem istek yapılan "{action}" aksiyonunu bulamadı.',
+  'The system view path "{path}" is not a valid directory.' => 'Sistem görünüm yolu "{path}" geçerli biz dizin değil.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'Active record "{class}" sınıfı, "{table}" tablosunu veritabanında bulunamadı.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => '"{table}" tablosu için sorgulama yapılırken "{column}" sütunu için değer verilmedi.',
+  'The verification code is incorrect.' => 'Doğrulama kodu yanlış.',
+  'The view path "{path}" is not a valid directory.' => '"{path}" görünüm yolu geçerli bir dizin değil.',
+  'Theme directory "{directory}" does not exist.' => '"{directory}" böyle bir tema dizini yok.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'Bu içeriği görüntüleyebilmek için <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a> gereklidir.',
+  'Unable to add an item whose name is the same as an existing item.' => 'Şu anda varolan bir öğe olduğu için aynı ismi taşıyan öğe eklenemedi.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'Öğe isim değişikliği yapılamadı. "{name}" ismi zaten başka bir öğe için kullanılıyor.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'Uygulama durum dosyası "{file}" oluşturulamadı. Lüften bu dosyanın ilgili dizinde var olduğuna ve web sunucusu işlemi tarafından yazma izni olduğuna emin olun.',
+  'Unable to import "{alias}". Please check your server configuration to make sure you are allowed to change PHP include_path.' => '"{alias}" içeri aktarılamadı. Lütfen PHP include_path için değiştirme izinini verdiğinize emin olmak için sunucu ayarlarınızı kontrol ediniz.',
+  'Unable to lock file "{file}" for reading.' => '"{file}" dosyası okuma işlemi için kilitlenemedi.',
+  'Unable to lock file "{file}" for writing.' => '"{file}" dosyası yazma işkemi için kilitlenemedi.',
+  'Unable to read file "{file}".' => '"{file}" dosyası okunamadı.',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => '"{object}.{method}" eylemi gerçekleştirilemedi. Böyle bir metod yok.',
+  'Unable to resolve the request "{route}".' => '"{route}" isteği çözümlenemedi.',
+  'Unable to write file "{file}".' => '"{file}" dosyasına yazılamıyor.',
+  'Unknown authorization item "{name}".' => '"{name}" bilinmeyen yetkilendirme öğesi.',
+  'Unknown type "{type}".' => 'Bilinmeyen tip "{type}".',
+  'Unrecognized locale "{locale}".' => 'Tanımlanamayan dil dosyası "{locale}".',
+  'View file "{file}" does not exist.' => 'Görünüm dosyası "{file}" bulunamıyor.',
+  'Yii application can only be created once.' => 'Yii uygulaması yanlızca bir kez oluşturulabilir.',
+  'You are not authorized to perform this action.' => 'Bu işlemi gerçekleştirebilmek için yeterli yetkiniz yok.',
+  'Your request is invalid.' => 'İsteğiniz geçersiz.',
+  'Your request is not valid.' => 'İsteğiniz geçerli değil.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" daha önce alınmış.',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" geçersiz.',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute}, {limit} dosyadan fazla kabul etmez.',
+  '{attribute} cannot be blank.' => '{attribute} boş bırakılamaz.',
+  '{attribute} is invalid.' => '{attribute} geçersiz.',
+  '{attribute} is not a valid URL.' => '{attribute} geçerli bir URL değil.',
+  '{attribute} is not a valid email address.' => '{attribute} geçerli bir mail adresi değil.',
+  '{attribute} is not in the list.' => '{attribute} listede değil.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} yanlış uzunlukta ({length} karakter olmalı).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} çok büyük en çok {max} olmalı).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} çok uzun (en çok {max} karakter olabilir).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} çok kısa (en az {min} karakter olabilir).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} çok küçük (en az {min} olmalı).',
+  '{attribute} must be a number.' => '{attribute} sayı olmalı.',
+  '{attribute} must be an integer.' => '{attribute} rakam olmalı.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} yanlızca {true} yada {false} olabilir.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute}, "{compareValue}" den büyük olmalı.',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute}, "{compareValue}" den büyük yada eşit olmalı.',
+  '{attribute} must be less than "{compareValue}".' => '{attribute}, "{compareValue}" den az olmalı.',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute}, "{compareValue}" den az yada eşit olmalı.',
+  '{attribute} must be repeated exactly.' => '{attribute} aynı şekilde tekrarlanmalıdır.',
+  '{attribute} must be {type}.' => '{attribute}, {type} tipinde olmalı.',
+  '{attribute} must be {value}.' => '{attribute} değeri {value} olmalı.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute}, "{compareValue}" değerine eşit olmamalı.',
+  '{className} does not support add() functionality.' => '{className}, add() fonksiyonunu desteklemiyor.',
+  '{className} does not support delete() functionality.' => '{className}, delete() fonksiyonunu desteklemiyor.',
+  '{className} does not support flush() functionality.' => '{className}, flush() fonksiyonunu desteklemiyor.',
+  '{className} does not support get() functionality.' => '{className}, get() fonksiyonunu desteklemiyor.',
+  '{className} does not support set() functionality.' => '{className}, set() fonksiyonunu desteklemiyor.',
+  '{class} does not have a method named "{name}".' => '{class}, "{name}" adında bir metod içermiyor.',
+  '{class} does not have relation "{name}".' => '{class}, "{name}" ile bir bağ içermiyor.',
+  '{class} does not support fetching all table names.' => '{class}, tüm tablo isimlerini çekmeyi desteklemiyor.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class}, geçersiz bir doğrulama kuralı içeriyor.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class}, "model" ve "attribute" yada "name" için özellik değeri tanımlanmalı.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => 'cookie-based güvenlik için {class}.allowAutoLogin değeri true olmalı.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() tanımlanmalı.',
+  '{controller} cannot find the requested view "{view}".' => '{controller}, istenen "{view}" görünümünü bulamadı.',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller}, görünümünü çağırabilmesi için ekstra olarak endWidget({id}) içermeli.',
+  '{widget} cannot find the view "{view}".' => '{widget}, "{view}" görünümünü bulamadı.',
+);

@@ -1,177 +1,290 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Service\Description;
+
+use Guzzle\Common\ToArrayInterface;
+
+/**
+ * Default parameter validator
+ */
+class SchemaValidator implements ValidatorInterface
+{
+    /** @var self Cache instance of the object */
+    protected static $instance;
+
+    /** @var bool Whether or not integers are converted to strings when an integer is received for a string input */
+    protected $castIntegerToStringType;
+
+    /** @var array Errors encountered while validating */
+    protected $errors;
+
+    /**
+     * @return self
+     * @codeCoverageIgnore
+     */
+    public static function getInstance()
+    {
+        if (!self::$instance) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * @param bool $castIntegerToStringType Set to true to convert integers into strings when a required type is a
+     *                                      string and the input value is an integer. Defaults to true.
+     */
+    public function __construct($castIntegerToStringType = true)
+    {
+        $this->castIntegerToStringType = $castIntegerToStringType;
+    }
+
+    public function validate(Parameter $param, &$value)
+    {
+        $this->errors = array();
+        $this->recursiveProcess($param, $value);
+
+        if (empty($this->errors)) {
+            return true;
+        } else {
+            sort($this->errors);
+            return false;
+        }
+    }
+
+    /**
+     * Get the errors encountered while validating
+     *
+     * @return array
+     */
+    public function getErrors()
+    {
+        return $this->errors ?: array();
+    }
+
+    /**
+     * Recursively validate a parameter
+     *
+     * @param Parameter $param  API parameter being validated
+     * @param mixed     $value  Value to validate and validate. The value may change during this validate.
+     * @param string    $path   Current validation path (used for error reporting)
+     * @param int       $depth  Current depth in the validation validate
+     *
+     * @return bool Returns true if valid, or false if invalid
+     */
+    protected function recursiveProcess(Parameter $param, &$value, $path = '', $depth = 0)
+    {
+        // Update the value by adding default or static values
+        $value = $param->getValue($value);
+
+        $required = $param->getRequired();
+        // if the value is null and the parameter is not required or is static, then skip any further recursion
+        if ((null === $value && !$required) || $param->getStatic()) {
+            return true;
+        }
+
+        $type = $param->getType();
+        // Attempt to limit the number of times is_array is called by tracking if the value is an array
+        $valueIsArray = is_array($value);
+        // If a name is set then update the path so that validation messages are more helpful
+        if ($name = $param->getName()) {
+            $path .= "[{$name}]";
+        }
+
+        if ($type == 'object') {
+
+            // Objects are either associative arrays, ToArrayInterface, or some other object
+            if ($param->getInstanceOf()) {
+                $instance = $param->getInstanceOf();
+                if (!($value instanceof $instance)) {
+                    $this->errors[] = "{$path} must be an instance of {$instance}";
+                    return false;
+                }
+            }
+
+            // Determine whether or not this "value" has properties and should be traversed
+            $traverse = $temporaryValue = false;
+
+            // Convert the value to an array
+            if (!$valueIsArray && $value instanceof ToArrayInterface) {
+                $value = $value->toArray();
+            }
+
+            if ($valueIsArray) {
+                // Ensure that the array is associative and not numerically indexed
+                if (isset($value[0])) {
+                    $this->errors[] = "{$path} must be an array of properties. Got a numerically indexed array.";
+                    return false;
+                }
+                $traverse = true;
+            } elseif ($value === null) {
+                // Attempt to let the contents be built up by default values if possible
+                $value = array();
+                $temporaryValue = $valueIsArray = $traverse = true;
+            }
+
+            if ($traverse) {
+
+                if ($properties = $param->getProperties()) {
+                    // if properties were found, the validate each property of the value
+                    foreach ($properties as $property) {
+                        $name = $property->getName();
+                        if (isset($value[$name])) {
+                            $this->recursiveProcess($property, $value[$name], $path, $depth + 1);
+                        } else {
+                            $current = null;
+                            $this->recursiveProcess($property, $current, $path, $depth + 1);
+                            // Only set the value if it was populated with something
+                            if ($current) {
+                                $value[$name] = $current;
+                            }
+                        }
+                    }
+                }
+
+                $additional = $param->getAdditionalProperties();
+                if ($additional !== true) {
+                    // If additional properties were found, then validate each against the additionalProperties attr.
+                    $keys = array_keys($value);
+                    // Determine the keys that were specified that were not listed in the properties of the schema
+                    $diff = array_diff($keys, array_keys($properties));
+                    if (!empty($diff)) {
+                        // Determine which keys are not in the properties
+                        if ($additional instanceOf Parameter) {
+                            foreach ($diff as $key) {
+                                $this->recursiveProcess($additional, $value[$key], "{$path}[{$key}]", $depth);
+                            }
+                        } else {
+                            // if additionalProperties is set to false and there are additionalProperties in the values, then fail
+                            $keys = array_keys($value);
+                            $this->errors[] = sprintf('%s[%s] is not an allowed property', $path, reset($keys));
+                        }
+                    }
+                }
+
+                // A temporary value will be used to traverse elements that have no corresponding input value.
+                // This allows nested required parameters with default values to bubble up into the input.
+                // Here we check if we used a temp value and nothing bubbled up, then we need to remote the value.
+                if ($temporaryValue && empty($value)) {
+                    $value = null;
+                    $valueIsArray = false;
+                }
+            }
+
+        } elseif ($type == 'array' && $valueIsArray && $param->getItems()) {
+            foreach ($value as $i => &$item) {
+                // Validate each item in an array against the items attribute of the schema
+                $this->recursiveProcess($param->getItems(), $item, $path . "[{$i}]", $depth + 1);
+            }
+        }
+
+        // If the value is required and the type is not null, then there is an error if the value is not set
+        if ($required && $value === null && $type != 'null') {
+            $message = "{$path} is " . ($param->getType() ? ('a required ' . implode(' or ', (array) $param->getType())) : 'required');
+            if ($param->getDescription()) {
+                $message .= ': ' . $param->getDescription();
+            }
+            $this->errors[] = $message;
+            return false;
+        }
+
+        // Validate that the type is correct. If the type is string but an integer was passed, the class can be
+        // instructed to cast the integer to a string to pass validation. This is the default behavior.
+        if ($type && (!$type = $this->determineType($type, $value))) {
+            if ($this->castIntegerToStringType && $param->getType() == 'string' && is_integer($value)) {
+                $value = (string) $value;
+            } else {
+                $this->errors[] = "{$path} must be of type " . implode(' or ', (array) $param->getType());
+            }
+        }
+
+        // Perform type specific validation for strings, arrays, and integers
+        if ($type == 'string') {
+
+            // Strings can have enums which are a list of predefined values
+            if (($enum = $param->getEnum()) && !in_array($value, $enum)) {
+                $this->errors[] = "{$path} must be one of " . implode(' or ', array_map(function ($s) {
+                    return '"' . addslashes($s) . '"';
+                }, $enum));
+            }
+            // Strings can have a regex pattern that the value must match
+            if (($pattern  = $param->getPattern()) && !preg_match($pattern, $value)) {
+                $this->errors[] = "{$path} must match the following regular expression: {$pattern}";
+            }
+
+            $strLen = null;
+            if ($min = $param->getMinLength()) {
+                $strLen = strlen($value);
+                if ($strLen < $min) {
+                    $this->errors[] = "{$path} length must be greater than or equal to {$min}";
+                }
+            }
+            if ($max = $param->getMaxLength()) {
+                if (($strLen ?: strlen($value)) > $max) {
+                    $this->errors[] = "{$path} length must be less than or equal to {$max}";
+                }
+            }
+
+        } elseif ($type == 'array') {
+
+            $size = null;
+            if ($min = $param->getMinItems()) {
+                $size = count($value);
+                if ($size < $min) {
+                    $this->errors[] = "{$path} must contain {$min} or more elements";
+                }
+            }
+            if ($max = $param->getMaxItems()) {
+                if (($size ?: count($value)) > $max) {
+                    $this->errors[] = "{$path} must contain {$max} or fewer elements";
+                }
+            }
+
+        } elseif ($type == 'integer' || $type == 'number' || $type == 'numeric') {
+            if (($min = $param->getMinimum()) && $value < $min) {
+                $this->errors[] = "{$path} must be greater than or equal to {$min}";
+            }
+            if (($max = $param->getMaximum()) && $value > $max) {
+                $this->errors[] = "{$path} must be less than or equal to {$max}";
+            }
+        }
+
+        return empty($this->errors);
+    }
+
+    /**
+     * From the allowable types, determine the type that the variable matches
+     *
+     * @param string $type  Parameter type
+     * @param mixed  $value Value to determine the type
+     *
+     * @return string|bool Returns the matching type on
+     */
+    protected function determineType($type, $value)
+    {
+        foreach ((array) $type as $t) {
+            if ($t == 'string' && (is_string($value) || (is_object($value) && method_exists($value, '__toString')))) {
+                return 'string';
+            } elseif ($t == 'object' && (is_array($value) || is_object($value))) {
+                return 'object';
+            } elseif ($t == 'array' && is_array($value)) {
+                return 'array';
+            } elseif ($t == 'integer' && is_integer($value)) {
+                return 'integer';
+            } elseif ($t == 'boolean' && is_bool($value)) {
+                return 'boolean';
+            } elseif ($t == 'number' && is_numeric($value)) {
+                return 'number';
+            } elseif ($t == 'numeric' && is_numeric($value)) {
+                return 'numeric';
+            } elseif ($t == 'null' && !$value) {
+                return 'null';
+            } elseif ($t == 'any') {
+                return 'any';
+            }
+        }
+
+        return false;
+    }
+}

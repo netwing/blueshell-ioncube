@@ -1,53 +1,158 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPv1jdYqoi682tzuB3advWrPVxQoDxT3Mcy+Mb9QxW7K3MW1Y+TbQ17YZ14diIu/76C+Wx8XK
-mtjqtpCMM9RweUjZJW975tfAM+uNNHufgOQNugmR4Zij7fPuT8TRoiRPfyhZ947SMPtl6I0AP+3k
-31Us5fFlocmXuIkfaseD64WQos/sitTV+xdVyAI+Ln8WIM2ndc/aVi/jAc9IqrLFzdDbGN94LOMi
-sw3uI0kkvJTii1N1afe6HgzHAE4xzt2gh9fl143SQNHmOl9i9Pe7vfpNgwlOTSc/Dkbtyblw+Msc
-evCYk301B3rfEMGhFk28V6tGoCjI57oPY6Bf0yUNzjGTUct3tyL0WyGt/Nk4bjUGk5apl5rA3s3w
-axP3Zu/kyyGfPGtxAjh651JxC5i9S7qBIGzS1CdcIxklPvCcwxw+VPtijthj1qH4Deg/BEbKqDL5
-eBio4SeD1TDElm70okNqTULsaS22qnvZK09tSZUgK7kxQJl+WRwBf0z1lJF5jh8/pXq+8SYDqHIn
-c3cJdWNkEUYOXvUbaSNZyBKaDzV/HQ1dPHWjocetZs+wwgNzm6A8/wUhrj8gMUVYxuHKo08qgvRy
-CXMWyKHp1ycteEElKZkp0MOpZxabFHuuEtJW56iwQRi7AUlF8Qzu34po8FC0O/qF9a/rDJbNIHfg
-2MJF2FC1gHHK87nqKLac7hZvO8KInsGrmyBHcEX2mvb8sW8sa6V0E7kvOGzzxuIw/eDJCVyDpi1V
-VhTlQjK+o0K/T4HP2Z/Ph8FbFV9b6lIVMM4OmrhUN1lC39ExSHGYfiyivqpOdXT48d0S/KhrdEt3
-29ld/ZwrbX7zjYL5QzW3Ljh06fq82tT05VRD2DQcmZk4PN/WFtqga0YHyu+4T4fJypkQdVDCvp+8
-RN1PsuJeR+cCnJEpWoV+Adzsswheg4FJ/XYCXvSEXPOI351Llqywxi28ZlgAvTYChaUpU5puaMFP
-UZ2OdTP/M38RFa+OI+xbqnZoQxxr6KIZ0jVHPNYT+nL056UVRgJP41N/RS5LfoOOhC7PUkkcH5Ql
-Fc5kzM0eqvaSDWWT93Nl/2/Ov5Wh6hTXDEL21cxVE0EazDDnL+ldpguUTjfTYMtiEsMDFd6Qlv/8
-I+zHSVyTzVxmmgr+BSRU5ffnca/6WtPrrhxUBVFyW0fwSEdYpdZt5+qjM2KHhe0CyUc0OASMbOdh
-BvfGdWvjHisfxOOOUQVqcB9CQFutfDilqw4t5anHVLqz975WS9G/VHfbfkEnI8EzC2Nb8XzUyFG6
-T4YRnU8aE7qDEgLyJH7b6Czx6KLVHpT5f6SzuSFDGV6kR52GJh2XKjkxB2vuPVDywZ3gbbIp67Mt
-ij8jwTyDVwhkU4A9aiFWUE8Gikl3/XCm2biTX7+TmPl9vCe3Z8Q+PrZ53OBazXH4zQhTB/AAe904
-WTDY4P7mWdenerjbD+BO5uPc3dJRWUVpUcWQbvGDtYxJ3F6Ay3Hd5rCNPfZfnUrTv5H6KMRLqo50
-e1XdvToRf9O1MzF8D9+v3jyjMXFMbPnURKeG4bw1P5yRKAxx9U8wiZMIz0rOmdS8AwOWMseAx9kS
-3Apmz3Cz4Hwc3wYGT/jTXld1l9eVeFZnKFkqC6VCn6PHWKP3GTAp7qnGQ9s+WV4f1tLJ3YEACsU9
-gqK5JRX6fYu7MpjsHbGzViSGKSQhTYz5GgYlQUCNpvrsbAEH/LtDiNfKnkUSCH9TC6wo0zjTu8T+
-9hpm2O+Rymk4G+aqhdaF2JKjfj4HbHVFaHBVnojqQTHuQi1yVjzKxUVykxE7V2+ZzgUXU3snkL/J
-0K5sFkXPbvNyLd/sD2PCjWNV7FKFkQP77yeWhO9vrNRkTYSE6+BHCAnweFT5TWvnpGBElWtpHkIz
-zG6bqCKZPU/qHPhNzasIArb0FINbooT6M1LSU4ICC/M4NvdM8xiDUS8VMJYBbn2QFuA/sU9XHnFn
-D6FpC23ri/760U518kBloG6PJm5dRVAhtaaAEUWrstekt0hjDnrIJZKU3RKhFUc2msHug1YZ6cDg
-8eLs4cy14MYFBXcTs3IlbRL37/88enTmPBT41NYlxRUVPYMuAckSdsTQd2qEvgw3XVY3iXl0SDw1
-//l156LeoXoHC4FhAOMe+/nDHAUehbbqLH6bY1hJzbPcnRyqhhkaoV4I6VQy0V29eFehAdxBM1rW
-FUK5LdJbd8/KvbR2L3AfgI1MUP95T9cjHoeGUIiMMNykR5eG9Bj81xYHQbNxRryv6VIHPWgj3q6M
-hoqi/s74QCiOHTI1NLdSEc+ALyzYEhNNELQRV4XuTX61v1BO/tWRR6p0GDxgSEhxGiY3kpxxyXK3
-4+OkEuigjX9BkS8JXiyT6S3+HlzNeLgJJqDwDENYGcT8LiVjlpOQd3LHGiKvPtZIoDVKYBn3ZbsZ
-8J7o/OVvdMM/AZQzndc/EEUT4BKZT7NAtJBYoSI+NXIwP7WEOz7O2djpYSgm3JJF8tzgI0qCpRha
-MEhX7xh0nzk99fH28JOx2JNecDox/DW0UUR/GQt55KLsLHkD2Lb2H0o6flTfYTICN4eAEr7hjJ45
-ob7rdpOMUPFBXFjvC0NrtUymaJYghJH5KGkIPSnhrw/dodzmfHplIQ2jjcHNEPyrhuSHe7tIC7U6
-QNTdi6DM7XplW7Ema40WHwf+G3w8JRktTUy35VXx/nqOypvB8HiaQv7OhL2M5CWxlu3bvUlk4hPb
-0j4CFzkD5/Pj2b+1f9x0rAAHCQn2k/cMcgr20taufVuHR1vY6u5ArQ9ZgEYPmjtWACIZE/MEhYGQ
-cxP/2mK049ssYlXE8exIutyEgo5+oozcx9tgOiLfJKHhmA6IDIahrByq0jTFqEt3wS3EZ9qUWmQ3
-jcz3EgETDkfZUdgZViO7UfXagFPnJCBQCLOIR25Jyh/UaeDhYpWEphKm2J/H/04e+5pAVhQDIGbF
-i0pi3F/R4KFhNbCkcsnF49RoeLxgkmn4wCINswWIXvcFl5ekOgtidbTDuYcX0BYgrX8cpQqXKnEI
-iqczNyZkw5srYLm+SlihCIouHwxneFr4uJ0qar+2iYZqnibCEI+4apJUAFSxGWimR52XqutSJ4tn
-hyE4flLfe4FolMhQCDKTpb3mi1Ic093g1h+5dYCYH9Gn3MzxGdg8RVekggGZjw2ee+iUeZ2cf/uP
-1hEPPEQiDS+YrGkwpsoM28NxrDMb24yfNg/EltQsCYUaj91lGt5V2Rusa0A39KBsN++hdl3NtyYs
-hk9yVhouShsTeUjb025auB3dXSCirmnHXEi6Zw5g62KoPvdADTCiKWrJTMXQQ9WeeHLRs1euEOZO
-7TxG1Ccuq0ah98Tt5OZaGjV/TMCwR4HJBoUgS4Hjsz+tNK9ZQMHg4WhrrDAmmuPu80f1nHF52Eoq
-Btzy4fc8e5wrcSqZezYJXapxGCYRHpxo76YrD8zVbmQ97L7eVsza6OWjqzKFLH/6P1Mh1SheOz06
-52E0L21b70Cq+6Az0qSq3ENpfyy/LTKEdobdlM/nM0UyidrURYNHNpqbvT9GKxora0dXDtG2me3I
-YhsJf85NM7QrCue/21Rqm5Xl4y7LM7n63LAe9XtEoInimJINDmwXRhbo5S6I+pjMGDi/UoJ1/LV4
-DAiql5+47BhsKbp8xkFSLRIOdeq60NwpChjGD8lJCmK8ZiIlb0pEVyXigXnrYfU6jcE+iyGbDDXy
-ORc8UBQ5M8H5NzUjlqQD+TRyHbEd1WADXW==
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Formatter;
+
+use Monolog\Logger;
+
+class ChromePHPFormatterTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers Monolog\Formatter\ChromePHPFormatter::format
+     */
+    public function testDefaultFormat()
+    {
+        $formatter = new ChromePHPFormatter();
+        $record = array(
+            'level' => Logger::ERROR,
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array('from' => 'logger'),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array('ip' => '127.0.0.1'),
+            'message' => 'log',
+        );
+
+        $message = $formatter->format($record);
+
+        $this->assertEquals(
+            array(
+                'meh',
+                array(
+                    'message' => 'log',
+                    'context' => array('from' => 'logger'),
+                    'extra' => array('ip' => '127.0.0.1'),
+                ),
+                'unknown',
+                'error'
+            ),
+            $message
+        );
+    }
+
+    /**
+     * @covers Monolog\Formatter\ChromePHPFormatter::format
+     */
+    public function testFormatWithFileAndLine()
+    {
+        $formatter = new ChromePHPFormatter();
+        $record = array(
+            'level' => Logger::CRITICAL,
+            'level_name' => 'CRITICAL',
+            'channel' => 'meh',
+            'context' => array('from' => 'logger'),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array('ip' => '127.0.0.1', 'file' => 'test', 'line' => 14),
+            'message' => 'log',
+        );
+
+        $message = $formatter->format($record);
+
+        $this->assertEquals(
+            array(
+                'meh',
+                array(
+                    'message' => 'log',
+                    'context' => array('from' => 'logger'),
+                    'extra' => array('ip' => '127.0.0.1'),
+                ),
+                'test : 14',
+                'error'
+            ),
+            $message
+        );
+    }
+
+    /**
+     * @covers Monolog\Formatter\ChromePHPFormatter::format
+     */
+    public function testFormatWithoutContext()
+    {
+        $formatter = new ChromePHPFormatter();
+        $record = array(
+            'level' => Logger::DEBUG,
+            'level_name' => 'DEBUG',
+            'channel' => 'meh',
+            'context' => array(),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array(),
+            'message' => 'log',
+        );
+
+        $message = $formatter->format($record);
+
+        $this->assertEquals(
+            array(
+                'meh',
+                'log',
+                'unknown',
+                'log'
+            ),
+            $message
+        );
+    }
+
+    /**
+     * @covers Monolog\Formatter\ChromePHPFormatter::formatBatch
+     */
+    public function testBatchFormatThrowException()
+    {
+        $formatter = new ChromePHPFormatter();
+        $records = array(
+            array(
+                'level' => Logger::INFO,
+                'level_name' => 'INFO',
+                'channel' => 'meh',
+                'context' => array(),
+                'datetime' => new \DateTime("@0"),
+                'extra' => array(),
+                'message' => 'log',
+            ),
+            array(
+                'level' => Logger::WARNING,
+                'level_name' => 'WARNING',
+                'channel' => 'foo',
+                'context' => array(),
+                'datetime' => new \DateTime("@0"),
+                'extra' => array(),
+                'message' => 'log2',
+            ),
+        );
+
+        $this->assertEquals(
+            array(
+                array(
+                    'meh',
+                    'log',
+                    'unknown',
+                    'info'
+                ),
+                array(
+                    'foo',
+                    'log2',
+                    'unknown',
+                    'warn'
+                ),
+            ),
+            $formatter->formatBatch($records)
+        );
+    }
+}

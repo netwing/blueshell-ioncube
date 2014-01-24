@@ -1,45 +1,111 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-t1pE/Yr+AcWxVNg0Jz7UlnejjBy=
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Formatter;
+
+use Monolog\Logger;
+
+class WildfireFormatterTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers Monolog\Formatter\WildfireFormatter::format
+     */
+    public function testDefaultFormat()
+    {
+        $wildfire = new WildfireFormatter();
+        $record = array(
+            'level' => Logger::ERROR,
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array('from' => 'logger'),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array('ip' => '127.0.0.1'),
+            'message' => 'log',
+        );
+
+        $message = $wildfire->format($record);
+
+        $this->assertEquals(
+            '125|[{"Type":"ERROR","File":"","Line":"","Label":"meh"},'
+                .'{"message":"log","context":{"from":"logger"},"extra":{"ip":"127.0.0.1"}}]|',
+            $message
+        );
+    }
+
+    /**
+     * @covers Monolog\Formatter\WildfireFormatter::format
+     */
+    public function testFormatWithFileAndLine()
+    {
+        $wildfire = new WildfireFormatter();
+        $record = array(
+            'level' => Logger::ERROR,
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array('from' => 'logger'),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array('ip' => '127.0.0.1', 'file' => 'test', 'line' => 14),
+            'message' => 'log',
+        );
+
+        $message = $wildfire->format($record);
+
+        $this->assertEquals(
+            '129|[{"Type":"ERROR","File":"test","Line":14,"Label":"meh"},'
+                .'{"message":"log","context":{"from":"logger"},"extra":{"ip":"127.0.0.1"}}]|',
+            $message
+        );
+    }
+
+    /**
+     * @covers Monolog\Formatter\WildfireFormatter::format
+     */
+    public function testFormatWithoutContext()
+    {
+        $wildfire = new WildfireFormatter();
+        $record = array(
+            'level' => Logger::ERROR,
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array(),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array(),
+            'message' => 'log',
+        );
+
+        $message = $wildfire->format($record);
+
+        $this->assertEquals(
+            '58|[{"Type":"ERROR","File":"","Line":"","Label":"meh"},"log"]|',
+            $message
+        );
+    }
+
+    /**
+     * @covers Monolog\Formatter\WildfireFormatter::formatBatch
+     * @expectedException BadMethodCallException
+     */
+    public function testBatchFormatThrowException()
+    {
+        $wildfire = new WildfireFormatter();
+        $record = array(
+            'level' => Logger::ERROR,
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array(),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array(),
+            'message' => 'log',
+        );
+
+        $wildfire->formatBatch(array($record));
+    }
+}

@@ -1,107 +1,143 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Log;
+
+use Guzzle\Http\Client;
+use Guzzle\Http\Curl\CurlHandle;
+use Guzzle\Http\Message\EntityEnclosingRequest;
+use Guzzle\Http\EntityBody;
+use Guzzle\Http\Message\Response;
+use Guzzle\Log\MessageFormatter;
+use Guzzle\Plugin\Log\LogPlugin;
+use Guzzle\Log\ClosureLogAdapter;
+
+/**
+ * @covers Guzzle\Log\MessageFormatter
+ */
+class MessageFormatterTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    protected $request;
+    protected $response;
+    protected $handle;
+
+    public function setUp()
+    {
+        $this->request = new EntityEnclosingRequest('POST', 'http://foo.com?q=test', array(
+            'X-Foo'         => 'bar',
+            'Authorization' => 'Baz'
+        ));
+        $this->request->setBody(EntityBody::factory('Hello'));
+
+        $this->response = new Response(200, array(
+            'X-Test' => 'Abc'
+        ), 'Foo');
+
+        $this->handle = $this->getMockBuilder('Guzzle\Http\Curl\CurlHandle')
+            ->disableOriginalConstructor()
+            ->setMethods(array('getError', 'getErrorNo', 'getStderr', 'getInfo'))
+            ->getMock();
+
+        $this->handle->expects($this->any())
+            ->method('getError')
+            ->will($this->returnValue('e'));
+
+        $this->handle->expects($this->any())
+            ->method('getErrorNo')
+            ->will($this->returnValue('123'));
+
+        $this->handle->expects($this->any())
+            ->method('getStderr')
+            ->will($this->returnValue('testing'));
+
+        $this->handle->expects($this->any())
+            ->method('getInfo')
+            ->will($this->returnValueMap(array(
+                array(CURLINFO_CONNECT_TIME, '123'),
+                array(CURLINFO_TOTAL_TIME, '456')
+            )));
+    }
+
+    public function logProvider()
+    {
+        return array(
+            // Uses the cache for the second time
+            array('{method} - {method}', 'POST - POST'),
+            array('{url}', 'http://foo.com?q=test'),
+            array('{port}', '80'),
+            array('{resource}', '/?q=test'),
+            array('{host}', 'foo.com'),
+            array('{hostname}', gethostname()),
+            array('{protocol}/{version}', 'HTTP/1.1'),
+            array('{code} {phrase}', '200 OK'),
+            array('{req_header_Foo}', ''),
+            array('{req_header_X-Foo}', 'bar'),
+            array('{req_header_Authorization}', 'Baz'),
+            array('{res_header_foo}', ''),
+            array('{res_header_X-Test}', 'Abc'),
+            array('{req_body}', 'Hello'),
+            array('{res_body}', 'Foo'),
+            array('{curl_stderr}', 'testing'),
+            array('{curl_error}', 'e'),
+            array('{curl_code}', '123'),
+            array('{connect_time}', '123'),
+            array('{total_time}', '456')
+        );
+    }
+
+    /**
+     * @dataProvider logProvider
+     */
+    public function testFormatsMessages($template, $output)
+    {
+        $formatter = new MessageFormatter($template);
+        $this->assertEquals($output, $formatter->format($this->request, $this->response, $this->handle));
+    }
+
+    public function testFormatsRequestsAndResponses()
+    {
+        $formatter = new MessageFormatter();
+        $formatter->setTemplate('{request}{response}');
+        $this->assertEquals($this->request . $this->response, $formatter->format($this->request, $this->response));
+    }
+
+    public function testAddsTimestamp()
+    {
+        $formatter = new MessageFormatter('{ts}');
+        $this->assertNotEmpty($formatter->format($this->request, $this->response));
+    }
+
+    public function testUsesResponseWhenNoHandleAndGettingCurlInformation()
+    {
+        $formatter = new MessageFormatter('{connect_time}/{total_time}');
+        $response = $this->getMockBuilder('Guzzle\Http\Message\Response')
+            ->disableOriginalConstructor()
+            ->setMethods(array('getInfo'))
+            ->getMock();
+        $response->expects($this->exactly(2))
+            ->method('getInfo')
+            ->will($this->returnValueMap(array(
+                array('connect_time', '1'),
+                array('total_time', '2'),
+            )));
+        $this->assertEquals('1/2', $formatter->format($this->request, $response));
+    }
+
+    public function testUsesEmptyStringWhenNoHandleAndNoResponse()
+    {
+        $formatter = new MessageFormatter('{connect_time}/{total_time}');
+        $this->assertEquals('/', $formatter->format($this->request));
+    }
+
+    public function testInjectsTotalTime()
+    {
+        $out = '';
+        $formatter = new MessageFormatter('{connect_time}/{total_time}');
+        $adapter = new ClosureLogAdapter(function ($m) use (&$out) { $out .= $m; });
+        $log = new LogPlugin($adapter, $formatter);
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 2\r\n\r\nHI");
+        $client = new Client($this->getServer()->getUrl());
+        $client->addSubscriber($log);
+        $client->get('/')->send();
+        $this->assertNotEquals('/', $out);
+    }
+}

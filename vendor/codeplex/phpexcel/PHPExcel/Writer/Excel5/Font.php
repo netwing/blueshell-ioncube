@@ -1,56 +1,165 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QejDiVqYJwmjJjI2
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Writer_Excel5
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Writer_Excel5_Font
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Writer_Excel5
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Writer_Excel5_Font
+{
+	/**
+	 * Color index
+	 *
+	 * @var int
+	 */
+	private $_colorIndex;
+
+	/**
+	 * Font
+	 *
+	 * @var PHPExcel_Style_Font
+	 */
+	private $_font;
+
+	/**
+	 * Constructor
+	 *
+	 * @param PHPExcel_Style_Font $font
+	 */
+	public function __construct(PHPExcel_Style_Font $font = null)
+	{
+		$this->_colorIndex = 0x7FFF;
+		$this->_font = $font;
+	}
+
+	/**
+	 * Set the color index
+	 *
+	 * @param int $colorIndex
+	 */
+	public function setColorIndex($colorIndex)
+	{
+		$this->_colorIndex = $colorIndex;
+	}
+
+	/**
+	 * Get font record data
+	 *
+	 * @return string
+	 */
+	public function writeFont()
+	{
+		$font_outline = 0;
+		$font_shadow = 0;
+
+		$icv = $this->_colorIndex; // Index to color palette
+		if ($this->_font->getSuperScript()) {
+			$sss = 1;
+		} else if ($this->_font->getSubScript()) {
+			$sss = 2;
+		} else {
+			$sss = 0;
+		}
+		$bFamily = 0; // Font family
+		$bCharSet = PHPExcel_Shared_Font::getCharsetFromFontName($this->_font->getName()); // Character set
+
+		$record = 0x31;		// Record identifier
+		$reserved = 0x00;	// Reserved
+		$grbit = 0x00;		// Font attributes
+		if ($this->_font->getItalic()) {
+			$grbit |= 0x02;
+		}
+		if ($this->_font->getStrikethrough()) {
+			$grbit |= 0x08;
+		}
+		if ($font_outline) {
+			$grbit |= 0x10;
+		}
+		if ($font_shadow) {
+			$grbit |= 0x20;
+		}
+
+		$data = pack("vvvvvCCCC",
+			$this->_font->getSize() * 20,						//	Fontsize (in twips)
+			$grbit,
+			$icv,												//	Colour
+			self::_mapBold($this->_font->getBold()),			//	Font weight
+			$sss,												//	Superscript/Subscript
+			self::_mapUnderline($this->_font->getUnderline()),
+			$bFamily,
+			$bCharSet,
+			$reserved
+		);
+		$data .= PHPExcel_Shared_String::UTF8toBIFF8UnicodeShort($this->_font->getName());
+
+		$length = strlen($data);
+		$header = pack("vv", $record, $length);
+
+		return($header . $data);
+	}
+
+	/**
+	 * Map to BIFF5-BIFF8 codes for bold
+	 *
+	 * @param boolean $bold
+	 * @return int
+	 */
+	private static function _mapBold($bold) {
+		if ($bold) {
+			return 0x2BC;	//	700 = Bold font weight
+		}
+		return 0x190;		//	400 = Normal font weight
+	}
+
+	/**
+	 * Map of BIFF2-BIFF8 codes for underline styles
+	 * @static	array of int
+	 *
+	 */
+	private static $_mapUnderline = array(	PHPExcel_Style_Font::UNDERLINE_NONE					=> 0x00,
+											PHPExcel_Style_Font::UNDERLINE_SINGLE				=> 0x01,
+											PHPExcel_Style_Font::UNDERLINE_DOUBLE				=> 0x02,
+											PHPExcel_Style_Font::UNDERLINE_SINGLEACCOUNTING		=> 0x21,
+											PHPExcel_Style_Font::UNDERLINE_DOUBLEACCOUNTING		=> 0x22,
+										 );
+	/**
+	 * Map underline
+	 *
+	 * @param string
+	 * @return int
+	 */
+	private static function _mapUnderline($underline) {
+		if (isset(self::$_mapUnderline[$underline]))
+			return self::$_mapUnderline[$underline];
+		return 0x00;
+	}
+
+}

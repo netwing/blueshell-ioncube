@@ -1,125 +1,210 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-w7qqFHvC5BqmJ0QO137/fE8Ax9G=
+<?php
+/**
+* Smarty Internal Plugin Compile If
+*
+* Compiles the {if} {else} {elseif} {/if} tags
+*
+* @package Smarty
+* @subpackage Compiler
+* @author Uwe Tews
+*/
+
+/**
+* Smarty Internal Plugin Compile If Class
+*
+* @package Smarty
+* @subpackage Compiler
+*/
+class Smarty_Internal_Compile_If extends Smarty_Internal_CompileBase
+{
+    /**
+    * Compiles code for the {if} tag
+    *
+    * @param array  $args       array with attributes from parser
+    * @param object $compiler   compiler object
+    * @param array  $parameter  array with compilation parameter
+    * @return string compiled code
+    */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        $this->openTag($compiler, 'if', array(1, $compiler->nocache));
+        // must whole block be nocache ?
+        $compiler->nocache = $compiler->nocache | $compiler->tag_nocache;
+
+        if (!array_key_exists("if condition",$parameter)) {
+            $compiler->trigger_template_error("missing if condition", $compiler->lex->taglineno);
+        }
+
+        if (is_array($parameter['if condition'])) {
+            if ($compiler->nocache) {
+                $_nocache = ',true';
+                // create nocache var to make it know for further compiling
+                if (is_array($parameter['if condition']['var'])) {
+                    $compiler->template->tpl_vars[trim($parameter['if condition']['var']['var'], "'")] = new Smarty_variable(null, true);
+                } else {
+                    $compiler->template->tpl_vars[trim($parameter['if condition']['var'], "'")] = new Smarty_variable(null, true);
+                }
+            } else {
+                $_nocache = '';
+            }
+            if (is_array($parameter['if condition']['var'])) {
+                $_output = "<?php if (!isset(\$_smarty_tpl->tpl_vars[".$parameter['if condition']['var']['var']."]) || !is_array(\$_smarty_tpl->tpl_vars[".$parameter['if condition']['var']['var']."]->value)) \$_smarty_tpl->createLocalArrayVariable(".$parameter['if condition']['var']['var']."$_nocache);\n";
+                $_output .= "if (\$_smarty_tpl->tpl_vars[".$parameter['if condition']['var']['var']."]->value".$parameter['if condition']['var']['smarty_internal_index']." = ".$parameter['if condition']['value'].") {?>";
+            } else {
+                $_output = "<?php if (!isset(\$_smarty_tpl->tpl_vars[".$parameter['if condition']['var']."])) \$_smarty_tpl->tpl_vars[".$parameter['if condition']['var']."] = new Smarty_Variable(null{$_nocache});";
+                $_output .= "if (\$_smarty_tpl->tpl_vars[".$parameter['if condition']['var']."]->value = ".$parameter['if condition']['value'].") {?>";
+            }
+
+            return $_output;
+        } else {
+            return "<?php if ({$parameter['if condition']}) {?>";
+        }
+    }
+
+}
+
+/**
+* Smarty Internal Plugin Compile Else Class
+*
+* @package Smarty
+* @subpackage Compiler
+*/
+class Smarty_Internal_Compile_Else extends Smarty_Internal_CompileBase
+{
+    /**
+    * Compiles code for the {else} tag
+    *
+    * @param array  $args       array with attributes from parser
+    * @param object $compiler   compiler object
+    * @param array  $parameter  array with compilation parameter
+    * @return string compiled code
+    */
+    public function compile($args, $compiler, $parameter)
+    {
+        list($nesting, $compiler->tag_nocache) = $this->closeTag($compiler, array('if', 'elseif'));
+        $this->openTag($compiler, 'else', array($nesting, $compiler->tag_nocache));
+
+        return "<?php } else { ?>";
+    }
+
+}
+
+/**
+* Smarty Internal Plugin Compile ElseIf Class
+*
+* @package Smarty
+* @subpackage Compiler
+*/
+class Smarty_Internal_Compile_Elseif extends Smarty_Internal_CompileBase
+{
+    /**
+    * Compiles code for the {elseif} tag
+    *
+    * @param array  $args       array with attributes from parser
+    * @param object $compiler   compiler object
+    * @param array  $parameter  array with compilation parameter
+    * @return string compiled code
+    */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        list($nesting, $compiler->tag_nocache) = $this->closeTag($compiler, array('if', 'elseif'));
+
+        if (!array_key_exists("if condition",$parameter)) {
+            $compiler->trigger_template_error("missing elseif condition", $compiler->lex->taglineno);
+        }
+
+        if (is_array($parameter['if condition'])) {
+            $condition_by_assign = true;
+            if ($compiler->nocache) {
+                $_nocache = ',true';
+                // create nocache var to make it know for further compiling
+                if (is_array($parameter['if condition']['var'])) {
+                    $compiler->template->tpl_vars[trim($parameter['if condition']['var']['var'], "'")] = new Smarty_variable(null, true);
+                } else {
+                    $compiler->template->tpl_vars[trim($parameter['if condition']['var'], "'")] = new Smarty_variable(null, true);
+                }
+            } else {
+                $_nocache = '';
+            }
+        } else {
+            $condition_by_assign = false;
+        }
+
+        if (empty($compiler->prefix_code)) {
+            if ($condition_by_assign) {
+                $this->openTag($compiler, 'elseif', array($nesting + 1, $compiler->tag_nocache));
+                if (is_array($parameter['if condition']['var'])) {
+                    $_output = "<?php } else { if (!isset(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]) || !is_array(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]->value)) \$_smarty_tpl->createLocalArrayVariable(" . $parameter['if condition']['var']['var'] . "$_nocache);\n";
+                    $_output .= "if (\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]->value" . $parameter['if condition']['var']['smarty_internal_index'] . " = " . $parameter['if condition']['value'] . ") {?>";
+                } else {
+                    $_output = "<?php  } else { if (!isset(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "])) \$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "] = new Smarty_Variable(null{$_nocache});";
+                    $_output .= "if (\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "]->value = " . $parameter['if condition']['value'] . ") {?>";
+                }
+
+                return $_output;
+            } else {
+                $this->openTag($compiler, 'elseif', array($nesting, $compiler->tag_nocache));
+
+                return "<?php } elseif ({$parameter['if condition']}) {?>";
+            }
+        } else {
+            $tmp = '';
+            foreach ($compiler->prefix_code as $code)
+            $tmp .= $code;
+            $compiler->prefix_code = array();
+            $this->openTag($compiler, 'elseif', array($nesting + 1, $compiler->tag_nocache));
+            if ($condition_by_assign) {
+                if (is_array($parameter['if condition']['var'])) {
+                    $_output = "<?php } else {?>{$tmp}<?php  if (!isset(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]) || !is_array(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]->value)) \$_smarty_tpl->createLocalArrayVariable(" . $parameter['if condition']['var']['var'] . "$_nocache);\n";
+                    $_output .= "if (\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var']['var'] . "]->value" . $parameter['if condition']['var']['smarty_internal_index'] . " = " . $parameter['if condition']['value'] . ") {?>";
+                } else {
+                    $_output = "<?php } else {?>{$tmp}<?php if (!isset(\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "])) \$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "] = new Smarty_Variable(null{$_nocache});";
+                    $_output .= "if (\$_smarty_tpl->tpl_vars[" . $parameter['if condition']['var'] . "]->value = " . $parameter['if condition']['value'] . ") {?>";
+                }
+
+                return $_output;
+            } else {
+                return "<?php } else {?>{$tmp}<?php if ({$parameter['if condition']}) {?>";
+            }
+        }
+    }
+
+}
+
+/**
+* Smarty Internal Plugin Compile Ifclose Class
+*
+* @package Smarty
+* @subpackage Compiler
+*/
+class Smarty_Internal_Compile_Ifclose extends Smarty_Internal_CompileBase
+{
+    /**
+    * Compiles code for the {/if} tag
+    *
+    * @param array  $args       array with attributes from parser
+    * @param object $compiler   compiler object
+    * @param array  $parameter  array with compilation parameter
+    * @return string compiled code
+    */
+    public function compile($args, $compiler, $parameter)
+    {
+        // must endblock be nocache?
+        if ($compiler->nocache) {
+            $compiler->tag_nocache = true;
+        }
+        list($nesting, $compiler->nocache) = $this->closeTag($compiler, array('if', 'else', 'elseif'));
+        $tmp = '';
+        for ($i = 0; $i < $nesting; $i++) {
+            $tmp .= '}';
+        }
+
+        return "<?php {$tmp}?>";
+    }
+
+}

@@ -1,50 +1,82 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-zLUftULPHZQ9aaS3ivOwkn+npG0=
+<?php
+
+namespace Codeception\Util\Connector;
+
+use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\BrowserKit\Response;
+use Zend\Http\Request as HttpRequest;
+use Zend\Stdlib\Parameters;
+use Zend\Uri\Http as HttpUri;
+
+class ZF2 extends \Symfony\Component\BrowserKit\Client
+{
+    /**
+     * @var \Zend\Mvc\ApplicationInterface
+     */
+    protected $application;
+
+    /**
+     * @var  \Zend\Http\PhpEnvironment\Request
+     */
+    protected $zendRequest;
+
+    /**
+     * @param \Zend\Mvc\ApplicationInterface $application
+     */
+    public function setApplication($application)
+    {
+        $this->application = $application;
+    }
+
+    /**
+     * @param Request $request
+     *
+     * @return Response
+     * @throws \Exception
+     */
+    public function doRequest($request)
+    {
+        $zendRequest = $this->application->getRequest();
+        $zendResponse = $this->application->getResponse();
+
+        $uri = new HttpUri($request->getUri());
+        $queryString = $uri->getQuery();
+        $method = strtoupper($request->getMethod());
+
+        if ($queryString) {
+            parse_str($queryString, $query);
+        }
+
+        if ($method == HttpRequest::METHOD_POST) {
+            $post = $request->getParameters();
+            $zendRequest->setPost(new Parameters($post));
+        } elseif ($method == HttpRequest::METHOD_GET) {
+            $query = $request->getParameters();
+            $zendRequest->setQuery(new Parameters($query));
+        } elseif ($method == HttpRequest::METHOD_PUT) {
+            $zendRequest->setContent($request->getContent());
+        }
+
+        $zendRequest->setMethod($method);
+        $zendRequest->setUri($uri);
+        $this->application->run();
+
+        $this->zendRequest = $zendRequest;
+
+        $exception = $this->application->getMvcEvent()->getParam('exception');
+        if ($exception instanceof \Exception) {
+            throw $exception;
+        }
+
+        $response = new Response($zendResponse->getBody(), $zendResponse->getStatusCode(), $zendResponse->getHeaders()->toArray());
+        return $response;
+    }
+
+    /**
+     * @return \Zend\Http\PhpEnvironment\Request
+     */
+    public function getZendRequest()
+    {
+        return $this->zendRequest;
+    }
+}

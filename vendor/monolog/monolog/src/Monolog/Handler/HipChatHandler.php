@@ -1,93 +1,219 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ydCJ3jYjRNFcyrYNTgBFar7A
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+
+/**
+ * Sends notifications through the hipchat api to a hipchat room
+ *
+ * Notes:
+ * API token - HipChat API token
+ * Room      - HipChat Room Id or name, where messages are sent
+ * Name      - Name used to send the message (from)
+ * notify    - Should the message trigger a notification in the clients
+ *
+ * @author Rafael Dohms <rafael@doh.ms>
+ * @see    https://www.hipchat.com/docs/api
+ */
+class HipChatHandler extends SocketHandler
+{
+    /**
+     * @var string
+     */
+    private $token;
+
+    /**
+     * @var array
+     */
+    private $room;
+
+    /**
+     * @var string
+     */
+    private $name;
+
+    /**
+     * @var boolean
+     */
+    private $notify;
+
+    /**
+     * @param string  $token  HipChat API Token
+     * @param string  $room   The room that should be alerted of the message (Id or Name)
+     * @param string  $name   Name used in the "from" field
+     * @param bool    $notify Trigger a notification in clients or not
+     * @param int     $level  The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble Whether the messages that are handled can bubble up the stack or not
+     * @param Boolean $useSSL Whether to connect via SSL.
+     */
+    public function __construct($token, $room, $name = 'Monolog', $notify = false, $level = Logger::CRITICAL, $bubble = true, $useSSL = true)
+    {
+        $connectionString = $useSSL ? 'ssl://api.hipchat.com:443' : 'api.hipchat.com:80';
+        parent::__construct($connectionString, $level, $bubble);
+
+        $this->token = $token;
+        $this->name = $name;
+        $this->notify = $notify;
+        $this->room = $room;
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @param  array  $record
+     * @return string
+     */
+    protected function generateDataStream($record)
+    {
+        $content = $this->buildContent($record);
+
+        return $this->buildHeader($content) . $content;
+    }
+
+    /**
+     * Builds the body of API call
+     *
+     * @param  array  $record
+     * @return string
+     */
+    private function buildContent($record)
+    {
+        $dataArray = array(
+            'from' => $this->name,
+            'room_id' => $this->room,
+            'notify' => $this->notify,
+            'message' => $record['formatted'],
+            'message_format' => 'text',
+            'color' => $this->getAlertColor($record['level']),
+        );
+
+        return http_build_query($dataArray);
+    }
+
+    /**
+     * Builds the header of the API Call
+     *
+     * @param  string $content
+     * @return string
+     */
+    private function buildHeader($content)
+    {
+        $header = "POST /v1/rooms/message?format=json&auth_token=".$this->token." HTTP/1.1\r\n";
+        $header .= "Host: api.hipchat.com\r\n";
+        $header .= "Content-Type: application/x-www-form-urlencoded\r\n";
+        $header .= "Content-Length: " . strlen($content) . "\r\n";
+        $header .= "\r\n";
+
+        return $header;
+    }
+
+    /**
+     * Assigns a color to each level of log records.
+     *
+     * @param  integer $level
+     * @return string
+     */
+    protected function getAlertColor($level)
+    {
+        switch (true) {
+            case $level >= Logger::ERROR:
+                return 'red';
+            case $level >= Logger::WARNING:
+                return 'yellow';
+            case $level >= Logger::INFO:
+                return 'green';
+            case $level == Logger::DEBUG:
+                return 'gray';
+            default:
+                return 'yellow';
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @param array $record
+     */
+    public function write(array $record)
+    {
+        parent::write($record);
+        $this->closeSocket();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handleBatch(array $records)
+    {
+        if (count($records) == 0) {
+            return true;
+        }
+
+        $batchRecord = $this->combineRecords($records);
+
+        if (!$this->isHandling($batchRecord)) {
+            return false;
+        }
+
+        $this->write($batchRecord);
+
+        return false === $this->bubble;
+    }
+
+    /**
+     * Combines multiple records into one. Error level of the combined record
+     * will be the highest level from the given records. Datetime will be taken
+     * from the first record.
+     *
+     * @param $records
+     * @return array
+     */
+    private function combineRecords($records)
+    {
+        $messages = array();
+        $formattedMessages = array();
+        $level = 0;
+        $levelName = null;
+        $datetime = null;
+
+        foreach ($records as $record) {
+
+            $record = $this->processRecord($record);
+            $record['formatted'] = $this->getFormatter()->format($record);
+
+            $messages[] = $record['message'];
+            $formattedMessages[] = $record['formatted'];
+
+            if ($record['level'] > $level) {
+                $level = $record['level'];
+                $levelName = $record['level_name'];
+            }
+
+            if (null === $datetime) {
+                $datetime = $record['datetime'];
+            }
+        }
+
+        $batchRecord = array(
+            'message' => implode(PHP_EOL, $messages),
+            'formatted' => implode('', $formattedMessages),
+            'level' => $level,
+            'level_name' => $levelName,
+            'datetime' => $datetime,
+            'context' => array(),
+            'extra' => array(),
+        );
+
+        return $batchRecord;
+    }
+}

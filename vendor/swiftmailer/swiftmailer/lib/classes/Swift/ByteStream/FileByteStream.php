@@ -1,107 +1,225 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-IHvk1HgRRihcgZBo5TO=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Allows reading and writing of bytes to and from a file.
+ *
+ * @package    Swift
+ * @subpackage ByteStream
+ * @author     Chris Corbyn
+ */
+class Swift_ByteStream_FileByteStream extends Swift_ByteStream_AbstractFilterableInputStream implements Swift_FileStream
+{
+    /** The internal pointer offset */
+    private $_offset = 0;
+
+    /** The path to the file */
+    private $_path;
+
+    /** The mode this file is opened in for writing */
+    private $_mode;
+
+    /** A lazy-loaded resource handle for reading the file */
+    private $_reader;
+
+    /** A lazy-loaded resource handle for writing the file */
+    private $_writer;
+
+    /** If magic_quotes_runtime is on, this will be true */
+    private $_quotes = false;
+
+    /** If stream is seekable true/false, or null if not known */
+    private $_seekable = null;
+
+    /**
+     * Create a new FileByteStream for $path.
+     *
+     * @param string  $path
+     * @param boolean $writable if true
+     */
+    public function __construct($path, $writable = false)
+    {
+        if (empty($path)) {
+            throw new Swift_IoException('The path cannot be empty');
+        }
+        $this->_path = $path;
+        $this->_mode = $writable ? 'w+b' : 'rb';
+
+        if (function_exists('get_magic_quotes_runtime') && @get_magic_quotes_runtime() == 1) {
+            $this->_quotes = true;
+        }
+    }
+
+    /**
+     * Get the complete path to the file.
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->_path;
+    }
+
+    /**
+     * Reads $length bytes from the stream into a string and moves the pointer
+     * through the stream by $length.
+     *
+     * If less bytes exist than are requested the
+     * remaining bytes are given instead. If no bytes are remaining at all, boolean
+     * false is returned.
+     *
+     * @param integer $length
+     *
+     * @return string
+     *
+     * @throws Swift_IoException
+     */
+    public function read($length)
+    {
+        $fp = $this->_getReadHandle();
+        if (!feof($fp)) {
+            if ($this->_quotes) {
+                ini_set('magic_quotes_runtime', 0);
+            }
+            $bytes = fread($fp, $length);
+            if ($this->_quotes) {
+                ini_set('magic_quotes_runtime', 1);
+            }
+            $this->_offset = ftell($fp);
+
+            return $bytes;
+        } else {
+            $this->_resetReadHandle();
+
+            return false;
+        }
+    }
+
+    /**
+     * Move the internal read pointer to $byteOffset in the stream.
+     *
+     * @param integer $byteOffset
+     *
+     * @return boolean
+     */
+    public function setReadPointer($byteOffset)
+    {
+        if (isset($this->_reader)) {
+            $this->_seekReadStreamToPosition($byteOffset);
+        }
+        $this->_offset = $byteOffset;
+    }
+
+    // -- Private methods
+
+    /** Just write the bytes to the file */
+    protected function _commit($bytes)
+    {
+        fwrite($this->_getWriteHandle(), $bytes);
+        $this->_resetReadHandle();
+    }
+
+    /** Not used */
+    protected function _flush()
+    {
+    }
+
+    /** Get the resource for reading */
+    private function _getReadHandle()
+    {
+        if (!isset($this->_reader)) {
+            if (!$this->_reader = fopen($this->_path, 'rb')) {
+                throw new Swift_IoException(
+                    'Unable to open file for reading [' . $this->_path . ']'
+                );
+            }
+            if ($this->_offset <> 0) {
+                $this->_getReadStreamSeekableStatus();
+                $this->_seekReadStreamToPosition($this->_offset);
+            }
+        }
+
+        return $this->_reader;
+    }
+
+    /** Get the resource for writing */
+    private function _getWriteHandle()
+    {
+        if (!isset($this->_writer)) {
+            if (!$this->_writer = fopen($this->_path, $this->_mode)) {
+                throw new Swift_IoException(
+                    'Unable to open file for writing [' . $this->_path . ']'
+                );
+            }
+        }
+
+        return $this->_writer;
+    }
+
+    /** Force a reload of the resource for reading */
+    private function _resetReadHandle()
+    {
+        if (isset($this->_reader)) {
+            fclose($this->_reader);
+            $this->_reader = null;
+        }
+    }
+
+    /** Check if ReadOnly Stream is seekable */
+    private function _getReadStreamSeekableStatus()
+    {
+        $metas = stream_get_meta_data($this->_reader);
+        $this->_seekable = $metas['seekable'];
+    }
+
+    /** Streams in a readOnly stream ensuring copy if needed */
+    private function _seekReadStreamToPosition($offset)
+    {
+        if ($this->_seekable===null) {
+            $this->_getReadStreamSeekableStatus();
+        }
+        if ($this->_seekable === false) {
+            $currentPos = ftell($this->_reader);
+            if ($currentPos<$offset) {
+                $toDiscard = $offset-$currentPos;
+                fread($this->_reader, $toDiscard);
+
+                return;
+            }
+            $this->_copyReadStream();
+        }
+        fseek($this->_reader, $offset, SEEK_SET);
+    }
+
+    /** Copy a readOnly Stream to ensure seekability */
+    private function _copyReadStream()
+    {
+        if ($tmpFile = fopen('php://temp/maxmemory:4096', 'w+b')) {
+            /* We have opened a php:// Stream Should work without problem */
+        } elseif (function_exists('sys_get_temp_dir') && is_writable(sys_get_temp_dir()) && ($tmpFile = tmpfile())) {
+            /* We have opened a tmpfile */
+        } else {
+            throw new Swift_IoException('Unable to copy the file to make it seekable, sys_temp_dir is not writable, php://memory not available');
+        }
+        $currentPos = ftell($this->_reader);
+        fclose($this->_reader);
+        $source = fopen($this->_path, 'rb');
+        if (!$source) {
+            throw new Swift_IoException('Unable to open file for copying [' . $this->_path . ']');
+        }
+        fseek($tmpFile, 0, SEEK_SET);
+        while (!feof($source)) {
+            fwrite($tmpFile, fread($source, 4096));
+        }
+        fseek($tmpFile, $currentPos, SEEK_SET);
+        fclose($source);
+        $this->_reader = $tmpFile;
+    }
+}

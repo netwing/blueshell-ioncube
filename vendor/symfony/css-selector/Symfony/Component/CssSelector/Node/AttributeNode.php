@@ -1,50 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-tsS/2zdEKxTHM0IAagMYP4YkRCsoVm==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Node;
+
+/**
+ * Represents a "<selector>[<namespace>|<attribute> <operator> <value>]" node.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class AttributeNode extends AbstractNode
+{
+    /**
+     * @var NodeInterface
+     */
+    private $selector;
+
+    /**
+     * @var string
+     */
+    private $namespace;
+
+    /**
+     * @var string
+     */
+    private $attribute;
+
+    /**
+     * @var string
+     */
+    private $operator;
+
+    /**
+     * @var string
+     */
+    private $value;
+
+    /**
+     * @param NodeInterface $selector
+     * @param string        $namespace
+     * @param string        $attribute
+     * @param string        $operator
+     * @param string        $value
+     */
+    public function __construct(NodeInterface $selector, $namespace, $attribute, $operator, $value)
+    {
+        $this->selector = $selector;
+        $this->namespace = $namespace;
+        $this->attribute = $attribute;
+        $this->operator = $operator;
+        $this->value = $value;
+    }
+
+    /**
+     * @return NodeInterface
+     */
+    public function getSelector()
+    {
+        return $this->selector;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNamespace()
+    {
+        return $this->namespace;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAttribute()
+    {
+        return $this->attribute;
+    }
+
+    /**
+     * @return string
+     */
+    public function getOperator()
+    {
+        return $this->operator;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSpecificity()
+    {
+        return $this->selector->getSpecificity()->plus(new Specificity(0, 1, 0));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString()
+    {
+        $attribute = $this->namespace ? $this->namespace.'|'.$this->attribute : $this->attribute;
+
+        return 'exists' === $this->operator
+            ? sprintf('%s[%s[%s]]', $this->getNodeName(), $this->selector, $attribute)
+            : sprintf("%s[%s[%s %s '%s']]", $this->getNodeName(), $this->selector, $attribute, $this->operator, $this->value);
+    }
+}

@@ -1,75 +1,172 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-MZyJbgDTgTnWSfzpl9EY6NZ8P0==
+<?php
+namespace Codeception\Module;
+
+use Codeception\Codecept;
+use Codeception\Subscriber\ErrorHandler;
+use Illuminate\Http\Request;
+use Illuminate\Foundation\Testing\Client;
+use Illuminate\Auth\UserInterface;
+
+/**
+ *
+ * This module allows you to run functional tests for Laravel 4.
+ * Module is very fresh and should be improved with Laravel testing capabilities.
+ * Please try it and leave your feedbacks. If you want to maintain it - connect Codeception team.
+ *
+ * Uses 'bootstrap/start.php' to launch.
+ *
+ * ## Demo Project
+ *
+ * <https://github.com/Codeception/sample-l4-app>
+ *
+ * ## Status
+ *
+ * * Maintainer: **Jon Phipps, Davert**
+ * * Stability: **alpha**
+ * * Contact: davert.codeception@mailican.com
+ *
+ *
+ * ## API
+ *
+ * * kernel - `Illuminate\Foundation\Application` instance
+ * * client - `BrowserKit` client
+ *
+ * ## Known Issues
+ *
+ * When submitting form do not use `Input::all` to pass to store (hope you won't do this anyway).
+ * Codeception creates internal form fields, so you get exception trying to save them.
+ *
+ */
+
+class Laravel4 extends \Codeception\Util\Framework {
+
+	public function _initialize()
+	{
+        $projectDir =  \Codeception\Configuration::projectDir();
+        require $projectDir.'/vendor/autoload.php';
+
+        \Illuminate\Support\ClassLoader::register();
+
+		if (is_dir($workbench = $projectDir.'workbench'))
+		{
+			\Illuminate\Workbench\Starter::start($workbench);
+		}
+		$unitTesting = true;
+		$testEnvironment = 'testing';
+		$app = require $projectDir.'bootstrap/start.php';
+		$this->kernel = $app;
+
+        $this->revertErrorHandler();
+	}
+
+    protected function revertErrorHandler()
+    {
+        $handler = new ErrorHandler();
+        set_error_handler(array($handler, 'errorHandler'));
+    }
+
+	public function _before(\Codeception\TestCase $test)
+	{
+		$this->client = new Client($this->kernel);
+		$this->client->followRedirects(true);
+	}
+
+	public function _after(\Codeception\TestCase $test)
+	{
+		$this->kernel->shutdown();
+	}
+
+	/**
+	 * Assert that the session has a given list of values.
+	 *
+	 * @param  string|array  $key
+	 * @param  mixed  $value
+	 * @return void
+	 */
+	public function seeInSession($key, $value = null)
+	{
+		if (is_array($key)) return $this->seeSessionHasValues($key);
+
+		if (is_null($value))
+		{
+			$this->assertTrue($this->kernel['session']->has($key));
+		}
+		else
+		{
+			$this->assertEquals($value, $this->kernel['session']->get($key));
+		}
+
+	}
+
+	/**
+	 * Assert that the session has a given list of values.
+	 *
+	 * @param  array  $bindings
+	 * @return void
+	 */
+	public function seeSessionHasValues(array $bindings)
+	{
+		foreach ($bindings as $key => $value)
+		{
+			if (is_int($key))
+			{
+				$this->seeInSession($value);
+			}
+			else
+			{
+				$this->seeInSession($key, $value);
+			}
+		}
+	}
+
+	/**
+	 * Assert that the session has errors bound.
+	 *
+	 * @return bool
+	 */
+	public function seeSessionHasErrors()
+	{
+		$this->seeInSession('errors');
+	}
+
+	/**
+	 * Set the currently logged in user for the application.
+	 *
+	 * @param  \Illuminate\Auth\UserInterface  $user
+	 * @param  string  $driver
+	 * @return void
+	 */
+	public function amLoggedAs(UserInterface $user, $driver = null)
+	{
+		$this->kernel['auth']->driver($driver)->setUser($user);
+	}
+	
+	/**
+	 * Return an instance of a class from the IoC Container.
+	 * (http://laravel.com/docs/ioc)
+	 * 
+	 * Example
+	 * ``` php
+     * <?php
+	 * // In Laravel
+	 * App::bind('foo', function($app)
+	 * {
+	 *     return new FooBar;
+	 * });
+	 * 
+	 * // Then in test
+	 * $service = $I->grabService('foo');
+	 * 
+	 * // Will return an instance of FooBar, also works for singletons.
+     * ?>
+	 * ```
+	 * 
+	 * @param  string  $class
+	 * @return mixed
+	 */
+	public function grabService($class)
+	{
+		return $this->kernel[$class];
+	}
+
+}

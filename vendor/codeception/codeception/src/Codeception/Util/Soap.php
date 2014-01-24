@@ -1,37 +1,60 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-v+HTYRgehB6D09k2l5iWVzdWTSvMjD19ZjC=
+<?php
+namespace Codeception\Util;
+
+class Soap
+{
+
+    /**
+     * @static
+     * @param DOMDocument $xml
+     * @param DOMNode $node
+     * @param array $array
+     * @return \DOMDocument
+     */
+    public static function arrayToXml(\DOMDocument $xml, \DOMNode $node, $array = array())
+    {
+        foreach ($array as $el => $val) {
+            if (is_array($val)) {
+                self::arrayToXml($xml, $node->$el, $val);
+            } else {
+                $node->appendChild($xml->createElement($el,$val));
+            }
+        }
+        return $xml;
+    }
+
+    /**
+     * @static
+     * @param $xml
+     * @return \DOMDocument|\DOMNode
+     */
+    public static function toXml($xml)
+    {
+        if ($xml instanceof XmlBuilder) {
+            return $xml->getDom();
+        }
+        if ($xml instanceof \DOMDocument) return $xml;
+        $dom = new \DOMDocument();
+        $dom->preserveWhiteSpace = false;
+        if ($xml instanceof \DOMNode) {
+            $xml = $dom->importNode($xml, true);
+            $dom->appendChild($xml);
+            return $dom;
+        }
+
+        if (is_array($xml)) {
+            return self::arrayToXml($dom, $dom, $xml);
+        }
+        if (!empty($xml)) $dom->loadXML($xml);
+        return $dom;
+    }
+
+    public static function request() {
+        return new XmlBuilder();
+    }
+
+    public static function response() {
+        return new XmlBuilder();
+    }
+
+}

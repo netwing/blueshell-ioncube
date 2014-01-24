@@ -1,96 +1,354 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Chart
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version	1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Chart_DataSeries
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Chart
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Chart_DataSeries
+{
+
+	const TYPE_BARCHART			= 'barChart';
+	const TYPE_BARCHART_3D		= 'bar3DChart';
+	const TYPE_LINECHART		= 'lineChart';
+	const TYPE_LINECHART_3D		= 'line3DChart';
+	const TYPE_AREACHART		= 'areaChart';
+	const TYPE_AREACHART_3D		= 'area3DChart';
+	const TYPE_PIECHART			= 'pieChart';
+	const TYPE_PIECHART_3D		= 'pie3DChart';
+	const TYPE_DOUGHTNUTCHART	= 'doughnutChart';
+	const TYPE_DONUTCHART		= self::TYPE_DOUGHTNUTCHART;	//	Synonym
+	const TYPE_SCATTERCHART		= 'scatterChart';
+	const TYPE_SURFACECHART		= 'surfaceChart';
+	const TYPE_SURFACECHART_3D	= 'surface3DChart';
+	const TYPE_RADARCHART		= 'radarChart';
+	const TYPE_BUBBLECHART		= 'bubbleChart';
+	const TYPE_STOCKCHART		= 'stockChart';
+
+	const GROUPING_CLUSTERED			= 'clustered';
+	const GROUPING_STACKED				= 'stacked';
+	const GROUPING_PERCENT_STACKED		= 'percentStacked';
+	const GROUPING_STANDARD				= 'standard';
+
+	const DIRECTION_BAR			= 'bar';
+	const DIRECTION_HORIZONTAL	= self::DIRECTION_BAR;
+	const DIRECTION_COL			= 'col';
+	const DIRECTION_COLUMN		= self::DIRECTION_COL;
+	const DIRECTION_VERTICAL	= self::DIRECTION_COL;
+
+	const STYLE_LINEMARKER		= 'lineMarker';
+	const STYLE_SMOOTHMARKER	= 'smoothMarker';
+	const STYLE_MARKER			= 'marker';
+	const STYLE_FILLED			= 'filled';
+
+
+	/**
+	 * Series Plot Type
+	 *
+	 * @var string
+	 */
+	private $_plotType = null;
+
+	/**
+	 * Plot Grouping Type
+	 *
+	 * @var boolean
+	 */
+	private $_plotGrouping = null;
+
+	/**
+	 * Plot Direction
+	 *
+	 * @var boolean
+	 */
+	private $_plotDirection = null;
+
+	/**
+	 * Plot Style
+	 *
+	 * @var string
+	 */
+	private $_plotStyle = null;
+
+	/**
+	 * Order of plots in Series
+	 *
+	 * @var array of integer
+	 */
+	private $_plotOrder = array();
+
+	/**
+	 * Plot Label
+	 *
+	 * @var array of PHPExcel_Chart_DataSeriesValues
+	 */
+	private $_plotLabel = array();
+
+	/**
+	 * Plot Category
+	 *
+	 * @var array of PHPExcel_Chart_DataSeriesValues
+	 */
+	private $_plotCategory = array();
+
+	/**
+	 * Smooth Line
+	 *
+	 * @var string
+	 */
+	private $_smoothLine = null;
+
+	/**
+	 * Plot Values
+	 *
+	 * @var array of PHPExcel_Chart_DataSeriesValues
+	 */
+	private $_plotValues = array();
+
+	/**
+	 * Create a new PHPExcel_Chart_DataSeries
+	 */
+	public function __construct($plotType = null, $plotGrouping = null, $plotOrder = array(), $plotLabel = array(), $plotCategory = array(), $plotValues = array(), $smoothLine = null, $plotStyle = null)
+	{
+		$this->_plotType = $plotType;
+		$this->_plotGrouping = $plotGrouping;
+		$this->_plotOrder = $plotOrder;
+		$keys = array_keys($plotValues);
+		$this->_plotValues = $plotValues;
+		if ((count($plotLabel) == 0) || (is_null($plotLabel[$keys[0]]))) {
+			$plotLabel[$keys[0]] = new PHPExcel_Chart_DataSeriesValues();
+		}
+
+		$this->_plotLabel = $plotLabel;
+		if ((count($plotCategory) == 0) || (is_null($plotCategory[$keys[0]]))) {
+			$plotCategory[$keys[0]] = new PHPExcel_Chart_DataSeriesValues();
+		}
+		$this->_plotCategory = $plotCategory;
+		$this->_smoothLine = $smoothLine;
+		$this->_plotStyle = $plotStyle;
+	}
+
+	/**
+	 * Get Plot Type
+	 *
+	 * @return string
+	 */
+	public function getPlotType() {
+		return $this->_plotType;
+	}
+
+	/**
+	 * Set Plot Type
+	 *
+	 * @param string $plotType
+	 */
+	public function setPlotType($plotType = '') {
+		$this->_plotType = $plotType;
+	}
+
+	/**
+	 * Get Plot Grouping Type
+	 *
+	 * @return string
+	 */
+	public function getPlotGrouping() {
+		return $this->_plotGrouping;
+	}
+
+	/**
+	 * Set Plot Grouping Type
+	 *
+	 * @param string $groupingType
+	 */
+	public function setPlotGrouping($groupingType = null) {
+		$this->_plotGrouping = $groupingType;
+	}
+
+	/**
+	 * Get Plot Direction
+	 *
+	 * @return string
+	 */
+	public function getPlotDirection() {
+		return $this->_plotDirection;
+	}
+
+	/**
+	 * Set Plot Direction
+	 *
+	 * @param string $plotDirection
+	 */
+	public function setPlotDirection($plotDirection = null) {
+		$this->_plotDirection = $plotDirection;
+	}
+
+	/**
+	 * Get Plot Order
+	 *
+	 * @return string
+	 */
+	public function getPlotOrder() {
+		return $this->_plotOrder;
+	}
+
+	/**
+	 * Get Plot Labels
+	 *
+	 * @return array of PHPExcel_Chart_DataSeriesValues
+	 */
+	public function getPlotLabels() {
+		return $this->_plotLabel;
+	}
+
+	/**
+	 * Get Plot Label by Index
+	 *
+	 * @return PHPExcel_Chart_DataSeriesValues
+	 */
+	public function getPlotLabelByIndex($index) {
+		$keys = array_keys($this->_plotLabel);
+		if (in_array($index,$keys)) {
+			return $this->_plotLabel[$index];
+		} elseif(isset($keys[$index])) {
+			return $this->_plotLabel[$keys[$index]];
+		}
+		return false;
+	}
+
+	/**
+	 * Get Plot Categories
+	 *
+	 * @return array of PHPExcel_Chart_DataSeriesValues
+	 */
+	public function getPlotCategories() {
+		return $this->_plotCategory;
+	}
+
+	/**
+	 * Get Plot Category by Index
+	 *
+	 * @return PHPExcel_Chart_DataSeriesValues
+	 */
+	public function getPlotCategoryByIndex($index) {
+		$keys = array_keys($this->_plotCategory);
+		if (in_array($index,$keys)) {
+			return $this->_plotCategory[$index];
+		} elseif(isset($keys[$index])) {
+			return $this->_plotCategory[$keys[$index]];
+		}
+		return false;
+	}
+
+	/**
+	 * Get Plot Style
+	 *
+	 * @return string
+	 */
+	public function getPlotStyle() {
+		return $this->_plotStyle;
+	}
+
+	/**
+	 * Set Plot Style
+	 *
+	 * @param string $plotStyle
+	 */
+	public function setPlotStyle($plotStyle = null) {
+		$this->_plotStyle = $plotStyle;
+	}
+
+	/**
+	 * Get Plot Values
+	 *
+	 * @return array of PHPExcel_Chart_DataSeriesValues
+	 */
+	public function getPlotValues() {
+		return $this->_plotValues;
+	}
+
+	/**
+	 * Get Plot Values by Index
+	 *
+	 * @return PHPExcel_Chart_DataSeriesValues
+	 */
+	public function getPlotValuesByIndex($index) {
+		$keys = array_keys($this->_plotValues);
+		if (in_array($index,$keys)) {
+			return $this->_plotValues[$index];
+		} elseif(isset($keys[$index])) {
+			return $this->_plotValues[$keys[$index]];
+		}
+		return false;
+	}
+
+	/**
+	 * Get Number of Plot Series
+	 *
+	 * @return integer
+	 */
+	public function getPlotSeriesCount() {
+		return count($this->_plotValues);
+	}
+
+	/**
+	 * Get Smooth Line
+	 *
+	 * @return boolean
+	 */
+	public function getSmoothLine() {
+		return $this->_smoothLine;
+	}
+
+	/**
+	 * Set Smooth Line
+	 *
+	 * @param boolean $smoothLine
+	 */
+	public function setSmoothLine($smoothLine = TRUE) {
+		$this->_smoothLine = $smoothLine;
+	}
+
+	public function refresh(PHPExcel_Worksheet $worksheet) {
+	    foreach($this->_plotValues as $plotValues) {
+			if ($plotValues !== NULL)
+				$plotValues->refresh($worksheet, TRUE);
+		}
+		foreach($this->_plotLabel as $plotValues) {
+			if ($plotValues !== NULL)
+				$plotValues->refresh($worksheet, TRUE);
+		}
+		foreach($this->_plotCategory as $plotValues) {
+			if ($plotValues !== NULL)
+				$plotValues->refresh($worksheet, FALSE);
+		}
+	}
+
+}

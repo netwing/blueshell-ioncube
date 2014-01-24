@@ -1,141 +1,189 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xMJK2NTzik6rF+wEB0==
+<?php
+
+namespace Guzzle\Tests\Stream;
+
+use Guzzle\Stream\Stream;
+
+/**
+ * @group server
+ * @covers Guzzle\Stream\Stream
+ */
+class StreamTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testConstructorThrowsExceptionOnInvalidArgument()
+    {
+        $stream = new Stream(true);
+    }
+
+    public function testConstructor()
+    {
+        $handle = fopen('php://temp', 'r+');
+        fwrite($handle, 'data');
+        $stream = new Stream($handle);
+        $this->assertEquals($handle, $stream->getStream());
+        $this->assertTrue($stream->isReadable());
+        $this->assertTrue($stream->isWritable());
+        $this->assertTrue($stream->isLocal());
+        $this->assertTrue($stream->isSeekable());
+        $this->assertEquals('PHP', $stream->getWrapper());
+        $this->assertEquals('TEMP', $stream->getStreamType());
+        $this->assertEquals(4, $stream->getSize());
+        $this->assertEquals('php://temp', $stream->getUri());
+        $this->assertEquals(array(), $stream->getWrapperData());
+        $this->assertFalse($stream->isConsumed());
+        unset($stream);
+    }
+
+    public function testCanModifyStream()
+    {
+        $handle1 = fopen('php://temp', 'r+');
+        $handle2 = fopen('php://temp', 'r+');
+        $stream = new Stream($handle1);
+        $this->assertSame($handle1, $stream->getStream());
+        $stream->setStream($handle2, 10);
+        $this->assertEquals(10, $stream->getSize());
+        $this->assertSame($handle2, $stream->getStream());
+    }
+
+    public function testStreamClosesHandleOnDestruct()
+    {
+        $handle = fopen('php://temp', 'r');
+        $stream = new Stream($handle);
+        unset($stream);
+        $this->assertFalse(is_resource($handle));
+    }
+
+    public function testConvertsToString()
+    {
+        $handle = fopen('php://temp', 'w+');
+        fwrite($handle, 'data');
+        $stream = new Stream($handle);
+        $this->assertEquals('data', (string) $stream);
+        unset($stream);
+
+        $handle = fopen(__DIR__ . '/../TestData/FileBody.txt', 'r');
+        $stream = new Stream($handle);
+        $this->assertEquals('', (string) $stream);
+        unset($stream);
+    }
+
+    public function testConvertsToStringAndRestoresCursorPos()
+    {
+        $handle = fopen('php://temp', 'w+');
+        $stream = new Stream($handle);
+        $stream->write('foobazbar');
+        $stream->seek(3);
+        $this->assertEquals('foobazbar', (string) $stream);
+        $this->assertEquals(3, $stream->ftell());
+    }
+
+    public function testIsConsumed()
+    {
+        $handle = fopen('php://temp', 'w+');
+        fwrite($handle, 'data');
+        $stream = new Stream($handle);
+        $this->assertFalse($stream->isConsumed());
+        $stream->read(4);
+        $this->assertTrue($stream->isConsumed());
+    }
+
+    public function testAllowsSettingManualSize()
+    {
+        $handle = fopen('php://temp', 'w+');
+        fwrite($handle, 'data');
+        $stream = new Stream($handle);
+        $stream->setSize(10);
+        $this->assertEquals(10, $stream->getSize());
+        unset($stream);
+    }
+
+    public function testWrapsStream()
+    {
+        $handle = fopen('php://temp', 'w+');
+        fwrite($handle, 'data');
+        $stream = new Stream($handle);
+        $this->assertTrue($stream->isSeekable());
+        $this->assertTrue($stream->isReadable());
+        $this->assertTrue($stream->seek(0));
+        $this->assertEquals('da', $stream->read(2));
+        $this->assertEquals('ta', $stream->read(2));
+        $this->assertTrue($stream->seek(0));
+        $this->assertEquals('data', $stream->read(4));
+        $stream->write('_appended');
+        $stream->seek(0);
+        $this->assertEquals('data_appended', $stream->read(13));
+    }
+
+    public function testGetSize()
+    {
+        $size = filesize(__DIR__ . '/../../../bootstrap.php');
+        $handle = fopen(__DIR__ . '/../../../bootstrap.php', 'r');
+        $stream = new Stream($handle);
+        $this->assertEquals($handle, $stream->getStream());
+        $this->assertEquals($size, $stream->getSize());
+        $this->assertEquals($size, $stream->getSize());
+        unset($stream);
+
+        // Make sure that false is returned when the size cannot be determined
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        $handle = fopen('http://localhost:' . $this->getServer()->getPort(), 'r');
+        $stream = new Stream($handle);
+        $this->assertEquals(false, $stream->getSize());
+        unset($stream);
+    }
+
+    public function testEnsuresSizeIsConsistent()
+    {
+        $h = fopen('php://temp', 'r+');
+        fwrite($h, 'foo');
+        $stream = new Stream($h);
+        $this->assertEquals(3, $stream->getSize());
+        $stream->write('test');
+        $this->assertEquals(7, $stream->getSize());
+        fclose($h);
+    }
+
+    public function testAbstractsMetaData()
+    {
+        $handle = fopen(__DIR__ . '/../../../bootstrap.php', 'r');
+        $stream = new Stream($handle);
+        $this->assertEquals('plainfile', $stream->getMetaData('wrapper_type'));
+        $this->assertEquals(null, $stream->getMetaData('wrapper_data'));
+        $this->assertInternalType('array', $stream->getMetaData());
+    }
+
+    public function testDoesNotAttemptToWriteToReadonlyStream()
+    {
+        $handle = fopen(__DIR__ . '/../../../bootstrap.php', 'r');
+        $stream = new Stream($handle);
+        $this->assertEquals(0, $stream->write('foo'));
+    }
+
+    public function testProvidesStreamPosition()
+    {
+        $handle = fopen(__DIR__ . '/../../../bootstrap.php', 'r');
+        $stream = new Stream($handle);
+        $stream->read(2);
+        $this->assertSame(ftell($handle), $stream->ftell());
+        $this->assertEquals(2, $stream->ftell());
+    }
+
+    public function testRewindIsSeekZero()
+    {
+        $stream = new Stream(fopen('php://temp', 'w+'));
+        $stream->write('foobazbar');
+        $this->assertTrue($stream->rewind());
+        $this->assertEquals('foobazbar', $stream->read(9));
+    }
+
+    public function testCanDetachStream()
+    {
+        $r = fopen('php://temp', 'w+');
+        $stream = new Stream($r);
+        $stream->detachStream();
+        $this->assertNull($stream->getStream());
+    }
+}

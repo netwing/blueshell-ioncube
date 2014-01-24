@@ -1,157 +1,463 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jqGLn7mSjRkdWqg+
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage Security
+ * @author Uwe Tews
+ */
+
+/*
+ * FIXME: Smarty_Security API
+ *      - getter and setter instead of public properties would allow cultivating an internal cache properly
+ *      - current implementation of isTrustedResourceDir() assumes that Smarty::$template_dir and Smarty::$config_dir are immutable
+ *        the cache is killed every time either of the variables change. That means that two distinct Smarty objects with differing
+ *        $template_dir or $config_dir should NOT share the same Smarty_Security instance,
+ *        as this would lead to (severe) performance penalty! how should this be handled?
+ */
+
+/**
+ * This class does contain the security settings
+ */
+class Smarty_Security
+{
+    /**
+     * This determines how Smarty handles "<?php ... ?>" tags in templates.
+     * possible values:
+     * <ul>
+     *   <li>Smarty::PHP_PASSTHRU -> echo PHP tags as they are</li>
+     *   <li>Smarty::PHP_QUOTE    -> escape tags as entities</li>
+     *   <li>Smarty::PHP_REMOVE   -> remove php tags</li>
+     *   <li>Smarty::PHP_ALLOW    -> execute php tags</li>
+     * </ul>
+     *
+     * @var integer
+     */
+    public $php_handling = Smarty::PHP_PASSTHRU;
+    /**
+     * This is the list of template directories that are considered secure.
+     * $template_dir is in this list implicitly.
+     *
+     * @var array
+     */
+    public $secure_dir = array();
+    /**
+     * This is an array of directories where trusted php scripts reside.
+     * {@link $security} is disabled during their inclusion/execution.
+     *
+     * @var array
+     */
+    public $trusted_dir = array();
+    /**
+     * List of regular expressions (PCRE) that include trusted URIs
+     *
+     * @var array
+     */
+    public $trusted_uri = array();
+    /**
+     * This is an array of trusted static classes.
+     *
+     * If empty access to all static classes is allowed.
+     * If set to 'none' none is allowed.
+     * @var array
+     */
+    public $static_classes = array();
+    /**
+     * This is an array of trusted PHP functions.
+     *
+     * If empty all functions are allowed.
+     * To disable all PHP functions set $php_functions = null.
+     * @var array
+     */
+    public $php_functions = array(
+        'isset', 'empty',
+        'count', 'sizeof',
+        'in_array', 'is_array',
+        'time',
+        'nl2br',
+    );
+    /**
+     * This is an array of trusted PHP modifiers.
+     *
+     * If empty all modifiers are allowed.
+     * To disable all modifier set $modifiers = null.
+     * @var array
+     */
+    public $php_modifiers = array(
+        'escape',
+        'count'
+    );
+    /**
+     * This is an array of allowed tags.
+     *
+     * If empty no restriction by allowed_tags.
+     * @var array
+     */
+    public $allowed_tags = array();
+    /**
+     * This is an array of disabled tags.
+     *
+     * If empty no restriction by disabled_tags.
+     * @var array
+     */
+    public $disabled_tags = array();
+    /**
+     * This is an array of allowed modifier plugins.
+     *
+     * If empty no restriction by allowed_modifiers.
+     * @var array
+     */
+    public $allowed_modifiers = array();
+    /**
+     * This is an array of disabled modifier plugins.
+     *
+     * If empty no restriction by disabled_modifiers.
+     * @var array
+     */
+    public $disabled_modifiers = array();
+    /**
+     * This is an array of trusted streams.
+     *
+     * If empty all streams are allowed.
+     * To disable all streams set $streams = null.
+     * @var array
+     */
+    public $streams = array('file');
+    /**
+     * + flag if constants can be accessed from template
+     * @var boolean
+     */
+    public $allow_constants = true;
+    /**
+     * + flag if super globals can be accessed from template
+     * @var boolean
+     */
+    public $allow_super_globals = true;
+
+    /**
+     * Cache for $resource_dir lookups
+     * @var array
+     */
+    protected $_resource_dir = null;
+    /**
+     * Cache for $template_dir lookups
+     * @var array
+     */
+    protected $_template_dir = null;
+    /**
+     * Cache for $config_dir lookups
+     * @var array
+     */
+    protected $_config_dir = null;
+    /**
+     * Cache for $secure_dir lookups
+     * @var array
+     */
+    protected $_secure_dir = null;
+    /**
+     * Cache for $php_resource_dir lookups
+     * @var array
+     */
+    protected $_php_resource_dir = null;
+    /**
+     * Cache for $trusted_dir lookups
+     * @var array
+     */
+    protected $_trusted_dir = null;
+
+    /**
+     * @param Smarty $smarty
+     */
+    public function __construct($smarty)
+    {
+        $this->smarty = $smarty;
+    }
+
+    /**
+     * Check if PHP function is trusted.
+     *
+     * @param  string                  $function_name
+     * @param  object                  $compiler      compiler object
+     * @return boolean                 true if function is trusted
+     * @throws SmartyCompilerException if php function is not trusted
+     */
+    public function isTrustedPhpFunction($function_name, $compiler)
+    {
+        if (isset($this->php_functions) && (empty($this->php_functions) || in_array($function_name, $this->php_functions))) {
+            return true;
+        }
+
+        $compiler->trigger_template_error("PHP function '{$function_name}' not allowed by security setting");
+
+        return false; // should not, but who knows what happens to the compiler in the future?
+    }
+
+    /**
+     * Check if static class is trusted.
+     *
+     * @param  string                  $class_name
+     * @param  object                  $compiler   compiler object
+     * @return boolean                 true if class is trusted
+     * @throws SmartyCompilerException if static class is not trusted
+     */
+    public function isTrustedStaticClass($class_name, $compiler)
+    {
+        if (isset($this->static_classes) && (empty($this->static_classes) || in_array($class_name, $this->static_classes))) {
+            return true;
+        }
+
+        $compiler->trigger_template_error("access to static class '{$class_name}' not allowed by security setting");
+
+        return false; // should not, but who knows what happens to the compiler in the future?
+    }
+
+    /**
+     * Check if PHP modifier is trusted.
+     *
+     * @param  string                  $modifier_name
+     * @param  object                  $compiler      compiler object
+     * @return boolean                 true if modifier is trusted
+     * @throws SmartyCompilerException if modifier is not trusted
+     */
+    public function isTrustedPhpModifier($modifier_name, $compiler)
+    {
+        if (isset($this->php_modifiers) && (empty($this->php_modifiers) || in_array($modifier_name, $this->php_modifiers))) {
+            return true;
+        }
+
+        $compiler->trigger_template_error("modifier '{$modifier_name}' not allowed by security setting");
+
+        return false; // should not, but who knows what happens to the compiler in the future?
+    }
+
+    /**
+     * Check if tag is trusted.
+     *
+     * @param  string                  $tag_name
+     * @param  object                  $compiler compiler object
+     * @return boolean                 true if tag is trusted
+     * @throws SmartyCompilerException if modifier is not trusted
+     */
+    public function isTrustedTag($tag_name, $compiler)
+    {
+        // check for internal always required tags
+        if (in_array($tag_name, array('assign', 'call', 'private_filter', 'private_block_plugin', 'private_function_plugin', 'private_object_block_function',
+                    'private_object_function', 'private_registered_function', 'private_registered_block', 'private_special_variable', 'private_print_expression', 'private_modifier'))) {
+            return true;
+        }
+        // check security settings
+        if (empty($this->allowed_tags)) {
+            if (empty($this->disabled_tags) || !in_array($tag_name, $this->disabled_tags)) {
+                return true;
+            } else {
+                $compiler->trigger_template_error("tag '{$tag_name}' disabled by security setting", $compiler->lex->taglineno);
+            }
+        } elseif (in_array($tag_name, $this->allowed_tags) && !in_array($tag_name, $this->disabled_tags)) {
+            return true;
+        } else {
+            $compiler->trigger_template_error("tag '{$tag_name}' not allowed by security setting", $compiler->lex->taglineno);
+        }
+
+        return false; // should not, but who knows what happens to the compiler in the future?
+    }
+
+    /**
+     * Check if modifier plugin is trusted.
+     *
+     * @param  string                  $modifier_name
+     * @param  object                  $compiler      compiler object
+     * @return boolean                 true if tag is trusted
+     * @throws SmartyCompilerException if modifier is not trusted
+     */
+    public function isTrustedModifier($modifier_name, $compiler)
+    {
+        // check for internal always allowed modifier
+        if (in_array($modifier_name, array('default'))) {
+            return true;
+        }
+        // check security settings
+        if (empty($this->allowed_modifiers)) {
+            if (empty($this->disabled_modifiers) || !in_array($modifier_name, $this->disabled_modifiers)) {
+                return true;
+            } else {
+                $compiler->trigger_template_error("modifier '{$modifier_name}' disabled by security setting", $compiler->lex->taglineno);
+            }
+        } elseif (in_array($modifier_name, $this->allowed_modifiers) && !in_array($modifier_name, $this->disabled_modifiers)) {
+            return true;
+        } else {
+            $compiler->trigger_template_error("modifier '{$modifier_name}' not allowed by security setting", $compiler->lex->taglineno);
+        }
+
+        return false; // should not, but who knows what happens to the compiler in the future?
+    }
+
+    /**
+     * Check if stream is trusted.
+     *
+     * @param  string          $stream_name
+     * @return boolean         true if stream is trusted
+     * @throws SmartyException if stream is not trusted
+     */
+    public function isTrustedStream($stream_name)
+    {
+        if (isset($this->streams) && (empty($this->streams) || in_array($stream_name, $this->streams))) {
+            return true;
+        }
+
+        throw new SmartyException("stream '{$stream_name}' not allowed by security setting");
+    }
+
+    /**
+     * Check if directory of file resource is trusted.
+     *
+     * @param  string          $filepath
+     * @return boolean         true if directory is trusted
+     * @throws SmartyException if directory is not trusted
+     */
+    public function isTrustedResourceDir($filepath)
+    {
+        $_template = false;
+        $_config = false;
+        $_secure = false;
+
+        $_template_dir = $this->smarty->getTemplateDir();
+        $_config_dir = $this->smarty->getConfigDir();
+
+        // check if index is outdated
+        if ((!$this->_template_dir || $this->_template_dir !== $_template_dir)
+                || (!$this->_config_dir || $this->_config_dir !== $_config_dir)
+                || (!empty($this->secure_dir) && (!$this->_secure_dir || $this->_secure_dir !== $this->secure_dir))
+        ) {
+            $this->_resource_dir = array();
+            $_template = true;
+            $_config = true;
+            $_secure = !empty($this->secure_dir);
+        }
+
+        // rebuild template dir index
+        if ($_template) {
+            $this->_template_dir = $_template_dir;
+            foreach ($_template_dir as $directory) {
+                $directory = realpath($directory);
+                $this->_resource_dir[$directory] = true;
+            }
+        }
+
+        // rebuild config dir index
+        if ($_config) {
+            $this->_config_dir = $_config_dir;
+            foreach ($_config_dir as $directory) {
+                $directory = realpath($directory);
+                $this->_resource_dir[$directory] = true;
+            }
+        }
+
+        // rebuild secure dir index
+        if ($_secure) {
+            $this->_secure_dir = $this->secure_dir;
+            foreach ((array) $this->secure_dir as $directory) {
+                $directory = realpath($directory);
+                $this->_resource_dir[$directory] = true;
+            }
+        }
+
+        $_filepath = realpath($filepath);
+        $directory = dirname($_filepath);
+        $_directory = array();
+        while (true) {
+            // remember the directory to add it to _resource_dir in case we're successful
+            $_directory[$directory] = true;
+            // test if the directory is trusted
+            if (isset($this->_resource_dir[$directory])) {
+                // merge sub directories of current $directory into _resource_dir to speed up subsequent lookups
+                $this->_resource_dir = array_merge($this->_resource_dir, $_directory);
+
+                return true;
+            }
+            // abort if we've reached root
+            if (($pos = strrpos($directory, DS)) === false || !isset($directory[1])) {
+                break;
+            }
+            // bubble up one level
+            $directory = substr($directory, 0, $pos);
+        }
+
+        // give up
+        throw new SmartyException("directory '{$_filepath}' not allowed by security setting");
+    }
+
+    /**
+     * Check if URI (e.g. {fetch} or {html_image}) is trusted
+     *
+     * To simplify things, isTrustedUri() resolves all input to "{$PROTOCOL}://{$HOSTNAME}".
+     * So "http://username:password@hello.world.example.org:8080/some-path?some=query-string"
+     * is reduced to "http://hello.world.example.org" prior to applying the patters from {@link $trusted_uri}.
+     * @param  string          $uri
+     * @return boolean         true if URI is trusted
+     * @throws SmartyException if URI is not trusted
+     * @uses $trusted_uri for list of patterns to match against $uri
+     */
+    public function isTrustedUri($uri)
+    {
+        $_uri = parse_url($uri);
+        if (!empty($_uri['scheme']) && !empty($_uri['host'])) {
+            $_uri = $_uri['scheme'] . '://' . $_uri['host'];
+            foreach ($this->trusted_uri as $pattern) {
+                if (preg_match($pattern, $_uri)) {
+                    return true;
+                }
+            }
+        }
+
+        throw new SmartyException("URI '{$uri}' not allowed by security setting");
+    }
+
+    /**
+     * Check if directory of file resource is trusted.
+     *
+     * @param  string          $filepath
+     * @return boolean         true if directory is trusted
+     * @throws SmartyException if PHP directory is not trusted
+     */
+    public function isTrustedPHPDir($filepath)
+    {
+        if (empty($this->trusted_dir)) {
+            throw new SmartyException("directory '{$filepath}' not allowed by security setting (no trusted_dir specified)");
+        }
+
+        // check if index is outdated
+        if (!$this->_trusted_dir || $this->_trusted_dir !== $this->trusted_dir) {
+            $this->_php_resource_dir = array();
+
+            $this->_trusted_dir = $this->trusted_dir;
+            foreach ((array) $this->trusted_dir as $directory) {
+                $directory = realpath($directory);
+                $this->_php_resource_dir[$directory] = true;
+            }
+        }
+
+        $_filepath = realpath($filepath);
+        $directory = dirname($_filepath);
+        $_directory = array();
+        while (true) {
+            // remember the directory to add it to _resource_dir in case we're successful
+            $_directory[] = $directory;
+            // test if the directory is trusted
+            if (isset($this->_php_resource_dir[$directory])) {
+                // merge sub directories of current $directory into _resource_dir to speed up subsequent lookups
+                $this->_php_resource_dir = array_merge($this->_php_resource_dir, $_directory);
+
+                return true;
+            }
+            // abort if we've reached root
+            if (($pos = strrpos($directory, DS)) === false || !isset($directory[2])) {
+                break;
+            }
+            // bubble up one level
+            $directory = substr($directory, 0, $pos);
+        }
+
+        throw new SmartyException("directory '{$_filepath}' not allowed by security setting");
+    }
+
+}

@@ -1,49 +1,82 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-JW==
+<?php
+/**
+ * Smarty shared plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsShared
+ */
+
+if (!function_exists('smarty_mb_wordwrap')) {
+
+    /**
+     * Wrap a string to a given number of characters
+     *
+     * @link http://php.net/manual/en/function.wordwrap.php for similarity
+     * @param  string  $str   the string to wrap
+     * @param  int     $width the width of the output
+     * @param  string  $break the character used to break the line
+     * @param  boolean $cut   ignored parameter, just for the sake of
+     * @return string  wrapped string
+     * @author Rodney Rehm
+     */
+    function smarty_mb_wordwrap($str, $width=75, $break="\n", $cut=false)
+    {
+        // break words into tokens using white space as a delimiter
+        $tokens = preg_split('!(\s)!S' . Smarty::$_UTF8_MODIFIER, $str, -1, PREG_SPLIT_NO_EMPTY + PREG_SPLIT_DELIM_CAPTURE);
+        $length = 0;
+        $t = '';
+        $_previous = false;
+
+        foreach ($tokens as $_token) {
+            $token_length = mb_strlen($_token, Smarty::$_CHARSET);
+            $_tokens = array($_token);
+            if ($token_length > $width) {
+                // remove last space
+                $t = mb_substr($t, 0, -1, Smarty::$_CHARSET);
+                $_previous = false;
+                $length = 0;
+
+                if ($cut) {
+                    $_tokens = preg_split('!(.{' . $width . '})!S' . Smarty::$_UTF8_MODIFIER, $_token, -1, PREG_SPLIT_NO_EMPTY + PREG_SPLIT_DELIM_CAPTURE);
+                    // broken words go on a new line
+                    $t .= $break;
+                }
+            }
+
+            foreach ($_tokens as $token) {
+                $_space = !!preg_match('!^\s$!S' . Smarty::$_UTF8_MODIFIER, $token);
+                $token_length = mb_strlen($token, Smarty::$_CHARSET);
+                $length += $token_length;
+
+                if ($length > $width) {
+                    // remove space before inserted break
+                    if ($_previous && $token_length < $width) {
+                        $t = mb_substr($t, 0, -1, Smarty::$_CHARSET);
+                    }
+
+                    // add the break before the token
+                    $t .= $break;
+                    $length = $token_length;
+
+                    // skip space after inserting a break
+                    if ($_space) {
+                        $length = 0;
+                        continue;
+                    }
+                } elseif ($token == "\n") {
+                    // hard break must reset counters
+                    $_previous = 0;
+                    $length = 0;
+                } else {
+                    // remember if we had a space or not
+                    $_previous = $_space;
+                }
+                // add the token
+                $t .= $token;
+            }
+        }
+
+        return $t;
+    }
+
+}

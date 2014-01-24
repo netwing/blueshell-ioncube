@@ -1,80 +1,162 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-sm3iqGj6MtDVYqfEJgmBe3eGVt8=
+<?php
+/**
+ * Class used internally by Diff to actually compute the diffs.
+ *
+ * This class uses the Unix `diff` program via shell_exec to compute the
+ * differences between the two input arrays.
+ *
+ * $Horde: framework/Text_Diff/Diff/Engine/shell.php,v 1.6.2.3 2008/01/04 10:37:27 jan Exp $
+ *
+ * Copyright 2007-2008 The Horde Project (http://www.horde.org/)
+ *
+ * See the enclosed file COPYING for license information (LGPL). If you did
+ * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
+ *
+ * @author  Milian Wolff <mail@milianw.de>
+ * @package Text_Diff
+ * @since   0.3.0
+ */
+class Text_Diff_Engine_shell {
+
+    /**
+     * Path to the diff executable
+     *
+     * @var string
+     */
+    var $_diffCommand = 'diff';
+
+    /**
+     * Returns the array of differences.
+     *
+     * @param array $from_lines lines of text from old file
+     * @param array $to_lines   lines of text from new file
+     *
+     * @return array all changes made (array with Text_Diff_Op_* objects)
+     */
+    function diff($from_lines, $to_lines)
+    {
+        array_walk($from_lines, array('Text_Diff', 'trimNewlines'));
+        array_walk($to_lines, array('Text_Diff', 'trimNewlines'));
+
+        $temp_dir = Text_Diff::_getTempDir();
+
+        // Execute gnu diff or similar to get a standard diff file.
+        $from_file = tempnam($temp_dir, 'Text_Diff');
+        $to_file = tempnam($temp_dir, 'Text_Diff');
+        $fp = fopen($from_file, 'w');
+        fwrite($fp, implode("\n", $from_lines));
+        fclose($fp);
+        $fp = fopen($to_file, 'w');
+        fwrite($fp, implode("\n", $to_lines));
+        fclose($fp);
+        $diff = shell_exec($this->_diffCommand . ' ' . $from_file . ' ' . $to_file);
+        unlink($from_file);
+        unlink($to_file);
+
+        if (is_null($diff)) {
+            // No changes were made
+            return array(new Text_Diff_Op_copy($from_lines));
+        }
+
+        $from_line_no = 1;
+        $to_line_no = 1;
+        $edits = array();
+
+        // Get changed lines by parsing something like:
+        // 0a1,2
+        // 1,2c4,6
+        // 1,5d6
+        preg_match_all('#^(\d+)(?:,(\d+))?([adc])(\d+)(?:,(\d+))?$#m', $diff,
+            $matches, PREG_SET_ORDER);
+
+        foreach ($matches as $match) {
+            if (!isset($match[5])) {
+                // This paren is not set every time (see regex).
+                $match[5] = false;
+            }
+
+            if ($match[3] == 'a') {
+                $from_line_no--;
+            }
+
+            if ($match[3] == 'd') {
+                $to_line_no--;
+            }
+
+            if ($from_line_no < $match[1] || $to_line_no < $match[4]) {
+                // copied lines
+                assert('$match[1] - $from_line_no == $match[4] - $to_line_no');
+                array_push($edits,
+                    new Text_Diff_Op_copy(
+                        $this->_getLines($from_lines, $from_line_no, $match[1] - 1),
+                        $this->_getLines($to_lines, $to_line_no, $match[4] - 1)));
+            }
+
+            switch ($match[3]) {
+            case 'd':
+                // deleted lines
+                array_push($edits,
+                    new Text_Diff_Op_delete(
+                        $this->_getLines($from_lines, $from_line_no, $match[2])));
+                $to_line_no++;
+                break;
+
+            case 'c':
+                // changed lines
+                array_push($edits,
+                    new Text_Diff_Op_change(
+                        $this->_getLines($from_lines, $from_line_no, $match[2]),
+                        $this->_getLines($to_lines, $to_line_no, $match[5])));
+                break;
+
+            case 'a':
+                // added lines
+                array_push($edits,
+                    new Text_Diff_Op_add(
+                        $this->_getLines($to_lines, $to_line_no, $match[5])));
+                $from_line_no++;
+                break;
+            }
+        }
+
+        if (!empty($from_lines)) {
+            // Some lines might still be pending. Add them as copied
+            array_push($edits,
+                new Text_Diff_Op_copy(
+                    $this->_getLines($from_lines, $from_line_no,
+                                     $from_line_no + count($from_lines) - 1),
+                    $this->_getLines($to_lines, $to_line_no,
+                                     $to_line_no + count($to_lines) - 1)));
+        }
+
+        return $edits;
+    }
+
+    /**
+     * Get lines from either the old or new text
+     *
+     * @access private
+     *
+     * @param array &$text_lines Either $from_lines or $to_lines
+     * @param integer &$line_no Current line number
+     * @param integer $end Optional end line, when we want to chop more than one line.
+     * @return array The chopped lines
+     */
+    function _getLines(&$text_lines, &$line_no, $end = false)
+    {
+        if (!empty($end)) {
+            $lines = array();
+            // We can shift even more
+            while ($line_no <= $end) {
+                array_push($lines, array_shift($text_lines));
+                $line_no++;
+            }
+        } else {
+            $lines = array(array_shift($text_lines));
+            $line_no++;
+        }
+
+        return $lines;
+    }
+
+}

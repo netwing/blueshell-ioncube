@@ -1,72 +1,105 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests getTemplateVars method
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for getTemplateVars method test
+*/
+class GetTemplateVarsTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test root getTemplateVars single value
+    */
+    public function testGetSingleTemplateVarScopeRoot()
+    {
+        $this->smarty->assign('foo', 'bar');
+        $this->smarty->assign('blar', 'buh');
+        $this->assertEquals("bar", $this->smarty->getTemplateVars('foo'));
+    }
+    /**
+    * test root getTemplateVars all values
+    */
+    public function testGetAllTemplateVarsScopeRoot()
+    {
+        $this->smarty->assign('foo', 'bar');
+        $this->smarty->assign('blar', 'buh');
+        $vars = $this->smarty->getTemplateVars();
+        $this->assertTrue(is_array($vars));
+        $this->assertEquals("bar", $vars['foo']);
+        $this->assertEquals("buh", $vars['blar']);
+    }
+
+    /**
+    * test single variable with data object chain
+    */
+    public function testGetSingleTemplateVarScopeAll()
+    {
+        $data1 = new Smarty_Data($this->smarty);
+        $data2 = new Smarty_Data($data1);
+        $this->smarty->assign('foo', 'bar');
+        $this->smarty->assign('blar', 'buh');
+        $this->assertEquals("bar", $this->smarty->getTemplateVars('foo', $data2));
+    }
+    /**
+    * test get all variables with data object chain
+    */
+    public function testGetAllTemplateVarsScopeAll()
+    {
+        $data1 = new Smarty_Data($this->smarty);
+        $data2 = new Smarty_Data($data1);
+        $this->smarty->assign('foo', 'bar');
+        $data1->assign('blar', 'buh');
+        $data2->assign('foo2', 'bar2');
+        $vars = $this->smarty->getTemplateVars(null, $data2);
+        $this->assertTrue(is_array($vars));
+        $this->assertEquals("bar", $vars['foo']);
+        $this->assertEquals("bar2", $vars['foo2']);
+        $this->assertEquals("buh", $vars['blar']);
+    }
+    /**
+    * test get all variables with data object chain search parents disabled
+    */
+    public function testGetAllTemplateVarsScopeAllNoParents()
+    {
+        $data1 = new Smarty_Data($this->smarty);
+        $data2 = new Smarty_Data($data1);
+        $this->smarty->assign('foo', 'bar');
+        $data1->assign('blar', 'buh');
+        $data2->assign('foo2', 'bar2');
+        $vars = $this->smarty->getTemplateVars(null, $data2, false);
+        $this->assertTrue(is_array($vars));
+        $this->assertFalse(isset($vars['foo']));
+        $this->assertEquals("bar2", $vars['foo2']);
+        $this->assertFalse(isset($vars['blar']));
+    }
+    /**
+    * test get single variables with data object chain search parents disabled
+    */
+    public function testGetSingleTemplateVarsScopeAllNoParents()
+    {
+         error_reporting(error_reporting() & ~(E_NOTICE|E_USER_NOTICE));
+        $data1 = new Smarty_Data($this->smarty);
+        $data2 = new Smarty_Data($data1);
+        $this->smarty->assign('foo', 'bar');
+        $data1->assign('blar', 'buh');
+        $data2->assign('foo2', 'bar2');
+        $this->assertEquals("", $this->smarty->getTemplateVars('foo', $data2, false));
+        $this->assertEquals("bar2", $this->smarty->getTemplateVars('foo2', $data2, false));
+        $this->assertEquals("", $this->smarty->getTemplateVars('blar', $data2, false));
+    }
+}

@@ -1,222 +1,539 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-mx6azcxX
+<?php
+/**
+ *	@package	SimpleTest
+ *	@subpackage	Extensions
+ *  @author     Perrick Penet <perrick@noparking.net>
+ *	@version	$Id: css_selector.php 1802 2008-09-08 10:43:58Z maetl_ $
+ */
+
+/**
+ * CssSelector
+ * 
+ * Allow to navigate a DOM with CSS selector.
+ *
+ * based on getElementsBySelector version 0.4 - Simon Willison, 2003-03-25
+ * http://simon.incutio.com/archive/2003/03/25/getElementsBySelector
+ *
+ * derived from sfDomCssSelector Id 3053 - Fabien Potencier, 2006-12-16
+ * http://www.symfony-project.com/api/symfony/util/sfDomCssSelector.html
+ *
+ * @package SimpleTest
+ * @subpackage Extensions
+ * @param DomDocument $dom
+ */
+class CssSelector
+{
+  public $nodes = array();
+
+  public function __construct($nodes)
+  {
+    if (!is_array($nodes))
+    {
+      $nodes = array($nodes);
+    }
+
+    $this->nodes = $nodes;
+  }
+
+  public function getNodes()
+  {
+    return $this->nodes;
+  }
+
+  public function getNode()
+  {
+    return $this->nodes ? $this->nodes[0] : null;
+  }
+
+  public function getValue()
+  {
+    return $this->nodes[0]->nodeValue;
+  }
+
+  public function getValues()
+  {
+    $values = array();
+    foreach ($this->nodes as $node)
+    {
+      $values[] = $node->nodeValue;
+    }
+
+    return $values;
+  }
+
+  public function matchSingle($selector)
+  {
+    $nodes = $this->getElements($selector);
+
+    return $nodes ? new CssSelector($nodes[0]) : new CssSelector(array());
+  }
+
+  public function matchAll($selector)
+  {
+    $nodes = $this->getElements($selector);
+
+    return $nodes ? new CssSelector($nodes) : new CssSelector(array());
+  }
+
+  /* DEPRECATED */
+  public function getTexts($selector)
+  {
+    $texts = array();
+    foreach ($this->getElements($selector) as $element)
+    {
+      $texts[] = $element->nodeValue;
+    }
+
+    return $texts;
+  }
+
+  /* DEPRECATED */
+  public function getElements($selector)
+  {
+    $nodes = array();
+    foreach ($this->nodes as $node)
+    {
+      $result_nodes = $this->getElementsForNode($selector, $node);
+      if ($result_nodes)
+      {
+        $nodes = array_merge($nodes, $result_nodes);
+      }
+    }
+
+    foreach ($nodes as $node)
+    {
+      $node->removeAttribute('sf_matched');
+    }
+
+    return $nodes;
+  }
+
+  protected function getElementsForNode($selector, $root_node)
+  {
+    $all_nodes = array();
+    foreach ($this->tokenize_selectors($selector) as $selector)
+    {
+      $nodes = array($root_node);
+      foreach ($this->tokenize($selector) as $token)
+      {
+        $combinator = $token['combinator'];
+        $selector = $token['selector'];
+
+        $token = trim($token['name']);
+
+        $pos = strpos($token, '#');
+        if (false !== $pos && preg_match('/^[A-Za-z0-9]*$/', substr($token, 0, $pos)))
+        {
+          // Token is an ID selector
+          $tagName = substr($token, 0, $pos);
+          $id = substr($token, $pos + 1);
+          $xpath = new DomXPath($root_node);
+          $element = $xpath->query(sprintf("//*[@id = '%s']", $id))->item(0);
+          if (!$element || ($tagName && strtolower($element->nodeName) != $tagName))
+          {
+            // tag with that ID not found
+            return array();
+          }
+
+          // Set nodes to contain just this element
+          $nodes = array($element);
+          $nodes = $this->matchCustomSelector($nodes, $selector);
+
+          continue; // Skip to next token
+        }
+
+        $pos = strpos($token, '.');
+        if (false !== $pos && preg_match('/^[A-Za-z0-9\*]*$/', substr($token, 0, $pos)))
+        {
+          // Token contains a class selector
+          $tagName = substr($token, 0, $pos);
+          if (!$tagName)
+          {
+            $tagName = '*';
+          }
+          $className = substr($token, $pos + 1);
+
+          // Get elements matching tag, filter them for class selector
+          $founds = $this->getElementsByTagName($nodes, $tagName, $combinator);
+          $nodes = array();
+          foreach ($founds as $found)
+          {
+            if (preg_match('/\b'.$className.'\b/', $found->getAttribute('class')))
+            {
+              $nodes[] = $found;
+            }
+          }
+
+          $nodes = $this->matchCustomSelector($nodes, $selector);
+
+          continue; // Skip to next token
+        }
+
+        // Code to deal with attribute selectors
+        if (preg_match('/^(\w+|\*)(\[.+\])$/', $token, $matches))
+        {
+          $tagName = $matches[1] ? $matches[1] : '*';
+          preg_match_all('/
+            \[
+              (\w+)                 # attribute
+              ([=~\|\^\$\*]?)       # modifier (optional)
+              =?                    # equal (optional)
+              (
+                "([^"]*)"           # quoted value (optional)
+                |
+                ([^\]]*)            # non quoted value (optional)
+              )
+            \]
+          /x', $matches[2], $matches, PREG_SET_ORDER);
+
+          // Grab all of the tagName elements within current node
+          $founds = $this->getElementsByTagName($nodes, $tagName, $combinator);
+          $nodes = array();
+          foreach ($founds as $found)
+          {
+            $ok = false;
+            foreach ($matches as $match)
+            {
+              $attrName = $match[1];
+              $attrOperator = $match[2];
+              $attrValue = $match[4];
+
+              switch ($attrOperator)
+              {
+                case '=': // Equality
+                  $ok = $found->getAttribute($attrName) == $attrValue;
+                  break;
+                case '~': // Match one of space seperated words
+                  $ok = preg_match('/\b'.preg_quote($attrValue, '/').'\b/', $found->getAttribute($attrName));
+                  break;
+                case '|': // Match start with value followed by optional hyphen
+                  $ok = preg_match('/^'.preg_quote($attrValue, '/').'-?/', $found->getAttribute($attrName));
+                  break;
+                case '^': // Match starts with value
+                  $ok = 0 === strpos($found->getAttribute($attrName), $attrValue);
+                  break;
+                case '$': // Match ends with value
+                  $ok = $attrValue == substr($found->getAttribute($attrName), -strlen($attrValue));
+                  break;
+                case '*': // Match ends with value
+                  $ok = false !== strpos($found->getAttribute($attrName), $attrValue);
+                  break;
+                default :
+                  // Just test for existence of attribute
+                  $ok = $found->hasAttribute($attrName);
+              }
+
+              if (false == $ok)
+              {
+                break;
+              }
+            }
+
+            if ($ok)
+            {
+              $nodes[] = $found;
+            }
+          }
+
+          continue; // Skip to next token
+        }
+
+        // If we get here, token is JUST an element (not a class or ID selector)
+        $nodes = $this->getElementsByTagName($nodes, $token, $combinator);
+
+        $nodes = $this->matchCustomSelector($nodes, $selector);
+      }
+
+      foreach ($nodes as $node)
+      {
+        if (!$node->getAttribute('sf_matched'))
+        {
+          $node->setAttribute('sf_matched', true);
+          $all_nodes[] = $node;
+        }
+      }
+    }
+
+    return $all_nodes;
+  }
+
+  protected function getElementsByTagName($nodes, $tagName, $combinator = ' ')
+  {
+    $founds = array();
+    foreach ($nodes as $node)
+    {
+      switch ($combinator)
+      {
+        case ' ':
+          // Descendant selector
+          foreach ($node->getElementsByTagName($tagName) as $element)
+          {
+            $founds[] = $element;
+          }
+          break;
+        case '>':
+          // Child selector
+          foreach ($node->childNodes as $element)
+          {
+            if ($tagName == $element->nodeName)
+            {
+              $founds[] = $element;
+            }
+          }
+          break;
+        case '+':
+          // Adjacent selector
+          $element = $node->nextSibling;
+          if ($element && '#text' == $element->nodeName)
+          {
+            $element = $element->nextSibling;
+          }
+
+          if ($element && $tagName == $element->nodeName)
+          {
+            $founds[] = $element;
+          }
+          break;
+        default:
+          throw new Exception(sprintf('Unrecognized combinator "%s".', $combinator));
+      }
+    }
+
+    return $founds;
+  }
+
+  protected function tokenize_selectors($selector)
+  {
+    // split tokens by , except in an attribute selector
+    $tokens = array();
+    $quoted = false;
+    $token = '';
+    for ($i = 0, $max = strlen($selector); $i < $max; $i++)
+    {
+      if (',' == $selector[$i] && !$quoted)
+      {
+        $tokens[] = trim($token);
+        $token = '';
+      }
+      else if ('"' == $selector[$i])
+      {
+        $token .= $selector[$i];
+        $quoted = $quoted ? false : true;
+      }
+      else
+      {
+        $token .= $selector[$i];
+      }
+    }
+    if ($token)
+    {
+      $tokens[] = trim($token);
+    }
+
+    return $tokens;
+  }
+
+  protected function tokenize($selector)
+  {
+    // split tokens by space except if space is in an attribute selector
+    $tokens = array();
+    $combinators = array(' ', '>', '+');
+    $quoted = false;
+    $token = array('combinator' => ' ', 'name' => '');
+    for ($i = 0, $max = strlen($selector); $i < $max; $i++)
+    {
+      if (in_array($selector[$i], $combinators) && !$quoted)
+      {
+        // remove all whitespaces around the combinator
+        $combinator = $selector[$i];
+        while (in_array($selector[$i + 1], $combinators))
+        {
+          if (' ' != $selector[++$i])
+          {
+            $combinator = $selector[$i];
+          }
+        }
+
+        $tokens[] = $token;
+        $token = array('combinator' => $combinator, 'name' => '');
+      }
+      else if ('"' == $selector[$i])
+      {
+        $token['name'] .= $selector[$i];
+        $quoted = $quoted ? false : true;
+      }
+      else
+      {
+        $token['name'] .= $selector[$i];
+      }
+    }
+    if ($token['name'])
+    {
+      $tokens[] = $token;
+    }
+
+    foreach ($tokens as &$token)
+    {
+      list($token['name'], $token['selector']) = $this->tokenize_selector_name($token['name']);
+    }
+
+    return $tokens;
+  }
+
+  protected function tokenize_selector_name($token_name)
+  {
+    // split custom selector
+    $quoted = false;
+    $name = '';
+    $selector = '';
+    $in_selector = false;
+    for ($i = 0, $max = strlen($token_name); $i < $max; $i++)
+    {
+      if ('"' == $token_name[$i])
+      {
+        $quoted = $quoted ? false : true;
+      }
+
+      if (!$quoted && ':' == $token_name[$i])
+      {
+        $in_selector = true;
+      }
+
+      if ($in_selector)
+      {
+        $selector .= $token_name[$i];
+      }
+      else
+      {
+        $name .= $token_name[$i];
+      }
+    }
+
+    return array($name, $selector);
+  }
+
+  protected function matchCustomSelector($nodes, $selector)
+  {
+    if (!$selector)
+    {
+      return $nodes;
+    }
+
+    $selector = $this->tokenize_custom_selector($selector);
+    $matchingNodes = array();
+    for ($i = 0, $max = count($nodes); $i < $max; $i++)
+    {
+      switch ($selector['selector'])
+      {
+        case 'contains':
+          if (false !== strpos($nodes[$i]->textContent, $selector['parameter']))
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'nth-child':
+          if ($nodes[$i] === $this->nth($nodes[$i]->parentNode->firstChild, (integer) $selector['parameter']))
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'first-child':
+          if ($nodes[$i] === $this->nth($nodes[$i]->parentNode->firstChild))
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'last-child':
+          if ($nodes[$i] === $this->nth($nodes[$i]->parentNode->lastChild, 1, 'previousSibling'))
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'lt':
+          if ($i < (integer) $selector['parameter'])
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'gt':
+          if ($i > (integer) $selector['parameter'])
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'odd':
+          if ($i % 2)
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'even':
+          if (0 == $i % 2)
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'nth':
+        case 'eq':
+          if ($i == (integer) $selector['parameter'])
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'first':
+          if ($i == 0)
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        case 'last':
+          if ($i == $max - 1)
+          {
+            $matchingNodes[] = $nodes[$i];
+          }
+          break;
+        default:
+          throw new Exception(sprintf('Unrecognized selector "%s".', $selector['selector']));
+      }
+    }
+
+    return $matchingNodes;
+  }
+
+  protected function tokenize_custom_selector($selector)
+  {
+    if (!preg_match('/
+      ([a-zA-Z0-9\-]+)
+      (?:
+        \(
+          (?:
+            ("|\')(.*)?\2
+            |
+            (.*?)
+          )
+        \)
+      )?
+    /x', substr($selector, 1), $matches))
+    {
+      throw new Exception(sprintf('Unable to parse custom selector "%s".', $selector));
+    }
+    return array('selector' => $matches[1], 'parameter' => isset($matches[3]) ? ($matches[3] ? $matches[3] : $matches[4]) : '');
+  }
+
+  protected function nth($cur, $result = 1, $dir = 'nextSibling')
+  {
+    $num = 0;
+    for (; $cur; $cur = $cur->$dir)
+    {
+      if (1 == $cur->nodeType)
+      {
+        ++$num;
+      }
+
+      if ($num == $result)
+      {
+        return $cur;
+      }
+    }
+  }
+}

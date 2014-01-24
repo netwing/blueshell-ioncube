@@ -1,55 +1,119 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Iterator;
+
+use Symfony\Component\Finder\Exception\AccessDeniedException;
+use Symfony\Component\Finder\SplFileInfo;
+
+/**
+ * Extends the \RecursiveDirectoryIterator to support relative paths
+ *
+ * @author Victor Berchet <victor@suumit.com>
+ */
+class RecursiveDirectoryIterator extends \RecursiveDirectoryIterator
+{
+    /**
+     * @var boolean
+     */
+    private $ignoreUnreadableDirs;
+
+    /**
+     * @var Boolean
+     */
+    private $rewindable;
+
+    /**
+     * Constructor.
+     *
+     * @param string  $path
+     * @param int     $flags
+     * @param boolean $ignoreUnreadableDirs
+     *
+     * @throws \RuntimeException
+     */
+    public function __construct($path, $flags, $ignoreUnreadableDirs = false)
+    {
+        if ($flags & (self::CURRENT_AS_PATHNAME | self::CURRENT_AS_SELF)) {
+            throw new \RuntimeException('This iterator only support returning current as fileinfo.');
+        }
+
+        parent::__construct($path, $flags);
+        $this->ignoreUnreadableDirs = $ignoreUnreadableDirs;
+    }
+
+    /**
+     * Return an instance of SplFileInfo with support for relative paths
+     *
+     * @return SplFileInfo File information
+     */
+    public function current()
+    {
+        return new SplFileInfo(parent::current()->getPathname(), $this->getSubPath(), $this->getSubPathname());
+    }
+
+    /**
+     * @return \RecursiveIterator
+     *
+     * @throws AccessDeniedException
+     */
+    public function getChildren()
+    {
+        try {
+            return parent::getChildren();
+        } catch (\UnexpectedValueException $e) {
+            if ($this->ignoreUnreadableDirs) {
+                // If directory is unreadable and finder is set to ignore it, a fake empty content is returned.
+                return new \RecursiveArrayIterator(array());
+            } else {
+                throw new AccessDeniedException($e->getMessage(), $e->getCode(), $e);
+            }
+        }
+    }
+
+    /**
+     * Do nothing for non rewindable stream
+     */
+    public function rewind()
+    {
+        if (false === $this->isRewindable()) {
+            return;
+        }
+
+        // @see https://bugs.php.net/bug.php?id=49104
+        parent::next();
+
+        parent::rewind();
+    }
+
+    /**
+     * Checks if the stream is rewindable.
+     *
+     * @return Boolean true when the stream is rewindable, false otherwise
+     */
+    public function isRewindable()
+    {
+        if (null !== $this->rewindable) {
+            return $this->rewindable;
+        }
+
+        if (false !== $stream = @opendir($this->getPath())) {
+            $infos = stream_get_meta_data($stream);
+            closedir($stream);
+
+            if ($infos['seekable']) {
+                return $this->rewindable = true;
+            }
+        }
+
+        return $this->rewindable = false;
+    }
+}

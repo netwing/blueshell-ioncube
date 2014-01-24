@@ -1,71 +1,93 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPt8OgZb4oou+1TS/6Zi7oWTDrTmBixV2EvUiQvNkpb7enveuCnLRKv/cM3AmlZkTbC3skxeb
-h1aCbIJ7FpP9u/6mnrzR3uZ6lOdN0Hw/eJRVjf9xnzCnsIVkYUYomcMKGiK94sYnOQCkILZk9xDF
-Et0XVQ1FSCEhUoT0BN2PR5HoxcdBI/eiJXvVr+/aQ5daDhAi+OpciFSfzvR5SRBylZDgXANzCo3C
-+xTz69aog1EkeuaZATiJhr4euJltSAgiccy4GDnfT2XakGYPZNLyLhwdq532Mi1I/+Qs22iJD85E
-FGxm7T5KfYn9maLA1+zCe5d3oRsjQRlHhPjHVBpG81BNMp8VUjyRLFEPjShgCZHow/4swt2Gx0c0
-2LBgDjU7sIR18F6n0x+OJaXWAmhZocfVA9blMJ3dhsfRTnXjbouKZnbp+89tNONIeDwQO46n3nXm
-UHlzilufFdMQZzA+k/Zf6PRUQ3OF0sQxP9b24zvbg8THhS5xdLkxUkORXGY0/Onm2gybxXsQhduY
-4zCHi+wY9eQp4UkwtG9sk5+MGy+MyWd3lCed923ICK/S0TLuZzt+bh1B36ijEqXzS1jSeqRv8qQO
-n0mZQTC+Genpz6emGEjmHSTQAL//sLer1+MZHo530oJSHdDNrf90WcRhUXJszXt/wPOt8bA3j68O
-SjIdkdrHsJIaqVl2NLUFV/n7BLMgctI3VCdDKUF7WJzMS5X/QZj56ZT2icV5TxVfCNv7KvdFgaNV
-Q6V6B3PX/JMydYIuMh2r0PNNQdOe3qYueq50XLGc3Z9i7r8I2k6C5kH6reL/Z1f7hndHCHdInZxZ
-9NIbwQdmxaaU14eF0F/21CQZtwv2bJd/Zh2fIZC0wLo8C0Jfmt4f6Lxguw/StIeHhCSnGL7YdYP7
-grCNrNkivIqedy1Uj3DaFyUvlSg7QqOsvezReWMX+0q951clGW2P4fHbIxzJSoVOVu2sYgphRJPK
-Jr6NIda8tHMoR6Njp6Vz+Z0HSBCoRUGQk+tJLXWKtX/hiSUBdGO31Coxl+icmRy258Oj9/kelubK
-qVx74Uw/A8KqC0S6cjTfJKHZYdLWh4tsufkm4o/qiZBK3w/cT0YCqT3ZHG8ZqNdELnCoLC7f/nVX
-0eygGhiudvz+BdxnXZPWgRWXernBbMgNju2QBTEU0bbBR92ribp8OFy0lyvcbGopAMAZqYFUseUb
-u3wp1L/apGikVPblK5fVVMU3crd0z9Et457ilFpA1lqxzvUAv+t2YxGAsipanXeI+SShlZ7D8kcK
-6bXl4kdydcP7jt2Ifdtf9HV2yXoJ0PSUUt4GmPv99uleKrviKmw5X6ItzZEwAtJPrTZI2GHkE+5q
-3ElEjVf050PLsB5uTwqNxoPomAH7N1deLeNs4m5BLDuRpLv/Ffio8LqEryQAux4RaYe0rsTQTx7B
-tO0lGHRIHK3/GadlbmiYocPwWmMmJ9fxtkX+2qrWCETUlPupSuEpPqmBsyzSNlB8GiWwuk04BiKW
-u/XvKzl0+N5Np4L2H2t4C+ruyjuLL8PPxopYJf3pBv/lN5aK+PyAcLgQ9MJGQP4pQB0ZtWlS0Ryc
-czW7xKKQ7hIZCFUuvCVcgjKFSy2iN6WRdq1dtXWJJ3F3G6ZyYczFAy8v+dJnPSawYJk1uBGunnIH
-ib5Z8CYXwak/tpWV2lgthG6JxXaVD6hpoLSPjFxRM4H7T12cCSIr3CI5jQo3JpQva+Eey8l7xEfF
-JFa1uCGT79mXdWrpBbwHNnfPx2Qn8sf9ECLMLk6PODUJLwDCAY08zWrSn10a1rKbiSNH82bbmY6r
-hcQH2237gWWecn4jFovYD8LEA7keMYRcHHQj7o4V1fIfQcrepgbmisbHCHXszlJL0YRdWlz4yeCD
-uh7p1q7nKuQ8LNvuEuwSeZLph4nNYrl2YG4/2xj6lWbnou3GfFF3NAEqJ7m8UH89x4z7rUspol64
-+b7e3dyaUZiokHKv/dXnBOcVQaJ1dBT2OtPo1k7UJl/wxLDrp+MnxGdOsPQpgKsnHHU0PO2a1t+J
-/o1DijKJYBfx6cr0pqGi9MR1HEtBfJDYYe/OATpL6/OlpDH4LXlOJuaJ71UM7o7atjA68r/JZ1nC
-UMKXOcp6lFG0N2qHyTSdcPlyCrnYZSxFNABG2jmANUhtBGTR4iyeq22gIUn2GPhPtXZ47Ka3LsL/
-egGoQV+hqkH16QPOfv3ZmdSScLJcwZFXqYgfWwCRn6HJEUrzMQx9hkxuxKcnqVZnR++rQ86YTjLq
-6HMxuNo/clnP9Bbl9PB94oSd4SSKs20B5iEga7TWO6q6vV7ifIfNwm82RnPxFTKegthlEikNHK7j
-geCgxQjXzVqpdYveV+hL4XFbJZlXRvbg96bNHcPWQ+/b+KRXA+VmRH9JeS2YuZDLgpqeCtxXVcMY
-/Ip84qA1aYabJGuVdryBV3O/0z/sESt3Wcci/KuuuDgeIUrGZ3ZHrsc040DHNLg98X2JMoqZT8ku
-16Re7jMV2vOj8sNkKlmVw/HWmzaWtepkEKeRYVHoIbNLlqe7BQlCqjhSBLsXBsPb8N6rSSHpvRD+
-DyqgTHrtozVvzsPvzVdtjySjyAcBUBpKFQOkIlJ3FIhc6tSRGXS3apg91YH5kebxpz2BH3ElqBIo
-7tXQhfzPAtWTCzodW8gYJn4JxSloZv3W6zhF9L5OOC9TUqR/gkBgXBupMgufQnZuxcAh8oSkjxoh
-+9/kMLhB3xH64B/xJw0HBCXgx68ZHQUHIiel4USTQAXbnb7LTZXW4LPxP7GPXWWttz0h2Jf+2Ev6
-GpPfgShUJJGDXSavDsi+bC0lwvRUL+9Rml9zW3Al29G8WRAWo/6YfReCThxXA9lRg+R+s86dfJUy
-Q2b6ix1uCdVWz7P2wC8VV88DgD5k4u3+jOMSg+6eKkT7iLj3Qo/5RP3FQDGd7maPV3lBanwjQZSr
-RBlgX0NLjsUH7FnEGm8JdZkcx/NgmuLsLq3CwHfuKBA8r9yeqeNFGcSXSYRaSt+a0D1YjHVT9bll
-PwzTgo4W9bOMjt5IHkPpTf68285pC9rfomelCutAfCLum0J2sI9vOcVTZugm0mGcJyyhie+C6ehE
-TP508Z/RoyFYW6AQP8xu5RKiophJqnWAXnKKvx+NT8r17W5UM8Pr5rM9C9zNwpeHjqbZIPb6xE03
-9W3I4wTN4Z2lttj2Ndd7mxCeewjfGJzzk3MODX+jgywXO5a6nGipdC0jraT+DuoxhOmbGVNDdzlD
-PmuXZAWKL7U3TpyIbtraKfgml/4VrRyBjG6dXF82TaTPBYyIo/nDR9RCi1QxIXXFLjlGsHhEqqK+
-uhz2uHKg+SiFnIlyy80t7DqLV0rr6yoSTDtoB7DfUQNGdRPEbqIcoFKX/nvgXStX4AxhI6tVorID
-dtSZuUhoUWyAkhwoo/2lXoLR5VdFOE/Ffy1RF+mf8NLAMp9MrabZu1EVIi9fRKTTWMbZwvEsbIgL
-V9yK34oW0Umx868mI8vw/D+xwiZAAaSg26mBKOIMgBR52+5zND8f6SDBGh39ABPbibjmlX55UByY
-jLFYLm1e9+q2FLSqm5/QtB7ElmzxyQUokH5ueoT13u8F8gzh5mtgx192I4RLpy1529lRdPeCRzI6
-w8M4/J/qpLv79r7dojRDjcS1fmXY1vaQ8rrAgSMyIIE8MlXAhKWcNfCYSQ1//ibDXmAzbPjuRuaP
-08UH2hspmPQ2UL0pjqr7sGVmwaNcTqeKJ2aYUIZUnTHX6LfRxaDzIR9wO9p0mqq7CfqzekosSZsl
-aRzFc4btqgd548YdVj3Ie+5T58Dd6xtsdxAePfUDU5Etx+ptHVdtRivUQev3x6Xt9BgXhjOrPuB9
-mx6n/pseIZERFxS4WXMlKnLvz+lzRhOMyZ1lmMIRLOj4XrgbCsiUPCB0Y73xfp9FCij20U1COSRe
-eFgUIAO3DX/q1ym/lj0JVhGhR8rx/jr3B0cFrVJT/L+JBqJkxgGHq1oZmkRkcpCOIQLL/vPpE1Dt
-0HdZSerEDz0i41bCheDsnLyVVwST/U60O3ryhVn7NbZNyVKLjNE9fJOOd7xx5LtOe4iWMmBZMFJ+
-H/mjY3w29xNh/WujdLVlUCyCu7mpdo75DE8hX873ICRcni1bEPUdoWM/VGjLTeeoG9Z9p2fOgr5O
-hRAufAbqPqpMLAbREono+WyHQVFNT8S5y0sLuI2XAXOWh6WBvP78bxmvUnKTo8yzfJXV9pFV3TJa
-YzwLjSW+GZ6B+XyMAD9XzJq1HaDAiamkN+gm12CfdJYTzFGinH0Vs7sdcMmTJ5wt2ILkEwZgGDhJ
-5EX7YHBegGEApF3r9+1+pYrKuRtVFxPusVDr1+y53qnMJPzxsD9xGl0lRZbZ3n10Zk5sBTkLZRzg
-0eEk9rCrzPxMVbvlBsv2yZc+xkCL/v+8yWy2gfzmhi+JhbhLAt5HqE3xCHir5jhK9xAblac0dbS9
-G1NgjGlbObwzIiriu9r2/QQvYYcSOtYUSYcKoi1/NpPFMvsOACBQhjU39Z/rG5iUwLmLLVVM0LV/
-7gCT1bAzzpTwDWug8BNShknBmg5+NvSx4hlVHd4FQigv4RnORD53RtGP6UIcN///jjGKEJ2fI2Wo
-mn7rp4oTzEzi4+7Vq0YA/1rkhFWSE3dRNqIyipJ9yy8d1Ey55Llcw/4QDSkiW7Im8YZXrGa2urja
-xu/75+22vM4lM/v+/znrswO4rW/27hRnp/5OSL4nloAOLPx8r3K/p2SbPn8xI5OT+bV/dYV1JiDl
-wyu8vVej3KM2TKNCgSS65W5oPR6/glwf0qm7M0CKEL5yjAhpsK+sjGXefeUVh9zY2Gcuu4M4az86
-pElBPh2qRssu6GBC9/FNm5DphcdBYxyhNSkr3TRK6peUbSifQCPG8aeACiucGYL+Jy9MBmTruXUH
-CSppwwmee5nPrO/sFHnjj60Z13kHxn/1+dj56HQAQArgJir6zDLnu9d8cdLTnbjMQNzPnurscn/z
-Xxd7/5GrNVljlZ95YT0uyIH3qEKRa5vF1S3nbGn5niCg/7ybKzOYv2pxGRrWDnkZapKcJCb2gri7
-3fVLAyOlik/QexeSQ/OJxgfOLmNQH1DsiI09BJ5ti5Wuc5GUmJjCxLmciuFwy+a=
+<?php
+
+namespace Guzzle\Tests\Plugin\Async;
+
+use Guzzle\Plugin\Async\AsyncPlugin;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\RequestFactory;
+use Guzzle\Http\Curl\CurlHandle;
+use Guzzle\Http\Exception\CurlException;
+use Guzzle\Common\Event;
+use Guzzle\Http\Client;
+
+/**
+ * @covers Guzzle\Plugin\Async\AsyncPlugin
+ */
+class AsyncPluginTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testSubscribesToEvents()
+    {
+        $events = AsyncPlugin::getSubscribedEvents();
+        $this->assertArrayHasKey('request.before_send', $events);
+        $this->assertArrayHasKey('request.exception', $events);
+        $this->assertArrayHasKey('curl.callback.progress', $events);
+    }
+
+    public function testEnablesProgressCallbacks()
+    {
+        $p = new AsyncPlugin();
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.example.com');
+        $event = new Event(array(
+            'request' => $request
+        ));
+        $p->onBeforeSend($event);
+        $this->assertEquals(true, $request->getCurlOptions()->get('progress'));
+    }
+
+    public function testAddsTimesOutAfterSending()
+    {
+        $p = new AsyncPlugin();
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.example.com');
+        $handle = CurlHandle::factory($request);
+        $event = new Event(array(
+            'request'     => $request,
+            'handle'      => $handle->getHandle(),
+            'uploaded'    => 10,
+            'upload_size' => 10,
+            'downloaded'  => 0
+        ));
+        $p->onCurlProgress($event);
+    }
+
+    public function testEnsuresRequestIsSet()
+    {
+        $p = new AsyncPlugin();
+        $event = new Event(array(
+            'uploaded'    => 10,
+            'upload_size' => 10,
+            'downloaded'  => 0
+        ));
+        $p->onCurlProgress($event);
+    }
+
+    public function testMasksCurlExceptions()
+    {
+        $p = new AsyncPlugin();
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.example.com');
+        $e = new CurlException('Error');
+        $event = new Event(array(
+            'request'   => $request,
+            'exception' => $e
+        ));
+        $p->onRequestTimeout($event);
+        $this->assertEquals(RequestInterface::STATE_COMPLETE, $request->getState());
+        $this->assertEquals(200, $request->getResponse()->getStatusCode());
+        $this->assertTrue($request->getResponse()->hasHeader('X-Guzzle-Async'));
+    }
+
+    public function testEnsuresIntegration()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue("HTTP/1.1 204 FOO\r\nContent-Length: 4\r\n\r\ntest");
+        $client = new Client($this->getServer()->getUrl());
+        $request = $client->post('/', null, array(
+            'foo' => 'bar'
+        ));
+        $request->getEventDispatcher()->addSubscriber(new AsyncPlugin());
+        $request->send();
+        $this->assertEquals('', $request->getResponse()->getBody(true));
+        $this->assertTrue($request->getResponse()->hasHeader('X-Guzzle-Async'));
+        $received = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals('POST', $received[0]->getMethod());
+    }
+}

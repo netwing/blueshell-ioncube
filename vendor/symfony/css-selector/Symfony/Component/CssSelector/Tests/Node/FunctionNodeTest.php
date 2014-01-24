@@ -1,36 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Tests\Node;
+
+use Symfony\Component\CssSelector\Node\ElementNode;
+use Symfony\Component\CssSelector\Node\FunctionNode;
+use Symfony\Component\CssSelector\Parser\Token;
+
+class FunctionNodeTest extends AbstractNodeTest
+{
+    public function getToStringConversionTestData()
+    {
+        return array(
+            array(new FunctionNode(new ElementNode(), 'function'), 'Function[Element[*]:function()]'),
+            array(new FunctionNode(new ElementNode(), 'function', array(
+                new Token(Token::TYPE_IDENTIFIER, 'value', 0),
+            )), "Function[Element[*]:function(['value'])]"),
+            array(new FunctionNode(new ElementNode(), 'function', array(
+                new Token(Token::TYPE_STRING, 'value1', 0),
+                new Token(Token::TYPE_NUMBER, 'value2', 0),
+            )), "Function[Element[*]:function(['value1', 'value2'])]"),
+        );
+    }
+
+    public function getSpecificityValueTestData()
+    {
+        return array(
+            array(new FunctionNode(new ElementNode(), 'function'), 10),
+            array(new FunctionNode(new ElementNode(), 'function', array(
+                new Token(Token::TYPE_IDENTIFIER, 'value', 0),
+            )), 10),
+            array(new FunctionNode(new ElementNode(), 'function', array(
+                new Token(Token::TYPE_STRING, 'value1', 0),
+                new Token(Token::TYPE_NUMBER, 'value2', 0),
+            )), 10),
+        );
+    }
+}

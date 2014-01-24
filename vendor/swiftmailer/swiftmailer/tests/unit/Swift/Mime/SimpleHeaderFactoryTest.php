@@ -1,97 +1,179 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Mime/SimpleHeaderFactory.php';
+require_once 'Swift/Mime/HeaderEncoder.php';
+require_once 'Swift/Encoder.php';
+require_once 'Swift/Mime/Grammar.php';
+
+class Swift_Mime_SimpleHeaderFactoryTest extends Swift_Tests_SwiftUnitTestCase
+{
+    private $_factory;
+
+    public function setUp()
+    {
+        $this->_factory = $this->_createFactory();
+    }
+
+    public function testMailboxHeaderIsCorrectType()
+    {
+        $header = $this->_factory->createMailboxHeader('X-Foo');
+        $this->assertIsA($header, 'Swift_Mime_Headers_MailboxHeader');
+    }
+
+    public function testMailboxHeaderHasCorrectName()
+    {
+        $header = $this->_factory->createMailboxHeader('X-Foo');
+        $this->assertEqual('X-Foo', $header->getFieldName());
+    }
+
+    public function testMailboxHeaderHasCorrectModel()
+    {
+        $header = $this->_factory->createMailboxHeader('X-Foo',
+            array('foo@bar'=>'FooBar')
+            );
+        $this->assertEqual(array('foo@bar'=>'FooBar'), $header->getFieldBodyModel());
+    }
+
+    public function testDateHeaderHasCorrectType()
+    {
+        $header = $this->_factory->createDateHeader('X-Date');
+        $this->assertIsA($header, 'Swift_Mime_Headers_DateHeader');
+    }
+
+    public function testDateHeaderHasCorrectName()
+    {
+        $header = $this->_factory->createDateHeader('X-Date');
+        $this->assertEqual('X-Date', $header->getFieldName());
+    }
+
+    public function testDateHeaderHasCorrectModel()
+    {
+        $header = $this->_factory->createDateHeader('X-Date', 123);
+        $this->assertEqual(123, $header->getFieldBodyModel());
+    }
+
+    public function testTextHeaderHasCorrectType()
+    {
+        $header = $this->_factory->createTextHeader('X-Foo');
+        $this->assertIsA($header, 'Swift_Mime_Headers_UnstructuredHeader');
+    }
+
+    public function testTextHeaderHasCorrectName()
+    {
+        $header = $this->_factory->createTextHeader('X-Foo');
+        $this->assertEqual('X-Foo', $header->getFieldName());
+    }
+
+    public function testTextHeaderHasCorrectModel()
+    {
+        $header = $this->_factory->createTextHeader('X-Foo', 'bar');
+        $this->assertEqual('bar', $header->getFieldBodyModel());
+    }
+
+    public function testParameterizedHeaderHasCorrectType()
+    {
+        $header = $this->_factory->createParameterizedHeader('X-Foo');
+        $this->assertIsA($header, 'Swift_Mime_Headers_ParameterizedHeader');
+    }
+
+    public function testParameterizedHeaderHasCorrectName()
+    {
+        $header = $this->_factory->createParameterizedHeader('X-Foo');
+        $this->assertEqual('X-Foo', $header->getFieldName());
+    }
+
+    public function testParameterizedHeaderHasCorrectModel()
+    {
+        $header = $this->_factory->createParameterizedHeader('X-Foo', 'bar');
+        $this->assertEqual('bar', $header->getFieldBodyModel());
+    }
+
+    public function testParameterizedHeaderHasCorrectParams()
+    {
+        $header = $this->_factory->createParameterizedHeader('X-Foo', 'bar',
+            array('zip' => 'button')
+            );
+        $this->assertEqual(array('zip'=>'button'), $header->getParameters());
+    }
+
+    public function testIdHeaderHasCorrectType()
+    {
+        $header = $this->_factory->createIdHeader('X-ID');
+        $this->assertIsA($header, 'Swift_Mime_Headers_IdentificationHeader');
+    }
+
+    public function testIdHeaderHasCorrectName()
+    {
+        $header = $this->_factory->createIdHeader('X-ID');
+        $this->assertEqual('X-ID', $header->getFieldName());
+    }
+
+    public function testIdHeaderHasCorrectModel()
+    {
+        $header = $this->_factory->createIdHeader('X-ID', 'xyz@abc');
+        $this->assertEqual(array('xyz@abc'), $header->getFieldBodyModel());
+    }
+
+    public function testPathHeaderHasCorrectType()
+    {
+        $header = $this->_factory->createPathHeader('X-Path');
+        $this->assertIsA($header, 'Swift_Mime_Headers_PathHeader');
+    }
+
+    public function testPathHeaderHasCorrectName()
+    {
+        $header = $this->_factory->createPathHeader('X-Path');
+        $this->assertEqual('X-Path', $header->getFieldName());
+    }
+
+    public function testPathHeaderHasCorrectModel()
+    {
+        $header = $this->_factory->createPathHeader('X-Path', 'foo@bar');
+        $this->assertEqual('foo@bar', $header->getFieldBodyModel());
+    }
+
+    public function testCharsetChangeNotificationNotifiesEncoders()
+    {
+        $encoder = $this->_createHeaderEncoder(false);
+        $paramEncoder = $this->_createParamEncoder(false);
+
+        $factory = $this->_createFactory($encoder, $paramEncoder);
+
+        $this->_checking(Expectations::create()
+            -> one($encoder)->charsetChanged('utf-8')
+            -> one($paramEncoder)->charsetChanged('utf-8')
+            -> ignoring($encoder)
+            -> ignoring($paramEncoder)
+            );
+
+        $factory->charsetChanged('utf-8');
+    }
+
+    // -- Creation methods
+
+    private function _createFactory($encoder = null, $paramEncoder = null)
+    {
+        return new Swift_Mime_SimpleHeaderFactory(
+            $encoder
+                ? $encoder : $this->_createHeaderEncoder(),
+            $paramEncoder
+                ? $paramEncoder : $this->_createParamEncoder(),
+            new Swift_Mime_Grammar()
+            );
+    }
+
+    private function _createHeaderEncoder($stub = true)
+    {
+        return $stub
+            ? $this->_stub('Swift_Mime_HeaderEncoder')
+            : $this->_mock('Swift_Mime_HeaderEncoder');
+    }
+
+    private function _createParamEncoder($stub = true)
+    {
+        return $stub
+            ? $this->_stub('Swift_Encoder')
+            : $this->_mock('Swift_Encoder');
+    }
+}

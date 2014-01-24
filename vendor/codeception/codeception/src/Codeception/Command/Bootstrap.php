@@ -1,122 +1,219 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-TAnVSRWm+QOuf68niQwMmghT
+<?php
+
+namespace Codeception\Command;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Yaml\Yaml;
+
+class Bootstrap extends Command
+{
+    protected $namespace = '';
+
+    protected function configure()
+    {
+        $this
+            ->setDefinition($this->createDefinition())
+            ->setDescription('Initializes empty test suite and default configuration file');
+
+        parent::configure();
+    }
+
+    /**
+     * @return InputDefinition
+     */
+    protected function createDefinition()
+    {
+        return new InputDefinition(
+            array(
+                 new InputArgument('path', InputArgument::OPTIONAL, 'custom installation path', '.'),
+                 new InputOption(
+                     'namespace', 'ns', InputOption::VALUE_OPTIONAL, 'Namespace to add for guy classes and helpers'
+                 ),
+            )
+        );
+    }
+
+    public function execute(InputInterface $input, OutputInterface $output)
+    {
+        $this->namespace = rtrim($input->getOption('namespace'), '\\');
+
+        $path = $input->getArgument('path');
+
+        if (!is_dir($path)) {
+            $output->writeln("<error>\nDirectory '$path' does not exists\n</error>");
+            return;
+        }
+
+        chdir($path);
+
+        if (file_exists('codeception.yml')) {
+            $output->writeln("<error>\nProject already initialized at '$path'\n</error>");
+            return;
+        }
+
+        $this->createGlobalConfig();
+        $output->writeln(
+            "<fg=white;bg=magenta>\nInitializing Codeception in " . realpath($path) . "\n</fg=white;bg=magenta>"
+        );
+        $output->writeln("File codeception.yml created <- global configuration");
+
+        @mkdir('tests');
+        @mkdir('tests/functional');
+        @mkdir('tests/unit');
+        @mkdir('tests/acceptance');
+        @mkdir('tests/_helpers');
+        @mkdir('tests/_log');
+        @mkdir('tests/_data');
+
+        $output->writeln("tests/unit created <- unit tests");
+        $output->writeln("tests/functional created <- functional tests");
+        $output->writeln("tests/acceptance created <- acceptance tests");
+
+        file_put_contents('tests/_data/dump.sql', '/* Replace this file with actual dump of your database */');
+
+        if ($this->namespace) {
+            $this->namespace = $this->namespace . '\\';
+        }
+        $this->createUnitSuite();
+        $output->writeln("tests/unit.suite.yml written <- unit tests suite configuration");
+        $this->createFunctionalSuite();
+        $output->writeln("tests/functional.suite.yml written <- functional tests suite configuration");
+        $this->createAcceptanceSuite();
+        $output->writeln("tests/acceptance.suite.yml written <- acceptance tests suite configuration");
+
+        file_put_contents('tests/_bootstrap.php', "<?php\n// This is global bootstrap for autoloading \n");
+        $output->writeln("tests/_bootstrap.php written <- global bootstrap file");
+
+        $output->writeln("<info>Building initial Guy classes</info>");
+        $this->getApplication()->find('build')->run(
+            new ArrayInput(array('command' => 'build')),
+            $output
+        );
+        $output->writeln("<info>\nBootstrap is done. Check out " . realpath($path) . "/tests directory</info>");
+    }
+
+    public function createGlobalConfig()
+    {
+        $basicConfig = array(
+            'paths'    => array(
+                'tests'   => 'tests',
+                'log'     => 'tests/_log',
+                'data'    => 'tests/_data',
+                'helpers' => 'tests/_helpers'
+            ),
+            'settings' => array(
+                'bootstrap'    => '_bootstrap.php',
+                'suite_class'  => '\PHPUnit_Framework_TestSuite',
+                'colors'       => (strtoupper(substr(PHP_OS, 0, 3)) != 'WIN'),
+                'memory_limit' => '1024M',
+                'log'          => true
+            ),
+            'modules'  => array(
+                'config' => array(
+                    'Db' => array(
+                        'dsn'      => '',
+                        'user'     => '',
+                        'password' => '',
+                        'dump'     => 'tests/_data/dump.sql'
+                    )
+                )
+            )
+        );
+
+        $str = Yaml::dump($basicConfig, 4);
+        if ($this->namespace) {
+            $str = "namespace: {$this->namespace} \n" . $str;
+        }
+        file_put_contents('codeception.yml', $str);
+    }
+
+    protected function createFunctionalSuite()
+    {
+        $suiteConfig = array(
+            'class_name' => 'TestGuy',
+            'modules'    => array('enabled' => array('Filesystem', 'TestHelper')),
+        );
+
+        $str = "# Codeception Test Suite Configuration\n\n";
+        $str .= "# suite for functional (integration) tests.\n";
+        $str .= "# emulate web requests and make application process them.\n";
+        $str .= "# (tip: better to use with frameworks).\n\n";
+        $str .= "# RUN `build` COMMAND AFTER ADDING/REMOVING MODULES.\n\n";
+        $str .= Yaml::dump($suiteConfig, 2);
+
+        file_put_contents(
+            'tests/functional/_bootstrap.php',
+            "<?php\n// Here you can initialize variables that will for your tests\n"
+        );
+        file_put_contents(
+            'tests/_helpers/TestHelper.php',
+            "<?php\nnamespace {$this->namespace}Codeception\\Module;\n\n// here you can define custom functions for TestGuy \n\nclass TestHelper extends \\Codeception\\Module\n{\n}\n"
+        );
+        file_put_contents('tests/functional.suite.yml', $str);
+    }
+
+    protected function createAcceptanceSuite()
+    {
+        $suiteConfig = array(
+            'class_name' => 'WebGuy',
+            'modules'    => array(
+                'enabled' => array('PhpBrowser', 'WebHelper'),
+                'config'  => array(
+                    'PhpBrowser' => array(
+                        'url' => 'http://localhost/myapp/'
+                    ),
+                )
+            ),
+        );
+
+        $str = "# Codeception Test Suite Configuration\n\n";
+        $str .= "# suite for acceptance tests.\n";
+        $str .= "# perform tests in browser using the Selenium-like tools.\n";
+        $str .= "# powered by Mink (http://mink.behat.org).\n";
+        $str .= "# (tip: that's what your customer will see).\n";
+        $str .= "# (tip: test your ajax and javascript by one of Mink drivers).\n\n";
+        $str .= "# RUN `build` COMMAND AFTER ADDING/REMOVING MODULES.\n\n";
+
+        $str .= Yaml::dump($suiteConfig, 5);
+
+        file_put_contents(
+            'tests/acceptance/_bootstrap.php',
+            "<?php\n// Here you can initialize variables that will for your tests\n"
+        );
+        file_put_contents(
+            'tests/_helpers/WebHelper.php',
+            "<?php\nnamespace {$this->namespace}Codeception\\Module;\n\n// here you can define custom functions for WebGuy \n\nclass WebHelper extends \\Codeception\\Module\n{\n}\n"
+        );
+        file_put_contents('tests/acceptance.suite.yml', $str);
+    }
+
+    protected function createUnitSuite()
+    {
+        // CodeGuy
+        $suiteConfig = array(
+            'class_name' => 'CodeGuy',
+            'modules'    => array('enabled' => array('CodeHelper')),
+        );
+
+        $str = "# Codeception Test Suite Configuration\n\n";
+        $str .= "# suite for unit (internal) tests.\n";
+        $str .= "# RUN `build` COMMAND AFTER ADDING/REMOVING MODULES.\n\n";
+        $str .= Yaml::dump($suiteConfig, 2);
+
+        file_put_contents(
+            'tests/unit/_bootstrap.php',
+            "<?php\n// Here you can initialize variables that will for your tests\n"
+        );
+        file_put_contents(
+            'tests/_helpers/CodeHelper.php',
+            "<?php\nnamespace {$this->namespace}Codeception\\Module;\n\n// here you can define custom functions for CodeGuy \n\nclass CodeHelper extends \\Codeception\\Module\n{\n}\n"
+        );
+        file_put_contents('tests/unit.suite.yml', $str);
+    }
+}

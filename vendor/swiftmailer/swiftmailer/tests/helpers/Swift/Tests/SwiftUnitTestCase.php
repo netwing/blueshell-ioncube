@@ -1,51 +1,100 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-1q6wjnkdmV/W
+<?php
+
+require_once 'Swift/Tests/IdenticalBinaryExpectation.php';
+
+/**
+ * A base test case with some custom expectations.
+ * @package Swift
+ * @subpackage Tests
+ * @author Chris Corbyn
+ */
+class Swift_Tests_SwiftUnitTestCase extends UnitTestCase
+{
+    /** An instance of the Yay_Mockery class */
+    private $_mockery;
+
+    /**
+     * Decorates SimpleTest's implementation to auto-validate mock objects.
+     */
+    public function after($method)
+    {
+        try {
+            $this->_mockery()->assertIsSatisfied();
+        } catch (Yay_NotSatisfiedException $e) {
+            $this->fail($e->getMessage());
+        }
+        $this->_mockery = null;
+
+        return parent::after($method);
+    }
+
+    /**
+     * Assert two binary strings are an exact match.
+     * @param string $a
+     * @param string $b
+     * @param string $s formatted message
+     */
+    public function assertIdenticalBinary($a, $b, $s = '%s')
+    {
+        return $this->assert(new Swift_Tests_IdenticalBinaryExpectation($a), $b, $s);
+    }
+
+    // -- Protected methods
+
+    /**
+     * Returns a singleton-per-test method for Yay_Mockery.
+     * @return Yay_Mockery
+     */
+    protected function _mockery()
+    {
+        if (!isset($this->_mockery)) {
+            $this->_mockery = new Yay_Mockery();
+        }
+
+        return $this->_mockery;
+    }
+
+    /**
+     * Create a mock object.
+     * @param  string   $class
+     * @return Yay_Mock
+     */
+    protected function _mock($class)
+    {
+        return $this->_mockery()->mock($class);
+    }
+
+    /**
+     * Add mock expectations.
+     * @param Yay_Expectations $expectations
+     */
+    protected function _checking($expectations)
+    {
+        return $this->_mockery()->checking($expectations);
+    }
+
+    /**
+     * Create a mock object which does nothing.
+     * @param  string   $class
+     * @return Yay_Mock
+     */
+    protected function _stub($class)
+    {
+        $stub = $this->_mockery()->mock($class);
+        $this->_mockery()->checking(Yay_Expectations::create()
+            -> ignoring($stub)
+            );
+
+        return $stub;
+    }
+
+    protected function _states($machineName)
+    {
+        return $this->_mockery()->states($machineName);
+    }
+
+    protected function _sequence($sequenceName)
+    {
+        return $this->_mockery()->sequence($sequenceName);
+    }
+}

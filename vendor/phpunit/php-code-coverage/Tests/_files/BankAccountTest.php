@@ -1,37 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-80==
+<?php
+require_once 'BankAccount.php';
+
+class BankAccountTest extends PHPUnit_Framework_TestCase
+{
+    protected $ba;
+
+    protected function setUp()
+    {
+        $this->ba = new BankAccount;
+    }
+
+    /**
+     * @covers BankAccount::getBalance
+     */
+    public function testBalanceIsInitiallyZero()
+    {
+        $this->assertEquals(0, $this->ba->getBalance());
+    }
+
+    /**
+     * @covers BankAccount::withdrawMoney
+     */
+    public function testBalanceCannotBecomeNegative()
+    {
+        try {
+            $this->ba->withdrawMoney(1);
+        }
+
+        catch (RuntimeException $e) {
+            $this->assertEquals(0, $this->ba->getBalance());
+
+            return;
+        }
+
+        $this->fail();
+    }
+
+    /**
+     * @covers BankAccount::depositMoney
+     */
+    public function testBalanceCannotBecomeNegative2()
+    {
+        try {
+            $this->ba->depositMoney(-1);
+        }
+
+        catch (RuntimeException $e) {
+            $this->assertEquals(0, $this->ba->getBalance());
+
+            return;
+        }
+
+        $this->fail();
+    }
+
+    /**
+     * @covers BankAccount::getBalance
+     * @covers BankAccount::depositMoney
+     * @covers BankAccount::withdrawMoney
+     */
+    public function testDepositWithdrawMoney()
+    {
+        $this->assertEquals(0, $this->ba->getBalance());
+        $this->ba->depositMoney(1);
+        $this->assertEquals(1, $this->ba->getBalance());
+        $this->ba->withdrawMoney(1);
+        $this->assertEquals(0, $this->ba->getBalance());
+    }
+}

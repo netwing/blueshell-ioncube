@@ -1,32 +1,121 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP+Z0XVze2IX+yC1s4Dp8bdqHKrRO73jdj/uitr7iTdxafYamQwpDdb4AXJlVqo/ufgrQwqAI
-AoOqgm/Pz7Duvgx1F+FBhVM8Vv0FxxWlNEg1H5tQdRn2LtLfhcP5NZYu9khB0p4RWFq9slyMZVx1
-PuFvkK9D4KR+cZ6R8xkkYI4gvzd599K3cW/H8pfda8JHMoPpbhhli7IO7DrLuyPkeJbgWQrumOOw
-HFqZIa5kALP6e7711ApGLgzHAE4xzt2gh9fl143SQNHyPI6GA5KxqJx3+QtOo2l7VA9LNR+sX1hh
-/Ep+4QdlHWUSzjYegkDgXwFfL79HCPcBCHVfhgG31EajJ17+m2rm9T6lmx5+m4TC8HUXFdvp1CFo
-RlzzidT+qzg3fmcQrgXozb2u1a2fnoJuGNE2ywW3SZyNj1ysRUbyHrBWh1Y/9KNTycPbbPxlh0RG
-99xDUX5Bt+uMkYjSXg0E6ZWTHBDgxiXFEerV2HNOUWD3nYH1S3tTu1YS+aLSIkH0d0+1rGy7bypk
-SRxJ3XnCcD6ffx+RRwrHHQxrNMeug63wTLUJwIcKK9lKbtxmmPLGukVwkKSiZVJNOOvekQFVffcX
-h3vNLyRH8mhw6Gx3MfxuGlaFO20+FLfJ/+A3bxYVXsZxrWAtDVFURC0sCmHg3v2XC7ouuFVYRJhm
-hG7gBZR0S6gYI6b0RRqCkpfzlRdy3IQYCwDv3uwgG8tpuq31MSB+tjHrtpxRmG4NMYxv4OzHklST
-8HjzxWkpqlbD0pLgytGdspFAWPJ7+vzRCyN69nIXz1iIkl9BDRJ2miF/bNV79tYNyXFc59FbFg3+
-Ldy5md3L6YZEkwz6isuQjgpyB9qLLTUEzmJjVIjBLy3yP3uYvPSU6lYD5ha2BEOPfJChWIfkEFmM
-iC6dnV2UgSZPI3HwFK/u8tOYSJFlvUxFWJtEFbeN9fsb3pv9ss07Z8wLgTIKcruuMMKrQnJ/EFFA
-qK/02FxBIsVyZJA5h7eRIZl5FpJCJmhmYwykx0IKYab+Kps2YbSn52ptANM4tCQ1vlzBwBnxbYNP
-ZDTeME+2sFEzmshfwqn5Ooj2znBjnih4dE9A3102z4DCmKWpd4sKSUHkH1M4M7GzPuuvA+TS5uNH
-jxHCCjru0HX9dMg/jdDdZA93Xe2vLT7F8r9BJngJ9Ioc65aziJ6u2ONdylJVRNRneAqBZPl/paNt
-CaFALRVMrD22NRPdyUdFE6mfEnFkBAZFqN9X4OrvQ2je/shhJkCb/ugh+TCeY1VW/5XZ8ADgcOR2
-jNVhLaQ3wHfgSloWSMRIrZAXcLTDZadBBtC3X/qEBwTm69oBYBfBXD4bUJNci/+A4m911ANFe+NY
-lgl9bipUGVgbD/hsQO3AGWxyIXTCtjts3O4F2Oo87dDVp3NmTLzRYqg2HE/Nsc2/hDS+rV0L2FHq
-GkjZXODI/4QuKBhZjYkw0OjoIH+6Zg1PIRn6ZzbVYn+adhNlA91C60yRPVzNysC+Pbc2QuuO341Q
-3KtT87Ig2G6a2fruVxwy8Ccz9sw570fzWXYsTrxHlJFSEInvuWWm9HNTgTuBKyRCIkCHEMEysxaS
-txkd4fc7IE6MuuEDuWgS56mNAiFLtGC48niF1wMjESt1USfH/wH4/oQCclRYvhUsr/cAdsMjuIKr
-7sZJhzXrhe4i+Z0oP/3cEQhHE64uXUe8T95GRj0DuXYLD0fDMJ4xAYFgeulgqmQtsA9B3tME6wSR
-tvyDVBOLigXM6l0fhrsZAw4ACgsC/mET18LKaVvVGigWA8M9XH+czI8sSfZg6Zr+mVp82F0rPjoA
-TaehAY0dblkW//gwA7wwRjYGb9HVzVJGAXsXOk5VtFkdbQ6Ak6t/fr/f8G4ZkehnCcK/SnsR3x5P
-0oaHksDd+aY2FxJCcsoxYvBKQUcni1E5pv2ztWtzbHdecwU/jyOE2VxOGg3AywIvBPflhbmsYHm5
-CBQlaKDqhtMNULWFYg3h7aJm8Y1t7fkB6qpwE+ajmPYgDOdOh0O35PYfndic3E7/SL4+I3x4odJn
-JeRs4rgrbq5C5/vVaL/kXmuB0Zud0WL2aM8f00UX1xaGdZU1sW7ve68c7lqgkH67TI9yQv7eB1Y5
-5w1lavLAi/Aozbd7gckzw1Tk6KiCU8bHZJZi/CZ3nF7OSKtQoVk/UCKfSW==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.5.0
+ */
+
+/**
+ * Creates a synthetic failed assertion.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.5.0
+ */
+class PHPUnit_Framework_SyntheticError extends PHPUnit_Framework_AssertionFailedError
+{
+    /**
+     * The synthetic file.
+     *
+     * @var string
+     */
+    protected $syntheticFile = '';
+
+    /**
+     * The synthetic line number.
+     *
+     * @var integer
+     */
+    protected $syntheticLine = 0;
+
+    /**
+     * The synthetic trace.
+     *
+     * @var array
+     */
+    protected $syntheticTrace = array();
+
+    /**
+     * Constructor.
+     *
+     * @param string  $message
+     * @param integer $code
+     * @param string  $file
+     * @param integer $line
+     * @param array   $trace
+     */
+    public function __construct($message, $code, $file, $line, $trace)
+    {
+        parent::__construct($message, $code);
+
+        $this->syntheticFile  = $file;
+        $this->syntheticLine  = $line;
+        $this->syntheticTrace = $trace;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSyntheticFile()
+    {
+        return $this->syntheticFile;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getSyntheticLine()
+    {
+        return $this->syntheticLine;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSyntheticTrace()
+    {
+        return $this->syntheticTrace;
+    }
+}

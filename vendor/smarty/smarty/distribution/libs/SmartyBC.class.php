@@ -1,137 +1,459 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-f7BPiFNNP6FfAzwwAQfareAKZYz7jQHvP0Fs
+<?php
+/**
+ * Project:     Smarty: the PHP compiling template engine
+ * File:        SmartyBC.class.php
+ * SVN:         $Id: $
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * For questions, help, comments, discussion, etc., please join the
+ * Smarty mailing list. Send a blank e-mail to
+ * smarty-discussion-subscribe@googlegroups.com
+ *
+ * @link http://www.smarty.net/
+ * @copyright 2008 New Digital Group, Inc.
+ * @author Monte Ohrt <monte at ohrt dot com>
+ * @author Uwe Tews
+ * @author Rodney Rehm
+ * @package Smarty
+ */
+/**
+ * @ignore
+ */
+require(dirname(__FILE__) . '/Smarty.class.php');
+
+/**
+ * Smarty Backward Compatability Wrapper Class
+ *
+ * @package Smarty
+ */
+class SmartyBC extends Smarty
+{
+    /**
+     * Smarty 2 BC
+     * @var string
+     */
+    public $_version = self::SMARTY_VERSION;
+
+    /**
+     * Initialize new SmartyBC object
+     *
+     * @param array $options options to set during initialization, e.g. array( 'forceCompile' => false )
+     */
+    public function __construct(array $options=array())
+    {
+        parent::__construct($options);
+        // register {php} tag
+        $this->registerPlugin('block', 'php', 'smarty_php_tag');
+    }
+
+    /**
+     * wrapper for assign_by_ref
+     *
+     * @param string $tpl_var the template variable name
+     * @param mixed  &$value  the referenced value to assign
+     */
+    public function assign_by_ref($tpl_var, &$value)
+    {
+        $this->assignByRef($tpl_var, $value);
+    }
+
+    /**
+     * wrapper for append_by_ref
+     *
+     * @param string  $tpl_var the template variable name
+     * @param mixed   &$value  the referenced value to append
+     * @param boolean $merge   flag if array elements shall be merged
+     */
+    public function append_by_ref($tpl_var, &$value, $merge = false)
+    {
+        $this->appendByRef($tpl_var, $value, $merge);
+    }
+
+    /**
+     * clear the given assigned template variable.
+     *
+     * @param string $tpl_var the template variable to clear
+     */
+    public function clear_assign($tpl_var)
+    {
+        $this->clearAssign($tpl_var);
+    }
+
+    /**
+     * Registers custom function to be used in templates
+     *
+     * @param string $function      the name of the template function
+     * @param string $function_impl the name of the PHP function to register
+     * @param bool   $cacheable
+     * @param mixed  $cache_attrs
+     */
+    public function register_function($function, $function_impl, $cacheable=true, $cache_attrs=null)
+    {
+        $this->registerPlugin('function', $function, $function_impl, $cacheable, $cache_attrs);
+    }
+
+    /**
+     * Unregisters custom function
+     *
+     * @param string $function name of template function
+     */
+    public function unregister_function($function)
+    {
+        $this->unregisterPlugin('function', $function);
+    }
+
+    /**
+     * Registers object to be used in templates
+     *
+     * @param string  $object       name of template object
+     * @param object  $object_impl  the referenced PHP object to register
+     * @param array   $allowed      list of allowed methods (empty = all)
+     * @param boolean $smarty_args  smarty argument format, else traditional
+     * @param array   $block_functs list of methods that are block format
+     */
+    public function register_object($object, $object_impl, $allowed = array(), $smarty_args = true, $block_methods = array())
+    {
+        settype($allowed, 'array');
+        settype($smarty_args, 'boolean');
+        $this->registerObject($object, $object_impl, $allowed, $smarty_args, $block_methods);
+    }
+
+    /**
+     * Unregisters object
+     *
+     * @param string $object name of template object
+     */
+    public function unregister_object($object)
+    {
+        $this->unregisterObject($object);
+    }
+
+    /**
+     * Registers block function to be used in templates
+     *
+     * @param string $block       name of template block
+     * @param string $block_impl  PHP function to register
+     * @param bool   $cacheable
+     * @param mixed  $cache_attrs
+     */
+    public function register_block($block, $block_impl, $cacheable=true, $cache_attrs=null)
+    {
+        $this->registerPlugin('block', $block, $block_impl, $cacheable, $cache_attrs);
+    }
+
+    /**
+     * Unregisters block function
+     *
+     * @param string $block name of template function
+     */
+    public function unregister_block($block)
+    {
+        $this->unregisterPlugin('block', $block);
+    }
+
+    /**
+     * Registers compiler function
+     *
+     * @param string $function      name of template function
+     * @param string $function_impl name of PHP function to register
+     * @param bool   $cacheable
+     */
+    public function register_compiler_function($function, $function_impl, $cacheable=true)
+    {
+        $this->registerPlugin('compiler', $function, $function_impl, $cacheable);
+    }
+
+    /**
+     * Unregisters compiler function
+     *
+     * @param string $function name of template function
+     */
+    public function unregister_compiler_function($function)
+    {
+        $this->unregisterPlugin('compiler', $function);
+    }
+
+    /**
+     * Registers modifier to be used in templates
+     *
+     * @param string $modifier      name of template modifier
+     * @param string $modifier_impl name of PHP function to register
+     */
+    public function register_modifier($modifier, $modifier_impl)
+    {
+        $this->registerPlugin('modifier', $modifier, $modifier_impl);
+    }
+
+    /**
+     * Unregisters modifier
+     *
+     * @param string $modifier name of template modifier
+     */
+    public function unregister_modifier($modifier)
+    {
+        $this->unregisterPlugin('modifier', $modifier);
+    }
+
+    /**
+     * Registers a resource to fetch a template
+     *
+     * @param string $type      name of resource
+     * @param array  $functions array of functions to handle resource
+     */
+    public function register_resource($type, $functions)
+    {
+        $this->registerResource($type, $functions);
+    }
+
+    /**
+     * Unregisters a resource
+     *
+     * @param string $type name of resource
+     */
+    public function unregister_resource($type)
+    {
+        $this->unregisterResource($type);
+    }
+
+    /**
+     * Registers a prefilter function to apply
+     * to a template before compiling
+     *
+     * @param callable $function
+     */
+    public function register_prefilter($function)
+    {
+        $this->registerFilter('pre', $function);
+    }
+
+    /**
+     * Unregisters a prefilter function
+     *
+     * @param callable $function
+     */
+    public function unregister_prefilter($function)
+    {
+        $this->unregisterFilter('pre', $function);
+    }
+
+    /**
+     * Registers a postfilter function to apply
+     * to a compiled template after compilation
+     *
+     * @param callable $function
+     */
+    public function register_postfilter($function)
+    {
+        $this->registerFilter('post', $function);
+    }
+
+    /**
+     * Unregisters a postfilter function
+     *
+     * @param callable $function
+     */
+    public function unregister_postfilter($function)
+    {
+        $this->unregisterFilter('post', $function);
+    }
+
+    /**
+     * Registers an output filter function to apply
+     * to a template output
+     *
+     * @param callable $function
+     */
+    public function register_outputfilter($function)
+    {
+        $this->registerFilter('output', $function);
+    }
+
+    /**
+     * Unregisters an outputfilter function
+     *
+     * @param callable $function
+     */
+    public function unregister_outputfilter($function)
+    {
+        $this->unregisterFilter('output', $function);
+    }
+
+    /**
+     * load a filter of specified type and name
+     *
+     * @param string $type filter type
+     * @param string $name filter name
+     */
+    public function load_filter($type, $name)
+    {
+        $this->loadFilter($type, $name);
+    }
+
+    /**
+     * clear cached content for the given template and cache id
+     *
+     * @param  string  $tpl_file   name of template file
+     * @param  string  $cache_id   name of cache_id
+     * @param  string  $compile_id name of compile_id
+     * @param  string  $exp_time   expiration time
+     * @return boolean
+     */
+    public function clear_cache($tpl_file = null, $cache_id = null, $compile_id = null, $exp_time = null)
+    {
+        return $this->clearCache($tpl_file, $cache_id, $compile_id, $exp_time);
+    }
+
+    /**
+     * clear the entire contents of cache (all templates)
+     *
+     * @param  string  $exp_time expire time
+     * @return boolean
+     */
+    public function clear_all_cache($exp_time = null)
+    {
+        return $this->clearCache(null, null, null, $exp_time);
+    }
+
+    /**
+     * test to see if valid cache exists for this template
+     *
+     * @param  string  $tpl_file   name of template file
+     * @param  string  $cache_id
+     * @param  string  $compile_id
+     * @return boolean
+     */
+    public function is_cached($tpl_file, $cache_id = null, $compile_id = null)
+    {
+        return $this->isCached($tpl_file, $cache_id, $compile_id);
+    }
+
+    /**
+     * clear all the assigned template variables.
+     */
+    public function clear_all_assign()
+    {
+        $this->clearAllAssign();
+    }
+
+    /**
+     * clears compiled version of specified template resource,
+     * or all compiled template files if one is not specified.
+     * This function is for advanced use only, not normally needed.
+     *
+     * @param  string  $tpl_file
+     * @param  string  $compile_id
+     * @param  string  $exp_time
+     * @return boolean results of {@link smarty_core_rm_auto()}
+     */
+    public function clear_compiled_tpl($tpl_file = null, $compile_id = null, $exp_time = null)
+    {
+        return $this->clearCompiledTemplate($tpl_file, $compile_id, $exp_time);
+    }
+
+    /**
+     * Checks whether requested template exists.
+     *
+     * @param  string  $tpl_file
+     * @return boolean
+     */
+    public function template_exists($tpl_file)
+    {
+        return $this->templateExists($tpl_file);
+    }
+
+    /**
+     * Returns an array containing template variables
+     *
+     * @param  string $name
+     * @return array
+     */
+    public function get_template_vars($name=null)
+    {
+        return $this->getTemplateVars($name);
+    }
+
+    /**
+     * Returns an array containing config variables
+     *
+     * @param  string $name
+     * @return array
+     */
+    public function get_config_vars($name=null)
+    {
+        return $this->getConfigVars($name);
+    }
+
+    /**
+     * load configuration values
+     *
+     * @param string $file
+     * @param string $section
+     * @param string $scope
+     */
+    public function config_load($file, $section = null, $scope = 'global')
+    {
+        $this->ConfigLoad($file, $section, $scope);
+    }
+
+    /**
+     * return a reference to a registered object
+     *
+     * @param  string $name
+     * @return object
+     */
+    public function get_registered_object($name)
+    {
+        return $this->getRegisteredObject($name);
+    }
+
+    /**
+     * clear configuration values
+     *
+     * @param string $var
+     */
+    public function clear_config($var = null)
+    {
+        $this->clearConfig($var);
+    }
+
+    /**
+     * trigger Smarty error
+     *
+     * @param string  $error_msg
+     * @param integer $error_type
+     */
+    public function trigger_error($error_msg, $error_type = E_USER_WARNING)
+    {
+        trigger_error("Smarty error: $error_msg", $error_type);
+    }
+
+}
+
+/**
+ * Smarty {php}{/php} block function
+ *
+ * @param array   $params   parameter list
+ * @param string  $content  contents of the block
+ * @param object  $template template object
+ * @param boolean &$repeat  repeat flag
+ * @return string content re-formatted
+ */
+function smarty_php_tag($params, $content, $template, &$repeat)
+{
+    eval($content);
+
+    return '';
+}

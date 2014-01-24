@@ -1,30 +1,68 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_PHP_HeredocSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_PHP_HeredocSniff.
+ *
+ * Heredocs are prohibited. This test enforces that.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_PHP_HeredocSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_START_HEREDOC,
+                T_START_NOWDOC,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $error = 'Use of heredoc and nowdoc syntax ("<<<") is not allowed; use standard strings or inline HTML instead';
+        $phpcsFile->addError($error, $stackPtr, 'NotAllowed');
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

@@ -1,146 +1,382 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPs0exNNuejLwaV1uLgrel0Wxp9IRqP46TED/qJlHumPG2RrPnLc4lr/h7rsppMM9Oqg0znIc
-0xoBVHovOhvJp70Gwvy3YfD6idcrDVmpfacvdpwXDKx9ILPDCqD6LXG+IpZBGaizbmybWpfUMg/+
-X7E4lBP0EX7Iv7+hQkIb8mXPPdS/WHgbx/HvRR6f/ouS+Z3qJs/KYpl7CAqiFkcfDMfwHpLBNOj2
-IOfnASzNdWse1aIoOcRkSwzHAE4xzt2gh9fl143SQNH7NoaZh+IT+kOHZJdOwNI+R//wl7MKXJz3
-ommBtXsJbnNh0YiG+cKC8BGcVl7cNbrTaDI0WP2HvXoVb0uQvTOKE+gauDhd3+WcotS+4fAfkCs0
-u/qTgWHdIktTedbKqT/fI79u/1cLOb7uuedgGhR1LRlMaXOkals4vLMIibALhc3k5oMTNfWfYEGY
-qljzjXAlte9NB0A5BeXUJtR21EJU9XVRpOAqm6WbNlOfBewWgwrpCjJGk+zargyBGtn7qv6RoEa3
-arkIIE/vFU148+NwWaT9lE3gUvjc6Hx+iMLpI63MdKZIGkV71WkaJSevuKzDKpYenIISwvD0zvwC
-6071aElhpaENGU/TNcjGB8sTSxLlsdmRDKsbIauTRUi0IIvCEIssubNJJEwdY3aRJIYMOEKjVwVb
-W78TrmYbKcKqvl+y90T3mqvvczKmsxHv8YNNBX6J0SiuDNSTGZfKpVrW4o2h8X2zpu2kzJipMKhT
-OiEMg0z1MPBIw0ZhShlH88Ehf4vU9bdwmJJYcoPHXG6D4n3K0RMcVdnbbl9A+v6btG8hDPGqwkZf
-pdB2hiSeC0rLwOIyS2yA6/zhBNfmZQ2qTOrrI5rStvIqCZkZ+O/dGqwTG0Ow/fU6VbtqHl3T1nl8
-0i3GBWdgeVhcUpT/Z+af0yWgo8aSG22PXHhtsxvFTRpU4RWlDVPznAh66ebIDbpZmgWji2qrMYRi
-uHQEW+PkMMBtuo+BDRNaJ/6busISCY2LpW0mqSKKGtILky+6VlxMjODznWtxwT7WZi16e6nQRIL7
-m14uTqAysRA1Fwaek681S1xmmaywhtUv9ucFPqrYr73WFokk2odK1W0cjSehlwc7IXnsKAP5Tnj+
-Ieg4TyHqhuW2zkPbtlSBWiczJCCtpkbKYDyBtEEodjPe/C5nsbuvvl8te40Tkn9MiH3wpklvVM+8
-W4sOuhCvk7E3XA4fFiVQ8gdKxJ9HbkUNs7LgeLY1+UaVLpaEZL9Ge7DGAJa1R5WRLPtxjodrtQm6
-a3UcH6jMwgI6un0IBJ0QuLd4KSgDh/Fg90ukwY5ZZnu6/W0LwbdVzJLOp5Sor0YhrqUL2+L/d4br
-3UwJ2PSs04YuJu0I71C3lfIOJQZp65Xr6uT2lRpbDd/nq3WGKdDQhcZv7teKEuvkfD+vrd1c+mHP
-ornVnaBkzvRUInDxQQQ11V0fRlgeS2TgMdmjBr0N09O9B2c2z4++JYH4+IQNjsOsruAZgRcbfC4f
-Wn6isIZsa6dQASRSXIKT7Rf4yna/oLHZOO8kvPfWFHaVKQ3xDbKPQQV8aYk2EuUmwh0ZvmbxYU2U
-B5YB16nGLiZekRgWv/99SmxsRIUM0MTUzBk+dEvE1cLWWC35h5oMP7pUkkQ8KyWnKuO5rrbyp0X0
-EAp2Jv0hmO8gRrGYwfy4MzAd8Pffk2HP06uoLsq4zqvQjZOZTzLmz8eCnKeGZt1mpFDlI1hYKggy
-hF2tmExLFao1+PphpFLt4b+WtCKai1KJIqyW026Erzkhcu/est6jZhkb2HVakQsJ0xwDs5mz9/zB
-O8fP2/ILKCVQ9ihSHbD+/GQFNR5CNNC697OnXpuLBhrKNrQFGJ1Nz31Sye9RUXQLfkig8KMhXCjD
-X5etgtEHbf8VCnLmYo3JnHKn8KP59MewWk0M1+IQH23dUloweEXiiB4MsxJfT4MT9NSaSrwMl+Ag
-vLMvrZ/Hj4mm08oBaFn25klIzhx379Hrzbc2ad7R9iTDqyUoCKf3/sGM93JjN4mXjWsy67Lme4oC
-wDwpXDTO3CQcEvjMygYVsCllSoGzmi+TJ98RxL6pIGlExbMA+enKJ9O0SA141y/nND0b59jK6Hwc
-9aN8GopIIYw0SmNf6XFq6Ics8fdS/n0qBFe3twAhUbsX25eHVqpeJYVZgWcjgJtbKXET1GZGkftV
-X0xgeSh4nquS3N1vldfRAyOq+KlmS1a2xChCD0uSUk8+mf6ulusFvYgaeGI524sebljoCD9lMcQz
-GQDnv1rOe/CZmRM+WgHxUmiQEj2J/z+CfR/wqWn65ZqFviPFex7xhKzx19kaiA8JH5USFSSt7TAZ
-03P/QvE+LRDnyc3/B1078SmOUgnYttq5kVp7U5R6ur3U+ckbwUaM+MfRVaZKUNTaOLPce5XnvWLW
-3lStFfpGDj2PP2iUt3/QL2+Tp/kZ/+0DXvT/pYAIy+gbb+ePDS1tDj13H5fK/QHI4rHl+u/zjVc1
-m0kXm+sr1QcfmKqDhVWSBJ1X/w/jdPgeEdb9qRKqrju8dti6UR1VV1MUfo42IfRxhuW+IonU2tDj
-eEdAjaWcG2/lELJCyszQ7bBLLtZ6VXI68WC2DhVod++anvw+Cwi/lRuowSl/JuMdKc9nzP/+YvLg
-7r2r0WTnVQNngMBmcqD58xHCdey+m1PQBJYcxvkNKSBcMl0OPNlwM/+mYC4tKT/RMn+HQRe+f9aA
-Csy90GQmPDmdeXgv5Ioht/YdLv21h5N18SEKQuRimuqczDEy4gBwVS+La8z+XpA+aLyNRgqqO2Lb
-GfGHTHEwb90QpI0KX4WF6bkk6+mfRv34AMN8jPIz0d5KkcRNgSkURctCagJQjuTICLmAhqQd76GE
-/Aw05GB5E+kO9IJu3iqfz4bA9LWHJig1zpIbQMi8taXI2y6rxg1ep0Vp8V6FcThZbKCh+sa+I5Cr
-YYDHwyw7EM/IgkMnXFoa5B6EUs+akB9l09EPxdG54LMyc9cScqLMn2F68MMZ86z3d4Td3iCE+VmZ
-iB2l+PdRyIKICsToWTHcFXwYGaowjZ91kefo819Xf1E3/+WfzYPu20W8FXoVEjitPqmoe40uxefX
-BVZ4QFcv9mUDR+PXQJGlgR6a32KbZqSRI+NjaQZJ6lY97X0kvAwAlZtTkeOBB8k5Xuqav4Plq/z7
-khG6mxKWNtV1zvjK9jWxgndLP7cIqcwaLFlZRP9RDtqM0IK9Qcp5ekIqZmV7J3blvKotwM8he+IN
-P/9RUwjP7lg1mepRqLT1SAvjIcIxkxmAI7U3leVcBf/KhNkMhcWx2VvL5BK8tdiRI37AuQwRMy5Y
-duQ7kbiU03+QbfRHLFYNbOXiKCOrY6CFeaCVSHBiJhAdB0VUh4bWIBmMOqKUmyIVuTUH8FhDPcoI
-DnHfze3/vVhl5T1gbFOXWXYyXMWDu0yYxzWh6zvxufYOBoDeQncEaTblah0qLUb67Nb7yCuhGm7t
-MX8Wik+e/gN3IZKAl3utlNaC6ZRAX8TYdkpH7hQ7tuJ4r3Za46LDgZhxy1OVYklpPRTxCfM/dpMG
-DDzCwPDTSlQTPTaB9cHhMdK9V5z1VDz6qD6igOogDCvVEgTRUYSI6z57rzGwar8qZ1YyLSLPS9PX
-3Qrh7n42SCU1VRAlCawq38N7e587r++odQqZmPA4ZflFnR0MwOItqbbQaZLIIDeoPSni2xCp3JRf
-a5A4ijjDcnqJdy3GE2hMEBCBLIW+FuSwQxY8Y+ARCcGKE9D9mfFSskAB7O2dpPR26SS8tmP/IiHn
-/47MbHuSnYn1KC6IiKwG8n0QWFHA9Rau66HEGPrcOjqKsN05ZeMjEh6BBrR0saHKAXiurEjmqTM+
-dDbfw8mItttPmffSZzuOaAUt5yXy/m9/FUUw5T62fEae36ZBD8RMPyS6QLZy371Eo1KuOyWQMoDX
-/2QvhNxp71Fj4iu1zpdDm91YK/X27WOcXHPnIYOhhDFBBvXpCoARc6bQj+VeV4ytr0Y/bQVObPhX
-6DA19m9HYGYaHmfc9IlVKqEoD3qmr94Ojxjv1UHw1Tf2oPnHG0/Kli6zMV1mCV7V/Ls6p0Sv93tr
-GqSgx9PeBjiUuOf+nkrzuSJK4uGJWNQglgowyTOW9NtOUPccI7B1dCIEN+ByfKWQTOmXlhcfys3V
-Bx5UBZfQvK8TX6mrpHT3wUqYcbKHzVyzfBsaHcyiyqchME4MOkVh4zSvgFCJ5ilq4220GBThCXMz
-Hak4vGH6qO8wkoXI8ob54nBp86ZO6CHWaVYqlJz1n8qJhRnPJfk8TK9dVMXRjZj/RHSzzoa8a0j+
-TKnKlwZC4jBlbvgsvGbpARBYMECsdZHkvSZUPyVLOReWwhEXuKp4xY+8w7WOrpRttDmlnixdObiS
-fSEiIPZFGH4vWthaMWmGi/+AngHAG8hAmS9PyR2pEpTzlA1R51oq8MjH4BaGY8OZnu2LBpXYacpI
-abUbvwphxttmymL4TNFa5GdWynSbev++YFgMMoDuVJs3RHXx1C03idPwYLEcFN2tNx7m1osh44Nb
-+mUWaPoRiKSMfvze0himUkaYJA6FU/he0pzAVLT8yrJ09uiY6LYt+82CtwUNfbg1Pii87Ef+IhxH
-0Th71J3Y3hIqQP168YOZ6r1w/6eU2Hv8hV0cVbH/JJXY73NLEfMHYzZtD1PfkqG1agF5TK6gX0bo
-Dyep+aREv4DyCwwr5L/4WEBB3XqeIp2ALR+yX1HW44HgOkUvCHTLmLSWJaeDo2kzINToY+VluaDm
-OI24pgn3Il+5FGiSI5Pj4kw8rifb/ydLAwz/Fjz+0sFuzPDv/DXSSRm5ocbY9skJLiAFCeswMKsq
-cgaU+6uL79AHotF64bMG++8jX0G3dLtXRWnNb9nMhbnJ7wHq59bUgVPZXfJt3CsWSIeMBXVYOYr7
-52lkNjM7+fqquse5vXepNL77RIqrMp8Nvno6bmQbh6/k4NFqpzIDPoUEUVrBFdFvkrKkWX5Sn90a
-e6c90+6HYwVUbUV5OMmIe8IPTJJSmZxSaLaN97FZTgsGUlxdjqGGEpcaaJAkJDBBC/6mVB8QsIqw
-E5DkzyVBLkaVze5GeThAkXS1cOyKexpuvfKu2k10O0RMMk5S/ocQfgVtok9P2uIOky+jPJ8cruvS
-yAWuxr5a0nx4d6McMqzInaG9OEO+yFodQJ1O4vHRTf3zO0XfNj+1TyPjc7hRaetyyV0iJByxH/MX
-H9nNLNvDs97lUND5gveDQ2Twv1KBdzesdMaQORw/v5PAy0cZ8h3l/3G14kWYsdD8+LpJ5hkEXv1S
-DFjzkGj7qym2Kc8wmgyPWsO0Y+e7G1sNM+URVcxHKlAcsD7YLvAbd8itcl7RBNaUvzn6DCKm+/pt
-ukLYXpUiAnznFdbI3fkDJZlb2BAWtCvAFc6ZSjrU3VBdIhJJi20TGvr0kc+vKnvTYJwC1XwknZOk
-NvY8QU6AS6RWNoeN5htQsj58MPb85enER2XPmdtx0iL3nJCiKOKvCzTTxHQy75ERMb6Fg9+WAhu0
-I8NmlGhIpP66cCtLeabmYDq8AV3fQXSbDFTVNJloQuygHoXcR0jVACV4bnIloSo2Hphf0kEPNYAq
-cU4KZ2FJGQxu7VxLOaz159t+CatvpvC0iknwukV3sLFCn0F+R9wHXeX+cQK+jjAYePKz8EO+9Giu
-UbdlS5igQ6prSxW63O1ixW7wH7f77gooYjY/lhP+JrXes4hWYk1qGmKBA/GQSrQ2WpIW+nmLjf2i
-2lEiFVE6RtiUlpPbdlZP2AAcTS+wKMjRoW+WyM1smODNJ85o8m+sQjzowrod1ZBCjqXJeJColJg9
-Nfq5Gd+LHvqJSeaEeaCAF//jOCRpS91YJCrJ2sMII1UxgxsuvLn92I5MylQ2baOgszIEFMUXVbq2
-KJ4uZ2dc5AjNah8f3FuWy9QncAk4eWbPDk607Fvi38iQbbgHQXGSdyTaaxagfED1bwb+0JMyBSRa
-AZI8y17vpFdR6njpIaRIFaboCDLJjucLUtjeXpO8QAswNZvtv9OYjEF5ZLh86C0ZebJjYjuqIFwa
-zHVcVj7Q98nM04MhYW0XCfgHUJUWqnN8wxQHgr9Wp9D/zrLLYibW7vhZFNQCrdCtelJ5HRCHz7Fx
-JtyoUUqfLL1zHNV3pvvQ/s/jKkoRFa34n/mhepXKZOZVoOXT0kMNzlHnug8tbp32Rr5H3e96thRG
-GzqNaLg54JC5+tHBaOc0Lgmr6OJ2LS9raFU4+YezI9GDuOvNWrJpDqrcxMwjqayQp+sSZh23PWAY
-xJQH5qrIrAcc4ivt4PG5r60uQkYd6QaDHys5+xxoitL7fiWqCNAYQxVCncHXqSnz5Ay2sgdlODwB
-0GcS338rbpdt3UtVnaZN0O3NGnUMt7cNyz3sltRKT46XD+H6GGS3l4Izl53C6LiYil620Yihl4/2
-TDrPw73yKnEb/lqs5TC6XgrELnYD2JTpooHlKrHvnCcndBCX7U1eyHBpxMWupU0ow1w/tohvK4eS
-y03rbHuJ1TpqySiDCxnHGsKBsvJ4l7cg6cl5dmEiLjZ5yqKnsug1PdXmLDs89cTVOJa8cUJJ7SXu
-EoAki5iKrCP5nsIcyGE2j4Q/d/2mZSKQY9f1I5593PswBbgifeyYATymRUVXyDBCeXCpauSet1c5
-nu3BqoX9Cch95WN3rvKUSHoqeN5UL52tUS9nz5g7moLcDGDl5nTeHXn9CnkQC7ZbveQ++bKxZMrJ
-ay+XwNX8IdR9xjHkSPX/k+s7jVG0C2i2YAgPJnjXYlB0gen8LFxnO8DrmCpvToTnD68kh5C2fLjv
-dcIzEzQVUFOTWmZZJ6QD2hPn0zWCGQslG94FcniVNwZYdzmpkwc6kPGnUc0wOD0xzuQ9hwJyV3qU
-U64E0p7hqotFYVLAu5MPnveXyPV8zbIQgFqNGJDt5v+FO1aVJoeAlLHRSUBA54Yt7JGFWcBOgzxb
-kwwKHb3f9N7ikOE2BDVvfnC4y+4Iouh7iJgzeHNZOGAAisSgMCFf4iVy1MkXmwXktdMKk64xipHk
-sjgYZnsUfMeOHW48rRaADJSJ4TnMOkFFrO5S4r44mkBtsrWJcJb94Jf5DKsj4YOrTc7JUiFI011m
-hDm6VU5agpzaZwYBz5G3htC3GN3PRi7Z3o9UprYaq1LlVf9QXK0EFv2VEjHz7e03TB05eh5ULks7
-8isHsbIcmQY/i3/mVgg5NJVF1LD8pzqf6ELuhz3T7Vk/8DEwTVm42p1oWUGGK5vH3sQaVsdHKDo8
-6m8QQmVUoC1rxZtjqQlo/1MOz6+yzDYq51Z8dj+MtmIDxgNZ+hpjbIk5O4qB1OUVe/YSw3HyCJOM
-XMbqggpW3XnmorkPDEyiTsbM8D1oaYKs5wrd8uWgX9MKdflnaeGrhq7/tcTfVUCN52LrBFPPibt0
-02fPajkW2lXtsL6S4cp1DJvhpE+VL+XI4g+RXYV22pRzT/pzTdQnV4Kuz3xPE0p6ujcspsPnrsFt
-MGaQXBzV6VdDqmMmLcbHk8b0HErRWviBhXqY8c6iZJa3g3iQev8SUztVM43ZpjVvMxv3MVFvQ9su
-R7ojeSoE8pDTh7wNcGehRHXE8jELBNz1Kz9z9Mm8PyyT8Q7H5O1OPhZVHN5SEuheZoH2mwJIMWdR
-UmNHxvMPdKcRH5aRS/Mu1ES+I27bYZ3knTeee6qf2N5txBAdsxct2ly3Bzm5rVbIosRUoB9SGGVZ
-XA2c6KsSihnD4F7b0HozW/Ug8QCguIdZhlEesLeH1ODc0rQYZxO3VCJo+6etWzTTfSDTLnEoNXLu
-JmGo2Cyl6OZBKu/umQhkOt2xLcHM5phHph/UrnaFPdNp/a6Ywn4oXAtM7gho/yT9tNKYggi8boyT
-Lw2in6yB9MSV+YGqnxKvuA2DRgySGcmibBmRfJho6bU/FTkUmjjXyeTVGNCCxiHZnuqTCn1mpCxn
-DSeMsIFUP9EtzH+p+okxSo2XmTUfIf2m4632WSrRxdHnfdg+V5Ao31hKQljyk7sDeeDdLm71vEKQ
-vVR28JQ9lkpAmOo+f7vEl7SkKkQAQXp5rAN4p2/TzpkdZ408zDqxPBt1w/gRWOa2Qp3z4XLeVWMy
-WsZHEP3tf0ie01kCahpUOSgbIBaSV+CvUgc8lsTYTn7lYX3EpuRP8A2zt4gvDrSAMTBvO5zMT4va
-N7LDnhPgvW2oaQDyGZrkhguSnT7+CnDrVjjOXZ0rnwv7PtuDvUec/z3w5F+n/Rtw7IQpjDPHiA1b
-ortzHUv3m3NMhXNik6u1FMevU6OI/0Z82t34jHBdMHClgWQVFbTwf5FzBaXFOQlgBHpMZzEJgoEj
-uXyKEx0v/mI/995gxBtncGjtTwV2TaYLvuE2mGJ7GENGHV1Slso6QASJRObqERQ93GZCMvrZt68J
-NlCjfO6Wnue16ohXXbt+a6wWFod+RMXdmJ/ZSjEW7CErhKE9a2IkUV5547cDM3ZejchDuH6rY8NX
-yGqGUZengCE+Edhr1CABrTBsErWNy/1RuzscyeNdSt94HxusAYCbeCTq8/5csCi1GSab8CmUsbRa
-MIY4BoFQMmEJichDmYqqbmWPC8knkxPDjIRSd48+OLWM1nFAWDX4aZNyW/AL0bpzWkskbqFBZqo/
-kB038SaOzi728qg7MPRDFQ5RuX6eJT4XJH4zsn+s58zhBJBxZAtW4dy5qxqPXRNp3VuY+zignYLH
-6so6RbIFCMRADuMO3YEbIowoqenUUVCbN6erAEKog9ALTwvbSgN8IYQpIW314iBf6vGXkBoK3afd
-IqLqIL7s9admuA7KkJLl9nZ+bGgtBpCPHr64lps5SLj+2mrPFMLzs1khjOQtu9hUTymSa1wwnIjr
-pdjUjWevWkBw5oA7P/l+8Kciw+NLkvwfPEZlWmE/XdJJiEZORpKUjDnRZ8023ZJqq6M6bOGjr1tA
-pyPFb6IVe9+Ii+3mqGQAEpxax0G9RPsedy3IiOnS6D84mJx9/006u2kFPhG0j8cxgJcbM+ioTLqU
-4KDXtz34Ev9ZcHxYq9xev64zRTan1R0/MEDZBfkGTBkpLu7XO0i8M6vKCM4vYqPb5yRwGQSSdJBQ
-Mzb9JWzCMpvsRM6ku33274cZ7sP6h+mnUahZqQoUVBgldkiRW8fXhLtkrqHffsufL+N068/V+pa8
-SHf200Dr2+CqA9WF4GbN8t+VAT0tqgPJ8yytXgTK7c1C/3I/DW9D06cY2QN1wvk4AshLW72VVJRv
-CdoGAd29B9HJ5WhqRNFvl0+193xSDNH80CDiknGg7utKC7SVVYwYyj41dhQMlxpqqOkzE6wOrvUZ
-aBf0usKHl51miBVK/IgxMCZSCMQye6F0w/2/Kbvbt9tvs6xXsA7FRIUvHV5fnPzoWUd2rgqlQFa/
-4TEMEoisJGKYpqZ+nxWZ5p/59NnRLgA1pvK7Q0RRipT6ni28LKTZ8B4HsgF+tnGSqSuFLqtQJeIN
-dptdzvh5SlLWa33uMparemfsKpgiCX8bHte4N5y6QM87KggSfqCWriGiETMrDvurR7y9t7oJH5nZ
-SthndT5NaxbjA8/j4bSakDwLWaukP32HXzvV7pHuKQ2r2by6v4u2LQiFDpbkDkfU/FN8nsqqk6t6
-6P5S/u9t3IGecxbKAhB9mcvUAH+yOVOYniTDRoOOOuKvrPq0dOIse16hY6xKfSSHHPrERCXsvrRU
-i+ju+hc8w2mz/BVhXiYbajuBHZy4lkoPej807S2OUzOgFQjaz+s00ED58ZgtreuFw8m5H6YjkH92
-kyQVS6zeaCspTzQT1UkhL736VsCvk8PF6J0r2RqE2gvBo0xxm1eVAaX4K1mDYzGJPezYfP5MpaAt
-PptjzwBTbiJN/3bGuPWeuAqSdXQprUUMnGdHd6iSaTT49+F/c7d60CW+DbuTGBAJJIzsV831Vsng
-DTfaHAOkqSn4Tk3mu33N6LqsNJ5uuJN1/erNc7M33dl6fgQC/xwZIm1iZbezxsi9+Pl4NdiTG4vO
-Foy2sJg9Wdw5zFdApVmEJYoskjF44LbgMJgjoBqQlV/HQiSJrp1e9Gyl/D4/Ol3akv8EZ5bh2Quj
-GBe0NhXwqtILiydJLOOSS/waAXA2/06w3oTMvTWk5haFr49anQtj2BbiMukidH0zHYthxH4xlaKt
-3YeXYN0jx/0ZYmSzzyznMO8PdUYaFj18/Ky7Nx0+AznN17O5cHgA3SY1MbtcY1tkPNMys+D1KGux
-cCGNcvSvEDZpQDel8MkHyNMvcVyMhn1vG73DNL/SR5VIjQPAdFQuPZiFOprorjODQC+iLw/dIKk9
-8YC2BkW2H0oQvqFb4LiYMcqwW8g446rFMNqGf00RR7VVpQXIp6e0GaMWY6WTJQWl0rHDBHOI7Bvn
-Vwng1iqE44jrl0xRwF4406vhmDNr4n60kbUDTDlZ9Ew1fS1b09HkKjTXW//+GesX0tsDUHLa55DN
-bMgYAI3c4TWxRh9g3NSV5URmY3irA+H4qpQaNk7Ie+TvlYOwAqfhQTHdYCX4In4l8olEE5ApcC7A
-bZFKqh6BeeaYNsKftFMCtqBuab+BRJy86BE2v4WkE79Q3AQ+mDgsqjobpC+gmi1j1nOa9+jxy8zU
-5Sk9QeDoOXr/IYTTCSomIEXTGeXgd25Vnzeil819ah0H6xuGPOBDPGO3TJjjwRWjFght5jMb6bD+
-n2B5Jr4sZQkn5jk3MI0b0vOtFjcjdLhfIEZ+fKHuzKJf02eu2VgCDJRxx+iWnzKg1+fk67GwhEGT
-u2G=
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+class RemoteWebDriver implements WebDriver {
+
+  protected $executor;
+  protected $mouse;
+  protected $keyboard;
+  protected $touch;
+
+  protected function __construct() {}
+
+  /**
+   * Construct the RemoteWebDriver by a desired capabilities.
+   *
+   * @param string $url The url of the remote server
+   * @param array $desired_capabilities The webdriver desired capabilities
+   * @param int $timeout_in_ms
+   * @return RemoteWebDriver
+   */
+  public static function create(
+    $url = 'http://localhost:4444/wd/hub',
+    $desired_capabilities = array(),
+    $timeout_in_ms = 300000
+  ) {
+    $url = preg_replace('#/+$#', '', $url);
+    $command = array(
+      'url' => $url,
+      'name' => 'newSession',
+      'parameters' => array('desiredCapabilities' => $desired_capabilities),
+    );
+    $response = HttpCommandExecutor::remoteExecute(
+      $command,
+      array(
+        CURLOPT_CONNECTTIMEOUT_MS => $timeout_in_ms,
+      )
+    );
+
+    $driver = new static();
+    $executor = new HttpCommandExecutor(
+      $url,
+      $response['sessionId']
+    );
+    return $driver->setCommandExecutor($executor);
+  }
+
+  /**
+   * [Experimental] Construct the RemoteWebDriver by an existing session.
+   *
+   * This constructor can boost the performance a lot by reusing the same
+   * browser for the whole test suite. You do not have to pass the desired
+   * capabilities because the session was created before.
+   *
+   * @param string $url The url of the remote server
+   * @param string $session_id The existing session id
+   * @return RemoteWebDriver
+   */
+  public static function createBySessionID(
+    $session_id,
+    $url = 'http://localhost:4444/wd/hub'
+  ) {
+    $driver = new static();
+    $driver->setCommandExecutor(new HttpCommandExecutor($url, $session_id));
+    return $driver;
+  }
+
+  /**
+   * Close the current window.
+   *
+   * @return WebDriver The current instance.
+   */
+  public function close() {
+    $this->executor->execute('closeCurrentWindow', array());
+
+    return $this;
+  }
+
+  /**
+   * Find the first WebDriverElement using the given mechanism.
+   *
+   * @param WebDriverBy $by
+   * @return WebDriverElement NoSuchElementWebDriverError is thrown in
+   *    HttpCommandExecutor if no element is found.
+   * @see WebDriverBy
+   */
+  public function findElement(WebDriverBy $by) {
+    $params = array('using' => $by->getMechanism(), 'value' => $by->getValue());
+    $raw_element = $this->executor->execute('findElement', $params);
+
+    return $this->newElement($raw_element['ELEMENT']);
+  }
+
+  /**
+   * Find all WebDriverElements within the current page using the given
+   * mechanism.
+   *
+   * @param WebDriverBy $by
+   * @return array A list of all WebDriverElements, or an empty array if
+   *    nothing matches
+   * @see WebDriverBy
+   */
+  public function findElements(WebDriverBy $by) {
+    $params = array('using' => $by->getMechanism(), 'value' => $by->getValue());
+    $raw_elements = $this->executor->execute('findElements', $params);
+
+    $elements = array();
+    foreach ($raw_elements as $raw_element) {
+      $elements[] = $this->newElement($raw_element['ELEMENT']);
+    }
+    return $elements;
+  }
+
+  /**
+   * Load a new web page in the current browser window.
+   *
+   * @return WebDriver The current instance.
+   */
+  public function get($url) {
+    $params = array('url' => (string)$url);
+    $this->executor->execute('get', $params);
+
+    return $this;
+  }
+
+  /**
+   * Get a string representing the current URL that the browser is looking at.
+   *
+   * @return string The current URL.
+   */
+  public function getCurrentURL() {
+    return $this->executor->execute('getCurrentURL');
+  }
+
+  /**
+   * Get the source of the last loaded page.
+   *
+   * @return string The current page source.
+   */
+  public function getPageSource() {
+    return $this->executor->execute('getPageSource');
+  }
+
+  /**
+   * Get the title of the current page.
+   *
+   * @return string The title of the current page.
+   */
+  public function getTitle() {
+    return $this->executor->execute('getTitle');
+  }
+
+  /**
+   * Return an opaque handle to this window that uniquely identifies it within
+   * this driver instance.
+   *
+   * @return string The current window handle.
+   */
+  public function getWindowHandle() {
+    return $this->executor->execute('getCurrentWindowHandle', array());
+  }
+
+  /**
+   * Get all window handles available to the current session.
+   *
+   * @return array An array of string containing all available window handles.
+   */
+  public function getWindowHandles() {
+    return $this->executor->execute('getWindowHandles', array());
+  }
+
+  /**
+   * Quits this driver, closing every associated window.
+   *
+   * @return void
+   */
+  public function quit() {
+    $this->executor->execute('quit');
+    $this->executor = null;
+  }
+
+  /**
+   * Prepare arguments for JavaScript injection
+   *
+   * @param array $arguments
+   * @return array
+   */
+  private function prepareScriptArguments(array $arguments) {
+    $args = array();
+    foreach ($arguments as $arg) {
+      if ($arg instanceof WebDriverElement) {
+        array_push($args, array('ELEMENT' => $arg->getID()));
+      } else {
+        if (is_array($arg)) {
+          $arg = $this->prepareScriptArguments($arg);
+        }
+        array_push($args, $arg);
+      }
+    }
+    return $args;
+  }
+
+  /**
+   * Inject a snippet of JavaScript into the page for execution in the context
+   * of the currently selected frame. The executed script is assumed to be
+   * synchronous and the result of evaluating the script will be returned.
+   *
+   * @param string $script The script to inject.
+   * @param array $arguments The arguments of the script.
+   * @return mixed The return value of the script.
+   */
+  public function executeScript($script, array $arguments = array()) {
+    $params = array(
+      'script' => $script,
+      'args' => $this->prepareScriptArguments($arguments),
+    );
+    $response = $this->executor->execute('executeScript', $params);
+    return $response;
+  }
+
+  /**
+   * Take a screenshot of the current page.
+   *
+   * @param $save_as The path of the screenshot to be saved.
+   * @return string The screenshot in PNG format.
+   */
+  public function takeScreenshot($save_as = null) {
+    $screenshot = base64_decode(
+      $this->executor->execute('takeScreenshot')
+    );
+    if ($save_as) {
+      file_put_contents($save_as, $screenshot);
+    }
+    return $screenshot;
+  }
+
+  /**
+   * Construct a new WebDriverWait by the current WebDriver instance.
+   * Sample usage:
+   *
+   *   $driver->wait(20, 1000)->until(
+   *     WebDriverExpectedCondition::titleIs('WebDriver Page')
+   *   );
+   *
+   * @return WebDriverWait
+   */
+  public function wait(
+      $timeout_in_second = 30,
+      $interval_in_millisecond = 250) {
+    return new WebDriverWait(
+      $this, $timeout_in_second, $interval_in_millisecond
+    );
+  }
+
+  /**
+   * An abstraction for managing stuff you would do in a browser menu. For
+   * example, adding and deleting cookies.
+   *
+   * @return WebDriverOptions
+   */
+  public function manage() {
+    return new WebDriverOptions($this->executor);
+  }
+
+  /**
+   * An abstraction allowing the driver to access the browser's history and to
+   * navigate to a given URL.
+   *
+   * @return WebDriverNavigation
+   * @see WebDriverNavigation
+   */
+  public function navigate() {
+    return new WebDriverNavigation($this->executor);
+  }
+
+  /**
+   * Switch to a different window or frame.
+   *
+   * @return WebDriverTargetLocator
+   * @see WebDriverTargetLocator
+   */
+  public function switchTo() {
+    return new WebDriverTargetLocator($this->executor, $this);
+  }
+
+  /**
+   * @return WebDriverMouse
+   */
+  public function getMouse() {
+    if (!$this->mouse) {
+      $this->mouse = new RemoteMouse($this->executor);
+    }
+    return $this->mouse;
+  }
+
+  /**
+   * @return WebDriverKeyboard
+   */
+  public function getKeyboard() {
+    if (!$this->keyboard) {
+      $this->keyboard = new RemoteKeyboard($this->executor);
+    }
+    return $this->keyboard;
+  }
+
+  /**
+   * @return WebDriverTouchScreen
+   */
+  public function getTouch() {
+    if (!$this->touch) {
+      $this->touch = new RemoteTouchScreen($this->executor);
+    }
+    return $this->touch;
+  }
+
+  /**
+   * Construct a new action builder.
+   *
+   * @return WebDriverActions
+   */
+  public function action() {
+    return new WebDriverActions($this);
+  }
+
+  /**
+   * Get the element on the page that currently has focus.
+   *
+   * @return WebDriverElement
+   */
+  public function getActiveElement() {
+    $response = $this->executor->execute('getActiveElement');
+    return $this->newElement($response['ELEMENT']);
+  }
+
+  /**
+   * Return the WebDriverElement with the given id.
+   *
+   * @param string $id The id of the element to be created.
+   * @return WebDriverElement
+   */
+  private function newElement($id) {
+    return new RemoteWebElement($this->executor, $id);
+  }
+
+  /**
+   * Set the command executor of this RemoteWebdrver
+   *
+   * @param WebDriverCommandExecutor $executor
+   * @return WebDriver
+   */
+  public function setCommandExecutor(WebDriverCommandExecutor $executor) {
+    $this->executor = $executor;
+    return $this;
+  }
+
+  /**
+   * Set the command executor of this RemoteWebdriver
+   *
+   * @return WebDriverCommandExecutor
+   */
+  public function getCommandExecutor() {
+    return $this->executor;
+  }
+  /**
+   * Get current selenium sessionID
+   * @return sessionID
+   */
+  public function getSessionID() {
+    return $this->executor->getSessionID();
+  }
+}

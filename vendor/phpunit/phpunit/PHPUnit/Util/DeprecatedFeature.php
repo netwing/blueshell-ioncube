@@ -1,29 +1,102 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPsScea4G0XTs+P0tOYKHZOoeyISAiOZy8jGxUfsMVuwTUPo91cqvQFhK7i3H9gwcKyx2fbNb
-1MWh2WqzI/FswMx+KysdK3VIkrULf3XmlIKx4d5Ndsg8SC/V/sq/6xhByAb6f5474yXxWELS8qFa
-syPWuwDrnQVlcuMq7jP3o7a9aA1DPwo077OH5jjMj58xRpcVcRZTw5E7y/sD4hGSeFdqEvXcIU7k
-LV/32YdB5XEl02F6eoS+DwzHAE4xzt2gh9fl143SQNImOkJ/Pqc8VgToUy78B130VGFhvuoTQ2mx
-ID6jDQvXzwVHnh0um8RJ+nF/4//uC5YmWIMAGHXaKOkK3Km/KX02r95qBIG3bFSt2jqor3LdroOd
-CrG+0UAUI5cCKNfLjp8qBvjiducuKMyFVlU8UaEvy3XsvfH6BMc/1XCqE49zrKuZ9fIIqfRIWJOY
-RmWdhE5HUhf/qezjMIxyvWR9xDcG0DpEon21TjRsy0arwaLO+35tNlUy3CkjCDlZlmT4RM8vsk1D
-GCFvcweYhTawiQzYrQWizsnsgtdX7McHMVraoaYmEdqSSRIPvMGVTL7d++jAdzEZhLwnEeDXE6m0
-W3VLHRfKAJsw73ipMeI4RX5lOh9HqmjLn9pKoVXzwaL7S0rwzzW2IdRRumK3mqSzUpASkN/cGkSO
-LQmbe6d1+xg3Zw4TJcuKAdGA1XpgkpE5kB+eikK/SgplyFQm3yQL3qSlPDCOeeG4llp+OkTDnfrR
-81/NwQXGeFwc+9MQ4pZonzLrt0DsN3dsT8OIzMaQQBjBHGTxk/XX0K7JmgADuYP/JnQmgWh/EecD
-ql6Pa2Llgs+/drBEVXb4NTP+OEcqcB34aRYJII81TiNykK707mngn1FKiTL8bbkXp3jSW8aSZjWp
-savBIzEasvb5Dw3pRrIrbnJxHfPQ8otzluU3lk9Male3dPF6VK7yTvE6niLBRhv32r9QywEcR/Iz
-ZMSIq8O68mGzJwJ57cO6jtJNkFUVsS6QEHNWEC6wMcCQ8MyXgyBrimQ4CCOgy6hcy9O56n4wZdrB
-brt5RBqse+0Sp1uso2tioiijzU2I9B8qOAYMpKKZ3SPgRoghS2lsbMi9dT0ehg49nPWY2iYVzC7E
-sjkU4qa1puao8vO/ESE/HmHvN0nDA+eNEoiS/7mHhKi70OwtfcHWiLQG/P2kTAN0dHniEC9IyBvJ
-pBZK2jAqmv+yvPPWNd6NtNEIq0pF0x8m2aWnAQW/+QF/y7Cu+JxtJV6Crf5+SYTno02vljCC5qid
-rKcYySnLEGr3H6QyITYtlA1mtdXzBkeW38X5TWpdItDIdl9pHQSAJGLAbzyPWt9GdPwPQSMf6M0u
-xaVRaPoh0kzYTBFKaOP1y5c81VvIQGHFvbxIPLLHLi/ixwKf69LZkaBxVYqZb4g4t5/JRl4KkV5L
-GIhRpGkl7WbcFnOcXtoIBRNYK9mWSr8KXn8A7WhChuh/UZIxdGiTgydglcI+u3GdHRaDDlQ57VW/
-YcH1e1yi6hF3jb2L1Prrx5nnVn92f20oBj2J6QAHxCSOTEMGXsLXpIr/XwR5p8x9vUK6SSExliuF
-bEK7vwa0VmFIpJM62oXCdnv6uwLyu9NjUywoWXg9QrSnK0ngRigtyS22K+rKU7o06dB08uFHSSi2
-0R8jusmuki/gTlCnhV6dPchxvPzrdnokhl+My0T4kbIc0Mb7MXWtOCZRnME1JS8Gv1VSXXv3Xy1Q
-mzd+70MTOaQaOZP3yuFdaWAuZowyRbkgNLrbuNdwSA5CzudcRsa9VBdx8F88/Cd5LZ0MKUo7zqve
-j2L2rkQOP4kLXjiOOW6OzXFDFpzXv9GNosHSgsN0UEME/eKeaZfVJHUs9HXuq4EVkIsZhomTQ060
-+vvrBuRM3oZ1B/DxdIfqNAotqvnA+fq5j/CvlSfZFGu=
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Ralph Schindler <ralph.schindler@zend.com>
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.5.7
+ */
+
+/**
+ * Class to hold the information about a deprecated feature that was used
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Ralph Schindler <ralph.schindler@zend.com>
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Interface available since Release 3.5.7
+ */
+class PHPUnit_Util_DeprecatedFeature
+{
+    /**
+     * @var array
+     */
+    protected $traceInfo = array();
+
+    /**
+     * @var string
+     */
+    protected $message = NULL;
+
+    /**
+     * @param  string $message
+     * @param  array  $traceInfo
+     */
+    public function __construct($message, array $traceInfo = array())
+    {
+        $this->message   = $message;
+        $this->traceInfo = $traceInfo;
+    }
+
+    /**
+     * Build a string representation of the deprecated feature that was raised
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $string = '';
+
+        if (isset($this->traceInfo['file'])) {
+            $string .= $this->traceInfo['file'];
+
+            if (isset($this->traceInfo['line'])) {
+                $string .= ':' . $this->traceInfo['line'] . ' - ';
+            }
+        }
+
+        $string .= $this->message;
+
+        return $string;
+    }
+}

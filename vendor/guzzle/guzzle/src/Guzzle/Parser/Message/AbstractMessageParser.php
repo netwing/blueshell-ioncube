@@ -1,40 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-6FvPiflaxjX2Lgi9fmDC
+<?php
+
+namespace Guzzle\Parser\Message;
+
+/**
+ * Implements shared message parsing functionality
+ */
+abstract class AbstractMessageParser implements MessageParserInterface
+{
+    /**
+     * Create URL parts from HTTP message parts
+     *
+     * @param string $requestUrl Associated URL
+     * @param array  $parts      HTTP message parts
+     *
+     * @return array
+     */
+    protected function getUrlPartsFromMessage($requestUrl, array $parts)
+    {
+        // Parse the URL information from the message
+        $urlParts = array(
+            'path'   => $requestUrl,
+            'scheme' => 'http'
+        );
+
+        // Check for the Host header
+        if (isset($parts['headers']['Host'])) {
+            $urlParts['host'] = $parts['headers']['Host'];
+        } elseif (isset($parts['headers']['host'])) {
+            $urlParts['host'] = $parts['headers']['host'];
+        } else {
+            $urlParts['host'] = null;
+        }
+
+        if (false === strpos($urlParts['host'], ':')) {
+            $urlParts['port'] = '';
+        } else {
+            $hostParts = explode(':', $urlParts['host']);
+            $urlParts['host'] = trim($hostParts[0]);
+            $urlParts['port'] = (int) trim($hostParts[1]);
+            if ($urlParts['port'] == 443) {
+                $urlParts['scheme'] = 'https';
+            }
+        }
+
+        // Check if a query is present
+        $path = $urlParts['path'];
+        $qpos = strpos($path, '?');
+        if ($qpos) {
+            $urlParts['query'] = substr($path, $qpos + 1);
+            $urlParts['path'] = substr($path, 0, $qpos);
+        } else {
+            $urlParts['query'] = '';
+        }
+
+        return $urlParts;
+    }
+}

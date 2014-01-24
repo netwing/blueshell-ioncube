@@ -1,121 +1,512 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ZvDtEcX5s6LA9XsrkQSBFcdbKeTghBkoWo3I
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.1.0
+ */
+
+/**
+ * Represents a directory in the code coverage information tree.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.1.0
+ */
+class PHP_CodeCoverage_Report_Node_Directory extends PHP_CodeCoverage_Report_Node implements IteratorAggregate
+{
+    /**
+     * @var PHP_CodeCoverage_Report_Node[]
+     */
+    protected $children = array();
+
+    /**
+     * @var PHP_CodeCoverage_Report_Node_Directory[]
+     */
+    protected $directories = array();
+
+    /**
+     * @var PHP_CodeCoverage_Report_Node_File[]
+     */
+    protected $files = array();
+
+    /**
+     * @var array
+     */
+    protected $classes;
+
+    /**
+     * @var array
+     */
+    protected $traits;
+
+    /**
+     * @var array
+     */
+    protected $functions;
+
+    /**
+     * @var array
+     */
+    protected $linesOfCode = NULL;
+
+    /**
+     * @var integer
+     */
+    protected $numFiles = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numExecutableLines = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numExecutedLines = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numClasses = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numTestedClasses = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numTraits = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numTestedTraits = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numMethods = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numTestedMethods = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numFunctions = -1;
+
+    /**
+     * @var integer
+     */
+    protected $numTestedFunctions = -1;
+
+    /**
+     * Returns the number of files in/under this node.
+     *
+     * @return integer
+     */
+    public function count()
+    {
+        if ($this->numFiles == -1) {
+            $this->numFiles = 0;
+
+            foreach ($this->children as $child) {
+                $this->numFiles += count($child);
+            }
+        }
+
+        return $this->numFiles;
+    }
+
+    /**
+     * Returns an iterator for this node.
+     *
+     * @return RecursiveIteratorIterator
+     */
+    public function getIterator()
+    {
+        return new RecursiveIteratorIterator(
+          new PHP_CodeCoverage_Report_Node_Iterator($this),
+          RecursiveIteratorIterator::SELF_FIRST
+        );
+    }
+
+    /**
+     * Adds a new directory.
+     *
+     * @param  string $name
+     * @return PHP_CodeCoverage_Report_Node_Directory
+     */
+    public function addDirectory($name)
+    {
+        $directory = new PHP_CodeCoverage_Report_Node_Directory($name, $this);
+
+        $this->children[]    = $directory;
+        $this->directories[] = &$this->children[count($this->children) - 1];
+
+        return $directory;
+    }
+
+    /**
+     * Adds a new file.
+     *
+     * @param  string  $name
+     * @param  array   $coverageData
+     * @param  array   $testData
+     * @param  boolean $cacheTokens
+     * @return PHP_CodeCoverage_Report_Node_File
+     * @throws PHP_CodeCoverage_Exception
+     */
+    public function addFile($name, array $coverageData, array $testData, $cacheTokens)
+    {
+        $file = new PHP_CodeCoverage_Report_Node_File(
+          $name, $this, $coverageData, $testData, $cacheTokens
+        );
+
+        $this->children[] = $file;
+        $this->files[]    = &$this->children[count($this->children) - 1];
+
+        $this->numExecutableLines = -1;
+        $this->numExecutedLines   = -1;
+
+        return $file;
+    }
+
+    /**
+     * Returns the directories in this directory.
+     *
+     * @return array
+     */
+    public function getDirectories()
+    {
+        return $this->directories;
+    }
+
+    /**
+     * Returns the files in this directory.
+     *
+     * @return array
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * Returns the child nodes of this node.
+     *
+     * @return array
+     */
+    public function getChildNodes()
+    {
+        return $this->children;
+    }
+
+    /**
+     * Returns the classes of this node.
+     *
+     * @return array
+     */
+    public function getClasses()
+    {
+        if ($this->classes === NULL) {
+            $this->classes = array();
+
+            foreach ($this->children as $child) {
+                $this->classes = array_merge(
+                  $this->classes, $child->getClasses()
+                );
+            }
+        }
+
+        return $this->classes;
+    }
+
+    /**
+     * Returns the traits of this node.
+     *
+     * @return array
+     */
+    public function getTraits()
+    {
+        if ($this->traits === NULL) {
+            $this->traits = array();
+
+            foreach ($this->children as $child) {
+                $this->traits = array_merge(
+                  $this->traits, $child->getTraits()
+                );
+            }
+        }
+
+        return $this->traits;
+    }
+
+    /**
+     * Returns the functions of this node.
+     *
+     * @return array
+     */
+    public function getFunctions()
+    {
+        if ($this->functions === NULL) {
+            $this->functions = array();
+
+            foreach ($this->children as $child) {
+                $this->functions = array_merge(
+                  $this->functions, $child->getFunctions()
+                );
+            }
+        }
+
+        return $this->functions;
+    }
+
+    /**
+     * Returns the LOC/CLOC/NCLOC of this node.
+     *
+     * @return array
+     */
+    public function getLinesOfCode()
+    {
+        if ($this->linesOfCode === NULL) {
+            $this->linesOfCode = array('loc' => 0, 'cloc' => 0, 'ncloc' => 0);
+
+            foreach ($this->children as $child) {
+                $linesOfCode = $child->getLinesOfCode();
+
+                $this->linesOfCode['loc']   += $linesOfCode['loc'];
+                $this->linesOfCode['cloc']  += $linesOfCode['cloc'];
+                $this->linesOfCode['ncloc'] += $linesOfCode['ncloc'];
+            }
+        }
+
+        return $this->linesOfCode;
+    }
+
+    /**
+     * Returns the number of executable lines.
+     *
+     * @return integer
+     */
+    public function getNumExecutableLines()
+    {
+        if ($this->numExecutableLines == -1) {
+            $this->numExecutableLines = 0;
+
+            foreach ($this->children as $child) {
+                $this->numExecutableLines += $child->getNumExecutableLines();
+            }
+        }
+
+        return $this->numExecutableLines;
+    }
+
+    /**
+     * Returns the number of executed lines.
+     *
+     * @return integer
+     */
+    public function getNumExecutedLines()
+    {
+        if ($this->numExecutedLines == -1) {
+            $this->numExecutedLines = 0;
+
+            foreach ($this->children as $child) {
+                $this->numExecutedLines += $child->getNumExecutedLines();
+            }
+        }
+
+        return $this->numExecutedLines;
+    }
+
+    /**
+     * Returns the number of classes.
+     *
+     * @return integer
+     */
+    public function getNumClasses()
+    {
+        if ($this->numClasses == -1) {
+            $this->numClasses = 0;
+
+            foreach ($this->children as $child) {
+                $this->numClasses += $child->getNumClasses();
+            }
+        }
+
+        return $this->numClasses;
+    }
+
+    /**
+     * Returns the number of tested classes.
+     *
+     * @return integer
+     */
+    public function getNumTestedClasses()
+    {
+        if ($this->numTestedClasses == -1) {
+            $this->numTestedClasses = 0;
+
+            foreach ($this->children as $child) {
+                $this->numTestedClasses += $child->getNumTestedClasses();
+            }
+        }
+
+        return $this->numTestedClasses;
+    }
+
+    /**
+     * Returns the number of traits.
+     *
+     * @return integer
+     */
+    public function getNumTraits()
+    {
+        if ($this->numTraits == -1) {
+            $this->numTraits = 0;
+
+            foreach ($this->children as $child) {
+                $this->numTraits += $child->getNumTraits();
+            }
+        }
+
+        return $this->numTraits;
+    }
+
+    /**
+     * Returns the number of tested traits.
+     *
+     * @return integer
+     */
+    public function getNumTestedTraits()
+    {
+        if ($this->numTestedTraits == -1) {
+            $this->numTestedTraits = 0;
+
+            foreach ($this->children as $child) {
+                $this->numTestedTraits += $child->getNumTestedTraits();
+            }
+        }
+
+        return $this->numTestedTraits;
+    }
+
+    /**
+     * Returns the number of methods.
+     *
+     * @return integer
+     */
+    public function getNumMethods()
+    {
+        if ($this->numMethods == -1) {
+            $this->numMethods = 0;
+
+            foreach ($this->children as $child) {
+                $this->numMethods += $child->getNumMethods();
+            }
+        }
+
+        return $this->numMethods;
+    }
+
+    /**
+     * Returns the number of tested methods.
+     *
+     * @return integer
+     */
+    public function getNumTestedMethods()
+    {
+        if ($this->numTestedMethods == -1) {
+            $this->numTestedMethods = 0;
+
+            foreach ($this->children as $child) {
+                $this->numTestedMethods += $child->getNumTestedMethods();
+            }
+        }
+
+        return $this->numTestedMethods;
+    }
+
+    /**
+     * Returns the number of functions.
+     *
+     * @return integer
+     */
+    public function getNumFunctions()
+    {
+        if ($this->numFunctions == -1) {
+            $this->numFunctions = 0;
+
+            foreach ($this->children as $child) {
+                $this->numFunctions += $child->getNumFunctions();
+            }
+        }
+
+        return $this->numFunctions;
+    }
+
+    /**
+     * Returns the number of tested functions.
+     *
+     * @return integer
+     */
+    public function getNumTestedFunctions()
+    {
+        if ($this->numTestedFunctions == -1) {
+            $this->numTestedFunctions = 0;
+
+            foreach ($this->children as $child) {
+                $this->numTestedFunctions += $child->getNumTestedFunctions();
+            }
+        }
+
+        return $this->numTestedFunctions;
+    }
+}

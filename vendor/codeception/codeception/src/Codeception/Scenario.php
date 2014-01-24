@@ -1,91 +1,188 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception;
+ 
+class Scenario {
+    /**
+     * @var    \Codeception\TestCase
+     */
+    protected $test;
+
+    /**
+     * @var    array
+     */
+    protected $steps = array();
+
+    /**
+     * @var    string
+     */
+	protected $feature;
+    protected $currentStep = 0;
+    protected $running = false;
+    protected $preloadedSteps = array();
+    protected $blocker = null;
+    protected $groups = array();
+    protected $env = array();
+
+    /**
+     * Constructor.
+     *
+     * @param  \Codeception\TestCase $test
+     */
+    public function __construct(\Codeception\TestCase $test)
+    {
+		$this->test = $test;
+    }
+
+    public function group($group)
+    {
+        if (!is_array($group)) {
+            $this->groups[] = $group;
+            return;
+        }
+        foreach ($group as $t) {
+            $this->group($t);
+        }
+    }
+
+    public function env($env)
+    {
+        if (!is_array($env)) {
+            $this->env[] = $env;
+            return;
+        }
+        foreach ($env as $e) {
+            $this->env($e);
+        }
+    }
+       
+
+    public function groups()
+    {
+        $this->group(func_get_args());
+    }
+
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    public function getEnv()
+    {
+        return $this->env;
+    }
+
+	public function setFeature($feature) {
+	    $this->feature = $feature;
+	}
+
+    public function skip($reason = "")
+    {
+        $this->blocker = new \Codeception\Step\Skip($reason, array());
+    }
+
+    public function incomplete($reason = "")
+    {
+        $this->blocker = new \Codeception\Step\Incomplete($reason, array());
+    }
+
+    protected function ignore()
+    {
+        $this->blocker = new \Codeception\Step\Ignore;
+    }
+
+    public function runStep()
+    {
+        if (empty($this->steps)) return;
+
+        $step = $this->lastStep();
+        if (!$step->executed) {
+            $result = $this->test->runStep($step);
+            $this->currentStep++;
+            $step->executed = true;
+            return $result;
+        }
+    }
+
+    /**
+     * @return \Codeception\Step
+     */
+    protected function lastStep()
+    {
+        return end($this->steps);
+    }
+
+    public function addStep(\Codeception\Step $step)
+    {
+        $this->steps[] = $step;
+        return $this->test;
+    }
+
+    /**
+     * Returns the steps of this scenario.
+     *
+     * @return array
+     */
+    public function getSteps()
+    {
+        if (!$this->running) return $this->steps;
+        return $this->preloadedSteps;
+    }
+
+	public function getFeature() {
+	    return $this->feature;
+	}
+
+    public function getHtml()
+    {
+        $text = '';
+        foreach($this->getSteps() as $step) {
+            /** @var Step $step */
+            if ($step->getName() !== 'Comment') {
+                $text .= 'I ' . $step->getHtmlAction() . '<br/>';
+            } else {
+                $text .= trim($step->getHumanizedArguments(), '"') . '<br/>';
+            }
+        }
+        $text = str_replace(array('((', '))'), array('...', ''), $text);
+        $text = "<h3>" . strtoupper('I want to ' . $this->getFeature()) . "</h3>" . $text;
+        return $text;
+
+    }
+
+    public function getText()
+    {
+        $text = implode("\r\n", $this->getSteps());
+        $text = str_replace(array('((', '))'), array('...', ''), $text);
+        $text = strtoupper('I want to ' . $this->getFeature()) . "\r\n\r\n" . $text;
+        return $text;
+
+    }
+
+	public function comment($comment) {
+		$this->addStep(new \Codeception\Step\Comment($comment,array()));
+	}
+
+    public function getCurrentStep()
+    {
+        return $this->currentStep;
+    }
+    
+    public function run() {
+        if ($this->running()) return;
+        if ($this->blocker) return $this->blocker->run();
+
+        $this->running = true;
+        $this->preloadedSteps = $this->steps;
+        $this->steps = array();
+    }
+
+    public function running()
+    {
+        return $this->running;
+    }
+
+    public function preload() {
+        return !$this->running;
+    }
+
+}

@@ -1,363 +1,841 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-UloF//v+PM5KYRz9+99YXCnoOikrcREmqdV0c0==
+<?php
+/**
+ * CClientScript class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CClientScript manages JavaScript and CSS stylesheets for views.
+ *
+ * @property string $coreScriptUrl The base URL of all core javascript files.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.0
+ */
+class CClientScript extends CApplicationComponent
+{
+	/**
+	 * The script is rendered in the head section right before the title element.
+	 */
+	const POS_HEAD=0;
+	/**
+	 * The script is rendered at the beginning of the body section.
+	 */
+	const POS_BEGIN=1;
+	/**
+	 * The script is rendered at the end of the body section.
+	 */
+	const POS_END=2;
+	/**
+	 * The script is rendered inside window onload function.
+	 */
+	const POS_LOAD=3;
+	/**
+	 * The body script is rendered inside a jQuery ready function.
+	 */
+	const POS_READY=4;
+
+	/**
+	 * @var boolean whether JavaScript should be enabled. Defaults to true.
+	 */
+	public $enableJavaScript=true;
+	/**
+	 * @var array the mapping between script file names and the corresponding script URLs.
+	 * The array keys are script file names (without directory part) and the array values are the corresponding URLs.
+	 * If an array value is false, the corresponding script file will not be rendered.
+	 * If an array key is '*.js' or '*.css', the corresponding URL will replace all
+	 * JavaScript files or CSS files, respectively.
+	 *
+	 * This property is mainly used to optimize the generated HTML pages
+	 * by merging different scripts files into fewer and optimized script files.
+	 */
+	public $scriptMap=array();
+	/**
+	 * @var array list of custom script packages (name=>package spec).
+	 * This property keeps a list of named script packages, each of which can contain
+	 * a set of CSS and/or JavaScript script files, and their dependent package names.
+	 * By calling {@link registerPackage}, one can register a whole package of client
+	 * scripts together with their dependent packages and render them in the HTML output.
+	 *
+	 * The array structure is as follows:
+	 * <pre>
+	 * array(
+	 *   'package-name'=>array(
+	 *     'basePath'=>'alias of the directory containing the script files',
+	 *     'baseUrl'=>'base URL for the script files',
+	 *     'js'=>array(list of js files relative to basePath/baseUrl),
+	 *     'css'=>array(list of css files relative to basePath/baseUrl),
+	 *     'depends'=>array(list of dependent packages),
+	 *   ),
+	 *   ......
+	 * )
+	 * </pre>
+	 *
+	 * The JS and CSS files listed are relative to 'basePath'.
+	 * For example, if 'basePath' is 'application.assets', a script named 'comments.js'
+	 * will refer to the file 'protected/assets/comments.js'.
+	 *
+	 * When a script is being rendered in HTML, it will be prefixed with 'baseUrl'.
+	 * For example, if 'baseUrl' is '/assets', the 'comments.js' script will be rendered
+	 * using URL '/assets/comments.js'.
+	 *
+	 * If 'baseUrl' does not start with '/', the relative URL of the application entry
+	 * script will be inserted at the beginning. For example, if 'baseUrl' is 'assets'
+	 * and the current application runs with the URL 'http://localhost/demo/index.php',
+	 * then the 'comments.js' script will be rendered using URL '/demo/assets/comments.js'.
+	 *
+	 * If 'baseUrl' is not set, the script will be published by {@link CAssetManager}
+	 * and the corresponding published URL will be used.
+	 *
+	 * When calling {@link registerPackage} to register a script package,
+	 * this property will be checked first followed by {@link corePackages}.
+	 * If a package is found, it will be registered for rendering later on.
+	 *
+	 * @since 1.1.7
+	 */
+	public $packages=array();
+	/**
+	 * @var array list of core script packages (name=>package spec).
+	 * Please refer to {@link packages} for details about package spec.
+	 *
+	 * By default, the core script packages are specified in 'framework/web/js/packages.php'.
+	 * You may configure this property to customize the core script packages.
+	 *
+	 * When calling {@link registerPackage} to register a script package,
+	 * {@link packages} will be checked first followed by this property.
+	 * If a package is found, it will be registered for rendering later on.
+	 *
+	 * @since 1.1.7
+	 */
+	public $corePackages;
+	/**
+	 * @var array the registered JavaScript code blocks (position, key => code)
+	 */
+	public $scripts=array();
+	/**
+	 * @var array the registered CSS files (CSS URL=>media type).
+	 */
+	protected $cssFiles=array();
+	/**
+	 * @var array the registered JavaScript files (position, key => URL)
+	 */
+	protected $scriptFiles=array();
+	/**
+	 * @var array the registered head meta tags. Each array element represents an option array
+	 * that will be passed as the last parameter of {@link CHtml::metaTag}.
+	 * @since 1.1.3
+	 */
+	protected $metaTags=array();
+	/**
+	 * @var array the registered head link tags. Each array element represents an option array
+	 * that will be passed as the last parameter of {@link CHtml::linkTag}.
+	 * @since 1.1.3
+	 */
+	protected $linkTags=array();
+	/**
+	 * @var array the registered css code blocks (key => array(CSS code, media type)).
+	 * @since 1.1.3
+	 */
+	protected $css=array();
+	/**
+	 * @var boolean whether there are any javascript or css to be rendered.
+	 * @since 1.1.7
+	 */
+	protected $hasScripts=false;
+	/**
+	 * @var array the registered script packages (name => package spec)
+	 * @since 1.1.7
+	 */
+	protected $coreScripts=array();
+	/**
+	 * @var integer Where the scripts registered using {@link registerCoreScript} or {@link registerPackage}
+	 * will be inserted in the page. This can be one of the CClientScript::POS_* constants.
+	 * Defaults to CClientScript::POS_HEAD.
+	 * @since 1.1.3
+	 */
+	public $coreScriptPosition=self::POS_HEAD;
+	/**
+	 * @var integer Where the scripts registered using {@link registerScriptFile} will be inserted in the page.
+	 * This can be one of the CClientScript::POS_* constants.
+	 * Defaults to CClientScript::POS_HEAD.
+	 * @since 1.1.11
+	 */
+	public $defaultScriptFilePosition=self::POS_HEAD;
+	/**
+	 * @var integer Where the scripts registered using {@link registerScript} will be inserted in the page.
+	 * This can be one of the CClientScript::POS_* constants.
+	 * Defaults to CClientScript::POS_READY.
+	 * @since 1.1.11
+	 */
+	public $defaultScriptPosition=self::POS_READY;
+
+	private $_baseUrl;
+
+	/**
+	 * Cleans all registered scripts.
+	 */
+	public function reset()
+	{
+		$this->hasScripts=false;
+		$this->coreScripts=array();
+		$this->cssFiles=array();
+		$this->css=array();
+		$this->scriptFiles=array();
+		$this->scripts=array();
+		$this->metaTags=array();
+		$this->linkTags=array();
+
+		$this->recordCachingAction('clientScript','reset',array());
+	}
+
+	/**
+	 * Renders the registered scripts.
+	 * This method is called in {@link CController::render} when it finishes
+	 * rendering content. CClientScript thus gets a chance to insert script tags
+	 * at <code>head</code> and <code>body</code> sections in the HTML output.
+	 * @param string $output the existing output that needs to be inserted with script tags
+	 */
+	public function render(&$output)
+	{
+		if(!$this->hasScripts)
+			return;
+
+		$this->renderCoreScripts();
+
+		if(!empty($this->scriptMap))
+			$this->remapScripts();
+
+		$this->unifyScripts();
+
+		$this->renderHead($output);
+		if($this->enableJavaScript)
+		{
+			$this->renderBodyBegin($output);
+			$this->renderBodyEnd($output);
+		}
+	}
+
+	/**
+	 * Removes duplicated scripts from {@link scriptFiles}.
+	 * @since 1.1.5
+	 */
+	protected function unifyScripts()
+	{
+		if(!$this->enableJavaScript)
+			return;
+		$map=array();
+		if(isset($this->scriptFiles[self::POS_HEAD]))
+			$map=$this->scriptFiles[self::POS_HEAD];
+
+		if(isset($this->scriptFiles[self::POS_BEGIN]))
+		{
+			foreach($this->scriptFiles[self::POS_BEGIN] as $scriptFile=>$scriptFileValue)
+			{
+				if(isset($map[$scriptFile]))
+					unset($this->scriptFiles[self::POS_BEGIN][$scriptFile]);
+				else
+					$map[$scriptFile]=true;
+			}
+		}
+
+		if(isset($this->scriptFiles[self::POS_END]))
+		{
+			foreach($this->scriptFiles[self::POS_END] as $key=>$scriptFile)
+			{
+				if(isset($map[$key]))
+					unset($this->scriptFiles[self::POS_END][$key]);
+			}
+		}
+	}
+
+	/**
+	 * Uses {@link scriptMap} to re-map the registered scripts.
+	 */
+	protected function remapScripts()
+	{
+		$cssFiles=array();
+		foreach($this->cssFiles as $url=>$media)
+		{
+			$name=basename($url);
+			if(isset($this->scriptMap[$name]))
+			{
+				if($this->scriptMap[$name]!==false)
+					$cssFiles[$this->scriptMap[$name]]=$media;
+			}
+			elseif(isset($this->scriptMap['*.css']))
+			{
+				if($this->scriptMap['*.css']!==false)
+					$cssFiles[$this->scriptMap['*.css']]=$media;
+			}
+			else
+				$cssFiles[$url]=$media;
+		}
+		$this->cssFiles=$cssFiles;
+
+		$jsFiles=array();
+		foreach($this->scriptFiles as $position=>$scriptFiles)
+		{
+			$jsFiles[$position]=array();
+			foreach($scriptFiles as $scriptFile=>$scriptFileValue)
+			{
+				$name=basename($scriptFile);
+				if(isset($this->scriptMap[$name]))
+				{
+					if($this->scriptMap[$name]!==false)
+						$jsFiles[$position][$this->scriptMap[$name]]=$this->scriptMap[$name];
+				}
+				elseif(isset($this->scriptMap['*.js']))
+				{
+					if($this->scriptMap['*.js']!==false)
+						$jsFiles[$position][$this->scriptMap['*.js']]=$this->scriptMap['*.js'];
+				}
+				else
+					$jsFiles[$position][$scriptFile]=$scriptFileValue;
+			}
+		}
+		$this->scriptFiles=$jsFiles;
+	}
+
+	/**
+	 * Composes script HTML block from the given script values,
+	 * attempting to group scripts at single 'script' tag if possible.
+	 * @param array $scripts script values to process.
+	 * @return string HTML output
+	 */
+	protected function renderScriptBatch(array $scripts)
+	{
+		$html = '';
+		$scriptBatches = array();
+		foreach($scripts as $scriptValue)
+		{
+			if(is_array($scriptValue))
+			{
+				$scriptContent = $scriptValue['content'];
+				unset($scriptValue['content']);
+				$scriptHtmlOptions = $scriptValue;
+			}
+			else
+			{
+				$scriptContent = $scriptValue;
+				$scriptHtmlOptions = array();
+			}
+			$key=serialize(ksort($scriptHtmlOptions));
+			$scriptBatches[$key]['htmlOptions']=$scriptHtmlOptions;
+			$scriptBatches[$key]['scripts'][]=$scriptContent;
+		}
+		foreach($scriptBatches as $scriptBatch)
+			if(!empty($scriptBatch['scripts']))
+				$html.=CHtml::script(implode("\n",$scriptBatch['scripts']),$scriptBatch['htmlOptions'])."\n";
+		return $html;
+	}
+
+	/**
+	 * Renders the specified core javascript library.
+	 */
+	public function renderCoreScripts()
+	{
+		if($this->coreScripts===null)
+			return;
+		$cssFiles=array();
+		$jsFiles=array();
+		foreach($this->coreScripts as $name=>$package)
+		{
+			$baseUrl=$this->getPackageBaseUrl($name);
+			if(!empty($package['js']))
+			{
+				foreach($package['js'] as $js)
+					$jsFiles[$baseUrl.'/'.$js]=$baseUrl.'/'.$js;
+			}
+			if(!empty($package['css']))
+			{
+				foreach($package['css'] as $css)
+					$cssFiles[$baseUrl.'/'.$css]='';
+			}
+		}
+		// merge in place
+		if($cssFiles!==array())
+		{
+			foreach($this->cssFiles as $cssFile=>$media)
+				$cssFiles[$cssFile]=$media;
+			$this->cssFiles=$cssFiles;
+		}
+		if($jsFiles!==array())
+		{
+			if(isset($this->scriptFiles[$this->coreScriptPosition]))
+			{
+				foreach($this->scriptFiles[$this->coreScriptPosition] as $url => $value)
+					$jsFiles[$url]=$value;
+			}
+			$this->scriptFiles[$this->coreScriptPosition]=$jsFiles;
+		}
+	}
+
+	/**
+	 * Inserts the scripts in the head section.
+	 * @param string $output the output to be inserted with scripts.
+	 */
+	public function renderHead(&$output)
+	{
+		$html='';
+		foreach($this->metaTags as $meta)
+			$html.=CHtml::metaTag($meta['content'],null,null,$meta)."\n";
+		foreach($this->linkTags as $link)
+			$html.=CHtml::linkTag(null,null,null,null,$link)."\n";
+		foreach($this->cssFiles as $url=>$media)
+			$html.=CHtml::cssFile($url,$media)."\n";
+		foreach($this->css as $css)
+			$html.=CHtml::css($css[0],$css[1])."\n";
+		if($this->enableJavaScript)
+		{
+			if(isset($this->scriptFiles[self::POS_HEAD]))
+			{
+				foreach($this->scriptFiles[self::POS_HEAD] as $scriptFileValueUrl=>$scriptFileValue)
+				{
+					if(is_array($scriptFileValue))
+						$html.=CHtml::scriptFile($scriptFileValueUrl,$scriptFileValue)."\n";
+					else
+						$html.=CHtml::scriptFile($scriptFileValueUrl)."\n";
+				}
+			}
+
+			if(isset($this->scripts[self::POS_HEAD]))
+				$html.=$this->renderScriptBatch($this->scripts[self::POS_HEAD]);
+		}
+
+		if($html!=='')
+		{
+			$count=0;
+			$output=preg_replace('/(<title\b[^>]*>|<\\/head\s*>)/is','<###head###>$1',$output,1,$count);
+			if($count)
+				$output=str_replace('<###head###>',$html,$output);
+			else
+				$output=$html.$output;
+		}
+	}
+
+	/**
+	 * Inserts the scripts at the beginning of the body section.
+	 * @param string $output the output to be inserted with scripts.
+	 */
+	public function renderBodyBegin(&$output)
+	{
+		$html='';
+		if(isset($this->scriptFiles[self::POS_BEGIN]))
+		{
+			foreach($this->scriptFiles[self::POS_BEGIN] as $scriptFileUrl=>$scriptFileValue)
+			{
+				if(is_array($scriptFileValue))
+					$html.=CHtml::scriptFile($scriptFileUrl,$scriptFileValue)."\n";
+				else
+					$html.=CHtml::scriptFile($scriptFileUrl)."\n";
+			}
+		}
+		if(isset($this->scripts[self::POS_BEGIN]))
+			$html.=$this->renderScriptBatch($this->scripts[self::POS_BEGIN]);
+
+		if($html!=='')
+		{
+			$count=0;
+			$output=preg_replace('/(<body\b[^>]*>)/is','$1<###begin###>',$output,1,$count);
+			if($count)
+				$output=str_replace('<###begin###>',$html,$output);
+			else
+				$output=$html.$output;
+		}
+	}
+
+	/**
+	 * Inserts the scripts at the end of the body section.
+	 * @param string $output the output to be inserted with scripts.
+	 */
+	public function renderBodyEnd(&$output)
+	{
+		if(!isset($this->scriptFiles[self::POS_END]) && !isset($this->scripts[self::POS_END])
+			&& !isset($this->scripts[self::POS_READY]) && !isset($this->scripts[self::POS_LOAD]))
+			return;
+
+		$fullPage=0;
+		$output=preg_replace('/(<\\/body\s*>)/is','<###end###>$1',$output,1,$fullPage);
+		$html='';
+		if(isset($this->scriptFiles[self::POS_END]))
+		{
+			foreach($this->scriptFiles[self::POS_END] as $scriptFileUrl=>$scriptFileValue)
+			{
+				if(is_array($scriptFileValue))
+					$html.=CHtml::scriptFile($scriptFileUrl,$scriptFileValue)."\n";
+				else
+					$html.=CHtml::scriptFile($scriptFileUrl)."\n";
+			}
+		}
+		$scripts=isset($this->scripts[self::POS_END]) ? $this->scripts[self::POS_END] : array();
+		if(isset($this->scripts[self::POS_READY]))
+		{
+			if($fullPage)
+				$scripts[]="jQuery(function($) {\n".implode("\n",$this->scripts[self::POS_READY])."\n});";
+			else
+				$scripts[]=implode("\n",$this->scripts[self::POS_READY]);
+		}
+		if(isset($this->scripts[self::POS_LOAD]))
+		{
+			if($fullPage)
+				$scripts[]="jQuery(window).on('load',function() {\n".implode("\n",$this->scripts[self::POS_LOAD])."\n});";
+			else
+				$scripts[]=implode("\n",$this->scripts[self::POS_LOAD]);
+		}
+		if(!empty($scripts))
+			$html.=$this->renderScriptBatch($scripts);
+
+		if($fullPage)
+			$output=str_replace('<###end###>',$html,$output);
+		else
+			$output=$output.$html;
+	}
+
+	/**
+	 * Returns the base URL of all core javascript files.
+	 * If the base URL is not explicitly set, this method will publish the whole directory
+	 * 'framework/web/js/source' and return the corresponding URL.
+	 * @return string the base URL of all core javascript files
+	 */
+	public function getCoreScriptUrl()
+	{
+		if($this->_baseUrl!==null)
+			return $this->_baseUrl;
+		else
+			return $this->_baseUrl=Yii::app()->getAssetManager()->publish(YII_PATH.'/web/js/source');
+	}
+
+	/**
+	 * Sets the base URL of all core javascript files.
+	 * This setter is provided in case when core javascript files are manually published
+	 * to a pre-specified location. This may save asset publishing time for large-scale applications.
+	 * @param string $value the base URL of all core javascript files.
+	 */
+	public function setCoreScriptUrl($value)
+	{
+		$this->_baseUrl=$value;
+	}
+
+	/**
+	 * Returns the base URL for a registered package with the specified name.
+	 * If needed, this method may publish the assets of the package and returns the published base URL.
+	 * @param string $name the package name
+	 * @return string the base URL for the named package. False is returned if the package is not registered yet.
+	 * @see registerPackage
+	 * @since 1.1.8
+	 */
+	public function getPackageBaseUrl($name)
+	{
+		if(!isset($this->coreScripts[$name]))
+			return false;
+		$package=$this->coreScripts[$name];
+		if(isset($package['baseUrl']))
+		{
+			$baseUrl=$package['baseUrl'];
+			if($baseUrl==='' || $baseUrl[0]!=='/' && strpos($baseUrl,'://')===false)
+				$baseUrl=Yii::app()->getRequest()->getBaseUrl().'/'.$baseUrl;
+			$baseUrl=rtrim($baseUrl,'/');
+		}
+		elseif(isset($package['basePath']))
+			$baseUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias($package['basePath']));
+		else
+			$baseUrl=$this->getCoreScriptUrl();
+
+		return $this->coreScripts[$name]['baseUrl']=$baseUrl;
+	}
+
+	/**
+	 * Registers a script package that is listed in {@link packages}.
+	 * This method is the same as {@link registerCoreScript}.
+	 * @param string $name the name of the script package.
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 * @since 1.1.7
+	 * @see renderCoreScript
+	 */
+	public function registerPackage($name)
+	{
+		return $this->registerCoreScript($name);
+	}
+
+	/**
+	 * Registers a script package that is listed in {@link packages}.
+	 * @param string $name the name of the script package.
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 * @see renderCoreScript
+	 */
+	public function registerCoreScript($name)
+	{
+		if(isset($this->coreScripts[$name]))
+			return $this;
+		if(isset($this->packages[$name]))
+			$package=$this->packages[$name];
+		else
+		{
+			if($this->corePackages===null)
+				$this->corePackages=require(YII_PATH.'/web/js/packages.php');
+			if(isset($this->corePackages[$name]))
+				$package=$this->corePackages[$name];
+		}
+		if(isset($package))
+		{
+			if(!empty($package['depends']))
+			{
+				foreach($package['depends'] as $p)
+					$this->registerCoreScript($p);
+			}
+			$this->coreScripts[$name]=$package;
+			$this->hasScripts=true;
+			$params=func_get_args();
+			$this->recordCachingAction('clientScript','registerCoreScript',$params);
+		}
+		return $this;
+	}
+
+	/**
+	 * Registers a CSS file
+	 * @param string $url URL of the CSS file
+	 * @param string $media media that the CSS file should be applied to. If empty, it means all media types.
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 */
+	public function registerCssFile($url,$media='')
+	{
+		$this->hasScripts=true;
+		$this->cssFiles[$url]=$media;
+		$params=func_get_args();
+		$this->recordCachingAction('clientScript','registerCssFile',$params);
+		return $this;
+	}
+
+	/**
+	 * Registers a piece of CSS code.
+	 * @param string $id ID that uniquely identifies this piece of CSS code
+	 * @param string $css the CSS code
+	 * @param string $media media that the CSS code should be applied to. If empty, it means all media types.
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 */
+	public function registerCss($id,$css,$media='')
+	{
+		$this->hasScripts=true;
+		$this->css[$id]=array($css,$media);
+		$params=func_get_args();
+		$this->recordCachingAction('clientScript','registerCss',$params);
+		return $this;
+	}
+
+	/**
+	 * Registers a javascript file.
+	 * @param string $url URL of the javascript file
+	 * @param integer $position the position of the JavaScript code. Valid values include the following:
+	 * <ul>
+	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
+	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
+	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
+	 * </ul>
+	 * @param array $htmlOptions additional HTML attributes
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 */
+	public function registerScriptFile($url,$position=null,array $htmlOptions=array())
+	{
+		if($position===null)
+			$position=$this->defaultScriptFilePosition;
+		$this->hasScripts=true;
+		if(empty($htmlOptions))
+			$value=$url;
+		else
+		{
+			$value=$htmlOptions;
+			$value['src']=$url;
+		}
+		$this->scriptFiles[$position][$url]=$value;
+		$params=func_get_args();
+		$this->recordCachingAction('clientScript','registerScriptFile',$params);
+		return $this;
+	}
+
+	/**
+	 * Registers a piece of javascript code.
+	 * @param string $id ID that uniquely identifies this piece of JavaScript code
+	 * @param string $script the javascript code
+	 * @param integer $position the position of the JavaScript code. Valid values include the following:
+	 * <ul>
+	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
+	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
+	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
+	 * <li>CClientScript::POS_LOAD : the script is inserted in the window.onload() function.</li>
+	 * <li>CClientScript::POS_READY : the script is inserted in the jQuery's ready function.</li>
+	 * </ul>
+	 * @param array $htmlOptions additional HTML attributes
+	 * Note: HTML attributes are not allowed for script positions "CClientScript::POS_LOAD" and "CClientScript::POS_READY".
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 */
+	public function registerScript($id,$script,$position=null,array $htmlOptions=array())
+	{
+		if($position===null)
+			$position=$this->defaultScriptPosition;
+		$this->hasScripts=true;
+		if(empty($htmlOptions))
+			$scriptValue=$script;
+		else
+		{
+			if($position==self::POS_LOAD || $position==self::POS_READY)
+				throw new CException(Yii::t('yii','Script HTML options are not allowed for "CClientScript::POS_LOAD" and "CClientScript::POS_READY".'));
+			$scriptValue=$htmlOptions;
+			$scriptValue['content']=$script;
+		}
+		$this->scripts[$position][$id]=$scriptValue;
+		if($position===self::POS_READY || $position===self::POS_LOAD)
+			$this->registerCoreScript('jquery');
+		$params=func_get_args();
+		$this->recordCachingAction('clientScript','registerScript',$params);
+		return $this;
+	}
+
+	/**
+	 * Registers a meta tag that will be inserted in the head section (right before the title element) of the resulting page.
+	 *
+	 * <b>Note:</b>
+	 * Each call of this method will cause a rendering of new meta tag, even if their attributes are equal.
+	 *
+	 * <b>Example:</b>
+	 * <pre>
+	 *    $cs->registerMetaTag('example', 'description', null, array('lang' => 'en'));
+	 *    $cs->registerMetaTag('beispiel', 'description', null, array('lang' => 'de'));
+	 * </pre>
+	 * @param string $content content attribute of the meta tag
+	 * @param string $name name attribute of the meta tag. If null, the attribute will not be generated
+	 * @param string $httpEquiv http-equiv attribute of the meta tag. If null, the attribute will not be generated
+	 * @param array $options other options in name-value pairs (e.g. 'scheme', 'lang')
+	 * @param string $id Optional id of the meta tag to avoid duplicates
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 */
+	public function registerMetaTag($content,$name=null,$httpEquiv=null,$options=array(),$id=null)
+	{
+		$this->hasScripts=true;
+		if($name!==null)
+			$options['name']=$name;
+		if($httpEquiv!==null)
+			$options['http-equiv']=$httpEquiv;
+		$options['content']=$content;
+		$this->metaTags[null===$id?count($this->metaTags):$id]=$options;
+		$params=func_get_args();
+		$this->recordCachingAction('clientScript','registerMetaTag',$params);
+		return $this;
+	}
+
+	/**
+	 * Registers a link tag that will be inserted in the head section (right before the title element) of the resulting page.
+	 * @param string $relation rel attribute of the link tag. If null, the attribute will not be generated.
+	 * @param string $type type attribute of the link tag. If null, the attribute will not be generated.
+	 * @param string $href href attribute of the link tag. If null, the attribute will not be generated.
+	 * @param string $media media attribute of the link tag. If null, the attribute will not be generated.
+	 * @param array $options other options in name-value pairs
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.5).
+	 */
+	public function registerLinkTag($relation=null,$type=null,$href=null,$media=null,$options=array())
+	{
+		$this->hasScripts=true;
+		if($relation!==null)
+			$options['rel']=$relation;
+		if($type!==null)
+			$options['type']=$type;
+		if($href!==null)
+			$options['href']=$href;
+		if($media!==null)
+			$options['media']=$media;
+		$this->linkTags[serialize($options)]=$options;
+		$params=func_get_args();
+		$this->recordCachingAction('clientScript','registerLinkTag',$params);
+		return $this;
+	}
+
+	/**
+	 * Checks whether the CSS file has been registered.
+	 * @param string $url URL of the CSS file
+	 * @return boolean whether the CSS file is already registered
+	 */
+	public function isCssFileRegistered($url)
+	{
+		return isset($this->cssFiles[$url]);
+	}
+
+	/**
+	 * Checks whether the CSS code has been registered.
+	 * @param string $id ID that uniquely identifies the CSS code
+	 * @return boolean whether the CSS code is already registered
+	 */
+	public function isCssRegistered($id)
+	{
+		return isset($this->css[$id]);
+	}
+
+	/**
+	 * Checks whether the JavaScript file has been registered.
+	 * @param string $url URL of the javascript file
+	 * @param integer $position the position of the JavaScript code. Valid values include the following:
+	 * <ul>
+	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
+	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
+	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
+	 * </ul>
+	 * @return boolean whether the javascript file is already registered
+	 */
+	public function isScriptFileRegistered($url,$position=self::POS_HEAD)
+	{
+		return isset($this->scriptFiles[$position][$url]);
+	}
+
+	/**
+	 * Checks whether the JavaScript code has been registered.
+	 * @param string $id ID that uniquely identifies the JavaScript code
+	 * @param integer $position the position of the JavaScript code. Valid values include the following:
+	 * <ul>
+	 * <li>CClientScript::POS_HEAD : the script is inserted in the head section right before the title element.</li>
+	 * <li>CClientScript::POS_BEGIN : the script is inserted at the beginning of the body section.</li>
+	 * <li>CClientScript::POS_END : the script is inserted at the end of the body section.</li>
+	 * <li>CClientScript::POS_LOAD : the script is inserted in the window.onload() function.</li>
+	 * <li>CClientScript::POS_READY : the script is inserted in the jQuery's ready function.</li>
+	 * </ul>
+	 * @return boolean whether the javascript code is already registered
+	 */
+	public function isScriptRegistered($id,$position=self::POS_READY)
+	{
+		return isset($this->scripts[$position][$id]);
+	}
+
+	/**
+	 * Records a method call when an output cache is in effect.
+	 * This is a shortcut to Yii::app()->controller->recordCachingAction.
+	 * In case when controller is absent, nothing is recorded.
+	 * @param string $context a property name of the controller. It refers to an object
+	 * whose method is being called. If empty it means the controller itself.
+	 * @param string $method the method name
+	 * @param array $params parameters passed to the method
+	 * @see COutputCache
+	 */
+	protected function recordCachingAction($context,$method,$params)
+	{
+		if(($controller=Yii::app()->getController())!==null)
+			$controller->recordCachingAction($context,$method,$params);
+	}
+
+	/**
+	 * Adds a package to packages list.
+	 *
+	 * @param string $name the name of the script package.
+	 * @param array $definition the definition array of the script package,
+	 * @see CClientScript::packages.
+	 * @return CClientScript the CClientScript object itself (to support method chaining, available since version 1.1.10).
+	 *
+	 * @since 1.1.9
+	 */
+	public function addPackage($name,$definition)
+	{
+		$this->packages[$name]=$definition;
+		return $this;
+	}
+}

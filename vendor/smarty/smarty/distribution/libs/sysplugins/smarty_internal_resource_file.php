@@ -1,52 +1,89 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-rhz0u2HF
+<?php
+/**
+ * Smarty Internal Plugin Resource File
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ * @author Uwe Tews
+ * @author Rodney Rehm
+ */
+
+/**
+ * Smarty Internal Plugin Resource File
+ *
+ * Implements the file system as resource for Smarty templates
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ */
+class Smarty_Internal_Resource_File extends Smarty_Resource
+{
+    /**
+     * populate Source Object with meta data from Resource
+     *
+     * @param Smarty_Template_Source   $source    source object
+     * @param Smarty_Internal_Template $_template template object
+     */
+    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template=null)
+    {
+        $source->filepath = $this->buildFilepath($source, $_template);
+
+        if ($source->filepath !== false) {
+            if (is_object($source->smarty->security_policy)) {
+                $source->smarty->security_policy->isTrustedResourceDir($source->filepath);
+            }
+
+            $source->uid = sha1($source->filepath);
+            if ($source->smarty->compile_check && !isset($source->timestamp)) {
+                $source->timestamp = @filemtime($source->filepath);
+                $source->exists = !!$source->timestamp;
+            }
+        }
+    }
+
+    /**
+     * populate Source Object with timestamp and exists from Resource
+     *
+     * @param Smarty_Template_Source $source source object
+     */
+    public function populateTimestamp(Smarty_Template_Source $source)
+    {
+        $source->timestamp = @filemtime($source->filepath);
+        $source->exists = !!$source->timestamp;
+    }
+
+    /**
+     * Load template's source from file into current template object
+     *
+     * @param  Smarty_Template_Source $source source object
+     * @return string                 template source
+     * @throws SmartyException        if source cannot be loaded
+     */
+    public function getContent(Smarty_Template_Source $source)
+    {
+        if ($source->timestamp) {
+            return file_get_contents($source->filepath);
+        }
+        if ($source instanceof Smarty_Config_Source) {
+            throw new SmartyException("Unable to read config {$source->type} '{$source->name}'");
+        }
+        throw new SmartyException("Unable to read template {$source->type} '{$source->name}'");
+    }
+
+    /**
+     * Determine basename for compiled filename
+     *
+     * @param  Smarty_Template_Source $source source object
+     * @return string                 resource's basename
+     */
+    public function getBasename(Smarty_Template_Source $source)
+    {
+        $_file = $source->name;
+        if (($_pos = strpos($_file, ']')) !== false) {
+            $_file = substr($_file, $_pos + 1);
+        }
+
+        return basename($_file);
+    }
+
+}

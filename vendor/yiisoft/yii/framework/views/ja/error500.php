@@ -1,29 +1,35 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPtWOwBh6uD2zYwvzcNPSeZu2cGmYWeEWRAkik5u1GaO0xkhDmTichn60b5onwcRGUCM6AaOt
-8rKDys0OavZRKud7JLgVqLO9famRCa6cfUFQObT+NkFc74ioWVoGyuNaOsoWGL4a1fqX8MZJSeeT
-DVqO9U1JtNgVNjLKEdkW3o8chx+eMwHsFcPUTF62mP6LYjq6ozcrQIIAsApczePG24IFBBTaDJcg
-e+7KM67H/d1dRwVnSuOohr4euJltSAgiccy4GDnfTD5YoYDVCFML6vwbKTXZPqeO/wCsdVMVA7bF
-rT5pZjxF8CTrZkAjpyalHu9YJLGihUfmYZqI+hw1ivj62z4RnyWYYo5RKo15112/sDmZ29muvvWJ
-W6bQKBt81NWM9PWepc2FwitFq6VzA2drrdmJ8ffPlKMB8oUplkJEeKpVcqxfM+L/9k7o5Vz9fvKU
-zPjIZ9tzSxjI6BKvaX613FIDk7XLOA+OmOISEydfYW9loa6Iwxxm68uOBlmhT6Yrj+gkdEjmCEfm
-eel5kljtQLRNUPmL4BxCB4suZF05L6shbQUGGFWlgG/k7j3lf47PTju3ugspb6oJvUTe5ed96002
-XkXl3nUdaL0S45uC1JvLACsx3YN/UM+UyI2kCJj+J5tEXW6bxk4620ctr/Eqp28H+S/eYzup0WV0
-YT3fE9zYe0E6y58xQro9RqeeFg0qIw0OlbocL7Mda8tE1uxtuEGt0HjiroQG8iPZsvoHdV5Lf6bO
-PSy7Vy9QZiZuvJDnhJKNcNpVkOoGntrRSLylLVzkhwTxYtZVmnZOlL7Len+zEgDwKz8g/iCa+X1z
-yL5PIk/8uAQPcIBVrtq/5qWDQhRa0l+p60IiuuVPXLQ3Keg1h04MGwhbaeGmP4IOj37vn0NR6/SD
-32ge5Mt1yTeEWmcy6PR1JDZooTQscnx8R7QKj/Li6W8Mwn/2+3y9vMb4H2wkUMAe6v179UyAuxma
-NV4N73/GWo/LfodcIRPkSgn0f7sk6tdB/qJwo51LPZuHZ0uG7nnJ4jxTtM+HkJRtZHOhY/KtduLM
-S5z/q0IYYi+dMfXwFecZnJUt38n9N0m/WiemHu/za3BT9Q7uuHJJUGW+t/2bxfg7GH1Do4Ydur46
-uF5FycNyDBbXgPdLgYF+pC1Gkpjw6IERB1zk0KouSIrrzRbAC+BJYQcGxUOsrIHbkscJbYgp/IMU
-x0jA4U+R2mtPCdG0whkeMBAZ+llbCHO65cW8VY+xUbp5JUT7jtknzGhL3Ccw0OW4fru+X9JuYlKZ
-YeNRdieHxQfmzTvIXcAHb1/cSh2eWkTE/o7uqKLYJk8F2BBYpcYcpJuI1nLCJhr+9JNE7tBsTctj
-khClLo1uCLkW9klowhDJ+EVJ24h34amarNSY20zzNRZp8/tUP4ByvmHZXTErCQZEcdXKV844KiDb
-3JUHsmfLSVIWMTAJlIdM+FSPa5HnpA1BqDQmbN+ngxfgxEgkOqCOZbcw42zxkPnoTShY/rXi3Tmp
-53GCv+rmiQKVwlIutMNe5Axqp+cuZ16C/T7E0rDUKekKV41YHPoKEcM0JVzYbTe1eQk/dRWnR1Uz
-ytZ6X7889Kgzn5sHT3bGpogjg+0q3iPxKi+CNune+34T4rYrjclOZyVkRN5wsjg9FyczKHMsUojY
-RPoRLFXbslKS2P4oe9JnfwQ3le1SBTKr7g7kV8SUo9/PPfdJtZFeSk8/EnuDOvr4Yk3XI7HPcg+t
-K+tAAnd7jUpYGQptQlBWhfE+fDwE4Te33TkMueMBmW+/S/cN/6f2IfVpQTuE0/q5cOZcwiPKOiPx
-m1M/n2gYJfGMVHu+SDNosxbCe+bTQ+5fgfzVl96QpBtU1t2DzursksHeQhjWNV+Gw6SNcAUWxXTD
-kqk7x+puCdkoxd04f0==
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>500 サーバ内部エラー</title>
+
+<style type="text/css">
+/*<![CDATA[*/
+body {font-family:Verdana, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic ProN', sans-serif; font-weight:normal; color:black; background-color:white;}
+h1 {font-weight:normal;font-size:18pt;color:red }
+h2 {font-weight:normal;font-size:14pt;color:maroon }
+h3 {font-weight:bold;font-size:11pt}
+p {font-weight:normal;color:black;font-size:9pt;margin-top: -5px}
+.version {color: gray;font-size:8pt;border-top:1px solid #aaaaaa;}
+/*]]>*/
+</style>
+</head>
+
+<body>
+<h1>500 サーバ内部エラー</h1>
+<h2><?php echo nl2br(CHtml::encode($data['message'])); ?></h2>
+<p>
+ウェブサーバがリクエストを処理しているときに、内部エラーが発生しました。
+<?php echo $data['admin']; ?>)に連絡を取って、この問題を報告して下さるようお願いします。
+</p>
+<p>
+ありがとうございます。
+</p>
+<div class="version">
+<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
+</div>
+</body>
+</html>

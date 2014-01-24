@@ -1,114 +1,304 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-9P50ezAmD9bguBsynBIdxm==
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * Represents an HTML element.
+ */
+class RemoteWebElement implements WebDriverElement, WebDriverLocatable {
+
+  protected $executor;
+  protected $id;
+
+  public function __construct(HttpCommandExecutor $executor, $id) {
+    $this->executor = $executor;
+    $this->id = $id;
+  }
+
+  /**
+   * If this element is a TEXTAREA or text INPUT element, this will clear the
+   * value.
+   *
+   * @return WebDriverElement The current instance.
+   */
+  public function clear() {
+    $this->executor->execute('clear', array(':id' => $this->id));
+    return $this;
+  }
+
+  /**
+   * Click this element.
+   *
+   * @return WebDriverElement The current instance.
+   */
+  public function click() {
+    $this->executor->execute('clickElement', array(':id' => $this->id));
+    return $this;
+  }
+
+  /**
+   * Find the first WebDriverElement within this element using the given
+   * mechanism.
+   *
+   * @param WebDriverBy $by
+   * @return WebDriverElement NoSuchElementWebDriverError is thrown in
+   *    HttpCommandExecutor if no element is found.
+   * @see WebDriverBy
+   */
+  public function findElement(WebDriverBy $by) {
+    $params = array(
+      'using' => $by->getMechanism(),
+      'value' => $by->getValue(),
+      ':id'   => $this->id,
+    );
+    $raw_element = $this->executor->execute('elementFindElement', $params);
+
+    return $this->newElement($raw_element['ELEMENT']);
+  }
+
+  /**
+   * Find all WebDriverElements within this element using the given mechanism.
+   *
+   * @param WebDriverBy $by
+   * @return array A list of all WebDriverElements, or an empty array if
+   *    nothing matches
+   * @see WebDriverBy
+   */
+  public function findElements(WebDriverBy $by) {
+    $params = array(
+      'using' => $by->getMechanism(),
+      'value' => $by->getValue(),
+      ':id'   => $this->id,
+    );
+    $raw_elements = $this->executor->execute('elementFindElements', $params);
+
+    $elements = array();
+    foreach ($raw_elements as $raw_element) {
+      $elements[] = $this->newElement($raw_element['ELEMENT']);
+    }
+    return $elements;
+  }
+
+  /**
+   * Get the value of a the given attribute of the element.
+   *
+   * @param string $attribute_name The name of the attribute.
+   * @return string The value of the attribute.
+   */
+  public function getAttribute($attribute_name) {
+    $params = array(
+      ':name' => $attribute_name,
+      ':id'   => $this->id,
+    );
+    return $this->executor->execute('getElementAttribute', $params);
+  }
+
+  /**
+   * Get the value of a given CSS property.
+   *
+   * @param string $css_property_name The name of the CSS property.
+   * @return string The value of the CSS property.
+   */
+  public function getCSSValue($css_property_name) {
+    $params = array(
+      ':propertyName' => $css_property_name,
+      ':id'           => $this->id,
+    );
+    return $this->executor->execute('getElementCSSValue', $params);
+  }
+
+  /**
+   * Get the location of element relative to the top-left corner of the page.
+   *
+   * @return WebDriverLocation The location of the element.
+   */
+  public function getLocation() {
+    $location = $this->executor->execute(
+      'getElementLocation',
+      array(':id' => $this->id)
+    );
+    return new WebDriverPoint($location['x'], $location['y']);
+  }
+
+  /**
+   * Try scrolling the element into the view port and return the location of
+   * element relative to the top-left corner of the page afterwards.
+   *
+   * @return WebDriverLocation The location of the element.
+   */
+  public function getLocationOnScreenOnceScrolledIntoView() {
+    $location = $this->executor->execute(
+      'getElementLocationOnceScrolledIntoView',
+      array(':id' => $this->id)
+    );
+    return new WebDriverPoint($location['x'], $location['y']);
+  }
+
+  /**
+   * @return WebDriverCoordinates
+   */
+  public function getCoordinates() {
+    $element = $this;
+
+    $on_screen = null; // planned but not yet implemented
+    $in_view_port = function () use ($element) {
+      return $element->getLocationOnScreenOnceScrolledIntoView();
+    };
+    $on_page = function () use ($element) {
+      return $element->getLocation();
+    };
+    $auxiliary = $this->getID();
+
+    return new WebDriverCoordinates(
+      $on_screen,
+      $in_view_port,
+      $on_page,
+      $auxiliary
+    );
+  }
+
+  /**
+   * Get the size of element.
+   *
+   * @return WebDriverDimension The dimension of the element.
+   */
+  public function getSize() {
+    $size = $this->executor->execute(
+      'getElementSize',
+      array(':id' => $this->id)
+    );
+    return new WebDriverDimension($size['width'], $size['height']);
+  }
+
+  /**
+   * Get the tag name of this element.
+   *
+   * @return string The tag name.
+   */
+  public function getTagName() {
+    return $this->executor->execute(
+      'getElementTagName',
+      array(':id' => $this->id)
+    );
+  }
+
+  /**
+   * Get the visible (i.e. not hidden by CSS) innerText of this element,
+   * including sub-elements, without any leading or trailing whitespace.
+   *
+   * @return string The visible innerText of this element.
+   */
+  public function getText() {
+    return $this->executor->execute(
+      'getElementText',
+      array(':id' => $this->id)
+    );
+  }
+
+  /**
+   * Is this element displayed or not? This method avoids the problem of having
+   * to parse an element's "style" attribute.
+   *
+   * @return bool
+   */
+  public function isDisplayed() {
+    return $this->executor->execute(
+      'isElementDisplayed',
+      array(':id' => $this->id)
+    );
+  }
+
+  /**
+   * Is the element currently enabled or not? This will generally return true
+   * for everything but disabled input elements.
+   *
+   * @return bool
+   */
+  public function isEnabled() {
+    return $this->executor->execute(
+      'isElementEnabled',
+      array(':id' => $this->id)
+    );
+  }
+
+  /**
+   * Determine whether or not this element is selected or not.
+   *
+   * @return bool
+   */
+  public function isSelected() {
+    return $this->executor->execute(
+      'isElementSelected',
+      array(':id' => $this->id)
+    );
+  }
+
+  /**
+   * Simulate typing into an element, which may set its value.
+   *
+   * @param mixed $value The data to be typed.
+   * @return WebDriverElement The current instance.
+   */
+  public function sendKeys($value) {
+    $params = array(
+      'value' => WebDriverKeys::encode($value),
+      ':id'   => $this->id,
+    );
+    $this->executor->execute('sendKeysToElement', $params);
+    return $this;
+  }
+
+  /**
+   * If this current element is a form, or an element within a form, then this
+   * will be submitted to the remote server.
+   *
+   * @return WebDriverElement The current instance.
+   */
+  public function submit() {
+    $this->executor->execute('submitElement', array(':id' => $this->id));
+
+    return $this;
+  }
+
+  /**
+   * Get the opaque ID of the element.
+   *
+   * @return string The opaque ID.
+   */
+  public function getID() {
+    return $this->id;
+  }
+
+  /**
+   * Test if two element IDs refer to the same DOM element.
+   *
+   * @param WebDriverElement $other
+   * @return boolean
+   */
+  public function equals(WebDriverElement $other) {
+    return $this->executor->execute('elementEquals', array(
+      ':id'    => $this->id,
+      ':other' => $other->getID(),
+    ));
+  }
+
+  /**
+   * Return the WebDriverElement with $id
+   *
+   * @return WebDriverElement
+   */
+  private function newElement($id) {
+    return new RemoteWebElement($this->executor, $id);
+  }
+}

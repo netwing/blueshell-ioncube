@@ -1,34 +1,108 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Y9u51ZfyeI/VBrW=
+<?php
+/**
+ * Copyright 2012-2013 Anthon Pang. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package WebDriver
+ *
+ * @author Anthon Pang <apang@softwaredevelopment.ca>
+ */
+
+namespace WebDriver;
+
+/**
+ * WebDriver\ServiceFactory class
+ *
+ * A service factory
+ *
+ * @package WebDriver
+ */
+final class ServiceFactory
+{
+    /**
+     * singleton
+     *
+     * @var \WebDriver\ServiceFactory
+     */
+    private static $instance;
+
+    /**
+     * @var array
+     */
+    protected $services;
+
+    /**
+     * @var array
+     */
+    protected $serviceClasses;
+
+    /**
+     * Private constructor
+     */
+    private function __construct()
+    {
+        $this->services = array();
+
+        $this->serviceClasses = array(
+            'service.curl' => '\\WebDriver\\Service\\CurlService',
+        );
+    }
+
+    /**
+     * Get singleton instance
+     *
+     * @return \WebDriver\ServiceFactory
+     */
+    static public function getInstance()
+    {
+        if (!self::$instance) {
+            self::$instance = new self;
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * Get service
+     *
+     * @param string $serviceName Name of service
+     *
+     * @return object
+     */
+    public function getService($serviceName)
+    {
+        if (!isset($this->services[$serviceName])) {
+            $className = $this->serviceClasses[$serviceName];
+
+            $this->services[$serviceName] = new $className;
+        }
+
+        return $this->services[$serviceName];
+    }
+
+    /**
+     * Override default service class
+     *
+     * @param string $serviceName Name of service
+     * @param string $className   Name of service class
+     */
+    public function setServiceClass($serviceName, $className)
+    {
+        if (substr($className, 0, 1) !== '\\') {
+            $className = '\\' . $className;
+        }
+
+        $this->serviceClasses[$serviceName] = $className;
+    }
+}

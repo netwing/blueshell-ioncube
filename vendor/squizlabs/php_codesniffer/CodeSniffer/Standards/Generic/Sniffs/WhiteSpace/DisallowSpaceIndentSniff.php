@@ -1,37 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_WhiteSpace_DisallowSpaceIndentSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_WhiteSpace_DisallowSpaceIndentSniff.
+ *
+ * Throws errors if spaces are used for indentation.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_WhiteSpace_DisallowSpaceIndentSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array(
+                                   'PHP',
+                                   'JS',
+                                   'CSS',
+                                  );
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_WHITESPACE);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile All the tokens found in the document.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Make sure this is whitespace used for indentation.
+        $line = $tokens[$stackPtr]['line'];
+        if ($stackPtr > 0 && $tokens[($stackPtr - 1)]['line'] === $line) {
+            return;
+        }
+
+        if (strpos($tokens[$stackPtr]['content'], ' ') !== false) {
+            // Space are considered ok if they are proceeded by tabs and not followed
+            // by tabs, as is the case with standard docblock comments.
+            $error = 'Tabs must be used to indent lines; spaces are not allowed';
+            $phpcsFile->addError($error, $stackPtr, 'TabsUsed');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

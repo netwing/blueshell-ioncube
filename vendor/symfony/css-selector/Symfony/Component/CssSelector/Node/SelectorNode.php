@@ -1,40 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-TKBGIspkHQAbwQQSVZNZ
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Node;
+
+/**
+ * Represents a "<selector>(::|:)<pseudoElement>" node.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class SelectorNode extends AbstractNode
+{
+    /**
+     * @var NodeInterface
+     */
+    private $tree;
+
+    /**
+     * @var null|string
+     */
+    private $pseudoElement;
+
+    /**
+     * @param NodeInterface $tree
+     * @param null|string   $pseudoElement
+     */
+    public function __construct(NodeInterface $tree, $pseudoElement = null)
+    {
+        $this->tree = $tree;
+        $this->pseudoElement = $pseudoElement ? strtolower($pseudoElement) : null;
+    }
+
+    /**
+     * @return NodeInterface
+     */
+    public function getTree()
+    {
+        return $this->tree;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getPseudoElement()
+    {
+        return $this->pseudoElement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getSpecificity()
+    {
+        return $this->tree->getSpecificity()->plus(new Specificity(0, 0, $this->pseudoElement ? 1 : 0));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function __toString()
+    {
+        return sprintf('%s[%s%s]', $this->getNodeName(), $this->tree, $this->pseudoElement ? '::'.$this->pseudoElement : '');
+    }
+}

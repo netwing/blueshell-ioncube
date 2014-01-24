@@ -1,78 +1,142 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-2s3ZY0tPy46n5Sadd1UwxBnhEW==
+<?php
+ 
+class CUniqueValidatorTest extends CTestCase
+{
+	/**
+	 * @var CDbConnection test database connection.
+	 */
+	private $_connection;
+	/**
+	 * @var string test table name.
+	 */
+	private $_tableName = 'test_table';
+	/**
+	 * @var string test {@link CActiveRecord} model.
+	 */
+	private $_arModelName = 'TestUniqueModel';
+
+	protected function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->_connection=new CDbConnection('sqlite::memory:');
+		$this->_connection->active=true;
+		$columns = array(
+			'id'=>'pk',
+			'name'=>'string',
+		);
+		$this->_connection->createCommand()->createTable($this->_tableName, $columns);
+
+		CActiveRecord::$db=$this->_connection;
+		$this->declareArModelClass();
+	}
+
+	protected function tearDown()
+	{
+		$this->_connection->createCommand()->dropTable($this->_tableName);
+		$this->_connection->active=false;
+	}
+
+	/**
+	 * Declares test active record class.
+	 * @return boolean success.
+	 */
+	protected function declareArModelClass()
+	{
+		if (!class_exists($this->_arModelName,false))
+		{
+			$classDefinitionCode=<<<EOD
+class {$this->_arModelName} extends CActiveRecord
+{
+	public static function model(\$className=__CLASS__)
+	{
+		return parent::model(\$className);
+	}
+
+	public function tableName()
+	{
+		return '{$this->_tableName}';
+	}
+
+	public function rules()
+	{
+		return array(
+			array('name','unique','on'=>'simple'),
+			array('name','unique','caseSensitive'=>true,'on'=>'case_sensitive'),
+			array('name','unique','caseSensitive'=>false,'on'=>'not_case_sensitive'),
+			array('name','unique','criteria'=>array('alias'=>'test_alias'),'on'=>'criteria'),
+		);
+	}
+}
+EOD;
+			eval($classDefinitionCode);
+		}
+		return true;
+	}
+
+	public function testValidate()
+	{
+		$modelClassName = $this->_arModelName;
+		$name = 'test_name';
+
+		$model = new $modelClassName('simple');
+		$model->name = $name;
+		$this->assertTrue($model->validate(),'Unique value considered as invalid!');
+
+		$model->save(false);
+		$this->assertTrue($model->validate(),'Unique value keeper considered as invalid!');
+
+		$anotherModel = new $modelClassName('simple');
+		$anotherModel->name = $name;
+		$this->assertFalse($anotherModel->validate(),'Duplicate entry of unique value considered as valid!');
+	}
+
+	/**
+	 * @depends testValidate
+	 */
+	public function testValidateCaseSensitive()
+	{
+		$modelClassName = $this->_arModelName;
+		$name = 'test_name';
+
+		$initModel = new $modelClassName();
+		$initModel->name = $name;
+		$initModel->save(false);
+
+		$caseSensitiveModel = new $modelClassName('case_sensitive');
+		$caseSensitiveModel->name = $name;
+		$this->assertFalse($caseSensitiveModel->validate(),'Validation breaks in case sensitive mode!');
+		$caseSensitiveModel->name = strtoupper($name);
+		$this->assertTrue($caseSensitiveModel->validate(),'Same value in other case considered as invalid!');
+
+		$caseInsensitiveModel = new $modelClassName('not_case_sensitive');
+		$caseInsensitiveModel->name = strtoupper($name);
+		$this->assertFalse($caseInsensitiveModel->validate(),'Same value in other case considered as valid!');
+	}
+
+	/**
+	 * @depends testValidate
+	 */
+	public function testValidateWithCriteria()
+	{
+		$modelClassName = $this->_arModelName;
+		$name = 'test_name';
+
+		$model = new $modelClassName('criteria');
+		$model->name = $name;
+		$this->assertTrue($model->validate(),'Unable to validate model with custom criteria!');
+	}
+
+	/**
+	 * https://github.com/yiisoft/yii/issues/1955
+	 */
+	public function testArrayValue()
+	{
+		$modelClassName = $this->_arModelName;
+		$model = new $modelClassName('simple');
+		$model->name = array('test_name');
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('name'));
+	}
+}

@@ -1,37 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<h1>Form Generator</h1>
+
+<p>This generator generates a view script file that displays a form to collect input for the specified model class.</p>
+
+<?php $form=$this->beginWidget('CCodeForm', array('model'=>$model)); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'model'); ?>
+		<?php echo $form->textField($model,'model', array('size'=>65)); ?>
+		<div class="tooltip">
+			Model class is case-sensitive. It can be either a class name (e.g. <code>Post</code>)
+		    or the path alias of the class file (e.g. <code>application.models.LoginForm</code>).
+		    Note that if the former, the class must be auto-loadable.
+		</div>
+		<?php echo $form->error($model,'model'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'viewName'); ?>
+		<?php echo $form->textField($model,'viewName', array('size'=>65)); ?>
+		<div class="tooltip">
+			This refers to the name of the view script to be generated, for example,
+			<code>site/contact</code>, <code>user/login</code>. The actual view script file will be generated
+			under the View Path specified below.
+		</div>
+		<?php echo $form->error($model,'viewName'); ?>
+	</div>
+	<div class="row sticky">
+		<?php echo $form->labelEx($model,'viewPath'); ?>
+		<?php echo $form->textField($model,'viewPath', array('size'=>65)); ?>
+		<div class="tooltip">
+			This refers to the directory that the new view script file should be generated under.
+			It should be specified in the form of a path alias, for example, <code>application.views</code>,
+			<code>mymodule.views</code>.
+		</div>
+		<?php echo $form->error($model,'viewPath'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'scenario'); ?>
+		<?php echo $form->textField($model,'scenario', array('size'=>65)); ?>
+		<div class="tooltip">
+			This refers to the scenario in which the model should be used to collect user input.
+			For example, a <code>User</code> model can be used in both <code>login</code> and <code>register</code> scenarios.
+			To create a form for the login purpose, the scenario should be specified as <code>login</code>.
+			Leave this empty if the model does not need to differentiate scenarios.
+		</div>
+		<?php echo $form->error($model,'scenario'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>

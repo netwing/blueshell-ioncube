@@ -1,65 +1,111 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-tjMGwqjQjKGdvnRLlW5OrhG=
+<?php
+/**
+ * CFormElementCollection class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFormElementCollection implements the collection for storing form elements.
+ *
+ * Because CFormElementCollection extends from {@link CMap}, it can be used like an associative array.
+ * For example,
+ * <pre>
+ * $element=$collection['username'];
+ * $collection['username']=array('type'=>'text', 'maxlength'=>128);
+ * $collection['password']=new CFormInputElement(array('type'=>'password'),$form);
+ * $collection[]='some string';
+ * </pre>
+ *
+ * CFormElementCollection can store three types of value: a configuration array, a {@link CFormElement}
+ * object, or a string, as shown in the above example. Internally, these values will be converted
+ * to {@link CFormElement} objects.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.form
+ * @since 1.1
+ */
+class CFormElementCollection extends CMap
+{
+	private $_form;
+	private $_forButtons;
+
+	/**
+	 * Constructor.
+	 * @param CForm $form the form object that owns this collection
+	 * @param boolean $forButtons whether this collection is used to store buttons.
+	 */
+	public function __construct($form,$forButtons=false)
+	{
+		parent::__construct();
+		$this->_form=$form;
+		$this->_forButtons=$forButtons;
+	}
+
+	/**
+	 * Adds an item to the collection.
+	 * This method overrides the parent implementation to ensure
+	 * only configuration arrays, strings, or {@link CFormElement} objects
+	 * can be stored in this collection.
+	 * @param mixed $key key
+	 * @param mixed $value value
+	 * @throws CException if the value is invalid.
+	 */
+	public function add($key,$value)
+	{
+		if(is_array($value))
+		{
+			if(is_string($key))
+				$value['name']=$key;
+
+			if($this->_forButtons)
+			{
+				$class=$this->_form->buttonElementClass;
+				$element=new $class($value,$this->_form);
+			}
+			else
+			{
+				if(!isset($value['type']))
+					$value['type']='text';
+				if($value['type']==='string')
+				{
+					unset($value['type'],$value['name']);
+					$element=new CFormStringElement($value,$this->_form);
+				}
+				elseif(!strcasecmp(substr($value['type'],-4),'form'))	// a form
+				{
+					$class=$value['type']==='form' ? get_class($this->_form) : Yii::import($value['type']);
+					$element=new $class($value,null,$this->_form);
+				}
+				else
+				{
+					$class=$this->_form->inputElementClass;
+					$element=new $class($value,$this->_form);
+				}
+			}
+		}
+		elseif($value instanceof CFormElement)
+		{
+			if(property_exists($value,'name') && is_string($key))
+				$value->name=$key;
+			$element=$value;
+		}
+		else
+			$element=new CFormStringElement(array('content'=>$value),$this->_form);
+		parent::add($key,$element);
+		$this->_form->addedElement($key,$element,$this->_forButtons);
+	}
+
+	/**
+	 * Removes the specified element by key.
+	 * @param string $key the name of the element to be removed from the collection
+	 */
+	public function remove($key)
+	{
+		if(($item=parent::remove($key))!==null)
+			$this->_form->removedElement($key,$item,$this->_forButtons);
+	}
+}

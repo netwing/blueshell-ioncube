@@ -1,56 +1,146 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-vN2UdhWHZ8MEHvh+mrAKxr06DPTAyKCakXnvLXW=
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.0.0
+ */
+
+/**
+ * Utility class for code filtering.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ */
+class PHPUnit_Util_Filter
+{
+    /**
+     * Filters stack frames from PHPUnit classes.
+     *
+     * @param  Exception $e
+     * @param  boolean   $asString
+     * @return string
+     */
+    public static function getFilteredStacktrace(Exception $e, $asString = TRUE)
+    {
+        $prefix = FALSE;
+        $script = realpath($GLOBALS['_SERVER']['SCRIPT_NAME']);
+
+        if (defined('__PHPUNIT_PHAR__')) {
+            $prefix = 'phar://' . __PHPUNIT_PHAR__ . '/';
+        }
+
+        if (!defined('PHPUNIT_TESTSUITE')) {
+            $blacklist = PHPUnit_Util_GlobalState::phpunitFiles();
+        } else {
+            $blacklist = array();
+        }
+
+        if ($asString === TRUE) {
+            $filteredStacktrace = '';
+        } else {
+            $filteredStacktrace = array();
+        }
+
+        if ($e instanceof PHPUnit_Framework_SyntheticError) {
+            $eTrace = $e->getSyntheticTrace();
+            $eFile  = $e->getSyntheticFile();
+            $eLine  = $e->getSyntheticLine();
+        } else {
+            if ($e->getPrevious()) {
+                $eTrace = $e->getPrevious()->getTrace();
+            } else {
+                $eTrace = $e->getTrace();
+            }
+            $eFile  = $e->getFile();
+            $eLine  = $e->getLine();
+        }
+
+        if (!self::frameExists($eTrace, $eFile, $eLine)) {
+            array_unshift(
+              $eTrace, array('file' => $eFile, 'line' => $eLine)
+            );
+        }
+
+        foreach ($eTrace as $frame) {
+            if (isset($frame['file']) && is_file($frame['file']) &&
+                !isset($blacklist[$frame['file']]) &&
+                ($prefix === FALSE || strpos($frame['file'], $prefix) !== 0) &&
+                $frame['file'] !== $script) {
+                if ($asString === TRUE) {
+                    $filteredStacktrace .= sprintf(
+                      "%s:%s\n",
+
+                      $frame['file'],
+                      isset($frame['line']) ? $frame['line'] : '?'
+                    );
+                } else {
+                    $filteredStacktrace[] = $frame;
+                }
+            }
+        }
+
+        return $filteredStacktrace;
+    }
+
+    /**
+     * @param  array  $trace
+     * @param  string $file
+     * @param  int    $line
+     * @return boolean
+     * @since  Method available since Release 3.3.2
+     */
+    public static function frameExists(array $trace, $file, $line)
+    {
+        foreach ($trace as $frame) {
+            if (isset($frame['file']) && $frame['file'] == $file &&
+                isset($frame['line']) && $frame['line'] == $line) {
+                return TRUE;
+            }
+        }
+
+        return FALSE;
+    }
+}

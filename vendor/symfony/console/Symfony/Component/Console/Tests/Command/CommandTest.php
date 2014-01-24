@@ -1,244 +1,338 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Command;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Helper\FormatterHelper;
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Output\NullOutput;
+use Symfony\Component\Console\Tester\CommandTester;
+
+class CommandTest extends \PHPUnit_Framework_TestCase
+{
+    protected static $fixturesPath;
+
+    public static function setUpBeforeClass()
+    {
+        self::$fixturesPath = __DIR__.'/../Fixtures/';
+        require_once self::$fixturesPath.'/TestCommand.php';
+    }
+
+    public function testConstructor()
+    {
+        $command = new Command('foo:bar');
+        $this->assertEquals('foo:bar', $command->getName(), '__construct() takes the command name as its first argument');
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage The command name cannot be empty.
+     */
+    public function testCommandNameCannotBeEmpty()
+    {
+        new Command();
+    }
+
+    public function testSetApplication()
+    {
+        $application = new Application();
+        $command = new \TestCommand();
+        $command->setApplication($application);
+        $this->assertEquals($application, $command->getApplication(), '->setApplication() sets the current application');
+    }
+
+    public function testSetGetDefinition()
+    {
+        $command = new \TestCommand();
+        $ret = $command->setDefinition($definition = new InputDefinition());
+        $this->assertEquals($command, $ret, '->setDefinition() implements a fluent interface');
+        $this->assertEquals($definition, $command->getDefinition(), '->setDefinition() sets the current InputDefinition instance');
+        $command->setDefinition(array(new InputArgument('foo'), new InputOption('bar')));
+        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->setDefinition() also takes an array of InputArguments and InputOptions as an argument');
+        $this->assertTrue($command->getDefinition()->hasOption('bar'), '->setDefinition() also takes an array of InputArguments and InputOptions as an argument');
+        $command->setDefinition(new InputDefinition());
+    }
+
+    public function testAddArgument()
+    {
+        $command = new \TestCommand();
+        $ret = $command->addArgument('foo');
+        $this->assertEquals($command, $ret, '->addArgument() implements a fluent interface');
+        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->addArgument() adds an argument to the command');
+    }
+
+    public function testAddOption()
+    {
+        $command = new \TestCommand();
+        $ret = $command->addOption('foo');
+        $this->assertEquals($command, $ret, '->addOption() implements a fluent interface');
+        $this->assertTrue($command->getDefinition()->hasOption('foo'), '->addOption() adds an option to the command');
+    }
+
+    public function testGetNamespaceGetNameSetName()
+    {
+        $command = new \TestCommand();
+        $this->assertEquals('namespace:name', $command->getName(), '->getName() returns the command name');
+        $command->setName('foo');
+        $this->assertEquals('foo', $command->getName(), '->setName() sets the command name');
+
+        $ret = $command->setName('foobar:bar');
+        $this->assertEquals($command, $ret, '->setName() implements a fluent interface');
+        $this->assertEquals('foobar:bar', $command->getName(), '->setName() sets the command name');
+    }
+
+    /**
+     * @dataProvider provideInvalidCommandNames
+     */
+    public function testInvalidCommandNames($name)
+    {
+        $this->setExpectedException('InvalidArgumentException', sprintf('Command name "%s" is invalid.', $name));
+
+        $command = new \TestCommand();
+        $command->setName($name);
+    }
+
+    public function provideInvalidCommandNames()
+    {
+        return array(
+            array(''),
+            array('foo:')
+        );
+    }
+
+    public function testGetSetDescription()
+    {
+        $command = new \TestCommand();
+        $this->assertEquals('description', $command->getDescription(), '->getDescription() returns the description');
+        $ret = $command->setDescription('description1');
+        $this->assertEquals($command, $ret, '->setDescription() implements a fluent interface');
+        $this->assertEquals('description1', $command->getDescription(), '->setDescription() sets the description');
+    }
+
+    public function testGetSetHelp()
+    {
+        $command = new \TestCommand();
+        $this->assertEquals('help', $command->getHelp(), '->getHelp() returns the help');
+        $ret = $command->setHelp('help1');
+        $this->assertEquals($command, $ret, '->setHelp() implements a fluent interface');
+        $this->assertEquals('help1', $command->getHelp(), '->setHelp() sets the help');
+    }
+
+    public function testGetProcessedHelp()
+    {
+        $command = new \TestCommand();
+        $command->setHelp('The %command.name% command does... Example: php %command.full_name%.');
+        $this->assertContains('The namespace:name command does...', $command->getProcessedHelp(), '->getProcessedHelp() replaces %command.name% correctly');
+        $this->assertNotContains('%command.full_name%', $command->getProcessedHelp(), '->getProcessedHelp() replaces %command.full_name%');
+    }
+
+    public function testGetSetAliases()
+    {
+        $command = new \TestCommand();
+        $this->assertEquals(array('name'), $command->getAliases(), '->getAliases() returns the aliases');
+        $ret = $command->setAliases(array('name1'));
+        $this->assertEquals($command, $ret, '->setAliases() implements a fluent interface');
+        $this->assertEquals(array('name1'), $command->getAliases(), '->setAliases() sets the aliases');
+    }
+
+    public function testGetSynopsis()
+    {
+        $command = new \TestCommand();
+        $command->addOption('foo');
+        $command->addArgument('foo');
+        $this->assertEquals('namespace:name [--foo] [foo]', $command->getSynopsis(), '->getSynopsis() returns the synopsis');
+    }
+
+    public function testGetHelper()
+    {
+        $application = new Application();
+        $command = new \TestCommand();
+        $command->setApplication($application);
+        $formatterHelper = new FormatterHelper();
+        $this->assertEquals($formatterHelper->getName(), $command->getHelper('formatter')->getName(), '->getHelper() returns the correct helper');
+    }
+
+    public function testGet()
+    {
+        $application = new Application();
+        $command = new \TestCommand();
+        $command->setApplication($application);
+        $formatterHelper = new FormatterHelper();
+        $this->assertEquals($formatterHelper->getName(), $command->getHelper('formatter')->getName(), '->__get() returns the correct helper');
+    }
+
+    public function testMergeApplicationDefinition()
+    {
+        $application1 = new Application();
+        $application1->getDefinition()->addArguments(array(new InputArgument('foo')));
+        $application1->getDefinition()->addOptions(array(new InputOption('bar')));
+        $command = new \TestCommand();
+        $command->setApplication($application1);
+        $command->setDefinition($definition = new InputDefinition(array(new InputArgument('bar'), new InputOption('foo'))));
+
+        $r = new \ReflectionObject($command);
+        $m = $r->getMethod('mergeApplicationDefinition');
+        $m->setAccessible(true);
+        $m->invoke($command);
+        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition() merges the application arguments and the command arguments');
+        $this->assertTrue($command->getDefinition()->hasArgument('bar'), '->mergeApplicationDefinition() merges the application arguments and the command arguments');
+        $this->assertTrue($command->getDefinition()->hasOption('foo'), '->mergeApplicationDefinition() merges the application options and the command options');
+        $this->assertTrue($command->getDefinition()->hasOption('bar'), '->mergeApplicationDefinition() merges the application options and the command options');
+
+        $m->invoke($command);
+        $this->assertEquals(3, $command->getDefinition()->getArgumentCount(), '->mergeApplicationDefinition() does not try to merge twice the application arguments and options');
+    }
+
+    public function testMergeApplicationDefinitionWithoutArgsThenWithArgsAddsArgs()
+    {
+        $application1 = new Application();
+        $application1->getDefinition()->addArguments(array(new InputArgument('foo')));
+        $application1->getDefinition()->addOptions(array(new InputOption('bar')));
+        $command = new \TestCommand();
+        $command->setApplication($application1);
+        $command->setDefinition($definition = new InputDefinition(array()));
+
+        $r = new \ReflectionObject($command);
+        $m = $r->getMethod('mergeApplicationDefinition');
+        $m->setAccessible(true);
+        $m->invoke($command, false);
+        $this->assertTrue($command->getDefinition()->hasOption('bar'), '->mergeApplicationDefinition(false) merges the application and the commmand options');
+        $this->assertFalse($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition(false) does not merge the application arguments');
+
+        $m->invoke($command, true);
+        $this->assertTrue($command->getDefinition()->hasArgument('foo'), '->mergeApplicationDefinition(true) merges the application arguments and the command arguments');
+
+        $m->invoke($command);
+        $this->assertEquals(2, $command->getDefinition()->getArgumentCount(), '->mergeApplicationDefinition() does not try to merge twice the application arguments');
+    }
+
+    public function testRunInteractive()
+    {
+        $tester = new CommandTester(new \TestCommand());
+
+        $tester->execute(array(), array('interactive' => true));
+
+        $this->assertEquals('interact called'.PHP_EOL.'execute called'.PHP_EOL, $tester->getDisplay(), '->run() calls the interact() method if the input is interactive');
+    }
+
+    public function testRunNonInteractive()
+    {
+        $tester = new CommandTester(new \TestCommand());
+
+        $tester->execute(array(), array('interactive' => false));
+
+        $this->assertEquals('execute called'.PHP_EOL, $tester->getDisplay(), '->run() does not call the interact() method if the input is not interactive');
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage You must override the execute() method in the concrete command class.
+     */
+    public function testExecuteMethodNeedsToBeOverriden()
+    {
+        $command = new Command('foo');
+        $command->run(new StringInput(''), new NullOutput());
+    }
+
+    /**
+     * @expectedException        \InvalidArgumentException
+     * @expectedExceptionMessage The "--bar" option does not exist.
+     */
+    public function testRunWithInvalidOption()
+    {
+        $command = new \TestCommand();
+        $tester = new CommandTester($command);
+        $tester->execute(array('--bar' => true));
+    }
+
+    public function testRunReturnsIntegerExitCode()
+    {
+        $command = new \TestCommand();
+        $exitCode = $command->run(new StringInput(''), new NullOutput());
+        $this->assertSame(0, $exitCode, '->run() returns integer exit code (treats null as 0)');
+
+        $command = $this->getMock('TestCommand', array('execute'));
+        $command->expects($this->once())
+             ->method('execute')
+             ->will($this->returnValue('2.3'));
+        $exitCode = $command->run(new StringInput(''), new NullOutput());
+        $this->assertSame(2, $exitCode, '->run() returns integer exit code (casts numeric to int)');
+    }
+
+    public function testRunReturnsAlwaysInteger()
+    {
+        $command = new \TestCommand();
+
+        $this->assertSame(0, $command->run(new StringInput(''), new NullOutput()));
+    }
+
+    public function testSetCode()
+    {
+        $command = new \TestCommand();
+        $ret = $command->setCode(function (InputInterface $input, OutputInterface $output) {
+            $output->writeln('from the code...');
+        });
+        $this->assertEquals($command, $ret, '->setCode() implements a fluent interface');
+        $tester = new CommandTester($command);
+        $tester->execute(array());
+        $this->assertEquals('interact called'.PHP_EOL.'from the code...'.PHP_EOL, $tester->getDisplay());
+    }
+
+    public function testSetCodeWithNonClosureCallable()
+    {
+        $command = new \TestCommand();
+        $ret = $command->setCode(array($this, 'callableMethodCommand'));
+        $this->assertEquals($command, $ret, '->setCode() implements a fluent interface');
+        $tester = new CommandTester($command);
+        $tester->execute(array());
+        $this->assertEquals('interact called'.PHP_EOL.'from the code...'.PHP_EOL, $tester->getDisplay());
+    }
+
+    /**
+     * @expectedException        \InvalidArgumentException
+     * @expectedExceptionMessage Invalid callable provided to Command::setCode.
+     */
+    public function testSetCodeWithNonCallable()
+    {
+        $command = new \TestCommand();
+        $command->setCode(array($this, 'nonExistentMethod'));
+    }
+
+    public function callableMethodCommand(InputInterface $input, OutputInterface $output)
+    {
+        $output->writeln('from the code...');
+    }
+
+    public function testAsText()
+    {
+        $command = new \TestCommand();
+        $command->setApplication(new Application());
+        $tester = new CommandTester($command);
+        $tester->execute(array('command' => $command->getName()));
+        $this->assertStringEqualsFile(self::$fixturesPath.'/command_astext.txt', $command->asText(), '->asText() returns a text representation of the command');
+    }
+
+    public function testAsXml()
+    {
+        $command = new \TestCommand();
+        $command->setApplication(new Application());
+        $tester = new CommandTester($command);
+        $tester->execute(array('command' => $command->getName()));
+        $this->assertXmlStringEqualsXmlFile(self::$fixturesPath.'/command_asxml.txt', $command->asXml(), '->asXml() returns an XML representation of the command');
+    }
+}

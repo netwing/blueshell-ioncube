@@ -1,44 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-z7lRg5cqRXPWem==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Comparator;
+
+use Symfony\Component\Finder\Comparator\Comparator;
+
+class ComparatorTest extends \PHPUnit_Framework_TestCase
+{
+    public function testGetSetOperator()
+    {
+        $comparator = new Comparator();
+        try {
+            $comparator->setOperator('foo');
+            $this->fail('->setOperator() throws an \InvalidArgumentException if the operator is not valid.');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('InvalidArgumentException', $e, '->setOperator() throws an \InvalidArgumentException if the operator is not valid.');
+        }
+
+        $comparator = new Comparator();
+        $comparator->setOperator('>');
+        $this->assertEquals('>', $comparator->getOperator(), '->getOperator() returns the current operator');
+    }
+
+    public function testGetSetTarget()
+    {
+        $comparator = new Comparator();
+        $comparator->setTarget(8);
+        $this->assertEquals(8, $comparator->getTarget(), '->getTarget() returns the target');
+    }
+
+    /**
+     * @dataProvider getTestData
+     */
+    public function testTest($operator, $target, $match, $noMatch)
+    {
+        $c = new Comparator();
+        $c->setOperator($operator);
+        $c->setTarget($target);
+
+        foreach ($match as $m) {
+            $this->assertTrue($c->test($m), '->test() tests a string against the expression');
+        }
+
+        foreach ($noMatch as $m) {
+            $this->assertFalse($c->test($m), '->test() tests a string against the expression');
+        }
+    }
+
+    public function getTestData()
+    {
+        return array(
+            array('<', '1000', array('500', '999'), array('1000', '1500')),
+        );
+    }
+}

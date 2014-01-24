@@ -1,67 +1,138 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-AXKG6M4XP2iCOkGt2HWwa3GXrvK7kaw7XTi=
+<?php
+/**
+ * CFormButtonElement class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFormButtonElement represents a form button element.
+ *
+ * CFormButtonElement can represent the following types of button based on {@link type} property:
+ * <ul>
+ * <li>htmlButton: a normal button generated using {@link CHtml::htmlButton}</li>
+ * <li>htmlReset a reset button generated using {@link CHtml::htmlButton}</li>
+ * <li>htmlSubmit: a submit button generated using {@link CHtml::htmlButton}</li>
+ * <li>submit: a submit button generated using {@link CHtml::submitButton}</li>
+ * <li>button: a normal button generated using {@link CHtml::button}</li>
+ * <li>image: an image button generated using {@link CHtml::imageButton}</li>
+ * <li>reset: a reset button generated using {@link CHtml::resetButton}</li>
+ * <li>link: a link button generated using {@link CHtml::linkButton}</li>
+ * </ul>
+ * The {@link type} property can also be a class name or a path alias to the class. In this case,
+ * the button is generated using a widget of the specified class. Note, the widget must
+ * have a property called "name".
+ *
+ * Because CFormElement is an ancestor class of CFormButtonElement, a value assigned to a non-existing property will be
+ * stored in {@link attributes} which will be passed as HTML attribute values to the {@link CHtml} method
+ * generating the button or initial values of the widget properties.
+ *
+ * @property string $on Scenario names separated by commas. Defaults to null.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.form
+ * @since 1.1
+ */
+class CFormButtonElement extends CFormElement
+{
+	/**
+	 * @var array Core button types (alias=>CHtml method name)
+	 */
+	public static $coreTypes=array(
+		'htmlButton'=>'htmlButton',
+		'htmlSubmit'=>'htmlButton',
+		'htmlReset'=>'htmlButton',
+		'button'=>'button',
+		'submit'=>'submitButton',
+		'reset'=>'resetButton',
+		'image'=>'imageButton',
+		'link'=>'linkButton',
+	);
+
+	/**
+	 * @var string the type of this button. This can be a class name, a path alias of a class name,
+	 * or a button type alias (submit, button, image, reset, link, htmlButton, htmlSubmit, htmlReset).
+	 */
+	public $type;
+	/**
+	 * @var string name of this button
+	 */
+	public $name;
+	/**
+	 * @var string the label of this button. This property is ignored when a widget is used to generate the button.
+	 */
+	public $label;
+
+	private $_on;
+
+	/**
+	 * Returns a value indicating under which scenarios this button is visible.
+	 * If the value is empty, it means the button is visible under all scenarios.
+	 * Otherwise, only when the model is in the scenario whose name can be found in
+	 * this value, will the button be visible. See {@link CModel::scenario} for more
+	 * information about model scenarios.
+	 * @return string scenario names separated by commas. Defaults to null.
+	 */
+	public function getOn()
+	{
+		return $this->_on;
+	}
+
+	/**
+	 * @param string $value scenario names separated by commas.
+	 */
+	public function setOn($value)
+	{
+		$this->_on=preg_split('/[\s,]+/',$value,-1,PREG_SPLIT_NO_EMPTY);
+	}
+
+	/**
+	 * Returns this button.
+	 * @return string the rendering result
+	 */
+	public function render()
+	{
+		$attributes=$this->attributes;
+		if(isset(self::$coreTypes[$this->type]))
+		{
+			$method=self::$coreTypes[$this->type];
+			if($method==='linkButton')
+			{
+				if(!isset($attributes['params'][$this->name]))
+					$attributes['params'][$this->name]=1;
+			}
+			elseif($method==='htmlButton')
+			{
+				$attributes['type']=$this->type==='htmlSubmit' ? 'submit' : ($this->type==='htmlReset' ? 'reset' : 'button');
+				$attributes['name']=$this->name;
+			}
+			else
+				$attributes['name']=$this->name;
+			if($method==='imageButton')
+				return CHtml::imageButton(isset($attributes['src']) ? $attributes['src'] : '',$attributes);
+			else
+				return CHtml::$method($this->label,$attributes);
+		}
+		else
+		{
+			$attributes['name']=$this->name;
+			ob_start();
+			$this->getParent()->getOwner()->widget($this->type, $attributes);
+			return ob_get_clean();
+		}
+	}
+
+	/**
+	 * Evaluates the visibility of this element.
+	 * This method will check the {@link on} property to see if
+	 * the model is in a scenario that should have this string displayed.
+	 * @return boolean whether this element is visible.
+	 */
+	protected function evaluateVisible()
+	{
+		return empty($this->_on) || in_array($this->getParent()->getModel()->getScenario(),$this->_on);
+	}
+}

@@ -1,40 +1,80 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-JsHpbTzLLwockQQLYxi8
+<?php
+
+/**
+ * APC CacheResource
+ *
+ * CacheResource Implementation based on the KeyValueStore API to use
+ * memcache as the storage resource for Smarty's output caching.
+ * *
+ * @package CacheResource-examples
+ * @author Uwe Tews
+ */
+class Smarty_CacheResource_Apc extends Smarty_CacheResource_KeyValueStore
+{
+    public function __construct()
+    {
+        // test if APC is present
+        if (!function_exists('apc_cache_info')) {
+            throw new Exception('APC Template Caching Error: APC is not installed');
+        }
+    }
+
+    /**
+     * Read values for a set of keys from cache
+     *
+     * @param  array   $keys list of keys to fetch
+     * @return array   list of values with the given keys used as indexes
+     * @return boolean true on success, false on failure
+     */
+    protected function read(array $keys)
+    {
+        $_res = array();
+        $res = apc_fetch($keys);
+        foreach ($res as $k => $v) {
+            $_res[$k] = $v;
+        }
+
+        return $_res;
+    }
+
+    /**
+     * Save values for a set of keys to cache
+     *
+     * @param  array   $keys   list of values to save
+     * @param  int     $expire expiration time
+     * @return boolean true on success, false on failure
+     */
+    protected function write(array $keys, $expire=null)
+    {
+        foreach ($keys as $k => $v) {
+            apc_store($k, $v, $expire);
+        }
+
+        return true;
+    }
+
+    /**
+     * Remove values from cache
+     *
+     * @param  array   $keys list of keys to delete
+     * @return boolean true on success, false on failure
+     */
+    protected function delete(array $keys)
+    {
+        foreach ($keys as $k) {
+            apc_delete($k);
+        }
+
+        return true;
+    }
+
+    /**
+     * Remove *all* values from cache
+     *
+     * @return boolean true on success, false on failure
+     */
+    protected function purge()
+    {
+        return apc_clear_cache('user');
+    }
+}

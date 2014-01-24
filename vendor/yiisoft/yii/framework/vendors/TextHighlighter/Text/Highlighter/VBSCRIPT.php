@@ -1,81 +1,300 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Auto-generated class. VBSCRIPT syntax highlighting
+ *
+ * PHP version 4 and 5
+ *
+ * LICENSE: This source file is subject to version 3.0 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @link       http://pear.php.net/package/Text_Highlighter
+ * @category   Text
+ * @package    Text_Highlighter
+ * @version    generated from: : vbscript.xml,v 1.2 2008/01/02 00:05:52 ssttoo Exp
+ * @author Daniel Fruzynski <daniel-AT-poradnik-webmastera.com>
+ *
+ */
+
+/**
+ * Auto-generated class. VBSCRIPT syntax highlighting
+ *
+ * @author Daniel Fruzynski <daniel-AT-poradnik-webmastera.com>
+ * @category   Text
+ * @package    Text_Highlighter
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @version    Release: 0.7.1
+ * @link       http://pear.php.net/package/Text_Highlighter
+ */
+class  Text_Highlighter_VBSCRIPT extends Text_Highlighter
+{
+    var $_language = 'vbscript';
+
+    /**
+     *  Constructor
+     *
+     * @param array  $options
+     * @access public
+     */
+    function __construct($options=array())
+    {
+
+        $this->_options = $options;
+        $this->_regs = array (
+            -1 => '/((?i)\\()|((?i)")|((?i)\'|[Rr][Ee][Mm]\\b)|((?i)\\d*\\.?\\d+)|((?i)&H[0-9a-fA-F]+)|((?i)[a-z_]\\w*)/',
+            0 => '/((?i)\\()|((?i)")|((?i)\'|[Rr][Ee][Mm]\\b)|((?i)\\d*\\.?\\d+)|((?i)&H[0-9a-fA-F]+)|((?i)[a-z_]\\w*)/',
+            1 => '//',
+            2 => '/((?i)((https?|ftp):\\/\\/[\\w\\?\\.\\-\\&=\\/%+]+)|(^|[\\s,!?])www\\.\\w+\\.\\w+[\\w\\?\\.\\&=\\/%+]*)|((?i)\\w+[\\.\\w\\-]+@(\\w+[\\.\\w\\-])+)|((?i)\\b(note|fixme):)|((?i)\\$\\w+:.+\\$)/',
+        );
+        $this->_counts = array (
+            -1 =>
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+            ),
+            0 =>
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+            ),
+            1 =>
+            array (
+            ),
+            2 =>
+            array (
+                0 => 3,
+                1 => 1,
+                2 => 1,
+                3 => 0,
+            ),
+        );
+        $this->_delim = array (
+            -1 =>
+            array (
+                0 => 'brackets',
+                1 => 'quotes',
+                2 => 'comment',
+                3 => '',
+                4 => '',
+                5 => '',
+            ),
+            0 =>
+            array (
+                0 => 'brackets',
+                1 => 'quotes',
+                2 => 'comment',
+                3 => '',
+                4 => '',
+                5 => '',
+            ),
+            1 =>
+            array (
+            ),
+            2 =>
+            array (
+                0 => '',
+                1 => '',
+                2 => '',
+                3 => '',
+            ),
+        );
+        $this->_inner = array (
+            -1 =>
+            array (
+                0 => 'code',
+                1 => 'string',
+                2 => 'comment',
+                3 => 'number',
+                4 => 'number',
+                5 => 'identifier',
+            ),
+            0 =>
+            array (
+                0 => 'code',
+                1 => 'string',
+                2 => 'comment',
+                3 => 'number',
+                4 => 'number',
+                5 => 'identifier',
+            ),
+            1 =>
+            array (
+            ),
+            2 =>
+            array (
+                0 => 'url',
+                1 => 'url',
+                2 => 'inlinedoc',
+                3 => 'inlinedoc',
+            ),
+        );
+        $this->_end = array (
+            0 => '/(?i)\\)/',
+            1 => '/(?i)"/',
+            2 => '/(?mi)$/',
+        );
+        $this->_states = array (
+            -1 =>
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => -1,
+                4 => -1,
+                5 => -1,
+            ),
+            0 =>
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => -1,
+                4 => -1,
+                5 => -1,
+            ),
+            1 =>
+            array (
+            ),
+            2 =>
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+            ),
+        );
+        $this->_keywords = array (
+            -1 =>
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 =>
+                array (
+                ),
+                4 =>
+                array (
+                ),
+                5 =>
+                array (
+                    'constants' => '/^((?i)vbblack|vbred|vbgreen|vbyellow|vbblue|vbmagenta|vbcyan|vbwhite|vbbinarycompare|vbtextcompare|vbsunday|vbmonday|vbtuesday|vbwednesday|vbthursday|vbfriday|vbsaturday|vbusesystemdayofweek|vbfirstjan1|vbfirstfourdays|vbfirstfullweek|vbgeneraldate|vblongdate|vbshortdate|vblongtime|vbshorttime|vbobjecterror|vbokonly|vbokcancel|vbabortretryignore|vbyesnocancel|vbyesno|vbretrycancel|vbcritical|vbquestion|vbexclamation|vbinformation|vbdefaultbutton1|vbdefaultbutton2|vbdefaultbutton3|vbdefaultbutton4|vbapplicationmodal|vbsystemmodal|vbok|vbcancel|vbabort|vbretry|vbignore|vbyes|vbno|vbcr|vbcrlf|vbformfeed|vblf|vbnewline|vbnullchar|vbnullstring|vbtab|vbverticaltab|vbusedefault|vbtrue|vbfalse|vbempty|vbnull|vbinteger|vblong|vbsingle|vbdouble|vbcurrency|vbdate|vbstring|vbobject|vberror|vbboolean|vbvariant|vbdataobject|vbdecimal|vbbyte|vbarray)$/',
+                    'functions' => '/^((?i)abs|array|asc|atn|cbool|cbyte|ccur|cdate|cdbl|chr|cint|clng|cos|createobject|csng|cstr|date|dateadd|datediff|datepart|dateserial|datevalue|day|escape|eval|exp|filter|formatcurrency|formatdatetime|formatnumber|formatpercent|getlocale|getobject|getref|hex|hour|inputbox|instr|instrrev|int|fix|isarray|isdate|isempty|isnull|isnumeric|isobject|join|lbound|lcase|left|len|loadpicture|log|ltrim|rtrim|trim|mid|minute|month|monthname|msgbox|now|oct|replace|rgb|right|rnd|round|scriptengine|scriptenginebuildversion|scriptenginemajorversion|scriptengineminorversion|second|setlocale|sgn|sin|space|split|sqr|strcomp|string|strreverse|tan|time|timer|timeserial|timevalue|typename|ubound|ucase|unescape|vartype|weekday|weekdayname|year)$/',
+                    'builtin' => '/^((?i)debug|err|match|regexp)$/',
+                    'reserved' => '/^((?i)empty|false|nothing|null|true|and|eqv|imp|is|mod|not|or|xor|call|class|end|const|public|private|dim|do|while|until|exit|loop|erase|execute|executeglobal|for|each|in|to|step|next|function|default|if|then|else|elseif|on|error|resume|goto|option|explicit|property|get|let|set|randomize|redim|preserve|select|case|stop|sub|wend|with)$/',
+                ),
+            ),
+            0 =>
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 =>
+                array (
+                ),
+                4 =>
+                array (
+                ),
+                5 =>
+                array (
+                    'constants' => '/^((?i)vbblack|vbred|vbgreen|vbyellow|vbblue|vbmagenta|vbcyan|vbwhite|vbbinarycompare|vbtextcompare|vbsunday|vbmonday|vbtuesday|vbwednesday|vbthursday|vbfriday|vbsaturday|vbusesystemdayofweek|vbfirstjan1|vbfirstfourdays|vbfirstfullweek|vbgeneraldate|vblongdate|vbshortdate|vblongtime|vbshorttime|vbobjecterror|vbokonly|vbokcancel|vbabortretryignore|vbyesnocancel|vbyesno|vbretrycancel|vbcritical|vbquestion|vbexclamation|vbinformation|vbdefaultbutton1|vbdefaultbutton2|vbdefaultbutton3|vbdefaultbutton4|vbapplicationmodal|vbsystemmodal|vbok|vbcancel|vbabort|vbretry|vbignore|vbyes|vbno|vbcr|vbcrlf|vbformfeed|vblf|vbnewline|vbnullchar|vbnullstring|vbtab|vbverticaltab|vbusedefault|vbtrue|vbfalse|vbempty|vbnull|vbinteger|vblong|vbsingle|vbdouble|vbcurrency|vbdate|vbstring|vbobject|vberror|vbboolean|vbvariant|vbdataobject|vbdecimal|vbbyte|vbarray)$/',
+                    'functions' => '/^((?i)abs|array|asc|atn|cbool|cbyte|ccur|cdate|cdbl|chr|cint|clng|cos|createobject|csng|cstr|date|dateadd|datediff|datepart|dateserial|datevalue|day|escape|eval|exp|filter|formatcurrency|formatdatetime|formatnumber|formatpercent|getlocale|getobject|getref|hex|hour|inputbox|instr|instrrev|int|fix|isarray|isdate|isempty|isnull|isnumeric|isobject|join|lbound|lcase|left|len|loadpicture|log|ltrim|rtrim|trim|mid|minute|month|monthname|msgbox|now|oct|replace|rgb|right|rnd|round|scriptengine|scriptenginebuildversion|scriptenginemajorversion|scriptengineminorversion|second|setlocale|sgn|sin|space|split|sqr|strcomp|string|strreverse|tan|time|timer|timeserial|timevalue|typename|ubound|ucase|unescape|vartype|weekday|weekdayname|year)$/',
+                    'builtin' => '/^((?i)debug|err|match|regexp)$/',
+                    'reserved' => '/^((?i)empty|false|nothing|null|true|and|eqv|imp|is|mod|not|or|xor|call|class|end|const|public|private|dim|do|while|until|exit|loop|erase|execute|executeglobal|for|each|in|to|step|next|function|default|if|then|else|elseif|on|error|resume|goto|option|explicit|property|get|let|set|randomize|redim|preserve|select|case|stop|sub|wend|with)$/',
+                ),
+            ),
+            1 =>
+            array (
+            ),
+            2 =>
+            array (
+                0 =>
+                array (
+                ),
+                1 =>
+                array (
+                ),
+                2 =>
+                array (
+                ),
+                3 =>
+                array (
+                ),
+            ),
+        );
+        $this->_parts = array (
+            0 =>
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+            ),
+            1 =>
+            array (
+            ),
+            2 =>
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+            ),
+        );
+        $this->_subst = array (
+            -1 =>
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+            ),
+            0 =>
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+            ),
+            1 =>
+            array (
+            ),
+            2 =>
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+            ),
+        );
+        $this->_conditions = array (
+        );
+        $this->_kwmap = array (
+            'constants' => 'builtin',
+            'functions' => 'builtin',
+            'builtin' => 'builtin',
+            'reserved' => 'reserved',
+        );
+        $this->_defClass = 'code';
+        $this->_checkDefines();
+    }
+
+}

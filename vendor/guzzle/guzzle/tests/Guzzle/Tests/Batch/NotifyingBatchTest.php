@@ -1,39 +1,45 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xql7Gl9sFW4nmjjy6LIngdAJ9W==
+<?php
+
+namespace Guzzle\Tests\Batch;
+
+use Guzzle\Batch\NotifyingBatch;
+use Guzzle\Batch\Batch;
+
+/**
+ * @covers Guzzle\Batch\NotifyingBatch
+ */
+class NotifyingBatchTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testNotifiesAfterFlush()
+    {
+        $batch = $this->getMock('Guzzle\Batch\Batch', array('flush'), array(
+            $this->getMock('Guzzle\Batch\BatchTransferInterface'),
+            $this->getMock('Guzzle\Batch\BatchDivisorInterface')
+        ));
+
+        $batch->expects($this->once())
+            ->method('flush')
+            ->will($this->returnValue(array('foo', 'baz')));
+
+        $data = array();
+        $decorator = new NotifyingBatch($batch, function ($batch) use (&$data) {
+            $data[] = $batch;
+        });
+
+        $decorator->add('foo')->add('baz');
+        $decorator->flush();
+        $this->assertEquals(array(array('foo', 'baz')), $data);
+    }
+
+    /**
+     * @expectedException Guzzle\Common\Exception\InvalidArgumentException
+     */
+    public function testEnsuresCallableIsValid()
+    {
+        $batch = new Batch(
+            $this->getMock('Guzzle\Batch\BatchTransferInterface'),
+            $this->getMock('Guzzle\Batch\BatchDivisorInterface')
+        );
+        $decorator = new NotifyingBatch($batch, 'foo');
+    }
+}

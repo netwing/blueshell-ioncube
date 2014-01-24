@@ -1,59 +1,151 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Functions_CallTimePassByReferenceSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Florian Grandel <jerico.dev@gmail.com>
+ * @copyright 2009 Florian Grandel
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_Functions_CallTimePassByReferenceSniff.
+ *
+ * Ensures that variables are not passed by reference when calling a function.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Florian Grandel <jerico.dev@gmail.com>
+ * @copyright 2009 Florian Grandel
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Functions_CallTimePassByReferenceSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_STRING,
+                T_VARIABLE,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Skip tokens that are the names of functions or classes
+        // within their definitions. For example: function myFunction...
+        // "myFunction" is T_STRING but we should skip because it is not a
+        // function or method *call*.
+        $functionName = $stackPtr;
+        $findTokens   = array_merge(
+            PHP_CodeSniffer_Tokens::$emptyTokens,
+            array(T_BITWISE_AND)
+        );
+
+        $functionKeyword = $phpcsFile->findPrevious(
+            $findTokens,
+            ($stackPtr - 1),
+            null,
+            true
+        );
+
+        if ($tokens[$functionKeyword]['code'] === T_FUNCTION
+            || $tokens[$functionKeyword]['code'] === T_CLASS
+        ) {
+            return;
+        }
+
+        // If the next non-whitespace token after the function or method call
+        // is not an opening parenthesis then it cant really be a *call*.
+        $openBracket = $phpcsFile->findNext(
+            PHP_CodeSniffer_Tokens::$emptyTokens,
+            ($functionName + 1),
+            null,
+            true
+        );
+
+        if ($tokens[$openBracket]['code'] !== T_OPEN_PARENTHESIS) {
+            return;
+        }
+
+        $closeBracket = $tokens[$openBracket]['parenthesis_closer'];
+
+        $nextSeparator = $openBracket;
+        while (($nextSeparator = $phpcsFile->findNext(T_VARIABLE, ($nextSeparator + 1), $closeBracket)) !== false) {
+            // Make sure the variable belongs directly to this function call
+            // and is not inside a nested function call or array.
+            $brackets    = $tokens[$nextSeparator]['nested_parenthesis'];
+            $lastBracket = array_pop($brackets);
+            if ($lastBracket !== $closeBracket) {
+                continue;
+            }
+
+            // Checking this: $value = my_function(...[*]$arg...).
+            $tokenBefore = $phpcsFile->findPrevious(
+                PHP_CodeSniffer_Tokens::$emptyTokens,
+                ($nextSeparator - 1),
+                null,
+                true
+            );
+
+            if ($tokens[$tokenBefore]['code'] === T_BITWISE_AND) {
+                // Checking this: $value = my_function(...[*]&$arg...).
+                $tokenBefore = $phpcsFile->findPrevious(
+                    PHP_CodeSniffer_Tokens::$emptyTokens,
+                    ($tokenBefore - 1),
+                    null,
+                    true
+                );
+
+                // We have to exclude all uses of T_BITWISE_AND that are not
+                // references. We use a blacklist approach as we prefer false
+                // positives to not identifying a pass-by-reference call at all.
+                // The blacklist may not yet be complete.
+                switch ($tokens[$tokenBefore]['code']) {
+                case T_VARIABLE:
+                case T_CLOSE_PARENTHESIS:
+                case T_LNUMBER:
+                    // In these cases T_BITWISE_AND represents
+                    // the bitwise and operator.
+                    continue;
+
+                default:
+                    // T_BITWISE_AND represents a pass-by-reference.
+                    $error = 'Call-time pass-by-reference calls are prohibited';
+                    $phpcsFile->addError($error, $tokenBefore, 'NotAllowed');
+                    break;
+                }
+            }//end if
+        }//end while
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

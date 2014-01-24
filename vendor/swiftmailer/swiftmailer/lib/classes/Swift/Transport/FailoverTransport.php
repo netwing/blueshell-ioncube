@@ -1,43 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xom=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Contains a list of redundant Transports so when one fails, the next is used.
+ *
+ * @package    Swift
+ * @subpackage Transport
+ * @author     Chris Corbyn
+ */
+class Swift_Transport_FailoverTransport extends Swift_Transport_LoadBalancedTransport
+{
+    /**
+     * Registered transport currently used.
+     *
+     * @var Swift_Transport
+     */
+    private $_currentTransport;
+
+    /**
+     * Creates a new FailoverTransport.
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Send the given Message.
+     *
+     * Recipient/sender data will be retrieved from the Message API.
+     * The return value is the number of recipients who were accepted for delivery.
+     *
+     * @param Swift_Mime_Message $message
+     * @param string[]           $failedRecipients An array of failures by-reference
+     *
+     * @return int
+     */
+    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
+    {
+        $maxTransports = count($this->_transports);
+        $sent = 0;
+
+        for ($i = 0; $i < $maxTransports
+            && $transport = $this->_getNextTransport(); ++$i)
+        {
+            try {
+                if (!$transport->isStarted()) {
+                    $transport->start();
+                }
+
+                return $transport->send($message, $failedRecipients);
+            } catch (Swift_TransportException $e) {
+                $this->_killCurrentTransport();
+            }
+        }
+
+        if (count($this->_transports) == 0) {
+            throw new Swift_TransportException(
+                'All Transports in FailoverTransport failed, or no Transports available'
+                );
+        }
+
+        return $sent;
+    }
+
+    // -- Protected methods
+
+    protected function _getNextTransport()
+    {
+        if (!isset($this->_currentTransport)) {
+            $this->_currentTransport = parent::_getNextTransport();
+        }
+
+        return $this->_currentTransport;
+    }
+
+    protected function _killCurrentTransport()
+    {
+        $this->_currentTransport = null;
+        parent::_killCurrentTransport();
+    }
+}

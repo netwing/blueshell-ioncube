@@ -1,48 +1,116 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPo4J9oHY/PiBRw6o1tBbZeSOp6k/3Qb+4RciGb5y/AFfFpMxVZ8wxQCCG57DUG3mph09wUTm
-PdcPVW6cJhPrGf2B230ZZ6RClHPDJCrSr43H9hyzmiaoLt4ML7Onwk3lKFyPujoyBmQUJjwwhrvf
-dvR2n65p8pkFtN1MCkkY+T0r6moKCKIn3LIyGpvwRLDq/iO7ImQeLlbzleWp9QPmNJHGcSTlpdHo
-i6HAB99XYUQq2iPEBY3+hr4euJltSAgiccy4GDnfTAPUDtv6DXEwQxKxgCZ0Mi0VGweacK9jmOMc
-FvKkUtCXRXeY/9u1hsC5MZYLlndK/m/PCWcBWIdMqYbhkZIdYy+ro7pPWpVVKFPt4zW+JY9DO0+m
-oLAVI146MN1ZKN3uaL565pRfgLiVfr0lg9XKO4G9VnH1ig2Hhli1Xe8mOCT8B1ShcHkzj2aG0z8v
-43Hz46xoAP5yYbwVK+tCq9Pse1PV5ee1BFbwwbDikXK0EcgFYI+ZTxpukG7SlHAYJC2qkLzPMRYm
-3kpTFl3yqiTrrxVxYEAiiA5irzxa9157Cv3fM3iSmLPMorjh8vwl/Mpk/oVlEJwvALzGISqmahGP
-hcmUCjXQHRXwTV6N8CTdIUB5CH/zS05N832Y74pVq1ctB0Qi5E611D24bFkLDsyXnShWo73LFJlP
-6I+KWXah5xbJs3bF/Tx7cMzo7nSIDQ/0fEKwe9GJ80wO6lrM1W5UGt2iuR2Agv1P3twKCZzIh7oX
-/PIqWBfi3OsmoDChhvvaCP+3R/Bp2O8ulrJN2hc3xDQCk6ll1XYluU9Q9G7J1FmSAXnE+aFmuUeK
-8n8gQYFQ8d0YKQFwpkJQiI2c9mVVQiYdXPuBdL7afTVtB3sxhreiOcLXuCTocH4aHx+MQNCpakFp
-Wt9GCrBs1grVGCs3V+7guiDjmjIo8J53wu20Ql86ZM54EcqwxpBXk3dUl6v+OmIzCD0VgW1T6tb8
-Srva11NuTl+iqfW4gVzBJMMpGGJXaiDLGwhpdyJeNZ/OqjB+ZM/xs4AwJmc0LEXL0yqcyk3OyOyW
-uYsZAzPuDi040fyF/VEVh/fsJyFQ/xleUGOxxEpFbkKnbAZjQwDDrnXHmt/+eHrqyt6uk52r+1Df
-FcekrDfCn246vqpWli2uIayUn/xFiEZ1amDL+AGKiRjT/f1KzU+VKiSjZJgrjkDCNeQdHv1xBgpi
-Rgu9zr7xD2xiTcobs1vR/KgUoNGLNCLc9OzEoRWgvRRICSs/5ZQeYHOxdo/RGgFmdCBENfqBuFJC
-zR2df5DN2OeMBkfgVnpH077T9bZFoaoZg5JhEoywALi0qXD6/sy8IsyAOR2cL/M/g6SLiQgEveOs
-MNjgq2dD6FHqrItfSqQEFi64S5jssJg3V0St9t9qbj0gLuBrdMb+EllsJmoG5NneNDW4VjQMCI/a
-jhG/lvfhl8XHtp+esW0IgpCbFuWVkMKjoVrwypRal507ru408DFlXXvmkE9mIv+2hp/T5m7daH/l
-TBLJg8UxmVdm7z7H9kvNstab+bzvwU12G6//38yPAQxbJWXYjaMEeZV2QVSQCZx8+FgDjPANiVkT
-kWnjdxbHYCfNnyy9hHvMurpbhm6vxp6QOYNXikmbB2AqOgOPeix877LIv7fIX+BRNIkOAk6BR47B
-lBqzh1gU5Jx/W7vYuHDVd1brU7uVHWh68j544wJAr8F0oRwon/B2rc/Li9ta5pQke3lbkED2XcA/
-y2kqIYPa5lLFb+OcUJFi+LtIwCXs9CRQl+oXwZ7FnS8wlyR8KcASSsKY15Y7obUhYRza9bODdsoZ
-qOVi3AVy0yyZOyaCim51LyP8QhYvHLEryf2eRzxQWxP+mzTd+OucnWp91KM48rlrxlmqt+R3RdZs
-m0E4Ttou7H3G8DTYzyriahTKasSCDLAtFa9l0FK+tGRCCscQqnGZwboNYIXhig/JuhR0Wd+AXnKX
-V7zMHMv/iP0WuheefABiMx0QlWVxM3FJtufxZYfon3erALAeO2qGtU7OiPiQrgpoUCdvxDte5G2O
-95A1Pbs+53qbLrjtxABsxHC99L3p8ehsbg60RaZHVkuhCuhNSZsKqyWxtr98fu8MXrfmr67y1ZDT
-thPeBDCzCVmseyZUtBo7kT9djzMIaTyOhgABstfNEYLvVyqsSj7pmzYT03AeMG3KVWax27KC66rv
-TVHeKEnPFrwZcZzo/o/94yZ/2V87Ujp30muWKNtn7dYZ/m0DSKLmikC+X/6EZ73YWmqrXObnbbt0
-t79tBSbr+zTJuTC+Dsw/CANkaHk/oUG6wC+gHLS+gORLs5L7yVdzSS6po0GYmd8ISJQXCt0tG+GK
-XsazQiaUtu7LokHKlBA8D+lb1cOhSJ+oBWx+EsZB0+s2cpM1vk6A8Iccq3P5R3TvCrcXFwfH+6db
-H7Nq2f3exmJdzNialSD8gCZra05p22f6u1Mkq5BDlPFeUPF/VI+Cmks5FKdrqzp2R/YXmDeScbg9
-DwoNNmvaoDlg/tXWLPyIdYQvzqHubx7AK00Rnwu706M8fSJIT2W6dG9OrpWwnze42KIFKEv841/l
-vbj2ItSSikndJJUPizKGkKxXxzmZsHs7HMJxUzFOb9ja3tGZRr2FL0tAmusPbz7CauG2BXiUckNm
-M25nLegnQe1CHJzAGnqVbFYXZwsH60cElKyIWXjt4J+C5W+8Wxd4pvetkn5NZyjC0xMsrXMqtLM+
-Jba5x4dJByFOtDtpCCGjEZMVYGzdx9gxUmjUe2+jwBWr3KD/m/Ba9lTTKiRadCxpftttjVXuwUNQ
-TxVyVItqHyfhXs86vmCvlKTnTx+WlZ5Ei2ACxGQin6RuQbztVcEhirkLP2FWsTfAks9JMVq7mCJ9
-u2NE2TjlgZzE98OdVx73U17wYbEYtGsDVHrN3e+vYaPo8BYE4+lEln4/n1LAABFaC7EmjA87MGNt
-dq5ICEW9bLG9IXARVycYCcCvtVrha1fGpc/Ttawf3tXgpmrms75BonAC4fbR9KC8vTV5PozkUmjs
-NyEwQXomLCxKesACr60Y1i60FO/ektHR34MWNTeMku5C07sr/XmTHLe7asuf0Y2RVVMqM8si53Gd
-CAEdyBDfggrB84xo+1jNgi/IsysdSlBR9BD0IR6SSPNvRi596N8rc9dugcOwm/Wp1VRBaSLBWLDt
-sAHw1KqhKz7cKQMguJrc8gVsmEDFPHaKiMtDa7kxlrER/uf+YA9nnPaSSMst8whOJJT4QP0oqU4m
-RitOYKZNvHtgBbozYqHd2SIrsDPan5B1SFda8aA7g3Au7wDOWeqIfZFmsL86gxHXQICW4qNwTWPg
-jWWGTLjI8YfWjJLKr6cbhVfMQfrZPHaD74o5IDnXCKxvRWeYztEvoZ4iwQ6ZVX/8jOgNsAq=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Process\Tests;
+
+class SigchildEnabledProcessTest extends AbstractProcessTest
+{
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testProcessIsSignaledIfStopped()
+    {
+        parent::testProcessIsSignaledIfStopped();
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testProcessWithTermSignal()
+    {
+        parent::testProcessWithTermSignal();
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testProcessIsNotSignaled()
+    {
+        parent::testProcessIsNotSignaled();
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testProcessWithoutTermSignal()
+    {
+        parent::testProcessWithoutTermSignal();
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testGetPid()
+    {
+        parent::testGetPid();
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testGetPidIsNullBeforeStart()
+    {
+        parent::testGetPidIsNullBeforeStart();
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testGetPidIsNullAfterRun()
+    {
+        parent::testGetPidIsNullAfterRun();
+    }
+
+    public function testExitCodeText()
+    {
+        $process = $this->getProcess('qdfsmfkqsdfmqmsd');
+        $process->run();
+
+        $this->assertInternalType('string', $process->getExitCodeText());
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testSignal()
+    {
+        parent::testSignal();
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testProcessWithoutTermSignalIsNotSignaled()
+    {
+        parent::testProcessWithoutTermSignalIsNotSignaled();
+    }
+
+    public function testProcessThrowsExceptionWhenExternallySignaled()
+    {
+        $this->markTestSkipped('Retrieving Pid is not supported in sigchild environment');
+    }
+
+    public function testExitCodeIsAvailableAfterSignal()
+    {
+        $this->markTestSkipped('Signal is not supported in sigchild environment');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getProcess($commandline, $cwd = null, array $env = null, $stdin = null, $timeout = 60, array $options = array())
+    {
+        $process = new ProcessInSigchildEnvironment($commandline, $cwd, $env, $stdin, $timeout, $options);
+        $process->setEnhanceSigchildCompatibility(true);
+
+        return $process;
+    }
+}

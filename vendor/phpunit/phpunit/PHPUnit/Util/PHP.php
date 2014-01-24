@@ -1,143 +1,339 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.4.0
+ */
+
+/**
+ * Utility methods for PHP sub-processes.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.4.0
+ */
+abstract class PHPUnit_Util_PHP
+{
+    /**
+     * @var string $phpBinary
+     */
+    protected $phpBinary;
+
+    /**
+     * Returns the path to a PHP interpreter.
+     *
+     * PHPUnit_Util_PHP::$phpBinary contains the path to the PHP
+     * interpreter.
+     *
+     * When not set, the following assumptions will be made:
+     *
+     *   1. When PHPUnit is run using the CLI SAPI and the $_SERVER['_']
+     *      variable does not contain the string "PHPUnit", $_SERVER['_']
+     *      is assumed to contain the path to the current PHP interpreter
+     *      and that will be used.
+     *
+     *   2. When PHPUnit is run using the CLI SAPI and the $_SERVER['_']
+     *      variable contains the string "PHPUnit", the file that $_SERVER['_']
+     *      points to is assumed to be the PHPUnit TextUI CLI wrapper script
+     *      "phpunit" and the binary set up using #! on that file's first
+     *      line of code is assumed to contain the path to the current PHP
+     *      interpreter and that will be used.
+     *
+     *   3. When the PHP CLI/CGI binary configured with the PEAR Installer
+     *      (php_bin configuration value) is readable, it will be used.
+     *
+     *   4. The current PHP interpreter is assumed to be in the $PATH and
+     *      to be invokable through "php".
+     *
+     * @return string
+     */
+    protected function getPhpBinary()
+    {
+        if ($this->phpBinary === NULL) {
+            if (($e = getenv("PHP_BINARY")) !== false) {
+                $this->phpBinary = $e;
+            }
+            else if (defined("PHP_BINARY")) {
+                $this->phpBinary = PHP_BINARY;
+            } else if (PHP_SAPI == 'cli' && isset($_SERVER['_'])) {
+                if (strpos($_SERVER['_'], 'phpunit') !== FALSE) {
+                    $file = file($_SERVER['_']);
+
+                    if (strpos($file[0], ' ') !== FALSE) {
+                        $tmp = explode(' ', $file[0]);
+                        $this->phpBinary = trim($tmp[1]);
+                    } else {
+                        $this->phpBinary = ltrim(trim($file[0]), '#!');
+                    }
+                } else if (strpos(basename($_SERVER['_']), 'php') !== FALSE) {
+                    $this->phpBinary = $_SERVER['_'];
+                }
+            }
+
+            if ($this->phpBinary === NULL) {
+                $possibleBinaryLocations = array(
+                    PHP_BINDIR . '/php',
+                    PHP_BINDIR . '/php-cli.exe',
+                    PHP_BINDIR . '/php.exe',
+                    '@php_bin@',
+                );
+                foreach ($possibleBinaryLocations as $binary) {
+                    if (is_readable($binary)) {
+                        $this->phpBinary = $binary;
+                        break;
+                    }
+                }
+            }
+
+            if (!is_readable($this->phpBinary)) {
+                $this->phpBinary = 'php';
+            } else {
+                $this->phpBinary = escapeshellarg($this->phpBinary);
+            }
+        }
+
+        return $this->phpBinary;
+    }
+
+    /**
+     * @return PHPUnit_Util_PHP
+     * @since  Method available since Release 3.5.12
+     */
+    public static function factory()
+    {
+        if (DIRECTORY_SEPARATOR == '\\') {
+            return new PHPUnit_Util_PHP_Windows;
+        }
+
+        return new PHPUnit_Util_PHP_Default;
+    }
+
+    /**
+     * Runs a single job (PHP code) using a separate PHP process.
+     *
+     * @param  string                       $job
+     * @param  PHPUnit_Framework_TestCase   $test
+     * @param  PHPUnit_Framework_TestResult $result
+     * @return array|null
+     * @throws PHPUnit_Framework_Exception
+     */
+    public function runJob($job, PHPUnit_Framework_Test $test = NULL, PHPUnit_Framework_TestResult $result = NULL)
+    {
+        $process = proc_open(
+          $this->getPhpBinary(),
+          array(
+            0 => array('pipe', 'r'),
+            1 => array('pipe', 'w'),
+            2 => array('pipe', 'w')
+          ),
+          $pipes
+        );
+
+        if (!is_resource($process)) {
+            throw new PHPUnit_Framework_Exception(
+              'Unable to create process for process isolation.'
+            );
+        }
+
+        if ($result !== NULL) {
+            $result->startTest($test);
+        }
+
+        $this->process($pipes[0], $job);
+        fclose($pipes[0]);
+
+        $stdout = stream_get_contents($pipes[1]);
+        fclose($pipes[1]);
+
+        $stderr = stream_get_contents($pipes[2]);
+        fclose($pipes[2]);
+
+        proc_close($process);
+        $this->cleanup();
+
+        if ($result !== NULL) {
+            $this->processChildResult($test, $result, $stdout, $stderr);
+        } else {
+            return array('stdout' => $stdout, 'stderr' => $stderr);
+        }
+    }
+
+    /**
+     * @param resource $pipe
+     * @param string   $job
+     * @since Method available since Release 3.5.12
+     */
+    abstract protected function process($pipe, $job);
+
+    /**
+     * @since Method available since Release 3.5.12
+     */
+    protected function cleanup()
+    {
+    }
+
+    /**
+     * Processes the TestResult object from an isolated process.
+     *
+     * @param PHPUnit_Framework_TestCase   $test
+     * @param PHPUnit_Framework_TestResult $result
+     * @param string                       $stdout
+     * @param string                       $stderr
+     * @since Method available since Release 3.5.0
+     */
+    protected function processChildResult(PHPUnit_Framework_Test $test, PHPUnit_Framework_TestResult $result, $stdout, $stderr)
+    {
+        $time = 0;
+
+        if (!empty($stderr)) {
+            $result->addError(
+              $test,
+              new PHPUnit_Framework_Exception(trim($stderr)), $time
+            );
+        } else {
+            set_error_handler(function($errno, $errstr, $errfile, $errline) {
+                throw new ErrorException($errstr, $errno, $errno, $errfile, $errline);
+            });
+            try {
+                if (strpos($stdout, "#!/usr/bin/env php\n") === 0) {
+                    $stdout = substr($stdout, 19);
+                }
+
+                $childResult = unserialize(str_replace("#!/usr/bin/env php\n", '', $stdout));
+                restore_error_handler();
+            } catch (ErrorException $e) {
+                restore_error_handler();
+                $childResult = FALSE;
+
+                $result->addError(
+                  $test, new PHPUnit_Framework_Exception(trim($stdout), 0, $e), $time
+                );
+            }
+
+            if ($childResult !== FALSE) {
+                if (!empty($childResult['output'])) {
+                    print $childResult['output'];
+                }
+
+                $test->setResult($childResult['testResult']);
+                $test->addToAssertionCount($childResult['numAssertions']);
+
+                $childResult = $childResult['result'];
+
+                if ($result->getCollectCodeCoverageInformation()) {
+                    $result->getCodeCoverage()->merge(
+                      $childResult->getCodeCoverage()
+                    );
+                }
+
+                $time           = $childResult->time();
+                $notImplemented = $childResult->notImplemented();
+                $skipped        = $childResult->skipped();
+                $errors         = $childResult->errors();
+                $failures       = $childResult->failures();
+
+                if (!empty($notImplemented)) {
+                    $result->addError(
+                      $test, $this->getException($notImplemented[0]), $time
+                    );
+                }
+
+                else if (!empty($skipped)) {
+                    $result->addError(
+                      $test, $this->getException($skipped[0]), $time
+                    );
+                }
+
+                else if (!empty($errors)) {
+                    $result->addError(
+                      $test, $this->getException($errors[0]), $time
+                    );
+                }
+
+                else if (!empty($failures)) {
+                    $result->addFailure(
+                      $test, $this->getException($failures[0]), $time
+                    );
+                }
+            }
+        }
+
+        $result->endTest($test, $time);
+    }
+
+    /**
+     * Gets the thrown exception from a PHPUnit_Framework_TestFailure.
+     *
+     * @param PHPUnit_Framework_TestFailure $error
+     * @since Method available since Release 3.6.0
+     * @see   https://github.com/sebastianbergmann/phpunit/issues/74
+     */
+    protected function getException(PHPUnit_Framework_TestFailure $error)
+    {
+        $exception = $error->thrownException();
+
+        if ($exception instanceof __PHP_Incomplete_Class) {
+            $exceptionArray = array();
+            foreach ((array)$exception as $key => $value) {
+                $key = substr($key, strrpos($key, "\0") + 1);
+                $exceptionArray[$key] = $value;
+            }
+
+            $exception = new PHPUnit_Framework_SyntheticError(
+              sprintf(
+                '%s: %s',
+                $exceptionArray['_PHP_Incomplete_Class_Name'],
+                $exceptionArray['message']
+              ),
+              $exceptionArray['code'],
+              $exceptionArray['file'],
+              $exceptionArray['line'],
+              $exceptionArray['trace']
+            );
+        }
+
+        return $exception;
+    }
+}

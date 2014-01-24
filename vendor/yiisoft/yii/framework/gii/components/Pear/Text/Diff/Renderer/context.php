@@ -1,38 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-PrcM3jaGkPIkm1apWWPtOWgYX5nIk0==
+<?php
+/**
+ * "Context" diff renderer.
+ *
+ * This class renders the diff in classic "context diff" format.
+ *
+ * $Horde: framework/Text_Diff/Diff/Renderer/context.php,v 1.3.2.3 2008/01/04 10:37:27 jan Exp $
+ *
+ * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
+ *
+ * See the enclosed file COPYING for license information (LGPL). If you did
+ * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
+ *
+ * @package Text_Diff
+ */
+
+/** Text_Diff_Renderer */
+require_once 'Text/Diff/Renderer.php';
+
+/**
+ * @package Text_Diff
+ */
+class Text_Diff_Renderer_context extends Text_Diff_Renderer {
+
+    /**
+     * Number of leading context "lines" to preserve.
+     */
+    var $_leading_context_lines = 4;
+
+    /**
+     * Number of trailing context "lines" to preserve.
+     */
+    var $_trailing_context_lines = 4;
+
+    var $_second_block = '';
+
+    function _blockHeader($xbeg, $xlen, $ybeg, $ylen)
+    {
+        if ($xlen != 1) {
+            $xbeg .= ',' . $xlen;
+        }
+        if ($ylen != 1) {
+            $ybeg .= ',' . $ylen;
+        }
+        $this->_second_block = "--- $ybeg ----\n";
+        return "***************\n*** $xbeg ****";
+    }
+
+    function _endBlock()
+    {
+        return $this->_second_block;
+    }
+
+    function _context($lines)
+    {
+        $this->_second_block .= $this->_lines($lines, '  ');
+        return $this->_lines($lines, '  ');
+    }
+
+    function _added($lines)
+    {
+        $this->_second_block .= $this->_lines($lines, '+ ');
+        return '';
+    }
+
+    function _deleted($lines)
+    {
+        return $this->_lines($lines, '- ');
+    }
+
+    function _changed($orig, $final)
+    {
+        $this->_second_block .= $this->_lines($final, '! ');
+        return $this->_lines($orig, '! ');
+    }
+
+}

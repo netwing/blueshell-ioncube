@@ -1,111 +1,243 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jhVAUw9nog22PhVTHYnZG02W6eBi6W==
+<?php
+/**
+ * PHP_ParserGenerator, a php 5 parser generator.
+ *
+ * This is a direct port of the Lemon parser generator, found at
+ * {@link http://www.hwaci.com/sw/lemon/}
+ *
+ * PHP version 5
+ *
+ * LICENSE:
+ *
+ * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in
+ *       the documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the PHP_ParserGenerator nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   php
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    CVS: $Id: Action.php,v 1.2 2007/03/04 17:52:05 cellog Exp $
+ * @since      File available since Release 0.1.0
+ */
+/**
+ * Every shift or reduce operation is stored as one of the following objects.
+ *
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    0.1.5
+ * @since      Class available since Release 0.1.0
+ */
+class PHP_ParserGenerator_Action
+{
+    const SHIFT = 1,
+    ACCEPT = 2,
+    REDUCE = 3,
+    ERROR = 4,
+    /**
+           * Was a reduce, but part of a conflict
+           */
+    CONFLICT = 5,
+    /**
+           * Was a shift.  Precedence resolved conflict
+           */
+    SH_RESOLVED = 6,
+    /**
+           * Was a reduce.  Precedence resolved conflict
+           */
+    RD_RESOLVED = 7,
+    /**
+           * Deleted by compression
+           * @see PHP_ParserGenerator::CompressTables()
+           */
+    NOT_USED = 8;
+    /**
+     * The look-ahead symbol that triggers this action
+     * @var PHP_ParserGenerator_Symbol
+     */
+    public $sp;       /* The look-ahead symbol */
+    /**
+     * This defines the kind of action, and must be one
+     * of the class constants.
+     *
+     * - {@link PHP_ParserGenerator_Action::SHIFT}
+     * - {@link PHP_ParserGenerator_Action::ACCEPT}
+     * - {@link PHP_ParserGenerator_Action::REDUCE}
+     * - {@link PHP_ParserGenerator_Action::ERROR}
+     * - {@link PHP_ParserGenerator_Action::CONFLICT}
+     * - {@link PHP_ParserGenerator_Action::SH_RESOLVED}
+     * - {@link PHP_ParserGenerator_Action:: RD_RESOLVED}
+     * - {@link PHP_ParserGenerator_Action::NOT_USED}
+     */
+    public $type;
+    /**
+     * The new state, if this is a shift,
+     * the parser rule index, if this is a reduce.
+     *
+     * @var PHP_ParserGenerator_State|PHP_ParserGenerator_Rule
+     */
+    public $x;
+    /**
+     * The next action for this state.
+     * @var PHP_ParserGenerator_Action
+     */
+    public $next;
+
+    /**
+     * Compare two actions
+     *
+     * This is used by {@link Action_sort()} to compare actions
+     */
+    public static function actioncmp(PHP_ParserGenerator_Action $ap1,
+                              PHP_ParserGenerator_Action $ap2)
+    {
+        $rc = $ap1->sp->index - $ap2->sp->index;
+        if ($rc === 0) {
+            $rc = $ap1->type - $ap2->type;
+        }
+        if ($rc === 0) {
+            if ($ap1->type == self::SHIFT) {
+                if ($ap1->x->statenum != $ap2->x->statenum) {
+                    throw new Exception('Shift conflict: ' . $ap1->sp->name .
+                        ' shifts both to state ' . $ap1->x->statenum . ' (rule ' .
+                        $ap1->x->cfp->rp->lhs->name . ' on line ' .
+                        $ap1->x->cfp->rp->ruleline . ') and to state ' .
+                        $ap2->x->statenum . ' (rule ' .
+                        $ap2->x->cfp->rp->lhs->name . ' on line ' .
+                        $ap2->x->cfp->rp->ruleline . ')');
+                }
+            }
+            if ($ap1->type != self::REDUCE &&
+            $ap1->type != self::RD_RESOLVED &&
+            $ap1->type != self::CONFLICT) {
+                throw new Exception('action has not been processed: ' .
+                $ap1->sp->name . ' on line ' . $ap1->x->cfp->rp->ruleline .
+                ', rule ' . $ap1->x->cfp->rp->lhs->name);
+            }
+            if ($ap2->type != self::REDUCE &&
+            $ap2->type != self::RD_RESOLVED &&
+            $ap2->type != self::CONFLICT) {
+                throw new Exception('action has not been processed: ' .
+                $ap2->sp->name . ' on line ' . $ap2->x->cfp->rp->ruleline .
+                ', rule ' . $ap2->x->cfp->rp->lhs->name);
+            }
+            $rc = $ap1->x->index - $ap2->x->index;
+        }
+
+        return $rc;
+    }
+
+    public function display($processed = false)
+    {
+        $map = array(
+            self::ACCEPT => 'ACCEPT',
+            self::CONFLICT => 'CONFLICT',
+            self::REDUCE => 'REDUCE',
+            self::SHIFT => 'SHIFT'
+        );
+       $sep = isset($_SERVER['_']) ? "\n" : "<br>";
+        echo $map[$this->type] . ' for ' . $this->sp->name;
+        if ($this->type == self::REDUCE) {
+            echo ' - rule ' . $this->x->lhs->name . $sep;
+        } elseif ($this->type == self::SHIFT) {
+            echo ' - state ' . $this->x->statenum . ', basis ' . $this->x->cfp->rp->lhs->name . $sep;
+        } else {
+            echo $sep;
+        }
+    }
+
+    /**
+     * create linked list of PHP_ParserGenerator_Actions
+     *
+     * @param PHP_ParserGenerator_Action|null
+     * @param int one of the class constants from PHP_ParserGenerator_Action
+     * @param PHP_ParserGenerator_Symbol
+     * @param PHP_ParserGenerator_State|PHP_ParserGenerator_Rule
+     */
+    public static function Action_add(&$app, $type, PHP_ParserGenerator_Symbol $sp, $arg)
+    {
+        $new = new PHP_ParserGenerator_Action;
+        $new->next = $app;
+        $app = $new;
+        $new->type = $type;
+        $new->sp = $sp;
+        $new->x = $arg;
+        echo ' Adding ';
+        $new->display();
+    }
+
+    /**
+     * Sort parser actions
+     * @see PHP_ParserGenerator_Data::FindActions()
+     */
+    public static function Action_sort(PHP_ParserGenerator_Action $ap)
+    {
+        $ap = PHP_ParserGenerator::msort($ap, 'next', array('PHP_ParserGenerator_Action', 'actioncmp'));
+
+        return $ap;
+    }
+
+    /**
+     * Print an action to the given file descriptor.  Return FALSE if
+     * nothing was actually printed.
+     * @see PHP_ParserGenerator_Data::ReportOutput()
+     */
+    public function PrintAction($fp, $indent)
+    {
+        if (!$fp) {
+            $fp = STDOUT;
+        }
+        $result = 1;
+        switch ($this->type) {
+            case self::SHIFT:
+                fprintf($fp, "%${indent}s shift  %d", $this->sp->name, $this->x->statenum);
+                break;
+            case self::REDUCE:
+                fprintf($fp, "%${indent}s reduce %d", $this->sp->name, $this->x->index);
+                break;
+            case self::ACCEPT:
+                fprintf($fp, "%${indent}s accept", $this->sp->name);
+                break;
+            case self::ERROR:
+                fprintf($fp, "%${indent}s error", $this->sp->name);
+                break;
+            case self::CONFLICT:
+                fprintf($fp, "%${indent}s reduce %-3d ** Parsing conflict **", $this->sp->name, $this->x->index);
+                break;
+            case self::SH_RESOLVED:
+            case self::RD_RESOLVED:
+            case self::NOT_USED:
+                $result = 0;
+                break;
+        }
+
+        return $result;
+    }
+}

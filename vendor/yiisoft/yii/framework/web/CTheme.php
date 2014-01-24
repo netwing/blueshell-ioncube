@@ -1,61 +1,140 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-0SdzBB2pOl7uzm==
+<?php
+/**
+ * CTheme class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CTheme represents an application theme.
+ *
+ * @property string $name Theme name.
+ * @property string $baseUrl The relative URL to the theme folder (without ending slash).
+ * @property string $basePath The file path to the theme folder.
+ * @property string $viewPath The path for controller views. Defaults to 'ThemeRoot/views'.
+ * @property string $systemViewPath The path for system views. Defaults to 'ThemeRoot/views/system'.
+ * @property string $skinPath The path for widget skins. Defaults to 'ThemeRoot/views/skins'.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.0
+ */
+class CTheme extends CComponent
+{
+	private $_name;
+	private $_basePath;
+	private $_baseUrl;
+
+	/**
+	 * Constructor.
+	 * @param string $name name of the theme
+	 * @param string $basePath base theme path
+	 * @param string $baseUrl base theme URL
+	 */
+	public function __construct($name,$basePath,$baseUrl)
+	{
+		$this->_name=$name;
+		$this->_baseUrl=$baseUrl;
+		$this->_basePath=$basePath;
+	}
+
+	/**
+	 * @return string theme name
+	 */
+	public function getName()
+	{
+		return $this->_name;
+	}
+
+	/**
+	 * @return string the relative URL to the theme folder (without ending slash)
+	 */
+	public function getBaseUrl()
+	{
+		return $this->_baseUrl;
+	}
+
+	/**
+	 * @return string the file path to the theme folder
+	 */
+	public function getBasePath()
+	{
+		return $this->_basePath;
+	}
+
+	/**
+	 * @return string the path for controller views. Defaults to 'ThemeRoot/views'.
+	 */
+	public function getViewPath()
+	{
+		return $this->_basePath.DIRECTORY_SEPARATOR.'views';
+	}
+
+	/**
+	 * @return string the path for system views. Defaults to 'ThemeRoot/views/system'.
+	 */
+	public function getSystemViewPath()
+	{
+		return $this->getViewPath().DIRECTORY_SEPARATOR.'system';
+	}
+
+	/**
+	 * @return string the path for widget skins. Defaults to 'ThemeRoot/views/skins'.
+	 * @since 1.1
+	 */
+	public function getSkinPath()
+	{
+		return $this->getViewPath().DIRECTORY_SEPARATOR.'skins';
+	}
+
+	/**
+	 * Finds the view file for the specified controller's view.
+	 * @param CController $controller the controller
+	 * @param string $viewName the view name
+	 * @return string the view file path. False if the file does not exist.
+	 */
+	public function getViewFile($controller,$viewName)
+	{
+		$moduleViewPath=$this->getViewPath();
+		if(($module=$controller->getModule())!==null)
+			$moduleViewPath.='/'.$module->getId();
+		return $controller->resolveViewFile($viewName,$this->getViewPath().'/'.$controller->getUniqueId(),$this->getViewPath(),$moduleViewPath);
+	}
+
+	/**
+	 * Finds the layout file for the specified controller's layout.
+	 * @param CController $controller the controller
+	 * @param string $layoutName the layout name
+	 * @return string the layout file path. False if the file does not exist.
+	 */
+	public function getLayoutFile($controller,$layoutName)
+	{
+		$moduleViewPath=$basePath=$this->getViewPath();
+		$module=$controller->getModule();
+		if(empty($layoutName))
+		{
+			while($module!==null)
+			{
+				if($module->layout===false)
+					return false;
+				if(!empty($module->layout))
+					break;
+				$module=$module->getParentModule();
+			}
+			if($module===null)
+				$layoutName=Yii::app()->layout;
+			else
+			{
+				$layoutName=$module->layout;
+				$moduleViewPath.='/'.$module->getId();
+			}
+		}
+		elseif($module!==null)
+			$moduleViewPath.='/'.$module->getId();
+
+		return $controller->resolveViewFile($layoutName,$moduleViewPath.'/layouts',$basePath,$moduleViewPath);
+	}
+}

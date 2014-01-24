@@ -1,53 +1,113 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_CSS_DuplicateClassDefinitionSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_CSS_DuplicateClassDefinitionSniff.
+ *
+ * Check for duplicate class definitions that can be merged into one.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_CSS_DuplicateClassDefinitionSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('CSS');
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_OPEN_TAG);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Find the content of each class definition name.
+        $classNames = array();
+        $next = $phpcsFile->findNext(T_OPEN_CURLY_BRACKET, ($stackPtr + 1));
+        if ($next === false) {
+            // No class definitions in the file.
+            return;
+        }
+
+        $find = array(
+                 T_CLOSE_CURLY_BRACKET,
+                 T_COMMENT,
+                 T_OPEN_TAG,
+                );
+
+        while ($next !== false) {
+            $prev = $phpcsFile->findPrevious($find, ($next - 1));
+
+            // Create a sorted name for the class so we can compare classes
+            // even when the individual names are all over the place.
+            $name = '';
+            for ($i = ($prev + 1); $i < $next; $i++) {
+                $name .= $tokens[$i]['content'];
+            }
+
+            $name = trim($name);
+            $name = str_replace("\n", ' ', $name);
+            $name = preg_replace('|[\s]+|', ' ', $name);
+            $name = str_replace(', ', ',', $name);
+
+            $names = explode(',', $name);
+            sort($names);
+            $name = implode(',', $names);
+
+            if (isset($classNames[$name]) === true) {
+                $first = $classNames[$name];
+                $error = 'Duplicate class definition found; first defined on line %s';
+                $data  = array($tokens[$first]['line']);
+                $phpcsFile->addError($error, $next, 'Found', $data);
+            } else {
+                $classNames[$name] = $next;
+            }
+
+            $next = $phpcsFile->findNext(T_OPEN_CURLY_BRACKET, ($next + 1));
+        }//end while
+
+    }//end process()
+
+
+}//end class
 ?>
-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

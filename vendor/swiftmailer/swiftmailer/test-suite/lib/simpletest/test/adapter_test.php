@@ -1,40 +1,50 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: adapter_test.php 1748 2008-04-14 01:50:41Z lastcraft $
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../extensions/pear_test_case.php');
+
+class SameTestClass {
+}
+
+class TestOfPearAdapter extends PHPUnit_TestCase {
+    
+    function testBoolean() {
+        $this->assertTrue(true, "PEAR true");
+        $this->assertFalse(false, "PEAR false");
+    }
+    
+    function testName() {
+        $this->assertTrue($this->getName() == get_class($this));
+    }
+    
+    function testPass() {
+        $this->pass("PEAR pass");
+    }
+    
+    function testNulls() {
+        $value = null;
+        $this->assertNull($value, "PEAR null");
+        $value = 0;
+        $this->assertNotNull($value, "PEAR not null");
+    }
+    
+    function testType() {
+        $this->assertType("Hello", "string", "PEAR type");
+    }
+    
+    function testEquals() {
+        $this->assertEquals(12, 12, "PEAR identity");
+        $this->setLooselyTyped(true);
+        $this->assertEquals("12", 12, "PEAR equality");
+    }
+    
+    function testSame() {
+        $same = new SameTestClass();
+        $this->assertSame($same, $same, "PEAR same");
+    }
+    
+    function testRegExp() {
+        $this->assertRegExp('/hello/', "A big hello from me", "PEAR regex");
+    }
+}
 ?>
-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

@@ -1,42 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-h1x1YDKQ2NLI17cWQMHLhbhBx4u=
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+
+/**
+ * Logs to syslog service.
+ *
+ * usage example:
+ *
+ *   $log = new Logger('application');
+ *   $syslog = new SyslogHandler('myfacility', 'local6');
+ *   $formatter = new LineFormatter("%channel%.%level_name%: %message% %extra%");
+ *   $syslog->setFormatter($formatter);
+ *   $log->pushHandler($syslog);
+ *
+ * @author Sven Paulus <sven@karlsruhe.org>
+ */
+class SyslogHandler extends AbstractSyslogHandler
+{
+    protected $ident;
+    protected $logopts;
+
+    /**
+     * @param string  $ident
+     * @param mixed   $facility
+     * @param integer $level    The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
+     * @param int     $logopts  Option flags for the openlog() call, defaults to LOG_PID
+     */
+    public function __construct($ident, $facility = LOG_USER, $level = Logger::DEBUG, $bubble = true, $logopts = LOG_PID)
+    {
+        parent::__construct($facility, $level, $bubble);
+
+        $this->ident = $ident;
+        $this->logopts = $logopts;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function close()
+    {
+        closelog();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function write(array $record)
+    {
+        if (!openlog($this->ident, $this->logopts, $this->facility)) {
+            throw new \LogicException('Can\'t open syslog for ident "'.$this->ident.'" and facility "'.$this->facility.'"');
+        }
+        syslog($this->logLevels[$record['level']], (string) $record['formatted']);
+    }
+}

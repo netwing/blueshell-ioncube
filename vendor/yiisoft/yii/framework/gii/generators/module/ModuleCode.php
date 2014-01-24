@@ -1,61 +1,94 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class ModuleCode extends CCodeModel
+{
+	public $moduleID;
+
+	public function rules()
+	{
+		return array_merge(parent::rules(), array(
+			array('moduleID', 'filter', 'filter'=>'trim'),
+			array('moduleID', 'required'),
+			array('moduleID', 'match', 'pattern'=>'/^\w+$/', 'message'=>'{attribute} should only contain word characters.'),
+		));
+	}
+
+	public function attributeLabels()
+	{
+		return array_merge(parent::attributeLabels(), array(
+			'moduleID'=>'Module ID',
+		));
+	}
+
+	public function successMessage()
+	{
+		if(Yii::app()->hasModule($this->moduleID))
+			return 'The module has been generated successfully. You may '.CHtml::link('try it now', Yii::app()->createUrl($this->moduleID), array('target'=>'_blank')).'.';
+
+		$output=<<<EOD
+<p>The module has been generated successfully.</p>
+<p>To access the module, you need to modify the application configuration as follows:</p>
+EOD;
+		$code=<<<EOD
+<?php
+return array(
+    'modules'=>array(
+        '{$this->moduleID}',
+    ),
+    ......
+);
+EOD;
+
+		return $output.highlight_string($code,true);
+	}
+
+	public function prepare()
+	{
+		$this->files=array();
+		$templatePath=$this->templatePath;
+		$modulePath=$this->modulePath;
+		$moduleTemplateFile=$templatePath.DIRECTORY_SEPARATOR.'module.php';
+
+		$this->files[]=new CCodeFile(
+			$modulePath.'/'.$this->moduleClass.'.php',
+			$this->render($moduleTemplateFile)
+		);
+
+		$files=CFileHelper::findFiles($templatePath,array(
+			'exclude'=>array(
+				'.svn',
+				'.gitignore'
+			),
+		));
+
+		foreach($files as $file)
+		{
+			if($file!==$moduleTemplateFile)
+			{
+				if(CFileHelper::getExtension($file)==='php')
+					$content=$this->render($file);
+				elseif(basename($file)==='.yii')  // an empty directory
+				{
+					$file=dirname($file);
+					$content=null;
+				}
+				else
+					$content=file_get_contents($file);
+				$this->files[]=new CCodeFile(
+					$modulePath.substr($file,strlen($templatePath)),
+					$content
+				);
+			}
+		}
+	}
+
+	public function getModuleClass()
+	{
+		return ucfirst($this->moduleID).'Module';
+	}
+
+	public function getModulePath()
+	{
+		return Yii::app()->modulePath.DIRECTORY_SEPARATOR.$this->moduleID;
+	}
+}

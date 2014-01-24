@@ -1,25 +1,35 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPyd3UjIPArySS7RlzzOK4mK5KoG/VSpTiBUiRDdhZiiVyQnfjDIDyl4kVoOP7onlzZhZw6Cn
-btM3SUcSYTVvJdn64qGRcP1H+WGpe9Pw7bbTZY3tIMwnzwE7Y95kWFhelrOcxdpYpu92vRyZcSKI
-543NJO4l3oQkTDiL0euaG975kIM45RGFOsNkGxa43OJqHUBrqbZ6rdwbkKX0VIcgVlp82gMk1uDf
-U2PyOgjVAQ3QGe3gi/ELhr4euJltSAgiccy4GDnfT2jae3GcuGETANUxKDXZPqerQ1nyaDqqEaZj
-3BRwHXQZZ1hFJ22a4yH48nIQvOHWyKsNlzyemXd1GbIcY79xTu+jjJsiGllmLVpCvJc9vO4fCysJ
-/JWds5h8ZiNfdGmcN3Nv/s1pfXc7pY9mFXU4CZsQ865l1bYZ/yhKbQ4m8Qy1VeOzovkhS0jtitPg
-amwjSxZNhMI2rCHknUO8VZJUBv2US7GXQderD692x0sd4/hphV9u06yRFwA09mjru2nVXO+cy5b1
-iDvTD8oQDst/XGmSTWt9tYk/egtpLPwjxvsYt5KnTW+p6JDb4KfmTcEH120hw8kWnpfsXR0lJpYm
-uNeIgIX/4qhjSy1f7ixFdqY6tR0xDFXYp2TKnWpyyAw/mtulBH0IG4L0geE0rgfeFKOGOJ/0bo52
-q7o/1ObCOLOpsWUPODlg/+C/E4WPHuhdOUZ23jB4xnLTonhpuTGXMLSwqYvTBBGdvGs1rgv5X/zN
-gEX0+eMym76Z7l2S2ySPe+mEsLuiNRSbx5dwaj87OkYk8derRaeKE6X0Cb1Gx8i+suknRyOtzzAs
-QJTgzFLcnOPIkQ1QZJFg4uiOqNXFgn7Jub5M+sPXt8Z+tVOvJn0rT7xvSPtqnlm7lRVgmbgTLy2X
-fDHZEe8hwIfitCNAZEOidUpaYLS0s1YOCG0QTDoxBww0SPBAzuGln9xqJFdKddg1KtIC2tq+s9Sk
-7W7eHNVyp1A7dhhGSspplQcpzN41K1qOqyECDEqbf5D8B6Tywfq+YOcMIHrDlNwV0aPhZhp+TNsP
-ElcEt4PYkl4wV5G6NGPJpDf51QcIz67PDxxwhiSIsM9FLkTGCGcHWnzGXfjSuM+BCA+yB3Jv8PJl
-LodDuoh9XKVjFOKrUuSh1fkXLq+6xipEH38jiB4U3H1pYjjElLq1X8Geit1QVejBCkF+IoHqlc3g
-femnVOPW/fO3inBTP9idj8EYCLRF+NDHL7+bUrlAkTWFiH73FugzBNoEXP5141XKdJWNVucYWqu4
-HPgh7HDWUEu0nY6ClSlli7dopUeXAu3yh2nilnbWokBnZByovUDeuBFnL1xB066bZ+PNnds+khvF
-mZ0QYAR74eNliYgZDQ31/zOcuYplTLeh3IE844mSYo8SEJz3oTkHOs7Gq/U3k6E+NNx3MUQAx1du
-brwY5NvLSjAxTarsnRdVwQzQ62chsk7hrevbta7IAJbiYJ5NH4xiyh2lEDKrkbu27RppD5nhSEtR
-X2hLJ0Z32vnjKwJEb6bnXljLuI1OfpzkxRH5Y7b1ThDCUKed4WDhdpQAp5vB4OO8715a6R50jSL6
-Cimrpz1b3PFbsmrSvEUom5o9YhQW72Xb/+pSZ145fqPbG+x/16AxGFhetm==
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Internal Server Error</title>
+
+<style type="text/css">
+/*<![CDATA[*/
+body {font-family:"Verdana";font-weight:normal;color:black;background-color:white;}
+h1 { font-family:"Verdana";font-weight:normal;font-size:18pt;color:red }
+h2 { font-family:"Verdana";font-weight:normal;font-size:14pt;color:maroon }
+h3 {font-family:"Verdana";font-weight:bold;font-size:11pt}
+p {font-family:"Verdana";font-weight:normal;color:black;font-size:9pt;margin-top: -5px}
+.version {color: gray;font-size:8pt;border-top:1px solid #aaaaaa;}
+/*]]>*/
+</style>
+</head>
+
+<body>
+<h1>Internal Server Error</h1>
+<h2><?php echo nl2br(CHtml::encode($data['message'])); ?></h2>
+<p>
+An internal error occurred while the Web server was processing your request.
+Please contact <?php echo $data['admin']; ?> to report this problem.
+</p>
+<p>
+Thank you.
+</p>
+<div class="version">
+<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
+</div>
+</body>
+</html>

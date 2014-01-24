@@ -1,78 +1,210 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * A Sniff to enforce the use of IDENTICAL type operators rather than EQUAL operators.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * A Sniff to enforce the use of IDENTICAL type operators rather than EQUAL operators.
+ *
+ * The use of === true is enforced over implicit true statements,
+ * for example:
+ *
+ * <code>
+ * if ($a)
+ * {
+ *     ...
+ * }
+ * </code>
+ *
+ * should be:
+ *
+ * <code>
+ * if ($a === true)
+ * {
+ *     ...
+ * }
+ * </code>
+ *
+ * It also enforces the use of === false over ! operators.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Operators_ComparisonOperatorUsageSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array(
+                                   'PHP',
+                                   'JS',
+                                  );
+
+    /**
+     * A list of valid comparison operators.
+     *
+     * @var array
+     */
+    private static $_validOps = array(
+                                 T_IS_IDENTICAL,
+                                 T_IS_NOT_IDENTICAL,
+                                 T_LESS_THAN,
+                                 T_GREATER_THAN,
+                                 T_IS_GREATER_OR_EQUAL,
+                                 T_IS_SMALLER_OR_EQUAL,
+                                 T_INSTANCEOF,
+                                );
+
+    /**
+     * A list of invalid operators with their alternatives.
+     *
+     * @var array(int => string)
+     */
+    private static $_invalidOps = array(
+                                   'PHP' => array(
+                                             T_IS_EQUAL     => '===',
+                                             T_IS_NOT_EQUAL => '!==',
+                                             T_BOOLEAN_NOT  => '=== FALSE',
+                                            ),
+                                   'JS'  => array(
+                                             T_IS_EQUAL     => '===',
+                                             T_IS_NOT_EQUAL => '!==',
+                                            ),
+                                  );
+
+
+    /**
+     * Registers the token types that this sniff wishes to listen to.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_IF,
+                T_ELSEIF,
+                T_INLINE_THEN,
+               );
+
+    }//end register()
+
+
+    /**
+     * Process the tokens that this sniff is listening for.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where the token
+     *                                        was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens    = $phpcsFile->getTokens();
+        $tokenizer = $phpcsFile->tokenizerType;
+
+        if ($tokens[$stackPtr]['code'] === T_INLINE_THEN) {
+            $end = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($stackPtr - 1), null, true);
+            if ($tokens[$end]['code'] !== T_CLOSE_PARENTHESIS) {
+                // This inline IF statement does not have its condition
+                // bracketed, so we need to guess where it starts.
+                for ($i = ($end - 1); $i >= 0; $i--) {
+                    if ($tokens[$i]['code'] === T_SEMICOLON) {
+                        // Stop here as we assume it is the end
+                        // of the previous statement.
+                        break;
+                    } else if ($tokens[$i]['code'] === T_OPEN_TAG) {
+                        // Stop here as this is the start of the file.
+                        break;
+                    } else if ($tokens[$i]['code'] === T_CLOSE_CURLY_BRACKET) {
+                        // Stop if this is the closing brace of
+                        // a code block.
+                        if (isset($tokens[$i]['scope_opener']) === true) {
+                            break;
+                        }
+                    } else if ($tokens[$i]['code'] === T_OPEN_CURLY_BRACKET) {
+                        // Stop if this is the opening brace of
+                        // a code block.
+                        if (isset($tokens[$i]['scope_closer']) === true) {
+                            break;
+                        }
+                    }
+                }//end for
+
+                $start = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, ($i + 1), null, true);
+            } else {
+                $start = $tokens[$end]['parenthesis_opener'];
+            }
+        } else {
+            $start = $tokens[$stackPtr]['parenthesis_opener'];
+            $end   = $tokens[$stackPtr]['parenthesis_closer'];
+        }
+
+        $requiredOps = 0;
+        $foundOps    = 0;
+
+        for ($i = $start; $i <= $end; $i++) {
+            $type = $tokens[$i]['code'];
+            if (in_array($type, array_keys(self::$_invalidOps[$tokenizer])) === true) {
+                $error = 'Operator %s prohibited; use %s instead';
+                $data  = array(
+                          $tokens[$i]['content'],
+                          self::$_invalidOps[$tokenizer][$type],
+                         );
+                $phpcsFile->addError($error, $i, 'NotAllowed', $data);
+                $foundOps++;
+            } else if (in_array($type, self::$_validOps) === true) {
+                $foundOps++;
+            }
+
+            if ($phpcsFile->tokenizerType !== 'JS') {
+                if ($tokens[$i]['code'] === T_BOOLEAN_AND || $tokens[$i]['code'] === T_BOOLEAN_OR) {
+                    $requiredOps++;
+
+                    // If we get to here and we have not found the right number of
+                    // comparison operators, then we must have had an implicit
+                    // true operation ie. if ($a) instead of the required
+                    // if ($a === true), so let's add an error.
+                    if ($requiredOps !== $foundOps) {
+                        $error = 'Implicit true comparisons prohibited; use === TRUE instead';
+                        $phpcsFile->addError($error, $stackPtr, 'ImplicitTrue');
+                        $foundOps++;
+                    }
+                }
+            }//end if
+        }//end for
+
+        $requiredOps++;
+
+        if ($phpcsFile->tokenizerType !== 'JS') {
+            if ($foundOps < $requiredOps) {
+                $error = 'Implicit true comparisons prohibited; use === TRUE instead';
+                $phpcsFile->addError($error, $stackPtr, 'ImplicitTrue');
+            }
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-UdPtVspMGSgGkpKUj8wl8RMvMV+zoDFnIm==

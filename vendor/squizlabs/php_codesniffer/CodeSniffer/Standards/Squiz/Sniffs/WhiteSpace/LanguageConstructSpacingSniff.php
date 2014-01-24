@@ -1,46 +1,96 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_WhiteSpace_LanguageConstructSpacingSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_WhiteSpace_LanguageConstructSpacingSniff.
+ *
+ * Ensures all language constructs (without brackets) contain a
+ * single space between themselves and their content.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_WhiteSpace_LanguageConstructSpacingSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_ECHO,
+                T_PRINT,
+                T_RETURN,
+                T_INCLUDE,
+                T_INCLUDE_ONCE,
+                T_REQUIRE,
+                T_REQUIRE_ONCE,
+                T_NEW,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if ($tokens[($stackPtr + 1)]['code'] === T_SEMICOLON) {
+            // No content for this language construct.
+            return;
+        }
+
+        if ($tokens[($stackPtr + 1)]['code'] === T_WHITESPACE) {
+            $content       = $tokens[($stackPtr + 1)]['content'];
+            $contentLength = strlen($content);
+            if ($contentLength !== 1) {
+                $error = 'Language constructs must be followed by a single space; expected 1 space but found %s';
+                $data  = array($contentLength);
+                $phpcsFile->addError($error, $stackPtr, 'IncorrectSingle', $data);
+            }
+        } else {
+            $error = 'Language constructs must be followed by a single space; expected "%s" but found "%s"';
+            $data  = array(
+                      $tokens[$stackPtr]['content'].' '.$tokens[($stackPtr + 1)]['content'],
+                      $tokens[$stackPtr]['content'].$tokens[($stackPtr + 1)]['content'],
+                     );
+            $phpcsFile->addError($error, $stackPtr, 'Incorrect', $data);
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

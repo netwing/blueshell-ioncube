@@ -1,32 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-AS4=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Iterator;
+
+/**
+ * FileTypeFilterIterator only keeps files, directories, or both.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class FileTypeFilterIterator extends FilterIterator
+{
+    const ONLY_FILES       = 1;
+    const ONLY_DIRECTORIES = 2;
+
+    private $mode;
+
+    /**
+     * Constructor.
+     *
+     * @param \Iterator $iterator The Iterator to filter
+     * @param integer   $mode     The mode (self::ONLY_FILES or self::ONLY_DIRECTORIES)
+     */
+    public function __construct(\Iterator $iterator, $mode)
+    {
+        $this->mode = $mode;
+
+        parent::__construct($iterator);
+    }
+
+    /**
+     * Filters the iterator values.
+     *
+     * @return Boolean true if the value should be kept, false otherwise
+     */
+    public function accept()
+    {
+        $fileinfo = $this->current();
+        if (self::ONLY_DIRECTORIES === (self::ONLY_DIRECTORIES & $this->mode) && $fileinfo->isFile()) {
+            return false;
+        } elseif (self::ONLY_FILES === (self::ONLY_FILES & $this->mode) && $fileinfo->isDir()) {
+            return false;
+        }
+
+        return true;
+    }
+}

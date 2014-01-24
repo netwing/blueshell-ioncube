@@ -1,219 +1,498 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Reader
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/** PHPExcel root directory */
+if (!defined('PHPEXCEL_ROOT')) {
+	/**
+	 * @ignore
+	 */
+	define('PHPEXCEL_ROOT', dirname(__FILE__) . '/../../');
+	require(PHPEXCEL_ROOT . 'PHPExcel/Autoloader.php');
+}
+
+/**
+ * PHPExcel_Reader_SYLK
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Reader
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Reader_SYLK implements PHPExcel_Reader_IReader
+{
+	/**
+	 * Input encoding
+	 *
+	 * @var string
+	 */
+	private $_inputEncoding	= 'ANSI';
+
+	/**
+	 * Sheet index to read
+	 *
+	 * @var int
+	 */
+	private $_sheetIndex 	= 0;
+
+	/**
+	 * Formats
+	 *
+	 * @var array
+	 */
+	private $_formats = array();
+
+	/**
+	 * Format Count
+	 *
+	 * @var int
+	 */
+	private $_format = 0;
+
+	/**
+	 * PHPExcel_Reader_IReadFilter instance
+	 *
+	 * @var PHPExcel_Reader_IReadFilter
+	 */
+	private $_readFilter = null;
+
+
+	/**
+	 * Create a new PHPExcel_Reader_SYLK
+	 */
+	public function __construct() {
+		$this->_readFilter 	= new PHPExcel_Reader_DefaultReadFilter();
+	}
+
+
+	/**
+	 * Can the current PHPExcel_Reader_IReader read the file?
+	 *
+	 * @param 	string 		$pFileName
+	 * @return 	boolean
+	 * @throws Exception
+	 */
+	public function canRead($pFilename)
+	{
+		// Check if file exists
+		if (!file_exists($pFilename)) {
+			throw new Exception("Could not open " . $pFilename . " for reading! File does not exist.");
+		}
+
+		// Read sample data (first 2 KB will do)
+		$fh = fopen($pFilename, 'r');
+		$data = fread($fh, 2048);
+		fclose($fh);
+
+		// Count delimiters in file
+		$delimiterCount = substr_count($data, ';');
+		if ($delimiterCount < 1) {
+			return false;
+		}
+
+		// Analyze first line looking for ID; signature
+		$lines = explode("\n", $data);
+		if (substr($lines[0],0,4) != 'ID;P') {
+			return false;
+		}
+
+		return true;
+	}
+
+
+	/**
+	 * Read filter
+	 *
+	 * @return PHPExcel_Reader_IReadFilter
+	 */
+	public function getReadFilter() {
+		return $this->_readFilter;
+	}
+
+
+	/**
+	 * Set read filter
+	 *
+	 * @param PHPExcel_Reader_IReadFilter $pValue
+	 */
+	public function setReadFilter(PHPExcel_Reader_IReadFilter $pValue) {
+		$this->_readFilter = $pValue;
+		return $this;
+	}
+
+
+	/**
+	 * Set input encoding
+	 *
+	 * @param string $pValue Input encoding
+	 */
+	public function setInputEncoding($pValue = 'ANSI')
+	{
+		$this->_inputEncoding = $pValue;
+		return $this;
+	}
+
+
+	/**
+	 * Get input encoding
+	 *
+	 * @return string
+	 */
+	public function getInputEncoding()
+	{
+		return $this->_inputEncoding;
+	}
+
+
+	/**
+	 * Return worksheet info (Name, Last Column Letter, Last Column Index, Total Rows, Total Columns)
+	 *
+	 * @param   string     $pFilename
+	 * @throws   Exception
+	 */
+	public function listWorksheetInfo($pFilename)
+	{
+		// Check if file exists
+		if (!file_exists($pFilename)) {
+			throw new Exception("Could not open " . $pFilename . " for reading! File does not exist.");
+		}
+
+		// Open file
+		$fileHandle = fopen($pFilename, 'r');
+		if ($fileHandle === false) {
+			throw new Exception("Could not open file " . $pFilename . " for reading.");
+		}
+
+		$worksheetInfo = array();
+		$worksheetInfo[0]['worksheetName'] = 'Worksheet';
+		$worksheetInfo[0]['lastColumnLetter'] = 'A';
+		$worksheetInfo[0]['lastColumnIndex'] = 0;
+		$worksheetInfo[0]['totalRows'] = 0;
+		$worksheetInfo[0]['totalColumns'] = 0;
+
+		// Loop through file
+		$rowData = array();
+
+		// loop through one row (line) at a time in the file
+		$rowIndex = 0;
+		while (($rowData = fgets($fileHandle)) !== FALSE) {
+			$columnIndex = 0;
+
+			// convert SYLK encoded $rowData to UTF-8
+			$rowData = PHPExcel_Shared_String::SYLKtoUTF8($rowData);
+
+			// explode each row at semicolons while taking into account that literal semicolon (;)
+			// is escaped like this (;;)
+			$rowData = explode("\t",str_replace('?',';',str_replace(';',"\t",str_replace(';;','?',rtrim($rowData)))));
+
+			$dataType = array_shift($rowData);
+			if ($dataType == 'C') {
+				//  Read cell value data
+				foreach($rowData as $rowDatum) {
+					switch($rowDatum{0}) {
+						case 'C' :
+						case 'X' :
+							$columnIndex = substr($rowDatum,1) - 1;
+							break;
+						case 'R' :
+						case 'Y' :
+							$rowIndex = substr($rowDatum,1);
+							break;
+					}
+
+					$worksheetInfo[0]['totalRows'] = max($worksheetInfo[0]['totalRows'], $rowIndex);
+					$worksheetInfo[0]['lastColumnIndex'] = max($worksheetInfo[0]['lastColumnIndex'], $columnIndex);
+				}
+			}
+		}
+
+		$worksheetInfo[0]['lastColumnLetter'] = PHPExcel_Cell::stringFromColumnIndex($worksheetInfo[0]['lastColumnIndex']);
+		$worksheetInfo[0]['totalColumns'] = $worksheetInfo[0]['lastColumnIndex'] + 1;
+
+		// Close file
+		fclose($fileHandle);
+
+		return $worksheetInfo;
+	}
+
+
+	/**
+	 * Loads PHPExcel from file
+	 *
+	 * @param 	string 		$pFilename
+	 * @return 	PHPExcel
+	 * @throws 	Exception
+	 */
+	public function load($pFilename)
+	{
+		// Create new PHPExcel
+		$objPHPExcel = new PHPExcel();
+
+		// Load into this instance
+		return $this->loadIntoExisting($pFilename, $objPHPExcel);
+	}
+
+
+	/**
+	 * Loads PHPExcel from file into PHPExcel instance
+	 *
+	 * @param 	string 		$pFilename
+	 * @param	PHPExcel	$objPHPExcel
+	 * @return 	PHPExcel
+	 * @throws 	Exception
+	 */
+	public function loadIntoExisting($pFilename, PHPExcel $objPHPExcel)
+	{
+		// Check if file exists
+		if (!file_exists($pFilename)) {
+			throw new Exception("Could not open " . $pFilename . " for reading! File does not exist.");
+		}
+
+		// Create new PHPExcel
+		while ($objPHPExcel->getSheetCount() <= $this->_sheetIndex) {
+			$objPHPExcel->createSheet();
+		}
+		$objPHPExcel->setActiveSheetIndex( $this->_sheetIndex );
+
+		$fromFormats	= array('\-',	'\ ');
+		$toFormats		= array('-',	' ');
+
+		// Open file
+		$fileHandle = fopen($pFilename, 'r');
+		if ($fileHandle === false) {
+			throw new Exception("Could not open file $pFilename for reading.");
+		}
+
+		// Loop through file
+		$rowData = array();
+		$column = $row = '';
+
+		// loop through one row (line) at a time in the file
+		while (($rowData = fgets($fileHandle)) !== FALSE) {
+
+			// convert SYLK encoded $rowData to UTF-8
+			$rowData = PHPExcel_Shared_String::SYLKtoUTF8($rowData);
+
+			// explode each row at semicolons while taking into account that literal semicolon (;)
+			// is escaped like this (;;)
+			$rowData = explode("\t",str_replace('¤',';',str_replace(';',"\t",str_replace(';;','¤',rtrim($rowData)))));
+
+			$dataType = array_shift($rowData);
+			//	Read shared styles
+			if ($dataType == 'P') {
+				$formatArray = array();
+				foreach($rowData as $rowDatum) {
+					switch($rowDatum{0}) {
+						case 'P' :	$formatArray['numberformat']['code'] = str_replace($fromFormats,$toFormats,substr($rowDatum,1));
+									break;
+						case 'E' :
+						case 'F' :	$formatArray['font']['name'] = substr($rowDatum,1);
+									break;
+						case 'L' :	$formatArray['font']['size'] = substr($rowDatum,1);
+									break;
+						case 'S' :	$styleSettings = substr($rowDatum,1);
+									for ($i=0;$i<strlen($styleSettings);++$i) {
+										switch ($styleSettings{$i}) {
+											case 'I' :	$formatArray['font']['italic'] = true;
+														break;
+											case 'D' :	$formatArray['font']['bold'] = true;
+														break;
+											case 'T' :	$formatArray['borders']['top']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+											case 'B' :	$formatArray['borders']['bottom']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+											case 'L' :	$formatArray['borders']['left']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+											case 'R' :	$formatArray['borders']['right']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+										}
+									}
+									break;
+					}
+				}
+				$this->_formats['P'.$this->_format++] = $formatArray;
+			//	Read cell value data
+			} elseif ($dataType == 'C') {
+				$hasCalculatedValue = false;
+				$cellData = $cellDataFormula = '';
+				foreach($rowData as $rowDatum) {
+					switch($rowDatum{0}) {
+						case 'C' :
+						case 'X' :	$column = substr($rowDatum,1);
+									break;
+						case 'R' :
+						case 'Y' :	$row = substr($rowDatum,1);
+									break;
+						case 'K' :	$cellData = substr($rowDatum,1);
+									break;
+						case 'E' :	$cellDataFormula = '='.substr($rowDatum,1);
+									//	Convert R1C1 style references to A1 style references (but only when not quoted)
+									$temp = explode('"',$cellDataFormula);
+									$key = false;
+									foreach($temp as &$value) {
+										//	Only count/replace in alternate array entries
+										if ($key = !$key) {
+											preg_match_all('/(R(\[?-?\d*\]?))(C(\[?-?\d*\]?))/',$value, $cellReferences,PREG_SET_ORDER+PREG_OFFSET_CAPTURE);
+											//	Reverse the matches array, otherwise all our offsets will become incorrect if we modify our way
+											//		through the formula from left to right. Reversing means that we work right to left.through
+											//		the formula
+											$cellReferences = array_reverse($cellReferences);
+											//	Loop through each R1C1 style reference in turn, converting it to its A1 style equivalent,
+											//		then modify the formula to use that new reference
+											foreach($cellReferences as $cellReference) {
+												$rowReference = $cellReference[2][0];
+												//	Empty R reference is the current row
+												if ($rowReference == '') $rowReference = $row;
+												//	Bracketed R references are relative to the current row
+												if ($rowReference{0} == '[') $rowReference = $row + trim($rowReference,'[]');
+												$columnReference = $cellReference[4][0];
+												//	Empty C reference is the current column
+												if ($columnReference == '') $columnReference = $column;
+												//	Bracketed C references are relative to the current column
+												if ($columnReference{0} == '[') $columnReference = $column + trim($columnReference,'[]');
+												$A1CellReference = PHPExcel_Cell::stringFromColumnIndex($columnReference-1).$rowReference;
+
+												$value = substr_replace($value,$A1CellReference,$cellReference[0][1],strlen($cellReference[0][0]));
+											}
+										}
+									}
+									unset($value);
+									//	Then rebuild the formula string
+									$cellDataFormula = implode('"',$temp);
+									$hasCalculatedValue = true;
+									break;
+					}
+				}
+				$columnLetter = PHPExcel_Cell::stringFromColumnIndex($column-1);
+				$cellData = PHPExcel_Calculation::_unwrapResult($cellData);
+
+				// Set cell value
+				$objPHPExcel->getActiveSheet()->getCell($columnLetter.$row)->setValue(($hasCalculatedValue) ? $cellDataFormula : $cellData);
+				if ($hasCalculatedValue) {
+					$cellData = PHPExcel_Calculation::_unwrapResult($cellData);
+					$objPHPExcel->getActiveSheet()->getCell($columnLetter.$row)->setCalculatedValue($cellData);
+				}
+			//	Read cell formatting
+			} elseif ($dataType == 'F') {
+				$formatStyle = $columnWidth = $styleSettings = '';
+				$styleData = array();
+				foreach($rowData as $rowDatum) {
+					switch($rowDatum{0}) {
+						case 'C' :
+						case 'X' :	$column = substr($rowDatum,1);
+									break;
+						case 'R' :
+						case 'Y' :	$row = substr($rowDatum,1);
+									break;
+						case 'P' :	$formatStyle = $rowDatum;
+									break;
+						case 'W' :	list($startCol,$endCol,$columnWidth) = explode(' ',substr($rowDatum,1));
+									break;
+						case 'S' :	$styleSettings = substr($rowDatum,1);
+									for ($i=0;$i<strlen($styleSettings);++$i) {
+										switch ($styleSettings{$i}) {
+											case 'I' :	$styleData['font']['italic'] = true;
+														break;
+											case 'D' :	$styleData['font']['bold'] = true;
+														break;
+											case 'T' :	$styleData['borders']['top']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+											case 'B' :	$styleData['borders']['bottom']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+											case 'L' :	$styleData['borders']['left']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+											case 'R' :	$styleData['borders']['right']['style'] = PHPExcel_Style_Border::BORDER_THIN;
+														break;
+										}
+									}
+									break;
+					}
+				}
+				if (($formatStyle > '') && ($column > '') && ($row > '')) {
+					$columnLetter = PHPExcel_Cell::stringFromColumnIndex($column-1);
+					$objPHPExcel->getActiveSheet()->getStyle($columnLetter.$row)->applyFromArray($this->_formats[$formatStyle]);
+				}
+				if ((!empty($styleData)) && ($column > '') && ($row > '')) {
+					$columnLetter = PHPExcel_Cell::stringFromColumnIndex($column-1);
+					$objPHPExcel->getActiveSheet()->getStyle($columnLetter.$row)->applyFromArray($styleData);
+				}
+				if ($columnWidth > '') {
+					if ($startCol == $endCol) {
+						$startCol = PHPExcel_Cell::stringFromColumnIndex($startCol-1);
+						$objPHPExcel->getActiveSheet()->getColumnDimension($startCol)->setWidth($columnWidth);
+					} else {
+						$startCol = PHPExcel_Cell::stringFromColumnIndex($startCol-1);
+						$endCol = PHPExcel_Cell::stringFromColumnIndex($endCol-1);
+						$objPHPExcel->getActiveSheet()->getColumnDimension($startCol)->setWidth($columnWidth);
+						do {
+							$objPHPExcel->getActiveSheet()->getColumnDimension(++$startCol)->setWidth($columnWidth);
+						} while ($startCol != $endCol);
+					}
+				}
+			} else {
+				foreach($rowData as $rowDatum) {
+					switch($rowDatum{0}) {
+						case 'C' :
+						case 'X' :	$column = substr($rowDatum,1);
+									break;
+						case 'R' :
+						case 'Y' :	$row = substr($rowDatum,1);
+									break;
+					}
+				}
+			}
+		}
+
+		// Close file
+		fclose($fileHandle);
+
+		// Return
+		return $objPHPExcel;
+	}
+
+
+	/**
+	 * Get sheet index
+	 *
+	 * @return int
+	 */
+	public function getSheetIndex() {
+		return $this->_sheetIndex;
+	}
+
+
+	/**
+	 * Set sheet index
+	 *
+	 * @param	int		$pValue		Sheet index
+	 * @return PHPExcel_Reader_SYLK
+	 */
+	public function setSheetIndex($pValue = 0) {
+		$this->_sheetIndex = $pValue;
+		return $this;
+	}
+
+}

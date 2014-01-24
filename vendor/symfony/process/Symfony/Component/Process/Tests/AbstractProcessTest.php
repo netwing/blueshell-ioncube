@@ -1,393 +1,733 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-pj+8thnRGioakmVJQRfFt7wYhz27M0==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Process\Tests;
+
+use Symfony\Component\Process\Exception\ProcessTimedOutException;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\RuntimeException;
+
+/**
+ * @author Robert Schönthal <seroscho@googlemail.com>
+ */
+abstract class AbstractProcessTest extends \PHPUnit_Framework_TestCase
+{
+    public function testThatProcessDoesNotThrowWarningDuringRun()
+    {
+        @trigger_error('Test Error', E_USER_NOTICE);
+        $process = $this->getProcess("php -r 'sleep(3)'");
+        $process->run();
+        $actualError = error_get_last();
+        $this->assertEquals('Test Error', $actualError['message']);
+        $this->assertEquals(E_USER_NOTICE, $actualError['type']);
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
+     */
+    public function testNegativeTimeoutFromConstructor()
+    {
+        $this->getProcess('', null, null, null, -1);
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\InvalidArgumentException
+     */
+    public function testNegativeTimeoutFromSetter()
+    {
+        $p = $this->getProcess('');
+        $p->setTimeout(-1);
+    }
+
+    public function testFloatAndNullTimeout()
+    {
+        $p = $this->getProcess('');
+
+        $p->setTimeout(10);
+        $this->assertSame(10.0, $p->getTimeout());
+
+        $p->setTimeout(null);
+        $this->assertNull($p->getTimeout());
+
+        $p->setTimeout(0.0);
+        $this->assertNull($p->getTimeout());
+    }
+
+    public function testStopWithTimeoutIsActuallyWorking()
+    {
+        $this->verifyPosixIsEnabled();
+
+        // exec is mandatory here since we send a signal to the process
+        // see https://github.com/symfony/symfony/issues/5030 about prepending
+        // command with exec
+        $p = $this->getProcess('exec php '.__DIR__.'/NonStopableProcess.php 3');
+        $p->start();
+        usleep(100000);
+        $start = microtime(true);
+        $p->stop(1.1, SIGKILL);
+        while ($p->isRunning()) {
+            usleep(1000);
+        }
+        $duration = microtime(true) - $start;
+
+        $this->assertLessThan(1.8, $duration);
+    }
+
+    public function testCallbacksAreExecutedWithStart()
+    {
+        $data = '';
+
+        $process = $this->getProcess('echo foo && php -r "sleep(1);" && echo foo');
+        $process->start(function ($type, $buffer) use (&$data) {
+            $data .= $buffer;
+        });
+
+        while ($process->isRunning()) {
+            usleep(10000);
+        }
+
+        $this->assertEquals(2, preg_match_all('/foo/', $data, $matches));
+    }
+
+    /**
+     * tests results from sub processes
+     *
+     * @dataProvider responsesCodeProvider
+     */
+    public function testProcessResponses($expected, $getter, $code)
+    {
+        $p = $this->getProcess(sprintf('php -r %s', escapeshellarg($code)));
+        $p->run();
+
+        $this->assertSame($expected, $p->$getter());
+    }
+
+    /**
+     * tests results from sub processes
+     *
+     * @dataProvider pipesCodeProvider
+     */
+    public function testProcessPipes($code, $size)
+    {
+        $expected = str_repeat(str_repeat('*', 1024), $size) . '!';
+        $expectedLength = (1024 * $size) + 1;
+
+        $p = $this->getProcess(sprintf('php -r %s', escapeshellarg($code)));
+        $p->setStdin($expected);
+        $p->run();
+
+        $this->assertEquals($expectedLength, strlen($p->getOutput()));
+        $this->assertEquals($expectedLength, strlen($p->getErrorOutput()));
+    }
+
+    public function chainedCommandsOutputProvider()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            return array(
+                array("2 \r\n2\r\n", '&&', '2')
+            );
+        }
+
+        return array(
+            array("1\n1\n", ';', '1'),
+            array("2\n2\n", '&&', '2'),
+        );
+    }
+
+    /**
+     *
+     * @dataProvider chainedCommandsOutputProvider
+     */
+    public function testChainedCommandsOutput($expected, $operator, $input)
+    {
+        $process = $this->getProcess(sprintf('echo %s %s echo %s', $input, $operator, $input));
+        $process->run();
+        $this->assertEquals($expected, $process->getOutput());
+    }
+
+    public function testCallbackIsExecutedForOutput()
+    {
+        $p = $this->getProcess(sprintf('php -r %s', escapeshellarg('echo \'foo\';')));
+
+        $called = false;
+        $p->run(function ($type, $buffer) use (&$called) {
+            $called = $buffer === 'foo';
+        });
+
+        $this->assertTrue($called, 'The callback should be executed with the output');
+    }
+
+    public function testGetErrorOutput()
+    {
+        $p = new Process(sprintf('php -r %s', escapeshellarg('$n = 0; while ($n < 3) { file_put_contents(\'php://stderr\', \'ERROR\'); $n++; }')));
+
+        $p->run();
+        $this->assertEquals(3, preg_match_all('/ERROR/', $p->getErrorOutput(), $matches));
+    }
+
+    public function testGetIncrementalErrorOutput()
+    {
+        $p = new Process(sprintf('php -r %s', escapeshellarg('$n = 0; while ($n < 3) { usleep(50000); file_put_contents(\'php://stderr\', \'ERROR\'); $n++; }')));
+
+        $p->start();
+        while ($p->isRunning()) {
+            $this->assertLessThanOrEqual(1, preg_match_all('/ERROR/', $p->getIncrementalErrorOutput(), $matches));
+            usleep(20000);
+        }
+    }
+
+    public function testFlushErrorOutput()
+    {
+        $p = new Process(sprintf('php -r %s', escapeshellarg('$n = 0; while ($n < 3) { file_put_contents(\'php://stderr\', \'ERROR\'); $n++; }')));
+
+        $p->run();
+        $p->clearErrorOutput();
+        $this->assertEmpty($p->getErrorOutput());
+    }
+
+    public function testGetOutput()
+    {
+        $p = new Process(sprintf('php -r %s', escapeshellarg('$n=0;while ($n<3) {echo \' foo \';$n++; usleep(500); }')));
+
+        $p->run();
+        $this->assertEquals(3, preg_match_all('/foo/', $p->getOutput(), $matches));
+    }
+
+    public function testGetIncrementalOutput()
+    {
+        $p = new Process(sprintf('php -r %s', escapeshellarg('$n=0;while ($n<3) { echo \' foo \'; usleep(50000); $n++; }')));
+
+        $p->start();
+        while ($p->isRunning()) {
+            $this->assertLessThanOrEqual(1, preg_match_all('/foo/', $p->getIncrementalOutput(), $matches));
+            usleep(20000);
+        }
+    }
+
+    public function testFlushOutput()
+    {
+        $p = new Process(sprintf('php -r %s', escapeshellarg('$n=0;while ($n<3) {echo \' foo \';$n++;}')));
+
+        $p->run();
+        $p->clearOutput();
+        $this->assertEmpty($p->getOutput());
+    }
+
+    public function testExitCodeCommandFailed()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does not support POSIX exit code');
+        }
+
+        // such command run in bash return an exitcode 127
+        $process = $this->getProcess('nonexistingcommandIhopeneversomeonewouldnameacommandlikethis');
+        $process->run();
+
+        $this->assertGreaterThan(0, $process->getExitCode());
+    }
+
+    public function testTTYCommand()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does have /dev/tty support');
+        }
+
+        $process = $this->getProcess('echo "foo" >> /dev/null');
+        $process->setTTY(true);
+        $process->run();
+
+        $this->assertSame(Process::STATUS_TERMINATED, $process->getStatus());
+    }
+
+    public function testExitCodeText()
+    {
+        $process = $this->getProcess('');
+        $r = new \ReflectionObject($process);
+        $p = $r->getProperty('exitcode');
+        $p->setAccessible(true);
+
+        $p->setValue($process, 2);
+        $this->assertEquals('Misuse of shell builtins', $process->getExitCodeText());
+    }
+
+    public function testStartIsNonBlocking()
+    {
+        $process = $this->getProcess('php -r "sleep(4);"');
+        $start = microtime(true);
+        $process->start();
+        $end = microtime(true);
+        $this->assertLessThan(1 , $end-$start);
+    }
+
+    public function testUpdateStatus()
+    {
+        $process = $this->getProcess('php -h');
+        $process->run();
+        $this->assertTrue(strlen($process->getOutput()) > 0);
+    }
+
+    public function testGetExitCodeIsNullOnStart()
+    {
+        $process = $this->getProcess('php -r "usleep(200000);"');
+        $this->assertNull($process->getExitCode());
+        $process->start();
+        $this->assertNull($process->getExitCode());
+        $process->wait();
+        $this->assertEquals(0, $process->getExitCode());
+    }
+
+    public function testGetExitCodeIsNullOnWhenStartingAgain()
+    {
+        $process = $this->getProcess('php -r "usleep(200000);"');
+        $process->run();
+        $this->assertEquals(0, $process->getExitCode());
+        $process->start();
+        $this->assertNull($process->getExitCode());
+        $process->wait();
+        $this->assertEquals(0, $process->getExitCode());
+    }
+
+    public function testGetExitCode()
+    {
+        $process = $this->getProcess('php -m');
+        $process->run();
+        $this->assertEquals(0, $process->getExitCode());
+    }
+
+    public function testStatus()
+    {
+        $process = $this->getProcess('php -r "usleep(500000);"');
+        $this->assertFalse($process->isRunning());
+        $this->assertFalse($process->isStarted());
+        $this->assertFalse($process->isTerminated());
+        $this->assertSame(Process::STATUS_READY, $process->getStatus());
+        $process->start();
+        $this->assertTrue($process->isRunning());
+        $this->assertTrue($process->isStarted());
+        $this->assertFalse($process->isTerminated());
+        $this->assertSame(Process::STATUS_STARTED, $process->getStatus());
+        $process->wait();
+        $this->assertFalse($process->isRunning());
+        $this->assertTrue($process->isStarted());
+        $this->assertTrue($process->isTerminated());
+        $this->assertSame(Process::STATUS_TERMINATED, $process->getStatus());
+    }
+
+    public function testStop()
+    {
+        $process = $this->getProcess('php -r "sleep(4);"');
+        $process->start();
+        $this->assertTrue($process->isRunning());
+        $process->stop();
+        $this->assertFalse($process->isRunning());
+    }
+
+    public function testIsSuccessful()
+    {
+        $process = $this->getProcess('php -m');
+        $process->run();
+        $this->assertTrue($process->isSuccessful());
+    }
+
+    public function testIsSuccessfulOnlyAfterTerminated()
+    {
+        $process = $this->getProcess('php -r "sleep(1);"');
+        $process->start();
+        while ($process->isRunning()) {
+            $this->assertFalse($process->isSuccessful());
+            usleep(300000);
+        }
+
+        $this->assertTrue($process->isSuccessful());
+    }
+
+    public function testIsNotSuccessful()
+    {
+        $process = $this->getProcess('php -r "sleep(4);"');
+        $process->start();
+        $this->assertTrue($process->isRunning());
+        $process->stop();
+        $this->assertFalse($process->isSuccessful());
+    }
+
+    public function testProcessIsNotSignaled()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does not support POSIX signals');
+        }
+
+        $process = $this->getProcess('php -m');
+        $process->run();
+        $this->assertFalse($process->hasBeenSignaled());
+    }
+
+    public function testProcessWithoutTermSignalIsNotSignaled()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does not support POSIX signals');
+        }
+
+        $process = $this->getProcess('php -m');
+        $process->run();
+        $this->assertFalse($process->hasBeenSignaled());
+    }
+
+    public function testProcessWithoutTermSignal()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does not support POSIX signals');
+        }
+
+        $process = $this->getProcess('php -m');
+        $process->run();
+        $this->assertEquals(0, $process->getTermSignal());
+    }
+
+    public function testProcessIsSignaledIfStopped()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does not support POSIX signals');
+        }
+
+        $process = $this->getProcess('php -r "sleep(4);"');
+        $process->start();
+        $process->stop();
+        $this->assertTrue($process->hasBeenSignaled());
+    }
+
+    public function testProcessWithTermSignal()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does not support POSIX signals');
+        }
+
+        // SIGTERM is only defined if pcntl extension is present
+        $termSignal = defined('SIGTERM') ? SIGTERM : 15;
+
+        $process = $this->getProcess('php -r "sleep(4);"');
+        $process->start();
+        $process->stop();
+
+        $this->assertEquals($termSignal, $process->getTermSignal());
+    }
+
+    public function testProcessThrowsExceptionWhenExternallySignaled()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('Windows does not support POSIX signals');
+        }
+
+        if (!function_exists('posix_kill')) {
+            $this->markTestSkipped('posix_kill is required for this test');
+        }
+
+        $termSignal = defined('SIGKILL') ? SIGKILL : 9;
+
+        $process = $this->getProcess('exec php -r "while (true) {}"');
+        $process->start();
+        posix_kill($process->getPid(), $termSignal);
+
+        $this->setExpectedException('Symfony\Component\Process\Exception\RuntimeException', 'The process has been signaled with signal "9".');
+        $process->wait();
+    }
+
+    public function testRestart()
+    {
+        $process1 = $this->getProcess('php -r "echo getmypid();"');
+        $process1->run();
+        $process2 = $process1->restart();
+
+        usleep(300000); // wait for output
+
+        // Ensure that both processed finished and the output is numeric
+        $this->assertFalse($process1->isRunning());
+        $this->assertFalse($process2->isRunning());
+        $this->assertTrue(is_numeric($process1->getOutput()));
+        $this->assertTrue(is_numeric($process2->getOutput()));
+
+        // Ensure that restart returned a new process by check that the output is different
+        $this->assertNotEquals($process1->getOutput(), $process2->getOutput());
+    }
+
+    public function testPhpDeadlock()
+    {
+        $this->markTestSkipped('Can course PHP to hang');
+
+        // Sleep doesn't work as it will allow the process to handle signals and close
+        // file handles from the other end.
+        $process = $this->getProcess('php -r "while (true) {}"');
+        $process->start();
+
+        // PHP will deadlock when it tries to cleanup $process
+    }
+
+    public function testRunProcessWithTimeout()
+    {
+        $timeout = 0.5;
+        $process = $this->getProcess('php -r "sleep(3);"');
+        $process->setTimeout($timeout);
+        $start = microtime(true);
+        try {
+            $process->run();
+            $this->fail('A RuntimeException should have been raised');
+        } catch (RuntimeException $e) {
+
+        }
+        $duration = microtime(true) - $start;
+
+        $this->assertLessThan($timeout + Process::TIMEOUT_PRECISION, $duration);
+    }
+
+    public function testCheckTimeoutOnStartedProcess()
+    {
+        $timeout = 0.5;
+        $precision = 100000;
+        $process = $this->getProcess('php -r "sleep(3);"');
+        $process->setTimeout($timeout);
+        $start = microtime(true);
+
+        $process->start();
+
+        try {
+            while ($process->isRunning()) {
+                $process->checkTimeout();
+                usleep($precision);
+            }
+            $this->fail('A RuntimeException should have been raised');
+        } catch (RuntimeException $e) {
+
+        }
+        $duration = microtime(true) - $start;
+
+        $this->assertLessThan($timeout + $precision, $duration);
+        $this->assertFalse($process->isSuccessful());
+    }
+
+    /**
+     * @group idle-timeout
+     */
+    public function testIdleTimeout()
+    {
+        $process = $this->getProcess('sleep 3');
+        $process->setTimeout(10);
+        $process->setIdleTimeout(1);
+
+        try {
+            $process->run();
+
+            $this->fail('A timeout exception was expected.');
+        } catch (ProcessTimedOutException $ex) {
+            $this->assertTrue($ex->isIdleTimeout());
+            $this->assertFalse($ex->isGeneralTimeout());
+            $this->assertEquals(1.0, $ex->getExceededTimeout());
+        }
+    }
+
+    /**
+     * @group idle-timeout
+     */
+    public function testIdleTimeoutNotExceededWhenOutputIsSent()
+    {
+        $process = $this->getProcess('echo "foo" && sleep 1 && echo "foo" && sleep 1 && echo "foo" && sleep 1 && echo "foo" && sleep 5');
+        $process->setTimeout(5);
+        $process->setIdleTimeout(3);
+
+        try {
+            $process->run();
+            $this->fail('A timeout exception was expected.');
+        } catch (ProcessTimedOutException $ex) {
+            $this->assertTrue($ex->isGeneralTimeout());
+            $this->assertFalse($ex->isIdleTimeout());
+            $this->assertEquals(5.0, $ex->getExceededTimeout());
+        }
+    }
+
+    public function testStartAfterATimeout()
+    {
+        $process = $this->getProcess('php -r "while (true) {echo \'\'; usleep(1000); }"');
+        $process->setTimeout(0.1);
+        try {
+            $process->run();
+            $this->fail('An exception should have been raised.');
+        } catch (\Exception $e) {
+
+        }
+        $process->start();
+        usleep(10000);
+        $process->stop();
+    }
+
+    public function testGetPid()
+    {
+        $process = $this->getProcess('php -r "sleep(1);"');
+        $process->start();
+        $this->assertGreaterThan(0, $process->getPid());
+        $process->stop();
+    }
+
+    public function testGetPidIsNullBeforeStart()
+    {
+        $process = $this->getProcess('php -r "sleep(1);"');
+        $this->assertNull($process->getPid());
+    }
+
+    public function testGetPidIsNullAfterRun()
+    {
+        $process = $this->getProcess('php -m');
+        $process->run();
+        $this->assertNull($process->getPid());
+    }
+
+    public function testSignal()
+    {
+        $this->verifyPosixIsEnabled();
+
+        $process = $this->getProcess('exec php -f ' . __DIR__ . '/SignalListener.php');
+        $process->start();
+        usleep(500000);
+        $process->signal(SIGUSR1);
+
+        while ($process->isRunning() && false === strpos($process->getoutput(), 'Caught SIGUSR1')) {
+            usleep(10000);
+        }
+
+        $this->assertEquals('Caught SIGUSR1', $process->getOutput());
+    }
+
+    public function testExitCodeIsAvailableAfterSignal()
+    {
+        $this->verifyPosixIsEnabled();
+
+        $process = $this->getProcess('sleep 4');
+        $process->start();
+        $process->signal(SIGKILL);
+
+        while ($process->isRunning()) {
+            usleep(10000);
+        }
+
+        $this->assertFalse($process->isRunning());
+        $this->assertTrue($process->hasBeenSignaled());
+        $this->assertFalse($process->isSuccessful());
+        $this->assertEquals(137, $process->getExitCode());
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\LogicException
+     */
+    public function testSignalProcessNotRunning()
+    {
+        $this->verifyPosixIsEnabled();
+        $process = $this->getProcess('php -m');
+        $process->signal(SIGHUP);
+    }
+
+    private function verifyPosixIsEnabled()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('POSIX signals do not work on Windows');
+        }
+        if (!defined('SIGUSR1')) {
+            $this->markTestSkipped('The pcntl extension is not enabled');
+        }
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testSignalWithWrongIntSignal()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('POSIX signals do not work on Windows');
+        }
+
+        $process = $this->getProcess('php -r "sleep(3);"');
+        $process->start();
+        $process->signal(-4);
+    }
+
+    /**
+     * @expectedException \Symfony\Component\Process\Exception\RuntimeException
+     */
+    public function testSignalWithWrongNonIntSignal()
+    {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->markTestSkipped('POSIX signals do not work on Windows');
+        }
+
+        $process = $this->getProcess('php -r "sleep(3);"');
+        $process->start();
+        $process->signal('Céphalopodes');
+    }
+
+    public function responsesCodeProvider()
+    {
+        return array(
+            //expected output / getter / code to execute
+            //array(1,'getExitCode','exit(1);'),
+            //array(true,'isSuccessful','exit();'),
+            array('output', 'getOutput', 'echo \'output\';'),
+        );
+    }
+
+    public function pipesCodeProvider()
+    {
+        $variations = array(
+            'fwrite(STDOUT, $in = file_get_contents(\'php://stdin\')); fwrite(STDERR, $in);',
+            'include \''.__DIR__.'/PipeStdinInStdoutStdErrStreamSelect.php\';',
+        );
+
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
+            // Avoid XL buffers on Windows because of https://bugs.php.net/bug.php?id=65650
+            $sizes = array(1, 2, 4, 8);
+        } else {
+            $sizes = array(1, 16, 64, 1024, 4096);
+        }
+
+        $codes = array();
+        foreach ($sizes as $size) {
+            foreach ($variations as $code) {
+                $codes[] = array($code, $size);
+            }
+        }
+
+        return $codes;
+    }
+
+    /**
+     * provides default method names for simple getter/setter
+     */
+    public function methodProvider()
+    {
+        $defaults = array(
+            array('CommandLine'),
+            array('Timeout'),
+            array('WorkingDirectory'),
+            array('Env'),
+            array('Stdin'),
+            array('Options')
+        );
+
+        return $defaults;
+    }
+
+    /**
+     * @param string  $commandline
+     * @param null    $cwd
+     * @param array   $env
+     * @param null    $stdin
+     * @param integer $timeout
+     * @param array   $options
+     *
+     * @return Process
+     */
+    abstract protected function getProcess($commandline, $cwd = null, array $env = null, $stdin = null, $timeout = 60, array $options = array());
+}

@@ -1,52 +1,145 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPpLQ/z9AeAM4RQdfgMad7vbUxsPRVN5gWjuJTKAXVzVUdVC1OLVD+kUfnFMISRMObFYP6IHl
-5tZsngJXVWnLmoXDeNYoUp4TpfYpNEubwYs+vjaNs+bINrd6R/dsqzlemCWQvK13ANcgpMdlOPcr
-PPXQViLwlWNU+XHjUqFSaf78pg1489wmHrWpWEnOOwY40vFbPR2JWkRO5+Kn6MbnpQMiKM6ltgof
-px9TcHvzJE+p7bZAKhvH4gzHAE4xzt2gh9fl143SQNISQ/2rO6fZorrFQ2BO9HAuA0f8r7tFRKLa
-6k6CY3ylczKG1HiwaY3ccEegZBPBbhJk+1DmeA8lQeVwV4i56Gni7r1yGPqv3wGRpLKmdS2KC/vW
-PCaWIfqQiTjIDyj2atCxT2V6peipDwvRPOb/kvWCwuYCt9a80fixoBI+IdZxyTEJJLk+HIJZ7zfa
-GEue2FyDqI4h+IQFHW4tSctiaTiWVGVwsn/2WTH2aruHxLuh2pAetSC6dwR56gtdZpqSK5a68NyP
-0ilIherTfbX5CLVmHrd/OWL1kWOU1aKWmEtE0uVpQPHjURMTn3OU54r24W3IYxUXH9zg+VScNnTz
-+Dbd3WaYM9FGwKvUtkcE2Mjed59J1nEZyEEEd3bzq/QPKfZNbLUsUZW52AjsgdFS0NRPi1CLP2w6
-rWRkJ1rkWVjCZxuwonXni8XSG6X+AoPYNQDe3Ogl6QvTDKAZCG0JwdXD6Qalpmr9DRhKRa9+PXVm
-7WKavl2JpGf6BhrETEg+CLDqoj3BAUEylDvjx2g5lf9LKitrmTSULvOqIfix/0Sj+HFS5dluN3Mi
-DNhyk6xYSkHdr6E1Y32Op5TYwNFkEGwgdcASXJLl4U9j1fbtg3kvE0QigFz72X7TRW4Zv6W1MiWf
-KCLfVY/sXpimD6VFhj+TXoWLMn8Ug8xy4ylXGaDObtAvxEww+bMhYDeu5M7YTRcyshzNVV2wa3Jl
-M2nfKnWCZcruVV8+jNhz8BKPDzx4x/0n332cmOLfx6WAiRvuT05GkkZlsrdwsPONUP+tCTNhYoVI
-dzJHQXFGxb2PnLiTAc1YCSuTE6f4fEP1w0ClO83MFxH0N63+ZZ2LDENOsMTPsfMkcfXqBs5zYrX+
-7TYDL8ObvrcI6E3TD/MaZUmcXgD84S3dxu/iFcaKl/7O+I3xrWVP84FzYh0Pxd49xfzMz9nRHHSr
-2uDEQ2+qm9NlGiulIopTczS4KKElFQXkKD9H/gQ9X+6XdmazNQIKGuiAVangZb0JGCH36G88eQp0
-zZLyowJHwsIgamKkaj429EaC1BadUpL4hvrvOeWaR/KsvPn3DhVgNVzhMel+J6vu/1wHdrUMcgQO
-XwFP4V4lQrqDIo7fTlk2w8v4MXMru1LLeVYAQPIrOZyx3caZ1PvMFMWbA78uzD98eCjckic+c3De
-oyHvWQgOtc2/byDnW2j1efLL+hOXo3TdRfdpoBd/5k0l64rMiDetKbocDohlTKIZJagVQSlaZu2/
-6d7HM/k1rX/rv6F9sI2n8vflsoIgMlZKO123bHG+mgTJpo3Yi14Ts55KmXyIFRk/St+BRlyBy7dA
-yzJFJOQ/2nNlWWNwoHdHAT/ntmSTcX5y4TQucCgxJfePTK29r3SqrBU0q0MlaYDvkZyCwmXbwvIn
-1Jqtl0CdMaIGvSTF5yEg3Qdb9098aWvejGdHXu+PInUANZ+MZ+XcvnppFLyif339k6tZP7+lIhBh
-0LzxAmSCylnKKH/+ki/P4g+9cnJxb3BtNaXiprSteDB24wZPeoDJgJ9Iium5Hkwm+Qq01bx5EzQr
-G+cEA6EDb+uCzn9fqBdVaib3fQ+MGooiCnEaSgEBrq8ftfpovWsTWm672/gkG4nyL25p7gMzuZWi
-bCYGD13D9cHIO53WfgEorduNb+1cznfBluU81DxyKDIi4HE3n9TqJ9enADJ7J1BBorYrN7D3NvOh
-AgZ12PxH6V+OgvG1/xp1LNS/u2wlE9jNOYZ2u8oT1xk7U1gzEmSTCE5RD4qSDofUNm7kpHHtL0XL
-jf0O/4taJcHvcURUMkKs0OtlIB8MKQqdwe7pCSq+LY8KWPeh+QX18eS1LLD+Wigsw1N/WIBl1j4P
-R3NVS42WhokCTaf4FJwBX9JOTECruiGQ4GYH0/75cb0PXz8Nrqd1ms2rUP50pEPKeZKMnZ81B8mq
-f0mOFprg18h/wzN5C2Uag7Xt83IBrJL7aOUFQmeBm/uFLe+MJJtGMfI3nGLTnmx9mLbSktXo8Nka
-xW804GElCf/TrfuHeR2bq/HMDyCF7Hnd6j7IY1rvBq2tgNFhPdfw9FjE+IP9O80Sulm8cxh9/mS7
-bxTDQRq24bXaOGghkBGtlJJYsm4TTMr/DJhNqkwOFYmhgcyoSibOCG7ZJmsGwkrUkdqAs0muwoN9
-zookpNY4RhzPKVwgRO9OWw8nrK53HFv64mGxE/fltidX1YZQSP7F2M6UIcCXfrp416BNj0H/N4KM
-qvxmAT9WSbTPZs5ptmtRN9t/bMzhaJHL69rSaxvJ7jXiFeRDxndWOZDAJLF4dGEQTPruvf+CVjUv
-8t0Dhd+Z8vL6fuR6pRPWqb5Pagumsp0SiVxEgSYwtbVectuBiKFzNEQQBubJdPnenIi84RXEr/92
-IW7g7WvMFSRnpOQalge3S22p0vgseZHFi8VaDZBHZ15c7gwfwrQc/J4qUJaeDxG4zrHciiGMolL/
-Z543mUYHuzxCPEuKLZ0xcIPObJCniwf7zPTFKyQKuj3l2ruqjXz1mqDG+pfnJrrlOwPlYORIi57t
-G1qMXTDlCWda25rF+Bs/U+UF9kCcJLUV1LtRVyi1vP6eSMreRG+sgI837ZM1d4vHDsbrWV11eiL0
-FkBu3GQjk/Pv/y1C78S0YD2ZUU4uZHK+uwpxjpiT9Eq2bpkmxGIv1on2uoaI3cIY0WjV16Ctq5ci
-Wah45wW7+LL/Twd8BkFsYGDdvySs4EIvllIV81sMy68qOPoX3xCmbIVds2PVm9Bg1w9h2JcDoXK6
-4lYCzatmPuL414h04X21LvYf18wn+9xL1fg+l4l/ltUp5l2l4yM76Xz0ChLR5EQPPpMFJcn/7kSo
-pPj7Q5jfMiRRcPXgnAbyt7a+t/IbG9gMb52n5TQ3aQpgnY/IDV2r9cRttmyb6axwiwDu7NijnPRw
-3qdS4joleY1NWedQ22iWH7t3gCIGnL8rjIh2nNpyVe0i+2tcZSNm3/VnUeYcpIympXqrQRzpX9ty
-GO/3DWV3NhijdEUWPOPfleRmJ/+dhKe+lxWbYy1oY2LexTGC60X59f12YyFElswukjmKqCV/DesF
-MjNsq23IboBFwXW498BBXiiGb/mDnj+EQ+al0tNEPJDIB0lK1LsJOfIn8Z05C4XUSausznICJBlp
-L2qAx4La4fOSGW7AZUmK1/SrnCUo4etNc4OtYiOIYorihioV8BWhpUrYwhEJLy6Kvn5sztiIImVw
-TQm1aKNdZNdJkg8RwMHokBJ1Khy61wPk6jKliN75vyx8NR68bfMCWvlWfotMcYeRzJajl6NMmvCE
-Mx3Q89ZUX3z55bMVENRIrBOXfVJRSysfcAzfQxfL0z/ATYKiDPwqmT+4paT0Q23BCFcIJFkcMw7x
-o7yw
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * An abstraction allowing the driver to manipulate the browser's window
+ */
+class WebDriverWindow {
+
+  protected $executor;
+
+  public function __construct($executor) {
+    $this->executor = $executor;
+  }
+
+  /**
+   * Get the position of the current window, relative to the upper left corner
+   * of the screen.
+   *
+   * @return array The current window position.
+   */
+  public function getPosition() {
+    $position = $this->executor->execute(
+      'getWindowPosition',
+      array(':windowHandle' => 'current')
+    );
+    return new WebDriverPoint(
+      $position['x'],
+      $position['y']
+    );
+  }
+
+  /**
+   * Get the size of the current window. This will return the outer window
+   * dimension, not just the view port.
+   *
+   * @return array The current window size.
+   */
+  public function getSize() {
+    $size = $this->executor->execute(
+      'getWindowSize',
+      array(':windowHandle' => 'current')
+    );
+    return new WebDriverDimension(
+      $size['width'],
+      $size['height']
+    );
+  }
+
+  /**
+   * Maximizes the current window if it is not already maximized
+   *
+   * @return WebDriverWindow The instance.
+   */
+  public function maximize() {
+    $this->executor->execute(
+      'maximizeWindow',
+      array(':windowHandle' => 'current')
+    );
+    return $this;
+  }
+
+  /**
+   * Set the size of the current window. This will change the outer window
+   * dimension, not just the view port.
+   *
+   * @param int $width The target window width.
+   * @param int $height The target height height.
+   * @return WebDriverWindow The instance.
+   */
+  public function setSize(WebDriverDimension $size) {
+    $params = array(
+      'width' => $size->getWidth(),
+      'height' => $size->getHeight(),
+      ':windowHandle' => 'current',
+    );
+    $this->executor->execute('setWindowSize', $params);
+    return $this;
+  }
+
+  /**
+   * Set the position of the current window. This is relative to the upper left
+   * corner of the screen.
+   *
+   * @param int $width The target window width.
+   * @param int $height The target height height.
+   * @return WebDriverWindow The instance.
+   */
+  public function setPosition(WebDriverPoint $position) {
+    $params = array(
+      'x' => $position->getX(),
+      'y' => $position->getY(),
+      ':windowHandle' => 'current',
+    );
+    $this->executor->execute('setWindowPosition', $params);
+    return $this;
+  }
+
+  /**
+   * Get the current browser orientation.
+   *
+   * @return string Either LANDSCAPE|PORTRAIT
+   */
+  public function getScreenOrientation() {
+    return $this->executor->execute('getScreenOrientation');
+  }
+
+
+  /**
+   * Set the browser orientation. The orientation should either
+   * LANDSCAPE|PORTRAIT
+   *
+   * @param string $orientation
+   * @return WebDriverWindow The instance.
+   * @throws IndexOutOfBoundsWebDriverError
+   */
+  public function setScreenOrientation($orientation) {
+    $orientation = strtoupper($orientation);
+    if (!in_array($orientation, array('PORTRAIT', 'LANDSCAPE'))) {
+      throw new IndexOutOfBoundsWebDriverError(
+        "Orientation must be either PORTRAIT, or LANDSCAPE"
+      );
+    }
+
+    $this->executor->execute(
+      'setScreenOrientation',
+      array('orientation' => $orientation)
+    );
+
+    return $this;
+
+  }
+
+}

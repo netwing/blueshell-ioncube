@@ -1,281 +1,709 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-B+R3bezUaNk5rdi115SP2UklkpHj6m==
+<?php
+/**
+* JSON (JavaScript Object Notation) is a lightweight data-interchange
+* format. It is easy for humans to read and write. It is easy for machines
+* to parse and generate. It is based on a subset of the JavaScript
+* Programming Language, Standard ECMA-262 3rd Edition - December 1999.
+* This feature can also be found in  Python. JSON is a text format that is
+* completely language independent but uses conventions that are familiar
+* to programmers of the C-family of languages, including C, C++, C#, Java,
+* JavaScript, Perl, TCL, and many others. These properties make JSON an
+* ideal data-interchange language.
+*
+* This package provides a simple encoder and decoder for JSON notation. It
+* is intended for use with client-side Javascript applications that make
+* use of HTTPRequest to perform server communication functions - data can
+* be encoded into JSON notation for use in a client-side javascript, or
+* decoded from incoming Javascript requests. JSON format is native to
+* Javascript, and can be directly eval()'ed with no further parsing
+* overhead
+*
+* All strings should be in ASCII or UTF-8 format!
+*
+* LICENSE: Redistribution and use in source and binary forms, with or
+* without modification, are permitted provided that the following
+* conditions are met: Redistributions of source code must retain the
+* above copyright notice, this list of conditions and the following
+* disclaimer. Redistributions in binary form must reproduce the above
+* copyright notice, this list of conditions and the following disclaimer
+* in the documentation and/or other materials provided with the
+* distribution.
+*
+* THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED
+* WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+* MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN
+* NO EVENT SHALL CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+* INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+* BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+* OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+* ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+* TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
+* USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+* DAMAGE.
+*
+* @author	  Michal Migurski <mike-json@teczno.com>
+* @author	  Matt Knapp <mdknapp[at]gmail[dot]com>
+* @author	  Brett Stimmerman <brettstimmerman[at]gmail[dot]com>
+* @copyright   2005 Michal Migurski
+* @license	 http://www.opensource.org/licenses/bsd-license.php
+* @link		http://pear.php.net/pepr/pepr-proposal-show.php?id=198
+*/
+
+/**
+ * CJSON converts PHP data to and from JSON format.
+ *
+ * @author	 Michal Migurski <mike-json@teczno.com>
+ * @author	 Matt Knapp <mdknapp[at]gmail[dot]com>
+ * @author	 Brett Stimmerman <brettstimmerman[at]gmail[dot]com>
+ * @package	system.web.helpers
+ * @since 1.0
+ */
+class CJSON
+{
+	/**
+	 * Marker constant for JSON::decode(), used to flag stack state
+	 */
+	const JSON_SLICE = 1;
+
+	/**
+	* Marker constant for JSON::decode(), used to flag stack state
+	*/
+	const JSON_IN_STR = 2;
+
+	/**
+	* Marker constant for JSON::decode(), used to flag stack state
+	*/
+	const JSON_IN_ARR = 4;
+
+	/**
+	* Marker constant for JSON::decode(), used to flag stack state
+	*/
+	const JSON_IN_OBJ = 8;
+
+	/**
+	* Marker constant for JSON::decode(), used to flag stack state
+	*/
+	const JSON_IN_CMT = 16;
+
+	/**
+	 * Encodes an arbitrary variable into JSON format
+	 *
+	 * @param mixed $var any number, boolean, string, array, or object to be encoded.
+	 * If var is a string, it will be converted to UTF-8 format first before being encoded.
+	 * @return string JSON string representation of input var
+	 */
+	public static function encode($var)
+	{
+		switch (gettype($var)) {
+			case 'boolean':
+				return $var ? 'true' : 'false';
+
+			case 'NULL':
+				return 'null';
+
+			case 'integer':
+				return (int) $var;
+
+			case 'double':
+			case 'float':
+				return str_replace(',','.',(float)$var); // locale-independent representation
+
+			case 'string':
+				if (($enc=strtoupper(Yii::app()->charset))!=='UTF-8')
+					$var=iconv($enc, 'UTF-8', $var);
+
+				if(function_exists('json_encode'))
+					return json_encode($var);
+
+				// STRINGS ARE EXPECTED TO BE IN ASCII OR UTF-8 FORMAT
+				$ascii = '';
+				$strlen_var = strlen($var);
+
+			   /*
+				* Iterate over every character in the string,
+				* escaping with a slash or encoding to UTF-8 where necessary
+				*/
+				for ($c = 0; $c < $strlen_var; ++$c) {
+
+					$ord_var_c = ord($var{$c});
+
+					switch (true) {
+						case $ord_var_c == 0x08:
+							$ascii .= '\b';
+							break;
+						case $ord_var_c == 0x09:
+							$ascii .= '\t';
+							break;
+						case $ord_var_c == 0x0A:
+							$ascii .= '\n';
+							break;
+						case $ord_var_c == 0x0C:
+							$ascii .= '\f';
+							break;
+						case $ord_var_c == 0x0D:
+							$ascii .= '\r';
+							break;
+
+						case $ord_var_c == 0x22:
+						case $ord_var_c == 0x2F:
+						case $ord_var_c == 0x5C:
+							// double quote, slash, slosh
+							$ascii .= '\\'.$var{$c};
+							break;
+
+						case (($ord_var_c >= 0x20) && ($ord_var_c <= 0x7F)):
+							// characters U-00000000 - U-0000007F (same as ASCII)
+							$ascii .= $var{$c};
+							break;
+
+						case (($ord_var_c & 0xE0) == 0xC0):
+							// characters U-00000080 - U-000007FF, mask 110XXXXX
+							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							$char = pack('C*', $ord_var_c, ord($var{$c+1}));
+							$c+=1;
+							$utf16 =  self::utf8ToUTF16BE($char);
+							$ascii .= sprintf('\u%04s', bin2hex($utf16));
+							break;
+
+						case (($ord_var_c & 0xF0) == 0xE0):
+							// characters U-00000800 - U-0000FFFF, mask 1110XXXX
+							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							$char = pack('C*', $ord_var_c,
+										 ord($var{$c+1}),
+										 ord($var{$c+2}));
+							$c+=2;
+							$utf16 = self::utf8ToUTF16BE($char);
+							$ascii .= sprintf('\u%04s', bin2hex($utf16));
+							break;
+
+						case (($ord_var_c & 0xF8) == 0xF0):
+							// characters U-00010000 - U-001FFFFF, mask 11110XXX
+							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							$char = pack('C*', $ord_var_c,
+										 ord($var{$c+1}),
+										 ord($var{$c+2}),
+										 ord($var{$c+3}));
+							$c+=3;
+							$utf16 = self::utf8ToUTF16BE($char);
+							$ascii .= sprintf('\u%04s', bin2hex($utf16));
+							break;
+
+						case (($ord_var_c & 0xFC) == 0xF8):
+							// characters U-00200000 - U-03FFFFFF, mask 111110XX
+							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							$char = pack('C*', $ord_var_c,
+										 ord($var{$c+1}),
+										 ord($var{$c+2}),
+										 ord($var{$c+3}),
+										 ord($var{$c+4}));
+							$c+=4;
+							$utf16 = self::utf8ToUTF16BE($char);
+							$ascii .= sprintf('\u%04s', bin2hex($utf16));
+							break;
+
+						case (($ord_var_c & 0xFE) == 0xFC):
+							// characters U-04000000 - U-7FFFFFFF, mask 1111110X
+							// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+							$char = pack('C*', $ord_var_c,
+										 ord($var{$c+1}),
+										 ord($var{$c+2}),
+										 ord($var{$c+3}),
+										 ord($var{$c+4}),
+										 ord($var{$c+5}));
+							$c+=5;
+							$utf16 = self::utf8ToUTF16BE($char);
+							$ascii .= sprintf('\u%04s', bin2hex($utf16));
+							break;
+					}
+				}
+
+				return '"'.$ascii.'"';
+
+			case 'array':
+			   /*
+				* As per JSON spec if any array key is not an integer
+				* we must treat the the whole array as an object. We
+				* also try to catch a sparsely populated associative
+				* array with numeric keys here because some JS engines
+				* will create an array with empty indexes up to
+				* max_index which can cause memory issues and because
+				* the keys, which may be relevant, will be remapped
+				* otherwise.
+				*
+				* As per the ECMA and JSON specification an object may
+				* have any string as a property. Unfortunately due to
+				* a hole in the ECMA specification if the key is a
+				* ECMA reserved word or starts with a digit the
+				* parameter is only accessible using ECMAScript's
+				* bracket notation.
+				*/
+
+				// treat as a JSON object
+				if (is_array($var) && count($var) && (array_keys($var) !== range(0, sizeof($var) - 1))) {
+					return '{' .
+						   join(',', array_map(array('CJSON', 'nameValue'),
+											   array_keys($var),
+											   array_values($var)))
+						   . '}';
+				}
+
+				// treat it like a regular array
+				return '[' . join(',', array_map(array('CJSON', 'encode'), $var)) . ']';
+
+			case 'object':
+				if ($var instanceof Traversable)
+				{
+					$vars = array();
+					foreach ($var as $k=>$v)
+						$vars[$k] = $v;
+				}
+				else
+					$vars = get_object_vars($var);
+				return '{' .
+					   join(',', array_map(array('CJSON', 'nameValue'),
+										   array_keys($vars),
+										   array_values($vars)))
+					   . '}';
+
+			default:
+				return '';
+		}
+	}
+
+	/**
+	 * array-walking function for use in generating JSON-formatted name-value pairs
+	 *
+	 * @param string $name  name of key to use
+	 * @param mixed $value reference to an array element to be encoded
+	 *
+	 * @return   string  JSON-formatted name-value pair, like '"name":value'
+	 * @access   private
+	 */
+	protected static function nameValue($name, $value)
+	{
+		return self::encode(strval($name)) . ':' . self::encode($value);
+	}
+
+	/**
+	 * reduce a string by removing leading and trailing comments and whitespace
+	 *
+	 * @param string $str string value to strip of comments and whitespace
+	 *
+	 * @return string string value stripped of comments and whitespace
+	 * @access   private
+	 */
+	protected static function reduceString($str)
+	{
+		$str = preg_replace(array(
+
+				// eliminate single line comments in '// ...' form
+				'#^\s*//(.+)$#m',
+
+				// eliminate multi-line comments in '/* ... */' form, at start of string
+				'#^\s*/\*(.+)\*/#Us',
+
+				// eliminate multi-line comments in '/* ... */' form, at end of string
+				'#/\*(.+)\*/\s*$#Us'
+
+			), '', $str);
+
+		// eliminate extraneous space
+		return trim($str);
+	}
+
+	/**
+	 * decodes a JSON string into appropriate variable
+	 *
+	 * @param string $str  JSON-formatted string
+	 * @param boolean $useArray  whether to use associative array to represent object data
+	 * @return mixed   number, boolean, string, array, or object corresponding to given JSON input string.
+	 *    Note that decode() always returns strings in ASCII or UTF-8 format!
+	 * @access   public
+	 */
+	public static function decode($str, $useArray=true)
+	{
+		if(function_exists('json_decode'))
+		{
+			$json = json_decode($str,$useArray);
+
+			// based on investigation, native fails sometimes returning null.
+			// see: http://gggeek.altervista.org/sw/article_20070425.html
+			// As of PHP 5.3.6 it still fails on some valid JSON strings
+			if($json !== null)
+				return $json;
+		}
+
+		$str = self::reduceString($str);
+
+		switch (strtolower($str)) {
+			case 'true':
+				return true;
+
+			case 'false':
+				return false;
+
+			case 'null':
+				return null;
+
+			default:
+				if (is_numeric($str)) {
+					// Lookie-loo, it's a number
+
+					// This would work on its own, but I'm trying to be
+					// good about returning integers where appropriate:
+					// return (float)$str;
+
+					// Return float or int, as appropriate
+					return ((float)$str == (integer)$str)
+						? (integer)$str
+						: (float)$str;
+
+				} elseif (preg_match('/^("|\').+(\1)$/s', $str, $m) && $m[1] == $m[2]) {
+					// STRINGS RETURNED IN UTF-8 FORMAT
+					$delim = substr($str, 0, 1);
+					$chrs = substr($str, 1, -1);
+					$utf8 = '';
+					$strlen_chrs = strlen($chrs);
+
+					for ($c = 0; $c < $strlen_chrs; ++$c) {
+
+						$substr_chrs_c_2 = substr($chrs, $c, 2);
+						$ord_chrs_c = ord($chrs{$c});
+
+						switch (true) {
+							case $substr_chrs_c_2 == '\b':
+								$utf8 .= chr(0x08);
+								++$c;
+								break;
+							case $substr_chrs_c_2 == '\t':
+								$utf8 .= chr(0x09);
+								++$c;
+								break;
+							case $substr_chrs_c_2 == '\n':
+								$utf8 .= chr(0x0A);
+								++$c;
+								break;
+							case $substr_chrs_c_2 == '\f':
+								$utf8 .= chr(0x0C);
+								++$c;
+								break;
+							case $substr_chrs_c_2 == '\r':
+								$utf8 .= chr(0x0D);
+								++$c;
+								break;
+
+							case $substr_chrs_c_2 == '\\"':
+							case $substr_chrs_c_2 == '\\\'':
+							case $substr_chrs_c_2 == '\\\\':
+							case $substr_chrs_c_2 == '\\/':
+								if (($delim == '"' && $substr_chrs_c_2 != '\\\'') ||
+								   ($delim == "'" && $substr_chrs_c_2 != '\\"')) {
+									$utf8 .= $chrs{++$c};
+								}
+								break;
+
+							case preg_match('/\\\u[0-9A-F]{4}/i', substr($chrs, $c, 6)):
+								// single, escaped unicode character
+								$utf16 = chr(hexdec(substr($chrs, ($c+2), 2)))
+									   . chr(hexdec(substr($chrs, ($c+4), 2)));
+								$utf8 .= self::utf16beToUTF8($utf16);
+								$c+=5;
+								break;
+
+							case ($ord_chrs_c >= 0x20) && ($ord_chrs_c <= 0x7F):
+								$utf8 .= $chrs{$c};
+								break;
+
+							case ($ord_chrs_c & 0xE0) == 0xC0:
+								// characters U-00000080 - U-000007FF, mask 110XXXXX
+								//see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+								$utf8 .= substr($chrs, $c, 2);
+								++$c;
+								break;
+
+							case ($ord_chrs_c & 0xF0) == 0xE0:
+								// characters U-00000800 - U-0000FFFF, mask 1110XXXX
+								// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+								$utf8 .= substr($chrs, $c, 3);
+								$c += 2;
+								break;
+
+							case ($ord_chrs_c & 0xF8) == 0xF0:
+								// characters U-00010000 - U-001FFFFF, mask 11110XXX
+								// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+								$utf8 .= substr($chrs, $c, 4);
+								$c += 3;
+								break;
+
+							case ($ord_chrs_c & 0xFC) == 0xF8:
+								// characters U-00200000 - U-03FFFFFF, mask 111110XX
+								// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+								$utf8 .= substr($chrs, $c, 5);
+								$c += 4;
+								break;
+
+							case ($ord_chrs_c & 0xFE) == 0xFC:
+								// characters U-04000000 - U-7FFFFFFF, mask 1111110X
+								// see http://www.cl.cam.ac.uk/~mgk25/unicode.html#utf-8
+								$utf8 .= substr($chrs, $c, 6);
+								$c += 5;
+								break;
+
+						}
+
+					}
+
+					return $utf8;
+
+				} elseif (preg_match('/^\[.*\]$/s', $str) || preg_match('/^\{.*\}$/s', $str)) {
+					// array, or object notation
+
+					if ($str{0} == '[') {
+						$stk = array(self::JSON_IN_ARR);
+						$arr = array();
+					} else {
+						if ($useArray) {
+							$stk = array(self::JSON_IN_OBJ);
+							$obj = array();
+						} else {
+							$stk = array(self::JSON_IN_OBJ);
+							$obj = new stdClass();
+						}
+					}
+
+					$stk[] = array('what' => self::JSON_SLICE, 'where' => 0, 'delim' => false);
+
+					$chrs = substr($str, 1, -1);
+					$chrs = self::reduceString($chrs);
+
+					if ($chrs == '') {
+						if (reset($stk) == self::JSON_IN_ARR) {
+							return $arr;
+
+						} else {
+							return $obj;
+
+						}
+					}
+
+					//print("\nparsing {$chrs}\n");
+
+					$strlen_chrs = strlen($chrs);
+
+					for ($c = 0; $c <= $strlen_chrs; ++$c) {
+
+						$top = end($stk);
+						$substr_chrs_c_2 = substr($chrs, $c, 2);
+
+						if (($c == $strlen_chrs) || (($chrs{$c} == ',') && ($top['what'] == self::JSON_SLICE))) {
+							// found a comma that is not inside a string, array, etc.,
+							// OR we've reached the end of the character list
+							$slice = substr($chrs, $top['where'], ($c - $top['where']));
+							$stk[] = array('what' => self::JSON_SLICE, 'where' => ($c + 1), 'delim' => false);
+							//print("Found split at {$c}: ".substr($chrs, $top['where'], (1 + $c - $top['where']))."\n");
+
+							if (reset($stk) == self::JSON_IN_ARR) {
+								// we are in an array, so just push an element onto the stack
+								$arr[] = self::decode($slice,$useArray);
+
+							} elseif (reset($stk) == self::JSON_IN_OBJ) {
+								// we are in an object, so figure
+								// out the property name and set an
+								// element in an associative array,
+								// for now
+								if (preg_match('/^\s*(["\'].*[^\\\]["\'])\s*:\s*(\S.*),?$/Uis', $slice, $parts)) {
+									// "name":value pair
+									$key = self::decode($parts[1],$useArray);
+									$val = self::decode($parts[2],$useArray);
+
+									if ($useArray) {
+										$obj[$key] = $val;
+									} else {
+										$obj->$key = $val;
+									}
+								} elseif (preg_match('/^\s*(\w+)\s*:\s*(\S.*),?$/Uis', $slice, $parts)) {
+									// name:value pair, where name is unquoted
+									$key = $parts[1];
+									$val = self::decode($parts[2],$useArray);
+
+									if ($useArray) {
+										$obj[$key] = $val;
+									} else {
+										$obj->$key = $val;
+									}
+								}
+
+							}
+
+						} elseif ((($chrs{$c} == '"') || ($chrs{$c} == "'")) && ($top['what'] != self::JSON_IN_STR)) {
+							// found a quote, and we are not inside a string
+							$stk[] = array('what' => self::JSON_IN_STR, 'where' => $c, 'delim' => $chrs{$c});
+							//print("Found start of string at {$c}\n");
+
+						} elseif (($chrs{$c} == $top['delim']) &&
+								 ($top['what'] == self::JSON_IN_STR) &&
+								 (($chrs{$c - 1} != "\\") ||
+								 ($chrs{$c - 1} == "\\" && $chrs{$c - 2} == "\\"))) {
+							// found a quote, we're in a string, and it's not escaped
+							array_pop($stk);
+							//print("Found end of string at {$c}: ".substr($chrs, $top['where'], (1 + 1 + $c - $top['where']))."\n");
+
+						} elseif (($chrs{$c} == '[') &&
+								 in_array($top['what'], array(self::JSON_SLICE, self::JSON_IN_ARR, self::JSON_IN_OBJ))) {
+							// found a left-bracket, and we are in an array, object, or slice
+							$stk[] = array('what' => self::JSON_IN_ARR, 'where' => $c, 'delim' => false);
+							//print("Found start of array at {$c}\n");
+
+						} elseif (($chrs{$c} == ']') && ($top['what'] == self::JSON_IN_ARR)) {
+							// found a right-bracket, and we're in an array
+							array_pop($stk);
+							//print("Found end of array at {$c}: ".substr($chrs, $top['where'], (1 + $c - $top['where']))."\n");
+
+						} elseif (($chrs{$c} == '{') &&
+								 in_array($top['what'], array(self::JSON_SLICE, self::JSON_IN_ARR, self::JSON_IN_OBJ))) {
+							// found a left-brace, and we are in an array, object, or slice
+							$stk[] = array('what' => self::JSON_IN_OBJ, 'where' => $c, 'delim' => false);
+							//print("Found start of object at {$c}\n");
+
+						} elseif (($chrs{$c} == '}') && ($top['what'] == self::JSON_IN_OBJ)) {
+							// found a right-brace, and we're in an object
+							array_pop($stk);
+							//print("Found end of object at {$c}: ".substr($chrs, $top['where'], (1 + $c - $top['where']))."\n");
+
+						} elseif (($substr_chrs_c_2 == '/*') &&
+								 in_array($top['what'], array(self::JSON_SLICE, self::JSON_IN_ARR, self::JSON_IN_OBJ))) {
+							// found a comment start, and we are in an array, object, or slice
+							$stk[] = array('what' => self::JSON_IN_CMT, 'where' => $c, 'delim' => false);
+							$c++;
+							//print("Found start of comment at {$c}\n");
+
+						} elseif (($substr_chrs_c_2 == '*/') && ($top['what'] == self::JSON_IN_CMT)) {
+							// found a comment end, and we're in one now
+							array_pop($stk);
+							$c++;
+
+							for ($i = $top['where']; $i <= $c; ++$i)
+								$chrs = substr_replace($chrs, ' ', $i, 1);
+
+							//print("Found end of comment at {$c}: ".substr($chrs, $top['where'], (1 + $c - $top['where']))."\n");
+
+						}
+
+					}
+
+					if (reset($stk) == self::JSON_IN_ARR) {
+						return $arr;
+
+					} elseif (reset($stk) == self::JSON_IN_OBJ) {
+						return $obj;
+
+					}
+
+				}
+		}
+	}
+
+	/**
+	 * This function returns any UTF-8 encoded text as a list of
+	 * Unicode values:
+	 * @param string $str string to convert
+	 * @return string
+	 * @author Scott Michael Reynen <scott@randomchaos.com>
+	 * @link   http://www.randomchaos.com/document.php?source=php_and_unicode
+	 * @see	unicodeToUTF8()
+	 */
+	protected static function utf8ToUnicode( &$str )
+	{
+		$unicode = array();
+		$values = array();
+		$lookingFor = 1;
+
+		for ($i = 0; $i < strlen( $str ); $i++ )
+		{
+			$thisValue = ord( $str[ $i ] );
+			if ( $thisValue < 128 )
+				$unicode[] = $thisValue;
+			else
+			{
+				if ( count( $values ) == 0 )
+					$lookingFor = ( $thisValue < 224 ) ? 2 : 3;
+				$values[] = $thisValue;
+				if ( count( $values ) == $lookingFor )
+				{
+					$number = ( $lookingFor == 3 ) ?
+						( ( $values[0] % 16 ) * 4096 ) + ( ( $values[1] % 64 ) * 64 ) + ( $values[2] % 64 ):
+						( ( $values[0] % 32 ) * 64 ) + ( $values[1] % 64 );
+					$unicode[] = $number;
+					$values = array();
+					$lookingFor = 1;
+				}
+			}
+		}
+		return $unicode;
+	}
+
+	/**
+	 * This function converts a Unicode array back to its UTF-8 representation
+	 * @param string $str string to convert
+	 * @return string
+	 * @author Scott Michael Reynen <scott@randomchaos.com>
+	 * @link   http://www.randomchaos.com/document.php?source=php_and_unicode
+	 * @see	utf8ToUnicode()
+	 */
+	protected static function unicodeToUTF8( &$str )
+	{
+		$utf8 = '';
+		foreach( $str as $unicode )
+		{
+			if ( $unicode < 128 )
+			{
+				$utf8.= chr( $unicode );
+			}
+			elseif ( $unicode < 2048 )
+			{
+				$utf8.= chr( 192 +  ( ( $unicode - ( $unicode % 64 ) ) / 64 ) );
+				$utf8.= chr( 128 + ( $unicode % 64 ) );
+			}
+			else
+			{
+				$utf8.= chr( 224 + ( ( $unicode - ( $unicode % 4096 ) ) / 4096 ) );
+				$utf8.= chr( 128 + ( ( ( $unicode % 4096 ) - ( $unicode % 64 ) ) / 64 ) );
+				$utf8.= chr( 128 + ( $unicode % 64 ) );
+			}
+		}
+		return $utf8;
+	}
+
+	/**
+	 * UTF-8 to UTF-16BE conversion.
+	 *
+	 * Maybe really UCS-2 without mb_string due to utf8ToUnicode limits
+	 * @param string $str string to convert
+	 * @param boolean $bom whether to output BOM header
+	 * @return string
+	 */
+	protected static function utf8ToUTF16BE(&$str, $bom = false)
+	{
+		$out = $bom ? "\xFE\xFF" : '';
+		if(function_exists('mb_convert_encoding'))
+			return $out.mb_convert_encoding($str,'UTF-16BE','UTF-8');
+
+		$uni = self::utf8ToUnicode($str);
+		foreach($uni as $cp)
+			$out .= pack('n',$cp);
+		return $out;
+	}
+
+	/**
+	 * UTF-8 to UTF-16BE conversion.
+	 *
+	 * Maybe really UCS-2 without mb_string due to utf8ToUnicode limits
+	 * @param string $str string to convert
+	 * @return string
+	 */
+	protected static function utf16beToUTF8(&$str)
+	{
+		$uni = unpack('n*',$str);
+		return self::unicodeToUTF8($uni);
+	}
+}

@@ -1,44 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: live_test.php 1748 2008-04-14 01:50:41Z lastcraft $
+require_once(dirname(__FILE__) . '/../autorun.php');
+require_once(dirname(__FILE__) . '/../socket.php');
+require_once(dirname(__FILE__) . '/../http.php');
+require_once(dirname(__FILE__) . '/../compatibility.php');
+
+if (SimpleTest::getDefaultProxy()) {
+    SimpleTest::ignore('LiveHttpTestCase');
+}
+
+class LiveHttpTestCase extends UnitTestCase {
+
+    function testBadSocket() {
+        $socket = new SimpleSocket('bad_url', 111, 5);
+        $this->assertTrue($socket->isError());
+        $this->assertPattern(
+                '/Cannot open \\[bad_url:111\\] with \\[/',
+                $socket->getError());
+        $this->assertFalse($socket->isOpen());
+        $this->assertFalse($socket->write('A message'));
+    }
+    
+    function testSocketClosure() {
+        $socket = new SimpleSocket('www.lastcraft.com', 80, 15, 8);
+        $this->assertTrue($socket->isOpen());
+        $this->assertTrue($socket->write("GET /test/network_confirm.php HTTP/1.0\r\n"));
+        $socket->write("Host: www.lastcraft.com\r\n");
+        $socket->write("Connection: close\r\n\r\n");
+        $this->assertEqual($socket->read(), "HTTP/1.1");
+        $socket->close();
+        $this->assertIdentical($socket->read(), false);
+    }
+    
+    function testRecordOfSentCharacters() {
+        $socket = new SimpleSocket('www.lastcraft.com', 80, 15);
+        $this->assertTrue($socket->write("GET /test/network_confirm.php HTTP/1.0\r\n"));
+        $socket->write("Host: www.lastcraft.com\r\n");
+        $socket->write("Connection: close\r\n\r\n");
+        $socket->close();
+        $this->assertEqual($socket->getSent(),
+                "GET /test/network_confirm.php HTTP/1.0\r\n" .
+                "Host: www.lastcraft.com\r\n" .
+                "Connection: close\r\n\r\n");
+    }
+}
 ?>
-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

@@ -1,87 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+Yii::import('system.db.CDbConnection');
+
+class CDbConnectionTest extends CTestCase
+{
+	private $_connection;
+
+	public function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->_connection=new CDbConnection('sqlite::memory:');
+	}
+
+	public function tearDown()
+	{
+		$this->_connection->active=false;
+	}
+
+	public function testAutoConnect()
+	{
+		$db=new CDbConnection;
+		$db->connectionString='sqlite::memory:';
+		$this->assertFalse($db->active);
+		$this->assertTrue($db->autoConnect);
+		$db->init();
+		$this->assertTrue($db->active);
+
+		$db2=new CDbConnection;
+		$db2->connectionString='sqlite::memory:';
+		$db2->autoConnect=false;
+		$this->assertFalse($db2->autoConnect);
+		$this->assertFalse($db2->active);
+		$db->init();
+		$this->assertFalse($db2->active);
+	}
+
+	public function testInitialized()
+	{
+		$db=new CDbConnection;
+		$db->autoConnect=false;
+		$this->assertFalse($db->isInitialized);
+		$db->init();
+		$this->assertTrue($db->isInitialized);
+	}
+
+	public function testActive()
+	{
+	    $this->assertFalse($this->_connection->active);
+	    $this->_connection->active=true;
+	    $this->assertTrue($this->_connection->active);
+	    $pdo=$this->_connection->pdoInstance;
+	    $this->assertTrue($pdo instanceof PDO);
+
+	    $this->_connection->active=true;
+	    $this->assertEquals($pdo,$this->_connection->pdoInstance);
+
+		$this->_connection->active=false;
+	    $this->assertFalse($this->_connection->active);
+	    $this->assertEquals($this->_connection->pdoInstance,null);
+
+		$connection=new CDbConnection('unknown::memory:');
+		$this->setExpectedException('CException');
+		$connection->active=true;
+	}
+
+	public function testCreateCommand()
+	{
+		$sql='SELECT * FROM posts';
+		$this->_connection->active=true;
+		$this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/data/sqlite.sql'));
+		$command=$this->_connection->createCommand($sql);
+		$this->assertTrue($command instanceof CDbCommand);
+	}
+
+	public function testLastInsertID()
+	{
+	    $this->_connection->active=true;
+	    $this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/data/sqlite.sql'));
+		$sql='INSERT INTO posts(title,create_time,author_id) VALUES(\'test post\',11000,1)';
+		$this->_connection->createCommand($sql)->execute();
+		$this->assertEquals($this->_connection->lastInsertID,6);
+	}
+
+	public function testQuoteValue()
+	{
+	    $this->_connection->active=true;
+	    $this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/data/sqlite.sql'));
+		$str="this is 'my' name";
+		$expectedStr="'this is ''my'' name'";
+		$this->assertEquals($expectedStr,$this->_connection->quoteValue($str));
+	}
+
+	public function testColumnNameCase()
+	{
+	    $this->_connection->active=true;
+	    $this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/data/sqlite.sql'));
+		$this->assertEquals(PDO::CASE_NATURAL,$this->_connection->ColumnCase);
+		$this->_connection->columnCase=PDO::CASE_LOWER;
+		$this->assertEquals(PDO::CASE_LOWER,$this->_connection->ColumnCase);
+	}
+
+	public function testNullConversion()
+	{
+	    $this->_connection->active=true;
+	    $this->_connection->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/data/sqlite.sql'));
+		$this->assertEquals(PDO::NULL_NATURAL,$this->_connection->NullConversion);
+		$this->_connection->nullConversion=PDO::NULL_EMPTY_STRING;
+		$this->assertEquals(PDO::NULL_EMPTY_STRING,$this->_connection->NullConversion);
+	}
+}

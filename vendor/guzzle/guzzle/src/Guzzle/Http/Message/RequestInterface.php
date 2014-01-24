@@ -1,97 +1,318 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http\Message;
+
+use Guzzle\Common\Collection;
+use Guzzle\Common\HasDispatcherInterface;
+use Guzzle\Http\Exception\RequestException;
+use Guzzle\Http\ClientInterface;
+use Guzzle\Http\EntityBodyInterface;
+use Guzzle\Http\Url;
+use Guzzle\Http\QueryString;
+
+/**
+ * Generic HTTP request interface
+ */
+interface RequestInterface extends MessageInterface, HasDispatcherInterface
+{
+    const STATE_NEW = 'new';
+    const STATE_COMPLETE = 'complete';
+    const STATE_TRANSFER = 'transfer';
+    const STATE_ERROR = 'error';
+
+    const GET = 'GET';
+    const PUT = 'PUT';
+    const POST = 'POST';
+    const DELETE = 'DELETE';
+    const HEAD = 'HEAD';
+    const CONNECT = 'CONNECT';
+    const OPTIONS = 'OPTIONS';
+    const TRACE = 'TRACE';
+    const PATCH = 'PATCH';
+
+    /**
+     * @return string
+     */
+    public function __toString();
+
+    /**
+     * Send the request
+     *
+     * @return Response
+     * @throws RequestException on a request error
+     */
+    public function send();
+
+    /**
+     * Set the client used to transport the request
+     *
+     * @param ClientInterface $client
+     *
+     * @return self
+     */
+    public function setClient(ClientInterface $client);
+
+    /**
+     * Get the client used to transport the request
+     *
+     * @return ClientInterface $client
+     */
+    public function getClient();
+
+    /**
+     * Set the URL of the request
+     *
+     * @param string $url|Url Full URL to set including query string
+     *
+     * @return self
+     */
+    public function setUrl($url);
+
+    /**
+     * Get the full URL of the request (e.g. 'http://www.guzzle-project.com/')
+     *
+     * @param bool $asObject Set to TRUE to retrieve the URL as a clone of the URL object owned by the request.
+     *
+     * @return string|Url
+     */
+    public function getUrl($asObject = false);
+
+    /**
+     * Get the resource part of the the request, including the path, query string, and fragment
+     *
+     * @return string
+     */
+    public function getResource();
+
+    /**
+     * Get the collection of key value pairs that will be used as the query string in the request
+     *
+     * @return QueryString
+     */
+    public function getQuery();
+
+    /**
+     * Get the HTTP method of the request
+     *
+     * @return string
+     */
+    public function getMethod();
+
+    /**
+     * Get the URI scheme of the request (http, https, ftp, etc)
+     *
+     * @return string
+     */
+    public function getScheme();
+
+    /**
+     * Set the URI scheme of the request (http, https, ftp, etc)
+     *
+     * @param string $scheme Scheme to set
+     *
+     * @return self
+     */
+    public function setScheme($scheme);
+
+    /**
+     * Get the host of the request
+     *
+     * @return string
+     */
+    public function getHost();
+
+    /**
+     * Set the host of the request. Including a port in the host will modify the port of the request.
+     *
+     * @param string $host Host to set (e.g. www.yahoo.com, www.yahoo.com:80)
+     *
+     * @return self
+     */
+    public function setHost($host);
+
+    /**
+     * Get the path of the request (e.g. '/', '/index.html')
+     *
+     * @return string
+     */
+    public function getPath();
+
+    /**
+     * Set the path of the request (e.g. '/', '/index.html')
+     *
+     * @param string|array $path Path to set or array of segments to implode
+     *
+     * @return self
+     */
+    public function setPath($path);
+
+    /**
+     * Get the port that the request will be sent on if it has been set
+     *
+     * @return int|null
+     */
+    public function getPort();
+
+    /**
+     * Set the port that the request will be sent on
+     *
+     * @param int $port Port number to set
+     *
+     * @return self
+     */
+    public function setPort($port);
+
+    /**
+     * Get the username to pass in the URL if set
+     *
+     * @return string|null
+     */
+    public function getUsername();
+
+    /**
+     * Get the password to pass in the URL if set
+     *
+     * @return string|null
+     */
+    public function getPassword();
+
+    /**
+     * Set HTTP authorization parameters
+     *
+     * @param string|bool $user     User name or false disable authentication
+     * @param string      $password Password
+     * @param string      $scheme   Authentication scheme ('Basic', 'Digest', or a CURLAUTH_* constant (deprecated))
+     *
+     * @return self
+     * @link http://www.ietf.org/rfc/rfc2617.txt
+     * @link http://php.net/manual/en/function.curl-setopt.php See the available options for CURLOPT_HTTPAUTH
+     * @throws RequestException
+     */
+    public function setAuth($user, $password = '', $scheme = 'Basic');
+
+    /**
+     * Get the HTTP protocol version of the request
+     *
+     * @return string
+     */
+    public function getProtocolVersion();
+
+    /**
+     * Set the HTTP protocol version of the request (e.g. 1.1 or 1.0)
+     *
+     * @param string $protocol HTTP protocol version to use with the request
+     *
+     * @return self
+     */
+    public function setProtocolVersion($protocol);
+
+    /**
+     * Get the previously received {@see Response} or NULL if the request has not been sent
+     *
+     * @return Response|null
+     */
+    public function getResponse();
+
+    /**
+     * Manually set a response for the request.
+     *
+     * This method is useful for specifying a mock response for the request or setting the response using a cache.
+     * Manually setting a response will bypass the actual sending of a request.
+     *
+     * @param Response $response Response object to set
+     * @param bool     $queued   Set to TRUE to keep the request in a state of not having been sent, but queue the
+     *                           response for send()
+     *
+     * @return self Returns a reference to the object.
+     */
+    public function setResponse(Response $response, $queued = false);
+
+    /**
+     * The start of a response has been received for a request and the request is still in progress
+     *
+     * @param Response $response Response that has been received so far
+     *
+     * @return self
+     */
+    public function startResponse(Response $response);
+
+    /**
+     * Set the EntityBody that will hold a successful response message's entity body.
+     *
+     * This method should be invoked when you need to send the response's entity body somewhere other than the normal
+     * php://temp buffer. For example, you can send the entity body to a socket, file, or some other custom stream.
+     *
+     * @param EntityBodyInterface|string|resource $body Response body object. Pass a string to attempt to store the
+     *                                                  response body in a local file.
+     * @return Request
+     */
+    public function setResponseBody($body);
+
+    /**
+     * Get the EntityBody that will hold the resulting response message's entity body. This response body will only
+     * be used for successful responses. Intermediate responses (e.g. redirects) will not use the targeted response
+     * body.
+     *
+     * @return EntityBodyInterface
+     */
+    public function getResponseBody();
+
+    /**
+     * Get the state of the request. One of 'complete', 'transfer', 'new', 'error'
+     *
+     * @return string
+     */
+    public function getState();
+
+    /**
+     * Set the state of the request
+     *
+     * @param string $state   State of the request ('complete', 'transfer', 'new', 'error')
+     * @param array  $context Contextual information about the state change
+     *
+     * @return string Returns the current state of the request (which may have changed due to events being fired)
+     */
+    public function setState($state, array $context = array());
+
+    /**
+     * Get the cURL options that will be applied when the cURL handle is created
+     *
+     * @return Collection
+     */
+    public function getCurlOptions();
+
+    /**
+     * Get an array of Cookies
+     *
+     * @return array
+     */
+    public function getCookies();
+
+    /**
+     * Get a cookie value by name
+     *
+     * @param string $name Cookie to retrieve
+     *
+     * @return null|string
+     */
+    public function getCookie($name);
+
+    /**
+     * Add a Cookie value by name to the Cookie header
+     *
+     * @param string $name  Name of the cookie to add
+     * @param string $value Value to set
+     *
+     * @return self
+     */
+    public function addCookie($name, $value);
+
+    /**
+     * Remove a specific cookie value by name
+     *
+     * @param string $name Cookie to remove by name
+     *
+     * @return self
+     */
+    public function removeCookie($name);
+}

@@ -1,103 +1,219 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-owDUXc8J
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsFunction
+ */
+
+/**
+ * Smarty {html_radios} function plugin
+ *
+ * File:       function.html_radios.php<br>
+ * Type:       function<br>
+ * Name:       html_radios<br>
+ * Date:       24.Feb.2003<br>
+ * Purpose:    Prints out a list of radio input types<br>
+ * Params:
+ * <pre>
+ * - name       (optional) - string default "radio"
+ * - values     (required) - array
+ * - options    (required) - associative array
+ * - checked    (optional) - array default not set
+ * - separator  (optional) - ie <br> or &nbsp;
+ * - output     (optional) - the output next to each radio button
+ * - assign     (optional) - assign the output as an array to this variable
+ * - escape     (optional) - escape the content (not value), defaults to true
+ * </pre>
+ * Examples:
+ * <pre>
+ * {html_radios values=$ids output=$names}
+ * {html_radios values=$ids name='box' separator='<br>' output=$names}
+ * {html_radios values=$ids checked=$checked separator='<br>' output=$names}
+ * </pre>
+ *
+ * @link http://smarty.php.net/manual/en/language.function.html.radios.php {html_radios}
+ *      (Smarty online manual)
+ * @author Christopher Kvarme <christopher.kvarme@flashjab.com>
+ * @author credits to Monte Ohrt <monte at ohrt dot com>
+ * @version 1.0
+ * @param array                    $params   parameters
+ * @param Smarty_Internal_Template $template template object
+ * @return string
+ * @uses smarty_function_escape_special_chars()
+ */
+function smarty_function_html_radios($params, $template)
+{
+    require_once(SMARTY_PLUGINS_DIR . 'shared.escape_special_chars.php');
+
+    $name = 'radio';
+    $values = null;
+    $options = null;
+    $selected = null;
+    $separator = '';
+    $escape = true;
+    $labels = true;
+    $label_ids = false;
+    $output = null;
+    $extra = '';
+
+    foreach ($params as $_key => $_val) {
+        switch ($_key) {
+            case 'name':
+            case 'separator':
+                $$_key = (string) $_val;
+                break;
+
+            case 'checked':
+            case 'selected':
+                if (is_array($_val)) {
+                    trigger_error('html_radios: the "' . $_key . '" attribute cannot be an array', E_USER_WARNING);
+                } elseif (is_object($_val)) {
+                    if (method_exists($_val, "__toString")) {
+                        $selected = smarty_function_escape_special_chars((string) $_val->__toString());
+                    } else {
+                        trigger_error("html_radios: selected attribute is an object of class '". get_class($_val) ."' without __toString() method", E_USER_NOTICE);
+                    }
+                } else {
+                    $selected = (string) $_val;
+                }
+                break;
+
+            case 'escape':
+            case 'labels':
+            case 'label_ids':
+                $$_key = (bool) $_val;
+                break;
+
+            case 'options':
+                $$_key = (array) $_val;
+                break;
+
+            case 'values':
+            case 'output':
+                $$_key = array_values((array) $_val);
+                break;
+
+            case 'radios':
+                trigger_error('html_radios: the use of the "radios" attribute is deprecated, use "options" instead', E_USER_WARNING);
+                $options = (array) $_val;
+                break;
+
+            case 'assign':
+                break;
+
+            case 'strict': break;
+
+            case 'disabled':
+            case 'readonly':
+                if (!empty($params['strict'])) {
+                    if (!is_scalar($_val)) {
+                        trigger_error("html_options: $_key attribute must be a scalar, only boolean true or string '$_key' will actually add the attribute", E_USER_NOTICE);
+                    }
+
+                    if ($_val === true || $_val === $_key) {
+                        $extra .= ' ' . $_key . '="' . smarty_function_escape_special_chars($_key) . '"';
+                    }
+
+                    break;
+                }
+                // omit break; to fall through!
+
+            default:
+                if (!is_array($_val)) {
+                    $extra .= ' ' . $_key . '="' . smarty_function_escape_special_chars($_val) . '"';
+                } else {
+                    trigger_error("html_radios: extra attribute '$_key' cannot be an array", E_USER_NOTICE);
+                }
+                break;
+        }
+    }
+
+    if (!isset($options) && !isset($values)) {
+        /* raise error here? */
+
+        return '';
+    }
+
+    $_html_result = array();
+
+    if (isset($options)) {
+        foreach ($options as $_key => $_val) {
+            $_html_result[] = smarty_function_html_radios_output($name, $_key, $_val, $selected, $extra, $separator, $labels, $label_ids, $escape);
+        }
+    } else {
+        foreach ($values as $_i => $_key) {
+            $_val = isset($output[$_i]) ? $output[$_i] : '';
+            $_html_result[] = smarty_function_html_radios_output($name, $_key, $_val, $selected, $extra, $separator, $labels, $label_ids, $escape);
+        }
+    }
+
+    if (!empty($params['assign'])) {
+        $template->assign($params['assign'], $_html_result);
+    } else {
+        return implode("\n", $_html_result);
+    }
+}
+
+function smarty_function_html_radios_output($name, $value, $output, $selected, $extra, $separator, $labels, $label_ids, $escape)
+{
+    $_output = '';
+
+    if (is_object($value)) {
+        if (method_exists($value, "__toString")) {
+            $value = (string) $value->__toString();
+        } else {
+            trigger_error("html_options: value is an object of class '". get_class($value) ."' without __toString() method", E_USER_NOTICE);
+
+            return '';
+        }
+    } else {
+        $value = (string) $value;
+    }
+
+    if (is_object($output)) {
+        if (method_exists($output, "__toString")) {
+            $output = (string) $output->__toString();
+        } else {
+            trigger_error("html_options: output is an object of class '". get_class($output) ."' without __toString() method", E_USER_NOTICE);
+
+            return '';
+        }
+    } else {
+        $output = (string) $output;
+    }
+
+    if ($labels) {
+        if ($label_ids) {
+            $_id = smarty_function_escape_special_chars(preg_replace('![^\w\-\.]!' . Smarty::$_UTF8_MODIFIER, '_', $name . '_' . $value));
+            $_output .= '<label for="' . $_id . '">';
+        } else {
+            $_output .= '<label>';
+        }
+    }
+
+    $name = smarty_function_escape_special_chars($name);
+    $value = smarty_function_escape_special_chars($value);
+    if ($escape) {
+        $output = smarty_function_escape_special_chars($output);
+    }
+
+    $_output .= '<input type="radio" name="' . $name . '" value="' . $value . '"';
+
+    if ($labels && $label_ids) {
+        $_output .= ' id="' . $_id . '"';
+    }
+
+    if ($value === $selected) {
+        $_output .= ' checked="checked"';
+    }
+
+    $_output .= $extra . ' />' . $output;
+    if ($labels) {
+        $_output .= '</label>';
+    }
+
+    $_output .= $separator;
+
+    return $_output;
+}

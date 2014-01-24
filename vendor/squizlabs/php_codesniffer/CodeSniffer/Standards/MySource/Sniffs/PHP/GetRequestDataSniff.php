@@ -1,60 +1,119 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Ensures that getRequestData() is used to access super globals.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Ensures that getRequestData() is used to access super globals.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class MySource_Sniffs_PHP_GetRequestDataSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_VARIABLE);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $varName = $tokens[$stackPtr]['content'];
+        if ($varName !== '$_REQUEST'
+            && $varName !== '$_GET'
+            && $varName !== '$_POST'
+            && $varName !== '$_FILES'
+        ) {
+            return;
+        }
+
+        // The only place these super globals can be accessed directly is
+        // in the getRequestData() method of the Security class.
+        $inClass = false;
+        foreach ($tokens[$stackPtr]['conditions'] as $i => $type) {
+            if ($tokens[$i]['code'] === T_CLASS) {
+                $className = $phpcsFile->findNext(T_STRING, $i);
+                $className = $tokens[$className]['content'];
+                if (strtolower($className) === 'security') {
+                    $inClass = true;
+                } else {
+                    // We don't have nested classes.
+                    break;
+                }
+            } else if ($inClass === true && $tokens[$i]['code'] === T_FUNCTION) {
+                $funcName = $phpcsFile->findNext(T_STRING, $i);
+                $funcName = $tokens[$funcName]['content'];
+                if (strtolower($funcName) === 'getrequestdata') {
+                    // This is valid.
+                    return;
+                } else {
+                    // We don't have nested functions.
+                    break;
+                }
+            }//end if
+        }//end foreach
+
+        // If we get to here, the super global was used incorrectly.
+        // First find out how it is being used.
+        $globalName = strtolower(substr($varName, 2));
+        $usedVar    = '';
+
+        $openBracket = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), null, true);
+        if ($tokens[$openBracket]['code'] === T_OPEN_SQUARE_BRACKET) {
+            $closeBracket = $tokens[$openBracket]['bracket_closer'];
+            $usedVar      = $phpcsFile->getTokensAsString(($openBracket + 1), ($closeBracket - $openBracket - 1));
+        }
+
+        $type  = 'SuperglobalAccessed';
+        $error = 'The %s super global must not be accessed directly; use Security::getRequestData(';
+        $data  = array($varName);
+        if ($usedVar !== '') {
+            $type  .= 'WithVar';
+            $error .= '%s, \'%s\'';
+            $data[] = $usedVar;
+            $data[] = $globalName;
+        }
+
+        $error .= ') instead';
+        $phpcsFile->addError($error, $stackPtr, $type, $data);
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-E73WWzbB0PCbul/3V0j1cHqG9DEahDZawG==

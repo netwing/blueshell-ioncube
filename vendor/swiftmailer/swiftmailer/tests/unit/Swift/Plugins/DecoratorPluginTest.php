@@ -1,137 +1,235 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-D9PdATOfuHK3zGx1AmzbODItwI4FTRRWGJat
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+
+class Swift_Plugins_DecoratorPluginTest extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testMessageBodyReceivesReplacements()
+    {
+        $message = $this->_createMessage(
+            $this->_createHeaders(),
+            array('zip@button.tld' => 'Zipathon'),
+            array('chris.corbyn@swiftmailer.org' => 'Chris'),
+            'Subject',
+            'Hello {name}, you are customer #{id}'
+            );
+        $this->_checking(Expectations::create()
+            -> one($message)->setBody('Hello Zip, you are customer #456')
+            -> ignoring($message)
+            );
+
+        $plugin = $this->_createPlugin(
+            array('zip@button.tld' => array('{name}' => 'Zip', '{id}' => '456'))
+            );
+
+        $evt = $this->_createSendEvent($message);
+
+        $plugin->beforeSendPerformed($evt);
+        $plugin->sendPerformed($evt);
+    }
+
+    public function testReplacementsCanBeAppliedToSameMessageMultipleTimes()
+    {
+        $message = $this->_createMessage(
+            $this->_createHeaders(),
+            array('zip@button.tld' => 'Zipathon', 'foo@bar.tld' => 'Foo'),
+            array('chris.corbyn@swiftmailer.org' => 'Chris'),
+            'Subject',
+            'Hello {name}, you are customer #{id}'
+            );
+        $this->_checking(Expectations::create()
+            -> one($message)->setBody('Hello Zip, you are customer #456')
+            -> one($message)->setBody('Hello {name}, you are customer #{id}')
+            -> one($message)->setBody('Hello Foo, you are customer #123')
+            -> ignoring($message)
+            );
+
+        $plugin = $this->_createPlugin(
+            array(
+                'foo@bar.tld' => array('{name}' => 'Foo', '{id}' => '123'),
+                'zip@button.tld' => array('{name}' => 'Zip', '{id}' => '456')
+                )
+            );
+
+        $evt = $this->_createSendEvent($message);
+
+        $plugin->beforeSendPerformed($evt);
+        $plugin->sendPerformed($evt);
+        $plugin->beforeSendPerformed($evt);
+        $plugin->sendPerformed($evt);
+    }
+
+    public function testReplacementsCanBeMadeInHeaders()
+    {
+        $headers = $this->_createHeaders(array(
+            $returnPathHeader = $this->_createHeader('Return-Path', 'foo-{id}@swiftmailer.org'),
+            $toHeader = $this->_createHeader('Subject', 'A message for {name}!')
+        ));
+
+        $message = $this->_createMessage(
+            $headers,
+            array('zip@button.tld' => 'Zipathon'),
+            array('chris.corbyn@swiftmailer.org' => 'Chris'),
+            'A message for {name}!',
+            'Hello {name}, you are customer #{id}'
+            );
+        $this->_checking(Expectations::create()
+            -> one($message)->setBody('Hello Zip, you are customer #456')
+            -> one($toHeader)->setFieldBodyModel('A message for Zip!')
+            -> one($returnPathHeader)->setFieldBodyModel('foo-456@swiftmailer.org')
+            -> ignoring($message)
+            -> ignoring($toHeader)
+            -> ignoring($returnPathHeader)
+            );
+
+        $plugin = $this->_createPlugin(
+            array('zip@button.tld' => array('{name}' => 'Zip', '{id}' => '456'))
+            );
+
+        $evt = $this->_createSendEvent($message);
+
+        $plugin->beforeSendPerformed($evt);
+        $plugin->sendPerformed($evt);
+    }
+
+    public function testReplacementsAreMadeOnSubparts()
+    {
+        $part1 = $this->_createPart('text/plain', 'Your name is {name}?', '1@x');
+        $part2 = $this->_createPart('text/html', 'Your <em>name</em> is {name}?', '2@x');
+        $message = $this->_createMessage(
+            $this->_createHeaders(),
+            array('zip@button.tld' => 'Zipathon'),
+            array('chris.corbyn@swiftmailer.org' => 'Chris'),
+            'A message for {name}!',
+            'Subject'
+            );
+        $this->_checking(Expectations::create()
+            -> ignoring($message)->getChildren() -> returns(array($part1, $part2))
+            -> one($part1)->setBody('Your name is Zip?')
+            -> one($part2)->setBody('Your <em>name</em> is Zip?')
+            -> ignoring($part1)
+            -> ignoring($part2)
+            -> ignoring($message)
+            );
+
+        $plugin = $this->_createPlugin(
+            array('zip@button.tld' => array('{name}' => 'Zip', '{id}' => '456'))
+            );
+
+        $evt = $this->_createSendEvent($message);
+
+        $plugin->beforeSendPerformed($evt);
+        $plugin->sendPerformed($evt);
+    }
+
+    public function testReplacementsCanBeTakenFromCustomReplacementsObject()
+    {
+        $message = $this->_createMessage(
+            $this->_createHeaders(),
+            array('foo@bar' => 'Foobar', 'zip@zap' => 'Zip zap'),
+            array('chris.corbyn@swiftmailer.org' => 'Chris'),
+            'Subject',
+            'Something {a}'
+            );
+
+        $replacements = $this->_createReplacements();
+
+        $this->_checking(Expectations::create()
+            -> one($message)->setBody('Something b')
+            -> one($message)->setBody('Something c')
+            -> one($replacements)->getReplacementsFor('foo@bar') -> returns(array('{a}'=>'b'))
+            -> one($replacements)->getReplacementsFor('zip@zap') -> returns(array('{a}'=>'c'))
+            -> ignoring($message)
+            );
+
+        $plugin = $this->_createPlugin($replacements);
+
+        $evt = $this->_createSendEvent($message);
+
+        $plugin->beforeSendPerformed($evt);
+        $plugin->sendPerformed($evt);
+        $plugin->beforeSendPerformed($evt);
+        $plugin->sendPerformed($evt);
+    }
+
+    // -- Creation methods
+
+    private function _createMessage($headers, $to = array(), $from = null, $subject = null,
+        $body = null)
+    {
+        $message = $this->_mock('Swift_Mime_Message');
+        foreach ($to as $addr => $name) {
+            $this->_checking(Expectations::create()
+                -> one($message)->getTo() -> returns(array($addr => $name))
+                );
+        }
+        $this->_checking(Expectations::create()
+            -> allowing($message)->getHeaders() -> returns($headers)
+            -> ignoring($message)->getFrom() -> returns($from)
+            -> ignoring($message)->getSubject() -> returns($subject)
+            -> ignoring($message)->getBody() -> returns($body)
+            );
+
+        return $message;
+    }
+
+    private function _createPlugin($replacements)
+    {
+        return new Swift_Plugins_DecoratorPlugin($replacements);
+    }
+
+    private function _createReplacements()
+    {
+        return $this->_mock('Swift_Plugins_Decorator_Replacements');
+    }
+
+    private function _createSendEvent(Swift_Mime_Message $message)
+    {
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $this->_checking(Expectations::create()
+            -> ignoring($evt)->getMessage() -> returns($message)
+            -> ignoring($evt)
+            );
+
+        return $evt;
+    }
+
+    private function _createPart($type, $body, $id)
+    {
+        $part = $this->_mock('Swift_Mime_MimeEntity');
+        $this->_checking(Expectations::create()
+            -> ignoring($part)->getContentType() -> returns($type)
+            -> ignoring($part)->getBody() -> returns($body)
+            -> ignoring($part)->getId() -> returns($id)
+            );
+
+        return $part;
+    }
+
+    private function _createHeaders($headers = array())
+    {
+        $set = $this->_mock('Swift_Mime_HeaderSet');
+
+        $this->_checking(Expectations::create()
+            -> allowing($set)->getAll() -> returns($headers)
+            -> ignoring($set)
+            );
+
+        foreach ($headers as $header) {
+            $set->set($header);
+        }
+
+        return $set;
+    }
+
+    private function _createHeader($name, $body = '')
+    {
+        $header = $this->_mock('Swift_Mime_Header');
+        $this->_checking(Expectations::create()
+            -> ignoring($header)->getFieldName() -> returns($name)
+            -> ignoring($header)->getFieldBodyModel() -> returns($body)
+            );
+
+        return $header;
+    }
+}

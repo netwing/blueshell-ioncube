@@ -1,86 +1,189 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * PEAR_Sniffs_ControlStructures_MultiLineConditionSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * PEAR_Sniffs_ControlStructures_MultiLineConditionSniff.
+ *
+ * Ensure multi-line IF conditions are defined correctly.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PEAR_Sniffs_ControlStructures_MultiLineConditionSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * The number of spaces code should be indented.
+     *
+     * @var int
+     */
+    public $indent = 4;
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_IF,
+                T_ELSEIF,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // We need to work out how far indented the if statement
+        // itself is, so we can work out how far to indent conditions.
+        $statementIndent = 0;
+        for ($i = ($stackPtr - 1); $i >= 0; $i--) {
+            if ($tokens[$i]['line'] !== $tokens[$stackPtr]['line']) {
+                $i++;
+                break;
+            }
+        }
+
+        if ($i >= 0 && $tokens[$i]['code'] === T_WHITESPACE) {
+            $statementIndent = strlen($tokens[$i]['content']);
+        }
+
+        // Each line between the parenthesis should be indented 4 spaces
+        // and start with an operator, unless the line is inside a
+        // function call, in which case it is ignored.
+        $openBracket  = $tokens[$stackPtr]['parenthesis_opener'];
+        $closeBracket = $tokens[$stackPtr]['parenthesis_closer'];
+        $lastLine     = $tokens[$openBracket]['line'];
+        for ($i = ($openBracket + 1); $i < $closeBracket; $i++) {
+            if ($tokens[$i]['line'] !== $lastLine) {
+                if ($tokens[$i]['line'] === $tokens[$closeBracket]['line']) {
+                    $next = $phpcsFile->findNext(T_WHITESPACE, $i, null, true);
+                    if ($next !== $closeBracket) {
+                        // Closing bracket is on the same line as a condition.
+                        $error = 'Closing parenthesis of a multi-line IF statement must be on a new line';
+                        $phpcsFile->addError($error, $i, 'CloseBracketNewLine');
+                        $expectedIndent = ($statementIndent + $this->indent);
+                    } else {
+                        // Closing brace needs to be indented to the same level
+                        // as the function.
+                        $expectedIndent = $statementIndent;
+                    }
+                } else {
+                    $expectedIndent = ($statementIndent + $this->indent);
+                }
+
+                // We changed lines, so this should be a whitespace indent token.
+                if ($tokens[$i]['code'] !== T_WHITESPACE) {
+                    $foundIndent = 0;
+                } else {
+                    $foundIndent = strlen($tokens[$i]['content']);
+                }
+
+                if ($expectedIndent !== $foundIndent) {
+                    $error = 'Multi-line IF statement not indented correctly; expected %s spaces but found %s';
+                    $data  = array(
+                              $expectedIndent,
+                              $foundIndent,
+                             );
+                    $phpcsFile->addError($error, $i, 'Alignment', $data);
+                }
+
+                if ($tokens[$i]['line'] !== $tokens[$closeBracket]['line']) {
+                    $next = $phpcsFile->findNext(T_WHITESPACE, $i, null, true);
+                    if (in_array($tokens[$next]['code'], PHP_CodeSniffer_Tokens::$booleanOperators) === false) {
+                        $error = 'Each line in a multi-line IF statement must begin with a boolean operator';
+                        $phpcsFile->addError($error, $i, 'StartWithBoolean');
+                    }
+                }
+
+                $lastLine = $tokens[$i]['line'];
+            }//end if
+
+            if ($tokens[$i]['code'] === T_STRING) {
+                $next = $phpcsFile->findNext(T_WHITESPACE, ($i + 1), null, true);
+                if ($tokens[$next]['code'] === T_OPEN_PARENTHESIS) {
+                    // This is a function call, so skip to the end as they
+                    // have their own indentation rules.
+                    $i        = $tokens[$next]['parenthesis_closer'];
+                    $lastLine = $tokens[$i]['line'];
+                    continue;
+                }
+            }
+        }//end for
+
+        // From here on, we are checking the spacing of the opening and closing
+        // braces. If this IF statement does not use braces, we end here.
+        if (isset($tokens[$stackPtr]['scope_opener']) === false) {
+            return;
+        }
+
+        // The opening brace needs to be one space away from the closing parenthesis.
+        if ($tokens[($closeBracket + 1)]['code'] !== T_WHITESPACE) {
+            $length = 0;
+        } else if ($tokens[($closeBracket + 1)]['content'] === $phpcsFile->eolChar) {
+            $length = -1;
+        } else {
+            $length = strlen($tokens[($closeBracket + 1)]['content']);
+        }
+
+        if ($length !== 1) {
+            $data = array($length);
+            $code = 'SpaceBeforeOpenBrace';
+
+            $error = 'There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement; found ';
+            if ($length === -1) {
+                $error .= 'newline';
+                $code   = 'NewlineBeforeOpenBrace';
+            } else {
+                $error .= '%s spaces';
+            }
+
+            $phpcsFile->addError($error, ($closeBracket + 1), $code, $data);
+        }
+
+        // And just in case they do something funny before the brace...
+        $next = $phpcsFile->findNext(T_WHITESPACE, ($closeBracket + 1), null, true);
+        if ($next !== false
+            && $tokens[$next]['code'] !== T_OPEN_CURLY_BRACKET
+            && $tokens[$next]['code'] !== T_COLON
+        ) {
+            $error = 'There must be a single space between the closing parenthesis and the opening brace of a multi-line IF statement';
+            $phpcsFile->addError($error, $next, 'NoSpaceBeforeOpenBrace');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

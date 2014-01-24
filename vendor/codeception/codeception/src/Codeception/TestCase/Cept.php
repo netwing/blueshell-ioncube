@@ -1,57 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\TestCase;
+
+use Codeception\Event\Fail;
+use Codeception\Event\Test as TestEvent;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Codeception\Step;
+
+class Cept extends \Codeception\TestCase implements ScenarioDriven
+{
+    private $name;
+    protected $testfile = null;
+    protected $output;
+    protected $debug;
+    protected $features = array();
+    protected $bootstrap = null;
+    protected $stopped = false;
+    protected $dispatcher;
+
+    public function __construct(EventDispatcher $dispatcher, array $data = array(), $dataName = '')
+    {
+        parent::__construct('testCodecept', $data, $dataName);
+        $this->dispatcher = $dispatcher;
+
+        if (!isset($data['file'])) throw new \Exception('File with test scenario not set. Use array(file => filepath) to set a scenario');
+
+        $this->name = $data['name'];
+        $this->scenario = new \Codeception\Scenario($this);
+        $this->testfile = $data['file'];
+        $this->bootstrap = isset($data['bootstrap']) ? $data['bootstrap'] : null;
+    }
+
+    public function getFileName()
+    {
+        return $this->name;
+    }
+
+    public function getName($withDataSet = true)
+    {
+        return $this->name;
+    }
+
+    public function getScenarioText($format = 'text')
+    {
+        if ($format == 'html') return $this->scenario->getHtml();
+        return $this->scenario->getText();
+    }
+
+    public function getFeature() {
+        return $this->scenario->getFeature();
+    }
+
+    public function toString()
+    {
+        return $this->scenario->getFeature() . ' (' . $this->getFileName() . ')';
+    }
+
+    public function preload()
+    {
+        $scenario = $this->scenario;
+        // preload
+        if (file_exists($this->bootstrap)) require $this->bootstrap;
+        require $this->testfile;
+
+        $this->fire('test.parsed', new TestEvent($this));
+    }
+
+    public function testCodecept()
+    {
+        $scenario = $this->scenario;
+
+        $this->fire('test.before', new TestEvent($this));
+        $scenario->run();
+        if (file_exists($this->bootstrap)) require $this->bootstrap;
+
+        require $this->testfile;
+
+        $this->fire('test.after', new TestEvent($this));
+    }
+
+}

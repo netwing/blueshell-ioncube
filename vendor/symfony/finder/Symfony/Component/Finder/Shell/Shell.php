@@ -1,41 +1,95 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPxGAUaFur5vraRhlOEykJLF83lG3TuXjV+c7rqcrNBdGGrC6YUPCrUz/QkfNIuUS7PNui27i
-KlzseyD6Z168EZZIBKYYrApR9hr4i98J6thcL0oLXalq4iW9UZUjgmqjdNbIaCz0YtKzkGH5Xj/w
-k+0zPjBCWAU0dmjdHKMD3Lz79FN7AtD+NVTGZPIFeQU55E1467DRLcy8jVihJqHovlrwg2J8MHVV
-8ok1psjlPVeL36YIMKs0rQzHAE4xzt2gh9fl143SQNJ2OSiM8b2wsve8S5x8m5h07Xd7eJjJGJ35
-jbB9VBkQTRfUrNqOdQs5Fy+MdauovNQeLtD0Jt3kxjQlavP1lwQNCOANcMC4VhKJ4KohURw3/p3o
-vw98c76xgrLYfjLLcq/6+k04NtaScB2S2lHwmT3ncfea7BC9LGatyIDSjr/2uFeFj0PjLWtnzBUm
-i8nCvKLttvCRJFhIEuKGWVUKcBGrLcuMrebCAilSco4PK/bZbdWBB8FMlqBsFTFLqLN50IWEO5+N
-kpTUGCNjKfIIdZZ5TQmOAUXkzU18GGOZxvFzwzaQyAzOw1pWuUUm+Hnfl/OlwGvPDPXtCfUJ+Oe5
-RlcU/BpQky9A/AZFg+CncdeKiGTk7Ga8cvlh6goNhQVsXctvg96Z3ZlfRfscnCUmptONzVC3Zmc7
-jOIth0jFsee3StKBb+CEthsHnMZxEQ0ryS8gu9WKHaeVNQFEfQ2UgqeigjiCV89tY6Q63GsBVuTw
-0R5uLTg2m+rTM7zReehacZ9B1fEiVBfS+HGdqf0GyJJkEeqGoTUizbn4elTLoa5HbiNc0G9EbG0F
-OYvZJwzAwnmZY8qhOpWmhZuAXTpdjWq0u4KmTghhkNnBtVBXgRBryz7EZp0MSHl+A+XuPlXxARj6
-DcCWYrGDMQsChRfiVvcvU/9lCxcAKg8eL0J5l9NvJp0UQVKlXmsqFJvtS1KPR0jBr0enVzkSkalV
-4K2Ei/Ul4jLYi5lxsim0S8WQQFWtoU2cXxJQHwvpWR1RRMTQ++RH9ngFeK4V2tn2Mr1f8ofYympY
-lgk82dhm2bE3+pcVe4YGdE1Zkyh6VbmPOoAe80UysWtNRSxjxd+V/yRUpQJ8DVhzwdikdWPSXYuo
-nNwrUlqxG3uhuIzcPYl3L4IHZ4TpvE62JsM2Hsxus4MV6CgKaTlnL/FzHUnA55lKLXTmTXqPV7cB
-Inc5Pj5OYYToc4+tFmaZHaFC92VCdw7dyObB3bwQiTzdsiepMCQr57r5uuev0ad/eLTQP8lbD1yF
-hWxaXZR+5MyipK30T/yk8Lm6VUzt+oeHNdyqA5dOQVzZyIS8XYGu7FJocLNs+6+98B1p7L7R0B32
-qvM3yuNYOgb3QhHtyURL+NLU82JR8F6SVQBwaezVxj4PqbIiB5TB620fJ8STuh8GVQw+oAUs8yNs
-cEHhVwGtkaxwif884Mjm0gpvmwgbV/Dj8w32rC6HpIB2TLabUN48cWbVs6pTlXObeFG1Ww8wFnm5
-GaoIqgq/adzwnX+oX2VoiYr+uhX91lmkFSQuQjuP9HqHfD7ysfOevVCp9r71fYRtA892gHoPgUfn
-aP68AhRIG/hL9iibPzzY7+Kb8R8lMkRsaEWl9pDxaa2blzmmomFTsVsPDEELZYlCw/ym0lWb0A9n
-+yGi/smsdtc2vmQsaOP9Z4Q7ad2+SwwqIGweHz5UiwKX5a7WjvQ1knNdEWIq9mrIVbUqU/djThe8
-6SJdftn85wDEeQQytpf0h9y1sH1CP/mxK739X3csn6Eic+OhzlJJV9G12STBeikbL0+fSEtDfYf2
-p8k8g7EvmmrEyt/z42yJGHj0XSaza/EfOslRCIlJZmzwvu3ggEKYa7DXgslbzWKkm4PX7sTC8P4P
-hYALmgvx+aTfc6eP8YeFeWS27e55bDTqyjHxB14KPSSHCvr3LEjVUm5PcCQ7CZMICjqqParKWCL/
-FqYwuDWT/cuPfJv49/79RQJ0JMrsA3rJzF4TfKizDchS4eOgLCLwE5OZu0p8yYlwLCvSUIZLtMcd
-YGMfNPZ5ZkjV147Vu0i1DGwkdyINY5deK7yKPVJgvzeakh15xGet/OmAPM6GCY6gbAm+uI1GaEz6
-LBW+LuZP2SoTp+vPwErZ+SrJx3vJc8CjYZ8UsP5J19qF0aB1eOyFVOiJVWGPtMOqDDESDBJkHr93
-eZym3+xqOmNwU9jRbwsI6EZ2+RcpSQ/MDAioRYYJrFf3Z1owfDjazMJ1nETZ8frrBPfLPs48t3sO
-EJsLuDCWmVysRfLylTNUyqj806kIl7iRrehMImhE0thuiJ7KPGlqYwz25mirZ07HsPJugSk7OcVu
-9UNxpUbZ6n3gLnugJ8rChO9OMfDu/75X1p2FxLHTvSgy23/sdD6aEiQNy54xnc93kJkSQikC1Lzt
-4pazGhiUcxBNo0QsO9xtzir2erDrWu0/6CwGDU7RRqI2KxtJNmcbbJHBNscQM7UHo2Ea1ImGyToU
-puJQSqBMt6w6fAtfwW4AnXlHeUZsaCeR845V7bPiTyU9ww0mfzvPlKdNN0yhKB4Un+ZSBfu44Ly8
-ui+im9FdaanksJr6J/yjsQEDXt6jAHTeyqvZAZN9Cf4t9U8GboDV5I614yPYXtnVW503LSzEfuAm
-7igSij3oUNQL+0DOX6vU5+6rLUW4XiPjfgMnfqpJMibBYR3v5bHiI4uGPx1cRXfeQbIinEUM8+U9
-geIs2cm0Vk5JU2PMdMeGsPW4KI5OE0+KU8j3wRTGkgrcnJlrzYe5Bq9uHq7IJnFsmxGDyCYJnWUD
-ZglkZRaz3orloOf2xcu317IFXkaB6kKwmYm/OPOay4AR8AynlNC0v9qwiGl1WC8=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Shell;
+
+/**
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class Shell
+{
+    const TYPE_UNIX    = 1;
+    const TYPE_DARWIN  = 2;
+    const TYPE_CYGWIN  = 3;
+    const TYPE_WINDOWS = 4;
+    const TYPE_BSD     = 5;
+
+    /**
+     * @var string|null
+     */
+    private $type;
+
+    /**
+     * Returns guessed OS type.
+     *
+     * @return int
+     */
+    public function getType()
+    {
+        if (null === $this->type) {
+            $this->type = $this->guessType();
+        }
+
+        return $this->type;
+    }
+
+    /**
+     * Tests if a command is available.
+     *
+     * @param string $command
+     *
+     * @return bool
+     */
+    public function testCommand($command)
+    {
+        if (self::TYPE_WINDOWS === $this->type) {
+            // todo: find a way to test if Windows command exists
+            return false;
+        }
+
+        if (!function_exists('exec')) {
+            return false;
+        }
+
+        // todo: find a better way (command could not be available)
+        exec('command -v '.$command, $output, $code);
+
+        return 0 === $code && count($output) > 0;
+    }
+
+    /**
+     * Guesses OS type.
+     *
+     * @return int
+     */
+    private function guessType()
+    {
+        $os = strtolower(PHP_OS);
+
+        if (false !== strpos($os, 'cygwin')) {
+            return self::TYPE_CYGWIN;
+        }
+
+        if (false !== strpos($os, 'darwin')) {
+            return self::TYPE_DARWIN;
+        }
+
+        if (false !== strpos($os, 'bsd')) {
+            return self::TYPE_BSD;
+        }
+
+        if (0 === strpos($os, 'win')) {
+            return self::TYPE_WINDOWS;
+        }
+
+        return self::TYPE_UNIX;
+    }
+}

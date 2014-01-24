@@ -1,107 +1,345 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+//require 'Yay/Mockery.php';
+//require 'Yay/Expectation.php';
+//require 'Yay/ExpectationProvider.php';
+//require 'Yay/Invocation.php';
+//require 'Yay/InvocationRecorder.php';
+//require 'Yay/InvocationProxy.php';
+//require 'Yay/Action.php';
+//require 'Yay/Matcher.php';
+//require 'Yay/Matchers/IdenticalMatcher.php';
+//require 'Yay/State.php';
+//require 'Yay/StatePredicate.php';
+//require 'Yay/Sequence.php';
+//require 'Yay/Description.php';
+//require 'Yay/MockGenerator.php';
+
+/**
+ * A base Expectation which other Expectations extend.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+abstract class Yay_Expectations_AbstractExpectation
+  implements Yay_Expectation, Yay_InvocationRecorder
+{
+  
+  /**
+   * The object to expect Invocations from.
+   * @var Yay_MockObject
+   * @access private
+   */
+  private $_object;
+  
+  /**
+   * The method name to expect Invocations on.
+   * @var string
+   * @access private
+   */
+  private $_method;
+  
+  /**
+   * The argument Matchers.
+   * @var array
+   * @access private
+   */
+  private $_matchers = array();
+  
+  /**
+   * The Action to use if matched.
+   * @var Yay_Action
+   * @access private
+   */
+  private $_action;
+  
+  /**
+   * A state predicate to check for.
+   * @var Yay_StatePredicate
+   * @access private
+   */
+  private $_statePredicate;
+  
+  /**
+   * A state to effect if matched.
+   * @var Yay_State
+   * @access private
+   */
+  private $_state;
+  
+  /**
+   * The ID wanted to be valid in the Sequence.
+   * @var int
+   * @access private
+   */
+  private $_wantedSequenceId;
+  
+  /**
+   * The Sequence to check for validity (if any).
+   * @var Yay_Sequence
+   * @access private
+   */
+  private $_sequence;
+  
+  /**
+   * Invoked when the expectation matches so any counters can be incremented
+   * for example.
+   * @param Yay_Invocation $invocation
+   */
+  abstract public function notifyMatchedInvocation(Yay_Invocation $invocation);
+  
+  /**
+   * Describe the boundaries of how many invocations can occur.
+   * @param Yay_Description $description
+   */
+  abstract public function describeBounds(Yay_Description $description);
+  
+  /**
+   * Describe the current status of this expectation.
+   * @param Yay_Description $description
+   */
+  abstract public function describeSatisfaction(Yay_Description $description);
+  
+  /**
+   * Specify the MockObject which the Invocation will occur.
+   * This method returns the mock object in record mode.
+   * @param Yay_MockObject $mock
+   * @return Yay_InvocationProxy
+   */
+  public function of(Yay_MockObject $mock)
+  {
+    $this->_object = $mock;
+    return new Yay_InvocationProxy($this, $mock);
+  }
+  
+  /**
+   * Notify the Expectation of an Invocation and check if it matches.
+   * @param Yay_Invocation $invocation
+   * @return boolean
+   */
+  public function isExpected(Yay_Invocation $invocation)
+  {
+    $matches = true;
+    $object = $invocation->getObject();
+    if ($object === $this->_object)
+    {
+      if (isset($this->_statePredicate))
+      {
+        $matches = $this->_statePredicate->isActive();
+      }
+      
+      if ($matches && isset($this->_method))
+      {
+        if ($this->_method == $invocation->getMethod())
+        {
+          $args =& $invocation->getArguments();
+          foreach ($this->_matchers as $i => $m)
+          {
+            if (!array_key_exists($i, $args))
+            {
+              if ($m->isOptional())
+              {
+                break;
+              }
+              else
+              {
+                $matches = false;
+                break;
+              }
+            }
+            else
+            {
+              if (!$m->matches($args[$i]))
+              {
+                $matches = false;
+                break;
+              }
+            }
+          }
+        }
+        else
+        {
+          $matches = false;
+        }
+      }
+      
+      if ($matches && isset($this->_sequence))
+      {
+        $matches = $this->_sequence->isInSequence($this->_wantedSequenceId);
+      }
+    }
+    else
+    {
+      $matches = false;
+    }
+    
+    if ($matches)
+    {
+      $this->notifyMatchedInvocation($invocation);
+    }
+    
+    return $matches;
+  }
+  
+  /**
+   * Specify the Action to run if a match occurs.
+   * @param Yay_Action $action
+   */
+  public function will(Yay_Action $action)
+  {
+    $this->_action = $action;
+    return $this;
+  }
+  
+  /**
+   * Only be expected when in the given State predicate.
+   * @param Yay_StatePredicate $predicate
+   */
+  public function when(Yay_StatePredicate $predicate)
+  {
+    $this->_statePredicate = $predicate;
+    return $this;
+  }
+  
+  /**
+   * Activate the given $state if a match occurs.
+   * @param Yay_State $state
+   */
+  public function then(Yay_State $state)
+  {
+    $this->_state = $state;
+    return $this;
+  }
+  
+  /**
+   * Constrain this expectation to be valid only if invoked in the given sequence.
+   * @param Yay_Sequence $sequence
+   */
+  public function inSequence(Yay_Sequence $sequence)
+  {
+    $this->_wantedSequenceId = $sequence->requestSequenceId();
+    $this->_sequence = $sequence;
+    return $this;
+  }
+  
+  /**
+   * Get the Action for the given Invocation.
+   * This may have been specified by a will() clause.
+   * @param Yay_Invocation $invocation
+   * @return Yay_Action
+   */
+  public function getAction(Yay_Invocation $invocation)
+  {
+    if (isset($this->_state))
+    {
+      $this->_state->activate();
+    }
+    return $this->_action;
+  }
+  
+  /**
+   * Record any Invocations on the MockObject whilst it's in record mode.
+   * @param Yay_Invocation $invocation
+   */
+  public function recordInvocation(Yay_Invocation $invocation)
+  {
+    $this->_method = $invocation->getMethod();
+    $matchers =& $invocation->getArguments();
+    foreach ($matchers as $matcher)
+    {
+      if ($matcher instanceof Yay_Matcher)
+      {
+        $this->_matchers[] = $matcher;
+      }
+      else
+      {
+        $this->_matchers[] = new Yay_Matchers_IdenticalMatcher($matcher);
+      }
+    }
+  }
+  
+  /**
+   * Returns the Expectations.
+   * @return array of Yay_Expectation
+   */
+  public function getExpectations()
+  {
+    return array($this);
+  }
+  
+  /**
+   * Describe this Expectation to $description.
+   * @param Yay_Description $description
+   */
+  public function describeTo(Yay_Description $description)
+  {
+    $this->describeBounds($description);
+    
+    $description->appendText(sprintf(' of %s;', $this->_getInvocationSignature()));
+    
+    if (isset($this->_sequence))
+    {
+      $description->appendText(' in');
+      $this->_sequence->describeTo($description);
+    }
+    
+    if (isset($this->_statePredicate))
+    {
+      $description->appendText(' when');
+      $this->_statePredicate->describeTo($description);
+    }
+    
+    if (isset($this->_action))
+    {
+      $this->_action->describeTo($description);
+    }
+    
+    $this->describeSatisfaction($description);
+  }
+  
+  // -- Private methods
+  
+  private function _getInvocationSignature()
+  {
+    $class = Yay_MockGenerator::getInstance()
+      ->reverseNamingScheme(get_class($this->_object));
+    if (isset($this->_method))
+    {
+      $method = $this->_method;
+    }
+    else
+    {
+      $method = '<any method>';
+    }
+    if (!empty($this->_matchers))
+    {
+      $args = array();
+      foreach ($this->_matchers as $matcher)
+      {
+        $args[] = $matcher->describeMatch('%s [%s]');
+      }
+      $params = implode(', ', $args);
+    }
+    else
+    {
+      $params = '';
+    }
+    return sprintf('%s::%s(%s)', $class, $method, $params);
+  }
+  
+}

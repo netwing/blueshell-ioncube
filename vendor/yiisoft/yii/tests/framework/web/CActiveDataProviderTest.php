@@ -1,45 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-i041AW==
+<?php
+
+require_once(dirname(__FILE__).'/../db/data/models.php');
+
+class CActiveDataProviderTest extends CTestCase
+{
+	/**
+	 * @var CDbConnection
+	 */
+	private $db;
+
+	public function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->db=new CDbConnection('sqlite::memory:');
+		$this->db->active=true;
+		$this->db->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/../db/data/sqlite.sql'));
+		CActiveRecord::$db=$this->db;
+	}
+
+	public function tearDown()
+	{
+		$this->db->active=false;
+	}
+
+	public function testCountCriteria()
+	{
+		// 1
+		$dataProvider=new CActiveDataProvider('Post',array(
+			'criteria'=>array(
+				'condition'=>'content LIKE "%content%"',
+				'order'=>'create_time DESC',
+				'with'=>array('author'),
+			),
+			'pagination'=>array(
+				'pageSize'=>5,
+			),
+		));
+		$this->assertSame($dataProvider->countCriteria,$dataProvider->criteria);
+		$this->assertEquals(5,$dataProvider->getTotalItemCount(true));
+
+		// 2
+		$dataProvider->setCountCriteria(array(
+			'condition'=>'content LIKE "%content 1%"',
+		));
+		$this->assertNotSame($dataProvider->countCriteria,$dataProvider->criteria);
+		$this->assertEquals(1,$dataProvider->getTotalItemCount(true));
+
+		// 3
+		$dataProvider->setCountCriteria(array(
+			'condition'=>'content LIKE "%content%"',
+		));
+		$this->assertNotSame($dataProvider->countCriteria,$dataProvider->criteria);
+		$this->assertEquals(5,$dataProvider->getTotalItemCount(true));
+	}
+}

@@ -1,48 +1,171 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Chart
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license		http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version		1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Chart_Legend
+ *
+ * @category	PHPExcel
+ * @package		PHPExcel_Chart
+ * @copyright	Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Chart_Legend
+{
+	/** Legend positions */
+	const xlLegendPositionBottom	= -4107;	//	Below the chart.
+	const xlLegendPositionCorner	= 2;		//	In the upper right-hand corner of the chart border.
+	const xlLegendPositionCustom	= -4161;	//	A custom position.
+	const xlLegendPositionLeft		= -4131;	//	Left of the chart.
+	const xlLegendPositionRight		= -4152;	//	Right of the chart.
+	const xlLegendPositionTop		= -4160;	//	Above the chart.
+
+	const POSITION_RIGHT	= 'r';
+	const POSITION_LEFT		= 'l';
+	const POSITION_BOTTOM	= 'b';
+	const POSITION_TOP		= 't';
+	const POSITION_TOPRIGHT	= 'tr';
+
+	private static $_positionXLref = array( self::xlLegendPositionBottom	=> self::POSITION_BOTTOM,
+											self::xlLegendPositionCorner	=> self::POSITION_TOPRIGHT,
+											self::xlLegendPositionCustom	=> '??',
+											self::xlLegendPositionLeft		=> self::POSITION_LEFT,
+											self::xlLegendPositionRight		=> self::POSITION_RIGHT,
+											self::xlLegendPositionTop		=> self::POSITION_TOP
+										  );
+
+	/**
+	 * Legend position
+	 *
+	 * @var	string
+	 */
+	private $_position = self::POSITION_RIGHT;
+
+	/**
+	 * Allow overlay of other elements?
+	 *
+	 * @var	boolean
+	 */
+	private $_overlay = TRUE;
+
+	/**
+	 * Legend Layout
+	 *
+	 * @var	PHPExcel_Chart_Layout
+	 */
+	private $_layout = NULL;
+
+
+	/**
+	 *	Create a new PHPExcel_Chart_Legend
+	 */
+	public function __construct($position = self::POSITION_RIGHT, PHPExcel_Chart_Layout $layout = NULL, $overlay = FALSE)
+	{
+		$this->setPosition($position);
+		$this->_layout = $layout;
+		$this->setOverlay($overlay);
+	}
+
+	/**
+	 * Get legend position as an excel string value
+	 *
+	 * @return	string
+	 */
+	public function getPosition() {
+		return $this->_position;
+	}
+
+	/**
+	 * Get legend position using an excel string value
+	 *
+	 * @param	string	$position
+	 */
+	public function setPosition($position = self::POSITION_RIGHT) {
+		if (!in_array($position,self::$_positionXLref)) {
+			return false;
+		}
+
+		$this->_position = $position;
+		return true;
+	}
+
+	/**
+	 * Get legend position as an Excel internal numeric value
+	 *
+	 * @return	number
+	 */
+	public function getPositionXL() {
+		return array_search($this->_position,self::$_positionXLref);
+	}
+
+	/**
+	 * Set legend position using an Excel internal numeric value
+	 *
+	 * @param	number	$positionXL
+	 */
+	public function setPositionXL($positionXL = self::xlLegendPositionRight) {
+		if (!array_key_exists($positionXL,self::$_positionXLref)) {
+			return false;
+		}
+
+		$this->_position = self::$_positionXLref[$positionXL];
+		return true;
+	}
+
+	/**
+	 * Get allow overlay of other elements?
+	 *
+	 * @return	boolean
+	 */
+	public function getOverlay() {
+		return $this->_overlay;
+	}
+
+	/**
+	 * Set allow overlay of other elements?
+	 *
+	 * @param	boolean	$overlay
+	 * @return	boolean
+	 */
+	public function setOverlay($overlay = FALSE) {
+		if (!is_bool($overlay)) {
+			return false;
+		}
+
+		$this->_overlay = $overlay;
+		return true;
+	}
+
+	/**
+	 * Get Layout
+	 *
+	 * @return PHPExcel_Chart_Layout
+	 */
+	public function getLayout() {
+		return $this->_layout;
+	}
+
+}

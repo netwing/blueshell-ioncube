@@ -1,95 +1,225 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Parser\Message;
+
+class MessageParserProvider extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function requestProvider()
+    {
+        $auth = base64_encode('michael:foo');
+
+        return array(
+
+            // Empty request
+            array('', false),
+
+            // Converts casing of request. Does not require host header.
+            array("GET / HTTP/1.1\r\n\r\n", array(
+                'method'   => 'GET',
+                'protocol' => 'HTTP',
+                'version' => '1.1',
+                'request_url' => array(
+                    'scheme' => 'http',
+                    'host'   => '',
+                    'port'   => '',
+                    'path'   => '/',
+                    'query'  => ''
+                ),
+                'headers' => array(),
+                'body'    => ''
+            )),
+            // Path and query string, multiple header values per header and case sensitive storage
+            array("HEAD /path?query=foo HTTP/1.0\r\nHost: example.com\r\nX-Foo: foo\r\nx-foo: Bar\r\nX-Foo: foo\r\nX-Foo: Baz\r\n\r\n", array(
+                'method'   => 'HEAD',
+                'protocol' => 'HTTP',
+                'version' => '1.0',
+                'request_url' => array(
+                    'scheme' => 'http',
+                    'host'   => 'example.com',
+                    'port'   => '',
+                    'path'   => '/path',
+                    'query'  => 'query=foo'
+                ),
+                'headers' => array(
+                    'Host'  => 'example.com',
+                    'X-Foo' => array('foo', 'foo', 'Baz'),
+                    'x-foo' => 'Bar'
+                ),
+                'body'    => ''
+            )),
+            // Includes a body
+            array("PUT / HTTP/1.0\r\nhost: example.com:443\r\nContent-Length: 4\r\n\r\ntest", array(
+                'method'   => 'PUT',
+                'protocol' => 'HTTP',
+                'version' => '1.0',
+                'request_url' => array(
+                    'scheme' => 'https',
+                    'host'   => 'example.com',
+                    'port'   => '443',
+                    'path'   => '/',
+                    'query'  => ''
+                ),
+                'headers' => array(
+                    'host'           => 'example.com:443',
+                    'Content-Length' => '4'
+                ),
+                'body' => 'test'
+            )),
+            // Includes Authorization headers
+            array("GET / HTTP/1.1\r\nHost: example.com:8080\r\nAuthorization: Basic {$auth}\r\n\r\n", array(
+                'method'   => 'GET',
+                'protocol' => 'HTTP',
+                'version' => '1.1',
+                'request_url' => array(
+                    'scheme' => 'http',
+                    'host'   => 'example.com',
+                    'port'   => '8080',
+                    'path'   => '/',
+                    'query'  => ''
+                ),
+                'headers' => array(
+                    'Host'           => 'example.com:8080',
+                    'Authorization' => "Basic {$auth}"
+                ),
+                'body' => ''
+            )),
+            // Include authorization header
+            array("GET / HTTP/1.1\r\nHost: example.com:8080\r\nauthorization: Basic {$auth}\r\n\r\n", array(
+                'method'   => 'GET',
+                'protocol' => 'HTTP',
+                'version' => '1.1',
+                'request_url' => array(
+                    'scheme' => 'http',
+                    'host'   => 'example.com',
+                    'port'   => '8080',
+                    'path'   => '/',
+                    'query'  => ''
+                ),
+                'headers' => array(
+                    'Host'           => 'example.com:8080',
+                    'authorization' => "Basic {$auth}"
+                ),
+                'body' => ''
+            )),
+        );
+    }
+
+    public function responseProvider()
+    {
+        return array(
+            // Empty request
+            array('', false),
+
+            array("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n", array(
+                'protocol'      => 'HTTP',
+                'version'       => '1.1',
+                'code'          => '200',
+                'reason_phrase' => 'OK',
+                'headers'       => array(
+                    'Content-Length' => 0
+                ),
+                'body'          => ''
+            )),
+            array("HTTP/1.0 400 Bad Request\r\nContent-Length: 0\r\n\r\n", array(
+                'protocol'      => 'HTTP',
+                'version'       => '1.0',
+                'code'          => '400',
+                'reason_phrase' => 'Bad Request',
+                'headers'       => array(
+                    'Content-Length' => 0
+                ),
+                'body'          => ''
+            )),
+            array("HTTP/1.0 100 Continue\r\n\r\n", array(
+                'protocol'      => 'HTTP',
+                'version'       => '1.0',
+                'code'          => '100',
+                'reason_phrase' => 'Continue',
+                'headers'       => array(),
+                'body'          => ''
+            )),
+            array("HTTP/1.1 204 No Content\r\nX-Foo: foo\r\nx-foo: Bar\r\nX-Foo: foo\r\n\r\n", array(
+                'protocol'      => 'HTTP',
+                'version'       => '1.1',
+                'code'          => '204',
+                'reason_phrase' => 'No Content',
+                'headers'       => array(
+                    'X-Foo' => array('foo', 'foo'),
+                    'x-foo' => 'Bar'
+                ),
+                'body'          => ''
+            )),
+            array("HTTP/1.1 200 Ok that is great!\r\nContent-Length: 4\r\n\r\nTest", array(
+                'protocol'      => 'HTTP',
+                'version'       => '1.1',
+                'code'          => '200',
+                'reason_phrase' => 'Ok that is great!',
+                'headers'       => array(
+                    'Content-Length' => 4
+                ),
+                'body'          => 'Test'
+            )),
+        );
+    }
+
+    public function compareRequestResults($result, $expected)
+    {
+        if (!$result) {
+            $this->assertFalse($expected);
+            return;
+        }
+
+        $this->assertEquals($result['method'], $expected['method']);
+        $this->assertEquals($result['protocol'], $expected['protocol']);
+        $this->assertEquals($result['version'], $expected['version']);
+        $this->assertEquals($result['request_url'], $expected['request_url']);
+        $this->assertEquals($result['body'], $expected['body']);
+        $this->compareHttpHeaders($result['headers'], $expected['headers']);
+    }
+
+    public function compareResponseResults($result, $expected)
+    {
+        if (!$result) {
+            $this->assertFalse($expected);
+            return;
+        }
+
+        $this->assertEquals($result['protocol'], $expected['protocol']);
+        $this->assertEquals($result['version'], $expected['version']);
+        $this->assertEquals($result['code'], $expected['code']);
+        $this->assertEquals($result['reason_phrase'], $expected['reason_phrase']);
+        $this->assertEquals($result['body'], $expected['body']);
+        $this->compareHttpHeaders($result['headers'], $expected['headers']);
+    }
+
+    protected function normalizeHeaders($headers)
+    {
+        $normalized = array();
+        foreach ($headers as $key => $value) {
+            $key = strtolower($key);
+            if (!isset($normalized[$key])) {
+                $normalized[$key] = $value;
+            } elseif (!is_array($normalized[$key])) {
+                $normalized[$key] = array($value);
+            } else {
+                $normalized[$key][] = $value;
+            }
+        }
+
+        foreach ($normalized as $key => &$value) {
+            if (is_array($value)) {
+                sort($value);
+            }
+        }
+
+        return $normalized;
+    }
+
+    public function compareHttpHeaders($result, $expected)
+    {
+        // Aggregate all headers case-insensitively
+        $result = $this->normalizeHeaders($result);
+        $expected = $this->normalizeHeaders($expected);
+        $this->assertEquals($result, $expected);
+    }
+}

@@ -1,63 +1,114 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPu9q9kB7rPhLYhcpmKn4b9yg7OQ4O3Saswwi72rJr86sNg/GTr28m+19FLDsfgyiQCBIZb/i
-PtTAgJGSGfuPLmHmcidpiq1heSwZ4frqQFBuPaKQSsP8d5vA7a1Rath6sd6yGOrsYpPNbqyXwZxT
-3VNW7y6K9hQXabQYyFrxNrEs3FD7y6WDKBgmW4bZhzQtAbMdBMsYbFEEVSwmITSt0dxnwxXc2Scp
-LMDrN/wkR7Hf6ETPZcw6hr4euJltSAgiccy4GDnfT5baDjs/7UzshnaGATWRHrm2p9r61NpPvn9D
-bqdE6mYG52g0wwI1g9mmrPXIcLJSr5DVF+E913XtB95ZSPtB7gS7ikcIjpUytsGYjhJpzeTW1HPh
-aj+iYANCz25PVVZ9ZI6HiEHyiCTBGPXvagZJcBlmFXtIpp1Tcyrc8jbzclhybU1pbPmQo++wxwMg
-xSe8243npvCnbZ0m2NdQkECSGuljxkD1E1vzl6hdAzdBHd7N2nUIDtkHCqlFcEKTJND4rWlJEo3/
-ylY9nJwAMl1nOr+SEfxyazw9TqdWezji2OBaPpAtZXwyemgwwSrUrTXlo9/PEHd7i/ClIrAqTFr4
-kJCYSk+NzrhNIY+fYr/09jScB7AA/3baXqtGeh6aAmi+WvbtrZRiU31Dv++bAYrSFU78ddXbvFpW
-vJ23owaNSpXNotYQjyC0AmKY/i4qv59URbVymqXhx9ZmEuoOq8gFaUOpphB17l3s1G80wMiV5OkU
-GUi+wsyziSrJJvd4IPfR/+JjatoRTOPwxwLM4UBXl0E0yjeYubkU/4YyiBN6iuv5K1mI8ybgquQn
-9i56AogzQUHnJBLStfG7iDsIrpvaj8dVW7T0HEhkZBTmSvbn5HsaAuEnY9MISf8os++LgUk6zbsy
-aos4J65NNJ1SJcdbSGcssiILjwPHt3ygH8FyRYC5M7UkNdKwTn15QBJan+M1lqMBzluqVdlq2/+P
-NlWjCTXLsWVv5sQ4EMq9HSy9tIfRP5Pmk8ZnZXeQo5HU4GImCjrpw6D5JO0+Yv7aVZwRfx9/HfVw
-dSqSK9zvVBk16pPdRjr6iXhAy/rZi7mdRS2g8opBcRhNieKftqZzTJW+25ekBfFFoLgiPVKAOSS7
-miw4l+gwzL9AKVS7bSQmxwN5UOGlGrt3iiDALcnlO0cBLVFqt06BSzei1S6CoHbQ+Y2LyEROFLXZ
-9XeJGlrnOzaT5oCCmov5ooZOV7LpoEpZyxjuxmjiQBmQJUWTqz66ez6gfDiO5Ks3ooNlcyfz8XWp
-mugjt3LScYkWIx2GD9cDmJ3mVPAWJElUzcfaADgYbu6lCahr5kP8eoedjWchFUbRKqm/SGpJ690S
-04y3ku0gn9+3RkI4FLirJfCumK3g8HaPrzFO2ziPoxcB9EtW0v4sHFiKsbNwU+hNhwdVUY1/7XYE
-6/kBJ92Y/3dWQCgREJH3BJrZgyHaucB9fDfMtPIv0CiqdK1DTFTyveZPwkGxfyMunViRs9ZZHPaK
-q9ajKca+cT+/jAvdKAOkJ8eFKh+FUVHylvIB7bmxBZJz0lmhHOboMUu3uQjNn9CVUzo14uaGnILW
-vTYu+oZ7zkU2p+JvhJGG35Mx7GMT6UjDxnZb2H865ZFYdoz3BbUU867m6SC4/OLbSgWrb5jofFHP
-6fEEPB3VZLpmnZ+0LirqSTOzjN9IU6g7sEZZvsi/YDDhAQ91brqKNf9w2IPjA+lf57UFrUjoa7wP
-FjjFRUnbXdLZWU435KMdCYx2Qay+OpGOi/gKeSsNAFwCdptRKheM8NO2/T7Wscml6K3+Yz1nLdNu
-NaQZ81OW74yD7ido5bEVu7jOsR1TpJC22xPqoaPFnL1D89xW4gu0J+KfefAn9ds5wNKECoMEBbnC
-U/k1THnel3w5pBFhTsM+e8Ulk2uJ8De+/jXNHescgF5L1YIthRIpkIIl8fqcRzIciRqNGIuKJC+7
-oyqfAkOiUqBd6Dycd5sppfnZHX/8d2ed3c/QVADEvM6iianSnDaBR/yHP/WZ9kcsiDVBQunc5ook
-5l12atfdjMpD3ERfH2q6avzcGA1bUUdYxqjDcDNFI1TuZuk5OBB5dY/sXQqvO2tcq1VzWkfilR9r
-5JhGvVUeNODq0flK9QjRZTh1MQXK4e3X0GwJ78y5oMW7UhbEIeM5ChbiEJMuSRTA0LIdG983rn79
-Z288/NbYzsVJei+E1z94rxTCCPHbOtWRzp0x7jAJN/IS/0ziAHsz4K3SXTZetew+DtHRjkFUqu0c
-OJT870DIGHPNzhuYWwpAXBVOnxLxJynzNXYs+Yt5Y90oSlCsftfYsJuBrzI8RDFm2XdG9gvsAUGw
-Vjki40rEVa17WdvBd8+o6Mw/g+6zWnQqRgtKGYE53R4VDIYfyWOgjN2AP66fdmrypZFj8ypv/JLS
-r+q3jOleWNxHkcHFteMGJPRKdEzoS68SgN6pOgw0jvEwZc5FECEKBX/KzEZB1dUFnXXYfVazYTeV
-B4qmvjfZjWX/P4HNFpXGYhjmGRg0+zk2ojzhjm/bROFWMLsXmjALM7cWn3TGCYJP3IAD5qAO58l3
-MsBcux5qs+tL4nrdBQ67OMFpdSFustY57Qf5GAGDmfYyKJ8AHoyEFXbtp2UB3GBZKNta5ttfhCTs
-JCREax5bkNkXWuUKIdE+cRbVk570gXsep//6rS4Ny5wObrgoeOjxUyozfu6jGVwJLX63kH9iZpvV
-l9pDmzgE4aM8QXhDncnaNjuQ+sqcHuc8qQv8Gr30d0Xkw5DfC7fPxtAJjUdRt9pyDp2Qxrc2ZVvC
-YxsRu8plM0RewazRhCy0Xi6q2yDz20r3xKU1Dr76qNmXHi8rX/xw1QrFcFWwOVXJt5dClF3k0bzp
-ZJ0cRp80EiWvijObkxiXS+Ycy/mlUzn0YKuNIa+9zJLii0RL8gjKda/UbFFxHhb6W9PDWjeYLcVG
-LH8Icg7VE/NBuZEx6MAlDATMut+ITuXnUPeN53GS1Ju5PpCid6DHlTblikhhNOF6q17sg6ErDP9f
-UaO2SoBitrGSYGbCihWXCbgMaLy0ruGvrlJNoSEz9BGdMgmC5eUR6/AqQpLMY3HuPxNalL00APAu
-IrhGTJ28kqMAIYsLTU2mNzMrUbfTf1b4CvakNdcak01mC/TiQzkw+JalRjRd0Y5cLeCTBlqD3HqI
-nRdrNtLeO7ecOkttIjfZtoJHaukc5YnvwrBJ5KJwKfgNQxofYsB/ofFYzA+/CVwQwlm8FbUicfq9
-Q10Qs1mIMTLeWSPmW1w/wt8PFfWzTmZG7B8dBbPgX1t8r00r5nCjM3Vh/GmHj17HkVxOxS5xCrfH
-9/mmg1UH/h9cKBGPqlYrxGicZbMANor3kBbQYoa/Hl9d4xT0uxhW/tg4zrmMhCr5HSppTlALsNCA
-AjQisX6HWVfZK2nmgAaMQe2aR1lKhB5kNXj3qRz1l7FTBEJwa10kf2IECFDNsu/vXfEX5u1riMXt
-9TMgjxpIJROn/zZiiZ2mUudAo/gxmnuFu1x/yskO7vcfD/Fmc9QYqU8FPiIWqEL8zeECZkqxsHe3
-DRUyDSF56LHKPOA9M13PmD25ySBTpo+GFRfXHYqsXGv53/b0sy/bj+RrwL3FGdY3sCzy4KDeg8KH
-aTWwY/8TuoHg2+U4puQ/t56dMwaplCt47I25womHV5iU1/TqSn4hwfzV4NIHe0YCUbKWmbSnz3kY
-1dsU5VNB59MLtkGI/+DGy2NszkWDuoNJTRrAIWZVAOyQWfDVPSuVnazn4l/gVI3KgwExBVZBJ4DH
-WtK29hsk/MaIBHy1YJTZ4RtIQpx2ZMH4/U5qoLoxo7ndIfcUcRLBlV5opN3bYaq/2/6IBiR/cBT7
-bFoDdyvAEffIz/5nyudN9N+FkzJbpLysg0sHws/leAofqvkVLtnkg5paKcJ63QaMz70+E4ub7a0v
-NuDa7eaD0VQA5Y5j20AQGlXaDHLOXZseoisc7iLau2B+RUdMge/AYKsrUGFDK45O8gaDwMA7Bafm
-Rw16iVCpsFbku41IVmN+capo3ANq9SIm6B2yDGpoXF0PNAsc9EMWedpuuoAqTQGcnHSsx5PBpRq3
-iIYXg8dT+n1iXslg1HyahQMSxoyi9UFI/vG9eSJuyRpsUY6gvd2UNzSxPty2RVBnw3ARt8bHuFaP
-JmT2QB91KlBwZU1hqRlR+fK0E6Pd9YONJwMWBzoq/X5njiffvkb42d4RnbzH7nLCBvpJzpbCWKhc
-hqCxaAnKabtI+Z/jOs5kdcX9JQTPTEtxi3u0z5cG9XwDbieIa9N1uGZzYDxPJzhEJsoBJURqVzsA
-EWnNnKxUaf83g0R6cik8nb7oMoG+yagOAJcL10KV9WuUnebbvVi5TUa3QRpJzbGSO9WGbjllCg9H
-XoiZPY+VsGtB31cT6qrXOV5409mpmffQyWXDFusRRZMQ0u8ztGOO6Y+EiyId9hYDd9RHhOAC3RQe
-2xhz8TOFRDdXYEVn3DhkboFb6UxpoHtTPGw6Q5YuFQ2vHqLh
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Plugins/AntiFloodPlugin.php';
+require_once 'Swift/Events/TransportChangeEvent.php';
+require_once 'Swift/Transport.php';
+
+class Swift_Plugins_PopBeforeSmtpPluginTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testPluginConnectsToPop3HostBeforeTransportStarts()
+    {
+        $connection = $this->_createConnection();
+
+        $plugin = $this->_createPlugin('pop.host.tld', 110);
+        $plugin->setConnection($connection);
+
+        $transport = $this->_createTransport();
+        $evt = $this->_createTransportChangeEvent($transport);
+
+        $this->_checking(Expectations::create()
+            -> one($connection)->connect()
+            -> ignoring($connection)
+        );
+
+        $plugin->beforeTransportStarted($evt);
+    }
+
+    public function testPluginDisconnectsFromPop3HostBeforeTransportStarts()
+    {
+        $connection = $this->_createConnection();
+
+        $plugin = $this->_createPlugin('pop.host.tld', 110);
+        $plugin->setConnection($connection);
+
+        $transport = $this->_createTransport();
+        $evt = $this->_createTransportChangeEvent($transport);
+
+        $this->_checking(Expectations::create()
+            -> one($connection)->disconnect()
+            -> ignoring($connection)
+        );
+
+        $plugin->beforeTransportStarted($evt);
+    }
+
+    public function testPluginDoesNotConnectToSmtpIfBoundToDifferentTransport()
+    {
+        $connection = $this->_createConnection();
+
+        $smtp = $this->_createTransport();
+
+        $plugin = $this->_createPlugin('pop.host.tld', 110);
+        $plugin->setConnection($connection);
+        $plugin->bindSmtp($smtp);
+
+        $transport = $this->_createTransport();
+        $evt = $this->_createTransportChangeEvent($transport);
+
+        $this->_checking(Expectations::create()
+            -> never($connection)
+        );
+
+        $plugin->beforeTransportStarted($evt);
+    }
+
+    public function testPluginCanBindToSpecificTransport()
+    {
+        $connection = $this->_createConnection();
+
+        $smtp = $this->_createTransport();
+
+        $plugin = $this->_createPlugin('pop.host.tld', 110);
+        $plugin->setConnection($connection);
+        $plugin->bindSmtp($smtp);
+
+        $evt = $this->_createTransportChangeEvent($smtp);
+
+        $this->_checking(Expectations::create()
+            -> one($connection)->connect()
+            -> ignoring($connection)
+        );
+
+        $plugin->beforeTransportStarted($evt);
+    }
+
+    // -- Creation Methods
+
+    private function _createTransport()
+    {
+        return $this->_mock('Swift_Transport');
+    }
+
+    private function _createTransportChangeEvent($transport)
+    {
+        $evt = $this->_mock('Swift_Events_TransportChangeEvent');
+        $this->_checking(Expectations::create()
+            -> ignoring($evt)->getSource() -> returns($transport)
+            -> ignoring($evt)->getTransport() -> returns($transport)
+            );
+
+        return $evt;
+    }
+
+    public function _createConnection()
+    {
+        return $this->_mock('Swift_Plugins_Pop_Pop3Connection');
+    }
+
+    public function _createPlugin($host, $port, $crypto = null)
+    {
+        return new Swift_Plugins_PopBeforeSmtpPlugin($host, $port, $crypto);
+    }
+}

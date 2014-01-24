@@ -1,54 +1,98 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Uwci4Lso2Ri/2wSA
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Adapter;
+
+use Symfony\Component\Finder\Iterator;
+
+/**
+ * PHP finder engine implementation.
+ *
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class PhpAdapter extends AbstractAdapter
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function searchInDirectory($dir)
+    {
+        $flags = \RecursiveDirectoryIterator::SKIP_DOTS;
+
+        if ($this->followLinks) {
+            $flags |= \RecursiveDirectoryIterator::FOLLOW_SYMLINKS;
+        }
+
+        $iterator = new \RecursiveIteratorIterator(
+            new Iterator\RecursiveDirectoryIterator($dir, $flags, $this->ignoreUnreadableDirs),
+            \RecursiveIteratorIterator::SELF_FIRST
+        );
+
+        if ($this->minDepth > 0 || $this->maxDepth < PHP_INT_MAX) {
+            $iterator = new Iterator\DepthRangeFilterIterator($iterator, $this->minDepth, $this->maxDepth);
+        }
+
+        if ($this->mode) {
+            $iterator = new Iterator\FileTypeFilterIterator($iterator, $this->mode);
+        }
+
+        if ($this->exclude) {
+            $iterator = new Iterator\ExcludeDirectoryFilterIterator($iterator, $this->exclude);
+        }
+
+        if ($this->names || $this->notNames) {
+            $iterator = new Iterator\FilenameFilterIterator($iterator, $this->names, $this->notNames);
+        }
+
+        if ($this->contains || $this->notContains) {
+            $iterator = new Iterator\FilecontentFilterIterator($iterator, $this->contains, $this->notContains);
+        }
+
+        if ($this->sizes) {
+            $iterator = new Iterator\SizeRangeFilterIterator($iterator, $this->sizes);
+        }
+
+        if ($this->dates) {
+            $iterator = new Iterator\DateRangeFilterIterator($iterator, $this->dates);
+        }
+
+        if ($this->filters) {
+            $iterator = new Iterator\CustomFilterIterator($iterator, $this->filters);
+        }
+
+        if ($this->sort) {
+            $iteratorAggregate = new Iterator\SortableIterator($iterator, $this->sort);
+            $iterator = $iteratorAggregate->getIterator();
+        }
+
+        if ($this->paths || $this->notPaths) {
+            $iterator = new Iterator\PathFilterIterator($iterator, $this->paths, $this->notPaths);
+        }
+
+        return $iterator;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'php';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function canBeUsed()
+    {
+        return true;
+    }
+}

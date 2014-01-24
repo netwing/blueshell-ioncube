@@ -1,196 +1,336 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-P5Cj/Pjh8CQV5YN19lWcN73X72aSDy+bXyaSSW==
+<?php
+
+/**
+ * CCaptchaAction class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CCaptchaAction renders a CAPTCHA image.
+ *
+ * CCaptchaAction is used together with {@link CCaptcha} and {@link CCaptchaValidator}
+ * to provide the {@link http://en.wikipedia.org/wiki/Captcha CAPTCHA} feature.
+ *
+ * You must configure properties of CCaptchaAction to customize the appearance of
+ * the generated image.
+ *
+ * Note, CCaptchaAction requires PHP GD2 extension.
+ *
+ * Using CAPTCHA involves the following steps:
+ * <ol>
+ * <li>Override {@link CController::actions()} and register an action of class CCaptchaAction with ID 'captcha'.</li>
+ * <li>In the form model, declare an attribute to store user-entered verification code, and declare the attribute
+ * to be validated by the 'captcha' validator.</li>
+ * <li>In the controller view, insert a {@link CCaptcha} widget in the form.</li>
+ * </ol>
+ *
+ * @property string $verifyCode The verification code.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets.captcha
+ * @since 1.0
+ */
+class CCaptchaAction extends CAction
+{
+	/**
+	 * The name of the GET parameter indicating whether the CAPTCHA image should be regenerated.
+	 */
+	const REFRESH_GET_VAR='refresh';
+	/**
+	 * Prefix to the session variable name used by the action.
+	 */
+	const SESSION_VAR_PREFIX='Yii.CCaptchaAction.';
+	/**
+	 * @var integer how many times should the same CAPTCHA be displayed. Defaults to 3.
+	 * A value less than or equal to 0 means the test is unlimited (available since version 1.1.2).
+	 */
+	public $testLimit = 3;
+	/**
+	 * @var integer the width of the generated CAPTCHA image. Defaults to 120.
+	 */
+	public $width = 120;
+	/**
+	 * @var integer the height of the generated CAPTCHA image. Defaults to 50.
+	 */
+	public $height = 50;
+	/**
+	 * @var integer padding around the text. Defaults to 2.
+	 */
+	public $padding = 2;
+	/**
+	 * @var integer the background color. For example, 0x55FF00.
+	 * Defaults to 0xFFFFFF, meaning white color.
+	 */
+	public $backColor = 0xFFFFFF;
+	/**
+	 * @var integer the font color. For example, 0x55FF00. Defaults to 0x2040A0 (blue color).
+	 */
+	public $foreColor = 0x2040A0;
+	/**
+	 * @var boolean whether to use transparent background. Defaults to false.
+	 */
+	public $transparent = false;
+	/**
+	 * @var integer the minimum length for randomly generated word. Defaults to 6.
+	 */
+	public $minLength = 6;
+	/**
+	 * @var integer the maximum length for randomly generated word. Defaults to 7.
+	 */
+	public $maxLength = 7;
+	/**
+	 * @var integer the offset between characters. Defaults to -2. You can adjust this property
+	 * in order to decrease or increase the readability of the captcha.
+	 * @since 1.1.7
+	 **/
+	public $offset = -2;
+	/**
+	 * @var string the TrueType font file. Defaults to SpicyRice.ttf which is provided with the Yii release.
+	 * Note that non-free Duality.ttf has been changed to open/free SpicyRice.ttf since 1.1.14.
+	 */
+	public $fontFile;
+	/**
+	 * @var string the fixed verification code. When this is property is set,
+	 * {@link getVerifyCode} will always return this value.
+	 * This is mainly used in automated tests where we want to be able to reproduce
+	 * the same verification code each time we run the tests.
+	 * Defaults to null, meaning the verification code will be randomly generated.
+	 * @since 1.1.4
+	 */
+	public $fixedVerifyCode;
+	/**
+	 * @var string the graphic extension that will be used to draw CAPTCHA image. Possible values
+	 * are 'gd', 'imagick' and null. Null value means that fallback mode will be used: ImageMagick
+	 * is preferred over GD. Default value is null.
+	 * @since 1.1.13
+	 */
+	public $backend;
+
+	/**
+	 * Runs the action.
+	 */
+	public function run()
+	{
+		if(isset($_GET[self::REFRESH_GET_VAR]))  // AJAX request for regenerating code
+		{
+			$code=$this->getVerifyCode(true);
+			echo CJSON::encode(array(
+				'hash1'=>$this->generateValidationHash($code),
+				'hash2'=>$this->generateValidationHash(strtolower($code)),
+				// we add a random 'v' parameter so that FireFox can refresh the image
+				// when src attribute of image tag is changed
+				'url'=>$this->getController()->createUrl($this->getId(),array('v' => uniqid())),
+			));
+		}
+		else
+			$this->renderImage($this->getVerifyCode());
+		Yii::app()->end();
+	}
+
+	/**
+	 * Generates a hash code that can be used for client side validation.
+	 * @param string $code the CAPTCHA code
+	 * @return string a hash code generated from the CAPTCHA code
+	 * @since 1.1.7
+	 */
+	public function generateValidationHash($code)
+	{
+		for($h=0,$i=strlen($code)-1;$i>=0;--$i)
+			$h+=ord($code[$i]);
+		return $h;
+	}
+
+	/**
+	 * Gets the verification code.
+	 * @param boolean $regenerate whether the verification code should be regenerated.
+	 * @return string the verification code.
+	 */
+	public function getVerifyCode($regenerate=false)
+	{
+		if($this->fixedVerifyCode !== null)
+			return $this->fixedVerifyCode;
+
+		$session = Yii::app()->session;
+		$session->open();
+		$name = $this->getSessionKey();
+		if($session[$name] === null || $regenerate)
+		{
+			$session[$name] = $this->generateVerifyCode();
+			$session[$name . 'count'] = 1;
+		}
+		return $session[$name];
+	}
+
+	/**
+	 * Validates the input to see if it matches the generated code.
+	 * @param string $input user input
+	 * @param boolean $caseSensitive whether the comparison should be case-sensitive
+	 * @return boolean whether the input is valid
+	 */
+	public function validate($input,$caseSensitive)
+	{
+		$code = $this->getVerifyCode();
+		$valid = $caseSensitive ? ($input === $code) : strcasecmp($input,$code)===0;
+		$session = Yii::app()->session;
+		$session->open();
+		$name = $this->getSessionKey() . 'count';
+		$session[$name] = $session[$name] + 1;
+		if($session[$name] > $this->testLimit && $this->testLimit > 0)
+			$this->getVerifyCode(true);
+		return $valid;
+	}
+
+	/**
+	 * Generates a new verification code.
+	 * @return string the generated verification code
+	 */
+	protected function generateVerifyCode()
+	{
+		if($this->minLength > $this->maxLength)
+			$this->maxLength = $this->minLength;
+		if($this->minLength < 3)
+			$this->minLength = 3;
+		if($this->maxLength > 20)
+			$this->maxLength = 20;
+		$length = mt_rand($this->minLength,$this->maxLength);
+
+		$letters = 'bcdfghjklmnpqrstvwxyz';
+		$vowels = 'aeiou';
+		$code = '';
+		for($i = 0; $i < $length; ++$i)
+		{
+			if($i % 2 && mt_rand(0,10) > 2 || !($i % 2) && mt_rand(0,10) > 9)
+				$code.=$vowels[mt_rand(0,4)];
+			else
+				$code.=$letters[mt_rand(0,20)];
+		}
+
+		return $code;
+	}
+
+	/**
+	 * Returns the session variable name used to store verification code.
+	 * @return string the session variable name
+	 */
+	protected function getSessionKey()
+	{
+		return self::SESSION_VAR_PREFIX . Yii::app()->getId() . '.' . $this->getController()->getUniqueId() . '.' . $this->getId();
+	}
+
+	/**
+	 * Renders the CAPTCHA image based on the code using library specified in the {@link $backend} property.
+	 * @param string $code the verification code
+	 */
+	protected function renderImage($code)
+	{
+		if($this->backend===null && CCaptcha::checkRequirements('imagick') || $this->backend==='imagick')
+			$this->renderImageImagick($code);
+		else if($this->backend===null && CCaptcha::checkRequirements('gd') || $this->backend==='gd')
+			$this->renderImageGD($code);
+	}
+
+	/**
+	 * Renders the CAPTCHA image based on the code using GD library.
+	 * @param string $code the verification code
+	 * @since 1.1.13
+	 */
+	protected function renderImageGD($code)
+	{
+		$image = imagecreatetruecolor($this->width,$this->height);
+
+		$backColor = imagecolorallocate($image,
+				(int)($this->backColor % 0x1000000 / 0x10000),
+				(int)($this->backColor % 0x10000 / 0x100),
+				$this->backColor % 0x100);
+		imagefilledrectangle($image,0,0,$this->width,$this->height,$backColor);
+		imagecolordeallocate($image,$backColor);
+
+		if($this->transparent)
+			imagecolortransparent($image,$backColor);
+
+		$foreColor = imagecolorallocate($image,
+				(int)($this->foreColor % 0x1000000 / 0x10000),
+				(int)($this->foreColor % 0x10000 / 0x100),
+				$this->foreColor % 0x100);
+
+		if($this->fontFile === null)
+			$this->fontFile = dirname(__FILE__) . '/SpicyRice.ttf';
+
+		$length = strlen($code);
+		$box = imagettfbbox(30,0,$this->fontFile,$code);
+		$w = $box[4] - $box[0] + $this->offset * ($length - 1);
+		$h = $box[1] - $box[5];
+		$scale = min(($this->width - $this->padding * 2) / $w,($this->height - $this->padding * 2) / $h);
+		$x = 10;
+		$y = round($this->height * 27 / 40);
+		for($i = 0; $i < $length; ++$i)
+		{
+			$fontSize = (int)(rand(26,32) * $scale * 0.8);
+			$angle = rand(-10,10);
+			$letter = $code[$i];
+			$box = imagettftext($image,$fontSize,$angle,$x,$y,$foreColor,$this->fontFile,$letter);
+			$x = $box[2] + $this->offset;
+		}
+
+		imagecolordeallocate($image,$foreColor);
+
+		header('Pragma: public');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Content-Transfer-Encoding: binary');
+		header("Content-Type: image/png");
+		imagepng($image);
+		imagedestroy($image);
+	}
+
+	/**
+	 * Renders the CAPTCHA image based on the code using ImageMagick library.
+	 * @param string $code the verification code
+	 * @since 1.1.13
+	 */
+	protected function renderImageImagick($code)
+	{
+		$backColor=$this->transparent ? new ImagickPixel('transparent') : new ImagickPixel(sprintf('#%06x',$this->backColor));
+		$foreColor=new ImagickPixel(sprintf('#%06x',$this->foreColor));
+
+		$image=new Imagick();
+		$image->newImage($this->width,$this->height,$backColor);
+
+		if($this->fontFile===null)
+			$this->fontFile=dirname(__FILE__).'/SpicyRice.ttf';
+
+		$draw=new ImagickDraw();
+		$draw->setFont($this->fontFile);
+		$draw->setFontSize(30);
+		$fontMetrics=$image->queryFontMetrics($draw,$code);
+
+		$length=strlen($code);
+		$w=(int)($fontMetrics['textWidth'])-8+$this->offset*($length-1);
+		$h=(int)($fontMetrics['textHeight'])-8;
+		$scale=min(($this->width-$this->padding*2)/$w,($this->height-$this->padding*2)/$h);
+		$x=10;
+		$y=round($this->height*27/40);
+		for($i=0; $i<$length; ++$i)
+		{
+			$draw=new ImagickDraw();
+			$draw->setFont($this->fontFile);
+			$draw->setFontSize((int)(rand(26,32)*$scale*0.8));
+			$draw->setFillColor($foreColor);
+			$image->annotateImage($draw,$x,$y,rand(-10,10),$code[$i]);
+			$fontMetrics=$image->queryFontMetrics($draw,$code[$i]);
+			$x+=(int)($fontMetrics['textWidth'])+$this->offset;
+		}
+
+		header('Pragma: public');
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Content-Transfer-Encoding: binary');
+		header("Content-Type: image/png");
+		$image->setImageFormat('png');
+		echo $image;
+	}
+}

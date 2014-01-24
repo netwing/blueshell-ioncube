@@ -1,109 +1,219 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsFunction
+ */
+
+/**
+ * Smarty {fetch} plugin
+ *
+ * Type:     function<br>
+ * Name:     fetch<br>
+ * Purpose:  fetch file, web or ftp data and display results
+ *
+ * @link http://www.smarty.net/manual/en/language.function.fetch.php {fetch}
+ *       (Smarty online manual)
+ * @author Monte Ohrt <monte at ohrt dot com>
+ * @param array                    $params   parameters
+ * @param Smarty_Internal_Template $template template object
+ * @return string|null if the assign parameter is passed, Smarty assigns the result to a template variable
+ */
+function smarty_function_fetch($params, $template)
+{
+    if (empty($params['file'])) {
+        trigger_error("[plugin] fetch parameter 'file' cannot be empty",E_USER_NOTICE);
+
+        return;
+    }
+
+    // strip file protocol
+    if (stripos($params['file'], 'file://') === 0) {
+        $params['file'] = substr($params['file'], 7);
+    }
+
+    $protocol = strpos($params['file'], '://');
+    if ($protocol !== false) {
+        $protocol = strtolower(substr($params['file'], 0, $protocol));
+    }
+
+    if (isset($template->smarty->security_policy)) {
+        if ($protocol) {
+            // remote resource (or php stream, …)
+            if (!$template->smarty->security_policy->isTrustedUri($params['file'])) {
+                return;
+            }
+        } else {
+            // local file
+            if (!$template->smarty->security_policy->isTrustedResourceDir($params['file'])) {
+                return;
+            }
+        }
+    }
+
+    $content = '';
+    if ($protocol == 'http') {
+        // http fetch
+        if ($uri_parts = parse_url($params['file'])) {
+            // set defaults
+            $host = $server_name = $uri_parts['host'];
+            $timeout = 30;
+            $accept = "image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*";
+            $agent = "Smarty Template Engine ". Smarty::SMARTY_VERSION;
+            $referer = "";
+            $uri = !empty($uri_parts['path']) ? $uri_parts['path'] : '/';
+            $uri .= !empty($uri_parts['query']) ? '?' . $uri_parts['query'] : '';
+            $_is_proxy = false;
+            if (empty($uri_parts['port'])) {
+                $port = 80;
+            } else {
+                $port = $uri_parts['port'];
+            }
+            if (!empty($uri_parts['user'])) {
+                $user = $uri_parts['user'];
+            }
+            if (!empty($uri_parts['pass'])) {
+                $pass = $uri_parts['pass'];
+            }
+            // loop through parameters, setup headers
+            foreach ($params as $param_key => $param_value) {
+                switch ($param_key) {
+                    case "file":
+                    case "assign":
+                    case "assign_headers":
+                        break;
+                    case "user":
+                        if (!empty($param_value)) {
+                            $user = $param_value;
+                        }
+                        break;
+                    case "pass":
+                        if (!empty($param_value)) {
+                            $pass = $param_value;
+                        }
+                        break;
+                    case "accept":
+                        if (!empty($param_value)) {
+                            $accept = $param_value;
+                        }
+                        break;
+                    case "header":
+                        if (!empty($param_value)) {
+                            if (!preg_match('![\w\d-]+: .+!',$param_value)) {
+                                trigger_error("[plugin] invalid header format '".$param_value."'",E_USER_NOTICE);
+
+                                return;
+                            } else {
+                                $extra_headers[] = $param_value;
+                            }
+                        }
+                        break;
+                    case "proxy_host":
+                        if (!empty($param_value)) {
+                            $proxy_host = $param_value;
+                        }
+                        break;
+                    case "proxy_port":
+                        if (!preg_match('!\D!', $param_value)) {
+                            $proxy_port = (int) $param_value;
+                        } else {
+                            trigger_error("[plugin] invalid value for attribute '".$param_key."'",E_USER_NOTICE);
+
+                            return;
+                        }
+                        break;
+                    case "agent":
+                        if (!empty($param_value)) {
+                            $agent = $param_value;
+                        }
+                        break;
+                    case "referer":
+                        if (!empty($param_value)) {
+                            $referer = $param_value;
+                        }
+                        break;
+                    case "timeout":
+                        if (!preg_match('!\D!', $param_value)) {
+                            $timeout = (int) $param_value;
+                        } else {
+                            trigger_error("[plugin] invalid value for attribute '".$param_key."'",E_USER_NOTICE);
+
+                            return;
+                        }
+                        break;
+                    default:
+                        trigger_error("[plugin] unrecognized attribute '".$param_key."'",E_USER_NOTICE);
+
+                        return;
+                }
+            }
+            if (!empty($proxy_host) && !empty($proxy_port)) {
+                $_is_proxy = true;
+                $fp = fsockopen($proxy_host,$proxy_port,$errno,$errstr,$timeout);
+            } else {
+                $fp = fsockopen($server_name,$port,$errno,$errstr,$timeout);
+            }
+
+            if (!$fp) {
+                trigger_error("[plugin] unable to fetch: $errstr ($errno)",E_USER_NOTICE);
+
+                return;
+            } else {
+                if ($_is_proxy) {
+                    fputs($fp, 'GET ' . $params['file'] . " HTTP/1.0\r\n");
+                } else {
+                    fputs($fp, "GET $uri HTTP/1.0\r\n");
+                }
+                if (!empty($host)) {
+                    fputs($fp, "Host: $host\r\n");
+                }
+                if (!empty($accept)) {
+                    fputs($fp, "Accept: $accept\r\n");
+                }
+                if (!empty($agent)) {
+                    fputs($fp, "User-Agent: $agent\r\n");
+                }
+                if (!empty($referer)) {
+                    fputs($fp, "Referer: $referer\r\n");
+                }
+                if (isset($extra_headers) && is_array($extra_headers)) {
+                    foreach ($extra_headers as $curr_header) {
+                        fputs($fp, $curr_header."\r\n");
+                    }
+                }
+                if (!empty($user) && !empty($pass)) {
+                    fputs($fp, "Authorization: BASIC ".base64_encode("$user:$pass")."\r\n");
+                }
+
+                fputs($fp, "\r\n");
+                while (!feof($fp)) {
+                    $content .= fgets($fp,4096);
+                }
+                fclose($fp);
+                $csplit = preg_split("!\r\n\r\n!",$content,2);
+
+                $content = $csplit[1];
+
+                if (!empty($params['assign_headers'])) {
+                    $template->assign($params['assign_headers'],preg_split("!\r\n!",$csplit[0]));
+                }
+            }
+        } else {
+            trigger_error("[plugin fetch] unable to parse URL, check syntax",E_USER_NOTICE);
+
+            return;
+        }
+    } else {
+        $content = @file_get_contents($params['file']);
+        if ($content === false) {
+            throw new SmartyException("{fetch} cannot read resource '" . $params['file'] ."'");
+        }
+    }
+
+    if (!empty($params['assign'])) {
+        $template->assign($params['assign'], $content);
+    } else {
+        return $content;
+    }
+}

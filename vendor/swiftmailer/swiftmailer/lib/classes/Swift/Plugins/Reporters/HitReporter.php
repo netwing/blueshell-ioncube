@@ -1,31 +1,61 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-voMmy55qYfl0jXD/P17YRhsKjxlAa3I/vwJ6R0==
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * A reporter which "collects" failures for the Reporter plugin.
+ *
+ * @package    Swift
+ * @subpackage Plugins
+ * @author     Chris Corbyn
+ */
+class Swift_Plugins_Reporters_HitReporter implements Swift_Plugins_Reporter
+{
+    /**
+     * The list of failures.
+     *
+     * @var array
+     */
+    private $_failures = array();
+
+    private $_failures_cache = array();
+
+    /**
+     * Notifies this ReportNotifier that $address failed or succeeded.
+     *
+     * @param Swift_Mime_Message $message
+     * @param string             $address
+     * @param integer            $result  from {@link RESULT_PASS, RESULT_FAIL}
+     */
+    public function notify(Swift_Mime_Message $message, $address, $result)
+    {
+        if (self::RESULT_FAIL == $result && !isset($this->_failures_cache[$address])) {
+            $this->_failures[] = $address;
+            $this->_failures_cache[$address] = true;
+        }
+    }
+
+    /**
+     * Get an array of addresses for which delivery failed.
+     *
+     * @return array
+     */
+    public function getFailedRecipients()
+    {
+        return $this->_failures;
+    }
+
+    /**
+     * Clear the buffer (empty the list).
+     */
+    public function clear()
+    {
+        $this->_failures = $this->_failures_cache = array();
+    }
+}

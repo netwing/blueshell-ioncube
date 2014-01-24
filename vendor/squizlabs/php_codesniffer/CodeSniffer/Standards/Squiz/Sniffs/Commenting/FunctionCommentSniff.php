@@ -1,401 +1,818 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Parses and verifies the doc comments for functions.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_CommentParser_FunctionCommentParser', true) === false) {
+    $error = 'Class PHP_CodeSniffer_CommentParser_FunctionCommentParser not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+/**
+ * Parses and verifies the doc comments for functions.
+ *
+ * Verifies that :
+ * <ul>
+ *  <li>A comment exists</li>
+ *  <li>There is a blank newline after the short description</li>
+ *  <li>There is a blank newline between the long and short description</li>
+ *  <li>There is a blank newline between the long description and tags</li>
+ *  <li>Parameter names represent those in the method</li>
+ *  <li>Parameter comments are in the correct order</li>
+ *  <li>Parameter comments are complete</li>
+ *  <li>A type hint is provided for array and custom class</li>
+ *  <li>Type hint matches the actual variable/class type</li>
+ *  <li>A blank line is present before the first and after the last parameter</li>
+ *  <li>A return type exists</li>
+ *  <li>Any throw tag must have a comment</li>
+ *  <li>The tag order and indentation are correct</li>
+ * </ul>
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Commenting_FunctionCommentSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * The name of the method that we are currently processing.
+     *
+     * @var string
+     */
+    private $_methodName = '';
+
+    /**
+     * The position in the stack where the function token was found.
+     *
+     * @var int
+     */
+    private $_functionToken = null;
+
+    /**
+     * The position in the stack where the class token was found.
+     *
+     * @var int
+     */
+    private $_classToken = null;
+
+    /**
+     * The index of the current tag we are processing.
+     *
+     * @var int
+     */
+    private $_tagIndex = 0;
+
+    /**
+     * The function comment parser for the current method.
+     *
+     * @var PHP_CodeSniffer_Comment_Parser_FunctionCommentParser
+     */
+    protected $commentParser = null;
+
+    /**
+     * The current PHP_CodeSniffer_File object we are processing.
+     *
+     * @var PHP_CodeSniffer_File
+     */
+    protected $currentFile = null;
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_FUNCTION);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $this->currentFile = $phpcsFile;
+
+        $tokens = $phpcsFile->getTokens();
+
+        $find = array(
+                 T_COMMENT,
+                 T_DOC_COMMENT,
+                 T_CLASS,
+                 T_FUNCTION,
+                 T_OPEN_TAG,
+                );
+
+        $commentEnd = $phpcsFile->findPrevious($find, ($stackPtr - 1));
+
+        if ($commentEnd === false) {
+            return;
+        }
+
+        // If the token that we found was a class or a function, then this
+        // function has no doc comment.
+        $code = $tokens[$commentEnd]['code'];
+
+        if ($code === T_COMMENT) {
+            // The function might actually be missing a comment, and this last comment
+            // found is just commenting a bit of code on a line. So if it is not the
+            // only thing on the line, assume we found nothing.
+            $prevContent = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, $commentEnd);
+            if ($tokens[$commentEnd]['line'] === $tokens[$commentEnd]['line']) {
+                $error = 'Missing function doc comment';
+                $phpcsFile->addError($error, $stackPtr, 'Missing');
+            } else {
+                $error = 'You must use "/**" style comments for a function comment';
+                $phpcsFile->addError($error, $stackPtr, 'WrongStyle');
+            }
+            return;
+        } else if ($code !== T_DOC_COMMENT) {
+            $error = 'Missing function doc comment';
+            $phpcsFile->addError($error, $stackPtr, 'Missing');
+            return;
+        } else if (trim($tokens[$commentEnd]['content']) !== '*/') {
+            $error = 'You must use "*/" to end a function comment; found "%s"';
+            $phpcsFile->addError($error, $commentEnd, 'WrongEnd', array(trim($tokens[$commentEnd]['content'])));
+            return;
+        }
+
+        // If there is any code between the function keyword and the doc block
+        // then the doc block is not for us.
+        $ignore    = PHP_CodeSniffer_Tokens::$scopeModifiers;
+        $ignore[]  = T_STATIC;
+        $ignore[]  = T_WHITESPACE;
+        $ignore[]  = T_ABSTRACT;
+        $ignore[]  = T_FINAL;
+        $prevToken = $phpcsFile->findPrevious($ignore, ($stackPtr - 1), null, true);
+        if ($prevToken !== $commentEnd) {
+            $phpcsFile->addError('Missing function doc comment', $stackPtr, 'Missing');
+            return;
+        }
+
+        $this->_functionToken = $stackPtr;
+
+        $this->_classToken = null;
+        foreach ($tokens[$stackPtr]['conditions'] as $condPtr => $condition) {
+            if ($condition === T_CLASS || $condition === T_INTERFACE) {
+                $this->_classToken = $condPtr;
+                break;
+            }
+        }
+
+        // Find the first doc comment.
+        $commentStart      = ($phpcsFile->findPrevious(T_DOC_COMMENT, ($commentEnd - 1), null, true) + 1);
+        $commentString     = $phpcsFile->getTokensAsString($commentStart, ($commentEnd - $commentStart + 1));
+        $this->_methodName = $phpcsFile->getDeclarationName($stackPtr);
+
+        try {
+            $this->commentParser = new PHP_CodeSniffer_CommentParser_FunctionCommentParser($commentString, $phpcsFile);
+            $this->commentParser->parse();
+        } catch (PHP_CodeSniffer_CommentParser_ParserException $e) {
+            $line = ($e->getLineWithinComment() + $commentStart);
+            $phpcsFile->addError($e->getMessage(), $line, 'FailedParse');
+            return;
+        }
+
+        $comment = $this->commentParser->getComment();
+        if (is_null($comment) === true) {
+            $error = 'Function doc comment is empty';
+            $phpcsFile->addError($error, $commentStart, 'Empty');
+            return;
+        }
+
+        // The first line of the comment should just be the /** code.
+        $eolPos    = strpos($commentString, $phpcsFile->eolChar);
+        $firstLine = substr($commentString, 0, $eolPos);
+        if ($firstLine !== '/**') {
+            $error = 'The open comment tag must be the only content on the line';
+            $phpcsFile->addError($error, $commentStart, 'ContentAfterOpen');
+        }
+
+        $this->processParams($commentStart, $commentEnd);
+        $this->processSees($commentStart);
+        $this->processReturn($commentStart, $commentEnd);
+        $this->processThrows($commentStart);
+
+        // Check for a comment description.
+        $short = $comment->getShortComment();
+        if (trim($short) === '') {
+            $error = 'Missing short description in function doc comment';
+            $phpcsFile->addError($error, $commentStart, 'MissingShort');
+            return;
+        }
+
+        // No extra newline before short description.
+        $newlineCount = 0;
+        $newlineSpan  = strspn($short, $phpcsFile->eolChar);
+        if ($short !== '' && $newlineSpan > 0) {
+            $error = 'Extra newline(s) found before function comment short description';
+            $phpcsFile->addError($error, ($commentStart + 1), 'SpacingBeforeShort');
+        }
+
+        $newlineCount = (substr_count($short, $phpcsFile->eolChar) + 1);
+
+        // Exactly one blank line between short and long description.
+        $long = $comment->getLongComment();
+        if (empty($long) === false) {
+            $between        = $comment->getWhiteSpaceBetween();
+            $newlineBetween = substr_count($between, $phpcsFile->eolChar);
+            if ($newlineBetween !== 2) {
+                $error = 'There must be exactly one blank line between descriptions in function comment';
+                $phpcsFile->addError($error, ($commentStart + $newlineCount + 1), 'SpacingBetween');
+            }
+
+            $newlineCount += $newlineBetween;
+
+            $testLong = trim($long);
+            if (preg_match('|\p{Lu}|u', $testLong[0]) === 0) {
+                $error = 'Function comment long description must start with a capital letter';
+                $phpcsFile->addError($error, ($commentStart + $newlineCount), 'LongNotCapital');
+            }
+        }//end if
+
+        // Exactly one blank line before tags.
+        $params = $this->commentParser->getTagOrders();
+        if (count($params) > 1) {
+            $newlineSpan = $comment->getNewlineAfter();
+            if ($newlineSpan !== 2) {
+                $error = 'There must be exactly one blank line before the tags in function comment';
+                if ($long !== '') {
+                    $newlineCount += (substr_count($long, $phpcsFile->eolChar) - $newlineSpan + 1);
+                }
+
+                $phpcsFile->addError($error, ($commentStart + $newlineCount), 'SpacingBeforeTags');
+                $short = rtrim($short, $phpcsFile->eolChar.' ');
+            }
+        }
+
+        // Short description must be single line and end with a full stop.
+        $testShort = trim($short);
+        $lastChar  = $testShort[(strlen($testShort) - 1)];
+        if (substr_count($testShort, $phpcsFile->eolChar) !== 0) {
+            $error = 'Function comment short description must be on a single line';
+            $phpcsFile->addError($error, ($commentStart + 1), 'ShortSingleLine');
+        }
+
+        if (preg_match('|\p{Lu}|u', $testShort[0]) === 0) {
+            $error = 'Function comment short description must start with a capital letter';
+            $phpcsFile->addError($error, ($commentStart + 1), 'ShortNotCapital');
+        }
+
+        if ($lastChar !== '.') {
+            $error = 'Function comment short description must end with a full stop';
+            $phpcsFile->addError($error, ($commentStart + 1), 'ShortFullStop');
+        }
+
+        // Check for unknown/deprecated tags.
+        $this->processUnknownTags($commentStart, $commentEnd);
+
+        // The last content should be a newline and the content before
+        // that should not be blank. If there is more blank space
+        // then they have additional blank lines at the end of the comment.
+        $words   = $this->commentParser->getWords();
+        $lastPos = (count($words) - 1);
+        if (trim($words[($lastPos - 1)]) !== ''
+            || strpos($words[($lastPos - 1)], $this->currentFile->eolChar) === false
+            || trim($words[($lastPos - 2)]) === ''
+        ) {
+            $error = 'Additional blank lines found at end of function comment';
+            $this->currentFile->addError($error, $commentEnd, 'SpacingAfter');
+        }
+
+    }//end process()
+
+
+    /**
+     * Process the see tags.
+     *
+     * @param int $commentStart The position in the stack where the comment started.
+     *
+     * @return void
+     */
+    protected function processSees($commentStart)
+    {
+        $sees = $this->commentParser->getSees();
+        if (empty($sees) === false) {
+            $tagOrder = $this->commentParser->getTagOrders();
+            $index    = array_keys($this->commentParser->getTagOrders(), 'see');
+            foreach ($sees as $i => $see) {
+                $errorPos = ($commentStart + $see->getLine());
+                $since    = array_keys($tagOrder, 'since');
+                if (count($since) === 1 && $this->_tagIndex !== 0) {
+                    $this->_tagIndex++;
+                    if ($index[$i] !== $this->_tagIndex) {
+                        $error = 'The @see tag is in the wrong order; the tag precedes @return';
+                        $this->currentFile->addError($error, $errorPos, 'SeeOrder');
+                    }
+                }
+
+                $content = $see->getContent();
+                if (empty($content) === true) {
+                    $error = 'Content missing for @see tag in function comment';
+                    $this->currentFile->addError($error, $errorPos, 'EmptySee');
+                    continue;
+                }
+
+                $spacing = substr_count($see->getWhitespaceBeforeContent(), ' ');
+                if ($spacing !== 4) {
+                    $error = '@see tag indented incorrectly; expected 4 spaces but found %s';
+                    $data  = array($spacing);
+                    $this->currentFile->addError($error, $errorPos, 'SeeIndent', $data);
+                }
+            }//end foreach
+        }//end if
+
+    }//end processSees()
+
+
+    /**
+     * Process the return comment of this function comment.
+     *
+     * @param int $commentStart The position in the stack where the comment started.
+     * @param int $commentEnd   The position in the stack where the comment ended.
+     *
+     * @return void
+     */
+    protected function processReturn($commentStart, $commentEnd)
+    {
+        // Skip constructor and destructor.
+        $className = '';
+        if ($this->_classToken !== null) {
+            $className = $this->currentFile->getDeclarationName($this->_classToken);
+            $className = strtolower(ltrim($className, '_'));
+        }
+
+        $methodName      = strtolower(ltrim($this->_methodName, '_'));
+        $isSpecialMethod = ($this->_methodName === '__construct' || $this->_methodName === '__destruct');
+        $return          = $this->commentParser->getReturn();
+
+        if ($isSpecialMethod === false && $methodName !== $className) {
+            if ($return !== null) {
+                $tagOrder = $this->commentParser->getTagOrders();
+                $index    = array_keys($tagOrder, 'return');
+                $errorPos = ($commentStart + $return->getLine());
+                $content  = trim($return->getRawContent());
+
+                if (count($index) > 1) {
+                    $error = 'Only 1 @return tag is allowed in function comment';
+                    $this->currentFile->addError($error, $errorPos, 'DuplicateReturn');
+                    return;
+                }
+
+                $since = array_keys($tagOrder, 'since');
+                if (count($since) === 1 && $this->_tagIndex !== 0) {
+                    $this->_tagIndex++;
+                    if ($index[0] !== $this->_tagIndex) {
+                        $error = 'The @return tag is in the wrong order; the tag follows @see (if used)';
+                        $this->currentFile->addError($error, $errorPos, 'ReturnOrder');
+                    }
+                }
+
+                if (empty($content) === true) {
+                    $error = 'Return type missing for @return tag in function comment';
+                    $this->currentFile->addError($error, $errorPos, 'MissingReturnType');
+                } else {
+                    // Check return type (can be multiple, separated by '|').
+                    $typeNames      = explode('|', $content);
+                    $suggestedNames = array();
+                    foreach ($typeNames as $i => $typeName) {
+                        $suggestedName = PHP_CodeSniffer::suggestType($typeName);
+                        if (in_array($suggestedName, $suggestedNames) === false) {
+                            $suggestedNames[] = $suggestedName;
+                        }
+                    }
+
+                    $suggestedType = implode('|', $suggestedNames);
+                    if ($content !== $suggestedType) {
+                        $error = 'Function return type "%s" is invalid';
+                        $data  = array($content);
+                        $this->currentFile->addError($error, $errorPos, 'InvalidReturn', $data);
+                    }
+
+                    $tokens = $this->currentFile->getTokens();
+
+                    // If the return type is void, make sure there is
+                    // no return statement in the function.
+                    if ($content === 'void') {
+                        if (isset($tokens[$this->_functionToken]['scope_closer']) === true) {
+                            $endToken = $tokens[$this->_functionToken]['scope_closer'];
+
+                            $tokens = $this->currentFile->getTokens();
+                            for ($returnToken = $this->_functionToken; $returnToken < $endToken; $returnToken++) {
+                                if ($tokens[$returnToken]['code'] === T_CLOSURE) {
+                                    $returnToken = $tokens[$returnToken]['scope_closer'];
+                                    continue;
+                                }
+
+                                if ($tokens[$returnToken]['code'] === T_RETURN) {
+                                    break;
+                                }
+                            }
+
+                            if ($returnToken !== $endToken) {
+                                // If the function is not returning anything, just
+                                // exiting, then there is no problem.
+                                $semicolon = $this->currentFile->findNext(T_WHITESPACE, ($returnToken + 1), null, true);
+                                if ($tokens[$semicolon]['code'] !== T_SEMICOLON) {
+                                    $error = 'Function return type is void, but function contains return statement';
+                                    $this->currentFile->addError($error, $errorPos, 'InvalidReturnVoid');
+                                }
+                            }
+                        }
+                    } else if ($content !== 'mixed') {
+                        // If return type is not void, there needs to be a
+                        // returns statement somewhere in the function that
+                        // returns something.
+                        if (isset($tokens[$this->_functionToken]['scope_closer']) === true) {
+                            $endToken    = $tokens[$this->_functionToken]['scope_closer'];
+                            $returnToken = $this->currentFile->findNext(T_RETURN, $this->_functionToken, $endToken);
+                            if ($returnToken === false) {
+                                $error = 'Function return type is not void, but function has no return statement';
+                                $this->currentFile->addError($error, $errorPos, 'InvalidNoReturn');
+                            } else {
+                                $semicolon = $this->currentFile->findNext(T_WHITESPACE, ($returnToken + 1), null, true);
+                                if ($tokens[$semicolon]['code'] === T_SEMICOLON) {
+                                    $error = 'Function return type is not void, but function is returning void here';
+                                    $this->currentFile->addError($error, $returnToken, 'InvalidReturnNotVoid');
+                                }
+                            }
+                        }
+                    }//end if
+
+                    $spacing = substr_count($return->getWhitespaceBeforeValue(), ' ');
+                    if ($spacing !== 1) {
+                        $error = '@return tag indented incorrectly; expected 1 space but found %s';
+                        $data  = array($spacing);
+                        $this->currentFile->addError($error, $errorPos, 'ReturnIndent', $data);
+                    }
+                }//end if
+            } else {
+                $error = 'Missing @return tag in function comment';
+                $this->currentFile->addError($error, $commentEnd, 'MissingReturn');
+            }//end if
+
+        } else {
+            // No return tag for constructor and destructor.
+            if ($return !== null) {
+                $errorPos = ($commentStart + $return->getLine());
+                $error    = '@return tag is not required for constructor and destructor';
+                $this->currentFile->addError($error, $errorPos, 'ReturnNotRequired');
+            }
+        }//end if
+
+    }//end processReturn()
+
+
+    /**
+     * Process any throw tags that this function comment has.
+     *
+     * @param int $commentStart The position in the stack where the comment started.
+     *
+     * @return void
+     */
+    protected function processThrows($commentStart)
+    {
+        if (count($this->commentParser->getThrows()) === 0) {
+            return;
+        }
+
+        $tagOrder = $this->commentParser->getTagOrders();
+        $index    = array_keys($this->commentParser->getTagOrders(), 'throws');
+
+        foreach ($this->commentParser->getThrows() as $i => $throw) {
+            $exception = $throw->getValue();
+            $content   = trim($throw->getComment());
+            $errorPos  = ($commentStart + $throw->getLine());
+            if (empty($exception) === true) {
+                $error = 'Exception type and comment missing for @throws tag in function comment';
+                $this->currentFile->addError($error, $errorPos, 'InvalidThrows');
+            } else if (empty($content) === true) {
+                $error = 'Comment missing for @throws tag in function comment';
+                $this->currentFile->addError($error, $errorPos, 'EmptyThrows');
+            } else {
+                // Starts with a capital letter and ends with a fullstop.
+                $firstChar = $content{0};
+                if (strtoupper($firstChar) !== $firstChar) {
+                    $error = '@throws tag comment must start with a capital letter';
+                    $this->currentFile->addError($error, $errorPos, 'ThrowsNotCapital');
+                }
+
+                $lastChar = $content[(strlen($content) - 1)];
+                if ($lastChar !== '.') {
+                    $error = '@throws tag comment must end with a full stop';
+                    $this->currentFile->addError($error, $errorPos, 'ThrowsNoFullStop');
+                }
+            }
+
+            $since = array_keys($tagOrder, 'since');
+            if (count($since) === 1 && $this->_tagIndex !== 0) {
+                $this->_tagIndex++;
+                if ($index[$i] !== $this->_tagIndex) {
+                    $error = 'The @throws tag is in the wrong order; the tag follows @return';
+                    $this->currentFile->addError($error, $errorPos, 'ThrowsOrder');
+                }
+            }
+        }//end foreach
+
+    }//end processThrows()
+
+
+    /**
+     * Process the function parameter comments.
+     *
+     * @param int $commentStart The position in the stack where
+     *                          the comment started.
+     * @param int $commentEnd   The position in the stack where
+     *                          the comment ended.
+     *
+     * @return void
+     */
+    protected function processParams($commentStart, $commentEnd)
+    {
+        $realParams  = $this->currentFile->getMethodParameters($this->_functionToken);
+        $params      = $this->commentParser->getParams();
+        $foundParams = array();
+
+        if (empty($params) === false) {
+
+            if (substr_count($params[(count($params) - 1)]->getWhitespaceAfter(), $this->currentFile->eolChar) !== 2) {
+                $error    = 'Last parameter comment requires a blank newline after it';
+                $errorPos = ($params[(count($params) - 1)]->getLine() + $commentStart);
+                $this->currentFile->addError($error, $errorPos, 'SpacingAfterParams');
+            }
+
+            // Parameters must appear immediately after the comment.
+            if ($params[0]->getOrder() !== 2) {
+                $error    = 'Parameters must appear immediately after the comment';
+                $errorPos = ($params[0]->getLine() + $commentStart);
+                $this->currentFile->addError($error, $errorPos, 'SpacingBeforeParams');
+            }
+
+            $previousParam      = null;
+            $spaceBeforeVar     = 10000;
+            $spaceBeforeComment = 10000;
+            $longestType        = 0;
+            $longestVar         = 0;
+
+            foreach ($params as $param) {
+
+                $paramComment = trim($param->getComment());
+                $errorPos     = ($param->getLine() + $commentStart);
+
+                // Make sure that there is only one space before the var type.
+                if ($param->getWhitespaceBeforeType() !== ' ') {
+                    $error = 'Expected 1 space before variable type';
+                    $this->currentFile->addError($error, $errorPos, 'SpacingBeforeParamType');
+                }
+
+                $spaceCount = substr_count($param->getWhitespaceBeforeVarName(), ' ');
+                if ($spaceCount < $spaceBeforeVar) {
+                    $spaceBeforeVar = $spaceCount;
+                    $longestType    = $errorPos;
+                }
+
+                $spaceCount = substr_count($param->getWhitespaceBeforeComment(), ' ');
+
+                if ($spaceCount < $spaceBeforeComment && $paramComment !== '') {
+                    $spaceBeforeComment = $spaceCount;
+                    $longestVar         = $errorPos;
+                }
+
+                // Make sure they are in the correct order, and have the correct name.
+                $pos       = $param->getPosition();
+                $paramName = ($param->getVarName() !== '') ? $param->getVarName() : '[ UNKNOWN ]';
+
+                if ($previousParam !== null) {
+                    $previousName = ($previousParam->getVarName() !== '') ? $previousParam->getVarName() : 'UNKNOWN';
+
+                    // Check to see if the parameters align properly.
+                    if ($param->alignsVariableWith($previousParam) === false) {
+                        $error = 'The variable names for parameters %s (%s) and %s (%s) do not align';
+                        $data  = array(
+                                  $previousName,
+                                  ($pos - 1),
+                                  $paramName,
+                                  $pos,
+                                 );
+                        $this->currentFile->addError($error, $errorPos, 'ParameterNamesNotAligned', $data);
+                    }
+
+                    if ($param->alignsCommentWith($previousParam) === false) {
+                        $error = 'The comments for parameters %s (%s) and %s (%s) do not align';
+                        $data  = array(
+                                  $previousName,
+                                  ($pos - 1),
+                                  $paramName,
+                                  $pos,
+                                 );
+                        $this->currentFile->addError($error, $errorPos, 'ParameterCommentsNotAligned', $data);
+                    }
+                }
+
+                // Variable must be one of the supported standard type.
+                $typeNames = explode('|', $param->getType());
+                foreach ($typeNames as $typeName) {
+                    $suggestedName = PHP_CodeSniffer::suggestType($typeName);
+                    if ($typeName !== $suggestedName) {
+                        $error = 'Expected "%s"; found "%s" for %s at position %s';
+                        $data  = array(
+                                  $suggestedName,
+                                  $typeName,
+                                  $paramName,
+                                  $pos,
+                                 );
+                        $this->currentFile->addError($error, $errorPos, 'IncorrectParamVarName', $data);
+                    } else if (count($typeNames) === 1) {
+                        // Check type hint for array and custom type.
+                        $suggestedTypeHint = '';
+                        if (strpos($suggestedName, 'array') !== false) {
+                            $suggestedTypeHint = 'array';
+                        } else if (strpos($suggestedName, 'callable') !== false) {
+                            $suggestedTypeHint = 'callable';
+                        } else if (in_array($typeName, PHP_CodeSniffer::$allowedTypes) === false) {
+                            $suggestedTypeHint = $suggestedName;
+                        }
+
+                        if ($suggestedTypeHint !== '' && isset($realParams[($pos - 1)]) === true) {
+                            $typeHint = $realParams[($pos - 1)]['type_hint'];
+                            if ($typeHint === '') {
+                                $error = 'Type hint "%s" missing for %s at position %s';
+                                $data  = array(
+                                          $suggestedTypeHint,
+                                          $paramName,
+                                          $pos,
+                                         );
+                                $this->currentFile->addError($error, ($commentEnd + 2), 'TypeHintMissing', $data);
+                            } else if ($typeHint !== $suggestedTypeHint) {
+                                $error = 'Expected type hint "%s"; found "%s" for %s at position %s';
+                                $data  = array(
+                                          $suggestedTypeHint,
+                                          $typeHint,
+                                          $paramName,
+                                          $pos,
+                                         );
+                                $this->currentFile->addError($error, ($commentEnd + 2), 'IncorrectTypeHint', $data);
+                            }
+                        } else if ($suggestedTypeHint === '' && isset($realParams[($pos - 1)]) === true) {
+                            $typeHint = $realParams[($pos - 1)]['type_hint'];
+                            if ($typeHint !== '') {
+                                $error = 'Unknown type hint "%s" found for %s at position %s';
+                                $data  = array(
+                                          $typeHint,
+                                          $paramName,
+                                          $pos,
+                                         );
+                                $this->currentFile->addError($error, ($commentEnd + 2), 'InvalidTypeHint', $data);
+                            }
+                        }
+                    }//end if
+                }//end foreach
+
+                // Make sure the names of the parameter comment matches the
+                // actual parameter.
+                if (isset($realParams[($pos - 1)]) === true) {
+                    $realName      = $realParams[($pos - 1)]['name'];
+                    $foundParams[] = $realName;
+
+                    // Append ampersand to name if passing by reference.
+                    if ($realParams[($pos - 1)]['pass_by_reference'] === true) {
+                        $realName = '&'.$realName;
+                    }
+
+                    if ($realName !== $paramName) {
+                        $code = 'ParamNameNoMatch';
+                        $data = array(
+                                 $paramName,
+                                 $realName,
+                                 $pos,
+                                );
+
+                        $error  = 'Doc comment for var %s does not match ';
+                        if (strtolower($paramName) === strtolower($realName)) {
+                            $error .= 'case of ';
+                            $code   = 'ParamNameNoCaseMatch';
+                        }
+
+                        $error .= 'actual variable name %s at position %s';
+
+                        $this->currentFile->addError($error, $errorPos, $code, $data);
+                    }
+                } else if (substr($paramName, -4) !== ',...') {
+                    // We must have an extra parameter comment.
+                    $error = 'Superfluous doc comment at position '.$pos;
+                    $this->currentFile->addError($error, $errorPos, 'ExtraParamComment');
+                }
+
+                if ($param->getVarName() === '') {
+                    $error = 'Missing parameter name at position '.$pos;
+                     $this->currentFile->addError($error, $errorPos, 'MissingParamName');
+                }
+
+                if ($param->getType() === '') {
+                    $error = 'Missing type at position '.$pos;
+                    $this->currentFile->addError($error, $errorPos, 'MissingParamType');
+                }
+
+                if ($paramComment === '') {
+                    $error = 'Missing comment for param "%s" at position %s';
+                    $data  = array(
+                              $paramName,
+                              $pos,
+                             );
+                    $this->currentFile->addError($error, $errorPos, 'MissingParamComment', $data);
+                } else {
+                    // Param comments must start with a capital letter and
+                    // end with the full stop.
+                    $firstChar = $paramComment{0};
+                    if (preg_match('|\p{Lu}|u', $firstChar) === 0) {
+                        $error = 'Param comment must start with a capital letter';
+                        $this->currentFile->addError($error, $errorPos, 'ParamCommentNotCapital');
+                    }
+
+                    $lastChar = $paramComment[(strlen($paramComment) - 1)];
+                    if ($lastChar !== '.') {
+                        $error = 'Param comment must end with a full stop';
+                        $this->currentFile->addError($error, $errorPos, 'ParamCommentFullStop');
+                    }
+                }
+
+                $previousParam = $param;
+
+            }//end foreach
+
+            if ($spaceBeforeVar !== 1 && $spaceBeforeVar !== 10000 && $spaceBeforeComment !== 10000) {
+                $error = 'Expected 1 space after the longest type';
+                $this->currentFile->addError($error, $longestType, 'SpacingAfterLongType');
+            }
+
+            if ($spaceBeforeComment !== 1 && $spaceBeforeComment !== 10000) {
+                $error = 'Expected 1 space after the longest variable name';
+                $this->currentFile->addError($error, $longestVar, 'SpacingAfterLongName');
+            }
+
+        }//end if
+
+        $realNames = array();
+        foreach ($realParams as $realParam) {
+            $realNames[] = $realParam['name'];
+        }
+
+        // Report missing comments.
+        $diff = array_diff($realNames, $foundParams);
+        foreach ($diff as $neededParam) {
+            if (count($params) !== 0) {
+                $errorPos = ($params[(count($params) - 1)]->getLine() + $commentStart);
+            } else {
+                $errorPos = $commentStart;
+            }
+
+            $error = 'Doc comment for "%s" missing';
+            $data  = array($neededParam);
+            $this->currentFile->addError($error, $errorPos, 'MissingParamTag', $data);
+        }
+
+    }//end processParams()
+
+
+    /**
+     * Process a list of unknown tags.
+     *
+     * @param int $commentStart The position in the stack where the comment started.
+     * @param int $commentEnd   The position in the stack where the comment ended.
+     *
+     * @return void
+     */
+    protected function processUnknownTags($commentStart, $commentEnd)
+    {
+
+    }//end processUnknownTags
+
+
+}//end class
+
 ?>
-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
-VrwqzwYycLznvWF6uk+sII0DNt2i0Z4QxW==

@@ -1,43 +1,80 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty Internal Plugin Resource Stream
+*
+* Implements the streams as resource for Smarty template
+*
+* @package Smarty
+* @subpackage TemplateResources
+* @author Uwe Tews
+* @author Rodney Rehm
+*/
+
+/**
+* Smarty Internal Plugin Resource Stream
+*
+* Implements the streams as resource for Smarty template
+*
+* @link http://php.net/streams
+* @package Smarty
+* @subpackage TemplateResources
+*/
+class Smarty_Internal_Resource_Stream extends Smarty_Resource_Recompiled
+{
+    /**
+    * populate Source Object with meta data from Resource
+    *
+    * @param Smarty_Template_Source   $source    source object
+    * @param Smarty_Internal_Template $_template template object
+    * @return void
+    */
+    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template=null)
+    {
+        if (strpos($source->resource, '://') !== false) {
+            $source->filepath = $source->resource;
+        } else {
+            $source->filepath = str_replace(':', '://', $source->resource);
+        }
+        $source->uid = false;
+        $source->content = $this->getContent($source);
+        $source->timestamp = false;
+        $source->exists = !!$source->content;
+    }
+
+    /**
+    * Load template's source from stream into current template object
+    *
+    * @param Smarty_Template_Source $source source object
+    * @return string template source
+    * @throws SmartyException if source cannot be loaded
+    */
+    public function getContent(Smarty_Template_Source $source)
+    {
+        $t = '';
+        // the availability of the stream has already been checked in Smarty_Resource::fetch()
+        $fp = fopen($source->filepath, 'r+');
+        if ($fp) {
+            while (!feof($fp) && ($current_line = fgets($fp)) !== false) {
+                $t .= $current_line;
+            }
+            fclose($fp);
+
+            return $t;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+    * modify resource_name according to resource handlers specifications
+    *
+    * @param Smarty $smarty        Smarty instance
+    * @param string $resource_name resource_name to make unique
+     * @param  boolean $is_config    flag for config resource
+    * @return string unique resource name
+    */
+    protected function buildUniqueResourceName(Smarty $smarty, $resource_name, $is_config = false)
+    {
+        return get_class($this) . '#' . $resource_name;
+    }
+}

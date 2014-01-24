@@ -1,343 +1,920 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPuG/O86rRbctL3FregIE2sL8UJT7jZHlviagL3k4w1msxVq5G4rQ4+OGe3j19+AGAJ1PBhgP
-WParkW7BeUyYX2dptwqIhe6IDqX0mF7IXYhrYy2W5EFkxaX0d+XYHFegi0ZeHDqmGNrar71+wviB
-5zPwXrNMB9vflhSpxRWUqTXD6rVLJgwvf4o4yjjm/6oYiKEffIgwC4KlI54bmhZxBa85+bfOS/3g
-uYMSWji1iBEaeAoqm2EitgzHAE4xzt2gh9fl143SQNJYP7qNN/UaPk+2u9f0D16uSl+NRLkNYdRZ
-EcaUqBl2CMab+DHZSI1vH/wy0L056dnJt3PdboW+WNiv8x7ZKCMimdEfCQSwrN246tKfX2Rp1Pko
-alNNxnGF6SIIuUCA4cQ/kBFshs4RiOFU/HDeeU+cre7XrAUiaZNpVn7DwkpYcyDBCa8Lmi/VuyZf
-UKKXUqLZ7VKdUgxN8hlW3BxRQTWnDkIkllQGCRyHNRzjznoDEPoJa4wvTN5Pc6O3ncc8Aqm14yAF
-hb5aKLqaCkSVIfjoEOqizaeUG3Yru/qo1kdZgZ7P4q31lMLWP3z4PulnE165bIZABJ4uzlr6Tkcb
-fVnPD5MTaSTU/65/JLNgz1iNiAe2/+NAwd2rziZ2cNq/pYhost9Gtb8BNr8dRJsrGDNzxdKpBNGq
-FzcPrMTD9Lp+lzdId3tAr9GAUoJnE5f4Jz4/RgaouA/7nJ2YNAkCH8bnEY98WHAw7IWqwHAp1682
-26ejwRXq8JQ8ns9KhSr8S47PRjqDnESR2N1nJwH881Qwni4cwxEwJIR6VVxbPi4YB76FcTanj4Dy
-RiKYzSQwuQv13AIS98KgARkWdfJcnAZekuW72c7n1gk3TLfbqHNydxa9QdB2cItNPPpKb/186pYb
-h/dckf9a+DX92EaEelNipoS4zXSdZPx6W2h9e+N1pIhjAjQ9kE2o8NtNXCF8OJr8bKh/JGmVQn6L
-dV97buxlomIUFR/WXnGWQlNsKPkZJVnDHCRJeU2gH6ZfxMXZPtcl0DjDII3ZgjUk+ViNiwaaYhmh
-Q5h1vwOmKw9sh1fQDlyfMz6HxLsHKHAGKWNvE3CEfA7ipn+CXbxvMS2B1n6K61oRmjY0qIc/3H9B
-KXsPPc2YMBJKibSVGB+/+DSCfnOnV4Yz8qkpUBsudjZSmpNQnDqI95BiTK0OXn0zObv+6Hyv16Qj
-38BzDQPu+Mhbc7Y2f0dKLXBjbdoDofy0SMXCrV5uZ5dIi3vQANVzBON0ea7Rd4xSoLgdVSVOsM5X
-43AE7U7wZyhIai+zer2eeZxn7jDw8BE6y64VVZRhs5r4YO88odo8vFbSM8NphHxaVTNE7deDAGfI
-5wsxQIknjnOVMa8L6AoeOBRxB3CwGPOnBJ8rSPuTdmpTMfdLzWPl8P28paLw59NKE/1flxfsx3vC
-yNFjuK1QxqApfsUg9uqEWIWIyfEruAoqOjjDiDRNvPXCLFa5tQkiB4VCNC8dNnvaV3cNn6AcAVd7
-E75/9oF7COAjtU5393aURb0dnPdSy/lIsG5MUqWt0e37UKk6VBfefRQXb1FUwKxs3c8EXg8jebCR
-KN8lx/Eq7QYoB1Qk6cxtCHYiRshKyvWOhINf5OoKX6NzfamMzjSZtrx3oE9zlZ0s8G+eKwXePonA
-TX/3qPf9rHmGUCb2FceUha/9wu1PE1CEiAVqJ3i99tcRzlceORWXpiq/OUxioSi6cBUJDyUF8Xhr
-A7h3ceqNacjYXcIBsXhKzpXTB5vZv14/xxGWG3Vbr6XsgfGo3NDVSvKcZ9w8iNzFSKr2dESBd2NL
-cdzA4bVAWF/r8qegYZ5IEYZu47DJjmgckBuCbAE76PqmjvOaU3vHEmdAyLtebPB4zrJtxoZFASnx
-su7qD21GSVCXMRdx7PyhFaUrn7EGP1a/UWM0nwGpzKYSD8xuO+cseEaLZ+RFKOufnPXgsMqT0ku5
-koeR7ZMBbz2eodRmvjydaUoTvcdOGveGFpSLuqWFN23/Ts7BBjF2/7rwPUDtyKTwg08h+5uORQ7o
-DqRdw5oEiUy9CzuuRIEaSpZYGAuv60TaxqeXpoNypazT66U5gPy/kq1DWEUCBiBjvYMW+IiV6Jh1
-DNIsgvztwXahHy9G0lQUTLSmX203btB7Na/yoPs4nX2RywaGthndxFmSEDNFm5iNEYO0Kxk+JLdl
-BItgBjyIp3RZ6FgXDzd0+ERjj/iurmTxDgXyAkQD1ZgWYQThmp0w7P/Lrc6NMtX3RwZCDFsYAe0v
-PTo+C+4Pf0PJh5DarHchAEP6RqcQ++wWCMdFaFJL0m1OnNyV72xnB++rg7Sko8/gOFs2vXHqyP9/
-818oVlzQP+ry+4nC48NUMzhRmQOtTIQ7VAFb+e/t4vqqxU8dDFt65ZtCbRUIrIcceCHjGYiae6kS
-Hc30QHzbQfQqUgcC64CbkZXgEdzvSGYKPXxY49aKMwuNSo4p26tCOEUxUQU3mrDnOLzw7aYtp8fc
-B2N6k9advPYiEjtUYXo+28XmJM/W9WlVKPftqyvpHDuv1fLzvzN5UM482fEy5vavbcw7z3rxGyZj
-3v6OLgKCNwNKltSIAmeOBDC0teDLkdOYDbCvvN4pNX3LFqAGcf6zkllJ+jk9OwZgMjADLPXUGyLj
-mwedQGqvg+A+NaC6hTJfCueGC1Rh37o8SYs3UfDTuvSvujNHkq8WounlpqJDgSrzjg0s1Jcvllyz
-aiUusybnSndjFq6uhcC/csTxEfrHTJ+MJKn1Ey8l+JSQ1c6fwc2tPkmdxZhWpe5laOU1bJ0TLeh+
-Cs22v0z/GdBwz8f7V2Zzm59MEckQ9bDsvEJWHyNQFRKgsZje4Flsty1FPhl2iV97DTR26DVkGWtH
-it7tcEs0CdHDtnvVXTkexMJDH3GQFmODpG+LoJfdd8NFteO37j7cyawobeH+Q5MrPjszplNGGxlu
-x5zlqcOLc3Nsnve3h6iDHO7lw+mJIQCCKoOTWbM24HwPBLaSwSIO4/EzEMl6SmCILEaTo1PNzKxB
-aMgXf74HCd2xBBb6SZW7ElMw+eE6vHTBIymTqOjCvZ8U+m/1kEPqegr3Jv/VcU7eJACBJSJgzjRz
-g9dw/SqhvYRIjg5q675ri9Aa7fQLvO3LQtboQ9uep6Lfi9RrV/QlAXpE33qm36VgAmJbfw6+XrbG
-bOH0g4ZWvtZPnzDtPNuCYH2WblrR8eCYiUD6j1WZZgrL2xUGPpQ5waCQ7LBcxRu/lXH3+khh23b4
-Ycop3TcRn1tc1TsO77Ue54CgXvNSy9sb6P0UUGIsunxacT0NFgzR341V0Tw3NnekRKbBvv2cTmzw
-EUFUyRem+8KS8QPgyh020flBI6ISAs7g7p2Q57v/mHh8ywQsbGUaakYjN7Q4U1Y4CHjdC68BYoYz
-QPpJ5ShOuIcZaR7jWE62d7/l6L02upWOGm+0IZhNbgUUH1L1VJctOYc423uWsp1dbr8e0v3DOUtn
-jgqFQsK6Hhf4XUQ5qOYK4XHwgnJL52qAYr+o5E8DKLW1gzoKnh0CK6TIm3FfHt6CdE59YD9WsXg7
-/aW6yFRss6UnN88Kr8wtfyBkvhV3GoVbJPQmWXHqsaNtI0U4KNCNZ4c9O/QEJ+SXo4OOjCeTX9N/
-hGG2PcXJa/GzglWQyyEJNfEfhihu0X/nWhymaYZEegjXPn9s2C0RjuV08+y1JMrVo2/3e/PMPShH
-L/mqidD8V1OKhIPxYwao6kSo//xGkJzCZhEIDGyCxqnf1LWLtdzbIkr0XRAVHRCVp7DftKaUqEiK
-+owReilnjlWABKA7PYEUreLTWF+m67bwzlbqa2lJCs9aRT/sDd16h024ypB1O9nihu8KRH53rL68
-tfA1yQ6FX9mgAF63gabF0ZfC3DI/n/eIv/mVi3COwNTfferuMgC2oBbzIA3ZSKNc5zfL1SL6rkm5
-+o35pbFa9FdomBjbCHbneDy1jCFosUnTuHFNUvPRvO5KHo7CknknEOE9jifq8rBsyl3La3RCTB9T
-BuacOrIYMzbcreV+zoa0LExGcMS+S89cstCE/puKifddQc2TqbunWcOu1dUxWqRQ1x/9X4woXhit
-VoJXD7V8evv7Hsv9bRSGkAimgyAGA6VcQorjfz54GXMPE4P5TRHhomT7rkkzX1Swp4xDSBEHzTZe
-xZYKEZCxFX697IwsbGD47t4fCJgpWXy0Yzh3+IqjCsCkXcqm/lzl5xDaijgvcwvHvaMQlauahZRT
-pnSDiTd17oQjISMG4KnYYdiC4sYd6GohAldrLY+8yWEsPb8xIkkRHz/9cI0De9HuOX4k92hXH+ft
-ljbn4b0Xggf29O6GLpBK/q29gKccxCPA2uo+6gu3ETr7RJToUuY6HJ4JD3E4KHjhXqoCvGz2SNMg
-QabE6P4e213y6wifI57ODasrnvoJ8jVyLlyp1Hqm7mNXKK1zuThkb2k4mrJRABTYjBOOJLKbF+dW
-eCoU172EOgJopf5sAUUQMnsY/E4dw/hmUbfTzBY3ZZVCaaF+2PZqAjJ1/tN0DXIbLcFBPfUavBqO
-yGnLccToskKGhEIIqeTmaDFPGd1JM0ajnsM3li+862ad78lhvpQoZj0ZZLU4/CPCHGBDp/wqJUX0
-svgYvmIORB0VAi2R91xLJyqdUdzqK39h2vbVGCs+0bnk/1AbBDJvoF2OwFsLbJPf4zy0PB5xkxXT
-kPrnFQZoWEtgAYepkIDQ3E8Zhojyj/ktz0T6hJOfc9M4rUpkDBhsz9nF9pJUTFM3ufTHZfyaRaBS
-Eow4EPOK2FE3VCn2DHteTkw6pWBq4xwJR+RpcougEnGrMhwSn1fo0j+GurVg28qLA+o15UZbngzi
-qlGe8EJP1xmtT2NgXDTPVUpab6Z8igFWJfHdzL7SjnoLZNYYfCpY+NUYTwWWwCsy6UloX3CzDk/b
-138lk/cwQGfCQF+NBWa1bjJatEBrlTvjqJ6hXY3I5m+0+dAXVhzPWRGA6/zJxWx/IjeN5fry74hn
-rpLfsVTH2T/vI/nzORAWc4HIKu3Y+ABC6J74knOuA+6tKDgwW8UuuDMQBkYCs8Fys4W5It3ZSsbn
-yKbUfgJ8GbgdsFPoFkrcIfpE3Wvf6fHe3eWXnz3NX36nVqMLzbfbI/1p1YJ0/LgkGAs2BG7B7w61
-vbRDY7G6dszwH+He1sWGc6vk5eOtituRWYWP7KF5NCgQnaOWg6r6czOvzG+fIKsOgi0OEuc2eJAp
-2nEaP51cfzCvaxyriyPd1XGw7FvxX0QjpiE1NjBNJDaN8PROjBKPS7RdOpfJpmTg3qBlvIKC8uBI
-p0rIjT5AXsXMq4Mmzzw5AKjfjIqX9+xQyXLGu06mo/Tp4PGPkTOcCDtB9JA4srVQv+px5W3l9oBb
-NNtpEO696eNTUT0SuXrZMrBc8nlx2gXKNYOBlJLjItr5Jua0ap7WF+VweITfYbwvEfVr0LWjhIiq
-x4cdZjkE15rABlyQ/sQD6kbxrCldm1Xhc88tjJG/oAOdK98ia4KipKhXwVHEhld50m6fz02XqXN7
-jBiJiXd0Cf0500Knannr+tpzSk9wyVZphUvNz6V2hfcQ0ESkrmMHrftp6p6Kty1tP2DT7WCb5kwr
-OLjoGDYUkieAVqKFhgos7fLOuWFELY3K8u6XDnREeDhHT2gSua0cgNTwCm/kk0meajwXgw+fHhmv
-SHUrlCuDLVA6HeAjhV6ParKwDayc1Hdyt8QQteatbWa7pI8zVbaMd4QVte3/cMDIbe30i/5sFQcK
-G4QCsa6DQbAKNRc087zGX3Kg9MpS5ES28oF0ecEAGicp/cL6QpfX/n0i1l4KBwTGtHKVGil5WukH
-FNzV6J2+1M7wJOr7RHEjxag1+zQXKLpGzkZlC26Ex9apmeDxjByuNVQJuQhle17DHsLbngevzT4c
-nRHP8fo8cBzI/tAsHwgxdy/KEY6B0xC+EXCYgkmC/vh0MjXn6st+aRkn+sjB6eoXUY3hpokJAJLT
-PvANH5y8ff6gByg+xrTh5FfGaV4DicEghUfupkVkhpJAd2Qe/EqklmlIH+z92TX1Nid0Uej1owo3
-2G8ljgeMpfr3qZEuxYTthULhpAFOWLk6wDG1qLGmrbZS7vLEz5+Gz1cHMPO4hVkLBuX1/ZxOrPku
-EcnqKsGUh3M7YX51alH+YyqPtWZmpPpHSPZ8/7UwGmJf/e1xGYJAplzqjNa4rPZGkXuo6egNHN+K
-bDMhAoiuBlEFMxxE3JjsfHTW9w6HO44RQv3JgLOOtUZUVj28ua1usgiDfR5oZRxucD1TWPag9thL
-xIZ/8i9L0oNRpc6aTrwHvwoHw7XRZWwyXSqaGLnINsto46qMGegJG7bR58YGcHEaJd8kOyKefVBm
-BEj1GztqVnV5c64jHjx7WtcmkqqRtd4g4++Q3z/edkzMVxct1QtD1jAbBO82VDeld+1Cofk4VV3C
-VmoweCLqXIf+V1bXKxZq9Wo2T4EnMem77DsZwe0J8cgEPo9wcB5u5uzUfUjvSRyjIGisVPjZ/sO2
-g4Vbs8cv9/E4k49XHE/au3aWzqbnvdudxqybkU2BxDpsBNEGLtiJDU8CNrEeFaqiDjIqxyjjgLTV
-c51ECZTnuH77hiiYgci5ncy92vyn8Ei6iym3/8zTcWwv5Kt47Uoc9QoDw9NQ1QpF8iZ1vwzspRNa
-8yt5K2zcFtZI98HXniwTADb6uHDG/6b7FuBOmD9+kmBaoSFQqyHK4CFv08rWdFoSi/ElXaSwTwTS
-ALBMpyTdXSNhG3Mu5afGpMFvn1bu5Pdg/L0lx5JHelEMj442rcg0V3+hnfShynxQzZaGVb/AflrO
-0/8HgvkYyQsgfoNU4MrG1aOYpoSuAt4g/vhXgO0pNL6WEIti6OsgXGCYCgrmz+TKnajdtakC7URb
-jUd2VhNb3HQljx2hPV3zk3SG2P5m3aGs/umIq1unxjOrmcwD2BNNhd9gKWQ9EHSBC5xk/hAeBdzj
-qTfdVqmbcf6v6aR9wiM5cbKtMV4E5fq2cS9GUCJ9FdWDJxbOhz/VPx3nc4SxAdcBulTMC3bFZjIw
-uzoWMtazMqOAigyUz1KnwccQgy+qkHfkRaeNyKjMAE/GfjzY2xdHcLDofVWm5NrDXf+lUQbt4UH7
-BjfkbSkJxZPZHO+lSXptYt6fVbynKu6SmJjgKvqKG1noXy16u46dZ/+2hZk0f3JqFgAsy2u64Z2D
-IoosZczQWGp1jvTqqEDOs3t3GT5G2BoaxMmJLrbQK9caP3rHOPHvhJFMLDaiWdKXR6B1M+PIOuKo
-1SXQ/zo5B8E1nxyGk2yWHlApj7DVTePXxk4BLwwZTyX/3QMUzewGvYswclupTOQU2t2+JMCl+RqC
-hycAYwsU50P8k9WJ1bBRoQD1Z+Xl3fh727QU0va3r7mOctO59oOMFhVQxHOvaa+hMFp+pZ/1QMkM
-0fT3X679hwSuxKPs56fKsk9DbQIOF/at0KEg4a1cRPXLNksWYd2ucRUHnlLtDHKAX3zLnWTTOhEc
-uc3UJ5cVz9/FxyNsYgESbtx/nPEVV7r1fucorJR3VV/v4fwV5xN9f/3kshUKjKA6W5w3NncwnxzP
-Ja2qm2dF5yU8L5WMZyXLvUXtFNb1W2cQ8+QhOWtPJ2BSKXK0808Tvkm1zK/sOJ2m68fNMeazjuRB
-y92LDfI+FdfRJEGlmiNq0+5Ocg9ntfy2H7LI/BlwqT+kEQSCOhWWSYEa2efkppzOkMkrYh7K+igT
-XdUWt/Y+eOfSNTZmR2bh3CKPDYJEstZ+8gYol93pJicMz75C/Pnccin22EPjeG1fQc6nql/GDqKV
-/mdpZIdHRooZT2Q8Hpz2TbY2z4D12vaVN5ZLMbHqN1pW5cIQqQfCsvfaptdoJN5F9JyFxhP2bmhd
-BSnf/qRA+kU5cnsTh1WcD21UqAdzz5elxdMzcyQgxWevW1g0Bss/u/5zgrM96PcIaODOa6wqt/lY
-xLKp1uamRvoIY7xvVFwwA8YQJ0G3M2nNL73h7WsTa/wmsvyQcS/Oy4xYTeHnJ4Yt9Qaa/tWaXcy7
-KwVeVhjpsGIyWpMlcEFk8dLbhWDgfO6w73VbM2I5lQ4FB/+QsniJ4EbNVWuxYJ2lEOAbywWBSqOc
-zxLeHdbPTdGdB6RjMxoPgghEeup1TX3ab0ZJB77XQdzfkW96HroP1nMn56sGuzteEKl9zgUOaWrJ
-SNyLHW/V+9UbjQUQc/1vfL0nglyBsTSb0e2jnN7tYm5KBEB0ER2vO7V+MFwndNkDd6+BVAynH3wC
-7aLmlu8/5v/dEoQgP6vnREwHmH/XXa5xC5zIUfv9sLFjMjJOkr1jfdjvbqmQLTSnylMHiXJhxvUg
-kjcgWNKp95+r3o7aXkaxudT9sCMiQ8TeplnYkxPFg5m3MPhfr+lDV/in+PFmB8NQTw7dJeTCM3HR
-ZnVjiGDDm+ymX0AHfdcN7KF//Gdp3HXI6wFrgHaEJbEF1wjnm5mf/kiBRfDkqrPREqeS7yuHIQcB
-1hC8gBYfQ6IQyxs5swgFhuE3CiSasNHPczf/uRhrrLGrZYfsoHqeWbYyKnajURTKq7hM0kDCB6s4
-hEWJ2+UIdru8JVzSEEJvil/bkDAOI60hDjN/xemBVMZRT6vX/TCe8Wmhlb4PjDnTDqxIclfrJuK0
-sMCsJv24KuB6ZOLQrP5HWw0p/4BsTEa2g2DqUEKtDlWgpaW5AMwqIaMPvpz94rJVjRJwRlCrXjDN
-7zAcBEYoCaiL/XM5mnT+VO12V4CGDwWmLA0p94HXBVWQXmHk4x26MYFVJZ6KJvEc5B94U4DvPzzY
-3AGDTLqvqKoSwPKpeTnODLGw0Q90e0kVJ/LjWIUoKTA5Us54TS1avO4YnJyikAznhwsa27is/c65
-hU2xROv4Tla4O7eKMybur158DgZMhFPkgghenQcZoIj2qcEZ0eTsrRA+klZefOLKoVymyhjJdkfD
-1Bm8U+xRT/enFSHtMfItt/UdJLciB6ofT5nrJhP6APS7RaNvzXjSgavBzQy+EWXCAJ7YWI+S3K36
-90Qc+tC7Tv+bAYnOP3kLEhdazlvAVwnVwxeUkprfp+iznR8+yHk0lKH/IEG1OigDj9+V6ozbKPA7
-91cTPuvbNQOsxdRF1R3B2sPG2elVfeXtVSP8X105ndRj/c5p5ABaGz+pkg8odYgiQlVA4YWPAqUo
-+Yo54CwVyjMUJgkLy4kHQCzxRSGUXW/aMPOc6nYiPNCCyms49rH0/p9kKBc/f08UDNK4j6sRk7uG
-a2h41pWZGBLncbh8bcXxYnt/vBtu8sVFNO0CevV8fKjrHxtisRQ/eTKu7VGBawvafW5E9O2Zg3eQ
-n/6y0CkZfgwfyouvgfwj4bKNA1OV/bCRdhcGAth3KCyFJaOMCJ5frTBDSN2+68fGcfIVB+Hhitzq
-cZ9B6gIeonRIoTc8PpWa8o7thb7F10cxIwcOf2QHrW8Vtk1iKB4B3axhJ9siVpi+Hc1knq3/7Gua
-k/XY+MB+GN8CMv/qXgQt+Gb1IQj20gcPSaEVkVe79q+TUtC2ZxCi5MvMGZtsgYzx61qSP1he44vq
-yRhVIXDTyMeKhuAOCCe6H6Fsc8PWyF6WgAiYc8/PN4jZ7NeOGVTinoImuflIUMod8f57jbR3eJrB
-RP3rzeYfVrYLkfPIxM/xuKdHMLBxWrHFgjXXYVt8bQOG5ZGPViZeVohKg56VqJ2jX4QotE+hJmT9
-nqwejKT4TXzzWBqs+PRgZbelBkoVKAPvAaCe+fG1I1jyirAM4xohSvUPyn2IhK7tL9i9MC5T+PU7
-P1HC9hwpRzF+yamBIM2Je3g48ia4FHvaQjv+1dGKPZ8euC63pu+koY0DcgYdJMGAfgB96S8nodIg
-1EL6tRDEdIqTUqGjMP98iP/ntlMLiMGcosXWNxuxLLyEzPgrNf9PUH0q+QcNj7Qz7mCdFOWhSzPY
-y6e4X2eKTzNEh0rXlmg00zOatGGsY89jV+yQB5Ao5p+AD6EbDBA0S4eAT3gdzqBzpDDCkKlCHyN2
-PRmwi6fPLsr2BJBIiAUubwSO+Jeoo65g25HIAVnl1iUSnxLxGNNVwbI9mckPOs1S2al2FbT1A0VO
-rbI/fdaeu2XIXJGYJEpu5MZDZTS8VwNBimjBpmdEVjIxaCJveA8rb+9Mm9YMAGvYwgwlqyaTIOXa
-7kgfZTa255AilyAzrymBNO0AuSQsC8OQdz89y0Uyr5rwTAFI856VLwRxESu3KWTOyLm2MW7srM7w
-vmIOIZs78YiHD6GkvN7gkQrQe1UxcQlmjlALfHsse9UEloyJlyVUEP7SJj66rainI2l9lKbr352j
-8iarmrpuL2r7T+6vGGyKL73zwFlfRUa3adGr43i2DVnXfJBNxF8DsWOQVrdrn9V4KQ+SnJJ66zgd
-sLsEmTBeblJe55tQGav+jwI8+nL9Ve4p+JJfLc1b2ZXD7YR67yetzObfg/S8CPrQw516qd9jtDga
-8TT38nVj39oT4W1iicIGE5+JfdodnWU5KVRB3ZeflCyCYirSKiyY7C5PpH7ytLb53hNN9Myii2iR
-e4EGlrWH73sYzZNhGlpS0ME25+SBXqMOyaeYAs0opf8wTU/rKww00Og1B8eMGX+PUP8rAV+EGiRJ
-2bn9pefw1nos9ZFrQxZN3H0DMUsFPlpcIXGoL1scSbxu1dsPJ8dR8EoNTslGRUBwZqwi5In5OdIu
-IZiWXm5Mq43czMN82fhZR4hvpYVrz5f4J5LbU4izovhwbGAOzUPg/CFjm/ynZ+Vk0XZaSxX8gc1d
-hlx8ZDy46X6+JO/EXoQB50+NOBeZpX7xpetr/O8VnwfpvI2WPXBuYc+Fh8plcDrGfEMtzJqq4MwH
-6/i9/enoQ1ddfohES1s1/c5wedXKHrk9JW4tQzs70nqoY7w5VWrQzkamLvKeIitHOUP2QE1E+8Tw
-no7PQOBUJLD3edprbcgoK+2AUnTg7WgCG+AGW8HGDIn+y1NcPhVlRL6otE8rxYKffhNdTavhu+DU
-E6WmMEImEu2n1yDu1OsilvQoxnj6/xIHAkaFlpcmabqSNe/2B1g+gatISmPlrdk+H50tbTecIcdg
-OdWhc1SIGNVONVmfrxfaNeRL58jOy+89rNCG5uZs3ROX3Y1lPskp7IZewRBHNgWA0/rj/QpDyMwc
-azpekNCX/IS68aty0J+dSRT9YWvwib0gwuGwa8UXjmo4G0yWfXVXjexjckn7281Rk5eqWDntR/ku
-jRqdo4MeTdTrBmFd5Q/aZfiDMf7rJ8FaG9lnz/0/tTZg9ThS02f8Q6Z9/henwVx9op5MKanRJQ9w
-tw99kjD9cPhWqozh1Nkhwrk9/aUbSXVk4M0py8EUviikD2HdC6HZVo//11JszDDE2oKP+G0vvtjZ
-fzbJSlnm+6GrD/naKniUPVsHFOLfR+L7f8q5EL5IVqO1LrGQB1n8WBBmIjCSdclZKG1wigQlMpVe
-z/9BcTo6irpKmK/ERrtKQmPjzoksW4pS05F5wEs47PjHWFkQtHf1mgM9M0CwkV0/RndFTy3KGuJp
-pS57RV0DR88BKs7G+UyIsLUR4a8TVbQihF8mtBh0yPFnOYeOaJQpQZasnYML38Pj5oTHDo5pik6S
-Lh72Oe63X5v9efeIth1807u2HT21Tth3EkguAlP4hHNqKTWmK4M9cCEgJLX40AZHNNI0XC08qn/8
-Imrv2yN4VUYpkV5b+cm3vCBnOLQVtygBBcBn0d58ikl8dGzvBbsYKICA39ekzgz3PPPYl8pmapa7
-ymrOXYVpSGd/DVZ9vuSY5XSZfKsHeAGEHOR/KiY4AMyg1yINKbo5BK8c18+4xu0nGO7pE1wTVW8g
-vndGQH/aC+n+18vfPfo5wY0bVxEe4hRjwZe129Xc/hXXq3VdwFsGQ8DFcuBEBhyhWZ9NzVUaSuH7
-ziBb9jrmVTOYK5nFQoCSVYpvScMvcwC5CiSA8SjY0ih7RS4AqmVx+unGopZ8nhr9i+BoEiRx8zCp
-m+abxU85akwSXlu0yOJFA0Et7Zx6Oc4YqbsIJv+yNJi2wZ/Zzr0P7S3g7D2r2hW1ACCt8qpATcWI
-//IhOpdkJ/bSMA4dbbCSleIbSDl7VZXOn0FvIz6iOSrKztcWiw1hYIRxzXRCelFArUSe6XyliieC
-s4XkYrMaW3JltYnFxQ9A5Ge/K0BJU7wuguxSTEkrifhrNNJINMo181wR3Xi4seDx25V8pvl4mJdc
-Evh3oI2ZXfu/PsoTM9zDBu4ZvT9waANJiXgrJxODFo4vhYQ+4g6lzQnr6Wq8gBokFMnuL5erqXJ8
-327lH3RGKitMHk+D2K2IlQ+5fnJFaeeObogfHgaZawacBA10vwCOmLZsKPYqaLFpaUnbnsk20cv/
-D8gUsa9cuDADsHkt95lYs9nBTIgOQoH851AegYC79pzDbj9v0uDCGFTKvPhHlv2L95p1D5LSQ3jY
-lOCabi7DSHCUytw8HgYkVzunISpra5pqitTLmZYm4UUiKwvr4ZX+wJ4XPUcHIh8fcIndcefd6pB3
-oY/JquG9TK5kZxcJ2U50Y4L8NUoU9HJY3gQ85srZNJiwjAbfQEgpwNAC/xd6sESfatscQEjUK+Ip
-UvbmVWugyupdE4ren/1UYKQLmPcuajhnAdGRVhHpI6dlbzSspB2rVWadox8bIcg88UGkH6XjjbEe
-b/9BzR49+YrJriSi053FkvDXMYjYjbkJMSJg0tI9sHj2gOaIkoXWtSeCa6ipvkC8Xy+cCoXZh15Y
-Lagq0F+BcgULMhJrkUg6JViAlm0W5iLw/x8ExN5W3Uhz4LHq2atAqhnhlcKQgLQBbTv8nNSu4V6d
-/1gBVaf0EKhPZWJq6j+mDhT+Vwz71vVjt+jVBFxdq8Uig0iIDMB460NCGpYKyxqAjFKJSjXt9htF
-GmyB3IGELahGt0rsaKNuCNLw0RdTSFoJ5CPPrBUEOoV1O5mZdM8hw363O4cvLRxLxG40Z54WXFoL
-VChbcO4AOgcLXf6q6fkPthzLqFsU8A8EmIAHjo1CJCD6vEBJ2Q/JGUxJE8EMVDKHQwN0mEm3hjvj
-JNCgScktF+Qo4A9oFjoHcuVn1pTCXqKqfuX7sKzh6PGbEAZxmMw8ksRwoo3z3lr3XZaY3/zSEHjP
-Q6B7bul90dtoUcWl6dMJZBPUSWthjJ/euoDstWj9KI09XOS+ncJRA7sd1T3pJ4Hd/Q7xEW+Tay5k
-I/Q/RyuEtpHQQ4+MqREMUy48kT/7fPzgaEIGnwc+DcaNSY+ErjVERh5rVSiQRYmAxP4Uqa0IVuI0
-hYSjVU2SLgxHFRGCHHZOBc7HEZELTOvXR7P7ksCS7elLNwuvPifAd0F8MNS2kSbYiSCeyYSwFXjw
-Hk31BtbMm82LMTuleWXIPrBhCFXz3j7veiJ+NPX8d/cuADdq7nOfqoO7hViz4YR1rljVA0jIQqY2
-iJf9ucx2ZL9TO6DaH1jNg6zx+9UvqRoAvZBKPyZsQdC9btyl+QIGhouJ/blkPwaDGFpDdX24oAcM
-Dqx56s860FvJOom9JxJK8SCmiyi9kODWvgJkh+KWnF76VoOoCZWSLxMOl2Z7adCceK24EaqfWytR
-IsKHzgmuqlU9pN/puh8L3sTiYnPivU4WNTg7P8DwR24egnUskNYVtx224Ljr+MjBOhWChfqbNAYe
-Y6NVgfum2PtC633FJLSVewYtHqqqwCyYVwOEB/Kj8cJsKawtYjNY52wzzKXGOCsV7HEZPgi66KB5
-qOomm5iXRNV4i9mvsysbPqrcOnmKI21Mx7+ytuA2RRfy5ijItxJa3V+SPXR+0wsoXSj8hfY3mIhm
-aG1PxjzqhpCV6BMroFPZEc1RkTc5yYCahyHgTQ7pE22GBkRZ2DIGASAWxvnepAN3xTxXxGZRySFs
-p9SDjC5I7rIZjkDurM5U0WN+fD2sxFwXD0Pio7uGswMQkXZMj+PWWLjLa9x5Ku+Qhn5YQApawLvj
-Qy0eC6jXxQsGmz9xvQ0IBeAbna0hUCtVitXYvUfRlXMYAkidXqmEIkNezW8p8b5GfANf03xErmGb
-fzNzm5aILq4FQm/Cw5AMY3a63iKXnTr9IFNvjYKiqd8uwI/1Hl3aRgVZQJU8IysVU6fw3YyCcGA3
-S3O8aVqIOjyZe81WPQhBw3Y6Mw+u0bmwb5HJMBX0QyLttlBzq1q5OA9aTPAjUvJ+/8wJpbyFkiqJ
-QNz/1lCU7ASgdcUL6kA4pf4B2u8E5LI6k2UPVlO27e6aJCyPQ58ubuCvVPsIR1xuBcRFA4nBxnKI
-WC5VcKXvIoErzOUG89hksBa1xro8mhK7WHwEUAz74Vu72gCtLqbZ1Tr13EQnhkepf4f8+yfh7mC9
-PgaV3TB0lYa0oQiMebEGqPcI3P3CKJLih6SPCE2VeTKP8dGn+fBVR5Kal5VUk3lrGA/SkriiaKnb
-cw8M/YjIjTZ9AgyTYQYqiRkvnsNS/FD37LaDd8U8ZUJuz/ZAAHhL/aSjGM35na8jxAgVkbo98ByN
-BO2VDttwcoB21p3Wh5osBOMrAjjNLUjg3ckqdAs6GhEriZSRwre3g0zP3G7F0Re1qgKRUntdn+mp
-3078i/1GL9NpA2sjQeCGrjCgzEjkIVSWeV+yLQnqplFlzY0qBXnfRPw7pNWe8QDcTk/LVK4ulg5M
-qyCvR7bL06H2KpLDqt/fhb/hZ7dRCO2RHL/PCjF3UpdchP8AyCM5zAuLyCrkIWovgbYvhpAgv78b
-ZhpoH2H4TVnTm6xK/f60ddqaHWSrgjVRUJ+pKlv1Wbu7f35G50dLSooS3ymsytrVje7gwoQhdQ9e
-5BUVqwbLO3ubPhgCS4g1WrObP3qr0VzDxZzSAlpLWsohC2hVwcgCSbQtP95nQfxwDbycpo+7tiWX
-5tTnf7tB+3eFAmKF6oLKEt/Rf/IoZ11DX4ukR1Ani/fMlXiSXAI+XyYkEHRsckBUkyw8QXo9RInE
-v1+FEZZsphUnKH47D4h6MH63XpFo0197Qdk7HcaWbtvdpclmMzM0SxBimOfxDy2XpSc6Bhga/2ut
-nGCSbdawQy2eOevMXjV7QC534yAfDrx93DY7XF95ttX0lbpsg8WLqK3M7/w5GnPmGL85b7h5sby1
-pEHE0VPUQbepPSEZTafvQjD5qXGVuo+xryTodo3Tm7JAPmY5XtMe6lIzgJU1rBXIx8CY/yBrYDqh
-rG9u3exloflOZEauyzKXtQ5CKjIKIipQlwWGZ6QWRrfo1aGH6VDfcpJAqvsdtET1+QkEHn/roJIu
-8uLZkhKMuEHwHig2g+ylyQ5nfM2UoV40oujJgu6+M2Y+/90u3nW/MYdMjzRuUFDUdKBNK2gMHXeW
-8pviK12efpLo8C7RsH/6XhahmPbLoGmqMZMn3Qdye2CtKdlomGTXfFJ7NzrcWHMXeZ+FWivZ2t+k
-u/HQkR3BR1ly6NWR+PWq/V7ugUxNTrZZqFfopt8z1/lMramOS7aij/RCKju+Ka7hL0utMFWniCrE
-rR6b/OqL50gxXdqa1uz/gTJd4c6JH55NLp7Pkn3wntTgBDJ8X0scLqC1pwm4ukXFhJzCUToTNIHt
-bEX1s5XJiF2kQvm0UnKXkZtFbyA66Sa2KpcfIgKieo9mzUdbxV62TpkpuKF1NGuXXHnIETr0aH00
-TukGZvD5AqQ2Ej/pjjMWI8RKTv9ppZY7Jry130GhJDfoeMyW+tUm+WTFIaftGZ+3ttC98bCS00j7
-YMU+vVLnArj2BF3TINXhXfw58JuawTs52xLwRhrX1y6oWS1CP2K5lec8hBDq4Dpmj6MGIZ4af5oc
-pDdBNklqWDzeBuMTUIVEMHdFgAERcKz0SGyGJjCrlFNQYmtMU78HBpsrhVbagTev2YPioYbspdeU
-2rTIsLDZtSFeLuPkNGLWt1DkmhvWeTUUBwyZqIE39IW3me+ysdDEbgjVnaznfFGAmzKTD/8SZA08
-wttQL1Z6qxtQhTjORw/0BgiHw5ZJRNNYtkWhefm6I4kBFYAd5+Kc0bQ6z6ukTzdrv5Oz4Yr70KWe
-FpRGCcEHmpec4Kql7Ig2PptJhy7P6QURBAlWbJ94mvXwuY2V04ClIuyQZoi2mGVRRXMMXJcZT9IH
-QjBE0JEAMwxjbyzwz9oz4ATwaO7+7+Bl5PcLRw/1Q3r0tXXWolxb8Y22azEjp73RGfjo15Qz6i3I
-tyfDbzRCz9RNf1tCMAMWj+BRISlzhPMuzL7zNRxPrZreqpynpDb5BgArCRhtA+abECj22rXYYEy6
-uaU8oJ/f/hQJafh/NSak1acjxnd17UDxo7Ad9EydnOsbvjR3SOGGaYhnFUzQr/Kh6mnZ8zF7xYZe
-DD2kY0PEq6kZsVVkWjwaQ4UZyQVOMubg0UJkQqsNoywkuXsWl/LPn491dwjgPhukLLhkd2z6ziGE
-b55JqaQtG1kqm6ahEEpSFKLc4H53enSqwFhSXsybvtszBJKQ0Bs2xCcVPxEnUd7cd7wMWshFU461
-N3l07HQqusbpUejOWlFEzNQ8baWhx2gy4k/jK/vW9uCcjIgAtVh1+6bnf+fRhGB8afXNMUu0s56i
-YOJ+Bpv1ntt/42N1v1lyprvNz6Sc38Q/GbhBzFWajg7E0Q3aTCypxrVSisfkqnMmRdQqpZFd435/
-0KsZ5uaQWnnS6QFIGNHxnaSZrBvzNLYJoXT0J6NTVsq2HyMW/bAUHmJSSuP2d5NlZ6b/GgOxpJX1
-f3hROTcKl60l5nth/arOXiQBrEl2jplVu53JVUHETettklfUFK2gIYr9zsw2Xa6KZQo1Ef6v3l2C
-VphlBt8FaC+8lU2SbdE9G82DE35jGq46boZQQ2lh82jbcZu/54m1SHvQaKkM0A8Sbdn+xL8+8TmT
-ylQI6ChE0oKb1p+2iR8Ygov6axKZC7O+XgMlswmaLGdInC6yELQXZogEJwEvkJS33dcbW0h0vINs
-i5dJPbrmA6M7NDywvUIM5YHlDlNfbAcB13B0gAqsgL01tzmWNwj9Ogi1RCAABXK9VRgXlVrPcAFS
-SHd+z+wjxkTXvfdNLW7jbgibAKqXjacHxPZbut4Oa7vFl/ilUvUMnTXVn0P/KU4Hi6Igz/i24fyq
-i7mpXIKBVDlp1onyvcV1COzWM/RpPAUtm9i1GUi6q5N9uQfiVjMAvkazVCiH3fN0cSwSzX6sw8L+
-hT7/61c8b2dhN7VGasLnBefKuBuVyzmCfpzWP22e4g20dJirQni+LERapvA46P2F3YI9/ZSJm1J3
-0lcx5bqjJ51IHgFvvX7CxVPh+7As93hbTxChwu67ddLLyb/BjqFa4SteUN3iygTxZN0WG0EZwVC7
-eX9whUhLaKFPZjt3+mKOoy6A9Z3SsSGvJK0THaMRti64EL3BdWir+Cck29JnsU21QmaZBmF2T0MU
-YuV515lFMevLL9xQRh1dAr43PT/gfY5p/F8KO5wPDhp1zOnV4z+bWJ3awahGuJVSqxYLi3P1r1Xa
-lQJeRVz8fnGF5iHUhOuAMYW6zRg0DCwXUdd7TZMhzI1BNTkcu0DwRHvDyS5E0Sq+BXGIbFNkTC5+
-ps0+sK4HrUVyMd/nWPWU4p8tBIqu7tO3WCfR4+dMUjwCXUjZCrJYYpOr1c4hurwmcpR/q13xNT1X
-AnUTlSQQhOtPyxtAraubrK5bxuUP9tgpNn0gFJ9DqSc0lzSxacm6/60JeeAyDxBThgH9LbHFP3gp
-KEX72mxWj0IZoh8jXheQ5zKTu6tTIWZNyfPd2dBTLThhOn6xPPJ2XTBPTbO1EleVbOruipIySs9w
-Yk/R/tQaNMB2k1BSWVt5Zbd/jWpNtLSRzxqcUlC8oBLPZLZd6QNAIvxD/BVyFfStvE2A8elMtlLC
-+yQasoUX6R5TFwF9QTaKxkrviqr9TyiAK8bs92D8B+yWM9OQUp26hFiRAkhcfas4IVWFblE8GiIk
-+AYpbIbbtCDdz/OpPOKvUFmc/ByzIctk6BhncFBWuzeBna28l4jAZZ3wsTjNVByV7a48dq+wwaxq
-gI9yIYLCV1iK3RhA7m0zdIZUl9NGiFCRLNXxd2EEbJXZaE4mDwUHUu44jR/pq2Urcx3CTojcfGnw
-QXXdymWEJN7m+TBWjwNT2zHxYkj3C9iTZADrJmYUjJ1xT9xadzHYhhFKKBJxDkStyIMhB3Fuafjl
-wy6RmmUIOmV+GK353OFr261rld0rewUnxp8UQ2PD0tzO46mRmSnMRIj/D9+do3BPeO4IMIPteRz4
-3P6+2y6cHKY8nsXCV/MUjsxvlelRyxGpUq5NAWjttanbtMbdb3Oayfe+Adfa2cMHxosfZURwCXHg
-rQu7j8twTiyxxEJk7wtztCnJ9cWJUUYabbvbjJsphcdmCy1OqiWg4yCeUTyenSypTpfpToNhuUj6
-he3VBnCsDqswjxBLrRdq5NtinKAZBGOZ3OaCTikY2P9CHEpIZ17gU1H34i/ueCGbAobJ7dyAgMq3
-SW481EI43bmK8/UKV77KtH6LKu0V6+hkUFYbzU+oJjoE8XBrRmPFUDyaFPdlw6mxfxNMuipo47fm
-SNpNsZXGt+drlUhbfDLGvNEGR8NBMIf+TJa7WpTYQ4S7olfKqjQQUSTZb8hm9ob+vFquQs9UapzT
-OzaPcSwUX0eRfGzVbWc7oCjWcrjpvWF6ox2Tv7Uk8YF/hvZEe32Nlt4IUBYF1CRNrYKV1fbLnFdR
-rQb8/Ycx0hvwTYmefTTrx+YcCe00XrCJpTx2cN5Z4FCzZTP0SwB5qwYbCwPxNYp6nrp+h7Ulf0F0
-otK3LP9OfOCufRZ7AENKm6VxSBtGtno7+6wOr0XGSBQcOAhRjzokh0f9oWOGtcgb3A8ptgthujmZ
-h8dhRCXCSGn33LclItbl9hKkHdDplhGvXFOHg/R6aNoPcAOpdUwNmSh+bpzKvLXE2ayjPit4PZ9M
-DP9DOiVWvfLTm+qPSZTlOKWQPpU+pbs9HBtKhIwlKeZ8ddboTCx/5I6Abrw5Or6UVepjgVHlEox8
-nmD6IVymljTfWiaFav0zAnSB1jiTpjU2fWfYhkoRlVFJXJFEpMyzMkC0oeSbXVspGG8E969xO1qm
-TNeG+REOWJ0m1HQVLFzQDlOlyxgNVHd0dSNsREoo/px/xaKU86GIFi7/8qAqwKc4hNk/y6n6xrN1
-zPDmTQxYv2t39Q0xoUpyM2fPGeaK5geLHn/bwvLC/NdB4GR59v/s24RxFSnGaX4X10ipYBNTGzdM
-9FRkeTR7jhq5mw5zSJJBUemXgbE7efxfdnBA2KsDnnRxvL8EcUfuUk7ZRgOtZ2FyzUrw8vVdpcRS
-bE7NHu4lB/qTI2rMFOSX4msU/TEQ2HnMeVGMbUXfV9i518wsMjU5noZwqa5KV2PmZzCxlKV1Q/5L
-Htr11IwICCGTaXwFhj/gjGf7a1yXffNY9sMf1kTejfe26AvkFq5mapup7jaG6RrXuh6e5Irvu4pK
-21bmAvB25DdsAYesFS55PhEF2GLElcX1/39C6z6ambK2ayrABqnDtXMyUOtx8tfajaCfzz8zcBrt
-DfqNAbq2D7F6B9DRCk+Td1YI+C0f9ZyFmSsaVnh6noIuZQzVrMkQOW4+ZOc5zQKwBvb9xgj8P7M1
-C1qI7nOSKE+f/cyZeuzg3KOuCh4Ndbb7lvEy3k1taY16jSfz8EkpcxJo4hHxNnjhMjmiJfAvGjPH
-4tv3NN3QL50SgBLuwsEm9DWjJy5rjVKWzSNUv3xPpGutQXyv890/OkBPyHDWl1dGWBrkDxorh6Gx
-m+axavC5wxnms/tvxqugKKPjuj8EFo/SwtbjKKV1zEUnN7FrDkvoDDktoTGAfdcHIUJeEjTNXVoH
-mua1zkC5QILNTvIuMsqzH/OzFXnVzigCrCUjnRg7DtbDTyQhCJs1ENmJm5wad9g9zFdd3nKw3dlq
-P3xFS7IqDzhCGQr9hMHaYmlyYpUEJ7bPPFa3yKmQK7zTSAWulKuwZ9/ws1FATKsMSUiNey0/aHrP
-VlFSCcnJnvdWN1px1D6+2N7XWWNGhm81qlKSEz569bUhwBnC2E/xO6LqHh9gyiAB2lwmhvaL3zk1
-+8WqZ32nNuwZpNSZKIKW3JXHYCMMZH7GtGZEvyPLtkWnVw6dNPlWYQN0rIWObMhIb5DOB10Lkvcp
-J/sk7GJIL9ASeixupklqr2pvtg71vQzELiJLRO3TH0PVNKEjGSg4NpMIc6GaArOdopT5OuI1f1UM
-POE+eZQ15yiVa/TZDVA+l59hHZQWYSMYmuGLZ+XbK5xtg17Pkk8uxcqjpG0WiettMpSSUYG+fvqI
-gIfSKiYjq0L/ZlVTqmNMuoLCrlJ+oLF8wTfEkmYJEmo27So3vJuiTx23hLeU7EAL+1Wkpih84A01
-9PN6TDqZwBa9NaVSnaLkDXKtBRYkmr1LUlS0RkNQ6E1f/iHi7ELx8kFQXesh+GdHjdurgZYIR7PW
-ooc0Y3KZjvUrSyctuv9p/G3QSO7OMRfOW7Ul47LXa0AQm5n4sXqb98TLg6MyhpjldBZ5hN7GUSK4
-tC3D1/ZRmx8ZKqnE5efEldQudS86ruebiNI4uZM9IEAcBJ3UjEWFgbM+YZaWLQp4rg2KhwZVAyo+
-gWAakFvp7lpWFtg8uonY7Oj06H/ENcqxymvfhKDB3W+jNgKsOFxenZ8UkakqS8z2pq7dywqlEFvO
-+PpAC+kLFUD540Lgv1UF4fFiBXD7Go2gRKrDFIreG4J8qkT7/roZBugJl1q7tQ46WR2WRmX5zsWn
-MOTRqnS5ke4KoPLMTM5rngjEDCLhqcfWlSg3qH4vZJ/4BVea7Zc5CMgwnErP0UnYrEfRoprc2uLg
-XiWAIABsVuhbYArgY1MQ+QwH2qefisuIX0QClOh9fVaK0ceaYYpxEJIVGAIc2wlymX7i6+8dDRFG
-xnIevmgDLGFq9uz6jAGMevk5XKMU2laRBryqauWkendnBBxpKo4doJ19cA4CPH89Wf07Ps+2kpQa
-vFn0ZiyMnxtTmBMIBKwPvmpjsVLfsb6eGAr0pytDn9TeXTsA6MKmeTrnmjsgFNkGS/zKRo14ysIE
-lORalm8kHmqjTve1fLUwllPTP2jYmjtu+hDJdZMXDgxnhRNtoayXyFCWa01ezWfD2UONPnoVlB6J
-sk1X4hTzV5mcov3ndgT6Wuk0O6480C3wa1MUtIwgL3sSX84wLPwJosCnbU6pWe0q1GWSJp2qX2r7
-nL9L1oMe5oSWXDR5mKx9AxAybmWul5AFqqDdQjd8DPFVcqsatm3hpof+7tXYWsmrEXnKv9WNEPTa
-Mwxhuj7Lp4MlR4bjEqEG3Xo9+HL9Mpi0YggDPgBWdey9JIAME0ibNeBIM9netJ0vfXvF7FMLCIrs
-dMiP2RhVDRGwzuLFYM7e2fmx2ujNSmvlyS4S0jKHFmDHEQ0bFPDt2HjdMKwYZaasY6srLj+xiY+r
-6iJP48pUJWcKFYzk+5THQTmOtkKG6rAfUyIA41HmvUML9IQNsbuCDZqkLwTscrKp1Tks6wFh8kko
-iC2OSqZTd3Vmoz+qBAgfuphdYObzIX2LH3XFYjqVTvdB9Dk57yYOm/PsVEb7eygHH4gnW+eRyILd
-gbLNrqo8UAHKVUnuc1aWHCCG8naFFXTC4JVqAxqkTc6izn+lmWP+5EgbDg9+WVZbr09vtsyLYJRC
-Cc+nZyjjCz/liGYUOTxbJVCCgWlUSdhC79weKPubq0yRZqIVSjCLA977jB5wLTPb99s8EG6fNpkd
-Dsy8PD6vT3uxH0Kvgf/I5WVtrn8noeJa658J6+IwPiuHZeby1cYtNzBvbXTiR5ZaPf6T5W+cU5Zs
-CuFk6sQWd2Ni3SR0wjVwl/oa92u0x03cfXjCNiVNnpa9vxG9QLgA6uBTHhB55VCEC7K9oq7qOOgq
-jQI+aWGKeNBeZU2ecsO0mIhk4Z78wxoPvnaqD8FmutsaSZY+M9LXbrgn+A3jpXEIctzcJ62UK+As
-lPQghBEfLl7Bc+zn2efkLR4bdoJzy2Zcv4UVIpl6EKWnjOy1C+Fh78qqoQubMGbC+NolOI9zfAN7
-2EjRSCLViixO+7ZnmR9KPB57pbMVO8RMcFnwI2XEgXLTKQmqxvW3jpaEcub/ow5ev9cM9UW/+PpU
-Di+eGigT1g+I2lCAnMgL8Ldzx3i6OsWw8NcHPh/9rtE1DiTaoUrUczHkZSocXxIrV2gPqzN2NSDw
-nve4BA6WU9TkGsOXEoqZECSlgmfK2ig56zBq1Ii4r+GD+HiKQoRZBusJIgARjZMcJCiXAUvNtz3l
-3PjblZbf1mgm17/A1JkjCcUpMKWkOBU9gmQp2VxQPv+uZboUTZvAvPe8/dEQZRXBf/J7zgqH/yPk
-Lg7xugMHI8Ov4BK7MDX9Qu4DSFPoLVYF5NV7isad2AyEpKlnqOK2y6B8AuJPoTYm4zPlIeo6OJl6
-76pMbu01IUYfle3A7GpUgTWHXhj+1tQ7pDnP5/k9aPwY9YOlGU34XtBh6Qii7A1DEr+HTOwe1fMh
-itZhC33z2mr69WkFPdRZsX7qQm5qeirQgXtYMtMsQ1pDotETsFz3Q+zobmzUMQEwmDbqtxNx2k/l
-bU0WFdLV0qp0/pNwPtllYMbphavqYccoJ+2Zw8Xpyss9qxSA6vdjRLlmcmAKPY1u74vvL9zE8HCj
-WMqZ87Cdg+WrwAh16bsTjnJ6+uzrYZUFa/j+0L7TSXnFB7v6vEXtg6ci8VyGo7xnDG5iM+z64pXs
-678TpMmxRNIOu7KCEgdgJs5Ql8ExAaJCBmlR44c8wkj+6sZzx7FmL41Sq8O4hB4VbQ9ToaBXzJRV
-B+blxBnePmWMKPYANXFtAf1fcDH3TgeN13Yv7b/Eu3Ci1Vy+tNJIi2BujspHujdQzgl/ErgeTSvi
-E4MVkQivCfsJZyisOQlM68ZYtaDvemtToDUITzLvRwR+PalSrM4XxcTYiOqUSsx6S1trmE+84X7H
-uTG1sZFSKb3EwpDt/6IYlB6RT0CA3xeqr71gNUdqDgPpiRR+lEV6xOLXEQjkyKk2WDQGb9DiHApw
-BkqbMIi1z6CUC9ofKXUVfLuPBNtasQlE38GZU8gCsK7xoMA0OzRzzxLEdR+Eu9o40Fwhp3jgeuGE
-R7IAgNT/07V7rkV57s8iuSJuflM/AS9H6PWolTY6rgzgYkNVCEBiGb6mT2oGi8yfAv2O9ikkZCUg
-+Bo14k9tvEO7gAp67JJy6YDrkoFvsnTRxu6wDhms/Lc3y0elMmzwpuKF9gZNxlzckmTWMkmqKSB8
-ASEcuxG+o1ofh1895/r0lEvXEhNRyirzBjBY2g++1qwuNOreGrZoGUjo9c1RoiFs8cbqKVxa6pUc
-YydbOumV0mXFxZJ9FizdG+EO+jcBL9yux7UtibKYBSqRoA9rDNjGYV+QCL19aEUXSqk0+N2GVL7o
-B0h8y66DpP50uV5WWwnPuE51xxf0TKMP5m4DuRKUS7Rf/vZLxNkyAP01XUrdvyNS38dAnJ5Z2H/g
-cxTQaHaUD9TeDXfOp/Ho9IUcx0JH1lMuMc5QU2n9yVsEFW+/wpF/eZNxt0Gbw1LGBs571l06MPbk
-LD5yQSUaI2GQl0ZY10x2TFcSsTVRyS0S1lNstvAkPDkn554waBKpvy3Vk5NOZoN3nyilmFV/1pIH
-Z493kjHF8bVDC/+wSfIDIWdMA/tFq6xjbftHAjUB7ZLy1AZwFs488ziom8T+Y2xEGDr1D3XjPDW8
-OUtbVJ4vEH9SG4rNVFArfuIRc6dLyFTX3ZI2FoCAVj1jhkgg7wbNHG51PJI/puO9sryOVwTZGQQ2
-D5H4CjXUcOCtt0IHtsURgTqNHc7zJSa9D94ckiETk9s9n3GUvJWPyCZi/28xNCqYCMYjzj4GiIfS
-xCK+QswrlYw6VTthymJyfWbu/izijlntiifEWCZ8XJAtwL3/SMkfj6XRw7WzLX0pytnPvVmolTiq
-A0NgM+2E+x4kQ04YqoPdMBi6i+hE8mkksSot2T+LgyYQS7IK0E43D4epbRhFaHEJWtrG61siG71z
-3N4VngtQbvHuhaqBZR00SHVv5ZKcOBSZ3pMbpb7n6lGaxjBv4IKBtlOXTkQF3sWCU/p2u1g68daR
-3Zd6U2oDjfsCRW0o9DPPfkVucyPuzS4oJ/DqEV8+LDW6PXmIFeNUsOA8c02jSU6o/dtWRWja2PRk
-Y8usp9qeVI59vb0/sUF9xH2QB4t/u4lYhQQuHSPRhTrN7Mfughr6O2eWTrzSbQlb5z7u/ucd1god
-75st2yMx5AeKxsWIf3HdUBGJytnAWEeeq6IFDXVHYIuKRLNzaluAyr0jrmH/Cj0ckkGga10Cdb3s
-+sTsPjrnMynTsMOU8yR0IUc5D98Qf7ioSWixSwlfl4yrsY25/2C7DcUpbsrSuc57WFD80aLiY7S8
-8wvdnAnTCcitKMToo94/7OcImTme7ii6XtDr15+Rlt1iG4PnYC1dOASAAVM8a6Kce6jlra1UTj78
-Wbj3juenuZ4sYx00oJ4RBql/4RSnK8Zt5iptrsWu9fAj8UNVn6BnX7P6ul+XtzxTzPPMTxV3C9lD
-9VS2ooTrc8QEylK4xAGE3zTxjwEkFZAEcPAlIQJHwWar2lORpEKZ4P8XwhMqCuOQoCy72g5LrpMk
-9jMiiT2B16OlKRDQ78GPtyi7Jrmo1M0JPH+Fk+zaIxio5ieWOrNwJGMdrPJCofSQMelCNLGBDJA5
-rDNgIVBCzEtFUeXlFQt8sg+Q+4Jm2xLiR3ZVTwgj2Brf5VvtFX/iS0TF+OlXvNIFsm7DkfAcTmP8
-cuWRzccNLK5frLHydhmmHb0dzwFATwEzxXfMBqxIFN5gKVE+ngwLr7ZFjbPg4fKGKzZc/e7DCChm
-cuK/wQo8bRbAJL00z4BybGvyXe4SAvFCQJZVcQom2Q84brfUQ6GBVj1hZlDUioNKocWwfv2jjclI
-80XurRp8AAvn3O0cSw2Ev76YvFuOFvePfC6U7Pg7sHpUlp5Is826LST2Q7sPEpAo9GzKE2LIawth
-sbOClp6rhgb3Q66R7ySQbsYqtlcTvTvym1wepCR/NZ3N8XcsFvYY8G+dvPGPVGhTnF1Cu+tHsDWa
-nMWgHI/MqXV6WCQkV9V9NDu6Wn0NiymL/moAtVsSjnUH2mguOL+VtJCpT8pHVETP9o+ayCtU6Zg6
-G28qa+utLUUCQqiIGDEEwO1NwqjDwbM4rISuRV1oDrS8nuag8cgG/xQYpd+6KVelJ176+lOM/KG9
-5nCRVME67344UM9d95F3GJ0natX9O0dlQMw7wphUy/6/xvynbZcL+HMJ6HlaYODE8AmTykVsAWdU
-npKOKRjrg2ltumweNR1QJW3Ha3S8yA7CbwYivwAiR4o3oemsxgg4oBHZ6tiG6kUgyi00uyWvgfxQ
-XYxKDWSDv7JjXbBU/d+e+5a54pqwWp9gc0exINAH2lVMAdOOJxv6lHHnCbSvEiE975idkILhLR5L
-awMkeogL7szWwKrdNaO8df5i6WmaU/y9PaYZZsVj+uYQJbzRfrCpcWN3B0Rm5sBlawuPJW7FdGKs
-r4EUNbk3NbrbNctGaKNGNum/oodYpiWo/xDYOZtqoZzwXdnyTdp/+koyiAI9SvhuJsjJM4+p6DZz
-2lAy7FuTWhtDkiM4YLnB/08ovJajvozYfC5vHir6M1PU3TVjgVFrqP5WHkoweoCpNfWaJ7uCvhRd
-OP6pPsOOLem0TaSdRzKq8c3XNGOVpd2knj//Q0MG/DjFd8Pg4nT7TYPgfYQE3zZgRV7r734/nT6a
-sJxK/G==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.2.0
+ */
+
+/**
+ * XML helpers.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.2.0
+ */
+class PHPUnit_Util_XML
+{
+    /**
+     * @param  string $string
+     * @return string
+     * @author Kore Nordmann <mail@kore-nordmann.de>
+     * @since  Method available since Release 3.4.6
+     */
+    public static function prepareString($string)
+    {
+        return preg_replace_callback(
+          '/[\\x00-\\x04\\x0b\\x0c\\x0e-\\x1f\\x7f]/',
+          function ($matches)
+          {
+              return sprintf('&#x%02x;', ord($matches[0]));
+          },
+          htmlspecialchars(
+            PHPUnit_Util_String::convertToUtf8($string), ENT_COMPAT, 'UTF-8'
+          )
+        );
+    }
+
+    /**
+     * Loads an XML (or HTML) file into a DOMDocument object.
+     *
+     * @param  string  $filename
+     * @param  boolean $isHtml
+     * @param  boolean $xinclude
+     * @return DOMDocument
+     * @since  Method available since Release 3.3.0
+     */
+    public static function loadFile($filename, $isHtml = FALSE, $xinclude = FALSE)
+    {
+        $reporting = error_reporting(0);
+        $contents  = file_get_contents($filename);
+        error_reporting($reporting);
+
+        if ($contents === FALSE) {
+            throw new PHPUnit_Framework_Exception(
+              sprintf(
+                'Could not read "%s".',
+                $filename
+              )
+            );
+        }
+
+        return self::load($contents, $isHtml, $filename, $xinclude);
+    }
+
+    /**
+     * Load an $actual document into a DOMDocument.  This is called
+     * from the selector assertions.
+     *
+     * If $actual is already a DOMDocument, it is returned with
+     * no changes.  Otherwise, $actual is loaded into a new DOMDocument
+     * as either HTML or XML, depending on the value of $isHtml. If $isHtml is
+     * false and $xinclude is true, xinclude is performed on the loaded
+     * DOMDocument.
+     *
+     * Note: prior to PHPUnit 3.3.0, this method loaded a file and
+     * not a string as it currently does.  To load a file into a
+     * DOMDocument, use loadFile() instead.
+     *
+     * @param  string|DOMDocument  $actual
+     * @param  boolean             $isHtml
+     * @param  string              $filename
+     * @param  boolean             $xinclude
+     * @return DOMDocument
+     * @since  Method available since Release 3.3.0
+     * @author Mike Naberezny <mike@maintainable.com>
+     * @author Derek DeVries <derek@maintainable.com>
+     * @author Tobias Schlitt <toby@php.net>
+     */
+    public static function load($actual, $isHtml = FALSE, $filename = '', $xinclude = FALSE)
+    {
+        if ($actual instanceof DOMDocument) {
+            return $actual;
+        }
+
+        $document  = new DOMDocument;
+
+        $internal  = libxml_use_internal_errors(TRUE);
+        $message   = '';
+        $reporting = error_reporting(0);
+
+        if ($isHtml) {
+            $loaded = $document->loadHTML($actual);
+        } else {
+            $loaded = $document->loadXML($actual);
+        }
+
+        if ('' !== $filename) {
+            // Necessary for xinclude
+            $document->documentURI = $filename;
+        }
+
+        if (!$isHtml && $xinclude) {
+            $document->xinclude();
+        }
+
+        foreach (libxml_get_errors() as $error) {
+            $message .= $error->message;
+        }
+
+        libxml_use_internal_errors($internal);
+        error_reporting($reporting);
+
+        if ($loaded === FALSE) {
+            if ($filename != '') {
+                throw new PHPUnit_Framework_Exception(
+                  sprintf(
+                    'Could not load "%s".%s',
+
+                    $filename,
+                    $message != '' ? "\n" . $message : ''
+                  )
+                );
+            } else {
+                throw new PHPUnit_Framework_Exception($message);
+            }
+        }
+
+        return $document;
+    }
+
+    /**
+     *
+     *
+     * @param  DOMNode $node
+     * @return string
+     * @since  Method available since Release 3.4.0
+     */
+    public static function nodeToText(DOMNode $node)
+    {
+        if ($node->childNodes->length == 1) {
+            return $node->nodeValue;
+        }
+
+        $result = '';
+
+        foreach ($node->childNodes as $childNode) {
+            $result .= $node->ownerDocument->saveXML($childNode);
+        }
+
+        return $result;
+    }
+
+    /**
+     *
+     *
+     * @param  DOMNode $node
+     * @since  Method available since Release 3.3.0
+     * @author Mattis Stordalen Flister <mattis@xait.no>
+     */
+    public static function removeCharacterDataNodes(DOMNode $node)
+    {
+        if ($node->hasChildNodes()) {
+            for ($i = $node->childNodes->length - 1; $i >= 0; $i--) {
+                if (($child = $node->childNodes->item($i)) instanceof DOMCharacterData) {
+                    $node->removeChild($child);
+                }
+            }
+        }
+    }
+
+    /**
+     * "Convert" a DOMElement object into a PHP variable.
+     *
+     * @param  DOMElement $element
+     * @return mixed
+     * @since  Method available since Release 3.4.0
+     */
+    public static function xmlToVariable(DOMElement $element)
+    {
+        $variable = NULL;
+
+        switch ($element->tagName) {
+            case 'array': {
+                $variable = array();
+
+                foreach ($element->getElementsByTagName('element') as $element) {
+                    $value = self::xmlToVariable($element->childNodes->item(1));
+
+                    if ($element->hasAttribute('key')) {
+                        $variable[(string)$element->getAttribute('key')] = $value;
+                    } else {
+                        $variable[] = $value;
+                    }
+                }
+            }
+            break;
+
+            case 'object': {
+                $className = $element->getAttribute('class');
+
+                if ($element->hasChildNodes()) {
+                    $arguments       = $element->childNodes->item(1)->childNodes;
+                    $constructorArgs = array();
+
+                    foreach ($arguments as $argument) {
+                        if ($argument instanceof DOMElement) {
+                            $constructorArgs[] = self::xmlToVariable($argument);
+                        }
+                    }
+
+                    $class    = new ReflectionClass($className);
+                    $variable = $class->newInstanceArgs($constructorArgs);
+                } else {
+                    $variable = new $className;
+                }
+            }
+            break;
+
+            case 'boolean': {
+                $variable = $element->nodeValue == 'true' ? TRUE : FALSE;
+            }
+            break;
+
+            case 'integer':
+            case 'double':
+            case 'string': {
+                $variable = $element->nodeValue;
+
+                settype($variable, $element->tagName);
+            }
+            break;
+        }
+
+        return $variable;
+    }
+
+    /**
+     * Validate list of keys in the associative array.
+     *
+     * @param  array $hash
+     * @param  array $validKeys
+     * @return array
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.3.0
+     * @author Mike Naberezny <mike@maintainable.com>
+     * @author Derek DeVries <derek@maintainable.com>
+     */
+    public static function assertValidKeys(array $hash, array $validKeys)
+    {
+        $valids = array();
+
+        // Normalize validation keys so that we can use both indexed and
+        // associative arrays.
+        foreach ($validKeys as $key => $val) {
+            is_int($key) ? $valids[$val] = NULL : $valids[$key] = $val;
+        }
+
+        $validKeys = array_keys($valids);
+
+        // Check for invalid keys.
+        foreach ($hash as $key => $value) {
+            if (!in_array($key, $validKeys)) {
+                $unknown[] = $key;
+            }
+        }
+
+        if (!empty($unknown)) {
+            throw new PHPUnit_Framework_Exception(
+              'Unknown key(s): ' . implode(', ', $unknown)
+            );
+        }
+
+        // Add default values for any valid keys that are empty.
+        foreach ($valids as $key => $value) {
+            if (!isset($hash[$key])) {
+                $hash[$key] = $value;
+            }
+        }
+
+        return $hash;
+    }
+
+    /**
+     * Parse a CSS selector into an associative array suitable for
+     * use with findNodes().
+     *
+     * @param  string $selector
+     * @param  mixed  $content
+     * @return array
+     * @since  Method available since Release 3.3.0
+     * @author Mike Naberezny <mike@maintainable.com>
+     * @author Derek DeVries <derek@maintainable.com>
+     */
+    public static function convertSelectToTag($selector, $content = TRUE)
+    {
+        $selector = trim(preg_replace("/\s+/", " ", $selector));
+
+        // substitute spaces within attribute value
+        while (preg_match('/\[[^\]]+"[^"]+\s[^"]+"\]/', $selector)) {
+            $selector = preg_replace(
+              '/(\[[^\]]+"[^"]+)\s([^"]+"\])/', "$1__SPACE__$2", $selector
+            );
+        }
+
+        if (strstr($selector, ' ')) {
+            $elements = explode(' ', $selector);
+        } else {
+            $elements = array($selector);
+        }
+
+        $previousTag = array();
+
+        foreach (array_reverse($elements) as $element) {
+            $element = str_replace('__SPACE__', ' ', $element);
+
+            // child selector
+            if ($element == '>') {
+                $previousTag = array('child' => $previousTag['descendant']);
+                continue;
+            }
+
+            $tag = array();
+
+            // match element tag
+            preg_match("/^([^\.#\[]*)/", $element, $eltMatches);
+
+            if (!empty($eltMatches[1])) {
+                $tag['tag'] = $eltMatches[1];
+            }
+
+            // match attributes (\[[^\]]*\]*), ids (#[^\.#\[]*),
+            // and classes (\.[^\.#\[]*))
+            preg_match_all(
+              "/(\[[^\]]*\]*|#[^\.#\[]*|\.[^\.#\[]*)/", $element, $matches
+            );
+
+            if (!empty($matches[1])) {
+                $classes = array();
+                $attrs   = array();
+
+                foreach ($matches[1] as $match) {
+                    // id matched
+                    if (substr($match, 0, 1) == '#') {
+                        $tag['id'] = substr($match, 1);
+                    }
+
+                    // class matched
+                    else if (substr($match, 0, 1) == '.') {
+                        $classes[] = substr($match, 1);
+                    }
+
+                    // attribute matched
+                    else if (substr($match, 0, 1) == '[' &&
+                             substr($match, -1, 1) == ']') {
+                        $attribute = substr($match, 1, strlen($match) - 2);
+                        $attribute = str_replace('"', '', $attribute);
+
+                        // match single word
+                        if (strstr($attribute, '~=')) {
+                            list($key, $value) = explode('~=', $attribute);
+                            $value             = "regexp:/.*\b$value\b.*/";
+                        }
+
+                        // match substring
+                        else if (strstr($attribute, '*=')) {
+                            list($key, $value) = explode('*=', $attribute);
+                            $value             = "regexp:/.*$value.*/";
+                        }
+
+                        // exact match
+                        else {
+                            list($key, $value) = explode('=', $attribute);
+                        }
+
+                        $attrs[$key] = $value;
+                    }
+                }
+
+                if ($classes) {
+                    $tag['class'] = join(' ', $classes);
+                }
+
+                if ($attrs) {
+                    $tag['attributes'] = $attrs;
+                }
+            }
+
+            // tag content
+            if (is_string($content)) {
+                $tag['content'] = $content;
+            }
+
+            // determine previous child/descendants
+            if (!empty($previousTag['descendant'])) {
+                $tag['descendant'] = $previousTag['descendant'];
+            }
+
+            else if (!empty($previousTag['child'])) {
+                $tag['child'] = $previousTag['child'];
+            }
+
+            $previousTag = array('descendant' => $tag);
+        }
+
+        return $tag;
+    }
+
+    /**
+     * Parse an $actual document and return an array of DOMNodes
+     * matching the CSS $selector.  If an error occurs, it will
+     * return FALSE.
+     *
+     * To only return nodes containing a certain content, give
+     * the $content to match as a string.  Otherwise, setting
+     * $content to TRUE will return all nodes matching $selector.
+     *
+     * The $actual document may be a DOMDocument or a string
+     * containing XML or HTML, identified by $isHtml.
+     *
+     * @param  array   $selector
+     * @param  string  $content
+     * @param  mixed   $actual
+     * @param  boolean $isHtml
+     * @return false|array
+     * @since  Method available since Release 3.3.0
+     * @author Mike Naberezny <mike@maintainable.com>
+     * @author Derek DeVries <derek@maintainable.com>
+     * @author Tobias Schlitt <toby@php.net>
+     */
+    public static function cssSelect($selector, $content, $actual, $isHtml = TRUE)
+    {
+        $matcher = self::convertSelectToTag($selector, $content);
+        $dom     = self::load($actual, $isHtml);
+        $tags    = self::findNodes($dom, $matcher, $isHtml);
+
+        return $tags;
+    }
+
+    /**
+     * Parse out the options from the tag using DOM object tree.
+     *
+     * @param  DOMDocument $dom
+     * @param  array       $options
+     * @param  boolean     $isHtml
+     * @return array
+     * @since  Method available since Release 3.3.0
+     * @author Mike Naberezny <mike@maintainable.com>
+     * @author Derek DeVries <derek@maintainable.com>
+     * @author Tobias Schlitt <toby@php.net>
+     */
+    public static function findNodes(DOMDocument $dom, array $options, $isHtml = TRUE)
+    {
+        $valid = array(
+          'id', 'class', 'tag', 'content', 'attributes', 'parent',
+          'child', 'ancestor', 'descendant', 'children'
+        );
+
+        $filtered = array();
+        $options  = self::assertValidKeys($options, $valid);
+
+        // find the element by id
+        if ($options['id']) {
+            $options['attributes']['id'] = $options['id'];
+        }
+
+        if ($options['class']) {
+            $options['attributes']['class'] = $options['class'];
+        }
+
+        // find the element by a tag type
+        if ($options['tag']) {
+            if ($isHtml) {
+                $elements = self::getElementsByCaseInsensitiveTagName(
+                  $dom, $options['tag']
+                );
+            } else {
+                $elements = $dom->getElementsByTagName($options['tag']);
+            }
+
+            foreach ($elements as $element) {
+                $nodes[] = $element;
+            }
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // no tag selected, get them all
+        else {
+            $tags = array(
+              'a', 'abbr', 'acronym', 'address', 'area', 'b', 'base', 'bdo',
+              'big', 'blockquote', 'body', 'br', 'button', 'caption', 'cite',
+              'code', 'col', 'colgroup', 'dd', 'del', 'div', 'dfn', 'dl',
+              'dt', 'em', 'fieldset', 'form', 'frame', 'frameset', 'h1', 'h2',
+              'h3', 'h4', 'h5', 'h6', 'head', 'hr', 'html', 'i', 'iframe',
+              'img', 'input', 'ins', 'kbd', 'label', 'legend', 'li', 'link',
+              'map', 'meta', 'noframes', 'noscript', 'object', 'ol', 'optgroup',
+              'option', 'p', 'param', 'pre', 'q', 'samp', 'script', 'select',
+              'small', 'span', 'strong', 'style', 'sub', 'sup', 'table',
+              'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'title',
+              'tr', 'tt', 'ul', 'var'
+            );
+
+            foreach ($tags as $tag) {
+                if ($isHtml) {
+                    $elements = self::getElementsByCaseInsensitiveTagName(
+                      $dom, $tag
+                    );
+                } else {
+                    $elements = $dom->getElementsByTagName($tag);
+                }
+
+                foreach ($elements as $element) {
+                    $nodes[] = $element;
+                }
+            }
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // filter by attributes
+        if ($options['attributes']) {
+            foreach ($nodes as $node) {
+                $invalid = FALSE;
+
+                foreach ($options['attributes'] as $name => $value) {
+                    // match by regexp if like "regexp:/foo/i"
+                    if (preg_match('/^regexp\s*:\s*(.*)/i', $value, $matches)) {
+                        if (!preg_match($matches[1], $node->getAttribute($name))) {
+                            $invalid = TRUE;
+                        }
+                    }
+
+                    // class can match only a part
+                    else if ($name == 'class') {
+                        // split to individual classes
+                        $findClasses = explode(
+                          ' ', preg_replace("/\s+/", " ", $value)
+                        );
+
+                        $allClasses = explode(
+                          ' ',
+                          preg_replace("/\s+/", " ", $node->getAttribute($name))
+                        );
+
+                        // make sure each class given is in the actual node
+                        foreach ($findClasses as $findClass) {
+                            if (!in_array($findClass, $allClasses)) {
+                                $invalid = TRUE;
+                            }
+                        }
+                    }
+
+                    // match by exact string
+                    else {
+                        if ($node->getAttribute($name) != $value) {
+                            $invalid = TRUE;
+                        }
+                    }
+                }
+
+                // if every attribute given matched
+                if (!$invalid) {
+                    $filtered[] = $node;
+                }
+            }
+
+            $nodes    = $filtered;
+            $filtered = array();
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // filter by content
+        if ($options['content'] !== NULL) {
+            foreach ($nodes as $node) {
+                $invalid = FALSE;
+
+                // match by regexp if like "regexp:/foo/i"
+                if (preg_match('/^regexp\s*:\s*(.*)/i', $options['content'], $matches)) {
+                    if (!preg_match($matches[1], self::getNodeText($node))) {
+                        $invalid = TRUE;
+                    }
+                }
+
+                // match empty string
+                else if ($options['content'] === '') {
+                    if (self::getNodeText($node) !== '') {
+                        $invalid = TRUE;
+                    }
+                }
+
+                // match by exact string
+                else if (strstr(self::getNodeText($node), $options['content']) === FALSE) {
+                    $invalid = TRUE;
+                }
+
+                if (!$invalid) {
+                    $filtered[] = $node;
+                }
+            }
+
+            $nodes    = $filtered;
+            $filtered = array();
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // filter by parent node
+        if ($options['parent']) {
+            $parentNodes = self::findNodes($dom, $options['parent'], $isHtml);
+            $parentNode  = isset($parentNodes[0]) ? $parentNodes[0] : NULL;
+
+            foreach ($nodes as $node) {
+                if ($parentNode !== $node->parentNode) {
+                    continue;
+                }
+
+                $filtered[] = $node;
+            }
+
+            $nodes    = $filtered;
+            $filtered = array();
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // filter by child node
+        if ($options['child']) {
+            $childNodes = self::findNodes($dom, $options['child'], $isHtml);
+            $childNodes = !empty($childNodes) ? $childNodes : array();
+
+            foreach ($nodes as $node) {
+                foreach ($node->childNodes as $child) {
+                    foreach ($childNodes as $childNode) {
+                        if ($childNode === $child) {
+                            $filtered[] = $node;
+                        }
+                    }
+                }
+            }
+
+            $nodes    = $filtered;
+            $filtered = array();
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // filter by ancestor
+        if ($options['ancestor']) {
+            $ancestorNodes = self::findNodes($dom, $options['ancestor'], $isHtml);
+            $ancestorNode  = isset($ancestorNodes[0]) ? $ancestorNodes[0] : NULL;
+
+            foreach ($nodes as $node) {
+                $parent = $node->parentNode;
+
+                while ($parent && $parent->nodeType != XML_HTML_DOCUMENT_NODE) {
+                    if ($parent === $ancestorNode) {
+                        $filtered[] = $node;
+                    }
+
+                    $parent = $parent->parentNode;
+                }
+            }
+
+            $nodes    = $filtered;
+            $filtered = array();
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // filter by descendant
+        if ($options['descendant']) {
+            $descendantNodes = self::findNodes($dom, $options['descendant'], $isHtml);
+            $descendantNodes = !empty($descendantNodes) ? $descendantNodes : array();
+
+            foreach ($nodes as $node) {
+                foreach (self::getDescendants($node) as $descendant) {
+                    foreach ($descendantNodes as $descendantNode) {
+                        if ($descendantNode === $descendant) {
+                            $filtered[] = $node;
+                        }
+                    }
+                }
+            }
+
+            $nodes    = $filtered;
+            $filtered = array();
+
+            if (empty($nodes)) {
+                return FALSE;
+            }
+        }
+
+        // filter by children
+        if ($options['children']) {
+            $validChild   = array('count', 'greater_than', 'less_than', 'only');
+            $childOptions = self::assertValidKeys(
+                              $options['children'], $validChild
+                            );
+
+            foreach ($nodes as $node) {
+                $childNodes = $node->childNodes;
+
+                foreach ($childNodes as $childNode) {
+                    if ($childNode->nodeType !== XML_CDATA_SECTION_NODE &&
+                        $childNode->nodeType !== XML_TEXT_NODE) {
+                        $children[] = $childNode;
+                    }
+                }
+
+                // we must have children to pass this filter
+                if (!empty($children)) {
+                    // exact count of children
+                    if ($childOptions['count'] !== NULL) {
+                        if (count($children) !== $childOptions['count']) {
+                            break;
+                        }
+                    }
+
+                    // range count of children
+                    else if ($childOptions['less_than']    !== NULL &&
+                            $childOptions['greater_than'] !== NULL) {
+                        if (count($children) >= $childOptions['less_than'] ||
+                            count($children) <= $childOptions['greater_than']) {
+                            break;
+                        }
+                    }
+
+                    // less than a given count
+                    else if ($childOptions['less_than'] !== NULL) {
+                        if (count($children) >= $childOptions['less_than']) {
+                            break;
+                        }
+                    }
+
+                    // more than a given count
+                    else if ($childOptions['greater_than'] !== NULL) {
+                        if (count($children) <= $childOptions['greater_than']) {
+                            break;
+                        }
+                    }
+
+                    // match each child against a specific tag
+                    if ($childOptions['only']) {
+                        $onlyNodes = self::findNodes(
+                          $dom, $childOptions['only'], $isHtml
+                        );
+
+                        // try to match each child to one of the 'only' nodes
+                        foreach ($children as $child) {
+                            $matched = FALSE;
+
+                            foreach ($onlyNodes as $onlyNode) {
+                                if ($onlyNode === $child) {
+                                    $matched = TRUE;
+                                }
+                            }
+
+                            if (!$matched) {
+                                break(2);
+                            }
+                        }
+                    }
+
+                    $filtered[] = $node;
+                }
+            }
+
+            $nodes    = $filtered;
+            $filtered = array();
+
+            if (empty($nodes)) {
+                return;
+            }
+        }
+
+        // return the first node that matches all criteria
+        return !empty($nodes) ? $nodes : array();
+    }
+
+    /**
+     * Recursively get flat array of all descendants of this node.
+     *
+     * @param  DOMNode $node
+     * @return array
+     * @since  Method available since Release 3.3.0
+     * @author Mike Naberezny <mike@maintainable.com>
+     * @author Derek DeVries <derek@maintainable.com>
+     */
+    protected static function getDescendants(DOMNode $node)
+    {
+        $allChildren = array();
+        $childNodes  = $node->childNodes ? $node->childNodes : array();
+
+        foreach ($childNodes as $child) {
+            if ($child->nodeType === XML_CDATA_SECTION_NODE ||
+                $child->nodeType === XML_TEXT_NODE) {
+                continue;
+            }
+
+            $children    = self::getDescendants($child);
+            $allChildren = array_merge($allChildren, $children, array($child));
+        }
+
+        return isset($allChildren) ? $allChildren : array();
+    }
+
+    /**
+     * Gets elements by case insensitive tagname.
+     *
+     * @param  DOMDocument $dom
+     * @param  string      $tag
+     * @return DOMNodeList
+     * @since  Method available since Release 3.4.0
+     */
+    protected static function getElementsByCaseInsensitiveTagName(DOMDocument $dom, $tag)
+    {
+        $elements = $dom->getElementsByTagName(strtolower($tag));
+
+        if ($elements->length == 0) {
+            $elements = $dom->getElementsByTagName(strtoupper($tag));
+        }
+
+        return $elements;
+    }
+
+    /**
+     * Get the text value of this node's child text node.
+     *
+     * @param  DOMNode $node
+     * @return string
+     * @since  Method available since Release 3.3.0
+     * @author Mike Naberezny <mike@maintainable.com>
+     * @author Derek DeVries <derek@maintainable.com>
+     */
+    protected static function getNodeText(DOMNode $node)
+    {
+        if (!$node->childNodes instanceof DOMNodeList) {
+            return '';
+        }
+
+        $result = '';
+
+        foreach ($node->childNodes as $childNode) {
+            if ($childNode->nodeType === XML_TEXT_NODE ||
+                $childNode->nodeType === XML_CDATA_SECTION_NODE) {
+                $result .= trim($childNode->data) . ' ';
+            } else {
+                $result .= self::getNodeText($childNode);
+            }
+        }
+
+        return str_replace('  ', ' ', $result);
+    }
+}

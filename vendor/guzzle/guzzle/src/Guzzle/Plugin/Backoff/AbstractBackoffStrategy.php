@@ -1,49 +1,91 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Plugin\Backoff;
+
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Exception\HttpException;
+
+/**
+ * Abstract backoff strategy that allows for a chain of responsibility
+ */
+abstract class AbstractBackoffStrategy implements BackoffStrategyInterface
+{
+    /** @var AbstractBackoffStrategy Next strategy in the chain */
+    protected $next;
+
+    /** @param AbstractBackoffStrategy $next Next strategy in the chain */
+    public function setNext(AbstractBackoffStrategy $next)
+    {
+        $this->next = $next;
+    }
+
+    /**
+     * Get the next backoff strategy in the chain
+     *
+     * @return AbstractBackoffStrategy|null
+     */
+    public function getNext()
+    {
+        return $this->next;
+    }
+
+    public function getBackoffPeriod(
+        $retries,
+        RequestInterface $request,
+        Response $response = null,
+        HttpException $e = null
+    ) {
+        $delay = $this->getDelay($retries, $request, $response, $e);
+        if ($delay === false) {
+            // The strategy knows that this must not be retried
+            return false;
+        } elseif ($delay === null) {
+            // If the strategy is deferring a decision and the next strategy will not make a decision then return false
+            return !$this->next || !$this->next->makesDecision()
+                ? false
+                : $this->next->getBackoffPeriod($retries, $request, $response, $e);
+        } elseif ($delay === true) {
+            // if the strategy knows that it must retry but is deferring to the next to determine the delay
+            if (!$this->next) {
+                return 0;
+            } else {
+                $next = $this->next;
+                while ($next->makesDecision() && $next->getNext()) {
+                    $next = $next->getNext();
+                }
+                return !$next->makesDecision() ? $next->getBackoffPeriod($retries, $request, $response, $e) : 0;
+            }
+        } else {
+            return $delay;
+        }
+    }
+
+    /**
+     * Check if the strategy does filtering and makes decisions on whether or not to retry.
+     *
+     * Strategies that return false will never retry if all of the previous strategies in a chain defer on a backoff
+     * decision.
+     *
+     * @return bool
+     */
+    abstract public function makesDecision();
+
+    /**
+     * Implement the concrete strategy
+     *
+     * @param int              $retries  Number of retries of the request
+     * @param RequestInterface $request  Request that was sent
+     * @param Response         $response Response that was received. Note that there may not be a response
+     * @param HttpException    $e        Exception that was encountered if any
+     *
+     * @return bool|int|null Returns false to not retry or the number of seconds to delay between retries. Return true
+     *                       or null to defer to the next strategy if available, and if not, return 0.
+     */
+    abstract protected function getDelay(
+        $retries,
+        RequestInterface $request,
+        Response $response = null,
+        HttpException $e = null
+    );
+}

@@ -1,103 +1,242 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPwSUP/RVoblwijZorTINzIcPtBao4GG7Z8gi1zCXtYS7V4ETM8NOhY35pJxIeE2k+GMxw7h3
-nmsTcsUsR6HurSRiA7IIZ/2GZveUmE7teqTpvE21GvRhfDzZyw9AReBnllyTDdhBbQlNydwsWGdw
-J79P6gydY8qeyPVSWZh/g70wX5m+4/fR5um/daKoHvIqjFPfIi8NuRZU2puVkaX1VEwcn0EbO4Dv
-rwqh9WRocXRwxmuedVGOhr4euJltSAgiccy4GDnfT11g3Dl5KQsXINjoczXroRyqzTBxT5Q3KUxI
-1vLhvnUGoyMIvtryKHwYO4z7SS5Wj+e/YfaRQOcFPe9+jBRcPrprqP+6Io7LKh2peE65ntASuJ5z
-2bsHeS1M8AJ7WkC4oi4JtXsoi53rKvmg0PefPg+sIBTpw4ZdV0/nf7pKyOGbTUYGzLbl5EQlVOvU
-zSYARLhJQMPEWokLjUMyG/4X5PQguayW5+SBOoqjfQAcs+Lm7Fa4+EonSMVo/KIVVDs8eOh34c+U
-8wPm3mjKava3EumFvqx4Z6Y01f/7QHbZNW5CXumL5uHbqEzudDAf78mJl2/mhW50a2UeT4Wc7Yig
-3nhXt40ptxMmb35h2OTlhBfzxYOlGILn3naga9WZMhnl/znCdy1up63iD2IqGJuCmCXaUW8p5SOS
-eD83nvcqVohriS3nISDtmekR8cV7oUifvHQNd/dzf4ZK7jHInqHJjQFoOgJmHbaYNJdW2RKOd4Rb
-rb6sBHKkleleSKoJZuPZ38xOGmoCLeY5aqYDmdEozozLemB/PnoOOZXuS3yCZuXZiJzL2a2G63bP
-dwpO2r8IQTWUzkgavxF5nsQU4aPnHX9PBXLG1M42td1ztkcZyd7W+9V9lYIjKSHQaV15dkJkyIIo
-AEBT/JQ9L3HAeUTbqBamdzdIxRjFb21w7oGV1cxyumMmHtwu13kZ0bUMBNMiomIy76FACGaXM2lj
-glNl55LGJFuGJjxO2flIyyjf6auCD+WFOu2z/c2Us+6kmPWSTE6dpMwHcBqaqm2YD7WoyOdG+vcm
-etliU+RCVENMy2pDn4Oo7kCPBCWHhi/NriyWieQtK21miFpzWbz2VgYn3/Q4yAS6fA5Dmf/OTfgr
-vxrl1+vUXDXEFcvoJnJfRJNcWWgbuU5ZlEBXCdwLVtWKTmKk3PBq5AkuMVFUVR53UmcePPJzvxzm
-AAGUh9mV5us4l2bXkNBCLn/TVreIvr5a06DQbYNE5gRsXQ0mIUGOt3N33eRlWbSo5YYgnRUVm8Ns
-34xFpRTyZj9SNzN8O6mx3e5M/AffGeoEUIyUXmTTraW4mwSS/AXqFZVaJPIWOfjN5tfxG8/ThKme
-ZfdXmMqKXSsIGZ7kwytYVPpdNVtgChI27oFGHHkMGencNdAiNOeWoZEBQXVBqW+7MS59Q9/I4yJW
-SqIZ2PoAXcje5DFRWR4JQLdVjdEU2zCTnwTr+2VesuHyxdTrd63/quAVftVALpDLkC84tTm9BlUr
-qtse1Wex6PkhYqdbRcKF52sOvGmJopFCY3HxVAz+i3qBEzwsoRtFPx2CkiowxvneNTG+k6NNCPaa
-UZbTl4z58jjVlQ2wB+3dlLQTK0WeAzFG5kCqD5PhBW1gsWLvsK8iIYyvvUDGqcBdLJMI4qmOk63F
-Wcg5in5XpJJtxsAFD8iLrW5QsnOJzOXjLoAi9ePmBytYX7sT5xzfAQK1QSDQK6cHQ4rPk4cO49+9
-oLY6S3NkWSIgPdmKBnbQ08IhOdtlYLhma7xzirlsPjbB1WbFgSglywgfpQvXrP628MHDRZzfZjwB
-LyqZqZAnAOeMD5ox5K0SZzk78qjrOWRp8Tu9GBCYbJlqLfI9FhIrgAePiOKmW5R3BfMO5fDtRbbz
-Y+OpY9UiME6fX0qeIURufgezHufMXBVXYyut9qLqb4TiCo5SWSnME4mW/qP6aDrtoKCwATqvMeuM
-YfowTwhYT3RALwj31oAZ8idSK9nqZ/lb0xtKIBtIbv5+6keOgRfe1Vz2vuzVFUk/AREgtCKo8LS1
-ZBzZt/oq5HQ2SVv4+qOnhvA3XUDzdwOl9k6VuFEK9eUNj669nYL81Eu7SHlTtbJVAwRrDIdhTKIN
-VKHg4fLXPhE9N1FAuRTsmZt7SFaNHHNiBORu92kNJPKdmD0H6F0xVeLzUcr1MKM3RbNLX4hgbbGf
-jabDqp03Tb/uhFzsuMJNZ7AlG4tDiSOpQ0Z7+MafvETSmJJq47DCWPqIoUPWgf71hKOzT+B/Wm10
-LfsFbABDcQoixrfWjCSubfqJNaLL/Dr3zLgCU9AYWD+6/W/ocpTCjZvG7Wv70sPQ/kHM7nyDG75j
-yghOsdNQdYX52pGL/rcWkdoS5IDKInl3gbFPVo/BYLJZTt6PdCrQHjVUQkhkpJ99cQbCpL8U+E2h
-WTCRe7kCLUvqZk8LhdqOLBIPd5h1vHd8TWmOqWWq9X069TOTCdAYse3pKVAkA7IzLCibg1A5tZYC
-p1j14GXKf1HGKsKFTg9nm3HsLOQiswVNUDD25B3mbjRogUoG2i204OxhQqLUMMzugysH3XY20Mzg
-0LHosxjtRO0MvwcKBhqoTQ3a/xaHbTrBRkn2iVUyDXoFKfeieRFMzi7A376yku5o29wK75oEaNLO
-PZ2j9OA+jhQbSR/9EgxS4dhqJWWLwOlXf9owNpGvjUaNfRXCV/3bz14wCbiGw6MgtBl8keor/jH2
-NikeiF/zmEI1IXCcDUQ/ZGn5MccBRoBQYXec0/gAifMkYyMGhWtG5VOqgv5SBCII4JQJglCrT6BA
-R8jZDwvbnfIQsrklPDjQ6hQeHXug10lZUCFleVqajJHfDeUPP9HO+9DuuoI0+5mUjeTkFJiM/f5U
-ioABIdRWirKAbbBum0VBs+/7a6PrxE9RD2CjyL2BZs2O1sPzQHoIuiar9TT67f1Mjrikcb0I5Ws/
-ieF1XGggt6V2eYa7EJ4MywM2toDhZZZsXtOXRTHfRH5Lp9FRo6weONN9tAPfrmtwmUVmy8gp+N6O
-iKYwBvieTGQFhDoktNJ1KuguTH4Mn60roOXIObQ5OZNtykAcs1s8ZLsw+oRzRbTpVB2s7em72XKk
-kT3/NRqC5pEojyO1/VKfQIJI0ND2MZRqP+yD1n0JKXKWb0ZFSSVELtuIpPP+HjakJL+IrD8Qe6fO
-39XkaDbr/O2LuAbvAma5RFzSxdMGXj/RJbWSTilFGXZlCggpM2sYnzkJd0aqaodPbiPS6ciWu9OD
-+Am4ucvO5NI9HpZbVi5WCVPtrQlixgzQ0XH2MXON8+Vf964zk7q3LeaxTp/gKjq7OAuNN8eIwQjq
-mwO/mV2pad0gPkK8NfzUdRLACnUzhwlZrtt1bgwPkI1n/Kz7mt/u2jZm/EtS9iZtPdny/uAq1YEk
-6KFEKu0/S68PE9/A+yffdv9slvs8Sdyzgo9pYxIqfbe96ANNGCg7DaQ8fEZsRdtyJSLyvC5mDKE9
-+xRHGBuS6eNN51PfuqAivcndJTQhwFlE/HBnhNgy8Dj1dTfBSpCwA2p6fWKNyoJqO+h53tAylPsv
-JzVH6GKi116SPa2k4D4n+iaPGujtc6PjLO99bfSDUE3qf73OH8779DNgDJ2WFzFnxQrT6DH8uoxc
-5/scUl+n6L6H7rbL1uP1c3ZUERFbn1ajRRfbK56NDSxbvPKjqXrt6+FGpGH1tpqD9ZzKwiGsPv1y
-WllwNUDBUCItmE6JSXnHruKdfCKKFo8e6YvPT1jY3owSaxaE5kn7B7QGuz33a8k66BBQjUBA7efW
-26z7DK4UPeAWV4o7sc+I6syDaxE+hEiSepSq/hPM9SvxzYPWL7NWMAP6TBxdoPK8OouOZZjHz8zJ
-tFBqJddzTLd+x/DiBzvgcKLldl3j9GZ0jDdAVOxYd400YMheQXHlKiC/im34Z9uPkgIbMFwwbUTx
-qBI+Lll44yaeOnbHqSHqX4DzUidmAFZBuQo19kwVRRiOj62wveIi0iko7Xv14ajj9cTy7oR3re0M
-uYOnbNTNreLFD8tANq85qom+n7OODg89OLdyNTUoHIT9tTHtIbipEs3BzB9kfTrpInaY5dYdJMXy
-Plyd8RB/2EXOfpychEenCv3pKT3R1xbD2nmm98gpmvUVPwyF6MeFt6NUttHI50mKcAtRXWz/nNaH
-4SHJtV+HHgPgS4714X3fAiCioeQGgOYQGKPq2xOCirQ5LchEtLxGGfaBMSUAugVrcf1g4kTgr5pY
-9hzFxBYYNFe3KtWsVgNHWC0rj8qT76hCtLY05PtCfj6NcngrjDxOMiP5nkaTfORpt/Fx4JvHvVQN
-IMZu/Hl7BMcZ5g3f/iubm7hl52c2KP06xSllGCRRg7oRk35Q9vnruLfj6FuYHXCqzew9xWw2e55q
-RfgZzcsmAJcvy58G3BiwW/O954TQD/nympJValepedFN9ExrPX5zxF2aRO0eYlqwsrq9IC5Hin8i
-NNN52pXx1FBbspqva2Ys86fzHjIfDyIotUwi/IN0IsXfMI16utMvHm7sxw5/IP0TekZBTrFYuEs3
-pQMGOLz2WYY5NAc2my+9pFnKPVeCGog74ubiQj52kCilDSGVaxeAGu1rLZkxCebKvAStsWQ1EWzc
-PJL9uW6QeXiBFlM7WGavo1X+NHdQyfFTMbmkC/Il+VGq7M3bf8hC945BxxIiRj8nrIMxpoZFAzy/
-8POvum0dfJaCae6Ka667EEYFmYmC5Y+FL+8xU0o1gwbI1+Gmnos+oGNf7/MopMCsp4a84aeWhL2t
-a19L4bBxDAWGqS7aUSs8oJk7mxcrNTYvgqf5eNOI5mKwO1+zyvVsCYV4STGahp5ymC9stbM2FZGp
-ZQ37p28VpvU2wRlFr9Z3U12XBsxG0EXav/pXrnAsY3wXyyWh/7wYbPl+iYwNllZAgFL37sECFqtF
-QYrz4f3xIHOk3c+qgMcp98zAbt03osNpun+izZyq8034yBxI/Su6dG1YuU/W/pkQ1yszJBZPT5s8
-k3+FZzNXhXaiybq08vilS2hUBJQXK5h2vYylUtoxhSxsWVdbvBpgvyjBgqFu3ESDLrF0WLgeSBz5
-ulz1Y37wAs3dD09fja1b0K6P9qIhU+PI6CWljL+INM83PugbBlz2GT94m+FwqJETJX3FWjKM1vO3
-p07Q1ktEiN4qb6eOFPrbmFZfupHSA1OECaPf5n9A8wW2PtnMJtCdTBrDlRRYos83k5AxgSPMgdxM
-Xruoh0sW1eJ6qW7yqoF1TwoCOO6Q6h8vSNIV8hSemc3HOFav8lfdbxQ77qxRLB1f71ikr1workmR
-kMfFDcOr1tvLBRcbhHxcEMs5uk8ADzhm1et4seZO59JVhtU633xcHEyl1Wqb9jBExK3+CCZUCdb1
-OF/I4SPuQbzyR14NVGwSlUrJND2+wWSMuiJ6AHwfKaVHGX+CrBHRSsbnIsWVOmhwHFa02UnuhhtN
-RTZhSJKfYoTOQgXs2JgNYTrkoayvAOkDehTWBKk1a9P61DwdKkoPU/R/ZfVcKM7+MowmCm2O3L83
-r/f8J8L8k6ilcG1VcfucrLeY2HFU/keqOQ86nMuXxJwP/2Xxvg5jtiMdxGRZGRntE/QybudCOyob
-FegOrsWcMnKwtCZ4LVx+63GAKbciL+LFHAPE+98XXxKTNsV5q0eIJx6rydM816mJtlvQZPJDmz3y
-36EYb9cLHSKXgOnLILc69luth/SHDe/Dm40kb1RlEgXGEPF3A4OhtuJlDhmAcY6EQT3DOt8/0Suw
-MN1Voe2jJPnP6FCcyk1RUWnwXYTy5wjC40ge6r1Cn7ScoDjKjQL64zobDXx7uJqszbK1kLIO36nr
-1WbYUiauJzj1dTnhPzbvWUc59K8LRTqjXGvtvR+cBY78UhX2fuFZhleEiuE3dUakMvOxeQF19IML
-7aNMjcsJIsSUqtJLrNZ9J+E9bbOlG5CO1K1mX/8l6TR224H5Z2W6AMQKK3+9PIhp9P+4S4B8BAqX
-LT8sO2n+XoYmroBJl+Ge+92E/muQluQNa9gENKKnSFSAbTQbfhZy1MzqFIqo0JrZ0Nv0MUtUAJj1
-IE5dGaRXUwMKo+Rgc7E+R/3cLvXSmuLd0WjhxexL13vydjCwu88C7Iu7ZtzmjPWhRphyaHorgRrE
-7fezi4KneazxJeUnBAR+MWlB52oUZuVv6SId/Jg3A/yDLOft7pLw6ePhbTIPiPiFKDBwm5oK8EB8
-utTI5reO6i0J2p014V9SguuNkeLJuKFzwO36u8RD3rtLnwLchJGmdg5uxTXlZ5PazBCeUdsR15Tl
-3o8FNyFI/WJtizwYJIM95P60SFapgKrm7d7/+FYhosPrwj+Lc0N+cR5DcVyrXagiXLv0ZXTJjM+L
-YgRkKLd/y0HYxZlP/ZCYbeee5kuWdY5FpkXtJgVqo5UVqeETMUGeyM7buTOJJtNGg0DId/dnnXLI
-rlzvoR2/hKladclcPDvx7iPtj49katH7t4TLz1ZnU3a9Lg17D13IDfY3zxPsSgcVL1EHvmOxkb6o
-B+CWZmKiIVYsStmWQQc+dreDOzs155eBcrkGKyxje9Jp4ySHYzRE8OH64WvMxu87Fg+kDXpuwwld
-R2dipqMel2Dp0/sp40lQNJkSGebnZNgzmLs7xIJEINKprrYbyX6BC8ptuRpMNDwLzIyZWCafbdfb
-bxFW8DGZdlWZS0ihZPtLtNeGinHkZuDZqDo40W1KYi+UW88zQIE5qJFJAzZBWFiuBRH1WuKtROex
-cSrKBbMVF/bJgs4NBF0Tcem5p+fTIN8puaZLc+N+lbZKgjd1r7XvhSsEjXqRVjhdjqR5cBiT/77g
-rAavvb6QepPEaogbuXv8QjMTiP32Cv0Kfah4RPrGUmKL1HyBDbOuiC+CWMdzUHuvOb63N2UT9M1J
-XI+7xhrGNe5N/DyICz4Btc3daOeOrUbbgrElGEBPWqQM90ZcYZUM6KAoj7PwKiUQsTmRv4mDBwVd
-BpTkbJ735imMNPcgTy8rK7wbMXtzVIAdRQJZtskJctn1NHEySLbAG2Rs1rItpudtb23nVjSNZE6Z
-7whgygXd8RX5Y4ncumJISc5ldD2Zr04eAwnB2mxmhHOsM/juHS/fwSYXMmEsQ0jkOhStw1QfuG1b
-Gf2ehXLFNeKnQkozVSJrzHrq01czArPyaQKRVOS6pCRGgYitgL3nFSXIrZDRC3W8Z8AyEHFdHW/Q
-Sx3lyvocETvRprBujT9v66DTSDIGa8aW7/AJbn0pSAgkfqpx0ryUl0tBrwRFN51nHUZMgb7kgXJK
-7b0fnhGtpJsZIynV7olh43JgXt5ZNENWjPtjTr3XDFSH676QlQia2gywDR/fyUjGmYRJAtZY1+vb
-MukOAcYOQc1Yr9pcRZ58OduO2GKgV7Y+W/wd2JOq5j+IyKrRJymevl5R+qTT0N8xgD5iZN2mGI4U
-R48JQTO3DElrwLl3gsOCuHjy8nzjeuprIygNUqDQIuetbPfMpWNCtR+n1ZfU9ec3gN0zx8/YL0SO
-sVLXwPyiDlL93fezrFxkFQ7quxuUKFE/42ao6YRppxUJT9Ys98sQfuHKrV+kzvyjrW==
+<?php
+
+namespace Guzzle\Plugin\Mock;
+
+use Guzzle\Common\Event;
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Common\AbstractHasDispatcher;
+use Guzzle\Http\Exception\CurlException;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\EntityEnclosingRequestInterface;
+use Guzzle\Http\Message\Response;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * Queues mock responses or exceptions and delivers mock responses or exceptions in a fifo order.
+ */
+class MockPlugin extends AbstractHasDispatcher implements EventSubscriberInterface, \Countable
+{
+    /** @var array Array of mock responses / exceptions */
+    protected $queue = array();
+
+    /** @var bool Whether or not to remove the plugin when the queue is empty */
+    protected $temporary = false;
+
+    /** @var array Array of requests that were mocked */
+    protected $received = array();
+
+    /** @var bool Whether or not to consume an entity body when a mock response is served */
+    protected $readBodies;
+
+    /**
+     * @param array $items      Array of responses or exceptions to queue
+     * @param bool  $temporary  Set to TRUE to remove the plugin when the queue is empty
+     * @param bool  $readBodies Set to TRUE to consume the entity body when a mock is served
+     */
+    public function __construct(array $items = null, $temporary = false, $readBodies = false)
+    {
+        $this->readBodies = $readBodies;
+        $this->temporary = $temporary;
+        if ($items) {
+            foreach ($items as $item) {
+                if ($item instanceof \Exception) {
+                    $this->addException($item);
+                } else {
+                    $this->addResponse($item);
+                }
+            }
+        }
+    }
+
+    public static function getSubscribedEvents()
+    {
+        // Use a number lower than the CachePlugin
+        return array('request.before_send' => array('onRequestBeforeSend', -999));
+    }
+
+    public static function getAllEvents()
+    {
+        return array('mock.request');
+    }
+
+    /**
+     * Get a mock response from a file
+     *
+     * @param string $path File to retrieve a mock response from
+     *
+     * @return Response
+     * @throws InvalidArgumentException if the file is not found
+     */
+    public static function getMockFile($path)
+    {
+        if (!file_exists($path)) {
+            throw new InvalidArgumentException('Unable to open mock file: ' . $path);
+        }
+
+        return Response::fromMessage(file_get_contents($path));
+    }
+
+    /**
+     * Set whether or not to consume the entity body of a request when a mock
+     * response is used
+     *
+     * @param bool $readBodies Set to true to read and consume entity bodies
+     *
+     * @return self
+     */
+    public function readBodies($readBodies)
+    {
+        $this->readBodies = $readBodies;
+
+        return $this;
+    }
+
+    /**
+     * Returns the number of remaining mock responses
+     *
+     * @return int
+     */
+    public function count()
+    {
+        return count($this->queue);
+    }
+
+    /**
+     * Add a response to the end of the queue
+     *
+     * @param string|Response $response Response object or path to response file
+     *
+     * @return MockPlugin
+     * @throws InvalidArgumentException if a string or Response is not passed
+     */
+    public function addResponse($response)
+    {
+        if (!($response instanceof Response)) {
+            if (!is_string($response)) {
+                throw new InvalidArgumentException('Invalid response');
+            }
+            $response = self::getMockFile($response);
+        }
+
+        $this->queue[] = $response;
+
+        return $this;
+    }
+
+    /**
+     * Add an exception to the end of the queue
+     *
+     * @param CurlException $e Exception to throw when the request is executed
+     *
+     * @return MockPlugin
+     */
+    public function addException(CurlException $e)
+    {
+        $this->queue[] = $e;
+
+        return $this;
+    }
+
+    /**
+     * Clear the queue
+     *
+     * @return MockPlugin
+     */
+    public function clearQueue()
+    {
+        $this->queue = array();
+
+        return $this;
+    }
+
+    /**
+     * Returns an array of mock responses remaining in the queue
+     *
+     * @return array
+     */
+    public function getQueue()
+    {
+        return $this->queue;
+    }
+
+    /**
+     * Check if this is a temporary plugin
+     *
+     * @return bool
+     */
+    public function isTemporary()
+    {
+        return $this->temporary;
+    }
+
+    /**
+     * Get a response from the front of the list and add it to a request
+     *
+     * @param RequestInterface $request Request to mock
+     *
+     * @return self
+     * @throws CurlException When request.send is called and an exception is queued
+     */
+    public function dequeue(RequestInterface $request)
+    {
+        $this->dispatch('mock.request', array('plugin' => $this, 'request' => $request));
+
+        $item = array_shift($this->queue);
+        if ($item instanceof Response) {
+            if ($this->readBodies && $request instanceof EntityEnclosingRequestInterface) {
+                $request->getEventDispatcher()->addListener('request.sent', $f = function (Event $event) use (&$f) {
+                    while ($data = $event['request']->getBody()->read(8096));
+                    // Remove the listener after one-time use
+                    $event['request']->getEventDispatcher()->removeListener('request.sent', $f);
+                });
+            }
+            $request->setResponse($item);
+        } elseif ($item instanceof CurlException) {
+            // Emulates exceptions encountered while transferring requests
+            $item->setRequest($request);
+            $state = $request->setState(RequestInterface::STATE_ERROR, array('exception' => $item));
+            // Only throw if the exception wasn't handled
+            if ($state == RequestInterface::STATE_ERROR) {
+                throw $item;
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Clear the array of received requests
+     */
+    public function flush()
+    {
+        $this->received = array();
+    }
+
+    /**
+     * Get an array of requests that were mocked by this plugin
+     *
+     * @return array
+     */
+    public function getReceivedRequests()
+    {
+        return $this->received;
+    }
+
+    /**
+     * Called when a request is about to be sent
+     *
+     * @param Event $event
+     */
+    public function onRequestBeforeSend(Event $event)
+    {
+        if ($this->queue) {
+            $request = $event['request'];
+            $this->received[] = $request;
+            // Detach the filter from the client so it's a one-time use
+            if ($this->temporary && count($this->queue) == 1 && $request->getClient()) {
+                $request->getClient()->getEventDispatcher()->removeSubscriber($this);
+            }
+            $this->dequeue($request);
+        }
+    }
+}

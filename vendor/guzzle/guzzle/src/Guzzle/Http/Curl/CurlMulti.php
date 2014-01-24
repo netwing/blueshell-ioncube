@@ -1,183 +1,363 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http\Curl;
+
+use Guzzle\Common\AbstractHasDispatcher;
+use Guzzle\Common\Event;
+use Guzzle\Http\Exception\MultiTransferException;
+use Guzzle\Http\Exception\CurlException;
+use Guzzle\Http\Message\RequestInterface;
+
+/**
+ * Send {@see RequestInterface} objects in parallel using curl_multi
+ */
+class CurlMulti extends AbstractHasDispatcher implements CurlMultiInterface
+{
+    /** @var resource cURL multi handle. */
+    protected $multiHandle;
+
+    /** @var array Attached {@see RequestInterface} objects. */
+    protected $requests;
+
+    /** @var \SplObjectStorage RequestInterface to CurlHandle hash */
+    protected $handles;
+
+    /** @var array Hash mapping curl handle resource IDs to request objects */
+    protected $resourceHash;
+
+    /** @var array Queued exceptions */
+    protected $exceptions = array();
+
+    /** @var array Requests that succeeded */
+    protected $successful = array();
+
+    /** @var array cURL multi error values and codes */
+    protected $multiErrors = array(
+        CURLM_BAD_HANDLE      => array('CURLM_BAD_HANDLE', 'The passed-in handle is not a valid CURLM handle.'),
+        CURLM_BAD_EASY_HANDLE => array('CURLM_BAD_EASY_HANDLE', "An easy handle was not good/valid. It could mean that it isn't an easy handle at all, or possibly that the handle already is in used by this or another multi handle."),
+        CURLM_OUT_OF_MEMORY   => array('CURLM_OUT_OF_MEMORY', 'You are doomed.'),
+        CURLM_INTERNAL_ERROR  => array('CURLM_INTERNAL_ERROR', 'This can only be returned if libcurl bugs. Please report it to us!')
+    );
+
+    public function __construct()
+    {
+        $this->multiHandle = curl_multi_init();
+        // @codeCoverageIgnoreStart
+        if ($this->multiHandle === false) {
+            throw new CurlException('Unable to create multi handle');
+        }
+        // @codeCoverageIgnoreEnd
+        $this->reset();
+    }
+
+    public function __destruct()
+    {
+        if (is_resource($this->multiHandle)) {
+            curl_multi_close($this->multiHandle);
+        }
+    }
+
+    public function add(RequestInterface $request)
+    {
+        $this->requests[] = $request;
+        // If requests are currently transferring and this is async, then the
+        // request must be prepared now as the send() method is not called.
+        $this->beforeSend($request);
+        $this->dispatch(self::ADD_REQUEST, array('request' => $request));
+
+        return $this;
+    }
+
+    public function all()
+    {
+        return $this->requests;
+    }
+
+    public function remove(RequestInterface $request)
+    {
+        $this->removeHandle($request);
+        if (($index = array_search($request, $this->requests, true)) !== false) {
+            $request = $this->requests[$index];
+            unset($this->requests[$index]);
+            $this->requests = array_values($this->requests);
+            $this->dispatch(self::REMOVE_REQUEST, array('request' => $request));
+            return true;
+        }
+
+        return false;
+    }
+
+    public function reset($hard = false)
+    {
+        // Remove each request
+        if ($this->requests) {
+            foreach ($this->requests as $request) {
+                $this->remove($request);
+            }
+        }
+
+        $this->handles = new \SplObjectStorage();
+        $this->requests = $this->resourceHash = $this->exceptions = $this->successful = array();
+    }
+
+    public function send()
+    {
+        $this->perform();
+        $exceptions = $this->exceptions;
+        $successful = $this->successful;
+        $this->reset();
+
+        if ($exceptions) {
+            $this->throwMultiException($exceptions, $successful);
+        }
+    }
+
+    public function count()
+    {
+        return count($this->requests);
+    }
+
+    /**
+     * Build and throw a MultiTransferException
+     *
+     * @param array $exceptions Exceptions encountered
+     * @param array $successful Successful requests
+     * @throws MultiTransferException
+     */
+    protected function throwMultiException(array $exceptions, array $successful)
+    {
+        $multiException = new MultiTransferException('Errors during multi transfer');
+
+        while ($e = array_shift($exceptions)) {
+            $multiException->addFailedRequestWithException($e['request'], $e['exception']);
+        }
+
+        // Add successful requests
+        foreach ($successful as $request) {
+            if (!$multiException->containsRequest($request)) {
+                $multiException->addSuccessfulRequest($request);
+            }
+        }
+
+        throw $multiException;
+    }
+
+    /**
+     * Prepare for sending
+     *
+     * @param RequestInterface $request Request to prepare
+     * @throws \Exception on error preparing the request
+     */
+    protected function beforeSend(RequestInterface $request)
+    {
+        try {
+            $state = $request->setState(RequestInterface::STATE_TRANSFER);
+            if ($state == RequestInterface::STATE_TRANSFER) {
+                // Add the request curl handle to the multi handle
+                $handle = $this->createCurlHandle($request)->getHandle();
+                $this->checkCurlResult(curl_multi_add_handle($this->multiHandle, $handle));
+            } else {
+                // Requests might decide they don't need to be sent just before transfer (e.g. CachePlugin)
+                $this->remove($request);
+                if ($state == RequestInterface::STATE_COMPLETE) {
+                    $this->successful[] = $request;
+                }
+            }
+        } catch (\Exception $e) {
+            // Queue the exception to be thrown when sent
+            $this->removeErroredRequest($request, $e);
+        }
+    }
+
+    /**
+     * Create a curl handle for a request
+     *
+     * @param RequestInterface $request Request
+     *
+     * @return CurlHandle
+     */
+    protected function createCurlHandle(RequestInterface $request)
+    {
+        $wrapper = CurlHandle::factory($request);
+        $this->handles[$request] = $wrapper;
+        $this->resourceHash[(int) $wrapper->getHandle()] = $request;
+
+        return $wrapper;
+    }
+
+    /**
+     * Get the data from the multi handle
+     */
+    protected function perform()
+    {
+        $event = new Event(array('curl_multi' => $this));
+
+        while ($this->requests) {
+            // Notify each request as polling
+            $blocking = $total = 0;
+            foreach ($this->requests as $request) {
+                ++$total;
+                $event['request'] = $request;
+                $request->getEventDispatcher()->dispatch(self::POLLING_REQUEST, $event);
+                // The blocking variable just has to be non-falsey to block the loop
+                if ($request->getParams()->hasKey(self::BLOCKING)) {
+                    ++$blocking;
+                }
+            }
+            if ($blocking == $total) {
+                // Sleep to prevent eating CPU because no requests are actually pending a select call
+                usleep(500);
+            } else {
+                $this->executeHandles();
+            }
+        }
+    }
+
+    /**
+     * Execute and select curl handles
+     */
+    private function executeHandles()
+    {
+        // The first curl_multi_select often times out no matter what, but is usually required for fast transfers
+        $selectTimeout = 0.001;
+        $active = false;
+        do {
+            while (($mrc = curl_multi_exec($this->multiHandle, $active)) == CURLM_CALL_MULTI_PERFORM);
+            $this->checkCurlResult($mrc);
+            $this->processMessages();
+            if ($active && curl_multi_select($this->multiHandle, $selectTimeout) === -1) {
+                // Perform a usleep if a select returns -1: https://bugs.php.net/bug.php?id=61141
+                usleep(150);
+            }
+            $selectTimeout = 1;
+        } while ($active);
+    }
+
+    /**
+     * Process any received curl multi messages
+     */
+    private function processMessages()
+    {
+        while ($done = curl_multi_info_read($this->multiHandle)) {
+            $request = $this->resourceHash[(int) $done['handle']];
+            try {
+                $this->processResponse($request, $this->handles[$request], $done);
+                $this->successful[] = $request;
+            } catch (\Exception $e) {
+                $this->removeErroredRequest($request, $e);
+            }
+        }
+    }
+
+    /**
+     * Remove a request that encountered an exception
+     *
+     * @param RequestInterface $request Request to remove
+     * @param \Exception       $e       Exception encountered
+     */
+    protected function removeErroredRequest(RequestInterface $request, \Exception $e = null)
+    {
+        $this->exceptions[] = array('request' => $request, 'exception' => $e);
+        $this->remove($request);
+        $this->dispatch(self::MULTI_EXCEPTION, array('exception' => $e, 'all_exceptions' => $this->exceptions));
+    }
+
+    /**
+     * Check for errors and fix headers of a request based on a curl response
+     *
+     * @param RequestInterface $request Request to process
+     * @param CurlHandle       $handle  Curl handle object
+     * @param array            $curl    Array returned from curl_multi_info_read
+     *
+     * @throws CurlException on Curl error
+     */
+    protected function processResponse(RequestInterface $request, CurlHandle $handle, array $curl)
+    {
+        // Set the transfer stats on the response
+        $handle->updateRequestFromTransfer($request);
+        // Check if a cURL exception occurred, and if so, notify things
+        $curlException = $this->isCurlException($request, $handle, $curl);
+
+        // Always remove completed curl handles.  They can be added back again
+        // via events if needed (e.g. ExponentialBackoffPlugin)
+        $this->removeHandle($request);
+
+        if (!$curlException) {
+            $state = $request->setState(RequestInterface::STATE_COMPLETE, array('handle' => $handle));
+            // Only remove the request if it wasn't resent as a result of the state change
+            if ($state != RequestInterface::STATE_TRANSFER) {
+                $this->remove($request);
+            }
+        } else {
+            // Set the state of the request to an error
+            $state = $request->setState(RequestInterface::STATE_ERROR, array('exception' => $curlException));
+            // Allow things to ignore the error if possible
+            if ($state != RequestInterface::STATE_TRANSFER) {
+                $this->remove($request);
+            }
+            // The error was not handled, so fail
+            if ($state == RequestInterface::STATE_ERROR) {
+                /** @var CurlException $curlException */
+                throw $curlException;
+            }
+        }
+    }
+
+    /**
+     * Remove a curl handle from the curl multi object
+     *
+     * @param RequestInterface $request Request that owns the handle
+     */
+    protected function removeHandle(RequestInterface $request)
+    {
+        if (isset($this->handles[$request])) {
+            $handle = $this->handles[$request];
+            curl_multi_remove_handle($this->multiHandle, $handle->getHandle());
+            unset($this->handles[$request]);
+            unset($this->resourceHash[(int) $handle->getHandle()]);
+            $handle->close();
+        }
+    }
+
+    /**
+     * Check if a cURL transfer resulted in what should be an exception
+     *
+     * @param RequestInterface $request Request to check
+     * @param CurlHandle       $handle  Curl handle object
+     * @param array            $curl    Array returned from curl_multi_info_read
+     *
+     * @return CurlException|bool
+     */
+    private function isCurlException(RequestInterface $request, CurlHandle $handle, array $curl)
+    {
+        if (CURLM_OK == $curl['result'] || CURLM_CALL_MULTI_PERFORM == $curl['result']) {
+            return false;
+        }
+
+        $handle->setErrorNo($curl['result']);
+        $e = new CurlException(sprintf('[curl] %s: %s [url] %s',
+            $handle->getErrorNo(), $handle->getError(), $handle->getUrl()));
+        $e->setCurlHandle($handle)
+            ->setRequest($request)
+            ->setCurlInfo($handle->getInfo())
+            ->setError($handle->getError(), $handle->getErrorNo());
+
+        return $e;
+    }
+
+    /**
+     * Throw an exception for a cURL multi response if needed
+     *
+     * @param int $code Curl response code
+     * @throws CurlException
+     */
+    private function checkCurlResult($code)
+    {
+        if ($code != CURLM_OK && $code != CURLM_CALL_MULTI_PERFORM) {
+            throw new CurlException(isset($this->multiErrors[$code])
+                ? "cURL error: {$code} ({$this->multiErrors[$code][0]}): cURL message: {$this->multiErrors[$code][1]}"
+                : 'Unexpected cURL error: ' . $code
+            );
+        }
+    }
+}

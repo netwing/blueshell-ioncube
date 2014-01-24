@@ -1,174 +1,415 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-h2McQaTOu63izDdOUCAkZl/Jim1/Tq0=
+<?php
+
+namespace Guzzle\Tests\Service\Command\LocationVisitor\Response;
+
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Http\Message\Response;
+use Guzzle\Service\Command\LocationVisitor\Response\XmlVisitor as Visitor;
+
+/**
+ * @covers Guzzle\Service\Command\LocationVisitor\Response\XmlVisitor
+ */
+class XmlVisitorTest extends AbstractResponseVisitorTest
+{
+    public function testBeforeMethodParsesXml()
+    {
+        $visitor = new Visitor();
+        $command = $this->getMockBuilder('Guzzle\Service\Command\AbstractCommand')
+            ->setMethods(array('getResponse'))
+            ->getMockForAbstractClass();
+        $command->expects($this->once())
+            ->method('getResponse')
+            ->will($this->returnValue(new Response(200, null, '<foo><Bar>test</Bar></foo>')));
+        $result = array();
+        $visitor->before($command, $result);
+        $this->assertEquals(array('Bar' => 'test'), $result);
+    }
+
+    public function testBeforeMethodParsesXmlWithNamespace()
+    {
+        $this->markTestSkipped("Response/XmlVisitor cannot accept 'xmlns' in response, see #368 (http://git.io/USa1mA).");
+
+        $visitor = new Visitor();
+        $command = $this->getMockBuilder('Guzzle\Service\Command\AbstractCommand')
+            ->setMethods(array('getResponse'))
+            ->getMockForAbstractClass();
+        $command->expects($this->once())
+            ->method('getResponse')
+            ->will($this->returnValue(new Response(200, null, '<foo xmlns="urn:foo"><bar:Bar xmlns:bar="urn:bar">test</bar:Bar></foo>')));
+        $result = array();
+        $visitor->before($command, $result);
+        $this->assertEquals(array('Bar' => 'test'), $result);
+    }
+
+    public function testBeforeMethodParsesNestedXml()
+    {
+        $visitor = new Visitor();
+        $command = $this->getMockBuilder('Guzzle\Service\Command\AbstractCommand')
+            ->setMethods(array('getResponse'))
+            ->getMockForAbstractClass();
+        $command->expects($this->once())
+            ->method('getResponse')
+            ->will($this->returnValue(new Response(200, null, '<foo><Items><Bar>test</Bar></Items></foo>')));
+        $result = array();
+        $visitor->before($command, $result);
+        $this->assertEquals(array('Items' => array('Bar' => 'test')), $result);
+    }
+
+    public function testCanExtractAndRenameTopLevelXmlValues()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location' => 'xml',
+            'name'     => 'foo',
+            'sentAs'   => 'Bar'
+        ));
+        $value = array('Bar' => 'test');
+        $visitor->visit($this->command, $this->response, $param, $value);
+        $this->assertArrayHasKey('foo', $value);
+        $this->assertEquals('test', $value['foo']);
+    }
+
+    public function testEnsuresRepeatedArraysAreInCorrectLocations()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location' => 'xml',
+            'name'     => 'foo',
+            'sentAs'   => 'Foo',
+            'type'     => 'array',
+            'items'    => array(
+                'type' => 'object',
+                'properties' => array(
+                    'Bar' => array('type' => 'string'),
+                    'Baz' => array('type' => 'string'),
+                    'Bam' => array('type' => 'string')
+                )
+            )
+        ));
+
+        $xml = new \SimpleXMLElement('<Test><Foo><Bar>1</Bar><Baz>2</Baz></Foo></Test>');
+        $value = json_decode(json_encode($xml), true);
+        $visitor->visit($this->command, $this->response, $param, $value);
+        $this->assertEquals(array(
+            'foo' => array(
+                array (
+                    'Bar' => '1',
+                    'Baz' => '2'
+                )
+            )
+        ), $value);
+    }
+
+    public function testEnsuresFlatArraysAreFlat()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'location' => 'xml',
+            'name'     => 'foo',
+            'type'     => 'array',
+            'items'    => array('type' => 'string')
+        ));
+
+        $value = array('foo' => array('bar', 'baz'));
+        $visitor->visit($this->command, $this->response, $param, $value);
+        $this->assertEquals(array('foo' => array('bar', 'baz')), $value);
+
+        $value = array('foo' => 'bar');
+        $visitor->visit($this->command, $this->response, $param, $value);
+        $this->assertEquals(array('foo' => array('bar')), $value);
+    }
+
+    public function xmlDataProvider()
+    {
+        $param = new Parameter(array(
+            'location' => 'xml',
+            'name'     => 'Items',
+            'type'     => 'array',
+            'items'    => array(
+                'type' => 'object',
+                'name' => 'Item',
+                'properties' => array(
+                    'Bar' => array('type' => 'string'),
+                    'Baz' => array('type' => 'string')
+                )
+            )
+        ));
+
+        return array(
+            array($param, '<Test><Items><Item><Bar>1</Bar></Item><Item><Bar>2</Bar></Item></Items></Test>', array(
+                'Items' => array(
+                    array('Bar' => 1),
+                    array('Bar' => 2)
+                )
+            )),
+            array($param, '<Test><Items><Item><Bar>1</Bar></Item></Items></Test>', array(
+                'Items' => array(
+                    array('Bar' => 1)
+                )
+            )),
+            array($param, '<Test><Items /></Test>', array(
+                'Items' => array()
+            ))
+        );
+    }
+
+    /**
+     * @dataProvider xmlDataProvider
+     */
+    public function testEnsuresWrappedArraysAreInCorrectLocations($param, $xml, $result)
+    {
+        $visitor = new Visitor();
+        $xml = new \SimpleXMLElement($xml);
+        $value = json_decode(json_encode($xml), true);
+        $visitor->visit($this->command, $this->response, $param, $value);
+        $this->assertEquals($result, $value);
+    }
+
+    public function testCanRenameValues()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'name'     => 'TerminatingInstances',
+            'type'     => 'array',
+            'location' => 'xml',
+            'sentAs'   => 'instancesSet',
+            'items'    => array(
+                'name' => 'item',
+                'type' => 'object',
+                'sentAs' => 'item',
+                'properties' => array(
+                    'InstanceId' => array(
+                        'type'   => 'string',
+                        'sentAs' => 'instanceId',
+                    ),
+                    'CurrentState' => array(
+                        'type'   => 'object',
+                        'sentAs' => 'currentState',
+                        'properties' => array(
+                            'Code' => array(
+                                'type' => 'numeric',
+                                'sentAs' => 'code',
+                            ),
+                            'Name' => array(
+                                'type' => 'string',
+                                'sentAs' => 'name',
+                            ),
+                        ),
+                    ),
+                    'PreviousState' => array(
+                        'type'   => 'object',
+                        'sentAs' => 'previousState',
+                        'properties' => array(
+                            'Code' => array(
+                                'type' => 'numeric',
+                                'sentAs' => 'code',
+                            ),
+                            'Name' => array(
+                                'type' => 'string',
+                                'sentAs' => 'name',
+                            ),
+                        ),
+                    ),
+                ),
+            )
+        ));
+
+        $value = array(
+            'instancesSet' => array (
+                'item' => array (
+                    'instanceId' => 'i-3ea74257',
+                    'currentState' => array(
+                        'code' => '32',
+                        'name' => 'shutting-down',
+                    ),
+                    'previousState' => array(
+                        'code' => '16',
+                        'name' => 'running',
+                    ),
+                ),
+            )
+        );
+
+        $visitor->visit($this->command, $this->response, $param, $value);
+
+        $this->assertEquals(array(
+            'TerminatingInstances' => array(
+                array(
+                    'InstanceId' => 'i-3ea74257',
+                    'CurrentState' => array(
+                        'Code' => '32',
+                        'Name' => 'shutting-down',
+                    ),
+                    'PreviousState' => array(
+                        'Code' => '16',
+                        'Name' => 'running',
+                    )
+                )
+            )
+        ), $value);
+    }
+
+    public function testCanRenameAttributes()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'name'     => 'RunningQueues',
+            'type'     => 'array',
+            'location' => 'xml',
+            'items'    => array(
+                'type' => 'object',
+                'sentAs' => 'item',
+                'properties' => array(
+                    'QueueId' => array(
+                        'type'   => 'string',
+                        'sentAs' => 'queue_id',
+                        'data'   => array(
+                            'xmlAttribute' => true,
+                        ),
+                    ),
+                    'CurrentState' => array(
+                        'type'       => 'object',
+                        'properties' => array(
+                            'Code' => array(
+                                'type'   => 'numeric',
+                                'sentAs' => 'code',
+                                'data'   => array(
+                                    'xmlAttribute' => true,
+                                ),
+                            ),
+                            'Name' => array(
+                                'sentAs' => 'name',
+                                'data'   => array(
+                                    'xmlAttribute' => true,
+                                ),
+                            ),
+                        ),
+                    ),
+                    'PreviousState' => array(
+                        'type'       => 'object',
+                        'properties' => array(
+                            'Code' => array(
+                                'type'   => 'numeric',
+                                'sentAs' => 'code',
+                                'data'   => array(
+                                    'xmlAttribute' => true,
+                                ),
+                            ),
+                            'Name' => array(
+                                'sentAs' => 'name',
+                                'data'   => array(
+                                    'xmlAttribute' => true,
+                                ),
+                            ),
+                        ),
+                    ),
+                ),
+            )
+        ));
+
+        $xml = '<wrap><RunningQueues><item queue_id="q-3ea74257"><CurrentState code="32" name="processing" /><PreviousState code="16" name="wait" /></item></RunningQueues></wrap>';
+        $value = json_decode(json_encode(new \SimpleXMLElement($xml)), true);
+        $visitor->visit($this->command, $this->response, $param, $value);
+
+        $this->assertEquals(array(
+            'RunningQueues' => array(
+                array(
+                    'QueueId' => 'q-3ea74257',
+                    'CurrentState' => array(
+                        'Code' => '32',
+                        'Name' => 'processing',
+                    ),
+                    'PreviousState' => array(
+                        'Code' => '16',
+                        'Name' => 'wait',
+                    ),
+                ),
+            )
+        ), $value);
+    }
+
+    public function testAddsEmptyArraysWhenValueIsMissing()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'name'     => 'Foo',
+            'type'     => 'array',
+            'location' => 'xml',
+            'items' => array(
+                'type' => 'object',
+                'properties' => array(
+                    'Baz' => array('type' => 'array'),
+                    'Bar' => array(
+                        'type'   => 'object',
+                        'properties' => array(
+                            'Baz' => array('type' => 'array'),
+                         )
+                    )
+                )
+            )
+        ));
+
+        $value = array();
+        $visitor->visit($this->command, $this->response, $param, $value);
+
+        $value = array(
+            'Foo' => array(
+                'Bar' => array()
+            )
+        );
+        $visitor->visit($this->command, $this->response, $param, $value);
+        $this->assertEquals(array(
+            'Foo' => array(
+                array(
+                    'Bar' => array()
+                )
+            )
+        ), $value);
+    }
+
+    /**
+     * @group issue-399
+     * @link  https://github.com/guzzle/guzzle/issues/399
+     */
+    public function testDiscardingUnknownProperties()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'name'                 => 'foo',
+            'type'                 => 'object',
+            'additionalProperties' => false,
+            'properties'           => array(
+                'bar' => array(
+                    'type' => 'string',
+                    'name' => 'bar',
+                ),
+            ),
+        ));
+        $this->value = array('foo' => array('bar' => 15, 'unknown' => 'Unknown'));
+        $visitor->visit($this->command, $this->response, $param, $this->value);
+        $this->assertEquals(array('foo' => array('bar' => 15)), $this->value);
+    }
+
+    /**
+     * @group issue-399
+     * @link  https://github.com/guzzle/guzzle/issues/399
+     */
+    public function testDiscardingUnknownPropertiesWithAliasing()
+    {
+        $visitor = new Visitor();
+        $param = new Parameter(array(
+            'name'                 => 'foo',
+            'type'                 => 'object',
+            'additionalProperties' => false,
+            'properties'           => array(
+                'bar' => array(
+                    'name'   => 'bar',
+                    'sentAs' => 'baz',
+                ),
+            ),
+        ));
+        $this->value = array('foo' => array('baz' => 15, 'unknown' => 'Unknown'));
+        $visitor->visit($this->command, $this->response, $param, $this->value);
+        $this->assertEquals(array('foo' => array('bar' => 15)), $this->value);
+    }
+}

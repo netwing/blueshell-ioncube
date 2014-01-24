@@ -1,29 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPoFbkhW3Jn+/pbClc/EMv9hkFfKi59uWeREixCaS6bzAo0zgVsNHWqODy7QGzbxLmgYdop/E
-qshOTWJ6sWxZ0pKZ1k4xkOQeIvP5jw4wT/PUSvC/WjJD+MXXZWENI132AJ3bKXck3rsv8HDNYARH
-FcYGJqGL7vfj40OQ+WQErOfG4EnONq4uHex2N/t3kKGoYPHU+Yk5QDHciRyb+lx6OL7woQORY47O
-riaRpMHxkX/dthlGThjwhr4euJltSAgiccy4GDnfT01ZKG5FTeZdSvBKZjWl2ULMp9K4bFJ8XDoz
-Jayvj+9mmcObWFFoASuGUG816vH42Fy3oH2pgVfUg2cqwtKpT4w3r9vfeBV7XEPOI8QI/z9W/Awa
-Yf2YBwsH3rQDZulOC4KNZn2aWteI2Q4H8G+DnThOwrk+QSoKoAokkSmce6M6TpPFqyc8M4frQuTQ
-MHRNL05j07rH2V85Z5gmRVKxjtKlVSPaIcy5xgwFeOeGZ1bI5COlVhvBMl6+ntzE9G7UC+NfFmVR
-BHtLaY7/yCy/Fy1p63EBoMVfZ8ElSydeP9QCa8n+CLZY4Y+E0use0FIJxZrIxZ2XBokVdRQFAIfR
-J6BbClyJqrfU2OyaQTsVIRDlcHqraU4ADl1C64wQjxuVEXUQk2VT5AFDLIKgIUnVA0Y8rXiUh0WL
-A7fFHYRgn/8x209/y0RtjzJT9+wpRufUTpuwy9TgsMYEOV4o2S9kmOySEcZ8KHWfmKAtovjFAZzs
-5/V8yUT+s07vUj/hsEeRgC+EFJzYGGNEE5ZJAn8Xo9UHRedFS+2uq8r0a+fxkwRHbbZQdn5javvM
-9BvyA9m7jAFWhns3o2BPQ0EEMYvzW585dUWidf0J8PK0Lk8UpK7qUZ6mYZkfbpD9JBd0iuF1fA/j
-lyaf3fEttZrqdNmshPnrZsZ3wYZbxf4zzdHoo2jI53JrjsYwCINAgreOql+RD1TxvQilHj74ZWEQ
-t57/wZBn6qldVBagjNafonSatiKfLeIG/zt5fudRvtduKj+OS0q5hF1DsbqE5PIgLZOmKT2wTgE1
-KzvI2ybQrxduSV1/KIJCW1V6ElQUlRIDAov5o05zhWSvuLJybYAjiIjKqnRGhqJq5I8bJRZOLKfa
-0mStxO3RxRGel82kQl/Fs9iZS4GXwzNIW1znmNHYYFabArjIITLe0aPbofIcZTUbXxinZwKpJoqi
-V9E3daupVTfMrIp+by4zeQg4WTaGoDePxgq3vM8s1bLhHjjJRTYOU2JlGUc0jhLeBnI0eUZGd0Ij
-/2NYOg7FeBSl3dTWb8hdxUzNFiM9h62kDypLY0n7PVyjvbkjrAbNFMhM3Z3XtugKUgkBFpy0DcOm
-0L8G+/ky2Ou1q3uUP2E8l/srmaYoND3JkesrgXUfizECNaJV0M9sWJMjBG/nLF/TeZIfucGeW84d
-TAdG904s0X/BUhH0hgpI6aCXdJyReLKBGGH2R0/c+Uemnc7bTCRVWQZlwzXpuGSZQg9rPTyDdhIm
-BSaRDEWPGuXXRMzcItBBKwlpSboPVek6uw1MiS3uzqZb7hIb1TVsxAjjWEenOIuHop7fiVHILLHb
-nzT/txSjtmXhSt/fsZAD1yHvB8BTgR6ERKir9w72mCJZcY12O90VX0GIA46E7RIUP5wxVECtZL4T
-OI02jJVW7PzuyAIeRE3ybcdMFot529F90pq3QpSKPG91E1xEP+BQHE3lLWU2HnJXZAzyq+TN9KSk
-mfCuqm/nMzlGi78duLaHStg4WMTTRJXjQDdlU/dNYwBYKnsQGS39l5sESMxU+ipjHA6G2TtRXjc4
-oGjB4v6SZM3LcRmvstgUQK2tLJKmlGgnmqIgKR5vqoOV2mGWxO1vKM2kh2UtxBTJv0kNq44hpb0U
-3fqaHnygqsbV3XaHaEkaw5obwG==
+<?php
+/**
+ * CClipWidget class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CClipWidget records its content and makes it available elsewhere.
+ *
+ * Content rendered between its {@link init()} and {@link run()} calls are saved
+ * as a clip in the controller. The clip is named after the widget ID.
+ *
+ * See {@link CBaseController::beginClip} and {@link CBaseController::endClip}
+ * for a shortcut usage of CClipWidget.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CClipWidget extends CWidget
+{
+	/**
+	 * @var boolean whether to render the clip content in place. Defaults to false,
+	 * meaning the captured clip will not be displayed.
+	 */
+	public $renderClip=false;
+
+	/**
+	 * Starts recording a clip.
+	 */
+	public function init()
+	{
+		ob_start();
+		ob_implicit_flush(false);
+	}
+
+	/**
+	 * Ends recording a clip.
+	 * This method stops output buffering and saves the rendering result as a named clip in the controller.
+	 */
+	public function run()
+	{
+		$clip=ob_get_clean();
+		if($this->renderClip)
+			echo $clip;
+		$this->getController()->getClips()->add($this->getId(),$clip);
+	}
+}

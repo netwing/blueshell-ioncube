@@ -1,133 +1,294 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CAutoComplete class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CAutoComplete generates an auto-complete text field.
+ *
+ * CAutoComplete is based on the {@link http://plugins.jquery.com/project/autocompletex jQuery Autocomplete}.
+ *
+ * This class is deprecated since Yii 1.1.3. Consider using CJuiAutoComplete.
+ * There is {@link http://www.learningjquery.com/2010/06/autocomplete-migration-guide a good migration guide from the author of both JavaScript solutions}.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ * @deprecated in 1.1.3
+ */
+class CAutoComplete extends CInputWidget
+{
+	/**
+	 * @var boolean whether to show the autocomplete using a text area. Defaults to false,
+	 * meaning a text field is used.
+	 */
+	public $textArea=false;
+	/**
+	 * @var array data that would be saved as client-side data to provide candidate selections.
+	 * Each array element can be string or an associative array.
+	 * The {@link url} property will be ignored if this property is set.
+	 * @see url
+	 */
+	public $data;
+	/**
+	 * @var string|array the URL that can return the candidate selections.
+	 * A 'q' GET parameter will be sent with the URL which contains what the user has entered so far.
+	 * If the URL is given as an array, it is considered as a route to a controller action and will
+	 * be used to generate a URL using {@link CController::createUrl};
+	 * If the URL is an empty string, the currently requested URL is used.
+	 * This property will be ignored if {@link data} is set.
+	 * @see data
+ 	 */
+	public $url='';
+	/**
+	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
+	 * using the default CSS file included together with the widget.
+	 * If false, no CSS file will be used. Otherwise, the specified CSS file
+	 * will be included when using this widget.
+	 */
+	public $cssFile;
+	/**
+	 * @var integer the minimum number of characters a user has to type before
+	 * the autocompleter activates. Defaults to 1.
+	 */
+	public $minChars;
+	/**
+	 * @var integer the delay in milliseconds the autocompleter waits after
+	 * a keystroke to activate itself. Defaults to 400.
+	 */
+	public $delay;
+	/**
+	 * @var integer the number of backend query results to store in cache.
+	 * If set to 1 (the current result), no caching will happen. Must be >= 1. Defaults to 10.
+	 */
+	public $cacheLength;
+	/**
+	 * @var boolean whether or not the autocompleter can use a cache for more
+	 * specific queries. This means that all matches of "foot" are a subset
+	 * of all matches for "foo". Usually this is true, and using this options
+	 * decreases server load and increases performance. Only useful with
+	 * cacheLength settings bigger than one, like 10. Defaults to true.
+	 */
+	public $matchSubset;
+	/**
+	 * @var boolean whether or not the comparison is case sensitive. Important
+	 * only if you use caching. Defaults to false.
+	 */
+	public $matchCase;
+	/**
+	 * @var boolean whether or not the comparison looks inside
+	 * (i.e. does "ba" match "foo bar") the search results. Important only if
+	 * you use caching. Don't mix with autofill. Defaults to false.
+	 */
+	public $matchContains;
+	/**
+	 * @var boolean if set to true, the autocompleter will only allow results that
+	 * are presented by the backend. Note that illegal values result in an empty
+	 * input box. Defaults to false.
+	 */
+	public $mustMatch;
+	/**
+	 * @var boolean if this is set to true, the first autocomplete value will
+	 * be automatically selected on tab/return, even if it has not been handpicked
+	 * by keyboard or mouse action. If there is a handpicked (highlighted) result,
+	 * that result will take precedence. Defaults to true.
+	 */
+	public $selectFirst;
+	/**
+	 * @var array extra parameters for the backend. If you were to specify
+	 * array('bar'=>4), the autocompleter would call the backend with a GET
+	 * parameter 'bar' 4. The param can be a function that is called to calculate
+	 * the param before each request.
+	 */
+	public $extraParams;
+	/**
+	 * @var string a javascript function that provides advanced markup for an item.
+	 * For each row of results, this function will be called. The returned value will
+	 * be displayed inside an LI element in the results list. Autocompleter will
+	 * provide 4 parameters: the results row, the position of the row in the list of
+	 * results (starting at 1), the number of items in the list of results and the search term.
+	 * The default behavior assumes that a single row contains a single value.
+	 */
+	public $formatItem;
+	/**
+	 * @var string a javascript function that can be used to limit the data that autocomplete
+	 * searches for matches. For example, there may be items you want displayed to the user,
+	 * but don't want included in the data that's searched. The function is called with the same arguments
+	 * as {@link formatItem}. Defaults to formatItem.
+	 */
+	public $formatMatch;
+	/**
+	 * @var string a javascript function that provides the formatting for the value to be
+	 * put into the input field. Again three arguments: Data, position (starting with one) and
+	 * total number of data. The default behavior assumes either plain data to use as result
+	 * or uses the same value as provided by formatItem.
+	 */
+	public $formatResult;
+	/**
+	 * @var boolean whether to allow more than one autocompleted-value to enter. Defaults to false.
+	 */
+	public $multiple;
+	/**
+	 * @var string seperator to put between values when using multiple option. Defaults to ", ".
+	 */
+	public $multipleSeparator;
+	/**
+	 * @var integer specify a custom width for the select box. Defaults to the width of the input element.
+	 */
+	public $width;
+	/**
+	 * @var boolean fill the textinput while still selecting a value, replacing the value
+	 * if more is typed or something else is selected. Defaults to false.
+	 */
+	public $autoFill;
+	/**
+	 * @var integer limit the number of items in the select box. Is also sent as
+	 * a "limit" parameter with a remote request. Defaults to 10.
+	 */
+	public $max;
+	/**
+	 * @var boolean|string Whether and how to highlight matches in the select box.
+	 * Set to false to disable. Set to a javascript function to customize.
+	 * The function gets the value as the first argument and the search term as the
+	 * second and must return the formatted value. Defaults to Wraps the search term in a &lt;strong&gt; element.
+	 */
+	public $highlight;
+	/**
+	 * @var boolean whether to scroll when more results than configured via scrollHeight are available. Defaults to true.
+	 */
+	public $scroll;
+	/**
+	 * @var integer height of scrolled autocomplete control in pixels. Defaults to 180.
+	 */
+	public $scrollHeight;
+	/**
+	 * @var string the CSS class for the input element. Defaults to "ac_input".
+	 */
+	public $inputClass;
+	/**
+	 * @var string the CSS class for the dropdown list. Defaults to "ac_results".
+	 */
+	public $resultsClass;
+	/**
+	 * @var string the CSS class used when the data is being loaded from backend. Defaults to "ac_loading".
+	 */
+	public $loadingClass;
+	/**
+	 * @var array additional options that can be passed to the constructor of the autocomplete js object.
+	 * This allows you to override existing functions of the autocomplete js class (e.g. the parse() function)
+	 *
+	 * If you want to provide JavaScript native code, you have to wrap the string with {@link CJavaScriptExpression} otherwise it will
+	 * be enclosed by quotes.
+	 */
+	public $options=array();
+	/**
+	 * @var string the chain of method calls that would be appended at the end of the autocomplete constructor.
+	 * For example, ".result(function(...){})" would cause the specified js function to execute
+	 * when the user selects an option.
+	 */
+	public $methodChain;
+
+	/**
+	 * Initializes the widget.
+	 * This method registers all needed client scripts and renders
+	 * the autocomplete input.
+	 */
+	public function init()
+	{
+		list($name,$id)=$this->resolveNameID();
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
+		else
+			$this->htmlOptions['id']=$id;
+		if(isset($this->htmlOptions['name']))
+			$name=$this->htmlOptions['name'];
+
+		$this->registerClientScript();
+
+		if($this->hasModel())
+		{
+			$field=$this->textArea ? 'activeTextArea' : 'activeTextField';
+			echo CHtml::$field($this->model,$this->attribute,$this->htmlOptions);
+		}
+		else
+		{
+			$field=$this->textArea ? 'textArea' : 'textField';
+			echo CHtml::$field($name,$this->value,$this->htmlOptions);
+		}
+	}
+
+	/**
+	 * Registers the needed CSS and JavaScript.
+	 */
+	public function registerClientScript()
+	{
+		$id=$this->htmlOptions['id'];
+
+		$acOptions=$this->getClientOptions();
+		$options=$acOptions===array()?'{}' : CJavaScript::encode($acOptions);
+
+		$cs=Yii::app()->getClientScript();
+		$cs->registerCoreScript('autocomplete');
+		if($this->data!==null)
+			$data=CJavaScript::encode($this->data);
+		else
+		{
+			$url=CHtml::normalizeUrl($this->url);
+			$data='"'.$url.'"';
+		}
+		$cs->registerScript('Yii.CAutoComplete#'.$id,"jQuery(\"#{$id}\").legacyautocomplete($data,{$options}){$this->methodChain};");
+
+		if($this->cssFile!==false)
+			self::registerCssFile($this->cssFile);
+	}
+
+	/**
+	 * Registers the needed CSS file.
+	 * @param string $url the CSS URL. If null, a default CSS URL will be used.
+	 */
+	public static function registerCssFile($url=null)
+	{
+		$cs=Yii::app()->getClientScript();
+		if($url===null)
+			$url=$cs->getCoreScriptUrl().'/autocomplete/jquery.autocomplete.css';
+		$cs->registerCssFile($url);
+	}
+
+	/**
+	 * @return array the javascript options
+	 */
+	protected function getClientOptions()
+	{
+		static $properties=array(
+			'minChars', 'delay', 'cacheLength', 'matchSubset',
+			'matchCase', 'matchContains', 'mustMatch', 'selectFirst',
+			'extraParams', 'multiple', 'multipleSeparator', 'width',
+			'autoFill', 'max', 'scroll', 'scrollHeight', 'inputClass',
+			'resultsClass', 'loadingClass');
+		static $functions=array('formatItem', 'formatMatch', 'formatResult', 'highlight');
+
+		$options=$this->options;
+		foreach($properties as $property)
+		{
+			if($this->$property!==null)
+				$options[$property]=$this->$property;
+		}
+		foreach($functions as $func)
+		{
+			if($this->$func!==null)
+			{
+				if($this->$func instanceof CJavaScriptExpression)
+					$options[$func]=$this->$func;
+				else
+					$options[$func]=new CJavaScriptExpression($this->$func);
+			}
+		}
+
+		return $options;
+	}
+}

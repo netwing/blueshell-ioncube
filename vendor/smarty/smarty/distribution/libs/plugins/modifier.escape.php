@@ -1,95 +1,197 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsModifier
+ */
+
+/**
+ * Smarty escape modifier plugin
+ *
+ * Type:     modifier<br>
+ * Name:     escape<br>
+ * Purpose:  escape string for output
+ *
+ * @link http://www.smarty.net/manual/en/language.modifier.count.characters.php count_characters (Smarty online manual)
+ * @author Monte Ohrt <monte at ohrt dot com>
+ * @param string  $string        input string
+ * @param string  $esc_type      escape type
+ * @param string  $char_set      character set, used for htmlspecialchars() or htmlentities()
+ * @param boolean $double_encode encode already encoded entitites again, used for htmlspecialchars() or htmlentities()
+ * @return string escaped input string
+ */
+function smarty_modifier_escape($string, $esc_type = 'html', $char_set = null, $double_encode = true)
+{
+    static $_double_encode = null;
+    if ($_double_encode === null) {
+        $_double_encode = version_compare(PHP_VERSION, '5.2.3', '>=');
+    }
+
+    if (!$char_set) {
+        $char_set = Smarty::$_CHARSET;
+    }
+
+    switch ($esc_type) {
+        case 'html':
+            if ($_double_encode) {
+                // php >=5.3.2 - go native
+                return htmlspecialchars($string, ENT_QUOTES, $char_set, $double_encode);
+            } else {
+                if ($double_encode) {
+                    // php <5.2.3 - only handle double encoding
+                    return htmlspecialchars($string, ENT_QUOTES, $char_set);
+                } else {
+                    // php <5.2.3 - prevent double encoding
+                    $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
+                    $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
+                    $string = str_replace(array('%%%SMARTY_START%%%', '%%%SMARTY_END%%%'), array('&', ';'), $string);
+
+                    return $string;
+                }
+            }
+
+        case 'htmlall':
+            if (Smarty::$_MBSTRING) {
+                // mb_convert_encoding ignores htmlspecialchars()
+                if ($_double_encode) {
+                    // php >=5.3.2 - go native
+                    $string = htmlspecialchars($string, ENT_QUOTES, $char_set, $double_encode);
+                } else {
+                    if ($double_encode) {
+                        // php <5.2.3 - only handle double encoding
+                        $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
+                    } else {
+                        // php <5.2.3 - prevent double encoding
+                        $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
+                        $string = htmlspecialchars($string, ENT_QUOTES, $char_set);
+                        $string = str_replace(array('%%%SMARTY_START%%%', '%%%SMARTY_END%%%'), array('&', ';'), $string);
+
+                        return $string;
+                    }
+                }
+
+                // htmlentities() won't convert everything, so use mb_convert_encoding
+                return mb_convert_encoding($string, 'HTML-ENTITIES', $char_set);
+            }
+
+            // no MBString fallback
+            if ($_double_encode) {
+                return htmlentities($string, ENT_QUOTES, $char_set, $double_encode);
+            } else {
+                if ($double_encode) {
+                    return htmlentities($string, ENT_QUOTES, $char_set);
+                } else {
+                    $string = preg_replace('!&(#?\w+);!', '%%%SMARTY_START%%%\\1%%%SMARTY_END%%%', $string);
+                    $string = htmlentities($string, ENT_QUOTES, $char_set);
+                    $string = str_replace(array('%%%SMARTY_START%%%', '%%%SMARTY_END%%%'), array('&', ';'), $string);
+
+                    return $string;
+                }
+            }
+
+        case 'url':
+            return rawurlencode($string);
+
+        case 'urlpathinfo':
+            return str_replace('%2F', '/', rawurlencode($string));
+
+        case 'quotes':
+            // escape unescaped single quotes
+            return preg_replace("%(?<!\\\\)'%", "\\'", $string);
+
+        case 'hex':
+            // escape every byte into hex
+            // Note that the UTF-8 encoded character ä will be represented as %c3%a4
+            $return = '';
+            $_length = strlen($string);
+            for ($x = 0; $x < $_length; $x++) {
+                $return .= '%' . bin2hex($string[$x]);
+            }
+
+            return $return;
+
+        case 'hexentity':
+            $return = '';
+            if (Smarty::$_MBSTRING) {
+                require_once(SMARTY_PLUGINS_DIR . 'shared.mb_unicode.php');
+                $return = '';
+                foreach (smarty_mb_to_unicode($string, Smarty::$_CHARSET) as $unicode) {
+                    $return .= '&#x' . strtoupper(dechex($unicode)) . ';';
+                }
+
+                return $return;
+            }
+            // no MBString fallback
+            $_length = strlen($string);
+            for ($x = 0; $x < $_length; $x++) {
+                $return .= '&#x' . bin2hex($string[$x]) . ';';
+            }
+
+            return $return;
+
+        case 'decentity':
+            $return = '';
+            if (Smarty::$_MBSTRING) {
+                require_once(SMARTY_PLUGINS_DIR . 'shared.mb_unicode.php');
+                $return = '';
+                foreach (smarty_mb_to_unicode($string, Smarty::$_CHARSET) as $unicode) {
+                    $return .= '&#' . $unicode . ';';
+                }
+
+                return $return;
+            }
+            // no MBString fallback
+            $_length = strlen($string);
+            for ($x = 0; $x < $_length; $x++) {
+                $return .= '&#' . ord($string[$x]) . ';';
+            }
+
+            return $return;
+
+        case 'javascript':
+            // escape quotes and backslashes, newlines, etc.
+            return strtr($string, array('\\' => '\\\\', "'" => "\\'", '"' => '\\"', "\r" => '\\r', "\n" => '\\n', '</' => '<\/'));
+
+        case 'mail':
+            if (Smarty::$_MBSTRING) {
+                require_once(SMARTY_PLUGINS_DIR . 'shared.mb_str_replace.php');
+
+                return smarty_mb_str_replace(array('@', '.'), array(' [AT] ', ' [DOT] '), $string);
+            }
+            // no MBString fallback
+            return str_replace(array('@', '.'), array(' [AT] ', ' [DOT] '), $string);
+
+        case 'nonstd':
+            // escape non-standard chars, such as ms document quotes
+            $return = '';
+            if (Smarty::$_MBSTRING) {
+                require_once(SMARTY_PLUGINS_DIR . 'shared.mb_unicode.php');
+                foreach (smarty_mb_to_unicode($string, Smarty::$_CHARSET) as $unicode) {
+                    if ($unicode >= 126) {
+                        $return .= '&#' . $unicode . ';';
+                    } else {
+                        $return .= chr($unicode);
+                    }
+                }
+
+                return $return;
+            }
+
+            $_length = strlen($string);
+            for ($_i = 0; $_i < $_length; $_i++) {
+                $_ord = ord(substr($string, $_i, 1));
+                // non-standard char, escape it
+                if ($_ord >= 126) {
+                    $return .= '&#' . $_ord . ';';
+                } else {
+                    $return .= substr($string, $_i, 1);
+                }
+            }
+
+            return $return;
+
+        default:
+            return $string;
+    }
+}

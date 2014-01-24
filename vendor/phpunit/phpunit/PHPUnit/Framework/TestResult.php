@@ -1,247 +1,956 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jxcAjgoUzKzusKnIfWQOqqy=
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.0.0
+ */
+
+/**
+ * A TestResult collects the results of executing a test case.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ */
+class PHPUnit_Framework_TestResult implements Countable
+{
+    /**
+     * @var boolean
+     */
+    protected static $xdebugLoaded = NULL;
+
+    /**
+     * @var boolean
+     */
+    protected static $useXdebug = NULL;
+
+    /**
+     * @var array
+     */
+    protected $passed = array();
+
+    /**
+     * @var array
+     */
+    protected $errors = array();
+
+    /**
+     * @var array
+     */
+    protected $deprecatedFeatures = array();
+
+    /**
+     * @var array
+     */
+    protected $failures = array();
+
+    /**
+     * @var array
+     */
+    protected $notImplemented = array();
+
+    /**
+     * @var array
+     */
+    protected $skipped = array();
+
+    /**
+     * @var array
+     */
+    protected $listeners = array();
+
+    /**
+     * @var integer
+     */
+    protected $runTests = 0;
+
+    /**
+     * @var float
+     */
+    protected $time = 0;
+
+    /**
+     * @var PHPUnit_Framework_TestSuite
+     */
+    protected $topTestSuite = NULL;
+
+    /**
+     * Code Coverage information.
+     *
+     * @var PHP_CodeCoverage
+     */
+    protected $codeCoverage;
+
+    /**
+     * @var boolean
+     */
+    protected $convertErrorsToExceptions = TRUE;
+
+    /**
+     * @var boolean
+     */
+    protected $stop = FALSE;
+
+    /**
+     * @var boolean
+     */
+    protected $stopOnError = FALSE;
+
+    /**
+     * @var boolean
+     */
+    protected $stopOnFailure = FALSE;
+
+    /**
+     * @var boolean
+     */
+    protected $strictMode = FALSE;
+
+    /**
+     * @var boolean
+     */
+    protected $stopOnIncomplete = FALSE;
+
+    /**
+     * @var boolean
+     */
+    protected $stopOnSkipped = FALSE;
+
+    /**
+     * @var boolean
+     */
+    protected $lastTestFailed = FALSE;
+
+    /**
+     * @var integer
+     */
+    protected $timeoutForSmallTests = 1;
+
+    /**
+     * @var integer
+     */
+    protected $timeoutForMediumTests = 10;
+
+    /**
+     * @var integer
+     */
+    protected $timeoutForLargeTests = 60;
+
+    /**
+     * Registers a TestListener.
+     *
+     * @param  PHPUnit_Framework_TestListener
+     */
+    public function addListener(PHPUnit_Framework_TestListener $listener)
+    {
+        $this->listeners[] = $listener;
+    }
+
+    /**
+     * Unregisters a TestListener.
+     *
+     * @param  PHPUnit_Framework_TestListener $listener
+     */
+    public function removeListener(PHPUnit_Framework_TestListener $listener)
+    {
+        foreach ($this->listeners as $key => $_listener) {
+            if ($listener === $_listener) {
+                unset($this->listeners[$key]);
+            }
+        }
+    }
+
+    /**
+     * Flushes all flushable TestListeners.
+     *
+     * @since  Method available since Release 3.0.0
+     */
+    public function flushListeners()
+    {
+        foreach ($this->listeners as $listener) {
+            if ($listener instanceof PHPUnit_Util_Printer) {
+                $listener->flush();
+            }
+        }
+    }
+
+    /**
+     * Adds an error to the list of errors.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     * @param  Exception              $e
+     * @param  float                  $time
+     */
+    public function addError(PHPUnit_Framework_Test $test, Exception $e, $time)
+    {
+        if ($e instanceof PHPUnit_Framework_IncompleteTest) {
+            $this->notImplemented[] = new PHPUnit_Framework_TestFailure(
+              $test, $e
+            );
+
+            $notifyMethod = 'addIncompleteTest';
+
+            if ($this->stopOnIncomplete) {
+                $this->stop();
+            }
+        }
+
+        else if ($e instanceof PHPUnit_Framework_SkippedTest) {
+            $this->skipped[] = new PHPUnit_Framework_TestFailure($test, $e);
+            $notifyMethod    = 'addSkippedTest';
+
+            if ($this->stopOnSkipped) {
+                $this->stop();
+            }
+        }
+
+        else {
+            $this->errors[] = new PHPUnit_Framework_TestFailure($test, $e);
+            $notifyMethod   = 'addError';
+
+            if ($this->stopOnError || $this->stopOnFailure) {
+                $this->stop();
+            }
+        }
+
+        foreach ($this->listeners as $listener) {
+            $listener->$notifyMethod($test, $e, $time);
+        }
+
+        $this->lastTestFailed = TRUE;
+        $this->time          += $time;
+    }
+
+    /**
+     * Adds a failure to the list of failures.
+     * The passed in exception caused the failure.
+     *
+     * @param  PHPUnit_Framework_Test                 $test
+     * @param  PHPUnit_Framework_AssertionFailedError $e
+     * @param  float                                  $time
+     */
+    public function addFailure(PHPUnit_Framework_Test $test, PHPUnit_Framework_AssertionFailedError $e, $time)
+    {
+        if ($e instanceof PHPUnit_Framework_IncompleteTest) {
+            $this->notImplemented[] = new PHPUnit_Framework_TestFailure(
+              $test, $e
+            );
+
+            $notifyMethod = 'addIncompleteTest';
+
+            if ($this->stopOnIncomplete) {
+                $this->stop();
+            }
+        }
+
+        else if ($e instanceof PHPUnit_Framework_SkippedTest) {
+            $this->skipped[] = new PHPUnit_Framework_TestFailure($test, $e);
+            $notifyMethod    = 'addSkippedTest';
+
+            if ($this->stopOnSkipped) {
+                $this->stop();
+            }
+        }
+
+        else {
+            $this->failures[] = new PHPUnit_Framework_TestFailure($test, $e);
+            $notifyMethod     = 'addFailure';
+
+            if ($this->stopOnFailure) {
+                $this->stop();
+            }
+        }
+
+        foreach ($this->listeners as $listener) {
+            $listener->$notifyMethod($test, $e, $time);
+        }
+
+        $this->lastTestFailed = TRUE;
+        $this->time          += $time;
+    }
+
+    /**
+     * Adds a deprecated feature notice to the list of deprecated features used during run
+     *
+     * @param PHPUnit_Util_DeprecatedFeature $deprecatedFeature
+     */
+    public function addDeprecatedFeature(PHPUnit_Util_DeprecatedFeature $deprecatedFeature)
+    {
+        $this->deprecatedFeatures[] = $deprecatedFeature;
+    }
+
+    /**
+     * Informs the result that a testsuite will be started.
+     *
+     * @param  PHPUnit_Framework_TestSuite $suite
+     * @since  Method available since Release 2.2.0
+     */
+    public function startTestSuite(PHPUnit_Framework_TestSuite $suite)
+    {
+        if ($this->topTestSuite === NULL) {
+            $this->topTestSuite = $suite;
+        }
+
+        foreach ($this->listeners as $listener) {
+            $listener->startTestSuite($suite);
+        }
+    }
+
+    /**
+     * Informs the result that a testsuite was completed.
+     *
+     * @param  PHPUnit_Framework_TestSuite $suite
+     * @since  Method available since Release 2.2.0
+     */
+    public function endTestSuite(PHPUnit_Framework_TestSuite $suite)
+    {
+        foreach ($this->listeners as $listener) {
+            $listener->endTestSuite($suite);
+        }
+    }
+
+    /**
+     * Informs the result that a test will be started.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     */
+    public function startTest(PHPUnit_Framework_Test $test)
+    {
+        $this->lastTestFailed = FALSE;
+        $this->runTests      += count($test);
+
+        foreach ($this->listeners as $listener) {
+            $listener->startTest($test);
+        }
+    }
+
+    /**
+     * Informs the result that a test was completed.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     * @param  float                  $time
+     */
+    public function endTest(PHPUnit_Framework_Test $test, $time)
+    {
+        foreach ($this->listeners as $listener) {
+            $listener->endTest($test, $time);
+        }
+
+        if (!$this->lastTestFailed && $test instanceof PHPUnit_Framework_TestCase) {
+            $class  = get_class($test);
+            $key    =  $class . '::' . $test->getName();
+
+            $this->passed[$key] = array(
+              'result' => $test->getResult(),
+              'size'   => PHPUnit_Util_Test::getSize(
+                            $class, $test->getName(FALSE)
+                          )
+            );
+
+            $this->time += $time;
+        }
+    }
+
+    /**
+     * Returns TRUE if no incomplete test occured.
+     *
+     * @return boolean
+     */
+    public function allCompletelyImplemented()
+    {
+        return $this->notImplementedCount() == 0;
+    }
+
+    /**
+     * Gets the number of incomplete tests.
+     *
+     * @return integer
+     */
+    public function notImplementedCount()
+    {
+        return count($this->notImplemented);
+    }
+
+    /**
+     * Returns an Enumeration for the incomplete tests.
+     *
+     * @return array
+     */
+    public function notImplemented()
+    {
+        return $this->notImplemented;
+    }
+
+    /**
+     * Returns TRUE if no test has been skipped.
+     *
+     * @return boolean
+     * @since  Method available since Release 3.0.0
+     */
+    public function noneSkipped()
+    {
+        return $this->skippedCount() == 0;
+    }
+
+    /**
+     * Gets the number of skipped tests.
+     *
+     * @return integer
+     * @since  Method available since Release 3.0.0
+     */
+    public function skippedCount()
+    {
+        return count($this->skipped);
+    }
+
+    /**
+     * Returns an Enumeration for the skipped tests.
+     *
+     * @return array
+     * @since  Method available since Release 3.0.0
+     */
+    public function skipped()
+    {
+        return $this->skipped;
+    }
+
+    /**
+     * Gets the number of detected errors.
+     *
+     * @return integer
+     */
+    public function errorCount()
+    {
+        return count($this->errors);
+    }
+
+    /**
+     * Returns an Enumeration for the errors.
+     *
+     * @return array
+     */
+    public function errors()
+    {
+        return $this->errors;
+    }
+
+    /**
+     * Returns an Enumeration for the deprecated features used.
+     *
+     * @return array
+     * @since  Method available since Release 3.5.7
+     */
+    public function deprecatedFeatures()
+    {
+        return $this->deprecatedFeatures;
+    }
+
+    /**
+     * Returns an Enumeration for the deprecated features used.
+     *
+     * @return array
+     * @since  Method available since Release 3.5.7
+     */
+    public function deprecatedFeaturesCount()
+    {
+        return count($this->deprecatedFeatures);
+    }
+
+    /**
+     * Gets the number of detected failures.
+     *
+     * @return integer
+     */
+    public function failureCount()
+    {
+        return count($this->failures);
+    }
+
+    /**
+     * Returns an Enumeration for the failures.
+     *
+     * @return array
+     */
+    public function failures()
+    {
+        return $this->failures;
+    }
+
+    /**
+     * Returns the names of the tests that have passed.
+     *
+     * @return array
+     * @since  Method available since Release 3.4.0
+     */
+    public function passed()
+    {
+        return $this->passed;
+    }
+
+    /**
+     * Returns the (top) test suite.
+     *
+     * @return PHPUnit_Framework_TestSuite
+     * @since  Method available since Release 3.0.0
+     */
+    public function topTestSuite()
+    {
+        return $this->topTestSuite;
+    }
+
+    /**
+     * Returns whether code coverage information should be collected.
+     *
+     * @return boolean If code coverage should be collected
+     * @since  Method available since Release 3.2.0
+     */
+    public function getCollectCodeCoverageInformation()
+    {
+        return $this->codeCoverage !== NULL;
+    }
+
+    /**
+     * Returns the strict mode configuration option
+     *
+     * @return boolean
+     */
+    public function isStrict()
+    {
+        return $this->strictMode;
+    }
+
+    /**
+     * Runs a TestCase.
+     *
+     * @param  PHPUnit_Framework_Test $test
+     */
+    public function run(PHPUnit_Framework_Test $test)
+    {
+        PHPUnit_Framework_Assert::resetCount();
+
+        $error      = FALSE;
+        $failure    = FALSE;
+        $incomplete = FALSE;
+        $skipped    = FALSE;
+
+        $this->startTest($test);
+
+        $errorHandlerSet = FALSE;
+
+        if ($this->convertErrorsToExceptions) {
+            $oldErrorHandler = set_error_handler(
+              array('PHPUnit_Util_ErrorHandler', 'handleError'),
+              E_ALL | E_STRICT
+            );
+
+            if ($oldErrorHandler === NULL) {
+                $errorHandlerSet = TRUE;
+            } else {
+                restore_error_handler();
+            }
+        }
+
+        if (self::$xdebugLoaded === NULL) {
+            self::$xdebugLoaded = extension_loaded('xdebug');
+            self::$useXdebug    = self::$xdebugLoaded;
+        }
+
+        $useXdebug = self::$useXdebug &&
+                     $this->codeCoverage !== NULL &&
+                     !$test instanceof PHPUnit_Extensions_SeleniumTestCase &&
+                     !$test instanceof PHPUnit_Framework_Warning;
+
+        if ($useXdebug) {
+            // We need to blacklist test source files when no whitelist is used.
+            if (!$this->codeCoverage->filter()->hasWhitelist()) {
+                $classes = PHPUnit_Util_Class::getHierarchy(
+                  get_class($test), TRUE
+                );
+
+                foreach ($classes as $class) {
+                    $this->codeCoverage->filter()->addFileToBlacklist(
+                      $class->getFileName()
+                    );
+                }
+            }
+
+            $this->codeCoverage->start($test);
+        }
+
+        PHP_Timer::start();
+
+        try {
+            if (!$test instanceof PHPUnit_Framework_Warning &&
+                $this->strictMode &&
+                extension_loaded('pcntl') && class_exists('PHP_Invoker')) {
+                switch ($test->getSize()) {
+                    case PHPUnit_Util_Test::SMALL: {
+                        $_timeout = $this->timeoutForSmallTests;
+                    }
+                    break;
+
+                    case PHPUnit_Util_Test::MEDIUM: {
+                        $_timeout = $this->timeoutForMediumTests;
+                    }
+                    break;
+
+                    case PHPUnit_Util_Test::LARGE: {
+                        $_timeout = $this->timeoutForLargeTests;
+                    }
+                    break;
+                }
+
+                $invoker = new PHP_Invoker;
+                $invoker->invoke(array($test, 'runBare'), array(), $_timeout);
+            } else {
+                $test->runBare();
+            }
+        }
+
+        catch (PHPUnit_Framework_AssertionFailedError $e) {
+            $failure = TRUE;
+
+            if ($e instanceof PHPUnit_Framework_IncompleteTestError) {
+                $incomplete = TRUE;
+            }
+
+            else if ($e instanceof PHPUnit_Framework_SkippedTestError) {
+                $skipped = TRUE;
+            }
+        }
+
+        catch (Exception $e) {
+            $error = TRUE;
+        }
+
+        $time = PHP_Timer::stop();
+        $test->addToAssertionCount(PHPUnit_Framework_Assert::getCount());
+
+        if ($this->strictMode && $test->getNumAssertions() == 0) {
+            $incomplete = TRUE;
+        }
+
+        if ($useXdebug) {
+            try {
+                $this->codeCoverage->stop(!$incomplete && !$skipped);
+            }
+
+            catch (PHP_CodeCoverage_Exception $cce) {
+                $error = TRUE;
+
+                if (!isset($e)) {
+                    $e = $cce;
+                }
+            }
+        }
+
+        if ($errorHandlerSet === TRUE) {
+            restore_error_handler();
+        }
+
+        if ($error === TRUE) {
+            $this->addError($test, $e, $time);
+        }
+
+        else if ($failure === TRUE) {
+            $this->addFailure($test, $e, $time);
+        }
+
+        else if ($this->strictMode && $test->getNumAssertions() == 0) {
+            $this->addFailure(
+              $test,
+              new PHPUnit_Framework_IncompleteTestError(
+                'This test did not perform any assertions'
+              ),
+              $time
+            );
+        }
+
+        else if ($this->strictMode && $test->hasOutput()) {
+            $this->addFailure(
+              $test,
+              new PHPUnit_Framework_OutputError(
+                sprintf(
+                  'This test printed output: %s',
+                  $test->getActualOutput()
+                )
+              ),
+              $time
+            );
+        }
+
+        $this->endTest($test, $time);
+    }
+
+    /**
+     * Gets the number of run tests.
+     *
+     * @return integer
+     */
+    public function count()
+    {
+        return $this->runTests;
+    }
+
+    /**
+     * Checks whether the test run should stop.
+     *
+     * @return boolean
+     */
+    public function shouldStop()
+    {
+        return $this->stop;
+    }
+
+    /**
+     * Marks that the test run should stop.
+     *
+     */
+    public function stop()
+    {
+        $this->stop = TRUE;
+    }
+
+    /**
+     * Returns the PHP_CodeCoverage object.
+     *
+     * @return PHP_CodeCoverage
+     * @since  Method available since Release 3.5.0
+     */
+    public function getCodeCoverage()
+    {
+        return $this->codeCoverage;
+    }
+
+    /**
+     * Returns the PHP_CodeCoverage object.
+     *
+     * @return PHP_CodeCoverage
+     * @since  Method available since Release 3.6.0
+     */
+    public function setCodeCoverage(PHP_CodeCoverage $codeCoverage)
+    {
+        $this->codeCoverage = $codeCoverage;
+    }
+
+    /**
+     * Enables or disables the error-to-exception conversion.
+     *
+     * @param  boolean $flag
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.2.14
+     */
+    public function convertErrorsToExceptions($flag)
+    {
+        if (is_bool($flag)) {
+            $this->convertErrorsToExceptions = $flag;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'boolean');
+        }
+    }
+
+    /**
+     * Returns the error-to-exception conversion setting.
+     *
+     * @return boolean
+     * @since  Method available since Release 3.4.0
+     */
+    public function getConvertErrorsToExceptions()
+    {
+        return $this->convertErrorsToExceptions;
+    }
+
+    /**
+     * Enables or disables the stopping when an error occurs.
+     *
+     * @param  boolean $flag
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.5.0
+     */
+    public function stopOnError($flag)
+    {
+        if (is_bool($flag)) {
+            $this->stopOnError = $flag;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'boolean');
+        }
+    }
+
+    /**
+     * Enables or disables the stopping when a failure occurs.
+     *
+     * @param  boolean $flag
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.1.0
+     */
+    public function stopOnFailure($flag)
+    {
+        if (is_bool($flag)) {
+            $this->stopOnFailure = $flag;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'boolean');
+        }
+    }
+
+    /**
+     * Enables or disables the strict mode.
+     *
+     * When active
+     *   * Tests that do not assert anything will be marked as incomplete.
+     *   * Tests that are incomplete or skipped yield no code coverage.
+     *
+     * @param  boolean $flag
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.5.2
+     */
+    public function strictMode($flag)
+    {
+        if (is_bool($flag)) {
+            $this->strictMode = $flag;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'boolean');
+        }
+    }
+
+    /**
+     * Enables or disables the stopping for incomplete tests.
+     *
+     * @param  boolean $flag
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.5.0
+     */
+    public function stopOnIncomplete($flag)
+    {
+        if (is_bool($flag)) {
+            $this->stopOnIncomplete = $flag;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'boolean');
+        }
+    }
+
+    /**
+     * Enables or disables the stopping for skipped tests.
+     *
+     * @param  boolean $flag
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.1.0
+     */
+    public function stopOnSkipped($flag)
+    {
+        if (is_bool($flag)) {
+            $this->stopOnSkipped = $flag;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'boolean');
+        }
+    }
+
+    /**
+     * Returns the time spent running the tests.
+     *
+     * @return float
+     */
+    public function time()
+    {
+        return $this->time;
+    }
+
+    /**
+     * Returns whether the entire test was successful or not.
+     *
+     * @return boolean
+     */
+    public function wasSuccessful()
+    {
+        return empty($this->errors) && empty($this->failures);
+    }
+
+    /**
+     * Sets the timeout for small tests.
+     *
+     * @param  integer $timeout
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.6.0
+     */
+    public function setTimeoutForSmallTests($timeout)
+    {
+        if (is_integer($timeout)) {
+            $this->timeoutForSmallTests = $timeout;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'integer');
+        }
+    }
+
+    /**
+     * Sets the timeout for medium tests.
+     *
+     * @param  integer $timeout
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.6.0
+     */
+    public function setTimeoutForMediumTests($timeout)
+    {
+        if (is_integer($timeout)) {
+            $this->timeoutForMediumTests = $timeout;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'integer');
+        }
+    }
+
+    /**
+     * Sets the timeout for large tests.
+     *
+     * @param  integer $timeout
+     * @throws PHPUnit_Framework_Exception
+     * @since  Method available since Release 3.6.0
+     */
+    public function setTimeoutForLargeTests($timeout)
+    {
+        if (is_integer($timeout)) {
+            $this->timeoutForLargeTests = $timeout;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'integer');
+        }
+    }
+}

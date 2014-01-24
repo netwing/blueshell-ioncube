@@ -1,67 +1,159 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * Managing stuff you would do in a browser.
+ */
+class WebDriverOptions {
+
+  protected $executor;
+
+  public function __construct(WebDriverCommandExecutor $executor) {
+    $this->executor = $executor;
+  }
+
+  /**
+   * Add a specific cookie.
+   *
+   * Here are the valid attributes of a cookie array.
+   *  'name'  : string The name of the cookie; may not be null or an empty
+   *                    string.
+   *  'value' : string The cookie value; may not be null.
+   *  'path'  : string The path the cookie is visible to. If left blank or set
+   *                   to null, will be set to "/".
+   *  'domain': string The domain the cookie is visible to. It should be null or
+   *                   the same as the domain of the current URL.
+   *  'secure': bool   Whether this cookie requires a secure connection(https?).
+   *                   It should be null or equal to the security of the current
+   *                   URL.
+   *  'expiry': int    The cookie's expiration date; may be null.
+   *
+   * @param array $cookie An array with key as the attributes mentioned above.
+   * @return WebDriverOptions The current instance.
+   */
+  public function addCookie(array $cookie) {
+    $this->validate($cookie);
+    $this->executor->execute('addCookie', array('cookie' => $cookie));
+    return $this;
+  }
+
+  /**
+   * Delete all the cookies that are currently visible.
+   *
+   * @return WebDriverOptions The current instance.
+   */
+  public function deleteAllCookies() {
+    $this->executor->execute('deleteAllCookies');
+    return $this;
+  }
+
+  /**
+   * Delete the cookie with the give name.
+   *
+   * @return WebDriverOptions The current instance.
+   */
+  public function deleteCookieNamed($name) {
+    $this->executor->execute('deleteCookie', array(':name' => $name));
+    return $this;
+  }
+
+  /**
+   * Get the cookie with a given name.
+   *
+   * @return array The cookie, or null if no cookie with the given name is
+   *               presented.
+   */
+  public function getCookieNamed($name) {
+    $cookies = $this->getCookies();
+    foreach ($cookies as $cookie) {
+      if ($cookie['name'] === $name) {
+        return $cookie;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Get all the cookies for the current domain.
+   *
+   * @return array The array of cookies presented.
+   */
+  public function getCookies() {
+    return $this->executor->execute('getAllCookies');
+  }
+
+  private function validate(array $cookie) {
+    if (!isset($cookie['name']) ||
+        $cookie['name'] === '' ||
+        strpos($cookie['name'], ';') !== false) {
+      throw new InvalidArgumentException(
+        '"name" should be non-empty and does not contain a ";"');
+    }
+
+    if (!isset($cookie['value'])) {
+      throw new InvalidArgumentException(
+        '"value" is required when setting a cookie.');
+    }
+
+    if (isset($cookie['domain']) && strpos($cookie['domain'], ':') !== false) {
+      throw new InvalidArgumentException(
+        '"domain" should not contain a port:'.(string)$cookie['domain']);
+    }
+  }
+
+  /**
+   * Return the interface for managing driver timeouts.
+   *
+   * @return WebDriverTimeouts
+   */
+  public function timeouts() {
+    return new WebDriverTimeouts($this->executor);
+  }
+
+  /**
+   * An abstraction allowing the driver to manipulate the browser's window
+   *
+   * @return WebDriverWindow
+   * @see WebDriverWindow
+   */
+  public function window() {
+    return new WebDriverWindow($this->executor);
+  }
+
+  /**
+   * Get the log for a given log type. Log buffer is reset after each request.
+   *
+   * @param $logType The log type.
+   * @return array The list of log entries.
+   * @see https://code.google.com/p/selenium/wiki/JsonWireProtocol#Log_Type
+   */
+  public function getLog($log_type) {
+    return $this->executor->execute(
+      'getLog',
+      array('type' => $log_type)
+    );
+  }
+
+  /**
+   * Get available log types.
+   *
+   * @return array The list of available log types.
+   * @see https://code.google.com/p/selenium/wiki/JsonWireProtocol#Log_Type
+   */
+  public function getAvailableLogTypes() {
+    return $this->executor->execute('getAvailableLogTypes');
+  }
+
+}

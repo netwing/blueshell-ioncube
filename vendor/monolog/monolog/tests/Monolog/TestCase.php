@@ -1,42 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog;
+
+class TestCase extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @return array Record
+     */
+    protected function getRecord($level = Logger::WARNING, $message = 'test', $context = array())
+    {
+        return array(
+            'message' => $message,
+            'context' => $context,
+            'level' => $level,
+            'level_name' => Logger::getLevelName($level),
+            'channel' => 'test',
+            'datetime' => \DateTime::createFromFormat('U.u', sprintf('%.6F', microtime(true))),
+            'extra' => array(),
+        );
+    }
+
+    /**
+     * @return array
+     */
+    protected function getMultipleRecords()
+    {
+        return array(
+            $this->getRecord(Logger::DEBUG, 'debug message 1'),
+            $this->getRecord(Logger::DEBUG, 'debug message 2'),
+            $this->getRecord(Logger::INFO, 'information'),
+            $this->getRecord(Logger::WARNING, 'warning'),
+            $this->getRecord(Logger::ERROR, 'error')
+        );
+    }
+
+    /**
+     * @return Monolog\Formatter\FormatterInterface
+     */
+    protected function getIdentityFormatter()
+    {
+        $formatter = $this->getMock('Monolog\\Formatter\\FormatterInterface');
+        $formatter->expects($this->any())
+            ->method('format')
+            ->will($this->returnCallback(function($record) { return $record['message']; }));
+
+        return $formatter;
+    }
+}

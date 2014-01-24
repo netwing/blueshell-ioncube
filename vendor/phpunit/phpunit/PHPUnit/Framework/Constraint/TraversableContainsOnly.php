@@ -1,44 +1,135 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.1.4
+ */
+
+/**
+ * Constraint that asserts that the Traversable it is applied to contains
+ * only values of a given type.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.1.4
+ */
+class PHPUnit_Framework_Constraint_TraversableContainsOnly extends PHPUnit_Framework_Constraint
+{
+    /**
+     * @var PHPUnit_Framework_Constraint
+     */
+    protected $constraint;
+
+    /**
+     * @var string
+     */
+    protected $type;
+
+    /**
+     * @param string  $type
+     * @param boolean $isNativeType
+     */
+    public function __construct($type, $isNativeType = TRUE)
+    {
+        if ($isNativeType) {
+            $this->constraint = new PHPUnit_Framework_Constraint_IsType($type);
+        } else {
+            $this->constraint = new PHPUnit_Framework_Constraint_IsInstanceOf(
+              $type
+            );
+        }
+
+        $this->type = $type;
+    }
+
+    /**
+     * Evaluates the constraint for parameter $other
+     *
+     * If $returnResult is set to FALSE (the default), an exception is thrown
+     * in case of a failure. NULL is returned otherwise.
+     *
+     * If $returnResult is TRUE, the result of the evaluation is returned as
+     * a boolean value instead: TRUE in case of success, FALSE in case of a
+     * failure.
+     *
+     * @param  mixed $other Value or object to evaluate.
+     * @param  string $description Additional information about the test
+     * @param  bool $returnResult Whether to return a result or throw an exception
+     * @return mixed
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    public function evaluate($other, $description = '', $returnResult = FALSE)
+    {
+        $success = TRUE;
+        $constraint = NULL;
+
+        foreach ($other as $item) {
+            if (!$this->constraint->evaluate($item, '', TRUE)) {
+                $success = FALSE;
+                break;
+            }
+        }
+
+        if ($returnResult) {
+            return $success;
+        }
+
+        if (!$success) {
+            $this->fail($other, $description);
+        }
+    }
+
+    /**
+     * Returns a string representation of the constraint.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'contains only values of type "' . $this->type . '"';
+    }
+}

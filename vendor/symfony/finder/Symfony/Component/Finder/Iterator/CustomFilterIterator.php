@@ -1,34 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Iterator;
+
+/**
+ * CustomFilterIterator filters files by applying anonymous functions.
+ *
+ * The anonymous function receives a \SplFileInfo and must return false
+ * to remove files.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class CustomFilterIterator extends FilterIterator
+{
+    private $filters = array();
+
+    /**
+     * Constructor.
+     *
+     * @param \Iterator $iterator The Iterator to filter
+     * @param array     $filters  An array of PHP callbacks
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function __construct(\Iterator $iterator, array $filters)
+    {
+        foreach ($filters as $filter) {
+            if (!is_callable($filter)) {
+                throw new \InvalidArgumentException('Invalid PHP callback.');
+            }
+        }
+        $this->filters = $filters;
+
+        parent::__construct($iterator);
+    }
+
+    /**
+     * Filters the iterator values.
+     *
+     * @return Boolean true if the value should be kept, false otherwise
+     */
+    public function accept()
+    {
+        $fileinfo = $this->current();
+
+        foreach ($this->filters as $filter) {
+            if (false === call_user_func($filter, $fileinfo)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}

@@ -1,41 +1,36 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QmfEoUBCp0IcbQnNM0==
+<?php
+
+namespace Guzzle\Tests\Plugin\Backoff;
+
+use Guzzle\Http\Message\Response;
+use Guzzle\Plugin\Backoff\CurlBackoffStrategy;
+use Guzzle\Http\Exception\CurlException;
+
+/**
+ * @covers Guzzle\Plugin\Backoff\CurlBackoffStrategy
+ * @covers Guzzle\Plugin\Backoff\AbstractErrorCodeBackoffStrategy
+ */
+class CurlBackoffStrategyTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testRetriesWithExponentialDelay()
+    {
+        $this->assertNotEmpty(CurlBackoffStrategy::getDefaultFailureCodes());
+        $strategy = new CurlBackoffStrategy();
+        $this->assertTrue($strategy->makesDecision());
+        $request = $this->getMock('Guzzle\Http\Message\Request', array(), array(), '', false);
+        $e = new CurlException();
+        $e->setError('foo', CURLE_BAD_CALLING_ORDER);
+        $this->assertEquals(false, $strategy->getBackoffPeriod(0, $request, null, $e));
+
+        foreach (CurlBackoffStrategy::getDefaultFailureCodes() as $code) {
+            $this->assertEquals(0, $strategy->getBackoffPeriod(0, $request, null, $e->setError('foo', $code)));
+        }
+    }
+
+    public function testIgnoresNonErrors()
+    {
+        $strategy = new CurlBackoffStrategy();
+        $request = $this->getMock('Guzzle\Http\Message\Request', array(), array(), '', false);
+        $this->assertEquals(false, $strategy->getBackoffPeriod(0, $request, new Response(200)));
+    }
+}

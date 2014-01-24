@@ -1,99 +1,178 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-dwEaRrptZM3lXm9v6OEn9WMr0NF1OgomAFFB
+<?php
+
+namespace Guzzle\Http\Message;
+
+use Guzzle\Common\Version;
+use Guzzle\Http\Message\Header\HeaderInterface;
+
+/**
+ * Represents a header and all of the values stored by that header
+ */
+class Header implements HeaderInterface
+{
+    protected $values = array();
+    protected $header;
+    protected $glue;
+
+    /**
+     * @param string       $header Name of the header
+     * @param array|string $values Values of the header as an array or a scalar
+     * @param string       $glue   Glue used to combine multiple values into a string
+     */
+    public function __construct($header, $values = array(), $glue = ',')
+    {
+        $this->header = trim($header);
+        $this->glue = $glue;
+
+        foreach ((array) $values as $value) {
+            foreach ((array) $value as $v) {
+                $this->values[] = $v;
+            }
+        }
+    }
+
+    public function __toString()
+    {
+        return implode($this->glue . ' ', $this->toArray());
+    }
+
+    public function add($value)
+    {
+        $this->values[] = $value;
+
+        return $this;
+    }
+
+    public function getName()
+    {
+        return $this->header;
+    }
+
+    public function setName($name)
+    {
+        $this->header = $name;
+
+        return $this;
+    }
+
+    public function setGlue($glue)
+    {
+        $this->glue = $glue;
+
+        return $this;
+    }
+
+    public function getGlue()
+    {
+        return $this->glue;
+    }
+
+    /**
+     * Normalize the header to be a single header with an array of values.
+     *
+     * If any values of the header contains the glue string value (e.g. ","), then the value will be exploded into
+     * multiple entries in the header.
+     *
+     * @return self
+     */
+    public function normalize()
+    {
+        $values = $this->toArray();
+
+        for ($i = 0, $total = count($values); $i < $total; $i++) {
+            if (strpos($values[$i], $this->glue) !== false) {
+                // Explode on glue when the glue is not inside of a comma
+                foreach (preg_split('/' . preg_quote($this->glue) . '(?=([^"]*"[^"]*")*[^"]*$)/', $values[$i]) as $v) {
+                    $values[] = trim($v);
+                }
+                unset($values[$i]);
+            }
+        }
+
+        $this->values = array_values($values);
+
+        return $this;
+    }
+
+    public function hasValue($searchValue)
+    {
+        return in_array($searchValue, $this->toArray());
+    }
+
+    public function removeValue($searchValue)
+    {
+        $this->values = array_values(array_filter($this->values, function ($value) use ($searchValue) {
+            return $value != $searchValue;
+        }));
+
+        return $this;
+    }
+
+    public function toArray()
+    {
+        return $this->values;
+    }
+
+    public function count()
+    {
+        return count($this->toArray());
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->toArray());
+    }
+
+    public function parseParams()
+    {
+        $params = $matches = array();
+        $callback = array($this, 'trimHeader');
+
+        // Normalize the header into a single array and iterate over all values
+        foreach ($this->normalize()->toArray() as $val) {
+            $part = array();
+            foreach (preg_split('/;(?=([^"]*"[^"]*")*[^"]*$)/', $val) as $kvp) {
+                preg_match_all('/<[^>]+>|[^=]+/', $kvp, $matches);
+                $pieces = array_map($callback, $matches[0]);
+                $part[$pieces[0]] = isset($pieces[1]) ? $pieces[1] : '';
+            }
+            $params[] = $part;
+        }
+
+        return $params;
+    }
+
+    /**
+     * @deprecated
+     * @codeCoverageIgnore
+     */
+    public function hasExactHeader($header)
+    {
+        Version::warn(__METHOD__ . ' is deprecated');
+        return $this->header == $header;
+    }
+
+    /**
+     * @deprecated
+     * @codeCoverageIgnore
+     */
+    public function raw()
+    {
+        Version::warn(__METHOD__ . ' is deprecated. Use toArray()');
+        return $this->toArray();
+    }
+
+    /**
+     * Trim a header by removing excess spaces and wrapping quotes
+     *
+     * @param $str
+     *
+     * @return string
+     */
+    protected function trimHeader($str)
+    {
+        static $trimmed = "\"'  \n\t";
+
+        return trim($str, $trimmed);
+    }
+}

@@ -1,65 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QxWbZRniLKYD
+<?php
+/**
+* Smarty PHPunit tests static class access to constants, variables and methodes
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for static class access to constants, variables and methodes tests
+*/
+class StaticClassAccessTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->disableSecurity();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test static class variable
+    */
+    public function testStaticClassVariable()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{mystaticclass::$static_var}');
+        $this->assertEquals('5', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test registered static class variable
+    */
+    public function testStaticRegisteredClassVariable()
+    {
+        $this->smarty->registerClass('registeredclass','mystaticclass');
+        $tpl = $this->smarty->createTemplate('eval:{registeredclass::$static_var}');
+        $this->assertEquals('5', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test static class constant
+    */
+    public function testStaticClassConstant()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{mystaticclass::STATIC_CONSTANT_VALUE}');
+        $this->assertEquals('3', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test static class constant
+    */
+    public function testRegisteredStaticClassConstant()
+    {
+        $this->smarty->registerClass('registeredclass','mystaticclass');
+        $tpl = $this->smarty->createTemplate('eval:{registeredclass::STATIC_CONSTANT_VALUE}');
+        $this->assertEquals('3', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test static class methode
+    */
+    public function testStaticClassMethode()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{mystaticclass::square(5)}');
+        $this->assertEquals('25', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test static class methode
+    */
+    public function testRegisteredStaticClassMethode()
+    {
+        $this->smarty->registerClass('registeredclass','mystaticclass');
+        $tpl = $this->smarty->createTemplate('eval:{registeredclass::square(5)}');
+        $this->assertEquals('25', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test static class variable methode
+    */
+    public function testStaticClassVariableMethode()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{$foo=\'square\'}{mystaticclass::$foo(5)}');
+        $this->assertEquals('25', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test registered static class variable methode
+    */
+    public function testRegisteredStaticClassVariableMethode()
+    {
+        $this->smarty->registerClass('registeredclass','mystaticclass');
+        $tpl = $this->smarty->createTemplate('eval:{$foo=\'square\'}{registeredclass::$foo(5)}');
+        $this->assertEquals('25', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test static class variable methode
+    */
+    public function testStaticClassVariableMethode2()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{mystaticclass::$foo(5)}');
+        $tpl->assign('foo','square');
+        $this->assertEquals('25', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test registered static class variable methode
+    */
+    public function testRegisteredStaticClassVariableMethode2()
+    {
+        $this->smarty->registerClass('registeredclass','mystaticclass');
+        $tpl = $this->smarty->createTemplate('eval:{registeredclass::$foo(5)}');
+        $tpl->assign('foo','square');
+        $this->assertEquals('25', $this->smarty->fetch($tpl));
+    }
+}
+
+class mystaticclass
+{
+    const STATIC_CONSTANT_VALUE = 3;
+    static $static_var = 5;
+
+    static function square($i)
+    {
+        return $i*$i;
+    }
+}

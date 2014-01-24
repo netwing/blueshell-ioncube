@@ -1,38 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * LoginForm class.
+ * LoginForm is the data structure for keeping
+ * user login form data. It is used by the 'login' action of 'SiteController'.
+ */
+class LoginForm extends CFormModel
+{
+	public $username;
+	public $password;
+	public $rememberMe;
+	public $verifyCode;
+
+	/**
+	 * Declares the validation rules.
+	 * The rules state that username and password are required,
+	 * and password needs to be authenticated.
+	 */
+	public function rules()
+	{
+		return array(
+			array('username, password', 'required'),
+			array('verifyCode', 'captcha', 'allowEmpty'=>!extension_loaded('gd')),
+			array('password', 'authenticate'),
+		);
+	}
+
+	/**
+	 * Declares attribute labels.
+	 * If not declared here, an attribute would have a label
+	 * the same as its name with the first letter in upper case.
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'verifyCode'=>'Verification Code',
+		);
+	}
+
+	/**
+	 * Authenticates the password.
+	 * This is the 'authenticate' validator as declared in rules().
+	 */
+	public function authenticate($attribute,$params)
+	{
+		if(!$this->hasErrors())  // we only want to authenticate when no input errors
+		{
+			$identity=new UserIdentity($this->username,$this->password);
+			if($identity->authenticate())
+			{
+				$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+				Yii::app()->user->login($identity,$duration);
+			}
+			else
+				$this->addError('password','Incorrect password.');
+		}
+	}
+}

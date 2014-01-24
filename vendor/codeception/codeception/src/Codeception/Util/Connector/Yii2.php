@@ -1,69 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Codeception\Util\Connector;
+
+use Yii;
+use Symfony\Component\BrowserKit\Client;
+use Symfony\Component\BrowserKit\Response;
+use yii\web\Response as YiiResponse;
+
+class Yii2 extends Client
+{
+	/**
+	 * http://localhost/path/to/your/app/index.php
+	 * @var string url of the entry Yii script
+	 */
+	public $url;
+	public $entryScript;
+	/**
+	 * @var array
+	 */
+	public $headers;
+	public $statusCode;
+
+	/**
+	 *
+	 * @param \Symfony\Component\BrowserKit\Request $request
+	 * @return \Symfony\Component\BrowserKit\Response
+	 */
+	public function doRequest($request)
+	{
+		$_COOKIE = $request->getCookies();
+		$_SERVER = $request->getServer();
+		$_FILES = $request->getFiles();
+		$_REQUEST = $request->getParameters();
+
+		if (strtoupper($request->getMethod()) == 'GET') {
+			$_GET = $request->getParameters();
+		} else {
+			$_POST = $request->getParameters();
+		}
+
+		$uri = str_replace('http://localhost', '', $request->getUri());
+		$scriptName = str_replace('http://localhost', '', $this->url);
+
+		$queryString = parse_url($uri, PHP_URL_QUERY);
+		parse_str($queryString, $params);
+
+		if (strpos($uri, $scriptName) === false) {
+			$uri = $scriptName . $queryString;
+		}
+
+		foreach ($params as $k => $v) {
+			$_GET[$k] = $v;
+		}
+
+		$_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+		$_SERVER['REQUEST_METHOD'] = strtoupper($request->getMethod());
+		$_SERVER['REQUEST_URI'] = $uri;
+		$_SERVER['SCRIPT_NAME'] = $scriptName;
+		$_SERVER['SCRIPT_FILENAME'] = $this->entryScript;
+		$_SERVER['PHP_SELF'] = $this->entryScript;
+
+		$config = require($this->entryScript);
+		/** @var \yii\web\Application $app */
+		$app = Yii::createObject($config);
+		$client = $this;
+		$app->getResponse()->on(YiiResponse::EVENT_AFTER_PREPARE, function ($event) use ($client) {
+			/** @var \yii\web\Response $sender */
+			$sender = $event->sender;
+			$this->headers = $sender->getHeaders()->toArray();
+			$sender->getHeaders()->removeAll();
+			$this->statusCode = $sender->getStatusCode();
+			$_POST = array();
+			$sender->setStatusCode(200);
+		});
+
+		$this->headers = array();
+		$this->statusCode = null;
+
+		ob_start();
+		$app->handleRequest($app->getRequest())->send();
+		$content = ob_get_clean();
+
+		return new Response($content, $this->statusCode, $this->headers);
+	}
+}

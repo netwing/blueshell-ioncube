@@ -1,124 +1,276 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-1/RR2RMvvlbb
+<?php
+/**
+ * A class for computing three way diffs.
+ *
+ * $Horde: framework/Text_Diff/Diff/ThreeWay.php,v 1.3.2.3 2008/01/04 10:37:27 jan Exp $
+ *
+ * Copyright 2007-2008 The Horde Project (http://www.horde.org/)
+ *
+ * See the enclosed file COPYING for license information (LGPL). If you did
+ * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
+ *
+ * @package Text_Diff
+ * @since   0.3.0
+ */
+
+/** Text_Diff */
+require_once 'Text/Diff.php';
+
+/**
+ * A class for computing three way diffs.
+ *
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ */
+class Text_Diff_ThreeWay extends Text_Diff {
+
+    /**
+     * Conflict counter.
+     *
+     * @var integer
+     */
+    var $_conflictingBlocks = 0;
+
+    /**
+     * Computes diff between 3 sequences of strings.
+     *
+     * @param array $orig    The original lines to use.
+     * @param array $final1  The first version to compare to.
+     * @param array $final2  The second version to compare to.
+     */
+    function Text_Diff_ThreeWay($orig, $final1, $final2)
+    {
+        if (extension_loaded('xdiff')) {
+            $engine = new Text_Diff_Engine_xdiff();
+        } else {
+            $engine = new Text_Diff_Engine_native();
+        }
+
+        $this->_edits = $this->_diff3($engine->diff($orig, $final1),
+                                      $engine->diff($orig, $final2));
+    }
+
+    /**
+     */
+    function mergedOutput($label1 = false, $label2 = false)
+    {
+        $lines = array();
+        foreach ($this->_edits as $edit) {
+            if ($edit->isConflict()) {
+                /* FIXME: this should probably be moved somewhere else. */
+                $lines = array_merge($lines,
+                                     array('<<<<<<<' . ($label1 ? ' ' . $label1 : '')),
+                                     $edit->final1,
+                                     array("======="),
+                                     $edit->final2,
+                                     array('>>>>>>>' . ($label2 ? ' ' . $label2 : '')));
+                $this->_conflictingBlocks++;
+            } else {
+                $lines = array_merge($lines, $edit->merged());
+            }
+        }
+
+        return $lines;
+    }
+
+    /**
+     * @access private
+     */
+    function _diff3($edits1, $edits2)
+    {
+        $edits = array();
+        $bb = new Text_Diff_ThreeWay_BlockBuilder();
+
+        $e1 = current($edits1);
+        $e2 = current($edits2);
+        while ($e1 || $e2) {
+            if ($e1 && $e2 && is_a($e1, 'Text_Diff_Op_copy') && is_a($e2, 'Text_Diff_Op_copy')) {
+                /* We have copy blocks from both diffs. This is the (only)
+                 * time we want to emit a diff3 copy block.  Flush current
+                 * diff3 diff block, if any. */
+                if ($edit = $bb->finish()) {
+                    $edits[] = $edit;
+                }
+
+                $ncopy = min($e1->norig(), $e2->norig());
+                assert($ncopy > 0);
+                $edits[] = new Text_Diff_ThreeWay_Op_copy(array_slice($e1->orig, 0, $ncopy));
+
+                if ($e1->norig() > $ncopy) {
+                    array_splice($e1->orig, 0, $ncopy);
+                    array_splice($e1->final, 0, $ncopy);
+                } else {
+                    $e1 = next($edits1);
+                }
+
+                if ($e2->norig() > $ncopy) {
+                    array_splice($e2->orig, 0, $ncopy);
+                    array_splice($e2->final, 0, $ncopy);
+                } else {
+                    $e2 = next($edits2);
+                }
+            } else {
+                if ($e1 && $e2) {
+                    if ($e1->orig && $e2->orig) {
+                        $norig = min($e1->norig(), $e2->norig());
+                        $orig = array_splice($e1->orig, 0, $norig);
+                        array_splice($e2->orig, 0, $norig);
+                        $bb->input($orig);
+                    }
+
+                    if (is_a($e1, 'Text_Diff_Op_copy')) {
+                        $bb->out1(array_splice($e1->final, 0, $norig));
+                    }
+
+                    if (is_a($e2, 'Text_Diff_Op_copy')) {
+                        $bb->out2(array_splice($e2->final, 0, $norig));
+                    }
+                }
+
+                if ($e1 && ! $e1->orig) {
+                    $bb->out1($e1->final);
+                    $e1 = next($edits1);
+                }
+                if ($e2 && ! $e2->orig) {
+                    $bb->out2($e2->final);
+                    $e2 = next($edits2);
+                }
+            }
+        }
+
+        if ($edit = $bb->finish()) {
+            $edits[] = $edit;
+        }
+
+        return $edits;
+    }
+
+}
+
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ *
+ * @access private
+ */
+class Text_Diff_ThreeWay_Op {
+
+    function Text_Diff_ThreeWay_Op($orig = false, $final1 = false, $final2 = false)
+    {
+        $this->orig = $orig ? $orig : array();
+        $this->final1 = $final1 ? $final1 : array();
+        $this->final2 = $final2 ? $final2 : array();
+    }
+
+    function merged()
+    {
+        if (!isset($this->_merged)) {
+            if ($this->final1 === $this->final2) {
+                $this->_merged = &$this->final1;
+            } elseif ($this->final1 === $this->orig) {
+                $this->_merged = &$this->final2;
+            } elseif ($this->final2 === $this->orig) {
+                $this->_merged = &$this->final1;
+            } else {
+                $this->_merged = false;
+            }
+        }
+
+        return $this->_merged;
+    }
+
+    function isConflict()
+    {
+        return $this->merged() === false;
+    }
+
+}
+
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ *
+ * @access private
+ */
+class Text_Diff_ThreeWay_Op_copy extends Text_Diff_ThreeWay_Op {
+
+    function Text_Diff_ThreeWay_Op_Copy($lines = false)
+    {
+        $this->orig = $lines ? $lines : array();
+        $this->final1 = &$this->orig;
+        $this->final2 = &$this->orig;
+    }
+
+    function merged()
+    {
+        return $this->orig;
+    }
+
+    function isConflict()
+    {
+        return false;
+    }
+
+}
+
+/**
+ * @package Text_Diff
+ * @author  Geoffrey T. Dairiki <dairiki@dairiki.org>
+ *
+ * @access private
+ */
+class Text_Diff_ThreeWay_BlockBuilder {
+
+    function Text_Diff_ThreeWay_BlockBuilder()
+    {
+        $this->_init();
+    }
+
+    function input($lines)
+    {
+        if ($lines) {
+            $this->_append($this->orig, $lines);
+        }
+    }
+
+    function out1($lines)
+    {
+        if ($lines) {
+            $this->_append($this->final1, $lines);
+        }
+    }
+
+    function out2($lines)
+    {
+        if ($lines) {
+            $this->_append($this->final2, $lines);
+        }
+    }
+
+    function isEmpty()
+    {
+        return !$this->orig && !$this->final1 && !$this->final2;
+    }
+
+    function finish()
+    {
+        if ($this->isEmpty()) {
+            return false;
+        } else {
+            $edit = new Text_Diff_ThreeWay_Op($this->orig, $this->final1, $this->final2);
+            $this->_init();
+            return $edit;
+        }
+    }
+
+    function _init()
+    {
+        $this->orig = $this->final1 = $this->final2 = array();
+    }
+
+    function _append(&$array, $lines)
+    {
+        array_splice($array, sizeof($array), 0, $lines);
+    }
+
+}

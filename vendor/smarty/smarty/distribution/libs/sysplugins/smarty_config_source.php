@@ -1,43 +1,94 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+OtzKr/ttQyt2BB/KDt8jm==
+<?php
+/**
+ * Smarty Internal Plugin
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ */
+
+/**
+ * Smarty Resource Data Object
+ *
+ * Meta Data Container for Config Files
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ * @author Rodney Rehm
+ *
+ * @property string $content
+ * @property int    $timestamp
+ * @property bool   $exists
+ */
+class Smarty_Config_Source extends Smarty_Template_Source
+{
+    /**
+     * create Config Object container
+     *
+     * @param Smarty_Resource $handler         Resource Handler this source object communicates with
+     * @param Smarty          $smarty          Smarty instance this source object belongs to
+     * @param string          $resource        full config_resource
+     * @param string          $type            type of resource
+     * @param string          $name            resource name
+     * @param string          $unique_resource unqiue resource name
+     */
+    public function __construct(Smarty_Resource $handler, Smarty $smarty, $resource, $type, $name, $unique_resource)
+    {
+        $this->handler = $handler; // Note: prone to circular references
+
+        // Note: these may be ->config_compiler_class etc in the future
+        //$this->config_compiler_class = $handler->config_compiler_class;
+        //$this->config_lexer_class = $handler->config_lexer_class;
+        //$this->config_parser_class = $handler->config_parser_class;
+
+        $this->smarty = $smarty;
+        $this->resource = $resource;
+        $this->type = $type;
+        $this->name = $name;
+        $this->unique_resource = $unique_resource;
+    }
+
+    /**
+     * <<magic>> Generic setter.
+     *
+     * @param  string          $property_name valid: content, timestamp, exists
+     * @param  mixed           $value         newly assigned value (not check for correct type)
+     * @throws SmartyException when the given property name is not valid
+     */
+    public function __set($property_name, $value)
+    {
+        switch ($property_name) {
+            case 'content':
+            case 'timestamp':
+            case 'exists':
+                $this->$property_name = $value;
+                break;
+
+            default:
+                throw new SmartyException("invalid config property '$property_name'.");
+        }
+    }
+
+    /**
+     * <<magic>> Generic getter.
+     *
+     * @param  string          $property_name valid: content, timestamp, exists
+     * @throws SmartyException when the given property name is not valid
+     */
+    public function __get($property_name)
+    {
+        switch ($property_name) {
+            case 'timestamp':
+            case 'exists':
+                $this->handler->populateTimestamp($this);
+
+                return $this->$property_name;
+
+            case 'content':
+                return $this->content = $this->handler->getContent($this);
+
+            default:
+                throw new SmartyException("config property '$property_name' does not exist.");
+        }
+    }
+
+}

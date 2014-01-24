@@ -1,70 +1,110 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-q5EzjaJoqCO=
+<?php
+/**
+ * CRangeValidator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CRangeValidator validates that the attribute value is among the list (specified via {@link range}).
+ * You may invert the validation logic with help of the {@link not} property (available since 1.1.5).
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.validators
+ * @since 1.0
+ */
+class CRangeValidator extends CValidator
+{
+	/**
+	 * @var array list of valid values that the attribute value should be among
+	 */
+	public $range;
+	/**
+	 * @var boolean whether the comparison is strict (both type and value must be the same)
+	 */
+	public $strict=false;
+	/**
+	 * @var boolean whether the attribute value can be null or empty. Defaults to true,
+	 * meaning that if the attribute is empty, it is considered valid.
+	 */
+	public $allowEmpty=true;
+	/**
+	 * @var boolean whether to invert the validation logic. Defaults to false. If set to true,
+	 * the attribute value should NOT be among the list of values defined via {@link range}.
+	 * @since 1.1.5
+	 **/
+ 	public $not=false;
+
+	/**
+	 * Validates the attribute of the object.
+	 * If there is any error, the error message is added to the object.
+	 * @param CModel $object the object being validated
+	 * @param string $attribute the attribute being validated
+	 * @throws CException if given {@link range} is not an array
+	 */
+	protected function validateAttribute($object,$attribute)
+	{
+		$value=$object->$attribute;
+		if($this->allowEmpty && $this->isEmpty($value))
+			return;
+		if(!is_array($this->range))
+			throw new CException(Yii::t('yii','The "range" property must be specified with a list of values.'));
+		$result = false;
+		if($this->strict)
+			$result=in_array($value,$this->range,true);
+		else
+		{
+			foreach($this->range as $r)
+			{
+				$result=(strcmp($r,$value)===0);
+				if($result)
+					break;
+			}
+		}
+		if(!$this->not && !$result)
+		{
+			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is not in the list.');
+			$this->addError($object,$attribute,$message);
+		}
+		elseif($this->not && $result)
+		{
+			$message=$this->message!==null?$this->message:Yii::t('yii','{attribute} is in the list.');
+			$this->addError($object,$attribute,$message);
+		}
+	}
+
+	/**
+	 * Returns the JavaScript needed for performing client-side validation.
+	 * @param CModel $object the data object being validated
+	 * @param string $attribute the name of the attribute to be validated.
+	 * @throws CException if given {@link range} is not an array
+	 * @return string the client-side validation script.
+	 * @see CActiveForm::enableClientValidation
+	 * @since 1.1.7
+	 */
+	public function clientValidateAttribute($object,$attribute)
+	{
+		if(!is_array($this->range))
+			throw new CException(Yii::t('yii','The "range" property must be specified with a list of values.'));
+
+		if(($message=$this->message)===null)
+			$message=$this->not ? Yii::t('yii','{attribute} is in the list.') : Yii::t('yii','{attribute} is not in the list.');
+		$message=strtr($message,array(
+			'{attribute}'=>$object->getAttributeLabel($attribute),
+		));
+
+		$range=array();
+		foreach($this->range as $value)
+			$range[]=(string)$value;
+		$range=CJSON::encode($range);
+
+		return "
+if(".($this->allowEmpty ? "jQuery.trim(value)!='' && " : '').($this->not ? "jQuery.inArray(value, $range)>=0" : "jQuery.inArray(value, $range)<0").") {
+	messages.push(".CJSON::encode($message).");
+}
+";
+	}
+}

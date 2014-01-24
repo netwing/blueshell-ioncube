@@ -1,140 +1,389 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-VG7Uj46WPPu=
+<?php
+/**
+* Smarty Internal Plugin
+*
+* @package Smarty
+* @subpackage Cacher
+*/
+
+/**
+* Cache Handler API
+*
+* @package Smarty
+* @subpackage Cacher
+* @author Rodney Rehm
+*/
+abstract class Smarty_CacheResource
+{
+    /**
+    * cache for Smarty_CacheResource instances
+    * @var array
+    */
+    public static $resources = array();
+
+    /**
+    * resource types provided by the core
+    * @var array
+    */
+    protected static $sysplugins = array(
+        'file' => true,
+    );
+
+    /**
+    * populate Cached Object with meta data from Resource
+    *
+    * @param Smarty_Template_Cached $cached cached object
+    * @param Smarty_Internal_Template $_template template object
+    * @return void
+    */
+    abstract public function populate(Smarty_Template_Cached $cached, Smarty_Internal_Template $_template);
+
+    /**
+    * populate Cached Object with timestamp and exists from Resource
+    *
+    * @param Smarty_Template_Cached $source cached object
+    * @return void
+    */
+    abstract public function populateTimestamp(Smarty_Template_Cached $cached);
+
+    /**
+    * Read the cached template and process header
+    *
+    * @param Smarty_Internal_Template $_template template object
+    * @param Smarty_Template_Cached $cached cached object
+    * @return booelan true or false if the cached content does not exist
+    */
+    abstract public function process(Smarty_Internal_Template $_template, Smarty_Template_Cached $cached=null);
+
+    /**
+    * Write the rendered template output to cache
+    *
+    * @param Smarty_Internal_Template $_template template object
+    * @param string $content content to cache
+    * @return boolean success
+    */
+    abstract public function writeCachedContent(Smarty_Internal_Template $_template, $content);
+
+    /**
+    * Return cached content
+    *
+    * @param Smarty_Internal_Template $_template template object
+    * @param string $content content of cache
+    */
+    public function getCachedContent(Smarty_Internal_Template $_template)
+    {
+        if ($_template->cached->handler->process($_template)) {
+            ob_start();
+            $_template->properties['unifunc']($_template);
+
+            return ob_get_clean();
+        }
+
+        return null;
+    }
+
+    /**
+    * Empty cache
+    *
+    * @param Smarty $smarty Smarty object
+    * @param integer $exp_time expiration time (number of seconds, not timestamp)
+    * @return integer number of cache files deleted
+    */
+    abstract public function clearAll(Smarty $smarty, $exp_time=null);
+
+    /**
+    * Empty cache for a specific template
+    *
+    * @param Smarty $smarty Smarty object
+    * @param string $resource_name template name
+    * @param string $cache_id cache id
+    * @param string $compile_id compile id
+    * @param integer $exp_time expiration time (number of seconds, not timestamp)
+    * @return integer number of cache files deleted
+    */
+    abstract public function clear(Smarty $smarty, $resource_name, $cache_id, $compile_id, $exp_time);
+
+    public function locked(Smarty $smarty, Smarty_Template_Cached $cached)
+    {
+        // theoretically locking_timeout should be checked against time_limit (max_execution_time)
+        $start = microtime(true);
+        $hadLock = null;
+        while ($this->hasLock($smarty, $cached)) {
+            $hadLock = true;
+            if (microtime(true) - $start > $smarty->locking_timeout) {
+                // abort waiting for lock release
+                return false;
+            }
+            sleep(1);
+        }
+
+        return $hadLock;
+    }
+
+    public function hasLock(Smarty $smarty, Smarty_Template_Cached $cached)
+    {
+        // check if lock exists
+        return false;
+    }
+
+    public function acquireLock(Smarty $smarty, Smarty_Template_Cached $cached)
+    {
+        // create lock
+        return true;
+    }
+
+    public function releaseLock(Smarty $smarty, Smarty_Template_Cached $cached)
+    {
+        // release lock
+        return true;
+    }
+
+    /**
+    * Load Cache Resource Handler
+    *
+    * @param Smarty $smarty Smarty object
+    * @param string $type name of the cache resource
+    * @return Smarty_CacheResource Cache Resource Handler
+    */
+    public static function load(Smarty $smarty, $type = null)
+    {
+        if (!isset($type)) {
+            $type = $smarty->caching_type;
+        }
+
+        // try smarty's cache
+        if (isset($smarty->_cacheresource_handlers[$type])) {
+            return $smarty->_cacheresource_handlers[$type];
+        }
+
+        // try registered resource
+        if (isset($smarty->registered_cache_resources[$type])) {
+            // do not cache these instances as they may vary from instance to instance
+            return $smarty->_cacheresource_handlers[$type] = $smarty->registered_cache_resources[$type];
+        }
+        // try sysplugins dir
+        if (isset(self::$sysplugins[$type])) {
+            if (!isset(self::$resources[$type])) {
+                $cache_resource_class = 'Smarty_Internal_CacheResource_' . ucfirst($type);
+                self::$resources[$type] = new $cache_resource_class();
+            }
+
+            return $smarty->_cacheresource_handlers[$type] = self::$resources[$type];
+        }
+        // try plugins dir
+        $cache_resource_class = 'Smarty_CacheResource_' . ucfirst($type);
+        if ($smarty->loadPlugin($cache_resource_class)) {
+            if (!isset(self::$resources[$type])) {
+                self::$resources[$type] = new $cache_resource_class();
+            }
+
+            return $smarty->_cacheresource_handlers[$type] = self::$resources[$type];
+        }
+        // give up
+        throw new SmartyException("Unable to load cache resource '{$type}'");
+    }
+
+    /**
+    * Invalid Loaded Cache Files
+    *
+    * @param Smarty $smarty Smarty object
+    */
+    public static function invalidLoadedCache(Smarty $smarty)
+    {
+        foreach ($smarty->template_objects as $tpl) {
+            if (isset($tpl->cached)) {
+                $tpl->cached->valid = false;
+                $tpl->cached->processed = false;
+            }
+        }
+    }
+}
+
+/**
+* Smarty Resource Data Object
+*
+* Cache Data Container for Template Files
+*
+* @package Smarty
+* @subpackage TemplateResources
+* @author Rodney Rehm
+*/
+class Smarty_Template_Cached
+{
+    /**
+    * Source Filepath
+    * @var string
+    */
+    public $filepath = false;
+
+    /**
+    * Source Content
+    * @var string
+    */
+    public $content = null;
+
+    /**
+    * Source Timestamp
+    * @var integer
+    */
+    public $timestamp = false;
+
+    /**
+    * Source Existence
+    * @var boolean
+    */
+    public $exists = false;
+
+    /**
+    * Cache Is Valid
+    * @var boolean
+    */
+    public $valid = false;
+
+    /**
+    * Cache was processed
+    * @var boolean
+    */
+    public $processed = false;
+
+    /**
+    * CacheResource Handler
+    * @var Smarty_CacheResource
+    */
+    public $handler = null;
+
+    /**
+    * Template Compile Id (Smarty_Internal_Template::$compile_id)
+    * @var string
+    */
+    public $compile_id = null;
+
+    /**
+    * Template Cache Id (Smarty_Internal_Template::$cache_id)
+    * @var string
+    */
+    public $cache_id = null;
+
+    /**
+    * Id for cache locking
+    * @var string
+    */
+    public $lock_id = null;
+
+    /**
+    * flag that cache is locked by this instance
+    * @var bool
+    */
+    public $is_locked = false;
+
+    /**
+    * Source Object
+    * @var Smarty_Template_Source
+    */
+    public $source = null;
+
+    /**
+    * create Cached Object container
+    *
+    * @param Smarty_Internal_Template $_template template object
+    */
+    public function __construct(Smarty_Internal_Template $_template)
+    {
+        $this->compile_id = $_template->compile_id;
+        $this->cache_id = $_template->cache_id;
+        $this->source = $_template->source;
+        $_template->cached = $this;
+        $smarty = $_template->smarty;
+
+        //
+        // load resource handler
+        //
+        $this->handler = $handler = Smarty_CacheResource::load($smarty); // Note: prone to circular references
+
+        //
+        //    check if cache is valid
+        //
+        if (!($_template->caching == Smarty::CACHING_LIFETIME_CURRENT || $_template->caching == Smarty::CACHING_LIFETIME_SAVED) || $_template->source->recompiled) {
+            $handler->populate($this, $_template);
+
+            return;
+        }
+        while (true) {
+            while (true) {
+                $handler->populate($this, $_template);
+                if ($this->timestamp === false || $smarty->force_compile || $smarty->force_cache) {
+                    $this->valid = false;
+                } else {
+                    $this->valid = true;
+                }
+                if ($this->valid && $_template->caching == Smarty::CACHING_LIFETIME_CURRENT && $_template->cache_lifetime >= 0 && time() > ($this->timestamp + $_template->cache_lifetime)) {
+                    // lifetime expired
+                    $this->valid = false;
+                }
+                if ($this->valid || !$_template->smarty->cache_locking) {
+                    break;
+                }
+                if (!$this->handler->locked($_template->smarty, $this)) {
+                    $this->handler->acquireLock($_template->smarty, $this);
+                    break 2;
+                }
+            }
+            if ($this->valid) {
+                if (!$_template->smarty->cache_locking || $this->handler->locked($_template->smarty, $this) === null) {
+                    // load cache file for the following checks
+                    if ($smarty->debugging) {
+                        Smarty_Internal_Debug::start_cache($_template);
+                    }
+                    if ($handler->process($_template, $this) === false) {
+                        $this->valid = false;
+                    } else {
+                        $this->processed = true;
+                    }
+                    if ($smarty->debugging) {
+                        Smarty_Internal_Debug::end_cache($_template);
+                    }
+                } else {
+                    continue;
+                }
+            } else {
+                return;
+            }
+            if ($this->valid && $_template->caching === Smarty::CACHING_LIFETIME_SAVED && $_template->properties['cache_lifetime'] >= 0 && (time() > ($_template->cached->timestamp + $_template->properties['cache_lifetime']))) {
+                $this->valid = false;
+            }
+            if (!$this->valid && $_template->smarty->cache_locking) {
+                $this->handler->acquireLock($_template->smarty, $this);
+
+                return;
+            } else {
+                return;
+            }
+        }
+    }
+
+    /**
+    * Write this cache object to handler
+    *
+    * @param Smarty_Internal_Template $_template template object
+    * @param string $content content to cache
+    * @return boolean success
+    */
+    public function write(Smarty_Internal_Template $_template, $content)
+    {
+        if (!$_template->source->recompiled) {
+            if ($this->handler->writeCachedContent($_template, $content)) {
+                $this->timestamp = time();
+                $this->exists = true;
+                $this->valid = true;
+                if ($_template->smarty->cache_locking) {
+                    $this->handler->releaseLock($_template->smarty, $this);
+                }
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+}

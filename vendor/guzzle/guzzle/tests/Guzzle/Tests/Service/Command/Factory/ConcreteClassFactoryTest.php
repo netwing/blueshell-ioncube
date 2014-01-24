@@ -1,37 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-cxs5BrriUYIq/3tEP0==
+<?php
+
+namespace Guzzle\Tests\Service\Command;
+
+use Guzzle\Tests\Service\Mock\MockClient;
+use Guzzle\Service\Command\Factory\ConcreteClassFactory;
+
+/**
+ * @covers Guzzle\Service\Command\Factory\ConcreteClassFactory
+ */
+class ConcreteClassFactoryTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testProvider()
+    {
+        return array(
+            array('foo', null, 'Guzzle\\Tests\\Service\\Mock\\Command\\'),
+            array('mock_command', 'Guzzle\Tests\Service\Mock\Command\MockCommand', 'Guzzle\\Tests\\Service\\Mock\\Command\\'),
+            array('other_command', 'Guzzle\Tests\Service\Mock\Command\OtherCommand', 'Guzzle\\Tests\\Service\\Mock\\Command\\'),
+            array('sub.sub', 'Guzzle\Tests\Service\Mock\Command\Sub\Sub', 'Guzzle\\Tests\\Service\\Mock\\Command\\'),
+            array('sub.sub', null, 'Guzzle\\Foo\\'),
+            array('foo', null, null),
+            array('mock_command', 'Guzzle\Tests\Service\Mock\Command\MockCommand', null),
+            array('other_command', 'Guzzle\Tests\Service\Mock\Command\OtherCommand', null),
+            array('sub.sub', 'Guzzle\Tests\Service\Mock\Command\Sub\Sub', null)
+        );
+    }
+
+    /**
+     * @dataProvider testProvider
+     */
+    public function testCreatesConcreteCommands($key, $result, $prefix)
+    {
+        if (!$prefix) {
+            $client = new MockClient();
+        } else {
+            $client = new MockClient('', array(
+                'command.prefix' => $prefix
+            ));
+        }
+
+        $factory = new ConcreteClassFactory($client);
+
+        if (is_null($result)) {
+            $this->assertNull($factory->factory($key));
+        } else {
+            $this->assertInstanceof($result, $factory->factory($key));
+        }
+    }
+}

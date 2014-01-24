@@ -1,41 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Batch;
+
+use Guzzle\Batch\FlushingBatch;
+use Guzzle\Batch\Batch;
+
+/**
+ * @covers Guzzle\Batch\FlushingBatch
+ */
+class FlushingBatchTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testFlushesWhenSizeMeetsThreshold()
+    {
+        $t = $this->getMock('Guzzle\Batch\BatchTransferInterface', array('transfer'));
+        $d = $this->getMock('Guzzle\Batch\BatchDivisorInterface', array('createBatches'));
+
+        $batch = new Batch($t, $d);
+        $queue = $this->readAttribute($batch, 'queue');
+
+        $d->expects($this->exactly(2))
+            ->method('createBatches')
+            ->will($this->returnCallback(function () use ($queue) {
+                $items = array();
+                foreach ($queue as $item) {
+                    $items[] = $item;
+                }
+                return array($items);
+            }));
+
+        $t->expects($this->exactly(2))
+            ->method('transfer');
+
+        $flush = new FlushingBatch($batch, 3);
+        $this->assertEquals(3, $flush->getThreshold());
+        $flush->setThreshold(2);
+        $flush->add('foo')->add('baz')->add('bar')->add('bee')->add('boo');
+        $this->assertEquals(1, count($flush));
+    }
+}

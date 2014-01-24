@@ -1,83 +1,168 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests for string resources
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for string resource tests
+*/
+class StringResourceTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smarty->clearAllCache();
+        $this->smarty->clearCompiledTemplate();
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    protected function relative($path)
+    {
+        $path = str_replace( dirname(__FILE__), '.', $path );
+        if (DS == "\\") {
+            $path = str_replace( "\\", "/", $path );
+        }
+
+        return $path;
+    }
+
+    /**
+    * test template string exits
+    */
+    public function testTemplateStringExists1()
+    {
+        $tpl = $this->smarty->createTemplate('string:{$foo}');
+        $this->assertTrue($tpl->source->exists);
+    }
+    public function testTemplateStringExists2()
+    {
+        $this->assertTrue($this->smarty->templateExists('string:{$foo}'));
+    }
+    /**
+    * test getTemplateFilepath
+    */
+    public function testGetTemplateFilepath()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertEquals('2aae6c35c94fcfb415dbe95f408b9ce91ee846ed', $tpl->source->filepath);
+    }
+    /**
+    * test getTemplateTimestamp
+    */
+    public function testGetTemplateTimestamp()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertEquals(0,$tpl->source->timestamp);
+    }
+    /**
+    * test getTemplateSource
+    */
+    public function testGetTemplateSource()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world{$foo}');
+        $this->assertEquals('hello world{$foo}', $tpl->source->content);
+    }
+    /**
+    * test usesCompiler
+    */
+    public function testUsesCompiler()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertFalse($tpl->source->uncompiled);
+    }
+    /**
+    * test isEvaluated
+    */
+    public function testIsEvaluated()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertFalse($tpl->source->recompiled);
+    }
+    /**
+    * test mustCompile
+    */
+    public function testMustCompile()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertTrue($tpl->mustCompile());
+    }
+    /**
+    * test getCompiledFilepath
+    */
+    public function testGetCompiledFilepath()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertEquals('./templates_c/2aae6c35c94fcfb415dbe95f408b9ce91ee846ed.string.php', $this->relative($tpl->compiled->filepath));
+    }
+    /**
+    * test getCompiledTimestamp
+    */
+    public function testGetCompiledTimestamp()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertFalse($tpl->compiled->timestamp);
+    }
+    /**
+    * test getCachedTimestamp
+    */
+    public function testGetCachedTimestamp()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertFalse($tpl->cached->timestamp);
+    }
+    /**
+    * test writeCachedContent
+    */
+    public function testWriteCachedContent()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertFalse($tpl->writeCachedContent('dummy'));
+    }
+    /**
+    * test isCached
+    */
+    public function testIsCached()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertFalse($tpl->isCached());
+    }
+    /**
+    * test getRenderedTemplate
+    */
+    public function testGetRenderedTemplate()
+    {
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertEquals('hello world', $tpl->fetch());
+    }
+    /**
+    * test $smarty->is_cached
+    */
+    public function testSmartyIsCached()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 20;
+        $tpl = $this->smarty->createTemplate('string:hello world');
+        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
+        $this->assertTrue($this->smarty->isCached($tpl));
+    }
+
+    public function testUrlencodeTemplate()
+    {
+        $tpl = $this->smarty->createTemplate('string:urlencode:%7B%22foobar%22%7Cescape%7D');
+        $this->assertEquals('foobar', $tpl->fetch());
+    }
+
+    public function testBase64Template()
+    {
+        $tpl = $this->smarty->createTemplate('string:base64:eyJmb29iYXIifGVzY2FwZX0=');
+        $this->assertEquals('foobar', $tpl->fetch());
+    }
+}

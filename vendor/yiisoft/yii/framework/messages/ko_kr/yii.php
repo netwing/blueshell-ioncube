@@ -1,228 +1,255 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-XAqD
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * Message string can be used with plural forms format. Check i18n section
+ * of the guide for details.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  '"{path}" is not a valid directory.' => '"{path}"는 올바른 디렉토리가 아닙니다.',
+  '&lt; Previous' => '&lt; 이전',
+  '&lt;&lt; First' => '&lt;&lt; 처음',
+  'Action class {class} must implement the "run" method.' => '액션 클래스 {class}는 "run" 메쏘드를 반드시 구현해야합니다.',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record는 "db" CDbConnection 응용프로그램 구성요소가 필요합니다.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => '액티브 레코드 "{class}"의 관계 {relation}의 구성에 오류가 있습니다. 관계 유형, 관련된 액티브 레코드 클래스와 외래 키를 지정하십시오.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => '액티브 레코드 "{class}"는 잘못된 컬럼 "{column}"을 선택하려고했습니다. 테이블에있는 컬럼 또는 별칭을 지정하는식이 아니면 안됩니다.',
+  'Adding a foreign key constraint to an existing table is not supported by SQLite.' => 'SQLite는 기존 테이블에 외래 키 제약 조건을 부여하지 않습니다.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => '"{alias}"는 올바르지않습니다. php 파일이 읽기 가능한지 확인하십시오.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => '경로 별칭 "{alias}"가 올바르지않습니다. 실제 있는 디렉토리와 파일을 가리 키는지 확인하십시오.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory.' => '"{alias}"는 올바르지않습니다. 디렉토리가 실제 있는지 확인하십시오.',
+  'Altering a DB column is not supported by SQLite.' => 'SQLite는 데이터베이스의 컬럼을 변경할 수 없습니다.',
+  'Application Log' => '응용 프로그램 로그',
+  'Application base path "{path}" is not a valid directory.' => '응용 프로그램 기본 경로 "{path}"는 올바른 디렉토리가 아닙니다.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => '응용 프로그램 런타임 경로 "{path}"는 올바르지 않습니다. 웹 서버 프로세스가 쓸 수 있는지 확인하십시오.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => '인증 항목 "{item}"는 이미 사용자 "{user}"에 할당되어있습니다.',
+  'Base path "{path}" is not a valid directory.' => '기본 경로 "{path}" 올바른 디렉토리가 아닙니다.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache은 PHP APC 확장이 필요합니다.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}"는 올바르지않습니다. 디렉토리가 실제 있고 웹 서버 프로세스가 쓸 수 있는지를 확인하십시오.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID이 올바르지않습니다. "{id}"가 올바른 캐시 응용 프로그램 구성 요소를 참조하고 ​​있는지 확인하십시오.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}"이 올바르지않습니다. 현재 컨트롤러에 그런 액션이 없습니다.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}"이 올바르지않습니다. CDbConnection 응용 프로그램 구성 요소의 ID를 참조하고 ​있는지 확인하십시오.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}"이 올바르지않습니다. CDbConnection 응용 프로그램 구성 요소의 ID를 참조하고 있는 지 확인하십시오.',
+  'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCacheDependency.connectionID "{id}"는 올바르지않습니다. CDbConnection 응용 프로그램 구성 요소의 ID를 가리키는 지 확인하십시오.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql는 공백을 사용할 수 없습니다.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand은 SQL 문을 실행할 수 없습니다: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand는 SQL 문을 준비하지 않습니다: {error}',
+  'CDbCommand::execute() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::execute()이 실패했습니다: {error}. 실행된 SQL 문장: {sql}',
+  'CDbCommand::{method}() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::{method}()이 실패했습니다: {error}. 실행된 SQL 문장: {sql}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection은 {driver} 데이터베이스에 대하여 스키마 읽기를 지원하지 않습니다.',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection 데이터베이스에 연결할 수 없습니다.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection 데이터베이스에 연결할 수 없습니다. {error}',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString는 공백을 사용할 수 없습니다.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader는 되감을 수 없습니다. 이것은 순방향 전용 리더입니다.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}"이 올바르지않습니다. CDbConnection 응용 프로그램 구성 요소의 ID를 참조하고 ​있는지 확인하십시오.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}"는 올바른 CDbConnection 응용 프로그램 구성 요소를 참조하지 않습니다.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID이 올바르지않습니다. "{id}"가 올바른 데이터베이스 응용 프로그램 구성 요소를 참조하고 ​있는지 확인하십시오.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}"는 올바르지 않습니다. CDbConnection 응용 프로그램 구성 요소의 ID를 가리키는지 확인하십시오.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction 비활성이고 커밋 또는 롤백 작업을 수행할 수 없습니다.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory은 공백을 사용할 수 없습니다.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache은 PHP eAccelerator 확장이 필요합니다. "--with-eaccelerator-shared-memory" 옵션을 붙여 컴파일하십시오.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName은 공백을 사용할 수 없습니다.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}"를 사용하는 디렉토리가 없습니다. 디렉토리가 실제 있는지 웹 서버 프로세스가 쓸 수있는지를 확인하십시오.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain는 IFilter 인터페이스를 구현하는 개체만 가질 수 있습니다.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl는 공백을 사용할 수 없습니다.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name는 공백을 사용할 수 없습니다.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName는 공백을 사용할 수 없습니다.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection은 CHttpCookie 객체를 가집니다.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest는 항목 스크립트의 URL을 확인할 수 없습니다.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest 요청의 경로 정보를 확인할 수 없습니다.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest 요청 URI를 확인할 수 없습니다.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode는 "none", "allow" 또는 "only" 값만 가질 수 있습니다.',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}"는 잘못되었습니다. 0에서 100 사이의 정수이어야 합니다.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}"는 올바른 디렉토리가 아닙니다.',
+  'CMemCache server configuration must be an array.' => 'CMemCache 서버 구성은 배열이어야 합니다.',
+  'CMemCache server configuration must have "host" value.' => 'CMemCache 서버 구성은 host 값이 있어야 합니다.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute가 일치하지 않는 코드 블록 "{token}"를 찾았습니다. Yii::beginProfile()와 Yii::endProfile() 호출이 올바르게 중첩되어 있는지 확인하십시오.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}"이 잘못되었습니다. 올바른 값은 "summary"와 "callstack"를 포함합니다.',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager 데이터 암호화 기능을 사용하기 위해서는 PHP의 mcrypt 확장을 필요로합니다.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey는 공백을 사용할 수 없습니다.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey는 공백을 사용할 수 없습니다.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}>는 {type} 클래스의 개체만 가질 수 있습니다.',
+  'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}>는 {type} 클래스의 개체만 가질 수 있습니다.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat은 "path"또는 "get"중 하나입니다.',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache는 PHP의 wincache 확장이 필요합니다.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache 사용자 캐시를 사용할 수 없습니다. php.ini의 wincache.ucenabled을 On으로 설정하십시오.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache은 PHP XCache 확장을 필요로합니다.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache는 PHP Zend Data Cache 확장이 필요합니다.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{name}"의 자식으로 "{child}"를 추가할 수 없습니다. 루프가 발견되었습니다.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{parent}"의 자식으로 "{child}"를 추가할 수 없습니다. 루프가 발견되었습니다.',
+  'Cannot add "{name}" as a child of itself.' => '"{name}" 자신을 자식으로 추가할 수 없습니다.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => '"{parent}" 형식 항목에는 "{child}" 형식의 항목을 추가할 수 없습니다.',
+  'Column name must be either a string or an array.' => '열 이름은 문자열이나 배열이이어야 합니다.',
+  'Dropping DB column is not supported by SQLite.' => 'SQLite는 데이터베이스 컬럼을 제거할 수 없습니다.',
+  'Dropping a foreign key constraint is not supported by SQLite.' => 'SQLite는 외래 키 제약 조건을 삭제할 수 없습니다.',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" 또는 "{child}"가 없습니다.',
+  'Error: Table "{table}" does not have a primary key.' => '오류 : 테이블 "{table}"에 기본 키가 없습니다.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => '오류 : 테이블 "{table}"은 복합 기본 키가 존재하지만, 이것은 CRUD 명령에서 지원하지 않습니다.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => '이벤트 "{class}.{event}"는 잘못된 처리기 "{handler}"로 연결되었습니다.',
+  'Event "{class}.{event}" is not defined.' => '이벤트 "{class}.{event}"를 정의하지 않았습니다.',
+  'Extension path "{path}" does not exist.' => '확장 경로 "{path}"는 없는 경로입니다.',
+  'Failed to initialize the mcrypt module.' => 'mcrypt 모듈을 초기화하지 못했습니다.',
+  'Failed to set unsafe attribute "{attribute}" of "{class}".' => '"{class}"의 안전하지 않은 속성 "{attribute}"를 설정할 수 없습니다.',
+  'Failed to start session.' => '세션을 시작할 수 없습니다.',
+  'Failed to write the uploaded file "{file}" to disk.' => '업로드된 파일 "{file}"를 디스크에 쓸 수 없습니다.',
+  'File upload was stopped by extension.' => '파일 업로드가 확장(?)에 의해서 중지되었습니다.',
+  'Filter "{filter}" is invalid. Controller "{class}" does not have the filter method "filter{filter}".' => '필터 "{filter}"가 잘못되었습니다. 컨트롤러 "{class}"는 필터 메쏘드 "filter {filter}"를 가지고 있지않습니다.',
+  'GD and FreeType PHP extensions are required.' => 'GD와 FreeType PHP 확장이 필요합니다.',
+  'Get a new code' => '새 코드 가져오기',
+  'Go to page: ' => '페이지:',
+  'Invalid MO file revision: {revision}.' => '잘못된 MO 파일 버전 번호입니다: ({revision}).',
+  'Invalid MO file: {file} (magic: {magic}).' => '잘못된 MO 파일입니다: {file} (magic {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => '잘못된 열거 값 "{value}")입니다. ({enum})에 있는지 확인하십시오.',
+  'Invalid operator "{operator}".' => '연산자 "{operator}"이 잘못되었습니다.',
+  'Last &gt;&gt;' => '마지막 &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => '목록 데이터는 배열 또는 Traversable를 구현하는 오브젝트이어야 합니다.',
+  'List index "{index}" is out of bound.' => '목록 색인 "{index}"는 범위를 초과합니다.',
+  'Login Required' => '로그인이 필요합니다.',
+  'Map data must be an array or an object implementing Traversable.' => '맵 데이터는 배열 또는 Traversable를 구현하는 오브젝트이어야 합니다.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => '업로드 파일 "{file}"을 저장할 임시 폴더가 없습니다.',
+  'Next &gt;' => '다음 &gt;',
+  'No columns are being updated for table "{table}".' => '테이블 "{table}" 컬럼은 아무것도 변경되지 않습니다.',
+  'No counter columns are being updated for table "{table}".' => '테이블 "{table}" 카운터 컬럼은 아무것도 변경되지 않습니다.',
+  'Object configuration must be an array containing a "class" element.' => '객체 구성은 "class" 요소를 포함한 배열이어야 합니다.',
+  'Please fix the following input errors:' => '다음 입력 오류를 수정하십시오.',
+  'Powered by {yii}.' => 'Powered by {yii}.',
+  'Property "{class}.{property}" is not defined.' => '속성 "{class}.{property}"를 정의하지 않았습니다.',
+  'Property "{class}.{property}" is read only.' => '속성 "{class}.{property}"은 읽기 전용입니다.',
+  'Property CMaskedTextField.mask cannot be empty.' => 'CMaskedTextField.mask 속성은 비어있으면 안됩니다.',
+  'Queue data must be an array or an object implementing Traversable.' => '큐 데이터는 배열 또는 Traversable를 구현하는 오브젝트이어야 합니다.',
+  'Relation "{name}" is not defined in active record class "{class}".' => '관계 "{name}"는 액티브 레코드 클래스 "{class}"로 정의되지 않습니다.',
+  'Renaming a DB column is not supported by SQLite.' => 'SQLite는 데이터베이스 컬럼의 이름을 변경할 수 없습니다. ',
+  'Stack data must be an array or an object implementing Traversable.' => '스택 데이터는 배열 또는 Traversable를 구현하는 오브젝트이어야 합니다.',
+  'Table "{table}" does not exist.' => '테이블 "{table}"은 없습니다.',
+  'Table "{table}" does not have a column named "{column}".' => '테이블 "{table}"에는 "{column}"이라는 이름의 컬럼이 없습니다.',
+  'The "db" application component must be configured to be a CDbConnection object.' => '"db" 응용 프로그램 컴포넌트는 CDbConnection 개체로 구성되어야합니다.',
+  'The "filter" property must be specified with a valid callback.' => '"filter" 속성 값은 올바른 콜백을 지정해야합니다.',
+  'The "pattern" property must be specified with a valid regular expression.' => '"pattern" 속성 값은 올바른 정규식을 지정해야합니다.',
+  'The "range" property must be specified with a list of values.' => '"range" 속성 값은 목록으로 지정해야합니다.',
+  'The CSRF token could not be verified.' => 'CSRF 토큰을 확인할 수 없습니다.',
+  'The DB query must contain the "from" portion.' => '데이터베이스 쿼리는 "from" 부분을 포함해야 합니다.',
+  'The STAT relation "{name}" cannot have child relations.' => 'STAT 관계 "{name}"은 자식 관계를 가질 수 없습니다.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => '루트 "{route}"에 대한 URL 패턴 "{pattern}"은 올바른 정규식이 아닙니다.',
+  'The active record cannot be deleted because it is new.' => '액티브 레코드를 삭제할 수 없습니다. 새 것이기 때문입니다.',
+  'The active record cannot be inserted to database because it is not new.' => '액티브 레코드를 데이터베이스에 삽입할 수 없습니다. 새 것이 아니기 때문입니다.',
+  'The active record cannot be updated because it is new.' => '액티브 레코드를 업데이트할 수 없습니다. 새 것이기 때문입니다.',
+  'The asset "{asset}" to be published does not exist.' => '자산 "{asset}"는 존재하지 않습니다.',
+  'The command path "{path}" is not a valid directory.' => '명령 경로 "{path}"는 올바른 디렉토리가 아닙니다.',
+  'The controller path "{path}" is not a valid directory.' => '컨트롤러 경로 "{path}"는 올바른 디렉토리가 아닙니다.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => '파일 "{file}"을 업로드할 수 없습니다. 다음 확장자를 가진 파일만 허용됩니다.: {extensions}',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => '파일 "{file}"이 너무 큽니다. 크기는 {limit} 바이트를 넘을 수 없습니다.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => '파일 "{file}"이 너무 작습니다. 크기는 {limit} 바이트보다 작을 수 없습니다.',
+  'The file "{file}" was only partially uploaded.' => '파일 "{file}"은 일부만 업로드되었습니다.',
+  'The first element in a filter configuration must be the filter class.' => '필터 구성의 첫 번째 요소는 필터 클래스이어야 합니다.',
+  'The format of {attribute} is invalid.' => '{attribute}의 형식이 올바르지 않습니다.',
+  'The item "{name}" does not exist.' => '항목 "{name}"은 없습니다.',
+  'The item "{parent}" already has a child "{child}".' => '항목 "{parent}"은 이미 자식 "{child}"을 가지고 있습니다.',
+  'The layout path "{path}" is not a valid directory.' => '레이아웃 경로 "{path}"는 올바른 디렉토리가 아닙니다.',
+  'The list is read only.' => '리스트는 읽기 전용입니다.',
+  'The map is read only.' => '지도는 읽기 전용입니다.',
+  'The module path "{path}" is not a valid directory.' => '모듈 경로 {path}은 유효한 디렉토리가 아닙니다.',
+  'The pattern for 12 hour format must be "h" or "hh".' => '12 시간제 형식 패턴 "h" 또는 "hh"입니다.',
+  'The pattern for 24 hour format must be "H" or "HH".' => '24 시간제 형식 패턴 "H" 또는 "HH"입니다.',
+  'The pattern for AM/PM marker must be "a".' => 'AM/PM 패턴은 "a"입니다.',
+  'The pattern for day in month must be "F".' => '한달 몇 번째 요일 가지 패턴은 "F"입니다.',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => '한 해 중 날짜의 패턴은 "D"또는 "DD"또는 "DDD"입니다.',
+  'The pattern for day of the month must be "d" or "dd".' => '한달 중 날짜의 패턴은 "d"또는 "dd"입니다.',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => '요일 패턴은 "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc ""ccccc "중 하나입니다.',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => '광고 패턴은 "G"또는 "GG"또는 "GGG"또는 "GGGG"또는 "GGGGG"입니다.',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'AM/PM의 패턴은 "K"또는 "KK"입니다.',
+  'The pattern for hour in day must be "k" or "kk".' => '하루의 시간 패턴은 "k"또는 "kk"입니다.',
+  'The pattern for minutes must be "m" or "mm".' => '분 패턴은 "m"또는 "mm"입니다.',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => '월 패턴은 "M", "MM", "MMM" "MMMM", "L", "LL" "LLL", "LLLL"중 하나입니다.',
+  'The pattern for seconds must be "s" or "ss".' => '초 패턴은 "s" 또는 "ss"입니다.',
+  'The pattern for time zone must be "z" or "v".' => '시간대 패턴은 "z" 또는 "v"입니다.',
+  'The pattern for week in month must be "W".' => '한달의 주 패턴은 "W"이어야 합니다.',
+  'The pattern for week in year must be "w".' => '한해의 주 패턴은 "w"이어야 합니다.',
+  'The queue is empty.' => '대기열이 비어 있습니다.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => '액티브 레코드 클래스 "{class}"관계 "{relation}"은 올바르게 지정되지 않습니다. 외래 키 주어진 조인 테이블 "{joinTable}"데이터베이스에 존재하지 않습니다.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => '액티브 레코드 클래스 "{class}"관계 "{relation}"은 올바르게 지정되지 않습니다. 외래 키 주어진 조인 테이블 "{joinTable}"데이터베이스에 없습니다.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => '액티브 레코드 클래스 "{class}"관계 "{relation}"는 외래 키 "{key}"가 지정되어 있지만 부모 테이블 "{table}"를 표시하지 않습니다.',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => '액티브 레코드 클래스 "{class}"관계 "{relation}"는 불완전한 외부 키가 지정되어 있습니다. 외부 키는 모두 조인 테이블을 참조하는 컬럼으로 구성해야 안됩니다.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => '액티브 레코드 클래스 "{class}"관계 "{relation}"에 잘못된 외래 키 "{key}"가 지정되어 있습니다. 테이블 "{table}"에는 그러한 컬럼이 존재하지 않습니다.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => '액티브 레코드 클래스 "{class}"관계 "{relation}"에 잘못된 외래 키 "{key}"가 지정되어 있습니다. 키의 컬럼은 테이블 "{table}"기본 키와 일치해야합니다.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => '액티브 레코드 클래스 "{class}" 관계 "{relation}"은 잘못된 외부 키가 지정되어 있습니다. 외래 키 포맷은 "joinTable (fk1, fk2, ...)"입니다.',
+  'The requested view "{name}" was not found.' => '요청한 view "{name}"를 찾을 수 없습니다.',
+  'The stack is empty.' => '스택이 비어 있습니다.',
+  'The system is unable to find the requested action "{action}".' => '시스템은 요청된 작업 "{action}"를 찾을 수 없습니다.',
+  'The system view path "{path}" is not a valid directory.' => '시스템 뷰 경로 "{path}"는 올바른 디렉토리가 아닙니다.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => '액티브 레코드 클래스 "{class}"를 위한 테이블 "{table}"을 데이터베이스에서 찾을 수 없습니다.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => '테이블 "{table}" 쿼리에 대하여 열 "{column}" 값이 설정되어 있지 않습니다.',
+  'The verification code is incorrect.' => '검증 코드가 올바르지 않습니다.',
+  'The view path "{path}" is not a valid directory.' => '뷰 패스 "{path}"는 올바른 디렉토리가 아닙니다.',
+  'Theme directory "{directory}" does not exist.' => '테마 디렉터리 "{directory}"가 존재하지 않습니다.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => '이 콘텐츠는 <a href="http://www.adobe.com/go/getflash/"> Adobe Flash Player </a>가 필요합니다.',
+  'Unable to add an item whose name is the same as an existing item.' => '이미 있는 항목과 같은 이름의 항목을 추가할 수 없습니다.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => '항목의 이름을 변경할 수 없습니다. 그 이름 "{name}"은 이미 다른 항목으로 사용되고 있습니다.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => '응용 프로그램 상태 파일 "{file}"를 만들 수 없습니다. 파일 디렉토리가 있는지, 웹 서버 프로세스가 쓸 수 있는지를 확인하십시오.',
+  'Unable to find "{column}" in table "{table}".' => '테이블 "{table}" 안에 컬럼 "{column}"가 없습니다.',
+  'Unable to lock file "{file}" for reading.' => '파일 "{file}"을 읽기 잠금할 수 없습니다.',
+  'Unable to lock file "{file}" for writing.' => '파일 "{file}"를 쓰기 잠금할 수 없습니다.',
+  'Unable to read file "{file}".' => '파일 "{file}"을 읽을 수 없습니다.',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => '액션 "{object}.{method}"을 리플레이 수 없습니다. 메소드가 없습니다.',
+  'Unable to resolve the request "{route}".' => '요청 "{route}"를 해결할 수 없습니다.',
+  'Unable to write file "{file}".' => '파일 "{file}"에 쓸 수 없습니다.',
+  'Unknown authorization item "{name}".' => '"{name}"은 알 수 없는 인증항목입니다.',
+  'Unknown operator "{operator}".' => '"{operator}"는 알 수 없는 연산자입니다.',
+  'Unknown type "{type}".' => '"{type}"은 알 수 없는 형식입니다.',
+  'Unrecognized locale "{locale}".' => '로케일 "{locale}"를 인식할 수 없습니다.',
+  'View file "{file}" does not exist.' => '뷰 파일 "{file}"는 없습니다.',
+  'Yii application can only be created once.' => 'Yii 응용 프로그램은 한 번만 만들 수 있습니다.',
+  'You are not authorized to perform this action.' => '당신은 이 작업을 수행할 권한이 없습니다.',
+  'Your request is invalid.' => '잘못된 요청입니다.',
+  '{attribute} "{value}" has already been taken.' => '{attribute}의 값 "{value}"는 이미 사용되고 있습니다.',
+  '{attribute} "{value}" is invalid.' => '{attribute}의 값으로 "{value}"는 올바르지 않습니다.',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute}는 {limit} 파일 이상 받을 수 없습니다.',
+  '{attribute} cannot be blank.' => '{attribute}는 공백이어서는 안됩니다.',
+  '{attribute} is in the list.' => '{attribute} 목록에 있습니다.',
+  '{attribute} is invalid.' => '{attribute}는 유효하지 않습니다.',
+  '{attribute} is not a valid URL.' => '{attribute}은 유효한 URL이 아닙니다.',
+  '{attribute} is not a valid email address.' => '{attribute}은 유효한 이메일 주소가 아닙니다.',
+  '{attribute} is not in the list.' => '{attribute}는 목록에 없습니다.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute}의 길이가 잘못되었습니다 ({length} 문자이어야 합니다).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute}는 너무 큽니다 (최대 {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute}는 너무 깁니다 (최대 {max} 자)',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute}는 너무 짧습니다 (최소 {min} 문자).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute}는 너무 작습니다 (최소 {min}).',
+  '{attribute} must be a number.' => '{attribute}는 숫자이어야 합니다.',
+  '{attribute} must be an integer.' => '{attribute}는 정수이어야 합니다.',
+  '{attribute} must be either {true} or {false}.' => '{attribute}는 {true}이거나 {false}이어야 합니다.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute}는 "{compareValue}" 보다 커야 합니다.',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute}는 "{compareValue}" 보다 크거나 같아야 합니다.',
+  '{attribute} must be less than "{compareValue}".' => '{attribute}는 "{compareValue}" 보다 작아야 합니다.',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute}는 "{compareValue}" 보다 작거나 같아야 합니다.',
+  '{attribute} must be repeated exactly.' => '{attribute}은 정확하게 반복해야합니다.',
+  '{attribute} must be {type}.' => '{attribute}는 {type}이어야합니다.',
+  '{attribute} must be {value}.' => '{attribute}는 {value}이어야합니다.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute}는 "{compareValue}"와 같으면 안됩니다.',
+  '{className} does not support add() functionality.' => '{className}는 add() 기능을 지원하지 않습니다.',
+  '{className} does not support delete() functionality.' => '{className}는 delete() 기능을 지원하지 않습니다.',
+  '{className} does not support flushValues() functionality.' => '{className}는 flushValues() 기능을 지원하지 않습니다.',
+  '{className} does not support get() functionality.' => '{className}는 get() 기능을 지원하지 않습니다.',
+  '{className} does not support set() functionality.' => '{className}는 set() 기능을 지원하지 않습니다.',
+  '{class} and its behaviors do not have a method or closure named "{name}".' => '{class}와 그 행동에는 "{name}"라는 메서드 및 클로저는 없습니다.',
+  '{class} does not have relation "{name}".' => '{class}는 "{name}"과 관계가 없습니다.',
+  '{class} does not support fetching all table names.' => '{class}는 테이블 이름 검색 기능을 지원하지 않습니다.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} 검증 규칙은 잘못된 것입니다. 규칙은 검사하고자하는 속성과 유효성 이름을 지정하십시오.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class}에는 "model"과 "attribute" 또는 "name" 속성 값을 설정하십시오.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '쿠키 기반 인증을 사용하려면 {class}.allowAutoLogin를 설정하십시오.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate()는 반드시 구현해야 합니다.',
+  '{controller} cannot find the requested view "{view}".' => '{controller}는 요청한 view "{view}"를 찾을 수 없습니다.',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller}는 view "{view}"안에 잘못 중첩된 위젯 태그를 가지고 있습니다. {widget} 위젯은 endWidget() 호출을 가지고 있지않습니다.',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller}는 view를 위해 여분의 endWidget ({id})를 호출합니다.',
+  '{widget} cannot find the view "{view}".' => '{widget}는 view "{view}"를 찾을 수 없습니다.',
+);
+

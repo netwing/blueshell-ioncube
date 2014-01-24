@@ -1,40 +1,41 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\PHPUnit\Constraint;
+
+use Codeception\Util\Console\Message;
+
+class Page extends \PHPUnit_Framework_Constraint_StringContains
+{
+    protected $uri;
+
+    public function __construct($string, $uri = '')
+    {
+        $this->string     = (string)$string;
+        $this->uri = $uri;
+        $this->ignoreCase = true;
+    }
+
+    protected function failureDescription($other)
+    {
+        $page = substr($other,0,300);
+        $message = new Message($page);
+        $message->style('info');
+        $message->prepend($this->uriMessage());
+        if (strlen($other) > 300) {
+            $debugMessage = new Message("[Content too long to display. See complete response in '_log' directory]");
+            $debugMessage->style('debug')->prepend("\n");
+            $message->append($debugMessage);
+        }
+        $message->prepend("\n-->")->append("\n--> ");
+        return $message->getMessage() . $this->toString();
+    }
+
+    protected function uriMessage($onPage = "")
+    {
+        if (!$this->uri) return "";
+        $message = new Message($this->uri);
+        $message->style('bold');
+        $message->prepend(" $onPage ");
+        return $message;
+    }
+
+}

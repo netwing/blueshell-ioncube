@@ -1,79 +1,193 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * WebDriver action builder. It implements the builder pattern.
+ */
+class WebDriverActions {
+
+  protected $driver;
+  protected $keyboard;
+  protected $mouse;
+  protected $action;
+
+  public function __construct(WebDriver $driver) {
+    $this->driver = $driver;
+    $this->keyboard = $driver->getKeyboard();
+    $this->mouse = $driver->getMouse();
+    $this->action = new WebDriverCompositeAction();
+  }
+
+  /**
+   * A convenience method for performing the actions without calling build().
+   */
+  public function perform() {
+    $this->action->perform();
+  }
+
+  /**
+   * Mouse click.
+   * If $element is provided, move to the middle of the element first.
+   */
+  public function click(WebDriverElement $element = null) {
+    $this->action->addAction(
+      new WebDriverClickAction($this->mouse, $element)
+    );
+    return $this;
+  }
+
+  /**
+   * Mouse click and hold.
+   * If $element is provided, move to the middle of the element first.
+   */
+  public function clickAndHold(WebDriverElement $element = null) {
+    $this->action->addAction(
+      new WebDriverClickAndHoldAction($this->mouse, $element)
+    );
+    return $this;
+  }
+
+  /**
+   * Context-click (right click).
+   * If $element is provided, move to the middle of the element first.
+   */
+  public function contextClick(WebDriverElement $element = null) {
+    $this->action->addAction(
+      new WebDriverContextClickAction($this->mouse, $element)
+    );
+    return $this;
+  }
+
+  /**
+   * Double click.
+   * If $element is provided, move to the middle of the element first.
+   */
+  public function doubleClick(WebDriverElement $element = null) {
+    $this->action->addAction(
+      new WebDriverDoubleClickAction($this->mouse, $element)
+    );
+    return $this;
+  }
+
+  /**
+   * Drag and drop from $source to $target.
+   */
+  public function dragAndDrop(WebDriverElement $source,
+                              WebDriverElement $target) {
+    $this->action->addAction(
+      new WebDriverClickAndHoldAction($this->mouse, $source)
+    );
+    $this->action->addAction(
+      new WebDriverMouseMoveAction($this->mouse, $target)
+    );
+    $this->action->addAction(
+      new WebDriverButtonReleaseAction($this->mouse, $target)
+    );
+    return $this;
+  }
+
+  /**
+   * Drag $source and drop by offset ($x_offset, $y_offset).
+   */
+  public function dragAndDropBy(WebDriverElement $source,
+                                $x_offset,
+                                $y_offset) {
+    $this->action->addAction(
+      new WebDriverClickAndHoldAction($this->mouse, $source)
+    );
+    $this->action->addAction(
+      new WebDriverMoveToOffsetAction($this->mouse, null, $x_offset, $y_offset)
+    );
+    $this->action->addAction(
+      new WebDriverButtonReleaseAction($this->mouse, null)
+    );
+    return $this;
+  }
+
+  /**
+   * Mouse move by offset.
+   */
+  public function moveByOffset($x_offset, $y_offset) {
+    $this->action->addAction(
+      new WebDriverMoveToOffsetAction($this->mouse, null, $x_offset, $y_offset)
+    );
+    return $this;
+  }
+
+  /**
+   * Move to the middle of the given WebDriverElement. If offset are provided,
+   * move the an offset from the top-left cornerof that element.
+   */
+  public function moveToElement(WebDriverElement $element,
+                                $x_offset = null,
+                                $y_offset = null) {
+    $this->action->addAction(new WebDriverMoveToOffsetAction(
+      $this->mouse, $element, $x_offset, $y_offset
+    ));
+    return $this;
+  }
+
+  /**
+   * Release the mouse button.
+   * If $element is provided, move to the middle of the element first.
+   */
+  public function release(WebDriverElement $element = null) {
+    $this->action->addAction(
+      new WebDriverButtonReleaseAction($this->mouse, $element)
+    );
+    return $this;
+  }
+
+  /**
+   * Press a key on keyboard.
+   * If $element is provided, focus on that element first.
+   *
+   * @see WebDriverKeys for special keys like CONTROL, ALT, etc.
+   */
+  public function keyDown(WebDriverElement $element = null, $key) {
+    $this->action->addAction(
+      new WebDriverKeyDownAction($this->keyboard, $this->mouse, $element, $key)
+    );
+    return $this;
+  }
+
+  /**
+   * Release a key on keyboard.
+   * If $element is provided, focus on that element first.
+   *
+   * @see WebDriverKeys for special keys like CONTROL, ALT, etc.
+   */
+  public function keyUp(WebDriverElement $element = null, $key) {
+    $this->action->addAction(
+      new WebDriverKeyUpAction($this->keyboard, $this->mouse, $element, $key)
+    );
+    return $this;
+  }
+
+  /**
+   * Send keys by keyboard.
+   * If $element is provided, focus on that element first.
+   *
+   * @see WebDriverKeys for special keys like CONTROL, ALT, etc.
+   */
+  public function sendKeys(WebDriverElement $element = null, $keys) {
+    $this->action->addAction(
+      new WebDriverSendKeysAction(
+        $this->keyboard, $this->mouse, $element, $keys
+      )
+    );
+    return $this;
+  }
+}

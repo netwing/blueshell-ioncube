@@ -1,66 +1,121 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty PHPunit tests register->resource
+ *
+ * @package PHPunit
+ * @author Uwe Tews
+ */
+
+/**
+ * class for register->resource tests
+ */
+class RegisteredResourceTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->registerResource("rr", array("rr_get_template",
+                "rr_get_timestamp",
+                "rr_get_secure",
+                "rr_get_trusted"));
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+     * test resource plugin rendering
+     */
+    public function testResourcePlugin()
+    {
+        $this->assertEquals('hello world', $this->smarty->fetch('rr:test'));
+    }
+    public function testClearCompiledResourcePlugin()
+    {
+        $this->assertEquals(1, $this->smarty->clearCompiledTemplate('rr:test'));
+    }
+    /**
+     * test resource plugin timesatmp
+     */
+    public function testResourcePluginTimestamp()
+    {
+        $tpl = $this->smarty->createTemplate('rr:test');
+        $this->assertTrue(is_integer($tpl->source->timestamp));
+        $this->assertEquals(10, strlen($tpl->source->timestamp));
+    }
+    /**
+     * test compile_id change
+     */
+    public function testResourceCompileIdChange()
+    {
+        $this->smarty->registerResource('myresource', array('getSource','getTimestamp','getSecure','getTrusted'));
+        $this->smarty->compile_id = 'a';
+        $this->assertEquals('this is template 1', $this->smarty->fetch('myresource:some'));
+        $this->assertEquals('this is template 1', $this->smarty->fetch('myresource:some'));
+        $this->smarty->compile_id = 'b';
+        $this->assertEquals('this is template 2', $this->smarty->fetch('myresource:some'));
+        $this->assertEquals('this is template 2', $this->smarty->fetch('myresource:some'));
+
+    }
+}
+
+/**
+ * resource functions
+ */
+function rr_get_template ($tpl_name, &$tpl_source, $smarty_obj)
+{
+    // populating $tpl_source
+    $tpl_source = '{$x="hello world"}{$x}';
+
+    return true;
+}
+
+function rr_get_timestamp($tpl_name, &$tpl_timestamp, $smarty_obj)
+{
+    // $tpl_timestamp.
+    $tpl_timestamp = (int) floor(time() / 100) * 100;
+
+    return true;
+}
+
+function rr_get_secure($tpl_name, $smarty_obj)
+{
+    // assume all templates are secure
+    return true;
+}
+
+function rr_get_trusted($tpl_name, $smarty_obj)
+{
+    // not used for templates
+}
+
+// resource functions for compile_id change test
+
+function getSecure($name, $smarty)
+{
+    return true;
+}
+function getTrusted($name, $smarty)
+{
+}
+function getSource($name, &$source, $smarty)
+{
+    // we update a counter, so that we return a new source for every call
+    static $counter = 0;
+    $counter++;
+
+    // construct a new source
+    $source = "this is template $counter";
+
+    return true;
+}
+function getTimestamp($name, &$timestamp, $smarty)
+{
+    // always pretend the template is brand new
+    $timestamp = time();
+
+    return true;
+}

@@ -1,113 +1,234 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-6RyTsDEmsqn7fTJLZbQbS8LbCW==
+<?php
+/**
+ *	@package JAMA
+ *
+ *	For an m-by-n matrix A with m >= n, the QR decomposition is an m-by-n
+ *	orthogonal matrix Q and an n-by-n upper triangular matrix R so that
+ *	A = Q*R.
+ *
+ *	The QR decompostion always exists, even if the matrix does not have
+ *	full rank, so the constructor will never fail.  The primary use of the
+ *	QR decomposition is in the least squares solution of nonsquare systems
+ *	of simultaneous linear equations.  This will fail if isFullRank()
+ *	returns false.
+ *
+ *	@author  Paul Meagher
+ *	@license PHP v3.0
+ *	@version 1.1
+ */
+class PHPExcel_Shared_JAMA_QRDecomposition {
+
+	const MatrixRankException	= "Can only perform operation on full-rank matrix.";
+
+	/**
+	 *	Array for internal storage of decomposition.
+	 *	@var array
+	 */
+	private $QR = array();
+
+	/**
+	 *	Row dimension.
+	 *	@var integer
+	 */
+	private $m;
+
+	/**
+	*	Column dimension.
+	*	@var integer
+	*/
+	private $n;
+
+	/**
+	 *	Array for internal storage of diagonal of R.
+	 *	@var  array
+	 */
+	private $Rdiag = array();
+
+
+	/**
+	 *	QR Decomposition computed by Householder reflections.
+	 *
+	 *	@param matrix $A Rectangular matrix
+	 *	@return Structure to access R and the Householder vectors and compute Q.
+	 */
+	public function __construct($A) {
+		if($A instanceof PHPExcel_Shared_JAMA_Matrix) {
+			// Initialize.
+			$this->QR = $A->getArrayCopy();
+			$this->m  = $A->getRowDimension();
+			$this->n  = $A->getColumnDimension();
+			// Main loop.
+			for ($k = 0; $k < $this->n; ++$k) {
+				// Compute 2-norm of k-th column without under/overflow.
+				$nrm = 0.0;
+				for ($i = $k; $i < $this->m; ++$i) {
+					$nrm = hypo($nrm, $this->QR[$i][$k]);
+				}
+				if ($nrm != 0.0) {
+					// Form k-th Householder vector.
+					if ($this->QR[$k][$k] < 0) {
+						$nrm = -$nrm;
+					}
+					for ($i = $k; $i < $this->m; ++$i) {
+						$this->QR[$i][$k] /= $nrm;
+					}
+					$this->QR[$k][$k] += 1.0;
+					// Apply transformation to remaining columns.
+					for ($j = $k+1; $j < $this->n; ++$j) {
+						$s = 0.0;
+						for ($i = $k; $i < $this->m; ++$i) {
+							$s += $this->QR[$i][$k] * $this->QR[$i][$j];
+						}
+						$s = -$s/$this->QR[$k][$k];
+						for ($i = $k; $i < $this->m; ++$i) {
+							$this->QR[$i][$j] += $s * $this->QR[$i][$k];
+						}
+					}
+				}
+				$this->Rdiag[$k] = -$nrm;
+			}
+		} else {
+			throw new Exception(PHPExcel_Shared_JAMA_Matrix::ArgumentTypeException);
+		}
+	}	//	function __construct()
+
+
+	/**
+	 *	Is the matrix full rank?
+	 *
+	 *	@return boolean true if R, and hence A, has full rank, else false.
+	 */
+	public function isFullRank() {
+		for ($j = 0; $j < $this->n; ++$j) {
+			if ($this->Rdiag[$j] == 0) {
+				return false;
+			}
+		}
+		return true;
+	}	//	function isFullRank()
+
+
+	/**
+	 *	Return the Householder vectors
+	 *
+	 *	@return Matrix Lower trapezoidal matrix whose columns define the reflections
+	 */
+	public function getH() {
+		for ($i = 0; $i < $this->m; ++$i) {
+			for ($j = 0; $j < $this->n; ++$j) {
+				if ($i >= $j) {
+					$H[$i][$j] = $this->QR[$i][$j];
+				} else {
+					$H[$i][$j] = 0.0;
+				}
+			}
+		}
+		return new PHPExcel_Shared_JAMA_Matrix($H);
+	}	//	function getH()
+
+
+	/**
+	 *	Return the upper triangular factor
+	 *
+	 *	@return Matrix upper triangular factor
+	 */
+	public function getR() {
+		for ($i = 0; $i < $this->n; ++$i) {
+			for ($j = 0; $j < $this->n; ++$j) {
+				if ($i < $j) {
+					$R[$i][$j] = $this->QR[$i][$j];
+				} elseif ($i == $j) {
+					$R[$i][$j] = $this->Rdiag[$i];
+				} else {
+					$R[$i][$j] = 0.0;
+				}
+			}
+		}
+		return new PHPExcel_Shared_JAMA_Matrix($R);
+	}	//	function getR()
+
+
+	/**
+	 *	Generate and return the (economy-sized) orthogonal factor
+	 *
+	 *	@return Matrix orthogonal factor
+	 */
+	public function getQ() {
+		for ($k = $this->n-1; $k >= 0; --$k) {
+			for ($i = 0; $i < $this->m; ++$i) {
+				$Q[$i][$k] = 0.0;
+			}
+			$Q[$k][$k] = 1.0;
+			for ($j = $k; $j < $this->n; ++$j) {
+				if ($this->QR[$k][$k] != 0) {
+					$s = 0.0;
+					for ($i = $k; $i < $this->m; ++$i) {
+						$s += $this->QR[$i][$k] * $Q[$i][$j];
+					}
+					$s = -$s/$this->QR[$k][$k];
+					for ($i = $k; $i < $this->m; ++$i) {
+						$Q[$i][$j] += $s * $this->QR[$i][$k];
+					}
+				}
+			}
+		}
+		/*
+		for($i = 0; $i < count($Q); ++$i) {
+			for($j = 0; $j < count($Q); ++$j) {
+				if(! isset($Q[$i][$j]) ) {
+					$Q[$i][$j] = 0;
+				}
+			}
+		}
+		*/
+		return new PHPExcel_Shared_JAMA_Matrix($Q);
+	}	//	function getQ()
+
+
+	/**
+	 *	Least squares solution of A*X = B
+	 *
+	 *	@param Matrix $B A Matrix with as many rows as A and any number of columns.
+	 *	@return Matrix Matrix that minimizes the two norm of Q*R*X-B.
+	 */
+	public function solve($B) {
+		if ($B->getRowDimension() == $this->m) {
+			if ($this->isFullRank()) {
+				// Copy right hand side
+				$nx = $B->getColumnDimension();
+				$X  = $B->getArrayCopy();
+				// Compute Y = transpose(Q)*B
+				for ($k = 0; $k < $this->n; ++$k) {
+					for ($j = 0; $j < $nx; ++$j) {
+						$s = 0.0;
+						for ($i = $k; $i < $this->m; ++$i) {
+							$s += $this->QR[$i][$k] * $X[$i][$j];
+						}
+						$s = -$s/$this->QR[$k][$k];
+						for ($i = $k; $i < $this->m; ++$i) {
+							$X[$i][$j] += $s * $this->QR[$i][$k];
+						}
+					}
+				}
+				// Solve R*X = Y;
+				for ($k = $this->n-1; $k >= 0; --$k) {
+					for ($j = 0; $j < $nx; ++$j) {
+						$X[$k][$j] /= $this->Rdiag[$k];
+					}
+					for ($i = 0; $i < $k; ++$i) {
+						for ($j = 0; $j < $nx; ++$j) {
+							$X[$i][$j] -= $X[$k][$j]* $this->QR[$i][$k];
+						}
+					}
+				}
+				$X = new PHPExcel_Shared_JAMA_Matrix($X);
+				return ($X->getMatrix(0, $this->n-1, 0, $nx));
+			} else {
+				throw new Exception(self::MatrixRankException);
+			}
+		} else {
+			throw new Exception(PHPExcel_Shared_JAMA_Matrix::MatrixDimensionException);
+		}
+	}	//	function solve()
+
+}	//	PHPExcel_Shared_JAMA_class QRDecomposition

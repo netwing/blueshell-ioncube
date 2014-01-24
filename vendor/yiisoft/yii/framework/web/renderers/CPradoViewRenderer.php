@@ -1,159 +1,304 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-yE2HmjvwE2SezEEcG+kc1J9U0QK3QpwwNwhRpm==
+<?php
+/**
+ * CPradoViewRenderer class file.
+ *
+ * @author Steve Heyns http://customgothic.com/
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CPradoViewRenderer implements a view renderer that allows users to use a template syntax similar to PRADO templates.
+ *
+ * To use CPradoViewRenderer, configure it as an application component named "viewRenderer" in the application configuration:
+ * <pre>
+ * array(
+ *     'components'=>array(
+ *         ......
+ *         'viewRenderer'=>array(
+ *             'class'=>'CPradoViewRenderer',
+ *         ),
+ *     ),
+ * )
+ * </pre>
+ *
+ * CPradoViewRenderer allows you to write view files with the following syntax:
+ * <pre>
+ * // PHP tags:
+ * <%= expression %>
+ * // <?php echo expression ?>
+ * <% statement %>
+ * // <?php statement ?></li>
+ *
+ * // component tags:
+ * <com:WigetClass name1="value1" name2='value2' name3={value3} >
+ * // <?php $this->beginWidget('WigetClass',
+ * // array('name1'=>"value1", 'name2'=>'value2', 'name3'=>value3)); ?>
+ * </com:WigetClass >
+ * // <?php $this->endWidget('WigetClass'); ?>
+ * <com:WigetClass name1="value1" name2='value2' name3={value3} />
+ * // <?php $this->widget('WigetClass',
+ * // array('name1'=>"value1", 'name2'=>'value2', 'name3'=>value3)); ?>
+ *
+ * // cache tags:
+ * <cache:fragmentID name1="value1" name2='value2' name3={value3} >
+ * // <?php if($this->beginCache('fragmentID',
+ * // array('name1'=>"value1", 'name2'=>'value2', 'name3'=>value3))): ?>
+ * </cache:fragmentID >
+ * // <?php $this->endCache('fragmentID'); endif; ?>
+ *
+ * // clip tags:
+ * <clip:clipID >
+ * // <?php $this->beginClip('clipID'); ?>
+ * </clip:clipID >
+ * // <?php $this->endClip('clipID'); ?>
+ *
+ * // comment tags:
+ * <!--- comments --->
+ * // the whole tag will be stripped off
+ * </pre>
+ *
+ * @author Steve Heyns http://customgothic.com/
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.renderers
+ * @since 1.0
+ */
+class CPradoViewRenderer extends CViewRenderer
+{
+	private $_input;
+	private $_output;
+	private $_sourceFile;
+
+	/**
+	 * Parses the source view file and saves the results as another file.
+	 * This method is required by the parent class.
+	 * @param string $sourceFile the source view file path
+	 * @param string $viewFile the resulting view file path
+	 */
+	protected function generateViewFile($sourceFile,$viewFile)
+	{
+		static $regexRules=array(
+			'<%=?\s*(.*?)\s*%>',		// PHP statements or expressions
+			'<\/?(com|cache|clip):([\w\.]+)\s*((?:\s*\w+\s*=\s*\'.*?(?<!\\\\)\'|\s*\w+\s*=\s*".*?(?<!\\\\)"|\s*\w+\s*=\s*\{.*?\})*)\s*\/?>', // component tags
+			'<!---.*?--->',	// template comments
+		);
+		$this->_sourceFile=$sourceFile;
+		$this->_input=file_get_contents($sourceFile);
+		$n=preg_match_all('/'.implode('|',$regexRules).'/msS',$this->_input,$matches,PREG_SET_ORDER|PREG_OFFSET_CAPTURE);
+		$textStart=0;
+        $this->_output="<?php /* source file: $sourceFile */ ?>\n";
+		for($i=0;$i<$n;++$i)
+		{
+			$match=&$matches[$i];
+			$str=$match[0][0];
+			$matchStart=$match[0][1];
+			$matchEnd=$matchStart+strlen($str)-1;
+
+			if($matchStart>$textStart)
+				$this->_output.=substr($this->_input,$textStart,$matchStart-$textStart);
+			$textStart=$matchEnd+1;
+
+			if(strpos($str,'<com:')===0)	// opening component tag
+			{
+				$type=$match[3][0];
+				if($str[strlen($str)-2]!=='/')  // open tag
+					$this->_output.=$this->processBeginWidget($type,$match[4][0],$match[2][1]);
+				else
+					$this->_output.=$this->processWidget($type,$match[4][0],$match[2][1]);
+			}
+			elseif(strpos($str,'</com:')===0)	// closing component tag
+				$this->_output.=$this->processEndWidget($match[3][0],$match[2][1]);
+			elseif(strpos($str,'<cache:')===0)	// opening cache tag
+			{
+				$id=$match[3][0];
+				if($str[strlen($str)-2]!=='/')  // open tag
+					$this->_output.=$this->processBeginCache($id,$match[4][0],$match[2][1]);
+				else
+					$this->_output.=$this->processCache($id,$match[4][0],$match[2][1]);
+			}
+			elseif(strpos($str,'</cache:')===0)	// closing cache tag
+				$this->_output.=$this->processEndCache($match[3][0],$match[2][1]);
+			elseif(strpos($str,'<clip:')===0)	// opening clip tag
+			{
+				$id=$match[3][0];
+				if($str[strlen($str)-2]!=='/')  // open tag
+					$this->_output.=$this->processBeginClip($id,$match[4][0],$match[2][1]);
+				else
+					$this->_output.=$this->processClip($id,$match[4][0],$match[2][1]);
+			}
+			elseif(strpos($str,'</clip:')===0)	// closing clip tag
+				$this->_output.=$this->processEndClip($match[3][0],$match[2][1]);
+			elseif(strpos($str,'<%=')===0)	// expression
+				$this->_output.=$this->processExpression($match[1][0],$match[1][1]);
+			elseif(strpos($str,'<%')===0)	// statement
+				$this->_output.=$this->processStatement($match[1][0],$match[1][1]);
+		}
+		if($textStart<strlen($this->_input))
+			$this->_output.=substr($this->_input,$textStart);
+
+		file_put_contents($viewFile,$this->_output);
+	}
+
+	/*
+	 * @param string $type type
+	 * @param string $attributes attributes
+	 * @param string $offset offset
+	 */
+	private function processWidget($type,$attributes,$offset)
+	{
+		$attrs=$this->processAttributes($attributes);
+		if(empty($attrs))
+			return $this->generatePhpCode("\$this->widget('$type');",$offset);
+		else
+			return $this->generatePhpCode("\$this->widget('$type', array($attrs));",$offset);
+	}
+
+	/*
+	 * @param string $type type
+	 * @param string $attributes attributes
+	 * @param string $offset offset
+	 */
+	private function processBeginWidget($type,$attributes,$offset)
+	{
+		$attrs=$this->processAttributes($attributes);
+		if(empty($attrs))
+			return $this->generatePhpCode("\$this->beginWidget('$type');",$offset);
+		else
+			return $this->generatePhpCode("\$this->beginWidget('$type', array($attrs));",$offset);
+	}
+
+	/*
+	 * @param string $type type
+	 * @param string $offset offset
+	 */
+	private function processEndWidget($type,$offset)
+	{
+		return $this->generatePhpCode("\$this->endWidget('$type');",$offset);
+	}
+
+	/*
+	 * @param string $id id
+	 * @param string $attributes attributes
+	 * @param string $offset offset
+	 */
+	private function processCache($id,$attributes,$offset)
+	{
+		return $this->processBeginCache($id,$attributes,$offset) . $this->processEndCache($id,$offset);
+	}
+
+	/*
+	 * @param string $id id
+	 * @param string $attributes attributes
+	 * @param string $offset offset
+	 */
+	private function processBeginCache($id,$attributes,$offset)
+	{
+		$attrs=$this->processAttributes($attributes);
+		if(empty($attrs))
+			return $this->generatePhpCode("if(\$this->beginCache('$id')):",$offset);
+		else
+			return $this->generatePhpCode("if(\$this->beginCache('$id', array($attrs))):",$offset);
+	}
+
+	/*
+	 * @param string $id id
+	 * @param string $offset offset
+	 */
+	private function processEndCache($id,$offset)
+	{
+		return $this->generatePhpCode("\$this->endCache('$id'); endif;",$offset);
+	}
+
+	/*
+	 * @param string $id id
+	 * @param string $attributes attributes
+	 * @param string $offset offset
+	 */
+	private function processClip($id,$attributes,$offset)
+	{
+		return $this->processBeginClip($id,$attributes,$offset) . $this->processEndClip($id,$offset);
+	}
+
+	/*
+	 * @param string $id id
+	 * @param string $attributes attributes
+	 * @param string $offset offset
+	 */
+	private function processBeginClip($id,$attributes,$offset)
+	{
+		$attrs=$this->processAttributes($attributes);
+		if(empty($attrs))
+			return $this->generatePhpCode("\$this->beginClip('$id');",$offset);
+		else
+			return $this->generatePhpCode("\$this->beginClip('$id', array($attrs));",$offset);
+	}
+
+	/*
+	 * @param string $id id
+	 * @param string $offset offset
+	 */
+	private function processEndClip($id,$offset)
+	{
+		return $this->generatePhpCode("\$this->endClip('$id');",$offset);
+	}
+
+	/*
+	 * @param string $expression expression
+	 * @param string $offset offset
+	 */
+	private function processExpression($expression,$offset)
+	{
+		return $this->generatePhpCode('echo '.$expression,$offset);
+	}
+
+	/*
+	 * @param string $statement statement
+	 * @param string $offset offset
+	 */
+	private function processStatement($statement,$offset)
+	{
+		return $this->generatePhpCode($statement,$offset);
+	}
+
+	/*
+	 * @param string $code code
+	 * @param string $offset offset
+	 */
+	private function generatePhpCode($code,$offset)
+	{
+		$line=$this->getLineNumber($offset);
+		$code=str_replace('__FILE__',var_export($this->_sourceFile,true),$code);
+		return "<?php /* line $line */ $code ?>";
+	}
+
+	/*
+	 * @param string $str str
+	 */
+	private function processAttributes($str)
+	{
+		static $pattern='/(\w+)\s*=\s*(\'.*?(?<!\\\\)\'|".*?(?<!\\\\)"|\{.*?\})/msS';
+		$attributes=array();
+		$n=preg_match_all($pattern,$str,$matches,PREG_SET_ORDER);
+		for($i=0;$i<$n;++$i)
+		{
+			$match=&$matches[$i];
+			$name=$match[1];
+			$value=$match[2];
+			if($value[0]==='{')
+				$attributes[]="'$name'=>".str_replace('__FILE__',$this->_sourceFile,substr($value,1,-1));
+			else
+				$attributes[]="'$name'=>$value";
+		}
+		return implode(', ',$attributes);
+	}
+
+	/*
+	 * @param string $offset offset
+	 */
+	private function getLineNumber($offset)
+	{
+		return count(explode("\n",substr($this->_input,0,$offset)));
+	}
+}

@@ -1,47 +1,93 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Resource Eval
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ * @author Uwe Tews
+ * @author Rodney Rehm
+ */
+
+/**
+ * Smarty Internal Plugin Resource Eval
+ *
+ * Implements the strings as resource for Smarty template
+ *
+ * {@internal unlike string-resources the compiled state of eval-resources is NOT saved for subsequent access}}
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ */
+class Smarty_Internal_Resource_Eval extends Smarty_Resource_Recompiled
+{
+    /**
+     * populate Source Object with meta data from Resource
+     *
+     * @param  Smarty_Template_Source   $source    source object
+     * @param  Smarty_Internal_Template $_template template object
+     * @return void
+     */
+    public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template=null)
+    {
+        $source->uid = $source->filepath = sha1($source->name);
+        $source->timestamp = false;
+        $source->exists = true;
+    }
+
+    /**
+     * Load template's source from $resource_name into current template object
+     *
+     * @uses decode() to decode base64 and urlencoded template_resources
+     * @param  Smarty_Template_Source $source source object
+     * @return string                 template source
+     */
+    public function getContent(Smarty_Template_Source $source)
+    {
+        return $this->decode($source->name);
+    }
+
+    /**
+     * decode base64 and urlencode
+     *
+     * @param  string $string template_resource to decode
+     * @return string decoded template_resource
+     */
+    protected function decode($string)
+    {
+        // decode if specified
+        if (($pos = strpos($string, ':')) !== false) {
+            if (!strncmp($string, 'base64', 6)) {
+                return base64_decode(substr($string, 7));
+            } elseif (!strncmp($string, 'urlencode', 9)) {
+                return urldecode(substr($string, 10));
+            }
+        }
+
+        return $string;
+    }
+
+    /**
+     * modify resource_name according to resource handlers specifications
+     *
+     * @param  Smarty $smarty        Smarty instance
+     * @param  string $resource_name resource_name to make unique
+     * @param  boolean $is_config    flag for config resource
+     * @return string unique resource name
+     */
+    protected function buildUniqueResourceName(Smarty $smarty, $resource_name, $is_config = false)
+    {
+        return get_class($this) . '#' .$this->decode($resource_name);
+    }
+
+    /**
+     * Determine basename for compiled filename
+     *
+     * @param  Smarty_Template_Source $source source object
+     * @return string                 resource's basename
+     */
+    protected function getBasename(Smarty_Template_Source $source)
+    {
+        return '';
+    }
+
+}

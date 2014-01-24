@@ -1,69 +1,174 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/8Eyn9mtSSb6S5cCOCVQE99W9AUjCYttuUihJ8bkF8HxattOzj0IIJ1LhMSiMJDZYM8EEoG
-YqVln34PNgBxDNKuyKqXaMS9Z6Bs2X9TAwQ9m12xk14FMJFMWDamWOtlaQ1SHWJnlwGPtWiuaEwj
-K15qRwBM8gmgWk+7H4QeDvEy/Bl8BKFK51f/3HeJ6mPA/mfQslSPnCGYrLmkirCiQ6S+8S++kjqh
-BqaBTphDZZgWRr5xLyRzhr4euJltSAgiccy4GDnfTE1Uugt243RijomIITWZpi1H8mRwk9j4NE0r
-SiS5M1hNABQgIePT+pk3R6xKk5VSHmEnVr9paH5Ysu7IovE7BssFv1uNT3T9c7QFJs5DmqI8aKKn
-XAX+ycsRyFsghkGzj50EslmAA1jkFHVxT3Lx8c7W1GTCcP09TytIoSbN0EkrghIWooURAiVHt0Ii
-ow+HTlLuoQKjrgk06hhkjnaAHO7bSym5MpDmKN8x48j9o1B6HbzifbtZo3NDeZ7j8ncbQAkIeM61
-yhjUywNx4gZMzAlxTmkCYWkEWy6BdyV4ATZkFkdlIBWOae35KB8weSY3URyL+YNnvmxY1lmTNXeD
-hB/jRhQM4lSL0PJGpTFw63KYrOvx/a11uHos9ZyPxrUwgxr1jZ9ByxmeayiiuYRSIdv8PWZJsynj
-A3fxL+uPP7TRXp1Sh9JK/fPHDNQvi/wmLK5YbMpAIMI0Rm6zt0MvINXtxJbYjddSB1sf2k3Ywkio
-8S8836+E8rRbizK81QXeTFsw89M9OxqUXz2cZ0hFEVhagdEt0RVEt+cR802Cb4m+yAlhRPsylVFN
-RDxjimacZ+yhA3I0MIfHYyL69DBE3YSSp48YzdF8lGnPk327EeWiFcjyNj7/nQXWHKS4nYFuUNzV
-gZDthqVRy6A+/+2INNvMNqCdQOtNvpNxb7c9pNP9uHza6sIj/ctojuQmQBQr0kEUZGQdUJacMtwf
-8adT6TVqalHWzhgQqg63cHMWaNssaRwW5gvRb9128K5I5TCHZySxHE+XJjy4GQs8+HSSfBAcB/uU
-4OYnpVdixb5J7rrrIoLw1O/FzS1pz+28Q0ANDntEyGNn9cFo7Hr8Nb/Ftph2zF/I70NQU9Q6DDqK
-zVkz5OmojtUO3UsRm7E0Eo3uEUm4LA/PIteR4bnLH7h6PEXDY3li5a/NivxrNA/eToHhCeOZD+mk
-4fh8JCJOm8cyik2IfRH9csbvUptygv9hcVfhaUy0ZMgNCnCtuMQB/coaZAxiyta1zmVCot8dIS/8
-VGf9M30pitEOOwZhyTh/lHXJXPHuX86LJLlVUUO2dWY/WxGJpQ4Dcb6P0u4JBlBE1OGFqEkrkneT
-6GY9zM/knGKqWo3AKUSEkBd6SC8WIl2axZBXJoRzVKV9zMzKefqFhK9CaKSrLfQUEx2SgNtZcejY
-qM0xCF2x9+WiVUSubSLz6X7SRnTnQZYUhL7W480VaUf8KXLwR8+JyqLY1FUpUIsZ0mijvJ1HnsuY
-l6HZM9ZLEmSb55zrpIEbm2WRWXHyOAKCpc4tci9DgTLszQgAZZcuhjzrakfuz9OhQavd2ALrrkFp
-iVhM0W8CDbhkmn8pVFD69uxjMrLwYoISsm3hkaOSsE1SCavooiGDEF34aCViB3LGfWUfWZ8rnX6u
-Dp15QYt/EZ+SXt/vkKgg6WxznHQACycYVLHKR5cbImdRbyUWX/FockSfAPM3TwoEcz6/t34xcol0
-32qRRF4TSBLywutfIXY9jh9Z7Tr55/da6fPMwZgjjvBgBIzKbax/85/82LxySgL48nYQ2+lnvDke
-TRQtOESPeYxer5LT2s/55V7SBpsb18iTfB5bx+KbNWs4Ht5ihuQOz6m6HYD3zQ5luVoOnW4Og/fK
-xbHVwASiGF1gzyJq5cM8vnIV16QroTnWm7+NDwKO9z7g/rhqabeDaPx3R79yprx49IIqAtJj3TBK
-pORC69z0WcmqBudbxoEHu37o69Qk0642DVdkgMEkb8oNQcKAAG6tN6yGo9NYYaaJe6g7CWdipmIg
-NvBzJFjDdBAmvXobIzymVPjQO6/tEvTLIDe7bAFN2NvQYN26qdMSsc8fp1kagL7dLUrgy5HBC52i
-BFKIN0jHYH7466nirEHab0FyD9FeyOeP6GaL9e+O+Eic3u/PUrMFjyp9FwPP1mCihBPwRDl6fqgW
-mRur7pM8luvS8j3StybXbcPNMxtKBQMn/ZjA5XJhZTPGghesIjR1IsGl6iAb7h4Wqd9SKND2IAfz
-tjluWfk3T8Uz0QiORWhl/v8Jz/9xe+t+FTO9NBaF9aijjp2gGyiXLRUCgSx5SttmoXYwhuRBvFtn
-7WUiNm72VfezsuajBzm2P8RFyd9Kji5Rlj6jtxQsoXw44JTDaNT9AVFa/z3zFYKP3ECHtL/Hb8Ad
-vt8RZGPIAXv36LFb3DC4IMbUyAIrLOZY/J3NXv6bK9ASSYGkxdm9J3ydbgpRRa9ogv9NHwJN0UnC
-cd36hiiVWIR/AvgWb030+JHqjCP5kwcQntmCHM4CXiU90HxoJmn0KsqMuBdSATOLbB7fD4mkRUvk
-TdUmRCyjJ9vPT9JSVIiHbIjPHq2wnrSFYcUdK1viGUcKshI+YQX5CDWhQNcwakUdelTdoPF4+1CL
-xnYA5pqvDpZRX5isHiyAy/oMWvFbTpYoCxWZvcRU/APKjay67NxLWprDdiVY1b5GsYGufggKZX7Z
-bJKREi1byNGo0k62Ng4BcRC2eDF6Xvar6EIa5SmJijpzBWK3JMgd7hL5Jdn1SyKgthho9zJtECb2
-jA4nZd8u52JmFqWEEIMHOsgk/zRa43GKxJ9rA/Y7yF1C0Jf6TuZ/veo50KSOIGsSedq2ZcROC86F
-Rzfw0P2lmwRUWeszppB8qfuArckwDXLueOq5CjhLCrNYSMLncDQy6UfBQnJMMNFu7BDSbAbX1GCP
-8C/PiujwO2yqY9lc6dHJV1ZnHT8ULuCmDskFxZF+hI2ykggVrQ5DfEguw0ZRiX8SyFCh+b7nps0c
-volwMskiGIPXlWzzwNTNWQETmOQY5NQCCv/WxpSkzXlJDFa4ynnmEMo8XGrHpzlPRPc4VJ0ggDFR
-XTqtMZOqxiNnUx0wxIuGa4RN+S9o1Bj4WwLk7SHxxiPT3zRcXMr8J7aWDqyIuSp67DIsngcZlkKu
-yzSkau8LkZZicUTH1qEQlRZI+CNRpN8ZISBCbKXjY3IvTNfGaTYhnTnc8DP33PJExiD22IIyZnU6
-1YF9bDTblYtMbQdcPkizfSSj9BUnFk1IH6K53C1uPQmAzSJyyIIHPf/gkCs6qAlbyQ56GYVpnXwl
-Z98mmfZffl8bNFn/GKDwplW4JXZyyTcCKwShksgBFSRyttUChn8/TypDnMu869v6dnfscKbQCvKa
-fJzYjs4vlaCkzcG1HeAoWaVMcOy4frXnOX9QRaYod3i4fgUibvg9XBS2g5//K0WTKfedLykftYuk
-K7BgMGtcdF2dCioFzFh9tchRgZByYiFfPnepHHiD8YAC1QRkVrTdzNp2FZj3LKyaxpw1Jh7ncE7i
-xWHVQSjjcRUodeajJkfES34g3ld+7JGKRBDkZ96vnBrxKzusJ02K3t0UNL/t2UvJrWKJvwjwWz+g
-7t/f12Yqnk/XiaiLp9qZz2BPGNIEMRePOkQY4itBC8hT7KfuJD70aVUyXBDZSaDUp7D6GYtOE1v4
-YyS15icg787ASVfuBD83yN77Lw2BKgetqhu+urkgxbG0bKgmlQ5hfGbUjfRG0PhBCVB+CmkDNtjD
-VMI4mcFTj+u/WTto9fm5sTGuKmHrT2CEa+O/oJ1SzMlDWvzP6SVSO2WIv9vB0zRtx4nTwlTVWPA0
-qoibgNW+AAW7T+fO9uN+1TKEZx7lU2gugaegj+FYUNBxRfR3BWVdxlfTvUfKBxSaY0YNk3QCt1WV
-ej/FSuefGZIWTXA/UQo35+3W/y60BFcQbJPCzrkRS45KMXh9gNpYgzG9w0vLf1na2ucy7mCrM5+i
-CFK0OI4vRdsNAzCSs0psIog6YPJYBPJRYjwMM3li1x/weg/nEF2nyI9w7XC2jTJ+ljP1aQJE5toM
-XJhXM1K0MPfA6YlmtUYr+11dEAius6Ulx+MO1JrJ1QdrxloDALTH3Qh8YV56iLyi08WJJQ7yCm9z
-CfEOinIBdkdtSCwVpEQYG/i0y6YAm/8WG2GlHwNCRhEHiva+cptrTQhJ+2bZL0zZnTjiKG1Grt2T
-nWsL2m2AsdB34RzYyRoMCWV18xFHN5SmSMrPlRnyitqh+B6FpLS/0XNjP71dV4WPglJ4m+puBYTt
-4IX6ianyGGFdZoWFq0mAqpAFQMS7Eb6NWtr9IVdH7RWCwq1QexliuiST+fYf3AVYF/7i++0PEYYJ
-ZyhMwWxSUnX6GNCJ6AvEt/cXGFr24Feb8UdrkrOQjfAsYIMHgue77HZNzPyz44nABSqHBC49LfR4
-mFZiWdYcQH2bVVlZXvvWuPpoQPnRWhQS/l+jgtnQu6w0dIOly5EqHKa/4zt/aGM8EhMk/EH3jfm0
-nQamzfKZibL3hmb1ElU7+BjXrS13pcG+L4F2+yv88DahNUlQ1Bljk3vb+ivVTX0b1dfnDwZVtMvY
-1eY7O1uRTIrS2xo6qzgl25tFfwM60+l7eT+18pDviEPujWzjp+z8eYXljvir3Mm9K6j9w3wa7XX1
-f5amMChZgIBLh5sIB4TJFrz9V6P6vq+iejuz3Lqn3rOuwLS/QKlJ7iEH4wKPKhDB51ihFfb4ywKJ
-UqTgcFjL8D3/JF8YUNIBZW3u2UWiSHOFbZqOpSG2aInGHvNGsOAbujcPDERpG1qEfVcI6nq4/K4Y
-/JqRwQ7GmbH2H73zkBX7+r8hXFzKQ2C+7lWPxCZqoJfGr/fin/X3rEH5yDSGJk0aPqcr7wUEo15N
-ZMDaYIS2HyYAJNdDzpbYLEbpDe4DAvvuPZGshMl6XXrgQiyTPZ+GzBVHu+TT
+<?php
+
+require_once 'Sweety/Reporter.php';
+require_once 'Sweety/Reporter/HtmlTestCaseReporter.php';
+
+/**
+ * The reporter used for the Html (non JS) backend.
+ * @package Sweety
+ * @author Chris Corbyn
+ */
+class Sweety_Reporter_HtmlReporter implements Sweety_Reporter
+{
+  
+  /**
+   * Template data.
+   * @var mixed[]
+   */
+  public $_tplVars;
+  
+  /**
+   * True if this repoter is running.
+   * @var boolean
+   * @access private
+   */
+  private $_started = false;
+  
+  /**
+   * Set template vars.
+   * @param mixed[]
+   */
+  public function setTemplateVars(&$vars)
+  {
+    $this->_tplVars =& $vars;
+  }
+  
+  /**
+   * Used so test case reporters can notify this reporter when they've completed.
+   * @param string $testCase
+   */
+  public function notifyEnded($testCase)
+  {
+    $this->_tplVars['runTests'][] = $testCase;
+    $this->_tplVars['runCount']++;
+  }
+  
+  /**
+   * Get the reporter used to report on this specific test case.
+   * @param string $testCase
+   * @return Sweety_Reporter
+   */
+  public function getReporterFor($testCase)
+  {
+    $this->_tplVars['caseCount']++;
+    
+    $reporter = new Sweety_Reporter_HtmlTestCaseReporter($testCase, $this);
+    $reporter->setTemplateVars($this->_tplVars);
+    return $reporter;
+  }
+  
+  /**
+   * Returns true if start() has been invoked.
+   * @return boolean
+   */
+  public function isStarted()
+  {
+    return $this->_started;
+  }
+  
+  /**
+   * Start reporting.
+   */
+  public function start()
+  {
+    $this->_started = true;
+  }
+  
+  /**
+   * Report a skipped test case.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportSkip($message, $path)
+  {
+    $this->_tplVars['messages'][] = array(
+      'type' => 'skip',
+      'path' => $path,
+      'text' => $message);
+  }
+  
+  /**
+   * Report a passing assertion.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportPass($message, $path)
+  {
+    $this->_tplVars['passCount']++;
+  }
+  
+  /**
+   * Report a failing assertion.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportFail($message, $path)
+  {
+    $this->_tplVars['failCount']++;
+    $this->_tplVars['messages'][] = array(
+      'type' => 'fail',
+      'path' => $path,
+      'text' => $message);
+  }
+  
+  /**
+   * Report an unexpected exception.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportException($message, $path)
+  {
+    $this->_tplVars['exceptionCount']++;
+    $this->_tplVars['messages'][] = array(
+      'type' => 'exception',
+      'path' => $path,
+      'text' => $message);
+  }
+  
+  /**
+   * Report output from something like a dump().
+   * @param string $output
+   * @param string $path
+   */
+  public function reportOutput($output, $path)
+  {
+    $this->_tplVars['messages'][] = array(
+      'type' => 'output',
+      'path' => $path,
+      'text' => $output);
+  }
+  
+  /**
+   * End reporting.
+   */
+  public function finish()
+  {
+    $this->_started = false;
+    
+    if (!$this->_tplVars['failCount'] && !$this->_tplVars['exceptionCount']
+      && $this->_tplVars['caseCount'] == $this->_tplVars['runCount'])
+    {
+      $this->_tplVars['result'] = 'pass';
+    }
+    else
+    {
+      $this->_tplVars['result'] = 'fail';
+    }
+    
+    $incomplete = $this->_tplVars['caseCount'] - $this->_tplVars['runCount'];
+    
+    if (0 < $incomplete)
+    {
+      $this->_tplVars['messages'][] = array(
+        'type' => 'internal',
+        'path' => '',
+        'text' => $incomplete . ' test case(s) did not complete.' .
+        ' This may be because invalid XML was output during the test run' .
+        ' and/or because an error occured.' .
+        ' Incomplete test cases are shown in yellow.  Click the HTML link ' .
+        'next to the test for more detail.'
+        );
+    }
+  }
+  
+}

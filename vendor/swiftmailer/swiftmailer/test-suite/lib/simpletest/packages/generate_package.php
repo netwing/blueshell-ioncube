@@ -1,46 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once('PEAR/PackageFileManager2.php');
+PEAR::setErrorHandling(PEAR_ERROR_DIE);
+
+$packagefile = "simpletest";
+
+$options = array(
+    'filelistgenerator' => 'svn',
+    'simpleoutput'      => true,
+    'baseinstalldir'    => 'simpletest',
+    'packagedirectory'  => dirname(__FILE__) . '/../',
+    'clearcontents'     => true,
+    'ignore'            => array('TODO.xml', 'VERSION', 'docs/', 'tutorials/', 'packages/', '.svn'),
+    'dir_roles'         => array(
+     	'test'    => 'test'
+    )
+);
+
+$packagexml = PEAR_PackageFileManager2::importOptions($packagefile, $options);
+$packagexml->setPackageType('php');
+$packagexml->setPackage('simpletest');
+$packagexml->setSummary('PHP Unit Tester');
+$packagexml->setDescription("Unit testing, mock objects and web testing framework for PHP");
+
+// update this! do we have a default channel server?
+$packagexml->setChannel('pear.php.net');
+$packagexml->setUri('http://os.coretxt.net.nz/simpletest-1.1');
+
+$notes = file_get_contents(dirname(__FILE__).'/../README');
+$packagexml->setNotes($notes);
+
+$packagexml->setPhpDep('5.0.5');
+$packagexml->setPearinstallerDep('1.4.0');
+$packagexml->addPackageDepWithChannel('required', 'PEAR', 'pear.php.net', '1.4.0');
+$packagexml->addMaintainer('lead', 'lastcraft', 'Marcus Baker', 'marcus@lastcraft.com');
+$packagexml->setLicense('LGPL', 'http://www.gnu.org/licenses/lgpl-2.1.html');
+
+preg_match("/([0-9\.]+)([a-z]+)/", file_get_contents(dirname(__FILE__).'/../VERSION'), $version);
+$packagexml->setAPIVersion($version[1]);
+$packagexml->setReleaseVersion($version[1]);
+$packagexml->setReleaseStability($version[2]);
+$packagexml->setAPIStability($version[2]);
+
+$packagexml->addRelease();
+$packagexml->generateContents();
+
+
+if (isset($_GET['make']) || (isset($_SERVER['argv']) && @$_SERVER['argv'][1] == 'make')) {
+    $packagexml->writePackageFile();
+} else {
+    $packagexml->debugPackageFile();
+}
+
 ?>
-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

@@ -1,46 +1,96 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ca9ABcP4SKqlAPpIen7aMRBTh8Muz5mwdW==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Helper;
+
+use Symfony\Component\Console\Descriptor\DescriptorInterface;
+use Symfony\Component\Console\Descriptor\JsonDescriptor;
+use Symfony\Component\Console\Descriptor\MarkdownDescriptor;
+use Symfony\Component\Console\Descriptor\TextDescriptor;
+use Symfony\Component\Console\Descriptor\XmlDescriptor;
+use Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * This class adds helper method to describe objects in various formats.
+ *
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class DescriptorHelper extends Helper
+{
+    /**
+     * @var DescriptorInterface[]
+     */
+    private $descriptors = array();
+
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        $this
+            ->register('txt',  new TextDescriptor())
+            ->register('xml',  new XmlDescriptor())
+            ->register('json', new JsonDescriptor())
+            ->register('md',   new MarkdownDescriptor())
+        ;
+    }
+
+    /**
+     * Describes an object if supported.
+     *
+     * Available options are:
+     * * format: string, the output format name
+     * * raw_text: boolean, sets output type as raw
+     *
+     * @param OutputInterface $output
+     * @param object          $object
+     * @param array           $options
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function describe(OutputInterface $output, $object, array $options = array())
+    {
+        $options = array_merge(array(
+            'raw_text'  => false,
+            'format'    => 'txt',
+        ), $options);
+
+        if (!isset($this->descriptors[$options['format']])) {
+            throw new \InvalidArgumentException(sprintf('Unsupported format "%s".', $options['format']));
+        }
+
+        $descriptor = $this->descriptors[$options['format']];
+        $descriptor->describe($output, $object, $options);
+    }
+
+    /**
+     * Registers a descriptor.
+     *
+     * @param string              $format
+     * @param DescriptorInterface $descriptor
+     *
+     * @return DescriptorHelper
+     */
+    public function register($format, DescriptorInterface $descriptor)
+    {
+        $this->descriptors[$format] = $descriptor;
+
+        return $this;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return 'descriptor';
+    }
+}

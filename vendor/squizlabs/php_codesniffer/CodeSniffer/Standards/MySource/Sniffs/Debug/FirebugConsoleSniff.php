@@ -1,36 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Ensures that console is not used for function or var names.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Ensures that console is not used for function or var names.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class MySource_Sniffs_Debug_FirebugConsoleSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('JS');
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_STRING,
+                T_PROPERTY,
+                T_LABEL,
+                T_OBJECT,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if (strtolower($tokens[$stackPtr]['content']) === 'console') {
+            $error = 'Variables, functions and labels must not be named "console"; name may conflict with Firebug internal variable';
+            $phpcsFile->addError($error, $stackPtr, 'ConflictFound');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-U+jcOjn+fQegDjL/

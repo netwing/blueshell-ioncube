@@ -1,74 +1,157 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Ensures that systems, asset types and libs are included before they are used.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Ensures that systems and asset types are used if they are included.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class MySource_Sniffs_Channels_UnusedSystemSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_DOUBLE_COLON);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Check if this is a call to includeSystem, includeAsset or includeWidget.
+        $methodName = strtolower($tokens[($stackPtr + 1)]['content']);
+        if (in_array($methodName, array('includesystem', 'includeasset', 'includewidget')) === true) {
+            $systemName = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 3), null, true);
+            if ($systemName === false || $tokens[$systemName]['code'] !== T_CONSTANT_ENCAPSED_STRING) {
+                // Must be using a variable instead of a specific system name.
+                // We can't accurately check that.
+                return;
+            }
+
+            $systemName = trim($tokens[$systemName]['content'], " '");
+        } else {
+            return;
+        }
+
+        if ($methodName === 'includeasset') {
+            $systemName .= 'assettype';
+        } else if ($methodName === 'includewidget') {
+            $systemName .= 'widgettype';
+        }
+
+        $systemName = strtolower($systemName);
+
+        // Now check if this system is used anywhere in this scope.
+        $level = $tokens[$stackPtr]['level'];
+        for ($i = ($stackPtr + 1); $i < $phpcsFile->numTokens; $i++) {
+            if ($tokens[$i]['level'] < $level) {
+                // We have gone out of scope.
+                // If the original include was inside an IF statement that
+                // is checking if the system exists, check the outer scope
+                // as well.
+                if ($tokens[$stackPtr]['level'] === $level) {
+                    // We are still in the base level, so this is the first
+                    // time we have got here.
+                    $conditions = array_keys($tokens[$stackPtr]['conditions']);
+                    if (empty($conditions) === false) {
+                        $cond = array_pop($conditions);
+                        if ($tokens[$cond]['code'] === T_IF) {
+                            $i = $tokens[$cond]['scope_closer'];
+                            $level--;
+                            continue;
+                        }
+                    }
+                }
+
+                break;
+            }//end if
+
+            $validTokens = array(
+                            T_DOUBLE_COLON,
+                            T_EXTENDS,
+                            T_IMPLEMENTS,
+                           );
+
+            if (in_array($tokens[$i]['code'], $validTokens) === false) {
+                continue;
+            }
+
+            switch ($tokens[$i]['code']) {
+            case T_DOUBLE_COLON:
+                $usedName = strtolower($tokens[($i - 1)]['content']);
+                if ($usedName === $systemName) {
+                    // The included system was used, so it is fine.
+                    return;
+                }
+
+                break;
+            case T_EXTENDS:
+                $classNameToken = $phpcsFile->findNext(T_STRING, ($i + 1));
+                $className      = strtolower($tokens[$classNameToken]['content']);
+                if ($className === $systemName) {
+                    // The included system was used, so it is fine.
+                    return;
+                }
+
+                break;
+            case T_IMPLEMENTS:
+                $endImplements = $phpcsFile->findNext(array(T_EXTENDS, T_OPEN_CURLY_BRACKET), ($i + 1));
+                for ($x = ($i + 1); $x < $endImplements; $x++) {
+                    if ($tokens[$x]['code'] === T_STRING) {
+                        $className = strtolower($tokens[$x]['content']);
+                        if ($className === $systemName) {
+                            // The included system was used, so it is fine.
+                            return;
+                        }
+                    }
+                }
+
+                break;
+            }//end switch
+        }//end for
+
+        // If we get to here, the system was not use.
+        $error = 'Included system "%s" is never used';
+        $data  = array($systemName);
+        $phpcsFile->addError($error, $stackPtr, 'Found', $data);
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-LEORtccQjaDJFY0=

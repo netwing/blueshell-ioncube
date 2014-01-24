@@ -1,60 +1,92 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests compilation of registered object functions
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for registered object function tests
+*/
+class CompileRegisteredObjectFunctionTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->force_compile = true;
+        $this->smarty->disableSecurity();
+        $this->object = new RegObject;
+        $this->smarty->registerObject('objecttest', $this->object, 'myhello', true, 'myblock');
+        $this->smarty->registerObject('objectprop', $this->object);
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test resgistered object as function
+    */
+    public function testRegisteredObjectFunction()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{objecttest->myhello}');
+        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
+    }
+    /**
+    * test resgistered object as function with modifier
+    */
+    public function testRegisteredObjectFunctionModifier()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{objecttest->myhello|truncate:6}');
+        $this->assertEquals('hel...', $this->smarty->fetch($tpl));
+    }
+
+    /**
+    * test resgistered object as block function
+    */
+    public function testRegisteredObjectBlockFunction()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{objecttest->myblock}hello world{/objecttest->myblock}');
+        $this->assertEquals('block test', $this->smarty->fetch($tpl));
+    }
+    public function testRegisteredObjectBlockFunctionModifier1()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{objecttest->myblock}hello world{/objecttest->myblock|strtoupper}');
+        $this->assertEquals(strtoupper('block test'), $this->smarty->fetch($tpl));
+    }
+    public function testRegisteredObjectBlockFunctionModifier2()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{objecttest->myblock}hello world{/objecttest->myblock|default:""|strtoupper}');
+        $this->assertEquals(strtoupper('block test'), $this->smarty->fetch($tpl));
+    }
+    public function testRegisteredObjectProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{objectprop->prop}');          
+        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
+    }
+    public function testRegisteredObjectPropertyAssign()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{objectprop->prop assign="foo"}{$foo}');          
+        $this->assertEquals('hello world', $this->smarty->fetch($tpl));
+    }
+}
+
+Class RegObject {
+    public $prop = 'hello world' ;
+    
+    public function myhello($params)
+    {
+        return 'hello world';
+    }
+    public function myblock($params, $content, &$smarty_tpl, &$repeat)
+    {
+        if (isset($content)) {
+            $output = str_replace('hello world', 'block test', $content);
+
+            return $output;
+        }
+    }
+}

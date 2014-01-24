@@ -1,40 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+$this->pageTitle=Yii::app()->name . ' - Contact Us';
+$this->breadcrumbs=array(
+	'Contact',
+);
 ?>
-HR+cPxr0lfSoeWBOt/0hj534aWWOa+KQVnB45O2iIzJYIknXhOo2BfH9M9CcuL83hdCj9fmSbHxs
-IHFFOAmuxjDBwcwqtqG4a8PrPDHCyEqK9o+hWrPUZTrTgXbbCKEvnbZgBZfaRiZH1DhlrhAMk6Z1
-BrhSmnoPCQ2tZBT35XkHuMOo/i1ooBDll1X5FNOA2FjL1MVG/N9nKS6UB2SD497U+AF4K8T3+mSw
-T5xEPrm68aXpsZxX7LaRhr4euJltSAgiccy4GDnfT7LVCfoi4in5LDlIbq0LhbqGmypi1RJworOF
-JTdZtccfaqVHu4UbHMQVjPEmApi+N/8XbdTbirdrCXus5uVkURYbEEe7CeauU4ZK7H6PdE1pXBbA
-QPfzpomsc+9yf9+6WY22C4GfUlOuLlsyfQMrfHZySi5pcxVtqf3nyGgwMc2HYgDwDhGmDk2BGad4
-4/Jl7om6tBAanVHKtKEVC24N4r+hW8JPWNJ5XwGiGpfpczniqqDfDew2MnPjMQE4js+lj2M6FzSh
-+xtp23LtKIX1EtxNl40vSf1uIoxGI7YtJRjlMRqhLAhGUCb0geudhJbrP8dEwTrSM0ZNuzpjDWFO
-Ack4kcqd5LcUYrmu34c7zKzK+X9U9GB+xnxp244p4ux6S9YunXCfeN09tl2DkoYkU+5GmkCv3hoo
-V2c3kjEgj+/vljOxTBi743fwGfZVKNkWpwLZLc0o8UK0WXL9HssgdkGW49uWU+hR1HKAWTmzJVkC
-t6N8iQGMogvjl+Hrgh+OR7KsFXkO1fZrVUNBTwZPmQDnPqsftBomht7HwLx6IgS4HI/oGPKH0y6/
-O/Wr3Ryly8jd4Kvdk2YsdVCrxCgMPk/Uxpu7hUsSsceJgILUlV2jWhQjPWFlGWBORLVHTI9qWARF
-VeJfzwHveqNp1qMmB+U02c7m30Chy2aa01NwJF+19MkCekiD/z2CeY4Sdiuo2p72VQlaGbxzyGpx
-OR/os5Jjk1Gj0KfGwQvBRR0LODqifrsjQyFMurI/cVzFPGJrcV7hksrQn96CI/zM6SD/GJH3uXSL
-/gqsMFX0cE7ohyR5Zn5n3g5EHh9Pk5f7uRrckCK9erEjy50BvLG58wNuk7SFtyPdCAZ1pXBLZMzv
-BZjECni3g/L2bGGm4DDbTIgoK7e6e5tuqu3vgzUDhk9BXEIlao0b+9x6RcNu8XvfcTn0ug8bj+PT
-wJUOmm7BrLwrZ0oe7MzXbx/SY2mUHO5S0ZzcvR30I4a58TY91w7jCrl5tJNYxzsQnm5dqQdiHWGd
-iVU1aVfGJHp4FKG36EXTNFUs+B/be3bAvxD0GcOkipSj/qeoeAQtvJJFXZw4rUJusCQQ+ttNNV4/
-o4YE75jOVBI9ZIBT1s7R007ZNTBBHn2l1GPBkA1WsyWN7jJuqSFfv2A4Lc22Cx3NvEUL7/8HyXAM
-4X/l6Dkrpw20Kui37mtXYhViXQFLI93nhw4wJBA4vrcahTmZW4VDxLNxq+hHELw2jqllJXxLqCu7
-oqm0U4dcvFfaXEGkFzBhtbceyF6Db0EVzLrRWRebpPQgnAmEjygD7rDc5LIX56cmkeuZPWwLhpH2
-bIJSARcrRPTU0loYlFYLouvqegTjVNPYzg9J5uUaf1zd5kFcCGc0o2EO0H8jyRibj078bNAjO1lN
-bmQ6drqNG1ieGJ3Lks00qpIYJbKrWrrRxOfQWT6TlrcOVvfQeRp0wNurhtRlCpTcgsRGigIbC0mq
-7+cb+0aJUsCF5iirG5UScHQjB0CQ9RluEpMInJA4vZGePCkAn6UFp4x4GQKHDOr60o/RmzxD1cnU
-QB1EBNQOhLNLUaMVwTDNhFqv50pjsjtvGUi8QwpY0T1Z3byLbGdNv/zjKr2zh+iXfRGEdC+Y3syJ
-m9I+fQdmrzyiIoR9pCQPQGDESl/h6xnzIGBiXQwV9hEuJpHe80UhZbscTdkDiABWsyL5+xZjiXHP
-Xyl4K0vZZd/p8YCpo8cbePVHiPC4fLyCWIw0wVliZ6LuUEj1LqIoG8WEkfxlGIwRAGnzFhGApn59
-ovtKJ9ivb5xU5E1/9Wt/zCXEX+7C3cB0L7R88nv302rMfyiuZIcO8kqqqu5KrnsSvt3QU9QiSO6L
-9Ewle/BsRarZWV8UnQS6NGWYdmTLFhIu7Rvbuu5u44EYMoxnvOJS7MAvs5tFfCHawuutxITufUqw
-45p6fLJmWDTATZii6Xx3NaBPZ1qkrXvk4VcoTE/n7El6UqXgUzPc4Yu0Sh3KAh/rNbX8Dkw3ktkI
-cD86VYgd2eTGH+4I/Z1q97YUOeWx/nqLFyRjQfNJOYyOxU8dWg0xcZqQlGa5y6Xvo/+4tvjBf5JX
-2vOF8BmhcdH/crcl1gGZ/y5mpPRGmig+rYHSj6i8pOKq+U3uZ5vqMF6YGUeOeTD61+kJANRf7xBJ
-4xq83M/u81ZSYCXekM1gRwVUEvjJT98JwUpryqORxjcfNS9UPiXzqrl0t4GBYieKP3jYPlkJxn+b
-cwcdQTtxXtnryQIiLXkNZl1rkiFWYJ3vuqWFh0zk+lmxG0wIGsOge0Ymll7+YKL6GAjRCULdsBo0
-OclagvnLn4JLxhPeNOMPs9PieCqATTWBMlBLcmRW676pTuwkDGcoK8i4GqR3eEyZvDSrFKhXvwqe
-94g6bWvL8XYsjPjUXWP+Cj+k/3wf9oh94gutYh+Q9SUVK+yXrb2+SNnJYXSmp06vi5cxANGiNixV
-VIYKxxHRZSswJmyx+uOk2RAFq4G3qw1JGKWPFXydpmrVIhnneqImDxW=
+
+<h1>Contact Us</h1>
+
+<?php if(Yii::app()->user->hasFlash('contact')): ?>
+
+<div class="flash-success">
+	<?php echo Yii::app()->user->getFlash('contact'); ?>
+</div>
+
+<?php else: ?>
+
+<p>
+If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+</p>
+
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm'); ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<?php echo $form->errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model,'name'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'email'); ?>
+		<?php echo $form->textField($model,'email'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'subject'); ?>
+		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'body'); ?>
+		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<?php if(CCaptcha::checkRequirements()): ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'verifyCode'); ?>
+		<div>
+		<?php $this->widget('CCaptcha'); ?>
+		<?php echo $form->textField($model,'verifyCode'); ?>
+		</div>
+		<div class="hint">Please enter the letters as they are shown in the image above.
+		<br/>Letters are not case-sensitive.</div>
+	</div>
+	<?php endif; ?>
+
+	<div class="row submit">
+		<?php echo CHtml::submitButton('Submit'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
+
+<?php endif; ?>

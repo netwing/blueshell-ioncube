@@ -1,29 +1,30 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<!-- start profiling callstack -->
+<table class="yiiLog" width="100%" cellpadding="2" style="border-spacing:1px;font:11px Verdana, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic ProN', sans-serif; background:#EEEEEE;color:#666666;">
+	<tr>
+		<th style="background:black;color:white;" colspan="2">
+			プロファイリング コールスタック レポート
+		</th>
+	</tr>
+	<tr style="background-color: #ccc;">
+	    <th>プロシージャ</th>
+		<th>時間 (s)</th>
+	</tr>
+<?php
+foreach($data as $index=>$entry)
+{
+	$color=($index%2)?'#F5F5F5':'#FFFFFF';
+	list($proc,$time,$level)=$entry;
+	$proc=CHtml::encode($proc);
+	$time=sprintf('%0.5f',$time);
+	$spaces=str_repeat('&nbsp;',$level*8);
+
+	echo <<<EOD
+	<tr style="background:{$color}">
+		<td>{$spaces}{$proc}</td>
+		<td align="center">{$time}</td>
+	</tr>
+EOD;
+}
 ?>
-HR+cPsYNDqxFVOnXWY6YRI0BLYRUGraD7YMAUwkirOfaqE5waRHOSldguOlRGlecLKkx2XgfwzCb
-OsAgZkFjeOUfB+xTyuvg6AvgaPclpXjNsQgmCYpH3XOexqxCLvIFNozhWB40HdOPkmukD7wSVnVR
-v5yNXAVM0W7PiRAIJ8pf5cK/1Ubuc29w2eR2GH3wNaQFfkL0zInzxCaUvvEoSeXe1HZV3WmrzNEE
-KIKaEEvvojhG2P4ht2C6hr4euJltSAgiccy4GDnfT2rVz7Fmtise9zf+pjYt4RXPTdQA6sQCMgZ/
-AvBVBCuC6QCNK1omOg4EwH9YhqG7vEf9vlFY1KTl48Ut1yLosPnaUHCJ1VCjgqAk88a4eG1qOEob
-HnJ8g4NHvxeKnQIdwaG9N4S7G5ahYgatL11NErPsPbr8DLxaGbgLY5WFBPlp2mvTzkXajmUPTYo8
-5gn4g6G0oTbVrLiXk48JlFTiem1q6Czbg4ZV37pLtt+UQsqU9IIp+hly7oS0pLUD15ohVtMVifTx
-tSyMYfP1dx3URubHu5YEZNnlYPvVJQNN66PSTKmiYmGMZ4fTxxHp8D9a8XQcIFEgqSVli8mjWN1Y
-iKNxXHq5CZdQd+n411D9wXn9CM2yt39dsuLjVYLrjrYQnxyeqPcxdqAZ0+srJfbHOmDwStSl+xPV
-cGIMz4WnehCX87T+z/o+wdGB/6p+XZY3rE+UjmRebgVMI3I4MUOArFYhOjtIDPRD/7BrLNk4dE6a
-cxEZqf95UuTe9uAHXf9TLfVV3eiuk05iUnknPZAmk4GMwFqIK9++WhN+pzBys8NEYIpMiEcusK78
-sn7eWbZWcbtDX3bUUEeHolXIjDRikpxS5YfiVRqLNbTids3m9bfPrg3miMLF7TjmSkthYqDJIa0s
-mYfhzzPljWdZbzBDapqbcGw0RIg3IgsyPIM+HZhQW5vUcuUbmHsrdGDle5sBJK863kpKVDiUGCoG
-6Rnv/AB/P/X1MeU+W8w6aQK6gWxcW5Uj6KhrCgNpZCWM/l9u9BgzlrfK6KxSl/5hzobIV0lz9xOL
-Qpei/SYGEQ8WHHnokSY7Lcm9SLfavb4r04QmQyvkrQ8voixfpghV/84j31EmMjJtKFQjS09/Nyna
-kjPiX/dHM7GcSIu59Esg+GGUvSyMcBanFouPFr5NV56joztvPL5dCTcHCIT5zAhgXeZiXbYDw5LX
-PKPG/aDeZPW12l/0b1U0sZ9Y3a9ZhMunDE/wtWAwOnM0SoGoEb/SYRYW07gv11zlftKlfgxWaJ6Z
-48FLjyPzD6w7eC2s11cHX1W2QaeuOc1Yecp9OIzY4GDnUqCVAMUIAjIMRTBEXDYGWen5xIYUZ10W
-aaprgXIJgw4dR8GwBUQtQkpBkKflAQa5m6QX3KxPgNUbafuzCZZtvLfw6oMXxH5tHgUe7IVp0fI8
-EhuiQfhK8LbeGQ//BsjUVCEr6ne5srSh+S1HUZ4MchsmU0FcraAAsS8DCnndkTUg2b0k3qckNeQE
-k6L5aUjpolGQZVff8hk+UCIFUijXX1fyD5qlf2IKHTbeFl7kRARUBsgE5wbXMgztoBYGs6V2/nIW
-KWo4Cvg4ux40z6apD4iw87IqhnivgCNC/kuqowkuE97D4c5yKq5cBjQ8TOuVNMI0Fl0E8BUNtraf
-hGWLDb2If0dUUf99Ni0UtHDQr+29jtjyCH2WWl3bVn+xjQnnrXzSS51ndWpNVE6SoTJgGC2cLEBV
-6UogStjsNsP7RlbBnVJLUeEmzvDTMdOYX8FCO+Rrwv9/N1Bwp4GZCZ9sQt+ABAQBWIYMgkyJDW0L
-QXDrsAdnzy9i/9H8l1jiTCkgP4w/C2VZPMWfkFAPGCbiK/iM8dMGGcuU75A8aTn1dTzB+iY3ZQJQ
-wiaW/dz0azIteDTYG0G8einPRTW=
+</table>
+<!-- end of profiling callstack -->

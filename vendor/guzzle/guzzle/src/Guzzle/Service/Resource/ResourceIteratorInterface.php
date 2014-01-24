@@ -1,32 +1,61 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-LEcr9vh0l0==
+<?php
+
+namespace Guzzle\Service\Resource;
+
+use Guzzle\Common\HasDispatcherInterface;
+use Guzzle\Common\ToArrayInterface;
+
+/**
+ * Iterates over a paginated resource using subsequent requests in order to retrieve the entire matching result set
+ */
+interface ResourceIteratorInterface extends ToArrayInterface, HasDispatcherInterface, \Iterator, \Countable
+{
+    /**
+     * Retrieve the NextToken that can be used in other iterators.
+     *
+     * @return string Returns a NextToken
+     */
+    public function getNextToken();
+
+    /**
+     * Attempt to limit the total number of resources returned by the iterator.
+     *
+     * You may still receive more items than you specify. Set to 0 to specify no limit.
+     *
+     * @param int $limit Limit amount
+     *
+     * @return ResourceIteratorInterface
+     */
+    public function setLimit($limit);
+
+    /**
+     * Attempt to limit the total number of resources retrieved per request by  the iterator.
+     *
+     * The iterator may return more than you specify in the page size argument depending on the service and underlying
+     * command implementation.  Set to 0 to specify no page size limitation.
+     *
+     * @param int $pageSize Limit amount
+     *
+     * @return ResourceIteratorInterface
+     */
+    public function setPageSize($pageSize);
+
+    /**
+     * Get a data option from the iterator
+     *
+     * @param string $key Key of the option to retrieve
+     *
+     * @return mixed|null Returns NULL if not set or the value if set
+     */
+    public function get($key);
+
+    /**
+     * Set a data option on the iterator
+     *
+     * @param string $key   Key of the option to set
+     * @param mixed  $value Value to set for the option
+     *
+     * @return ResourceIteratorInterface
+     */
+    public function set($key, $value);
+}

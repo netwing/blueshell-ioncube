@@ -1,65 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests for File resources
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+require_once dirname(__FILE__) . '/PHPunitplugins/resource.ambiguous.php';
+
+/**
+* class for file resource tests
+*/
+class CustomResourceAmbiguousTests extends PHPUnit_Framework_TestCase
+{
+    public $_resource = null;
+
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+
+        // empty the template dir
+        $this->smarty->setTemplateDir(array());
+
+        // kill cache for unit test
+        Smarty_Resource::$resources = array();
+        $this->smarty->_resource_handlers = array();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    protected function relative($path)
+    {
+        $path = str_replace( dirname(__FILE__), '.', $path );
+        if (DS == "\\") {
+            $path = str_replace( "\\", "/", $path );
+        }
+
+        return $path;
+    }
+
+    public function testNone()
+    {
+        $resource_handler = new Smarty_Resource_Ambiguous(dirname(__FILE__) . '/templates/ambiguous/');
+        $this->smarty->registerResource('ambiguous', $resource_handler);
+        $this->smarty->default_resource_type = 'ambiguous';
+        $this->smarty->allow_ambiguous_resources = true;
+
+        $tpl = $this->smarty->createTemplate('foobar.tpl');
+        $this->assertFalse($tpl->source->exists);
+    }
+
+    public function testCase1()
+    {
+        $resource_handler = new Smarty_Resource_Ambiguous(dirname(__FILE__) . '/templates/ambiguous/');
+        $this->smarty->registerResource('ambiguous', $resource_handler);
+        $this->smarty->default_resource_type = 'ambiguous';
+        $this->smarty->allow_ambiguous_resources = true;
+
+        $resource_handler->setSegment('case1');
+
+        $tpl = $this->smarty->createTemplate('foobar.tpl');
+        $this->assertTrue($tpl->source->exists);
+        $this->assertEquals('case1', $tpl->source->content);
+    }
+
+    public function testCase2()
+    {
+        $resource_handler = new Smarty_Resource_Ambiguous(dirname(__FILE__) . '/templates/ambiguous/');
+        $this->smarty->registerResource('ambiguous', $resource_handler);
+        $this->smarty->default_resource_type = 'ambiguous';
+        $this->smarty->allow_ambiguous_resources = true;
+
+        $resource_handler->setSegment('case2');
+
+        $tpl = $this->smarty->createTemplate('foobar.tpl');
+        $this->assertTrue($tpl->source->exists);
+        $this->assertEquals('case2', $tpl->source->content);
+    }
+
+    public function testCaseSwitching()
+    {
+        $resource_handler = new Smarty_Resource_Ambiguous(dirname(__FILE__) . '/templates/ambiguous/');
+        $this->smarty->registerResource('ambiguous', $resource_handler);
+        $this->smarty->default_resource_type = 'ambiguous';
+        $this->smarty->allow_ambiguous_resources = true;
+
+        $resource_handler->setSegment('case1');
+        $tpl = $this->smarty->createTemplate('foobar.tpl');
+        $this->assertTrue($tpl->source->exists);
+        $this->assertEquals('case1', $tpl->source->content);
+
+        $resource_handler->setSegment('case2');
+        $tpl = $this->smarty->createTemplate('foobar.tpl');
+        $this->assertTrue($tpl->source->exists);
+        $this->assertEquals('case2', $tpl->source->content);
+    }
+
+    /**
+    * final cleanup
+    */
+    public function testFinalCleanup()
+    {
+        $this->smarty->clearCompiledTemplate();
+        $this->smarty->clearAllCache();
+        $this->smarty->allow_ambiguous_resources = false;
+    }
+}

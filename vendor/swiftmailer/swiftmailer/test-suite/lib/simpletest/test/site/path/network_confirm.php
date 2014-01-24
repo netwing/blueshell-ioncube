@@ -1,45 +1,71 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPxO3he+zx1AWhB8xhEq11r6bJpeJDtm7VjvHwyhgO3QId5u2cgTD3ZJGEU8whorqkxodSIdg
-2Q0ZNBgq1bhwL1gVjvS6w608KxIPigrIO93DvwhEEBQWDV1RLq7yr3Sm1vyAPS0OSEuXiDB3ibe1
-9291uU63wYuPwObXR5h4VLbXz3JVs36WD09xAe/uiBH6LsQyfCR83TD+2O0oMbYKZTt9BHSi91hh
-uA1gr8/fnEkamUTi7knjiAzHAE4xzt2gh9fl143SQNJMOekXimC59lC4Y/VOWyY/2+JTyHlzwHys
-g/la1Eaxi9kZIhK7kMtrxRa43hie+XYtv624SPqbn7JBgcygV572zvnXi5w+UfyFn0mmkTENHyjj
-lsktTJBzDefPcix96hL9vi2mExiZMJ7wPS9a+RjhMi87di9Zq8uvafdU8jvSzD9mLH56OuTciz7U
-WxUf5kGz42H+orAbWARSOPo9+6TTRCeVZgvLe44vVFmhDE3iXDDCxAGEoTNU73isEqvcyJXzqUvL
-OIsTIU9lSJ3acgfjfnLSIl6mKQCXYVQiWhmZzTxVfYekzVeL98YKqt5FusbECw6OviMBgWWQvpwl
-ZsBo0KLh/O7axxqYbdR6k/FLl/9eKnHF/nu/6lD7BbS+3q/3huBMHyh+cJECbA/TwR1Me5xP3km4
-EWZ4GWQLP/CQtfTCkyLiAaBNR+yKjUtruqlBtFTcC/P4dTS6hX6IX+5lBj/Z1AIl1TuKlqoDi2er
-i1dshEExaoCDZRlz6ZabiczUWIIx7chclJWuzSl8WLjgLIpNHS/ziDTOpHGvILOlGJ4BibeXs5hF
-hZkq2tna2kO5c2P2rVKfxxK8++IGLJb+DnnE+t2lHwudTaEFMbYi777bJCcPL5C1tCnp8N2pLXPM
-GgD+bXdGgWoGpvJILM2m51gnIXI8qF9CYiTlX9S+PsFsYrudrWcUjT3vVcjAiqMXho6RBHp/Sz/C
-mVqh2w0RE3UYgn0tRwBt62ZSqKEAsrYDd9JRjwvdRP1Tbr7AqTN0gHeRplIblbM7iRQfEBZLjoXM
-8caZAa+ZNWM8i0G+/QrZjiJpNdvC8wUH3/KXLGEgcfkAHU4A+MEUmWjFmVDYx2svjaThoKVZ38TN
-Vs2mz5MVXRjXN8b3hK2iX7wzQOy7zBYE4knARUb9NmtLCYvR8NeN1sHJJvwA6ifAAOE23egJWxUI
-1lo7PRotSXlSPulEBD3plZTviy0qp50GPBI62ikINxr17IboPSlSrY1nubYuW2SW3ZB/k2sKPh6m
-I9v/Q8UMNHAsGrjyv/35SQFUTrL3vDXsAViZN5FBKe6wLJ7yd4tiRzgezZC0eBzxLHI943wTJE5Y
-dhdxAeKGmCDXA6SgEw8fNGHk9EosIdnvCG9vDsbqAQPKQkTlZ9FyXg6yKX8Xc4HoLidRQfQ7HjUl
-SDOXLtKSDoQoc+wlOJRB2chvSX3ZPQA1j1DItxXYOqLICkgv3wZKf1O1VXW2/HxWxnjV1fLGejkQ
-28M1my+D0S/AJqFTX57wXcqJv8p9HgxO465YLFugyEwrsz6mtK2ssfE/HXZDrCWeIh8XzX1Zn2IE
-wo5DOV0qrL01o24M9jiC8M515nydw2hCT320jEUoKqnmd63DlbLemkBc/qefBlk2/8cSKmFisvzP
-/wUeIKlvGuU+sCyQJcv8pjZFAOJpnJqIOGPjFMKM7JsSi2aUHsq+Vl+HdNjO8ARPJCMMXP77sv5q
-Z+jzbbgRpoSql5sA0AWc5f/6xKoqkXrcQ55UgIoYRfkpjFhLgCnnZK4rmDxyVIOZYkSi8jLI9hVR
-YfgL2ZrP49Tsl9ub29l25EA4yU5WwFTXPirD/zteZhXCMHTdQdcUzTRy1be06Umgx5wU1aGIqqqU
-03ZxWudbqY5Dt08K/i2cHxqnGDKNJbgl9Nrd4K+GfWKIQRmC1jJsEA1XeLw3Xx+CDhBz/L7Wz99k
-OsoEi4XGAosLc17hEmZE+MyEGkVUq8wABP/n+dgMGjUGGevdzTwIqJeoCxewAK/9p8W7Ce4TcXHY
-uIhONVoL0bGSn8tZPB1uB8lKMxBIBPcyv8B/fhf+k3fo+hxSYxYN2X3Ui5Jb0emUjDU6nMknw5ZW
-ZD9/AV542Na/9n3qz/Ex8GD+kusB15cvW9TTZObaHvh+GEikGFIFP54PXUypUeaS2wqnoMMInOPr
-872TlUNKpxMvckKcQBtbUda8IHv+qlil7Ed1iT0fY10Mwyrr/tjOYdRM98scsiw608L0UvReKKT4
-uuDjZWLHPamJm9XhZhH/FRl06Vv45zZL63gj1lUIXOt6GmA39U/aZ5dn4lXlbFM15vUC1dyxG7gJ
-RmuNJl+d3yGuRiv4ruwJ1yteGoApKH6FaLNmGT/vC98m7yyaPNNSRYAdgmH+BPrFJHsZJae0rTOm
-qBGPSzZ4bkXaccegxH3qzRKmMrKvyHYV/WaY8CutR09uoBu6g79shGZPOLvJDuhDwF55cDYRK60H
-2Fwg8NtdtFqRZWDO6N1ZBenwPJ21VESgYXXVjdn8o2XtsGmWVShG7iuPlhaq/f3yWokCWVBDr9aU
-2ljwsb9ewrDhkKCC1XBkQiUwbz6yiVqg3Z4YM7vS9EOkcWfKWeMJB/f7lBFPohSeCV8AlPFFELfL
-sQWVRs4fr3yzdsGkjTM05NXgGBSCarGapDKZCynNez80/+ua+50rna5j2KB8sc0GSTfiqkgOnM4c
-7T0jCwpXq1/hBH7C9MJK52L9eb/05DJVUdk64E3kRxPHxZRXEcQYMTno8eO01aloGJX2pSsWVvVa
-rmKGWzSxJ1PUqf5ilW+xIiywjkcfdFUnCJuVpEmzdL/Ab13wVVC3pVPCgbFxpjFj2K80okcq3mld
-pEX0cagF9z8pATlmCD3I5UuIC9FzkmeL0HXmjsn3RF8IL1WXrgG/EB8wZV0b4xbhBDbPY6IioJAP
-tITrz2YXw9s7YWR0xMsTKo/e824ubQYHcQhEru0e8tnRkubXjIsjJIhHpMkUQqKQ1dLRywARetZ+
-u8P2JsSQtOC6yu92w6Hps+ZeTJ23fOIcR9Fc/LC5uhI7yI8azR5xrpENtZFXFWtAIq46IioHtxIA
-3Jy8056NmZzZ7NWpryp3kdWh82e=
+<?php
+    if (count($HTTP_COOKIE_VARS) > 0) {
+        $_COOKIE = $HTTP_COOKIE_VARS;
+    }
+    if (count($HTTP_GET_VARS) > 0) {
+        $_GET = $HTTP_GET_VARS;
+    }
+    if (count($HTTP_POST_VARS) > 0) {
+        $_POST = $HTTP_POST_VARS;
+    }
+    if (!isset($_SERVER)) {
+        $_SERVER = $HTTP_SERVER_VARS;
+    }
+    global $HTTP_RAW_POST_DATA;
+    
+    require_once('../page_request.php');
+?><html>
+    <head><title>Simple test target file in folder</title></head>
+    <body>
+        A target for the SimpleTest test suite.
+        <h1>Request</h1>
+        <dl>
+            <dt>Protocol version</dt><dd><?php print $_SERVER['SERVER_PROTOCOL']; ?></dd>
+            <dt>Request method</dt><dd><?php print $_SERVER['REQUEST_METHOD']; ?></dd>
+            <dt>Accept header</dt><dd><?php print $_SERVER['HTTP_ACCEPT']; ?></dd>
+        </dl>
+        <h1>Cookies</h1>
+        <?php
+            if (count($_COOKIE) > 0) {
+                foreach ($_COOKIE as $key => $value) {
+                    print $key . "=[" . $value . "]<br />\n";
+                }
+            }
+        ?>
+        <h1>Raw GET data</h1>
+        <?php
+            print "[" . $_SERVER['QUERY_STRING'] . "]";
+        ?>
+        <h1>GET data</h1>
+        <?php
+            $get = PageRequest::get();
+            if (count($get) > 0) {
+                foreach ($get as $key => $value) {
+                    if (is_array($value)) {
+                        $value = implode(', ', $value);
+                    }
+                    print $key . "=[" . $value . "]<br />\n";
+                }
+            }
+        ?>
+        <h1>Raw POST data</h1>
+        <?php
+            print "[" . $HTTP_RAW_POST_DATA . "]";
+        ?>
+        <pre><?php print_r(PageRequest::post()); ?></pre>
+        <h1>POST data</h1>
+        <?php
+            if (count($_POST) > 0) {
+                foreach ($_POST as $key => $value) {
+                    print $key . "=[";
+                    if (is_array($value)) {
+                        print implode(', ', $value);
+                    } else {
+                        print $value;
+                    }
+                    print "]<br />\n";
+                }
+            }
+        ?>
+    </body>
+</html>

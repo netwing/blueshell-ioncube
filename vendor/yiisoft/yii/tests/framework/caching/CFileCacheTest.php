@@ -1,44 +1,53 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ijV+HYe6OKPnphNt+z3+
+<?php
+
+class CFileCacheTest extends CTestCase
+{
+	/**
+	 * https://github.com/yiisoft/yii/issues/2435
+	 */
+	public function testEmbedExpiry()
+	{
+		$app=new TestApplication(array(
+			'id'=>'testApp',
+			'components'=>array(
+				'cache'=>array('class'=>'CFileCache'),
+			),
+		));
+		$app->reset();
+		$cache=$app->cache;
+
+		$cache->set('testKey1','testValue1',2);
+		$files=glob(Yii::getPathOfAlias('application.runtime.cache').'/*.bin');
+		$this->assertEquals(time()+2,filemtime($files[0]));
+
+		$cache->set('testKey2','testValue2',2);
+		sleep(1);
+		$this->assertEquals('testValue2',$cache->get('testKey2'));
+
+		$cache->set('testKey3','testValue3',2);
+		sleep(3);
+		$this->assertEquals(false,$cache->get('testKey2'));
+
+
+		$app=new TestApplication(array(
+			'id'=>'testApp',
+			'components'=>array(
+				'cache'=>array('class'=>'CFileCache','embedExpiry'=>true),
+			),
+		));
+		$app->reset();
+		$cache=$app->cache;
+
+		$cache->set('testKey4','testValue4',2);
+		$files=glob(Yii::getPathOfAlias('application.runtime.cache').'/*.bin');
+		$this->assertEquals(time(),filemtime($files[0]));
+
+		$cache->set('testKey5','testValue5',2);
+		sleep(1);
+		$this->assertEquals('testValue5',$cache->get('testKey5'));
+
+		$cache->set('testKey6','testValue6',2);
+		sleep(3);
+		$this->assertEquals(false,$cache->get('testKey6'));
+	}
+}

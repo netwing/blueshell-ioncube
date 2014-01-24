@@ -1,39 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-TFG2kP/hj9HCIvh32Whlzeuu9Q/k+BRti9rrQpW=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Handles Quoted Printable (Q) Header Encoding in Swift Mailer.
+ *
+ * @package    Swift
+ * @subpackage Mime
+ * @author     Chris Corbyn
+ */
+class Swift_Mime_HeaderEncoder_QpHeaderEncoder extends Swift_Encoder_QpEncoder implements Swift_Mime_HeaderEncoder
+{
+    /**
+     * Creates a new QpHeaderEncoder for the given CharacterStream.
+     *
+     * @param Swift_CharacterStream $charStream to use for reading characters
+     */
+    public function __construct(Swift_CharacterStream $charStream)
+    {
+        parent::__construct($charStream);
+    }
+
+    protected function initSafeMap()
+    {
+        foreach (array_merge(
+            range(0x61, 0x7A), range(0x41, 0x5A),
+            range(0x30, 0x39), array(0x20, 0x21, 0x2A, 0x2B, 0x2D, 0x2F)
+        ) as $byte) {
+            $this->_safeMap[$byte] = chr($byte);
+        }
+    }
+
+    /**
+     * Get the name of this encoding scheme.
+     *
+     * Returns the string 'Q'.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'Q';
+    }
+
+    /**
+     * Takes an unencoded string and produces a QP encoded string from it.
+     *
+     * @param string  $string          string to encode
+     * @param integer $firstLineOffset optional
+     * @param integer $maxLineLength   optional, 0 indicates the default of 76 chars
+     *
+     * @return string
+     */
+    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0)
+    {
+        return str_replace(array(' ', '=20', "=\r\n"), array('_', '_', "\r\n"),
+            parent::encodeString($string, $firstLineOffset, $maxLineLength)
+        );
+    }
+}

@@ -1,39 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-hQfmvuq=
+<?php
+
+class Framework_MockObject_Invocation_StaticTest extends PHPUnit_Framework_TestCase
+{
+    public function testConstructorRequiresClassAndMethodAndParameters()
+    {
+        new PHPUnit_Framework_MockObject_Invocation_Static('FooClass', 'FooMethod', array('an_argument'));
+    }
+
+    public function testAllowToGetClassNameSetInConstructor()
+    {
+        $invocation = new PHPUnit_Framework_MockObject_Invocation_Static('FooClass', 'FooMethod', array('an_argument'));
+
+        $this->assertSame('FooClass', $invocation->className);
+    }
+
+    public function testAllowToGetMethodNameSetInConstructor()
+    {
+        $invocation = new PHPUnit_Framework_MockObject_Invocation_Static('FooClass', 'FooMethod', array('an_argument'));
+
+        $this->assertSame('FooMethod', $invocation->methodName);
+    }
+
+    public function testAllowToGetMethodParametersSetInConstructor()
+    {
+        $expectedParameters = array(
+          'foo', 5, array('a', 'b'), new StdClass, NULL, FALSE
+        );
+
+        $invocation = new PHPUnit_Framework_MockObject_Invocation_Static(
+          'FooClass', 'FooMethod', $expectedParameters
+        );
+
+        $this->assertSame($expectedParameters, $invocation->parameters);
+    }
+
+    public function testConstructorAllowToSetFlagCloneObjectsInParameters()
+    {
+        $parameters = array(new StdClass);
+        $cloneObjects = TRUE;
+
+        $invocation = new PHPUnit_Framework_MockObject_Invocation_Static(
+          'FooClass',
+          'FooMethod',
+          $parameters,
+          $cloneObjects
+        );
+
+        $this->assertEquals($parameters, $invocation->parameters);
+        $this->assertNotSame($parameters, $invocation->parameters);
+    }
+}

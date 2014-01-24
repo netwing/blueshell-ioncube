@@ -1,49 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Aws\Common\Aws;
+use Aws\DynamoDb\DynamoDbClient;
+use Monolog\Formatter\ScalarFormatter;
+use Monolog\Handler\AbstractProcessingHandler;
+use Monolog\Logger;
+
+/**
+ * Amazon DynamoDB handler (http://aws.amazon.com/dynamodb/)
+ *
+ * @link https://github.com/aws/aws-sdk-php/
+ * @author Andrew Lawson <adlawson@gmail.com>
+ */
+class DynamoDbHandler extends AbstractProcessingHandler
+{
+    const DATE_FORMAT = 'Y-m-d\TH:i:s.uO';
+
+    /**
+     * @var DynamoDbClient
+     */
+    protected $client;
+
+    /**
+     * @var string
+     */
+    protected $table;
+
+    /**
+     * @param DynamoDbClient $client
+     * @param string $table
+     * @param integer $level
+     * @param boolean $bubble
+     */
+    public function __construct(DynamoDbClient $client, $table, $level = Logger::DEBUG, $bubble = true)
+    {
+        if (!defined('Aws\Common\Aws::VERSION') || version_compare('3.0', Aws::VERSION, '<=')) {
+            throw new \RuntimeException('The DynamoDbHandler is only known to work with the AWS SDK 2.x releases');
+        }
+
+        $this->client = $client;
+        $this->table = $table;
+
+        parent::__construct($level, $bubble);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function write(array $record)
+    {
+        $filtered = $this->filterEmptyFields($record['formatted']);
+        $formatted = $this->client->formatAttributes($filtered);
+
+        $this->client->putItem(array(
+            'TableName' => $this->table,
+            'Item' => $formatted
+        ));
+    }
+
+    /**
+     * @param array $record
+     * @return array
+     */
+    protected function filterEmptyFields(array $record)
+    {
+        return array_filter($record, function($value) {
+            return !empty($value) || false === $value || 0 === $value;
+        });
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getDefaultFormatter()
+    {
+        return new ScalarFormatter(self::DATE_FORMAT);
+    }
+}

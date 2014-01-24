@@ -1,120 +1,378 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-qBAKiqnD1ya=
+<?php
+/**
+ * Copyright 2004-2013 Facebook. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package WebDriver
+ *
+ * @author Justin Bishop <jubishop@gmail.com>
+ * @author Anthon Pang <apang@softwaredevelopment.ca>
+ */
+
+namespace WebDriver;
+
+/**
+ * WebDriver\Session class
+ *
+ * @package WebDriver
+ *
+ * @method string window_handle() Retrieve the current window handle.
+ * @method array window_handles() Retrieve the list of all window handles available to the session.
+ * @method string getUrl() Retrieve the URL of the current page
+ * @method void postUrl($jsonUrl) Navigate to a new URL
+ * @method void forward() Navigates forward in the browser history, if possible.
+ * @method void back() Navigates backward in the browser history, if possible.
+ * @method void refresh() Refresh the current page.
+ * @method mixed execute($jsonScript) Inject a snippet of JavaScript into the page for execution in the context of the currently selected frame. (synchronous)
+ * @method mixed execute_async($jsonScript) Inject a snippet of JavaScript into the page for execution in the context of the currently selected frame. (asynchronous)
+ * @method string screenshot() Take a screenshot of the current page.
+ * @method void frame($jsonFrameId) Change focus to another frame on the page.
+ * @method array getCookie() Retrieve all cookies visible to the current page.
+ * @method array postCookie($jsonCookie) Set a cookie.
+ * @method string source() Get the current page source.
+ * @method string title() Get the current page title.
+ * @method void keys($jsonKeys) Send a sequence of key strokes to the active element.
+ * @method string getOrientation() Get the current browser orientation.
+ * @method void postOrientation($jsonOrientation) Set the current browser orientation.
+ * @method string getAlert_text() Gets the text of the currently displayed JavaScript alert(), confirm(), or prompt() dialog.
+ * @method void postAlert_text($jsonText) Sends keystrokes to a JavaScript prompt() dialog.
+ * @method void accept_alert() Accepts the currently displayed alert dialog.
+ * @method void dismiss_alert() Dismisses the currently displayed alert dialog.
+ * @method void moveto($jsonCoordinates) Move the mouse by an offset of the specified element (or current mouse cursor).
+ * @method void click($jsonButton) Click any mouse button (at the coordinates set by the last moveto command).
+ * @method void buttondown() Click and hold the left mouse button (at the coordinates set by the last moveto command).
+ * @method void buttonup() Releases the mouse button previously held (where the mouse is currently at).
+ * @method void doubleclick() Double-clicks at the current mouse coordinates (set by moveto).
+ * @method array execute_sql($jsonQuery) Execute SQL.
+ * @method array getLocation() Get the current geo location.
+ * @method void postLocation($jsonCoordinates) Set the current geo location.
+ * @method boolean getBrowser_connection() Is browser online?
+ * @method void postBrowser_connection($jsonState) Set browser online.
+ */
+final class Session extends Container
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function methods()
+    {
+        return array(
+            'window_handle' => array('GET'),
+            'window_handles' => array('GET'),
+            'url' => array('GET', 'POST'), // alternate for POST, use open($url)
+            'forward' => array('POST'),
+            'back' => array('POST'),
+            'refresh' => array('POST'),
+            'execute' => array('POST'),
+            'execute_async' => array('POST'),
+            'screenshot' => array('GET'),
+            'frame' => array('POST'),
+            'cookie' => array('GET', 'POST'), // for DELETE, use deleteAllCookies()
+            'source' => array('GET'),
+            'title' => array('GET'),
+            'keys' => array('POST'),
+            'orientation' => array('GET', 'POST'),
+            'alert_text' => array('GET', 'POST'),
+            'accept_alert' => array('POST'),
+            'dismiss_alert' => array('POST'),
+            'moveto' => array('POST'),
+            'click' => array('POST'),
+            'buttondown' => 'POST',
+            'buttonup' => array('POST'),
+            'doubleclick' => array('POST'),
+            'execute_sql' => array('POST'),
+            'location' => array('GET', 'POST'),
+            'browser_connection' => array('GET', 'POST'),
+        );
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function obsoleteMethods()
+    {
+        return array(
+            'modifier' => array('POST'),
+            'speed' => array('GET', 'POST'),
+            'alert' => array('GET'),
+            'visible' => array('GET', 'POST'),
+
+            // specific to Java SeleniumServer
+            'file' => array('POST'),
+            'log' => array('POST'),
+        );
+    }
+
+    /**
+     * Open URL: /session/:sessionId/url (POST)
+     * An alternative to $session->url($url);
+     *
+     * @param string $url
+     *
+     * @return \WebDriver\Session
+     */
+    public function open($url)
+    {
+        $this->curl('POST', '/url', array('url' => $url));
+
+        return $this;
+    }
+
+    /**
+     * Get browser capabilities: /session/:sessionId (GET)
+     *
+     * @return mixed
+     */
+    public function capabilities()
+    {
+        $result = $this->curl('GET', '');
+
+        return $result['value'];
+    }
+
+    /**
+     * Close session: /session/:sessionId (DELETE)
+     *
+     * @return mixed
+     */
+    public function close()
+    {
+        $result = $this->curl('DELETE', '');
+
+        return $result['value'];
+    }
+
+    // There's a limit to our ability to exploit the dynamic nature of PHP when it
+    // comes to the cookie methods because GET and DELETE request methods are indistinguishable
+    // from each other: neither takes parameters.
+
+    /**
+     * Get all cookies: /session/:sessionId/cookie (GET)
+     * Alternative to: $session->cookie();
+     *
+     * Note: get cookie by name not implemented in API
+     *
+     * @return mixed
+     */
+    public function getAllCookies()
+    {
+        $result = $this->curl('GET', '/cookie');
+
+        return $result['value'];
+    }
+
+    /**
+     * Set cookie: /session/:sessionId/cookie (POST)
+     * Alternative to: $session->cookie($cookie_json);
+     *
+     * @param array $cookieJson
+     *
+     * @return \WebDriver\Session
+     */
+    public function setCookie($cookieJson)
+    {
+        $this->curl('POST', '/cookie', array('cookie' => $cookieJson));
+
+        return $this;
+    }
+
+    /**
+     * Delete all cookies: /session/:sessionId/cookie (DELETE)
+     *
+     * @return \WebDriver\Session
+     */
+    public function deleteAllCookies()
+    {
+        $this->curl('DELETE', '/cookie');
+
+        return $this;
+    }
+
+    /**
+     * Delete a cookie: /session/:sessionId/cookie/:name (DELETE)
+     *
+     * @param string $cookieName
+     *
+     * @return \WebDriver\Session
+     */
+    public function deleteCookie($cookieName)
+    {
+        $this->curl('DELETE', '/cookie/' . $cookieName);
+
+        return $this;
+    }
+
+    /**
+     * window methods: /session/:sessionId/window (POST, DELETE)
+     * - $session->window() - close current window
+     * - $session->window($name) - set focus
+     * - $session->window($window_handle)->method() - chaining
+     *
+     * @return \WebDriver\AbstractWebDriver
+     */
+    public function window()
+    {
+        // close current window
+        if (func_num_args() === 0) {
+            $this->curl('DELETE', '/window');
+
+            return $this;
+        }
+
+        // set focus
+        $arg = func_get_arg(0); // window handle or name attribute
+        if (is_array($arg)) {
+            $this->curl('POST', '/window', $arg);
+
+            return $this;
+        }
+
+        // chaining
+        return new Window($this->url . '/window', $arg);
+    }
+
+    /**
+     * Delete window: /session/:sessionId/window (DELETE)
+     *
+     * @return \WebDriver\Session
+     */
+    public function deleteWindow()
+    {
+        $this->curl('DELETE', '/window');
+
+        return $this;
+    }
+
+    /**
+     * Set focus to window: /session/:sessionId/window (POST)
+     *
+     * @param mixed $name window handler or name attribute
+     *
+     * @return \WebDriver\Session
+     */
+    public function focusWindow($name)
+    {
+        $this->curl('POST', '/window', array('name' => $name));
+
+        return $this;
+    }
+
+    /**
+     * timeouts methods: /session/:sessionId/timeouts (POST)
+     * - $session->timeouts($json) - set timeout for an operation
+     * - $session->timeouts()->method() - chaining
+     *
+     * @return \WebDriver\Timeouts
+     */
+    public function timeouts()
+    {
+        // set timeouts
+        if (func_num_args() === 1) {
+            $arg = func_get_arg(0); // json
+            $this->curl('POST', '/timeouts', $arg);
+
+            return $this;
+        }
+
+        if (func_num_args() === 2) {
+            $arg = array(
+                'type' => func_get_arg(0), // 'script' or 'implicit'
+                'ms' => func_get_arg(1),   // timeout in milliseconds
+            );
+            $this->curl('POST', '/timeouts', $arg);
+
+            return $this;
+        }
+
+        // chaining
+        return new Timeouts($this->url . '/timeouts');
+    }
+
+    /**
+     * ime method chaining, e.g.,
+     * - $session->ime()->method()
+     *
+     * @return \WebDriver\Ime
+     */
+    public function ime()
+    {
+        return new Ime($this->url . '/ime');
+    }
+
+    /**
+     * Get active element (i.e., has focus): /session/:sessionId/element/active (POST)
+     * - $session->activeElement()
+     *
+     * @return mixed
+     */
+    public function activeElement()
+    {
+        $results = $this->curl('POST', '/element/active');
+
+        return $this->webDriverElement($results['value']);
+    }
+
+    /**
+     * touch method chaining, e.g.,
+     * - $session->touch()->method()
+     *
+     * @return \WebDriver\Touch
+     *
+     */
+    public function touch()
+    {
+        return new Touch($this->url . '/touch');
+    }
+
+    /**
+     * local_storage method chaining, e.g.,
+     * - $session->local_storage()->method()
+     *
+     * @return \WebDriver\Storage
+     */
+    public function local_storage()
+    {
+        return Storage::factory('local', $this->url . '/local_storage');
+    }
+
+    /**
+     * session_storage method chaining, e.g.,
+     * - $session->session_storage()->method()
+     *
+     * @return \WebDriver\Storage
+     */
+    public function session_storage()
+    {
+        return Storage::factory('session', $this->url . '/session_storage');
+    }
+
+    /**
+     * application cache chaining, e.g.,
+     * - $session->application_cache()->status()
+     *
+     * @return \WebDriver\ApplicationCache
+     */
+    public function application_cache()
+    {
+        return new ApplicationCache($this->url . '/application_cache');
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getElementPath($elementId)
+    {
+        return sprintf('%s/element/%s', $this->url, $elementId);
+    }
+}

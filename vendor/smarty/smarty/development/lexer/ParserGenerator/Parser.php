@@ -1,442 +1,848 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-gZaKMgm=
+<?php
+/**
+ * PHP_ParserGenerator, a php 5 parser generator.
+ *
+ * This is a direct port of the Lemon parser generator, found at
+ * {@link http://www.hwaci.com/sw/lemon/}
+ *
+ * PHP version 5
+ *
+ * LICENSE: This source file is subject to version 3.01 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_01.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @category   php
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version    CVS: $Id: Parser.php,v 1.2 2007/03/02 16:36:24 cellog Exp $
+ * @since      File available since Release 0.1.0
+ */
+/**
+ * The grammar parser for lemon grammar files.
+ *
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @since      Class available since Release 0.1.0
+ */
+class PHP_ParserGenerator_Parser
+{
+    const INITIALIZE = 1;
+    const WAITING_FOR_DECL_OR_RULE = 2;
+    const WAITING_FOR_DECL_KEYWORD = 3;
+    const WAITING_FOR_DECL_ARG = 4;
+    const WAITING_FOR_PRECEDENCE_SYMBOL = 5;
+    const WAITING_FOR_ARROW = 6;
+    const IN_RHS = 7;
+    const LHS_ALIAS_1 = 8;
+    const LHS_ALIAS_2 = 9;
+    const LHS_ALIAS_3 = 10;
+    const RHS_ALIAS_1 = 11;
+    const RHS_ALIAS_2 = 12;
+    const PRECEDENCE_MARK_1 = 13;
+    const PRECEDENCE_MARK_2 = 14;
+    const RESYNC_AFTER_RULE_ERROR = 15;
+    const RESYNC_AFTER_DECL_ERROR = 16;
+    const WAITING_FOR_DESTRUCTOR_SYMBOL = 17;
+    const WAITING_FOR_DATATYPE_SYMBOL = 18;
+    const WAITING_FOR_FALLBACK_ID = 19;
+
+    /**
+     * Name of the input file
+     *
+     * @var string
+     */
+    public $filename;
+    /**
+     * Linenumber at which current token starts
+     * @var int
+     */
+    public $tokenlineno;
+    /**
+     * Number of parsing errors so far
+     * @var int
+     */
+    public $errorcnt;
+    /**
+     * Index of current token within the input string
+     * @var int
+     */
+    public $tokenstart;
+    /**
+     * Global state vector
+     * @var PHP_ParserGenerator_Data
+     */
+    public $gp;
+    /**
+     * Parser state (one of the class constants for this class)
+     *
+     * - PHP_ParserGenerator_Parser::INITIALIZE,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_DECL_OR_RULE,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_DECL_KEYWORD,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_DECL_ARG,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_PRECEDENCE_SYMBOL,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_ARROW,
+     * - PHP_ParserGenerator_Parser::IN_RHS,
+     * - PHP_ParserGenerator_Parser::LHS_ALIAS_1,
+     * - PHP_ParserGenerator_Parser::LHS_ALIAS_2,
+     * - PHP_ParserGenerator_Parser::LHS_ALIAS_3,
+     * - PHP_ParserGenerator_Parser::RHS_ALIAS_1,
+     * - PHP_ParserGenerator_Parser::RHS_ALIAS_2,
+     * - PHP_ParserGenerator_Parser::PRECEDENCE_MARK_1,
+     * - PHP_ParserGenerator_Parser::PRECEDENCE_MARK_2,
+     * - PHP_ParserGenerator_Parser::RESYNC_AFTER_RULE_ERROR,
+     * - PHP_ParserGenerator_Parser::RESYNC_AFTER_DECL_ERROR,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_DESTRUCTOR_SYMBOL,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_DATATYPE_SYMBOL,
+     * - PHP_ParserGenerator_Parser::WAITING_FOR_FALLBACK_ID
+     * @var int
+     */
+    public $state;
+    /**
+     * The fallback token
+     * @var PHP_ParserGenerator_Symbol
+     */
+    public $fallback;
+    /**
+     * Left-hand side of the current rule
+     * @var PHP_ParserGenerator_Symbol
+     */
+    public $lhs;
+    /**
+     * Alias for the LHS
+     * @var string
+     */
+    public $lhsalias;
+    /**
+     * Number of right-hand side symbols seen
+     * @var int
+     */
+    public $nrhs;
+    /**
+     * Right-hand side symbols
+     * @var array array of {@link PHP_ParserGenerator_Symbol} objects
+     */
+    public $rhs = array();
+    /**
+     * Aliases for each RHS symbol name (or NULL)
+     * @var array array of strings
+     */
+    public $alias = array();
+    /**
+     * Previous rule parsed
+     * @var PHP_ParserGenerator_Rule
+     */
+    public $prevrule;
+    /**
+     * Keyword of a declaration
+     *
+     * This is one of the %keyword keywords in the grammar file
+     * @var string
+     */
+    public $declkeyword;
+    /**
+     * Where the declaration argument should be put
+     *
+     * This is assigned as a reference to an internal variable
+     * @var mixed
+     */
+    public $declargslot = array();
+    /**
+     * Where the declaration linenumber is put
+     *
+     * This is assigned as a reference to an internal variable
+     * @var mixed
+     */
+    public $decllnslot;
+    /*enum e_assoc*/
+    public $declassoc;    /* Assign this association to decl arguments */
+    public $preccounter;           /* Assign this precedence to decl arguments */
+    /**
+     * @var PHP_ParserGenerator_Rule
+     */
+    public $firstrule;    /* Pointer to first rule in the grammar */
+    /**
+     * @var PHP_ParserGenerator_Rule
+     */
+    public $lastrule;     /* Pointer to the most recently parsed rule */
+
+    /**
+     * @var PHP_ParserGenerator
+     */
+    private $lemon;
+
+    public function __construct(PHP_ParserGenerator $lem)
+    {
+        $this->lemon = $lem;
+    }
+
+    /**
+     * Run the preprocessor over the input file text.  The Lemon variable
+     * $azDefine contains the names of all defined
+     * macros.  This routine looks for "%ifdef" and "%ifndef" and "%endif" and
+     * comments them out.  Text in between is also commented out as appropriate.
+     * @param string
+     */
+    private function preprocess_input(&$z)
+    {
+    $start = 0;
+    $lineno = $exclude = 0;
+        for ($i=0; $i < strlen($z); $i++) {
+            if ($z[$i] == "\n") {
+                $lineno++;
+            }
+            if ($z[$i] != '%' || ($i > 0 && $z[$i-1] != "\n")) {
+                continue;
+            }
+            if (substr($z, $i, 6) === "%endif" && trim($z[$i+6]) === '') {
+                if ($exclude) {
+                    $exclude--;
+                    if ($exclude === 0) {
+                        for ($j = $start; $j < $i; $j++) {
+                            if ($z[$j] != "\n") $z[$j] = ' ';
+                        }
+                    }
+                }
+                for ($j = $i; $j < strlen($z) && $z[$j] != "\n"; $j++) {
+                    $z[$j] = ' ';
+                }
+            } elseif (substr($z, $i, 6) === "%ifdef" && trim($z[$i+6]) === '' ||
+                      substr($z, $i, 7) === "%ifndef" && trim($z[$i+7]) === '') {
+                if ($exclude) {
+                    $exclude++;
+                } else {
+                    $j = $i;
+                    $n = strtok(substr($z, $j), " \t");
+                    $exclude = 1;
+                    if (isset($this->lemon->azDefine[$n])) {
+                        $exclude = 0;
+                    }
+                    if ($z[$i + 3]=='n') {
+                        // this is a rather obtuse way of checking whether this is %ifndef
+                        $exclude = !$exclude;
+                    }
+                    if ($exclude) {
+                        $start = $i;
+                        $start_lineno = $lineno;
+                    }
+                }
+                //for ($j = $i; $j < strlen($z) && $z[$j] != "\n"; $j++) $z[$j] = ' ';
+                $j = strpos(substr($z, $i), "\n");
+                if ($j === false) {
+                    $z = substr($z, 0, $i); // remove instead of adding ' '
+                } else {
+                    $z = substr($z, 0, $i) . substr($z, $i + $j); // remove instead of adding ' '
+                }
+            }
+        }
+        if ($exclude) {
+            throw new Exception("unterminated %ifdef starting on line $start_lineno\n");
+        }
+    }
+
+    /**
+     * In spite of its name, this function is really a scanner.
+     *
+     * It reads in the entire input file (all at once) then tokenizes it.
+     * Each token is passed to the function "parseonetoken" which builds all
+     * the appropriate data structures in the global state vector "gp".
+     * @param PHP_ParserGenerator_Data
+     */
+    public function Parse(PHP_ParserGenerator_Data $gp)
+    {
+        $startline = 0;
+
+        $this->gp = $gp;
+        $this->filename = $gp->filename;
+        $this->errorcnt = 0;
+        $this->state = self::INITIALIZE;
+
+        /* Begin by reading the input file */
+        $filebuf = file_get_contents($this->filename);
+        if (!$filebuf) {
+            PHP_ParserGenerator::ErrorMsg($this->filename, 0, "Can't open this file for reading.");
+            $gp->errorcnt++;
+
+            return;
+        }
+        if (filesize($this->filename) != strlen($filebuf)) {
+            ErrorMsg($this->filename, 0, "Can't read in all %d bytes of this file.",
+                filesize($this->filename));
+            $gp->errorcnt++;
+
+            return;
+        }
+
+        /* Make an initial pass through the file to handle %ifdef and %ifndef */
+        $this->preprocess_input($filebuf);
+
+        /* Now scan the text of the input file */
+        $lineno = 1;
+        for ($cp = 0, $c = $filebuf[0]; $cp < strlen($filebuf); $cp++) {
+            $c = $filebuf[$cp];
+            if ($c == "\n") $lineno++;              /* Keep track of the line number */
+            if (trim($c) === '') {
+                continue;
+            }  /* Skip all white space */
+            if ($filebuf[$cp] == '/' && ($cp + 1 < strlen($filebuf)) && $filebuf[$cp + 1] == '/') {
+                /* Skip C++ style comments */
+                $cp += 2;
+                $z = strpos(substr($filebuf, $cp), "\n");
+                if ($z === false) {
+                    $cp = strlen($filebuf);
+                    break;
+                }
+                $lineno++;
+                $cp += $z;
+                continue;
+            }
+            if ($filebuf[$cp] == '/' && ($cp + 1 < strlen($filebuf)) && $filebuf[$cp + 1] == '*') {
+                /* Skip C style comments */
+                $cp += 2;
+                $z = strpos(substr($filebuf, $cp), '*/');
+                if ($z !== false) {
+                    $lineno += count(explode("\n", substr($filebuf, $cp, $z))) - 1;
+                }
+                $cp += $z + 1;
+                continue;
+            }
+            $this->tokenstart = $cp;                /* Mark the beginning of the token */
+            $this->tokenlineno = $lineno;           /* Linenumber on which token begins */
+            if ($filebuf[$cp] == '"') {                     /* String literals */
+                $cp++;
+                $oldcp = $cp;
+                $test = strpos(substr($filebuf, $cp), '"');
+                if ($test === false) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $startline,
+                    "String starting on this line is not terminated before the end of the file.");
+                    $this->errorcnt++;
+                    $nextcp = $cp = strlen($filebuf);
+                } else {
+                    $cp += $test;
+                    $nextcp = $cp + 1;
+                }
+                $lineno += count(explode("\n", substr($filebuf, $oldcp, $cp - $oldcp))) - 1;
+            } elseif ($filebuf[$cp] == '{') {               /* A block of C code */
+                $cp++;
+                for ($level = 1; $cp < strlen($filebuf) && ($level > 1 || $filebuf[$cp] != '}'); $cp++) {
+                    if ($filebuf[$cp] == "\n") {
+                        $lineno++;
+                    } elseif ($filebuf[$cp] == '{') {
+                        $level++;
+                    } elseif ($filebuf[$cp] == '}') {
+                        $level--;
+                    } elseif ($filebuf[$cp] == '/' && $filebuf[$cp + 1] == '*') {
+                        /* Skip comments */
+                        $cp += 2;
+                        $z = strpos(substr($filebuf, $cp), '*/');
+                        if ($z !== false) {
+                            $lineno += count(explode("\n", substr($filebuf, $cp, $z))) - 1;
+                        }
+                        $cp += $z + 2;
+                    } elseif ($filebuf[$cp] == '/' && $filebuf[$cp + 1] == '/') {
+                        /* Skip C++ style comments too */
+                        $cp += 2;
+                        $z = strpos(substr($filebuf, $cp), "\n");
+                        if ($z === false) {
+                            $cp = strlen($filebuf);
+                            break;
+                        } else {
+                            $lineno++;
+                        }
+                        $cp += $z;
+                    } elseif ($filebuf[$cp] == "'" || $filebuf[$cp] == '"') {
+                        /* String a character literals */
+                        $startchar = $filebuf[$cp];
+                        $prevc = 0;
+                        for ($cp++; $cp < strlen($filebuf) && ($filebuf[$cp] != $startchar || $prevc === '\\'); $cp++) {
+                            if ($filebuf[$cp] == "\n") {
+                                $lineno++;
+                            }
+                            if ($prevc === '\\') {
+                                $prevc = 0;
+                            } else {
+                                $prevc = $filebuf[$cp];
+                            }
+                        }
+                    }
+                }
+                if ($cp >= strlen($filebuf)) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "PHP code starting on this line is not terminated before the end of the file.");
+                    $this->errorcnt++;
+                    $nextcp = $cp;
+                } else {
+                    $nextcp = $cp + 1;
+                }
+            } elseif (preg_match('/[a-zA-Z0-9]/', $filebuf[$cp])) {
+                /* Identifiers */
+                preg_match('/[a-zA-Z0-9_]+/', substr($filebuf, $cp), $preg_results);
+                $cp += strlen($preg_results[0]);
+                $nextcp = $cp;
+            } elseif ($filebuf[$cp] == ':' && $filebuf[$cp + 1] == ':' &&
+                      $filebuf[$cp + 2] == '=') {
+                /* The operator "::=" */
+                $cp += 3;
+                $nextcp = $cp;
+            } elseif (($filebuf[$cp] == '/' || $filebuf[$cp] == '|') &&
+                      preg_match('/[a-zA-Z]/', $filebuf[$cp + 1])) {
+                $cp += 2;
+                preg_match('/[a-zA-Z0-9_]+/', substr($filebuf, $cp), $preg_results);
+                $cp += strlen($preg_results[0]);
+                $nextcp = $cp;
+            } else {
+                /* All other (one character) operators */
+                $cp ++;
+                $nextcp = $cp;
+            }
+            $this->parseonetoken(substr($filebuf, $this->tokenstart,
+                $cp - $this->tokenstart)); /* Parse the token */
+            $cp = $nextcp - 1;
+        }
+        $gp->rule = $this->firstrule;
+        $gp->errorcnt = $this->errorcnt;
+    }
+
+    /**
+     * Parse a single token
+     * @param string token
+     */
+    public function parseonetoken($token)
+    {
+        $x = $token;
+        $this->a = 0; // for referencing in WAITING_FOR_DECL_KEYWORD
+        if (PHP_ParserGenerator::DEBUG) {
+            printf("%s:%d: Token=[%s] state=%d\n",
+                $this->filename, $this->tokenlineno, $token, $this->state);
+        }
+        switch ($this->state) {
+            case self::INITIALIZE:
+                $this->prevrule = 0;
+                $this->preccounter = 0;
+                $this->firstrule = $this->lastrule = 0;
+                $this->gp->nrule = 0;
+                /* Fall thru to next case */
+            case self::WAITING_FOR_DECL_OR_RULE:
+                if ($x[0] == '%') {
+                    $this->state = self::WAITING_FOR_DECL_KEYWORD;
+                } elseif (preg_match('/[a-z]/', $x[0])) {
+                    $this->lhs = PHP_ParserGenerator_Symbol::Symbol_new($x);
+                    $this->nrhs = 0;
+                    $this->lhsalias = 0;
+                    $this->state = self::WAITING_FOR_ARROW;
+                } elseif ($x[0] == '{') {
+                    if ($this->prevrule === 0) {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                            "There is no prior rule opon which to attach the code
+                             fragment which begins on this line.");
+                        $this->errorcnt++;
+                    } elseif ($this->prevrule->code != 0) {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                            "Code fragment beginning on this line is not the first \
+                             to follow the previous rule.");
+                        $this->errorcnt++;
+                    } else {
+                        $this->prevrule->line = $this->tokenlineno;
+                        $this->prevrule->code = substr($x, 1);
+                    }
+                } elseif ($x[0] == '[') {
+                    $this->state = self::PRECEDENCE_MARK_1;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                    "Token \"%s\" should be either \"%%\" or a nonterminal name.",
+                    $x);
+                    $this->errorcnt++;
+                }
+                break;
+            case self::PRECEDENCE_MARK_1:
+                if (!preg_match('/[A-Z]/', $x[0])) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "The precedence symbol must be a terminal.");
+                    $this->errorcnt++;
+                } elseif ($this->prevrule === 0) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "There is no prior rule to assign precedence \"[%s]\".", $x);
+                    $this->errorcnt++;
+                } elseif ($this->prevrule->precsym != 0) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Precedence mark on this line is not the first to follow the previous rule.");
+                    $this->errorcnt++;
+                } else {
+                    $this->prevrule->precsym = PHP_ParserGenerator_Symbol::Symbol_new($x);
+                }
+                $this->state = self::PRECEDENCE_MARK_2;
+                break;
+            case self::PRECEDENCE_MARK_2:
+                if ($x[0] != ']') {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Missing \"]\" on precedence mark.");
+                    $this->errorcnt++;
+                }
+                $this->state = self::WAITING_FOR_DECL_OR_RULE;
+                break;
+            case self::WAITING_FOR_ARROW:
+                if ($x[0] == ':' && $x[1] == ':' && $x[2] == '=') {
+                    $this->state = self::IN_RHS;
+                } elseif ($x[0] == '(') {
+                    $this->state = self::LHS_ALIAS_1;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Expected to see a \":\" following the LHS symbol \"%s\".",
+                    $this->lhs->name);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                }
+                break;
+            case self::LHS_ALIAS_1:
+                if (preg_match('/[A-Za-z]/', $x[0])) {
+                    $this->lhsalias = $x;
+                    $this->state = self::LHS_ALIAS_2;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "\"%s\" is not a valid alias for the LHS \"%s\"\n",
+                        $x, $this->lhs->name);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                }
+                break;
+            case self::LHS_ALIAS_2:
+                if ($x[0] == ')') {
+                    $this->state = self::LHS_ALIAS_3;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Missing \")\" following LHS alias name \"%s\".",$this->lhsalias);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                }
+                break;
+            case self::LHS_ALIAS_3:
+                if ($x == '::=') {
+                    $this->state = self::IN_RHS;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Missing \"->\" following: \"%s(%s)\".",
+                    $this->lhs->name, $this->lhsalias);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                }
+                break;
+            case self::IN_RHS:
+                if ($x[0] == '.') {
+                    $rp = new PHP_ParserGenerator_Rule;
+                    $rp->ruleline = $this->tokenlineno;
+                    for ($i = 0; $i < $this->nrhs; $i++) {
+                        $rp->rhs[$i] = $this->rhs[$i];
+                        $rp->rhsalias[$i] = $this->alias[$i];
+                    }
+                    if (count(array_unique($rp->rhsalias)) != count($rp->rhsalias)) {
+                        $used = array();
+                        foreach ($rp->rhsalias as $i => $symbol) {
+                            if (!is_string($symbol)) {
+                                continue;
+                            }
+                            if (isset($used[$symbol])) {
+                                PHP_ParserGenerator::ErrorMsg($this->filename,
+                                    $this->tokenlineno,
+                                    "RHS symbol \"%s\" used multiple times.",
+                                    $symbol);
+                                $this->errorcnt++;
+                            } else {
+                                $used[$symbol] = $i;
+                            }
+                        }
+                    }
+                    $rp->lhs = $this->lhs;
+                    $rp->lhsalias = $this->lhsalias;
+                    $rp->nrhs = $this->nrhs;
+                    $rp->code = 0;
+                    $rp->precsym = 0;
+                    $rp->index = $this->gp->nrule++;
+                    $rp->nextlhs = $rp->lhs->rule;
+                    $rp->lhs->rule = $rp;
+                    $rp->next = 0;
+                    if ($this->firstrule === 0) {
+                        $this->firstrule = $this->lastrule = $rp;
+                    } else {
+                        $this->lastrule->next = $rp;
+                        $this->lastrule = $rp;
+                    }
+                    $this->prevrule = $rp;
+                    $this->state = self::WAITING_FOR_DECL_OR_RULE;
+                } elseif (preg_match('/[a-zA-Z]/', $x[0])) {
+                    if ($this->nrhs >= PHP_ParserGenerator::MAXRHS) {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                            "Too many symbols on RHS or rule beginning at \"%s\".",
+                            $x);
+                        $this->errorcnt++;
+                        $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                    } else {
+                        if (isset($this->rhs[$this->nrhs - 1])) {
+                            $msp = $this->rhs[$this->nrhs - 1];
+                            if ($msp->type == PHP_ParserGenerator_Symbol::MULTITERMINAL) {
+                                $inf = array_reduce($msp->subsym,
+                                    array($this, '_printmulti'), '');
+                                PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                                    'WARNING: symbol ' . $x . ' will not' .
+                                    ' be part of previous multiterminal %s',
+                                    substr($inf, 0, strlen($inf) - 1)
+                                    );
+                            }
+                        }
+                        $this->rhs[$this->nrhs] = PHP_ParserGenerator_Symbol::Symbol_new($x);
+                        $this->alias[$this->nrhs] = 0;
+                        $this->nrhs++;
+                    }
+                } elseif (($x[0] == '|' || $x[0] == '/') && $this->nrhs > 0) {
+                    $msp = $this->rhs[$this->nrhs - 1];
+                    if ($msp->type != PHP_ParserGenerator_Symbol::MULTITERMINAL) {
+                        $origsp = $msp;
+                        $msp = new PHP_ParserGenerator_Symbol;
+                        $msp->type = PHP_ParserGenerator_Symbol::MULTITERMINAL;
+                        $msp->nsubsym = 1;
+                        $msp->subsym = array($origsp);
+                        $msp->name = $origsp->name;
+                        $this->rhs[$this->nrhs - 1] = $msp;
+                    }
+                    $msp->nsubsym++;
+                    $msp->subsym[$msp->nsubsym - 1] = PHP_ParserGenerator_Symbol::Symbol_new(substr($x, 1));
+                    if (preg_match('/[a-z]/', $x[1]) ||
+                          preg_match('/[a-z]/', $msp->subsym[0]->name[0])) {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Cannot form a compound containing a non-terminal");
+                        $this->errorcnt++;
+                    }
+                } elseif ($x[0] == '(' && $this->nrhs > 0) {
+                    $this->state = self::RHS_ALIAS_1;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Illegal character on RHS of rule: \"%s\".", $x);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                }
+                break;
+            case self::RHS_ALIAS_1:
+                if (preg_match('/[A-Za-z]/', $x[0])) {
+                    $this->alias[$this->nrhs - 1] = $x;
+                    $this->state = self::RHS_ALIAS_2;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "\"%s\" is not a valid alias for the RHS symbol \"%s\"\n",
+                        $x, $this->rhs[$this->nrhs - 1]->name);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                }
+                break;
+            case self::RHS_ALIAS_2:
+                if ($x[0] == ')') {
+                    $this->state = self::IN_RHS;
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Missing \")\" following LHS alias name \"%s\".", $this->lhsalias);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_RULE_ERROR;
+                }
+                break;
+            case self::WAITING_FOR_DECL_KEYWORD:
+                if (preg_match('/[A-Za-z]/', $x[0])) {
+                    $this->declkeyword = $x;
+                    $this->declargslot = &$this->a;
+                    $this->decllnslot = &$this->a;
+                    $this->state = self::WAITING_FOR_DECL_ARG;
+                    if ('name' == $x) {
+                        $this->declargslot = &$this->gp->name;
+                    } elseif ('include' == $x) {
+                        $this->declargslot = &$this->gp->include_code;
+                        $this->decllnslot = &$this->gp->includeln;
+                    } elseif ('include_class' == $x) {
+                        $this->declargslot = &$this->gp->include_classcode;
+                        $this->decllnslot = &$this->gp->include_classln;
+                    } elseif ('declare_class' == $x) {
+                        $this->declargslot = &$this->gp->declare_classcode;
+                        $this->decllnslot = &$this->gp->declare_classln;
+                    } elseif ('code' == $x) {
+                        $this->declargslot = &$this->gp->extracode;
+                        $this->decllnslot = &$this->gp->extracodeln;
+                    } elseif ('token_destructor' == $x) {
+                        $this->declargslot = &$this->gp->tokendest;
+                        $this->decllnslot = &$this->gp->tokendestln;
+                    } elseif ('default_destructor' == $x) {
+                        $this->declargslot = &$this->gp->vardest;
+                        $this->decllnslot = &$this->gp->vardestln;
+                    } elseif ('token_prefix' == $x) {
+                        $this->declargslot = &$this->gp->tokenprefix;
+                    } elseif ('syntax_error' == $x) {
+                        $this->declargslot = &$this->gp->error;
+                        $this->decllnslot = &$this->gp->errorln;
+                    } elseif ('parse_accept' == $x) {
+                        $this->declargslot = &$this->gp->accept;
+                        $this->decllnslot = &$this->gp->acceptln;
+                    } elseif ('parse_failure' == $x) {
+                        $this->declargslot = &$this->gp->failure;
+                        $this->decllnslot = &$this->gp->failureln;
+                    } elseif ('stack_overflow' == $x) {
+                        $this->declargslot = &$this->gp->overflow;
+                        $this->decllnslot = &$this->gp->overflowln;
+                    } elseif ('token_type' == $x) {
+                        $this->declargslot = &$this->gp->tokentype;
+                    } elseif ('default_type' == $x) {
+                        $this->declargslot = &$this->gp->vartype;
+                    } elseif ('stack_size' == $x) {
+                        $this->declargslot = &$this->gp->stacksize;
+                    } elseif ('start_symbol' == $x) {
+                        $this->declargslot = &$this->gp->start;
+                    } elseif ('left' == $x) {
+                        $this->preccounter++;
+                        $this->declassoc = PHP_ParserGenerator_Symbol::LEFT;
+                        $this->state = self::WAITING_FOR_PRECEDENCE_SYMBOL;
+                    } elseif ('right' == $x) {
+                        $this->preccounter++;
+                        $this->declassoc = PHP_ParserGenerator_Symbol::RIGHT;
+                        $this->state = self::WAITING_FOR_PRECEDENCE_SYMBOL;
+                    } elseif ('nonassoc' == $x) {
+                        $this->preccounter++;
+                        $this->declassoc = PHP_ParserGenerator_Symbol::NONE;
+                        $this->state = self::WAITING_FOR_PRECEDENCE_SYMBOL;
+                    } elseif ('destructor' == $x) {
+                        $this->state = self::WAITING_FOR_DESTRUCTOR_SYMBOL;
+                    } elseif ('type' == $x) {
+                        $this->state = self::WAITING_FOR_DATATYPE_SYMBOL;
+                    } elseif ('fallback' == $x) {
+                        $this->fallback = 0;
+                        $this->state = self::WAITING_FOR_FALLBACK_ID;
+                    } else {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Unknown declaration keyword: \"%%%s\".", $x);
+                        $this->errorcnt++;
+                        $this->state = self::RESYNC_AFTER_DECL_ERROR;
+                    }
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Illegal declaration keyword: \"%s\".", $x);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_DECL_ERROR;
+                }
+                break;
+            case self::WAITING_FOR_DESTRUCTOR_SYMBOL:
+                if (!preg_match('/[A-Za-z]/', $x[0])) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Symbol name missing after %destructor keyword");
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_DECL_ERROR;
+                } else {
+                    $sp = PHP_ParserGenerator_Symbol::Symbol_new($x);
+                    $this->declargslot = &$sp->destructor;
+                    $this->decllnslot = &$sp->destructorln;
+                    $this->state = self::WAITING_FOR_DECL_ARG;
+                }
+                break;
+            case self::WAITING_FOR_DATATYPE_SYMBOL:
+                if (!preg_match('/[A-Za-z]/', $x[0])) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Symbol name missing after %destructor keyword");
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_DECL_ERROR;
+                } else {
+                    $sp = PHP_ParserGenerator_Symbol::Symbol_new($x);
+                    $this->declargslot = &$sp->datatype;
+                    $this->state = self::WAITING_FOR_DECL_ARG;
+                }
+                break;
+            case self::WAITING_FOR_PRECEDENCE_SYMBOL:
+                if ($x[0] == '.') {
+                    $this->state = self::WAITING_FOR_DECL_OR_RULE;
+                } elseif (preg_match('/[A-Z]/', $x[0])) {
+                    $sp = PHP_ParserGenerator_Symbol::Symbol_new($x);
+                    if ($sp->prec >= 0) {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                            "Symbol \"%s\" has already been given a precedence.", $x);
+                        $this->errorcnt++;
+                    } else {
+                        $sp->prec = $this->preccounter;
+                        $sp->assoc = $this->declassoc;
+                    }
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Can't assign a precedence to \"%s\".", $x);
+                    $this->errorcnt++;
+                }
+                break;
+            case self::WAITING_FOR_DECL_ARG:
+                if (preg_match('/[A-Za-z0-9{"]/', $x[0])) {
+                    if ($this->declargslot != 0) {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                            "The argument \"%s\" to declaration \"%%%s\" is not the first.",
+                            $x[0] == '"' ? substr($x, 1) : $x, $this->declkeyword);
+                        $this->errorcnt++;
+                        $this->state = self::RESYNC_AFTER_DECL_ERROR;
+                    } else {
+                        $this->declargslot = ($x[0] == '"' || $x[0] == '{') ? substr($x, 1) : $x;
+                        $this->a = 1;
+                        if (!$this->decllnslot) {
+                            $this->decllnslot = $this->tokenlineno;
+                        }
+                        $this->state = self::WAITING_FOR_DECL_OR_RULE;
+                    }
+                } else {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "Illegal argument to %%%s: %s",$this->declkeyword, $x);
+                    $this->errorcnt++;
+                    $this->state = self::RESYNC_AFTER_DECL_ERROR;
+                }
+                break;
+            case self::WAITING_FOR_FALLBACK_ID:
+                if ($x[0] == '.') {
+                    $this->state = self::WAITING_FOR_DECL_OR_RULE;
+                } elseif (!preg_match('/[A-Z]/', $x[0])) {
+                    PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                    "%%fallback argument \"%s\" should be a token", $x);
+                    $this->errorcnt++;
+                } else {
+                    $sp = PHP_ParserGenerator_Symbol::Symbol_new($x);
+                    if ($this->fallback === 0) {
+                        $this->fallback = $sp;
+                    } elseif (is_object($sp->fallback)) {
+                        PHP_ParserGenerator::ErrorMsg($this->filename, $this->tokenlineno,
+                        "More than one fallback assigned to token %s", $x);
+                        $this->errorcnt++;
+                    } else {
+                        $sp->fallback = $this->fallback;
+                        $this->gp->has_fallback = 1;
+                    }
+                }
+                break;
+            case self::RESYNC_AFTER_RULE_ERROR:
+            /*      if ($x[0] == '.') $this->state = self::WAITING_FOR_DECL_OR_RULE;
+            **      break; */
+            case self::RESYNC_AFTER_DECL_ERROR:
+                if ($x[0] == '.') {
+                    $this->state = self::WAITING_FOR_DECL_OR_RULE;
+                }
+                if ($x[0] == '%') {
+                    $this->state = self::WAITING_FOR_DECL_KEYWORD;
+                }
+                break;
+        }
+    }
+
+    /**
+     * return a descriptive string for a multi-terminal token.
+     *
+     * @param  string $a
+     * @param  string $b
+     * @return string
+     */
+    private function _printmulti($a, $b)
+    {
+        if (!$a) {
+            $a = '';
+        }
+        $a .= $b->name . '|';
+
+        return $a;
+    }
+}

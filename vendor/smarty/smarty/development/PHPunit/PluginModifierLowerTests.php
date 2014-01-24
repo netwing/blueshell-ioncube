@@ -1,39 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-M8U1LGox+6e9Dm==
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class PluginModifierLowerTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testDefault()
+    {
+        $result = "two convicts evade noose, jury hung.";
+        $tpl = $this->smarty->createTemplate('eval:{"Two Convicts Evade Noose, Jury Hung."|lower}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testDefaultWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = "two convicts evade noose, jury hung.";
+        $tpl = $this->smarty->createTemplate('eval:{"Two Convicts Evade Noose, Jury Hung."|lower}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testUmlauts()
+    {
+        $result = "two convicts eväde nööse, jury hung.";
+        $tpl = $this->smarty->createTemplate('eval:{"Two Convicts Eväde NöÖse, Jury Hung."|lower}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testUmlautsWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = "two convicts eväde nööse, jury hung.";
+        $tpl = $this->smarty->createTemplate('eval:{"Two Convicts Eväde NöÖse, Jury Hung."|lower}');
+        $this->assertNotEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+}

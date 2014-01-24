@@ -1,276 +1,434 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-01o/m5x4Xc9Nuk5y3W2EeuJxK06Oeu33NcG=
+<?php
+
+namespace Guzzle\Tests\Http\Message;
+
+use Guzzle\Http\Client;
+use Guzzle\Http\EntityBody;
+use Guzzle\Http\Message\Request;
+use Guzzle\Http\Message\RequestFactory;
+use Guzzle\Http\RedirectPlugin;
+use Guzzle\Http\Message\EntityEnclosingRequest;
+use Guzzle\Http\Message\PostFile;
+use Guzzle\Http\QueryString;
+
+/**
+ * @group server
+ * @covers Guzzle\Http\Message\EntityEnclosingRequest
+ */
+class EntityEnclosingRequestTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    protected $client;
+
+    public function setUp()
+    {
+        $this->client = new Client();
+    }
+
+    public function tearDown()
+    {
+        $this->client = null;
+    }
+
+    public function testConstructorConfiguresRequest()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com', array(
+            'X-Test' => '123'
+        ));
+        $request->setBody('Test');
+        $this->assertEquals('123', $request->getHeader('X-Test'));
+        $this->assertNull($request->getHeader('Expect'));
+    }
+
+    public function testCanSetBodyWithoutOverridingContentType()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com', array('Content-Type' => 'foooooo'));
+        $request->setBody('{"a":"b"}');
+        $this->assertEquals('foooooo', $request->getHeader('Content-Type'));
+    }
+
+    public function testRequestIncludesBodyInMessage()
+    {
+
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.guzzle-project.com/', null, 'data');
+        $this->assertEquals("PUT / HTTP/1.1\r\n"
+            . "Host: www.guzzle-project.com\r\n"
+            . "Content-Length: 4\r\n\r\n"
+            . "data", (string) $request);
+    }
+
+    public function testRequestIncludesPostBodyInMessageOnlyWhenNoPostFiles()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/', null, array(
+            'foo' => 'bar'
+        ));
+        $this->assertEquals("POST / HTTP/1.1\r\n"
+            . "Host: www.guzzle-project.com\r\n"
+            . "Content-Type: application/x-www-form-urlencoded; charset=utf-8\r\n\r\n"
+            . "foo=bar", (string) $request);
+
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/', null, array(
+            'foo' => '@' . __FILE__
+        ));
+        $this->assertEquals("POST / HTTP/1.1\r\n"
+            . "Host: www.guzzle-project.com\r\n"
+            . "Content-Type: multipart/form-data\r\n"
+            . "Expect: 100-Continue\r\n\r\n", (string) $request);
+    }
+
+    public function testAddsPostFieldsAndSetsContentLength()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/', null, array(
+            'data' => '123'
+        ));
+        $this->assertEquals("POST / HTTP/1.1\r\n"
+            . "Host: www.guzzle-project.com\r\n"
+            . "Content-Type: application/x-www-form-urlencoded; charset=utf-8\r\n\r\n"
+            . "data=123", (string) $request);
+    }
+
+    public function testAddsPostFilesAndSetsContentType()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.test.com/')
+            ->addPostFiles(array(
+                'file' => __FILE__
+            ))->addPostFields(array(
+                'a' => 'b'
+            ));
+        $message = (string) $request;
+        $this->assertEquals('multipart/form-data', $request->getHeader('Content-Type'));
+        $this->assertEquals('100-Continue', $request->getHeader('Expect'));
+    }
+
+    public function testRequestBodyContainsPostFiles()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.test.com/');
+        $request->addPostFields(array(
+            'test' => '123'
+        ));
+        $this->assertContains("\r\n\r\ntest=123", (string) $request);
+    }
+
+    public function testRequestBodyAddsContentLength()
+    {
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.test.com/');
+        $request->setBody(EntityBody::factory('test'));
+        $this->assertEquals(4, (string) $request->getHeader('Content-Length'));
+        $this->assertFalse($request->hasHeader('Transfer-Encoding'));
+    }
+
+    public function testRequestBodyDoesNotUseContentLengthWhenChunked()
+    {
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.test.com/', array(
+            'Transfer-Encoding' => 'chunked'
+        ), 'test');
+        $this->assertNull($request->getHeader('Content-Length'));
+        $this->assertTrue($request->hasHeader('Transfer-Encoding'));
+    }
+
+    public function testRequestHasMutableBody()
+    {
+        $request = RequestFactory::getInstance()->create('PUT', 'http://www.guzzle-project.com/', null, 'data');
+        $body = $request->getBody();
+        $this->assertInstanceOf('Guzzle\\Http\\EntityBody', $body);
+        $this->assertSame($body, $request->getBody());
+
+        $newBody = EntityBody::factory('foobar');
+        $request->setBody($newBody);
+        $this->assertEquals('foobar', (string) $request->getBody());
+        $this->assertSame($newBody, $request->getBody());
+    }
+
+    public function testSetPostFields()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/');
+        $this->assertInstanceOf('Guzzle\\Http\\QueryString', $request->getPostFields());
+
+        $fields = new QueryString(array(
+            'a' => 'b'
+        ));
+        $request->addPostFields($fields);
+        $this->assertEquals($fields->getAll(), $request->getPostFields()->getAll());
+        $this->assertEquals(array(), $request->getPostFiles());
+    }
+
+    public function testSetPostFiles()
+    {
+        $request = RequestFactory::getInstance()->create('POST', $this->getServer()->getUrl())
+            ->setClient(new Client())
+            ->addPostFiles(array(__FILE__))
+            ->addPostFields(array(
+                'test' => 'abc'
+            ));
+
+        $request->getCurlOptions()->set('debug', true);
+
+        $this->assertEquals(array(
+            'test' => 'abc'
+        ), $request->getPostFields()->getAll());
+
+        $files = $request->getPostFiles();
+        $post = $files['file'][0];
+        $this->assertEquals('file', $post->getFieldName());
+        $this->assertContains('text/x-', $post->getContentType());
+        $this->assertEquals(__FILE__, $post->getFilename());
+
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        $request->send();
+
+        $this->assertNotNull($request->getHeader('Content-Length'));
+        $this->assertContains('multipart/form-data; boundary=', (string) $request->getHeader('Content-Type'), '-> cURL must add the boundary');
+    }
+
+    /**
+     * @expectedException Guzzle\Common\Exception\InvalidArgumentException
+     */
+    public function testSetPostFilesThrowsExceptionWhenFileIsNotFound()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/')
+            ->addPostFiles(array(
+                'file' => 'filenotfound.ini'
+            ));
+    }
+
+    /**
+     * @expectedException Guzzle\Http\Exception\RequestException
+     */
+    public function testThrowsExceptionWhenNonStringsAreAddedToPost()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/')
+            ->addPostFile('foo', new \stdClass());
+    }
+
+    public function testAllowsContentTypeInPostUploads()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/')
+            ->addPostFile('foo', __FILE__, 'text/plain');
+
+        $this->assertEquals(array(
+            new PostFile('foo', __FILE__, 'text/plain')
+        ), $request->getPostFile('foo'));
+    }
+
+    public function testGuessesContentTypeOfPostUpload()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/')
+            ->addPostFile('foo', __FILE__);
+        $file = $request->getPostFile('foo');
+        $this->assertContains('text/x-', $file[0]->getContentType());
+    }
+
+    public function testAllowsContentDispositionFieldsInPostUploadsWhenSettingInBulk()
+    {
+        $postFile = new PostFile('foo', __FILE__, 'text/x-php');
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/')
+            ->addPostFiles(array('foo' => $postFile));
+
+        $this->assertEquals(array($postFile), $request->getPostFile('foo'));
+    }
+
+    public function testPostRequestsUseApplicationXwwwForUrlEncodedForArrays()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/');
+        $request->setPostField('a', 'b');
+        $this->assertContains("\r\n\r\na=b", (string) $request);
+        $this->assertEquals('application/x-www-form-urlencoded; charset=utf-8', $request->getHeader('Content-Type'));
+    }
+
+    public function testProcessMethodAddsContentType()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/');
+        $request->setPostField('a', 'b');
+        $this->assertEquals('application/x-www-form-urlencoded; charset=utf-8', $request->getHeader('Content-Type'));
+    }
+
+    public function testPostRequestsUseMultipartFormDataWithFiles()
+    {
+        $request = RequestFactory::getInstance()->create('POST', 'http://www.guzzle-project.com/');
+        $request->addPostFiles(array('file' => __FILE__));
+        $this->assertEquals('multipart/form-data', $request->getHeader('Content-Type'));
+    }
+
+    public function testCanSendMultipleRequestsUsingASingleRequestObject()
+    {
+        $this->getServer()->flush();
+        $this->getServer()->enqueue(array(
+            "HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n",
+            "HTTP/1.1 201 Created\r\nContent-Length: 0\r\n\r\n",
+        ));
+
+        // Send the first request
+        $request = RequestFactory::getInstance()->create('PUT', $this->getServer()->getUrl())
+            ->setBody('test')
+            ->setClient(new Client());
+        $request->send();
+        $this->assertEquals(200, $request->getResponse()->getStatusCode());
+
+        // Send the second request
+        $request->setBody('abcdefg', 'application/json', false);
+        $request->send();
+        $this->assertEquals(201, $request->getResponse()->getStatusCode());
+
+        // Ensure that the same request was sent twice with different bodies
+        $requests = $this->getServer()->getReceivedRequests(true);
+        $this->assertEquals(2, count($requests));
+        $this->assertEquals(4, (string) $requests[0]->getHeader('Content-Length'));
+        $this->assertEquals(7, (string) $requests[1]->getHeader('Content-Length'));
+    }
+
+    public function testRemovingPostFieldRebuildsPostFields()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com');
+        $request->setPostField('test', 'value');
+        $request->removePostField('test');
+        $this->assertNull($request->getPostField('test'));
+    }
+
+    public function testUsesChunkedTransferWhenBodyLengthCannotBeDetermined()
+    {
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com/');
+        $request->setBody(fopen($this->getServer()->getUrl(), 'r'));
+        $this->assertEquals('chunked', $request->getHeader('Transfer-Encoding'));
+        $this->assertFalse($request->hasHeader('Content-Length'));
+    }
+
+    /**
+     * @expectedException \Guzzle\Http\Exception\RequestException
+     */
+    public function testThrowsExceptionWhenContentLengthCannotBeDeterminedAndUsingHttp1()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com/');
+        $this->getServer()->enqueue("HTTP/1.1 200 OK\r\nContent-Length: 0\r\n\r\n");
+        $request->setProtocolVersion('1.0');
+        $request->setBody(fopen($this->getServer()->getUrl(), 'r'));
+    }
+
+    public function testAllowsNestedPostData()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com/');
+        $request->addPostFields(array(
+            'a' => array('b', 'c')
+        ));
+        $this->assertEquals(array(
+            'a' => array('b', 'c')
+        ), $request->getPostFields()->getAll());
+    }
+
+    public function testAllowsEmptyFields()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com/');
+        $request->addPostFields(array(
+            'a' => ''
+        ));
+        $this->assertEquals(array(
+            'a' => ''
+        ), $request->getPostFields()->getAll());
+    }
+
+    /**
+     * @expectedException \Guzzle\Http\Exception\RequestException
+     */
+    public function testFailsOnInvalidFiles()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com/');
+        $request->addPostFiles(array(
+            'a' => new \stdClass()
+        ));
+    }
+
+    public function testHandlesEmptyStrings()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com/');
+        $request->addPostFields(array(
+            'a' => '',
+            'b' => null,
+            'c' => 'Foo'
+        ));
+        $this->assertEquals(array(
+            'a' => '',
+            'b' => null,
+            'c' => 'Foo'
+        ), $request->getPostFields()->getAll());
+    }
+
+    public function testHoldsPostFiles()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com/');
+        $request->addPostFile('foo', __FILE__);
+        $request->addPostFile(new PostFile('foo', __FILE__));
+
+        $this->assertArrayHasKey('foo', $request->getPostFiles());
+        $foo = $request->getPostFile('foo');
+        $this->assertEquals(2, count($foo));
+        $this->assertEquals(__FILE__, $foo[0]->getFilename());
+        $this->assertEquals(__FILE__, $foo[1]->getFilename());
+
+        $request->removePostFile('foo');
+        $this->assertEquals(array(), $request->getPostFiles());
+    }
+
+    public function testAllowsAtPrefixWhenAddingPostFiles()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com/');
+        $request->addPostFiles(array(
+            'foo' => '@' . __FILE__
+        ));
+        $foo = $request->getPostFile('foo');
+        $this->assertEquals(__FILE__, $foo[0]->getFilename());
+    }
+
+    public function testSetStateToTransferWithEmptyBodySetsContentLengthToZero()
+    {
+        $request = new EntityEnclosingRequest('POST', 'http://test.com/');
+        $request->setState($request::STATE_TRANSFER);
+        $this->assertEquals('0', (string) $request->getHeader('Content-Length'));
+    }
+
+    public function testSettingExpectHeaderCutoffChangesRequest()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com/');
+        $request->setHeader('Expect', '100-Continue');
+        $request->setExpectHeaderCutoff(false);
+        $this->assertNull($request->getHeader('Expect'));
+        // There is not body, so remove the expect header
+        $request->setHeader('Expect', '100-Continue');
+        $request->setExpectHeaderCutoff(10);
+        $this->assertNull($request->getHeader('Expect'));
+        // The size is less than the cutoff
+        $request->setBody('foo');
+        $this->assertNull($request->getHeader('Expect'));
+        // The size is greater than the cutoff
+        $request->setBody('foobazbarbamboo');
+        $this->assertNotNull($request->getHeader('Expect'));
+    }
+
+    public function testStrictRedirectsCanBeSpecifiedOnEntityEnclosingRequests()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com/');
+        $request->configureRedirects(true);
+        $this->assertTrue($request->getParams()->get(RedirectPlugin::STRICT_REDIRECTS));
+    }
+
+    public function testCanDisableRedirects()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com/');
+        $request->configureRedirects(false, false);
+        $this->assertTrue($request->getParams()->get(RedirectPlugin::DISABLE));
+    }
+
+    public function testSetsContentTypeWhenSettingBodyByGuessingFromEntityBody()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com/foo');
+        $request->setBody(EntityBody::factory(fopen(__FILE__, 'r')));
+        $this->assertEquals('text/x-php', (string) $request->getHeader('Content-Type'));
+    }
+
+    public function testDoesNotCloneBody()
+    {
+        $request = new EntityEnclosingRequest('PUT', 'http://test.com/foo');
+        $request->setBody('test');
+        $newRequest = clone $request;
+        $newRequest->setBody('foo');
+        $this->assertInternalType('string', (string) $request->getBody());
+    }
+}

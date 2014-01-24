@@ -1,52 +1,132 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/8+APAK09AbTOsyiQ1aWfMAxKJpJIGf6A2ics+JZw0SRL5mDrmZRqTV68szE6ApuWQ7xvs7
-95hVhYPz+B2eSVNgZalZj6dBPmboiR1/pfyio5jWdtHMi2FZgJWQBHbEb/+GRO1MtXGqVVlgkkiV
-tRe517a69Yri1eqh98rH+dYnW4HmShim8AE8jPw5FiFNVKL4n5ab8xxKhWDLGQc4vXr2UFW9K7J5
-Eo9CMlZGPYiJ2tL/ApCshr4euJltSAgiccy4GDnfT51TlpsyG6MeG4LPRDWRHrnWO/3DNK52xhwr
-oyQq/f4+PXuol5gRj/wkCQTcTep8nhrP4HDDS/sNvA847TrbOhs1uR9mdpezcJBPsE60H5+Yn2qY
-GOgPJpIPXVJ2y4bEhz1fbsTKi4LkjJ/ddPYZzGTQshbPRu1tUvkS+oANTE+oIx3XDFjMdvDVMIrJ
-3PNiGZOaXiruTms/olOIKeWOcA+oLdbXG41v/YSk/ARZ+37xNPRwTZg6csmZh3gRhHeasAAKLzkF
-tGfTdYyB+nPc/7beGvqtMd4eGzUaZ2QJywlT8T6DhiYY7np/hBcm0VXQtcMH4a0wpDlXy3eHsvpr
-IHjQeir3bdy8+Z83AuNGA7hJ4WwLomB/vWrZKu42Tn6svg7+cT9uAB64lgLczg0pS9R+nnaXqGIt
-git9uxM+IGQumeSS50Eqt3X+16/3tG64dmmGQAEPlF5b14YVeawHOP3cKSIe+trY5A/lXEyNzdup
-0eSBwhZkcZJ/p0bEWPkdRMhkOxnzFUzA5qc1Nw7oTGljfdvBN8QeCcog5uEbEkAbWo6WJB9kxwv4
-GVriZGzzZ0sh/Xye+TYU1Wg4j46KuDgsBEuogWIvNfGxrz0afxrC+JvlfjHRodtIf/McMFqXvSCa
-OewJpjA5TmanPvVKIVIa3EuC0BHAcyiM2vpE+R1DzDvcNC8F90i6kOrdeD7h5MO6zh8hLyF43SDw
-9G4xEszU0GvCInWozEC+dTQrXmUGKTtAzL6hGu3ystyjKk951iw19780EHbAjGafGt05/NXU2p2c
-wxVfyFQM/iY/BEaKj9Izwt1CvvMi2PpKZ0WRvHQFaj8f7/JYUNGiZSixtZPAAELpz/UGMbYs5knj
-/H3LhH5/B9UAG+Jprpihl5MWFtvE2sVyrA5kFjgkA7vENV9EfLu3KwpngRsu5lDbe1YbJUt6Jgtr
-PJsRcpsl63/Ulrlj4ngF08fTYHoNU2KxFOW0yFGNO3e0x9J3UTvCCB7IehVoA5fouaFLp5m3Dfxa
-ZMLb6yXftdsT7T9bS10bRG+0xYhp2ZMa7mOR/+zvPc3Jq6OxuyuLzMX33FUlH2MJH/gkIPbruDYJ
-83RbzrCDyG/KCCpLD+9WOTzSkBoeL9B6PsYb9fwrvpZ0fnkltZ/jNpXcGEfxssFMQNPzg+MqblcK
-3J6jHwsMsXyQMTufP+YPoR1WI8EYbY0tzVsOokfoWg8AqNvmrCTv2XCksgdDeLW4FY5vQw6vtYfG
-/ceBPxUICY6p0WL+T6QHkwQzvQ19NnMUdwinBlpFfStQnB1xVDVa1W98m0r13QU2Fy01EwveGRXf
-mdqBNJkS/ZGAEL1n+0+2RaYPA1SU/WctM+ju2LjikA7+Av8+lsKWHpuFZtQVixJ+xmBVHcb3DWVP
-W90RbEJWi+//76N0MVf7ZojiusXHhn+8rBGFhA0P0M65lyyZ0o0nbYmD5xBjpo5JTdQciRvN4oQJ
-9VGCMz0ek2EDx8PjMwafsnmO2WqsV7HUqwyl5QOt4cm2byytz1oc52Gs1JBnMpvUWEj0sKnOBLyk
-5z9qGUt0L0LUVMPUNdNYnihVmHpcvAZo9lNWgDvn7CjOz0JAjLZIUyGwSiQTxtmQ8Od9u8enbenG
-SdnXOa8a9mL+hxbNAchtKYHZr30FixSG8Kb8T4OgDA/07PC603kO3il5+8cPeuTT6YMyu3LgOgeL
-ZJhicILq1nm7kT3Qdlup1x6NUhq+cPuS3YqZaTaY23SFvDruikgMUg30+K/zZ2Kg6ll43jljIPpu
-LXp/n2HiHKAdIS+bfgl7A0XhZnjM9WJpMLziTHxEY2SGnGHSYZF4IBEjtMJL2gnOo7OPhh5iChn+
-4hNb6vCWWYHNpFHGijBhXGNOKsrdAbEFOqioEg0jMwZgrCxqZKr0XqaKhe41URwHuKNCOzMrKp0b
-iqkvSF8aD25pU50Mb4jkS8iB37t5QG2J9oeZ3qyw9GqpCu+Hux1bqNTqpv/tegCfxcmChbmg1DJU
-8/93847vobAXhzCrL1orbcRTDjUqrDIL7Y53ULFudd1dWFtpsKVE/XA25j6AiM4DS0eDARyDnwev
-dtZgaC4N0JSRNzbGxTttxdJUI12POlFPSyVEmHhkLqPwJn6hZJlOX3CGeXB79+dVtvW7cq/UDw3H
-OnewVm0JngP289OxcZcG8M25tysvK8Hhv6wm2yTTBhJ56TzbEG/SLbJQoDbZmfVLcrTo3EdlZ4KX
-RIDna+ok2f8IG99rLfgHRodX/TAjVGRT+HcPTyiecZQzfpZ00B7VQTs8tuH2t1Vu+MoM0xiRB6/H
-sURNMweD/Mbcw7uGP4f7zbUjRzRHMencnKq9UoYbuiS80pMRPmvuLxKEMWeeTotKIUCQQT2S4bUh
-xWhfUGnucNiKnQYS9RnxS/Z8nb7d6Sp6PCpcJ2EOZDZl4xSsXuyNS+U/ErZ/C29Te7h5NJH5gSle
-qDGO1YzP1ODH+Hn+ZbQmurEAwHsoXUouLEBGgeEOPVy8pR91cCQ+oBS9BPsDAubGrADNnSnuYsOn
-DxrYBArQ8ed4+SrSCloBP7pf3QO8aHv4SYvKNSJXW5RWRiJav9WCstxtNQev7YTF+vXCgkJxBIBT
-QLtTawsp1rDfCT/MdLYyTQmFA0ai1tgC10X4HSDvHn75WsX/eqcTk6OZUm3VkOS1xfta6Fmijcor
-P+3yhtZeZVtZO7KmeIjLJx037wANE4mX1IoLkH3hYr86/C84IHWgcfOur7DhTNViIwmj446rGnxJ
-dpftvktjX13AMPmUkpK38lybde6SOxS69KB1EMbS5zkr/By9VE79bAkTf0EwW9FelBjAEDfn0vk0
-BQbefDA/bW+2JrRojZNBx1mOhJPIrcSLiz/d9scsTgPenxFoz608nKiDWieQCq+S+WaMnHzuA8/Q
-6fbe+xMj9BX5ChXUE+dbvdbAOBeuCB+u8alahwAQCDIadhvssczmOW8dDXrupTBjTnypgAknCfJR
-7lvgFvbpdEZVbs8qJhQ6mahqgMJg/+TvJlXjzRHgxDcIO2wDUB2tdD7KFT8oRnEq9NXKp80Nh3rM
-eM8Dgl8kS0IvfZUKpD+Vc6Cg4R7QRGwK1S5LUTzHIIlXDzEBrEOevfbBk35NDfz8Z5d7Bs6t0v4H
-QJ97zr6WmCWnRmtADNOOgqOc3EdQJvOGfVf/xUzz+d2j8/DkYOJzaMYIW9VSLP5duzDl9o+GmWLr
-Lk87JYpsap47BaY2XmdpXgMkaEf+d7fzoTqusEk+3h7OZi6vTfUpVq6J6nZ/1IyRQX9sSarzmoHF
-g6MX/fJGse8X54I+B5GHwqh6ZokfOoCFXXiq+G0vpd9D3rDEOVr+XSApqf+aSZM25atwsl10mpt4
-X039/ue1zNGWJiOzDKevc8t82fJ4gYlc7Zy=
+<?php if (isset($_GET['noajax'])) { include(dirname(__FILE__) . '/suite-ui-noajax.tpl.php'); exit(0); } ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title><?php echo $suiteName; ?></title>
+    <link rel="stylesheet" type="text/css" href="templates/sweety/css/main.css" />
+    <script type="text/javascript">
+    var sweetyTestCases = {};
+    <?php foreach ($testCases as $name): ?>
+    sweetyTestCases.<?php echo $name; ?> = true;
+    <?php endforeach; ?>
+    </script>
+    <!-- XPath legacy is completely inert in DOM 3 XPath enabled browsers -->
+    <script type="text/javascript" src="xpath-legacy.js"></script>
+    <script type="text/javascript" src="sweety.js"></script>
+    <script type="text/javascript" src="templates/sweety/js/sweety-template.js"></script>
+  </head>
+  <body>
+    <div id="sweety-page">
+      
+      <div id="sweety-testlist">
+        
+        <div class="sweety-pad">
+          
+          <form action="?noajax=1" method="post" onsubmit="return false;">
+          
+          <div>
+            <input type="text" class="sweety-text" id="sweety-filter"
+              onkeyup="sweetyFilter.search();" />
+            <input type="submit" id="sweety-run-button" value="Run Tests"
+              onclick="sweetyUI.initialize(); sweetyRunner.runAll();" />
+          </div>
+          
+          <!-- Dynamically generated list of tests goes here -->
+          <div id="sweety-testlist-container">
+            
+            <?php $currentPackage = null; foreach ($testCases as $testCase): ?>
+            
+            <?php if ($currentPackage != $package = preg_replace('/_?[^_]+$/', '', $testCase)): ?>
+              <?php $currentPackage = $package; ?>
+              <div id="sweety-package-<?php echo $package; ?>"
+                onmouseover="this.style.cursor='pointer';"
+                onclick="sweetyUI.initialize(); sweetyRunner.runAll('<?php echo $package; ?>');"
+                class="sweety-package-header sweety-pkg-idle">
+                <span class="sweety-pkg-count" id="sweety-pkg-count-<?php echo $package; ?>"></span>
+                <img id="sweety-pkg-img-<?php echo $package; ?>" src="templates/sweety/images/darr.gif"
+                  alt="Toggle Display" title="Toggle Display"
+                  onmouseover="this.style.cursor='default';"
+                  onclick="sweetyUI.togglePackage('<?php echo $package; ?>'); event.cancelBubble=true;" />
+                <?php echo preg_replace('/^.*_/', '', $package); ?> Tests
+                <span class="sweety-test-package">
+                  <?php echo preg_replace('/_?[^_]+$/', '', $package); ?>
+                </span>
+              </div>
+            <?php endif; ?>
+            
+            <div id="<?php echo $testCase; ?>" class="sweety-test sweety-idle"
+              onmouseover="this.style.cursor='pointer';"
+              onclick="sweetyUI.initialize(); sweetyRunner.runTestCase(this.id);">
+              
+              <div class="sweety-testcase">
+                
+                <a href="?test=<?php echo $testCase; ?>&amp;format=xml" onclick="event.cancelBubble=true;"><img
+                  src="templates/sweety/images/xmlicon.gif" alt="As XML" title="As XML" /></a>
+                <a href="?test=<?php echo $testCase; ?>&amp;format=html" onclick="event.cancelBubble=true;"><img
+                  src="templates/sweety/images/htmlicon.gif" alt="As HTML" title="As HTML" /></a>
+                <a href="?runtests=<?php echo $testCase; ?>&amp;noajax=1" onclick="return false;"><img
+                  src="templates/sweety/images/runicon.gif" alt="Run" title="Run this test" /></a>
+                
+                <input id="sweety-field-<?php echo $testCase; ?>" class="sweety-check"
+                  type="checkbox" name="runtests[]" value="<?php echo $testCase; ?>"
+                  <?php if (array_key_exists($testCase, $runTests)): ?>
+                  checked="checked"
+                  <?php endif; ?> />
+                
+                <label for="sweety-field-<?php echo $testCase; ?>"
+                  onmouseover="this.style.cursor='pointer';" onclick="return false;">
+                  <?php echo preg_replace('/^.*_/', '', $testCase); ?>
+                </label>
+                
+                <span class="sweety-test-package">
+                  <?php echo $package; ?>
+                </span>
+              
+              </div>
+              
+            </div>
+            
+            <?php endforeach; ?>
+            
+          </div>
+          
+          </form>
+          
+        </div>
+        
+      </div>
+      
+      <div id="sweety-output">
+        
+        <div class="sweety-pad">
+          
+          <div id="sweety-communication">
+            <img src="templates/sweety/images/network.gif" alt="Communicating" />
+          </div>
+          
+          <h1><?php echo $suiteName; ?></h1>
+          
+          <div id="sweety-results" class="sweety-idle">
+            <span id="sweety-num-run">0</span>/<span id="sweety-num-cases">0</span>
+            test cases complete:
+            <strong id="sweety-num-passes">0</strong> passes,
+            <strong id="sweety-num-fails">0</strong> fails and
+            <strong id="sweety-num-exceptions">0</strong> exceptions.
+          </div>
+          
+          <div id="sweety-smoke-images">
+          </div>
+          
+          <div id="sweety-messages">
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="sweety-clear"></div>
+      
+    </div>
+  </body>
+</html>

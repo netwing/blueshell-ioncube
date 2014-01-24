@@ -1,40 +1,97 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Copyright 2004-2013 Facebook. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package WebDriver
+ *
+ * @author Justin Bishop <jubishop@gmail.com>
+ * @author Anthon Pang <apang@softwaredevelopment.ca>
+ */
+
+namespace WebDriver;
+
+/**
+ * WebDriver class
+ *
+ * @package WebDriver
+ *
+ * @method status
+ */
+final class WebDriver extends AbstractWebDriver
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function methods()
+    {
+        return array(
+            'status' => 'GET',
+        );
+    }
+
+    /**
+     * New Session: /session (POST)
+     * Get session object for chaining
+     *
+     * @param mixed $requiredCapabilities Required capabilities (or browser name)
+     * @param array $desiredCapabilities  Desired capabilities
+     *
+     * @return \WebDriver\Session
+     */
+    public function session($requiredCapabilities = Browser::FIREFOX, $desiredCapabilities = array())
+    {
+        if (!is_array($desiredCapabilities)) {
+            $desiredCapabilities = array();
+        }
+
+        if (!is_array($requiredCapabilities)) {
+            $desiredCapabilities = array_merge(
+                $desiredCapabilities,
+                array(Capability::BROWSER_NAME => $requiredCapabilities)
+            );
+
+            $requiredCapabilities = array();
+        }
+
+        $results = $this->curl(
+            'POST',
+            '/session',
+            array(
+                'desiredCapabilities' => $desiredCapabilities,
+                'requiredCapabilities' => $requiredCapabilities,
+            ),
+            array(CURLOPT_FOLLOWLOCATION => true)
+        );
+
+        return new Session($results['sessionUrl']);
+    }
+
+    /**
+     * Get list of currently active sessions
+     *
+     * @return array an array of \WebDriver\Session objects
+     */
+    public function sessions()
+    {
+        $result   = $this->curl('GET', '/sessions');
+        $sessions = array();
+
+        foreach ($result['value'] as $session) {
+            $sessions[] = new Session($this->url . '/session/' . $session['id']);
+        }
+
+        return $sessions;
+    }
+}

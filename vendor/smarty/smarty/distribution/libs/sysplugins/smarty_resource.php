@@ -1,342 +1,880 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ZUO2B6ux6Xkv29vMxlpHBm7xlJRIJS4=
+<?php
+/**
+ * Smarty Resource Plugin
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ * @author Rodney Rehm
+ */
+
+/**
+ * Smarty Resource Plugin
+ *
+ * Base implementation for resource plugins
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ */
+abstract class Smarty_Resource
+{
+    /**
+     * cache for Smarty_Template_Source instances
+     * @var array
+     */
+    public static $sources = array();
+    /**
+     * cache for Smarty_Template_Compiled instances
+     * @var array
+     */
+    public static $compileds = array();
+    /**
+     * cache for Smarty_Resource instances
+     * @var array
+     */
+    public static $resources = array();
+    /**
+     * resource types provided by the core
+     * @var array
+     */
+    protected static $sysplugins = array(
+        'file' => true,
+        'string' => true,
+        'extends' => true,
+        'stream' => true,
+        'eval' => true,
+        'php' => true
+    );
+
+    /**
+     * Name of the Class to compile this resource's contents with
+     * @var string
+     */
+    public $compiler_class = 'Smarty_Internal_SmartyTemplateCompiler';
+
+    /**
+     * Name of the Class to tokenize this resource's contents with
+     * @var string
+     */
+    public $template_lexer_class = 'Smarty_Internal_Templatelexer';
+
+    /**
+     * Name of the Class to parse this resource's contents with
+     * @var string
+     */
+    public $template_parser_class = 'Smarty_Internal_Templateparser';
+
+    /**
+     * Load template's source into current template object
+     *
+     * {@internal The loaded source is assigned to $_template->source->content directly.}}
+     *
+     * @param  Smarty_Template_Source $source source object
+     * @return string                 template source
+     * @throws SmartyException        if source cannot be loaded
+     */
+    abstract public function getContent(Smarty_Template_Source $source);
+
+    /**
+     * populate Source Object with meta data from Resource
+     *
+     * @param Smarty_Template_Source   $source    source object
+     * @param Smarty_Internal_Template $_template template object
+     */
+    abstract public function populate(Smarty_Template_Source $source, Smarty_Internal_Template $_template=null);
+
+    /**
+     * populate Source Object with timestamp and exists from Resource
+     *
+     * @param Smarty_Template_Source $source source object
+     */
+    public function populateTimestamp(Smarty_Template_Source $source)
+    {
+        // intentionally left blank
+    }
+
+    /**
+     * modify resource_name according to resource handlers specifications
+     *
+     * @param  Smarty $smarty        Smarty instance
+     * @param  string $resource_name resource_name to make unique
+     * @param  boolean $is_config    flag for config resource
+     * @return string unique resource name
+     */
+    protected function buildUniqueResourceName(Smarty $smarty, $resource_name, $is_config = false)
+    {
+        if ($is_config) {
+            return get_class($this) . '#' . $smarty->joined_config_dir . '#' . $resource_name;
+        } else {
+            return get_class($this) . '#' . $smarty->joined_template_dir . '#' . $resource_name;
+        }
+    }
+
+    /**
+     * populate Compiled Object with compiled filepath
+     *
+     * @param Smarty_Template_Compiled $compiled  compiled object
+     * @param Smarty_Internal_Template $_template template object
+     */
+    public function populateCompiledFilepath(Smarty_Template_Compiled $compiled, Smarty_Internal_Template $_template)
+    {
+        $_compile_id = isset($_template->compile_id) ? preg_replace('![^\w\|]+!', '_', $_template->compile_id) : null;
+        $_filepath = $compiled->source->uid;
+        // if use_sub_dirs, break file into directories
+        if ($_template->smarty->use_sub_dirs) {
+            $_filepath = substr($_filepath, 0, 2) . DS
+             . substr($_filepath, 2, 2) . DS
+             . substr($_filepath, 4, 2) . DS
+             . $_filepath;
+        }
+        $_compile_dir_sep = $_template->smarty->use_sub_dirs ? DS : '^';
+        if (isset($_compile_id)) {
+            $_filepath = $_compile_id . $_compile_dir_sep . $_filepath;
+        }
+        // caching token
+        if ($_template->caching) {
+            $_cache = '.cache';
+        } else {
+            $_cache = '';
+        }
+        $_compile_dir = $_template->smarty->getCompileDir();
+        // set basename if not specified
+        $_basename = $this->getBasename($compiled->source);
+        if ($_basename === null) {
+            $_basename = basename( preg_replace('![^\w\/]+!', '_', $compiled->source->name) );
+        }
+        // separate (optional) basename by dot
+        if ($_basename) {
+            $_basename = '.' . $_basename;
+        }
+
+        $compiled->filepath = $_compile_dir . $_filepath . '.' . $compiled->source->type . $_basename . $_cache . '.php';
+    }
+
+    /**
+     * Normalize Paths "foo/../bar" to "bar"
+     *
+     * @param  string  $_path path to normalize
+     * @param  boolean $ds    respect windows directory separator
+     * @return string  normalized path
+     */
+    protected function normalizePath($_path, $ds=true)
+    {
+        if ($ds) {
+            // don't we all just love windows?
+            $_path = str_replace('\\', '/', $_path);
+        }
+
+        $offset = 0;
+
+        // resolve simples
+        $_path = preg_replace('#/\./(\./)*#', '/', $_path);
+        // resolve parents
+        while (true) {
+            $_parent = strpos($_path, '/../', $offset);
+            if (!$_parent) {
+                break;
+            } elseif ($_path[$_parent - 1] === '.') {
+                $offset = $_parent + 3;
+                continue;
+            }
+
+            $_pos = strrpos($_path, '/', $_parent - strlen($_path) - 1);
+            if ($_pos === false) {
+                // don't we all just love windows?
+                $_pos = $_parent;
+            }
+
+            $_path = substr_replace($_path, '', $_pos, $_parent + 3 - $_pos);
+        }
+
+        if ($ds && DS != '/') {
+            // don't we all just love windows?
+            $_path = str_replace('/', '\\', $_path);
+        }
+
+        return $_path;
+    }
+
+    /**
+     * build template filepath by traversing the template_dir array
+     *
+     * @param  Smarty_Template_Source   $source    source object
+     * @param  Smarty_Internal_Template $_template template object
+     * @return string                   fully qualified filepath
+     * @throws SmartyException          if default template handler is registered but not callable
+     */
+    protected function buildFilepath(Smarty_Template_Source $source, Smarty_Internal_Template $_template=null)
+    {
+        $file = $source->name;
+        if ($source instanceof Smarty_Config_Source) {
+            $_directories = $source->smarty->getConfigDir();
+            $_default_handler = $source->smarty->default_config_handler_func;
+        } else {
+            $_directories = $source->smarty->getTemplateDir();
+            $_default_handler = $source->smarty->default_template_handler_func;
+        }
+
+        // go relative to a given template?
+        $_file_is_dotted = $file[0] == '.' && ($file[1] == '.' || $file[1] == '/' || $file[1] == "\\");
+        if ($_template && $_template->parent instanceof Smarty_Internal_Template && $_file_is_dotted) {
+            if ($_template->parent->source->type != 'file' && $_template->parent->source->type != 'extends' && !$_template->parent->allow_relative_path) {
+                throw new SmartyException("Template '{$file}' cannot be relative to template of resource type '{$_template->parent->source->type}'");
+            }
+            $file = dirname($_template->parent->source->filepath) . DS . $file;
+            $_file_exact_match = true;
+            if (!preg_match('/^([\/\\\\]|[a-zA-Z]:[\/\\\\])/', $file)) {
+                // the path gained from the parent template is relative to the current working directory
+                // as expansions (like include_path) have already been done
+                $file = getcwd() . DS . $file;
+            }
+        }
+
+        // resolve relative path
+        if (!preg_match('/^([\/\\\\]|[a-zA-Z]:[\/\\\\])/', $file)) {
+            // don't we all just love windows?
+            $_path = str_replace('\\', '/', $file);
+            $_path = DS . trim($file, '/');
+            $_was_relative = true;
+        } else {
+            // don't we all just love windows?
+            $_path = str_replace('\\', '/', $file);
+        }
+        $_path = $this->normalizePath($_path, false);
+        if (DS != '/') {
+            // don't we all just love windows?
+            $_path = str_replace('/', '\\', $_path);
+        }
+        // revert to relative
+        if (isset($_was_relative)) {
+            $_path = substr($_path, 1);
+        }
+
+        // this is only required for directories
+        $file = rtrim($_path, '/\\');
+
+        // files relative to a template only get one shot
+        if (isset($_file_exact_match)) {
+            return $this->fileExists($source, $file) ? $file : false;
+        }
+
+        // template_dir index?
+        if (preg_match('#^\[(?P<key>[^\]]+)\](?P<file>.+)$#', $file, $match)) {
+            $_directory = null;
+            // try string indexes
+            if (isset($_directories[$match['key']])) {
+                $_directory = $_directories[$match['key']];
+            } elseif (is_numeric($match['key'])) {
+                // try numeric index
+                $match['key'] = (int) $match['key'];
+                if (isset($_directories[$match['key']])) {
+                    $_directory = $_directories[$match['key']];
+                } else {
+                    // try at location index
+                    $keys = array_keys($_directories);
+                    $_directory = $_directories[$keys[$match['key']]];
+                }
+            }
+
+            if ($_directory) {
+                $_file = substr($file, strpos($file, ']') + 1);
+                $_filepath = $_directory . $_file;
+                if ($this->fileExists($source, $_filepath)) {
+                    return $_filepath;
+                }
+            }
+        }
+
+        $_stream_resolve_include_path = function_exists('stream_resolve_include_path');
+
+        // relative file name?
+        if (!preg_match('/^([\/\\\\]|[a-zA-Z]:[\/\\\\])/', $file)) {
+            foreach ($_directories as $_directory) {
+                $_filepath = $_directory . $file;
+                if ($this->fileExists($source, $_filepath)) {
+                    return $this->normalizePath($_filepath);
+                }
+                if ($source->smarty->use_include_path && !preg_match('/^([\/\\\\]|[a-zA-Z]:[\/\\\\])/', $_directory)) {
+                    // try PHP include_path
+                    if ($_stream_resolve_include_path) {
+                        $_filepath = stream_resolve_include_path($_filepath);
+                    } else {
+                        $_filepath = Smarty_Internal_Get_Include_Path::getIncludePath($_filepath);
+                    }
+
+                    if ($_filepath !== false) {
+                        if ($this->fileExists($source, $_filepath)) {
+                            return $this->normalizePath($_filepath);
+                        }
+                    }
+                }
+            }
+        }
+
+        // try absolute filepath
+        if ($this->fileExists($source, $file)) {
+            return $file;
+        }
+
+        // no tpl file found
+        if ($_default_handler) {
+            if (!is_callable($_default_handler)) {
+                if ($source instanceof Smarty_Config_Source) {
+                    throw new SmartyException("Default config handler not callable");
+                } else {
+                    throw new SmartyException("Default template handler not callable");
+                }
+            }
+            $_return = call_user_func_array($_default_handler,
+                array($source->type, $source->name, &$_content, &$_timestamp, $source->smarty));
+            if (is_string($_return)) {
+                $source->timestamp = @filemtime($_return);
+                $source->exists = !!$source->timestamp;
+
+                return $_return;
+            } elseif ($_return === true) {
+                $source->content = $_content;
+                $source->timestamp = $_timestamp;
+                $source->exists = true;
+
+                return $_filepath;
+            }
+        }
+
+        // give up
+        return false;
+    }
+
+    /**
+     * test is file exists and save timestamp
+     *
+     * @param  Smarty_Template_Source $source source object
+     * @param  string                 $file   file name
+     * @return bool                   true if file exists
+     */
+    protected function fileExists(Smarty_Template_Source $source, $file)
+    {
+        $source->timestamp = is_file($file) ? @filemtime($file) : false;
+
+        return $source->exists = !!$source->timestamp;
+
+    }
+
+    /**
+     * Determine basename for compiled filename
+     *
+     * @param  Smarty_Template_Source $source source object
+     * @return string                 resource's basename
+     */
+    protected function getBasename(Smarty_Template_Source $source)
+    {
+        return null;
+    }
+
+    /**
+     * Load Resource Handler
+     *
+     * @param  Smarty          $smarty smarty object
+     * @param  string          $type   name of the resource
+     * @return Smarty_Resource Resource Handler
+     */
+    public static function load(Smarty $smarty, $type)
+    {
+        // try smarty's cache
+        if (isset($smarty->_resource_handlers[$type])) {
+            return $smarty->_resource_handlers[$type];
+        }
+
+        // try registered resource
+        if (isset($smarty->registered_resources[$type])) {
+            if ($smarty->registered_resources[$type] instanceof Smarty_Resource) {
+                $smarty->_resource_handlers[$type] = $smarty->registered_resources[$type];
+                // note registered to smarty is not kept unique!
+                return $smarty->_resource_handlers[$type];
+            }
+
+            if (!isset(self::$resources['registered'])) {
+                self::$resources['registered'] = new Smarty_Internal_Resource_Registered();
+            }
+            if (!isset($smarty->_resource_handlers[$type])) {
+                $smarty->_resource_handlers[$type] = self::$resources['registered'];
+            }
+
+            return $smarty->_resource_handlers[$type];
+        }
+
+        // try sysplugins dir
+        if (isset(self::$sysplugins[$type])) {
+            if (!isset(self::$resources[$type])) {
+                $_resource_class = 'Smarty_Internal_Resource_' . ucfirst($type);
+                self::$resources[$type] = new $_resource_class();
+            }
+
+            return $smarty->_resource_handlers[$type] = self::$resources[$type];
+        }
+
+        // try plugins dir
+        $_resource_class = 'Smarty_Resource_' . ucfirst($type);
+        if ($smarty->loadPlugin($_resource_class)) {
+            if (isset(self::$resources[$type])) {
+                return $smarty->_resource_handlers[$type] = self::$resources[$type];
+            }
+
+            if (class_exists($_resource_class, false)) {
+                self::$resources[$type] = new $_resource_class();
+
+                return $smarty->_resource_handlers[$type] = self::$resources[$type];
+            } else {
+                $smarty->registerResource($type, array(
+                    "smarty_resource_{$type}_source",
+                    "smarty_resource_{$type}_timestamp",
+                    "smarty_resource_{$type}_secure",
+                    "smarty_resource_{$type}_trusted"
+                ));
+
+                // give it another try, now that the resource is registered properly
+                return self::load($smarty, $type);
+            }
+        }
+
+        // try streams
+        $_known_stream = stream_get_wrappers();
+        if (in_array($type, $_known_stream)) {
+            // is known stream
+            if (is_object($smarty->security_policy)) {
+                $smarty->security_policy->isTrustedStream($type);
+            }
+            if (!isset(self::$resources['stream'])) {
+                self::$resources['stream'] = new Smarty_Internal_Resource_Stream();
+            }
+
+            return $smarty->_resource_handlers[$type] = self::$resources['stream'];
+        }
+
+        // TODO: try default_(template|config)_handler
+
+        // give up
+        throw new SmartyException("Unkown resource type '{$type}'");
+    }
+
+    /**
+     * extract resource_type and resource_name from template_resource and config_resource
+     *
+     * @note "C:/foo.tpl" was forced to file resource up till Smarty 3.1.3 (including).
+     * @param  string $resource_name    template_resource or config_resource to parse
+     * @param  string $default_resource the default resource_type defined in $smarty
+     * @param  string &$name            the parsed resource name
+     * @param  string &$type            the parsed resource type
+     * @return void
+     */
+    protected static function parseResourceName($resource_name, $default_resource, &$name, &$type)
+    {
+        $parts = explode(':', $resource_name, 2);
+        if (!isset($parts[1]) || !isset($parts[0][1])) {
+            // no resource given, use default
+            // or single character before the colon is not a resource type, but part of the filepath
+            $type = $default_resource;
+            $name = $resource_name;
+        } else {
+            $type = $parts[0];
+            $name = $parts[1];
+        }
+    }
+
+    /**
+     * modify resource_name according to resource handlers specifications
+     *
+     * @param  Smarty $smarty        Smarty instance
+     * @param  string $resource_name resource_name to make unique
+     * @return string unique resource name
+     */
+
+    /**
+     * modify template_resource according to resource handlers specifications
+     *
+     * @param  Smarty_Internal_template $template            Smarty instance
+     * @param  string $template_resource template_resource to extracate resource handler and name of
+     * @return string unique resource name
+     */
+    public static function getUniqueTemplateName($template, $template_resource)
+    {
+        self::parseResourceName($template_resource, $template->smarty->default_resource_type, $name, $type);
+        // TODO: optimize for Smarty's internal resource types
+        $resource = Smarty_Resource::load($template->smarty, $type);
+        // go relative to a given template?
+        $_file_is_dotted = $name[0] == '.' && ($name[1] == '.' || $name[1] == '/' || $name[1] == "\\");
+        if ($template instanceof Smarty_Internal_Template && $_file_is_dotted && ($template->source->type == 'file' || $template->parent->source->type == 'extends')) {
+            $name = dirname($template->source->filepath) . DS . $name;
+        }
+        return $resource->buildUniqueResourceName($template->smarty, $name);
+    }
+
+    /**
+     * initialize Source Object for given resource
+     *
+     * Either [$_template] or [$smarty, $template_resource] must be specified
+     *
+     * @param  Smarty_Internal_Template $_template         template object
+     * @param  Smarty                   $smarty            smarty object
+     * @param  string                   $template_resource resource identifier
+     * @return Smarty_Template_Source   Source Object
+     */
+    public static function source(Smarty_Internal_Template $_template=null, Smarty $smarty=null, $template_resource=null)
+    {
+        if ($_template) {
+            $smarty = $_template->smarty;
+            $template_resource = $_template->template_resource;
+        }
+
+        // parse resource_name, load resource handler, identify unique resource name
+        self::parseResourceName($template_resource, $smarty->default_resource_type, $name, $type);
+        $resource = Smarty_Resource::load($smarty, $type);
+        // go relative to a given template?
+        $_file_is_dotted = isset($name[0]) && $name[0] == '.' && ($name[1] == '.' || $name[1] == '/' || $name[1] == "\\");
+        if ($_file_is_dotted && isset($_template) && $_template->parent instanceof Smarty_Internal_Template && ($_template->parent->source->type == 'file' || $_template->parent->source->type == 'extends')) {
+            $name2 = dirname($_template->parent->source->filepath) . DS . $name;
+        } else {
+            $name2 = $name;
+        }
+        $unique_resource_name = $resource->buildUniqueResourceName($smarty, $name2);
+
+        // check runtime cache
+        $_cache_key = 'template|' . $unique_resource_name;
+        if ($smarty->compile_id) {
+            $_cache_key .= '|'.$smarty->compile_id;
+        }
+        if (isset(self::$sources[$_cache_key])) {
+            return self::$sources[$_cache_key];
+        }
+
+        // create source
+        $source = new Smarty_Template_Source($resource, $smarty, $template_resource, $type, $name, $unique_resource_name);
+        $resource->populate($source, $_template);
+
+        // runtime cache
+        self::$sources[$_cache_key] = $source;
+
+        return $source;
+    }
+
+    /**
+     * initialize Config Source Object for given resource
+     *
+     * @param  Smarty_Internal_Config $_config config object
+     * @return Smarty_Config_Source   Source Object
+     */
+    public static function config(Smarty_Internal_Config $_config)
+    {
+        static $_incompatible_resources = array('eval' => true, 'string' => true, 'extends' => true, 'php' => true);
+        $config_resource = $_config->config_resource;
+        $smarty = $_config->smarty;
+
+        // parse resource_name
+        self::parseResourceName($config_resource, $smarty->default_config_type, $name, $type);
+
+        // make sure configs are not loaded via anything smarty can't handle
+        if (isset($_incompatible_resources[$type])) {
+            throw new SmartyException ("Unable to use resource '{$type}' for config");
+        }
+
+        // load resource handler, identify unique resource name
+        $resource = Smarty_Resource::load($smarty, $type);
+        $unique_resource_name = $resource->buildUniqueResourceName($smarty, $name, true);
+
+        // check runtime cache
+        $_cache_key = 'config|' . $unique_resource_name;
+        if (isset(self::$sources[$_cache_key])) {
+            return self::$sources[$_cache_key];
+        }
+
+        // create source
+        $source = new Smarty_Config_Source($resource, $smarty, $config_resource, $type, $name, $unique_resource_name);
+        $resource->populate($source, null);
+
+        // runtime cache
+        self::$sources[$_cache_key] = $source;
+
+        return $source;
+    }
+
+}
+
+/**
+ * Smarty Resource Data Object
+ *
+ * Meta Data Container for Template Files
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ * @author Rodney Rehm
+ *
+ * @property integer $timestamp Source Timestamp
+ * @property boolean $exists    Source Existence
+ * @property boolean $template  Extended Template reference
+ * @property string  $content   Source Content
+ */
+class Smarty_Template_Source
+{
+    /**
+     * Name of the Class to compile this resource's contents with
+     * @var string
+     */
+    public $compiler_class = null;
+
+    /**
+     * Name of the Class to tokenize this resource's contents with
+     * @var string
+     */
+    public $template_lexer_class = null;
+
+    /**
+     * Name of the Class to parse this resource's contents with
+     * @var string
+     */
+    public $template_parser_class = null;
+
+    /**
+     * Unique Template ID
+     * @var string
+     */
+    public $uid = null;
+
+    /**
+     * Template Resource (Smarty_Internal_Template::$template_resource)
+     * @var string
+     */
+    public $resource = null;
+
+    /**
+     * Resource Type
+     * @var string
+     */
+    public $type = null;
+
+    /**
+     * Resource Name
+     * @var string
+     */
+    public $name = null;
+
+    /**
+     * Unique Resource Name
+     * @var string
+     */
+    public $unique_resource = null;
+
+    /**
+     * Source Filepath
+     * @var string
+     */
+    public $filepath = null;
+
+    /**
+     * Source is bypassing compiler
+     * @var boolean
+     */
+    public $uncompiled = null;
+
+    /**
+     * Source must be recompiled on every occasion
+     * @var boolean
+     */
+    public $recompiled = null;
+
+    /**
+     * The Components an extended template is made of
+     * @var array
+     */
+    public $components = null;
+
+    /**
+     * Resource Handler
+     * @var Smarty_Resource
+     */
+    public $handler = null;
+
+    /**
+     * Smarty instance
+     * @var Smarty
+     */
+    public $smarty = null;
+
+    /**
+     * create Source Object container
+     *
+     * @param Smarty_Resource $handler         Resource Handler this source object communicates with
+     * @param Smarty          $smarty          Smarty instance this source object belongs to
+     * @param string          $resource        full template_resource
+     * @param string          $type            type of resource
+     * @param string          $name            resource name
+     * @param string          $unique_resource unqiue resource name
+     */
+    public function __construct(Smarty_Resource $handler, Smarty $smarty, $resource, $type, $name, $unique_resource)
+    {
+        $this->handler = $handler; // Note: prone to circular references
+
+        $this->compiler_class = $handler->compiler_class;
+        $this->template_lexer_class = $handler->template_lexer_class;
+        $this->template_parser_class = $handler->template_parser_class;
+        $this->uncompiled = $this->handler instanceof Smarty_Resource_Uncompiled;
+        $this->recompiled = $this->handler instanceof Smarty_Resource_Recompiled;
+
+        $this->smarty = $smarty;
+        $this->resource = $resource;
+        $this->type = $type;
+        $this->name = $name;
+        $this->unique_resource = $unique_resource;
+    }
+
+    /**
+     * get a Compiled Object of this source
+     *
+     * @param  Smarty_Internal_Template $_template template objet
+     * @return Smarty_Template_Compiled compiled object
+     */
+    public function getCompiled(Smarty_Internal_Template $_template)
+    {
+        // check runtime cache
+        $_cache_key = $this->unique_resource . '#' . $_template->compile_id;
+        if (isset(Smarty_Resource::$compileds[$_cache_key])) {
+            return Smarty_Resource::$compileds[$_cache_key];
+        }
+
+        $compiled = new Smarty_Template_Compiled($this);
+        $this->handler->populateCompiledFilepath($compiled, $_template);
+        $compiled->timestamp = @filemtime($compiled->filepath);
+        $compiled->exists = !!$compiled->timestamp;
+
+        // runtime cache
+        Smarty_Resource::$compileds[$_cache_key] = $compiled;
+
+        return $compiled;
+    }
+
+    /**
+     * render the uncompiled source
+     *
+     * @param Smarty_Internal_Template $_template template object
+     */
+    public function renderUncompiled(Smarty_Internal_Template $_template)
+    {
+        return $this->handler->renderUncompiled($this, $_template);
+    }
+
+    /**
+     * <<magic>> Generic Setter.
+     *
+     * @param  string          $property_name valid: timestamp, exists, content, template
+     * @param  mixed           $value         new value (is not checked)
+     * @throws SmartyException if $property_name is not valid
+     */
+    public function __set($property_name, $value)
+    {
+        switch ($property_name) {
+            // regular attributes
+            case 'timestamp':
+            case 'exists':
+            case 'content':
+            // required for extends: only
+            case 'template':
+                $this->$property_name = $value;
+                break;
+
+            default:
+                throw new SmartyException("invalid source property '$property_name'.");
+        }
+    }
+
+    /**
+     * <<magic>> Generic getter.
+     *
+     * @param  string          $property_name valid: timestamp, exists, content
+     * @return mixed
+     * @throws SmartyException if $property_name is not valid
+     */
+    public function __get($property_name)
+    {
+        switch ($property_name) {
+            case 'timestamp':
+            case 'exists':
+                $this->handler->populateTimestamp($this);
+
+                return $this->$property_name;
+
+            case 'content':
+                return $this->content = $this->handler->getContent($this);
+
+            default:
+                throw new SmartyException("source property '$property_name' does not exist.");
+        }
+    }
+
+}
+
+/**
+ * Smarty Resource Data Object
+ *
+ * Meta Data Container for Template Files
+ *
+ * @package Smarty
+ * @subpackage TemplateResources
+ * @author Rodney Rehm
+ *
+ * @property string $content compiled content
+ */
+class Smarty_Template_Compiled
+{
+    /**
+     * Compiled Filepath
+     * @var string
+     */
+    public $filepath = null;
+
+    /**
+     * Compiled Timestamp
+     * @var integer
+     */
+    public $timestamp = null;
+
+    /**
+     * Compiled Existence
+     * @var boolean
+     */
+    public $exists = false;
+
+    /**
+     * Compiled Content Loaded
+     * @var boolean
+     */
+    public $loaded = false;
+
+    /**
+     * Template was compiled
+     * @var boolean
+     */
+    public $isCompiled = false;
+
+    /**
+     * Source Object
+     * @var Smarty_Template_Source
+     */
+    public $source = null;
+
+    /**
+     * Metadata properties
+     *
+     * populated by Smarty_Internal_Template::decodeProperties()
+     * @var array
+     */
+    public $_properties = null;
+
+    /**
+     * create Compiled Object container
+     *
+     * @param Smarty_Template_Source $source source object this compiled object belongs to
+     */
+    public function __construct(Smarty_Template_Source $source)
+    {
+        $this->source = $source;
+    }
+
+}

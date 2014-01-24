@@ -1,259 +1,515 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Mime/Message.php';
+require_once 'Swift/Mime/HeaderSet.php';
+
+class Swift_Signers_SMimeSignerTest extends Swift_Tests_SwiftUnitTestCase
+{
+    /**
+     * @var Swift_StreamFilters_StringReplacementFilterFactory
+     */
+    protected $replacementFactory;
+
+    protected $samplesDir;
+
+    public function setUp()
+    {
+        $this->replacementFactory = Swift_DependencyContainer::getInstance()
+            ->lookup('transport.replacementfactory');
+
+        $this->samplesDir = str_replace('\\', '/', realpath(dirname(__FILE__) . '/../../../_samples/')) . '/';
+    }
+
+    public function testUnSingedMessage()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $this->assertEqual('Here is the message itself', $message->getBody());
+    }
+
+    public function testSingedMessage()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $signer = new Swift_Signers_SMimeSigner();
+        $signer->setSignCertificate($this->samplesDir . 'smime/sign.crt', $this->samplesDir . 'smime/sign.key');
+        $message->attachSigner($signer);
+
+        $messageStream = $this->newFilteredStream();
+        $message->toByteStream($messageStream);
+        $messageStream->commit();
+
+        $entityString = $messageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!($boundary = $this->getBoundary($headers['content-type']))) {
+            return false;
+        }
+
+        $expectedBody = <<<OEL
+This is an S/MIME signed message
+
+--$boundary
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Here is the message itself
+--$boundary
+Content-Type: application/(x\-)?pkcs7-signature; name="smime\.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime\.p7s"
+
+(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})
+
+--$boundary--
+OEL;
+        $this->assertValidVerify($expectedBody, $messageStream);
+        unset($messageStream);
+    }
+
+    public function testSingedMessageBinary()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $signer = new Swift_Signers_SMimeSigner();
+        $signer->setSignCertificate($this->samplesDir . 'smime/sign.crt', $this->samplesDir . 'smime/sign.key', PKCS7_BINARY);
+        $message->attachSigner($signer);
+
+        $messageStream = $this->newFilteredStream();
+        $message->toByteStream($messageStream);
+        $messageStream->commit();
+
+        $entityString = $messageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!preg_match('#^application/(x\-)?pkcs7-mime; smime-type=signed\-data;#', $headers['content-type'])) {
+            $this->fail('Content-type does not match.');
+
+            return false;
+        }
+
+        $this->assertEqual($headers['content-transfer-encoding'], 'base64');
+        $this->assertEqual($headers['content-disposition'], 'attachment; filename="smime.p7m"');
+
+        $expectedBody = '(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})';
+
+        $messageStreamClean = $this->newFilteredStream();
+
+        $this->assertValidVerify($expectedBody, $messageStream);
+        unset($messageStreamClean, $messageStream);
+    }
+
+    public function testSingedMessageWithAttachments()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $message->attach(Swift_Attachment::fromPath($this->samplesDir . '/files/textfile.zip'));
+
+        $signer = new Swift_Signers_SMimeSigner();
+        $signer->setSignCertificate($this->samplesDir . 'smime/sign.crt', $this->samplesDir . 'smime/sign.key');
+        $message->attachSigner($signer);
+
+        $messageStream = $this->newFilteredStream();
+        $message->toByteStream($messageStream);
+        $messageStream->commit();
+
+        $entityString = $messageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!($boundary = $this->getBoundary($headers['content-type']))) {
+            return false;
+        }
+
+        $expectedBody = <<<OEL
+This is an S/MIME signed message
+
+--$boundary
+Content-Type: multipart/mixed;
+ boundary="([a-z0-9\\'\\(\\)\\+_\\-,\\.\\/:=\\?\\ ]{0,69}[a-z0-9\\'\\(\\)\\+_\\-,\\.\\/:=\\?])"
+
+
+--\\1
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Here is the message itself
+
+--\\1
+Content-Type: application/zip; name=textfile\\.zip
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=textfile\\.zip
+
+UEsDBAoAAgAAAMi6VjiOTiKwLgAAAC4AAAAMABUAdGV4dGZpbGUudHh0VVQJAAN3vr5Hd76\\+R1V4
+BAD1AfUBVGhpcyBpcyBwYXJ0IG9mIGEgU3dpZnQgTWFpbGVyIHY0IHNtb2tlIHRlc3QuClBLAQIX
+AwoAAgAAAMi6VjiOTiKwLgAAAC4AAAAMAA0AAAAAAAEAAACkgQAAAAB0ZXh0ZmlsZS50eHRVVAUA
+A3e\\+vkdVeAAAUEsFBgAAAAABAAEARwAAAG0AAAAAAA==
+
+--\\1--
+
+--$boundary
+Content-Type: application/(x\-)?pkcs7-signature; name="smime\\.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime\\.p7s"
+
+(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})
+
+--$boundary--
+OEL;
+
+        $this->assertValidVerify($expectedBody, $messageStream);
+        unset($messageStream);
+    }
+
+    public function testEncryptedMessage()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $originalMessage = $this->cleanMessage($message->toString());
+
+        $signer = new Swift_Signers_SMimeSigner();
+        $signer->setEncryptCertificate($this->samplesDir . 'smime/encrypt.crt');
+        $message->attachSigner($signer);
+
+        $messageStream = new Swift_ByteStream_TemporaryFileByteStream();
+        $message->toByteStream($messageStream);
+        $messageStream->commit();
+
+        $entityString = $messageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!preg_match('#^application/(x\-)?pkcs7-mime; smime-type=enveloped\-data;#', $headers['content-type'])) {
+            $this->fail('Content-type does not match.');
+
+            return false;
+        }
+
+        $expectedBody = '(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})';
+
+        $decryptedMessageStream = new Swift_ByteStream_TemporaryFileByteStream();
+
+        if (!openssl_pkcs7_decrypt($messageStream->getPath(), $decryptedMessageStream->getPath(), 'file://' . $this->samplesDir . 'smime/encrypt.crt', array('file://' . $this->samplesDir . 'smime/encrypt.key', 'swift'))) {
+            $this->fail(sprintf('Decrypt of the message failed. Internal error "%s".', openssl_error_string()));
+        }
+
+        $this->assertEqual($originalMessage, $decryptedMessageStream->getContent());
+        unset($decryptedMessageStream, $messageStream);
+    }
+
+    public function testEncryptedMessageWithMultipleCerts()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $originalMessage = $this->cleanMessage($message->toString());
+
+        $signer = new Swift_Signers_SMimeSigner();
+        $signer->setEncryptCertificate(array($this->samplesDir . 'smime/encrypt.crt', $this->samplesDir . 'smime/encrypt2.crt'));
+        $message->attachSigner($signer);
+
+        $messageStream = new Swift_ByteStream_TemporaryFileByteStream();
+        $message->toByteStream($messageStream);
+        $messageStream->commit();
+
+        $entityString = $messageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!preg_match('#^application/(x\-)?pkcs7-mime; smime-type=enveloped\-data;#', $headers['content-type'])) {
+            $this->fail('Content-type does not match.');
+
+            return false;
+        }
+
+        $expectedBody = '(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})';
+
+        $decryptedMessageStream = new Swift_ByteStream_TemporaryFileByteStream();
+
+        if (!openssl_pkcs7_decrypt($messageStream->getPath(), $decryptedMessageStream->getPath(), 'file://' . $this->samplesDir . 'smime/encrypt.crt', array('file://' . $this->samplesDir . 'smime/encrypt.key', 'swift'))) {
+            $this->fail(sprintf('Decrypt of the message failed. Internal error "%s".', openssl_error_string()));
+        }
+
+        $this->assertEqual($originalMessage, $decryptedMessageStream->getContent());
+        unset($decryptedMessageStream);
+
+        $decryptedMessageStream = new Swift_ByteStream_TemporaryFileByteStream();
+
+        if (!openssl_pkcs7_decrypt($messageStream->getPath(), $decryptedMessageStream->getPath(), 'file://' . $this->samplesDir . 'smime/encrypt2.crt', array('file://' . $this->samplesDir . 'smime/encrypt2.key', 'swift'))) {
+            $this->fail(sprintf('Decrypt of the message failed. Internal error "%s".', openssl_error_string()));
+        }
+
+        $this->assertEqual($originalMessage, $decryptedMessageStream->getContent());
+        unset($decryptedMessageStream, $messageStream);
+    }
+
+    public function testSignThenEncryptedMessage()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $signer = new Swift_Signers_SMimeSigner();
+        $signer->setSignCertificate($this->samplesDir . 'smime/sign.crt', $this->samplesDir . 'smime/sign.key');
+        $signer->setEncryptCertificate($this->samplesDir . 'smime/encrypt.crt');
+        $message->attachSigner($signer);
+
+        $messageStream = new Swift_ByteStream_TemporaryFileByteStream();
+        $message->toByteStream($messageStream);
+        $messageStream->commit();
+
+        $entityString = $messageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!preg_match('#^application/(x\-)?pkcs7-mime; smime-type=enveloped\-data;#', $headers['content-type'])) {
+            $this->fail('Content-type does not match.');
+
+            return false;
+        }
+
+        $expectedBody = '(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})';
+
+        $decryptedMessageStream = new Swift_ByteStream_TemporaryFileByteStream();
+
+        if (!openssl_pkcs7_decrypt($messageStream->getPath(), $decryptedMessageStream->getPath(), 'file://' . $this->samplesDir . 'smime/encrypt.crt', array('file://' . $this->samplesDir . 'smime/encrypt.key', 'swift'))) {
+            $this->fail(sprintf('Decrypt of the message failed. Internal error "%s".', openssl_error_string()));
+        }
+
+        $entityString = $decryptedMessageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!($boundary = $this->getBoundary($headers['content-type']))) {
+            return false;
+        }
+
+        $expectedBody = <<<OEL
+This is an S/MIME signed message
+
+--$boundary
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Here is the message itself
+--$boundary
+Content-Type: application/(x\-)?pkcs7-signature; name="smime\.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime\.p7s"
+
+(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})
+
+--$boundary--
+OEL;
+
+        if (!$this->assertValidVerify($expectedBody, $decryptedMessageStream)) {
+            return false;
+        }
+
+        unset($decryptedMessageStream, $messageStream);
+    }
+
+    public function testEncryptThenSignMessage()
+    {
+        $message = Swift_SignedMessage::newInstance('Wonderful Subject')
+          ->setFrom(array('john@doe.com' => 'John Doe'))
+          ->setTo(array('receiver@domain.org', 'other@domain.org' => 'A name'))
+          ->setBody('Here is the message itself');
+
+        $originalMessage = $this->cleanMessage($message->toString());
+
+        $signer = Swift_Signers_SMimeSigner::newInstance();
+        $signer->setSignCertificate($this->samplesDir . 'smime/sign.crt', $this->samplesDir . 'smime/sign.key');
+        $signer->setEncryptCertificate($this->samplesDir . 'smime/encrypt.crt');
+        $signer->setSignThenEncrypt(false);
+        $message->attachSigner($signer);
+
+        $messageStream = $this->newFilteredStream();
+        $message->toByteStream($messageStream);
+        $messageStream->commit();
+
+        $entityString = $messageStream->getContent();
+        $headers = self::getHeadersOfMessage($entityString);
+
+        if (!($boundary = $this->getBoundary($headers['content-type']))) {
+            return false;
+        }
+
+        $expectedBody = <<<OEL
+This is an S/MIME signed message
+
+--$boundary
+(?P<encrypted_message>MIME-Version: 1\.0
+Content-Disposition: attachment; filename="smime\.p7m"
+Content-Type: application/(x\-)?pkcs7-mime; smime-type=enveloped-data; name="smime\.p7m"
+Content-Transfer-Encoding: base64
+
+(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})
+
+
+)--$boundary
+Content-Type: application/(x\-)?pkcs7-signature; name="smime\.p7s"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="smime\.p7s"
+
+(?:^[a-zA-Z0-9\/\\r\\n+]*={0,2})
+
+--$boundary--
+OEL;
+
+        if (!$this->assertValidVerify($expectedBody, $messageStream)) {
+            return false;
+        }
+
+        $expectedBody = str_replace("\n", "\r\n", $expectedBody);
+        if (!preg_match('%' . $expectedBody . '*%m', $entityString, $entities)) {
+            $this->fail('Failed regex match.');
+
+            return false;
+        }
+
+        $messageStreamClean = new Swift_ByteStream_TemporaryFileByteStream();
+        $messageStreamClean->write($entities['encrypted_message']);
+
+        $decryptedMessageStream = new Swift_ByteStream_TemporaryFileByteStream();
+
+        if (!openssl_pkcs7_decrypt($messageStreamClean->getPath(), $decryptedMessageStream->getPath(), 'file://' . $this->samplesDir . 'smime/encrypt.crt', array('file://' . $this->samplesDir . 'smime/encrypt.key', 'swift'))) {
+            $this->fail(sprintf('Decrypt of the message failed. Internal error "%s".', openssl_error_string()));
+        }
+
+        $this->assertEqual($originalMessage, $decryptedMessageStream->getContent());
+        unset($messageStreamClean, $messageStream, $decryptedMessageStream);
+    }
+
+    protected function assertValidVerify($expected, Swift_ByteStream_TemporaryFileByteStream $messageStream)
+    {
+        $actual = $messageStream->getContent();
+
+        // File is UNIX encoded so convert them to correct line ending
+        $expected = str_replace("\n", "\r\n", $expected);
+
+        $actual = trim(self::getBodyOfMessage($actual));
+        if (!$this->assertPattern('%^' . $expected . '$\s*%m', $actual)) {
+            return false;
+        }
+
+        $opensslOutput = new Swift_ByteStream_TemporaryFileByteStream();
+        $verify = openssl_pkcs7_verify($messageStream->getPath(), null, $opensslOutput->getPath(), array($this->samplesDir . 'smime/ca.crt'));
+
+        if (false === $verify) {
+            $this->fail('Verification of the message failed.');
+
+            return false;
+        } elseif (-1 === $verify) {
+            $this->fail(sprintf('Verification of the message failed. Internal error "%s".', openssl_error_string()));
+
+            return false;
+        }
+
+        return true;
+    }
+
+    protected function getBoundary($contentType)
+    {
+        if (!preg_match('/boundary=("[^"]+"|(?:[^\s]+|$))/is', $contentType, $contentTypeData)) {
+            $this->fail('Failed to find Boundary parameter');
+
+            return false;
+        }
+
+        return trim($contentTypeData[1], '"');
+    }
+
+    protected function newFilteredStream()
+    {
+        $messageStream = new Swift_ByteStream_TemporaryFileByteStream();
+        $messageStream->addFilter($this->replacementFactory->createFilter("\r\n", "\n"), 'CRLF to LF');
+        $messageStream->addFilter($this->replacementFactory->createFilter("\n", "\r\n"), 'LF to CRLF');
+
+        return $messageStream;
+    }
+
+    protected static function getBodyOfMessage($message)
+    {
+        return substr($message, strpos($message, "\r\n\r\n"));
+    }
+
+    /**
+     * Strips of the sender headers and Mime-Version.
+     *
+     * @param Swift_ByteStream_TemporaryFileByteStream $messageStream
+     * @param Swift_ByteStream_TemporaryFileByteStream $inputStream
+     */
+    protected function cleanMessage($content)
+    {
+        $newContent = '';
+
+        $headers = self::getHeadersOfMessage($content);
+        foreach ($headers as $headerName => $value) {
+            if (!in_array($headerName, array('content-type', 'content-transfer-encoding', 'content-disposition'))) {
+                continue;
+            }
+
+            $headerName = explode('-', $headerName);
+            $headerName = array_map('ucfirst', $headerName);
+            $headerName = implode('-', $headerName);
+
+            if (strlen($value) > 62) {
+                $value = wordwrap($value, 62, "\n ");
+            }
+
+            $newContent .= "$headerName: $value\r\n";
+        }
+
+        return $newContent . "\r\n" .  ltrim(self::getBodyOfMessage($content));
+    }
+
+    /**
+     * Returns the headers of the message.
+     *
+     * Header-names are lowercase.
+     *
+     * @param string $message
+     *
+     * @return array
+     */
+    protected static function getHeadersOfMessage($message)
+    {
+        $headersPosEnd = strpos($message, "\r\n\r\n");
+        $headerData = substr($message, 0, $headersPosEnd);
+        $headerLines = explode("\r\n", $headerData);
+
+        if (empty($headerLines)) {
+            return array();
+        }
+
+        $headers = array();
+
+        foreach ($headerLines as $headerLine) {
+            if (ctype_space($headerLines[0]) || false === strpos($headerLine, ':')) {
+                $headers[$currentHeaderName] .= ' ' . trim($headerLine);
+                continue;
+            }
+
+            $header = explode(':', $headerLine, 2);
+            $currentHeaderName = strtolower($header[0]);
+            $headers[$currentHeaderName] = trim($header[1]);
+        }
+
+        return $headers;
+    }
+}

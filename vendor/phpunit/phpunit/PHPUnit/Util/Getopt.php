@@ -1,87 +1,207 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-E830l4KKtUA0v2imBBFeqka9
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.0.0
+ */
+
+/**
+ * Command-line options parsing class.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Andrei Zmievski <andrei@php.net>
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
+ */
+class PHPUnit_Util_Getopt
+{
+    public static function getopt(array $args, $short_options, $long_options = NULL)
+    {
+        if (empty($args)) {
+            return array(array(), array());
+        }
+
+        $opts     = array();
+        $non_opts = array();
+
+        if ($long_options) {
+            sort($long_options);
+        }
+
+        if (isset($args[0][0]) && $args[0][0] != '-') {
+            array_shift($args);
+        }
+
+        reset($args);
+        array_map('trim', $args);
+
+        while (list($i, $arg) = each($args)) {
+            if ($arg == '') {
+                continue;
+            }
+
+            if ($arg == '--') {
+                $non_opts = array_merge($non_opts, array_slice($args, $i + 1));
+                break;
+            }
+
+            if ($arg[0] != '-' ||
+                (strlen($arg) > 1 && $arg[1] == '-' && !$long_options)) {
+                $non_opts = array_merge($non_opts, array_slice($args, $i));
+                break;
+            }
+
+            elseif (strlen($arg) > 1 && $arg[1] == '-') {
+                self::parseLongOption(
+                  substr($arg, 2), $long_options, $opts, $args
+                );
+            }
+
+            else {
+                self::parseShortOption(
+                  substr($arg, 1), $short_options, $opts, $args
+                );
+            }
+        }
+
+        return array($opts, $non_opts);
+    }
+
+    protected static function parseShortOption($arg, $short_options, &$opts, &$args)
+    {
+        $argLen = strlen($arg);
+
+        for ($i = 0; $i < $argLen; $i++) {
+            $opt     = $arg[$i];
+            $opt_arg = NULL;
+
+            if (($spec = strstr($short_options, $opt)) === FALSE ||
+                $arg[$i] == ':') {
+                throw new PHPUnit_Framework_Exception(
+                  "unrecognized option -- $opt"
+                );
+            }
+
+            if (strlen($spec) > 1 && $spec[1] == ':') {
+                if (strlen($spec) > 2 && $spec[2] == ':') {
+                    if ($i + 1 < $argLen) {
+                        $opts[] = array($opt, substr($arg, $i + 1));
+                        break;
+                    }
+                } else {
+                    if ($i + 1 < $argLen) {
+                        $opts[] = array($opt, substr($arg, $i + 1));
+                        break;
+                    }
+
+                    else if (list(, $opt_arg) = each($args)) {
+                    }
+
+                    else {
+                        throw new PHPUnit_Framework_Exception(
+                          "option requires an argument -- $opt"
+                        );
+                    }
+                }
+            }
+
+            $opts[] = array($opt, $opt_arg);
+        }
+    }
+
+    protected static function parseLongOption($arg, $long_options, &$opts, &$args)
+    {
+        $count   = count($long_options);
+        $list    = explode('=', $arg);
+        $opt     = $list[0];
+        $opt_arg = NULL;
+
+        if (count($list) > 1) {
+            $opt_arg = $list[1];
+        }
+
+        $opt_len = strlen($opt);
+
+        for ($i = 0; $i < $count; $i++) {
+            $long_opt  = $long_options[$i];
+            $opt_start = substr($long_opt, 0, $opt_len);
+
+            if ($opt_start != $opt) {
+                continue;
+            }
+
+            $opt_rest = substr($long_opt, $opt_len);
+
+            if ($opt_rest != '' && $opt[0] != '=' && $i + 1 < $count &&
+                $opt == substr($long_options[$i+1], 0, $opt_len)) {
+                throw new PHPUnit_Framework_Exception(
+                  "option --$opt is ambiguous"
+                );
+            }
+
+            if (substr($long_opt, -1) == '=') {
+                if (substr($long_opt, -2) != '==') {
+                    if (!strlen($opt_arg) &&
+                        !(list(, $opt_arg) = each($args))) {
+                        throw new PHPUnit_Framework_Exception(
+                          "option --$opt requires an argument"
+                        );
+                    }
+                }
+            }
+
+            else if ($opt_arg) {
+                throw new PHPUnit_Framework_Exception(
+                  "option --$opt doesn't allow an argument"
+                );
+            }
+
+            $opts[] = array('--' . $opt, $opt_arg);
+            return;
+        }
+
+        throw new PHPUnit_Framework_Exception("unrecognized option --$opt");
+    }
+}

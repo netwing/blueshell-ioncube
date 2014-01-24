@@ -1,88 +1,176 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsFunction
+ */
+
+/**
+ * Smarty {html_table} function plugin
+ *
+ * Type:     function<br>
+ * Name:     html_table<br>
+ * Date:     Feb 17, 2003<br>
+ * Purpose:  make an html table from an array of data<br>
+ * Params:
+ * <pre>
+ * - loop       - array to loop through
+ * - cols       - number of columns, comma separated list of column names
+ *                or array of column names
+ * - rows       - number of rows
+ * - table_attr - table attributes
+ * - th_attr    - table heading attributes (arrays are cycled)
+ * - tr_attr    - table row attributes (arrays are cycled)
+ * - td_attr    - table cell attributes (arrays are cycled)
+ * - trailpad   - value to pad trailing cells with
+ * - caption    - text for caption element
+ * - vdir       - vertical direction (default: "down", means top-to-bottom)
+ * - hdir       - horizontal direction (default: "right", means left-to-right)
+ * - inner      - inner loop (default "cols": print $loop line by line,
+ *                $loop will be printed column by column otherwise)
+ * </pre>
+ * Examples:
+ * <pre>
+ * {table loop=$data}
+ * {table loop=$data cols=4 tr_attr='"bgcolor=red"'}
+ * {table loop=$data cols="first,second,third" tr_attr=$colors}
+ * </pre>
+ *
+ * @author Monte Ohrt <monte at ohrt dot com>
+ * @author credit to Messju Mohr <messju at lammfellpuschen dot de>
+ * @author credit to boots <boots dot smarty at yahoo dot com>
+ * @version 1.1
+ * @link http://www.smarty.net/manual/en/language.function.html.table.php {html_table}
+ *          (Smarty online manual)
+ * @param array                    $params   parameters
+ * @param Smarty_Internal_Template $template template object
+ * @return string
+ */
+function smarty_function_html_table($params, $template)
+{
+    $table_attr = 'border="1"';
+    $tr_attr = '';
+    $th_attr = '';
+    $td_attr = '';
+    $cols = $cols_count = 3;
+    $rows = 3;
+    $trailpad = '&nbsp;';
+    $vdir = 'down';
+    $hdir = 'right';
+    $inner = 'cols';
+    $caption = '';
+    $loop = null;
+
+    if (!isset($params['loop'])) {
+        trigger_error("html_table: missing 'loop' parameter",E_USER_WARNING);
+
+        return;
+    }
+
+    foreach ($params as $_key => $_value) {
+        switch ($_key) {
+            case 'loop':
+                $$_key = (array) $_value;
+                break;
+
+            case 'cols':
+                if (is_array($_value) && !empty($_value)) {
+                    $cols = $_value;
+                    $cols_count = count($_value);
+                } elseif (!is_numeric($_value) && is_string($_value) && !empty($_value)) {
+                    $cols = explode(',', $_value);
+                    $cols_count = count($cols);
+                } elseif (!empty($_value)) {
+                    $cols_count = (int) $_value;
+                } else {
+                    $cols_count = $cols;
+                }
+                break;
+
+            case 'rows':
+                $$_key = (int) $_value;
+                break;
+
+            case 'table_attr':
+            case 'trailpad':
+            case 'hdir':
+            case 'vdir':
+            case 'inner':
+            case 'caption':
+                $$_key = (string) $_value;
+                break;
+
+            case 'tr_attr':
+            case 'td_attr':
+            case 'th_attr':
+                $$_key = $_value;
+                break;
+        }
+    }
+
+    $loop_count = count($loop);
+    if (empty($params['rows'])) {
+        /* no rows specified */
+        $rows = ceil($loop_count / $cols_count);
+    } elseif (empty($params['cols'])) {
+        if (!empty($params['rows'])) {
+            /* no cols specified, but rows */
+            $cols_count = ceil($loop_count / $rows);
+        }
+    }
+
+    $output = "<table $table_attr>\n";
+
+    if (!empty($caption)) {
+        $output .= '<caption>' . $caption . "</caption>\n";
+    }
+
+    if (is_array($cols)) {
+        $cols = ($hdir == 'right') ? $cols : array_reverse($cols);
+        $output .= "<thead><tr>\n";
+
+        for ($r = 0; $r < $cols_count; $r++) {
+            $output .= '<th' . smarty_function_html_table_cycle('th', $th_attr, $r) . '>';
+            $output .= $cols[$r];
+            $output .= "</th>\n";
+        }
+        $output .= "</tr></thead>\n";
+    }
+
+    $output .= "<tbody>\n";
+    for ($r = 0; $r < $rows; $r++) {
+        $output .= "<tr" . smarty_function_html_table_cycle('tr', $tr_attr, $r) . ">\n";
+        $rx = ($vdir == 'down') ? $r * $cols_count : ($rows-1 - $r) * $cols_count;
+
+        for ($c = 0; $c < $cols_count; $c++) {
+            $x = ($hdir == 'right') ? $rx + $c : $rx + $cols_count-1 - $c;
+            if ($inner != 'cols') {
+                /* shuffle x to loop over rows*/
+                $x = floor($x / $cols_count) + ($x % $cols_count) * $rows;
+            }
+
+            if ($x < $loop_count) {
+                $output .= "<td" . smarty_function_html_table_cycle('td', $td_attr, $c) . ">" . $loop[$x] . "</td>\n";
+            } else {
+                $output .= "<td" . smarty_function_html_table_cycle('td', $td_attr, $c) . ">$trailpad</td>\n";
+            }
+        }
+        $output .= "</tr>\n";
+    }
+    $output .= "</tbody>\n";
+    $output .= "</table>\n";
+
+    return $output;
+}
+
+function smarty_function_html_table_cycle($name, $var, $no)
+{
+    if (!is_array($var)) {
+        $ret = $var;
+    } else {
+        $ret = $var[$no % count($var)];
+    }
+
+    return ($ret) ? ' ' . $ret : '';
+}

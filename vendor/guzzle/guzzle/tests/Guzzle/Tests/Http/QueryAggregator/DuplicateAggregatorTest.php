@@ -1,29 +1,30 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Http;
+
+use Guzzle\Http\QueryString;
+use Guzzle\Http\QueryAggregator\DuplicateAggregator as Ag;
+
+class DuplicateAggregatorTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testAggregates()
+    {
+        $query = new QueryString();
+        $a = new Ag();
+        $key = 'facet 1';
+        $value = array('size a', 'width b');
+        $result = $a->aggregate($key, $value, $query);
+        $this->assertEquals(array('facet%201' => array('size%20a', 'width%20b')), $result);
+    }
+
+    public function testEncodes()
+    {
+        $query = new QueryString();
+        $query->useUrlEncoding(false);
+        $a = new Ag();
+        $key = 'facet 1';
+        $value = array('size a', 'width b');
+        $result = $a->aggregate($key, $value, $query);
+        $this->assertEquals(array('facet 1' => array('size a', 'width b')), $result);
+    }
+}

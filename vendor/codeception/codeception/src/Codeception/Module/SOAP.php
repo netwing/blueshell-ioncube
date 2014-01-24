@@ -1,210 +1,472 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ktk5Kpi=
+<?php
+namespace Codeception\Module;
+
+/**
+ * Module for testing SOAP WSDL web services.
+ * Send requests and check if response matches the pattern.
+ *
+ * This module can be used either with frameworks or PHPBrowser.
+ * It tries to guess the framework is is attached to.
+ * If a endpoint is a full url then it uses PHPBrowser.
+ *
+ * ### Using Inside Framework
+ *
+ * Please note, that PHP SoapServer::handle method sends additional headers.
+ * This may trigger warning: "Cannot modify header information"
+ * If you use PHP SoapServer with framework, try to block call to this method in testing environment.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: codecept@davert.mail.ua
+ *
+ * ## Configuration
+ *
+ * * endpoint *required* - soap wsdl endpoint
+ *
+ * ## Public Properties
+ *
+ * * request - last soap request (DOMDocument)
+ * * response - last soap response (DOMDocument)
+ *
+ */
+
+use Codeception\Util\Soap as SoapUtils;
+
+class SOAP extends \Codeception\Module
+{
+
+    protected $config = array('schema' => "", 'schema_url' => 'http://schemas.xmlsoap.org/soap/envelope/');
+    protected $requiredFields = array('endpoint');
+    /**
+     * @var \Symfony\Component\BrowserKit\Client
+     */
+    public $client = null;
+    public $is_functional = false;
+
+    /**
+     * @var \DOMDocument
+     */
+    public $xmlRequest = null;
+    /**
+     * @var \DOMDocument
+     */
+    public $xmlResponse = null;
+
+    public function _before(\Codeception\TestCase $test)
+    {
+        if (!$this->client) {
+            if (!strpos($this->config['endpoint'], '://')) {
+                // not valid url
+                foreach ($this->getModules() as $module) {
+                    if ($module instanceof \Codeception\Util\Framework) {
+                        $this->client = $module->client;
+                        $this->is_functional = true;
+                        break;
+                    }
+                }
+            } else {
+                if (!$this->hasModule('PhpBrowser'))
+                    throw new \Codeception\Exception\ModuleConfig(__CLASS__, "For Soap testing via HTTP please enable PhpBrowser module");
+                $this->client = $this->getModule('PhpBrowser')->session->getDriver()->getClient();
+            }
+            if (!$this->client) throw new \Codeception\Exception\ModuleConfig(__CLASS__, "Client for SOAP requests not initialized.\nProvide either PhpBrowser module or Framework module which shares FrameworkInterface");
+        }
+
+        $this->buildRequest();
+        $this->xmlResponse = null;
+    }
+
+    /**
+     * Prepare SOAP header.
+     * Receives header name and parameters as array.
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->haveSoapHeader('AuthHeader', array('username' => 'davert', 'password' => '123345'));
+     * ```
+     *
+     * Will produce header:
+     *
+     * ```
+     *    <soapenv:Header>
+     *      <SessionHeader>
+     *      <AuthHeader>
+     *          <username>davert</username>
+     *          <password>12345</password>
+     *      </AuthHeader>
+     *   </soapenv:Header>
+     * ```
+     *
+     * @param $header
+     * @param array $params
+     */
+    public function haveSoapHeader($header, $params = array())
+    {
+        $soap_schema_url = $this->config['schema_url'];
+        $xml = $this->xmlRequest;
+        $xmlHeader = $xml->documentElement->getElementsByTagNameNS($soap_schema_url, 'Header')->item(0);
+        $headerEl = $xml->createElement($header);
+        SoapUtils::arrayToXml($xml, $headerEl, $params);
+        $xmlHeader->appendChild($headerEl);
+    }
+
+    /**
+     * Submits request to endpoint.
+     *
+     * Requires of api function name and parameters.
+     * Parameters can be passed either as DOMDocument, DOMNode, XML string, or array (if no attributes).
+     *
+     * You are allowed to execute as much requests as you need inside test.
+     *
+     * Example:
+     *
+     * ``` php
+     * $I->sendRequest('UpdateUser', '<user><id>1</id><name>notdavert</name></user>');
+     * $I->sendRequest('UpdateUser', \Codeception\Utils\Soap::request()->user
+     *   ->id->val(1)->parent()
+     *   ->name->val('notdavert');
+     * ```
+     *
+     * @param $request
+     * @param $body
+     */
+    public function sendSoapRequest($action, $body = "")
+    {
+        $soap_schema_url = $this->config['schema_url'];
+        $xml = $this->xmlRequest;
+        $call = $xml->createElement('ns:' . $action);
+        if ($body) {
+            $bodyXml = SoapUtils::toXml($body);
+            if ($bodyXml->hasChildNodes()) {
+                foreach ($bodyXml->childNodes as $bodyChildNode) {
+                    $bodyNode = $xml->importNode($bodyChildNode, true);
+                    $call->appendChild($bodyNode);
+                }
+            }
+        }
+
+        $xmlBody = $xml->getElementsByTagNameNS($soap_schema_url, 'Body')->item(0);
+
+        // cleanup if body already set
+        foreach ($xmlBody->childNodes as $node) {
+            $xmlBody->removeChild($node);
+        }
+
+        $xmlBody->appendChild($call);
+        $this->debugSection("Request", $req = $xml->C14N());
+
+        if ($this->is_functional) {
+            $response = $this->processInternalRequest($action, $req);
+        } else {
+            $response = $this->processExternalRequest($action, $req);
+        }
+
+        $this->debugSection("Response", $response);
+        $this->xmlResponse = SoapUtils::toXml($response);
+    }
+
+    /**
+     * Checks XML response equals provided XML.
+     * Comparison is done by canonicalizing both xml`s.
+     *
+     * Parameters can be passed either as DOMDocument, DOMNode, XML string, or array (if no attributes).
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->seeSoapResponseEquals("<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope><SOAP-ENV:Body><result>1</result></SOAP-ENV:Envelope>");
+     *
+     * $dom = new \DOMDocument();
+     * $dom->load($file);
+     * $I->seeSoapRequestIncludes($dom);
+     *
+     * ```
+     *
+     * @param $xml
+     */
+    public function seeSoapResponseEquals($xml)
+    {
+        $xml = SoapUtils::toXml($xml);
+        \PHPUnit_Framework_Assert::assertEquals($this->xmlResponse->C14N(), $xml->C14N());
+    }
+
+    /**
+     * Checks XML response includes provided XML.
+     * Comparison is done by canonicalizing both xml`s.
+     * Parameter can be passed either as XmlBuilder, DOMDocument, DOMNode, XML string, or array (if no attributes).
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->seeSoapResponseIncludes("<result>1</result>");
+     * $I->seeSoapRequestIncludes(\Codeception\Utils\Soap::response()->result->val(1));
+     *
+     * $dom = new \DDOMDocument();
+     * $dom->load('template.xml');
+     * $I->seeSoapRequestIncludes($dom);
+     * ?>
+     * ```
+     *
+     * @param $xml
+     */
+    public function seeSoapResponseIncludes($xml)
+    {
+        $xml = $this->canonicalize($xml);
+        \PHPUnit_Framework_Assert::assertContains($xml, $this->xmlResponse->C14N(), "found in XML Response");
+    }
+
+
+    /**
+     * Checks XML response equals provided XML.
+     * Comparison is done by canonicalizing both xml`s.
+     *
+     * Parameter can be passed either as XmlBuilder, DOMDocument, DOMNode, XML string, or array (if no attributes).
+     *
+     * @param $xml
+     */
+    public function dontSeeSoapResponseEquals($xml)
+    {
+        $xml = SoapUtils::toXml($xml);
+        \PHPUnit_Framework_Assert::assertXmlStringNotEqualsXmlString($this->xmlResponse->C14N(), $xml->C14N());
+    }
+
+
+    /**
+     * Checks XML response does not include provided XML.
+     * Comparison is done by canonicalizing both xml`s.
+     * Parameter can be passed either as XmlBuilder, DOMDocument, DOMNode, XML string, or array (if no attributes).
+     *
+     * @param $xml
+     */
+    public function dontSeeSoapResponseIncludes($xml)
+    {
+        $xml = $this->canonicalize($xml);
+        \PHPUnit_Framework_Assert::assertNotContains($xml, $this->xmlResponse->C14N(), "found in XML Response");
+    }
+
+    /**
+     * Checks XML response contains provided structure.
+     * Response elements will be compared with XML provided.
+     * Only nodeNames are checked to see elements match.
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     *
+     * $I->seeResponseContains("<user><query>CreateUser<name>Davert</davert></user>");
+     * $I->seeSoapResponseContainsStructure("<query><name></name></query>");
+     * ?>
+     * ```
+     *
+     * Use this method to check XML of valid structure is returned.
+     * This method does not use schema for validation.
+     * This method does not require path from root to match the structure.
+     *
+     * @param $xml
+     */
+    public function seeSoapResponseContainsStructure($xml) {
+        $xml = SoapUtils::toXml($xml);
+        $this->debugSection("Structure", $xml->saveXML());
+        $root = $xml->firstChild;
+
+        $this->debugSection("Structure Root", $root->nodeName);
+
+        $els = $this->xmlResponse->getElementsByTagName($root->nodeName);
+
+        if (empty($els)) return \PHPUnit_Framework_Assert::fail("Element {$root->nodeName} not found in response");
+
+        $matches = false;
+        foreach ($els as $node) {
+            $matches |= $this->structureMatches($root, $node);
+        }
+        \PHPUnit_Framework_Assert::assertTrue((bool)$matches, "this structure is in response");
+
+    }
+
+    /**
+     * Checks XML response with XPath locator
+     *
+     * ``` php
+     * <?php
+     * $I->seeSoapResponseContainsXPath('//root/user[@id=1]');
+     * ?>
+     * ```
+     *
+     * @param $xpath
+     */
+    public function seeSoapResponseContainsXPath($xpath)
+    {
+        $path = new \DOMXPath($this->xmlResponse);
+        $res = $path->query($xpath);
+        if ($res === false) $this->fail("XPath selector is malformed");
+        $this->assertGreaterThen(0, $res->length);
+    }
+
+    /**
+     * Checks XML response doesn't contain XPath locator
+     *
+     * ``` php
+     * <?php
+     * $I->dontSeeSoapResponseContainsXPath('//root/user[@id=1]');
+     * ?>
+     * ```
+     *
+     * @param $xpath
+     */
+    public function dontSeeSoapResponseContainsXPath($xpath)
+    {
+        $path = new \DOMXPath($this->xmlResponse);
+        $res = $path->query($xpath);
+        if ($res === false) $this->fail("XPath selector is malformed");
+        $this->assertEquals(0, $res->length);
+    }
+
+
+
+    /**
+     * Checks response code from server.
+     *
+     * @param $code
+     */
+    public function seeResponseCodeIs($code) {
+        \PHPUnit_Framework_Assert::assertEquals($code, $this->client->getInternalResponse()->getStatus(), "soap response code matches expected");
+    }
+
+    /**
+     * Finds and returns text contents of element.
+     * Element is matched by either CSS or XPath
+     *
+     * @version 1.1
+     * @param $cssOrXPath
+     * @return string
+     */
+    public function grabTextContentFrom($cssOrXPath) {
+        $el = $this->matchElement($cssOrXPath);
+        return $el->textContent;
+    }
+
+    /**
+     * Finds and returns attribute of element.
+     * Element is matched by either CSS or XPath
+     *
+     * @version 1.1
+     * @param $cssOrXPath
+     * @param $attribute
+     * @return string
+     */
+    public function grabAttributeFrom($cssOrXPath, $attribute) {
+        $el = $this->matchElement($cssOrXPath);
+        if (!$el->hasAttribute($attribute)) $this->fail("Attribute not found in element matched by '$cssOrXPath'");
+        return $el->getAttribute($attribute);
+    }
+
+    /**
+     * @param $cssOrXPath
+     * @return \DOMElement
+     */
+    protected function matchElement($cssOrXPath)
+    {
+        $xpath = new \DOMXpath($this->xmlResponse);
+        try {
+            $selector = \Symfony\Component\CssSelector\CssSelector::toXPath($cssOrXPath);
+            $els = $xpath->query($selector);
+            if ($els) return $els->item(0);
+        } catch (\Symfony\Component\CssSelector\Exception\ParseException $e) {}
+        $els = $xpath->query($cssOrXPath);
+        if ($els) {
+            return $els->item(0);
+        }
+        $this->fail("No node matched CSS or XPath '$cssOrXPath'");
+    }
+    
+
+    protected function structureMatches($schema, $xml)
+    {
+        foreach ($schema->childNodes as $node1) {
+            $matched = false;
+            foreach ($xml->childNodes as $node2) {
+                if ($node1->nodeName == $node2->nodeName) {
+                    $matched = $this->structureMatches($node1, $node2);
+                    if ($matched) break;
+                }
+            }
+            if (!$matched) return false;
+        }
+        return true;
+    }
+
+    protected function getSchema()
+    {
+        return $this->config['schema'];
+    }
+
+    protected function canonicalize($xml)
+    {
+        $xml = SoapUtils::toXml($xml)->C14N();
+        return $xml;
+    }
+
+    /**
+     * @return \DOMDocument
+     */
+    protected function buildRequest()
+    {
+        $soap_schema_url = $this->config['schema_url'];
+        $xml = new \DOMDocument();
+        $root = $xml->createElement('soapenv:Envelope');
+        $xml->appendChild($root);
+        $root->setAttribute('xmlns:ns', $this->getSchema());
+        $root->setAttribute('xmlns:soapenv', $soap_schema_url);
+        $body = $xml->createElementNS($soap_schema_url, 'soapenv:Body');
+        $header = $xml->createElementNS($soap_schema_url, 'soapenv:Header');
+        $root->appendChild($header);
+        $root->appendChild($body);
+        $this->xmlRequest = $xml;
+        return $xml;
+    }
+
+    protected function processRequest($action, $body)
+    {
+        $this->client->request('POST',
+        $this->config['endpoint'],
+        array(), array(),
+        array(
+            "HTTP_Content-Type" => "text/xml; charset=UTF-8",
+            'HTTP_Content-Length' => strlen($body),
+            'HTTP_SOAPAction' => $action),
+        $body
+        );
+    }
+
+    protected function processInternalRequest($action, $body)
+    {
+        ob_start();
+        try {
+            $this->client->setServerParameter('HTTP_HOST', 'localhost');
+            $this->processRequest($action, $body);
+        } catch (\ErrorException $e) {
+            // Zend_Soap outputs warning as an exception
+            if (strpos($e->getMessage(),'Warning: Cannot modify header information')===false) {
+                ob_end_clean();
+                throw $e;
+            }
+        }
+        $response = ob_get_contents();
+        ob_end_clean();
+        return $response;
+    }
+
+    protected function processExternalRequest($action, $body)
+    {
+        $this->processRequest($action, $body);
+        return $this->client->getInternalResponse()->getContent();
+    }
+
+}

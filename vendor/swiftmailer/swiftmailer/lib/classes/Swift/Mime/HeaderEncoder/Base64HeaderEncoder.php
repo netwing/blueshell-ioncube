@@ -1,33 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Handles Base64 (B) Header Encoding in Swift Mailer.
+ *
+ * @package    Swift
+ * @subpackage Mime
+ * @author     Chris Corbyn
+ */
+class Swift_Mime_HeaderEncoder_Base64HeaderEncoder extends Swift_Encoder_Base64Encoder implements Swift_Mime_HeaderEncoder
+{
+    /**
+     * Get the name of this encoding scheme.
+     * Returns the string 'B'.
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return 'B';
+    }
+
+    /**
+     * Takes an unencoded string and produces a Base64 encoded string from it.
+     *
+     * If the charset is iso-2022-jp, it uses mb_encode_mimeheader instead of
+     * default encodeString, otherwise pass to the parent method.
+     *
+     * @param string  $string          string to encode
+     * @param integer $firstLineOffset
+     * @param integer $maxLineLength   optional, 0 indicates the default of 76 bytes
+     * @param string  $charset
+     *
+     * @return string
+     */
+    public function encodeString($string, $firstLineOffset = 0, $maxLineLength = 0, $charset = 'utf-8')
+    {
+        if (strtolower($charset) === 'iso-2022-jp') {
+            $old = mb_internal_encoding();
+            mb_internal_encoding('utf-8');
+            $newstring = mb_encode_mimeheader($string, $charset, $this->getName(), "\r\n");
+            mb_internal_encoding($old);
+
+            return $newstring;
+        }
+
+        return parent::encodeString($string, $firstLineOffset, $maxLineLength);
+    }
+}

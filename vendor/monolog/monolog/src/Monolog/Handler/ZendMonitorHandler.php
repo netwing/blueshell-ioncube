@@ -1,41 +1,95 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Formatter\NormalizerFormatter;
+use Monolog\Logger;
+
+/**
+ * Handler sending logs to Zend Monitor
+ *
+ * @author  Christian Bergau <cbergau86@gmail.com>
+ */
+class ZendMonitorHandler extends AbstractProcessingHandler
+{
+    /**
+     * Monolog level / ZendMonitor Custom Event priority map
+     *
+     * @var array
+     */
+    protected $levelMap = array(
+        Logger::DEBUG     => 1,
+        Logger::INFO      => 2,
+        Logger::NOTICE    => 3,
+        Logger::WARNING   => 4,
+        Logger::ERROR     => 5,
+        Logger::CRITICAL  => 6,
+        Logger::ALERT     => 7,
+        Logger::EMERGENCY => 0,
+    );
+
+    /**
+     * Construct
+     *
+     * @param  int                       $level
+     * @param  bool                      $bubble
+     * @throws MissingExtensionException
+     */
+    public function __construct($level = Logger::DEBUG, $bubble = true)
+    {
+        if (!function_exists('zend_monitor_custom_event')) {
+            throw new MissingExtensionException('You must have Zend Server installed in order to use this handler');
+        }
+        parent::__construct($level, $bubble);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function write(array $record)
+    {
+        $this->writeZendMonitorCustomEvent(
+            $this->levelMap[$record['level']],
+            $record['message'],
+            $record['formatted']
+        );
+    }
+
+    /**
+     * Write a record to Zend Monitor
+     *
+     * @param int    $level
+     * @param string $message
+     * @param array  $formatted
+     */
+    protected function writeZendMonitorCustomEvent($level, $message, $formatted)
+    {
+        zend_monitor_custom_event($level, $message, $formatted);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getDefaultFormatter()
+    {
+        return new NormalizerFormatter();
+    }
+
+    /**
+     * Get the level map
+     *
+     * @return array
+     */
+    public function getLevelMap()
+    {
+        return $this->levelMap;
+    }
+}

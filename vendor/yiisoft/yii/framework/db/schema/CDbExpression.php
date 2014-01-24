@@ -1,31 +1,60 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-VW/scRTbZ8dR
+<?php
+/**
+ * CDbExpression class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDbExpression represents a DB expression that does not need escaping.
+ * CDbExpression is mainly used in {@link CActiveRecord} as attribute values.
+ * When inserting or updating a {@link CActiveRecord}, attribute values of
+ * type CDbExpression will be directly put into the corresponding SQL statement
+ * without escaping. A typical usage is that an attribute is set with 'NOW()'
+ * expression so that saving the record would fill the corresponding column
+ * with the current DB server timestamp.
+ *
+ * Starting from version 1.1.1, one can also specify parameters to be bound
+ * for the expression. For example, if the expression is 'LOWER(:value)', then
+ * one can set {@link params} to be <code>array(':value'=>$value)</code>.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.db.schema
+ */
+class CDbExpression extends CComponent
+{
+	/**
+	 * @var string the DB expression
+	 */
+	public $expression;
+	/**
+	 * @var array list of parameters that should be bound for this expression.
+	 * The keys are placeholders appearing in {@link expression}, while the values
+	 * are the corresponding parameter values.
+	 * @since 1.1.1
+	 */
+	public $params=array();
+
+	/**
+	 * Constructor.
+	 * @param string $expression the DB expression
+	 * @param array $params parameters
+	 */
+	public function __construct($expression,$params=array())
+	{
+		$this->expression=$expression;
+		$this->params=$params;
+	}
+
+	/**
+	 * String magic method
+	 * @return string the DB expression
+	 */
+	public function __toString()
+	{
+		return $this->expression;
+	}
+}

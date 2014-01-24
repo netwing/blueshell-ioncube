@@ -1,82 +1,149 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+
+/**
+ * Stores logs to files that are rotated every day and a limited number of files are kept.
+ *
+ * This rotation is only intended to be used as a workaround. Using logrotate to
+ * handle the rotation is strongly encouraged when you can use it.
+ *
+ * @author Christophe Coevoet <stof@notk.org>
+ * @author Jordi Boggiano <j.boggiano@seld.be>
+ */
+class RotatingFileHandler extends StreamHandler
+{
+    protected $filename;
+    protected $maxFiles;
+    protected $mustRotate;
+    protected $nextRotation;
+    protected $filenameFormat;
+    protected $dateFormat;
+
+    /**
+     * @param string  $filename
+     * @param integer $maxFiles The maximal amount of files to keep (0 means unlimited)
+     * @param integer $level    The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
+     */
+    public function __construct($filename, $maxFiles = 0, $level = Logger::DEBUG, $bubble = true)
+    {
+        $this->filename = $filename;
+        $this->maxFiles = (int) $maxFiles;
+        $this->nextRotation = new \DateTime('tomorrow');
+        $this->filenameFormat = '{filename}-{date}';
+        $this->dateFormat = 'Y-m-d';
+
+        parent::__construct($this->getTimedFilename(), $level, $bubble);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function close()
+    {
+        parent::close();
+
+        if (true === $this->mustRotate) {
+            $this->rotate();
+        }
+    }
+
+    public function setFilenameFormat($filenameFormat, $dateFormat)
+    {
+        $this->filenameFormat = $filenameFormat;
+        $this->dateFormat = $dateFormat;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function write(array $record)
+    {
+        // on the first record written, if the log is new, we should rotate (once per day)
+        if (null === $this->mustRotate) {
+            $this->mustRotate = !file_exists($this->url);
+        }
+
+        if ($this->nextRotation < $record['datetime']) {
+            $this->mustRotate = true;
+            $this->close();
+        }
+
+        parent::write($record);
+    }
+
+    /**
+     * Rotates the files.
+     */
+    protected function rotate()
+    {
+        // update filename
+        $this->url = $this->getTimedFilename();
+        $this->nextRotation = new \DateTime('tomorrow');
+
+        // skip GC of old logs if files are unlimited
+        if (0 === $this->maxFiles) {
+            return;
+        }
+
+        $logFiles = glob($this->getGlobPattern());
+        if ($this->maxFiles >= count($logFiles)) {
+            // no files to remove
+            return;
+        }
+
+        // Sorting the files by name to remove the older ones
+        usort($logFiles, function($a, $b) {
+            return strcmp($b, $a);
+        });
+
+        foreach (array_slice($logFiles, $this->maxFiles) as $file) {
+            if (is_writable($file)) {
+                unlink($file);
+            }
+        }
+    }
+
+    protected function getTimedFilename()
+    {
+        $fileInfo = pathinfo($this->filename);
+        $timedFilename = str_replace(
+            array('{filename}', '{date}'),
+            array($fileInfo['filename'], date($this->dateFormat)),
+            $fileInfo['dirname'] . '/' . $this->filenameFormat
+        );
+
+        if (!empty($fileInfo['extension'])) {
+            $timedFilename .= '.'.$fileInfo['extension'];
+        }
+
+        return $timedFilename;
+    }
+
+    protected function getGlobPattern()
+    {
+        $fileInfo = pathinfo($this->filename);
+        $glob = str_replace(
+            array('{filename}', '{date}'),
+            array($fileInfo['filename'], '*'),
+            $fileInfo['dirname'] . '/' . $this->filenameFormat
+        );
+        if (!empty($fileInfo['extension'])) {
+            $glob .= '.'.$fileInfo['extension'];
+        }
+
+        return $glob;
+    }
+}

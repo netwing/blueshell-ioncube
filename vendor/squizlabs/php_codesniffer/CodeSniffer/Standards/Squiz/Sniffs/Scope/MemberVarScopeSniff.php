@@ -1,40 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Verifies that class members have scope modifiers.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_Standards_AbstractVariableSniff', true) === false) {
+    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractVariableSniff not found');
+}
+
+/**
+ * Verifies that class members have scope modifiers.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Scope_MemberVarScopeSniff extends PHP_CodeSniffer_Standards_AbstractVariableSniff
+{
+
+
+    /**
+     * Processes the function tokens within the class.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     *
+     * @return void
+     */
+    protected function processMemberVar(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens   = $phpcsFile->getTokens();
+        $modifier = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$scopeModifiers, $stackPtr);
+
+        if (($modifier === false) || ($tokens[$modifier]['line'] !== $tokens[$stackPtr]['line'])) {
+            $error = 'Scope modifier not specified for member variable "%s"';
+            $data  = array($tokens[$stackPtr]['content']);
+            $phpcsFile->addError($error, $stackPtr, 'Missing', $data);
+        }
+
+    }//end processMemberVar()
+
+
+    /**
+     * Processes normal variables.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     *
+     * @return void
+     */
+    protected function processVariable(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        // We don't care about normal variables.
+
+    }//end processVariable()
+
+
+    /**
+     * Processes variables in double quoted strings.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
+     * @param int                  $stackPtr  The position where the token was found.
+     *
+     * @return void
+     */
+    protected function processVariableInString(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        // We don't care about normal variables.
+
+    }//end processVariableInString()
+
+
+}//end class
+
 ?>
-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

@@ -1,55 +1,60 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-w2p5n11oBWmTztIhGbIEam==
+<?php
+
+namespace Guzzle\Tests\Iterator;
+
+use Guzzle\Iterator\ChunkedIterator;
+
+/**
+ * @covers Guzzle\Iterator\ChunkedIterator
+ */
+class ChunkedIteratorTest extends \PHPUnit_Framework_TestCase
+{
+    public function testChunksIterator()
+    {
+        $chunked = new ChunkedIterator(new \ArrayIterator(range(0, 100)), 10);
+        $chunks = iterator_to_array($chunked, false);
+        $this->assertEquals(11, count($chunks));
+        foreach ($chunks as $j => $chunk) {
+            $this->assertEquals(range($j * 10, min(100, $j * 10 + 9)), $chunk);
+        }
+    }
+
+    public function testChunksIteratorWithOddValues()
+    {
+        $chunked = new ChunkedIterator(new \ArrayIterator(array(1, 2, 3, 4, 5)), 2);
+        $chunks = iterator_to_array($chunked, false);
+        $this->assertEquals(3, count($chunks));
+        $this->assertEquals(array(1, 2), $chunks[0]);
+        $this->assertEquals(array(3, 4), $chunks[1]);
+        $this->assertEquals(array(5), $chunks[2]);
+    }
+
+    /**
+     * @test
+     * @runInSeparateProcess
+     */
+    public function mustNotTerminateWithTraversable()
+    {
+        $traversable = simplexml_load_string('<root><foo/><foo/><foo/></root>')->foo;
+        $chunked = new ChunkedIterator($traversable, 2);
+        $actual = iterator_to_array($chunked, false);
+        $this->assertCount(2, $actual);
+    }
+
+    /**
+     * @test
+     */
+    public function sizeOfZeroMakesIteratorInvalid() {
+        $chunked = new ChunkedIterator(new \ArrayIterator(range(1, 5)), 0);
+        $chunked->rewind();
+        $this->assertFalse($chunked->valid());
+    }
+
+    /**
+     * @test
+     * @expectedException \InvalidArgumentException
+     */
+    public function sizeLowerZeroThrowsException() {
+        $chunked = new ChunkedIterator(new \ArrayIterator(range(1, 5)), -1);
+    }
+}

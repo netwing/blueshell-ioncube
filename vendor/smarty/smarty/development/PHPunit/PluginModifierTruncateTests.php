@@ -1,72 +1,137 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-JWxW03ws/iM9aEIjoiUIuBLyEWko
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class PluginModifierTruncateTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testDefault()
+    {
+        $result = 'Two Sisters Reunite after Eighteen Years at Checkout Counter.';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testDefaultWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = 'Two Sisters Reunite after Eighteen Years at Checkout Counter.';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testLength()
+    {
+        $result = 'Two Sisters Reunite after...';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testLengthWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = 'Two Sisters Reunite after...';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testEtc()
+    {
+        $result = 'Two Sisters Reunite after';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:""}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testEtcWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = 'Two Sisters Reunite after';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:""}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testEtc2()
+    {
+        $result = 'Two Sisters Reunite after---';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"---"}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testEtc2WithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = 'Two Sisters Reunite after---';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"---"}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testBreak()
+    {
+        $result = 'Two Sisters Reunite after Eigh';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"":true}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testBreakWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = 'Two Sisters Reunite after Eigh';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"":true}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testBreak2()
+    {
+        $result = 'Two Sisters Reunite after E...';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"...":true}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testBreak2WithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = 'Two Sisters Reunite after E...';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"...":true}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testMiddle()
+    {
+        $result = 'Two Sisters Re..ckout Counter.';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"..":true:true}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testMiddleWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = 'Two Sisters Re..ckout Counter.';
+        $tpl = $this->smarty->createTemplate('eval:{"Two Sisters Reunite after Eighteen Years at Checkout Counter."|truncate:30:"..":true:true}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+}

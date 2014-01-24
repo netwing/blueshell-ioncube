@@ -1,61 +1,85 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Input;
+
+/**
+ * StringInput represents an input provided as a string.
+ *
+ * Usage:
+ *
+ *     $input = new StringInput('foo --bar="foobar"');
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class StringInput extends ArgvInput
+{
+    const REGEX_STRING = '([^\s]+?)(?:\s|(?<!\\\\)"|(?<!\\\\)\'|$)';
+    const REGEX_QUOTED_STRING = '(?:"([^"\\\\]*(?:\\\\.[^"\\\\]*)*)"|\'([^\'\\\\]*(?:\\\\.[^\'\\\\]*)*)\')';
+
+    /**
+     * Constructor.
+     *
+     * @param string          $input      An array of parameters from the CLI (in the argv format)
+     * @param InputDefinition $definition A InputDefinition instance
+     *
+     * @deprecated The second argument is deprecated as it does not work (will be removed in 3.0), use 'bind' method instead
+     *
+     * @api
+     */
+    public function __construct($input, InputDefinition $definition = null)
+    {
+        parent::__construct(array(), null);
+
+        $this->setTokens($this->tokenize($input));
+
+        if (null !== $definition) {
+            $this->bind($definition);
+        }
+    }
+
+    /**
+     * Tokenizes a string.
+     *
+     * @param string $input The input to tokenize
+     *
+     * @return array An array of tokens
+     *
+     * @throws \InvalidArgumentException When unable to parse input (should never happen)
+     */
+    private function tokenize($input)
+    {
+        $tokens = array();
+        $length = strlen($input);
+        $cursor = 0;
+        while ($cursor < $length) {
+            if (preg_match('/\s+/A', $input, $match, null, $cursor)) {
+            } elseif (preg_match('/([^="\'\s]+?)(=?)('.self::REGEX_QUOTED_STRING.'+)/A', $input, $match, null, $cursor)) {
+                $tokens[] = $match[1].$match[2].stripcslashes(str_replace(array('"\'', '\'"', '\'\'', '""'), '', substr($match[3], 1, strlen($match[3]) - 2)));
+            } elseif (preg_match('/'.self::REGEX_QUOTED_STRING.'/A', $input, $match, null, $cursor)) {
+                $tokens[] = stripcslashes(substr($match[0], 1, strlen($match[0]) - 2));
+            } elseif (preg_match('/'.self::REGEX_STRING.'/A', $input, $match, null, $cursor)) {
+                $tokens[] = stripcslashes($match[1]);
+            } else {
+                // should never happen
+                // @codeCoverageIgnoreStart
+                throw new \InvalidArgumentException(sprintf('Unable to parse input near "... %s ..."', substr($input, $cursor, 10)));
+                // @codeCoverageIgnoreEnd
+            }
+
+            $cursor += strlen($match[0]);
+        }
+
+        return $tokens;
+    }
+}

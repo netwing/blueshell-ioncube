@@ -1,44 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+
+class MongoDBHandlerTest extends TestCase
+{
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testConstructorShouldThrowExceptionForInvalidMongo()
+    {
+        new MongoDBHandler(new \stdClass(), 'DB', 'Collection');
+    }
+
+    public function testHandle()
+    {
+        $mongo = $this->getMock('Mongo', array('selectCollection'));
+        $collection = $this->getMock('stdClass', array('save'));
+
+        $mongo->expects($this->once())
+            ->method('selectCollection')
+            ->with('DB', 'Collection')
+            ->will($this->returnValue($collection));
+
+        $record = $this->getRecord(Logger::WARNING, 'test', array('data' => new \stdClass, 'foo' => 34));
+
+        $expected = array(
+            'message' => 'test',
+            'context' => array('data' => '[object] (stdClass: {})', 'foo' => 34),
+            'level' => Logger::WARNING,
+            'level_name' => 'WARNING',
+            'channel' => 'test',
+            'datetime' => $record['datetime']->format('Y-m-d H:i:s'),
+            'extra' => array(),
+        );
+
+        $collection->expects($this->once())
+            ->method('save')
+            ->with($expected);
+
+        $handler = new MongoDBHandler($mongo, 'DB', 'Collection');
+        $handler->handle($record);
+    }
+}
+
+if (!class_exists('Mongo')) {
+    class Mongo
+    {
+        public function selectCollection() {}
+    }
+}

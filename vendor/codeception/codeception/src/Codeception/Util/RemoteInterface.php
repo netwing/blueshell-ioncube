@@ -1,30 +1,72 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-UE7dVplsrkr+QRi+R4tM
+<?php
+namespace Codeception\Util;
+
+interface RemoteInterface
+{
+    /**
+     * Sets 'url' configuration parameter to hosts subdomain.
+     * It does not open a page on subdomain. Use `amOnPage` for that
+     *
+     * ``` php
+     * <?php
+     * // If config is: 'http://mysite.com'
+     * // or config is: 'http://www.mysite.com'
+     * // or config is: 'http://company.mysite.com'
+     *
+     * $I->amOnSubdomain('user');
+     * $I->amOnPage('/');
+     * // moves to http://user.mysite.com/
+     * ?>
+     * ```
+     * @param $subdomain
+     * @return mixed
+     */
+    public function amOnSubdomain($subdomain);
+
+    public function _getUrl();
+
+    public function _getResponseCode();
+
+    public function _sendRequest($url);
+
+    /**
+     * Checks that cookie is set.
+     *
+     * @param $cookie
+     * @return mixed
+     */
+    public function seeCookie($cookie);
+
+    /**
+     * Checks that cookie doesn't exist
+     *
+     * @param $cookie
+     * @return mixed
+     */
+    public function dontSeeCookie($cookie);
+
+    /**
+     * Sets a cookie.
+     *
+     * @param $cookie
+     * @param $value
+     * @return mixed
+     */
+    public function setCookie($cookie, $value);
+
+    /**
+     * Unsets cookie
+     *
+     * @param $cookie
+     * @return mixed
+     */
+    public function resetCookie($cookie);
+
+    /**
+     * Grabs a cookie value.
+     *
+     * @param $cookie
+     * @return mixed
+     */
+    public function grabCookie($cookie);
+}

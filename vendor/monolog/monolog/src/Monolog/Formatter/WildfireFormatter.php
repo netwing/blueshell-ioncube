@@ -1,51 +1,102 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-m8UF
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Formatter;
+
+use Monolog\Logger;
+
+/**
+ * Serializes a log message according to Wildfire's header requirements
+ *
+ * @author Eric Clemmons (@ericclemmons) <eric@uxdriven.com>
+ * @author Christophe Coevoet <stof@notk.org>
+ * @author Kirill chEbba Chebunin <iam@chebba.org>
+ */
+class WildfireFormatter extends NormalizerFormatter
+{
+    /**
+     * Translates Monolog log levels to Wildfire levels.
+     */
+    private $logLevels = array(
+        Logger::DEBUG     => 'LOG',
+        Logger::INFO      => 'INFO',
+        Logger::NOTICE    => 'INFO',
+        Logger::WARNING   => 'WARN',
+        Logger::ERROR     => 'ERROR',
+        Logger::CRITICAL  => 'ERROR',
+        Logger::ALERT     => 'ERROR',
+        Logger::EMERGENCY => 'ERROR',
+    );
+
+    /**
+     * {@inheritdoc}
+     */
+    public function format(array $record)
+    {
+        // Retrieve the line and file if set and remove them from the formatted extra
+        $file = $line = '';
+        if (isset($record['extra']['file'])) {
+            $file = $record['extra']['file'];
+            unset($record['extra']['file']);
+        }
+        if (isset($record['extra']['line'])) {
+            $line = $record['extra']['line'];
+            unset($record['extra']['line']);
+        }
+
+        $record = $this->normalize($record);
+        $message = array('message' => $record['message']);
+        $handleError = false;
+        if ($record['context']) {
+            $message['context'] = $record['context'];
+            $handleError = true;
+        }
+        if ($record['extra']) {
+            $message['extra'] = $record['extra'];
+            $handleError = true;
+        }
+        if (count($message) === 1) {
+            $message = reset($message);
+        }
+
+        // Create JSON object describing the appearance of the message in the console
+        $json = $this->toJson(array(
+            array(
+                'Type'  => $this->logLevels[$record['level']],
+                'File'  => $file,
+                'Line'  => $line,
+                'Label' => $record['channel'],
+            ),
+            $message,
+        ), $handleError);
+
+        // The message itself is a serialization of the above JSON object + it's length
+        return sprintf(
+            '%s|%s|',
+            strlen($json),
+            $json
+        );
+    }
+
+    public function formatBatch(array $records)
+    {
+        throw new \BadMethodCallException('Batch formatting does not make sense for the WildfireFormatter');
+    }
+
+    protected function normalize($data)
+    {
+        if (is_object($data) && !$data instanceof \DateTime) {
+            return $data;
+        }
+
+        return parent::normalize($data);
+    }
+}

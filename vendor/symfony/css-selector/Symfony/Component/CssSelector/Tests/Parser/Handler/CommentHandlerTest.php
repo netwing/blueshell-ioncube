@@ -1,36 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Tests\Parser\Handler;
+
+use Symfony\Component\CssSelector\Parser\Handler\CommentHandler;
+use Symfony\Component\CssSelector\Parser\Reader;
+use Symfony\Component\CssSelector\Parser\Token;
+use Symfony\Component\CssSelector\Parser\TokenStream;
+
+class CommentHandlerTest extends AbstractHandlerTest
+{
+    /** @dataProvider getHandleValueTestData */
+    public function testHandleValue($value, Token $unusedArgument, $remainingContent)
+    {
+        $reader = new Reader($value);
+        $stream = new TokenStream();
+
+        $this->assertTrue($this->generateHandler()->handle($reader, $stream));
+        // comments are ignored (not pushed as token in stream)
+        $this->assertStreamEmpty($stream);
+        $this->assertRemainingContent($reader, $remainingContent);
+    }
+
+    public function getHandleValueTestData()
+    {
+        return array(
+            // 2nd argument only exists for inherited method compatibility
+            array('/* comment */', new Token(null, null, null), ''),
+            array('/* comment */foo', new Token(null, null, null), 'foo'),
+        );
+    }
+
+    public function getDontHandleValueTestData()
+    {
+        return array(
+            array('>'),
+            array('+'),
+            array(' '),
+        );
+    }
+
+    protected function generateHandler()
+    {
+        return new CommentHandler();
+    }
+}

@@ -1,56 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<div class="row template sticky">
+	<?php echo $this->labelEx($model,'template'); ?>
+	<?php echo $this->dropDownList($model,'template',$templates); ?>
+	<div class="tooltip">
+		Please select which set of the templates should be used to generated the code.
+	</div>
+	<?php echo $this->error($model,'template'); ?>
+</div>
+
+<div class="buttons">
+	<?php echo CHtml::submitButton('Preview',array('name'=>'preview')); ?>
+
+	<?php if($model->status===CCodeModel::STATUS_PREVIEW && !$model->hasErrors()): ?>
+		<?php echo CHtml::submitButton('Generate',array('name'=>'generate')); ?>
+	<?php endif; ?>
+</div>
+
+<?php if(!$model->hasErrors()): ?>
+	<div class="feedback">
+	<?php if($model->status===CCodeModel::STATUS_SUCCESS): ?>
+		<div class="success">
+			<?php echo $model->successMessage(); ?>
+		</div>
+	<?php elseif($model->status===CCodeModel::STATUS_ERROR): ?>
+		<div class="error">
+			<?php echo $model->errorMessage(); ?>
+		</div>
+	<?php endif; ?>
+
+	<?php if(isset($_POST['generate'])): ?>
+		<pre class="results"><?php echo $model->renderResults(); ?></pre>
+	<?php elseif(isset($_POST['preview'])): ?>
+		<?php echo CHtml::hiddenField("answers"); ?>
+		<table class="preview">
+			<tr>
+				<th class="file">Code File</th>
+				<th class="confirm">
+					<label for="check-all">Generate</label>
+					<?php
+						$count=0;
+						foreach($model->files as $file)
+						{
+							if($file->operation!==CCodeFile::OP_SKIP)
+								$count++;
+						}
+						if($count>1)
+							echo '<input type="checkbox" name="checkAll" id="check-all" />';
+					?>
+				</th>
+			</tr>
+			<?php foreach($model->files as $i=>$file): ?>
+			<tr class="<?php echo $file->operation; ?>">
+				<td class="file">
+					<?php echo CHtml::link(CHtml::encode($file->relativePath), array('code','id'=>$i), array('class'=>'view-code','rel'=>$file->path)); ?>
+					<?php if($file->operation===CCodeFile::OP_OVERWRITE): ?>
+						(<?php echo CHtml::link('diff', array('diff','id'=>$i), array('class'=>'view-code','rel'=>$file->path)); ?>)
+					<?php endif; ?>
+				</td>
+				<td class="confirm">
+					<?php
+					if($file->operation===CCodeFile::OP_SKIP)
+						echo 'unchanged';
+					else
+					{
+						$key=md5($file->path);
+						echo CHtml::label($file->operation, "answers_{$key}")
+							. ' ' . CHtml::checkBox("answers[$key]", $model->confirmed($file));
+					}
+					?>
+				</td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+	<?php endif; ?>
+	</div>
+<?php endif; ?>

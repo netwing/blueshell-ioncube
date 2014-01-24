@@ -1,41 +1,148 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.1.0
+ */
+
+/**
+ * Iterator for test suites.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.1.0
+ */
+class PHPUnit_Util_TestSuiteIterator implements RecursiveIterator
+{
+    /**
+     * @var    integer
+     */
+    protected $position;
+
+    /**
+     * @var    PHPUnit_Framework_Test[]
+     */
+    protected $tests;
+
+    /**
+     * Constructor.
+     *
+     * @param  PHPUnit_Framework_TestSuite $suite
+     */
+    public function __construct(PHPUnit_Framework_TestSuite $testSuite)
+    {
+        $this->tests = $testSuite->tests();
+    }
+
+    /**
+     * Rewinds the Iterator to the first element.
+     *
+     */
+    public function rewind()
+    {
+        $this->position = 0;
+    }
+
+    /**
+     * Checks if there is a current element after calls to rewind() or next().
+     *
+     * @return boolean
+     */
+    public function valid()
+    {
+        return $this->position < count($this->tests);
+    }
+
+    /**
+     * Returns the key of the current element.
+     *
+     * @return integer
+     */
+    public function key()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Returns the current element.
+     *
+     * @return PHPUnit_Framework_Test
+     */
+    public function current()
+    {
+        return $this->valid() ? $this->tests[$this->position] : NULL;
+    }
+
+    /**
+     * Moves forward to next element.
+     *
+     */
+    public function next()
+    {
+        $this->position++;
+    }
+
+    /**
+     * Returns the sub iterator for the current element.
+     *
+     * @return PHPUnit_Util_TestSuiteIterator
+     */
+    public function getChildren()
+    {
+        return new PHPUnit_Util_TestSuiteIterator(
+          $this->tests[$this->position]
+        );
+    }
+
+    /**
+     * Checks whether the current element has children.
+     *
+     * @return boolean
+     */
+    public function hasChildren()
+    {
+        return $this->tests[$this->position] instanceof PHPUnit_Framework_TestSuite;
+    }
+}

@@ -1,56 +1,110 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPu30OFDeXbd5OGprq5tQ/d+1D2oIsu0oslgRVRkCPBemaINbquc+Cx9s/SdvWNPNfV6L0Daj
-81xM5vtPXcDBsHiUfW9IbtGLrLZWvpRFy9Kl2V7VrZtpNaI1A26Yhl49WU5phhx4NhK2I8D5gtMS
-37eofnE7LWIR9kyVwTmO7bxTMTqO8Y2WH1NnIKoi1q5/U/U8TTR0CHWngQlcacyPeJDlDXaiuwtU
-hMe91n/qWpcjp8tF4h+T4AzHAE4xzt2gh9fl143SQNItOXybhzvOS6g7EWROTvBz3C06lhWM6KIa
-O/HMJIUkHV+/5dm5IiuNYsyDkxFC74mbg+q29UA9ul8f0jzbjHwp3/U2hVdSaAjJrviY34+gOhQ6
-nLjCGOcEUJT0KB23DjhXib84X2joz+ABx1vz7Ba9FbB0nEagKSOwM9R3t8YXQEBh/PpMvwBsIbBz
-Lds5WzEVenX9cHZ032nWayC4y9f4SWf5vpr4pkqdBLtTXy7HBGEU6CvJ45VmS47Tv3wpQ1RbxxUi
-TjVopalUhsJSp8BnP+cC87K+AevGf4snSx6//V8OfufKiCAovLtUZdIWOfTuuAJSgzMtdbGagcrT
-Nab96zvPfrYDHulpPsTgtiIYUVJ8HTf/m8F1YYzulrj0eAFBRCqplvwg+YERPTj7+b+lxMSiZk4O
-zI0JD9pLqIz3G9A/X5t2eiOzuXm5cwEOn32o/qyjMIxfkVtOjVAPTnRSOgGLbIX/y4LJRjhko9Mh
-7ICmRpLDYwYkl4McxdWmD5mu/FvuA91Qo8Qc4Seblr/oe5SFYMt/C/727OjN6HHtn5+3Ed15wnaW
-okMdmm8h30EUFW+7tZbUbcpDNxfP1QPnEvofRrvbLRYxrNVf0O6BaPvPUpliPfzQIW/YT5bXHj9q
-jSuGYLsRYDIA2suPoxwPJvZ+1X9KK6wq3awMjgg+PboSo9np7OvjQHJJbiLfYnN5WV3aP31oSoQx
-3q98gad1V4Zmc/jIaD74gYkpm4kipb4zA0yqJbRYc9orgpBjTMnXaltexDGxf2y1slJP5hgM8/HO
-ft7SxbTU/BjdeP4lwtBPR9ia6tqfgKYbS89c9W9CPPTI/eL6BuCVTZkndZ25QX/BojcYQi7FO9NT
-m8YqaY2ov4pDqdGQRaOT23BXZKY8+0bK8RMO67Sl21AeFOTqZILBre9xuPoZaNUcfAgur7RT4gQQ
-SqAZpj5HrG/MQNUlQFCuAPAOjIR6yCW/ATAfoOcwLptkpGnkzcAlSO1ruwJ08a+tFY9kIdf2hhjB
-BirKcHuubvfDf8DtyxJjxBV7nqO3+Iv9eYCHqZszshyJIGrg2FyJKO3u3xTujZg1qbCsIsaSV8Uf
-JX/JABfl5B4vc0BsMLtZZY8lip0VVtZDXrsJhWpmls6EAmjpQ6VciMGUf4JwQVnh9HKFK3wkRpfq
-AIjcgJuVTFcTux7BXp/8BnKQU9I4BF3CUdoRyIlNrmh1dWGimwVK/dCDuyUsiJh3cOBoDcoa4v0o
-Ih6PLca8SAWuivCzyWeGNfFKtR8zFoY3WR2aUgbtG6kokCx3/D+b3ZgdUCa9rXxRp9paEmEyOAbZ
-AhxLEXqUNCpsTSQ0EFqbYTk5H86qoEtny9L48KdoXAGhFpsZbZeCf9jGhfTUtDr6WK4C01VNd6Nw
-oVvE1+wzni51SI++0i7G6WwrzGaBN/3E5xbGfLV4SjxiVUZhReYnVM0uvLvJlGW1Oh52Jhgbj+KC
-/qyciMRwZvQ+0DUBv8MGl0V4RZ9hLYqA5xRIEnZ0mWEa/8sOq1Zq3iWffN+ZTxXA/myp/37Wbmby
-kz9DNHrX1etFWRPFZOgwV+DOcjvILXa/UzqW94Np3XoCleSNfxuX1gWZ560i+PpA24lEOfKFoYsd
-0smO9jzvJmB5xZrEFIrmq1NDM9U2f6w2ls0ry+A3A5HEcLmUcBM10ONSlY2S1VMyNsIcTakujO6K
-0BAc0qQtcCxnmajV3OUt/s+6bY3mu8TF7f8w1HCrFlwPIJdlhxjAlMPumMupqq2Fy4bUSpJDDyAu
-JW7R/S421IFhe0fOdrhQJALJuaT5ntESQBxDuoSkHX7lgSAIlXVljQULwdgw5hjw94M0h1b95ILm
-nkfwIXUjpLuY/psTA6A23C/FnHZaTiX/O5hPsnSFn/v/vbzy1Yuutyyrrx+iCyKRXWClXllm86oW
-QdBP2hJzWfcWYoIFUfDoN65tXm0zgtBiRBLHOebBZaUA0XpGO9cYb7+Cg4KLhLygJ0kIAJOhrgR5
-fUhzJ+V4v9L45WUsMo6f0MeRAxFHTQDcPMiUrGK5C41UcGpm5+br3mdI/+tRzTaUiLBXr+45zhJC
-x4aqmHlJ5d0RjwnTrlC74lzAOcWe7IMVCPamSPmOYI7XOSHpj2slIC1wi1w/8ktmKsBqitMWSUZe
-+QYbTITjF/OfYAiQQr67CvHbcYZP0gLsPdawFsCMf0VlZhPQC1rBvZdWdAOBSa76s06w8G/0II/9
-gzZIix6X9dz3glEDNYjOePlKxRINP0jlwS024vFfXGzBJ2pUe1RfH0peK4dqlRLdZSy6gmClvyBo
-LpSVB105G+Qell2ZqMKUTRIfsYjj8qCWkGQOHHwvUisQGWRU+aEr2YPlQujLbRYcdh17IQx0HiIT
-JahJpRw4Jq4MpanLcAjkxt33K0a5r8AzNg++QZSW2mLwZILLFgSX/BkqDAaak38YKOwjFIv6Q8xp
-b2S8nVmBpHstUbyiawfXtSY/QaFXEhJSMjukpFxLV5FBh4qxkBFZ6jJ5UXPBIfxbQ2fuYS++AIQO
-ElmQYcUpT4vIXBdn1bWBNrDRQqyzI56MJC5gKG2o7fqkp///LSTNvmjDd4wX7JNC3JlZ4idnXtD9
-ueJzzCYwoA0IkZvNnTfzMm1CPrVOdybtMx/AmsAbNCnAjVrhyy6cjpacWhY0UgUSVkPVMu3sA93J
-SaA4hKf6raxVZGIXKdT1OrWlEbzoaCMUd42yml44ntEcwQ+b3jUi+o7TQ0nTmKjiGVx4G/O7o9u4
-1KjSoBYPgB9mCwqicMlA3mfG+tV/05mHZ+GBDKfMeEWskq/psRDkUK3peSKxrcQ8Rl9IX7Dz3GOx
-Ehq7ISAdxaQH04KqqCI0cZcqz4NXSWqzlz9J5OfciyyS3L+4GYblwkOSdtyu1gUZ4fb+B8GVFXPX
-cDm+D13JL2XzBhfhqj+g18pELfVhNeKOCFAoo7EPXfUweVoE+0CLdNijc0agZVAK2tnxtSWRG1/4
-paZ0v3kuNJITiRTUjcAeKxzreoMLTq26QOxIj6v3bNSxNQu6zyxzBZq+2nbi6sMsq0UmEHdh64ps
-psVrmA9ECvqcJhJ+DdXU1e6pKVhboh8VnirqH6k87P7U48ihZQ0JwWprKPlI/3lzGNYllupWrCsv
-OK3HdfTWtuhtERNWvCKKLd7oOBsN9ED9DKgwaKK1xZJYvcmDW/hIT8X+onRbwI2BqgIdJWOTkg2s
-8+Eiw3TPD7X0eTCX4gMpjz6bk3XKqta44lnwV4Zw5kQoQQoahiAQTOsamJsEbmi46J2vT8TOxig1
-Odk6gwR+shLEJXrVc5hfT1njl/sc3s8Gj0w6Dv49We0QleQJvR35CSbFOMpPXoF9NqhAW1Q8pFZa
-SMY/ut4u6p3lOkfKVFqVCMs2co43t9kc63x2vbH6nSanSWx1fKBrw05RlGwZ25AZ3wt2ESoC601D
-JKZLVCW4prNa66UULdag+KWWxkJVS2zbWeA8y0DNkYChVIt63azagDM87tL1pUuZCCpvT22eQyxK
-uBaxNYYsmDSJTS3J/15SSNhQKwwiE3Wjtm1vrhAdPeUFYzSQhJsPo74du0YxY/S9oNFcgh4Zk/Uv
-8KlcUy8dN4JfAn6DaZGUc2tncIMCmbX6zIqErp5l2kiaWTWgOk7XikM5pIqZR7hRnfsPorPs+D0I
-IBZ2AUn5SxPoSWJD0qjX3p0vyAopGP+lxs7fkW==
+<?php
+/**
+ * Smarty plugin to format text blocks
+ *
+ * @package Smarty
+ * @subpackage PluginsBlock
+ */
+
+/**
+ * Smarty {textformat}{/textformat} block plugin
+ *
+ * Type:     block function<br>
+ * Name:     textformat<br>
+ * Purpose:  format text a certain way with preset styles
+ *           or custom wrap/indent settings<br>
+ * Params:
+ * <pre>
+ * - style         - string (email)
+ * - indent        - integer (0)
+ * - wrap          - integer (80)
+ * - wrap_char     - string ("\n")
+ * - indent_char   - string (" ")
+ * - wrap_boundary - boolean (true)
+ * </pre>
+ *
+ * @link http://www.smarty.net/manual/en/language.function.textformat.php {textformat}
+ *       (Smarty online manual)
+ * @param array                    $params   parameters
+ * @param string                   $content  contents of the block
+ * @param Smarty_Internal_Template $template template object
+ * @param boolean                  &$repeat  repeat flag
+ * @return string content re-formatted
+ * @author Monte Ohrt <monte at ohrt dot com>
+ */
+function smarty_block_textformat($params, $content, $template, &$repeat)
+{
+    if (is_null($content)) {
+        return;
+    }
+
+    $style = null;
+    $indent = 0;
+    $indent_first = 0;
+    $indent_char = ' ';
+    $wrap = 80;
+    $wrap_char = "\n";
+    $wrap_cut = false;
+    $assign = null;
+
+    foreach ($params as $_key => $_val) {
+        switch ($_key) {
+            case 'style':
+            case 'indent_char':
+            case 'wrap_char':
+            case 'assign':
+                $$_key = (string) $_val;
+                break;
+
+            case 'indent':
+            case 'indent_first':
+            case 'wrap':
+                $$_key = (int) $_val;
+                break;
+
+            case 'wrap_cut':
+                $$_key = (bool) $_val;
+                break;
+
+            default:
+                trigger_error("textformat: unknown attribute '$_key'");
+        }
+    }
+
+    if ($style == 'email') {
+        $wrap = 72;
+    }
+    // split into paragraphs
+    $_paragraphs = preg_split('![\r\n]{2}!', $content);
+    $_output = '';
+
+    foreach ($_paragraphs as &$_paragraph) {
+        if (!$_paragraph) {
+            continue;
+        }
+        // convert mult. spaces & special chars to single space
+        $_paragraph = preg_replace(array('!\s+!' . Smarty::$_UTF8_MODIFIER, '!(^\s+)|(\s+$)!' . Smarty::$_UTF8_MODIFIER), array(' ', ''), $_paragraph);
+        // indent first line
+        if ($indent_first > 0) {
+            $_paragraph = str_repeat($indent_char, $indent_first) . $_paragraph;
+        }
+        // wordwrap sentences
+        if (Smarty::$_MBSTRING) {
+            require_once(SMARTY_PLUGINS_DIR . 'shared.mb_wordwrap.php');
+            $_paragraph = smarty_mb_wordwrap($_paragraph, $wrap - $indent, $wrap_char, $wrap_cut);
+        } else {
+            $_paragraph = wordwrap($_paragraph, $wrap - $indent, $wrap_char, $wrap_cut);
+        }
+        // indent lines
+        if ($indent > 0) {
+            $_paragraph = preg_replace('!^!m', str_repeat($indent_char, $indent), $_paragraph);
+        }
+    }
+    $_output = implode($wrap_char . $wrap_char, $_paragraphs);
+
+    if ($assign) {
+        $template->assign($assign, $_output);
+    } else {
+        return $_output;
+    }
+}

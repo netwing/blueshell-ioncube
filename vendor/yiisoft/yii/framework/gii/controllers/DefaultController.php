@@ -1,39 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class DefaultController extends CController
+{
+	public $layout='/layouts/column1';
+
+	public function getPageTitle()
+	{
+		if($this->action->id==='index')
+			return 'Gii: a Web-based code generator for Yii';
+		else
+			return 'Gii - '.ucfirst($this->action->id).' Generator';
+	}
+
+	public function actionIndex()
+	{
+		$this->render('index');
+	}
+
+	public function actionError()
+	{
+	    if($error=Yii::app()->errorHandler->error)
+	    {
+	    	if(Yii::app()->request->isAjaxRequest)
+	    		echo $error['message'];
+	    	else
+	        	$this->render('error', $error);
+	    }
+	}
+
+	/**
+	 * Displays the login page
+	 */
+	public function actionLogin()
+	{
+		$model=Yii::createComponent('gii.models.LoginForm');
+
+		// collect user input data
+		if(isset($_POST['LoginForm']))
+		{
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login())
+				$this->redirect(array('index'));
+		}
+		// display the login form
+		$this->render('login',array('model'=>$model));
+	}
+
+	/**
+	 * Logs out the current user and redirect to homepage.
+	 */
+	public function actionLogout()
+	{
+		Yii::app()->user->logout(false);
+		$this->redirect(array('index'));
+	}
+}

@@ -1,316 +1,646 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-rk2EKNaDGfB34IxHGmsN2U9hpw3TBR6q
+<?php
+/**
+* Smarty Internal Plugin Configfilelexer
+*
+* This is the lexer to break the config file source into tokens 
+* @package Smarty
+* @subpackage Config
+* @author Uwe Tews 
+*/
+/**
+* Smarty Internal Plugin Configfilelexer
+*/
+class Smarty_Internal_Configfilelexer
+{
+
+    public $data;
+    public $counter;
+    public $token;
+    public $value;
+    public $node;
+    public $line;
+    private $state = 1;
+    public $yyTraceFILE;
+    public $yyTracePrompt;
+    public $state_name = array (1 => 'START', 2 => 'VALUE', 3 => 'NAKED_STRING_VALUE', 4 => 'COMMENT', 5 => 'SECTION', 6 => 'TRIPPLE');
+    public $smarty_token_names = array (		// Text for parser error messages
+   				);
+    				
+    				
+    function __construct($data, $smarty)
+    {
+        // set instance object
+        self::instance($this); 
+        $this->data = $data . "\n"; //now all lines are \n-terminated
+        $this->counter = 0;
+        $this->line = 1;
+        $this->smarty = $smarty; 
+        $this->mbstring_overload = ini_get('mbstring.func_overload') & 2;
+    }
+    public static function &instance($new_instance = null)
+    {
+        static $instance = null;
+        if (isset($new_instance) && is_object($new_instance))
+            $instance = $new_instance;
+        return $instance;
+    } 
+    public function PrintTrace()
+    {
+        $this->yyTraceFILE = fopen('php://output', 'w');
+        $this->yyTracePrompt = '<br>';
+    }
+
+
+
+    private $_yy_state = 1;
+    private $_yy_stack = array();
+
+    public function yylex()
+    {
+        return $this->{'yylex' . $this->_yy_state}();
+    }
+
+    public function yypushstate($state)
+    {
+        if ($this->yyTraceFILE) {
+             fprintf($this->yyTraceFILE, "%sState push %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
+        }
+        array_push($this->_yy_stack, $this->_yy_state);
+        $this->_yy_state = $state;
+        if ($this->yyTraceFILE) {
+             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
+        }
+    }
+
+    public function yypopstate()
+    {
+       if ($this->yyTraceFILE) {
+             fprintf($this->yyTraceFILE, "%sState pop %s\n", $this->yyTracePrompt,  isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
+        }
+       $this->_yy_state = array_pop($this->_yy_stack);
+        if ($this->yyTraceFILE) {
+             fprintf($this->yyTraceFILE, "%snew State %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
+        }
+
+    }
+
+    public function yybegin($state)
+    {
+       $this->_yy_state = $state;
+        if ($this->yyTraceFILE) {
+             fprintf($this->yyTraceFILE, "%sState set %s\n", $this->yyTracePrompt, isset($this->state_name[$this->_yy_state]) ? $this->state_name[$this->_yy_state] : $this->_yy_state);
+        }
+    }
+
+
+
+
+    public function yylex1()
+    {
+        $tokenMap = array (
+              1 => 0,
+              2 => 0,
+              3 => 0,
+              4 => 0,
+              5 => 0,
+              6 => 0,
+              7 => 0,
+              8 => 0,
+            );
+        if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+            return false; // end of input
+        }
+        $yy_global_pattern = "/\G(#|;)|\G(\\[)|\G(\\])|\G(=)|\G([ \t\r]+)|\G(\n)|\G([0-9]*[a-zA-Z_]\\w*)|\G([\S\s])/iS";
+
+        do {
+            if ($this->mbstring_overload ? preg_match($yy_global_pattern, mb_substr($this->data, $this->counter,2000000000,'latin1'), $yymatches) : preg_match($yy_global_pattern,$this->data, $yymatches, null, $this->counter)) {
+                $yysubmatches = $yymatches;
+                $yymatches = array_filter($yymatches, 'strlen'); // remove empty sub-patterns
+                if (!count($yymatches)) {
+                    throw new Exception('Error: lexing failed because a rule matched' .
+                        ' an empty string.  Input "' . substr($this->data,
+                        $this->counter, 5) . '... state START');
+                }
+                next($yymatches); // skip global match
+                $this->token = key($yymatches); // token number
+                if ($tokenMap[$this->token]) {
+                    // extract sub-patterns for passing to lex function
+                    $yysubmatches = array_slice($yysubmatches, $this->token + 1,
+                        $tokenMap[$this->token]);
+                } else {
+                    $yysubmatches = array();
+                }
+                $this->value = current($yymatches); // token value
+                $r = $this->{'yy_r1_' . $this->token}($yysubmatches);
+                if ($r === null) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    // accept this token
+                    return true;
+                } elseif ($r === true) {
+                    // we have changed state
+                    // process this token in the new state
+                    return $this->yylex();
+                } elseif ($r === false) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+                        return false; // end of input
+                    }
+                    // skip this token
+                    continue;
+                }            } else {
+                throw new Exception('Unexpected input at line' . $this->line .
+                    ': ' . $this->data[$this->counter]);
+            }
+            break;
+        } while (true);
+
+    } // end function
+
+
+    const START = 1;
+    function yy_r1_1($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_COMMENTSTART;
+    $this->yypushstate(self::COMMENT);
+    }
+    function yy_r1_2($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_OPENB;
+    $this->yypushstate(self::SECTION);
+    }
+    function yy_r1_3($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_CLOSEB;
+    }
+    function yy_r1_4($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_EQUAL;
+    $this->yypushstate(self::VALUE);
+    }
+    function yy_r1_5($yy_subpatterns)
+    {
+
+    return false;
+    }
+    function yy_r1_6($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_NEWLINE;
+    }
+    function yy_r1_7($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_ID;
+    }
+    function yy_r1_8($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_OTHER;
+    }
+
+
+
+    public function yylex2()
+    {
+        $tokenMap = array (
+              1 => 0,
+              2 => 0,
+              3 => 0,
+              4 => 0,
+              5 => 0,
+              6 => 0,
+              7 => 0,
+              8 => 0,
+              9 => 0,
+            );
+        if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+            return false; // end of input
+        }
+        $yy_global_pattern = "/\G([ \t\r]+)|\G(\\d+\\.\\d+(?=[ \t\r]*[\n#;]))|\G(\\d+(?=[ \t\r]*[\n#;]))|\G(\"\"\")|\G('[^'\\\\]*(?:\\\\.[^'\\\\]*)*'(?=[ \t\r]*[\n#;]))|\G(\"[^\"\\\\]*(?:\\\\.[^\"\\\\]*)*\"(?=[ \t\r]*[\n#;]))|\G([a-zA-Z]+(?=[ \t\r]*[\n#;]))|\G([^\n]+?(?=[ \t\r]*\n))|\G(\n)/iS";
+
+        do {
+            if ($this->mbstring_overload ? preg_match($yy_global_pattern, mb_substr($this->data, $this->counter,2000000000,'latin1'), $yymatches) : preg_match($yy_global_pattern,$this->data, $yymatches, null, $this->counter)) {
+                $yysubmatches = $yymatches;
+                $yymatches = array_filter($yymatches, 'strlen'); // remove empty sub-patterns
+                if (!count($yymatches)) {
+                    throw new Exception('Error: lexing failed because a rule matched' .
+                        ' an empty string.  Input "' . substr($this->data,
+                        $this->counter, 5) . '... state VALUE');
+                }
+                next($yymatches); // skip global match
+                $this->token = key($yymatches); // token number
+                if ($tokenMap[$this->token]) {
+                    // extract sub-patterns for passing to lex function
+                    $yysubmatches = array_slice($yysubmatches, $this->token + 1,
+                        $tokenMap[$this->token]);
+                } else {
+                    $yysubmatches = array();
+                }
+                $this->value = current($yymatches); // token value
+                $r = $this->{'yy_r2_' . $this->token}($yysubmatches);
+                if ($r === null) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    // accept this token
+                    return true;
+                } elseif ($r === true) {
+                    // we have changed state
+                    // process this token in the new state
+                    return $this->yylex();
+                } elseif ($r === false) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+                        return false; // end of input
+                    }
+                    // skip this token
+                    continue;
+                }            } else {
+                throw new Exception('Unexpected input at line' . $this->line .
+                    ': ' . $this->data[$this->counter]);
+            }
+            break;
+        } while (true);
+
+    } // end function
+
+
+    const VALUE = 2;
+    function yy_r2_1($yy_subpatterns)
+    {
+
+    return false;
+    }
+    function yy_r2_2($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_FLOAT;
+    $this->yypopstate();
+    }
+    function yy_r2_3($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_INT;
+    $this->yypopstate();
+    }
+    function yy_r2_4($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_TRIPPLE_QUOTES;
+    $this->yypushstate(self::TRIPPLE);
+    }
+    function yy_r2_5($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_SINGLE_QUOTED_STRING;
+    $this->yypopstate();
+    }
+    function yy_r2_6($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_DOUBLE_QUOTED_STRING;
+    $this->yypopstate();
+    }
+    function yy_r2_7($yy_subpatterns)
+    {
+
+    if (!$this->smarty->config_booleanize || !in_array(strtolower($this->value), Array("true", "false", "on", "off", "yes", "no")) ) {
+        $this->yypopstate();
+        $this->yypushstate(self::NAKED_STRING_VALUE);
+        return true; //reprocess in new state
+    } else {
+        $this->token = Smarty_Internal_Configfileparser::TPC_BOOL;
+        $this->yypopstate();
+    }
+    }
+    function yy_r2_8($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_NAKED_STRING;
+    $this->yypopstate();
+    }
+    function yy_r2_9($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_NAKED_STRING;
+    $this->value = "";
+    $this->yypopstate();
+    }
+
+
+
+    public function yylex3()
+    {
+        $tokenMap = array (
+              1 => 0,
+            );
+        if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+            return false; // end of input
+        }
+        $yy_global_pattern = "/\G([^\n]+?(?=[ \t\r]*\n))/iS";
+
+        do {
+            if ($this->mbstring_overload ? preg_match($yy_global_pattern, mb_substr($this->data, $this->counter,2000000000,'latin1'), $yymatches) : preg_match($yy_global_pattern,$this->data, $yymatches, null, $this->counter)) {
+                $yysubmatches = $yymatches;
+                $yymatches = array_filter($yymatches, 'strlen'); // remove empty sub-patterns
+                if (!count($yymatches)) {
+                    throw new Exception('Error: lexing failed because a rule matched' .
+                        ' an empty string.  Input "' . substr($this->data,
+                        $this->counter, 5) . '... state NAKED_STRING_VALUE');
+                }
+                next($yymatches); // skip global match
+                $this->token = key($yymatches); // token number
+                if ($tokenMap[$this->token]) {
+                    // extract sub-patterns for passing to lex function
+                    $yysubmatches = array_slice($yysubmatches, $this->token + 1,
+                        $tokenMap[$this->token]);
+                } else {
+                    $yysubmatches = array();
+                }
+                $this->value = current($yymatches); // token value
+                $r = $this->{'yy_r3_' . $this->token}($yysubmatches);
+                if ($r === null) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    // accept this token
+                    return true;
+                } elseif ($r === true) {
+                    // we have changed state
+                    // process this token in the new state
+                    return $this->yylex();
+                } elseif ($r === false) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+                        return false; // end of input
+                    }
+                    // skip this token
+                    continue;
+                }            } else {
+                throw new Exception('Unexpected input at line' . $this->line .
+                    ': ' . $this->data[$this->counter]);
+            }
+            break;
+        } while (true);
+
+    } // end function
+
+
+    const NAKED_STRING_VALUE = 3;
+    function yy_r3_1($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_NAKED_STRING;
+    $this->yypopstate();
+    }
+
+
+
+    public function yylex4()
+    {
+        $tokenMap = array (
+              1 => 0,
+              2 => 0,
+              3 => 0,
+            );
+        if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+            return false; // end of input
+        }
+        $yy_global_pattern = "/\G([ \t\r]+)|\G([^\n]+?(?=[ \t\r]*\n))|\G(\n)/iS";
+
+        do {
+            if ($this->mbstring_overload ? preg_match($yy_global_pattern, mb_substr($this->data, $this->counter,2000000000,'latin1'), $yymatches) : preg_match($yy_global_pattern,$this->data, $yymatches, null, $this->counter)) {
+                $yysubmatches = $yymatches;
+                $yymatches = array_filter($yymatches, 'strlen'); // remove empty sub-patterns
+                if (!count($yymatches)) {
+                    throw new Exception('Error: lexing failed because a rule matched' .
+                        ' an empty string.  Input "' . substr($this->data,
+                        $this->counter, 5) . '... state COMMENT');
+                }
+                next($yymatches); // skip global match
+                $this->token = key($yymatches); // token number
+                if ($tokenMap[$this->token]) {
+                    // extract sub-patterns for passing to lex function
+                    $yysubmatches = array_slice($yysubmatches, $this->token + 1,
+                        $tokenMap[$this->token]);
+                } else {
+                    $yysubmatches = array();
+                }
+                $this->value = current($yymatches); // token value
+                $r = $this->{'yy_r4_' . $this->token}($yysubmatches);
+                if ($r === null) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    // accept this token
+                    return true;
+                } elseif ($r === true) {
+                    // we have changed state
+                    // process this token in the new state
+                    return $this->yylex();
+                } elseif ($r === false) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+                        return false; // end of input
+                    }
+                    // skip this token
+                    continue;
+                }            } else {
+                throw new Exception('Unexpected input at line' . $this->line .
+                    ': ' . $this->data[$this->counter]);
+            }
+            break;
+        } while (true);
+
+    } // end function
+
+
+    const COMMENT = 4;
+    function yy_r4_1($yy_subpatterns)
+    {
+
+    return false;
+    }
+    function yy_r4_2($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_NAKED_STRING;
+    }
+    function yy_r4_3($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_NEWLINE;
+    $this->yypopstate();
+    }
+
+
+
+    public function yylex5()
+    {
+        $tokenMap = array (
+              1 => 0,
+              2 => 0,
+            );
+        if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+            return false; // end of input
+        }
+        $yy_global_pattern = "/\G(\\.)|\G(.*?(?=[\.=[\]\r\n]))/iS";
+
+        do {
+            if ($this->mbstring_overload ? preg_match($yy_global_pattern, mb_substr($this->data, $this->counter,2000000000,'latin1'), $yymatches) : preg_match($yy_global_pattern,$this->data, $yymatches, null, $this->counter)) {
+                $yysubmatches = $yymatches;
+                $yymatches = array_filter($yymatches, 'strlen'); // remove empty sub-patterns
+                if (!count($yymatches)) {
+                    throw new Exception('Error: lexing failed because a rule matched' .
+                        ' an empty string.  Input "' . substr($this->data,
+                        $this->counter, 5) . '... state SECTION');
+                }
+                next($yymatches); // skip global match
+                $this->token = key($yymatches); // token number
+                if ($tokenMap[$this->token]) {
+                    // extract sub-patterns for passing to lex function
+                    $yysubmatches = array_slice($yysubmatches, $this->token + 1,
+                        $tokenMap[$this->token]);
+                } else {
+                    $yysubmatches = array();
+                }
+                $this->value = current($yymatches); // token value
+                $r = $this->{'yy_r5_' . $this->token}($yysubmatches);
+                if ($r === null) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    // accept this token
+                    return true;
+                } elseif ($r === true) {
+                    // we have changed state
+                    // process this token in the new state
+                    return $this->yylex();
+                } elseif ($r === false) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+                        return false; // end of input
+                    }
+                    // skip this token
+                    continue;
+                }            } else {
+                throw new Exception('Unexpected input at line' . $this->line .
+                    ': ' . $this->data[$this->counter]);
+            }
+            break;
+        } while (true);
+
+    } // end function
+
+
+    const SECTION = 5;
+    function yy_r5_1($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_DOT;
+    }
+    function yy_r5_2($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_SECTION;
+    $this->yypopstate();
+    }
+
+
+    public function yylex6()
+    {
+        $tokenMap = array (
+              1 => 0,
+              2 => 0,
+            );
+        if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+            return false; // end of input
+        }
+        $yy_global_pattern = "/\G(\"\"\"(?=[ \t\r]*[\n#;]))|\G([\S\s])/iS";
+
+        do {
+            if ($this->mbstring_overload ? preg_match($yy_global_pattern, mb_substr($this->data, $this->counter,2000000000,'latin1'), $yymatches) : preg_match($yy_global_pattern,$this->data, $yymatches, null, $this->counter)) {
+                $yysubmatches = $yymatches;
+                $yymatches = array_filter($yymatches, 'strlen'); // remove empty sub-patterns
+                if (!count($yymatches)) {
+                    throw new Exception('Error: lexing failed because a rule matched' .
+                        ' an empty string.  Input "' . substr($this->data,
+                        $this->counter, 5) . '... state TRIPPLE');
+                }
+                next($yymatches); // skip global match
+                $this->token = key($yymatches); // token number
+                if ($tokenMap[$this->token]) {
+                    // extract sub-patterns for passing to lex function
+                    $yysubmatches = array_slice($yysubmatches, $this->token + 1,
+                        $tokenMap[$this->token]);
+                } else {
+                    $yysubmatches = array();
+                }
+                $this->value = current($yymatches); // token value
+                $r = $this->{'yy_r6_' . $this->token}($yysubmatches);
+                if ($r === null) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    // accept this token
+                    return true;
+                } elseif ($r === true) {
+                    // we have changed state
+                    // process this token in the new state
+                    return $this->yylex();
+                } elseif ($r === false) {
+                    $this->counter += ($this->mbstring_overload ? mb_strlen($this->value,'latin1'): strlen($this->value));
+                    $this->line += substr_count($this->value, "\n");
+                    if ($this->counter >= ($this->mbstring_overload ? mb_strlen($this->data,'latin1'): strlen($this->data))) {
+                        return false; // end of input
+                    }
+                    // skip this token
+                    continue;
+                }            } else {
+                throw new Exception('Unexpected input at line' . $this->line .
+                    ': ' . $this->data[$this->counter]);
+            }
+            break;
+        } while (true);
+
+    } // end function
+
+
+    const TRIPPLE = 6;
+    function yy_r6_1($yy_subpatterns)
+    {
+
+    $this->token = Smarty_Internal_Configfileparser::TPC_TRIPPLE_QUOTES_END;
+    $this->yypopstate();
+    $this->yypushstate(self::START);
+    }
+    function yy_r6_2($yy_subpatterns)
+    {
+
+  if ($this->mbstring_overload) {
+    $to = mb_strlen($this->data,'latin1');
+  } else {
+    $to = strlen($this->data);
+  }
+  preg_match("/\"\"\"[ \t\r]*[\n#;]/",$this->data,$match,PREG_OFFSET_CAPTURE,$this->counter);
+  if (isset($match[0][1])) {
+    $to = $match[0][1];
+  } else {
+    $this->compiler->trigger_template_error ("missing or misspelled literal closing tag");
+  }  
+  if ($this->mbstring_overload) {
+    $this->value = mb_substr($this->data,$this->counter,$to-$this->counter,'latin1');
+  } else {
+    $this->value = substr($this->data,$this->counter,$to-$this->counter);
+  }
+  $this->token = Smarty_Internal_Configfileparser::TPC_TRIPPLE_TEXT;
+    }
+
+
+}
+

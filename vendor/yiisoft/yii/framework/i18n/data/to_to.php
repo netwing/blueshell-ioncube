@@ -1,220 +1,692 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Locale data for 'to_TO'.
+ *
+ * This file is automatically generated by yiic cldr command.
+ *
+ * Copyright © 1991-2007 Unicode, Inc. All rights reserved.
+ * Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
+ *
+ * @copyright 2008-2013 Yii Software LLC (http://www.yiiframework.com/license/)
+ */
+return array (
+  'version' => '4123',
+  'numberSymbols' => 
+  array (
+    'alias' => '',
+    'decimal' => '.',
+    'group' => ',',
+    'list' => ';',
+    'percentSign' => '%',
+    'plusSign' => '+',
+    'minusSign' => '-',
+    'exponential' => 'E',
+    'perMille' => '‰',
+    'infinity' => '∞',
+    'nan' => 'NaN',
+  ),
+  'decimalFormat' => '#,##0.###',
+  'scientificFormat' => '#E0',
+  'percentFormat' => '#,##0%',
+  'currencyFormat' => '¤ #,##0.00',
+  'currencySymbols' => 
+  array (
+    'AUD' => 'AU$',
+    'BRL' => 'R$',
+    'CAD' => 'CA$',
+    'CNY' => 'CN¥',
+    'EUR' => '€',
+    'GBP' => '£',
+    'HKD' => 'HK$',
+    'ILS' => '₪',
+    'INR' => '₹',
+    'JPY' => 'JP¥',
+    'KRW' => '₩',
+    'MXN' => 'MX$',
+    'NZD' => 'NZ$',
+    'THB' => '฿',
+    'TWD' => 'NT$',
+    'USD' => 'US$',
+    'VND' => '₫',
+    'XAF' => 'FCFA',
+    'XCD' => 'EC$',
+    'XOF' => 'CFA',
+    'XPF' => 'CFPF',
+    'TOP' => 'T$',
+  ),
+  'monthNames' => 
+  array (
+    'wide' => 
+    array (
+      1 => 'Sānuali',
+      2 => 'Fēpueli',
+      3 => 'Maʻasi',
+      4 => 'ʻEpeleli',
+      5 => 'Mē',
+      6 => 'Sune',
+      7 => 'Siulai',
+      8 => 'ʻAokosi',
+      9 => 'Sepitema',
+      10 => 'ʻOkatopa',
+      11 => 'Nōvema',
+      12 => 'Tīsema',
+    ),
+    'abbreviated' => 
+    array (
+      1 => 'Sān',
+      2 => 'Fēp',
+      3 => 'Maʻa',
+      4 => 'ʻEpe',
+      5 => 'Mē',
+      6 => 'Sun',
+      7 => 'Siu',
+      8 => 'ʻAok',
+      9 => 'Sep',
+      10 => 'ʻOka',
+      11 => 'Nōv',
+      12 => 'Tīs',
+    ),
+  ),
+  'monthNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      1 => 'S',
+      2 => 'F',
+      3 => 'M',
+      4 => 'E',
+      5 => 'M',
+      6 => 'S',
+      7 => 'S',
+      8 => 'A',
+      9 => 'S',
+      10 => 'O',
+      11 => 'N',
+      12 => 'T',
+    ),
+    'abbreviated' => 
+    array (
+      9 => 'Sēp',
+    ),
+    'wide' => 
+    array (
+      9 => 'Sēpitema',
+    ),
+  ),
+  'weekDayNames' => 
+  array (
+    'wide' => 
+    array (
+      0 => 'Sāpate',
+      1 => 'Mōnite',
+      2 => 'Tūsite',
+      3 => 'Pulelulu',
+      4 => 'Tuʻapulelulu',
+      5 => 'Falaite',
+      6 => 'Tokonaki',
+    ),
+    'abbreviated' => 
+    array (
+      0 => 'Sāp',
+      1 => 'Mōn',
+      2 => 'Tūs',
+      3 => 'Pul',
+      4 => 'Tuʻa',
+      5 => 'Fal',
+      6 => 'Tok',
+    ),
+  ),
+  'weekDayNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      0 => 'S',
+      1 => 'M',
+      2 => 'T',
+      3 => 'P',
+      4 => 'T',
+      5 => 'F',
+      6 => 'T',
+    ),
+  ),
+  'eraNames' => 
+  array (
+    'abbreviated' => 
+    array (
+      0 => 'KM',
+      1 => 'TS',
+    ),
+    'wide' => 
+    array (
+      0 => 'ki muʻa',
+      1 => 'taʻu ʻo Sīsū',
+    ),
+    'narrow' => 
+    array (
+      0 => 'KāMā',
+      1 => 'TāSā',
+    ),
+  ),
+  'dateFormats' => 
+  array (
+    'full' => 'EEEE d MMMM y',
+    'long' => 'd MMMM y',
+    'medium' => 'd MMM y',
+    'short' => 'd/M/yy',
+  ),
+  'timeFormats' => 
+  array (
+    'full' => 'HH:mm:ss zzzz',
+    'long' => 'HH:mm:ss z',
+    'medium' => 'HH:mm:ss',
+    'short' => 'HH:mm',
+  ),
+  'dateTimeFormat' => '{1} {0}',
+  'amName' => 'AM',
+  'pmName' => 'PM',
+  'orientation' => 'ltr',
+  'languages' => 
+  array (
+    'ab' => 'lea fakaʻapakasi',
+    'af' => 'lea fakaʻafilikana',
+    'am' => 'lea ʻameliki',
+    'ar' => 'lea fakaʻalepea',
+    'art' => 'lea faʻu',
+    'as' => 'lea ʻasamisi',
+    'ay' => 'lea ʻaimala',
+    'az' => 'lea fakaʻasapaisani',
+    'be' => 'lea fakapelelusi',
+    'bg' => 'lea fakapokalia',
+    'bn' => 'lea fakapengila',
+    'bo' => 'lea fakataipeti',
+    'bs' => 'lea fakaposinia',
+    'ca' => 'lea fakaketalani',
+    'cs' => 'lea fakaseki',
+    'cy' => 'lea fakauēlesi',
+    'da' => 'lea fakatenimaʻake',
+    'de' => 'lea fakasiamane',
+    'de_at' => 'lea fakasiamani ʻaositulia',
+    'de_ch' => 'lea fakasiamani suitisālani ma\'olunga',
+    'dv' => 'lea tivehi',
+    'dz' => 'lea fakaputeni',
+    'efi' => 'lea ʻefiki',
+    'el' => 'lea fakakalisi',
+    'en' => 'lea fakapālangi',
+    'en_au' => 'lea fakapālangi ʻaositelēlia',
+    'en_ca' => 'lea fakapālangi kānata',
+    'en_gb' => 'lea fakapilitānia',
+    'en_us' => 'lea fakapālangi ʻamelika',
+    'eo' => 'lea fakaʻesipulanito',
+    'es' => 'lea fakasīpenisi',
+    'es_419' => 'lea fakasipēnisi lātini ʻamelika',
+    'es_es' => 'lea fakasipēnisi ʻaipilieni',
+    'et' => 'lea fakaʻesitōnia',
+    'eu' => 'lea pasiki',
+    'fa' => 'lea fakapēsia',
+    'fi' => 'lea fakafinilani',
+    'fil' => 'lea fakafilipaini',
+    'fj' => 'lea fakafisi',
+    'fr' => 'lea fakafalanisē',
+    'fr_ca' => 'lea fakafalanisē kānata',
+    'fr_ch' => 'lea fakafalanisē suitisālani',
+    'ga' => 'lea fakaʻaelani',
+    'gil' => 'lea fakakilipasi',
+    'gl' => 'lea kalisieni',
+    'gn' => 'lea kualani',
+    'grc' => 'lea fakakalisimuʻa',
+    'gsw' => 'lea fakasiamani suitisālani',
+    'gu' => 'lea kutalati',
+    'ha' => 'lea hausa',
+    'haw' => 'lea fakahauaiʻi',
+    'he' => 'lea fakahepelū',
+    'hi' => 'lea fakahinitī',
+    'hr' => 'lea fakakuloisia',
+    'ht' => 'lea fakahaiti',
+    'hu' => 'lea fakahangakalia',
+    'hy' => 'lea fakaʻaminiume',
+    'id' => 'lea fakaʻinitōnesia',
+    'ig' => 'lea ʻikipō',
+    'is' => 'lea fakaʻaisilani',
+    'it' => 'lea fakaʻītali',
+    'ja' => 'lea fakasiapani',
+    'jv' => 'lea fakasava',
+    'ka' => 'lea fakasōsia',
+    'kk' => 'lea fakakasakiteni',
+    'km' => 'lea fakakemipōtia',
+    'kn' => 'lea kanata',
+    'ko' => 'lea fakakōlea',
+    'ks' => 'lea fakakesimia',
+    'ku' => 'lea kētisi',
+    'ky' => 'lea fakakekisiteni',
+    'la' => 'lea fakalatina',
+    'lah' => 'lea lanita',
+    'lb' => 'lea fakalakisimipeki',
+    'ln' => 'lea lingikala',
+    'lo' => 'lea fakalau',
+    'lt' => 'lea fakalifiuenia',
+    'lv' => 'lea fakalativia',
+    'mg' => 'lea fakamatakasika',
+    'mh' => 'lea fakamāsolo',
+    'mi' => 'lea fakamauli',
+    'mis' => 'lea kehekehe',
+    'mk' => 'lea fakamasitōnia',
+    'ml' => 'lea fakaʻinitia malāialemi',
+    'mn' => 'lea fakamongokōlia',
+    'mr' => 'lea malati',
+    'ms' => 'lea fakamalei',
+    'mt' => 'lea fakamolota',
+    'mul' => 'lea tuifio',
+    'my' => 'lea fakapema',
+    'na' => 'lea fakanaulu',
+    'nb' => 'lea fakanouei pokimali',
+    'nd' => 'lea netepele fakatokelau',
+    'ne' => 'lea fakanepali',
+    'niu' => 'lea fakaniuē',
+    'nl' => 'lea fakahōlani',
+    'nl_be' => 'lea fakahōlani pelesiume',
+    'nn' => 'lea fakanouei nosiki',
+    'no' => 'lea fakanouē',
+    'nso' => 'lea sofo fakatokelau',
+    'ny' => 'lea sua',
+    'or' => 'lea fakaʻinitia ʻolāea',
+    'os' => 'lea ʻosetiki',
+    'pa' => 'lea punusapi',
+    'pl' => 'lea fakapōlani',
+    'ps' => 'lea pasito',
+    'pt' => 'lea fakapotukali',
+    'pt_br' => 'lea fakapotukali-palāsili',
+    'pt_pt' => 'lea fakapotukali ʻaipilieni',
+    'qu' => 'lea kuetisa',
+    'rap' => 'lea fakalapanui',
+    'rar' => 'lea fakalalotonga',
+    'rm' => 'lea laito-lomēnia',
+    'rn' => 'lea luaniti',
+    'ro' => 'lea fakalōmenia',
+    'ru' => 'lea fakalūsia',
+    'rw' => 'lea fakaluanita',
+    'sa' => 'lea sanisukuliti',
+    'sah' => 'lea saka',
+    'sco' => 'lea fakasikotilani',
+    'sd' => 'lea siniti',
+    'se' => 'lea sami fakatokelau',
+    'sg' => 'lea sango',
+    'sgn' => 'lea fakaʻilonga',
+    'sh' => 'lea sēpia-kuloisia',
+    'si' => 'lea fakaselengika',
+    'sk' => 'lea fakasolāvaki',
+    'sl' => 'lea fakasolovenia',
+    'sm' => 'lea fakahaʻamoa',
+    'sn' => 'lea sona',
+    'so' => 'lea fakasomali',
+    'sq' => 'lea fakaʻalapēnia',
+    'sr' => 'lea fakasēpia',
+    'ss' => 'lea fakasuasilani',
+    'st' => 'lea sofo fakatonga',
+    'su' => 'lea sanita',
+    'sv' => 'lea fakasueteni',
+    'sw' => 'lea suahile',
+    'swb' => 'lea fakakomolo',
+    'ta' => 'lea fakatemole',
+    'te' => 'lea fakaʻinitia teluku',
+    'tet' => 'lea fakatētamu',
+    'tg' => 'lea fakatetiki',
+    'th' => 'lea fakataileni',
+    'ti' => 'lea fakatikilina',
+    'tk' => 'lea tekimeni',
+    'tkl' => 'lea fakatokelau',
+    'tl' => 'lea fakatekaloka',
+    'tn' => 'lea suana',
+    'to' => 'lea fakatonga',
+    'tpi' => 'lea toki pisini',
+    'tr' => 'lea fakatoake',
+    'ts' => 'lea songa',
+    'tvl' => 'lea fakatūvalu',
+    'ty' => 'lea fakatahiti',
+    'ug' => 'lea fakaʻuika',
+    'uk' => 'lea fakaʻiukālia',
+    'und' => 'lea taʻeʻiloa',
+    'ur' => 'lea fakaʻetiu',
+    'uz' => 'lea fakaʻusipeki',
+    've' => 'lea fakavenitā',
+    'vi' => 'lea fakavietinemi',
+    'wo' => 'lea fakaʻuolofo',
+    'xh' => 'lea fakatōsa',
+    'yo' => 'lea fakaʻiōlupa',
+    'yue' => 'lea kenitēnisi',
+    'zh' => 'lea fakasiaina',
+    'zh_hans' => 'lea fakasiaina fakangofua',
+    'zh_hant' => 'lea fakasiaina tukufakaholo',
+    'zu' => 'lea fakasulu',
+    'zxx' => 'ʻikai ha lea',
+  ),
+  'scripts' => 
+  array (
+    'arab' => 'tohinima fakaʻalepea',
+    'armn' => 'tohinima fakaʻamīnia',
+    'beng' => 'tohinima fakapengila',
+    'bopo' => 'tohinima ongo fakasiaina',
+    'brai' => 'tohinima laukonga ki he kui',
+    'cyrl' => 'tohinima fakalūsia',
+    'deva' => 'tohinima fakaʻinitia tēvanakali',
+    'ethi' => 'tohinima fakaʻitiopea',
+    'geor' => 'tohinima fakasōsia',
+    'grek' => 'tohinima fakakalisi',
+    'gujr' => 'tohinima fakaʻinitia kutalati',
+    'guru' => 'tohinima fakapūnusapi',
+    'hang' => 'tohinima fakakōlea hāngūlu',
+    'hani' => 'tohinima fakasiaina',
+    'hans' => 'tohinima fakasiaina fakafaingofua',
+    'hant' => 'tohinima tukufakaholo fakasiaina',
+    'hebr' => 'tohinima fakahepelū',
+    'hira' => 'tohinima fakasiapani hilakana',
+    'jpan' => 'tohinima fakasiapani',
+    'kana' => 'tohinima fakasiapani katakana',
+    'khmr' => 'tohinima fakakemipōtia',
+    'knda' => 'tohinima fakaʻinitia kānatā',
+    'kore' => 'tohinima fakakōlea',
+    'laoo' => 'tohinima fakalau',
+    'latn' => 'tohinima fakalatina',
+    'mlym' => 'tohinima fakaʻinitia malāialemi',
+    'mong' => 'tohinima fakamongokōlia',
+    'mymr' => 'tohinima fakapema',
+    'orya' => 'tohinima fakaʻinitia ʻolāea',
+    'sinh' => 'tohinima fakaselengika',
+    'taml' => 'tohinima fakatemole',
+    'telu' => 'tohinima fakaʻinitia teluku',
+    'thaa' => 'tohinima fakatāna',
+    'thai' => 'tohinima fakataileni',
+    'tibt' => 'tohinima fakataipeti',
+    'zsym' => 'tohinima fakaʻilonga',
+    'zxxx' => 'tohinima taʻetohitohiʻi',
+    'zyyy' => 'tohinima fakatatau',
+    'zzzz' => 'tohinima taʻeʻiloa',
+  ),
+  'territories' => 
+  array (
+    '001' => 'Māmani',
+    '002' => 'ʻAfilika',
+    '003' => 'ʻAmelika tokelau',
+    '005' => 'ʻAmelika tonga',
+    '009' => 'ʻOsenia',
+    '011' => 'ʻAfilika hihifo',
+    '013' => 'ʻAmelika lotoloto',
+    '014' => 'ʻAfilika hahake',
+    '015' => 'ʻAfilika tokelau',
+    '017' => 'ʻAfilika lotoloto',
+    '018' => 'ʻAfilika fakatonga',
+    '019' => 'Ongo ʻAmelika',
+    '021' => 'ʻAmelika fakatokelau',
+    '029' => 'Kalipiane',
+    '030' => 'ʻĒsia hahake',
+    '034' => 'ʻĒsia fakatonga',
+    '035' => 'ʻĒsia tongahahake',
+    '039' => 'ʻIulope fakatonga',
+    '053' => 'ʻAositelēlia mo Nuʻusila',
+    '054' => 'Melanisia',
+    '057' => 'Potu fonua Mikolonisia',
+    '061' => 'Polinīsia',
+    142 => 'ʻĒsia',
+    143 => 'ʻĒsia lotoloto',
+    145 => 'ʻĒsia hihifo',
+    150 => 'ʻIulope',
+    151 => 'ʻIulope hahake',
+    154 => 'ʻIulope tokelau',
+    155 => 'ʻIulope hihifo',
+    419 => 'ʻAmelika fakalatina',
+    'ac' => 'Motu ʻAsenisini',
+    'ad' => 'ʻEnitola',
+    'ae' => 'ʻAlepea Fakatahataha',
+    'af' => 'ʻAfikānisitani',
+    'ag' => 'Anitikua mo Palaputa',
+    'ai' => 'Anikuila',
+    'al' => 'ʻAlipania',
+    'am' => 'ʻĀminia',
+    'an' => 'Netaleni ʻEnitilisi',
+    'ao' => 'ʻEnikola',
+    'aq' => 'ʻAnitātika',
+    'ar' => 'ʻAsenitina',
+    'as' => 'Haʻamoa ʻAmelika',
+    'at' => 'ʻAositulia',
+    'au' => 'ʻAositelēlia',
+    'aw' => 'ʻAlupa',
+    'ax' => 'ʻOtumotu ʻAlani',
+    'az' => 'ʻAsapaisani',
+    'ba' => 'Posinia mo Hesikōvinia',
+    'bb' => 'Pāpeitosi',
+    'bd' => 'Pengilātesi',
+    'be' => 'Pelesiume',
+    'bf' => 'Pekano Faso',
+    'bg' => 'Pokalia',
+    'bh' => 'Paleini',
+    'bi' => 'Pelaniti',
+    'bj' => 'Penini',
+    'bl' => 'Seini Pafelemi',
+    'bm' => 'Pēmuta',
+    'bn' => 'Pulunei',
+    'bo' => 'Polīvia',
+    'br' => 'Palāsili',
+    'bs' => 'Pahama',
+    'bt' => 'Pūtani',
+    'bv' => 'Motu Puveti',
+    'bw' => 'Potisiuana',
+    'by' => 'Pelelusi',
+    'bz' => 'Pelise',
+    'ca' => 'Kānata',
+    'cc' => 'ʻOtumotu Koko',
+    'cd' => 'Kongo [DRC]',
+    'cf' => 'Lipapilika ʻAfilika Lotoloto',
+    'cg' => 'Lipapilika Kongo',
+    'ch' => 'Suisilani',
+    'ci' => 'Matafonua ʻAivili',
+    'ck' => 'ʻOtumotu Kuki',
+    'cl' => 'Sili',
+    'cm' => 'Kemaluni',
+    'cn' => 'Siaina',
+    'co' => 'Kolomipia',
+    'cp' => 'Motu Kilipatoni',
+    'cr' => 'Kosita Lika',
+    'cu' => 'Kiupa',
+    'cv' => 'Muiʻi Veti',
+    'cx' => 'Motu Kilisimasi',
+    'cy' => 'Saipalesi',
+    'cz' => 'Lipapilika Seki',
+    'de' => 'Siamane',
+    'dg' => 'Tieko Kāsia',
+    'dj' => 'Siputi',
+    'dk' => 'Tenimaʻake',
+    'dm' => 'Tominika',
+    'do' => 'Lipapilika Tominika',
+    'dz' => 'ʻAisilia',
+    'ea' => 'Siuta mo Melila',
+    'ec' => 'ʻEkuetoa',
+    'ee' => 'ʻEsitōnia',
+    'eg' => 'ʻIsipite',
+    'eh' => 'Sahala fakahihifo',
+    'er' => 'ʻElitulia',
+    'es' => 'Sipeini',
+    'et' => 'ʻItiōpea',
+    'eu' => 'ʻIulope fakatahataha',
+    'fi' => 'Finilani',
+    'fj' => 'Fisi',
+    'fk' => 'ʻOtumotu Fokuleni',
+    'fm' => 'Mikolonisia',
+    'fo' => 'ʻOtumotu Felou',
+    'fr' => 'Falanisē',
+    'ga' => 'Kaponi',
+    'gb' => 'Pilitānia',
+    'gd' => 'Kelenatā',
+    'ge' => 'Sōsia',
+    'gf' => 'Falanise Kuiana',
+    'gg' => 'Kuenisī',
+    'gh' => 'Kana',
+    'gi' => 'Sipalālitā',
+    'gl' => 'Kulinileni',
+    'gm' => 'Kamipia',
+    'gn' => 'Kini',
+    'gp' => 'Kuatalupe',
+    'gq' => 'ʻEkueta Kini',
+    'gr' => 'Kalisi',
+    'gs' => 'ʻOtumotu Siosia-tonga mo Saniuisi-tonga',
+    'gt' => 'Kuatamala',
+    'gu' => 'Kuamu',
+    'gw' => 'Kini-Pisau',
+    'gy' => 'Kuiana',
+    'hk' => 'Hongi Kongi',
+    'hm' => 'ʻOtumotu Heati mo Makitonali',
+    'hn' => 'Honitulasi',
+    'hr' => 'Kuloisia',
+    'ht' => 'Haiti',
+    'hu' => 'Hangakalia',
+    'ic' => 'ʻOtumotu Kaneli',
+    'id' => 'ʻInitonēsia',
+    'ie' => 'ʻAealani',
+    'il' => 'ʻIsileli',
+    'im' => 'Motu Mani',
+    'in' => 'ʻInitia',
+    'io' => 'Potu fonua moana ʻInitia fakapilitānia',
+    'iq' => 'ʻIulaaki',
+    'ir' => 'ʻIulaani',
+    'is' => 'ʻAisilani',
+    'it' => 'ʻĪtali',
+    'je' => 'Selusī',
+    'jm' => 'Samaika',
+    'jo' => 'Soatane',
+    'jp' => 'Siapani',
+    'ke' => 'Kenia',
+    'kg' => 'Kekisiteni',
+    'kh' => 'Kemipōtia',
+    'ki' => 'Kilipasi',
+    'km' => 'Komolosi',
+    'kn' => 'Seini Kitisi mo Nevisi',
+    'kp' => 'Kōlea tokelau',
+    'kr' => 'Kōlea tonga',
+    'kw' => 'Kueiti',
+    'ky' => 'ʻOtumotu Keimeni',
+    'kz' => 'Kasakiteni',
+    'la' => 'Lau',
+    'lb' => 'Lepanoni',
+    'lc' => 'Seini Lusia',
+    'li' => 'Lekitenisaini',
+    'lk' => 'Silangikā',
+    'lr' => 'Laipelia',
+    'ls' => 'Lesoto',
+    'lt' => 'Lifiuenia',
+    'lu' => 'Lakisimipeki',
+    'lv' => 'Lativia',
+    'ly' => 'Lipia',
+    'ma' => 'Molako',
+    'mc' => 'Manako',
+    'md' => 'Molotova',
+    'me' => 'Monitenikalo',
+    'mf' => 'Seini Matini',
+    'mg' => 'Matakasika',
+    'mh' => 'ʻOtumotu Māsolo',
+    'mk' => 'Masitōnia [FYROM]',
+    'ml' => 'Māli',
+    'mm' => 'Pema',
+    'mn' => 'Mongokōlia',
+    'mo' => 'Makau',
+    'mp' => 'ʻOtumotu Maliana tokelau',
+    'mq' => 'Mateniki',
+    'mr' => 'Maulitenia',
+    'ms' => 'Moʻungaselati',
+    'mt' => 'Malita',
+    'mu' => 'Maulitiusi',
+    'mv' => 'Malativisi',
+    'mw' => 'Malaui',
+    'mx' => 'Mekisikou',
+    'my' => 'Malēsia',
+    'mz' => 'Mosenipiki',
+    'na' => 'Namipia',
+    'nc' => 'Niu Kaletōnia',
+    'ne' => 'Naisia',
+    'nf' => 'Motu Nōfoliki',
+    'ng' => 'Naisilia',
+    'ni' => 'Nikalakua',
+    'nl' => 'Hōlani',
+    'no' => 'Noauē',
+    'np' => 'Nepali',
+    'nr' => 'Naulu',
+    'nu' => 'Niuē',
+    'nz' => 'Nuʻusila',
+    'om' => 'ʻOmani',
+    'pa' => 'Panamā',
+    'pe' => 'Pelū',
+    'pf' => 'Polinisia fakafalanisē',
+    'pg' => 'Papuaniukini',
+    'ph' => 'Filipaini',
+    'pk' => 'Pākisitani',
+    'pl' => 'Poleni',
+    'pm' => 'Seini Piea mo Mikaloni',
+    'pn' => 'ʻOtumotu Pitikeni',
+    'pr' => 'Pueto Liko',
+    'ps' => 'Potu Palesitaine',
+    'pt' => 'Potukali',
+    'pw' => 'Palau',
+    'py' => 'Palakuei',
+    'qa' => 'Katā',
+    'qo' => 'ʻOsenia Mamaʻo',
+    're' => 'Liʻiunioni',
+    'ro' => 'Lomēnia',
+    'rs' => 'Sēpia',
+    'ru' => 'Lūsia',
+    'rw' => 'Luanitā',
+    'sa' => 'Saute ʻAlepea',
+    'sb' => 'ʻOtumotu Solomone',
+    'sc' => 'ʻOtumotu Seiseli',
+    'sd' => 'Sūteni',
+    'se' => 'Suēteni',
+    'sg' => 'Singapoa',
+    'sh' => 'Seini Helena',
+    'si' => 'Silōvenia',
+    'sj' => 'Sivolopaati mo Seni Meini',
+    'sk' => 'Silōvakia',
+    'sl' => 'Siela Lione',
+    'sm' => 'Seni Malino',
+    'sn' => 'Senikalo',
+    'so' => 'Sōmalia',
+    'sr' => 'Sulinami',
+    'st' => 'Sao Tome mo Pilinisipe',
+    'sv' => 'ʻEle Salavatoa',
+    'sy' => 'Sīlia',
+    'sz' => 'Suasileni',
+    'ta' => 'Tulisiteni ta Kunuha',
+    'tc' => 'ʻOtumotu Teki mo Keikosi',
+    'td' => 'Seti',
+    'tf' => 'Potu fonua tonga fakafalanisē',
+    'tg' => 'Toko',
+    'th' => 'Taileni',
+    'tj' => 'Tasikitani',
+    'tk' => 'Tokelau',
+    'tl' => 'Timoa Hahake',
+    'tm' => 'Tekimenisiteni',
+    'tn' => 'Tunīsia',
+    'to' => 'Tonga',
+    'tr' => 'Toake',
+    'tt' => 'Tilinitati mo Topako',
+    'tv' => 'Tūvalu',
+    'tw' => 'Taiuani',
+    'tz' => 'Tenisania',
+    'ua' => 'ʻIukuleini',
+    'ug' => 'ʻIukanitā',
+    'um' => 'ʻOtumotu siʻi ʻo ʻAmelika',
+    'us' => 'Puleʻanga fakatahataha ʻAmelika',
+    'uy' => 'ʻUlukuei',
+    'uz' => 'ʻUsipekitēni',
+    'va' => 'Vatikani',
+    'vc' => 'Seini Viniseni mo Kulenatini',
+    've' => 'Venisuela',
+    'vg' => 'ʻOtumotu Vilikini fakapilitānia',
+    'vi' => 'ʻOtumotu Vilikini fakaʻamelika',
+    'vn' => 'Vietinemi',
+    'vu' => 'Vanuatu',
+    'wf' => 'ʻUvea mo Futuna',
+    'ws' => 'Haʻamoa',
+    'ye' => 'Iemeni',
+    'yt' => 'Meioti',
+    'za' => 'ʻAfilika tonga',
+    'zm' => 'Semipia',
+    'zw' => 'Simipapuei',
+    'zz' => 'Potu fonua taʻeʻiloa pe hala',
+  ),
+);

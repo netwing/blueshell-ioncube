@@ -1,64 +1,237 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPrQ3JK+VGxPWSaxORAlz+ile2GkCBLZUsf2iR1tJsm+CbrNFbZ63ydLSQj+ljLFP7eQhoyrD
-lxg3LpNSL45RyK0Gsp2nZO/W2R67ILIzCVH2sjG79WnO7DjAMmxSi1tbQnr7NqUgy4edXcw3ToSi
-/yc+CyavJjKryOeogEkkAb7dVZ/mqEwSi4Odn2SuFgwpYfQhDA8Xw3bRru/Bm5CClZ+mvWbav6lI
-u4ih1aM2kEWE17z/9JLAhr4euJltSAgiccy4GDnfT9HYMXihvw9HQOuDPTYx90ep30QoAXrOkgQK
-IL2k/fCaNioGORO9cWTqw7hNT3RzLnH9p7QJHKzMg30kgH5agTg3diMD2DYxfBfGkWg9+qEzb5Qa
-S9/AqS7Xrp9/IrRYm1KUMnMd9FJoN1dXXpNAA4A22q17DxrGWy48W366x6qdzHa1IkNulQmvysgP
-/CzjAGhbSE+mFMCnvVRwVjVlT+PKXxY91MDGkPdFTa0JWmKfB1EpSJaRErUX320SsllW07IJlo/P
-kORRHI/nbwnf/EoSctSsZMxXHywoGovG9FjirXa41cx4MKsTk8WfZjIUu58buhx4izrjz48IswkJ
-K1AvmgAiPtbEPHAPlTzrnR1hbKpjjMAcOn//xTsG8kqhV7ufBNG8hh8xMylKldzCr89AXOkuFZTZ
-FMqo2oqxXjTvr+6RqGkXAlvL71MtwfH2znOdW1Q2QTFAsi8nqJu3gv5ZgViR0J2FojEHiEb+4Yj9
-6W/7vdA86s8T+pERzTUnScyP3FwnRqx8SxS3MmtF/tK+s6YLd3u6hCJHT/4VLhygyTZZUTD2n/+A
-CC0FMI0z8V+Ju+aiHOHtbJfoApeQbNeqKZcbrKwzSKS+EL8NgBsrgCjNbEkcg/xKTOIfuvBFPIhZ
-LA8FT/1bDTwxAMxGIFO00Mc/lV4BPThSSu1BPkVvrChAxiJ0wT67dZK1wAqvYa/OT7jxGlfSDly8
-nyncz+M8U61J/SJ9gnrwW7Nj2aemCdIxFM4+VP2iaJfRDXOR5qRyUuJ0x0hzaJdMlHujJJaMYIGL
-mGB+4vn/iJ3LJd+YETFMGojqou4ORtsvbuBIwf9aX4TP9O9vjYddzRS9TJj+jHhsrGjlWIytJv1A
-FgzgOHuK5D3zvi1Y9dmb/DDrh53kDvqd1NVNhkk3vKyL0lu8SbCKJbssjcRaWojr88cKSS/6l023
-DWBmZBlIyxUBO68HJW6tkS4Bv1Mcb13EnxbrqcVaOApbUlpxYOblJ+Ti3KUsHf6OoWmC8bAgB+eC
-wAfSQm8dt62BhiHrqYPL/1kr/ER6pgT6DMHz/mGKd5VmLa+tDFQEueXAEBesSAnyNCy0Mf0/yXP1
-IVVjk/AXGYxHuCr7+G2MCvKcNgqCSwjDxGfylKBb1Y5kTGRMIrwobwVIL6A7hyje0mzTRamfi30z
-wT87vTqN0UgIJXVbqApODSyeJ8zd432TWQB/sMAQUtQINx7zFGqRu8atCMrC97cQ/gf924exGOBQ
-mQh9ABqb58gvjMRplYqJ0DWReWCTRY3TX0zOQuT7n25Mjz3Sybo75azdl5pWyb2xVhPpBsUESgV4
-0Fkl0BGOkdeQzXwE+HKzjNG+PxuldF91QzfRm/hfnXr5WPkPkoLjow1Pt5f8vv48e9IzV9b9cqN/
-ogAsFVQeAx+8qgmjMFJiApyZnNBjNRBj0v5p90K1lWQDZUzmaxgGrIl9taoo+S1s1ZbIm5pNuidc
-PjRK9zNxbYV4mqfSnADeXnuvL9auTV71dbEQ3w4Je9Xg0qKixHf7AhGrVu0HoWsmQh2nQC/8qiD+
-vujY7+7y9cEbWBouzE8T4l7GoEVlBYIq2C72DzHcRtNatKVdE+7BvcHbCbh8K1Ux+M0LodGfpC+U
-yxVOrqieL/03pTID6wy+r77zELgBEgnWPz/+ewZOpj4T3FjuNl10elRBYAr9uJjcRcq6/0Qw5Dqr
-eAPIrocjdHn4Z+JiFSlLjsofZtHkI6GWWf6FBFzJK9f9jtki6utns7279QINvBGgIrtne1fo90rr
-yU9wA/rpMrbKjXjMJuLHryoGbOJcxpMmGQxUDHWX08wn7UzsB6tR7oykZzv8PCsfjJ55vpDH45EC
-rpZ+lYNbXnjg+TaRaetyeIJ1sE9Nul0f+l+UthUZqVgprQQGkIpvwzZRSLW6UapjpHTjelWcw5Y9
-1sW5qPqCt0D8qaltqDZqGrj7p+3XpPyNW6IbDoWijT72MuULBXa392/hvem+qEDjzIh0R/w3QFKm
-2G+c9Cogvl1kiVTR1o9Z9G0+h05WnNeF4KZ6KubRnfv3MVAD+sWKvEM5tQgAUeAbNVNRqwqg4Qbw
-/mox++XK5Y3jecibG2KpFPSZ1LMalGOL1mUX80hXxKIwkz09KbCWGOiKGO5oI7gOVvPEbrhkLR6h
-ZSUu/3GKamSvhp5DrEm1SxClPte7txOqDNvsHAdtkQDh/WuVKwXQHutR6sm4J0/HnQjk6S8R3Q3D
-AreSwU2tKKKaHJFu3NfKc7XNmFRJPXBkgRPuWEmxA9CLxWNNSHzRi894pI5fSobm2+vBBLyrtrHM
-XEyK0PXVYk6aSAKdV2+tuKP0ho18El5preuEa7maijD7B7sZ62Gd4L0SCeC6uKATB5RjMPECjTUw
-2N51TyOAdbkgV3C5ULBtDGrDQqbwtzvElsYZpG6l9StvidarQ297PoR7HYFx0LrMzXCiOc06bBqC
-tCsHQB5YsEUqYnZx1JGmGk6sHGmS18VNJ8idTD4dXKmvp0P824tmC0TM7YqhzRDXGtNbDBN/oOen
-4nzrb3AUi1+2rdaEZ3Eg0aG4LDsehD/AVL/KsIkwyc5zV9cnW0yXUlUgWZkODYH1jUaeT162osNa
-66RPr60CpYDntwzchGyruVSUXnDh7OpOy0gv7z2ybO7F1e4/K4yA7SGJfENjwUWDkCMnvrAWHbGO
-+Og14MSJ/UGesHSvUkT2Rwm7PUrMo99+qRqvK7+e6rVhdFwxIQkpjpgV9eqIfDGH79rHzlGp3JM/
-/uJ2RV/1ZX9onxelJF/Infs8J7eVT0yi454BfCMzL8/kgair9XJapNVjGdohNxoUzrGh2/QvW2Z8
-iUga5aA4g1yBvi8DTV04TVjUuX+IrSV9cMYF/Cn8CeOjK/kFVcwMgp9nxVs/ND6u1LEpUhaEc+ML
-KQnl1gS70hQ3bvwUXV/W6kqOWDWbN/TneFFGrCOHZDJlBu7nRwu0mEueLWJ2M+P3I462OoC1uiK8
-oyd2ebKunqVay/0G7Ne9JykunGIFFZVv0Yg7dN/HSrfTB6mb1pCwdxYZYeokSzZ+ofyYOEvadtIf
-uC+bPwlOJVmbZ1gNW0CuRav2ZL6AM6VhBkBgfPNalXCld0dah2FgkJhCwvK5fwABJ44Rd6kQcFDK
-tl/fFn3u01s+K539HptRGFsGk9U6OyyfQlx6rlDtVmDsxTg3lE7kBcHEAvjv62ikAkqVzGNXqW3+
-CpSkjGMMNANzeSIpY93/6HoQwhNZLuaC8DF147xdvCMt12JEPaCVxB5ETT47NSGjpV0uPiDMd9sF
-mpUkNr+7Rnre/fO6hzrFV3Ucku/4I4RGNcRTS13PKcB5mzAQHfrXjBbhBMZevnG5XQv5LCeVeY/B
-qy0INFFy5cA64PPktvfUodk3N+8+ojsiGWw7q/bE2MnID2rxY5mV6m+KLIVJizUCKAnwzxitbAT3
-/hb7uN98is/z4GOO4MHyZI/pdAh4NUb21VqOzfhgWo+8AEoKXf1KG/HME72AX3Jey5JbpTgFSy+P
-NLv6qs2VrHaCIB8LnoFj7ZT0DeZ2eKsO9TDcfYu2BhpEhMPGJjUlU5gemHk3+VtS8XoKU4QYv6Hw
-+qqmynG/icCayU+Lsq+zFbqIP1GbehB4YIRrcLJ6S5/Hfe6ub2QeI6sfbUqGYeAm5H+cI1LIeHcz
-LS5s5hS8H5d65wXYDGRtw8T9jm3r1vA5xGnuj2wAWfGjyhgxAn1HsIxLgzQwiySs3IQPZUV/ouWC
-6ggiDDUYOrmQs6r1PipzRjd6rCGPnfy5v10e/IxuHzIuI8Y5r2ZvN33YuAjhTdF7ww3uKxqHNzHr
-fAuz7I5Y+bFvngrMHx0GPsgYWxGjkf6NOxC8BVRet9hIBxTeEJPBsLXmQTF/HlCMoaqEcOkO3OTa
-qWyz9XJl2CG6rvQ1c9DrpHS2tEbH10WsXxBrN3JiJ+wr9o5GfIDd+y0qUD2fP6Vabfv7YwC5BpMz
-fa5XasgcALYBM50d+DR/61ezlGWlW10jhLbqQeVjXuY8HiINkepQDiwmaIjulUmRAtp0sO3Vt9Te
-rf0vBU9/PI7CJSESSLDVHxrTEdOo6bm9P8h/cAXXThBHqGZbvrsP46yiuUeKICAbs3Ck8QkXzEoo
-5ttlWm5LPiq4c5Dsbg0lkWgZjLSkPkhSNLQZSpMiMDyaENI5DFrUOXhxn2GRKATqBiL7HZIOsn84
-Nj43NMK4M+Oau/jpYHL+NqT/bqblZuROKGR+64sthUqtCM82YV4Z77R4K4vY4l+v3ERPVsyhZAza
-p5izAhcySxFhlBMRGK61
+<?php
+/**
+ * Locale data for 'bem'.
+ *
+ * This file is automatically generated by yiic cldr command.
+ *
+ * Copyright © 1991-2007 Unicode, Inc. All rights reserved.
+ * Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
+ *
+ * @copyright 2008-2013 Yii Software LLC (http://www.yiiframework.com/license/)
+ */
+return array (
+  'version' => '6546',
+  'numberSymbols' => 
+  array (
+    'alias' => '',
+    'decimal' => '.',
+    'group' => ',',
+    'list' => ';',
+    'percentSign' => '%',
+    'plusSign' => '+',
+    'minusSign' => '-',
+    'exponential' => 'E',
+    'perMille' => '‰',
+    'infinity' => '∞',
+    'nan' => 'NaN',
+  ),
+  'decimalFormat' => '#,##0.###',
+  'scientificFormat' => '#E0',
+  'percentFormat' => '#,##0%',
+  'currencyFormat' => '¤#,##0.00;(¤#,##0.00)',
+  'currencySymbols' => 
+  array (
+    'AUD' => 'AU$',
+    'BRL' => 'R$',
+    'CAD' => 'CA$',
+    'CNY' => 'CN¥',
+    'EUR' => '€',
+    'GBP' => '£',
+    'HKD' => 'HK$',
+    'ILS' => '₪',
+    'INR' => '₹',
+    'JPY' => 'JP¥',
+    'KRW' => '₩',
+    'MXN' => 'MX$',
+    'NZD' => 'NZ$',
+    'THB' => '฿',
+    'TWD' => 'NT$',
+    'USD' => 'US$',
+    'VND' => '₫',
+    'XAF' => 'FCFA',
+    'XCD' => 'EC$',
+    'XOF' => 'CFA',
+    'XPF' => 'CFPF',
+    'ZMK' => 'ZK',
+  ),
+  'monthNames' => 
+  array (
+    'wide' => 
+    array (
+      1 => 'Januari',
+      2 => 'Februari',
+      3 => 'Machi',
+      4 => 'Epreo',
+      5 => 'Mei',
+      6 => 'Juni',
+      7 => 'Julai',
+      8 => 'Ogasti',
+      9 => 'Septemba',
+      10 => 'Oktoba',
+      11 => 'Novemba',
+      12 => 'Disemba',
+    ),
+    'abbreviated' => 
+    array (
+      1 => 'Jan',
+      2 => 'Feb',
+      3 => 'Mac',
+      4 => 'Epr',
+      5 => 'Mei',
+      6 => 'Jun',
+      7 => 'Jul',
+      8 => 'Oga',
+      9 => 'Sep',
+      10 => 'Okt',
+      11 => 'Nov',
+      12 => 'Dis',
+    ),
+  ),
+  'monthNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      1 => 'J',
+      2 => 'F',
+      3 => 'M',
+      4 => 'E',
+      5 => 'M',
+      6 => 'J',
+      7 => 'J',
+      8 => 'O',
+      9 => 'S',
+      10 => 'O',
+      11 => 'N',
+      12 => 'D',
+    ),
+  ),
+  'weekDayNames' => 
+  array (
+    'wide' => 
+    array (
+      0 => 'Pa Mulungu',
+      1 => 'Palichimo',
+      2 => 'Palichibuli',
+      3 => 'Palichitatu',
+      4 => 'Palichine',
+      5 => 'Palichisano',
+      6 => 'Pachibelushi',
+    ),
+    'abbreviated' => 
+    array (
+      0 => '1',
+      1 => '2',
+      2 => '3',
+      3 => '4',
+      4 => '5',
+      5 => '6',
+      6 => '7',
+    ),
+  ),
+  'weekDayNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      0 => '1',
+      1 => '2',
+      2 => '3',
+      3 => '4',
+      4 => '5',
+      5 => '6',
+      6 => '7',
+    ),
+  ),
+  'eraNames' => 
+  array (
+    'abbreviated' => 
+    array (
+      0 => 'BC',
+      1 => 'AD',
+    ),
+    'wide' => 
+    array (
+      0 => 'Before Yesu',
+      1 => 'After Yesu',
+    ),
+    'narrow' => 
+    array (
+      0 => 'BC',
+      1 => 'AD',
+    ),
+  ),
+  'dateFormats' => 
+  array (
+    'full' => 'EEEE, d MMMM y',
+    'long' => 'd MMMM y',
+    'medium' => 'd MMM y',
+    'short' => 'dd/MM/yyyy',
+  ),
+  'timeFormats' => 
+  array (
+    'full' => 'h:mm:ss a zzzz',
+    'long' => 'h:mm:ss a z',
+    'medium' => 'h:mm:ss a',
+    'short' => 'h:mm a',
+  ),
+  'dateTimeFormat' => '{1} {0}',
+  'amName' => 'uluchelo',
+  'pmName' => 'akasuba',
+  'orientation' => 'ltr',
+  'languages' => 
+  array (
+    'ak' => 'Ichi Akan',
+    'am' => 'Ichi Amhari',
+    'ar' => 'Ichi Arab',
+    'be' => 'Ichi Belarus',
+    'bem' => 'Ichibemba',
+    'bg' => 'Ichi Bulgariani',
+    'bn' => 'Ichi Bengali',
+    'cs' => 'Ichi Cheki',
+    'de' => 'Ichi Jemani',
+    'el' => 'Ichi Griki',
+    'en' => 'Ichi Sungu',
+    'es' => 'Ichi Spanishi',
+    'fa' => 'Ichi Pesia',
+    'fr' => 'Ichi Frenchi',
+    'ha' => 'Ichi Hausa',
+    'hi' => 'Ichi Hindu',
+    'hu' => 'Ichi Hangarian',
+    'id' => 'Ichi Indonesiani',
+    'ig' => 'Ichi Ibo',
+    'it' => 'Ichi Italiani',
+    'ja' => 'Ichi Japanisi',
+    'jv' => 'Ichi Javanisi',
+    'km' => 'Ichi Khmer',
+    'ko' => 'Ichi Koriani',
+    'ms' => 'Ichi Maleshani',
+    'my' => 'Ichi Burma',
+    'ne' => 'Ichi Nepali',
+    'nl' => 'Ichi Dachi',
+    'pa' => 'Ichi Punjabi',
+    'pl' => 'Ichi Polishi',
+    'pt' => 'Ichi Potogisi',
+    'ro' => 'Ichi Romaniani',
+    'ru' => 'Ichi Rusiani',
+    'rw' => 'Ichi Rwanda',
+    'so' => 'Ichi Somalia',
+    'sv' => 'Ichi Swideni',
+    'ta' => 'Ichi Tamil',
+    'th' => 'Ichi Thai',
+    'tr' => 'Ichi Takishi',
+    'uk' => 'Ichi Ukraniani',
+    'ur' => 'Ichi Urudu',
+    'vi' => 'Ichi Vietinamu',
+    'yo' => 'Ichi Yoruba',
+    'zh' => 'Ichi Chainisi',
+    'zu' => 'Ichi Zulu',
+  ),
+  'territories' => 
+  array (
+    'zm' => 'Zambia',
+  ),
+  'pluralRules' => 
+  array (
+    0 => 'n==1',
+    1 => 'true',
+  ),
+);

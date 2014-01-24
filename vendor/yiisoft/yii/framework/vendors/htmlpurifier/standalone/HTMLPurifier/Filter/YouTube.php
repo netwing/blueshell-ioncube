@@ -1,38 +1,39 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class HTMLPurifier_Filter_YouTube extends HTMLPurifier_Filter
+{
+
+    public $name = 'YouTube';
+
+    public function preFilter($html, $config, $context) {
+        $pre_regex = '#<object[^>]+>.+?'.
+            'http://www.youtube.com/((?:v|cp)/[A-Za-z0-9\-_=]+).+?</object>#s';
+        $pre_replace = '<span class="youtube-embed">\1</span>';
+        return preg_replace($pre_regex, $pre_replace, $html);
+    }
+
+    public function postFilter($html, $config, $context) {
+        $post_regex = '#<span class="youtube-embed">((?:v|cp)/[A-Za-z0-9\-_=]+)</span>#';
+        return preg_replace_callback($post_regex, array($this, 'postFilterCallback'), $html);
+    }
+
+    protected function armorUrl($url) {
+        return str_replace('--', '-&#45;', $url);
+    }
+
+    protected function postFilterCallback($matches) {
+        $url = $this->armorUrl($matches[1]);
+        return '<object width="425" height="350" type="application/x-shockwave-flash" '.
+            'data="http://www.youtube.com/'.$url.'">'.
+            '<param name="movie" value="http://www.youtube.com/'.$url.'"></param>'.
+            '<!--[if IE]>'.
+            '<embed src="http://www.youtube.com/'.$url.'"'.
+            'type="application/x-shockwave-flash"'.
+            'wmode="transparent" width="425" height="350" />'.
+            '<![endif]-->'.
+            '</object>';
+
+    }
+}
+
+// vim: et sw=4 sts=4

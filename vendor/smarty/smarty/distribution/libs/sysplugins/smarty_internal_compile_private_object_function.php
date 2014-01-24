@@ -1,49 +1,85 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-4Pmj9W==
+<?php
+/**
+ * Smarty Internal Plugin Compile Object Funtion
+ *
+ * Compiles code for registered objects as function
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Object Function Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Private_Object_Function extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('_any');
+
+    /**
+     * Compiles code for the execution of function plugin
+     *
+     * @param  array $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array $parameter array with compilation parameter
+     * @param  string $tag       name of function
+     * @param  string $method    name of method to call
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter, $tag, $method)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        if ($_attr['nocache'] === true) {
+            $compiler->tag_nocache = true;
+        }
+        unset($_attr['nocache']);
+        $_assign = null;
+        if (isset($_attr['assign'])) {
+            $_assign = $_attr['assign'];
+            unset($_attr['assign']);
+        }
+        // method or property ?
+        if (method_exists($compiler->smarty->registered_objects[$tag][0], $method)) {
+            // convert attributes into parameter array string
+            if ($compiler->smarty->registered_objects[$tag][2]) {
+                $_paramsArray = array();
+                foreach ($_attr as $_key => $_value) {
+                    if (is_int($_key)) {
+                        $_paramsArray[] = "$_key=>$_value";
+                    } else {
+                        $_paramsArray[] = "'$_key'=>$_value";
+                    }
+                }
+                $_params = 'array(' . implode(",", $_paramsArray) . ')';
+                $return = "\$_smarty_tpl->smarty->registered_objects['{$tag}'][0]->{$method}({$_params},\$_smarty_tpl)";
+            } else {
+                $_params = implode(",", $_attr);
+                $return = "\$_smarty_tpl->smarty->registered_objects['{$tag}'][0]->{$method}({$_params})";
+            }
+        } else {
+            // object property
+            $return = "\$_smarty_tpl->smarty->registered_objects['{$tag}'][0]->{$method}";
+        }
+
+        if (empty($_assign)) {
+            // This tag does create output
+            $compiler->has_output = true;
+            $output = "<?php echo {$return};?>\n";
+        } else {
+            $output = "<?php \$_smarty_tpl->assign({$_assign},{$return});?>\n";
+        }
+
+        return $output;
+    }
+
+}

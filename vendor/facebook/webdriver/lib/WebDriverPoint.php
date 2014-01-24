@@ -1,31 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-1qqz0vwkI9S9Kktmduld5m8FFivL/ZPDiBUPhxG=
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * Represent a point.
+ */
+class WebDriverPoint {
+
+  private $x, $y;
+
+  public function __construct($x, $y) {
+    $this->x = $x;
+    $this->y = $y;
+  }
+
+  /**
+   * Get the x-coordinate.
+   *
+   * @return int The x-coordinate of the point.
+   */
+  public function getX() {
+    return $this->x;
+  }
+
+  /**
+   * Get the y-coordinate.
+   *
+   * @return int The y-coordinate of the point.
+   */
+  public function getY() {
+    return $this->y;
+  }
+
+  /**
+   * Set the point to a new position.
+   *
+   * @return WebDriverPoint The same instance with updated coordinates.
+   */
+  public function move($new_x, $new_y) {
+    $this->x = $new_x;
+    $this->y = $new_y;
+    return $this;
+  }
+
+  /**
+   * Move the current by offsets.
+   *
+   * @return WebDriverPoint The same instance with updated coordinates.
+   */
+  public function moveBy($x_offset, $y_offset) {
+    $this->x += $x_offset;
+    $this->y += $y_offset;
+    return $this;
+  }
+
+  /**
+   * Check whether the given point is the same as the instance.
+   *
+   * @param WebDriverPoint $point The point to be compared with.
+   * @return bool Whether the x and y coordinates are the same as the instance.
+   */
+  public function equals(WebDriverPoint $point) {
+    return $this->x === $point->getX() &&
+           $this->y === $point->getY();
+  }
+}

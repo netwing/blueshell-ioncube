@@ -1,216 +1,345 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-3a57TSrSTVuX3EXXRY0o6CuimGFQjbVx7mS=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\EventDispatcher\Tests;
+
+use Symfony\Component\EventDispatcher\Event;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+class EventDispatcherTest extends \PHPUnit_Framework_TestCase
+{
+    /* Some pseudo events */
+    const preFoo = 'pre.foo';
+    const postFoo = 'post.foo';
+    const preBar = 'pre.bar';
+    const postBar = 'post.bar';
+
+    /**
+     * @var EventDispatcher
+     */
+    private $dispatcher;
+
+    private $listener;
+
+    protected function setUp()
+    {
+        $this->dispatcher = new EventDispatcher();
+        $this->listener = new TestEventListener();
+    }
+
+    protected function tearDown()
+    {
+        $this->dispatcher = null;
+        $this->listener = null;
+    }
+
+    public function testInitialState()
+    {
+        $this->assertEquals(array(), $this->dispatcher->getListeners());
+        $this->assertFalse($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertFalse($this->dispatcher->hasListeners(self::postFoo));
+    }
+
+    public function testAddListener()
+    {
+        $this->dispatcher->addListener('pre.foo', array($this->listener, 'preFoo'));
+        $this->dispatcher->addListener('post.foo', array($this->listener, 'postFoo'));
+        $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertTrue($this->dispatcher->hasListeners(self::postFoo));
+        $this->assertCount(1, $this->dispatcher->getListeners(self::preFoo));
+        $this->assertCount(1, $this->dispatcher->getListeners(self::postFoo));
+        $this->assertCount(2, $this->dispatcher->getListeners());
+    }
+
+    public function testGetListenersSortsByPriority()
+    {
+        $listener1 = new TestEventListener();
+        $listener2 = new TestEventListener();
+        $listener3 = new TestEventListener();
+        $listener1->name = '1';
+        $listener2->name = '2';
+        $listener3->name = '3';
+
+        $this->dispatcher->addListener('pre.foo', array($listener1, 'preFoo'), -10);
+        $this->dispatcher->addListener('pre.foo', array($listener2, 'preFoo'), 10);
+        $this->dispatcher->addListener('pre.foo', array($listener3, 'preFoo'));
+
+        $expected = array(
+            array($listener2, 'preFoo'),
+            array($listener3, 'preFoo'),
+            array($listener1, 'preFoo'),
+        );
+
+        $this->assertSame($expected, $this->dispatcher->getListeners('pre.foo'));
+    }
+
+    public function testGetAllListenersSortsByPriority()
+    {
+        $listener1 = new TestEventListener();
+        $listener2 = new TestEventListener();
+        $listener3 = new TestEventListener();
+        $listener4 = new TestEventListener();
+        $listener5 = new TestEventListener();
+        $listener6 = new TestEventListener();
+
+        $this->dispatcher->addListener('pre.foo', $listener1, -10);
+        $this->dispatcher->addListener('pre.foo', $listener2);
+        $this->dispatcher->addListener('pre.foo', $listener3, 10);
+        $this->dispatcher->addListener('post.foo', $listener4, -10);
+        $this->dispatcher->addListener('post.foo', $listener5);
+        $this->dispatcher->addListener('post.foo', $listener6, 10);
+
+        $expected = array(
+            'pre.foo'  => array($listener3, $listener2, $listener1),
+            'post.foo' => array($listener6, $listener5, $listener4),
+        );
+
+        $this->assertSame($expected, $this->dispatcher->getListeners());
+    }
+
+    public function testDispatch()
+    {
+        $this->dispatcher->addListener('pre.foo', array($this->listener, 'preFoo'));
+        $this->dispatcher->addListener('post.foo', array($this->listener, 'postFoo'));
+        $this->dispatcher->dispatch(self::preFoo);
+        $this->assertTrue($this->listener->preFooInvoked);
+        $this->assertFalse($this->listener->postFooInvoked);
+        $this->assertInstanceOf('Symfony\Component\EventDispatcher\Event', $this->dispatcher->dispatch('noevent'));
+        $this->assertInstanceOf('Symfony\Component\EventDispatcher\Event', $this->dispatcher->dispatch(self::preFoo));
+        $event = new Event();
+        $return = $this->dispatcher->dispatch(self::preFoo, $event);
+        $this->assertEquals('pre.foo', $event->getName());
+        $this->assertSame($event, $return);
+    }
+
+    public function testDispatchForClosure()
+    {
+        $invoked = 0;
+        $listener = function () use (&$invoked) {
+            $invoked++;
+        };
+        $this->dispatcher->addListener('pre.foo', $listener);
+        $this->dispatcher->addListener('post.foo', $listener);
+        $this->dispatcher->dispatch(self::preFoo);
+        $this->assertEquals(1, $invoked);
+    }
+
+    public function testStopEventPropagation()
+    {
+        $otherListener = new TestEventListener();
+
+        // postFoo() stops the propagation, so only one listener should
+        // be executed
+        // Manually set priority to enforce $this->listener to be called first
+        $this->dispatcher->addListener('post.foo', array($this->listener, 'postFoo'), 10);
+        $this->dispatcher->addListener('post.foo', array($otherListener, 'preFoo'));
+        $this->dispatcher->dispatch(self::postFoo);
+        $this->assertTrue($this->listener->postFooInvoked);
+        $this->assertFalse($otherListener->postFooInvoked);
+    }
+
+    public function testDispatchByPriority()
+    {
+        $invoked = array();
+        $listener1 = function () use (&$invoked) {
+            $invoked[] = '1';
+        };
+        $listener2 = function () use (&$invoked) {
+            $invoked[] = '2';
+        };
+        $listener3 = function () use (&$invoked) {
+            $invoked[] = '3';
+        };
+        $this->dispatcher->addListener('pre.foo', $listener1, -10);
+        $this->dispatcher->addListener('pre.foo', $listener2);
+        $this->dispatcher->addListener('pre.foo', $listener3, 10);
+        $this->dispatcher->dispatch(self::preFoo);
+        $this->assertEquals(array('3', '2', '1'), $invoked);
+    }
+
+    public function testRemoveListener()
+    {
+        $this->dispatcher->addListener('pre.bar', $this->listener);
+        $this->assertTrue($this->dispatcher->hasListeners(self::preBar));
+        $this->dispatcher->removeListener('pre.bar', $this->listener);
+        $this->assertFalse($this->dispatcher->hasListeners(self::preBar));
+        $this->dispatcher->removeListener('notExists', $this->listener);
+    }
+
+    public function testAddSubscriber()
+    {
+        $eventSubscriber = new TestEventSubscriber();
+        $this->dispatcher->addSubscriber($eventSubscriber);
+        $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertTrue($this->dispatcher->hasListeners(self::postFoo));
+    }
+
+    public function testAddSubscriberWithPriorities()
+    {
+        $eventSubscriber = new TestEventSubscriber();
+        $this->dispatcher->addSubscriber($eventSubscriber);
+
+        $eventSubscriber = new TestEventSubscriberWithPriorities();
+        $this->dispatcher->addSubscriber($eventSubscriber);
+
+        $listeners = $this->dispatcher->getListeners('pre.foo');
+        $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertCount(2, $listeners);
+        $this->assertInstanceOf('Symfony\Component\EventDispatcher\Tests\TestEventSubscriberWithPriorities', $listeners[0][0]);
+    }
+
+    public function testAddSubscriberWithMultipleListeners()
+    {
+        $eventSubscriber = new TestEventSubscriberWithMultipleListeners();
+        $this->dispatcher->addSubscriber($eventSubscriber);
+
+        $listeners = $this->dispatcher->getListeners('pre.foo');
+        $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertCount(2, $listeners);
+        $this->assertEquals('preFoo2', $listeners[0][1]);
+    }
+
+    public function testRemoveSubscriber()
+    {
+        $eventSubscriber = new TestEventSubscriber();
+        $this->dispatcher->addSubscriber($eventSubscriber);
+        $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertTrue($this->dispatcher->hasListeners(self::postFoo));
+        $this->dispatcher->removeSubscriber($eventSubscriber);
+        $this->assertFalse($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertFalse($this->dispatcher->hasListeners(self::postFoo));
+    }
+
+    public function testRemoveSubscriberWithPriorities()
+    {
+        $eventSubscriber = new TestEventSubscriberWithPriorities();
+        $this->dispatcher->addSubscriber($eventSubscriber);
+        $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
+        $this->dispatcher->removeSubscriber($eventSubscriber);
+        $this->assertFalse($this->dispatcher->hasListeners(self::preFoo));
+    }
+
+    public function testRemoveSubscriberWithMultipleListeners()
+    {
+        $eventSubscriber = new TestEventSubscriberWithMultipleListeners();
+        $this->dispatcher->addSubscriber($eventSubscriber);
+        $this->assertTrue($this->dispatcher->hasListeners(self::preFoo));
+        $this->assertCount(2, $this->dispatcher->getListeners(self::preFoo));
+        $this->dispatcher->removeSubscriber($eventSubscriber);
+        $this->assertFalse($this->dispatcher->hasListeners(self::preFoo));
+    }
+
+    public function testEventReceivesTheDispatcherInstance()
+    {
+        $this->dispatcher->addListener('test', function ($event) use (&$dispatcher) {
+            $dispatcher = $event->getDispatcher();
+        });
+        $this->dispatcher->dispatch('test');
+        $this->assertSame($this->dispatcher, $dispatcher);
+    }
+
+    public function testEventReceivesTheDispatcherInstanceAsArgument()
+    {
+        $listener = new TestWithDispatcher();
+        $this->dispatcher->addListener('test', array($listener, 'foo'));
+        $this->assertNull($listener->name);
+        $this->assertNull($listener->dispatcher);
+        $this->dispatcher->dispatch('test');
+        $this->assertEquals('test', $listener->name);
+        $this->assertSame($this->dispatcher, $listener->dispatcher);
+    }
+
+    /**
+     * @see https://bugs.php.net/bug.php?id=62976
+     *
+     * This bug affects:
+     *  - The PHP 5.3 branch for versions < 5.3.18
+     *  - The PHP 5.4 branch for versions < 5.4.8
+     *  - The PHP 5.5 branch is not affected
+     */
+    public function testWorkaroundForPhpBug62976()
+    {
+        $dispatcher = new EventDispatcher();
+        $dispatcher->addListener('bug.62976', new CallableClass());
+        $dispatcher->removeListener('bug.62976', function () {});
+        $this->assertTrue($dispatcher->hasListeners('bug.62976'));
+    }
+}
+
+class CallableClass
+{
+    public function __invoke()
+    {
+    }
+}
+
+class TestEventListener
+{
+    public $preFooInvoked = false;
+    public $postFooInvoked = false;
+
+    /* Listener methods */
+
+    public function preFoo(Event $e)
+    {
+        $this->preFooInvoked = true;
+    }
+
+    public function postFoo(Event $e)
+    {
+        $this->postFooInvoked = true;
+
+        $e->stopPropagation();
+    }
+}
+
+class TestWithDispatcher
+{
+    public $name;
+    public $dispatcher;
+
+    public function foo(Event $e, $name, $dispatcher)
+    {
+        $this->name = $name;
+        $this->dispatcher = $dispatcher;
+    }
+}
+
+class TestEventSubscriber implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return array('pre.foo' => 'preFoo', 'post.foo' => 'postFoo');
+    }
+}
+
+class TestEventSubscriberWithPriorities implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return array(
+            'pre.foo' => array('preFoo', 10),
+            'post.foo' => array('postFoo'),
+            );
+    }
+}
+
+class TestEventSubscriberWithMultipleListeners implements EventSubscriberInterface
+{
+    public static function getSubscribedEvents()
+    {
+        return array('pre.foo' => array(
+            array('preFoo1'),
+            array('preFoo2', 10)
+        ));
+    }
+}

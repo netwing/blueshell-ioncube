@@ -1,62 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-FQMEMAsahZ5WLaw7pxZT/rMi+XcDulsiUnsrDm==
+<?php
+
+class SiteController extends Controller
+{
+	/**
+	 * Declares class-based actions.
+	 */
+	public function actions()
+	{
+		return array(
+			// captcha action renders the CAPTCHA image displayed on the contact page
+			'captcha'=>array(
+				'class'=>'CCaptchaAction',
+				'backColor'=>0xFFFFFF,
+			),
+			// page action renders "static" pages stored under 'protected/views/site/pages'
+			// They can be accessed via: index.php?r=site/page&view=FileName
+			'page'=>array(
+				'class'=>'CViewAction',
+			),
+		);
+	}
+
+	/**
+	 * This is the default 'index' action that is invoked
+	 * when an action is not explicitly requested by users.
+	 */
+	public function actionIndex()
+	{
+		// renders the view file 'protected/views/site/index.php'
+		// using the default layout 'protected/views/layouts/main.php'
+		$this->render('index');
+	}
+
+	/**
+	 * This is the action to handle external exceptions.
+	 */
+	public function actionError()
+	{
+		if($error=Yii::app()->errorHandler->error)
+		{
+			if(Yii::app()->request->isAjaxRequest)
+				echo $error['message'];
+			else
+				$this->render('error', $error);
+		}
+	}
+
+	/**
+	 * Displays the contact page
+	 */
+	public function actionContact()
+	{
+		$model=new ContactForm;
+		if(isset($_POST['ContactForm']))
+		{
+			$model->attributes=$_POST['ContactForm'];
+			if($model->validate())
+			{
+				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
+				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
+				$headers="From: $name <{$model->email}>\r\n".
+					"Reply-To: {$model->email}\r\n".
+					"MIME-Version: 1.0\r\n".
+					"Content-Type: text/plain; charset=UTF-8";
+
+				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
+				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
+				$this->refresh();
+			}
+		}
+		$this->render('contact',array('model'=>$model));
+	}
+
+	/**
+	 * Displays the login page
+	 */
+	public function actionLogin()
+	{
+		$model=new LoginForm;
+
+		// if it is ajax validation request
+		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+
+		// collect user input data
+		if(isset($_POST['LoginForm']))
+		{
+			$model->attributes=$_POST['LoginForm'];
+			// validate user input and redirect to the previous page if valid
+			if($model->validate() && $model->login())
+				$this->redirect(Yii::app()->user->returnUrl);
+		}
+		// display the login form
+		$this->render('login',array('model'=>$model));
+	}
+
+	/**
+	 * Logs out the current user and redirect to homepage.
+	 */
+	public function actionLogout()
+	{
+		Yii::app()->user->logout();
+		$this->redirect(Yii::app()->homeUrl);
+	}
+}

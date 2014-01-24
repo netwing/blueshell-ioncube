@@ -1,186 +1,211 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  '"{path}" is not a valid directory.' => '"{path}" nu este un director valid.',
+  '&lt; Previous' => '&lt; Înapoi',
+  '&lt;&lt; First' => '&lt;&lt; Început',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record are nevoie de o componentă de aplicaţie CDbConnection "db".',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Clasa Active record "{class}" are o configuraţie nevalidă pentru relaţia "{relation}". Trebuie specificate tipul relatiei, clasa active record înrudită şi foreign key-ul.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'Clasa Active record "{class}" încearcă să selecteze o coloană nevalidă "{column}". Reţineţi: coloana trebuie să existe in tabelă sau să fie o expresie cu alias.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'Alias-ul "{alias}" nu este valid. Asiguraţi-vă că reprezintă un fişier sau director existent.',
+  'Application base path "{path}" is not a valid directory.' => 'Calea directorului de bază al aplicaţiei "{path}" nu este un director valid.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'Calea directorului runtime al aplicaţiei "{path}" nu este validă. Asiguraţi-vă ca serverul Web are drepturi de scriere în acest director.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'Elementul de autorizare "{item}" a fost deja asignat utilizatorului "{user}".',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache are nevoie ca extensia PHP APC să fie incărcată.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" nu este validă. Asiguraţi-vă că directorul există şi serverul web are drepturi de scriere în acest director.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID nu este valid. Asiguraţi-vă ca "{id}" se referă la o componentă validă de cache a aplicaţiei.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" nu este valid. Action-ul acesta nu poate fi găsit in controller-ul curent.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" nu este valid. Asiguraţi-vă ca se referă la un ID al unei componente CDbConnection a aplicaţiei.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" nu este valid. Asiguraţi-vă ca se referă la ID-ul unei componente CDbConnection a aplicaţiei.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql trebuie să fie nenul.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand a eşuat executarea instrucţiunii SQL: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand a eşuat prepararea instrucţiunii SQL: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection nu suportă citirea de schemă pentru baza de date {driver}.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection a eşuat deschiderea conexiunii DB: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection este inactivă şi nu poate executa nici o operatie DB.',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString trebuie să fie nenul.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader nu poate derula. Poate face citire doar înainte (forward-only).',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" nu este valid. Asiguraţi-vă ca se referă la ID-ul unei componente CDbConnection a aplicaţiei.',
+  'CDbLogRoute requires database table "{table}" to store log messages.' => 'CDbLogRoute are nevoie de tabela "{table}" pentru a stoca mesajele de tip log.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" nu este o componenta validă CDbConnection a aplicaţiei.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID nu este valid. Asiguraţi-vă ca "{id}" se referă la o componentă validă de baze de date a aplicaţiei.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction este inactivă şi nu poate executa operaţiunile commit sau roll back.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory trebuie să fie nenul.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName trebuie să fie nenul.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" nu este un director valid. Asiguraţi-vă ca acest director exista şi ca serverul Web are drepturi de scriere.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain poate conţine doar obiecte care implementează interfaţa  IFilter.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl trebuie să fie nenul.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name trebuie să fie nenul.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName trebuie să fie nenul.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection poate conţine doar obiecte CHttpCookie.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest nu poate determina URL-ul scriptului de intrare.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest nu poate determina informaţiile despre cale din această cerere.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest nu poate determina URI-ul cererii.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode poate fi doar "none", "allow" sau "only".',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}" nu este valid. Trebuie să fie un întreg intre 0 şi 100.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" este un director nevalid.',
+  'CMemCache requires PHP memcache extension to be loaded.' => 'CMemCache are nevoie ca extensia PHP memcache să fie încărcată.',
+  'CMemCache server configuration must be an array.' => 'Configuratia serverului CMemCache trebuie să fie un array.',
+  'CMemCache server configuration must have "host" value.' => 'Configuratia serverului CMemCache trebuie să aibă valoarea „host”.',
+  'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name este obligatoriu.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute a găsit un bloc de cod nepotrivit "{token}". Asiguraţi-vă că apelurile Yii::beginProfile() şi Yii::endProfile() sunt îmbricate corespunzător.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" nu este valid. Valorile valide sunt "summary" şi "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager are nevoie ca extensia PHP mcrypt să fie încărcată pentru a putea folosi criptarea de date.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey trebuie să fie nenul.',
+  'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation trebuie să fie "MD5" sau "SHA1".',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey trebuie să conţină ceva.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> poate conţine doar obiecte de clasa {type}.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat trebuie să fie "path" sau "get".',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache are nevoie ca extensia PHP XCache să fie încărcată.',
+  'Cache table "{tableName}" does not exist.' => 'Tabela cache "{tableName}" nu există.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Nu se poate adăuga "{child}" drept copil al "{name}". A fost detectată o buclă.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Nu se poate adăuga "{child}" ca copil al "{parent}". A fost detectată o buclă.',
+  'Cannot add "{name}" as a child of itself.' => 'Nu se poate adăuga "{name}" ca propriul sau copil.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => 'Nu se poate adăuga un element de tip "{child}" unui element de tip "{parent}".',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" sau "{child}" nu există.',
+  'Error: Table "{table}" does not have a primary key.' => 'Eroare: Tabela "{table}" nu are o cheie primară.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Eroare: Tabela "{table}" are o cheie primară compusă care nu este suportată de comanda crud.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => 'Evenimentul "{class}.{event}" este ataşat unui handler nevalid "{handler}".',
+  'Event "{class}.{event}" is not defined.' => 'Evenimentul "{class}.{event}" nu este definit.',
+  'Failed to write the uploaded file "{file}" to disk.' => 'A eşuat scrierea pe disc a fişierului uploadat "{file}".',
+  'File upload was stopped by extension.' => 'Uploadul fişierului a fost intrerupt de către extensie.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => 'Filtrul "{filter}" nu este valid. Controllerul "{class}" nu are metoda filtru "filter{filter}".',
+  'Get a new code' => 'Generează un alt cod',
+  'Go to page: ' => 'Navigare la pagina: ',
+  'Invalid MO file revision: {revision}.' => 'Revizie nevalidă a fişierului MO: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'Fişier MO nevalid: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'Valoare enumerabilă "{value}" nevalidă. Asiguraţi-vă că este în ({enum}).',
+  'Last &gt;&gt;' => 'Sfârşit &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'Datele listei trebuie să fie un array sau un obiect care implementează Traversable.',
+  'List index "{index}" is out of bound.' => 'Indexul "{index}" al listei nu mai este valid (out of bound).',
+  'Login Required' => 'Login obligatoriu',
+  'Map data must be an array or an object implementing Traversable.' => 'Datele de mapare trebuie să fie un array sau un obiect care implementează Traversable.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'Nu se găseşte directorul temporar pentru a stoca fişierul uploadat "{file}".',
+  'Next &gt;' => 'Inainte &gt;',
+  'No columns are being updated for table "{table}".' => 'Nu este actualizată nici o coloană pentru tabela "{table}".',
+  'No counter columns are being updated for table "{table}".' => 'Nu este actualizat nici un contor(counter) de coloană pentru tabela "{table}".',
+  'Object configuration must be an array containing a "class" element.' => 'Configuraţia obiectului trebuie să fie un array care conţine un element "class".',
+  'Please fix the following input errors:' => 'Corectaţi următoarele erori:',
+  'Property "{class}.{property}" is not defined.' => 'Proprietatea "{class}.{property}" nu este definită.',
+  'Property "{class}.{property}" is read only.' => 'Proprietatea "{class}.{property}" este read-only.',
+  'Queue data must be an array or an object implementing Traversable.' => 'Datele cozii trebuie să fie un array sau un obiect care implementează Traversable.',
+  'Relation "{name}" is not defined in active record class "{class}".' => 'Relaţia "{name}" nu este definită in clasa active record "{class}".',
+  'Stack data must be an array or an object implementing Traversable.' => 'Datele stivei trebuie să fie un array sau un obiect care implementează Traversable.',
+  'Table "{table}" does not have a column named "{column}".' => 'Tabela "{table}" nu are o coloană "{column}".',
+  'Table "{table}" does not have a primary key defined.' => 'Tabela "{table}" nu are definită o cheie primară.',
+  'The "filter" property must be specified with a valid callback.' => 'Proprietatea "filter" trebuie să fie specificată cu un callback valid.',
+  'The "pattern" property must be specified with a valid regular expression.' => 'Proprietatea "pattern" trebuie să fie specificată cu o expresie regulată validă.',
+  'The "view" property is required.' => 'Proprietatea "view" este obligatorie.',
+  'The CSRF token could not be verified.' => 'Token-ul CSRF nu poate fi verificat.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'Şablonul(pattern) URL "{pattern}" pentru ruta "{route}" nu este o expresie regulată validă.',
+  'The active record cannot be deleted because it is new.' => 'Active record nu poate fi şters pentru că este nou.',
+  'The active record cannot be inserted to database because it is not new.' => 'Active record nu poate fi inserat in baza de date pentru că nu este nou.',
+  'The active record cannot be updated because it is new.' => 'Active record nu poate fi actualizat pentru că este nou.',
+  'The asset "{asset}" to be published does not exist.' => 'Asset-ul "{asset}" care trebuie publicat nu există.',
+  'The column "{column}" is not a foreign key in table "{table}".' => 'Coloana "{column}" nu este o cheie foreign in tabela "{table}".',
+  'The command path "{path}" is not a valid directory.' => 'Calea comenzii "{path}" nu este un director valid.',
+  'The controller path "{path}" is not a valid directory.' => 'Calea controllerului "{path}" nu este un director valid.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'Nu s-a putut încărca fişierul "{file}". Sunt permise doar fişierele cu aceste extensii: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => 'Fisierul "{file}" este prea mare. Mărimea fişierului nu poate depăşi {limit} bytes.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => 'Fişierul "{file}" este prea mic. Mărimea fişierului nu poate fi mai mică de {limit} octeţi (bytes).',
+  'The file "{file}" was only partially uploaded.' => 'Fisierul "{file}" a fost încărcat numai parţial.',
+  'The first element in a filter configuration must be the filter class.' => 'Primul element din configuraţia filtrului trebuie să fie clasa filtrului.',
+  'The item "{name}" does not exist.' => 'Elementul "{name}" nu există.',
+  'The item "{parent}" already has a child "{child}".' => 'Elementul "{parent}" deja are un copil "{child}".',
+  'The layout path "{path}" is not a valid directory.' => 'Calea layout-ului "{path}" nu este un director valid.',
+  'The list is read only.' => 'Lista este read only.',
+  'The map is read only.' => 'Maparea este read only.',
+  'The pattern for 12 hour format must be "h" or "hh".' => 'Şablonul(pattern) pentru formatul cu 12 ore trebuie să fie "h" sau "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => 'Şablonul(pattern) pentru formatul cu 24 ore trebuie să fie "H" sau "HH".',
+  'The pattern for AM/PM marker must be "a".' => 'Şablonul(pattern) pentru markerul AM/PM trebuie să fie "a".',
+  'The pattern for day in month must be "F".' => 'Şablonul(pattern) pentru ziua din lună trebuie să fie "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'Şablonul(pattern) pentru ziua din an trebuie să fie "D", "DD" sau "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => 'Şablonul(pattern) pentru ziua din lună trebuie să fie "d" sau "dd".',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE" or "EEEEE".' => 'Şablonul(pattern) pentru ziua din săptămână trebuie să fie "E", "EE", "EEE", "EEEE" sau "EEEEE".',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'Şablonul(pattern) pentru eră trebuie să fie "G", "GG", "GGG", "GGGG" sau "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'Şablonul(pattern) pentru oră în AM/PM trebuie să fie "K" sau "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => 'Şablonul(pattern) pentru ora din zi trebuie să fie "k" sau "kk".',
+  'The pattern for minutes must be "m" or "mm".' => 'Şablonul(pattern) pentru minute trebuie să fie "m" sau "mm".',
+  'The pattern for month must be "M", "MM", "MMM", or "MMMM".' => 'Şablonul(pattern) pentru luna trebuie să fie "M", "MM", "MMM" sau "MMMM".',
+  'The pattern for seconds must be "s" or "ss".' => 'Şablonul(pattern) pentru secunde trebuie să fie "s" sau "ss".',
+  'The pattern for time zone must be "z" or "v".' => 'Şablonul(pattern) pentru timezone trebuie să fie "z" sau "v".',
+  'The pattern for week in month must be "W".' => 'Şablonul(pattern) pentru săptămâna din lună trebuie să fie "W".',
+  'The pattern for week in year must be "w".' => 'Şablonul(pattern) pentru săptămâna din an trebuie să fie "w".',
+  'The queue is empty.' => 'Coada este goala.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'relaţia "{relation}" din clasa active record "{class}" nu este specificată corect: tabela join "{joinTable}" precizata in cheia foreign nu poate fi gasita in baza de date.',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'relaţia "{relation}" din clasa active record "{class}" este specificată cu o cheie foreign incompletă. Cheia foreign key trebuie să fie formată din coloanele care se referă la ambele tabele între care se aplică join.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => 'relaţia "{relation}" din clasa active record "{class}" este specificată cu o cheie foreign nevalid "{key}". Cheia foreign nu precizează nici o tabela pentru care se aplică join.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'relaţia "{relation}" din clasa active record "{class}" este specificată cu o cheie foreign nevalidă. Formatul cheii foreign trebuie să fie "joinTable(fk1,fk2,...)".',
+  'The requested controller "{controller}" does not exist.' => 'Controllerul cerut "{controller}" nu există.',
+  'The requested view "{name}" is not found.' => 'View-ul cerut "{name}" nu există.',
+  'The stack is empty.' => 'Stiva eeste goală.',
+  'The system is unable to find the requested action "{action}".' => 'Sistemul nu a putut gasi action-ul cerut "{action}".',
+  'The system view path "{path}" is not a valid directory.' => 'Calea catre view-urile sistem "{path}" nu este un director valid.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'Tabela "{table}" pentru clasa active record "{class}" nu poate fi găsită în baza de date.',
+  'The value for the primary key "{key}" is not supplied when querying the table "{table}".' => 'Valoarea cheii primare "{key}" nu s-a furnizat la interogarea tabelei "{table}".',
+  'The verification code is incorrect.' => 'Codul de verificare este incorect.',
+  'The view path "{path}" is not a valid directory.' => 'Calea view-ului "{path}" nu este un director valid.',
+  'Theme directory "{directory}" does not exist.' => 'Directorul cu teme "{directory}" nu există.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'Pentru acest conţinut este nevoie de <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => 'Nu se poate adăuga un element al cărui nume este la fel cu numele unui element existent.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'Nu se poate modifica numele elementului. Numele "{name}" este deja folosit de alt element.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'Nu se poate crea fişierul "{file}" cu starea aplicaţiei. Asiguraţi-vă ca directorul care conţine fişierul există, iar serverul Web are drepturi de scriere in acest director.',
+  'Unable to find the decorator view "{view}".' => 'Nu se poate gasi view-ul decorativ "{view}".',
+  'Unable to lock file "{file}" for reading.' => 'Nu se poate bloca fişierul "{file}" pentru citire.',
+  'Unable to lock file "{file}" for writing.' => 'Nu se poate bloca fişierul "{file}" pentru scriere.',
+  'Unable to read file "{file}".' => 'Nu se poate citi fişierul "{file}".',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => 'Nu se poate repeta action-ul "{object}.{method}". Metoda nu există.',
+  'Unable to write file "{file}".' => 'Nu se poate scrie fişierul "{file}".',
+  'Unknown authorization item "{name}".' => 'Element necunoscut de autorizare "{name}".',
+  'Unrecognized locale "{locale}".' => 'Limbă necunoscută sau cod de limbă necunoscut "{locale}".',
+  'View file "{file}" does not exist.' => 'Fişierul view "{file}" nu există.',
+  'Yii application can only be created once.' => 'Aplicatia Yii poate fi creată doar o dată.',
+  'You are not authorized to perform this action.' => 'Nu sunteţi autorizat să executaţi această acţiune.',
+  'Your request is not valid.' => 'Cererea nu este validă.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" este deja folosit.',
+  '{attribute} cannot be blank.' => '{attribute} trebuie completat(ă).',
+  '{attribute} is invalid.' => '{attribute} nu este valid.',
+  '{attribute} is not a valid URL.' => '{attribute} nu este un URL valid.',
+  '{attribute} is not a valid email address.' => '{attribute} nu este o adresă de email validă.',
+  '{attribute} is not in the list.' => '{attribute} nu este în listă.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} este de dimensiune greşită (ar trebui să fie de {length} caractere).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} este prea mare (maximul este {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} este prea lung (maximul este de {max} caractere).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} este prea mic (minimul este de {min} caractere).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} este prea mic (minimul este {min}).',
+  '{attribute} must be a number.' => '{attribute} trebuie să fie un număr.',
+  '{attribute} must be an integer.' => '{attribute} trebuie să fie un număr întreg.',
+  '{attribute} must be repeated exactly.' => '{attribute} trebuie să fie repetat exact.',
+  '{attribute} must be {type}.' => '{attribute} trebuie să fie de tip {type}.',
+  '{className} does not support add() functionality.' => '{className} nu suportă funcţionalitate add().',
+  '{className} does not support delete() functionality.' => '{className} nu suportă funcţionalitate delete().',
+  '{className} does not support flush() functionality.' => '{className} nu suportă funcţionalitate flush().',
+  '{className} does not support get() functionality.' => '{className} nu suporta funcţionalitate get().',
+  '{className} does not support set() functionality.' => '{className} nu suportă funcţionalitate set().',
+  '{class} does not have a method named "{name}".' => '{class} nu conţine metoda cu numele "{name}".',
+  '{class} does not have attribute "{attribute}".' => '{class} nu conţine atributul "{attribute}".',
+  '{class} does not have attribute "{name}".' => '{class} nu conţine atributul "{name}".',
+  '{class} does not have relation "{name}".' => '{class} nu conţine relaţia "{name}".',
+  '{class} does not support fetching all table names.' => '{class} nu poate extrage numele tuturor tabelelor.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} are o regulă de validare greşită. Regula trebuie să specifice atributele care trebuie validate şi numele clasei validator.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} trebuie să specifice valorile proprietatilor "model" şi "attribute" sau "name".',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin trebuie să fie setat „true” pentru a putea folosi autentificare pe bază de cookie-uri.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() trebuie implementată.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} nu poate gasi view-ul "{view}" cerut.',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} conţine taguri de widget îmbricate necorespunzător in view-ul său "{view}". Un widget {widget} nu are un apel endWidget().',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} are un apel endWidget({id}) in plus in view-ul sau.',
+  '{widget} cannot find the view "{view}".' => '{widget} nu poate găsi view-ul "{view}".',
+);

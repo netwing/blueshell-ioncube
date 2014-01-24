@@ -1,105 +1,234 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Operators_IncrementDecrementUsageSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_Operators_IncrementDecrementUsageSniff.
+ *
+ * Tests that the ++ operators are used when possible and not
+ * used when it makes the code confusing.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Operators_IncrementDecrementUsageSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_EQUAL,
+                T_PLUS_EQUAL,
+                T_MINUS_EQUAL,
+                T_INC,
+                T_DEC,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if ($tokens[$stackPtr]['code'] === T_INC || $tokens[$stackPtr]['code'] === T_DEC) {
+            $this->processIncDec($phpcsFile, $stackPtr);
+        } else {
+            $this->processAssignment($phpcsFile, $stackPtr);
+        }
+
+    }//end process()
+
+
+    /**
+     * Checks to ensure increment and decrement operators are not confusing.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    protected function processIncDec(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Work out where the variable is so we know where to
+        // start looking for other operators.
+        if ($tokens[($stackPtr - 1)]['code'] === T_VARIABLE) {
+            $start = ($stackPtr + 1);
+        } else {
+            $start = ($stackPtr + 2);
+        }
+
+        $next = $phpcsFile->findNext(PHP_CodeSniffer_Tokens::$emptyTokens, $start, null, true);
+        if ($next === false) {
+            return;
+        }
+
+        if (in_array($tokens[$next]['code'], PHP_CodeSniffer_Tokens::$arithmeticTokens) === true) {
+            $error = 'Increment and decrement operators cannot be used in an arithmetic operation';
+            $phpcsFile->addError($error, $stackPtr, 'NotAllowed');
+            return;
+        }
+
+        $prev = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($start - 3), null, true);
+        if ($prev === false) {
+            return;
+        }
+
+        // Check if this is in a string concat.
+        if ($tokens[$next]['code'] === T_STRING_CONCAT || $tokens[$prev]['code'] === T_STRING_CONCAT) {
+            $error = 'Increment and decrement operators must be bracketed when used in string concatenation';
+            $phpcsFile->addError($error, $stackPtr, 'NoBrackets');
+        }
+
+    }//end processIncDec()
+
+
+    /**
+     * Checks to ensure increment and decrement operators are used.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    protected function processAssignment(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $assignedVar = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
+        // Not an assignment, return.
+        if ($tokens[$assignedVar]['code'] !== T_VARIABLE) {
+            return;
+        }
+
+        $statementEnd = $phpcsFile->findNext(array(T_SEMICOLON, T_CLOSE_PARENTHESIS, T_CLOSE_SQUARE_BRACKET, T_CLOSE_CURLY_BRACKET), $stackPtr);
+
+        // If there is anything other than variables, numbers, spaces or operators we need to return.
+        $noiseTokens = $phpcsFile->findNext(array(T_LNUMBER, T_VARIABLE, T_WHITESPACE, T_PLUS, T_MINUS, T_OPEN_PARENTHESIS), ($stackPtr + 1), $statementEnd, true);
+
+        if ($noiseTokens !== false) {
+            return;
+        }
+
+        // If we are already using += or -=, we need to ignore
+        // the statement if a variable is being used.
+        if ($tokens[$stackPtr]['code'] !== T_EQUAL) {
+            $nextVar = $phpcsFile->findNext(T_VARIABLE, ($stackPtr + 1), $statementEnd);
+            if ($nextVar !== false) {
+                return;
+            }
+        }
+
+        if ($tokens[$stackPtr]['code'] === T_EQUAL) {
+            $nextVar          = ($stackPtr + 1);
+            $previousVariable = ($stackPtr + 1);
+            $variableCount    = 0;
+            while (($nextVar = $phpcsFile->findNext(T_VARIABLE, ($nextVar + 1), $statementEnd)) !== false) {
+                $previousVariable = $nextVar;
+                $variableCount++;
+            }
+
+            if ($variableCount !== 1) {
+                return;
+            }
+
+            $nextVar = $previousVariable;
+            if ($tokens[$nextVar]['content'] !== $tokens[$assignedVar]['content']) {
+                return;
+            }
+        }
+
+        // We have only one variable, and it's the same as what is being assigned,
+        // so we need to check what is being added or subtracted.
+        $nextNumber     = ($stackPtr + 1);
+        $previousNumber = ($stackPtr + 1);
+        $numberCount    = 0;
+        while (($nextNumber = $phpcsFile->findNext(array(T_LNUMBER), ($nextNumber + 1), $statementEnd, false)) !== false) {
+            $previousNumber = $nextNumber;
+            $numberCount++;
+        }
+
+        if ($numberCount !== 1) {
+            return;
+        }
+
+        $nextNumber = $previousNumber;
+        if ($tokens[$nextNumber]['content'] === '1') {
+            if ($tokens[$stackPtr]['code'] === T_EQUAL) {
+                $opToken = $phpcsFile->findNext(array(T_PLUS, T_MINUS), ($nextVar + 1), $statementEnd);
+                if ($opToken === false) {
+                    // Operator was before the variable, like:
+                    // $var = 1 + $var;
+                    // So we ignore it.
+                    return;
+                }
+
+                $operator = $tokens[$opToken]['content'];
+            } else {
+                $operator = substr($tokens[$stackPtr]['content'], 0, 1);
+            }
+
+            // If we are adding or subtracting negative value, the operator
+            // needs to be reversed.
+            if ($tokens[$stackPtr]['code'] !== T_EQUAL) {
+                $negative = $phpcsFile->findPrevious(T_MINUS, ($nextNumber - 1), $stackPtr);
+                if ($negative !== false) {
+                    $operator = ($operator === '+') ? '-' : '+';
+                }
+            }
+
+            $expected = $tokens[$assignedVar]['content'].$operator.$operator;
+            $found    = $phpcsFile->getTokensAsString($assignedVar, ($statementEnd - $assignedVar + 1));
+
+            if ($operator === '+') {
+                $error = 'Increment';
+            } else {
+                $error = 'Decrement';
+            }
+
+            $error .= " operators should be used where possible; found \"$found\" but expected \"$expected\"";
+            $phpcsFile->addError($error, $stackPtr);
+        }//end if
+
+    }//end processAssignment()
+
+
+}//end class
+
 ?>
-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
-mAour+hSqD3C8L8u7uYfG1nF5Q7dsbrg

@@ -1,41 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Service\Command\Factory;
+
+use Guzzle\Inflection\InflectorInterface;
+use Guzzle\Inflection\Inflector;
+use Guzzle\Service\ClientInterface;
+
+/**
+ * Command factory used to create commands referencing concrete command classes
+ */
+class ConcreteClassFactory implements FactoryInterface
+{
+    /** @var ClientInterface */
+    protected $client;
+
+    /** @var InflectorInterface */
+    protected $inflector;
+
+    /**
+     * @param ClientInterface    $client    Client that owns the commands
+     * @param InflectorInterface $inflector Inflector used to resolve class names
+     */
+    public function __construct(ClientInterface $client, InflectorInterface $inflector = null)
+    {
+        $this->client = $client;
+        $this->inflector = $inflector ?: Inflector::getDefault();
+    }
+
+    public function factory($name, array $args = array())
+    {
+        // Determine the class to instantiate based on the namespace of the current client and the default directory
+        $prefix = $this->client->getConfig('command.prefix');
+        if (!$prefix) {
+            // The prefix can be specified in a factory method and is cached
+            $prefix = implode('\\', array_slice(explode('\\', get_class($this->client)), 0, -1)) . '\\Command\\';
+            $this->client->getConfig()->set('command.prefix', $prefix);
+        }
+
+        $class = $prefix . str_replace(' ', '\\', ucwords(str_replace('.', ' ', $this->inflector->camel($name))));
+
+        // Create the concrete command if it exists
+        if (class_exists($class)) {
+            return new $class($args);
+        }
+    }
+}

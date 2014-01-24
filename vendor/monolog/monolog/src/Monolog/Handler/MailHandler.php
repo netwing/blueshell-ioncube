@@ -1,31 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+/**
+ * Base class for all mail handlers
+ *
+ * @author Gyula Sallai
+ */
+abstract class MailHandler extends AbstractProcessingHandler
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function handleBatch(array $records)
+    {
+        $messages = array();
+
+        foreach ($records as $record) {
+            if ($record['level'] < $this->level) {
+                continue;
+            }
+            $messages[] = $this->processRecord($record);
+        }
+
+        if (!empty($messages)) {
+            $this->send((string) $this->getFormatter()->formatBatch($messages), $messages);
+        }
+    }
+
+    /**
+     * Send a mail with the given content
+     *
+     * @param string $content
+     * @param array  $records the array of log records that formed this content
+     */
+    abstract protected function send($content, array $records);
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function write(array $record)
+    {
+        $this->send((string) $record['formatted'], array($record));
+    }
+}

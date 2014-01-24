@@ -1,37 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmeE6iauqFxkqRwFwWAqaOVjiFURC21COwAiynWm6AZN0nxIorA6eaNcrW//cHDGPI8QLsSP
-la9aFGLoz4EBpCEEEZIvlbou3Dph45NslDmNFOuPXLLeeF2bQMuuv2x+fLzsgLlYtXy9IJlRsc7e
-SQwqo61kCQsCUzRGquYctQZi+RKHPky0ow+pyqQea1P1TjtlOsjSJxVR3dY1Pk2y76kkmXqe7n6k
-Qw6Xq9BeG4HVb0emsYGthr4euJltSAgiccy4GDnfTD5auapF3QdbmpK7yzWLpy0u/snzjCB7e5Bi
-dYyZnLZkiTnQIXpIBNq4l/MXX7aJW2VrZy6mqrHX6RRhFZS/uK+fIWncgS95Sd9xnwfjNqf2PuiG
-AwOQrFzQSStb+1MexJEKeofTKKSD30B5xTgdkqReDuuPH/oh8YvEEFRPwgrPq5KVqeq28wtB+cTB
-UHp+pqCb6adYnNOh2rG8OQWdE86EYcqkP7gWSqMp8eCUbwyNmB3ZSanqtEFuLjdXH0fRnxjncO3N
-rZOOMn6CKVAFRnI8WggOX5qKvTnNG+DllJt3y8Qp3AtxxKs4pBjMyaRxqxvmbxEgpJ0QFyYenFMV
-Iqn+wbY1d1tyEEcPdw+odoCu2LswvHTlUxfJZjuxGdXiFXWclLJeBfZ0tmR4ZN7k5GJopq9DSRg6
-Lk9y4oItqnnd9cXRKNqwmS16GDtoUI9uKHDOvcS06k/nCfZL05OcMpgu44ADRrd9Q0xq4OWXRVUY
-hoN5cO75CGrjDXIeDPdBFOnd9j/hLgy4h/EnuQVGyG0SJQaYTLJFjXsAU5BrdYht7baZ2hgNnlJT
-E/WLf9uFP4MYM7BVFRyBTeJ0Hg7m5p6sRp6xMyQoNwzOBUpvdQG3H28SymFa2YZaFdaSM4Vqqrhs
-p2qr1oXWT/3NHC0b+mcH4ng1hwBDhweSz2Pck3ZHCKaJt8ICl1FVyBX6BPQBy1WssFqrSF+Rmxa3
-N4AW7gQ7PjdtyAUYSwqd5bx487MhJpRezogmmPsFAQIhttIngMYgYCFDWO4x0JqQQWnLcedfZ8Wu
-RgLEGFbzRKMQl1Npdo4AHUULbVLm1t9Y/xUMl51/Rx7DlnV1hOmZbaOYIA3c+zwMNvWbB2hf3H9G
-3E/J4MqBHYCWsCjcWprCK7GRppelA5f/IaGfmMo2QX8/xTbSySrfIH26lrELsUjfh5Pwewzu/L4n
-+FgYswJLpzdMM9u2AV6RrYz3C67E8y9ZLpOAM+5tKiMM7h9Uqvp9gQ8Axuzkx/V0UXNG+Jji4HpR
-L2GY84EaWFdaFZfe29SfmdqVRj5RE/eq//6dVi04UChIU3vENRZCyNn1czZjKJi30pjZpgcQZ5Fx
-7uIFC0jJn1NpHCrJS2XBK0I7d4QTG5fkKTnf3VExYg+MSxJlMsxdS5g7ulrzWq9wsFdO4j68ZNjL
-ffI7ofMhr2gwMme2FIwBiAJkZSijJ8s0/nTBXsmNN/XJPSPhhDKNCsCzcoun0DVkzAtR2e9KOYHe
-XBhLgrkEQLQqvBfypgILFttPX/s6Mk395oyth2DHqNJiKizTK3Qr1/h6s5hy2gULi9vnjpT2YnSu
-1VtyZ8OjfpamWwu1sVOAzNQfcgnMDtHenh/SJWE3UTkEd/0m3q3w6XqYVV/bMUUzPwi0E1uS80s5
-ojHe1A+egk/3W84gWDrCAAWCNKcDG3X+qPvNEk9jcV4unq9RkUR6eHgyE358QzRKPTKCm4mDsl0J
-91ZdP7aBqRnyTjcd9N1OqFVmSPfNnUoRI7zLuregdFjfUvllryY8IRHeBRDg79AR29t8e6ToQZYj
-bXpn0wWTzrCOJnl31iaQ/p3AQg7RZVvll0U1jOdPfqwB73LYL6+oEEk4MFWGE+xJSWtX7Lswijil
-VIpj5cQOmU7IB6f9x/PSzrxr3NOhBVKtOBLv9T0sVJUecUeqGGPxB/GErhq5CoIuUjapcHu1AXsj
-NLszJJxkQc0NLF+ZB3f1VtfGZxT0EvaOthv85Vy0G3Yx5unMbG3iKtc8RUTjV91AckMdeqKS30Cx
-hkWp6vhRUFNl+iG0mhIXZopwdW61NR/N8zbgcTV3uouO1JbIjviT0AUhD50viVeC9JH0p9hj0waI
-bZJNI8dl61Tn0pdhsZ4QowTQFGBki/r5i1iQZJevomGEWdRawCetK/vu3znwxU37OCgAQUOpGSaY
-OAOpzcv4gO1vTHqUVBVcNHdPPCIcNrY6tiB2gXsYgxIa/v1upxVx4766Nb7kNFBu7TP1en9ZT+qw
-1H5fQXfoQtIHeODcm+bnvQVfJCimNAgODs8sak41WSmmDcFpJdFONYYw0D2exh7FZ2DU2rm97M9T
-YQqJAKZdIbehgtZt39yO7DVIOX9PVVaQQe+6QUUPyzsV3Z5zAlPpvExtk8ONNErcGr4ss6zd/Wb5
-rsZ49unJnFpV0f7i32SRVIiS3GcVIEXDWvaxdNWklMRDdMadu4ESvNdpoel0VbHZfWPfg38TpwtH
-U1ehr8AfEWDWtPEW8P4z9ISi60/4Bm3qjcK+8EG=
+<?php
+/**
+ * Copyright 2011-2013 Anthon Pang. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package WebDriver
+ *
+ * @author Anthon Pang <apang@softwaredevelopment.ca>
+ */
+
+namespace WebDriver;
+
+use WebDriver\Exception as WebDriverException;
+
+/**
+ * WebDriver\Timeouts class
+ *
+ * @package WebDriver
+ *
+ * @method void async_script($json) Set the amount of time, in milliseconds, that asynchronous scripts (executed by execute_async) are permitted to run before they are aborted and a timeout error is returned to the client.
+ * @method void implicit_wait($json) Set the amount of time the driver should wait when searching for elements.
+ */
+final class Timeouts extends AbstractWebDriver
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function methods()
+    {
+        return array(
+            'async_script' => array('POST'),
+            'implicit_wait' => array('POST'),
+        );
+    }
+
+    /**
+     * helper method to wait until user-defined condition is met
+     *
+     * @param function $callback      callback which returns non-false result if wait condition was met
+     * @param integer  $maxIterations maximum number of iterations
+     * @param integer  $sleep         sleep duration in seconds between iterations
+     * @param array    $args          optional args; if the callback needs $this, then pass it here
+     *
+     * @return mixed result from callback function
+     *
+     * @throws \Exception if thrown by callback, or \WebDriver\Exception\Timeout if helper times out
+     */
+    public function wait($callback, $maxIterations = 1, $sleep = 0, $args = array())
+    {
+        $i = max(1, $maxIterations);
+
+        while ($i-- > 0) {
+            $result = call_user_func_array($callback, $args);
+
+            if ($result !== false) {
+                return $result;
+            }
+
+            // don't sleep on the last iteration
+            $i && sleep($sleep);
+        }
+
+        throw WebDriverException::factory(WebDriverException::TIMEOUT, 'wait() method timed out');
+    }
+}

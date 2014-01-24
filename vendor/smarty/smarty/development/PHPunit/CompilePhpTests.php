@@ -1,174 +1,423 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Smarty PHPunit tests compilation of {php} and <?php...?> tag
+ *
+ * @package PHPunit
+ * @author Uwe Tews
+ */
+
+/**
+ * class for {php} and <?php...?> tag tests
+ */
+class CompilePhpTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smartyBC = SmartyTests::$smartyBC;
+        SmartyTests::init();
+        $this->smartyBC->disableSecurity();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+     * test <?php...\> tag
+     * default is PASSTHRU
+     */
+    public function testPhpTag()
+    {
+        $tpl = $this->smartyBC->createTemplate("eval:<?php echo 'hello world'; ?>");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals("<?php echo 'hello world'; ?>", $content);
+    }
+    // ALLOW
+    public function testPhpTagAllow()
+    {
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:<?php echo 'hello world'; ?>");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals('hello world', $content);
+    }
+    /**
+     * test <?=...\> shorttag
+     * default is PASSTHRU
+     */
+    public function testShortTag()
+    {
+        $this->smartyBC->assign('foo', 'bar');
+        $content = $this->smartyBC->fetch('eval:<?=$foo?>');
+        $this->assertEquals('<?=$foo?>', $content);
+    }
+
+    public function testEndTagInStrings1()
+    {
+        $str = <<< STR
+<?php
+\$a = Array("?>" => 3 );
+\$b = Array("?>" => "?>");
+\$c = Array("a" => Array("b" => 7));
+class d_class
+{
+  public \$d_attr = 8;
+}
+\$d = new d_class();
+\$e = Array("f" => \$d);
+
+// '"
+# '"
+
+echo '{\$a["?>"]}';
+echo "{\$a['?>']}";
+echo '{\$a["{\$b["?>"]}"]}';
+echo "{\$c['a']['b']}";
+echo "a{\$e['f']->d_attr}a"
 ?>
-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
+STR;
+
+        $this->smartyBC->left_delimiter = '{{';
+        $this->smartyBC->right_delimiter = '}}';
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals('{$a["?>"]}3{$a["{$b["?>"]}"]}7a8a', $content);
+    }
+
+    public function testEndTagInStrings2()
+    {
+        $str = <<< STR
+<?php
+\$a = Array("?>" => 3 );
+\$b = Array("?>" => "?>");
+
+echo "{\$a["?>"]}";
+echo "{\$a["{\$b["?>"]}"]}";
+?>
+STR;
+
+        $this->smartyBC->left_delimiter = '{{';
+        $this->smartyBC->right_delimiter = '}}';
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals('33', $content);
+    }
+
+    public function testEndTagInStrings3()
+    {
+        $str = <<< STR
+<?php
+echo 'a?>a';
+echo '?>\\\\';
+echo '\\\\\\'?>a';
+echo '/*'; // */
+echo 1+1;
+?>
+STR;
+
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals('a?>a?>\\\\\'?>a/*2', $content);
+    }
+
+    public function testEndTagInStrings4()
+    {
+        $str = <<< STR
+<?php
+echo "a?>a";
+echo "?>\\\\";
+echo "\\"?>";
+echo "\\\\\\"?>a";
+echo "/*";
+echo 1+1;
+?>
+STR;
+
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals('a?>a?>\\"?>\\"?>a/*2', $content);
+    }
+
+    public function testEndTagInHEREDOC()
+    {
+        $str = <<< STR
+<?php
+echo <<< LALA
+  LALA
+ ?>
+
+ "! ?> /*
+ LALA
+LALA ;
+LALA;1+1;
+LALA;
+echo <<<LALA2
+LALA2;1+1;
+LALA2
+;
+?>
+STR;
+        // " Fix emacs highlighting which chokes on preceding open quote
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals("  LALA\n ?>\n\n \"! ?> /*\n LALA\nLALA ;\nLALA;1+1;LALA2;1+1;", str_replace("\r", '', $content));
+    }
+
+    public function testEmbeddingsInHEREDOC1()
+    {
+        $str = <<< STR
+<?php
+\$a = Array("EOT?>'" => 1);
+
+echo <<< EOT
+{\$a["EOT?>'"]}
+EOT;
+?>
+STR;
+        // ' Fix emacs highlighting which chokes on preceding open quote
+        $this->smartyBC->left_delimiter = '{{';
+        $this->smartyBC->right_delimiter = '}}';
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals("1", $content);
+    }
+
+    public function testEmbeddingsInHEREDOC2()
+    {
+        $str = <<< STR
+<?php
+\$a = Array("\nEOT\n?>'" => 1);
+
+echo <<< EOT
+{\$a[<<<EOT2
+
+EOT
+?>'
+EOT2
+]}
+EOT
+;
+?>
+STR;
+        // ' Fix emacs highlighting which chokes on preceding open quote
+        $this->smartyBC->left_delimiter = '{{';
+        $this->smartyBC->right_delimiter = '}}';
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        /* Disabled due to bug in PHP easiest illustrated by:
+       http://bugs.php.net/bug.php?id=50654
+
+<?php
+$a = Array("b" => 1);
+
+echo <<<ZZ
+{$a[<<<B
+b
+B
+]}
+ZZ;
+?>
+        $this->smartyBC->left_delimiter = '{{';
+        $this->smartyBC->right_delimiter = '}}';
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->security = false;
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals("11", $content);
+*/
+    }
+
+    public function testEmbeddedHEREDOC()
+    {
+        $str = <<< STR
+<?php
+\$a = Array("4\"" => 3);
+\$b = Array("aa\"?>" => 4);
+
+echo "{\$a[<<<EOT
+{\$b["aa\"?>"]}"
+EOT
+  ]}";
+?>
+STR;
+        // " Fix emacs highlighting which chokes on preceding open quote
+        $this->smartyBC->left_delimiter = '{{';
+        $this->smartyBC->right_delimiter = '}}';
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals("3", $content);
+    }
+
+    public function testEmbeddedNOWDOC()
+    {
+        $str = <<< STR
+<?php
+\$a = Array("aa\"?>" => 3);
+
+echo "{\$a[<<<'EOT'
+aa"?>
+EOT
+  ]}";
+?>
+STR;
+        // " Fix emacs highlighting which chokes on preceding open quote
+        $this->smartyBC->left_delimiter = '{{';
+        $this->smartyBC->right_delimiter = '}}';
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        if (version_compare(PHP_VERSION, '5.3.0') < 0) {
+            return;
+        }
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals("3", $content);
+    }
+
+    public function testEndTagInNOWDOC()
+    {
+        $str = <<< STR
+<?php
+echo <<< 'LALA'
+aa ?> bb
+LALA;
+echo <<<'LALA2'
+LALA2;1+1;?>
+LALA2
+;
+?>
+STR;
+
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        if (version_compare(PHP_VERSION, '5.3.0') < 0) {
+            return;
+        }
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals("aa ?> bbLALA2;1+1;?>", $content);
+    }
+
+    public function testNewlineHEREDOC()
+    {
+        $sprintf_str = "<?php echo <<<STR%sa%1\$sSTR;%1\$s?>";
+        foreach (Array("\n", "\r\n") as $newline_chars) {
+            $str = sprintf($sprintf_str, $newline_chars);
+
+            $this->smartyBC->php_handling = Smarty::PHP_PASSTHRU;
+            $this->smartyBC->enableSecurity();
+            $tpl = $this->smartyBC->createTemplate("eval:$str");
+            $content = $this->smartyBC->fetch($tpl);
+            // For some reason $content doesn't preserve newline format. Not a big problem, I think.
+            $this->assertEquals(preg_replace("/\r\n/", "\n", $str),
+                preg_replace("/\r\n/", "\n", $content)
+                );
+
+            $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+            $this->smartyBC->disableSecurity();
+            $tpl = $this->smartyBC->createTemplate("eval:$str");
+            $content = $this->smartyBC->fetch($tpl);
+            $this->assertEquals("a", $content);
+        }
+    }
+
+    public function testNewlineNOWDOC()
+    {
+        $sprintf_str = "<?php echo <<<'STR'%sa%1\$sSTR;%1\$s?>";
+        foreach (Array("\n", "\r\n") as $newline_chars) {
+            $str = sprintf($sprintf_str, $newline_chars);
+
+            $this->smartyBC->php_handling = Smarty::PHP_PASSTHRU;
+            $this->smartyBC->enableSecurity();
+            $tpl = $this->smartyBC->createTemplate("eval:$str");
+            $content = $this->smartyBC->fetch($tpl);
+            // For some reason $content doesn't preserve newline format. Not a big problem, I think.
+            $this->assertEquals(preg_replace("/\r\n/", "\n", $str),
+                preg_replace("/\r\n/", "\n", $content)
+                );
+
+            if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
+                $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+                $this->smartyBC->disableSecurity();
+                $tpl = $this->smartyBC->createTemplate("eval:$str");
+                $content = $this->smartyBC->fetch($tpl);
+                $this->assertEquals("a", $content);
+            }
+        }
+    }
+
+    public function testEndTagInComment()
+    {
+        $str = <<< STR
+<?php
+
+/*
+d?>dd "' <<< EOT
+*/
+echo 1+1;
+?>
+STR;
+
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals(str_replace("\r", '', $str), str_replace("\r", '', $content));
+
+        $this->smartyBC->php_handling = Smarty::PHP_ALLOW;
+        $this->smartyBC->disableSecurity();
+        $tpl = $this->smartyBC->createTemplate("eval:$str");
+        $content = $this->smartyBC->fetch($tpl);
+        $this->assertEquals('2', $content);
+    }
+}

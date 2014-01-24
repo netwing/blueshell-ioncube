@@ -1,76 +1,139 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+
+/**
+ * @covers Monolog\Handler\ChromePHPHandler
+ */
+class ChromePHPHandlerTest extends TestCase
+{
+    protected function setUp()
+    {
+        TestChromePHPHandler::reset();
+    }
+
+    public function testHeaders()
+    {
+        $handler = new TestChromePHPHandler();
+        $handler->setFormatter($this->getIdentityFormatter());
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::WARNING));
+
+        $expected = array(
+            'X-ChromeLogger-Data'   => base64_encode(utf8_encode(json_encode(array(
+                'version' => ChromePHPHandler::VERSION,
+                'columns' => array('label', 'log', 'backtrace', 'type'),
+                'rows' => array(
+                    'test',
+                    'test',
+                ),
+                'request_uri' => '',
+            ))))
+        );
+
+        $this->assertEquals($expected, $handler->getHeaders());
+    }
+
+    public function testHeadersOverflow()
+    {
+        $handler = new TestChromePHPHandler();
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::WARNING, str_repeat('a', 150*1024)));
+
+        // overflow chrome headers limit
+        $handler->handle($this->getRecord(Logger::WARNING, str_repeat('a', 100*1024)));
+
+        $expected = array(
+            'X-ChromeLogger-Data'   => base64_encode(utf8_encode(json_encode(array(
+                'version' => ChromePHPHandler::VERSION,
+                'columns' => array('label', 'log', 'backtrace', 'type'),
+                'rows' => array(
+                    array(
+                        'test',
+                        'test',
+                        'unknown',
+                        'log',
+                    ),
+                    array(
+                        'test',
+                        str_repeat('a', 150*1024),
+                        'unknown',
+                        'warn',
+                    ),
+                    array(
+                        'monolog',
+                        'Incomplete logs, chrome header size limit reached',
+                        'unknown',
+                        'warn',
+                    ),
+                ),
+                'request_uri' => '',
+            ))))
+        );
+
+        $this->assertEquals($expected, $handler->getHeaders());
+    }
+
+    public function testConcurrentHandlers()
+    {
+        $handler = new TestChromePHPHandler();
+        $handler->setFormatter($this->getIdentityFormatter());
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::WARNING));
+
+        $handler2 = new TestChromePHPHandler();
+        $handler2->setFormatter($this->getIdentityFormatter());
+        $handler2->handle($this->getRecord(Logger::DEBUG));
+        $handler2->handle($this->getRecord(Logger::WARNING));
+
+        $expected = array(
+            'X-ChromeLogger-Data'   => base64_encode(utf8_encode(json_encode(array(
+                'version' => ChromePHPHandler::VERSION,
+                'columns' => array('label', 'log', 'backtrace', 'type'),
+                'rows' => array(
+                    'test',
+                    'test',
+                    'test',
+                    'test',
+                ),
+                'request_uri' => '',
+            ))))
+        );
+
+        $this->assertEquals($expected, $handler2->getHeaders());
+    }
+}
+
+class TestChromePHPHandler extends ChromePHPHandler
+{
+    protected $headers = array();
+
+    public static function reset()
+    {
+        self::$initialized = false;
+        self::$overflowed = false;
+        self::$json['rows'] = array();
+    }
+
+    protected function sendHeader($header, $content)
+    {
+        $this->headers[$header] = $content;
+    }
+
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+}

@@ -1,38 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPvkqCFnXdedpQ0IbtxrGbaI9JkMmOo9d/xwi2IeSK7eYQ5e4nc6hWlFv0QFQVVNIZi48L7GE
-X91oFZTSbqNVf8yi43gRrKGoJhnusEMexNh2BIgaMzOKpbLaaJI06RDG7GHhUEho+WCDbEHe0g/B
-J1Iz9SN//+u4OSQX/kQ1QPcs+pJ80c5oWoMj3a4Wi0qKix4ec06DatmppeGUKodZm97iPqZiI6eS
-KK2KkaBLzs7/ThvusZfrhr4euJltSAgiccy4GDnfT1rYQ2fuhYlW8NI0Cq0Lhbrr1V4rbrTRbKLq
-rsqznrrNlts8q4Ecmh9I4QB/gf+nQxYR/R/H6S7wQqg/nUFl/hkYVAfNIjUc/iWAf5AYk/G6oOhL
-w0zDrm0YI/gp5e2A1CcJH5yTW3FLlYeBCV8sxPUs+jDMsjFoAT5PTUFqLuYxeIWs0jkV2Og7c7MZ
-Iw4zNunyPjpuVedtE206vQmzKPhI4vcOwgF/QbULdZbOjFcL4xEMcCReuaQiY93Fi5dorEaKt403
-cPo5Su79HYo8lrNYTxKqYNTybw4xJa/C2Ja9No/XLwADP8laSA8fgbEaKSy5bCzH8V4moivFeCLY
-+HPZ2pIqiEWh0zfTKWBnsStR9Vqo8Hf723J/GNwM3qINx/JQ3v3ngJRElgKdVOUkvCO8aTMAnHVY
-GGvdJv1NCwX/Itn4qfTXVu7DSFvPWSvje57vuLKQ6V5LYnWI7kOvP00a3FIy004//Y+hUndMAWJN
-xDaGdM5EgBH5Uo2IxubDn42pIO8Y5OkLeJcyLuN2heCgdTE7Rsdz+ZTOazRH7LUXC4ttcRZPBrSU
-QuRGaKISGdq8znItM4lnHjUh2qxY2XX9p8L767g2IOyLG/UA08/Bj9OFrXAAIPaVXOiaBRaAr2Oh
-f/5ryu1u/rV/LtGcggoiPAIji59Z0/q3LwZG44/BcYrZLd3aHUzZxDdoOS3kOe6+ZyvCRBepIF/M
-Wk0Lenj5AT5CClIbGzMG6RFsILj4OHX7oeA2y6CFAO6Zh5UuLf7PxdPKezLOmeY+O/VUql4MAAJH
-0ml4E/+gXTi4MrM41oEcHhCLUABo7dpyLQkLWx9c3ihe23jtc5EWCc4fMHlt3PKg+rmCiEMhbuBP
-QnKzR4iPDfs6PQsZ3EGjGGZ7KQ+XRK5OZ53vJ9RBNYkc7frRsuFmX+sO17D533rRs+CTRZFnwOgz
-g+fm9HOUXfcfsWt19f9kyvxhYgcafv36geaiZ874EDvGRfMDX9y27nStv8EYTMoRdShOABKgNazb
-cv+JSl+AjAg9JoyneLkjwfI0E8D36/3v3x9yJmd+s5Vr2IUGRsoAvepzuq3lS8U/iqf5nQbr589U
-UwiOw9tKCIpfdvY1KJ/AOCuu5ArgfFVKcYgSftHdIY1tlfDSzM2kCBPToJZZmUoqcDwSKZsHl6Y/
-mhLQfoSUAncjrcx7GgAyq3eNjtKIX+/7SxX1fuNforxP/LqmXrqu387uBZgvbdfPhPKKLrcFc284
-tIp3i78hnEq2P6HDznOzdTuutn13xS3pALsbbcCcoLzkbBOtYTz1TT6jzQEYoUNwj3yuT9DOtvDC
-reAm4k0zyRm0C4YWXMcsdUkshFYENN9/IydgyPsuTHsJdJ74dCMSUKMz1ouFtuTCHiw7Nz38ho/N
-vy3ObmODqEA8DrLFHAOAcLJFOOQB5F4oYDQf8MwL4UcmedGc9VpmYuc0ILFYGerBkBvq9RwzFmpg
-wSgj93XXxd9ZP804Crm6UctO7dOr+8n2whc8ESj4WjCmt2UGUPJoQpcnydrae/+HDiumYQ1m/1jq
-W8XbTg3sBR3Ufh8PTN78BY0g7RAeeeviUNJUVKnYPDmqwDDYcVNYdLaRIjms12GvBuQmUyR5hEbT
-yBWl0jjOO+weuGy13A/MXyDBwn8sRkhyfU+Fmf5DKtMme7vF82unrJwczH3wmFcLhBO29LW5wsfK
-1LpiUnbDklfIIxXQC0y+XGxNw+WRaWLN2NjENHw03ctU9lGaI/+VENwyRAeS6YAxoO/a730x+gUP
-zw7+BGbJbI0HgM7wGuE9G35WW07UwwPkf8wMUvJxYsfRKP8i2imVocYaTmK+w1bDaRcFXct3s36f
-SWE45fVMIZBl2GL+Ly6o+7tD+DDeoNKESLbRrMFXFudFGjHvAJEkTrm63yY8Sxpwt2yr3buh6EqS
-y7di/IyHFK318Hm/6c97PDhsEDjtjLJ8CsLq4GDcLIQ1HBer1twEgsqd2o9XhEFOTIg3VfgJoIKz
-LnxFMO8FlBe9Ac/PrcGTxxS7YSh375E24r1dVdA7q8PP2ETfcVVeRPL24yetHPJ37/8XoYwL7B4S
-zJhRiKTSZXDgg2W1vImgfSDx3pX3gujv05YiGDGJYuWcwyCqtPmpYkj4LBIN6T1dJsvGM9BwomJc
-52bkTrSkkLqHX0RHJ2pi+BkzX4fadedhzRrsPmsg48ndA7yiITEakQOSkcM9Hfp74Go7UZL0oKAg
-XL/L9gaAt23QvJazijiqQXUEEdb4uCT3TwgqBF9iDIO4CCPG/TGXcm0ES0S0RqwqhwXLv6jnOTej
-RXM973VfixJzMOA3
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm'); ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<?php echo CHtml::errorSummary($model); ?>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'title'); ?>
+		<?php echo $form->textField($model,'title',array('size'=>80,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'title'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'content'); ?>
+		<?php echo CHtml::activeTextArea($model,'content',array('rows'=>10, 'cols'=>70)); ?>
+		<p class="hint">You may use <a target="_blank" href="http://daringfireball.net/projects/markdown/syntax">Markdown syntax</a>.</p>
+		<?php echo $form->error($model,'content'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'tags'); ?>
+		<?php $this->widget('CAutoComplete', array(
+			'model'=>$model,
+			'attribute'=>'tags',
+			'url'=>array('suggestTags'),
+			'multiple'=>true,
+			'htmlOptions'=>array('size'=>50),
+		)); ?>
+		<p class="hint">Please separate different tags with commas.</p>
+		<?php echo $form->error($model,'tags'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'status'); ?>
+		<?php echo $form->dropDownList($model,'status',Lookup::items('PostStatus')); ?>
+		<?php echo $form->error($model,'status'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->

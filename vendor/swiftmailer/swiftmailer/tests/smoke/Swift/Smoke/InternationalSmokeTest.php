@@ -1,41 +1,37 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-U2CFFIBUmzpkEYN9rH0TRkM/yvsPrW==
+<?php
+
+require_once 'Swift/Tests/SwiftSmokeTestCase.php';
+
+class Swift_Smoke_InternationalSmokeTest extends Swift_Tests_SwiftSmokeTestCase
+{
+    public function setUp()
+    {
+        $this->_attFile = dirname(__FILE__) . '/../../../_samples/files/textfile.zip';
+    }
+
+    public function testAttachmentSending()
+    {
+        $mailer = $this->_getMailer();
+        $message = Swift_Message::newInstance()
+            ->setCharset('utf-8')
+            ->setSubject('[Swift Mailer] InternationalSmokeTest (διεθνής)')
+            ->setFrom(array(SWIFT_SMOKE_EMAIL_ADDRESS => 'Χριστοφορου (Swift Mailer)'))
+            ->setTo(SWIFT_SMOKE_EMAIL_ADDRESS)
+            ->setBody('This message should contain an attached ZIP file (named "κείμενο, εδάφιο, θέμα.zip").' . PHP_EOL .
+                'When unzipped, the archive should produce a text file which reads:' . PHP_EOL .
+                '"This is part of a Swift Mailer v4 smoke test."' . PHP_EOL .
+                PHP_EOL .
+                'Following is some arbitrary Greek text:' . PHP_EOL .
+                'Δεν βρέθηκαν λέξεις.'
+                )
+            ->attach(Swift_Attachment::fromPath($this->_attFile)
+                ->setContentType('application/zip')
+                ->setFilename('κείμενο, εδάφιο, θέμα.zip')
+                )
+            ;
+        $this->assertEqual(1, $mailer->send($message),
+            '%s: The smoke test should send a single message'
+            );
+        $this->_visualCheck('http://swiftmailer.org/smoke/4.0.0/international.jpg');
+    }
+}

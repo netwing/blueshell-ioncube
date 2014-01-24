@@ -1,117 +1,293 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-3xhY74h2EowQ7cjN1CDV7Q0r2HA0
+<?php
+
+require_once 'ModelMock.php';
+
+/**
+ * CCompareValidatorTest
+ *
+ * @author   Kevin Bradwick <kbradwick@gmail.com>
+ */
+class CCompareValidatorTest extends CTestCase
+{
+	/**
+	 * Test we can catch validation errors
+	 *
+	 * @return null
+	 */
+	public function testValidationErrorsWithEquals()
+	{
+		$model = $this->getModelMock(array('compareAttribute' => 'bar'));
+		$model->foo = 'foo';
+		$model->bar = 'bar';
+
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('foo'));
+		$model->bar = 'foo';
+		$this->assertTrue($model->validate());
+
+		// https://github.com/yiisoft/yii/issues/1955
+		$model->foo = array('foo');
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('foo'));
+
+		// client validation
+		$validator = new CCompareValidator;
+		$validator->operator = '=';
+		$validator->compareAttribute = 'bar';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertInternalType('string', $script);
+		$this->assertContains('Foo must be repeated exactly.', $script);
+	}
+
+	/**
+	 * Test we can catch validation errors
+	 *
+	 * @return null
+	 */
+	public function testValidationErrorsWithNotEquals()
+	{
+		$model = $this->getModelMock(array(
+			'operator' => '!=',
+			'strict' => true,
+			'compareAttribute' => 'bar',
+		));
+		$model->foo = 'foo';
+		$model->bar = 'bar';
+
+		$this->assertTrue($model->validate());
+
+		$model->bar = 'foo';
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('foo'));
+
+		// client validation
+		$validator = new CCompareValidator;
+		$validator->operator = '!=';
+		$validator->compareAttribute = 'bar';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertInternalType('string', $script);
+		$this->assertContains('Foo must not be equal to \"{compareValue}\".".replace(\'{compareValue}\', ', $script);
+
+		$validator->message = '{compareAttribute}';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertContains('"Bar"', $script);
+		$this->assertNotContains('{compareAttribute}', $script);
+	}
+
+	/**
+	 * Test we can catch validation errors
+	 *
+	 * @return null
+	 */
+	public function testValidationErrorsWitGreaterThan()
+	{
+		$model = $this->getModelMock(array(
+			'operator' => '>',
+			'strict' => true,
+			'compareAttribute' => 'bar',
+		));
+		$model->foo = 1;
+		$model->bar = 2;
+
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('foo'));
+		$model->bar = 0;
+		$this->assertTrue($model->validate());
+
+		// client validation
+		$validator = new CCompareValidator;
+		$validator->operator = '>';
+		$validator->compareAttribute = 'bar';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertInternalType('string', $script);
+		$this->assertContains('Foo must be greater than \"{compareValue}\".".replace(\'{compareValue}\', ', $script);
+
+		$validator->message = '{compareAttribute}';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertContains('"Bar"', $script);
+		$this->assertNotContains('{compareAttribute}', $script);
+	}
+
+	/**
+	 * Test we can catch validation errors
+	 *
+	 * @return null
+	 */
+	public function testValidationErrorsWitGreaterThanOrEqual()
+	{
+		$model = $this->getModelMock(array(
+			'operator' => '>=',
+			'strict' => true,
+			'compareAttribute' => 'bar',
+		));
+		$model->foo = 1;
+		$model->bar = 2;
+
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('foo'));
+		$model->bar = 1;
+		$this->assertTrue($model->validate());
+
+		// client validation
+		$validator = new CCompareValidator;
+		$validator->operator = '>=';
+		$validator->compareAttribute = 'bar';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertInternalType('string', $script);
+		$this->assertContains('Foo must be greater than or equal to \"{compareValue}\".".replace(\'{compareValue}\', ', $script);
+
+		$validator->message = '{compareAttribute}';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertContains('"Bar"', $script);
+		$this->assertNotContains('{compareAttribute}', $script);
+	}
+
+	/**
+	 * Test we can catch validation errors
+	 *
+	 * @return null
+	 */
+	public function testValidationErrorsWitLessThan()
+	{
+		$model = $this->getModelMock(array(
+			'operator' => '<',
+			'strict' => true,
+			'compareAttribute' => 'bar',
+		));
+		$model->foo = 3;
+		$model->bar = 2;
+
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('foo'));
+		$model->bar = 4;
+		$this->assertTrue($model->validate());
+
+		// client validation
+		$validator = new CCompareValidator;
+		$validator->operator = '<';
+		$validator->compareAttribute = 'bar';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertInternalType('string', $script);
+		$this->assertContains('Foo must be less than \"{compareValue}\".".replace(\'{compareValue}\', ', $script);
+
+		$validator->message = '{compareAttribute}';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertContains('"Bar"', $script);
+		$this->assertNotContains('{compareAttribute}', $script);
+	}
+
+	/**
+	 * Test we can catch validation errors
+	 *
+	 * @return null
+	 */
+	public function testValidationErrorsWitLessThanOrEqual()
+	{
+		$model = $this->getModelMock(array(
+			'operator' => '<=',
+			'strict' => true,
+			'compareAttribute' => 'bar',
+		));
+		$model->foo = 3;
+		$model->bar = 2;
+
+		$this->assertFalse($model->validate());
+		$this->assertTrue($model->hasErrors('foo'));
+		$model->bar = 3;
+		$this->assertTrue($model->validate());
+
+		// client validation
+		$validator = new CCompareValidator;
+		$validator->operator = '<=';
+		$validator->compareAttribute = 'bar';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertInternalType('string', $script);
+		$this->assertContains('Foo must be less than or equal to \"{compareValue}\".".replace(\'{compareValue}\', ', $script);
+
+		$validator->message = '{compareAttribute}';
+		$script = $validator->clientValidateAttribute($model, 'foo');
+		$this->assertContains('"Bar"', $script);
+		$this->assertNotContains('{compareAttribute}', $script);
+	}
+
+	/**
+	 * @expectedException CException
+	 */
+	public function testClientValidateAttributeThrowsExcpetion()
+	{
+		$model = $this->getModelMock(array(
+			'operator' => '<=',
+			'strict' => true,
+			'compareAttribute' => 'bar',
+		));
+		$validator = new CCompareValidator;
+		$validator->operator = '}';
+		$validator->clientValidateAttribute($model, 'foo');
+	}
+
+	/**
+	 * @expectedException CException
+	 */
+	public function testValidateThrowsExcpetionforBadOperator()
+	{
+		$model = $this->getModelMock(array(
+			'operator' => ']]',
+			'strict' => true,
+			'compareAttribute' => 'bar',
+		));
+		$model->validate();
+	}
+
+	/**
+	 * Test overriding value by setting compareValue
+	 *
+	 * @return null
+	 */
+	public function testOverrideCompareValue()
+	{
+		$rules = array(
+			array('foo', 'compare', 'compareValue' => 'hello')
+		);
+
+		$stub = $this->getMock('ModelMock', array('rules'));
+		$stub->expects($this->any())
+			 ->method('rules')
+			 ->will($this->returnValue($rules));
+
+		$stub->foo = 'foo';
+		$this->assertFalse($stub->validate());
+
+		// client validation
+		$validator = new CCompareValidator;
+		$validator->operator = '=';
+		$validator->compareValue = 'bar';
+		$script = $validator->clientValidateAttribute($stub, 'foo');
+		$this->assertInternalType('string', $script);
+		$this->assertContains('Foo must be repeated exactly', $script);
+	}
+
+	/**
+	 * Mocks up an object to test with
+	 *
+	 * @param array $operator optional parameters to configure rule
+	 *
+	 * @return null
+	 */
+	protected function getModelMock($params=array())
+	{
+		$rules = array(
+			array('foo', 'compare')
+		);
+
+		foreach ($params as $rule => $value) {
+			$rules[0][$rule] = $value;
+		}
+
+		$stub = $this->getMock('ModelMock', array('rules'));
+		$stub->expects($this->any())
+			 ->method('rules')
+			 ->will($this->returnValue($rules));
+
+		return $stub;
+	}
+}

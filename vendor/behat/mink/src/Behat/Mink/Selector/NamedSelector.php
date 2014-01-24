@@ -1,50 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPm05D0agwumk9xUXAi8Dj2u/yHOlM1KhoFKEWi/5xfdvjlY/0FOZSeE/dOZye1Lpk4O5sTSg
-9cflJvqpAcI2OGW22M4K5hSZpCV9SNyXOqYdAgg1i5NTVVlRdFbzX8p3prK510hFQhuZ7gGFnvcz
-V3Q3+UnutmJ7JrRDrYuxOuVpwFjwnDxHSXjCSP0XoQ7p8UV74R0PigMvEnAGTUbSmYVQKqja8URp
-2mERPl+uK6NsUk2yGBXvmAzHAE4xzt2gh9fl143SQNH+OeNNfwLxtaAaV2TWPM317W/iKWpsKGdF
-H71UEgdu9KsUQqtlnS0626lvMGbvrKxQVr3kJWZm5dOoSA10ZpMtIsXBWnFNpRABZQmT7F4uFp7i
-KO6KmY6iUbdPfeTie3QF2hp296j+ymqgQBupvq+0jyN6ZYIIRIWHn246N8C4syDngJIRTevV4nlT
-yt5vyuEzAEK+o1bCWczAnw6Qg3MOKj92uwkt8/eHMCCSVvartdqpPdEmJGG+wP37sxz54jmwmC/H
-qQXPc35wf5mSrobu//jyb0PUR8fm3UjPcXe12uUs5MRwnHOSDOU3B7fK7fT5ktssd18Iwnd+mRno
-f9R7qyMXG73j+HTltc5fkbLscTwAIWz6GYExOgTpXh13YSbU+QHDT2K2H9w+ORvDh3CvXXmcT6xL
-daX6Dl6XsjuMiqC7tQsyHsxgty4f7FUklVH6wlzkZx8iN8Ru0O3WTDK6uasOJhePYqIulDQlNTfj
-7utsTTTvrSJQni7uUMld67Z5xL6ndQ8ouL3ilTFKu8ZSbDnk3UNCMeiK3yCF+w95d7OasIF38Z3q
-MvKPUhibS4RN2dE3X5clYlHZScn0Zd+PQW+2iSVxvUeuw7s9UljR6fW7ubLyzZEee298gC5xLZjU
-834hw4z6s9bU24lgWPVAaO3Bp6ZGd9eiheL18831B5VFvz8rUS5gQp3qnM86hR4RfObP79D3xSQG
-7bt/fXjbaMP9xFkR4xcewaZHP+2yuwVlftmN3dCpT8YM2PA0G1xiaXQXtZRihyz3Tbx/PR0T61+o
-20Vv8yAa0Pv57md8jgaYLlCu4OJBQmrX92xH/FUGTsJVdPoUav/Xz3EcbmCj4Dy/2Rrq0eo8whzW
-kYHQMZ7PVpvyTrKbqaHAefFhCO+Nhu5VY5vyh4trCEko9aDjLx6pYzzXdxusP8voSdCn+pCIxc/f
-e0nu6J41mmA5tvYun05dnvlfofMciiu5PZBJTNoSWpZA7VlDdvK+3oz8DesfZ/FJrhCQVqXz/+g/
-AD1q/BZeFI4QzetiaXHZELUVW4b5OX/C1ElwkWjHEFyXeWSh01C08fFReXw1CM3f4IaoKjcR3llt
-1dE9aMEh80HpFKwiSfmWDEqemxrJ8EhBndomi7QFvDHrqVCnu3gXaX3pGdXFEfDXlhg32MNnrUIR
-JRkZw6ulN+G2UmsALuv17NXNjcZ7sCiSzqskcvzjdnZS7tdgtmmXxtV7LKP0OHN6nX6GSRQV20Co
-G0vti1DkhkLw5a/CjsuqtopFkSB0H6cpe2N+wIPjf/32PSAyt/j3Axw9NwHcz7BlaT/qSbJllcm2
-XuVo06YixF5+CChHkddEbtIXt6EywFTT9EXmaiC/iW7wKUCb9VjbQSH2nL5220Z9GkBBWa1jtYSE
-jnawgqnZGzZ4aWJtPV84WKbOZjmvQ1wRd3cyRAWORScDUL0pcZgOteseiKc4X5HTPUy1u0PzzRfk
-zdN10NQ3A7N/0cd4+UuZ3ZMbke5UTZP3x8aAd2qgPKse4H3f4dMlBqVAmVVp/53FKCdtZZ3htAR3
-Hggf4a9BunQvXdbJ5pW/KoGPZhtVFlObkWyCp+2F7V1FScYPDXyfqsGjcwuf5ZcVhoOpaAuQ1eUc
-ZaFCc9hZ3X3SNCBAcznAIvyc4bJn8HqDZZalGlTEXeJDlwpm6FWWFtZI4rNc814WsPnefvWvr+R7
-N84m/M/JziRRez3cTNn+ibaVsWqLLswBZI0BiwjjzILIMGwVJI7/dPSdNetPVX8BrfjkB+uM9GkX
-ExKg+Wyr5NQMuxMQgMBp0tU/gffJZpZ33uKhAPOE/0HZCUSIKaHuEFreUbYOsnR0dfSkA1TWrVFT
-27/+JtYxVKzGvQGbwZOeGV5Yh92ENck7rVveXEjI5b+9kyjQrcENZnw+FGBm0AB4MyY+10zfP+J1
-K8as6XWcW5Qhf5UTA48p1luhtGIy110RC+HdOq+iKS0wF+Wh/kLX8CVSuXVD/PFoNbIe92UW0cvl
-XY8v/yMy5VVltbGttKWr/7J2U8kMHk9q1uHsi+ToTQsRLZtKDipADkIbDwO4lkyKIuYFDNspyYPK
-5leXOfuWkfH7D9icCEIzSq/O/U4PMobZ5opAsmBkwQzEZRDbGiniwzRjX3f+0QAHdBm+0kuMEtL5
-OahnE7qNZD0hx9vxiyYSTAbp//yUBTgzqqbcefNaqmmk9ENxpdVkleE3yuKlH9J1fO2p1PMjrkHk
-c/uP9w6VffWxVn/PCUrOBIlmmcZi6AuxI17DHBzNWwhopLHENjYN4tLT1HElz2A/tdYXSfIE6Lr6
-qatRTBsNFfnAu9x7/Iy3wXoeKcEwqO419QTZKSDzT/DL4v9GJGROPSw+QKv7D2H0WkO8dIGtB0p2
-p/9vYQ61kk3InJXk7SSPLiI36oMWOnKn5w9yhAfeJg1NEX+PbYW5MMKOJ/KP//glL5hv4pFxORQX
-Z2vRciYbgdw4NqWfMrA+Z5LdgCM5QBGd1sKml3x8oLYLw0Ru+7fPLH2H1jGadeRwY5mfbhgVjAAk
-Kxtchhc/PPelVaJSHTibi+sWW/3CK8WlZ12wOt8ZtmyS0fcvvW8xoQQbz7ZUdCjx/PxTlHOdlJD+
-xaRjmtqpAl5hniD7GfF3UMt8uxH2O6emgV6bf8ZUK+lahfNSDGZPpeLHPXvKlAoQevcdelt6U1GC
-FoFJPL8i+P3R33ttRqAgRXT/Myh0UF6nxGBiI9G0/rfRtPiUVHTWVBrH5AllxkIoq0z4MSCrKQgt
-EHHjmbQbfbYjnwH4R1snB4//cgIUMPa8ZkxsNf4hWz6gdRzu64zKBuBFbmmlE4VWiC3hJoP32KOU
-X+/CGqHITtKhDljYfUomiYXCV20kS8NE2J886nUQUvkej8SagYrCltA+TLJbKYPm+sknQ+AQ2Ylr
-ccrmKEwHvXKeGvQ1v3t0LZjZy/w+nj2IeWibdv12t3Z6GKgYizzQfwvFUhWt3KLZcJ/GR8xhG+j8
-BhakPxRdmBv6gTe1luYt1KzMTlgjdR8bdaJOCWEjVu/O7tytCfmlzGZzlUJHJhKiE1vhynbL1ui1
-dwh0abmwpBLmLLGNCca84g+WYxOdMZGYB7/FEnlDDYm89aHFfn07e+LXesol3Mg9EaTw9Qz8n/BH
-bXM/52QhcTnHrRKj69ITjS19LLnZ5r9WBv4lfvs+YvT0xT8VH4NfyuFdV3sUE309ip8PjMwXH+t+
-L8gYArGvZvr+Kkogv/0bWcLuLW7xjMqtV95h2zuTQ1NUY68nS36YiPQteby=
+<?php
+
+namespace Behat\Mink\Selector;
+
+/*
+ * This file is part of the Behat\Mink.
+ * (c) Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Named selectors engine. Uses registered XPath selectors to create new expressions.
+ *
+ * @author Konstantin Kudryashov <ever.zet@gmail.com>
+ */
+class NamedSelector implements SelectorInterface
+{
+    private $selectors = array(
+        'fieldset' => <<<XPATH
+.//fieldset[(./@id = %locator% or .//legend[contains(normalize-space(string(.)), %locator%)])]
+XPATH
+        ,'field' => <<<XPATH
+.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')][(((./@id = %locator% or ./@name = %locator%) or ./@id = //label[contains(normalize-space(string(.)), %locator%)]/@for) or ./@placeholder = %locator%)] | .//label[contains(normalize-space(string(.)), %locator%)]//.//*[self::input | self::textarea | self::select][not(./@type = 'submit' or ./@type = 'image' or ./@type = 'hidden')]
+XPATH
+        ,'link' => <<<XPATH
+.//a[./@href][(((./@id = %locator% or contains(normalize-space(string(.)), %locator%)) or contains(./@title, %locator%) or contains(./@rel, %locator%)) or .//img[contains(./@alt, %locator%)])] | .//*[./@role = 'link'][((./@id = %locator% or contains(./@value, %locator%)) or contains(./@title, %locator%) or contains(normalize-space(string(.)), %locator%))]
+XPATH
+        ,'button' => <<<XPATH
+.//input[./@type = 'submit' or ./@type = 'image' or ./@type = 'button'][(((./@id = %locator% or ./@name = %locator%) or contains(./@value, %locator%)) or contains(./@title, %locator%))] | .//input[./@type = 'image'][contains(./@alt, %locator%)] | .//button[((((./@id = %locator% or ./@name = %locator%) or contains(./@value, %locator%)) or contains(normalize-space(string(.)), %locator%)) or contains(./@title, %locator%))] | .//input[./@type = 'image'][contains(./@alt, %locator%)] | .//*[./@role = 'button'][(((./@id = %locator% or ./@name = %locator%) or contains(./@value, %locator%)) or contains(./@title, %locator%) or contains(normalize-space(string(.)), %locator%))]
+XPATH
+        ,'link_or_button' => <<<XPATH
+.//a[./@href][(((./@id = %locator% or contains(normalize-space(string(.)), %locator%)) or contains(./@title, %locator%) or contains(./@rel, %locator%)) or .//img[contains(./@alt, %locator%)])] | .//input[./@type = 'submit' or ./@type = 'image' or ./@type = 'button'][((./@id = %locator% or contains(./@value, %locator%)) or contains(./@title, %locator%))] | .//input[./@type = 'image'][contains(./@alt, %locator%)] | .//button[(((./@id = %locator% or contains(./@value, %locator%)) or contains(normalize-space(string(.)), %locator%)) or contains(./@title, %locator%))] | .//input[./@type = 'image'][contains(./@alt, %locator%)] | .//*[(./@role = 'button' or ./@role = 'link')][((./@id = %locator% or contains(./@value, %locator%)) or contains(./@title, %locator%) or contains(normalize-space(string(.)), %locator%))]
+XPATH
+        ,'content' => <<<XPATH
+./descendant-or-self::*[contains(normalize-space(.), %locator%)]
+XPATH
+        ,'select' => <<<XPATH
+.//select[(((./@id = %locator% or ./@name = %locator%) or ./@id = //label[contains(normalize-space(string(.)), %locator%)]/@for) or ./@placeholder = %locator%)] | .//label[contains(normalize-space(string(.)), %locator%)]//.//select
+XPATH
+        ,'checkbox' => <<<XPATH
+.//input[./@type = 'checkbox'][(((./@id = %locator% or ./@name = %locator%) or ./@id = //label[contains(normalize-space(string(.)), %locator%)]/@for) or ./@placeholder = %locator%)] | .//label[contains(normalize-space(string(.)), %locator%)]//.//input[./@type = 'checkbox']
+XPATH
+        ,'radio' => <<<XPATH
+.//input[./@type = 'radio'][(((./@id = %locator% or ./@name = %locator%) or ./@id = //label[contains(normalize-space(string(.)), %locator%)]/@for) or ./@placeholder = %locator%)] | .//label[contains(normalize-space(string(.)), %locator%)]//.//input[./@type = 'radio']
+XPATH
+        ,'file' => <<<XPATH
+.//input[./@type = 'file'][(((./@id = %locator% or ./@name = %locator%) or ./@id = //label[contains(normalize-space(string(.)), %locator%)]/@for) or ./@placeholder = %locator%)] | .//label[contains(normalize-space(string(.)), %locator%)]//.//input[./@type = 'file']
+XPATH
+        ,'optgroup' => <<<XPATH
+.//optgroup[contains(./@label, %locator%)]
+XPATH
+        ,'option' => <<<XPATH
+.//option[(./@value = %locator% or contains(normalize-space(string(.)), %locator%))]
+XPATH
+        ,'table' => <<<XPATH
+.//table[(./@id = %locator% or contains(.//caption, %locator%))]
+XPATH
+    );
+
+    /**
+     * Registers new XPath selector with specified name.
+     *
+     * @param string $name  name for selector
+     * @param string $xpath xpath expression
+     */
+    public function registerNamedXpath($name, $xpath)
+    {
+        $this->selectors[$name] = $xpath;
+    }
+
+    /**
+     * Translates provided locator into XPath.
+     *
+     * @param string|array $locator selector name or array of (selector_name, locator)
+     *
+     * @return string
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function translateToXPath($locator)
+    {
+        if (2 < count($locator)) {
+            throw new \InvalidArgumentException('NamedSelector expects array(name, locator) as argument');
+        }
+
+        if (2 == count($locator)) {
+            $selector   = $locator[0];
+            $locator    = $locator[1];
+        } else {
+            $selector   = (string) $locator;
+            $locator    = null;
+        }
+
+        if (!isset($this->selectors[$selector])) {
+            throw new \InvalidArgumentException(sprintf(
+                'Unknown named selector provided: "%s". Expected one of (%s)',
+                $selector,
+                implode(', ', array_keys($this->selectors))
+            ));
+        }
+
+        $xpath = $this->selectors[$selector];
+
+        if (null !== $locator) {
+            $xpath = strtr($xpath, array('%locator%' => $locator));
+        }
+
+        return $xpath;
+    }
+}

@@ -1,31 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the PhpunitMarkupValidators package.
+ *
+ * (c) Kevin Weber <kevintweber@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace PhpunitMarkupValidators\Assert;
+
+use kevintweber\PhpunitMarkupValidators\Assert\AssertHTML5;
+
+class AssertHTML5Test extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers kevintweber\PhpunitMarkupValidators\Asssert\AssertHTML5::IsValidMarkup
+     */
+    public function testIsValidMarkup()
+    {
+        // Test valid HTML5 markup.
+        AssertHTML5::IsValidMarkup("<section><div>Whoa</div></section>",
+                                   "Valid HTML5 fragment.");
+
+        // Test invalid HTML5 markup.
+        try {
+            AssertHTML5::IsValidMarkup("<section><div>Whoa</section></div>",
+                                       "Invalid HTML5 fragment.");
+        }
+        catch (\PHPUnit_Framework_AssertionFailedError $e) {
+            return;
+        }
+
+        $this->fail();
+    }
+
+    /**
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML5::IsValidFile
+     */
+    public function testIsValidFile()
+    {
+        // Test valid HTML5 file.
+        AssertHTML5::IsValidFile(realpath(__DIR__ . "/../../files/HTML5_Valid.html"),
+                                 "Valid HTML5 file.");
+
+        // Test invalid HTML5 file.
+        try {
+            AssertHTML5::IsValidFile(realpath(__DIR__ . "/../../files/HTML5_Invalid.html"),
+                                     "Invalid HTML5 file.");
+        }
+        catch (\PHPUnit_Framework_AssertionFailedError $e) {
+            return;
+        }
+
+        $this->fail();
+
+    }
+
+    /**
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML5::IsValidUrl
+     */
+    public function testIsValidUrl()
+    {
+        // Test valid HTML5 url.
+        AssertHTML5::IsValidUrl("http://www.w3.org/html/Activity.html", "Valid HTML5 url.");
+    }
+}

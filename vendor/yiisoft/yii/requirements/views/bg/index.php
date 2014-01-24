@@ -1,42 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="content-language" content="en"/>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<title>Yii Requirement Checker</title>
+</head>
+
+<body>
+<div id="page">
+
+<div id="header">
+<h1>Проверка на изискванията на Yii</h1>
+</div><!-- header-->
+
+<div id="content">
+<h2>Описание</h2>
+<p>
+This script checks if your server configuration meets the requirements
+for running <a href="http://www.yiiframework.com/">Yii</a> Web applications.
+It checks if the server is running the right version of PHP,
+if appropriate PHP extensions have been loaded, and if php.ini file settings are correct.
+
+Този скрипт проверява дали конфигурацията на вавият сървър, отговаря на изискванията за
+работа на <a href="http://www.yiiframework.com/">Yii</a> уеб приложенията.
+Проверява дали на сървъра работи подходящата версия на PHP,
+дали подходящите PHP добавки са заредени и дали настройките в php.ini са вярни
+</p>
+
+<h2>Заключение</h2>
+<p>
+<?php if($result>0): ?>
+Congratulations! Your server configuration satisfies all requirements by Yii.
+Поздравление! Вашият сървър отговаря на всики изисквания за работа на Yii.
+<?php elseif($result<0): ?>
+Вашият сървър удоблетворява минималните изисквания на Yii. Моля, обърнете внимание на списъка с грешки отдоло, ако вашето приложение ще използва тези функции.
+<?php else: ?>
+За жалост, вашият сървър, не отговаря на изискванията за работа на Yii.
+<?php endif; ?>
+</p>
+
+<h2>Детайли</h2>
+
+<table class="result">
+<tr><th>Име</th><th>Резултат</th><th>Поискано от</th><th>Бележка</th></tr>
+<?php foreach($requirements as $requirement): ?>
+<tr>
+	<td>
+	<?php echo $requirement[0]; ?>
+	</td>
+	<td class="<?php echo $requirement[2] ? 'passed' : ($requirement[1] ? 'failed' : 'warning'); ?>">
+	<?php echo $requirement[2] ? 'Passed' : ($requirement[1] ? 'Failed' : 'Warning'); ?>
+	</td>
+	<td>
+	<?php echo $requirement[3]; ?>
+	</td>
+	<td>
+	<?php echo $requirement[4]; ?>
+	</td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+<table>
+<tr>
+<td class="passed">&nbsp;</td><td>преминат</td>
+<td class="failed">&nbsp;</td><td>провален</td>
+<td class="warning">&nbsp;</td><td>предупреждение</td>
+</tr>
+</table>
+
+</div><!-- content -->
+
+<div id="footer">
+<?php echo $serverInfo; ?>
+</div><!-- footer -->
+
+</div><!-- page -->
+</body>
+</html>

@@ -1,109 +1,237 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-YGNKS04Ntqrr2TBQIdXmP81oNoa1ExWWPUoI
+<?php
+/**
+ * A class to render Diffs in different formats.
+ *
+ * This class renders the diff in classic diff format. It is intended that
+ * this class be customized via inheritance, to obtain fancier outputs.
+ *
+ * $Horde: framework/Text_Diff/Diff/Renderer.php,v 1.5.10.10 2008/01/04 10:37:27 jan Exp $
+ *
+ * Copyright 2004-2008 The Horde Project (http://www.horde.org/)
+ *
+ * See the enclosed file COPYING for license information (LGPL). If you did
+ * not receive this file, see http://opensource.org/licenses/lgpl-license.php.
+ *
+ * @package Text_Diff
+ */
+class Text_Diff_Renderer {
+
+    /**
+     * Number of leading context "lines" to preserve.
+     *
+     * This should be left at zero for this class, but subclasses may want to
+     * set this to other values.
+     */
+    var $_leading_context_lines = 0;
+
+    /**
+     * Number of trailing context "lines" to preserve.
+     *
+     * This should be left at zero for this class, but subclasses may want to
+     * set this to other values.
+     */
+    var $_trailing_context_lines = 0;
+
+    /**
+     * Constructor.
+     */
+    function Text_Diff_Renderer($params = array())
+    {
+        foreach ($params as $param => $value) {
+            $v = '_' . $param;
+            if (isset($this->$v)) {
+                $this->$v = $value;
+            }
+        }
+    }
+
+    /**
+     * Get any renderer parameters.
+     *
+     * @return array  All parameters of this renderer object.
+     */
+    function getParams()
+    {
+        $params = array();
+        foreach (get_object_vars($this) as $k => $v) {
+            if ($k[0] == '_') {
+                $params[substr($k, 1)] = $v;
+            }
+        }
+
+        return $params;
+    }
+
+    /**
+     * Renders a diff.
+     *
+     * @param Text_Diff $diff  A Text_Diff object.
+     *
+     * @return string  The formatted output.
+     */
+    function render($diff)
+    {
+        $xi = $yi = 1;
+        $block = false;
+        $context = array();
+
+        $nlead = $this->_leading_context_lines;
+        $ntrail = $this->_trailing_context_lines;
+
+        $output = $this->_startDiff();
+
+        $diffs = $diff->getDiff();
+        foreach ($diffs as $i => $edit) {
+            /* If these are unchanged (copied) lines, and we want to keep
+             * leading or trailing context lines, extract them from the copy
+             * block. */
+            if (is_a($edit, 'Text_Diff_Op_copy')) {
+                /* Do we have any diff blocks yet? */
+                if (is_array($block)) {
+                    /* How many lines to keep as context from the copy
+                     * block. */
+                    $keep = $i == count($diffs) - 1 ? $ntrail : $nlead + $ntrail;
+                    if (count($edit->orig) <= $keep) {
+                        /* We have less lines in the block than we want for
+                         * context => keep the whole block. */
+                        $block[] = $edit;
+                    } else {
+                        if ($ntrail) {
+                            /* Create a new block with as many lines as we need
+                             * for the trailing context. */
+                            $context = array_slice($edit->orig, 0, $ntrail);
+                            $block[] = new Text_Diff_Op_copy($context);
+                        }
+                        /* @todo */
+                        $output .= $this->_block($x0, $ntrail + $xi - $x0,
+                                                 $y0, $ntrail + $yi - $y0,
+                                                 $block);
+                        $block = false;
+                    }
+                }
+                /* Keep the copy block as the context for the next block. */
+                $context = $edit->orig;
+            } else {
+                /* Don't we have any diff blocks yet? */
+                if (!is_array($block)) {
+                    /* Extract context lines from the preceding copy block. */
+                    $context = array_slice($context, count($context) - $nlead);
+                    $x0 = $xi - count($context);
+                    $y0 = $yi - count($context);
+                    $block = array();
+                    if ($context) {
+                        $block[] = new Text_Diff_Op_copy($context);
+                    }
+                }
+                $block[] = $edit;
+            }
+
+            if ($edit->orig) {
+                $xi += count($edit->orig);
+            }
+            if ($edit->final) {
+                $yi += count($edit->final);
+            }
+        }
+
+        if (is_array($block)) {
+            $output .= $this->_block($x0, $xi - $x0,
+                                     $y0, $yi - $y0,
+                                     $block);
+        }
+
+        return $output . $this->_endDiff();
+    }
+
+    function _block($xbeg, $xlen, $ybeg, $ylen, &$edits)
+    {
+        $output = $this->_startBlock($this->_blockHeader($xbeg, $xlen, $ybeg, $ylen));
+
+        foreach ($edits as $edit) {
+            switch (strtolower(get_class($edit))) {
+            case 'text_diff_op_copy':
+                $output .= $this->_context($edit->orig);
+                break;
+
+            case 'text_diff_op_add':
+                $output .= $this->_added($edit->final);
+                break;
+
+            case 'text_diff_op_delete':
+                $output .= $this->_deleted($edit->orig);
+                break;
+
+            case 'text_diff_op_change':
+                $output .= $this->_changed($edit->orig, $edit->final);
+                break;
+            }
+        }
+
+        return $output . $this->_endBlock();
+    }
+
+    function _startDiff()
+    {
+        return '';
+    }
+
+    function _endDiff()
+    {
+        return '';
+    }
+
+    function _blockHeader($xbeg, $xlen, $ybeg, $ylen)
+    {
+        if ($xlen > 1) {
+            $xbeg .= ',' . ($xbeg + $xlen - 1);
+        }
+        if ($ylen > 1) {
+            $ybeg .= ',' . ($ybeg + $ylen - 1);
+        }
+
+        // this matches the GNU Diff behaviour
+        if ($xlen && !$ylen) {
+            $ybeg--;
+        } elseif (!$xlen) {
+            $xbeg--;
+        }
+
+        return $xbeg . ($xlen ? ($ylen ? 'c' : 'd') : 'a') . $ybeg;
+    }
+
+    function _startBlock($header)
+    {
+        return $header . "\n";
+    }
+
+    function _endBlock()
+    {
+        return '';
+    }
+
+    function _lines($lines, $prefix = ' ')
+    {
+        return $prefix . implode("\n$prefix", $lines) . "\n";
+    }
+
+    function _context($lines)
+    {
+        return $this->_lines($lines, '  ');
+    }
+
+    function _added($lines)
+    {
+        return $this->_lines($lines, '> ');
+    }
+
+    function _deleted($lines)
+    {
+        return $this->_lines($lines, '< ');
+    }
+
+    function _changed($orig, $final)
+    {
+        return $this->_deleted($orig) . "---\n" . $this->_added($final);
+    }
+
+}

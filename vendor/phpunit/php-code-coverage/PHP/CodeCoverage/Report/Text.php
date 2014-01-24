@@ -1,131 +1,278 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-kmTqEM6lpA6Xe0==
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.1.0
+ */
+
+/**
+ * Generates human readable output from an PHP_CodeCoverage object.
+ *
+ * The output gets put into a text file our written to the CLI.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.1.0
+ */
+class PHP_CodeCoverage_Report_Text
+{
+    protected $outputStream;
+    protected $lowUpperBound;
+    protected $highLowerBound;
+    protected $showUncoveredFiles;
+
+    protected $colors = array(
+      'green'  => "\x1b[30;42m",
+      'yellow' => "\x1b[30;43m",
+      'red'    => "\x1b[37;41m",
+      'header' => "\x1b[47;40m",
+      'reset'  => "\x1b[0m",
+      'eol'    => "\x1b[2K",
+    );
+
+    public function __construct(PHPUnit_Util_Printer $outputStream, $lowUpperBound, $highLowerBound, $showUncoveredFiles)
+    {
+        $this->outputStream       = $outputStream;
+        $this->lowUpperBound      = $lowUpperBound;
+        $this->highLowerBound     = $highLowerBound;
+        $this->showUncoveredFiles = $showUncoveredFiles;
+    }
+
+    /**
+     * @param  PHP_CodeCoverage $coverage
+     * @param  string           $target
+     * @param  string           $name
+     * @return string
+     */
+    public function process(PHP_CodeCoverage $coverage, $showColors = FALSE)
+    {
+        $output = '';
+        $report = $coverage->getReport();
+        unset($coverage);
+
+        $colors = array(
+          'header'  => '',
+          'classes' => '',
+          'methods' => '',
+          'lines'   => '',
+          'reset'   => '',
+          'eol'     => ''
+        );
+
+        if ($showColors) {
+            $colors['classes'] = $this->getCoverageColor(
+                                   $report->getNumTestedClassesAndTraits(),
+                                   $report->getNumClassesAndTraits()
+                                 );
+            $colors['methods'] = $this->getCoverageColor(
+                                   $report->getNumTestedMethods(),
+                                   $report->getNumMethods()
+                                 );
+            $colors['lines']   = $this->getCoverageColor(
+                                   $report->getNumExecutedLines(),
+                                   $report->getNumExecutableLines()
+                                 );
+            $colors['reset']   = $this->colors['reset'];
+            $colors['header']  = $this->colors['header'];
+            $colors['eol']     = $this->colors['eol'];
+        }
+
+        $output .= PHP_EOL . PHP_EOL .
+                   $colors['header'] . 'Code Coverage Report ';
+
+        $output .= PHP_EOL .
+                   date('  Y-m-d H:i:s', $_SERVER['REQUEST_TIME']) .
+                   PHP_EOL;
+
+        $output .= PHP_EOL . ' Summary: ' . PHP_EOL . $colors['reset']
+          . $colors['classes'] . $colors['eol'] . '  Classes: ' . PHP_CodeCoverage_Util::percent($report->getNumTestedClassesAndTraits(), $report->getNumClassesAndTraits(), TRUE)
+          . ' (' . $report->getNumTestedClassesAndTraits() . '/' . $report->getNumClassesAndTraits() . ')' . PHP_EOL . $colors ['eol']
+          . $colors['methods'] . $colors['eol'] . '  Methods: ' . PHP_CodeCoverage_Util::percent($report->getNumTestedMethods(), $report->getNumMethods(), TRUE)
+          . ' (' . $report->getNumTestedMethods() . '/' . $report->getNumMethods() . ')' . PHP_EOL . $colors ['eol']
+          . $colors['lines'] . $colors['eol'] . '  Lines:   ' . PHP_CodeCoverage_Util::percent($report->getNumExecutedLines(), $report->getNumExecutableLines(), TRUE)
+          . ' (' . $report->getNumExecutedLines() . '/' . $report->getNumExecutableLines() . ')' . PHP_EOL . $colors['reset'] . $colors ['eol'];
+
+        $classCoverage = array();
+
+        foreach ($report as $item) {
+            if (!$item instanceof PHP_CodeCoverage_Report_Node_File) {
+                continue;
+            }
+
+            $classes      = $item->getClassesAndTraits();
+            $coverage     = $item->getCoverageData();
+            $lines        = array();
+            $ignoredLines = $item->getIgnoredLines();
+
+            foreach ($classes as $className => $class) {
+                $classStatements        = 0;
+                $coveredClassStatements = 0;
+                $coveredMethods         = 0;
+
+                foreach ($class['methods'] as $method) {
+                    $methodCount        = 0;
+                    $methodLines        = 0;
+                    $methodLinesCovered = 0;
+
+                    for ($i  = $method['startLine'];
+                         $i <= $method['endLine'];
+                         $i++) {
+                        if (isset($ignoredLines[$i])) {
+                            continue;
+                        }
+
+                        $add   = TRUE;
+                        $count = 0;
+
+                        if (isset($coverage[$i])) {
+                            if ($coverage[$i] !== NULL) {
+                                $classStatements++;
+                                $methodLines++;
+                            } else {
+                                $add = FALSE;
+                            }
+
+                            $count = count($coverage[$i]);
+
+                            if ($count > 0) {
+                                $coveredClassStatements++;
+                                $methodLinesCovered++;
+                            }
+                        } else {
+                            $add = FALSE;
+                        }
+
+                        $methodCount = max($methodCount, $count);
+
+                        if ($add) {
+                            $lines[$i] = array(
+                              'count' => $count, 'type'  => 'stmt'
+                            );
+                        }
+                    }
+
+                    if ($methodCount > 0) {
+                        $coveredMethods++;
+                    }
+
+                }
+
+                if (!empty($class['package']['namespace'])) {
+                    $namespace = '\\' . $class['package']['namespace'] . '::';
+                }
+
+                else if (!empty($class['package']['fullPackage'])) {
+                    $namespace = '@' . $class['package']['fullPackage'] . '::';
+                }
+
+                else {
+                    $namespace = '';
+                }
+
+                $classCoverage[$namespace . $className] = array(
+                    'namespace'         => $namespace,
+                    'className '        => $className,
+                    'methodsCovered'    => $coveredMethods,
+                    'methodCount'       => count($class['methods']),
+                    'statementsCovered' => $coveredClassStatements,
+                    'statementCount'    => $classStatements,
+                );
+            }
+        }
+
+        ksort($classCoverage);
+
+        $methodColor = '';
+        $linesColor  = '';
+        $resetColor  = '';
+
+        foreach ($classCoverage as $fullQualifiedPath => $classInfo) {
+            if ($classInfo['statementsCovered'] != 0 ||
+                $this->showUncoveredFiles) {
+
+                if ($showColors) {
+                    $methodColor = $this->getCoverageColor($classInfo['methodsCovered'], $classInfo['methodCount']);
+                    $linesColor  = $this->getCoverageColor($classInfo['statementsCovered'], $classInfo['statementCount']);
+                    $resetColor  = $colors['reset'];
+                }
+
+                $output .= PHP_EOL . $fullQualifiedPath . PHP_EOL
+                  . '  ' . $methodColor . 'Methods: ' . $this->printCoverageCounts($classInfo['methodsCovered'], $classInfo['methodCount'], 2) . $resetColor . ' '
+                  . '  ' . $linesColor  . 'Lines: ' . $this->printCoverageCounts($classInfo['statementsCovered'], $classInfo['statementCount'], 3) . $resetColor
+                ;
+            }
+        }
+
+        $this->outputStream->write($output . PHP_EOL);
+    }
+
+    protected function getCoverageColor($numberOfCoveredElements, $totalNumberOfElements)
+    {
+        $coverage = PHP_CodeCoverage_Util::percent(
+          $numberOfCoveredElements, $totalNumberOfElements
+        );
+
+        if ($coverage > $this->highLowerBound) {
+            return $this->colors['green'];
+        }
+
+        else if ($coverage > $this->lowUpperBound) {
+            return $this->colors['yellow'];
+        }
+
+        return $this->colors['red'];
+    }
+
+    protected function printCoverageCounts($numberOfCoveredElements, $totalNumberOfElements, $presicion)
+    {
+        $format = '%' . $presicion . 's';
+
+        return PHP_CodeCoverage_Util::percent(
+          $numberOfCoveredElements, $totalNumberOfElements, TRUE, TRUE
+        ) .
+        ' (' . sprintf($format, $numberOfCoveredElements) . '/' .
+        sprintf($format, $totalNumberOfElements) . ')';
+    }
+}

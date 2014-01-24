@@ -1,30 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+use Monolog\Logger;
+
+class SyslogHandlerTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers Monolog\Handler\SyslogHandler::__construct
+     */
+    public function testConstruct()
+    {
+        $handler = new SyslogHandler('test');
+        $this->assertInstanceOf('Monolog\Handler\SyslogHandler', $handler);
+
+        $handler = new SyslogHandler('test', LOG_USER);
+        $this->assertInstanceOf('Monolog\Handler\SyslogHandler', $handler);
+
+        $handler = new SyslogHandler('test', 'user');
+        $this->assertInstanceOf('Monolog\Handler\SyslogHandler', $handler);
+
+        $handler = new SyslogHandler('test', LOG_USER, Logger::DEBUG, true, LOG_PERROR);
+        $this->assertInstanceOf('Monolog\Handler\SyslogHandler', $handler);
+    }
+
+    /**
+     * @covers Monolog\Handler\SyslogHandler::__construct
+     */
+    public function testConstructInvalidFacility()
+    {
+        $this->setExpectedException('UnexpectedValueException');
+        $handler = new SyslogHandler('test', 'unknown');
+    }
+}

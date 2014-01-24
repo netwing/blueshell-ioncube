@@ -1,61 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QKAtO05YD0yX5j+iwiw1fgMWvb//P0==
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+
+class Swift_Bug76Test extends Swift_Tests_SwiftUnitTestCase
+{
+    private $_inputFile;
+    private $_outputFile;
+    private $_encoder;
+
+    public function skip()
+    {
+        $this->skipUnless(
+            is_writable(SWIFT_TMP_DIR),
+            '%s: This test requires tests/acceptance.conf.php to specify a ' .
+            'writable SWIFT_TMP_DIR'
+        );
+    }
+
+    public function setUp()
+    {
+        $this->_inputFile = SWIFT_TMP_DIR . '/in.bin';
+        file_put_contents($this->_inputFile, '');
+
+        $this->_outputFile = SWIFT_TMP_DIR . '/out.bin';
+        file_put_contents($this->_outputFile, '');
+
+        $this->_encoder = $this->_createEncoder();
+    }
+
+    public function tearDown()
+    {
+        unlink($this->_inputFile);
+        unlink($this->_outputFile);
+    }
+
+    public function testBase64EncodedLineLengthNeverExceeds76CharactersEvenIfArgsDo()
+    {
+        $this->_fillFileWithRandomBytes(1000, $this->_inputFile);
+
+        $os = $this->_createStream($this->_inputFile);
+        $is = $this->_createStream($this->_outputFile);
+
+        $this->_encoder->encodeByteStream($os, $is, 0, 80); //Exceeds 76
+
+        $this->assertMaxLineLength(76, $this->_outputFile,
+            '%s: Line length should not exceed 76 characters'
+        );
+    }
+
+    // -- Custom Assertions
+
+    public function assertMaxLineLength($length, $filePath, $message = '%s')
+    {
+        $lines = file($filePath);
+        foreach ($lines as $line) {
+            $this->assertTrue((strlen(trim($line)) <= 76), $message);
+        }
+    }
+
+    // -- Creation Methods
+
+    private function _fillFileWithRandomBytes($byteCount, $file)
+    {
+        // I was going to use dd with if=/dev/random but this way seems more
+        // cross platform even if a hella expensive!!
+
+        file_put_contents($file, '');
+        $fp = fopen($file, 'wb');
+        for ($i = 0; $i < $byteCount; ++$i) {
+            $byteVal = rand(0, 255);
+            fwrite($fp, pack('i', $byteVal));
+        }
+        fclose($fp);
+    }
+
+    private function _createEncoder()
+    {
+        return new Swift_Mime_ContentEncoder_Base64ContentEncoder();
+    }
+
+    private function _createStream($file)
+    {
+        return new Swift_ByteStream_FileByteStream($file, true);
+    }
+}

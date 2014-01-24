@@ -1,82 +1,149 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ValjgSqesMu=
+<?php
+/**
+ * CJuiTabs class file.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('zii.widgets.jui.CJuiWidget');
+
+/**
+ * CJuiTabs displays a tabs widget.
+ *
+ * CJuiTabs encapsulates the {@link http://jqueryui.com/tabs/ JUI tabs}
+ * plugin.
+ *
+ * To use this widget, you may insert the following code in a view:
+ * <pre>
+ * $this->widget('zii.widgets.jui.CJuiTabs',array(
+ *     'tabs'=>array(
+ *         'StaticTab 1'=>'Content for tab 1',
+ *         'StaticTab 2'=>array('content'=>'Content for tab 2', 'id'=>'tab2'),
+ *         // panel 3 contains the content rendered by a partial view
+ *         'AjaxTab'=>array('ajax'=>$ajaxUrl),
+ *     ),
+ *     // additional javascript options for the tabs plugin
+ *     'options'=>array(
+ *         'collapsible'=>true,
+ *     ),
+ * ));
+ * </pre>
+ *
+ * By configuring the {@link options} property, you may specify the options
+ * that need to be passed to the JUI tabs plugin. Please refer to
+ * the {@link http://api.jqueryui.com/tabs/ JUI Tabs API} documentation
+ * for possible options (name-value pairs) and
+ * {@link http://jqueryui.com/tabs/ JUI Tabs page} for general
+ * description and demo.
+ *
+ * Note, in case you're using &lt;base/&gt; HTML tag you may run into the
+ * issue when jQuery UI uses altered base URL to load content, but not
+ * the base URL content was loaded from. (Developer may expect both behavior
+ * in different cases.) For this occasion consider using absolute URL
+ * generation as follows:
+ *
+ * <pre>
+ * $this->widget('zii.widgets.jui.CJuiTabs',array(
+ *     'tabs'=>array(
+ *         'Dynamic Tab'=>array('ajax'=>$this->createAbsoluteUrl('tab/content/route')),
+ *     ),
+ * ));
+ * </pre>
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @package zii.widgets.jui
+ * @since 1.1
+ */
+class CJuiTabs extends CJuiWidget
+{
+	/**
+	 * @var array list of tabs (tab title=>tab content).
+	 * Note that the tab title will not be HTML-encoded.
+	 * The tab content can be either a string or an array. When it is an array, it can
+	 * be in one of the following two formats:
+	 * <pre>
+	 * array('id'=>'myTabID', 'content'=>'tab content')
+	 * array('id'=>'myTabID', 'ajax'=>URL)
+	 * </pre>
+	 * where the 'id' element is optional. The second format allows the tab content
+	 * to be dynamically fetched from the specified URL via AJAX. The URL can be either
+	 * a string or an array. If an array, it will be normalized into a URL using {@link CHtml::normalizeUrl}.
+	 */
+	public $tabs=array();
+	/**
+	 * @var string the name of the container element that contains all panels. Defaults to 'div'.
+	 */
+	public $tagName='div';
+	/**
+	 * @var string the template that is used to generated every panel title.
+	 * The token "{title}" in the template will be replaced with the panel title and
+	 * the token "{url}" will be replaced with "#TabID" or with the url of the ajax request.
+	 */
+	public $headerTemplate='<li><a href="{url}" title="{id}">{title}</a></li>';
+	/**
+	 * @var string the template that is used to generated every tab content.
+	 * The token "{content}" in the template will be replaced with the panel content
+	 * and the token "{id}" with the tab ID.
+	 */
+	public $contentTemplate='<div id="{id}">{content}</div>';
+
+	/**
+	 * Run this widget.
+	 * This method registers necessary javascript and renders the needed HTML code.
+	 */
+	public function run()
+	{
+		$id=$this->getId();
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
+		else
+			$this->htmlOptions['id']=$id;
+
+		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+
+		$tabsOut="";
+		$contentOut="";
+		$tabCount=0;
+
+		foreach($this->tabs as $title=>$content)
+		{
+			$tabId=(is_array($content) && isset($content['id']))?$content['id']:$id.'_tab_'.$tabCount++;
+
+			if(!is_array($content))
+			{
+				$tabsOut.=strtr($this->headerTemplate,array('{title}'=>$title,'{url}'=>'#'.$tabId,'{id}'=>'#'.$tabId))."\n";
+				$contentOut.=strtr($this->contentTemplate,array('{content}'=>$content,'{id}'=>$tabId))."\n";
+			}
+			elseif(isset($content['ajax']))
+			{
+				$tabsOut.=strtr($this->headerTemplate,array('{title}'=>$title,'{url}'=>CHtml::normalizeUrl($content['ajax']),'{id}'=>'#'.$tabId))."\n";
+			}
+			else
+			{
+				$tabsOut.=strtr($this->headerTemplate,array('{title}'=>$title,'{url}'=>'#'.$tabId,'{id}'=>$tabId))."\n";
+				if(isset($content['content']))
+					$contentOut.=strtr($this->contentTemplate,array('{content}'=>$content['content'],'{id}'=>$tabId))."\n";
+			}
+		}
+		echo "<ul>\n".$tabsOut."</ul>\n";
+		echo $contentOut;
+		echo CHtml::closeTag($this->tagName)."\n";
+
+		$options=CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').tabs($options);");
+	}
+
+	/**
+	 * Registers the core script files.
+	 * This method overrides the parent implementation by registering the cookie plugin when cookie option is used.
+	 */
+	protected function registerCoreScripts()
+	{
+		parent::registerCoreScripts();
+		if(isset($this->options['cookie']))
+			Yii::app()->getClientScript()->registerCoreScript('cookie');
+	}
+}

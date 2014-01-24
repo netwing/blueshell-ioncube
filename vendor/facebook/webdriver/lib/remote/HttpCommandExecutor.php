@@ -1,127 +1,261 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-UEg90+3dEw3afWD2QsO=
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * Command executor talking to the standalone server via HTTP.
+ */
+class HttpCommandExecutor implements WebDriverCommandExecutor {
+
+  /**
+   * @see
+   *   http://code.google.com/p/selenium/wiki/JsonWireProtocol#Command_Reference
+   */
+  private static $commands = array(
+    'acceptAlert' =>            array('method' => 'POST', 'url' => '/session/:sessionId/accept_alert'),
+    'addCookie' =>              array('method' => 'POST', 'url' => '/session/:sessionId/cookie'),
+    'clear' =>                  array('method' => 'POST', 'url' => '/session/:sessionId/element/:id/clear'),
+    'clickElement' =>           array('method' => 'POST', 'url' => '/session/:sessionId/element/:id/click'),
+    'closeCurrentWindow' =>     array('method' => 'DELETE', 'url' => '/session/:sessionId/window'),
+    'deleteAllCookies' =>       array('method' => 'DELETE',  'url' => '/session/:sessionId/cookie'),
+    'deleteCookie' =>           array('method' => 'DELETE',  'url' => '/session/:sessionId/cookie/:name'),
+    'dismissAlert' =>           array('method' => 'POST',   'url' => '/session/:sessionId/dismiss_alert'),
+    'elementEquals' =>          array('method' => 'GET', 'url' => '/session/:sessionId/element/:id/equals/:other'),
+    'elementFindElement' =>     array('method' => 'POST', 'url' => '/session/:sessionId/element/:id/element'),
+    'elementFindElements' =>    array('method' => 'POST', 'url' => '/session/:sessionId/element/:id/elements'),
+    'executeScript' =>          array('method' => 'POST', 'url' => '/session/:sessionId/execute'),
+    'findElement' =>            array('method' => 'POST', 'url' => '/session/:sessionId/element'),
+    'findElements' =>           array('method' => 'POST', 'url' => '/session/:sessionId/elements'),
+    'focusFrame' =>             array('method' => 'POST',  'url' => '/session/:sessionId/frame'),
+    'focusWindow' =>            array('method' => 'POST',  'url' => '/session/:sessionId/window'),
+    'get' =>                    array('method' => 'POST', 'url' => '/session/:sessionId/url'),
+    'getActiveElement' =>       array('method' => 'POST', 'url' => '/session/:sessionId/element/active'),
+    'getAlertText' =>           array('method' => 'GET', 'url' => '/session/:sessionId/alert_text'),
+    'getAllCookies' =>          array('method' => 'GET',  'url' => '/session/:sessionId/cookie'),
+    'getAvailableLogTypes' =>   array('method' => 'GET', 'url' => '/session/:sessionId/log/types'),
+    'getCurrentURL' =>          array('method' => 'GET',  'url' => '/session/:sessionId/url'),
+    'getCurrentWindowHandle' => array('method' => 'GET',  'url' => '/session/:sessionId/window_handle'),
+    'getElementAttribute' =>    array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/attribute/:name'),
+    'getElementCSSValue' =>     array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/css/:propertyName'),
+    'getElementLocation' =>     array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/location'),
+    'getElementLocationOnceScrolledIntoView' => array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/location_in_view'),
+    'getElementSize' =>         array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/size'),
+    'getElementTagName' =>      array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/name'),
+    'getElementText' =>         array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/text'),
+    'getLog' =>      array('method' => 'POST', 'url' => '/session/:sessionId/log'),
+    'getPageSource' =>          array('method' => 'GET',  'url' => '/session/:sessionId/source'),
+    'getScreenOrientation' =>   array('method' => 'GET',  'url' => '/session/:sessionId/orientation'),
+    'getSession' =>             array('method' => 'GET',  'url' => '/session/:sessionId'),
+    'getTitle' =>               array('method' => 'GET',  'url' => '/session/:sessionId/title'),
+    'getWindowHandles' =>       array('method' => 'GET',  'url' => '/session/:sessionId/window_handles'),
+    'getWindowPosition' =>      array('method' => 'GET',  'url' => '/session/:sessionId/window/:windowHandle/position'),
+    'getWindowSize' =>          array('method' => 'GET',  'url' => '/session/:sessionId/window/:windowHandle/size'),
+    'goBack' =>                 array('method' => 'POST',  'url' => '/session/:sessionId/back'),
+    'goForward' =>              array('method' => 'POST',  'url' => '/session/:sessionId/forward'),
+    'isElementDisplayed'=>      array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/displayed'),
+    'isElementEnabled'=>        array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/enabled'),
+    'isElementSelected'=>       array('method' => 'GET',  'url' => '/session/:sessionId/element/:id/selected'),
+    'maximizeWindow' =>         array('method' => 'POST', 'url' => '/session/:sessionId/window/:windowHandle/maximize'),
+    'mouseButtonDown' =>        array('method' => 'POST', 'url' => '/session/:sessionId/buttondown'),
+    'mouseButtonUp' =>          array('method' => 'POST', 'url' => '/session/:sessionId/buttonup'),
+    'mouseClick' =>             array('method' => 'POST', 'url' => '/session/:sessionId/click'),
+    'mouseDoubleClick' =>       array('method' => 'POST', 'url' => '/session/:sessionId/doubleclick'),
+    'mouseMoveTo' =>            array('method' => 'POST', 'url' => '/session/:sessionId/moveto'),
+    'newSession' =>             array('method' => 'POST', 'url' => '/session'),
+    'quit' =>                   array('method' => 'DELETE', 'url' => '/session/:sessionId'),
+    'refreshPage' =>            array('method' => 'POST', 'url' => '/session/:sessionId/refresh'),
+    'sendFile' =>               array('method' => 'POST', 'url' => '/session/:sessionId/file'), // undocumented
+    'sendKeys' =>               array('method' => 'POST', 'url' => '/session/:sessionId/keys'),
+    'sendKeysToAlert' =>        array('method' => 'POST', 'url' => '/session/:sessionId/alert_text'),
+    'sendKeysToElement' =>      array('method' => 'POST', 'url' => '/session/:sessionId/element/:id/value'),
+    'setImplicitWaitTimeout' => array('method' => 'POST', 'url' => '/session/:sessionId/timeouts/implicit_wait'),
+    'setScreenOrientation' =>   array('method' => 'POST', 'url' => '/session/:sessionId/orientation'),
+    'setPageLoadTimeout' =>     array('method' => 'POST', 'url' => '/session/:sessionId/timeouts'),
+    'setScriptTimeout' =>       array('method' => 'POST', 'url' => '/session/:sessionId/timeouts/async_script'),
+    'setWindowPosition' =>      array('method' => 'POST', 'url' => '/session/:sessionId/window/:windowHandle/position'),
+    'setWindowSize' =>          array('method' => 'POST', 'url' => '/session/:sessionId/window/:windowHandle/size'),
+    'submitElement' =>          array('method' => 'POST', 'url' => '/session/:sessionId/element/:id/submit'),
+    'takeScreenshot' =>         array('method' => 'GET',  'url' => '/session/:sessionId/screenshot'),
+    'touchTap' =>               array('method' => 'POST', 'url' => '/session/:sessionId/touch/click'),
+    'touchDown' =>              array('method' => 'POST', 'url' => '/session/:sessionId/touch/down'),
+    'touchDoubleTap' =>         array('method' => 'POST', 'url' => '/session/:sessionId/touch/doubleclick'),
+    'touchFlick' =>             array('method' => 'POST', 'url' => '/session/:sessionId/touch/flick'),
+    'touchLongPress' =>         array('method' => 'POST', 'url' => '/session/:sessionId/touch/longclick'),
+    'touchMove' =>              array('method' => 'POST', 'url' => '/session/:sessionId/touch/move'),
+    'touchScroll' =>            array('method' => 'POST', 'url' => '/session/:sessionId/touch/scroll'),
+    'touchUp' =>                array('method' => 'POST', 'url' => '/session/:sessionId/touch/up'),
+  );
+
+  protected $url;
+  protected $sessionID;
+  protected $capabilities;
+
+  public function __construct($url, $session_id) {
+    $this->url = $url;
+    $this->sessionID = $session_id;
+    $this->capabilities = $this->execute('getSession', array());
+  }
+
+  public function execute($name, array $params = array()) {
+    $command = array(
+      'url' => $this->url,
+      'sessionId' => $this->sessionID,
+      'name' => $name,
+      'parameters' => $params,
+    );
+    $raw = self::remoteExecute($command);
+    return $raw['value'];
+  }
+
+  /**
+   * Execute a command on a remote server. The command should be an array
+   * contains
+   *   url        : the url of the remote server
+   *   sessionId  : the session id if needed
+   *   name       : the name of the command
+   *   parameters : the parameters of the command required
+   *
+   * @param command An array that contains
+   *                  url        : the url of the remote server
+   *                  sessionId  : the session id if needed
+   *                  name       : the name of the command
+   *                  parameters : the parameters of the command required
+   * @param curl_opts An array of curl options.
+   *
+   * @return array The response of the command.
+   */
+  public static function remoteExecute($command, $curl_opts = array()) {
+    if (!isset(self::$commands[$command['name']])) {
+      throw new Exception($command['name']." is not a valid command.");
+    }
+    $raw = self::$commands[$command['name']];
+
+    if ($command['name'] == 'newSession') {
+      $curl_opts[CURLOPT_FOLLOWLOCATION] = true;
+    }
+
+    return self::curl(
+      $raw['method'],
+      sprintf("%s%s", $command['url'], $raw['url']),
+      $command,
+      $curl_opts
+    );
+  }
+
+  /**
+   * Curl request to webdriver server.
+   *
+   * @param http_method 'GET', 'POST', or 'DELETE'
+   * @param suffix       What to append to the base URL.
+   * @param command      The Command object, modelled as a hash.
+   * @param extra_opts   key => value pairs of curl options for curl_setopt()
+   */
+  protected static function curl(
+    $http_method,
+    $url,
+    $command,
+    $extra_opts = array()) {
+
+    $params = $command['parameters'];
+
+    foreach ($params as $name => $value) {
+      if ($name[0] === ':') {
+        $url = str_replace($name, $value, $url);
+        if ($http_method != 'POST') {
+          unset($params[$name]);
+        }
+      }
+    }
+
+    if (isset($command['sessionId'])) {
+      $url = str_replace(':sessionId', $command['sessionId'], $url);
+    }
+
+    if ($params && is_array($params) && $http_method !== 'POST') {
+      throw new Exception(sprintf(
+        'The http method called for %s is %s but it has to be POST' .
+        ' if you want to pass the JSON params %s',
+        $url,
+        $http_method,
+        json_encode($params)));
+    }
+
+    $curl = curl_init($url);
+
+    curl_setopt($curl, CURLOPT_TIMEOUT, 300);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt(
+      $curl,
+      CURLOPT_HTTPHEADER,
+      array(
+        'Content-Type: application/json;charset=UTF-8',
+        'Accept: application/json'));
+
+    if ($http_method === 'POST') {
+      curl_setopt($curl, CURLOPT_POST, true);
+      if ($params && is_array($params)) {
+        curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($params));
+      }
+    } else if ($http_method == 'DELETE') {
+      curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'DELETE');
+    }
+
+    foreach ($extra_opts as $option => $value) {
+      curl_setopt($curl, $option, $value);
+    }
+
+    $raw_results = trim(curl_exec($curl));
+    $info = curl_getinfo($curl);
+
+    if ($error = curl_error($curl)) {
+      $msg = sprintf(
+        'Curl error thrown for http %s to %s',
+        $http_method,
+        $url);
+      if ($params && is_array($params)) {
+        $msg .= sprintf(' with params: %s', json_encode($params));
+      }
+      WebDriverException::throwException(-1, $msg . "\n\n" . $error, array());
+    }
+    curl_close($curl);
+
+    $results = json_decode($raw_results, true);
+
+    $value = null;
+    if (is_array($results) && array_key_exists('value', $results)) {
+      $value = $results['value'];
+    }
+
+    $message = null;
+    if (is_array($value) && array_key_exists('message', $value)) {
+      $message = $value['message'];
+    }
+
+    $sessionId = null;
+    if (is_array($results) && array_key_exists('sessionId', $results)) {
+      $sessionId = $results['sessionId'];
+    }
+
+    $status = isset($results['status']) ? $results['status'] : 0;
+    WebDriverException::throwException($status, $message, $results);
+
+    return array('value' => $value, 'info' => $info, 'sessionId' => $sessionId);
+  }
+
+  public function getSessionID() {
+    return $this->sessionID;
+  }
+
+}

@@ -1,48 +1,68 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Service\Command;
+
+use Guzzle\Service\Description\ServiceDescription;
+use Guzzle\Service\Command\Factory\ServiceDescriptionFactory;
+use Guzzle\Inflection\Inflector;
+
+/**
+ * @covers Guzzle\Service\Command\Factory\ServiceDescriptionFactory
+ */
+class ServiceDescriptionFactoryTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testProvider()
+    {
+        return array(
+            array('foo', null),
+            array('jar_jar', 'Guzzle\Tests\Service\Mock\Command\MockCommand'),
+            array('binks', 'Guzzle\Tests\Service\Mock\Command\OtherCommand')
+        );
+    }
+
+    /**
+     * @dataProvider testProvider
+     */
+    public function testCreatesCommandsUsingServiceDescriptions($key, $result)
+    {
+        $d = $this->getDescription();
+
+        $factory = new ServiceDescriptionFactory($d);
+        $this->assertSame($d, $factory->getServiceDescription());
+
+        if (is_null($result)) {
+            $this->assertNull($factory->factory($key));
+        } else {
+            $this->assertInstanceof($result, $factory->factory($key));
+        }
+    }
+
+    public function testUsesUcFirstIfNoExactMatch()
+    {
+        $d = $this->getDescription();
+        $factory = new ServiceDescriptionFactory($d, new Inflector());
+        $this->assertInstanceof('Guzzle\Tests\Service\Mock\Command\OtherCommand', $factory->factory('Test'));
+        $this->assertInstanceof('Guzzle\Tests\Service\Mock\Command\OtherCommand', $factory->factory('test'));
+    }
+
+    public function testUsesInflectionIfNoExactMatch()
+    {
+        $d = $this->getDescription();
+        $factory = new ServiceDescriptionFactory($d, new Inflector());
+        $this->assertInstanceof('Guzzle\Tests\Service\Mock\Command\OtherCommand', $factory->factory('Binks'));
+        $this->assertInstanceof('Guzzle\Tests\Service\Mock\Command\OtherCommand', $factory->factory('binks'));
+        $this->assertInstanceof('Guzzle\Tests\Service\Mock\Command\MockCommand', $factory->factory('JarJar'));
+        $this->assertInstanceof('Guzzle\Tests\Service\Mock\Command\MockCommand', $factory->factory('jar_jar'));
+    }
+
+    protected function getDescription()
+    {
+        return ServiceDescription::factory(array(
+            'operations' => array(
+                'jar_jar' => array('class' => 'Guzzle\Tests\Service\Mock\Command\MockCommand'),
+                'binks' => array('class' => 'Guzzle\Tests\Service\Mock\Command\OtherCommand'),
+                'Test' => array('class' => 'Guzzle\Tests\Service\Mock\Command\OtherCommand')
+            )
+        ));
+    }
+}

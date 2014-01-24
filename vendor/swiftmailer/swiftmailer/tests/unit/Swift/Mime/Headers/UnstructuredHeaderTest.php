@@ -1,171 +1,366 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Mime/Headers/UnstructuredHeader.php';
+require_once 'Swift/Mime/HeaderEncoder.php';
+require_once 'Swift/Mime/Grammar.php';
+
+class Swift_Mime_Headers_UnstructuredHeaderTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    private $_charset = 'utf-8';
+
+    public function testTypeIsTextHeader()
+    {
+        $header = $this->_getHeader('Subject', $this->_getEncoder('Q', true));
+        $this->assertEqual(Swift_Mime_Header::TYPE_TEXT, $header->getFieldType());
+    }
+
+    public function testGetNameReturnsNameVerbatim()
+    {
+        $header = $this->_getHeader('Subject', $this->_getEncoder('Q', true));
+        $this->assertEqual('Subject', $header->getFieldName());
+    }
+
+    public function testGetValueReturnsValueVerbatim()
+    {
+        $header = $this->_getHeader('Subject', $this->_getEncoder('Q', true));
+        $header->setValue('Test');
+        $this->assertEqual('Test', $header->getValue());
+    }
+
+    public function testBasicStructureIsKeyValuePair()
+    {
+        /* -- RFC 2822, 2.2
+        Header fields are lines composed of a field name, followed by a colon
+        (":"), followed by a field body, and terminated by CRLF.
+        */
+        $header = $this->_getHeader('Subject', $this->_getEncoder('Q', true));
+        $header->setValue('Test');
+        $this->assertEqual('Subject: Test' . "\r\n", $header->toString());
+    }
+
+    public function testLongHeadersAreFoldedAtWordBoundary()
+    {
+        /* -- RFC 2822, 2.2.3
+        Each header field is logically a single line of characters comprising
+        the field name, the colon, and the field body.  For convenience
+        however, and to deal with the 998/78 character limitations per line,
+        the field body portion of a header field can be split into a multiple
+        line representation; this is called "folding".  The general rule is
+        that wherever this standard allows for folding white space (not
+        simply WSP characters), a CRLF may be inserted before any WSP.
+        */
+
+        $value = 'The quick brown fox jumped over the fence, he was a very very ' .
+            'scary brown fox with a bushy tail';
+        $header = $this->_getHeader('X-Custom-Header',
+            $this->_getEncoder('Q', true)
+            );
+        $header->setValue($value);
+        $header->setMaxLineLength(78); //A safe [RFC 2822, 2.2.3] default
+        /*
+        X-Custom-Header: The quick brown fox jumped over the fence, he was a very very
+     scary brown fox with a bushy tail
+        */
+        $this->assertEqual(
+            'X-Custom-Header: The quick brown fox jumped over the fence, he was a' .
+            ' very very' . "\r\n" . //Folding
+            ' scary brown fox with a bushy tail' . "\r\n",
+            $header->toString(), '%s: The header should have been folded at 78th char'
+            );
+    }
+
+    public function testPrintableAsciiOnlyAppearsInHeaders()
+    {
+        /* -- RFC 2822, 2.2.
+        A field name MUST be composed of printable US-ASCII characters (i.e.,
+        characters that have values between 33 and 126, inclusive), except
+        colon.  A field body may be composed of any US-ASCII characters,
+        except for CR and LF.
+        */
+
+        $nonAsciiChar = pack('C', 0x8F);
+        $header = $this->_getHeader('X-Test', $this->_getEncoder('Q', true));
+        $header->setValue($nonAsciiChar);
+        $this->assertPattern(
+            '~^[^:\x00-\x20\x80-\xFF]+: [^\x80-\xFF\r\n]+\r\n$~s',
+            $header->toString()
+            );
+    }
+
+    public function testEncodedWordsFollowGeneralStructure()
+    {
+        /* -- RFC 2047, 1.
+        Generally, an "encoded-word" is a sequence of printable ASCII
+        characters that begins with "=?", ends with "?=", and has two "?"s in
+        between.
+        */
+
+        $nonAsciiChar = pack('C', 0x8F);
+        $header = $this->_getHeader('X-Test', $this->_getEncoder('Q', true));
+        $header->setValue($nonAsciiChar);
+        $this->assertPattern(
+            '~^X-Test: \=?.*?\?.*?\?.*?\?=\r\n$~s',
+            $header->toString()
+            );
+    }
+
+    public function testEncodedWordIncludesCharsetAndEncodingMethodAndText()
+    {
+        /* -- RFC 2047, 2.
+        An 'encoded-word' is defined by the following ABNF grammar.  The
+        notation of RFC 822 is used, with the exception that white space
+        characters MUST NOT appear between components of an 'encoded-word'.
+
+        encoded-word = "=?" charset "?" encoding "?" encoded-text "?="
+        */
+
+        $nonAsciiChar = pack('C', 0x8F);
+
+        $encoder = $this->_getEncoder('Q');
+        $this->_checking(Expectations::create()
+            -> one($encoder)->encodeString($nonAsciiChar, any(), any()) -> returns('=8F')
+            -> ignoring($encoder)
+            );
+        $header = $this->_getHeader('X-Test', $encoder);
+        $header->setValue($nonAsciiChar);
+        $this->assertEqual(
+            'X-Test: =?' . $this->_charset . '?Q?=8F?=' . "\r\n",
+            $header->toString()
+            );
+    }
+
+    public function testEncodedWordsAreUsedToEncodedNonPrintableAscii()
+    {
+        //SPACE and TAB permitted
+        $nonPrintableBytes = array_merge(
+            range(0x00, 0x08), range(0x10, 0x19), array(0x7F)
+            );
+
+        foreach ($nonPrintableBytes as $byte) {
+            $char = pack('C', $byte);
+            $encodedChar = sprintf('=%02X', $byte);
+
+            $encoder = $this->_getEncoder('Q');
+            $this->_checking(Expectations::create()
+                -> one($encoder)->encodeString($char, any(), any()) -> returns($encodedChar)
+                -> ignoring($encoder)
+                );
+
+            $header = $this->_getHeader('X-A', $encoder);
+            $header->setValue($char);
+
+            $this->assertEqual(
+                'X-A: =?' . $this->_charset . '?Q?' . $encodedChar . '?=' . "\r\n",
+                $header->toString(), '%s: Non-printable ascii should be encoded'
+                );
+        }
+    }
+
+    public function testEncodedWordsAreUsedToEncode8BitOctets()
+    {
+        $_8BitBytes = range(0x80, 0xFF);
+
+        foreach ($_8BitBytes as $byte) {
+            $char = pack('C', $byte);
+            $encodedChar = sprintf('=%02X', $byte);
+
+            $encoder = $this->_getEncoder('Q');
+            $this->_checking(Expectations::create()
+                -> one($encoder)->encodeString($char, any(), any()) -> returns($encodedChar)
+                -> ignoring($encoder)
+                );
+
+            $header = $this->_getHeader('X-A', $encoder);
+            $header->setValue($char);
+
+            $this->assertEqual(
+                'X-A: =?' . $this->_charset . '?Q?' . $encodedChar . '?=' . "\r\n",
+                $header->toString(), '%s: 8-bit octets should be encoded'
+                );
+        }
+    }
+
+    public function testEncodedWordsAreNoMoreThan75CharsPerLine()
+    {
+        /* -- RFC 2047, 2.
+        An 'encoded-word' may not be more than 75 characters long, including
+        'charset', 'encoding', 'encoded-text', and delimiters.
+
+        ... SNIP ...
+
+        While there is no limit to the length of a multiple-line header
+        field, each line of a header field that contains one or more
+        'encoded-word's is limited to 76 characters.
+        */
+
+        $nonAsciiChar = pack('C', 0x8F);
+
+        $encoder = $this->_getEncoder('Q');
+        $this->_checking(Expectations::create()
+            -> one($encoder)->encodeString($nonAsciiChar, 8, 63) -> returns('=8F')
+            -> ignoring($encoder)
+            );
+        //Note that multi-line headers begin with LWSP which makes 75 + 1 = 76
+        //Note also that =?utf-8?q??= is 12 chars which makes 75 - 12 = 63
+
+        //* X-Test: is 8 chars
+        $header = $this->_getHeader('X-Test', $encoder);
+        $header->setValue($nonAsciiChar);
+
+        $this->assertEqual(
+            'X-Test: =?' . $this->_charset . '?Q?=8F?=' . "\r\n",
+            $header->toString()
+            );
+    }
+
+    public function testFWSPIsUsedWhenEncoderReturnsMultipleLines()
+    {
+        /* --RFC 2047, 2.
+        If it is desirable to encode more text than will fit in an 'encoded-word' of
+        75 characters, multiple 'encoded-word's (separated by CRLF SPACE) may
+        be used.
+        */
+
+        //Note the Mock does NOT return 8F encoded, the 8F merely triggers
+        // encoding for the sake of testing
+        $nonAsciiChar = pack('C', 0x8F);
+
+        $encoder = $this->_getEncoder('Q');
+        $this->_checking(Expectations::create()
+            -> one($encoder)->encodeString($nonAsciiChar, 8, 63)
+                -> returns('line_one_here' . "\r\n" . 'line_two_here')
+            -> ignoring($encoder)
+            );
+
+        //Note that multi-line headers begin with LWSP which makes 75 + 1 = 76
+        //Note also that =?utf-8?q??= is 12 chars which makes 75 - 12 = 63
+
+        //* X-Test: is 8 chars
+        $header = $this->_getHeader('X-Test', $encoder);
+        $header->setValue($nonAsciiChar);
+
+        $this->assertEqual(
+            'X-Test: =?' . $this->_charset . '?Q?line_one_here?=' . "\r\n" .
+            ' =?' . $this->_charset . '?Q?line_two_here?=' . "\r\n",
+            $header->toString()
+            );
+    }
+
+    public function testAdjacentWordsAreEncodedTogether()
+    {
+        /* -- RFC 2047, 5 (1)
+     Ordinary ASCII text and 'encoded-word's may appear together in the
+     same header field.  However, an 'encoded-word' that appears in a
+     header field defined as '*text' MUST be separated from any adjacent
+     'encoded-word' or 'text' by 'linear-white-space'.
+
+     -- RFC 2047, 2.
+     IMPORTANT: 'encoded-word's are designed to be recognized as 'atom's
+     by an RFC 822 parser.  As a consequence, unencoded white space
+     characters (such as SPACE and HTAB) are FORBIDDEN within an
+     'encoded-word'.
+     */
+
+        //It would be valid to encode all words needed, however it's probably
+        // easiest to encode the longest amount required at a time
+
+        $word = 'w' . pack('C', 0x8F) . 'rd';
+        $text = 'start ' . $word . ' ' . $word . ' then end ' . $word;
+        // 'start', ' word word', ' and end', ' word'
+
+        $encoder = $this->_getEncoder('Q');
+        $this->_checking(Expectations::create()
+            -> one($encoder)->encodeString($word . ' ' . $word, any(), any())
+                -> returns('w=8Frd_w=8Frd')
+            -> one($encoder)->encodeString($word, any(), any()) -> returns('w=8Frd')
+            -> ignoring($encoder)
+            );
+
+        $header = $this->_getHeader('X-Test', $encoder);
+        $header->setValue($text);
+
+        $headerString = $header->toString();
+
+        $this->assertEqual('X-Test: start =?' . $this->_charset . '?Q?' .
+            'w=8Frd_w=8Frd?= then end =?' . $this->_charset . '?Q?'.
+            'w=8Frd?=' . "\r\n", $headerString,
+            '%s: Adjacent encoded words should appear grouped with WSP encoded'
+            );
+    }
+
+    public function testLanguageInformationAppearsInEncodedWords()
+    {
+        /* -- RFC 2231, 5.
+        5.  Language specification in Encoded Words
+
+        RFC 2047 provides support for non-US-ASCII character sets in RFC 822
+        message header comments, phrases, and any unstructured text field.
+        This is done by defining an encoded word construct which can appear
+        in any of these places.  Given that these are fields intended for
+        display, it is sometimes necessary to associate language information
+        with encoded words as well as just the character set.  This
+        specification extends the definition of an encoded word to allow the
+        inclusion of such information.  This is simply done by suffixing the
+        character set specification with an asterisk followed by the language
+        tag.  For example:
+
+                    From: =?US-ASCII*EN?Q?Keith_Moore?= <moore@cs.utk.edu>
+        */
+
+        $value = 'fo' . pack('C', 0x8F) . 'bar';
+
+        $encoder = $this->_getEncoder('Q');
+        $this->_checking(Expectations::create()
+            -> one($encoder)->encodeString($value, any(), any()) -> returns('fo=8Fbar')
+            -> ignoring($encoder)
+            );
+
+        $header = $this->_getHeader('Subject', $encoder);
+        $header->setLanguage('en');
+        $header->setValue($value);
+        $this->assertEqual("Subject: =?utf-8*en?Q?fo=8Fbar?=\r\n",
+            $header->toString()
+            );
+    }
+
+    public function testSetBodyModel()
+    {
+        $header = $this->_getHeader('Subject', $this->_getEncoder('Q', true));
+        $header->setFieldBodyModel('test');
+        $this->assertEqual('test', $header->getValue());
+    }
+
+    public function testGetBodyModel()
+    {
+        $header = $this->_getHeader('Subject', $this->_getEncoder('Q', true));
+        $header->setValue('test');
+        $this->assertEqual('test', $header->getFieldBodyModel());
+    }
+
+    // -- Private methods
+
+    private function _getHeader($name, $encoder)
+    {
+        $header = new Swift_Mime_Headers_UnstructuredHeader($name, $encoder, new Swift_Mime_Grammar());
+        $header->setCharset($this->_charset);
+
+        return $header;
+    }
+
+    private function _getEncoder($type, $stub = false)
+    {
+        $encoder = $this->_mock('Swift_Mime_HeaderEncoder');
+        $this->_checking(Expectations::create()
+            -> ignoring($encoder)->getName() -> returns($type)
+            );
+        if ($stub) {
+            $this->_checking(Expectations::create()
+                -> ignoring($encoder)
+                );
+        }
+
+        return $encoder;
+    }
+}

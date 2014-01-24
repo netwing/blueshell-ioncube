@@ -1,301 +1,335 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-GrRlEj/iGWhyR/ff60OaLTtCPmXfnq7cfbPTmg0=
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Transport/FailoverTransport.php';
+require_once 'Swift/TransportException.php';
+require_once 'Swift/Transport.php';
+require_once 'Swift/Events/EventListener.php';
+
+class Swift_Transport_FailoverTransportTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testFirstTransportIsUsed()
+    {
+        $context = new Mockery();
+        $message1 = $context->mock('Swift_Mime_Message');
+        $message2 = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $con = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message1)
+            -> ignoring($message2)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con->is('on'))
+            -> one($t1)->start() -> when($con->isNot('on')) -> then($con->is('on'))
+            -> one($t1)->send($message1, optional()) -> returns(1) -> when($con->is('on'))
+            -> one($t1)->send($message2, optional()) -> returns(1) -> when($con->is('on'))
+            -> ignoring($t1)
+            -> never($t2)->start()
+            -> never($t2)->send(any(), optional())
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->start();
+        $this->assertEqual(1, $transport->send($message1));
+        $this->assertEqual(1, $transport->send($message2));
+        $context->assertIsSatisfied();
+    }
+
+    public function testMessageCanBeTriedOnNextTransportIfExceptionThrown()
+    {
+        $e = new Swift_TransportException('b0rken');
+
+        $context = new Mockery();
+        $message = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $con1 = $context->states('Connection')->startsAs('off');
+        $con2 = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con1->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con1->is('on'))
+            -> one($t1)->start() -> when($con1->isNot('on')) -> then($con1->is('on'))
+            -> one($t1)->send($message, optional()) -> throws($e) -> when($con1->is('on'))
+            -> ignoring($t1)
+            -> allowing($t2)->isStarted() -> returns(false) -> when($con2->is('off'))
+            -> allowing($t2)->isStarted() -> returns(true) -> when($con2->is('on'))
+            -> one($t2)->start() -> when($con2->isNot('on')) -> then($con2->is('on'))
+            -> one($t2)->send($message, optional()) -> returns(1) -> when($con2->is('on'))
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->start();
+        $this->assertEqual(1, $transport->send($message));
+        $context->assertIsSatisfied();
+    }
+
+    public function testZeroIsReturnedIfTransportReturnsZero()
+    {
+        $context = new Mockery();
+        $message = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $con = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con->is('on'))
+            -> one($t1)->start() -> when($con->isNot('on')) -> then($con->is('on'))
+            -> one($t1)->send($message, optional()) -> returns(0) -> when($con->is('on'))
+            -> ignoring($t1)
+            );
+
+        $transport = $this->_getTransport(array($t1));
+        $transport->start();
+        $this->assertEqual(0, $transport->send($message));
+        $context->assertIsSatisfied();
+    }
+
+    public function testTransportsWhichThrowExceptionsAreNotRetried()
+    {
+        $e = new Swift_TransportException('maur b0rken');
+
+        $context = new Mockery();
+        $message1 = $context->mock('Swift_Mime_Message');
+        $message2 = $context->mock('Swift_Mime_Message');
+        $message3 = $context->mock('Swift_Mime_Message');
+        $message4 = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $con1 = $context->states('Connection')->startsAs('off');
+        $con2 = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message1)
+            -> ignoring($message2)
+            -> ignoring($message3)
+            -> ignoring($message4)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con1->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con1->is('on'))
+            -> one($t1)->start() -> when($con1->isNot('on')) -> then($con1->is('on'))
+            -> one($t1)->send($message1, optional()) -> throws($e) -> when($con1->is('on'))
+            -> never($t1)->send($message2, optional())
+            -> never($t1)->send($message3, optional())
+            -> never($t1)->send($message4, optional())
+            -> ignoring($t1)
+            -> allowing($t2)->isStarted() -> returns(false) -> when($con2->is('off'))
+            -> allowing($t2)->isStarted() -> returns(true) -> when($con2->is('on'))
+            -> one($t2)->start() -> when($con2->isNot('on')) -> then($con2->is('on'))
+            -> one($t2)->send($message1, optional()) -> returns(1) -> when($con2->is('on'))
+            -> one($t2)->send($message2, optional()) -> returns(1) -> when($con2->is('on'))
+            -> one($t2)->send($message3, optional()) -> returns(1) -> when($con2->is('on'))
+            -> one($t2)->send($message4, optional()) -> returns(1) -> when($con2->is('on'))
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->start();
+        $this->assertEqual(1, $transport->send($message1));
+        $this->assertEqual(1, $transport->send($message2));
+        $this->assertEqual(1, $transport->send($message3));
+        $this->assertEqual(1, $transport->send($message4));
+    }
+
+    public function testExceptionIsThrownIfAllTransportsDie()
+    {
+        $e = new Swift_TransportException('b0rken');
+
+        $context = new Mockery();
+        $message = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $con1 = $context->states('Connection')->startsAs('off');
+        $con2 = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con1->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con1->is('on'))
+            -> one($t1)->start() -> when($con1->isNot('on')) -> then($con1->is('on'))
+            -> one($t1)->send($message, optional()) -> throws($e) -> when($con1->is('on'))
+            -> ignoring($t1)
+            -> allowing($t2)->isStarted() -> returns(false) -> when($con2->is('off'))
+            -> allowing($t2)->isStarted() -> returns(true) -> when($con2->is('on'))
+            -> one($t2)->start() -> when($con2->isNot('on')) -> then($con2->is('on'))
+            -> one($t2)->send($message, optional()) -> throws($e) -> when($con2->is('on'))
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->start();
+        try {
+            $transport->send($message);
+            $this->fail('All transports failed so Exception should be thrown');
+        } catch (Exception $e) {
+        }
+        $context->assertIsSatisfied();
+    }
+
+    public function testStoppingTransportStopsAllDelegates()
+    {
+        $context = new Mockery();
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $con1 = $context->states('Connection')->startsAs('on');
+        $con2 = $context->states('Connection')->startsAs('on');
+        $context->checking(Expectations::create()
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con1->is('on'))
+            -> one($t1)->stop() -> when($con1->is('on')) -> then($con1->is('off'))
+            -> ignoring($t1)
+            -> allowing($t2)->isStarted() -> returns(true) -> when($con2->is('on'))
+            -> one($t2)->stop() -> when($con2->is('on')) -> then($con2->is('off'))
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->start();
+        $transport->stop();
+        $context->assertIsSatisfied();
+    }
+
+    public function testTransportShowsAsNotStartedIfAllDelegatesDead()
+    {
+        $e = new Swift_TransportException('b0rken');
+
+        $context = new Mockery();
+        $message = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $con1 = $context->states('Connection')->startsAs('off');
+        $con2 = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con1->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con1->is('on'))
+            -> one($t1)->start() -> when($con1->isNot('on')) -> then($con1->is('on'))
+            -> one($t1)->send($message, optional()) -> throws($e) -> when($con1->is('on'))
+            -> ignoring($t1)
+            -> allowing($t2)->isStarted() -> returns(false) -> when($con2->is('off'))
+            -> allowing($t2)->isStarted() -> returns(true) -> when($con2->is('on'))
+            -> one($t2)->start() -> when($con2->isNot('on')) -> then($con2->is('on'))
+            -> one($t2)->send($message, optional()) -> throws($e) -> when($con2->is('on'))
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->start();
+        $this->assertTrue($transport->isStarted());
+        try {
+            $transport->send($message);
+            $this->fail('All transports failed so Exception should be thrown');
+        } catch (Exception $e) {
+            $this->assertFalse($transport->isStarted());
+        }
+        $context->assertIsSatisfied();
+    }
+
+    public function testRestartingTransportRestartsDeadDelegates()
+    {
+        $e = new Swift_TransportException('b0rken');
+
+        $context = new Mockery();
+        $message1 = $context->mock('Swift_Mime_Message');
+        $message2 = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $con1 = $context->states('Connection')->startsAs('off');
+        $con2 = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message1)
+            -> ignoring($message2)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con1->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con1->is('on'))
+            -> exactly(2)->of($t1)->start() -> when($con1->isNot('on')) -> then($con1->is('on'))
+            -> one($t1)->send($message1, optional()) -> throws($e) -> when($con1->is('on')) -> then($con1->is('off'))
+            -> one($t1)->send($message2, optional()) -> returns(10) -> when($con1->is('on'))
+            -> ignoring($t1)
+            -> allowing($t2)->isStarted() -> returns(false) -> when($con2->is('off'))
+            -> allowing($t2)->isStarted() -> returns(true) -> when($con2->is('on'))
+            -> one($t2)->start() -> when($con2->isNot('on')) -> then($con2->is('on'))
+            -> one($t2)->send($message1, optional()) -> throws($e) -> when($con2->is('on'))
+            -> never($t2)->send($message2, optional())
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->start();
+        $this->assertTrue($transport->isStarted());
+        try {
+            $transport->send($message1);
+            $this->fail('All transports failed so Exception should be thrown');
+        } catch (Exception $e) {
+            $this->assertFalse($transport->isStarted());
+        }
+        //Restart and re-try
+        $transport->start();
+        $this->assertTrue($transport->isStarted());
+        $this->assertEqual(10, $transport->send($message2));
+        $context->assertIsSatisfied();
+    }
+
+    public function testFailureReferenceIsPassedToDelegates()
+    {
+        $failures = array();
+
+        $context = new Mockery();
+        $message = $context->mock('Swift_Mime_Message');
+        $t1 = $context->mock('Swift_Transport');
+        $con = $context->states('Connection')->startsAs('off');
+        $context->checking(Expectations::create()
+            -> ignoring($message)
+            -> allowing($t1)->isStarted() -> returns(false) -> when($con->is('off'))
+            -> allowing($t1)->isStarted() -> returns(true) -> when($con->is('on'))
+            -> one($t1)->start() -> when($con->isNot('on')) -> then($con->is('on'))
+            -> one($t1)->send($message, reference($failures)) -> returns(1) -> when($con->is('on'))
+            -> ignoring($t1)
+            );
+
+        $transport = $this->_getTransport(array($t1));
+        $transport->start();
+        $transport->send($message, $failures);
+        $context->assertIsSatisfied();
+    }
+
+    public function testRegisterPluginDelegatesToLoadedTransports()
+    {
+        $context = new Mockery();
+
+        $plugin = $this->_createPlugin($context);
+
+        $t1 = $context->mock('Swift_Transport');
+        $t2 = $context->mock('Swift_Transport');
+        $context->checking(Expectations::create()
+            -> one($t1)->registerPlugin($plugin)
+            -> one($t2)->registerPlugin($plugin)
+            -> ignoring($t1)
+            -> ignoring($t2)
+            );
+
+        $transport = $this->_getTransport(array($t1, $t2));
+        $transport->registerPlugin($plugin);
+
+        $context->assertIsSatisfied();
+    }
+
+    // -- Private helpers
+
+    private function _getTransport(array $transports)
+    {
+        $transport = new Swift_Transport_FailoverTransport();
+        $transport->setTransports($transports);
+
+        return $transport;
+    }
+
+    private function _createPlugin($context)
+    {
+        return $context->mock('Swift_Events_EventListener');
+    }
+
+    private function _createInnerTransport()
+    {
+        return $this->_mockery()->mock('Swift_Transport');
+    }
+}

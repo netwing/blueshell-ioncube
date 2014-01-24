@@ -1,29 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPuBulanzG0DZR4uhRnwtBiQiIfDkiyoo9iS0gAjb5EJo9POvuC+kQYyQVNXosOPd7do6m4VJ
-vzR6r6N/xoF+qri8c8A1Zgq2lIg+r3AC2wLsPdzHgctzdq8HAzXlmMWSHYmRn29YVomtdTCwWtLw
-CzN4qOE5lXDiN+Vyzawue5jvM26VliGEkFa4ysW/T3P+++Cl7UHS+4Tzr7vS8/fhB80u1yKdmIl3
-x1v+9sx8spjMi57eAKaKewzHAE4xzt2gh9fl143SQNIoOgV8dh30vx+X/nTur5JUDXjjIOSgI71r
-PKKk39EpBTZ5iZef0RFIotvmr8oM4dyL/o6R+CHCow0LLjek2ylxTlhR81lBdrmJcux0XmqVW7fu
-oVOw9/+caP+Gn1Vf7o7TP1eqWDwFXiLHRVybLi56wGm4IXk5JfHSE1Ilk9Pdgw+eFGezSL3H0zBf
-5/1Zm+FWCiv16JtMZ3SETlrvnLFRJGa6hhPK7TKGeorCHAm6PxR+6F7eyZHPkQIVf0XDDABcYOHt
-S9ZNVc5nnWagIQGS5Oosr8m+gksREUK/OXO2FLijhLKdarjDCTo3TUbtgQmrXqHGm39i6W/W6Si7
-7cX7M4C/qiz9Uk2thorluU7QUZRcY3q3Z63vAfuLyXJi2ULltkEfK4SV8aqCRSANE4KfGoXgguSC
-f7k+4unGTrOx7z9UGkNy4kqwx8wx2WL4N38a/8cws+Ws27+OqWxuHrTl696fT2kAL5ubplW8XJ8k
-o2ZbFg4xv4Tl8NznTinYWyJg94Z2y3VET4CS1tN1RB4RkLoXQJQVLmqCTWdLaSNkMRAr3tX7dpgU
-3lhClCfBq43BfDHpPO5F4uxVsJy3kecNhTWqZI+CJmMkyar9QlftuAwYEdmQPqqly/g5lSLsxXOB
-mxX7944dYwN3hal9QGySW4laMqclH1iIJkj7dcPdXMfOorhkoL22TmwyZXr/bVOl378j8xJGotZ6
-eIlau1d/ArHQCyGxzDc7NzXuMXXOhe7gScKN4bAcIjgqKKd2TwNk7PVNZHffB1f5QWA5FLdIjYI5
-OBD/oi2+bEh8YmzFj1Itc2u+MzifT/g/yy2mkwrMa+gPUL51BMGCsh5xHcrIXO0K3KUGxG54GSld
-v6RZ/6C8CnsJkQNFOya0Hr8pkxBHAkYCmGXC7lXOrAFR4MVxhjZNoytO8Lk+fTix1MTX3dlDhFDH
-IMXg6dsgQNAqtGSTac0stQIn3VZmvOnkEncwx3LKFWrk0qK2nXPM/uYnQ1BiMjwC7IJbZerJbliN
-SXXAYx1sBPsfI83WIFE3BEWtOcHBptBXv+IE/qAwmJh9BGfajeCGv098jQblZHyvOTPL8YuGcslo
-P9/+axKNMM8DJ76AZk+9Vk35tw057sZzUapFrbt6lRft141sq35a44OVoVezs8ZrobFj4OAZv4ex
-ohHdjHsY4rai1DoThY3xh/jRkK7NI/6F8W/9DPfVkFcPMpIIU10nftr9wObHlmVtVbxyt7uwF/OY
-/4nH9T404H1O4UZVi9oHTD00IVHl/8Gc9/WPAujF35n9B/JBBdCkiudMndcb7o/JhBJfON2i9Ys1
-y9lTckEJNRce1Mzwfo6Qu35vHIu0158ZdcX+StIMzkcH2QyagNAe3+O5gEAhKCC64FZGH605lK5A
-oqYgZxr0zcDPeJDDgVEwy8BHigzxEMKeMWdQikF8RjjRQDIs5b06SywBiyoHjWHOD6wOIakPCAIC
-UHLq3CJnXyCJxVx0q8CufeAe69NWcnN2uczi6zYBWsgv+xmqR9VQTiB874cgqKMz3Cb12OcBpiUs
-EVH2m5wogUq/32pn41wV4nk+P5BtGeH4KoPS0G4I/zgHSmhRUX06pcClCueZTKTn/NZlDs2IPG8c
-ASgME/VUeLv0uaMnrKoGym==
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Header Signer Interface used to apply Header-Based Signature to a message
+ *
+ * @package    Swift
+ * @subpackage Signed
+ * @author     Xavier De Cock <xdecock@gmail.com>
+ */
+interface Swift_Signers_HeaderSigner extends Swift_Signer, Swift_InputByteStream
+{
+    /**
+     * Exclude an header from the signed headers
+     *
+     * @param string $header_name
+     *
+     * @return Swift_Signers_HeaderSigner
+     */
+    public function ignoreHeader($header_name);
+
+    /**
+     * Prepare the Signer to get a new Body
+     *
+     * @return Swift_Signers_HeaderSigner
+     */
+    public function startBody();
+
+    /**
+     * Give the signal that the body has finished streaming
+     *
+     * @return Swift_Signers_HeaderSigner
+     */
+    public function endBody();
+
+    /**
+     * Give the headers already given
+     *
+     * @param Swift_Mime_SimpleHeaderSet $headers
+     *
+     * @return Swift_Signers_HeaderSigner
+     */
+    public function setHeaders(Swift_Mime_HeaderSet $headers);
+
+    /**
+     * Add the header(s) to the headerSet
+     *
+     * @param Swift_Mime_HeaderSet $headers
+     *
+     * @return Swift_Signers_HeaderSigner
+     */
+    public function addSignature(Swift_Mime_HeaderSet $headers);
+
+    /**
+     * Return the list of header a signer might tamper
+     *
+     * @return array
+     */
+    public function getAlteredHeaders();
+}

@@ -1,91 +1,205 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('system.web.CArrayDataProvider');
+
+class CArrayDataProviderTest extends CTestCase
+{
+	public function testGetData()
+	{
+		$simpleArray = array('zero', 'one');
+		$dataProvider = new CArrayDataProvider($simpleArray);
+		$this->assertEquals($simpleArray, $dataProvider->getData());
+	}
+
+	public function testGetSortedData()
+	{
+		$simpleArray = array(array('sortField' => 1), array('sortField' => 0));
+		$dataProvider = new CArrayDataProvider(
+			$simpleArray,
+			array(
+				'sort' => array(
+					'attributes' => array(
+						'sort' => array(
+							'asc' => 'sortField ASC',
+							'desc' => 'sortField DESC',
+							'label' => 'Sorting',
+							'default' => 'asc',
+						),
+					),
+					'defaultOrder' => array(
+						'sort' => CSort::SORT_ASC,
+					)
+				),
+			)
+		);
+		$sortedArray = array(array('sortField' => 0), array('sortField' => 1));
+		$this->assertEquals($sortedArray, $dataProvider->getData());
+	}
+
+	public function testGetSortedDataByInnerArrayField()
+	{
+		$simpleArray = array(
+			array('innerArray' => array('sortField' => 1)),
+			array('innerArray' => array('sortField' => 0))
+		);
+		$dataProvider = new CArrayDataProvider(
+			$simpleArray,
+			array(
+				'sort' => array(
+					'attributes' => array(
+						'sort' => array(
+							'asc' => 'innerArray.sortField ASC',
+							'desc' => 'innerArray.sortField DESC',
+							'label' => 'Sorting',
+							'default' => 'asc',
+						),
+					),
+					'defaultOrder' => array(
+						'sort' => CSort::SORT_ASC,
+					)
+				),
+			)
+		);
+		$sortedArray = array(
+			array('innerArray' => array('sortField' => 0)),
+			array('innerArray' => array('sortField' => 1))
+		);
+		$this->assertEquals($sortedArray, $dataProvider->getData());
+	}
+
+	public function testCaseSensitiveSort()
+	{
+		// source data
+		$unsortedProjects=array(
+			array('title'=>'Zabbix', 'license'=>'GPL'),
+			array('title'=>'munin', 'license'=>'GPL'),
+			array('title'=>'Arch Linux', 'license'=>'GPL'),
+			array('title'=>'Nagios', 'license'=>'GPL'),
+			array('title'=>'zend framework', 'license'=>'BSD'),
+			array('title'=>'Zope', 'license'=>'ZPL'),
+			array('title'=>'active-record', 'license'=>false),
+			array('title'=>'ActiveState', 'license'=>false),
+			array('title'=>'mach', 'license'=>false),
+			array('title'=>'MySQL', 'license'=>'GPL'),
+			array('title'=>'mssql', 'license'=>'EULA'),
+			array('title'=>'Master-Master', 'license'=>false),
+			array('title'=>'Zend Engine', 'license'=>false),
+			array('title'=>'Mageia Linux', 'license'=>'GNU GPL'),
+			array('title'=>'nginx', 'license'=>'BSD'),
+			array('title'=>'Mozilla Firefox', 'license'=>'MPL'),
+		);
+
+		// expected data
+		$sortedProjects=array(
+			// upper cased titles
+			array('title'=>'ActiveState', 'license'=>false),
+			array('title'=>'Arch Linux', 'license'=>'GPL'),
+			array('title'=>'Mageia Linux', 'license'=>'GNU GPL'),
+			array('title'=>'Master-Master', 'license'=>false),
+			array('title'=>'Mozilla Firefox', 'license'=>'MPL'),
+			array('title'=>'MySQL', 'license'=>'GPL'),
+			array('title'=>'Nagios', 'license'=>'GPL'),
+			array('title'=>'Zabbix', 'license'=>'GPL'),
+			array('title'=>'Zend Engine', 'license'=>false),
+			array('title'=>'Zope', 'license'=>'ZPL'),
+			// lower cased titles
+			array('title'=>'active-record', 'license'=>false),
+			array('title'=>'mach', 'license'=>false),
+			array('title'=>'mssql', 'license'=>'EULA'),
+			array('title'=>'munin', 'license'=>'GPL'),
+			array('title'=>'nginx', 'license'=>'BSD'),
+			array('title'=>'zend framework', 'license'=>'BSD'),
+		);
+
+		$dataProvider=new CArrayDataProvider($unsortedProjects, array(
+			'sort'=>array(
+				'attributes'=>array(
+					'sort'=>array(
+						'asc'=>'title ASC',
+						'desc'=>'title DESC',
+						'label'=>'Title',
+						'default'=>'desc',
+					),
+				),
+				'defaultOrder'=>array(
+					'sort'=>CSort::SORT_ASC,
+				)
+			),
+			'pagination'=>array(
+				'pageSize'=>100500,
+			),
+		));
+
+		// $dataProvider->caseSensitiveSort is true by default, so we do not touching it
+
+		$this->assertEquals($sortedProjects, $dataProvider->getData());
+	}
+
+	public function testCaseInsensitiveSort()
+	{
+		// source data
+		$unsortedProjects=array(
+			array('title'=>'Zabbix', 'license'=>'GPL'),
+			array('title'=>'munin', 'license'=>'GPL'),
+			array('title'=>'Arch Linux', 'license'=>'GPL'),
+			array('title'=>'Nagios', 'license'=>'GPL'),
+			array('title'=>'zend framework', 'license'=>'BSD'),
+			array('title'=>'Zope', 'license'=>'ZPL'),
+			array('title'=>'active-record', 'license'=>false),
+			array('title'=>'ActiveState', 'license'=>false),
+			array('title'=>'mach', 'license'=>false),
+			array('title'=>'MySQL', 'license'=>'GPL'),
+			array('title'=>'mssql', 'license'=>'EULA'),
+			array('title'=>'Master-Master', 'license'=>false),
+			array('title'=>'Zend Engine', 'license'=>false),
+			array('title'=>'Mageia Linux', 'license'=>'GNU GPL'),
+			array('title'=>'nginx', 'license'=>'BSD'),
+			array('title'=>'Mozilla Firefox', 'license'=>'MPL'),
+		);
+
+		// expected data
+		$sortedProjects=array(
+			// case is not taken into account
+			array('title'=>'active-record', 'license'=>false),
+			array('title'=>'ActiveState', 'license'=>false),
+			array('title'=>'Arch Linux', 'license'=>'GPL'),
+			array('title'=>'mach', 'license'=>false),
+			array('title'=>'Mageia Linux', 'license'=>'GNU GPL'),
+			array('title'=>'Master-Master', 'license'=>false),
+			array('title'=>'Mozilla Firefox', 'license'=>'MPL'),
+			array('title'=>'mssql', 'license'=>'EULA'),
+			array('title'=>'munin', 'license'=>'GPL'),
+			array('title'=>'MySQL', 'license'=>'GPL'),
+			array('title'=>'Nagios', 'license'=>'GPL'),
+			array('title'=>'nginx', 'license'=>'BSD'),
+			array('title'=>'Zabbix', 'license'=>'GPL'),
+			array('title'=>'Zend Engine', 'license'=>false),
+			array('title'=>'zend framework', 'license'=>'BSD'),
+			array('title'=>'Zope', 'license'=>'ZPL'),
+		);
+
+		$dataProvider=new CArrayDataProvider($unsortedProjects, array(
+			'sort'=>array(
+				'attributes'=>array(
+					'sort'=>array(
+						'asc'=>'title ASC',
+						'desc'=>'title DESC',
+						'label'=>'Title',
+						'default'=>'desc',
+					),
+				),
+				'defaultOrder'=>array(
+					'sort'=>CSort::SORT_ASC,
+				)
+			),
+			'pagination'=>array(
+				'pageSize'=>100500,
+			),
+		));
+
+		// we're explicitly setting case insensitive sort
+		$dataProvider->caseSensitiveSort = false;
+
+		$this->assertEquals($sortedProjects, $dataProvider->getData());
+	}
+}

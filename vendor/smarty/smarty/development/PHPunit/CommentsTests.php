@@ -1,47 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-aRqNOxw6
+<?php
+/**
+ * Smarty PHPunit tests comments in templates
+ *
+ * @package PHPunit
+ * @author Uwe Tews
+ */
+
+/**
+ * class for security test
+ */
+class CommentsTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+     * test simple comments
+     */
+    public function testSimpleComment1()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{* this is a comment *}");
+        $this->assertEquals("", $this->smarty->fetch($tpl));
+    }
+    public function testSimpleComment2()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{* another \$foo comment *}");
+        $this->assertEquals("", $this->smarty->fetch($tpl));
+    }
+    public function testSimpleComment3()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{* another  comment *}some in between{* another  comment *}");
+        $this->assertEquals("some in between", $this->smarty->fetch($tpl));
+    }
+    public function testSimpleComment4()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{* multi line \n comment *}");
+        $this->assertEquals("", $this->smarty->fetch($tpl));
+    }
+    public function testSimpleComment5()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{* /* foo * / *}");
+        $this->assertEquals("", $this->smarty->fetch($tpl));
+    }
+    /**
+     * test comment text combinations
+     */
+    public function testTextComment1()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A{* comment *}B\nC");
+        $this->assertEquals("AB\nC", $this->smarty->fetch($tpl));
+    }
+    public function testTextComment2()
+    {
+        $tpl = $this->smarty->createTemplate("eval:D{* comment *}\n{* comment *}E\nF");
+        $this->assertEquals("D\nE\nF", $this->smarty->fetch($tpl));
+    }
+    public function testTextComment3()
+    {
+        $tpl = $this->smarty->createTemplate("eval:G{* multi \nline *}H");
+        $this->assertEquals("GH", $this->smarty->fetch($tpl));
+    }
+    public function testTextComment4()
+    {
+        $tpl = $this->smarty->createTemplate("eval:I{* multi \nline *}\nJ");
+        $this->assertEquals("I\nJ", $this->smarty->fetch($tpl));
+    }
+}

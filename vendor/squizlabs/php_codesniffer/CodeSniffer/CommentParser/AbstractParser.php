@@ -1,199 +1,684 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Parses doc comments.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_CommentParser_SingleElement', true) === false) {
+    $error = 'Class PHP_CodeSniffer_CommentParser_SingleElement not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+if (class_exists('PHP_CodeSniffer_CommentParser_CommentElement', true) === false) {
+    $error = 'Class PHP_CodeSniffer_CommentParser_CommentElement not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+if (class_exists('PHP_CodeSniffer_CommentParser_ParserException', true) === false) {
+    $error = 'Class PHP_CodeSniffer_CommentParser_ParserException not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+/**
+ * Parses doc comments.
+ *
+ * This abstract parser handles the following tags:
+ *
+ * <ul>
+ *  <li>The short description and the long description</li>
+ *  <li>@see</li>
+ *  <li>@link</li>
+ *  <li>@deprecated</li>
+ *  <li>@since</li>
+ * </ul>
+ *
+ * Extending classes should implement the getAllowedTags() method to return the
+ * tags that they wish to process, omitting the tags that this base class
+ * processes. When one of these tags in encountered, the process&lt;tag_name&gt;
+ * method is called on that class. For example, if a parser's getAllowedTags()
+ * method returns \@param as one of its tags, the processParam method will be
+ * called so that the parser can process such a tag.
+ *
+ * The method is passed the tokens that comprise this tag. The tokens array
+ * includes the whitespace that exists between the tokens, as separate tokens.
+ * It's up to the method to create a element that implements the DocElement
+ * interface, which should be returned. The AbstractDocElement class is a helper
+ * class that can be used to handle most of the parsing of the tokens into their
+ * individual sub elements. It requires that you construct it with the element
+ * previous to the element currently being processed, which can be acquired
+ * with the protected $previousElement class member of this class.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+abstract class PHP_CodeSniffer_CommentParser_AbstractParser
+{
+
+    /**
+     * The comment element that appears in the doc comment.
+     *
+     * @var PHP_CodeSniffer_CommentParser_CommentElement
+     */
+    protected $comment = null;
+
+    /**
+     * The string content of the comment.
+     *
+     * @var string
+     */
+    protected $commentString = '';
+
+    /**
+     * The file that the comment exists in.
+     *
+     * @var PHP_CodeSniffer_File
+     */
+    protected $phpcsFile = null;
+
+    /**
+     * The word tokens that appear in the comment.
+     *
+     * Whitespace tokens also appear in this stack, but are separate tokens
+     * from words.
+     *
+     * @var array(string)
+     */
+    protected $words = array();
+
+    /**
+     * An array of all tags found in the comment.
+     *
+     * @var array(string)
+     */
+    protected $foundTags = array();
+
+    /**
+     * The previous doc element that was processed.
+     *
+     * null if the current element being processed is the first element in the
+     * doc comment.
+     *
+     * @var PHP_CodeSniffer_CommentParser_DocElement
+     */
+    protected $previousElement = null;
+
+    /**
+     * A list of see elements that appear in this doc comment.
+     *
+     * @var array(PHP_CodeSniffer_CommentParser_SingleElement)
+     */
+    protected $sees = array();
+
+    /**
+     * A list of see elements that appear in this doc comment.
+     *
+     * @var array(PHP_CodeSniffer_CommentParser_SingleElement)
+     */
+    protected $deprecated = null;
+
+    /**
+     * A list of see elements that appear in this doc comment.
+     *
+     * @var array(PHP_CodeSniffer_CommentParser_SingleElement)
+     */
+    protected $links = array();
+
+    /**
+     * A element to represent \@since tags.
+     *
+     * @var PHP_CodeSniffer_CommentParser_SingleElement
+     */
+    protected $since = null;
+
+    /**
+     * True if the comment has been parsed.
+     *
+     * @var boolean
+     */
+    private $_hasParsed = false;
+
+    /**
+     * The tags that this class can process.
+     *
+     * @var array(string)
+     */
+    private static $_tags = array(
+                             'see'        => false,
+                             'link'       => false,
+                             'deprecated' => true,
+                             'since'      => true,
+                            );
+
+    /**
+     * An array of unknown tags.
+     *
+     * @var array(string)
+     */
+    public $unknown = array();
+
+    /**
+     * The order of tags.
+     *
+     * @var array(string)
+     */
+    public $orders = array();
+
+
+    /**
+     * Constructs a Doc Comment Parser.
+     *
+     * @param string               $comment   The comment to parse.
+     * @param PHP_CodeSniffer_File $phpcsFile The file that this comment is in.
+     */
+    public function __construct($comment, PHP_CodeSniffer_File $phpcsFile)
+    {
+        $this->commentString = $comment;
+        $this->phpcsFile     = $phpcsFile;
+
+    }//end __construct()
+
+
+    /**
+     * Initiates the parsing of the doc comment.
+     *
+     * @return void
+     * @throws PHP_CodeSniffer_CommentParser_ParserException If the parser finds a
+     *                                                       problem with the
+     *                                                       comment.
+     */
+    public function parse()
+    {
+        if ($this->_hasParsed === false) {
+            $this->_parse($this->commentString);
+        }
+
+    }//end parse()
+
+
+    /**
+     * Parse the comment.
+     *
+     * @param string $comment The doc comment to parse.
+     *
+     * @return void
+     * @see _parseWords()
+     */
+    private function _parse($comment)
+    {
+        // Firstly, remove the comment tags and any stars from the left side.
+        $lines = explode($this->phpcsFile->eolChar, $comment);
+        foreach ($lines as &$line) {
+            $line = trim($line);
+
+            if ($line !== '') {
+                if (substr($line, 0, 3) === '/**') {
+                    $line = substr($line, 3);
+                } else if (substr($line, -2, 2) === '*/') {
+                    $line = substr($line, 0, -2);
+                } else if ($line{0} === '*') {
+                    $line = substr($line, 1);
+                }
+
+                // Add the words to the stack, preserving newlines. Other parsers
+                // might be interested in the spaces between words, so tokenize
+                // spaces as well as separate tokens.
+                $flags = (PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
+                $words = preg_split(
+                    '|(\s+)|u',
+                    $line.$this->phpcsFile->eolChar,
+                    -1,
+                    $flags
+                );
+
+                $this->words = array_merge($this->words, $words);
+            }//end if
+        }//end foreach
+
+        $this->_parseWords();
+
+    }//end _parse()
+
+
+    /**
+     * Parses each word within the doc comment.
+     *
+     * @return void
+     * @see _parse()
+     * @throws PHP_CodeSniffer_CommentParser_ParserException If more than the allowed
+     *                                                       number of occurences of
+     *                                                       a tag is found.
+     */
+    private function _parseWords()
+    {
+        $allowedTags     = (self::$_tags + $this->getAllowedTags());
+        $allowedTagNames = array_keys($allowedTags);
+        $prevTagPos      = false;
+        $wordWasEmpty    = true;
+
+        foreach ($this->words as $wordPos => $word) {
+            if (trim($word) !== '') {
+                $wordWasEmpty = false;
+            }
+
+            if ($word{0} === '@') {
+                $tag = substr($word, 1);
+
+                // Filter out @ tags in the comment description.
+                // A real comment tag should have whitespace and a newline before it.
+                if (isset($this->words[($wordPos - 1)]) === false
+                    || trim($this->words[($wordPos - 1)]) !== ''
+                ) {
+                    continue;
+                }
+
+                if (isset($this->words[($wordPos - 2)]) === false
+                    || $this->words[($wordPos - 2)] !== $this->phpcsFile->eolChar
+                ) {
+                    continue;
+                }
+
+                $this->foundTags[] = array(
+                                      'tag'  => $tag,
+                                      'line' => $this->getLine($wordPos),
+                                      'pos'  => $wordPos,
+                                     );
+
+                if ($prevTagPos !== false) {
+                    // There was a tag before this so let's process it.
+                    $prevTag = substr($this->words[$prevTagPos], 1);
+                    $this->parseTag($prevTag, $prevTagPos, ($wordPos - 1));
+                } else {
+                    // There must have been a comment before this tag, so
+                    // let's process that.
+                    $this->parseTag('comment', 0, ($wordPos - 1));
+                }
+
+                $prevTagPos = $wordPos;
+
+                if (in_array($tag, $allowedTagNames) === false) {
+                    // This is not a tag that we process, but let's check to
+                    // see if it is a tag we know about. If we don't know about it,
+                    // we add it to a list of unknown tags.
+                    $knownTags = array(
+                                  'abstract',
+                                  'access',
+                                  'example',
+                                  'filesource',
+                                  'global',
+                                  'ignore',
+                                  'internal',
+                                  'name',
+                                  'static',
+                                  'staticvar',
+                                  'todo',
+                                  'tutorial',
+                                  'uses',
+                                  'package_version@',
+                                 );
+
+                    if (in_array($tag, $knownTags) === false) {
+                        $this->unknown[] = array(
+                                            'tag'  => $tag,
+                                            'line' => $this->getLine($wordPos),
+                                            'pos'  => $wordPos,
+                                           );
+                    }
+                }//end if
+            }//end if
+        }//end foreach
+
+        // Only process this tag if there was something to process.
+        if ($wordWasEmpty === false) {
+            if ($prevTagPos === false) {
+                // There must only be a comment in this doc comment.
+                $this->parseTag('comment', 0, count($this->words));
+            } else {
+                // Process the last tag element.
+                $prevTag  = substr($this->words[$prevTagPos], 1);
+                $numWords = count($this->words);
+                $endPos   = $numWords;
+
+                if ($prevTag === 'package' || $prevTag === 'subpackage') {
+                    // These are single-word tags, so anything after a newline
+                    // is really a comment.
+                    for ($endPos = $prevTagPos; $endPos < $numWords; $endPos++) {
+                        if (strpos($this->words[$endPos], $this->phpcsFile->eolChar) !== false) {
+                            break;
+                        }
+                    }
+                }
+
+                $this->parseTag($prevTag, $prevTagPos, $endPos);
+
+                if ($endPos !== $numWords) {
+                    // Process the final comment, if it is not empty.
+                    $tokens  = array_slice($this->words, ($endPos + 1), $numWords);
+                    $content = implode('', $tokens);
+                    if (trim($content) !== '') {
+                        $this->parseTag('comment', ($endPos + 1), $numWords);
+                    }
+                }
+            }//end if
+        }//end if
+
+    }//end _parseWords()
+
+
+    /**
+     * Returns the line that the token exists on in the doc comment.
+     *
+     * @param int $tokenPos The position in the words stack to find the line
+     *                      number for.
+     *
+     * @return int
+     */
+    protected function getLine($tokenPos)
+    {
+        $newlines = 0;
+        for ($i = 0; $i < $tokenPos; $i++) {
+            $newlines += substr_count($this->phpcsFile->eolChar, $this->words[$i]);
+        }
+
+        return $newlines;
+
+    }//end getLine()
+
+
+    /**
+     * Parses see tag element within the doc comment.
+     *
+     * @param array(string) $tokens The word tokens that comprise this element.
+     *
+     * @return DocElement The element that represents this see comment.
+     */
+    protected function parseSee($tokens)
+    {
+        $see = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'see',
+            $this->phpcsFile
+        );
+
+        $this->sees[] = $see;
+        return $see;
+
+    }//end parseSee()
+
+
+    /**
+     * Parses the comment element that appears at the top of the doc comment.
+     *
+     * @param array(string) $tokens The word tokens that comprise this element.
+     *
+     * @return DocElement The element that represents this comment element.
+     */
+    protected function parseComment($tokens)
+    {
+        $this->comment = new PHP_CodeSniffer_CommentParser_CommentElement(
+            $this->previousElement,
+            $tokens,
+            $this->phpcsFile
+        );
+
+        return $this->comment;
+
+    }//end parseComment()
+
+
+    /**
+     * Parses \@deprecated tags.
+     *
+     * @param array(string) $tokens The word tokens that comprise this element.
+     *
+     * @return DocElement The element that represents this deprecated tag.
+     */
+    protected function parseDeprecated($tokens)
+    {
+        $this->deprecated = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'deprecated',
+            $this->phpcsFile
+        );
+
+        return $this->deprecated;
+
+    }//end parseDeprecated()
+
+
+    /**
+     * Parses \@since tags.
+     *
+     * @param array(string) $tokens The word tokens that comprise this element.
+     *
+     * @return SingleElement The element that represents this since tag.
+     */
+    protected function parseSince($tokens)
+    {
+        $this->since = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'since',
+            $this->phpcsFile
+        );
+
+        return $this->since;
+
+    }//end parseSince()
+
+
+    /**
+     * Parses \@link tags.
+     *
+     * @param array(string) $tokens The word tokens that comprise this element.
+     *
+     * @return SingleElement The element that represents this link tag.
+     */
+    protected function parseLink($tokens)
+    {
+        $link = new PHP_CodeSniffer_CommentParser_SingleElement(
+            $this->previousElement,
+            $tokens,
+            'link',
+            $this->phpcsFile
+        );
+
+        $this->links[] = $link;
+        return $link;
+
+    }//end parseLink()
+
+
+    /**
+     * Returns the see elements that appear in this doc comment.
+     *
+     * @return array(SingleElement)
+     */
+    public function getSees()
+    {
+        return $this->sees;
+
+    }//end getSees()
+
+
+    /**
+     * Returns the comment element that appears at the top of this doc comment.
+     *
+     * @return CommentElement
+     */
+    public function getComment()
+    {
+        return $this->comment;
+
+    }//end getComment()
+
+
+    /**
+     * Returns the word list.
+     *
+     * @return array
+     */
+    public function getWords()
+    {
+        return $this->words;
+
+    }//end getWords()
+
+
+    /**
+     * Returns the list of found tags.
+     *
+     * @return array
+     */
+    public function getTags()
+    {
+        return $this->foundTags;
+
+    }//end getTags()
+
+
+    /**
+     * Returns the link elements found in this comment.
+     *
+     * Returns an empty array if no links are found in the comment.
+     *
+     * @return array(SingleElement)
+     */
+    public function getLinks()
+    {
+        return $this->links;
+
+    }//end getLinks()
+
+
+    /**
+     * Returns the deprecated element found in this comment.
+     *
+     * Returns null if no element exists in the comment.
+     *
+     * @return SingleElement
+     */
+    public function getDeprecated()
+    {
+        return $this->deprecated;
+
+    }//end getDeprecated()
+
+
+    /**
+     * Returns the since element found in this comment.
+     *
+     * Returns null if no element exists in the comment.
+     *
+     * @return SingleElement
+     */
+    public function getSince()
+    {
+        return $this->since;
+
+    }//end getSince()
+
+
+    /**
+     * Parses the specified tag.
+     *
+     * @param string $tag   The tag name to parse (omitting the @ symbol from
+     *                      the tag)
+     * @param int    $start The position in the word tokens where this element
+     *                      started.
+     * @param int    $end   The position in the word tokens where this element
+     *                      ended.
+     *
+     * @return void
+     * @throws Exception If the process method for the tag cannot be found.
+     */
+    protected function parseTag($tag, $start, $end)
+    {
+        $tokens = array_slice($this->words, ($start + 1), ($end - $start));
+
+        $allowedTags     = (self::$_tags + $this->getAllowedTags());
+        $allowedTagNames = array_keys($allowedTags);
+        if ($tag === 'comment' || in_array($tag, $allowedTagNames) === true) {
+            $method = 'parse'.$tag;
+            if (method_exists($this, $method) === false) {
+                $error = 'Method '.$method.' must be implemented to process '.$tag.' tags';
+                throw new Exception($error);
+            }
+
+            $this->previousElement = $this->$method($tokens);
+        } else {
+            $this->previousElement = new PHP_CodeSniffer_CommentParser_SingleElement(
+                $this->previousElement,
+                $tokens,
+                $tag,
+                $this->phpcsFile
+            );
+        }
+
+        $this->orders[] = $tag;
+
+        if ($this->previousElement === null
+            || ($this->previousElement instanceof PHP_CodeSniffer_CommentParser_DocElement) === false
+        ) {
+            throw new Exception('Parse method must return a DocElement');
+        }
+
+    }//end parseTag()
+
+
+    /**
+     * Returns a list of tags that this comment parser allows for it's comment.
+     *
+     * Each tag should indicate if only one entry of this tag can exist in the
+     * comment by specifying true as the array value, or false if more than one
+     * is allowed. Each tag should omit the @ symbol. Only tags other than
+     * the standard tags should be returned.
+     *
+     * @return array(string => boolean)
+     */
+    protected abstract function getAllowedTags();
+
+
+    /**
+     * Returns the tag orders (index => tagName).
+     *
+     * @return array
+     */
+    public function getTagOrders()
+    {
+        return $this->orders;
+
+    }//end getTagOrders()
+
+
+    /**
+     * Returns the unknown tags.
+     *
+     * @return array
+     */
+    public function getUnknown()
+    {
+        return $this->unknown;
+
+    }//end getUnknown()
+
+
+}//end class
+
 ?>
-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

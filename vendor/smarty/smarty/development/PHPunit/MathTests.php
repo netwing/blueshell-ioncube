@@ -1,62 +1,107 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-e5yLCbxigWBbC3S=
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class MathTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test PHP function as modifier
+    */
+    public function testSyntax()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "20 -- 4";
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{$y = 5}{$x * $y} -- {20 / 5}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testFunction()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "20 -- 4";
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{$y = 5}{math equation="x * y" x=$x y=$y} -- {math equation="20 / 5"}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testSyntaxSin()
+    {
+        $this->smarty->disableSecurity();
+        $expected = sin(4) . ' -- ' . sin(4);
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{$x|sin} -- {$y = sin($x)}{$y}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testFunctionSin()
+    {
+        $this->smarty->disableSecurity();
+        $expected = sin(4) . ' -- ' . sin(4);
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{math equation="sin(x)" x=$x} -- {math equation="sin(x)" x=$x assign="y"}{$y}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testSyntaxFloat()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "22 -- 4.1";
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{$y = 5.5}{$x * $y} -- {20.5 / 5}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testFunctionFloat()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "22 -- 4.1";
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{$y = 5.5}{math equation="x * y" x=$x y=$y} -- {math equation="20.5 / 5"}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testSyntaxFormat()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "22.00 -- 4.10";
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{$y = 5.5}{$z = $x * $y}{"%0.2f"|sprintf:$z} -- {$x = 20.5}{$y = 5}{$z = $x / $y}{"%0.2f"|sprintf:$z}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testFunctionFormat()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "22.00 -- 4.10";
+        $tpl = $this->smarty->createTemplate('eval:{$x = 4}{$y = 5.5}{math equation="x * y" x=$x y=$y format="%0.2f"} -- {math equation="20.5 / 5" format="%0.2f"}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testSyntaxString()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "22.00 -- 4.10";
+        $tpl = $this->smarty->createTemplate('eval:{$x = "4"}{$y = "5.5"}{$z = $x * $y}{"%0.2f"|sprintf:$z} -- {$x = "20.5"}{$y = "5"}{$z = $x / $y}{"%0.2f"|sprintf:$z}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+
+    public function testFunctionString()
+    {
+        $this->smarty->disableSecurity();
+        $expected = "22.00 -- 4.10";
+        $tpl = $this->smarty->createTemplate('eval:{$x = "4"}{$y = "5.5"}{math equation="x * y" x=$x y=$y format="%0.2f"} -- {math equation="20.5 / 5" format="%0.2f"}');
+        $this->assertEquals($expected, $this->smarty->fetch($tpl));
+    }
+}

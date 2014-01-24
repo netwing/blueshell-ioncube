@@ -1,54 +1,68 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-6y9QHyzDf88mQC0=
+<?php
+/**
+ * MainMenu is a widget displaying main menu items.
+ *
+ * The menu items are displayed as an HTML list. One of the items
+ * may be set as active, which could add an "active" CSS class to the rendered item.
+ *
+ * To use this widget, specify the "items" property with an array of
+ * the menu items to be displayed. Each item should be an array with
+ * the following elements:
+ * - visible: boolean, whether this item is visible;
+ * - label: string, label of this menu item. Make sure you HTML-encode it if needed;
+ * - url: string|array, the URL that this item leads to. Use a string to
+ *   represent a static URL, while an array for constructing a dynamic one.
+ * - pattern: array, optional. This is used to determine if the item is active.
+ *   The first element refers to the route of the request, while the rest
+ *   name-value pairs representing the GET parameters to be matched with.
+ *   If pattern is not given, the url array will be used instead.
+ */
+class MainMenu extends CWidget
+{
+	public $items=array();
+
+	public function run()
+	{
+		$items=array();
+		$controller=$this->controller;
+		$action=$controller->action;
+		foreach($this->items as $item)
+		{
+			if(isset($item['visible']) && !$item['visible'])
+				continue;
+			$item2=array();
+			$item2['label']=$item['label'];
+			if(is_array($item['url']))
+				$item2['url']=$controller->createUrl($item['url'][0]);
+			else
+				$item2['url']=$item['url'];
+			$pattern=isset($item['pattern'])?$item['pattern']:$item['url'];
+			$item2['active']=$this->isActive($pattern,$controller->id,$action->id);
+			$items[]=$item2;
+		}
+		$this->render('mainMenu',array('items'=>$items));
+	}
+
+	protected function isActive($pattern,$controllerID,$actionID)
+	{
+		if(!is_array($pattern) || !isset($pattern[0]))
+			return false;
+
+		if(strpos($pattern[0],'/')!==false)
+			$matched=$pattern[0]===$controllerID.'/'.$actionID;
+		else
+			$matched=$pattern[0]===$controllerID;
+
+		if($matched && count($pattern)>1)
+		{
+			foreach(array_splice($pattern,1) as $name=>$value)
+			{
+				if(!isset($_GET[$name]) || $_GET[$name]!=$value)
+					return false;
+			}
+			return true;
+		}
+		else
+			return $matched;
+	}
+}

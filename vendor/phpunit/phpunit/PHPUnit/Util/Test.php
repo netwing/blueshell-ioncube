@@ -1,216 +1,610 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-BX94Gr/T/JY2CplkpKERZA5DGxza0Gv6
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.0.0
+ */
+
+/**
+ * Test helpers.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
+ */
+class PHPUnit_Util_Test
+{
+    const REGEX_DATA_PROVIDER      = '/@dataProvider\s+([a-zA-Z0-9._:-\\\\x7f-\xff]+)/';
+    const REGEX_EXPECTED_EXCEPTION = '(@expectedException\s+([:.\w\\\\x7f-\xff]+)(?:[\t ]+(\S*))?(?:[\t ]+(\S*))?\s*$)m';
+    const REGEX_REQUIRES_VERSION   = '/@requires\s+(?P<name>PHP(?:Unit)?)\s+(?P<value>[\d\.-]+(dev|(RC|alpha|beta)[\d\.])?)[ \t]*\r?$/m';
+    const REGEX_REQUIRES           = '/@requires\s+(?P<name>function|extension)\s(?P<value>([^ ]+))\r?$/m';
+
+    const SMALL  = 0;
+    const MEDIUM = 1;
+    const LARGE  = 2;
+
+    private static $annotationCache = array();
+
+    protected static $templateMethods = array(
+      'setUp', 'assertPreConditions', 'assertPostConditions', 'tearDown'
+    );
+
+    /**
+     * @param  PHPUnit_Framework_Test $test
+     * @param  boolean                $asString
+     * @return mixed
+     */
+    public static function describe(PHPUnit_Framework_Test $test, $asString = TRUE)
+    {
+        if ($asString) {
+            if ($test instanceof PHPUnit_Framework_SelfDescribing) {
+                return $test->toString();
+            } else {
+                return get_class($test);
+            }
+        } else {
+            if ($test instanceof PHPUnit_Framework_TestCase) {
+                return array(
+                  get_class($test), $test->getName()
+                );
+            }
+
+            else if ($test instanceof PHPUnit_Framework_SelfDescribing) {
+                return array('', $test->toString());
+            }
+
+            else {
+                return array('', get_class($test));
+            }
+        }
+    }
+
+    /**
+     * Returns the requirements for a test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return array
+     * @since  Method available since Release 3.6.0
+     */
+    public static function getRequirements($className, $methodName)
+    {
+        $reflector  = new ReflectionClass($className);
+        $docComment = $reflector->getDocComment();
+        $reflector  = new ReflectionMethod($className, $methodName);
+        $docComment .= "\n" . $reflector->getDocComment();
+        $requires   = array();
+
+        if ($count = preg_match_all(self::REGEX_REQUIRES_VERSION, $docComment, $matches)) {
+            for ($i = 0; $i < $count; $i++) {
+                $requires[$matches['name'][$i]] = $matches['value'][$i];
+            }
+        }
+
+        // https://bugs.php.net/bug.php?id=63055
+        $matches = array();
+
+        if ($count = preg_match_all(self::REGEX_REQUIRES, $docComment, $matches)) {
+            for ($i = 0; $i < $count; $i++) {
+                $name = $matches['name'][$i] . 's';
+                if (!isset($requires[$name])) {
+                    $requires[$name] = array();
+                }
+                $requires[$name][] = $matches['value'][$i];
+            }
+        }
+
+        return $requires;
+    }
+
+    /**
+     * Returns the expected exception for a test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return array
+     * @since  Method available since Release 3.3.6
+     */
+    public static function getExpectedException($className, $methodName)
+    {
+        $reflector  = new ReflectionMethod($className, $methodName);
+        $docComment = $reflector->getDocComment();
+        $docComment = substr($docComment, 3, -2);
+
+        if (preg_match(self::REGEX_EXPECTED_EXCEPTION, $docComment, $matches)) {
+            $annotations = self::parseTestMethodAnnotations(
+              $className, $methodName
+            );
+
+            $class   = $matches[1];
+            $code    = NULL;
+            $message = '';
+
+            if (isset($matches[2])) {
+                $message = trim($matches[2]);
+            }
+
+            else if (isset($annotations['method']['expectedExceptionMessage'])) {
+                $message = self::_parseAnnotationContent(
+                    $annotations['method']['expectedExceptionMessage'][0]
+                );
+            }
+
+            if (isset($matches[3])) {
+                $code = $matches[3];
+            }
+
+            else if (isset($annotations['method']['expectedExceptionCode'])) {
+                $code = self::_parseAnnotationContent(
+                    $annotations['method']['expectedExceptionCode'][0]
+                );
+            }
+
+            if (is_numeric($code)) {
+                $code = (int)$code;
+            }
+
+            else if (is_string($code) && defined($code)) {
+                $code = (int)constant($code);
+            }
+
+            return array(
+              'class' => $class, 'code' => $code, 'message' => $message
+            );
+        }
+
+        return FALSE;
+    }
+
+    /**
+     * Parse annotation content to use constant/class constant values
+     *
+     * Constants are specified using a starting '@'. For example: @ClassName::CONST_NAME
+     *
+     * If the constant is not found the string is used as is to ensure maximum BC.
+     *
+     * @param  string $message
+     * @return string
+     */
+    protected static function _parseAnnotationContent($message)
+    {
+        if (strpos($message, '::') !== FALSE && count(explode('::', $message) == 2)) {
+            if (defined($message)) {
+                $message = constant($message);
+            }
+        }
+        return $message;
+    }
+
+    /**
+     * Returns the provided data for a method.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @param  string $docComment
+     * @return mixed  array|Iterator when a data provider is specified and exists
+     *                false          when a data provider is specified and does not exist
+     *                null           when no data provider is specified
+     * @since  Method available since Release 3.2.0
+     */
+    public static function getProvidedData($className, $methodName)
+    {
+        $reflector  = new ReflectionMethod($className, $methodName);
+        $docComment = $reflector->getDocComment();
+        $data       = NULL;
+
+        if (preg_match(self::REGEX_DATA_PROVIDER, $docComment, $matches)) {
+            $dataProviderMethodNameNamespace = explode('\\', $matches[1]);
+            $leaf                            = explode('::', array_pop($dataProviderMethodNameNamespace));
+            $dataProviderMethodName          = array_pop($leaf);
+
+            if (!empty($dataProviderMethodNameNamespace)) {
+                $dataProviderMethodNameNamespace = join('\\', $dataProviderMethodNameNamespace) . '\\';
+            } else {
+                $dataProviderMethodNameNamespace = '';
+            }
+
+            if (!empty($leaf)) {
+                $dataProviderClassName = $dataProviderMethodNameNamespace . array_pop($leaf);
+            } else {
+                $dataProviderClassName = $className;
+            }
+
+            $dataProviderClass  = new ReflectionClass($dataProviderClassName);
+            $dataProviderMethod = $dataProviderClass->getMethod(
+              $dataProviderMethodName
+            );
+
+            if ($dataProviderMethod->isStatic()) {
+                $object = NULL;
+            } else {
+                $object = $dataProviderClass->newInstance();
+            }
+
+            if ($dataProviderMethod->getNumberOfParameters() == 0) {
+                $data = $dataProviderMethod->invoke($object);
+            } else {
+                $data = $dataProviderMethod->invoke($object, $methodName);
+            }
+        }
+
+        if ($data !== NULL) {
+            if (is_object($data)) {
+                $data = iterator_to_array($data);
+            }
+
+            foreach ($data as $key => $value) {
+                if (!is_array($value)) {
+                    throw new PHPUnit_Framework_Exception(
+                      sprintf(
+                        'Data set %s is invalid.',
+                        is_int($key) ? '#' . $key : '"' . $key . '"'
+                      )
+                    );
+                }
+            }
+        }
+
+        return $data;
+    }
+
+    /**
+     * @param  string $className
+     * @param  string $methodName
+     * @return array
+     * @throws ReflectionException
+     * @since  Method available since Release 3.4.0
+     */
+    public static function parseTestMethodAnnotations($className, $methodName = '')
+    {
+        if (!isset(self::$annotationCache[$className])) {
+            $class = new ReflectionClass($className);
+            self::$annotationCache[$className] = self::parseAnnotations($class->getDocComment());
+        }
+
+        if (!empty($methodName) && !isset(self::$annotationCache[$className . '::' . $methodName])) {
+            try {
+                $method = new ReflectionMethod($className, $methodName);
+                $annotations = self::parseAnnotations($method->getDocComment());
+            } catch (ReflectionException $e) {
+                $annotations = array();
+            }
+            self::$annotationCache[$className . '::' . $methodName] = $annotations;
+        }
+
+        return array(
+          'class'  => self::$annotationCache[$className],
+          'method' => !empty($methodName) ? self::$annotationCache[$className . '::' . $methodName] : array()
+        );
+    }
+
+    /**
+     * @param  string $docblock
+     * @return array
+     * @since  Method available since Release 3.4.0
+     */
+    private static function parseAnnotations($docblock)
+    {
+        $annotations = array();
+        // Strip away the docblock header and footer to ease parsing of one line annotations
+        $docblock = substr($docblock, 3, -2);
+
+        if (preg_match_all('/@(?P<name>[A-Za-z_-]+)(?:[ \t]+(?P<value>.*?))?[ \t]*\r?$/m', $docblock, $matches)) {
+            $numMatches = count($matches[0]);
+
+            for ($i = 0; $i < $numMatches; ++$i) {
+                $annotations[$matches['name'][$i]][] = $matches['value'][$i];
+            }
+        }
+
+        return $annotations;
+    }
+
+    /**
+     * Returns the backup settings for a test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return array
+     * @since  Method available since Release 3.4.0
+     */
+    public static function getBackupSettings($className, $methodName)
+    {
+        return array(
+          'backupGlobals' => self::getBooleanAnnotationSetting(
+            $className, $methodName, 'backupGlobals'
+          ),
+          'backupStaticAttributes' => self::getBooleanAnnotationSetting(
+            $className, $methodName, 'backupStaticAttributes'
+          )
+        );
+    }
+
+    /**
+     * Returns the dependencies for a test class or method.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return array
+     * @since  Method available since Release 3.4.0
+     */
+    public static function getDependencies($className, $methodName)
+    {
+        $annotations = self::parseTestMethodAnnotations(
+          $className, $methodName
+        );
+
+        $dependencies = array();
+
+        if (isset($annotations['class']['depends'])) {
+            $dependencies = $annotations['class']['depends'];
+        }
+
+        if (isset($annotations['method']['depends'])) {
+            $dependencies = array_merge(
+              $dependencies, $annotations['method']['depends']
+            );
+        }
+
+        return array_unique($dependencies);
+    }
+
+    /**
+     * Returns the error handler settings for a test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return boolean
+     * @since  Method available since Release 3.4.0
+     */
+    public static function getErrorHandlerSettings($className, $methodName)
+    {
+        return self::getBooleanAnnotationSetting(
+          $className, $methodName, 'errorHandler'
+        );
+    }
+
+    /**
+     * Returns the groups for a test class or method.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return array
+     * @since  Method available since Release 3.2.0
+     */
+    public static function getGroups($className, $methodName = '')
+    {
+        $annotations = self::parseTestMethodAnnotations(
+          $className, $methodName
+        );
+
+        $groups = array();
+
+        if (isset($annotations['method']['author'])) {
+            $groups = $annotations['method']['author'];
+        }
+
+        else if (isset($annotations['class']['author'])) {
+            $groups = $annotations['class']['author'];
+        }
+
+        if (isset($annotations['class']['group'])) {
+            $groups = array_merge($groups, $annotations['class']['group']);
+        }
+
+        if (isset($annotations['method']['group'])) {
+            $groups = array_merge($groups, $annotations['method']['group']);
+        }
+
+        if (isset($annotations['class']['ticket'])) {
+            $groups = array_merge($groups, $annotations['class']['ticket']);
+        }
+
+        if (isset($annotations['method']['ticket'])) {
+            $groups = array_merge($groups, $annotations['method']['ticket']);
+        }
+
+        foreach (array('small', 'medium', 'large') as $size) {
+            if (isset($annotations['method'][$size])) {
+                $groups[] = $size;
+            }
+
+            else if (isset($annotations['class'][$size])) {
+                $groups[] = $size;
+            }
+        }
+
+        return array_unique($groups);
+    }
+
+    /**
+     * Returns the size of the test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return integer
+     * @since  Method available since Release 3.6.0
+     */
+    public static function getSize($className, $methodName)
+    {
+        $groups = array_flip(self::getGroups($className, $methodName));
+        $size   = self::SMALL;
+        $class  = new ReflectionClass($className);
+
+        if ((class_exists('PHPUnit_Extensions_Database_TestCase', FALSE) &&
+             $class->isSubclassOf('PHPUnit_Extensions_Database_TestCase')) ||
+            (class_exists('PHPUnit_Extensions_SeleniumTestCase', FALSE) &&
+             $class->isSubclassOf('PHPUnit_Extensions_SeleniumTestCase'))) {
+            $size = self::LARGE;
+        }
+
+        else if (isset($groups['medium'])) {
+            $size = self::MEDIUM;
+        }
+
+        else if (isset($groups['large'])) {
+            $size = self::LARGE;
+        }
+
+        return $size;
+    }
+
+    /**
+     * Returns the tickets for a test class or method.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return array
+     * @since  Method available since Release 3.4.0
+     */
+    public static function getTickets($className, $methodName)
+    {
+        $annotations = self::parseTestMethodAnnotations(
+          $className, $methodName
+        );
+
+        $tickets = array();
+
+        if (isset($annotations['class']['ticket'])) {
+            $tickets = $annotations['class']['ticket'];
+        }
+
+        if (isset($annotations['method']['ticket'])) {
+            $tickets = array_merge($tickets, $annotations['method']['ticket']);
+        }
+
+        return array_unique($tickets);
+    }
+
+    /**
+     * Returns the output buffering settings for a test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return boolean
+     * @since  Method available since Release 3.4.0
+     */
+    public static function getOutputBufferingSettings($className, $methodName)
+    {
+        return self::getBooleanAnnotationSetting(
+          $className, $methodName, 'outputBuffering'
+        );
+    }
+
+    /**
+     * Returns the process isolation settings for a test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return boolean
+     * @since  Method available since Release 3.4.1
+     */
+    public static function getProcessIsolationSettings($className, $methodName)
+    {
+        $annotations = self::parseTestMethodAnnotations(
+          $className, $methodName
+        );
+
+        if (isset($annotations['class']['runTestsInSeparateProcesses']) ||
+            isset($annotations['method']['runInSeparateProcess'])) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
+    /**
+     * Returns the preserve global state settings for a test.
+     *
+     * @param  string $className
+     * @param  string $methodName
+     * @return boolean
+     * @since  Method available since Release 3.4.0
+     */
+    public static function getPreserveGlobalStateSettings($className, $methodName)
+    {
+        return self::getBooleanAnnotationSetting(
+          $className, $methodName, 'preserveGlobalState'
+        );
+    }
+
+    /**
+     * @param  string $className
+     * @param  string $methodName
+     * @param  string $settingName
+     * @return boolean
+     * @since  Method available since Release 3.4.0
+     */
+    private static function getBooleanAnnotationSetting($className, $methodName, $settingName)
+    {
+        $annotations = self::parseTestMethodAnnotations(
+          $className, $methodName
+        );
+
+        $result = NULL;
+
+        if (isset($annotations['class'][$settingName])) {
+            if ($annotations['class'][$settingName][0] == 'enabled') {
+                $result = TRUE;
+            }
+
+            else if ($annotations['class'][$settingName][0] == 'disabled') {
+                $result = FALSE;
+            }
+        }
+
+        if (isset($annotations['method'][$settingName])) {
+            if ($annotations['method'][$settingName][0] == 'enabled') {
+                $result = TRUE;
+            }
+
+            else if ($annotations['method'][$settingName][0] == 'disabled') {
+                $result = FALSE;
+            }
+        }
+
+        return $result;
+    }
+}

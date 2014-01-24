@@ -1,37 +1,83 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-nn5ySPjt8jCm8eUy9aFqVW==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector;
+
+use Symfony\Component\CssSelector\Parser\Shortcut\ClassParser;
+use Symfony\Component\CssSelector\Parser\Shortcut\ElementParser;
+use Symfony\Component\CssSelector\Parser\Shortcut\EmptyStringParser;
+use Symfony\Component\CssSelector\Parser\Shortcut\HashParser;
+use Symfony\Component\CssSelector\XPath\Extension\HtmlExtension;
+use Symfony\Component\CssSelector\XPath\Translator;
+
+/**
+ * CssSelector is the main entry point of the component and can convert CSS
+ * selectors to XPath expressions.
+ *
+ * $xpath = CssSelector::toXpath('h1.foo');
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class CssSelector
+{
+    private static $html = true;
+
+    /**
+     * Translates a CSS expression to its XPath equivalent.
+     * Optionally, a prefix can be added to the resulting XPath
+     * expression with the $prefix parameter.
+     *
+     * @param mixed   $cssExpr The CSS expression.
+     * @param string  $prefix  An optional prefix for the XPath expression.
+     *
+     * @return string
+     *
+     * @api
+     */
+    public static function toXPath($cssExpr, $prefix = 'descendant-or-self::')
+    {
+        $translator = new Translator();
+
+        if (self::$html) {
+            $translator->registerExtension(new HtmlExtension($translator));
+        }
+
+        $translator
+            ->registerParserShortcut(new EmptyStringParser())
+            ->registerParserShortcut(new ElementParser())
+            ->registerParserShortcut(new ClassParser())
+            ->registerParserShortcut(new HashParser())
+        ;
+
+        return $translator->cssToXPath($cssExpr, $prefix);
+    }
+
+    /**
+     * Enables the HTML extension.
+     */
+    public static function enableHtmlExtension()
+    {
+        self::$html = true;
+    }
+
+    /**
+     * Disables the HTML extension.
+     */
+    public static function disableHtmlExtension()
+    {
+        self::$html = false;
+    }
+}

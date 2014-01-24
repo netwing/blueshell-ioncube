@@ -1,29 +1,30 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once(dirname(__FILE__)."/../dev_settings.php");
+ini_set('max_execution_time',300);
+ini_set('xdebug.max_nesting_level',300);
+
+// Create Lexer
+require_once './LexerGenerator.php';
+$lex = new PHP_LexerGenerator('smarty_internal_templatelexer.plex');
+$contents = file_get_contents('smarty_internal_templatelexer.php');
+$contents = str_replace(array('SMARTYldel','SMARTYrdel'),array('".$this->ldel."','".$this->rdel."'),$contents);
+file_put_contents('smarty_internal_templatelexer.php', $contents);
+copy('smarty_internal_templatelexer.php','../../distribution/libs/sysplugins/smarty_internal_templatelexer.php');
+
+// Create Parser
+passthru("$smarty_dev_php_cli_bin ./ParserGenerator/cli.php smarty_internal_templateparser.y");
+
+$contents = file_get_contents('smarty_internal_templateparser.php');
+$contents = '<?php
+/**
+* Smarty Internal Plugin Templateparser
+*
+* This is the template parser.
+* It is generated from the internal.templateparser.y file
+* @package Smarty
+* @subpackage Compiler
+* @author Uwe Tews
+*/
+'.substr($contents,6);
+file_put_contents('smarty_internal_templateparser.php', $contents."?>");
+copy('smarty_internal_templateparser.php','../../distribution/libs/sysplugins/smarty_internal_templateparser.php');

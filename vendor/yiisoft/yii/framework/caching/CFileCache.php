@@ -1,122 +1,242 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CFileCache class file
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFileCache provides a file-based caching mechanism.
+ *
+ * For each data value being cached, CFileCache will use store it in a separate file
+ * under {@link cachePath} which defaults to 'protected/runtime/cache'.
+ * CFileCache will perform garbage collection automatically to remove expired cache files.
+ *
+ * See {@link CCache} manual for common cache operations that are supported by CFileCache.
+ *
+ * @property integer $gCProbability The probability (parts per million) that garbage collection (GC) should be performed
+ * when storing a piece of data in the cache. Defaults to 100, meaning 0.01% chance.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.caching
+ */
+class CFileCache extends CCache
+{
+	/**
+	 * @var string the directory to store cache files. Defaults to null, meaning
+	 * using 'protected/runtime/cache' as the directory.
+	 */
+	public $cachePath;
+	/**
+	 * @var string cache file suffix. Defaults to '.bin'.
+	 */
+	public $cacheFileSuffix='.bin';
+	/**
+	 * @var integer the level of sub-directories to store cache files. Defaults to 0,
+	 * meaning no sub-directories. If the system has huge number of cache files (e.g. 10K+),
+	 * you may want to set this value to be 1 or 2 so that the file system is not over burdened.
+	 * The value of this property should not exceed 16 (less than 3 is recommended).
+	 */
+	public $directoryLevel=0;
+	/**
+	 * @var boolean whether cache entry expiration time should be embedded into a physical file.
+	 * Defaults to false meaning that the file modification time will be used to store expire value.
+	 * True value means that first ten bytes of the file would be reserved and used to store expiration time.
+	 * On some systems PHP is not allowed to change file modification time to be in future even with 777
+	 * permissions, so this property could be useful in this case.
+	 * @since 1.1.14
+	 */
+	public $embedExpiry=false;
+
+	private $_gcProbability=100;
+	private $_gced=false;
+
+	/**
+	 * Initializes this application component.
+	 * This method is required by the {@link IApplicationComponent} interface.
+	 */
+	public function init()
+	{
+		parent::init();
+		if($this->cachePath===null)
+			$this->cachePath=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'cache';
+		if(!is_dir($this->cachePath))
+			mkdir($this->cachePath,0777,true);
+	}
+
+	/**
+	 * @return integer the probability (parts per million) that garbage collection (GC) should be performed
+	 * when storing a piece of data in the cache. Defaults to 100, meaning 0.01% chance.
+	 */
+	public function getGCProbability()
+	{
+		return $this->_gcProbability;
+	}
+
+	/**
+	 * @param integer $value the probability (parts per million) that garbage collection (GC) should be performed
+	 * when storing a piece of data in the cache. Defaults to 100, meaning 0.01% chance.
+	 * This number should be between 0 and 1000000. A value 0 meaning no GC will be performed at all.
+	 */
+	public function setGCProbability($value)
+	{
+		$value=(int)$value;
+		if($value<0)
+			$value=0;
+		if($value>1000000)
+			$value=1000000;
+		$this->_gcProbability=$value;
+	}
+
+	/**
+	 * Deletes all values from cache.
+	 * This is the implementation of the method declared in the parent class.
+	 * @return boolean whether the flush operation was successful.
+	 * @since 1.1.5
+	 */
+	protected function flushValues()
+	{
+		$this->gc(false);
+		return true;
+	}
+
+	/**
+	 * Retrieves a value from cache with a specified key.
+	 * This is the implementation of the method declared in the parent class.
+	 * @param string $key a unique key identifying the cached value
+	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
+	 */
+	protected function getValue($key)
+	{
+		$cacheFile=$this->getCacheFile($key);
+		if(($time=$this->filemtime($cacheFile))>time())
+			return @file_get_contents($cacheFile,false,null,$this->embedExpiry ? 10 : -1);
+		elseif($time>0)
+			@unlink($cacheFile);
+		return false;
+	}
+
+	/**
+	 * Stores a value identified by a key in cache.
+	 * This is the implementation of the method declared in the parent class.
+	 *
+	 * @param string $key the key identifying the value to be cached
+	 * @param string $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	protected function setValue($key,$value,$expire)
+	{
+		if(!$this->_gced && mt_rand(0,1000000)<$this->_gcProbability)
+		{
+			$this->gc();
+			$this->_gced=true;
+		}
+
+		if($expire<=0)
+			$expire=31536000; // 1 year
+		$expire+=time();
+
+		$cacheFile=$this->getCacheFile($key);
+		if($this->directoryLevel>0)
+			@mkdir(dirname($cacheFile),0777,true);
+		if(@file_put_contents($cacheFile,$this->embedExpiry ? $expire.$value : $value,LOCK_EX)!==false)
+		{
+			@chmod($cacheFile,0777);
+			return $this->embedExpiry ? true : @touch($cacheFile,$expire);
+		}
+		else
+			return false;
+	}
+
+	/**
+	 * Stores a value identified by a key into cache if the cache does not contain this key.
+	 * This is the implementation of the method declared in the parent class.
+	 *
+	 * @param string $key the key identifying the value to be cached
+	 * @param string $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	protected function addValue($key,$value,$expire)
+	{
+		$cacheFile=$this->getCacheFile($key);
+		if($this->filemtime($cacheFile)>time())
+			return false;
+		return $this->setValue($key,$value,$expire);
+	}
+
+	/**
+	 * Deletes a value with the specified key from cache
+	 * This is the implementation of the method declared in the parent class.
+	 * @param string $key the key of the value to be deleted
+	 * @return boolean if no error happens during deletion
+	 */
+	protected function deleteValue($key)
+	{
+		$cacheFile=$this->getCacheFile($key);
+		return @unlink($cacheFile);
+	}
+
+	/**
+	 * Returns the cache file path given the cache key.
+	 * @param string $key cache key
+	 * @return string the cache file path
+	 */
+	protected function getCacheFile($key)
+	{
+		if($this->directoryLevel>0)
+		{
+			$base=$this->cachePath;
+			for($i=0;$i<$this->directoryLevel;++$i)
+			{
+				if(($prefix=substr($key,$i+$i,2))!==false)
+					$base.=DIRECTORY_SEPARATOR.$prefix;
+			}
+			return $base.DIRECTORY_SEPARATOR.$key.$this->cacheFileSuffix;
+		}
+		else
+			return $this->cachePath.DIRECTORY_SEPARATOR.$key.$this->cacheFileSuffix;
+	}
+
+	/**
+	 * Removes expired cache files.
+	 * @param boolean $expiredOnly whether only expired cache files should be removed.
+	 * If false, all cache files under {@link cachePath} will be removed.
+	 * @param string $path the path to clean with. If null, it will be {@link cachePath}.
+	 */
+	public function gc($expiredOnly=true,$path=null)
+	{
+		if($path===null)
+			$path=$this->cachePath;
+		if(($handle=opendir($path))===false)
+			return;
+		while(($file=readdir($handle))!==false)
+		{
+			if($file[0]==='.')
+				continue;
+			$fullPath=$path.DIRECTORY_SEPARATOR.$file;
+			if(is_dir($fullPath))
+				$this->gc($expiredOnly,$fullPath);
+			elseif($expiredOnly && $this->filemtime($fullPath)<time() || !$expiredOnly)
+				@unlink($fullPath);
+		}
+		closedir($handle);
+	}
+
+	/**
+	 * Returns cache file modification time. {@link $embedExpiry} aware.
+	 * @param string $path to the file, modification time to be retrieved from.
+	 * @return integer file modification time.
+	 */
+	private function filemtime($path)
+	{
+		if($this->embedExpiry)
+			return (int)@file_get_contents($path,false,null,0,10);
+		else
+			return @filemtime($path);
+	}
+}

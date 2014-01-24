@@ -1,40 +1,127 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ANQKRkjIzCqmeswOeQyFW6wn
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      File available since Release 1.0.0
+ */
+
+/**
+ * Invocation matcher which checks if a method was invoked at a certain index.
+ *
+ * If the expected index number does not match the current invocation index it
+ * will not match which means it skips all method and parameter matching. Only
+ * once the index is reached will the method and parameter start matching and
+ * verifying.
+ *
+ * If the index is never reached it will throw an exception in index.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version    Release: @package_version@
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      Class available since Release 1.0.0
+ */
+class PHPUnit_Framework_MockObject_Matcher_InvokedAtIndex implements PHPUnit_Framework_MockObject_Matcher_Invocation
+{
+    /**
+     * @var integer
+     */
+    protected $sequenceIndex;
+
+    /**
+     * @var integer
+     */
+    protected $currentIndex = -1;
+
+    /**
+     * @param integer $sequenceIndex
+     */
+    public function __construct($sequenceIndex)
+    {
+        $this->sequenceIndex = $sequenceIndex;
+    }
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        return 'invoked at sequence index ' . $this->sequenceIndex;
+    }
+
+    /**
+     * @param  PHPUnit_Framework_MockObject_Invocation $invocation
+     * @return boolean
+     */
+    public function matches(PHPUnit_Framework_MockObject_Invocation $invocation)
+    {
+        $this->currentIndex++;
+
+        return $this->currentIndex == $this->sequenceIndex;
+    }
+
+    /**
+     * @param PHPUnit_Framework_MockObject_Invocation $invocation
+     */
+    public function invoked(PHPUnit_Framework_MockObject_Invocation $invocation)
+    {
+    }
+
+    /**
+     * Verifies that the current expectation is valid. If everything is OK the
+     * code should just return, if not it must throw an exception.
+     *
+     * @throws PHPUnit_Framework_ExpectationFailedException
+     */
+    public function verify()
+    {
+        if ($this->currentIndex < $this->sequenceIndex) {
+            throw new PHPUnit_Framework_ExpectationFailedException(
+              sprintf(
+                'The expected invocation at index %s was never reached.',
+
+                $this->sequenceIndex
+              )
+            );
+        }
+    }
+}

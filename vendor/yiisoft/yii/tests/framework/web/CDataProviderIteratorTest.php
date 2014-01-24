@@ -1,44 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+Yii::import("system.web.*");
+/**
+ * Tests for the {@link CDataProviderIterator} class
+ * @author Charles Pick <charles.pick@gmail.com>
+ */
+class CDataProviderIteratorTest extends CTestCase
+{
+	public function pageSizes()
+	{
+		return array(
+			array(null),
+			array(1),
+			array(10),
+			array(110),
+		);
+	}
+
+	/**
+	 * Tests the iterator
+	 *
+	 * @dataProvider pageSizes
+	 */
+	public function testIterator($pageSize)
+	{
+		$dataProvider = new CArrayDataProvider($this->generateData(100));
+		$iterator = new CDataProviderIterator($dataProvider, $pageSize);
+
+		$this->assertTrue($iterator->getDataProvider()===$dataProvider);
+
+		$this->assertEquals(100, $iterator->getTotalItemCount());
+		$this->assertEquals(100, count($iterator));
+
+		$n = 0;
+		foreach($iterator as $item) {
+			$this->assertEquals("Item ".$n,$item['name']);
+			$n++;
+		}
+
+		$this->assertEquals(100, $n);
+	}
+
+	/**
+	 * @dataProvider pageSizes
+	 */
+	public function testInitWithDisabledPagination($pageSizes)
+	{
+		$dataProvider = new CArrayDataProvider($this->generateData(10), array(
+			'pagination' => false,
+		));
+		new CDataProviderIterator($dataProvider, $pageSizes);
+	}
+	
+	/**
+	 * Generates some data to fill a dataProvider
+	 * @param integer $totalItems the total number of items to generate
+	 * @return array the data
+	 */
+	protected function generateData($totalItems)
+	{
+		$data = array();
+		for($i = 0; $i < $totalItems; $i++) {
+			$data[] = array(
+				"id" => $i,
+				"name" => "Item ".$i,
+			);
+		}
+		return $data;
+	}
+}

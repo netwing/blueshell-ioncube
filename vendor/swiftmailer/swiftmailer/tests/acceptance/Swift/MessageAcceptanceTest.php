@@ -1,44 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'swift_required.php';
+require_once 'Swift/Mime/SimpleMessageAcceptanceTest.php';
+
+class Swift_MessageAcceptanceTest
+    extends Swift_Mime_SimpleMessageAcceptanceTest
+{
+    public function testAddPartWrapper()
+    {
+        $message = $this->_createMessage();
+        $message->setSubject('just a test subject');
+        $message->setFrom(array(
+            'chris.corbyn@swiftmailer.org' => 'Chris Corbyn'));
+
+        $id = $message->getId();
+        $date = $message->getDate();
+        $boundary = $message->getBoundary();
+
+        $message->addPart('foo', 'text/plain', 'iso-8859-1');
+        $message->addPart('test <b>foo</b>', 'text/html', 'iso-8859-1');
+
+        $this->assertEqual(
+            'Message-ID: <' . $id . '>' . "\r\n" .
+            'Date: ' . date('r', $date) . "\r\n" .
+            'Subject: just a test subject' . "\r\n" .
+            'From: Chris Corbyn <chris.corbyn@swiftmailer.org>' . "\r\n" .
+            'MIME-Version: 1.0' . "\r\n" .
+            'Content-Type: multipart/alternative;' . "\r\n" .
+            ' boundary="' . $boundary . '"' . "\r\n" .
+            "\r\n\r\n" .
+            '--' . $boundary . "\r\n" .
+            'Content-Type: text/plain; charset=iso-8859-1' . "\r\n" .
+            'Content-Transfer-Encoding: quoted-printable' . "\r\n" .
+            "\r\n" .
+            'foo' .
+            "\r\n\r\n" .
+            '--' . $boundary . "\r\n" .
+            'Content-Type: text/html; charset=iso-8859-1' . "\r\n" .
+            'Content-Transfer-Encoding: quoted-printable' . "\r\n" .
+            "\r\n" .
+            'test <b>foo</b>' .
+            "\r\n\r\n" .
+            '--' . $boundary . '--' . "\r\n",
+            $message->toString()
+            );
+    }
+
+    // -- Private helpers
+
+    protected function _createMessage()
+    {
+        Swift_DependencyContainer::getInstance()
+            ->register('properties.charset')->asValue(null);
+
+        return Swift_Message::newInstance();
+    }
+}

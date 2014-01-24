@@ -1,42 +1,114 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPoCfy8Ww2iclrvXbg+RL3Nr9c9AP0qeH9yU6TEpSw5/fqmA8+fnAm82+4CvCueDau5DKfuz0
-+ZgIyaMGXn8IQpFMxnhdpHrBKt9m7kIQw2RBQFHD75EcXwowCPrcAscZGXRL1sv2m/CoC3f01aVY
-nRFPKAHZVnKSdGwhibiOpw/fOWLTw2jxvF7yZemafcIU7Jk0oDPEf/8eSxRq9ywVqMAr9RicZPHe
-HsO21zke/NzmIaSrfTjj4gzHAE4xzt2gh9fl143SQNJXOldzzhx6Oecdd3BO2Cw/Brvbum6Shg5h
-n4AG+EBQ/swR2vg/9RfR3n3mPFqwO+xlOubo+HWi/oifexRHjskusTd2qj0fIvZbcERzqjwSKcRW
-LUxJ1KxyL/9a0hKeE/qmysgrxS+Fj+8mwC/GoOClZq0jeCHaQv+Avz7MG4WUYl3DHthgOEdfKI1i
-we8oZa9SR491ThNPMaR1Pca0n++xtM7IaOzmTwHKgI42kuKNjvAsKWl2erIOfoWPic0AOfIQa4Jq
-3xkShoWqvlL4zWt4gn6TUNzhnNlU9RBXzFdURYYt6+/K3cr+Z4LFLx9YjaErXSYw6+rwDpPOWOuT
-VTG6FLITK+DmTeTAysWL7/UW53tVxv56Z9j2tJiMbqa6UjmdRKWzFvsFa5JhCAogWqv/QkG2uALu
-+i6IiGSqFmDKN5oVoHbm1sPEFfScqkkT9Gst4t0gXc1UDa6hFPGgIIhBALiJCi82D7BWolKXbq7O
-6+v4csDo4bCjTbgnf5xu0OE2FXo1zOZ1JgNGHbCZ+gCWVTOjJqJykjuaEveaRt0JyAYxXY9FSj+2
-MfMyxaAlPKCW9nyauqwHn5GlIgF/LNswf6gWIJtpxtp5nBHKqsdTtf14bt4iGfzZaILB+rqUxuJ8
-pP39yBnSNKXtjsXtO8DELQNzzfBlr95FJHeAzI5yYeP3Cp6tuIfCbCdp82PAx3PsULvxYJjEat3/
-T3tAru90PpLWQGsp3TdHsQ3zD5pc5R2rpyaWpqhab4pi3VuXM1H63DIbj/MCv+KTD0uX8pt9ARK5
-IcM8SKWl3sxtKu+6RA+TARuCAPGnDkBFDmFfHOO8lbdgR0HqBXIG+GqUfvqfo02lbjMrlEOYKxao
-CGN41mFKSOAaD0bGYIfR7b0sRRQNgxU46yG03cLHlo05plvoRGK8dAhvH6AnPqp4qmHjclspcy+j
-scnTWH4baEsbd018SnjkHDuWBzR1BvPfAZcQiLQ3KwC8Ojhmm3IrSQg2eqBjpF7hTdqMDB4eClJD
-pbCD+rN4sAoiJuqa8T6f+CRSM41/KZ0MkRv53cY7Kh+/pI71fjPD0a0d5XPVXecKuSNKOx0l9buf
-r8pKV5xg4ovdBCX4hwv0TkEf9k4pCLPSrE0nxVL6UdUf1Aa92VLOq3P/uE7oq69mc43JIJiZcuUs
-n+VmNd3y3gvft9IT3FtvkStgEOuEN7WlGQgMZbvh6+JcAoQ3SAdiEyLB9qgPmFPhyTcE3G+ahsLw
-n11giwejBeMFvZIInKBHIxuzoSh2gh6WIpXyfvBajnf8X2I6U/e3RzNDMk/0E/cH+4zuMvV+AiEW
-9ve3iIwjmHJtp0J3OQIIQTJ8YWO/4pI7JuScpHQSvIWTPdPXA+/NSbSCtshAceUYknDpvw/9jQoJ
-9pRFl75IPCYBQYRPpGkOZhtpmxqA3V5zAGq2r46k+c090T6p51iubfwjZenGC55xIxW+f4xkGvmg
-tdYJVwguu9snTT73lzMKtQJlIHRUU7eAgwDN3h9bgn2E6HeOhCQqHRg6i0RgLB1ciVwI/5QQmnsm
-7YmgIkbJnYuZV4G4gMQ8ep3VDcQRsz4X97cnlrLgc7mZJGFIBcO2bZ189Ea+6t+8g/wXjnPRHTgH
-8MFNXA/EIqhk7w3LN60Vjq+PbNyz+cWSBNyRODt0E/WpYcNqfYRLVmDZpq4wuCJFo72sXdjvre4j
-Wro3P8nJqWzObjRUjuE9A37ofn7AOLPKB4MnM7AP0tNbzAnQpbBv4nT6jEvRVN9bIL3t0AErbG9z
-EIwMGOdcDq9k5l8dDE2MYfPeNLzbMUpHrT1HGeXE5RRY7Uf/o/SYKKmknl36MtVS4a+d0kwbFGC5
-+7ITNzCVRDPZsuEHV2hbdKimlb0PoayNnQhhK9mV2gRxmfRFxnF3WflXtKulxqEUjgHJOqAeAH5o
-xRZN9nGYI1W3CZt2qg36IlhB58L2wUqv8MFYEOZb5GaotJbyfAMLunddbkUJt8HVjqueZO2qhCbe
-J9HnNbCZY7TfumJxtG23MtjMhaolJ2Za3dF34CIxHGkBCwWw66QlIcgQUWkh+N+6KjIN575JnVnc
-XgyNahCW1SzZhlq/EmX67vRn0ieTGfjL1lPAJ53YeG17sOGfKYFgp7goYLK2lgKiEtskECIy5PRw
-v9Hgy9pPbHPgPrqgj6bhk7VREJllhtYME9FlnG5ReL7kBA+2kkZhYirRJuGnBa2S88hezWgahDNf
-tuSKTYK6sfZkA9syyYHaFQUHORQCikrlyc5LM0dITlP/eFM7IOy5ofnfzwfO/kuvgE8P77XXLz3H
-SRmjZUsyQqS/Utn5baAOOsk31LK0EnECFwmnDGc4LEb9Y6qQuK0TBaYnIaJMGA8+q/erENrQlfx9
-PnrqaQnlYeQlS7yLfYs956Ee3uv10mfLeH1xqIzb09HizIh+ic7AvwmPE6qCdIH3OdDJzRsdvSSD
-3USBEDZaDVkzCpsizImfuPdsUfpun5IrIKLBMwweX3/29LRz2xKzitpv3N0J1S0eCN9y5O1d5Pyj
-o7ObTcajrwMxH1GoEV1z+hYjh5UMHmtRCRQV5sq3D6d3lq4cWzlKlBMHeGvdDav0IkkcKh1oualb
-IkG+WSwJbSaPi1ATkbk1YEDtk1Ayi7taa/dCEOD4YUgdPD0n+0==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.6.0
+ */
+
+/**
+ * Compares DOMDocument instances for equality.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Comparator
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.6.0
+ */
+class PHPUnit_Framework_Comparator_DOMDocument extends PHPUnit_Framework_Comparator_Object
+{
+    /**
+     * Returns whether the comparator can compare two values.
+     *
+     * @param  mixed $expected The first value to compare
+     * @param  mixed $actual The second value to compare
+     * @return boolean
+     */
+    public function accepts($expected, $actual)
+    {
+        return $expected instanceof DOMDocument && $actual instanceof DOMDocument;
+    }
+
+    /**
+     * Asserts that two values are equal.
+     *
+     * @param  mixed $expected The first value to compare
+     * @param  mixed $actual The second value to compare
+     * @param  float $delta The allowed numerical distance between two values to
+     *                      consider them equal
+     * @param  bool  $canonicalize If set to TRUE, arrays are sorted before
+     *                             comparison
+     * @param  bool  $ignoreCase If set to TRUE, upper- and lowercasing is
+     *                           ignored when comparing string values
+     * @throws PHPUnit_Framework_ComparisonFailure Thrown when the comparison
+     *                           fails. Contains information about the
+     *                           specific errors that lead to the failure.
+     */
+    public function assertEquals($expected, $actual, $delta = 0, $canonicalize = FALSE, $ignoreCase = FALSE)
+    {
+        if ($expected->C14N() !== $actual->C14N()) {
+            throw new PHPUnit_Framework_ComparisonFailure(
+              $expected,
+              $actual,
+              $this->domToText($expected),
+              $this->domToText($actual),
+              FALSE,
+              'Failed asserting that two DOM documents are equal.'
+            );
+        }
+    }
+
+    /**
+     * Returns the normalized, whitespace-cleaned, and indented textual
+     * representation of a DOMDocument.
+     *
+     * @param DOMDocument $document
+     * @return string
+     */
+    protected function domToText(DOMDocument $document)
+    {
+        $document->formatOutput = TRUE;
+        $document->normalizeDocument();
+
+        return $document->saveXML();
+    }
+}

@@ -1,52 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-2ztpBm==
+<?php
+
+require_once(dirname(__FILE__).'/package.php');
+
+$source_path = dirname(__FILE__).'/../../docs/source/';
+$destination_path = dirname(__FILE__).'/../../docs/simpletest.org/';
+
+$languages = array("en/", "fr/", "../../");
+
+foreach ($languages as $language) {
+    $dir = opendir($source_path.$language);
+
+    while (($file = readdir($dir)) !== false) {
+	    if (is_file($source_path.$language.$file) and preg_match("/\.xml$/", $file)) {
+	        $source = simplexml_load_file($source_path.$language.$file, "SimpleTestXMLElement");
+	        $destination = $source->destination(dirname(__FILE__).'/map.xml');
+
+			if (!empty($destination)) {
+				$page = file_get_contents(dirname(__FILE__).'/template.html');
+
+				$page = str_replace('KEYWORDS', $source->keywords(), $page);
+				$page = str_replace('TITLE', $source->title(), $page);
+				$page = str_replace('CONTENT', $source->content(), $page);
+				$page = str_replace('INTERNAL', $source->internal(), $page);
+				$page = str_replace('EXTERNAL', $source->external(), $page);
+				
+				$links = $source->links(dirname(__FILE__).'/map.xml');
+				foreach ($links as $category => $link) {
+					$page = str_replace("LINKS_".strtoupper($category), $link, $page);
+				}
+				
+				$destination_dir = dirname($destination_path.$destination);
+				if (!is_dir($destination_dir)) {
+					mkdir($destination_dir);
+				}
+
+				$ok = file_put_contents($destination_path.$destination, $page);
+				touch($destination_path.$destination, filemtime($source_path.$language.$file));
+
+				if ($ok) {
+					$result = "OK";
+				} else {
+					$result = "KO";
+				}
+
+				$synchronisation = new PackagingSynchronisation($source_path.$language.$file);
+				$result .= " ".$synchronisation->result();
+
+				echo $destination_path.$destination." : ".$result."\n";
+			}
+	    }
+	}
+	closedir($dir);
+}

@@ -1,29 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP+ykmHb82ZfU0PXKEd+KZajOC4dcQehu5Bwii1zlf5ZlpuwIArkpyCeU2VdIbh2Uf/4qoSLv
-bqG67aiP9Fy5X/eXkTRWuQj/ajPT0aX4K18NV3Q5hcACIXZesjyxdkmV+NjZxvK1Zg1pCU7iW2oG
-xjxaLmi7Q78/GqDtxLQBrgZPZVKVl1t6tWSCzVngEzWMTfMJMdIQKbStL5AlEPde7JY+Ei7I4J/X
-iiQ9KiZPje+gnJV7nDnchr4euJltSAgiccy4GDnfT01a1EqIjZKfR02QIb1oexX8RuhrxlD4t1HA
-je3YkG/Yn5eqAf5JXLYevxYng3kW6AEzuERHiv/C3tvG1TqcJ/9Qirum1PujB6cszIZWg/eFDogD
-3pCf6sU0RpkgRAwH6MHUgYECFg2b8T1nSTsyMfXW/d5uJYcDOOGcWLpa975uQuW0514apdLeDq2R
-sb0KNN6dB7qTi9I/FNqdrtV+/eFwTT/Jm5qQ2f7hu/vI19hVWN2GGr4OdUn0+x0RgAvXAKEoycC4
-sOEyDzS/ZAwUCd8wL+vIttfRYoKUuGN0uj6lojZQ7k7Pj+5CgLxj980YehAkccSEJpf1ZNRTD8JQ
-MTnFi8qdJVypPTy1kawg9rE9bjfi0DcvAM0Nm8ZkY3a5qDimYMz/QfxQRBFr+W0ZFJw0iZ4Sk4t3
-x2BW/03vm5zUT4FjjDMW7YERJTHpYebuVP5kTXtYgrmCsWnndC9NLtNoq3NwCpEuw01I+MW03NsI
-nfRl7AoOZNv+V8t8GXClP88VYOg62SDnlP+v1feW2fMm8QOf8K4a8vFE3izlZxcbbb+GWkzpnFJv
-So++2nwzNoVgqPA2Ek/Ea37UNrRRkSWh92dZyBPYot4Tl1vsNRvspvtwkeijFIotvR6ikzujv6wC
-2wEfli+bih90I1w8Vzsu2WnkSZ+MGjdiI0avfoFd/iWhtgANID1XK/Vl6wpKhaukxGd3uONw2eGa
-1h0ZPwc/N1hZUd3+0q3OIid/WdgccwGBq/xDc299cJ32EPn/GkGpOsjtWSnzx/M3bzuXHvSx+qT3
-ATth+nAmQ/lr1RgfXr5maOcpyT+GjwVeS11Rmhu18CXXlUy8waZajyxWBvBbAmylC9NG9Xbh9Obf
-3HziLogHV3hnjSXAJxFPcCUvRA9o5dmmFZuTfG0K7w25ybdWEa3/aQ/LG4e1LYPphcHXJV/cBM1f
-mgxbgpW8isxHQVBERMdMdGKCBDMjm60Su7CpHxnb94CTVWQlMa1Uhm9yiod69dYNydH03byIwdec
-unoznlvM7i5kN927xZzUnpFow3qxrleTfx3I/43Yq1wrjDVeJ5CCHYiN8Z4dP52yryEaL9JmtLdR
-DxOFilEEot8UCzV2NGH8TOXTDQVHzKNAZgZIYU4vE5QotHLRKFwGgrRnv8fs7V+pr5zE9M2C+XS6
-451zIuIJbzuEQBYD6Yly1ja9O1VO70aoEAzDdjjWAfDr8sm6cM+phURpTBsB2b/qyAFl4VW6iCD4
-lpxtbVpdt9QU7yCrNdBkitZvWTvUhpB10alnscCxXqn2sgb4yQvnC0FbZshsqr/SVwbXbY40LKUN
-ZgXPIBZzt+8qg+w/bF5JcmgraPfTbVkZNrhsQCi3gwwaFVj/cXcPMb0iaxdzOXatUv818rXegiXA
-FimDcAbkaEN3ltDUu/eSjiztXm2FfwYEvE9Qf/pO/trB2sNcPj+uDZBIeEBS4wcw/4zOsj81z68x
-YkD4qDSI7Yx3b2OFq7RDQq50ux6sfJ57jsa3vL1A6MDBRzFAwRuMR+LO7DikdTdktsDYemQByDUb
-mWoIcXIzbyG4Zol/YoXLmaLgaC2aCO9HJ4MdSVO7ajUIBjZ+w7giUXUXa4X8ISnRNIg08sqEJ1cY
-E10kH3tfwMQ/5e2+E6XODG==
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Shared_PasswordHasher
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Shared_PasswordHasher
+{
+	/**
+	 * Create a password hash from a given string.
+	 *
+	 * This method is based on the algorithm provided by
+	 * Daniel Rentz of OpenOffice and the PEAR package
+	 * Spreadsheet_Excel_Writer by Xavier Noguer <xnoguer@rezebra.com>.
+	 *
+	 * @param 	string	$pPassword	Password to hash
+	 * @return 	string				Hashed password
+	 */
+	public static function hashPassword($pPassword = '') {
+        $password = 0x0000;
+        $i        = 1;       // char position
+
+        // split the plain text password in its component characters
+        $chars = preg_split('//', $pPassword, -1, PREG_SPLIT_NO_EMPTY);
+        foreach ($chars as $char) {
+            $value        = ord($char) << $i;   // shifted ASCII value
+            $rotated_bits = $value >> 15;       // rotated bits beyond bit 15
+            $value       &= 0x7fff;             // first 15 bits
+            $password    ^= ($value | $rotated_bits);
+            ++$i;
+        }
+
+        $password ^= strlen($pPassword);
+        $password ^= 0xCE4B;
+
+        return(strtoupper(dechex($password)));
+	}
+}

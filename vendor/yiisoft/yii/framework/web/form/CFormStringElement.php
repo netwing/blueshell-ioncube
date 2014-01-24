@@ -1,36 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CFormStringElement class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFormStringElement represents a string in a form.
+ *
+ * @property string $on Scenario names separated by commas. Defaults to null.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.form
+ * @since 1.1
+ */
+class CFormStringElement extends CFormElement
+{
+	/**
+	 * @var string the string content
+	 */
+	public $content;
+
+	private $_on;
+
+	/**
+	 * Returns a value indicating under which scenarios this string is visible.
+	 * If the value is empty, it means the string is visible under all scenarios.
+	 * Otherwise, only when the model is in the scenario whose name can be found in
+	 * this value, will the string be visible. See {@link CModel::scenario} for more
+	 * information about model scenarios.
+	 * @return string scenario names separated by commas. Defaults to null.
+	 */
+	public function getOn()
+	{
+		return $this->_on;
+	}
+
+	/**
+	 * @param string $value scenario names separated by commas.
+	 */
+	public function setOn($value)
+	{
+		$this->_on=preg_split('/[\s,]+/',$value,-1,PREG_SPLIT_NO_EMPTY);
+	}
+
+	/**
+	 * Renders this element.
+	 * The default implementation simply returns {@link content}.
+	 * @return string the string content
+	 */
+	public function render()
+	{
+		return $this->content;
+	}
+
+	/**
+	 * Evaluates the visibility of this element.
+	 * This method will check the {@link on} property to see if
+	 * the model is in a scenario that should have this string displayed.
+	 * @return boolean whether this element is visible.
+	 */
+	protected function evaluateVisible()
+	{
+		return empty($this->_on) || in_array($this->getParent()->getModel()->getScenario(),$this->_on);
+	}
+}

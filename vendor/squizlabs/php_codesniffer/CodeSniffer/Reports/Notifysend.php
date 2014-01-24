@@ -1,89 +1,262 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Notify-send report for PHP_CodeSniffer.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Christian Weiske <christian.weiske@netresearch.de>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2012 Christian Weiske
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Notify-send report for PHP_CodeSniffer.
+ *
+ * Supported configuration parameters:
+ * - notifysend_path    - Full path to notify-send cli command
+ * - notifysend_timeout - Timeout in milliseconds
+ * - notifysend_showok  - Show "ok, all fine" messages (0/1)
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Christian Weiske <christian.weiske@netresearch.de>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2012 Christian Weiske
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_Reports_Notifysend implements PHP_CodeSniffer_Report
+{
+
+    /**
+     * Notification timeout in milliseconds.
+     *
+     * @var integer
+     */
+    protected $timeout = 3000;
+
+    /**
+     * Path to notify-send command.
+     *
+     * @var string
+     */
+    protected $path = 'notify-send';
+
+    /**
+     * Show "ok, all fine" messages.
+     *
+     * @var boolean
+     */
+    protected $showOk = true;
+
+    /**
+     * Version of installed notify-send executable.
+     *
+     * @var string
+     */
+    protected $version = null;
+
+    /**
+     * A record of the last file checked.
+     *
+     * This is used in case we only checked one file and need to print
+     * the name/path of the file. We wont have access to the checked file list
+     * after the run has been completed.
+     *
+     * @var string
+     */
+    private $_lastCheckedFile = '';
+
+
+    /**
+     * Load configuration data.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $path = PHP_CodeSniffer::getConfigData('notifysend_path');
+        if ($path !== null) {
+            $this->path = $path;
+        }
+
+        $timeout = PHP_CodeSniffer::getConfigData('notifysend_timeout');
+        if ($timeout !== null) {
+            $this->timeout = (int) $timeout;
+        }
+
+        $showOk = PHP_CodeSniffer::getConfigData('notifysend_showok');
+        if ($showOk !== null) {
+            $this->showOk = (boolean) $showOk;
+        }
+
+        $this->version = str_replace(
+            'notify-send ',
+            '',
+            exec($this->path . ' --version')
+        );
+
+    }//end __construct()
+
+
+    /**
+     * Generate a partial report for a single processed file.
+     *
+     * Function should return TRUE if it printed or stored data about the file
+     * and FALSE if it ignored the file. Returning TRUE indicates that the file and
+     * its data should be counted in the grand totals.
+     *
+     * @param array   $report      Prepared report data.
+     * @param boolean $showSources Show sources?
+     * @param int     $width       Maximum allowed line width.
+     *
+     * @return boolean
+     */
+    public function generateFileReport(
+        $report,
+        $showSources=false,
+        $width=80
+    ) {
+        // We don't need to print anything, but we want this file counted
+        // in the total number of checked files even if it has no errors.
+        $this->_lastCheckedFile = $report['filename'];
+        return true;
+
+    }//end generateFileReport()
+
+
+    /**
+     * Generates a summary of errors and warnings for each file processed.
+     *
+     * @param string  $cachedData    Any partial report data that was returned from
+     *                               generateFileReport during the run.
+     * @param int     $totalFiles    Total number of files processed during the run.
+     * @param int     $totalErrors   Total number of errors found during the run.
+     * @param int     $totalWarnings Total number of warnings found during the run.
+     * @param boolean $showSources   Show sources?
+     * @param int     $width         Maximum allowed line width.
+     * @param boolean $toScreen      Is the report being printed to screen?
+     *
+     * @return void
+     */
+    public function generate(
+        $cachedData,
+        $totalFiles,
+        $totalErrors,
+        $totalWarnings,
+        $showSources=false,
+        $width=80,
+        $toScreen=true
+    ) {
+        $msg = $this->generateMessage($totalFiles, $totalErrors, $totalWarnings);
+        if ($msg === null) {
+            if ($this->showOk === true) {
+                $this->notifyAllFine();
+            }
+        } else {
+            $this->notifyErrors($msg);
+        }
+
+    }//end generate()
+
+
+    /**
+     * Generate the error message to show to the user.
+     *
+     * @param int $totalFiles    Total number of files processed during the run.
+     * @param int $totalErrors   Total number of errors found during the run.
+     * @param int $totalWarnings Total number of warnings found during the run.
+     *
+     * @return string Error message or NULL if no error/warning found.
+     */
+    protected function generateMessage($totalFiles, $totalErrors, $totalWarnings)
+    {
+        if ($totalErrors === 0 && $totalWarnings === 0) {
+            // Nothing to print.
+            return null;
+        }
+
+        $msg = '';
+        if ($totalFiles > 1) {
+            $msg .= 'Checked '.$totalFiles.' files'.PHP_EOL;
+        } else {
+            $msg .= $this->_lastCheckedFile.PHP_EOL;
+        }
+
+        if ($totalWarnings > 0) {
+            $msg .= $totalWarnings.' warnings'.PHP_EOL;
+        }
+
+        if ($totalErrors > 0) {
+            $msg .= $totalErrors.' errors'.PHP_EOL;
+        }
+
+        return $msg;
+
+    }//end generateMessage()
+
+
+    /**
+     * Tell the user that all is fine and no error/warning has been found.
+     *
+     * @return void
+     */
+    protected function notifyAllFine()
+    {
+        $cmd  = $this->getBasicCommand();
+        $cmd .= ' -i info';
+        $cmd .= ' "PHP CodeSniffer: Ok"';
+        $cmd .= ' "All fine"';
+        exec($cmd);
+
+    }//end notifyAllFine()
+
+
+    /**
+     * Tell the user that errors/warnings have been found.
+     *
+     * @param string $msg Message to display.
+     *
+     * @return void
+     */
+    protected function notifyErrors($msg)
+    {
+        $cmd  = $this->getBasicCommand();
+        $cmd .= ' -i error';
+        $cmd .= ' "PHP CodeSniffer: Error"';
+        $cmd .= ' '.escapeshellarg(trim($msg));
+        exec($cmd);
+
+    }//end notifyErrors()
+
+
+    /**
+     * Generate and return the basic notify-send command string to execute.
+     *
+     * @return string Shell command with common parameters.
+     */
+    protected function getBasicCommand()
+    {
+        $cmd  = escapeshellcmd($this->path);
+        $cmd .= ' --category dev.validate';
+        $cmd .= ' -h int:transient:1';
+        $cmd .= ' -t '.(int) $this->timeout;
+        if (version_compare($this->version, '0.7.3', '>=') === true) {
+            $cmd .= ' -a phpcs';
+        }
+
+        return $cmd;
+
+    }//end getBasicCommand()
+
+
+}//end class
+
 ?>
-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
-JLMbPGvQbm==

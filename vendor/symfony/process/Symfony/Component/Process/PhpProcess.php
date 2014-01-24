@@ -1,39 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Process;
+
+use Symfony\Component\Process\Exception\RuntimeException;
+
+/**
+ * PhpProcess runs a PHP script in an independent process.
+ *
+ * $p = new PhpProcess('<?php echo "foo"; ?>');
+ * $p->run();
+ * print $p->getOutput()."\n";
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class PhpProcess extends Process
+{
+    private $executableFinder;
+
+    /**
+     * Constructor.
+     *
+     * @param string  $script  The PHP script to run (as a string)
+     * @param string  $cwd     The working directory
+     * @param array   $env     The environment variables
+     * @param integer $timeout The timeout in seconds
+     * @param array   $options An array of options for proc_open
+     *
+     * @api
+     */
+    public function __construct($script, $cwd = null, array $env = array(), $timeout = 60, array $options = array())
+    {
+        parent::__construct(null, $cwd, $env, $script, $timeout, $options);
+
+        $this->executableFinder = new PhpExecutableFinder();
+    }
+
+    /**
+     * Sets the path to the PHP binary to use.
+     *
+     * @api
+     */
+    public function setPhpBinary($php)
+    {
+        $this->setCommandLine($php);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function start($callback = null)
+    {
+        if (null === $this->getCommandLine()) {
+            if (false === $php = $this->executableFinder->find()) {
+                throw new RuntimeException('Unable to find the PHP executable.');
+            }
+            $this->setCommandLine($php);
+        }
+
+        parent::start($callback);
+    }
+}

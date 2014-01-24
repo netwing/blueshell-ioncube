@@ -1,124 +1,228 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-YDHXYPAeplsQXib7RG7ZDnHCvwZEBP+q604pFm==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console;
+
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Process\ProcessBuilder;
+use Symfony\Component\Process\PhpExecutableFinder;
+
+/**
+ * A Shell wraps an Application to add shell capabilities to it.
+ *
+ * Support for history and completion only works with a PHP compiled
+ * with readline support (either --with-readline or --with-libedit)
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ * @author Martin Hasoň <martin.hason@gmail.com>
+ */
+class Shell
+{
+    private $application;
+    private $history;
+    private $output;
+    private $hasReadline;
+    private $processIsolation = false;
+
+    /**
+     * Constructor.
+     *
+     * If there is no readline support for the current PHP executable
+     * a \RuntimeException exception is thrown.
+     *
+     * @param Application $application An application instance
+     */
+    public function __construct(Application $application)
+    {
+        $this->hasReadline = function_exists('readline');
+        $this->application = $application;
+        $this->history = getenv('HOME').'/.history_'.$application->getName();
+        $this->output = new ConsoleOutput();
+    }
+
+    /**
+     * Runs the shell.
+     */
+    public function run()
+    {
+        $this->application->setAutoExit(false);
+        $this->application->setCatchExceptions(true);
+
+        if ($this->hasReadline) {
+            readline_read_history($this->history);
+            readline_completion_function(array($this, 'autocompleter'));
+        }
+
+        $this->output->writeln($this->getHeader());
+        $php = null;
+        if ($this->processIsolation) {
+            $finder = new PhpExecutableFinder();
+            $php = $finder->find();
+            $this->output->writeln(<<<EOF
+<info>Running with process isolation, you should consider this:</info>
+  * each command is executed as separate process,
+  * commands don't support interactivity, all params must be passed explicitly,
+  * commands output is not colorized.
+
+EOF
+            );
+        }
+
+        while (true) {
+            $command = $this->readline();
+
+            if (false === $command) {
+                $this->output->writeln("\n");
+
+                break;
+            }
+
+            if ($this->hasReadline) {
+                readline_add_history($command);
+                readline_write_history($this->history);
+            }
+
+            if ($this->processIsolation) {
+                $pb = new ProcessBuilder();
+
+                $process = $pb
+                    ->add($php)
+                    ->add($_SERVER['argv'][0])
+                    ->add($command)
+                    ->inheritEnvironmentVariables(true)
+                    ->getProcess()
+                ;
+
+                $output = $this->output;
+                $process->run(function ($type, $data) use ($output) {
+                    $output->writeln($data);
+                });
+
+                $ret = $process->getExitCode();
+            } else {
+                $ret = $this->application->run(new StringInput($command), $this->output);
+            }
+
+            if (0 !== $ret) {
+                $this->output->writeln(sprintf('<error>The command terminated with an error status (%s)</error>', $ret));
+            }
+        }
+    }
+
+    /**
+     * Returns the shell header.
+     *
+     * @return string The header string
+     */
+    protected function getHeader()
+    {
+        return <<<EOF
+
+Welcome to the <info>{$this->application->getName()}</info> shell (<comment>{$this->application->getVersion()}</comment>).
+
+At the prompt, type <comment>help</comment> for some help,
+or <comment>list</comment> to get a list of available commands.
+
+To exit the shell, type <comment>^D</comment>.
+
+EOF;
+    }
+
+    /**
+     * Renders a prompt.
+     *
+     * @return string The prompt
+     */
+    protected function getPrompt()
+    {
+        // using the formatter here is required when using readline
+        return $this->output->getFormatter()->format($this->application->getName().' > ');
+    }
+
+    protected function getOutput()
+    {
+        return $this->output;
+    }
+
+    protected function getApplication()
+    {
+        return $this->application;
+    }
+
+    /**
+     * Tries to return autocompletion for the current entered text.
+     *
+     * @param string $text The last segment of the entered text
+     *
+     * @return Boolean|array A list of guessed strings or true
+     */
+    private function autocompleter($text)
+    {
+        $info = readline_info();
+        $text = substr($info['line_buffer'], 0, $info['end']);
+
+        if ($info['point'] !== $info['end']) {
+            return true;
+        }
+
+        // task name?
+        if (false === strpos($text, ' ') || !$text) {
+            return array_keys($this->application->all());
+        }
+
+        // options and arguments?
+        try {
+            $command = $this->application->find(substr($text, 0, strpos($text, ' ')));
+        } catch (\Exception $e) {
+            return true;
+        }
+
+        $list = array('--help');
+        foreach ($command->getDefinition()->getOptions() as $option) {
+            $list[] = '--'.$option->getName();
+        }
+
+        return $list;
+    }
+
+    /**
+     * Reads a single line from standard input.
+     *
+     * @return string The single line from standard input
+     */
+    private function readline()
+    {
+        if ($this->hasReadline) {
+            $line = readline($this->getPrompt());
+        } else {
+            $this->output->write($this->getPrompt());
+            $line = fgets(STDIN, 1024);
+            $line = (!$line && strlen($line) == 0) ? false : rtrim($line);
+        }
+
+        return $line;
+    }
+
+    public function getProcessIsolation()
+    {
+        return $this->processIsolation;
+    }
+
+    public function setProcessIsolation($processIsolation)
+    {
+        $this->processIsolation = (Boolean) $processIsolation;
+
+        if ($this->processIsolation && !class_exists('Symfony\\Component\\Process\\Process')) {
+            throw new \RuntimeException('Unable to isolate processes as the Symfony Process Component is not installed.');
+        }
+    }
+}

@@ -1,64 +1,135 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Summary report for PHP_CodeSniffer.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Gabriele Santini <gsantini@sqli.com>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2009 SQLI <www.sqli.com>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Summary report for PHP_CodeSniffer.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Gabriele Santini <gsantini@sqli.com>
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2009 SQLI <www.sqli.com>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_Reports_Summary implements PHP_CodeSniffer_Report
+{
+
+
+    /**
+     * Generate a partial report for a single processed file.
+     *
+     * If verbose output is enabled, results are shown for all files, even if
+     * they have no errors or warnings. If verbose output is disabled, we only
+     * show files that have at least one warning or error.
+     *
+     * @param array   $report      Prepared report data.
+     * @param boolean $showSources Show sources?
+     * @param int     $width       Maximum allowed line width.
+     *
+     * @return boolean
+     */
+    public function generateFileReport(
+        $report,
+        $showSources=false,
+        $width=80
+    ) {
+        if (PHP_CODESNIFFER_VERBOSITY === 0
+            && $report['errors'] === 0
+            && $report['warnings'] === 0
+        ) {
+            // Nothing to print.
+            return false;
+        }
+
+        $width = max($width, 70);
+        $file  = $report['filename'];
+
+        $padding = ($width - 18 - strlen($file));
+        if ($padding < 0) {
+            $file    = '...'.substr($file, (($padding * -1) + 3));
+            $padding = 0;
+        }
+
+        echo $file.str_repeat(' ', $padding).'  ';
+        echo $report['errors'];
+        echo str_repeat(' ', (8 - strlen((string) $report['errors'])));
+        echo $report['warnings'];
+        echo PHP_EOL;
+
+        return true;
+
+    }//end generateFileReport()
+
+
+    /**
+     * Generates a summary of errors and warnings for each file processed.
+     * 
+     * @param string  $cachedData    Any partial report data that was returned from
+     *                               generateFileReport during the run.
+     * @param int     $totalFiles    Total number of files processed during the run.
+     * @param int     $totalErrors   Total number of errors found during the run.
+     * @param int     $totalWarnings Total number of warnings found during the run.
+     * @param boolean $showSources   Show sources?
+     * @param int     $width         Maximum allowed line width.
+     * @param boolean $toScreen      Is the report being printed to screen?
+     *
+     * @return void
+     */
+    public function generate(
+        $cachedData,
+        $totalFiles,
+        $totalErrors,
+        $totalWarnings,
+        $showSources=false,
+        $width=80,
+        $toScreen=true
+    ) {
+        if ($cachedData === '') {
+            return;
+        }
+
+        echo PHP_EOL.'PHP CODE SNIFFER REPORT SUMMARY'.PHP_EOL;
+        echo str_repeat('-', $width).PHP_EOL;
+        echo 'FILE'.str_repeat(' ', ($width - 20)).'ERRORS  WARNINGS'.PHP_EOL;
+        echo str_repeat('-', $width).PHP_EOL;
+
+        echo $cachedData;
+
+        echo str_repeat('-', $width).PHP_EOL;
+        echo 'A TOTAL OF '.$totalErrors.' ERROR(S) ';
+        echo 'AND '.$totalWarnings.' WARNING(S) ';
+
+        echo 'WERE FOUND IN '.$totalFiles.' FILE(S)'.PHP_EOL;
+        echo str_repeat('-', $width).PHP_EOL.PHP_EOL;
+
+        if ($toScreen === true
+            && PHP_CODESNIFFER_INTERACTIVE === false
+            && class_exists('PHP_Timer', false) === true
+        ) {
+            echo PHP_Timer::resourceUsage().PHP_EOL.PHP_EOL;
+        }
+
+    }//end generate()
+
+
+}//end class
+
 ?>
-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
-+vHOc/TYOxkc162/3MWDv0==

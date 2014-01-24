@@ -1,76 +1,176 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\PHPUnit\ResultPrinter;
+
+class HTML extends \Codeception\PHPUnit\ResultPrinter
+{
+    /**
+     * @var boolean
+     */
+    protected $printsHTML = TRUE;
+
+    /**
+     * @var integer
+     */
+    protected $id = 0;
+
+    /**
+     * @var string
+     */
+    protected $scenarios = '';
+
+    /**
+     * @var string
+     */
+    protected $templatePath;
+
+	/**
+	 * @var int
+	 */
+	protected $timeTaken = 0;
+
+    /**
+     * Constructor.
+     *
+     * @param  mixed   $out
+     * @throws InvalidArgumentException
+     */
+    public function __construct($out = NULL)
+    {
+        parent::__construct($out);
+
+        $this->templatePath = sprintf(
+          '%s%stemplate%s',
+
+          dirname(__FILE__),
+          DIRECTORY_SEPARATOR,
+          DIRECTORY_SEPARATOR
+        );
+    }
+
+    /**
+     * Handler for 'start class' event.
+     *
+     * @param  string $name
+     */
+    protected function startClass($name)
+    {
+    }
+
+    /**
+     * Handler for 'on test' event.
+     *
+     * @param  string  $name
+     * @param  boolean $success
+     * @param  array   $steps
+     */
+    protected function onTest($name, $success = TRUE, array $steps = array(), $time = 0)
+    {
+	    $this->timeTaken += $time;
+        if ($this->testStatus == \PHPUnit_Runner_BaseTestRunner::STATUS_FAILURE) {
+            $scenarioStatus = 'scenarioFailed';
+        }
+
+        else if ($this->testStatus == \PHPUnit_Runner_BaseTestRunner::STATUS_SKIPPED) {
+            $scenarioStatus = 'scenarioSkipped';
+        }
+
+        else if ($this->testStatus == \PHPUnit_Runner_BaseTestRunner::STATUS_INCOMPLETE) {
+            $scenarioStatus = 'scenarioIncomplete';
+        }
+
+        else if ($this->testStatus == \PHPUnit_Runner_BaseTestRunner::STATUS_ERROR){
+            $scenarioStatus = 'scenarioFailed';
+        }
+
+        else {
+            $scenarioStatus = 'scenarioSuccess';
+        }
+
+        $stepsBuffer  = '';
+
+        foreach ($steps as $step) {
+            $stepTemplate = new \Text_Template(
+              $this->templatePath . 'step.html'
+            );
+
+            $stepTemplate->setVar(
+              array(
+                'action' => $step->getHtmlAction(),
+              )
+            );
+
+            $stepsBuffer .= $stepTemplate->render();
+        }
+
+        $scenarioTemplate = new \Text_Template(
+          $this->templatePath . 'scenario.html'
+        );
+
+        $scenarioTemplate->setVar(
+          array(
+            'id'             => ++$this->id,
+            'name'           => $name,
+            'scenarioStatus' => $scenarioStatus,
+            'steps'          => $stepsBuffer,
+	        'time' => round($time, 2)
+          )
+        );
+
+        $this->scenarios .= $scenarioTemplate->render();
+    }
+
+    public function startTestSuite(\PHPUnit_Framework_TestSuite $suite)
+    {
+        $suiteTemplate = new \Text_Template(
+          $this->templatePath . 'suite.html'
+        );
+        
+        $suiteTemplate->setVar(array('suite' => ucfirst($suite->getName())));
+
+        $this->scenarios .= $suiteTemplate->render();
+
+    }
+
+    /**
+     * Handler for 'end run' event.
+     *
+     */
+    protected function endRun()
+    {
+
+        $scenarioHeaderTemplate = new \Text_Template(
+          $this->templatePath . 'scenario_header.html'
+        );
+
+	    $status = !$this->failed ? '<span style="color: green">OK</span>' : '<span style="color: red">FAILED</span>';
+
+        $scenarioHeaderTemplate->setVar(
+          array(
+            'name' => 'Codeception Results',
+	        'status' => $status,
+	        'time' => round($this->timeTaken,1)
+	      )
+        );
+
+        $header = $scenarioHeaderTemplate->render();
+
+        $scenariosTemplate = new \Text_Template(
+          $this->templatePath . 'scenarios.html'
+        );
+
+        $scenariosTemplate->setVar(
+          array(
+	        'header'              => $header,
+            'scenarios'           => $this->scenarios,
+            'successfulScenarios' => $this->successful,
+            'failedScenarios'     => $this->failed,
+            'skippedScenarios'    => $this->skipped,
+            'incompleteScenarios' => $this->incomplete
+          )
+        );
+
+        $this->write($scenariosTemplate->render());
+    }
+
+
+}

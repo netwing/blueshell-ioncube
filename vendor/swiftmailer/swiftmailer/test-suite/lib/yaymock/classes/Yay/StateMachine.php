@@ -1,38 +1,113 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+//require 'Yay/State.php';
+//require 'Yay/SimpleState.php';
+//require 'Yay/StatePredicate.php';
+//require 'Yay/SimpleStatePredicate.php';
+
+/**
+ * A basic state machine.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_StateMachine implements Yay_States
+{
+  
+  /**
+   * The name of this state machine.
+   * @var string
+   * @access private
+   */
+  private $_name;
+  
+  /**
+   * The current state.
+   * @var string
+   * @access private
+   */
+  private $_state;
+  
+  /**
+   * Create a new State machine with $name.
+   * @param string $name
+   */
+  public function __construct($name)
+  {
+    $this->_name = $name;
+  }
+  
+  /**
+   * Set the initial state of this state machine.
+   * @param string $stateName
+   * @return Yay_States
+   */
+  public function startsAs($stateName)
+  {
+    $this->become($stateName);
+    return $this;
+  }
+  
+  /**
+   * Get the state which puts the state machine into the named state.
+   * @param string $stateName
+   * @return Yay_State
+   */
+  public function is($stateName)
+  {
+    return new Yay_SimpleState($this, $stateName);
+  }
+  
+  /**
+   * Get the predicate which indicates the state machine is NOT in the named state.
+   * @param string $stateName
+   * @return Yay_StatePredicate
+   */
+  public function isNot($stateName)
+  {
+    return new Yay_SimpleStatePredicate($this, $stateName, false);
+  }
+  
+  /**
+   * Become the named state.
+   * @param string $stateName
+   */
+  public function become($stateName)
+  {
+    $this->_state = $stateName;
+  }
+  
+  /**
+   * Get the name of the current state.
+   * @return string
+   */
+  public function getCurrentState()
+  {
+    return $this->_state;
+  }
+  
+  /**
+   * Write a description of this self describing object to Description.
+   * @param Yay_Description $description
+   */
+  public function describeTo(Yay_Description $description)
+  {
+    $description->appendText(sprintf(' %s', $this->_name));
+  }
+  
+}

@@ -1,109 +1,195 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty plugin
+ *
+ * @package Smarty
+ * @subpackage PluginsFunction
+ */
+
+/**
+ * Smarty {html_options} function plugin
+ *
+ * Type:     function<br>
+ * Name:     html_options<br>
+ * Purpose:  Prints the list of <option> tags generated from
+ *           the passed parameters<br>
+ * Params:
+ * <pre>
+ * - name       (optional) - string default "select"
+ * - values     (required) - if no options supplied) - array
+ * - options    (required) - if no values supplied) - associative array
+ * - selected   (optional) - string default not set
+ * - output     (required) - if not options supplied) - array
+ * - id         (optional) - string default not set
+ * - class      (optional) - string default not set
+ * </pre>
+ *
+ * @link http://www.smarty.net/manual/en/language.function.html.options.php {html_image}
+ *      (Smarty online manual)
+ * @author Monte Ohrt <monte at ohrt dot com>
+ * @author Ralf Strehle (minor optimization) <ralf dot strehle at yahoo dot de>
+ * @param array                    $params   parameters
+ * @param Smarty_Internal_Template $template template object
+ * @return string
+ * @uses smarty_function_escape_special_chars()
+ */
+function smarty_function_html_options($params, $template)
+{
+    require_once(SMARTY_PLUGINS_DIR . 'shared.escape_special_chars.php');
+
+    $name = null;
+    $values = null;
+    $options = null;
+    $selected = null;
+    $output = null;
+    $id = null;
+    $class = null;
+
+    $extra = '';
+
+    foreach ($params as $_key => $_val) {
+        switch ($_key) {
+            case 'name':
+            case 'class':
+            case 'id':
+                $$_key = (string) $_val;
+                break;
+
+            case 'options':
+                $options = (array) $_val;
+                break;
+
+            case 'values':
+            case 'output':
+                $$_key = array_values((array) $_val);
+                break;
+
+            case 'selected':
+                if (is_array($_val)) {
+                    $selected = array();
+                    foreach ($_val as $_sel) {
+                        if (is_object($_sel)) {
+                            if (method_exists($_sel, "__toString")) {
+                                $_sel = smarty_function_escape_special_chars((string) $_sel->__toString());
+                            } else {
+                                trigger_error("html_options: selected attribute contains an object of class '". get_class($_sel) ."' without __toString() method", E_USER_NOTICE);
+                                continue;
+                            }
+                        } else {
+                            $_sel = smarty_function_escape_special_chars((string) $_sel);
+                        }
+                        $selected[$_sel] = true;
+                    }
+                } elseif (is_object($_val)) {
+                    if (method_exists($_val, "__toString")) {
+                        $selected = smarty_function_escape_special_chars((string) $_val->__toString());
+                    } else {
+                        trigger_error("html_options: selected attribute is an object of class '". get_class($_val) ."' without __toString() method", E_USER_NOTICE);
+                    }
+                } else {
+                    $selected = smarty_function_escape_special_chars((string) $_val);
+                }
+                break;
+
+            case 'strict': break;
+
+            case 'disabled':
+            case 'readonly':
+                if (!empty($params['strict'])) {
+                    if (!is_scalar($_val)) {
+                        trigger_error("html_options: $_key attribute must be a scalar, only boolean true or string '$_key' will actually add the attribute", E_USER_NOTICE);
+                    }
+
+                    if ($_val === true || $_val === $_key) {
+                        $extra .= ' ' . $_key . '="' . smarty_function_escape_special_chars($_key) . '"';
+                    }
+
+                    break;
+                }
+                // omit break; to fall through!
+
+            default:
+                if (!is_array($_val)) {
+                    $extra .= ' ' . $_key . '="' . smarty_function_escape_special_chars($_val) . '"';
+                } else {
+                    trigger_error("html_options: extra attribute '$_key' cannot be an array", E_USER_NOTICE);
+                }
+                break;
+        }
+    }
+
+    if (!isset($options) && !isset($values)) {
+        /* raise error here? */
+
+        return '';
+    }
+
+    $_html_result = '';
+    $_idx = 0;
+
+    if (isset($options)) {
+        foreach ($options as $_key => $_val) {
+            $_html_result .= smarty_function_html_options_optoutput($_key, $_val, $selected, $id, $class, $_idx);
+        }
+    } else {
+        foreach ($values as $_i => $_key) {
+            $_val = isset($output[$_i]) ? $output[$_i] : '';
+            $_html_result .= smarty_function_html_options_optoutput($_key, $_val, $selected, $id, $class, $_idx);
+        }
+    }
+
+    if (!empty($name)) {
+        $_html_class = !empty($class) ? ' class="'.$class.'"' : '';
+        $_html_id = !empty($id) ? ' id="'.$id.'"' : '';
+        $_html_result = '<select name="' . $name . '"' . $_html_class . $_html_id . $extra . '>' . "\n" . $_html_result . '</select>' . "\n";
+    }
+
+    return $_html_result;
+}
+
+function smarty_function_html_options_optoutput($key, $value, $selected, $id, $class, &$idx)
+{
+    if (!is_array($value)) {
+        $_key = smarty_function_escape_special_chars($key);
+        $_html_result = '<option value="' . $_key . '"';
+        if (is_array($selected)) {
+            if (isset($selected[$_key])) {
+                $_html_result .= ' selected="selected"';
+            }
+        } elseif ($_key === $selected) {
+            $_html_result .= ' selected="selected"';
+        }
+        $_html_class = !empty($class) ? ' class="'.$class.' option"' : '';
+        $_html_id = !empty($id) ? ' id="'.$id.'-'.$idx.'"' : '';
+        if (is_object($value)) {
+            if (method_exists($value, "__toString")) {
+                $value = smarty_function_escape_special_chars((string) $value->__toString());
+            } else {
+                trigger_error("html_options: value is an object of class '". get_class($value) ."' without __toString() method", E_USER_NOTICE);
+
+                return '';
+            }
+        } else {
+            $value = smarty_function_escape_special_chars((string) $value);
+        }
+        $_html_result .= $_html_class . $_html_id . '>' . $value . '</option>' . "\n";
+        $idx++;
+    } else {
+        $_idx = 0;
+        $_html_result = smarty_function_html_options_optgroup($key, $value, $selected, !empty($id) ? ($id.'-'.$idx) : null, $class, $_idx);
+        $idx++;
+    }
+
+    return $_html_result;
+}
+
+function smarty_function_html_options_optgroup($key, $values, $selected, $id, $class, &$idx)
+{
+    $optgroup_html = '<optgroup label="' . smarty_function_escape_special_chars($key) . '">' . "\n";
+    foreach ($values as $key => $value) {
+        $optgroup_html .= smarty_function_html_options_optoutput($key, $value, $selected, $id, $class, $idx);
+    }
+    $optgroup_html .= "</optgroup>\n";
+
+    return $optgroup_html;
+}

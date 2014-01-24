@@ -1,70 +1,288 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Worksheet_Drawing
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Worksheet_Drawing_Shadow
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Worksheet_Drawing
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Worksheet_Drawing_Shadow implements PHPExcel_IComparable
+{
+	/* Shadow alignment */
+	const SHADOW_BOTTOM							= 'b';
+	const SHADOW_BOTTOM_LEFT					= 'bl';
+	const SHADOW_BOTTOM_RIGHT					= 'br';
+	const SHADOW_CENTER							= 'ctr';
+	const SHADOW_LEFT							= 'l';
+	const SHADOW_TOP							= 't';
+	const SHADOW_TOP_LEFT						= 'tl';
+	const SHADOW_TOP_RIGHT						= 'tr';
+
+	/**
+	 * Visible
+	 *
+	 * @var boolean
+	 */
+	private $_visible;
+
+	/**
+	 * Blur radius
+	 *
+	 * Defaults to 6
+	 *
+	 * @var int
+	 */
+	private $_blurRadius;
+
+	/**
+	 * Shadow distance
+	 *
+	 * Defaults to 2
+	 *
+	 * @var int
+	 */
+	private $_distance;
+
+	/**
+	 * Shadow direction (in degrees)
+	 *
+	 * @var int
+	 */
+	private $_direction;
+
+	/**
+	 * Shadow alignment
+	 *
+	 * @var int
+	 */
+	private $_alignment;
+
+	/**
+	 * Color
+	 *
+	 * @var PHPExcel_Style_Color
+	 */
+	private $_color;
+
+	/**
+	 * Alpha
+	 *
+	 * @var int
+	 */
+	private $_alpha;
+
+    /**
+     * Create a new PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function __construct()
+    {
+    	// Initialise values
+    	$this->_visible				= false;
+    	$this->_blurRadius			= 6;
+    	$this->_distance			= 2;
+    	$this->_direction			= 0;
+    	$this->_alignment			= PHPExcel_Worksheet_Drawing_Shadow::SHADOW_BOTTOM_RIGHT;
+    	$this->_color				= new PHPExcel_Style_Color(PHPExcel_Style_Color::COLOR_BLACK);
+    	$this->_alpha				= 50;
+    }
+
+    /**
+     * Get Visible
+     *
+     * @return boolean
+     */
+    public function getVisible() {
+    	return $this->_visible;
+    }
+
+    /**
+     * Set Visible
+     *
+     * @param boolean $pValue
+     * @return PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function setVisible($pValue = false) {
+    	$this->_visible = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Blur radius
+     *
+     * @return int
+     */
+    public function getBlurRadius() {
+    	return $this->_blurRadius;
+    }
+
+    /**
+     * Set Blur radius
+     *
+     * @param int $pValue
+     * @return PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function setBlurRadius($pValue = 6) {
+    	$this->_blurRadius = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Shadow distance
+     *
+     * @return int
+     */
+    public function getDistance() {
+    	return $this->_distance;
+    }
+
+    /**
+     * Set Shadow distance
+     *
+     * @param int $pValue
+     * @return PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function setDistance($pValue = 2) {
+    	$this->_distance = $pValue;
+    	return $this;
+    }
+
+    /**
+     * Get Shadow direction (in degrees)
+     *
+     * @return int
+     */
+    public function getDirection() {
+    	return $this->_direction;
+    }
+
+    /**
+     * Set Shadow direction (in degrees)
+     *
+     * @param int $pValue
+     * @return PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function setDirection($pValue = 0) {
+    	$this->_direction = $pValue;
+    	return $this;
+    }
+
+   /**
+     * Get Shadow alignment
+     *
+     * @return int
+     */
+    public function getAlignment() {
+    	return $this->_alignment;
+    }
+
+    /**
+     * Set Shadow alignment
+     *
+     * @param int $pValue
+     * @return PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function setAlignment($pValue = 0) {
+    	$this->_alignment = $pValue;
+    	return $this;
+    }
+
+   /**
+     * Get Color
+     *
+     * @return PHPExcel_Style_Color
+     */
+    public function getColor() {
+    	return $this->_color;
+    }
+
+    /**
+     * Set Color
+     *
+     * @param 	PHPExcel_Style_Color $pValue
+     * @throws 	Exception
+     * @return PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function setColor(PHPExcel_Style_Color $pValue = null) {
+   		$this->_color = $pValue;
+   		return $this;
+    }
+
+   /**
+     * Get Alpha
+     *
+     * @return int
+     */
+    public function getAlpha() {
+    	return $this->_alpha;
+    }
+
+    /**
+     * Set Alpha
+     *
+     * @param int $pValue
+     * @return PHPExcel_Worksheet_Drawing_Shadow
+     */
+    public function setAlpha($pValue = 0) {
+    	$this->_alpha = $pValue;
+    	return $this;
+    }
+
+	/**
+	 * Get hash code
+	 *
+	 * @return string	Hash code
+	 */
+	public function getHashCode() {
+    	return md5(
+    		  ($this->_visible ? 't' : 'f')
+    		. $this->_blurRadius
+    		. $this->_distance
+    		. $this->_direction
+    		. $this->_alignment
+    		. $this->_color->getHashCode()
+    		. $this->_alpha
+    		. __CLASS__
+    	);
+    }
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if (is_object($value)) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+}

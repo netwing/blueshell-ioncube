@@ -1,51 +1,82 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests appendByRef methode
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for appendByRef tests
+*/
+class AppendByRefTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smartyBC = SmartyTests::$smartyBC;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test appendByRef
+    */
+    public function testAppendByRef()
+    {
+        $bar = 'bar';
+        $bar2 = 'bar2';
+        $this->smarty->appendByRef('foo', $bar);
+        $this->smarty->appendByRef('foo', $bar2);
+        $bar = 'newbar';
+        $bar2 = 'newbar2';
+        $this->assertEquals('newbar newbar2', $this->smarty->fetch('eval:{$foo[0]} {$foo[1]}'));
+    }
+    public function testSmarty2AppendByRef()
+    {
+        $bar = 'bar';
+        $bar2 = 'bar2';
+        $this->smartyBC->append_by_ref('foo', $bar);
+        $this->smartyBC->append_by_ref('foo', $bar2);
+        $bar = 'newbar';
+        $bar2 = 'newbar2';
+        $this->assertEquals('newbar newbar2', $this->smartyBC->fetch('eval:{$foo[0]} {$foo[1]}'));
+    }
+    /**
+    * test appendByRef to unassigned variable
+    */
+    public function testAppendByRefUnassigned()
+    {
+        $bar2 = 'bar2';
+        $this->smarty->appendByRef('foo', $bar2);
+        $bar2 = 'newbar2';
+        $this->assertEquals('newbar2', $this->smarty->fetch('eval:{$foo[0]}'));
+    }
+     public function testSmarty2AppendByRefUnassigned()
+    {
+        $bar2 = 'bar2';
+        $this->smartyBC->append_by_ref('foo', $bar2);
+        $bar2 = 'newbar2';
+        $this->assertEquals('newbar2', $this->smartyBC->fetch('eval:{$foo[0]}'));
+    }
+    /**
+    * test appendByRef merge
+    *
+    * @todo fix testAppendByRefMerge
+    */
+    public function testAppendByRefMerge()
+    {
+        $foo =  array('a' => 'a', 'b' => 'b', 'c' => 'c');
+        $bar = array('b' => 'd');
+        $this->smarty->assignByRef('foo', $foo);
+        $this->smarty->appendByRef('foo', $bar, true);
+        $this->assertEquals('a d c', $this->smarty->fetch('eval:{$foo["a"]} {$foo["b"]} {$foo["c"]}'));
+        $bar = array('b' => 'newd');
+        $this->smarty->appendByRef('foo', $bar, true);
+        $this->assertEquals('a newd c', $this->smarty->fetch('eval:{$foo["a"]} {$foo["b"]} {$foo["c"]}'));
+    }
+}

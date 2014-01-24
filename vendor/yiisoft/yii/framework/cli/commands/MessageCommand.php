@@ -1,132 +1,228 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * MessageCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * MessageCommand extracts messages to be translated from source files.
+ * The extracted messages are saved as PHP message source files
+ * under the specified directory.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.cli.commands
+ * @since 1.0
+ */
+class MessageCommand extends CConsoleCommand
+{
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  yiic message <config-file>
+
+DESCRIPTION
+  This command searches for messages to be translated in the specified
+  source files and compiles them into PHP arrays as message source.
+
+PARAMETERS
+ * config-file: required, the path of the configuration file. You can find
+   an example in framework/messages/config.php.
+
+   The file can be placed anywhere and must be a valid PHP script which
+   returns an array of name-value pairs. Each name-value pair represents
+   a configuration option.
+
+   The following options are available:
+
+   - sourcePath: string, root directory of all source files.
+   - messagePath: string, root directory containing message translations.
+   - languages: array, list of language codes that the extracted messages
+     should be translated to. For example, array('zh_cn','en_au').
+   - fileTypes: array, a list of file extensions (e.g. 'php', 'xml').
+     Only the files whose extension name can be found in this list
+     will be processed. If empty, all files will be processed.
+   - exclude: array, a list of directory and file exclusions. Each
+     exclusion can be either a name or a path. If a file or directory name
+     or path matches the exclusion, it will not be copied. For example,
+     an exclusion of '.svn' will exclude all files and directories whose
+     name is '.svn'. And an exclusion of '/a/b' will exclude file or
+     directory 'sourcePath/a/b'.
+   - translator: the name of the function for translating messages.
+     Defaults to 'Yii::t'. This is used as a mark to find messages to be
+     translated. Accepts both string for single function name or array for
+     multiple function names.
+   - overwrite: if message file must be overwritten with the merged messages.
+   - removeOld: if message no longer needs translation it will be removed,
+     instead of being enclosed between a pair of '@@' marks.
+   - sort: sort messages by key when merging, regardless of their translation
+     state (new, obsolete, translated.)
+
+EOD;
+	}
+
+	/**
+	 * Execute the action.
+	 * @param array $args command line parameters specific for this command
+	 */
+	public function run($args)
+	{
+		if(!isset($args[0]))
+			$this->usageError('the configuration file is not specified.');
+		if(!is_file($args[0]))
+			$this->usageError("the configuration file {$args[0]} does not exist.");
+
+		$config=require($args[0]);
+		$translator='Yii::t';
+		extract($config);
+
+		if(!isset($sourcePath,$messagePath,$languages))
+			$this->usageError('The configuration file must specify "sourcePath", "messagePath" and "languages".');
+		if(!is_dir($sourcePath))
+			$this->usageError("The source path $sourcePath is not a valid directory.");
+		if(!is_dir($messagePath))
+			$this->usageError("The message path $messagePath is not a valid directory.");
+		if(empty($languages))
+			$this->usageError("Languages cannot be empty.");
+
+		if(!isset($overwrite))
+			$overwrite = false;
+
+		if(!isset($removeOld))
+			$removeOld = false;
+
+		if(!isset($sort))
+			$sort = false;
+
+		$options=array();
+		if(isset($fileTypes))
+			$options['fileTypes']=$fileTypes;
+		if(isset($exclude))
+			$options['exclude']=$exclude;
+		$files=CFileHelper::findFiles(realpath($sourcePath),$options);
+
+		$messages=array();
+		foreach($files as $file)
+			$messages=array_merge_recursive($messages,$this->extractMessages($file,$translator));
+
+		foreach($languages as $language)
+		{
+			$dir=$messagePath.DIRECTORY_SEPARATOR.$language;
+			if(!is_dir($dir))
+				@mkdir($dir);
+			foreach($messages as $category=>$msgs)
+			{
+				$msgs=array_values(array_unique($msgs));
+				$this->generateMessageFile($msgs,$dir.DIRECTORY_SEPARATOR.$category.'.php',$overwrite,$removeOld,$sort);
+			}
+		}
+	}
+
+	protected function extractMessages($fileName,$translator)
+	{
+		echo "Extracting messages from $fileName...\n";
+		$subject=file_get_contents($fileName);
+		$messages=array();
+		if(!is_array($translator))
+			$translator=array($translator);
+
+		foreach ($translator as $currentTranslator)
+		{
+			$n=preg_match_all('/\b'.$currentTranslator.'\s*\(\s*(\'[\w.\/]*?(?<!\.)\'|"[\w.]*?(?<!\.)")\s*,\s*(\'.*?(?<!\\\\)\'|".*?(?<!\\\\)")\s*[,\)]/s',$subject,$matches,PREG_SET_ORDER);
+
+			for($i=0;$i<$n;++$i)
+			{
+				if(($pos=strpos($matches[$i][1],'.'))!==false)
+					$category=substr($matches[$i][1],$pos+1,-1);
+				else
+					$category=substr($matches[$i][1],1,-1);
+				$message=$matches[$i][2];
+				$messages[$category][]=eval("return $message;");  // use eval to eliminate quote escape
+			}
+		}
+		return $messages;
+	}
+
+	protected function generateMessageFile($messages,$fileName,$overwrite,$removeOld,$sort)
+	{
+		echo "Saving messages to $fileName...";
+		if(is_file($fileName))
+		{
+			$translated=require($fileName);
+			sort($messages);
+			ksort($translated);
+			if(array_keys($translated)==$messages)
+			{
+				echo "nothing new...skipped.\n";
+				return;
+			}
+			$merged=array();
+			$untranslated=array();
+			foreach($messages as $message)
+			{
+				if(array_key_exists($message,$translated) && strlen($translated[$message])>0)
+					$merged[$message]=$translated[$message];
+				else
+					$untranslated[]=$message;
+			}
+			ksort($merged);
+			sort($untranslated);
+			$todo=array();
+			foreach($untranslated as $message)
+				$todo[$message]='';
+			ksort($translated);
+			foreach($translated as $message=>$translation)
+			{
+				if(!isset($merged[$message]) && !isset($todo[$message]) && !$removeOld)
+				{
+					if(substr($translation,0,2)==='@@' && substr($translation,-2)==='@@')
+						$todo[$message]=$translation;
+					else
+						$todo[$message]='@@'.$translation.'@@';
+				}
+			}
+			$merged=array_merge($todo,$merged);
+			if($sort)
+				ksort($merged);
+			if($overwrite === false)
+				$fileName.='.merged';
+			echo "translation merged.\n";
+		}
+		else
+		{
+			$merged=array();
+			foreach($messages as $message)
+				$merged[$message]='';
+			ksort($merged);
+			echo "saved.\n";
+		}
+		$array=str_replace("\r",'',var_export($merged,true));
+		$content=<<<EOD
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * Message string can be used with plural forms format. Check i18n section
+ * of the guide for details.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return $array;
+
+EOD;
+		file_put_contents($fileName, $content);
+	}
+}

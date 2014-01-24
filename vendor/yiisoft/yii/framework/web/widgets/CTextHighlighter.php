@@ -1,68 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-sAVQDG==
+<?php
+/**
+ * CTextHighlighter class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+require_once(Yii::getPathOfAlias('system.vendors.TextHighlighter.Text.Highlighter').'.php');
+require_once(Yii::getPathOfAlias('system.vendors.TextHighlighter.Text.Highlighter.Renderer.Html').'.php');
+
+/**
+ * CTextHighlighter does syntax highlighting for its body content.
+ *
+ * The language of the syntax to be applied is specified via {@link language} property.
+ * Currently, CTextHighlighter supports the following languages:
+ * ABAP, CPP, CSS, DIFF, DTD, HTML, JAVA, JAVASCRIPT, MYSQL, PERL,
+ * PHP, PYTHON, RUBY, SQL, XML. By setting {@link showLineNumbers}
+ * to true, the highlighted result may be shown with line numbers.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.widgets
+ * @since 1.0
+ */
+class CTextHighlighter extends COutputProcessor
+{
+	/**
+	 * @var string the language whose syntax is to be used for highlighting.
+	 * Valid values are those file names (without suffix) that are contained
+	 * in 'vendors/TextHighlighter/Text/Highlighter'. Currently, the following
+	 * languages are supported:
+	 * ABAP, CPP, CSS, DIFF, DTD, HTML, JAVA, JAVASCRIPT,
+	 * MYSQL, PERL, PHP, PYTHON, RUBY, SQL, XML
+	 * If a language is not supported, it will be displayed as plain text.
+	 * Language names are case-insensitive.
+	 */
+	public $language;
+	/**
+	 * @var boolean whether to show line numbers in the highlighted result. Defaults to false.
+	 * @see lineNumberStyle
+	 */
+	public $showLineNumbers=false;
+	/**
+	 * @var string the style of line number display. It can be either 'list' or 'table'. Defaults to 'list'.
+	 * @see showLineNumbers
+	 */
+	public $lineNumberStyle='list';
+	/**
+	 * @var integer tab size. Defaults to 4.
+	 */
+	public $tabSize=4;
+	/**
+	 * @var mixed the CSS file used for the widget. Defaults to null, meaning
+	 * using the default CSS file included together with the widget.
+	 * If false, no CSS file will be used. Otherwise, the specified CSS file
+	 * will be included when using this widget.
+	 */
+	public $cssFile;
+	/**
+	 * @var array the HTML attributes to be applied to the container element.
+	 * The highlighted content is contained in a DIV element.
+	 */
+	public $containerOptions=array();
+
+
+	/**
+	 * Processes the captured output.
+     * This method highlights the output according to the syntax of the specified {@link language}.
+	 * @param string $output the captured output to be processed
+	 */
+	public function processOutput($output)
+	{
+		$output=$this->highlight($output);
+		parent::processOutput($output);
+	}
+
+	/**
+	 * Highlights the content by the syntax of the specified language.
+	 * @param string $content the content to be highlighted.
+	 * @return string the highlighted content
+	 */
+	public function highlight($content)
+	{
+		$this->registerClientScript();
+
+		$options['use_language']=true;
+		$options['tabsize']=$this->tabSize;
+		if($this->showLineNumbers)
+			$options['numbers']=($this->lineNumberStyle==='list')?HL_NUMBERS_LI:HL_NUMBERS_TABLE;
+
+		$highlighter=empty($this->language)?false:Text_Highlighter::factory($this->language);
+		if($highlighter===false)
+			$o='<pre>'.CHtml::encode($content).'</pre>';
+		else
+		{
+			$highlighter->setRenderer(new Text_Highlighter_Renderer_Html($options));
+			$o=preg_replace('/<span\s+[^>]*>(\s*)<\/span>/','\1',$highlighter->highlight($content));
+		}
+
+		return CHtml::tag('div',$this->containerOptions,$o);
+	}
+
+	/**
+	 * Registers the needed CSS and JavaScript.
+	 */
+	public function registerClientScript()
+	{
+		if($this->cssFile!==false)
+			self::registerCssFile($this->cssFile);
+	}
+
+	/**
+	 * Registers the needed CSS file.
+	 * @param string $url the CSS URL. If null, a default CSS URL will be used.
+	 */
+	public static function registerCssFile($url=null)
+	{
+		if($url===null)
+			$url=CHtml::asset(Yii::getPathOfAlias('system.vendors.TextHighlighter.highlight').'.css');
+		Yii::app()->getClientScript()->registerCssFile($url);
+	}
+}

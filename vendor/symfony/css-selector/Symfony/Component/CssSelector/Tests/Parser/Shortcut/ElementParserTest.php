@@ -1,30 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-19e=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Tests\Parser\Shortcut;
+
+use Symfony\Component\CssSelector\Node\SelectorNode;
+use Symfony\Component\CssSelector\Parser\Shortcut\ElementParser;
+
+/**
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class ElementParserTest extends \PHPUnit_Framework_TestCase
+{
+    /** @dataProvider getParseTestData */
+    public function testParse($source, $representation)
+    {
+        $parser = new ElementParser();
+        $selectors = $parser->parse($source);
+        $this->assertEquals(1, count($selectors));
+
+        /** @var SelectorNode $selector */
+        $selector = $selectors[0];
+        $this->assertEquals($representation, (string) $selector->getTree());
+    }
+
+    public function getParseTestData()
+    {
+        return array(
+            array('*', 'Element[*]'),
+            array('testel', 'Element[testel]'),
+            array('testns|*', 'Element[testns|*]'),
+            array('testns|testel', 'Element[testns|testel]'),
+        );
+    }
+}

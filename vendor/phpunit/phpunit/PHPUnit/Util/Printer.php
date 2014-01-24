@@ -1,72 +1,208 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.0.0
+ */
+
+/**
+ * Utility class that can print to STDOUT or write to a file.
+ *
+ * @package    PHPUnit
+ * @subpackage Util
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ */
+class PHPUnit_Util_Printer
+{
+    /**
+     * If TRUE, flush output after every write.
+     *
+     * @var boolean
+     */
+    protected $autoFlush = FALSE;
+
+    /**
+     * @var    resource
+     */
+    protected $out;
+
+    /**
+     * @var    string
+     */
+    protected $outTarget;
+
+    /**
+     * @var    boolean
+     */
+    protected $printsHTML = FALSE;
+
+    /**
+     * Constructor.
+     *
+     * @param  mixed $out
+     * @throws PHPUnit_Framework_Exception
+     */
+    public function __construct($out = NULL)
+    {
+        if ($out !== NULL) {
+            if (is_string($out)) {
+                if (strpos($out, 'socket://') === 0) {
+                    $out = explode(':', str_replace('socket://', '', $out));
+
+                    if (sizeof($out) != 2) {
+                        throw new PHPUnit_Framework_Exception;
+                    }
+
+                    $this->out = fsockopen($out[0], $out[1]);
+                } else {
+                    if (strpos($out, 'php://') === FALSE &&
+                        !is_dir(dirname($out))) {
+                        mkdir(dirname($out), 0777, TRUE);
+                    }
+
+                    $this->out = fopen($out, 'wt');
+                }
+
+                $this->outTarget = $out;
+            } else {
+                $this->out = $out;
+            }
+        }
+    }
+
+    /**
+     * Flush buffer, optionally tidy up HTML, and close output if it's not to a php stream
+     */
+    public function flush()
+    {
+        if ($this->out && strncmp($this->outTarget, 'php://', 6) !== 0) {
+            fclose($this->out);
+        }
+
+        if ($this->printsHTML === TRUE &&
+            $this->outTarget !== NULL &&
+            strpos($this->outTarget, 'php://') !== 0 &&
+            strpos($this->outTarget, 'socket://') !== 0 &&
+            extension_loaded('tidy')) {
+            file_put_contents(
+              $this->outTarget,
+              tidy_repair_file(
+                $this->outTarget, array('indent' => TRUE, 'wrap' => 0), 'utf8'
+              )
+            );
+        }
+    }
+
+    /**
+     * Performs a safe, incremental flush.
+     *
+     * Do not confuse this function with the flush() function of this class,
+     * since the flush() function may close the file being written to, rendering
+     * the current object no longer usable.
+     *
+     * @since  Method available since Release 3.3.0
+     */
+    public function incrementalFlush()
+    {
+        if ($this->out) {
+            fflush($this->out);
+        } else {
+            flush();
+        }
+    }
+
+    /**
+     * @param  string $buffer
+     */
+    public function write($buffer)
+    {
+        if ($this->out) {
+            fwrite($this->out, $buffer);
+
+            if ($this->autoFlush) {
+                $this->incrementalFlush();
+            }
+        } else {
+            if (PHP_SAPI != 'cli') {
+                $buffer = htmlspecialchars($buffer);
+            }
+
+            print $buffer;
+
+            if ($this->autoFlush) {
+                $this->incrementalFlush();
+            }
+        }
+    }
+
+    /**
+     * Check auto-flush mode.
+     *
+     * @return boolean
+     * @since  Method available since Release 3.3.0
+     */
+    public function getAutoFlush()
+    {
+        return $this->autoFlush;
+    }
+
+    /**
+     * Set auto-flushing mode.
+     *
+     * If set, *incremental* flushes will be done after each write. This should
+     * not be confused with the different effects of this class' flush() method.
+     *
+     * @param boolean $autoFlush
+     * @since  Method available since Release 3.3.0
+     */
+    public function setAutoFlush($autoFlush)
+    {
+        if (is_bool($autoFlush)) {
+            $this->autoFlush = $autoFlush;
+        } else {
+            throw PHPUnit_Util_InvalidArgumentHelper::factory(1, 'boolean');
+        }
+    }
+}

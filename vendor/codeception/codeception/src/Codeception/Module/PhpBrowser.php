@@ -1,176 +1,260 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-LQmabGSQ
+<?php
+
+namespace Codeception\Module;
+
+use Behat\Mink\Driver\GoutteDriver;
+use Codeception\Util\Connector\Goutte;
+use Guzzle\Http\Client;
+use Codeception\Exception\TestRuntime;
+use Codeception\TestCase;
+use Symfony\Component\BrowserKit\Request;
+
+/**
+ * Uses [Mink](http://mink.behat.org) with [Goutte](https://github.com/fabpot/Goutte) and [Guzzle](http://guzzlephp.org/) to interact with your application over CURL.
+ * Module works over CURL and requires **PHP CURL extension** to be enabled.
+ *
+ * Use to perform web acceptance tests with non-javascript browser.
+ *
+ * If test fails stores last shown page in 'output' dir.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: davert.codecept@mailican.com
+ * * relies on [Mink](http://mink.behat.org) and [Guzzle](http://guzzlephp.org/)
+ *
+ * *Please review the code of non-stable modules and provide patches if you have issues.*
+ *
+ * ## Configuration
+ *
+ * * url *required* - start url of your app
+ * * curl - curl options
+ *
+ * ### Example (`acceptance.suite.yml`)
+ *
+ *     modules:
+ *        enabled: [PhpBrowser]
+ *        config:
+ *           PhpBrowser:
+ *              url: 'http://localhost'
+ *              curl:
+ *                  CURLOPT_RETURNTRANSFER: true
+ *
+ * ## Public Properties
+ *
+ * * session - contains Mink Session
+ * * guzzle - contains [Guzzle](http://guzzlephp.org/) client instance: `\Guzzle\Http\Client`
+ *
+ * All SSL certification checks are disabled by default.
+ * To configure CURL options use `curl` config parameter.
+ *
+ */
+class PhpBrowser extends \Codeception\Util\Mink implements \Codeception\Util\FrameworkInterface {
+
+    protected $requiredFields = array('url');
+    protected $config = array('curl' => array());
+
+    protected $curl_defaults = array(
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_CERTINFO => false,
+    );
+
+    /**
+     * @var \Codeception\Util\Connector\Goutte
+     */
+    protected $goutte;
+
+    /**
+     * @var \Guzzle\Http\Client
+     */
+    public $guzzle;
+
+    public function _initialize() {
+        $this->goutte = new Goutte();
+        $driver = new \Behat\Mink\Driver\GoutteDriver($this->goutte);
+
+        // build up a Guzzle friendly list of configuration options
+        // passed in both from our defaults and the respective
+        // yaml configuration file (if applicable)
+        $curl_config['curl.options'] = $this->curl_defaults;
+        foreach ($this->config['curl'] as $key => $val) {
+            if (defined($key)) $curl_config['curl.options'][constant($key)] = $val;
+        }
+
+        // Guzzle client requires that we set the ssl.certificate_authority config
+        // directive if we wish to disable SSL verification
+        if ($curl_config['curl.options'][CURLOPT_SSL_VERIFYPEER] !== true) {
+            $curl_config['ssl.certificate_authority'] = false;
+        }
+
+        $this->goutte->setClient($this->guzzle = new Client('', $curl_config));
+        $this->session = new \Behat\Mink\Session($driver);
+        parent::_initialize();
+    }
+
+    public function _before(TestCase $test) {
+        $this->goutte->resetAuth();
+    }
+
+    public function submitForm($selector, $params) {
+        $form = $this->session->getPage()->find('css',$selector);
+
+        if ($form === null)
+            throw new TestRuntime("Form with selector: \"$selector\" was not found on given page.");
+        /** @var \Behat\Mink\Element\NodeElement[] $fields */
+        $fields = $this->session->getPage()->findAll('css', $selector . ' input:enabled, ' . $selector . ' input[type=hidden]');
+        $url = '';
+
+        foreach ($fields as $field) {
+            $fieldKey = $field->getAttribute('name');
+            $value = array_key_exists($fieldKey, $params) ? $params[$fieldKey] : $field->getValue();
+            $url .= sprintf('%s=%s', $fieldKey, $value) . '&';
+        }
+
+        $fields = $this->session->getPage()->findAll('css', $selector . ' textarea:enabled');
+        foreach ($fields as $field) {
+            $fieldKey = $field->getAttribute('name');
+            $value = array_key_exists($fieldKey, $params) ? $params[$fieldKey] : $field->getValue();            
+            $url .= sprintf('%s=%s',$fieldKey, $value) . '&';
+        }
+
+        $fields = $this->session->getPage()->findAll('css', $selector . ' select:enabled');
+        foreach ($fields as $field) {
+            $fieldKey = $field->getAttribute('name');
+            $value = array_key_exists($fieldKey, $params) ? $params[$fieldKey] : $field->getValue();            
+       	    $url .= sprintf('%s=%s',$fieldKey, $value) . '&';
+        }
+
+        $url .= '&'.http_build_query($params);
+        parse_str($url, $params);
+        $url = $form->getAttribute('action');
+        $method = $form->getAttribute('method');
+
+        $this->call($url, $method, $params);
+    }
+
+    public function sendAjaxPostRequest($uri, $params = array())
+    {
+        $this->sendAjaxRequest('POST', $uri, $params);
+    }
+
+    public function sendAjaxGetRequest($uri, $params = array())
+    {
+        $query = $params ? '?'. http_build_query($params) : '';
+        $this->sendAjaxRequest('GET', $uri.$query, $params);
+    }
+
+    public function sendAjaxRequest($method, $uri, $params = array())
+    {
+        $this->session->setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        $this->call($uri, $method, $params);
+        $this->debug($this->session->getPage()->getContent());
+        $this->session->setRequestHeader('X-Requested-With', '');
+    }
+
+    public function seePageNotFound()
+    {
+        $this->seeResponseCodeIs(404);
+    }
+
+    public function seeResponseCodeIs($code)
+    {
+        $this->assertEquals($code, $this->session->getStatusCode());
+    }
+
+    public function amHttpAuthenticated($username, $password)
+    {
+        $this->session->getDriver()->setBasicAuth($username, $password);
+    }
+
+    /**
+     * Low-level API method.
+     * If Codeception commands are not enough, use [Guzzle HTTP Client](http://guzzlephp.org/) methods directly
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * // from the official Guzzle manual
+     * $I->amGoingTo('Sign all requests with OAuth');
+     * $I->executeInGuzzle(function (\Guzzle\Http\Client $client) {
+     *      $client->addSubscriber(new Guzzle\Plugin\Oauth\OauthPlugin(array(
+     *                  'consumer_key'    => '***',
+     *                  'consumer_secret' => '***',
+     *                  'token'           => '***',
+     *                  'token_secret'    => '***'
+     *      )));
+     * });
+     * ?>
+     * ```
+     *
+     * Not recommended this command too be used on regular basis.
+     * If Codeception lacks important Guzzle Client methods implement then and submit patches.
+     *
+     * @param callable $function
+     */
+    public function executeInGuzzle(\Closure $function)
+    {
+        return $function($this->guzzle);
+    }
+
+    public function _setHeader($header, $value)
+    {
+        $this->session->setRequestHeader($header, $value);
+    }
+
+    public function _getResponseHeader($header)
+    {
+        $headers = $this->session->getResponseHeaders();
+        if (!isset($headers[$header])) return false;
+        return $headers[$header];
+    }
+
+    protected function call($uri, $method = 'get', $params = array())
+    {
+	if (strpos($uri,'#')) $uri = substr($uri,0,strpos($uri,'#'));
+        $browser = $this->session->getDriver()->getClient();
+        if ($browser instanceof Goutte && $method == 'get' && !empty($params)) {
+            $uri .= '?' . http_build_query($params);
+            $browser->request($method, $uri, array());
+        } else {
+            $browser->request($method, $uri, $params);
+        }
+        $this->debugPageInfo();
+    }
+
+    public function _failed(\Codeception\TestCase $test, $fail) {
+		$fileName = str_replace('::','-',$test->getFileName());
+		file_put_contents(\Codeception\Configuration::logDir().basename($fileName).'.page.fail.html', $this->session->getPage()->getContent());
+	}
+
+    protected function debugPageInfo()
+    {
+        /** @var $request Request **/
+        $request = $this->session->getDriver()->getClient()->getRequest();
+
+        $this->debugSection($request->getMethod(), $this->session->getCurrentUrl().' '.json_encode($request->getParameters()));
+        if (count($request->getCookies())) $this->debugSection('Cookies', json_encode($request->getCookies()));
+        $this->debugSection('Headers', json_encode($this->session->getDriver()->getResponseHeaders()));
+        $this->debugSection('Status', $this->session->getStatusCode());
+    }
+
+    public function seeCheckboxIsChecked($checkbox)
+    {
+        $node = $this->findField($checkbox);
+        if (!$node) {
+            $this->fail(", checkbox not found");
+        }
+        $this->assertEquals('checked', $node->getAttribute('checked'));
+    }
+
+    public function dontSeeCheckboxIsChecked($checkbox)
+    {
+        $node = $this->findField($checkbox);
+        if (!$node) {
+            $this->fail(", checkbox not found");
+        }
+        $this->assertNull($node->getAttribute('checked'));
+    }
+}

@@ -1,42 +1,80 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+/**
+ * Forwards records to multiple handlers
+ *
+ * @author Lenar Lõhmus <lenar@city.ee>
+ */
+class GroupHandler extends AbstractHandler
+{
+    protected $handlers;
+
+    /**
+     * @param array   $handlers Array of Handlers.
+     * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
+     */
+    public function __construct(array $handlers, $bubble = true)
+    {
+        foreach ($handlers as $handler) {
+            if (!$handler instanceof HandlerInterface) {
+                throw new \InvalidArgumentException('The first argument of the GroupHandler must be an array of HandlerInterface instances.');
+            }
+        }
+
+        $this->handlers = $handlers;
+        $this->bubble = $bubble;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isHandling(array $record)
+    {
+        foreach ($this->handlers as $handler) {
+            if ($handler->isHandling($record)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handle(array $record)
+    {
+        if ($this->processors) {
+            foreach ($this->processors as $processor) {
+                $record = call_user_func($processor, $record);
+            }
+        }
+
+        foreach ($this->handlers as $handler) {
+            $handler->handle($record);
+        }
+
+        return false === $this->bubble;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handleBatch(array $records)
+    {
+        foreach ($this->handlers as $handler) {
+            $handler->handleBatch($records);
+        }
+    }
+}

@@ -1,30 +1,141 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHP_ParserGenerator, a php 5 parser generator.
+ *
+ * This is a direct port of the Lemon parser generator, found at
+ * {@link http://www.hwaci.com/sw/lemon/}
+ *
+ * PHP version 5
+ *
+ * LICENSE:
+ *
+ * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in
+ *       the documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the PHP_ParserGenerator nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   php
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    CVS: $Id: Rule.php,v 1.1 2006/07/18 00:53:10 cellog Exp $
+ * @since      File available since Release 0.1.0
+ */
+/**
+ * Each production rule in the grammar is stored in this class
+ *
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    0.1.5
+ * @since      Class available since Release 0.1.0
+ */
+class PHP_ParserGenerator_Rule
+{
+    /**
+     * Left-hand side of the rule
+     * @var array an array of {@link PHP_ParserGenerator_Symbol} objects
+     */
+    public $lhs;
+    /**
+     * Alias for the LHS (NULL if none)
+     *
+     * @var array
+     */
+    public $lhsalias = array();
+    /**
+     * Line number for the rule
+     * @var int
+     */
+    public $ruleline;
+    /**
+     * Number of right-hand side symbols
+     */
+    public $nrhs;
+    /**
+     * The right-hand side symbols
+     * @var array an array of {@link PHP_ParserGenerator_Symbol} objects
+     */
+    public $rhs;
+    /**
+     * Aliases for each right-hand side symbol, or null if no alis.
+     *
+     * In this rule:
+     * <pre>
+     * foo ::= BAR(A) baz(B).
+     * </pre>
+     *
+     * The right-hand side aliases are A for BAR, and B for baz.
+     * @var array aliases are indexed by the right-hand side symbol index.
+     */
+    public $rhsalias = array();
+    /**
+     * Line number at which code begins
+     * @var int
+     */
+    public $line;
+    /**
+     * The code executed when this rule is reduced
+     *
+     * <pre>
+     * foo(R) ::= BAR(A) baz(B). {R = A + B;}
+     * </pre>
+     *
+     * In the rule above, the code is "R = A + B;"
+     * @var string|0
+     */
+    public $code;
+    /**
+     * Precedence symbol for this rule
+     * @var PHP_ParserGenerator_Symbol
+     */
+    public $precsym;
+    /**
+     * An index number for this rule
+     *
+     * Used in both naming of reduce functions and determining which rule code
+     * to use for reduce actions
+     * @var int
+     */
+    public $index;
+    /**
+     * True if this rule is ever reduced
+     * @var boolean
+     */
+    public $canReduce;
+    /**
+     * Next rule with the same left-hand side
+     * @var PHP_ParserGenerator_Rule|0
+     */
+    public $nextlhs;
+    /**
+     * Next rule in the global list
+     * @var PHP_ParserGenerator_Rule|0
+     */
+    public $next;
+}

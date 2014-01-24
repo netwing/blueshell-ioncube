@@ -1,306 +1,336 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('system.db.CDbConnection');
+Yii::import('system.db.schema.sqlite.CSqliteSchema');
+
+class CSqliteTest extends CTestCase
+{
+	/**
+	 * @var CDbConnection
+	 */
+	private $db;
+
+	public function setUp()
+	{
+		if(!extension_loaded('pdo') || !extension_loaded('pdo_sqlite'))
+			$this->markTestSkipped('PDO and SQLite extensions are required.');
+
+		$this->db=new CDbConnection('sqlite::memory:');
+		$this->db->active=true;
+		$this->db->pdoInstance->exec(file_get_contents(dirname(__FILE__).'/../data/sqlite.sql'));
+	}
+
+	public function tearDown()
+	{
+		$this->db->active=false;
+	}
+
+	public function testSchema()
+	{
+		$schema=$this->db->schema;
+		$this->assertTrue($schema instanceof CDbSchema);
+		$this->assertEquals($schema->dbConnection,$this->db);
+		$this->assertTrue($schema->commandBuilder instanceof CDbCommandBuilder);
+		$this->assertEquals('\'posts\'',$schema->quoteTableName('posts'));
+		$this->assertEquals('"id"',$schema->quoteColumnName('id'));
+		$this->assertTrue($schema->getTable('posts') instanceof CDbTableSchema);
+		$this->assertTrue($schema->getTable('foo')===null);
+	}
+
+	public function testTable()
+	{
+		$table=$this->db->schema->getTable('posts');
+		$this->assertTrue($table instanceof CDbTableSchema);
+		$this->assertEquals('posts',$table->name);
+		$this->assertEquals('\'posts\'',$table->rawName);
+		$this->assertEquals('id',$table->primaryKey);
+		$this->assertEquals(array('author_id'=>array('users','id')),$table->foreignKeys);
+		$this->assertTrue($table->sequenceName==='');
+		$this->assertEquals(5,count($table->columns));
+
+		$this->assertTrue($table->getColumn('id') instanceof CDbColumnSchema);
+		$this->assertTrue($table->getColumn('foo')===null);
+		$this->assertEquals(array('id','title','create_time','author_id','content'),$table->columnNames);
+
+		$table=$this->db->schema->getTable('orders');
+		$this->assertEquals(array('key1','key2'),$table->primaryKey);
+
+		$table=$this->db->schema->getTable('items');
+		$this->assertEquals('id',$table->primaryKey);
+		$this->assertEquals(array('col1'=>array('orders','key1'),'col2'=>array('orders','key2')),$table->foreignKeys);
+
+		$table=$this->db->schema->getTable('types');
+		$this->assertTrue($table->primaryKey===null);
+		$this->assertTrue($table->foreignKeys===array());
+		$this->assertTrue($table->sequenceName===null);
+
+		$table=$this->db->schema->getTable('invalid');
+		$this->assertNull($table);
+	}
+
+	public function testColumn()
+	{
+		$values=array
+		(
+			'name'=>array('id', 'title', 'create_time', 'author_id', 'content'),
+			'rawName'=>array('"id"', '"title"', '"create_time"', '"author_id"', '"content"'),
+			'defaultValue'=>array(null, null, null, null, null),
+			'size'=>array(null, 128, null, null, null),
+			'precision'=>array(null, 128, null, null, null),
+			'scale'=>array(null, null, null, null, null),
+			'dbType'=>array('integer','varchar(128)','timestamp','integer','text'),
+			'type'=>array('integer','string','string','integer','string'),
+			'isPrimaryKey'=>array(true,false,false,false,false),
+			'isForeignKey'=>array(false,false,false,true,false),
+			'allowNull'=>array(false,false,false,false,true),
+		);
+		$this->checkColumns('posts',$values);
+		$values=array
+		(
+			'name'=>array('int_col', 'int_col2', 'char_col', 'char_col2', 'char_col3', 'char_col4', 'char_col5', 'float_col', 'float_col2', 'blob_col', 'numeric_col', 'time', 'bool_col', 'bool_col2', 'null_col', 'created_at'),
+			'rawName'=>array('"int_col"', '"int_col2"', '"char_col"', '"char_col2"', '"char_col3"', '"char_col4"', '"char_col5"', '"float_col"', '"float_col2"', '"blob_col"', '"numeric_col"', '"time"', '"bool_col"', '"bool_col2"', '"null_col"', '"created_at"'),
+			'defaultValue'=>array(null, 1, null, 'something', null, null, 'NULL', null, '1.23', null, '33.22', '123', null, true, null, null),
+			'size'=>array(null, null, 100, 100, null, 100, 100, 4, null, null, 5, null, null, null, null, null),
+			'precision'=>array(null, null, 100, 100, null, 100, 100, 4, null, null, 5, null, null, null, null, null),
+			'scale'=>array(null, null, null, null, null, null, null, 3, null, null, 2, null, null, null, null, null),
+			'dbType'=>array('int','integer','char(100)','varchar(100)','text','varchar(100)','varchar(100)','real(4,3)','double','blob','numeric(5,2)','timestamp','bool','boolean','integer','timestamp'),
+			'type'=>array('integer','integer','string','string','string','string','string','double','double','string','string','string','boolean','boolean','integer','string'),
+			'isPrimaryKey'=>array(false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false),
+			'isForeignKey'=>array(false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false),
+			'allowNull'=>array(false,true,false,true,true,true,true,false,true,true,true,true,false,true,true,false),
+		);
+		$this->checkColumns('types',$values);
+	}
+
+	protected function checkColumns($tableName,$values)
+	{
+		$table=$this->db->schema->getTable($tableName);
+		foreach($values as $name=>$value)
+		{
+			foreach(array_values($table->columns) as $i=>$column)
+			{
+				$type1=gettype($column->$name);
+				$type2=gettype($value[$i]);
+				$this->assertTrue($column->$name===$value[$i], "$tableName.{$column->name}.$name is {$column->$name} ($type1), different from the expected {$value[$i]} ($type2).");
+			}
+		}
+	}
+
+	public function testCommandBuilder()
+	{
+		$schema=$this->db->schema;
+		$builder=$schema->commandBuilder;
+		$this->assertTrue($builder instanceof CDbCommandBuilder);
+		$table=$schema->getTable('posts');
+
+		$c=$builder->createInsertCommand($table,array('title'=>'test post','create_time'=>time(),'author_id'=>1,'content'=>'test content'));
+		$this->assertEquals('INSERT INTO \'posts\' ("title", "create_time", "author_id", "content") VALUES (:yp0, :yp1, :yp2, :yp3)',$c->text);
+		$c->execute();
+		$this->assertEquals(6,$builder->getLastInsertId($table));
+
+		$c=$builder->createCountCommand($table,new CDbCriteria);
+		$this->assertEquals('SELECT COUNT(*) FROM \'posts\' \'t\'',$c->text);
+		$this->assertEquals(6,$c->queryScalar());
+
+		$c=$builder->createDeleteCommand($table,new CDbCriteria(array(
+			'condition'=>'id=:id',
+			'params'=>array('id'=>6))));
+		$this->assertEquals('DELETE FROM \'posts\' WHERE id=:id',$c->text);
+		$c->execute();
+		$c=$builder->createCountCommand($table,new CDbCriteria);
+		$this->assertEquals(5,$c->queryScalar());
+
+		$c=$builder->createFindCommand($table,new CDbCriteria(array(
+			'select'=>'id, title',
+			'condition'=>'id=:id',
+			'params'=>array('id'=>5),
+			'order'=>'title',
+			'limit'=>2,
+			'offset'=>0)));
+		$this->assertEquals('SELECT id, title FROM \'posts\' \'t\' WHERE id=:id ORDER BY title LIMIT 2',$c->text);
+		$rows=$c->query()->readAll();
+		$this->assertEquals(1,count($rows));
+		$this->assertEquals('post 5',$rows[0]['title']);
+
+		$c=$builder->createUpdateCommand($table,array('title'=>'new post 5'),new CDbCriteria(array(
+			'condition'=>'id=:id',
+			'params'=>array('id'=>5))));
+		$c->execute();
+		$c=$builder->createFindCommand($table,new CDbCriteria(array(
+			'select'=>'title',
+			'condition'=>'id=:id',
+			'params'=>array('id'=>5))));
+		$this->assertEquals('new post 5',$c->queryScalar());
+
+		$c=$builder->createSqlCommand('SELECT title FROM posts \'t\' WHERE id=:id',array(':id'=>3));
+		$this->assertEquals('post 3',$c->queryScalar());
+
+		$c=$builder->createUpdateCounterCommand($table,array('author_id'=>-2),new CDbCriteria(array('condition'=>'id=5')));
+		$this->assertEquals('UPDATE \'posts\' SET "author_id"="author_id"-2 WHERE id=5',$c->text);
+		$c->execute();
+		$c=$builder->createSqlCommand('SELECT author_id FROM posts WHERE id=5');
+		$this->assertEquals(1,$c->queryScalar());
+
+		// test bind by position
+		$c=$builder->createFindCommand($table,new CDbCriteria(array(
+			'select'=>'title',
+			'condition'=>'id=?',
+			'params'=>array(4))));
+		$this->assertEquals('SELECT title FROM \'posts\' \'t\' WHERE id=?',$c->text);
+		$this->assertEquals('post 4',$c->queryScalar());
+
+		// another bind by position
+		$c=$builder->createUpdateCommand($table,array('title'=>'new post 4'),new CDbCriteria(array(
+			'condition'=>'id=?',
+			'params'=>array(4))));
+		$c->execute();
+		$c=$builder->createSqlCommand('SELECT title FROM posts WHERE id=4');
+		$this->assertEquals('new post 4',$c->queryScalar());
+
+		// testCreateCriteria
+		$c=$builder->createCriteria('column=:value',array(':value'=>'value'));
+		$this->assertEquals('column=:value',$c->condition);
+		$this->assertEquals(array(':value'=>'value'),$c->params);
+
+		$c=$builder->createCriteria(array('condition'=>'column=:value','params'=>array(':value'=>'value')));
+		$this->assertEquals('column=:value',$c->condition);
+		$this->assertEquals(array(':value'=>'value'),$c->params);
+
+		$c2=$builder->createCriteria($c);
+		$this->assertTrue($c2!==$c);
+		$this->assertEquals('column=:value',$c2->condition);
+		$this->assertEquals(array(':value'=>'value'),$c2->params);
+
+		// testCreatePkCriteria
+		$c=$builder->createPkCriteria($table,1,'author_id>1');
+		$this->assertEquals('\'posts\'."id"=1 AND (author_id>1)',$c->condition);
+
+		$c=$builder->createPkCriteria($table,array(1,2));
+		$this->assertEquals('\'posts\'."id" IN (1, 2)',$c->condition);
+
+		$c=$builder->createPkCriteria($table,array());
+		$this->assertEquals('0=1',$c->condition);
+
+		$table2=$schema->getTable('orders');
+		$c=$builder->createPkCriteria($table2,array('key1'=>1,'key2'=>2),'name=\'\'');
+		$this->assertEquals('\'orders\'."key1"=1 AND \'orders\'."key2"=2 AND (name=\'\')',$c->condition);
+
+		$c=$builder->createPkCriteria($table2,array(array('key1'=>1,'key2'=>2),array('key1'=>3,'key2'=>4)));
+		$this->assertEquals('\'orders\'."key1"||\',\'||\'orders\'."key2" IN (1||\',\'||2, 3||\',\'||4)',$c->condition);
+
+		// createColumnCriteria
+		$c=$builder->createColumnCriteria($table,array('id'=>1,'author_id'=>2),'title=\'\'');
+		$this->assertEquals('\'posts\'."id"=:yp0 AND \'posts\'."author_id"=:yp1 AND (title=\'\')',$c->condition);
+
+		$c=$builder->createPkCriteria($table2,array());
+		$this->assertEquals('0=1',$c->condition);
+	}
+
+	public function testResetSequence()
+	{
+		$max=$this->db->createCommand("SELECT MAX(id) FROM users")->queryScalar();
+		$this->db->createCommand("DELETE FROM users")->execute();
+		$this->db->createCommand("INSERT INTO users (username, password, email) VALUES ('user4','pass4','email4')")->execute();
+		$max2=$this->db->createCommand("SELECT MAX(id) FROM users")->queryScalar();
+		$this->assertEquals($max+1,$max2);
+
+		$userTable=$this->db->schema->getTable('users');
+
+		$this->db->createCommand("DELETE FROM users")->execute();
+		$this->db->schema->resetSequence($userTable);
+		$this->db->createCommand("INSERT INTO users (username, password, email) VALUES ('user4','pass4','email4')")->execute();
+		$max=$this->db->createCommand("SELECT MAX(id) FROM users")->queryScalar();
+		$this->assertEquals(1,$max);
+		$this->db->createCommand("INSERT INTO users (username, password, email) VALUES ('user4','pass4','email4')")->execute();
+		$max=$this->db->createCommand("SELECT MAX(id) FROM users")->queryScalar();
+		$this->assertEquals(2,$max);
+
+		$this->db->createCommand("DELETE FROM users")->execute();
+		$this->db->schema->resetSequence($userTable,10);
+		$this->db->createCommand("INSERT INTO users (username, password, email) VALUES ('user4','pass4','email4')")->execute();
+		$max=$this->db->createCommand("SELECT MAX(id) FROM users")->queryScalar();
+		$this->assertEquals(10,$max);
+		$this->db->createCommand("INSERT INTO users (username, password, email) VALUES ('user4','pass4','email4')")->execute();
+		$max=$this->db->createCommand("SELECT MAX(id) FROM users")->queryScalar();
+		$this->assertEquals(11,$max);
+	}
+
+	public function testCheckIntegrity1()
+	{
+		$this->db->schema->checkIntegrity(false);
+		$this->db->schema->checkIntegrity(true);
+	}
+
+	public function testCheckIntegrity2()
+	{
+		$this->db->schema->checkIntegrity(true);
+		$this->assertEquals(0,$this->db->createCommand('SELECT COUNT(*) FROM profiles WHERE user_id=9999')->queryScalar());
+		if(version_compare(PHP_VERSION,'5.3.0','>='))
+			$this->setExpectedException('CDbException');
+		$this->db->createCommand("INSERT INTO profiles (first_name,last_name,user_id) VALUES ('orphaned','profile',9999)")->execute();
+		$this->assertEquals(1,$this->db->createCommand('SELECT COUNT(*) FROM profiles WHERE user_id=9999')->queryScalar());
+	}
+
+	public function testCheckIntegrity3()
+	{
+		$this->db->schema->checkIntegrity(false);
+		$this->assertEquals(0,$this->db->createCommand('SELECT COUNT(*) FROM profiles WHERE user_id=9999')->queryScalar());
+		$this->db->createCommand("INSERT INTO profiles (first_name,last_name,user_id) VALUES ('orphaned','profile',9999)")->execute();
+		$this->assertEquals(1,$this->db->createCommand('SELECT COUNT(*) FROM profiles WHERE user_id=9999')->queryScalar());
+	}
+
+	public function testRenameTable()
+	{
+		$this->db->schema->refresh();
+		$this->assertArrayHasKey('profiles',$this->db->schema->tables);
+		$this->assertArrayHasKey('users',$this->db->schema->tables);
+		$this->assertArrayNotHasKey('profiles_renamed',$this->db->schema->tables);
+		$this->assertArrayNotHasKey('users_renamed',$this->db->schema->tables);
+
+		$this->db->schema->refresh();
+		$this->db->createCommand($this->db->schema->renameTable('profiles','profiles_renamed'))->execute();
+		$this->db->createCommand($this->db->schema->renameTable('users','users_renamed'))->execute();
+
+		$this->db->schema->refresh();
+		$this->assertArrayNotHasKey('profiles',$this->db->schema->tables);
+		$this->assertArrayNotHasKey('users',$this->db->schema->tables);
+		$this->assertArrayHasKey('profiles_renamed',$this->db->schema->tables);
+		$this->assertArrayHasKey('users_renamed',$this->db->schema->tables);
+	}
+
+	public function testMultipleInsert()
+	{
+		$builder=$this->db->getSchema()->getCommandBuilder();
+		$tableName='types';
+		$data=array(
+			array(
+				'int_col'=>1,
+				'char_col'=>'char_col_1',
+				'char_col2'=>'char_col_2_1',
+				'float_col'=>1.1,
+				'bool_col'=>true,
+			),
+			array(
+				'int_col'=>2,
+				'char_col'=>'char_col_2',
+				'float_col'=>2.2,
+				'bool_col'=>false,
+			),
+		);
+		$command=$builder->createMultipleInsertCommand($tableName,$data);
+		$command->execute();
+
+		$rows=$builder->dbConnection->createCommand('SELECT * FROM '.$builder->dbConnection->quoteTableName($tableName))->queryAll();
+
+		$this->assertEquals(count($data),count($rows),'Records count miss matches!');
+		foreach($rows as $rowIndex=>$row)
+			foreach($row as $columnName=>$value)
+			{
+				$columnIndex=array_search($columnName,$data[$rowIndex],true);
+				if($columnIndex==false)
+					continue;
+				$expectedValue=$data[$rowIndex][$columnIndex];
+				$this->assertTrue($expectedValue==$value,"Value for column '{$columnName}' incorrect!");
+			}
+	}
+}

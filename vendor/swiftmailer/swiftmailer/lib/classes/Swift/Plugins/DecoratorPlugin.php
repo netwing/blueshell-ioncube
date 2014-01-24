@@ -1,103 +1,211 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+qK16BieUXYJ
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Allows customization of Messages on-the-fly.
+ *
+ * @package    Swift
+ * @subpackage Plugins
+ * @author     Chris Corbyn
+ * @author     Fabien Potencier
+ */
+class Swift_Plugins_DecoratorPlugin implements Swift_Events_SendListener, Swift_Plugins_Decorator_Replacements
+{
+    /** The replacement map */
+    private $_replacements;
+
+    /** The body as it was before replacements */
+    private $_originalBody;
+
+    /** The original headers of the message, before replacements */
+    private $_originalHeaders = array();
+
+    /** Bodies of children before they are replaced */
+    private $_originalChildBodies = array();
+
+    /** The Message that was last replaced */
+    private $_lastMessage;
+
+    /**
+     * Create a new DecoratorPlugin with $replacements.
+     *
+     * The $replacements can either be an associative array, or an implementation
+     * of {@link Swift_Plugins_Decorator_Replacements}.
+     *
+     * When using an array, it should be of the form:
+     * <code>
+     * $replacements = array(
+     *  "address1@domain.tld" => array("{a}" => "b", "{c}" => "d"),
+     *  "address2@domain.tld" => array("{a}" => "x", "{c}" => "y")
+     * )
+     * </code>
+     *
+     * When using an instance of {@link Swift_Plugins_Decorator_Replacements},
+     * the object should return just the array of replacements for the address
+     * given to {@link Swift_Plugins_Decorator_Replacements::getReplacementsFor()}.
+     *
+     * @param mixed $replacements Array or Swift_Plugins_Decorator_Replacements
+     */
+    public function __construct($replacements)
+    {
+        $this->setReplacements($replacements);
+    }
+
+    /**
+     * Sets replacements.
+     *
+     * @param mixed $replacements Array or Swift_Plugins_Decorator_Replacements
+     *
+     * @see __construct()
+     */
+    public function setReplacements($replacements)
+    {
+        if (!($replacements instanceof \Swift_Plugins_Decorator_Replacements)) {
+            $this->_replacements = (array) $replacements;
+        } else {
+            $this->_replacements = $replacements;
+        }
+    }
+
+    /**
+     * Invoked immediately before the Message is sent.
+     *
+     * @param Swift_Events_SendEvent $evt
+     */
+    public function beforeSendPerformed(Swift_Events_SendEvent $evt)
+    {
+        $message = $evt->getMessage();
+        $this->_restoreMessage($message);
+        $to = array_keys($message->getTo());
+        $address = array_shift($to);
+        if ($replacements = $this->getReplacementsFor($address)) {
+            $body = $message->getBody();
+            $search = array_keys($replacements);
+            $replace = array_values($replacements);
+            $bodyReplaced = str_replace(
+                $search, $replace, $body
+                );
+            if ($body != $bodyReplaced) {
+                $this->_originalBody = $body;
+                $message->setBody($bodyReplaced);
+            }
+
+            foreach ($message->getHeaders()->getAll() as $header) {
+                $body = $header->getFieldBodyModel();
+                $count = 0;
+                if (is_array($body)) {
+                    $bodyReplaced = array();
+                    foreach ($body as $key => $value) {
+                        $count1 = 0;
+                        $count2 = 0;
+                        $key = is_string($key) ? str_replace($search, $replace, $key, $count1) : $key;
+                        $value = is_string($value) ? str_replace($search, $replace, $value, $count2) : $value;
+                        $bodyReplaced[$key] = $value;
+
+                        if (!$count && ($count1 || $count2)) {
+                            $count = 1;
+                        }
+                    }
+                } else {
+                    $bodyReplaced = str_replace($search, $replace, $body, $count);
+                }
+
+                if ($count) {
+                    $this->_originalHeaders[$header->getFieldName()] = $body;
+                    $header->setFieldBodyModel($bodyReplaced);
+                }
+            }
+
+            $children = (array) $message->getChildren();
+            foreach ($children as $child) {
+                list($type, ) = sscanf($child->getContentType(), '%[^/]/%s');
+                if ('text' == $type) {
+                    $body = $child->getBody();
+                    $bodyReplaced = str_replace(
+                        $search, $replace, $body
+                        );
+                    if ($body != $bodyReplaced) {
+                        $child->setBody($bodyReplaced);
+                        $this->_originalChildBodies[$child->getId()] = $body;
+                    }
+                }
+            }
+            $this->_lastMessage = $message;
+        }
+    }
+
+    /**
+     * Find a map of replacements for the address.
+     *
+     * If this plugin was provided with a delegate instance of
+     * {@link Swift_Plugins_Decorator_Replacements} then the call will be
+     * delegated to it.  Otherwise, it will attempt to find the replacements
+     * from the array provided in the constructor.
+     *
+     * If no replacements can be found, an empty value (NULL) is returned.
+     *
+     * @param string $address
+     *
+     * @return array
+     */
+    public function getReplacementsFor($address)
+    {
+        if ($this->_replacements instanceof Swift_Plugins_Decorator_Replacements) {
+            return $this->_replacements->getReplacementsFor($address);
+        } else {
+            return isset($this->_replacements[$address])
+                ? $this->_replacements[$address]
+                : null
+                ;
+        }
+    }
+
+    /**
+     * Invoked immediately after the Message is sent.
+     *
+     * @param Swift_Events_SendEvent $evt
+     */
+    public function sendPerformed(Swift_Events_SendEvent $evt)
+    {
+        $this->_restoreMessage($evt->getMessage());
+    }
+
+    // -- Private methods
+
+    /** Restore a changed message back to its original state */
+    private function _restoreMessage(Swift_Mime_Message $message)
+    {
+        if ($this->_lastMessage === $message) {
+            if (isset($this->_originalBody)) {
+                $message->setBody($this->_originalBody);
+                $this->_originalBody = null;
+            }
+            if (!empty($this->_originalHeaders)) {
+                foreach ($message->getHeaders()->getAll() as $header) {
+                    if (array_key_exists($header->getFieldName(), $this->_originalHeaders)) {
+                        $header->setFieldBodyModel($this->_originalHeaders[$header->getFieldName()]);
+                    }
+                }
+                $this->_originalHeaders = array();
+            }
+            if (!empty($this->_originalChildBodies)) {
+                $children = (array) $message->getChildren();
+                foreach ($children as $child) {
+                    $id = $child->getId();
+                    if (array_key_exists($id, $this->_originalChildBodies)) {
+                        $child->setBody($this->_originalChildBodies[$id]);
+                    }
+                }
+                $this->_originalChildBodies = array();
+            }
+            $this->_lastMessage = null;
+        }
+    }
+}

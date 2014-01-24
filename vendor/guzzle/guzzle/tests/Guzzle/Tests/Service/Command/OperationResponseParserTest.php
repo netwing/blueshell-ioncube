@@ -1,205 +1,309 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-1xWXhQPBvk7W
+<?php
+
+namespace Guzzle\Tests\Service\Command;
+
+use Guzzle\Http\Message\Response;
+use Guzzle\Service\Client;
+use Guzzle\Service\Command\OperationResponseParser;
+use Guzzle\Service\Command\OperationCommand;
+use Guzzle\Service\Description\Operation;
+use Guzzle\Service\Description\ServiceDescription;
+use Guzzle\Service\Command\LocationVisitor\Response\StatusCodeVisitor;
+use Guzzle\Service\Command\LocationVisitor\Response\ReasonPhraseVisitor;
+use Guzzle\Service\Command\LocationVisitor\Response\JsonVisitor;
+use Guzzle\Service\Command\LocationVisitor\Response\BodyVisitor;
+use Guzzle\Service\Command\LocationVisitor\VisitorFlyweight;
+
+/**
+ * @covers Guzzle\Service\Command\OperationResponseParser
+ * @covers Guzzle\Service\Command\CreateResponseClassEvent
+ */
+class OperationResponseParserTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testHasVisitors()
+    {
+        $p = new OperationResponseParser(new VisitorFlyweight(array()));
+        $visitor = new BodyVisitor();
+        $p->addVisitor('foo', $visitor);
+        $this->assertSame($visitor, $this->readAttribute($p, 'factory')->getResponseVisitor('foo'));
+    }
+
+    public function testUsesParentParser()
+    {
+        $p = new OperationResponseParser(new VisitorFlyweight());
+        $operation = new Operation();
+        $operation->setServiceDescription(new ServiceDescription());
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($p)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(200, array('Content-Type' => 'application/xml'), '<F><B>C</B></F>'), true);
+        $this->assertInstanceOf('SimpleXMLElement', $op->execute());
+    }
+
+    public function testVisitsLocations()
+    {
+        $parser = new OperationResponseParser(new VisitorFlyweight(array()));
+        $parser->addVisitor('statusCode', new StatusCodeVisitor());
+        $parser->addVisitor('reasonPhrase', new ReasonPhraseVisitor());
+        $parser->addVisitor('json', new JsonVisitor());
+        $op = new OperationCommand(array(), $this->getDescription()->getOperation('test'));
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(201), true);
+        $result = $op->execute();
+        $this->assertEquals(201, $result['code']);
+        $this->assertEquals('Created', $result['phrase']);
+    }
+
+    public function testVisitsLocationsForJsonResponse()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $operation = $this->getDescription()->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(200, array(
+            'Content-Type' => 'application/json'
+        ), '{"baz":"bar","enigma":"123"}'), true);
+        $result = $op->execute();
+        $this->assertEquals(array(
+            'baz'    => 'bar',
+            'enigma' => '123',
+            'code'   => 200,
+            'phrase' => 'OK'
+        ), $result->toArray());
+    }
+
+    public function testSkipsUnkownModels()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $operation = $this->getDescription()->getOperation('test');
+        $operation->setResponseClass('Baz')->setResponseType('model');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(201), true);
+        $this->assertInstanceOf('Guzzle\Http\Message\Response', $op->execute());
+    }
+
+    public function testAllowsModelProcessingToBeDisabled()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $operation = $this->getDescription()->getOperation('test');
+        $op = new OperationCommand(array('command.response_processing' => 'native'), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(200, array(
+            'Content-Type' => 'application/json'
+        ), '{"baz":"bar","enigma":"123"}'), true);
+        $result = $op->execute();
+        $this->assertInstanceOf('Guzzle\Service\Resource\Model', $result);
+        $this->assertEquals(array(
+            'baz'    => 'bar',
+            'enigma' => '123'
+        ), $result->toArray());
+    }
+
+    public function testCanInjectModelSchemaIntoModels()
+    {
+        $parser = new OperationResponseParser(VisitorFlyweight::getInstance(), true);
+        $desc = $this->getDescription();
+        $operation = $desc->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(200, array(
+            'Content-Type' => 'application/json'
+        ), '{"baz":"bar","enigma":"123"}'), true);
+        $result = $op->execute();
+        $this->assertSame($result->getStructure(), $desc->getModel('Foo'));
+    }
+
+    public function testDoesNotParseXmlWhenNotUsingXmlVisitor()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $description = ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => 'Foo')),
+            'models' => array(
+                'Foo' => array(
+                    'type'       => 'object',
+                    'properties' => array('baz' => array('location' => 'body'))
+                )
+            )
+        ));
+        $operation = $description->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $brokenXml = '<broken><><><<xml>>>>>';
+        $op->prepare()->setResponse(new Response(200, array(
+            'Content-Type' => 'application/xml'
+        ), $brokenXml), true);
+        $result = $op->execute();
+        $this->assertEquals(array('baz'), $result->getKeys());
+        $this->assertEquals($brokenXml, (string) $result['baz']);
+    }
+
+    public function testVisitsAdditionalProperties()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $description = ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => 'Foo')),
+            'models' => array(
+                'Foo' => array(
+                    'type' => 'object',
+                    'properties' => array(
+                        'code' => array('location' => 'statusCode')
+                    ),
+                    'additionalProperties' => array(
+                        'location' => 'json',
+                        'type' => 'object',
+                        'properties' => array(
+                            'a' => array(
+                                'type' => 'string',
+                                'filters' => 'strtoupper'
+                            )
+                        )
+                    )
+                )
+            )
+        ));
+
+        $operation = $description->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $json = '[{"a":"test"},{"a":"baz"}]';
+        $op->prepare()->setResponse(new Response(200, array('Content-Type' => 'application/json'), $json), true);
+        $result = $op->execute()->toArray();
+        $this->assertEquals(array(
+            'code' => 200,
+            array('a' => 'TEST'),
+            array('a' => 'BAZ')
+        ), $result);
+    }
+
+    /**
+     * @group issue-399
+     * @link https://github.com/guzzle/guzzle/issues/399
+     */
+    public function testAdditionalPropertiesDisabledDiscardsData()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $description = ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => 'Foo')),
+            'models'     => array(
+                'Foo' => array(
+                    'type'       => 'object',
+                    'additionalProperties' => false,
+                    'properties' => array(
+                        'name'   => array(
+                            'location' => 'json',
+                            'type'     => 'string',
+                        ),
+                        'nested' => array(
+                            'location'             => 'json',
+                            'type'                 => 'object',
+                            'additionalProperties' => false,
+                            'properties'           => array(
+                                'width' => array(
+                                    'type' => 'integer'
+                                )
+                            ),
+                        ),
+                        'code'   => array('location' => 'statusCode')
+                    ),
+
+                )
+            )
+        ));
+
+        $operation = $description->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $json = '{"name":"test", "volume":2.0, "nested":{"width":10,"bogus":1}}';
+        $op->prepare()->setResponse(new Response(200, array('Content-Type' => 'application/json'), $json), true);
+        $result = $op->execute()->toArray();
+        $this->assertEquals(array(
+            'name' => 'test',
+            'nested' => array(
+                'width' => 10,
+            ),
+            'code' => 200
+        ), $result);
+    }
+
+    public function testCreatesCustomResponseClassInterface()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $description = ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => 'Guzzle\Tests\Mock\CustomResponseModel'))
+        ));
+        $operation = $description->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(200, array('Content-Type' => 'application/json'), 'hi!'), true);
+        $result = $op->execute();
+        $this->assertInstanceOf('Guzzle\Tests\Mock\CustomResponseModel', $result);
+        $this->assertSame($op, $result->command);
+    }
+
+    /**
+     * @expectedException \Guzzle\Service\Exception\ResponseClassException
+     * @expectedExceptionMessage must exist
+     */
+    public function testEnsuresResponseClassExists()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $description = ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => 'Foo\Baz\Bar'))
+        ));
+        $operation = $description->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(200, array('Content-Type' => 'application/json'), 'hi!'), true);
+        $op->execute();
+    }
+
+    /**
+     * @expectedException \Guzzle\Service\Exception\ResponseClassException
+     * @expectedExceptionMessage and implement
+     */
+    public function testEnsuresResponseClassImplementsResponseClassInterface()
+    {
+        $parser = OperationResponseParser::getInstance();
+        $description = ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => __CLASS__))
+        ));
+        $operation = $description->getOperation('test');
+        $op = new OperationCommand(array(), $operation);
+        $op->setResponseParser($parser)->setClient(new Client());
+        $op->prepare()->setResponse(new Response(200, array('Content-Type' => 'application/json'), 'hi!'), true);
+        $op->execute();
+    }
+
+    protected function getDescription()
+    {
+        return ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => 'Foo')),
+            'models' => array(
+                'Foo' => array(
+                    'type'       => 'object',
+                    'properties' => array(
+                        'baz'    => array('type' => 'string', 'location' => 'json'),
+                        'code'   => array('location' => 'statusCode'),
+                        'phrase' => array('location' => 'reasonPhrase'),
+                    )
+                )
+            )
+        ));
+    }
+
+    public function testCanAddListenerToParseDomainObjects()
+    {
+        $client = new Client();
+        $client->setDescription(ServiceDescription::factory(array(
+            'operations' => array('test' => array('responseClass' => 'FooBazBar'))
+        )));
+        $foo = new \stdClass();
+        $client->getEventDispatcher()->addListener('command.parse_response', function ($e) use ($foo) {
+             $e['result'] = $foo;
+        });
+        $command = $client->getCommand('test');
+        $command->prepare()->setResponse(new Response(200), true);
+        $result = $command->execute();
+        $this->assertSame($result, $foo);
+    }
+}

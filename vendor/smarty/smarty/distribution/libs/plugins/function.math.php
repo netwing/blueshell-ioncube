@@ -1,50 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/+swDCcxMwi7I60gRjY1d4y6Mg9udMGb
+<?php
+/**
+ * Smarty plugin
+ *
+ * This plugin is only for Smarty2 BC
+ * @package Smarty
+ * @subpackage PluginsFunction
+ */
+
+/**
+ * Smarty {math} function plugin
+ *
+ * Type:     function<br>
+ * Name:     math<br>
+ * Purpose:  handle math computations in template
+ *
+ * @link http://www.smarty.net/manual/en/language.function.math.php {math}
+ *          (Smarty online manual)
+ * @author   Monte Ohrt <monte at ohrt dot com>
+ * @param array                    $params   parameters
+ * @param Smarty_Internal_Template $template template object
+ * @return string|null
+ */
+function smarty_function_math($params, $template)
+{
+    static $_allowed_funcs = array(
+        'int' => true, 'abs' => true, 'ceil' => true, 'cos' => true, 'exp' => true, 'floor' => true,
+        'log' => true, 'log10' => true, 'max' => true, 'min' => true, 'pi' => true, 'pow' => true,
+        'rand' => true, 'round' => true, 'sin' => true, 'sqrt' => true, 'srand' => true ,'tan' => true
+    );
+    // be sure equation parameter is present
+    if (empty($params['equation'])) {
+        trigger_error("math: missing equation parameter",E_USER_WARNING);
+
+        return;
+    }
+
+    $equation = $params['equation'];
+
+    // make sure parenthesis are balanced
+    if (substr_count($equation,"(") != substr_count($equation,")")) {
+        trigger_error("math: unbalanced parenthesis",E_USER_WARNING);
+
+        return;
+    }
+
+    // match all vars in equation, make sure all are passed
+    preg_match_all("!(?:0x[a-fA-F0-9]+)|([a-zA-Z][a-zA-Z0-9_]*)!",$equation, $match);
+
+    foreach ($match[1] as $curr_var) {
+        if ($curr_var && !isset($params[$curr_var]) && !isset($_allowed_funcs[$curr_var])) {
+            trigger_error("math: function call $curr_var not allowed",E_USER_WARNING);
+
+            return;
+        }
+    }
+
+    foreach ($params as $key => $val) {
+        if ($key != "equation" && $key != "format" && $key != "assign") {
+            // make sure value is not empty
+            if (strlen($val)==0) {
+                trigger_error("math: parameter $key is empty",E_USER_WARNING);
+
+                return;
+            }
+            if (!is_numeric($val)) {
+                trigger_error("math: parameter $key: is not numeric",E_USER_WARNING);
+
+                return;
+            }
+            $equation = preg_replace("/\b$key\b/", " \$params['$key'] ", $equation);
+        }
+    }
+    $smarty_math_result = null;
+    eval("\$smarty_math_result = ".$equation.";");
+
+    if (empty($params['format'])) {
+        if (empty($params['assign'])) {
+            return $smarty_math_result;
+        } else {
+            $template->assign($params['assign'],$smarty_math_result);
+        }
+    } else {
+        if (empty($params['assign'])) {
+            printf($params['format'],$smarty_math_result);
+        } else {
+            $template->assign($params['assign'],sprintf($params['format'],$smarty_math_result));
+        }
+    }
+}

@@ -1,219 +1,249 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-3GESf1QvlIQkfITfRPbDhbPHylu=
+<?php
+/**
+ * Message translations for [cs]
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => 'Alias "{alias}" je neplatný. Ubezpečte se, že obsahuje cestu k platnému PHP souboru.',
+  'GD and FreeType PHP extensions are required.' => 'Požadované jsou PHP rozšírení GD a FreeType.',
+  'The "range" property must be specified with a list of values.' => 'Vlastnost "range" musí mít specifikovaný seznam hodnot.',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => 'Formát pro den v týdnu musí být "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".',
+  'Unable to import "{alias}". Please check your server configuration to make sure you are allowed to change PHP include_path.' => 'Nepodařilo se importovat "{alias}". Ujistěte se, že konfigurace serveru vám umožňuje změnit PHP nastavení pro include_path.',
+  'Your request is invalid.' => 'Váš požadavek je neplatný.',
+  '{attribute} is in the list.' => '{attribute} se nachází v seznamu.',
+  '{className} does not support flushValues() functionality.' => '{className} nepodporuje funkcionalitu flushValues().',
+  '"{path}" is not a valid directory.' => '"{path}" není platný adresář.',
+  '&lt; Previous' => '&lt; Předcházející',
+  '&lt;&lt; First' => '&lt;&lt; První',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record vyžaduje komponentu aplikace "db" CDbConnection.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Active record "{class}" má neplatnou konfiguraci pro relaci "{relation}". Konfigurace musí specifikovat typ relace, Active record objekt a foreign key.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'Active record "{class}" se pokusila najít neplatný sloupec "{column}". Pozor - hledaný sloupec musí existovat v databázi, nebo musí být výrazem s aliasem.',
+  'Active record class "{class}" does not have a scope named "{scope}".' => 'Active record objekt "{class}" nemá přiřazený jmenný prostor "{scope}".',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'Alias "{alias}" je neplatný. Ujistěte se, že ukazuje na existující adresář nebo soubor.',
+  'Application Log' => 'Aplikační log',
+  'Application base path "{path}" is not a valid directory.' => 'Hlavní cesta k adresáři aplikace "{path}" je neplatná.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'Runtime cesta k aplikaci "{path}" je neplatná. Ujistěte se, že ukazuje na existující adresář a má práva zápisu pro webový server.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'Autorizační záznam "{item}" je už přiřazený uživateli "{user}".',
+  'Base path "{path}" is not a valid directory.' => 'Cesta k hlavnímu adresáři "{path}" je neplatná.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache vyžaduje přítomnost knihovny APC.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" je neplatná. Ujistěte se, že ukazuje na existující adresář a má práva zápisu pro webový server.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID je neplatné. Ujistěte se, že "{id}" odkazuje na platnou cache komponentu aplikace.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" má nesprávně nastavenou akci. Nebylo možné najít uvedenou akci v současném kontroleru.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" je neplatné. Ujistěte se, že odkazuje na ID aplikační komponenty CDbConnection.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" je neplatné. Ujistěte se, že odkazuje na ID aplikační komponentu CDbConnection.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql nemůže být prázdný.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand nemohl vykonat SQL příkaz: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand nemohl připravit SQL příkaz: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection nepodporuje načtení schématu pro databázový ovladač {driver}.',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection se nemohl připojit na databázi.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection se nemohl připojit na databázi: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection je neaktivní a nemůže vykonávat žádné databázové operace.',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString nemůže být prázdný.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader nemůže číst předchozí záznamy. Je možné číst pouze následující záznamy.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" je neplatné. Ujistěte se, že odkazuje na ID aplikační komponenty CDbConnection.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" neukazuje na platnou aplikační komponentu CDbConnection.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID je neplatné. Ujistěte se, že "{id}" odkazuje na platnou databázovou komponentu.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" je neplatné. Ujistěte se, že odkazuje na platné ID databázové komponenty aplikace.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction není aktivní a nemůže vykonávat operace commit ani rollback.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory nemůže být prázdné.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache vyžaduje přítomnost PHP rozšíření eAccelerator, nebo mít zapnutou podporu s nastavením "--with-eaccelerator-shared-memory".',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName nemůže být prázdne.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" ukazuje cestu k neexistujícímu adresáři. Ujistěte se, že adresář existuje a má práva zápisu pro webový server.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain akceptuje pouze objekt implementující interface IFilter.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl nemůže být prázdné.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name nemůže být prázdné.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName nemůže být prázdné.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection může obsahovat pouze objekty typu CHttpCookie.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest nedokázal identifikovat URL vstupního souboru.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest nedokázal identifikovat informace o cestě k souboru požadavku.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest nedokázal identifikovat požadované URI.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode může nabývat pouze hodnoty "none", "allow" nebo "only".',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}" je neplatná. Zadejte prosím integer mezi 0 až 100.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" není platný adresář.',
+  'CMemCache server configuration must be an array.' => 'Konfigurace CMemCache musí být pole.',
+  'CMemCache server configuration must have "host" value.' => 'Konfigurace CMemCache musí obsahovat hodnotu pro "host".',
+  'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name je povinný údaj.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute zjistil nesprávně uspořádané bloky kódu "{token}". Ujistěte se, že volání Yii::beginProfile() a Yii::endProfile() jsou vložené správně.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" je nesprávný. Správné hodnoty mohou být "summary" a "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager vyžaduje přítomnost PHP rozšíření MCrypt pro účely využití šifrujících funkcí.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey nemůže být prázdný.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey nemůže být prázdný.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> může obsahovat pouze objekty třídy {type}.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat musí být "path" nebo "get".',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache vyžaduje přítomnost knihovny PHP wincache.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache je deaktivovaná. Nastavte prosím wincache.ucenabled "On" v konfiguračním souboru php.ini.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache vyžaduje přítomnost PHP knihovny XCache.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache vyžaduje přítomnost PHP knihovny Zend Data Cache.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Není možné přidat "{child}" jako potomka "{name}". Byl identifikovaný nekonečný cyklus.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Není možné přidat "{child}" jako potomka "{parent}". Byl identifikovaný nekonečný cyklus.',
+  'Cannot add "{name}" as a child of itself.' => 'Není možné přidat "{name}" jako potomka sebe sama.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => 'Není možné přidat položku typu "{child}" k položce typu "{parent}".',
+  'Column name must be either a string or an array.' => 'Název sloupce musí být řetězec nebo pole.',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" nebo "{child}" neexistují.',
+  'Error: Table "{table}" does not have a primary key.' => 'Chyba: Tabulka "{table}" neobsahuje primární klíč.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Chyba: Tabulka "{table}" obsahuje složený primární klíč, který ale není podporovaný CRUD příkazem.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => 'Událost "{class}.{event}" je připojená neplatným obsluhovačem událostí "{handler}".',
+  'Event "{class}.{event}" is not defined.' => 'Událost "{class}.{event}" není definovaná.',
+  'Extension path "{path}" does not exist.' => 'Cesta pro rozšíření "{path}" neexistuje.',
+  'Failed to initialize the mcrypt module.' => 'Nepodařilo se iniciovat mcrypt modul.',
+  'Failed to set unsafe attribute "{attribute}".' => 'Nepodařilo se nastavit neošetřený atribut "{attribute}".',
+  'Failed to write the uploaded file "{file}" to disk.' => 'Nepodařilo se zapsat nahraný soubor "{file}" na disk.',
+  'File upload was stopped by extension.' => 'Nahrávání souboru bylo přerušené rozšířením.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => 'Filtr "{filter}" je neplatný. Kontroler "{class}" neobsahuje filtrovací metodu "filter{filter}".',
+  'Get a new code' => 'Nový kód',
+  'Go to page: ' => 'Přejít na stránku: ',
+  'Invalid MO file revision: {revision}.' => 'Neplatná revize MO souboru: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'Neplatný MO soubor: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'Neplatná spočítatelná hodnota "{value}". Ujistěte se, že hodnota je z výběru ({enum}).',
+  'Invalid operator "{operator}".' => 'Neplatný operátor "{operator}".',
+  'Last &gt;&gt;' => 'Poslední &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'Položky seznamu musí být buď pole nebo objekt implementující Traversable.',
+  'List index "{index}" is out of bound.' => 'Index seznamu "{index}" je mimo povolený rozsahu.',
+  'Login Required' => 'Musíte se přihlásit.',
+  'Map data must be an array or an object implementing Traversable.' => 'Mapa musí obsahovat pole nebo objekt implementující Traversable.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'Dočasný adresář pro uložení nahrávaného souboru "{file}" nebyl nalezen.',
+  'Next &gt;' => 'Následující &gt;',
+  'No columns are being updated for table "{table}".' => 'V tabulce "{table}" nebudou aktualizovaná žádná pole.',
+  'No counter columns are being updated for table "{table}".' => 'V tabulce "{table}" nebudou aktualizovaná žádná pole pro počítadla.',
+  'Object configuration must be an array containing a "class" element.' => 'Konfigurace objektu musí být pole obsahující element "class".',
+  'Please fix the following input errors:' => 'Opravte prosím následující chyby ve vstupních údajích:',
+  'Property "{class}.{property}" is not defined.' => 'Vlastnost "{class}.{property}" není definovaná.',
+  'Property "{class}.{property}" is read only.' => 'Vlastnost "{class}.{property}" je určená jen na čtení.',
+  'Queue data must be an array or an object implementing Traversable.' => 'Řazená data (queue data) musí být pole nebo objekt implementující Traversable.',
+  'Relation "{name}" is not defined in active record class "{class}".' => 'Relace "{name}" není definovaná v objektu aktivního záznamu "{class}".',
+  'Resetting PK sequence is not supported.' => 'Nastavení PK (primárního klíče) není podporované.',
+  'Setting integrity check is not supported.' => 'Ověření integrity není podporované.',
+  'Stack data must be an array or an object implementing Traversable.' => 'Data v zásobníku musí být pole nebo objekt implementující Traversable.',
+  'Table "{table}" does not exist.' => 'Tabulka "{table}" neexistuje.',
+  'Table "{table}" does not have a column named "{column}".' => 'Tabulka "{table}" neobsahuje sloupec s názvem "{column}".',
+  'The "filter" property must be specified with a valid callback.' => 'Vlastnost "filter" musí být specifikovaná s platnou zpětnou funkcí.',
+  'The "pattern" property must be specified with a valid regular expression.' => 'Vlastnost "pattern" musí být specifikovaná s platným regulárním výrazem.',
+  'The CSRF token could not be verified.' => 'CSFR token nemohl být ověřený.',
+  'The STAT relation "{name}" cannot have child relations.' => 'STAT relace "{name}" nesmí mít žádné zděděné relace.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'URL výraz "{pattern}" pro cestu "{route}" není platný regulární výraz.',
+  'The active record cannot be deleted because it is new.' => 'Aktívní záznam nemůže být odstraněný, protože je nový.',
+  'The active record cannot be inserted to database because it is not new.' => 'Aktívní záznam nemůže být vložený do databáze, protože není nový.',
+  'The active record cannot be updated because it is new.' => 'Aktívní záznam nemůže být aktualizovaný, protože je nový.',
+  'The asset "{asset}" to be published does not exist.' => 'Položka "{asset}" určená na publikování neexistuje.',
+  'The command path "{path}" is not a valid directory.' => 'Příkazový rádek "{path}" neobsahuje cestu k platnému adresáři.',
+  'The controller path "{path}" is not a valid directory.' => 'Cesta kontroleru "{path}" neobsahuje cestu k platnému adresáři.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'Soubor "{file}" nemůže být nahraný. Povolené jsou pouze soubory s následujícími příponami: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => 'Soubor "{file}" je příliš velký. Jeho velikost nesmí být větší než {limit} bajtů.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => 'Soubor "{file}" je příliš malý. Jeho velikost nesmí být menší než {limit} bajtů.',
+  'The file "{file}" was only partially uploaded.' => 'Soubor "{file}" byl nahraný pouze částečně.',
+  'The first element in a filter configuration must be the filter class.' => 'První element v konfiguraci filtru musí být objekt filter.',
+  'The item "{name}" does not exist.' => 'Položka "{name}" neexistuje.',
+  'The item "{parent}" already has a child "{child}".' => 'Položka "{parent}" už obsahuje potomka "{child}".',
+  'The layout path "{path}" is not a valid directory.' => 'Cesta k náhledu "{path}" obsahuje cestu k neplatnému adresáři.',
+  'The list is read only.' => 'Seznam je určený pouze na čtení.',
+  'The map is read only.' => 'Mapa je určená pouze na čtení.',
+  'The module path "{path}" is not a valid directory.' => 'Cesta k modulu "{path}" obsahuje neplatnou cestu k adresáři.',
+  'The pattern for 12 hour format must be "h" or "hh".' => 'Formát pro 12 hodin musí být "h" nebo "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => 'Formát pro 24 hodin musí být "H" nebo "HH".',
+  'The pattern for AM/PM marker must be "a".' => 'Formát pro AM/PM musí být "a".',
+  'The pattern for day in month must be "F".' => 'Formát pro den v týdnu musí být "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'Formát pro den v roce musí být "D", "DD" nebo "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => 'Formát pro den v měsíci musí být "d" nebo "dd".',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'Formát pro období musí být "G", "GG", "GGG", "GGGG" nebo "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'Formát pro hodinu v AM/PM musí být "K" nebo "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => 'Formát pro hodinu v průběhu dne musí být "k" nebo "kk".',
+  'The pattern for minutes must be "m" or "mm".' => 'Formát pro minuty musí být "m" nebo "mm".',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => 'Formát pro měsíc musí být "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" nebo "LLLL".',
+  'The pattern for seconds must be "s" or "ss".' => 'Formát pro sekundy musí být "s" nebo "ss".',
+  'The pattern for time zone must be "z" or "v".' => 'Formát pro časovou zónu musí být "z" nebo "v".',
+  'The pattern for week in month must be "W".' => 'Formát pro týden v měsíci musí být "W".',
+  'The pattern for week in year must be "w".' => 'Formát pro týden v roce musí být "w".',
+  'The queue is empty.' => 'Zásobník je prázdný.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Relace "{relation}" v aktivním záznamu "{class}" není specifikovaná korektně. Propojená tabulka "{joinTable}" uvedená ve foreign key nebyla nalezena v databázi.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Relace "{relation}" v aktivním záznamu "{class}" není specifikovaná korektně: Propojená tabulka "{joinTable}" uvedená ve foreign key nebyla nalezena v databázi.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'Relace "{relation}" v aktivním záznamu "{class}" je specifikovaná prostredníctvím klíče (foreign key), který neukazuje na rodičovskou tabulku "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'Relace "{relation}" v aktivním záznamu "{class}" je specifikovaná neúplným klíčem (foreign key). Foreign key se musí skládat ze sloupců (polí) odkazujícich na obě propojené tabulky.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'Relace "{relation}" v aktivním záznamu "{class}" je specifikovaná pomocí neplatného klíče (foreign key). Uvedený sloupec v tabulce "{table}" neexistuje.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'Relace "{relation}" v aktivním záznamu "{class}" je specifikovaná pomocí neplatného klíče (foreign key). Sloupce v klíči se musí shodovat s primárními klíči v tabullce "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'Relace "{relation}" v aktivním záznamu "{class}" je specifikovaná pomocí neplatného klíče (foreign key). Formát klíče musí být "joinTable(fk1,fk2,...)".',
+  'The requested view "{name}" was not found.' => 'Požadovaný náhled "{name}" nebyl nalezen.',
+  'The stack is empty.' => 'Zásobník je prázdný.',
+  'The system is unable to find the requested action "{action}".' => 'Systém nenalezl požadovanou akci "{action}".',
+  'The system view path "{path}" is not a valid directory.' => 'Cesta k systémovému náhledu "{path}" není platným adresářem.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'Tabulka aktívního záznamu pro objekt "{class}" nebyla nalezena v databázi.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => 'Při dotazovaní tabulky "{table}" není uvedená hodnota pole "{column}".',
+  'The verification code is incorrect.' => 'Kód pro ověření není správný.',
+  'The view path "{path}" is not a valid directory.' => 'Cesta k náhledu "{path}" není platným adresářem.',
+  'Theme directory "{directory}" does not exist.' => 'Adresář "{directory}" neexistuje.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'Tento obsah vyžaduje <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => 'Není možné přidat položku, jejíž jméno již existuje.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'Není možné změnit název položky. Název "{name}" už používá jiná položka.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'Není možné vytvořit soubor se statusem aplikace "{file}". Ujistěte se, že adresář obsahující tento soubor existuje a má práva zápisu pro webový server.',
+  'Unable to lock file "{file}" for reading.' => 'Nepodařilo se uzamknout soubor "{file}" pro čtení.',
+  'Unable to lock file "{file}" for writing.' => 'Nepodařilo se uzamknout soubor "{file}" pro zápis.',
+  'Unable to read file "{file}".' => 'Nepodařilo se načíst soubor "{file}".',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => 'Nepodařilo se zopakovat akci "{object}.{method}". Metoda neexistuje.',
+  'Unable to resolve the request "{route}".' => 'Nepodařilo se zpracovat požadavek "{route}".',
+  'Unable to write file "{file}".' => 'Nepodařilo se zapsat do souboru "{file}".',
+  'Unknown authorization item "{name}".' => 'Neznámá autorizační položka "{name}".',
+  'Unknown type "{type}".' => 'Neznámý typ "{type}".',
+  'Unrecognized locale "{locale}".' => 'Neznámá jazyková mutace "{locale}".',
+  'View file "{file}" does not exist.' => 'Soubor pro šablonu "{file}" nebyl nalezen.',
+  'Yii application can only be created once.' => 'Yii aplikace může být vytvořená pouze jednou.',
+  'You are not authorized to perform this action.' => 'Nemáte oprávnění na požadovanou akci.',
+  'Your request is not valid.' => 'Váš požadavek je neplatný.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" je již použitý.',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" je neplatný.',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} nemůže akceptovat více než {limit} souborů.',
+  '{attribute} cannot be blank.' => '{attribute} nesmí být prázdný.',
+  '{attribute} is invalid.' => '{attribute} je neplatný.',
+  '{attribute} is not a valid URL.' => '{attribute} není správný URL odkaz.',
+  '{attribute} is not a valid email address.' => '{attribute} není platná emailová adresa.',
+  '{attribute} is not in the list.' => '{attribute} není v seznamu.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} nemá správnou délku (měl by mít {length} znaků)',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} je příliš velký (maximum je {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} je příliš dlouhý (maximum je {max} znaků).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} je příliš krátký (minimum je {min} znaků).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} je příliš malý (minimum je {min}).',
+  '{attribute} must be a number.' => '{attribute} musí být číslo.',
+  '{attribute} must be an integer.' => '{attribute} musí být typu integer.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} musí být {true} nebo {false}.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} musí být větší než "{compareValue}".',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} musí být větší nebo rovný "{compareValue}".',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} musí být menší než "{compareValue}".',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} musí být menší nebo rovný "{compareValue}".',
+  '{attribute} must be repeated exactly.' => '{attribute} musí být přesně zopakovaný.',
+  '{attribute} must be {type}.' => '{attribute} musí být typu {type}.',
+  '{attribute} must be {value}.' => '{attribute} musí mít hodnotu {value}.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} musí být rovný "{compareValue}".',
+  '{className} does not support add() functionality.' => '{className} nepodporuje funkcionalitu add().',
+  '{className} does not support delete() functionality.' => '{className} nepodporuje funkcionalitu delete().',
+  '{className} does not support get() functionality.' => '{className} nepodporuje funkcionalitu get().',
+  '{className} does not support set() functionality.' => '{className} nepodporuje funkcionalitu set().',
+  '{class} does not have a method named "{name}".' => '{class} nemá implementovanou metodu "{name}".',
+  '{class} does not have relation "{name}".' => '{class} nezná relaci "{name}".',
+  '{class} does not support fetching all table names.' => '{class} nepodporuje načtení názvů všech tabulek.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} nemá správně definované validační pravidlo. Pravidlo musí určit atributy, které se mají validovat, jakož i název validátora.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} musí definovať hodnotu pro vlastnosti "model" a "attribute" nebo "name".',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin musí být nastavená na "true" pro zapnutí podpory autentifikace přes cookies.',
+  '{class}::authenticate() must be implemented.' => 'Je nutné implementovat metodu {class}::authenticate().',
+  '{controller} cannot find the requested view "{view}".' => '{controller} nenalezl požadovanou šablonu "{view}".',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} obsahuje nesprávně umístěné Widget tagy v šabloně "{view}". Blok pro {widget} nemá korektně ukončený blok volaní metody endWidget().',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} má navíc volanou metodu endWidget({id}) v šabloně.',
+  '{n} B' => '{n} B',
+  '{n} byte|{n} bytes' => '{n} bajtů',
+  '{n} GB' => '{n} GB',
+  '{n} gigabyte|{n} gigabytes' => '{n} gigabajtů',
+  '{n} KB' => '{n} KB',
+  '{n} kilobyte|{n} kilobytes' => '{n} kilobajtů',
+  '{n} MB' => '{n} MB',
+  '{n} megabyte|{n} megabytes' => '{n} megabajtů',
+  '{n} TB' => '{n} TB',
+  '{n} terabyte|{n} terabytes' => '{n} terabajtů',
+  '{widget} cannot find the view "{view}".' => '{widget} nenalezl šablonu "{view}".',
+);

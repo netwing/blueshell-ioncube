@@ -1,36 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_CSS_DisallowMultipleStyleDefinitionsSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_CSS_DisallowMultipleStyleDefinitionsSniff.
+ *
+ * Ensure that each style definition is on a line by itself.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_CSS_DisallowMultipleStyleDefinitionsSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('CSS');
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_STYLE);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+        $next   = $phpcsFile->findNext(T_STYLE, ($stackPtr + 1));
+        if ($next === false) {
+            return;
+        }
+
+        if ($tokens[$next]['content'] === 'progid') {
+            // Special case for IE filters.
+            return;
+        }
+
+        if ($tokens[$next]['line'] === $tokens[$stackPtr]['line']) {
+            $error = 'Each style definition must be on a line by itself';
+            $phpcsFile->addError($error, $next, 'Found');
+        }
+
+    }//end process()
+
+}//end class
 ?>
-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

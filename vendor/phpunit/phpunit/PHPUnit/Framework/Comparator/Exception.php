@@ -1,29 +1,92 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.6.0
+ */
+
+/**
+ * Compares Exception instances for equality.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Comparator
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.6.0
+ */
+class PHPUnit_Framework_Comparator_Exception extends PHPUnit_Framework_Comparator_Object
+{
+    /**
+     * Returns whether the comparator can compare two values.
+     *
+     * @param  mixed $expected The first value to compare
+     * @param  mixed $actual The second value to compare
+     * @return boolean
+     */
+    public function accepts($expected, $actual)
+    {
+        return $expected instanceof Exception && $actual instanceof Exception;
+    }
+
+    /**
+     * Converts an object to an array containing all of its private, protected
+     * and public properties.
+     *
+     * @param  object $object
+     * @return array
+     */
+    protected function toArray($object)
+    {
+        $array = parent::toArray($object);
+
+        unset(
+            $array['file'],
+            $array['line'],
+            $array['trace'],
+            $array['string'], // some internal property of Exception
+            $array['xdebug_message'] // some internal property added by XDebug
+        );
+
+        return $array;
+    }
+}

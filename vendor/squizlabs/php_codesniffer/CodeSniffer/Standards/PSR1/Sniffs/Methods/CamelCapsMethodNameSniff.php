@@ -1,45 +1,92 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * PSR1_Sniffs_Methods_CamelCapsMethodNameSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_Standards_AbstractScopeSniff', true) === false) {
+    throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_Standards_AbstractScopeSniff not found');
+}
+
+/**
+ * PSR1_Sniffs_Methods_CamelCapsMethodNameSniff.
+ *
+ * Ensures method names are defined using camel case.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PSR1_Sniffs_Methods_CamelCapsMethodNameSniff extends PHP_CodeSniffer_Standards_AbstractScopeSniff
+{
+
+    /**
+     * Constructs a PSR1_Sniffs_Methods_CamelCapsMethodNameSniff.
+     */
+    public function __construct()
+    {
+        parent::__construct(array(T_CLASS, T_INTERFACE, T_TRAIT), array(T_FUNCTION), true);
+
+    }//end __construct()
+
+
+    /**
+     * Processes the tokens within the scope.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being processed.
+     * @param int                  $stackPtr  The position where this token was
+     *                                        found.
+     * @param int                  $currScope The position of the current scope.
+     *
+     * @return void
+     */
+    protected function processTokenWithinScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr, $currScope)
+    {
+        $methodName = $phpcsFile->getDeclarationName($stackPtr);
+        if ($methodName === null) {
+            // Ignore closures.
+            return;
+        }
+
+        $testName = ltrim($methodName, '_');
+        if (PHP_CodeSniffer::isCamelCaps($testName, false, true, false) === false) {
+            $error     = 'Method name "%s" is not in camel caps format';
+            $className = $phpcsFile->getDeclarationName($currScope);
+            $errorData = array($className.'::'.$methodName);
+            $phpcsFile->addError($error, $stackPtr, 'NotCamelCaps', $errorData);
+        }
+
+    }//end processTokenWithinScope()
+
+
+    /**
+     * Processes the tokens outside the scope.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being processed.
+     * @param int                  $stackPtr  The position where this token was
+     *                                        found.
+     *
+     * @return void
+     */
+    protected function processTokenOutsideScope(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+
+
+    }//end processTokenOutsideScope()
+
+
+}//end class
+
 ?>
-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
-m3+uVVoF7hpUUPQntYokDJLp+G==

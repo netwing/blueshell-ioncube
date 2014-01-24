@@ -1,116 +1,288 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Module;
+
+/**
+ * Uses Mink to manipulate Selenium2 WebDriver
+ *
+ * Note that all method take CSS selectors to fetch elements.
+ *
+ * On test failure the browser window screenshot will be saved to log directory
+ *
+ * <div class="alert alert-info">
+ * One day this module will be replaced with WebDriver module.
+ * </div>
+ *
+ * ## Installation
+ *
+ * Download [Selenium2 WebDriver](http://code.google.com/p/selenium/downloads/list?q=selenium-server-standalone-2)
+ * Launch the daemon: `java -jar selenium-server-standalone-2.xx.xxx.jar`
+ *
+ * Don't forget to turn on Db repopulation if you are using database.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: codecept@davert.mail.ua
+ * * relies on [Mink](http://mink.behat.org)
+ *
+ * ## Configuration
+ *
+ * * url *required* - start url for your app
+ * * browser *required* - browser that would be launched
+ * * host  - Selenium server host (localhost by default)
+ * * port - Selenium server port (4444 by default)
+ * * delay - set delay between actions in milliseconds (1/1000 of second) if they run too fast
+ * * capabilities - sets Selenium2 [desired capabilities](http://code.google.com/p/selenium/wiki/DesiredCapabilities). Should be a key-value array.
+ *
+ * ### Example (`acceptance.suite.yml`)
+ *
+ *     modules:
+ *        enabled: [Selenium2]
+ *        config:
+ *           Selenium2:
+ *              url: 'http://localhost/'
+ *              browser: firefox
+ *              capabilities:
+ *                  unexpectedAlertBehaviour: 'accept'
+ *
+ * ## Public Properties
+ *
+ * * session - contains Mink Session
+ * * webDriverSession - contains webDriverSession object, i.e. $session from [php-webdriver](https://github.com/facebook/php-webdriver)
+ */
+
+use Behat\Mink\Driver\Selenium2Driver;
+use Codeception\Util\MinkJS;
+
+class Selenium2 extends MinkJS
+{
+    protected $requiredFields = array('browser', 'url');
+    protected $config = array('host' => '127.0.0.1', 'port' => '4444', 'delay' => 0, 'capabilities' => array());
+
+    /**
+     * @var \WebDriver\Session
+     */
+    public $webDriverSession;
+
+
+    public function _initialize() {
+        $capabilities = array_merge(Selenium2Driver::getDefaultCapabilities(), $this->config['capabilities']);
+        $capabilities['name'] = 'Codeception Test';
+        $driver = new Selenium2Driver(
+            $this->config['browser'],
+            $capabilities,
+            sprintf('http://%s:%d/wd/hub',$this->config['host'],$this->config['port'])
+        );
+        $this->session = new \Behat\Mink\Session($driver);
+    }
+
+    public function _before(\Codeception\TestCase $test)
+    {
+        if ($this->session) {
+            $this->session->start();
+            $this->webDriverSession = $this->session->getDriver()->getWebDriverSession();
+        }
+    }
+
+    public function _failed(\Codeception\TestCase $test, $error) {
+        $this->_saveScreenshot(\Codeception\Configuration::logDir().basename($test->getFileName()).'.fail.png');
+        $this->debug("Screenshot was saved into 'log' dir");
+    }
+
+    public function _afterStep(\Codeception\Step $step) {
+        if ($this->config['delay']) usleep($this->config['delay'] * 1000);
+    }
+
+    /**
+     * Low-level API method.
+     * If Codeception commands are not enough, use Selenium WebDriver methods directly
+     *
+     * ``` php
+     * $I->executeInSelenium(function(\WebDriver\Session $webdriver) {
+     *   $webdriver->back();
+     * });
+     * ```
+     *
+     * Use [WebDriver Session API](https://github.com/facebook/php-webdriver)
+     * Not recommended this command too be used on regular basis.
+     * If Codeception lacks important Selenium methods implement then and submit patches.
+     *
+     * @param callable $function
+     */
+    public function executeInSelenium(\Closure $function)
+    {
+        $function($this->webDriverSession);
+    }
+
+    public function _saveScreenshot($filename)
+    {
+        if (!$this->webDriverSession) {
+            $this->debug("Can't make screenshot, no web driver");
+            return;
+        }
+        $imgData = base64_decode($this->webDriverSession->screenshot());
+        file_put_contents($filename, $imgData);
+    }
+
+    public function click($link, $context = null, $strict = false) {
+        $url = $this->session->getCurrentUrl(); // required for popups
+        $el = $this->findClickable($link, $context, $strict);
+        $el->click();
+    }
+    
+    /**
+     * Accept alert or confirm popup
+     *
+     * Example:
+     * ``` php
+     * <?php
+     * $I->click('Show alert popup');
+     * $I->acceptPopup();
+     *
+     * ```
+     */
+    public function acceptPopup() {
+        $this->webDriverSession->accept_alert();
+    }
+
+    /**
+     * Dismiss alert or confirm popup
+     *
+     * Example:
+     * ``` php
+     * <?php
+     * $I->click('Show confirm popup');
+     * $I->cancelPopup();
+     *
+     * ```
+     */
+    public function cancelPopup() {
+        $this->webDriverSession->dismiss_alert();
+    }
+
+    /**
+     * Checks if popup contains the $text
+     *
+     * Example:
+     * ``` php
+     * <?php
+     * $I->click('Show alert popup');
+     * $I->seeInPopup('Error message');
+     *
+     * ```
+     *
+     * @param string $text
+     */
+    public function seeInPopup($text) {
+        $this->assertContains($text, $this->webDriverSession->alert_text());
+    }
+
+    /**
+     * Check if popup don't contains the $text
+     *
+     * Example:
+     * ``` php
+     * <?php
+     * $I->click();
+     * $I->dontSeeInPopup('Error message');
+     *
+     * ```
+     *
+     * @param string $text
+     */
+    public function dontSeeInPopup($text) {
+        $this->assertNotContains($text, $this->webDriverSession->alert_text());
+    }
+
+    /**
+     * Switch to another window identified by its name.
+     * 
+     * The window can only be identified by its name. If the $name parameter is blank it will switch to the parent window.
+     *
+     * Example:
+     * ``` html
+     * <input type="button" value="Open window" onclick="window.open('http://example.com', 'another_window')">
+     * ```
+     *
+     * ``` php
+     * <?php
+     * $I->click("Open window");
+     * # switch to another window
+     * $I->switchToWindow("another_window");
+     * # switch to parent window
+     * $I->switchToWindow();
+     * ?>
+     * ```
+     *
+     * If the window has no name, the only way to access it is via the `executeInSelenium()` method like so:
+     * 
+     * ```
+     * <?php
+     * $I->executeInSelenium(function (\Webdriver\Session $webdriver) {
+     * $handles=$webdriver->window_handles();
+     * $last_window = end($handles);
+     * $webdriver->focusWindow($last_window);
+     * });
+     * ?>
+     * ```
+     * 
+     * @param string|null $name
+     */
+    public function switchToWindow($name = null) {
+        $this->session->getDriver()->switchToWindow($name);
+    }
+
+    /**
+     * Switch to another frame
+     *
+     * Example:
+     * ``` html
+     * <iframe name="another_frame" src="http://example.com">
+     *
+     * ```
+     *
+     * ``` php
+     * <?php
+     * # switch to iframe
+     * $I->switchToIFrame("another_frame");
+     * # switch to parent page
+     * $I->switchToIFrame();
+     *
+     * ```
+     *
+     * @param string|null $name
+     */
+    public function switchToIFrame($name = null) {
+        $this->session->getDriver()->switchToIFrame($name);
+    }
+
+    /**
+     * Resize current window
+     *
+     * Example:
+     * ``` php
+     * <?php
+     * $I->resizeWindow(800, 600);
+     *
+     * ```
+     *
+     * @param int    $width
+     * @param int    $height
+     * @author Jaik Dean <jaik@jaikdean.com>
+     */
+    public function resizeWindow($width, $height) {
+        $this->webDriverSession->window('current')->postSize(array('width' => $width, 'height' => $height));
+    }
+
+    public function seeInTitle($title)
+    {
+        $this->assertContains($title, $this->webDriverSession->title(), "page title contains $title");
+    }
+
+    public function dontSeeInTitle($title)
+    {
+        $this->assertNotContains($title, $this->webDriverSession->title(), "page title contains $title");
+    }
+
+}

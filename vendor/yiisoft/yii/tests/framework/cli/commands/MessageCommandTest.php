@@ -1,190 +1,357 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-rPW=
+<?php
+
+Yii::import('system.cli.commands.MessageCommand');
+
+/**
+ * Test case for "system.cli.commands.MessageCommand"
+ * @see MessageCommand
+ */
+class MessageCommandTest extends CTestCase
+{
+	protected $sourcePath='';
+	protected $messagePath='';
+	protected $configFileName='';
+
+	public function setUp()
+	{
+		$this->sourcePath=Yii::getPathOfAlias('application.runtime.test_source');
+		$this->createDir($this->sourcePath);
+		$this->messagePath=Yii::getPathOfAlias('application.runtime.test_messages');
+		$this->createDir($this->messagePath);
+		$this->configFileName=Yii::getPathOfAlias('application.runtime').DIRECTORY_SEPARATOR.'message_command_test_config.php';
+	}
+
+	public function tearDown()
+	{
+		$this->removeDir($this->sourcePath);
+		$this->removeDir($this->messagePath);
+		if(file_exists($this->configFileName))
+			unlink($this->configFileName);
+	}
+
+	/**
+	 * Creates directory.
+	 * @param $dirName directory full name
+	 */
+	protected function createDir($dirName)
+	{
+		if(!file_exists($dirName))
+			mkdir($dirName,0777,true);
+	}
+
+	/**
+	 * Removes directory.
+	 * @param $dirName directory full name
+	 */
+	protected function removeDir($dirName)
+	{
+		if(!empty($dirName) && file_exists($dirName))
+		{
+			$this->removeFileSystemObject($dirName);
+		}
+	}
+
+	/**
+	 * Removes file system object: directory or file.
+	 * @param string $fileSystemObjectFullName file system object full name.
+	 */
+	protected function removeFileSystemObject($fileSystemObjectFullName)
+	{
+		if(!is_dir($fileSystemObjectFullName))
+		{
+			unlink($fileSystemObjectFullName);
+		} else {
+			$dirHandle = opendir($fileSystemObjectFullName);
+			while(($fileSystemObjectName=readdir($dirHandle))!==false)
+			{
+				if($fileSystemObjectName==='.' || $fileSystemObjectName==='..')
+					continue;
+				$this->removeFileSystemObject($fileSystemObjectFullName.DIRECTORY_SEPARATOR.$fileSystemObjectName);
+			}
+			closedir($dirHandle);
+			rmdir($fileSystemObjectFullName);
+		}
+	}
+
+	/**
+	 * @return MessageCommand message command instance
+	 */
+	protected function createMessageCommand()
+	{
+		//$command=new MessageCommand('message',null);
+		$command=$this->getMock('MessageCommand',array('usageError'),array('message',null));
+		$command->expects($this->any())->method('usageError')->will($this->throwException(new CException('usageError')));
+		return $command;
+	}
+
+	/**
+	 * Emulates running of the message command.
+	 * @param array $args command shell arguments
+	 * @return string command output
+	 */
+	protected function runMessageCommand(array $args)
+	{
+		$command=$this->createMessageCommand();
+		ob_start();
+		ob_implicit_flush(false);
+		$command->run($args);
+		return ob_get_clean();
+	}
+
+	/**
+	 * Creates message command config file at {@link configFileName}
+	 * @param array $config message command config.
+	 */
+	protected function composeConfigFile(array $config)
+	{
+		if(file_exists($this->configFileName))
+			unlink($this->configFileName);
+		$fileContent='<?php return '.var_export($config,true).';';
+		file_put_contents($this->configFileName,$fileContent);
+	}
+
+	/**
+	 * Creates source file with given content
+	 * @param string $content file content
+	 * @param string|null $name file self name
+	 */
+	protected function createSourceFile($content,$name=null)
+	{
+		if(empty($name))
+			$name=md5(uniqid()).'.php';
+		file_put_contents($this->sourcePath.DIRECTORY_SEPARATOR.$name,$content);
+	}
+
+	/**
+	 * Creates message file with given messages.
+	 * @param string $name file name
+	 * @param array $messages messages.
+	 */
+	protected function createMessageFile($name,array $messages=array())
+	{
+		$fileName=$this->messagePath.DIRECTORY_SEPARATOR.$name;
+		if(file_exists($fileName))
+			unlink($fileName);
+		else
+		{
+			$dirName=dirname($fileName);
+			if(!file_exists($dirName))
+				mkdir($dirName,0777,true);
+		}
+		$fileContent='<?php return '.var_export($messages,true).';';
+		file_put_contents($fileName,$fileContent);
+	}
+
+	// Tests:
+
+	public function testEmptyArgs()
+	{
+		$this->setExpectedException('CException','usageError');
+		$this->runMessageCommand(array());
+	}
+
+	public function testConfigFileNotExist()
+	{
+		$this->setExpectedException('CException','usageError');
+		$this->runMessageCommand(array('not_existing_file.php'));
+	}
+
+	public function testCreateTranslation()
+	{
+		$language = 'en';
+
+		$category='test_category';
+		$message='test message';
+		$sourceFileContent="Yii::t('{$category}','{$message}')";
+		$this->createSourceFile($sourceFileContent);
+
+		$this->composeConfigFile(array(
+			'languages'=>array($language),
+			'sourcePath'=>$this->sourcePath,
+			'messagePath'=>$this->messagePath,
+		));
+		$this->runMessageCommand(array($this->configFileName));
+
+		$this->assertTrue(file_exists($this->messagePath.DIRECTORY_SEPARATOR.$language),'No language dir created!');
+		$messageFileName=$this->messagePath.DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.$category.'.php';
+		$this->assertTrue(file_exists($messageFileName),'No message file created!');
+		$messages=require($messageFileName);
+		$this->assertTrue(is_array($messages),'Unable to compose messages!');
+		$this->assertTrue(array_key_exists($message,$messages),'Source message is missing!');
+	}
+
+	/**
+	 * @depends testCreateTranslation
+	 */
+	public function testNothingNew()
+	{
+		$language = 'en';
+
+		$category='test_category';
+		$message='test message';
+		$sourceFileContent = "Yii::t('{$category}','{$message}')";
+		$this->createSourceFile($sourceFileContent);
+
+		$this->composeConfigFile(array(
+			'languages'=>array($language),
+			'sourcePath'=>$this->sourcePath,
+			'messagePath'=>$this->messagePath,
+		));
+		$this->runMessageCommand(array($this->configFileName));
+
+		$messageFileName=$this->messagePath.DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.$category.'.php';
+
+		// check file not overwritten:
+		$messageFileContent=file_get_contents($messageFileName);
+		$messageFileContent.='// some not generated by command content';
+		file_put_contents($messageFileName,$messageFileContent);
+
+		$this->runMessageCommand(array($this->configFileName));
+
+		$this->assertEquals($messageFileContent,file_get_contents($messageFileName));
+	}
+
+	/**
+	 * @depends testCreateTranslation
+	 */
+	public function testMerge()
+	{
+		$language = 'en';
+		$category='test_category';
+		$messageFileName=$language.DIRECTORY_SEPARATOR.$category.'.php';
+
+		$existingMessage='test existing message';
+		$existingMessageContent='test existing message content';
+		$this->createMessageFile($messageFileName,array(
+			$existingMessage=>$existingMessageContent
+		));
+
+		$newMessage='test new message';
+		$sourceFileContent = "Yii::t('{$category}','{$existingMessage}')";
+		$sourceFileContent .= "Yii::t('{$category}','{$newMessage}')";
+		$this->createSourceFile($sourceFileContent);
+
+		$this->composeConfigFile(array(
+			'languages'=>array($language),
+			'sourcePath'=>$this->sourcePath,
+			'messagePath'=>$this->messagePath,
+			'overwrite'=>true,
+		));
+		$this->runMessageCommand(array($this->configFileName));
+
+		$messages=require($this->messagePath.DIRECTORY_SEPARATOR.$messageFileName);
+		$this->assertTrue(array_key_exists($newMessage,$messages),'Unable to add new message!');
+		$this->assertTrue(array_key_exists($existingMessage,$messages),'Unable to keep existing message!');
+		$this->assertEquals('',$messages[$newMessage],'Wrong new message content!');
+		$this->assertEquals($existingMessageContent,$messages[$existingMessage],'Unable to keep existing message content!');
+	}
+
+	/**
+	 * @depends testMerge
+	 */
+	public function testNoLongerNeedTranslation()
+	{
+		$language = 'en';
+		$category='test_category';
+		$messageFileName=$language.DIRECTORY_SEPARATOR.$category.'.php';
+
+		$oldMessage='test old message';
+		$oldMessageContent='test old message content';
+		$this->createMessageFile($messageFileName,array(
+			$oldMessage=>$oldMessageContent
+		));
+
+		$sourceFileContent = "Yii::t('{$category}','some new message')";
+		$this->createSourceFile($sourceFileContent);
+
+		$this->composeConfigFile(array(
+			'languages'=>array($language),
+			'sourcePath'=>$this->sourcePath,
+			'messagePath'=>$this->messagePath,
+			'overwrite'=>true,
+			'removeOld'=>false,
+		));
+		$this->runMessageCommand(array($this->configFileName));
+
+		$messages=require($this->messagePath.DIRECTORY_SEPARATOR.$messageFileName);
+
+		$this->assertTrue(array_key_exists($oldMessage,$messages),'No longer needed message removed!');
+		$this->assertEquals('@@'.$oldMessageContent.'@@',$messages[$oldMessage],'No longer needed message content does not marked properly!');
+	}
+
+	/**
+	 * @depends testMerge
+	 * @see https://github.com/yiisoft/yii/issues/2244
+	 */
+	public function testMergeWithContentZero()
+	{
+		$language = 'en';
+		$category='test_category';
+		$messageFileName=$language.DIRECTORY_SEPARATOR.$category.'.php';
+
+		$zeroMessage='test zero message';
+		$zeroMessageContent='0';
+		$falseMessage='test false message';
+		$falseMessageContent='false';
+		$this->createMessageFile($messageFileName,array(
+			$zeroMessage=>$zeroMessageContent,
+			$falseMessage=>$falseMessageContent,
+		));
+
+		$newMessage='test new message';
+		$sourceFileContent = "Yii::t('{$category}','{$zeroMessage}')";
+		$sourceFileContent .= "Yii::t('{$category}','{$falseMessage}')";
+		$sourceFileContent .= "Yii::t('{$category}','{$newMessage}')";
+		$this->createSourceFile($sourceFileContent);
+
+		$this->composeConfigFile(array(
+			'languages'=>array($language),
+			'sourcePath'=>$this->sourcePath,
+			'messagePath'=>$this->messagePath,
+			'overwrite'=>true,
+		));
+		$this->runMessageCommand(array($this->configFileName));
+
+		$messages=require($this->messagePath.DIRECTORY_SEPARATOR.$messageFileName);
+		$this->assertTrue($zeroMessageContent===$messages[$zeroMessage],'Message content "0" is lost!');
+		$this->assertTrue($falseMessageContent===$messages[$falseMessage],'Message content "false" is lost!');
+	}
+
+	/**
+	 * @depends testCreateTranslation
+	 * @see https://github.com/yiisoft/yii/issues/1228
+	 */
+	public function testMultiplyTranslators()
+	{
+		$language = 'en';
+		$category='test_category';
+
+		$translators=array(
+			'Yii::t',
+			'Custom::translate',
+		);
+
+		$sourceMessages=array(
+			'first message',
+			'second message',
+		);
+		$sourceFileContent='';
+		foreach($sourceMessages as $key => $message)
+			$sourceFileContent.=$translators[$key]."('{$category}','{$message}');\n";
+		$this->createSourceFile($sourceFileContent);
+
+		$this->composeConfigFile(array(
+			'languages'=>array($language),
+			'sourcePath'=>$this->sourcePath,
+			'messagePath'=>$this->messagePath,
+			'translator'=>$translators,
+		));
+		$this->runMessageCommand(array($this->configFileName));
+
+		$messageFileName=$this->messagePath.DIRECTORY_SEPARATOR.$language.DIRECTORY_SEPARATOR.$category.'.php';
+		$messages=require($messageFileName);
+
+		foreach($sourceMessages as $sourceMessage)
+			$this->assertTrue(array_key_exists($sourceMessage,$messages));
+	}
+}

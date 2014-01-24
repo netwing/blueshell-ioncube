@@ -1,71 +1,138 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-oinuBgoHldKRbiy=
+<?php
+/**
+ * CDbMessageSource class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDbMessageSource represents a message source that stores translated messages in database.
+ *
+ * The database must contain the following two tables:
+ * <pre>
+ * CREATE TABLE SourceMessage
+ * (
+ *     id INTEGER PRIMARY KEY,
+ *     category VARCHAR(32),
+ *     message TEXT
+ * );
+ * CREATE TABLE Message
+ * (
+ *     id INTEGER,
+ *     language VARCHAR(16),
+ *     translation TEXT,
+ *     PRIMARY KEY (id, language),
+ *     CONSTRAINT FK_Message_SourceMessage FOREIGN KEY (id)
+ *          REFERENCES SourceMessage (id) ON DELETE CASCADE ON UPDATE RESTRICT
+ * );
+ * </pre>
+ * The 'SourceMessage' table stores the messages to be translated, and the 'Message' table
+ * stores the translated messages. The name of these two tables can be customized by setting
+ * {@link sourceMessageTable} and {@link translatedMessageTable}, respectively.
+ *
+ * When {@link cachingDuration} is set as a positive number, message translations will be cached.
+ *
+ * @property CDbConnection $dbConnection The DB connection used for the message source.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.i18n
+ * @since 1.0
+ */
+class CDbMessageSource extends CMessageSource
+{
+	const CACHE_KEY_PREFIX='Yii.CDbMessageSource.';
+	/**
+	 * @var string the ID of the database connection application component. Defaults to 'db'.
+	 */
+	public $connectionID='db';
+	/**
+	 * @var string the name of the source message table. Defaults to 'SourceMessage'.
+	 */
+	public $sourceMessageTable='SourceMessage';
+	/**
+	 * @var string the name of the translated message table. Defaults to 'Message'.
+	 */
+	public $translatedMessageTable='Message';
+	/**
+	 * @var integer the time in seconds that the messages can remain valid in cache.
+	 * Defaults to 0, meaning the caching is disabled.
+	 */
+	public $cachingDuration=0;
+	/**
+	 * @var string the ID of the cache application component that is used to cache the messages.
+	 * Defaults to 'cache' which refers to the primary cache application component.
+	 * Set this property to false if you want to disable caching the messages.
+	 */
+	public $cacheID='cache';
+
+	/**
+	 * Loads the message translation for the specified language and category.
+	 * @param string $category the message category
+	 * @param string $language the target language
+	 * @return array the loaded messages
+	 */
+	protected function loadMessages($category,$language)
+	{
+		if($this->cachingDuration>0 && $this->cacheID!==false && ($cache=Yii::app()->getComponent($this->cacheID))!==null)
+		{
+			$key=self::CACHE_KEY_PREFIX.'.messages.'.$category.'.'.$language;
+			if(($data=$cache->get($key))!==false)
+				return unserialize($data);
+		}
+
+		$messages=$this->loadMessagesFromDb($category,$language);
+
+		if(isset($cache))
+			$cache->set($key,serialize($messages),$this->cachingDuration);
+
+		return $messages;
+	}
+
+	private $_db;
+
+	/**
+	 * Returns the DB connection used for the message source.
+	 * @throws CException if {@link connectionID} application component is invalid
+	 * @return CDbConnection the DB connection used for the message source.
+	 * @since 1.1.5
+	 */
+	public function getDbConnection()
+	{
+		if($this->_db===null)
+		{
+			$this->_db=Yii::app()->getComponent($this->connectionID);
+			if(!$this->_db instanceof CDbConnection)
+				throw new CException(Yii::t('yii','CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.',
+					array('{id}'=>$this->connectionID)));
+		}
+		return $this->_db;
+	}
+
+	/**
+	 * Loads the messages from database.
+	 * You may override this method to customize the message storage in the database.
+	 * @param string $category the message category
+	 * @param string $language the target language
+	 * @return array the messages loaded from database
+	 * @since 1.1.5
+	 */
+	protected function loadMessagesFromDb($category,$language)
+	{
+		$sql=<<<EOD
+SELECT t1.message AS message, t2.translation AS translation
+FROM {$this->sourceMessageTable} t1, {$this->translatedMessageTable} t2
+WHERE t1.id=t2.id AND t1.category=:category AND t2.language=:language
+EOD;
+		$command=$this->getDbConnection()->createCommand($sql);
+		$command->bindValue(':category',$category);
+		$command->bindValue(':language',$language);
+		$messages=array();
+		foreach($command->queryAll() as $row)
+			$messages[$row['message']]=$row['translation'];
+
+		return $messages;
+	}
+}

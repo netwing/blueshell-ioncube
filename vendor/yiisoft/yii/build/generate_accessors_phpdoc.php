@@ -1,91 +1,127 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+
+$nFiles = 0;
+$nFilesTotal = 0;
+$nClasses = 0;
+$nClassesTotal = 0;
+
+file_put_contents(
+    dirname(__FILE__) . '/phpdoc.txt',
+	getPhpDocForDir(dirname(dirname(__FILE__)) . '/framework') . getPhpDocStats()
+//	getPhpDocForDir(dirname(dirname(__FILE__)) . '/framework/caching') . getPhpDocStats()
+//	getPhpDocForDir(dirname(dirname(__FILE__)) . '/framework/base/CModel.php') . getPhpDocStats()
+);
+
+function getPhpDocStats()
+{
+    global $nFiles, $nFilesTotal, $nClasses, $nClassesTotal;
+
+    return "\n\nComments for $nClasses classes in $nFiles files (processed $nClassesTotal classes in $nFilesTotal files)\n";
+}
+
+function getPhpDocForDir($dirName)
+{
+    global $nFiles, $nFilesTotal;
+
+    $phpdocDir = "";
+    $files = new RegexIterator(
+        new RecursiveIteratorIterator(
+            new RecursiveDirectoryIterator($dirName)
+        ), '#^.+\.php$#i', RecursiveRegexIterator::GET_MATCH);
+    foreach ($files as $file) {
+        $phpdocFile = getPhpDocForFile($file[0]);
+        if ($phpdocFile != "") {
+            $phpdocDir .= "\n[ " . $file[0] . " ]\n";
+            $phpdocDir .= $phpdocFile;
+            $nFiles++;
+        }
+        $nFilesTotal++;
+    }
+    return $phpdocDir;
+}
+
+function getPhpDocForFile($fileName)
+{
+    global $nClasses, $nClassesTotal;
+
+    $phpdoc = "";
+    $file = str_replace("\r", "", str_replace("\t", "    ", file_get_contents($fileName, true)));
+    $classes = match('#\n(?:abstract )?class (?<name>\w+) extends .+\{(?<content>.+)\n\}(\n|$)#', $file);
+
+    foreach ($classes as &$class) {
+        $gets = match(
+            '#\* @return (?<type>\w+)(?: (?<comment>(?:(?!\*/|\* @).)+?)(?:(?!\*/).)+|[\s\n]*)\*/' .
+            '[\s\n]{2,}public function (?<kind>get)(?<name>\w+)\((?:,? ?\$\w+ ?= ?[^,]+)*\)#',
+            $class['content']);
+        $sets = match(
+            '#\* @param (?<type>\w+) \$\w+(?: (?<comment>(?:(?!\*/|\* @).)+?)(?:(?!\*/).)+|[\s\n]*)\*/' .
+            '[\s\n]{2,}public function (?<kind>set)(?<name>\w+)\(\$\w+(?:, ?\$\w+ ?= ?[^,]+)*\)#',
+            $class['content']);
+        $acrs = array_merge($gets, $sets);
+        //print_r($acrs); continue;
+
+        $props = array();
+        foreach ($acrs as &$acr) {
+            $acr['name'] = camelCase($acr['name']);
+            $acr['comment'] = trim(preg_replace('#(^|\n)\s+\*\s?#', '$1 * ', $acr['comment']));
+            $props[$acr['name']][$acr['kind']] = array(
+                'type' => $acr['type'],
+                'comment' => fixSentence($acr['comment']),
+            );
+        }
+
+        /*foreach ($props as $propName => &$prop) // I don't like write-only props...
+            if (!isset($prop['get']))
+                unset($props[$propName]);*/
+
+        if (count($props) > 0) {
+            $phpdoc .= "\n" . $class['name'] . ":\n";
+            $phpdoc .= " *\n";
+            foreach ($props as $propName => &$prop) {
+                $phpdoc .= ' * @';
+                /*if (isset($prop['get']) && isset($prop['set'])) // Few IDEs support complex syntax
+                    $phpdoc .= 'property';
+                elseif (isset($prop['get']))
+                    $phpdoc .= 'property-read';
+                elseif (isset($prop['set']))
+                    $phpdoc .= 'property-write';*/
+                $phpdoc .= 'property';
+                $phpdoc .= ' ' . getPropParam($prop, 'type') . " $$propName " . getPropParam($prop, 'comment') . "\n";
+            }
+            $phpdoc .= " *\n";
+            $nClasses++;
+        }
+        $nClassesTotal++;
+    }
+    return $phpdoc;
+}
+
+function match($pattern, $subject)
+{
+    $sets = array();
+    preg_match_all($pattern . 'suU', $subject, $sets, PREG_SET_ORDER);
+    foreach ($sets as &$set)
+        foreach ($set as $i => $match)
+            if (is_numeric($i) /*&& $i != 0*/)
+                unset($set[$i]);
+    return $sets;
+}
+
+function camelCase($str)
+{
+    return strtolower(substr($str, 0, 1)) . substr($str, 1);
+}
+
+function fixSentence($str)
+{
+    if ($str == '')
+        return '';
+    return strtoupper(substr($str, 0, 1)) . substr($str, 1) . ($str[strlen($str) - 1] != '.' ? '.' : '');
+}
+
+function getPropParam($prop, $param)
+{
+    return isset($prop['get']) ? $prop['get'][$param] : $prop['set'][$param];
+}
+
 ?>
-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
-KDTkY5ke5gv5akQNAJYGeEjBZ30=

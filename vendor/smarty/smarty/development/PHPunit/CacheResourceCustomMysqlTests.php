@@ -1,213 +1,364 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-1RVUjW==
+<?php
+/**
+* Smarty PHPunit tests for cache resource file
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for cache resource file tests
+*/
+class CacheResourceCustomMysqlTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->caching_type = 'mysqltest';
+        $this->smarty->addPluginsDir(dirname(__FILE__)."/PHPunitplugins/");
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    protected function doClearCacheAssertion($a, $b)
+    {
+        $this->assertEquals($a, $b);
+    }
+
+    /**
+    * test getCachedFilepath with use_sub_dirs enabled
+    */
+    public function testGetCachedFilepathSubDirs()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $sha1 = sha1($tpl->source->filepath);
+        $this->assertEquals($sha1, $tpl->cached->filepath);
+    }
+    /**
+    * test getCachedFilepath with cache_id
+    */
+    public function testGetCachedFilepathCacheId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar');
+        $sha1 = sha1($tpl->source->filepath . 'foo|bar' . null);
+        $this->assertEquals($sha1, $tpl->cached->filepath);
+    }
+    /**
+    * test getCachedFilepath with compile_id
+    */
+    public function testGetCachedFilepathCompileId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', null, 'blar');
+        $sha1 = sha1($tpl->source->filepath . null . 'blar');
+        $this->assertEquals($sha1, $tpl->cached->filepath);
+    }
+    /**
+    * test getCachedFilepath with cache_id and compile_id
+    */
+    public function testGetCachedFilepathCacheIdCompileId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $sha1 = sha1($tpl->source->filepath . 'foo|bar' . 'blar');
+        $this->assertEquals($sha1, $tpl->cached->filepath);
+    }
+    /**
+    * test cache->clear_all with cache_id and compile_id
+    */
+    public function testClearCacheAllCacheIdCompileId()
+    {
+        $this->smarty->clearAllCache();
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        // Custom CacheResources may return -1 if they can't tell the number of deleted elements
+        $this->assertEquals(-1, $this->smarty->clearAllCache());
+    }
+    /**
+    * test cache->clear with cache_id and compile_id
+    */
+    public function testClearCacheCacheIdCompileId()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world 1');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world 2');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world 3');
+        // test cached content
+        $this->assertEquals('hello world 1', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world 2', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world 3', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(2, $this->smarty->clearCache(null, 'foo|bar'));
+        // test that caches are deleted properly
+       $this->assertNull($tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world 2', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl3));
+    }
+
+    public function testClearCacheCacheIdCompileId2()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(2, $this->smarty->clearCache('helloworld.tpl'));
+        // test that caches are deleted properly
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+    }
+
+    public function testClearCacheCacheIdCompileId2Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar2', 'blar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(2, $this->smarty->clearCache('helloworld.tpl'));
+        // test that caches are deleted properly
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+    }
+    public function testClearCacheCacheIdCompileId3()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        // test that caches are deleted properly
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+    }
+    public function testClearCacheCacheIdCompileId3Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        // test that caches are deleted properly
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+    }
+    public function testClearCacheCacheIdCompileId4()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        // test that caches are deleted properly
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+    }
+    public function testClearCacheCacheIdCompileId4Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(1, $this->smarty->clearCache('helloworld.tpl', null, 'blar2'));
+        // test that caches are deleted properly
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+    }
+    public function testClearCacheCacheIdCompileId5()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(2, $this->smarty->clearCache(null, null, 'blar'));
+        // test that caches are deleted properly
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl3));
+    }
+    public function testClearCacheCacheIdCompileId5Sub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl', 'foo|bar', 'blar');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl',  'foo|bar', 'blar2');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld2.tpl', 'foo|bar', 'blar');
+        $tpl3->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(2, $this->smarty->clearCache(null, null, 'blar'));
+        // test that caches are deleted properly
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl3));
+    }
+    public function testClearCacheCacheFile()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl',null,'bar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld.tpl','buh|blar');
+        $tpl3->writeCachedContent('hello world');
+        $tpl4 = $this->smarty->createTemplate('helloworld2.tpl');
+        $tpl4->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl4));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(3, $this->smarty->clearCache('helloworld.tpl'));
+        // test that caches are deleted properly
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl3));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl4));
+    }
+    public function testClearCacheCacheFileSub()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $this->smarty->clearAllCache();
+        // create and cache templates
+        $tpl = $this->smarty->createTemplate('helloworld.tpl');
+        $tpl->writeCachedContent('hello world');
+        $tpl2 = $this->smarty->createTemplate('helloworld.tpl',null,'bar');
+        $tpl2->writeCachedContent('hello world');
+        $tpl3 = $this->smarty->createTemplate('helloworld.tpl','buh|blar');
+        $tpl3->writeCachedContent('hello world');
+        $tpl4 = $this->smarty->createTemplate('helloworld2.tpl');
+        $tpl4->writeCachedContent('hello world');
+        // test cached content
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl3));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl4));
+        // test number of deleted caches
+        $this->doClearCacheAssertion(3, $this->smarty->clearCache('helloworld.tpl'));
+        // test that caches are deleted properly
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl2));
+        $this->assertNull($tpl->cached->handler->getCachedContent($tpl3));
+        $this->assertEquals('hello world', $tpl->cached->handler->getCachedContent($tpl4));
+    }
+    /**
+    * final cleanup
+    */
+    public function testFinalCleanup2()
+    {
+        $this->smarty->clearCompiledTemplate();
+        $this->smarty->clearAllCache();
+    }
+}

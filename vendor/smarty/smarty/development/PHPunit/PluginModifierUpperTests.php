@@ -1,39 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests of modifier
+*
+* @package PHPunit
+* @author Rodney Rehm
+*/
+
+/**
+* class for modifier tests
+*/
+class PluginModifierUpperTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testDefault()
+    {
+        $result = "IF STRIKE ISN'T SETTLED QUICKLY IT MAY LAST A WHILE.";
+        $tpl = $this->smarty->createTemplate('eval:{"If Strike isn\'t Settled Quickly it may Last a While."|upper}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testDefaultWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = "IF STRIKE ISN'T SETTLED QUICKLY IT MAY LAST A WHILE.";
+        $tpl = $this->smarty->createTemplate('eval:{"If Strike isn\'t Settled Quickly it may Last a While."|upper}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+    public function testUmlauts()
+    {
+        $result = "IF STRIKE ISN'T SÄTTLED ÜQUICKLY IT MAY LAST A WHILE.";
+        $tpl = $this->smarty->createTemplate('eval:{"If Strike isn\'t Sättled ÜQuickly it may Last a While."|upper}');
+        $this->assertEquals($result, $this->smarty->fetch($tpl));
+    }
+
+    public function testUmlautsWithoutMbstring()
+    {
+        Smarty::$_MBSTRING = false;
+        $result = "IF STRIKE ISN'T SÄTTLED ÜQUICKLY IT MAY LAST A WHILE.";
+        $tpl = $this->smarty->createTemplate('eval:{"If Strike isn\'t Sättled ÜQuickly it may Last a While."|upper}');
+        $this->assertNotEquals($result, $this->smarty->fetch($tpl));
+        Smarty::$_MBSTRING = true;
+    }
+
+}

@@ -1,31 +1,27 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QjBAsFNwdPut3g1wGaMN9W8tvfC52azVkLAWgSm=
+<h2>Post List</h2>
+
+<div class="actionBar">
+[<?php echo CHtml::link('New Post',array('create')); ?>]
+</div>
+
+<table class="dataGrid">
+  <tr>
+    <th><?php echo $this->generateColumnHeader('id'); ?></th>
+    <th><?php echo $this->generateColumnHeader('title'); ?></th>
+    <th><?php echo $this->generateColumnHeader('create_time'); ?></th>
+    <th><?php echo $this->generateColumnHeader('author_id'); ?></th>
+	<th>Actions</th>
+  </tr>
+<?php foreach($postList as $n=>$post): ?>
+  <tr class="<?php echo $n%2?'even':'odd';?>">
+    <td><?php echo CHtml::link($post->id,array('show','id'=>$post->id)); ?></td>
+    <td><?php echo CHtml::encode($post->title); ?></td>
+    <td><?php echo CHtml::encode($post->create_time); ?></td>
+    <td><?php echo CHtml::encode($post->author_id); ?></td>
+    <td>
+      <?php echo CHtml::link('Update',array('update','id'=>$post->id)); ?>
+      <?php echo CHtml::linkButton('Delete',array('submit'=>array('delete','id'=>$post->id),'confirm'=>'Are you sure?')); ?>
+	</td>
+  </tr>
+<?php endforeach; ?>
+</table>

@@ -1,44 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-KdpFGQuuv9TwP5InaY2Tjm==
+<?php
+
+class MyRoute extends CLogRoute
+{
+	public $logCollected=false;
+	public $property=1;
+
+	protected function processLogs($logs)
+	{
+		$this->logCollected=true;
+		$this->property+=count($logs);
+	}
+}
+
+class CLogRouterTest extends CTestCase
+{
+	public function testRoutes()
+	{
+		$app=new TestApplication;
+		$router=new CLogRouter;
+
+		$this->assertEquals(count($router->routes),0);
+		$router->routes=array(
+			array(
+				'class'=>'MyRoute',
+				'property'=>2,
+			),
+			array(
+				'class'=>'MyRoute',
+				'property'=>3,
+			),
+		);
+		$router->init($app);
+		$this->assertEquals(count($router->routes),2);
+
+		$route1=$router->routes[0];
+		$this->assertFalse($route1->logCollected);
+		$this->assertEquals($route1->property,2);
+		$route2=$router->routes[1];
+		$this->assertFalse($route2->logCollected);
+		$this->assertEquals($route2->property,3);
+
+		$logger=Yii::getLogger();
+		$logger->log('message1','level1','category1');
+		$logger->log('message2','level2','category2');
+		$logger->log('message3','level3','category3');
+
+		$app->onEndRequest(new CEvent($this));
+		$this->assertTrue($route1->logCollected);
+		$this->assertTrue($route1->property>2);
+		$this->assertTrue($route2->logCollected);
+		$this->assertTrue($route2->property>3);
+	}
+}

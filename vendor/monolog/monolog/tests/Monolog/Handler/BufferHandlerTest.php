@@ -1,92 +1,149 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+use Monolog\Logger;
+
+class BufferHandlerTest extends TestCase
+{
+    /**
+     * @covers Monolog\Handler\BufferHandler::__construct
+     * @covers Monolog\Handler\BufferHandler::handle
+     * @covers Monolog\Handler\BufferHandler::close
+     */
+    public function testHandleBuffers()
+    {
+        $test = new TestHandler();
+        $handler = new BufferHandler($test);
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::INFO));
+        $this->assertFalse($test->hasDebugRecords());
+        $this->assertFalse($test->hasInfoRecords());
+        $handler->close();
+        $this->assertTrue($test->hasInfoRecords());
+        $this->assertTrue(count($test->getRecords()) === 2);
+    }
+
+    /**
+     * @covers Monolog\Handler\BufferHandler::close
+     * @covers Monolog\Handler\BufferHandler::flush
+     */
+    public function testDestructPropagatesRecords()
+    {
+        $test = new TestHandler();
+        $handler = new BufferHandler($test);
+        $handler->handle($this->getRecord(Logger::WARNING));
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->__destruct();
+        $this->assertTrue($test->hasWarningRecords());
+        $this->assertTrue($test->hasDebugRecords());
+    }
+
+    /**
+     * @covers Monolog\Handler\BufferHandler::handle
+     */
+    public function testHandleBufferLimit()
+    {
+        $test = new TestHandler();
+        $handler = new BufferHandler($test, 2);
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::INFO));
+        $handler->handle($this->getRecord(Logger::WARNING));
+        $handler->close();
+        $this->assertTrue($test->hasWarningRecords());
+        $this->assertTrue($test->hasInfoRecords());
+        $this->assertFalse($test->hasDebugRecords());
+    }
+
+    /**
+     * @covers Monolog\Handler\BufferHandler::handle
+     */
+    public function testHandleBufferLimitWithFlushOnOverflow()
+    {
+        $test = new TestHandler();
+        $handler = new BufferHandler($test, 3, Logger::DEBUG, true, true);
+
+        // send two records
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $this->assertFalse($test->hasDebugRecords());
+        $this->assertCount(0, $test->getRecords());
+
+        // overflow
+        $handler->handle($this->getRecord(Logger::INFO));
+        $this->assertTrue($test->hasDebugRecords());
+        $this->assertCount(3, $test->getRecords());
+
+        // should buffer again
+        $handler->handle($this->getRecord(Logger::WARNING));
+        $this->assertCount(3, $test->getRecords());
+
+        $handler->close();
+        $this->assertCount(5, $test->getRecords());
+        $this->assertTrue($test->hasWarningRecords());
+        $this->assertTrue($test->hasInfoRecords());
+    }
+
+    /**
+     * @covers Monolog\Handler\BufferHandler::handle
+     */
+    public function testHandleLevel()
+    {
+        $test = new TestHandler();
+        $handler = new BufferHandler($test, 0, Logger::INFO);
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::INFO));
+        $handler->handle($this->getRecord(Logger::WARNING));
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->close();
+        $this->assertTrue($test->hasWarningRecords());
+        $this->assertTrue($test->hasInfoRecords());
+        $this->assertFalse($test->hasDebugRecords());
+    }
+
+    /**
+     * @covers Monolog\Handler\BufferHandler::flush
+     */
+    public function testFlush()
+    {
+        $test = new TestHandler();
+        $handler = new BufferHandler($test, 0);
+        $handler->handle($this->getRecord(Logger::DEBUG));
+        $handler->handle($this->getRecord(Logger::INFO));
+        $handler->flush();
+        $this->assertTrue($test->hasInfoRecords());
+        $this->assertTrue($test->hasDebugRecords());
+        $this->assertFalse($test->hasWarningRecords());
+    }
+
+    /**
+     * @covers Monolog\Handler\BufferHandler::handle
+     */
+    public function testHandleUsesProcessors()
+    {
+        $test = new TestHandler();
+        $handler = new BufferHandler($test);
+        $handler->pushProcessor(function ($record) {
+            $record['extra']['foo'] = true;
+
+            return $record;
+        });
+        $handler->handle($this->getRecord(Logger::WARNING));
+        $handler->flush();
+        $this->assertTrue($test->hasWarningRecords());
+        $records = $test->getRecords();
+        $this->assertTrue($records[0]['extra']['foo']);
+    }
+}

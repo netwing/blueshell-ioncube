@@ -1,39 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-sed61hpC8w6gaAoRjXfsfJq=
+<?php
+
+namespace Guzzle\Http\Exception;
+
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+
+/**
+ * Http request exception thrown when a bad response is received
+ */
+class BadResponseException extends RequestException
+{
+    /** @var Response */
+    private $response;
+
+    /**
+     * Factory method to create a new response exception based on the response code.
+     *
+     * @param RequestInterface $request  Request
+     * @param Response         $response Response received
+     *
+     * @return BadResponseException
+     */
+    public static function factory(RequestInterface $request, Response $response)
+    {
+        if ($response->isClientError()) {
+            $label = 'Client error response';
+            $class = __NAMESPACE__ . '\\ClientErrorResponseException';
+        } elseif ($response->isServerError()) {
+            $label = 'Server error response';
+            $class = __NAMESPACE__ . '\\ServerErrorResponseException';
+        } else {
+            $label = 'Unsuccessful response';
+            $class = __CLASS__;
+            $e = new self();
+        }
+
+        $message = $label . PHP_EOL . implode(PHP_EOL, array(
+            '[status code] ' . $response->getStatusCode(),
+            '[reason phrase] ' . $response->getReasonPhrase(),
+            '[url] ' . $request->getUrl(),
+        ));
+
+        $e = new $class($message);
+        $e->setResponse($response);
+        $e->setRequest($request);
+
+        return $e;
+    }
+
+    /**
+     * Set the response that caused the exception
+     *
+     * @param Response $response Response to set
+     */
+    public function setResponse(Response $response)
+    {
+        $this->response = $response;
+    }
+
+    /**
+     * Get the response that caused the exception
+     *
+     * @return Response
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+}

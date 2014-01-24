@@ -1,49 +1,121 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Formatter;
+
+/**
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+class OutputFormatterStyleStack
+{
+    /**
+     * @var OutputFormatterStyleInterface[]
+     */
+    private $styles;
+
+    /**
+     * @var OutputFormatterStyleInterface
+     */
+    private $emptyStyle;
+
+    /**
+     * Constructor.
+     *
+     * @param OutputFormatterStyleInterface|null $emptyStyle
+     */
+    public function __construct(OutputFormatterStyleInterface $emptyStyle = null)
+    {
+        $this->emptyStyle = $emptyStyle ?: new OutputFormatterStyle();
+        $this->reset();
+    }
+
+    /**
+     * Resets stack (ie. empty internal arrays).
+     */
+    public function reset()
+    {
+        $this->styles = array();
+    }
+
+    /**
+     * Pushes a style in the stack.
+     *
+     * @param OutputFormatterStyleInterface $style
+     */
+    public function push(OutputFormatterStyleInterface $style)
+    {
+        $this->styles[] = $style;
+    }
+
+    /**
+     * Pops a style from the stack.
+     *
+     * @param OutputFormatterStyleInterface|null $style
+     *
+     * @return OutputFormatterStyleInterface
+     *
+     * @throws \InvalidArgumentException  When style tags incorrectly nested
+     */
+    public function pop(OutputFormatterStyleInterface $style = null)
+    {
+        if (empty($this->styles)) {
+            return $this->emptyStyle;
+        }
+
+        if (null === $style) {
+            return array_pop($this->styles);
+        }
+
+        foreach (array_reverse($this->styles, true) as $index => $stackedStyle) {
+            if ($style->apply('') === $stackedStyle->apply('')) {
+                $this->styles = array_slice($this->styles, 0, $index);
+
+                return $stackedStyle;
+            }
+        }
+
+        throw new \InvalidArgumentException('Incorrectly nested style tag found.');
+    }
+
+    /**
+     * Computes current style with stacks top codes.
+     *
+     * @return OutputFormatterStyle
+     */
+    public function getCurrent()
+    {
+        if (empty($this->styles)) {
+            return $this->emptyStyle;
+        }
+
+        return $this->styles[count($this->styles)-1];
+    }
+
+    /**
+     * @param OutputFormatterStyleInterface $emptyStyle
+     *
+     * @return OutputFormatterStyleStack
+     */
+    public function setEmptyStyle(OutputFormatterStyleInterface $emptyStyle)
+    {
+        $this->emptyStyle = $emptyStyle;
+
+        return $this;
+    }
+
+    /**
+     * @return OutputFormatterStyleInterface
+     */
+    public function getEmptyStyle()
+    {
+        return $this->emptyStyle;
+    }
+}

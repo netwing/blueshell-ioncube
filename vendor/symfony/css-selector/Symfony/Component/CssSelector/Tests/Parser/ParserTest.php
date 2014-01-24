@@ -1,212 +1,247 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-s7UejrOcYiZX51vrNsloufodqqMlkDxOJG==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Tests\Parser;
+
+use Symfony\Component\CssSelector\Exception\SyntaxErrorException;
+use Symfony\Component\CssSelector\Node\FunctionNode;
+use Symfony\Component\CssSelector\Node\SelectorNode;
+use Symfony\Component\CssSelector\Parser\Parser;
+use Symfony\Component\CssSelector\Parser\Token;
+
+class ParserTest extends \PHPUnit_Framework_TestCase
+{
+    /** @dataProvider getParserTestData */
+    public function testParser($source, $representation)
+    {
+        $parser = new Parser();
+
+        $this->assertEquals($representation, array_map(function (SelectorNode $node) {
+            return (string) $node->getTree();
+        }, $parser->parse($source)));
+    }
+
+    /** @dataProvider getParserExceptionTestData */
+    public function testParserException($source, $message)
+    {
+        $parser = new Parser();
+
+        try {
+            $parser->parse($source);
+            $this->fail('Parser should throw a SyntaxErrorException.');
+        } catch (SyntaxErrorException $e) {
+            $this->assertEquals($message, $e->getMessage());
+        }
+    }
+
+    /** @dataProvider getPseudoElementsTestData */
+    public function testPseudoElements($source, $element, $pseudo)
+    {
+        $parser = new Parser();
+        $selectors = $parser->parse($source);
+        $this->assertEquals(1, count($selectors));
+
+        /** @var SelectorNode $selector */
+        $selector = $selectors[0];
+        $this->assertEquals($element, (string) $selector->getTree());
+        $this->assertEquals($pseudo, (string) $selector->getPseudoElement());
+    }
+
+    /** @dataProvider getSpecificityTestData */
+    public function testSpecificity($source, $value)
+    {
+        $parser = new Parser();
+        $selectors = $parser->parse($source);
+        $this->assertEquals(1, count($selectors));
+
+        /** @var SelectorNode $selector */
+        $selector = $selectors[0];
+        $this->assertEquals($value, $selector->getSpecificity()->getValue());
+    }
+
+    /** @dataProvider getParseSeriesTestData */
+    public function testParseSeries($series, $a, $b)
+    {
+        $parser = new Parser();
+        $selectors = $parser->parse(sprintf(':nth-child(%s)', $series));
+        $this->assertEquals(1, count($selectors));
+
+        /** @var FunctionNode $function */
+        $function = $selectors[0]->getTree();
+        $this->assertEquals(array($a, $b), Parser::parseSeries($function->getArguments()));
+    }
+
+    /** @dataProvider getParseSeriesExceptionTestData */
+    public function testParseSeriesException($series)
+    {
+        $parser = new Parser();
+        $selectors = $parser->parse(sprintf(':nth-child(%s)', $series));
+        $this->assertEquals(1, count($selectors));
+
+        /** @var FunctionNode $function */
+        $function = $selectors[0]->getTree();
+        $this->setExpectedException('Symfony\Component\CssSelector\Exception\SyntaxErrorException');
+        Parser::parseSeries($function->getArguments());
+    }
+
+    public function getParserTestData()
+    {
+        return array(
+            array('*', array('Element[*]')),
+            array('*|*', array('Element[*]')),
+            array('*|foo', array('Element[foo]')),
+            array('foo|*', array('Element[foo|*]')),
+            array('foo|bar', array('Element[foo|bar]')),
+            array('#foo#bar', array('Hash[Hash[Element[*]#foo]#bar]')),
+            array('div>.foo', array('CombinedSelector[Element[div] > Class[Element[*].foo]]')),
+            array('div> .foo', array('CombinedSelector[Element[div] > Class[Element[*].foo]]')),
+            array('div >.foo', array('CombinedSelector[Element[div] > Class[Element[*].foo]]')),
+            array('div > .foo', array('CombinedSelector[Element[div] > Class[Element[*].foo]]')),
+            array("div \n>  \t \t .foo", array('CombinedSelector[Element[div] > Class[Element[*].foo]]')),
+            array('td.foo,.bar', array('Class[Element[td].foo]', 'Class[Element[*].bar]')),
+            array('td.foo, .bar', array('Class[Element[td].foo]', 'Class[Element[*].bar]')),
+            array("td.foo\t\r\n\f ,\t\r\n\f .bar", array('Class[Element[td].foo]', 'Class[Element[*].bar]')),
+            array('td.foo,.bar', array('Class[Element[td].foo]', 'Class[Element[*].bar]')),
+            array('td.foo, .bar', array('Class[Element[td].foo]', 'Class[Element[*].bar]')),
+            array("td.foo\t\r\n\f ,\t\r\n\f .bar", array('Class[Element[td].foo]', 'Class[Element[*].bar]')),
+            array('div, td.foo, div.bar span', array('Element[div]', 'Class[Element[td].foo]', 'CombinedSelector[Class[Element[div].bar] <followed> Element[span]]')),
+            array('div > p', array('CombinedSelector[Element[div] > Element[p]]')),
+            array('td:first', array('Pseudo[Element[td]:first]')),
+            array('td :first', array('CombinedSelector[Element[td] <followed> Pseudo[Element[*]:first]]')),
+            array('a[name]', array('Attribute[Element[a][name]]')),
+            array("a[ name\t]", array('Attribute[Element[a][name]]')),
+            array('a [name]', array('CombinedSelector[Element[a] <followed> Attribute[Element[*][name]]]')),
+            array('a[rel="include"]', array("Attribute[Element[a][rel = 'include']]")),
+            array('a[rel = include]', array("Attribute[Element[a][rel = 'include']]")),
+            array("a[hreflang |= 'en']", array("Attribute[Element[a][hreflang |= 'en']]")),
+            array('a[hreflang|=en]', array("Attribute[Element[a][hreflang |= 'en']]")),
+            array('div:nth-child(10)', array("Function[Element[div]:nth-child(['10'])]")),
+            array(':nth-child(2n+2)', array("Function[Element[*]:nth-child(['2', 'n', '+2'])]")),
+            array('div:nth-of-type(10)', array("Function[Element[div]:nth-of-type(['10'])]")),
+            array('div div:nth-of-type(10) .aclass', array("CombinedSelector[CombinedSelector[Element[div] <followed> Function[Element[div]:nth-of-type(['10'])]] <followed> Class[Element[*].aclass]]")),
+            array('label:only', array('Pseudo[Element[label]:only]')),
+            array('a:lang(fr)', array("Function[Element[a]:lang(['fr'])]")),
+            array('div:contains("foo")', array("Function[Element[div]:contains(['foo'])]")),
+            array('div#foobar', array('Hash[Element[div]#foobar]')),
+            array('div:not(div.foo)', array('Negation[Element[div]:not(Class[Element[div].foo])]')),
+            array('td ~ th', array('CombinedSelector[Element[td] ~ Element[th]]')),
+        );
+    }
+
+    public function getParserExceptionTestData()
+    {
+        return array(
+            array('attributes(href)/html/body/a', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, '(', 10))->getMessage()),
+            array('attributes(href)', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, '(', 10))->getMessage()),
+            array('html/body/a', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, '/', 4))->getMessage()),
+            array(' ', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_FILE_END, '', 1))->getMessage()),
+            array('div, ', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_FILE_END, '', 5))->getMessage()),
+            array(' , div', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, ',', 1))->getMessage()),
+            array('p, , div', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, ',', 3))->getMessage()),
+            array('div > ', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_FILE_END, '', 6))->getMessage()),
+            array('  > div', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, '>', 2))->getMessage()),
+            array('foo|#bar', SyntaxErrorException::unexpectedToken('identifier or "*"', new Token(Token::TYPE_HASH, 'bar', 4))->getMessage()),
+            array('#.foo', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, '#', 0))->getMessage()),
+            array('.#foo', SyntaxErrorException::unexpectedToken('identifier', new Token(Token::TYPE_HASH, 'foo', 1))->getMessage()),
+            array(':#foo', SyntaxErrorException::unexpectedToken('identifier', new Token(Token::TYPE_HASH, 'foo', 1))->getMessage()),
+            array('[*]', SyntaxErrorException::unexpectedToken('"|"', new Token(Token::TYPE_DELIMITER, ']', 2))->getMessage()),
+            array('[foo|]', SyntaxErrorException::unexpectedToken('identifier', new Token(Token::TYPE_DELIMITER, ']', 5))->getMessage()),
+            array('[#]', SyntaxErrorException::unexpectedToken('identifier or "*"', new Token(Token::TYPE_DELIMITER, '#', 1))->getMessage()),
+            array('[foo=#]', SyntaxErrorException::unexpectedToken('string or identifier', new Token(Token::TYPE_DELIMITER, '#', 5))->getMessage()),
+            array(':nth-child()', SyntaxErrorException::unexpectedToken('at least one argument', new Token(Token::TYPE_DELIMITER, ')', 11))->getMessage()),
+            array('[href]a', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_IDENTIFIER, 'a', 6))->getMessage()),
+            array('[rel:stylesheet]', SyntaxErrorException::unexpectedToken('operator', new Token(Token::TYPE_DELIMITER, ':', 4))->getMessage()),
+            array('[rel=stylesheet', SyntaxErrorException::unexpectedToken('"]"', new Token(Token::TYPE_FILE_END, '', 15))->getMessage()),
+            array(':lang(fr', SyntaxErrorException::unexpectedToken('an argument', new Token(Token::TYPE_FILE_END, '', 8))->getMessage()),
+            array(':contains("foo', SyntaxErrorException::unclosedString(10)->getMessage()),
+            array('foo!', SyntaxErrorException::unexpectedToken('selector', new Token(Token::TYPE_DELIMITER, '!', 3))->getMessage()),
+        );
+    }
+
+    public function getPseudoElementsTestData()
+    {
+        return array(
+            array('foo', 'Element[foo]', ''),
+            array('*', 'Element[*]', ''),
+            array(':empty', 'Pseudo[Element[*]:empty]', ''),
+            array(':BEfore', 'Element[*]', 'before'),
+            array(':aftER', 'Element[*]', 'after'),
+            array(':First-Line', 'Element[*]', 'first-line'),
+            array(':First-Letter', 'Element[*]', 'first-letter'),
+            array('::befoRE', 'Element[*]', 'before'),
+            array('::AFter', 'Element[*]', 'after'),
+            array('::firsT-linE', 'Element[*]', 'first-line'),
+            array('::firsT-letteR', 'Element[*]', 'first-letter'),
+            array('::Selection', 'Element[*]', 'selection'),
+            array('foo:after', 'Element[foo]', 'after'),
+            array('foo::selection', 'Element[foo]', 'selection'),
+            array('lorem#ipsum ~ a#b.c[href]:empty::selection', 'CombinedSelector[Hash[Element[lorem]#ipsum] ~ Pseudo[Attribute[Class[Hash[Element[a]#b].c][href]]:empty]]', 'selection'),
+        );
+    }
+
+    public function getSpecificityTestData()
+    {
+        return array(
+            array('*', 0),
+            array(' foo', 1),
+            array(':empty ', 10),
+            array(':before', 1),
+            array('*:before', 1),
+            array(':nth-child(2)', 10),
+            array('.bar', 10),
+            array('[baz]', 10),
+            array('[baz="4"]', 10),
+            array('[baz^="4"]', 10),
+            array('#lipsum', 100),
+            array(':not(*)', 0),
+            array(':not(foo)', 1),
+            array(':not(.foo)', 10),
+            array(':not([foo])', 10),
+            array(':not(:empty)', 10),
+            array(':not(#foo)', 100),
+            array('foo:empty', 11),
+            array('foo:before', 2),
+            array('foo::before', 2),
+            array('foo:empty::before', 12),
+            array('#lorem + foo#ipsum:first-child > bar:first-line', 213),
+        );
+    }
+
+    public function getParseSeriesTestData()
+    {
+        return array(
+            array('1n+3', 1, 3),
+            array('1n +3', 1, 3),
+            array('1n + 3', 1, 3),
+            array('1n+ 3', 1, 3),
+            array('1n-3', 1, -3),
+            array('1n -3', 1, -3),
+            array('1n - 3', 1, -3),
+            array('1n- 3', 1, -3),
+            array('n-5', 1, -5),
+            array('odd', 2, 1),
+            array('even', 2, 0),
+            array('3n', 3, 0),
+            array('n', 1, 0),
+            array('+n', 1, 0),
+            array('-n', -1, 0),
+            array('5', 0, 5),
+        );
+    }
+
+    public function getParseSeriesExceptionTestData()
+    {
+        return array(
+            array('foo'),
+            array('n+'),
+        );
+    }
+}

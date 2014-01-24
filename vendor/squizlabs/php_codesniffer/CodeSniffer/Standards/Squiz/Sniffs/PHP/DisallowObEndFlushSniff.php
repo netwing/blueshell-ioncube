@@ -1,32 +1,68 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Formatting_DisallowObEndFlushSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_Formatting_DisallowObEndFlushSniff.
+ *
+ * Checks the indenting used when an ob_start() call occurs.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_PHP_DisallowObEndFlushSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_STRING);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if ($tokens[$stackPtr]['content'] === 'ob_end_flush') {
+            $phpcsFile->addError('Use of ob_end_flush() is not allowed; use ob_get_contents() and ob_end_clean() instead', $stackPtr, 'Found');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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
-Z6OQtYkdsEcA123usRjppyKw

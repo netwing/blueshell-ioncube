@@ -1,47 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-RYzfqEjSM1yLsa+yFbZ4n0==
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/StreamFilters/StringReplacementFilter.php';
+
+class Swift_StreamFilters_StringReplacementFilterTest
+    extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testBasicReplacementsAreMade()
+    {
+        $filter = $this->_createFilter('foo', 'bar');
+        $this->assertEqual('XbarYbarZ', $filter->filter('XfooYfooZ'));
+    }
+
+    public function testShouldBufferReturnsTrueIfPartialMatchAtEndOfBuffer()
+    {
+        $filter = $this->_createFilter('foo', 'bar');
+        $this->assertTrue($filter->shouldBuffer('XfooYf'),
+            '%s: Filter should buffer since "foo" is the needle and the ending ' .
+            '"f" could be from "foo"'
+            );
+    }
+
+    public function testFilterCanMakeMultipleReplacements()
+    {
+        $filter = $this->_createFilter(array('a', 'b'), 'foo');
+        $this->assertEqual('XfooYfooZ', $filter->filter('XaYbZ'));
+    }
+
+    public function testMultipleReplacementsCanBeDifferent()
+    {
+        $filter = $this->_createFilter(array('a', 'b'), array('foo', 'zip'));
+        $this->assertEqual('XfooYzipZ', $filter->filter('XaYbZ'));
+    }
+
+    public function testShouldBufferReturnsFalseIfPartialMatchNotAtEndOfString()
+    {
+        $filter = $this->_createFilter("\r\n", "\n");
+        $this->assertFalse($filter->shouldBuffer("foo\r\nbar"),
+            '%s: Filter should not buffer since x0Dx0A is the needle and is not at EOF'
+            );
+    }
+
+    public function testShouldBufferReturnsTrueIfAnyOfMultipleMatchesAtEndOfString()
+    {
+        $filter = $this->_createFilter(array('foo', 'zip'), 'bar');
+        $this->assertTrue($filter->shouldBuffer('XfooYzi'),
+            '%s: Filter should buffer since "zip" is a needle and the ending ' .
+            '"zi" could be from "zip"'
+            );
+    }
+
+    // -- Creation methods
+
+    private function _createFilter($search, $replace)
+    {
+        return new Swift_StreamFilters_StringReplacementFilter($search, $replace);
+    }
+}

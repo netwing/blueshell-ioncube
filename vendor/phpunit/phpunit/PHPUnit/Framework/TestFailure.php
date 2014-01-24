@@ -1,51 +1,179 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.0.0
+ */
+
+/**
+ * A TestFailure collects a failed test together with the caught exception.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ */
+class PHPUnit_Framework_TestFailure
+{
+    /**
+     * @var    PHPUnit_Framework_Test
+     */
+    protected $failedTest;
+
+    /**
+     * @var    Exception
+     */
+    protected $thrownException;
+
+    /**
+     * Constructs a TestFailure with the given test and exception.
+     *
+     * @param  PHPUnit_Framework_Test $failedTest
+     * @param  Exception               $thrownException
+     */
+    public function __construct(PHPUnit_Framework_Test $failedTest, Exception $thrownException)
+    {
+        $this->failedTest      = $failedTest;
+        $this->thrownException = $thrownException;
+    }
+
+    /**
+     * Returns a short description of the failure.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return sprintf(
+          '%s: %s',
+
+          $this->failedTest->toString(),
+          $this->thrownException->getMessage()
+        );
+    }
+
+    /**
+     * Returns a description for the thrown exception.
+     *
+     * @return string
+     * @since  Method available since Release 3.4.0
+     */
+    public function getExceptionAsString()
+    {
+        return self::exceptionToString($this->thrownException);
+    }
+
+    /**
+     * Returns a description for an exception.
+     *
+     * @param  Exception $e
+     * @return string
+     * @since  Method available since Release 3.2.0
+     */
+    public static function exceptionToString(Exception $e)
+    {
+        if ($e instanceof PHPUnit_Framework_SelfDescribing) {
+            $buffer = $e->toString();
+
+            if ($e instanceof PHPUnit_Framework_ExpectationFailedException && $e->getComparisonFailure()) {
+                $buffer = $buffer . "\n" . $e->getComparisonFailure()->getDiff();
+            }
+
+            if (!empty($buffer)) {
+                $buffer = trim($buffer) . "\n";
+            }
+        }
+
+        else if ($e instanceof PHPUnit_Framework_Error) {
+            $buffer = $e->getMessage() . "\n";
+        }
+
+        else {
+            $buffer = get_class($e) . ': ' . $e->getMessage() . "\n";
+        }
+
+        return $buffer;
+    }
+
+    /**
+     * Gets the failed test.
+     *
+     * @return Test
+     */
+    public function failedTest()
+    {
+        return $this->failedTest;
+    }
+
+    /**
+     * Gets the thrown exception.
+     *
+     * @return Exception
+     */
+    public function thrownException()
+    {
+        return $this->thrownException;
+    }
+
+    /**
+     * Returns the exception's message.
+     *
+     * @return string
+     */
+    public function exceptionMessage()
+    {
+        return $this->thrownException()->getMessage();
+    }
+
+    /**
+     * Returns TRUE if the thrown exception
+     * is of type AssertionFailedError.
+     *
+     * @return boolean
+     */
+    public function isFailure()
+    {
+        return ($this->thrownException() instanceof PHPUnit_Framework_AssertionFailedError);
+    }
+}

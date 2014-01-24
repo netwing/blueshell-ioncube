@@ -1,155 +1,370 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-NG7Y+LBnjK9nif4=
+<?php
+
+require_once 'Sweety/Runner.php';
+require_once 'Sweety/TestLocator.php';
+require_once 'Sweety/Reporter.php';
+
+/**
+ * Base functionality for the Sweety_Runner.
+ * @package Sweety
+ * @author Chris Corbyn
+ */
+abstract class Sweety_Runner_AbstractTestRunner implements Sweety_Runner
+{
+ 
+ /**
+  * The reporter used for showing progress.
+  * @var Sweety_Reporter
+  * @access private
+  */
+ private $_reporter;
+ 
+  /**
+   * TestLocator strategies.
+   * @var Sweety_TestLocator[]
+   * @access private
+   */
+  private $_testLocators = array();
+   
+  /**
+   * Regular expression for classes which should be ignored.
+   * @var string
+   * @access private
+   */
+  private $_ignoredClassRegex = '/^$/D';
+  
+  /**
+   * Set the reporter used for showing results.
+   * @param Sweety_Reporter $reporter
+   */
+  public function setReporter(Sweety_Reporter $reporter)
+  {
+    $this->_reporter = $reporter;
+  }
+  
+  /**
+   * Get the reporter used for showing results.
+   * @return Sweety_Reporter
+   */
+  public function getReporter()
+  {
+    return $this->_reporter;
+  }
+  
+  /**
+   * Register a test locator instance.
+   * @param Sweety_TestLocator $locator
+   */
+  public function registerTestLocator(Sweety_TestLocator $locator)
+  {
+    $this->_testLocators[] = $locator;
+  }
+  
+  /**
+   * Set the regular expression used to filter out certain class names.
+   * @param string $ignoredClassRegex
+   */
+  public function setIgnoredClassRegex($ignoredClassRegex)
+  {
+    $this->_ignoredClassRegex = $ignoredClassRegex;
+  }
+  
+  /**
+   * Get the filtering regular expression for ignoring certain classes.
+   * @return string
+   */
+  public function getIgnoredClassRegex()
+  {
+    return $this->_ignoredClassRegex;
+  }
+   
+  /**
+   * Run a single test case with the given name, using the provided output format.
+   * @param string $testName
+   * @param string $format (xml, text or html)
+   * @return int
+   */
+  public function runTestCase($testName, $format = Sweety_Runner::REPORT_TEXT)
+  {
+    foreach ($this->_testLocators as $locator)
+    {
+      if ($locator->includeTest($testName))
+      {
+        break;
+      }
+    }
+    
+    $testClass = new ReflectionClass($testName);
+    if ($testClass->getConstructor())
+    {
+      //We don't want test output to be cached
+      if (!SimpleReporter::inCli())
+      {
+        header("Cache-Control: no-cache, must-revalidate");
+        header("Pragma: no-cache");
+        header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+      }
+      
+      switch ($format)
+      {
+        case Sweety_Runner::REPORT_HTML:
+          $reporter = new HtmlReporter();
+          break;
+        case Sweety_Runner::REPORT_XML:
+          if (!SimpleReporter::inCli())
+          {
+            header("Content-Type: text/xml"); //Sigh! SimpleTest (skip() issues).
+          }
+          $reporter = new XmlReporter();
+          break;
+        case Sweety_Runner::REPORT_TEXT:
+        default:
+          $reporter = new TextReporter();
+          break;
+      }
+      $test = $testClass->newInstance();
+      return $test->run($reporter) ? 0 : 1;
+    }
+    
+    return 1;
+  }
+  
+  /**
+   * Use strategies to find tests which are runnable.
+   * @param string[] $dirs
+   * @return string[]
+   */
+  protected function findTests($dirs = array())
+  {
+    $tests = array();
+    foreach ($this->_testLocators as $locator)
+    {
+      $tests += $locator->getTests($dirs);
+    }
+    return $tests;
+  }
+  
+  /**
+   * Parse an XML response from a test case an report to the reporter.
+   * @param string $xml
+   * @param string $testCase
+   */
+  protected function parseXml($xml, $testCase)
+  {
+    $reporter = $this->_reporter->getReporterFor($testCase);
+    if (!$reporter->isStarted())
+    {
+      $reporter->start();
+    }
+    
+    $xml = str_replace("\0", '?', trim($xml));
+    $xml = preg_replace_callback('/[^\x01-\x7F]/', array($this, 'preg_print_escape'), $xml); //Do something better?
+    if (!empty($xml))
+    {
+      $document = @simplexml_load_string($xml);
+      if ($document)
+      {
+        $this->_parseDocument($document, $testCase, $reporter);
+        $reporter->finish();
+        return;
+      }
+    }
+    
+    $reporter->reportException(
+      'Invalid XML response: ' .
+      trim(strip_tags(
+        preg_replace('/^\s*<\?xml.+<\/(?:name|pass|fail|exception)>/s', '', $xml)
+        )),
+      $testCase
+      );
+  }
+  
+  private function preg_print_escape( $matches )
+  {
+      return sprintf("&#%d;", ord($matches[0]));
+  }
+  
+  /**
+   * Parse formatted test output.
+   * @param SimpleXMLElement The node containing the output
+   * @param string $path to this test method
+   * @access private
+   */
+  private function _parseFormatted(SimpleXMLElement $formatted, $path = '',
+    Sweety_Reporter $reporter)
+  {
+    $reporter->reportOutput((string)$formatted, $path);
+  }
+  
+  /**
+   * Parse test output.
+   * @param SimpleXMLElement The node containing the output
+   * @param string $path to this test method
+   * @access private
+   */
+  private function _parseMessage(SimpleXMLElement $message, $path = '',
+    Sweety_Reporter $reporter)
+  {
+    $reporter->reportOutput((string)$message, $path);
+  }
+  
+  /**
+   * Parse a test failure.
+   * @param SimpleXMLElement The node containing the fail
+   * @param string $path to this test method
+   * @access private
+   */
+  private function _parseFailure(SimpleXMLElement $failure, $path = '',
+    Sweety_Reporter $reporter)
+  {
+    $reporter->reportFail((string)$failure, $path);
+  }
+  
+  /**
+   * Parse an exception.
+   * @param SimpleXMLElement The node containing the exception
+   * @param string $path to this test method
+   * @access private
+   */
+  private function _parseException(SimpleXMLElement $exception, $path = '',
+    Sweety_Reporter $reporter)
+  {
+    $reporter->reportException((string)$exception, $path);
+  }
+  
+  /**
+   * Parse a pass.
+   * @param SimpleXMLElement The node containing this pass.
+   * @param string $path to this test method
+   * @access private
+   */
+  private function _parsePass(SimpleXMLElement $pass, $path = '',
+    Sweety_Reporter $reporter)
+  {
+    $reporter->reportPass((string)$pass, $path);
+  }
+  
+  /**
+   * Parse a single test case.
+   * @param SimpleXMLElement The node containing the test case
+   * @param string $path to this test case
+   * @access private
+   */
+  private function _parseTestCase(SimpleXMLElement $testCase, $path = '',
+    Sweety_Reporter $reporter)
+  { 
+    foreach ($testCase->xpath('./test') as $testMethod)
+    {
+      $testMethodName = (string) $this->_firstNodeValue($testMethod->xpath('./name'));
+      
+      foreach ($testMethod->xpath('./formatted') as $formatted)
+      {
+        $this->_parseFormatted(
+          $formatted, $path . ' -> ' . $testMethodName, $reporter);
+      }
+      
+      foreach ($testMethod->xpath('./message') as $message)
+      {
+        $this->_parseMessage(
+          $message, $path . ' -> ' . $testMethodName, $reporter);
+      }
+      
+      foreach ($testMethod->xpath('./fail') as $failure)
+      {
+        $this->_parseFailure(
+          $failure, $path . ' -> ' . $testMethodName, $reporter);
+      }
+      
+      foreach ($testMethod->xpath('./exception') as $exception)
+      {
+        $this->_parseException(
+          $exception, $path . ' -> ' . $testMethodName, $reporter);
+      }
+      
+      foreach ($testMethod->xpath('./pass') as $pass)
+      {
+        $this->_parsePass($pass, $path . ' -> ' . $testMethodName, $reporter);
+      }
+      
+      $stdout = trim((string) $testMethod);
+      if ($stdout)
+      {
+        $reporter->reportOutput($stdout, $path . ' -> ' . $testMethodName);
+      }
+    }
+  }
+  
+  /**
+   * Parse the results of all tests.
+   * @param SimpleXMLElement The node containing the tests
+   * @param string $path to the tests
+   * @access private
+   */
+  private function _parseResults(SimpleXMLElement $document, $path = '',
+    Sweety_Reporter $reporter)
+  {
+    $groups = $document->xpath('./group');
+    if (!empty($groups))
+    { 
+      foreach ($groups as $group)
+      { 
+        $groupName = (string) $this->_firstNodeValue($group->xpath('./name'));
+        $this->_parseResults($group, $path . ' -> ' . $groupName, $reporter);
+      }
+    }
+    else
+    {
+      foreach ($document->xpath('./case') as $testCase)
+      {
+        $this->_parseTestCase($testCase, $path, $reporter);
+      }
+    }
+  }
+  
+  /**
+   * Parse the entire SimpleTest XML document from a test case.
+   * @param SimpleXMLElement $document to parse
+   * @param string $path to the test
+   * @access private
+   */
+  private function _parseDocument(SimpleXMLElement $document, $path = '',
+    Sweety_Reporter $reporter)
+  {
+    if ($everything = $this->_firstNodeValue($document->xpath('/run')))
+    {
+      $this->_parseResults($everything, $path, $reporter);
+    }
+    elseif ($skip = $this->_firstNodeValue($document->xpath('/skip')))
+    {
+      $reporter->reportSkip((string) $skip, $path);
+    }
+  }
+  
+  protected function _sort($a, $b)
+  {
+    $apkg = preg_replace('/_[^_]+$/D', '', $a);
+    $bpkg = preg_replace('/_[^_]+$/D', '', $b);
+    if ($apkg == $bpkg)
+    {
+      if ($a == $b)
+      {
+        return 0;
+      }
+      else
+      {
+        return ($a > $b) ? 1 : -1;
+      }
+    }
+    else
+    {
+      return ($apkg > $bpkg) ? 1 : -1;
+    }
+  }
+  
+  private function _firstNodeValue($nodeSet)
+  {
+    $first = array_shift($nodeSet);
+    return $first;
+  }
+  
+}

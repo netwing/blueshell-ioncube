@@ -1,133 +1,214 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-mxPVeHnz6O+3uqFONAh25eEJH9xah42tMCoyRG==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Helper;
+
+use Symfony\Component\Console\Helper\ProgressHelper;
+use Symfony\Component\Console\Output\StreamOutput;
+
+class ProgressHelperTest extends \PHPUnit_Framework_TestCase
+{
+    public function testAdvance()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream());
+        $progress->advance();
+
+        rewind($output->getStream());
+        $this->assertEquals($this->generateOutput('    1 [->--------------------------]'), stream_get_contents($output->getStream()));
+    }
+
+    public function testAdvanceWithStep()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream());
+        $progress->advance(5);
+
+        rewind($output->getStream());
+        $this->assertEquals($this->generateOutput('    5 [----->----------------------]'), stream_get_contents($output->getStream()));
+    }
+
+    public function testAdvanceMultipleTimes()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream());
+        $progress->advance(3);
+        $progress->advance(2);
+
+        rewind($output->getStream());
+        $this->assertEquals($this->generateOutput('    3 [--->------------------------]').$this->generateOutput('    5 [----->----------------------]'), stream_get_contents($output->getStream()));
+    }
+
+    public function testCustomizations()
+    {
+        $progress = new ProgressHelper();
+        $progress->setBarWidth(10);
+        $progress->setBarCharacter('_');
+        $progress->setEmptyBarCharacter(' ');
+        $progress->setProgressCharacter('/');
+        $progress->setFormat(' %current%/%max% [%bar%] %percent%%');
+        $progress->start($output = $this->getOutputStream(), 10);
+        $progress->advance();
+
+        rewind($output->getStream());
+        $this->assertEquals($this->generateOutput('  1/10 [_/        ]  10%'), stream_get_contents($output->getStream()));
+    }
+
+    public function testPercent()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream(), 50);
+        $progress->display();
+        $progress->advance();
+        $progress->advance();
+
+        rewind($output->getStream());
+        $this->assertEquals($this->generateOutput('  0/50 [>---------------------------]   0%').$this->generateOutput('  1/50 [>---------------------------]   2%').$this->generateOutput('  2/50 [=>--------------------------]   4%'), stream_get_contents($output->getStream()));
+    }
+
+    public function testOverwriteWithShorterLine()
+    {
+        $progress = new ProgressHelper();
+        $progress->setFormat(' %current%/%max% [%bar%] %percent%%');
+        $progress->start($output = $this->getOutputStream(), 50);
+        $progress->display();
+        $progress->advance();
+
+        // set shorter format
+        $progress->setFormat(' %current%/%max% [%bar%]');
+        $progress->advance();
+
+        rewind($output->getStream());
+        $this->assertEquals(
+            $this->generateOutput('  0/50 [>---------------------------]   0%') .
+            $this->generateOutput('  1/50 [>---------------------------]   2%') .
+            $this->generateOutput('  2/50 [=>--------------------------]     '),
+            stream_get_contents($output->getStream())
+        );
+    }
+
+    public function testSetCurrentProgress()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream(), 50);
+        $progress->display();
+        $progress->advance();
+        $progress->setCurrent(15);
+        $progress->setCurrent(25);
+
+        rewind($output->getStream());
+        $this->assertEquals(
+            $this->generateOutput('  0/50 [>---------------------------]   0%') .
+            $this->generateOutput('  1/50 [>---------------------------]   2%') .
+            $this->generateOutput(' 15/50 [========>-------------------]  30%') .
+            $this->generateOutput(' 25/50 [==============>-------------]  50%'),
+            stream_get_contents($output->getStream())
+        );
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage You must start the progress bar
+     */
+    public function testSetCurrentBeforeStarting()
+    {
+        $progress = new ProgressHelper();
+        $progress->setCurrent(15);
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage You can't regress the progress bar
+     */
+    public function testRegressProgress()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream(), 50);
+        $progress->setCurrent(15);
+        $progress->setCurrent(10);
+    }
+
+    public function testRedrawFrequency()
+    {
+        $progress = $this->getMock('Symfony\Component\Console\Helper\ProgressHelper', array('display'));
+        $progress->expects($this->exactly(4))
+                 ->method('display');
+
+        $progress->setRedrawFrequency(2);
+
+        $progress->start($output = $this->getOutputStream(), 6);
+        $progress->setCurrent(1);
+        $progress->advance(2);
+        $progress->advance(2);
+        $progress->advance(1);
+    }
+
+    public function testMultiByteSupport()
+    {
+        if (!function_exists('mb_strlen') || (false === $encoding = mb_detect_encoding('■'))) {
+            $this->markTestSkipped('The mbstring extension is needed for multi-byte support');
+        }
+
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream());
+        $progress->setBarCharacter('■');
+        $progress->advance(3);
+
+        rewind($output->getStream());
+        $this->assertEquals($this->generateOutput('    3 [■■■>------------------------]'), stream_get_contents($output->getStream()));
+    }
+
+    public function testClear()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream(), 50);
+        $progress->setCurrent(25);
+        $progress->clear();
+
+        rewind($output->getStream());
+        $this->assertEquals(
+            $this->generateOutput(' 25/50 [==============>-------------]  50%') . $this->generateOutput(''),
+            stream_get_contents($output->getStream())
+        );
+    }
+
+    public function testPercentNotHundredBeforeComplete()
+    {
+        $progress = new ProgressHelper();
+        $progress->start($output = $this->getOutputStream(), 200);
+        $progress->display();
+        $progress->advance(199);
+        $progress->advance();
+
+        rewind($output->getStream());
+        $this->assertEquals($this->generateOutput('   0/200 [>---------------------------]   0%').$this->generateOutput(' 199/200 [===========================>]  99%').$this->generateOutput(' 200/200 [============================] 100%'), stream_get_contents($output->getStream()));
+    }
+
+    protected function getOutputStream()
+    {
+        return new StreamOutput(fopen('php://memory', 'r+', false));
+    }
+
+    protected $lastMessagesLength;
+
+    protected function generateOutput($expected)
+    {
+        $expectedout = $expected;
+
+        if ($this->lastMessagesLength !== null) {
+            $expectedout = str_pad($expected, $this->lastMessagesLength, "\x20", STR_PAD_RIGHT);
+        }
+
+        $this->lastMessagesLength = strlen($expectedout);
+
+        return "\x0D".$expectedout;
+    }
+}

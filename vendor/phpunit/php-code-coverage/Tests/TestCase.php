@@ -1,93 +1,303 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.0.0
+ */
+
+/**
+ * Abstract base class for test case classes.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.0.0
+ */
+abstract class PHP_CodeCoverage_TestCase extends PHPUnit_Framework_TestCase
+{
+    protected function getXdebugDataForBankAccount()
+    {
+        return array(
+          array(
+            TEST_FILES_PATH . 'BankAccount.php' => array(
+               8 =>  1,
+               9 => -2,
+              13 => -1,
+              14 => -1,
+              15 => -1,
+              16 => -1,
+              18 => -1,
+              22 => -1,
+              24 => -1,
+              25 => -2,
+              29 => -1,
+              31 => -1,
+              32 => -2
+            )
+          ),
+          array(
+            TEST_FILES_PATH . 'BankAccount.php' => array(
+               8 => 1,
+              13 => 1,
+              16 => 1,
+              29 => 1,
+            )
+          ),
+          array(
+            TEST_FILES_PATH . 'BankAccount.php' => array(
+               8 => 1,
+              13 => 1,
+              16 => 1,
+              22 => 1,
+            )
+          ),
+          array(
+            TEST_FILES_PATH . 'BankAccount.php' => array(
+               8 => 1,
+              13 => 1,
+              14 => 1,
+              15 => 1,
+              18 => 1,
+              22 => 1,
+              24 => 1,
+              29 => 1,
+              31 => 1,
+            )
+          )
+        );
+    }
+
+    protected function getCoverageForBankAccount()
+    {
+        $data = $this->getXdebugDataForBankAccount();
+
+        $stub = $this->getMock('PHP_CodeCoverage_Driver_Xdebug');
+        $stub->expects($this->any())
+             ->method('stop')
+             ->will($this->onConsecutiveCalls(
+               $data[0], $data[1], $data[2], $data[3]
+             ));
+
+        $coverage = new PHP_CodeCoverage($stub, new PHP_CodeCoverage_Filter);
+
+        $coverage->start(
+          new BankAccountTest('testBalanceIsInitiallyZero'), TRUE
+        );
+        $coverage->stop();
+
+        $coverage->start(
+          new BankAccountTest('testBalanceCannotBecomeNegative')
+        );
+        $coverage->stop();
+
+        $coverage->start(
+          new BankAccountTest('testBalanceCannotBecomeNegative2')
+        );
+        $coverage->stop();
+
+        $coverage->start(
+          new BankAccountTest('testDepositWithdrawMoney')
+        );
+        $coverage->stop();
+
+        return $coverage;
+    }
+
+    protected function getCoverageForBankAccountForFirstTwoTests()
+    {
+        $data = $this->getXdebugDataForBankAccount();
+
+        $stub = $this->getMock('PHP_CodeCoverage_Driver_Xdebug');
+        $stub->expects($this->any())
+             ->method('stop')
+             ->will($this->onConsecutiveCalls(
+               $data[0], $data[1]
+             ));
+
+        $coverage = new PHP_CodeCoverage($stub, new PHP_CodeCoverage_Filter);
+
+        $coverage->start(
+          new BankAccountTest('testBalanceIsInitiallyZero'), TRUE
+        );
+        $coverage->stop();
+
+        $coverage->start(
+          new BankAccountTest('testBalanceCannotBecomeNegative')
+        );
+        $coverage->stop();
+
+        return $coverage;
+    }
+
+    protected function getCoverageForBankAccountForLastTwoTests()
+    {
+        $data = $this->getXdebugDataForBankAccount();
+
+        $stub = $this->getMock('PHP_CodeCoverage_Driver_Xdebug');
+        $stub->expects($this->any())
+             ->method('stop')
+             ->will($this->onConsecutiveCalls(
+               $data[2], $data[3]
+             ));
+
+        $coverage = new PHP_CodeCoverage($stub, new PHP_CodeCoverage_Filter);
+
+        $coverage->start(
+          new BankAccountTest('testBalanceCannotBecomeNegative2'), TRUE
+        );
+        $coverage->stop();
+
+        $coverage->start(
+          new BankAccountTest('testDepositWithdrawMoney')
+        );
+        $coverage->stop();
+
+        return $coverage;
+    }
+
+    protected function getExpectedDataArrayForBankAccount()
+    {
+        return array(
+          TEST_FILES_PATH . 'BankAccount.php' => array(
+            8 => array(
+              0 => 'BankAccountTest::testBalanceIsInitiallyZero',
+              1 => 'BankAccountTest::testDepositWithdrawMoney'
+            ),
+            9 => NULL,
+            13 => array(),
+            14 => array(),
+            15 => array(),
+            16 => array(),
+            18 => array(),
+            22 => array(
+              0 => 'BankAccountTest::testBalanceCannotBecomeNegative2',
+              1 => 'BankAccountTest::testDepositWithdrawMoney'
+            ),
+            24 => array(
+              0 => 'BankAccountTest::testDepositWithdrawMoney',
+            ),
+            25 => NULL,
+            29 => array(
+              0 => 'BankAccountTest::testBalanceCannotBecomeNegative',
+              1 => 'BankAccountTest::testDepositWithdrawMoney'
+            ),
+            31 => array(
+              0 => 'BankAccountTest::testDepositWithdrawMoney'
+            ),
+            32 => NULL
+          )
+        );
+    }
+
+    protected function getCoverageForFileWithIgnoredLines()
+    {
+        $coverage = new PHP_CodeCoverage(
+          $this->setUpXdebugStubForFileWithIgnoredLines(),
+          new PHP_CodeCoverage_Filter
+        );
+
+        $coverage->start('FileWithIgnoredLines', TRUE);
+        $coverage->stop();
+
+        return $coverage;
+    }
+
+    protected function setUpXdebugStubForFileWithIgnoredLines()
+    {
+        $stub = $this->getMock('PHP_CodeCoverage_Driver_Xdebug');
+        $stub->expects($this->any())
+             ->method('stop')
+             ->will($this->returnValue(
+               array(
+                 TEST_FILES_PATH . 'source_with_ignore.php' => array(
+                   2 => 1,
+                   4 => -1,
+                   6 => -1,
+                   7 => 1
+                 )
+               )
+            ));
+
+        return $stub;
+    }
+
+    protected function getCoverageForClassWithAnonymousFunction()
+    {
+        $coverage = new PHP_CodeCoverage(
+          $this->setUpXdebugStubForClassWithAnonymousFunction(),
+          new PHP_CodeCoverage_Filter
+        );
+
+        $coverage->start('ClassWithAnonymousFunction', TRUE);
+        $coverage->stop();
+
+        return $coverage;
+    }
+
+    protected function setUpXdebugStubForClassWithAnonymousFunction()
+    {
+        $stub = $this->getMock('PHP_CodeCoverage_Driver_Xdebug');
+        $stub->expects($this->any())
+             ->method('stop')
+             ->will($this->returnValue(
+               array(
+                 TEST_FILES_PATH . 'source_with_class_and_anonymous_function.php' => array(
+                    7  => 1,
+                    9  => 1,
+                    10 => -1,
+                    11 => 1,
+                    12 => 1,
+                    13 => 1,
+                    14 => 1,
+                    17 => 1,
+                    18 => 1
+                 )
+               )
+            ));
+
+        return $stub;
+    }
+}

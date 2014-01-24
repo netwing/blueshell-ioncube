@@ -1,64 +1,107 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-HA201AOdf2r7Vi4=
+<?php
+/**
+ * This file contains classes implementing security manager feature.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CStatePersister implements a file-based persistent data storage.
+ *
+ * It can be used to keep data available through multiple requests and sessions.
+ *
+ * By default, CStatePersister stores data in a file named 'state.bin' that is located
+ * under the application {@link CApplication::getRuntimePath runtime path}.
+ * You may change the location by setting the {@link stateFile} property.
+ *
+ * To retrieve the data from CStatePersister, call {@link load()}. To save the data,
+ * call {@link save()}.
+ *
+ * Comparison among state persister, session and cache is as follows:
+ * <ul>
+ * <li>session: data persisting within a single user session.</li>
+ * <li>state persister: data persisting through all requests/sessions (e.g. hit counter).</li>
+ * <li>cache: volatile and fast storage. It may be used as storage medium for session or state persister.</li>
+ * </ul>
+ *
+ * Since server resource is often limited, be cautious if you plan to use CStatePersister
+ * to store large amount of data. You should also consider using database-based persister
+ * to improve the throughput.
+ *
+ * CStatePersister is a core application component used to store global application state.
+ * It may be accessed via {@link CApplication::getStatePersister()}.
+ * page state persistent method based on cache.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ * @since 1.0
+ */
+class CStatePersister extends CApplicationComponent implements IStatePersister
+{
+	/**
+	 * @var string the file path storing the state data. Make sure the directory containing
+	 * the file exists and is writable by the Web server process. If using relative path, also
+	 * make sure the path is correct.
+	 */
+	public $stateFile;
+	/**
+	 * @var string the ID of the cache application component that is used to cache the state values.
+	 * Defaults to 'cache' which refers to the primary cache application component.
+	 * Set this property to false if you want to disable caching state values.
+	 */
+	public $cacheID='cache';
+
+	/**
+	 * Initializes the component.
+	 * This method overrides the parent implementation by making sure {@link stateFile}
+	 * contains valid value.
+	 */
+	public function init()
+	{
+		parent::init();
+		if($this->stateFile===null)
+			$this->stateFile=Yii::app()->getRuntimePath().DIRECTORY_SEPARATOR.'state.bin';
+		$dir=dirname($this->stateFile);
+		if(!is_dir($dir) || !is_writable($dir))
+			throw new CException(Yii::t('yii','Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.',
+				array('{file}'=>$this->stateFile)));
+	}
+
+	/**
+	 * Loads state data from persistent storage.
+	 * @return mixed state data. Null if no state data available.
+	 */
+	public function load()
+	{
+		$stateFile=$this->stateFile;
+		if($this->cacheID!==false && ($cache=Yii::app()->getComponent($this->cacheID))!==null)
+		{
+			$cacheKey='Yii.CStatePersister.'.$stateFile;
+			if(($value=$cache->get($cacheKey))!==false)
+				return unserialize($value);
+			elseif(($content=@file_get_contents($stateFile))!==false)
+			{
+				$cache->set($cacheKey,$content,0,new CFileCacheDependency($stateFile));
+				return unserialize($content);
+			}
+			else
+				return null;
+		}
+		elseif(($content=@file_get_contents($stateFile))!==false)
+			return unserialize($content);
+		else
+			return null;
+	}
+
+	/**
+	 * Saves application state in persistent storage.
+	 * @param mixed $state state data (must be serializable).
+	 */
+	public function save($state)
+	{
+		file_put_contents($this->stateFile,serialize($state),LOCK_EX);
+	}
+}

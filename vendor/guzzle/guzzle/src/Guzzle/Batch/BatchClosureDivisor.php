@@ -1,30 +1,39 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-iqzs3i9qIJ423DU9vQlmUEhD
+<?php
+
+namespace Guzzle\Batch;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+
+/**
+ * Divides batches using a callable
+ */
+class BatchClosureDivisor implements BatchDivisorInterface
+{
+    /** @var callable Method used to divide the batches */
+    protected $callable;
+
+    /** @var mixed $context Context passed to the callable */
+    protected $context;
+
+    /**
+     * @param callable $callable Method used to divide the batches. The method must accept an \SplQueue and return an
+     *                           array of arrays containing the divided items.
+     * @param mixed    $context  Optional context to pass to the batch divisor
+     *
+     * @throws InvalidArgumentException if the callable is not callable
+     */
+    public function __construct($callable, $context = null)
+    {
+        if (!is_callable($callable)) {
+            throw new InvalidArgumentException('Must pass a callable');
+        }
+
+        $this->callable = $callable;
+        $this->context = $context;
+    }
+
+    public function createBatches(\SplQueue $queue)
+    {
+        return call_user_func($this->callable, $queue, $this->context);
+    }
+}

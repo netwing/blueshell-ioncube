@@ -1,81 +1,88 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QxdkKVzV+AMYy1oU4m==
+<?php
+
+class MarkdownParser extends CMarkdownParser
+{
+	private $_blockquoteType='';
+
+	public function __construct()
+	{
+		$this->span_gamut += array(
+			"doApiLinks"        => 35,
+			);
+
+		parent::__construct();
+	}
+
+	public function _doHeaders_callback_setext($matches)
+	{
+		if ($matches[3] == '-' && preg_match('{^- }', $matches[1]))
+			return $matches[0];
+		$level = $matches[3]{0} == '=' ? 1 : 2;
+		$text = $this->runSpanGamut($matches[1]);
+		$attr = $this->doHeaderId($text);
+		$block = "<h$level$attr>".$text."</h$level>";
+		return "\n" . $this->hashBlock($block) . "\n\n";
+	}
+
+	public function _doHeaders_callback_atx($matches)
+	{
+		$level = strlen($matches[1]);
+		$text = $this->runSpanGamut($matches[2]);
+		$attr = $this->doHeaderId($text);
+		$block = "<h$level$attr>".$text."</h$level>";
+		return "\n" . $this->hashBlock($block) . "\n\n";
+	}
+
+	public function _doBlockQuotes_callback($matches)
+	{
+		$bq = $matches[1];
+		# trim one level of quoting - trim whitespace-only lines
+		$bq = preg_replace('/^[ ]*>[ ]?|^[ ]+$/m', '', $bq);
+		$bq = $this->runBlockGamut($bq);		# recurse
+
+		$bq = preg_replace('/^/m', "  ", $bq);
+		# These leading spaces cause problem with <pre> content,
+		# so we need to fix that:
+		$bq = preg_replace_callback('{(\s*<pre>.+?</pre>)}sx',
+			array(&$this, '_DoBlockQuotes_callback2'), $bq);
+
+		# Do blockquote tips/notes
+		$bq = preg_replace_callback('/^(\s*<p>\s*)([a-z]+):\s*/sxi',
+			array($this, 'doBlockquoteTypes'), $bq);
+		$attr= $this->_blockquoteType ? " class=\"{$this->_blockquoteType}\"" : '';
+		return "\n". $this->hashBlock("<blockquote{$attr}>\n$bq\n</blockquote>")."\n\n";
+	}
+
+	public function doHeaderId($text)
+	{
+		$id = preg_replace('/[^a-z0-9]/', '-', strtolower($text));
+		$id = str_replace('/-{2,}/', '-', $id);
+		return " id=\"$id\"";
+	}
+
+	public function doBlockquoteTypes($matches)
+	{
+		$this->_blockquoteType = strtolower($matches[2]);
+		$type_str= ucwords($this->_blockquoteType);
+		return "<p><strong>$type_str:</strong> ";
+	}
+
+	public function doApiLinks($text)
+	{
+		return preg_replace_callback('/(?<!\])\[([^\]]+)\](?!\[)/', array($this, 'formatApiLinks'), $text);
+	}
+
+	public function formatApiLinks($match)
+	{
+		@list($text, $api) = explode('|', $match[1], 2);
+		$api= $api===null ? $text: $api;
+		if(strncmp($api,'C',1)!==0 && strncmp($api,'Yii',3)!==0)
+			return $match[0];
+		$segs=explode('::',rtrim($api,'()'));
+		$class=$segs[0];
+		$anchor=isset($segs[1]) ? '#'.$segs[1] : '';
+		$url = '/doc/api/'.$class.$anchor;
+		$link = "<a href=\"$url\">$text</a>";
+		return $this->hashPart($link);
+	}
+}

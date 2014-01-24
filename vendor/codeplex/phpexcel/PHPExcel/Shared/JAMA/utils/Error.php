@@ -1,52 +1,82 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ *	@package JAMA
+ *
+ *	Error handling
+ *	@author Michael Bommarito
+ *	@version 01292005
+ */
+
+//Language constant
+define('JAMALANG', 'EN');
+
+
+//All errors may be defined by the following format:
+//define('ExceptionName', N);
+//$error['lang'][ExceptionName] = 'Error message';
+$error = array();
+
+/*
+I've used Babelfish and a little poor knowledge of Romance/Germanic languages for the translations here.
+Feel free to correct anything that looks amiss to you.
+*/
+
+define('PolymorphicArgumentException', -1);
+$error['EN'][PolymorphicArgumentException] = "Invalid argument pattern for polymorphic function.";
+$error['FR'][PolymorphicArgumentException] = "Modèle inadmissible d'argument pour la fonction polymorphe.".
+$error['DE'][PolymorphicArgumentException] = "Unzulässiges Argumentmuster für polymorphe Funktion.";
+
+define('ArgumentTypeException', -2);
+$error['EN'][ArgumentTypeException] = "Invalid argument type.";
+$error['FR'][ArgumentTypeException] = "Type inadmissible d'argument.";
+$error['DE'][ArgumentTypeException] = "Unzulässige Argumentart.";
+
+define('ArgumentBoundsException', -3);
+$error['EN'][ArgumentBoundsException] = "Invalid argument range.";
+$error['FR'][ArgumentBoundsException] = "Gamme inadmissible d'argument.";
+$error['DE'][ArgumentBoundsException] = "Unzulässige Argumentstrecke.";
+
+define('MatrixDimensionException', -4);
+$error['EN'][MatrixDimensionException] = "Matrix dimensions are not equal.";
+$error['FR'][MatrixDimensionException] = "Les dimensions de Matrix ne sont pas égales.";
+$error['DE'][MatrixDimensionException] = "Matrixmaße sind nicht gleich.";
+
+define('PrecisionLossException', -5);
+$error['EN'][PrecisionLossException] = "Significant precision loss detected.";
+$error['FR'][PrecisionLossException] = "Perte significative de précision détectée.";
+$error['DE'][PrecisionLossException] = "Bedeutender Präzision Verlust ermittelte.";
+
+define('MatrixSPDException', -6);
+$error['EN'][MatrixSPDException] = "Can only perform operation on symmetric positive definite matrix.";
+$error['FR'][MatrixSPDException] = "Perte significative de précision détectée.";
+$error['DE'][MatrixSPDException] = "Bedeutender Präzision Verlust ermittelte.";
+
+define('MatrixSingularException', -7);
+$error['EN'][MatrixSingularException] = "Can only perform operation on singular matrix.";
+
+define('MatrixRankException', -8);
+$error['EN'][MatrixRankException] = "Can only perform operation on full-rank matrix.";
+
+define('ArrayLengthException', -9);
+$error['EN'][ArrayLengthException] = "Array length must be a multiple of m.";
+
+define('RowLengthException', -10);
+$error['EN'][RowLengthException] = "All rows must have the same length.";
+
+/**
+ *	Custom error handler
+ *	@param int $num Error number
+ */
+function JAMAError($errorNumber = null) {
+	global $error;
+
+	if (isset($errorNumber)) {
+		if (isset($error[JAMALANG][$errorNumber])) {
+			return $error[JAMALANG][$errorNumber];
+		} else {
+			return $error['EN'][$errorNumber];
+		}
+	} else {
+		return ("Invalid argument to JAMAError()");
+	}
+}

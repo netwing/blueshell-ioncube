@@ -1,29 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * An embedded file, in a multipart message.
+ *
+ * @package    Swift
+ * @subpackage Mime
+ * @author     Chris Corbyn
+ */
+class Swift_Mime_EmbeddedFile extends Swift_Mime_Attachment
+{
+    /**
+     * Creates a new Attachment with $headers and $encoder.
+     *
+     * @param Swift_Mime_HeaderSet      $headers
+     * @param Swift_Mime_ContentEncoder $encoder
+     * @param Swift_KeyCache            $cache
+     * @param Swift_Mime_Grammar        $grammar
+     * @param array                     $mimeTypes optional
+     */
+    public function __construct(Swift_Mime_HeaderSet $headers, Swift_Mime_ContentEncoder $encoder, Swift_KeyCache $cache, Swift_Mime_Grammar $grammar, $mimeTypes = array())
+    {
+        parent::__construct($headers, $encoder, $cache, $grammar, $mimeTypes);
+        $this->setDisposition('inline');
+        $this->setId($this->getId());
+    }
+
+    /**
+     * Get the nesting level of this EmbeddedFile.
+     *
+     * Returns {@see LEVEL_RELATED}.
+     *
+     * @return integer
+     */
+    public function getNestingLevel()
+    {
+        return self::LEVEL_RELATED;
+    }
+}

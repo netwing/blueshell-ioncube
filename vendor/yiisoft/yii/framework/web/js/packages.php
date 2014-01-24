@@ -1,34 +1,81 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Built-in client script packages.
+ *
+ * Please see {@link CClientScript::packages} for explanation of the structure
+ * of the returned array.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+return array(
+	'jquery'=>array(
+		'js'=>array(YII_DEBUG ? 'jquery.js' : 'jquery.min.js'),
+	),
+	'yii'=>array(
+		'js'=>array('jquery.yii.js'),
+		'depends'=>array('jquery'),
+	),
+	'yiitab'=>array(
+		'js'=>array('jquery.yiitab.js'),
+		'depends'=>array('jquery'),
+	),
+	'yiiactiveform'=>array(
+		'js'=>array('jquery.yiiactiveform.js'),
+		'depends'=>array('jquery'),
+	),
+	'jquery.ui'=>array(
+		'js'=>array('jui/js/jquery-ui.min.js'),
+		'depends'=>array('jquery'),
+	),
+	'bgiframe'=>array(
+		'js'=>array('jquery.bgiframe.js'),
+		'depends'=>array('jquery'),
+	),
+	'ajaxqueue'=>array(
+		'js'=>array('jquery.ajaxqueue.js'),
+		'depends'=>array('jquery'),
+	),
+	'autocomplete'=>array(
+		'js'=>array('jquery.autocomplete.js'),
+		'depends'=>array('jquery', 'bgiframe', 'ajaxqueue'),
+	),
+	'maskedinput'=>array(
+		'js'=>array(YII_DEBUG ? 'jquery.maskedinput.js' : 'jquery.maskedinput.min.js'),
+		'depends'=>array('jquery'),
+	),
+	'cookie'=>array(
+		'js'=>array('jquery.cookie.js'),
+		'depends'=>array('jquery'),
+	),
+	'treeview'=>array(
+		'js'=>array('jquery.treeview.js', 'jquery.treeview.edit.js', 'jquery.treeview.async.js'),
+		'depends'=>array('jquery', 'cookie'),
+	),
+	'multifile'=>array(
+		'js'=>array('jquery.multifile.js'),
+		'depends'=>array('jquery'),
+	),
+	'rating'=>array(
+		'js'=>array('jquery.rating.js'),
+		'depends'=>array('jquery', 'metadata'),
+	),
+	'metadata'=>array(
+		'js'=>array('jquery.metadata.js'),
+		'depends'=>array('jquery'),
+	),
+	'bbq'=>array(
+		'js'=>array(YII_DEBUG ? 'jquery.ba-bbq.js' : 'jquery.ba-bbq.min.js'),
+		'depends'=>array('jquery'),
+	),
+	'history'=>array(
+		'js'=>array('jquery.history.js'),
+		'depends'=>array('jquery'),
+	),
+	'punycode'=>array(
+		'js'=>array(YII_DEBUG ? 'punycode.js' : 'punycode.min.js'),
+	),
+);

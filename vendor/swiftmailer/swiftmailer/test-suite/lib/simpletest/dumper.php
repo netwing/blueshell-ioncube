@@ -1,146 +1,359 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *  base include file for SimpleTest
+ *  @package    SimpleTest
+ *  @subpackage UnitTester
+ *  @version    $Id: dumper.php 1782 2008-04-25 17:09:06Z pp11 $
+ */
+/**
+ * does type matter
+ */
+if (! defined('TYPE_MATTERS')) {
+    define('TYPE_MATTERS', true);
+}
+
+/**
+ *    Displays variables as text and does diffs.
+ *    @package  SimpleTest
+ *    @subpackage   UnitTester
+ */
+class SimpleDumper {
+    
+    /**
+     *    Renders a variable in a shorter form than print_r().
+     *    @param mixed $value      Variable to render as a string.
+     *    @return string           Human readable string form.
+     *    @access public
+     */
+    function describeValue($value) {
+        $type = $this->getType($value);
+        switch($type) {
+            case "Null":
+                return "NULL";
+            case "Boolean":
+                return "Boolean: " . ($value ? "true" : "false");
+            case "Array":
+                return "Array: " . count($value) . " items";
+            case "Object":
+                return "Object: of " . get_class($value);
+            case "String":
+                return "String: " . $this->clipString($value, 200);
+            default:
+                return "$type: $value";
+        }
+        return "Unknown";
+    }
+    
+    /**
+     *    Gets the string representation of a type.
+     *    @param mixed $value    Variable to check against.
+     *    @return string         Type.
+     *    @access public
+     */
+    function getType($value) {
+        if (! isset($value)) {
+            return "Null";
+        } elseif (is_bool($value)) {
+            return "Boolean";
+        } elseif (is_string($value)) {
+            return "String";
+        } elseif (is_integer($value)) {
+            return "Integer";
+        } elseif (is_float($value)) {
+            return "Float";
+        } elseif (is_array($value)) {
+            return "Array";
+        } elseif (is_resource($value)) {
+            return "Resource";
+        } elseif (is_object($value)) {
+            return "Object";
+        }
+        return "Unknown";
+    }
+
+    /**
+     *    Creates a human readable description of the
+     *    difference between two variables. Uses a
+     *    dynamic call.
+     *    @param mixed $first        First variable.
+     *    @param mixed $second       Value to compare with.
+     *    @param boolean $identical  If true then type anomolies count.
+     *    @return string             Description of difference.
+     *    @access public
+     */
+    function describeDifference($first, $second, $identical = false) {
+        if ($identical) {
+            if (! $this->isTypeMatch($first, $second)) {
+                return "with type mismatch as [" . $this->describeValue($first) .
+                    "] does not match [" . $this->describeValue($second) . "]";
+            }
+        }
+        $type = $this->getType($first);
+        if ($type == "Unknown") {
+            return "with unknown type";
+        }
+        $method = 'describe' . $type . 'Difference';
+        return $this->$method($first, $second, $identical);
+    }
+    
+    /**
+     *    Tests to see if types match.
+     *    @param mixed $first        First variable.
+     *    @param mixed $second       Value to compare with.
+     *    @return boolean            True if matches.
+     *    @access private
+     */
+    protected function isTypeMatch($first, $second) {
+        return ($this->getType($first) == $this->getType($second));
+    }
+
+    /**
+     *    Clips a string to a maximum length.
+     *    @param string $value         String to truncate.
+     *    @param integer $size         Minimum string size to show.
+     *    @param integer $position     Centre of string section.
+     *    @return string               Shortened version.
+     *    @access public
+     */
+    function clipString($value, $size, $position = 0) {
+        $length = strlen($value);
+        if ($length <= $size) {
+            return $value;
+        }
+        $position = min($position, $length);
+        $start = ($size/2 > $position ? 0 : $position - $size/2);
+        if ($start + $size > $length) {
+            $start = $length - $size;
+        }
+        $value = substr($value, $start, $size);
+        return ($start > 0 ? "..." : "") . $value . ($start + $size < $length ? "..." : "");
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between two variables. The minimal
+     *    version.
+     *    @param null $first          First value.
+     *    @param mixed $second        Value to compare with.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeGenericDifference($first, $second) {
+        return "as [" . $this->describeValue($first) .
+                "] does not match [" .
+                $this->describeValue($second) . "]";
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between a null and another variable.
+     *    @param null $first          First null.
+     *    @param mixed $second        Null to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeNullDifference($first, $second, $identical) {
+        return $this->describeGenericDifference($first, $second);
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between a boolean and another variable.
+     *    @param boolean $first       First boolean.
+     *    @param mixed $second        Boolean to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeBooleanDifference($first, $second, $identical) {
+        return $this->describeGenericDifference($first, $second);
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between a string and another variable.
+     *    @param string $first        First string.
+     *    @param mixed $second        String to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeStringDifference($first, $second, $identical) {
+        if (is_object($second) || is_array($second)) {
+            return $this->describeGenericDifference($first, $second);
+        }
+        $position = $this->stringDiffersAt($first, $second);
+        $message = "at character $position";
+        $message .= " with [" .
+                $this->clipString($first, 200, $position) . "] and [" .
+                $this->clipString($second, 200, $position) . "]";
+        return $message;
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between an integer and another variable.
+     *    @param integer $first       First number.
+     *    @param mixed $second        Number to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeIntegerDifference($first, $second, $identical) {
+        if (is_object($second) || is_array($second)) {
+            return $this->describeGenericDifference($first, $second);
+        }
+        return "because [" . $this->describeValue($first) .
+                "] differs from [" .
+                $this->describeValue($second) . "] by " .
+                abs($first - $second);
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between two floating point numbers.
+     *    @param float $first         First float.
+     *    @param mixed $second        Float to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeFloatDifference($first, $second, $identical) {
+        if (is_object($second) || is_array($second)) {
+            return $this->describeGenericDifference($first, $second);
+        }
+        return "because [" . $this->describeValue($first) .
+                "] differs from [" .
+                $this->describeValue($second) . "] by " .
+                abs($first - $second);
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between two arrays.
+     *    @param array $first         First array.
+     *    @param mixed $second        Array to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeArrayDifference($first, $second, $identical) {
+        if (! is_array($second)) {
+            return $this->describeGenericDifference($first, $second);
+        }
+        if (! $this->isMatchingKeys($first, $second, $identical)) {
+            return "as key list [" .
+                    implode(", ", array_keys($first)) . "] does not match key list [" .
+                    implode(", ", array_keys($second)) . "]";
+        }
+        foreach (array_keys($first) as $key) {
+            if ($identical && ($first[$key] === $second[$key])) {
+                continue;
+            }
+            if (! $identical && ($first[$key] == $second[$key])) {
+                continue;
+            }
+            return "with member [$key] " . $this->describeDifference(
+                    $first[$key],
+                    $second[$key],
+                    $identical);
+        }
+        return "";
+    }
+    
+    /**
+     *    Compares two arrays to see if their key lists match.
+     *    For an identical match, the ordering and types of the keys
+     *    is significant.
+     *    @param array $first         First array.
+     *    @param array $second        Array to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return boolean             True if matching.
+     *    @access private
+     */
+    protected function isMatchingKeys($first, $second, $identical) {
+        $first_keys = array_keys($first);
+        $second_keys = array_keys($second);
+        if ($identical) {
+            return ($first_keys === $second_keys);
+        }
+        sort($first_keys);
+        sort($second_keys);
+        return ($first_keys == $second_keys);
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between a resource and another variable.
+     *    @param resource $first       First resource.
+     *    @param mixed $second         Resource to compare with.
+     *    @param boolean $identical    If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeResourceDifference($first, $second, $identical) {
+        return $this->describeGenericDifference($first, $second);
+    }
+    
+    /**
+     *    Creates a human readable description of the
+     *    difference between two objects.
+     *    @param object $first        First object.
+     *    @param mixed $second        Object to compare with.
+     *    @param boolean $identical   If true then type anomolies count.
+     *    @return string              Human readable description.
+     *    @access private
+     */
+    protected function describeObjectDifference($first, $second, $identical) {
+        if (! is_object($second)) {
+            return $this->describeGenericDifference($first, $second);
+        }
+        return $this->describeArrayDifference(
+                get_object_vars($first),
+                get_object_vars($second),
+                $identical);
+    }
+    
+    /**
+     *    Find the first character position that differs
+     *    in two strings by binary chop.
+     *    @param string $first        First string.
+     *    @param string $second       String to compare with.
+     *    @return integer             Position of first differing
+     *                                character.
+     *    @access private
+     */
+    protected function stringDiffersAt($first, $second) {
+        if (! $first || ! $second) {
+            return 0;
+        }
+        if (strlen($first) < strlen($second)) {
+            list($first, $second) = array($second, $first);
+        }
+        $position = 0;
+        $step = strlen($first);
+        while ($step > 1) {
+            $step = (integer)(($step + 1) / 2);
+            if (strncmp($first, $second, $position + $step) == 0) {
+                $position += $step;
+            }
+        }
+        return $position;
+    }
+    
+    /**
+     *    Sends a formatted dump of a variable to a string.
+     *    @param mixed $variable    Variable to display.
+     *    @return string            Output from print_r().
+     *    @access public
+     */
+    function dump($variable) {
+        ob_start();
+        print_r($variable);
+        $formatted = ob_get_contents();
+        ob_end_clean();
+        return $formatted;
+    }
+}
 ?>
-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

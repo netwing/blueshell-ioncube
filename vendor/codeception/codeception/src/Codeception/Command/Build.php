@@ -1,144 +1,223 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Command;
+
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Yaml\Yaml;
+use \Symfony\Component\Console\Helper\DialogHelper;
+
+class Build extends Base
+{
+
+	protected $template = <<<EOF
+<?php
+// This class was automatically generated by build task
+// You should not change it manually as it will be overwritten on next build
+// @codingStandardsIgnoreFile
+
+%s
+use \Codeception\Maybe;
+%s
+
+%s %s extends %s
+{
+    %s
+}
+
+
+EOF;
+
+    protected $methodTemplate = <<<EOF
+
+    /**
+     * This method is generated.
+     * Documentation taken from corresponding module.
+     * ----------------------------------------------
+     *
+     %s
+     * @see %s::%s()
+     * @return \Codeception\Maybe
+     */
+    public function %s(%s) {
+        \$this->scenario->addStep(new \Codeception\Step\%s('%s', func_get_args()));
+        if (\$this->scenario->running()) {
+            \$result = \$this->scenario->runStep();
+            return new Maybe(\$result);
+        }
+        return new Maybe();
+    }
+EOF;
+
+    protected $inheritedMethodTemplate = ' * @method void %s(%s)';
+
+
+    public function getDescription() {
+        return 'Generates base classes for all suites';
+    }
+
+    protected function configure()
+    {
+        $this->setDefinition(array(
+            new InputOption('config', 'c', InputOption::VALUE_OPTIONAL, 'Use custom path for config'),
+        ));
+        parent::configure();
+    }
+
+	protected function execute(InputInterface $input, OutputInterface $output)
+	{
+        $suites = $this->getSuites($input->getOption('config'));
+
+        $output->writeln("<info>Building Guy classes for suites: ".implode(', ', $suites).'</info>');
+
+        foreach ($suites as $suite) {
+            $settings = $this->getSuiteConfig($suite, $input->getOption('config'));
+            $namespace = rtrim($settings['namespace'],'\\');
+            $modules = \Codeception\Configuration::modules($settings);
+
+            $code = array();
+            $methodCounter = 0;
+
+            $output->writeln('<info>'.$settings['class_name'] . "</info> includes modules: ".implode(', ',array_keys($modules)));
+
+	        $docblock = array();
+            foreach ($modules as $module) {
+                $docblock[] = "use ".get_class($module).";";
+            }
+
+            $methods = array();
+            $actions = \Codeception\Configuration::actions($modules);
+
+            foreach ($actions as $action => $moduleName) {
+                if (in_array($action, $methods)) continue;
+                $module = $modules[$moduleName];
+                $method = new \ReflectionMethod(get_class($module), $action);
+                $code[] = $this->addMethod($method);
+                $methods[] = $action;
+                $methodCounter++;
+            }
+
+            $docblock = $this->prependAbstractGuyDocBlocks($docblock);
+
+            $contents = sprintf($this->template,
+                $namespace ? "namespace $namespace;" : '',
+	            implode("\n", $docblock),
+	            'class',
+                $settings['class_name'],
+	            '\Codeception\AbstractGuy',
+	            implode("\n\n ", $code));
+
+            $file = $settings['path'].$this->getClassName($settings['class_name']).'.php';
+            $this->save($file, $contents, true);
+            $output->writeln("{$settings['class_name']}.php generated successfully. $methodCounter methods added");
+        }
+    }
+
+
+    protected function addMethod(\ReflectionMethod $refMethod)
+    {
+        $class = $refMethod->getDeclaringClass();
+        $params = $this->getParamsString($refMethod);
+        $module = $class->getName();
+
+        $body = '';
+        $doc = $this->addDoc($class, $refMethod);
+        $doc = str_replace('/**', '', $doc);
+        $doc = trim(str_replace('*/','',$doc));
+        if (!$doc) $doc = "*";
+
+        $conditionalDoc = $doc . "\n    * Conditional Assertion: Test won't be stopped on fail";
+
+        if (0 === strpos($refMethod->name, 'see')) {
+            $type = 'Assertion';
+            $body .= sprintf($this->methodTemplate, $conditionalDoc, $module, $refMethod->name, 'can'.ucfirst($refMethod->name), $params, 'ConditionalAssertion', $refMethod->name);
+
+        } elseif (0 === strpos($refMethod->name, 'dontSee')) {
+            $action = str_replace('dont','cant',$refMethod->name);
+            $body .= sprintf($this->methodTemplate, $conditionalDoc, $module, $refMethod->name, $action, $params, 'ConditionalAssertion', $refMethod->name);
+            $type = 'Assertion';
+        } elseif (0 === strpos($refMethod->name, 'am')) {
+            $type = 'Condition';
+        } else {
+            $type = 'Action';
+        }
+        $body .= sprintf($this->methodTemplate, $doc, $module, $refMethod->name, $refMethod->name, $params, $type, $refMethod->name);
+
+        return $body;
+    }
+
+    /**
+     * @param \ReflectionMethod $refMethod
+     * @return array
+     */
+    protected function getParamsString(\ReflectionMethod $refMethod)
+    {
+        $params = array();
+        foreach ($refMethod->getParameters() as $param) {
+
+            if ($param->isOptional()) {
+                $params[] = '$' . $param->name . ' = null';
+            } else {
+                $params[] = '$' . $param->name;
+            };
+
+        }
+        return implode(', ',$params);
+    }
+
+    /**
+     * @param \ReflectionClass $class
+     * @param \ReflectionMethod $refMethod
+     * @return string
+     */
+    protected function addDoc(\ReflectionClass $class, \ReflectionMethod $refMethod)
+    {
+        $doc = $refMethod->getDocComment();
+
+        if (!$doc) {
+            $interfaces = $class->getInterfaces();
+            foreach ($interfaces as $interface) {
+                $i = new \ReflectionClass($interface->name);
+                if ($i->hasMethod($refMethod->name)) {
+                    $doc = $i->getMethod($refMethod->name)->getDocComment();
+                    break;
+                }
+            }
+        }
+
+        if (!$doc and $class->getParentClass()) {
+            $parent = new \ReflectionClass($class->getParentClass()->name);
+            if ($parent->hasMethod($refMethod->name)) {
+                $doc = $parent->getMethod($refMethod->name)->getDocComment();
+                return $doc;
+            }
+            return $doc;
+        }
+        return $doc;
+    }
+
+    /**
+     * @param $aliases
+     * @return array
+     */
+    protected function prependAbstractGuyDocBlocks($aliases)
+    {
+        $inherited = array();
+
+        $class   = new \ReflectionClass('\Codeception\\AbstractGuy');
+        $methods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
+
+        foreach ($methods as $method) {
+            if ($method->name == '__call') continue; // skipping magic
+            if ($method->name == '__construct') continue; // skipping magic
+            $params = $this->getParamsString($method);
+            $inherited[] = sprintf($this->inheritedMethodTemplate, $method->name, $params);
+        }
+
+        $aliases[] = "\n/**\n * Inherited methods";
+        $aliases[] = implode("\n", $inherited);
+        $aliases[] = '*/';
+        return $aliases;
+    }
+}

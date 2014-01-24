@@ -1,60 +1,98 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests spacing in template output
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for spacing test
+*/
+class SpacingTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->assign('foo','bar');
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test variable output
+    */
+    public function testVariableSpacing1()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{\$foo}", null, null, $this->smarty);
+        $this->assertEquals("bar", $this->smarty->fetch($tpl));
+    }
+    public function testVariableSpacing2()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{\$foo}{\$foo}", null, null, $this->smarty);
+        $this->assertEquals("barbar", $this->smarty->fetch($tpl));
+    }
+    public function testVariableSpacing3()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{\$foo} {\$foo}", null, null, $this->smarty);
+        $this->assertEquals("bar bar", $this->smarty->fetch($tpl));
+    }
+
+    /**
+    * test variable text combinations
+    */
+    public function testVariableText1()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A{\$foo}B", null, null, $this->smarty);
+        $this->assertEquals("AbarB", $this->smarty->fetch($tpl));
+    }
+    public function testVariableText2()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A {\$foo}B", null, null, $this->smarty);
+        $this->assertEquals("A barB", $this->smarty->fetch($tpl));
+    }
+    public function testVariableText3()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A{\$foo} B", null, null, $this->smarty);
+        $this->assertEquals("Abar B", $this->smarty->fetch($tpl));
+    }
+    public function testVariableText4()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A{\$foo}\nB", null, null, $this->smarty);
+        $this->assertEquals("Abar\nB", $this->smarty->fetch($tpl));
+    }
+    public function testVariableText5()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A{\$foo}B\nC", null, null, $this->smarty);
+        $this->assertEquals("AbarB\nC", $this->smarty->fetch($tpl));
+    }
+
+    /**
+    * test tag text combinations
+    */
+    public function testTagText1()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A{assign var=zoo value='blah'}B");
+        $this->assertEquals("AB", $this->smarty->fetch($tpl));
+    }
+    public function testTagText2()
+    {
+        $tpl = $this->smarty->createTemplate("eval:A\n{assign var=zoo value='blah'}\nB");
+        $this->assertEquals("A\nB", $this->smarty->fetch($tpl));
+    }
+    public function testTagText3()
+    {
+        $tpl = $this->smarty->createTemplate("eval:E{assign var=zoo value='blah'}\nF");
+        $this->assertEquals("EF", $this->smarty->fetch($tpl));
+    }
+    public function testTagText4()
+    {
+        $tpl = $this->smarty->createTemplate("eval:G\n{assign var=zoo value='blah'}H");
+        $this->assertEquals("G\nH", $this->smarty->fetch($tpl));
+    }
+
+}

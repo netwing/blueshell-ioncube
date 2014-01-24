@@ -1,33 +1,36 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-yQ8NBFYgHsxosdEdWDB7aG==
+<?php
+
+
+class CHttpSessionTest extends CTestCase {
+	protected function checkProb($gcProb) {
+		Yii::app()->session->gCProbability = $gcProb;
+		$value = Yii::app()->session->gCProbability;
+		$this->assertInternalType('float', $value);
+		$this->assertLessThanOrEqual(1, $value);
+		$this->assertGreaterThanOrEqual(0, $value);
+		$this->assertLessThanOrEqual(1 / 21474836.47, abs($gcProb - $value));
+	}
+
+	/**
+	 * @covers CHttpSession::getGCProbability
+	 * @covers CHttpSession::setGCProbability
+	 */
+	public function testSetGet() {
+		Yii::app()->setComponents(array('session' => array(
+			'class' => 'CHttpSession',
+			'cookieMode' => 'none',
+			'savePath' => sys_get_temp_dir(),
+			'sessionName' => 'CHttpSessionTest',
+			'timeout' => 5,
+		)));
+		/** @var $sm CHttpSession */
+
+		$this->checkProb(1);
+		$this->checkProb(0);
+		$gcProb = 1.0;
+		while ($gcProb > 1 / 2147483647) {
+			$this->checkProb($gcProb);
+			$gcProb = $gcProb / 9;
+		}
+	}
+}

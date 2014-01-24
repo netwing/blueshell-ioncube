@@ -1,53 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Command;
+
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Output\OutputInterface;
+
+
+class GenerateGroup extends Base
+{
+    protected $template = <<<EOF
+<?php
+%s
+
+/**
+* Group class is Codeception Extension which is allowed to handle to all internal events.
+* This class itself can be used to listen events for test execution of one particular group.
+* It may be especially useful to create fixtures data, prepare server, etc.
+*
+* INSTALLATION:
+*
+* To use this group extension, include it to "extensions" option of global Codeception config.
+*/
+
+%s %sGroup extends \Codeception\Platform\Group
+{
+    static \$group = '%s';
+
+    public function _before(\Codeception\Event\Test \$e)
+    {
+    }
+
+    public function _after(\Codeception\Event\Test \$e)
+    {
+    }
+}
+EOF;
+
+
+
+    protected function configure()
+    {
+        $this->setDefinition(array(
+            new InputArgument('group', InputArgument::REQUIRED, 'Group class name'),
+            new InputOption('config', 'c', InputOption::VALUE_OPTIONAL, 'Use custom path for config'),
+        ));
+        parent::configure();
+    }
+
+    public function execute(InputInterface $input, OutputInterface $output)
+    {
+        $config = $this->getGlobalConfig($input->getOption('config'));
+        $group = $input->getArgument('group');
+
+        $class = ucfirst($group);
+        $ns = $this->getNamespaceString($config['namespace'].'\\'.$class);
+
+        $path = $this->buildPath($config['paths']['tests'].'/_groups/', $class);
+        $filename = $this->completeSuffix($class, 'Group');
+        $filename = $path.$filename;
+
+        $this->introduceAutoloader($config['paths']['tests'].DIRECTORY_SEPARATOR.$config['settings']['bootstrap'],'Group','_groups');
+        $res = $this->save($filename, sprintf($this->template, $ns, 'class', $class, $group));
+
+        if (!$res) {
+            $output->writeln("<error>Group $filename already exists</error>");
+            exit;
+        }
+        
+        $output->writeln("<info>Group extension was created in $filename</info>");
+        $output->writeln('To use this group extension, include it to "extensions" option of global Codeception config.');
+    }
+
+}

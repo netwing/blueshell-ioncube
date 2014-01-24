@@ -1,82 +1,184 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Formatter\WildfireFormatter;
+
+/**
+ * Simple FirePHP Handler (http://www.firephp.org/), which uses the Wildfire protocol.
+ *
+ * @author Eric Clemmons (@ericclemmons) <eric@uxdriven.com>
+ */
+class FirePHPHandler extends AbstractProcessingHandler
+{
+    /**
+     * WildFire JSON header message format
+     */
+    const PROTOCOL_URI = 'http://meta.wildfirehq.org/Protocol/JsonStream/0.2';
+
+    /**
+     * FirePHP structure for parsing messages & their presentation
+     */
+    const STRUCTURE_URI = 'http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1';
+
+    /**
+     * Must reference a "known" plugin, otherwise headers won't display in FirePHP
+     */
+    const PLUGIN_URI = 'http://meta.firephp.org/Wildfire/Plugin/FirePHP/Library-FirePHPCore/0.3';
+
+    /**
+     * Header prefix for Wildfire to recognize & parse headers
+     */
+    const HEADER_PREFIX = 'X-Wf';
+
+    /**
+     * Whether or not Wildfire vendor-specific headers have been generated & sent yet
+     */
+    protected static $initialized = false;
+
+    /**
+     * Shared static message index between potentially multiple handlers
+     * @var int
+     */
+    protected static $messageIndex = 1;
+
+    protected static $sendHeaders = true;
+
+    /**
+     * Base header creation function used by init headers & record headers
+     *
+     * @param  array  $meta    Wildfire Plugin, Protocol & Structure Indexes
+     * @param  string $message Log message
+     * @return array  Complete header string ready for the client as key and message as value
+     */
+    protected function createHeader(array $meta, $message)
+    {
+        $header = sprintf('%s-%s', self::HEADER_PREFIX, join('-', $meta));
+
+        return array($header => $message);
+    }
+
+    /**
+     * Creates message header from record
+     *
+     * @see createHeader()
+     * @param  array  $record
+     * @return string
+     */
+    protected function createRecordHeader(array $record)
+    {
+        // Wildfire is extensible to support multiple protocols & plugins in a single request,
+        // but we're not taking advantage of that (yet), so we're using "1" for simplicity's sake.
+        return $this->createHeader(
+            array(1, 1, 1, self::$messageIndex++),
+            $record['formatted']
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultFormatter()
+    {
+        return new WildfireFormatter();
+    }
+
+    /**
+     * Wildfire initialization headers to enable message parsing
+     *
+     * @see createHeader()
+     * @see sendHeader()
+     * @return array
+     */
+    protected function getInitHeaders()
+    {
+        // Initial payload consists of required headers for Wildfire
+        return array_merge(
+            $this->createHeader(array('Protocol', 1), self::PROTOCOL_URI),
+            $this->createHeader(array(1, 'Structure', 1), self::STRUCTURE_URI),
+            $this->createHeader(array(1, 'Plugin', 1), self::PLUGIN_URI)
+        );
+    }
+
+    /**
+     * Send header string to the client
+     *
+     * @param string $header
+     * @param string $content
+     */
+    protected function sendHeader($header, $content)
+    {
+        if (!headers_sent() && self::$sendHeaders) {
+            header(sprintf('%s: %s', $header, $content));
+        }
+    }
+
+    /**
+     * Creates & sends header for a record, ensuring init headers have been sent prior
+     *
+     * @see sendHeader()
+     * @see sendInitHeaders()
+     * @param array $record
+     */
+    protected function write(array $record)
+    {
+        // WildFire-specific headers must be sent prior to any messages
+        if (!self::$initialized) {
+            self::$sendHeaders = $this->headersAccepted();
+
+            foreach ($this->getInitHeaders() as $header => $content) {
+                $this->sendHeader($header, $content);
+            }
+
+            self::$initialized = true;
+        }
+
+        $header = $this->createRecordHeader($record);
+        $this->sendHeader(key($header), current($header));
+    }
+
+    /**
+     * Verifies if the headers are accepted by the current user agent
+     *
+     * @return Boolean
+     */
+    protected function headersAccepted()
+    {
+        return !isset($_SERVER['HTTP_USER_AGENT'])
+               || preg_match('{\bFirePHP/\d+\.\d+\b}', $_SERVER['HTTP_USER_AGENT'])
+               || isset($_SERVER['HTTP_X_FIREPHP_VERSION']);
+    }
+
+    /**
+     * BC getter for the sendHeaders property that has been made static
+     */
+    public function __get($property)
+    {
+        if ('sendHeaders' !== $property) {
+            throw new \InvalidArgumentException('Undefined property '.$property);
+        }
+
+        return static::$sendHeaders;
+    }
+
+    /**
+     * BC setter for the sendHeaders property that has been made static
+     */
+    public function __set($property, $value)
+    {
+        if ('sendHeaders' !== $property) {
+            throw new \InvalidArgumentException('Undefined property '.$property);
+        }
+
+        static::$sendHeaders = $value;
+    }
+}

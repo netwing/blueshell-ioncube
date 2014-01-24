@@ -1,368 +1,870 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * YiiBase class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ * @package system
+ * @since 1.0
+ */
+
+/**
+ * Gets the application start timestamp.
+ */
+defined('YII_BEGIN_TIME') or define('YII_BEGIN_TIME',microtime(true));
+/**
+ * This constant defines whether the application should be in debug mode or not. Defaults to false.
+ */
+defined('YII_DEBUG') or define('YII_DEBUG',false);
+/**
+ * This constant defines how much call stack information (file name and line number) should be logged by Yii::trace().
+ * Defaults to 0, meaning no backtrace information. If it is greater than 0,
+ * at most that number of call stacks will be logged. Note, only user application call stacks are considered.
+ */
+defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',0);
+/**
+ * This constant defines whether exception handling should be enabled. Defaults to true.
+ */
+defined('YII_ENABLE_EXCEPTION_HANDLER') or define('YII_ENABLE_EXCEPTION_HANDLER',true);
+/**
+ * This constant defines whether error handling should be enabled. Defaults to true.
+ */
+defined('YII_ENABLE_ERROR_HANDLER') or define('YII_ENABLE_ERROR_HANDLER',true);
+/**
+ * Defines the Yii framework installation path.
+ */
+defined('YII_PATH') or define('YII_PATH',dirname(__FILE__));
+/**
+ * Defines the Zii library installation path.
+ */
+defined('YII_ZII_PATH') or define('YII_ZII_PATH',YII_PATH.DIRECTORY_SEPARATOR.'zii');
+
+/**
+ * YiiBase is a helper class serving common framework functionalities.
+ *
+ * Do not use YiiBase directly. Instead, use its child class {@link Yii} where
+ * you can customize methods of YiiBase.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system
+ * @since 1.0
+ */
+class YiiBase
+{
+	/**
+	 * @var array class map used by the Yii autoloading mechanism.
+	 * The array keys are the class names and the array values are the corresponding class file paths.
+	 * @since 1.1.5
+	 */
+	public static $classMap=array();
+	/**
+	 * @var boolean whether to rely on PHP include path to autoload class files. Defaults to true.
+	 * You may set this to be false if your hosting environment doesn't allow changing the PHP
+	 * include path, or if you want to append additional autoloaders to the default Yii autoloader.
+	 * @since 1.1.8
+	 */
+	public static $enableIncludePath=true;
+
+	private static $_aliases=array('system'=>YII_PATH,'zii'=>YII_ZII_PATH); // alias => path
+	private static $_imports=array();					// alias => class name or directory
+	private static $_includePaths;						// list of include paths
+	private static $_app;
+	private static $_logger;
+
+
+
+	/**
+	 * @return string the version of Yii framework
+	 */
+	public static function getVersion()
+	{
+		return '1.1.14';
+	}
+
+	/**
+	 * Creates a Web application instance.
+	 * @param mixed $config application configuration.
+	 * If a string, it is treated as the path of the file that contains the configuration;
+	 * If an array, it is the actual configuration information.
+	 * Please make sure you specify the {@link CApplication::basePath basePath} property in the configuration,
+	 * which should point to the directory containing all application logic, template and data.
+	 * If not, the directory will be defaulted to 'protected'.
+	 * @return CWebApplication
+	 */
+	public static function createWebApplication($config=null)
+	{
+		return self::createApplication('CWebApplication',$config);
+	}
+
+	/**
+	 * Creates a console application instance.
+	 * @param mixed $config application configuration.
+	 * If a string, it is treated as the path of the file that contains the configuration;
+	 * If an array, it is the actual configuration information.
+	 * Please make sure you specify the {@link CApplication::basePath basePath} property in the configuration,
+	 * which should point to the directory containing all application logic, template and data.
+	 * If not, the directory will be defaulted to 'protected'.
+	 * @return CConsoleApplication
+	 */
+	public static function createConsoleApplication($config=null)
+	{
+		return self::createApplication('CConsoleApplication',$config);
+	}
+
+	/**
+	 * Creates an application of the specified class.
+	 * @param string $class the application class name
+	 * @param mixed $config application configuration. This parameter will be passed as the parameter
+	 * to the constructor of the application class.
+	 * @return mixed the application instance
+	 */
+	public static function createApplication($class,$config=null)
+	{
+		return new $class($config);
+	}
+
+	/**
+	 * Returns the application singleton or null if the singleton has not been created yet.
+	 * @return CApplication the application singleton, null if the singleton has not been created yet.
+	 */
+	public static function app()
+	{
+		return self::$_app;
+	}
+
+	/**
+	 * Stores the application instance in the class static member.
+	 * This method helps implement a singleton pattern for CApplication.
+	 * Repeated invocation of this method or the CApplication constructor
+	 * will cause the throw of an exception.
+	 * To retrieve the application instance, use {@link app()}.
+	 * @param CApplication $app the application instance. If this is null, the existing
+	 * application singleton will be removed.
+	 * @throws CException if multiple application instances are registered.
+	 */
+	public static function setApplication($app)
+	{
+		if(self::$_app===null || $app===null)
+			self::$_app=$app;
+		else
+			throw new CException(Yii::t('yii','Yii application can only be created once.'));
+	}
+
+	/**
+	 * @return string the path of the framework
+	 */
+	public static function getFrameworkPath()
+	{
+		return YII_PATH;
+	}
+
+	/**
+	 * Creates an object and initializes it based on the given configuration.
+	 *
+	 * The specified configuration can be either a string or an array.
+	 * If the former, the string is treated as the object type which can
+	 * be either the class name or {@link YiiBase::getPathOfAlias class path alias}.
+	 * If the latter, the 'class' element is treated as the object type,
+	 * and the rest of the name-value pairs in the array are used to initialize
+	 * the corresponding object properties.
+	 *
+	 * Any additional parameters passed to this method will be
+	 * passed to the constructor of the object being created.
+	 *
+	 * @param mixed $config the configuration. It can be either a string or an array.
+	 * @return mixed the created object
+	 * @throws CException if the configuration does not have a 'class' element.
+	 */
+	public static function createComponent($config)
+	{
+		if(is_string($config))
+		{
+			$type=$config;
+			$config=array();
+		}
+		elseif(isset($config['class']))
+		{
+			$type=$config['class'];
+			unset($config['class']);
+		}
+		else
+			throw new CException(Yii::t('yii','Object configuration must be an array containing a "class" element.'));
+
+		if(!class_exists($type,false))
+			$type=Yii::import($type,true);
+
+		if(($n=func_num_args())>1)
+		{
+			$args=func_get_args();
+			if($n===2)
+				$object=new $type($args[1]);
+			elseif($n===3)
+				$object=new $type($args[1],$args[2]);
+			elseif($n===4)
+				$object=new $type($args[1],$args[2],$args[3]);
+			else
+			{
+				unset($args[0]);
+				$class=new ReflectionClass($type);
+				// Note: ReflectionClass::newInstanceArgs() is available for PHP 5.1.3+
+				// $object=$class->newInstanceArgs($args);
+				$object=call_user_func_array(array($class,'newInstance'),$args);
+			}
+		}
+		else
+			$object=new $type;
+
+		foreach($config as $key=>$value)
+			$object->$key=$value;
+
+		return $object;
+	}
+
+	/**
+	 * Imports a class or a directory.
+	 *
+	 * Importing a class is like including the corresponding class file.
+	 * The main difference is that importing a class is much lighter because it only
+	 * includes the class file when the class is referenced the first time.
+	 *
+	 * Importing a directory is equivalent to adding a directory into the PHP include path.
+	 * If multiple directories are imported, the directories imported later will take
+	 * precedence in class file searching (i.e., they are added to the front of the PHP include path).
+	 *
+	 * Path aliases are used to import a class or directory. For example,
+	 * <ul>
+	 *   <li><code>application.components.GoogleMap</code>: import the <code>GoogleMap</code> class.</li>
+	 *   <li><code>application.components.*</code>: import the <code>components</code> directory.</li>
+	 * </ul>
+	 *
+	 * The same path alias can be imported multiple times, but only the first time is effective.
+	 * Importing a directory does not import any of its subdirectories.
+	 *
+	 * Starting from version 1.1.5, this method can also be used to import a class in namespace format
+	 * (available for PHP 5.3 or above only). It is similar to importing a class in path alias format,
+	 * except that the dot separator is replaced by the backslash separator. For example, importing
+	 * <code>application\components\GoogleMap</code> is similar to importing <code>application.components.GoogleMap</code>.
+	 * The difference is that the former class is using qualified name, while the latter unqualified.
+	 *
+	 * Note, importing a class in namespace format requires that the namespace corresponds to
+	 * a valid path alias once backslash characters are replaced with dot characters.
+	 * For example, the namespace <code>application\components</code> must correspond to a valid
+	 * path alias <code>application.components</code>.
+	 *
+	 * @param string $alias path alias to be imported
+	 * @param boolean $forceInclude whether to include the class file immediately. If false, the class file
+	 * will be included only when the class is being used. This parameter is used only when
+	 * the path alias refers to a class.
+	 * @return string the class name or the directory that this alias refers to
+	 * @throws CException if the alias is invalid
+	 */
+	public static function import($alias,$forceInclude=false)
+	{
+		if(isset(self::$_imports[$alias]))  // previously imported
+			return self::$_imports[$alias];
+
+		if(class_exists($alias,false) || interface_exists($alias,false))
+			return self::$_imports[$alias]=$alias;
+
+		if(($pos=strrpos($alias,'\\'))!==false) // a class name in PHP 5.3 namespace format
+		{
+			$namespace=str_replace('\\','.',ltrim(substr($alias,0,$pos),'\\'));
+			if(($path=self::getPathOfAlias($namespace))!==false)
+			{
+				$classFile=$path.DIRECTORY_SEPARATOR.substr($alias,$pos+1).'.php';
+				if($forceInclude)
+				{
+					if(is_file($classFile))
+						require($classFile);
+					else
+						throw new CException(Yii::t('yii','Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.',array('{alias}'=>$alias)));
+					self::$_imports[$alias]=$alias;
+				}
+				else
+					self::$classMap[$alias]=$classFile;
+				return $alias;
+			}
+			else
+			{
+				// try to autoload the class with an autoloader
+				if (class_exists($alias,true))
+					return self::$_imports[$alias]=$alias;
+				else
+					throw new CException(Yii::t('yii','Alias "{alias}" is invalid. Make sure it points to an existing directory or file.',
+						array('{alias}'=>$namespace)));
+			}
+		}
+
+		if(($pos=strrpos($alias,'.'))===false)  // a simple class name
+		{
+			if($forceInclude && self::autoload($alias))
+				self::$_imports[$alias]=$alias;
+			return $alias;
+		}
+
+		$className=(string)substr($alias,$pos+1);
+		$isClass=$className!=='*';
+
+		if($isClass && (class_exists($className,false) || interface_exists($className,false)))
+			return self::$_imports[$alias]=$className;
+
+		if(($path=self::getPathOfAlias($alias))!==false)
+		{
+			if($isClass)
+			{
+				if($forceInclude)
+				{
+					if(is_file($path.'.php'))
+						require($path.'.php');
+					else
+						throw new CException(Yii::t('yii','Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.',array('{alias}'=>$alias)));
+					self::$_imports[$alias]=$className;
+				}
+				else
+					self::$classMap[$className]=$path.'.php';
+				return $className;
+			}
+			else  // a directory
+			{
+				if(self::$_includePaths===null)
+				{
+					self::$_includePaths=array_unique(explode(PATH_SEPARATOR,get_include_path()));
+					if(($pos=array_search('.',self::$_includePaths,true))!==false)
+						unset(self::$_includePaths[$pos]);
+				}
+
+				array_unshift(self::$_includePaths,$path);
+
+				if(self::$enableIncludePath && set_include_path('.'.PATH_SEPARATOR.implode(PATH_SEPARATOR,self::$_includePaths))===false)
+					self::$enableIncludePath=false;
+
+				return self::$_imports[$alias]=$path;
+			}
+		}
+		else
+			throw new CException(Yii::t('yii','Alias "{alias}" is invalid. Make sure it points to an existing directory or file.',
+				array('{alias}'=>$alias)));
+	}
+
+	/**
+	 * Translates an alias into a file path.
+	 * Note, this method does not ensure the existence of the resulting file path.
+	 * It only checks if the root alias is valid or not.
+	 * @param string $alias alias (e.g. system.web.CController)
+	 * @return mixed file path corresponding to the alias, false if the alias is invalid.
+	 */
+	public static function getPathOfAlias($alias)
+	{
+		if(isset(self::$_aliases[$alias]))
+			return self::$_aliases[$alias];
+		elseif(($pos=strpos($alias,'.'))!==false)
+		{
+			$rootAlias=substr($alias,0,$pos);
+			if(isset(self::$_aliases[$rootAlias]))
+				return self::$_aliases[$alias]=rtrim(self::$_aliases[$rootAlias].DIRECTORY_SEPARATOR.str_replace('.',DIRECTORY_SEPARATOR,substr($alias,$pos+1)),'*'.DIRECTORY_SEPARATOR);
+			elseif(self::$_app instanceof CWebApplication)
+			{
+				if(self::$_app->findModule($rootAlias)!==null)
+					return self::getPathOfAlias($alias);
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * Create a path alias.
+	 * Note, this method neither checks the existence of the path nor normalizes the path.
+	 * @param string $alias alias to the path
+	 * @param string $path the path corresponding to the alias. If this is null, the corresponding
+	 * path alias will be removed.
+	 */
+	public static function setPathOfAlias($alias,$path)
+	{
+		if(empty($path))
+			unset(self::$_aliases[$alias]);
+		else
+			self::$_aliases[$alias]=rtrim($path,'\\/');
+	}
+
+	/**
+	 * Class autoload loader.
+	 * This method is provided to be invoked within an __autoload() magic method.
+	 * @param string $className class name
+	 * @return boolean whether the class has been loaded successfully
+	 */
+	public static function autoload($className)
+	{
+		// use include so that the error PHP file may appear
+		if(isset(self::$classMap[$className]))
+			include(self::$classMap[$className]);
+		elseif(isset(self::$_coreClasses[$className]))
+			include(YII_PATH.self::$_coreClasses[$className]);
+		else
+		{
+			// include class file relying on include_path
+			if(strpos($className,'\\')===false)  // class without namespace
+			{
+				if(self::$enableIncludePath===false)
+				{
+					foreach(self::$_includePaths as $path)
+					{
+						$classFile=$path.DIRECTORY_SEPARATOR.$className.'.php';
+						if(is_file($classFile))
+						{
+							include($classFile);
+							if(YII_DEBUG && basename(realpath($classFile))!==$className.'.php')
+								throw new CException(Yii::t('yii','Class name "{class}" does not match class file "{file}".', array(
+									'{class}'=>$className,
+									'{file}'=>$classFile,
+								)));
+							break;
+						}
+					}
+				}
+				else
+					include($className.'.php');
+			}
+			else  // class name with namespace in PHP 5.3
+			{
+				$namespace=str_replace('\\','.',ltrim($className,'\\'));
+				if(($path=self::getPathOfAlias($namespace))!==false)
+					include($path.'.php');
+				else
+					return false;
+			}
+			return class_exists($className,false) || interface_exists($className,false);
+		}
+		return true;
+	}
+
+	/**
+	 * Writes a trace message.
+	 * This method will only log a message when the application is in debug mode.
+	 * @param string $msg message to be logged
+	 * @param string $category category of the message
+	 * @see log
+	 */
+	public static function trace($msg,$category='application')
+	{
+		if(YII_DEBUG)
+			self::log($msg,CLogger::LEVEL_TRACE,$category);
+	}
+
+	/**
+	 * Logs a message.
+	 * Messages logged by this method may be retrieved via {@link CLogger::getLogs}
+	 * and may be recorded in different media, such as file, email, database, using
+	 * {@link CLogRouter}.
+	 * @param string $msg message to be logged
+	 * @param string $level level of the message (e.g. 'trace', 'warning', 'error'). It is case-insensitive.
+	 * @param string $category category of the message (e.g. 'system.web'). It is case-insensitive.
+	 */
+	public static function log($msg,$level=CLogger::LEVEL_INFO,$category='application')
+	{
+		if(self::$_logger===null)
+			self::$_logger=new CLogger;
+		if(YII_DEBUG && YII_TRACE_LEVEL>0 && $level!==CLogger::LEVEL_PROFILE)
+		{
+			$traces=debug_backtrace();
+			$count=0;
+			foreach($traces as $trace)
+			{
+				if(isset($trace['file'],$trace['line']) && strpos($trace['file'],YII_PATH)!==0)
+				{
+					$msg.="\nin ".$trace['file'].' ('.$trace['line'].')';
+					if(++$count>=YII_TRACE_LEVEL)
+						break;
+				}
+			}
+		}
+		self::$_logger->log($msg,$level,$category);
+	}
+
+	/**
+	 * Marks the beginning of a code block for profiling.
+	 * This has to be matched with a call to {@link endProfile()} with the same token.
+	 * The begin- and end- calls must also be properly nested, e.g.,
+	 * <pre>
+	 * Yii::beginProfile('block1');
+	 * Yii::beginProfile('block2');
+	 * Yii::endProfile('block2');
+	 * Yii::endProfile('block1');
+	 * </pre>
+	 * The following sequence is not valid:
+	 * <pre>
+	 * Yii::beginProfile('block1');
+	 * Yii::beginProfile('block2');
+	 * Yii::endProfile('block1');
+	 * Yii::endProfile('block2');
+	 * </pre>
+	 * @param string $token token for the code block
+	 * @param string $category the category of this log message
+	 * @see endProfile
+	 */
+	public static function beginProfile($token,$category='application')
+	{
+		self::log('begin:'.$token,CLogger::LEVEL_PROFILE,$category);
+	}
+
+	/**
+	 * Marks the end of a code block for profiling.
+	 * This has to be matched with a previous call to {@link beginProfile()} with the same token.
+	 * @param string $token token for the code block
+	 * @param string $category the category of this log message
+	 * @see beginProfile
+	 */
+	public static function endProfile($token,$category='application')
+	{
+		self::log('end:'.$token,CLogger::LEVEL_PROFILE,$category);
+	}
+
+	/**
+	 * @return CLogger message logger
+	 */
+	public static function getLogger()
+	{
+		if(self::$_logger!==null)
+			return self::$_logger;
+		else
+			return self::$_logger=new CLogger;
+	}
+
+	/**
+	 * Sets the logger object.
+	 * @param CLogger $logger the logger object.
+	 * @since 1.1.8
+	 */
+	public static function setLogger($logger)
+	{
+		self::$_logger=$logger;
+	}
+
+	/**
+	 * Returns a string that can be displayed on your Web page showing Powered-by-Yii information
+	 * @return string a string that can be displayed on your Web page showing Powered-by-Yii information
+	 */
+	public static function powered()
+	{
+		return Yii::t('yii','Powered by {yii}.', array('{yii}'=>'<a href="http://www.yiiframework.com/" rel="external">Yii Framework</a>'));
+	}
+
+	/**
+	 * Translates a message to the specified language.
+	 * This method supports choice format (see {@link CChoiceFormat}),
+	 * i.e., the message returned will be chosen from a few candidates according to the given
+	 * number value. This feature is mainly used to solve plural format issue in case
+	 * a message has different plural forms in some languages.
+	 * @param string $category message category. Please use only word letters. Note, category 'yii' is
+	 * reserved for Yii framework core code use. See {@link CPhpMessageSource} for
+	 * more interpretation about message category.
+	 * @param string $message the original message
+	 * @param array $params parameters to be applied to the message using <code>strtr</code>.
+	 * The first parameter can be a number without key.
+	 * And in this case, the method will call {@link CChoiceFormat::format} to choose
+	 * an appropriate message translation.
+	 * Starting from version 1.1.6 you can pass parameter for {@link CChoiceFormat::format}
+	 * or plural forms format without wrapping it with array.
+	 * This parameter is then available as <code>{n}</code> in the message translation string.
+	 * @param string $source which message source application component to use.
+	 * Defaults to null, meaning using 'coreMessages' for messages belonging to
+	 * the 'yii' category and using 'messages' for the rest messages.
+	 * @param string $language the target language. If null (default), the {@link CApplication::getLanguage application language} will be used.
+	 * @return string the translated message
+	 * @see CMessageSource
+	 */
+	public static function t($category,$message,$params=array(),$source=null,$language=null)
+	{
+		if(self::$_app!==null)
+		{
+			if($source===null)
+				$source=($category==='yii'||$category==='zii')?'coreMessages':'messages';
+			if(($source=self::$_app->getComponent($source))!==null)
+				$message=$source->translate($category,$message,$language);
+		}
+		if($params===array())
+			return $message;
+		if(!is_array($params))
+			$params=array($params);
+		if(isset($params[0])) // number choice
+		{
+			if(strpos($message,'|')!==false)
+			{
+				if(strpos($message,'#')===false)
+				{
+					$chunks=explode('|',$message);
+					$expressions=self::$_app->getLocale($language)->getPluralRules();
+					if($n=min(count($chunks),count($expressions)))
+					{
+						for($i=0;$i<$n;$i++)
+							$chunks[$i]=$expressions[$i].'#'.$chunks[$i];
+
+						$message=implode('|',$chunks);
+					}
+				}
+				$message=CChoiceFormat::format($message,$params[0]);
+			}
+			if(!isset($params['{n}']))
+				$params['{n}']=$params[0];
+			unset($params[0]);
+		}
+		return $params!==array() ? strtr($message,$params) : $message;
+	}
+
+	/**
+	 * Registers a new class autoloader.
+	 * The new autoloader will be placed before {@link autoload} and after
+	 * any other existing autoloaders.
+	 * @param callback $callback a valid PHP callback (function name or array($className,$methodName)).
+	 * @param boolean $append whether to append the new autoloader after the default Yii autoloader.
+	 * Be careful using this option as it will disable {@link enableIncludePath autoloading via include path}
+	 * when set to true. After this the Yii autoloader can not rely on loading classes via simple include anymore
+	 * and you have to {@link import} all classes explicitly.
+	 */
+	public static function registerAutoloader($callback, $append=false)
+	{
+		if($append)
+		{
+			self::$enableIncludePath=false;
+			spl_autoload_register($callback);
+		}
+		else
+		{
+			spl_autoload_unregister(array('YiiBase','autoload'));
+			spl_autoload_register($callback);
+			spl_autoload_register(array('YiiBase','autoload'));
+		}
+	}
+
+	/**
+	 * @var array class map for core Yii classes.
+	 * NOTE, DO NOT MODIFY THIS ARRAY MANUALLY. IF YOU CHANGE OR ADD SOME CORE CLASSES,
+	 * PLEASE RUN 'build autoload' COMMAND TO UPDATE THIS ARRAY.
+	 */
+	private static $_coreClasses=array(
+		'CApplication' => '/base/CApplication.php',
+		'CApplicationComponent' => '/base/CApplicationComponent.php',
+		'CBehavior' => '/base/CBehavior.php',
+		'CComponent' => '/base/CComponent.php',
+		'CErrorEvent' => '/base/CErrorEvent.php',
+		'CErrorHandler' => '/base/CErrorHandler.php',
+		'CException' => '/base/CException.php',
+		'CExceptionEvent' => '/base/CExceptionEvent.php',
+		'CHttpException' => '/base/CHttpException.php',
+		'CModel' => '/base/CModel.php',
+		'CModelBehavior' => '/base/CModelBehavior.php',
+		'CModelEvent' => '/base/CModelEvent.php',
+		'CModule' => '/base/CModule.php',
+		'CSecurityManager' => '/base/CSecurityManager.php',
+		'CStatePersister' => '/base/CStatePersister.php',
+		'CApcCache' => '/caching/CApcCache.php',
+		'CCache' => '/caching/CCache.php',
+		'CDbCache' => '/caching/CDbCache.php',
+		'CDummyCache' => '/caching/CDummyCache.php',
+		'CEAcceleratorCache' => '/caching/CEAcceleratorCache.php',
+		'CFileCache' => '/caching/CFileCache.php',
+		'CMemCache' => '/caching/CMemCache.php',
+		'CRedisCache' => '/caching/CRedisCache.php',
+		'CWinCache' => '/caching/CWinCache.php',
+		'CXCache' => '/caching/CXCache.php',
+		'CZendDataCache' => '/caching/CZendDataCache.php',
+		'CCacheDependency' => '/caching/dependencies/CCacheDependency.php',
+		'CChainedCacheDependency' => '/caching/dependencies/CChainedCacheDependency.php',
+		'CDbCacheDependency' => '/caching/dependencies/CDbCacheDependency.php',
+		'CDirectoryCacheDependency' => '/caching/dependencies/CDirectoryCacheDependency.php',
+		'CExpressionDependency' => '/caching/dependencies/CExpressionDependency.php',
+		'CFileCacheDependency' => '/caching/dependencies/CFileCacheDependency.php',
+		'CGlobalStateCacheDependency' => '/caching/dependencies/CGlobalStateCacheDependency.php',
+		'CAttributeCollection' => '/collections/CAttributeCollection.php',
+		'CConfiguration' => '/collections/CConfiguration.php',
+		'CList' => '/collections/CList.php',
+		'CListIterator' => '/collections/CListIterator.php',
+		'CMap' => '/collections/CMap.php',
+		'CMapIterator' => '/collections/CMapIterator.php',
+		'CQueue' => '/collections/CQueue.php',
+		'CQueueIterator' => '/collections/CQueueIterator.php',
+		'CStack' => '/collections/CStack.php',
+		'CStackIterator' => '/collections/CStackIterator.php',
+		'CTypedList' => '/collections/CTypedList.php',
+		'CTypedMap' => '/collections/CTypedMap.php',
+		'CConsoleApplication' => '/console/CConsoleApplication.php',
+		'CConsoleCommand' => '/console/CConsoleCommand.php',
+		'CConsoleCommandBehavior' => '/console/CConsoleCommandBehavior.php',
+		'CConsoleCommandEvent' => '/console/CConsoleCommandEvent.php',
+		'CConsoleCommandRunner' => '/console/CConsoleCommandRunner.php',
+		'CHelpCommand' => '/console/CHelpCommand.php',
+		'CDbCommand' => '/db/CDbCommand.php',
+		'CDbConnection' => '/db/CDbConnection.php',
+		'CDbDataReader' => '/db/CDbDataReader.php',
+		'CDbException' => '/db/CDbException.php',
+		'CDbMigration' => '/db/CDbMigration.php',
+		'CDbTransaction' => '/db/CDbTransaction.php',
+		'CActiveFinder' => '/db/ar/CActiveFinder.php',
+		'CActiveRecord' => '/db/ar/CActiveRecord.php',
+		'CActiveRecordBehavior' => '/db/ar/CActiveRecordBehavior.php',
+		'CDbColumnSchema' => '/db/schema/CDbColumnSchema.php',
+		'CDbCommandBuilder' => '/db/schema/CDbCommandBuilder.php',
+		'CDbCriteria' => '/db/schema/CDbCriteria.php',
+		'CDbExpression' => '/db/schema/CDbExpression.php',
+		'CDbSchema' => '/db/schema/CDbSchema.php',
+		'CDbTableSchema' => '/db/schema/CDbTableSchema.php',
+		'CMssqlColumnSchema' => '/db/schema/mssql/CMssqlColumnSchema.php',
+		'CMssqlCommandBuilder' => '/db/schema/mssql/CMssqlCommandBuilder.php',
+		'CMssqlPdoAdapter' => '/db/schema/mssql/CMssqlPdoAdapter.php',
+		'CMssqlSchema' => '/db/schema/mssql/CMssqlSchema.php',
+		'CMssqlSqlsrvPdoAdapter' => '/db/schema/mssql/CMssqlSqlsrvPdoAdapter.php',
+		'CMssqlTableSchema' => '/db/schema/mssql/CMssqlTableSchema.php',
+		'CMysqlColumnSchema' => '/db/schema/mysql/CMysqlColumnSchema.php',
+		'CMysqlCommandBuilder' => '/db/schema/mysql/CMysqlCommandBuilder.php',
+		'CMysqlSchema' => '/db/schema/mysql/CMysqlSchema.php',
+		'CMysqlTableSchema' => '/db/schema/mysql/CMysqlTableSchema.php',
+		'COciColumnSchema' => '/db/schema/oci/COciColumnSchema.php',
+		'COciCommandBuilder' => '/db/schema/oci/COciCommandBuilder.php',
+		'COciSchema' => '/db/schema/oci/COciSchema.php',
+		'COciTableSchema' => '/db/schema/oci/COciTableSchema.php',
+		'CPgsqlColumnSchema' => '/db/schema/pgsql/CPgsqlColumnSchema.php',
+		'CPgsqlCommandBuilder' => '/db/schema/pgsql/CPgsqlCommandBuilder.php',
+		'CPgsqlSchema' => '/db/schema/pgsql/CPgsqlSchema.php',
+		'CPgsqlTableSchema' => '/db/schema/pgsql/CPgsqlTableSchema.php',
+		'CSqliteColumnSchema' => '/db/schema/sqlite/CSqliteColumnSchema.php',
+		'CSqliteCommandBuilder' => '/db/schema/sqlite/CSqliteCommandBuilder.php',
+		'CSqliteSchema' => '/db/schema/sqlite/CSqliteSchema.php',
+		'CChoiceFormat' => '/i18n/CChoiceFormat.php',
+		'CDateFormatter' => '/i18n/CDateFormatter.php',
+		'CDbMessageSource' => '/i18n/CDbMessageSource.php',
+		'CGettextMessageSource' => '/i18n/CGettextMessageSource.php',
+		'CLocale' => '/i18n/CLocale.php',
+		'CMessageSource' => '/i18n/CMessageSource.php',
+		'CNumberFormatter' => '/i18n/CNumberFormatter.php',
+		'CPhpMessageSource' => '/i18n/CPhpMessageSource.php',
+		'CGettextFile' => '/i18n/gettext/CGettextFile.php',
+		'CGettextMoFile' => '/i18n/gettext/CGettextMoFile.php',
+		'CGettextPoFile' => '/i18n/gettext/CGettextPoFile.php',
+		'CChainedLogFilter' => '/logging/CChainedLogFilter.php',
+		'CDbLogRoute' => '/logging/CDbLogRoute.php',
+		'CEmailLogRoute' => '/logging/CEmailLogRoute.php',
+		'CFileLogRoute' => '/logging/CFileLogRoute.php',
+		'CLogFilter' => '/logging/CLogFilter.php',
+		'CLogRoute' => '/logging/CLogRoute.php',
+		'CLogRouter' => '/logging/CLogRouter.php',
+		'CLogger' => '/logging/CLogger.php',
+		'CProfileLogRoute' => '/logging/CProfileLogRoute.php',
+		'CWebLogRoute' => '/logging/CWebLogRoute.php',
+		'CDateTimeParser' => '/utils/CDateTimeParser.php',
+		'CFileHelper' => '/utils/CFileHelper.php',
+		'CFormatter' => '/utils/CFormatter.php',
+		'CLocalizedFormatter' => '/utils/CLocalizedFormatter.php',
+		'CMarkdownParser' => '/utils/CMarkdownParser.php',
+		'CPasswordHelper' => '/utils/CPasswordHelper.php',
+		'CPropertyValue' => '/utils/CPropertyValue.php',
+		'CTimestamp' => '/utils/CTimestamp.php',
+		'CVarDumper' => '/utils/CVarDumper.php',
+		'CBooleanValidator' => '/validators/CBooleanValidator.php',
+		'CCaptchaValidator' => '/validators/CCaptchaValidator.php',
+		'CCompareValidator' => '/validators/CCompareValidator.php',
+		'CDateValidator' => '/validators/CDateValidator.php',
+		'CDefaultValueValidator' => '/validators/CDefaultValueValidator.php',
+		'CEmailValidator' => '/validators/CEmailValidator.php',
+		'CExistValidator' => '/validators/CExistValidator.php',
+		'CFileValidator' => '/validators/CFileValidator.php',
+		'CFilterValidator' => '/validators/CFilterValidator.php',
+		'CInlineValidator' => '/validators/CInlineValidator.php',
+		'CNumberValidator' => '/validators/CNumberValidator.php',
+		'CRangeValidator' => '/validators/CRangeValidator.php',
+		'CRegularExpressionValidator' => '/validators/CRegularExpressionValidator.php',
+		'CRequiredValidator' => '/validators/CRequiredValidator.php',
+		'CSafeValidator' => '/validators/CSafeValidator.php',
+		'CStringValidator' => '/validators/CStringValidator.php',
+		'CTypeValidator' => '/validators/CTypeValidator.php',
+		'CUniqueValidator' => '/validators/CUniqueValidator.php',
+		'CUnsafeValidator' => '/validators/CUnsafeValidator.php',
+		'CUrlValidator' => '/validators/CUrlValidator.php',
+		'CValidator' => '/validators/CValidator.php',
+		'CActiveDataProvider' => '/web/CActiveDataProvider.php',
+		'CArrayDataProvider' => '/web/CArrayDataProvider.php',
+		'CAssetManager' => '/web/CAssetManager.php',
+		'CBaseController' => '/web/CBaseController.php',
+		'CCacheHttpSession' => '/web/CCacheHttpSession.php',
+		'CClientScript' => '/web/CClientScript.php',
+		'CController' => '/web/CController.php',
+		'CDataProvider' => '/web/CDataProvider.php',
+		'CDataProviderIterator' => '/web/CDataProviderIterator.php',
+		'CDbHttpSession' => '/web/CDbHttpSession.php',
+		'CExtController' => '/web/CExtController.php',
+		'CFormModel' => '/web/CFormModel.php',
+		'CHttpCookie' => '/web/CHttpCookie.php',
+		'CHttpRequest' => '/web/CHttpRequest.php',
+		'CHttpSession' => '/web/CHttpSession.php',
+		'CHttpSessionIterator' => '/web/CHttpSessionIterator.php',
+		'COutputEvent' => '/web/COutputEvent.php',
+		'CPagination' => '/web/CPagination.php',
+		'CSort' => '/web/CSort.php',
+		'CSqlDataProvider' => '/web/CSqlDataProvider.php',
+		'CTheme' => '/web/CTheme.php',
+		'CThemeManager' => '/web/CThemeManager.php',
+		'CUploadedFile' => '/web/CUploadedFile.php',
+		'CUrlManager' => '/web/CUrlManager.php',
+		'CWebApplication' => '/web/CWebApplication.php',
+		'CWebModule' => '/web/CWebModule.php',
+		'CWidgetFactory' => '/web/CWidgetFactory.php',
+		'CAction' => '/web/actions/CAction.php',
+		'CInlineAction' => '/web/actions/CInlineAction.php',
+		'CViewAction' => '/web/actions/CViewAction.php',
+		'CAccessControlFilter' => '/web/auth/CAccessControlFilter.php',
+		'CAuthAssignment' => '/web/auth/CAuthAssignment.php',
+		'CAuthItem' => '/web/auth/CAuthItem.php',
+		'CAuthManager' => '/web/auth/CAuthManager.php',
+		'CBaseUserIdentity' => '/web/auth/CBaseUserIdentity.php',
+		'CDbAuthManager' => '/web/auth/CDbAuthManager.php',
+		'CPhpAuthManager' => '/web/auth/CPhpAuthManager.php',
+		'CUserIdentity' => '/web/auth/CUserIdentity.php',
+		'CWebUser' => '/web/auth/CWebUser.php',
+		'CFilter' => '/web/filters/CFilter.php',
+		'CFilterChain' => '/web/filters/CFilterChain.php',
+		'CHttpCacheFilter' => '/web/filters/CHttpCacheFilter.php',
+		'CInlineFilter' => '/web/filters/CInlineFilter.php',
+		'CForm' => '/web/form/CForm.php',
+		'CFormButtonElement' => '/web/form/CFormButtonElement.php',
+		'CFormElement' => '/web/form/CFormElement.php',
+		'CFormElementCollection' => '/web/form/CFormElementCollection.php',
+		'CFormInputElement' => '/web/form/CFormInputElement.php',
+		'CFormStringElement' => '/web/form/CFormStringElement.php',
+		'CGoogleApi' => '/web/helpers/CGoogleApi.php',
+		'CHtml' => '/web/helpers/CHtml.php',
+		'CJSON' => '/web/helpers/CJSON.php',
+		'CJavaScript' => '/web/helpers/CJavaScript.php',
+		'CJavaScriptExpression' => '/web/helpers/CJavaScriptExpression.php',
+		'CPradoViewRenderer' => '/web/renderers/CPradoViewRenderer.php',
+		'CViewRenderer' => '/web/renderers/CViewRenderer.php',
+		'CWebService' => '/web/services/CWebService.php',
+		'CWebServiceAction' => '/web/services/CWebServiceAction.php',
+		'CWsdlGenerator' => '/web/services/CWsdlGenerator.php',
+		'CActiveForm' => '/web/widgets/CActiveForm.php',
+		'CAutoComplete' => '/web/widgets/CAutoComplete.php',
+		'CClipWidget' => '/web/widgets/CClipWidget.php',
+		'CContentDecorator' => '/web/widgets/CContentDecorator.php',
+		'CFilterWidget' => '/web/widgets/CFilterWidget.php',
+		'CFlexWidget' => '/web/widgets/CFlexWidget.php',
+		'CHtmlPurifier' => '/web/widgets/CHtmlPurifier.php',
+		'CInputWidget' => '/web/widgets/CInputWidget.php',
+		'CMarkdown' => '/web/widgets/CMarkdown.php',
+		'CMaskedTextField' => '/web/widgets/CMaskedTextField.php',
+		'CMultiFileUpload' => '/web/widgets/CMultiFileUpload.php',
+		'COutputCache' => '/web/widgets/COutputCache.php',
+		'COutputProcessor' => '/web/widgets/COutputProcessor.php',
+		'CStarRating' => '/web/widgets/CStarRating.php',
+		'CTabView' => '/web/widgets/CTabView.php',
+		'CTextHighlighter' => '/web/widgets/CTextHighlighter.php',
+		'CTreeView' => '/web/widgets/CTreeView.php',
+		'CWidget' => '/web/widgets/CWidget.php',
+		'CCaptcha' => '/web/widgets/captcha/CCaptcha.php',
+		'CCaptchaAction' => '/web/widgets/captcha/CCaptchaAction.php',
+		'CBasePager' => '/web/widgets/pagers/CBasePager.php',
+		'CLinkPager' => '/web/widgets/pagers/CLinkPager.php',
+		'CListPager' => '/web/widgets/pagers/CListPager.php',
+	);
+}
+
+spl_autoload_register(array('YiiBase','autoload'));
+require(YII_PATH.'/base/interfaces.php');

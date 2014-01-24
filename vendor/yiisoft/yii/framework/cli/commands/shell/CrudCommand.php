@@ -1,190 +1,326 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-4gHEl4SqnHm=
+<?php
+/**
+ * CrudCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CrudCommand generates code implementing CRUD operations.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.cli.commands.shell
+ * @since 1.0
+ */
+class CrudCommand extends CConsoleCommand
+{
+	/**
+	 * @var string the directory that contains templates for crud commands.
+	 * Defaults to null, meaning using 'framework/cli/views/shell/crud'.
+	 * If you set this path and some views are missing in the directory,
+	 * the default views will be used.
+	 */
+	public $templatePath;
+	/**
+	 * @var string the directory that contains functional test classes.
+	 * Defaults to null, meaning using 'protected/tests/functional'.
+	 * If this is false, it means functional test file should NOT be generated.
+	 */
+	public $functionalTestPath;
+	/**
+	 * @var array list of actions to be created. Each action must be associated with a template file with the same name.
+	 */
+	public $actions=array('create','update','index','view','admin','_form','_view','_search');
+
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  crud <model-class> [controller-ID] ...
+
+DESCRIPTION
+  This command generates a controller and views that accomplish
+  CRUD operations for the specified data model.
+
+PARAMETERS
+ * model-class: required, the name of the data model class. This can
+   also be specified as a path alias (e.g. application.models.Post).
+   If the model class belongs to a module, it should be specified
+   as 'ModuleID.models.ClassName'.
+
+ * controller-ID: optional, the controller ID (e.g. 'post').
+   If this is not specified, the model class name will be used
+   as the controller ID. In this case, if the model belongs to
+   a module, the controller will also be created under the same
+   module.
+
+   If the controller should be located under a subdirectory,
+   please specify the controller ID as 'path/to/ControllerID'
+   (e.g. 'admin/user').
+
+   If the controller belongs to a module (different from the module
+   that the model belongs to), please specify the controller ID
+   as 'ModuleID/ControllerID' or 'ModuleID/path/to/Controller'.
+
+EXAMPLES
+ * Generates CRUD for the Post model:
+        crud Post
+
+ * Generates CRUD for the Post model which belongs to module 'admin':
+        crud admin.models.Post
+
+ * Generates CRUD for the Post model. The generated controller should
+   belong to module 'admin', but not the model class:
+        crud Post admin/post
+
+EOD;
+	}
+
+	/**
+	 * Execute the action.
+	 * @param array $args command line parameters specific for this command
+	 * @return integer|null non zero application exit code for help or null on success
+	 */
+	public function run($args)
+	{
+		if(!isset($args[0]))
+		{
+			echo "Error: data model class is required.\n";
+			echo $this->getHelp();
+			return 1;
+		}
+		$module=Yii::app();
+		$modelClass=$args[0];
+		if(($pos=strpos($modelClass,'.'))===false)
+			$modelClass='application.models.'.$modelClass;
+		else
+		{
+			$id=substr($modelClass,0,$pos);
+			if(($m=Yii::app()->getModule($id))!==null)
+				$module=$m;
+		}
+		$modelClass=Yii::import($modelClass);
+
+		if(isset($args[1]))
+		{
+			$controllerID=$args[1];
+			if(($pos=strrpos($controllerID,'/'))===false)
+			{
+				$controllerClass=ucfirst($controllerID).'Controller';
+				$controllerFile=$module->controllerPath.DIRECTORY_SEPARATOR.$controllerClass.'.php';
+				$controllerID[0]=strtolower($controllerID[0]);
+			}
+			else
+			{
+				$last=substr($controllerID,$pos+1);
+				$last[0]=strtolower($last);
+				$pos2=strpos($controllerID,'/');
+				$first=substr($controllerID,0,$pos2);
+				$middle=$pos===$pos2?'':substr($controllerID,$pos2+1,$pos-$pos2);
+
+				$controllerClass=ucfirst($last).'Controller';
+				$controllerFile=($middle===''?'':$middle.'/').$controllerClass.'.php';
+				$controllerID=$middle===''?$last:$middle.'/'.$last;
+				if(($m=Yii::app()->getModule($first))!==null)
+					$module=$m;
+				else
+				{
+					$controllerFile=$first.'/'.$controllerFile;
+					$controllerID=$first.'/'.$controllerID;
+				}
+
+				$controllerFile=$module->controllerPath.DIRECTORY_SEPARATOR.str_replace('/',DIRECTORY_SEPARATOR,$controllerFile);
+			}
+		}
+		else
+		{
+			$controllerID=$modelClass;
+			$controllerClass=ucfirst($controllerID).'Controller';
+			$controllerFile=$module->controllerPath.DIRECTORY_SEPARATOR.$controllerClass.'.php';
+			$controllerID[0]=strtolower($controllerID[0]);
+		}
+
+		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/crud':$this->templatePath;
+		$functionalTestPath=$this->functionalTestPath===null?Yii::getPathOfAlias('application.tests.functional'):$this->functionalTestPath;
+
+		$viewPath=$module->viewPath.DIRECTORY_SEPARATOR.str_replace('.',DIRECTORY_SEPARATOR,$controllerID);
+		$fixtureName=$this->pluralize($modelClass);
+		$fixtureName[0]=strtolower($fixtureName);
+		$list=array(
+			basename($controllerFile)=>array(
+				'source'=>$templatePath.'/controller.php',
+				'target'=>$controllerFile,
+				'callback'=>array($this,'generateController'),
+				'params'=>array($controllerClass,$modelClass),
+			),
+		);
+
+		if($functionalTestPath!==false)
+		{
+			$list[$modelClass.'Test.php']=array(
+				'source'=>$templatePath.'/test.php',
+				'target'=>$functionalTestPath.DIRECTORY_SEPARATOR.$modelClass.'Test.php',
+				'callback'=>array($this,'generateTest'),
+				'params'=>array($controllerID,$fixtureName,$modelClass),
+			);
+		}
+
+		foreach($this->actions as $action)
+		{
+			$list[$action.'.php']=array(
+				'source'=>$templatePath.'/'.$action.'.php',
+				'target'=>$viewPath.'/'.$action.'.php',
+				'callback'=>array($this,'generateView'),
+				'params'=>$modelClass,
+			);
+		}
+
+		$this->copyFiles($list);
+
+		if($module instanceof CWebModule)
+			$moduleID=$module->id.'/';
+		else
+			$moduleID='';
+
+		echo "\nCrud '{$controllerID}' has been successfully created. You may access it via:\n";
+		echo "http://hostname/path/to/index.php?r={$moduleID}{$controllerID}\n";
+	}
+
+	public function generateController($source,$params)
+	{
+		list($controllerClass,$modelClass)=$params;
+		$model=CActiveRecord::model($modelClass);
+		$id=$model->tableSchema->primaryKey;
+		if($id===null)
+			throw new ShellException(Yii::t('yii','Error: Table "{table}" does not have a primary key.',array('{table}'=>$model->tableName())));
+		elseif(is_array($id))
+			throw new ShellException(Yii::t('yii','Error: Table "{table}" has a composite primary key which is not supported by crud command.',array('{table}'=>$model->tableName())));
+
+		if(!is_file($source))  // fall back to default ones
+			$source=YII_PATH.'/cli/views/shell/crud/'.basename($source);
+
+		return $this->renderFile($source,array(
+			'ID'=>$id,
+			'controllerClass'=>$controllerClass,
+			'modelClass'=>$modelClass,
+		),true);
+	}
+
+	public function generateView($source,$modelClass)
+	{
+		$model=CActiveRecord::model($modelClass);
+		$table=$model->getTableSchema();
+		$columns=$table->columns;
+		if(!is_file($source))  // fall back to default ones
+			$source=YII_PATH.'/cli/views/shell/crud/'.basename($source);
+		return $this->renderFile($source,array(
+			'ID'=>$table->primaryKey,
+			'modelClass'=>$modelClass,
+			'columns'=>$columns),true);
+	}
+
+	public function generateTest($source,$params)
+	{
+		list($controllerID,$fixtureName,$modelClass)=$params;
+		if(!is_file($source))  // fall back to default ones
+			$source=YII_PATH.'/cli/views/shell/crud/'.basename($source);
+		return $this->renderFile($source, array(
+			'controllerID'=>$controllerID,
+			'fixtureName'=>$fixtureName,
+			'modelClass'=>$modelClass,
+		),true);
+	}
+
+	public function generateInputLabel($modelClass,$column)
+	{
+		return "CHtml::activeLabelEx(\$model,'{$column->name}')";
+	}
+
+	public function generateInputField($modelClass,$column)
+	{
+		if($column->type==='boolean')
+			return "CHtml::activeCheckBox(\$model,'{$column->name}')";
+		elseif(stripos($column->dbType,'text')!==false)
+			return "CHtml::activeTextArea(\$model,'{$column->name}',array('rows'=>6, 'cols'=>50))";
+		else
+		{
+			if(preg_match('/^(password|pass|passwd|passcode)$/i',$column->name))
+				$inputField='activePasswordField';
+			else
+				$inputField='activeTextField';
+
+			if($column->type!=='string' || $column->size===null)
+				return "CHtml::{$inputField}(\$model,'{$column->name}')";
+			else
+			{
+				if(($size=$maxLength=$column->size)>60)
+					$size=60;
+				return "CHtml::{$inputField}(\$model,'{$column->name}',array('size'=>$size,'maxlength'=>$maxLength))";
+			}
+		}
+	}
+
+	public function generateActiveLabel($modelClass,$column)
+	{
+		return "\$form->labelEx(\$model,'{$column->name}')";
+	}
+
+	public function generateActiveField($modelClass,$column)
+	{
+		if($column->type==='boolean')
+			return "\$form->checkBox(\$model,'{$column->name}')";
+		elseif(stripos($column->dbType,'text')!==false)
+			return "\$form->textArea(\$model,'{$column->name}',array('rows'=>6, 'cols'=>50))";
+		else
+		{
+			if(preg_match('/^(password|pass|passwd|passcode)$/i',$column->name))
+				$inputField='passwordField';
+			else
+				$inputField='textField';
+
+			if($column->type!=='string' || $column->size===null)
+				return "\$form->{$inputField}(\$model,'{$column->name}')";
+			else
+			{
+				if(($size=$maxLength=$column->size)>60)
+					$size=60;
+				return "\$form->{$inputField}(\$model,'{$column->name}',array('size'=>$size,'maxlength'=>$maxLength))";
+			}
+		}
+	}
+
+	public function guessNameColumn($columns)
+	{
+		foreach($columns as $column)
+		{
+			if(!strcasecmp($column->name,'name'))
+				return $column->name;
+		}
+		foreach($columns as $column)
+		{
+			if(!strcasecmp($column->name,'title'))
+				return $column->name;
+		}
+		foreach($columns as $column)
+		{
+			if($column->isPrimaryKey)
+				return $column->name;
+		}
+		return 'id';
+	}
+
+	public function class2id($className)
+	{
+		return trim(strtolower(str_replace('_','-',preg_replace('/(?<![A-Z])[A-Z]/', '-\0', $className))),'-');
+	}
+
+	public function class2name($className,$pluralize=false)
+	{
+		if($pluralize)
+			$className=$this->pluralize($className);
+		return ucwords(trim(strtolower(str_replace(array('-','_'),' ',preg_replace('/(?<![A-Z])[A-Z]/', ' \0', $className)))));
+	}
+}

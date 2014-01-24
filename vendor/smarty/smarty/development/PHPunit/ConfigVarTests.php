@@ -1,187 +1,372 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPwyv82TwkfW85+Yr19u6T/wX3GeJRBUxpjDrCKwoj1R6BBCU1GKp5hOQL6cJxMbZPx/qUoRE
-6G4wnWbaIQUUgtQO4SwFEd0vHOemvf+Cb4E3haZ8vOkW0uZfWo570jv7WaKLgCEYzTwM4nFlnKle
-OIBmacbUXEH/QobdfOnuWDhnEe1Q9Of1548mRE0vFHushpPoVwuGNomm94OwpeO89YndM4GrqeF/
-19cA1MT6a9lcqA1olxcj1QzHAE4xzt2gh9fl143SQNI/MSAOazKqU9VUkvhOjn6uCa153UAphIb4
-vVPHKNJBJ81ykRrFC26iy7RtxmdcOMwDk2xDn9LnHeW/VOXVESGX1cRN74PEahubOsRqDCnfL+AE
-agvblYhscXNQhpMiBUmliZ/3Had6+VHVFnVhq4QAltqS7zmCl3idmRDo7Xu6Wdc01reCFViCWHEw
-Y7ur8VdGYQwzwry7M/D225g9SMpHbJrmXDHAi8beGtmkkn3fNthQ+uBf7q3eftxG8pjpdx83E9ID
-otoWywNOJ7xbdPs8TfneQ18o8YUghxqz7IJhK4CczsYzzqtmAvTpId17ABckdw6lK2s2QCs74WkJ
-yOrjAjEIYR/ytn/JLZv5Mp3QTWGMjS4wCpTiYNT9sdKVHh53LEV8oBUXN4eYTZrAtDP45YQg1rF2
-0GMqMU9bNGqXqFNF6DJ5+d/AUPgY8il7CqRW/EW8DoMML6k/EpcjQ/Qeexzyw4yq9NGidfC33U65
-J7O2WnWdispTWZieEd4DPjWRmv7UiICQOl9gCU2avoq0nKUp6n20XsG0rOfPmTGDuq6w+pZTXLNb
-mJzhQK72Dfa24APYHlR8oypL2XB6s0beJ4HFy9AgdjD5xWHLpD3/yJtOlD6yTeMIbDWxrx5/EsCu
-p4wZWrn9LI47AfLgxsIs8mUszhAjix4KZmJa+E+UA9v61Sfe/mYTADlCiqB33H/uYRwes6Do8oh/
-Z6n+JeppJIdO9n0FnNujxXXBRSfKB4Vj8KDYUlB0TWOLZ3y3SZrUFuWHh38XOi6z/Iw20VP+WqO2
-heCz7koGyFHQZLihz8aKjm/sPDr+eSnLMjFOWZvDM7mEpFoyNUZTFg0XHFE6jZXwNKBGOuiv10ds
-tEVxNkvwcH51IymuMTVFBlSWXYw17j/qvNhLsmHlb/xeY/Enxjtkqr+ketm5JWQsORsaUhJu7ems
-41XEgeWkRR4b3YF0kgxU05m90sB8goRX9/3cUrFoNLh5d948fWks8Bv42dn1m5la01Mh8JTsaMcq
-76Dzjft9e/k2sMhc1jiBq5qhihHdf4jGytXBBPl8GwlS/S7hVYJvOqcqWzuZWXa9eXmDCHckNSEv
-TkSxyzDggBDLieb9Ah5hxtHMdi/cLapHprZ+d9lSmIa44mWGCRP0gl+PbZXQ/FD9HDoY91P6Le1x
-+6zF0PRFzVGcVlTR+jrB79TpPTOkBgfygueEAeMbPfiSHczJG3RK2Fs2noNUJmv+QAQN0RrASqx6
-EYbd9/hSGVFIU/jEC8qv5sCJXuDRU8Nej/LNZHwxhxErxsu5zzb/ac7aMp3UPGphURHqiS+lb4y8
-dTriR9Q9JzgCtPOlvZUk7sA44p/7D9i+SdHyQeYw0RvD7u/dV1bTh1zgoy4YYg5FqnkQfR7TYUMM
-jtyz/rJ0+RK48VWdfacQOk/oh4eTC7F6A8nJ+aVfqa1ogkGnUShm6Bd+cS6FY1w1Xf+1nuzc+hpK
-J8mCisJ4swqna1cpwz8fx8lr1Hrwgb49psKxXwpGZy5gifopMUVQGHU4Navdqf4dwa/aXX9b+z6L
-lzPvIdyzzPJwrecq9TaD+6pEb8ebMwt3BMiL9jz9JG3aAeMrzszaGTDkafi7eX15FfG5RDpcMuux
-7HSsht7C/4u2opjyA+BdNE2PopFrijeCJCKjyGjK3JOnOCl54+o0/wFpNqvcziA/PJ6T9Mr9s5tu
-WnOkx6bce0Bt9UgdsabixRCEe9kGHariqo2tAKo5VGt/JZy41jHi/yUm4BNottz+0W/ROOP8+jE0
-fd5FCln3WHPdWCe9MCZ2ILFtWCcPFifSJM3JbTn7P4uaMpkL5IM5kDXcr4cZeMLa7Ac4oBBZ1C3M
-18TxAET0GDJ+ud/1agOCWa8VDk4UKElAreZcTpHAt5uDz1Z8wye0ZVt8TMTkM5B3RIEr95MP8yGp
-HR4xRbSQ0J40XcNBuqgXRycziuKCEoYHOeBqPPKVUXw5Runyb31YU5wjAilSrzegMj/3MZQ/csVG
-Klm1X7Auwq6fTk+NutiHD98jwcY5L7GMCivAUmYyaeRuE3e0SZNxOybK3q1pHZtEEDvlTDImc90I
-NrT27V+ROGtRBLc/hJ1vzqlb2jQzbGx40eXmh2ZCzUYAVDdABhOKViUCb4quHBpKheL3jausgC2w
-knCNrMh35E6eGRaoHFOb6/dKaxUrOoUoNuzflgvBocA4pM7fSyhc6H36InWVSrrmMs6O5+eG8n9R
-h4nT8XMsgzqW1hs66/wri2+EWJJRoChwq5xnP3HBrQMNXt4fB+yQM+m0riG6nCnmNeN4LI8i9czE
-Vt5qbP0Yg/iDGxxTgcCFnGHLsqeTHSbSCPrxvnibR5G1gvf/J/w5KcAEHScjMwhLYoN6os1PsBW1
-yI6+dOVH5ynzWdj0t/KJWKRU4UUhu+H2G+SZuI9IGZjo9A0ekFpWrT9q0MzWfZyTyASxagyXubkX
-2PhrqEW3s7ToMuSoNf9tADfSq4rbFn5TX1F29ntFDRyBxl5xKkAgnj5rOVceAzIl9pDdwLoXXr96
-ECNoGfjO+ChjhRQsKVaq+Qc0nbhQaidbDpB/sn55OyHx7BXWfC0G4rXN76avt0GETnITeiDjiul+
-s1/gUfd0rxqxLSvOWbQ5yX4XiivsBdgMAmkljUMixXnNMmxqLOlTON65bdTLQTt0KmneaPa5TeNK
-+m8TmgqBzLUx4udkC/SAlgXBSzrMj9ApihrwYGsPw6zoT4aFMx7mETfjD+VDqLILgpCbUm698t9H
-H1AzG4GFY5DdMK6EvfOXI1RdhCDhAS8/S7YNuShIEakrRo0t1GhnVnRdXhDsNJVSkEqx75O7g55o
-hH3PI+BT2b6UPO134eyieb7gXaR8sGBfDiA84bn30ofY67grGUxm840nec8NYrH2HEh4aChL0fD/
-0XQ5asT8563dCRgkeSzmMJJ7xxcPE3xxWa4bRbuhgSMdDixZaKQuwLitvoLKcz+yqzhqB9dExUZb
-Ag5OYnguqpLxdeo7h25KM/44NSEuuPl3TRHqAAZZplQSqrB0zBrRC8kdd4a0Ng21Aga0B+oxkAma
-CdnbcztzDAw/+hjYJWvZefogYgdsNsZzXNzS2Ml7LRNZA51Rhfmz4GU7f32KSig62/yb96hQLN65
-FfnBjueTZG7FpcGRtOZsilXq2Qnu9H17sYNufv+eUWRbfpDA5xBDYTVamhYnTpcd1F981CKJbYDe
-DIBGZshBiIThgY0S7vNw/FTY/+RkXcB+skcM0J3jgTITpKggYdSSkevbXRNWeH5y6EH2qqI9iyA8
-qM/urICc2FhmJ9mKaXD2WMFCXDaBxe2MwgoBqBcK3mKamNMN4Ey3vl0tS9wVmJ4/RLuKmvRNiRIX
-qezSOimOH90SD3vdlHg1ISY5BINlg/N/AdipYKZbCLtNcZ2CGFMFceJSzs1Co075H9c3ZXn2c1Lm
-uGlCMzrfw4j287g4vEp2JIPVhkaLp+oC4kn1potbeIoE6T4MVPYekZNwinBjwtVVNPF02oXHFgDr
-KVptB4pFVIbsRQt2v05unL0D8RwyBjyhBstzcMpHbOEjl15Sk1S3NFUnpdaL8e4X7fxHip3220zf
-KgFrY9NqzB+/SByMo3a2LCNCvmoAx0UKjo5rhaoaptTdw3fm3gIWe1Maslap+RNR6rkeIvbwPzBH
-7waNw7GpqylrrG/CxfI/FIX/iBP4uOTSJ8ykLI+GnXiePjL8oN/VWqgRqXWdKqTZ1hlo0F8xx30M
-nfNcMoz4C+yELiZQwnR7XIrq2W3UIVaTrf0bNuAonx1LrHdjfj9kuRwdYfw2BXx3GTics0qnP1LC
-qEF4t0U/cDsEoFZyxxNwhk3N6Z/BP3jDUV0a4bzUiVusVo5PFo15p/HRKNBvUusgJr7jwa3lnqGd
-iEGrYDYjeMUWglkn8i/+b7Z06ckDGPoIQmKvZAjbJTdIlfsajW1d7oaGk9km/M85mhdWnfc5wrJf
-NdMqMU2qNdvEHdwKR7rcd7UFL2vIlXoYPw0eDu/pVQv/HJqE9oPaKd1reYX070wj+9xFRIlW7Zgo
-+a5h6YrEFK8zRTk2xyYChsj0NOgmE+zTc1LlGPXb8wMyaJg064IxvBPURTiGS8v1EYWaDhup7+KM
-TswvIwaXOVoIqRkcRj+THao54aUYtdKeXkVCg6urmt5CGGMEtQ7Y+O5b7/bKtT+qxtuz8EsvQh5F
-hUEiWjLa39hAygJj5AmWe1JziQoZ2+E1cWti4g43xZrNCg1ewMu3GjEON7O2/FK/W8g4+3zMrj2X
-OeUYVA8YWYPWwX578seT3PDleWyZfxhAID0SWWBUUvui3MTy3XIJDo/ZhlrsyP5riVf9jwnW7qUR
-3aum0Q460syw6ICAP/RCiD4kvifujBTekoHy/f5I4it56DQlSa2fdl/n+OUfHarJJllhArFtvdc6
-cqoQdWEqxYpyCu0Qeplr6WhZQoz806LXaB4Z8agTURTGMDCgCYhpdHc0GtEjzoytuX0xm8J1Cxqn
-AEpd61zFPMnK/tyrnpgpotPAWfcXHh7rnY+V0O8sL7avAQNtbh1mvnTISGz3S9e8I/Ay70TYHapv
-phIZazYvbsWtmy5aJEaXoi2WURsxiBiTwDVmIkSx71/ck2q/ebE/5Sd783Q4Vm+6dj6zKDGjDUpx
-V3GlZG3Wn2Eec+hIoMYt3YWYouMc0YV97aF9ko0ERKLA020sWp/LbDn0NOHwpJK+y5LbLJLmYlO0
-hwrLIekHGUIBhSY1eX+uPks4EnVa8P0sMFy3w1yw636KdcB2/vh5zNGZcKmznNL+TdgnFhSBGIqr
-NiLdawgqZZDlTACpkW8BrsSoWkOn8cyx5YFYCZtZ5pbUqxioDdVtMjoipfFWgaKutQbnJjE0llW6
-KcfGG3jsdu0imv3giV8dwYXTd52ip6+muN+gRj0gNG8O4mxbHtcXbNYH1V2W7eIfVhLSfm3lVlRp
-lm+at9kJGELkN5CUVw8Co+ZjIe13lw/wSzqAhySxe6f5gJjx/2chBK+0d7HpluTd1fhA6Tr4nWXT
-/5swlRJIlRw0iEc2Le0ToYGpt0ZWe+X4tEbHsWLf7kJvCyhQyUD3hrCZvVLRCAF+De23RWfifzcN
-7M6+lj7G7LgSYG+DUOxn7F3RN5iKqMji0KldyKLu0O5WP19xiXUfOBeaWVUylE2W4igYQTax6clZ
-CvUyTGUHjNwzb4XZM0Ah4PZ63o27Bbc9p9teaeRY32po6f8ARdqtWozOWFhMxDx6PQ1i28/vBra5
-XcYnLAF+dd4Rmu9WViIyqzJpAtSLn+9xchCcQAeGj9AqHiu4R0WkJDJbLUpUO3jjylslAlvdGpy+
-RgMJxiAWEAk6C9PkN6dhdzCN3EN8T+9XnJBlAO3c+e+fD87H4ho0yDvC17Qr7iU5qASOTCoe0+ce
-4RhO1RSQGUSQ/o2TbErvHnJSlroEMloq280JQ3MBraR9cf8sEJQY0n+ttTDlLdMtu8ZTSfnXjnQP
-ysNy+KMTbytntzk+u7b7HLkYt57Hh2Q4G8qNdegxlYlPBnViaICgP9fVr2AX+3ZnEibDEgNpOqdb
-VafBME2PVJe9EM9FUOJVdKLvczGIoFiGEexEsIWwu52+b52Uf6x/ALeetYuhvjVr8ZWoovAD0rp4
-eQfHGiPAqbg3vjkW5TGNYXYEFHa6D3/ergglt5cuVk2yOAwAfpj0A93L/RYnOzGnhmuMNd02qJIF
-6R4LWWR629Z5wIDu3e6DVq93dNuqH3wi1dQEIbtx8BF2dHrr8CDNY4X+07Cj7stEEetcS8Ex81j2
-Hd+yWQMh0XZIFo/TPRFScrJNhXYo+wWTEfQ2HM/wl84jNwvswBc4YODMB8/HXaZ16FFD2KbxG2JX
-Mq9zDg6K0/Xt97aWBh5RrFqsaHngrbozr1jkrVynS9/VzQ+NYkmDovWvKUfYOXHr3scUlB9Lhu6C
-Icu6SvkhI9SbqwjMp+qkmAmGZ/O55AYd1t2A/2ly/6nhfuHghfqCcMTLHoLWFJwkxHT0H9YFnfbf
-+3czc+Fnuh0fXpUU22y3AfW0w3zMj5URFYjTEXFgOUrlyC93I4NtAEcF2XlulyKvrHRY3UQigWsR
-RTGWJtc4licTMt6Aiz3N2aXzN+kBCs7dNpdx78gMszxMWwp8t0k04Yfg7GGDxrTbj86yVLKQ5ojp
-i0yKco4iYsmxBb3Q82O2hUGGGJ6J/PEtuu0wZcnbb+d1LeRevud8TDRgcwWvi78CRQh0VbsEaCIR
-OWO3d7WBLZQgXaEaB9moZqCb6oufCcz3G9WnmuZ4mQp6X6yKkwVgVfFMpuMR7QXDfe3L5LFjMgoO
-KPpbeEAMqrukRODGQ35K927mjXPdC7Ee2tWtDugifNQvta+dqOCJ+aOh6Dn4B0v+hmmjPF6UJvv1
-Fn7oa8TqWekOOnhf4XE1p1q66v/E12Drgq/MAvqgj3K7R+PTH4qXqiguL0VTbCbFqy+BKXNj+BE3
-WuHm3aL7nSEM/SUmWtOaWmm3RPGdKd88yntpFb9/GMJN4UYWIfgY9bcIOkr8kVhmh5kV+xJZvzAK
-ZJjlhtJY5zdJE/ZKuirGzwYEdXGTVDwZTvf7jOFUY2P7ZeIrUyRWXlDcZxapmLVfHLu6b9QYWQOf
-0agGR6OAYnXaArzdt6nJ615j4nhFOC49g2NH5yaVxfgoz88B3AlX2BIaqLatV/dxET0zAq/+8/MS
-uL7DCZaic2B9MpYxb+aiaru/C/q7sKZW4NXIcQGloOgnisYVng25WcLfJ29UjUgKQdfzuHYFeVH1
-QX2gbT8nsurcwgAY9d3vvInfTjqimxdpIzCCrV+6Tmvg+t9MOT7+LC8kFs845hUxBUqhjWzGN8oA
-q2D04fxrvPmUZkaa+y2mw58MezSdpUgdZfOE5siG/L0B9FlUXJLsq6TnB0TSHHLPHiQpAThR6I6L
-k3CFFl4TreATfQC5ieOimvs9Ov8Y3epPyM+N/CaOYoOU1cEmdaWgopwEr8faTJbPslTp/pTexytz
-5/+c/qsuQH2am+ad00nB0hWNCeH5DiinEJYNyjTIf3RlUGIVidV44zaswsvp5bXE1psd3555NItQ
-n7j9cE1men6kNOzIFRe9xXpe1gtIo/T71x7IYkyFHCsv/kp1aocvzcAiB3Pj+gjdZiJXZFK+D3BR
-YNlWooF/5e+uPMUn+cWTziOQ8pIGK7X9NMsavv+Q90JjqhuETQl8BPcJCi0NjN2CIS/ouGYQfzGi
-HGEcri9Pu/OzCso4Yq4VAf8bj4pgSbUI36WL5JgSiE5Ib0jhH4M9D05LUQ8KJfLDIQmKaP6x04cU
-JiK6vBf2V2y3e7apgF4JH4mjP+b82OgyA3DZTTZPVFW1s4fzkVwpyNf45AR6CAQYVM2VNGVXKnL/
-5kMJyVUCdl7+Dje8dExTWG62I4j4jXS0yyuLpz/5+Pl4kGYdOFvOGuQuTSDNwAxvjnAJTnfS1FL5
-aGqUYsad7rS9/o7+4eF6vUd3cAmD6nzosNer6Jf7bpFFtq3OR+BDcbonqWapdXpWqqj3Zy5rJQvm
-kLs9TLPyLDyiIerkjpKCiSjxFraci+UmU9ix+OvZAZcK5paBoW2aUmpPlfzIu47VtqXE3w1GkUlx
-36qBRSfNrmxdOz6lLLKX8kHRHHiA1+3+/tv7S5gf40Hj/ygr9vRwunTyIOeOQbr/Cp63sIDNm++z
-iy0CGdZbK/R2aQJyuELfoAPMZ3xwl2eKWA0NWfrx3IQGyMdzspz2qTc+t3l0YCarZUbp7Dw1DKZU
-5k9ZEbm4SEsh96i72N1jqIF63xKp7DvDzvpg+LnYK/QMTcLVbfCOSI03hlNZ3BoKiY/Aza94OnYZ
-CsCmQ825MLq7r/hQB/BINckS9Dl+246FJ/NVlHI5mtyBC8JtesBcLa/7iRabf2E0qdP0sPULFboS
-JFoWQ4n/6ASfPN9X1C5ig3u5402+xgR49kAnxwtIP100zNxbH99YP27G0OC90WclajXlcon+MouY
-v13VTpe7XBlkNr2syPgyU/U7niQl2V6W+RkQWGukx0ble3b5ceD/pawRzYkjuk9Sc0UFP++3pFUg
-p75IGifDJA6qQbr++uaTdhfndPDdxVPNcPtdfNoocvS0WVD1+edpV2C8wAS+rMa8QgDc0SR4SGdn
-QhbAVLbCES/sUSpBB/0N507LZ7sXU6ShfiG+0hMPjEPVMu1Y1fE1EqRDYrAbaez8kSSGzTQLCyZd
-z+zwdKXI4fn/NAhYFJTa1k50Aaq6xYwlHQ9evVAHbC6q/rqBf1C5HVK/dmfvtfv1og7A+Ci2D3Bt
-vZMygooroCAMnWiOsAOTkQwL7RhEu/+VX+IFlGdl7YsZsdGsN2mo4GlfG6LNEVqTMWjqfEaw4qpj
-b7M95Boiy19JYqRJLWm98LJT5h6rULVBhvpITTANezPfN6NvqQ0J1Zz6HVPixFX/PsmLin9Pe9FF
-u6CNcPvfo0tZw5okRsuNz/eCKfKiEsK1shRLFfFM+zsGjRXQJVsWd0C4BNg4zMskp9mMuRwLM94S
-qxNiXQfMoDhTPnIXHhQqpMbXOR730lX97MFS54mC8vRWKChzh60XlpuBLMMql/QZwAQIo28QGnkZ
-ubjorL1v2f2wioEdgNcWolbkWGfCyBmZXNUr3fJ7U5Yo1b5lPZYLUnXqiRhvul8ORWkfJbVb8GdE
-+6LU2oXJS0d4YdyiG9XvZAJxwTPpDyUFQfym008ryc84hBHShhOIBN9+2ZEnJFeId174suK6H2Yd
-+buxl5JlZ4LjoL/S1nP2D2/cSeACoJqRgeJsMPYpa7u6pTS5wIhSFaB4nYOEw8fS72k1dODACSB1
-D8ycX2JFSVVe0t6o5V4j49udDlmjeE4bcDGJRUHHuPR1Z8eO+N+Iif/djrxvBUkASpDmxhW06am0
-JmKX15B8ODg1ZmD3OedlufNj4uhN/54kaOe2KmN2jyVt/seRMDrfWz4FIFk8+k1oxE984rgTQLzr
-LksPgT4bLq44ijUFZi0vSVGqZN5WB+zqd1w39cDzovNKo3kznc1kVvfKc586a28xWafz2HX2uIwc
-LDWgE9RZydBO/af5uB+pESr75/Ww+Lz6etDnqgyzdLR5A9jLenvOCwoCxslPBiNagr6RubmtWFJl
-XBdHrThGoyNKx+4ZKnorvQoN9Zkho27ZMdzgZ7za65tmxII9TcH978ca9+nyZs8xEinwufrCMAVB
-TVHy85MA2NI1JMB1bc/+IFhhWFS4Be5hbL9ePkeBz4tsBU8CSXbxltgOWnDBbE+8zBtji6qnyD9F
-pfP5ryTSnYN0VLPvGUBcLF2gi3QYcV4wBPskGbM3wbdVVYZMQs5EIFJS/vv7lM4f3+EwvYcUCaon
-uCqeraQBTkSxNQ4jJC/B5Hz+4/S+c5l13alJoVhAXhB6T7oR17Ow6IUKySp/gdOz1W/IsmgUCZED
-fLmKYCWAwUTVx2yh6HuENyiKbgBuwkfx7zJ1aoxNUV+UNiKTcP53oE96VssEVt9RnrRUWGmDfUyr
-EKwf0rok1jNBi39934LYz4INnZQk4D8LwaHYocGTv31egAgfFGpXOe5jTXbaAOtjDU2UG8IvgyL/
-uVU5XGr8GtR2MfPWBn0lIkgCGIWTfZitJ9A30bUgC7XVPvwcL0o+J2yQUZXORARh0uM4Vfh7XNua
-JElcbaNelmsXTm24zBp21iAsJ58lQG8XzK6C33s641huLNZVfI83uW/Cicytn1baxGSwi/ZgqjKz
-yx5d/vgOiXa/fCJoSaAwM0VZ8mJMWEGFZnUNU3CEb8/5oFY+T4c/z2+5G8AIwN5ww+FFvWfz95dD
-ciR258mXoCnPaiWlXGoeTSdUrG8tqbgh28eM/55pbuUdKmltlg6eY71CurLEcaacjxTPOqvlnYZk
-h6NlymlSU3hmndKb+qkj51pyhfCIx2sGJ5MlRcVyI3RPa35Ev3zPFIa1GguWqLtTehq8b5SHHkwm
-zeLwn9RF+yMhPIp+flPNt0N3K7nTQFDAzoLbStBl3yk8x994K9AjjH82XMx+Mal2GWs7uYm+GI+W
-8wUVyt+Wxw08UgdT1OV8RCStySPbHCit7+tIFbKzInV/UYUCmoTvShWdlF4OZFnVtZe3hxGkJiyc
-B5NsSdfcbV3tatN8srRFgDq60xOZJknTCP+QjMhSnHuni+F1AUT/RuHJVItM4Jcl0HDORTvIgljJ
-ijKgQ8KU8LTGyS0WO1ClhjKr7HHq+4ClTw+eh4pkE/TTOt/l4P5e1kTmpEtLHQ24H2+ONtwaCkGV
-oXPlhQk8wDzrDxSJBJ6BuDMkQ6luU64/5CgfGo22lV8xwbOshSlP5UWKv2vXdg6BwtNIq1iw+IZ/
-HOJVIoze7kmU81pWAbYWHRW37iTFBc7q4xzwHEpcqJ9r49dULCU/M9EOx44n7U8Sgcf1ctPW2tby
-/zkaUQ+gjlTmFg5e/ZS5Nm4ehJPTrWjYzQEkpbBdag7CI88fZzNH7WJN/Mar1X9YsWw9Mu7ZZ79p
-wgafx7QQBJkobrkVJgA7ScRs7axGL7Sld2zQWNea/TzpYXsm9irTKsDqP9LR/osE7ldsIt3DgAJf
-2DbXvqG0+UyXvKaVIY3Hy6B5Q7BdKbrN5cy6BYFqrFHxPJNsi0pWeBZWYeEZ+e52g7b0zXYiKqwO
-G4sD/cg2Tid5cSKaJnSnUFWsTK5xXS2ULvwerEG9cPB+h9A+ROwCd6jt/lTmelECNcyo3312C9pF
-MFawpV5mkkW91XHYiU3z4ezKhtjU8BEmH34s3gT9C74XbLMhqBkeW7Y0/zfG+6aRvg0vMRUwQA5k
-4Lzm7nYABht1OeCXD6eg3kydEkg7SlgQOb0NoiH7O0pqNMWMkLl/kKsEn9MuFbAt76Kd1jFELo3D
-Fll89Eoq014Q27qS+gilFuef1XoxJaju+z99OvNpkI3GGAYwVvsY0qUDLkZSA0B8Se2V9VAjYxoO
-4oX+4gGkXEIj+1L6MgndlCZ/TCf0YCzbCOPI5RZ0spPbiUg9azGTgAtrmhvHJ5pWyn6xF+914ii4
-UwpXoEScOreD/oTyuvdCQjWJnpC5esUtq2lIOf4Fr9lUxFn18XoAzXbvK08OTDDN6N+ELKwRHBca
-Z2Ur1WnS75rDqqSqbQ5VHDq4QDupBMMaysRFjE9UCNrayMgXJ86qjlDZpDsIBF+sj6/Ec61AlFXZ
-8pjKysvNVw18w7+/nf0wrW1dBIc9ZUTEpGTvcYhT44jDY/NOxHsWCunOFValg9Gr9dYk6cnbzyqK
-B3ZcuWVARiGvhNJh/g19u35H2AqMsCEIGvUApQnEOjjQ4osPhOvkIvQIhO32GahPuDOvJtTcRv2n
-MxW2nlWEgZ3Z+kQzn+i57SKgfsMSi5JHKRmp+tbrGqqHCwW0JlMCCs1D+VW6NLCABK39u9GmSg3d
-bnvBsFyLL40UsuIY4Wxq50/+BxkJiVQX8LaFx9Bo4H9cA3d8RAY5aj/zPAdp6k7TMKSLaeffdaxe
-2cxjL2S+t5hLpBf5A6YYU5CnKl1yaKuiCtiIxDVmNEMh6hnnW8kSVLoE3voGCOoBzhdF7s9LsaZi
-5ku6LHbqTNmsaVwyNtLvlfMcifci0WjxyQCYiSF4lLLFh9Ud1XAg1Dctarn4E4yBn048u4Eg7gLF
-ne9XeKsp9eSakZyITNAPqaJ22pyzZx5xAgEjbKe4R0dx4cQe5n9GMM3A6fh5t+7HxkzaNxpJkXWF
-T8V9RyQyFxTJ5WnfZ3GCNgmlktQQXSfjQnu/9M50VzosPfV0aqb+q1yUkqRwj0FRvmhuyIsCQSx+
-vMjWtOYeGVIh/mMhD0VNz5cAT21N42tsR4l/8xdj9qynhRstPdJGUWcXzPU4UJho26vYFZM7c8wd
-l9BzxhRX0LJUOHiuakTgiW2D6Id+Zw1sXxl3kX2mbyGIizvrlimf6AX4Zd775l8D+mQXgGaxi5HW
-LAbjtiY4ekTTAgeuufFVGNohS4KeyC2v/VIrsw0FOwx3uUBk16+BFSRGRElN26DZ67J18F4/Tyl5
-qwXzcpCWn+WBBVezCSQWCPYMu1hMaf4IWviHVaB01hcPQ6yq/+AZMsAA5LofWYQC6QVOv/6tSldq
-fhBf6VkA1p7AiQAYltkZhCi1KOAgHgkBICyJttDh/wTtddLIIoD1/tZVhX8rhJSLIqXemko0Ol+T
-jGNuuw5z4loDVl0CxpNHpMI6PnGPnUYKRoTDajFakVM+5uUbMgRlPR096uCWyo95WaS014qh29wv
-5U0Gv88ZmZwLlG914zWRHZ4xOfVbJEO7SmBUsD/t8lxeNoaOYwhnhH3nWI7Aodrd6JkpMJajBbdX
-sZA7JJBgyDdAq3LvgdtGA7wcUd1DUXSgKCx50voUBPXTBeenNix/An5XCcavlwqhMTRv7EdqgB8S
-4GZrtbLHnFsdSCHP9/fckaCM8thgF/LaNlDb8i8PGJxZSgZjLvC9taa88uSKsBtm7SXPic0G5S3q
-mp+wK7hFMDMkZUGgaw9JkHrK/hmj5zXVuUyX6vYzDdudE3c365LumhGFyi4BE2u5LSWGAhk7SO54
-IECgnQQ0mxADIGBAhWbW1HvKDPEd+QrRysEZs9iZs+fWAlb5UXrVyiEodL2KgT3gOuoLPqxa+lpY
-5NTXcYYmxmI++1BYbpFHd8aiUWdK521FU3v7Q8jXFjyZyeyh6OirBBARgj7W3EbhJPbX4sbxXbIt
-27k83GL5/0ZByOCK+ayxz+KIQeTtbZBDwle9vWZKxvllXxWGXc8Og2bUacw1+wuuOPB+WUb+uCF9
-xd/EtxDqFzFDrhn1Gt/YdyAkL0ZwwIAScSTULxSNHBRVn96T5B71pKOcGNZkJ9RM+R21Kk7EI0U1
-HIN/QiL+xg3zPpJ4eKVO299aL2/h+gwEfYmRZIiAKxQLHQii/1Yj6RHz+M/tOWCiPcrJmR6alCe1
-t30f0E9SNOOmossksPFPNc5Bz6VtseUGj14oC8OMuRoSyWS28JvBc6ROcupS1qxxhriDfW266iSX
-TjmJunQnCvRpP5mPcljH0cSVSRgEU3OlXbawTzQfrt75dLAHRXrkC4cXhFlLg2NFYleYwDsSNwa6
-pOgXEICMO8hQralJ5z2ZdSpJYi2NKqjaKWLRKzhIp28+ChQ1yuzSvV9lWwPksJyoW0bKzxdZQuLj
-QHvvLpZjg2wMkTvh+/IISkrqEG6eFiw2pusXkP33JF+HBnlvb3HHcrRJr9d0RndH6oVQO3tHyh53
-jrjN9OF/gquR+ZgDJdmwswACDD1yDJDd24uWdbSmG24Drci/kL90Uu1hwRg1R1SGDxthXpRwYqve
-yvYc1a3VAUqCVpKoyeZ5+vmGT3DImkykBzwRWQCbhTDBFbLw0nO0wdtrI7yID+bL7yW3O14wq6z2
-svAydpvtJTUzOJMERmiQwiFMdtBRELjtB0AaU3tyMPir7ng1lqADs1F2Jr1F0oP60OFrfbXDJfLX
-4R5HT4/kktsdPdz+h+khfwJ1xcTtwWcbc+zPT2f36L2G3J++ksF/LhlwDJt3OtkmBG4gg4TLhDkb
-ey9SI8SOzqTwhKTEAM1hS/+Ap/AgkekFtO5ehf1szy5VYQMkQJdAd2SquQ2JGQSzpD92X+mKjp2V
-ll49X7QViwEjRdoGDgixAVBUpAbNwnMS
+<?php
+/**
+* Smarty PHPunit tests of config  variables
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for config variable tests
+*/
+class ConfigVarTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smarty->clearCompiledTemplate();
+        $this->smarty->clearAllCache();
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test config varibales loading all sections
+    */
+    public function testConfigNumber()
+    {
+        $this->smarty->configLoad('test.conf');
+        $this->assertEquals("123.4", $this->smarty->fetch('eval:{#Number#}'));
+    }
+    public function testConfigText()
+    {
+        $this->smarty->configLoad('test.conf');
+        $this->assertEquals("123bvc", $this->smarty->fetch('eval:{#text#}'));
+    }
+    public function testConfigLine()
+    {
+        $this->smarty->configLoad('test.conf');
+        $this->assertEquals("123 This is a line", $this->smarty->fetch('eval:{#line#}'));
+    }
+    public function testConfigVariableGlobalSections()
+    {
+        $this->smarty->configLoad('test.conf');
+        $this->assertEquals("Welcome to Smarty! Global Section1 Global Section2", $this->smarty->fetch('eval:{#title#} {#sec1#} {#sec2#}'));
+    }
+    /**
+    * test config variables loading section2
+    */
+    public function testConfigVariableSection2()
+    {
+         $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
+        $this->smarty->configLoad('test.conf', 'section2');
+        $this->assertEquals("Welcome to Smarty! Global Section1 Hello Section2", $this->smarty->fetch('eval:{#title#} {#sec1#} {#sec2#}'));
+    }
+    /**
+    * test config variables loading section special char
+    */
+    public function testConfigVariableSectionSpecialChar()
+    {
+        $this->smarty->configLoad('test.conf', '/');
+        $this->assertEquals("Welcome to Smarty! special char", $this->smarty->fetch('eval:{#title#} {#sec#}'));
+    }
+    /**
+    * test config variables loading section foo/bar
+    */
+    public function testConfigVariableSectionFooBar()
+    {
+        $this->smarty->configLoad('test.conf', 'foo/bar');
+        $this->assertEquals("Welcome to Smarty! section foo/bar", $this->smarty->fetch('eval:{#title#} {#sec#}'));
+    }
+    /**
+    * test config variables loading indifferent scopes
+    */
+    public function testConfigVariableScope()
+    {
+        $this->smarty->configLoad('test.conf', 'section2');
+        $tpl = $this->smarty->createTemplate('eval:{#title#} {#sec1#} {#sec2#}');
+        $tpl->configLoad('test.conf', 'section1');
+        $this->assertEquals("Welcome to Smarty! Global Section1 Hello Section2", $this->smarty->fetch('eval:{#title#} {#sec1#} {#sec2#}'));
+        $this->assertEquals("Welcome to Smarty! Hello Section1 Global Section2", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test config variables loading section2 from template
+    */
+    public function testConfigVariableSection2Template()
+    {
+        $this->assertEquals("Welcome to Smarty! Global Section1 Hello Section2", $this->smarty->fetch('eval:{config_load file=\'test.conf\' section=\'section2\'}{#title#} {#sec1#} {#sec2#}'));
+    }
+    public function testConfigVariableSection2TemplateShorttags()
+    {
+       $this->assertEquals("Welcome to Smarty! Global Section1 Hello Section2", $this->smarty->fetch('eval:{config_load \'test.conf\' \'section2\'}{#title#} {#sec1#} {#sec2#}'));
+    }
+    /**
+    * test config varibales loading local
+    */
+    public function testConfigVariableLocal()
+    {
+        $this->assertEquals("Welcome to Smarty!", $this->smarty->fetch('eval:{config_load file=\'test.conf\' scope=\'local\'}{#title#}'));
+        // global must be empty
+        $this->assertEquals("", $this->smarty->getConfigVars('title'));
+    }
+    /**
+    * test config varibales loading parent
+    */
+    public function testConfigVariableParent()
+    {
+        $this->assertEquals("Welcome to Smarty!", $this->smarty->fetch('eval:{config_load file=\'test.conf\' scope=\'parent\'}{#title#}'));
+        // global is parent must not be empty
+        $this->assertEquals("Welcome to Smarty!", $this->smarty->getConfigVars('title'));
+    }
+    /**
+    * test config varibales loading global
+    */
+    public function testConfigVariableGlobal()
+    {
+        $this->assertEquals("Welcome to Smarty!", $this->smarty->fetch('eval:{config_load file=\'test.conf\' scope=\'global\'}{#title#}'));
+        // global is parent must not be empty
+        $this->assertEquals("Welcome to Smarty!", $this->smarty->getConfigVars('title'));
+    }
+    /**
+    * test config variables of hidden sections
+    * shall display variables from hidden section
+    */
+    public function testConfigVariableHidden()
+    {
+        $this->smarty->config_read_hidden = true;
+        $this->smarty->configLoad('test.conf','hidden');
+        $this->assertEquals("Welcome to Smarty!Hidden Section", $this->smarty->fetch('eval:{#title#}{#hiddentext#}'));
+    }
+    /**
+    * test config variables of disabled hidden sections
+    * shall display not variables from hidden section
+    */
+    public function testConfigVariableHiddenDisable()
+    {
+        $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
+        $this->smarty->config_read_hidden = false;
+        $this->smarty->configLoad('test.conf','hidden');
+        $this->assertEquals("Welcome to Smarty!", $this->smarty->fetch('eval:{#title#}{#hiddentext#}'));
+    }
+    /**
+    * test config varibales loading all sections from template
+    */
+    public function testConfigVariableAllSectionsTemplate()
+    {
+        $this->smarty->config_overwrite = true;
+        $this->assertEquals("Welcome to Smarty! Global Section1 Global Section2", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{#title#} {#sec1#} {#sec2#}'));
+    }
+    /**
+    * test config varibales overwrite
+    */
+    public function testConfigVariableOverwrite()
+    {
+        $this->assertEquals("Overwrite2", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{#overwrite#}'));
+    }
+    public function testConfigVariableOverwrite2()
+    {
+        $this->assertEquals("Overwrite3", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{config_load file=\'test2.conf\'}{#overwrite#}'));
+    }
+    /**
+    * test config varibales overwrite false
+    */
+    public function testConfigVariableOverwriteFalse()
+    {
+        $this->smarty->config_overwrite = false;
+        $this->assertEquals("Overwrite1Overwrite2Overwrite3Welcome to Smarty! Global Section1 Global Section2", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{config_load file=\'test2.conf\'}{foreach #overwrite# as $over}{$over}{/foreach}{#title#} {#sec1#} {#sec2#}'));
+    }
+    /**
+    * test config varibales array
+    */
+    public function testConfigVariableArray1()
+    {
+        $this->smarty->config_overwrite = false;
+        $this->smarty->assign('foo',1);
+        $this->assertEquals("Overwrite2", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{config_load file=\'test2.conf\'}{$smarty.config.overwrite[$foo]}'));
+    }
+    public function testConfigVariableArray2()
+    {
+        $this->smarty->config_overwrite = false;
+        $this->smarty->assign('foo',2);
+        $this->assertEquals("Overwrite3", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{config_load file=\'test2.conf\'}{#overwrite#.$foo}'));
+    }
+    /**
+    * test config varibales booleanize on
+    */
+    public function testConfigVariableBooleanizeOn()
+    {
+        $this->smarty->config_booleanize = true;
+        $this->assertEquals("passed", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{if #booleanon# === true}passed{/if}'));
+    }
+    /**
+    * test config varibales booleanize off
+    */
+    public function testConfigVariableBooleanizeOff()
+    {
+        $this->smarty->config_booleanize = false;
+        $this->assertEquals("passed", $this->smarty->fetch('eval:{config_load file=\'test.conf\'}{if #booleanon# == \'on\'}passed{/if}'));
+    }
+    /**
+    * test config file syntax error
+    */
+    public function testConfigSyntaxError()
+    {
+        try {
+            $this->smarty->fetch('eval:{config_load file=\'test_error.conf\'}');
+        } catch (Exception $e) {
+            $this->assertContains('Syntax error in config file', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for syntax errors in config files has not been raised.');
+    }
+    /**
+    * test getConfigVars
+    */
+    public function testConfigGetSingleConfigVar()
+    {
+        $this->smarty->configLoad('test.conf');
+        $this->assertEquals("Welcome to Smarty!", $this->smarty->getConfigVars('title'));
+    }
+    /**
+    * test getConfigVars return all variables
+    */
+    public function testConfigGetAllConfigVars()
+    {
+        $this->smarty->configLoad('test.conf');
+        $vars = $this->smarty->getConfigVars();
+        $this->assertTrue(is_array($vars));
+        $this->assertEquals("Welcome to Smarty!", $vars['title']);
+        $this->assertEquals("Global Section1", $vars['sec1']);
+    }
+    /**
+    * test clearConfig for single variable
+    */
+    public function testConfigClearSingleConfigVar()
+    {
+        $this->smarty->configLoad('test.conf');
+        $this->smarty->clearConfig('title');
+        $this->assertEquals("", $this->smarty->getConfigVars('title'));
+    }
+    /**
+    * test clearConfig for all variables
+    */
+    public function testConfigClearConfigAll()
+    {
+        $this->smarty->configLoad('test.conf');
+        $this->smarty->clearConfig();
+        $vars = $this->smarty->getConfigVars();
+        $this->assertTrue(is_array($vars));
+        $this->assertTrue(empty($vars));
+    }
+    /**
+    * test config vars on data object
+    */
+    public function testConfigTextData()
+    {
+        $data = $this->smarty->createData();
+        $data->configLoad('test.conf');
+        $this->assertEquals("123bvc", $this->smarty->fetch('eval:{#text#}', $data));
+    }
+    /**
+    * test getConfigVars on data object
+    */
+    public function testConfigGetSingleConfigVarData()
+    {
+        $data = $this->smarty->createData();
+        $data->configLoad('test.conf');
+        $this->assertEquals("Welcome to Smarty!", $data->getConfigVars('title'));
+    }
+    /**
+    * test getConfigVars return all variables on data object
+    */
+    public function testConfigGetAllConfigVarsData()
+    {
+        $data = $this->smarty->createData();
+        $data->configLoad('test.conf');
+        $vars = $data->getConfigVars();
+        $this->assertTrue(is_array($vars));
+        $this->assertEquals("Welcome to Smarty!", $vars['title']);
+        $this->assertEquals("Global Section1", $vars['sec1']);
+    }
+    /**
+    * test clearConfig for single variable on data object
+    */
+    public function testConfigClearSingleConfigVarData()
+    {
+        $data = $this->smarty->createData();
+        $data->configLoad('test.conf');
+        $data->clearConfig('title');
+        $this->assertEquals("", $data->getConfigVars('title'));
+        $this->assertEquals("Global Section1", $data->getConfigVars('sec1'));
+    }
+    /**
+    * test clearConfig for all variables on data object
+    */
+    public function testConfigClearConfigAllData()
+    {
+        $data = $this->smarty->createData();
+        $data->configLoad('test.conf');
+        $data->clearConfig();
+        $vars = $data->getConfigVars();
+        $this->assertTrue(is_array($vars));
+        $this->assertTrue(empty($vars));
+    }
+    /**
+    * test config vars on template object
+    */
+    public function testConfigTextTemplate()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{#text#}');
+        $tpl->configLoad('test.conf');
+        $this->assertEquals("123bvc", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test getConfigVars on template object
+    */
+    public function testConfigGetSingleConfigVarTemplate()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{#text#}');
+        $tpl->configLoad('test.conf');
+        $this->assertEquals("Welcome to Smarty!", $tpl->getConfigVars('title'));
+    }
+    /**
+    * test getConfigVars return all variables on template object
+    */
+    public function testConfigGetAllConfigVarsTemplate()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{#text#}');
+        $tpl->configLoad('test.conf');
+        $vars = $tpl->getConfigVars();
+        $this->assertTrue(is_array($vars));
+        $this->assertEquals("Welcome to Smarty!", $vars['title']);
+        $this->assertEquals("Global Section1", $vars['sec1']);
+    }
+    /**
+    * test clearConfig for single variable on template object
+    */
+    public function testConfigClearSingleConfigVarTemplate()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{#text#}');
+        $tpl->configLoad('test.conf');
+        $tpl->clearConfig('title');
+        $this->assertEquals("", $tpl->getConfigVars('title'));
+        $this->assertEquals("Global Section1", $tpl->getConfigVars('sec1'));
+    }
+    /**
+    * test clearConfig for all variables on template object
+    */
+    public function testConfigClearConfigAllTemplate()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{#text#}');
+        $tpl->configLoad('test.conf');
+        $tpl->clearConfig();
+        $vars = $tpl->getConfigVars();
+        $this->assertTrue(is_array($vars));
+        $this->assertTrue(empty($vars));
+    }
+
+    /**
+    * test config varibales loading from absolute file path
+    */
+    public function testConfigAbsolutePath()
+    {
+        $file = realpath($this->smarty->getConfigDir(0) . 'test.conf');
+        $this->smarty->configLoad($file);
+        $this->assertEquals("123.4", $this->smarty->fetch('eval:{#Number#}'));
+    }
+}

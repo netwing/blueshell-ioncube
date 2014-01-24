@@ -1,32 +1,80 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-y0Y6Id1MJ7b4yLQEcWuz0y9vDtqPOzXCiHsqwaG=
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+class WebDriverDispatcher {
+
+  /**
+   * @var array
+   */
+  protected $listeners = array();
+
+  /**
+   * @var EventFiringWebDriver
+   */
+  protected $driver = null;
+
+  /**
+   * this is needed so that EventFiringWebElement can pass the driver to the
+   * exception handling
+   *
+   * @param EventFiringWebDriver $driver
+   * @return $this
+   */
+  public function setDefaultDriver(EventFiringWebDriver $driver) {
+    $this->driver = $driver;
+    return $this;
+  }
+
+  /**
+   * @return null|EventFiringWebDriver
+   */
+  public function getDefaultDriver() {
+    return $this->driver;
+  }
+
+  /**
+   * @param WebDriverEventListener $listener
+   * @return $this
+   */
+  public function register(WebDriverEventListener $listener) {
+    $this->listeners[] = $listener;
+    return $this;
+  }
+
+  /**
+   * @param WebDriverEventListener $listener
+   * @return $this
+   */
+  public function unregister(WebDriverEventListener $listener) {
+    $key = array_search($listener, $this->listeners, true);
+    if ($key !== false) {
+      unset($this->listeners[$key]);
+    }
+    return $this;
+  }
+
+  /**
+   * @param $method
+   * @param $arguments
+   * @return $this
+   */
+  public function dispatch($method, $arguments) {
+    foreach ($this->listeners as $listener) {
+      call_user_func_array(array($listener, $method), $arguments);
+    }
+    return $this;
+  }
+
+}

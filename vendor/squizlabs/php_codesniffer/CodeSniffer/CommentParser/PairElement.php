@@ -1,51 +1,171 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * A class to represent elements that have a value => comment format.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('PHP_CodeSniffer_CommentParser_AbstractDocElement', true) === false) {
+    $error = 'Class PHP_CodeSniffer_CommentParser_AbstractDocElement not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+/**
+ * A class to represent elements that have a value => comment format.
+ *
+ * An example of a pair element tag is the \@throws as it has an exception type
+ * and a comment on the circumstance of when the exception is thrown.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_CommentParser_PairElement extends PHP_CodeSniffer_CommentParser_AbstractDocElement
+{
+
+    /**
+     * The value of the tag.
+     *
+     * @var string
+     */
+    private $_value = '';
+
+    /**
+     * The comment of the tag.
+     *
+     * @var string
+     */
+    private $_comment = '';
+
+    /**
+     * The whitespace that exists before the value elem.
+     *
+     * @var string
+     */
+    private $_valueWhitespace = '';
+
+    /**
+     * The whitespace that exists before the comment elem.
+     *
+     * @var string
+     */
+    private $_commentWhitespace = '';
+
+
+    /**
+     * Constructs a PHP_CodeSniffer_CommentParser_PairElement doc tag.
+     *
+     * @param PHP_CodeSniffer_CommentParser_DocElement $previousElement The element
+     *                                                                  before this
+     *                                                                  one.
+     * @param array                                    $tokens          The tokens
+     *                                                                  that comprise
+     *                                                                  this element.
+     * @param string                                   $tag             The tag that
+     *                                                                  this element
+     *                                                                  represents.
+     * @param PHP_CodeSniffer_File                     $phpcsFile       The file that
+     *                                                                  this element
+     *                                                                  is in.
+     */
+    public function __construct(
+        $previousElement,
+        $tokens,
+        $tag,
+        PHP_CodeSniffer_File $phpcsFile
+    ) {
+        parent::__construct($previousElement, $tokens, $tag, $phpcsFile);
+
+    }//end __construct()
+
+
+    /**
+     * Returns the element names that this tag is comprised of, in the order
+     * that they appear in the tag.
+     *
+     * @return array(string)
+     * @see processSubElement()
+     */
+    protected function getSubElements()
+    {
+        return array(
+                'value',
+                'comment',
+               );
+
+    }//end getSubElements()
+
+
+    /**
+     * Processes the sub element with the specified name.
+     *
+     * @param string $name             The name of the sub element to process.
+     * @param string $content          The content of this sub element.
+     * @param string $whitespaceBefore The whitespace that exists before the
+     *                                 sub element.
+     *
+     * @return void
+     * @see getSubElements()
+     */
+    protected function processSubElement($name, $content, $whitespaceBefore)
+    {
+        $element           = '_'.$name;
+        $whitespace        = $element.'Whitespace';
+        $this->$element    = $content;
+        $this->$whitespace = $whitespaceBefore;
+
+    }//end processSubElement()
+
+
+    /**
+     * Returns the value of the tag.
+     *
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->_value;
+
+    }//end getValue()
+
+
+    /**
+     * Returns the comment associated with the value of this tag.
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->_comment;
+
+    }//end getComment()
+
+
+    /**
+     * Returns the whitespace before the content of this tag.
+     *
+     * @return string
+     */
+    public function getWhitespaceBeforeValue()
+    {
+        return $this->_valueWhitespace;
+
+    }//end getWhitespaceBeforeValue()
+
+
+}//end class
+
 ?>
-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

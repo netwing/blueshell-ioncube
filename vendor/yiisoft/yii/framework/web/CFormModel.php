@@ -1,44 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-rSGKPYqZNxuZQJQge+IlWHK/KG==
+<?php
+/**
+ * CFormModel class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFormModel represents a data model that collects HTML form inputs.
+ *
+ * Unlike {@link CActiveRecord}, the data collected by CFormModel are stored
+ * in memory only, instead of database.
+ *
+ * To collect user inputs, you may extend CFormModel and define the attributes
+ * whose values are to be collected from user inputs. You may override
+ * {@link rules()} to declare validation rules that should be applied to
+ * the attributes.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.0
+ */
+class CFormModel extends CModel
+{
+	private static $_names=array();
+
+	/**
+	 * Constructor.
+	 * @param string $scenario name of the scenario that this model is used in.
+	 * See {@link CModel::scenario} on how scenario is used by models.
+	 * @see getScenario
+	 */
+	public function __construct($scenario='')
+	{
+		$this->setScenario($scenario);
+		$this->init();
+		$this->attachBehaviors($this->behaviors());
+		$this->afterConstruct();
+	}
+
+	/**
+	 * Initializes this model.
+	 * This method is invoked in the constructor right after {@link scenario} is set.
+	 * You may override this method to provide code that is needed to initialize the model (e.g. setting
+	 * initial property values.)
+	 */
+	public function init()
+	{
+	}
+
+	/**
+	 * Returns the list of attribute names.
+	 * By default, this method returns all public properties of the class.
+	 * You may override this method to change the default.
+	 * @return array list of attribute names. Defaults to all public properties of the class.
+	 */
+	public function attributeNames()
+	{
+		$className=get_class($this);
+		if(!isset(self::$_names[$className]))
+		{
+			$class=new ReflectionClass(get_class($this));
+			$names=array();
+			foreach($class->getProperties() as $property)
+			{
+				$name=$property->getName();
+				if($property->isPublic() && !$property->isStatic())
+					$names[]=$name;
+			}
+			return self::$_names[$className]=$names;
+		}
+		else
+			return self::$_names[$className];
+	}
+}

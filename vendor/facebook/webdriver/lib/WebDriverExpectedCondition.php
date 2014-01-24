@@ -1,162 +1,395 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-aQqfgQhlSRtLDfxxke0Qtzy=
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * Canned ExpectedConditions which are generally useful within webdriver tests.
+ *
+ * @see WebDriverWait
+ */
+class WebDriverExpectedCondition {
+
+  /**
+   * A closure function to be executed by WebDriverWait. It should return
+   * a truthy value, mostly boolean or a WebDriverElement, on success.
+   */
+  private $apply;
+
+  public function getApply() {
+    return $this->apply;
+  }
+
+  protected function __construct($apply) {
+    $this->apply = $apply;
+  }
+
+  /**
+   * An expectation for checking the title of a page.
+   *
+   * @param string title The expected title, which must be an exact match.
+   * @return bool True when the title matches, false otherwise.
+   */
+  public static function titleIs($title) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($title) {
+        return $title === $driver->getTitle();
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking substring of a page Title.
+   *
+   * @param string title The expected substring of Title.
+   * @return bool True when in title, false otherwise.
+   */
+  public static function titleContains($title) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($title) {
+        return strpos($driver->getTitle(), $title) !== false;
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking that an element is present on the DOM of a
+   * page. This does not necessarily mean that the element is visible.
+   *
+   * @param WebDriverBy $by The locator used to find the element.
+   * @return WebDriverElement The element which is located.
+   */
+  public static function presenceOfElementLocated(WebDriverBy $by) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($by) {
+        return $driver->findElement($by);
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking that an element is present on the DOM of a page
+   * and visible. Visibility means that the element is not only displayed but
+   * also has a height and width that is greater than 0.
+   *
+   * @param WebDriverBy $by The locator used to find the element.
+   * @return WebDriverElement The element which is located and visible.
+   */
+  public static function visibilityOfElementLocated(WebDriverBy $by) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($by) {
+        try {
+          $element = $driver->findElement($by);
+          return $element->isDisplayed() ? $element : null;
+        } catch (ObsoleteElementWebDriverError $e) {
+          return null;
+        }
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking that an element, known to be present on the DOM
+   * of a page, is visible. Visibility means that the element is not only
+   * displayed but also has a height and width that is greater than 0.
+   *
+   * @param WebDriverElement $element The element to be checked.
+   * @return WebDriverElement The same WebDriverElement once it is visible.
+   */
+  public static function visibilityOf(WebDriverElement $element) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($element) {
+        return $element->isDisplayed() ? $element : null;
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking that there is at least one element present on a
+   * web page.
+   *
+   * @param WebDriverBy $by The locator used to find the element.
+   * @return array An array of WebDriverElements once they are located.
+   */
+  public static function presenceOfAllElementsLocatedBy(WebDriverBy $by) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($by) {
+        $elements = $driver->findElements($by);
+        return count($elements) > 0 ? $elements : null;
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking if the given text is present in the specified
+   * element.
+   *
+   * @param WebDriverBy $by The locator used to find the element.
+   * @param string $text The text to be presented in the element.
+   * @return bool Whether the text is presented.
+   */
+  public static function textToBePresentInElement(
+      WebDriverBy $by, $text) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($by, $text) {
+        try {
+          $element_text = $driver->findElement($by)->getText();
+          return strpos($element_text, $text) !== false;
+        } catch (ObsoleteElementWebDriverError $e) {
+          return null;
+        }
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking if the given text is present in the specified
+   * elements value attribute.
+   *
+   * @param WebDriverBy $by The locator used to find the element.
+   * @param string $text The text to be presented in the element value.
+   * @return bool Whether the text is presented.
+   */
+  public static function textToBePresentInElementValue(
+      WebDriverBy $by, $text) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($by, $text) {
+        try {
+          $element_text = $driver->findElement($by)->getAttribute('value');
+          return strpos($element_text, $text) !== false;
+        } catch (ObsoleteElementWebDriverError $e) {
+          return null;
+        }
+      }
+    );
+  }
+
+  /**
+   * Expectation for checking if iFrame exists.
+   * If iFrame exists switches driver's focus to the iFrame
+   *
+   * @param string frame_locator The locator used to find the iFrame
+   *   expected to be either the id or name value of the i/frame
+   * @return WebDriver object focused on new frame when frame is found
+   *   bool false otherwise
+  */
+  public static function frameToBeAvailableAndSwitchToIt(
+      string $frame_locator) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($frame_locator) {
+        try {
+          return $driver->switchTo()->frame($frame_locator);
+        } catch (NoSuchFrameWebDriverError $e) {
+          return false;
+        }
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking that an element is either invisible or not
+   * present on the DOM.
+   *
+   * @param WebDriverBy $by The locator used to find the element.
+   * @return bool Whether there is no element located.
+   */
+  public static function invisibilityOfElementLocated(WebDriverBy $by) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($by) {
+        try {
+          return !($driver->findElement($by)->isDisplayed());
+        } catch (NoSuchElementWebDriverError $e) {
+          return true;
+        } catch (ObsoleteElementWebDriverError $e) {
+          return true;
+        }
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking that an element with text is either invisible
+   * or not present on the DOM.
+   *
+   * @param WebdriverBy $by The locator used to find the element.
+   * @param string $text The text of the element.
+   * @return bool Whether the text is found in the element located.
+   */
+  public static function invisibilityOfElementWithText(
+      WebDriverBy $by, $text) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($by, $text) {
+        try {
+          return !($driver->findElement($by)->getText() === $text);
+        } catch (NoSuchElementWebDriverError $e) {
+          return true;
+        } catch (ObsoleteElementWebDriverError $e) {
+          return true;
+        }
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking an element is visible and enabled such that you
+   * can click it.
+   *
+   * @param WebDriverBy $by The locator used to find the element
+   * @return WebDriverElement The WebDriverElement once it is located, visible
+   *                          and clickable
+   */
+  public static function elementToBeClickable(WebDriverBy $by) {
+    $visibility_of_element_located =
+      WebDriverExpectedCondition::visibilityOfElementLocated($by);
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($visibility_of_element_located) {
+        $element = call_user_func(
+          $visibility_of_element_located->getApply(),
+          $driver
+        );
+        try {
+          if ($element !== null && $element->isEnabled()) {
+            return $element;
+          } else {
+            return null;
+          }
+        } catch (ObsoleteElementWebDriverError $e) {
+          return null;
+        }
+      }
+    );
+  }
+
+  /**
+   * Wait until an element is no longer attached to the DOM.
+   *
+   * @param WebDriverElement $element The element to wait for.
+   * @return bool false if the element is still attached to the DOM, true
+   *              otherwise.
+   */
+  public static function stalenessOf(WebDriverElement $element) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($element) {
+        try {
+          $element->isEnabled();
+          return false;
+        } catch (ObsoleteElementWebDriverError $e) {
+          return true;
+        }
+      }
+    );
+  }
+
+  /**
+   * Wrapper for a condition, which allows for elements to update by redrawing.
+   *
+   * This works around the problem of conditions which have two parts: find an
+   * element and then check for some condition on it. For these conditions it is
+   * possible that an element is located and then subsequently it is redrawn on
+   * the client. When this happens a ObsoleteElementWebDriverError is thrown
+   * when the second part of the condition is checked.
+   *
+   * @param WebDriverExpectedCondition $condition The condition wrapped.
+   * @return mixed The return value of the getApply() of the given condition.
+   */
+  public static function refreshed(WebDriverExpectedCondition $condition) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($condition) {
+        try {
+          return call_user_func($condition->getApply(), $driver);
+        } catch (ObsoleteElementWebDriverError $e) {
+          return null;
+        }
+      }
+    );
+  }
+
+  /**
+   * An expectation for checking if the given element is selected.
+   *
+   * @param mixed element_or_by Either the element or the locator.
+   * @return bool whether the element is selected.
+   */
+  public static function elementToBeSelected($element_or_by) {
+    return WebDriverExpectedCondition::elementSelectionStateToBe(
+      $element_or_by,
+      true
+    );
+  }
+
+  /**
+   * An expectation for checking if the given element is selected.
+   *
+   * @param mixed $element_or_by Either the element or the locator.
+   * @param bool $selected The required state.
+   * @return bool Whether the element is selected.
+   */
+  public static function elementSelectionStateToBe(
+      $element_or_by, bool $selected) {
+    if ($element_or_by instanceof WebDriverElement) {
+      return new WebDriverExpectedCondition(
+        function ($driver) use ($element_or_by, $selected) {
+          return $element_or_by->isSelected === $selected;
+        }
+      );
+    } else if ($element_or_by instanceof WebDriverBy) {
+      return new WebDriverExpectedCondition(
+        function ($driver) use ($element_or_by, $selected) {
+          try {
+            $element = $driver->findElement($element_or_by);
+            return $element->isSelected === $selected;
+          } catch (ObsoleteElementWebDriverError $e) {
+            return null;
+          }
+        }
+      );
+    }
+  }
+
+  /**
+   * An expectation for whether an alert() box is present.
+   *
+   * @return WebDriverAlert if alert() is present, null otherwise.
+   */
+  public static function alertIsPresent() {
+    return new WebDriverExpectedCondition(
+      function ($driver) {
+        try {
+          // Unlike the Java code, we get a WebDriverAlert object regardless
+          // of whether there is an alert.  Calling getText() will throw
+          // an exception if it is not really there.
+          $alert = $driver->switchTo()->alert();
+          $alert->getText();
+          return $alert;
+        } catch (NoAlertOpenWebDriverError $e) {
+          return null;
+        }
+      }
+    );
+  }
+
+  /**
+   * An expectation with the logical opposite condition of the given condition.
+   *
+   * @param WebDriverExpectedCondition $condition The condition to be negated.
+   * @return mixed The nagation of the result of the given condition.
+   */
+  public static function not(WebDriverExpectedCondition $condition) {
+    return new WebDriverExpectedCondition(
+      function ($driver) use ($condition) {
+        $result = call_user_func($condition->getApply(), $driver);
+        return !$result;
+      }
+    );
+  }
+}

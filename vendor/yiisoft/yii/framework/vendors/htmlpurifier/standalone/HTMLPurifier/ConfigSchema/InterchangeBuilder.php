@@ -1,118 +1,180 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-N0==
+<?php
+
+class HTMLPurifier_ConfigSchema_InterchangeBuilder
+{
+
+    /**
+     * Used for processing DEFAULT, nothing else.
+     */
+    protected $varParser;
+
+    public function __construct($varParser = null) {
+        $this->varParser = $varParser ? $varParser : new HTMLPurifier_VarParser_Native();
+    }
+
+    public static function buildFromDirectory($dir = null) {
+        $builder     = new HTMLPurifier_ConfigSchema_InterchangeBuilder();
+        $interchange = new HTMLPurifier_ConfigSchema_Interchange();
+        return $builder->buildDir($interchange, $dir);
+    }
+
+    public function buildDir($interchange, $dir = null) {
+        if (!$dir) $dir = HTMLPURIFIER_PREFIX . '/HTMLPurifier/ConfigSchema/schema';
+        if (file_exists($dir . '/info.ini')) {
+            $info = parse_ini_file($dir . '/info.ini');
+            $interchange->name = $info['name'];
+        }
+
+        $files = array();
+        $dh = opendir($dir);
+        while (false !== ($file = readdir($dh))) {
+            if (!$file || $file[0] == '.' || strrchr($file, '.') !== '.txt') {
+                continue;
+            }
+            $files[] = $file;
+        }
+        closedir($dh);
+
+        sort($files);
+        foreach ($files as $file) {
+            $this->buildFile($interchange, $dir . '/' . $file);
+        }
+
+        return $interchange;
+    }
+
+    public function buildFile($interchange, $file) {
+        $parser = new HTMLPurifier_StringHashParser();
+        $this->build(
+            $interchange,
+            new HTMLPurifier_StringHash( $parser->parseFile($file) )
+        );
+    }
+
+    /**
+     * Builds an interchange object based on a hash.
+     * @param $interchange HTMLPurifier_ConfigSchema_Interchange object to build
+     * @param $hash HTMLPurifier_ConfigSchema_StringHash source data
+     */
+    public function build($interchange, $hash) {
+        if (!$hash instanceof HTMLPurifier_StringHash) {
+            $hash = new HTMLPurifier_StringHash($hash);
+        }
+        if (!isset($hash['ID'])) {
+            throw new HTMLPurifier_ConfigSchema_Exception('Hash does not have any ID');
+        }
+        if (strpos($hash['ID'], '.') === false) {
+            if (count($hash) == 2 && isset($hash['DESCRIPTION'])) {
+                $hash->offsetGet('DESCRIPTION'); // prevent complaining
+            } else {
+                throw new HTMLPurifier_ConfigSchema_Exception('All directives must have a namespace');
+            }
+        } else {
+            $this->buildDirective($interchange, $hash);
+        }
+        $this->_findUnused($hash);
+    }
+
+    public function buildDirective($interchange, $hash) {
+        $directive = new HTMLPurifier_ConfigSchema_Interchange_Directive();
+
+        // These are required elements:
+        $directive->id = $this->id($hash->offsetGet('ID'));
+        $id = $directive->id->toString(); // convenience
+
+        if (isset($hash['TYPE'])) {
+            $type = explode('/', $hash->offsetGet('TYPE'));
+            if (isset($type[1])) $directive->typeAllowsNull = true;
+            $directive->type = $type[0];
+        } else {
+            throw new HTMLPurifier_ConfigSchema_Exception("TYPE in directive hash '$id' not defined");
+        }
+
+        if (isset($hash['DEFAULT'])) {
+            try {
+                $directive->default = $this->varParser->parse($hash->offsetGet('DEFAULT'), $directive->type, $directive->typeAllowsNull);
+            } catch (HTMLPurifier_VarParserException $e) {
+                throw new HTMLPurifier_ConfigSchema_Exception($e->getMessage() . " in DEFAULT in directive hash '$id'");
+            }
+        }
+
+        if (isset($hash['DESCRIPTION'])) {
+            $directive->description = $hash->offsetGet('DESCRIPTION');
+        }
+
+        if (isset($hash['ALLOWED'])) {
+            $directive->allowed = $this->lookup($this->evalArray($hash->offsetGet('ALLOWED')));
+        }
+
+        if (isset($hash['VALUE-ALIASES'])) {
+            $directive->valueAliases = $this->evalArray($hash->offsetGet('VALUE-ALIASES'));
+        }
+
+        if (isset($hash['ALIASES'])) {
+            $raw_aliases = trim($hash->offsetGet('ALIASES'));
+            $aliases = preg_split('/\s*,\s*/', $raw_aliases);
+            foreach ($aliases as $alias) {
+                $directive->aliases[] = $this->id($alias);
+            }
+        }
+
+        if (isset($hash['VERSION'])) {
+            $directive->version = $hash->offsetGet('VERSION');
+        }
+
+        if (isset($hash['DEPRECATED-USE'])) {
+            $directive->deprecatedUse = $this->id($hash->offsetGet('DEPRECATED-USE'));
+        }
+
+        if (isset($hash['DEPRECATED-VERSION'])) {
+            $directive->deprecatedVersion = $hash->offsetGet('DEPRECATED-VERSION');
+        }
+
+        if (isset($hash['EXTERNAL'])) {
+            $directive->external = preg_split('/\s*,\s*/', trim($hash->offsetGet('EXTERNAL')));
+        }
+
+        $interchange->addDirective($directive);
+    }
+
+    /**
+     * Evaluates an array PHP code string without array() wrapper
+     */
+    protected function evalArray($contents) {
+        return eval('return array('. $contents .');');
+    }
+
+    /**
+     * Converts an array list into a lookup array.
+     */
+    protected function lookup($array) {
+        $ret = array();
+        foreach ($array as $val) $ret[$val] = true;
+        return $ret;
+    }
+
+    /**
+     * Convenience function that creates an HTMLPurifier_ConfigSchema_Interchange_Id
+     * object based on a string Id.
+     */
+    protected function id($id) {
+        return HTMLPurifier_ConfigSchema_Interchange_Id::make($id);
+    }
+
+    /**
+     * Triggers errors for any unused keys passed in the hash; such keys
+     * may indicate typos, missing values, etc.
+     * @param $hash Instance of ConfigSchema_StringHash to check.
+     */
+    protected function _findUnused($hash) {
+        $accessed = $hash->getAccessed();
+        foreach ($hash as $k => $v) {
+            if (!isset($accessed[$k])) {
+                trigger_error("String hash key '$k' not used by builder", E_USER_NOTICE);
+            }
+        }
+    }
+
+}
+
+// vim: et sw=4 sts=4

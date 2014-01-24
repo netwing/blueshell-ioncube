@@ -1,177 +1,452 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Helper;
+
+use Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * The Progress class provides helpers to display progress output.
+ *
+ * @author Chris Jones <leeked@gmail.com>
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class ProgressHelper extends Helper
+{
+    const FORMAT_QUIET         = ' %percent%%';
+    const FORMAT_NORMAL        = ' %current%/%max% [%bar%] %percent%%';
+    const FORMAT_VERBOSE       = ' %current%/%max% [%bar%] %percent%% Elapsed: %elapsed%';
+    const FORMAT_QUIET_NOMAX   = ' %current%';
+    const FORMAT_NORMAL_NOMAX  = ' %current% [%bar%]';
+    const FORMAT_VERBOSE_NOMAX = ' %current% [%bar%] Elapsed: %elapsed%';
+
+    // options
+    private $barWidth     = 28;
+    private $barChar      = '=';
+    private $emptyBarChar = '-';
+    private $progressChar = '>';
+    private $format       = null;
+    private $redrawFreq   = 1;
+
+    private $lastMessagesLength;
+    private $barCharOriginal;
+
+    /**
+     * @var OutputInterface
+     */
+    private $output;
+
+    /**
+     * Current step
+     *
+     * @var integer
+     */
+    private $current;
+
+    /**
+     * Maximum number of steps
+     *
+     * @var integer
+     */
+    private $max;
+
+    /**
+     * Start time of the progress bar
+     *
+     * @var integer
+     */
+    private $startTime;
+
+    /**
+     * List of formatting variables
+     *
+     * @var array
+     */
+    private $defaultFormatVars = array(
+        'current',
+        'max',
+        'bar',
+        'percent',
+        'elapsed',
+    );
+
+    /**
+     * Available formatting variables
+     *
+     * @var array
+     */
+    private $formatVars;
+
+    /**
+     * Stored format part widths (used for padding)
+     *
+     * @var array
+     */
+    private $widths = array(
+        'current' => 4,
+        'max'     => 4,
+        'percent' => 3,
+        'elapsed' => 6,
+    );
+
+    /**
+     * Various time formats
+     *
+     * @var array
+     */
+    private $timeFormats = array(
+        array(0, '???'),
+        array(2, '1 sec'),
+        array(59, 'secs', 1),
+        array(60, '1 min'),
+        array(3600, 'mins', 60),
+        array(5400, '1 hr'),
+        array(86400, 'hrs', 3600),
+        array(129600, '1 day'),
+        array(604800, 'days', 86400),
+    );
+
+    /**
+     * Sets the progress bar width.
+     *
+     * @param int $size The progress bar size
+     */
+    public function setBarWidth($size)
+    {
+        $this->barWidth = (int) $size;
+    }
+
+    /**
+     * Sets the bar character.
+     *
+     * @param string $char A character
+     */
+    public function setBarCharacter($char)
+    {
+        $this->barChar = $char;
+    }
+
+    /**
+     * Sets the empty bar character.
+     *
+     * @param string $char A character
+     */
+    public function setEmptyBarCharacter($char)
+    {
+        $this->emptyBarChar = $char;
+    }
+
+    /**
+     * Sets the progress bar character.
+     *
+     * @param string $char A character
+     */
+    public function setProgressCharacter($char)
+    {
+        $this->progressChar = $char;
+    }
+
+    /**
+     * Sets the progress bar format.
+     *
+     * @param string $format The format
+     */
+    public function setFormat($format)
+    {
+        $this->format = $format;
+    }
+
+    /**
+     * Sets the redraw frequency.
+     *
+     * @param int $freq The frequency in steps
+     */
+    public function setRedrawFrequency($freq)
+    {
+        $this->redrawFreq = (int) $freq;
+    }
+
+    /**
+     * Starts the progress output.
+     *
+     * @param OutputInterface $output An Output instance
+     * @param integer|null    $max    Maximum steps
+     */
+    public function start(OutputInterface $output, $max = null)
+    {
+        $this->startTime = time();
+        $this->current   = 0;
+        $this->max       = (int) $max;
+        $this->output    = $output;
+        $this->lastMessagesLength = 0;
+        $this->barCharOriginal = '';
+
+        if (null === $this->format) {
+            switch ($output->getVerbosity()) {
+                case OutputInterface::VERBOSITY_QUIET:
+                    $this->format = self::FORMAT_QUIET_NOMAX;
+                    if ($this->max > 0) {
+                        $this->format = self::FORMAT_QUIET;
+                    }
+                    break;
+                case OutputInterface::VERBOSITY_VERBOSE:
+                case OutputInterface::VERBOSITY_VERY_VERBOSE:
+                case OutputInterface::VERBOSITY_DEBUG:
+                    $this->format = self::FORMAT_VERBOSE_NOMAX;
+                    if ($this->max > 0) {
+                        $this->format = self::FORMAT_VERBOSE;
+                    }
+                    break;
+                default:
+                    $this->format = self::FORMAT_NORMAL_NOMAX;
+                    if ($this->max > 0) {
+                        $this->format = self::FORMAT_NORMAL;
+                    }
+                    break;
+            }
+        }
+
+        $this->initialize();
+    }
+
+    /**
+     * Advances the progress output X steps.
+     *
+     * @param integer $step   Number of steps to advance
+     * @param Boolean $redraw Whether to redraw or not
+     *
+     * @throws \LogicException
+     */
+    public function advance($step = 1, $redraw = false)
+    {
+        $this->setCurrent($this->current + $step, $redraw);
+    }
+
+    /**
+     * Sets the current progress.
+     *
+     * @param integer $current The current progress
+     * @param Boolean $redraw  Whether to redraw or not
+     *
+     * @throws \LogicException
+     */
+    public function setCurrent($current, $redraw = false)
+    {
+        if (null === $this->startTime) {
+            throw new \LogicException('You must start the progress bar before calling setCurrent().');
+        }
+
+        $current = (int) $current;
+
+        if ($current < $this->current) {
+            throw new \LogicException('You can\'t regress the progress bar');
+        }
+
+        if (0 === $this->current) {
+            $redraw = true;
+        }
+
+        $prevPeriod = intval($this->current / $this->redrawFreq);
+
+        $this->current = $current;
+
+        $currPeriod = intval($this->current / $this->redrawFreq);
+        if ($redraw || $prevPeriod !== $currPeriod || $this->max === $this->current) {
+            $this->display();
+        }
+    }
+
+    /**
+     * Outputs the current progress string.
+     *
+     * @param Boolean $finish Forces the end result
+     *
+     * @throws \LogicException
+     */
+    public function display($finish = false)
+    {
+        if (null === $this->startTime) {
+            throw new \LogicException('You must start the progress bar before calling display().');
+        }
+
+        $message = $this->format;
+        foreach ($this->generate($finish) as $name => $value) {
+            $message = str_replace("%{$name}%", $value, $message);
+        }
+        $this->overwrite($this->output, $message);
+    }
+
+    /**
+     * Removes the progress bar from the current line.
+     *
+     * This is useful if you wish to write some output
+     * while a progress bar is running.
+     * Call display() to show the progress bar again.
+     */
+    public function clear()
+    {
+        $this->overwrite($this->output, '');
+    }
+
+    /**
+     * Finishes the progress output.
+     */
+    public function finish()
+    {
+        if (null === $this->startTime) {
+            throw new \LogicException('You must start the progress bar before calling finish().');
+        }
+
+        if (null !== $this->startTime) {
+            if (!$this->max) {
+                $this->barChar = $this->barCharOriginal;
+                $this->display(true);
+            }
+            $this->startTime = null;
+            $this->output->writeln('');
+            $this->output = null;
+        }
+    }
+
+    /**
+     * Initializes the progress helper.
+     */
+    private function initialize()
+    {
+        $this->formatVars = array();
+        foreach ($this->defaultFormatVars as $var) {
+            if (false !== strpos($this->format, "%{$var}%")) {
+                $this->formatVars[$var] = true;
+            }
+        }
+
+        if ($this->max > 0) {
+            $this->widths['max']     = $this->strlen($this->max);
+            $this->widths['current'] = $this->widths['max'];
+        } else {
+            $this->barCharOriginal = $this->barChar;
+            $this->barChar         = $this->emptyBarChar;
+        }
+    }
+
+    /**
+     * Generates the array map of format variables to values.
+     *
+     * @param Boolean $finish Forces the end result
+     *
+     * @return array Array of format vars and values
+     */
+    private function generate($finish = false)
+    {
+        $vars    = array();
+        $percent = 0;
+        if ($this->max > 0) {
+            $percent = (double) $this->current / $this->max;
+        }
+
+        if (isset($this->formatVars['bar'])) {
+            $completeBars = 0;
+
+            if ($this->max > 0) {
+                $completeBars = floor($percent * $this->barWidth);
+            } else {
+                if (!$finish) {
+                    $completeBars = floor($this->current % $this->barWidth);
+                } else {
+                    $completeBars = $this->barWidth;
+                }
+            }
+
+            $emptyBars = $this->barWidth - $completeBars - $this->strlen($this->progressChar);
+            $bar = str_repeat($this->barChar, $completeBars);
+            if ($completeBars < $this->barWidth) {
+                $bar .= $this->progressChar;
+                $bar .= str_repeat($this->emptyBarChar, $emptyBars);
+            }
+
+            $vars['bar'] = $bar;
+        }
+
+        if (isset($this->formatVars['elapsed'])) {
+            $elapsed = time() - $this->startTime;
+            $vars['elapsed'] = str_pad($this->humaneTime($elapsed), $this->widths['elapsed'], ' ', STR_PAD_LEFT);
+        }
+
+        if (isset($this->formatVars['current'])) {
+            $vars['current'] = str_pad($this->current, $this->widths['current'], ' ', STR_PAD_LEFT);
+        }
+
+        if (isset($this->formatVars['max'])) {
+            $vars['max'] = $this->max;
+        }
+
+        if (isset($this->formatVars['percent'])) {
+            $vars['percent'] = str_pad(floor($percent * 100), $this->widths['percent'], ' ', STR_PAD_LEFT);
+        }
+
+        return $vars;
+    }
+
+    /**
+     * Converts seconds into human-readable format.
+     *
+     * @param integer $secs Number of seconds
+     *
+     * @return string Time in readable format
+     */
+    private function humaneTime($secs)
+    {
+        $text = '';
+        foreach ($this->timeFormats as $format) {
+            if ($secs < $format[0]) {
+                if (count($format) == 2) {
+                    $text = $format[1];
+                    break;
+                } else {
+                    $text = ceil($secs / $format[2]).' '.$format[1];
+                    break;
+                }
+            }
+        }
+
+        return $text;
+    }
+
+    /**
+     * Overwrites a previous message to the output.
+     *
+     * @param OutputInterface $output   An Output instance
+     * @param string          $message  The message
+     */
+    private function overwrite(OutputInterface $output, $message)
+    {
+        $length = $this->strlen($message);
+
+        // append whitespace to match the last line's length
+        if (null !== $this->lastMessagesLength && $this->lastMessagesLength > $length) {
+            $message = str_pad($message, $this->lastMessagesLength, "\x20", STR_PAD_RIGHT);
+        }
+
+        // carriage return
+        $output->write("\x0D");
+        $output->write($message);
+
+        $this->lastMessagesLength = $this->strlen($message);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getName()
+    {
+        return 'progress';
+    }
+}

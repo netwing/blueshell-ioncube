@@ -1,42 +1,99 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Provides fixed-width byte sizes for reading fixed-width character sets.
+ *
+ * @package    Swift
+ * @subpackage Encoder
+ * @author     Chris Corbyn
+ * @author     Xavier De Cock <xdecock@gmail.com>
+ */
+class Swift_CharacterReader_GenericFixedWidthReader implements Swift_CharacterReader
+{
+    /**
+     * The number of bytes in a single character.
+     *
+     * @var integer
+     */
+    private $_width;
+
+    /**
+     * Creates a new GenericFixedWidthReader using $width bytes per character.
+     *
+     * @param integer $width
+     */
+    public function __construct($width)
+    {
+        $this->_width = $width;
+    }
+
+    /**
+     * Returns the complete character map.
+     *
+     * @param string  $string
+     * @param integer $startOffset
+     * @param array   $currentMap
+     * @param mixed   $ignoredChars
+     *
+     * @return integer
+     */
+    public function getCharPositions($string, $startOffset, &$currentMap, &$ignoredChars)
+    {
+        $strlen = strlen($string);
+        // % and / are CPU intensive, so, maybe find a better way
+        $ignored = $strlen % $this->_width;
+        $ignoredChars = substr($string, - $ignored);
+        $currentMap = $this->_width;
+
+        return ($strlen - $ignored) / $this->_width;
+    }
+
+    /**
+     * Returns the mapType.
+     *
+     * @return integer
+     */
+    public function getMapType()
+    {
+        return self::MAP_TYPE_FIXED_LEN;
+    }
+
+    /**
+     * Returns an integer which specifies how many more bytes to read.
+     *
+     * A positive integer indicates the number of more bytes to fetch before invoking
+     * this method again.
+     *
+     * A value of zero means this is already a valid character.
+     * A value of -1 means this cannot possibly be a valid character.
+     *
+     * @param string  $bytes
+     * @param integer $size
+     *
+     * @return integer
+     */
+    public function validateByteSequence($bytes, $size)
+    {
+        $needed = $this->_width - $size;
+
+        return ($needed > -1) ? $needed : -1;
+    }
+
+    /**
+     * Returns the number of bytes which should be read to start each character.
+     *
+     * @return integer
+     */
+    public function getInitialByteSize()
+    {
+        return $this->_width;
+    }
+}

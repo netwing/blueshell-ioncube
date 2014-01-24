@@ -1,32 +1,93 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Represents a PHP_CodeSniffer sniff for sniffing coding standards.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Represents a PHP_CodeSniffer sniff for sniffing coding standards.
+ *
+ * A sniff registers what token types it wishes to listen for, then, when
+ * PHP_CodeSniffer encounters that token, the sniff is invoked and passed
+ * information about where the token was found in the stack, and the
+ * PHP_CodeSniffer file in which the token was found.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+interface PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Registers the tokens that this sniff wants to listen for.
+     *
+     * An example return value for a sniff that wants to listen for whitespace
+     * and any comments would be:
+     *
+     * <code>
+     *    return array(
+     *            T_WHITESPACE,
+     *            T_DOC_COMMENT,
+     *            T_COMMENT,
+     *           );
+     * </code>
+     *
+     * @return array(int)
+     * @see    Tokens.php
+     */
+    public function register();
+
+
+    /**
+     * Called when one of the token types that this sniff is listening for
+     * is found.
+     *
+     * The stackPtr variable indicates where in the stack the token was found.
+     * A sniff can acquire information this token, along with all the other
+     * tokens within the stack by first acquiring the token stack:
+     *
+     * <code>
+     *    $tokens = $phpcsFile->getTokens();
+     *    echo 'Encountered a '.$tokens[$stackPtr]['type'].' token';
+     *    echo 'token information: ';
+     *    print_r($tokens[$stackPtr]);
+     * </code>
+     *
+     * If the sniff discovers an anomaly in the code, they can raise an error
+     * by calling addError() on the PHP_CodeSniffer_File object, specifying an error
+     * message and the position of the offending token:
+     *
+     * <code>
+     *    $phpcsFile->addError('Encountered an error', $stackPtr);
+     * </code>
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The PHP_CodeSniffer file where the
+     *                                        token was found.
+     * @param int                  $stackPtr  The position in the PHP_CodeSniffer
+     *                                        file's token stack where the token
+     *                                        was found.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr);
+
+
+}//end interface
+
 ?>
-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
-WVU+SQ3eim==

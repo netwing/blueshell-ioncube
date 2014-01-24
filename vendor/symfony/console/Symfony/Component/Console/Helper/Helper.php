@@ -1,31 +1,62 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Helper;
+
+/**
+ * Helper is the base class for all helper classes.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+abstract class Helper implements HelperInterface
+{
+    protected $helperSet = null;
+
+    /**
+     * Sets the helper set associated with this helper.
+     *
+     * @param HelperSet $helperSet A HelperSet instance
+     */
+    public function setHelperSet(HelperSet $helperSet = null)
+    {
+        $this->helperSet = $helperSet;
+    }
+
+    /**
+     * Gets the helper set associated with this helper.
+     *
+     * @return HelperSet A HelperSet instance
+     */
+    public function getHelperSet()
+    {
+        return $this->helperSet;
+    }
+
+    /**
+     * Returns the length of a string, using mb_strlen if it is available.
+     *
+     * @param string $string The string to check its length
+     *
+     * @return integer The length of the string
+     */
+    protected function strlen($string)
+    {
+        if (!function_exists('mb_strlen')) {
+            return strlen($string);
+        }
+
+        if (false === $encoding = mb_detect_encoding($string)) {
+            return strlen($string);
+        }
+
+        return mb_strlen($string, $encoding);
+    }
+}

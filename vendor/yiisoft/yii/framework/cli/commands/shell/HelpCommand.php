@@ -1,37 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * HelpCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * HelpCommand displays help information for commands under yiic shell.
+ *
+ * @property string $help The command description.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.cli.commands.shell
+ * @since 1.0
+ */
+class HelpCommand extends CConsoleCommand
+{
+	/**
+	 * Execute the action.
+	 * @param array $args command line parameters specific for this command
+	 * @return integer non zero application exit code for help
+	 */
+	public function run($args)
+	{
+		$runner=$this->getCommandRunner();
+		$commands=$runner->commands;
+		if(isset($args[0]))
+			$name=strtolower($args[0]);
+		if(!isset($args[0]) || !isset($commands[$name]))
+		{
+			echo <<<EOD
+At the prompt, you may enter a PHP statement or one of the following commands:
+
+EOD;
+			$commandNames=array_keys($commands);
+			sort($commandNames);
+			echo ' - '.implode("\n - ",$commandNames);
+			echo <<<EOD
+
+
+Type 'help <command-name>' for details about a command.
+
+To expand the above command list, place your command class files
+under 'protected/commands/shell', or a directory specified
+by the 'YIIC_SHELL_COMMAND_PATH' environment variable. The command class
+must extend from CConsoleCommand.
+
+EOD;
+		}
+		else
+			echo $runner->createCommand($name)->getHelp();
+		return 1;
+	}
+
+	/**
+	 * Provides the command description.
+	 * @return string the command description.
+	 */
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  help [command-name]
+
+DESCRIPTION
+  Display the help information for the specified command.
+  If the command name is not given, all commands will be listed.
+
+PARAMETERS
+ * command-name: optional, the name of the command to show help information.
+
+EOD;
+	}
+}

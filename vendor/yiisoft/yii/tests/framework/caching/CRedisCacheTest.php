@@ -1,103 +1,171 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class CRedisCacheTest extends CTestCase
+{
+	protected $config = array(
+		'class' => 'CRedisCache',
+		'hostname' => 'localhost',
+		'port' => 6379,
+		'database' => 0,
+	);
+
+	protected function getApplication()
+	{
+		$app=new TestApplication(array(
+			'id' => 'testapp',
+			'components'=>array(
+				'cache' => $this->config
+			)
+		));
+		$app->cache->flush();
+		return $app;
+	}
+
+	public function setUp()
+	{
+		$dsn = $this->config['hostname'] . ':' .$this->config['port'];
+		if(!@stream_socket_client($dsn, $errorNumber, $errorDescription, 0.5)) {
+			$this->markTestSkipped('No redis server running at ' . $dsn .' : ' . $errorNumber . ' - ' . $errorDescription);
+		}
+	}
+
+	public function testKeyPrefix()
+	{
+		$cache=new CRedisCache;
+		$this->assertEquals($cache->keyPrefix,'');
+		$cache->keyPrefix='key';
+		$this->assertEquals($cache->keyPrefix,'key');
+
+		$app=$this->getApplication();
+		$this->assertTrue($app->cache instanceof CRedisCache);
+		$this->assertEquals($app->id,$app->cache->keyPrefix);
+	}
+
+	public function testGetAndSet()
+	{
+		$app=$this->getApplication();
+		$cache=$app->cache;
+
+		$data=array('abc'=>1,2=>'def');
+		$key='data1';
+
+		$this->assertFalse($cache->get($key));
+		$cache->set($key,$data);
+		$this->assertTrue($cache->get($key)===$data);
+	}
+
+	public function testMGet()
+	{
+		$app=$this->getApplication();
+		$cache=$app->cache;
+
+		$key1='multidata1';
+		$data1='abc';
+		$key2='multidata2';
+		$data2=34;
+
+		$this->assertEquals($cache->mget(array($key1,$key2)), array($key1=>false,$key2=>false));
+		$cache->set($key1,$data1);
+		$cache->set($key2,$data2);
+		$this->assertEquals($cache->mget(array($key1,$key2)), array($key1=>$data1,$key2=>$data2));
+	}
+
+	public function testArrayAccess()
+	{
+		$app=$this->getApplication();
+		$cache=$app->cache;
+		$data=array('abc'=>1,2=>'def');
+		$key='data2';
+		$cache[$key]=$data;
+		$this->assertTrue($cache->get($key)===$data);
+		$this->assertTrue($cache[$key]===$data);
+		unset($cache[$key]);
+		$this->assertFalse($cache[$key]);
+	}
+
+	public function testExpire()
+	{
+		$app=$this->getApplication();
+		$cache=$app->cache;
+		$data=array('abc'=>1,2=>'def');
+		$key='data3';
+		$cache->set($key,$data,2);
+		$this->assertTrue($cache->get($key)===$data);
+		sleep(1);
+		$this->assertTrue($cache->get($key)===$data);
+		sleep(2);
+		$this->assertFalse($cache->get($key));
+	}
+
+	public function testAdd()
+	{
+		$cache = $this->getApplication()->cache;
+		$this->assertTrue($cache->set('number_test', 42));
+
+		// should not change existing keys
+		$this->assertFalse($cache->add('number_test', 13));
+		$this->assertEquals(42, $cache->get('number_test'));
+
+		// should store data if it's not there yet
+		$this->assertFalse($cache->get('add_test'));
+		$this->assertTrue($cache->add('add_test', 13));
+		$this->assertEquals(13, $cache->get('add_test'));
+	}
+
+	public function testDelete()
+	{
+		$cache = $this->getApplication()->cache;
+		$this->assertTrue($cache->set('number_test', 'testvalue'));
+
+		$this->assertNotNull($cache->get('number_test'));
+		$this->assertTrue($cache->delete('number_test'));
+		$this->assertFalse($cache->get('number_test'));
+	}
+
+	public function testFlush()
+	{
+		$cache = $this->getApplication()->cache;
+		$this->assertTrue($cache->set('number_test', 'testvalue'));
+		$this->assertTrue($cache->flush());
+		$this->assertFalse($cache->get('number_test'));
+	}
+
+	/**
+	 * Store a value that is 2 times buffer size big
+	 * https://github.com/yiisoft/yii/pull/2750
+	 */
+	public function testLargeData()
+	{
+		$app=$this->getApplication();
+		$cache=$app->cache;
+
+		$data=str_repeat('XX',8192); // http://www.php.net/manual/en/function.fread.php
+		$key='bigdata1';
+
+		$this->assertFalse($cache->get($key));
+		$cache->set($key,$data);
+		$this->assertTrue($cache->get($key)===$data);
+
+		// try with multibyte string
+		$data=str_repeat('ЖЫ',8192); // http://www.php.net/manual/en/function.fread.php
+		$key='bigdata2';
+
+		$this->assertFalse($cache->get($key));
+		$cache->set($key,$data);
+		$this->assertTrue($cache->get($key)===$data);
+	}
+
+	public function testMultiByteGetAndSet()
+	{
+		$app=$this->getApplication();
+		$cache=$app->cache;
+
+		$data=array('abc'=>'ежик',2=>'def');
+		$key='data1';
+
+		$this->assertFalse($cache->get($key));
+		$cache->set($key,$data);
+		$this->assertTrue($cache->get($key)===$data);
+	}
+
+}

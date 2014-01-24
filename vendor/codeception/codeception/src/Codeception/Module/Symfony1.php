@@ -1,318 +1,572 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-yDO=
+<?php
+namespace Codeception\Module;
+
+use Codeception\Module;
+use Codeception\Util\Framework as Framework;
+
+/**
+ * Module that interacts with Symfony 1.4 applications.
+ *
+ * Replaces functional testing framework from symfony. Authorization features uses Doctrine and sfDoctrineGuardPlugin.
+ * Uses native symfony connections and test classes. Provides additional informations on every actions.
+ *
+ * If test fails stores last shown page in 'log' dir.
+ *
+ * Please note, this module doesn't implement standard frameworks interface.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: codecept@davert.mail.ua
+ *
+ * ## Configuration
+ *
+ * * app *required* - application you want to test. In most cases it will be 'frontend'
+ *
+ * ## Public Properties
+ * * browser - current instance of sfBrowser class.
+ *
+ */
+
+class Symfony1 extends Module
+{
+    /**
+     * @api
+     * @var \sfBrowser
+     */
+    public $browser;
+
+    protected $session_id;
+
+    protected $config = array('app' => 'frontend');
+
+    public function _initialize()
+    {
+        if (!file_exists('config/ProjectConfiguration.class.php')) throw new \Codeception\Exception\Module('Symfony1', 'config/ProjectConfiguration.class.php not found. This file is required for running symfony1');
+        require_once('config/ProjectConfiguration.class.php');
+        $conf = \ProjectConfiguration::getApplicationConfiguration($this->config['app'], 'test', true);
+        \sfContext::createInstance($conf, 'default');
+        \sfContext::switchTo('default');
+
+        // chdir(\sfConfig::get('sf_web_dir'));
+        $this->browser = new \sfBrowser();
+        $this->browser->get('/');
+        \sfForm::disableCSRFProtection();
+    }
+
+    public function _cleanup()
+    {
+        chdir(\sfConfig::get('sf_web_dir'));
+        $this->browser->restart();
+        $this->session_id = $_SERVER['session_id'];
+    }
+
+    public function _before(\Codeception\TestCase $test)
+    {
+        $this->browser->get('/');
+    }
+
+    public function _failed(\Codeception\TestCase $test, $fail)
+    {
+        $output = \Codeception\Configuration::logDir() . DIRECTORY_SEPARATOR . basename($test->getFileName()) . '.page.debug.html';
+        file_put_contents($output, $this->browser->getResponse()->getContent());
+    }
+
+    public function _after(\Codeception\TestCase $test)
+    {
+
+        $this->browser->restart();
+        $this->browser->resetCurrentException();
+        $this->browser->get('/');
+
+    }
+
+    protected function call($uri, $method = 'get', $params = array())
+    {
+        // multi testguy implementation
+        $_SERVER['session_id'] = $this->session_id;
+
+        if (false === ($empty = $this->browser->checkCurrentExceptionIsEmpty())) {
+            \PHPUnit_Framework_Assert::fail(sprintf('last request threw an uncaught exception "%s: %s"', get_class($this->browser->getCurrentException()), $this->browser->getCurrentException()->getMessage()));
+            return;
+        }
+
+        $this->debug('Request (' . $method . '): ' . $uri . ' ' . json_encode($params));
+
+        $this->browser->call($uri, $method, $params);
+        $this->debug('Response code: ' . $this->browser->getResponse()->getStatusCode());
+        $this->debug('Response message: ' . $this->browser->getResponse()->getStatusText());
+
+        if ($form = $this->getForm()) {
+            foreach ($form->getErrorSchema() as $field => $desc) {
+                $this->debug("Error in form $field field: '$desc'");
+            }
+        }
+
+        $this->followRedirect();
+    }
+
+    protected function followRedirect()
+    {
+        if ($this->browser->getResponse()->getStatusCode() == 302) {
+            $this->debug("redirected to " . $this->browser->getResponse()->getHttpHeader('Location'));
+            $this->call($this->browser->getResponse()->getHttpHeader('Location'));
+        }
+    }
+
+    /**
+     * Opens the page.
+     *
+     * @param $page
+     */
+    public function amOnPage($page)
+    {
+        $this->browser->get($page);
+        $this->debug('Response code: ' . $this->browser->getResponse()->getStatusCode());
+        $this->followRedirect();
+    }
+
+    /**
+     * Click on link or button and move to next page.
+     * Either link text, css selector, or xpath can be passed
+     *
+     * @param $link
+     */
+    public function click($link)
+    {
+        $this->browser->click($link);
+        $this->debug('moved to page ' . $this->browser->fixUri($this->browser->getRequest()->getUri()));
+        $this->followRedirect();
+    }
+
+    /**
+     * Check if current page doesn't contain the text specified.
+     * Specify the css selector to match only specific region.
+     *
+     * Examples:
+     *
+     * ```php
+     * <?php
+     * $I->dontSee('Login'); // I can suppose user is already logged in
+     * $I->dontSee('Sign Up','h1'); // I can suppose it's not a signup page
+     *
+     * ```
+     *
+     * @param $text
+     * @param null $selector
+     */
+    public function dontSee($text, $selector = null)
+    {
+        $res = $this->proceedSee($text, $selector);
+        $this->assertNot($res);
+    }
+
+    /**
+     * Check if current page contains the text specified.
+     * Specify the css selector to match only specific region.
+     *
+     * Examples:
+     *
+     * ``` php
+     * <?php
+     * $I->see('Logout'); // I can suppose user is logged in
+     * $I->see('Sign Up','h1'); // I can suppose it's a signup page
+     *
+     * ```
+     *
+     * @param $text
+     * @param null $selector
+     */
+    public function see($text, $selector = null)
+    {
+        $res = $this->proceedSee($text, $selector);
+        $this->assert($res);
+    }
+
+    protected function proceedSee($text, $selector = null)
+    {
+        $response = $this->browser->getResponse()->getContent();
+
+        if ($selector) {
+            $nodes = $this->browser->getResponseDomCssSelector()->matchAll($selector);
+            $values = '';
+            foreach ($nodes as $node) {
+                $values .= '<!-- Merged Output -->'.trim($node->nodeValue);
+            }
+            $response = Framework::formatResponse($response);
+
+            return array('pageContains', $text, $values, "'$selector' on $response");
+        }
+
+        $response = Framework::formatResponse($response);
+
+        return array('pageContains', $text, strip_tags($this->browser->getResponse()->getContent()), "on $response.");
+    }
+
+    /**
+     * Checks if there is a link with text specified.
+     * Specify url to match link with exact this url.
+     *
+     * Examples:
+     *
+     * ``` php
+     * <?php
+     * $I->seeLink('Logout'); // matches <a href="#">Logout</a>
+     * $I->seeLink('Logout','/logout'); // matches <a href="/logout">Logout</a>
+     *
+     * ```
+     *
+     * @param $text
+     * @param null $url
+     */
+    public function seeLink($text, $url = null)
+    {
+        if (!$url) return $this->see($text, 'a');
+        $nodes = $this->browser->getResponseDomCssSelector()->matchAll('a')->getNodes();
+        foreach ($nodes as $node) {
+            if (0 === strrpos($node->getAttribute('href'), $url)) {
+                return \PHPUnit_Framework_Assert::assertContains($text, $node->nodeValue, "with url '$url'");
+            }
+        }
+        \PHPUnit_Framework_Assert::fail($text, "with url '$url'");
+    }
+
+    /**
+     * Checks if page doesn't contain the link with text specified.
+     * Specify url to narrow the results.
+     *
+     * Examples:
+     *
+     * ``` php
+     * <?php
+     * $I->dontSeeLink('Logout'); // I suppose user is not logged in
+     *
+     * ```
+     *
+     * @param $text
+     * @param null $url
+     */
+    public function dontSeeLink($text, $url = null)
+    {
+        if (!$url) return $this->dontSee($text, 'a');
+        $nodes = $this->browser->getResponseDomCssSelector()->matchAll('a')->getNodes();
+        foreach ($nodes as $node) {
+            if (0 === strrpos($node->getAttribute('href'), $url) && ($node->nodeValue == trim($text))) {
+                return \PHPUnit_Framework_Assert::assertFalse((0 === strrpos($node->getAttribute('href'), $url) && ($node->nodeValue == trim($text))), "link with url '$url'");
+            }
+        }
+    }
+
+    /**
+     * Assert if the specified checkbox is checked.
+     * Use css selector or xpath to match.
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->seeCheckboxIsChecked('#agree'); // I suppose user agreed to terms
+     * $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user agreed to terms, If there is only one checkbox in form.
+     *
+     * ```
+     *
+     * @param $selector
+     */
+    public function seeCheckboxIsChecked($selector)
+    {
+        $res = $this->proceedCheckboxIsChecked($selector);
+        $this->assert($res);
+    }
+
+    /**
+     * Assert if the specified checkbox is unchecked.
+     * Use css selector or xpath to match.
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->dontSeeCheckboxIsChecked('#agree'); // I suppose user didn't agree to terms
+     * $I->seeCheckboxIsChecked('#signup_form input[type=checkbox]'); // I suppose user didn't check the first checkbox in form.
+     *
+     * ```
+     *
+     * @param $selector
+     */
+    public function dontSeeCheckboxIsChecked($selector)
+    {
+        $res = $this->proceedCheckboxIsChecked($selector);
+        $this->assertNot($res);
+    }
+
+    protected function proceedCheckboxIsChecked($selector)
+    {
+        $node = $this->browser->getResponseDomCssSelector()->matchSingle($selector)->getNode();
+        if (!$node) {
+            $this->fail("there is no element $selector on page");
+        }
+        if ($node->getAttribute('type') != 'checkbox') {
+            $this->fail("there is no checkbox $selector on page");
+        }
+        return array('equals', $node->getAttribute('checked'), 'checked', "that checkbox $selector is checked");
+    }
+
+    /**
+     * Checks if there were at least one email sent through Symfony test mailer.
+     */
+    public function seeEmailReceived()
+    {
+        $this->debug('Emails sent: ' . $this->browser->getContext()->getMailer()->getLogger()->countMessages());
+        \PHPUnit_Framework_Assert::assertGreaterThan(0, $this->browser->getContext()->getMailer()->getLogger()->countMessages(), "");
+    }
+
+
+    /**
+     * Submits a form located on page.
+     * Specify the form by it's css or xpath selector.
+     * Fill the form fields values as array.
+     *
+     * Skipped fields will be filled by their values from page.
+     * You don't need to click the 'Submit' button afterwards.
+     * This command itself triggers the request to form's action.
+     *
+     * Examples:
+     *
+     * ``` php
+     * <?php
+     * $I->submitForm('#login', array('login' => 'davert', 'password' => '123456'));
+     *
+     * ```
+     *
+     * For sample Sign Up form:
+     *
+     * ``` html
+     * <form action="/sign_up">
+     *     Login: <input type="text" name="user[login]" /><br/>
+     *     Password: <input type="password" name="user[password]" /><br/>
+     *     Do you agree to out terms? <input type="checkbox" name="user[agree]" /><br/>
+     *     Select pricing plan <select name="plan"><option value="1">Free</option><option value="2" selected="selected">Paid</option></select>
+     *     <input type="submit" value="Submit" />
+     * </form>
+     * ```
+     * I can write this:
+     *
+     * ``` php
+     * <?php
+     * $I->submitForm('#userForm', array('user' => array('login' => 'Davert', 'password' => '123456', 'agree' => true)));
+     *
+     * ```
+     * Note, that pricing plan will be set to Paid, as it's selected on page.
+     *
+     * @param $selector
+     * @param $params
+     */
+    public function submitForm($selector, $params)
+    {
+
+        $form = $this->browser->getResponseDomCssSelector()->matchSingle($selector)->getNode();
+        if (!$form) \PHPUnit_Framework_Assert::fail("Form by selector '$selector' not found");
+        $fields = $this->browser->getResponseDomCssSelector()->matchAll($selector . ' input')->getNodes();
+        $url = '';
+        foreach ($fields as $field) {
+            if ($field->getAttribute('type') == 'checkbox') continue;
+            if ($field->getAttribute('type') == 'radio') continue;
+            $url .= sprintf('%s=%s', $field->getAttribute('name'), $field->getAttribute('value')) . '&';
+        }
+
+        $fields = $this->browser->getResponseDomCssSelector()->matchAll($selector . ' textarea')->getNodes();
+        foreach ($fields as $field) {
+            $url .= sprintf('%s=%s', $field->getAttribute('name'), $field->nodeValue) . '&';
+        }
+
+        $fields = $this->browser->getResponseDomCssSelector()->matchAll($selector . ' select')->getNodes();
+        foreach ($fields as $field) {
+            foreach ($field->childNodes as $option) {
+                if ($option->getAttribute('selected') == 'selected') {
+                    $url .= sprintf('%s=%s', $field->getAttribute('name'), $option->getAttribute('value')) . '&';
+                    break;
+                }
+            }
+        }
+
+        $url .= '&' . http_build_query($params);
+        parse_str($url, $params);
+        $url = $form->getAttribute('action');
+        $method = $form->getAttribute('method');
+
+
+        $this->call($url, $method, $params);
+    }
+
+    /**
+     * If your page triggers an ajax request, you can perform it manually.
+     * This action sends a POST ajax request with specified params.
+     * Additional params can be passed as array.
+     *
+     * Example:
+     *
+     * Imagine that by clicking checkbox you trigger ajax request which updates user settings.
+     * We emulate that click by running this ajax request manually.
+     *
+     * ``` php
+     * <?php
+     * $I->sendAjaxPostRequest('/updateSettings', array('notifications' => true); // POST
+     * $I->sendAjaxGetRequest('/updateSettings', array('notifications' => true); // GET
+     *
+     * ```
+     *
+     * @param $uri
+     * @param $params
+     */
+    public function sendAjaxPostRequest($uri, $params)
+    {
+        $this->browser->setHttpHeader('X-Requested-With', 'XMLHttpRequest');
+        $this->call($uri, 'post', $params);
+        $this->debug($this->browser->getResponse()->getContent());
+    }
+
+
+    /**
+     * If your page triggers an ajax request, you can perform it manually.
+     * This action sends a GET ajax request with specified params.
+     *
+     * See ->sendAjaxPostRequest for examples.
+     *
+     * @param $uri
+     * @param $params
+     */
+    public function sendAjaxGetRequest($uri, $params)
+    {
+        $this->browser->setHttpHeader('X-Requested-With', 'XMLHttpRequest');
+        $this->call($uri, 'get', $params);
+        $this->debug($this->browser->getResponse()->getContent());
+    }
+
+    /**
+     * Emulates click on form's submit button.
+     * You don't need that action if you fill form by ->submitForm action.
+     *
+     * @param $selector
+     */
+
+    public function clickSubmitButton($selector)
+    {
+        $this->browser->click($selector);
+    }
+
+    /**
+     * Performs validation of Symfony1 form.
+     * Matches the first sfForm instance from controller and returns isValid() value.
+     */
+    public function seeFormIsValid()
+    {
+        $form = $this->getForm();
+        if (!$form) \PHPUnit_Framework_Assert::fail('as any symfony forms at all');
+        \PHPUnit_Framework_Assert::isFalse($form->hasErrors(), ', seems like there were errors');
+    }
+
+    /**
+     * Performs validation of Symfony1 form.
+     * Matches the first sfForm instance from controller and returns getErrorSchema() values.
+     * Shows all errors in debug.
+     */
+    public function seeErrorsInForm()
+    {
+        $form = $this->getForm();
+        if (!$form) \PHPUnit_Framework_Assert::fail('as any symfony forms at all');
+        \PHPUnit_Framework_Assert::isTrue($form->hasErrors(), ', seems like there were no validation errors');
+        foreach ($form->getErrorSchema() as $field => $desc) {
+            $this->debug("Error in $field field: '$desc'");
+        }
+    }
+
+    /**
+     * Checks for invalid value in Symfony1 form.
+     * Matches the first sfForm instance from controller and returns getErrorSchema() values.
+     * Specify field which should contain error message.
+     *
+     * @param $field
+     */
+    public function seeErrorInField($field)
+    {
+        $form = $this->getForm();
+        $keys = array();
+        foreach ($form->getErrorSchema() as $field => $desc) {
+            $keys[] = $field;
+        }
+        $this->assertContains($field, $keys);
+    }
+
+    protected function getForm()
+    {
+        $action = $this->browser->getContext()->getActionStack()->getLastEntry()->getActionInstance();
+
+        foreach ($action->getVarHolder()->getAll() as $name => $value)
+        {
+            if ($value instanceof \sfForm && $value->isBound()) {
+                $form = $value;
+                break;
+            }
+        }
+        if (!isset($form)) return null;
+        return $form;
+    }
+
+    /**
+     * Sign's user in with sfGuardAuth.
+     * Uses standard path: /sfGuardAuth/signin for authorization.
+     * Provide username and password.
+     *
+     * @param $username
+     * @param $password
+     */
+    public function signIn($username, $password)
+    {
+        $this->browser->post('/sfGuardAuth/signin', array('signin' => array('username' => $username, 'password' => $password)));
+        $this->debug('session: ' . json_encode($this->browser->getUser()->getAttributeHolder()->getAll()));
+        $this->debug('user: ' . json_encode($this->browser->getUser()->getAttributeHolder()->getAll('sfGuardSecurityUser')));
+        $this->debug('credentials: ' . json_encode($this->browser->getUser()->getCredentials()));
+        $this->browser->get('/');
+        $this->followRedirect();
+    }
+
+    /**
+     * Sign out is performing by triggering '/logout' url.
+     *
+     */
+
+    public function signOut()
+    {
+        $this->browser->get('/logout');
+        $this->followRedirect();
+    }
+
+    /**
+     * Log in as sfDoctrineGuardUser.
+     * Only name of user should be provided.
+     * Fetches user by it's username from sfGuardUser table.
+     *
+     * @param $name
+     * @throws \Exception
+     */
+    public function amLoggedAs($name)
+    {
+        if (!class_exists('Doctrine')) throw new \Exception('Doctrine is not installed. Consider using \'signIn\' action instead');
+        $user = \Doctrine::getTable('sfGuardUser')->findOneBy('username', $name);
+        if (!$user) throw new \Exception("User with name $name was not found in database");
+        $user->clearRelated();
+        $browser = $this->browser;
+        $this->browser->getContext()->getStorage()->initialize($browser->getContext()->getStorage()->getOptions());
+        $browser->getUser()->signIn($user);
+        $this->debug('session: ' . json_encode($this->browser->getUser()->getAttributeHolder()->getAll()));
+        $this->debug('user: ' . json_encode($this->browser->getUser()->getAttributeHolder()->getAll('sfGuardSecurityUser')));
+        $this->debug('credentials: ' . json_encode($this->browser->getUser()->getCredentials()));
+        $this->browser->getUser()->shutdown();
+        $this->browser->getContext()->getStorage()->shutdown();
+
+        $browser->get('/');
+        $this->followRedirect();
+    }
+
+}

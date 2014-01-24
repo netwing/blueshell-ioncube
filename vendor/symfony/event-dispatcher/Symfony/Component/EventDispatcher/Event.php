@@ -1,36 +1,129 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\EventDispatcher;
+
+/**
+ * Event is the base class for classes containing event data.
+ *
+ * This class contains no event data. It is used by events that do not pass
+ * state information to an event handler when an event is raised.
+ *
+ * You can call the method stopPropagation() to abort the execution of
+ * further listeners in your event listener.
+ *
+ * @author  Guilherme Blanco <guilhermeblanco@hotmail.com>
+ * @author  Jonathan Wage <jonwage@gmail.com>
+ * @author  Roman Borschel <roman@code-factory.org>
+ * @author  Bernhard Schussek <bschussek@gmail.com>
+ *
+ * @api
+ */
+class Event
+{
+    /**
+     * @var Boolean Whether no further event listeners should be triggered
+     */
+    private $propagationStopped = false;
+
+    /**
+     * @var EventDispatcher Dispatcher that dispatched this event
+     */
+    private $dispatcher;
+
+    /**
+     * @var string This event's name
+     */
+    private $name;
+
+    /**
+     * Returns whether further event listeners should be triggered.
+     *
+     * @see Event::stopPropagation
+     * @return Boolean Whether propagation was already stopped for this event.
+     *
+     * @api
+     */
+    public function isPropagationStopped()
+    {
+        return $this->propagationStopped;
+    }
+
+    /**
+     * Stops the propagation of the event to further event listeners.
+     *
+     * If multiple event listeners are connected to the same event, no
+     * further event listener will be triggered once any trigger calls
+     * stopPropagation().
+     *
+     * @api
+     */
+    public function stopPropagation()
+    {
+        $this->propagationStopped = true;
+    }
+
+    /**
+     * Stores the EventDispatcher that dispatches this Event
+     *
+     * @param EventDispatcherInterface $dispatcher
+     *
+     * @deprecated Deprecated in 2.4, to be removed in 3.0. The event dispatcher is passed to the listener call.
+     *
+     * @api
+     */
+    public function setDispatcher(EventDispatcherInterface $dispatcher)
+    {
+        $this->dispatcher = $dispatcher;
+    }
+
+    /**
+     * Returns the EventDispatcher that dispatches this Event
+     *
+     * @return EventDispatcherInterface
+     *
+     * @deprecated Deprecated in 2.4, to be removed in 3.0. The event dispatcher is passed to the listener call.
+     *
+     * @api
+     */
+    public function getDispatcher()
+    {
+        return $this->dispatcher;
+    }
+
+    /**
+     * Gets the event's name.
+     *
+     * @return string
+     *
+     * @deprecated Deprecated in 2.4, to be removed in 3.0. The event name is passed to the listener call.
+     *
+     * @api
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Sets the event's name property.
+     *
+     * @param string $name The event name.
+     *
+     * @deprecated Deprecated in 2.4, to be removed in 3.0. The event name is passed to the listener call.
+     *
+     * @api
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+}

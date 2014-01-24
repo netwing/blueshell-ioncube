@@ -1,80 +1,206 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CGridColumn class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CGridColumn is the base class for all grid view column classes.
+ *
+ * A CGridColumn object represents the specification for rendering the cells in
+ * a particular grid view column.
+ *
+ * In a column, there is one header cell, multiple data cells, and an optional footer cell.
+ * Child classes may override {@link renderHeaderCellContent}, {@link renderDataCellContent}
+ * and {@link renderFooterCellContent} to customize how these cells are rendered.
+ *
+ * @property boolean $hasFooter Whether this column has a footer cell.
+ * This is determined based on whether {@link footer} is set.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package zii.widgets.grid
+ * @since 1.1
+ */
+abstract class CGridColumn extends CComponent
+{
+	/**
+	 * @var string the ID of this column. This value should be unique among all grid view columns.
+	 * If this is not set, it will be assigned one automatically.
+	 */
+	public $id;
+	/**
+	 * @var CGridView the grid view object that owns this column.
+	 */
+	public $grid;
+	/**
+	 * @var string the header cell text. Note that it will not be HTML-encoded.
+	 */
+	public $header;
+	/**
+	 * @var string the footer cell text. Note that it will not be HTML-encoded.
+	 */
+	public $footer;
+	/**
+	 * @var boolean whether this column is visible. Defaults to true.
+	 */
+	public $visible=true;
+	/**
+	 * @var string a PHP expression that is evaluated for every data cell and whose result
+	 * is used as the CSS class name for the data cell. In this expression, you can use the following variables:
+	 * <ul>
+	 *   <li><code>$row</code> the row number (zero-based)</li>
+	 *   <li><code>$data</code> the data model for the row</li>
+	 *   <li><code>$this</code> the column object</li>
+	 * </ul>
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 */
+	public $cssClassExpression;
+	/**
+	 * @var array the HTML options for the data cell tags.
+	 */
+	public $htmlOptions=array();
+	/**
+	 * @var array the HTML options for the filter cell tag.
+	 */
+	public $filterHtmlOptions=array();
+	/**
+	 * @var array the HTML options for the header cell tag.
+	 */
+	public $headerHtmlOptions=array();
+	/**
+	 * @var array the HTML options for the footer cell tag.
+	 */
+	public $footerHtmlOptions=array();
+
+	/**
+	 * Constructor.
+	 * @param CGridView $grid the grid view that owns this column.
+	 */
+	public function __construct($grid)
+	{
+		$this->grid=$grid;
+	}
+
+	/**
+	 * Initializes the column.
+	 * This method is invoked by the grid view when it initializes itself before rendering.
+	 * You may override this method to prepare the column for rendering.
+	 */
+	public function init()
+	{
+	}
+
+	/**
+	 * @return boolean whether this column has a footer cell.
+	 * This is determined based on whether {@link footer} is set.
+	 */
+	public function getHasFooter()
+	{
+		return $this->footer!==null;
+	}
+
+	/**
+	 * Renders the filter cell.
+	 * @since 1.1.1
+	 */
+	public function renderFilterCell()
+	{
+		echo CHtml::openTag('td',$this->filterHtmlOptions);
+		$this->renderFilterCellContent();
+		echo "</td>";
+	}
+
+	/**
+	 * Renders the header cell.
+	 */
+	public function renderHeaderCell()
+	{
+		$this->headerHtmlOptions['id']=$this->id;
+		echo CHtml::openTag('th',$this->headerHtmlOptions);
+		$this->renderHeaderCellContent();
+		echo "</th>";
+	}
+
+	/**
+	 * Renders a data cell.
+	 * @param integer $row the row number (zero-based)
+	 */
+	public function renderDataCell($row)
+	{
+		$data=$this->grid->dataProvider->data[$row];
+		$options=$this->htmlOptions;
+		if($this->cssClassExpression!==null)
+		{
+			$class=$this->evaluateExpression($this->cssClassExpression,array('row'=>$row,'data'=>$data));
+			if(!empty($class))
+			{
+				if(isset($options['class']))
+					$options['class'].=' '.$class;
+				else
+					$options['class']=$class;
+			}
+		}
+		echo CHtml::openTag('td',$options);
+		$this->renderDataCellContent($row,$data);
+		echo '</td>';
+	}
+
+	/**
+	 * Renders the footer cell.
+	 */
+	public function renderFooterCell()
+	{
+		echo CHtml::openTag('td',$this->footerHtmlOptions);
+		$this->renderFooterCellContent();
+		echo '</td>';
+	}
+
+	/**
+	 * Renders the header cell content.
+	 * The default implementation simply renders {@link header}.
+	 * This method may be overridden to customize the rendering of the header cell.
+	 */
+	protected function renderHeaderCellContent()
+	{
+		echo trim($this->header)!=='' ? $this->header : $this->grid->blankDisplay;
+	}
+
+	/**
+	 * Renders the footer cell content.
+	 * The default implementation simply renders {@link footer}.
+	 * This method may be overridden to customize the rendering of the footer cell.
+	 */
+	protected function renderFooterCellContent()
+	{
+		echo trim($this->footer)!=='' ? $this->footer : $this->grid->blankDisplay;
+	}
+
+	/**
+	 * Renders the data cell content.
+	 * This method SHOULD be overridden to customize the rendering of the data cell.
+	 * @param integer $row the row number (zero-based)
+	 * @param mixed $data the data associated with the row
+	 */
+	protected function renderDataCellContent($row,$data)
+	{
+		echo $this->grid->blankDisplay;
+	}
+
+	/**
+	 * Renders the filter cell content.
+	 * The default implementation simply renders a space.
+	 * This method may be overridden to customize the rendering of the filter cell (if any).
+	 * @since 1.1.1
+	 */
+	protected function renderFilterCellContent()
+	{
+		echo $this->grid->blankDisplay;
+	}
+}

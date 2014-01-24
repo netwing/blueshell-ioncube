@@ -1,205 +1,435 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPnqz+zUlmjyOej1kz7Q50hxkujTpm//fneEijEFPDHXHlBtCwi7ylKWobEBbYIIcYTZCALKm
-uh6OJ0bJXxT5PFK38bRYrPxHe7SVX1KmniG68MZCgc5ylWhoC4qZL0ZwZ1QnQ5dlXfK4XfwgjlyA
-8DRuvjUxnPZF8faDUN7xJ6nML3q/3xfJEY2NY7EbRh0niKYmVMC1SLiQ+jJPys3I6yXMRVgStFMN
-Fxm1/sSMATkZvnBAegoehr4euJltSAgiccy4GDnfT9ff2bg7/Z+DdP6zzzXRpaj8HK7ThT16i9uG
-+YNaKJ9nPH9CuLHu+ORMuXeaCC56NHQEFZE+M5YhzdDh8NNM+Lgs1m2CKSpm4YkW3/CzjhdXj8Vv
-hgox38WKPvaPEqFd7e21c9EsOB40OkUZNUMQJZyMfcMZVx1kfokENzLHQQTlQB2+zA6+311FOmTT
-nQ3lmBiRyYnp15K2clyqOQBwktPOH/ZCxveVTSAAsYDzfVe2IgZi7EkqWj/KPOM1qikUO+D93Y5+
-RoMtxF1og3rWG6xETS3fq31kdBf+clFwLVIw82G+p7YmD5+MZriS+6p3fB+6GyI7cbaVRXQfio/+
-i+Hir6KBlXq4Twm3Jq8de8tM9+CvSAiqZHR//FT0cG7jlyKbiOJzf72LW5NchCpabStICeixMBTd
-EijRcXwRUSM3qrNP9NN/19di3Z2HX7KOhEnxWFREA4CUedctoJcx1+Dt77KCEL5RSD/Ig7P6lSw5
-FydvWXbgtQAsuv67GDYxljm43pcnVi6hIRsQInaQWd+Btdq5I6tQt6u0gjErZhR+0EH8+NodW7wq
-GSiwWi+4FlnrvYLFgQK+iqjeKVeGipYBVce6GMYMPEdHmiwkfmYKYtTGK1xJ9nizSL60+wmU0LTX
-aBeFryPUNQU8Sz6wE9NXfKSR7uHaoQc8cyajenBtNBQuP5cDWSygwAhBKpFvtbHNn7GPGbKDSlyB
-tFAFjQj4VHd8y0DG83Kz+sE7xhOQZfdMSXUYXw31TNX04eBzo7uvqBZh9jyuVKQr6zpnwbE6zzdx
-Exs+3eWLsfevqR9m9U1d5dBJHRQONLTYgtd8J2gy7U7QAhtP62gVoMirGcjZVJ1xivAxGAnkGYFR
-vy7eMvroLaKjE2g8uqruN2LjZ/lJY/x3PO3TTCulPjTnRBuGO9tMv40EIk9w2yrWzGDwPXpDMy5u
-y51RUCXfADVbmk2TwpRIaYvELowEuNT2b3HYk09h8jaTKmvKD+2T870Cr7FHrv4doHEhuAWM8YTR
-XcB6HcS4qB88g56/kzMn9+Z8peG5ZnKzIDvOOjE9c1n9dN2O2q2jynX+xrwMSTdft/QuZp7qVlun
-D71o33VSa7KKa1MqB5VLgBN9vwqEXqqAirX+vy08TCqN06QxjROf8ezuJ7Q6VZsn0wR1l+L0if6C
-tP+Luy1YjL5FpXLLc6ihJzCVAwKmM7d0sMGA+W5UrHvEkOmWdr2Vfv9Fmt2D+vMjuz2l7JcKfwLm
-I6cQKGuXt6b++bDYDjYZdMLKG2ChZDpqlKdv8UKwfqstlcF+5EQBPLLCEgBp217jS4UcH8B/asi1
-f6ibNb0qdvyJYfsc4Ireqds74aA2zijW3DTj811zYy0ogKUmOdUVoZxH4bAGTT1uxXXNcx7Nuwe9
-4QpcCal/leEGee0x1+HLziw3vNdHvpU5tsy/1KKQNVvUiLlEgy0WI90erlf+emkqj8fcGGxq5esy
-6GHGQ4FqWl5EBsCzinkgqSsWbiXMVKi2jt9J4wr2M71+9uNcCjGnG+fqQLlhwHaQ5YRJJLnMIFO5
-kkD0reHUndJpAnrLFUnfi54WGfPL9vTPViv3UoQGQXJrywK5oo+iLKiwfDU0JvOjkF8dO7W7WpZ7
-xFdZ31sLVtTxouPHYK7GfUAC1l/I7x9fZs9+TjBorxGZ9nCt5kX9bm2nIPHPD4ylCmPYAjL0qF3i
-HOwsqaCYvos/jQhGeEbe/Of+t03JZPEUbZXD1sQa2Kw0N92SviktX/LvSfCSWttgmm0Ay6A0RLfh
-pIb7uxvDZ0xZwYQLsFMiKXPIfzEvBWRBrs6vjSL0XsS6np/NSm5VaHWD6l20QBLWCLe2zCvYkqYv
-ZR9A6Eyb1CSeYQVHL4GRRRMZal5Yr6US6OmLAwm/6aQk5c1C3FLzmudYpUReb5dLfbWbac3WpHhq
-aSjwPjNkZ5sSaMH3oqKNP1DPLPdboXW9nU8c3m5h+XHlhy5BsKTd77Fiebe3rOvUejRum45FeEaL
-4rKrNlS/HQpIbZZFvqfC5ZOmK3Z6I8IK1IhECPpH3isU/ylRn3G8OY7vW1mAMENXtvdqSd7E8VO3
-A6NoGsnoL/D3bTOIyZ7dteAQaTLwcN+Yx5TSduCBKkzLXseFNeQ34I6lZBd4+CiN2NR8ec2KioHF
-jYrDFOOMqegi8m+4jJEhZHhXYv/xg9Bo0jHkXEMYuyk9Ke3DD5U6y4BmrLGQgDBAgwzgJpa3A1ud
-DJeOO96MB7dtSgjfGdN84JW53eUol4ISLl5W6w4p1pGa6kGI1iUbcHmivSKZAOBKrhaZ1Rma9wqf
-cOrTD6j8/SIMYArDl6bMNgZOhUoTcLLARBQ2eCk/ms1cb7a1FZ6xSojpXKVqOAbGuJQtbr1PrmS+
-wtUD2Kj6QdKiAmYHcZvF/kawqW9vNMBhkkgIai5B39Yllpu74GdsSUn1LImSbOC9fSmF52GYaTtL
-6HUWoe2rbRBELejpyA2W8enaILzov3+MNW41jP6Yn8ZoZg7pQiaP1O0g39azoxq9tXS7XT/EVB01
-a2ctIR1x9DciGTOrw20NJJi/fbHH1qFgNFP3eY7j/Xcdckj5DpTIYATtpmHJXvTWFNtH/eZ2SYPI
-DOd8GHG1jivV3cTToPBipHQQ14gonjFhfu5375guf3/o4GXmdu0Qyw/5lKuhDUZ8fMbKBXg6xg2g
-4rANoVJ5QfS/EtIAC8R6Qr9kEbmvAqKf/iBxLCpBblRp5asdYfwlMjf3BBjbFd0kqVXZASSHCUYF
-N4vzbrESS3C77Th/SHRlGfCk6Ghm2DN7m3ufKij9GuD56hnjhrzhFg921hjtsbEqgh8sQr5JFrvj
-AzDbnmbKMzw/8j/UEOdB6kFSMC/Djt6eeZ99IlDHgNmsHBqscxmQAp2sDqAN21SVmvl/OAjCCPWK
-9L0brE6ix6D2SLIhq6cNNsa+0DULfSNzSiYDUDYhRA9G/qZRe+58t40RTLMRwvQvwOCH3cTxNZiM
-cZCkiztc1Qt0Zyx5I9C0LlpBrZJKN1CbCT81AzVBqGAOwxxBHAu5P9/fLCg6Gb/2a1y3+fsRGMas
-wJRiN7R9zLsN2UFVdwGanZv7wKE0blWDeaVJiyJ4uEkbFP5OfkXf6WDlZjuB4pgC4VBCgTR3xqUi
-zPzRgma6xITO/qvgmSdqrStoKIYAUtxJ8X/31vOe60Mcm/M5UfPHc8MOsc22FRzrHD+GNwyXqhWn
-yb/5rZk/7XBiCj1jtIef/lJCJefEdV6SkeQ1AwUZ4QuhwH93/uxciVjUcDTffhjO7vNqYNDbRc+g
-fzDkgAOlHJsNJ7Cny4BkgW9fsHA28V7N3MexN3/0cvICH7LFN3IvPf12dUlSS0sX5rRJXb64JctN
-A7c6J8v/gUz896BuSUFPGwubSOZ6gVcZHMl0eScxuByFiducdE8MTCahjEjz0cUF6ww/9fNebqRW
-O2YgCd2Za4pnYpG+JKS6tkA0Tah9gpJF1zI8Ak0AJUUh3vYXapCMvEuZBTLg5QoqxzX+5GoYqoJb
-MhZlY9Fr33VIGuS1q/A7IM9fMcno1NG83RhgiVGqKQ0ESX1/SCxmEXMkfpbcwiFG+4KnZswK1tzB
-9J1wUy8hZ4qEi4AdDZIvTZ+QU1IbdYq6mXTu2VxeY52KQ5qcJK8+6GpuXHC0k+YG1R29AyJ5D4oj
-dr8vsnjPDAp3T64Ucu5uA8JKxVOMd/bXrYl6GfOuunAdsGEBKzU/UeyLeRgGuHdwlIxgIx/8RDqr
-mUFKY8pJHmVo6yw6QWmaJDpiMyMNNoh/fn4/+fZ4AulDN8qKRAMqb+EyZxLgW660WnrMoOCDbdX7
-CbOLRUTmxuJI0kBCYavS6FyMCPVzOOCdkFlB7TpgLg7L09LSva+TdotDq1bN1TUbHttHz8JY7uph
-HTeJRWNip/MpzdkTTb8CGDREdH2mY7FuJN9HD87SwOEo14tWgpdl8tYypYVeKyeYUqgDSH4YlWCj
-TcOhXkWP1dcT8PRyUb9mlJriiv3sDgJXt9/v6VsxoiBk20YaAZ9w6ojNhVJdCZGIpbk/2p/Iw+7O
-LZyj20l62sAp/O8NcFvZ07RkJdxqd45t1ZqI49PioIHGRZDzLAu7zSLLK/eUf/t77yh4v/eStJ54
-2Gq0UxTbZC+U+rTNlv436o4x2lVY8uibXPrE0gWBUrT+171aofHwdUrC8yWekQOzfkYEXzcx1YVa
-Fri8BhQoMVQ9sZ+o/OaC1F4F3OvbCTtKrtg6LD8vQOt470PlaassC1bKdvSqEx12eR9Q16z8C3Vf
-T9Qm96MGS5Ozsl+LufnXCL7WT+bWnJc9DAgztHE/5UswUU5ND2Xdta9Syh3fAA/6/GhDLIx5446d
-lL5JyuDgmTo8pfIvBGbHOWB8vDQJ36xOHWMOdjStgLue9L/U2FgHVRcQ1qhd+pwyM22ZX2Xduq/y
-tHl/Y2nQHSzv1creg6QDMm4L3GKQl/vXSZDRCAqzWRTG7YOeLWuR8m1bpNcceXuc455eEvHxUkkf
-jxeCFdBhV3rihOjTc0qcILhbN4d/RZiCDM6NqoW5suP0eUGTMfoIL29Aj1BObrYIilHtZN7GKQU+
-GwsTep8u21byYnvV9L0KJiUM0rrur4LS0tPKhoBKaBxFyE/BQeFBh5mVOEFZhGHuvsHA44gxgcru
-TvJ+xAOpfKUuVorS5xEPIoasu2OLGGD4BU7CqDbcJ4xHVYA9sj6n/onTwj3BNHBLqwP27BlHS3v0
-q5CvZHui0+kzrBXhL7LKSX03Rdv6GDtmEb9SfHAu0hgiSs0vvSkyL/lCvxEBeu+6U1FlQlycboWd
-eCWJK/2C4+jM7N7PbXa9zhOKG6Ibv8aPkiOJUF8osnXrLv9WpgFhw7ra0Z6xpyvGS9DWEoY9zwq6
-dHosmEiWw/j89AZ64wukdcduKZBwMdD3H+hmgQfW5xLLQdbbkXE+fB30L563+Q2Ohd4+Y6lsybiG
-OkAcBLLaiUYkpqlpLaq4CudebVnRSrhdoTd0tBock2BZfbQFjkaZ27Aa/9jvTOCom6va9XRL3hGx
-+P6uJI833THFdpYyT5KwtQ40TTK9HOCwQtIGr75J4YLKQsBKoCLJbO8rR39ImqQbq9nDNUTLrX9t
-+4PXDYKoO0o3DyySxoyVY2VUPsmSVkOY3/Ta6p5JBl5Zd7HzDjhDMOQZlfNcfIA/AzyJ1/eKZm6H
-jbyNDGQCGLWrvF4vACmnZ0HG0lcs4K2ETYWY3Q4wxbktCuJeR1VKhYw2+MGk5r9griE8PYFGmX3H
-LZgBpwtoHBvMbDAu6hNC/XmLoY/ocQHTv9w/GEXC+of4cuHKH38ewR2WAHOYt8f1yrYrDi5MIwlp
-Va5cy1mKIRmXtN9KGcc9X+QGKc8VE57xfAVzu+HoxOJ3AeyOnpaOQhwn+LHOS87M4MQ31gdXMqN8
-0IVpng/P2gFiGytfuHU8y/owgqFc5/9k7V1SmOuOhmw2Z9wXd81zlYhpGgvPPWBFwv/zuEvYHi3p
-t6kAyJdNgNBeh+P5ivYq2E8TMAYzHrPTkefMGYmSQ/L1EViewDTnpotiJ1TAsyXw64LOj8cr7bbM
-2lou6uV1rZtKFQ6i3SdltoS0eaYSMGD6ptbntqByfWbWXIiYf+g1ScmPygpeog75QLf+aU6tq+NX
-GQFHik93RX6sIbHObLsafkJdRbq2PSJABzpSrp/kcVwIEPXB83+GKKWvaG0+rVI5V3wGKzKcE4zd
-5GAdwzQ1vN/khXmMUmj2QYI1/cWOEheVJzbXsjgqkeBhXMIw7eaBLQs6SAVkpiEtoY7rx3kjoviX
-ffm6SOgHlPgO+OmoHONzQhlAkvmIYaY+M8CE9xvvO5R9T7J6DAazHg98aP4BawUU94MT4KeU0zyd
-hD8T3Qoym2jupo5cgJyANaopzPXuE/cOA3CYYZjN2+4JB1Ro+yT65izrT//XHyFVoIcbPR39cxiq
-AVfSzLGx8SOdpKp/Rd59lgIyIqAEUF6iTr/g1vOJL5u4Z3SIB5XUkS91gH7HR4PPclg8jiF2t68d
-V31+3bKCwBZ8AxstipDYyoA3Dqm7NGKtKuis6/p7OK1Cl4P6h7iBRDqhkDyTWRaAVP6yCi0vu2ID
-GIwXhEDwVHQz8aJEn5dBwKD2q1A3l723JEyiczKcn00eMCs2IdxuNJf9PMZVeTvWODUuK/9GemWK
-3eyj0QoxGGRUjObveQhVeNa6s2EdT0C5fORm7nndN9xOxWUoIzexK50KBA/dooAEX3LiSndMPGCm
-PcoHHARpVR/wJeRAiQrMXpew6p0D29dd/oNnRo1Njk3skMTTvQuNzEJoAq0G1e+Ez2lTJnX+Av+i
-Om+1Nwmr8zwMPHszgRBSnCzhJJ2Os+/ZIE5sROqRoV0gPm8XafGkdcDzn/P2/8J5XrZQfm52kZS7
-5obOP/POh4unL64RAzWmjZtJNFi28GTFAsoHVir7mu2PsORiIPPrQY69f86bbhodRZe74scyKS4X
-d/hiaBecmQO5MkmqP+ydPKsA8X9LANrvJEMiyVv1sR+yXdpwf1PSnd3f+ZlaVwrXUtW/j1dv/CfE
-evTVU9tr2VljPG1G2zHP5a8jPcRx83kZipQRHM3ZKxJAE9TflRpCPATigmA8WvXLr1KhywemY9zS
-ioNR+ZYcC88J7Y4vquGHVTHqZtM0z3Neyk19d034JbEBgH6LcPKN0TEcuDcAu7Yk4faGXulFMF/9
-a/qQzvmNR6Y9eEPHhhoBdr/wIVV4RV1yz/cUHGEqQl8fCUAJr1HDtD7kGsVQGIVMiOvgqqwvBa1H
-0OK4wzZioieDq2HZ16WQ8AoF0tpSM0PJSsHPGPLdxYm/mooVJx746lFiAPr3Dq/PLR7vLSOXQxvi
-B8N2uA8xnF6DUebV57XR8dLn7dZw8e28EzZRHyhCG6PCdm7UTBTivk1DS/Ipctx51CstqCyaPuTm
-ioJ+KhaKrY9JUTcY9xTSY/6b6A/Mu4cTNFy88UxEONWDkoLg1526FoFJnofCRZy4MP9pNgGP5tgK
-ApgVcBFRjF/AbLtsZHL83RaAMhWg4JsIBjrm99llQaOUUuo3fS07UKzEDBxGfVKey3Q4VAdTQsEQ
-E3qr2LYMjPJqJSQ12zdTU2kE+bGL72J51Uug+yWrKTijDEEofMn6jkF23H0SZALroj9hUwOvgF6b
-8eFXCoZ562fFNWKulWBXjqYgLeXZjCNgnbKf65xAqxb/OBrpbT8cDniQY0fWJwlgJZBP6PzraFVs
-o7AL0sLM8qxh8crrwkw2EgN1tBDCAWdYzquznaDHpLw40vBIqcagTOWZgDPHa5teGIYbGvef/yQv
-XXFPcb44zm64+GmHYA49p4OgwGGitT31UEymFyNCy8P8NtxGSxlkD8RK3Sp9CM+5klPYAZUXzmnt
-J3YV7zFCCRbJcD3JXbIrUbR8PahzO+mbS9z6L3+WZ+2TY8UuMmO9riosGyieQ2D45+PfkCIMl4/n
-QMQS40qk6DKKvHB9EtzaOg7MzL/CIU8+jedSOSMFnlyiVz1u6qNzmn4mkdk/7wE5SQZQly6rG4RO
-/9MPz+KkZexuLs3+AqtBxtTLj4Yb9XseNpewxDdgRMHn0jP4XdVGCPSiiU3Wta6gi4OH45PQgVkh
-hDcPTpxQYtEB+Tfnk72w55y1JlDtGhH8fXiNFMD/nDbNRyzuqHrsNO2uaVNvkxVsUKARFX/dHfQY
-CB70yWryvF+kSZz9k+q8k0lGXD+WbS891je4vyTOzz/PI4dwNNuGgHiNuP6bYmScr5/KmM161nU+
-C8xTojtTf7ZGINsniIun7yXBp4O0iEwFEC5LH2ya7IuZtESSwPq3lgdWBmvg0iE4tA+vAX+7zjmw
-XB813iFyX3kVc2/F5nEzOwR9d1G6RvtaACfXm9Nq+ne3k0qqzw1qlarsfxj3cjbHOmJtad+4Q8YK
-aWDOehlBVDvu056Xzj9Jxz7rZK9E8gw7VqHg9xjdVaEQQd5RSFs1bcYcbYHbtHnfcbl8lx5vpfb/
-8/yeXqAKZOjKZ8R2OXbL1NpkCBtA0Ztr4Ufwd8hJ1h3Q2imgV/4rHDMdOzv12WBRrxPl/ysf/k6w
-NNDP/NK/95W/0xrtedw2CZdaKXXRtHNpZez+hiwHLDxtKf7RHJvgUi0DgkPOcghQ9G22r4EVqvv0
-8iO5e4FxZY99mjT/FS2RM9SFhPqN93L6ikulUvh7HfMsxNd5YCaXjapNWt8WsXtt1gLr0BorE4Yw
-wxZOt4P4CKWA1ijiiN9R+gmAIb7zUWPjZQcUBTPGr951lD7L7BFFx1REapgM7hETGdFWlKpnfJG/
-LnAMXbIQ/ysXwqgejioS8fNAflHNTggJWn8evXmdDOGKKv0xOck5CuslrfxMI+GIroanCRvPBsk2
-9UW+Wtu1rQUoWoTV/F6+ZVyX21Q6kJOxVIqZXtH7oPeXHHuF8gAuZSAFpjcylhJW66l4hE8g1hMq
-oGczOiEHljLuexPLHBDthRdTkgxOZqeY7EbupYx4591xxWPf5moByMvrxO9utjfD6OdB8TlTpGGj
-Si0UBqNO85KvrDLVlgJNk19cMgc8g0x5oad+yrUuUsHgiUwz4uS32yPNWDi8LW5RSPE9Godu7Dd7
-94c3TfC1a4I6GVfZRNnH+k3tp57m9v7mrjdSYyJ8nL1qHKaNzFOGLmwQ537HXXtvkSBrstSOBbzt
-jkoZjmK2Txw5n1VyA3h0Hc165puloGBL5+ZYJNn40eQc3J6wU5g14wHhJmxRVIY13InOeQipbGwb
-YrcDT5Q6d+ESEu0q+C3Wmm4JUNW37MYAgD7BbJWeAMyFp+h6ySl5ZGIULmzraSIH6F3kfQu06EcW
-/ZKbHSWgWM0LgEEbMFiV0jyhA9DYwUh0rtRjQFmi1uxQRGU80VpwH28KZlfHm/RLBBh8YLWilh7f
-QCbNE/SdAMnvVb+HELcRTGsTLgQyCrNcLQCmORz2vpZZX/b0wH6yKxijOmUPeh7Q8R68lhyLerCw
-Yrd2gtMkSgP560vSZH4dcs/Qb7+KuzDJgftB4UclCgBbGC2uHFytz8iZXtWc5owQsnJG8u+2gPVL
-q07Q1Tezfyq22JrRlgi3agyiGaKk05X1UFXBZZBR6msoLnYHE1AmvROz1FsYpxOZNdq9/0qQlI8O
-KcPkHWM6IUJHRwAqit2wzlhw3IK9OB0qN7VKBSXtnhJWycKR4cXPAUNuNeaoe/kio9Pzmzc8PITY
-VlJvENkNhVUqCj3j72WQPIfqWB54c9nskQLV/iOmtelHwphG1PhzARXcYRFbJQOVReW8aoc0LkKm
-OVOni1RHawr8ra2jUpGl4ROzUdep1agqrHGIvJEEccF45wd/h8ZUz6LZ1DpUJ1YI3eIH6PBiPcbY
-HQroQX/OKervfcis/Kue/BD76NKEPSS3leAj/0Xsa3NYT3wL+XmoN9qsgH97eZaIj3E6BYxW/iZd
-JKzJkA+bvFGBa1zRkjd9/wgka7fIsPip22HVjNcAK1xyuVTzK31h9J9J1NQ6Wd4LL7YFZ3V0lmnK
-xxdC+cxtDNuI5ag0jObp0LrumvNTkssUhSeDcoK+rimlzVHoaenTeEXc9jkjnN71NCLJzjNheHlI
-Ypziq/gPNZOcZi9I4MRsI/SM9azDYahmoLvD1aHEMPcXADZ6LT6Sna760mC0zJUMTd8nIWVXtIKY
-xwkniJ6qVzPwjGxVaqxsSGB8YYszKcv1f2Xv6Vpi8YJbvryooZgXjqOgfdqPapq6HkeLaLjScdMp
-NfqhD6KQE+LnwBqvn9rx7sdwKa5D6Bf0iGsf8E5S9KEhr2C6prV0Wsa5pSBkpDiiwShxkxq/8SuS
-YATSNEfud1dY2HL25NAgCSfAyjXiT6C3CnYq2OJ8gwbUFRfj7HiXyBj2i0tsiOptSnHQY0RgUT6E
-QXq6p9JZoAgVla47hc4/hJAmpe7c6YDrnW5WHhQf66+DnkBKEWIYZcvNm5Lp65fi2fn594GQuLeP
-IvhG34/JSggXFkMISNu/UBVRHLl464hCPdVU+ec3K48m830LFXbwYDjC3PltieZRgUgyCTet2fN2
-XmUB4uTNuQTmy19kWp89yn8EENS9uylVdDkfGyOwAizMSBvVEargBPbUpl9VSTugYcDGwxA9wbbA
-NCpgRHDzWv8Du1RhJKivvPLA9rZ73qNPASbjqORyrQfDEJsiW1JYu23aAQhO/YkA1PUkoe4Cs/eT
-DQAyfmxZD7ZcAeJnItYjzA6P7jMVzVfdvooL6jJuE+JNthst9xYRD8CckA5tIKgpQFje+oNWULGQ
-M6fBZXpvtJ3AiQ5yPBa2JreRiX7KUspMFlIg1NIdqFhpGLBocRs2nKFwbs/etUk7zQZoCE1clKc3
-c4CuxJOGHIgiyuCClzPPYJSrBzAOJVy8bEMnRxyzh+Z4TGZ4l87r2v/6Jnu3SY7wCHEHiQYndEYJ
-Ug1t/rd2FUFmWd4H0GIj3SxzAcxbOmQa3YNPBOVPDtf7i6IU9uWSJdxuOxXxdubmxdMn846+lIHC
-zkQFG/V1x5JHTpOFJu6iQI1AcWH8a3Rmc4qnkoD2t+WhOpjlQkehs1Dal7FqEZJNsfChdLpWZvlU
-v1I6Tb+uNtkYgKRGqVOWNCM+e10SOSXRfECYsQM1KAl2opSghaavtDF9OYoPoAIp96J6RLLQHHWu
-1Xj7wXCnp6uBzbyL7sT0M7qjvMrTrncylPEAVuJypmjeVKMQC6QxDg2r2pydWjlmtIrJ+8ZIbZM2
-1amw6XiB/il24EywSsDnwJ1XVMpAB0tlw3//QF0jbhnJf6+PVQBLXjviYANwUIXwa/zh4wSW9C74
-JhYPyNF77n9e4ikD9HZiZjjwMBk94o4Mla8ffdUdS+tP4VQ/C4Mnogb74+6aXgHZCqJMtr/W8xZG
-tUbOq+qIMsPWTOqbGKHCzNgM+hsqCdiP2Y29mA/2YHMQWCW1PiVSRRuc2gg+SlzgEgXaYoJyTU2r
-+R4MKf3oUeqZxmLJ9aWuZIsiRZ6SA7bwpYW5Vs+ThLWmbpXB4qCEaH6W15IAy22PtUb0FHnRMoCK
-66yLZDnYmy/zfSSaJeL+R4uo0NXp66c3cESXAoOGAohu780O0pu0acvjlWcb2NmHZB2exvcSdqoH
-Mrs2FI2h5RG4ENy1n0fQvezaDQD/BVUMHmP55SQkjqXvDLHFAParms/aNF/XjAtlummCG2PDwVfU
-p6z+MqyI4cXI2OsGnCvgJ2PXl+DVzz//DWjvS0ISNG+RwnclGU3P6i+sDJJ7HIYzH4IstfNanoIZ
-ex5GOZhfK5YN96/Nxl1LpbAtGvlXrzjZXMPkSSGnos+DkeC9z5YRcnq2uKuvBUheh6rMhLOKFVbX
-uNrKKNaWY6XKkozlAtoSH/exV/12a6WBsgfAolzRDNNrt9/aeIiPQU+xqfCIyRe1stSQRvThwrU1
-UaCGPSbXhe4cLtf/3FoOHMo7cb1m6197b5ekIf6m0uyWIwa5UG4tEGtmKzZL4LC5Te+MHbkJxaDC
-R+sLJJH+265jd/AQMkBEcs4tzmav8H0OAq/0vFOoSFMYd6M5XLjb+PuFUb21lukLTNIKtqyepGD7
-+qRMZCJJNyEa4SxfLWyjxP40OOCK94DuuhFP0y/b6wXST6WNPADwvFKacVydoPs40c00CDqE+RRL
-1D16boqpPr/SFQDYrRVf2rowhD5xNHe8QI/c0hAZtSesXAvuAzv7Dx3bpyCstcwx50VjDBRZW/rG
-Tb7usNQ9fFQEb2Q7j4WbSW6PB5OJtg2Ob0Sx0QuZtrjXwBWz3JzEA08mMCrCa3Nae9DV13d8ZZLp
-c9Ij/CHQQ2c/ibVKBwE80ac0+loetwK0BmDlIPj10HjHJWCUhY3xJ3Y8MoDOz+/JviDRW9F8jcwb
-4h1ams8nxULZtxkb3dzbQMnL3LIMu4+6y8LDX1RVaxYdAvNBSSosVfcaK7Bva/NJbW4t7XBW6P5q
-PB0XsU1/Ta+L5clySt6dFavr/M9NWA/KfIFjaMqS1eS0UEv1imn7vJcAR4ytc39Zs4n+tXYZNSxM
-V6MTQKMS2nTPYv5E1twNhpiLI4ZQ54WPbW9wpIbM//mpyunLooEv3y9fsKB/UA/mAoMcY3QRH1BE
-y8stDspD9YCZaHRFaJBfP8y662qgAk4+W6t5TrfujDFskos6EtJjvqsrWQXJK1dzUsogVi2RL8BP
-q/wV0jEA6YGkrNCRMuC8fhHBOxq/5ecLqxvJ2ICgtdUWf6dl6OPPYsZ8EWG8+XlM29RMnipj/OGD
-SonA/9/3wKP5UC73yDZ5fZyUNWp5FpbgNk0X1Z0hKIXNqzNQLObpFbBjJpygT9FZGXXSBBxoL2Ol
-ciCJC/DxMOoErhZ6Pkvg60k2gsoALInBGfNFPpA9WN0jvwioyyjk+7L4xncQSwZSuLwxDLy5xz5V
-u1nGDvjvI8uReQS7RxQhwlFe4H2/6Kr2FXkX1XQStmvKEgTtg6RajNTVNglxq/opQJ6V2qBcnGhT
-IadkBHe1oKgx+7NyQWYhBtrd0llTIq2V6oIs5OnmkuSTi3AP7nOxZ8DRyBosNV/2ixmcpHPlw+nY
-8bFxRZIe6JchDh2hY9Qkxh04o5iUhE9qRSYII9om5fJY55kkG0x886T43wEE/1W/8UtxEGY0b89i
-wB5mQLm483lP6VtUGn+4L05mUzl9q+pCNGnqZxwO/xMhh1TRDp2kiYtJZk92LP5M1g0cjX6JCjhP
-dFlWJAAKzULYtQlqFsjezt3wNJEudrN/abtai7Q3dlovzj+F/tT0Rgd2LUfkZvrBMkFT8L1ANNRo
-5/ndSdXPVhw55PS1CH8rcGlKngMjrvkZ0QmlY/ri/E2WAW/HT7w64VFW4wplGIfnMXgVrq40wZbO
-xmArhSvUt+gEbZYucl1LMG4u/o0amJGT+P3zG8ceMQQVm1KUJ8sYLNJIEkWXp5Qh6Lzj1pM2+Gdu
-6pON/i6u8HezeAfuCh7PVdmV6GWSY08kLhhxzExcIcDiZBcYUHcAe3XnW38sBTgethmCidtougSz
-aHXXIg0hq8JnHbgAOgV3qnT4tx9A1ezrT3GGui3Yq/UQZgYuucIHsmXNifLjubHJIyIgpZ+nvVUd
-EV3jvn6dYCLeiRdT6Q7uAahqgsF1DTeDq12YJxpd1hJ9DZvmL/rY/uSeZsV46pUKF/2otuW3DpPU
-NsCCa/3rascHJdDkaYVpu5XgUXz0yTnk2beWWDJ7tAHFyhilSHt+5X2SfDHXLKx/thGfRiLQ54um
-X4JxNOypuDLCTlo4dtUleP7xx/w/hhlQSjPsyCRpgRbyZKJ1JGCwYoxFd3JXgm5q8FeWZqt49Nm7
-Z9+i2hh170vUjaJoHKtXCO5Gz2c7f8f0eQyCc0a+m/FnDfje85VGM1vO8PA5yGgoY4sr7CwaAeBV
-/aAqxz7wVDkWOAbvRZjmdx49ylKIq+SZjAcZhzPrqOfjqHIaPOLTL6YeVyjMl1r6MVTsf0xzCvA9
-s/SdJxYwwcfrnDwVOUnvYuaUvtDGX1pQUw+P2HtKC6GZgqztl0ZlsUAXRY1HSk9zNNVvelHKbEFs
-2SCXl3k3WKiBfT5rnTv82J5BHYavTVGNvM6sYnrfmsuZsig7sYKAoFTJJft44av69FgFpO/1T63b
-n7wQg8PwAsuwEhFFJRO5dwM+Viu97PhqJL29OOmr+O9V5GkITb45/2H7Wg4t4YBlel4MBNEFcG1X
-Bv0TwtOSqCSdaA3pw2o18KS5sxvfvzuJ9zD7txL/4VJ9RzX/lh9cbhPJXaVLDJD+nOyA6jxgwALi
-mUj6jOl+C6OG6M+yDwcbcJksPbqViJa9tRGTQF40B43DcVj3SSs8Bo6KJZNSh+387zxIvU3VeaS4
-RnTXP6Urzywsm2e9zqYwWmU5xeDnzm15NQbx/aGC1jyeSK915l3uzwQae/eLlk0R/vcACqaH7+M3
-9AfEEbWMmUlgQP6DBki6HQsScipBT9ILxtKS6OgHlq3VM/kJfu4FQPisk3M5tKtxIbohdGChfiNZ
-LyolxZ0sSU46imFnTKjEr1tZxbVhW9HP+7V5bwQR+q2+3NTn5S1l3jIOPIN9cMFe81hdAhbJxxO+
-/yqsZd1C73zOchQnCG6Kgy1B9LWFmr4NuKtFFrJ484JDPVgzx5FgExAqvwqIgYTqEH/+l+FfzEjX
-ub0UEl4OiI5+LqBW4eENcA1nmN4xESum8p+wAzoDxeCpCgKiRyKNyCQy+Os1b6ib6FYubGZDBV50
-QpvIQb5VysI5Dm3UxYW7xCMMsOskT2jGQQMSRId/3yXd2wkvTXBnJC3T8MQYMcW+GGoDpyM5hQgR
-BMdvV/QKnhaXC87lkXxfz+Bn76xhB9vEJinEYWKX46lZzx5401twSaPIlkCU5xQGsT55Q5l7yDpW
-V93LrROhi8HJjBueEr4gRKicxe1a2wFsX69mw1JI+++wkEA11UhzmQq/vWiY4His30kc0tNoxlKQ
-FPMiPtVVMHce/7650yPShV4BU6w9XDPdfMu2FxTzj2zNQoBR30fedOWPvftJkm50Z87JX43AwrIF
-c+7Gvwpk7pfpyV2/TgBYiEVIoPUQZ1O6vkLQ5li7kfQSBkX+jydaOmdeJ7kwiierT3VEbc/8cICi
-TUScpBpJHYQN7tIhHvIai3wxjH1F6lb8maAH2yg5D1X8+Y19uXRurYqIt/5wNj9LQmSb/0oZs4zR
-KeVx9mwT7kSqo0m6tOfaVkoaiior6T7Gfh6vOWyGXWlEf0Z6E/g3kBGMpU+kfbh28rwxp1UdAPl+
-xxx2oq3aqtsxtkRNAsP7EdvJrwWBuqIn890sUimVhy30sO20EzriciE8+FCzwPL/M+nbUV33NYsr
-XMv10mDJqyyjPjISqS3oHOW2uFA2dlgyr0uxfDy536nxS1DsY7G1lwDHL2xE8B2ahiQ9yxe4jSdq
-STgE4+6LyKWNY2xwDKq/4XEvLuMtMYn899F8ySQj4MuM8wFb/xYSudEPGJ0jJ2Hv2ZqKdV+79Iu/
-eNcNQqIAaqT/AI0gkyRDJMe=
+<?php
+/**
+ * CDbMigration class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDbMigration is the base class for representing a database migration.
+ *
+ * CDbMigration is designed to be used together with the "yiic migrate" command.
+ *
+ * Each child class of CDbMigration represents an individual database migration which
+ * is identified by the child class name.
+ *
+ * Within each migration, the {@link up} method contains the logic for "upgrading"
+ * the database used in an application; while the {@link down} method contains "downgrading"
+ * logic. The "yiic migrate" command manages all available migrations in an application.
+ *
+ * By overriding {@link safeUp} or {@link safeDown} methods instead of {@link up} and {@link down}
+ * the migration logic will be wrapped with a DB transaction.
+ *
+ * CDbMigration provides a set of convenient methods for manipulating database data and schema.
+ * For example, the {@link insert} method can be used to easily insert a row of data into
+ * a database table; the {@link createTable} method can be used to create a database table.
+ * Compared with the same methods in {@link CDbCommand}, these methods will display extra
+ * information showing the method parameters and execution time, which may be useful when
+ * applying migrations.
+ *
+ * @property CDbConnection $dbConnection The currently active database connection.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.db
+ * @since 1.1.6
+ */
+abstract class CDbMigration extends CComponent
+{
+	private $_db;
+
+	/**
+	 * This method contains the logic to be executed when applying this migration.
+	 * Child classes may implement this method to provide actual migration logic.
+	 * @return boolean Returning false means, the migration will not be applied.
+	 */
+	public function up()
+	{
+		$transaction=$this->getDbConnection()->beginTransaction();
+		try
+		{
+			if($this->safeUp()===false)
+			{
+				$transaction->rollback();
+				return false;
+			}
+			$transaction->commit();
+		}
+		catch(Exception $e)
+		{
+			echo "Exception: ".$e->getMessage().' ('.$e->getFile().':'.$e->getLine().")\n";
+			echo $e->getTraceAsString()."\n";
+			$transaction->rollback();
+			return false;
+		}
+	}
+
+	/**
+	 * This method contains the logic to be executed when removing this migration.
+	 * Child classes may override this method if the corresponding migrations can be removed.
+	 * @return boolean Returning false means, the migration will not be applied.
+	 */
+	public function down()
+	{
+		$transaction=$this->getDbConnection()->beginTransaction();
+		try
+		{
+			if($this->safeDown()===false)
+			{
+				$transaction->rollback();
+				return false;
+			}
+			$transaction->commit();
+		}
+		catch(Exception $e)
+		{
+			echo "Exception: ".$e->getMessage().' ('.$e->getFile().':'.$e->getLine().")\n";
+			echo $e->getTraceAsString()."\n";
+			$transaction->rollback();
+			return false;
+		}
+	}
+
+	/**
+	 * This method contains the logic to be executed when applying this migration.
+	 * This method differs from {@link up} in that the DB logic implemented here will
+	 * be enclosed within a DB transaction.
+	 * Child classes may implement this method instead of {@link up} if the DB logic
+	 * needs to be within a transaction.
+	 * @return boolean Returning false means, the migration will not be applied and
+	 * the transaction will be rolled back.
+	 * @since 1.1.7
+	 */
+	public function safeUp()
+	{
+	}
+
+	/**
+	 * This method contains the logic to be executed when removing this migration.
+	 * This method differs from {@link down} in that the DB logic implemented here will
+	 * be enclosed within a DB transaction.
+	 * Child classes may implement this method instead of {@link up} if the DB logic
+	 * needs to be within a transaction.
+	 * @return boolean Returning false means, the migration will not be applied and
+	 * the transaction will be rolled back.
+	 * @since 1.1.7
+	 */
+	public function safeDown()
+	{
+	}
+
+	/**
+	 * Returns the currently active database connection.
+	 * By default, the 'db' application component will be returned and activated.
+	 * You can call {@link setDbConnection} to switch to a different database connection.
+	 * Methods such as {@link insert}, {@link createTable} will use this database connection
+	 * to perform DB queries.
+	 * @throws CException if "db" application component is not configured
+	 * @return CDbConnection the currently active database connection
+	 */
+	public function getDbConnection()
+	{
+		if($this->_db===null)
+		{
+			$this->_db=Yii::app()->getComponent('db');
+			if(!$this->_db instanceof CDbConnection)
+				throw new CException(Yii::t('yii', 'The "db" application component must be configured to be a CDbConnection object.'));
+		}
+		return $this->_db;
+	}
+
+	/**
+	 * Sets the currently active database connection.
+	 * The database connection will be used by the methods such as {@link insert}, {@link createTable}.
+	 * @param CDbConnection $db the database connection component
+	 */
+	public function setDbConnection($db)
+	{
+		$this->_db=$db;
+	}
+
+	/**
+	 * Executes a SQL statement.
+	 * This method executes the specified SQL statement using {@link dbConnection}.
+	 * @param string $sql the SQL statement to be executed
+	 * @param array $params input parameters (name=>value) for the SQL execution. See {@link CDbCommand::execute} for more details.
+	 * @since 1.1.7
+	 */
+	public function execute($sql, $params=array())
+	{
+		echo "    > execute SQL: $sql ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand($sql)->execute($params);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Creates and executes an INSERT SQL statement.
+	 * The method will properly escape the column names, and bind the values to be inserted.
+	 * @param string $table the table that new rows will be inserted into.
+	 * @param array $columns the column data (name=>value) to be inserted into the table.
+	 */
+	public function insert($table, $columns)
+	{
+		echo "    > insert into $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->insert($table, $columns);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Creates and executes an UPDATE SQL statement.
+	 * The method will properly escape the column names and bind the values to be updated.
+	 * @param string $table the table to be updated.
+	 * @param array $columns the column data (name=>value) to be updated.
+	 * @param mixed $conditions the conditions that will be put in the WHERE part. Please
+	 * refer to {@link CDbCommand::where} on how to specify conditions.
+	 * @param array $params the parameters to be bound to the query.
+	 */
+	public function update($table, $columns, $conditions='', $params=array())
+	{
+		echo "    > update $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->update($table, $columns, $conditions, $params);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Creates and executes a DELETE SQL statement.
+	 * @param string $table the table where the data will be deleted from.
+	 * @param mixed $conditions the conditions that will be put in the WHERE part. Please
+	 * refer to {@link CDbCommand::where} on how to specify conditions.
+	 * @param array $params the parameters to be bound to the query.
+	 */
+	public function delete($table, $conditions='', $params=array())
+	{
+		echo "    > delete from $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->delete($table, $conditions, $params);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for creating a new DB table.
+	 *
+	 * The columns in the new  table should be specified as name-definition pairs (e.g. 'name'=>'string'),
+	 * where name stands for a column name which will be properly quoted by the method, and definition
+	 * stands for the column type which can contain an abstract DB type.
+	 * The {@link getColumnType} method will be invoked to convert any abstract type into a physical one.
+	 *
+	 * If a column is specified with definition only (e.g. 'PRIMARY KEY (name, type)'), it will be directly
+	 * inserted into the generated SQL.
+	 *
+	 * @param string $table the name of the table to be created. The name will be properly quoted by the method.
+	 * @param array $columns the columns (name=>definition) in the new table.
+	 * @param string $options additional SQL fragment that will be appended to the generated SQL.
+	 */
+	public function createTable($table, $columns, $options=null)
+	{
+		echo "    > create table $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->createTable($table, $columns, $options);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for renaming a DB table.
+	 * @param string $table the table to be renamed. The name will be properly quoted by the method.
+	 * @param string $newName the new table name. The name will be properly quoted by the method.
+	 */
+	public function renameTable($table, $newName)
+	{
+		echo "    > rename table $table to $newName ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->renameTable($table, $newName);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for dropping a DB table.
+	 * @param string $table the table to be dropped. The name will be properly quoted by the method.
+	 */
+	public function dropTable($table)
+	{
+		echo "    > drop table $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->dropTable($table);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for truncating a DB table.
+	 * @param string $table the table to be truncated. The name will be properly quoted by the method.
+	 */
+	public function truncateTable($table)
+	{
+		echo "    > truncate table $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->truncateTable($table);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for adding a new DB column.
+	 * @param string $table the table that the new column will be added to. The table name will be properly quoted by the method.
+	 * @param string $column the name of the new column. The name will be properly quoted by the method.
+	 * @param string $type the column type. The {@link getColumnType} method will be invoked to convert abstract column type (if any)
+	 * into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+	 * For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.
+	 */
+	public function addColumn($table, $column, $type)
+	{
+		echo "    > add column $column $type to table $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->addColumn($table, $column, $type);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for dropping a DB column.
+	 * @param string $table the table whose column is to be dropped. The name will be properly quoted by the method.
+	 * @param string $column the name of the column to be dropped. The name will be properly quoted by the method.
+	 */
+	public function dropColumn($table, $column)
+	{
+		echo "    > drop column $column from table $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->dropColumn($table, $column);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for renaming a column.
+	 * @param string $table the table whose column is to be renamed. The name will be properly quoted by the method.
+	 * @param string $name the old name of the column. The name will be properly quoted by the method.
+	 * @param string $newName the new name of the column. The name will be properly quoted by the method.
+	 */
+	public function renameColumn($table, $name, $newName)
+	{
+		echo "    > rename column $name in table $table to $newName ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->renameColumn($table, $name, $newName);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for changing the definition of a column.
+	 * @param string $table the table whose column is to be changed. The table name will be properly quoted by the method.
+	 * @param string $column the name of the column to be changed. The name will be properly quoted by the method.
+	 * @param string $type the new column type. The {@link getColumnType} method will be invoked to convert abstract column type (if any)
+	 * into the physical one. Anything that is not recognized as abstract type will be kept in the generated SQL.
+	 * For example, 'string' will be turned into 'varchar(255)', while 'string not null' will become 'varchar(255) not null'.
+	 */
+	public function alterColumn($table, $column, $type)
+	{
+		echo "    > alter column $column in table $table to $type ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->alterColumn($table, $column, $type);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds a SQL statement for adding a foreign key constraint to an existing table.
+	 * The method will properly quote the table and column names.
+	 * @param string $name the name of the foreign key constraint.
+	 * @param string $table the table that the foreign key constraint will be added to.
+	 * @param string $columns the name of the column to that the constraint will be added on. If there are multiple columns, separate them with commas.
+	 * @param string $refTable the table that the foreign key references to.
+	 * @param string $refColumns the name of the column that the foreign key references to. If there are multiple columns, separate them with commas.
+	 * @param string $delete the ON DELETE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL
+	 * @param string $update the ON UPDATE option. Most DBMS support these options: RESTRICT, CASCADE, NO ACTION, SET DEFAULT, SET NULL
+	 */
+	public function addForeignKey($name, $table, $columns, $refTable, $refColumns, $delete=null, $update=null)
+	{
+		echo "    > add foreign key $name: $table ($columns) references $refTable ($refColumns) ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->addForeignKey($name, $table, $columns, $refTable, $refColumns, $delete, $update);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds a SQL statement for dropping a foreign key constraint.
+	 * @param string $name the name of the foreign key constraint to be dropped. The name will be properly quoted by the method.
+	 * @param string $table the table whose foreign is to be dropped. The name will be properly quoted by the method.
+	 */
+	public function dropForeignKey($name, $table)
+	{
+		echo "    > drop foreign key $name from table $table ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->dropForeignKey($name, $table);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for creating a new index.
+	 * @param string $name the name of the index. The name will be properly quoted by the method.
+	 * @param string $table the table that the new index will be created for. The table name will be properly quoted by the method.
+	 * @param string $column the column(s) that should be included in the index. If there are multiple columns, please separate them
+	 * by commas. The column names will be properly quoted by the method.
+	 * @param boolean $unique whether to add UNIQUE constraint on the created index.
+	 */
+	public function createIndex($name, $table, $column, $unique=false)
+	{
+		echo "    > create".($unique ? ' unique':'')." index $name on $table ($column) ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->createIndex($name, $table, $column, $unique);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for dropping an index.
+	 * @param string $name the name of the index to be dropped. The name will be properly quoted by the method.
+	 * @param string $table the table whose index is to be dropped. The name will be properly quoted by the method.
+	 */
+	public function dropIndex($name, $table)
+	{
+		echo "    > drop index $name ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->dropIndex($name, $table);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Refreshed schema cache for a table
+	 * @param string $table name of the table to refresh
+	 * @since 1.1.9
+	 */
+	public function refreshTableSchema($table)
+	{
+		echo "    > refresh table $table schema cache ...";
+		$time=microtime(true);
+		$this->getDbConnection()->getSchema()->getTable($table,true);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for creating a primary key, supports composite primary keys.
+	 * @param string $name name of the primary key constraint to add
+	 * @param string $table name of the table to add primary key to
+	 * @param string $columns name of the column to utilise as primary key. If there are multiple columns, separate them with commas.
+	 * @since 1.1.13
+	 */
+	public function addPrimaryKey($name,$table,$columns)
+	{
+		echo "    > alter table $table add constraint $name primary key ($columns) ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->addPrimaryKey($name,$table,$columns);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+
+	/**
+	 * Builds and executes a SQL statement for removing a primary key, supports composite primary keys.
+	 * @param string $name name of the constraint to remove
+	 * @param string $table name of the table to remove primary key from
+	 * @since 1.1.13
+	 */
+	public function dropPrimaryKey($name,$table)
+	{
+		echo "    > alter table $table drop primary key $name ...";
+		$time=microtime(true);
+		$this->getDbConnection()->createCommand()->dropPrimaryKey($name,$table);
+		echo " done (time: ".sprintf('%.3f', microtime(true)-$time)."s)\n";
+	}
+}

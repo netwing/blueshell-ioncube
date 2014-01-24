@@ -1,31 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-cjPETrUugvY4EW==
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * An abstract means of writing data.
+ *
+ * Classes implementing this interface may use a subsystem which requires less
+ * memory than working with large strings of data.
+ *
+ * @package    Swift
+ * @subpackage ByteStream
+ * @author     Chris Corbyn
+ */
+interface Swift_InputByteStream
+{
+    /**
+     * Writes $bytes to the end of the stream.
+     *
+     * Writing may not happen immediately if the stream chooses to buffer.  If
+     * you want to write these bytes with immediate effect, call {@link commit()}
+     * after calling write().
+     *
+     * This method returns the sequence ID of the write (i.e. 1 for first, 2 for
+     * second, etc etc).
+     *
+     * @param string $bytes
+     *
+     * @return integer
+     *
+     * @throws Swift_IoException
+     */
+    public function write($bytes);
+
+    /**
+     * For any bytes that are currently buffered inside the stream, force them
+     * off the buffer.
+     *
+     * @throws Swift_IoException
+     */
+    public function commit();
+
+    /**
+     * Attach $is to this stream.
+     *
+     * The stream acts as an observer, receiving all data that is written.
+     * All {@link write()} and {@link flushBuffers()} operations will be mirrored.
+     *
+     * @param Swift_InputByteStream $is
+     */
+    public function bind(Swift_InputByteStream $is);
+
+    /**
+     * Remove an already bound stream.
+     *
+     * If $is is not bound, no errors will be raised.
+     * If the stream currently has any buffered data it will be written to $is
+     * before unbinding occurs.
+     *
+     * @param Swift_InputByteStream $is
+     */
+    public function unbind(Swift_InputByteStream $is);
+
+    /**
+     * Flush the contents of the stream (empty it) and set the internal pointer
+     * to the beginning.
+     *
+     * @throws Swift_IoException
+     */
+    public function flushBuffers();
+}

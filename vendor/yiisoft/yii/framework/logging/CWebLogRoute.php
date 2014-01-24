@@ -1,51 +1,85 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CWebLogRoute class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CWebLogRoute shows the log content in Web page.
+ *
+ * The log content can appear either at the end of the current Web page
+ * or in FireBug console window (if {@link showInFireBug} is set true).
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.logging
+ * @since 1.0
+ */
+class CWebLogRoute extends CLogRoute
+{
+	/**
+	 * @var boolean whether the log should be displayed in FireBug instead of browser window. Defaults to false.
+	 */
+	public $showInFireBug=false;
+	/**
+	 * @var boolean whether the log should be ignored in FireBug for ajax calls. Defaults to true.
+	 * This option should be used carefully, because an ajax call returns all output as a result data.
+	 * For example if the ajax call expects a json type result any output from the logger will cause ajax call to fail.
+	 */
+	public $ignoreAjaxInFireBug=true;
+	/**
+	 * @var boolean whether the log should be ignored in FireBug for Flash/Flex calls. Defaults to true.
+	 * This option should be used carefully, because an Flash/Flex call returns all output as a result data.
+	 * For example if the Flash/Flex call expects an XML type result any output from the logger will cause Flash/Flex call to fail.
+	 * @since 1.1.11
+	 */
+	public $ignoreFlashInFireBug=true;
+	/**
+	 * @var boolean whether the log should be collapsed by default in Firebug. Defaults to false.
+	 * @since 1.1.13.
+	 */
+	public $collapsedInFireBug=false;
+
+	/**
+	 * Displays the log messages.
+	 * @param array $logs list of log messages
+	 */
+	public function processLogs($logs)
+	{
+		$this->render('log',$logs);
+	}
+
+	/**
+	 * Renders the view.
+	 * @param string $view the view name (file name without extension). The file is assumed to be located under framework/data/views.
+	 * @param array $data data to be passed to the view
+	 */
+	protected function render($view,$data)
+	{
+		$app=Yii::app();
+		$isAjax=$app->getRequest()->getIsAjaxRequest();
+		$isFlash=$app->getRequest()->getIsFlashRequest();
+
+		if($this->showInFireBug)
+		{
+			// do not output anything for ajax and/or flash requests if needed
+			if($isAjax && $this->ignoreAjaxInFireBug || $isFlash && $this->ignoreFlashInFireBug)
+				return;
+			$view.='-firebug';
+			if(($userAgent=$app->getRequest()->getUserAgent())!==null && preg_match('/msie [5-9]/i',$userAgent))
+			{
+				echo '<script type="text/javascript">';
+				echo file_get_contents(dirname(__FILE__).'/../vendors/console-normalizer/normalizeconsole.min.js');
+				echo "</script>\n";
+			}
+		}
+		elseif(!($app instanceof CWebApplication) || $isAjax || $isFlash)
+			return;
+
+		$viewFile=YII_PATH.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.$view.'.php';
+		include($app->findLocalizedFile($viewFile,'en'));
+	}
+}

@@ -1,84 +1,149 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+$class=get_class($model);
+Yii::app()->clientScript->registerScript('gii.model',"
+$('#{$class}_connectionId').change(function(){
+	var tableName=$('#{$class}_tableName');
+	tableName.autocomplete('option', 'source', []);
+	$.ajax({
+		url: '".Yii::app()->getUrlManager()->createUrl('gii/model/getTableNames')."',
+		data: {db: this.value},
+		dataType: 'json'
+	}).done(function(data){
+		tableName.autocomplete('option', 'source', data);
+	});
+});
+$('#{$class}_modelClass').change(function(){
+	$(this).data('changed',$(this).val()!='');
+});
+$('#{$class}_tableName').bind('keyup change', function(){
+	var model=$('#{$class}_modelClass');
+	var tableName=$(this).val();
+	if(tableName.substring(tableName.length-1)!='*') {
+		$('.form .row.model-class').show();
+	}
+	else {
+		$('#{$class}_modelClass').val('');
+		$('.form .row.model-class').hide();
+	}
+	if(!model.data('changed')) {
+		var i=tableName.lastIndexOf('.');
+		if(i>=0)
+			tableName=tableName.substring(i+1);
+		var tablePrefix=$('#{$class}_tablePrefix').val();
+		if(tablePrefix!='' && tableName.indexOf(tablePrefix)==0)
+			tableName=tableName.substring(tablePrefix.length);
+		var modelClass='';
+		$.each(tableName.split('_'), function() {
+			if(this.length>0)
+				modelClass+=this.substring(0,1).toUpperCase()+this.substring(1);
+		});
+		model.val(modelClass);
+	}
+});
+$('.form .row.model-class').toggle($('#{$class}_tableName').val().substring($('#{$class}_tableName').val().length-1)!='*');
+");
 ?>
-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
-awoeNoA5ELWleRBeO4nnbPE8MPfJELwmDtTWfW==
+<h1>Model Generator</h1>
+
+<p>This generator generates a model class for the specified database table.</p>
+
+<?php $form=$this->beginWidget('CCodeForm', array('model'=>$model)); ?>
+
+	<div class="row sticky">
+		<?php echo $form->labelEx($model, 'connectionId')?>
+		<?php echo $form->textField($model, 'connectionId', array('size'=>65))?>
+		<div class="tooltip">
+		The database component that should be used.
+		</div>
+		<?php echo $form->error($model,'connectionId'); ?>
+	</div>
+	<div class="row sticky">
+		<?php echo $form->labelEx($model,'tablePrefix'); ?>
+		<?php echo $form->textField($model,'tablePrefix', array('size'=>65)); ?>
+		<div class="tooltip">
+		This refers to the prefix name that is shared by all database tables.
+		Setting this property mainly affects how model classes are named based on
+		the table names. For example, a table prefix <code>tbl_</code> with a table name <code>tbl_post</code>
+		will generate a model class named <code>Post</code>.
+		<br/>
+		Leave this field empty if your database tables do not use common prefix.
+		</div>
+		<?php echo $form->error($model,'tablePrefix'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'tableName'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiAutoComplete',array(
+			'model'=>$model,
+			'attribute'=>'tableName',
+			'name'=>'tableName',
+			'source'=>Yii::app()->hasComponent($model->connectionId) ? array_keys(Yii::app()->{$model->connectionId}->schema->getTables()) : array(),
+			'options'=>array(
+				'minLength'=>'0',
+				'focus'=>new CJavaScriptExpression('function(event,ui) {
+					$("#'.CHtml::activeId($model,'tableName').'").val(ui.item.label).change();
+					return false;
+				}')
+			),
+			'htmlOptions'=>array(
+				'id'=>CHtml::activeId($model,'tableName'),
+				'size'=>'65',
+				'data-tooltip'=>'#tableName-tooltip'
+			),
+		)); ?>
+		<div class="tooltip" id="tableName-tooltip">
+		This refers to the table name that a new model class should be generated for
+		(e.g. <code>tbl_user</code>). It can contain schema name, if needed (e.g. <code>public.tbl_post</code>).
+		You may also enter <code>*</code> (or <code>schemaName.*</code> for a particular DB schema)
+		to generate a model class for EVERY table.
+		</div>
+		<?php echo $form->error($model,'tableName'); ?>
+	</div>
+	<div class="row model-class">
+		<?php echo $form->label($model,'modelClass',array('required'=>true)); ?>
+		<?php echo $form->textField($model,'modelClass', array('size'=>65)); ?>
+		<div class="tooltip">
+		This is the name of the model class to be generated (e.g. <code>Post</code>, <code>Comment</code>).
+		It is case-sensitive.
+		</div>
+		<?php echo $form->error($model,'modelClass'); ?>
+	</div>
+	<div class="row sticky">
+		<?php echo $form->labelEx($model,'baseClass'); ?>
+		<?php echo $form->textField($model,'baseClass',array('size'=>65)); ?>
+		<div class="tooltip">
+			This is the class that the new model class will extend from.
+			Please make sure the class exists and can be autoloaded.
+		</div>
+		<?php echo $form->error($model,'baseClass'); ?>
+	</div>
+	<div class="row sticky">
+		<?php echo $form->labelEx($model,'modelPath'); ?>
+		<?php echo $form->textField($model,'modelPath', array('size'=>65)); ?>
+		<div class="tooltip">
+			This refers to the directory that the new model class file should be generated under.
+			It should be specified in the form of a path alias, for example, <code>application.models</code>.
+		</div>
+		<?php echo $form->error($model,'modelPath'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'buildRelations'); ?>
+		<?php echo $form->checkBox($model,'buildRelations'); ?>
+		<div class="tooltip">
+			Whether relations should be generated for the model class.
+			In order to generate relations, full scan of the whole database is needed.
+			You should disable this option if your database contains too many tables.
+		</div>
+		<?php echo $form->error($model,'buildRelations'); ?>
+	</div>
+	<div class="row">
+		<?php echo $form->labelEx($model,'commentsAsLabels'); ?>
+		<?php echo $form->checkBox($model,'commentsAsLabels'); ?>
+		<div class="tooltip">
+			Whether comments specified for the table columns should be used as the new model's attribute labels.
+			In case your RDBMS doesn't support feature of commenting columns or column comment wasn't set,
+			column name would be used as the attribute name base.
+		</div>
+		<?php echo $form->error($model,'commentsAsLabels'); ?>
+	</div>
+
+<?php $this->endWidget(); ?>

@@ -1,46 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Command;
+
+use Symfony\Component\Console\Tester\CommandTester;
+use Symfony\Component\Console\Command\HelpCommand;
+use Symfony\Component\Console\Command\ListCommand;
+use Symfony\Component\Console\Application;
+
+class HelpCommandTest extends \PHPUnit_Framework_TestCase
+{
+    public function testExecuteForCommandAlias()
+    {
+        $command = new HelpCommand();
+        $command->setApplication(new Application());
+        $commandTester = new CommandTester($command);
+        $commandTester->execute(array('command_name' => 'li'));
+        $this->assertRegExp('/list \[--xml\] \[--raw\] \[--format="\.\.\."\] \[namespace\]/', $commandTester->getDisplay(), '->execute() returns a text help for the given command alias');
+    }
+
+    public function testExecuteForCommand()
+    {
+        $command = new HelpCommand();
+        $commandTester = new CommandTester($command);
+        $command->setCommand(new ListCommand());
+        $commandTester->execute(array());
+        $this->assertRegExp('/list \[--xml\] \[--raw\] \[--format="\.\.\."\] \[namespace\]/', $commandTester->getDisplay(), '->execute() returns a text help for the given command');
+    }
+
+    public function testExecuteForCommandWithXmlOption()
+    {
+        $command = new HelpCommand();
+        $commandTester = new CommandTester($command);
+        $command->setCommand(new ListCommand());
+        $commandTester->execute(array('--format' => 'xml'));
+        $this->assertRegExp('/<command/', $commandTester->getDisplay(), '->execute() returns an XML help text if --xml is passed');
+    }
+
+    public function testExecuteForApplicationCommand()
+    {
+        $application = new Application();
+        $commandTester = new CommandTester($application->get('help'));
+        $commandTester->execute(array('command_name' => 'list'));
+        $this->assertRegExp('/list \[--xml\] \[--raw\] \[--format="\.\.\."\] \[namespace\]/', $commandTester->getDisplay(), '->execute() returns a text help for the given command');
+    }
+
+    public function testExecuteForApplicationCommandWithXmlOption()
+    {
+        $application = new Application();
+        $commandTester = new CommandTester($application->get('help'));
+        $commandTester->execute(array('command_name' => 'list', '--format' => 'xml'));
+        $this->assertRegExp('/list \[--xml\] \[--raw\] \[--format="\.\.\."\] \[namespace\]/', $commandTester->getDisplay(), '->execute() returns a text help for the given command');
+        $this->assertRegExp('/<command/', $commandTester->getDisplay(), '->execute() returns an XML help text if --format=xml is passed');
+    }
+}

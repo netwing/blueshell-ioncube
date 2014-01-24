@@ -1,33 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Behat\Mink\ClassLoader;
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * A class loader that uses a mapping file to look up paths.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class MapFileClassLoader
+{
+    private $map = array();
+
+    /**
+     * Constructor.
+     *
+     * @param string $file Path to class mapping file
+     */
+    public function __construct($file)
+    {
+        $this->map = require $file;
+    }
+
+    /**
+     * Registers this instance as an autoloader.
+     *
+     * @param Boolean $prepend Whether to prepend the autoloader or not
+     */
+    public function register($prepend = false)
+    {
+        spl_autoload_register(array($this, 'loadClass'), true, $prepend);
+    }
+
+    /**
+     * Loads the given class or interface.
+     *
+     * @param string $class The name of the class
+     */
+    public function loadClass($class)
+    {
+        if ('\\' === $class[0]) {
+            $class = substr($class, 1);
+        }
+
+        if (isset($this->map[$class])) {
+            require $this->map[$class];
+        }
+    }
+
+    /**
+     * Finds the path to the file where the class is defined.
+     *
+     * @param string $class The name of the class
+     *
+     * @return string|null The path, if found
+     */
+    public function findFile($class)
+    {
+        if ('\\' === $class[0]) {
+            $class = substr($class, 1);
+        }
+
+        if (isset($this->map[$class])) {
+            return $this->map[$class];
+        }
+    }
+}

@@ -1,109 +1,250 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Formatter;
+
+/**
+ * Formatter class for console output.
+ *
+ * @author Konstantin Kudryashov <ever.zet@gmail.com>
+ *
+ * @api
+ */
+class OutputFormatter implements OutputFormatterInterface
+{
+    /**
+     * The pattern to phrase the format.
+     */
+    const FORMAT_PATTERN = '#(\\\\?)<(/?)([a-z][a-z0-9_=;-]*)?>((?: [^<\\\\]+ | (?!<(?:/?[a-z]|/>)). | .(?<=\\\\<) )*)#isx';
+
+    private $decorated;
+    private $styles = array();
+    private $styleStack;
+
+    /**
+     * Escapes "<" special char in given text.
+     *
+     * @param string $text Text to escape
+     *
+     * @return string Escaped text
+     */
+    public static function escape($text)
+    {
+        return preg_replace('/([^\\\\]?)</is', '$1\\<', $text);
+    }
+
+    /**
+     * Initializes console output formatter.
+     *
+     * @param Boolean          $decorated Whether this formatter should actually decorate strings
+     * @param OutputFormatterStyleInterface[] $styles    Array of "name => FormatterStyle" instances
+     *
+     * @api
+     */
+    public function __construct($decorated = false, array $styles = array())
+    {
+        $this->decorated = (Boolean) $decorated;
+
+        $this->setStyle('error', new OutputFormatterStyle('white', 'red'));
+        $this->setStyle('info', new OutputFormatterStyle('green'));
+        $this->setStyle('comment', new OutputFormatterStyle('yellow'));
+        $this->setStyle('question', new OutputFormatterStyle('black', 'cyan'));
+
+        foreach ($styles as $name => $style) {
+            $this->setStyle($name, $style);
+        }
+
+        $this->styleStack = new OutputFormatterStyleStack();
+    }
+
+    /**
+     * Sets the decorated flag.
+     *
+     * @param Boolean $decorated Whether to decorate the messages or not
+     *
+     * @api
+     */
+    public function setDecorated($decorated)
+    {
+        $this->decorated = (Boolean) $decorated;
+    }
+
+    /**
+     * Gets the decorated flag.
+     *
+     * @return Boolean true if the output will decorate messages, false otherwise
+     *
+     * @api
+     */
+    public function isDecorated()
+    {
+        return $this->decorated;
+    }
+
+    /**
+     * Sets a new style.
+     *
+     * @param string                        $name  The style name
+     * @param OutputFormatterStyleInterface $style The style instance
+     *
+     * @api
+     */
+    public function setStyle($name, OutputFormatterStyleInterface $style)
+    {
+        $this->styles[strtolower($name)] = $style;
+    }
+
+    /**
+     * Checks if output formatter has style with specified name.
+     *
+     * @param string $name
+     *
+     * @return Boolean
+     *
+     * @api
+     */
+    public function hasStyle($name)
+    {
+        return isset($this->styles[strtolower($name)]);
+    }
+
+    /**
+     * Gets style options from style with specified name.
+     *
+     * @param string $name
+     *
+     * @return OutputFormatterStyleInterface
+     *
+     * @throws \InvalidArgumentException When style isn't defined
+     *
+     * @api
+     */
+    public function getStyle($name)
+    {
+        if (!$this->hasStyle($name)) {
+            throw new \InvalidArgumentException(sprintf('Undefined style: %s', $name));
+        }
+
+        return $this->styles[strtolower($name)];
+    }
+
+    /**
+     * Formats a message according to the given styles.
+     *
+     * @param string $message The message to style
+     *
+     * @return string The styled message
+     *
+     * @api
+     */
+    public function format($message)
+    {
+        $message = preg_replace_callback(self::FORMAT_PATTERN, array($this, 'replaceStyle'), $message);
+
+        return str_replace('\\<', '<', $message);
+    }
+
+    /**
+     * @return OutputFormatterStyleStack
+     */
+    public function getStyleStack()
+    {
+        return $this->styleStack;
+    }
+
+    /**
+     * Replaces style of the output.
+     *
+     * All escaped tags and tags that reference unknown styles are kept as is.
+     *
+     * @param array $match
+     *
+     * @return string The replaced style
+     */
+    private function replaceStyle($match)
+    {
+        // we got "\<" escaped char
+        if ('\\' === $match[1]) {
+            return $this->applyCurrentStyle($match[0]);
+        }
+
+        if ('' === $match[3]) {
+            if ('/' === $match[2]) {
+                // we got "</>" tag
+                $this->styleStack->pop();
+
+                return $this->applyCurrentStyle($match[4]);
+            }
+
+            // we got "<>" tag
+            return '<>'.$this->applyCurrentStyle($match[4]);
+        }
+
+        if (isset($this->styles[strtolower($match[3])])) {
+            $style = $this->styles[strtolower($match[3])];
+        } else {
+            $style = $this->createStyleFromString($match[3]);
+
+            if (false === $style) {
+                return $this->applyCurrentStyle($match[0]);
+            }
+        }
+
+        if ('/' === $match[2]) {
+            $this->styleStack->pop($style);
+        } else {
+            $this->styleStack->push($style);
+        }
+
+        return $this->applyCurrentStyle($match[4]);
+    }
+
+    /**
+     * Tries to create new style instance from string.
+     *
+     * @param string $string
+     *
+     * @return OutputFormatterStyle|Boolean false if string is not format string
+     */
+    private function createStyleFromString($string)
+    {
+        if (!preg_match_all('/([^=]+)=([^;]+)(;|$)/', strtolower($string), $matches, PREG_SET_ORDER)) {
+            return false;
+        }
+
+        $style = new OutputFormatterStyle();
+        foreach ($matches as $match) {
+            array_shift($match);
+
+            if ('fg' == $match[0]) {
+                $style->setForeground($match[1]);
+            } elseif ('bg' == $match[0]) {
+                $style->setBackground($match[1]);
+            } else {
+                $style->setOption($match[1]);
+            }
+        }
+
+        return $style;
+    }
+
+    /**
+     * Applies current style from stack to text, if must be applied.
+     *
+     * @param string $text Input text
+     *
+     * @return string Styled text
+     */
+    private function applyCurrentStyle($text)
+    {
+        return $this->isDecorated() && strlen($text) > 0 ? $this->styleStack->getCurrent()->apply($text) : $text;
+    }
+}

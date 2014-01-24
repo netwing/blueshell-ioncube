@@ -1,55 +1,111 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-7UQHSBSNZmNOyw6u4rHzgF13AO8=
+<?php
+namespace Codeception\Module;
+
+/**
+ * Connects to [memcached](http://www.memcached.org/) using either _Memcache_ or _Memcached_ extension.
+ *
+ * Performs a cleanup by flushing all values after each test run.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **beta**
+ * * Contact: codecept@davert.mail.ua
+ *
+ * ## Configuration
+ *
+ * * host: localhost - memcached host to connect
+ * * port: 11211 - default memcached port.
+ *
+ * Be sure you don't use the production server to connect.
+ *
+ * ## Public Properties
+ *
+ * * memcache - instance of Memcache object
+ *
+ */
+
+class Memcache extends \Codeception\Module
+{
+    /**
+     * @var \Memcache
+     */
+    public $memcache = null;
+
+    protected $config = array('host' => 'localhost', 'port' => 11211);
+
+    public function _before(\Codeception\TestCase $test)
+    {
+        if (class_exists('\Memcache')) {
+            $this->memcache = new \Memcache;
+            $this->memcache->close();
+            $this->memcache->connect($this->config['host'], $this->config['port']);
+        } elseif (class_exists('\Memcached')) {
+            $this->memcache = new \Memcached;
+            $this->memcache->addServer($this->config['host'], $this->config['port']);
+        } else {
+            throw new \Codeception\Exception\ModuleConfig(__CLASS__,'Memcache classes not loaded');
+        }
+    }
+
+    public function _after(\Codeception\TestCase $test)
+    {
+        $this->memcache->flush();
+    }
+
+    /**
+     * Grabs value from memcached by key
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $users_count = $I->grabValueFromMemcached('users_count');
+     * ?>
+     * ```
+     *
+     * @param $key
+     * @return array|string
+     */
+    public function grabValueFromMemcached($key)
+    {
+        $value = $this->memcache->get($key);
+        $this->debugSection("Value", $value);
+        return $value;
+    }
+
+    /**
+     * Checks item in Memcached exists and the same as expected.
+     *
+     * @param $key
+     * @param $value
+     */
+    public function seeInMemcached($key, $value = false)
+    {
+        $actual = $this->memcache->get($key);
+        $this->debugSection("Value", $actual);
+        $this->assertEquals($value, $actual);
+    }
+
+    /**
+     * Checks item in Memcached doesn't exist or is the same as expected.
+     *
+     * @param $key
+     * @param bool $value
+     */
+    public function dontSeeInMemcached($key, $value = false)
+    {
+        $actual = $this->memcache->get($key);
+        $this->debugSection("Value", $actual);
+        $this->assertNotEquals($value, $actual);
+    }
+
+    /**
+     * Flushes all Memcached data.
+     */
+    public function clearMemcache()
+    {
+        $this->memcache->flush();
+    }
+
+}

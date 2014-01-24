@@ -1,34 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_NamingConventions_ValidFunctionNameSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+if (class_exists('Generic_Sniffs_PHP_LowerCaseConstantSniff', true) === false) {
+    $error = 'Class Generic_Sniffs_PHP_LowerCaseConstantSniff not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+if (class_exists('Generic_Sniffs_PHP_UpperCaseConstantSniff', true) === false) {
+    $error = 'Class Generic_Sniffs_PHP_UpperCaseConstantSniff not found';
+    throw new PHP_CodeSniffer_Exception($error);
+}
+
+/**
+ * Squiz_Sniffs_NamingConventions_ConstantCaseSniff.
+ *
+ * Ensures TRUE, FALSE and NULL are uppercase for PHP and lowercase for JS.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_NamingConventions_ConstantCaseSniff extends Generic_Sniffs_PHP_LowerCaseConstantSniff
+{
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        if ($phpcsFile->tokenizerType === 'JS') {
+            parent::process($phpcsFile, $stackPtr);
+        } else {
+            $sniff = new Generic_Sniffs_PHP_UpperCaseConstantSniff;
+            $sniff->process($phpcsFile, $stackPtr);
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

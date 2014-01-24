@@ -1,38 +1,45 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/HHGzPFlRSP0k7MzISVndBcWGxeJNv2iS8mC0cuWDZq5ebJAu0eBCnLi0SBveCoiIXbBrdL
-XU3vTlipdIyKt/LU+Fcg/XGv6TSWadieGZyH7KRCkqcb2cOUCkVnCHuTzfOtglj07OW9Sn7f2Y8d
-oc2p1iNcLuBuuSfhe/BIVX4PS2NYZG7R/wa4O+gCIqzSYVgBQjRR7yO7KWpy2WWT9CVU/PtchMAR
-xoe02jtRwb9/9ryt8/t9SwzHAE4xzt2gh9fl143SQNIqODvyC/5/262bNVNOmIl74LL0x8m2M+m3
-ihz+9VfiK4QYUEv0pBV62FNKWCHFJJZN+0DFngPxjv3q1+ElIWm1LFIF1z5lgRjo0i37XCm04IjI
-yaz2AP3zYUxiSIHoruU7P+z6pkN5aLWOgST0GQSsG6oUZfQSddclCEI/x+kBREMehYrV+jCKjJ13
-p/El9wWdtBnhvVtnPYhVXbFCp31wprIi8ac7HxSdAs+TfXBd1SsOu5J5fn8r9WXYvs6AHp3NDHkb
-Vx//aTrG5xeQtQa7ZrVInrooWQ5pdkdiDLx2m3kVsLhw9fWZgCsnEqZt2EZxzkMPxv+Y+YmU9t37
-BFYvNWVJ3qf38LQ3ImVdpFgBrhgL2Ifx2p+d5C12JL0/l9U7cvH2hjo1Tq7U230oxKAt14CitDI0
-hi+WamfJPdIvbJZR6wOiAq5C2driPUaz/04TwYww0rF72gBtfo81L9QXITQQlT/b8ZfTY0JoIa1F
-dgAL96dtbLqdKFK2kYl2jkZkfL3pJLu1U6XNnMwHohws+cU+t2x0UICkC2CW39NgsGS86j+i+rfM
-Mk+9K1IctagOPmGiEyF/9HKhzjGJf71Zlr6EL+x7VuU5o/3S2az/pHrImeAFBKIGQ6qXhUfMoPwN
-96ZKgleP4MDk1w5yKKj6CH7/EttQPJERb6clhCet0WgLKwFDy/v/urdi2sRWLu37epExnnWAPSP4
-G4DY3LJsq1ZZ4USBWesfbqV+HP4SuQZaBJMbrC0fWHbUQ05yvSKZeUVJPNRVxcE5hC8jtrKtAjgi
-wjdRiiAnCXVvvSC1YqpW4gkL4GwxG0YzBax4KCOLIrUgvR6BJe2RzDUwnvg3cIAS93wb/zG0TDwA
-sKZJyt8pI6FAWtED05N6PN07m40LOyMDpbnYKQ6Ta59PxiM39LRgCBvSNAGNl+fnrxavxDj+axWz
-ILdZWE5Dn6VWnQ3T9PnPuqN3xbnFHOnmE7RIs8IB97hAHfQ9nIob72AAHK1KB/v/J+VyDU/1bWrh
-VybeBQKillnEJN/fs9k3YN3cprJEs/9P/RPvYpcdpzb/PYNkvLocG8/ChlMLg57eEF2SgZVaba4S
-4jNmYw9BO1i+09eoZkvWXXflmOPPhf99SGhF9yAYO382B0NkDcWLOO+rU3CwgKfazsP+Sc7kPGSV
-a2fBnJJ0JjQrN1ja+k1BpcGfq6AuECo2QSaXIkLeQCrA3C0MBi4D+W00LXzvbZhKmm8jos5JlbUb
-2hdV1fOoiHjMQJDbSZIjRYRe7GxHq5LRKf5Rc3FOr6SxREbeK6oJZ2LMa+DFIDxi3PlseR0znoQg
-8aOc1odEY9s5fJGl+iwkPefvk4pv6FZf8NtSjY9LU6geWyAoci6nRdcFNdKNR05mN49iJ9de243y
-ofZDVe1LxM/xqtPgIpzuBLzSKxkjNusN70tKq38Zs8AMJ7C53xI/1TEqIZ7c+aN5IMNeLkjhbggV
-kE7jl79xQzvnGCjiOlPjDCtUWz+nupj/jAYjcDCJu8hGThC03pbExtlUmjrPn8j7NA0i4q6KqH3e
-vMxETRSe4LylY2Lo0exJT8XiG4xrHl5IK4A3iDg0UG2XjGv8P9ljMopyG5nGn0TDQEUKIghtsu/O
-ahoonSncm5Alg3Ciq5Ns9PVHxUqDigN/Wfi1YjTVZlYDwZLa0o2oD7goQ9zCjkh/mVaT62S1ucM7
-ajoMy6HhzljDTKub/WC9apdW96KXqGBgbSgW0KXHzCJjEh6SiTJjobmbYsXLaFKUToikQ89S7IDV
-6d7Yrd8efDvu1eLmDlLuSqYwToT7sFI7ctngI4bDs8xxMcvpKKtSx+4N4rlZh8mhmc9LQzCKCXdF
-vUoVMrLCNcB4voWDPOoaQeWDOgcgDSu/cPNwNPlUD4oGxSSFpFad2bMzW4VISxtntCKMuJiYcm6e
-n20emAl0eTmb+QrtV4f9YXDufb5VLFfTGEP19vnLr8tB3wSvTvqGmcZwR2zojISVNexPrjbydLqi
-+lBVUTues6nVm1/BlU2bjMCElGXhaLENieV9JozTQJOgtTZRU+b3r8ym4ORZ9HUn2UFkEaLvz8Ve
-hDq/MaKcMFYLTdNMenMXiQtgSIKa1HMv4F/lo//pi7VTKvpb4Xv9PCMz9TUJIJ1WW15cOnL2+Tu0
-aTTpSBUQWA/HzjE6NesC7mTkS+/Dz6VJzFtcJjHFaqHDal32RxCVf1xgCmvSIYxp92Q13kTmyxGQ
-8MqtUK+5FQ9jhn4dnzaLpZMpDhY2Zx3Gt62iJ8fB4sN3SZSdPfF+jnY+YpsdnO4knvjK4jke5ksr
-ny6bEsVnbG==
+<?php
+
+namespace Monolog\Handler;
+
+use Monolog\TestCase;
+
+class UdpSocketTest extends TestCase
+{
+    public function testWeDoNotSplitShortMessages()
+    {
+        $socket = $this->getMock('\Monolog\Handler\SyslogUdp\UdpSocket', array('send'), array('lol', 'lol'));
+
+        $socket->expects($this->at(0))
+            ->method('send')
+            ->with("HEADER: The quick brown fox jumps over the lazy dog");
+
+        $socket->write("The quick brown fox jumps over the lazy dog", "HEADER: ");
+    }
+
+    public function testWeSplitLongMessages()
+    {
+        $socket = $this->getMock('\Monolog\Handler\SyslogUdp\UdpSocket', array('send'), array('lol', 'lol'));
+
+        $socket->expects($this->at(1))
+            ->method('send')
+            ->with("The quick brown fox jumps over the lazy dog");
+
+        $aStringOfLength2048 = str_repeat("derp", 2048/4);
+
+        $socket->write($aStringOfLength2048."The quick brown fox jumps over the lazy dog");
+    }
+
+    public function testAllSplitMessagesHasAHeader()
+    {
+        $socket = $this->getMock('\Monolog\Handler\SyslogUdp\UdpSocket', array('send'), array('lol', 'lol'));
+
+        $socket->expects($this->exactly(5))
+            ->method('send')
+            ->with($this->stringStartsWith("HEADER"));
+
+        $aStringOfLength8192 = str_repeat("derp", 2048);
+
+        $socket->write($aStringOfLength8192, "HEADER");
+    }
+}

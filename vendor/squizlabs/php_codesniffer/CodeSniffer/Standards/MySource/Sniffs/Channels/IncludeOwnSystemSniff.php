@@ -1,53 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Ensures that a system does not include itself.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Ensures that a system does not include itself.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer_MySource
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class MySource_Sniffs_Channels_IncludeOwnSystemSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_DOUBLE_COLON);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $fileName = $phpcsFile->getFilename();
+        $matches  = array();
+        if (preg_match('|/systems/(.*)/([^/]+)?actions.inc$|i', $fileName, $matches) === 0) {
+            // Not an actions file.
+            return;
+        }
+
+        $ownClass = $matches[2];
+        $tokens   = $phpcsFile->getTokens();
+
+        $typeName = $phpcsFile->findNext(T_CONSTANT_ENCAPSED_STRING, ($stackPtr + 2), null, false, true);
+        $typeName = trim($tokens[$typeName]['content'], " '");
+        switch (strtolower($tokens[($stackPtr + 1)]['content'])) {
+        case 'includesystem' :
+            $included = strtolower($typeName);
+            break;
+        case 'includeasset' :
+            $included = strtolower($typeName).'assettype';
+            break;
+        case 'includewidget' :
+            $included = strtolower($typeName).'widgettype';
+            break;
+        default:
+            return;
+        }
+
+        if ($included === strtolower($ownClass)) {
+            $error = "You do not need to include \"%s\" from within the system's own actions file";
+            $data  = array($ownClass);
+            $phpcsFile->addError($error, $stackPtr, 'NotRequired', $data);
+        }
+
+    }//end process()
+
+
+    /**
+     * Determines the included class name from given token.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where this token was found.
+     * @param array                $tokens    The array of file tokens.
+     * @param int                  $stackPtr  The position in the tokens array of the
+     *                                        potentially included class.
+     *
+     * @return string
+     */
+    protected function getIncludedClassFromToken(
+        PHP_CodeSniffer_File $phpcsFile,
+        array $tokens,
+        $stackPtr
+    ) {
+        
+
+        return false;
+
+    }//end getIncludedClassFromToken()
+
+
+}//end class
+
 ?>
-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
-YqXRAsuHlGlK+ypc9gufey2MJEq=

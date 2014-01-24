@@ -1,132 +1,840 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Auto-generated class. CPP syntax highlighting
+ * 
+ * 
+ * Thanks to Aaron Kalin for initial
+ * implementation of this highlighter
+ *      
+ *
+ * PHP version 4 and 5
+ *
+ * LICENSE: This source file is subject to version 3.0 of the PHP license
+ * that is available through the world-wide-web at the following URI:
+ * http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+ * the PHP License and are unable to obtain it through the web, please
+ * send a note to license@php.net so we can mail you a copy immediately.
+ *
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @link       http://pear.php.net/package/Text_Highlighter
+ * @category   Text
+ * @package    Text_Highlighter
+ * @version    generated from: : cpp.xml,v 1.1 2007/06/03 02:35:28 ssttoo Exp 
+ * @author Aaron Kalin
+ * @author Andrey Demenev <demenev@gmail.com>
+ *
+ */
+
+/**
+ * Auto-generated class. CPP syntax highlighting
+ *
+ * @author Aaron Kalin
+ * @author Andrey Demenev <demenev@gmail.com>
+ * @category   Text
+ * @package    Text_Highlighter
+ * @copyright  2004-2006 Andrey Demenev
+ * @license    http://www.php.net/license/3_0.txt  PHP License
+ * @version    Release: 0.7.1
+ * @link       http://pear.php.net/package/Text_Highlighter
+ */
+class  Text_Highlighter_CPP extends Text_Highlighter
+{
+    var $_language = 'cpp';
+
+    /**
+     *  Constructor
+     *
+     * @param array  $options
+     * @access public
+     */
+    function __construct($options=array())
+    {
+
+        $this->_options = $options;
+        $this->_regs = array (
+            -1 => '/((?i)")|((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)[a-z_]\\w*)|((?mi)^[ \\t]*#include)|((?mii)^[ \\t]*#[ \\t]*[a-z]+)|((?i)\\d*\\.?\\d+)|((?i)\\/\\*)|((?i)\\/\\/.+)/',
+            0 => '/((?i)\\\\)/',
+            1 => '/((?i)")|((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)[a-z_]\\w*)|((?i)\\b0[xX][\\da-f]+)|((?i)\\b\\d\\d*|\\b0\\b)|((?i)\\b0[0-7]+)|((?i)\\b(\\d*\\.\\d+)|(\\d+\\.\\d*))|((?mi)^[ \\t]*#include)|((?mii)^[ \\t]*#[ \\t]*[a-z]+)|((?i)\\d*\\.?\\d+)|((?i)\\/\\*)|((?i)\\/\\/.+)/',
+            2 => '/((?i)")|((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)[a-z_]\\w*)|((?i)\\b0[xX][\\da-f]+)|((?i)\\b\\d\\d*|\\b0\\b)|((?i)\\b0[0-7]+)|((?i)\\b(\\d*\\.\\d+)|(\\d+\\.\\d*))|((?mi)^[ \\t]*#include)|((?mii)^[ \\t]*#[ \\t]*[a-z]+)|((?i)\\d*\\.?\\d+)|((?i)\\/\\*)|((?i)\\/\\/.+)/',
+            3 => '/((?i)")|((?i)\\{)|((?i)\\()|((?i)\\[)|((?i)[a-z_]\\w*)|((?i)\\b0[xX][\\da-f]+)|((?i)\\b\\d\\d*|\\b0\\b)|((?i)\\b0[0-7]+)|((?i)\\b(\\d*\\.\\d+)|(\\d+\\.\\d*))|((?mi)^[ \\t]*#include)|((?mii)^[ \\t]*#[ \\t]*[a-z]+)|((?i)\\d*\\.?\\d+)|((?i)\\/\\*)|((?i)\\/\\/.+)/',
+            4 => '//',
+            5 => '/((?i)")|((?i)<)/',
+            6 => '/((?i)")|((?i)\\{)|((?i)\\()|((?i)[a-z_]\\w*)|((?i)\\b0[xX][\\da-f]+)|((?i)\\b\\d\\d*|\\b0\\b)|((?i)\\b0[0-7]+)|((?i)\\b(\\d*\\.\\d+)|(\\d+\\.\\d*))|((?i)\\/\\*)|((?i)\\/\\/.+)/',
+            7 => '/((?i)\\$\\w+\\s*:.+\\$)/',
+            8 => '/((?i)\\$\\w+\\s*:.+\\$)/',
+        );
+        $this->_counts = array (
+            -1 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 0,
+                9 => 0,
+            ),
+            0 => 
+            array (
+                0 => 0,
+            ),
+            1 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 2,
+                9 => 0,
+                10 => 0,
+                11 => 0,
+                12 => 0,
+                13 => 0,
+            ),
+            2 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 2,
+                9 => 0,
+                10 => 0,
+                11 => 0,
+                12 => 0,
+                13 => 0,
+            ),
+            3 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 0,
+                8 => 2,
+                9 => 0,
+                10 => 0,
+                11 => 0,
+                12 => 0,
+                13 => 0,
+            ),
+            4 => 
+            array (
+            ),
+            5 => 
+            array (
+                0 => 0,
+                1 => 0,
+            ),
+            6 => 
+            array (
+                0 => 0,
+                1 => 0,
+                2 => 0,
+                3 => 0,
+                4 => 0,
+                5 => 0,
+                6 => 0,
+                7 => 2,
+                8 => 0,
+                9 => 0,
+            ),
+            7 => 
+            array (
+                0 => 0,
+            ),
+            8 => 
+            array (
+                0 => 0,
+            ),
+        );
+        $this->_delim = array (
+            -1 => 
+            array (
+                0 => 'quotes',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'brackets',
+                4 => '',
+                5 => 'prepro',
+                6 => 'prepro',
+                7 => '',
+                8 => 'mlcomment',
+                9 => 'comment',
+            ),
+            0 => 
+            array (
+                0 => '',
+            ),
+            1 => 
+            array (
+                0 => 'quotes',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'brackets',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+                9 => 'prepro',
+                10 => 'prepro',
+                11 => '',
+                12 => 'mlcomment',
+                13 => 'comment',
+            ),
+            2 => 
+            array (
+                0 => 'quotes',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'brackets',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+                9 => 'prepro',
+                10 => 'prepro',
+                11 => '',
+                12 => 'mlcomment',
+                13 => 'comment',
+            ),
+            3 => 
+            array (
+                0 => 'quotes',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => 'brackets',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => '',
+                9 => 'prepro',
+                10 => 'prepro',
+                11 => '',
+                12 => 'mlcomment',
+                13 => 'comment',
+            ),
+            4 => 
+            array (
+            ),
+            5 => 
+            array (
+                0 => 'quotes',
+                1 => 'quotes',
+            ),
+            6 => 
+            array (
+                0 => 'quotes',
+                1 => 'brackets',
+                2 => 'brackets',
+                3 => '',
+                4 => '',
+                5 => '',
+                6 => '',
+                7 => '',
+                8 => 'mlcomment',
+                9 => 'comment',
+            ),
+            7 => 
+            array (
+                0 => '',
+            ),
+            8 => 
+            array (
+                0 => '',
+            ),
+        );
+        $this->_inner = array (
+            -1 => 
+            array (
+                0 => 'string',
+                1 => 'code',
+                2 => 'code',
+                3 => 'code',
+                4 => 'identifier',
+                5 => 'prepro',
+                6 => 'code',
+                7 => 'number',
+                8 => 'mlcomment',
+                9 => 'comment',
+            ),
+            0 => 
+            array (
+                0 => 'special',
+            ),
+            1 => 
+            array (
+                0 => 'string',
+                1 => 'code',
+                2 => 'code',
+                3 => 'code',
+                4 => 'identifier',
+                5 => 'number',
+                6 => 'number',
+                7 => 'number',
+                8 => 'number',
+                9 => 'prepro',
+                10 => 'code',
+                11 => 'number',
+                12 => 'mlcomment',
+                13 => 'comment',
+            ),
+            2 => 
+            array (
+                0 => 'string',
+                1 => 'code',
+                2 => 'code',
+                3 => 'code',
+                4 => 'identifier',
+                5 => 'number',
+                6 => 'number',
+                7 => 'number',
+                8 => 'number',
+                9 => 'prepro',
+                10 => 'code',
+                11 => 'number',
+                12 => 'mlcomment',
+                13 => 'comment',
+            ),
+            3 => 
+            array (
+                0 => 'string',
+                1 => 'code',
+                2 => 'code',
+                3 => 'code',
+                4 => 'identifier',
+                5 => 'number',
+                6 => 'number',
+                7 => 'number',
+                8 => 'number',
+                9 => 'prepro',
+                10 => 'code',
+                11 => 'number',
+                12 => 'mlcomment',
+                13 => 'comment',
+            ),
+            4 => 
+            array (
+            ),
+            5 => 
+            array (
+                0 => 'string',
+                1 => 'string',
+            ),
+            6 => 
+            array (
+                0 => 'string',
+                1 => 'code',
+                2 => 'code',
+                3 => 'identifier',
+                4 => 'number',
+                5 => 'number',
+                6 => 'number',
+                7 => 'number',
+                8 => 'mlcomment',
+                9 => 'comment',
+            ),
+            7 => 
+            array (
+                0 => 'inlinedoc',
+            ),
+            8 => 
+            array (
+                0 => 'inlinedoc',
+            ),
+        );
+        $this->_end = array (
+            0 => '/(?i)"/',
+            1 => '/(?i)\\}/',
+            2 => '/(?i)\\)/',
+            3 => '/(?i)\\]/',
+            4 => '/(?i)>/',
+            5 => '/(?mi)(?<!\\\\)$/',
+            6 => '/(?mi)(?<!\\\\)$/',
+            7 => '/(?i)\\*\\//',
+            8 => '/(?mi)$/',
+        );
+        $this->_states = array (
+            -1 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => -1,
+                5 => 5,
+                6 => 6,
+                7 => -1,
+                8 => 7,
+                9 => 8,
+            ),
+            0 => 
+            array (
+                0 => -1,
+            ),
+            1 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => -1,
+                8 => -1,
+                9 => 5,
+                10 => 6,
+                11 => -1,
+                12 => 7,
+                13 => 8,
+            ),
+            2 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => -1,
+                8 => -1,
+                9 => 5,
+                10 => 6,
+                11 => -1,
+                12 => 7,
+                13 => 8,
+            ),
+            3 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => 3,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => -1,
+                8 => -1,
+                9 => 5,
+                10 => 6,
+                11 => -1,
+                12 => 7,
+                13 => 8,
+            ),
+            4 => 
+            array (
+            ),
+            5 => 
+            array (
+                0 => 0,
+                1 => 4,
+            ),
+            6 => 
+            array (
+                0 => 0,
+                1 => 1,
+                2 => 2,
+                3 => -1,
+                4 => -1,
+                5 => -1,
+                6 => -1,
+                7 => -1,
+                8 => 7,
+                9 => 8,
+            ),
+            7 => 
+            array (
+                0 => -1,
+            ),
+            8 => 
+            array (
+                0 => -1,
+            ),
+        );
+        $this->_keywords = array (
+            -1 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => 
+                array (
+                    'reserved' => '/^(and|and_eq|asm|bitand|bitor|break|case|catch|compl|const_cast|continue|default|delete|do|dynamic_cast|else|for|fortran|friend|goto|if|new|not|not_eq|operator|or|or_eq|private|protected|public|reinterpret_cast|return|sizeof|static_cast|switch|this|throw|try|typeid|using|while|xor|xor_eq|false|true)$/',
+                    'types' => '/^(auto|bool|char|class|const|double|enum|explicit|export|extern|float|inline|int|long|mutable|namespace|register|short|signed|static|struct|template|typedef|typename|union|unsigned|virtual|void|volatile|wchar_t)$/',
+                    'Common Macros' => '/^(NULL|TRUE|FALSE|MAX|MIN|__LINE__|__DATA__|__FILE__|__TIME__|__STDC__)$/',
+                ),
+                5 => -1,
+                6 => -1,
+                7 => 
+                array (
+                ),
+                8 => -1,
+                9 => -1,
+            ),
+            0 => 
+            array (
+                0 => 
+                array (
+                ),
+            ),
+            1 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => 
+                array (
+                    'reserved' => '/^(and|and_eq|asm|bitand|bitor|break|case|catch|compl|const_cast|continue|default|delete|do|dynamic_cast|else|for|fortran|friend|goto|if|new|not|not_eq|operator|or|or_eq|private|protected|public|reinterpret_cast|return|sizeof|static_cast|switch|this|throw|try|typeid|using|while|xor|xor_eq|false|true)$/',
+                    'types' => '/^(auto|bool|char|class|const|double|enum|explicit|export|extern|float|inline|int|long|mutable|namespace|register|short|signed|static|struct|template|typedef|typename|union|unsigned|virtual|void|volatile|wchar_t)$/',
+                    'Common Macros' => '/^(NULL|TRUE|FALSE|MAX|MIN|__LINE__|__DATA__|__FILE__|__TIME__|__STDC__)$/',
+                ),
+                5 => 
+                array (
+                ),
+                6 => 
+                array (
+                ),
+                7 => 
+                array (
+                ),
+                8 => 
+                array (
+                ),
+                9 => -1,
+                10 => -1,
+                11 => 
+                array (
+                ),
+                12 => -1,
+                13 => -1,
+            ),
+            2 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => 
+                array (
+                    'reserved' => '/^(and|and_eq|asm|bitand|bitor|break|case|catch|compl|const_cast|continue|default|delete|do|dynamic_cast|else|for|fortran|friend|goto|if|new|not|not_eq|operator|or|or_eq|private|protected|public|reinterpret_cast|return|sizeof|static_cast|switch|this|throw|try|typeid|using|while|xor|xor_eq|false|true)$/',
+                    'types' => '/^(auto|bool|char|class|const|double|enum|explicit|export|extern|float|inline|int|long|mutable|namespace|register|short|signed|static|struct|template|typedef|typename|union|unsigned|virtual|void|volatile|wchar_t)$/',
+                    'Common Macros' => '/^(NULL|TRUE|FALSE|MAX|MIN|__LINE__|__DATA__|__FILE__|__TIME__|__STDC__)$/',
+                ),
+                5 => 
+                array (
+                ),
+                6 => 
+                array (
+                ),
+                7 => 
+                array (
+                ),
+                8 => 
+                array (
+                ),
+                9 => -1,
+                10 => -1,
+                11 => 
+                array (
+                ),
+                12 => -1,
+                13 => -1,
+            ),
+            3 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => -1,
+                4 => 
+                array (
+                    'reserved' => '/^(and|and_eq|asm|bitand|bitor|break|case|catch|compl|const_cast|continue|default|delete|do|dynamic_cast|else|for|fortran|friend|goto|if|new|not|not_eq|operator|or|or_eq|private|protected|public|reinterpret_cast|return|sizeof|static_cast|switch|this|throw|try|typeid|using|while|xor|xor_eq|false|true)$/',
+                    'types' => '/^(auto|bool|char|class|const|double|enum|explicit|export|extern|float|inline|int|long|mutable|namespace|register|short|signed|static|struct|template|typedef|typename|union|unsigned|virtual|void|volatile|wchar_t)$/',
+                    'Common Macros' => '/^(NULL|TRUE|FALSE|MAX|MIN|__LINE__|__DATA__|__FILE__|__TIME__|__STDC__)$/',
+                ),
+                5 => 
+                array (
+                ),
+                6 => 
+                array (
+                ),
+                7 => 
+                array (
+                ),
+                8 => 
+                array (
+                ),
+                9 => -1,
+                10 => -1,
+                11 => 
+                array (
+                ),
+                12 => -1,
+                13 => -1,
+            ),
+            4 => 
+            array (
+            ),
+            5 => 
+            array (
+                0 => -1,
+                1 => -1,
+            ),
+            6 => 
+            array (
+                0 => -1,
+                1 => -1,
+                2 => -1,
+                3 => 
+                array (
+                    'reserved' => '/^(and|and_eq|asm|bitand|bitor|break|case|catch|compl|const_cast|continue|default|delete|do|dynamic_cast|else|for|fortran|friend|goto|if|new|not|not_eq|operator|or|or_eq|private|protected|public|reinterpret_cast|return|sizeof|static_cast|switch|this|throw|try|typeid|using|while|xor|xor_eq|false|true)$/',
+                    'types' => '/^(auto|bool|char|class|const|double|enum|explicit|export|extern|float|inline|int|long|mutable|namespace|register|short|signed|static|struct|template|typedef|typename|union|unsigned|virtual|void|volatile|wchar_t)$/',
+                    'Common Macros' => '/^(NULL|TRUE|FALSE|MAX|MIN|__LINE__|__DATA__|__FILE__|__TIME__|__STDC__)$/',
+                ),
+                4 => 
+                array (
+                ),
+                5 => 
+                array (
+                ),
+                6 => 
+                array (
+                ),
+                7 => 
+                array (
+                ),
+                8 => -1,
+                9 => -1,
+            ),
+            7 => 
+            array (
+                0 => 
+                array (
+                ),
+            ),
+            8 => 
+            array (
+                0 => 
+                array (
+                ),
+            ),
+        );
+        $this->_parts = array (
+            0 => 
+            array (
+                0 => NULL,
+            ),
+            1 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+                6 => NULL,
+                7 => NULL,
+                8 => NULL,
+                9 => NULL,
+                10 => NULL,
+                11 => NULL,
+                12 => NULL,
+                13 => NULL,
+            ),
+            2 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+                6 => NULL,
+                7 => NULL,
+                8 => NULL,
+                9 => NULL,
+                10 => NULL,
+                11 => NULL,
+                12 => NULL,
+                13 => NULL,
+            ),
+            3 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+                6 => NULL,
+                7 => NULL,
+                8 => NULL,
+                9 => NULL,
+                10 => NULL,
+                11 => NULL,
+                12 => NULL,
+                13 => NULL,
+            ),
+            4 => 
+            array (
+            ),
+            5 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+            ),
+            6 => 
+            array (
+                0 => NULL,
+                1 => NULL,
+                2 => NULL,
+                3 => NULL,
+                4 => NULL,
+                5 => NULL,
+                6 => NULL,
+                7 => NULL,
+                8 => NULL,
+                9 => NULL,
+            ),
+            7 => 
+            array (
+                0 => NULL,
+            ),
+            8 => 
+            array (
+                0 => NULL,
+            ),
+        );
+        $this->_subst = array (
+            -1 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+                9 => false,
+            ),
+            0 => 
+            array (
+                0 => false,
+            ),
+            1 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+                9 => false,
+                10 => false,
+                11 => false,
+                12 => false,
+                13 => false,
+            ),
+            2 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+                9 => false,
+                10 => false,
+                11 => false,
+                12 => false,
+                13 => false,
+            ),
+            3 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+                9 => false,
+                10 => false,
+                11 => false,
+                12 => false,
+                13 => false,
+            ),
+            4 => 
+            array (
+            ),
+            5 => 
+            array (
+                0 => false,
+                1 => false,
+            ),
+            6 => 
+            array (
+                0 => false,
+                1 => false,
+                2 => false,
+                3 => false,
+                4 => false,
+                5 => false,
+                6 => false,
+                7 => false,
+                8 => false,
+                9 => false,
+            ),
+            7 => 
+            array (
+                0 => false,
+            ),
+            8 => 
+            array (
+                0 => false,
+            ),
+        );
+        $this->_conditions = array (
+        );
+        $this->_kwmap = array (
+            'reserved' => 'reserved',
+            'types' => 'types',
+            'Common Macros' => 'prepro',
+        );
+        $this->_defClass = 'code';
+        $this->_checkDefines();
+    }
+    
+}

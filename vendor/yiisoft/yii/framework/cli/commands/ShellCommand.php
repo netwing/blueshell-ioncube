@@ -1,81 +1,146 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * ShellCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * ShellCommand executes the specified Web application and provides a shell for interaction.
+ *
+ * @property string $help The help information for the shell command.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.cli.commands
+ * @since 1.0
+ */
+class ShellCommand extends CConsoleCommand
+{
+	/**
+	 * @return string the help information for the shell command
+	 */
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  yiic shell [entry-script | config-file]
+
+DESCRIPTION
+  This command allows you to interact with a Web application
+  on the command line. It also provides tools to automatically
+  generate new controllers, views and data models.
+
+  It is recommended that you execute this command under
+  the directory that contains the entry script file of
+  the Web application.
+
+PARAMETERS
+ * entry-script | config-file: optional, the path to
+   the entry script file or the configuration file for
+   the Web application. If not given, it is assumed to be
+   the 'index.php' file under the current directory.
+
+EOD;
+	}
+
+	/**
+	 * Execute the action.
+	 * @param array $args command line parameters specific for this command
+	 */
+	public function run($args)
+	{
+		if(!isset($args[0]))
+			$args[0]='index.php';
+		$entryScript=isset($args[0]) ? $args[0] : 'index.php';
+		if(($entryScript=realpath($args[0]))===false || !is_file($entryScript))
+			$this->usageError("{$args[0]} does not exist or is not an entry script file.");
+
+		// fake the web server setting
+		$cwd=getcwd();
+		chdir(dirname($entryScript));
+		$_SERVER['SCRIPT_NAME']='/'.basename($entryScript);
+		$_SERVER['REQUEST_URI']=$_SERVER['SCRIPT_NAME'];
+		$_SERVER['SCRIPT_FILENAME']=$entryScript;
+		$_SERVER['HTTP_HOST']='localhost';
+		$_SERVER['SERVER_NAME']='localhost';
+		$_SERVER['SERVER_PORT']=80;
+
+		// reset context to run the web application
+		restore_error_handler();
+		restore_exception_handler();
+		Yii::setApplication(null);
+		Yii::setPathOfAlias('application',null);
+
+		ob_start();
+		$config=require($entryScript);
+		ob_end_clean();
+
+		// oops, the entry script turns out to be a config file
+		if(is_array($config))
+		{
+			chdir($cwd);
+			$_SERVER['SCRIPT_NAME']='/index.php';
+			$_SERVER['REQUEST_URI']=$_SERVER['SCRIPT_NAME'];
+			$_SERVER['SCRIPT_FILENAME']=$cwd.DIRECTORY_SEPARATOR.'index.php';
+			Yii::createWebApplication($config);
+		}
+
+		restore_error_handler();
+		restore_exception_handler();
+
+		$yiiVersion=Yii::getVersion();
+		echo <<<EOD
+Yii Interactive Tool v1.1 (based on Yii v{$yiiVersion})
+Please type 'help' for help. Type 'exit' to quit.
+EOD;
+		$this->runShell();
+	}
+
+	protected function runShell()
+	{
+		// disable E_NOTICE so that the shell is more friendly
+		error_reporting(E_ALL ^ E_NOTICE);
+
+		$_runner_=new CConsoleCommandRunner;
+		$_runner_->addCommands(dirname(__FILE__).'/shell');
+		$_runner_->addCommands(Yii::getPathOfAlias('application.commands.shell'));
+		if(($_path_=@getenv('YIIC_SHELL_COMMAND_PATH'))!==false)
+			$_runner_->addCommands($_path_);
+		$_commands_=$_runner_->commands;
+		$log=Yii::app()->log;
+
+		while(($_line_=$this->prompt("\n>>"))!==false)
+		{
+			$_line_=trim($_line_);
+			if($_line_==='exit')
+				return;
+			try
+			{
+				$_args_=preg_split('/[\s,]+/',rtrim($_line_,';'),-1,PREG_SPLIT_NO_EMPTY);
+				if(isset($_args_[0]) && isset($_commands_[$_args_[0]]))
+				{
+					$_command_=$_runner_->createCommand($_args_[0]);
+					array_shift($_args_);
+					$_command_->init();
+					$_command_->run($_args_);
+				}
+				else
+					echo eval($_line_.';');
+			}
+			catch(Exception $e)
+			{
+				if($e instanceof ShellException)
+					echo $e->getMessage();
+				else
+					echo $e;
+			}
+		}
+	}
+}
+
+class ShellException extends CException
+{
+}

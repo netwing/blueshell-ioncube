@@ -1,67 +1,183 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-09AJm+yl/4tLmObOSBBxeSbvcAq=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * An ID MIME Header for something like Message-ID or Content-ID.
+ *
+ * @package    Swift
+ * @subpackage Mime
+ * @author     Chris Corbyn
+ */
+class Swift_Mime_Headers_IdentificationHeader extends Swift_Mime_Headers_AbstractHeader
+{
+    /**
+     * The IDs used in the value of this Header.
+     *
+     * This may hold multiple IDs or just a single ID.
+     *
+     * @var string[]
+     */
+    private $_ids = array();
+
+    /**
+     * Creates a new IdentificationHeader with the given $name and $id.
+     *
+     * @param string             $name
+     * @param Swift_Mime_Grammar $grammar
+     */
+    public function __construct($name, Swift_Mime_Grammar $grammar)
+    {
+        $this->setFieldName($name);
+        parent::__construct($grammar);
+    }
+
+    /**
+     * Get the type of Header that this instance represents.
+     *
+     * @see TYPE_TEXT, TYPE_PARAMETERIZED, TYPE_MAILBOX
+     * @see TYPE_DATE, TYPE_ID, TYPE_PATH
+     *
+     * @return int
+     */
+    public function getFieldType()
+    {
+        return self::TYPE_ID;
+    }
+
+    /**
+     * Set the model for the field body.
+     *
+     * This method takes a string ID, or an array of IDs.
+     *
+     * @param mixed $model
+     *
+     * @throws Swift_RfcComplianceException
+     */
+    public function setFieldBodyModel($model)
+    {
+        $this->setId($model);
+    }
+
+    /**
+     * Get the model for the field body.
+     *
+     * This method returns an array of IDs
+     *
+     * @return array
+     */
+    public function getFieldBodyModel()
+    {
+        return $this->getIds();
+    }
+
+    /**
+     * Set the ID used in the value of this header.
+     *
+     * @param string|array $id
+     *
+     * @throws Swift_RfcComplianceException
+     */
+    public function setId($id)
+    {
+        $this->setIds(is_array($id) ? $id : array($id));
+    }
+
+    /**
+     * Get the ID used in the value of this Header.
+     *
+     * If multiple IDs are set only the first is returned.
+     *
+     * @return string
+     */
+    public function getId()
+    {
+        if (count($this->_ids) > 0) {
+            return $this->_ids[0];
+        }
+    }
+
+    /**
+     * Set a collection of IDs to use in the value of this Header.
+     *
+     * @param string[] $ids
+     *
+     * @throws Swift_RfcComplianceException
+     */
+    public function setIds(array $ids)
+    {
+        $actualIds = array();
+
+        foreach ($ids as $id) {
+            $this->_assertValidId($id);
+            $actualIds[] = $id;
+        }
+
+        $this->clearCachedValueIf($this->_ids != $actualIds);
+        $this->_ids = $actualIds;
+    }
+
+    /**
+     * Get the list of IDs used in this Header.
+     *
+     * @return string[]
+     */
+    public function getIds()
+    {
+        return $this->_ids;
+    }
+
+    /**
+     * Get the string value of the body in this Header.
+     *
+     * This is not necessarily RFC 2822 compliant since folding white space will
+     * not be added at this stage (see {@see toString()} for that).
+     *
+     * @see toString()
+     *
+     * @return string
+     *
+     * @throws Swift_RfcComplianceException
+     */
+    public function getFieldBody()
+    {
+        if (!$this->getCachedValue()) {
+            $angleAddrs = array();
+
+            foreach ($this->_ids as $id) {
+                $angleAddrs[] = '<' . $id . '>';
+            }
+
+            $this->setCachedValue(implode(' ', $angleAddrs));
+        }
+
+        return $this->getCachedValue();
+    }
+
+    /**
+     * Throws an Exception if the id passed does not comply with RFC 2822.
+     *
+     * @param string $id
+     *
+     * @throws Swift_RfcComplianceException
+     */
+    private function _assertValidId($id)
+    {
+        if (!preg_match(
+            '/^' . $this->getGrammar()->getDefinition('id-left') . '@' .
+            $this->getGrammar()->getDefinition('id-right') . '$/D',
+            $id
+            ))
+        {
+            throw new Swift_RfcComplianceException(
+                'Invalid ID given <' . $id . '>'
+                );
+        }
+    }
+}

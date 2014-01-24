@@ -1,34 +1,41 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<!-- start profiling summary -->
+<table class="yiiLog" width="100%" cellpadding="2" style="border-spacing:1px;font:11px Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;color:#666666;">
+    <tr>
+        <th style="background:black;color:white;" colspan="6">
+        Profiling Samenvatting Rapport
+        (Tijd: <?php echo sprintf('%0.5f',Yii::getLogger()->getExecutionTime()); ?>s,
+        Geheugen: <?php echo number_format(Yii::getLogger()->getMemoryUsage()/1024); ?>KB)
+        </th>
+    </tr>
+    <tr style="background-color: #ccc;">
+        <th>Procedure</th>
+        <th>Aantal</th>
+        <th>Totaal (s)</th>
+        <th>Gem. (s)</th>
+        <th>Min. (s)</th>
+        <th>Max. (s)</th>
+    </tr>
+<?php
+foreach($data as $index=>$entry)
+{
+    $color=($index%2)?'#F5F5F5':'#FFFFFF';
+    $proc=CHtml::encode($entry[0]);
+    $min=sprintf('%0.5f',$entry[2]);
+    $max=sprintf('%0.5f',$entry[3]);
+    $total=sprintf('%0.5f',$entry[4]);
+    $average=sprintf('%0.5f',$entry[4]/$entry[1]);
+
+    echo <<<EOD
+    <tr style="background:{$color}">
+        <td>{$proc}</td>
+        <td align="center">{$entry[1]}</td>
+        <td align="center">{$total}</td>
+        <td align="center">{$average}</td>
+        <td align="center">{$min}</td>
+        <td align="center">{$max}</td>
+    </tr>
+EOD;
+}
 ?>
-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
+</table>
+<!-- end of profiling summary -->

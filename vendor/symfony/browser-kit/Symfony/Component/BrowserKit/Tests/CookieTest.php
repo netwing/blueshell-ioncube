@@ -1,121 +1,177 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-iQsYPbjT
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\BrowserKit\Tests;
+
+use Symfony\Component\BrowserKit\Cookie;
+
+class CookieTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @dataProvider getTestsForToFromString
+     */
+    public function testToFromString($cookie, $url = null)
+    {
+        $this->assertEquals($cookie, (string) Cookie::fromString($cookie, $url));
+    }
+
+    public function getTestsForToFromString()
+    {
+        return array(
+            array('foo=bar; path=/'),
+            array('foo=bar; path=/foo'),
+            array('foo=bar; domain=google.com; path=/'),
+            array('foo=bar; domain=example.com; path=/; secure', 'https://example.com/'),
+            array('foo=bar; path=/; httponly'),
+            array('foo=bar; domain=google.com; path=/foo; secure; httponly', 'https://google.com/'),
+            array('foo=bar=baz; path=/'),
+            array('foo=bar%3Dbaz; path=/'),
+        );
+    }
+
+    public function testFromStringIgnoreSecureFlag()
+    {
+        $this->assertFalse(Cookie::fromString('foo=bar; secure')->isSecure());
+        $this->assertFalse(Cookie::fromString('foo=bar; secure', 'http://example.com/')->isSecure());
+    }
+
+    /**
+     * @dataProvider getExpireCookieStrings
+     */
+    public function testFromStringAcceptsSeveralExpiresDateFormats($cookie)
+    {
+        $this->assertEquals(1596185377, Cookie::fromString($cookie)->getExpiresTime());
+    }
+
+    public function getExpireCookieStrings()
+    {
+        return array(
+            array('foo=bar; expires=Fri, 31-Jul-2020 08:49:37 GMT'),
+            array('foo=bar; expires=Fri, 31 Jul 2020 08:49:37 GMT'),
+            array('foo=bar; expires=Fri, 31-07-2020 08:49:37 GMT'),
+            array('foo=bar; expires=Fri, 31-07-20 08:49:37 GMT'),
+            array('foo=bar; expires=Friday, 31-Jul-20 08:49:37 GMT'),
+            array('foo=bar; expires=Fri Jul 31 08:49:37 2020'),
+            array('foo=bar; expires=\'Fri Jul 31 08:49:37 2020\''),
+            array('foo=bar; expires=Friday July 31st 2020, 08:49:37 GMT'),
+        );
+    }
+
+    public function testFromStringWithCapitalization()
+    {
+        $this->assertEquals('Foo=Bar; path=/', (string) Cookie::fromString('Foo=Bar'));
+        $this->assertEquals('foo=bar; expires=Fri, 31 Dec 2010 23:59:59 GMT; path=/', (string) Cookie::fromString('foo=bar; Expires=Fri, 31 Dec 2010 23:59:59 GMT'));
+        $this->assertEquals('foo=bar; domain=www.example.org; path=/; httponly', (string) Cookie::fromString('foo=bar; DOMAIN=www.example.org; HttpOnly'));
+    }
+
+    public function testFromStringWithUrl()
+    {
+        $this->assertEquals('foo=bar; domain=www.example.com; path=/', (string) Cookie::FromString('foo=bar', 'http://www.example.com/'));
+        $this->assertEquals('foo=bar; domain=www.example.com; path=/foo', (string) Cookie::FromString('foo=bar', 'http://www.example.com/foo/bar'));
+        $this->assertEquals('foo=bar; domain=www.example.com; path=/', (string) Cookie::FromString('foo=bar; path=/', 'http://www.example.com/foo/bar'));
+        $this->assertEquals('foo=bar; domain=www.myotherexample.com; path=/', (string) Cookie::FromString('foo=bar; domain=www.myotherexample.com', 'http://www.example.com/'));
+    }
+
+    public function testFromStringThrowsAnExceptionIfCookieIsNotValid()
+    {
+        $this->setExpectedException('InvalidArgumentException');
+        Cookie::FromString('foo');
+    }
+
+    public function testFromStringThrowsAnExceptionIfCookieDateIsNotValid()
+    {
+        $this->setExpectedException('InvalidArgumentException');
+        Cookie::FromString('foo=bar; expires=Flursday July 31st 2020, 08:49:37 GMT');
+    }
+
+    public function testFromStringThrowsAnExceptionIfUrlIsNotValid()
+    {
+        $this->setExpectedException('InvalidArgumentException');
+        Cookie::FromString('foo=bar', 'foobar');
+    }
+
+    public function testGetName()
+    {
+        $cookie = new Cookie('foo', 'bar');
+        $this->assertEquals('foo', $cookie->getName(), '->getName() returns the cookie name');
+    }
+
+    public function testGetValue()
+    {
+        $cookie = new Cookie('foo', 'bar');
+        $this->assertEquals('bar', $cookie->getValue(), '->getValue() returns the cookie value');
+
+        $cookie = new Cookie('foo', 'bar%3Dbaz', null, '/', '', false, true, true); // raw value
+        $this->assertEquals('bar=baz', $cookie->getValue(), '->getValue() returns the urldecoded cookie value');
+    }
+
+    public function testGetRawValue()
+    {
+        $cookie = new Cookie('foo', 'bar=baz'); // decoded value
+        $this->assertEquals('bar%3Dbaz', $cookie->getRawValue(), '->getRawValue() returns the urlencoded cookie value');
+        $cookie = new Cookie('foo', 'bar%3Dbaz', null, '/', '', false, true, true); // raw value
+        $this->assertEquals('bar%3Dbaz', $cookie->getRawValue(), '->getRawValue() returns the non-urldecoded cookie value');
+    }
+
+    public function testGetPath()
+    {
+        $cookie = new Cookie('foo', 'bar', 0);
+        $this->assertEquals('/', $cookie->getPath(), '->getPath() returns / is no path is defined');
+
+        $cookie = new Cookie('foo', 'bar', 0, '/foo');
+        $this->assertEquals('/foo', $cookie->getPath(), '->getPath() returns the cookie path');
+    }
+
+    public function testGetDomain()
+    {
+        $cookie = new Cookie('foo', 'bar', 0, '/', 'foo.com');
+        $this->assertEquals('foo.com', $cookie->getDomain(), '->getDomain() returns the cookie domain');
+    }
+
+    public function testIsSecure()
+    {
+        $cookie = new Cookie('foo', 'bar');
+        $this->assertFalse($cookie->isSecure(), '->isSecure() returns false if not defined');
+
+        $cookie = new Cookie('foo', 'bar', 0, '/', 'foo.com', true);
+        $this->assertTrue($cookie->isSecure(), '->isSecure() returns the cookie secure flag');
+    }
+
+    public function testIsHttponly()
+    {
+        $cookie = new Cookie('foo', 'bar');
+        $this->assertTrue($cookie->isHttpOnly(), '->isHttpOnly() returns false if not defined');
+
+        $cookie = new Cookie('foo', 'bar', 0, '/', 'foo.com', false, true);
+        $this->assertTrue($cookie->isHttpOnly(), '->isHttpOnly() returns the cookie httponly flag');
+    }
+
+    public function testGetExpiresTime()
+    {
+        $cookie = new Cookie('foo', 'bar');
+        $this->assertNull($cookie->getExpiresTime(), '->getExpiresTime() returns the expires time');
+
+        $cookie = new Cookie('foo', 'bar', $time = time() - 86400);
+        $this->assertEquals($time, $cookie->getExpiresTime(), '->getExpiresTime() returns the expires time');
+    }
+
+    public function testIsExpired()
+    {
+        $cookie = new Cookie('foo', 'bar');
+        $this->assertFalse($cookie->isExpired(), '->isExpired() returns false when the cookie never expires (null as expires time)');
+
+        $cookie = new Cookie('foo', 'bar', time() - 86400);
+        $this->assertTrue($cookie->isExpired(), '->isExpired() returns true when the cookie is expired');
+
+        $cookie = new Cookie('foo', 'bar', 0);
+        $this->assertFalse($cookie->isExpired());
+    }
+}

@@ -1,29 +1,33 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>400 不正リクエスト</title>
+<style type="text/css">
+/*<![CDATA[*/
+body {font-family:Verdana, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic ProN', sans-serif; font-weight:normal; color:black; background-color:white;}
+h1 {font-weight:normal;font-size:18pt;color:red }
+h2 {font-weight:normal;font-size:14pt;color:maroon }
+h3 {font-weight:bold;font-size:11pt}
+p {font-weight:normal;color:black;font-size:9pt;margin-top: -5px}
+.version {color: gray;font-size:8pt;border-top:1px solid #aaaaaa;}
+/*]]>*/
+</style>
+</head>
+<body>
+<h1>400 不正リクエスト</h1>
+<h2><?php echo nl2br(CHtml::encode($data['message'])); ?></h2>
+<p>
+不正な形式の文法であるために、サーバはリクエストを処理できませんでした。
+文法を修正しないうちは同じリクエストを繰り返さないでください。
+</p>
+<p>
+これがサーバの不具合であると思われる場合は、<?php echo $data['admin']; ?>にご連絡ください。
+</p>
+<div class="version">
+<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
+</div>
+</body>
+</html>

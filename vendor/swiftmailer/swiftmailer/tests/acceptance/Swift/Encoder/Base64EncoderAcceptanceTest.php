@@ -1,39 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Swift/Encoder/Base64Encoder.php';
+
+class Swift_Encoder_Base64EncoderAcceptanceTest extends UnitTestCase
+{
+    private $_samplesDir;
+    private $_encoder;
+
+    public function setUp()
+    {
+        $this->_samplesDir = realpath(dirname(__FILE__) . '/../../../_samples/charsets');
+        $this->_encoder = new Swift_Encoder_Base64Encoder();
+    }
+
+    public function testEncodingAndDecodingSamples()
+    {
+        $sampleFp = opendir($this->_samplesDir);
+        while (false !== $encodingDir = readdir($sampleFp)) {
+            if (substr($encodingDir, 0, 1) == '.') {
+                continue;
+            }
+
+            $sampleDir = $this->_samplesDir . '/' . $encodingDir;
+
+            if (is_dir($sampleDir)) {
+
+                $fileFp = opendir($sampleDir);
+                while (false !== $sampleFile = readdir($fileFp)) {
+                    if (substr($sampleFile, 0, 1) == '.') {
+                        continue;
+                    }
+
+                    $text = file_get_contents($sampleDir . '/' . $sampleFile);
+                    $encodedText = $this->_encoder->encodeString($text);
+
+                    $this->assertEqual(
+                        base64_decode($encodedText), $text,
+                        '%s: Encoded string should decode back to original string for sample ' .
+                        $sampleDir . '/' . $sampleFile
+                        );
+                }
+                closedir($fileFp);
+            }
+
+        }
+        closedir($sampleFp);
+    }
+}

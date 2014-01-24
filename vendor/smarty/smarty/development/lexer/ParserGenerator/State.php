@@ -1,81 +1,284 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHP_ParserGenerator, a php 5 parser generator.
+ *
+ * This is a direct port of the Lemon parser generator, found at
+ * {@link http://www.hwaci.com/sw/lemon/}
+ *
+ * PHP version 5
+ *
+ * LICENSE:
+ *
+ * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in
+ *       the documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the PHP_ParserGenerator nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   php
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    CVS: $Id: State.php,v 1.1 2006/07/18 00:53:10 cellog Exp $
+ * @since      File available since Release 0.1.0
+ */
+
+/**
+ * The structure used to represent a state in the associative array
+ * for a PHP_ParserGenerator_Config.
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    0.1.5
+ * @since      Class available since Release 0.1.0
+ */
+class PHP_ParserGenerator_StateNode
+{
+    public $key;
+    public $data;
+    public $from = 0;
+    public $next = 0;
+}
+
+/**
+ * Each state of the generated parser's finite state machine
+ * is encoded as an instance of this class
+ *
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.php.net/license/3_01.txt  PHP License 3.01
+ * @version    0.1.5
+ * @since      Class available since Release 0.1.0
+ */
+class PHP_ParserGenerator_State
+{
+    /**
+     * The basis configurations for this state
+     * @var PHP_ParserGenerator_Config
+     */
+    public $bp;
+    /**
+     * All configurations in this state
+     * @var PHP_ParserGenerator_Config
+     */
+    public $cfp;
+    /**
+     * Sequential number for this state
+     *
+     * @var int
+     */
+    public $statenum;
+    /**
+     * Linked list of actions for this state.
+     * @var PHP_ParserGenerator_Action
+     */
+    public $ap;
+    /**
+     * Number of terminal (token) actions
+     *
+     * @var int
+     */
+    public $nTknAct,
+    /**
+     * Number of non-terminal actions
+     *
+     * @var int
+     */
+    $nNtAct;
+    /**
+     * The offset into the $yy_action table for terminal tokens.
+     *
+     * @var int
+     */
+    public $iTknOfst,
+    /**
+     * The offset into the $yy_action table for non-terminals.
+     *
+     * @var int
+     */
+    $iNtOfst;
+    /**
+     * Default action
+     *
+     * @var int
+     */
+    public $iDflt;
+    /**
+     * Associative array of PHP_ParserGenerator_State objects
+     *
+     * @var array
+     */
+    public static $x3a = array();
+    /**
+     * Array of PHP_ParserGenerator_State objects
+     *
+     * @var array
+     */
+    public static $states = array();
+
+    /**
+     * Compare two states for sorting purposes.  The smaller state is the
+     * one with the most non-terminal actions.  If they have the same number
+     * of non-terminal actions, then the smaller is the one with the most
+     * token actions.
+     */
+    public static function stateResortCompare($a, $b)
+    {
+        $n = $b->nNtAct - $a->nNtAct;
+        if ($n === 0) {
+            $n = $b->nTknAct - $a->nTknAct;
+        }
+
+        return $n;
+    }
+
+    /**
+     * Compare two states based on their configurations
+     *
+     * @param  PHP_ParserGenerator_Config|0 $a
+     * @param  PHP_ParserGenerator_Config|0 $b
+     * @return int
+     */
+    public static function statecmp($a, $b)
+    {
+        for ($rc = 0; $rc == 0 && $a && $b;  $a = $a->bp, $b = $b->bp) {
+            $rc = $a->rp->index - $b->rp->index;
+            if ($rc === 0) {
+                $rc = $a->dot - $b->dot;
+            }
+        }
+        if ($rc == 0) {
+            if ($a) {
+                $rc = 1;
+            }
+            if ($b) {
+                $rc = -1;
+            }
+        }
+
+        return $rc;
+    }
+
+    /**
+     * Hash a state based on its configuration
+     * @return int
+     */
+    private static function statehash(PHP_ParserGenerator_Config $a)
+    {
+        $h = 0;
+        while ($a) {
+            $h = $h * 571 + $a->rp->index * 37 + $a->dot;
+            $a = $a->bp;
+        }
+
+        return (int) $h;
+    }
+
+    /**
+     * Return a pointer to data assigned to the given key.  Return NULL
+     * if no such key.
+     * @param PHP_ParserGenerator_Config
+     * @return null|PHP_ParserGenerator_State
+     */
+    public static function State_find(PHP_ParserGenerator_Config $key)
+    {
+        if (!count(self::$x3a)) {
+            return 0;
+        }
+        $h = self::statehash($key);
+        if (!isset(self::$x3a[$h])) {
+            return 0;
+        }
+        $np = self::$x3a[$h];
+        while ($np) {
+            if (self::statecmp($np->key, $key) == 0) {
+                break;
+            }
+            $np = $np->next;
+        }
+
+        return $np ? $np->data : 0;
+    }
+
+    /**
+     * Insert a new record into the array.  Return TRUE if successful.
+     * Prior data with the same key is NOT overwritten
+     *
+     * @param  PHP_ParserGenerator_State  $state
+     * @param  PHP_ParserGenerator_Config $key
+     * @return unknown
+     */
+    public static function State_insert(PHP_ParserGenerator_State $state,
+                                 PHP_ParserGenerator_Config $key)
+    {
+        $h = self::statehash($key);
+        if (isset(self::$x3a[$h])) {
+            $np = self::$x3a[$h];
+        } else {
+            $np = 0;
+        }
+        while ($np) {
+            if (self::statecmp($np->key, $key) == 0) {
+                /* An existing entry with the same key is found. */
+                /* Fail because overwrite is not allows. */
+
+                return 0;
+            }
+            $np = $np->next;
+        }
+        /* Insert the new data */
+        $np = new PHP_ParserGenerator_StateNode;
+        $np->key = $key;
+        $np->data = $state;
+        self::$states[] = $np;
+        // the original lemon code sets the from link always to itself
+        // setting up a faulty double-linked list
+        // however, the from links are never used, so I suspect a copy/paste
+        // error from a standard algorithm that was never caught
+        if (isset(self::$x3a[$h])) {
+            self::$x3a[$h]->from = $np; // lemon has $np->next here
+        } else {
+            self::$x3a[$h] = 0; // dummy to avoid notice
+        }
+        $np->next = self::$x3a[$h];
+        self::$x3a[$h] = $np;
+        $np->from = self::$x3a[$h];
+
+        return 1;
+    }
+
+    /**
+     * Get an array indexed by state number
+     *
+     * @return array
+     */
+    public static function State_arrayof()
+    {
+        return self::$states;
+    }
+}

@@ -1,99 +1,153 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-dgS72fkodERawW/nYfop+adGIG==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Helper;
+
+use Symfony\Component\Console\Helper\HelperSet;
+use Symfony\Component\Console\Command\Command;
+
+class HelperSetTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers \Symfony\Component\Console\Helper\HelperSet::__construct
+     */
+    public function testConstructor()
+    {
+        $mock_helper = $this->getGenericMockHelper('fake_helper');
+        $helperset = new HelperSet(array('fake_helper_alias' => $mock_helper));
+
+        $this->assertEquals($mock_helper, $helperset->get('fake_helper_alias'), '__construct sets given helper to helpers');
+        $this->assertTrue($helperset->has('fake_helper_alias'), '__construct sets helper alias for given helper');
+    }
+
+    /**
+     * @covers \Symfony\Component\Console\Helper\HelperSet::set
+     */
+    public function testSet()
+    {
+        $helperset = new HelperSet();
+        $helperset->set($this->getGenericMockHelper('fake_helper', $helperset));
+        $this->assertTrue($helperset->has('fake_helper'), '->set() adds helper to helpers');
+
+        $helperset = new HelperSet();
+        $helperset->set($this->getGenericMockHelper('fake_helper_01', $helperset));
+        $helperset->set($this->getGenericMockHelper('fake_helper_02', $helperset));
+        $this->assertTrue($helperset->has('fake_helper_01'), '->set() will set multiple helpers on consecutive calls');
+        $this->assertTrue($helperset->has('fake_helper_02'), '->set() will set multiple helpers on consecutive calls');
+
+        $helperset = new HelperSet();
+        $helperset->set($this->getGenericMockHelper('fake_helper', $helperset), 'fake_helper_alias');
+        $this->assertTrue($helperset->has('fake_helper'), '->set() adds helper alias when set');
+        $this->assertTrue($helperset->has('fake_helper_alias'), '->set() adds helper alias when set');
+    }
+
+    /**
+     * @covers \Symfony\Component\Console\Helper\HelperSet::has
+     */
+    public function testHas()
+    {
+        $helperset = new HelperSet(array('fake_helper_alias' => $this->getGenericMockHelper('fake_helper')));
+        $this->assertTrue($helperset->has('fake_helper'), '->has() finds set helper');
+        $this->assertTrue($helperset->has('fake_helper_alias'), '->has() finds set helper by alias');
+    }
+
+    /**
+     * @covers \Symfony\Component\Console\Helper\HelperSet::get
+     */
+    public function testGet()
+    {
+        $helper_01 = $this->getGenericMockHelper('fake_helper_01');
+        $helper_02 = $this->getGenericMockHelper('fake_helper_02');
+        $helperset = new HelperSet(array('fake_helper_01_alias' => $helper_01, 'fake_helper_02_alias' => $helper_02));
+        $this->assertEquals($helper_01, $helperset->get('fake_helper_01'), '->get() returns correct helper by name');
+        $this->assertEquals($helper_01, $helperset->get('fake_helper_01_alias'), '->get() returns correct helper by alias');
+        $this->assertEquals($helper_02, $helperset->get('fake_helper_02'), '->get() returns correct helper by name');
+        $this->assertEquals($helper_02, $helperset->get('fake_helper_02_alias'), '->get() returns correct helper by alias');
+
+        $helperset = new HelperSet();
+        try {
+            $helperset->get('foo');
+            $this->fail('->get() throws \InvalidArgumentException when helper not found');
+        } catch (\Exception $e) {
+            $this->assertInstanceOf('\InvalidArgumentException', $e, '->get() throws \InvalidArgumentException when helper not found');
+            $this->assertContains('The helper "foo" is not defined.', $e->getMessage(), '->get() throws \InvalidArgumentException when helper not found');
+        }
+    }
+
+    /**
+     * @covers \Symfony\Component\Console\Helper\HelperSet::setCommand
+     */
+    public function testSetCommand()
+    {
+        $cmd_01 = new Command('foo');
+        $cmd_02 = new Command('bar');
+
+        $helperset = new HelperSet();
+        $helperset->setCommand($cmd_01);
+        $this->assertEquals($cmd_01, $helperset->getCommand(), '->setCommand() stores given command');
+
+        $helperset = new HelperSet();
+        $helperset->setCommand($cmd_01);
+        $helperset->setCommand($cmd_02);
+        $this->assertEquals($cmd_02, $helperset->getCommand(), '->setCommand() overwrites stored command with consecutive calls');
+    }
+
+    /**
+     * @covers \Symfony\Component\Console\Helper\HelperSet::getCommand
+     */
+    public function testGetCommand()
+    {
+        $cmd = new Command('foo');
+        $helperset = new HelperSet();
+        $helperset->setCommand($cmd);
+        $this->assertEquals($cmd, $helperset->getCommand(), '->getCommand() retrieves stored command');
+    }
+
+    /**
+     * @covers \Symfony\Component\Console\Helper\HelperSet::getIterator
+     */
+    public function testIteration()
+    {
+        $helperset = new HelperSet();
+        $helperset->set($this->getGenericMockHelper('fake_helper_01', $helperset));
+        $helperset->set($this->getGenericMockHelper('fake_helper_02', $helperset));
+
+        $helpers = array('fake_helper_01', 'fake_helper_02');
+        $i = 0;
+
+        foreach ($helperset as $helper) {
+            $this->assertEquals($helpers[$i++], $helper->getName());
+        }
+    }
+
+   /**
+     * Create a generic mock for the helper interface. Optionally check for a call to setHelperSet with a specific
+     * helperset instance.
+     *
+     * @param string    $name
+     * @param HelperSet $helperset allows a mock to verify a particular helperset set is being added to the Helper
+     */
+    private function getGenericMockHelper($name, HelperSet $helperset = null)
+    {
+        $mock_helper = $this->getMock('\Symfony\Component\Console\Helper\HelperInterface');
+        $mock_helper->expects($this->any())
+            ->method('getName')
+            ->will($this->returnValue($name));
+
+        if ($helperset) {
+            $mock_helper->expects($this->any())
+                ->method('setHelperSet')
+                ->with($this->equalTo($helperset));
+        }
+
+        return $mock_helper;
+    }
+}

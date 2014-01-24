@@ -1,42 +1,28 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: test.php 1500 2007-04-29 14:33:31Z pp11 $
+require_once dirname(__FILE__) . '/../../../autorun.php';
+require_once(dirname(__FILE__) . '/../../recorder.php');
+
+class TestOfRecorder extends UnitTestCase {
+    
+    function testContentOfRecorderWithOnePassAndOneFailure() {
+        $test = &new TestSuite();
+        $test->addTestFile(dirname(__FILE__) . '/sample.php');
+        $recorder = new Recorder();
+        $test->run($recorder);
+        $this->assertEqual(count($recorder->results), 2);
+        
+        $this->assertEqual(count($recorder->results[0]), 4);
+        $this->assertPattern("/".substr(time(), 9)."/", $recorder->results[0]['time']);
+        $this->assertEqual($recorder->results[0]['status'], "Passed");
+        $this->assertPattern("/sample\.php->SampleTestForRecorder->testTrueIsTrue/i", $recorder->results[0]['test']);
+        $this->assertPattern("/ at \[.*recorder\/test\/sample\.php line 7\]/", $recorder->results[0]['message']);
+
+        $this->assertEqual(count($recorder->results[1]), 4);
+        $this->assertPattern("/".substr(time(), 9)."/", $recorder->results[1]['time']);
+        $this->assertEqual($recorder->results[1]['status'], "Failed");
+        $this->assertPattern("/sample\.php->SampleTestForRecorder->testFalseIsTrue/i", $recorder->results[1]['test']);
+        $this->assertPattern("/Expected false, got \[Boolean: true\] at \[.*recorder\/test\/sample\.php line 11\]/", $recorder->results[1]['message']);
+    }
+}
 ?>
-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

@@ -1,72 +1,126 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-0ZriK23xcZ6tq/CejywMggirIT0=
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Plugins/ThrottlerPlugin.php';
+require_once 'Swift/Events/SendEvent.php';
+require_once 'Swift/Plugins/Sleeper.php';
+require_once 'Swift/Plugins/Timer.php';
+require_once 'Swift/Mime/Message.php';
+
+class Swift_Plugins_ThrottlerPluginTest extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testBytesPerMinuteThrottling()
+    {
+        $sleeper = $this->_createSleeper();
+        $timer = $this->_createTimer();
+
+        //10MB/min
+        $plugin = new Swift_Plugins_ThrottlerPlugin(
+            10000000, Swift_Plugins_ThrottlerPlugin::BYTES_PER_MINUTE,
+            $sleeper, $timer
+            );
+
+        $this->_checking(Expectations::create()
+            -> one($timer)->getTimestamp() -> returns(0)
+            -> one($timer)->getTimestamp() -> returns(1) //expected 0.6
+            -> one($timer)->getTimestamp() -> returns(1) //expected 1.2 (sleep 1)
+            -> one($timer)->getTimestamp() -> returns(2) //expected 1.8
+            -> one($timer)->getTimestamp() -> returns(2) //expected 2.4 (sleep 1)
+            -> ignoring($timer)
+
+            -> exactly(2)->of($sleeper)->sleep(1)
+            );
+
+        //10,000,000 bytes per minute
+        //100,000 bytes per email
+
+        // .: (10,000,000/100,000)/60 emails per second = 1.667 emais/sec
+
+        $message = $this->_createMessageWithByteCount(100000); //100KB
+
+        $evt = $this->_createSendEvent($message);
+
+        for ($i = 0; $i < 5; ++$i) {
+            $plugin->beforeSendPerformed($evt);
+            $plugin->sendPerformed($evt);
+        }
+    }
+
+    public function testMessagesPerMinuteThrottling()
+    {
+        $sleeper = $this->_createSleeper();
+        $timer = $this->_createTimer();
+
+        //60/min
+        $plugin = new Swift_Plugins_ThrottlerPlugin(
+            60, Swift_Plugins_ThrottlerPlugin::MESSAGES_PER_MINUTE,
+            $sleeper, $timer
+            );
+
+        $this->_checking(Expectations::create()
+            -> one($timer)->getTimestamp() -> returns(0)
+            -> one($timer)->getTimestamp() -> returns(0) //expected 1 (sleep 1)
+            -> one($timer)->getTimestamp() -> returns(2) //expected 2
+            -> one($timer)->getTimestamp() -> returns(2) //expected 3 (sleep 1)
+            -> one($timer)->getTimestamp() -> returns(4) //expected 4
+            -> ignoring($timer)
+
+            -> exactly(2)->of($sleeper)->sleep(1)
+            );
+
+        //60 messages per minute
+        //1 message per second
+
+        $message = $this->_createMessageWithByteCount(10);
+
+        $evt = $this->_createSendEvent($message);
+
+        for ($i = 0; $i < 5; ++$i) {
+            $plugin->beforeSendPerformed($evt);
+            $plugin->sendPerformed($evt);
+        }
+    }
+
+    // -- Creation Methods
+
+    private function _createSleeper()
+    {
+        return $this->_mock('Swift_Plugins_Sleeper');
+    }
+
+    private function _createTimer()
+    {
+        return $this->_mock('Swift_Plugins_Timer');
+    }
+
+    private function _createMessageWithByteCount($bytes)
+    {
+        $this->_bytes = $bytes;
+        $msg = $this->_mock('Swift_Mime_Message');
+        $this->_checking(Expectations::create()
+            -> ignoring($msg)->toByteStream(any()) -> calls(array($this, '_write'))
+        );
+
+        return $msg;
+    }
+
+    private function _createSendEvent($message)
+    {
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $this->_checking(Expectations::create()
+            -> ignoring($evt)->getMessage() -> returns($message)
+            );
+
+        return $evt;
+    }
+
+    private $_bytes = 0;
+    public function _write($invocation)
+    {
+        $args = $invocation->getArguments();
+        $is = $args[0];
+        for ($i = 0; $i < $this->_bytes; ++$i) {
+            $is->write('x');
+        }
+    }
+}

@@ -1,284 +1,649 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-fUdVM79MwbURQTP6xmsOdSZARe9fgvI13Yy=
+<?php
+/**
+ * CGridView class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('zii.widgets.CBaseListView');
+Yii::import('zii.widgets.grid.CDataColumn');
+Yii::import('zii.widgets.grid.CLinkColumn');
+Yii::import('zii.widgets.grid.CButtonColumn');
+Yii::import('zii.widgets.grid.CCheckBoxColumn');
+
+/**
+ * CGridView displays a list of data items in terms of a table.
+ *
+ * Each row of the table represents the data of a single data item, and a column usually represents
+ * an attribute of the item (some columns may correspond to complex expression of attributes or static text).
+ *
+ * CGridView supports both sorting and pagination of the data items. The sorting
+ * and pagination can be done in AJAX mode or normal page request. A benefit of using CGridView is that
+ * when the user browser disables JavaScript, the sorting and pagination automatically degenerate
+ * to normal page requests and are still functioning as expected.
+ *
+ * CGridView should be used together with a {@link IDataProvider data provider}, preferrably a
+ * {@link CActiveDataProvider}.
+ *
+ * The minimal code needed to use CGridView is as follows:
+ *
+ * <pre>
+ * $dataProvider=new CActiveDataProvider('Post');
+ *
+ * $this->widget('zii.widgets.grid.CGridView', array(
+ *     'dataProvider'=>$dataProvider,
+ * ));
+ * </pre>
+ *
+ * The above code first creates a data provider for the <code>Post</code> ActiveRecord class.
+ * It then uses CGridView to display every attribute in every <code>Post</code> instance.
+ * The displayed table is equiped with sorting and pagination functionality.
+ *
+ * In order to selectively display attributes with different formats, we may configure the
+ * {@link CGridView::columns} property. For example, we may specify only the <code>title</code>
+ * and <code>create_time</code> attributes to be displayed, and the <code>create_time</code>
+ * should be properly formatted to show as a time. We may also display the attributes of the related
+ * objects using the dot-syntax as shown below:
+ *
+ * <pre>
+ * $this->widget('zii.widgets.grid.CGridView', array(
+ *     'dataProvider'=>$dataProvider,
+ *     'columns'=>array(
+ *         'title',          // display the 'title' attribute
+ *         'category.name',  // display the 'name' attribute of the 'category' relation
+ *         'content:html',   // display the 'content' attribute as purified HTML
+ *         array(            // display 'create_time' using an expression
+ *             'name'=>'create_time',
+ *             'value'=>'date("M j, Y", $data->create_time)',
+ *         ),
+ *         array(            // display 'author.username' using an expression
+ *             'name'=>'authorName',
+ *             'value'=>'$data->author->username',
+ *         ),
+ *         array(            // display a column with "view", "update" and "delete" buttons
+ *             'class'=>'CButtonColumn',
+ *         ),
+ *     ),
+ * ));
+ * </pre>
+ *
+ * Please refer to {@link columns} for more details about how to configure this property.
+ *
+ * @property boolean $hasFooter Whether the table should render a footer.
+ * This is true if any of the {@link columns} has a true {@link CGridColumn::hasFooter} value.
+ * @property CFormatter $formatter The formatter instance. Defaults to the 'format' application component.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package zii.widgets.grid
+ * @since 1.1
+ */
+class CGridView extends CBaseListView
+{
+	const FILTER_POS_HEADER='header';
+	const FILTER_POS_FOOTER='footer';
+	const FILTER_POS_BODY='body';
+
+	private $_formatter;
+	/**
+	 * @var array grid column configuration. Each array element represents the configuration
+	 * for one particular grid column which can be either a string or an array.
+	 *
+	 * When a column is specified as a string, it should be in the format of "name:type:header",
+	 * where "type" and "header" are optional. A {@link CDataColumn} instance will be created in this case,
+	 * whose {@link CDataColumn::name}, {@link CDataColumn::type} and {@link CDataColumn::header}
+	 * properties will be initialized accordingly.
+	 *
+	 * When a column is specified as an array, it will be used to create a grid column instance, where
+	 * the 'class' element specifies the column class name (defaults to {@link CDataColumn} if absent).
+	 * Currently, these official column classes are provided: {@link CDataColumn},
+	 * {@link CLinkColumn}, {@link CButtonColumn} and {@link CCheckBoxColumn}.
+	 */
+	public $columns=array();
+	/**
+	 * @var array the CSS class names for the table body rows. If multiple CSS class names are given,
+	 * they will be assigned to the rows sequentially and repeatedly. This property is ignored
+	 * if {@link rowCssClassExpression} is set. Defaults to <code>array('odd', 'even')</code>.
+	 * @see rowCssClassExpression
+	 */
+	public $rowCssClass=array('odd','even');
+	/**
+	 * @var string a PHP expression that is evaluated for every table body row and whose result
+	 * is used as the CSS class name for the row. In this expression, you can use the following variables:
+	 * <ul>
+	 *   <li><code>$row</code> the row number (zero-based)</li>
+	 *   <li><code>$data</code> the data model for the row</li>
+	 *   <li><code>$this</code> the grid view object</li>
+	 * </ul>
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 * @see rowCssClass
+	 * @deprecated in 1.1.13 in favor of {@link rowHtmlOptionsExpression}
+	 */
+	public $rowCssClassExpression;
+	/**
+	 * @var string a PHP expression that is evaluated for every table body row and whose result
+	 * is used as additional HTML attributes for the row. The expression should return an
+	 * array whose key value pairs correspond to html attribute and value.
+	 * In this expression, you can use the following variables:
+	 * <ul>
+	 *   <li><code>$row</code> the row number (zero-based)</li>
+	 *   <li><code>$data</code> the data model for the row</li>
+	 *   <li><code>$this</code> the grid view object</li>
+	 * </ul>
+	 * The PHP expression will be evaluated using {@link evaluateExpression}.
+	 *
+	 * A PHP expression can be any PHP code that has a value. To learn more about what an expression is,
+	 * please refer to the {@link http://www.php.net/manual/en/language.expressions.php php manual}.
+	 * @since 1.1.13
+	 */
+	public $rowHtmlOptionsExpression;
+	/**
+	 * @var boolean whether to display the table even when there is no data. Defaults to true.
+	 * The {@link emptyText} will be displayed to indicate there is no data.
+	 */
+	public $showTableOnEmpty=true;
+	/**
+	 * @var mixed the ID of the container whose content may be updated with an AJAX response.
+	 * Defaults to null, meaning the container for this grid view instance.
+	 * If it is set false, it means sorting and pagination will be performed in normal page requests
+	 * instead of AJAX requests. If the sorting and pagination should trigger the update of multiple
+	 * containers' content in AJAX fashion, these container IDs may be listed here (separated with comma).
+	 */
+	public $ajaxUpdate;
+	/**
+	 * @var string the jQuery selector of the HTML elements that may trigger AJAX updates when they are clicked.
+	 * These tokens are recognized: {page} and {sort}. They will be replaced with the pagination and sorting links selectors.
+	 * Defaults to '{page}, {sort}', that means that the pagination links and the sorting links will trigger AJAX updates.
+	 * Tokens are available from 1.1.11
+	 *
+	 * Note: if this value is empty an exception will be thrown.
+	 *
+	 * Example (adding a custom selector to the default ones):
+	 * <pre>
+	 *  ...
+	 *  'updateSelector'=>'{page}, {sort}, #mybutton',
+	 *  ...
+	 * </pre>
+	 * @since 1.1.7
+	 */
+	public $updateSelector='{page}, {sort}';
+	/**
+	 * @var string a javascript function that will be invoked if an AJAX update error occurs.
+	 *
+	 * The function signature is <code>function(xhr, textStatus, errorThrown, errorMessage)</code>
+	 * <ul>
+	 * <li><code>xhr</code> is the XMLHttpRequest object.</li>
+	 * <li><code>textStatus</code> is a string describing the type of error that occurred.
+	 * Possible values (besides null) are "timeout", "error", "notmodified" and "parsererror"</li>
+	 * <li><code>errorThrown</code> is an optional exception object, if one occurred.</li>
+	 * <li><code>errorMessage</code> is the CGridView default error message derived from xhr and errorThrown.
+	 * Usefull if you just want to display this error differently. CGridView by default displays this error with an javascript.alert()</li>
+	 * </ul>
+	 * Note: This handler is not called for JSONP requests, because they do not use an XMLHttpRequest.
+	 *
+	 * Example (add in a call to CGridView):
+	 * <pre>
+	 *  ...
+	 *  'ajaxUpdateError'=>'function(xhr,ts,et,err){ $("#myerrordiv").text(err); }',
+	 *  ...
+	 * </pre>
+	 */
+	public $ajaxUpdateError;
+	/**
+	 * @var string the name of the GET variable that indicates the request is an AJAX request triggered
+	 * by this widget. Defaults to 'ajax'. This is effective only when {@link ajaxUpdate} is not false.
+	 */
+	public $ajaxVar='ajax';
+	/**
+	 * @var mixed the URL for the AJAX requests should be sent to. {@link CHtml::normalizeUrl()} will be
+	 * called on this property. If not set, the current page URL will be used for AJAX requests.
+	 * @since 1.1.8
+	 */
+	public $ajaxUrl;
+	/**
+	 * @var string the type ('GET' or 'POST') of the AJAX requests. If not set, 'GET' will be used.
+	 * You can set this to 'POST' if you are filtering by many fields at once and have a problem with GET query string length.
+	 * Note that in POST mode direct links and {@link enableHistory} feature may not work correctly!
+	 * @since 1.1.14
+	 */
+	public $ajaxType;
+	/**
+	 * @var string a javascript function that will be invoked before an AJAX update occurs.
+	 * The function signature is <code>function(id,options)</code> where 'id' refers to the ID of the grid view,
+	 * 'options' the AJAX request options  (see jQuery.ajax api manual).
+	 */
+	public $beforeAjaxUpdate;
+	/**
+	 * @var string a javascript function that will be invoked after a successful AJAX response is received.
+	 * The function signature is <code>function(id, data)</code> where 'id' refers to the ID of the grid view,
+	 * 'data' the received ajax response data.
+	 */
+	public $afterAjaxUpdate;
+	/**
+	 * @var string a javascript function that will be invoked after the row selection is changed.
+	 * The function signature is <code>function(id)</code> where 'id' refers to the ID of the grid view.
+	 * In this function, you may use <code>$(gridID).yiiGridView('getSelection')</code> to get the key values
+	 * of the currently selected rows (gridID is the DOM selector of the grid).
+	 * @see selectableRows
+	 */
+	public $selectionChanged;
+	/**
+	 * @var integer the number of table body rows that can be selected. If 0, it means rows cannot be selected.
+	 * If 1, only one row can be selected. If 2 or any other number, it means multiple rows can be selected.
+	 * A selected row will have a CSS class named 'selected'. You may also call the JavaScript function
+	 * <code>$(gridID).yiiGridView('getSelection')</code> to retrieve the key values of the currently selected
+	 * rows (gridID is the DOM selector of the grid).
+	 */
+	public $selectableRows=1;
+	/**
+	 * @var string the base script URL for all grid view resources (eg javascript, CSS file, images).
+	 * Defaults to null, meaning using the integrated grid view resources (which are published as assets).
+	 */
+	public $baseScriptUrl;
+	/**
+	 * @var string the URL of the CSS file used by this grid view. Defaults to null, meaning using the integrated
+	 * CSS file. If this is set false, you are responsible to explicitly include the necessary CSS file in your page.
+	 */
+	public $cssFile;
+	/**
+	 * @var string the text to be displayed in a data cell when a data value is null. This property will NOT be HTML-encoded
+	 * when rendering. Defaults to an HTML blank.
+	 */
+	public $nullDisplay='&nbsp;';
+	/**
+	 * @var string the text to be displayed in an empty grid cell. This property will NOT be HTML-encoded when rendering. Defaults to an HTML blank.
+	 * This differs from {@link nullDisplay} in that {@link nullDisplay} is only used by {@link CDataColumn} to render
+	 * null data values.
+	 * @since 1.1.7
+	 */
+	public $blankDisplay='&nbsp;';
+	/**
+	 * @var string the CSS class name that will be assigned to the widget container element
+	 * when the widget is updating its content via AJAX. Defaults to 'grid-view-loading'.
+	 * @since 1.1.1
+	 */
+	public $loadingCssClass='grid-view-loading';
+	/**
+	 * @var string the jQuery selector of filter input fields.
+	 * The token '{filter}' is recognized and it will be replaced with the grid filters selector.
+	 * Defaults to '{filter}'.
+	 *
+	 * Note: if this value is empty an exception will be thrown.
+	 *
+	 * Example (adding a custom selector to the default one):
+	 * <pre>
+	 *  ...
+	 *  'filterSelector'=>'{filter}, #myfilter',
+	 *  ...
+	 * </pre>
+	 * @since 1.1.13
+	 */
+	public $filterSelector='{filter}';
+	/**
+	 * @var string the CSS class name for the table row element containing all filter input fields. Defaults to 'filters'.
+	 * @see filter
+	 * @since 1.1.1
+	 */
+	public $filterCssClass='filters';
+	/**
+	 * @var string whether the filters should be displayed in the grid view. Valid values include:
+	 * <ul>
+	 *    <li>header: the filters will be displayed on top of each column's header cell.</li>
+	 *    <li>body: the filters will be displayed right below each column's header cell.</li>
+	 *    <li>footer: the filters will be displayed below each column's footer cell.</li>
+	 * </ul>
+	 * @see filter
+	 * @since 1.1.1
+	 */
+	public $filterPosition='body';
+	/**
+	 * @var CModel the model instance that keeps the user-entered filter data. When this property is set,
+	 * the grid view will enable column-based filtering. Each data column by default will display a text field
+	 * at the top that users can fill in to filter the data.
+	 * Note that in order to show an input field for filtering, a column must have its {@link CDataColumn::name}
+	 * property set or have {@link CDataColumn::filter} as the HTML code for the input field.
+	 * When this property is not set (null) the filtering is disabled.
+	 * @since 1.1.1
+	 */
+	public $filter;
+	/**
+	 * @var boolean whether to hide the header cells of the grid. When this is true, header cells
+	 * will not be rendered, which means the grid cannot be sorted anymore since the sort links are located
+	 * in the header. Defaults to false.
+	 * @since 1.1.1
+	 */
+	public $hideHeader=false;
+	/**
+	 * @var boolean whether to leverage the {@link https://developer.mozilla.org/en/DOM/window.history DOM history object}.  Set this property to true
+	 * to persist state of grid across page revisits.  Note, there are two limitations for this feature:
+	 * <ul>
+	 *    <li>this feature is only compatible with browsers that support HTML5.</li>
+	 *    <li>expect unexpected functionality (e.g. multiple ajax calls) if there is more than one grid/list on a single page with enableHistory turned on.</li>
+	 * </ul>
+	 * @since 1.1.11
+	 */
+	public $enableHistory=false;
+
+
+	/**
+	 * Initializes the grid view.
+	 * This method will initialize required property values and instantiate {@link columns} objects.
+	 */
+	public function init()
+	{
+		parent::init();
+
+		if(empty($this->updateSelector))
+			throw new CException(Yii::t('zii','The property updateSelector should be defined.'));
+		if(empty($this->filterSelector))
+			throw new CException(Yii::t('zii','The property filterSelector should be defined.'));
+
+		if(!isset($this->htmlOptions['class']))
+			$this->htmlOptions['class']='grid-view';
+
+		if($this->baseScriptUrl===null)
+			$this->baseScriptUrl=Yii::app()->getAssetManager()->publish(Yii::getPathOfAlias('zii.widgets.assets')).'/gridview';
+
+		if($this->cssFile!==false)
+		{
+			if($this->cssFile===null)
+				$this->cssFile=$this->baseScriptUrl.'/styles.css';
+			Yii::app()->getClientScript()->registerCssFile($this->cssFile);
+		}
+
+		$this->initColumns();
+	}
+
+	/**
+	 * Creates column objects and initializes them.
+	 */
+	protected function initColumns()
+	{
+		if($this->columns===array())
+		{
+			if($this->dataProvider instanceof CActiveDataProvider)
+				$this->columns=$this->dataProvider->model->attributeNames();
+			elseif($this->dataProvider instanceof IDataProvider)
+			{
+				// use the keys of the first row of data as the default columns
+				$data=$this->dataProvider->getData();
+				if(isset($data[0]) && is_array($data[0]))
+					$this->columns=array_keys($data[0]);
+			}
+		}
+		$id=$this->getId();
+		foreach($this->columns as $i=>$column)
+		{
+			if(is_string($column))
+				$column=$this->createDataColumn($column);
+			else
+			{
+				if(!isset($column['class']))
+					$column['class']='CDataColumn';
+				$column=Yii::createComponent($column, $this);
+			}
+			if(!$column->visible)
+			{
+				unset($this->columns[$i]);
+				continue;
+			}
+			if($column->id===null)
+				$column->id=$id.'_c'.$i;
+			$this->columns[$i]=$column;
+		}
+
+		foreach($this->columns as $column)
+			$column->init();
+	}
+
+	/**
+	 * Creates a {@link CDataColumn} based on a shortcut column specification string.
+	 * @param string $text the column specification string
+	 * @return CDataColumn the column instance
+	 */
+	protected function createDataColumn($text)
+	{
+		if(!preg_match('/^([\w\.]+)(:(\w*))?(:(.*))?$/',$text,$matches))
+			throw new CException(Yii::t('zii','The column must be specified in the format of "Name:Type:Label", where "Type" and "Label" are optional.'));
+		$column=new CDataColumn($this);
+		$column->name=$matches[1];
+		if(isset($matches[3]) && $matches[3]!=='')
+			$column->type=$matches[3];
+		if(isset($matches[5]))
+			$column->header=$matches[5];
+		return $column;
+	}
+
+	/**
+	 * Registers necessary client scripts.
+	 */
+	public function registerClientScript()
+	{
+		$id=$this->getId();
+
+		if($this->ajaxUpdate===false)
+			$ajaxUpdate=false;
+		else
+			$ajaxUpdate=array_unique(preg_split('/\s*,\s*/',$this->ajaxUpdate.','.$id,-1,PREG_SPLIT_NO_EMPTY));
+		$options=array(
+			'ajaxUpdate'=>$ajaxUpdate,
+			'ajaxVar'=>$this->ajaxVar,
+			'pagerClass'=>$this->pagerCssClass,
+			'loadingClass'=>$this->loadingCssClass,
+			'filterClass'=>$this->filterCssClass,
+			'tableClass'=>$this->itemsCssClass,
+			'selectableRows'=>$this->selectableRows,
+			'enableHistory'=>$this->enableHistory,
+			'updateSelector'=>$this->updateSelector,
+			'filterSelector'=>$this->filterSelector
+		);
+		if($this->ajaxUrl!==null)
+			$options['url']=CHtml::normalizeUrl($this->ajaxUrl);
+		if($this->ajaxType!==null)
+			$options['ajaxType']=strtoupper($this->ajaxType);
+		if($this->enablePagination)
+			$options['pageVar']=$this->dataProvider->getPagination()->pageVar;
+		foreach(array('beforeAjaxUpdate', 'afterAjaxUpdate', 'ajaxUpdateError', 'selectionChanged') as $event)
+		{
+			if($this->$event!==null)
+			{
+				if($this->$event instanceof CJavaScriptExpression)
+					$options[$event]=$this->$event;
+				else
+					$options[$event]=new CJavaScriptExpression($this->$event);
+			}
+		}
+
+		$options=CJavaScript::encode($options);
+		$cs=Yii::app()->getClientScript();
+		$cs->registerCoreScript('jquery');
+		$cs->registerCoreScript('bbq');
+		if($this->enableHistory)
+			$cs->registerCoreScript('history');
+		$cs->registerScriptFile($this->baseScriptUrl.'/jquery.yiigridview.js',CClientScript::POS_END);
+		$cs->registerScript(__CLASS__.'#'.$id,"jQuery('#$id').yiiGridView($options);");
+	}
+
+	/**
+	 * Renders the data items for the grid view.
+	 */
+	public function renderItems()
+	{
+		if($this->dataProvider->getItemCount()>0 || $this->showTableOnEmpty)
+		{
+			echo "<table class=\"{$this->itemsCssClass}\">\n";
+			$this->renderTableHeader();
+			ob_start();
+			$this->renderTableBody();
+			$body=ob_get_clean();
+			$this->renderTableFooter();
+			echo $body; // TFOOT must appear before TBODY according to the standard.
+			echo "</table>";
+		}
+		else
+			$this->renderEmptyText();
+	}
+
+	/**
+	 * Renders the table header.
+	 */
+	public function renderTableHeader()
+	{
+		if(!$this->hideHeader)
+		{
+			echo "<thead>\n";
+
+			if($this->filterPosition===self::FILTER_POS_HEADER)
+				$this->renderFilter();
+
+			echo "<tr>\n";
+			foreach($this->columns as $column)
+				$column->renderHeaderCell();
+			echo "</tr>\n";
+
+			if($this->filterPosition===self::FILTER_POS_BODY)
+				$this->renderFilter();
+
+			echo "</thead>\n";
+		}
+		elseif($this->filter!==null && ($this->filterPosition===self::FILTER_POS_HEADER || $this->filterPosition===self::FILTER_POS_BODY))
+		{
+			echo "<thead>\n";
+			$this->renderFilter();
+			echo "</thead>\n";
+		}
+	}
+
+	/**
+	 * Renders the filter.
+	 * @since 1.1.1
+	 */
+	public function renderFilter()
+	{
+		if($this->filter!==null)
+		{
+			echo "<tr class=\"{$this->filterCssClass}\">\n";
+			foreach($this->columns as $column)
+				$column->renderFilterCell();
+			echo "</tr>\n";
+		}
+	}
+
+	/**
+	 * Renders the table footer.
+	 */
+	public function renderTableFooter()
+	{
+		$hasFilter=$this->filter!==null && $this->filterPosition===self::FILTER_POS_FOOTER;
+		$hasFooter=$this->getHasFooter();
+		if($hasFilter || $hasFooter)
+		{
+			echo "<tfoot>\n";
+			if($hasFooter)
+			{
+				echo "<tr>\n";
+				foreach($this->columns as $column)
+					$column->renderFooterCell();
+				echo "</tr>\n";
+			}
+			if($hasFilter)
+				$this->renderFilter();
+			echo "</tfoot>\n";
+		}
+	}
+
+	/**
+	 * Renders the table body.
+	 */
+	public function renderTableBody()
+	{
+		$data=$this->dataProvider->getData();
+		$n=count($data);
+		echo "<tbody>\n";
+
+		if($n>0)
+		{
+			for($row=0;$row<$n;++$row)
+				$this->renderTableRow($row);
+		}
+		else
+		{
+			echo '<tr><td colspan="'.count($this->columns).'" class="empty">';
+			$this->renderEmptyText();
+			echo "</td></tr>\n";
+		}
+		echo "</tbody>\n";
+	}
+
+	/**
+	 * Renders a table body row.
+	 * @param integer $row the row number (zero-based).
+	 */
+	public function renderTableRow($row)
+	{
+		$htmlOptions=array();
+		if($this->rowHtmlOptionsExpression!==null)
+		{
+			$data=$this->dataProvider->data[$row];
+			$options=$this->evaluateExpression($this->rowHtmlOptionsExpression,array('row'=>$row,'data'=>$data));
+			if(is_array($options))
+				$htmlOptions = $options;
+		}
+
+		if($this->rowCssClassExpression!==null)
+		{
+			$data=$this->dataProvider->data[$row];
+			$class=$this->evaluateExpression($this->rowCssClassExpression,array('row'=>$row,'data'=>$data));
+		}
+		elseif(is_array($this->rowCssClass) && ($n=count($this->rowCssClass))>0)
+			$class=$this->rowCssClass[$row%$n];
+
+		if(!empty($class))
+		{
+			if(isset($htmlOptions['class']))
+				$htmlOptions['class'].=' '.$class;
+			else
+				$htmlOptions['class']=$class;
+		}
+
+		echo CHtml::openTag('tr', $htmlOptions)."\n";
+		foreach($this->columns as $column)
+			$column->renderDataCell($row);
+		echo "</tr>\n";
+	}
+
+	/**
+	 * @return boolean whether the table should render a footer.
+	 * This is true if any of the {@link columns} has a true {@link CGridColumn::hasFooter} value.
+	 */
+	public function getHasFooter()
+	{
+		foreach($this->columns as $column)
+			if($column->getHasFooter())
+				return true;
+		return false;
+	}
+
+	/**
+	 * @return CFormatter the formatter instance. Defaults to the 'format' application component.
+	 */
+	public function getFormatter()
+	{
+		if($this->_formatter===null)
+			$this->_formatter=Yii::app()->format;
+		return $this->_formatter;
+	}
+
+	/**
+	 * @param CFormatter $value the formatter instance
+	 */
+	public function setFormatter($value)
+	{
+		$this->_formatter=$value;
+	}
+}

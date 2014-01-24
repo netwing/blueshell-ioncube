@@ -1,37 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+$deleteJS = <<<DEL
+$('.container').on('click','.time a.delete',function() {
+	var th=$(this),
+		container=th.closest('div.comment'),
+		id=container.attr('id').slice(1);
+	if(confirm('Are you sure you want to delete comment #'+id+'?')) {
+		$.ajax({
+			url:th.attr('href'),
+			type:'POST'
+		}).done(function(){container.slideUp()});
+	}
+	return false;
+});
+DEL;
+Yii::app()->getClientScript()->registerScript('delete', $deleteJS);
 ?>
-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
+<div class="comment" id="c<?php echo $data->id; ?>">
+
+	<?php echo CHtml::link("#{$data->id}", $data->url, array(
+		'class'=>'cid',
+		'title'=>'Permalink to this comment',
+	)); ?>
+
+	<div class="author">
+		<?php echo $data->authorLink; ?> says on
+		<?php echo CHtml::link(CHtml::encode($data->post->title), $data->post->url); ?>
+	</div>
+
+	<div class="time">
+		<?php if($data->status==Comment::STATUS_PENDING): ?>
+			<span class="pending">Pending approval</span> |
+			<?php echo CHtml::linkButton('Approve', array(
+				'submit'=>array('comment/approve','id'=>$data->id),
+			)); ?> |
+		<?php endif; ?>
+		<?php echo CHtml::link('Update',array('comment/update','id'=>$data->id)); ?> |
+		<?php echo CHtml::link('Delete',array('comment/delete','id'=>$data->id),array('class'=>'delete')); ?> |
+		<?php echo date('F j, Y \a\t h:i a',$data->create_time); ?>
+	</div>
+
+	<div class="content">
+		<?php echo nl2br(CHtml::encode($data->content)); ?>
+	</div>
+
+</div><!-- comment -->

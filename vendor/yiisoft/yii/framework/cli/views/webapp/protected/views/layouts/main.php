@@ -1,44 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php /* @var $this Controller */ ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="en" />
+
+	<!-- blueprint CSS framework -->
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+</head>
+
+<body>
+
+<div class="container" id="page">
+
+	<div id="header">
+		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
+	</div><!-- header -->
+
+	<div id="mainmenu">
+		<?php $this->widget('zii.widgets.CMenu',array(
+			'items'=>array(
+				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
+				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+			),
+		)); ?>
+	</div><!-- mainmenu -->
+	<?php if(isset($this->breadcrumbs)):?>
+		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+			'links'=>$this->breadcrumbs,
+		)); ?><!-- breadcrumbs -->
+	<?php endif?>
+
+	<?php echo $content; ?>
+
+	<div class="clear"></div>
+
+	<div id="footer">
+		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
+		All Rights Reserved.<br/>
+		<?php echo Yii::powered(); ?>
+	</div><!-- footer -->
+
+</div><!-- page -->
+
+</body>
+</html>

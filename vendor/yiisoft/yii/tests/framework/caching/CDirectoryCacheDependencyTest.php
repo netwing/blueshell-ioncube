@@ -1,53 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-gZlw6nxwmmYW6kiFRClcb9folOLlvmM+XGGU20==
+<?php
+
+Yii::import('system.caching.dependencies.CDirectoryCacheDependency');
+
+class CDirectoryCacheDependencyTest extends CTestCase
+{
+	private $testDir1;
+	private $testDir2;
+
+	public function __construct()
+	{
+		parent::__construct();
+		Yii::app()->reset();
+		$this->testDir1 = Yii::app()->getRuntimePath().'/CDirectoryCacheDependencyTest_temp1';
+		@mkdir($this->testDir1);
+		$this->testDir2 = Yii::app()->getRuntimePath().'/CDirectoryCacheDependencyTest_temp2';
+	}
+
+	public function testDirectoryName()
+	{
+		$directory=realpath($this->testDir1);
+		$dependency=new CDirectoryCacheDependency($directory);
+		$this->assertEquals($dependency->directory,$directory);
+
+		$this->setExpectedException('CException');
+		$dependency=new CDirectoryCacheDependency($this->testDir2);
+		$dependency->evaluateDependency();
+	}
+
+	public function testRecursiveLevel()
+	{
+		$dependency=new CDirectoryCacheDependency($this->testDir1);
+		$this->assertEquals($dependency->recursiveLevel,-1);
+		$dependency->recursiveLevel=5;
+		$this->assertEquals($dependency->recursiveLevel,5);
+	}
+
+	public function testHasChanged()
+	{
+		$tempFile=$this->testDir1.'/foo.txt';
+		@unlink($tempFile);
+		$fw=fopen($tempFile,"w");
+		fwrite($fw,"test");
+		fclose($fw);
+		clearstatcache();
+
+		$dependency=new CDirectoryCacheDependency(dirname($tempFile));
+		$dependency->evaluateDependency();
+		$str=serialize($dependency);
+
+		// test directory not changed
+		sleep(2);
+		$dependency=unserialize($str);
+		$this->assertFalse($dependency->hasChanged);
+
+		// change file
+		$fw=fopen($tempFile,"w");
+		fwrite($fw,"test again");
+		fclose($fw);
+		clearstatcache();
+
+		// test file changed
+		sleep(2);
+		$dependency->evaluateDependency();
+		$dependency=unserialize($str);
+		$this->assertTrue($dependency->hasChanged);
+
+		@unlink($tempFile);
+	}
+}

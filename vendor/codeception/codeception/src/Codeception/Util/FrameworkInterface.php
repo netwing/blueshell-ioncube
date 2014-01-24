@@ -1,48 +1,127 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Util;
+
+/**
+ * Interface for all Framework connectors.
+ * PhpBrowser acts similarly, as universal connector thus implements it too.
+ *
+ */
+
+interface FrameworkInterface extends WebInterface
+{
+    /**
+     * Submits a form located on page.
+     * Specify the form by it's css or xpath selector.
+     * Fill the form fields values as array.
+     *
+     * Skipped fields will be filled by their values from page.
+     * You don't need to click the 'Submit' button afterwards.
+     * This command itself triggers the request to form's action.
+     *
+     * Examples:
+     *
+     * ``` php
+     * <?php
+     * $I->submitForm('#login', array('login' => 'davert', 'password' => '123456'));
+     *
+     * ```
+     *
+     * For sample Sign Up form:
+     *
+     * ``` html
+     * <form action="/sign_up">
+     *     Login: <input type="text" name="user[login]" /><br/>
+     *     Password: <input type="password" name="user[password]" /><br/>
+     *     Do you agree to out terms? <input type="checkbox" name="user[agree]" /><br/>
+     *     Select pricing plan <select name="plan"><option value="1">Free</option><option value="2" selected="selected">Paid</option></select>
+     *     <input type="submit" value="Submit" />
+     * </form>
+     * ```
+     * I can write this:
+     *
+     * ``` php
+     * <?php
+     * $I->submitForm('#userForm', array('user' => array('login' => 'Davert', 'password' => '123456', 'agree' => true)));
+     *
+     * ```
+     * Note, that pricing plan will be set to Paid, as it's selected on page.
+     *
+     * @param $selector
+     * @param $params
+     */
+    public function submitForm($selector, $params);
+
+    /**
+     * If your page triggers an ajax request, you can perform it manually.
+     * This action sends a POST ajax request with specified params.
+     * Additional params can be passed as array.
+     *
+     * Example:
+     *
+     * Imagine that by clicking checkbox you trigger ajax request which updates user settings.
+     * We emulate that click by running this ajax request manually.
+     *
+     * ``` php
+     * <?php
+     * $I->sendAjaxPostRequest('/updateSettings', array('notifications' => true)); // POST
+     * $I->sendAjaxGetRequest('/updateSettings', array('notifications' => true)); // GET
+     *
+     * ```
+     *
+     * @param $uri
+     * @param $params
+     */
+    public function sendAjaxPostRequest($uri, $params = array());
+
+    /**
+     * If your page triggers an ajax request, you can perform it manually.
+     * This action sends a GET ajax request with specified params.
+     *
+     * See ->sendAjaxPostRequest for examples.
+     *
+     * @param $uri
+     * @param $params
+     */
+    public function sendAjaxGetRequest($uri, $params = array());
+
+    /**
+     * If your page triggers an ajax request, you can perform it manually.
+     * This action sends an ajax request with specified method and params.
+     *
+     * Example:
+     *
+     * You need to perform an ajax request specifying the HTTP method.
+     *
+     * ``` php
+     * <?php
+     * $I->sendAjaxRequest('PUT', /posts/7', array('title' => 'new title');
+     *
+     * ```
+     *
+     * @param $method
+     * @param $uri
+     * @param $params
+     */
+    public function sendAjaxRequest($method, $uri, $params = array());
+
+    /**
+     * Asserts that current page has 404 response status code.
+     */
+    public function seePageNotFound();
+
+    /**
+     * Checks that response code is equal to value provided.
+     *
+     * @param $code
+     * @return mixed
+     */
+    public function seeResponseCodeIs($code);
+
+    /**
+     * Adds HTTP authentication via username/password.
+     *
+     * @param $username
+     * @param $password
+     */
+    public function amHttpAuthenticated($username, $password);
+}

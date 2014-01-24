@@ -1,93 +1,272 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-ovaNk79TfD0=
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Shared_Drawing
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Shared
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Shared_Drawing
+{
+	/**
+	 * Convert pixels to EMU
+	 *
+	 * @param 	int $pValue	Value in pixels
+	 * @return 	int			Value in EMU
+	 */
+	public static function pixelsToEMU($pValue = 0) {
+		return round($pValue * 9525);
+	}
+
+	/**
+	 * Convert EMU to pixels
+	 *
+	 * @param 	int $pValue	Value in EMU
+	 * @return 	int			Value in pixels
+	 */
+	public static function EMUToPixels($pValue = 0) {
+		if ($pValue != 0) {
+			return round($pValue / 9525);
+		} else {
+			return 0;
+		}
+	}
+
+	/**
+	 * Convert pixels to column width. Exact algorithm not known.
+	 * By inspection of a real Excel file using Calibri 11, one finds 1000px ~ 142.85546875
+	 * This gives a conversion factor of 7. Also, we assume that pixels and font size are proportional.
+	 *
+	 * @param 	int $pValue	Value in pixels
+	 * @param 	PHPExcel_Style_Font $pDefaultFont	Default font of the workbook
+	 * @return 	int			Value in cell dimension
+	 */
+	public static function pixelsToCellDimension($pValue = 0, PHPExcel_Style_Font $pDefaultFont) {
+		// Font name and size
+		$name = $pDefaultFont->getName();
+		$size = $pDefaultFont->getSize();
+
+		if (isset(PHPExcel_Shared_Font::$defaultColumnWidths[$name][$size])) {
+			// Exact width can be determined
+			$colWidth = $pValue
+				* PHPExcel_Shared_Font::$defaultColumnWidths[$name][$size]['width']
+				/ PHPExcel_Shared_Font::$defaultColumnWidths[$name][$size]['px'];
+		} else {
+			// We don't have data for this particular font and size, use approximation by
+			// extrapolating from Calibri 11
+			$colWidth = $pValue * 11
+				* PHPExcel_Shared_Font::$defaultColumnWidths['Calibri'][11]['width']
+				/ PHPExcel_Shared_Font::$defaultColumnWidths['Calibri'][11]['px'] / $size;
+		}
+
+		return $colWidth;
+	}
+
+	/**
+	 * Convert column width from (intrinsic) Excel units to pixels
+	 *
+	 * @param 	float	$pValue		Value in cell dimension
+	 * @param 	PHPExcel_Style_Font $pDefaultFont	Default font of the workbook
+	 * @return 	int		Value in pixels
+	 */
+	public static function cellDimensionToPixels($pValue = 0, PHPExcel_Style_Font $pDefaultFont) {
+		// Font name and size
+		$name = $pDefaultFont->getName();
+		$size = $pDefaultFont->getSize();
+
+		if (isset(PHPExcel_Shared_Font::$defaultColumnWidths[$name][$size])) {
+			// Exact width can be determined
+			$colWidth = $pValue
+				* PHPExcel_Shared_Font::$defaultColumnWidths[$name][$size]['px']
+				/ PHPExcel_Shared_Font::$defaultColumnWidths[$name][$size]['width'];
+
+		} else {
+			// We don't have data for this particular font and size, use approximation by
+			// extrapolating from Calibri 11
+			$colWidth = $pValue * $size
+				* PHPExcel_Shared_Font::$defaultColumnWidths['Calibri'][11]['px']
+				/ PHPExcel_Shared_Font::$defaultColumnWidths['Calibri'][11]['width'] / 11;
+		}
+
+		// Round pixels to closest integer
+		$colWidth = (int) round($colWidth);
+
+		return $colWidth;
+	}
+
+	/**
+	 * Convert pixels to points
+	 *
+	 * @param 	int $pValue	Value in pixels
+	 * @return 	int			Value in points
+	 */
+	public static function pixelsToPoints($pValue = 0) {
+		return $pValue * 0.67777777;
+	}
+
+	/**
+	 * Convert points to pixels
+	 *
+	 * @param 	int $pValue	Value in points
+	 * @return 	int			Value in pixels
+	 */
+	public static function pointsToPixels($pValue = 0) {
+		if ($pValue != 0) {
+			return (int) ceil($pValue * 1.333333333);
+		} else {
+			return 0;
+		}
+	}
+
+	/**
+	 * Convert degrees to angle
+	 *
+	 * @param 	int $pValue	Degrees
+	 * @return 	int			Angle
+	 */
+	public static function degreesToAngle($pValue = 0) {
+		return (int)round($pValue * 60000);
+	}
+
+	/**
+	 * Convert angle to degrees
+	 *
+	 * @param 	int $pValue	Angle
+	 * @return 	int			Degrees
+	 */
+	public static function angleToDegrees($pValue = 0) {
+		if ($pValue != 0) {
+			return round($pValue / 60000);
+		} else {
+			return 0;
+		}
+	}
+
+	/**
+	 * Create a new image from file. By alexander at alexauto dot nl
+	 *
+	 * @link http://www.php.net/manual/en/function.imagecreatefromwbmp.php#86214
+	 * @param string $filename Path to Windows DIB (BMP) image
+	 * @return resource
+	 */
+	public static function imagecreatefrombmp($p_sFile)
+	{
+        //    Load the image into a string
+        $file    =    fopen($p_sFile,"rb");
+        $read    =    fread($file,10);
+        while(!feof($file)&&($read<>""))
+            $read    .=    fread($file,1024);
+
+        $temp    =    unpack("H*",$read);
+        $hex    =    $temp[1];
+        $header    =    substr($hex,0,108);
+
+        //    Process the header
+        //    Structure: http://www.fastgraph.com/help/bmp_header_format.html
+        if (substr($header,0,4)=="424d")
+        {
+            //    Cut it in parts of 2 bytes
+            $header_parts    =    str_split($header,2);
+
+            //    Get the width        4 bytes
+            $width            =    hexdec($header_parts[19].$header_parts[18]);
+
+            //    Get the height        4 bytes
+            $height            =    hexdec($header_parts[23].$header_parts[22]);
+
+            //    Unset the header params
+            unset($header_parts);
+        }
+
+        //    Define starting X and Y
+        $x                =    0;
+        $y                =    1;
+
+        //    Create newimage
+        $image            =    imagecreatetruecolor($width,$height);
+
+        //    Grab the body from the image
+        $body            =    substr($hex,108);
+
+        //    Calculate if padding at the end-line is needed
+        //    Divided by two to keep overview.
+        //    1 byte = 2 HEX-chars
+        $body_size        =    (strlen($body)/2);
+        $header_size    =    ($width*$height);
+
+        //    Use end-line padding? Only when needed
+        $usePadding        =    ($body_size>($header_size*3)+4);
+
+        //    Using a for-loop with index-calculation instaid of str_split to avoid large memory consumption
+        //    Calculate the next DWORD-position in the body
+        for ($i=0;$i<$body_size;$i+=3)
+        {
+            //    Calculate line-ending and padding
+            if ($x>=$width)
+            {
+                //    If padding needed, ignore image-padding
+                //    Shift i to the ending of the current 32-bit-block
+                if ($usePadding)
+                    $i    +=    $width%4;
+
+                //    Reset horizontal position
+                $x    =    0;
+
+                //    Raise the height-position (bottom-up)
+                $y++;
+
+                //    Reached the image-height? Break the for-loop
+                if ($y>$height)
+                    break;
+            }
+
+            //    Calculation of the RGB-pixel (defined as BGR in image-data)
+            //    Define $i_pos as absolute position in the body
+            $i_pos    =    $i*2;
+            $r        =    hexdec($body[$i_pos+4].$body[$i_pos+5]);
+            $g        =    hexdec($body[$i_pos+2].$body[$i_pos+3]);
+            $b        =    hexdec($body[$i_pos].$body[$i_pos+1]);
+
+            //    Calculate and draw the pixel
+            $color    =    imagecolorallocate($image,$r,$g,$b);
+            imagesetpixel($image,$x,$height-$y,$color);
+
+            //    Raise the horizontal position
+            $x++;
+        }
+
+        //    Unset the body / free the memory
+        unset($body);
+
+        //    Return image-object
+        return $image;
+	}
+
+}

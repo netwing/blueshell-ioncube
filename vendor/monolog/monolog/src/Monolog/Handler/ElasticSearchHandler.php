@@ -1,57 +1,128 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Formatter\FormatterInterface;
+use Monolog\Formatter\ElasticaFormatter;
+use Monolog\Logger;
+use Elastica\Client;
+use Elastica\Exception\ExceptionInterface;
+
+/**
+ * Elastic Search handler
+ *
+ * Usage example:
+ *
+ *    $client = new \Elastica\Client();
+ *    $options = array(
+ *        'index' => 'elastic_index_name',
+ *        'type' => 'elastic_doc_type',
+ *    );
+ *    $handler = new ElasticSearchHandler($client, $options);
+ *    $log = new Logger('application');
+ *    $log->pushHandler($handler);
+ *
+ * @author Jelle Vink <jelle.vink@gmail.com>
+ */
+class ElasticSearchHandler extends AbstractProcessingHandler
+{
+    /**
+     * @var Client
+     */
+    protected $client;
+
+    /**
+     * @var array Handler config options
+     */
+    protected $options = array();
+
+    /**
+     * @param Client  $client   Elastica Client object
+     * @param array   $options  Handler configuration
+     * @param integer $level    The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
+     */
+    public function __construct(Client $client, array $options = array(), $level = Logger::DEBUG, $bubble = true)
+    {
+        parent::__construct($level, $bubble);
+        $this->client = $client;
+        $this->options = array_merge(
+            array(
+                'index'          => 'monolog',      // Elastic index name
+                'type'           => 'record',       // Elastic document type
+                'ignore_error'   => false,          // Suppress Elastica exceptions
+            ),
+            $options
+        );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function write(array $record)
+    {
+        $this->bulkSend(array($record['formatted']));
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setFormatter(FormatterInterface $formatter)
+    {
+        if ($formatter instanceof ElasticaFormatter) {
+            return parent::setFormatter($formatter);
+        }
+        throw new \InvalidArgumentException('ElasticSearchHandler is only compatible with ElasticaFormatter');
+    }
+
+    /**
+     * Getter options
+     * @return array
+     */
+    public function getOptions()
+    {
+        return $this->options;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getDefaultFormatter()
+    {
+        return new ElasticaFormatter($this->options['index'], $this->options['type']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function handleBatch(array $records)
+    {
+        $documents = $this->getFormatter()->formatBatch($records);
+        $this->bulkSend($documents);
+    }
+
+    /**
+     * Use Elasticsearch bulk API to send list of documents
+     * @param array $documents
+     * @throws \RuntimeException
+     */
+    protected function bulkSend(array $documents)
+    {
+        try {
+            $this->client->addDocuments($documents);
+        } catch (ExceptionInterface $e) {
+            if (!$this->options['ignore_error']) {
+                throw new \RuntimeException("Error sending messages to Elasticsearch", 0, $e);
+            }
+        }
+    }
+}

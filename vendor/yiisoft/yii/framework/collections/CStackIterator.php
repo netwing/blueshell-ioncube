@@ -1,35 +1,93 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-slzs
+<?php
+/**
+ * CStackIterator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CStackIterator implements an iterator for {@link CStack}.
+ *
+ * It allows CStack to return a new iterator for traversing the items in the stack.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.collections
+ * @since 1.0
+ */
+class CStackIterator implements Iterator
+{
+	/**
+	 * @var array the data to be iterated through
+	 */
+	private $_d;
+	/**
+	 * @var integer index of the current item
+	 */
+	private $_i;
+	/**
+	 * @var integer count of the data items
+	 */
+	private $_c;
+
+	/**
+	 * Constructor.
+	 * @param array $data the data to be iterated through
+	 */
+	public function __construct(&$data)
+	{
+		$this->_d=&$data;
+		$this->_i=0;
+		$this->_c=count($this->_d);
+	}
+
+	/**
+	 * Rewinds internal array pointer.
+	 * This method is required by the interface Iterator.
+	 */
+	public function rewind()
+	{
+		$this->_i=0;
+	}
+
+	/**
+	 * Returns the key of the current array item.
+	 * This method is required by the interface Iterator.
+	 * @return integer the key of the current array item
+	 */
+	public function key()
+	{
+		return $this->_i;
+	}
+
+	/**
+	 * Returns the current array item.
+	 * This method is required by the interface Iterator.
+	 * @return mixed the current array item
+	 */
+	public function current()
+	{
+		return $this->_d[$this->_i];
+	}
+
+	/**
+	 * Moves the internal pointer to the next array item.
+	 * This method is required by the interface Iterator.
+	 */
+	public function next()
+	{
+		$this->_i++;
+	}
+
+	/**
+	 * Returns whether there is an item at current position.
+	 * This method is required by the interface Iterator.
+	 * @return boolean
+	 */
+	public function valid()
+	{
+		return $this->_i<$this->_c;
+	}
+}

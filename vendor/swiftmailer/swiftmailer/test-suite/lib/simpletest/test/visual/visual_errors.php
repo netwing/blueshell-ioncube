@@ -1,46 +1,65 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once('../../shell_tester.php');
+require_once('../../mock_objects.php');
+require_once('../../xml.php');
+require_once('../../autorun.php');
+
+class VisualTestOfErrors extends UnitTestCase {
+
+    function testErrorDisplay() {
+        $this->dump('Four exceptions...');
+        trigger_error('Default');
+        trigger_error('Error', E_USER_ERROR);
+        trigger_error('Warning', E_USER_WARNING);
+        trigger_error('Notice', E_USER_NOTICE);
+    }
+
+    function testErrorTrap() {
+        $this->dump('Pass...');
+        $this->expectError();
+        trigger_error('Error');
+    }
+    
+    function testUnusedErrorExpectationsCauseFailures() {
+        $this->dump('Two failures...');
+        $this->expectError('Some error');
+        $this->expectError();
+    }
+
+    function testErrorTextIsSentImmediately() {
+        $this->dump('One failure...');
+        $this->expectError('Error');
+        trigger_error('Error almost');
+        $this->dump('This should lie between the two errors');
+        trigger_error('Error after');
+    }
+}
+
+class VisualTestOfExceptions extends UnitTestCase {
+    function skip() {
+        $this->skipUnless(version_compare(phpversion(), '5') >= 0);
+    }
+
+    function testExceptionTrap() {
+        $this->dump('One exception...');
+        $this->ouch();
+        $this->fail('Should not be here');
+    }
+
+    function testExceptionExpectationShowsErrorWhenNoException() {
+        $this->dump('One failure...');
+        $this->expectException('SomeException');
+        $this->expectException('LaterException');
+    }
+
+    function testExceptionExpectationShowsPassWhenException() {
+        $this->dump('Pass...');
+        $this->expectException();
+        $this->ouch();
+    }
+
+    function ouch() {
+        eval('throw new Exception("Ouch!");');
+    }
+}
 ?>
-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

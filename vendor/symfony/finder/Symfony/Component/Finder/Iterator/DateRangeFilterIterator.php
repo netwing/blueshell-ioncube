@@ -1,31 +1,60 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Iterator;
+
+use Symfony\Component\Finder\Comparator\DateComparator;
+
+/**
+ * DateRangeFilterIterator filters out files that are not in the given date range (last modified dates).
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class DateRangeFilterIterator extends FilterIterator
+{
+    private $comparators = array();
+
+    /**
+     * Constructor.
+     *
+     * @param \Iterator        $iterator    The Iterator to filter
+     * @param DateComparator[] $comparators An array of DateComparator instances
+     */
+    public function __construct(\Iterator $iterator, array $comparators)
+    {
+        $this->comparators = $comparators;
+
+        parent::__construct($iterator);
+    }
+
+    /**
+     * Filters the iterator values.
+     *
+     * @return Boolean true if the value should be kept, false otherwise
+     */
+    public function accept()
+    {
+        $fileinfo = $this->current();
+
+        if (!$fileinfo->isFile()) {
+            return true;
+        }
+
+        $filedate = $fileinfo->getMTime();
+        foreach ($this->comparators as $compare) {
+            if (!$compare->test($filedate)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}

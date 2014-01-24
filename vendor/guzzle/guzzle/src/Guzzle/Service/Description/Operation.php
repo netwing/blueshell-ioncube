@@ -1,188 +1,547 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPxjgIuimrq+jsRlUgEka6Wdascc80FmdFSrCWP7YGNepZNNTbHNKahSzhEmbZZuow2EoRaEJ
-llbHPSMZ0T9w/BKU+NuRvLfaJcCGzI5ewSVr493yxJ+iYxUbNq9fjd5onhXCz5KcLvXVblt8Io6q
-DMaBdDLsJMNsfJIjeYaiAAZP1vGGSU+31ndIFI67EW8e4qt8OzP60MhcBkZBZJdHfpkoURP8vmJA
-JrmOfs/9kW6g9fSLQK3ckwzHAE4xzt2gh9fl143SQNGFOqpkLVU5CpGOhNdO0Sw/NVzav2bByVsX
-okiI1K9G0cK0nXmu+06qptgMY7ZKkKPZL1uJqQ38e+hJQIWevZNMFl2SWPXZOUrptHP3omkUjnZQ
-ov1X2H50ZI8NnpLqgEvK2mP6Kt9iFVJW4zw3x6/accaAe284BDtu1xVDvPLPAEjpZLg9MW+w41sl
-uklMG6moCTdhyIJt+YMVboQQ+8yVVUXCTFZmC0Uk2LJTUKxVLMQqqC13A2st+yIwWugcJJktsU1h
-4aDCBKVGXRpqoE5onIGB0zflpNMbW42YXLcN0F7WDZIp+4cP5S1tlBqRLouvkeBVnxgh+GsepdpL
-AyAdSEvoDawtTr7CAEQ1qX3Qi8SK8K7V1oO7rugvAdwH6a+WANLmcvZghtfRde/EnwjtvyC+9fJp
-Apv8QgobWOxd8nfO6qA112MVjmaNJhU/yt7uIpxF732ST5aWrOLCx1/TZwpQcRuYuuAdNtwenEoO
-KoF6YfEAfOkA49uN44ljOeuX0FrgwfNDNdPBSAVY0R7Ktt1L6VryGLKFz1nDBgQkDKPqC9WBvLVI
-3Vevx+cKXHuUE/UgC8ZhKYyNVjZ4Yz5cmyPBbk9fy6vGg4i+pj+6cFZYdIvWsz6seXTYvJzIggAX
-zezYQnMkCNPnSSv7uuQmGQAThkCShnxUrLmoVnjoy+Zs6VNMPKlLLccjYRdWqK0ltg2Od4fEfYGv
-c1HVwdMhw6lGHPWcbU1O0vC2+y0gKMLGUq6nkX/P9KECpPBEu7ku7yBsueDfZ1m9WuCwXatsl2fV
-XCKzi6bFbcKhdAFIdMBk3ZDyf2wPJm3n2tOon4qf+R/H2/eKHr2zB/y2J2jp80LgR/Po0p0Kxz43
-VL7LflKaGdTAsqpJheHh/jOLZ7jREhPSmXpp18aDFmATcKf9lc8OGlnFg02RpN2PRtRp6RB7EYx3
-+fOTkXwLPwoMMaM/k893Of5ZyGPo8RWXoFXhFYWfX+oUgEYN+gPfKmQNVAZl2JhOS9T1j55BVJx1
-e3O0ORXSC7w4dKfD56eQdVoiXTEe3Nd6EsAQY8ybgD5n6BorA5t8QaKf+GoZ0H93fpbtvqwZkYyU
-sp96kuz2EMOw+0UD2PKDihVJo2CLJk+ohbAsw3LeibJUM/DY7Xb/CWM0TQr5XqTuUC1l1hE1555i
-DGj98iwQYwATokWa47atqiMfyBFJYm4b0CSl9/rDjeOcTg02iWOzqlOV3vX7EwuJ4HY7agw0IhQR
-yHL0udmovwoE+nIA8IeHGprQm30gO6u7bOUpYZFQ+bBOMwM+awIGHfSdS1AINCgXTycjf9XJ9481
-FjUerbFahn99ExyXLX+Nrt5P8fg2Muf0Lf5C+7CTtquo3XErLkhKb5z5rMR8nqKoPJvX2M51nTn2
-7pszkHXJnxfl96+bFY4KqYlaS2e/LpwdkbbaA2EA2oI3vPX10vQorlZnReb31e+k5TfZ4MvmEHIV
-IleWeZJRmO5X4V+X8DZeIwSeWZOJW0Vd0el84IAvcjjzQLnaEQhc/EDP0zAMkotxMzodHNUUASwi
-HFZWPDtBSU7pWsgmSSI5HFS6uqWd/Jw+Hjz9/Ncb/E3e31s6YHw8K5TF+jQ4fU63ekPfqREGqSm6
-JWD0/G1aaFYAm9IAtLo1buxaOfNjhhdnPSSJnUT2HudTIaU7VB927UwG7CJXD8XewVUq6jldrbvP
-madhc3x7RPcMc+AumgI9fRzWQ78hSFIUjNdv687Bo/9GDLhKk9Ajr4p/3M9lykODDnlTskYDvtKT
-og57pgS3lR3EcRsmPTd/oIVNew70O9Q1rtcxs+yinNyU5sbiVsoqUlvMKOU1WA6pWNWrl80RQ+Co
-9PC06atkbrEoDnjcYZBRoV1G8oT2xFYoEm8TMBtBAxEICvPPo8weOKRHjd1BxPxKX8gdrMaFfC2i
-UYCIfNELqmp+yb9fLbu5R1Q9puGr5wn1oJ5a0hSrKJw7kdJrt4VxJWYwBWq8Y+u+wAM5TuWd3roM
-3aLmY/thTzz4j/TI5+KUHQQNhf3UFuxbsXecoKnwD7i1YkUtYHBI97De1LcFagc3NjXNw+V81jM9
-YHXu+gfE3kcQhTSeE//3TDaxbI7zm86BMACWQ9wIMJGuUFNpQDcw+WlHJC5dy/Ld021XCPMS7k4h
-GPTPTONCvnNrBwjzOOpKSoShiPLWWDoDd6bfvjm7YizperX4sf006pzf0F2p7wRmxJ3XJbWAhHLc
-3rVXs3XrjjwCs4Ij9W5Etau+M4nX0bDajUYpD5pyTGyZyFRFh7lIRhF7WcFo9HrD8FrUGixkl+Ic
-gVZsweiMUxDCE6CxL/ueb/linMa7XJ+jj3u5C5wUIYFLhO2NBzcuxkYd4kVtUuuk+psxbjx00Nt+
-4zBT7hVWOKIU1HtcRSqWdFvBOgljyGFABQZhNdS/m7roLNIkZrv8O2Oj/smnujovSVNqs+BT+WQF
-5G0w0Ihp+HxhxzmL1ujI2boy9TP1iNZE0p5yaFLfKiu+0SiGrzG7V4X5ZNNn61WFhcLrtUJbu6kp
-fZjrU4VrfT1yY8bTJ/fgebAgS2NMACNHQoWNCBCtqe5yHSg8K4/MbVwUopP4Yj3gCiR4He6LDh+d
-2icsVWWdz2OpuKHgbQfP/99B3YbZsWxmYxJPrDdPr/yecmKIsg63/4TGYZrUSuFEGENEl90gp3rY
-wkpimbQPp33zEdVVR/JkGtCE3C4BmCcTinvSVAS1rhhteQIyasR43XZBjaz5a1VHq0REBcNpokxZ
-LDpR/092Ed/tIqoqj4F/yPK5MDePylDc+rusLbeXrsRQeX0J4tAWl2sSZlI/PjQWmUHyRFiWLtKt
-9UJhENHhT7Oelqtn+IPDrsuzz4VrhWh48juHH4vcpnJ++1uidgAw3SQTdmPqkhpygx/1jgZdhtUX
-WsMA8QHA7cINQl6viCGKSQ+wbFhi5V3i63zA3GdjX7rqcNmcbFkphPRPWxzwMOSQwc7GCgQmHDxg
-rKRGK+hCqjOs5E9oWJdiYoFbKM3tXoOHWqFMsEZbXmZUasb9KzIOxKT3SHPcnOQW/BCxkeZow6sw
-H139Bm7VONVI85AAzoGOQVNjAyqzeDNJr+HTMw8BtLa/+zMJ2yNfVL1GTrWq9MCYEqRxPSfsgviI
-WQkBwPhe0GLS+iCilt/ijM+sgLBew4IBgMLR05v6IqAc0Gm2z+0CiHxuOhPjgysJ/ksGYEhD0tup
-s17TpwVtq5cx9Al5AMHEN7HnbwjVRG/gz5PpoxMLm3B6ZRtCN0TtYIxkzH24vktW6bYjlHBUfETI
-wKriQRmO6/YpVipX7YWGJhmAmTPCBlwkhpEtlrmZQ8RVCBs7sEAbZj/O7MdU1U6o9Uy7ObkZ5fFI
-SsjekLkGX/QPVtJpets5pY6VubSFqt03cYH8CRUK+YOIJJWmbnCQA0BU4xfPZzbk9NnYSByPyOmW
-I0duuMv6s0n9X1jUuaJvrbmp9R4XCgrzGH7LfLt4zLptm3Yu9ehLbbgOgD8Um8VEqvgVp95YPaSL
-WA4CEN0EeJG+OA9jLltfQSJDbo6lGAFq7Czk8eraY8rWdKuolSA1CHWTOKy8T9sAlN4JKGbrkvRh
-6dzpjxJyH9DYz/jYeh3eywXvZGbJtjne38Y9CyMnuiuH22gLTVOwZ0qaAmWkJrJcOJ3LUS7+jpG1
-VM+RNjKsBat2jpNayHj36PbjpTz+5c2kyZWGZdIJVvFU1CCJgC55u6gBpyaKprk2/pl1bOVm1kPp
-TofVG3JvtBDwcsrSwEWxJB9OFbe3ECD++4bo+NJvwce7fM6k+85B+ZyFnvrd7Oqlvz5xwAvfM6l/
-KgQwZNYVp0a6Sn3KSsh3UySNvcBEnN017/vMOoGiK0RbJkmYw5oU3jJDtdz53ly5rjGwURSJ4F7Z
-73XSkiIDsopIFGYh0mkCvmq7iK+1XPUuoRMXT22gJFgUbdgiiiOtyGyzrbaQdVgKyvuaxiYIuFbY
-dC/i4SjfwpzmjZ0zTIIhPWjZMe8mse9qp+5CASLzkJ2nvmRfI1Ep/qwD+XONl/Flt30kyI5I5YtY
-BiB1IzSk3sLK3HaOBF5UuVGG8kDNluwRSFYCVUcjs2LSYBU+jTNVX4oy0VxUUIBiJIwzURKAhs8c
-KWmLGCDDqq5D82QGdUVy7oux0dbEtZBAsES/5BzBU2L8CkTtXIHaL7DyNsEuIw0XJm9I53UaPE9A
-GT9gLCN6TVmAfmm6e/2jJB9x+Za/DLKz3WedE8j3K4P4Pw2cTzBbki8A1CPKe6iMc5bOL047uoni
-kZGv7Zcnkwk8wLccbyiiFQVtd+NzOny8eNdTd1G7Ns6a0OdeErmchn7BwftjO/y+NSuJqW3ukAGv
-7GfeA5geKMB2rCwRqlruyaXcC48xZMHRTAR3Mv+ArbW7pSGiTNHrUkWNMhDnYrgO99GJPp/8sbxn
-KEYAZh/rL/a/KeUveGRt/4PKtys+476pEga1U9yT+W7sSkDYbt2b5kSRw2Esa6TcLTuBceJ+p9ka
-Gh1EjMyil1fZmBBEfmphSfNKk9yfIjhnCPrcm0lB9KfTmHctwGFMCykSEZIEskZg6Mh8z2xujkMX
-70Iog1vJyAwrnEaD0aPPEsifdpwl9uY8S6THpd3zXvZaRognZeiKKTYTZeSOUw17D9E8sHQNTaFp
-WipQmXgqceEuq+lxo8tthbW3qx1U7sBVWtDiSYol3xLszDdWZbVJkeS1/0+YV/hSSXNpsiov4/qx
-OkCuOHigV9jw1wu9wskES6ugWkNI5v3vCZNBzz8PzMuqLO3GdG8qMcicQ4sgKduGP3/+B2rppeJn
-pXrGZeqV7YTzU1VacBGEYaE89bPCNpqQf4BIZmw2ThP2AcIxZ5mV3vrdM4OpqNdria8k2hgAzpK0
-CXmVmJszIbhgEwoI49oIHAF7tk14ex935Cv6sX0KQN7igJAD3eHXaiZDuw2T90ybEQpwlYcISADs
-YSLmkOgf/8yVyjuPlpWOaXDUKmoxFcdlbVIdrqfvGBiviZQNVBlhzj8Y5xSPM/uBP20u3HsLC/cQ
-tZPwd0hpLTe65LVWNgzDapyUoZtiDAe0DlAOGBMklGCOx3X7VYRKGOHjw9wj9smagQPQarPLMPjY
-Qoh4Piob2X1oXBfdEwdFZd0u2hcoE1eVVzt1NEIr57FgSw8MIjZISyrwGHB9/bS1TVI83hEqtoct
-97/LxGiTZD2HyQBzabSITtCsWvt95BVMgjkADRbeHtFNFTlpwCCc3AoGUWM80rbgJF7mDcdVnbPU
-i/Uz7VpFNveqPEZgwnBcnWgwNDTi3ItvkZ62A57Yy5P1Y+oXD5w8oRhyNLgKpg6EoSxrsYcF5bOD
-xiqgFubsXTF27oJ4FzhIhYf3bs99Am3ZAsXUjCNtmGP6OcaaW8Yy55m4aadvXy1OkivkWhlT626C
-c55FmxQ9WU29lmG/reijdmsI84NmB7Bg5rcfb/zUJ0wntBlwyhWS4dSZG662zRTcnAIU12NbSpcz
-8v8N9zvDfQic3vsfMzowcw29X9Pj7ntmr1Ppf5tR7TEEatJak1ZnYFFJC2u08Fy6sh6zQ+CT/+W1
-FM/f1dYDUEk9Uvo65V5Sc4zKrPL6blsoh1f2WZ+mabWp16EueyO4p8bGiUERBZ6pVm3tE9lfOryz
-Kr8ckao3GiDhUCJf3vRfHZG/RWBITzOw/GYSB6fk/zil0GyHhw3aeTgRX7IS4qUkZammqm38ri0e
-bFqrseMNz/+nNre3CvPrNWbUegR16s4jeg26yTsDE5N0JxX5N3GYj5GN/ZUPzxIpJpxT3LGSu8ZA
-dZQdNvtO3/YT/HQ0Y0ORLYr36KpaVlsZS4UOzCQsqPeUMJ5X8x7ib5ozvLnFcZss8peCwnhPVQq2
-b1crCOIm4bJJbcm3p0D4oApEQdKJ8rrHf5IQrS6lL2A5OKsjuAzWdSp4ZRk+zgYazde0g1Q0mVGU
-hwmtnqbEk+odppANBJQz9Z663UQGGoyih4vQxMs2nhQ0hFT3WfrTcA1MN1+U8yzdBtzmoUVih/PY
-+RGaC6sgGajfamPTENVejL4UXzrTT++4WdrvZ9zMvcUpCzjIFPNDhAM9MITOM7WQQryVU+Y0dq40
-6f7yedTlbupS0fGk7MI5O42X2M1qsPQHRjGTL7ze7VkOxGtGeGnh8CnPsgMnYTSWqqTQhdIs4+fQ
-pqZ3fAprgQLp0R237xDkHErHs81CYGBPplJBDoLTXMg5vo7YHou4jJIn7AAsNAGk0sOIWFaEj174
-FV+ja9gRVag5RNmkigcvabaxXU6Osllkit2gbeGDauHrj/FAtqvfbdYEXdfiwxWD6QkUIgdsjqqa
-PYOrp93hIGqJ7pi9cIhQIs0Nz+vM+E7mxgwIxBG832JumT2Ifpl4zibUdC+/FVDh7N1IoC2PpD7l
-jbP9q7EVUJ2zFZgVQEEN2uib54FT0AQqxyk3iAytkxvk5PbvSGZO+d9EJPluW+BrVccnuzTiEDYo
-IFqNK+lBRB4RNpDsg6E+oi6FjVHdQJ63Hn1m2rvVIG5zSxE+miIL9mNKclDBNVaXRM09hxlH0VwM
-Lfl/IKL7CTQHpuJtyfW0kgGJF/pHPgsU9epHHiHr/oXEHhfYZMhS8pjBw9o/9EEejLcKqSIm8J3r
-GpxRgUAHtSOCdjsIOBknlu+/ywZ9TgrlICgspkYbkde0SBi6e6JhJpx4MWX5mBbxWgn71xeeg7oe
-15SvoznyxfSxfUZT3m7XduOVOYgHuVKADtIjOA7RPnsqNgIJXCruVQCw+F7FEfb+GWo9rolqB1cB
-RyfLeT7xwZjJLyChJ+t8fizAMip1zUHNE1gQgKQFV0Bb9y4CT7pLRFJBejhCfpCjmC+0NLTo9u7h
-9i0sQkulYHpecOO5bI1mjNDeEScPUiOV6HfaM03oOdNso0Z3RN85E7e9e9Vijo+TKNEqOR2cIwG0
-/G2+56XZEr4gA63WK4pVQjnyEH/vZdJzPwkX4N8/fAxwWe3so+9vkAJ/jahulL853WoxPXDr6UUp
-dCepbM1PHMytzKYiSByu/LVOJRN4tmsTVT9TNaW/V1wY2id2ztKgitGFA9IkReecrqx1Jt2byEJ2
-buO/t6tLtki1Udantf6LJhr5yBbHxgriq8FPB9DrFJ2DYlY+ersyr2Z/Sv2IaFFUq+7HpGiPQMPz
-9zW95/RRDesMKLUrsU08WY/LB5WYVu160a1v7QpFWsc7DGC44vvqkNW9ngbnVovZ9Ik0JvMxRo2Z
-yNxIgobB+Z+NLEL7MhuWu+u+HIvQFYPwN9WDKP6Ww2yeIVyJFX/OPs8v+1uGoUlF7dOzAZL/9X/G
-aMPhXPrPm4eg35FhD9ZnNLny+z4WakWtz1w23yq3dqKF5smA4sKMO1p3ddLkMiyqxV43977LNG6H
-IajQH+dUA254dpF1p3zPbVEJaChDfgqsSYXsg4X9oxDdkgdSynUGFwrJS/lmZgLjZkfjAjJBZW3f
-WOiUeYDww9s/DSwKskaTaVDRHE/bZzrSx5eAoFifwZ4oCUi2tOAFCfP3Qa7D9DV8dJ4Um8ohCKZc
-QL/VOuAk2gLiEkUDYYy0l77Xp7Z1WezDRBZ4GJON671oOeKP7SQFa5cCFxJ8zWL3okoDTtmCIfQG
-yrxE6aeasV4/CxqbhL3N7YXEwc+zh3eUEw6JqPCkIAoGxnNUj4QldbmFgtswoKKzlWW2O8wGTRQt
-PtBuZndicex8/XoW+MpB5JKTFKVokGw488rwv2ht8amIXQvORrzeUcnzDUJoQcbdtK4ZeAjE40xi
-7UO5HWvkIGyrBUd47RsqaqeYicaaAc/GlYRo1mWJqc/5P0nEy/10Ux5Ohq7X0WkLsO7uN6w+2KyK
-HTFYrit2eIB1UA/0xdWz21yZoaYULvmqFhURpzTX/OYJRQKCpYVBqnXVwOsSyf5Tn7wpgy24EMub
-zvo1qjQ79zrka1kpdSXuVfS9wNBUkcYWYJI73N2MdSMgRHG7Or8LaZ5AjcdNii9DAgw508uVl8O9
-xXAmaWjgr2Qn4ofuEYSAp8LECM5xgUmrw/h1uDKG0FeXvaddRhMKDWBn0PG8/AVg1nuP5kuPhDsc
-r2AKdOi+BaKWb95zhgTCmC2xYTGSCAFnoMh4x+4Lmf1MIi1iwxtQ1EOhi76Ds14Nljs4gpamfDlC
-KArkZzNRrcnMZut6t6uD11fn/fBd56n0K8i45UGQC6tAO3QAPNWJIA4YbUjLq02vyI5QeQp+u2Iv
-4cyNPOnVhgF8IgniJUzN9jUna2Jo4f/oLLuUaf9lwO0ssoNOAN4aWCvriObP7IVMYfbr526JrQDO
-4XZVVO9NdKeFzLbH0GUQVFzv2tLoGwYpalsOsOPBByvaw5nfvbvVMQgfwy8UEd3cU8XXr0I3LJIO
-XhsGh37uoaZfHwbNGz2hIe+nWvT4aBOVp5v7wfALih97+q+z68s30VBAxZyqCrCKOtw287asP2Aj
-5t+dUh0pmDSrXFZAErWTeaSV5VH6Afv+D/x4o0Z0tbqb5pL2QV+8NQRn0n8vDQsqrKsMmREBsavH
-vnWwY6gJS0NQRxoaXhyn7hHBr2G1FbNrFWNQ0DpbmbILLFbCsSd2pFVJKc5CWNFoTj7myyG31+Nw
-s5Cj3iuqE3lk6Dtwy6aBmNLz7AYqh3BapNC5Np7MNrbb420xz9lqYnovG/ia/zS9EXxaVgxb4vTH
-n72ZSPkp0xj5XWmbFzCgmjGhQ+R/ahJVvO2WLQn0/81gsJ6V78fVDuIaRsc5kbwV6Iz/hxO6lHN4
-HG31Wk1KrN6y9nOULQqSHQfSnD9U+bfWAkYa7mLeM2Uq9oHTppQs4oSQyja73/y1pdk3lHgkDOTn
-8clRhPkFHp/lTPmzzzmx6bp5Qi7VCiaSUhOZqxsUxPLYNX2zskfAnMKXWcA2GXAagmEjFao4FYPp
-NfylcKkkSCoLluXpcPEslrOhTJPgyL1++HvhTju+yFn25j445csmiQ7uKNiNBqVd4jlv81QxyFNh
-2thceReBEXf3OSEf9IEfE7i5wJ9xgQgRB3gcXnr2J3DO4pKxw1PnezF3UT+u6TXaqkwEW9d5j9iI
-6bBobsolT+m3/+dBsX9zt52Hr+57wQfHAdOFDizS7L2dtULQa6v82A/CUE6gLCTJN9+ITq49fZ/7
-6fp1lCSlwCEQDdOalAlE1GBDEVIfPxP33w5XWQTcGFZNYxPwpShUAOb3KMuW6eGMKW8f5rhgepwy
-430gmGQNBzQPUAjbeRcoq6uVogklVfg72LAVQzqJhS1vavEwCFv24svuV5gz7R+xzqlmE+XVRwWh
-HuJTM47etxMo1Bs0lFlZMbwtnrj8pkCXvjTqlDAKCqidBIjfFy9O776MA2rvv3yZN3K8AJPnmWVd
-sPFQg3CRiJCU1Ul4k3gtfPnw6B9bAx4wDP6eZkKgXtSSFH5wAz5fpjkVaheTpPsGoH69NbDOFv9G
-x19U11qjDTe3GdkvMaRphbQBpD/DLyQtIlZuCcFLzjn55f7NsIke38U+XQCcs5MTvk5p88sIM7vz
-PVAxorzNSlqhbcm6oxPaQZk8/cz87lzNDy5uP9F+Gc+qFY4lTQN+wf98LU7Ymq06uJxjhQXZ9nek
-5JIpTpH5aaJSPNDpp1xDLtaJRlvevBeAgx+gqblsiX+SaFaBd8O3TyJjwMAqrphTBHBRYgbmU1gJ
-wJagU3e438dyYthGIq8XdsR2wVejHocjcu1u1oTH/tQYOQmnEGZK5OxPBsLbkEd2jcqVpsfZXcHD
-KUwfYcUiLUW3rqaVxegwVNBfmV5fWObdc3QM6MXOUYvTB6wmTDxnu7jO1QhGFHXFYx/W/+cKxOt7
-GkSEEziNnFATBi0Qjx4S8vBI1Ahmnd3IsTbFB7cwcEpJgO4ojYIDgkt3AMnb/DEyjubDeNko+K8S
-IX+M4f/tr+sIACxIP9FqDomCVr+QNCatMUkbDBzffgH5vxyFi7dQS/yRzx7QEBrMbLrltFXT3WWf
-UpxooYCpJkftaRcnROGqzWoY5cwuPzWX9X/qaVeA9ww0fOB6QCmsfiMGiw0SkiE73PY3j/cNg5d2
-r3v3jv0n6vFKQMmHasXCUNdnEjYTbVxvcj4bp6KnrED5gweHtHs2d8D5Nj+mDI6UipQe8OH//gE8
-1DNzhFuB7usVdOFflvuQQd+MgAP2U5SNnCWkj7JaMq4SH+8sleoQS574RNme2tpMTQ7bHt4zLWXb
-JC+205PIXRCpG1k0y6dN28wzpORNEC8P0PScOMlkMfL1NT2HAzwUxcwRBkJZPSih+D2uhhRqExe5
-NJrWACCz8FTzYolBuAcTgK/t/+phWzciDIvFurbmYZLKEn/ekuFMr9Y8ob6Ypz5C7wkFTRTk/6IY
-e8jZmuMq7Ora0CivKJs4skH0uVdBld04Iyv/nRHPWyjeI5Pm1V+BT57Tvzih6U+D8E/Slw0ow1dE
-AtqYs6/EjZklG4aGMQOIl981fxrvf2SWK2g33Zyf6t3Anvnn3q/ymIeRofzv/BNlWw6jSsl2QyV+
-V9PLjun/I1rKfcIqflUYN3agAwtix0VPS7pMKEdGwdzK0GsMAz0QGpvXVJgwoN4PRIIf/X6PfLsM
-TKJOxYlnGNffAFL/RSxogNY7m9Of29rCxTCUtPstL0cLxOsWvLB19bj2zKzKR7o9Q3AUgx1YwfOS
-rmMnYuzZFVwciNIrf9w3UQzJsGzCc1ORM1jrW6pEko80qZ1lrby/R5GDnZiYoCnYnu3UW78jJLW1
-cLfrUccMSZs26L9yUSKX2uyGLR6PiZT/bU8dpJKwXkA0Z0a2INqVxd0wzdHES+P4E5Cs62Gm19mH
-Nx3SOFs+nlYkJhfvKac+eSo66iFglZ/AjwK5VZReSkLpNuPIBoRxU+vsml0j6nsRyy5CugHRtXlV
-FhirK3i5iYiNm8cr3Uj7ft/18AMi9P9ri2CBaG91WTbDsRGl0WpGXkEpdNko3KFJNenksmQ5MkPu
-EW5d3twOK9kXdKOGcyGnyAQwT2A/62N03fRl/hefSZvYzYbxLCWO62RQ9jbwV0gRmUa+2jCmjM0q
-9VvrIvtZLIyD/Ku0cjf91hgjhdGho+hHjQFxnxRCSZALDoklCCJ8u3fbJ/uuw3ucVmj08/tM62kb
-mY2RVU8zSYAAQJyh9IdW+58C5cnWIeTiVL4mDjUUM17O560NVG4YnarPXk5Ev1+xT22fSj96U39u
-MAJTVbAVa1CUQct8tXR68WYX+lX1GQzBGiWMKSboQhbhRRCLDY4Bo3iq4CYK+Z7RBzj+gboJv7p/
-aHZFUURmDUkNk+7fAQeOwhFTsPZeFaSmjO4SCcju7OrhGXivZa0/58VGnND/uAbMkI4SnLdbu1AI
-KAH0nCn0D4qlFuCSlNgcWl6zcg1mX57VtwZpMezez+WYRXQUB0NXZ/9rSTkZeTPyjcSKEFbcoiDo
-EnBc0g73BXbK030jtnJ+hQDYqlSDI2mQUwNwQHBmcihdp7JpIwhcyyFVDqNfgYHbozZ96efebuTI
-iO3pFKxexRrNUOYu1DAgBLwJkoZVKOZpOoIgk78s4pwOqeJ9pI5+PXut8AiEs2cnk1voNneW67IX
-NLxPC2BEWcjl7cQ3n5i2fRmKh3Bu8pOUcPL+eufukFp5yjGv6xaxE1Q+qlboWII8weghijBSghTI
-gMqJ1PmTRN/6SgbRlFW20EOIdCrGiUAqplfC1hw4wD52JPsRRyKJD0etC9gfdk8z8rvb7RAVIK3L
-s9CS+2+0odPPUg+JD71ysbSgjLN/C51pSjl0moYlWcp7/xC1fB5Cedsjb+SwBGXho70Xo1PMEs/9
-32ANA9kXk3XyxJ3/jDlZzLPxofJ917eOOWgINwr4u9+rIxfEZ+cJKkmBD5FXiBzCS5cTxvm5763g
-bjen8Mq70/E+J7nZGEGNMqpalU7T+JVtwWpD/qFPRrCn5psNxP5SJw7JAJThBXZyfhuE8NfdWTdM
-fwnGSA49i7i05Il3Q7NRTFigRUaajNYGqVU384E7maQ9LI4DHvMqSP/wrEk1XZq1/5ReGFxmLL6W
-PvQ3WOcgqw608YfJ+DtcsC+gKf7L0dUKXxkgsRZ2TUq3l47nSFKPuB1CGZxdqMKdefvp9yz75Gig
-VcTWAdtqXh6qsa+Fh2H5wHwFpYF/y/mt95r662Nd3Xp/jdAqFm9DRB6fwdL9s+5zEQlKTDBEcxlH
-qdE1VMfxAjC/DZ2zBk0bj0CoWBLG7RIBXRhjqtSz1Vc5FOztqh3XsQ6gUxxemokyEff/NZSCJPvv
-a8tw7i50YGcSYVKlaKbNro4+ql4gmghp6zksi2hBCfl5w1sCuVtzD51G/6ZgCLtD7e/DQvYx0Bmv
-+y9LaWOrBDpfbPYnJA6FIebQkV/0XMqlkgXQBc0gQ+bmB14Pmw2ssWpIG4YAYSSnDrtHYpSW0d/i
-91wnSMMa9S5sLT4ayqlToGDXtkwa4EqMDRT09fYeIXVslC6z5habVsgLr1Csq/plhfTsY+aei0m/
-ubLwNl/E7fQxDbNO2eFvB3qcmGYjRJt7Tu9kGrv/i7EIybhnGdkk52an3vuSSkhPrQixbRJiyTR8
-2B79WvAFFda1qKozAZs/XOVOwYNZwrZSkQkOezXViybh1dFYzcoVmnbuDcP6D19gn21/Z9A28I0F
-hESOn+GncakwEg1ptMcXu8fOlQZt1799Dk10uGh356r1Pf/8JgzB0HtK1DeSQhjzIxUEZoaaTRYq
-DQjhqIm+SH1nfstz1W6aQBDj78iUX73Gl4D81pHpVqqpKidf1wU/sopTDM7b3DK3yM9ejy85bNfj
-gp41KWq7vmmPpSc1gIxk8fbBLocvDH8lU2kwL9yzX5O9/n11fvVMgKoAy2313qG6gOsldT/PBfKV
-5GbVsXbkqE3PFKi01lWoKx6ByCMCsVvChesJGxdXfluKsdyOan0G5zxukGXX3p2rC1ivt/h1Erq0
-1eGQYEpspKpmSEjkS949A+Zhv6LLX0d66S9petgRIrvzKXPmxl4oIRy0rIJ/h3OdyVaI+QlbFK/o
-5tI2UUT/wampRLfmXCAaCNl9W9xK336lMAPylEfiQFEut/R91OVbz4PR7Pf91kZF6yZESLzUCQpi
-GB/2W8gSVRIBNpCVNuCzgYVgmA3yKZhH1BUleFWprVtLqWqf7Otn1JVPlsEQB2H/fVjhaq1MWJx3
-AG1hPZOVjH1z/QbqTLRtY5Mo/RaVU2sgSOX1blfuuqm7qBIrK9QPBvNTQHm2UqQW872fvMMYAyUZ
-SB9aat4VDfcAf2S19r9FlLcuk9EOPCQFstmshy8wdQnHtouD098rcvrTnOR4jXxhS8JpJ8O4V1wi
-2IK7FivmuHNFIw0HBsBpfUO8yCPdGPmdf0i0ZuT/LSqSZ91MDrQa+gWPf+bY6MyRHu8oEZLu55kK
-nD/x99f2Y1wXVjXB02g+Q5Ed1OzJLXuTtgqN3nlXiF43NWWVzU/yRYvjT1W0eOmLZ20kUCQMCNig
-WR+EHNx8h4Jw88eK3hT7/HjunWgSSy5z/20qMvtjQv2nwWNSLciPzcCw604ic6qhggxi5xV0LJYV
-szfniXmnSmSOndqHQK8aIXofdPGlscCzbbhILqB0yZYkEpUf+54abWHiTuxreCUYy7xvKvX5UtJC
-vAmvtVKkyGyJBRPfHDYhsWllBnu2WrZwbzgOXD+/4C5AaX43uUCgZNTuEsCVM7GkyFoz6rUVfsJk
-0vucli6iRXqg0QBG52VdVJ6AaAPejiLlaHDNBfMme3MahxGf2BzkSMtEFV62PjXelSaX1j4=
+<?php
+
+namespace Guzzle\Service\Description;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+
+/**
+ * Data object holding the information of an API command
+ */
+class Operation implements OperationInterface
+{
+    /** @var string Default command class to use when none is specified */
+    const DEFAULT_COMMAND_CLASS = 'Guzzle\\Service\\Command\\OperationCommand';
+
+    /** @var array Hashmap of properties that can be specified. Represented as a hash to speed up constructor. */
+    protected static $properties = array(
+        'name' => true, 'httpMethod' => true, 'uri' => true, 'class' => true, 'responseClass' => true,
+        'responseType' => true, 'responseNotes' => true, 'notes' => true, 'summary' => true, 'documentationUrl' => true,
+        'deprecated' => true, 'data' => true, 'parameters' => true, 'additionalParameters' => true,
+        'errorResponses' => true
+    );
+
+    /** @var array Parameters */
+    protected $parameters = array();
+
+    /** @var Parameter Additional parameters schema */
+    protected $additionalParameters;
+
+    /** @var string Name of the command */
+    protected $name;
+
+    /** @var string HTTP method */
+    protected $httpMethod;
+
+    /** @var string This is a short summary of what the operation does */
+    protected $summary;
+
+    /** @var string A longer text field to explain the behavior of the operation. */
+    protected $notes;
+
+    /** @var string Reference URL providing more information about the operation */
+    protected $documentationUrl;
+
+    /** @var string HTTP URI of the command */
+    protected $uri;
+
+    /** @var string Class of the command object */
+    protected $class;
+
+    /** @var string This is what is returned from the method */
+    protected $responseClass;
+
+    /** @var string Type information about the response */
+    protected $responseType;
+
+    /** @var string Information about the response returned by the operation */
+    protected $responseNotes;
+
+    /** @var bool Whether or not the command is deprecated */
+    protected $deprecated;
+
+    /** @var array Array of errors that could occur when running the command */
+    protected $errorResponses;
+
+    /** @var ServiceDescriptionInterface */
+    protected $description;
+
+    /** @var array Extra operation information */
+    protected $data;
+
+    /**
+     * Builds an Operation object using an array of configuration data:
+     * - name:               (string) Name of the command
+     * - httpMethod:         (string) HTTP method of the operation
+     * - uri:                (string) URI template that can create a relative or absolute URL
+     * - class:              (string) Concrete class that implements this command
+     * - parameters:         (array) Associative array of parameters for the command. {@see Parameter} for information.
+     * - summary:            (string) This is a short summary of what the operation does
+     * - notes:              (string) A longer text field to explain the behavior of the operation.
+     * - documentationUrl:   (string) Reference URL providing more information about the operation
+     * - responseClass:      (string) This is what is returned from the method. Can be a primitive, PSR-0 compliant
+     *                       class name, or model.
+     * - responseNotes:      (string) Information about the response returned by the operation
+     * - responseType:       (string) One of 'primitive', 'class', 'model', or 'documentation'. If not specified, this
+     *                       value will be automatically inferred based on whether or not there is a model matching the
+     *                       name, if a matching PSR-0 compliant class name is found, or set to 'primitive' by default.
+     * - deprecated:         (bool) Set to true if this is a deprecated command
+     * - errorResponses:     (array) Errors that could occur when executing the command. Array of hashes, each with a
+     *                       'code' (the HTTP response code), 'phrase' (response reason phrase or description of the
+     *                       error), and 'class' (a custom exception class that would be thrown if the error is
+     *                       encountered).
+     * - data:               (array) Any extra data that might be used to help build or serialize the operation
+     * - additionalParameters: (null|array) Parameter schema to use when an option is passed to the operation that is
+     *                                      not in the schema
+     *
+     * @param array                       $config      Array of configuration data
+     * @param ServiceDescriptionInterface $description Service description used to resolve models if $ref tags are found
+     */
+    public function __construct(array $config = array(), ServiceDescriptionInterface $description = null)
+    {
+        $this->description = $description;
+
+        // Get the intersection of the available properties and properties set on the operation
+        foreach (array_intersect_key($config, self::$properties) as $key => $value) {
+            $this->{$key} = $value;
+        }
+
+        $this->class = $this->class ?: self::DEFAULT_COMMAND_CLASS;
+        $this->deprecated = (bool) $this->deprecated;
+        $this->errorResponses = $this->errorResponses ?: array();
+        $this->data = $this->data ?: array();
+
+        if (!$this->responseClass) {
+            $this->responseClass = 'array';
+            $this->responseType = 'primitive';
+        } elseif ($this->responseType) {
+            // Set the response type to perform validation
+            $this->setResponseType($this->responseType);
+        } else {
+            // A response class was set and no response type was set, so guess what the type is
+            $this->inferResponseType();
+        }
+
+        // Parameters need special handling when adding
+        if ($this->parameters) {
+            foreach ($this->parameters as $name => $param) {
+                if ($param instanceof Parameter) {
+                    $param->setName($name)->setParent($this);
+                } elseif (is_array($param)) {
+                    $param['name'] = $name;
+                    $this->addParam(new Parameter($param, $this->description));
+                }
+            }
+        }
+
+        if ($this->additionalParameters) {
+            if ($this->additionalParameters instanceof Parameter) {
+                $this->additionalParameters->setParent($this);
+            } elseif (is_array($this->additionalParameters)) {
+                $this->setadditionalParameters(new Parameter($this->additionalParameters, $this->description));
+            }
+        }
+    }
+
+    public function toArray()
+    {
+        $result = array();
+        // Grab valid properties and filter out values that weren't set
+        foreach (array_keys(self::$properties) as $check) {
+            if ($value = $this->{$check}) {
+                $result[$check] = $value;
+            }
+        }
+        // Remove the name property
+        unset($result['name']);
+        // Parameters need to be converted to arrays
+        $result['parameters'] = array();
+        foreach ($this->parameters as $key => $param) {
+            $result['parameters'][$key] = $param->toArray();
+        }
+        // Additional parameters need to be cast to an array
+        if ($this->additionalParameters instanceof Parameter) {
+            $result['additionalParameters'] = $this->additionalParameters->toArray();
+        }
+
+        return $result;
+    }
+
+    public function getServiceDescription()
+    {
+        return $this->description;
+    }
+
+    public function setServiceDescription(ServiceDescriptionInterface $description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getParams()
+    {
+        return $this->parameters;
+    }
+
+    public function getParamNames()
+    {
+        return array_keys($this->parameters);
+    }
+
+    public function hasParam($name)
+    {
+        return isset($this->parameters[$name]);
+    }
+
+    public function getParam($param)
+    {
+        return isset($this->parameters[$param]) ? $this->parameters[$param] : null;
+    }
+
+    /**
+     * Add a parameter to the command
+     *
+     * @param Parameter $param Parameter to add
+     *
+     * @return self
+     */
+    public function addParam(Parameter $param)
+    {
+        $this->parameters[$param->getName()] = $param;
+        $param->setParent($this);
+
+        return $this;
+    }
+
+    /**
+     * Remove a parameter from the command
+     *
+     * @param string $name Name of the parameter to remove
+     *
+     * @return self
+     */
+    public function removeParam($name)
+    {
+        unset($this->parameters[$name]);
+
+        return $this;
+    }
+
+    public function getHttpMethod()
+    {
+        return $this->httpMethod;
+    }
+
+    /**
+     * Set the HTTP method of the command
+     *
+     * @param string $httpMethod Method to set
+     *
+     * @return self
+     */
+    public function setHttpMethod($httpMethod)
+    {
+        $this->httpMethod = $httpMethod;
+
+        return $this;
+    }
+
+    public function getClass()
+    {
+        return $this->class;
+    }
+
+    /**
+     * Set the concrete class of the command
+     *
+     * @param string $className Concrete class name
+     *
+     * @return self
+     */
+    public function setClass($className)
+    {
+        $this->class = $className;
+
+        return $this;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set the name of the command
+     *
+     * @param string $name Name of the command
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getSummary()
+    {
+        return $this->summary;
+    }
+
+    /**
+     * Set a short summary of what the operation does
+     *
+     * @param string $summary Short summary of the operation
+     *
+     * @return self
+     */
+    public function setSummary($summary)
+    {
+        $this->summary = $summary;
+
+        return $this;
+    }
+
+    public function getNotes()
+    {
+        return $this->notes;
+    }
+
+    /**
+     * Set a longer text field to explain the behavior of the operation.
+     *
+     * @param string $notes Notes on the operation
+     *
+     * @return self
+     */
+    public function setNotes($notes)
+    {
+        $this->notes = $notes;
+
+        return $this;
+    }
+
+    public function getDocumentationUrl()
+    {
+        return $this->documentationUrl;
+    }
+
+    /**
+     * Set the URL pointing to additional documentation on the command
+     *
+     * @param string $docUrl Documentation URL
+     *
+     * @return self
+     */
+    public function setDocumentationUrl($docUrl)
+    {
+        $this->documentationUrl = $docUrl;
+
+        return $this;
+    }
+
+    public function getResponseClass()
+    {
+        return $this->responseClass;
+    }
+
+    /**
+     * Set what is returned from the method. Can be a primitive, class name, or model. For example: 'array',
+     * 'Guzzle\\Foo\\Baz', or 'MyModelName' (to reference a model by ID).
+     *
+     * @param string $responseClass Type of response
+     *
+     * @return self
+     */
+    public function setResponseClass($responseClass)
+    {
+        $this->responseClass = $responseClass;
+        $this->inferResponseType();
+
+        return $this;
+    }
+
+    public function getResponseType()
+    {
+        return $this->responseType;
+    }
+
+    /**
+     * Set qualifying information about the responseClass. One of 'primitive', 'class', 'model', or 'documentation'
+     *
+     * @param string $responseType Response type information
+     *
+     * @return self
+     * @throws InvalidArgumentException
+     */
+    public function setResponseType($responseType)
+    {
+        static $types = array(
+            self::TYPE_PRIMITIVE => true,
+            self::TYPE_CLASS => true,
+            self::TYPE_MODEL => true,
+            self::TYPE_DOCUMENTATION => true
+        );
+        if (!isset($types[$responseType])) {
+            throw new InvalidArgumentException('responseType must be one of ' . implode(', ', array_keys($types)));
+        }
+
+        $this->responseType = $responseType;
+
+        return $this;
+    }
+
+    public function getResponseNotes()
+    {
+        return $this->responseNotes;
+    }
+
+    /**
+     * Set notes about the response of the operation
+     *
+     * @param string $notes Response notes
+     *
+     * @return self
+     */
+    public function setResponseNotes($notes)
+    {
+        $this->responseNotes = $notes;
+
+        return $this;
+    }
+
+    public function getDeprecated()
+    {
+        return $this->deprecated;
+    }
+
+    /**
+     * Set whether or not the command is deprecated
+     *
+     * @param bool $isDeprecated Set to true to mark as deprecated
+     *
+     * @return self
+     */
+    public function setDeprecated($isDeprecated)
+    {
+        $this->deprecated = $isDeprecated;
+
+        return $this;
+    }
+
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * Set the URI template of the command
+     *
+     * @param string $uri URI template to set
+     *
+     * @return self
+     */
+    public function setUri($uri)
+    {
+        $this->uri = $uri;
+
+        return $this;
+    }
+
+    public function getErrorResponses()
+    {
+        return $this->errorResponses;
+    }
+
+    /**
+     * Add an error to the command
+     *
+     * @param string $code   HTTP response code
+     * @param string $reason HTTP response reason phrase or information about the error
+     * @param string $class  Exception class associated with the error
+     *
+     * @return self
+     */
+    public function addErrorResponse($code, $reason, $class)
+    {
+        $this->errorResponses[] = array('code' => $code, 'reason' => $reason, 'class' => $class);
+
+        return $this;
+    }
+
+    /**
+     * Set all of the error responses of the operation
+     *
+     * @param array $errorResponses Hash of error name to a hash containing a code, reason, class
+     *
+     * @return self
+     */
+    public function setErrorResponses(array $errorResponses)
+    {
+        $this->errorResponses = $errorResponses;
+
+        return $this;
+    }
+
+    public function getData($name)
+    {
+        return isset($this->data[$name]) ? $this->data[$name] : null;
+    }
+
+    /**
+     * Set a particular data point on the operation
+     *
+     * @param string $name  Name of the data value
+     * @param mixed  $value Value to set
+     *
+     * @return self
+     */
+    public function setData($name, $value)
+    {
+        $this->data[$name] = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get the additionalParameters of the operation
+     *
+     * @return Parameter|null
+     */
+    public function getAdditionalParameters()
+    {
+        return $this->additionalParameters;
+    }
+
+    /**
+     * Set the additionalParameters of the operation
+     *
+     * @param Parameter|null $parameter Parameter to set
+     *
+     * @return self
+     */
+    public function setAdditionalParameters($parameter)
+    {
+        if ($this->additionalParameters = $parameter) {
+            $this->additionalParameters->setParent($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * Infer the response type from the responseClass value
+     */
+    protected function inferResponseType()
+    {
+        static $primitives = array('array' => 1, 'boolean' => 1, 'string' => 1, 'integer' => 1, '' => 1);
+        if (isset($primitives[$this->responseClass])) {
+            $this->responseType = self::TYPE_PRIMITIVE;
+        } elseif ($this->description && $this->description->hasModel($this->responseClass)) {
+            $this->responseType = self::TYPE_MODEL;
+        } else {
+            $this->responseType = self::TYPE_CLASS;
+        }
+    }
+}

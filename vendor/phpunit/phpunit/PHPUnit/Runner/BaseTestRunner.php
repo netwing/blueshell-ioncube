@@ -1,60 +1,189 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+ke+SHWAvYldWkVu6T/Tr+Z7sadcPB94w8zj
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Runner
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 2.0.0
+ */
+
+/**
+ * Base class for all test runners.
+ *
+ * @package    PHPUnit
+ * @subpackage Runner
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 2.0.0
+ */
+abstract class PHPUnit_Runner_BaseTestRunner
+{
+    const STATUS_PASSED     = 0;
+    const STATUS_SKIPPED    = 1;
+    const STATUS_INCOMPLETE = 2;
+    const STATUS_FAILURE    = 3;
+    const STATUS_ERROR      = 4;
+    const SUITE_METHODNAME  = 'suite';
+
+    /**
+     * Returns the loader to be used.
+     *
+     * @return PHPUnit_Runner_TestSuiteLoader
+     */
+    public function getLoader()
+    {
+        return new PHPUnit_Runner_StandardTestSuiteLoader;
+    }
+
+    /**
+     * Returns the Test corresponding to the given suite.
+     * This is a template method, subclasses override
+     * the runFailed() and clearStatus() methods.
+     *
+     * @param  string  $suiteClassName
+     * @param  string  $suiteClassFile
+     * @param  mixed   $suffixes
+     * @return PHPUnit_Framework_Test
+     */
+    public function getTest($suiteClassName, $suiteClassFile = '', $suffixes = '')
+    {
+        if (is_dir($suiteClassName) &&
+            !is_file($suiteClassName . '.php') && empty($suiteClassFile)) {
+            $facade = new File_Iterator_Facade;
+            $files  = $facade->getFilesAsArray(
+              $suiteClassName, $suffixes
+            );
+
+            $suite = new PHPUnit_Framework_TestSuite($suiteClassName);
+            $suite->addTestFiles($files);
+
+            return $suite;
+        }
+
+        try {
+            $testClass = $this->loadSuiteClass(
+              $suiteClassName, $suiteClassFile
+            );
+        }
+
+        catch (Exception $e) {
+            $this->runFailed($e->getMessage());
+            return NULL;
+        }
+
+        try {
+            $suiteMethod = $testClass->getMethod(self::SUITE_METHODNAME);
+
+            if (!$suiteMethod->isStatic()) {
+                $this->runFailed(
+                  'suite() method must be static.'
+                );
+
+                return NULL;
+            }
+
+            try {
+                $test = $suiteMethod->invoke(NULL, $testClass->getName());
+            }
+
+            catch (ReflectionException $e) {
+                $this->runFailed(
+                  sprintf(
+                    "Failed to invoke suite() method.\n%s",
+
+                    $e->getMessage()
+                  )
+                );
+
+                return NULL;
+            }
+        }
+
+        catch (ReflectionException $e) {
+            try {
+                $test = new PHPUnit_Framework_TestSuite($testClass);
+            }
+
+            catch (PHPUnit_Framework_Exception $e) {
+                $test = new PHPUnit_Framework_TestSuite;
+                $test->setName($suiteClassName);
+            }
+        }
+
+        $this->clearStatus();
+
+        return $test;
+    }
+
+    /**
+     * Returns the loaded ReflectionClass for a suite name.
+     *
+     * @param  string  $suiteClassName
+     * @param  string  $suiteClassFile
+     * @return ReflectionClass
+     */
+    protected function loadSuiteClass($suiteClassName, $suiteClassFile = '')
+    {
+        $loader = $this->getLoader();
+
+        if ($loader instanceof PHPUnit_Runner_StandardTestSuiteLoader) {
+            return $loader->load($suiteClassName, $suiteClassFile);
+        } else {
+            return $loader->load($suiteClassName, $suiteClassFile);
+        }
+    }
+
+    /**
+     * Clears the status message.
+     *
+     */
+    protected function clearStatus()
+    {
+    }
+
+    /**
+     * Override to define how to handle a failed loading of
+     * a test suite.
+     *
+     * @param  string  $message
+     */
+    abstract protected function runFailed($message);
+}

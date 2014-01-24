@@ -1,69 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Sndq8OMtmhPjo4cE
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Comparator;
+
+use Symfony\Component\Finder\Comparator\NumberComparator;
+
+class NumberComparatorTest extends \PHPUnit_Framework_TestCase
+{
+
+    /**
+     * @dataProvider getConstructorTestData
+     */
+    public function testConstructor($successes, $failures)
+    {
+        foreach ($successes as $s) {
+            new NumberComparator($s);
+        }
+
+        foreach ($failures as $f) {
+            try {
+                new NumberComparator($f);
+                $this->fail('__construct() throws an \InvalidArgumentException if the test expression is not valid.');
+            } catch (\Exception $e) {
+                $this->assertInstanceOf('InvalidArgumentException', $e, '__construct() throws an \InvalidArgumentException if the test expression is not valid.');
+            }
+        }
+    }
+
+    /**
+     * @dataProvider getTestData
+     */
+    public function testTest($test, $match, $noMatch)
+    {
+        $c = new NumberComparator($test);
+
+        foreach ($match as $m) {
+            $this->assertTrue($c->test($m), '->test() tests a string against the expression');
+        }
+
+        foreach ($noMatch as $m) {
+            $this->assertFalse($c->test($m), '->test() tests a string against the expression');
+        }
+    }
+
+    public function getTestData()
+    {
+        return array(
+            array('< 1000', array('500', '999'), array('1000', '1500')),
+
+            array('< 1K', array('500', '999'), array('1000', '1500')),
+            array('<1k', array('500', '999'), array('1000', '1500')),
+            array('  < 1 K ', array('500', '999'), array('1000', '1500')),
+            array('<= 1K', array('1000'), array('1001')),
+            array('> 1K', array('1001'), array('1000')),
+            array('>= 1K', array('1000'), array('999')),
+
+            array('< 1KI', array('500', '1023'), array('1024', '1500')),
+            array('<= 1KI', array('1024'), array('1025')),
+            array('> 1KI', array('1025'), array('1024')),
+            array('>= 1KI', array('1024'), array('1023')),
+
+            array('1KI', array('1024'), array('1023', '1025')),
+            array('==1KI', array('1024'), array('1023', '1025')),
+
+            array('==1m', array('1000000'), array('999999', '1000001')),
+            array('==1mi', array(1024*1024), array(1024*1024-1, 1024*1024+1)),
+
+            array('==1g', array('1000000000'), array('999999999', '1000000001')),
+            array('==1gi', array(1024*1024*1024), array(1024*1024*1024-1, 1024*1024*1024+1)),
+
+            array('!= 1000', array('500', '999'), array('1000')),
+        );
+    }
+
+    public function getConstructorTestData()
+    {
+        return array(
+            array(
+                array(
+                    '1', '0',
+                    '3.5', '33.55', '123.456', '123456.78',
+                    '.1', '.123',
+                    '.0', '0.0',
+                    '1.', '0.', '123.',
+                    '==1', '!=1', '<1', '>1', '<=1', '>=1',
+                    '==1k', '==1ki', '==1m', '==1mi', '==1g', '==1gi',
+                    '1k', '1ki', '1m', '1mi', '1g', '1gi',
+                ),
+                array(
+                    false, null, '',
+                    ' ', 'foobar',
+                    '=1', '===1',
+                    '0 . 1', '123 .45', '234. 567',
+                    '..', '.0.', '0.1.2',
+                )
+            ),
+        );
+    }
+
+}

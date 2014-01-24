@@ -1,119 +1,150 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+
+require_once(dirname(__FILE__).'/../../../autorun.php');
+require_once(dirname(__FILE__).'/../package.php');
+
+class TestOfSynchronisationCheck extends UnitTestCase {
+	function testOfSynchronisationNotNecessary() {
+	    $source = dirname(__FILE__)."/package/fr/no-synchronisation.xml";
+	    $synchro = new PackagingSynchronisation($source);
+	    $this->assertEqual($synchro->result(), "source");
+
+	    $source = dirname(__FILE__)."/package/en/synchronisation.xml";
+	    $synchro = new PackagingSynchronisation($source);
+	    $this->assertEqual($synchro->result(), "source");
+	}
+	
+	function testOfSynchronisationNecessary() {
+	    $source = dirname(__FILE__)."/package/fr/synchronisation.xml";
+	    $synchro = new PackagingSynchronisation($source);
+	    $this->assertEqual($synchro->revision(), "1672");
+	    $this->assertEqual($synchro->sourceRevision(), "1671");
+	    $this->assertEqual($synchro->sourceLang(), "en");
+	    $this->assertEqual($synchro->lastSynchroRevision(), "1475");
+	    $this->assertEqual($synchro->result(), "late");
+	}
+}
+
+class TestOfContentTransformationFromXMLToHTML extends UnitTestCase {
+	function testOfNonLinksFileWithPHPExtension() {
+		$file = dirname(__FILE__).'/package/one_section_with_autorum_php.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$content = $source->content();
+		$this->assertPattern('/autorun\.php/', $content);
+		$this->assertNoPattern('/autorun\.html/', $content);
+		$this->assertPattern('/autodive\.php/', $content);
+		$this->assertNoPattern('/autodive\.html/', $content);
+		$this->assertNoPattern('/autowalk\.php/', $content);
+		$this->assertPattern('/autowalk\.html/', $content);
+	}
+
+    function testOfPHPTags() {
+		$file = dirname(__FILE__).'/package/one_section_with_php_code.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$content = $source->content();
+		$this->assertPattern('/<pre>/', $content);
+		$this->assertNoPattern('/<\!\[CDATA\[/', $content);
+		$this->assertPattern('/<p>/', $content);
+		$this->assertPattern('/\$log = &amp;new Log\(\'my.log\'\);/', $content);
+		$this->assertPattern('/log->message/', $content);
+    }
+
+	function testOfContentWithoutSections() {
+		$file = dirname(__FILE__).'/package/content_without_section.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$content = $source->content();
+		$this->assertPattern('/<p>/', $content);
+	}
+	
+	function testOfContentFromChangeLogSection() {
+		$file = dirname(__FILE__).'/package/one_section_changelogged.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$content = $source->content();
+		$this->assertPattern('/<h3>Version 1.0.1<\/h3>/', $content);
+		$this->assertPattern('/<li>\[bug\] Patches and whitespace clean up<\/li>/', $content);
+		$this->assertPattern('/<li>Some in line documentation fixes<\/li>/', $content);
+		$this->assertPattern('/<li>\[bug <a href=\"http:\/\/sourceforge.net\/tracker\/index.php\?func=detail&group_id=76550&atid=547455&aid=1853765\">1853765<\/a>\] Fixing one of the incompatible interface errors<\/li>/', $content);
+	}
+	
+	function testOfContentFromMilestoneSection() {
+		$file = dirname(__FILE__).'/package/one_section_milestoned.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$content = $source->content();
+		$this->assertPattern('/<h3>1\.1beta<\/h3>/', $content);
+		$this->assertPattern('/<a name=\"unit-tester\"><\/a>/', $content);
+		$this->assertPattern('/<h4>Unit tester<\/h4>/', $content);
+		$this->assertPattern('/<h4>Documentation<\/h4>/', $content);
+		$this->assertPattern('/<h4>Extensions<\/h4>/', $content);
+		$this->assertPattern('/<h4>Build<\/h4>/', $content);
+		$this->assertPattern('/<dt>\[bug\] Undefined property \$_reporter \+ fatal error<\/dt>/', $content);
+		$this->assertPattern('/<dd>tracker : <a href=\"http:\/\/sourceforge.net\/tracker\/index.php\?func=detail&group_id=76550&atid=547455&aid=1896582\">1896582<\/a><\/dd>/', $content);
+		$this->assertPattern('/<dt>\[task\] The HELP_MY_TESTS_DONT_WORK_ANYMORE needs to be updated\.<\/dt>/', $content);
+		$this->assertPattern('/<dt class=\"done\">\[task\] PHP 5.3 compatible under E_STRICT<\/dt>/', $content);
+		$this->assertPattern('/<dt class=\"done\">\[bug\] continuous integration<\/dt>/', $content);
+		$this->assertPattern('/<dt>\[bug\] error_reporting\(E_ALL|E_STRICT\)gives lots of warning<\/dt>/', $content);
+		$this->assertPattern('/<dd>We\'ve know this for years, this is the time\.<\/dd>/', $content);
+	}
+	
+	function testOfSingleLink() {
+		$file = dirname(__FILE__).'/package/here_download.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$map = dirname(__FILE__).'/package/map.xml';
+		$links = $source->links($map);
+		$this->assertEqual(count($links), 4);
+		$links_download = '<ul><li><a href="download.html">Download SimpleTest</a></li></ul>';
+		$this->assertEqual($links['download'], $links_download);
+	}
+
+	function testOfMultipleLinks() {
+		$file = dirname(__FILE__).'/package/here_support.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$map = dirname(__FILE__).'/package/map.xml';
+		$links = $source->links($map);
+		$this->assertEqual(count($links), 4);
+		$links_support = '<ul><li><a href="support.html">Support mailing list</a></li>'.
+		'<li><a href="books.html">Books</a></li></ul>';
+		$this->assertEqual($links['support'], $links_support);
+	}
+
+	function testOfHierarchicalLinks() {
+		$file = dirname(__FILE__).'/package/here_overview.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$map = dirname(__FILE__).'/package/map.xml';
+		$links = $source->links($map);
+		$this->assertEqual(count($links), 4);
+		$links_start_testing = '<ul><li><a href="start-testing.html">Start testing with SimpleTest</a></li>'.
+		'<li><a href="overview.html">Documentation overview</a>'.
+		'<ul><li><a href="unit_test_documentation.html">Unit tester</a></li>'.
+		'<li><a href="group_test_documentation.html">Group tests</a></li></ul>'.
+		'</li><li><a href="tutorial.html">Tutorial overview</a></li></ul>';
+		$this->assertEqual($links['start_testing'], $links_start_testing);
+	}
+
+	function testOfRootLinksWithHierarchy() {
+		$file = dirname(__FILE__).'/package/here_simpletest.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$map = dirname(__FILE__).'/package/map.xml';
+		$links = $source->links($map);
+		$this->assertEqual(count($links), 4);
+		$links_start_testing = '<ul><li><a href="start-testing.html">Start testing with SimpleTest</a></li>'.
+		'<li><a href="overview.html">Documentation overview</a></li>'.
+		'<li><a href="tutorial.html">Tutorial overview</a></li></ul>';
+		$this->assertEqual($links['start_testing'], $links_start_testing);
+	}
+
+	function testOfLinksWithNonRootParent() {
+		$file = dirname(__FILE__).'/package/here_unit-tester.xml';
+		$source = simplexml_load_file($file, "SimpleTestXMLElement");
+		$map = dirname(__FILE__).'/package/map.xml';
+		$links = $source->links($map);
+		$this->assertEqual(count($links), 4);
+		$links_start_testing = '<ul><li><a href="start-testing.html">Start testing with SimpleTest</a></li>'.
+		'<li><a href="overview.html">Documentation overview</a>'.
+		'<ul><li><a href="unit_test_documentation.html">Unit tester</a></li>'.
+		'<li><a href="group_test_documentation.html">Group tests</a></li></ul>'.
+		'</li><li><a href="tutorial.html">Tutorial overview</a></li></ul>';
+		$this->assertEqual($links['start_testing'], $links_start_testing);
+	}
+}
+
 ?>
-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
-He3Z2gjQPJfzonbI8TA5p6soQ4DwgW==

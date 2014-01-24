@@ -1,107 +1,308 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *  base include file for SimpleTest
+ *  @package    SimpleTest
+ *  @subpackage MockObjects
+ *  @version    $Id: socket.php 1788 2008-04-27 11:01:59Z pp11 $
+ */
+
+/**#@+
+ * include SimpleTest files
+ */
+require_once(dirname(__FILE__) . '/compatibility.php');
+/**#@-*/
+
+/**
+ *    Stashes an error for later. Useful for constructors
+ *    until PHP gets exceptions.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleStickyError {
+    private $error = 'Constructor not chained';
+
+    /**
+     *    Sets the error to empty.
+     *    @access public
+     */
+    function __construct() {
+        $this->clearError();
+    }
+
+    /**
+     *    Test for an outstanding error.
+     *    @return boolean           True if there is an error.
+     *    @access public
+     */
+    function isError() {
+        return ($this->error != '');
+    }
+
+    /**
+     *    Accessor for an outstanding error.
+     *    @return string     Empty string if no error otherwise
+     *                       the error message.
+     *    @access public
+     */
+    function getError() {
+        return $this->error;
+    }
+
+    /**
+     *    Sets the internal error.
+     *    @param string       Error message to stash.
+     *    @access protected
+     */
+    function setError($error) {
+        $this->error = $error;
+    }
+
+    /**
+     *    Resets the error state to no error.
+     *    @access protected
+     */
+    function clearError() {
+        $this->setError('');
+    }
+}
+
+class SimpleFileSocket extends SimpleStickyError {
+    private $handle;
+    private $is_open = false;
+    private $sent = '';
+    private $block_size;
+
+    /**
+     *    Opens a socket for reading and writing.
+     *    @param SimpleUrl $file       Target URI to fetch.
+     *    @param integer $block_size   Size of chunk to read.
+     *    @access public
+     */
+    function __construct($file, $block_size = 1024) {
+        parent::__construct();
+        if (! ($this->handle = $this->openFile($file, $error))) {
+            $file_string = $file->asString();
+            $this->setError("Cannot open [$file_string] with [$error]");
+            return;
+        }
+        $this->is_open = true;
+        $this->block_size = $block_size;
+    }
+
+    /**
+     *    Writes some data to the socket and saves alocal copy.
+     *    @param string $message       String to send to socket.
+     *    @return boolean              True if successful.
+     *    @access public
+     */
+    function write($message) {
+        return true;
+    }
+
+    /**
+     *    Reads data from the socket. The error suppresion
+     *    is a workaround for PHP4 always throwing a warning
+     *    with a secure socket.
+     *    @return integer/boolean           Incoming bytes. False
+     *                                     on error.
+     *    @access public
+     */
+    function read() {
+        $raw = @fread($this->handle, $this->block_size);
+        if ($raw === false) {
+            $this->setError('Cannot read from socket');
+            $this->close();
+        }
+        return $raw;
+    }
+
+    /**
+     *    Accessor for socket open state.
+     *    @return boolean           True if open.
+     *    @access public
+     */
+    function isOpen() {
+        return $this->is_open;
+    }
+
+    /**
+     *    Closes the socket preventing further reads.
+     *    Cannot be reopened once closed.
+     *    @return boolean           True if successful.
+     *    @access public
+     */
+    function close() {
+        if (!$this->is_open) return false;
+        $this->is_open = false;
+        return fclose($this->handle);
+    }
+
+    /**
+     *    Accessor for content so far.
+     *    @return string        Bytes sent only.
+     *    @access public
+     */
+    function getSent() {
+        return $this->sent;
+    }
+
+    /**
+     *    Actually opens the low level socket.
+     *    @param SimpleUrl $file       SimpleUrl file target.
+     *    @param string $error         Recipient of error message.
+     *    @param integer $timeout      Maximum time to wait for connection.
+     *    @access protected
+     */
+    protected function openFile($file, &$error) {
+        return @fopen($file->asString(), 'r');
+    }
+}
+
+/**
+ *    Wrapper for TCP/IP socket.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleSocket extends SimpleStickyError {
+    private $handle;
+    private $is_open = false;
+    private $sent = '';
+    private $lock_size;
+
+    /**
+     *    Opens a socket for reading and writing.
+     *    @param string $host          Hostname to send request to.
+     *    @param integer $port         Port on remote machine to open.
+     *    @param integer $timeout      Connection timeout in seconds.
+     *    @param integer $block_size   Size of chunk to read.
+     *    @access public
+     */
+    function __construct($host, $port, $timeout, $block_size = 255) {
+        parent::__construct();
+        if (! ($this->handle = $this->openSocket($host, $port, $error_number, $error, $timeout))) {
+            $this->setError("Cannot open [$host:$port] with [$error] within [$timeout] seconds");
+            return;
+        }
+        $this->is_open = true;
+        $this->block_size = $block_size;
+        SimpleTestCompatibility::setTimeout($this->handle, $timeout);
+    }
+
+    /**
+     *    Writes some data to the socket and saves alocal copy.
+     *    @param string $message       String to send to socket.
+     *    @return boolean              True if successful.
+     *    @access public
+     */
+    function write($message) {
+        if ($this->isError() || ! $this->isOpen()) {
+            return false;
+        }
+        $count = fwrite($this->handle, $message);
+        if (! $count) {
+            if ($count === false) {
+                $this->setError('Cannot write to socket');
+                $this->close();
+            }
+            return false;
+        }
+        fflush($this->handle);
+        $this->sent .= $message;
+        return true;
+    }
+
+    /**
+     *    Reads data from the socket. The error suppresion
+     *    is a workaround for PHP4 always throwing a warning
+     *    with a secure socket.
+     *    @return integer/boolean           Incoming bytes. False
+     *                                     on error.
+     *    @access public
+     */
+    function read() {
+        if ($this->isError() || ! $this->isOpen()) {
+            return false;
+        }
+        $raw = @fread($this->handle, $this->block_size);
+        if ($raw === false) {
+            $this->setError('Cannot read from socket');
+            $this->close();
+        }
+        return $raw;
+    }
+
+    /**
+     *    Accessor for socket open state.
+     *    @return boolean           True if open.
+     *    @access public
+     */
+    function isOpen() {
+        return $this->is_open;
+    }
+
+    /**
+     *    Closes the socket preventing further reads.
+     *    Cannot be reopened once closed.
+     *    @return boolean           True if successful.
+     *    @access public
+     */
+    function close() {
+        $this->is_open = false;
+        return fclose($this->handle);
+    }
+
+    /**
+     *    Accessor for content so far.
+     *    @return string        Bytes sent only.
+     *    @access public
+     */
+    function getSent() {
+        return $this->sent;
+    }
+
+    /**
+     *    Actually opens the low level socket.
+     *    @param string $host          Host to connect to.
+     *    @param integer $port         Port on host.
+     *    @param integer $error_number Recipient of error code.
+     *    @param string $error         Recipoent of error message.
+     *    @param integer $timeout      Maximum time to wait for connection.
+     *    @access protected
+     */
+    protected function openSocket($host, $port, &$error_number, &$error, $timeout) {
+        return @fsockopen($host, $port, $error_number, $error, $timeout);
+    }
+}
+
+/**
+ *    Wrapper for TCP/IP socket over TLS.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleSecureSocket extends SimpleSocket {
+
+    /**
+     *    Opens a secure socket for reading and writing.
+     *    @param string $host      Hostname to send request to.
+     *    @param integer $port     Port on remote machine to open.
+     *    @param integer $timeout  Connection timeout in seconds.
+     *    @access public
+     */
+    function __construct($host, $port, $timeout) {
+        parent::__construct($host, $port, $timeout);
+    }
+
+    /**
+     *    Actually opens the low level socket.
+     *    @param string $host          Host to connect to.
+     *    @param integer $port         Port on host.
+     *    @param integer $error_number Recipient of error code.
+     *    @param string $error         Recipient of error message.
+     *    @param integer $timeout      Maximum time to wait for connection.
+     *    @access protected
+     */
+    function openSocket($host, $port, &$error_number, &$error, $timeout) {
+        return parent::openSocket("tls://$host", $port, $error_number, $error, $timeout);
+    }
+}
 ?>
-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
-K627J7FJuoxjZqU3W6kFmgY4ysTF

@@ -1,60 +1,191 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-dcQOUw25B7mPgPIq/bEce5tB/Ya=
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      File available since Release 1.0.0
+ */
+
+/**
+ * Represents a static invocation.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version    Release: @package_version@
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      Class available since Release 1.0.0
+ */
+class PHPUnit_Framework_MockObject_Invocation_Static implements PHPUnit_Framework_MockObject_Invocation, PHPUnit_Framework_SelfDescribing
+{
+    /**
+     * @var array
+     */
+    protected static $uncloneableExtensions = array(
+      'mysqli' => TRUE,
+      'SQLite' => TRUE,
+      'sqlite3' => TRUE,
+      'tidy' => TRUE,
+      'xmlwriter' => TRUE,
+      'xsl' => TRUE
+    );
+
+    /**
+     * @var array
+     */
+    protected static $uncloneableClasses = array(
+      'Closure',
+      'COMPersistHelper',
+      'IteratorIterator',
+      'RecursiveIteratorIterator',
+      'SplFileObject',
+      'PDORow',
+      'ZipArchive'
+    );
+
+    /**
+     * @var string
+     */
+    public $className;
+
+    /**
+     * @var string
+     */
+    public $methodName;
+
+    /**
+     * @var array
+     */
+    public $parameters;
+
+    /**
+     * @param string  $className
+     * @param string  $methodname
+     * @param array   $parameters
+     * @param boolean $cloneObjects
+     */
+    public function __construct($className, $methodName, array $parameters, $cloneObjects = FALSE)
+    {
+        $this->className  = $className;
+        $this->methodName = $methodName;
+        $this->parameters = $parameters;
+
+        if (!$cloneObjects) {
+            return;
+        }
+
+        foreach ($this->parameters as $key => $value) {
+            if (is_object($value)) {
+                $this->parameters[$key] = $this->cloneObject($value);
+            }
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function toString()
+    {
+        return sprintf(
+          "%s::%s(%s)",
+
+          $this->className,
+          $this->methodName,
+          join(
+            ', ',
+            array_map(
+              array('PHPUnit_Util_Type', 'shortenedExport'),
+              $this->parameters
+            )
+          )
+        );
+    }
+
+    /**
+     * @param  object $original
+     * @return object
+     */
+    protected function cloneObject($original)
+    {
+        $cloneable = NULL;
+        $object    = new ReflectionObject($original);
+
+        // Check the blacklist before asking PHP reflection to work around
+        // https://bugs.php.net/bug.php?id=53967
+        if ($object->isInternal() &&
+            isset(self::$uncloneableExtensions[$object->getExtensionName()])) {
+            $cloneable = FALSE;
+        }
+
+        if ($cloneable === NULL) {
+            foreach (self::$uncloneableClasses as $class) {
+                if ($original instanceof $class) {
+                    $cloneable = FALSE;
+                    break;
+                }
+            }
+        }
+
+        if ($cloneable === NULL && method_exists($object, 'isCloneable')) {
+            $cloneable = $object->isCloneable();
+        }
+
+        if ($cloneable === NULL && $object->hasMethod('__clone')) {
+            $method    = $object->getMethod('__clone');
+            $cloneable = $method->isPublic();
+        }
+
+        if ($cloneable === NULL) {
+            $cloneable = TRUE;
+        }
+
+        if ($cloneable) {
+            try {
+                return clone $original;
+            }
+
+            catch (Exception $e) {
+                return $original;
+            }
+        } else {
+            return $original;
+        }
+    }
+}

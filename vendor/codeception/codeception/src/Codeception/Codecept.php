@@ -1,119 +1,190 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception;
+
+use Codeception\Configuration;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use \Symfony\Component\Finder\Finder;
+use \Symfony\Component\EventDispatcher\EventDispatcher;
+use Codeception\Exception\Configuration as ConfigurationException;
+
+class Codecept
+{
+    const VERSION = "1.8.1";
+
+    /**
+     * @var \Codeception\PHPUnit\Runner
+     */
+    protected $runner;
+    /**
+     * @var \PHPUnit_Framework_TestResult
+     */
+    protected $result;
+
+    /**
+     * @var \Codeception\CodeCoverage
+     */
+    protected $coverage;
+
+    /**
+     * @var \Monolog\Handler\StreamHandler
+     */
+    protected $logHandler;
+
+    /**
+     * @var \Symfony\Component\EventDispatcher\EventDispatcher
+     */
+    protected $dispatcher;
+
+    /**
+     * @var array
+     */
+    protected $options = array(
+        'silent' => false,
+        'debug' => false,
+        'steps' => false,
+        'html' => false,
+        'xml' => false,
+        'json' => false,
+        'tap' => false,
+        'report' => false,
+        'colors' => false,
+        'log' => false,
+        'coverage' => false,
+	    'defer-flush' => false,
+        'groups' => null,
+        'excludeGroups' => null,
+        'filter' => null,
+        'env' => null,
+    );
+
+    public function __construct($options = array()) {
+        $this->result = new \PHPUnit_Framework_TestResult;
+
+        $this->config = Configuration::config();
+        $this->options = $this->mergeOptions($options);
+
+
+        $this->dispatcher = new EventDispatcher();
+        $this->registerSubscribers();
+        $this->registerPHPUnitListeners();
+
+        $printer = new PHPUnit\ResultPrinter\UI($this->dispatcher, $this->options);
+        $this->runner = new PHPUnit\Runner($this->config);
+        $this->runner->setPrinter($printer);
+    }
+
+    private function mergeOptions($options) {
+
+        foreach ($this->options as $option => $default) {
+            $value = isset($options[$option]) ? $options[$option] : $default;
+            if (!$value) {
+                $options[$option] = isset($this->config['settings'][$option])
+                    ? $this->config['settings'][$option]
+                    : $this->options[$option];
+            }
+        }
+        if (isset($options['no-colors']) && $options['no-colors']) $options['colors'] = false;
+        if (isset($options['report']) && $options['report']) $options['silent'] = true;
+        if (isset($options['group']) && $options['group']) $options['groups'] = $options['group'];
+        if (isset($options['skip-group']) && $options['skip-group']) $options['excludeGroups'] = $options['skip-group'];
+
+        return $options;
+    }
+
+    protected function registerPHPUnitListeners() {
+        $listener = new PHPUnit\Listener($this->dispatcher);
+        $this->result->addListener($listener);
+    }
+
+    public function registerSubscribers() {
+        // required
+        $this->dispatcher->addSubscriber(new Subscriber\ErrorHandler());
+        $this->dispatcher->addSubscriber(new Subscriber\Module());
+        $this->dispatcher->addSubscriber(new Subscriber\Cest());
+        $this->dispatcher->addSubscriber(new Subscriber\BeforeAfterClass());
+
+        // optional
+        if (!$this->options['silent'])  $this->dispatcher->addSubscriber(new Subscriber\Console($this->options));
+        if ($this->options['log'])      $this->dispatcher->addSubscriber(new Subscriber\Logger());
+        if ($this->options['coverage']) {
+            $this->dispatcher->addSubscriber(new Subscriber\CodeCoverage($this->options));
+            $this->dispatcher->addSubscriber(new Subscriber\RemoteCodeCoverage($this->options));
+        }
+
+        // custom event listeners
+        foreach ($this->config['extensions']['enabled'] as $subscriber) {
+            if (!class_exists($subscriber)) throw new ConfigurationException("Class $subscriber not defined. Please include it in global '_bootstrap.php' file of 'tests' directory");
+            if ($subscriber instanceof EventSubscriberInterface) throw new ConfigurationException("Class $subscriber is not a EventListener. Please create it as Extension or Group class.");
+            $this->dispatcher->addSubscriber(new $subscriber($this->config, $this->options));
+        }
+    }
+
+    public function run($suite, $test = null)
+    {
+        ini_set('memory_limit', isset($this->config['settings']['memory_limit']) ? $this->config['settings']['memory_limit'] : '1024M');
+        $settings = Configuration::suiteSettings($suite, Configuration::config());
+
+        $selectedEnvironments = $this->options['env'];
+        $environments = \Codeception\Configuration::suiteEnvironments($suite);
+
+        if (!$selectedEnvironments or empty($environments)) {
+            $this->runSuite($settings, $suite, $test);
+            return;
+        }
+
+        foreach ($environments as $env => $config) {
+            if (!in_array($env, $selectedEnvironments)) {
+                continue;
+            }
+            if (!is_int($env)) {
+                $suite .= "-$env";
+            }
+            $this->runSuite($config, $suite, $test);
+        }
+    }
+
+    public function runSuite($settings, $suite, $test = null) {
+        $suiteManager = new SuiteManager($this->dispatcher, $suite, $settings);
+
+        $test
+            ? $suiteManager->loadTest($settings['path'].$test)
+            : $suiteManager->loadTests();
+
+        $suiteManager->run($this->runner, $this->result, $this->options);
+
+        return $this->result;
+    }
+
+    public static function versionString() {
+        return 'Codeception PHP Testing Framework v'.self::VERSION;
+    }
+
+    public function printResult() {
+        $result = $this->getResult();
+        $result->flushListeners();
+
+        $printer = $this->runner->getPrinter();
+        $printer->printResult($result);
+
+        $this->dispatcher->dispatch('result.print.after', new Event\PrintResult($result, $printer));
+    }
+
+    /**
+     * @return \PHPUnit_Framework_TestResult
+     */
+    public function getResult() {
+        return $this->result;
+    }
+
+    public function getOptions() {
+        return $this->options;
+    }
+
+    /**
+     * @return EventDispatcher
+     */
+    public function getDispatcher()
+    {
+        return $this->dispatcher;
+    }
+}

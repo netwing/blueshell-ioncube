@@ -1,39 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Z8F3UltDYU7r3sUIJRCGgojcjsQ08em=
+<?php
+require_once('ValidatorTestModel.php');
+
+class CNumberValidatorTest extends CTestCase
+{
+	public function providerIssue1669()
+	{
+		return array(
+			// boolean
+			array(false, array('number' => array('Number must be a number.'))),
+			array(true, array('number' => array('Number must be a number.'))),
+			// integer
+			array(20, array('number' => array('Number is too big (maximum is 15).'))),
+			array(1, array('number' => array('Number is too small (minimum is 5).'))),
+			// float
+			array(20.5, array('number' => array('Number must be an integer.','Number is too big (maximum is 15).'))),
+			array(1.5, array('number' => array('Number must be an integer.','Number is too small (minimum is 5).'))),
+			// string
+			array('20', array('number' => array('Number is too big (maximum is 15).'))),
+			array('20.5', array('number' => array('Number must be an integer.','Number is too big (maximum is 15).'))),
+			array('1', array('number' => array('Number is too small (minimum is 5).'))),
+			array('1.5', array('number' => array('Number must be an integer.','Number is too small (minimum is 5).'))),
+			array('abc', array('number' => array('Number must be a number.'))),
+			array('a100', array('number' => array('Number must be a number.'))),
+			// array
+			array(array(1,2), array('number' => array('Number must be a number.'))),
+			// object
+			array((object)array('a'=>1,'b'=>2), array('number' => array('Number must be a number.'))),
+		);
+	}
+
+	/**
+	 * https://github.com/yiisoft/yii/issues/1669
+	 * @dataProvider providerIssue1669
+	 */
+	public function testIssue1669($value, $assertion)
+	{
+		$model = new ValidatorTestModel('CNumberValidatorTest');
+		$model->number = $value;
+		$model->validate(array('number'));
+		$this->assertSame($assertion, $model->getErrors());
+	}
+}

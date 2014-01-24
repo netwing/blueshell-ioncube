@@ -1,52 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Debug_JSHintSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Alexander Wei§ <aweisswa@gmx.de>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Generic_Sniffs_Debug_JSHintSniff.
+ *
+ * Runs jshint.js on the file.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Alexander Wei§ <aweisswa@gmx.de>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Debug_JSHintSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * A list of tokenizers this sniff supports.
+     *
+     * @var array
+     */
+    public $supportedTokenizers = array('JS');
+
+
+    /**
+     * Returns the token types that this sniff is interested in.
+     *
+     * @return array(int)
+     */
+    public function register()
+    {
+        return array(T_OPEN_TAG);
+
+    }//end register()
+
+
+    /**
+     * Processes the tokens that this sniff is interested in.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file where the token was found.
+     * @param int                  $stackPtr  The position in the stack where
+     *                                        the token was found.
+     *
+     * @return void
+     * @throws PHP_CodeSniffer_Exception If jshint.js could not be run
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $fileName = $phpcsFile->getFilename();
+
+        $rhinoPath  = PHP_CodeSniffer::getConfigData('rhino_path');
+        $jshintPath = PHP_CodeSniffer::getConfigData('jshint_path');
+        if ($rhinoPath === null || $jshintPath === null) {
+            return;
+        }
+
+        $cmd = "$rhinoPath \"$jshintPath\" \"$fileName\"";
+        $msg = exec($cmd, $output, $retval);
+
+        if (is_array($output) === true) {
+            $tokens = $phpcsFile->getTokens();
+
+            foreach ($output as $finding) {
+                $matches    = array();
+                $numMatches = preg_match('/^(.+)\(.+:([0-9]+).*:[0-9]+\)$/', $finding, $matches);
+                if ($numMatches === 0) {
+                    continue;
+                }
+
+                $line    = (int) $matches[2];
+                $message = 'jshint says: '.trim($matches[1]);
+
+                // Find the token at the start of the line.
+                $lineToken = null;
+                foreach ($tokens as $ptr => $info) {
+                    if ($info['line'] === $line) {
+                        $lineToken = $ptr;
+                        break;
+                    }
+                }
+
+                if ($lineToken !== null) {
+                    $phpcsFile->addWarning($message, $lineToken, 'ExternalTool');
+                }
+            }//end foreach
+        }//end if
+
+    }//end process()
+
+
+}//end class
+
 ?>
-HR+cPzuoM7YA7A5/Hu7DMmhcq+W/PjGRzJGPC+v6XkbN347DxhzvlgqgGCdfBKTJ7y+ZLMYvJImX
-uPql0mGohx87oikPFGIDEGeXbXHbirFQRwRBV3Zim3MZBEb48GpigPjdzfbbOYblFLjEqUyg91+g
-Xn/vbg+gQOCmaOWosvGUp4PZ6hADHiAS5+ixISye1U20vyd5DJNhK3FN4uxlsYfpqLTmOQ+PVqM1
-oeKkhhAwoOlsXzsfvrHPswzHAE4xzt2gh9fl143SQNJiOKyEJRkXLjjxfzzeD2tyK1tCFxs/3+kB
-0/Nx2l28VOYxv2HyfQou4bsxbMUTuf1gOo54jAeYTa5NmZ1bPIMPtYoUCUv6nSoanAKl8Z8kBN+r
-Tn235I+/BBTlEVpR3tZsu4ywsXoYJJcoS6/YKJril0qDU03GP8Ho59hbhyJhvdBQ6kiRGVGdq3zm
-mbZO49dM1JWCx18k2xs9btM1swJ1uAI+cA0VvSfqRDE28oOXE8xxZc5Xxhf/v2dLUrS0u56S1Dbh
-VsnxY6/jCoivixAoeg9swT8PLWCNaEYSJGRyy8PnondoIas3SfFOy7tRVJfsyUEfQEh5NduQXHyc
-+qvnyAS85TotbdSkmzqSlyxUTUXcJ923baW3+mEFHc0sl/GkNCVyK6V7t4t7jSLHpuH+XKiwMj/M
-aSpq0AAKimRyLAtBqSUw/ZW20qppKbphovZloQrcs58d8u2ORumnGGymI8cOtGlENep5hNtnmvyl
-1jBQ90pV5BPSz9SfkY4u5t5MxZkrsebbVekWBquTfpvlTsxZH4LUSyk1IsV++UeXKjKomo7IrGuk
-Ds4QQ70dUt7hIY2FMAQ8hmuNIH0zHQ96JWPX0A3Wkoms84USsEJuHEG1PtUmzAvfJ3capvBprMb8
-xrY68ZjVLluAOe7TFsaaxOJxkvJKOGVJI+QDG31ZEdauDzCqtWm47JHwFRspowNjszduW/vw0+yD
-aYC9IDk2WZsiBtUpW/4648av5jwiyv/JyNp/33xm2f66hNFatBSG7l1zEMCeItkxEFLuL+KtEdRQ
-ae5S7kH27B+83GfNKrl2TN7MLzq/+7HUDcy2I5lt7Ju3Y17NpCtFqrVN5a73Qwph6bSJrZQdAYEQ
-ifZbWLqC4RjSLfUJMZjSWwNJP0GuPO7B11DZcu0/SElBNWK6v5cxUJbF5dGJS8V+X1dR49Bsxk+i
-PDlVy83Sk9wdfB/POVFijRVN3g6FJ4HPKWdqq+oCS5nKiISXq3+5Rt4WrW/GYdO1kYVtKe/IN/fq
-5chCDgTJ58+HPSfQt9Emigtiw9AfGJ4KBmfpie0CcSGgl9C25JPYC9oU0lLfNsNdx4JLgWDLlu+1
-wj9IfJX79rjZw831e4Uh6NnuGAoQ4I1NFdWlpsNuRRhv2O6LC0KUpUnvSN33m0ACxIZh8hS5WsHO
-KN2J9JqpsRDoWS0VXR02gKjAolCDDY61VGk0l4fyEGlvRZY6wfckandnSMOLGnUEmNVYewfEqZja
-YZN71uJnkHHXK7XNhrczqRlk16CouXBx3UU/PCvMg5B/UkVA0s2YXZzkcGRnpIFK5ldID4aXilYD
-FtUql/WVr092m2Wp9mk/6V4E7j38PLYdhU9OoyymmC8P67EWVbmzadQdQCy8oQdGIax7B4BVcpNp
-LPYBT+QebKoCGAIYKcnA+NyFENIV/t5avc+ra0l4eeGRnQBSzQ1ZXqU/ViCb60WQXf4hCpj8Ojpn
-Tq6lHSN7JcTc/YFeOT9TZFufRvK/7cKIusHNzu3orTZiJbrjj/Nd7XMUgF863fywGbi9oKkwzr/E
-QK3/IUTnhJ5Xvi7s2ZU1JeyjOeReTyg/RXM1ukdPuVGwFrwctKM9fxq3UCwAqgeeidLH5kjGpjON
-ObQhML373CcZBBgMkkuZnnvr7sXwy9mp9wGkT/xQ63YshKT5ytiqeLb8LdSMaX78XywdI08OAGRr
-AsISVbDGWX5KNzjIeBFJlbothr+N6iyn/sPCNlqR9wCAfahw3ehICGKuLRrw/m1otQ4W1xEx3L/0
-SaeUXAu6kXlXsLlHtfEms5e0qXVuFegYQDrAJ6UAKHnqRgop5lImQcTloCUlQhhiEA7sVC9Ik8ti
-wJUbAoeSuhExIC1yHCdNwFRn7F1zQi6qCUzi2x6p2zAolz/LgaKi/rWHp1ySsDhXWFaL0ukI1fK4
-A0e03y/G12C4l4sQYBnFVN1+8P/VohW6zG8Qi6wD7QO7dN79xaLy6557Qs1KRrnJLa41B/YcLsih
-VDShhaXO3YM+aM6CiBRmAETuwBW7ONtU7qOMaD0P+ZeOYwZiDzkXnULTOBadY1Zm/Jzp4Eox3gHB
-xUdprhddbJ6eKsr8zPbykM1tfhq3hX/OZ/jKVZB2Qks306ZkAADwelbFY6wOGexvLRckBpSstWX4
-Z91YqLJFzz12ZUfF1PpmB/pAXMTr+fuLKypns7IxM0sB1A3SWWzs1fVO/S5bGASEduOSFenOKBr7
-ZIta+Y0x9TVIyt8TQC+PE5+yAQzgTuYX70PcXRQhPkHM37gWI/rh9BFE38JUeFxmfZWGgJ2LoRgx
-W61HP9tddgwdu9BY0EIXU+QVgazIzOFYQFgBOw8tcDoCPAPDre8Uy1XfoOVxi+L7mzC9jz7n8pNX
-63JNLHkXRYbM5U09K2nE81fcP0cUM6bhhBWUydxLFSAdNL+FPQu/OIIe2ub9yr++So7GhUxtjNUR
-JzXkPMTjNVpXRlc5rYnKpqTGlm+PAEEe6tFJ21RLfEltCF9/vzhJN3xZjDaUfNGVigjOEJ7PcHyt
-dLZgsLrv2o+Th2NDGAnsUclZouGzMcdIaVFk0Al8B9IEBRYNO7jVVKYj9K6ej7Z3Zd04cJRU+j44
-P3lJnlWdAj1sVXr1bFTJQz2mlYHKaiizMPQ/ccXab681PkFQDnIoJ9Qku2y97yRhFwxZxVbx4Hr2
-lk+9zMS0whMFC7qY6ACZ3fuojDAnUZ0GEry2jQbwHda5JkthsZftjlx0csrO/zZgslZ0UQxSsBoV
-w2Em86esH4T+ionqOtkBQlM0CzNue3yuAXn9jdZ9zNFwCNv0TwDyabMZaACZtyDVK5wUzTMuREn9
-LouqvpQDDfCFO9MEgLNAnUxvLa5SB1aZX4oOGhhMPkDrrRc5/n6c0hy7hvxfQgEWGqwlO55Lo/4t
-d229fMzCW7RS9hLELM+ASc1YyXmOBXmIVRODMSjbpynncqWAoyAPsRvbPVGeHSE3gH0dct7156Ce
-L7j7CRiGsu+sw7A/WTTGNq86PULxVN3mG5KutaxYu9Q1DEstxmpDnU9YceW2xrW9fmlz1isbxK9L
-NGml77KOmoE5r9uKr57jFYpf+4pZ+u0PKs8npmrCJ387Pj53IaBaYfXv6dTJ9Gpi8ChA143hevBN
-+p2uvMauG/+19ZjB5Q3OXMg5UIeWbTBrLiuDDiUAtLUhstorlUdTLxYdWJKTnGia/t3SiEzoOGKV
-bQwmj6ufLR0LsiX939dEgzCV1GpNC3f5f4qKsc+TIofXR9EgL/tNB/SPtKA92+2VQuN8EAPI1MEK
-jGT8supgUdjm0nqodJcicGT9Jxrq6hRUKFaWcMQr4nlyfZbA6/rZekSF3mMMwW9/DqYdc4yDu2RU
-P+8plKtcrHK=

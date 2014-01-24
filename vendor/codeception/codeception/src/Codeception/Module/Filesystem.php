@@ -1,92 +1,244 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-p3/x6fv/2A1cZ8ivf8jZtR0=
+<?php
+namespace Codeception\Module;
+use Codeception\Util\FileSystem as Util;
+use Symfony\Component\Finder\Finder;
+
+/**
+ * Module for testing local filesystem.
+ * Fork it to extend the module for FTP, Amazon S3, others.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: codecept@davert.mail.ua
+ *
+ * Module was developed to test Codeception itself.
+ */
+class Filesystem extends \Codeception\Module
+{
+    protected $file = null;
+    protected $filepath = null;
+
+    protected $path = '';
+
+    public function _before(\Codeception\TestCase $test)
+    {
+        $this->path = \Codeception\Configuration::projectDir();
+    }
+
+    /**
+     * Enters a directory In local filesystem.
+     * Project root directory is used by default
+     *
+     * @param $path
+     */
+    public function amInPath($path)
+    {
+        chdir($this->path = $this->absolutizePath($path));
+        $this->debug('Moved to ' . getcwd());
+    }
+
+    protected function absolutizePath($path)
+    {
+        // *nix way
+        if (strpos($path, '/') === 0) return $path;
+        // windows
+        if (strpos($path, ':\\') === 1) return $path;
+
+        return $this->path . DIRECTORY_SEPARATOR . $path;
+    }
+
+    /**
+     * Opens a file and stores it's content.
+     *
+     * Usage:
+     *
+     * ``` php
+     * <?php
+     * $I->openFile('composer.json');
+     * $I->seeInThisFile('codeception/codeception');
+     * ?>
+     * ```
+     *
+     * @param $filename
+     */
+    public function openFile($filename)
+    {
+        $this->file = file_get_contents($this->absolutizePath($filename));
+    }
+
+    /**
+     * Deletes a file
+     *
+     * ``` php
+     * <?php
+     * $I->deleteFile('composer.lock');
+     * ?>
+     * ```
+     *
+     * @param $filename
+     */
+    public function deleteFile($filename)
+    {
+        if (!file_exists($this->absolutizePath($filename))) \PHPUnit_Framework_Assert::fail('file not found');
+        unlink($this->absolutizePath($filename));
+    }
+
+    /**
+     * Deletes directory with all subdirectories
+     *
+     * ``` php
+     * <?php
+     * $I->deleteDir('vendor');
+     * ?>
+     * ```
+     *
+     * @param $dirname
+     */
+    public function deleteDir($dirname)
+    {
+        $dir = $this->absolutizePath($dirname);
+        Util::deleteDir($dir);
+    }
+
+    /**
+     * Copies directory with all contents
+     *
+     * ``` php
+     * <?php
+     * $I->copyDir('vendor','old_vendor');
+     * ?>
+     * ```
+     *
+     * @param $src
+     * @param $dst
+     */
+    public function copyDir($src, $dst) {
+        Util::copyDir($src, $dst);
+    }
+
+    /**
+     * Checks If opened file has `text` in it.
+     *
+     * Usage:
+     *
+     * ``` php
+     * <?php
+     * $I->openFile('composer.json');
+     * $I->seeInThisFile('codeception/codeception');
+     * ?>
+     * ```
+     *
+     * @param $text
+     */
+    public function seeInThisFile($text)
+    {
+        \PHPUnit_Framework_Assert::assertContains($text, $this->file, "text $text in currently opened file");
+    }
+
+
+    /**
+     * Checks the strict matching of file contents.
+     * Unlike `seeInThisFile` will fail if file has something more then expected lines.
+     * Better to use with HEREDOC strings.
+     * Matching is done after removing "\r" chars from file content.
+     *
+     * ``` php
+     * <?php
+     * $I->openFile('process.pid');
+     * $I->seeFileContentsEqual('3192');
+     * ?>
+     * ```
+     *
+     * @param $text
+     */
+    public function seeFileContentsEqual($text)
+    {
+        $file = str_replace("\r",'',$this->file);
+        \PHPUnit_Framework_Assert::assertEquals($text, $file);
+    }
+
+    /**
+     * Checks If opened file doesn't contain `text` in it
+     *
+     * ``` php
+     * <?php
+     * $I->openFile('composer.json');
+     * $I->dontSeeInThisFile('codeception/codeception');
+     * ?>
+     * ```
+     *
+     * @param $text
+     */
+    public function dontSeeInThisFile($text)
+    {
+        \PHPUnit_Framework_Assert::assertNotContains($text, $this->file, "text $text in currently opened file");
+    }
+
+    /**
+     * Deletes a file
+     */
+    public function deleteThisFile()
+    {
+        $this->deleteFile($this->filepath);
+    }
+
+    /**
+     * Checks if file exists in path.
+     * Opens a file when it's exists
+     *
+     * ``` php
+     * <?php
+     * $I->seeFileFound('UserModel.php','app/models');
+     * ?>
+     * ```
+     *
+     * @param $filename
+     * @param string $path
+     */
+    public function seeFileFound($filename, $path = '')
+    {
+        if (file_exists($filename)) {
+            $this->openFile($filename);
+            $this->filepath = $filename;
+            $this->debug($filename);
+            \PHPUnit_Framework_Assert::assertFileExists($filename);
+            return;
+        }
+        $path = $this->absolutizePath($path);
+
+        $this->debug($path);
+
+
+        if (!file_exists($path)) \PHPUnit_Framework_Assert::fail("Directory does not exist: $path");
+
+        $files = Finder::create()->files()->name($filename)->in($path);
+        foreach ($files as $file) {
+            $file = $file->getRealPath();
+            $this->openFile($file);
+            $this->filepath = $file;
+            $this->debug($file);
+            \PHPUnit_Framework_Assert::assertFileExists($file);
+            return;
+        }
+        \PHPUnit_Framework_Assert::fail("$filename in $path");
+    }
+
+    /**
+     * Erases directory contents
+     *
+     * ``` php
+     * <?php
+     * $I->cleanDir('logs');
+     * ?>
+     * ```
+     *
+     * @param $dirname
+     */
+    public function cleanDir($dirname)
+    {
+        $path = $this->absolutizePath($dirname);
+        Util::doEmptyDir($path);
+    }
+}

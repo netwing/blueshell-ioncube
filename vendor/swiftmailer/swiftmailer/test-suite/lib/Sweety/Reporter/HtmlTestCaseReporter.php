@@ -1,64 +1,174 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-pkcaU0Bgwtf1VVBxsO1iFjcXdKi+sG==
+<?php
+
+require_once 'Sweety/Reporter.php';
+require_once 'Sweety/Reporter/HtmlReporter.php';
+
+/**
+ * A command line reporter for an individual test case.
+ * @package Sweety
+ * @author Chris Corbyn
+ */
+class Sweety_Reporter_HtmlTestCaseReporter implements Sweety_Reporter
+{
+  
+  /**
+   * Template variables.
+   * @var mixed[]
+   */
+  public $_tplVars;
+  
+  /**
+   * True if this reporter is running.
+   * @var boolean
+   * @access private
+   */
+  private $_started = false;
+  
+  /**
+   * The name of the test case being reported on.
+   * @var string
+   * @access private
+   */
+  private $_testCase;
+  
+  /**
+   * The parent reporter this was spawned from.
+   * @var Sweety_Reporter_HtmlReporter
+   * @access private
+   */
+  private $_parent;
+  
+  /**
+   * Aggregate totals for this test case.
+   * @var int[]
+   * @access private
+   */
+  private $_aggregates = array();
+  
+  /**
+   * Creates a new CliTestCaseReporter.
+   * @param string $testCase
+   * @param Sweety_Reporter_CliReporter The parent reporter this was spawned from.
+   */
+  public function __construct($testCase, Sweety_Reporter_HtmlReporter $parent)
+  {
+    $this->_parent = $parent;
+    $this->_testCase = $testCase;
+    $this->_aggregates = array(
+      'passes' => 0,
+      'fails' => 0,
+      'exceptions' => 0
+      );
+  }
+  
+  /**
+   * Set template data.
+   * @param mixed[]
+   */
+  public function setTemplateVars(&$vars)
+  {
+    $this->_tplVars =& $vars;
+  }
+  
+  /**
+   * Get the reporter used to report on this specific test case.
+   * This method is stubbed only to return itself.
+   * @param string $testCase
+   * @return Sweety_Reporter
+   */
+  public function getReporterFor($testCase)
+  {
+    return $this;
+  }
+  
+  /**
+   * Returns true if start() has been invoked.
+   * @return boolean
+   */
+  public function isStarted()
+  {
+    return $this->_started;
+  }
+  
+  /**
+   * Start reporting.
+   */
+  public function start()
+  {
+    $this->_started = true;
+    $this->_tplVars['runTests'][$this->_testCase] = 'running';
+  }
+  
+  /**
+   * Report a skipped test case.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportSkip($message, $path)
+  {
+    $this->_parent->reportSkip($message, $path);
+  }
+  
+  /**
+   * Report a passing assertion.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportPass($message, $path)
+  {
+    $this->_aggregates['passes']++;
+    $this->_parent->reportPass($message, $path);
+  }
+  
+  /**
+   * Report a failing assertion.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportFail($message, $path)
+  {
+    $this->_aggregates['fails']++;
+    $this->_parent->reportFail($message, $path);
+  }
+  
+  /**
+   * Report an unexpected exception.
+   * @param string $message
+   * @param string $path
+   */
+  public function reportException($message, $path)
+  {
+    $this->_aggregates['exceptions']++;
+    $this->_parent->reportException($message, $path);
+  }
+  
+  /**
+   * Report output from something like a dump().
+   * @param string $output
+   * @param string $path
+   */
+  public function reportOutput($output, $path)
+  {
+    $this->_parent->reportOutput($output, $path);
+  }
+  
+  /**
+   * End reporting.
+   */
+  public function finish()
+  {
+    $this->_started = false;
+    
+    if (!$this->_aggregates['fails'] && !$this->_aggregates['exceptions'])
+    {
+      $this->_tplVars['runTests'][$this->_testCase] = 'pass';
+    }
+    else
+    {
+      $this->_tplVars['runTests'][$this->_testCase] = 'fail';
+    }
+    
+    $this->_parent->notifyEnded($this->_testCase);
+  }
+  
+}

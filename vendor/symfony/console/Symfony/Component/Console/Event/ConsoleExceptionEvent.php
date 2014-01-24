@@ -1,31 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Event;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * Allows to handle exception thrown in a command.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class ConsoleExceptionEvent extends ConsoleEvent
+{
+    private $exception;
+    private $exitCode;
+
+    public function __construct(Command $command, InputInterface $input, OutputInterface $output, \Exception $exception, $exitCode)
+    {
+        parent::__construct($command, $input, $output);
+
+        $this->setException($exception);
+        $this->exitCode = (int) $exitCode;
+    }
+
+    /**
+     * Returns the thrown exception.
+     *
+     * @return \Exception The thrown exception
+     */
+    public function getException()
+    {
+        return $this->exception;
+    }
+
+    /**
+     * Replaces the thrown exception.
+     *
+     * This exception will be thrown if no response is set in the event.
+     *
+     * @param \Exception $exception The thrown exception
+     */
+    public function setException(\Exception $exception)
+    {
+        $this->exception = $exception;
+    }
+
+    /**
+     * Gets the exit code.
+     *
+     * @return integer The command exit code
+     */
+    public function getExitCode()
+    {
+        return $this->exitCode;
+    }
+}

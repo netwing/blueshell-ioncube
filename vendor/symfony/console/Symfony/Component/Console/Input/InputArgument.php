@@ -1,53 +1,132 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-qq4S6c4MSAWJM0uiV4it0UAYq0emQW==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Input;
+
+/**
+ * Represents a command line argument.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class InputArgument
+{
+    const REQUIRED = 1;
+    const OPTIONAL = 2;
+    const IS_ARRAY = 4;
+
+    private $name;
+    private $mode;
+    private $default;
+    private $description;
+
+    /**
+     * Constructor.
+     *
+     * @param string  $name        The argument name
+     * @param integer $mode        The argument mode: self::REQUIRED or self::OPTIONAL
+     * @param string  $description A description text
+     * @param mixed   $default     The default value (for self::OPTIONAL mode only)
+     *
+     * @throws \InvalidArgumentException When argument mode is not valid
+     *
+     * @api
+     */
+    public function __construct($name, $mode = null, $description = '', $default = null)
+    {
+        if (null === $mode) {
+            $mode = self::OPTIONAL;
+        } elseif (!is_int($mode) || $mode > 7 || $mode < 1) {
+            throw new \InvalidArgumentException(sprintf('Argument mode "%s" is not valid.', $mode));
+        }
+
+        $this->name        = $name;
+        $this->mode        = $mode;
+        $this->description = $description;
+
+        $this->setDefault($default);
+    }
+
+    /**
+     * Returns the argument name.
+     *
+     * @return string The argument name
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Returns true if the argument is required.
+     *
+     * @return Boolean true if parameter mode is self::REQUIRED, false otherwise
+     */
+    public function isRequired()
+    {
+        return self::REQUIRED === (self::REQUIRED & $this->mode);
+    }
+
+    /**
+     * Returns true if the argument can take multiple values.
+     *
+     * @return Boolean true if mode is self::IS_ARRAY, false otherwise
+     */
+    public function isArray()
+    {
+        return self::IS_ARRAY === (self::IS_ARRAY & $this->mode);
+    }
+
+    /**
+     * Sets the default value.
+     *
+     * @param mixed $default The default value
+     *
+     * @throws \LogicException When incorrect default value is given
+     */
+    public function setDefault($default = null)
+    {
+        if (self::REQUIRED === $this->mode && null !== $default) {
+            throw new \LogicException('Cannot set a default value except for InputArgument::OPTIONAL mode.');
+        }
+
+        if ($this->isArray()) {
+            if (null === $default) {
+                $default = array();
+            } elseif (!is_array($default)) {
+                throw new \LogicException('A default value for an array argument must be an array.');
+            }
+        }
+
+        $this->default = $default;
+    }
+
+    /**
+     * Returns the default value.
+     *
+     * @return mixed The default value
+     */
+    public function getDefault()
+    {
+        return $this->default;
+    }
+
+    /**
+     * Returns the description text.
+     *
+     * @return string The description text
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+}

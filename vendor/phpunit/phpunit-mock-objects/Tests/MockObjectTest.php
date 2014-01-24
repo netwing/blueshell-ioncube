@@ -1,330 +1,648 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.0.0
+ */
+
+require_once 'PHPUnit/Framework/TestCase.php';
+
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'AbstractMockTestClass.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'AnInterface.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'FunctionCallback.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'MethodCallback.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'MethodCallbackByReference.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'PartialMockTestClass.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'SomeClass.php';
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'StaticMockTestClass.php';
+
+/**
+ *
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @author     Patrick Mueller <elias0@gmx.net>
+ * @author     Frank Kleine <mikey@stubbles.net>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version    Release: @package_version@
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.0.0
+ */
+class Framework_MockObjectTest extends PHPUnit_Framework_TestCase
+{
+    public function testMockedMethodIsNeverCalled()
+    {
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->never())
+             ->method('doSomething');
+    }
+
+    public function testMockedMethodIsNotCalledWhenExpectsAnyWithParameter()
+    {
+        $mock = $this->getMock('SomeClass');
+        $mock->expects($this->any())
+             ->method('doSomethingElse')
+             ->with('someArg');
+    }
+
+    public function testMockedMethodIsCalledAtLeastOnce()
+    {
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->atLeastOnce())
+             ->method('doSomething');
+
+        $mock->doSomething();
+    }
+
+    public function testMockedMethodIsCalledAtLeastOnce2()
+    {
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->atLeastOnce())
+             ->method('doSomething');
+
+        $mock->doSomething();
+        $mock->doSomething();
+    }
+
+    public function testMockedMethodIsCalledOnce()
+    {
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->once())
+             ->method('doSomething');
+
+        $mock->doSomething();
+    }
+
+    public function testMockedMethodIsCalledOnceWithParameter()
+    {
+        $mock = $this->getMock('SomeClass');
+        $mock->expects($this->once())
+             ->method('doSomethingElse')
+             ->with($this->equalTo('something'));
+
+        $mock->doSomethingElse('something');
+    }
+
+    public function testMockedMethodIsCalledExactly()
+    {
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->exactly(2))
+             ->method('doSomething');
+
+        $mock->doSomething();
+        $mock->doSomething();
+    }
+
+    public function testStubbedException()
+    {
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->any())
+             ->method('doSomething')
+             ->will($this->throwException(new Exception));
+
+        try {
+            $mock->doSomething();
+        }
+
+        catch (Exception $e) {
+            return;
+        }
+
+        $this->fail();
+    }
+
+    public function testStubbedReturnValue()
+    {
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->any())
+             ->method('doSomething')
+             ->will($this->returnValue('something'));
+
+        $this->assertEquals('something', $mock->doSomething());
+    }
+
+    public function testStubbedReturnValueMap()
+    {
+        $map = array(
+            array('a', 'b', 'c', 'd'),
+            array('e', 'f', 'g', 'h')
+        );
+
+        $mock = $this->getMock('AnInterface');
+        $mock->expects($this->any())
+             ->method('doSomething')
+             ->will($this->returnValueMap($map));
+
+        $this->assertEquals('d', $mock->doSomething('a', 'b', 'c'));
+        $this->assertEquals('h', $mock->doSomething('e', 'f', 'g'));
+        $this->assertEquals(NULL, $mock->doSomething('foo', 'bar'));
+    }
+
+    public function testFunctionCallback()
+    {
+        $mock = $this->getMock('SomeClass', array('doSomething'), array(), '', FALSE);
+        $mock->expects($this->once())
+             ->method('doSomething')
+             ->will($this->returnCallback('functionCallback'));
+
+        $this->assertEquals('pass', $mock->doSomething('foo', 'bar'));
+    }
+
+    public function testStaticMethodCallback()
+    {
+        $mock = $this->getMock('SomeClass', array('doSomething'), array(), '', FALSE);
+        $mock->expects($this->once())
+             ->method('doSomething')
+             ->will($this->returnCallback(array('MethodCallback', 'staticCallback')));
+
+        $this->assertEquals('pass', $mock->doSomething('foo', 'bar'));
+    }
+
+    public function testPublicMethodCallback()
+    {
+        $mock = $this->getMock('SomeClass', array('doSomething'), array(), '', FALSE);
+        $mock->expects($this->once())
+             ->method('doSomething')
+             ->will($this->returnCallback(array(new MethodCallback, 'nonStaticCallback')));
+
+        $this->assertEquals('pass', $mock->doSomething('foo', 'bar'));
+    }
+
+    public function testMockClassOnlyGeneratedOnce()
+    {
+        $mock1 = $this->getMock('AnInterface');
+        $mock2 = $this->getMock('AnInterface');
+
+        $this->assertEquals(get_class($mock1), get_class($mock2));
+    }
+
+    public function testMockClassDifferentForPartialMocks()
+    {
+        $mock1 = $this->getMock('PartialMockTestClass');
+        $mock2 = $this->getMock('PartialMockTestClass', array('doSomething'));
+        $mock3 = $this->getMock('PartialMockTestClass', array('doSomething'));
+        $mock4 = $this->getMock('PartialMockTestClass', array('doAnotherThing'));
+        $mock5 = $this->getMock('PartialMockTestClass', array('doAnotherThing'));
+
+        $this->assertNotEquals(get_class($mock1), get_class($mock2));
+        $this->assertNotEquals(get_class($mock1), get_class($mock3));
+        $this->assertNotEquals(get_class($mock1), get_class($mock4));
+        $this->assertNotEquals(get_class($mock1), get_class($mock5));
+        $this->assertEquals(get_class($mock2), get_class($mock3));
+        $this->assertNotEquals(get_class($mock2), get_class($mock4));
+        $this->assertNotEquals(get_class($mock2), get_class($mock5));
+        $this->assertEquals(get_class($mock4), get_class($mock5));
+    }
+
+    public function testMockClassStoreOverrulable()
+    {
+        $mock1 = $this->getMock('PartialMockTestClass');
+        $mock2 = $this->getMock('PartialMockTestClass', array(), array(), 'MyMockClassNameForPartialMockTestClass1');
+        $mock3 = $this->getMock('PartialMockTestClass');
+        $mock4 = $this->getMock('PartialMockTestClass', array('doSomething'), array(), 'AnotherMockClassNameForPartialMockTestClass');
+        $mock5 = $this->getMock('PartialMockTestClass', array(), array(), 'MyMockClassNameForPartialMockTestClass2');
+
+        $this->assertNotEquals(get_class($mock1), get_class($mock2));
+        $this->assertEquals(get_class($mock1), get_class($mock3));
+        $this->assertNotEquals(get_class($mock1), get_class($mock4));
+        $this->assertNotEquals(get_class($mock2), get_class($mock3));
+        $this->assertNotEquals(get_class($mock2), get_class($mock4));
+        $this->assertNotEquals(get_class($mock2), get_class($mock5));
+        $this->assertNotEquals(get_class($mock3), get_class($mock4));
+        $this->assertNotEquals(get_class($mock3), get_class($mock5));
+        $this->assertNotEquals(get_class($mock4), get_class($mock5));
+    }
+
+    /**
+     * @covers PHPUnit_Framework_MockObject_Generator::getMock
+     */
+    public function testGetMockWithFixedClassNameCanProduceTheSameMockTwice()
+    {
+        $mock = $this->getMockBuilder('StdClass')->setMockClassName('FixedName')->getMock();
+        $mock = $this->getMockBuilder('StdClass')->setMockClassName('FixedName')->getMock();
+        $this->assertInstanceOf('StdClass', $mock);
+    }
+
+    public function testOriginalConstructorSettingConsidered()
+    {
+        $mock1 = $this->getMock('PartialMockTestClass');
+        $mock2 = $this->getMock('PartialMockTestClass', array(), array(), '', FALSE);
+
+        $this->assertTrue($mock1->constructorCalled);
+        $this->assertFalse($mock2->constructorCalled);
+    }
+
+    public function testOriginalCloneSettingConsidered()
+    {
+        $mock1 = $this->getMock('PartialMockTestClass');
+        $mock2 = $this->getMock('PartialMockTestClass', array(), array(), '', TRUE, FALSE);
+
+        $this->assertNotEquals(get_class($mock1), get_class($mock2));
+    }
+
+    public function testStubbedReturnValueForStaticMethod()
+    {
+        $this->getMockClass(
+          'StaticMockTestClass',
+          array('doSomething'),
+          array(),
+          'StaticMockTestClassMock'
+        );
+
+        StaticMockTestClassMock::staticExpects($this->any())
+          ->method('doSomething')
+          ->will($this->returnValue('something'));
+
+        $this->assertEquals(
+          'something', StaticMockTestClassMock::doSomething()
+        );
+    }
+
+    public function testStubbedReturnValueForStaticMethod2()
+    {
+        $this->getMockClass(
+          'StaticMockTestClass',
+          array('doSomething'),
+          array(),
+          'StaticMockTestClassMock2'
+        );
+
+        StaticMockTestClassMock2::staticExpects($this->any())
+          ->method('doSomething')
+          ->will($this->returnValue('something'));
+
+        $this->assertEquals(
+          'something', StaticMockTestClassMock2::doSomethingElse()
+        );
+    }
+
+    public function testGetMockForAbstractClass()
+    {
+        $mock = $this->getMock('AbstractMockTestClass');
+        $mock->expects($this->never())
+             ->method('doSomething');
+    }
+
+    public function testClonedMockObjectShouldStillEqualTheOriginal()
+    {
+        $a = $this->getMock('stdClass');
+        $b = clone $a;
+        $this->assertEquals($a, $b);
+    }
+
+    public function testMockObjectsConstructedIndepentantlyShouldBeEqual()
+    {
+        $a = $this->getMock('stdClass');
+        $b = $this->getMock('stdClass');
+        $this->assertEquals($a, $b);
+    }
+
+    public function testMockObjectsConstructedIndepentantlyShouldNotBeTheSame()
+    {
+        $a = $this->getMock('stdClass');
+        $b = $this->getMock('stdClass');
+        $this->assertNotSame($a, $b);
+    }
+
+    public function testClonedMockObjectCanBeUsedInPlaceOfOriginalOne()
+    {
+        $x = $this->getMock('stdClass');
+        $y = clone $x;
+
+        $mock = $this->getMock('stdClass', array('foo'));
+        $mock->expects($this->once())->method('foo')->with($this->equalTo($x));
+        $mock->foo($y);
+    }
+
+    public function testClonedMockObjectIsNotIdenticalToOriginalOne()
+    {
+        $x = $this->getMock('stdClass');
+        $y = clone $x;
+
+        $mock = $this->getMock('stdClass', array('foo'));
+        $mock->expects($this->once())->method('foo')->with($this->logicalNot($this->identicalTo($x)));
+        $mock->foo($y);
+    }
+
+    public function testStaticMethodCallWithArgumentCloningEnabled()
+    {
+        $expectedObject = new StdClass;
+
+        $this->getMockClass(
+          'StaticMockTestClass',
+          array('doSomething'),
+          array(),
+          'StaticMockTestClassMock3',
+          FALSE,
+          TRUE,
+          TRUE,
+          TRUE
+        );
+
+        $actualArguments = array();
+
+        StaticMockTestClassMock3::staticExpects($this->any())
+        ->method('doSomething')
+        ->will($this->returnCallback(function() use (&$actualArguments) {
+            $actualArguments = func_get_args();
+        }));
+
+        StaticMockTestClassMock3::doSomething($expectedObject);
+
+        $this->assertEquals(1, count($actualArguments));
+        $this->assertNotSame($expectedObject, $actualArguments[0]);
+    }
+
+    public function testStaticMethodCallWithArgumentCloningDisabled()
+    {
+        $expectedObject = new StdClass;
+
+        $this->getMockClass(
+          'StaticMockTestClass',
+          array('doSomething'),
+          array(),
+          'StaticMockTestClassMock4',
+          FALSE,
+          TRUE,
+          TRUE,
+          FALSE
+        );
+
+        $actualArguments = array();
+
+        StaticMockTestClassMock4::staticExpects($this->any())
+        ->method('doSomething')
+        ->will($this->returnCallback(function() use (&$actualArguments) {
+            $actualArguments = func_get_args();
+        }));
+
+        StaticMockTestClassMock4::doSomething($expectedObject);
+
+        $this->assertEquals(1, count($actualArguments));
+        $this->assertEquals($expectedObject, $actualArguments[0]);
+        $this->assertSame($expectedObject, $actualArguments[0]);
+    }
+
+    public function testObjectMethodCallWithArgumentCloningEnabled()
+    {
+        $expectedObject = new StdClass;
+
+        $mock = $this->getMockBuilder('SomeClass')
+                     ->setMethods(array('doSomethingElse'))
+                     ->enableArgumentCloning()
+                     ->getMock();
+
+        $actualArguments = array();
+
+        $mock->expects($this->any())
+        ->method('doSomethingElse')
+        ->will($this->returnCallback(function() use (&$actualArguments) {
+            $actualArguments = func_get_args();
+        }));
+
+        $mock->doSomethingElse($expectedObject);
+
+        $this->assertEquals(1, count($actualArguments));
+        $this->assertEquals($expectedObject, $actualArguments[0]);
+        $this->assertNotSame($expectedObject, $actualArguments[0]);
+    }
+
+    public function testObjectMethodCallWithArgumentCloningDisabled()
+    {
+        $expectedObject = new StdClass;
+
+        $mock = $this->getMockBuilder('SomeClass')
+                     ->setMethods(array('doSomethingElse'))
+                     ->disableArgumentCloning()
+                     ->getMock();
+
+        $actualArguments = array();
+
+        $mock->expects($this->any())
+        ->method('doSomethingElse')
+        ->will($this->returnCallback(function() use (&$actualArguments) {
+            $actualArguments = func_get_args();
+        }));
+
+        $mock->doSomethingElse($expectedObject);
+
+        $this->assertEquals(1, count($actualArguments));
+        $this->assertSame($expectedObject, $actualArguments[0]);
+    }
+
+    public function testArgumentCloningOptionGeneratesUniqueMock()
+    {
+        $mockWithCloning = $this->getMockBuilder('SomeClass')
+                                ->setMethods(array('doSomethingElse'))
+                                ->enableArgumentCloning()
+                                ->getMock();
+
+        $mockWithoutCloning = $this->getMockBuilder('SomeClass')
+                                   ->setMethods(array('doSomethingElse'))
+                                   ->disableArgumentCloning()
+                                   ->getMock();
+
+        $this->assertNotEquals($mockWithCloning, $mockWithoutCloning);
+    }
+
+    public function testVerificationOfMethodNameFailsWithoutParameters()
+    {
+        $mock = $this->getMock('SomeClass', array('right', 'wrong'), array(), '', TRUE, TRUE, TRUE);
+        $mock->expects($this->once())
+             ->method('right');
+
+        $mock->wrong();
+        try {
+            $mock->__phpunit_verify();
+            $this->fail('Expected exception');
+        } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            $this->assertSame(
+                "Expectation failed for method name is equal to <string:right> when invoked 1 time(s).\n"
+                . 'Method was expected to be called 1 times, actually called 0 times.',
+                $e->getMessage()
+            );
+        }
+
+        $this->resetMockObjects();
+    }
+
+    public function testVerificationOfMethodNameFailsWithParameters()
+    {
+        $mock = $this->getMock('SomeClass', array('right', 'wrong'), array(), '', TRUE, TRUE, TRUE);
+        $mock->expects($this->once())
+             ->method('right');
+
+        $mock->wrong();
+        try {
+            $mock->__phpunit_verify();
+            $this->fail('Expected exception');
+        } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            $this->assertSame(
+                "Expectation failed for method name is equal to <string:right> when invoked 1 time(s).\n"
+                . 'Method was expected to be called 1 times, actually called 0 times.',
+                $e->getMessage()
+            );
+        }
+
+        $this->resetMockObjects();
+    }
+
+    public function testVerificationOfNeverFailsWithEmptyParameters()
+    {
+        $mock = $this->getMock('SomeClass', array('right', 'wrong'), array(), '', TRUE, TRUE, TRUE);
+        $mock->expects($this->never())
+             ->method('right')
+             ->with();
+
+        try {
+            $mock->right();
+            $this->fail('Expected exception');
+        } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            $this->assertSame(
+                'SomeClass::right() was not expected to be called.',
+                $e->getMessage()
+            );
+        }
+
+        $this->resetMockObjects();
+    }
+
+    public function testVerificationOfNeverFailsWithAnyParameters()
+    {
+        $mock = $this->getMock('SomeClass', array('right', 'wrong'), array(), '', TRUE, TRUE, TRUE);
+        $mock->expects($this->never())
+             ->method('right')
+             ->withAnyParameters();
+
+        try {
+            $mock->right();
+            $this->fail('Expected exception');
+        } catch (PHPUnit_Framework_ExpectationFailedException $e) {
+            $this->assertSame(
+                'SomeClass::right() was not expected to be called.',
+                $e->getMessage()
+            );
+        }
+
+        $this->resetMockObjects();
+    }
+
+    public function testMockArgumentsPassedByReference() {
+        $foo = $this->getMockBuilder('MethodCallbackByReference')
+                    ->setMethods(array('bar'))
+                    ->disableOriginalConstructor()
+                    ->disableArgumentCloning()
+                    ->getMock();
+
+        $foo->expects($this->any())
+            ->method('bar')
+            ->will($this->returnCallback(array($foo, 'callback')));
+
+        $a = $b = $c = 0;
+
+        $foo->bar($a, $b, $c);
+
+        $this->assertEquals(1, $b);
+    }
+
+    public function testMockArgumentsPassedByReference2() {
+        $foo = $this->getMockBuilder('MethodCallbackByReference')
+                    ->disableOriginalConstructor()
+                    ->disableArgumentCloning()
+                    ->getMock();
+
+        $foo->expects($this->any())
+            ->method('bar')
+            ->will($this->returnCallback(
+            function ($a, &$b, $c) {
+                $b = 1;
+            }
+            ));
+
+        $a = $b = $c = 0;
+
+        $foo->bar($a, $b, $c);
+
+        $this->assertEquals(1, $b);
+    }
+
+    /**
+     * @requires extension soap
+     */
+    public function testCreateMockFromWsdl()
+    {
+        $mock = $this->getMockFromWsdl(__DIR__ . '/_files/GoogleSearch.wsdl', 'WsdlMock');
+        $this->assertStringStartsWith(
+            'Mock_WsdlMock_',
+            get_class($mock)
+        );
+    }
+
+    /**
+     * @requires extension soap
+     */
+    public function testCreateNamespacedMockFromWsdl()
+    {
+        $mock = $this->getMockFromWsdl(__DIR__ . '/_files/GoogleSearch.wsdl', 'My\\Space\\WsdlMock');
+        $this->assertStringStartsWith(
+            'Mock_WsdlMock_',
+            get_class($mock)
+        );
+    }
+
+    /**
+     * @requires extension soap
+     */
+    public function testCreateTwoMocksOfOneWsdlFile()
+    {
+        $mock = $this->getMockFromWsdl(__DIR__ . '/_files/GoogleSearch.wsdl');
+        $mock = $this->getMockFromWsdl(__DIR__ . '/_files/GoogleSearch.wsdl');
+    }
+
+    private function resetMockObjects()
+    {
+        $refl = new ReflectionObject($this);
+        $refl = $refl->getParentClass();
+        $prop = $refl->getProperty('mockObjects');
+        $prop->setAccessible(true);
+        $prop->setValue($this, array());
+    }
+}

@@ -1,30 +1,37 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-bj8Z2RURur1H9669ixDCVuLd
+<!DOCTYPE html PUBLIC
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>エラー <?php echo $data['code']; ?></title>
+
+<style type="text/css">
+/*<![CDATA[*/
+body {font-family:Verdana, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic ProN', sans-serif; font-weight:normal; color:black; background-color:white;}
+h1 {font-weight:normal;font-size:18pt;color:red }
+h2 {font-weight:normal;font-size:14pt;color:maroon }
+h3 {font-weight:bold;font-size:11pt}
+p {font-weight:normal;color:black;font-size:9pt;margin-top: -5px}
+.version {color: gray;font-size:8pt;border-top:1px solid #aaaaaa;}
+/*]]>*/
+</style>
+</head>
+
+<body>
+<h1>エラー <?php echo $data['code']; ?></h1>
+<h2><?php echo nl2br(CHtml::encode($data['message'])); ?></h2>
+<p>
+ウェブサーバがリクエストを処理しているときに、上記のエラーが発生しました。
+</p>
+<p>
+これがサーバの不具合であると思われる場合は、<?php echo $data['admin']; ?>にご連絡ください。
+</p>
+<p>
+ありがとうございます。
+</p>
+<div class="version">
+<?php echo date('Y-m-d H:i:s',$data['time']) .' '. $data['version']; ?>
+</div>
+</body>
+</html>

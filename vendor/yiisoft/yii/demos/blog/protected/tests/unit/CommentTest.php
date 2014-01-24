@@ -1,47 +1,57 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class CommentTest extends CDbTestCase
+{
+	/**
+	 * We use both 'Post' and 'Comment' fixtures.
+	 * @see CWebTestCase::fixtures
+	 */
+	public $fixtures=array(
+		'posts'=>'Post',
+		'comments'=>'Comment',
+	);
+
+	public function testFindRecentComments()
+	{
+		$this->assertEquals(array(), Comment::model()->findRecentComments());
+
+		$comment=new Comment;
+		$comment->setAttributes(array(
+			'content'=>'comment 1',
+			'status'=>Comment::STATUS_APPROVED,
+			'create_time'=>time(),
+			'author'=>'me',
+			'email'=>'me@example.com',
+			'post_id'=>$this->posts['sample1']['id'],
+		),false);
+		$this->assertTrue($comment->save(false));
+		$this->assertEquals(1,$comment->id);
+
+		$comments=Comment::model()->findRecentComments();
+		$this->assertEquals(1,count($comments));
+		$this->assertEquals($comment->attributes, $comments[0]->attributes);
+	}
+
+	public function testApprove()
+	{
+		$comment=new Comment;
+		$comment->setAttributes(array(
+			'content'=>'comment 1',
+			'status'=>Comment::STATUS_PENDING,
+			'create_time'=>time(),
+			'author'=>'me',
+			'email'=>'me@example.com',
+			'post_id'=>$this->posts['sample1']['id'],
+		),false);
+		$this->assertTrue($comment->save(false));
+
+		$comment=Comment::model()->findByPk($comment->id);
+		$this->assertTrue($comment instanceof Comment);
+		$this->assertEquals(Comment::STATUS_PENDING,$comment->status);
+
+		$comment->approve();
+		$this->assertEquals(Comment::STATUS_APPROVED,$comment->status);
+		$comment=Comment::model()->findByPk($comment->id);
+		$this->assertEquals(Comment::STATUS_APPROVED,$comment->status);
+	}
+}

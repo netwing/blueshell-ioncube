@@ -1,36 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-7RlEeG8Cv9vXMxROa8xGOk2fj6pu5QcRgs0pulC=
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * A utility class, designed to help the user to wait until a condition turns
+ * true.
+ *
+ * @see WebDriverExpectedCondition.
+ */
+class WebDriverWait {
+
+  protected $driver;
+  protected $timeout;
+  protected $interval;
+
+  public function __construct(
+      WebDriver $driver,
+      $timeout_in_second = null,
+      $interval_in_millisecond = null) {
+    $this->driver = $driver;
+    $this->timeout = ($timeout_in_second) ? $timeout_in_second : 30;
+    $this->interval =
+      ($interval_in_millisecond) ? $interval_in_millisecond : 250;
+  }
+
+  /**
+   * Calls the function provided with the driver as an argument until the return
+   * value is not falsey.
+   *
+   * @param (closure|WebDriverExpectedCondition)
+   * @return mixed The return value of $func_or_ec
+   */
+  public function until($func_or_ec, $message = "") {
+    $end = time() + $this->timeout;
+    $last_exception = null;
+
+    while ($end > time()) {
+      try {
+        if ($func_or_ec instanceof WebDriverExpectedCondition) {
+          $ret_val = call_user_func($func_or_ec->getApply(), $this->driver);
+        } else {
+          $ret_val = call_user_func($func_or_ec, $this->driver);
+        }
+        if ($ret_val) {
+          return $ret_val;
+        }
+      } catch (NoSuchElementWebDriverError $e) {
+        $last_exception = $e;
+      }
+      usleep($this->interval * 1000);
+    }
+
+    if ($last_exception) {
+      throw $last_exception;
+    }
+    throw new TimeOutWebDriverError($message);
+  }
+}

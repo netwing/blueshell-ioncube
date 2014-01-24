@@ -1,227 +1,592 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ *  Base include file for SimpleTest
+ *  @package    SimpleTest
+ *  @subpackage WebTester
+ *  @version    $Id: frames.php 1784 2008-04-26 13:07:14Z pp11 $
+ */
+
+/**#@+
+ *  include other SimpleTest class files
+ */
+require_once(dirname(__FILE__) . '/page.php');
+require_once(dirname(__FILE__) . '/user_agent.php');
+/**#@-*/
+
+/**
+ *    A composite page. Wraps a frameset page and
+ *    adds subframes. The original page will be
+ *    mostly ignored. Implements the SimplePage
+ *    interface so as to be interchangeable.
+ *    @package SimpleTest
+ *    @subpackage WebTester
+ */
+class SimpleFrameset {
+    private $frameset;
+    private $frames;
+    private $focus;
+    private $names;
+
+    /**
+     *    Stashes the frameset page. Will make use of the
+     *    browser to fetch the sub frames recursively.
+     *    @param SimplePage $page        Frameset page.
+     */
+    function __construct($page) {
+        $this->frameset = $page;
+        $this->frames = array();
+        $this->focus = false;
+        $this->names = array();
+    }
+
+    /**
+     *    Adds a parsed page to the frameset.
+     *    @param SimplePage $page    Frame page.
+     *    @param string $name        Name of frame in frameset.
+     *    @access public
+     */
+    function addFrame($page, $name = false) {
+        $this->frames[] = $page;
+        if ($name) {
+            $this->names[$name] = count($this->frames) - 1;
+        }
+    }
+
+    /**
+     *    Replaces existing frame with another. If the
+     *    frame is nested, then the call is passed down
+     *    one level.
+     *    @param array $path        Path of frame in frameset.
+     *    @param SimplePage $page   Frame source.
+     *    @access public
+     */
+    function setFrame($path, $page) {
+        $name = array_shift($path);
+        if (isset($this->names[$name])) {
+            $index = $this->names[$name];
+        } else {
+            $index = $name - 1;
+        }
+        if (count($path) == 0) {
+            $this->frames[$index] = &$page;
+            return;
+        }
+        $this->frames[$index]->setFrame($path, $page);
+    }
+
+    /**
+     *    Accessor for current frame focus. Will be
+     *    false if no frame has focus. Will have the nested
+     *    frame focus if any.
+     *    @return array     Labels or indexes of nested frames.
+     *    @access public
+     */
+    function getFrameFocus() {
+        if ($this->focus === false) {
+            return array();
+        }
+        return array_merge(
+                array($this->getPublicNameFromIndex($this->focus)),
+                $this->frames[$this->focus]->getFrameFocus());
+    }
+
+    /**
+     *    Turns an internal array index into the frames list
+     *    into a public name, or if none, then a one offset
+     *    index.
+     *    @param integer $subject    Internal index.
+     *    @return integer/string     Public name.
+     *    @access private
+     */
+    protected function getPublicNameFromIndex($subject) {
+        foreach ($this->names as $name => $index) {
+            if ($subject == $index) {
+                return $name;
+            }
+        }
+        return $subject + 1;
+    }
+
+    /**
+     *    Sets the focus by index. The integer index starts from 1.
+     *    If already focused and the target frame also has frames,
+     *    then the nested frame will be focused.
+     *    @param integer $choice    Chosen frame.
+     *    @return boolean           True if frame exists.
+     *    @access public
+     */
+    function setFrameFocusByIndex($choice) {
+        if (is_integer($this->focus)) {
+            if ($this->frames[$this->focus]->hasFrames()) {
+                return $this->frames[$this->focus]->setFrameFocusByIndex($choice);
+            }
+        }
+        if (($choice < 1) || ($choice > count($this->frames))) {
+            return false;
+        }
+        $this->focus = $choice - 1;
+        return true;
+    }
+
+    /**
+     *    Sets the focus by name. If already focused and the
+     *    target frame also has frames, then the nested frame
+     *    will be focused.
+     *    @param string $name    Chosen frame.
+     *    @return boolean        True if frame exists.
+     *    @access public
+     */
+    function setFrameFocus($name) {
+        if (is_integer($this->focus)) {
+            if ($this->frames[$this->focus]->hasFrames()) {
+                return $this->frames[$this->focus]->setFrameFocus($name);
+            }
+        }
+        if (in_array($name, array_keys($this->names))) {
+            $this->focus = $this->names[$name];
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     *    Clears the frame focus.
+     *    @access public
+     */
+    function clearFrameFocus() {
+        $this->focus = false;
+        $this->clearNestedFramesFocus();
+    }
+
+    /**
+     *    Clears the frame focus for any nested frames.
+     *    @access private
+     */
+    protected function clearNestedFramesFocus() {
+        for ($i = 0; $i < count($this->frames); $i++) {
+            $this->frames[$i]->clearFrameFocus();
+        }
+    }
+
+    /**
+     *    Test for the presence of a frameset.
+     *    @return boolean        Always true.
+     *    @access public
+     */
+    function hasFrames() {
+        return true;
+    }
+
+    /**
+     *    Accessor for frames information.
+     *    @return array/string      Recursive hash of frame URL strings.
+     *                              The key is either a numerical
+     *                              index or the name attribute.
+     *    @access public
+     */
+    function getFrames() {
+        $report = array();
+        for ($i = 0; $i < count($this->frames); $i++) {
+            $report[$this->getPublicNameFromIndex($i)] =
+                    $this->frames[$i]->getFrames();
+        }
+        return $report;
+    }
+
+    /**
+     *    Accessor for raw text of either all the pages or
+     *    the frame in focus.
+     *    @return string        Raw unparsed content.
+     *    @access public
+     */
+    function getRaw() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getRaw();
+        }
+        $raw = '';
+        for ($i = 0; $i < count($this->frames); $i++) {
+            $raw .= $this->frames[$i]->getRaw();
+        }
+        return $raw;
+    }
+
+    /**
+     *    Accessor for plain text of either all the pages or
+     *    the frame in focus.
+     *    @return string        Plain text content.
+     *    @access public
+     */
+    function getText() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getText();
+        }
+        $raw = '';
+        for ($i = 0; $i < count($this->frames); $i++) {
+            $raw .= ' ' . $this->frames[$i]->getText();
+        }
+        return trim($raw);
+    }
+
+    /**
+     *    Accessor for last error.
+     *    @return string        Error from last response.
+     *    @access public
+     */
+    function getTransportError() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getTransportError();
+        }
+        return $this->frameset->getTransportError();
+    }
+
+    /**
+     *    Request method used to fetch this frame.
+     *    @return string      GET, POST or HEAD.
+     *    @access public
+     */
+    function getMethod() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getMethod();
+        }
+        return $this->frameset->getMethod();
+    }
+
+    /**
+     *    Original resource name.
+     *    @return SimpleUrl        Current url.
+     *    @access public
+     */
+    function getUrl() {
+        if (is_integer($this->focus)) {
+            $url = $this->frames[$this->focus]->getUrl();
+            $url->setTarget($this->getPublicNameFromIndex($this->focus));
+        } else {
+            $url = $this->frameset->getUrl();
+        }
+        return $url;
+    }
+
+    /**
+     *    Page base URL.
+     *    @return SimpleUrl        Current url.
+     *    @access public
+     */
+    function getBaseUrl() {
+        if (is_integer($this->focus)) {
+            $url = $this->frames[$this->focus]->getBaseUrl();
+        } else {
+            $url = $this->frameset->getBaseUrl();
+        }
+        return $url;
+    }
+
+    /**
+     *    Expands expandomatic URLs into fully qualified
+     *    URLs for the frameset page.
+     *    @param SimpleUrl $url        Relative URL.
+     *    @return SimpleUrl            Absolute URL.
+     *    @access public
+     */
+    function expandUrl($url) {
+        return $this->frameset->expandUrl($url);
+    }
+
+    /**
+     *    Original request data.
+     *    @return mixed              Sent content.
+     *    @access public
+     */
+    function getRequestData() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getRequestData();
+        }
+        return $this->frameset->getRequestData();
+    }
+
+    /**
+     *    Accessor for current MIME type.
+     *    @return string    MIME type as string; e.g. 'text/html'
+     *    @access public
+     */
+    function getMimeType() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getMimeType();
+        }
+        return $this->frameset->getMimeType();
+    }
+
+    /**
+     *    Accessor for last response code.
+     *    @return integer    Last HTTP response code received.
+     *    @access public
+     */
+    function getResponseCode() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getResponseCode();
+        }
+        return $this->frameset->getResponseCode();
+    }
+
+    /**
+     *    Accessor for last Authentication type. Only valid
+     *    straight after a challenge (401).
+     *    @return string    Description of challenge type.
+     *    @access public
+     */
+    function getAuthentication() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getAuthentication();
+        }
+        return $this->frameset->getAuthentication();
+    }
+
+    /**
+     *    Accessor for last Authentication realm. Only valid
+     *    straight after a challenge (401).
+     *    @return string    Name of security realm.
+     *    @access public
+     */
+    function getRealm() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getRealm();
+        }
+        return $this->frameset->getRealm();
+    }
+
+    /**
+     *    Accessor for outgoing header information.
+     *    @return string      Header block.
+     *    @access public
+     */
+    function getRequest() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getRequest();
+        }
+        return $this->frameset->getRequest();
+    }
+
+    /**
+     *    Accessor for raw header information.
+     *    @return string      Header block.
+     *    @access public
+     */
+    function getHeaders() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getHeaders();
+        }
+        return $this->frameset->getHeaders();
+    }
+
+    /**
+     *    Accessor for parsed title.
+     *    @return string     Title or false if no title is present.
+     *    @access public
+     */
+    function getTitle() {
+        return $this->frameset->getTitle();
+    }
+
+    /**
+     *    Accessor for a list of all fixed links.
+     *    @return array   List of urls as strings.
+     *    @access public
+     */
+    function getUrls() {
+        if (is_integer($this->focus)) {
+            return $this->frames[$this->focus]->getUrls();
+        }
+        $urls = array();
+        foreach ($this->frames as $frame) {
+            $urls = array_merge($urls, $frame->getUrls());
+        }
+        return array_values(array_unique($urls));
+    }
+
+    /**
+     *    Accessor for URLs by the link label. Label will match
+     *    regardess of whitespace issues and case.
+     *    @param string $label    Text of link.
+     *    @return array           List of links with that label.
+     *    @access public
+     */
+    function getUrlsByLabel($label) {
+        if (is_integer($this->focus)) {
+            return $this->tagUrlsWithFrame(
+                    $this->frames[$this->focus]->getUrlsByLabel($label),
+                    $this->focus);
+        }
+        $urls = array();
+        foreach ($this->frames as $index => $frame) {
+            $urls = array_merge(
+                    $urls,
+                    $this->tagUrlsWithFrame(
+                                $frame->getUrlsByLabel($label),
+                                $index));
+        }
+        return $urls;
+    }
+
+    /**
+     *    Accessor for a URL by the id attribute. If in a frameset
+     *    then the first link found with that ID attribute is
+     *    returned only. Focus on a frame if you want one from
+     *    a specific part of the frameset.
+     *    @param string $id       Id attribute of link.
+     *    @return string          URL with that id.
+     *    @access public
+     */
+    function getUrlById($id) {
+        foreach ($this->frames as $index => $frame) {
+            if ($url = $frame->getUrlById($id)) {
+                if (! $url->gettarget()) {
+                    $url->setTarget($this->getPublicNameFromIndex($index));
+                }
+                return $url;
+            }
+        }
+        return false;
+    }
+
+    /**
+     *    Attaches the intended frame index to a list of URLs.
+     *    @param array $urls        List of SimpleUrls.
+     *    @param string $frame      Name of frame or index.
+     *    @return array             List of tagged URLs.
+     *    @access private
+     */
+    protected function tagUrlsWithFrame($urls, $frame) {
+        $tagged = array();
+        foreach ($urls as $url) {
+            if (! $url->getTarget()) {
+                $url->setTarget($this->getPublicNameFromIndex($frame));
+            }
+            $tagged[] = $url;
+        }
+        return $tagged;
+    }
+
+    /**
+     *    Finds a held form by button label. Will only
+     *    search correctly built forms.
+     *    @param SimpleSelector $selector       Button finder.
+     *    @return SimpleForm                    Form object containing
+     *                                          the button.
+     *    @access public
+     */
+    function getFormBySubmit($selector) {
+        return $this->findForm('getFormBySubmit', $selector);
+    }
+
+    /**
+     *    Finds a held form by image using a selector.
+     *    Will only search correctly built forms. The first
+     *    form found either within the focused frame, or
+     *    across frames, will be the one returned.
+     *    @param SimpleSelector $selector  Image finder.
+     *    @return SimpleForm               Form object containing
+     *                                     the image.
+     *    @access public
+     */
+    function getFormByImage($selector) {
+        return $this->findForm('getFormByImage', $selector);
+    }
+
+    /**
+     *    Finds a held form by the form ID. A way of
+     *    identifying a specific form when we have control
+     *    of the HTML code. The first form found
+     *    either within the focused frame, or across frames,
+     *    will be the one returned.
+     *    @param string $id     Form label.
+     *    @return SimpleForm    Form object containing the matching ID.
+     *    @access public
+     */
+    function getFormById($id) {
+        return $this->findForm('getFormById', $id);
+    }
+
+    /**
+        *    General form finder. Will search all the frames or
+        *    just the one in focus.
+        *    @param string $method    Method to use to find in a page.
+        *    @param string $attribute Label, name or ID.
+        *    @return SimpleForm    Form object containing the matching ID.
+        *    @access private
+        */
+    protected function findForm($method, $attribute) {
+        if (is_integer($this->focus)) {
+            return $this->findFormInFrame(
+                    $this->frames[$this->focus],
+                    $this->focus,
+                    $method,
+                    $attribute);
+        }
+        for ($i = 0; $i < count($this->frames); $i++) {
+            $form = $this->findFormInFrame(
+                    $this->frames[$i],
+                    $i,
+                    $method,
+                    $attribute);
+            if ($form) {
+                return $form;
+            }
+        }
+        $null = null;
+        return $null;
+    }
+
+    /**
+     *    Finds a form in a page using a form finding method. Will
+     *    also tag the form with the frame name it belongs in.
+     *    @param SimplePage $page  Page content of frame.
+     *    @param integer $index    Internal frame representation.
+     *    @param string $method    Method to use to find in a page.
+     *    @param string $attribute Label, name or ID.
+     *    @return SimpleForm       Form object containing the matching ID.
+     *    @access private
+     */
+    protected function findFormInFrame($page, $index, $method, $attribute) {
+        $form = $this->frames[$index]->$method($attribute);
+        if (isset($form)) {
+            $form->setDefaultTarget($this->getPublicNameFromIndex($index));
+        }
+        return $form;
+    }
+
+    /**
+     *    Sets a field on each form in which the field is
+     *    available.
+     *    @param SimpleSelector $selector    Field finder.
+     *    @param string $value               Value to set field to.
+     *    @return boolean                    True if value is valid.
+     *    @access public
+     */
+    function setField($selector, $value) {
+        if (is_integer($this->focus)) {
+            $this->frames[$this->focus]->setField($selector, $value);
+        } else {
+            for ($i = 0; $i < count($this->frames); $i++) {
+                $this->frames[$i]->setField($selector, $value);
+            }
+        }
+    }
+
+    /**
+     *    Accessor for a form element value within a page.
+     *    @param SimpleSelector $selector    Field finder.
+     *    @return string/boolean             A string if the field is
+     *                                       present, false if unchecked
+     *                                       and null if missing.
+     *    @access public
+     */
+    function getField($selector) {
+        for ($i = 0; $i < count($this->frames); $i++) {
+            $value = $this->frames[$i]->getField($selector);
+            if (isset($value)) {
+                return $value;
+            }
+        }
+        return null;
+    }
+}
 ?>
-HR+cPuJCUZPOU5ywCIRl5Ri0shBygrxVY29Vo/Lmy/QmSWm9WdYSZz3MdS0p1pzOqFJhgiM0nVu+
-ST1pYucLGua4KG1fozGLRua+8EEjnSE2c/kvDPioAJRZjcQ/jdLUv0xUrhf8Filfd24NdQ/jbtsH
-GavD2PrfhfGCLz/+gn220ZQYl8434ph+A608ChyxkntJb1XxLP6JTCkA9TmQEo1mAgiJozx9WCnD
-twnJNoR/4dDYZGd48G9C7wzHAE4xzt2gh9fl143SQNImOPwbkINwRFam66xO0zVdAqUgfbqoG+bu
-MN+Nnxp/VSFeJOCYExiCE4zLWkb91AK6hhlRDjlC6GcbGTu6/KF0GByxBY6DBCfw8J9kLZ4wCBXQ
-tbppMGsSAulk6BTwPhHsHx/4ZPsA11q0XqKIBsRlAFpQrG/nQ7FgKfKf36mJdyVvXDZrcdT+LW3a
-V5n1wvnn7WaEB16Mm/S41haIiEcKrOZsVJG/X7LJEBqD2wk8nJUGhwVitnnD28MlgltkZdF12lSa
-qisxHueuu1n9aJkm8ofnByNT1d573rqJHFhhDdjRclBqFPRIDjuX9TNXCgYGCPUEyP/v08NodCuU
-ZKmonzRKh71REVZHUqNObbTa7IEzBq8W/tXiE7kv8iPKQvLTRCcMEf7q8MSKhkspXvCA4kjAldxt
-4u3nZX2wD6LGxRv+CjL75pHyKtj13abetf82z0v1ph6JAYDtTAzieL3rZ89toHZev1qQLGB0+duv
-MKch12zZtlj3GSrUnet9kTwZ0oaxVzymAgID1NSzzQZ0+IR2+3uomskGxLtoCzHnB88Sh5AcABM8
-+yVzB4sBuTaX1AsCw67NiS8ZgI+HlWC257p4RGXvNyJFqp+njqHkbtApYhQ/9g46dbaF8NoX7GDS
-cT0sBf4MVAZQUEk2vlMoLmeuqzP2pSBmkd4CZ+a+zWqZELa+2MxDULUV3/SH+BwLVUbP3Zene2t0
-nEp0QlpbDMCRgTp88MRnCDjoVrZvKtqcTcnc0euipHX+jggshk4MgUm9wlNpAPevP4l4mrnIZ1EV
-W7Q2jSz/sqc7y/+jsDYJQZEOB89gt/QwjoG1/8/QEPus/jL30aFFVlNR7CKg/FG3ixJNqiXvrRb7
-8/VlRdOhegmIzpw4H3DH9s+cbCxLGfgYYzC+Agj2ELNLEsu/iNQie5AOi1GXgtvXb9f1Q8aG95Zs
-9HEIzH7pe5j+iByEH7Hkcgodg4pEvviHfcAn+ie4VbZUSMGXqwmuanIM57aA0Bn0b0dDhmy9AfcM
-72Eikkevi7eU0zYEc5XcSvXSSAm58NG/rTqM/byDy/vquA51rtN/PAzogmn2pbJkgC3N54GrStv2
-bEWBUp4JfWKqb0aE7JGCE0VmL53jLeljf6KjPJagq9ApwQXtbWIrjrEzRiCNqSOY8lLVGjO16z5H
-fRgyv1rvBzGutBRCWiYi9W187oKdFZPWYw4dnXMR4fCaT3yYBsNj7FYYt7DVmYbDvKhAdH53qco9
-WL5+wA45KGcTzIZ6cVsK0oTivzEzk7TBZEJsDJRF+98QyFP80B/M1vUVIqcC1Sm8wZvRB9MOhu9v
-+5civ7qsK1noyYI2i8yvhDEtCr3aawHCUTsknyNe/ODHIAb8Wy8b6J3W+T9HGaSOyjpzrgas5e76
-WkMG7Y2bZqPd5mL3Z9zIfPU5VUyG0CRaRIdCNCu8xF2kAqHOu7uaIch1uOU3DeXO1AiiMeAlrcxi
-XxacQlF33BxiOIv9hR2SrMLJwAE9w1aEOeq8gOOWf7TXBQV5x7MtzzkRTvk30LK1fFZiD3Xuiwv8
-+dgf/k5Gn/xcbAmExGu50T/UblIUK28aPiQXROQKMy0fXNYvR1waB5t+cN6felmOah96l5GlIApB
-CgU36PqT3SI8dmk3PdyXXKVBQsKgXG+6dguhlOOBHVCs4B7dePHgUYiAtQb3dJ6Is7dwE4iEXB56
-+K0LXyZzmYwQkIhoOJYLH/Jn285MIzKCi3u0FH7xR9taOGaYE8PAkfznR1r7/wjFqI1AKWtED7up
-XMK9tWopDReY3bN2akNSnANHOKeln3f5SlDU/qRc0EbSYypVmE5iiS0MjMR0L/A3ZFmgM34ngtg9
-e7FKTZ1EZitZ9MunEZ3Yzxu3ceAxAHHANBcjoFZTEGLeBTD+FeDjeVRmtYTj/gC9r54DIYi4c7Fa
-SXPVE1jbX0/hewV08YWFxehPWwzr3PA7fUc4CS69asTvkp0SrwQMumyMZuPsRXACK1l/RAm6qs3y
-i8J9eJ2/mtNaLMSR0L30pcKP5qhCJ292qz2CPgt1iLpWVBGw62AZSdPUpLQaQWe/w/YzPMdLaNkG
-u9VHVz3C0Cohnp8zGyY3vsi96/0XsqJkoF7pYuLyzTaFmwWClRPyY6JPd6Q66MkVdCX/ODKv7Uha
-cF4a3KsOXcOWCqhLNMLpJBkGLwgWAU9UhPTq5ltiVNRx8JsR+0VWw0jwi/MIGK8Ld+AjY36u+d94
-87NMHhccvk9OR5YMRY57/WDHdz5LNI16sTKufpumOUFCcURG/UE8I5jhpRKSW4BV4MIDo/f0PA5H
-kIlLT6a70nlZwkd8SqBRmDDiIQtlTtV6gv9kU5J3ROaR6VwV2BR5gctdnI2ZRZhP+FV5292bxpIH
-EzkjflSc5tkxpPQmcVj0jSn+ivNwIjb+JNyg+EP3qMGwbc+6M+AOgmJR5mR7Msin381e77mb5qIu
-wUw6bJH2pCvQl2U3vodx7v/tmd17rlvbW3MxluL6drqQ4e/GXtnlPz5e7d8THdB0Sv1Hc2souc0H
-i2s3rl+jOAeD6s3dWK1O25mM2uS8EshW8TA3hq3Bl8I7h5nCxcOKk3wp/iie6fNQua61kKyih7kP
-mE/tdO/zHOmp07uxvIJCmXA/IQN4hJ3B10ij1ijRL8Qu6XBnqk4cf6ILsSaDsH9ZofYQou+zFzte
-Zeyh7Wh1qJO+ui1XMUHQeGb8t95ALPYB04UUH6wn2EiXFqi0zUTcZ4hRdgAorqs3OwWgS53Ew8f+
-lrkpL61MPhRLfl/0f/x5AMrzM3KbzK0bGVmVaa5YEcO3Jt5IVLrB8Dyr3hUFXpDiJwibBBWr7jfC
-r4KT49tMoZKJ1KntGv8ELTj1XSuIHH+S8Dj9JndxYocDXNOAlUvBtTT1bRmBmXissHLXB79eYJTV
-0dlg1aSVnIz2OrAA8AnYe/GjtNAfwY8XSzyhz4sNbvYJPzSn5jyMJ0rcRMMygCq1LhPrNZr50OOr
-KdMP7yiUM1MAV49/uhECO46juTn24mo+emvUKvzqo98ZIIk3MiKpCSAjfRtZ4vJyocrnZDVEvGe8
-Mhg3QUt1hxxXi1pgBAc6psXjtxv8SLZCjEkwYjHURJX9/JsWJZM9BorwS1GPuq4FrZND+JvJanRw
-w2DRbOemIOUkX1SmYoelIuhk1ew7AYknUX0l3NaXC8MD/2DqxXC9o/ICJzPzSgC2zoE7pZhVwzbn
-tTq0xRFOv99Pb7dNWpj9Ht2TpKgrWAUuEQSP9+09zWyRlb7uGSAecmTDiqHvHhuPW6Ll24RPakej
-PNvIOArFKYKbjgV+KNlP/X/EVI/TtrMMbiDCn+6rYodPEy6ZOLEEq7QwfQqk7B8qpVMN6e4/tRqa
-zlxh3Lmw8Wf/jCs8OBXeqw4EIWHvC8EzvdyXPGVukIkRZkMpzwUS+N5GBzyGPb9FDbjlMv0P9UHu
-eMHQoqzybeZfSav7ZSWzhU1A7soFsfOrKWH9sVvbH//HpqnXc7I/aoMhr1a4neUqwbQrNk6iSIMA
-d391a8Emh/ZDjoGaVGrE2AMkv/2pydK8zTE5YUK5D48812LjovAXfeLvx/xKCnG23N3Gy3PCw2+9
-BWqjELfRO4AX7+B3XXo3o4v1poqjTB55WcPl99296bnC1u+063Zanx2WDDmuuVmzKRVnvBlqoOaZ
-ERCigoASol++NZFvJOo8sYsCwERjjZIbLJtTWETZrPqK/DeJzcktkljnyRKpgxy9rT0voWEi9xI5
-V1P9LdiqoyK2HrfjMPHA35rRJav/Ai9NG5hirvaEbWXtVO6wYCkJlG7SOE3gEshgUBjaPqMwp8Ib
-SGqjarjvSEc3KwZ7Tm16Zsh1mY0o7enS1LVmaFIazWHvMbHTJBDsvgMBTZsussR8oqg8Fq1PsnNK
-ZN3Sqbaq9ziKSPj3+1T0M+HKNAodWz6RUjAOIp3+LiRDvs2LhGeZ3SPq31Y8yc1bl6g4lOmcC8mM
-jYlwTbopCC5eN9l5rqh/KIf3YqLJ1pl3wGGPshc1Tb2evKdsl8tsA6iBJEYWmnRjZmXEMPJ7+sN8
-s1bLOct/qlH+cHk5Fvxk6enlZfUEWAacERnzXWNzJlgJ+bPeZsrLo2qeyGrPbAghk6H7Qfjv+djT
-abin/vwyXuSNgMMUc0wYiRvZ0mBZ0RR1l83DEnHLmho6YGP17aqjGVArsBZ/mQCI4dkee9fv0OlH
-ViJjzD7eqsyp1186z6+EWDDJ8x1zQnPGc+4obfRp6ACJ7RyBJswGcYUmeEs6qWO/l33O8UR0kK2f
-fs5tRFZrT9YhQcpsk1dtNTqrvDcuHbbtlr1hG+4BjECkyRGwOjbMS0VL9brblOrhjr6EDCO0XhSF
-5IE5lzLAEL2A6F41qwyOT4sjOLXgbuyf9pDg87RcY4pKc8fHy0qlZ/8hCJ2byWi66rCIObRrG72f
-OGydayEhJhgFcI6gDVW9XazekB+7764pE71+5iRa2BKA7aDgFthQMa8mwOHJdRCYbSfQBu0JD9JB
-USC04AStOQT8K5U9sq9Ma6g/FILoBMoZvXMCJ2Q4EMen8gWTsJDmx1r/UzEKDsaD9BoMsUL2w49M
-dJKOAX5GciMM30EYuutAZ2yV/tnV5BxFnuSp5DsoL/xqiARGEbvrZDQkciGNUPZI1QvWu1v1DZ5c
-UG4IwaWXteofxCNLNVNfFWGBGCC5fx1cHQrsXW/cKWB1TVNqItTCRB0TlYGKAdcpr54wtkGB4pLE
-qXAGWu50pTDEx0hVLVa2ePtvFt8Fcuswye7YQF+p169Em3eEARYHgh0CW8qbJ+upVtHYO7F0vGj7
-nacqd+5r/cXXu5VgzN3Qq7+qvcOsUmFhUkJw/3yPpmMvv46XAHHntqIncNttpfXcWd85nEP1/wYf
-yTDD87dEBz0Y3GBcFTNPB0hZSVh3Af7rK0VGreUP1C1Z/4gJVzNbLJ9bo3AG3L82oQ0SZv3dIa+H
-rpE4gDNty/YLfvAw8SeVo4dnGBrwtc3WqJgGwmHFj6dy0Lvu1BgEKS3IbiNLa2DmRTJvOnRLYMrn
-6oRIJ4Ijko9u7jGKEsVKC0+cEjMAmaVojCkfpVUcoh7JdhJvof5OocaLWWf1J/5Qbauhgdae322r
-/OpY7wKQ7EvZx7pJhkV+o3PqXzq+C2vIS+Lx6K5k8LvJWiPS5mP7jJkAYCNH/v2YAbD4JdojfHfU
-XhR4BaO0TJOjZgD6vJgiFp/8Ph1+lAn8/HRxeMciyyNSoN/ay1bEcaA9OQVjBabjHmd/z3LMBxhC
-vrrOxTNCpIWKzi4a7RuImx+TqbUW4SoJCWSVkvy8wyLMxZelTbKbiLIn6ytvrSh+iPnhGM7nE3Qu
-gj1UhrGgxqBHG31sC2VY1MM4161C68HYOCzpBCtGYB+VZeP7YqKlHS85eUtNGylk2QebYRvaMfhR
-gfzW58WtGaump5JJL8MPVPm9wQ7tDa4HOL5RCIOVuvfqfaHKdkNBo3b6FsylLTun7rmTaT4UxHSA
-0stBWJOqZs2vXjxzb7maZXfMaL05bILuJ77grauje5f8YQr1Jq3+ooDwwchi9P+h872MDWu3a4yb
-VF+LtYRijTVFLMYtcs1Uzp7noH5/KlBWLgwhmiJiMPdhNc9Hw9H/8SeMIZM0msBJEEXM7ZlGZIPR
-KE/SN26c8bClbRsEHAfDwVM6+nwo6h5mgLuuBfcN0HGe4qZzL5n84m2EQDE/QTxds7enjnmEVs3X
-K4gZxnk5DyHX4Sxg6Vo/xofDV8fRt9f++QXbY+jnnA1upohDmKCMwB3j++QjpWX19MA9EuWS6TMo
-ruSLsMwR1WBU+PmlaHhEFXGvbC3HREQY8Y7QRi43VptiVSpslKkEeHd6wCFBke+147juaGKSwpZ4
-NYpADePiJD3qaP9ytv6/1vA+WvZ5eLUREmCtcLrDN0s7au9yVzGgFp4OPPyHSJ2lL7xnQhWDRhzH
-+1/RfKQPGeF5e8hcH371Uxeui+3i/3qcQYdLBtCbn2uuqRh5Mvzg5VqpQW6E1FgUjA1IE7J4IckC
-BSsCHXWt8dy+ZTuUXIqubq/tTVYtttc8RTya2KZKXT3GQ9mtkx31GVDbUsdwk2Iq4upxDZE4QdER
-f7D+QmS6fk5z5hOq3ErQnyTz/RQBZlUCTs/LoGBIk6fkbtV6hXIiA/IeG4R2TqCFAsPwTY+I284W
-oM1ro0flyFjItU31ecaMiwJwasQnqZk+ivNuLzLCVtcUOsW4yYJUYuYdTXUqt5I4oWviM09SaW7A
-UB87azbcMwCWyXIJtzrQo49+OlfpAUt0TZZRO1Stu3E7wdKVSQMZXQaOt61F2b21FyKtNxdDNfuV
-pVZO0wWY1dX8rKQDu2NBl+5pb1pkxzHFA4eRQUEJgnb2PyNUy5HV2DiasmK9fJiVsRcNy027kfRo
-C+dcENfwxA8m6HNEXatcv2DeDb3KoVqDYfTJDWwId7VDLDNMB1KlHO7nyq2lb1OM9/YyUM7XuMs9
-uFRfL6XLui6iIdHMMe9LMf7JU9gQjmzCcAXjVvCkXfQlVKFD50S0ofYQCPAbefj13/vsqNa3UbNT
-+gMUo/gpUmKs4P1PLdAZJUWpW0M+isfHJl7IHqmZDPhV398IbKHNlOj/IAn+0cNbOCp4uskzwBL7
-N/KSPAbVuC8kmurRxA6Gr+W4a5gwoKeSQw3v7qlKwNPoep2i0UwmEnlfHsT42Y5LzeiH2JeQDo8v
-kk2pANamOto6mGMCPrk2i4En8loi4aAy3wRnnvmQREYHouBI4vb7IAOn8vdDuJW9DiYLvNdi8QRQ
-DB50cKctHbYJPkdJQqZ46A7x/i5gQY5TKy24iRR8BrsRYaZUKUm+bPEiHkek1/TlFeF5MWsM8j6z
-SIEl30K2m5oQBGT9Pms3lQg+jB+OOsBQ+cuzuYIYldav/FaOmBmpFKPT7iOmMIoL6lZhPyBgytl5
-DxEguSw578Uj5AAOV13rBqMszHKW/peLM1IOoDTpfzXYO4aRiG9jKmlcHsj28Xn/M2YgNCDoe2PV
-ukzcBSTxin75nnwibLT4+8UFzS0qi82G10qp78/TAG+xBAD3l6cq1ijZecJANhcqMfW5tQ8XUzx4
-7nDIw8S+5yr36y0IG2zeFGfE+odgG4y7jzm3Y/tS/2pm0SEAUGejO2N1kak+045zuPwSPwMZ3kHS
-oXOg5cA6/Vxbjq7DuFa8CxQuB62neFlLL5tiEs52q73kTKNWXtUSWPB5cAdEDIe/QWvS5ffl9ikN
-ssqECf6oeB0rHbjSSbAekmFI9ByXlncy/198c/pTjoL5NaGOifJ/5x4RHNDkxYmzQrOWmNgdDxws
-PxbNO5cirRviwYboEWLYSKr2GuOL8VX9yZEM+J3UeCweDfuGM9ARIuY2upXnDB+U5T2d1/ibn40s
-28PQFIPbH4PKKQWUtfyJmAI+tBZaianXb/NxzFJSHubUNNcaC5FU0G2ncenI0+6I7pXiFpBVaihs
-6Hqk0fJZGZdWbSx/nUdZo40HyN1Y9QXtxHZKDa+OK+8L6wVXhiEPmv88hLax4RGsTtDmot3aL7Cd
-sIZ6rzysv4jY6hCi8UtMuLXl76Lopg/7lXMoLTz/4u7n0Pwpif/uX5PQCxq8AdDipelZLP50wuph
-7r1yzbPuGtvatvy4fwu/4+767L3bs+jcSm9Ot9FjHFp2f7AYkoppJgeoxvVc215vb/LFNJQy6nOg
-EmG9xVYB+CBLzGLdeq0GhmUOnGGHsqH/o84svFH17yZzMsGdTETFJ6heHyHdVIRYQ2HX3uAadVgf
-Tj0krRtn+80NxjjDDM6Nst4JV8pyctBqjzI4qwKFLuXPmwYia9sVMgBS6ACdU/18Rgx+7axXhmlj
-bZ1xgj82WXiKcXcEbFkuUPvK0Ey4Ng4xUqlCONhJtIk6VS1II7AJEz4IM/0XNNC+TMaMiOKOJnLb
-glNHsJ7X4tMIsT5+1O8JuVEIRyIkaJ2G0kX0ACIiCO8b9ZWu+7mhjQ0SzGgRYSGChQkRcn1WA7uz
-/yXXRd13ZH8zyUWtjao4zSsIoVrjW6fe8TEdhZtCHbqt2wMtqiFA3hYHX5KpeHcM1+rnGvZlr1bo
-sWdihyanPmUojBzf8DspVMMTHeCaSJemfujpUZ17mm35QNjurUo12SCvE3k9M+2YIhfxrNKc16B7
-ejCHJ00YdLwVsUPn1DEvwnOmK0OStN4iZjXIGEeqf+r+b2GSepJUJNUVBI48Evgr1U0enrLBBVMc
-zxkUoVHcFZy5fYVDYk+y/rRVLk4P4YmgayGZl1anDjTjTBH7umac6FzSwhgSR2MOtkPi7ZTFP0Eu
-ohiBzviz0Y+gesdUXVhBplOH92YmyKPIQ5mgs172g3B6RWBxed/ahXG/Xzv3Cc+29iSLoamjHTLC
-+W3o/dQmjObv4c4dIpcI4rzyLNbCTnx65hlVkKDzxBJSiyJQNXa+BUMf0mCLKltCCnZ+CRvptSo0
-lNuPD5axW77J9etLwoqf+Tk3W6XRVU2SLfQQVT8smL1PbqNSxzKt/0kdMJcZHhu0aElRIFgeprKd
-0EVB8ZuvrDVq3SKs1qULSY6PDRH4d5Fzyep2hEIkJfd9Tk/xZ4nVMaA3pH5nEW7rKN6SluwHvdSx
-69kDCi/2wZCSsKXJImkJUVwpUycWkAZ4hBskOCaMpLCs1z2mIl/uuAvMYm5v/TkQZ4rr6VwesN0l
-9z1E0Sj//oWmyN3MNAPEoagbZbWAOsm/JtG3JXbpgilKIUoqQGHwcKdpkBn82xEbuRMf42mId6gn
-X2k0jKhQKBkLSvN2C9jLeW5LaMrR26sQV+8mqlMVKXTcdGqs0sj/P1Dgw8xvb7CFvvA0ByrHi5hq
-s9gUWXxGwHkGe1Q1ghWq1HOa4e/BPUgYrw+ufOz8A8nH+rCIOOspqwNM/uQe0woYKXwSawioFKYD
-ZITBrUpkDbEAbfbSpXh8IlfNL6l1igbSP4c5IhCdXA47yUDm7IpXKX7mp87y4Q3tA8jKQtO/4a4g
-PQYzhCqzYe33xe5a4aAU/RVLGupdDDFpcMYvA9dKKZbkOab+1/vYFJR7Nemi38EvbRQDkGF1wy4I
-Zz36CUaeAbzUuFnJzUp06fNWAAq02gF0iqOwUcmHebUBbS7OAIZ67jsABaNQtXFlEhrIH+sz7dST
-19b8t7Ce/xo7+gvTh/Zf8jnu7YwoGGq2xC9dOWG1TtUorbDBkYHFP19ZIWPeY8IXYJXDWAdLjs3/
-cnA6PE3fMQ7YMsWJt+lo99Tgss1OkTHTktqU1N4iv24qEZeVOZM+ywcibGjZnk2VrTXGNWWKMZ0o
-Y9X5DaLz4wRoHUI12/R+lqhfo9KmSIT+oe+vrdQ3GcB/Lp5+1tNPdcvMbSDNPekpBGcKPZjQaWph
-JFiMIRXxKRb7449Rwtk7Jz0icZD76CwfrS9wevdKLc+Cyky07vmlp/pDlaMGveiKT7u2i3cdMyZV
-1v8lhZ9rsvud5kYDOeJhqg10A7sGhGsy2hYOissiDQPuhUcTYZtRu8daagaXx3HfnomjzJEMW8dm
-6RwtyYwwdeH6/JK0sNbaRh7DEp4RBQuXblDkuk/V7qA82hPABuDuvagZJCSEa3QAGTjQqL++pGFj
-YwUwDaT5tZwmU1dYwbm9hBWv4XPkAEIcQ4OrntcONbs3QIyRDBJOZCvSgh9bDSLpYXiTpTlFotTa
-7W+vHkB6lR4+WrCYajWs6uQNPI+Sc9iJ0p0VrRYIYxPEP7JgD24xhBjg/tWOlcva7/nvcSlRE4Ae
-gxdYNcdi6oF+92s7EyIofQn6zR7Fx3v7ODU7nGS5QWp8Bm/gr8WITn8n9Z1c0zDtp6umQ0hQsjBC
-NK6mUcOxbjrFvsmt4oWmNmqP7329y78z6u7bqvXmj8C9r/IVWohIP9OSm0iUTvU9QyAGjtY6GHdz
-MvRnlXFqbzq3arc31Xz3ytk62R7CzboiwZW9vLqIMMfZm9CeoZ+thkR0BQ9cV457GwxdRP3Fpuv2
-6I50KHd0yZSUYBcrKJyCSMFSpjTyi1bmxTlSPYu8FsTfUlaP7Z1aW5jihEtTTYkRyURebOV1s3Ce
-qnQulz/4L7P9KPvIwc5GM5gfVFfQbgXu2Ar3xjTLX8Z9FMUkfwaLfrH7K3iXTDZC7sgU2cq0O6su
-W7j/RhWpCpw8xXkncMmW+cl3kB1plk8fyVJwdcPIQUw9t/WLTlk16c24OhXNOIi0aB1cqnHKk9C3
-u/hl9Ri4ezhpXuIVNrOEb7qAbAImebqSG5qwc26Cnog3Tfq8NdV0wB++LCoGoXupRxcS45OhAEnG
-kLzYE5NR2fRV0ezYCEdG20wHcgq6D/YgPuVpex5BoMzvzBJcv9YL1cetTKMCNAy2GVx6xjgZOV8i
-Z90XW7KqAT/JHtEF14GfpfXmbRCaGQUz4gA0yMBhDwVNjSCP3So9Dn83+5agzeNS5efgiTBMQaql
-zJeKRSbH0PzRwg6m2+8oucNpTDswbCzciTxJyBA8sCtUo/CCw5Y6epgyvTLZvHoZfdP6ABOjKT0m
-+b5QbKkio9E1aWkJ/gKCWXX8Pu504zg5JpMGFJ+v9W+hALBuQ2x772y8r0XVoBz2wA/OsMysxcDQ
-gnR9478KgOCdjJh0WGf7/4AMqaXqgwmj94I6j/kYlTvlZCpXA//GcwPV1/NN2PES+VvFnjy/sEsQ
-Be3KZEZhJ6D6fm+UnxoBLiFIaGJ2DvHLAIX03uqqQ6tP88OaqmERjgPbmdT/Q8os54+T6VviItvO
-nwOdMDNx3JIcxZc/cC3/ASSGeqIEeNchXvvEBXN/zFykmnrsMmS9LyqDq0Dm56epmJLu8COtqfna
-hgw48YkXF/YMl7SjRBG3mR3sZeM6dKNaW7s5ciw7hKUsMKN47w/C/ytD1QIGri2vASXQ7f8Qm1q/
-p/N5NM6iuHyDuu9lq5BjYrErG2wix7y3Az3+FZWtMat3XShGkDZQ6J1Xm/lZ6lhco3WaSSjM19/r
-9moR82tjtowelKjPWHOYr9dY7wh0BKTh7KH7PNepNVsFa16OVyJN256XsFTND4XKw2QfHyktKkQa
-ctvpmojKFh7jJy07JIjB3XHuEUkteZw9GM+GzvGwXuabuEtqOdarqM7DiVIpJkTTdk71ZyLJOLpk
-GJxkqUO6ob1j+gwaEu5ykFFFGfF30xlASRUZlQjdUT6jPc9Q2itqdQqV1b8/p/Yzhnf6S8g5O4L1
-Hmp5T6mcq87h7p6LAnJYBw67GM4FdNnQucuD2T2pY6HJ3PFy3tHsYFj8n5jfIXO92qKSpX4vKnrj
-jSl5dwihZYt0wXNBWfj8AkCSXneGDTxJUTJPBb9wmGWcW23IpNbRbTtt4BJHq1vcrZ4/pNSw0mmG
-Goca0ELWk+ckrdrLat4+8gOe5O+1H8uQX571Xn89nnmt8BY7+E4Id4FAMnNcNUwJNkIAiBJ/hk+n
-FUn0oLddlv3vfLLWyrdGmJ8CtubiU0a12LrqZrhKONBsHRvO/x1fTDckKUPfnWxtjcJAUFQZAirC
-3wnAYYdxS9inr+qOKq13rVj2tqhOhCcxX+JX+D2/iapVayiHlyPPM2AOX+okWQBMvE8czyZ7f5I4
-rBpeLb2mJRlcS6+qBcIG9uC04rcZXPIzl+sg7n3mvUZyHplAGW2aHqhM9T8pqiK8hEs4JhufkG6L
-+56eFsf2M4Yx9ObGR5KrGjqujs1FcrlZxXa7uiKEGYO4z0uTxw4uTqhwT5TLO0zwVV0duyslj7W2
-3bXZLQd5AFz8c9XG0l5Ofgmas7J4s/X/0IFWfpa/Lar64yxXSzTLn9XVvijsd8VMYFbjfT7xCVz+
-sl8D5BAqfpr21ADZancqcRiDPeKIRTc6ujpfJh+cuintnDw2KMsqMwKIcsi6jHZCwraUX5fjoj+S
-1lRHvk/t8rSeb4ceRivVCHf6dIOFGueky1tgs7gKwhAkACf9SYk14vfnRyf6UJqH0QJTAJHYQp22
-ws4eehaGnPVYCgXQIYqOIgW72+TG1P5Fcd8nUHAr5+UFMY9ukiBzJcxvBWoIcTL/PAR4xyYKkJA7
-nYdapao1gpgRpo2L6zJkglUI2SOELlF+zwkW1K0Tui7tTkzn+zKV7WNGEtDDjZh5i7Ls2VfQLV1y
-HcLuRTNexjJ130AK8owFyddiEn6FpVe1mC/PvCzgH47xrSlDpqAsHlOg8JHtK/lJv+OFLa1oUjcx
-0rnQz7perEEmfzoqwNJzsw2Q/KX1mg07txDejeoveMxtUt79dPT/WUzC9TBQqYon5ggnQaAr4d/Q
-K8ktTQhiEi4BoyAw/w0xuyOg3oye1AcCKMkaeL+epjZ8dRsZUd6hJGUOgUfQfJf99Vv7Nvoh8Odk
-65yT5QDEGkXWYdwgmq8dzpAhjXAUgCMOnQJ7ONOYlocUZalEkDniNVyLex0qTqDWO1q2zXgMwnKg
-/Tbr/xug1dHiwAV7rreit3q53+Ihg/q4U4Dn17cAboqZd2XQB1lMpaFtXPJiwSLrtE0uSALqnxM7
-FY8j/H4+JLjc9SQluB2qqWKddgeVZoSkk2S8CXshXwbEXoBNqN/s6TlpEe0mQE853LNc4z6spv5o
-7H5cmQro1lUg7MS+w+DzFo8EAULKCizXRY5egbpudnXk/nUrwzsumpQz82OnJ8iK66fQUBKHMfAX
-iy2mk8SDNmNBYCTcKtRU/0+ePacaru4nJOB5TmhU/vIGyfMTwO5aEWPn4SXkCE+PB9Cwd/e2Ruc+
-fkHnPb8rGaiU1HUp9xdTyfW8uJZiGJJztuPH8xuMjNzn/Y5+4yG3N84K4I+1W9+cnpSEZDBEC786
-8YulgT/MYFFierIGZryiTFbXNJ7ckz6zowFHcfnMT+ZSadczHpRYnBvQK2a/mMxeZ9w+w4mO8MsN
-Ig5YzJ6vWIcipVyH/Gk4TT1aeHwnZ0CEvbGpOhYU4OvYEKjfSXNCILKM+CzrUITg46Gw709jT0vr
-Mruk2/g8iXTzAKwvqr8JUyZOBr6Dd6fnqI0o0ZRrtZXaXyXngmkfMN45TiBvcrhb1WmXS1e9c2le
-R3YeNNh59d+5ek/dyw0DcvwfyWQVDCweQgyrDzdV+Ak90EEvdQC9VsslOnzbSNkSoitA3lqxiZ8c
-scWBc6r+NSm/0crVOpMH+2herUSzSMMhVAcaWo0fUQtZB1SBFVZVTWa0VATv1+mey2DPrGwEDOUn
-CjHXZKd9W5j7ztzSNgfz9d0hm1VsDGwdxFgO2l+Ku37DQAQB21TUbBS0horp6F2mZ1cieOEroh/E
-PMNYzoNcUhhVOuJu5KEibjn7a9TvuvoOKwAdJpbWMKR9W05gC3/tuDDOwbfZsZCP1xoTplkZ8l2i
-bAid5sHE5ojpWHeU5U+zsHyd/05vWZLFBqtGO1U//rn68pJOkhRByWvLtkMdV6lzsGO8SDytucr7
-vRLDREWNvrUVFVSXwbs1V7zvYxorVNRJ00eAAatd+mwG2Hq5GeYJTOnVeBZpQbxI24iFPaMaOB7J
-LnmjkF72O3BpZFduL6i8IIMWb9h8wbUqs5fjg7U+pX+nZ7iFAat6PdS5XnguMk2V/9GmKtzlhinX
-/wdBxfSrwkS/yfevPQzXJuRKrPgdhullWwJ43Yl8Q4sJgCaKXZCS6LYa98DR1o+mMzdlzjQMHkdj
-cNGbNQBhxayj3kS090fUqMUxQsBbeh+rPXuzHD4gXW8IA+3usLdmVwcsq4oSx3i/b2gha144McpD
-t11vkVI3Q2spp0kWscjy31CF09NGILFmlTEMkP9tk15sm/vuhHIItPJHprnImBNVwIu/M3CtZic2
-XA1EEIT2B1zwkYbB0GBOyJyzfzfNBXaf1mThWT4UYuF1T9l6eLppPkACEOdDXwOfrtZR2EqMG6tU
-v/pPpvSlGhp6ZBk8KWlzA+/ecYX4zFrkeXXdXXIVAk4VGLOW0ugw5HkXkixjLCjSOItuyIKXUyZg
-U+regoB8IdJHdNLsLIgjUZ/WyoBGRQ75xfs1QYr29YM2w4iCgForHagGxGoDTbTwaJG2OQKG6dSZ
-rTDa7fmxzZDIuhEPT1TTlttjurGdrkUbKAma6LrQqdYXajwmNy6TAF4vwuynTZ/9aXx1AR28NZTJ
-tPVysO6tChBUimz337wLaQDMb61bJ7weOOyIrEYWPGiNRH36b9BxNJjvRnrO85Tc5+L9tu0OKtS8
-HQnTOHzLNIxJ/yn4AbNI/vsb1aQ1aqR/RmEyD0/yC54wyp4N+vQBh925YY8Irz4PbUpFeZJbwSto
-zzFOEJDWA/yYVbzlEWn1bJJC1lrubx/PhkpK3WAMWuGpUN5RGbOBg6eQMEjz9TtR4p6rY06OguNO
-55W5TIQZQoscv04kCR66oW5oizteRySkg/6Xf6C+UsxPz2CsqdE4y+TIBqsJqOO38+VghVDm21dL
-Uxr8aSGz4xvrDldieVbC9lMopSAu/q3D5/WJU5hek2/Ys4zQgMuMz4jT9uOZCCu7hwV5N6OAdBJk
-yj8DjajsgQCXBkM81WQp4Lv9ZcdB7tlB8cbnJSumNxcCJBop151PKOjGLCvVLdC9WQoFwXOzWIfs
-y45SetPF1+fS672bwSV2Fc6DgCN6skED+wglyon6qhYxpBTgYM75pxQ00kE2QObo10caKCI26XVM
-EQVzKdNo2+rnLa5zpSO/SNdVu4BIhsdrqLFWxfYDNQJR8f59Vs0X737e5x0JB6gCbd7KBjxPeyIW
-YFiEpz8O28HkcgfKFfyS2/APW0Y92OJLO2PEqrU03t/mcw3f3eMmkIfihlb/ehRHrwYjz1O57GdD
-FZ0MYajXTTzXmiZuWNleNWG/ydo8ZoRTVhtq8Tf9rcBiHV8VnQxfzafhPFxdQ8gUoiVY//jOTD2G
-1VORcml1mBBnwRSWr8/Nu8oyv7ekcYf+D8poQOyhv7V4bFGxcDUaBGaOjA1GDCq5nsCOdSt/mD5g
-qUcijPaGiWq/IbVn0aELqtAp7i/pj/k5A5L99r6F2KTK7ZOYcNkTEKpn1YgjMpU3hoCQNgVUZPFO
-T4ikfG57qOnOTXRbXQ46wYB8Gv+VOr7DlTht4t5ooz2Kn0dxneUm5eG3jPs6FP521EqJ8e528hWv
-pLR39au2bL7UFNlYQs6zUILu31vWrFaQCEvFKFcDooMfColqUnfXlib8uiyLkM8CJVcuyE1af1+0
-3l8RtXVa+p3aXX2JhuydfeQ/aXVO4fLzQbMFAo7uxOqANwXZll4++SLop2In96XK9q+HqvpbwyS0
-9cpwqwsOud/b0g0/Dh363it83UKahoZIhPTLU0hjJd4CpAcihOOgc90/0Y3I2FzZgfYIzveELa7F
-S7XLdd/EkCTR6CtBrrD98xdO66K6antk2NpoTVEp7fIWRE12SAQ0UTRpjGqv+4jpVKqr0/fqz7Uj
-YXJNjbb5wGaK0AaA5srlCVnscFsBf4dzpUdoklxPM6L8jXRxayR0UDKuU6/ah4MFhLvU+17JggRZ
-QtcAgyX5gnQL0ILRM+ks2z/QHYpLzqPKQHmaZ5Upxl47R3hcOFBaeJQ1rh5rpeD7pr//kr7cUO3L
-910Y1kTW40qVIz4YfPECAz/K/n2zRUTgBbyiK5BI0+y4KR2t2F1Ub9+JspuHfFxnEjC6jjonRFwp
-wiR0Zikk45LdC2vyNIDyqj13/ym9axG0HAuHxUPI2q9y15ODmmtuewipuv2Xnt2Nhxq1SLPFbW/u
-dHNOhH+zdvDZ9RrXwIvQkplUfDN8uzIeuacK2Zl+Je2e2j6l1LkiktiR7ep8sk5Fdw3br5zlD3Ee
-oTRY4XFCTHpMKOVh/s2gZfX9G+ebTIa2lQCnn+vq3a9Gfz5JYOYVpQI2ZZ7TUhTqOsx0fhWOPKQf
-hPHw/XThTqw7zie8VT5WGI3P0E9q+GiPoGTUl+I5Yd9/HCLxjzz4GPljC1SYq4qzt8/GdQgUREYC
-nWtQxeQMhOW8KE8WP6H6q8noYsW85j7TLrHTsPwW6PRTmjTvnCKFmw5+aTI+XceuvWVVfIIkdS5b
-R5Kogz7oHGlz+/Rh3HN3ezqjrRP+WrmEI9ewVCTerSbahChzENCk9VxVVYjy8CQAkpUP/TstO7ku
-fPBtWdwZgS3W/Cxkdj07/yUmKSb4wqhv7XK1HXMOOv9LMOOEygYvIU2ckuXwNA2rtORkWuFfksqC
-U2NbXtJWaZPAUPLPdytJt/zkXntVxLh8lEUVWDi/5/fwCNvBKfzxcQD/NpBIDBXEeOGqeZAlKCp0
-4xVwlQwNF/1GDgiX//8gN4iDgKIIl8YeYNPO/JJ2VwxwbquAB0kn+k+XKTohhuCde4VF4MzwMMI3
-zfLpLIhm0VETg8qB/iO7iOf2W3Lom6b6G5h5WIcQ1pTVSlVnM5RZU071CwHuOah2YFMrwrkM3xaD
-37dMiWldZSTr8fUol/7zTRMy2T79JMjkRd/LwFTQK/Ez4brbZFoU64UdGLIjT5oLhFBYLODvwfd+
-KD60/qoavfu0kLzpYoSjS8udPuu84tcgsf+dl2Wj2avo1RtQc1FqaNcpq8OtLe6t0L9STSPmLHil
-e9rp2HKHnijyEjC9/dffa49COJPTpSrudcnGxSWw0SPYFHUlmWvIpcL2NVRGeGaYcARMgTKBNOEi
-H4KPhEjdHWGWc4rQLxv0U96ufjkrSQR5tJ76MkbaxPCc4KnxPgRoiwKXeRA0nYYiy7w4hK9cw/iB
-2O4ns7TlbdUoSek7JoBi7fY39m9gtzuWfu5k1LFDtMlWznjaSE4vimm5SoAhsXPRkTPnuSi=

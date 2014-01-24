@@ -1,33 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<div id="header">
+	<h1>The Yii Blog Tutorial</h1>
+	<?php echo CHtml::link('The Definitive Guide to Yii', array('guide/view'))?>
+</div>
+
+<div id="sidebar">
+	<ul class="toc">
+	<?php
+	foreach($this->getTopics() as $title=>$topics)
+	{
+		echo '<li><b>'.$title."</b>\n\t<ul>\n";
+		foreach($topics as $path=>$text)
+		{
+			if($path===$this->topic)
+				echo "\t<li class=\"active\">";
+			else
+				echo "\t<li>";
+			echo CHtml::link(CHtml::encode($text),array('view','page'=>$path,'lang'=>$this->language));
+			echo "</li>\n";
+		}
+		echo "\t</ul>\n</li>\n";
+	}
+	?>
+	</ul>
+</div>
+
+<div id="content">
+	<div id="languages">
+	<?php
+	$links=array();
+	foreach($this->getLanguages() as $id=>$language)
+	{
+		if($this->language===$id)
+			$links[]=CHtml::link($language, array('view', 'page'=>$this->topic, 'lang'=>$id), array('class'=>'active'));
+		else
+			$links[]=CHtml::link($language, array('view', 'page'=>$this->topic, 'lang'=>$id));
+	}
+	echo implode(' | ',$links);
+	?>
+	</div>
+
+	<?php echo $content; ?>
+</div>

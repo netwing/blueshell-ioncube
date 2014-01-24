@@ -1,55 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http\Message\Header;
+
+use Guzzle\Common\Collection;
+use Guzzle\Common\ToArrayInterface;
+
+/**
+ * Provides a case-insensitive collection of headers
+ */
+class HeaderCollection implements \IteratorAggregate, \Countable, \ArrayAccess, ToArrayInterface
+{
+    /** @var array */
+    protected $headers;
+
+    public function __construct($headers = array())
+    {
+        $this->headers = $headers;
+    }
+
+    public function __clone()
+    {
+        foreach ($this->headers as &$header) {
+            $header = clone $header;
+        }
+    }
+
+    /**
+     * Clears the header collection
+     */
+    public function clear()
+    {
+        $this->headers = array();
+    }
+
+    /**
+     * Set a header on the collection
+     *
+     * @param HeaderInterface $header Header to add
+     *
+     * @return self
+     */
+    public function add(HeaderInterface $header)
+    {
+        $this->headers[strtolower($header->getName())] = $header;
+
+        return $this;
+    }
+
+    /**
+     * Get an array of header objects
+     *
+     * @return array
+     */
+    public function getAll()
+    {
+        return $this->headers;
+    }
+
+    /**
+     * Alias of offsetGet
+     */
+    public function get($key)
+    {
+        return $this->offsetGet($key);
+    }
+
+    public function count()
+    {
+        return count($this->headers);
+    }
+
+    public function offsetExists($offset)
+    {
+        return isset($this->headers[strtolower($offset)]);
+    }
+
+    public function offsetGet($offset)
+    {
+        $l = strtolower($offset);
+
+        return isset($this->headers[$l]) ? $this->headers[$l] : null;
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        $this->add($value);
+    }
+
+    public function offsetUnset($offset)
+    {
+        unset($this->headers[strtolower($offset)]);
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->headers);
+    }
+
+    public function toArray()
+    {
+        $result = array();
+        foreach ($this->headers as $header) {
+            $result[$header->getName()] = $header->toArray();
+        }
+
+        return $result;
+    }
+}

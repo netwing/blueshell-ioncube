@@ -1,31 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-L+Uh2exB5xf0cT9S
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * An abstraction allowing the driver to access the browser's history and to
+ * navigate to a given URL.
+ *
+ * Note that they are all blocking functions until the page is loaded by
+ * by default. It could be overridden by 'webdriver.load.strategy' in the
+ * FirefoxProfile preferences.
+ * https://code.google.com/p/selenium/wiki/DesiredCapabilities#settings
+ */
+class WebDriverNavigation {
+
+  protected $executor;
+
+  public function __construct(WebDriverCommandExecutor $executor) {
+    $this->executor = $executor;
+  }
+
+  /**
+   * Move back a single entry in the browser's history, if possible.
+   *
+   * @return WebDriverNavigation The instance.
+   */
+  public function back() {
+    $this->executor->execute('goBack');
+    return $this;
+  }
+
+  /**
+   * Move forward a single entry in the browser's history, if possible.
+   *
+   * @return WebDriverNavigation The instance.
+   */
+  public function forward() {
+    $this->executor->execute('goForward');
+    return $this;
+  }
+
+  /**
+   * Refresh the current page.
+   *
+   * @return WebDriverNavigation The instance.
+   */
+  public function refresh() {
+    $this->executor->execute('refreshPage');
+    return $this;
+  }
+
+  /**
+   * Navigate to the given URL.
+   *
+   * @return WebDriverNavigation The instance.
+   */
+  public function to($url) {
+    $params = array('url' => (string)$url);
+    $this->executor->execute('get', $params);
+    return $this;
+  }
+}

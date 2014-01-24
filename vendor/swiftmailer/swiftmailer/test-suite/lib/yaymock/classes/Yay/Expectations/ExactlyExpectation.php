@@ -1,44 +1,117 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+ */
+
+//require 'Yay/Expectations/AbstractExpectation.php';
+//require 'Yay/Invocation.php';
+
+/**
+ * An Expectation which wants an exact number of matching Invocations.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_Expectations_ExactlyExpectation
+  extends Yay_Expectations_AbstractExpectation
+{
+
+  /**
+   * The expected Invocation count.
+   * @var int
+   * @access private
+   */
+  private $_count = 0;
+
+  /**
+   * The number of matched Invocations.
+   * @var int
+   * @access private
+   */
+  private $_matched = 0;
+
+  /**
+   * Create a new ExactlyExpectation expecting $n Invocations.
+   * @param integer $n
+   */
+  public function __construct($n)
+  {
+    $this->_count = $n;
+  }
+
+  /**
+   * Test if this Invocation is one that was expected by this Expectation.
+   * @param Yay_Invocation $invocation
+   * @return boolean
+   */
+  public function isExpected(Yay_Invocation $invocation)
+  {
+    return parent::isExpected($invocation) && ($this->_matched <= $this->_count);
+  }
+
+  /**
+   * Test if all conditions of the Invocation are satisfied.
+   * @return boolean
+   */
+  public function isSatisfied()
+  {
+    return ($this->_matched >= $this->_count);
+  }
+
+  /**
+   * Increment the match counter by 1.
+   * @param Yay_Invocation $invocation
+   */
+  public function notifyMatchedInvocation(Yay_Invocation $invocation)
+  {
+    $this->_matched++;
+  }
+
+  /**
+   * Describe the boundaries of how many invocations can occur.
+   * @param Yay_Description $description
+   */
+  public function describeBounds(Yay_Description $description)
+  {
+    if ($this->_count > 0)
+    {
+      $description->appendText(sprintf('Exactly %d', $this->_count));
+    }
+    else
+    {
+      $description->appendText('No invocations');
+    }
+  }
+
+  /**
+   * Describe the current status of this expectation.
+   * @param Yay_Description $description
+   */
+  public function describeSatisfaction(Yay_Description $description)
+  {
+    if ($this->_matched >= $this->_count)
+    {
+      $description->appendText(' already');
+    }
+    $description->appendText(
+      sprintf(
+        ' occurred %d times',
+        (($this->_matched < $this->_count)
+          ? $this->_matched
+          : $this->_count)
+      ));
+  }
+
+}

@@ -1,74 +1,141 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * Smarty Internal Plugin Compile Insert
+ *
+ * Compiles the {insert} tag
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Insert Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Insert extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $required_attributes = array('name');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $shorttag_order = array('name');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('_any');
+
+    /**
+     * Compiles code for the {insert} tag
+     *
+     * @param  array  $args     array with attributes from parser
+     * @param  object $compiler compiler object
+     * @return string compiled code
+     */
+    public function compile($args, $compiler)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        // never compile as nocache code
+        $compiler->suppressNocacheProcessing = true;
+        $compiler->tag_nocache = true;
+        $_smarty_tpl = $compiler->template;
+        $_name = null;
+        $_script = null;
+
+        $_output = '<?php ';
+        // save posible attributes
+        eval('$_name = ' . $_attr['name'] . ';');
+        if (isset($_attr['assign'])) {
+            // output will be stored in a smarty variable instead of being displayed
+            $_assign = $_attr['assign'];
+            // create variable to make shure that the compiler knows about its nocache status
+            $compiler->template->tpl_vars[trim($_attr['assign'], "'")] = new Smarty_Variable(null, true);
+        }
+        if (isset($_attr['script'])) {
+            // script which must be included
+            $_function = "smarty_insert_{$_name}";
+            $_smarty_tpl = $compiler->template;
+            $_filepath = false;
+            eval('$_script = ' . $_attr['script'] . ';');
+            if (!isset($compiler->smarty->security_policy) && file_exists($_script)) {
+                $_filepath = $_script;
+            } else {
+                if (isset($compiler->smarty->security_policy)) {
+                    $_dir = $compiler->smarty->security_policy->trusted_dir;
+                } else {
+                    $_dir = $compiler->smarty->trusted_dir;
+                }
+                if (!empty($_dir)) {
+                    foreach ((array) $_dir as $_script_dir) {
+                        $_script_dir = rtrim($_script_dir, '/\\') . DS;
+                        if (file_exists($_script_dir . $_script)) {
+                            $_filepath = $_script_dir . $_script;
+                            break;
+                        }
+                    }
+                }
+            }
+            if ($_filepath == false) {
+                $compiler->trigger_template_error("{insert} missing script file '{$_script}'", $compiler->lex->taglineno);
+            }
+            // code for script file loading
+            $_output .= "require_once '{$_filepath}' ;";
+            require_once $_filepath;
+            if (!is_callable($_function)) {
+                $compiler->trigger_template_error(" {insert} function '{$_function}' is not callable in script file '{$_script}'", $compiler->lex->taglineno);
+            }
+        } else {
+            $_filepath = 'null';
+            $_function = "insert_{$_name}";
+            // function in PHP script ?
+            if (!is_callable($_function)) {
+                // try plugin
+                if (!$_function = $compiler->getPlugin($_name, 'insert')) {
+                    $compiler->trigger_template_error("{insert} no function or plugin found for '{$_name}'", $compiler->lex->taglineno);
+                }
+            }
+        }
+        // delete {insert} standard attributes
+        unset($_attr['name'], $_attr['assign'], $_attr['script'], $_attr['nocache']);
+        // convert attributes into parameter array string
+        $_paramsArray = array();
+        foreach ($_attr as $_key => $_value) {
+            $_paramsArray[] = "'$_key' => $_value";
+        }
+        $_params = 'array(' . implode(", ", $_paramsArray) . ')';
+        // call insert
+        if (isset($_assign)) {
+            if ($_smarty_tpl->caching) {
+                $_output .= "echo Smarty_Internal_Nocache_Insert::compile ('{$_function}',{$_params}, \$_smarty_tpl, '{$_filepath}',{$_assign});?>";
+            } else {
+                $_output .= "\$_smarty_tpl->assign({$_assign} , {$_function} ({$_params},\$_smarty_tpl), true);?>";
+            }
+        } else {
+            $compiler->has_output = true;
+            if ($_smarty_tpl->caching) {
+                $_output .= "echo Smarty_Internal_Nocache_Insert::compile ('{$_function}',{$_params}, \$_smarty_tpl, '{$_filepath}');?>";
+            } else {
+                $_output .= "echo {$_function}({$_params},\$_smarty_tpl);?>";
+            }
+        }
+
+        return $_output;
+    }
+
+}

@@ -1,69 +1,261 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPpl/voUWCQ+RbzZpieD7BnFbbuk70COGszmVccNNOpYOrZk0PCOaWQ5yrvFb5XbjWgviHHxT
-zh2WR9YCHkYb66NeroZy2wRMuICBqT1aZyTvaJUb5JXB3/PzRarCvYR2ptIE/yPxw9uKuoUGKJMC
-9ZxhukrC/i2OMWtvktg77ums82w7maP9BFJv3K/Ajt0ExFP8pi4/fG2nkexsez3e/YmsPla+CfgV
-CdzlkHMAFG4i5FQqadB3lwzHAE4xzt2gh9fl143SQNGKPyQUWv2dJ0oGH1BO7rFUGHZZepDKgn5i
-3KEEmxCJYeQ2RXfyGucIzl+1EMRc4P5O6bN7TcA4VBaDnluKaYf9A/WZEElnH/TKNepsKet41lcJ
-oOr8Oivz3hnSx4TE3CA/vvdvdaMKmEHePHRHSQ1kucAtrSSsg72CFjisXvnoqFZ6nSSRFPuewMKW
-QmfoIzVjncmGhxtAcnMj6z08mMlDFkpibXRx3SzoogZihwyFdWN5lD8q3tRdRVS3etZY+1Rklg+K
-MPz+GKfL0g99maWUxVDbYUpW9BVvdeMMsNgWoYPcVcVQrykzxlIQhIdyrzCaDyBr+VauhQt1xPST
-pDtfgEoVOPEUsyJdLrz+OymouTqdFIPO//Ock049g3YS27dFCRXM0DXtAe1cbBS1WCwy3Zw8gQex
-h5VlMPfC9/y9BAY+9ryeug4oA56s1IPDXiMS9Wb0u2XFBpLqO3GcSw+P+zDy+wLlLvZidqdCt2CQ
-bYX6bAqfDQ3Ru2M8iBiaTQ/oWO4jrkAbOHZHLYyb8WE+HFh/hI6v3YEcLz+EisDtYdx19Mei3B2y
-a5iFT5MlcwHRcE2agkVDohjhH0TBjrhlBFGufEgv0ap95bzpYniiXY5PJxbz0WNiVXyBNlBIqerf
-9wkh1T+YLwivfAA0EAfJfGfIEwLHH0BJcRBjOnvGI8XyjB16BV5pSmCzYBdysMhTU/EAEHawcNWO
-tId/zzSD0n5icI6kPYyMeFty4WV0glI/BRnoxgMXmokCg1rvo8ZmhXqHacjK6atTtSNalAVQ3fd4
-P54IxHGHiw+N5s/ICb9WZUrlID3qPM1WTylzjO6F5bVqnENDiIYlzD10oC6H/4STEe+pDEb+Xsbk
-oBuEBTmV5lRWOr2L40SRusFNLgQxI54Vtao431roMJsMuqJUXQH+w4QkihrMDQ9IgZVEMMlYM/T+
-BiNbFRZ/pdPot7QAEmP/JODmeX8lXoFf5q0xP6P5FY+vaFrjRjExMOfFSyuoJ1oe8Cc6nMMs4oPB
-+wpp/+vG8cz6RUNIYt7+mOpOkRxMkEOI5r6cFrkM7CRrJR4DmXy+q2l6pb4qyGB2L4PHGmV7/kC6
-JXRY9p2NgpwhfHl3a2RJY15FZkq2+WWdaiNqW2Yps+6zMuY/O/9Clrhpjrv7HcKA2xx0Mtenh539
-x1N1IL+XuuQ5H5CbRiBePh8esryrkH4Y36E1CPTSjLrS879agFHf3iPkvxm6rPtuDQtcxBYuLYrJ
-Ns840QcKf/gz4Jt0T9Ao18/CUVNcmJqZC6hygxQbFa6RLmi3xOnO6wmM9uPYwwqo9L756yJhCVvs
-PxoS73CuScTGJ6cswREveio6T+98zSWBkTsvmIyhB6M1ZK2ooTYNxX6rBRzYMY5+e9JtBEoF8MbJ
-CY/Xq7X2/qe+rf++VlqWXaq8K/ugqQikUDRqUec6O4fjNQkJC2vBW7x9z9+3MffLuYPnGfCpuuoL
-1OJvHs+dZ2JKDrsdU7JiGwD5D7X2bSDtve1mB/tXw1WW5gxg7/IwjoFNDGXIxdCLzy7Ev2eV83So
-Io5hu/skpOimIhMBvgWkcYJGOF3ICblqbl6/VKSZuPrZsfkNXJQogpeNqYKz7BwilCq89vBLWI74
-LApYeRpndvGTBDL2E/NYUABG09mKNMO82x1pqmwWdjSfqs2pJeIWpUxKSRgeMvNkKDuI0AppiJBx
-5/7oBsj0aFwqu6KZAqypzrHhaKSw14yRi+pOkUCUJE/cEct/N3uPN1nu5L+gCVAW8/LPsuOeOWiI
-hOPqHzM5c0OCC48pmiAJh7HrlHJnf+AN/9E5ViyqmxSHs3Pil2VdldRab00viKmMkbPXQfAEX9y8
-sSmfXkNa/8ptqmDXZo7ktVBhWBOK8i6f7AqdsvN88f+3ZEP1JNhh68EhxtMA+n19cK5VkEdQjbPD
-1waiXgMGEjzZ7rGJxNrtfaSPAXgLJ7O/MrftP/+kON4LNLxZAp6I0MBlpaH/PCISYMSqqffn7NCr
-H33yLB7XL7CLqVP9Y2aqYnfjg5hortjbRPgTmaNXOEf9saSbtz9Q28pJ7cPLcHt7+aeTypxzyeq6
-C3BQtnzDJ6cFbSky7x1wMDgzrw+PNs0/oFc9XKoomHaY+kqauPLAp00x2RNNROFo/e1AeG73ZhLq
-StrLMF7tPmksxRX1MiVPPn8gEegYbCQNLFHEs6mr3u6LzvDKsFnm2gaPkmMvK2E9noHrMplYyxUC
-5H6LspeAQCfHIVR7/oMbRN9jE64vaym5X65Uu67PrR4XlevGMjsF2vyqsRdy/v2XPOdF94jQS/NL
-7ptXcV+ADu+TzI5PISEwXFGt3ZMV7IXHS6Vm9iqRrEKBBf19wUmd2deUio8gtZC9OHd7iclmNrgb
-L4G5Yxm9iE6q6NdqjX0c5v43XOjV5rHrAUXjVxD3izVTeKf4sEqg/oHWN91gtjarFhDK/qMB0tqO
-m3SheJTx2ThdAWlvk/OM2rYBsKXgWCYlzM5L11QqLUYnj5uibZ89Gb9hDAYwb525wHXMyHBz5ONl
-rHNVLwKM4fkSkdn+CS67WYruyKvul0bUdrXjMzD4HJkKUWeBjrYlXsXhc1hbuZHTHql+lhC+tr50
-1FRAecnJCvK4+uDJBTy4i7srjcD4gXrvkd/AvMEL6WOemwk443tcyAj+1XPfE+7XMj+DRLJ3DGKV
-OfYi14rKhLZDO+QZJclFdIX2XIOmjWWX9TY6ZHWBHjqD/DuGsWz64gXwGxLAL9alr9WBw3OWg3eX
-+Y0WB7+tZuqhRIN/8+5mgYlhkDIrdi488dJFujxUARg4BbST6dRGAeuITRrUNrWeYlXpygrLukCe
-DvtdKTI8rVXeCzX+JIpSlmOZfgGxdngHZBV9FOkzvHqp4hzuTvb+K+8vYmU0CcP6dfjb0wsITNu3
-7mYMeTQgSAym5jMpomfF8d2NMoVVLp7NABmLL705A79l+psPXu1xBzgac3Ng1144FJtbRSsCZ7qt
-o1BOaWbK1m3XnGvYuuWhZGEpFiGGcVsEmwyg/l2YEFo0gEMpTuR6/dN0VYvzUYO8vmQ+Qghf+1u/
-ZdROM/ycnr04t8gsrR+XQQXrQ71n2ykq2nU6Qib1peN3pKAEIfxZSFyQGhm/C8lyWOsqiQDdJmsr
-TyCXbdc3jtEhpGWbYkPsqVkTy9Sf85zBWcasJM1nmSfHmfyc4pK/qEwhzQIsqox26Ew5chVZi1/F
-LLbhSTQoYoRae5s1Zcp10kHd4jzCuOQrUwFjmhvr9whJ/lLkdo6/c7YMYr987ynHbovhpbpxaXl6
-dsmE9Aei3EqhcM+RYWuBN8cPtYhVYEbNsWf1tM7pwkSK4gArYJ9wI0Tug4KpPdjuszwy7UY6V1pS
-fZtt0SoZgDmGOo6oHyqet+IqCUI6PJ3xbO1kqvXmV747lnkDk24l80dO/VgVfyIX3azGKUFPx+R6
-Ehwbo/q54yCSm4vT/tP0v51GbF6OctP27KnPA+8afLL+rLXN/LG0nCBBUYi4Pq38p14mFiBin0o2
-c6P/kESrePaQi7NsQCR5xg4FwnQ3rr1g0Wv9Zy61Qh0dMLM3H+FJr8cApYD2lQ9Wp1q4ygwkAaMo
-regzK1Dx0kVBWOpO9MeHCg5YiEUzlBsw4PGKfkHWxbzaV6bpbZR03a2pWx5j3LmM7mMHKUbiQckM
-OvLwiE4SUR85bBEVpHFw7Vrcz2ZkPiJkEVp9gn/0QJANY0e8rvxsotF8mIg02q+qnv37hIjfxP96
-Q2Sr/SX7pumE9NL+XctGdaL8JqXITWP53Z4eRBSxY0pLe2YMTU1gZm//THz0nAqK3NlRSowWj3P2
-59GkrUGsIUqJednipKaGeztrxdK+T3yr7qvJrHEl2Pthv+qGfvNXhKEyTx+puDRWiKyDqUCDwlos
-QmdzYOwTgzf9pcDIR3Lkqcb/q4n/8TU/oVVdef7HjYonOCEoGuCzaq8Fx6++bG+9ts9cQ30sjLgm
-bCQOwF7sJakRlRwwrTMWqEHCfMdRGHz3WLg4589TS69YlH6l/SS/NT6QJadMA4VP6XG3+MnrHQoZ
-Fxdf2cEc0DXnYdn4C44gSNNbcmg1kLSWIJ1TYaOdkxgbPZhtrsitOpj5ALUj1/TQ6f7dSaZ2kk+W
-vGFGfmS3qB+2Qhh5Ign3+aJ1EgAXhlE2JB7E1lShmyGS5j7LB6F4gCk+wM4OQWPXSyqHsHbDyPsP
-1m5Sc492CDhL0tygYS6qvmTYKhYIGx/OHG7ZvnDqP9UarpA6lDKlhfLFf/NX8r3DSF+kou84oE4e
-mHRVit6viOHb86U6bx8pOfze9Ps3Ea+LusnjsNfdmFNuiygh9g51D+G/Ek5RIxGXH3SKCB5Oi5yP
-ycESWeCaLry3kVht8QdtYi1838Gj/a3rO/B6SdaSGuYEPKMm8/HODxVpr41ayhNhfGg08SJnhed3
-wPQwYFhJYQ9R7HhGRRmuce5EJ5bIch35oNQ+y+oggJhNmpabTQsWAVdfQI1NemrzgX8r/PXFvep3
-qBsG4Oo2TGXO8bD8l/6wi/WNkhGDt2nMfX7p7ofh9Uh2ohtMHvcKjprKyrZbhbXZ+lL3OpAEmUmI
-eTIHdSeCgh8LO7hFfaz7nPVmOS4N6gGTEwmZt2Aoh37P7+Gump5Hxw4vKpL4bCQoyxzHpcPV+rvk
-k6Bg2Xi2Xf5mPA7cP3sdL7bqcNpeRDAJkdliMSyhchmGEPpJqCoumuU/MXPZvf4rlrhnYH8=
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+//require 'Yay/Expectations.php';
+//require 'Yay/Matchers/OptionalMatcher.php';
+//require 'Yay/Matchers/AnyMatcher.php';
+//require 'Yay/Matchers/IdenticalMatcher.php';
+//require 'Yay/Matchers/EqualMatcher.php';
+//require 'Yay/Matchers/PatternMatcher.php';
+//require 'Yay/Matchers/ReferenceMatcher.php';
+//require 'Yay/Matchers/BoundsMatcher.php';
+//require 'Yay/Actions/ReturnValueAction.php';
+//require 'Yay/Actions/ReturnReferenceAction.php';
+//require 'Yay/Actions/ThrowAction.php';
+//require 'Yay/Actions/CallbackAction.php';
+
+/**
+ * A convenience factory class.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay
+{
+  
+  /**
+   * The classpath used for autoloading.
+   * @var string
+   * @access private
+   */
+  private static $CLASSPATH = '.';
+  
+  // -- Expectations
+  
+  /**
+   * Create a new Expectations builder instance.
+   * @return Yay_Expectations
+   */
+  public static function expectations()
+  {
+    return new Yay_Expectations();
+  }
+  
+  // -- Matchers
+  
+  /**
+   * Create a new Optional matcher, optionally wrapping $value.
+   * @param string $value, optional
+   * @return Yay_Matchers_OptionalMatcher
+   */
+  public static function optional($value = null)
+  {
+    return new Yay_Matchers_OptionalMatcher($value);
+  }
+  
+  /**
+   * Create a new Any matcher, optionally constrained to $type.
+   * @param string $type, optional
+   * @return Yay_Matchers_AnyMatcher
+   */
+  public static function any($type = null)
+  {
+    return new Yay_Matchers_AnyMatcher($type, true);
+  }
+  
+  /**
+   * Create a negated Any matcher, optionally constrained to $type.
+   * @param string $type, optional
+   * @return Yay_Matchers_AnyMatcher
+   */
+  public static function none($type = null)
+  {
+    return new Yay_Matchers_AnyMatcher($type, false);
+  }
+  
+  /**
+   * Create a new Identical matcher for $value.
+   * @param mixed $value
+   * @return Yay_Matchers_IdenticalMatcher
+   */
+  public static function identical($value)
+  {
+    return new Yay_Matchers_IdenticalMatcher($value, true);
+  }
+  
+  /**
+   * Create a negated Identical matcher for $value.
+   * @param mixed $value
+   * @return Yay_Matchers_IdenticalMatcher
+   */
+  public static function notIdentical($value)
+  {
+    return new Yay_Matchers_IdenticalMatcher($value, false);
+  }
+  
+  /**
+   * Create a new Equal matcher for $value.
+   * @param mixed $value
+   * @return Yay_Matchers_EqualMatcher
+   */
+  public static function equal($value)
+  {
+    return new Yay_Matchers_EqualMatcher($value, true);
+  }
+  
+  /**
+   * Create a negated Equal matcher for $value.
+   * @param mixed $value
+   * @return Yay_Matchers_EqualMatcher
+   */
+  public static function notEqual($value)
+  {
+    return new Yay_Matchers_EqualMatcher($value, false);
+  }
+  
+  /**
+   * Create a new Pattern matcher for $pattern.
+   * @param string $pattern
+   * @return Yay_Matchers_IsAMatcher
+   */
+  public static function pattern($pattern)
+  {
+    return new Yay_Matchers_PatternMatcher($pattern, true);
+  }
+  
+  /**
+   * Create a negated Pattern matcher for $pattern.
+   * @param string $pattern
+   * @return Yay_Matchers_IsAMatcher
+   */
+  public static function noPattern($pattern)
+  {
+    return new Yay_Matchers_PatternMatcher($pattern, false);
+  }
+  
+  /**
+   * Create a new Reference matcher for $ref.
+   * @param mixed $ref
+   * @return Yay_Matchers_ReferenceMatcher
+   */
+  public static function reference(&$ref)
+  {
+    return new Yay_Matchers_ReferenceMatcher($ref, true);
+  }
+  
+  /**
+   * Create a negated Reference matcher for $ref.
+   * @param mixed $ref
+   * @return Yay_Matchers_ReferenceMatcher
+   */
+  public static function noReference(&$ref)
+  {
+    return new Yay_Matchers_ReferenceMatcher($ref, false);
+  }
+  
+  /**
+   * Create a new Bounds matcher for boundaries between $lower and $upper.
+   * @param mixed $lower
+   * @param mixed $upper
+   * @return Yay_Matchers_BoundsMatcher
+   */
+  public static function bounds($lower, $upper)
+  {
+    return new Yay_Matchers_BoundsMatcher($lower, $upper, true);
+  }
+  
+  /**
+   * Create a negated Bounds matcher for boundaries outside $lower and $upper.
+   * @param mixed $lower
+   * @param mixed $upper
+   * @return Yay_Matchers_BoundsMatcher
+   */
+  public static function outside($lower, $upper)
+  {
+    return new Yay_Matchers_BoundsMatcher($lower, $upper, false);
+  }
+  
+  // -- Actions
+  
+  /**
+   * Create a new ReturnValueAction with $value.
+   * @param mixed $value
+   * @return Yay_Actions_ReturnValueAction
+   */
+  public static function returnValue($value)
+  {
+    return new Yay_Actions_ReturnValueAction($value);
+  }
+  
+  /**
+   * Create a new ReturnReferenceAction with &$ref.
+   * @param mixed $ref
+   * @return Yay_Actions_ReturnReferenceAction
+   */
+  public static function returnReference(&$ref)
+  {
+    return new Yay_Actions_ReturnReferenceAction($ref);
+  }
+  
+  /**
+   * Create a new ThrowAction with $e.
+   * @param Exception $ref
+   * @return Yay_Actions_ThrowAction
+   */
+  public static function throwException(Exception $e)
+  {
+    return new Yay_Actions_ThrowAction($e);
+  }
+  
+  /**
+   * Create a new CallbackAction with $callback.
+   * @param callback $callback
+   * @return Yay_Actions_CallbackAction
+   */
+  public static function call($callback)
+  {
+    return new Yay_Actions_CallbackAction($callback);
+  }
+
+  /**
+   * Set the classpath for autoloading.
+   * @param string $path
+   */
+  public static function setClassPath($path)
+  {
+    self::$CLASSPATH = $path;
+  }
+
+  /**
+   * Static autoloader registered in bootstrap file.
+   * @param string $class
+   */
+  public static function autoload($class)
+  {
+    if (substr($class, 0, 3) != 'Yay')
+    {
+      return;
+    }
+    $file = str_replace('_', '/', $class) . '.php';
+    $path = self::$CLASSPATH . '/' . $file;
+    if (is_file($path))
+    {
+      require_once $path;
+    }
+  }
+  
+}

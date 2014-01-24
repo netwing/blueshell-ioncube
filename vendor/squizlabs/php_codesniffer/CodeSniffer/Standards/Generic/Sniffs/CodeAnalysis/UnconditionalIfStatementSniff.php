@@ -1,44 +1,106 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * This file is part of the CodeAnalysis addon for PHP_CodeSniffer.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Manuel Pichler <mapi@manuel-pichler.de>
+ * @copyright 2007-2008 Manuel Pichler. All rights reserved.
+ * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Detects unconditional if- and elseif-statements.
+ * 
+ * This rule is based on the PMD rule catalog. The Unconditional If Statement
+ * sniff detects statement conditions that are only set to one of the constant
+ * values <b>true</b> or <b>false</b>
+ *
+ * <code>
+ * class Foo
+ * {
+ *     public function close()
+ *     {
+ *         if (true)
+ *         {
+ *             // ...
+ *         }
+ *     }
+ * }
+ * </code>
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Manuel Pichler <mapi@manuel-pichler.de>
+ * @copyright 2007-2008 Manuel Pichler. All rights reserved.
+ * @license   http://www.opensource.org/licenses/bsd-license.php BSD License
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_CodeAnalysis_UnconditionalIfStatementSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Registers the tokens that this sniff wants to listen for.
+     *
+     * @return array(integer)
+     */
+    public function register()
+    {
+        return array(
+                T_IF,
+                T_ELSEIF,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+        $token  = $tokens[$stackPtr];
+
+        // Skip for-loop without body.
+        if (isset($token['parenthesis_opener']) === false) {
+            return;
+        }
+
+        $next = ++$token['parenthesis_opener'];
+        $end  = --$token['parenthesis_closer'];
+
+        $goodCondition = false;
+        for (; $next <= $end; ++$next) {
+            $code = $tokens[$next]['code'];
+
+            if (in_array($code, PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
+                continue;
+            } else if ($code !== T_TRUE && $code !== T_FALSE) {
+                $goodCondition = true;
+            }
+        }
+
+        if ($goodCondition === false) {
+            $error = 'Avoid IF statements that are always true or false';
+            $phpcsFile->addWarning($error, $stackPtr, 'Found');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

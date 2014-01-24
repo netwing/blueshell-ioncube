@@ -1,105 +1,214 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Module;
+
+/**
+ * Works with MongoDb database.
+ *
+ * The most important function of this module is cleaning database before each test.
+ * To have your database properly cleaned you should configure it to access the database.
+ *
+ * In order to have your database populated with data you need a valid js file with data (of the same style which can be fed up to mongo binary)
+ * File can be generated by RockMongo export command
+ * Just put it in ``` tests/_data ``` dir (by default) and specify path to it in config.
+ * Next time after database is cleared all your data will be restored from dump.
+ * The DB preparation should as following:
+ * - clean database
+ * - system collection system.users should contain the user which will be authenticated while script performs DB operations
+ *
+ * Connection is done by MongoDb driver, which is stored in Codeception\Util\Driver namespace.
+ * Check out the driver if you get problems loading dumps and cleaning databases.
+ *
+ * ## Status
+ *
+ * * Maintainer: **judgedim**, **davert**
+ * * Stability: **beta**
+ * * Contact: codecept@davert.mail.ua
+ *
+ * *Please review the code of non-stable modules and provide patches if you have issues.*
+ *
+ * ## Config
+ *
+ * * dsn *required* - MongoDb DSN with the db name specified at the end of the host after slash
+ * * user *required* - user to access database
+ * * password *required* - password
+ * * dump - path to database dump
+ * * populate: true - should the dump be loaded before test suite is started.
+ * * cleanup: true - should the dump be reloaded after each test
+ *
+ */
+
+use \Codeception\Util\Driver\MongoDb as MongoDbDriver;
+
+class MongoDb extends \Codeception\Module
+{
+    /**
+     * @api
+     * @var
+     */
+    public $dbh;
+
+    /**
+     * @var
+     */
+
+    protected $dumpFile;
+    protected $isDumpFileEmpty = true;
+
+    protected $config = array(
+        'populate' => true,
+        'cleanup'  => true,
+        'dump'     => null);
+
+    protected $populated = false;
+
+    /**
+     * @var \Codeception\Util\Driver\MongoDb
+     */
+    public $driver;
+
+    protected $requiredFields = array('dsn', 'user', 'password');
+
+    public function _initialize()
+    {
+        if ($this->config['dump'] && ($this->config['cleanup'] or ($this->config['populate']))) {
+
+            if (!file_exists(getcwd() . DIRECTORY_SEPARATOR . $this->config['dump'])) {
+                throw new \Codeception\Exception\ModuleConfig(__CLASS__, "
+                    File with dump doesn't exist.\n
+                    Please, check path for dump file: " . $this->config['dump']);
+            }
+            $this->dumpFile = getcwd() . DIRECTORY_SEPARATOR . $this->config['dump'];
+            $this->isDumpFileEmpty = false;
+
+            $content = file_get_contents($this->dumpFile);
+            $content = trim(preg_replace('%/\*(?:(?!\*/).)*\*/%s', "", $content));
+            if (!sizeof(explode("\n", $content))) {
+                $this->isDumpFileEmpty = true;
+            }
+        }
+
+        try {
+            $this->driver = MongoDbDriver::create($this->config['dsn'], $this->config['user'], $this->config['password']);
+        } catch (\MongoConnectionException $e) {
+            throw new \Codeception\Exception\Module(__CLASS__, $e->getMessage() . ' while creating Mongo connection');
+        }
+
+        // starting with loading dump
+        if ($this->config['populate']) {
+            $this->cleanup();
+            $this->loadDump();
+            $this->populated = true;
+        }
+    }
+
+    public function _before(\Codeception\TestCase $test)
+    {
+        if ($this->config['cleanup'] && !$this->populated) {
+            $this->cleanup();
+            $this->loadDump();
+        }
+    }
+
+    public function _after(\Codeception\TestCase $test)
+    {
+        $this->populated = false;
+    }
+
+    protected function cleanup()
+    {
+        $dbh = $this->driver->getDbh();
+        if (!$dbh) {
+            throw new \Codeception\Exception\ModuleConfig(__CLASS__, "No connection to database. Remove this module from config if you don't need database repopulation");
+        }
+        try {
+            $this->driver->cleanup();
+
+        } catch (\Exception $e) {
+            throw new \Codeception\Exception\Module(__CLASS__, $e->getMessage());
+        }
+    }
+
+    protected function loadDump()
+    {
+        if ($this->isDumpFileEmpty) {
+            return;
+        }
+        try {
+            $this->driver->load($this->dumpFile);
+        } catch (\Exception $e) {
+            throw new \Codeception\Exception\Module(__CLASS__, $e->getMessage());
+        }
+    }
+
+    /**
+     * Inserts data into collection
+     *
+     * ``` php
+     * $I->haveInCollection('users', array('name' => 'John', 'email' => 'john@coltrane.com'));
+     * $user_id = $I->haveInCollection('users', array('email' => 'john@coltrane.com'));
+     * ```
+     *
+     * @param $collection
+     * @param array $data
+     */
+    public function haveInCollection($collection, array $data)
+    {
+        $collection = $this->driver->getDbh()->selectCollection($collection);
+        $collection->insert($data);
+        return $data['_id'];
+    }
+
+    /**
+     * Checks if collection contains an item.
+     *
+     * ``` php
+     * <?php
+     * $I->seeInCollection('users', array('name' => 'miles'));
+     * ```
+     *
+     * @param $collection
+     * @param array $criteria
+     */
+    public function seeInCollection($collection, $criteria = array())
+    {
+        $collection = $this->driver->getDbh()->selectCollection($collection);
+        $res = $collection->count($criteria);
+        \PHPUnit_Framework_Assert::assertGreaterThan(0, $res);
+    }
+
+    /**
+     * Checks if collection doesn't contain an item.
+     *
+     * ``` php
+     * <?php
+     * $I->dontSeeInCollection('users', array('name' => 'miles'));
+     * ```
+     *
+     * @param $collection
+     * @param array $criteria
+     */
+    public function dontSeeInCollection($collection, $criteria = array())
+    {
+        $collection = $this->driver->getDbh()->selectCollection($collection);
+        $res = $collection->count($criteria);
+        \PHPUnit_Framework_Assert::assertLessThan(1, $res);
+    }
+
+    /**
+     * Grabs a data from collection
+     *
+     * ``` php
+     * <?php
+     * $cursor = $I->grabFromCollection('users', array('name' => 'miles'));
+     * ```
+     *
+     * @param $collection
+     * @param array $criteria
+     * @return \MongoCursor
+     */
+    public function grabFromCollection($collection, $criteria = array()) {
+        $collection = $this->driver->getDbh()->selectCollection($collection);
+        return $collection->findOne($criteria);
+    }
+
+}

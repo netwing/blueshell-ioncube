@@ -1,82 +1,269 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.6.0
+ */
+
+require_once 'PHPUnit/Framework/TestCase.php';
+
+require_once 'PHPUnit/Util/Type.php';
+
+/**
+ *
+ *
+ * @package    PHPUnit
+ * @author     Bernhard Schussek <bschussek@2bepublished.at>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.6.0
+ */
+class Util_TypeTest extends PHPUnit_Framework_TestCase
+{
+    /**
+     * Removes spaces in front newlines
+     *
+     * @param  string $string
+     * @return string
+     */
+    public static function trimnl($string)
+    {
+        return preg_replace('/[ ]*\n/', "\n", $string);
+    }
+
+    public function exportProvider()
+    {
+        $obj2 = new stdClass;
+        $obj2->foo = 'bar';
+
+        $obj = new stdClass;
+        //@codingStandardsIgnoreStart 
+        $obj->null = NULL;
+        //@codingStandardsIgnoreEnd 
+        $obj->boolean = TRUE;
+        $obj->integer = 1;
+        $obj->double = 1.2;
+        $obj->string = '1';
+        $obj->text = "this\nis\na\nvery\nvery\nvery\nvery\nvery\nvery\rlong\n\rtext";
+        $obj->object = $obj2;
+        $obj->objectagain = $obj2;
+        $obj->array = array('foo' => 'bar');
+        $obj->self = $obj;
+
+        $array = array(
+            0 => 0,
+            'null' => NULL,
+            'boolean' => TRUE,
+            'integer' => 1,
+            'double' => 1.2,
+            'string' => '1',
+            'text' => "this\nis\na\nvery\nvery\nvery\nvery\nvery\nvery\rlong\n\rtext",
+            'object' => $obj2,
+            'objectagain' => $obj2,
+            'array' => array('foo' => 'bar'),
+        );
+
+        $array['self'] = &$array;
+
+        return array(
+            array(NULL, 'null'),
+            array(TRUE, 'true'),
+            array(1, '1'),
+            array(1.0, '1.0'),
+            array(1.2, '1.2'),
+            array('1', "'1'"),
+            // \n\r and \r is converted to \n
+            array("this\nis\na\nvery\nvery\nvery\nvery\nvery\nvery\rlong\n\rtext",
+<<<EOF
+'this
+is
+a
+very
+very
+very
+very
+very
+very
+long
+text'
+EOF
+            ),
+            array(new stdClass, 'stdClass Object ()'),
+            array($obj,
+<<<EOF
+stdClass Object (
+    'null' => null
+    'boolean' => true
+    'integer' => 1
+    'double' => 1.2
+    'string' => '1'
+    'text' => 'this
+is
+a
+very
+very
+very
+very
+very
+very
+long
+text'
+    'object' => stdClass Object (
+        'foo' => 'bar'
+    )
+    'objectagain' => stdClass Object (*RECURSION*)
+    'array' => Array (
+        'foo' => 'bar'
+    )
+    'self' => stdClass Object (*RECURSION*)
+)
+EOF
+            ),
+            array(array(), 'Array ()'),
+            array($array,
+<<<EOF
+Array (
+    0 => 0
+    'null' => null
+    'boolean' => true
+    'integer' => 1
+    'double' => 1.2
+    'string' => '1'
+    'text' => 'this
+is
+a
+very
+very
+very
+very
+very
+very
+long
+text'
+    'object' => stdClass Object (
+        'foo' => 'bar'
+    )
+    'objectagain' => stdClass Object (*RECURSION*)
+    'array' => Array (
+        'foo' => 'bar'
+    )
+    'self' => Array (*RECURSION*)
+)
+EOF
+            ),
+            array(
+                chr(0) . chr(1) . chr(2) . chr(3) . chr(4) . chr(5),
+                'Binary String: 0x000102030405'
+            ),
+            array(
+                implode('', array_map('chr', range(0x0e, 0x1f))),
+                'Binary String: 0x0e0f101112131415161718191a1b1c1d1e1f'
+            ),
+            array(
+                chr(0x00) . chr(0x09),
+                'Binary String: 0x0009'
+            ),
+            array(
+                '',
+                "''"
+            ),
+        );
+    }
+
+    /**
+     * @dataProvider exportProvider
+     */
+    public function testExport($value, $expected)
+    {
+        $this->assertSame($expected, self::trimnl(PHPUnit_Util_Type::export($value)));
+    }
+
+    public function shortenedExportProvider()
+    {
+        $obj = new stdClass;
+        $obj->foo = 'bar';
+
+        $array = array(
+            'foo' => 'bar',
+        );
+
+        return array(
+            array(NULL, 'null'),
+            array(TRUE, 'true'),
+            array(1, '1'),
+            array(1.0, '1.0'),
+            array(1.2, '1.2'),
+            array('1', "'1'"),
+            // \n\r and \r is converted to \n
+            array("this\nis\na\nvery\nvery\nvery\nvery\nvery\nvery\rlong\n\rtext", "'this\\nis\\na\\nvery\\nvery\\nvery\\nvery...g\\ntext'"),
+            array(new stdClass, 'stdClass Object ()'),
+            array($obj, 'stdClass Object (...)'),
+            array(array(), 'Array ()'),
+            array($array, 'Array (...)'),
+        );
+    }
+
+    /**
+     * @dataProvider shortenedExportProvider
+     */
+    public function testShortenedExport($value, $expected)
+    {
+        $this->assertSame($expected, self::trimnl(PHPUnit_Util_Type::shortenedExport($value)));
+    }
+
+    public function provideNonBinaryMultibyteStrings()
+    {
+        return array(
+            array(implode('', array_map('chr', range(0x09, 0x0d))), 5),
+            array(implode('', array_map('chr', range(0x20, 0x7f))), 96),
+            array(implode('', array_map('chr', range(0x80, 0xff))), 128),
+        );
+    }
+
+
+    /**
+     * @dataProvider provideNonBinaryMultibyteStrings
+     */
+    public function testNonBinaryStringExport($value, $expectedLength)
+    {
+        $this->assertRegExp("~'.{{$expectedLength}}'\$~s", PHPUnit_Util_Type::export($value));
+    }
+}

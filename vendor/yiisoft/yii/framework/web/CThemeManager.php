@@ -1,71 +1,130 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CThemeManager class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CThemeManager manages the themes for the Web application.
+ *
+ * A theme is a collection of view/layout files and resource files
+ * (e.g. css, image, js files). When a theme is active, {@link CController}
+ * will look for the specified view/layout under the theme folder first.
+ * The corresponding view/layout files will be used if the theme provides them.
+ * Otherwise, the default view/layout files will be used.
+ *
+ * By default, each theme is organized as a directory whose name is the theme name.
+ * All themes are located under the "WebRootPath/themes" directory.
+ *
+ * To activate a theme, set the {@link CWebApplication::setTheme theme} property
+ * to be the name of that theme.
+ *
+ * Since a self-contained theme often contains resource files that are made
+ * Web accessible, please make sure the view/layout files are protected from Web access.
+ *
+ * @property array $themeNames List of available theme names.
+ * @property string $basePath The base path for all themes. Defaults to "WebRootPath/themes".
+ * @property string $baseUrl The base URL for all themes. Defaults to "/WebRoot/themes".
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.0
+ */
+class CThemeManager extends CApplicationComponent
+{
+	/**
+	 * default themes base path
+	 */
+	const DEFAULT_BASEPATH='themes';
+
+	/**
+	 * @var string the name of the theme class for representing a theme.
+	 * Defaults to {@link CTheme}. This can also be a class name in dot syntax.
+	 */
+	public $themeClass='CTheme';
+
+	private $_basePath=null;
+	private $_baseUrl=null;
+
+
+	/**
+	 * @param string $name name of the theme to be retrieved
+	 * @return CTheme the theme retrieved. Null if the theme does not exist.
+	 */
+	public function getTheme($name)
+	{
+		$themePath=$this->getBasePath().DIRECTORY_SEPARATOR.$name;
+		if(is_dir($themePath))
+		{
+			$class=Yii::import($this->themeClass, true);
+			return new $class($name,$themePath,$this->getBaseUrl().'/'.$name);
+		}
+		else
+			return null;
+	}
+
+	/**
+	 * @return array list of available theme names
+	 */
+	public function getThemeNames()
+	{
+		static $themes;
+		if($themes===null)
+		{
+			$themes=array();
+			$basePath=$this->getBasePath();
+			$folder=@opendir($basePath);
+			while(($file=@readdir($folder))!==false)
+			{
+				if($file!=='.' && $file!=='..' && $file!=='.svn' && $file!=='.gitignore' && is_dir($basePath.DIRECTORY_SEPARATOR.$file))
+					$themes[]=$file;
+			}
+			closedir($folder);
+			sort($themes);
+		}
+		return $themes;
+	}
+
+	/**
+	 * @return string the base path for all themes. Defaults to "WebRootPath/themes".
+	 */
+	public function getBasePath()
+	{
+		if($this->_basePath===null)
+			$this->setBasePath(dirname(Yii::app()->getRequest()->getScriptFile()).DIRECTORY_SEPARATOR.self::DEFAULT_BASEPATH);
+		return $this->_basePath;
+	}
+
+	/**
+	 * @param string $value the base path for all themes.
+	 * @throws CException if the base path does not exist
+	 */
+	public function setBasePath($value)
+	{
+		$this->_basePath=realpath($value);
+		if($this->_basePath===false || !is_dir($this->_basePath))
+			throw new CException(Yii::t('yii','Theme directory "{directory}" does not exist.',array('{directory}'=>$value)));
+	}
+
+	/**
+	 * @return string the base URL for all themes. Defaults to "/WebRoot/themes".
+	 */
+	public function getBaseUrl()
+	{
+		if($this->_baseUrl===null)
+			$this->_baseUrl=Yii::app()->getBaseUrl().'/'.self::DEFAULT_BASEPATH;
+		return $this->_baseUrl;
+	}
+
+	/**
+	 * @param string $value the base URL for all themes.
+	 */
+	public function setBaseUrl($value)
+	{
+		$this->_baseUrl=rtrim($value,'/');
+	}
+}

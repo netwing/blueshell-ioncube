@@ -1,119 +1,239 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Handler\ElasticSearchHandler;
+use Monolog\Formatter\ElasticaFormatter;
+use Monolog\Formatter\NormalizerFormatter;
+use Monolog\TestCase;
+use Monolog\Logger;
+use Elastica\Client;
+use Elastica\Request;
+use Elastica\Response;
+
+class ElasticSearchHandlerTest extends TestCase
+{
+    /**
+     * @var Client mock
+     */
+    protected $client;
+
+    /**
+     * @var array Default handler options
+     */
+    protected $options = array(
+        'index' => 'my_index',
+        'type'  => 'doc_type',
+    );
+
+    public function setUp()
+    {
+        // Elastica lib required
+        if (!class_exists("Elastica\Client")) {
+            $this->markTestSkipped("ruflin/elastica not installed");
+        }
+
+        // base mock Elastica Client object
+        $this->client = $this->getMockBuilder('Elastica\Client')
+            ->setMethods(array('addDocuments'))
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
+     * @covers Monolog\Handler\ElasticSearchHandler::write
+     * @covers Monolog\Handler\ElasticSearchHandler::handleBatch
+     * @covers Monolog\Handler\ElasticSearchHandler::bulkSend
+     * @covers Monolog\Handler\ElasticSearchHandler::getDefaultFormatter
+     */
+    public function testHandle()
+    {
+        // log message
+        $msg = array(
+            'level' => Logger::ERROR,
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array('foo' => 7, 'bar', 'class' => new \stdClass),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array(),
+            'message' => 'log',
+        );
+
+        // format expected result
+        $formatter = new ElasticaFormatter($this->options['index'], $this->options['type']);
+        $expected = array($formatter->format($msg));
+
+        // setup ES client mock
+        $this->client->expects($this->any())
+            ->method('addDocuments')
+            ->with($expected);
+
+        // perform tests
+        $handler = new ElasticSearchHandler($this->client, $this->options);
+        $handler->handle($msg);
+        $handler->handleBatch(array($msg));
+    }
+
+    /**
+     * @covers Monolog\Handler\ElasticSearchHandler::setFormatter
+     */
+    public function testSetFormatter()
+    {
+        $handler = new ElasticSearchHandler($this->client);
+        $formatter = new ElasticaFormatter('index_new', 'type_new');
+        $handler->setFormatter($formatter);
+        $this->assertInstanceOf('Monolog\Formatter\ElasticaFormatter', $handler->getFormatter());
+        $this->assertEquals('index_new', $handler->getFormatter()->getIndex());
+        $this->assertEquals('type_new', $handler->getFormatter()->getType());
+    }
+
+    /**
+     * @covers                   Monolog\Handler\ElasticSearchHandler::setFormatter
+     * @expectedException        InvalidArgumentException
+     * @expectedExceptionMessage ElasticSearchHandler is only compatible with ElasticaFormatter
+     */
+    public function testSetFormatterInvalid()
+    {
+        $handler = new ElasticSearchHandler($this->client);
+        $formatter = new NormalizerFormatter();
+        $handler->setFormatter($formatter);
+    }
+
+    /**
+     * @covers Monolog\Handler\ElasticSearchHandler::__construct
+     * @covers Monolog\Handler\ElasticSearchHandler::getOptions
+     */
+    public function testOptions()
+    {
+        $expected = array(
+            'index' => $this->options['index'],
+            'type' => $this->options['type'],
+            'ignore_error' => false,
+        );
+        $handler = new ElasticSearchHandler($this->client, $this->options);
+        $this->assertEquals($expected, $handler->getOptions());
+    }
+
+    /**
+     * @covers       Monolog\Handler\ElasticSearchHandler::bulkSend
+     * @dataProvider providerTestConnectionErrors
+     */
+    public function testConnectionErrors($ignore, $expectedError)
+    {
+        $clientOpts = array('host' => '127.0.0.1', 'port' => 1);
+        $client = new Client($clientOpts);
+        $handlerOpts = array('ignore_error' => $ignore);
+        $handler = new ElasticSearchHandler($client, $handlerOpts);
+
+        if ($expectedError) {
+            $this->setExpectedException($expectedError[0], $expectedError[1]);
+            $handler->handle($this->getRecord());
+        } else {
+            $this->assertFalse($handler->handle($this->getRecord()));
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function providerTestConnectionErrors()
+    {
+        return array(
+            array(false, array('RuntimeException', 'Error sending messages to Elasticsearch')),
+            array(true, false),
+        );
+    }
+
+    /**
+     * Integration test using localhost Elastic Search server
+     *
+     * @covers Monolog\Handler\ElasticSearchHandler::__construct
+     * @covers Monolog\Handler\ElasticSearchHandler::handleBatch
+     * @covers Monolog\Handler\ElasticSearchHandler::bulkSend
+     * @covers Monolog\Handler\ElasticSearchHandler::getDefaultFormatter
+     */
+    public function testHandleIntegration()
+    {
+        $msg = array(
+            'level' => Logger::ERROR,
+            'level_name' => 'ERROR',
+            'channel' => 'meh',
+            'context' => array('foo' => 7, 'bar', 'class' => new \stdClass),
+            'datetime' => new \DateTime("@0"),
+            'extra' => array(),
+            'message' => 'log',
+        );
+
+        $expected = $msg;
+        $expected['datetime'] = $msg['datetime']->format(\DateTime::ISO8601);
+        $expected['context'] = array(
+            'class' => '[object] (stdClass: {})',
+            'foo' => 7,
+            0 => 'bar',
+        );
+
+        $client = new Client();
+        $handler = new ElasticSearchHandler($client, $this->options);
+        try {
+            $handler->handleBatch(array($msg));
+        } catch(\RuntimeException $e) {
+            $this->markTestSkipped("Cannot connect to Elastic Search server on localhost");
+        }
+
+        // check document id from ES server response
+        $documentId = $this->getCreatedDocId($client->getLastResponse());
+        $this->assertNotEmpty($documentId, 'No elastic document id received');
+
+        // retrieve document source from ES and validate
+        $document = $this->getDocSourceFromElastic(
+            $client,
+            $this->options['index'],
+            $this->options['type'],
+            $documentId
+        );
+        $this->assertEquals($expected, $document);
+
+        // remove test index from ES
+        $client->request("/{$this->options['index']}", Request::DELETE);
+    }
+
+    /**
+     * Return last created document id from ES response
+     * @param Response $response Elastica Response object
+     * @return string|null
+     */
+    protected function getCreatedDocId(Response $response)
+    {
+        $data = $response->getData();
+        if (!empty($data['items'][0]['create']['_id'])) {
+            return $data['items'][0]['create']['_id'];
+        }
+    }
+
+    /**
+     * Retrieve document by id from Elasticsearch
+     * @param Client $client Elastica client
+     * @param string $index
+     * @param string $type
+     * @param string $documentId
+     * @return array
+     */
+    protected function getDocSourceFromElastic(Client $client, $index, $type, $documentId)
+    {
+        $resp = $client->request("/{$index}/{$type}/{$documentId}", Request::GET);
+        $data = $resp->getData();
+        if (!empty($data['_source'])) {
+            return $data['_source'];
+        }
+        return array();
+    }
+}

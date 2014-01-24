@@ -1,76 +1,177 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-SW==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Process;
+
+use Symfony\Component\Process\Exception\InvalidArgumentException;
+use Symfony\Component\Process\Exception\LogicException;
+
+/**
+ * Process builder.
+ *
+ * @author Kris Wallsmith <kris@symfony.com>
+ */
+class ProcessBuilder
+{
+    private $arguments;
+    private $cwd;
+    private $env = array();
+    private $stdin;
+    private $timeout = 60;
+    private $options = array();
+    private $inheritEnv = true;
+    private $prefix = array();
+
+    public function __construct(array $arguments = array())
+    {
+        $this->arguments = $arguments;
+    }
+
+    public static function create(array $arguments = array())
+    {
+        return new static($arguments);
+    }
+
+    /**
+     * Adds an unescaped argument to the command string.
+     *
+     * @param string $argument A command argument
+     *
+     * @return ProcessBuilder
+     */
+    public function add($argument)
+    {
+        $this->arguments[] = $argument;
+
+        return $this;
+    }
+
+    /**
+     * Adds an unescaped prefix to the command string.
+     *
+     * The prefix is preserved when resetting arguments.
+     *
+     * @param string|array $prefix A command prefix or an array of command prefixes
+     *
+     * @return ProcessBuilder
+     */
+    public function setPrefix($prefix)
+    {
+        $this->prefix = is_array($prefix) ? $prefix : array($prefix);
+
+        return $this;
+    }
+
+    /**
+     * @param array $arguments
+     *
+     * @return ProcessBuilder
+     */
+    public function setArguments(array $arguments)
+    {
+        $this->arguments = $arguments;
+
+        return $this;
+    }
+
+    public function setWorkingDirectory($cwd)
+    {
+        $this->cwd = $cwd;
+
+        return $this;
+    }
+
+    public function inheritEnvironmentVariables($inheritEnv = true)
+    {
+        $this->inheritEnv = $inheritEnv;
+
+        return $this;
+    }
+
+    public function setEnv($name, $value)
+    {
+        $this->env[$name] = $value;
+
+        return $this;
+    }
+
+    public function addEnvironmentVariables(array $variables)
+    {
+        $this->env = array_replace($this->env, $variables);
+
+        return $this;
+    }
+
+    public function setInput($stdin)
+    {
+        $this->stdin = $stdin;
+
+        return $this;
+    }
+
+    /**
+     * Sets the process timeout.
+     *
+     * To disable the timeout, set this value to null.
+     *
+     * @param float|null
+     *
+     * @return ProcessBuilder
+     *
+     * @throws InvalidArgumentException
+     */
+    public function setTimeout($timeout)
+    {
+        if (null === $timeout) {
+            $this->timeout = null;
+
+            return $this;
+        }
+
+        $timeout = (float) $timeout;
+
+        if ($timeout < 0) {
+            throw new InvalidArgumentException('The timeout value must be a valid positive integer or float number.');
+        }
+
+        $this->timeout = $timeout;
+
+        return $this;
+    }
+
+    public function setOption($name, $value)
+    {
+        $this->options[$name] = $value;
+
+        return $this;
+    }
+
+    public function getProcess()
+    {
+        if (0 === count($this->prefix) && 0 === count($this->arguments)) {
+            throw new LogicException('You must add() command arguments before calling getProcess().');
+        }
+
+        $options = $this->options;
+
+        $arguments = array_merge($this->prefix, $this->arguments);
+        $script = implode(' ', array_map(array(__NAMESPACE__.'\\ProcessUtils', 'escapeArgument'), $arguments));
+
+        if ($this->inheritEnv) {
+            // include $_ENV for BC purposes
+            $env = array_replace($_ENV, $_SERVER, $this->env);
+        } else {
+            $env = $this->env;
+        }
+
+        return new Process($script, $this->cwd, $env, $this->stdin, $this->timeout, $options);
+    }
+}

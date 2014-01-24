@@ -1,115 +1,264 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-RkTP+m==
+<?php
+/**
+ * CFormInputElement class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CFormInputElement represents form input element.
+ *
+ * CFormInputElement can represent the following types of form input based on {@link type} property:
+ * <ul>
+ * <li>text: a normal text input generated using {@link CHtml::activeTextField}</li>
+ * <li>hidden: a hidden input generated using {@link CHtml::activeHiddenField}</li>
+ * <li>password: a password input generated using {@link CHtml::activePasswordField}</li>
+ * <li>textarea: a text area generated using {@link CHtml::activeTextArea}</li>
+ * <li>file: a file input generated using {@link CHtml::activeFileField}</li>
+ * <li>radio: a radio button generated using {@link CHtml::activeRadioButton}</li>
+ * <li>checkbox: a check box generated using {@link CHtml::activeCheckBox}</li>
+ * <li>listbox: a list box generated using {@link CHtml::activeListBox}</li>
+ * <li>dropdownlist: a drop-down list generated using {@link CHtml::activeDropDownList}</li>
+ * <li>checkboxlist: a list of check boxes generated using {@link CHtml::activeCheckBoxList}</li>
+ * <li>radiolist: a list of radio buttons generated using {@link CHtml::activeRadioButtonList}</li>
+ * <li>url: an HTML5 url input generated using {@link CHtml::activeUrlField}</li>
+ * <li>email: an HTML5 email input generated using {@link CHtml::activeEmailField}</li>
+ * <li>number: an HTML5 number input generated using {@link CHtml::activeNumberField}</li>
+ * <li>range: an HTML5 range input generated using {@link CHtml::activeRangeField}</li>
+ * <li>date: an HTML5 date input generated using {@link CHtml::activeDateField}</li>
+ * </ul>
+ * The {@link type} property can also be a class name or a path alias to the class. In this case,
+ * the input is generated using a widget of the specified class. Note, the widget must
+ * have a property called "model" which expects a model object, and a property called "attribute"
+ * which expects the name of a model attribute.
+ *
+ * Because CFormElement is an ancestor class of CFormInputElement, a value assigned to a non-existing property will be
+ * stored in {@link attributes} which will be passed as HTML attribute values to the {@link CHtml} method
+ * generating the input or initial values of the widget properties.
+ *
+ * @property boolean $required Whether this input is required.
+ * @property string $label The label for this input. If the label is not manually set,
+ * this method will call {@link CModel::getAttributeLabel} to determine the label.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.form
+ * @since 1.1
+ */
+class CFormInputElement extends CFormElement
+{
+	/**
+	 * @var array Core input types (alias=>CHtml method name)
+	 */
+	public static $coreTypes=array(
+		'text'=>'activeTextField',
+		'hidden'=>'activeHiddenField',
+		'password'=>'activePasswordField',
+		'textarea'=>'activeTextArea',
+		'file'=>'activeFileField',
+		'radio'=>'activeRadioButton',
+		'checkbox'=>'activeCheckBox',
+		'listbox'=>'activeListBox',
+		'dropdownlist'=>'activeDropDownList',
+		'checkboxlist'=>'activeCheckBoxList',
+		'radiolist'=>'activeRadioButtonList',
+		'url'=>'activeUrlField',
+		'email'=>'activeEmailField',
+		'number'=>'activeNumberField',
+		'range'=>'activeRangeField',
+		'date'=>'activeDateField'
+	);
+
+	/**
+	 * @var string the type of this input. This can be a widget class name, a path alias of a widget class name,
+	 * or an input type alias (text, hidden, password, textarea, file, radio, checkbox, listbox, dropdownlist, checkboxlist, or radiolist).
+	 * If a widget class, it must extend from {@link CInputWidget} or (@link CJuiInputWidget).
+	 */
+	public $type;
+	/**
+	 * @var string name of this input
+	 */
+	public $name;
+	/**
+	 * @var string hint text of this input
+	 */
+	public $hint;
+	/**
+	 * @var array the options for this input when it is a list box, drop-down list, check box list, or radio button list.
+	 * Please see {@link CHtml::listData} for details of generating this property value.
+	 */
+	public $items=array();
+	/**
+	 * @var array the options used when rendering the error part. This property will be passed
+	 * to the {@link CActiveForm::error} method call as its $htmlOptions parameter.
+	 * @see CActiveForm::error
+	 * @since 1.1.1
+	 */
+	public $errorOptions=array();
+	/**
+	 * @var boolean whether to allow AJAX-based validation for this input. Note that in order to use
+	 * AJAX-based validation, {@link CForm::activeForm} must be configured with 'enableAjaxValidation'=>true.
+	 * This property allows turning on or off  AJAX-based validation for individual input fields.
+	 * Defaults to true.
+	 * @since 1.1.7
+	 */
+	public $enableAjaxValidation=true;
+	/**
+	 * @var boolean whether to allow client-side validation for this input. Note that in order to use
+	 * client-side validation, {@link CForm::activeForm} must be configured with 'enableClientValidation'=>true.
+	 * This property allows turning on or off  client-side validation for individual input fields.
+	 * Defaults to true.
+	 * @since 1.1.7
+	 */
+	public $enableClientValidation=true;
+	/**
+	 * @var string the layout used to render label, input, hint and error. They correspond to the placeholders
+	 * "{label}", "{input}", "{hint}" and "{error}".
+	 */
+	public $layout="{label}\n{input}\n{hint}\n{error}";
+
+	private $_label;
+	private $_required;
+
+	/**
+	 * Gets the value indicating whether this input is required.
+	 * If this property is not set explicitly, it will be determined by calling
+	 * {@link CModel::isAttributeRequired} for the associated model and attribute of this input.
+	 * @return boolean whether this input is required.
+	 */
+	public function getRequired()
+	{
+		if($this->_required!==null)
+			return $this->_required;
+		else
+			return $this->getParent()->getModel()->isAttributeRequired($this->name);
+	}
+
+	/**
+	 * @param boolean $value whether this input is required.
+	 */
+	public function setRequired($value)
+	{
+		$this->_required=$value;
+	}
+
+	/**
+	 * @return string the label for this input. If the label is not manually set,
+	 * this method will call {@link CModel::getAttributeLabel} to determine the label.
+	 */
+	public function getLabel()
+	{
+		if($this->_label!==null)
+			return $this->_label;
+		else
+			return $this->getParent()->getModel()->getAttributeLabel($this->name);
+	}
+
+	/**
+	 * @param string $value the label for this input
+	 */
+	public function setLabel($value)
+	{
+		$this->_label=$value;
+	}
+
+	/**
+	 * Renders everything for this input.
+	 * The default implementation simply returns the result of {@link renderLabel}, {@link renderInput},
+	 * {@link renderHint}. When {@link CForm::showErrorSummary} is false, {@link renderError} is also called
+	 * to show error messages after individual input fields.
+	 * @return string the complete rendering result for this input, including label, input field, hint, and error.
+	 */
+	public function render()
+	{
+		if($this->type==='hidden')
+			return $this->renderInput();
+		$output=array(
+			'{label}'=>$this->renderLabel(),
+			'{input}'=>$this->renderInput(),
+			'{hint}'=>$this->renderHint(),
+			'{error}'=>!$this->getParent()->showErrors ? '' : $this->renderError(),
+		);
+		return strtr($this->layout,$output);
+	}
+
+	/**
+	 * Renders the label for this input.
+	 * The default implementation returns the result of {@link CHtml activeLabelEx}.
+	 * @return string the rendering result
+	 */
+	public function renderLabel()
+	{
+		$options = array(
+			'label'=>$this->getLabel(),
+			'required'=>$this->getRequired()
+		);
+
+		if(!empty($this->attributes['id']))
+        {
+            $options['for'] = $this->attributes['id'];
+        }
+
+		return CHtml::activeLabel($this->getParent()->getModel(), $this->name, $options);
+	}
+
+	/**
+	 * Renders the input field.
+	 * The default implementation returns the result of the appropriate CHtml method or the widget.
+	 * @return string the rendering result
+	 */
+	public function renderInput()
+	{
+		if(isset(self::$coreTypes[$this->type]))
+		{
+			$method=self::$coreTypes[$this->type];
+			if(strpos($method,'List')!==false)
+				return CHtml::$method($this->getParent()->getModel(), $this->name, $this->items, $this->attributes);
+			else
+				return CHtml::$method($this->getParent()->getModel(), $this->name, $this->attributes);
+		}
+		else
+		{
+			$attributes=$this->attributes;
+			$attributes['model']=$this->getParent()->getModel();
+			$attributes['attribute']=$this->name;
+			ob_start();
+			$this->getParent()->getOwner()->widget($this->type, $attributes);
+			return ob_get_clean();
+		}
+	}
+
+	/**
+	 * Renders the error display of this input.
+	 * The default implementation returns the result of {@link CHtml::error}
+	 * @return string the rendering result
+	 */
+	public function renderError()
+	{
+		$parent=$this->getParent();
+		return $parent->getActiveFormWidget()->error($parent->getModel(), $this->name, $this->errorOptions, $this->enableAjaxValidation, $this->enableClientValidation);
+	}
+
+	/**
+	 * Renders the hint text for this input.
+	 * The default implementation returns the {@link hint} property enclosed in a paragraph HTML tag.
+	 * @return string the rendering result.
+	 */
+	public function renderHint()
+	{
+		return $this->hint===null ? '' : '<div class="hint">'.$this->hint.'</div>';
+	}
+
+	/**
+	 * Evaluates the visibility of this element.
+	 * This method will check if the attribute associated with this input is safe for
+	 * the current model scenario.
+	 * @return boolean whether this element is visible.
+	 */
+	protected function evaluateVisible()
+	{
+		return $this->getParent()->getModel()->isAttributeSafe($this->name);
+	}
+}

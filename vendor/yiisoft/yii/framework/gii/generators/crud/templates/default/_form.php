@@ -1,32 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * The following variables are available in this template:
+ * - $this: the CrudCode object
+ */
 ?>
-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
-a5eKFtsQlJVvwtQ9rqOjMhMriFpv
+<?php echo "<?php\n"; ?>
+/* @var $this <?php echo $this->getControllerClass(); ?> */
+/* @var $model <?php echo $this->getModelClass(); ?> */
+/* @var $form CActiveForm */
+?>
+
+<div class="form">
+
+<?php echo "<?php \$form=\$this->beginWidget('CActiveForm', array(
+	'id'=>'".$this->class2id($this->modelClass)."-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	'enableAjaxValidation'=>false,
+)); ?>\n"; ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<?php echo "<?php echo \$form->errorSummary(\$model); ?>\n"; ?>
+
+<?php
+foreach($this->tableSchema->columns as $column)
+{
+	if($column->autoIncrement)
+		continue;
+?>
+	<div class="row">
+		<?php echo "<?php echo ".$this->generateActiveLabel($this->modelClass,$column)."; ?>\n"; ?>
+		<?php echo "<?php echo ".$this->generateActiveField($this->modelClass,$column)."; ?>\n"; ?>
+		<?php echo "<?php echo \$form->error(\$model,'{$column->name}'); ?>\n"; ?>
+	</div>
+
+<?php
+}
+?>
+	<div class="row buttons">
+		<?php echo "<?php echo CHtml::submitButton(\$model->isNewRecord ? 'Create' : 'Save'); ?>\n"; ?>
+	</div>
+
+<?php echo "<?php \$this->endWidget(); ?>\n"; ?>
+
+</div><!-- form -->

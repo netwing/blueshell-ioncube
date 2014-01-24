@@ -1,94 +1,212 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPu/+Nx4LLAI6z3hAaY1zvpeLA4VNkaBc5SXgxXpikTFq2dslzUY5p2Y6ipBLT/UQ/AUkgVxg
-fus5p3PBL8uuEZ+v9mae6c11N9tpeNmVaLWZakEXudjHniHFGeLMQnRzU1hshErKH41u7uqiXpRo
-4D78zLHYT2HSm6YAbWnfY4RJKjfxvun1rE2E7N0NZHWM2MHc93H9k8rdx18abzlR+smP7ZEoWQlg
-xCRwk83mbFad+yRnr6InKgzHAE4xzt2gh9fl143SQNH8PnLmqJvFC+66FgZ8G6de4/znaWOq4WMO
-iATXBknmF/xjdwcNN9NceMERKb/hQE6gzNmMY/IM/qn9Ldd4d7uFZ24LTPfHJTHl8Ev6eUFdlU8v
-WZ3J3SocDycLfbBHPxtLKkga877x6tLCFxObuBBD4pV1/n9Oyyaf+Y2YvsCCinAidZTMa/Q9OPqX
-P52K0GChiE3f0lGKsSbLAhsUM6OWxRb86ahFhYGOVhC52QHVEUCFDh8nVcWa8O5JNrAFmBp3qYSM
-oMVSjjTZ2q4JQXrel+49LZF3E99qCKYMfc2RNqVHeiqXuKYb0969o68oHf2vtrazsJFFpf/06xSt
-tLZ3T7ZalHEebJ50jpgsmA7UxBv4QfsmQTfZOo005laTfdM7JabcMRkx1sLuR5bgDNGfQE6UJL9b
-xE1GaYYUSOZ1+9nxQsL9Bp34T4+E3p2y90PmHvd/RJxY9DTiVHOMAuagRgpNZ35yDX8aeyZEVe0J
-cCYDlXWWrnIPIXNLzMg4cXoKovL5djuL0UQdWFAlizpqRaQ6nrA18w85rB5WO6WN4SFt9ZBfQ3Ka
-uZwBtvn4ZA2kK5NVjs0nklD7SsfqrZeJY5mX8jkQEu0KOBB+LIQUqkaTccqQUHe04xiCm/l9Irl/
-Sx/WUP6NR3KgqMzCDZ46Vf/f69WogtEmFZe8qFyePNlTeY/sOJQImweY3xYx+btnGuGSL27/Q46J
-5BwYlsd7Ixtk4P2bGZbrif5hS30JCg8sfS0eGpNVO4Gg5qHnLKZDi/GKeDyQQz8lUpyvg5pblf9A
-aprykGVtO6SMJTslWU3iKIGNlhG7qoCD9IX3/zWIXPWff1bRLSQzik4jGgzBx4sZcPM465bhv4PJ
-cLknptHYi30VxZudYe1/TfbW+mF41IxfqYx0cwucCdVj+mNFXkbp9tA0066eEff8yAamCeNUuGEi
-ugfT4dbdLeEKJOGEdYNCUUgjkvOr7GgnMVFUKSAOfk6S1v6QivmJYcxyAczZdKMn76trZD87Q+/a
-t7vOMERqaMkzZwqwNmeWkQeBAIi4GFfhMdiss0AkFSDf44yc9XVR5PTASAbafpJIqtFXubCSzWZU
-5k5GowHEDSkOXwiao4PrrcKQnUA6p6/vZKxSqrX1sNVArfA+ADhGymBSIiw/d2d3jzkobjEYqecN
-06qh0X4aV06Tb5xJiYoq9xxITrxfXeGUbXiZTiZO8J8U2+QQmK9vJzxKe8jjAST9b+jIMPrCa5qO
-BtBlEgHUUaanHxBKhwTyI8YWsepqjA1uMGBBi4sYagtPS1sEzkzi/9KMu2X7gqJz5RqIvCUrUABQ
-kfFBL/TqwqsnndQ2PW5yjDo6Yg5fuxU3zX9V0ojK8/kPwQKOsw9m8L7rUxcCGe9gG0bXqtC1P21h
-UM1b/vzTcdl8qkBXXf8WcPjF1N4Umfq6j2eqXU17wZcod0TjsWzbJW3lgdvnjAqVQHCjPg0RhLLn
-/P0hfu8Gia/woNHBhNzxNH0XL3b34XzXkapFsN8GbDb/J5SXEOwv3i2K3Jeu/9cszYEWUl5mcasX
-DuD+MzkDeE+BM+EZGsEEBBDWODGwmbpOde2F7SKTesfqdVUQMfLMfDjYRPSVWtZayZgvFdfd8+Kj
-hXabCigBuDlLUSC4yi2Xg0jbddLOTr7zMsfpO/MCmMdhQycktlbFiWyl/+yOIuhO39Qiw0uleVWa
-70o86qTiKWtgdujBu9MwPvKK5WxpmoBvFxUwl5KGBXZ/j5izEvvD2Rq1kueIDW9Tc+vmqNbuGgNM
-lHQQWDhejWP/ceGYZnzJjuJgvUxvKa7IAPhtjkP0ehxrwHiYGZOpXHEQLjAm05RYC0OkeI70kCZI
-WHXdpiXGRImqEVjZqqx3vvwU9F7Q7fNfuq29KHruWRjrI+0qaQE80rlqFJ+xDuH1TqeUn46K01vr
-qY0pL1xUKXJHMXqeScPTD44zVN3BLWkBlb2F4D8GG4PBUDF5JjEg2M4pT7Gr/D5TVWqI4sH193OR
-pmBKPXDlJiathXooJfiG6zKflhM9/4gYNjB5ArMg9pAEJucSi07NHu3RLmi3MAYUfpttQW5EmC42
-Aph4I2Qi+ArSDr0sQDj6atxEKKV3lTVUB8dko0T/oislNhKPSnd6ckNbJOZTC9DWjToZQqDkw0aY
-7SurL2rqIDU5D2PclfcRK4m7Ux7VJ/JxTlkTxqZipK5unOS/QP449rQlpcY1dUJSFGPIATZUsRHr
-WgIf8Xkm5L0fzvINvBy3DCvtwTJSueyj3u+wEjhtyewnNv6XNbb0AVv/EwvWukgD1of1dJC9Nh/w
-7c0lw8L3vbXZXvD8i+1d6DrJtunbbhIGh6uT5sde0qHzLlHSHGl3LK4Liga4IH5UYmwaWV4KkYEE
-zIScsz0029e7th+Z3SL0OBLMZnO5shtbf3AwjWA8zmt76lhYZoAk4yfI/n7G+EVT/cToEev9ikwW
-1j/MeOIBnEAIFsrhMIp4PKgUDQDsMASGtsLVriED45D+19Cm2ASqupZDO6ucV6Ajw5iwBVjPVB97
-JXSz7qecnxoOesej81f+z21va9OkEqA09qUZhJapOE3JbB42x9EX8kyMW2oG0PoYnolYmdqLaDLN
-7CFkODZSwtwDSb/mfnlH9cTGTQyRJvqP+E93V3I9B+HtT20Ox4l5vwvAYfuKaV4gWyb3vGDkV3zk
-+zmGJTa+lbpR4iIvDgrSoc0l5+0WTsQlPVI/1i4BzhMMd4ye95on97mEjKabZdJJTQ1BzflXZO5v
-GDvsvGVfQd17BXxObY7x5yw7pqWxWDJoAY5HIyyiHkAH2TLMMS9sJpr1vet4ay7lBtv5MkYazChT
-syLonuU9GSIwxYs81KkhQ9T+R7GN9bNTlJRqX3yC37KHi8vQdBUONj/jY5DRbXsz0eQXQyHbi7CG
-p7AVe1xoy121oP+e9KWvAq6YBY4RupORwcM7FWBvzikj5elFsYubTUTZXddzUFfyQY8cIVo3SQ1d
-pHH2ZayJnN2lYoW9JU/1Oue8t453K+3qPBjd1mVedfJkJAuUSsVZRABl1GfOWZ7aQtG3ryQeqs+5
-kGkJz+7qMuMooyHlnidOCti53I44HSqEbPoNpwsjLSYjydmirss1nHG3j3CJ6Fyh6iXhs3cbQiXW
-9ReSGR63LELhuW29/Ka0n0XJQwcPy6m2k2LXkIQ6r4r+8erDLtbJUeJ4sGAlB9ziMFNDEFVbBUsa
-OPpYwoDFYyEaaVm+0Skt41DqaildVh+AhNCXiZ64LLdQDIZglVHAKPUyZb6MPNfLuFOOiYwYeaiF
-L/el+xtf4x9RyQv9xM0Qfr+pVETobUfOrbJfVKmbVuExbdbYvES2SP0GMx2OkaxaqTNKbIB609BJ
-YzFMPCtWKx0hzCHykpsOfo6vqNSQd7ijk2HZoYGBYnT9NnsEXmT+JZtgj67EA1tvKbZUM7AA+Z6z
-dAUVCipELb63cgoUuDU9pszY63zG8Bp0/jlgJAe+5CMxCKrBWAuWucZ1xeAvQpM1qo8EZsTX2cvw
-ZVgeCME/R+TZ32u3IMlvDiPKP+Iuv8ymXWZU3J/kc3RFQDHKomIy5NtPQOlfTh1xslBNXlTopCki
-e0sx0YW/YWPFzEhwLgkAAlf8U35wbYPHQWwj084U0RvZIyvue/qIIP/Fq76ey572zSRV41EynXEj
-qcr/KPXJ099luySkhDj9Iz0kxtULY+CmW1ax7OYW1irmkCjq2GBx0e5Wob0Ttjn/8mzmIgU5xnN5
-V7Jppjk9cAwMJbsbJTcBEaDW1nu1W/Ti13AYlYMcZ0dTUIJVl/0xgKyekX1MeBsmK0Lvsdhy6A7+
-s/L9/wKZkUdFziBu8xNid15+ZGODA50tNanOYm8UzYQZP+qF4+hoOLj+Y549Rs1YQdMtLpv4k90g
-C0YjSGwUE181r8Ff9gsIOdHqZ7IiKRMQOmEK+DmHNYUWPTw6BGg8T7ulE4u71fXA+JhPhOVf3uh/
-u/rnsXU8WyaZee6EyKFSrzJ5kjKVrGyeEoHFrZA4I3NwZB5f6MwXaqA2kv5otmtnQ9st+iVgzLGt
-31x4KaDlNRTMHuiq753Opw8TMLCjso4NtODpJLUdRK/7AUMdN31vrES2xAQFaiInbPOGzi4+CCuJ
-4gXJvs+rGg1vFr4HNJtV/w9ddKHWcX4O0e6F4F/6iPGVpFuRHNmTbm77t1pqzZr5a/3QwoCVPtLT
-FwLyqYapiRA52x715PgPQYYmfgsvlpICOk/++wx9zSjFeP+prd/Cd//Rq2VeJ7Gk5OtFB7n+qAv/
-b8ZfcviW9lVNiMkJv0kD9o8uA2fFdv2OdDCuPM1VEQwczLlaHGlt/KcPK+ReNZuvV2MneAzIIN12
-IQDyOgFQjnSLLeoHy+8u5hKQar4xJQTZZFjlhJRtaYfzhzUyMBw6NCzsON6WVIx5niXno7hLqBVK
-w1JhZKvWUfueUADTld/hlZF0Ux3wPRDafXk0Wu51jrZ46l2Q1TjnBYxbQ3dlou+85uozXz7cYDO/
-7cyf3YmRVdVg4WNYvKvD3dLMtqLPKKLMazwtCpsBjP+7Ik3Op7bSUFaG2DTpNOhNXV2nSEtGZ7DH
-MabU1u5vpjgFO1GjBACSxoEGMnBlRkliju5Sn8+VmT/oNKgFS5Ghy1RRq7xF4+cgOa5I28oma2xu
-OBrFETJ4DY1sdlUFCnV5b3Kw4oIfhEnObkUorOh6jVGPOfIFKmlRbdMeL/pJxm/e8Wh64K4O/BY8
-lrtXgYSZ1RcGDbo7RueCr3+XeeFIYYpyNo49Vv74yYp803itk6CXr3ucBFtOlWm0VoZVJLQc9BGi
-kui/XQZkaTkwAZ6xMZb3IAIHx1GJ+rBCx7GfRA05tJZ/Ql6LvXIquyaS8LgdUoH5CXUeRImYaDXd
-YKcDU9lLKHdS2Houg2T0PRktsUCvVysVovyAGnxAkeRMGbxJMyuucRpaLz1UKGSrTOUVZXpExKsc
-KZPRtrHsSZ2zm50XArK09NQIeRGorNSmEpA0JjcyV0NqHMwNDfl2hrsOYMUMoF0oGhND/OWf5bbg
-9vm+dLwGNS7ZqVfu7Z8G0acSC79oY6CCxgXuiFpAq91HwJeGW8O8qX61IA0aVkPaNrbuWCRD2ezB
-MagWMK69eHxofE5bMCCoKXYXP5Zj/u0W4xRIiECwXEQLALje5y3OkyVIi54VAquNzXMeNtqeJcCh
-rWaQDFzwM1xe/CUSYKEIf6+Sb0pkKqW4NBI5gHETdM07lM0EudxurDBfKmms7lAXO2DIgQ45LUr6
-JsKgrB21iV/cmYLq3Fo2TqjLQhN9j5cyP/dF0692QQ+gDDcBQlR/htR+crNNmfp+VZDjGzGsAgmQ
-qXtA6+3wpZ3PYNSKrRgcH0TB4IzFgHVoZ3RApMys/4n8zOcbUWq+BnvyAgK+tr4TvJiIe9F/CQSN
-9HuaP+W0BZ34goVi/u6blm1RxiQgzTsFX5TipYDgrY5XKP4SJ0KYa27pPBuOy0J62umi9ojz2UnC
-+XuSjGA/yMcUZlVaL06/LA0F48WCEAobG5EDQFzc0POiP0qXzhajJlGWsfk7LcdtfUFSYWlu2XWK
-ReZHiEjAEvDbDZNET0aXCO/mlxJfVr9kseE16G7MYsYdyT/r9lDLPw1jOp5Zk8/NcUdcs1JSi9ib
-PRBog0qp6dFCnQKYG1WuBO+ZzakCmNyvxTJXmm9o7rgKPrXPcfGacAUNINOUHRnH6B9384uMGp8M
-Go0Z3A1aSiuq+1jeOpjuDZzqRr42Uhr5dsLK2uVoWYfgsmwS0DR1bFnCJycGMsEh3rFHvwp1diwC
-hfblDM1Rgqmb1TjFbY+UZ3cJ/Xj7FulghjzidZTTlJqPuJgxi0tZaQODNltPLb03gtMaGLrynoZJ
-PjeDBKKkai+CArC4p1OuCc0CNhACbTxdjpV+hunqWDuKyllQ1aGamK8HYhndzKPCBjrzK0P8fM5H
-B6H69Zyq7xxZSmHS0GDxG9cMNhrOoNSHhiRZM1Ko+YKuvJOW7GVaq1t03WHAKUYnt8QHX/ns/rMv
-rJN+tNU6Ix3/DQeX9eQrOLbGz1WEJdfcR8EcudP4REa6zpFMdDAUTNj4LsHlLJLqxo5OKgQFVush
-TK+bIfij/NKv6cTSu1ge3A/VfRETeqAd0ND7rokquzO13WNe2cY16Sm75D7E/Zxr53TzFVDVUO77
-uNwwVn0eWnUvhSzJVtEjZeoY+O68/BavFq8PuCPRcgVzg756+hzg5A+WqgeZV4nA7+5H8HULNX/e
-18hXUASALi3vw8gDae8nIgQeaOx+ES17jmqnc40OkZvaQDKuQpRolg/h7HBHzMocQbb4aLCP7+nK
-HrvQf5ixrVtXOAL/f9NxISypi0TMOrlEak59aF6khszswcJbDGOS+MBg58Cfc10nAfl2oOTnOiXE
-YTAjSTLv2or6xbPOKEreYxrEgSzefupFZRjbAozgIyCaPCtS2Xeo6QcpI/qRCvIg8ukT+hozHqBR
-MlG/VxtHimI0Lwaqf0XgNhxLnazZZPU4K47pc+HtmZJQC4898LeIW6aZOeRThcMVopyDbdfWKgg8
-ODIdnCYW6RxoR2dg
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Input;
+
+/**
+ * Represents a command line option.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @api
+ */
+class InputOption
+{
+    const VALUE_NONE     = 1;
+    const VALUE_REQUIRED = 2;
+    const VALUE_OPTIONAL = 4;
+    const VALUE_IS_ARRAY = 8;
+
+    private $name;
+    private $shortcut;
+    private $mode;
+    private $default;
+    private $description;
+
+    /**
+     * Constructor.
+     *
+     * @param string       $name        The option name
+     * @param string|array $shortcut    The shortcuts, can be null, a string of shortcuts delimited by | or an array of shortcuts
+     * @param integer      $mode        The option mode: One of the VALUE_* constants
+     * @param string       $description A description text
+     * @param mixed        $default     The default value (must be null for self::VALUE_REQUIRED or self::VALUE_NONE)
+     *
+     * @throws \InvalidArgumentException If option mode is invalid or incompatible
+     *
+     * @api
+     */
+    public function __construct($name, $shortcut = null, $mode = null, $description = '', $default = null)
+    {
+        if (0 === strpos($name, '--')) {
+            $name = substr($name, 2);
+        }
+
+        if (empty($name)) {
+            throw new \InvalidArgumentException('An option name cannot be empty.');
+        }
+
+        if (empty($shortcut)) {
+            $shortcut = null;
+        }
+
+        if (null !== $shortcut) {
+            if (is_array($shortcut)) {
+                $shortcut = implode('|', $shortcut);
+            }
+            $shortcuts = preg_split('{(\|)-?}', ltrim($shortcut, '-'));
+            $shortcuts = array_filter($shortcuts);
+            $shortcut = implode('|', $shortcuts);
+
+            if (empty($shortcut)) {
+                throw new \InvalidArgumentException('An option shortcut cannot be empty.');
+            }
+        }
+
+        if (null === $mode) {
+            $mode = self::VALUE_NONE;
+        } elseif (!is_int($mode) || $mode > 15 || $mode < 1) {
+            throw new \InvalidArgumentException(sprintf('Option mode "%s" is not valid.', $mode));
+        }
+
+        $this->name        = $name;
+        $this->shortcut    = $shortcut;
+        $this->mode        = $mode;
+        $this->description = $description;
+
+        if ($this->isArray() && !$this->acceptValue()) {
+            throw new \InvalidArgumentException('Impossible to have an option mode VALUE_IS_ARRAY if the option does not accept a value.');
+        }
+
+        $this->setDefault($default);
+    }
+
+    /**
+     * Returns the option shortcut.
+     *
+     * @return string The shortcut
+     */
+    public function getShortcut()
+    {
+        return $this->shortcut;
+    }
+
+    /**
+     * Returns the option name.
+     *
+     * @return string The name
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Returns true if the option accepts a value.
+     *
+     * @return Boolean true if value mode is not self::VALUE_NONE, false otherwise
+     */
+    public function acceptValue()
+    {
+        return $this->isValueRequired() || $this->isValueOptional();
+    }
+
+    /**
+     * Returns true if the option requires a value.
+     *
+     * @return Boolean true if value mode is self::VALUE_REQUIRED, false otherwise
+     */
+    public function isValueRequired()
+    {
+        return self::VALUE_REQUIRED === (self::VALUE_REQUIRED & $this->mode);
+    }
+
+    /**
+     * Returns true if the option takes an optional value.
+     *
+     * @return Boolean true if value mode is self::VALUE_OPTIONAL, false otherwise
+     */
+    public function isValueOptional()
+    {
+        return self::VALUE_OPTIONAL === (self::VALUE_OPTIONAL & $this->mode);
+    }
+
+    /**
+     * Returns true if the option can take multiple values.
+     *
+     * @return Boolean true if mode is self::VALUE_IS_ARRAY, false otherwise
+     */
+    public function isArray()
+    {
+        return self::VALUE_IS_ARRAY === (self::VALUE_IS_ARRAY & $this->mode);
+    }
+
+    /**
+     * Sets the default value.
+     *
+     * @param mixed $default The default value
+     *
+     * @throws \LogicException When incorrect default value is given
+     */
+    public function setDefault($default = null)
+    {
+        if (self::VALUE_NONE === (self::VALUE_NONE & $this->mode) && null !== $default) {
+            throw new \LogicException('Cannot set a default value when using InputOption::VALUE_NONE mode.');
+        }
+
+        if ($this->isArray()) {
+            if (null === $default) {
+                $default = array();
+            } elseif (!is_array($default)) {
+                throw new \LogicException('A default value for an array option must be an array.');
+            }
+        }
+
+        $this->default = $this->acceptValue() ? $default : false;
+    }
+
+    /**
+     * Returns the default value.
+     *
+     * @return mixed The default value
+     */
+    public function getDefault()
+    {
+        return $this->default;
+    }
+
+    /**
+     * Returns the description text.
+     *
+     * @return string The description text
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Checks whether the given option equals this one
+     *
+     * @param InputOption $option option to compare
+     * @return Boolean
+     */
+    public function equals(InputOption $option)
+    {
+        return $option->getName() === $this->getName()
+            && $option->getShortcut() === $this->getShortcut()
+            && $option->getDefault() === $this->getDefault()
+            && $option->isArray() === $this->isArray()
+            && $option->isValueRequired() === $this->isValueRequired()
+            && $option->isValueOptional() === $this->isValueOptional()
+        ;
+    }
+}

@@ -1,84 +1,180 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CConsoleCommandRunner class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CConsoleCommandRunner manages commands and executes the requested command.
+ *
+ * @property string $scriptName The entry script name.
+ * @property CConsoleCommand $command The currently active command.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.console
+ * @since 1.0
+ */
+class CConsoleCommandRunner extends CComponent
+{
+	/**
+	 * @var array list of all available commands (command name=>command configuration).
+	 * Each command configuration can be either a string or an array.
+	 * If the former, the string should be the class name or
+	 * {@link YiiBase::getPathOfAlias class path alias} of the command.
+	 * If the latter, the array must contain a 'class' element which specifies
+	 * the command's class name or {@link YiiBase::getPathOfAlias class path alias}.
+	 * The rest name-value pairs in the array are used to initialize
+	 * the corresponding command properties. For example,
+	 * <pre>
+	 * array(
+	 *   'email'=>array(
+	 *      'class'=>'path.to.Mailer',
+	 *      'interval'=>3600,
+	 *   ),
+	 *   'log'=>'path.to.LoggerCommand',
+	 * )
+	 * </pre>
+	 */
+	public $commands=array();
+
+	private $_scriptName;
+	private $_command;
+
+	/**
+	 * Executes the requested command.
+	 * @param array $args list of user supplied parameters (including the entry script name and the command name).
+	 * @return integer|null application exit code returned by the command.
+	 * if null is returned, application will not exit explicitly. See also {@link CConsoleApplication::processRequest()}.
+	 * (return value is available since version 1.1.11)
+	 */
+	public function run($args)
+	{
+		$this->_scriptName=$args[0];
+		array_shift($args);
+		if(isset($args[0]))
+		{
+			$name=$args[0];
+			array_shift($args);
+		}
+		else
+			$name='help';
+
+		$oldCommand=$this->_command;
+		if(($command=$this->createCommand($name))===null)
+			$command=$this->createCommand('help');
+		$this->_command=$command;
+		$command->init();
+		$exitCode=$command->run($args);
+		$this->_command=$oldCommand;
+		return $exitCode;
+	}
+
+	/**
+	 * @return string the entry script name
+	 */
+	public function getScriptName()
+	{
+		return $this->_scriptName;
+	}
+
+	/**
+	 * Returns the currently running command.
+	 * @return CConsoleCommand|null the currently active command.
+	 * @since 1.1.14
+	 */
+	public function getCommand()
+	{
+		return $this->_command;
+	}
+
+	/**
+	 * @param CConsoleCommand $value the currently active command.
+	 * @since 1.1.14
+	 */
+	public function setCommand($value)
+	{
+		$this->_command=$value;
+	}
+
+	/**
+	 * Searches for commands under the specified directory.
+	 * @param string $path the directory containing the command class files.
+	 * @return array list of commands (command name=>command class file)
+	 */
+	public function findCommands($path)
+	{
+		if(($dir=@opendir($path))===false)
+			return array();
+		$commands=array();
+		while(($name=readdir($dir))!==false)
+		{
+			$file=$path.DIRECTORY_SEPARATOR.$name;
+			if(!strcasecmp(substr($name,-11),'Command.php') && is_file($file))
+				$commands[strtolower(substr($name,0,-11))]=$file;
+		}
+		closedir($dir);
+		return $commands;
+	}
+
+	/**
+	 * Adds commands from the specified command path.
+	 * If a command already exists, the new one will be ignored.
+	 * @param string $path the alias of the directory containing the command class files.
+	 */
+	public function addCommands($path)
+	{
+		if(($commands=$this->findCommands($path))!==array())
+		{
+			foreach($commands as $name=>$file)
+			{
+				if(!isset($this->commands[$name]))
+					$this->commands[$name]=$file;
+			}
+		}
+	}
+
+	/**
+	 * @param string $name command name (case-insensitive)
+	 * @return CConsoleCommand the command object. Null if the name is invalid.
+	 */
+	public function createCommand($name)
+	{
+		$name=strtolower($name);
+
+		$command=null;
+		if(isset($this->commands[$name]))
+			$command=$this->commands[$name];
+		else
+		{
+			$commands=array_change_key_case($this->commands);
+			if(isset($commands[$name]))
+				$command=$commands[$name];
+		}
+
+		if($command!==null)
+		{
+			if(is_string($command)) // class file path or alias
+			{
+				if(strpos($command,'/')!==false || strpos($command,'\\')!==false)
+				{
+					$className=substr(basename($command),0,-4);
+					if(!class_exists($className,false))
+						require_once($command);
+				}
+				else // an alias
+					$className=Yii::import($command);
+				return new $className($name,$this);
+			}
+			else // an array configuration
+				return Yii::createComponent($command,$name,$this);
+		}
+		elseif($name==='help')
+			return new CHelpCommand('help',$this);
+		else
+			return null;
+	}
+}

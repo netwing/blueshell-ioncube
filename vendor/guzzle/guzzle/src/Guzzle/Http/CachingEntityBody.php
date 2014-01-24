@@ -1,108 +1,229 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http;
+
+use Guzzle\Common\Exception\RuntimeException;
+
+/**
+ * EntityBody decorator that can cache previously read bytes from a sequentially read tstream
+ */
+class CachingEntityBody extends AbstractEntityBodyDecorator
+{
+    /** @var EntityBody Remote stream used to actually pull data onto the buffer */
+    protected $remoteStream;
+
+    /** @var int The number of bytes to skip reading due to a write on the temporary buffer */
+    protected $skipReadBytes = 0;
+
+    /**
+     * We will treat the buffer object as the body of the entity body
+     * {@inheritdoc}
+     */
+    public function __construct(EntityBodyInterface $body)
+    {
+        $this->remoteStream = $body;
+        $this->body = new EntityBody(fopen('php://temp', 'r+'));
+    }
+
+    /**
+     * Will give the contents of the buffer followed by the exhausted remote stream.
+     *
+     * Warning: Loads the entire stream into memory
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        $pos = $this->ftell();
+        $this->rewind();
+
+        $str = '';
+        while (!$this->isConsumed()) {
+            $str .= $this->read(16384);
+        }
+
+        $this->seek($pos);
+
+        return $str;
+    }
+
+    public function getSize()
+    {
+        return max($this->body->getSize(), $this->remoteStream->getSize());
+    }
+
+    /**
+     * {@inheritdoc}
+     * @throws RuntimeException When seeking with SEEK_END or when seeking past the total size of the buffer stream
+     */
+    public function seek($offset, $whence = SEEK_SET)
+    {
+        if ($whence == SEEK_SET) {
+            $byte = $offset;
+        } elseif ($whence == SEEK_CUR) {
+            $byte = $offset + $this->ftell();
+        } else {
+            throw new RuntimeException(__CLASS__ . ' supports only SEEK_SET and SEEK_CUR seek operations');
+        }
+
+        // You cannot skip ahead past where you've read from the remote stream
+        if ($byte > $this->body->getSize()) {
+            throw new RuntimeException(
+                "Cannot seek to byte {$byte} when the buffered stream only contains {$this->body->getSize()} bytes"
+            );
+        }
+
+        return $this->body->seek($byte);
+    }
+
+    public function rewind()
+    {
+        return $this->seek(0);
+    }
+
+    /**
+     * Does not support custom rewind functions
+     *
+     * @throws RuntimeException
+     */
+    public function setRewindFunction($callable)
+    {
+        throw new RuntimeException(__CLASS__ . ' does not support custom stream rewind functions');
+    }
+
+    public function read($length)
+    {
+        // Perform a regular read on any previously read data from the buffer
+        $data = $this->body->read($length);
+        $remaining = $length - strlen($data);
+
+        // More data was requested so read from the remote stream
+        if ($remaining) {
+            // If data was written to the buffer in a position that would have been filled from the remote stream,
+            // then we must skip bytes on the remote stream to emulate overwriting bytes from that position. This
+            // mimics the behavior of other PHP stream wrappers.
+            $remoteData = $this->remoteStream->read($remaining + $this->skipReadBytes);
+
+            if ($this->skipReadBytes) {
+                $len = strlen($remoteData);
+                $remoteData = substr($remoteData, $this->skipReadBytes);
+                $this->skipReadBytes = max(0, $this->skipReadBytes - $len);
+            }
+
+            $data .= $remoteData;
+            $this->body->write($remoteData);
+        }
+
+        return $data;
+    }
+
+    public function write($string)
+    {
+        // When appending to the end of the currently read stream, you'll want to skip bytes from being read from
+        // the remote stream to emulate other stream wrappers. Basically replacing bytes of data of a fixed length.
+        $overflow = (strlen($string) + $this->ftell()) - $this->remoteStream->ftell();
+        if ($overflow > 0) {
+            $this->skipReadBytes += $overflow;
+        }
+
+        return $this->body->write($string);
+    }
+
+    /**
+     * {@inheritdoc}
+     * @link http://php.net/manual/en/function.fgets.php
+     */
+    public function readLine($maxLength = null)
+    {
+        $buffer = '';
+        $size = 0;
+        while (!$this->isConsumed()) {
+            $byte = $this->read(1);
+            $buffer .= $byte;
+            // Break when a new line is found or the max length - 1 is reached
+            if ($byte == PHP_EOL || ++$size == $maxLength - 1) {
+                break;
+            }
+        }
+
+        return $buffer;
+    }
+
+    public function isConsumed()
+    {
+        return $this->body->isConsumed() && $this->remoteStream->isConsumed();
+    }
+
+    /**
+     * Close both the remote stream and buffer stream
+     */
+    public function close()
+    {
+        return $this->remoteStream->close() && $this->body->close();
+    }
+
+    public function setStream($stream, $size = 0)
+    {
+        $this->remoteStream->setStream($stream, $size);
+    }
+
+    public function getContentType()
+    {
+        return $this->remoteStream->getContentType();
+    }
+
+    public function getContentEncoding()
+    {
+        return $this->remoteStream->getContentEncoding();
+    }
+
+    public function getMetaData($key = null)
+    {
+        return $this->remoteStream->getMetaData($key);
+    }
+
+    public function getStream()
+    {
+        return $this->remoteStream->getStream();
+    }
+
+    public function getWrapper()
+    {
+        return $this->remoteStream->getWrapper();
+    }
+
+    public function getWrapperData()
+    {
+        return $this->remoteStream->getWrapperData();
+    }
+
+    public function getStreamType()
+    {
+        return $this->remoteStream->getStreamType();
+    }
+
+    public function getUri()
+    {
+        return $this->remoteStream->getUri();
+    }
+
+    /**
+     * Always retrieve custom data from the remote stream
+     * {@inheritdoc}
+     */
+    public function getCustomData($key)
+    {
+        return $this->remoteStream->getCustomData($key);
+    }
+
+    /**
+     * Always set custom data on the remote stream
+     * {@inheritdoc}
+     */
+    public function setCustomData($key, $value)
+    {
+        $this->remoteStream->setCustomData($key, $value);
+
+        return $this;
+    }
+}

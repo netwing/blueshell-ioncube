@@ -1,57 +1,110 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-6i+o3jJ8eor8eF6lnQE18agFRRIdRFmS
+<?php
+
+namespace Guzzle\Tests\Service\Command\LocationVisitor\Request;
+
+use Guzzle\Http\Message\EntityEnclosingRequest;
+use Guzzle\Service\Description\Operation;
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Service\Description\SchemaValidator;
+use Guzzle\Service\Command\OperationCommand;
+use Guzzle\Tests\Service\Mock\Command\MockCommand;
+use Guzzle\Tests\Service\Mock\MockClient;
+
+abstract class AbstractVisitorTestCase extends \Guzzle\Tests\GuzzleTestCase
+{
+    protected $command;
+    protected $request;
+    protected $param;
+    protected $validator;
+
+    public function setUp()
+    {
+        $this->command = new MockCommand();
+        $this->request = new EntityEnclosingRequest('POST', 'http://www.test.com/some/path.php');
+        $this->validator = new SchemaValidator();
+    }
+
+    protected function getCommand($location)
+    {
+        $command = new OperationCommand(array(), $this->getNestedCommand($location));
+        $command->setClient(new MockClient());
+
+        return $command;
+    }
+
+    protected function getNestedCommand($location)
+    {
+        return new Operation(array(
+            'httpMethod' => 'POST',
+            'parameters' => array(
+                'foo' => new Parameter(array(
+                    'type'         => 'object',
+                    'location'     => $location,
+                    'sentAs'       => 'Foo',
+                    'required'     => true,
+                    'properties'   => array(
+                        'test' => array(
+                            'type'      => 'object',
+                            'required'  => true,
+                            'properties' => array(
+                                'baz' => array(
+                                    'type'    => 'boolean',
+                                    'default' => true
+                                ),
+                                'jenga' => array(
+                                    'type'    => 'string',
+                                    'default' => 'hello',
+                                    'sentAs'  => 'Jenga_Yall!',
+                                    'filters' => array('strtoupper')
+                                )
+                            )
+                        ),
+                        'bar' => array('default' => 123)
+                    ),
+                    'additionalProperties' => array(
+                        'type' => 'string',
+                        'filters' => array('strtoupper'),
+                        'location' => $location
+                    )
+                )),
+                'arr' => new Parameter(array(
+                    'type'         => 'array',
+                    'location'     => $location,
+                    'items' => array(
+                        'type' => 'string',
+                        'filters' => array('strtoupper')
+                     )
+                )),
+            )
+        ));
+    }
+
+    protected function getCommandWithArrayParamAndFilters()
+    {
+        $operation = new Operation(array(
+            'httpMethod' => 'POST',
+            'parameters' => array(
+                'foo' => new Parameter(array(
+                    'type' => 'string',
+                    'location' => 'query',
+                    'sentAs' => 'Foo',
+                    'required' => true,
+                    'default' => 'bar',
+                    'filters' => array('strtoupper')
+                )),
+                'arr' => new Parameter(array(
+                    'type' => 'array',
+                    'location' => 'query',
+                    'sentAs' => 'Arr',
+                    'required' => true,
+                    'default' => array(123, 456, 789),
+                    'filters' => array(array('method' => 'implode', 'args' => array(',', '@value')))
+                ))
+            )
+        ));
+        $command = new OperationCommand(array(), $operation);
+        $command->setClient(new MockClient());
+
+        return $command;
+    }
+}

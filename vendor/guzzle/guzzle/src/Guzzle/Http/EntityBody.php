@@ -1,114 +1,201 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Http;
+
+use Guzzle\Common\Version;
+use Guzzle\Stream\Stream;
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Http\Mimetypes;
+
+/**
+ * Entity body used with an HTTP request or response
+ */
+class EntityBody extends Stream implements EntityBodyInterface
+{
+    /** @var bool Content-Encoding of the entity body if known */
+    protected $contentEncoding = false;
+
+    /** @var callable Method to invoke for rewinding a stream */
+    protected $rewindFunction;
+
+    /**
+     * Create a new EntityBody based on the input type
+     *
+     * @param resource|string|EntityBody $resource Entity body data
+     * @param int                        $size     Size of the data contained in the resource
+     *
+     * @return EntityBody
+     * @throws InvalidArgumentException if the $resource arg is not a resource or string
+     */
+    public static function factory($resource = '', $size = null)
+    {
+        if ($resource instanceof EntityBodyInterface) {
+            return $resource;
+        }
+
+        switch (gettype($resource)) {
+            case 'string':
+                return self::fromString($resource);
+            case 'resource':
+                return new static($resource, $size);
+            case 'object':
+                if (method_exists($resource, '__toString')) {
+                    return self::fromString((string) $resource);
+                }
+                break;
+            case 'array':
+                return self::fromString(http_build_query($resource));
+        }
+
+        throw new InvalidArgumentException('Invalid resource type');
+    }
+
+    public function setRewindFunction($callable)
+    {
+        if (!is_callable($callable)) {
+            throw new InvalidArgumentException('Must specify a callable');
+        }
+
+        $this->rewindFunction = $callable;
+
+        return $this;
+    }
+
+    public function rewind()
+    {
+        return $this->rewindFunction ? call_user_func($this->rewindFunction, $this) : parent::rewind();
+    }
+
+    /**
+     * Create a new EntityBody from a string
+     *
+     * @param string $string String of data
+     *
+     * @return EntityBody
+     */
+    public static function fromString($string)
+    {
+        $stream = fopen('php://temp', 'r+');
+        if ($string !== '') {
+            fwrite($stream, $string);
+            rewind($stream);
+        }
+
+        return new static($stream);
+    }
+
+    public function compress($filter = 'zlib.deflate')
+    {
+        $result = $this->handleCompression($filter);
+        $this->contentEncoding = $result ? $filter : false;
+
+        return $result;
+    }
+
+    public function uncompress($filter = 'zlib.inflate')
+    {
+        $offsetStart = 0;
+
+        // When inflating gzipped data, the first 10 bytes must be stripped
+        // if a gzip header is present
+        if ($filter == 'zlib.inflate') {
+            // @codeCoverageIgnoreStart
+            if (!$this->isReadable() || ($this->isConsumed() && !$this->isSeekable())) {
+                return false;
+            }
+            // @codeCoverageIgnoreEnd
+            if (stream_get_contents($this->stream, 3, 0) === "\x1f\x8b\x08") {
+                $offsetStart = 10;
+            }
+        }
+
+        $this->contentEncoding = false;
+
+        return $this->handleCompression($filter, $offsetStart);
+    }
+
+    public function getContentLength()
+    {
+        return $this->getSize();
+    }
+
+    public function getContentType()
+    {
+        return $this->getUri() ? Mimetypes::getInstance()->fromFilename($this->getUri()) : null;
+    }
+
+    public function getContentMd5($rawOutput = false, $base64Encode = false)
+    {
+        if ($hash = self::getHash($this, 'md5', $rawOutput)) {
+            return $hash && $base64Encode ? base64_encode($hash) : $hash;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Calculate the MD5 hash of an entity body
+     *
+     * @param EntityBodyInterface $body         Entity body to calculate the hash for
+     * @param bool                $rawOutput    Whether or not to use raw output
+     * @param bool                $base64Encode Whether or not to base64 encode raw output (only if raw output is true)
+     *
+     * @return bool|string Returns an MD5 string on success or FALSE on failure
+     * @deprecated This will be deprecated soon
+     * @codeCoverageIgnore
+     */
+    public static function calculateMd5(EntityBodyInterface $body, $rawOutput = false, $base64Encode = false)
+    {
+        Version::warn(__CLASS__ . ' is deprecated. Use getContentMd5()');
+        return $body->getContentMd5($rawOutput, $base64Encode);
+    }
+
+    public function setStreamFilterContentEncoding($streamFilterContentEncoding)
+    {
+        $this->contentEncoding = $streamFilterContentEncoding;
+
+        return $this;
+    }
+
+    public function getContentEncoding()
+    {
+        return strtr($this->contentEncoding, array(
+            'zlib.deflate' => 'gzip',
+            'bzip2.compress' => 'compress'
+        )) ?: false;
+    }
+
+    protected function handleCompression($filter, $offsetStart = 0)
+    {
+        // @codeCoverageIgnoreStart
+        if (!$this->isReadable() || ($this->isConsumed() && !$this->isSeekable())) {
+            return false;
+        }
+        // @codeCoverageIgnoreEnd
+
+        $handle = fopen('php://temp', 'r+');
+        $filter = @stream_filter_append($handle, $filter, STREAM_FILTER_WRITE);
+        if (!$filter) {
+            return false;
+        }
+
+        // Seek to the offset start if possible
+        $this->seek($offsetStart);
+        while ($data = fread($this->stream, 8096)) {
+            fwrite($handle, $data);
+        }
+
+        fclose($this->stream);
+        $this->stream = $handle;
+        stream_filter_remove($filter);
+        $stat = fstat($this->stream);
+        $this->size = $stat['size'];
+        $this->rebuildCache();
+        $this->seek(0);
+
+        // Remove any existing rewind function as the underlying stream has been replaced
+        $this->rewindFunction = null;
+
+        return true;
+    }
+}

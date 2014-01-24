@@ -1,52 +1,116 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-3bi=
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+//require 'Yay/Matcher.php';
+
+/**
+ * Compares values for value and type.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_Matchers_IdenticalMatcher implements Yay_Matcher
+{
+  
+  /**
+   * The expected value.
+   * @var mixed
+   * @access protected
+   */
+  protected $_expected;
+  
+  /**
+   * The expected return value.
+   * @var boolean
+   * @access protected
+   */
+  protected $_result;
+  
+  /**
+   * Create a new IdenticalMatcher expecting $expected.
+   * @param mixed $expected
+   * @param boolean $result to be expected
+   */
+  public function __construct($expected, $result = true)
+  {
+    $this->_expected = $expected;
+    $this->_result = $result;
+  }
+  
+  /**
+   * Compare $value with the expected value and return true if it matches in
+   * type and in value.
+   * @param mixed $value
+   * @return boolean
+   */
+  public function matches(&$value)
+  {
+    $return = (($this->_expected === $value) && ($value === $this->_expected));
+    return (($this->_result && $return) || (!$this->_result && !$return));
+  }
+  
+  /**
+   * Returns true if the argument doesn't need to be present.
+   * @return boolean
+   */
+  public function isOptional()
+  {
+    return false;
+  }
+  
+  /**
+   * Writes the match description as a string following $format.
+   * $format is a sprintf() string with %s, $s as $matcherName, $value respectively.
+   * @param string $format
+   * @return string
+   */
+  public function describeMatch($format)
+  {
+    $description = '';
+    $value = $this->_expected;
+    if (is_int($value))
+    {
+      $description = sprintf($format, 'int', $value);
+    }
+    elseif (is_float($value))
+    {
+      $description = sprintf($format, 'float', preg_replace('/^(.{8}).+/', '$1..', $value));
+    }
+    elseif (is_numeric($value))
+    {
+      $description = sprintf($format, 'number', preg_replace('/^(.{8}).+/', '$1..', $value));
+    }
+    elseif (is_string($value))
+    {
+      $description = sprintf($format, 'string', preg_replace('/^(.{8}).+/', '$1..', $value));
+    }
+    elseif (is_object($value))
+    {
+      $description = sprintf($format, 'object', get_class($value));
+    }
+    elseif (is_array($value))
+    {
+      $description = sprintf($format, 'array', count($value) . ' items');
+    }
+    else
+    {
+      $description = sprintf($format, gettype($value), preg_replace('/^(.{8}).+/', '$1..', (string) $value));
+    }
+    return $description;
+  }
+  
+}

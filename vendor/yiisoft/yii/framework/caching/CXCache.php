@@ -1,53 +1,103 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CXCache class file
+ *
+ * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CXCache implements a cache application module based on {@link http://xcache.lighttpd.net/ xcache}.
+ *
+ * To use this application component, the XCache PHP extension must be loaded.
+ * Flush functionality will only work correctly if "xcache.admin.enable_auth" is set to "Off" in php.ini.
+ *
+ * See {@link CCache} manual for common cache operations that are supported by CXCache.
+ *
+ * @author Wei Zhuo <weizhuo[at]gmail[dot]com>
+ * @package system.caching
+ */
+class CXCache extends CCache
+{
+	/**
+	 * Initializes this application component.
+	 * This method is required by the {@link IApplicationComponent} interface.
+	 * It checks the availability of memcache.
+	 * @throws CException if memcache extension is not loaded or is disabled.
+	 */
+	public function init()
+	{
+		parent::init();
+		if(!function_exists('xcache_isset'))
+			throw new CException(Yii::t('yii','CXCache requires PHP XCache extension to be loaded.'));
+	}
+
+	/**
+	 * Retrieves a value from cache with a specified key.
+	 * This is the implementation of the method declared in the parent class.
+	 * @param string $key a unique key identifying the cached value
+	 * @return string|boolean the value stored in cache, false if the value is not in the cache or expired.
+	 */
+	protected function getValue($key)
+	{
+		return xcache_isset($key) ? xcache_get($key) : false;
+	}
+
+	/**
+	 * Stores a value identified by a key in cache.
+	 * This is the implementation of the method declared in the parent class.
+	 *
+	 * @param string $key the key identifying the value to be cached
+	 * @param string $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	protected function setValue($key,$value,$expire)
+	{
+		return xcache_set($key,$value,$expire);
+	}
+
+	/**
+	 * Stores a value identified by a key into cache if the cache does not contain this key.
+	 * This is the implementation of the method declared in the parent class.
+	 *
+	 * @param string $key the key identifying the value to be cached
+	 * @param string $value the value to be cached
+	 * @param integer $expire the number of seconds in which the cached value will expire. 0 means never expire.
+	 * @return boolean true if the value is successfully stored into cache, false otherwise
+	 */
+	protected function addValue($key,$value,$expire)
+	{
+		return !xcache_isset($key) ? $this->setValue($key,$value,$expire) : false;
+	}
+
+	/**
+	 * Deletes a value with the specified key from cache
+	 * This is the implementation of the method declared in the parent class.
+	 * @param string $key the key of the value to be deleted
+	 * @return boolean if no error happens during deletion
+	 */
+	protected function deleteValue($key)
+	{
+		return xcache_unset($key);
+	}
+
+	/**
+	 * Deletes all values from cache.
+	 * This is the implementation of the method declared in the parent class.
+	 * @return boolean whether the flush operation was successful.
+	 * @since 1.1.5
+	 */
+	protected function flushValues()
+	{
+		for($i=0, $max=xcache_count(XC_TYPE_VAR); $i<$max; $i++)
+		{
+			if(xcache_clear_cache(XC_TYPE_VAR, $i)===false)
+				return false;
+		}
+		return true;
+	}
+}
+

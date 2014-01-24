@@ -1,52 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPx0rvVbo6Dx+7uPmsluayFSebbD5O7OfoCvxyC/SG6xvH8mZ3xLUafxGlAzxfldqrfbDe8JA
-MrLa+gGAzqVJdflkEkc9SDKQpoaZuWOXUv3tw6iDIKwuacbRI6qWrRwR6dlRVfjfu4il1n2RSNDV
-MLsQXv1WEjPXFH4v2/I6yTng1+kwBgsGMZHi1t1hOtP3l6l6tHABXZ0XdmrnZAhhdyT6hOsg3WR8
-NRAXnu/nA4MgPpW0nwFwJgzHAE4xzt2gh9fl143SQNHOPGqQmWIXoPBPCfrGDWQ/RmUp4YNz3wgN
-Z/yIJBNEge9zC0TfXvzjecc9w6eaHW/15Fro2O4lfu6wyv/elmGBejf8gn+G5fdCVMw2CM6EzYv8
-UGlwTuzXBYN3gWs2BDTt+Jj2yIjEEDQI16D06GUCvlsp+T49LiM89IZvDOe0OnZaOeVD+322daCX
-AHOap+QPpqUyZy1HxKdo3y5KGUi39aYHItEFHE8ShjShmOEH96aZtb4NE5YebQn6kos7RZIt5vzR
-xFi+rT1SPW4mSncn7X3Mjz0YAWzzSbejCHlNfU69Nf4q0n2FU2ZhbdEilxf8kbZnOxwJYjBGPnLu
-c8Z5nhzXuwadmRhxr2i8HcTLj/+Iqj5jQEdh8j52/uial3rRAlHlUv9+ZSZV6cMIts4Y3nilrWpX
-E3Pobg5aZn/xIhll+d2EBKI2MNMJKEp1uScnhHMzvZQVXJOB4mY2ZQGjkqqSrASr8j1Q1YrtMZcS
-qked7auG3ewtbhIK3fkNBEGmyv4JJEWPL6qJkGHc8RLVH/nMcQrsnFs3BZdgRA6BeMIGstbRIUhA
-cQRdwAshUk7KYFh1b1IXErjslZY7+rFmGjggqrS8rC0Vjgnwd5RaMAQ9L5hUEaADaAESuME7560Q
-qK3dO0oeCsE1nPF5TGsShh3aRAag5EoqK6BZRepIUQSDBD66j21Xv86FRwPgqH9IpOx27RblSqMq
-I5h/jsar/ihOGilLErLfcvOzD8vBcoI93oBgKPGk0XmmV5RikpcCveJVNn3s2e5ML7Iycq4m3vEx
-S4f51usblf1gL3S7UnyR6rbgB1B5+lmqLie47fw+irae1QLhIAULQuh5iVbjc48tgzYbi1gR3JG+
-jO5BZNLD4LC8mktzO3wDDN6YN/7bM6O3+AdwonreuaZQDZbOYjnUAG2nDTX/5FNOX+oOVzZpNwd0
-euNMAvbmFOil/T5AHp+eEx9scZ1KphmW/Odu2nPy9qrkeK6cBM4jOgCvGQ6+iGMvyHG28HABE96Q
-Hkt94QZpjnWkL9B7E8IgLcLOKGNsLxWrsRZA2b0BSV/dZUkoU8qhWS4DBFXyM21XjaMeDneOBTto
-YE91wcJUkSS5AqT+TS382OGXEA/mSMVT2Th66K29cd+kKonv1ClqxxEUeiNdx3MfbZjUoz0Kb97S
-NCWr1zaYtHYgfypSXnP6Zyh4NHFVavWZZCIW3VChAGubrM3vsDeSKbsCZzDliN9R6Co/3lEBP6d0
-VQBlbmbo1zsUaWeoPlyka6WMB76BxUHVfFcY0UG+/rADx+BWIJOHq5DmEPPqluuIupHDGMFCXce1
-s2BtLgzTFd0LSyqFDguCH12TliPABLMXhJi9YpHZeWW19ToIheKYe5mC/kmQvAT7T6AyBBpWAAR2
-mQHrlurN2Tj3g7WdPFLhkuDBy80AePb6lKdV1ex9nREgonL55eSswvJj79X84C4WoHBY397HVI8k
-xshGVBProeIMEueoW3zbKvc9s0EZ82LShSw5WH1Zlg8Kz+bXcPUBlE6JJnlSIiR2QaJiylUlwQlJ
-A4vG32G9w4ikko6bmpG9gpiTyLfefXZZZawbeH4aEMWowEfIp+nelh8lq3VzrenkT2xQQMtQ5TNi
-MjEqhbbcZHrx+0WiqDjVrpQ/pbBEuGZcbT9SFnVJZVKb6bAoARuMUNO8KikllhSEyu5P8Dvauv9w
-51UScB6t+X51RkpqTwbBSHAusVMjFhpj4DGVjgykDUl2k6pSxoODebWC6O6H0ZdxP9r4L/td9y93
-XyH1xz+koRYpXQqVkHbHFlXsctfZol0EPjouaGdw2MyVOwdaT8ASBTbcZYtQ+7EoVzvjSRx6S9ZE
-u51Ub+fxl/lzwRuQBLsNGcU1j6nSSw1EB4c7690ng0CCc2P1DhxM8BPxUQQ+hx18I1zKExQ0UrLI
-PssOX6UuL5xPg8Em27qWdJQYavVjES2v5FgUw0Db/YZzgxk9u3YkJNBDCTpvECLG/T7/cNJL8TOZ
-eyqe+6q5c0n2mtOX1cPc7lx4AwY7nGc/eitNJenOHIABJnvqvlfKDVOXV2jCNSNYQxvAXcnXh2fo
-cPiDieaPILgCRsNZz4vESo+ZfB8J6tLLQBPoEfqHKUscBSl47L/D4jfR/XSN+w3/T9V7csGh2yuC
-9Sn2lv3dTGnhdd37eRkvhqVpufdKkQi/LwCeojD4GSaCpZZfNxX6WPSPwYrHP3zD209DEY5Jvuzd
-5vdFfj/fkWe5RLLtvIcJwXdALDxt3RamGM26vPJ7xoY1PuT7xYvGdTify65TbK7rHqskCPMAvyW8
-Fw547ESzyKRfp6o5bMnD0uOwWP8vXwvyn9RFACw3WN9EG1QgCZeKExyfurNKKvhVbE+3o5IWovIV
-IpO4tMPTXabbK1MmgprMFnEvvASl9RbXx89ZbFJgOMnMb4xr7s3YvsTL/xK5X5zGTBM1wPt2sPfx
-zoxMoYsu0oI0gyogpda19TllZkJoyybs10h4KC2F9WBLgAwif5GxI5CNZzIVsHFHppdIXEe1IKHA
-59jeJVkvzG5NcTEfy/H/AQCJoVpkEQHlD48recWCoGoIsLODKh8bZwbpsNsPmgNkH8iMd+KizZfi
-/SbZk0m91Pb6pHPhRILtcgj6y3qSZYy+rKvKghgBtVp3+otrdgEQKIdMmvuv887JLc5mm1aLCrRS
-AEzmZdfyHF3CikHuodXDCEHhwdhb8XOZXzvHhqCpGvrZ9aNX29ntNRtPgCHko1zkgQPvZuE3bUBC
-QPyDozWKN7PiJzNL1YqXjph8jhCC1pJgk2gjpuWN5uuaBh+ILkC/1anptihA7qmnZImEtLDxhcyf
-+44nhO+cPYyRYa3TJGhvFcLdDVHgJ8WeeVS0rwBDkV2lJC4+h8UsYYaSmUjd/FSb3TqSyI5MTWjb
-ksb+jcPfk3ZLZU4hPMzfBhyU8rkgP5qL9B47K6enSVf1nUvETJl3EtSrEthROeWL640xExyJjvWn
-nQI87dFSBnftB0EB3BxheB4k5AmDKblf5LVt/+/VmE1btaS/JecLYIufSc/bDbWVxhuBfF96q9Lc
-2DX1O0iu9xbHfmQRsUjq2shYis1EbyDuQ4DHLbo+Gk73AKdPWzA7WMKjxrs35y7f/Jq2n7mD7fa4
-a3g0Wn0KXFsoina+cJzuvJirj5dA7Y8h1UwMxAoysT7hW2AkS9arEVmxUfZuJW/OVkGoCCAlF/NO
-5YAxYrviENZAW8iYsBxqNvNRuOfprZq/ItnZdKkd+MkXMz/nurhGrihG1+Mldz00A+qBgkXLzXa0
-5GmWT4E1CGpyQerJusVSMdgPt2Bcx2qNGIFDX0xiGKag7bSfBpTGqhm7Jf1F6TnrxwfioL+iKL9p
-ENNWQmH2AKa8Bvkgbmmv7Vcvcvphy8iZ9fvj44n/6ETCBgvM8hztGYeH6uKtfSBgBGa=
+<?php
+namespace Codeception\Util\Connector;
+
+use Symfony\Component\BrowserKit\Request;
+use Symfony\Component\BrowserKit\Response;
+
+class ZF1 extends \Symfony\Component\BrowserKit\Client
+{
+
+    /**
+     * @var \Zend_Controller_Front
+     */
+    protected $front;
+
+
+    /**
+     * @var \Zend_Application
+     */
+    protected $bootstrap;
+
+    /**
+     * @var  \Zend_Controller_Request_HttpTestCase
+     */
+    protected $zendRequest;
+
+    public function setBootstrap($bootstrap) {
+        $this->bootstrap = $bootstrap;
+
+        $this->front = $this->bootstrap->getBootstrap()->getResource('frontcontroller');
+        $this->front
+            ->throwExceptions(true)
+            ->returnResponse(false);
+    }
+
+    public function doRequest($request) {
+
+        // redirector should not exit
+        $redirector = \Zend_Controller_Action_HelperBroker::getStaticHelper('redirector');
+        $redirector->setExit(false);
+
+        // json helper should not exit
+        $json = \Zend_Controller_Action_HelperBroker::getStaticHelper('json');
+        $json->suppressExit = true;
+
+        $zendRequest = new \Zend_Controller_Request_HttpTestCase();
+        $zendRequest->setMethod($request->getMethod());
+        $zendRequest->setCookies($request->getCookies());
+        $zendRequest->setParams($request->getParameters());
+        $zendRequest->setRequestUri(str_replace('http://localhost','',$request->getUri()));
+        $zendRequest->setHeaders($request->getServer());
+        $_FILES = $request->getFiles();
+        $_SERVER = array_merge($_SERVER, $request->getServer());
+
+        $zendResponse = new \Zend_Controller_Response_HttpTestCase;
+        $this->front->setRequest($zendRequest)->setResponse($zendResponse);
+
+        ob_start();
+        $this->bootstrap->run();
+        ob_end_clean();
+
+        $this->zendRequest = $zendRequest;
+
+        $response = new Response($zendResponse->getBody(), $zendResponse->getHttpResponseCode(), $zendResponse->getHeaders());
+        return $response;
+    }
+    /**
+     * @return \Zend_Controller_Request_HttpTestCase
+     */
+    public function getZendRequest() {
+        return $this->zendRequest;
+    }
+
+
+
+
+}

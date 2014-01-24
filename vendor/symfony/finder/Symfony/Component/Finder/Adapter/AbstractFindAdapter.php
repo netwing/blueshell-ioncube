@@ -1,187 +1,327 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-CvjoEVP9gokbZcENe9erQaLsgoJmRz0=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Adapter;
+
+use Symfony\Component\Finder\Exception\AccessDeniedException;
+use Symfony\Component\Finder\Iterator;
+use Symfony\Component\Finder\Shell\Shell;
+use Symfony\Component\Finder\Expression\Expression;
+use Symfony\Component\Finder\Shell\Command;
+use Symfony\Component\Finder\Iterator\SortableIterator;
+use Symfony\Component\Finder\Comparator\NumberComparator;
+use Symfony\Component\Finder\Comparator\DateComparator;
+
+/**
+ * Shell engine implementation using GNU find command.
+ *
+ * @author Jean-François Simon <contact@jfsimon.fr>
+ */
+abstract class AbstractFindAdapter extends AbstractAdapter
+{
+    /**
+     * @var Shell
+     */
+    protected $shell;
+
+    /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        $this->shell = new Shell();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function searchInDirectory($dir)
+    {
+        // having "/../" in path make find fail
+        $dir = realpath($dir);
+
+        // searching directories containing or not containing strings leads to no result
+        if (Iterator\FileTypeFilterIterator::ONLY_DIRECTORIES === $this->mode && ($this->contains || $this->notContains)) {
+            return new Iterator\FilePathsIterator(array(), $dir);
+        }
+
+        $command = Command::create();
+        $find = $this->buildFindCommand($command, $dir);
+
+        if ($this->followLinks) {
+            $find->add('-follow');
+        }
+
+        $find->add('-mindepth')->add($this->minDepth + 1);
+
+        if (PHP_INT_MAX !== $this->maxDepth) {
+            $find->add('-maxdepth')->add($this->maxDepth + 1);
+        }
+
+        if (Iterator\FileTypeFilterIterator::ONLY_DIRECTORIES === $this->mode) {
+            $find->add('-type d');
+        } elseif (Iterator\FileTypeFilterIterator::ONLY_FILES === $this->mode) {
+            $find->add('-type f');
+        }
+
+        $this->buildNamesFiltering($find, $this->names);
+        $this->buildNamesFiltering($find, $this->notNames, true);
+        $this->buildPathsFiltering($find, $dir, $this->paths);
+        $this->buildPathsFiltering($find, $dir, $this->notPaths, true);
+        $this->buildSizesFiltering($find, $this->sizes);
+        $this->buildDatesFiltering($find, $this->dates);
+
+        $useGrep = $this->shell->testCommand('grep') && $this->shell->testCommand('xargs');
+        $useSort = is_int($this->sort) && $this->shell->testCommand('sort') && $this->shell->testCommand('cut');
+
+        if ($useGrep && ($this->contains || $this->notContains)) {
+            $grep = $command->ins('grep');
+            $this->buildContentFiltering($grep, $this->contains);
+            $this->buildContentFiltering($grep, $this->notContains, true);
+        }
+
+        if ($useSort) {
+            $this->buildSorting($command, $this->sort);
+        }
+
+        $command->setErrorHandler(
+            $this->ignoreUnreadableDirs
+                // If directory is unreadable and finder is set to ignore it, `stderr` is ignored.
+                ? function ($stderr) { return; }
+                : function ($stderr) { throw new AccessDeniedException($stderr); }
+        );
+
+        $paths = $this->shell->testCommand('uniq') ? $command->add('| uniq')->execute() : array_unique($command->execute());
+        $iterator = new Iterator\FilePathsIterator($paths, $dir);
+
+        if ($this->exclude) {
+            $iterator = new Iterator\ExcludeDirectoryFilterIterator($iterator, $this->exclude);
+        }
+
+        if (!$useGrep && ($this->contains || $this->notContains)) {
+            $iterator = new Iterator\FilecontentFilterIterator($iterator, $this->contains, $this->notContains);
+        }
+
+        if ($this->filters) {
+            $iterator = new Iterator\CustomFilterIterator($iterator, $this->filters);
+        }
+
+        if (!$useSort && $this->sort) {
+            $iteratorAggregate = new Iterator\SortableIterator($iterator, $this->sort);
+            $iterator = $iteratorAggregate->getIterator();
+        }
+
+        return $iterator;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function canBeUsed()
+    {
+        return $this->shell->testCommand('find');
+    }
+
+    /**
+     * @param Command $command
+     * @param string  $dir
+     *
+     * @return Command
+     */
+    protected function buildFindCommand(Command $command, $dir)
+    {
+        return $command
+            ->ins('find')
+            ->add('find ')
+            ->arg($dir)
+            ->add('-noleaf'); // the -noleaf option is required for filesystems that don't follow the '.' and '..' conventions
+    }
+
+    /**
+     * @param Command  $command
+     * @param string[] $names
+     * @param Boolean  $not
+     */
+    private function buildNamesFiltering(Command $command, array $names, $not = false)
+    {
+        if (0 === count($names)) {
+            return;
+        }
+
+        $command->add($not ? '-not' : null)->cmd('(');
+
+        foreach ($names as $i => $name) {
+            $expr = Expression::create($name);
+
+            // Find does not support expandable globs ("*.{a,b}" syntax).
+            if ($expr->isGlob() && $expr->getGlob()->isExpandable()) {
+                $expr = Expression::create($expr->getGlob()->toRegex(false));
+            }
+
+            // Fixes 'not search' and 'full path matching' regex problems.
+            // - Jokers '.' are replaced by [^/].
+            // - We add '[^/]*' before and after regex (if no ^|$ flags are present).
+            if ($expr->isRegex()) {
+                $regex = $expr->getRegex();
+                $regex->prepend($regex->hasStartFlag() ? '/' : '/[^/]*')
+                    ->setStartFlag(false)
+                    ->setStartJoker(true)
+                    ->replaceJokers('[^/]');
+                if (!$regex->hasEndFlag() || $regex->hasEndJoker()) {
+                    $regex->setEndJoker(false)->append('[^/]*');
+                }
+            }
+
+            $command
+                ->add($i > 0 ? '-or' : null)
+                ->add($expr->isRegex()
+                    ? ($expr->isCaseSensitive() ? '-regex' : '-iregex')
+                    : ($expr->isCaseSensitive() ? '-name' : '-iname')
+                )
+                ->arg($expr->renderPattern());
+        }
+
+        $command->cmd(')');
+    }
+
+    /**
+     * @param Command  $command
+     * @param string   $dir
+     * @param string[] $paths
+     * @param Boolean  $not
+     */
+    private function buildPathsFiltering(Command $command, $dir, array $paths, $not = false)
+    {
+        if (0 === count($paths)) {
+            return;
+        }
+
+        $command->add($not ? '-not' : null)->cmd('(');
+
+        foreach ($paths as $i => $path) {
+            $expr = Expression::create($path);
+
+            // Find does not support expandable globs ("*.{a,b}" syntax).
+            if ($expr->isGlob() && $expr->getGlob()->isExpandable()) {
+                $expr = Expression::create($expr->getGlob()->toRegex(false));
+            }
+
+            // Fixes 'not search' regex problems.
+            if ($expr->isRegex()) {
+                $regex = $expr->getRegex();
+                $regex->prepend($regex->hasStartFlag() ? $dir.DIRECTORY_SEPARATOR : '.*')->setEndJoker(!$regex->hasEndFlag());
+            } else {
+                $expr->prepend('*')->append('*');
+            }
+
+            $command
+                ->add($i > 0 ? '-or' : null)
+                ->add($expr->isRegex()
+                    ? ($expr->isCaseSensitive() ? '-regex' : '-iregex')
+                    : ($expr->isCaseSensitive() ? '-path' : '-ipath')
+                )
+                ->arg($expr->renderPattern());
+        }
+
+        $command->cmd(')');
+    }
+
+    /**
+     * @param Command            $command
+     * @param NumberComparator[] $sizes
+     */
+    private function buildSizesFiltering(Command $command, array $sizes)
+    {
+        foreach ($sizes as $i => $size) {
+            $command->add($i > 0 ? '-and' : null);
+
+            switch ($size->getOperator()) {
+                case '<=':
+                    $command->add('-size -'.($size->getTarget() + 1).'c');
+                    break;
+                case '>=':
+                    $command->add('-size +'. ($size->getTarget() - 1).'c');
+                    break;
+                case '>':
+                    $command->add('-size +'.$size->getTarget().'c');
+                    break;
+                case '!=':
+                    $command->add('-size -'.$size->getTarget().'c');
+                    $command->add('-size +'.$size->getTarget().'c');
+                case '<':
+                default:
+                    $command->add('-size -'.$size->getTarget().'c');
+            }
+        }
+    }
+
+    /**
+     * @param Command          $command
+     * @param DateComparator[] $dates
+     */
+    private function buildDatesFiltering(Command $command, array $dates)
+    {
+        foreach ($dates as $i => $date) {
+            $command->add($i > 0 ? '-and' : null);
+
+            $mins = (int) round((time()-$date->getTarget()) / 60);
+
+            if (0 > $mins) {
+                // mtime is in the future
+                $command->add(' -mmin -0');
+                // we will have no result so we don't need to continue
+                return;
+            }
+
+            switch ($date->getOperator()) {
+                case '<=':
+                    $command->add('-mmin +'.($mins - 1));
+                    break;
+                case '>=':
+                    $command->add('-mmin -'.($mins + 1));
+                    break;
+                case '>':
+                    $command->add('-mmin -'.$mins);
+                    break;
+                case '!=':
+                    $command->add('-mmin +'.$mins.' -or -mmin -'.$mins);
+                    break;
+                case '<':
+                default:
+                    $command->add('-mmin +'.$mins);
+            }
+        }
+    }
+
+    /**
+     * @param Command $command
+     * @param string  $sort
+     *
+     * @throws \InvalidArgumentException
+     */
+    private function buildSorting(Command $command, $sort)
+    {
+        $this->buildFormatSorting($command, $sort);
+    }
+
+    /**
+     * @param Command $command
+     * @param string  $sort
+     */
+    abstract protected function buildFormatSorting(Command $command, $sort);
+
+    /**
+     * @param Command $command
+     * @param array   $contains
+     * @param Boolean $not
+     */
+    abstract protected function buildContentFiltering(Command $command, array $contains, $not = false);
+}

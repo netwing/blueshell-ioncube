@@ -1,366 +1,821 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CWebUser class file
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CWebUser represents the persistent state for a Web application user.
+ *
+ * CWebUser is used as an application component whose ID is 'user'.
+ * Therefore, at any place one can access the user state via
+ * <code>Yii::app()->user</code>.
+ *
+ * CWebUser should be used together with an {@link IUserIdentity identity}
+ * which implements the actual authentication algorithm.
+ *
+ * A typical authentication process using CWebUser is as follows:
+ * <ol>
+ * <li>The user provides information needed for authentication.</li>
+ * <li>An {@link IUserIdentity identity instance} is created with the user-provided information.</li>
+ * <li>Call {@link IUserIdentity::authenticate} to check if the identity is valid.</li>
+ * <li>If valid, call {@link CWebUser::login} to login the user, and
+ *     Redirect the user browser to {@link returnUrl}.</li>
+ * <li>If not valid, retrieve the error code or message from the identity
+ * instance and display it.</li>
+ * </ol>
+ *
+ * The property {@link id} and {@link name} are both identifiers
+ * for the user. The former is mainly used internally (e.g. primary key), while
+ * the latter is for display purpose (e.g. username). The {@link id} property
+ * is a unique identifier for a user that is persistent
+ * during the whole user session. It can be a username, or something else,
+ * depending on the implementation of the {@link IUserIdentity identity class}.
+ *
+ * Both {@link id} and {@link name} are persistent during the user session.
+ * Besides, an identity may have additional persistent data which can
+ * be accessed by calling {@link getState}.
+ * Note, when {@link allowAutoLogin cookie-based authentication} is enabled,
+ * all these persistent data will be stored in cookie. Therefore, do not
+ * store password or other sensitive data in the persistent storage. Instead,
+ * you should store them directly in session on the server side if needed.
+ *
+ * @property boolean $isGuest Whether the current application user is a guest.
+ * @property mixed $id The unique identifier for the user. If null, it means the user is a guest.
+ * @property string $name The user name. If the user is not logged in, this will be {@link guestName}.
+ * @property string $returnUrl The URL that the user should be redirected to after login.
+ * @property string $stateKeyPrefix A prefix for the name of the session variables storing user session data.
+ * @property array $flashes Flash messages (key => message).
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.auth
+ * @since 1.0
+ */
+class CWebUser extends CApplicationComponent implements IWebUser
+{
+	const FLASH_KEY_PREFIX='Yii.CWebUser.flash.';
+	const FLASH_COUNTERS='Yii.CWebUser.flashcounters';
+	const STATES_VAR='__states';
+	const AUTH_TIMEOUT_VAR='__timeout';
+	const AUTH_ABSOLUTE_TIMEOUT_VAR='__absolute_timeout';
+
+	/**
+	 * @var boolean whether to enable cookie-based login. Defaults to false.
+	 */
+	public $allowAutoLogin=false;
+	/**
+	 * @var string the name for a guest user. Defaults to 'Guest'.
+	 * This is used by {@link getName} when the current user is a guest (not authenticated).
+	 */
+	public $guestName='Guest';
+	/**
+	 * @var string|array the URL for login. If using array, the first element should be
+	 * the route to the login action, and the rest name-value pairs are GET parameters
+	 * to construct the login URL (e.g. array('/site/login')). If this property is null,
+	 * a 403 HTTP exception will be raised instead.
+	 * @see CController::createUrl
+	 */
+	public $loginUrl=array('/site/login');
+	/**
+	 * @var array the property values (in name-value pairs) used to initialize the identity cookie.
+	 * Any property of {@link CHttpCookie} may be initialized.
+	 * This property is effective only when {@link allowAutoLogin} is true.
+	 */
+	public $identityCookie;
+	/**
+	 * @var integer timeout in seconds after which user is logged out if inactive.
+	 * If this property is not set, the user will be logged out after the current session expires
+	 * (c.f. {@link CHttpSession::timeout}).
+	 * @since 1.1.7
+	 */
+	public $authTimeout;
+	/**
+	 * @var integer timeout in seconds after which user is logged out regardless of activity.
+	 * @since 1.1.14
+	 */
+	public $absoluteAuthTimeout;
+	/**
+	 * @var boolean whether to automatically renew the identity cookie each time a page is requested.
+	 * Defaults to false. This property is effective only when {@link allowAutoLogin} is true.
+	 * When this is false, the identity cookie will expire after the specified duration since the user
+	 * is initially logged in. When this is true, the identity cookie will expire after the specified duration
+	 * since the user visits the site the last time.
+	 * @see allowAutoLogin
+	 * @since 1.1.0
+	 */
+	public $autoRenewCookie=false;
+	/**
+	 * @var boolean whether to automatically update the validity of flash messages.
+	 * Defaults to true, meaning flash messages will be valid only in the current and the next requests.
+	 * If this is set false, you will be responsible for ensuring a flash message is deleted after usage.
+	 * (This can be achieved by calling {@link getFlash} with the 3rd parameter being true).
+	 * @since 1.1.7
+	 */
+	public $autoUpdateFlash=true;
+	/**
+	 * @var string value that will be echoed in case that user session has expired during an ajax call.
+	 * When a request is made and user session has expired, {@link loginRequired} redirects to {@link loginUrl} for login.
+	 * If that happens during an ajax call, the complete HTML login page is returned as the result of that ajax call. That could be
+	 * a problem if the ajax call expects the result to be a json array or a predefined string, as the login page is ignored in that case.
+	 * To solve this, set this property to the desired return value.
+	 *
+	 * If this property is set, this value will be returned as the result of the ajax call in case that the user session has expired.
+	 * @since 1.1.9
+	 * @see loginRequired
+	 */
+	public $loginRequiredAjaxResponse;
+
+	private $_keyPrefix;
+	private $_access=array();
+
+	/**
+	 * PHP magic method.
+	 * This method is overriden so that persistent states can be accessed like properties.
+	 * @param string $name property name
+	 * @return mixed property value
+	 */
+	public function __get($name)
+	{
+		if($this->hasState($name))
+			return $this->getState($name);
+		else
+			return parent::__get($name);
+	}
+
+	/**
+	 * PHP magic method.
+	 * This method is overriden so that persistent states can be set like properties.
+	 * @param string $name property name
+	 * @param mixed $value property value
+	 */
+	public function __set($name,$value)
+	{
+		if($this->hasState($name))
+			$this->setState($name,$value);
+		else
+			parent::__set($name,$value);
+	}
+
+	/**
+	 * PHP magic method.
+	 * This method is overriden so that persistent states can also be checked for null value.
+	 * @param string $name property name
+	 * @return boolean
+	 */
+	public function __isset($name)
+	{
+		if($this->hasState($name))
+			return $this->getState($name)!==null;
+		else
+			return parent::__isset($name);
+	}
+
+	/**
+	 * PHP magic method.
+	 * This method is overriden so that persistent states can also be unset.
+	 * @param string $name property name
+	 * @throws CException if the property is read only.
+	 */
+	public function __unset($name)
+	{
+		if($this->hasState($name))
+			$this->setState($name,null);
+		else
+			parent::__unset($name);
+	}
+
+	/**
+	 * Initializes the application component.
+	 * This method overrides the parent implementation by starting session,
+	 * performing cookie-based authentication if enabled, and updating the flash variables.
+	 */
+	public function init()
+	{
+		parent::init();
+		Yii::app()->getSession()->open();
+		if($this->getIsGuest() && $this->allowAutoLogin)
+			$this->restoreFromCookie();
+		elseif($this->autoRenewCookie && $this->allowAutoLogin)
+			$this->renewCookie();
+		if($this->autoUpdateFlash)
+			$this->updateFlash();
+
+		$this->updateAuthStatus();
+	}
+
+	/**
+	 * Logs in a user.
+	 *
+	 * The user identity information will be saved in storage that is
+	 * persistent during the user session. By default, the storage is simply
+	 * the session storage. If the duration parameter is greater than 0,
+	 * a cookie will be sent to prepare for cookie-based login in future.
+	 *
+	 * Note, you have to set {@link allowAutoLogin} to true
+	 * if you want to allow user to be authenticated based on the cookie information.
+	 *
+	 * @param IUserIdentity $identity the user identity (which should already be authenticated)
+	 * @param integer $duration number of seconds that the user can remain in logged-in status. Defaults to 0, meaning login till the user closes the browser.
+	 * If greater than 0, cookie-based login will be used. In this case, {@link allowAutoLogin}
+	 * must be set true, otherwise an exception will be thrown.
+	 * @return boolean whether the user is logged in
+	 */
+	public function login($identity,$duration=0)
+	{
+		$id=$identity->getId();
+		$states=$identity->getPersistentStates();
+		if($this->beforeLogin($id,$states,false))
+		{
+			$this->changeIdentity($id,$identity->getName(),$states);
+
+			if($duration>0)
+			{
+				if($this->allowAutoLogin)
+					$this->saveToCookie($duration);
+				else
+					throw new CException(Yii::t('yii','{class}.allowAutoLogin must be set true in order to use cookie-based authentication.',
+						array('{class}'=>get_class($this))));
+			}
+
+			if ($this->absoluteAuthTimeout)
+				$this->setState(self::AUTH_ABSOLUTE_TIMEOUT_VAR, time()+$this->absoluteAuthTimeout);
+			$this->afterLogin(false);
+		}
+		return !$this->getIsGuest();
+	}
+
+	/**
+	 * Logs out the current user.
+	 * This will remove authentication-related session data.
+	 * If the parameter is true, the whole session will be destroyed as well.
+	 * @param boolean $destroySession whether to destroy the whole session. Defaults to true. If false,
+	 * then {@link clearStates} will be called, which removes only the data stored via {@link setState}.
+	 */
+	public function logout($destroySession=true)
+	{
+		if($this->beforeLogout())
+		{
+			if($this->allowAutoLogin)
+			{
+				Yii::app()->getRequest()->getCookies()->remove($this->getStateKeyPrefix());
+				if($this->identityCookie!==null)
+				{
+					$cookie=$this->createIdentityCookie($this->getStateKeyPrefix());
+					$cookie->value=null;
+					$cookie->expire=0;
+					Yii::app()->getRequest()->getCookies()->add($cookie->name,$cookie);
+				}
+			}
+			if($destroySession)
+				Yii::app()->getSession()->destroy();
+			else
+				$this->clearStates();
+			$this->_access=array();
+			$this->afterLogout();
+		}
+	}
+
+	/**
+	 * Returns a value indicating whether the user is a guest (not authenticated).
+	 * @return boolean whether the current application user is a guest.
+	 */
+	public function getIsGuest()
+	{
+		return $this->getState('__id')===null;
+	}
+
+	/**
+	 * Returns a value that uniquely represents the user.
+	 * @return mixed the unique identifier for the user. If null, it means the user is a guest.
+	 */
+	public function getId()
+	{
+		return $this->getState('__id');
+	}
+
+	/**
+	 * @param mixed $value the unique identifier for the user. If null, it means the user is a guest.
+	 */
+	public function setId($value)
+	{
+		$this->setState('__id',$value);
+	}
+
+	/**
+	 * Returns the unique identifier for the user (e.g. username).
+	 * This is the unique identifier that is mainly used for display purpose.
+	 * @return string the user name. If the user is not logged in, this will be {@link guestName}.
+	 */
+	public function getName()
+	{
+		if(($name=$this->getState('__name'))!==null)
+			return $name;
+		else
+			return $this->guestName;
+	}
+
+	/**
+	 * Sets the unique identifier for the user (e.g. username).
+	 * @param string $value the user name.
+	 * @see getName
+	 */
+	public function setName($value)
+	{
+		$this->setState('__name',$value);
+	}
+
+	/**
+	 * Returns the URL that the user should be redirected to after successful login.
+	 * This property is usually used by the login action. If the login is successful,
+	 * the action should read this property and use it to redirect the user browser.
+	 * @param string $defaultUrl the default return URL in case it was not set previously. If this is null,
+	 * the application entry URL will be considered as the default return URL.
+	 * @return string the URL that the user should be redirected to after login.
+	 * @see loginRequired
+	 */
+	public function getReturnUrl($defaultUrl=null)
+	{
+		if($defaultUrl===null)
+		{
+			$defaultReturnUrl=Yii::app()->getUrlManager()->showScriptName ? Yii::app()->getRequest()->getScriptUrl() : Yii::app()->getRequest()->getBaseUrl().'/';
+		}
+		else
+		{
+			$defaultReturnUrl=CHtml::normalizeUrl($defaultUrl);
+		}
+		return $this->getState('__returnUrl',$defaultReturnUrl);
+	}
+
+	/**
+	 * @param string $value the URL that the user should be redirected to after login.
+	 */
+	public function setReturnUrl($value)
+	{
+		$this->setState('__returnUrl',$value);
+	}
+
+	/**
+	 * Redirects the user browser to the login page.
+	 * Before the redirection, the current URL (if it's not an AJAX url) will be
+	 * kept in {@link returnUrl} so that the user browser may be redirected back
+	 * to the current page after successful login. Make sure you set {@link loginUrl}
+	 * so that the user browser can be redirected to the specified login URL after
+	 * calling this method.
+	 * After calling this method, the current request processing will be terminated.
+	 */
+	public function loginRequired()
+	{
+		$app=Yii::app();
+		$request=$app->getRequest();
+
+		if(!$request->getIsAjaxRequest())
+		{
+			$this->setReturnUrl($request->getUrl());
+			if(($url=$this->loginUrl)!==null)
+			{
+				if(is_array($url))
+				{
+					$route=isset($url[0]) ? $url[0] : $app->defaultController;
+					$url=$app->createUrl($route,array_splice($url,1));
+				}
+				$request->redirect($url);
+			}
+		}
+		elseif(isset($this->loginRequiredAjaxResponse))
+		{
+			echo $this->loginRequiredAjaxResponse;
+			Yii::app()->end();
+		}
+
+		throw new CHttpException(403,Yii::t('yii','Login Required'));
+	}
+
+	/**
+	 * This method is called before logging in a user.
+	 * You may override this method to provide additional security check.
+	 * For example, when the login is cookie-based, you may want to verify
+	 * that the user ID together with a random token in the states can be found
+	 * in the database. This will prevent hackers from faking arbitrary
+	 * identity cookies even if they crack down the server private key.
+	 * @param mixed $id the user ID. This is the same as returned by {@link getId()}.
+	 * @param array $states a set of name-value pairs that are provided by the user identity.
+	 * @param boolean $fromCookie whether the login is based on cookie
+	 * @return boolean whether the user should be logged in
+	 * @since 1.1.3
+	 */
+	protected function beforeLogin($id,$states,$fromCookie)
+	{
+		return true;
+	}
+
+	/**
+	 * This method is called after the user is successfully logged in.
+	 * You may override this method to do some postprocessing (e.g. log the user
+	 * login IP and time; load the user permission information).
+	 * @param boolean $fromCookie whether the login is based on cookie.
+	 * @since 1.1.3
+	 */
+	protected function afterLogin($fromCookie)
+	{
+	}
+
+	/**
+	 * This method is invoked when calling {@link logout} to log out a user.
+	 * If this method return false, the logout action will be cancelled.
+	 * You may override this method to provide additional check before
+	 * logging out a user.
+	 * @return boolean whether to log out the user
+	 * @since 1.1.3
+	 */
+	protected function beforeLogout()
+	{
+		return true;
+	}
+
+	/**
+	 * This method is invoked right after a user is logged out.
+	 * You may override this method to do some extra cleanup work for the user.
+	 * @since 1.1.3
+	 */
+	protected function afterLogout()
+	{
+	}
+
+	/**
+	 * Populates the current user object with the information obtained from cookie.
+	 * This method is used when automatic login ({@link allowAutoLogin}) is enabled.
+	 * The user identity information is recovered from cookie.
+	 * Sufficient security measures are used to prevent cookie data from being tampered.
+	 * @see saveToCookie
+	 */
+	protected function restoreFromCookie()
+	{
+		$app=Yii::app();
+		$request=$app->getRequest();
+		$cookie=$request->getCookies()->itemAt($this->getStateKeyPrefix());
+		if($cookie && !empty($cookie->value) && is_string($cookie->value) && ($data=$app->getSecurityManager()->validateData($cookie->value))!==false)
+		{
+			$data=@unserialize($data);
+			if(is_array($data) && isset($data[0],$data[1],$data[2],$data[3]))
+			{
+				list($id,$name,$duration,$states)=$data;
+				if($this->beforeLogin($id,$states,true))
+				{
+					$this->changeIdentity($id,$name,$states);
+					if($this->autoRenewCookie)
+					{
+						$this->saveToCookie($duration);
+					}
+					$this->afterLogin(true);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Renews the identity cookie.
+	 * This method will set the expiration time of the identity cookie to be the current time
+	 * plus the originally specified cookie duration.
+	 * @since 1.1.3
+	 */
+	protected function renewCookie()
+	{
+		$request=Yii::app()->getRequest();
+		$cookies=$request->getCookies();
+		$cookie=$cookies->itemAt($this->getStateKeyPrefix());
+		if($cookie && !empty($cookie->value) && ($data=Yii::app()->getSecurityManager()->validateData($cookie->value))!==false)
+		{
+			$data=@unserialize($data);
+			if(is_array($data) && isset($data[0],$data[1],$data[2],$data[3]))
+			{
+				$this->saveToCookie($data[2]);
+			}
+		}
+	}
+
+	/**
+	 * Saves necessary user data into a cookie.
+	 * This method is used when automatic login ({@link allowAutoLogin}) is enabled.
+	 * This method saves user ID, username, other identity states and a validation key to cookie.
+	 * These information are used to do authentication next time when user visits the application.
+	 * @param integer $duration number of seconds that the user can remain in logged-in status. Defaults to 0, meaning login till the user closes the browser.
+	 * @see restoreFromCookie
+	 */
+	protected function saveToCookie($duration)
+	{
+		$app=Yii::app();
+		$cookie=$this->createIdentityCookie($this->getStateKeyPrefix());
+		$cookie->expire=time()+$duration;
+		$data=array(
+			$this->getId(),
+			$this->getName(),
+			$duration,
+			$this->saveIdentityStates(),
+		);
+		$cookie->value=$app->getSecurityManager()->hashData(serialize($data));
+		$app->getRequest()->getCookies()->add($cookie->name,$cookie);
+	}
+
+	/**
+	 * Creates a cookie to store identity information.
+	 * @param string $name the cookie name
+	 * @return CHttpCookie the cookie used to store identity information
+	 */
+	protected function createIdentityCookie($name)
+	{
+		$cookie=new CHttpCookie($name,'');
+		if(is_array($this->identityCookie))
+		{
+			foreach($this->identityCookie as $name=>$value)
+				$cookie->$name=$value;
+		}
+		return $cookie;
+	}
+
+	/**
+	 * @return string a prefix for the name of the session variables storing user session data.
+	 */
+	public function getStateKeyPrefix()
+	{
+		if($this->_keyPrefix!==null)
+			return $this->_keyPrefix;
+		else
+			return $this->_keyPrefix=md5('Yii.'.get_class($this).'.'.Yii::app()->getId());
+	}
+
+	/**
+	 * @param string $value a prefix for the name of the session variables storing user session data.
+	 */
+	public function setStateKeyPrefix($value)
+	{
+		$this->_keyPrefix=$value;
+	}
+
+	/**
+	 * Returns the value of a variable that is stored in user session.
+	 *
+	 * This function is designed to be used by CWebUser descendant classes
+	 * who want to store additional user information in user session.
+	 * A variable, if stored in user session using {@link setState} can be
+	 * retrieved back using this function.
+	 *
+	 * @param string $key variable name
+	 * @param mixed $defaultValue default value
+	 * @return mixed the value of the variable. If it doesn't exist in the session,
+	 * the provided default value will be returned
+	 * @see setState
+	 */
+	public function getState($key,$defaultValue=null)
+	{
+		$key=$this->getStateKeyPrefix().$key;
+		return isset($_SESSION[$key]) ? $_SESSION[$key] : $defaultValue;
+	}
+
+	/**
+	 * Stores a variable in user session.
+	 *
+	 * This function is designed to be used by CWebUser descendant classes
+	 * who want to store additional user information in user session.
+	 * By storing a variable using this function, the variable may be retrieved
+	 * back later using {@link getState}. The variable will be persistent
+	 * across page requests during a user session.
+	 *
+	 * @param string $key variable name
+	 * @param mixed $value variable value
+	 * @param mixed $defaultValue default value. If $value===$defaultValue, the variable will be
+	 * removed from the session
+	 * @see getState
+	 */
+	public function setState($key,$value,$defaultValue=null)
+	{
+		$key=$this->getStateKeyPrefix().$key;
+		if($value===$defaultValue)
+			unset($_SESSION[$key]);
+		else
+			$_SESSION[$key]=$value;
+	}
+
+	/**
+	 * Returns a value indicating whether there is a state of the specified name.
+	 * @param string $key state name
+	 * @return boolean whether there is a state of the specified name.
+	 */
+	public function hasState($key)
+	{
+		$key=$this->getStateKeyPrefix().$key;
+		return isset($_SESSION[$key]);
+	}
+
+	/**
+	 * Clears all user identity information from persistent storage.
+	 * This will remove the data stored via {@link setState}.
+	 */
+	public function clearStates()
+	{
+		$keys=array_keys($_SESSION);
+		$prefix=$this->getStateKeyPrefix();
+		$n=strlen($prefix);
+		foreach($keys as $key)
+		{
+			if(!strncmp($key,$prefix,$n))
+				unset($_SESSION[$key]);
+		}
+	}
+
+	/**
+	 * Returns all flash messages.
+	 * This method is similar to {@link getFlash} except that it returns all
+	 * currently available flash messages.
+	 * @param boolean $delete whether to delete the flash messages after calling this method.
+	 * @return array flash messages (key => message).
+	 * @since 1.1.3
+	 */
+	public function getFlashes($delete=true)
+	{
+		$flashes=array();
+		$prefix=$this->getStateKeyPrefix().self::FLASH_KEY_PREFIX;
+		$keys=array_keys($_SESSION);
+		$n=strlen($prefix);
+		foreach($keys as $key)
+		{
+			if(!strncmp($key,$prefix,$n))
+			{
+				$flashes[substr($key,$n)]=$_SESSION[$key];
+				if($delete)
+					unset($_SESSION[$key]);
+			}
+		}
+		if($delete)
+			$this->setState(self::FLASH_COUNTERS,array());
+		return $flashes;
+	}
+
+	/**
+	 * Returns a flash message.
+	 * A flash message is available only in the current and the next requests.
+	 * @param string $key key identifying the flash message
+	 * @param mixed $defaultValue value to be returned if the flash message is not available.
+	 * @param boolean $delete whether to delete this flash message after accessing it.
+	 * Defaults to true.
+	 * @return mixed the message message
+	 */
+	public function getFlash($key,$defaultValue=null,$delete=true)
+	{
+		$value=$this->getState(self::FLASH_KEY_PREFIX.$key,$defaultValue);
+		if($delete)
+			$this->setFlash($key,null);
+		return $value;
+	}
+
+	/**
+	 * Stores a flash message.
+	 * A flash message is available only in the current and the next requests.
+	 * @param string $key key identifying the flash message
+	 * @param mixed $value flash message
+	 * @param mixed $defaultValue if this value is the same as the flash message, the flash message
+	 * will be removed. (Therefore, you can use setFlash('key',null) to remove a flash message.)
+	 */
+	public function setFlash($key,$value,$defaultValue=null)
+	{
+		$this->setState(self::FLASH_KEY_PREFIX.$key,$value,$defaultValue);
+		$counters=$this->getState(self::FLASH_COUNTERS,array());
+		if($value===$defaultValue)
+			unset($counters[$key]);
+		else
+			$counters[$key]=0;
+		$this->setState(self::FLASH_COUNTERS,$counters,array());
+	}
+
+	/**
+	 * @param string $key key identifying the flash message
+	 * @return boolean whether the specified flash message exists
+	 */
+	public function hasFlash($key)
+	{
+		return $this->getFlash($key, null, false)!==null;
+	}
+
+	/**
+	 * Changes the current user with the specified identity information.
+	 * This method is called by {@link login} and {@link restoreFromCookie}
+	 * when the current user needs to be populated with the corresponding
+	 * identity information. Derived classes may override this method
+	 * by retrieving additional user-related information. Make sure the
+	 * parent implementation is called first.
+	 * @param mixed $id a unique identifier for the user
+	 * @param string $name the display name for the user
+	 * @param array $states identity states
+	 */
+	protected function changeIdentity($id,$name,$states)
+	{
+		Yii::app()->getSession()->regenerateID(true);
+		$this->setId($id);
+		$this->setName($name);
+		$this->loadIdentityStates($states);
+	}
+
+	/**
+	 * Retrieves identity states from persistent storage and saves them as an array.
+	 * @return array the identity states
+	 */
+	protected function saveIdentityStates()
+	{
+		$states=array();
+		foreach($this->getState(self::STATES_VAR,array()) as $name=>$dummy)
+			$states[$name]=$this->getState($name);
+		return $states;
+	}
+
+	/**
+	 * Loads identity states from an array and saves them to persistent storage.
+	 * @param array $states the identity states
+	 */
+	protected function loadIdentityStates($states)
+	{
+		$names=array();
+		if(is_array($states))
+		{
+			foreach($states as $name=>$value)
+			{
+				$this->setState($name,$value);
+				$names[$name]=true;
+			}
+		}
+		$this->setState(self::STATES_VAR,$names);
+	}
+
+	/**
+	 * Updates the internal counters for flash messages.
+	 * This method is internally used by {@link CWebApplication}
+	 * to maintain the availability of flash messages.
+	 */
+	protected function updateFlash()
+	{
+		$counters=$this->getState(self::FLASH_COUNTERS);
+		if(!is_array($counters))
+			return;
+		foreach($counters as $key=>$count)
+		{
+			if($count)
+			{
+				unset($counters[$key]);
+				$this->setState(self::FLASH_KEY_PREFIX.$key,null);
+			}
+			else
+				$counters[$key]++;
+		}
+		$this->setState(self::FLASH_COUNTERS,$counters,array());
+	}
+
+	/**
+	 * Updates the authentication status according to {@link authTimeout}.
+	 * If the user has been inactive for {@link authTimeout} seconds, or {link absoluteAuthTimeout} has passed,
+	 * he will be automatically logged out.
+	 * @since 1.1.7
+	 */
+	protected function updateAuthStatus()
+	{
+		if(($this->authTimeout!==null || $this->absoluteAuthTimeout!==null) && !$this->getIsGuest())
+		{
+			$expires=$this->getState(self::AUTH_TIMEOUT_VAR);
+			$expiresAbsolute=$this->getState(self::AUTH_ABSOLUTE_TIMEOUT_VAR);
+
+			if ($expires!==null && $expires < time() || $expiresAbsolute!==null && $expiresAbsolute < time())
+				$this->logout(false);
+			else
+				$this->setState(self::AUTH_TIMEOUT_VAR,time()+$this->authTimeout);
+		}
+	}
+
+	/**
+	 * Performs access check for this user.
+	 * @param string $operation the name of the operation that need access check.
+	 * @param array $params name-value pairs that would be passed to business rules associated
+	 * with the tasks and roles assigned to the user.
+	 * Since version 1.1.11 a param with name 'userId' is added to this array, which holds the value of
+	 * {@link getId()} when {@link CDbAuthManager} or {@link CPhpAuthManager} is used.
+	 * @param boolean $allowCaching whether to allow caching the result of access check.
+	 * When this parameter
+	 * is true (default), if the access check of an operation was performed before,
+	 * its result will be directly returned when calling this method to check the same operation.
+	 * If this parameter is false, this method will always call {@link CAuthManager::checkAccess}
+	 * to obtain the up-to-date access result. Note that this caching is effective
+	 * only within the same request and only works when <code>$params=array()</code>.
+	 * @return boolean whether the operations can be performed by this user.
+	 */
+	public function checkAccess($operation,$params=array(),$allowCaching=true)
+	{
+		if($allowCaching && $params===array() && isset($this->_access[$operation]))
+			return $this->_access[$operation];
+
+		$access=Yii::app()->getAuthManager()->checkAccess($operation,$this->getId(),$params);
+		if($allowCaching && $params===array())
+			$this->_access[$operation]=$access;
+
+		return $access;
+	}
+}

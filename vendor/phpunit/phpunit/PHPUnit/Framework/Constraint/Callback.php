@@ -1,40 +1,116 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-QMbhBQ9kTot7fwz3BmoaQQCHkW==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ */
+
+/**
+ * Constraint that evaluates against a specified closure.
+ *
+ * @package    PHPUnit
+ * @subpackage Framework_Constraint
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @author     Timon Rapp <timon@zaeda.net>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ */
+class PHPUnit_Framework_Constraint_Callback extends PHPUnit_Framework_Constraint
+{
+    private $callback;
+
+    /**
+     * @param callable $callback
+     * @throws InvalidArgumentException
+     */
+    public function __construct($callback)
+    {
+        if (!is_callable($callback)) {
+            throw new InvalidArgumentException(
+              sprintf(
+                'Specified callback <%s> is not callable.',
+                $this->callbackToString($callback)
+              )
+            );
+        }
+        $this->callback = $callback;
+    }
+
+    /**
+     * Evaluates the constraint for parameter $value. Returns TRUE if the
+     * constraint is met, FALSE otherwise.
+     *
+     * @param mixed $value Value or object to evaluate.
+     * @return bool
+     */
+    protected function matches($other)
+    {
+        return call_user_func($this->callback, $other);
+    }
+
+    /**
+     * Returns a string representation of the constraint.
+     *
+     * @return string
+     */
+    public function toString()
+    {
+        return 'is accepted by specified callback';
+    }
+
+    private function callbackToString($callback)
+    {
+        if (!is_array($callback)) {
+            return $callback;
+        }
+        if (empty($callback)) {
+            return "empty array";
+        }
+        if (!isset($callback[0]) || !isset($callback[1])) {
+            return "array without indexes 0 and 1 set";
+        }
+        if (is_object($callback[0])) {
+            $callback[0] = get_class($callback[0]);
+        }
+        return $callback[0] . '::' . $callback[1];
+    }
+
+}

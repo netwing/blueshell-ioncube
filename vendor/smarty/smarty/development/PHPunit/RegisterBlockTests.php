@@ -1,152 +1,255 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-hLp2AaAzvdx7WBMT5wGJ
+<?php
+/**
+ * Smarty PHPunit tests register->block / unregister->block methods
+ *
+ * @package PHPunit
+ * @author Uwe Tews
+ */
+
+/**
+ * class for register->block / unregister->block methods tests
+ */
+class RegisterBlockTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smartyBC = SmartyTests::$smartyBC;
+        SmartyTests::init();
+
+        $this->smarty->disableSecurity();
+        $this->smartyBC->disableSecurity();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+     * test registerPlugin method for block function
+     */
+    public function testRegisterBlockFunction()
+    {
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblock');
+        $this->smarty->assign('value', 1);
+        $this->assertEquals('function hello world 1 1 function hello world 1 2 function hello world 1 3 ', $this->smarty->fetch('eval:{testblock}hello world {$value}{/testblock}'));
+    }
+    public function testRegisterBlockFunctionModifier1()
+    {
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblock');
+        $this->smarty->assign('value', 1);
+        $this->assertEquals(strtoupper('function hello world 1 1 function hello world 1 2 function hello world 1 3 '), $this->smarty->fetch('eval:{testblock}hello world {$value}{/testblock|strtoupper}'));
+    }
+    public function testRegisterBlockFunctionModifier2()
+    {
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblock');
+        $this->smarty->assign('value', 1);
+        $this->assertEquals(strtoupper('function hello world 1 1 function hello world 1 2 function hello world 1 3 '), $this->smarty->fetch('eval:{testblock}hello world {$value}{/testblock|default:""|strtoupper}'));
+    }
+    public function testRegisterBlockFunctionWrapper()
+    {
+        $this->smartyBC->register_block('testblock', 'myblock');
+        $this->smartyBC->assign('value', 1);
+        $this->assertEquals('function hello world 1 1 function hello world 1 2 function hello world 1 3 ', $this->smartyBC->fetch('eval:{testblock}hello world {$value}{/testblock}'));
+    }
+    /**
+     * test registerPlugin method for block class
+     */
+    public function testRegisterBlockClass()
+    {
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', array('myblockclass', 'static_method'));
+        $this->smarty->assign('value', 2);
+        $this->assertEquals('static hello world 2 1 static hello world 2 2 static hello world 2 3 ', $this->smarty->fetch('eval:{testblock}hello world {$value}{/testblock}'));
+    }
+    public function testRegisterBlockClassWrapper()
+    {
+        $this->smartyBC->register_block('testblock', array('myblockclass', 'static_method'));
+        $this->smartyBC->assign('value', 2);
+        $this->assertEquals('static hello world 2 1 static hello world 2 2 static hello world 2 3 ', $this->smartyBC->fetch('eval:{testblock}hello world {$value}{/testblock}'));
+    }
+    /**
+     * test registerPlugin method for block object
+     */
+    public function testRegisterBlockObject()
+    {
+        $myblock_object = new myblockclass;
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', array($myblock_object, 'object_method'));
+        $this->smarty->assign('value', 3);
+        $this->assertEquals('object hello world 3 1 object hello world 3 2 object hello world 3 3 ', $this->smarty->fetch('eval:{testblock}hello world {$value}{/testblock}'));
+    }
+    public function testRegisterBlockObjectWrapper()
+    {
+        $myblock_object = new myblockclass;
+        $this->smartyBC->register_block('testblock', array($myblock_object, 'object_method'));
+        $this->smartyBC->assign('value', 3);
+        $this->assertEquals('object hello world 3 1 object hello world 3 2 object hello world 3 3 ', $this->smartyBC->fetch('eval:{testblock}hello world {$value}{/testblock}'));
+    }
+
+    /**
+     * test registerPlugin method for block with caching
+     */
+    public function testRegisterBlockCaching1()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->cache_lifetime = 10;
+        $this->smarty->force_compile = true;
+        $this->smarty->assign('x', 1);
+        $this->smarty->assign('y', 10);
+        $this->smarty->assign('z', 100);
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblockcache');
+        $this->assertEquals('1 10 100', $this->smarty->fetch('test_register_block.tpl'));
+    }
+    public function testRegisterBlockCaching2()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->cache_lifetime = 10;
+        $this->smarty->assign('x', 2);
+        $this->smarty->assign('y', 20);
+        $this->smarty->assign('z', 200);
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblockcache');
+        $this->assertEquals('1 10 100', $this->smarty->fetch('test_register_block.tpl'));
+    }
+    public function testRegisterBlockCaching3()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->cache_lifetime = 10;
+        $this->smarty->force_compile = true;
+        $this->smarty->assign('x', 3);
+        $this->smarty->assign('y', 30);
+        $this->smarty->assign('z', 300);
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblockcache', false);
+        $this->assertEquals('3 30 300', $this->smarty->fetch('test_register_block.tpl'));
+    }
+    public function testRegisterBlockCaching4()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->cache_lifetime = 10;
+        $this->smarty->assign('x', 4);
+        $this->smarty->assign('y', 40);
+        $this->smarty->assign('z', 400);
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblockcache', false);
+        $this->assertEquals('3 40 300', $this->smarty->fetch('test_register_block.tpl'));
+    }
+    public function testRegisterBlockCaching1Wrapper()
+    {
+        $this->smartyBC->caching = 1;
+        $this->smartyBC->cache_lifetime = 10;
+        $this->smartyBC->force_compile = true;
+        $this->smartyBC->assign('x', 1);
+        $this->smartyBC->assign('y', 10);
+        $this->smartyBC->assign('z', 100);
+        $this->smartyBC->register_block('testblock', 'myblockcache');
+        $this->assertEquals('1 10 100', $this->smartyBC->fetch('test_register_block.tpl'));
+    }
+    public function testRegisterBlockCaching2Wrapper()
+    {
+        $this->smartyBC->caching = 1;
+        $this->smartyBC->cache_lifetime = 10;
+        $this->smartyBC->assign('x', 2);
+        $this->smartyBC->assign('y', 20);
+        $this->smartyBC->assign('z', 200);
+        $this->smartyBC->register_block('testblock', 'myblockcache');
+        $this->assertEquals('1 10 100', $this->smartyBC->fetch('test_register_block.tpl'));
+    }
+    public function testRegisterBlockCaching3Wrapper()
+    {
+        $this->smartyBC->caching = 1;
+        $this->smartyBC->cache_lifetime = 10;
+        $this->smartyBC->force_compile = true;
+        $this->smartyBC->assign('x', 3);
+        $this->smartyBC->assign('y', 30);
+        $this->smartyBC->assign('z', 300);
+        $this->smartyBC->register_block('testblock', 'myblockcache', false);
+        $this->assertEquals('3 30 300', $this->smartyBC->fetch('test_register_block.tpl'));
+    }
+    public function testRegisterBlockCaching4Wrapper()
+    {
+        $this->smartyBC->caching = 1;
+        $this->smartyBC->cache_lifetime = 10;
+        $this->smartyBC->assign('x', 4);
+        $this->smartyBC->assign('y', 40);
+        $this->smartyBC->assign('z', 400);
+        $this->smartyBC->register_block('testblock', 'myblockcache', false);
+        $this->assertEquals('3 40 300', $this->smartyBC->fetch('test_register_block.tpl'));
+    }
+    /**
+     * test unregister->block method
+     */
+    public function testUnregisterBlock()
+    {
+        $this->smarty->registerPlugin(Smarty::PLUGIN_BLOCK,'testblock', 'myblock');
+        $this->smarty->unregisterPlugin(Smarty::PLUGIN_BLOCK,'testblock');
+        $this->assertFalse(isset($this->smarty->registered_plugins[Smarty::PLUGIN_BLOCK]['testblock']));
+    }
+    public function testUnregisterBlockWrapper()
+    {
+        $this->smartyBC->register_block('testblock', 'myblock');
+        $this->smartyBC->unregister_block('testblock');
+        $this->assertFalse(isset($this->smartyBC->registered_plugins[Smarty::PLUGIN_BLOCK]['testblock']));
+    }
+    /**
+     * test unregister->block method not registered
+     */
+    public function testUnregisterBlockNotRegistered()
+    {
+        $this->smarty->unregisterPlugin(Smarty::PLUGIN_BLOCK,'testblock');
+        $this->assertFalse(isset($this->smarty->registered_plugins[Smarty::PLUGIN_BLOCK]['testblock']));
+    }
+}
+function myblock($params, $content, &$smarty_tpl, &$repeat)
+{
+    static $loop = 0;
+
+    if ($content == null) {
+        $loop = 0;
+
+        return;
+    }
+    $loop ++;
+    if ($loop < 3) {
+        $repeat = true;
+    }
+
+    return "function $content $loop ";
+}
+function myblockcache($params, $content, &$smarty_tpl, &$repeat)
+{
+    return $content;
+}
+
+class myblockclass
+{
+    static function static_method($params, $content, &$smarty_tpl, &$repeat)
+    {
+        static $loop = 0;
+
+        if ($content == null) {
+            $loop = 0;
+
+            return;
+        }
+        $loop ++;
+        if ($loop < 3) {
+            $repeat = true;
+        }
+
+        return "static $content $loop ";
+    }
+    public function object_method($params, $content, &$smarty_tpl, &$repeat)
+    {
+        static $loop = 0;
+
+        if ($content == null) {
+            $loop = 0;
+
+            return;
+        }
+        $loop ++;
+        if ($loop < 3) {
+            $repeat = true;
+        }
+
+        return "object $content $loop ";
+    }
+}

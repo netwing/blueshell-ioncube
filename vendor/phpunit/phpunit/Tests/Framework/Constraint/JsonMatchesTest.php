@@ -1,41 +1,89 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/dgad/CqJl43Jh8eV/p0dsbZrIhpljUdb/i=
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @author     Bastian Feder <php@bastian-feder.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.7.0
+ */
+
+/**
+ * @package    PHPUnit
+ * @author     Bastian Feder <php@bastian-feder.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.7.0
+ */
+class Framework_Constraint_JsonMatchesTest extends PHPUnit_Framework_TestCase
+{
+
+    /**
+     * @dataProvider evaluateDataprovider
+     * @covers PHPUnit_Framework_Constraint_JsonMatches::evaluate
+     * @covers PHPUnit_Framework_Constraint_JsonMatches::matches
+     * @covers PHPUnit_Framework_Constraint_JsonMatches::__construct
+     */
+    public function testEvaluate($expected, $jsonOther, $jsonValue)
+    {
+        $constraint = new PHPUnit_Framework_Constraint_JsonMatches($jsonValue);
+        $this->assertEquals($expected, $constraint->evaluate($jsonOther, '', TRUE));
+    }
+
+    /**
+     * @covers PHPUnit_Framework_Constraint_JsonMatches::toString
+     */
+    public function testToString()
+    {
+        $jsonValue = json_encode(array('Mascott' => 'Tux'));
+        $constraint = new PHPUnit_Framework_Constraint_JsonMatches($jsonValue);
+
+        $this->assertEquals('matches JSON string "' . $jsonValue . '"', $constraint->toString());
+    }
+
+
+    public static function evaluateDataprovider()
+    {
+        return array(
+            'valid JSON' => array(TRUE, json_encode(array('Mascott' => 'Tux')), json_encode(array('Mascott' => 'Tux'))),
+            'error syntax' => array(FALSE, '{"Mascott"::}', json_encode(array('Mascott' => 'Tux'))),
+            'error UTF-8' => array(FALSE, json_encode('\xB1\x31'), json_encode(array('Mascott' => 'Tux'))),
+            'invalid JSON in class instantiation' => array(FALSE, json_encode(array('Mascott' => 'Tux')), '{"Mascott"::}'),
+        );
+    }
+}

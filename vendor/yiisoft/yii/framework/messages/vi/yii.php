@@ -1,214 +1,253 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * Message string can be used with plural forms format. Check i18n section
+ * of the guide for details.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  'Adding a foreign key constraint to an existing table is not supported by SQLite.' => 'SQLite không hỗ trợ chức năng thêm khóa ngoại.',
+  'Altering a DB column is not supported by SQLite.' => 'Thay đổi một cột DB không được hỗ trợ bởi SQLite.',
+  'Dropping DB column is not supported by SQLite.' => 'Xóa cột DB không được hỗ trợ bởi SQLite.',
+  'Dropping a foreign key constraint is not supported by SQLite.' => 'Xóa ràng buộc khoá ngoại không được hỗ trợ bởi SQLite.',
+  'Property CMaskedTextField.mask cannot be empty.' => 'Thuộc tính CMaskedTextField.mask không được phép rỗng.',
+  'Renaming a DB column is not supported by SQLite.' => 'Đổi tên một cột DB không được hỗ trợ bởi SQLite.',
+  'The "db" application component must be configured to be a CDbConnection object.' => 'Thành phần ứng dụng "db" phải được cấu hình thành một đối tượng CDbConnection.',
+  'The DB query must contain the "from" portion.' => 'Truy vấn DB phải có vị trí "form".',
+  'Unable to find "{column}" in table "{table}".' => 'Không tìm thấy "{column}" trong bảng "{table}".',
+  'Unable to remove migration {class}.' => 'Không thể để loại bỏ lớp migration {class}.',
+  'Unknown operator "{operator}".' => 'Không biết toán tử "{operator}".',
+  '"{path}" is not a valid directory.' => '"{path}" phải là một thư mục hợp lệ',
+  '&lt; Previous' => '&lt; Trước',
+  '&lt;&lt; First' => '&lt;&lt; Đầu tiên',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record cần có một "db" CDbConnection application component.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Lớp active record "{class}" có một liên kết quan hệ không đúng: "{relation}". Nó phải được định nghĩa bởi loại quan hệ, lớp quan hệ và khoá ngoại.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'Active record "{class}" đang cố gắn truy vấn đến một column không hợp lệ:"{column}". Chú ý, column phải tồn tại trong bảng hoặc phải là một alias expression.',
+  'Active record class "{class}" does not have a scope named "{scope}".' => 'lớp active record "{class}" không có tên scope "{scope}".',
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => 'Alias "{alias}" không có hiệu lực. Phải chắc chắn nó chỉ đến một tập tin PHP đã có.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'Alias "{alias}" không hợp lệ . Hãy chắc rằng nó trỏ tới thư mục hoặc file có tồn tại.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory.' => 'Alias "{alias}" không hợp lệ. Hãy chắc rằng nó trỏ tới thư mục có tồn tại.',
+  'Application Log' => 'Log ứng dụng.',
+  'Application base path "{path}" is not a valid directory.' => 'Application base path "{path}" không phải là một thư mực hợp lệ.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'Application runtime path "{path}" không hợp lệ. Hãy chắc rằng thư mục đó được phép ghi bởi Web server.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'Authorization item "{item}" đã được gán cho user "{user}" rồi.',
+  'Base path "{path}" is not a valid directory.' => 'Base path "{path}" không là thư mục hợp lệ.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache yêu cầu có PHP apc extension.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" không hợp lệ. Hãy chắc rằng thư mục này có tồn tại và được phép ghi bởi Web server.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID không hợp lệ. Hãy chắc rằng "{id}" là một cache application component hợp lệ.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" không hợp lệ. Không thể tìm được action này trong controller hiện tại.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" không hợp lệ. Hãy chắc chắn rằng nó là một ID của CDbConnection application component.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" không hợp lệ. Hãy chắc chắn rằng nó là một ID của CDbConnection application component.',
+  'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCacheDependency.connectionID "{id}" không hợp lệ. Hãy chắc rằng nó thuộc ID của CDbConnection trong ứng dụng.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql không được phép rỗng.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand không thể thi hành câu truy vấn SQL: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand không thể chuẩn bị câu truy vấn SQL: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection không hỗ trợ đọc schema cho cơ sở dự liệu {driver}.',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection thất bại khi mở kết nối DB',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection không thể mở kết nối DB: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection không được kích hoạt và không thể thực hiện thao tác cơ sở dữ liệu nào.',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString không được phép rỗng.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader không thể tua lại. Nó chỉ là một forward-only reader.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" không hợp lệ. Hãy chắc rằng nó là một ID của CDbConnection application component.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" không được trỏ tới một CDbConnection application component hợp lệ.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID không hợp lệ. Hãy chắc rằng "{id}" là một database application component.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" không có hiệu lực. Hãy chắc chắn rằng nó chuyển đến ID của một thành phần trong ứng dụng CDbConnection.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction chưa kích hoạt và không thể thực hiện các thao tác commit hoặc roll back.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory không được phép rỗng.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache cần phải có PHP eAccelerator load sẵn, đã hiệu lực hóa, hoặc biên soạn với lựa chọn của "--with-eaccelerator-shared-memory".',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName không được phép rỗng.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" không được trỏ tới một thư mục hợp lệ. Hãy chắc rằng thư mục này có tồn tại và được phép ghi bởi Web server.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain chỉ có thể lấy các đối tượng implementing từ IFilter interface.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl không được phép rỗng.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name không được phép rỗng.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName không được phép rỗng.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection chỉ có thể quản lý các đối tượng CHttpCookie.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest không thể nào xác định script URL.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest không thể nào xác định path info của request.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest không thể nào xác định request URI.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode chỉ có thể là "none", "allow" hoặc "only".',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability "{value}" không hợp lệ. Nó chỉ có thể là số nguyên từ 0 đến 100.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" không phải là thư mục hợp lệ.',
+  'CMemCache server configuration must be an array.' => 'Cấu hình server CMemCache phải là một mảng.',
+  'CMemCache server configuration must have "host" value.' => 'Cấu hình server CMemCache phải có giá trị "host".',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute tìm thấy đoạn code code không đúng "{token}". Hãy chắc rằng các call tới Yii::beginProfile() và Yii::endProfile() phải được nest một cách đúng đắn.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" không hợp lệ. Giá trị hợp lệ bao gồm "summary" và "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager cần phải có PHP mcrypt extension mới sử dụng được tính năng data encryption.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey không được phép rỗng.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey không được phép rỗng.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> chỉ có thể tương tác các đối tượng của lớp {type}.',
+  'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}> chỉ có thể chứa các đối tượng {type} của lớp.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat phải là "path" hoặc "get".',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache cần bản mở rộng của PHP wincache.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache user cache bị tắt. Xin thiết lập wincache.ucenabled là On trong php.ini của bạn.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache cần có PHP XCache extension để chạy.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache can62n bản mở rộng của PHP Zend Data Cache tải về',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Không thể thêm "{child}" là con của "{name}". Đã có sự trùng lặp.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Không thể thêm "{child}" là con của "{parent}". Đã có sự trùng lặp.',
+  'Cannot add "{name}" as a child of itself.' => 'Không thể thêm "{name}" là con của chính nó.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => 'Không thể thêm loại item "{child}" là con của loại item "{parent}".',
+  'Column name must be either a string or an array.' => 'Tên cột phải là string hoặc array.',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" hoặc "{child}" không tồn tại.',
+  'Error: Table "{table}" does not have a primary key.' => 'Lỗi: Bảng "{table}" không có khoá chính.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Lỗi: Bảng "{table}" có khoá chính ghép hợp mà crud command không hỗ trợ.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => 'Sự kiện "{class}.{event}" được gắn với bộ xử lý không hợp lệ "{handler}".',
+  'Event "{class}.{event}" is not defined.' => 'Sự kiện "{class}.{event}" chưa được định nghĩa.',
+  'Extension path "{path}" does not exist.' => 'Đường dẫn Extension "{path}" không có tồn tại.',
+  'Failed to initialize the mcrypt module.' => 'Thất bại trong việc thiết lập ban đầu trong mcrypt module',
+  'Failed to set unsafe attribute "{attribute}".' => 'Thất bại trong việc thiết lập một thuộc tính không chắc chắn "{attribute}".',
+  'Failed to write the uploaded file "{file}" to disk.' => 'Không thể lưu file tải lên "{file}" vào đĩa cứng.',
+  'File upload was stopped by extension.' => 'File tải lên đã bị ngừng bởi extension.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => 'Filter "{filter}" không hợp lệ. Controller "{class}" không có phương thức filter "filter{filter}".',
+  'GD and FreeType PHP extensions are required.' => 'GD và FreeType PHP extensions cần phải có.',
+  'Get a new code' => 'Lấy code mới',
+  'Go to page: ' => 'Đến trang',
+  'Invalid MO file revision: {revision}.' => 'MO file revision không đúng: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'MO file không đúng: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'Giá trị enumerable "{value}" không đúng. Hãy chắc rằng nó nằm trong phạm vi ({enum}).',
+  'Invalid operator "{operator}".' => 'Hành động không hiệu lực "{operator}".',
+  'Last &gt;&gt;' => 'Cuối &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'List data phải là một array hoặc là một object implementing Traversable.',
+  'List index "{index}" is out of bound.' => 'List index "{index}" nằm ngoài giới hạn.',
+  'Login Required' => 'Yêu cầu đăng nhập',
+  'Map data must be an array or an object implementing Traversable.' => 'Map data phải là một array hoặc là một object implementing Traversable.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'Thư mục tạm thời để chứa file tải lên "{file}" không tồn tại.',
+  'Next &gt;' => 'Tiếp theo &gt;',
+  'No columns are being updated for table "{table}".' => 'Không có cột nào được cập nhật trong bảng "{table}".',
+  'No counter columns are being updated for table "{table}".' => 'Không có cột counter nào được cập nhật trong bảng "{table}".',
+  'Object configuration must be an array containing a "class" element.' => 'Object configuration phải là một array chứa một "class" element.',
+  'Please fix the following input errors:' => 'Xin hãy sửa lại những lỗi nhập liệu sau:',
+  'Property "{class}.{property}" is not defined.' => 'Thuộc tính "{class}.{property}" chưa được định nghĩa.',
+  'Property "{class}.{property}" is read only.' => 'Thuộc tính "{class}.{property}" chỉ có thể đọc.',
+  'Queue data must be an array or an object implementing Traversable.' => 'Queue data phải là một array hoặc là một object implementing Traversable.',
+  'Relation "{name}" is not defined in active record class "{class}".' => 'Quan hệ "{name}" chưa được định nghĩa trong lớp active record "{class}".',
+  'Stack data must be an array or an object implementing Traversable.' => 'Stack data phải là một array hoặc là một object implementing Traversable.',
+  'Table "{table}" does not exist.' => 'Bảng "{table}" không tồn tại.',
+  'Table "{table}" does not have a column named "{column}".' => 'Bảng "{table}" không có cột nào tên "{column}".',
+  'The "filter" property must be specified with a valid callback.' => 'Thuộc tính "filter" phải là một callback hợp lệ.',
+  'The "pattern" property must be specified with a valid regular expression.' => 'Thuộc tính "pattern" phải là một regular expression hợp lệ.',
+  'The "range" property must be specified with a list of values.' => 'Thuộc tính "range" phải được quy định bởi một danh sách các giá trị.',
+  'The CSRF token could not be verified.' => 'Không thể xác thực CSRF token.',
+  'The STAT relation "{name}" cannot have child relations.' => 'Quan hệ STAT "{name}" không được có quan hệ con.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'URL pattern "{pattern}" cho route "{route}" phải là một regular expression hợp lệ.',
+  'The active record cannot be deleted because it is new.' => 'Không thể xoá active record vì nó là một active record mới.',
+  'The active record cannot be inserted to database because it is not new.' => 'Không thể thêm active record vào database vì nó không phải là active record mới.',
+  'The active record cannot be updated because it is new.' => 'Không thể update active record vì nó là một active record mới.',
+  'The asset "{asset}" to be published does not exist.' => 'Asset "{asset}" để publish không tồn tại.',
+  'The command path "{path}" is not a valid directory.' => 'Command path "{path}" không phải là một thư mục hợp lệ.',
+  'The controller path "{path}" is not a valid directory.' => 'Controller path "{path}" không phải là một thư mục hợp lệ.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'File "{file}" không được tải lên. Chỉ có các file với các định dạng sau được phép sử dụng: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => 'File "{file}" quá lớn. Dung lượng không được vượt quá {limit} byte.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => 'File "{file}" quá nhỏ. Dung lượng không được nhỏ hơn {limit} byte.',
+  'The file "{file}" was only partially uploaded.' => 'File "{file}" đã được tải lên một cách không hoàn chỉnh.',
+  'The first element in a filter configuration must be the filter class.' => 'Yếu tố đầu tiên trong một filter configuration phải là filter class.',
+  'The item "{name}" does not exist.' => 'Item "{name}" không tồn tại.',
+  'The item "{parent}" already has a child "{child}".' => 'Item "{parent}" đã có item con là "{child}".',
+  'The layout path "{path}" is not a valid directory.' => 'Layout path "{path}" không là một thư mục hợp lệ.',
+  'The list is read only.' => 'Đây là danh sách chỉ đọc',
+  'The map is read only.' => 'Map là chỉ được đọc.',
+  'The module path "{path}" is not a valid directory.' => 'Đường dẫn module "{path}" không phải là một thư mục hợp lệ.',
+  'The pattern for 12 hour format must be "h" or "hh".' => 'Định dạng pattern dùng cho 12 giờ phải là "h" hoặc "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => 'Định dạng pattern dùng cho 24 giờ phải là "H" hoặc "HH".',
+  'The pattern for AM/PM marker must be "a".' => 'Định dạng pattern cho AM/PM marker phải là "a".',
+  'The pattern for day in month must be "F".' => 'Định dạng pattern cho day in month phải là "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'Định dạng pattern cho day in year phải là "D", "DD" hoặc "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => 'Định dạng pattern cho day of the month phải là "d" hoặc "dd".',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => 'Pattern cho ngày trong tuần phải là "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'Định dạng pattern cho era phải là "G", "GG", "GGG", "GGGG" hoặc "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'Định dạng pattern cho giờ dạng AM/PM phải là "K" hoặc "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => 'Định dạng pattern cho giờ trong ngày phải là "k" hoặc "kk".',
+  'The pattern for minutes must be "m" or "mm".' => 'Định dạng pattern cho phút phải là "m" hoặc "mm".',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => 'Pattern cho tháng phải là "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".',
+  'The pattern for seconds must be "s" or "ss".' => 'Định dạng pattern cho giây phải là "s" hoặc "ss".',
+  'The pattern for time zone must be "z" or "v".' => 'Định dạng pattern cho múi giờ phải là "z" hoặc "v".',
+  'The pattern for week in month must be "W".' => 'Định dạng pattern cho week in month phải là "W".',
+  'The pattern for week in year must be "w".' => 'Định dạng pattern cho week in year phải là "w".',
+  'The queue is empty.' => 'Hàng đợi đang trống',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Quan hệ "{relation}" trong lớp active record "{class}" không được định nghĩa rõ ràng. Bảng join "{joinTable}" có khóa ngoại không tồn tại trong cơ sở dữ liệu.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'Mối quan hệ "{relation}" trong lớp active record "{class}" không được khai báo đúng đắn: bảng kết hợp "{joinTable}" không có khoá ngoại.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'Quan hệ "{relation}" trong lớp active record "{class}" được định nghĩa với khóa ngoại "{key}" mà không trỏ tới bảng cha "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'Mối quan hệ "{relation}" trong lớp active record "{class}" được khai báo khoá ngoại không đúng. Khoá ngoại phải tham chiếu đế các cột tương ứng của cả hai bảng.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'Quan hệ "{relation}" trong lớp active record "{class}" được định nghĩa với khóa ngoại không hợp lệ "{key}". Không có cột khóa ngoại đó trong bảng "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'Quan hệ "{relation}" trong lớp active record "{class}" được định nghĩa với khóa ngoại không hợp lệ. Cộ khóa ngoại phải trùng với khóa chính trong bảng "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'Mối quan hệ "{relation}" trong lớp active record "{class}" được khai báo khoá ngoại không đúng. Khoá ngoại phải có định dạng sau "joinTable(fk1,fk2,...)".',
+  'The requested view "{name}" was not found.' => 'Không tìm thấy yêu cầu view "{name}".',
+  'The stack is empty.' => 'Stack trống',
+  'The system is unable to find the requested action "{action}".' => 'Hệ thống không thể tìm được hành động yêu cầu "{action}".',
+  'The system view path "{path}" is not a valid directory.' => 'View path của hệ thống "{path}" không phải là một thư mục hợp lệ.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'Bảng "{table}" dùng cho lớp active record "{class}" không có trong database.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => 'Giá trị cho cột "{column}" không được cung cấp khi truy vấn bảng table "{table}".',
+  'The verification code is incorrect.' => 'Mã xác nhận không chính xác',
+  'The view path "{path}" is not a valid directory.' => 'View path "{path}" không phải là một thư mục hợp lệ.',
+  'Theme directory "{directory}" does not exist.' => 'Thư mục theme {directory} không tồn tại',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'Nội dung hiển thị yêu cầu phải có <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => 'Không thể thêm item vì tên của nó đã tồn tại.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'Không thể thay đổi tên item. Tên "{name}" đã được dùng cho một item khác.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'Không thể tạo application state file "{file}". Hãy chắc rằng thư mục chứa file có tồn tại và được phép ghi bởi Web server.',
+  'Unable to import "{alias}". Please check your server configuration to make sure you are allowed to change PHP include_path.' => 'Không thể import "{alias}". Hãy kiểm tra cấu hình server có cho phép thay đổi PHP include_path hay không.',
+  'Unable to lock file "{file}" for reading.' => 'Không thể khoá file "{file}" để đọc.',
+  'Unable to lock file "{file}" for writing.' => 'Không thể khoá file "{file}" để ghi.',
+  'Unable to read file "{file}".' => 'Không đọc được file "{file}"',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => 'Không thể thực hiện lại hành động "{object}.{method}". Phương thức không tồn tại.',
+  'Unable to resolve the request "{route}".' => 'Không thể giải quyết yêu cầu "{route}".',
+  'Unable to write file "{file}".' => 'Không thể ghi file "{file}".',
+  'Unknown authorization item "{name}".' => 'Không biết authorization item "{name}".',
+  'Unknown type "{type}".' => 'Không rõ type "{type}".',
+  'Unrecognized locale "{locale}".' => 'Không nhận biết được locale "{locale}".',
+  'View file "{file}" does not exist.' => 'File view "{file}" không tồn tại.',
+  'Yii application can only be created once.' => 'Yii application chỉ có thể được tạo một lần.',
+  'You are not authorized to perform this action.' => 'Bạn không có quyền để thực hiện hành động này.',
+  'Your request is invalid.' => 'Yêu cầu của bạn không hợp lệ.',
+  'Your request is not valid.' => 'Yêu cầu không hợp lệ',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" đã được sử dụng.',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" không hợp lệ.',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} không cho phép có nhiều hơn {limit} file.',
+  '{attribute} cannot be blank.' => '{attribute} không được phép rỗng.',
+  '{attribute} is in the list.' => '{attribute} có trong danh sách.',
+  '{attribute} is invalid.' => '{attribute} không hợp lệ',
+  '{attribute} is not a valid URL.' => '{attribute} không là đường link URL',
+  '{attribute} is not a valid email address.' => '{attribute} không là một email hợp lệ',
+  '{attribute} is not in the list.' => '{attribute} không có trong danh sách',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} có độ dài không đúng (phải là {length} kí tự).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} quá lớn (tối đa là {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} quá dài (tối đa là {max} kí tự).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} quá ngắn (tối thiểu là {min} kí tự).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} quá nhỏ (tối thiểu là {min}).',
+  '{attribute} must be a number.' => '{attribute} phải là một con số.',
+  '{attribute} must be an integer.' => '{attribute} phải là số nguyên.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} phải là {true} hoặc {false}.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} phải lớn hơn "{compareValue}".',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} phải bằng hoặc lớn hơn "{compareValue}".',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} phải nhỏ hơn "{compareValue}".',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} phải bằng hoặc nhỏ hơn "{compareValue}".',
+  '{attribute} must be repeated exactly.' => '{attribute} phải lập lại một cách chính xác',
+  '{attribute} must be {type}.' => '{attribute} phải thuộc {type}.',
+  '{attribute} must be {value}.' => '{attribute} phải là {value}.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} không được là "{compareValue}".',
+  '{className} does not support add() functionality.' => '{className} không hỗ trợ chức năng add().',
+  '{className} does not support delete() functionality.' => '{className} không hỗ trợ chức năng delete().',
+  '{className} does not support flushValues() functionality.' => '{className} không có hỗ trợ hàm flushValues().',
+  '{className} does not support get() functionality.' => '{className} không hỗ trợ chức năng get().',
+  '{className} does not support set() functionality.' => '{className} không hỗ trợ chức năng set().',
+  '{class} does not have a method named "{name}".' => '{class} không có phương thức nào tên "{name}".',
+  '{class} does not have relation "{name}".' => '{class} không có mối quan hệ nào tên "{name}".',
+  '{class} does not support fetching all table names.' => '{class} không hỗ trợ fetching tấc cả các tên bảng.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} có luật xác định tính hợp lệ không đúng. Luật phải gồm có thuộc tính cần xác định tính hợp lệ và tên của sự xác định tính hợp lệ.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} phải chỉ rõ "model" và "attribute" hoặc giá trị "tên" thuộc tính.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin phải được gán true nếu muốn dùng cookie-based authentication.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() phải được implemented.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} không tìm được view: "{view}".',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} chứa các nested widget tags không thích hợp trong view của nó "{view}". Widget {widget} không có endWidget().',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} có nhiều endWidget({id}) trong view của nó.',
+  '{widget} cannot find the view "{view}".' => '{widget} không thể tìm thấy file view: "{view}".',
+);

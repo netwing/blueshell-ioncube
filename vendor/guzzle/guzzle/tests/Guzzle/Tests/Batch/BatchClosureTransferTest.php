@@ -1,36 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Batch;
+
+use Guzzle\Batch\BatchClosureTransfer;
+
+/**
+ * @covers Guzzle\Batch\BatchClosureTransfer
+ */
+class BatchClosureTransferTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    /** @var \Guzzle\Batch\BatchClosureTransfer The transfer fixture */
+    protected $transferStrategy;
+
+    /** @var array|null An array for keeping track of items passed into the transfer closure */
+    protected $itemsTransferred;
+
+    protected function setUp()
+    {
+        $this->itemsTransferred = null;
+        $itemsTransferred =& $this->itemsTransferred;
+
+        $this->transferStrategy = new BatchClosureTransfer(function (array $batch) use (&$itemsTransferred) {
+            $itemsTransferred = $batch;
+            return;
+        });
+    }
+
+    public function testTransfersBatch()
+    {
+        $batchedItems = array('foo', 'bar', 'baz');
+        $this->transferStrategy->transfer($batchedItems);
+
+        $this->assertEquals($batchedItems, $this->itemsTransferred);
+    }
+
+    public function testTransferBailsOnEmptyBatch()
+    {
+        $batchedItems = array();
+        $this->transferStrategy->transfer($batchedItems);
+
+        $this->assertNull($this->itemsTransferred);
+    }
+
+    /**
+     * @expectedException Guzzle\Common\Exception\InvalidArgumentException
+     */
+    public function testEnsuresCallableIsCallable()
+    {
+        $foo = new BatchClosureTransfer('uh oh!');
+    }
+}

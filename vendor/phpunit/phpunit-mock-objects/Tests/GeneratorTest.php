@@ -1,45 +1,79 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+class Framework_MockObject_GeneratorTest extends PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers PHPUnit_Framework_MockObject_Generator::getMock
+     * @expectedException PHPUnit_Framework_Exception
+     */
+    public function testGetMockFailsWhenInvalidFunctionNameIsPassedInAsAFunctionToMock()
+    {
+        PHPUnit_Framework_MockObject_Generator::getMock('StdClass', array(0));
+    }
+
+    /**
+     * @covers PHPUnit_Framework_MockObject_Generator::getMock
+     */
+    public function testGetMockCanCreateNonExistingFunctions()
+    {
+        $mock = PHPUnit_Framework_MockObject_Generator::getMock('StdClass', array('testFunction'));
+        $this->assertTrue(method_exists($mock, 'testFunction'));
+    }
+
+    /**
+     * @covers PHPUnit_Framework_MockObject_Generator::getMock
+     * @expectedException PHPUnit_Framework_Exception
+     * @expectedExceptionMessage duplicates: "foo, foo"
+     */
+    public function testGetMockGeneratorFails()
+    {
+        $mock = PHPUnit_Framework_MockObject_Generator::getMock('StdClass', array('foo', 'foo'));
+    }
+
+    /**
+     * @covers PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass
+     */
+    public function testGetMockForAbstractClassDoesNotFailWhenFakingInterfaces()
+    {
+        $mock = PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass('Countable');
+        $this->assertTrue(method_exists($mock, 'count'));
+    }
+
+    /**
+     * @covers PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass
+     */
+    public function testGetMockForAbstractClassStubbingAbstractClass()
+    {
+        $mock = PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass('AbstractMockTestClass');
+        $this->assertTrue(method_exists($mock, 'doSomething'));
+    }
+
+    /**
+     * @dataProvider getMockForAbstractClassExpectsInvalidArgumentExceptionDataprovider
+     * @covers PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass
+     * @expectedException PHPUnit_Framework_Exception
+     */
+    public function testGetMockForAbstractClassExpectingInvalidArgumentException($className, $mockClassName)
+    {
+        $mock = PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass($className, array(), $mockClassName);
+    }
+
+    /**
+     * @covers PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass
+     * @expectedException PHPUnit_Framework_Exception
+     */
+    public function testGetMockForAbstractClassAnstractClassDoesNotExist()
+    {
+        $mock = PHPUnit_Framework_MockObject_Generator::getMockForAbstractClass('Tux');
+    }
+
+    /**
+     * Dataprovider for test "testGetMockForAbstractClassExpectingInvalidArgumentException"
+     */
+    public static function getMockForAbstractClassExpectsInvalidArgumentExceptionDataprovider()
+    {
+        return array(
+            'className not a string' => array(array(), ''),
+            'mockClassName not a string' => array('Countable', new StdClass),
+        );
+    }
+}

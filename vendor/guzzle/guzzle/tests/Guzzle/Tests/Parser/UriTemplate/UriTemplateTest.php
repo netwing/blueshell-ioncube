@@ -1,53 +1,96 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Tests\Parsers\UriTemplate;
+
+use Guzzle\Parser\UriTemplate\UriTemplate;
+
+/**
+ * @covers Guzzle\Parser\UriTemplate\UriTemplate
+ */
+class UriTemplateTest extends AbstractUriTemplateTest
+{
+    /**
+     * @dataProvider templateProvider
+     */
+    public function testExpandsUriTemplates($template, $expansion, $params)
+    {
+        $uri = new UriTemplate($template);
+        $this->assertEquals($expansion, $uri->expand($template, $params));
+    }
+
+    public function expressionProvider()
+    {
+        return array(
+            array(
+                '{+var*}', array(
+                    'operator' => '+',
+                    'values'   => array(
+                        array('value' => 'var', 'modifier' => '*')
+                    )
+                ),
+            ),
+            array(
+                '{?keys,var,val}', array(
+                    'operator' => '?',
+                    'values'   => array(
+                        array('value' => 'keys', 'modifier' => ''),
+                        array('value' => 'var', 'modifier' => ''),
+                        array('value' => 'val', 'modifier' => '')
+                    )
+                ),
+            ),
+            array(
+                '{+x,hello,y}', array(
+                    'operator' => '+',
+                    'values'   => array(
+                        array('value' => 'x', 'modifier' => ''),
+                        array('value' => 'hello', 'modifier' => ''),
+                        array('value' => 'y', 'modifier' => '')
+                    )
+                )
+            )
+        );
+    }
+
+    /**
+     * @dataProvider expressionProvider
+     */
+    public function testParsesExpressions($exp, $data)
+    {
+        $template = new UriTemplate($exp);
+
+        // Access the config object
+        $class = new \ReflectionClass($template);
+        $method = $class->getMethod('parseExpression');
+        $method->setAccessible(true);
+
+        $exp = substr($exp, 1, -1);
+        $this->assertEquals($data, $method->invokeArgs($template, array($exp)));
+    }
+
+    /**
+     * @ticket https://github.com/guzzle/guzzle/issues/90
+     */
+    public function testAllowsNestedArrayExpansion()
+    {
+        $template = new UriTemplate();
+
+        $result = $template->expand('http://example.com{+path}{/segments}{?query,data*,foo*}', array(
+            'path'     => '/foo/bar',
+            'segments' => array('one', 'two'),
+            'query'    => 'test',
+            'data'     => array(
+                'more' => array('fun', 'ice cream')
+            ),
+            'foo' => array(
+                'baz' => array(
+                    'bar'  => 'fizz',
+                    'test' => 'buzz'
+                ),
+                'bam' => 'boo'
+            )
+        ));
+
+        $this->assertEquals('http://example.com/foo/bar/one,two?query=test&more%5B0%5D=fun&more%5B1%5D=ice%20cream&baz%5Bbar%5D=fizz&baz%5Btest%5D=buzz&bam=boo', $result);
+    }
+}

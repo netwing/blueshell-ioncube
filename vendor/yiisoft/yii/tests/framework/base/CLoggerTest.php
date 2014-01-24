@@ -1,53 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPoivMrk41w2SHOhEU2RgZAVztz043BJyXPkiDngN4Q9ddfSvDbklz+BPAy3uJjgiJFKTbSXi
-RSOd46Fvbfiv07JYSzFhvKI+gcQE41TL3kftCJNm14ZJXTLs+qzPjlS0/QxHGfeZ4Hfc3rhBUxGH
-65Jcg5hFwDODmrLLy69rxOz416BT6XFgqTjmw7+goQEU0EkRKaewjYjKGtyKp6T0eDWNgvwxij6u
-2qs4og4jqVAlkPejCPUyhr4euJltSAgiccy4GDnfT0fbxnAPIxvHVH9gPyZZf+eE/n5PuVgXc6Tg
-ARYorEZ7k5rDxXmh2Hzr+F85Fo4VZA0gkzn51h08ckP1HVP2+K0/HITunZyVpDFtUohq7fsGy1PZ
-Y08o5sEP4EV/d9hawjRprhsugwL7wMLbN/rANQ8Ff0NqbdvgxrZVLbTdSgkxV7CizLxMZICvfSG5
-eMi/ylBkgEfFnsdZv0d6g3y8IUSjWNs6JqrP22oLi+l2JxKjz/FXCc42pX2DaDHIz/7WyDa0r9Df
-AorPn0xC12+mU1fKhsKxw5BxtM2iLF+fgtHQHFIS2mglrIfi+b5n/2S+RS20Je1h16Mih18jWWD3
-NI62LaU6BNLST/HT9Ogn32iOYcl/chkPpsS3t+6TBfAdzqyB/r1jWoI/OLaMHenumIk/Uo0qbtlX
-bko0cQ6dbsVtM0YWp622XokQY07SMjM/Fc5wQ7eMWJTMAUvaFcHXiaL76v+dLRMg5tT/72euTS5/
-VYkbnFelRo0x5irFOwoTc2JTx2VrDoBb5gSYs3zIXMT5F+B8NUvCiDDRgM4V8FQE/vs23CJrxLQp
-fwsUz+BiV9lHfeh5aepEIXDI33u0BtbGLd5YCEnf52Wz6t2NoJ0f9LFE5hFlKsh9PIMcqKkF/P6r
-w2FA42GfqyoTJexmnKF/xA9TkDX7NFWTmHUvh+nFu06yydSCltmSbmDfKGpBpbXHB//VrJ3Zvu3a
-CmaXNceQ43K3jsSNA+fQkH+YaMaQ66kRS2rbW+frD2zOwQ9dxaFZGKXd1UbKiQwODChe4VoRgr9O
-tiO86WK5N1yKxSd+NNIFl7/TVY9bC1dZAOWkHaXOqFv+luXjCbO12vnumhrMdRc1hGITCjsblnFp
-PchF3Rq7/tX9DMb2CMWPjqFDba7QtKgGHK42jFMcYk8tkPzkWsZrv4j5QCC+A/SuvEc0dfopDOGq
-tPKFv4kvJKZvFbql5Gt1Ud70dCo2YPBfVnS5RoD0sK/fIJxD/167P6zxLraFBTIl7URzEBw84WIX
-6PbfiqbOKTtCd3hp6dyCHG2pMZ4tDGrHs7YUquT9tb4vX+MLd1ZTYq2xD9f33AZDLgTeaNySlLWD
-lsvVYG5iMr5rNMqkMofMlOSDbzT2ev+SuH1A0KJIZKeuoYwMYvGnD9oijiZ/gZJjkPwZiAVqEtxB
-4laz7NGwpcxCMAZNOW0doHMxBgRrbgtTDHA/tpS0IUeQjKfY6l5MgzliyEIDyTDN+wcOXup3sohU
-W2ZtyzzsqKTYdwx8DtvbXHpUX1yATrYqeazCT7RwvROnRgb0TBMwuL/12k0dYF544MxoETDt40I3
-3Aj0kwTuwgkiLeX5PKM2e4Sb2GEd+j6FZdEI31I3XXwz2TL4w7eESKl4CM9a7cW8DSH0kPZ+H4N/
-7CJmhzTmfFgUWtEMZXIqbHNuKSKrDbP6RytfEpDtKgs9nFFYTjYON/2zL0ZGcMyxMOAh1BJwfIrC
-g5TX82rJNN4FCoYDeslmRR9IaXINJeQEIwQ7BDZNmtthys5qtT5LxS59FrRVGs6Zk+zHhAX9c1O5
-SFu5pI0Lxq5NUVPMqBqWJG6uZnXVIF95rfIwLGSoQrod8yLttycuPk3DKCedCbgNj+Nnp3Ssdq0C
-1L7qYkNKdqE/2vc2DIQvdHionRjgdtZc6NA8jrujSfYJ5O6qG/vkYedN4y/XHaxD0aIJuELNPz8E
-YvbpFVwYnyuvkYK/cQT90h+Ob03TZd6CnuiRBSRANlCPGHuiR7f+V7xMVEowHxLaZVAedWZrVx9H
-D98qo/5Fv6gMonlVxdAC3kS4PxyKQ/7vYhiZSJ2pPL4+HeCW7s+ts4xVTKa+MXhCsAj1WWLfm0A+
-0qnQva8K89nXSXpTFp3snodSCLUgWaIxPzpgMNDY6dpezgxAG90FdIOR5H6CR7KApWLdyVewYP8B
-j3ghYAvaxBN+k2RJTNSNGICVeu3D4lc57B1UOLBGyYhT7XQklaf0M0cTyTqwg4jsBvWHlfaVwZgD
-Y3GuEHSzauLp4yzg1y7Ix9wz77aeAAilg4Bbb4sxuGHBXHG2QQv6tI+LsTy0Ad7PMPXldr3f+toE
-obqgQjmp/ZGtLmyguka38S2Z5DQUkZN/rvYBxI3N6JZYdl54Lscy4dQKcmLTb50AemMYdB1VzKCF
-0pq42wc6Z9jqighkP0ZnTwC3e2IyU/mpjBii+l9MddbofHlK6NZ01dLIANZXKP0rZe7JPPIAMXoK
-3tf1u7vpRGkUzlU1nODHc12WLNg53y9IZGh5Rms8QgVOcaFU59LMjf4oEb33kI40pesFtR+ru8KN
-WXgdaKzAZM/booCTEoGLwnIHt6h83arB+cV38nrQtbN8lCtimuSKt0Wga1farQ3ToBj0A94lqrPc
-BOxrz1pUzNu2k4KDz/5DuTstwls1BEPXgClo0tF5yhwCwn25oyoWA9yHP5BjNib6CT5ZbhTVuZuh
-Xt9xf3IgN50b4TJfxyS3bhxksmDO0SnnfUqb7gEEDHbP9CCX4JsrHEaaea2f5CSvaGqe4LyKMCFN
-7GG4MXZ89fvmKps0LZkdArhztjMC+oaejSx0EwEQLtAOoIC7CsVoR6eTkNYXlJwNydmm3Q3t4f3p
-RNcZmtXmT/p27LuXLbdPbzbNpfkk6nI7alh2tUT5BUdOZkqZmYLVc33+UkNd3MjTydf3+eqoAFjr
-yfucLMRQ3I+bBgjyyon3o5vXy0DnPS6mTUrGI8gV3vGufyGzMqIkvJb1IkQAQB9/0DAMaSHYYyan
-Cb/It6OECrlZJFzdhBRHqIvu5iYUaUX+KhJyR0gmU+8mH7SH7v0WHLnRKbE7YeISYb/EmDYILbmQ
-wL2FsjBG/RhCeBtDvXXasxFIpccd9M5TuZBX+8fZkhpXVPbRvk56RRrrCLAP7IIjsYrMA0GdEgui
-lN3YtOa3kx+7jln+cH2m7RlIl9Xfass0QgrUUZyfHDtI/D94DoxRVOtHClpA+DZ34SCUDQLdUN8+
-WulfHABQlHGn3OImVG1eT1TOuoRA/txEc6CJMb8xvNe++P3qnmQfnCaHmrOWwqPYhszxP/so27EN
-WGeCbwVxc2y2ncCMvusmWCZvdypsvhImo7HOh7UMpPP9qFz4RQ53/sKsx9jqgrfBoJ72bMuat7BB
-c18+0+R6lA8AzCbegwPPKpyiM2QfDV4HLdhveamgf5uwpXKtr9MvBaIXnuF32W0zOTZ+V+pcxjPl
-cuLg5vVd80uuXSr0BoWTaagO1ataZ0vF2r+ebbgUW3KoW8CWHHSo8+Vh/O4jvNyVSG4CGMnf8vKh
-ez/eRNJdZAqnTy4ArfsDjw7ySm5P1wf0Z5oW9WekuuA2NfMeo+V+nFIkCD4N9eiAEwfqhGB6XwpP
-Sh8VT0eRdE/oOMT06HKFYz0kUMcvan/v2pqvfzM7tCUISdYfv+cBPh/j+k1twCgQmqlIrF8zUrFy
-3kKh3RF85vIza5Cd1h7D4fI3XHoq81Jrj6G/kW3+fOCd4Jh3r8g/8UGPXwEf2D6GEyP2lViHQMu=
+<?php
+
+class CLoggerTest extends CTestCase
+{
+	public function testLog()
+	{
+		$logger=new CLogger;
+		$logger->log('something','debug','application.test');
+	}
+
+	public function testGetLogs()
+	{
+		$logger=new CLogger();
+		$logs=array(
+			array('message1','debug','application.pages'),
+			array('message2','info','application.config'),
+			array('message3','info','application.pages'),
+		);
+		foreach($logs as $log)
+			$logger->log($log[0],$log[1],$log[2]);
+
+		$l=$logger->getLogs('debug');
+		$this->assertTrue($logs[0]===array_slice($l[0],0,3));
+
+		$l=$logger->getLogs('debug , Info');
+		$this->assertTrue($logs[0]===array_slice($l[0],0,3));
+		$this->assertTrue($logs[1]===array_slice($l[1],0,3));
+		$this->assertTrue($logs[2]===array_slice($l[2],0,3));
+
+		$l=$logger->getLogs('','application.config');
+		$this->assertTrue($logs[1]===array_slice($l[0],0,3));
+
+		$l=$logger->getLogs('','application.*');
+		$this->assertTrue($logs[0]===array_slice($l[0],0,3));
+		$this->assertTrue($logs[1]===array_slice($l[1],0,3));
+		$this->assertTrue($logs[2]===array_slice($l[2],0,3));
+
+		$l=$logger->getLogs('','application.config , Application.pages');
+		$this->assertTrue($logs[0]===array_slice($l[0],0,3));
+		$this->assertTrue($logs[1]===array_slice($l[1],0,3));
+		$this->assertTrue($logs[2]===array_slice($l[2],0,3));
+
+		$l=$logger->getLogs('info','application.config');
+		$this->assertTrue($logs[1]===array_slice($l[0],0,3));
+
+		$l=$logger->getLogs('info,debug','application.config');
+		$this->assertTrue($logs[1]===array_slice($l[0],0,3));
+	}
+}

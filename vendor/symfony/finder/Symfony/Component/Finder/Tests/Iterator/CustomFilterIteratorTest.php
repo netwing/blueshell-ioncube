@@ -1,36 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Iterator;
+
+use Symfony\Component\Finder\Iterator\CustomFilterIterator;
+
+class CustomFilterIteratorTest extends IteratorTestCase
+{
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testWithInvalidFilter()
+    {
+        new CustomFilterIterator(new Iterator(), array('foo'));
+    }
+
+    /**
+     * @dataProvider getAcceptData
+     */
+    public function testAccept($filters, $expected)
+    {
+        $inner = new Iterator(array('test.php', 'test.py', 'foo.php'));
+
+        $iterator = new CustomFilterIterator($inner, $filters);
+
+        $this->assertIterator($expected, $iterator);
+    }
+
+    public function getAcceptData()
+    {
+        return array(
+            array(array(function (\SplFileInfo $fileinfo) { return false; }), array()),
+            array(array(function (\SplFileInfo $fileinfo) { return preg_match('/^test/', $fileinfo) > 0; }), array('test.php', 'test.py')),
+            array(array('is_dir'), array()),
+        );
+    }
+}

@@ -1,42 +1,39 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-5I+wrEhEMC51RLmBP2DDzW6a//E2SaeBhDZ2vAG=
+<?php
+
+namespace Guzzle\Tests\Plugin\CurlAuth;
+
+use Guzzle\Common\Version;
+use Guzzle\Plugin\CurlAuth\CurlAuthPlugin;
+use Guzzle\Http\Client;
+
+/**
+ * @covers Guzzle\Plugin\CurlAuth\CurlAuthPlugin
+ */
+class CurlAuthPluginTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public function testAddsBasicAuthentication()
+    {
+        Version::$emitWarnings = false;
+        $plugin = new CurlAuthPlugin('michael', 'test');
+        $client = new Client('http://www.test.com/');
+        $client->getEventDispatcher()->addSubscriber($plugin);
+        $request = $client->get('/');
+        $this->assertEquals('michael', $request->getUsername());
+        $this->assertEquals('test', $request->getPassword());
+        Version::$emitWarnings = true;
+    }
+
+    public function testAddsDigestAuthentication()
+    {
+        Version::$emitWarnings = false;
+        $plugin = new CurlAuthPlugin('julian', 'test', CURLAUTH_DIGEST);
+        $client = new Client('http://www.test.com/');
+        $client->getEventDispatcher()->addSubscriber($plugin);
+        $request = $client->get('/');
+        $this->assertEquals('julian', $request->getUsername());
+        $this->assertEquals('test', $request->getPassword());
+        $this->assertEquals('julian:test', $request->getCurlOptions()->get(CURLOPT_USERPWD));
+        $this->assertEquals(CURLAUTH_DIGEST, $request->getCurlOptions()->get(CURLOPT_HTTPAUTH));
+        Version::$emitWarnings = true;
+    }
+}

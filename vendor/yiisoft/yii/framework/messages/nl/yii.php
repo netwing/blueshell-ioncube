@@ -1,232 +1,280 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * Message string can be used with plural forms format. Check i18n section
+ * of the guide for details.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  'Only SHA1 and MD5 hashing algorithms are supported when using PHP 5.1.1 or below.' => 'Bij het gebruik van PHP 5.1.1 of lager zijn alleen de MD5 en SHA1 hashing algoritmes ondersteund.',
+  'Script HTML options are not allowed for "CClientScript::POS_LOAD" and "CClientScript::POS_READY".' => 'Voor "CClientScript::POS_LOAD" en "CClientScript::POS_READY" zijn geen script HTML opties toegelaten.',
+  '"{path}" is not a valid directory.' => '"{path}" is geen geldige map.',
+  '&lt; Previous' => '&lt; Vorige',
+  '&lt;&lt; First' => '&lt;&lt; Eerste',
+  'Action class {class} must implement the "run" method.' => 'De Action class {class} moet de "run" functie implementeren.',
+  'Active Record requires a "db" CDbConnection application component.' => 'Active Record vereist een "db" CDbConnection applicatie-component.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Active record "{class}" bevat een relatie "{relation}" met ongeldige instellingen. Het relatietype, de verwante active record class en de foreign key moeten opgegeven zijn.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'Active record "{class}" probeert de ongeldige kolom "{column}" te selecteren. De kolom moet deel uitmaken van de tabel of een uitdrukking met alias zijn.',
+  'Adding a foreign key constraint to an existing table is not supported by SQLite.' => 'Een foreign key toevoegen aan een bestaande table wordt niet ondersteund door SQLite.',
+  'Adding a primary key after table has been created is not supported by SQLite.' => 'SQLite kan geen primary key toevoegen nadat de tabel aangemaakt is.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => 'Alias "{alias}" is ongeldig. Zorg ervoor dat er naar een bestaand PHP bestand verwezen wordt.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'Alias "{alias}" is ongeldig. Zorg ervoor dat er naar een bestaande map of bestand verwezen wordt.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory.' => 'Alias "{alias}" is ongeldig. Zorg ervoor dat er naar een bestaande map verwezen wordt.',
+  'Altering a DB column is not supported by SQLite.' => 'Een DB kolom aanpassen wordt niet ondersteund door SQLite.',
+  'Application Log' => 'Applicatielogboek',
+  'Application base path "{path}" is not a valid directory.' => 'Het base path voor de applicatie "{path}" is ongeldig.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'Het runtime path voor de applicatie "{path}" is ongeldig. Dit moet een map zijn die door de web server kan aangepast worden.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'Authorisatie-item "{item}" was al aan gebruiker "{user}" toegewezen.',
+  'Base path "{path}" is not a valid directory.' => 'Het base path "{path}" is ongeldig.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'Voor het gebruik van CApcCache moet de apc extensie geladen zijn.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" is ongeldig. Dit moet een bestaande en door de web server beschrijfbare map zijn.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID is ongeldig. Gelieve ervoor te zorgen dan "{id}" naar een geldige cache application component wijst.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" is ongeldig. Kan geen overeenkomstige actie vinden in de huidige controller.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" is ongeldig. Gelieve ervoor te zorgen dat het naar de ID van een CDbConnection applicatie-component wijst.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" is ongeldig. Gelieve ervoor te zorgen dat het naar de ID van een CDbConnection applicatie-component wijst.',
+  'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCacheDependency.connectionID "{id}" is ongeldig. Zorg ervoor dat het verwijst naar de ID van een CDbConnection applicatie-component.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql mag niet leeg zijn.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand faalde tijdens het uitvoeren van volgend SQL statement: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand faalde bij de "prepare" van volgend SQL statement: {error}',
+  'CDbCommand::execute() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::execute() fout: {error}. Het uitgevoerde SQL statement was: {sql}.',
+  'CDbCommand::{method}() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::{method}() fout: {error}. Het uitgevoerde SQL statement was: {sql}.',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection heeft geen ondersteunig voor het lezen van het schema van een {driver} database.',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection kon geen verbinding maken met de database',
+  'CDbConnection is unable to find PDO class "{className}". Make sure PDO is installed correctly.' => 'CDbConnection kon PDO class "{className}" niet vinden. Zorg ervoor dat PDO correct geïnstalleerd is.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader kan niet terugspoelen. Alleen voorwaartse acties zijn mogelijk.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" is ongeldig. Gelieve ervoor te zorgen dat het naar de ID van een CDbConnection applicatie-component wijst.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" wijst niet naar een geldige CDbConnection applicatie-component.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID is ongeldig. Gelieve ervoor te zorgen dat "{id}" naar een geldige database applicatie-component wijst.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" is ongeldig. Gelieve te zorgen dat het naar de ID van een CDbConnection applicatie-component wijst.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction is niet actief en kan daardoor geen commit of roll back operaties uitvoeren.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory mag niet leeg zijn.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'Voor het gebruik van CEAcceleratorCache moet de PHP eAccelerator extensie geladen, aangezet of gecompileerd zijn met de "--with-eaccelerator-shared-memory" optie.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName mag niet leeg zijn.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" wijst naar een ongeldige map. Dit moet een map door de web server beschrijfbare map zijn.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain kan alleen overweg met objecten die de IFilter interface implementeren.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl mag niet leeg zijn.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name mag niet leeg zijn.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName mag niet leeg zijn.',
+  'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified bevatte een waarde die niet begrepen werd door strtotime()',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection kan alleen CHttpCookie objecten bevatten.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest kan de URL van het ingangsscript niet bepalen.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest kan de pad-informatie van het verzoek niet bepalen',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest kan de URI van het verzoek niet bepalen',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode kan alleen "none", "allow" of "only" zijn.',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be a float between 0 and 100.' => 'CHttpSession.gcProbability "{value}" is ongeldig. Het moet een kommagetal tussen 0 en 100 zijn.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" is geen geldige map.',
+  'CMemCache requires PHP {extension} extension to be loaded.' => 'CMemCache vereist dat de PHP {extension} extensie geladen is',
+  'CMemCache server configuration must be an array.' => 'De configuratie voor de CMemCache server moet een array zijn.',
+  'CMemCache server configuration must have "host" value.' => 'De configuratie voor de CMemCache server moet een "host" waarde bevatten.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute heeft een niet overeenkomstig cod blok "{token}" gevonden. Zorg ervoor dat alle aanroepen naar Yii::beginProfile() en Yii::endProfile() correct genesteld zijn.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" is ongeldig. Geldige waarden bevatten "summary" en "callstack".',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'CSecurityManager vereist de PHP mcrypt extensie om de data te kunnen versleutelen.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey mag niet leeg zijn.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey mag niet leeg zijn.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> kan alleen {type}-objecten bevatten.',
+  'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}> kan alleen {type}-objecten bevatten.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat moet "path" of "get". zijn',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'Voor het gebruik van CWinCache moet de PHP wincache extensie geladen zijn.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'De CWinCache gebruikerscache staat af. Gelieve wincache.ucenabled op "On" te zetten in php.ini.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'Voor het gebruik van CXCache moet de XCache extensie geladen zijn.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'Voor het gebruik van CZendDataCache moet de PHP Zend Data Cache extensie geladen zijn.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => 'Kan "{child}" niet toevoegen als kind van "{name}". Er werd een lus ontdekt.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => 'Kan "{child}" niet toevoegen als kind van "{parent}". Er werd een lus ontdekt.',
+  'Cannot add "{name}" as a child of itself.' => 'Kan "{child}" niet toevoegen aan zichzelf.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => 'Kan een item van type "{child}" niet toevoegen aan een item van type "{parent}".',
+  'Cannot hash a password that is empty or not a string.' => 'Van een paswoord dat leeg is of geen string kan geen has gegenereerd worden.',
+  'Class name "{class}" does not match class file "{file}".' => 'De class-naam "{class}" komt niet overeen met het bestand "{file}".',
+  'Column name must be either a string or an array.' => 'De kolomnaam moet een string of een array zijn.',
+  'Dropping DB column is not supported by SQLite.' => 'Een DB kolom verwijderen wordt niet ondersteund door SQLite.',
+  'Dropping a foreign key constraint is not supported by SQLite.' => 'Een foreign key verwijderen wordt niet ondersteund door SQLite.',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" of "{child}" bestaat niet.',
+  'Error: Table "{table}" does not have a primary key.' => 'Fout: Tabel "{table}" heeft geen primary key.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Fout: Tabel "{table}" heeft een samengestelde key. Dit wordt niet ondersteund door het crud commando.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => 'Er is een ongeldige handler "{handler}" verbonden aan event "{class}.{event}".',
+  'Event "{class}.{event}" is not defined.' => 'Event "{class}.{event}" is niet gedefinieerd.',
+  'Extension path "{path}" does not exist.' => 'Het pad "{path}" van de extensie bestaat niet.',
+  'Failed to initialize the mcrypt module.' => 'Er is een fout opgetreden tijdens het initializeren van de mcrypt module.',
+  'Failed to set unsafe attribute "{attribute}" of "{class}".' => 'Het toekennen van onveilig attribuut "{attribute}" op "{class}" is mislukt.',
+  'Failed to start session.' => 'Het starten van een sessie is mislukt',
+  'Failed to write the uploaded file "{file}" to disk.' => 'Kon het geuploade bestand "{file}" niet wegschrijven naar de schijf.',
+  'File upload was stopped by extension.' => 'De bestandsupload werd gestopt door de extensie.',
+  'Filter "{filter}" is invalid. Controller "{class}" does not have the filter method "filter{filter}".' => 'Filter "{filter}" is ongeldig. Controller "{class}" heeft geen "filter{filter}" functie.',
+  'GD with FreeType or ImageMagick PHP extensions are required.' => 'GD met de FreeType of de ImageMagick PHP extensie is vereist.',
+  'Get a new code' => 'Nieuwe code opvragen',
+  'Go to page: ' => 'Ga naar pagina: ',
+  'In order to use MIME-type validation provided by CFileValidator fileinfo PECL extension should be installed.' => 'Om de door CFileValidator aangeboden MIME-type validatie te gebruiken moet de fileinfo PECL extensie geïnstalleerd zijn',
+  'Internal error while generating hash.' => 'Interne fout tijdens het genereren van de hash.',
+  'Invalid MO file revision: {revision}.' => 'Ongeldige versie voor MO bestand: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'Ongeldige MO bestand: {file} (magic: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'Ongeldige waarde "{value}". Dit moet een van de waarden uit ({enum}) zijn.',
+  'Invalid expression for CHttpCacheFilter.lastModifiedExpression: The evaluation result "{value}" could not be understood by strtotime()' => 'Ongeldige uitdrukking voor CHttpCacheFilter.lastModifiedExpression: Het evaluatie-resultaat "{value}" werd niet begrepen door strtotime()',
+  'Invalid operator "{operator}".' => 'Ongeldige operator "{operator}".',
+  'Last &gt;&gt;' => 'Laatste &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'De data voor de lijst moet een array zijn, of een object dat Traversable implementeerd.',
+  'List index "{index}" is out of bound.' => 'Index {index} ligt niet binnen de lijst',
+  'Login Required' => 'Aanmelden verplicht',
+  'Map data must be an array or an object implementing Traversable.' => 'De Map data moet een array zijn, of een object dat Traversable implementeerd.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'Er is geen tijdelijke map om het geuploade bestand te bewaren.',
+  'Next &gt;' => 'Volgende &gt;',
+  'No columns are being updated for table "{table}".' => 'Er worden geen kolommen geupdated voor tabel "{table}".',
+  'No counter columns are being updated for table "{table}".' => 'Er worden geen counter kolommen geupdated voor table "{table}".',
+  'Object configuration must be an array containing a "class" element.' => 'De configuratie voor een object moet een array zijn met een "class" element.',
+  'Please fix the following input errors:' => 'Gelieve de volgende fouten te verhelpen:',
+  'Powered by {yii}.' => 'Aangedreven door {yii}.',
+  'Property "{class}.{property}" is not defined.' => 'Het attribuut "{class}.{property}" is niet gedefinieerd.',
+  'Property "{class}.{property}" is read only.' => 'Het attribuut "{class}.{property}" is alleen-lezen.',
+  'Property CMaskedTextField.mask cannot be empty.' => 'Het attribuut CMaskedTextField.mask mag niet leeg zijn',
+  'Queue data must be an array or an object implementing Traversable.' => 'Queue data moet een array zijn of een object dat Traversable implementeerd.',
+  'Relation "{name}" is not defined in active record class "{class}".' => 'De relatie "{name}" is niet gedefinieerd in active record class "{class}".',
+  'Removing a primary key after table has been created is not supported by SQLite.' => 'SQLite kan geen primary key verwijderen nadat de tabel aangemaakt is.',
+  'Renaming a DB column is not supported by SQLite.' => 'Een kolom hernoemen wordt niet ondersteund door SQLite.',
+  'Stack data must be an array or an object implementing Traversable.' => 'Stack data moet een array zijn of een object dat Traversable implementeerd.',
+  'Table "{table}" does not exist.' => 'Tabel "{table}" bestaat niet.',
+  'Table "{table}" does not have a column named "{column}".' => 'Tabel "{table}" heeft geen kolom "{column}".',
+  'The "db" application component must be configured to be a CDbConnection object.' => 'De "db" applicatie-component moet een CDbConnection object zijn.',
+  'The "filter" property must be specified with a valid callback.' => 'Het "filter" attribuut moet een geldige callback bevatten.',
+  'The "forceCopy" and "linkAssets" cannot be both true.' => '"forceCopy" en "linkAssets" kunnen niet beide de waard true hebben.',
+  'The "pattern" property must be specified with a valid regular expression.' => 'Het "pattern" attribuut moet een geldige reguliere expressie bevatten.',
+  'The "range" property must be specified with a list of values.' => 'Het "range" attribuut moet een lijst van waarden bevatten.',
+  'The CSRF token could not be verified.' => 'Het CSRF token kon niet geverifieerd worden.',
+  'The DB query must contain the "from" portion.' => 'De DB query moet een "from"-gedeelte bevatten.',
+  'The STAT relation "{name}" cannot have child relations.' => 'De STAT relatie "{name}" kan geen onderliggende relaties hebben.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'Het URL pattern "{pattern}" voor route "{route}" is geen geldige reguliere expressie.',
+  'The active record cannot be deleted because it is new.' => 'Het active record kan niet verwijderd worden want het is nieuw.',
+  'The active record cannot be inserted to database because it is not new.' => 'Insert kan niet gebruikt worden want het active record is niet nieuw.',
+  'The active record cannot be updated because it is new.' => 'Het active record kan niet geupdated worden want het is nieuw.',
+  'The asset "{asset}" to be published does not exist.' => 'Het te publiceren asset "{asset}" bestaat niet',
+  'The command path "{path}" is not a valid directory.' => 'De command map "{path}" is ongeldig.',
+  'The controller path "{path}" is not a valid directory.' => 'De controller map "{path}" is ongeldig.',
+  'The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.' => 'Het bestand "{file}" kan niet worden geupload. Alleen bestanden van de volgende MIME-types zijn toegelaten: {mimeTypes}',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => 'Het bestand "{file}" kan niet geuploaded worden. Alleen de volgende extensies zijn toegestaan: {extensions}',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => 'Het bestand "{file}" is te groot. Het kan niet groter zijn dan {limit} bytes.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => 'Het bestand "{file}" is te klein. Het moet groter zijn dan {limit} bytes.',
+  'The file "{file}" was only partially uploaded.' => 'Het bestand "{file}" is maar gedeeltelijk geuploaded.',
+  'The first element in a filter configuration must be the filter class.' => 'Het eerste element in de configuratie voor een filter moet de filter class zijn.',
+  'The format of {attribute} is invalid.' => 'Het formaat van {attribute} is ongeldig',
+  'The item "{name}" does not exist.' => 'Het item "{name}" bestaat niet.',
+  'The item "{parent}" already has a child "{child}".' => 'Het item "{parent}" heeft al een kind "{child}".',
+  'The layout path "{path}" is not a valid directory.' => 'Het layout pad "{path}" is ongeldig.',
+  'The list is read only.' => 'De lijst is alleen-lezen.',
+  'The map is read only.' => 'De map is alleen-lezen',
+  'The module path "{path}" is not a valid directory.' => 'Het module pad "{path}" is ongeldig.',
+  'The pattern for 12 hour format must be "h" or "hh".' => 'Het patroon voor het 12-uur formaat moet "h" of "hh" zijn.',
+  'The pattern for 24 hour format must be "H" or "HH".' => 'Het patroon voor het 24-uur formaat moet "H" of "HH" zijn.',
+  'The pattern for AM/PM marker must be "a".' => 'Het patroon voor AM/PM moet "a" zijn.',
+  'The pattern for day in month must be "F".' => 'Het patroon dag in de maand moet "F" zijn.',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'Het patroon voor dag in een jaar moet "D", "DD" of "DDD" zijn.',
+  'The pattern for day of the month must be "d" or "dd".' => 'Het patroon voor dag van de maand moet "d" of "dd" zijn.',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => 'Het patroon voor weekdag moet "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" of "ccccc" zijn.',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'Het patroon voor tijdperk moet "G", "GG", "GGG", "GGGG" of "GGGGG" zijn.',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'Het patroon voor uur in AM/PM moet "K" of "KK" zijn.',
+  'The pattern for hour in day must be "k" or "kk".' => 'Het patroon voor uur in dag moet "k" of "kk" zijn.',
+  'The pattern for minutes must be "m" or "mm".' => 'Het patroon voor minuten moet "m" of "mm" zijn.',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => 'Het patroon voor maand moet "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" of "LLLL" zijn.',
+  'The pattern for seconds must be "s" or "ss".' => 'Het patroon voor seconden moet "s" of "ss" zijn.',
+  'The pattern for time zone must be "z" or "v".' => 'Het patroon voor tijdzone moet "z" of "v" zijn.',
+  'The pattern for week in month must be "W".' => 'Het patroon voor week in maand moet "W" zijn.',
+  'The pattern for week in year must be "w".' => 'Het patroon voor week in jaar moet "w" zijn.',
+  'The queue is empty.' => 'De queue is leeg.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'De relatie "{relation}" in active record class "{class}" is ongeldig. De join table "{joinTable}" uit de foreign key kan niet gevonden worden in de database.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'De relatie "{relation}" in active record class "{class}" is ongeldig opgegeven: de join table "{joinTable}" uit de foreign key kan niet gevonden worden in de database.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'De relatie "{relation}" in active record class "{class}" bevat een foreign key "{key}" die niet naar de parent tabel "{table}" wijst.',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'De relatie "{relation}" in active record class "{class}" bevat een onvolledige foreign key. De foreign key moet bestaan uit kolommen van beide tabellen.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'De relatie "{relation}" in active record class "{class}" bevat een ongeldige foreign key "{key}". Deze kolom bestaat niet in de tabel "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'De relatie "{relation}" in active record class "{class}" bevat een ongeldige foreign key. De kolommen uit de key moeten overeenkomen met de primary keys van de tabel "{table}".',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'De relatie "{relation}" in active record class "{class}" werd opgeven met een ongeldige foreign key. Het formaat van de foreign key moet "joinTable(fk1,fk2,...)" zijn.',
+  'The requested view "{name}" was not found.' => 'De opgevraagde view "{name}" werd niet gevonden.',
+  'The stack is empty.' => 'De stack is leeg',
+  'The system is unable to find the requested action "{action}".' => 'Het systeem kon de opgevraagde actie "{action}" niet vinden.',
+  'The system view path "{path}" is not a valid directory.' => 'Het view pad voor het systeem "{path}" is geen geldige map.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'De tabel "{table}" voor active record class "{class}" kan niet gevonden worden in de database.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => 'De waarde voor kolom "{column}" werd niet opgegeven tijdens het queryen van tabel "{table}".',
+  'The verification code is incorrect.' => 'De verificatiecode is fout.',
+  'The view path "{path}" is not a valid directory.' => 'Het pad voor de views "{path}" is een ongeldige map.',
+  'Theme directory "{directory}" does not exist.' => 'Thema map "{directory}" bestaat niet.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'Deze inhoud vereist de <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.',
+  'Unable to add an item whose name is the same as an existing item.' => 'Kan geen item toevoegen met dezelfde naam als een bestaand item.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'Kan de item naam niet wijzigen. De naam "{name}" is reeds in gebruik door een ander item.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'Kan het status bestand "{file}" voor de applicatie niet aanmaken. Zorg ervoor dat de map waarin het bestand zit bestaat en beschrijfbaar is voor de web server.',
+  'Unable to find "{column}" in table "{table}".' => 'Kan "{column}" niet vinden in tabel "{table}".',
+  'Unable to lock file "{file}" for reading.' => 'Kan het bestand "{file}" niet vergrendelen voor lezen.',
+  'Unable to lock file "{file}" for writing.' => 'Kan het bestand "{file}" niet vergrendelen voor schrijven.',
+  'Unable to read file "{file}".' => 'Kan het bestand "{file}" niet lezen.',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => 'Kan de actie "{object}.{method}" niet opnieuw afspelen. De functie bestaat niet.',
+  'Unable to resolve the request "{route}".' => '"{route}" aanvraag kan niet gevonden worden.',
+  'Unable to write file "{file}".' => 'Kan niet schrijven naar bestand "{file}".',
+  'Unknown authorization item "{name}".' => 'Onbekend authorization item "{name}".',
+  'Unknown operator "{operator}".' => 'Onbekende operator "{operator}".',
+  'Unknown type "{type}".' => 'Onbekend type "{type}".',
+  'Unrecognized locale "{locale}".' => 'Onbekende localisatie "{locale}".',
+  'View file "{file}" does not exist.' => 'De view "{file}" bestaat niet.',
+  'Yii application can only be created once.' => 'Er kan slechts 1 Yii applicatie aangemaakt worden.',
+  'You are not authorized to perform this action.' => 'Je hebt geen toegang tot deze actie.',
+  'Your request is invalid.' => 'Je verzoek is ongeldig',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" is reeds in gebruik.',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" is ongeldig.',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} kan niet meer dan {limit} bestanden bevatten.',
+  '{attribute} cannot be blank.' => '{attribute} mag niet leeg zijn.',
+  '{attribute} is in the list.' => '{attribute} maakt deel uit van de lijst.',
+  '{attribute} is invalid.' => '{attribute} is ongeldig.',
+  '{attribute} is not a valid URL.' => '{attribute} is geen geldige URL.',
+  '{attribute} is not a valid email address.' => '{attribute} is geen geldig emailadres.',
+  '{attribute} is not in the list.' => '{attribute} zit niet in de lijst.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} heeft de verkeerde lengte (het zou {length} karakters lang moeten zijn)',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} is te groot (het maximum is {max})',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} is te lang (het maximum is {max} karakters).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} is te kort (het minimum is {min} karakters).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} is te klein (het minimum is {min}).',
+  '{attribute} must be a number.' => '{attribute} moet een getal zijn.',
+  '{attribute} must be an integer.' => '{attribute} moet een geheel getal zijn.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} moet {true} of {false} zijn.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} moet groter zijn dan "{compareValue}".',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} moet groter dan of gelijk aan "{compareValue}" zijn.',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} moet minder zijn dan "{compareValue}".',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} moet minder dan of gelijk aan "{compareValue}" zijn.',
+  '{attribute} must be repeated exactly.' => '{attribute} moet exact herhaald worden.',
+  '{attribute} must be {type}.' => '{attribute} moet van type {type} zijn',
+  '{attribute} must be {value}.' => '{attribute} moet {value} zijn.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} mag niet gelijk zijn aan "{compareValue}".',
+  '{className} does not support add() functionality.' => '{className} ondersteunt geen add() functionaliteit.',
+  '{className} does not support delete() functionality.' => '{className} ondersteunt geen delete() functionaliteit.',
+  '{className} does not support flushValues() functionality.' => '{className} heeft geen flushValues() functionaliteit.',
+  '{className} does not support get() functionality.' => '{className} ondersteunt geen get() functionaliteit.',
+  '{className} does not support set() functionality.' => '{className} ondersteunt geen set() functionaliteit.',
+  '{class} and its behaviors do not have a method or closure named "{name}".' => '{class} en zijn behaviors hebben geen method of closure met naam "{name}".',
+  '{class} does not have relation "{name}".' => '{class} heeft geen relatie "{name}".',
+  '{class} does not support fetching all table names.' => '{class} heeft geen ondersteuning voor het opvragen van alle tabel-namen.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} heeft een ongeldige validatie-regel. De regel moet attributen bevatten om de valideren en de naam van de validator.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} moet waarden bevatten voor de attributen "model" en "attribute" of "name".',
+  '{class} requires the Blowfish option of the PHP crypt() function. This system does not have it.' => '{class} vereist de Blowfish optie van de PHP crypt() functie. Deze is niet aanwezig op het systeem.',
+  '{class} requires the PHP crypt() function. This system does not have it.' => '{class} vereist de PHP crypt() functie. Deze is niet aanwezig op het systeem.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin moet aan staan om te kunnen aanmelden met cookies.',
+  '{class}::$cost must be a number.' => '{class}::$cost moet een nummer zijn.',
+  '{class}::$cost must be between 4 and 31.' => '{class}::$cost moet tussen 4 en 31 liggen.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() moet geimplementeerd zijn.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} kan de opgevraagde view "{view}" niet vinden.',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} bevat ongeldig genestelde widget tags in z\'n view "{view}". De {widget} widget roept endWidget() niet aan.',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} heeft een extra endWidget({id})-aanroep in z\'n view',
+  '{n} B' => '{n} B',
+  '{n} GB' => '{n} GB',
+  '{n} KB' => '{n} KB',
+  '{n} MB' => '{n} MB',
+  '{n} TB' => '{n} TB',
+  '{n} byte|{n} bytes' => '{n} byte|{n} bytes',
+  '{n} gigabyte|{n} gigabytes' => '{n} gigabyte|{n} gigabytes',
+  '{n} kilobyte|{n} kilobytes' => '{n} kilobyte|{n} kilobytes',
+  '{n} megabyte|{n} megabytes' => '{n} megabyte|{n} megabytes',
+  '{n} terabyte|{n} terabytes' => '{n} terabyte|{n} terabytes',
+  '{widget} cannot find the view "{view}".' => '{widget} kan het viewbestand "{view}" niet vinden.',
+);

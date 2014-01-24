@@ -1,86 +1,294 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPzFP+v4OZy2cyHDkia/1ifptAqVr3KiGJRMinTNNP/yNGQrCdiEmXnZqvqM+febChlCJ5QAB
-wX0q3gxjpjbyT8uHxYAxw5Y7Lhd+HS2sVzC9EBkXSFyhpDJEQHVMztzqfvmvpPjP/K2R1PQpH6NL
-kkLlWJddtEQDb179M7boBCH7Z33I/H13FndDMHyZC5KXYB2c26QKIKo6HW2dqnr6SV+fD4TGAEVm
-+cSc49rP6hKIV/8C3qpxhr4euJltSAgiccy4GDnfT6LbmctYmIUqqBzbRDXZPqeadGh41vS3yc1e
-v5Lz9CoanDph/FREj2pg6AZKPR2rtGEj3bol/EJMlVVugvRkR8lVKDZ9pNdJ39iQBrYZe3FEdNYO
-/jMnnc3JIxXfTDB4aZjYvUdN3+sQlbnS2MYE43VdJ9GYSPZcOiIbfWVoTxuKzPHV/0tuDWAQ958i
-8j7MOxEVFbs2p8BYVPZ8T9kGdDICYfD2OpkdzwM25vfWxkA4THPXXQnqnA9nXHYq9f4B5CGngdV6
-dDMoyYOcsx/smNh6Fuvcad3Bzx3rj8gYIXLiX2i6AngDyqefvldfk4sWzU0NAkg1TMb0PQDf4/LH
-Vu6zEgSOvqG0MQBgxthU0L1vjZG4wGWMHPPelsvemXIH1oe91PTLC+U9bSOnIeXNVkYfk8lhk8p3
-jWuuJF6o1pzPkTj5551vTxwHAb6vpjBcKjc6wxzl3xGHi1b5dpEStkTUuP8UkxNOT4rLxr0uacxv
-LWWi5B5pr2vplO43eUKQiX1WFNuQtFhitx2pYQHwGt3yVoCE9k1pHkyEQcB60smdYGsFrXCHY+SO
-rDCLQt8TS1OG9+JV6IguWnMrQOlwqFSQ9GomNmr89LAH1frJ43bYY9uX23LFopOxZ1ctEP3wbsPb
-hm26LWb1Zz4ZlJvTWEcd6O9kNDmSUCcNkqehUlWPJ3rhPxaEvZHxbZWr765R6xy+LuO4XUtzUFy/
-mWGGBp6AsmUoiQ3gls7L6/UYKCIZlB/kmxdfnZU3QuNJTdRCx1YaU0ziS06hvssCiuo6Se0fwXfJ
-vUig0HxVUQG0/nnxvWgD+1lXR1zH5xgDlLLmhxiFf66OGOe3ppfD2zXXiZ6jOSgqhbZ5zI7E2q+V
-rVEHwKtUN6QiRNSN/dxCYkYpOXtwd/1SUYkyvvppVKo7aEiintMN7jNQNDlM6rVq/GpwIDNLWchG
-S4kywGm8N4HQpqDpJLqqyv9PqvbqSzTkcw+W1t9cWxTcJ2qWqoZ7BJ0rmnZbA9T/oikCo3qn8zLn
-eeP/ehJutH/u00b/Nyg+O7KgzS99vfR3qeLy8XxndHVtLLH43Y6SODyeIZgh9rTl68o3fqcfru7j
-IgTssCwS/cu4xoZtDOu3IW5WYiOGpqrdJOxwAS+NQDIFweBD/aqElDnOTViw7lGQjNnLCTfdqP8O
-e35iDHUYXPA/VLAizfKNEh2Ad5nWFMysikrvYPF/vdzEht8c3BLUWYsSDh0DG3P23SN2JIEQEw8j
-eL64k73G/UOAYHX7XxyzvwEkq0bAk9nH3KKsae2SkUOAjTOzJnWoH9Vxlkw6mPequbV8tt+Jlb8e
-W1urmQ4+FJOdJPSwg3S3h8ft6lY9/bzC3iH3Rr/qNo6XPzGwEEK7bU3L5pjAbQYSE07OtmDM7oc3
-wv3g20NIx3SYYJt/QtUDom3xpXKL7dH8emD4MyjZEFo424uTKC665eM01yIocGZjtrkIfNGbt+Fl
-9dyw+NlVhtIrkNaGwxxaq6d+wOwueG9bbKA0SGMEsggWpujswenMX3EOSYjuhcCD/7UnnBqn4Sch
-L9W3cIzzVsgTZ6r4pSJL35dLYXfEnKyOhzaDWw5Shdzx467/miNBMN+VHw7j/FKD8Rj3pPq2yUXN
-4Y316hPrVORuxrXxs/QOmFDuFi29S75aCch39sJ73K/bw/TnKxrmZFkEjkHxAgPt/VThWsIKxzzv
-dQl63Z1dZVBKeqq/cUNtEXaN+yG3qRHokz75fBZuOjL7oUHCbwvVU7tq6DPkz7vPxU3MLRaMZupj
-UY967e8Cc5NPvbRIrdH8mXIdoyg/ejmn66zTWJGTBKIUvxCj3KXWlqrA7Kz0TXCbFk55tn75MooJ
-1BE6vCZRliNrBdJA85tW1qFhfnedaRqOfwpvkxr3R6gugMmQx+JviVoqD2lyEdOPYEc3i9Z88Gmw
-vFs0P1wZvhxxHiY1CYHqOf0VEArTraMMCPR7RFK9oCHFZopTZ6nWaIYqpvdqMO1O2kpevipKn0NF
-dB/YX1S9iJfQzyYyP3k+ThpSFXz+mfoKPjJ/7jN00ivjvILRAB/+6sE7RtCjfPbmjxTAHOLeC+zP
-7ZT8Ppvd9NQ+RBQ64unfkzuoj30f/xJYAg7O+NOiJ6U7xxRvRuu3Ui620vmrSBdHaxqaNu1AXl5r
-z5dcW8Y7u3MPzmZNRUO5aDKKPgrLiTFaMTNHh0NHQXMcN5Dl5MFL4L5D4AeMPd2nv/8gyT+THaCe
-HISrTIACKeIdhtZ5fVAi/6fsamWhmfiwQ3b3jdC4T3HgRVlwb9ClkJ0nN4IRCggxJHREzqaWEHaV
-g0511yeTNMuarSi2ilKC3yTXnGzO1nMWVVhUu98c6o6V8iSCxCQiJzM4Oa0Yqg40NPj2CF2XQIV9
-v58UK1fyx9cR3c0FLx382N3M2UIzo5qLKENNW21O68jhuapeTMA+h+vuCiDoOoQH+WZ+ij/oO7Qf
-oqoJdW+t1WruZREGuiOqr8nOrrytKPZX61TZy70hY9MOuyXE2v+0o+s0ZLEf5aJuvc7j0y3a/dG/
-IqR7SAfwjw9tNmp5z+pxG0EZs4eYERhTjGMoX9MObRc7zWzt+/uHXNAKdtRFUB3m2FEAVnpCE8w2
-IF/zU8rlV+noJQifa19KzO/1CduDVbR4BazVahR0YuXuiXn0fATq8G0u941BwVjOBssWDADP7fQc
-VbLWvNpuRVygmA94etOcJ6vP+sELLrmsBQcVsUfEwGtTda/gHiwAuz4FQFIFsQvCCX6VSiyee17r
-Qs8PS7GRbOhS5BrwHbIF40J3DHdU1VT63eGKDVuCIl/SUXoLc72ZxpIKsUs21W//Br+DEMTBc7kr
-eW41uoJPxXX2NgZ/QtdzHqOCJWYfx+lRm4OfnWXwizWb4zy+5gpc8O+Ex6vHiQXSPHVKC/85qioA
-t/tH9/xy6yAZZujedJPPJdOeRfy/BBRtytDRhNXKSepmJDleZlLegWThErNbMmWD1Msl+cPt29E/
-aDHRqktM8+wdw8At29cyrDqbtNpWnb24vFdG+hz6UQ0d1Xj3VKlmKCHIXpH/nctzjPOkDhFrG47b
-SKJRkGlHn+vKjW71Mx7njFUDAThz8msDbiDzwaa76NzP8jhveEPMRjyBab7rlJdEcpTDwwfiGd3Q
-i0icXCqplVjXv7NErnda7Myw+v/lg+YKud/L9RA29ezUQZIGZkDN2WYWl+CHUNo4QdVugQB2aoZE
-SrBXrZlT/PFB8yJ25GfWBK5DdedHoCyI0fZbwm468cIAlM7pay0Wyim4fRiJGwM/xalqw7hd/RFn
-8RQKkXmDt3E9ANK14O3+ppt1TeBJZ8QzNnJ3qfsy2C/q+8TTDXStVrF924BXBvz81MLeRbdj1Pzu
-9x8EyJLbPH06Ub8IzXsHpryLBqmrUn94aq5AbARG9oC2m7FsH52bNGJSH3IIkQh8/2zupGgq7zPx
-HTW/79zDGADORmacsrbTpEJim4UKnnBvavqncXpxAh1Fi1U3vseIYp+T3jHLU0nBixxFIYJRD3s3
-YgiXRpIHASDt2pVp/LV8c/vN7WH3tUs/x0eGLZ/0PCYOA7pYrhMCdn4XqRrYJoFNqqYE1ZBNvPMl
-Q0zmzre8rEKT+Ivgb6OjZWUZwyqSlRnGWZ1DRoXSguoMHb5zgFhQOnmcuM2nY49/YG1AGCE8VjmW
-ye4Z8phIsjNNCXKQ1Hv+Zaw69DkihGfnTue4E5TQ4P3JIaChCXVwmkAMqOjiQUlU8Q/0gDFW9GYM
-TIucPuw5WxSHGTRvSzFGy1X7IRAckjyDSspdoDb3clbFHVW3VBeiHh18eHU6/oIU8mPXZlXoKshJ
-M0WpGVzfk2SFGsWe5TaKvAzZ5Fy2Dh1Zlawfk4P9e2G0ZUi2+mw/BjZ6YL+CLzUtwewt0dNfgiSf
-20YFYyPAHX6ZEXl2p4Tw5a3+HoCB4NNh6xXQO6/+Bu9CZPljiNJdoV99RO3YEMUGZhMp4my2j6MP
-vUi77MNi00jgBrWIu3AydH646HQOSsP6zRW1lQZ45lcUWBYwo2x/pcPegDHzf42TpPKTb/4S8c9e
-xOAsDmt8zD5Tm9UtcFCZVrfvMdYqQgdzlc1wnIXdKPZicFUOlYMMSTkWUEF70lOTavJswcsiE1rq
-Ly+YLksXBFChTTR6qnoP/8uqoQObAfTiu/Hl8tGbGU/2Odax4QPqnljf4yRO1ua6yM7uSMp/36Rf
-rnND0ZEdV0T6RDx0YCNMhrwz9bE5ukNYIjyTD6cNTZlR9oyQ9OZO2fBBMST0J+5yjeisDQMpjLoQ
-jcv8g0pDjK8WbV9fJd0iB/ZspdgSUH9oCDguGuNo2tPI4+Aj4SzPAsxz/oIfY7rCed97yKhQxZJa
-CFc94rVrkoUUTCMuy1FJlunyqxfd21pB4g4gwj/G5kUfBEcprYSRWbchP80diUNTWef9gefk1oyK
-894+JNP+mw1yyJyeN9ulMCyUsUkWOmMijQCm8uPYvmKSTihj3zTYu1Sb19DBh8zzKgy6peOheVYc
-7knEWjk6kZ8DqdfxRvFL/eUUp5EDJna/J5EKvR0WFGN3vaXaYUiX4pZExmisZxV6i/izb2J81MP2
-S4IMfRgArKvQ53Kp6jPu8WETWE4QUisaegRuCLqecTKSl/TnmLJJI1592mfteJXHfxvbu2O86al0
-JnVGf2IRfij+Wi8nsfHxroUcVkG7azAwobzzPZjAlm9Qgv67kZEUV9vJRtEhiHULzPxNg4P5xWi0
-ToZSY22xhOlRbeH5LBRo/xxhqGQrXhi31XRstun0opg9hjMUVzHPBuuQi3tNqWu7CUqQ8aCrUsg7
-+7k1a0F8FyviQ9/UNf7W2Op9u9kV/hZlbGMZq3TpnD/qKkVS+YrEpBbD4OLLtZDYhtP/JrxzH/yQ
-v7TyIHFoyU/gVdqjDPTrLoFn6y11hTsfE7FQoXkyuS6dp6kgAwNP3FTAhP5dtGJ5zF8wgmNVvsy1
-ozJPDndAMFb00E7N4bTgcS5jog/wfT6XGqcQcGn/S1zNo7/T9VKLuRI3QR/LZHUX5QmOPK9/Omqr
-FOUcuRc09tNjNO8MlvNoWzUlwS8flQfhz5J7GO0jLR2udvB2xSlgalAIczy7BhMBCx+lMkrDflgJ
-xVRIQ8pvajAPlY5/fDzKeeB6GrxcIolwAGlfqLPhi1a8vStR2vpAzpAUucf+++wg2K+uLzDAm9bF
-1WMocNIhTrhSSalwFOAvF/RNZ47lFlmd1vSK/wMX2VThYa2PNfEXZn4PwgCDu2s5nlEfHdlK6G+8
-26Y8YNk/sWYK+yxdrUzxMMfa0D6oDbDHXNt79Tok/Z50i1wk9HJBFbwRqkXYNrYayInp7zmdu6k8
-iSCzY2Fg+q63aJUz7q6vLQ1IkZPICB+/sB7gMGd4gqzebYWJta+1JrSpMqBdRQVLX4494ORIBPSa
-/NqsDQN6dpedr5tr1HW64roQmhaSorUoNz6IQ81PNd7tB1ZbLZion36Gm3ER3yAILMuVTMP+kNe7
-xkjCyMauhNQS8r4BOJOr3iMZe+VImt7u7ebWnYhxwEdqupe9dD7gocLDZjLvQ2QD2aQIZkZXCox/
-rN7hJQ3Pbfe5/6ELezBGueQKnChBVX4DWkNyIM6hh3KNBOPRLhbhPBivYNVfn40W3sW7pWq6McRH
-lRyamYznMhDtPi1NA+aNmvUv3vEmccQM4C4budsoDTtmmjYAWMDrgsP5XJBUjz6qTZyos1+mI7rZ
-QAlBZpc76TcOctiFqp0h+2LSPoQLlL2TbGldAKoak5V0DzjMv8uE45r+rkQsM7HPaD+N2pjIkWnA
-cmUZfdYgOfspKOgg95CBpmfHQBCawOUwbLGfN9uTQ1oFpabCFRqVyK7rbSkDnOXCKbEKrXypswMv
-nPmq29GA29MvCNkv6NdxCh5+bosjRi2TyElM11DVn5cNHz8+LbOnAzBHlWwkf2uuX189A/dyaxef
-TJ6YRKSi/c9QDVqfKZi8tgRTt/RXXnHkA5wBiBP9bPY3dLMS10At2DZ3AW==
+<?php
+/**
+ * Locale data for 'rw'.
+ *
+ * This file is automatically generated by yiic cldr command.
+ *
+ * Copyright © 1991-2007 Unicode, Inc. All rights reserved.
+ * Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
+ *
+ * @copyright 2008-2013 Yii Software LLC (http://www.yiiframework.com/license/)
+ */
+return array (
+  'version' => '6355',
+  'numberSymbols' => 
+  array (
+    'alias' => '',
+    'decimal' => ',',
+    'group' => '.',
+    'list' => ';',
+    'percentSign' => '%',
+    'plusSign' => '+',
+    'minusSign' => '-',
+    'exponential' => 'E',
+    'perMille' => '‰',
+    'infinity' => '∞',
+    'nan' => 'NaN',
+  ),
+  'decimalFormat' => '#,##0.###',
+  'scientificFormat' => '#E0',
+  'percentFormat' => '#,##0%',
+  'currencyFormat' => '¤ #,##0.00',
+  'currencySymbols' => 
+  array (
+    'AUD' => 'AU$',
+    'BRL' => 'R$',
+    'CAD' => 'CA$',
+    'CNY' => 'CN¥',
+    'EUR' => '€',
+    'GBP' => '£',
+    'HKD' => 'HK$',
+    'ILS' => '₪',
+    'INR' => '₹',
+    'JPY' => 'JP¥',
+    'KRW' => '₩',
+    'MXN' => 'MX$',
+    'NZD' => 'NZ$',
+    'THB' => '฿',
+    'TWD' => 'NT$',
+    'USD' => 'US$',
+    'VND' => '₫',
+    'XAF' => 'FCFA',
+    'XCD' => 'EC$',
+    'XOF' => 'CFA',
+    'XPF' => 'CFPF',
+    'RWF' => 'RF',
+  ),
+  'monthNames' => 
+  array (
+    'wide' => 
+    array (
+      1 => 'Mutarama',
+      2 => 'Gashyantare',
+      3 => 'Werurwe',
+      4 => 'Mata',
+      5 => 'Gicuransi',
+      6 => 'Kamena',
+      7 => 'Nyakanga',
+      8 => 'Kanama',
+      9 => 'Nzeli',
+      10 => 'Ukwakira',
+      11 => 'Ugushyingo',
+      12 => 'Ukuboza',
+    ),
+    'abbreviated' => 
+    array (
+      1 => 'mut.',
+      2 => 'gas.',
+      3 => 'wer.',
+      4 => 'mat.',
+      5 => 'gic.',
+      6 => 'kam.',
+      7 => 'nya.',
+      8 => 'kan.',
+      9 => 'nze.',
+      10 => 'ukw.',
+      11 => 'ugu.',
+      12 => 'uku.',
+    ),
+  ),
+  'monthNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      1 => '1',
+      2 => '2',
+      3 => '3',
+      4 => '4',
+      5 => '5',
+      6 => '6',
+      7 => '7',
+      8 => '8',
+      9 => '9',
+      10 => '10',
+      11 => '11',
+      12 => '12',
+    ),
+  ),
+  'weekDayNames' => 
+  array (
+    'wide' => 
+    array (
+      0 => 'Ku cyumweru',
+      1 => 'Kuwa mbere',
+      2 => 'Kuwa kabiri',
+      3 => 'Kuwa gatatu',
+      4 => 'Kuwa kane',
+      5 => 'Kuwa gatanu',
+      6 => 'Kuwa gatandatu',
+    ),
+    'abbreviated' => 
+    array (
+      0 => 'cyu.',
+      1 => 'mbe.',
+      2 => 'kab.',
+      3 => 'gtu.',
+      4 => 'kan.',
+      5 => 'gnu.',
+      6 => 'gnd.',
+    ),
+  ),
+  'weekDayNamesSA' => 
+  array (
+    'narrow' => 
+    array (
+      0 => '1',
+      1 => '2',
+      2 => '3',
+      3 => '4',
+      4 => '5',
+      5 => '6',
+      6 => '7',
+    ),
+  ),
+  'eraNames' => 
+  array (
+    'abbreviated' => 
+    array (
+      0 => 'BCE',
+      1 => 'CE',
+    ),
+    'wide' => 
+    array (
+      0 => 'BCE',
+      1 => 'CE',
+    ),
+    'narrow' => 
+    array (
+      0 => 'BCE',
+      1 => 'CE',
+    ),
+  ),
+  'dateFormats' => 
+  array (
+    'full' => 'EEEE, y MMMM dd',
+    'long' => 'y MMMM d',
+    'medium' => 'y MMM d',
+    'short' => 'yy/MM/dd',
+  ),
+  'timeFormats' => 
+  array (
+    'full' => 'HH:mm:ss zzzz',
+    'long' => 'HH:mm:ss z',
+    'medium' => 'HH:mm:ss',
+    'short' => 'HH:mm',
+  ),
+  'dateTimeFormat' => '{1} {0}',
+  'amName' => 'AM',
+  'pmName' => 'PM',
+  'orientation' => 'ltr',
+  'languages' => 
+  array (
+    'af' => 'Ikinyafurikaneri',
+    'am' => 'Inyamuhariki',
+    'ar' => 'Icyarabu',
+    'as' => 'Icyasamizi',
+    'az' => 'Inyazeribayijani',
+    'be' => 'Ikibelarusiya',
+    'bg' => 'Urunyabuligariya',
+    'bh' => 'Inyebihari',
+    'bn' => 'Ikibengali',
+    'br' => 'Inyebiritoni',
+    'bs' => 'Inyebosiniya',
+    'ca' => 'Igikatalani',
+    'cs' => 'Igiceke',
+    'cy' => 'Ikigaluwa',
+    'da' => 'Ikidaninwa',
+    'de' => 'Ikidage',
+    'el' => 'Ikigereki',
+    'en' => 'Icyongereza',
+    'eo' => 'Icyesiperanto',
+    'es' => 'Icyesipanyolo',
+    'et' => 'Icyesitoniya',
+    'eu' => 'Ikibasiki',
+    'fa' => 'Inyeperisi',
+    'fi' => 'Igifinilande',
+    'fil' => 'Ikinyafilipine',
+    'fo' => 'Inyefaroyizi',
+    'fr' => 'Igifaransa',
+    'fy' => 'Igifiriziyani',
+    'ga' => 'Ikirilandi',
+    'gd' => 'Ikigaluwa cy\'Igisweduwa',
+    'gl' => 'Ikigalisiya',
+    'gn' => 'Inyaguwarani',
+    'gu' => 'Inyegujarati',
+    'he' => 'Igiheburayo',
+    'hi' => 'Igihindi',
+    'hr' => 'Igikorowasiya',
+    'hu' => 'Igihongiriya',
+    'hy' => 'Ikinyarumeniya',
+    'ia' => 'Ururimi Gahuzamiryango',
+    'id' => 'Ikinyendoziya',
+    'ie' => 'Uruhuzandimi',
+    'is' => 'Igisilande',
+    'it' => 'Igitaliyani',
+    'ja' => 'Ikiyapani',
+    'jv' => 'Inyejava',
+    'ka' => 'Inyejeworujiya',
+    'km' => 'Igikambodiya',
+    'kn' => 'Igikanada',
+    'ko' => 'Igikoreya',
+    'ku' => 'Inyekuridishi',
+    'ky' => 'Inkerigizi',
+    'la' => 'Ikilatini',
+    'ln' => 'Ilingala',
+    'lo' => 'Ikilawotiyani',
+    'lt' => 'Ikilituwaniya',
+    'lv' => 'Ikinyaletoviyani',
+    'mk' => 'Ikimasedoniyani',
+    'ml' => 'Ikimalayalami',
+    'mn' => 'Ikimongoli',
+    'mr' => 'Ikimarati',
+    'ms' => 'Ikimalayi',
+    'mt' => 'Ikimaliteze',
+    'ne' => 'Ikinepali',
+    'nl' => 'Ikinerilande',
+    'nn' => 'Inyenoruveji (Nyonorusiki)',
+    'no' => 'Ikinoruveji',
+    'oc' => 'Inyogusitani',
+    'or' => 'Inyoriya',
+    'pa' => 'Igipunjabi',
+    'pl' => 'Igipolone',
+    'ps' => 'Impashito',
+    'pt' => 'Igiporutugali',
+    'pt_br' => 'Inyeporutigali (Brezili)',
+    'pt_pt' => 'Inyeporutigali (Igiporutigali)',
+    'ro' => 'Ikinyarumaniya',
+    'ru' => 'Ikirusiya',
+    'rw' => 'Kinyarwanda',
+    'sa' => 'Igisansikiri',
+    'sd' => 'Igisindi',
+    'sh' => 'Inyeseribiya na Korowasiya',
+    'si' => 'Inyesimpaleze',
+    'sk' => 'Igisilovaki',
+    'sl' => 'Ikinyasiloveniya',
+    'so' => 'Igisomali',
+    'sq' => 'Icyalubaniya',
+    'sr' => 'Igiseribe',
+    'st' => 'Inyesesoto',
+    'su' => 'Inyesudani',
+    'sv' => 'Igisuweduwa',
+    'sw' => 'Igiswahili',
+    'ta' => 'Igitamili',
+    'te' => 'Igitelugu',
+    'th' => 'Igitayi',
+    'ti' => 'Inyatigirinya',
+    'tk' => 'Inyeturukimeni',
+    'tlh' => 'Inyekilingoni',
+    'tr' => 'Igiturukiya',
+    'tw' => 'Inyetuwi',
+    'ug' => 'Ikiwiguri',
+    'uk' => 'Ikinyayukereni',
+    'ur' => 'Inyeyurudu',
+    'uz' => 'Inyeyuzubeki',
+    'vi' => 'Ikinyaviyetinamu',
+    'xh' => 'Inyehawusa',
+    'yi' => 'Inyeyidishi',
+    'zu' => 'Inyezulu',
+  ),
+  'territories' => 
+  array (
+    'rw' => 'Rwanda',
+    'to' => 'Igitonga',
+  ),
+);

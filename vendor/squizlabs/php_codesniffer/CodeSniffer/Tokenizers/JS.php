@@ -1,408 +1,1149 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Tokenizes JS code.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Tokenizes JS code.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_Tokenizers_JS
+{
+
+    /**
+     * A list of tokens that are allowed to open a scope.
+     *
+     * This array also contains information about what kind of token the scope
+     * opener uses to open and close the scope, if the token strictly requires
+     * an opener, if the token can share a scope closer, and who it can be shared
+     * with. An example of a token that shares a scope closer is a CASE scope.
+     *
+     * @var array
+     */
+    public $scopeOpeners = array(
+                            T_IF       => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => false,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_TRY      => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => true,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_CATCH    => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => true,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_ELSE     => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => false,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_FOR      => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => false,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_FUNCTION => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => false,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_WHILE    => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => false,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_DO       => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => true,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_SWITCH   => array(
+                                           'start'  => array(T_OPEN_CURLY_BRACKET),
+                                           'end'    => array(T_CLOSE_CURLY_BRACKET),
+                                           'strict' => true,
+                                           'shared' => false,
+                                           'with'   => array(),
+                                          ),
+                            T_CASE     => array(
+                                           'start'  => array(T_COLON),
+                                           'end'    => array(
+                                                        T_BREAK,
+                                                        T_RETURN,
+                                                        T_CONTINUE,
+                                                        T_THROW,
+                                                       ),
+                                           'strict' => true,
+                                           'shared' => true,
+                                           'with'   => array(
+                                                        T_DEFAULT,
+                                                        T_CASE,
+                                                        T_SWITCH,
+                                                       ),
+                                          ),
+                            T_DEFAULT  => array(
+                                           'start'  => array(T_COLON),
+                                           'end'    => array(
+                                                        T_BREAK,
+                                                        T_RETURN,
+                                                        T_CONTINUE,
+                                                        T_THROW,
+                                                       ),
+                                           'strict' => true,
+                                           'shared' => true,
+                                           'with'   => array(
+                                                        T_CASE,
+                                                        T_SWITCH,
+                                                       ),
+                                          ),
+                           );
+
+    /**
+     * A list of tokens that end the scope.
+     *
+     * This array is just a unique collection of the end tokens
+     * from the _scopeOpeners array. The data is duplicated here to
+     * save time during parsing of the file.
+     *
+     * @var array
+     */
+    public $endScopeTokens = array(
+                              T_CLOSE_CURLY_BRACKET,
+                              T_BREAK,
+                             );
+
+    /**
+     * A list of special JS tokens and their types.
+     *
+     * @var array
+     */
+    protected $tokenValues = array(
+                              'function'  => 'T_FUNCTION',
+                              'prototype' => 'T_PROTOTYPE',
+                              'try'       => 'T_TRY',
+                              'catch'     => 'T_CATCH',
+                              'return'    => 'T_RETURN',
+                              'throw'     => 'T_THROW',
+                              'break'     => 'T_BREAK',
+                              'switch'    => 'T_SWITCH',
+                              'continue'  => 'T_CONTINUE',
+                              'if'        => 'T_IF',
+                              'else'      => 'T_ELSE',
+                              'do'        => 'T_DO',
+                              'while'     => 'T_WHILE',
+                              'for'       => 'T_FOR',
+                              'var'       => 'T_VAR',
+                              'case'      => 'T_CASE',
+                              'default'   => 'T_DEFAULT',
+                              'true'      => 'T_TRUE',
+                              'false'     => 'T_FALSE',
+                              'null'      => 'T_NULL',
+                              'this'      => 'T_THIS',
+                              'typeof'    => 'T_TYPEOF',
+                              '('         => 'T_OPEN_PARENTHESIS',
+                              ')'         => 'T_CLOSE_PARENTHESIS',
+                              '{'         => 'T_OPEN_CURLY_BRACKET',
+                              '}'         => 'T_CLOSE_CURLY_BRACKET',
+                              '['         => 'T_OPEN_SQUARE_BRACKET',
+                              ']'         => 'T_CLOSE_SQUARE_BRACKET',
+                              '?'         => 'T_INLINE_THEN',
+                              '.'         => 'T_OBJECT_OPERATOR',
+                              '+'         => 'T_PLUS',
+                              '-'         => 'T_MINUS',
+                              '*'         => 'T_MULTIPLY',
+                              '%'         => 'T_MODULUS',
+                              '/'         => 'T_DIVIDE',
+                              '^'         => 'T_POWER',
+                              ','         => 'T_COMMA',
+                              ';'         => 'T_SEMICOLON',
+                              ':'         => 'T_COLON',
+                              '<'         => 'T_LESS_THAN',
+                              '>'         => 'T_GREATER_THAN',
+                              '<='        => 'T_IS_SMALLER_OR_EQUAL',
+                              '>='        => 'T_IS_GREATER_OR_EQUAL',
+                              '!'         => 'T_BOOLEAN_NOT',
+                              '||'        => 'T_BOOLEAN_OR',
+                              '&&'        => 'T_BOOLEAN_AND',
+                              '|'         => 'T_BITWISE_OR',
+                              '&'         => 'T_BITWISE_AND',
+                              '!='        => 'T_IS_NOT_EQUAL',
+                              '!=='       => 'T_IS_NOT_IDENTICAL',
+                              '='         => 'T_EQUAL',
+                              '=='        => 'T_IS_EQUAL',
+                              '==='       => 'T_IS_IDENTICAL',
+                              '-='        => 'T_MINUS_EQUAL',
+                              '+='        => 'T_PLUS_EQUAL',
+                              '*='        => 'T_MUL_EQUAL',
+                              '/='        => 'T_DIV_EQUAL',
+                              '%='        => 'T_MOD_EQUAL',
+                              '++'        => 'T_INC',
+                              '--'        => 'T_DEC',
+                              '//'        => 'T_COMMENT',
+                              '/*'        => 'T_COMMENT',
+                              '/**'       => 'T_DOC_COMMENT',
+                              '*/'        => 'T_COMMENT',
+                             );
+
+    /**
+     * A list string delimiters.
+     *
+     * @var array
+     */
+    protected $stringTokens = array(
+                               '\'',
+                               '"',
+                              );
+
+    /**
+     * A list tokens that start and end comments.
+     *
+     * @var array
+     */
+    protected $commentTokens = array(
+                                '//'  => null,
+                                '/*'  => '*/',
+                                '/**' => '*/',
+                               );
+
+
+    /**
+     * Creates an array of tokens when given some PHP code.
+     *
+     * Starts by using token_get_all() but does a lot of extra processing
+     * to insert information about the context of the token.
+     *
+     * @param string $string  The string to tokenize.
+     * @param string $eolChar The EOL character to use for splitting strings.
+     *
+     * @return array
+     */
+    public function tokenizeString($string, $eolChar='\n')
+    {
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** START JS TOKENIZING ***".PHP_EOL;
+        }
+
+        $tokenTypes = array_keys($this->tokenValues);
+
+        $maxTokenLength = 0;
+        foreach ($tokenTypes as $token) {
+            if (strlen($token) > $maxTokenLength) {
+                $maxTokenLength = strlen($token);
+            }
+        }
+
+        $tokens          = array();
+        $inString        = '';
+        $stringChar      = null;
+        $inComment       = '';
+        $buffer          = '';
+        $preStringBuffer = '';
+        $cleanBuffer     = false;
+
+        $tokens[] = array(
+                     'code'    => T_OPEN_TAG,
+                     'type'    => 'T_OPEN_TAG',
+                     'content' => '',
+                    );
+
+        // Convert newlines to single characters for ease of
+        // processing. We will change them back later.
+        $string = str_replace($eolChar, "\n", $string);
+
+        $chars    = str_split($string);
+        $numChars = count($chars);
+        for ($i = 0; $i < $numChars; $i++) {
+            $char = $chars[$i];
+
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                $content = str_replace("\n", '\n', $char);
+                $bufferContent = str_replace("\n", '\n', $buffer);
+                if ($inString !== '') {
+                    echo "\t";
+                }
+
+                if ($inComment !== '') {
+                    echo "\t";
+                }
+
+                echo "\tProcess char $i => $content (buffer: $bufferContent)".PHP_EOL;
+            }
+
+            if ($inString === '' && $inComment === '' && $buffer !== '') {
+                // If the buffer only has whitespace and we are about to
+                // add a character, store the whitespace first.
+                if (trim($char) !== '' && trim($buffer) === '') {
+                    $tokens[] = array(
+                                 'code'    => T_WHITESPACE,
+                                 'type'    => 'T_WHITESPACE',
+                                 'content' => str_replace("\n", $eolChar, $buffer),
+                                );
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $content = str_replace("\n", '\n', $buffer);
+                        echo "\t=> Added token T_WHITESPACE ($content)".PHP_EOL;
+                    }
+
+                    $buffer = '';
+                }
+
+                // If the buffer is not whitespace and we are about to
+                // add a whitespace character, store the content first.
+                if ($inString === ''
+                    && $inComment === ''
+                    && trim($char) === ''
+                    && trim($buffer) !== ''
+                ) {
+                    $tokens[] = array(
+                                 'code'    => T_STRING,
+                                 'type'    => 'T_STRING',
+                                 'content' => str_replace("\n", $eolChar, $buffer),
+                                );
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $content = str_replace("\n", '\n', $buffer);
+                        echo "\t=> Added token T_STRING ($content)".PHP_EOL;
+                    }
+
+                    $buffer = '';
+                }
+            }//end if
+
+            // Process strings.
+            if ($inComment === '' && in_array($char, $this->stringTokens) === true) {
+                if ($inString === $char) {
+                    // This could be the end of the string, but make sure it
+                    // is not escaped first.
+                    $escapes = 0;
+                    for ($x = ($i - 1); $x >= 0; $x--) {
+                        if ($chars[$x] !== '\\') {
+                            break;
+                        }
+
+                        $escapes++;
+                    }
+
+                    if ($escapes === 0 || ($escapes % 2) === 0) {
+                        // There is an even number escape chars,
+                        // so this is not escaped, it is the end of the string.
+                        $tokens[] = array(
+                                     'code'    => T_CONSTANT_ENCAPSED_STRING,
+                                     'type'    => 'T_CONSTANT_ENCAPSED_STRING',
+                                     'content' => str_replace("\n", $eolChar, $buffer).$char,
+                                    );
+
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            echo "\t\t* found end of string *".PHP_EOL;
+                            $content = str_replace("\n", '\n', $buffer.$char);
+                            echo "\t=> Added token T_CONSTANT_ENCAPSED_STRING ($content)".PHP_EOL;
+                        }
+
+                        $buffer          = '';
+                        $preStringBuffer = '';
+                        $inString        = '';
+                        $stringChar      = null;
+                        continue;
+                    }
+                } else if ($inString === '') {
+                    $inString        = $char;
+                    $stringChar      = $i;
+                    $preStringBuffer = $buffer;
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo "\t\t* looking for string closer *".PHP_EOL;
+                    }
+                }//end if
+            }//end if
+
+            if ($inString !== '' && $char === "\n") {
+                // Unless this newline character is escaped, the string did not
+                // end before the end of the line, which means it probably
+                // wasn't a string at all (maybe a regex).
+                if ($chars[($i - 1)] !== '\\') {
+                    $i               = $stringChar;
+                    $buffer          = $preStringBuffer;
+                    $preStringBuffer = '';
+                    $inString        = '';
+                    $stringChar      = null;
+                    $char            = $chars[$i];
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo "\t\t* found newline before end of string, bailing *".PHP_EOL;
+                    }
+                }
+            }
+
+            $buffer .= $char;
+
+            // We don't look for special tokens inside strings,
+            // so if we are in a string, we can continue here now
+            // that the current char is in the buffer.
+            if ($inString !== '') {
+                continue;
+            }
+
+            // Special case for T_DIVIDE which can actually be
+            // the start of a regular expression.
+            if ($char === '/') {
+                $regex = $this->getRegexToken(
+                    $i,
+                    $string,
+                    $chars,
+                    $tokens,
+                    $eolChar
+                );
+
+                if ($regex !== null) {
+                    $tokens[] = array(
+                                 'code'    => T_REGULAR_EXPRESSION,
+                                 'type'    => 'T_REGULAR_EXPRESSION',
+                                 'content' => $regex['content'],
+                                );
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $content = str_replace("\n", '\n', $regex['content']);
+                        echo "\t=> Added token T_REGULAR_EXPRESSION ($content)".PHP_EOL;
+                    }
+
+                    $i = $regex['end'];
+                    $buffer = '';
+                    $cleanBuffer = false;
+                    continue;
+                }
+            }//end if
+
+            // Check for known tokens, but ignore tokens found that are not at
+            // the end of a string, like FOR and this.FORmat.
+            if (in_array(strtolower($buffer), $tokenTypes) === true
+                && (preg_match('|[a-zA-z0-9_]|', $char) === 0
+                || isset($chars[($i + 1)]) === false
+                || preg_match('|[a-zA-z0-9_]|', $chars[($i + 1)]) === 0)
+            ) {
+                $matchedToken    = false;
+                $lookAheadLength = ($maxTokenLength - strlen($buffer));
+
+                if ($lookAheadLength > 0) {
+                    // The buffer contains a token type, but we need
+                    // to look ahead at the next chars to see if this is
+                    // actually part of a larger token. For example,
+                    // FOR and FOREACH.
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo "\t\t* buffer possibly contains token, looking ahead $lookAheadLength chars *".PHP_EOL;
+                    }
+
+                    $charBuffer = $buffer;
+                    for ($x = 1; $x <= $lookAheadLength; $x++) {
+                        if (isset($chars[($i + $x)]) === false) {
+                            break;
+                        }
+
+                        $charBuffer .= $chars[($i + $x)];
+
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            $content = str_replace("\n", '\n', $charBuffer);
+                            echo "\t\t=> Looking ahead $x chars => $content".PHP_EOL;
+                        }
+
+                        if (in_array(strtolower($charBuffer), $tokenTypes) === true) {
+                            // We've found something larger that matches
+                            // so we can ignore this char. Except for 1 very specific
+                            // case where a comment like /**/ needs to tokenize as
+                            // T_COMMENT and not T_DOC_COMMENT.
+                            $oldType = $this->tokenValues[strtolower($buffer)];
+                            $newType = $this->tokenValues[strtolower($charBuffer)];
+                            if ($oldType === 'T_COMMENT'
+                                && $newType === 'T_DOC_COMMENT'
+                                && $chars[($i + $x + 1)] === '/'
+                            ) {
+                                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                    echo "\t\t* look ahead ignored T_DOC_COMMENT, continuing *".PHP_EOL;
+                                }
+                            } else {
+                                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                    echo "\t\t* look ahead found more specific token ($newType), ignoring $i *".PHP_EOL;
+                                }
+
+                                $matchedToken = true;
+                                break;
+                            }
+                        }
+                    }//end for
+                }//end if
+
+                if ($matchedToken === false) {
+                    if (PHP_CODESNIFFER_VERBOSITY > 1 && $lookAheadLength > 0) {
+                        echo "\t\t* look ahead found nothing *".PHP_EOL;
+                    }
+
+                    $value    = $this->tokenValues[strtolower($buffer)];
+                    $tokens[] = array(
+                                 'code'    => constant($value),
+                                 'type'    => $value,
+                                 'content' => $buffer,
+                                );
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $content = str_replace("\n", '\n', $buffer);
+                        echo "\t=> Added token $value ($content)".PHP_EOL;
+                    }
+
+                    $cleanBuffer = true;
+                }//end if
+            } else if (in_array(strtolower($char), $tokenTypes) === true) {
+                // No matter what token we end up using, we don't
+                // need the content in the buffer any more because we have
+                // found a valid token.
+                $newContent = substr(str_replace("\n", $eolChar, $buffer), 0, -1);
+                if ($newContent !== '') {
+                    $tokens[] = array(
+                                 'code'    => T_STRING,
+                                 'type'    => 'T_STRING',
+                                 'content' => $newContent,
+                                );
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $content = str_replace("\n", '\n', substr($buffer, 0, -1));
+                        echo "\t=> Added token T_STRING ($content)".PHP_EOL;
+                    }
+                }
+
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    echo "\t\t* char is token, looking ahead ".($maxTokenLength - 1).' chars *'.PHP_EOL;
+                }
+
+                // The char is a token type, but we need to look ahead at the
+                // next chars to see if this is actually part of a larger token.
+                // For example, = and ===.
+                $charBuffer   = $char;
+                $matchedToken = false;
+                for ($x = 1; $x <= $maxTokenLength; $x++) {
+                    if (isset($chars[($i + $x)]) === false) {
+                        break;
+                    }
+
+                    $charBuffer .= $chars[($i + $x)];
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $content = str_replace("\n", '\n', $charBuffer);
+                        echo "\t\t=> Looking ahead $x chars => $content".PHP_EOL;
+                    }
+
+                    if (in_array(strtolower($charBuffer), $tokenTypes) === true) {
+                        // We've found something larger that matches
+                        // so we can ignore this char.
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            $type = $this->tokenValues[strtolower($charBuffer)];
+                            echo "\t\t* look ahead found more specific token ($type), ignoring $i *".PHP_EOL;
+                        }
+
+                        $matchedToken = true;
+                        break;
+                    }
+                }//end for
+
+                if ($matchedToken === false) {
+                    $value    = $this->tokenValues[strtolower($char)];
+                    $tokens[] = array(
+                                 'code'    => constant($value),
+                                 'type'    => $value,
+                                 'content' => $char,
+                                );
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo "\t\t* look ahead found nothing *".PHP_EOL;
+                        $content = str_replace("\n", '\n', $char);
+                        echo "\t=> Added token $value ($content)".PHP_EOL;
+                    }
+
+                    $cleanBuffer = true;
+                } else {
+                    $buffer = $char;
+                }
+            }//end if
+
+            // Keep track of content inside comments.
+            if ($inComment === ''
+                && array_key_exists($buffer, $this->commentTokens) === true
+            ) {
+                // This is not really a comment if the content
+                // looks like \// (i.e., it is escaped).
+                if (isset($chars[($i - 2)]) === true && $chars[($i - 2)] === '\\') {
+                    $lastToken   = array_pop($tokens);
+                    $lastContent = $lastToken['content'];
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $value   = $this->tokenValues[strtolower($lastContent)];
+                        $content = str_replace("\n", '\n', $lastContent);
+                        echo "\t=> Removed token $value ($content)".PHP_EOL;
+                    }
+
+                    $lastChars    = str_split($lastContent);
+                    $lastNumChars = count($lastChars);
+                    for ($x = 0; $x < $lastNumChars; $x++) {
+                        $lastChar = $lastChars[$x];
+                        $value    = $this->tokenValues[strtolower($lastChar)];
+                        $tokens[] = array(
+                                     'code'    => constant($value),
+                                     'type'    => $value,
+                                     'content' => $lastChar,
+                                    );
+
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            $content = str_replace("\n", '\n', $lastChar);
+                            echo "\t=> Added token $value ($content)".PHP_EOL;
+                        }
+                    }
+                } else {
+                    // We have started a comment.
+                    $inComment = $buffer;
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo "\t\t* looking for end of comment *".PHP_EOL;
+                    }
+                }
+            } else if ($inComment !== '') {
+                if ($this->commentTokens[$inComment] === null) {
+                    // Comment ends at the next newline.
+                    if (strpos($buffer, "\n") !== false) {
+                        $inComment = '';
+                    }
+                } else {
+                    if ($this->commentTokens[$inComment] === $buffer) {
+                        $inComment = '';
+                    }
+                }
+
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    if ($inComment === '') {
+                        echo "\t\t* found end of comment *".PHP_EOL;
+                    }
+                }
+
+                if ($inComment === '' && $cleanBuffer === false) {
+                    $tokens[] = array(
+                                 'code'    => T_STRING,
+                                 'type'    => 'T_STRING',
+                                 'content' => str_replace("\n", $eolChar, $buffer),
+                                );
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $content = str_replace("\n", '\n', $buffer);
+                        echo "\t=> Added token T_STRING ($content)".PHP_EOL;
+                    }
+
+                    $buffer = '';
+                }
+            }//end if
+
+            if ($cleanBuffer === true) {
+                $buffer      = '';
+                $cleanBuffer = false;
+            }
+        }//end foreach
+
+        if (empty($buffer) === false) {
+            // Buffer contains whitespace from the end of the file.
+            $tokens[] = array(
+                         'code'    => T_WHITESPACE,
+                         'type'    => 'T_WHITESPACE',
+                         'content' => str_replace("\n", $eolChar, $buffer),
+                        );
+
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                $content = str_replace($eolChar, '\n', $buffer);
+                echo "\t=> Added token T_WHITESPACE ($content)".PHP_EOL;
+            }
+        }
+
+        $tokens[] = array(
+                     'code'    => T_CLOSE_TAG,
+                     'type'    => 'T_CLOSE_TAG',
+                     'content' => '',
+                    );
+
+        /*
+            Now that we have done some basic tokenizing, we need to
+            modify the tokens to join some together and split some apart
+            so they match what the PHP tokenizer does.
+        */
+
+        $finalTokens = array();
+        $newStackPtr = 0;
+        $numTokens   = count($tokens);
+        for ($stackPtr = 0; $stackPtr < $numTokens; $stackPtr++) {
+            $token = $tokens[$stackPtr];
+
+            /*
+                Look for comments and join the tokens together.
+            */
+
+            if (array_key_exists($token['content'], $this->commentTokens) === true) {
+                $newContent   = '';
+                $tokenContent = $token['content'];
+                $endContent   = $this->commentTokens[$tokenContent];
+                while ($tokenContent !== $endContent) {
+                    if ($endContent === null
+                        && strpos($tokenContent, $eolChar) !== false
+                    ) {
+                        // A null end token means the comment ends at the end of
+                        // the line so we look for newlines and split the token.
+                        $tokens[$stackPtr]['content'] = substr(
+                            $tokenContent,
+                            (strpos($tokenContent, $eolChar) + strlen($eolChar))
+                        );
+
+                        $tokenContent = substr(
+                            $tokenContent,
+                            0,
+                            (strpos($tokenContent, $eolChar) + strlen($eolChar))
+                        );
+
+                        // If the substr failed, skip the token as the content
+                        // will now be blank.
+                        if ($tokens[$stackPtr]['content'] !== false) {
+                            $stackPtr--;
+                        }
+
+                        break;
+                    }//end if
+
+                    $stackPtr++;
+                    $newContent  .= $tokenContent;
+                    if (isset($tokens[$stackPtr]) === false) {
+                        break;
+                    }
+
+                    $tokenContent = $tokens[$stackPtr]['content'];
+                }//end while
+
+                // Save the new content in the current token so
+                // the code below can chop it up on newlines.
+                $token['content'] = $newContent.$tokenContent;
+            }//end if
+
+            /*
+                If this token has newlines in its content, split each line up
+                and create a new token for each line. We do this so it's easier
+                to ascertain where errors occur on a line.
+                Note that $token[1] is the token's content.
+            */
+
+            if (strpos($token['content'], $eolChar) !== false) {
+                $tokenLines = explode($eolChar, $token['content']);
+                $numLines   = count($tokenLines);
+
+                for ($i = 0; $i < $numLines; $i++) {
+                    $newToken['content'] = $tokenLines[$i];
+                    if ($i === ($numLines - 1)) {
+                        if ($tokenLines[$i] === '') {
+                            break;
+                        }
+                    } else {
+                        $newToken['content'] .= $eolChar;
+                    }
+
+                    $newToken['type']          = $token['type'];
+                    $newToken['code']          = $token['code'];
+                    $finalTokens[$newStackPtr] = $newToken;
+                    $newStackPtr++;
+                }
+            } else {
+                $finalTokens[$newStackPtr] = $token;
+                $newStackPtr++;
+            }//end if
+
+            // Convert numbers, including decimals.
+            if ($token['code'] === T_STRING
+                || $token['code'] === T_OBJECT_OPERATOR
+            ) {
+                $newContent  = '';
+                $oldStackPtr = $stackPtr;
+                while (preg_match('|^[0-9\.]+$|', $tokens[$stackPtr]['content']) !== 0) {
+                    $newContent .= $tokens[$stackPtr]['content'];
+                    $stackPtr++;
+                }
+
+                if ($newContent !== '' && $newContent !== '.') {
+                    $finalTokens[($newStackPtr - 1)]['content'] = $newContent;
+                    if (ctype_digit($newContent) === true) {
+                        $finalTokens[($newStackPtr - 1)]['code']
+                            = constant('T_LNUMBER');
+                        $finalTokens[($newStackPtr - 1)]['type'] = 'T_LNUMBER';
+                    } else {
+                        $finalTokens[($newStackPtr - 1)]['code']
+                            = constant('T_DNUMBER');
+                        $finalTokens[($newStackPtr - 1)]['type'] = 'T_DNUMBER';
+                    }
+
+                    $stackPtr--;
+                } else {
+                    $stackPtr = $oldStackPtr;
+                }
+            }//end if
+        }//end for
+
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** END TOKENIZING ***".PHP_EOL;
+        }
+
+        return $finalTokens;
+
+    }//end tokenizeString()
+
+
+    /**
+     * Tokenizes a regular expression if one is found.
+     *
+     * If a regular expression is not found, NULL is returned.
+     *
+     * @param string $char    The index of the possible regex start character.
+     * @param string $string  The complete content of the string being tokenized.
+     * @param string $chars   An array of characters being tokenized.
+     * @param string $tokens  The current array of tokens found in the string.
+     * @param string $eolChar The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    public function getRegexToken($char, $string, $chars, $tokens, $eolChar)
+    {
+        $beforeTokens = array(
+                         T_EQUAL,
+                         T_OPEN_PARENTHESIS,
+                         T_RETURN,
+                         T_BOOLEAN_OR,
+                         T_BOOLEAN_AND,
+                         T_BITWISE_OR,
+                         T_BITWISE_AND,
+                         T_COMMA,
+                         T_COLON,
+                         T_TYPEOF,
+                        );
+
+        $afterTokens = array(
+                        ',',
+                        ')',
+                        ';',
+                        ' ',
+                        '.',
+                        $eolChar,
+                       );
+
+        // Find the last non-whitespace token that was added
+        // to the tokens array.
+        $numTokens = count($tokens);
+        for ($prev = ($numTokens - 1); $prev >= 0; $prev--) {
+            if (in_array($tokens[$prev]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
+                break;
+            }
+        }
+
+        if (in_array($tokens[$prev]['code'], $beforeTokens) === false) {
+            return null;
+        }
+
+        // This is probably a regular expression, so look for the end of it.
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            $content = str_replace("\n", '\n', $char);
+            echo "\t* token possibly starts a regular expression *".PHP_EOL;
+        }
+
+        $numChars = count($chars);
+        for ($next = ($char + 1); $next < $numChars; $next++) {
+            if ($chars[$next] === '/') {
+                // Just make sure this is not escaped first.
+                if ($chars[($next - 1)] !== '\\') {
+                    // In the simple form: /.../ so we found the end.
+                    break;
+                } else if ($chars[($next - 2)] === '\\') {
+                    // In the form: /...\\/ so we found the end.
+                    break;
+                }
+            } else {
+                $possibleEolChar = substr($string, $next, strlen($eolChar));
+                if ($possibleEolChar === $eolChar) {
+                    // This is the last token on the line and regular
+                    // expressions need to be defined on a single line,
+                    // so this is not a regular expression.
+                    break;
+                }
+            }
+        }
+
+        if ($chars[$next] !== '/') {
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                echo "\t* could not find end of regular expression *".PHP_EOL;
+            }
+
+            return null;
+        }
+
+        while (preg_match('|[a-zA-Z]|', $chars[($next + 1)]) !== 0) {
+            // The token directly after the end of the regex can
+            // be modifiers like global and case insensitive
+            // (.e.g, /pattern/gi).
+            $next++;
+        }
+
+        $regexEnd = $next;
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t* found end of regular expression at token $regexEnd *".PHP_EOL;
+        }
+
+        for ($next = ($next + 1); $next < $numChars; $next++) {
+            if ($chars[$next] !== ' ') {
+                break;
+            } else {
+                $possibleEolChar = substr($string, $next, strlen($eolChar));
+                if ($possibleEolChar === $eolChar) {
+                    // This is the last token on the line.
+                    break;
+                }
+            }
+        }
+
+        if (in_array($chars[$next], $afterTokens) === false) {
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                echo "\t* tokens after regular expression do not look correct *".PHP_EOL;
+            }
+
+            return null;
+        }
+
+        // This is a regular expression, so join all the tokens together.
+        $content = '';
+        for ($x = $char; $x <= $regexEnd; $x++) {
+            $content .= $chars[$x];
+        }
+
+        $token = array(
+                  'start'   => $char,
+                  'end'     => $regexEnd,
+                  'content' => $content,
+                 );
+
+        return $token;
+
+    }//end getRegexToken()
+
+
+    /**
+     * Performs additional processing after main tokenizing.
+     *
+     * This additional processing looks for properties, labels and objects.
+     *
+     * @param array  &$tokens The array of tokens to process.
+     * @param string $eolChar The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    public function processAdditional(&$tokens, $eolChar)
+    {
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** START ADDITIONAL JS PROCESSING ***".PHP_EOL;
+        }
+
+        $numTokens  = count($tokens);
+        $classStack = array();
+
+        for ($i = 0; $i < $numTokens; $i++) {
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                $type    = $tokens[$i]['type'];
+                $content = str_replace($eolChar, '\n', $tokens[$i]['content']);
+                echo str_repeat("\t", count($classStack));
+
+                echo "\tProcess token $i: $type => $content".PHP_EOL;
+            }
+
+            if ($tokens[$i]['code'] === T_OPEN_CURLY_BRACKET
+                && isset($tokens[$i]['scope_condition']) === false
+            ) {
+                $classStack[] = $i;
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    echo str_repeat("\t", count($classStack));
+                    echo "\t=> Found property opener".PHP_EOL;
+                }
+
+                // This could also be an object definition.
+                for ($x = ($i - 1); $x >= 0; $x--) {
+                    if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
+                        // Non-whitespace content.
+                        break;
+                    }
+                }
+
+                if ($tokens[$x]['code'] === T_EQUAL) {
+                    for ($x--; $x >= 0; $x--) {
+                        if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
+                            break;
+                        }
+                    }
+
+                    if ($tokens[$x]['code'] === T_STRING
+                        || $tokens[$x]['code'] === T_PROTOTYPE
+                    ) {
+                        // Find the first string in this definition.
+                        // E.g., WantedString.DontWantThis.prototype
+                        for ($x--; $x >= 0; $x--) {
+                            $wantedTokens = array(
+                                             T_STRING,
+                                             T_PROTOTYPE,
+                                             T_OBJECT_OPERATOR,
+                                            );
+
+                            if (in_array($tokens[$x]['code'], $wantedTokens) === false) {
+                                $x++;
+                                break;
+                            }
+                        }
+
+                        $closer = $tokens[$i]['bracket_closer'];
+                        $tokens[$i]['scope_condition']      = $x;
+                        $tokens[$i]['scope_closer']         = $closer;
+                        $tokens[$closer]['scope_condition'] = $x;
+                        $tokens[$closer]['scope_opener']    = $i;
+                        $tokens[$x]['scope_opener']         = $i;
+                        $tokens[$x]['scope_closer']         = $closer;
+                        $tokens[$x]['code']                 = T_OBJECT;
+                        $tokens[$x]['type']                 = 'T_OBJECT';
+
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            echo str_repeat("\t", count($classStack));
+                            echo "\t* token $x converted from T_STRING to T_OBJECT *".PHP_EOL;
+                            echo str_repeat("\t", count($classStack));
+                            echo "\t* set scope opener ($i) and closer ($closer) for token $x *".PHP_EOL;
+                        }
+                    }//end if
+                }//end if
+            } else if ($tokens[$i]['code'] === T_CLOSE_CURLY_BRACKET
+                && (isset($tokens[$i]['scope_condition']) === false
+                || $tokens[$tokens[$i]['scope_condition']]['code'] === T_OBJECT)
+            ) {
+                $opener = array_pop($classStack);
+
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    echo str_repeat("\t", count($classStack));
+                    echo "\t\t=> Found property closer for $opener".PHP_EOL;
+                }
+            } else if ($tokens[$i]['code'] === T_COLON) {
+                // If it is a scope opener, it belongs to a
+                // DEFAULT or CASE statement.
+                if (isset($tokens[$i]['scope_condition']) === true) {
+                    continue;
+                }
+
+                // Make sure this is not part of an inline IF statement.
+                for ($x = ($i - 1); $x >= 0; $x--) {
+                    if ($tokens[$x]['code'] === T_INLINE_THEN) {
+                        $tokens[$i]['code'] = T_INLINE_ELSE;
+                        $tokens[$i]['type'] = 'T_INLINE_ELSE';
+
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            echo str_repeat("\t", count($classStack));
+                            echo "\t* token $i converted from T_COLON to T_INLINE_THEN *".PHP_EOL;
+                        }
+
+                        continue(2);
+                    } else if ($tokens[$x]['line'] < $tokens[$i]['line']) {
+                        break;
+                    }
+                }
+
+                // The string to the left of the colon is either a property or label.
+                for ($label = ($i - 1); $label >= 0; $label--) {
+                    if (in_array($tokens[$label]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
+                        break;
+                    }
+                }
+
+                if ($tokens[$label]['code'] !== T_STRING) {
+                    continue;
+                }
+
+                if (empty($classStack) === false) {
+                    $tokens[$label]['code'] = T_PROPERTY;
+                    $tokens[$label]['type'] = 'T_PROPERTY';
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", count($classStack));
+                        echo "\t* token $label converted from T_STRING to T_PROPERTY *".PHP_EOL;
+                    }
+
+                    // If the net token after the colon is a curly brace,
+                    // this property is actually an object, so we can give it
+                    // and opener and closer.
+                    for ($x = ($i + 1); $x < $numTokens; $x++) {
+                        if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false) {
+                            break;
+                        }
+                    }
+
+                    if ($tokens[$x]['code'] === T_OPEN_CURLY_BRACKET) {
+                        $closer = $tokens[$x]['bracket_closer'];
+                        $tokens[$label]['scope_opener']     = $x;
+                        $tokens[$label]['scope_closer']     = $closer;
+                        $tokens[$x]['scope_condition']      = $label;
+                        $tokens[$x]['scope_closer']         = $closer;
+                        $tokens[$closer]['scope_condition'] = $label;
+                        $tokens[$closer]['scope_opener']    = $x;
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            echo str_repeat("\t", count($classStack));
+                            echo "\t* set scope opener ($x) and closer ($closer) for token $label *".PHP_EOL;
+                        }
+                    }
+                } else {
+                    $tokens[$label]['code'] = T_LABEL;
+                    $tokens[$label]['type'] = 'T_LABEL';
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", count($classStack));
+                        echo "\t* token $label converted from T_STRING to T_LABEL *".PHP_EOL;
+                    }
+                }
+            }//end if
+        }//end for
+
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** END ADDITIONAL JS PROCESSING ***".PHP_EOL;
+        }
+
+    }//end processAdditional()
+
+
+}//end class
+
 ?>
-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

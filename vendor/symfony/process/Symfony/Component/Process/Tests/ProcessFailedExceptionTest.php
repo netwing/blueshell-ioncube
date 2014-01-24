@@ -1,54 +1,83 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/TiWoyHitS0+DyM3BwtrAhupKJYUIympfMie7u5zshtgAwS9KgMciyaoni1baTq/sNWvOFI
-Fblq+CDrpgB1Gfnw4xqfgBxN60vjhciXVr3Yy6pCvEjcoAjWYgBCmkiZXGPBA/ieXG4Pr2w0yh1R
-Ci8loPDG/LzoDl9i8X0CcoPZaLKDc0i4078O6YO1utxFeSUgitVaQ6xHcaJt/90w/w0FHRkAGp2r
-jeX8Ler/dGjs1kx2Im2Ehr4euJltSAgiccy4GDnfT8vZM0Thha/Q1wnYyCZ0Mi1DYIS9sBIRYojK
-0OADnPqTummX7+xp4uKLBUPdkTNiTtTBfJDWiz5EH8qDR4V3WNk0NFFAZH+c7/7XFn/heIrOHrtd
-IxrphCYu7Xlia+ynYEnfIi811qKRlnyOZG92zLVaZw6awjPxMq6UJJYs6KLcUKcmzWaTdxZgcM3I
-0bks8aOxz4D3AGtFf/KxZPDBTH6eFLS1Qy9klZA1/rEI4L2xnS3LMI+YFy79V3V7qluHfTXk+wW/
-S43pGSYikhWxmS3vOplyLRMG7Ca8i8AwXiiig7j03txBDw1BajGeHUJUH2GCx0MbXxi1I3ewxXBS
-6NcChKK9gI2TZYeUGNKBQFrk7DGUZnp/iCoN2RtsQar6LtixJtVmxC8ac6B25sq1axc6GYYhx3T1
-Mz5s7hsAB2ymZHJhldAZ5iNvDwo0qerDeiLzgtmmXNkjb0qBZ7B0YlcdqBoxXxDPnSiO1J2Pb9tN
-pE4FU+V+AMh/U8rTq2gcp0P7uA6QP+JDBGGvZv+QzqYG3M7PXHWwjMBgtTvOniJcC+LyiiTsxbSM
-Vhlqf8eLGPJtKH/uqSdWGuZn9ycfEUslPudTySzXEaNp6tOz2qF0rFcdNvAV6E+YLES2+w3Ju8E/
-P3+2XuNiORg8rWY6oczmuCT1iKds49Wa++JhYMvRfhPjGZiCtI9Gt/c7upRb60nSLlsP9R0hAw7D
-E3rfnszxgltPyNlLLoEzfIoMJ49C8UvBIV37dpASTBU0V/nsa1RnFaJcaX3lRuIzgxhr9PuvpJJO
-CnhB9+O3ht/YiQ2nSiL91GBnOYjbBDj0ep+Zy2M6ozSk/vWwZwDFskht+LDAUF2heMruV9MSqdq0
-bHEd04sui9eG9m9zJ/SxVfs11lkz7JbdlohJb1rZvMl7ktveD80cwrNmwqTCN/ryY/udqV8/dFoo
-j8Mb8myWFiWDm79HdSttheo+auo3Naq+QwkEUmMEQMhiwc/wGyhFYgAtGbyJeu5SXAliK1GgnQWH
-pk581Gv3rqCdlP90aI7RmuqWtzjO+RPH5NDTtV5U6M9Qm6Gqx1Oh1Dwufu/qMaNCjiQ8CnVehrgU
-u6YKtoWPXeCR8HA0b6onwuJ3A2n+IJhe+/mxLEEJzFQYJxl9fSXzEfly7vyGVRrZWkPkby8+83W6
-WRn5IIrvtFL0+CIYHmyn7WY0DpMpk2+5dwGprTZ6HWXOEpQwAQ+bZlQGOHQoKBMI4wIyIrHX9QbQ
-fuAumU2x0bo5/k8VVoNSvE/C46frfoqFIv43Kz95K5V5urPZ08YF6r0HZqVrLnip3BHUEAtHy0lA
-hawGKVYcfBTB9vrrTBz4ombew2UQYlPJ3H+VA5cQUP9hTAbC5iQenyGGu/3TtgtGLNXnl/O5Ife4
-Gkwg0T6pXd//1Ajw/bZX+4EaOVqlcIhqV9QMMVQphU48sw+zsSzOkGPgDZDaH0dXyg1GBNGaUBil
-hqn/EKU2Ydajf0E/rzYCZaGaSDFC2Tf0ktWIp9uArgQzl+1oRiT7BXo/CYnzRGi0Gq1N+3uayIsL
-0bI+ZS3DwKd71RbXNsDO0igXpTOiheafMIoD8qu9V+R7Q4+8vkkMJDw7Q1yE4zseUim6LEWpKgtx
-PamRj6IIMde93E8BPZ49c0SnwsOpHZ9VtciYEjA9H/xF7LMs5lv1lLV5PZ8TSsxtzxK0zU232qqh
-N53NGLA1/WZlaPKNHeExqfhEZxOB3PzVz53LoCUlwhXQ4f16KIHT6z0x0OtdbnBVL7voQ90RqZ55
-Dk6ob8AoaEbQ8isMXG/uHGgHhZdQG6E1Qcz7pOwzJuXjVQNi2y7CMEmSMLzjsAIGO538ILusyXCH
-p+4xDPbFHB4a6edyPpqatAbLfEgrbpjERsaJgsuJpvPx85c8luSaxIfFdWqtvRqqM7p/O7tff4Nv
-SBx5cRvglTQWhk/o3JhGlDQPGfuZDRYlsxHJSJxwq9siTQ/4Ox2Q/tzngHxqyfnu6qrouldR4d8B
-w2fxDAwj7kYp7bOfT5A5MLr4Fe4eVoXB6rRL0QDgDlk2HfuDSemguQrbxq5eEDOv1i6bEB1iqR3I
-fg2/D8fId/sg6e4S4raZ53MB2uE7bzh+sS0ERkPLV1ESiYWx3MSohap4538BkNGf3V6UooNiBYgS
-8Lc2ikKRkX67pw5OEBLbak4PlYGqbsmfAm2E60qFqAuLIy+6eLjg0JUAPGGPFMkXSAJ2o/O+8bdh
-HpgYsBCmoOcLiNU2HuG46YPFw3i1LGnaRt7wKQH7U78gVDFWJaz9fw9NDNF72Jg+xzOQTNezcfex
-6skRsSquz5PnP5PuZN7mnswU2X/L18DT4a6mIcZli/SWZaOAfawDf0vH3QEpS/9UbVgDt98gegsE
-N/Q2f+UpYy8rc8/XECVfTBQso/of3vVEDX86afrSI5d0veX2HrnK2xuqf4DiT6lH9XTxP9isI05q
-4JfZquYfcmkbE9t3yCnjNrpnDe9OA/VDbJlK8KEBOdlsU0rXbf+V4shugqlNKBaBxqqtnkaeKtHY
-tLYAaQy0n7N2IPd+CwyEApHZ8hOjbGg+MDaQK6l+uoCJX09fTFD3Y5SLSB9zIf5OqvIwyJHxnoMP
-uNu5iskK9ZSzou/rwANEMh30mvV4YcJWJrBa5VfN8YBoAZF10idv8uqFnO7cciEg8Q1GO9kbnwcX
-1f+Db2v47JtTtueq6duHzoxhiv/mDs/nLk96WbjRjkDVrTRnh+5v7CuZErUbC6k7IdpIvkOVu/0c
-h5t0H+/ccz1nXhgJUEL0pwE8uCvUNkxTb3DBlKuIfl8Rkr3j1u17zYAl66ua5gvBY/WDy8gMGlgI
-htVtdTyYVVTTgtLfMFdTEZe2FjfbOWlbEL0TdsBenk8PAxFkxEAN6psVx6BnCMRjkaDwus+C2n+N
-hVx7cw9jwXhdOwTIj6WtHCtc3GHZ9q1ARNwYJv/qJEq6H5srWJ3QFPxyIgLhnFEfJKRUOwiUbkxi
-Crlzt/44kVebrnfU60iJb9681UXRD/XM/4z+EyN78biY72u9GcgFz7MHIEO8ZhIjqwsRWcz3/V49
-GurrxlhLB7wL8wCPKYieLkBVfz8YuOpFPQ+Ccq+gXrgH3BP87YkSz4pET9NqLABokGMtRVfbAC2b
-sSMK2C5Q96BL2gt5cCDQHMDzb95gKPT4PD5jsRZ8mrpEQjM0MYLIHwGwSBANkdCc7/mjcgz+l5KD
-E/NwzpGssCKLRiNs9/uFKGlct3Qi8F8/qQdXkV6OBuI9XzZ4BzozTj3hls77obOEuGbD8qFUGcUT
-evD5uWOO+mxWT7IvkP+8FjyOYW6DH3/LOEb8eMJq3HzQ12xoPc1PH6uVFMzXA8z7eGD8wyEPh2Hw
-RF1qPhcuyQscxnwX/pKwdt0rb+b+D09S1ApLw97tIqFkSMqpZXeUGYcgpGUoAS8NTXSDWg5EAUQc
-FUp1yiYW4gIjTZd/fMYN+STT7qtqg/QYFiav5PW+SecXMAg/qUuLJokji6RV2Un2OQwWLA6UOTu4
-oQTs0Y1y0q9S25YFnNmI6559RDOZfEC99VusjO4ijmq=
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Process\Tests;
+
+use Symfony\Component\Process\Exception\ProcessFailedException;
+
+/**
+ * @author Sebastian Marek <proofek@gmail.com>
+ */
+class ProcessFailedExceptionTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * tests ProcessFailedException throws exception if the process was successful
+     */
+    public function testProcessFailedExceptionThrowsException()
+    {
+        $process = $this->getMock(
+            'Symfony\Component\Process\Process',
+            array('isSuccessful'),
+            array('php')
+        );
+        $process->expects($this->once())
+            ->method('isSuccessful')
+            ->will($this->returnValue(true));
+
+        $this->setExpectedException(
+            '\InvalidArgumentException',
+            'Expected a failed process, but the given process was successful.'
+        );
+
+        new ProcessFailedException($process);
+    }
+
+    /**
+     * tests ProcessFailedException uses information from process output
+     * to generate exception message
+     */
+    public function testProcessFailedExceptionPopulatesInformationFromProcessOutput()
+    {
+        $cmd = 'php';
+        $exitCode = 1;
+        $exitText = 'General error';
+        $output = "Command output";
+        $errorOutput = "FATAL: Unexpected error";
+
+        $process = $this->getMock(
+            'Symfony\Component\Process\Process',
+            array('isSuccessful', 'getOutput', 'getErrorOutput', 'getExitCode', 'getExitCodeText'),
+            array($cmd)
+        );
+        $process->expects($this->once())
+            ->method('isSuccessful')
+            ->will($this->returnValue(false));
+        $process->expects($this->once())
+            ->method('getOutput')
+            ->will($this->returnValue($output));
+        $process->expects($this->once())
+            ->method('getErrorOutput')
+            ->will($this->returnValue($errorOutput));
+        $process->expects($this->once())
+            ->method('getExitCode')
+            ->will($this->returnValue($exitCode));
+        $process->expects($this->once())
+            ->method('getExitCodeText')
+            ->will($this->returnValue($exitText));
+
+        $exception = new ProcessFailedException($process);
+
+        $this->assertEquals(
+            "The command \"$cmd\" failed.\nExit Code: $exitCode($exitText)\n\nOutput:\n================\n{$output}\n\nError Output:\n================\n{$errorOutput}",
+            $exception->getMessage()
+        );
+    }
+}

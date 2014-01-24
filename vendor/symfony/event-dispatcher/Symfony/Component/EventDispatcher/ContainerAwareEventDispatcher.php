@@ -1,103 +1,202 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/p+Y7+NbFusf553/08QKQ8+CHGUrnPnfx0==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\EventDispatcher;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+/**
+ * Lazily loads listeners and subscribers from the dependency injection
+ * container
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ * @author Bernhard Schussek <bschussek@gmail.com>
+ * @author Jordan Alliot <jordan.alliot@gmail.com>
+ */
+class ContainerAwareEventDispatcher extends EventDispatcher
+{
+    /**
+     * The container from where services are loaded
+     * @var ContainerInterface
+     */
+    private $container;
+
+    /**
+     * The service IDs of the event listeners and subscribers
+     * @var array
+     */
+    private $listenerIds = array();
+
+    /**
+     * The services registered as listeners
+     * @var array
+     */
+    private $listeners = array();
+
+    /**
+     * Constructor.
+     *
+     * @param ContainerInterface $container A ContainerInterface instance
+     */
+    public function __construct(ContainerInterface $container)
+    {
+        $this->container = $container;
+    }
+
+    /**
+     * Adds a service as event listener
+     *
+     * @param string $eventName Event for which the listener is added
+     * @param array  $callback  The service ID of the listener service & the method
+     *                            name that has to be called
+     * @param integer $priority The higher this value, the earlier an event listener
+     *                            will be triggered in the chain.
+     *                            Defaults to 0.
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function addListenerService($eventName, $callback, $priority = 0)
+    {
+        if (!is_array($callback) || 2 !== count($callback)) {
+            throw new \InvalidArgumentException('Expected an array("service", "method") argument');
+        }
+
+        $this->listenerIds[$eventName][] = array($callback[0], $callback[1], $priority);
+    }
+
+    public function removeListener($eventName, $listener)
+    {
+        $this->lazyLoad($eventName);
+
+        if (isset($this->listeners[$eventName])) {
+            foreach ($this->listeners[$eventName] as $key => $l) {
+                foreach ($this->listenerIds[$eventName] as $i => $args) {
+                    list($serviceId, $method, $priority) = $args;
+                    if ($key === $serviceId.'.'.$method) {
+                        if ($listener === array($l, $method)) {
+                            unset($this->listeners[$eventName][$key]);
+                            if (empty($this->listeners[$eventName])) {
+                                unset($this->listeners[$eventName]);
+                            }
+                            unset($this->listenerIds[$eventName][$i]);
+                            if (empty($this->listenerIds[$eventName])) {
+                                unset($this->listenerIds[$eventName]);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        parent::removeListener($eventName, $listener);
+    }
+
+    /**
+     * @see EventDispatcherInterface::hasListeners
+     */
+    public function hasListeners($eventName = null)
+    {
+        if (null === $eventName) {
+            return (Boolean) count($this->listenerIds) || (Boolean) count($this->listeners);
+        }
+
+        if (isset($this->listenerIds[$eventName])) {
+            return true;
+        }
+
+        return parent::hasListeners($eventName);
+    }
+
+    /**
+     * @see EventDispatcherInterface::getListeners
+     */
+    public function getListeners($eventName = null)
+    {
+        if (null === $eventName) {
+            foreach (array_keys($this->listenerIds) as $serviceEventName) {
+                $this->lazyLoad($serviceEventName);
+            }
+        } else {
+            $this->lazyLoad($eventName);
+        }
+
+        return parent::getListeners($eventName);
+    }
+
+    /**
+     * Adds a service as event subscriber
+     *
+     * @param string $serviceId The service ID of the subscriber service
+     * @param string $class     The service's class name (which must implement EventSubscriberInterface)
+     */
+    public function addSubscriberService($serviceId, $class)
+    {
+        foreach ($class::getSubscribedEvents() as $eventName => $params) {
+            if (is_string($params)) {
+                $this->listenerIds[$eventName][] = array($serviceId, $params, 0);
+            } elseif (is_string($params[0])) {
+                $this->listenerIds[$eventName][] = array($serviceId, $params[0], isset($params[1]) ? $params[1] : 0);
+            } else {
+                foreach ($params as $listener) {
+                    $this->listenerIds[$eventName][] = array($serviceId, $listener[0], isset($listener[1]) ? $listener[1] : 0);
+                }
+            }
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * Lazily loads listeners for this event from the dependency injection
+     * container.
+     *
+     * @throws \InvalidArgumentException if the service is not defined
+     */
+    public function dispatch($eventName, Event $event = null)
+    {
+        $this->lazyLoad($eventName);
+
+        return parent::dispatch($eventName, $event);
+    }
+
+    public function getContainer()
+    {
+        return $this->container;
+    }
+
+    /**
+     * Lazily loads listeners for this event from the dependency injection
+     * container.
+     *
+     * @param string $eventName The name of the event to dispatch. The name of
+     *                          the event is the name of the method that is
+     *                          invoked on listeners.
+     */
+    protected function lazyLoad($eventName)
+    {
+        if (isset($this->listenerIds[$eventName])) {
+            foreach ($this->listenerIds[$eventName] as $args) {
+                list($serviceId, $method, $priority) = $args;
+                $listener = $this->container->get($serviceId);
+
+                $key = $serviceId.'.'.$method;
+                if (!isset($this->listeners[$eventName][$key])) {
+                    $this->addListener($eventName, array($listener, $method), $priority);
+                } elseif ($listener !== $this->listeners[$eventName][$key]) {
+                    parent::removeListener($eventName, array($this->listeners[$eventName][$key], $method));
+                    $this->addListener($eventName, array($listener, $method), $priority);
+                }
+
+                $this->listeners[$eventName][$key] = $listener;
+            }
+        }
+    }
+}

@@ -1,40 +1,99 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-683/N/De717jeBatPxwsBcUlX9i0Pm==
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2001-2014, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit
+ * @subpackage Extensions
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      File available since Release 3.3.0
+ */
+
+/**
+ * We have a TestSuite object A.
+ * In TestSuite object A we have Tests tagged with @group.
+ * We want a TestSuite object B that contains TestSuite objects C, D, ...
+ * for the Tests tagged with @group C, @group D, ...
+ * Running the Tests from TestSuite object B results in Tests tagged with both
+ * @group C and @group D in TestSuite object A to be run twice .
+ *
+ * <code>
+ * $suite = new PHPUnit_Extensions_GroupTestSuite($A, array('C', 'D'));
+ * </code>
+ *
+ * @package    PHPUnit
+ * @subpackage Extensions
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2001-2014 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://www.phpunit.de/
+ * @since      Class available since Release 3.3.0
+ */
+class PHPUnit_Extensions_GroupTestSuite extends PHPUnit_Framework_TestSuite
+{
+    public function __construct(PHPUnit_Framework_TestSuite $suite, array $groups)
+    {
+        $groupSuites = array();
+        $name        = $suite->getName();
+
+        foreach ($groups as $group) {
+            $groupSuites[$group] = new PHPUnit_Framework_TestSuite($name . ' - ' . $group);
+            $this->addTest($groupSuites[$group]);
+        }
+
+        $tests = new RecursiveIteratorIterator(
+          new PHPUnit_Util_TestSuiteIterator($suite),
+          RecursiveIteratorIterator::LEAVES_ONLY
+        );
+
+        foreach ($tests as $test) {
+            if ($test instanceof PHPUnit_Framework_TestCase) {
+                $testGroups = PHPUnit_Util_Test::getGroups(
+                  get_class($test), $test->getName(FALSE)
+                );
+
+                foreach ($groups as $group) {
+                    foreach ($testGroups as $testGroup) {
+                        if ($group == $testGroup) {
+                            $groupSuites[$group]->addTest($test);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

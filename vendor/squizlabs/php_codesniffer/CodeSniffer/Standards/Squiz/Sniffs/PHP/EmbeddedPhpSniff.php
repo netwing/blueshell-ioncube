@@ -1,107 +1,263 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_PHP_EmbeddedPhpSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_PHP_EmbeddedPhpSniff.
+ *
+ * Checks the indentation of embedded PHP code segments.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_PHP_EmbeddedPhpSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_OPEN_TAG);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // If the close php tag is on the same line as the opening
+        // then we have an inline embedded PHP block.
+        $closeTag = $phpcsFile->findNext(array(T_CLOSE_TAG), $stackPtr);
+        if ($closeTag === false) {
+            return;
+        }
+
+        if ($tokens[$stackPtr]['line'] !== $tokens[$closeTag]['line']) {
+            $this->_validateMultilineEmbeddedPhp($phpcsFile, $stackPtr);
+        } else {
+            $this->_validateInlineEmbeddedPhp($phpcsFile, $stackPtr);
+        }
+
+    }//end process()
+
+
+    /**
+     * Validates embedded PHP that exists on multiple lines.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    private function _validateMultilineEmbeddedPhp(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        $prevTag = $phpcsFile->findPrevious(T_OPEN_TAG, ($stackPtr - 1));
+        if ($prevTag === false) {
+            // This is the first open tag.
+            return;
+        }
+
+        // This isn't the first opening tag.
+        $closingTag = $phpcsFile->findNext(T_CLOSE_TAG, $stackPtr);
+        if ($closingTag === false) {
+            // No closing tag? Problem.
+            return;
+        }
+
+        $nextContent = $phpcsFile->findNext(T_WHITESPACE, ($closingTag + 1), $phpcsFile->numTokens, true);
+        if ($nextContent === false) {
+            // Final closing tag. It will be handled elsewhere.
+            return;
+        }
+
+        // Make sure the lines are opening and closing on different lines.
+        if ($tokens[$stackPtr]['line'] === $tokens[$closingTag]['line']) {
+            return;
+        }
+
+        // We have an opening and a closing tag, that lie within other content.
+        // They are also on different lines.
+        $firstContent = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), $closingTag, true);
+        if ($firstContent === false) {
+            $error = 'Empty embedded PHP tag found';
+            $phpcsFile->addError($error, $stackPtr, 'Empty');
+            return;
+        }
+
+        // Check for a blank line at the top.
+        if ($tokens[$firstContent]['line'] > ($tokens[$stackPtr]['line'] + 1)) {
+            // Find a token on the blank line to throw the error on.
+            $i = $stackPtr;
+            do {
+                $i++;
+            } while ($tokens[$i]['line'] !== ($tokens[$stackPtr]['line'] + 1));
+
+            $error = 'Blank line found at start of embedded PHP content';
+            $phpcsFile->addError($error, $i, 'SpacingBefore');
+        } else if ($tokens[$firstContent]['line'] === $tokens[$stackPtr]['line']) {
+            $error = 'Opening PHP tag must be on a line by itself';
+            $phpcsFile->addError($error, $stackPtr, 'ContentAfterOpen');
+        }
+
+        // Check the indent of the first line.
+        $startColumn   = $tokens[$stackPtr]['column'];
+        $contentColumn = $tokens[$firstContent]['column'];
+        if ($contentColumn !== $startColumn) {
+            $error = 'First line of embedded PHP code must be indented %s spaces; %s found';
+            $data  = array(
+                      $startColumn,
+                      $contentColumn,
+                     );
+            $phpcsFile->addError($error, $firstContent, 'Indent', $data);
+        }
+
+        // Check for a blank line at the bottom.
+        $lastContent = $phpcsFile->findPrevious(T_WHITESPACE, ($closingTag - 1), ($stackPtr + 1), true);
+        if ($tokens[$lastContent]['line'] < ($tokens[$closingTag]['line'] - 1)) {
+            // Find a token on the blank line to throw the error on.
+            $i = $closingTag;
+            do {
+                $i--;
+            } while ($tokens[$i]['line'] !== ($tokens[$closingTag]['line'] - 1));
+
+            $error = 'Blank line found at end of embedded PHP content';
+            $phpcsFile->addError($error, $i, 'SpacingAfter');
+        } else if ($tokens[$lastContent]['line'] === $tokens[$closingTag]['line']) {
+            $error = 'Closing PHP tag must be on a line by itself';
+            $phpcsFile->addError($error, $closingTag, 'ContentAfterEnd');
+        }
+
+    }//end _validateMultilineEmbeddedPhp()
+
+
+    /**
+     * Validates embedded PHP that exists on one line.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    private function _validateInlineEmbeddedPhp(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // We only want one line PHP sections, so return if the closing tag is
+        // on the next line.
+        $closeTag = $phpcsFile->findNext(array(T_CLOSE_TAG), $stackPtr, null, false);
+        if ($tokens[$stackPtr]['line'] !== $tokens[$closeTag]['line']) {
+            return;
+        }
+
+        // Check that there is one, and only one space at the start of the statement.
+        $firstContent = $phpcsFile->findNext(array(T_WHITESPACE), ($stackPtr + 1), null, true);
+
+        if ($firstContent === false || $tokens[$firstContent]['code'] === T_CLOSE_TAG) {
+            $error = 'Empty embedded PHP tag found';
+            $phpcsFile->addError($error, $stackPtr, 'Empty');
+            return;
+        }
+
+        $leadingSpace = '';
+        for ($i = ($stackPtr + 1); $i < $firstContent; $i++) {
+            $leadingSpace .= $tokens[$i]['content'];
+        }
+
+        if (strlen($leadingSpace) >= 1) {
+            $error = 'Expected 1 space after opening PHP tag; %s found';
+            $data  = array((strlen($leadingSpace) + 1));
+            $phpcsFile->addError($error, $stackPtr, 'SpacingAfterOpen', $data);
+        }
+
+        $semiColonCount = 0;
+        $semiColon      = $stackPtr;
+        $lastSemiColon  = $semiColon;
+
+        while (($semiColon = $phpcsFile->findNext(array(T_SEMICOLON), ($semiColon + 1), $closeTag)) !== false) {
+            $lastSemiColon = $semiColon;
+            $semiColonCount++;
+        }
+
+        $semiColon = $lastSemiColon;
+        $error     = '';
+
+        // Make sure there is atleast 1 semicolon.
+        if ($semiColonCount === 0) {
+            $error = 'Inline PHP statement must end with a semicolon';
+            $phpcsFile->addError($error, $stackPtr, 'NoSemicolon');
+            return;
+        }
+
+        // Make sure that there aren't more semicolons than are allowed.
+        if ($semiColonCount > 1) {
+            $error = 'Inline PHP statement must contain one statement per line; %s found';
+            $data  = array($semiColonCount);
+            $phpcsFile->addError($error, $stackPtr, 'MultipleStatements', $data);
+        }
+
+        // The statement contains only 1 semicolon, now it must be spaced properly.
+        $whitespace = '';
+        for ($i = ($semiColon + 1); $i < $closeTag; $i++) {
+            if ($tokens[$i]['code'] !== T_WHITESPACE) {
+                $error = 'Expected 1 space before closing PHP tag; 0 found';
+                $phpcsFile->addError($error, $stackPtr, 'NoSpaceBeforeClose');
+                return;
+            }
+
+            $whitespace .= $tokens[$i]['content'];
+        }
+
+        if (strlen($whitespace) === 1) {
+            return;
+        }
+
+        if (strlen($whitespace) === 0) {
+            $error = 'Expected 1 space before closing PHP tag; 0 found';
+            $phpcsFile->addError($error, $stackPtr, 'NoSpaceBeforeClose');
+        } else {
+            $error = 'Expected 1 space before closing PHP tag; %s found';
+            $data  = array(strlen($whitespace));
+            $phpcsFile->addError($error, $stackPtr, 'SpacingBeforeClose', $data);
+        }
+
+    }//end _validateInlineEmbeddedPhp()
+
+
+}//end class
+
 ?>
-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

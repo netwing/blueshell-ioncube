@@ -1,83 +1,288 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-8G==
+<?php
+/**
+ * PHP_ParserGenerator, a php 5 parser generator.
+ *
+ * This is a direct port of the Lemon parser generator, found at
+ * {@link http://www.hwaci.com/sw/lemon/}
+ *
+ * PHP version 5
+ *
+ * LICENSE:
+ *
+ * Copyright (c) 2006, Gregory Beaver <cellog@php.net>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in
+ *       the documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the PHP_ParserGenerator nor the names of its
+ *       contributors may be used to endorse or promote products derived
+ *       from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ * IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   php
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    CVS: $Id: Symbol.php,v 1.1 2006/07/18 00:53:10 cellog Exp $
+ * @since      File available since Release 0.1.0
+ */
+/**
+ * Symbols (terminals and nonterminals) of the grammar are stored in this class
+ *
+ * @package    PHP_ParserGenerator
+ * @author     Gregory Beaver <cellog@php.net>
+ * @copyright  2006 Gregory Beaver
+ * @license    http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @version    0.1.5
+ * @since      Class available since Release 0.1.0
+ */
+class PHP_ParserGenerator_Symbol
+{
+    /**
+     * Symbols that start with a capital letter like FOO.
+     *
+     * These are tokens directly from the lexer
+     */
+    const TERMINAL = 1;
+    /**
+     * Symbols that start with a lower-case letter like foo.
+     *
+     * These are grammar rules like "foo ::= BLAH."
+     */
+    const NONTERMINAL = 2;
+    /**
+     * Multiple terminal symbols.
+     *
+     * These are a grammar rule that consists of several terminals like
+     * FOO|BAR|BAZ.  Note that non-terminals cannot be in a multi-terminal,
+     * and a multi-terminal acts like a single terminal.
+     *
+     * "FOO|BAR FOO|BAZ" is actually two multi-terminals, FOO|BAR and FOO|BAZ.
+     */
+    const MULTITERMINAL = 3;
+
+    const LEFT = 1;
+    const RIGHT = 2;
+    const NONE = 3;
+    const UNK = 4;
+    /**
+     * Name of the symbol
+     *
+     * @var string
+     */
+    public $name;
+    /**
+     * Index of this symbol.
+     *
+     * This will ultimately end up representing the symbol in the generated
+     * parser
+     * @var int
+     */
+    public $index;
+    /**
+     * Symbol type
+     *
+     * One of PHP_ParserGenerator_Symbol::TERMINAL,
+     * PHP_ParserGenerator_Symbol::NONTERMINAL or
+     * PHP_ParserGenerator_Symbol::MULTITERMINAL
+     * @var int
+     */
+    public $type;
+    /**
+     * Linked list of rules that use this symbol, if it is a non-terminal.
+     * @var PHP_ParserGenerator_Rule
+     */
+    public $rule;
+    /**
+     * Fallback token in case this token doesn't parse
+     * @var PHP_ParserGenerator_Symbol
+     */
+    public $fallback;
+    /**
+     * Precendence, if defined.
+     *
+     * -1 if no unusual precedence
+     * @var int
+     */
+    public $prec = -1;
+    /**
+     * Associativity if precedence is defined.
+     *
+     * One of PHP_ParserGenerator_Symbol::LEFT,
+     * PHP_ParserGenerator_Symbol::RIGHT, PHP_ParserGenerator_Symbol::NONE
+     * or PHP_ParserGenerator_Symbol::UNK
+     * @var unknown_type
+     */
+    public $assoc;
+    /**
+     * First-set for all rules of this symbol
+     *
+     * @var array
+     */
+    public $firstset;
+    /**
+     * True if this symbol is a non-terminal and can generate an empty
+     * result.
+     *
+     * For instance "foo ::= ."
+     * @var boolean
+     */
+    public $lambda;
+    /**
+     * Code that executes whenever this symbol is popped from the stack during
+     * error processing.
+     *
+     * @var string|0
+     */
+    public $destructor = 0;
+    /**
+     * Line number of destructor code
+     * @var int
+     */
+    public $destructorln;
+    /**
+     * Unused relic of the C version of Lemon.
+     *
+     * The data type of information held by this object.  Only used
+     * if this is a non-terminal
+     * @var string
+     */
+    public $datatype;
+    /**
+     * Unused relic of the C version of Lemon.
+     *
+     * The data type number.  In the parser, the value
+     * stack is a union.  The .yy%d element of this
+     * union is the correct data type for this object
+     * @var string
+     */
+    public $dtnum;
+    /**#@+
+     * The following fields are used by MULTITERMINALs only
+     */
+    /**
+     * Number of terminal symbols in the MULTITERMINAL
+     *
+     * This is of course the same as count($this->subsym)
+     * @var int
+     */
+    public $nsubsym;
+    /**
+     * Array of terminal symbols in the MULTITERMINAL
+     * @var array an array of {@link PHP_ParserGenerator_Symbol} objects
+     */
+    public $subsym = array();
+    /**#@-*/
+    /**
+     * Singleton storage of symbols
+     *
+     * @var array an array of PHP_ParserGenerator_Symbol objects
+     */
+    private static $symbol_table = array();
+    /**
+     * Return a pointer to the (terminal or nonterminal) symbol "x".
+     * Create a new symbol if this is the first time "x" has been seen.
+     * (this is a singleton)
+     * @param string
+     * @return PHP_ParserGenerator_Symbol
+     */
+    public static function Symbol_new($x)
+    {
+        if (isset(self::$symbol_table[$x])) {
+            return self::$symbol_table[$x];
+        }
+        $sp = new PHP_ParserGenerator_Symbol;
+        $sp->name = $x;
+        $sp->type = preg_match('/[A-Z]/', $x[0]) ? self::TERMINAL : self::NONTERMINAL;
+        $sp->rule = 0;
+        $sp->fallback = 0;
+        $sp->prec = -1;
+        $sp->assoc = self::UNK;
+        $sp->firstset = array();
+        $sp->lambda = false;
+        $sp->destructor = 0;
+        $sp->datatype = 0;
+        self::$symbol_table[$sp->name] = $sp;
+
+        return $sp;
+    }
+
+    /**
+     * Return the number of unique symbols
+     * @return int
+     */
+    public static function Symbol_count()
+    {
+        return count(self::$symbol_table);
+    }
+
+    public static function Symbol_arrayof()
+    {
+        return array_values(self::$symbol_table);
+    }
+
+    public static function Symbol_find($x)
+    {
+        if (isset(self::$symbol_table[$x])) {
+            return self::$symbol_table[$x];
+        }
+
+        return 0;
+    }
+
+    /**
+     * Sort function helper for symbols
+     *
+     * Symbols that begin with upper case letters (terminals or tokens)
+     * must sort before symbols that begin with lower case letters
+     * (non-terminals).  Other than that, the order does not matter.
+     *
+     * We find experimentally that leaving the symbols in their original
+     * order (the order they appeared in the grammar file) gives the
+     * smallest parser tables in SQLite.
+     * @param PHP_ParserGenerator_Symbol
+     * @param PHP_ParserGenerator_Symbol
+     */
+    public static function sortSymbols($a, $b)
+    {
+        $i1 = $a->index + 10000000*(ord($a->name[0]) > ord('Z'));
+        $i2 = $b->index + 10000000*(ord($b->name[0]) > ord('Z'));
+
+        return $i1 - $i2;
+    }
+
+    /**
+     * Return true if two symbols are the same.
+     */
+    public static function same_symbol(PHP_ParserGenerator_Symbol $a, PHP_ParserGenerator_Symbol $b)
+    {
+        if ($a === $b) return 1;
+        if ($a->type != self::MULTITERMINAL) return 0;
+        if ($b->type != self::MULTITERMINAL) return 0;
+        if ($a->nsubsym != $b->nsubsym) return 0;
+        for ($i = 0; $i < $a->nsubsym; $i++) {
+            if ($a->subsym[$i] != $b->subsym[$i]) return 0;
+        }
+
+        return 1;
+    }
+}

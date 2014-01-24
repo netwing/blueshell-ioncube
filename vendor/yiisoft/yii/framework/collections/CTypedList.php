@@ -1,31 +1,51 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * This file contains CTypedList class.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CTypedList represents a list whose items are of the certain type.
+ *
+ * CTypedList extends {@link CList} by making sure that the elements to be
+ * added to the list is of certain class type.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.collections
+ * @since 1.0
+ */
+class CTypedList extends CList
+{
+	private $_type;
+
+	/**
+	 * Constructor.
+	 * @param string $type class type
+	 */
+	public function __construct($type)
+	{
+		$this->_type=$type;
+	}
+
+	/**
+	 * Inserts an item at the specified position.
+	 * This method overrides the parent implementation by
+	 * checking the item to be inserted is of certain type.
+	 * @param integer $index the specified position.
+	 * @param mixed $item new item
+	 * @throws CException If the index specified exceeds the bound,
+	 * the list is read-only or the element is not of the expected type.
+	 */
+	public function insertAt($index,$item)
+	{
+		if($item instanceof $this->_type)
+			parent::insertAt($index,$item);
+		else
+			throw new CException(Yii::t('yii','CTypedList<{type}> can only hold objects of {type} class.',
+				array('{type}'=>$this->_type)));
+	}
+}

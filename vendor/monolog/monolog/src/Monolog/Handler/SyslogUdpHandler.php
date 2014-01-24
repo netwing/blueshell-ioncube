@@ -1,49 +1,80 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+use Monolog\Handler\SyslogUdp\UdpSocket;
+
+/**
+ * A Handler for logging to a remote syslogd server.
+ *
+ * @author Jesper Skovgaard Nielsen <nulpunkt@gmail.com>
+ */
+class SyslogUdpHandler extends AbstractSyslogHandler
+{
+    /**
+     * @param string  $host
+     * @param int     $port
+     * @param mixed   $facility
+     * @param integer $level    The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
+     */
+    public function __construct($host, $port = 514, $facility = LOG_USER, $level = Logger::DEBUG, $bubble = true)
+    {
+        parent::__construct($facility, $level, $bubble);
+
+        $this->socket = new UdpSocket($host, $port ?: 514);
+    }
+
+    protected function write(array $record)
+    {
+        $lines = $this->splitMessageIntoLines($record['formatted']);
+
+        $header = $this->makeCommonSyslogHeader($this->logLevels[$record['level']]);
+
+        foreach ($lines as $line) {
+            $this->socket->write($line, $header);
+        }
+    }
+
+    public function close()
+    {
+        $this->socket->close();
+    }
+
+    private function splitMessageIntoLines($message)
+    {
+        if (is_array($message)) {
+            $message = implode("\n", $message);
+        }
+
+        return preg_split('/$\R?^/m', $message);
+    }
+
+    /**
+     * Make common syslog header (see rfc5424)
+     */
+    private function makeCommonSyslogHeader($severity)
+    {
+        $priority = $severity + $this->facility;
+
+        return "<$priority>: ";
+    }
+
+    /**
+     * Inject your own socket, mainly used for testing
+     */
+    public function setSocket($socket)
+    {
+        $this->socket = $socket;
+    }
+}

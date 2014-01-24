@@ -1,230 +1,513 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * A test to ensure that arrays conform to the array coding standard.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * A test to ensure that arrays conform to the array coding standard.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Arrays_ArrayDeclarationSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_ARRAY);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The current file being checked.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Array keyword should be lower case.
+        if (strtolower($tokens[$stackPtr]['content']) !== $tokens[$stackPtr]['content']) {
+            $error = 'Array keyword should be lower case; expected "array" but found "%s"';
+            $data  = array($tokens[$stackPtr]['content']);
+            $phpcsFile->addError($error, $stackPtr, 'NotLowerCase', $data);
+        }
+
+        $arrayStart   = $tokens[$stackPtr]['parenthesis_opener'];
+        $arrayEnd     = $tokens[$arrayStart]['parenthesis_closer'];
+        $keywordStart = $tokens[$stackPtr]['column'];
+
+        if ($arrayStart != ($stackPtr + 1)) {
+            $error = 'There must be no space between the Array keyword and the opening parenthesis';
+            $phpcsFile->addError($error, $stackPtr, 'SpaceAfterKeyword');
+        }
+
+        // Check for empty arrays.
+        $content = $phpcsFile->findNext(array(T_WHITESPACE), ($arrayStart + 1), ($arrayEnd + 1), true);
+        if ($content === $arrayEnd) {
+            // Empty array, but if the brackets aren't together, there's a problem.
+            if (($arrayEnd - $arrayStart) !== 1) {
+                $error = 'Empty array declaration must have no space between the parentheses';
+                $phpcsFile->addError($error, $stackPtr, 'SpaceInEmptyArray');
+
+                // We can return here because there is nothing else to check. All code
+                // below can assume that the array is not empty.
+                return;
+            }
+        }
+
+        if ($tokens[$arrayStart]['line'] === $tokens[$arrayEnd]['line']) {
+            // Single line array.
+            // Check if there are multiple values. If so, then it has to be multiple lines
+            // unless it is contained inside a function call or condition.
+            $valueCount = 0;
+            $commas     = array();
+            for ($i = ($arrayStart + 1); $i < $arrayEnd; $i++) {
+                // Skip bracketed statements, like function calls.
+                if ($tokens[$i]['code'] === T_OPEN_PARENTHESIS) {
+                    $i = $tokens[$i]['parenthesis_closer'];
+                    continue;
+                }
+
+                if ($tokens[$i]['code'] === T_COMMA) {
+                    // Before counting this comma, make sure we are not
+                    // at the end of the array.
+                    $next = $phpcsFile->findNext(T_WHITESPACE, ($i + 1), $arrayEnd, true);
+                    if ($next !== false) {
+                        $valueCount++;
+                        $commas[] = $i;
+                    } else {
+                        // There is a comma at the end of a single line array.
+                        $error = 'Comma not allowed after last value in single-line array declaration';
+                        $phpcsFile->addError($error, $i, 'CommaAfterLast');
+                    }
+                }
+            }
+
+            // Now check each of the double arrows (if any).
+            $nextArrow = $arrayStart;
+            while (($nextArrow = $phpcsFile->findNext(T_DOUBLE_ARROW, ($nextArrow + 1), $arrayEnd)) !== false) {
+                if ($tokens[($nextArrow - 1)]['code'] !== T_WHITESPACE) {
+                    $content = $tokens[($nextArrow - 1)]['content'];
+                    $error   = 'Expected 1 space between "%s" and double arrow; 0 found';
+                    $data    = array($content);
+                    $phpcsFile->addError($error, $nextArrow, 'NoSpaceBeforeDoubleArrow', $data);
+                } else {
+                    $spaceLength = strlen($tokens[($nextArrow - 1)]['content']);
+                    if ($spaceLength !== 1) {
+                        $content = $tokens[($nextArrow - 2)]['content'];
+                        $error   = 'Expected 1 space between "%s" and double arrow; %s found';
+                        $data    = array(
+                                    $content,
+                                    $spaceLength,
+                                   );
+                        $phpcsFile->addError($error, $nextArrow, 'SpaceBeforeDoubleArrow', $data);
+                    }
+                }
+
+                if ($tokens[($nextArrow + 1)]['code'] !== T_WHITESPACE) {
+                    $content = $tokens[($nextArrow + 1)]['content'];
+                    $error   = 'Expected 1 space between double arrow and "%s"; 0 found';
+                    $data    = array($content);
+                    $phpcsFile->addError($error, $nextArrow, 'NoSpaceAfterDoubleArrow', $data);
+                } else {
+                    $spaceLength = strlen($tokens[($nextArrow + 1)]['content']);
+                    if ($spaceLength !== 1) {
+                        $content = $tokens[($nextArrow + 2)]['content'];
+                        $error   = 'Expected 1 space between double arrow and "%s"; %s found';
+                        $data    = array(
+                                    $content,
+                                    $spaceLength,
+                                   );
+                        $phpcsFile->addError($error, $nextArrow, 'SpaceAfterDoubleArrow', $data);
+                    }
+                }
+            }//end while
+
+            if ($valueCount > 0) {
+                $conditionCheck = $phpcsFile->findPrevious(array(T_OPEN_PARENTHESIS, T_SEMICOLON), ($stackPtr - 1), null, false);
+
+                if (($conditionCheck === false) || ($tokens[$conditionCheck]['line'] !== $tokens[$stackPtr]['line'])) {
+                    $error = 'Array with multiple values cannot be declared on a single line';
+                    $phpcsFile->addError($error, $stackPtr, 'SingleLineNotAllowed');
+                    return;
+                }
+
+                // We have a multiple value array that is inside a condition or
+                // function. Check its spacing is correct.
+                foreach ($commas as $comma) {
+                    if ($tokens[($comma + 1)]['code'] !== T_WHITESPACE) {
+                        $content = $tokens[($comma + 1)]['content'];
+                        $error   = 'Expected 1 space between comma and "%s"; 0 found';
+                        $data    = array($content);
+                        $phpcsFile->addError($error, $comma, 'NoSpaceAfterComma', $data);
+                    } else {
+                        $spaceLength = strlen($tokens[($comma + 1)]['content']);
+                        if ($spaceLength !== 1) {
+                            $content = $tokens[($comma + 2)]['content'];
+                            $error   = 'Expected 1 space between comma and "%s"; %s found';
+                            $data    = array(
+                                        $content,
+                                        $spaceLength,
+                                       );
+                            $phpcsFile->addError($error, $comma, 'SpaceAfterComma', $data);
+                        }
+                    }
+
+                    if ($tokens[($comma - 1)]['code'] === T_WHITESPACE) {
+                        $content     = $tokens[($comma - 2)]['content'];
+                        $spaceLength = strlen($tokens[($comma - 1)]['content']);
+                        $error       = 'Expected 0 spaces between "%s" and comma; %s found';
+                        $data        = array(
+                                        $content,
+                                        $spaceLength,
+                                       );
+                        $phpcsFile->addError($error, $comma, 'SpaceBeforeComma', $data);
+                    }
+                }//end foreach
+            }//end if
+
+            return;
+        }//end if
+
+        // Check the closing bracket is on a new line.
+        $lastContent = $phpcsFile->findPrevious(T_WHITESPACE, ($arrayEnd - 1), $arrayStart, true);
+        if ($tokens[$lastContent]['line'] !== ($tokens[$arrayEnd]['line'] - 1)) {
+            $error = 'Closing parenthesis of array declaration must be on a new line';
+            $phpcsFile->addError($error, $arrayEnd, 'CloseBraceNewLine');
+        } else if ($tokens[$arrayEnd]['column'] !== $keywordStart) {
+            // Check the closing bracket is lined up under the a in array.
+            $expected = $keywordStart;
+            $found    = $tokens[$arrayEnd]['column'];
+            $error    = 'Closing parenthesis not aligned correctly; expected %s space(s) but found %s';
+            $data     = array(
+                         $expected,
+                         $found,
+                        );
+            $phpcsFile->addError($error, $arrayEnd, 'CloseBraceNotAligned', $data);
+        }
+
+        $nextToken  = $stackPtr;
+        $lastComma  = $stackPtr;
+        $keyUsed    = false;
+        $singleUsed = false;
+        $lastToken  = '';
+        $indices    = array();
+        $maxLength  = 0;
+
+        // Find all the double arrows that reside in this scope.
+        while (($nextToken = $phpcsFile->findNext(array(T_DOUBLE_ARROW, T_COMMA, T_ARRAY), ($nextToken + 1), $arrayEnd)) !== false) {
+            $currentEntry = array();
+
+            if ($tokens[$nextToken]['code'] === T_ARRAY) {
+                // Let subsequent calls of this test handle nested arrays.
+                $indices[] = array('value' => $nextToken);
+                $nextToken = $tokens[$tokens[$nextToken]['parenthesis_opener']]['parenthesis_closer'];
+                continue;
+            }
+
+            if ($tokens[$nextToken]['code'] === T_COMMA) {
+                $stackPtrCount = 0;
+                if (isset($tokens[$stackPtr]['nested_parenthesis']) === true) {
+                    $stackPtrCount = count($tokens[$stackPtr]['nested_parenthesis']);
+                }
+
+                if (count($tokens[$nextToken]['nested_parenthesis']) > ($stackPtrCount + 1)) {
+                    // This comma is inside more parenthesis than the ARRAY keyword,
+                    // then there it is actually a comma used to separate arguments
+                    // in a function call.
+                    continue;
+                }
+
+                if ($keyUsed === true && $lastToken === T_COMMA) {
+                    $error = 'No key specified for array entry; first entry specifies key';
+                    $phpcsFile->addError($error, $nextToken, 'NoKeySpecified');
+                    return;
+                }
+
+                if ($keyUsed === false) {
+                    if ($tokens[($nextToken - 1)]['code'] === T_WHITESPACE) {
+                        $content     = $tokens[($nextToken - 2)]['content'];
+                        $spaceLength = strlen($tokens[($nextToken - 1)]['content']);
+                        $error       = 'Expected 0 spaces between "%s" and comma; %s found';
+                        $data        = array(
+                                        $content,
+                                        $spaceLength,
+                                       );
+                        $phpcsFile->addError($error, $nextToken, 'SpaceBeforeComma', $data);
+                    }
+
+                    // Find the value, which will be the first token on the line,
+                    // excluding the leading whitespace.
+                    $valueContent = $phpcsFile->findPrevious(PHP_CodeSniffer_Tokens::$emptyTokens, ($nextToken - 1), null, true);
+                    while ($tokens[$valueContent]['line'] === $tokens[$nextToken]['line']) {
+                        if ($valueContent === $arrayStart) {
+                            // Value must have been on the same line as the array
+                            // parenthesis, so we have reached the start of the value.
+                            break;
+                        }
+
+                        $valueContent--;
+                    }
+
+                    $valueContent = $phpcsFile->findNext(T_WHITESPACE, ($valueContent + 1), $nextToken, true);
+                    $indices[]    = array('value' => $valueContent);
+                    $singleUsed   = true;
+                }//end if
+
+                $lastToken = T_COMMA;
+                continue;
+            }//end if
+
+            if ($tokens[$nextToken]['code'] === T_DOUBLE_ARROW) {
+                if ($singleUsed === true) {
+                    $error = 'Key specified for array entry; first entry has no key';
+                    $phpcsFile->addError($error, $nextToken, 'KeySpecified');
+                    return;
+                }
+
+                $currentEntry['arrow'] = $nextToken;
+                $keyUsed               = true;
+
+                // Find the start of index that uses this double arrow.
+                $indexEnd   = $phpcsFile->findPrevious(T_WHITESPACE, ($nextToken - 1), $arrayStart, true);
+                $indexStart = $phpcsFile->findPrevious(T_WHITESPACE, $indexEnd, $arrayStart);
+
+                if ($indexStart === false) {
+                    $index = $indexEnd;
+                } else {
+                    $index = ($indexStart + 1);
+                }
+
+                $currentEntry['index']         = $index;
+                $currentEntry['index_content'] = $phpcsFile->getTokensAsString($index, ($indexEnd - $index + 1));
+
+                $indexLength = strlen($currentEntry['index_content']);
+                if ($maxLength < $indexLength) {
+                    $maxLength = $indexLength;
+                }
+
+                // Find the value of this index.
+                $nextContent           = $phpcsFile->findNext(array(T_WHITESPACE), ($nextToken + 1), $arrayEnd, true);
+                $currentEntry['value'] = $nextContent;
+                $indices[]             = $currentEntry;
+                $lastToken             = T_DOUBLE_ARROW;
+            }//end if
+        }//end while
+
+        // Check for mutli-line arrays that should be single-line.
+        $singleValue = false;
+
+        if (empty($indices) === true) {
+            $singleValue = true;
+        } else if (count($indices) === 1 && $lastToken === T_COMMA) {
+            // There may be another array value without a comma.
+            $exclude     = PHP_CodeSniffer_Tokens::$emptyTokens;
+            $exclude[]   = T_COMMA;
+            $nextContent = $phpcsFile->findNext($exclude, ($indices[0]['value'] + 1), $arrayEnd, true);
+            if ($nextContent === false) {
+                $singleValue = true;
+            }
+        }
+
+        if ($singleValue === true) {
+            // Array cannot be empty, so this is a multi-line array with
+            // a single value. It should be defined on single line.
+            $error = 'Multi-line array contains a single value; use single-line array instead';
+            $phpcsFile->addError($error, $stackPtr, 'MultiLineNotAllowed');
+            return;
+        }
+
+        /*
+            This section checks for arrays that don't specify keys.
+
+            Arrays such as:
+               array(
+                'aaa',
+                'bbb',
+                'd',
+               );
+        */
+
+        if ($keyUsed === false && empty($indices) === false) {
+            $count     = count($indices);
+            $lastIndex = $indices[($count - 1)]['value'];
+
+            $trailingContent = $phpcsFile->findPrevious(T_WHITESPACE, ($arrayEnd - 1), $lastIndex, true);
+            if ($tokens[$trailingContent]['code'] !== T_COMMA) {
+                $error = 'Comma required after last value in array declaration';
+                $phpcsFile->addError($error, $trailingContent, 'NoCommaAfterLast');
+            }
+
+            foreach ($indices as $value) {
+                if (empty($value['value']) === true) {
+                    // Array was malformed and we couldn't figure out
+                    // the array value correctly, so we have to ignore it.
+                    // Other parts of this sniff will correct the error.
+                    continue;
+                }
+
+                if ($tokens[($value['value'] - 1)]['code'] === T_WHITESPACE) {
+                    // A whitespace token before this value means that the value
+                    // was indented and not flush with the opening parenthesis.
+                    if ($tokens[$value['value']]['column'] !== ($keywordStart + 1)) {
+                        $error = 'Array value not aligned correctly; expected %s spaces but found %s';
+                        $data  = array(
+                                  ($keywordStart + 1),
+                                  $tokens[$value['value']]['column'],
+                                 );
+                        $phpcsFile->addError($error, $value['value'], 'ValueNotAligned', $data);
+                    }
+                }
+            }
+        }//end if
+
+        /*
+            Below the actual indentation of the array is checked.
+            Errors will be thrown when a key is not aligned, when
+            a double arrow is not aligned, and when a value is not
+            aligned correctly.
+            If an error is found in one of the above areas, then errors
+            are not reported for the rest of the line to avoid reporting
+            spaces and columns incorrectly. Often fixing the first
+            problem will fix the other 2 anyway.
+
+            For example:
+
+            $a = array(
+                  'index'  => '2',
+                 );
+
+            In this array, the double arrow is indented too far, but this
+            will also cause an error in the value's alignment. If the arrow were
+            to be moved back one space however, then both errors would be fixed.
+        */
+
+        $numValues = count($indices);
+
+        $indicesStart = ($keywordStart + 1);
+        $arrowStart   = ($indicesStart + $maxLength + 1);
+        $valueStart   = ($arrowStart + 3);
+        foreach ($indices as $index) {
+            if (isset($index['index']) === false) {
+                // Array value only.
+                if (($tokens[$index['value']]['line'] === $tokens[$stackPtr]['line']) && ($numValues > 1)) {
+                    $error = 'The first value in a multi-value array must be on a new line';
+                    $phpcsFile->addError($error, $stackPtr, 'FirstValueNoNewline');
+                }
+
+                continue;
+            }
+
+            if (($tokens[$index['index']]['line'] === $tokens[$stackPtr]['line'])) {
+                $error = 'The first index in a multi-value array must be on a new line';
+                $phpcsFile->addError($error, $stackPtr, 'FirstIndexNoNewline');
+                continue;
+            }
+
+            if ($tokens[$index['index']]['column'] !== $indicesStart) {
+                $error = 'Array key not aligned correctly; expected %s spaces but found %s';
+                $data  = array(
+                          ($indicesStart - 1),
+                          ($tokens[$index['index']]['column'] - 1),
+                         );
+                $phpcsFile->addError($error, $index['index'], 'KeyNotAligned', $data);
+                continue;
+            }
+
+            if ($tokens[$index['arrow']]['column'] !== $arrowStart) {
+                $expected = ($arrowStart - (strlen($index['index_content']) + $tokens[$index['index']]['column']));
+                $found    = ($tokens[$index['arrow']]['column'] - (strlen($index['index_content']) + $tokens[$index['index']]['column']));
+
+                $error = 'Array double arrow not aligned correctly; expected %s space(s) but found %s';
+                $data  = array(
+                          $expected,
+                          $found,
+                         );
+                $phpcsFile->addError($error, $index['arrow'], 'DoubleArrowNotAligned', $data);
+                continue;
+            }
+
+            if ($tokens[$index['value']]['column'] !== $valueStart) {
+                $expected = ($valueStart - (strlen($tokens[$index['arrow']]['content']) + $tokens[$index['arrow']]['column']));
+                $found    = ($tokens[$index['value']]['column'] - (strlen($tokens[$index['arrow']]['content']) + $tokens[$index['arrow']]['column']));
+
+                $error = 'Array value not aligned correctly; expected %s space(s) but found %s';
+                $data  = array(
+                          $expected,
+                          $found,
+                         );
+                $phpcsFile->addError($error, $index['arrow'], 'ValueNotAligned', $data);
+            }
+
+            // Check each line ends in a comma.
+            if ($tokens[$index['value']]['code'] !== T_ARRAY) {
+                $valueLine = $tokens[$index['value']]['line'];
+                $nextComma = false;
+                for ($i = ($index['value'] + 1); $i < $arrayEnd; $i++) {
+                    // Skip bracketed statements, like function calls.
+                    if ($tokens[$i]['code'] === T_OPEN_PARENTHESIS) {
+                        $i         = $tokens[$i]['parenthesis_closer'];
+                        $valueLine = $tokens[$i]['line'];
+                        continue;
+                    }
+
+                    if ($tokens[$i]['code'] === T_COMMA) {
+                        $nextComma = $i;
+                        break;
+                    }
+                }
+
+                if (($nextComma === false) || ($tokens[$nextComma]['line'] !== $valueLine)) {
+                    $error = 'Each line in an array declaration must end in a comma';
+                    $phpcsFile->addError($error, $index['value'], 'NoComma');
+                }
+
+                // Check that there is no space before the comma.
+                if ($nextComma !== false && $tokens[($nextComma - 1)]['code'] === T_WHITESPACE) {
+                    $content     = $tokens[($nextComma - 2)]['content'];
+                    $spaceLength = strlen($tokens[($nextComma - 1)]['content']);
+                    $error       = 'Expected 0 spaces between "%s" and comma; %s found';
+                    $data        = array(
+                                    $content,
+                                    $spaceLength,
+                                   );
+                    $phpcsFile->addError($error, $nextComma, 'SpaceBeforeComma', $data);
+                }
+            }
+        }//end foreach
+
+    }//end process()
+
+
+}//end class
+
 ?>
-HR+cP+yLoxWAay+/n/ygNfixGMOQeSaAQVXbqF1tusVrRVWm7FRmNITj3mTMHMsGN/MX2rdJ8wrF
-DxwRrnJ2nU5KdgbIPU/YNHlThjQSDg0NH55A6O3ynrW0vBPNXjhjHU4zxoE9sXfsAvUsM2gcS/rL
-ACXwo2GYYP3pfW1DMUC3uky6qmsrVWDqcktCeeATA4Wg9d+bDA3RB0FHhu//yQIE1JFEeIGA+KxW
-Mzxi+hxUFPetPI4qgh14IQzHAE4xzt2gh9fl143SQNHgPMFwzkInThjWw2jeD2tyVVycfcE0OKAm
-wQih5tfs4+OiaeIBFLeLprqIUorNEXdyznKJV+xZUmT79xkmYXMqg73h/qusS5c24YUaf+/yGha8
-/qISrzIdkb9ALL0t78q97vc4EZsDu+TedmG1LQcIvzCOLqcenjODM3lA6bqAqdOPN0TZvGEU9pM+
-l4uRXEMgYCTYzgn7ssD3mE91R8XlBAOR/ub6j0UdXXxANrWAzs+ecft7rPNFdiq4SONE9lymsbHJ
-ymrTBB6GMnjWtXI9W6ThRjZz22hhqbHVkT5qOpl83FYJgVz+E+FNekFL8eqFZbMMAYgNrKH7GYjx
-q+689hR9nRCuFi6PS8LPp1B7l+vOMJUeDgrRHbDdVuz9CLKlHOQ3CbLXirKVYXBPv0I65SXNad+U
-0UYT18S+wB7IWFmUXQ61aJ9wauNi0PiXtULsxX+37py5YSEa02NfKNtd1521FTaOC7riRM4gc85v
-fI80ugsNlWX1RB5QXm7LYotGLau2sDtX3ywpdA09EiQ/TcLtk5ukWH5JUA78r95P1g5YBOyp30N0
-CU4iIIPBwxPg8i6uHu7AHA8luaeD9UwdLHxXFpTif4ZSvDUYT4devCQSk4A2Gcd2L9I2L5jBHiyw
-Yxh8yTljuEeJ+WI8h4/dYDAguG2tYOm0RdjlPbqqXv+ncuZccWp/sL/wqPig4NX7Nv+WDoF/5Ojt
-ZxR8c747tZz2J4z9KyIEO76uIupdTL1jwrUyYtUq7r9nGN1FAbuOLdV/ECnW1kVB3gqvpgJJCqXb
-7usKTJN9D7to4KsCA+XCkQPp73XAj1b+254Fh2WWqtqD/79v/R1YT8y05PtRZWhBiNcNKXOg/tCz
-zcvEO6DRoRkOmkfmUrNzfh9bUjQYyVDG5txTOr2f52k0VnJL5D0vjZRwWCmPACZmIuOKGlPAwKx1
-fIRt0OEsFRirpPfoJ0IItbFZqcSAdWeYDUq4YlR2s8XMjKwyBykgoQyS9u1jaJtNQZXJx/FXKQUH
-XnzotCcCudZ5vzSwY6eW8lp4ORF5zAld6lzV0dFoW9keaqOb3dwAbnXuQbNcIwt03+viHLafWgna
-DKRcQLT95oSa+Rc5JOaQgQRZAPkYs8nyb7dqj39PXuvYcB0DkIdzy0j8XdXV+RA6p5r3xqzaHvoc
-AEXnyhBtWkwYz4rKznGivH3o5N9/ZsImZBFYoUhxJSbiIHUP2evgB4+qFMivexeg9vn2QNX5uo3H
-TZRxfExbHkHkbhNfF/do2lMPr1jkAELUT6Ik13f9d9Rt8fOX5ej9en4qgFdKqrohwwra7vOHmK30
-VK9wUkycFGe1QVsUlgzNhHd0PaX8Cwzv5xJDijB9m/c9MdITIIvg04a7SXAYh/J4yBUN2Bm99GB7
-UBf0+Gbh3WAAueCN89mtm6r9L53MI/DkRKdpxzyadRaRg369sX4FLmQNLk3JXb4G/RiD1ukjaLO7
-oP5AMhpz9bwJXofacf7QpcJpogmC+zXTKy6rtHJCNFpzH/khCuvwq2HXMr+ZZY5fvjg6KoAF3Qxe
-LnpoiR7xwqtZnXf/uHJvZ81EJylS4na8miR+PCOCXSiokjc7HvMc5EjjNegKPstn8wWTv1aUcezv
-j5WgrQaaW2N+CK53jFViyDVTnmNcTUfSRPi1Wbh2u+Q0ndA1BT8Agj4p7b7RfuvxPMpxeyAVlpyR
-SXcWAtOofQUNB1kgpjRPAvefLQAeX1mFkWS07yBCvd8JQ8k17M4IIllmZtEEBGSsXZw2Wf9AD1LI
-AL/iflZxwtEWTAWcyl2JgXG4nT6KqtgjDt56Pc862P7BxrCJxG2HMOmvk7OnohbTxm7ZICm5u3Bq
-LdPsf6yAl1CiBE7PArIIM4lGkGDiLvCHoMm/2dwHYTWDe6wp5uZDjkR8Xoli0X+HC7CItILCGubL
-VBGgiPdG0bx8/O1i+tb9ioNZW+D8+FeqqmwR9SywI5lSEY5azjjXE92ikz16xvHDFkKk6IGMwcBV
-yIQ6XfPuM9jXPM853696TezFP/LwFdKc02EQJIW83l1l4eziPa68WpuUOgYuPkrBdpww5PIPw8jP
-MkZTM8MGo4fe1I++ZAmlNJbq9a67YmDTjcPWtfMbCAGda5HjvBE+mZYgYSAsv2R0EdC59hfUiP/p
-FGEDvJ23+5KZkjKsaWUT2SgTqsF5t1OlG/XfzxLq7SlTHA8H2kWMOSxZDwXk+uzWl8feHfoigMaz
-IVem5mzNGwN/Qc6V17+TRJPtbFZgnuwkIRnej71y5kmK++temGafZotycKxbeYaU7THF6iDo79Fm
-iTmUjtctLBW4jxYYUyT5sIsUvgohWYVY1PUD2AgCID6P9ZKY8OR1pvZ97GH0Y8PdkOQRK7/7f/Jm
-/2OwdKKDe6Jo86q5mLar/JVBvSdnUOEQNmgHjIev97YVdwgoHtZ8ztXKAS/KMjC9/n1SeT7ip7/B
-J7guk/jousGN7iTvWa1QLP4AR3E8CxkwCaIx6Qs7W5VEahOkL28vEldGIRNukgx32gkRopuGpb8u
-oQRSSmTj0AtOQEL7fmbdWO4v2kudigF73OKiadtcl+JjT06NDJ3BRAuJH9KcukdXznjJTz8eqWgf
-rh4zN48wqqTHsz5u3ezuKIydaI/ipU+lvfrXaIuarlFAMRFyCVIXe6ISG2OOLI5jH3N+Be2rw6zv
-nddvkGekkMHF9qxjqlwQou55G1+c5RasistCwLaw4giPFaugyOJwnPmDXwHpHMACZO5uG6fDnaSE
-SVOPNYD8bmjys7HvraF2Nd+ADNxXbQNTY9ghBbThb7eSGoYals6mXjte2rRauef16+D266s3vT7R
-EnZNnl+HYjrPXaedSmIyU5rPj7lYHGAzojuUG47kwn+wNoCtgaX4VBABbZ6xUb/Jv8t/3v+fJ3OM
-EYaDC+m8PDs4XL9/IZ6p3Rd7+caSKfgUigF6bHW8xirWFXXecRoM4LpMz1GRUs7S9pQyRsW0Xf1T
-1sMDcyTxxe6t32tf+Y5sZrsLs+Yv5MdP6iXSxihZE8kx6i+uD008IBghYCzdWjNeyB6m0cndgQhA
-TYrXwsbajLR2Djhf1lCgIROpdazP7SB/v9cry6FbqBWkSWhjSvIwL4tCFrGu/Hqr1seQ8lzwvw+7
-ORlRUiX1XU2D7VcsxY7dqm9VK04iiTFXHAlDKHb27ArqPfmBzWqRWyJZeJaXOv8ClwJGYJ8J5FUA
-naFf+ZZ+WVX0bwzSpxsqhO0VBG9CdDMs22evGM5img8iAaGi1e8QamPiwLKKNSbqcOar2wHzvqmr
-z2nyrZfAUv8jj2MdzxLT0Qb/zeAPgzELzLZI5uM9gBY7yd0e1WiC/Z+hCIANSNbnwKeQBCsaQ3IT
-VKk6nyq1KFZlIC01lSJd0XkjQlZA07UKdXAkCP74VLYc8IjKzjFnPCbftuwN+jor792cB04oiJMU
-YloHTAjf56LesdDGJ0+SHiZZ7sy9SIHGdU6r4Awn/DaYQMmdiig+b0X7Kv2stYSZGodgUWS3ELl7
-iUkUBtctfGpsVGr8oACvDehGzrx4uYwy4mtMz51HL6EZUjPD30HR2tCYqVVZ9W16Io5GI4gxXKtR
-aDodxM1Rov/qAEOqmfTDLy113mgBuCiZiB8gJYwbVZg885frfrR63GMGMinSu/1n6UQGS54Igx+2
-a81Qo5QfnT5NTegGLXrXNhK9JodMx9dDc0adZPthzwV9j5Ktfre5fq8OZitETfdJ+wQLD9geTjfx
-B1QLzqwCyLTgjpeJV5/MZdLKa4N76YqhkrWGjh0/TSdAPCc0QtaFth/diVAYlpw4/SBOVyhbDKx/
-+jDwJDwAx6YGnOR5bpAJSUQZfI8QSXGU2Zfro5IcBVgvSbMMn/wE+jUk1KSi/kZ6PE4aMaQzdR/u
-w9PYWdt6KdW80rZwlkQijpbZKRRcjohdVdWNh7CCCgeZVQ58IU6U5hsam7PgyiGxwtjBr/eM4Fcn
-dq8fZ9PQIAr0fhbIROZBFjhz0T70E+UxVPcxAfgjPS3J2NntzmYNsQdjHWULs6V482cfolg1EK0U
-JeyLJvyhJrsmBGK0SMSOn4ioKVrZtLm/nC6xZ5lf9aF6mcwGc/4j2ES3TlACRLcLJjvYhJr+PZ1g
-XG66NAxwfG3Eqs+qFizdI2txn8owTZaQmyAZ8oW942DFN8Zm9MnPgOExceYUOXn3o7/1DGucvSvU
-8/JfET3HIgk9uf6sWnefra5ZITLK2WYkAJxH45jPezY/xU0MZ77gRPYyn+ukxt9du3TvEkB2NHzm
-D3G8ZUcd95mz7Aw4qyLg39ei4kBInO8gUzc0nN06PsEo1C+FxriwR7x4j4LzkLq2ra1Effg4LO6g
-oNI91kVdnynmQTd41H0v3khaEsbBgTPRw/V83ccqnsspNXqnctzs/uHv62pBqb16zxcXpZQ2BfJk
-i4Q7D5tO06Qi1HoiUlF/6larGgD6usjUw1xVwDj4ByMVF+vtSOY+7awipNkIQ5OUCMD4wsJmPO0x
-C7uQ/xych73pRbUwkinv+lr8O3VuuF0DCwDsU230UHPW/WjZbuNHTlu35ZNXHdY4vguwi+hej4ug
-XEM1RKFiWnpTRMXgBMcV456uRGuMp8ZDDmlWij1BfAohh8AXUE5QfmYg32r9H+971V7sgYZJmejj
-6CV7RzuuGad3rX+e+P11MLcSLDXrH9Q4Q9VRFLNCEw5wJ/zndl74qu7Bsb6EFLmAq9RBuo8ucj4j
-hIiQNpUuc2RYUeGWKhHL32yYufgz2sLctsF85O6UY/l1fQxwVi4pagdZY+P51YDZfRBfE82PRsz/
-wdiS5pdZM9bEYr05x0tZ9uSuK/gIqRnSR0dZcKWxLp19wNEUerOgk4QUwAy2gFhSINZtscwp/SHi
-LZClFqRkJ+ZT2YZDf4Aav0ytz0y+vl6bT4OnmGdK5JHLUXBRvztqclWazko+cfQGW93m2GZzcsuK
-ABDlUOd17HQEZLQxOy5HlHoIRuB67bOCYKhUtbrndObJbKDSyk7deeF4TkuolGKsxZE2w7xwZ0XY
-uIAKaH1lHNX1AwgboWn3OVbF4PxO5FCuQn7DFwTXbibYqMIQK4IU6/mYMNrKtHxtKI0/jQ6GMVug
-bnYa8AdDxtOe3Dgn8V+OvyDFTqk+z48ofOyqjCFicUubUf69zamA4Gng/uCbN7yX9jHBd8LN/0zP
-ZumAcAFr92yZ15BYL8mO61I74XpdkZNxqyi3l6cucQENMbTm7TbrfeyKOZepdDWjJCb4/GlGJ/W+
-mc3wS4AjNOiq89EfraxKANVZVNeHMVB1x8f7TpFZFOG0IEmbbdrZR2ylFvPd4KK/HqPaqOLxEKfc
-WMqKcKnw3X5pm9yv1xmz5S1u6M2071ihAW9dKqNZwUHtdMLE8474FfIK0bVtLchDZnKkFNGHkLLQ
-jxW4Hj+zqXfieWXdUPro2veGbuR37DmOv8g7v7xIoofgXEY4akXQgx9dAZE+GXRogOmkTJZuOOGz
-/dWAsJWhKeFJCRACrScH5tc270eQedC1eIURNao7iFnU8Pb1X+cV3AiSCGfb70XQ2wHsSs+zBUDK
-ZCRDcWzzgVpyzRyGUGnD21pPk8mdTMSmTuwU1ChfdTzCQj9ZeztD/FsZonmu+skvshGKu6j+dPzF
-0j/64WJzvy8AQRJkIfO1B76AfjjcTG2C71xwNfO1lNZzMSsqRtq6Z/CxkzQGOYdZLOjTyFxabIeq
-zKWsfA9xYggnzyBCyjTnMSaoObTl2j2sG1SQM60HGLup9PEC75WqcDymViWYitw1AdLCimJoFZTg
-ZCIHyqITYZ59DU1+aSJdT6VKU9QzZWeXZwn3kzepyJFoOB81aYGro3qjuJcqn7QUtlaHjB5Y62/A
-tnIo7JwSLtQm6OLn2YEy+D6w68DbRF/RDIOJjMhuXwjqGjUHNCnyjrQZELtEmuQk7+kD3GrAwqHX
-euIdWv8akpNW9EruDe5T4UsMfrs7GJQgiPFtKfBF4YFLD3DG9W0QVbYRRhgz2NpSxAx6YYIfOXP8
-cHh8GlVApgJKJ922fkTnL/78E4Ue/wwp3vsqB2ZSrQiG9viMdnxxm8ZWxhRJsH1Cve1RTdPGUA9n
-MfxZOuzwnX/7mHdzNPeG9+sFGkvxE+azq/vZODulqP+unRAzZKYblI5OwnICGuflAN5mm50+fLxE
-vPkgXBhX1avdmWiuTBmdmeNaN0fLms01KI7alirDHIDFjnSl2eU+B3JkxbQ8s6VwyPTmBhkeWtHY
-UtU7Y0HzU2lHcLz8l3O8iB+z8iKfQOHqgCdmG0t8A89fs9AM4BXzThXvZAsV125EL8tPrxKbZ8uK
-DUaj+Pu2ntLeiKRUqnOPdAaXgkcwRGXJiQSlo3jzmjBfVG9Nx9KjodRt9S2LtUliIbFWJi8n0+AC
-xzP4HA3Wxfks7OUPM5lrjemWK+tXPN1JwgKPeIr8p7OprKZ+PzFWVeDmZPK4UnB7UhQws46gaDzN
-D06s75DR8SKzK4C+IDQvv3eJOWAYxzstP5haemdTDdULvkQxDlwWiFztl6zZMK/7NaoL5s6O5GHZ
-U4HPebsQwYZu03lep9PpFnIQ1/a2zLLC5NSIGV3aVICSyhRNqlGoHbjbbFK1yUyLpiQ7dAVQV5YA
-RbFn1dSL1fl6YlRZon9f8kPRvuUwVj+2cRGsvRt6neTjXGjgfqNeY6IU2wu4Lry1fC/VaPZfXXIl
-lCoPW2oTP7GTAKDeYlqI1DGK89RR2JCnZBJ777y7g7ITma/fEFAu/CJrso17pI3plW5gzOuzD13l
-zo9VLVkBypkQkm1jQvbOgaGnkRMGfX5lYj8eZYp3YlnSQ9dNjRColtAHPpr3IYpZLIKtb2jdSiQ/
-n7zDaZq4+23UAlKRkR85m6MQTRjuQJf+omYozAwv1z38pdHJQSeYPLEmSPQzsE+Yd4yW33IXKsfo
-TKW7wFXp1qt/nAeahSBP+MBzj2mHUwLb7A0EuAp0BZMyinFArBuW2jcg9xbRLCoo4DICRjEQOayZ
-XTaH558gz0USEp8pDFKon6uITY7+5mLkMifTLDtb2pke7Qv3DSrD0fb5Kuzso47x403dVC2AI42H
-YhDxZys7I0K8BOn9LoyLGxw4pZM0JbaLzajo+OWWrQ5Nie1dWCK6JEvwomfg8iz01xlTXxXxY7Z1
-yUfvN5z41klgxIygDQhgOP1LlYhlvK7WZyimFZqlR5/ztWx0uxblTbwVMzTy2+gu3c5d564bWHv2
-kIVDZ/ol6AF/6U7sZZUfJ/dqyWF5tHX9WvlwuyDNYL0wd7ALOXBKXcJVUBq9o491S58YYJ2wAuI2
-UGXWtRHhUb2VK/ShykZODrNs0Otfn9NyLonnjCuMqjnUBwz+da4IkGR4nmn76YXZFVpTeG5wanaP
-CHTfgJWe2qimjF4wadyuCpEimeXK+UMpl/6ILM/nAvRvSe+3hcKxupudY3KgY+KX19lahkcgS0cw
-kzbzvzuL5C1ZQ2H85p4P1i0B8q2u/W1j4kouOjoCbRGraZtHxydQqV96umRxHhxdJGstC4UtKxJo
-S+RAoumJWPjMuD4vwt00uq+ZrmT4vdk1UeEOYTze0j5gSz5J3+TO+GTKWWL2janoNuJkddv2gE0z
-kloVJha+aK9AMDrltMGK2VrUXXUM3KSFVfHY3CyaY+q8rjqnDe6Js6UlrRttuMIQfV8wySn9LasH
-1BJwzHumCnrNN/s9TbGAvVpFinriSOxta4Vi/EAygJRLC/whdvs7SOBbu42vScSxpalvpUIm2mE9
-eWu+NduWAqkLmBXMB/zxrWCQm3TPNIlhKNjPE73RNULa4EB0m/H6Xp/F2cRs2431UK3VWXUGf2zJ
-wuWBCM8XlSqulgIn6h2kXGNc/VfC0sDJyPmXC9rJTzYu7oZ8gcAwKh+Lxa4fiRzMQsUpzxaKYyp8
-72RYh2zI+xACnomO7DrMT6/PLT0PomBMRMJWti+Y+PVfDUzhZFrt1Dfp4ugNwHW7WUftz3UbEaeA
-oqUTkr/CNT6Xe8fTPFJhD1GtIotVrDv+R0aClzpwPLOGaGRTZOL5+Jq6AG6Gw9Ecq5lREfaXHXbj
-Ag2QfFZ3gBYlkDBJSzyiKnfNHrDn9yJLUVJgh7y0IEUw48db4f6yBPJsAGcAfSjXIbAbkQOkJcRX
-p7FxB6hnAAqOoYvW7CtCCt5PH24tWTDnMBXxcWAEHStyPRSI7fMt+Sv8A2B4G1rJeQ93iI6YE2eM
-GmBLqk0hYrpZ6Wg7OF61ANQ7Tg53oMH0rylObT/mjo5gIMoTj/it1NMC2yTA9VzNK4WsOiNs59em
-A2y1S81WNtElTVOYBnGfA6gVb0bSs1MNagssOr8e5EakFrgwr2OtD6HtArh6gSw/jT4PxnYAWlGP
-LgnAR41c0WKmYAB9ZRlonAz7PZI4KDRDfh7DFQHzoDx0PDupuhHnL272oToRFaauDD9vwVjY0pvB
-iSjNsC0O2Up0lym8I+zTY0xMT0wCL+FxKpiU0puA/B9sThOIEWCxNUd+L+oRyU9QgnNG9QOpJGMT
-anMKygph2DwjALqVwgMIjcTl46Dju63YEFUhdx3GSOBqnnbfe2LdPMK6jndTEHzC7DPGgwV5jXHS
-ScOcQs3o0LtmyeIAvXk1J2QtPchzmj6UWbKT3wQ9XrTmRfRH5fIs1HL1/lsjNHTo2PXDpQVa7CBx
-TpCSjGKsN97uQIHDJa4zPkYK1pfrKbfAxJ2rtHRHaIaDxz6xC/cOfht5DFnYBdnidoDVVjIIKiDo
-CtYAJOMNRu1y17xdty+p0J1bjblrMMH7+dxr9xjTUHNttbHsXkyqlnosbhT95iguIqtCxkJLiqf7
-41jJhe04lfRI+7U91ZsBcCFd0DUOSyrK1VaIr5RMJrs+0iVKLsZvQx7WWoSvkCI05Ia5jUdh3UQ7
-AAaziKo7wC692eyYYi6oaX3Jp5Tj5lz4YgQtt7ceJSlx/chci0n7IPYDPV0mDUKldFXM0xyEwqhw
-LCV1PIm+xoYxrjuWZ7SDHE4vjBlkiZj/nFoCSGVLbvL1V6sUpkEIeNV/m4wmdIrAFZVMOYlxZJJk
-tz/faX3xPLZK1q6yTb6OorM37r55fA0EFJC+79CdKDOowaY9nJeW0Z1pXCZMbBdg9aQedhFtpN+L
-Fhtq4FCvuMip30K0iQ3/NaEjUOTCDZMrxBfwCb/RzVGLe6zWh3CnM7OCP5qf30Z/738n5SfhdlD8
-3oeJzG3Ln3QI44ls3lWqEPvQwMXYYSmWZYw6h+A+yMbJiDiAAltMl8WJ8GcQwleuSxLGOwNIHwAo
-7TjDoKOBL/nltop7gXIjpcI+XZL9uhsxoTce8anBp/q/1rkQfAaBhtCf1MMLLwkfq72jsS/PKIiP
-Lj9PX3h5JLv18i1gQseXsV+abRcxeZJvq/65mccgreFgSMn4RBwiwFSvJgp40XHx0EL/qBbkXIZM
-jKnZFr3icNUTzhMHOsv5S3P+y6XVXWZZvdvYiPWoEl5aDOx9/Plhh4ZlNZ9zZNfolZJq9mZLYzQL
-YWPxQ+ZJYq1ebA0INwEL91R2jElNayUR6cRYh2DuIpT3k9zjA+gyL+JMkcoTxcZs4VYpQvFnhlpx
-dkyw+Kewc8vnMDrfUfPUNXCz8MQpc4Vz8Cc7lgKIlYc2EypXRnxiEcLljKxtN4n//dUv/cVhl0hI
-1eKcECY+vS2fC58Ju3a0WZylSmuUOFuRNF20Ehn1LogYViU7zKVirSMZCE03hsMxSD7S7vKnkapu
-7tBGkNtuuzwytXyvRluYmVqA9jxrDefYciaZpQpjH2Yz6a9yONV0TPR60lAgIdYOWC1wb1XucOTv
-I+rkBe9w3AUvGECYbcBDpD4FOCWYn+apkVVd2YhSeIxP/5gPktJC4oNdd1Tf5QMOB/Ye53BHjeVB
-Zna1Nz7YugBC5Ir1iMRZx0DYmPTV/ecxi6FsX6pcyh2CIK7u3PqqaF9TbpXNEjLbxWs3s3y1NPyU
-14rJ2ksE/IZatcdUBSCDABU8WzUOAKp09MCP6H5sNfFm48fomPMXjXyZCWZF1eiDslYz/haWFlhM
-sKpw9ee3N8LPf2ij+Ty0w2okSh0psq//LHF+9+F2bHZSKFoNJxbbk+J/0Lo+dKMLpx35cY41o3JA
-bhKYpSwKp+BVvR42KEMJIrIoKkzGwjrFQykOgdiV5cHDPzj8JM8By5Vlr2Zq5TgRgVOaiNhVLBuh
-5p4cZkNe0bFHfYzUnaSu70PTwpX7+4O7mM8pD/8YtM6QkSqWSyMmIg8AdiaEEZlHYAKvQi+dG6MC
-MzRBkhfaKkBEYjD72tLXvApas/QZ2kai2ZttGqhxTRfSEnRus5UwS8/VwbMHaMU5jaTVum7QfR5i
-4nI0RasZvwXbs+usXxPMpEmispYG2nAGYKvnc+I2blZBIXvh/sMgRSPRJmSE60vfBre45a1jQksI
-qd2Ql5Ds2RcPUsKMWuKezEyVhtXZ2jUtNIsb9nHkc2qgoyGiGNPTM0jbyG7il6uXCKK/AT9zG6Ha
-+cLWbXDVGDZHtryHrYKJ8fBqUQT6Y9CAhdrUoyf7ug5zHc31MKGe4D7get6NYGQmt7q1L8jNe/v+
-W8gPUpBi68wFKTrjlLMVzYXziBK6o5lTbpJFiLlmKmN+ehoUemjv6dGnh6O+uIbh7l9pwp8uKFiU
-pktTP+YW2AFR269jusXqlDg3dvSDcMrQUtOAjAAnANZSjtcvt+wumjw3I9xXiJKEW+QznymkzVFY
-Oex/GVQTHcuhPt88j+6eju7UH/Jql1DnFlF/7SWWA8tZkwmlQeka4DoXoAgV5tBWyeFwEXyz8I6K
-QBr+oebsiWhQqJxmKcA0lQXEqhIIFPZhaPDjcxpMvHYHH5iwKSe0R2xMYzQdr2XrZjw+iZJxNVpp
-855Noy9BsKNkWfYT/wNuOI9lw5w5mgtxQmJoeGCj+VmAH3Z5nTXt6UJlp2/SI7bKfY/OoP3Cce77
-VrYIDYo3gaNy6ALuCq2DdoZHQibmSpThCI16NXni50spZuUzp5XCPaFTwbf+gkd6QB7gko5f4/kt
-lNB4Ift683t5SaTyFfvz+tFD04rDNeq22zoYVNu7FoKIh7/0OTRK7gwnG+E82GbNV+NT2fMFzYIQ
-QtmKwY+2zY3JptBrOF/xDGdyOvLGBHOZEaR0qJlOaO6eiM7U9wNfnHL/SDi3DDZ2FVvQXPLiDkQF
-so9Z7KGL1xtFNHR1ZVvKXks1WJG2fd7p4otBb9uzLpgvgF2qm7HcYlWlB7e+nF/FDntOpf/YVtAm
-skT5f6PoHmfI9PI9/Kwg9olZZk+zZ1q4Obe84MFY+7E50u/YSFHZE7oP68OUCNJUphjHOA49jt23
-jBV4S91KzqTJlNqw4jwHO4Ad8LXSQOIQUDkPVbWSbCpahvwkKZi2bBiI/NdquUHzKoZjEYn73Btp
-ZETSioGVGvX017RF0jSU1ZqKxHt/k23onwAMBzUz7A4r1K1+8Yg8KESQ/vJCRujascF7ikCIa+qQ
-uM1GCGn7m5p1lDz3J7s6MKYCU0gKbqeRENTKVdCbgYK8qWcNekcicQYcic6Ti/IQhjiQ4GEVcXLV
-ZZfhDiCuC1C904X1rpb2ziMe97Y4GdouyToTW1B+QOYZnuGievHugN1LH/9xY2mTQn/Gh9R7yyJ1
-HOqtHSCculNj3Xqd8buaA3KO0yc3lsOMT3XZ7rYEKZJGQl1RPEBvjwbqTabdRRj9bnNe0ujHHIID
-OYmhBrq6iDRSuvIH1RUumPHjNWpNsJxyjxoya0UIAwR17c6M6a9irzGbm9sDkXhTTTL5myxYU6nS
-+zD7LrGX1GXtz67Tz5zUFT1L8gAXoxJijf4emDWptlk1a7SQi5NDTuz6sUXY3v05ERHQ3WKqrc3E
-0su7XqhEeyPOd5zhP9qiocbQHTmsNxjJJKsQAy5sBzycLpPyqkQnaT7UF+0eMiIdVkh8bfzdPfIR
-8pZju8PuczQAFTDwteq+/RoQA3Vvr/IU9V4vYFYsQgS6vlXdJn358p5I7uOHGCgEo/IgbAsZjWvy
-Fw+N2hl019LGxkU2ofIBv7ftaJ2YVy4svXGvvvVOHGwMqlRJnbdn5UnYEDF3Hq1UBxk0BDDP/F7L
-W0mHjops4bvwjkWba5Vj4vEiu63znzAg5Y1/UDTo6dOeXliZ2nph1v7Q+us3qlICAF/tEjlAhKOa
-WTjgiin+hH+1nFdZfmYjK1WAfPLF14TAlsqWllksuj44cDt/8AdaNhVsjwYXbCfbzD5M5NRH6Szb
-DYK/v+jM/wUqJy3aavJAZszSmIRRgQ8pLcDbAdEehe9Em7fcyXoOa5yjzzCNdElUzwtnzphGfB4b
-M7pUJSVLgPXmXk03a+xef4GQshtMn0NZfKJTQU95O0WZEMeJXPR6oKPu3zOKFHexRSawrFqYd6as
-VSksCUGz7eB4O57ns0q6nJ2j7TyTQAb1bca4wXlXp0S+pGYPbILBw3VlckJ7NkZWBBakZomAoviM
-SZ3o+YKFxri0BaKVCBtke/1/YivFWxr0p/4snHWYTM/h10zPVHKbEou8UuCshy/seYSK3bjm3SRP
-YKzSEzQaDCRr2XRnStxT6nKHtOZqoihJ6CTuW0yDhJ2C5TEB30g6E0ZzM4i0jmHhqcQk19GGOJlr
-0eTyoiBzhf9B6LHXQ9YAl4hz75w/Zp2lWM6EcqcmYX32l//4z9q+ZxCdU/YxraJ6qD7zY0ETcaSJ
-rtpE+kAa8ee3Uy1VGHC0CkOEKI3gidIMKLHy60mG3cYRKhoIV7lMlHE4BmJ76XVNwtSxOge21e2C
-CxpUDvuG34BBlZr+bcArUalHv1p1YkAqiHblrao51UdkfN6EeCEwMgz/Q/uY66/JT1YEG3l/9Ksu
-jRaKOEP49gzRbcgpvabz7J52w3e6CjUswcQoEbCePDK+c/t/LORDedeaGDdcYXa5ySxkMAl95cet
-xoiZsdCLlmlbbc3lltUk7IFJKzFNQHzU+4G4rY4rOK8F7yndGRHubrS+kGxTfvHWrV/Gr7g8mfzC
-Fe/LMfzK3o6aeT4Mz3Xfj4Uze+hzLgtMS3fE4uu7hQ9SHqGSQF5X7xOTndvGYhnCVdhLZywMDAX8
-7uXRjDXu3lIvOKzcwVSQaeTOPhe5s+LGjrx9DKTYdVCbuAPMeZqWoLELkbohFt84fbLwejmiA2Ar
-cRdiQYQeAgmeeDEDiH/ikFJVvDZ4m/ikDDZu42+7orjb4HeW5cTiHYZCCePSoH1PycAfNWmsCvLR
-t4qka0lBuU9zzuVS9h+MAJVZf5k5IcRskKvE68OmhZtKvEs/7feLIMc4CnhRVtdb9r6Adk6wnO74
-XQ8EygTFqbqcJKP7O3SuByYhGk7FF/uSUHtrumhrbRKwusFOjGCUnzvUgSZIklLvwxRuxHuA/QcZ
-px+dTeF+ZwfNVlM7eOdn98xfFv/Iv7bklpOCliCtKSwWFt3kvPjqcVgRAZt3qzws+ts5LKXvqUHE
-A6W5Rn857FpgjcgCjNMKv1qIB+a1wMHF85BHr4OMDuCoZVApdOa649LxDCJXvR7iMphhxcZ3PHE6
-nb02G8brH+bm9+mglxXmabfOd4iLUB2y1SBXiuYPXONlBIAAZLo15znjNltT88zZdJeJzb0J7VIF
-poYLSRkKHUhFvrYKCHgLjyAiq6BXbMydjyELyalo22d40PrSz/iQlSJ0UZGfiKtru7azyKJPNBKr
-tAOGLz1N561B86Nothf8J/sWBZ0E10vRaGE+n+Wh9SRz5Qos/hJ/AKKXQetOBr66igWhRzqXFdLZ
-bCKX3VTtQgEPRjaiSpcv+jfRHwI2RkhvQ7BGxwHRiU42VFcOTJGqCwstOLLPHKr+gD4Blv20yke9
-gRULNpF2a+jfbOW1XC6j6eqV+Sv3tv/mAatAb1klJaEGSDaatnlm4JKx3z4cGb5Ne/N65Aairt1U
-5NXW2ZtLBmnMsTZ5WiZs5DLIYdJpNyMmSQvxn1pnTUyB2jNy3Ds/PHhWORSIaKuR3Y7n4oODMtrb
-4K6qHF4jJ5ZE5/WUuWeg026N4o7Cbt+R0wGZ3DB/yOhYzNvJT/D2dtbjHfFsNSd40jMDxvuC5Klc
-1Gv8CCEbZYHQ6SRTUEuwFX39yRJReHm2dC54sF/YDDHcqSJtTrPyTa0LaNVgX/VIJ07XbCLRrpN2
-TALwJxMM+F/vwBJA8QCPePkPTg3WG+TAelEXJ0f5B+rww4/PaUwjO0Uga9Yf8tu+uhi9c/mt3f8W
-1Z8Pf5asIf+4wpSe0FybtIQe0HIUkZs+yDX157jGYsLpGAS1SKGtOBupUE374ql0GVu/QG/G3WW1
-wbNpZKzleh7RtiD6NUlI2UY3BPCwZdylkdzJEfqog5Kms2UyEVdpRSqP6E3D9eIWiqJ9BkI3fUcE
-8e9gC/Xt7Wf7Icmeqmv8x8naLLUYN+F3c0n/Vt8HX+MhHqa8rBZO3uzcfv0ExKzNfAqx4VnU1oJ3
-/18wGsqGQZV4d53GSNJkG63r1HBM+y1ZiHcD5a8/3pchfVNFaHhOXLxxAV3XFzxOOQ07x2tVoVaH
-bQ7dptVz9OoVYLg33u3Dwrh3EUX7WyEYaPmHLAJzhedEmpJGcqous203/t3N5UUOvwzEz+izyLeg
-IAcZIVAVM0/lRQX4um0r/LIMkE1jx8Wfj3z5ebNNBBPxz6RTVphzTVa+7tSprVJ5qSf2Mg/l5jeY
-N9yhU0tTmbOWSnfz0VXfZwI5q8cwJT6FRaR0dgUBLe+EpvRhCYFoXV/FG/9rnsPj1gfi7L2EgtJq
-gjrUrDCZH1RrxNbyAcQeCrcg32v3JDpQTA2XPSNLWLWY+s/X5UMSvBqoVCi78TYUzgV9yX7PeJ8+
-bw89ZfCSra9p70VZj5CVAlA2NZuaNQLdysjvxHFpCylH3hvIDGDSsOxBIgUCsGEX/xPErvWneOf+
-88IxhVQ3ByVZDLJTv0xSBpX4yGC+KBYDferbf2odp5If0SyHAxjgSdTzIXDBNv371uyB5auE+Dqs
-x5VUTQRpfe85NQBs5vRyVHWw3dJaPT1Zl67mqKnpD4nqzWvrFKoRX5/wyjn9UDOC5MLIycMscLgB
-4g0HUhpux3i6MGWrgwiPWVd0HqRSjMDRM0MNBAqIUenzDZRFpR283JvS6tsPJxslrFtIOUp0jZ9k
-qHWdH5PxT1IZ6qwnbd0CJm9zZLmdFY4XLnI1AmXIbljFKmEIfwVLUXJwbBpofAhBZbubfW5SgT6m
-05Ql8HhJsuueLI8/pxG2an0/lvLxgcoCe4xB8HVOf3kDBEqhKO32OtgDjzkCG1AhOoKR/pz0iD+l
-mYRm+uDNDjQ0opVixrzDhC3qa9lumUVZCK47z363iXGG2qh0hQ+Nag7kkMgJ0/znuXqr1YjTqDbp
-ipGTTM6lLomrHtvzhyWqaAIImZj3iE2kXN/NvfWVlsTzN2tB99qZNDdpH1m3k2fhMC0XCcEDyqTP
-3kfS4wir4BZcShJ0RS4kE1zNeqJVi93Jmrhg3IY3S2LVFk1af8lI7ISRqcdjLFyFxuhwfsFznF0+
-9wPJzt8z5f1xVk14olLDgCnmSE1k63/UOV6Mj7GERIdHWUlFmnW9UTgFXSfdHM0cTQDda4T+dkOD
-1I48teAhi0t3Zl7oDR8PhQLbm+qjHe9RgTOeOsyVdFn/U9iH9KwxBR9Lj/DdR3c2QqQrNBzEj7Wc
-VuwUOBvRHnleGynmZmEczFyvhPws6gV732R5eA3CYEQ7qWUDTNo5VSaMK00XZd9JBUr4V3W97a7e
-CF40QbUQBY2xIpkNzjfMeEjteBbvr8vDtjEMa1OqjWgP0Chg1bkXRRFbp97EnncroyFIt2vV8XQr
-YzIs+CJQUNiH4ynCQ+JUR6nTmesuswvzWsfEKsk80vjB1vrS7sSKGugabTHM1iv/G1MnoqVe6ERg
-h9pV6pAovhZmUIIUEOmFChRWGuAjjsOR4IDd0Y2vjCuZ/wXO3/0Uq4Yk18GWQM5Zt4EnsWCch6h/
-7diCDmR6h9p6k/MBD2w8Qqr2pVi4D6yGxYq7abqkBIjC1qbpk+8NbpUxZEIRMzZ9dh4vCbOPsvDs
-9qUztIEfg63tq4QuYtsc814pHIytDfloPTyh+6lRcmpLHbgb45JalM0M/tjTEbfiorIjXao7xW4E
-gCrBTwfR2Di39K4GNfp37WFqBrgZYupWg7AL7IXKFM0FqybRUf8BY1yWeQv6cvVI4Q8ft1YPmIK8
-tJ1+kvtAqXHx0eg1OLlMDk8dEncFN5jkdLrxs0fYjMgNn1NcGtaSFZ3s5AXUuT75C59x2tXiRoZ2
-3KT4kYapashqZSSH4DlzXywt4bO7b2YEJY9sDRC8wPewJJVExB7VYVDkYo+GfKkh6/YNoc61m/NN
-v4/+a5M4vWoGWndSrx6zE/fHl+eBsCQaYCPWXBrrZ/RM1ogc22oo9CXL8VhihKIXclwG4Lo751LG
-W8Ze9bbBPey3k18IIkUrh8ccFy4Sl+G6Hy0PzgFnvXn6yQDcdY+6M/BwBXH/YO9whx9lFHiSn1CS
-FhvdCTHgCoojV7ySmM9IDNBbKmWh/lBiEtXfOMxrrlzxZqgCffMOSKkOKgtlGSLLXjEoMsJfpjNI
-7IUo3F92OprecdEL5DPhzlBzEqlFDSsq2m7W7u1gQqGXykq8mMIsThWLHPnBjOwZ6M/FAE5eoWZh
-CVP9j/02Y0+WjfAOpH/YyKyncy3yGc6xI4ybt/cqqtsZUxy4wo2/eOblMIyGPuJvUueKR0EZL+Gn
-XNE7epe1CTtID2pRHC8n2eIbLOaHBzl3VtnKZWDjlc+MRt33/mjTWw7TIqlfzxXufJ/y1W+/Wm/H
-L3Y71kr0V4MJeoFFw9nnHjN+aaswrly4HwmMfKLGRcaCOq0Uf/6f2p22tC/PEK2WS1jmuui2NiJA
-2z/GDzy8flSP8CJRHcsjuQpZiOoE

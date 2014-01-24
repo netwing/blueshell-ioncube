@@ -1,38 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.0.0
+ */
+
+if (!defined('TEST_FILES_PATH')) {
+    define(
+      'TEST_FILES_PATH',
+      dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR .
+      '_files' . DIRECTORY_SEPARATOR
+    );
+}
+
+require_once TEST_FILES_PATH . '../TestCase.php';
+
+/**
+ * Tests for the PHP_CodeCoverage_Report_Clover class.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.0.0
+ */
+class PHP_CodeCoverage_Report_CloverTest extends PHP_CodeCoverage_TestCase
+{
+    /**
+     * @covers PHP_CodeCoverage_Report_Clover
+     */
+    public function testCloverForBankAccountTest()
+    {
+        $clover = new PHP_CodeCoverage_Report_Clover;
+
+        $this->assertStringMatchesFormatFile(
+          TEST_FILES_PATH . 'BankAccount-clover.xml',
+          $clover->process($this->getCoverageForBankAccount(), NULL, 'BankAccount')
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Report_Clover
+     */
+    public function testCloverForFileWithIgnoredLines()
+    {
+        $clover = new PHP_CodeCoverage_Report_Clover;
+
+        $this->assertStringMatchesFormatFile(
+          TEST_FILES_PATH . 'ignored-lines-clover.xml',
+          $clover->process($this->getCoverageForFileWithIgnoredLines())
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage_Report_Clover
+     */
+    public function testCloverForClassWithAnonymousFunction()
+    {
+        $clover = new PHP_CodeCoverage_Report_Clover;
+
+        $this->assertStringMatchesFormatFile(
+          TEST_FILES_PATH . 'class-with-anonymous-function-clover.xml',
+          $clover->process($this->getCoverageForClassWithAnonymousFunction())
+        );
+    }
+}

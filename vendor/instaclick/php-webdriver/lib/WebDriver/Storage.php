@@ -1,59 +1,146 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-CkP0Tsopli7EYQZ2f+akODrmP4YomPwuWm==
+<?php
+/**
+ * Copyright 2011-2013 Anthon Pang. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * @package WebDriver
+ *
+ * @author Anthon Pang <apang@softwaredevelopment.ca>
+ */
+
+namespace WebDriver;
+
+use WebDriver\Exception as WebDriverException;
+
+/**
+ * WebDriver\Storage class
+ *
+ * @package WebDriver
+ *
+ * @method mixed getKey($key) Get key/value pair.
+ * @method void deleteKey($key) Delete a specific key.
+ * @method integer size() Get the number of items in the storage.
+ */
+abstract class Storage extends AbstractWebDriver
+{
+    /**
+     * {@inheritdoc}
+     */
+    protected function methods()
+    {
+        return array(
+            'key' => array('GET', 'DELETE'),
+            'size' => array('GET'),
+        );
+    }
+
+    /**
+     * Get all keys from storage or a specific key/value pair
+     *
+     * @return mixed
+     */
+    public function get()
+    {
+        // get all keys
+        if (func_num_args() === 0) {
+            $result = $this->curl('GET', '');
+
+            return $result['value'];
+        }
+
+        // get key/value pair
+        if (func_num_args() === 1) {
+            return $this->getKey(func_get_arg(0));
+        }
+
+        throw WebDriverException::factory(WebDriverException::UNEXPECTED_PARAMETERS);
+    }
+
+    /**
+     * Set specific key/value pair
+     *
+     * @return \WebDriver\Storage
+     *
+     * @throw \WebDriver\Exception\UnexpectedParameters if unexpected parameters
+     */
+    public function set()
+    {
+        if (func_num_args() === 1
+            && is_array($arg = func_get_arg(0))
+        ) {
+            $this->curl('POST', '', $arg);
+
+            return $this;
+        }
+
+        if (func_num_args() === 2) {
+            $arg = array(
+                'key' => func_get_arg(0),
+                'value' => func_get_arg(1),
+            );
+            $this->curl('POST', '', $arg);
+
+            return $this;
+        }
+
+        throw WebDriverException::factory(WebDriverException::UNEXPECTED_PARAMETERS);
+    }
+
+    /**
+     * Delete storage or a specific key
+     *
+     * @return \WebDriver\Storage
+     *
+     * @throw \WebDriver\Exception\UnexpectedParameters if unexpected parameters
+     */
+    public function delete()
+    {
+        // delete storage
+        if (func_num_args() === 0) {
+            $this->curl('DELETE', '');
+
+            return $this;
+        }
+
+        // delete key from storage
+        if (func_num_args() === 1) {
+            return $this->deleteKey(func_get_arg(0));
+        }
+
+        throw WebDriverException::factory(WebDriverException::UNEXPECTED_PARAMETERS);
+    }
+
+    /**
+     * Factory method to create Storage objects
+     *
+     * @param string $type 'local' or 'session' storage
+     * @param string $url  URL
+     *
+     * @return \WebDriver\Storage
+     */
+    public static function factory($type, $url)
+    {
+        // dynamically define custom storage classes
+        $className = ucfirst(strtolower($type));
+        $namespacedClassName = __CLASS__ . '\\' . $className;
+
+        if (!class_exists($namespacedClassName, false)) {
+            eval(
+                'namespace ' . __CLASS__ . '; final class ' . $className . ' extends \\' . __CLASS__ . '{}'
+            );
+        }
+
+        return new $namespacedClassName($url);
+    }
+}

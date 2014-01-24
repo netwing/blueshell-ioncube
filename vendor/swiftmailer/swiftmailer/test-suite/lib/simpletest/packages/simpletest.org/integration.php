@@ -1,43 +1,41 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+// $Id: adapter_test.php 1505 2007-04-30 23:39:59Z lastcraft $
+
+$target = dirname(__FILE__)."/public_html/logs";
+$integration = new SimpleIntegration($target);
+
+$cli_directory = dirname(__FILE__)."/binaries/";
+$test = dirname(__FILE__)."/working-copies/simpletest/test/all_tests.php";
+$integration->updateTestLogs($cli_directory, $test);
+
+$working_copy = dirname(__FILE__)."/working-copies/simpletest";
+$binary = "svn";
+$integration->updateSvnLog($working_copy, $binary);
+
+class SimpleIntegration {
+    public $target_directory;
+    
+    function __construct($target_directory="") {
+        $this->target_directory = $target_directory;
+    }
+    
+    function updateTestLogs($cli_directory, $test_file) {
+        foreach(new DirectoryIterator($cli_directory) as $node) {
+            if ($node->isDir() and !$node->isDot()) {
+                $bin = $node->getPathname()."/bin/php";
+                $result = shell_exec($bin." ".$test_file);
+                
+                $result_file = $this->target_directory."/simpletest.".$node->getFilename().".log";
+                file_put_contents($result_file, $result);
+            }
+        }
+    }
+    
+    function updateSvnLog($working_copy, $binary="svn") {
+        $start = date("Y-m-d", strtotime('-1year'));
+        $command = $binary." log --xml --revision {".$start."}:HEAD ".$working_copy." > ".$this->target_directory."/svn.xml";
+        return exec($command);
+    }
+}
+
 ?>
-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
-Whgs4yxywU8qgcp6yg1ckPBrps4=

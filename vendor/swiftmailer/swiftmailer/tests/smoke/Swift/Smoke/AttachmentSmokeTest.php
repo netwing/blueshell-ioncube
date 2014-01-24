@@ -1,34 +1,30 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-mHHbs+qaZ+68S7nQ3/QdxoCfi+iYdhPdyVzMXG==
+<?php
+
+require_once 'Swift/Tests/SwiftSmokeTestCase.php';
+
+class Swift_Smoke_AttachmentSmokeTest extends Swift_Tests_SwiftSmokeTestCase
+{
+    public function setUp()
+    {
+        $this->_attFile = dirname(__FILE__) . '/../../../_samples/files/textfile.zip';
+    }
+
+    public function testAttachmentSending()
+    {
+        $mailer = $this->_getMailer();
+        $message = Swift_Message::newInstance()
+            ->setSubject('[Swift Mailer] AttachmentSmokeTest')
+            ->setFrom(array(SWIFT_SMOKE_EMAIL_ADDRESS => 'Swift Mailer'))
+            ->setTo(SWIFT_SMOKE_EMAIL_ADDRESS)
+            ->setBody('This message should contain an attached ZIP file (named "textfile.zip").' . PHP_EOL .
+                'When unzipped, the archive should produce a text file which reads:' . PHP_EOL .
+                '"This is part of a Swift Mailer v4 smoke test."'
+                )
+            ->attach(Swift_Attachment::fromPath($this->_attFile))
+            ;
+        $this->assertEqual(1, $mailer->send($message),
+            '%s: The smoke test should send a single message'
+            );
+        $this->_visualCheck('http://swiftmailer.org/smoke/4.0.0/attachment.jpg');
+    }
+}

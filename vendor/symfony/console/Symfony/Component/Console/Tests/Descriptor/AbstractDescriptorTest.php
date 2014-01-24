@@ -1,67 +1,105 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Descriptor;
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\BufferedOutput;
+
+abstract class AbstractDescriptorTest extends \PHPUnit_Framework_TestCase
+{
+    /** @dataProvider getDescribeInputArgumentTestData */
+    public function testDescribeInputArgument(InputArgument $argument, $expectedDescription)
+    {
+        $this->assertDescription($expectedDescription, $argument);
+    }
+
+    /** @dataProvider getDescribeInputOptionTestData */
+    public function testDescribeInputOption(InputOption $option, $expectedDescription)
+    {
+        $this->assertDescription($expectedDescription, $option);
+    }
+
+    /** @dataProvider getDescribeInputDefinitionTestData */
+    public function testDescribeInputDefinition(InputDefinition $definition, $expectedDescription)
+    {
+        $this->assertDescription($expectedDescription, $definition);
+    }
+
+    /** @dataProvider getDescribeCommandTestData */
+    public function testDescribeCommand(Command $command, $expectedDescription)
+    {
+        $this->assertDescription($expectedDescription, $command);
+    }
+
+    /** @dataProvider getDescribeApplicationTestData */
+    public function testDescribeApplication(Application $application, $expectedDescription)
+    {
+        // Replaces the dynamic placeholders of the command help text with a static version.
+        // The placeholder %command.full_name% includes the script path that is not predictable
+        // and can not be tested against.
+        foreach ($application->all() as $command) {
+            $command->setHelp(str_replace('%command.full_name%', 'app/console %command.name%', $command->getHelp()));
+        }
+
+        $this->assertDescription($expectedDescription, $application);
+    }
+
+    public function getDescribeInputArgumentTestData()
+    {
+        return $this->getDescriptionTestData(ObjectsProvider::getInputArguments());
+    }
+
+    public function getDescribeInputOptionTestData()
+    {
+        return $this->getDescriptionTestData(ObjectsProvider::getInputOptions());
+    }
+
+    public function getDescribeInputDefinitionTestData()
+    {
+        return $this->getDescriptionTestData(ObjectsProvider::getInputDefinitions());
+    }
+
+    public function getDescribeCommandTestData()
+    {
+        return $this->getDescriptionTestData(ObjectsProvider::getCommands());
+    }
+
+    public function getDescribeApplicationTestData()
+    {
+        return $this->getDescriptionTestData(ObjectsProvider::getApplications());
+    }
+
+    abstract protected function getDescriptor();
+    abstract protected function getFormat();
+
+    private function getDescriptionTestData(array $objects)
+    {
+        $data = array();
+        foreach ($objects as $name => $object) {
+            $description = file_get_contents(sprintf('%s/../Fixtures/%s.%s', __DIR__, $name, $this->getFormat()));
+            $data[] = array($object, $description);
+        }
+
+        return $data;
+    }
+
+    private function assertDescription($expectedDescription, $describedObject)
+    {
+        $output = new BufferedOutput(BufferedOutput::VERBOSITY_NORMAL, true);
+        $this->getDescriptor()->describe($output, $describedObject, array('raw_output' => true));
+        $this->assertEquals(trim($expectedDescription), trim(str_replace(PHP_EOL, "\n", $output->fetch())));
+    }
+}

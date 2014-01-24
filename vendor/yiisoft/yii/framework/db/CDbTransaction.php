@@ -1,45 +1,110 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CDbTransaction class file
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDbTransaction represents a DB transaction.
+ *
+ * It is usually created by calling {@link CDbConnection::beginTransaction}.
+ *
+ * The following code is a common scenario of using transactions:
+ * <pre>
+ * $transaction=$connection->beginTransaction();
+ * try
+ * {
+ *    $connection->createCommand($sql1)->execute();
+ *    $connection->createCommand($sql2)->execute();
+ *    //.... other SQL executions
+ *    $transaction->commit();
+ * }
+ * catch(Exception $e)
+ * {
+ *    $transaction->rollback();
+ * }
+ * </pre>
+ *
+ * @property CDbConnection $connection The DB connection for this transaction.
+ * @property boolean $active Whether this transaction is active.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.db
+ * @since 1.0
+ */
+class CDbTransaction extends CComponent
+{
+	private $_connection=null;
+	private $_active;
+
+	/**
+	 * Constructor.
+	 * @param CDbConnection $connection the connection associated with this transaction
+	 * @see CDbConnection::beginTransaction
+	 */
+	public function __construct(CDbConnection $connection)
+	{
+		$this->_connection=$connection;
+		$this->_active=true;
+	}
+
+	/**
+	 * Commits a transaction.
+	 * @throws CException if the transaction or the DB connection is not active.
+	 */
+	public function commit()
+	{
+		if($this->_active && $this->_connection->getActive())
+		{
+			Yii::trace('Committing transaction','system.db.CDbTransaction');
+			$this->_connection->getPdoInstance()->commit();
+			$this->_active=false;
+		}
+		else
+			throw new CDbException(Yii::t('yii','CDbTransaction is inactive and cannot perform commit or roll back operations.'));
+	}
+
+	/**
+	 * Rolls back a transaction.
+	 * @throws CException if the transaction or the DB connection is not active.
+	 */
+	public function rollback()
+	{
+		if($this->_active && $this->_connection->getActive())
+		{
+			Yii::trace('Rolling back transaction','system.db.CDbTransaction');
+			$this->_connection->getPdoInstance()->rollBack();
+			$this->_active=false;
+		}
+		else
+			throw new CDbException(Yii::t('yii','CDbTransaction is inactive and cannot perform commit or roll back operations.'));
+	}
+
+	/**
+	 * @return CDbConnection the DB connection for this transaction
+	 */
+	public function getConnection()
+	{
+		return $this->_connection;
+	}
+
+	/**
+	 * @return boolean whether this transaction is active
+	 */
+	public function getActive()
+	{
+		return $this->_active;
+	}
+
+	/**
+	 * @param boolean $value whether this transaction is active
+	 */
+	protected function setActive($value)
+	{
+		$this->_active=$value;
+	}
+}

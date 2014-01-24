@@ -1,275 +1,420 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-hjAtleRIhW==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Console\Tests\Input;
+
+use Symfony\Component\Console\Input\InputDefinition;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+
+class InputDefinitionTest extends \PHPUnit_Framework_TestCase
+{
+    protected static $fixtures;
+
+    protected $foo, $bar, $foo1, $foo2;
+
+    public static function setUpBeforeClass()
+    {
+        self::$fixtures = __DIR__.'/../Fixtures/';
+    }
+
+    public function testConstructorArguments()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $this->assertEquals(array(), $definition->getArguments(), '__construct() creates a new InputDefinition object');
+
+        $definition = new InputDefinition(array($this->foo, $this->bar));
+        $this->assertEquals(array('foo' => $this->foo, 'bar' => $this->bar), $definition->getArguments(), '__construct() takes an array of InputArgument objects as its first argument');
+    }
+
+    public function testConstructorOptions()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition();
+        $this->assertEquals(array(), $definition->getOptions(), '__construct() creates a new InputDefinition object');
+
+        $definition = new InputDefinition(array($this->foo, $this->bar));
+        $this->assertEquals(array('foo' => $this->foo, 'bar' => $this->bar), $definition->getOptions(), '__construct() takes an array of InputOption objects as its first argument');
+    }
+
+    public function testSetArguments()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->setArguments(array($this->foo));
+        $this->assertEquals(array('foo' => $this->foo), $definition->getArguments(), '->setArguments() sets the array of InputArgument objects');
+        $definition->setArguments(array($this->bar));
+
+        $this->assertEquals(array('bar' => $this->bar), $definition->getArguments(), '->setArguments() clears all InputArgument objects');
+    }
+
+    public function testAddArguments()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArguments(array($this->foo));
+        $this->assertEquals(array('foo' => $this->foo), $definition->getArguments(), '->addArguments() adds an array of InputArgument objects');
+        $definition->addArguments(array($this->bar));
+        $this->assertEquals(array('foo' => $this->foo, 'bar' => $this->bar), $definition->getArguments(), '->addArguments() does not clear existing InputArgument objects');
+    }
+
+    public function testAddArgument()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArgument($this->foo);
+        $this->assertEquals(array('foo' => $this->foo), $definition->getArguments(), '->addArgument() adds a InputArgument object');
+        $definition->addArgument($this->bar);
+        $this->assertEquals(array('foo' => $this->foo, 'bar' => $this->bar), $definition->getArguments(), '->addArgument() adds a InputArgument object');
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage An argument with name "foo" already exists.
+     */
+    public function testArgumentsMustHaveDifferentNames()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArgument($this->foo);
+        $definition->addArgument($this->foo1);
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage Cannot add an argument after an array argument.
+     */
+    public function testArrayArgumentHasToBeLast()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArgument(new InputArgument('fooarray', InputArgument::IS_ARRAY));
+        $definition->addArgument(new InputArgument('anotherbar'));
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage Cannot add a required argument after an optional one.
+     */
+    public function testRequiredArgumentCannotFollowAnOptionalOne()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArgument($this->foo);
+        $definition->addArgument($this->foo2);
+    }
+
+    public function testGetArgument()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArguments(array($this->foo));
+        $this->assertEquals($this->foo, $definition->getArgument('foo'), '->getArgument() returns a InputArgument by its name');
+    }
+
+    /**
+     * @expectedException        \InvalidArgumentException
+     * @expectedExceptionMessage The "bar" argument does not exist.
+     */
+    public function testGetInvalidArgument()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArguments(array($this->foo));
+        $definition->getArgument('bar');
+    }
+
+    public function testHasArgument()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArguments(array($this->foo));
+
+        $this->assertTrue($definition->hasArgument('foo'), '->hasArgument() returns true if a InputArgument exists for the given name');
+        $this->assertFalse($definition->hasArgument('bar'), '->hasArgument() returns false if a InputArgument exists for the given name');
+    }
+
+    public function testGetArgumentRequiredCount()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArgument($this->foo2);
+        $this->assertEquals(1, $definition->getArgumentRequiredCount(), '->getArgumentRequiredCount() returns the number of required arguments');
+        $definition->addArgument($this->foo);
+        $this->assertEquals(1, $definition->getArgumentRequiredCount(), '->getArgumentRequiredCount() returns the number of required arguments');
+    }
+
+    public function testGetArgumentCount()
+    {
+        $this->initializeArguments();
+
+        $definition = new InputDefinition();
+        $definition->addArgument($this->foo2);
+        $this->assertEquals(1, $definition->getArgumentCount(), '->getArgumentCount() returns the number of arguments');
+        $definition->addArgument($this->foo);
+        $this->assertEquals(2, $definition->getArgumentCount(), '->getArgumentCount() returns the number of arguments');
+    }
+
+    public function testGetArgumentDefaults()
+    {
+        $definition = new InputDefinition(array(
+            new InputArgument('foo1', InputArgument::OPTIONAL),
+            new InputArgument('foo2', InputArgument::OPTIONAL, '', 'default'),
+            new InputArgument('foo3', InputArgument::OPTIONAL | InputArgument::IS_ARRAY),
+        //  new InputArgument('foo4', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, '', array(1, 2)),
+        ));
+        $this->assertEquals(array('foo1' => null, 'foo2' => 'default', 'foo3' => array()), $definition->getArgumentDefaults(), '->getArgumentDefaults() return the default values for each argument');
+
+        $definition = new InputDefinition(array(
+            new InputArgument('foo4', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, '', array(1, 2)),
+        ));
+        $this->assertEquals(array('foo4' => array(1, 2)), $definition->getArgumentDefaults(), '->getArgumentDefaults() return the default values for each argument');
+    }
+
+    public function testSetOptions()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $this->assertEquals(array('foo' => $this->foo), $definition->getOptions(), '->setOptions() sets the array of InputOption objects');
+        $definition->setOptions(array($this->bar));
+        $this->assertEquals(array('bar' => $this->bar), $definition->getOptions(), '->setOptions() clears all InputOption objects');
+    }
+
+    /**
+     * @expectedException        \InvalidArgumentException
+     * @expectedExceptionMessage The "-f" option does not exist.
+     */
+    public function testSetOptionsClearsOptions()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $definition->setOptions(array($this->bar));
+        $definition->getOptionForShortcut('f');
+    }
+
+    public function testAddOptions()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $this->assertEquals(array('foo' => $this->foo), $definition->getOptions(), '->addOptions() adds an array of InputOption objects');
+        $definition->addOptions(array($this->bar));
+        $this->assertEquals(array('foo' => $this->foo, 'bar' => $this->bar), $definition->getOptions(), '->addOptions() does not clear existing InputOption objects');
+    }
+
+    public function testAddOption()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition();
+        $definition->addOption($this->foo);
+        $this->assertEquals(array('foo' => $this->foo), $definition->getOptions(), '->addOption() adds a InputOption object');
+        $definition->addOption($this->bar);
+        $this->assertEquals(array('foo' => $this->foo, 'bar' => $this->bar), $definition->getOptions(), '->addOption() adds a InputOption object');
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage An option named "foo" already exists.
+     */
+    public function testAddDuplicateOption()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition();
+        $definition->addOption($this->foo);
+        $definition->addOption($this->foo2);
+    }
+
+    /**
+     * @expectedException        \LogicException
+     * @expectedExceptionMessage An option with shortcut "f" already exists.
+     */
+    public function testAddDuplicateShortcutOption()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition();
+        $definition->addOption($this->foo);
+        $definition->addOption($this->foo1);
+    }
+
+    public function testGetOption()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $this->assertEquals($this->foo, $definition->getOption('foo'), '->getOption() returns a InputOption by its name');
+    }
+
+    /**
+     * @expectedException        \InvalidArgumentException
+     * @expectedExceptionMessage The "--bar" option does not exist.
+     */
+    public function testGetInvalidOption()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $definition->getOption('bar');
+    }
+
+    public function testHasOption()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $this->assertTrue($definition->hasOption('foo'), '->hasOption() returns true if a InputOption exists for the given name');
+        $this->assertFalse($definition->hasOption('bar'), '->hasOption() returns false if a InputOption exists for the given name');
+    }
+
+    public function testHasShortcut()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $this->assertTrue($definition->hasShortcut('f'), '->hasShortcut() returns true if a InputOption exists for the given shortcut');
+        $this->assertFalse($definition->hasShortcut('b'), '->hasShortcut() returns false if a InputOption exists for the given shortcut');
+    }
+
+    public function testGetOptionForShortcut()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $this->assertEquals($this->foo, $definition->getOptionForShortcut('f'), '->getOptionForShortcut() returns a InputOption by its shortcut');
+    }
+
+    public function testGetOptionForMultiShortcut()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->multi));
+        $this->assertEquals($this->multi, $definition->getOptionForShortcut('m'), '->getOptionForShortcut() returns a InputOption by its shortcut');
+        $this->assertEquals($this->multi, $definition->getOptionForShortcut('mmm'), '->getOptionForShortcut() returns a InputOption by its shortcut');
+    }
+
+    /**
+     * @expectedException        \InvalidArgumentException
+     * @expectedExceptionMessage The "-l" option does not exist.
+     */
+    public function testGetOptionForInvalidShortcut()
+    {
+        $this->initializeOptions();
+
+        $definition = new InputDefinition(array($this->foo));
+        $definition->getOptionForShortcut('l');
+    }
+
+    public function testGetOptionDefaults()
+    {
+        $definition = new InputDefinition(array(
+            new InputOption('foo1', null, InputOption::VALUE_NONE),
+            new InputOption('foo2', null, InputOption::VALUE_REQUIRED),
+            new InputOption('foo3', null, InputOption::VALUE_REQUIRED, '', 'default'),
+            new InputOption('foo4', null, InputOption::VALUE_OPTIONAL),
+            new InputOption('foo5', null, InputOption::VALUE_OPTIONAL, '', 'default'),
+            new InputOption('foo6', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY),
+            new InputOption('foo7', null, InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, '', array(1, 2)),
+        ));
+        $defaults = array(
+            'foo1' => null,
+            'foo2' => null,
+            'foo3' => 'default',
+            'foo4' => null,
+            'foo5' => 'default',
+            'foo6' => array(),
+            'foo7' => array(1, 2),
+        );
+        $this->assertEquals($defaults, $definition->getOptionDefaults(), '->getOptionDefaults() returns the default values for all options');
+    }
+
+    public function testGetSynopsis()
+    {
+        $definition = new InputDefinition(array(new InputOption('foo')));
+        $this->assertEquals('[--foo]', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+        $definition = new InputDefinition(array(new InputOption('foo', 'f')));
+        $this->assertEquals('[-f|--foo]', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+        $definition = new InputDefinition(array(new InputOption('foo', 'f', InputOption::VALUE_REQUIRED)));
+        $this->assertEquals('[-f|--foo="..."]', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+        $definition = new InputDefinition(array(new InputOption('foo', 'f', InputOption::VALUE_OPTIONAL)));
+        $this->assertEquals('[-f|--foo[="..."]]', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+
+        $definition = new InputDefinition(array(new InputArgument('foo')));
+        $this->assertEquals('[foo]', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+        $definition = new InputDefinition(array(new InputArgument('foo', InputArgument::REQUIRED)));
+        $this->assertEquals('foo', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+        $definition = new InputDefinition(array(new InputArgument('foo', InputArgument::IS_ARRAY)));
+        $this->assertEquals('[foo1] ... [fooN]', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+        $definition = new InputDefinition(array(new InputArgument('foo', InputArgument::REQUIRED | InputArgument::IS_ARRAY)));
+        $this->assertEquals('foo1 ... [fooN]', $definition->getSynopsis(), '->getSynopsis() returns a synopsis of arguments and options');
+    }
+
+    public function testAsText()
+    {
+        $definition = new InputDefinition(array(
+            new InputArgument('foo', InputArgument::OPTIONAL, 'The foo argument'),
+            new InputArgument('baz', InputArgument::OPTIONAL, 'The baz argument', true),
+            new InputArgument('bar', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'The bar argument', array('http://foo.com/')),
+            new InputOption('foo', 'f', InputOption::VALUE_REQUIRED, 'The foo option'),
+            new InputOption('baz', null, InputOption::VALUE_OPTIONAL, 'The baz option', false),
+            new InputOption('bar', 'b', InputOption::VALUE_OPTIONAL, 'The bar option', 'bar'),
+            new InputOption('qux', '', InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'The qux option', array('http://foo.com/', 'bar')),
+            new InputOption('qux2', '', InputOption::VALUE_OPTIONAL | InputOption::VALUE_IS_ARRAY, 'The qux2 option', array('foo' => 'bar')),
+        ));
+        $this->assertStringEqualsFile(self::$fixtures.'/definition_astext.txt', $definition->asText(), '->asText() returns a textual representation of the InputDefinition');
+    }
+
+    public function testAsXml()
+    {
+        $definition = new InputDefinition(array(
+            new InputArgument('foo', InputArgument::OPTIONAL, 'The foo argument'),
+            new InputArgument('baz', InputArgument::OPTIONAL, 'The baz argument', true),
+            new InputArgument('bar', InputArgument::OPTIONAL | InputArgument::IS_ARRAY, 'The bar argument', array('bar')),
+            new InputOption('foo', 'f', InputOption::VALUE_REQUIRED, 'The foo option'),
+            new InputOption('baz', null, InputOption::VALUE_OPTIONAL, 'The baz option', false),
+            new InputOption('bar', 'b', InputOption::VALUE_OPTIONAL, 'The bar option', 'bar'),
+        ));
+        $this->assertXmlStringEqualsXmlFile(self::$fixtures.'/definition_asxml.txt', $definition->asXml(), '->asText() returns a textual representation of the InputDefinition');
+    }
+
+    protected function initializeArguments()
+    {
+        $this->foo = new InputArgument('foo');
+        $this->bar = new InputArgument('bar');
+        $this->foo1 = new InputArgument('foo');
+        $this->foo2 = new InputArgument('foo2', InputArgument::REQUIRED);
+    }
+
+    protected function initializeOptions()
+    {
+        $this->foo = new InputOption('foo', 'f');
+        $this->bar = new InputOption('bar', 'b');
+        $this->foo1 = new InputOption('fooBis', 'f');
+        $this->foo2 = new InputOption('foo', 'p');
+        $this->multi = new InputOption('multi', 'm|mm|mmm');
+    }
+}

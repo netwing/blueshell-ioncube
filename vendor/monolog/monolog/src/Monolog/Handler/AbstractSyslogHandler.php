@@ -1,53 +1,92 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler;
+
+use Monolog\Logger;
+use Monolog\Formatter\LineFormatter;
+
+/**
+ * Common syslog functionality
+ */
+abstract class AbstractSyslogHandler extends AbstractProcessingHandler
+{
+    protected $facility;
+
+    /**
+     * Translates Monolog log levels to syslog log priorities.
+     */
+    protected $logLevels = array(
+        Logger::DEBUG     => LOG_DEBUG,
+        Logger::INFO      => LOG_INFO,
+        Logger::NOTICE    => LOG_NOTICE,
+        Logger::WARNING   => LOG_WARNING,
+        Logger::ERROR     => LOG_ERR,
+        Logger::CRITICAL  => LOG_CRIT,
+        Logger::ALERT     => LOG_ALERT,
+        Logger::EMERGENCY => LOG_EMERG,
+    );
+
+    /**
+     * List of valid log facility names.
+     */
+    protected $facilities = array(
+        'auth'     => LOG_AUTH,
+        'authpriv' => LOG_AUTHPRIV,
+        'cron'     => LOG_CRON,
+        'daemon'   => LOG_DAEMON,
+        'kern'     => LOG_KERN,
+        'lpr'      => LOG_LPR,
+        'mail'     => LOG_MAIL,
+        'news'     => LOG_NEWS,
+        'syslog'   => LOG_SYSLOG,
+        'user'     => LOG_USER,
+        'uucp'     => LOG_UUCP,
+    );
+
+    /**
+     * @param mixed   $facility
+     * @param integer $level    The minimum logging level at which this handler will be triggered
+     * @param Boolean $bubble   Whether the messages that are handled can bubble up the stack or not
+     */
+    public function __construct($facility = LOG_USER, $level = Logger::DEBUG, $bubble = true)
+    {
+        parent::__construct($level, $bubble);
+
+        if (!defined('PHP_WINDOWS_VERSION_BUILD')) {
+            $this->facilities['local0'] = LOG_LOCAL0;
+            $this->facilities['local1'] = LOG_LOCAL1;
+            $this->facilities['local2'] = LOG_LOCAL2;
+            $this->facilities['local3'] = LOG_LOCAL3;
+            $this->facilities['local4'] = LOG_LOCAL4;
+            $this->facilities['local5'] = LOG_LOCAL5;
+            $this->facilities['local6'] = LOG_LOCAL6;
+            $this->facilities['local7'] = LOG_LOCAL7;
+        }
+
+        // convert textual description of facility to syslog constant
+        if (array_key_exists(strtolower($facility), $this->facilities)) {
+            $facility = $this->facilities[strtolower($facility)];
+        } elseif (!in_array($facility, array_values($this->facilities), true)) {
+            throw new \UnexpectedValueException('Unknown facility value "'.$facility.'" given');
+        }
+
+        $this->facility = $facility;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function getDefaultFormatter()
+    {
+        return new LineFormatter('%channel%.%level_name%: %message% %context% %extra%');
+    }
+}

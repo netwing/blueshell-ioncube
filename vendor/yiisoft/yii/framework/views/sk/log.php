@@ -1,44 +1,46 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<!-- start log messages -->
+<table class="yiiLog" width="100%" cellpadding="2" style="border-spacing:1px;font:11px Verdana, Arial, Helvetica, sans-serif;background:#EEEEEE;color:#666666;">
+	<tr>
+		<th style="background:black;color:white;" colspan="5">
+			Log aplikácie
+			<?php 
+				$t = round(microtime(true) - YII_BEGIN_TIME, 3);
+				$m = function_exists('memory_get_usage') ?  '['.round(memory_get_usage()/1024/1024, 3).' MB]' : '';
+				echo " * Stránka vygenerovaná za {$t} sek ~ ".round(1/$t)." strán/sek. ".$m;
+			?>
+		</th>
+	</tr>
+	<tr style="background-color: #ccc;">
+	    <th style="width:120px">Čas</th>
+		<th>Úroveň</th>
+		<th>Kategória</th>
+		<th>Zpráva</th>
+	</tr>
+<?php
+$colors=array(
+	CLogger::LEVEL_PROFILE=>'#DFFFE0',
+	CLogger::LEVEL_INFO=>'#FFFFDF',
+	CLogger::LEVEL_WARNING=>'#FFDFE5',
+	CLogger::LEVEL_ERROR=>'#FFC0CB',
+);
+foreach($data as $index=>$log)
+{
+	$color=($index%2)?'#F5F5F5':'#FFFFFF';
+	if(isset($colors[$log[1]]))
+		$color=$colors[$log[1]];
+	$message='<pre>'.CHtml::encode(wordwrap($log[0])).'</pre>';
+	$time=date('H:i:s.',$log[3]).(int)(($log[3]-(int)$log[3])*1000000);
+	$time .= "<br />[+".round(($log[3]-YII_BEGIN_TIME)*1000, 0).'] ms';
+
+	echo <<<EOD
+	<tr style="background:{$color}">
+		<td align="center">{$time}</td>
+		<td>{$log[1]}</td>
+		<td>{$log[2]}</td>
+		<td>{$message}</td>
+	</tr>
+EOD;
+}
 ?>
-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
+</table>
+<!-- end of log messages -->

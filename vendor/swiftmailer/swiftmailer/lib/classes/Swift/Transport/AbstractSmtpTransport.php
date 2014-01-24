@@ -1,223 +1,507 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-wxFZlH7KQOn1EZGY64uh8Y/W3msjMr9yjqpE8v4=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Sends Messages over SMTP.
+ *
+ * @package    Swift
+ * @subpackage Transport
+ * @author     Chris Corbyn
+ */
+abstract class Swift_Transport_AbstractSmtpTransport implements Swift_Transport
+{
+    /** Input-Output buffer for sending/receiving SMTP commands and responses */
+    protected $_buffer;
+
+    /** Connection status */
+    protected $_started = false;
+
+    /** The domain name to use in HELO command */
+    protected $_domain = '[127.0.0.1]';
+
+    /** The event dispatching layer */
+    protected $_eventDispatcher;
+
+    /** Source Ip */
+    protected $_sourceIp;
+
+    /** Return an array of params for the Buffer */
+    abstract protected function _getBufferParams();
+
+    /**
+     * Creates a new EsmtpTransport using the given I/O buffer.
+     *
+     * @param Swift_Transport_IoBuffer     $buf
+     * @param Swift_Events_EventDispatcher $dispatcher
+     */
+    public function __construct(Swift_Transport_IoBuffer $buf, Swift_Events_EventDispatcher $dispatcher)
+    {
+        $this->_eventDispatcher = $dispatcher;
+        $this->_buffer = $buf;
+        $this->_lookupHostname();
+    }
+
+    /**
+     * Set the name of the local domain which Swift will identify itself as.
+     *
+     * This should be a fully-qualified domain name and should be truly the domain
+     * you're using.
+     *
+     * If your server doesn't have a domain name, use the IP in square
+     * brackets (i.e. [127.0.0.1]).
+     *
+     * @param string $domain
+     *
+     * @return Swift_Transport_AbstractSmtpTransport
+     */
+    public function setLocalDomain($domain)
+    {
+        $this->_domain = $domain;
+
+        return $this;
+    }
+
+    /**
+     * Get the name of the domain Swift will identify as.
+     *
+     * @return string
+     */
+    public function getLocalDomain()
+    {
+        return $this->_domain;
+    }
+
+    /**
+     * Sets the source IP.
+     *
+     * @param string $source
+     */
+    public function setSourceIp($source)
+    {
+        $this->_sourceIp=$source;
+    }
+
+    /**
+     * Returns the IP used to connect to the destination
+     *
+     * @return string
+     */
+    public function getSourceIp()
+    {
+        return $this->_sourceIp;
+    }
+
+    /**
+     * Start the SMTP connection.
+     */
+    public function start()
+    {
+        if (!$this->_started) {
+            if ($evt = $this->_eventDispatcher->createTransportChangeEvent($this)) {
+                $this->_eventDispatcher->dispatchEvent($evt, 'beforeTransportStarted');
+                if ($evt->bubbleCancelled()) {
+                    return;
+                }
+            }
+
+            try {
+                $this->_buffer->initialize($this->_getBufferParams());
+            } catch (Swift_TransportException $e) {
+                $this->_throwException($e);
+            }
+            $this->_readGreeting();
+            $this->_doHeloCommand();
+
+            if ($evt) {
+                $this->_eventDispatcher->dispatchEvent($evt, 'transportStarted');
+            }
+
+            $this->_started = true;
+        }
+    }
+
+    /**
+     * Test if an SMTP connection has been established.
+     *
+     * @return boolean
+     */
+    public function isStarted()
+    {
+        return $this->_started;
+    }
+
+    /**
+     * Send the given Message.
+     *
+     * Recipient/sender data will be retrieved from the Message API.
+     * The return value is the number of recipients who were accepted for delivery.
+     *
+     * @param Swift_Mime_Message $message
+     * @param string[]           $failedRecipients An array of failures by-reference
+     *
+     * @return int
+     */
+    public function send(Swift_Mime_Message $message, &$failedRecipients = null)
+    {
+        $sent = 0;
+        $failedRecipients = (array) $failedRecipients;
+
+        if ($evt = $this->_eventDispatcher->createSendEvent($this, $message)) {
+            $this->_eventDispatcher->dispatchEvent($evt, 'beforeSendPerformed');
+            if ($evt->bubbleCancelled()) {
+                return 0;
+            }
+        }
+
+        if (!$reversePath = $this->_getReversePath($message)) {
+            throw new Swift_TransportException(
+                'Cannot send message without a sender address'
+                );
+        }
+
+        $to = (array) $message->getTo();
+        $cc = (array) $message->getCc();
+        $bcc = (array) $message->getBcc();
+
+        $message->setBcc(array());
+
+        try {
+            $sent += $this->_sendTo($message, $reversePath, $to, $failedRecipients);
+            $sent += $this->_sendCc($message, $reversePath, $cc, $failedRecipients);
+            $sent += $this->_sendBcc($message, $reversePath, $bcc, $failedRecipients);
+        } catch (Exception $e) {
+            $message->setBcc($bcc);
+            throw $e;
+        }
+
+        $message->setBcc($bcc);
+
+        if ($evt) {
+            if ($sent == count($to) + count($cc) + count($bcc)) {
+                $evt->setResult(Swift_Events_SendEvent::RESULT_SUCCESS);
+            } elseif ($sent > 0) {
+                $evt->setResult(Swift_Events_SendEvent::RESULT_TENTATIVE);
+            } else {
+                $evt->setResult(Swift_Events_SendEvent::RESULT_FAILED);
+            }
+            $evt->setFailedRecipients($failedRecipients);
+            $this->_eventDispatcher->dispatchEvent($evt, 'sendPerformed');
+        }
+
+        $message->generateId(); //Make sure a new Message ID is used
+
+        return $sent;
+    }
+
+    /**
+     * Stop the SMTP connection.
+     */
+    public function stop()
+    {
+        if ($this->_started) {
+            if ($evt = $this->_eventDispatcher->createTransportChangeEvent($this)) {
+                $this->_eventDispatcher->dispatchEvent($evt, 'beforeTransportStopped');
+                if ($evt->bubbleCancelled()) {
+                    return;
+                }
+            }
+
+            try {
+                $this->executeCommand("QUIT\r\n", array(221));
+            } catch (Swift_TransportException $e) {}
+
+            try {
+                $this->_buffer->terminate();
+
+                if ($evt) {
+                    $this->_eventDispatcher->dispatchEvent($evt, 'transportStopped');
+                }
+            } catch (Swift_TransportException $e) {
+                $this->_throwException($e);
+            }
+        }
+        $this->_started = false;
+    }
+
+    /**
+     * Register a plugin.
+     *
+     * @param Swift_Events_EventListener $plugin
+     */
+    public function registerPlugin(Swift_Events_EventListener $plugin)
+    {
+        $this->_eventDispatcher->bindEventListener($plugin);
+    }
+
+    /**
+     * Reset the current mail transaction.
+     */
+    public function reset()
+    {
+        $this->executeCommand("RSET\r\n", array(250));
+    }
+
+    /**
+     * Get the IoBuffer where read/writes are occurring.
+     *
+     * @return Swift_Transport_IoBuffer
+     */
+    public function getBuffer()
+    {
+        return $this->_buffer;
+    }
+
+    /**
+     * Run a command against the buffer, expecting the given response codes.
+     *
+     * If no response codes are given, the response will not be validated.
+     * If codes are given, an exception will be thrown on an invalid response.
+     *
+     * @param string   $command
+     * @param int[]    $codes
+     * @param string[] $failures An array of failures by-reference
+     *
+     * @return string
+     */
+    public function executeCommand($command, $codes = array(), &$failures = null)
+    {
+        $failures = (array) $failures;
+        $seq = $this->_buffer->write($command);
+        $response = $this->_getFullResponse($seq);
+        if ($evt = $this->_eventDispatcher->createCommandEvent($this, $command, $codes)) {
+            $this->_eventDispatcher->dispatchEvent($evt, 'commandSent');
+        }
+        $this->_assertResponseCode($response, $codes);
+
+        return $response;
+    }
+
+    // -- Protected methods
+
+    /** Read the opening SMTP greeting */
+    protected function _readGreeting()
+    {
+        $this->_assertResponseCode($this->_getFullResponse(0), array(220));
+    }
+
+    /** Send the HELO welcome */
+    protected function _doHeloCommand()
+    {
+        $this->executeCommand(
+            sprintf("HELO %s\r\n", $this->_domain), array(250)
+            );
+    }
+
+    /** Send the MAIL FROM command */
+    protected function _doMailFromCommand($address)
+    {
+        $this->executeCommand(
+            sprintf("MAIL FROM: <%s>\r\n", $address), array(250)
+            );
+    }
+
+    /** Send the RCPT TO command */
+    protected function _doRcptToCommand($address)
+    {
+        $this->executeCommand(
+            sprintf("RCPT TO: <%s>\r\n", $address), array(250, 251, 252)
+            );
+    }
+
+    /** Send the DATA command */
+    protected function _doDataCommand()
+    {
+        $this->executeCommand("DATA\r\n", array(354));
+    }
+
+    /** Stream the contents of the message over the buffer */
+    protected function _streamMessage(Swift_Mime_Message $message)
+    {
+        $this->_buffer->setWriteTranslations(array("\r\n." => "\r\n.."));
+        try {
+            $message->toByteStream($this->_buffer);
+            $this->_buffer->flushBuffers();
+        } catch (Swift_TransportException $e) {
+            $this->_throwException($e);
+        }
+        $this->_buffer->setWriteTranslations(array());
+        $this->executeCommand("\r\n.\r\n", array(250));
+    }
+
+    /** Determine the best-use reverse path for this message */
+    protected function _getReversePath(Swift_Mime_Message $message)
+    {
+        $return = $message->getReturnPath();
+        $sender = $message->getSender();
+        $from = $message->getFrom();
+        $path = null;
+        if (!empty($return)) {
+            $path = $return;
+        } elseif (!empty($sender)) {
+            // Don't use array_keys
+            reset($sender); // Reset Pointer to first pos
+            $path = key($sender); // Get key
+        } elseif (!empty($from)) {
+            reset($from); // Reset Pointer to first pos
+            $path = key($from); // Get key
+        }
+
+        return $path;
+    }
+
+    /** Throw a TransportException, first sending it to any listeners */
+    protected function _throwException(Swift_TransportException $e)
+    {
+        if ($evt = $this->_eventDispatcher->createTransportExceptionEvent($this, $e)) {
+            $this->_eventDispatcher->dispatchEvent($evt, 'exceptionThrown');
+            if (!$evt->bubbleCancelled()) {
+                throw $e;
+            }
+        } else {
+            throw $e;
+        }
+    }
+
+    /** Throws an Exception if a response code is incorrect */
+    protected function _assertResponseCode($response, $wanted)
+    {
+        list($code) = sscanf($response, '%3d');
+        $valid = (empty($wanted) || in_array($code, $wanted));
+
+        if ($evt = $this->_eventDispatcher->createResponseEvent($this, $response,
+            $valid))
+        {
+            $this->_eventDispatcher->dispatchEvent($evt, 'responseReceived');
+        }
+
+        if (!$valid) {
+            $this->_throwException(
+                new Swift_TransportException(
+                    'Expected response code ' . implode('/', $wanted) . ' but got code ' .
+                    '"' . $code . '", with message "' . $response . '"',
+                    $code)
+                );
+        }
+    }
+
+    /** Get an entire multi-line response using its sequence number */
+    protected function _getFullResponse($seq)
+    {
+        $response = '';
+        try {
+            do {
+                $line = $this->_buffer->readLine($seq);
+                $response .= $line;
+            } while (null !== $line && false !== $line && ' ' != $line{3});
+        } catch (Swift_IoException $e) {
+            $this->_throwException(
+                new Swift_TransportException(
+                    $e->getMessage())
+                );
+        } catch (Swift_TransportException $e) {
+            $this->_throwException($e);
+        }
+
+        return $response;
+    }
+
+    // -- Private methods
+
+    /** Send an email to the given recipients from the given reverse path */
+    private function _doMailTransaction($message, $reversePath, array $recipients, array &$failedRecipients)
+    {
+        $sent = 0;
+        $this->_doMailFromCommand($reversePath);
+        foreach ($recipients as $forwardPath) {
+            try {
+                $this->_doRcptToCommand($forwardPath);
+                $sent++;
+            } catch (Swift_TransportException $e) {
+                $failedRecipients[] = $forwardPath;
+            }
+        }
+
+        if ($sent != 0) {
+            $this->_doDataCommand();
+            $this->_streamMessage($message);
+        } else {
+            $this->reset();
+        }
+
+        return $sent;
+    }
+
+    /** Send a message to the given To: recipients */
+    private function _sendTo(Swift_Mime_Message $message, $reversePath, array $to, array &$failedRecipients)
+    {
+        if (empty($to)) {
+            return 0;
+        }
+
+        return $this->_doMailTransaction($message, $reversePath, array_keys($to),
+            $failedRecipients);
+    }
+
+    /** Send a message to the given Cc: recipients */
+    private function _sendCc(Swift_Mime_Message $message, $reversePath, array $cc, array &$failedRecipients)
+    {
+        if (empty($cc)) {
+            return 0;
+        }
+
+        return $this->_doMailTransaction($message, $reversePath, array_keys($cc),
+            $failedRecipients);
+    }
+
+    /** Send a message to all Bcc: recipients */
+    private function _sendBcc(Swift_Mime_Message $message, $reversePath, array $bcc, array &$failedRecipients)
+    {
+        $sent = 0;
+        foreach ($bcc as $forwardPath => $name) {
+            $message->setBcc(array($forwardPath => $name));
+            $sent += $this->_doMailTransaction(
+                $message, $reversePath, array($forwardPath), $failedRecipients
+                );
+        }
+
+        return $sent;
+    }
+
+    /** Try to determine the hostname of the server this is run on */
+    private function _lookupHostname()
+    {
+        if (!empty($_SERVER['SERVER_NAME'])
+            && $this->_isFqdn($_SERVER['SERVER_NAME']))
+        {
+            $this->_domain = $_SERVER['SERVER_NAME'];
+        } elseif (!empty($_SERVER['SERVER_ADDR'])) {
+            $this->_domain = sprintf('[%s]', $_SERVER['SERVER_ADDR']);
+        }
+    }
+
+    /** Determine is the $hostname is a fully-qualified name */
+    private function _isFqdn($hostname)
+    {
+        // We could do a really thorough check, but there's really no point
+        if (false !== $dotPos = strpos($hostname, '.')) {
+            return ($dotPos > 0) && ($dotPos != strlen($hostname) - 1);
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Destructor.
+     */
+    public function __destruct()
+    {
+        $this->stop();
+    }
+}

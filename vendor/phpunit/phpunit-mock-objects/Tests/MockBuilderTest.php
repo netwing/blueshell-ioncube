@@ -1,72 +1,152 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * PHPUnit
+ *
+ * Copyright (c) 2010-2013, Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHPUnit_MockObject
+ * @author     Giorgio Sironi <piccoloprincipeazzurro@gmail.com>
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      File available since Release 1.0.0
+ */
+
+require_once 'PHPUnit/Framework/TestCase.php';
+
+require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'Mockable.php';
+
+/**
+ * @package    PHPUnit_MockObject
+ * @author     Giorgio Sironi <piccoloprincipeazzurro@gmail.com>
+ * @author     Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @copyright  2010-2013 Sebastian Bergmann <sb@sebastian-bergmann.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/phpunit-mock-objects
+ * @since      File available since Release 1.0.0
+ */
+class Framework_MockBuilderTest extends PHPUnit_Framework_TestCase
+{
+    public function testMockBuilderRequiresClassName()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $mock = $spec->getMock();
+        $this->assertTrue($mock instanceof Mockable);
+    }
+
+    public function testByDefaultMocksAllMethods()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $mock = $spec->getMock();
+        $this->assertNull($mock->mockableMethod());
+        $this->assertNull($mock->anotherMockableMethod());
+    }
+
+    public function testMethodsToMockCanBeSpecified()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $spec->setMethods(array('mockableMethod'));
+        $mock = $spec->getMock();
+        $this->assertNull($mock->mockableMethod());
+        $this->assertTrue($mock->anotherMockableMethod());
+    }
+
+    public function testByDefaultDoesNotPassArgumentsToTheConstructor()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $mock = $spec->getMock();
+        $this->assertEquals(array(NULL, NULL), $mock->constructorArgs);
+    }
+
+    public function testMockClassNameCanBeSpecified()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $spec->setMockClassName('ACustomClassName');
+        $mock = $spec->getMock();
+        $this->assertTrue($mock instanceof ACustomClassName);
+    }
+
+    public function testConstructorArgumentsCanBeSpecified()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $spec->setConstructorArgs($expected = array(23, 42));
+        $mock = $spec->getMock();
+        $this->assertEquals($expected, $mock->constructorArgs);
+    }
+
+    public function testOriginalConstructorCanBeDisabled()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $spec->disableOriginalConstructor();
+        $mock = $spec->getMock();
+        $this->assertNull($mock->constructorArgs);
+    }
+
+    public function testByDefaultOriginalCloneIsPreserved()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $mock = $spec->getMock();
+        $cloned = clone $mock;
+        $this->assertTrue($cloned->cloned);
+    }
+
+    public function testOriginalCloneCanBeDisabled()
+    {
+        $spec = $this->getMockBuilder('Mockable');
+        $spec->disableOriginalClone();
+        $mock = $spec->getMock();
+        $mock->cloned = FALSE;
+        $cloned = clone $mock;
+        $this->assertFalse($cloned->cloned);
+    }
+
+    public function testCallingAutoloadCanBeDisabled()
+    {
+        // it is not clear to me how to test this nor the difference
+        // between calling it or not
+        $this->markTestIncomplete();
+    }
+
+    public function testProvidesAFluentInterface()
+    {
+        $spec = $this->getMockBuilder('Mockable')
+                     ->setMethods(array('mockableMethod'))
+                     ->setConstructorArgs(array())
+                     ->setMockClassName('DummyClassName')
+                     ->disableOriginalConstructor()
+                     ->disableOriginalClone()
+                     ->disableAutoload();
+        $this->assertTrue($spec instanceof PHPUnit_Framework_MockObject_MockBuilder);
+    }
+}

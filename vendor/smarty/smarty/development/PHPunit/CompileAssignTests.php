@@ -1,100 +1,154 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests compilation of assign tags
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for assign tags tests
+*/
+class CompileAssignTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test old style of assign tag
+    */
+    public function testAssignOld1()
+    {
+        $this->assertEquals("1", $this->smarty->fetch('eval:{assign var=foo   value=1}{$foo}'));
+        $this->assertEquals("1", $this->smarty->fetch('eval:{assign var = foo   value= 1}{$foo}'));
+    }
+    public function testAssignOld2()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=\'foo\' value=1}{$foo}');
+        $this->assertEquals("1", $this->smarty->fetch($tpl));
+    }
+    public function testAssignOld3()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var="foo" value=1}{$foo}');
+        $this->assertEquals("1", $this->smarty->fetch($tpl));
+    }
+    public function testAssignOld4()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=bar}{$foo}');
+        $this->assertEquals("bar", $this->smarty->fetch($tpl));
+    }
+    public function testAssignOld5()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=1+2}{$foo}');
+        $this->assertEquals("3", $this->smarty->fetch($tpl));
+    }
+    public function testAssignOld6()
+    {
+        $this->smarty->security_policy->php_functions = array('strlen');
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=strlen(\'bar\')}{$foo}');
+        $this->assertEquals("3", $this->smarty->fetch($tpl));
+    }
+    public function testAssignOld7()
+    {
+        $this->smarty->security_policy->php_modifiers = array('strlen');
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=\'bar\'|strlen}{$foo}');
+        $this->assertEquals("3", $this->smarty->fetch($tpl));
+    }
+    public function testAssignOld8()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[9,8,7,6]}{foreach $foo as $x}{$x}{/foreach}');
+        $this->assertEquals("9876", $this->smarty->fetch($tpl));
+    }
+    public function testAssignOld9()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[\'a\'=>9,\'b\'=>8,\'c\'=>7,\'d\'=>6]}{foreach $foo as $x}{$x@key}{$x}{/foreach}');
+        $this->assertEquals("a9b8c7d6", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test assign tag shorthands
+    */
+    public function testAssignShort1()
+    {
+        $this->assertEquals("1", $this->smarty->fetch('string:{assign foo  value=1}{$foo}'));
+    }
+    public function testAssignShort2()
+    {
+        $this->assertEquals("1", $this->smarty->fetch('string:{assign foo 1}{$foo}'));
+    }
+    /**
+    * test new style of assign tag
+    */
+    public function testAssignNew1()
+    {
+        $this->assertEquals("1", $this->smarty->fetch('eval:{$foo=1}{$foo}'));
+        $this->assertEquals("1", $this->smarty->fetch('eval:{$foo =1}{$foo}'));
+        $this->assertEquals("1", $this->smarty->fetch('eval:{$foo =  1}{$foo}'));
+    }
+    public function testAssignNew2()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{$foo=bar}{$foo}');
+        $this->assertEquals("bar", $this->smarty->fetch($tpl));
+    }
+    public function testAssignNew3()
+    {
+        $this->assertEquals("3", $this->smarty->fetch('eval:{$foo=1+2}{$foo}'));
+        $this->assertEquals("3", $this->smarty->fetch('eval:{$foo = 1+2}{$foo}'));
+        $this->assertEquals("3", $this->smarty->fetch('eval:{$foo = 1 + 2}{$foo}'));
+    }
+    public function testAssignNew4()
+    {
+        $this->smarty->security_policy->php_functions = array('strlen');
+        $tpl = $this->smarty->createTemplate('eval:{$foo=strlen(\'bar\')}{$foo}');
+        $this->assertEquals("3", $this->smarty->fetch($tpl));
+    }
+    public function testAssignNew5()
+    {
+        $this->smarty->security_policy->php_modifiers = array('strlen');
+        $tpl = $this->smarty->createTemplate("eval:{\$foo='bar'|strlen}{\$foo}");
+        $this->assertEquals("3", $this->smarty->fetch($tpl));
+    }
+    public function testAssignNew6()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{\$foo=[9,8,7,6]}{foreach \$foo as \$x}{\$x}{/foreach}");
+        $this->assertEquals("9876", $this->smarty->fetch($tpl));
+    }
+    public function testAssignNew7()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{\$foo=['a'=>9,'b'=>8,'c'=>7,'d'=>6]}{foreach \$foo as \$x}{\$x@key}{\$x}{/foreach}");
+        $this->assertEquals("a9b8c7d6", $this->smarty->fetch($tpl));
+    }
+    public function testAssignArrayAppend()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{\$foo =1}{\$foo[] = 2}{foreach \$foo as \$x}{\$x@key}{\$x}{/foreach}");
+        $this->assertEquals("0112", $this->smarty->fetch($tpl));
+    }
+    public function testAssignArrayAppend2()
+    {
+        $this->smarty->assign('foo',1);
+        $tpl = $this->smarty->createTemplate("eval:{\$foo[]=2}{foreach \$foo as \$x}{\$x@key}{\$x}{/foreach}", null, null, $this->smarty);
+        $this->assertEquals("0112", $this->smarty->fetch($tpl));
+        $tpl2 = $this->smarty->createTemplate("eval:{\$foo}", null, null, $this->smarty);
+        $this->assertEquals("1", $this->smarty->fetch($tpl2));
+    }
+    public function testAssignArrayAppend3()
+    {
+        $this->smarty->assign('foo',1);
+        $tpl = $this->smarty->createTemplate("eval:{\$foo[]=2 scope=root}{foreach \$foo as \$x}{\$x@key}{\$x}{/foreach}", null, null, $this->smarty);
+        $this->assertEquals("0112", $this->smarty->fetch($tpl));
+        $tpl2 = $this->smarty->createTemplate("eval:{foreach \$foo as \$x}{\$x@key}{\$x}{/foreach}", null, null, $this->smarty);
+        $this->assertEquals("0112", $this->smarty->fetch($tpl2));
+    }
+    public function testAssignNestedArray()
+    {
+        $tpl = $this->smarty->createTemplate("eval:{\$foo['a'][4]=1}{\$foo['a'][4]}");
+        $this->assertEquals("1", $this->smarty->fetch($tpl));
+    }
+}

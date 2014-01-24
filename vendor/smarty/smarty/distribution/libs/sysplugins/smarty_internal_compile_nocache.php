@@ -1,34 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-DO5o1iqQH3QE0BiqybQJ
+<?php
+/**
+ * Smarty Internal Plugin Compile Nocache
+ *
+ * Compiles the {nocache} {/nocache} tags.
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Nocache Classv
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Nocache extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {nocache} tag
+     *
+     * This tag does not generate compiled output. It only sets a compiler flag.
+     *
+     * @param  array  $args     array with attributes from parser
+     * @param  object $compiler compiler object
+     * @return bool
+     */
+    public function compile($args, $compiler)
+    {
+        $_attr = $this->getAttributes($compiler, $args);
+        if ($_attr['nocache'] === true) {
+            $compiler->trigger_template_error('nocache option not allowed', $compiler->lex->taglineno);
+        }
+        if ($compiler->template->caching) {
+        // enter nocache mode
+        $this->openTag($compiler, 'nocache', $compiler->nocache);
+        $compiler->nocache = true;
+        }
+        // this tag does not return compiled code
+        $compiler->has_code = false;
+
+        return true;
+    }
+
+}
+
+/**
+ * Smarty Internal Plugin Compile Nocacheclose Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Nocacheclose extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {/nocache} tag
+     *
+     * This tag does not generate compiled output. It only sets a compiler flag.
+     *
+     * @param  array  $args     array with attributes from parser
+     * @param  object $compiler compiler object
+     * @return bool
+     */
+    public function compile($args, $compiler)
+    {
+        $_attr = $this->getAttributes($compiler, $args);
+        if ($compiler->template->caching) {
+        // restore old nocache mode
+        $compiler->nocache = $this->closeTag($compiler, 'nocache');
+        }
+        // this tag does not return compiled code
+        $compiler->has_code = false;
+
+        return true;
+    }
+
+}

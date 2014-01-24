@@ -1,74 +1,140 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\EventDispatcher\Tests;
+
+use Symfony\Component\EventDispatcher\GenericEvent;
+
+/**
+ * Test class for Event.
+ */
+class GenericEventTest extends \PHPUnit_Framework_TestCase
+{
+
+    /**
+     * @var GenericEvent
+     */
+    private $event;
+
+    private $subject;
+
+    /**
+     * Prepares the environment before running a test.
+     */
+    protected function setUp()
+    {
+        parent::setUp();
+
+        $this->subject = new \stdClass();
+        $this->event = new GenericEvent($this->subject, array('name' => 'Event'), 'foo');
+    }
+
+    /**
+     * Cleans up the environment after running a test.
+     */
+    protected function tearDown()
+    {
+        $this->subject = null;
+        $this->event = null;
+
+        parent::tearDown();
+    }
+
+    public function testConstruct()
+    {
+        $this->assertEquals($this->event, new GenericEvent($this->subject, array('name' => 'Event')));
+    }
+
+    /**
+     * Tests Event->getArgs()
+     */
+    public function testGetArguments()
+    {
+        // test getting all
+        $this->assertSame(array('name' => 'Event'), $this->event->getArguments());
+    }
+
+    public function testSetArguments()
+    {
+        $result = $this->event->setArguments(array('foo' => 'bar'));
+        $this->assertAttributeSame(array('foo' => 'bar'), 'arguments', $this->event);
+        $this->assertSame($this->event, $result);
+    }
+
+    public function testSetArgument()
+    {
+        $result = $this->event->setArgument('foo2', 'bar2');
+        $this->assertAttributeSame(array('name' => 'Event', 'foo2' => 'bar2'), 'arguments', $this->event);
+        $this->assertEquals($this->event, $result);
+    }
+
+    public function testGetArgument()
+    {
+        // test getting key
+        $this->assertEquals('Event', $this->event->getArgument('name'));
+    }
+
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testGetArgException()
+    {
+        $this->event->getArgument('nameNotExist');
+    }
+
+    public function testOffsetGet()
+    {
+        // test getting key
+        $this->assertEquals('Event', $this->event['name']);
+
+        // test getting invalid arg
+        $this->setExpectedException('InvalidArgumentException');
+        $this->assertFalse($this->event['nameNotExist']);
+    }
+
+    public function testOffsetSet()
+    {
+        $this->event['foo2'] = 'bar2';
+        $this->assertAttributeSame(array('name' => 'Event', 'foo2' => 'bar2'), 'arguments', $this->event);
+    }
+
+    public function testOffsetUnset()
+    {
+        unset($this->event['name']);
+        $this->assertAttributeSame(array(), 'arguments', $this->event);
+    }
+
+    public function testOffsetIsset()
+    {
+        $this->assertTrue(isset($this->event['name']));
+        $this->assertFalse(isset($this->event['nameNotExist']));
+    }
+
+    public function testHasArgument()
+    {
+        $this->assertTrue($this->event->hasArgument('name'));
+        $this->assertFalse($this->event->hasArgument('nameNotExist'));
+    }
+
+    public function testGetSubject()
+    {
+        $this->assertSame($this->subject, $this->event->getSubject());
+    }
+
+    public function testHasIterator()
+    {
+        $data = array();
+        foreach ($this->event as $key => $value) {
+            $data[$key] = $value;
+        }
+        $this->assertEquals(array('name' => 'Event'), $data);
+    }
+}

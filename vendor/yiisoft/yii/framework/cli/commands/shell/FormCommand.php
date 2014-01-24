@@ -1,70 +1,122 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * FormCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * FormCommand generates a form view based on a specified model.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.cli.commands.shell
+ * @since 1.0
+ */
+class FormCommand extends CConsoleCommand
+{
+	/**
+	 * @var string the directory that contains templates for the form command.
+	 * Defaults to null, meaning using 'framework/cli/views/shell/form'.
+	 * If you set this path and some views are missing in the directory,
+	 * the default views will be used.
+	 */
+	public $templatePath;
+
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  form <model-class> <view-name> [scenario]
+
+DESCRIPTION
+  This command generates a form view that can be used to collect inputs
+  for the specified model.
+
+PARAMETERS
+ * model-class: required, model class. This can be either the name of
+   the model class (e.g. 'ContactForm') or the path alias of the model
+   class file (e.g. 'application.models.ContactForm'). The former can
+   be used only if the class can be autoloaded.
+
+ * view-name: required, the name of the view to be generated. This should
+   be the path alias of the view script (e.g. 'application.views.site.contact').
+
+ * scenario: optional, the name of the scenario in which the model is used
+   (e.g. 'update', 'login'). This determines which model attributes the
+   generated form view will be used to collect user inputs for. If this
+   is not provided, the scenario will be assumed to be '' (empty string).
+
+EXAMPLES
+ * Generates the view script for the 'ContactForm' model:
+        form ContactForm application.views.site.contact
+
+EOD;
+	}
+
+	/**
+	 * Execute the action.
+	 * @param array $args command line parameters specific for this command
+	 * @return integer|null non zero application exit code for help or null on success
+	 */
+	public function run($args)
+	{
+		if(!isset($args[0],$args[1]))
+		{
+			echo "Error: both model class and view name are required.\n";
+			echo $this->getHelp();
+			return 1;
+		}
+		$scenario=isset($args[2]) ? $args[2] : '';
+		$modelClass=Yii::import($args[0],true);
+		$model=new $modelClass($scenario);
+		$attributes=$model->getSafeAttributeNames();
+
+		$templatePath=$this->templatePath===null?YII_PATH.'/cli/views/shell/form':$this->templatePath;
+		$viewPath=Yii::getPathOfAlias($args[1]);
+		$viewName=basename($viewPath);
+		$viewPath.='.php';
+		$params=array(
+			'modelClass'=>$modelClass,
+			'viewName'=>$viewName,
+			'attributes'=>$attributes,
+		);
+		$list=array(
+			basename($viewPath)=>array(
+				'source'=>$templatePath.'/form.php',
+				'target'=>$viewPath,
+				'callback'=>array($this,'generateForm'),
+				'params'=>$params,
+			),
+		);
+
+		$this->copyFiles($list);
+
+		$actionFile=$templatePath.'/action.php';
+		if(!is_file($actionFile))  // fall back to default ones
+			$actionFile=YII_PATH.'/cli/views/shell/form/action.php';
+
+		echo "The following form view has been successfully created:\n";
+		echo "\t$viewPath\n\n";
+		echo "You may use the following code in your controller action:\n\n";
+		echo $this->renderFile($actionFile,$params,true);
+		echo "\n";
+	}
+
+	public function generateForm($source,$params)
+	{
+		if(!is_file($source))  // fall back to default ones
+			$source=YII_PATH.'/cli/views/shell/form/'.basename($source);
+
+		return $this->renderFile($source,$params,true);
+	}
+
+	public function class2id($className)
+	{
+		if(strrpos($className,'Form')===strlen($className)-4)
+			$className=substr($className,0,strlen($className)-4);
+		return trim(strtolower(str_replace('_','-',preg_replace('/(?<![A-Z])[A-Z]/', '-\0', $className))),'-');
+	}
+}

@@ -1,73 +1,113 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-gRjTwurMuow1hY7aU07DQl66eg0dH+41
+<?php
+
+require_once 'Swift/Tests/SwiftUnitTestCase.php';
+require_once 'Swift/Plugins/RedirectingPlugin.php';
+require_once 'Swift/Events/SendEvent.php';
+require_once 'Swift/Transport.php';
+
+class Swift_Plugins_RedirectingPluginTest extends Swift_Tests_SwiftUnitTestCase
+{
+    public function testRecipientCanBeSetAndFetched()
+    {
+        $plugin = new Swift_Plugins_RedirectingPlugin('fabien@example.com');
+        $this->assertEqual('fabien@example.com', $plugin->getRecipient());
+        $plugin->setRecipient('chris@example.com');
+        $this->assertEqual('chris@example.com', $plugin->getRecipient());
+    }
+
+    public function testPluginChangesRecipients()
+    {
+        $message = Swift_Message::newInstance()
+            ->setSubject('...')
+            ->setFrom(array('john@example.com' => 'John Doe'))
+            ->setTo($to = array(
+                'fabien-to@example.com' => 'Fabien (To)',
+                'chris-to@example.com' => 'Chris (To)',
+            ))
+            ->setCc($cc = array(
+                'fabien-cc@example.com' => 'Fabien (Cc)',
+                'chris-cc@example.com' => 'Chris (Cc)',
+            ))
+            ->setBcc($bcc = array(
+                'fabien-bcc@example.com' => 'Fabien (Bcc)',
+                'chris-bcc@example.com' => 'Chris (Bcc)',
+            ))
+            ->setBody('...')
+        ;
+
+        $plugin = new Swift_Plugins_RedirectingPlugin('god@example.com');
+
+        $evt = $this->_createSendEvent($message);
+
+        $plugin->beforeSendPerformed($evt);
+
+        $this->assertEqual($message->getTo(), array('god@example.com' => ''));
+        $this->assertEqual($message->getCc(), array());
+        $this->assertEqual($message->getBcc(), array());
+
+        $plugin->sendPerformed($evt);
+
+        $this->assertEqual($message->getTo(), $to);
+        $this->assertEqual($message->getCc(), $cc);
+        $this->assertEqual($message->getBcc(), $bcc);
+    }
+
+    public function testPluginRespectsAWhitelistOfPatterns()
+    {
+        $message = Swift_Message::newInstance()
+            ->setSubject('...')
+            ->setFrom(array('john@example.com' => 'John Doe'))
+            ->setTo($to = array(
+                'fabien-to@example.com' => 'Fabien (To)',
+                'chris-to@example.com' => 'Chris (To)',
+                'lars-to@internal.com' => 'Lars (To)',
+            ))
+            ->setCc($cc = array(
+                'fabien-cc@example.com' => 'Fabien (Cc)',
+                'chris-cc@example.com' => 'Chris (Cc)',
+                'lars-cc@internal.org' => 'Lars (Cc)',
+            ))
+            ->setBcc($bcc = array(
+                'fabien-bcc@example.com' => 'Fabien (Bcc)',
+                'chris-bcc@example.com' => 'Chris (Bcc)',
+                'john-bcc@example.org' => 'John (Bcc)',
+            ))
+            ->setBody('...')
+        ;
+
+        $recipient = 'god@example.com';
+        $patterns = array('/^.*@internal.[a-z]+$/', '/^john-.*$/');
+
+        $plugin = new Swift_Plugins_RedirectingPlugin($recipient, $patterns);
+
+        $this->assertEqual($recipient, $plugin->getRecipient());
+        $this->assertEqual($plugin->getWhitelist(), $patterns);
+
+        $evt = $this->_createSendEvent($message);
+
+        $plugin->beforeSendPerformed($evt);
+
+        $this->assertEqual($message->getTo(), array('lars-to@internal.com' => 'Lars (To)', 'god@example.com' => null));
+        $this->assertEqual($message->getCc(), array('lars-cc@internal.org' => 'Lars (Cc)'));
+        $this->assertEqual($message->getBcc(), array('john-bcc@example.org' => 'John (Bcc)'));
+
+        $plugin->sendPerformed($evt);
+
+        $this->assertEqual($message->getTo(), $to);
+        $this->assertEqual($message->getCc(), $cc);
+        $this->assertEqual($message->getBcc(), $bcc);
+    }
+
+    // -- Creation Methods
+
+    private function _createSendEvent(Swift_Mime_Message $message)
+    {
+        $evt = $this->_mock('Swift_Events_SendEvent');
+        $this->_checking(Expectations::create()
+            -> ignoring($evt)->getMessage() -> returns($message)
+            -> ignoring($evt)
+            );
+
+        return $evt;
+    }
+}

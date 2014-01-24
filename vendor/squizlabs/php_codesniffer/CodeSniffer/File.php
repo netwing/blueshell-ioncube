@@ -1,1043 +1,2910 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * A PHP_CodeSniffer_File object represents a PHP source file and the tokens
+ * associated with it.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * A PHP_CodeSniffer_File object represents a PHP source file and the tokens
+ * associated with it.
+ *
+ * It provides a means for traversing the token stack, along with
+ * other token related operations. If a PHP_CodeSniffer_Sniff finds and error or
+ *  warning within a PHP_CodeSniffer_File, you can raise an error using the
+ *  addError() or addWarning() methods.
+ *
+ * <b>Token Information</b>
+ *
+ * Each token within the stack contains information about itself:
+ *
+ * <code>
+ *   array(
+ *    'code'       => 301,       // the token type code (see token_get_all())
+ *    'content'    => 'if',      // the token content
+ *    'type'       => 'T_IF',    // the token name
+ *    'line'       => 56,        // the line number when the token is located
+ *    'column'     => 12,        // the column in the line where this token
+ *                               // starts (starts from 1)
+ *    'level'      => 2          // the depth a token is within the scopes open
+ *    'conditions' => array(     // a list of scope condition token
+ *                               // positions => codes that
+ *                     2 => 50,  // openened the scopes that this token exists
+ *                     9 => 353, // in (see conditional tokens section below)
+ *                    ),
+ *   );
+ * </code>
+ *
+ * <b>Conditional Tokens</b>
+ *
+ * In addition to the standard token fields, conditions contain information to
+ * determine where their scope begins and ends:
+ *
+ * <code>
+ *   array(
+ *    'scope_condition' => 38, // the token position of the condition
+ *    'scope_opener'    => 41, // the token position that started the scope
+ *    'scope_closer'    => 70, // the token position that ended the scope
+ *   );
+ * </code>
+ *
+ * The condition, the scope opener and the scope closer each contain this
+ * information.
+ *
+ * <b>Parenthesis Tokens</b>
+ *
+ * Each parenthesis token (T_OPEN_PARENTHESIS and T_CLOSE_PARENTHESIS) has a
+ * reference to their opening and closing parenthesis, one being itself, the
+ * other being its opposite.
+ *
+ * <code>
+ *   array(
+ *    'parenthesis_opener' => 34,
+ *    'parenthesis_closer' => 40,
+ *   );
+ * </code>
+ *
+ * Some tokens can "own" a set of parenthesis. For example a T_FUNCTION token
+ * has parenthesis around its argument list. These tokens also have the
+ * parenthesis_opener and and parenthesis_closer indices. Not all parenthesis
+ * have owners, for example parenthesis used for arithmetic operations and
+ * function calls. The parenthesis tokens that have an owner have the following
+ * auxiliary array indices.
+ *
+ * <code>
+ *   array(
+ *    'parenthesis_opener' => 34,
+ *    'parenthesis_closer' => 40,
+ *    'parenthesis_owner'  => 33,
+ *   );
+ * </code>
+ *
+ * Each token within a set of parenthesis also has an array indice
+ * 'nested_parenthesis' which is an array of the
+ * left parenthesis => right parenthesis token positions.
+ *
+ * <code>
+ *   'nested_parenthesis' => array(
+ *                             12 => 15
+ *                             11 => 14
+ *                            );
+ * </code>
+ *
+ * <b>Extended Tokens</b>
+ *
+ * PHP_CodeSniffer extends and augments some of the tokens created by
+ * <i>token_get_all()</i>. A full list of these tokens can be seen in the
+ * <i>Tokens.php</i> file.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PHP_CodeSniffer_File
+{
+
+    /**
+     * The absolute path to the file associated with this object.
+     *
+     * @var string
+     */
+    private $_file = '';
+
+    /**
+     * The EOL character this file uses.
+     *
+     * @var string
+     */
+    public $eolChar = '';
+
+    /**
+     * The PHP_CodeSniffer object controlling this run.
+     *
+     * @var PHP_CodeSniffer
+     */
+    public $phpcs = null;
+
+    /**
+     * The tokenizer being used for this file.
+     *
+     * @var object
+     */
+    public $tokenizer = null;
+
+    /**
+     * The tokenizer being used for this file.
+     *
+     * @var string
+     */
+    public $tokenizerType = 'PHP';
+
+    /**
+     * The number of tokens in this file.
+     *
+     * Stored here to save calling count() everywhere.
+     *
+     * @var int
+     */
+    public $numTokens = 0;
+
+    /**
+     * The tokens stack map.
+     *
+     * Note that the tokens in this array differ in format to the tokens
+     * produced by token_get_all(). Tokens are initially produced with
+     * token_get_all(), then augmented so that it's easier to process them.
+     *
+     * @var array()
+     * @see Tokens.php
+     */
+    private $_tokens = array();
+
+    /**
+     * The errors raised from PHP_CodeSniffer_Sniffs.
+     *
+     * @var array()
+     * @see getErrors()
+     */
+    private $_errors = array();
+
+    /**
+     * The warnings raised form PHP_CodeSniffer_Sniffs.
+     *
+     * @var array()
+     * @see getWarnings()
+     */
+    private $_warnings = array();
+
+    /**
+     * Record the errors and warnings raised.
+     *
+     * @var bool
+     */
+    private $_recordErrors = true;
+
+    /**
+     * And array of lines being ignored by PHP_CodeSniffer.
+     *
+     * @var array()
+     */
+    private $_ignoredLines = array();
+
+    /**
+     * The total number of errors raised.
+     *
+     * @var int
+     */
+    private $_errorCount = 0;
+
+    /**
+     * The total number of warnings raised.
+     *
+     * @var int
+     */
+    private $_warningCount = 0;
+
+    /**
+     * An array of sniffs listening to this file's processing.
+     *
+     * @var array(PHP_CodeSniffer_Sniff)
+     */
+    private $_listeners = array();
+
+    /**
+     * The class name of the sniff currently processing the file.
+     *
+     * @var string
+     */
+    private $_activeListener = '';
+
+    /**
+     * An array of sniffs being processed and how long they took.
+     *
+     * @var array()
+     */
+    private $_listenerTimes = array();
+
+    /**
+     * An array of extensions mapping to the tokenizer to use.
+     *
+     * This value gets set by PHP_CodeSniffer when the object is created.
+     *
+     * @var array
+     */
+    protected $tokenizers = array();
+
+    /**
+     * An array of rules from the ruleset.xml file.
+     *
+     * This value gets set by PHP_CodeSniffer when the object is created.
+     * It may be empty, indicating that the ruleset does not override
+     * any of the default sniff settings.
+     *
+     * @var array
+     */
+    protected $ruleset = array();
+
+    /**
+     * An array of sniff codes to restrict violations to.
+     *
+     * This value gets set by PHP_CodeSniffer when the object is created.
+     * It may be empty, indicating that no fitering should take place.
+     *
+     * @var array
+     */
+    protected $restrictions = array();
+
+
+    /**
+     * Constructs a PHP_CodeSniffer_File.
+     *
+     * @param string          $file         The absolute path to the file to process.
+     * @param array(string)   $listeners    The initial listeners listening
+     *                                      to processing of this file.
+     * @param array           $tokenizers   An array of extensions mapping
+     *                                      to the tokenizer to use.
+     * @param array           $ruleset      An array of rules from the
+     *                                      ruleset.xml file.
+     * @param array           $restrictions An array of sniff codes to
+     *                                      restrict violations to.
+     * @param PHP_CodeSniffer $phpcs        The PHP_CodeSniffer object controlling
+     *                                      this run.
+     *
+     * @throws PHP_CodeSniffer_Exception If the register() method does
+     *                                   not return an array.
+     */
+    public function __construct(
+        $file,
+        array $listeners,
+        array $tokenizers,
+        array $ruleset,
+        array $restrictions,
+        PHP_CodeSniffer $phpcs
+    ) {
+        $this->_file        = trim($file);
+        $this->_listeners   = $listeners;
+        $this->tokenizers   = $tokenizers;
+        $this->ruleset      = $ruleset;
+        $this->restrictions = $restrictions;
+        $this->phpcs        = $phpcs;
+
+        $cliValues = $phpcs->cli->getCommandLineValues();
+        if (isset($cliValues['showSources']) === true
+            && $cliValues['showSources'] !== true
+            && array_key_exists('summary', $cliValues['reports']) === true
+            && count($cliValues['reports']) === 1
+        ) {
+            $this->_recordErrors = false;
+        }
+
+    }//end __construct()
+
+
+    /**
+     * Sets the name of the currently active sniff.
+     *
+     * @param string $activeListener The class name of the current sniff.
+     *
+     * @return void
+     */
+    public function setActiveListener($activeListener)
+    {
+        $this->_activeListener = $activeListener;
+
+    }//end setActiveListener()
+
+
+    /**
+     * Adds a listener to the token stack that listens to the specific tokens.
+     *
+     * When PHP_CodeSniffer encounters on the the tokens specified in $tokens,
+     * it invokes the process method of the sniff.
+     *
+     * @param PHP_CodeSniffer_Sniff $listener The listener to add to the
+     *                                        listener stack.
+     * @param array(int)            $tokens   The token types the listener wishes to
+     *                                        listen to.
+     *
+     * @return void
+     */
+    public function addTokenListener(PHP_CodeSniffer_Sniff $listener, array $tokens)
+    {
+        foreach ($tokens as $token) {
+            if (isset($this->_listeners[$token]) === false) {
+                $this->_listeners[$token] = array();
+            }
+
+            if (in_array($listener, $this->_listeners[$token], true) === false) {
+                $this->_listeners[$token][] = $listener;
+            }
+        }
+
+    }//end addTokenListener()
+
+
+    /**
+     * Removes a listener from listening from the specified tokens.
+     *
+     * @param PHP_CodeSniffer_Sniff $listener The listener to remove from the
+     *                                        listener stack.
+     * @param array(int)            $tokens   The token types the listener wishes to
+     *                                        stop listen to.
+     *
+     * @return void
+     */
+    public function removeTokenListener(
+        PHP_CodeSniffer_Sniff $listener,
+        array $tokens
+    ) {
+        foreach ($tokens as $token) {
+            if (isset($this->_listeners[$token]) === false) {
+                continue;
+            }
+
+            if (in_array($listener, $this->_listeners[$token]) === true) {
+                foreach ($this->_listeners[$token] as $pos => $value) {
+                    if ($value === $listener) {
+                        unset($this->_listeners[$token][$pos]);
+                    }
+                }
+            }
+        }
+
+    }//end removeTokenListener()
+
+
+    /**
+     * Returns the token stack for this file.
+     *
+     * @return array()
+     */
+    public function getTokens()
+    {
+        return $this->_tokens;
+
+    }//end getTokens()
+
+
+    /**
+     * Starts the stack traversal and tells listeners when tokens are found.
+     *
+     * @param string $contents The contents to parse. If NULL, the content
+     *                         is taken from the file system.
+     *
+     * @return void
+     */
+    public function start($contents=null)
+    {
+        $this->_parse($contents);
+
+        if (PHP_CODESNIFFER_VERBOSITY > 2) {
+            echo "\t*** START TOKEN PROCESSING ***".PHP_EOL;
+        }
+
+        $foundCode = false;
+        $ignoring  = false;
+
+        // Foreach of the listeners that have registered to listen for this
+        // token, get them to process it.
+        foreach ($this->_tokens as $stackPtr => $token) {
+            // Check for ignored lines.
+            if ($token['code'] === T_COMMENT || $token['code'] === T_DOC_COMMENT) {
+                if (strpos($token['content'], '@codingStandardsIgnoreStart') !== false) {
+                    $ignoring = true;
+                } else if (strpos($token['content'], '@codingStandardsIgnoreEnd') !== false) {
+                    $ignoring = false;
+                    // Ignore this comment too.
+                    $this->_ignoredLines[$token['line']] = true;
+                } else if (strpos($token['content'], '@codingStandardsIgnoreFile') !== false) {
+                    // Ignoring the whole file, just a little late.
+                    $this->_errors       = array();
+                    $this->_warnings     = array();
+                    $this->_errorCount   = 0;
+                    $this->_warningCount = 0;
+                    return;
+                } else if (strpos($token['content'], '@codingStandardsChangeSetting') !== false) {
+                    $start         = strpos($token['content'], '@codingStandardsChangeSetting');
+                    $comment       = substr($token['content'], $start + 30);
+                    $parts         = explode(' ', $comment);
+                    $sniffParts    = explode('.', $parts[0]);
+                    $listenerClass = $sniffParts[0].'_Sniffs_'.$sniffParts[1].'_'.$sniffParts[2].'Sniff';
+                    $this->phpcs->setSniffProperty($listenerClass, $parts[1], $parts[2]);
+                }
+            }
+
+            if ($ignoring === true) {
+                $this->_ignoredLines[$token['line']] = true;
+                continue;
+            }
+
+            if (PHP_CODESNIFFER_VERBOSITY > 2) {
+                $type    = $token['type'];
+                $content = str_replace($this->eolChar, '\n', $token['content']);
+                echo "\t\tProcess token $stackPtr: $type => $content".PHP_EOL;
+            }
+
+            $tokenType = $token['code'];
+            if ($tokenType !== T_INLINE_HTML) {
+                $foundCode = true;
+            }
+
+            if (isset($this->_listeners[$tokenType]) === false) {
+                continue;
+            }
+
+            foreach ($this->_listeners[$tokenType] as $listenerData) {
+                // Make sure this sniff supports the tokenizer
+                // we are currently using.
+                $listener = $listenerData['listener'];
+                $class    = $listenerData['class'];
+
+                if (in_array($this->tokenizerType, $listenerData['tokenizers']) === false) {
+                    continue;
+                }
+
+                // If the file path matches one of our ignore patterns, skip it.
+                $parts = explode('_', str_replace('\\', '_', $class));
+                if (isset($parts[3]) === true) {
+                    $source   = $parts[0].'.'.$parts[2].'.'.substr($parts[3], 0, -5);
+                    $patterns = $this->phpcs->getIgnorePatterns($source);
+                    foreach ($patterns as $pattern => $type) {
+                        // While there is support for a type of each pattern
+                        // (absolute or relative) we don't actually support it here.
+                        $replacements = array(
+                                         '\\,' => ',',
+                                         '*'   => '.*',
+                                        );
+
+                        $pattern = strtr($pattern, $replacements);
+                        if (preg_match("|{$pattern}|i", $this->_file) === 1) {
+                            continue(2);
+                        }
+                    }
+                }
+
+                $this->setActiveListener($class);
+
+                if (PHP_CODESNIFFER_VERBOSITY > 2) {
+                    $startTime = microtime(true);
+                    echo "\t\t\tProcessing ".$this->_activeListener.'... ';
+                }
+
+                $listener->process($this, $stackPtr);
+
+                if (PHP_CODESNIFFER_VERBOSITY > 2) {
+                    $timeTaken = (microtime(true) - $startTime);
+                    if (isset($this->_listenerTimes[$this->_activeListener]) === false) {
+                        $this->_listenerTimes[$this->_activeListener] = 0;
+                    }
+
+                    $this->_listenerTimes[$this->_activeListener] += $timeTaken;
+
+                    $timeTaken = round(($timeTaken), 4);
+                    echo "DONE in $timeTaken seconds".PHP_EOL;
+                }
+
+                $this->_activeListener = '';
+            }//end foreach
+        }//end foreach
+
+        // Remove errors and warnings for ignored lines.
+        foreach ($this->_ignoredLines as $line => $ignore) {
+            if (isset($this->_errors[$line]) === true) {
+                if ($this->_recordErrors === false) {
+                    $this->_errorCount -= $this->_errors[$line];
+                } else {
+                    foreach ($this->_errors[$line] as $col => $errors) {
+                        $this->_errorCount -= count($errors);
+                    }
+                }
+
+                unset($this->_errors[$line]);
+            }
+
+            if (isset($this->_warnings[$line]) === true) {
+                if ($this->_recordErrors === false) {
+                    $this->_errorCount -= $this->_warnings[$line];
+                } else {
+                    foreach ($this->_warnings[$line] as $col => $warnings) {
+                        $this->_warningCount -= count($warnings);
+                    }
+                }
+
+                unset($this->_warnings[$line]);
+            }
+        }//end foreach
+
+        if ($this->_recordErrors === false) {
+            $this->_errors = array();
+            $this->_warnings = array();
+        }
+
+        // If short open tags are off but the file being checked uses
+        // short open tags, the whole content will be inline HTML
+        // and nothing will be checked. So try and handle this case.
+        if ($foundCode === false) {
+            $shortTags = (bool) ini_get('short_open_tag');
+            if ($shortTags === false) {
+                $error = 'No PHP code was found in this file and short open tags are not allowed by this install of PHP. This file may be using short open tags but PHP does not allow them.';
+                $this->addWarning($error, null, 'Internal.NoCodeFound');
+            }
+        }
+
+        if (PHP_CODESNIFFER_VERBOSITY > 2) {
+            echo "\t*** END TOKEN PROCESSING ***".PHP_EOL;
+        }
+
+        if (PHP_CODESNIFFER_VERBOSITY > 2) {
+            echo "\t*** START SNIFF PROCESSING REPORT ***".PHP_EOL;
+
+            asort($this->_listenerTimes, SORT_NUMERIC);
+            $this->_listenerTimes = array_reverse($this->_listenerTimes, true);
+            foreach ($this->_listenerTimes as $listener => $timeTaken) {
+                echo "\t$listener: ".round(($timeTaken), 4).' secs'.PHP_EOL;
+            }
+
+            echo "\t*** END SNIFF PROCESSING REPORT ***".PHP_EOL;
+        }
+
+    }//end start()
+
+
+    /**
+     * Remove vars stored in this sniff that are no longer required.
+     *
+     * @return void
+     */
+    public function cleanUp()
+    {
+        $this->_tokens    = null;
+        $this->_listeners = null;
+
+    }//end cleanUp()
+
+
+    /**
+     * Tokenizes the file and prepares it for the test run.
+     *
+     * @param string $contents The contents to parse. If NULL, the content
+     *                         is taken from the file system.
+     *
+     * @return void
+     */
+    private function _parse($contents=null)
+    {
+        try {
+            $this->eolChar = self::detectLineEndings($this->_file, $contents);
+        } catch (PHP_CodeSniffer_Exception $e) {
+            $this->addWarning($e->getMessage(), null, 'Internal.DetectLineEndings');
+            return;
+        }
+
+        // Determine the tokenizer from the file extension.
+        $fileParts = explode('.', $this->_file);
+        $extension = array_pop($fileParts);
+        if (isset($this->tokenizers[$extension]) === true) {
+            $tokenizerClass      = 'PHP_CodeSniffer_Tokenizers_'.$this->tokenizers[$extension];
+            $this->tokenizerType = $this->tokenizers[$extension];
+        } else {
+            // Revert to default.
+            $tokenizerClass = 'PHP_CodeSniffer_Tokenizers_'.$this->tokenizerType;
+        }
+
+        $tokenizer       = new $tokenizerClass();
+        $this->tokenizer = $tokenizer;
+
+        if ($contents === null) {
+            $contents = file_get_contents($this->_file);
+        }
+
+        $this->_tokens   = self::tokenizeString($contents, $tokenizer, $this->eolChar);
+        $this->numTokens = count($this->_tokens);
+
+        // Check for mixed line endings as these can cause tokenizer errors and we
+        // should let the user know that the results they get may be incorrect.
+        // This is done by removing all backslashes, removing the newline char we
+        // detected, then converting newlines chars into text. If any backslashes
+        // are left at the end, we have additional newline chars in use.
+        $contents = str_replace('\\', '', $contents);
+        $contents = str_replace($this->eolChar, '', $contents);
+        $contents = str_replace("\n", '\n', $contents);
+        $contents = str_replace("\r", '\r', $contents);
+        if (strpos($contents, '\\') !== false) {
+            $error = 'File has mixed line endings; this may cause incorrect results';
+            $this->addWarning($error, 0, 'Internal.LineEndings.Mixed');
+        }
+
+        if (PHP_CODESNIFFER_VERBOSITY > 0) {
+            if ($this->numTokens === 0) {
+                $numLines = 0;
+            } else {
+                $numLines = $this->_tokens[($this->numTokens - 1)]['line'];
+            }
+
+            echo "[$this->numTokens tokens in $numLines lines]... ";
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                echo PHP_EOL;
+            }
+        }
+
+    }//end _parse()
+
+
+    /**
+     * Opens a file and detects the EOL character being used.
+     *
+     * @param string $file     The full path to the file.
+     * @param string $contents The contents to parse. If NULL, the content
+     *                         is taken from the file system.
+     *
+     * @return string
+     * @throws PHP_CodeSniffer_Exception If $file could not be opened.
+     */
+    public static function detectLineEndings($file, $contents=null)
+    {
+        if ($contents === null) {
+            // Determine the newline character being used in this file.
+            // Will be either \r, \r\n or \n.
+            if (is_readable($file) === false) {
+                $error = 'Error opening file; file no longer exists or you do not have access to read the file';
+                throw new PHP_CodeSniffer_Exception($error);
+            } else {
+                $handle = fopen($file, 'r');
+                if ($handle === false) {
+                    $error = 'Error opening file; could not auto-detect line endings';
+                    throw new PHP_CodeSniffer_Exception($error);
+                }
+            }
+
+            $firstLine = fgets($handle);
+            fclose($handle);
+
+            $eolChar = substr($firstLine, -1);
+            if ($eolChar === "\n") {
+                $secondLastChar = substr($firstLine, -2, 1);
+                if ($secondLastChar === "\r") {
+                    $eolChar = "\r\n";
+                }
+            } else if ($eolChar !== "\r") {
+                // Must not be an EOL char at the end of the line.
+                // Probably a one-line file, so assume \n as it really
+                // doesn't matter considering there are no newlines.
+                $eolChar = "\n";
+            }
+        } else {
+            if (preg_match("/\r\n?|\n/", $contents, $matches) !== 1) {
+                // Assuming there are no newlines.
+                $eolChar = "\n";
+            } else {
+                $eolChar = $matches[0];
+            }
+        }//end if
+
+        return $eolChar;
+
+    }//end detectLineEndings()
+
+
+    /**
+     * Adds an error to the error stack.
+     *
+     * @param string $error    The error message.
+     * @param int    $stackPtr The stack position where the error occurred.
+     * @param string $code     A violation code unique to the sniff message.
+     * @param array  $data     Replacements for the error message.
+     * @param int    $severity The severity level for this error. A value of 0
+     *                         will be converted into the default severity level.
+     *
+     * @return void
+     */
+    public function addError($error, $stackPtr, $code='', $data=array(), $severity=0)
+    {
+        // Don't bother doing any processing if errors are just going to
+        // be hidden in the reports anyway.
+        if ($this->phpcs->cli->errorSeverity === 0) {
+            return;
+        }
+
+        // Work out which sniff generated the error.
+        if (substr($code, 0, 9) === 'Internal.') {
+            // Any internal message.
+            $sniff     = $code;
+            $sniffCode = $code;
+        } else {
+            $parts = explode('_', str_replace('\\', '_', $this->_activeListener));
+            if (isset($parts[3]) === true) {
+                $sniff = $parts[0].'.'.$parts[2].'.'.$parts[3];
+
+                // Remove "Sniff" from the end.
+                $sniff = substr($sniff, 0, -5);
+            } else {
+                $sniff = 'unknownSniff';
+            }
+
+            $sniffCode = $sniff;
+            if ($code !== '') {
+                $sniffCode .= '.'.$code;
+            }
+        }//end if
+
+        // Make sure this message type is allowed based on the --sniffs
+        // command line argument values.
+        if (empty($this->restrictions) === false
+            && in_array($sniffCode, $this->restrictions) === false
+            && in_array($sniff, $this->restrictions) === false
+        ) {
+            return;
+        }
+
+        // Make sure this message type has not been set to "warning".
+        if (isset($this->ruleset[$sniffCode]['type']) === true
+            && $this->ruleset[$sniffCode]['type'] === 'warning'
+        ) {
+            // Pass this off to the warning handler.
+            $this->addWarning($error, $stackPtr, $code, $data, $severity);
+            return;
+        }
+
+        // Make sure we are interested in this severity level.
+        if (isset($this->ruleset[$sniffCode]['severity']) === true) {
+            $severity = $this->ruleset[$sniffCode]['severity'];
+        } else if ($severity === 0) {
+            $severity = PHPCS_DEFAULT_ERROR_SEV;
+        }
+
+        if ($this->phpcs->cli->errorSeverity > $severity) {
+            return;
+        }
+
+        // Make sure we are not ignoring this file.
+        $patterns = $this->phpcs->getIgnorePatterns($sniffCode);
+        foreach ($patterns as $pattern => $type) {
+            // While there is support for a type of each pattern
+            // (absolute or relative) we don't actually support it here.
+            $replacements = array(
+                             '\\,' => ',',
+                             '*'   => '.*',
+                            );
+
+            $pattern = strtr($pattern, $replacements);
+            if (preg_match("|{$pattern}|i", $this->_file) === 1) {
+                return;
+            }
+        }
+
+        if ($stackPtr === null) {
+            $lineNum = 1;
+            $column = 1;
+        } else {
+            $lineNum = $this->_tokens[$stackPtr]['line'];
+            $column = $this->_tokens[$stackPtr]['column'];
+        }
+
+        $this->_errorCount++;
+        if ($this->_recordErrors === false) {
+            if (isset($this->_errors[$lineNum]) === false) {
+                $this->_errors[$lineNum] = 0;
+            }
+            $this->_errors[$lineNum]++;
+            return;
+        }
+
+        // Work out the warning message.
+        if (isset($this->ruleset[$sniffCode]['message']) === true) {
+            $error = $this->ruleset[$sniffCode]['message'];
+        }
+
+        if (empty($data) === true) {
+            $message = $error;
+        } else {
+            $message = vsprintf($error, $data);
+        }
+
+        if (isset($this->_errors[$lineNum]) === false) {
+            $this->_errors[$lineNum] = array();
+        }
+
+        if (isset($this->_errors[$lineNum][$column]) === false) {
+            $this->_errors[$lineNum][$column] = array();
+        }
+
+        $this->_errors[$lineNum][$column][] = array(
+                                               'message'  => $message,
+                                               'source'   => $sniffCode,
+                                               'severity' => $severity,
+                                              );
+
+    }//end addError()
+
+
+    /**
+     * Adds an warning to the warning stack.
+     *
+     * @param string $warning  The error message.
+     * @param int    $stackPtr The stack position where the error occurred.
+     * @param string $code     A violation code unique to the sniff message.
+     * @param array  $data     Replacements for the warning message.
+     * @param int    $severity The severity level for this warning. A value of 0
+     *                         will be converted into the default severity level.
+     *
+     * @return void
+     */
+    public function addWarning($warning, $stackPtr, $code='', $data=array(), $severity=0)
+    {
+        // Don't bother doing any processing if warnings are just going to
+        // be hidden in the reports anyway.
+        if ($this->phpcs->cli->warningSeverity === 0) {
+            return;
+        }
+
+        // Work out which sniff generated the warning.
+        if (substr($code, 0, 9) === 'Internal.') {
+            // Any internal message.
+            $sniff     = $code;
+            $sniffCode = $code;
+        } else {
+            $parts = explode('_', str_replace('\\', '_', $this->_activeListener));
+            if (isset($parts[3]) === true) {
+                $sniff = $parts[0].'.'.$parts[2].'.'.$parts[3];
+
+                // Remove "Sniff" from the end.
+                $sniff = substr($sniff, 0, -5);
+            } else {
+                $sniff = 'unknownSniff';
+            }
+
+            $sniffCode = $sniff;
+            if ($code !== '') {
+                $sniffCode .= '.'.$code;
+            }
+        }//end if
+
+        // Make sure this message type is allowed based on the --sniffs
+        // command line argument values.
+        if (empty($this->restrictions) === false
+            && in_array($sniffCode, $this->restrictions) === false
+            && in_array($sniff, $this->restrictions) === false
+        ) {
+            return;
+        }
+
+        // Make sure this message type has not been set to "error".
+        if (isset($this->ruleset[$sniffCode]['type']) === true
+            && $this->ruleset[$sniffCode]['type'] === 'error'
+        ) {
+            // Pass this off to the error handler.
+            $this->addError($warning, $stackPtr, $code, $data, $severity);
+            return;
+        }
+
+        // Make sure we are interested in this severity level.
+        if (isset($this->ruleset[$sniffCode]['severity']) === true) {
+            $severity = $this->ruleset[$sniffCode]['severity'];
+        } else if ($severity === 0) {
+            $severity = PHPCS_DEFAULT_WARN_SEV;
+        }
+
+        if ($this->phpcs->cli->warningSeverity > $severity) {
+            return;
+        }
+
+        // Make sure we are not ignoring this file.
+        $patterns = $this->phpcs->getIgnorePatterns($sniffCode);
+        foreach ($patterns as $pattern => $type) {
+            // While there is support for a type of each pattern
+            // (absolute or relative) we don't actually support it here.
+            $replacements = array(
+                             '\\,' => ',',
+                             '*'   => '.*',
+                            );
+
+            $pattern = strtr($pattern, $replacements);
+            if (preg_match("|{$pattern}|i", $this->_file) === 1) {
+                return;
+            }
+        }
+
+        if ($stackPtr === null) {
+            $lineNum = 1;
+            $column = 1;
+        } else {
+            $lineNum = $this->_tokens[$stackPtr]['line'];
+            $column = $this->_tokens[$stackPtr]['column'];
+        }
+
+        $this->_warningCount++;
+        if ($this->_recordErrors === false) {
+            if (isset($this->_warnings[$lineNum]) === false) {
+                $this->_warnings[$lineNum] = 0;
+            }
+            $this->_warnings[$lineNum]++;
+            return;
+        }
+
+        // Work out the warning message.
+        if (isset($this->ruleset[$sniffCode]['message']) === true) {
+            $warning = $this->ruleset[$sniffCode]['message'];
+        }
+
+        if (empty($data) === true) {
+            $message = $warning;
+        } else {
+            $message = vsprintf($warning, $data);
+        }
+
+        if (isset($this->_warnings[$lineNum]) === false) {
+            $this->_warnings[$lineNum] = array();
+        }
+
+        if (isset($this->_warnings[$lineNum][$column]) === false) {
+            $this->_warnings[$lineNum][$column] = array();
+        }
+
+        $this->_warnings[$lineNum][$column][] = array(
+                                                 'message'  => $message,
+                                                 'source'   => $sniffCode,
+                                                 'severity' => $severity,
+                                                );
+
+    }//end addWarning()
+
+
+    /**
+     * Returns the number of errors raised.
+     *
+     * @return int
+     */
+    public function getErrorCount()
+    {
+        return $this->_errorCount;
+
+    }//end getErrorCount()
+
+
+    /**
+     * Returns the number of warnings raised.
+     *
+     * @return int
+     */
+    public function getWarningCount()
+    {
+        return $this->_warningCount;
+
+    }//end getWarningCount()
+
+
+    /**
+     * Returns the list of ignored lines.
+     *
+     * @return array
+     */
+    public function getIgnoredLines()
+    {
+        return $this->_ignoredLines;
+
+    }//end getIgnoredLines()
+
+
+    /**
+     * Returns the errors raised from processing this file.
+     *
+     * @return array
+     */
+    public function getErrors()
+    {
+        return $this->_errors;
+
+    }//end getErrors()
+
+
+    /**
+     * Returns the warnings raised from processing this file.
+     *
+     * @return array
+     */
+    public function getWarnings()
+    {
+        return $this->_warnings;
+
+    }//end getWarnings()
+
+
+    /**
+     * Returns the absolute filename of this file.
+     *
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->_file;
+
+    }//end getFilename()
+
+
+    /**
+     * Creates an array of tokens when given some PHP code.
+     *
+     * Starts by using token_get_all() but does a lot of extra processing
+     * to insert information about the context of the token.
+     *
+     * @param string $string    The string to tokenize.
+     * @param object $tokenizer A tokenizer class to use to tokenize the string.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return array
+     */
+    public static function tokenizeString($string, $tokenizer, $eolChar='\n')
+    {
+        $tokens = $tokenizer->tokenizeString($string, $eolChar);
+
+        self::_createLineMap($tokens, $tokenizer, $eolChar);
+        self::_createBracketMap($tokens, $tokenizer, $eolChar);
+        self::_createParenthesisMap($tokens, $tokenizer, $eolChar);
+        self::_createParenthesisNestingMap($tokens, $tokenizer, $eolChar);
+        self::_createScopeMap($tokens, $tokenizer, $eolChar);
+
+        // If we know the width of each tab, convert tabs
+        // into spaces so sniffs can use one method of checking.
+        if (PHP_CODESNIFFER_TAB_WIDTH > 0) {
+            self::_convertTabs($tokens, $tokenizer, $eolChar);
+        }
+
+        // Column map requires the line map to be complete.
+        self::_createColumnMap($tokens, $tokenizer, $eolChar);
+        self::_createLevelMap($tokens, $tokenizer, $eolChar);
+
+        // Allow the tokenizer to do additional processing if required.
+        $tokenizer->processAdditional($tokens, $eolChar);
+
+        return $tokens;
+
+    }//end tokenizeString()
+
+
+    /**
+     * Creates a map of tokens => line numbers for each token.
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    private static function _createLineMap(&$tokens, $tokenizer, $eolChar)
+    {
+        $lineNumber = 1;
+        $count      = count($tokens);
+
+        for ($i = 0; $i < $count; $i++) {
+            $tokens[$i]['line'] = $lineNumber;
+            if ($tokens[$i]['content'] === '') {
+                continue;
+            }
+
+            $lineNumber += substr_count($tokens[$i]['content'], $eolChar);
+        }
+
+    }//end _createLineMap()
+
+
+    /**
+     * Converts tabs into spaces.
+     *
+     * Each tab can represent between 1 and $width spaces, so
+     * this cannot be a straight string replace.
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    private static function _convertTabs(&$tokens, $tokenizer, $eolChar)
+    {
+        $currColumn = 1;
+        $count      = count($tokens);
+
+        for ($i = 0; $i < $count; $i++) {
+            $tokenContent = $tokens[$i]['content'];
+
+            if (strpos($tokenContent, "\t") === false) {
+                // There are no tabs in this content.
+                $currColumn += strlen($tokenContent);
+            } else {
+                // We need to determine the length of each tab.
+                $tabs = preg_split(
+                    "|(\t)|",
+                    $tokenContent,
+                    -1,
+                    PREG_SPLIT_DELIM_CAPTURE
+                );
+
+                $tabNum       = 0;
+                $tabsToSpaces = array();
+                $newContent   = '';
+
+                foreach ($tabs as $content) {
+                    if ($content === '') {
+                        continue;
+                    }
+
+                    if (strpos($content, "\t") === false) {
+                        // This piece of content is not a tab.
+                        $currColumn += strlen($content);
+                        $newContent .= $content;
+                    } else {
+                        $lastCurrColumn = $currColumn;
+                        $tabNum++;
+
+                        // Move the pointer to the next tab stop.
+                        if (($currColumn % PHP_CODESNIFFER_TAB_WIDTH) === 0) {
+                            // This is the first tab, and we are already at a
+                            // tab stop, so this tab counts as a single space.
+                            $currColumn++;
+                        } else {
+                            $currColumn++;
+                            while (($currColumn % PHP_CODESNIFFER_TAB_WIDTH) != 0) {
+                                $currColumn++;
+                            }
+
+                            $currColumn++;
+                        }
+
+                        $length      = ($currColumn - $lastCurrColumn);
+                        $newContent .= str_repeat(' ', $length);
+                    }//end if
+                }//end foreach
+
+                $tokens[$i]['content'] = $newContent;
+            }//end if
+
+            if (isset($tokens[($i + 1)]['line']) === true
+                && $tokens[($i + 1)]['line'] !== $tokens[$i]['line']
+            ) {
+                $currColumn = 1;
+            }
+        }//end for
+
+    }//end _convertTabs()
+
+
+    /**
+     * Creates a column map.
+     *
+     * The column map indicates where the token started on the line where it
+     * exists.
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    private static function _createColumnMap(&$tokens, $tokenizer, $eolChar)
+    {
+        $currColumn = 1;
+        $count      = count($tokens);
+
+        for ($i = 0; $i < $count; $i++) {
+            $tokens[$i]['column'] = $currColumn;
+            if (isset($tokens[($i + 1)]['line']) === true
+                && $tokens[($i + 1)]['line'] !== $tokens[$i]['line']
+            ) {
+                $currColumn = 1;
+            } else {
+                $currColumn += strlen($tokens[$i]['content']);
+            }
+        }
+
+    }//end _createColumnMap()
+
+
+    /**
+     * Creates a map for opening and closing of square brackets.
+     *
+     * Each bracket token (T_OPEN_SQUARE_BRACKET and T_CLOSE_SQUARE_BRACKET)
+     * has a reference to their opening and closing bracket
+     * (bracket_opener and bracket_closer).
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    private static function _createBracketMap(&$tokens, $tokenizer, $eolChar)
+    {
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** START BRACKET MAP ***".PHP_EOL;
+        }
+
+        $squareOpeners = array();
+        $curlyOpeners  = array();
+        $numTokens     = count($tokens);
+
+        for ($i = 0; $i < $numTokens; $i++) {
+            switch ($tokens[$i]['code']) {
+            case T_OPEN_SQUARE_BRACKET:
+                $squareOpeners[] = $i;
+
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    echo str_repeat("\t", count($squareOpeners));
+                    echo str_repeat("\t", count($curlyOpeners));
+                    echo "=> Found square bracket opener at $i".PHP_EOL;
+                }
+
+                break;
+            case T_OPEN_CURLY_BRACKET:
+                if (isset($tokens[$i]['scope_closer']) === false) {
+                    $curlyOpeners[] = $i;
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", count($squareOpeners));
+                        echo str_repeat("\t", count($curlyOpeners));
+                        echo "=> Found curly bracket opener at $i".PHP_EOL;
+                    }
+                }
+                break;
+            case T_CLOSE_SQUARE_BRACKET:
+                if (empty($squareOpeners) === false) {
+                    $opener                            = array_pop($squareOpeners);
+                    $tokens[$i]['bracket_opener']      = $opener;
+                    $tokens[$i]['bracket_closer']      = $i;
+                    $tokens[$opener]['bracket_opener'] = $opener;
+                    $tokens[$opener]['bracket_closer'] = $i;
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", count($squareOpeners));
+                        echo str_repeat("\t", count($curlyOpeners));
+                        echo "\t=> Found square bracket closer at $i for $opener".PHP_EOL;
+                    }
+                }
+                break;
+            case T_CLOSE_CURLY_BRACKET:
+                if (empty($curlyOpeners) === false
+                    && isset($tokens[$i]['scope_opener']) === false
+                ) {
+                    $opener                            = array_pop($curlyOpeners);
+                    $tokens[$i]['bracket_opener']      = $opener;
+                    $tokens[$i]['bracket_closer']      = $i;
+                    $tokens[$opener]['bracket_opener'] = $opener;
+                    $tokens[$opener]['bracket_closer'] = $i;
+
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", count($squareOpeners));
+                        echo str_repeat("\t", count($curlyOpeners));
+                        echo "\t=> Found curly bracket closer at $i for $opener".PHP_EOL;
+                    }
+                }
+                break;
+            default:
+                continue;
+            }//end switch
+        }//end for
+
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** END BRACKET MAP ***".PHP_EOL;
+        }
+
+    }//end _createBracketMap()
+
+
+    /**
+     * Creates a map for opening and closing of parenthesis.
+     *
+     * Each parenthesis token (T_OPEN_PARENTHESIS and T_CLOSE_PARENTHESIS) has a
+     * reference to their opening and closing parenthesis (parenthesis_opener
+     * and parenthesis_closer).
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    private static function _createParenthesisMap(&$tokens, $tokenizer, $eolChar)
+    {
+        $openers   = array();
+        $numTokens = count($tokens);
+        $openOwner = null;
+
+        for ($i = 0; $i < $numTokens; $i++) {
+            if (in_array($tokens[$i]['code'], PHP_CodeSniffer_Tokens::$parenthesisOpeners) === true) {
+                $tokens[$i]['parenthesis_opener'] = null;
+                $tokens[$i]['parenthesis_closer'] = null;
+                $tokens[$i]['parenthesis_owner']  = $i;
+                $openOwner                        = $i;
+            } else if ($tokens[$i]['code'] === T_OPEN_PARENTHESIS) {
+                $openers[]                        = $i;
+                $tokens[$i]['parenthesis_opener'] = $i;
+                if ($openOwner !== null) {
+                    $tokens[$openOwner]['parenthesis_opener'] = $i;
+                    $tokens[$i]['parenthesis_owner']          = $openOwner;
+                    $openOwner                                = null;
+                }
+            } else if ($tokens[$i]['code'] === T_CLOSE_PARENTHESIS) {
+                // Did we set an owner for this set of parenthesis?
+                $numOpeners = count($openers);
+                if ($numOpeners !== 0) {
+                    $opener = array_pop($openers);
+                    if (isset($tokens[$opener]['parenthesis_owner']) === true) {
+                        $owner = $tokens[$opener]['parenthesis_owner'];
+
+                        $tokens[$owner]['parenthesis_closer'] = $i;
+                        $tokens[$i]['parenthesis_owner']      = $owner;
+                    }
+
+                    $tokens[$i]['parenthesis_opener']      = $opener;
+                    $tokens[$i]['parenthesis_closer']      = $i;
+                    $tokens[$opener]['parenthesis_closer'] = $i;
+                }
+            }//end if
+        }//end for
+
+    }//end _createParenthesisMap()
+
+
+    /**
+     * Creates a map for the parenthesis tokens that surround other tokens.
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    private static function _createParenthesisNestingMap(
+        &$tokens,
+        $tokenizer,
+        $eolChar
+    ) {
+        $numTokens = count($tokens);
+        $map       = array();
+        for ($i = 0; $i < $numTokens; $i++) {
+            if (isset($tokens[$i]['parenthesis_opener']) === true
+                && $i === $tokens[$i]['parenthesis_opener']
+            ) {
+                if (empty($map) === false) {
+                    $tokens[$i]['nested_parenthesis'] = $map;
+                }
+
+                if (isset($tokens[$i]['parenthesis_closer']) === true) {
+                    $map[$tokens[$i]['parenthesis_opener']]
+                        = $tokens[$i]['parenthesis_closer'];
+                }
+            } else if (isset($tokens[$i]['parenthesis_closer']) === true
+                && $i === $tokens[$i]['parenthesis_closer']
+            ) {
+                array_pop($map);
+                if (empty($map) === false) {
+                    $tokens[$i]['nested_parenthesis'] = $map;
+                }
+            } else {
+                if (empty($map) === false) {
+                    $tokens[$i]['nested_parenthesis'] = $map;
+                }
+            }//end if
+        }//end for
+
+    }//end _createParenthesisNestingMap()
+
+
+    /**
+     * Creates a scope map of tokens that open scopes.
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     * @see _recurseScopeMap()
+     */
+    private static function _createScopeMap(&$tokens, $tokenizer, $eolChar)
+    {
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** START SCOPE MAP ***".PHP_EOL;
+        }
+
+        $numTokens = count($tokens);
+        for ($i = 0; $i < $numTokens; $i++) {
+            // Check to see if the current token starts a new scope.
+            if (isset($tokenizer->scopeOpeners[$tokens[$i]['code']]) === true) {
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    $type    = $tokens[$i]['type'];
+                    $content = str_replace($eolChar, '\n', $tokens[$i]['content']);
+                    echo "\tStart scope map at $i: $type => $content".PHP_EOL;
+                }
+
+                $i = self::_recurseScopeMap(
+                    $tokens,
+                    $numTokens,
+                    $tokenizer,
+                    $eolChar,
+                    $i
+                );
+            }
+        }//end for
+
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** END SCOPE MAP ***".PHP_EOL;
+        }
+
+    }//end _createScopeMap()
+
+
+    /**
+     * Recurses though the scope openers to build a scope map.
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param int    $numTokens The size of the tokens array.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     * @param int    $stackPtr  The position in the stack of the token that
+     *                          opened the scope (eg. an IF token or FOR token).
+     * @param int    $depth     How many scope levels down we are.
+     * @param int    &$ignore   How many curly braces we are ignoring.
+     *
+     * @return int The position in the stack that closed the scope.
+     */
+    private static function _recurseScopeMap(
+        &$tokens,
+        $numTokens,
+        $tokenizer,
+        $eolChar,
+        $stackPtr,
+        $depth=1,
+        &$ignore=0
+    ) {
+        $opener    = null;
+        $currType  = $tokens[$stackPtr]['code'];
+        $startLine = $tokens[$stackPtr]['line'];
+
+        // We will need this to restore the value if we end up
+        // returning a token ID that causes our calling function to go back
+        // over already ignored braces.
+        $originalIgnore = $ignore;
+
+        // If the start token for this scope opener is the same as
+        // the scope token, we have already found our opener.
+        if (in_array($currType, $tokenizer->scopeOpeners[$currType]['start']) === true) {
+            $opener = $stackPtr;
+        }
+
+        for ($i = ($stackPtr + 1); $i < $numTokens; $i++) {
+            $tokenType = $tokens[$i]['code'];
+
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                $type    = $tokens[$i]['type'];
+                $content = str_replace($eolChar, '\n', $tokens[$i]['content']);
+                echo str_repeat("\t", $depth);
+                echo "Process token $i [";
+                if ($opener !== null) {
+                    echo "opener:$opener;";
+                }
+
+                if ($ignore > 0) {
+                    echo "ignore=$ignore;";
+                }
+
+                echo "]: $type => $content".PHP_EOL;
+            }
+
+            // Very special case for IF statements in PHP that can be defined without
+            // scope tokens. If an IF statement below this one has an opener but no
+            // keyword, the opener will be incorrectly assigned to this IF statement.
+            // E.g., if (1) 1; 1 ? (1 ? 1 : 1) : 1;
+            if (($currType === T_IF || $currType === T_ELSE) && $opener === null && $tokens[$i]['code'] === T_SEMICOLON) {
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    $type = $tokens[$stackPtr]['type'];
+                    echo str_repeat("\t", $depth);
+                    echo "=> Found semicolon before scope opener for $stackPtr ($type), bailing".PHP_EOL;
+                }
+
+                return $i;
+            }
+
+            // Is this an opening condition ?
+            if (isset($tokenizer->scopeOpeners[$tokenType]) === true) {
+                if ($opener === null) {
+                    // Found another opening condition but still haven't
+                    // found our opener, so we are never going to find one.
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $type = $tokens[$stackPtr]['type'];
+                        echo str_repeat("\t", $depth);
+                        echo "=> Couldn't find scope opener for $stackPtr ($type), bailing".PHP_EOL;
+                    }
+
+                    return $stackPtr;
+                }
+
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    echo str_repeat("\t", $depth);
+                    echo '* token is an opening condition *'.PHP_EOL;
+                }
+
+                $isShared
+                    = ($tokenizer->scopeOpeners[$tokenType]['shared'] === true);
+
+                if (isset($tokens[$i]['scope_condition']) === true) {
+                    // We've been here before.
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", $depth);
+                        echo '* already processed, skipping *'.PHP_EOL;
+                    }
+
+                    if ($isShared === false
+                        && isset($tokens[$i]['scope_closer']) === true
+                    ) {
+                        $i = $tokens[$i]['scope_closer'];
+                    }
+
+                    continue;
+                } else if ($currType === $tokenType
+                    && $isShared === false
+                    && $opener === null
+                ) {
+                    // We haven't yet found our opener, but we have found another
+                    // scope opener which is the same type as us, and we don't
+                    // share openers, so we will never find one.
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", $depth);
+                        echo '* it was another token\'s opener, bailing *'.PHP_EOL;
+                    }
+
+                    return $stackPtr;
+                } else {
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", $depth);
+                        echo '* searching for opener *'.PHP_EOL;
+                    }
+
+                    if (in_array(T_CLOSE_CURLY_BRACKET, $tokenizer->scopeOpeners[$tokenType]['end']) === true) {
+                        $oldIgnore = $ignore;
+                        $ignore    = 0;
+                    }
+
+                    $i = self::_recurseScopeMap(
+                        $tokens,
+                        $numTokens,
+                        $tokenizer,
+                        $eolChar,
+                        $i,
+                        ($depth + 1),
+                        $ignore
+                    );
+
+                    if (in_array(T_CLOSE_CURLY_BRACKET, $tokenizer->scopeOpeners[$tokenType]['end']) === true) {
+                        $ignore = $oldIgnore;
+                    }
+                }//end if
+            }//end if
+
+            if (in_array($tokenType, $tokenizer->scopeOpeners[$currType]['start']) === true
+                && $opener === null
+            ) {
+                if ($tokenType === T_OPEN_CURLY_BRACKET) {
+                    // Make sure this is actually an opener and not a
+                    // string offset (e.g., $var{0}).
+                    for ($x = ($i - 1); $x > 0; $x--) {
+                        if (in_array($tokens[$x]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === true) {
+                            continue;
+                        } else {
+                            // If the first non-whitespace/comment token is a
+                            // variable or object operator then this is an opener
+                            // for a string offset and not a scope.
+                            if ($tokens[$x]['code'] === T_VARIABLE
+                                || $tokens[$x]['code'] === T_OBJECT_OPERATOR
+                            ) {
+                                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                    echo str_repeat("\t", $depth);
+                                    echo '* ignoring curly brace *'.PHP_EOL;
+                                }
+
+                                $ignore++;
+                            }//end if
+
+                            break;
+                        }//end if
+                    }//end for
+                }//end if
+
+                if ($ignore === 0) {
+                    // We found the opening scope token for $currType.
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $type = $tokens[$stackPtr]['type'];
+                        echo str_repeat("\t", $depth);
+                        echo "=> Found scope opener for $stackPtr ($type)".PHP_EOL;
+                    }
+
+                    $opener = $i;
+                }
+            } else if (in_array($tokenType, $tokenizer->scopeOpeners[$currType]['end']) === true
+                && $opener !== null
+            ) {
+                if ($ignore > 0 && $tokenType === T_CLOSE_CURLY_BRACKET) {
+                    // The last opening bracket must have been for a string
+                    // offset or alike, so let's ignore it.
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", $depth);
+                        echo '* finished ignoring curly brace *'.PHP_EOL;
+                    }
+
+                    $ignore--;
+                } else {
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $type = $tokens[$stackPtr]['type'];
+                        echo str_repeat("\t", $depth);
+                        echo "=> Found scope closer for $stackPtr ($type)".PHP_EOL;
+                    }
+
+                    foreach (array($stackPtr, $opener, $i) as $token) {
+                        $tokens[$token]['scope_condition'] = $stackPtr;
+                        $tokens[$token]['scope_opener']    = $opener;
+                        $tokens[$token]['scope_closer']    = $i;
+                    }
+
+                    if ($tokenizer->scopeOpeners[$tokens[$stackPtr]['code']]['shared'] === true) {
+                        // As we are going back to where we started originally, restore
+                        // the ignore value back to its original value.
+                        $ignore = $originalIgnore;
+                        return $opener;
+                    } else {
+                        return $i;
+                    }
+                }//end if
+            } else if ($tokenType === T_OPEN_PARENTHESIS) {
+                if (isset($tokens[$i]['parenthesis_owner']) === true) {
+                    $owner = $tokens[$i]['parenthesis_owner'];
+                    if (in_array($tokens[$owner]['code'], PHP_CodeSniffer_Tokens::$scopeOpeners) === true
+                        && isset($tokens[$i]['parenthesis_closer']) === true
+                    ) {
+                        // If we get into here, then we opened a parenthesis for
+                        // a scope (eg. an if or else if). We can just skip to
+                        // the closing parenthesis.
+                        $i = $tokens[$i]['parenthesis_closer'];
+
+                        // Update the start of the line so that when we check to see
+                        // if the closing parenthesis is more than 3 lines away from
+                        // the statement, we check from the closing parenthesis.
+                        $startLine
+                            = $tokens[$tokens[$i]['parenthesis_closer']]['line'];
+
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            echo str_repeat("\t", $depth);
+                            echo '* skipping parenthesis *'.PHP_EOL;
+                        }
+                    }
+                }//end if
+            } else if ($tokenType === T_OPEN_CURLY_BRACKET && $opener !== null) {
+                // We opened something that we don't have a scope opener for.
+                // Examples of this are curly brackets for string offsets etc.
+                // We want to ignore this so that we don't have an invalid scope
+                // map.
+                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                    echo str_repeat("\t", $depth);
+                    echo '* ignoring curly brace *'.PHP_EOL;
+                }
+
+                $ignore++;
+            } else if ($opener === null
+                && isset($tokenizer->scopeOpeners[$currType]) === true
+            ) {
+                // If we still haven't found the opener after 3 lines,
+                // we're not going to find it, unless we know it requires
+                // an opener (in which case we better keep looking) or the last
+                // token was empty (in which case we'll just confirm there is
+                // more code in this file and not just a big comment).
+                if ($tokens[$i]['line'] >= ($startLine + 3)
+                    && in_array($tokens[($i - 1)]['code'], PHP_CodeSniffer_Tokens::$emptyTokens) === false
+                ) {
+                    if ($tokenizer->scopeOpeners[$currType]['strict'] === true) {
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            $type  = $tokens[$stackPtr]['type'];
+                            $lines = ($tokens[$i]['line'] - $startLine);
+                            echo str_repeat("\t", $depth);
+                            echo "=> Still looking for $stackPtr ($type) scope opener after $lines lines".PHP_EOL;
+                        }
+                    } else {
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            $type = $tokens[$stackPtr]['type'];
+                            echo str_repeat("\t", $depth);
+                            echo "=> Couldn't find scope opener for $stackPtr ($type), bailing".PHP_EOL;
+                        }
+
+                        return $stackPtr;
+                    }
+                }
+            } else if ($opener !== null
+                && $tokenType !== T_BREAK
+                && in_array($tokenType, $tokenizer->endScopeTokens) === true
+            ) {
+                if (isset($tokens[$i]['scope_condition']) === false) {
+                    if ($ignore > 0) {
+                        // We found the end token for the opener we were ignoring.
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            echo str_repeat("\t", $depth);
+                            echo '* finished ignoring curly brace *'.PHP_EOL;
+                        }
+
+                        $ignore--;
+                    } else {
+                        // We found a token that closes the scope but it doesn't
+                        // have a condition, so it belongs to another token and
+                        // our token doesn't have a closer, so pretend this is
+                        // the closer.
+                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                            $type = $tokens[$stackPtr]['type'];
+                            echo str_repeat("\t", $depth);
+                            echo "=> Found (unexpected) scope closer for $stackPtr ($type)".PHP_EOL;
+                        }
+
+                        foreach (array($stackPtr, $opener) as $token) {
+                            $tokens[$token]['scope_condition'] = $stackPtr;
+                            $tokens[$token]['scope_opener']    = $opener;
+                            $tokens[$token]['scope_closer']    = $i;
+                        }
+
+                        return ($i - 1);
+                    }//end if
+                }//end if
+            }//end if
+        }//end for
+
+        return $stackPtr;
+
+    }//end _recurseScopeMap()
+
+
+    /**
+     * Constructs the level map.
+     *
+     * The level map adds a 'level' indice to each token which indicates the
+     * depth that a token within a set of scope blocks. It also adds a
+     * 'condition' indice which is an array of the scope conditions that opened
+     * each of the scopes - position 0 being the first scope opener.
+     *
+     * @param array  &$tokens   The array of tokens to process.
+     * @param object $tokenizer The tokenizer being used to process this file.
+     * @param string $eolChar   The EOL character to use for splitting strings.
+     *
+     * @return void
+     */
+    private static function _createLevelMap(&$tokens, $tokenizer, $eolChar)
+    {
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** START LEVEL MAP ***".PHP_EOL;
+        }
+
+        $numTokens  = count($tokens);
+        $level      = 0;
+        $conditions = array();
+        $lastOpener = null;
+        $openers    = array();
+
+        for ($i = 0; $i < $numTokens; $i++) {
+            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                $type    = $tokens[$i]['type'];
+                $line    = $tokens[$i]['line'];
+                $content = str_replace($eolChar, '\n', $tokens[$i]['content']);
+                echo str_repeat("\t", ($level + 1));
+                echo "Process token $i on line $line [lvl:$level;";
+                if (empty($conditions) !== true) {
+                    $condString = 'conds;';
+                    foreach ($conditions as $condition) {
+                        $condString .= token_name($condition).',';
+                    }
+
+                    echo rtrim($condString, ',').';';
+                }
+
+                echo "]: $type => $content".PHP_EOL;
+            }
+
+            $tokens[$i]['level']      = $level;
+            $tokens[$i]['conditions'] = $conditions;
+
+            if (isset($tokens[$i]['scope_condition']) === true) {
+                // Check to see if this token opened the scope.
+                if ($tokens[$i]['scope_opener'] === $i) {
+                    $stackPtr = $tokens[$i]['scope_condition'];
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $type = $tokens[$stackPtr]['type'];
+                        echo str_repeat("\t", ($level + 1));
+                        echo "=> Found scope opener for $stackPtr ($type)".PHP_EOL;
+                    }
+
+                    $stackPtr = $tokens[$i]['scope_condition'];
+
+                    // If we find a scope opener that has a shared closer,
+                    // then we need to go back over the condition map that we
+                    // just created and fix ourselves as we just added some
+                    // conditions where there was none. This happens for T_CASE
+                    // statements that are using the same break statement.
+                    if ($lastOpener !== null && $tokens[$lastOpener]['scope_closer'] === $tokens[$i]['scope_closer']) {
+                        // This opener shares its closer with the previous opener,
+                        // but we still need to check if the two openers share their
+                        // closer with each other directly (like CASE and DEFAULT)
+                        // or if they are just sharing because one doesn't have a
+                        // closer (like CASE with no BREAK using a SWITCHes closer).
+                        $thisType = $tokens[$tokens[$i]['scope_condition']]['code'];
+                        $opener   = $tokens[$lastOpener]['scope_condition'];
+
+                        $isShared = in_array(
+                            $tokens[$opener]['code'],
+                            $tokenizer->scopeOpeners[$thisType]['with']
+                        );
+
+                        $sameEnd = ($tokenizer->scopeOpeners[$thisType]['end'][0] === $tokenizer->scopeOpeners[$tokens[$opener]['code']]['end'][0]);
+                        if ($isShared === true && $sameEnd === true) {
+                            $badToken = $opener;
+                            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                $type = $tokens[$badToken]['type'];
+                                echo str_repeat("\t", ($level + 1));
+                                echo "* shared closer, cleaning up $badToken ($type) *".PHP_EOL;
+                            }
+
+                            for ($x = $tokens[$i]['scope_condition']; $x <= $i; $x++) {
+                                $oldConditions = $tokens[$x]['conditions'];
+                                $oldLevel      = $tokens[$x]['level'];
+                                $tokens[$x]['level']--;
+                                unset($tokens[$x]['conditions'][$badToken]);
+                                if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                    $type     = $tokens[$x]['type'];
+                                    $oldConds = '';
+                                    foreach ($oldConditions as $condition) {
+                                        $oldConds .= token_name($condition).',';
+                                    }
+
+                                    $oldConds = rtrim($oldConds, ',');
+
+                                    $newConds = '';
+                                    foreach ($tokens[$x]['conditions'] as $condition) {
+                                        $newConds .= token_name($condition).',';
+                                    }
+
+                                    $newConds = rtrim($newConds, ',');
+
+                                    $newLevel = $tokens[$x]['level'];
+                                    echo str_repeat("\t", ($level + 1));
+                                    echo "* cleaned $x ($type) *".PHP_EOL;
+                                    echo str_repeat("\t", ($level + 2));
+                                    echo "=> level changed from $oldLevel to $newLevel".PHP_EOL;
+                                    echo str_repeat("\t", ($level + 2));
+                                    echo "=> conditions changed from $oldConds to $newConds".PHP_EOL;
+                                }//end if
+                            }//end for
+
+                            unset($conditions[$badToken]);
+                            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                $type = $tokens[$badToken]['type'];
+                                echo str_repeat("\t", ($level + 1));
+                                echo "* token $badToken ($type) removed from conditions array *".PHP_EOL;
+                            }
+
+                            unset ($openers[$lastOpener]);
+
+                            $level--;
+                            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                echo str_repeat("\t", ($level + 2));
+                                echo '* level decreased *'.PHP_EOL;
+                            }
+                        }//end if
+                    }//end if
+
+                    $level++;
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        echo str_repeat("\t", ($level + 1));
+                        echo '* level increased *'.PHP_EOL;
+                    }
+
+                    $conditions[$stackPtr] = $tokens[$stackPtr]['code'];
+                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                        $type = $tokens[$stackPtr]['type'];
+                        echo str_repeat("\t", ($level + 1));
+                        echo "* token $stackPtr ($type) added to conditions array *".PHP_EOL;
+                    }
+
+                    $lastOpener = $tokens[$i]['scope_opener'];
+                    if ($lastOpener !== null) {
+                        $openers[$lastOpener] = $lastOpener;
+                    }
+                } else if ($tokens[$i]['scope_closer'] === $i) {
+                    foreach (array_reverse($openers) as $opener) {
+                        if ($tokens[$opener]['scope_closer'] === $i) {
+                            $oldOpener = array_pop($openers);
+                            if (empty($openers) === false) {
+                                $lastOpener           = array_pop($openers);
+                                $openers[$lastOpener] = $lastOpener;
+                            } else {
+                                $lastOpener = null;
+                            }
+
+                            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                $type = $tokens[$oldOpener]['type'];
+                                echo str_repeat("\t", ($level + 1));
+                                echo "=> Found scope closer for $oldOpener ($type)".PHP_EOL;
+                            }
+
+                            $oldCondition = array_pop($conditions);
+                            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                echo str_repeat("\t", ($level + 1));
+                                echo '* token '.token_name($oldCondition).' removed from conditions array *'.PHP_EOL;
+                            }
+
+                            // Make sure this closer actually belongs to us.
+                            // Either the condition also has to think this is the
+                            // closer, or it has to allow sharing with us.
+                            $condition
+                                = $tokens[$tokens[$i]['scope_condition']]['code'];
+                            if ($condition !== $oldCondition) {
+                                if (in_array($condition, $tokenizer->scopeOpeners[$oldCondition]['with']) === false) {
+                                    $badToken = $tokens[$oldOpener]['scope_condition'];
+
+                                    if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                        $type = token_name($oldCondition);
+                                        echo str_repeat("\t", ($level + 1));
+                                        echo "* scope closer was bad, cleaning up $badToken ($type) *".PHP_EOL;
+                                    }
+
+                                    for ($x = ($oldOpener + 1); $x <= $i; $x++) {
+                                        $oldConditions = $tokens[$x]['conditions'];
+                                        $oldLevel      = $tokens[$x]['level'];
+                                        $tokens[$x]['level']--;
+                                        unset($tokens[$x]['conditions'][$badToken]);
+                                        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                            $type     = $tokens[$x]['type'];
+                                            $oldConds = '';
+                                            foreach ($oldConditions as $condition) {
+                                                $oldConds .= token_name($condition).',';
+                                            }
+
+                                            $oldConds = rtrim($oldConds, ',');
+
+                                            $newConds = '';
+                                            foreach ($tokens[$x]['conditions'] as $condition) {
+                                                $newConds .= token_name($condition).',';
+                                            }
+
+                                            $newConds = rtrim($newConds, ',');
+
+                                            $newLevel = $tokens[$x]['level'];
+                                            echo str_repeat("\t", ($level + 1));
+                                            echo "* cleaned $x ($type) *".PHP_EOL;
+                                            echo str_repeat("\t", ($level + 2));
+                                            echo "=> level changed from $oldLevel to $newLevel".PHP_EOL;
+                                            echo str_repeat("\t", ($level + 2));
+                                            echo "=> conditions changed from $oldConds to $newConds".PHP_EOL;
+                                        }//end if
+                                    }//end for
+                                }//end if
+                            }//end if
+
+                            $level--;
+                            if (PHP_CODESNIFFER_VERBOSITY > 1) {
+                                echo str_repeat("\t", ($level + 2));
+                                echo '* level decreased *'.PHP_EOL;
+                            }
+
+                            $tokens[$i]['level']      = $level;
+                            $tokens[$i]['conditions'] = $conditions;
+                        }//end if
+                    }//end foreach
+                }//end if
+            }//end if
+        }//end for
+
+        if (PHP_CODESNIFFER_VERBOSITY > 1) {
+            echo "\t*** END LEVEL MAP ***".PHP_EOL;
+        }
+
+    }//end _createLevelMap()
+
+
+    /**
+     * Returns the declaration names for T_CLASS, T_INTERFACE and T_FUNCTION tokens.
+     *
+     * @param int $stackPtr The position of the declaration token which
+     *                      declared the class, interface or function.
+     *
+     * @return string|null The name of the class, interface or function.
+     *                     or NULL if the function is a closure.
+     * @throws PHP_CodeSniffer_Exception If the specified token is not of type
+     *                                   T_FUNCTION, T_CLASS or T_INTERFACE.
+     */
+    public function getDeclarationName($stackPtr)
+    {
+        $tokenCode = $this->_tokens[$stackPtr]['code'];
+        if ($tokenCode !== T_FUNCTION
+            && $tokenCode !== T_CLASS
+            && $tokenCode !== T_INTERFACE
+            && $tokenCode !== T_TRAIT
+        ) {
+            throw new PHP_CodeSniffer_Exception('Token type is not T_FUNCTION, T_CLASS, T_INTERFACE or T_TRAIT');
+        }
+
+        if ($tokenCode === T_FUNCTION
+            && $this->isAnonymousFunction($stackPtr) === true
+        ) {
+            return null;
+        }
+
+        $token = $this->findNext(T_STRING, $stackPtr);
+        return $this->_tokens[$token]['content'];
+
+    }//end getDeclarationName()
+
+
+    /**
+     * Check if the token at the specified position is a anonymous function.
+     *
+     * @param int $stackPtr The position of the declaration token which
+     *                      declared the class, interface or function.
+     *
+     * @return boolean
+     * @throws PHP_CodeSniffer_Exception If the specified token is not of type
+     *                                   T_FUNCTION
+     */
+    public function isAnonymousFunction($stackPtr)
+    {
+        $tokenCode = $this->_tokens[$stackPtr]['code'];
+        if ($tokenCode !== T_FUNCTION) {
+            throw new PHP_CodeSniffer_Exception('Token type is not T_FUNCTION');
+        }
+
+        if (isset($this->_tokens[$stackPtr]['parenthesis_opener']) === false) {
+            // Something is not right with this function.
+            return false;
+        }
+
+        $name = $this->findNext(T_STRING, ($stackPtr + 1));
+        if ($name === false) {
+            // No name found.
+            return true;
+        }
+
+        $open = $this->_tokens[$stackPtr]['parenthesis_opener'];
+        if ($name > $open) {
+            return true;
+        }
+
+        return false;
+
+    }//end isAnonymousFunction()
+
+
+    /**
+     * Returns the method parameters for the specified T_FUNCTION token.
+     *
+     * Each parameter is in the following format:
+     *
+     * <code>
+     *   0 => array(
+     *         'name'              => '$var',  // The variable name.
+     *         'pass_by_reference' => false,   // Passed by reference.
+     *         'type_hint'         => string,  // Type hint for array or custom type
+     *        )
+     * </code>
+     *
+     * Parameters with default values have and additional array indice of
+     * 'default' with the value of the default as a string.
+     *
+     * @param int $stackPtr The position in the stack of the T_FUNCTION token
+     *                      to acquire the parameters for.
+     *
+     * @return array()
+     * @throws PHP_CodeSniffer_Exception If the specified $stackPtr is not of
+     *                                   type T_FUNCTION.
+     */
+    public function getMethodParameters($stackPtr)
+    {
+        if ($this->_tokens[$stackPtr]['code'] !== T_FUNCTION) {
+            throw new PHP_CodeSniffer_Exception('$stackPtr must be of type T_FUNCTION');
+        }
+
+        $opener = $this->_tokens[$stackPtr]['parenthesis_opener'];
+        $closer = $this->_tokens[$stackPtr]['parenthesis_closer'];
+
+        $vars            = array();
+        $currVar         = null;
+        $defaultStart    = null;
+        $paramCount      = 0;
+        $passByReference = false;
+        $typeHint        = '';
+
+        for ($i = ($opener + 1); $i <= $closer; $i++) {
+            // Check to see if this token has a parenthesis opener. If it does
+            // its likely to be an array, which might have arguments in it, which
+            // we cause problems in our parsing below, so lets just skip to the
+            // end of it.
+            if (isset($this->_tokens[$i]['parenthesis_opener']) === true) {
+                // Don't do this if it's the close parenthesis for the method.
+                if ($i !== $this->_tokens[$i]['parenthesis_closer']) {
+                    $i = ($this->_tokens[$i]['parenthesis_closer'] + 1);
+                }
+            }
+
+            switch ($this->_tokens[$i]['code']) {
+            case T_BITWISE_AND:
+                $passByReference = true;
+                break;
+            case T_VARIABLE:
+                $currVar = $i;
+                break;
+            case T_ARRAY_HINT:
+            case T_CALLABLE:
+                $typeHint = $this->_tokens[$i]['content'];
+                break;
+            case T_STRING:
+                // This is a string, so it may be a type hint, but it could
+                // also be a constant used as a default value.
+                $prevComma = $this->findPrevious(T_COMMA, $i, $opener);
+                if ($prevComma !== false) {
+                    $nextEquals = $this->findNext(T_EQUAL, $prevComma, $i);
+                    if ($nextEquals !== false) {
+                        break;
+                    }
+                }
+
+                if ($defaultStart === null) {
+                    $typeHint .= $this->_tokens[$i]['content'];
+                }
+
+                break;
+            case T_NS_SEPARATOR:
+                // Part of a type hint or default value.
+                if ($defaultStart === null) {
+                    $typeHint .= $this->_tokens[$i]['content'];
+                }
+
+                break;
+            case T_CLOSE_PARENTHESIS:
+            case T_COMMA:
+                // If it's null, then there must be no parameters for this
+                // method.
+                if ($currVar === null) {
+                    continue;
+                }
+
+                $vars[$paramCount]         = array();
+                $vars[$paramCount]['name'] = $this->_tokens[$currVar]['content'];
+
+                if ($defaultStart !== null) {
+                    $vars[$paramCount]['default']
+                        = $this->getTokensAsString(
+                            $defaultStart,
+                            ($i - $defaultStart)
+                        );
+                }
+
+                $vars[$paramCount]['pass_by_reference'] = $passByReference;
+                $vars[$paramCount]['type_hint']         = $typeHint;
+
+                // Reset the vars, as we are about to process the next parameter.
+                $defaultStart    = null;
+                $passByReference = false;
+                $typeHint        = '';
+
+                $paramCount++;
+                break;
+            case T_EQUAL:
+                $defaultStart = ($i + 1);
+                break;
+            }//end switch
+        }//end for
+
+        return $vars;
+
+    }//end getMethodParameters()
+
+
+    /**
+     * Returns the visibility and implementation properties of a method.
+     *
+     * The format of the array is:
+     * <code>
+     *   array(
+     *    'scope'           => 'public', // public private or protected
+     *    'scope_specified' => true,     // true is scope keyword was found.
+     *    'is_abstract'     => false,    // true if the abstract keyword was found.
+     *    'is_final'        => false,    // true if the final keyword was found.
+     *    'is_static'       => false,    // true if the static keyword was found.
+     *    'is_closure'      => false,    // true if no name is found.
+     *   );
+     * </code>
+     *
+     * @param int $stackPtr The position in the stack of the T_FUNCTION token to
+     *                      acquire the properties for.
+     *
+     * @return array
+     * @throws PHP_CodeSniffer_Exception If the specified position is not a
+     *                                   T_FUNCTION token.
+     */
+    public function getMethodProperties($stackPtr)
+    {
+        if ($this->_tokens[$stackPtr]['code'] !== T_FUNCTION) {
+            throw new PHP_CodeSniffer_Exception('$stackPtr must be of type T_FUNCTION');
+        }
+
+        $valid = array(
+                  T_PUBLIC,
+                  T_PRIVATE,
+                  T_PROTECTED,
+                  T_STATIC,
+                  T_FINAL,
+                  T_ABSTRACT,
+                  T_WHITESPACE,
+                  T_COMMENT,
+                  T_DOC_COMMENT,
+                 );
+
+        $scope          = 'public';
+        $scopeSpecified = false;
+        $isAbstract     = false;
+        $isFinal        = false;
+        $isStatic       = false;
+        $isClosure      = $this->isAnonymousFunction($stackPtr);
+
+        for ($i = ($stackPtr - 1); $i > 0; $i--) {
+            if (in_array($this->_tokens[$i]['code'], $valid) === false) {
+                break;
+            }
+
+            switch ($this->_tokens[$i]['code']) {
+            case T_PUBLIC:
+                $scope          = 'public';
+                $scopeSpecified = true;
+                break;
+            case T_PRIVATE:
+                $scope          = 'private';
+                $scopeSpecified = true;
+                break;
+            case T_PROTECTED:
+                $scope          = 'protected';
+                $scopeSpecified = true;
+                break;
+            case T_ABSTRACT:
+                $isAbstract = true;
+                break;
+            case T_FINAL:
+                $isFinal = true;
+                break;
+            case T_STATIC:
+                $isStatic = true;
+                break;
+            }//end switch
+        }//end for
+
+        return array(
+                'scope'           => $scope,
+                'scope_specified' => $scopeSpecified,
+                'is_abstract'     => $isAbstract,
+                'is_final'        => $isFinal,
+                'is_static'       => $isStatic,
+                'is_closure'      => $isClosure,
+               );
+
+    }//end getMethodProperties()
+
+
+    /**
+     * Returns the visibility and implementation properties of the class member
+     * variable found at the specified position in the stack.
+     *
+     * The format of the array is:
+     *
+     * <code>
+     *   array(
+     *    'scope'       => 'public', // public private or protected
+     *    'is_static'   => false,    // true if the static keyword was found.
+     *   );
+     * </code>
+     *
+     * @param int $stackPtr The position in the stack of the T_VARIABLE token to
+     *                      acquire the properties for.
+     *
+     * @return array
+     * @throws PHP_CodeSniffer_Exception If the specified position is not a
+     *                                   T_VARIABLE token, or if the position is not
+     *                                   a class member variable.
+     */
+    public function getMemberProperties($stackPtr)
+    {
+        if ($this->_tokens[$stackPtr]['code'] !== T_VARIABLE) {
+            throw new PHP_CodeSniffer_Exception('$stackPtr must be of type T_VARIABLE');
+        }
+
+        $conditions = array_keys($this->_tokens[$stackPtr]['conditions']);
+        $ptr        = array_pop($conditions);
+        if (isset($this->_tokens[$ptr]) === false
+            || $this->_tokens[$ptr]['code'] !== T_CLASS
+        ) {
+            if (isset($this->_tokens[$ptr]) === true
+                && $this->_tokens[$ptr]['code'] === T_INTERFACE
+            ) {
+                // T_VARIABLEs in interfaces can actually be method arguments
+                // but they wont be seen as being inside the method because there
+                // are no scope openers and closers for abstract methods. If it is in
+                // parentheses, we can be pretty sure it is a method argument.
+                if (isset($this->_tokens[$stackPtr]['nested_parenthesis']) === false
+                    || empty($this->_tokens[$stackPtr]['nested_parenthesis']) === true
+                ) {
+                    $error = 'Possible parse error: interfaces may not include member vars';
+                    $this->addWarning($error, $stackPtr, 'Internal.ParseError.InterfaceHasMemberVar');
+                    return array();
+                }
+            } else {
+                throw new PHP_CodeSniffer_Exception('$stackPtr is not a class member var');
+            }
+        }
+
+        $valid = array(
+                  T_PUBLIC,
+                  T_PRIVATE,
+                  T_PROTECTED,
+                  T_STATIC,
+                  T_WHITESPACE,
+                  T_COMMENT,
+                  T_DOC_COMMENT,
+                  T_VARIABLE,
+                  T_COMMA,
+                 );
+
+        $scope          = 'public';
+        $scopeSpecified = false;
+        $isStatic       = false;
+
+        for ($i = ($stackPtr - 1); $i > 0; $i--) {
+            if (in_array($this->_tokens[$i]['code'], $valid) === false) {
+                break;
+            }
+
+            switch ($this->_tokens[$i]['code']) {
+            case T_PUBLIC:
+                $scope          = 'public';
+                $scopeSpecified = true;
+                break;
+            case T_PRIVATE:
+                $scope          = 'private';
+                $scopeSpecified = true;
+                break;
+            case T_PROTECTED:
+                $scope          = 'protected';
+                $scopeSpecified = true;
+                break;
+            case T_STATIC:
+                $isStatic = true;
+                break;
+            }
+        }//end for
+
+        return array(
+                'scope'           => $scope,
+                'scope_specified' => $scopeSpecified,
+                'is_static'       => $isStatic,
+               );
+
+    }//end getMemberProperties()
+
+
+    /**
+     * Returns the visibility and implementation properties of a class.
+     *
+     * The format of the array is:
+     * <code>
+     *   array(
+     *    'is_abstract' => false, // true if the abstract keyword was found.
+     *    'is_final'    => false, // true if the final keyword was found.
+     *   );
+     * </code>
+     *
+     * @param int $stackPtr The position in the stack of the T_CLASS token to
+     *                      acquire the properties for.
+     *
+     * @return array
+     * @throws PHP_CodeSniffer_Exception If the specified position is not a
+     *                                   T_CLASS token.
+     */
+    public function getClassProperties($stackPtr)
+    {
+        if ($this->_tokens[$stackPtr]['code'] !== T_CLASS) {
+            throw new PHP_CodeSniffer_Exception('$stackPtr must be of type T_CLASS');
+        }
+
+        $valid = array(
+                  T_FINAL,
+                  T_ABSTRACT,
+                  T_WHITESPACE,
+                  T_COMMENT,
+                  T_DOC_COMMENT,
+                 );
+
+        $isAbstract = false;
+        $isFinal    = false;
+
+        for ($i = ($stackPtr - 1); $i > 0; $i--) {
+            if (in_array($this->_tokens[$i]['code'], $valid) === false) {
+                break;
+            }
+
+            switch ($this->_tokens[$i]['code']) {
+            case T_ABSTRACT:
+                $isAbstract = true;
+                break;
+
+            case T_FINAL:
+                $isFinal = true;
+                break;
+            }
+        }//end for
+
+        return array(
+                'is_abstract' => $isAbstract,
+                'is_final'    => $isFinal,
+               );
+
+    }//end getClassProperties()
+
+
+    /**
+     * Determine if the passed token is a reference operator.
+     *
+     * Returns true if the specified token position represents a reference.
+     * Returns false if the token represents a bitwise operator.
+     *
+     * @param int $stackPtr The position of the T_BITWISE_AND token.
+     *
+     * @return boolean
+     */
+    public function isReference($stackPtr)
+    {
+        if ($this->_tokens[$stackPtr]['code'] !== T_BITWISE_AND) {
+            return false;
+        }
+
+        $tokenBefore = $this->findPrevious(
+            PHP_CodeSniffer_Tokens::$emptyTokens,
+            ($stackPtr - 1),
+            null,
+            true
+        );
+
+        if ($this->_tokens[$tokenBefore]['code'] === T_FUNCTION) {
+            // Function returns a reference.
+            return true;
+        }
+
+        if ($this->_tokens[$tokenBefore]['code'] === T_DOUBLE_ARROW) {
+            // Inside a foreach loop, this is a reference.
+            return true;
+        }
+
+        if ($this->_tokens[$tokenBefore]['code'] === T_AS) {
+            // Inside a foreach loop, this is a reference.
+            return true;
+        }
+
+        if (in_array($this->_tokens[$tokenBefore]['code'], PHP_CodeSniffer_Tokens::$assignmentTokens) === true) {
+            // This is directly after an assignment. It's a reference. Even if
+            // it is part of an operation, the other tests will handle it.
+            return true;
+        }
+
+        if (isset($this->_tokens[$stackPtr]['nested_parenthesis']) === true) {
+            $brackets    = $this->_tokens[$stackPtr]['nested_parenthesis'];
+            $lastBracket = array_pop($brackets);
+            if (isset($this->_tokens[$lastBracket]['parenthesis_owner']) === true) {
+                $owner = $this->_tokens[$this->_tokens[$lastBracket]['parenthesis_owner']];
+                if ($owner['code'] === T_FUNCTION
+                    || $owner['code'] === T_CLOSURE
+                    || $owner['code'] === T_ARRAY
+                ) {
+                    // Inside a function or array declaration, this is a reference.
+                    return true;
+                }
+            } else {
+                $prev = $this->findPrevious(
+                    array(T_WHITESPACE),
+                    ($this->_tokens[$lastBracket]['parenthesis_opener'] - 1),
+                    null,
+                    true
+                );
+
+                if ($prev !== false && $this->_tokens[$prev]['code'] === T_USE) {
+                    return true;
+                }
+            }
+        }
+
+        $tokenAfter = $this->findNext(
+            PHP_CodeSniffer_Tokens::$emptyTokens,
+            ($stackPtr + 1),
+            null,
+            true
+        );
+
+        if ($this->_tokens[$tokenAfter]['code'] === T_VARIABLE
+            && ($this->_tokens[$tokenBefore]['code'] === T_OPEN_PARENTHESIS
+            || $this->_tokens[$tokenBefore]['code'] === T_COMMA)
+        ) {
+            return true;
+        }
+
+        return false;
+
+    }//end isReference()
+
+
+    /**
+     * Returns the content of the tokens from the specified start position in
+     * the token stack for the specified length.
+     *
+     * @param int $start  The position to start from in the token stack.
+     * @param int $length The length of tokens to traverse from the start pos.
+     *
+     * @return string The token contents.
+     */
+    public function getTokensAsString($start, $length)
+    {
+        $str = '';
+        $end = ($start + $length);
+        if ($end > $this->numTokens) {
+            $end = $this->numTokens;
+        }
+
+        for ($i = $start; $i < $end; $i++) {
+            $str .= $this->_tokens[$i]['content'];
+        }
+
+        return $str;
+
+    }//end getTokensAsString()
+
+
+    /**
+     * Returns the position of the next specified token(s).
+     *
+     * If a value is specified, the next token of the specified type(s)
+     * containing the specified value will be returned.
+     *
+     * Returns false if no token can be found.
+     *
+     * @param int|array $types   The type(s) of tokens to search for.
+     * @param int       $start   The position to start searching from in the
+     *                           token stack.
+     * @param int       $end     The end position to fail if no token is found.
+     *                           if not specified or null, end will default to
+     *                           the start of the token stack.
+     * @param bool      $exclude If true, find the next token that are NOT of
+     *                           the types specified in $types.
+     * @param string    $value   The value that the token(s) must be equal to.
+     *                           If value is omitted, tokens with any value will
+     *                           be returned.
+     * @param bool      $local   If true, tokens outside the current statement
+     *                           will not be checked. IE. checking will stop
+     *                           at the next semi-colon found.
+     *
+     * @return int | bool
+     * @see findNext()
+     */
+    public function findPrevious(
+        $types,
+        $start,
+        $end=null,
+        $exclude=false,
+        $value=null,
+        $local=false
+    ) {
+        $types = (array) $types;
+
+        if ($end === null) {
+            $end = 0;
+        }
+
+        for ($i = $start; $i >= $end; $i--) {
+            $found = (bool) $exclude;
+            foreach ($types as $type) {
+                if ($this->_tokens[$i]['code'] === $type) {
+                    $found = !$exclude;
+                    break;
+                }
+            }
+
+            if ($found === true) {
+                if ($value === null) {
+                    return $i;
+                } else if ($this->_tokens[$i]['content'] === $value) {
+                    return $i;
+                }
+            }
+
+            if ($local === true && $this->_tokens[$i]['code'] === T_SEMICOLON) {
+                break;
+            }
+        }//end for
+
+        return false;
+
+    }//end findPrevious()
+
+
+    /**
+     * Returns the position of the next specified token(s).
+     *
+     * If a value is specified, the next token of the specified type(s)
+     * containing the specified value will be returned.
+     *
+     * Returns false if no token can be found.
+     *
+     * @param int|array $types   The type(s) of tokens to search for.
+     * @param int       $start   The position to start searching from in the
+     *                           token stack.
+     * @param int       $end     The end position to fail if no token is found.
+     *                           if not specified or null, end will default to
+     *                           the end of the token stack.
+     * @param bool      $exclude If true, find the next token that is NOT of
+     *                           a type specified in $types.
+     * @param string    $value   The value that the token(s) must be equal to.
+     *                           If value is omitted, tokens with any value will
+     *                           be returned.
+     * @param bool      $local   If true, tokens outside the current statement
+     *                           will not be checked. i.e., checking will stop
+     *                           at the next semi-colon found.
+     *
+     * @return int | bool
+     * @see findPrevious()
+     */
+    public function findNext(
+        $types,
+        $start,
+        $end=null,
+        $exclude=false,
+        $value=null,
+        $local=false
+    ) {
+        $types = (array) $types;
+
+        if ($end === null || $end > $this->numTokens) {
+            $end = $this->numTokens;
+        }
+
+        for ($i = $start; $i < $end; $i++) {
+            $found = (bool) $exclude;
+            foreach ($types as $type) {
+                if ($this->_tokens[$i]['code'] === $type) {
+                    $found = !$exclude;
+                    break;
+                }
+            }
+
+            if ($found === true) {
+                if ($value === null) {
+                    return $i;
+                } else if ($this->_tokens[$i]['content'] === $value) {
+                    return $i;
+                }
+            }
+
+            if ($local === true && $this->_tokens[$i]['code'] === T_SEMICOLON) {
+                break;
+            }
+        }//end for
+
+        return false;
+
+    }//end findNext()
+
+
+    /**
+     * Returns the position of the first token on a line, matching given type.
+     *
+     * Returns false if no token can be found.
+     *
+     * @param int|array $types   The type(s) of tokens to search for.
+     * @param int       $start   The position to start searching from in the
+     *                           token stack. The first token matching on
+     *                           this line before this token will be returned.
+     * @param bool      $exclude If true, find the token that is NOT of
+     *                           the types specified in $types.
+     * @param string    $value   The value that the token must be equal to.
+     *                           If value is omitted, tokens with any value will
+     *                           be returned.
+     *
+     * @return int | bool
+     */
+    public function findFirstOnLine($types, $start, $exclude=false, $value=null)
+    {
+        if (is_array($types) === false) {
+            $types = array($types);
+        }
+
+        $foundToken = false;
+
+        for ($i = $start; $i >= 0; $i--) {
+            if ($this->_tokens[$i]['line'] < $this->_tokens[$start]['line']) {
+                break;
+            }
+
+            $found = $exclude;
+            foreach ($types as $type) {
+                if ($exclude === false) {
+                    if ($this->_tokens[$i]['code'] === $type) {
+                        $found = true;
+                        break;
+                    }
+                } else {
+                    if ($this->_tokens[$i]['code'] === $type) {
+                        $found = false;
+                        break;
+                    }
+                }
+            }
+
+            if ($found === true) {
+                if ($value === null) {
+                    $foundToken = $i;
+                } else if ($this->_tokens[$i]['content'] === $value) {
+                    $foundToken = $i;
+                }
+            }
+        }//end for
+
+        return $foundToken;
+
+    }//end findFirstOnLine()
+
+
+    /**
+     * Determine if the passed token has a condition of one of the passed types.
+     *
+     * @param int       $stackPtr The position of the token we are checking.
+     * @param int|array $types    The type(s) of tokens to search for.
+     *
+     * @return boolean
+     */
+    public function hasCondition($stackPtr, $types)
+    {
+        // Check for the existence of the token.
+        if (isset($this->_tokens[$stackPtr]) === false) {
+            return false;
+        }
+
+        // Make sure the token has conditions.
+        if (isset($this->_tokens[$stackPtr]['conditions']) === false) {
+            return false;
+        }
+
+        $types      = (array) $types;
+        $conditions = $this->_tokens[$stackPtr]['conditions'];
+
+        foreach ($types as $type) {
+            if (in_array($type, $conditions) === true) {
+                // We found a token with the required type.
+                return true;
+            }
+        }
+
+        return false;
+
+    }//end hasCondition()
+
+
+    /**
+     * Return the position of the condition for the passed token.
+     *
+     * Returns FALSE if the token does not have the condition.
+     *
+     * @param int $stackPtr The position of the token we are checking.
+     * @param int $type     The type of token to search for.
+     *
+     * @return int
+     */
+    public function getCondition($stackPtr, $type)
+    {
+        // Check for the existence of the token.
+        if (isset($this->_tokens[$stackPtr]) === false) {
+            return false;
+        }
+
+        // Make sure the token has conditions.
+        if (isset($this->_tokens[$stackPtr]['conditions']) === false) {
+            return false;
+        }
+
+        $conditions = $this->_tokens[$stackPtr]['conditions'];
+        foreach ($conditions as $token => $condition) {
+            if ($condition === $type) {
+                return $token;
+            }
+        }
+
+        return false;
+
+    }//end getCondition()
+
+
+    /**
+     * Returns the name of the class that the specified class extends.
+     *
+     * Returns FALSE on error or if there is no extended class name.
+     *
+     * @param int $stackPtr The stack position of the class.
+     *
+     * @return string
+     */
+    public function findExtendedClassName($stackPtr)
+    {
+        // Check for the existence of the token.
+        if (isset($this->_tokens[$stackPtr]) === false) {
+            return false;
+        }
+
+        if ($this->_tokens[$stackPtr]['code'] !== T_CLASS) {
+            return false;
+        }
+
+        if (isset($this->_tokens[$stackPtr]['scope_closer']) === false) {
+            return false;
+        }
+
+        $classCloserIndex = $this->_tokens[$stackPtr]['scope_closer'];
+        $extendsIndex     = $this->findNext(T_EXTENDS, $stackPtr, $classCloserIndex);
+        if (false === $extendsIndex) {
+            return false;
+        }
+
+        $find = array(
+                 T_NS_SEPARATOR,
+                 T_STRING,
+                 T_WHITESPACE,
+                );
+
+        $end  = $this->findNext($find, ($extendsIndex + 1), $classCloserIndex, true);
+        $name = $this->getTokensAsString(($extendsIndex + 1), ($end - $extendsIndex - 1));
+        $name = trim($name);
+
+        if ($name === '') {
+            return false;
+        }
+
+        return $name;
+
+    }//end findExtendedClassName()
+
+
+}//end class
+
 ?>
-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

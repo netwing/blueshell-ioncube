@@ -1,55 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Tests\Iterator;
+
+abstract class IteratorTestCase extends \PHPUnit_Framework_TestCase
+{
+    protected function assertIterator($expected, \Traversable $iterator)
+    {
+        // set iterator_to_array $use_key to false to avoid values merge
+        // this made FinderTest::testAppendWithAnArray() failed with GnuFinderAdapter
+        $values = array_map(function (\SplFileInfo $fileinfo) { return str_replace('/', DIRECTORY_SEPARATOR, $fileinfo->getPathname()); }, iterator_to_array($iterator, false));
+
+        $expected = array_map(function ($path) { return str_replace('/', DIRECTORY_SEPARATOR, $path); }, $expected);
+
+        sort($values);
+        sort($expected);
+
+        $this->assertEquals($expected, array_values($values));
+    }
+
+    protected function assertOrderedIterator($expected, \Traversable $iterator)
+    {
+        $values = array_map(function (\SplFileInfo $fileinfo) { return $fileinfo->getPathname(); }, iterator_to_array($iterator));
+
+        $this->assertEquals($expected, array_values($values));
+    }
+
+    /**
+     * Same as IteratorTestCase::assertIterator with foreach usage
+     *
+     * @param array $expected
+     * @param \Traversable $iterator
+     */
+    protected function assertIteratorInForeach($expected, \Traversable $iterator)
+    {
+        $values = array();
+        foreach ($iterator as $file) {
+            $this->assertInstanceOf('Symfony\\Component\\Finder\\SplFileInfo', $file);
+            $values[] = $file->getPathname();
+        }
+
+        sort($values);
+        sort($expected);
+
+        $this->assertEquals($expected, array_values($values));
+    }
+
+    /**
+     * Same as IteratorTestCase::assertOrderedIterator with foreach usage
+     *
+     * @param array $expected
+     * @param \Traversable $iterator
+     */
+    protected function assertOrderedIteratorInForeach($expected, \Traversable $iterator)
+    {
+        $values = array();
+        foreach ($iterator as $file) {
+            $this->assertInstanceOf('Symfony\\Component\\Finder\\SplFileInfo', $file);
+            $values[] = $file->getPathname();
+        }
+
+        $this->assertEquals($expected, array_values($values));
+    }
+}

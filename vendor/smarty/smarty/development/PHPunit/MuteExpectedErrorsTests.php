@@ -1,73 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty PHPunit tests of filter
+ *
+ * @package PHPunit
+ * @author Rodney Rehm
+ */
+
+/**
+ * class for filter tests
+ */
+class MuteExpectedErrorsTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        $this->smartyBC = SmartyTests::$smartyBC;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    protected $_errors = array();
+    public function error_handler($errno, $errstr, $errfile, $errline, $errcontext)
+    {
+        $this->_errors[] = $errfile .' line ' . $errline;
+    }
+
+    public function testMuted()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+        Smarty::muteExpectedErrors();
+
+        $this->smarty->clearCache('default.tpl');
+        $this->smarty->clearCompiledTemplate('default.tpl');
+        $this->smarty->fetch('default.tpl');
+
+        $this->assertEquals($this->_errors, array());
+
+        @filemtime('ckxladanwijicajscaslyxck');
+        $error = array( __FILE__ . ' line ' . (__LINE__ -1));
+        $this->assertEquals($this->_errors, $error);
+
+        Smarty::unmuteExpectedErrors();
+        restore_error_handler();
+    }
+
+    public function testUnmuted()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+
+        $this->smarty->clearCache('default.tpl');
+        $this->smarty->clearCompiledTemplate('default.tpl');
+        $this->smarty->fetch('default.tpl');
+
+        $this->assertEquals(Smarty::$_IS_WINDOWS ? 5 : 4, count($this->_errors));
+
+        @filemtime('ckxladanwijicajscaslyxck');
+        $error = array( __FILE__ . ' line ' . (__LINE__ -1));
+        $this->assertEquals(Smarty::$_IS_WINDOWS ? 6 : 5, count($this->_errors));
+
+        restore_error_handler();
+    }
+
+    public function testMutedCaching()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+        Smarty::muteExpectedErrors();
+
+        $this->smarty->caching = true;
+        $this->smarty->clearCache('default.tpl');
+        $this->smarty->clearCompiledTemplate('default.tpl');
+        $this->smarty->fetch('default.tpl');
+
+        $this->assertEquals($this->_errors, array());
+
+        @filemtime('ckxladanwijicajscaslyxck');
+        $error = array( __FILE__ . ' line ' . (__LINE__ -1));
+        $this->assertEquals($error,$this->_errors);
+
+        Smarty::unmuteExpectedErrors();
+        restore_error_handler();
+    }
+
+    public function testUnmutedCaching()
+    {
+        $this->_errors = array();
+        set_error_handler(array($this, 'error_handler'));
+
+        $this->smarty->caching = true;
+        $this->smarty->clearCache('default.tpl');
+        $this->smarty->clearCompiledTemplate('default.tpl');
+        $this->smarty->fetch('default.tpl');
+
+        $this->assertEquals(Smarty::$_IS_WINDOWS ? 7 : 5, count($this->_errors));
+
+        @filemtime('ckxladanwijicajscaslyxck');
+        $error = array( __FILE__ . ' line ' . (__LINE__ -1));
+        $this->assertEquals(Smarty::$_IS_WINDOWS ? 8 : 6, count($this->_errors));
+
+        restore_error_handler();
+    }
+}

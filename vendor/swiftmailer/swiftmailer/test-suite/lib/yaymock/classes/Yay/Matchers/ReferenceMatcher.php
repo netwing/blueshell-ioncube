@@ -1,39 +1,104 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+//require 'Yay/Matcher.php';
+
+/**
+ * Compares values to see if they reference one another.
+ * @author Chris Corbyn <chris@w3style.co.uk>
+ * @package Yay
+ */
+class Yay_Matchers_ReferenceMatcher implements Yay_Matcher
+{
+  
+  /**
+   * The expected reference.
+   * @var mixed
+   * @access private
+   */
+  private $_ref;
+  
+  /**
+   * The desired return value.
+   * @var boolean
+   * @access private
+   */
+  private $_result;
+  
+  /**
+   * Create a new IdenticalMatcher expecting $expected.
+   * @param mixed $expected
+   * @param boolean $result to be expected
+   */
+  public function __construct(&$ref, $result = true)
+  {
+    $this->_ref =& $ref;
+    $this->_result = $result;
+  }
+  
+  /**
+   * Compare $ref with the expected reference and return true if it is the same reference.
+   * @param mixed $ref
+   * @return boolean
+   */
+  public function matches(&$ref)
+  {
+    if (is_object($ref))
+    {
+      $isRef = ($this->_ref === $ref);
+    }
+    else
+    {
+      if ($this->_ref === $ref)
+      {
+        $copy = $ref;
+        $randomString = uniqid('yay');
+        $ref = $randomString;
+        $isRef = ($this->_ref === $ref);
+        $ref = $copy;
+      }
+      else
+      {
+        $isRef = false;
+      }
+    }
+    
+    return (($this->_result && $isRef) || (!$this->_result && !$isRef));
+  }
+  
+  /**
+   * Returns true if the argument doesn't need to be present.
+   * @return boolean
+   */
+  public function isOptional()
+  {
+    return false;
+  }
+  
+  /**
+   * Writes the match description as a string following $format.
+   * $format is a sprintf() string with %s, $s as $matcherName, $value respectively.
+   * @param string $format
+   * @return string
+   */
+  public function describeMatch($format)
+  {
+    return '[reference]';
+  }
+  
+}

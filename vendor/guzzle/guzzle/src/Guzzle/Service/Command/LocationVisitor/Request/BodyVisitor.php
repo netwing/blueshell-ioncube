@@ -1,42 +1,58 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP+BWyePtJSUf6b5dfGbTP4oU9QeepZSqGh6i3pJAWshL4U4KLRn0JNkJ31v85Hy99jduviwt
-UYsneY5LmZWh/fy2gwYspPhhh+IeATzrj7+GwLusCq8mnTIC3G5Y4nKHx5XQl5dmDhjLK+9wQgsj
-FXP1SGK5rjcf+UkQLpWQd7FD7yZp5r30ISQb/hQGSoVEb2pIXHBtC2/0+r91A43XWLg/EsldzMVf
-1f1MJCzxVUs8oz1A9D0Zhr4euJltSAgiccy4GDnfT2PXC+t8zMq5fq9P7jXroRyeXHDkG4Y0ha/h
-jxNkqKY6+Kd4FL8QSyx/xZ3PQf0kESvGMon+41A08SNDrMM9mSZOkbaHNe2aVQs46xqKcU2Qp2N5
-WzXZAHpTdkpPm7Gn1VMk6bwEWXA0Xy77S6ha5U0Vokq70rh4G4GQkGC4AaorO0mTIHdDB/6oukon
-thYRGmTa9+KH61c8i7TvmQZTnj6TjoIjBJH6BXm3g1AIetb9fc1YjYU/JLQlkt1M8fm+4XPHB4x1
-h55DE7ErKEl8is1u17cmyFAA2hnIBQTnIsIrF+Q0Kqb4UCZM4QBNZql9VQC1wqQkpwcfaWikrD0V
-pqZV4CLYmnDH13PuEWSJKVE06LLdSMO9gL94gQx2g3w9XcWSzPdZNd/5+/1k4cwop6CH+atG60QU
-KTbp5JNH8CnMyjJxl1EGhiNtKJNht+l+l8mckr/OHUUNDkc1jkC8S71Corhn0foWjZ5d9ZiESLow
-yuZf0qe+bBNGl9DCBSLzaX2L1BzeWwfyMJSzhhABZFstPiP1RqA3gyiHVTu3NGivHRdVOFx0qZwb
-VdlVIthVOoIcVALVp+dKH4wm8mdlQI5ObztoFaFrPmfuFhF7ZCI+PgLuf0z6/1VE+M5J03lDN0pz
-HP/m2tAgfaKCsYHZtSCMk/4oU7DUnsO/3n/gj+JVe1P0pWX5SbEXGh9nIAPm3OxS7/r9lI/KUql+
-fF8kFGQZcZfM2odXMKLDvKc+dDiqaQmdeshEqiR7n3BIAVoSGQZOn+KLg0MI3gaK6MfMRC9ENA9N
-hZIILEP6mmVxYo2bS12KA+URhaS2q7c7KIYmkhy31opACfcB5HOEyiAa1sOMN9qcZHuTFMDac5uR
-9yCtcwJ09FT8rHcSWCs+XFkwpjPWKsy0h7zgVdpptKM0NWfvGwPBC5CBt+3eoqpuHPFNDFnPBh/0
-JSBxbNAijOkzFUbfSCUhLIcIryQnNBybXy7slenEVKd88xt8C2rbzwbpNYP+nKBUPAQcPljKzFUY
-76yiXGIFn4d/L4r5HfIyDWXdWyRdwPB2kAdAGRw8H/zXDOvlPZ3+ETk5P1ylqMXVAz0f4ijcZZY3
-8sxMcoakXnqgNCiTlvg04o7aPeYyU3OUFyv+hviOWVCbafGxnxJJHsf5bSHyCH10JnsHcYKg5Ufw
-2pMaZ2jv7eAJlM/1JSTonGwFAfLDEGPrxYHUrWvrcFWBSE+orCKAZ5opJyMzyEIuQCIjyJHA5tTf
-aPhW7c+UQxnzrf8t1sscQfz4hHKGJ8bU6sttpUD7+h8RR0lBY8GzzDveBCXztuYk3JVxACnywuIk
-Ql2hfPk67m+2XIubDkE6XPB2NsEzSO9MrvYe0Hy8ko3dVdhZRwg9WE2CLSENmZPg/ztAb5XQpxZ3
-fvDNLRyrNreSgp0b5GcbHgelJaxhhbGqXs1nHlk1lmAO1x/9fXDL4lVpz2W8XtkT7f1N3Wg7P9J6
-WQe2ISw3Zl4G33eUJtLsgIMmTWUyhf2pR0nGHgJr84ZL/DP5VVoCPrjmV6EHc1SqE+S0gA6I9Q95
-AqJzriflx5SARpRrTcstAKOfGzLxYUe+yzi5amGNbsztpaAmMv6xV1SGlgoml/RU4NyQIOu21zFC
-iobaAdZ1tSbVEGkuPer6rk39YsECQ0KWSPF10axcbQJQ0VVb74NMtfl6SaDj0amcT1NFY2rD9ke6
-1tyDx31Jj5+Fmb2dn2Hpb8nEcyVQIYrqJ9tZDc/+wlZexhDMPcpFwYrEPqWSr89aqUPhb1lpRXL2
-YgCN66V7nOi3GCLhR/3Pq+yxQlME0M7fWy/03P1g4aJ1JGLuc7MPUGZdKOo+nnvRKFQjFvnhU/4L
-0OMhDkBQRxvfweIWyTZtS0/+RJIe1xR4FzJurvDgCaLdf8+tXiHxHmA8COg6xwvRmmK+muFJX7im
-J/sIUEG7LSSCvgTdO5YSAFbFTXmNtBUU95hJCLN/s0hKYLyWrqf5wJJxLvWXGx1N284u+i0i3175
-ClpOc4m/bgA/Mvhajz6ADB1XwR+1i/d+eGP3VHDMVVooKsXkORbTT5IxVsshPchEoHD1IkIpHMti
-1WpRctB+2g8JczwEoDpnR4KjXxeJXaTcq0glVtbGypcwil5EQ9bM3/dffbbtQ0xLJPL2cNbN2llo
-uWRb5EVJSwY90RtGpWkfj1UITjXpdEJ5KaFV6kJMeatu3oxm9yObd6qXHwtSkCkzD5tdrjHg5gMo
-wSkfdiPk9Uedvecv6LwDNMd1IAOJyg3xClvLiGedS7RnG6brrgu3AkXp+QeSROIUSXl6WwtIKmzm
-YQun74iDaqJwLZZYH8wfCycFAySlddGTfIyD2z1GyalG0Mec5qLBpuYNnlHZ7/8LKZOKRYlfn0GL
-/kGSjw4+qyOInvl/FLhbQoTpeLelQ/TmCdwsOGfoPTnkpSzWFkt8KpbxSxjxKv0cK0kBOVXdo7wc
-io/cAMk8pDzYFzRId2EBDoe8DJLYsK6/wMIa4AMHGU09XrJO/Z9ahsFxZYnVHCHRDvpQu6gg+spf
-HPUV90Rq/m8ThlwyHcJfDKBDIu73GZv5Nh9hmwSkfvCkmafGwJjZWdC7voJxBsmjfhEpx5w1QcGb
-DWX6SWorV4hVxMOYDOX/Yh/iibTX0EtLMvtP7QgvpvNj
+<?php
+
+namespace Guzzle\Service\Command\LocationVisitor\Request;
+
+use Guzzle\Http\EntityBody;
+use Guzzle\Http\Message\EntityEnclosingRequestInterface;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\EntityBodyInterface;
+use Guzzle\Service\Command\CommandInterface;
+use Guzzle\Service\Description\Parameter;
+
+/**
+ * Visitor used to apply a body to a request
+ *
+ * This visitor can use a data parameter of 'expect' to control the Expect header. Set the expect data parameter to
+ * false to disable the expect header, or set the value to an integer so that the expect 100-continue header is only
+ * added if the Content-Length of the entity body is greater than the value.
+ */
+class BodyVisitor extends AbstractRequestVisitor
+{
+    public function visit(CommandInterface $command, RequestInterface $request, Parameter $param, $value)
+    {
+        $value = $param->filter($value);
+        $entityBody = EntityBody::factory($value);
+        $request->setBody($entityBody);
+        $this->addExpectHeader($request, $entityBody, $param->getData('expect_header'));
+        // Add the Content-Encoding header if one is set on the EntityBody
+        if ($encoding = $entityBody->getContentEncoding()) {
+            $request->setHeader('Content-Encoding', $encoding);
+        }
+    }
+
+    /**
+     * Add the appropriate expect header to a request
+     *
+     * @param EntityEnclosingRequestInterface $request Request to update
+     * @param EntityBodyInterface             $body    Entity body of the request
+     * @param string|int                      $expect  Expect header setting
+     */
+    protected function addExpectHeader(EntityEnclosingRequestInterface $request, EntityBodyInterface $body, $expect)
+    {
+        // Allow the `expect` data parameter to be set to remove the Expect header from the request
+        if ($expect === false) {
+            $request->removeHeader('Expect');
+        } elseif ($expect !== true) {
+            // Default to using a MB as the point in which to start using the expect header
+            $expect = $expect ?: 1048576;
+            // If the expect_header value is numeric then only add if the size is greater than the cutoff
+            if (is_numeric($expect) && $body->getSize()) {
+                if ($body->getSize() < $expect) {
+                    $request->removeHeader('Expect');
+                } else {
+                    $request->setHeader('Expect', '100-Continue');
+                }
+            }
+        }
+    }
+}

@@ -1,35 +1,73 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+2Ntuom6K9xR/WnKkEKF17W=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Attachment class for attaching files to a {@link Swift_Mime_Message}.
+ *
+ * @package    Swift
+ * @subpackage Mime
+ * @author     Chris Corbyn
+ */
+class Swift_Attachment extends Swift_Mime_Attachment
+{
+    /**
+     * Create a new Attachment.
+     *
+     * Details may be optionally provided to the constructor.
+     *
+     * @param string|Swift_OutputByteStream $data
+     * @param string                        $filename
+     * @param string                        $contentType
+     */
+    public function __construct($data = null, $filename = null, $contentType = null)
+    {
+        call_user_func_array(
+            array($this, 'Swift_Mime_Attachment::__construct'),
+            Swift_DependencyContainer::getInstance()
+                ->createDependenciesFor('mime.attachment')
+            );
+
+        $this->setBody($data);
+        $this->setFilename($filename);
+        if ($contentType) {
+            $this->setContentType($contentType);
+        }
+    }
+
+    /**
+     * Create a new Attachment.
+     *
+     * @param string|Swift_OutputByteStream $data
+     * @param string                        $filename
+     * @param string                        $contentType
+     *
+     * @return Swift_Mime_Attachment
+     */
+    public static function newInstance($data = null, $filename = null, $contentType = null)
+    {
+        return new self($data, $filename, $contentType);
+    }
+
+    /**
+     * Create a new Attachment from a filesystem path.
+     *
+     * @param string $path
+     * @param string $contentType optional
+     *
+     * @return Swift_Mime_Attachment
+     */
+    public static function fromPath($path, $contentType = null)
+    {
+        return self::newInstance()->setFile(
+            new Swift_ByteStream_FileByteStream($path),
+            $contentType
+            );
+    }
+}

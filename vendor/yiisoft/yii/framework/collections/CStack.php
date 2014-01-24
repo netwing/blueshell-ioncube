@@ -1,67 +1,172 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-V7A/
+<?php
+/**
+ * This file contains classes implementing the stack feature.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CStack implements a stack.
+ *
+ * The typical stack operations are implemented, which include
+ * {@link push()}, {@link pop()} and {@link peek()}. In addition,
+ * {@link contains()} can be used to check if an item is contained
+ * in the stack. To obtain the number of the items in the stack,
+ * check the {@link getCount Count} property.
+ *
+ * Items in the stack may be traversed using foreach as follows,
+ * <pre>
+ * foreach($stack as $item) ...
+ * </pre>
+ *
+ * @property Iterator $iterator An iterator for traversing the items in the stack.
+ * @property integer $count The number of items in the stack.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.collections
+ * @since 1.0
+ */
+class CStack extends CComponent implements IteratorAggregate,Countable
+{
+	/**
+	 * internal data storage
+	 * @var array
+	 */
+	private $_d=array();
+	/**
+	 * number of items
+	 * @var integer
+	 */
+	private $_c=0;
+
+	/**
+	 * Constructor.
+	 * Initializes the stack with an array or an iterable object.
+	 * @param array $data the initial data. Default is null, meaning no initialization.
+	 * @throws CException If data is not null and neither an array nor an iterator.
+	 */
+	public function __construct($data=null)
+	{
+		if($data!==null)
+			$this->copyFrom($data);
+	}
+
+	/**
+	 * @return array the list of items in stack
+	 */
+	public function toArray()
+	{
+		return $this->_d;
+	}
+
+	/**
+	 * Copies iterable data into the stack.
+	 * Note, existing data in the list will be cleared first.
+	 * @param mixed $data the data to be copied from, must be an array or object implementing Traversable
+	 * @throws CException If data is neither an array nor a Traversable.
+	 */
+	public function copyFrom($data)
+	{
+		if(is_array($data) || ($data instanceof Traversable))
+		{
+			$this->clear();
+			foreach($data as $item)
+			{
+				$this->_d[]=$item;
+				++$this->_c;
+			}
+		}
+		elseif($data!==null)
+			throw new CException(Yii::t('yii','Stack data must be an array or an object implementing Traversable.'));
+	}
+
+	/**
+	 * Removes all items in the stack.
+	 */
+	public function clear()
+	{
+		$this->_c=0;
+		$this->_d=array();
+	}
+
+	/**
+	 * @param mixed $item the item
+	 * @return boolean whether the stack contains the item
+	 */
+	public function contains($item)
+	{
+		return array_search($item,$this->_d,true)!==false;
+	}
+
+	/**
+	 * Returns the item at the top of the stack.
+	 * Unlike {@link pop()}, this method does not remove the item from the stack.
+	 * @return mixed item at the top of the stack
+	 * @throws CException if the stack is empty
+	 */
+	public function peek()
+	{
+		if($this->_c)
+			return $this->_d[$this->_c-1];
+		else
+			throw new CException(Yii::t('yii','The stack is empty.'));
+	}
+
+	/**
+	 * Pops up the item at the top of the stack.
+	 * @return mixed the item at the top of the stack
+	 * @throws CException if the stack is empty
+	 */
+	public function pop()
+	{
+		if($this->_c)
+		{
+			--$this->_c;
+			return array_pop($this->_d);
+		}
+		else
+			throw new CException(Yii::t('yii','The stack is empty.'));
+	}
+
+	/**
+	 * Pushes an item into the stack.
+	 * @param mixed $item the item to be pushed into the stack
+	 */
+	public function push($item)
+	{
+		++$this->_c;
+		$this->_d[]=$item;
+	}
+
+	/**
+	 * Returns an iterator for traversing the items in the stack.
+	 * This method is required by the interface IteratorAggregate.
+	 * @return Iterator an iterator for traversing the items in the stack.
+	 */
+	public function getIterator()
+	{
+		return new CStackIterator($this->_d);
+	}
+
+	/**
+	 * Returns the number of items in the stack.
+	 * @return integer the number of items in the stack
+	 */
+	public function getCount()
+	{
+		return $this->_c;
+	}
+
+	/**
+	 * Returns the number of items in the stack.
+	 * This method is required by Countable interface.
+	 * @return integer number of items in the stack.
+	 */
+	public function count()
+	{
+		return $this->getCount();
+	}
+}

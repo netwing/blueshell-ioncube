@@ -1,144 +1,196 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+FUIbI+sFZvPqG==
+<?php
+
+namespace Tests\Behat\Mink\Driver;
+
+require_once 'GeneralDriverTest.php';
+
+abstract class JavascriptDriverTest extends GeneralDriverTest
+{
+    public function testIFrame()
+    {
+        $this->getSession()->visit($this->pathTo('/iframe.php'));
+        $page = $this->getSession()->getPage();
+
+        $el = $page->find('css', '#text');
+        $this->assertNotNull($el);
+        $this->assertSame('Main window div text', $el->getText());
+
+        $this->getSession()->switchToIFrame('subframe');
+
+        $el = $page->find('css', '#text');
+        $this->assertNotNull($el);
+        $this->assertSame('iFrame div text', $el->getText());
+
+        $this->getSession()->switchToIFrame();
+
+        $el = $page->find('css', '#text');
+        $this->assertNotNull($el);
+        $this->assertSame('Main window div text', $el->getText());
+    }
+
+    public function testWindow()
+    {
+        $this->getSession()->visit($this->pathTo('/window.php'));
+        $session = $this->getSession();
+        $page    = $session->getPage();
+
+        $page->clickLink('Popup #1');
+        $page->clickLink('Popup #2');
+
+        $el = $page->find('css', '#text');
+        $this->assertNotNull($el);
+        $this->assertSame('Main window div text', $el->getText());
+
+        $session->switchToWindow('popup_1');
+        $el = $page->find('css', '#text');
+        $this->assertNotNull($el);
+        $this->assertSame('Popup#1 div text', $el->getText());
+
+        $session->switchToWindow('popup_2');
+        $el = $page->find('css', '#text');
+        $this->assertNotNull($el);
+        $this->assertSame('Popup#2 div text', $el->getText());
+
+        $session->switchToWindow(null);
+        $el = $page->find('css', '#text');
+        $this->assertNotNull($el);
+        $this->assertSame('Main window div text', $el->getText());
+    }
+
+    public function testAriaRoles()
+    {
+        $this->getSession()->visit($this->pathTo('/aria_roles.php'));
+
+        $this->getSession()->wait(5000, '$("#hidden-element").is(":visible") === false');
+        $this->getSession()->getPage()->pressButton('Toggle');
+        $this->getSession()->wait(5000, '$("#hidden-element").is(":visible") === true');
+
+        $this->getSession()->getPage()->clickLink('Go to Index');
+        $this->assertEquals($this->pathTo('/index.php'), $this->getSession()->getCurrentUrl());
+    }
+
+    public function testMouseEvents()
+    {
+        $this->getSession()->visit($this->pathTo('/js_test.php'));
+
+        $clicker = $this->getSession()->getPage()->find('css', '.elements div#clicker');
+
+        $this->assertEquals('not clicked', $clicker->getText());
+
+        $clicker->click();
+        $this->assertEquals('single clicked', $clicker->getText());
+
+        $clicker->doubleClick();
+        $this->assertEquals('double clicked', $clicker->getText());
+
+        $clicker->rightClick();
+        $this->assertEquals('right clicked', $clicker->getText());
+
+        $clicker->focus();
+        $this->assertEquals('focused', $clicker->getText());
+
+        $clicker->blur();
+        $this->assertEquals('blured', $clicker->getText());
+
+        $clicker->mouseOver();
+        $this->assertEquals('mouse overed', $clicker->getText());
+    }
+
+    public function testKeyboardEvents()
+    {
+        $this->getSession()->visit($this->pathTo('/js_test.php'));
+
+        $input1 = $this->getSession()->getPage()->find('css', '.elements input.input.first');
+        $input2 = $this->getSession()->getPage()->find('css', '.elements input.input.second');
+        $input3 = $this->getSession()->getPage()->find('css', '.elements input.input.third');
+        $event  = $this->getSession()->getPage()->find('css', '.elements .text-event');
+
+        $input1->keyDown('u');
+        $this->assertEquals('key downed:0', $event->getText());
+
+        $input1->keyDown('u', 'alt');
+        $this->assertEquals('key downed:1', $event->getText());
+
+        $input2->keyPress('r');
+        $this->assertEquals('key pressed:114 / 0', $event->getText());
+
+        $input2->keyPress('r', 'alt');
+        $this->assertEquals('key pressed:114 / 1', $event->getText());
+
+        $input3->keyUp(78);
+        $this->assertEquals('key upped:78 / 0', $event->getText());
+
+        $input3->keyUp(78, 'alt');
+        $this->assertEquals('key upped:78 / 1', $event->getText());
+    }
+
+    public function testWait()
+    {
+        $this->getSession()->visit($this->pathTo('/js_test.php'));
+
+        $this->getSession()->getPage()->findById('waitable')->click();
+        $this->getSession()->wait(3000, '$("#waitable").has("div").length > 0');
+        $this->assertEquals('arrived', $this->getSession()->getPage()->find('css', '#waitable > div')->getText());
+
+        $this->getSession()->getPage()->findById('waitable')->click();
+        $this->getSession()->wait(3000, 'false');
+        $this->assertEquals('timeout', $this->getSession()->getPage()->find('css', '#waitable > div')->getText());
+    }
+
+    public function testVisibility()
+    {
+        $this->getSession()->visit($this->pathTo('/js_test.php'));
+
+        $clicker   = $this->getSession()->getPage()->find('css', '.elements div#clicker');
+        $invisible = $this->getSession()->getPage()->find('css', '#invisible');
+
+        $this->assertFalse($invisible->isVisible());
+        $this->assertTrue($clicker->isVisible());
+    }
+
+    public function testDragDrop()
+    {
+        $this->getSession()->visit($this->pathTo('/js_test.php'));
+
+        $draggable = $this->getSession()->getPage()->find('css', '#draggable');
+        $droppable = $this->getSession()->getPage()->find('css', '#droppable');
+
+        $draggable->dragTo($droppable);
+        $this->assertEquals('Dropped!', $droppable->find('css', 'p')->getText());
+    }
+
+    public function testIssue193()
+    {
+        $session = $this->getSession();
+        $session->visit($this->pathTo('/issue193.html'));
+
+        $session->getPage()->selectFieldOption('options-without-values', 'Two');
+        $this->assertEquals('Two', $session->getPage()->findById('options-without-values')->getValue());
+
+        $session->getPage()->selectFieldOption('options-with-values', 'two');
+        $this->assertEquals('two', $session->getPage()->findById('options-with-values')->getValue());
+    }
+
+    public function testIssue225()
+    {
+        $this->getSession()->visit($this->pathTo('/issue225.php'));
+        $this->getSession()->getPage()->pressButton('Créer un compte');
+        $this->getSession()->wait(5000, '$("#panel").text() != ""');
+
+        $this->assertContains('OH AIH!', $this->getSession()->getPage()->getText());
+    }
+
+    /**
+     * 'change' event should be fired after selecting an <option> in a <select>
+     */
+    public function testIssue255()
+    {
+        $session = $this->getSession();
+        $session->visit($this->pathTo('/issue255.php'));
+
+        $session->getPage()->selectFieldOption('foo_select', 'Option 3');
+
+        $session->wait(2000, '$("#output_foo_select").text() != ""');
+        $this->assertEquals('onChangeSelect', $session->getPage()->find('css', '#output_foo_select')->getText());
+    }
+}

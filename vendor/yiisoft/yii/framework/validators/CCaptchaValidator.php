@@ -1,74 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CCaptchaValidator class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CCaptchaValidator validates that the attribute value is the same as the verification code displayed in the CAPTCHA.
+ *
+ * CCaptchaValidator should be used together with {@link CCaptchaAction}.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.validators
+ * @since 1.0
+ */
+class CCaptchaValidator extends CValidator
+{
+	/**
+	 * @var boolean whether the comparison is case sensitive. Defaults to false.
+	 */
+	public $caseSensitive=false;
+	/**
+	 * @var string ID of the action that renders the CAPTCHA image. Defaults to 'captcha',
+	 * meaning the 'captcha' action declared in the current controller.
+	 * This can also be a route consisting of controller ID and action ID.
+	 */
+	public $captchaAction='captcha';
+	/**
+	 * @var boolean whether the attribute value can be null or empty.
+	 * Defaults to false, meaning the attribute is invalid if it is empty.
+	 */
+	public $allowEmpty=false;
+
+	/**
+	 * Validates the attribute of the object.
+	 * If there is any error, the error message is added to the object.
+	 * @param CModel $object the object being validated
+	 * @param string $attribute the attribute being validated
+	 */
+	protected function validateAttribute($object,$attribute)
+	{
+		$value=$object->$attribute;
+		if($this->allowEmpty && $this->isEmpty($value))
+			return;
+		$captcha=$this->getCaptchaAction();
+		// reason of array checking is explained here: https://github.com/yiisoft/yii/issues/1955
+		if(is_array($value) || !$captcha->validate($value,$this->caseSensitive))
+		{
+			$message=$this->message!==null?$this->message:Yii::t('yii','The verification code is incorrect.');
+			$this->addError($object,$attribute,$message);
+		}
+	}
+
+	/**
+	 * Returns the CAPTCHA action object.
+	 * @throws CException if {@link action} is invalid
+	 * @return CCaptchaAction the action object
+	 * @since 1.1.7
+	 */
+	protected function getCaptchaAction()
+	{
+		if(($captcha=Yii::app()->getController()->createAction($this->captchaAction))===null)
+		{
+			if(strpos($this->captchaAction,'/')!==false) // contains controller or module
+			{
+				if(($ca=Yii::app()->createController($this->captchaAction))!==null)
+				{
+					list($controller,$actionID)=$ca;
+					$captcha=$controller->createAction($actionID);
+				}
+			}
+			if($captcha===null)
+				throw new CException(Yii::t('yii','CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.',
+						array('{id}'=>$this->captchaAction)));
+		}
+		return $captcha;
+	}
+
+	/**
+	 * Returns the JavaScript needed for performing client-side validation.
+	 * @param CModel $object the data object being validated
+	 * @param string $attribute the name of the attribute to be validated.
+	 * @return string the client-side validation script.
+	 * @see CActiveForm::enableClientValidation
+	 * @since 1.1.7
+	 */
+	public function clientValidateAttribute($object,$attribute)
+	{
+		$captcha=$this->getCaptchaAction();
+		$message=$this->message!==null ? $this->message : Yii::t('yii','The verification code is incorrect.');
+		$message=strtr($message, array(
+			'{attribute}'=>$object->getAttributeLabel($attribute),
+		));
+		$code=$captcha->getVerifyCode(false);
+		$hash=$captcha->generateValidationHash($this->caseSensitive ? $code : strtolower($code));
+		$js="
+var hash = jQuery('body').data('{$this->captchaAction}.hash');
+if (hash == null)
+	hash = $hash;
+else
+	hash = hash[".($this->caseSensitive ? 0 : 1)."];
+for(var i=value.length-1, h=0; i >= 0; --i) h+=value.".($this->caseSensitive ? '' : 'toLowerCase().')."charCodeAt(i);
+if(h != hash) {
+	messages.push(".CJSON::encode($message).");
+}
+";
+
+		if($this->allowEmpty)
+		{
+			$js="
+if(jQuery.trim(value)!='') {
+	$js
+}
+";
+		}
+
+		return $js;
+	}
+}
+

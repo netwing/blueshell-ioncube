@@ -1,262 +1,280 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * Message string can be used with plural forms format. Check i18n section
+ * of the guide for details.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection дерекқормен байланысты орната алмады.',
+  'CDbConnection is unable to find PDO class "{className}". Make sure PDO is installed correctly.' => 'CDbConnection "{className}" PDO класын таба алмады. PDO дұрыс орнатылғанына көз жеткізіңіз.',
+  'Cannot hash a password that is empty or not a string.' => 'Бос немесе жол емес парольдің хэшін жасау мүмкін емес.',
+  'Internal error while generating hash.' => 'Хэшті жасау кезінде ішкі қате орын алды.',
+  'Only SHA1 and MD5 hashing algorithms are supported when using PHP 5.1.1 or below.' => 'PHP 5.1.1 не одан да ескі нұсқасын қолдану кезінде тек SHA1 және MD5 хэштеу алгоритмдеріне қолдау бар.',
+  'Script HTML options are not allowed for "CClientScript::POS_LOAD" and "CClientScript::POS_READY".' => 'Script HTML опциялары "CClientScript::POS_LOAD" және "CClientScript::POS_READY" үшін рұқсат етілмеген.',
+  'The "forceCopy" and "linkAssets" cannot be both true.' => '"forceCopy" және "linkAssets" бір уақытта true болуы мүмкін емес.',
+  '{class} requires the Blowfish option of the PHP crypt() function. This system does not have it.' => '{class} класы PHP crypt() функциясының Blowfish опциясын талап етеді. Бұл жүйеде ол жоқ.',
+  '{class} requires the PHP crypt() function. This system does not have it.' => '{class} класы PHP crypt() функциясын талап етеді. Бұл жүйеде ол жоқ.',
+  '{class}::$cost must be a number.' => '{class}::$cost сан болуы тиіс.',
+  '{class}::$cost must be between 4 and 31.' => '{class}::$cost 4 және 31 арасындағы сан болуы тиіс.',
+  '"{path}" is not a valid directory.' => '"{path}" жолы дұрыс бума емес.',
+  '&lt; Previous' => '&lt; Алдыңғы',
+  '&lt;&lt; First' => '&lt;&lt; Бірінші',
+  'Action class {class} must implement the "run" method.' => '{class} әрекет класында "run" тәсілі болуы тиіс.',
+  'Active Record requires a "db" CDbConnection application component.' => 'ActiveRecord "db" қолданбасының CDbConnection компонентін талап етеді.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'Active record "{class}" класы "{relation}" қатысы үшін дұрыс бапталмаған. Ол қатысу түрі, байланыстағы active record класы мен сыртқы кілтті анықтау керек.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'ActiveRecord "{class}" қате "{column}" бағанын таңдағысы кеп тұр. Қосымша: баған кесте ішінде болуы тиіс, немесе алиасы бар өрнек болуы тиіс.',
+  'Adding a foreign key constraint to an existing table is not supported by SQLite.' => 'Бар болып тұрған кестеге сыртқы кілтті қосу SQLite қолдамайды.',
+  'Adding a primary key after table has been created is not supported by SQLite.' => 'SQLite кесте жасалғаннан кейін біріншілік кілтті қосуды қолдамайды.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => '"{alias}" алиасы қате. Ол бар болып тұрған PHP файлына сілтеп тұрғанына көз жеткізіңіз.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => '"{alias}" алиасы қате. Ол бар болып тұрған бума не файлға сілтеп тұрғанына көз жеткізіңіз.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory.' => '"{alias}" алиасы қате. Ол бар болып тұрған бумаға сілтеп тұрғанына көз жеткізіңіз.',
+  'Altering a DB column is not supported by SQLite.' => 'ДҚ өрісін өзгертуді SQLite қолдамайды.',
+  'Application Log' => 'Қолданба журналы',
+  'Application base path "{path}" is not a valid directory.' => 'Қолданбаның басты жолы "{path}" бума емес болып тұр.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'Қолданбаның жұмыс жолы "{path}" қате берілген. Веб сервер үрдісі үшін ол бумаға жазу құқығы бар екеніне көз жеткізіңіз.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => '"{item}" авторизация элементі "{user}" пайдаланушысына бекітілген.',
+  'Base path "{path}" is not a valid directory.' => 'Басты жол "{path}" қате берілген.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'CApcCache өз жұмысы үшін іске қосылған PHP APC кеңейтуін сұрайды.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath "{path}" жолы қате берілген. Бума бар болып тұрғанына мен веб сервер үрдісі үшін ол бумаға жазу құқығы бар екеніне көз жеткізіңіз.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID идентификаторы қате берілген. "{id}" қолданбаның бар болып тұрған кэш компонентіне сәйкес болып тұрғанына көз жеткізіңіз.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action "{id}" әрекеті қате берілген: әрекет ағымдағы контролерден табылмады.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID "{id}" идентификаторы қате берілген. Ол сіздің қолданбаңыздың CDbConnection компонентінің идентификаторына сілтеп тұрғанына көз жеткізіңіз.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID "{id}" идентификаторы қате берілген. Ол сіздің қолданбаңыздың CDbConnection компонентінің идентификаторына сілтеп тұрғанына көз жеткізіңіз.',
+  'CDbCacheDependency.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCacheDependency.connectionID "{id}" идентификаторы қате берілген. Ол сіздің қолданбаңыздың CDbConnection компонентінің идентификаторына сілтеп тұрғанына көз жеткізіңіз.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql файлы бос болмауы тиіс.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand SQL сұранымын орындай алмады: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand SQL сұранымын дайындай алмады: {error}',
+  'CDbCommand::execute() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::execute() орындау сәтсіз: {error}. Орындалған SQL сұранымы: {sql}.',
+  'CDbCommand::{method}() failed: {error}. The SQL statement executed was: {sql}.' => 'CDbCommand::{method}() орындау сәтсіз: {error}. Орындалған SQL сұранымы: {sql}.',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection {driver} дерекқоры үшін схеманы оқуды қолдамайды.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader кері бағытта оқуды қолдамайды. Бұл компонент тек тура бағытта ғана оқи алады.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID "{id}" идентификаторы қате берілген. Ол сіздің қолданбаңыздың CDbConnection компонентінің идентификаторына сілтеп тұрғанына көз жеткізіңіз.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID "{id}" идентификаторы сіздің қолданбаңыздың дұрыс CDbConnection компонентіне сілтеп тұрған жоқ.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID идентификаторы қате көрсетілген. "{id}" идентификаторы қолданбаңыздың дерекқормен жұмыс істеу дұрыс компонентіне сілтеп тұрғанына көз жеткізіңіз.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" идентификаторы қате. Ол CDbConnection қолданба компонентінің ID-не сілтеп тұрғанына көз жеткізіңіз.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction белсенді емес, тіркеу (commit) мен қайтару (roll back) әрекеттерін орындау мүмкін емес.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory параметрі бос болмауы тиіс.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache жұмысы үшін іске қосылған PHP eAccelerator кеңейтуі керек. Ол іске қосылған немесе "--with-eaccelerator-shared-memory" опциясымен компиляцияланған болуы тиіс.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName параметрі бос болмауы тиіс.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath "{path}" жолы қате берілген. Бума бар болып тұрғанына мен веб сервер үрдісі үшін ол бумаға жазу құқығы бар екеніне көз жеткізіңіз.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain құрамында тек IFilter интерфейсін іске асыратын объекттер болуы тиіс.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl параметрі бос болмауы тиіс.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name параметрі бос болмауы тиіс.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName параметрі бос болмауы тиіс.',
+  'CHttpCacheFilter.lastModified contained a value that could not be understood by strtotime()' => 'CHttpCacheFilter.lastModified құрамында strtotime() түсіне алмаған мән табылды',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection құрамында тек CHttpCookie түріндегі объекттер болуы тиіс.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest компоненті кіріс скриптінің URL-ын анықтай алмады.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest компоненті сұранымдағы жол туралы ақпаратты анықтай алмады.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest компоненті сұранымның URI-ін анықтай алмады.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode параметрінің мәні тек "none", "allow" не "only" мәндерін қабылдай алады.',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be a float between 0 and 100.' => 'CHttpSession.gcProbability "{value}" мәні қате. Ол 0 мен 100 аралығына жататын қалқымалы нүктелі сан болуы тиіс.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath "{path}" жолы дұрыс бума емес.',
+  'CMemCache requires PHP {extension} extension to be loaded.' => 'CMemCache өз жұмысы үшін PHP {extension} жүктелуін талап етеді.',
+  'CMemCache server configuration must be an array.' => 'CMemCache сервер конфигурациясы массив болуы тиіс.',
+  'CMemCache server configuration must have "host" value.' => 'CMemCache сервер конфигурациясында "host" мәні болуы тиіс.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'CProfileLogRoute компоненті қате "{token}" кодын анықтады. Yii::beginProfile() мен Yii::endProfile() шақырулардың ішке салынуы дұрыстығын тексеріңіз.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report "{report}" параметрі қате. "summary" мен "callstack" мәндері қабылданады.',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'Мәліметті шифрлеу мүмкіндігін қолдану үшін CSecurityManager компонентіне mcrypt PHP кеңейтуі керек.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey параметрі бос болмауы тиіс.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey параметрі бос болмауы тиіс.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> құрамында тек {type} класының объекттері болуы мүмкін.',
+  'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}> құрамында тек {type} класының объекттері болуы мүмкін.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat параметрі тек "path" немесе "get" мәндерін қабылдай алады.',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache жұмысы үшін жұмысқа жүктелген wincache кеңейтуі керек.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'Пайдаланушы CWinCache сөндірулі тұр. Өзіңіздің php.ini ішіндегі wincache.ucenabled мәнін On етіп өзгертіңіз.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'CXCache компонентінің жұмысы үшін жұмысқа жүктелген XCache PHP кеңейтуі керек.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'CZendDataCache жұмысы үшін PHP Zend Data Cache кеңейтуі жұмысқа жүктелген болуы тиіс.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{child}" элементін "{name}" ұрпағы ретінде қосу мүмкін емес, шексіз цикл табылды.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{child}" элементін "{parent} ұрпағы ретінде қосу мүмкін емес, шексіз цикл табылды.',
+  'Cannot add "{name}" as a child of itself.' => '"{name}" элементі өзі үшін ұрпақ бола алмайды.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => '"{child}" түріндегі элементті "{parent}" түріндегі элементке қосу мүмкін емес.',
+  'Class name "{class}" does not match class file "{file}".' => '"{class}" класс аты "{file}" класс файлына сәйкес келмейді.',
+  'Column name must be either a string or an array.' => 'Баған аты жол не массив болуы тиіс.',
+  'Dropping DB column is not supported by SQLite.' => 'Дерекқор өрісін өшіруді SQLite қолдамайды.',
+  'Dropping a foreign key constraint is not supported by SQLite.' => 'Сыртқы кілтті өшіруді SQLite қолдамайды.',
+  'Either "{parent}" or "{child}" does not exist.' => 'Не "{parent}", не "{child}" жоқ болып тұр.',
+  'Error: Table "{table}" does not have a primary key.' => 'Қате: "{table}" кестесінде біріншілік кілт жоқ.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => 'Қате: "{table}" кестесінде құрамдас біріншілік кілт бар, бірақ CRUD командасы онымен жұмысты қолдамайды.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => '"{class}.{event}" оқиғасы қате "{handler}" өңдеушімен байланыстырылған.',
+  'Event "{class}.{event}" is not defined.' => '"{class}.{event}" оқиғасы анықталмаған.',
+  'Extension path "{path}" does not exist.' => '"{path}" кеңейту жолы жоқ болып тұр.',
+  'Failed to initialize the mcrypt module.' => 'mcrypt модулін іске қосу сәтсіз аяқталды.',
+  'Failed to set unsafe attribute "{attribute}" of "{class}".' => '"{class}" класының қауіпсіз емес "{attribute}" атрибутын орнату сәтсіз аяқталды.',
+  'Failed to start session.' => 'Сессияны бастау сәтсіз.',
+  'Failed to write the uploaded file "{file}" to disk.' => 'Жүктелген "{file}" файлын дискіге жазу сәтсіз.',
+  'File upload was stopped by extension.' => 'Файлды жүктеу үрдісін кеңейту тоқтатқан.',
+  'Filter "{filter}" is invalid. Controller "{class}" does not have the filter method "filter{filter}".' => '"{filter}" сүзгісі қате. "{class}" контролерінде "filter{filter}" тәсілі жоқ.',
+  'GD with FreeType or ImageMagick PHP extensions are required.' => 'GD мен PHP-дің FreeType не ImageMagick кеңейтулері керек.',
+  'Get a new code' => 'Жаңа кодты алу',
+  'Go to page: ' => 'Параққа өту: ',
+  'In order to use MIME-type validation provided by CFileValidator fileinfo PECL extension should be installed.' => 'CFileValidator ұсынатын MIME түрлерін валидациялау үшін fileinfo PECL кеңейтуі орнатылған болуы тиіс.',
+  'Invalid MO file revision: {revision}.' => 'MO файлының қолдауы жоқ нұсқасы: {revision}.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'MO файлы қате: {file} (магиясы: {magic}).',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => '"{value}" мәні қате берілген. Келесі мәндерге қолдау бар: ({enum}).',
+  'Invalid expression for CHttpCacheFilter.lastModifiedExpression: The evaluation result "{value}" could not be understood by strtotime()' => 'CHttpCacheFilter.lastModifiedExpression үшін қате өрнек: "{value}" өндеу нәтижесін strtotime() түсіне алмайды',
+  'Invalid operator "{operator}".' => 'Қате оператор "{operator}".',
+  'Last &gt;&gt;' => 'Соңғы &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'Тізім Traversable интерфейсін іске асыратын массив не объект болуы тиіс.',
+  'List index "{index}" is out of bound.' => '"{index}" тізім индексі оның шегінен шығып тұр.',
+  'Login Required' => 'Авторизация керек',
+  'Map data must be an array or an object implementing Traversable.' => 'Карта Traversable интерфейсін іске асыратын массив не объект болуы тиіс.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'Жүктелген "{file}" файлын сақтау үшін уақытша бума жоқ.',
+  'Next &gt;' => 'Келесі &gt;',
+  'No columns are being updated for table "{table}".' => '"{table}" кестесінде жаңартуға келетін бағандар жоқ.',
+  'No counter columns are being updated for table "{table}".' => '"{table}" кестесінде жаңартуға келетін санағыш бағандар жоқ.',
+  'Object configuration must be an array containing a "class" element.' => 'Объект конфигурациясы құрамында "class" элементі бар массив болуы тиіс.',
+  'Please fix the following input errors:' => 'Келесі қателерді түзету керек:',
+  'Powered by {yii}.' => '{yii} негізінде.',
+  'Property "{class}.{property}" is not defined.' => '"{class}.{property}" қасиеті анықталмаған.',
+  'Property "{class}.{property}" is read only.' => '"{class}.{property}" қасиету тек оқу үшін қолжетерлік.',
+  'Property CMaskedTextField.mask cannot be empty.' => 'CMaskedTextField.mask бос болмауы тиіс.',
+  'Queue data must be an array or an object implementing Traversable.' => 'Сұраным мәліметі Traversable интерфейсін іске асыратын массив не объект болуы тиіс.',
+  'Relation "{name}" is not defined in active record class "{class}".' => '"{name}" қатысы "{class}" active record класында анықталмаған.',
+  'Removing a primary key after table has been created is not supported by SQLite.' => 'SQLite кесте жасалғаннан кейін біріншілік кілтті өшіруді қолдамайды.',
+  'Renaming a DB column is not supported by SQLite.' => 'Дерекқор бағанның атын ауыстыруды SQLite қолдамайды.',
+  'Stack data must be an array or an object implementing Traversable.' => 'Стек мәліметі Traversable интерфейсін іске асыратын массив не объект болуы тиіс.',
+  'Table "{table}" does not exist.' => '"{table}" кестесі жоқ болып тұр.',
+  'Table "{table}" does not have a column named "{column}".' => '"{table}" кестесінде "{column}" бағаны жоқ.',
+  'The "db" application component must be configured to be a CDbConnection object.' => 'Қолданбаның "db" компоненті CDbConnection объекті болуы тиіс.',
+  'The "filter" property must be specified with a valid callback.' => '"filter" қасиеті дұрыс кері шақыруымен (callback) анықталған болуы тиіс.',
+  'The "pattern" property must be specified with a valid regular expression.' => '"pattern" қасиеті дұрыс тұрақты өрнекпен анықталған болуы тиіс.',
+  'The "range" property must be specified with a list of values.' => '"range" қасиеті мәндер тізімімен бірге көрсетілуі тиіс.',
+  'The CSRF token could not be verified.' => 'CSRF токенін растау мүмкін емес.',
+  'The DB query must contain the "from" portion.' => 'Дерекқорға сұранымда "from" болуы тиіс.',
+  'The STAT relation "{name}" cannot have child relations.' => '"{name}" STAT қатысы құрамында басқа ұрпақ қатыстар болуы мүмкін емес.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => '"{pattern}" URL шаблоны, "{route}" жолы үшін, дұрыс тұрақты өрнек емес.',
+  'The active record cannot be deleted because it is new.' => 'active record жазбасын өшіру мүмкін емес, өйткені ол жаңа.',
+  'The active record cannot be inserted to database because it is not new.' => 'active record жазбасын дерекқорға қосу мүмкін емес, өйткені ол жаңа емес.',
+  'The active record cannot be updated because it is new.' => 'active record жазбасын жаңарту мүмкін емес, өтйкені ол жаңа.',
+  'The asset "{asset}" to be published does not exist.' => 'Жарияланатын asset "{asset}" жоқ болып тұр.',
+  'The command path "{path}" is not a valid directory.' => '"{path}" командалық жолы бума емес болып тұр.',
+  'The controller path "{path}" is not a valid directory.' => 'Контролерлерге дейінгі "{path}" жолы бума емес болып тұр.',
+  'The file "{file}" cannot be uploaded. Only files of these MIME-types are allowed: {mimeTypes}.' => '"{file}" файлын жүктеу мүмкін емес. Тек келесі MIME-түрлеріне ғана қолдау бар: {mimeTypes}.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => '"{file}" файлын жүктеу мүмкін емес. Тек келесі кеңейтулері бар файлдарды жүктеуге болады: {extensions}.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => '"{file}" файлы тым үлкен. Оның өлшемі {limit} байттан аспауы тиіс.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => '"{file}" файлы тым кіші. Оның өлшемі кем дегенде {limit} байт болуы тиіс.',
+  'The file "{file}" was only partially uploaded.' => '"{file}" файлы толығымен жүктелмеген.',
+  'The first element in a filter configuration must be the filter class.' => 'Сүзгі конфигурациясындағы бірінші элемент оның класы болуы тиіс.',
+  'The format of {attribute} is invalid.' => '{attribute} өрісінің пішімі қате.',
+  'The item "{name}" does not exist.' => '"{name}" элементі жоқ болып тұр.',
+  'The item "{parent}" already has a child "{child}".' => '"{parent}" элементінде "{child}" ұрпағы бар болып тұр.',
+  'The layout path "{path}" is not a valid directory.' => 'Шаблондарға дейінгі "{path}" жолы бума емес болып тұр.',
+  'The list is read only.' => 'Тізім тек оқу үшін.',
+  'The map is read only.' => 'Карта тек оқу үшін.',
+  'The module path "{path}" is not a valid directory.' => '"{path}" модуль жолы бума емес болып тұр.',
+  'The pattern for 12 hour format must be "h" or "hh".' => '12 сағаттық пішім үшін шаблон: "h", не "hh".',
+  'The pattern for 24 hour format must be "H" or "HH".' => '24 сағаттық пішім үшін шаблон: "H", не "HH".',
+  'The pattern for AM/PM marker must be "a".' => 'AM/PM маркер үшін шаблон: "a".',
+  'The pattern for day in month must be "F".' => 'Ай күні үшін шаблон: "F".',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'Жыл ішіндегі күн шаблоны: "D", "DD", не "DDD".',
+  'The pattern for day of the month must be "d" or "dd".' => 'Ай ішіндегі күн үшін шаблон: "d", не "dd".',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => 'Апта ішіндегі күн үшін шаблон "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" не "ccccc" болуы тиіс.',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'Дәуір үшін шаблоны: "G", "GG", "GGG", "GGGG", не "GGGGG".',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'AM/PM пішіміндегі сағат үшін шаблоны: "K", не "KK".',
+  'The pattern for hour in day must be "k" or "kk".' => 'Күн ішіндегі сағат шаблоны: "k", не "kk".',
+  'The pattern for minutes must be "m" or "mm".' => 'Минуттар үшін шаблон: "m", не "mm".',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => 'Ай үшін шаблон  "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" не "LLLL" болуы тиіс.',
+  'The pattern for seconds must be "s" or "ss".' => 'Секундтар үшін шаблон: "s", не "ss".',
+  'The pattern for time zone must be "z" or "v".' => 'Уақыт белдеуі үшін шаблон: "z", не "v".',
+  'The pattern for week in month must be "W".' => 'Ай ішіндегі апта шаблоны: "W".',
+  'The pattern for week in year must be "w".' => 'Жыл ішіндегі апта шаблоны: "w".',
+  'The queue is empty.' => 'Кезек бос.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => '"{class}" active record класындағы "{relation}" қатысы дұрыс көрсетілмеген. Сыртқы кілтте берілген "{joinTable}" құрамына қосылатын кестесі дерекқордан табылмады.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => '"{class}" active record класындағы "{relation}" қатысы қате: сыртқы кілтпен анықталған құрамына қосылатын "{joinTable}" кестесі дереқорда жоқ.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => '"{class}" active record класындағы "{relation}" қатысы "{key}" сыртқы кілтін қолданып көрсетілген, ол болса, "{table}" аталық кестесіне көрсетіп тұрған жоқ.',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => '"{class}" active record класындағы "{relation}" қатысы толық емес сыртқы кілтпен көрсетілген. Сыртқы кілтте екі біріктірілетін кестелерге қатысты бағандар болуы тиіс.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => '"{class}" active record класындағы "{relation}" қатысы қате "{key}" сыртқы кілтімен көрсетілген. "{table}" кестесінде ондай баған жоқ.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => '"{class}" active record класындағы "{relation}" қатысы дұрыс емес сыртқы кілтті қолданып көрсетілген. Кілт бағандары "{table}" кестесінің біріншілік кілттерге сәйкес болуы тиіс.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => '"{class}" active record класындағы "{relation}" қатысы қате сыртқы кілтпен анықталған. Сыртқы кілт пішімі келесідей болуы керек: "joinTable(fk1,fk2,...)".',
+  'The requested view "{name}" was not found.' => 'Сұралған "{name}" көрінісі табылмады.',
+  'The stack is empty.' => 'Стек бос.',
+  'The system is unable to find the requested action "{action}".' => 'Жүйе сұралған "{action}" әрекетін таба алмады.',
+  'The system view path "{path}" is not a valid directory.' => '"{path}" жүйелік көріністер жолы бума емес болып тұр.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => '"{table}" кестесі, "{class}" класының active record жазбасындағы, дерекқордан табылмады.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => '"{column}" бағанның мәні "{table}" кестесіне сұраным жасаған кезде көрсетілмеген.',
+  'The verification code is incorrect.' => 'Тексеру коды қате.',
+  'The view path "{path}" is not a valid directory.' => 'Көріністің "{path}" орналасу жолы дұрыс бума емес.',
+  'Theme directory "{directory}" does not exist.' => '"{directory}" тема бумасы жоқ болып тұр.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => '<a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a> бар болуы тиіс.',
+  'Unable to add an item whose name is the same as an existing item.' => 'Элементті қосу мүмкін емес, көрсетілген атау қазір қолдануда.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'Элемент атын ауыстыру сәтсіз аяқталды. "{name}" атын басқа элемент қолданып тұр.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => '"{file}" қолданба қалып-күйі файлын жасау сәтсіз аяқталды. Ол файл орналасатын бума бар болып тұрғанына мен оған веб сервер үрдісіне жазуға болатынына көз жеткізіңіз.',
+  'Unable to find "{column}" in table "{table}".' => '"{column}" "{table}" кесте ішінен табылмады.',
+  'Unable to lock file "{file}" for reading.' => '"{file}" файлын оқу үшін блоктау мүмкін емес.',
+  'Unable to lock file "{file}" for writing.' => '"{file}" файлын жазу үшін блоктау мүмкін емес.',
+  'Unable to read file "{file}".' => '"{file}" файлын оқу мүмкін емес.',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => '"{object}.{method}" әрекетін орындау мүмкін емес. Ондай тәсіл жоқ болып тұр.',
+  'Unable to resolve the request "{route}".' => '"{route}" сұранымын өңдеу мүмкін емес.',
+  'Unable to write file "{file}".' => '"{file}" файлына жазу мүмкін емес.',
+  'Unknown authorization item "{name}".' => 'Авторизацияның белгісіз "{name}" элементі.',
+  'Unknown operator "{operator}".' => 'Белгісіз "{operator}" операторы.',
+  'Unknown type "{type}".' => 'Белгісіз "{type}" түрі.',
+  'Unrecognized locale "{locale}".' => 'Белгісіз "{locale}" локалі.',
+  'View file "{file}" does not exist.' => '"{file}" көрініс файлы жоқ болып тұр.',
+  'Yii application can only be created once.' => 'Yii қолданбасы тек бір рет жасалуы мүмкін.',
+  'You are not authorized to perform this action.' => 'Бұл әрекетті орындау үшін құқығыңыз жеткіліксіз.',
+  'Your request is invalid.' => 'Сұраным дұрыс емес.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} "{value}" алынып қойылған.',
+  '{attribute} "{value}" is invalid.' => '{attribute} "{value}" қате.',
+  '{attribute} cannot accept more than {limit} files.' => '{attribute} {limit} файлдан артық қабылдай алмайды.',
+  '{attribute} cannot be blank.' => '{attribute} өрісін міндетті түрде толтыру керек.',
+  '{attribute} is in the list.' => '{attribute} тізімде бар.',
+  '{attribute} is invalid.' => '{attribute} қате.',
+  '{attribute} is not a valid URL.' => '{attribute} дұрыс URL емес.',
+  '{attribute} is not a valid email address.' => '{attribute} дұрыс E-Mail адресі емес.',
+  '{attribute} is not in the list.' => '{attribute} тізімде жоқ болып тұр.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} ұзындығы қате ({length} таңба болуы тиіс).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} тым үлкен (Максимум: {max}).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} тым ұзын (Максимум: {max} таңба).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} тым қысқа (Минимум: {min} таңба).',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} тым кіші (Минимум: {min}).',
+  '{attribute} must be a number.' => '{attribute} сан болуы тиіс.',
+  '{attribute} must be an integer.' => '{attribute} бүтін сан болуы тиіс.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} мәні {true} немесе {false} болуы тиіс.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} мәні "{compareValue}" мәнінен үлкен болуы тиіс.',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} мәні "{compareValue}" мәнінен үлкен не оған тең болуы тиіс.',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} мәні "{compareValue}" мәнінен кіші болуы тиіс.',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} мәні "{compareValue}" мәнінен кіші не оған тең болуы тиіс.',
+  '{attribute} must be repeated exactly.' => '{attribute} дәл қайталануы тиіс.',
+  '{attribute} must be {type}.' => '{attribute} {type} болуы тиіс.',
+  '{attribute} must be {value}.' => '{attribute} мәні {value} болуы тиіс.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} мәні "{compareValue}" мәніне тең болмауы тиіс.',
+  '{className} does not support add() functionality.' => '{className} класы add() функционалын қолдамайды.',
+  '{className} does not support delete() functionality.' => '{className} класы delete() функционалын қолдамайды.',
+  '{className} does not support flushValues() functionality.' => '{className} класы flushValues() функционалын қолдамайды.',
+  '{className} does not support get() functionality.' => '{className} класы get() функционалын қолдамайды.',
+  '{className} does not support set() functionality.' => '{className} класы set() функционалын қолдамайды.',
+  '{class} and its behaviors do not have a method or closure named "{name}".' => '{class} класында мен оның мінез-құлығында "{name}" деп аталатын тәсіл не түйісу табылмады.',
+  '{class} does not have relation "{name}".' => '{class} ішінде "{name}" қатынасы жоқ.',
+  '{class} does not support fetching all table names.' => '{class} барлық кестелер аттарын алуды қолдамайды.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} құрамында тексерудің қате ережесі бар. Ережеде аты мен тексерілетін қасиеттер болуы тиіс.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '{class} класында "model" мен "attribute", немесе "name" қасиеттерінің мәндері анықталған болуы тиіс.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => 'Cookie-ға негізделген авторизацияны қолдану үшін, {class}.allowAutoLogin қасиетінің мәні "true" болуы тиіс.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() тәсілін анықтау керек.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} контролері "{view}" көрінісін таба алмады.',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} контролерінің "{view}" көрінісінде қате ішке салынған виджеттер тегтері бар. {widget} виджетінде endWidget() шақыруы қолданылмайды.',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} контролерінің көрінісінде endWidget({id}) артық шақыруы бар.',
+  '{n} B' => '{n} Б',
+  '{n} GB' => '{n} ГБ',
+  '{n} KB' => '{n} КБ',
+  '{n} MB' => '{n} МБ',
+  '{n} TB' => '{n} ТБ',
+  '{n} byte|{n} bytes' => '{n} байт',
+  '{n} gigabyte|{n} gigabytes' => '{n} гигабайт',
+  '{n} kilobyte|{n} kilobytes' => '{n} килобайт',
+  '{n} megabyte|{n} megabytes' => '{n} мегабайт',
+  '{n} terabyte|{n} terabytes' => '{n} терабайт',
+  '{widget} cannot find the view "{view}".' => '{widget} виджеті "{view}" көрінісін таба алмады.',
+);

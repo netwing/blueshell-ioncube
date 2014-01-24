@@ -1,31 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/uNpaSr9KVAM4ne3SToIfaAR2w4=
+<?php
+
+/*
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ */
+ 
+?><?php ob_start(); ?>
+
+class <?php echo $className; ?>
+ <?php if ($extends) echo 'extends ', $extends; ?>
+ implements
+ <?php foreach ($interfaces as $interface) echo $interface, ', '; ?>
+ Yay_MockObject
+{
+  
+ private $_yayInvocationHandler;
+ 
+ public function __construct(Yay_InvocationHandler $invocationHandler)
+ {
+  $this->_yayInvocationHandler = $invocationHandler;
+ }
+  
+ <?php foreach ($methods as $method): ?>
+ <?php echo $method['access']; ?> <?php echo $method['modifiers']; ?> function <?php
+ if ($method['returnReference']) echo '&'; ?><?php
+ echo $method['name']; ?>(<?php
+  foreach ($method['parameters'] as $i => $param): ?>
+  <?php if ($i > 0) echo ','; ?>
+  <?php if ($param['hint']) echo $param['hint']; ?>
+  <?php if ($param['byReference']) echo '&'; ?>$arg_<?php echo $i; ?>
+  <?php if ($param['optional']) echo '= null'; ?>
+ <?php endforeach; ?>)
+ {
+  $value = null;
+  if (isset($this->_yayInvocationHandler))
+  {
+   $args = array();
+   for ($i = 0; $i < func_num_args(); ++$i)
+   {
+     $argName = 'arg_' . $i;
+     $args[] =& ${$argName};
+   }
+   $invocation = new Yay_SimpleInvocation($this, __FUNCTION__, $args);
+   $value =& $this->_yayInvocationHandler->handleInvocation($invocation);
+  }
+  return $value;
+ }
+ <?php endforeach; ?>
+ 
+ public function __clone()
+ {
+  $this->_yayInvocationHandler = null;
+ }
+
+}
+
+<?php return ob_get_clean(); ?>

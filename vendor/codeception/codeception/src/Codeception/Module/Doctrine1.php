@@ -1,68 +1,134 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Module;
+
+/**
+ * Performs DB operations with Doctrine ORM 1.x
+ *
+ * Uses active Doctrine connection. If none can be found will fail.
+ *
+ * This module cleans all cached data after each test.
+ *
+ * ## Status
+ *
+ * * Maintainer: **davert**
+ * * Stability: **stable**
+ * * Contact: codecept@davert.mail.ua
+ *
+ * ## Config
+ * * cleanup: true - all doctrine queries will be run in transaction, which will be rolled back at the end of test.
+ *
+ */
+
+class Doctrine1 extends \Codeception\Module
+{
+    protected $config = array('cleanup' => true);
+
+    public function _initialize() {
+        $this->dbh = \Doctrine_Manager::connection()->getDbh();
+    }
+
+    public function _before(\Codeception\TestCase $test) {
+        if ($this->config['cleanup']) {
+            \Doctrine_Manager::connection()->beginTransaction();
+        }
+    }
+    
+    public function _after(\Codeception\TestCase $test)
+    {
+        if ($this->config['cleanup']) {
+            \Doctrine_Manager::connection()->rollback();
+        }
+
+        $this->tables = \Doctrine_Manager::connection()->getTables();
+        foreach ($this->tables as $table) {
+            foreach ($table->getRepository() as $record) {
+                $record->clearRelated();
+            }
+            $table->getRepository()->evictAll();
+            $table->clear();
+        }
+    }
+
+    protected function proceedSeeInDatabase($model, $values = array())
+    {
+        $query = \Doctrine_Core::getTable($model)->createQuery();
+        $string = array();
+        foreach ($values as $key => $value) {
+            $query->addWhere("$key = ?", $value);
+            $string[] = "$key = '$value'";
+        }
+        return array('True', ($query->count() > 0), "$model with " . implode(', ', $string));
+    }
+
+    /**
+     * Checks table contains row with specified values
+     * Provide Doctrine model name can be passed to addWhere DQL
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->seeInTable('User', array('name' => 'Davert', 'email' => 'davert@mail.com'));
+     *
+     * ```
+     *
+     * @param $model
+     * @param array $values
+     */
+    public function seeInTable($model, $values = array())
+    {
+        $res = $this->proceedSeeInDatabase($model, $values);
+        $this->assert($res);
+    }
+
+
+    /**
+     * Checks table doesn't contain row with specified values
+     * Provide Doctrine model name and criteria that can be passed to addWhere DQL
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $I->dontSeeInTable('User', array('name' => 'Davert', 'email' => 'davert@mail.com'));
+     *
+     * ```
+     *
+     * @param $model
+     * @param array $values
+     */
+    public function dontSeeInTable($model, $values = array())
+    {
+        $res = $this->proceedSeeInDatabase($model, $values);
+        $this->assertNot($res);
+    }
+
+
+    /**
+     * Fetches single value from a database.
+     * Provide Doctrine model name, desired field, and criteria that can be passed to addWhere DQL
+     *
+     * Example:
+     *
+     * ``` php
+     * <?php
+     * $mail = $I->grabFromTable('User', 'email', array('name' => 'Davert'));
+     *
+     * ```
+     *
+     * @param $model
+     * @param $column
+     * @param array $values
+     * @return mixed
+     */
+    public function grabFromTable($model, $column, $values = array()) {
+        $query = \Doctrine_Core::getTable($model)->createQuery();
+        $string = array();
+        foreach ($values as $key => $value) {
+            $query->addWhere("$key = ?", $value);
+            $string[] = "$key = '$value'";
+        }
+        return $query->select($column)->fetchOne();
+    }
+
+}

@@ -1,121 +1,204 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-hWoGjIQsYnfTrMNobJ+c2fODyxXXbFg+
+<?php
+namespace Codeception\Subscriber;
+
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Codeception\Util\RemoteInterface;
+use Codeception\Configuration;
+
+/**
+ * Retrieves CodeCoverage data from remote server
+ */
+
+class CodeCoverage implements EventSubscriberInterface
+{
+    /**
+     * @var \Codeception\Util\RemoteInterface
+     */
+    protected $coverage = null;
+    protected $options = array();
+    protected $log_dir = null;
+
+    protected $enabled = null;
+    protected $remote = null;
+    protected $module = null;
+
+    // defaults
+    protected $settings = array('enabled' => false, 'remote' => false, 'low_limit' => '35', 'high_limit' => '70', 'show_uncovered' => false);
+
+    protected $http = array('method' => "GET", 'header' => '');
+
+    function __construct($options = array())
+    {
+        $this->options = $options;
+        $this->coverage = new \PHP_CodeCoverage();
+        $this->log_dir = Configuration::logDir();
+    }
+
+    /**
+     * @return RemoteInterface|null
+     */
+    protected function getRemoteConnectionModule()
+    {
+        foreach (\Codeception\SuiteManager::$modules as $module) {
+            if ($module instanceof RemoteInterface) {
+                return $module;
+            }
+        }
+        return null;
+    }
+
+    public function beforeSuite(\Codeception\Event\Suite $e)
+    {
+        $settings = $e->getSettings();
+        $this->applySettings($settings);
+
+        $e->getResult()->setCodeCoverage(new \Codeception\PHPUnit\DummyCodeCoverage);
+
+        if (!$this->enabled or $this->remote) return;
+
+        \Codeception\CodeCoverageSettings::setup($this->coverage)
+            ->filterWhiteList($settings)
+            ->filterBlackList($settings);
+
+        $e->getResult()->setCodeCoverage($this->coverage);
+    }
+
+    /**
+     * merge local code coverages
+     * skip code coverage on remote server
+     * fetch and merge
+     *
+     * @param \Codeception\Event\Suite $e
+     */
+    public function afterSuite(\Codeception\Event\Suite $e)
+    {
+        if (!$this->enabled) {
+            return;
+        }
+
+        $coverage = $e->getResult()->getCodeCoverage();
+
+        if (!$this->remote) {
+            $this->coverage->merge($coverage);
+            return;
+        }
+
+        $remoteModule = $this->getRemoteConnectionModule();
+        if (!($remoteModule instanceof RemoteInterface)) {
+            $this->coverage->merge($coverage);
+            return;
+        };
+
+        $externalCoverage = $this->getRemoteCoverageFile($remoteModule, 'serialized');
+        if (!$externalCoverage) {
+            return;
+        }
+
+        $coverage = @unserialize($externalCoverage);
+        if ($coverage === false) {
+            return;
+        }
+
+        $this->coverage->merge($coverage);
+    }
+
+    /**
+     * @param RemoteInterface $module
+     * @param $type
+     *
+     * @return bool|string
+     */
+    protected function getRemoteCoverageFile($module, $type)
+    {
+        $this->addHeader('X-Codeception-CodeCoverage', 'remote-access');
+        $context = stream_context_create(array('http' => $this->http));
+        $contents = file_get_contents($module->_getUrl() . '/c3/report/'.$type, false, $context);
+        if ($contents === false) {
+            $this->getRemoteError($http_response_header);
+        }
+        return $contents;
+    }
+
+    protected function getRemoteError($headers)
+    {
+        foreach ($headers as $header) {
+            if (strpos($header, 'X-Codeception-CodeCoverage-Error') === 0)
+                throw new \Codeception\Exception\RemoteException($header);
+        }
+    }
+
+    protected function addHeader($header, $value)
+    {
+        $this->http['header'] .= "$header: $value\r\n";
+    }
+
+
+    public function printResult(\Codeception\Event\PrintResult $e)
+    {
+        if ($this->options['steps']) return;
+        $this->printText($e->getPrinter());
+        $this->printPHP();
+        if ($this->options['html']) $this->printHtml();
+        if ($this->options['xml']) $this->printXml();
+    }
+
+    protected function printText(\PHPUnit_Util_Printer $printer)
+    {
+        $writer = new \PHP_CodeCoverage_Report_Text($printer,
+            $this->settings['low_limit'], $this->settings['high_limit'], $this->settings['show_uncovered']
+        );
+        $printer->write($writer->process($this->coverage, $this->options['colors']));
+    }
+
+    protected function printHtml()
+    {
+        $writer = new \PHP_CodeCoverage_Report_HTML(
+            'UTF-8',
+            true,
+            $this->settings['low_limit'],
+            $this->settings['high_limit'],
+            sprintf(', <a href="http://codeception.com">Codeception</a> and <a href="http://phpunit.de/">PHPUnit %s</a>', \PHPUnit_Runner_Version::id()
+            )
+        );
+
+        $writer->process($this->coverage, $this->log_dir . 'coverage');
+    }
+
+    protected function printXml()
+    {
+        $writer = new \PHP_CodeCoverage_Report_Clover;
+        $writer->process($this->coverage, $this->log_dir . 'coverage.xml');
+    }
+
+    protected function printPHP()
+    {
+        $writer = new \PHP_CodeCoverage_Report_PHP;
+        $writer->process($this->coverage, Configuration::logDir() . 'coverage.serialized');
+    }
+
+    protected function applySettings($settings)
+    {
+
+        if (!function_exists('xdebug_is_enabled'))
+            throw new \Exception('XDebug is required to collect CodeCoverage. Please install xdebug extension and enable it in php.ini');
+
+
+        $keys = array_keys($this->settings);
+        foreach ($keys as $key) {
+            if (isset($settings['coverage'][$key])) {
+                $this->settings[$key] = $settings['coverage'][$key];
+            }
+        }
+        $this->enabled = $this->settings['enabled'];
+        $this->remote = $this->settings['remote'];
+    }
+
+    static function getSubscribedEvents()
+    {
+        return array(
+            'suite.before' => 'beforeSuite',
+            'suite.after' => 'afterSuite',
+            'result.print.after' => 'printResult'
+        );
+    }
+}

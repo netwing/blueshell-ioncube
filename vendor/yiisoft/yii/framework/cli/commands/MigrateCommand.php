@@ -1,280 +1,585 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * MigrateCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * MigrateCommand manages the database migrations.
+ *
+ * The implementation of this command and other supporting classes referenced
+ * the yii-dbmigrations extension ((https://github.com/pieterclaerhout/yii-dbmigrations),
+ * authored by Pieter Claerhout.
+ *
+ * Since version 1.1.11 this command will exit with the following exit codes:
+ * <ul>
+ * <li>0 on success</li>
+ * <li>1 on general error</li>
+ * <li>2 on failed migration.</li>
+ * </ul>
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.cli.commands
+ * @since 1.1.6
+ */
+class MigrateCommand extends CConsoleCommand
+{
+	const BASE_MIGRATION='m000000_000000_base';
+
+	/**
+	 * @var string the directory that stores the migrations. This must be specified
+	 * in terms of a path alias, and the corresponding directory must exist.
+	 * Defaults to 'application.migrations' (meaning 'protected/migrations').
+	 */
+	public $migrationPath='application.migrations';
+	/**
+	 * @var string the name of the table for keeping applied migration information.
+	 * This table will be automatically created if not exists. Defaults to 'tbl_migration'.
+	 * The table structure is: (version varchar(255) primary key, apply_time integer)
+	 */
+	public $migrationTable='tbl_migration';
+	/**
+	 * @var string the application component ID that specifies the database connection for
+	 * storing migration information. Defaults to 'db'.
+	 */
+	public $connectionID='db';
+	/**
+	 * @var string the path of the template file for generating new migrations. This
+	 * must be specified in terms of a path alias (e.g. application.migrations.template).
+	 * If not set, an internal template will be used.
+	 */
+	public $templateFile;
+	/**
+	 * @var string the default command action. It defaults to 'up'.
+	 */
+	public $defaultAction='up';
+	/**
+	 * @var boolean whether to execute the migration in an interactive mode. Defaults to true.
+	 * Set this to false when performing migration in a cron job or background process.
+	 */
+	public $interactive=true;
+
+	public function beforeAction($action,$params)
+	{
+		$path=Yii::getPathOfAlias($this->migrationPath);
+		if($path===false || !is_dir($path))
+		{
+			echo 'Error: The migration directory does not exist: '.$this->migrationPath."\n";
+			exit(1);
+		}
+		$this->migrationPath=$path;
+
+		$yiiVersion=Yii::getVersion();
+		echo "\nYii Migration Tool v1.0 (based on Yii v{$yiiVersion})\n\n";
+
+		return parent::beforeAction($action,$params);
+	}
+
+	public function actionUp($args)
+	{
+		if(($migrations=$this->getNewMigrations())===array())
+		{
+			echo "No new migration found. Your system is up-to-date.\n";
+			return 0;
+		}
+
+		$total=count($migrations);
+		$step=isset($args[0]) ? (int)$args[0] : 0;
+		if($step>0)
+			$migrations=array_slice($migrations,0,$step);
+
+		$n=count($migrations);
+		if($n===$total)
+			echo "Total $n new ".($n===1 ? 'migration':'migrations')." to be applied:\n";
+		else
+			echo "Total $n out of $total new ".($total===1 ? 'migration':'migrations')." to be applied:\n";
+
+		foreach($migrations as $migration)
+			echo "    $migration\n";
+		echo "\n";
+
+		if($this->confirm('Apply the above '.($n===1 ? 'migration':'migrations')."?"))
+		{
+			foreach($migrations as $migration)
+			{
+				if($this->migrateUp($migration)===false)
+				{
+					echo "\nMigration failed. All later migrations are canceled.\n";
+					return 2;
+				}
+			}
+			echo "\nMigrated up successfully.\n";
+		}
+	}
+
+	public function actionDown($args)
+	{
+		$step=isset($args[0]) ? (int)$args[0] : 1;
+		if($step<1)
+		{
+			echo "Error: The step parameter must be greater than 0.\n";
+			return 1;
+		}
+
+		if(($migrations=$this->getMigrationHistory($step))===array())
+		{
+			echo "No migration has been done before.\n";
+			return 0;
+		}
+		$migrations=array_keys($migrations);
+
+		$n=count($migrations);
+		echo "Total $n ".($n===1 ? 'migration':'migrations')." to be reverted:\n";
+		foreach($migrations as $migration)
+			echo "    $migration\n";
+		echo "\n";
+
+		if($this->confirm('Revert the above '.($n===1 ? 'migration':'migrations')."?"))
+		{
+			foreach($migrations as $migration)
+			{
+				if($this->migrateDown($migration)===false)
+				{
+					echo "\nMigration failed. All later migrations are canceled.\n";
+					return 2;
+				}
+			}
+			echo "\nMigrated down successfully.\n";
+		}
+	}
+
+	public function actionRedo($args)
+	{
+		$step=isset($args[0]) ? (int)$args[0] : 1;
+		if($step<1)
+		{
+			echo "Error: The step parameter must be greater than 0.\n";
+			return 1;
+		}
+
+		if(($migrations=$this->getMigrationHistory($step))===array())
+		{
+			echo "No migration has been done before.\n";
+			return 0;
+		}
+		$migrations=array_keys($migrations);
+
+		$n=count($migrations);
+		echo "Total $n ".($n===1 ? 'migration':'migrations')." to be redone:\n";
+		foreach($migrations as $migration)
+			echo "    $migration\n";
+		echo "\n";
+
+		if($this->confirm('Redo the above '.($n===1 ? 'migration':'migrations')."?"))
+		{
+			foreach($migrations as $migration)
+			{
+				if($this->migrateDown($migration)===false)
+				{
+					echo "\nMigration failed. All later migrations are canceled.\n";
+					return 2;
+				}
+			}
+			foreach(array_reverse($migrations) as $migration)
+			{
+				if($this->migrateUp($migration)===false)
+				{
+					echo "\nMigration failed. All later migrations are canceled.\n";
+					return 2;
+				}
+			}
+			echo "\nMigration redone successfully.\n";
+		}
+	}
+
+	public function actionTo($args)
+	{
+		if(isset($args[0]))
+			$version=$args[0];
+		else
+			$this->usageError('Please specify which version to migrate to.');
+
+		$originalVersion=$version;
+		if(preg_match('/^m?(\d{6}_\d{6})(_.*?)?$/',$version,$matches))
+			$version='m'.$matches[1];
+		else
+		{
+			echo "Error: The version option must be either a timestamp (e.g. 101129_185401)\nor the full name of a migration (e.g. m101129_185401_create_user_table).\n";
+			return 1;
+		}
+
+		// try migrate up
+		$migrations=$this->getNewMigrations();
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+				return $this->actionUp(array($i+1));
+		}
+
+		// try migrate down
+		$migrations=array_keys($this->getMigrationHistory(-1));
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+			{
+				if($i===0)
+				{
+					echo "Already at '$originalVersion'. Nothing needs to be done.\n";
+					return 0;
+				}
+				else
+					return $this->actionDown(array($i));
+			}
+		}
+
+		echo "Error: Unable to find the version '$originalVersion'.\n";
+		return 1;
+	}
+
+	public function actionMark($args)
+	{
+		if(isset($args[0]))
+			$version=$args[0];
+		else
+			$this->usageError('Please specify which version to mark to.');
+		$originalVersion=$version;
+		if(preg_match('/^m?(\d{6}_\d{6})(_.*?)?$/',$version,$matches))
+			$version='m'.$matches[1];
+		else {
+			echo "Error: The version option must be either a timestamp (e.g. 101129_185401)\nor the full name of a migration (e.g. m101129_185401_create_user_table).\n";
+			return 1;
+		}
+
+		$db=$this->getDbConnection();
+
+		// try mark up
+		$migrations=$this->getNewMigrations();
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+			{
+				if($this->confirm("Set migration history at $originalVersion?"))
+				{
+					$command=$db->createCommand();
+					for($j=0;$j<=$i;++$j)
+					{
+						$command->insert($this->migrationTable, array(
+							'version'=>$migrations[$j],
+							'apply_time'=>time(),
+						));
+					}
+					echo "The migration history is set at $originalVersion.\nNo actual migration was performed.\n";
+				}
+				return 0;
+			}
+		}
+
+		// try mark down
+		$migrations=array_keys($this->getMigrationHistory(-1));
+		foreach($migrations as $i=>$migration)
+		{
+			if(strpos($migration,$version.'_')===0)
+			{
+				if($i===0)
+					echo "Already at '$originalVersion'. Nothing needs to be done.\n";
+				else
+				{
+					if($this->confirm("Set migration history at $originalVersion?"))
+					{
+						$command=$db->createCommand();
+						for($j=0;$j<$i;++$j)
+							$command->delete($this->migrationTable, $db->quoteColumnName('version').'=:version', array(':version'=>$migrations[$j]));
+						echo "The migration history is set at $originalVersion.\nNo actual migration was performed.\n";
+					}
+				}
+				return 0;
+			}
+		}
+
+		echo "Error: Unable to find the version '$originalVersion'.\n";
+		return 1;
+	}
+
+	public function actionHistory($args)
+	{
+		$limit=isset($args[0]) ? (int)$args[0] : -1;
+		$migrations=$this->getMigrationHistory($limit);
+		if($migrations===array())
+			echo "No migration has been done before.\n";
+		else
+		{
+			$n=count($migrations);
+			if($limit>0)
+				echo "Showing the last $n applied ".($n===1 ? 'migration' : 'migrations').":\n";
+			else
+				echo "Total $n ".($n===1 ? 'migration has' : 'migrations have')." been applied before:\n";
+			foreach($migrations as $version=>$time)
+				echo "    (".date('Y-m-d H:i:s',$time).') '.$version."\n";
+		}
+	}
+
+	public function actionNew($args)
+	{
+		$limit=isset($args[0]) ? (int)$args[0] : -1;
+		$migrations=$this->getNewMigrations();
+		if($migrations===array())
+			echo "No new migrations found. Your system is up-to-date.\n";
+		else
+		{
+			$n=count($migrations);
+			if($limit>0 && $n>$limit)
+			{
+				$migrations=array_slice($migrations,0,$limit);
+				echo "Showing $limit out of $n new ".($n===1 ? 'migration' : 'migrations').":\n";
+			}
+			else
+				echo "Found $n new ".($n===1 ? 'migration' : 'migrations').":\n";
+
+			foreach($migrations as $migration)
+				echo "    ".$migration."\n";
+		}
+	}
+
+	public function actionCreate($args)
+	{
+		if(isset($args[0]))
+			$name=$args[0];
+		else
+			$this->usageError('Please provide the name of the new migration.');
+
+		if(!preg_match('/^\w+$/',$name)) {
+			echo "Error: The name of the migration must contain letters, digits and/or underscore characters only.\n";
+			return 1;
+		}
+
+		$name='m'.gmdate('ymd_His').'_'.$name;
+		$content=strtr($this->getTemplate(), array('{ClassName}'=>$name));
+		$file=$this->migrationPath.DIRECTORY_SEPARATOR.$name.'.php';
+
+		if($this->confirm("Create new migration '$file'?"))
+		{
+			file_put_contents($file, $content);
+			echo "New migration created successfully.\n";
+		}
+	}
+
+	public function confirm($message,$default=false)
+	{
+		if(!$this->interactive)
+			return true;
+		return parent::confirm($message,$default);
+	}
+
+	protected function migrateUp($class)
+	{
+		if($class===self::BASE_MIGRATION)
+			return;
+
+		echo "*** applying $class\n";
+		$start=microtime(true);
+		$migration=$this->instantiateMigration($class);
+		if($migration->up()!==false)
+		{
+			$this->getDbConnection()->createCommand()->insert($this->migrationTable, array(
+				'version'=>$class,
+				'apply_time'=>time(),
+			));
+			$time=microtime(true)-$start;
+			echo "*** applied $class (time: ".sprintf("%.3f",$time)."s)\n\n";
+		}
+		else
+		{
+			$time=microtime(true)-$start;
+			echo "*** failed to apply $class (time: ".sprintf("%.3f",$time)."s)\n\n";
+			return false;
+		}
+	}
+
+	protected function migrateDown($class)
+	{
+		if($class===self::BASE_MIGRATION)
+			return;
+
+		echo "*** reverting $class\n";
+		$start=microtime(true);
+		$migration=$this->instantiateMigration($class);
+		if($migration->down()!==false)
+		{
+			$db=$this->getDbConnection();
+			$db->createCommand()->delete($this->migrationTable, $db->quoteColumnName('version').'=:version', array(':version'=>$class));
+			$time=microtime(true)-$start;
+			echo "*** reverted $class (time: ".sprintf("%.3f",$time)."s)\n\n";
+		}
+		else
+		{
+			$time=microtime(true)-$start;
+			echo "*** failed to revert $class (time: ".sprintf("%.3f",$time)."s)\n\n";
+			return false;
+		}
+	}
+
+	protected function instantiateMigration($class)
+	{
+		$file=$this->migrationPath.DIRECTORY_SEPARATOR.$class.'.php';
+		require_once($file);
+		$migration=new $class;
+		$migration->setDbConnection($this->getDbConnection());
+		return $migration;
+	}
+
+	/**
+	 * @var CDbConnection
+	 */
+	private $_db;
+	protected function getDbConnection()
+	{
+		if($this->_db!==null)
+			return $this->_db;
+		elseif(($this->_db=Yii::app()->getComponent($this->connectionID)) instanceof CDbConnection)
+			return $this->_db;
+
+		echo "Error: CMigrationCommand.connectionID '{$this->connectionID}' is invalid. Please make sure it refers to the ID of a CDbConnection application component.\n";
+		exit(1);
+	}
+
+	protected function getMigrationHistory($limit)
+	{
+		$db=$this->getDbConnection();
+		if($db->schema->getTable($this->migrationTable,true)===null)
+		{
+			$this->createMigrationHistoryTable();
+		}
+		return CHtml::listData($db->createCommand()
+			->select('version, apply_time')
+			->from($this->migrationTable)
+			->order('version DESC')
+			->limit($limit)
+			->queryAll(), 'version', 'apply_time');
+	}
+
+	protected function createMigrationHistoryTable()
+	{
+		$db=$this->getDbConnection();
+		echo 'Creating migration history table "'.$this->migrationTable.'"...';
+		$db->createCommand()->createTable($this->migrationTable,array(
+			'version'=>'string NOT NULL PRIMARY KEY',
+			'apply_time'=>'integer',
+		));
+		$db->createCommand()->insert($this->migrationTable,array(
+			'version'=>self::BASE_MIGRATION,
+			'apply_time'=>time(),
+		));
+		echo "done.\n";
+	}
+
+	protected function getNewMigrations()
+	{
+		$applied=array();
+		foreach($this->getMigrationHistory(-1) as $version=>$time)
+			$applied[substr($version,1,13)]=true;
+
+		$migrations=array();
+		$handle=opendir($this->migrationPath);
+		while(($file=readdir($handle))!==false)
+		{
+			if($file==='.' || $file==='..')
+				continue;
+			$path=$this->migrationPath.DIRECTORY_SEPARATOR.$file;
+			if(preg_match('/^(m(\d{6}_\d{6})_.*?)\.php$/',$file,$matches) && is_file($path) && !isset($applied[$matches[2]]))
+				$migrations[]=$matches[1];
+		}
+		closedir($handle);
+		sort($migrations);
+		return $migrations;
+	}
+
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  yiic migrate [action] [parameter]
+
+DESCRIPTION
+  This command provides support for database migrations. The optional
+  'action' parameter specifies which specific migration task to perform.
+  It can take these values: up, down, to, create, history, new, mark.
+  If the 'action' parameter is not given, it defaults to 'up'.
+  Each action takes different parameters. Their usage can be found in
+  the following examples.
+
+EXAMPLES
+ * yiic migrate
+   Applies ALL new migrations. This is equivalent to 'yiic migrate up'.
+
+ * yiic migrate create create_user_table
+   Creates a new migration named 'create_user_table'.
+
+ * yiic migrate up 3
+   Applies the next 3 new migrations.
+
+ * yiic migrate down
+   Reverts the last applied migration.
+
+ * yiic migrate down 3
+   Reverts the last 3 applied migrations.
+
+ * yiic migrate to 101129_185401
+   Migrates up or down to version 101129_185401.
+
+ * yiic migrate mark 101129_185401
+   Modifies the migration history up or down to version 101129_185401.
+   No actual migration will be performed.
+
+ * yiic migrate history
+   Shows all previously applied migration information.
+
+ * yiic migrate history 10
+   Shows the last 10 applied migrations.
+
+ * yiic migrate new
+   Shows all new migrations.
+
+ * yiic migrate new 10
+   Shows the next 10 migrations that have not been applied.
+
+EOD;
+	}
+
+	protected function getTemplate()
+	{
+		if($this->templateFile!==null)
+			return file_get_contents(Yii::getPathOfAlias($this->templateFile).'.php');
+		else
+			return <<<EOD
+<?php
+
+class {ClassName} extends CDbMigration
+{
+	public function up()
+	{
+	}
+
+	public function down()
+	{
+		echo "{ClassName} does not support migration down.\\n";
+		return false;
+	}
+
+	/*
+	// Use safeUp/safeDown to do migration with transaction
+	public function safeUp()
+	{
+	}
+
+	public function safeDown()
+	{
+	}
+	*/
+}
+EOD;
+	}
+}

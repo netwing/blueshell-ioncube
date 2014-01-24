@@ -1,48 +1,71 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+require_once 'Sweety/TestLocator.php';
+
+class Sweety_TestLocator_PearStyleLocator implements Sweety_TestLocator
+{
+  
+  private $_testCache = array();
+  
+  public function getTests($dirs = array())
+  {
+    return $this->_findTestCases($dirs);
+  }
+  
+  public function includeTest($testCase)
+  {
+    $file = str_replace('_', '/', $testCase) . '.php';
+    foreach (explode(PATH_SEPARATOR, get_include_path()) as $dir)
+    {
+      if (is_file($dir . '/' . $file))
+      {
+        require_once $dir . '/' . $file;
+        return true;
+      }
+    }
+    
+    return false;
+  }
+  
+  protected function _findTestCases($dirs = array(), $prepend = '')
+  {
+    $ret = array();
+    
+    foreach ($dirs as $dir)
+    {
+      if (array_key_exists($dir, $this->_testCache))
+      {
+        $ret += $this->_testCache[$dir];
+        continue;
+      }
+      
+      $this->_testCache[$dir] = array();
+      
+      $handle = opendir($dir);
+      while (false !== $file = readdir($handle))
+      {
+        if (substr($file, 0, 1) != '.' && is_dir($dir . '/' . $file))
+        {
+          foreach ($this->_findTestCases(
+            array($dir . '/' . $file), $prepend . $file . '_') as $add)
+          {
+            $this->_testCache[$dir][] = $add;
+            $ret[] = $add;
+          }
+        }
+        elseif (substr($file, -4) == '.php')
+        { 
+          $className = $prepend . basename($file, '.php');
+          $this->_testCache[$dir][] = $className;
+          $ret[] = $className;
+        }
+      }
+      closedir($handle);
+    }
+    
+    sort($ret);
+    
+    return $ret;
+  }
+  
+}

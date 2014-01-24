@@ -1,60 +1,100 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Run PHPunit tests without PHPunit for debugging
+ *
+ * @package PHPunit
+ * @author Uwe Tews
+ */
+include 'smartytestdebug.inc.php';
+
+// place request PHPunit test class here or leave empty for all
+$_classes = 'CompileNocacheTests';
+
+// place method name for a singe test here or leave empty for all
+$function = array();
+
+// clean up
+SmartyTests::$smarty->clearAllCache();
+SmartyTests::$smarty->clearCompiledTemplate();
+
+// if no classes have been selected scan PHPunit folder for all
+if (empty($_classes)) {
+    foreach (new DirectoryIterator(dirname(__FILE__)) as $file) {
+        if (!$file->isDot() && !$file->isDir() && !in_array((string) $file, array('smartytests.php', 'smartytestssingle.php', 'smartytestsfile.php', 'smartytestdebug.php', 'smartytestdebug.inc.php')) && substr((string) $file, -4) === '.php') {
+            $class = basename($file, '.php');
+                 require_once $file->getPathname();
+                // to have an optional test suite, it should implement a public static function isRunnable
+                // that returns true only if all the conditions are met to run it successfully, for example
+                // it can check that an external library is present
+                if (!method_exists($class, 'isRunnable') || call_user_func(array($class, 'isRunnable'))) {
+                    $_classes[] = $class;
+            }
+        }
+    }
+    sort($_classes);
+
+} else {
+    require_once $_classes . '.php';
+}
+
+// for all selected test classes
+foreach ((array) $_classes as $class) {
+    if (empty($function)) {
+        $c = new ReflectionClass('PHPUnit_Framework_TestCase');
+        $m1 = $c->getMethods();
+        foreach ($m1 as $m) {
+            $remove[] = $m->name;
+        }
+        $remove[] = 'setUp';
+        $remove[] = 'isRunnable';
+
+        $c = new ReflectionClass($class);
+        $methods = $c->getMethods();
+
+        foreach ($methods as $method) {
+            if (strpos($method->name, 'test') === 0) {
+                $function[] = $method->name;
+            }
+        }
+        $function = array_diff($function, $remove);
+    }
+
+    // first run of test to collect failures
+    $o = new $class;
+    foreach ($function as $func) {
+        try {
+            $o->current_function = $func;
+            $o->setUP();
+            $o->$func();
+        } catch (Exception $e) {
+            while (ob_get_level() > 0) {
+                ob_end_clean();
+            }
+            $o->error();
+            echo '<br>Exception: ', $e->getMessage(), "<br>";
+        }
+    }
+
+    echo '<br><br>================   END FIRST PASS  ============<br><br>';
+
+
+    // repeat tests which did fail
+    if (!empty($o->error_functions)) {
+    SmartyTests::$smarty->caching_type = 'file';
+//    SmartyTests::$smarty->compiled_type = 'file';
+    SmartyTests::$smarty->default_resource_type = 'file';
+    SmartyTests::$smarty->clearAllCache();
+    SmartyTests::$smarty->clearCompiledTemplate();
+        $error_functions = $o->error_functions;
+        $o->error_functions = array();
+
+        foreach ($error_functions as $func) {
+                $o->current_function = $func;
+                $o->setUP();
+                // You may set a debugger breakpoint below for debugging failing tests
+                $o->$func();
+         }
+    }
+    $function = array();
+
+}

@@ -1,30 +1,68 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CModelBehavior class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CModelBehavior is a base class for behaviors that are attached to a model component.
+ * The model should extend from {@link CModel} or its child classes.
+ *
+ * @property CModel $owner The owner model that this behavior is attached to.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.base
+ */
+class CModelBehavior extends CBehavior
+{
+	/**
+	 * Declares events and the corresponding event handler methods.
+	 * The default implementation returns 'onAfterConstruct', 'onBeforeValidate' and 'onAfterValidate' events and handlers.
+	 * If you override this method, make sure you merge the parent result to the return value.
+	 * @return array events (array keys) and the corresponding event handler methods (array values).
+	 * @see CBehavior::events
+	 */
+	public function events()
+	{
+		return array(
+			'onAfterConstruct'=>'afterConstruct',
+			'onBeforeValidate'=>'beforeValidate',
+			'onAfterValidate'=>'afterValidate',
+		);
+	}
+
+	/**
+	 * Responds to {@link CModel::onAfterConstruct} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link CBehavior::owner owner}.
+	 * @param CEvent $event event parameter
+	 */
+	protected function afterConstruct($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CModel::onBeforeValidate} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link owner}.
+	 * You may set {@link CModelEvent::isValid} to be false to quit the validation process.
+	 * @param CModelEvent $event event parameter
+	 */
+	protected function beforeValidate($event)
+	{
+	}
+
+	/**
+	 * Responds to {@link CModel::onAfterValidate} event.
+	 * Override this method and make it public if you want to handle the corresponding event
+	 * of the {@link owner}.
+	 * @param CEvent $event event parameter
+	 */
+	protected function afterValidate($event)
+	{
+	}
+}

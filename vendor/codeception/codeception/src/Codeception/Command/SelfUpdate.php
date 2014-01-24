@@ -1,109 +1,207 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+namespace Codeception\Command;
+
+use Symfony\Component\Console\Input\InputDefinition,
+    Symfony\Component\Console\Input\InputOption,
+    Symfony\Component\Console\Input\InputInterface,
+    Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * Provides a selfupdate command to the phar distribution.
+ *
+ * @author Franck Cassedanne <franck@cassedanne.com>
+ */
+class SelfUpdate extends Base
+{
+    /**
+     * Class constants
+     */
+    const NAME = 'Codeception';
+    const GITHUB = 'Codeception/Codeception';
+    const SOURCE = 'http://codeception.com/codecept.phar';
+
+    /**
+     * Holds the current script filename.
+     * @var string
+     */
+    protected $filename;
+
+    /**
+     * Holds the live version string.
+     * @var string
+     */
+    protected $liveVersion;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configure()
+    {
+        $this->filename = $_SERVER['argv'][0];
+
+        $this
+            // ->setAliases(array('selfupdate'))
+            ->setDescription(sprintf(
+                'Upgrade <comment>%s</comment> to the latest version',
+                $this->filename
+            ));
+
+        parent::configure();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function execute(InputInterface $input, OutputInterface $output)
+    {
+        $version = \Codeception\Codecept::VERSION;
+
+        $output->writeln(sprintf(
+                '<info>%s</info> version <comment>%s</comment>',
+                self::NAME, $version
+        ));
+
+        $output->writeln("\n<info>Checking for a new version...</info>\n");
+        try {
+            if ($this->isOutOfDate($version)) {
+                $output->writeln(sprintf(
+                    'A newer version is available: <comment>%s</comment>',
+                    $this->liveVersion
+                ));
+                if (!$input->getOption('no-interaction')) {
+
+                    $dialog = $this->getHelperSet()->get('dialog');
+                    if (!$dialog->askConfirmation($output,
+                        "\n<question>Do you want to update?</question> ", false)
+                    ) {
+                        $output->writeln("\n<info>Bye-bye!</info>\n");
+
+                        return;
+                    }
+                }
+                $output->writeln("\n<info>Updating...</info>");
+
+                $this->retrieveLatestPharFile($output);
+
+            } else {
+                $output->writeln('You are already using the latest version.');
+            }
+
+        } catch (\Exception $e) {
+            $output->writeln(sprintf(
+                "<error>\n%s\n</error>",
+                $e->getMessage()
+            ));
+        }
+
+    }
+
+    /**
+     * Checks wether the provided version is current.
+     *
+     * @param  string  $version The version number to check.
+     * @return boolean Returns True if a new version is available.
+     */
+    private function isOutOfDate($version)
+    {
+        $tags = $this->getGithubTags(self::GITHUB);
+
+        $this->liveVersion = array_reduce($tags, function ($a, $b) {
+            return version_compare($a, $b, '>') ? $a : $b;
+        });
+
+        return -1 != version_compare($version, $this->liveVersion, '>=');
+    }
+
+    /**
+     * Returns an array of tags from a github repo.
+     *
+     * @param  string $repo The repository name to check upon.
+     * @return array
+     */
+    private function getGithubTags($repo)
+    {
+        $jsonTags = $this->retrieveContentFromUrl(
+            'https://api.github.com/repos/' . $repo . '/tags'
+        );
+
+        return array_map(
+            function ($tag) { return $tag['name']; },
+            json_decode($jsonTags, true)
+        );
+    }
+
+    /**
+     * Retrieves the body-content from the provided URL.
+     *
+     * @param  string $url
+     * @return string
+     * @throw Exception if status code is above 300
+     */
+    private function retrieveContentFromUrl($url)
+    {
+        $opts = array('http' => array(
+            'follow_location' => 1,
+            'max_redirects' => 20,
+            'timeout' => 60,
+            'user_agent' => self::NAME
+        ));
+
+        $ctx  = stream_context_create($opts);
+        $body = file_get_contents($url, 0, $ctx);
+
+        if (isset($http_response_header)) {
+            $code = substr($http_response_header[0], 9, 3);
+            if (floor($code/100)>3) {
+                throw new \Exception($http_response_header[0]);
+            }
+        } else {
+            throw new \Exception('Request failed.');
+        }
+
+        return $body;
+    }
+
+    /**
+     * Retrieves the latest phar file.
+     *
+     * @param OutputInterface $output
+     */
+    protected function retrieveLatestPharFile(OutputInterface $output)
+    {
+        $temp = basename($this->filename, '.phar') . '-temp.phar';
+
+        try {
+            if (@copy(self::SOURCE, $temp)) {
+                chmod($temp, 0777 & ~umask());
+
+                // test the phar validity
+                $phar = new \Phar($temp);
+                // free the variable to unlock the file
+                unset($phar);
+                rename($temp, $this->filename);
+            } else {
+                throw new \Exception('Request failed.');
+            }
+        } catch (\Exception $e) {
+            if (
+                !$e instanceof \UnexpectedValueException
+                && !$e instanceof \PharException
+            ) {
+                throw $e;
+            }
+            unlink($temp);
+
+            $output->writeln(sprintf(
+                "<error>\nSomething went wrong (%s).\nPlease re-run this again.</error>\n",
+                $e->getMessage()
+            ));
+        }
+
+        $output->writeln(sprintf(
+            "\n<comment>%s</comment> has been updated.\n",
+            $this->filename
+        ));
+    }
+
+}

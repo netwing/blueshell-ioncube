@@ -1,31 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Generic_Sniffs_Files_OneInterfacePerFileSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Andy Grunwald <andygrunwald@gmail.com>
+ * @copyright 2010 Andy Grunwald
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Checks that only one interface is declared per file.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Andy Grunwald <andygrunwald@gmail.com>
+ * @copyright 2010 Andy Grunwald
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Generic_Sniffs_Files_OneInterfacePerFileSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_INTERFACE);
+
+    }//end register()
+
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The file being scanned.
+     * @param int                  $stackPtr  The position of the current token in
+     *                                        the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $nextInterface = $phpcsFile->findNext($this->register(), ($stackPtr + 1));
+        if ($nextInterface !== false) {
+            $error = 'Only one interface is allowed in a file';
+            $phpcsFile->addError($error, $nextInterface, 'MultipleFound');
+        }
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

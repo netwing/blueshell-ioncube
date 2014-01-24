@@ -1,47 +1,95 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * Squiz_Sniffs_Classes_ValidClassNameSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * Squiz_Sniffs_Classes_ValidClassNameSniff.
+ *
+ * Ensures classes are in camel caps, and the first letter is capitalised
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @author    Marc McIntyre <mmcintyre@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class Squiz_Sniffs_Classes_ValidClassNameSniff implements PHP_CodeSniffer_Sniff
+{
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(
+                T_CLASS,
+                T_INTERFACE,
+               );
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile The current file being processed.
+     * @param int                  $stackPtr  The position of the current token in the
+     *                                        stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        if (isset($tokens[$stackPtr]['scope_opener']) === false) {
+            $error = 'Possible parse error: %s missing opening or closing brace';
+            $data  = array($tokens[$stackPtr]['content']);
+            $phpcsFile->addWarning($error, $stackPtr, 'MissingBrace', $data);
+            return;
+        }
+
+        // Determine the name of the class or interface. Note that we cannot
+        // simply look for the first T_STRING because a class name
+        // starting with the number will be multiple tokens.
+        $opener    = $tokens[$stackPtr]['scope_opener'];
+        $nameStart = $phpcsFile->findNext(T_WHITESPACE, ($stackPtr + 1), $opener, true);
+        $nameEnd   = $phpcsFile->findNext(T_WHITESPACE, $nameStart, $opener);
+        $name      = trim($phpcsFile->getTokensAsString($nameStart, ($nameEnd - $nameStart)));
+
+        // Check for camel caps format.
+        $valid = PHP_CodeSniffer::isCamelCaps($name, true, true, false);
+        if ($valid === false) {
+            $type  = ucfirst($tokens[$stackPtr]['content']);
+            $error = '%s name "%s" is not in camel caps format';
+            $data  = array(
+                      $type,
+                      $name,
+                     );
+            $phpcsFile->addError($error, $stackPtr, 'NotCamelCaps', $data);
+        }
+
+    }//end process()
+
+
+}//end class
+
+
 ?>
-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

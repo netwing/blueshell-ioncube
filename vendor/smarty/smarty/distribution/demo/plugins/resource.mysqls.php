@@ -1,44 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-W7YW7/u4Jm==
+<?php
+
+/**
+ * MySQL Resource
+ *
+ * Resource Implementation based on the Custom API to use
+ * MySQL as the storage resource for Smarty's templates and configs.
+ *
+ * Note that this MySQL implementation fetches the source and timestamps in
+ * a single database query, instead of two separate like resource.mysql.php does.
+ *
+ * Table definition:
+ * <pre>CREATE TABLE IF NOT EXISTS `templates` (
+ *   `name` varchar(100) NOT NULL,
+ *   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+ *   `source` text,
+ *   PRIMARY KEY (`name`)
+ * ) ENGINE=InnoDB DEFAULT CHARSET=utf8;</pre>
+ *
+ * Demo data:
+ * <pre>INSERT INTO `templates` (`name`, `modified`, `source`) VALUES ('test.tpl', "2010-12-25 22:00:00", '{$x="hello world"}{$x}');</pre>
+ *
+ * @package Resource-examples
+ * @author Rodney Rehm
+ */
+class Smarty_Resource_Mysqls extends Smarty_Resource_Custom
+{
+    // PDO instance
+    protected $db;
+    // prepared fetch() statement
+    protected $fetch;
+
+    public function __construct()
+    {
+        try {
+            $this->db = new PDO("mysql:dbname=test;host=127.0.0.1", "smarty");
+        } catch (PDOException $e) {
+            throw new SmartyException('Mysql Resource failed: ' . $e->getMessage());
+        }
+        $this->fetch = $this->db->prepare('SELECT modified, source FROM templates WHERE name = :name');
+    }
+
+    /**
+     * Fetch a template and its modification time from database
+     *
+     * @param  string  $name   template name
+     * @param  string  $source template source
+     * @param  integer $mtime  template modification timestamp (epoch)
+     * @return void
+     */
+    protected function fetch($name, &$source, &$mtime)
+    {
+        $this->fetch->execute(array('name' => $name));
+        $row = $this->fetch->fetch();
+        $this->fetch->closeCursor();
+        if ($row) {
+            $source = $row['source'];
+            $mtime = strtotime($row['modified']);
+        } else {
+            $source = null;
+            $mtime = null;
+        }
+    }
+}

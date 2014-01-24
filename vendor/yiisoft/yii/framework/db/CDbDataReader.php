@@ -1,95 +1,245 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CDbDataReader class file
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CDbDataReader represents a forward-only stream of rows from a query result set.
+ *
+ * To read the current row of data, call {@link read}. The method {@link readAll}
+ * returns all the rows in a single array.
+ *
+ * One can also retrieve the rows of data in CDbDataReader by using foreach:
+ * <pre>
+ * foreach($reader as $row)
+ *     // $row represents a row of data
+ * </pre>
+ * Since CDbDataReader is a forward-only stream, you can only traverse it once.
+ *
+ * It is possible to use a specific mode of data fetching by setting
+ * {@link setFetchMode FetchMode}. See {@link http://www.php.net/manual/en/function.PDOStatement-setFetchMode.php}
+ * for more details.
+ *
+ * @property boolean $isClosed Whether the reader is closed or not.
+ * @property integer $rowCount Number of rows contained in the result.
+ * @property integer $columnCount The number of columns in the result set.
+ * @property mixed $fetchMode Fetch mode.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.db
+ * @since 1.0
+ */
+class CDbDataReader extends CComponent implements Iterator, Countable
+{
+	private $_statement;
+	private $_closed=false;
+	private $_row;
+	private $_index=-1;
+
+	/**
+	 * Constructor.
+	 * @param CDbCommand $command the command generating the query result
+	 */
+	public function __construct(CDbCommand $command)
+	{
+		$this->_statement=$command->getPdoStatement();
+		$this->_statement->setFetchMode(PDO::FETCH_ASSOC);
+	}
+
+	/**
+	 * Binds a column to a PHP variable.
+	 * When rows of data are being fetched, the corresponding column value
+	 * will be set in the variable. Note, the fetch mode must include PDO::FETCH_BOUND.
+	 * @param mixed $column Number of the column (1-indexed) or name of the column
+	 * in the result set. If using the column name, be aware that the name
+	 * should match the case of the column, as returned by the driver.
+	 * @param mixed $value Name of the PHP variable to which the column will be bound.
+	 * @param integer $dataType Data type of the parameter
+	 * @see http://www.php.net/manual/en/function.PDOStatement-bindColumn.php
+	 */
+	public function bindColumn($column, &$value, $dataType=null)
+	{
+		if($dataType===null)
+			$this->_statement->bindColumn($column,$value);
+		else
+			$this->_statement->bindColumn($column,$value,$dataType);
+	}
+
+	/**
+	 * Set the default fetch mode for this statement
+	 * @param mixed $mode fetch mode
+	 * @see http://www.php.net/manual/en/function.PDOStatement-setFetchMode.php
+	 */
+	public function setFetchMode($mode)
+	{
+		$params=func_get_args();
+		call_user_func_array(array($this->_statement,'setFetchMode'),$params);
+	}
+
+	/**
+	 * Advances the reader to the next row in a result set.
+	 * @return array|false the current row, false if no more row available
+	 */
+	public function read()
+	{
+		return $this->_statement->fetch();
+	}
+
+	/**
+	 * Returns a single column from the next row of a result set.
+	 * @param integer $columnIndex zero-based column index
+	 * @return mixed|false the column of the current row, false if no more row available
+	 */
+	public function readColumn($columnIndex)
+	{
+		return $this->_statement->fetchColumn($columnIndex);
+	}
+
+	/**
+	 * Returns an object populated with the next row of data.
+	 * @param string $className class name of the object to be created and populated
+	 * @param array $fields Elements of this array are passed to the constructor
+	 * @return mixed|false the populated object, false if no more row of data available
+	 */
+	public function readObject($className,$fields)
+	{
+		return $this->_statement->fetchObject($className,$fields);
+	}
+
+	/**
+	 * Reads the whole result set into an array.
+	 * @return array the result set (each array element represents a row of data).
+	 * An empty array will be returned if the result contains no row.
+	 */
+	public function readAll()
+	{
+		return $this->_statement->fetchAll();
+	}
+
+	/**
+	 * Advances the reader to the next result when reading the results of a batch of statements.
+	 * This method is only useful when there are multiple result sets
+	 * returned by the query. Not all DBMS support this feature.
+	 * @return boolean Returns true on success or false on failure.
+	 */
+	public function nextResult()
+	{
+		if(($result=$this->_statement->nextRowset())!==false)
+			$this->_index=-1;
+		return $result;
+	}
+
+	/**
+	 * Closes the reader.
+	 * This frees up the resources allocated for executing this SQL statement.
+	 * Read attempts after this method call are unpredictable.
+	 */
+	public function close()
+	{
+		$this->_statement->closeCursor();
+		$this->_closed=true;
+	}
+
+	/**
+	 * whether the reader is closed or not.
+	 * @return boolean whether the reader is closed or not.
+	 */
+	public function getIsClosed()
+	{
+		return $this->_closed;
+	}
+
+	/**
+	 * Returns the number of rows in the result set.
+	 * Note, most DBMS may not give a meaningful count.
+	 * In this case, use "SELECT COUNT(*) FROM tableName" to obtain the number of rows.
+	 * @return integer number of rows contained in the result.
+	 */
+	public function getRowCount()
+	{
+		return $this->_statement->rowCount();
+	}
+
+	/**
+	 * Returns the number of rows in the result set.
+	 * This method is required by the Countable interface.
+	 * Note, most DBMS may not give a meaningful count.
+	 * In this case, use "SELECT COUNT(*) FROM tableName" to obtain the number of rows.
+	 * @return integer number of rows contained in the result.
+	 */
+	public function count()
+	{
+		return $this->getRowCount();
+	}
+
+	/**
+	 * Returns the number of columns in the result set.
+	 * Note, even there's no row in the reader, this still gives correct column number.
+	 * @return integer the number of columns in the result set.
+	 */
+	public function getColumnCount()
+	{
+		return $this->_statement->columnCount();
+	}
+
+	/**
+	 * Resets the iterator to the initial state.
+	 * This method is required by the interface Iterator.
+	 * @throws CException if this method is invoked twice
+	 */
+	public function rewind()
+	{
+		if($this->_index<0)
+		{
+			$this->_row=$this->_statement->fetch();
+			$this->_index=0;
+		}
+		else
+			throw new CDbException(Yii::t('yii','CDbDataReader cannot rewind. It is a forward-only reader.'));
+	}
+
+	/**
+	 * Returns the index of the current row.
+	 * This method is required by the interface Iterator.
+	 * @return integer the index of the current row.
+	 */
+	public function key()
+	{
+		return $this->_index;
+	}
+
+	/**
+	 * Returns the current row.
+	 * This method is required by the interface Iterator.
+	 * @return mixed the current row.
+	 */
+	public function current()
+	{
+		return $this->_row;
+	}
+
+	/**
+	 * Moves the internal pointer to the next row.
+	 * This method is required by the interface Iterator.
+	 */
+	public function next()
+	{
+		$this->_row=$this->_statement->fetch();
+		$this->_index++;
+	}
+
+	/**
+	 * Returns whether there is a row of data at current position.
+	 * This method is required by the interface Iterator.
+	 * @return boolean whether there is a row of data at current position.
+	 */
+	public function valid()
+	{
+		return $this->_row!==false;
+	}
+}

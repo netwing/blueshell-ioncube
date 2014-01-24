@@ -1,32 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPoh6qqro8YXY7t16RfFT4ZJzMKYfmqjARw2ilXhqCD/UhxYGhpU7CayeD3yGj7A0D0Pfi+Ul
-1+oixMJKthfpFzvhjkAsw20XrXsFV1PJZf7+Oh+CgvUyMXJ5a9E0XAEV/X1orI5uYD9ZZ5vbyD14
-8spswztqzbXLfpq3EOgXd3rYwL513U+xbryradXU+nSZ+DSBzOK+NKj7/ODAkFLlDbxL89rCRGqK
-Lcnig+xWMXE8KXftjrjbhr4euJltSAgiccy4GDnfTCnYbuiP4F1v9HT04NWuohzFbh5Y4fwjIHW4
-WpwidGaLDnlES8KI+tYVxCsTARC7auq5iSbNAE4n8Bz66wS0FKMmL/voaxhhiHzXGTSmiAPFmVv9
-ws2JYXegl5++hr1w6wEYY2L597wqtr8zLV23vverGTmdCcZIeCjnPY+id2v7zStTi9YRh6hLai1/
-iBT53zBPzwu1UnCe6CyjzwrfiifXflRy5uFnQO/P16ZAH5NdURL3SJFdDtn4S240mu7nacaCvJ/4
-5K5spTuLTV47rZ7qKaHNTZrfXmopX8ztAeaqGNAcSwkAo5OxHsB5ctLSztSgoH5llLXF+dzT26Ah
-HlUSc/JOza0fhfl/g4RlCkWWqiwlSYYInJ8UYGmg6OgF7SMgGy2czN4SILPDENb4kHXY4RLk4bo5
-wCQ7b3NSEYtWbt4T766gAdzuRK/aWH85O0T+3sZm6XaD5FlFU6SrGnjUdWKeP+zSptbzbRvHWK4S
-Ye2H/xYD9O8eQ1BhqhZb07FK6kdZlmqt4OMFNPil8yja7moMd7Qa/6FRnOBHzOzP4Oyluhla51U8
-1Gi3cH3FYoO15m/2gsdtkaZYzQZt0lTMI2JMZcwCfG3fWOj+IZuRhg0MFWyhbg+hW+Bs4UVm7m7A
-LmJmG3acjKz8CKK1XP/GjhANRnCBZyNtSvZtInI5eLrhrVQLoe3ICq1H/HIMrBVJdbtt0lHdddGB
-1M1fsmzWPfS0EeMdl3kqZUj5w0VVT8y7/xhQwxKtqgdo1M8zD/JJyazTPgnm5rK/LL2oeNZkTMoy
-obAIOW+E9xQ+HlsviAJaEZ6LaeWNc3LRyfcz/6Wh7YWZT8QCK7C5d9lTdDZYFItFg0+8ocVaaCIJ
-pwYHe098I4O+6NmkiPI8gt7O4SsilL2e/fuF8Zui7Zdh4/ooRssyZszdpqJkXbGLPsIwemjpvU1c
-3OSm5O1KCIylsLVk1wut5ep1IOG2zXZaZVrtbHYia8tzTRrWSm7WxW3vDuhOYMQmKXX2hB8mI1TM
-K5TcRdWqxDNfJk3AW7u1/pkDc0D2S7y0mJb2pJi5DcO9QkhnSpTN/rXxNRH0BQ2k/jhOyfyYYhoR
-qu64/krmmi5hsieoVRzNmQGeXDhGcEJFEGfOpF8G32izIzvBhu+aVXCXSbRDAvRYe35+3fZw+qw6
-SHpcVB+rlogOW3ZsXdFI/gbBAwaWmdZsHAWPHWMMtAAsEFMrzQKULrCvb0+0nhKRtQT5xdv/Xbfe
-G++GzySbAOp31f3lcaGDeEAiUvGbVwGZRwtgtdraYrfpBAbu/TLN2dK3zfu1P3Qq8ZXHmlGOYZ6t
-s0p03sm1Wb94g85EfJqoVpEw6lqHEs5T1rcU7fFP2XJTqu8S6AWIvAg3DspN1ONnTpgU1LSHaQ6b
-Y3ZjEu4zuZVhta4LFkv8NZbHu9P3dEKCrZPOkQxhhIMlWHqDwHJZu9031DMp8gdlOUJ5PM2WNWm8
-wGei1V/73SHNnZzjOlf4keP98fjBD9bYZ02OLUNQIt+tCxA1eUFUZ9fd7mXPy4Jmqnnkflxq8BuQ
-+qzu/ouJOy2L6ANdABKwPcFnhY1oJOsedBUS2FbqUQFVzuPLfWf9uZU59i8R6qg8ancawOF8/dBG
-ryHusiAFl5KCCGcf2+MjjvwXirrj4MDmgxBi/+0YgfUEUjyw/SzozWh1PuOS//OFiIsGXQZ220r1
-Jne6HmfjKP6CIaJd60yntp/wIqCwpkOFZkSe5TWOvKkINE96Yd3fTMjXFM7MfmWH4bQnY9jEIfTx
-wIsJuFZWPpQsxpluP8TQGgJd2FUJF/xox1RO8oLnWnV2Rvd9CDTzFa28gGJtdgztxL8W9bFuP8Bf
-ckwqLUCs5JRRp9ewHGgERWXvQWsDzbPJnX1nf7QkjNu=
+<?php
+
+/*
+ * This file is part of SwiftMailer.
+ * (c) 2004-2009 Chris Corbyn
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+/**
+ * Buffers input and output to a resource.
+ *
+ * @package    Swift
+ * @subpackage Transport
+ * @author     Chris Corbyn
+ */
+interface Swift_Transport_IoBuffer extends Swift_InputByteStream, Swift_OutputByteStream
+{
+    /** A socket buffer over TCP */
+    const TYPE_SOCKET = 0x0001;
+
+    /** A process buffer with I/O support */
+    const TYPE_PROCESS = 0x0010;
+
+    /**
+     * Perform any initialization needed, using the given $params.
+     *
+     * Parameters will vary depending upon the type of IoBuffer used.
+     *
+     * @param array $params
+     */
+    public function initialize(array $params);
+
+    /**
+     * Set an individual param on the buffer (e.g. switching to SSL).
+     *
+     * @param string $param
+     * @param mixed  $value
+     */
+    public function setParam($param, $value);
+
+    /**
+     * Perform any shutdown logic needed.
+     */
+    public function terminate();
+
+    /**
+     * Set an array of string replacements which should be made on data written
+     * to the buffer.
+     *
+     * This could replace LF with CRLF for example.
+     *
+     * @param string[] $replacements
+     */
+    public function setWriteTranslations(array $replacements);
+
+    /**
+     * Get a line of output (including any CRLF).
+     *
+     * The $sequence number comes from any writes and may or may not be used
+     * depending upon the implementation.
+     *
+     * @param integer $sequence of last write to scan from
+     *
+     * @return string
+     */
+    public function readLine($sequence);
+}

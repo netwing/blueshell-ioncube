@@ -1,99 +1,177 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cP/E2QBqQMr6pzqVzdXULdJHbnGLFG3fcKjbhvJepUYJW7m4WXUEcSGKft1IDm8DgdT5oVv3A
-T3ieU6nQCkEPq5AX2SzGX4iOtUXqEL2hvMDXaIyNeeGjLFTBGwXefxtohyuKz29CbihRRYXbcLt5
-dyGOtX+6fUl7wrsM+ndWXNL7Culkgms6G7zvYkWqZkD1YsECwLz5wu57BheADJH/yp8oGVoIU60m
-q8V4qz7B3wQd0kzUZiRQGAzHAE4xzt2gh9fl143SQNHKOz3n00eZCa6uwRRO5S/00CM1J2jYDyb6
-igkt4+MA28ss307NEqsIx0KkWEagLNqBm7WVB69TFjhKEui8d4iEL754I2bKUDIzv6YdhAkrmIIb
-O5Rxdc7umQS/xRf1U17foRWtieRDneHg3gPkHj6n84YKyYkl2on3c483iwC9lDELcfJURInuQTCM
-ToEbTmr2neG5pSsqwAiWlpjUCu4m7ApCW9TZw2F56XGWHAUZcCN+Q36mZGtk7Ui58F28pxZhH2EM
-SnzTOJLAhFo6JvNbfFK+C/w/5O2VUpbWyaxYFg6M7awxLXVyOHsbsYIlMSBzLDSQ4YRwy8B095ve
-S2i++xsPorMFUUgnhB8Hsw2+5a6VSRHrj010RDBo3kO2sMkNuNw2ls8Byt/0Fls/BGCJbtq0/cPX
-uQZCyJhtbJPc2RVzQaSC016LIrw0dLhHV52hz5fBdilyZnSVVj42So5Fj/6A8td1CuL0Wbg/t2uj
-9yv8aEVlJEtkj3izG49S4NW9iCo88TtOXtOKBF8xVr9HK6z318Gs2jJG+SckqksIFYiV+RbBhzb2
-28bTCJFDg0E6sHmWVY4PCbm+8ZNiB3fMKxqm+lDcVAsrg9Kq4IwOLWJltdMkf9tfL2Y4ExqNTftL
-yq2WWbwrXW4k4gqqMGr9ool2Gv+PjkpChDpJaGSA6mGVyd0j9fckVDUcagFRGfgyOYGOVuNl086n
-DcEXVhRk/Kt+/ZVLYSc1D1Omcqg6NORupE8G9YMwxUX3ZyIId9Nvd4QDaI/1u/qsgrXn9vumUMZc
-xL86SlsZBGy1LzWQYVnJOXpp5ngCEymK0HSI/yc3tfeXP3ly0d4PwRO6Dq6cG5SHvTOqM2vxm8wS
-jGHDsXQ2KT3uadCKQb+6Xw500/hY0sdSLs0jQLEKSUpsGYpvh+EXEfAdW+2H3yGUALc3TcLT5e1W
-HqAiSFBVb5O7iksOgLteKcmTvjO2QaK8l0Fl0FgFeOJp+Om0wqsXsfdDr2VTMSe/pWrXeva95Aau
-a2wJcUMchGhFW1K32mKwefYE+a9ZZvdrKvX/piHBlvyfLV+yMwexSCfhMnVUkkTw1+OQ4i4/JUvd
-nQnJLOoEVcIyid0Q3gBLqPY/Az60MUfX5HDBHURerfwgvUQXCIPCX6zckpCM/GISUO6E4l08UqYR
-wtyF+DSX9pltPm2ejgi+OM9Qpa8OHNlFRlb0vOsH/cn1A7i3R0f4AYpY5b6FUjRZNgjluKqC6wOn
-He75ywfTB+Tl4taTizwlmS5+uDe4zHGYhhuBQblxGoXVZutZ7dlXlGcAiunYm7upTbn6mHriY0Ib
-HzKXfr4TgOQ2++vboJdr/9JnqsZLVr/gqwaAbHz4CRJhhLAjnvAJxi1/8jkTsHKgImySBmuXv+qF
-UBzHYCShHuH2enW/j1Q4kJ0OIG85BUjnKau+YgLJ/+t+CWd30+Zuk2RR1ydgEEs/7qeN6enjCeSN
-gAvdnbaLaonV762i4UtLbAGVO8yuYv5UKC/1svxq3/6FlsKRj1UQievqLfqbIR3J0UCAQeI4s2Ld
-eM/oXGwU0pgndIRkZ8qSun0UJ1J9l66Hc3FuPLF/RpIvD1hA009elYka/Il+9F9Fdgj79DGqX56m
-L8DVTtF9Tx9bMbLQKcr7wmoomwasc6GGNKW8pLvLzOSD0a7cV9jeLKlSlIWgKSOs2f39WdpRm8MD
-Q/TZlLKWPZYK/txeotORMGhq8d9sPEePH/zdUEUjSEfTgBHRXDTIe5vujpKG0oMcy2BzdXslnUHg
-2laPVPMbLw9nibCqV7lE37QAJDxJhDI7RQitPnWTuN1p8quXPPdpu+OrLeH6joGpA/QzD0RyJyoa
-6lo7wzvmQspdsON7UkH9ds5SVNwjSbtVhc2pEx7wQD29eE0VNcIIhEEfrziTQhMUDbKaS1U/pFyZ
-wvBuxSn8pAjdlr0bSwoK6wmsZ3ej6a4nQsTZirKP/Ufr0ASPXeAf2rXeOagHG3SzwqCan8JMLJUN
-1XzBf7JOjcNmzqQuvykdNm5mBAhmDjZrqmsswEKjXcGJGhCSBKGcw8SxXnotsNF19Ff8wsVZ3kia
-qym+/tqpP7mu9Q0vq2sotR84/uHcMF+1wCPPdaw23//KhPH2wzYIduvJ+loW2ybQFj3A1j0GaaWa
-mewGwlyjJSoa6lnoP+JtFizZm6+ySkS0MISDKRduZvGfpXXTZgGQLZW+8HB8DL7AhDhxmTfIyWlj
-XbnUxXn5IzqXH2AWuhK+pq1j/eDGnBwfcjFM9cRPTVkDbPhmutGVyRtRR3FxmoDwVqC010sC3zWl
-36dZZVRaa35xlnWla4Il/Gc6vxw2Cmc4SDblJfGYeO/LlQoFDJZyjzW6BEmXXpqw6VFYasyIbDWN
-G5t9RlFA+4UZpSeY6N6JdTTPZMTPiKYt1pu+eGn5L/bFeF/hRBlSRSZxgOTF7/Q1Jj0Kac2zCpKa
-aiPLql+HzBJJPZ+W5WF+/MtT5R7tL0LMGH+Omw5cqGCQo8xR497Wlnyb3ltdxj+sW/t+fEjTnxEx
-AF2BMEZZFtILfKNFUxTeTasa7d18NhTxRCBMIMabiMWd8muBjPtOhAH3+EyhnnRVwEal0NGKQTnw
-92kx1o5Rkzxnu7YLiz23wHPIaXEhoSIvVmv9bFHfRBi4FMTajkgNsTvhb0TJWmt8QLDzS3s64gBq
-tKNahvOcSAZWc8+9QelW9geCPVL4WDUZQximfOoYnqc43btZJlaH2gNKPLz4KhLMOZkH0PuhN62b
-fWU+iZOfG8AoRondKV17/Q2rkma4b931HblXGJwKkUwW4VbTHFvd1uEmxmrfjPotBKVdy/LUG4fa
-g7V9WbW5Weqj/w8tUcS+66/9Zn9U8gcGOLPwugVQMjs7yM+ioz/23WChJgMerEwpV7UyMhr9XqH/
-bzEZg/AOj0pyZX+QHQLnn4XKNTh+UyFU+9WPi1lILpIzal81jFTjK6XyQH+u7/bNn8DMC19S7+LF
-Fgdo9ft/ZYs9fAna+HGMK4s3Nyw5tUZ39P2ueZsoOPUeEzGg1P1xI/xPnf44fAm4nhaLryxX/1Cu
-Qu6FUNSY4ui5dtIWRi+TOfz65seItRaacz0u7HO/Y1L8Vss5Eh8DLeQ9RlVCGewA9aVa7bOGPWp/
-FVzPuSPLCFoJd1bPVWiZVXEI5CLO6+RjnVmhKV8EjHcN1j6T1XyUNqAQs32t6pK6ua/vRLqWnRVO
-KrYqCHANDBwXJuZZ6ziMrnUyIDu5DG0w8FyDhIDKyVPmyBK50Ae90ExQKE11Gai/0HHW/5ZEj1nH
-hWgRQVRdsUN/JO4OZ9bYdfQl8BBctGad8haMiWHcup2kzS8Oal8sOCnfp5i0UTFp862CVz7HADBd
-HApSeO9or5QzYxc3DVhkTVi55HT20AO+51vP5bZIWw/sHsAJJzfWvcP7ya9UwSiaasUlOCJ1qurL
-JzL+I4awyCtb56XCqeUXfGaKy87Nvm7mFPydUY0E/zbz94jnOf0TKq82IWUx5BAq9y25bhl9xfqK
-znzcfbITZYoZ6+lni7wX6XuiYeRaKY8ESQbPIxtjngO96PV5qt2R37x4KDdQWw1JioOp9LrjwfE4
-8Mv6FJ0pySwoX1TXCgUBqLMDnZLgKWXGleU2oH+LzmxXCtZG8zktaJbtvIF3KODGV6RpvMCYXsRr
-rpFjNYGSzkjJgTjN8GUNwCGYufwGA+SjyB7cxRC4Sza1BLNFrAXB+MOwoOtseTlLx0JSy3BHGIPa
-4gFpx+pD3PoFlI0WgFAQTvjZWVL8UWcg/OhQjKlylNTj/A2nce+lc8kmFoAXtnDoUcNcgWLqsD3R
-RZkFMWmj9qvsZbTRAYo9ypxUdoPy06nhB//azBrr6mHyTYEhJGs7n5sKcAOquwTjahCfLQwyH26W
-BvXoa9Erq7t7X0v3MhWjp1NJ2ClB9CtovGd8zeJjw5CeVQ3OiTmVvjbheQB1iszU9JGxrBAovArd
-XOwH5miSILUHvHvAOpSemNrwC2VMYRK+9cVYU7+gsDIRAYS/nTLrBQmDYmaDcHxEkGg7QXdnEIO+
-fupgIgqS0o5TH6zysDE1dVp00N2IVnQL/HdPqL4eRTMCcpfnGIzAZYqKXtyMBprCENpdNSE08Sa8
-ywj/raV+ZAObIfUW/I053OGeUYZdHYRcV/irbwB9YndpDNXUKs1IQ9171MM1ZYs85SZfqNFnBdfg
-RvahmHiMSMtASa8nEKvEW5PzXCMqsF20iIf7pb8+tq2n3QrpeaiAkt5+IZ6I69U3PD0OIHaxYUoB
-gvvUSnoENm8DrUNTggSXMnWaKZUJ+auBMzu9cD8L/u6qkmkEm0oIWPC9+eNjYL0JipqK9ocCSuP+
-2/1SQNueZebJo4kUfQa5LRMhy6YATw7+ksAtqbsU8JFfdZZ6D3kT08ZaLMSbQWG97GlwUES2Uj+R
-Dd530iSnmGKJW4rG7ADM4ctdCuQEgOF7G0DO+z2tTQdiY/UfoKi2vdPrDZwk+njp+HapxanmEwpr
-BcWhNWScaVGAfBQ/4PDL5Umgggf0pBUgCQIKZeWZDHh3kxgT5fN8TbtGTuq1/aIaRxk4a+JcmksX
-n+b+oGhuMkFmIjKDTd+Djb1l6Nw2RmFo6+c60+XVxTYRrBVAeSjs+i/qJBIrhaGU10gWeyz/TovU
-uPvh5M+gWWIt2h2bY54tXfzJYV6Mr0Gmi1uMwTIntcfSo55FdIADVwp6WTj7AQ2/4C5qfZzLWvqM
-+jeHNEftN6Er/Pv2BvMBX98zMfv2xu/4TFVqdUz5BT3TAXV6f/94LspNVyn1OWIX0od9AQ5hODr3
-Ll7F6R79NS5hwlmX+NRARHe3UgT4ekG3i9vLeK6gRbcmWVE1Tj1rlzzfx+kBTYTR8XpPHW7/zEdu
-CnizS9uzWSWeSfX7pyuOJFp2/tF5z+Ca6wRxavWIncMebEs1yZkagF52qoEuh223ibvxCjm1zPdu
-qpI5wl3NO36JK8ISrRiCgvxEnmExYWOMjThiyuUjKpD6lSP/DdlWw0nK3+760Vy9HI9P332oRzib
-Fg+Yx2n1JoNxJCFD2ygFhDETcC75o9L6nJPBw7djd9cLoDz/Rhem4GjJbuBk4+PafEJJjm1Bhng4
-amUzUGmtOJjgolDvy0dql00iqcVX+mwnD6pUPe5pODBQ/1bnCV7NkuFHJPA7eyOc1NxOmdpEiRJy
-qGlSFdh9pm1xqgdEdLusKTiCR6A/FRCS7l/VcsvxsekFAl3VdmqgXL4OlIuHYt4ZLNw7O2hD/b5m
-swPqn1Rh4IllXUxzL9LvNM0LZ8s9bAchD6CMQ/nKjz7s73P8rj+dE+7NKbh6iD7Bdm16Rdq7Qath
-9vGO7WjGMwljp+7SWN+ODwnn4tPE78dNH5iqMqPmzNyqQbdkCXLOVjPbZ8ph4BE7C/fijyYT3qc+
-XXn+uPnsOsVG0EhDumLQ0NOCHyQXH6Dss6lJh+RgpRxmekviICH3E6df1PJK+GSCCdQUOZ3T+PAz
-J07M4X3vHXjmQ87kbN6YbI2xgIhUi0Eef1bS6r5lhlhVAHXL0+461M7AA1ckmvVsLB4+Xp41/zD/
-5qMF/n9OR53tNC4j67bA4Dpkm0R+KK6kYEYqWOqoGDT3f1zhmm94CcBpBO0R7K6o5kv2XeQ0KZBO
-U0bQE+n+JUjl4dWm3rQHb1zWgj5mUaWAXSqLduSUYKCRrVDgdsTsUn8v0OTWCzftBjwsI2K9fg49
-q0KwvNlQbiJlsMmDPk3J9zfmv8VzL78R0QDdJx+vn49YzS7TQJhdUb9e4FYt/GFltQGPveyGVSUP
-4U04U1PfYFP476Dmo8VBLZa9wbll5bUByqAfmzb2i4oJRnV05kyRw8s+95/G3sPmyxjfAte6L3hn
-/A/rblI+EdehfdoY+5R1zcc0icWnQhVUbrDLg9mgc2gKr2aVpst0mUQgU1cGcmZyISyppnAvon8c
-k4tjVilTQ2FqKiUoYOHtSGpD/+fsRVmgV9vl5waEOesxe0qgdw8gzeT4gZ8mWM1mdx0YQKEF6vDq
-CwasT8yJdevwG3qzw4bsiZY8zI++RnvkkuZsbnZpBJ0IZZcz6u0Kbv1Kx2N27CKMSjSQcEwjv1fM
-Ut8WDSP9OIPPRmhPGQIpZyMjFminZY2ak2DcUQCUmrfR/9OqfU5PQbKho52l9+kozu6SMx5AdZXA
-gHpatsIG0IczpAfEn4S3IucGBrI88jkCy0UxnrDh5K1TsukwAyZMu6v4VtAhj/zSaiw3ZiYKc1LD
-OYjSPtT3L3M2FeKbAUp6/Qra8dhXd/ymi05daZZPdMzYNrwH2810TlZi1W7mWiHP7wc5OFnhBlui
-1bfblsJ07JcIv4RF+LQiT57VleBduL+PM3UpPOY8dHBCJErGUL3m+EDgzthbk68lDo5nyHTO4d1B
-6ueowG+dl2h6KxREuyQ2+AkDHtUi4e9UV/fU4EPi+3NBfS3dzm1ggGykEU9/hTmKGYRr5OWAjFve
-a9I5PA686JLn5iqB01F4uoYrqfGt1KIAQRKF0Srdqv3UTspA10JKHUNcl/b5YFDs5U0t1+5LKkO+
-xNoAOnxNxrR4Rr/E42Kw4zr6s0TJ1WoIIMFPM2dIjRBuSsnOJoFGG4fPzqbXkXtDswwhfXaXxVMr
-hdjZ/mXRg4tCVsus/nlRgZakCQ7TbJi7De4WPeSbJALTgReDO445sLs5fzwK92qly+qrvRRhNPsr
-KBMOv02lJ1wg9GrKMIk9LbtepsbTAEfTPt6qyNzY8Nmco2W4RtS1SUVKT9onST1bOe97ZbVT3/7y
-KKa2QWqb95wIQnhWjNoyIyxkvQb4E0Q0mMOwgmUvchsw+GYcieeN54dZksQIcMbrc851+1l1AE/l
-aPYdYdmLJdvKgXZZtNclG72oAfb5q4+IT1ak7jWlZ1AQHPce6ciRz3TDUcSAZKVEUd0H0t7tcpsR
-urU8CQz9gmUU43WJP7WxS2m4D2NbvuAFBdBfFqF9+gau5z2k
+<?php
+
+namespace Guzzle\Service;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Common\Exception\RuntimeException;
+
+/**
+ * Abstract config loader
+ */
+abstract class AbstractConfigLoader implements ConfigLoaderInterface
+{
+    /** @var array Array of aliases for actual filenames */
+    protected $aliases = array();
+
+    /** @var array Hash of previously loaded filenames */
+    protected $loadedFiles = array();
+
+    /** @var array JSON error code mappings */
+    protected static $jsonErrors = array(
+        JSON_ERROR_NONE => 'JSON_ERROR_NONE - No errors',
+        JSON_ERROR_DEPTH => 'JSON_ERROR_DEPTH - Maximum stack depth exceeded',
+        JSON_ERROR_STATE_MISMATCH => 'JSON_ERROR_STATE_MISMATCH - Underflow or the modes mismatch',
+        JSON_ERROR_CTRL_CHAR => 'JSON_ERROR_CTRL_CHAR - Unexpected control character found',
+        JSON_ERROR_SYNTAX => 'JSON_ERROR_SYNTAX - Syntax error, malformed JSON',
+        JSON_ERROR_UTF8 => 'JSON_ERROR_UTF8 - Malformed UTF-8 characters, possibly incorrectly encoded'
+    );
+
+    public function load($config, array $options = array())
+    {
+        // Reset the array of loaded files because this is a new config
+        $this->loadedFiles = array();
+
+        if (is_string($config)) {
+            $config = $this->loadFile($config);
+        } elseif (!is_array($config)) {
+            throw new InvalidArgumentException('Unknown type passed to configuration loader: ' . gettype($config));
+        } else {
+            $this->mergeIncludes($config);
+        }
+
+        return $this->build($config, $options);
+    }
+
+    /**
+     * Add an include alias to the loader
+     *
+     * @param string $filename Filename to alias (e.g. _foo)
+     * @param string $alias    Actual file to use (e.g. /path/to/foo.json)
+     *
+     * @return self
+     */
+    public function addAlias($filename, $alias)
+    {
+        $this->aliases[$filename] = $alias;
+
+        return $this;
+    }
+
+    /**
+     * Remove an alias from the loader
+     *
+     * @param string $alias Alias to remove
+     *
+     * @return self
+     */
+    public function removeAlias($alias)
+    {
+        unset($this->aliases[$alias]);
+
+        return $this;
+    }
+
+    /**
+     * Perform the parsing of a config file and create the end result
+     *
+     * @param array $config  Configuration data
+     * @param array $options Options to use when building
+     *
+     * @return mixed
+     */
+    protected abstract function build($config, array $options);
+
+    /**
+     * Load a configuration file (can load JSON or PHP files that return an array when included)
+     *
+     * @param string $filename File to load
+     *
+     * @return array
+     * @throws InvalidArgumentException
+     * @throws RuntimeException when the JSON cannot be parsed
+     */
+    protected function loadFile($filename)
+    {
+        if (isset($this->aliases[$filename])) {
+            $filename = $this->aliases[$filename];
+        }
+
+        switch (pathinfo($filename, PATHINFO_EXTENSION)) {
+            case 'js':
+            case 'json':
+                $level = error_reporting(0);
+                $json = file_get_contents($filename);
+                error_reporting($level);
+
+                if ($json === false) {
+                    $err = error_get_last();
+                    throw new InvalidArgumentException("Unable to open {$filename}: " . $err['message']);
+                }
+
+                $config = json_decode($json, true);
+                // Throw an exception if there was an error loading the file
+                if ($error = json_last_error()) {
+                    $message = isset(self::$jsonErrors[$error]) ? self::$jsonErrors[$error] : 'Unknown error';
+                    throw new RuntimeException("Error loading JSON data from {$filename}: ({$error}) - {$message}");
+                }
+                break;
+            case 'php':
+                if (!is_readable($filename)) {
+                    throw new InvalidArgumentException("Unable to open {$filename} for reading");
+                }
+                $config = require $filename;
+                if (!is_array($config)) {
+                    throw new InvalidArgumentException('PHP files must return an array of configuration data');
+                }
+                break;
+            default:
+                throw new InvalidArgumentException('Unknown file extension: ' . $filename);
+        }
+
+        // Keep track of this file being loaded to prevent infinite recursion
+        $this->loadedFiles[$filename] = true;
+
+        // Merge include files into the configuration array
+        $this->mergeIncludes($config, dirname($filename));
+
+        return $config;
+    }
+
+    /**
+     * Merges in all include files
+     *
+     * @param array  $config   Config data that contains includes
+     * @param string $basePath Base path to use when a relative path is encountered
+     *
+     * @return array Returns the merged and included data
+     */
+    protected function mergeIncludes(&$config, $basePath = null)
+    {
+        if (!empty($config['includes'])) {
+            foreach ($config['includes'] as &$path) {
+                // Account for relative paths
+                if ($path[0] != DIRECTORY_SEPARATOR && !isset($this->aliases[$path]) && $basePath) {
+                    $path = "{$basePath}/{$path}";
+                }
+                // Don't load the same files more than once
+                if (!isset($this->loadedFiles[$path])) {
+                    $this->loadedFiles[$path] = true;
+                    $config = $this->mergeData($this->loadFile($path), $config);
+                }
+            }
+        }
+    }
+
+    /**
+     * Default implementation for merging two arrays of data (uses array_merge_recursive)
+     *
+     * @param array $a Original data
+     * @param array $b Data to merge into the original and overwrite existing values
+     *
+     * @return array
+     */
+    protected function mergeData(array $a, array $b)
+    {
+        return array_merge_recursive($a, $b);
+    }
+}

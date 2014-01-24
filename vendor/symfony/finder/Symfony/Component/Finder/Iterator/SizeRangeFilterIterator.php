@@ -1,31 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-qX8LXBWmkBBBeLJN
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\Finder\Iterator;
+
+use Symfony\Component\Finder\Comparator\NumberComparator;
+
+/**
+ * SizeRangeFilterIterator filters out files that are not in the given size range.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class SizeRangeFilterIterator extends FilterIterator
+{
+    private $comparators = array();
+
+    /**
+     * Constructor.
+     *
+     * @param \Iterator          $iterator    The Iterator to filter
+     * @param NumberComparator[] $comparators An array of NumberComparator instances
+     */
+    public function __construct(\Iterator $iterator, array $comparators)
+    {
+        $this->comparators = $comparators;
+
+        parent::__construct($iterator);
+    }
+
+    /**
+     * Filters the iterator values.
+     *
+     * @return Boolean true if the value should be kept, false otherwise
+     */
+    public function accept()
+    {
+        $fileinfo = $this->current();
+        if (!$fileinfo->isFile()) {
+            return true;
+        }
+
+        $filesize = $fileinfo->getSize();
+        foreach ($this->comparators as $compare) {
+            if (!$compare->test($filesize)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}

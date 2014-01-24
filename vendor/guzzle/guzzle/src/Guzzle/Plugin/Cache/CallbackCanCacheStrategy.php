@@ -1,37 +1,53 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Plugin\Cache;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+
+/**
+ * Determines if a request can be cached using a callback
+ */
+class CallbackCanCacheStrategy extends DefaultCanCacheStrategy
+{
+    /** @var callable Callback for request */
+    protected $requestCallback;
+
+    /** @var callable Callback for response */
+    protected $responseCallback;
+
+    /**
+     * @param \Closure|array|mixed $requestCallback  Callable method to invoke for requests
+     * @param \Closure|array|mixed $responseCallback Callable method to invoke for responses
+     *
+     * @throws InvalidArgumentException
+     */
+    public function __construct($requestCallback = null, $responseCallback = null)
+    {
+        if ($requestCallback && !is_callable($requestCallback)) {
+            throw new InvalidArgumentException('Method must be callable');
+        }
+
+        if ($responseCallback && !is_callable($responseCallback)) {
+            throw new InvalidArgumentException('Method must be callable');
+        }
+
+        $this->requestCallback = $requestCallback;
+        $this->responseCallback = $responseCallback;
+    }
+
+    public function canCacheRequest(RequestInterface $request)
+    {
+        return $this->requestCallback
+            ? call_user_func($this->requestCallback, $request)
+            : parent::canCacheRequest($request);
+    }
+
+    public function canCacheResponse(Response $response)
+    {
+        return $this->responseCallback
+            ? call_user_func($this->responseCallback, $response)
+            : parent::canCacheResponse($response);
+    }
+}

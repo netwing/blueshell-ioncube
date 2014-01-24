@@ -1,198 +1,438 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* Smarty PHPunit tests for Block Extends
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for block extends compiler tests
+*/
+class CompileBlockExtendsTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->setTemplateDir(array('./templates/compileblockextends/','./templates/'));
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * clear folders
+    */
+    public function clear()
+    {
+        $this->smarty->clearAllCache();
+        $this->smarty->clearCompiledTemplate();
+   }
+    /**
+    * test block default outout
+    */
+    public function testBlockDefault_000_1()
+    {
+        $result = $this->smarty->fetch('eval:{block name=test}-- block default --{/block}');
+        $this->assertEquals('-- block default --', $result);
+    }
+
+    public function testBlockDefault_000_2()
+    {
+        $this->smarty->assign ('foo', 'another');
+        $result = $this->smarty->fetch('eval:{block name=test}-- {$foo} block default --{/block}');
+        $this->assertEquals('-- another block default --', $result);
+    }
+    /**
+    * test just call of  parent template, no blocks predefined
+    */
+    public function testCompileBlockParent_001()
+    {
+        $result = $this->smarty->fetch('001_parent.tpl');
+        $this->assertContains('Default Title', $result);
+    }
+    /**
+    * test  child/parent template chain
+    */
+    public function testCompileBlockChild_002()
+    {
+        $result = $this->smarty->fetch('002_child.tpl');
+        $this->assertContains('Page Title', $result);
+    }
+    /**
+    * test  child/parent template chain with prepend
+    */
+    public function testCompileBlockChildPrepend_003()
+    {
+        $result = $this->smarty->fetch('003_child_prepend.tpl');
+        $this->assertContains("prepend - Default Title", $result);
+    }
+    /**
+    * test  child/parent template chain with apppend
+    */
+    public function testCompileBlockChildAppend_004()
+    {
+        $result = $this->smarty->fetch('004_child_append.tpl');
+        $this->assertContains("Default Title - append", $result);
+    }
+    /**
+    * test  child/parent template chain with apppend and shorttags
+    */
+    public function testCompileBlockChildAppendShortag_005()
+    {
+        $result = $this->smarty->fetch('005_child_append_shorttag.tpl');
+        $this->assertContains("Default Title - append", $result);
+    }
+    /**
+    * test  child/parent template chain with {$this->smarty.block.child)
+    */
+    public function testCompileBlockChildSmartyChild_006()
+    {
+        $result = $this->smarty->fetch('006_child_smartychild.tpl');
+        $this->assertContains('here is >child text< included', $result);
+    }
+    /**
+    * test  child/parent template chain with {$this->smarty.block.parent)
+    */
+    public function testCompileBlockChildSmartyParent_007()
+    {
+        $result = $this->smarty->fetch('007_child_smartyparent.tpl');
+        $this->assertContains('parent block Default Title is here', $result);
+    }
+    /**
+    * test  child/parent template chain loading plugin
+    */
+    public function testCompileBlockChildPlugin_008()
+    {
+        $result = $this->smarty->fetch('008_child_plugin.tpl');
+        $this->assertContains('escaped &lt;text&gt;', $result);
+    }
+    /**
+    * test parent template with nested blocks
+    */
+    public function testCompileBlockParentNested_009()
+    {
+        $result = $this->smarty->fetch('009_parent_nested.tpl');
+        $this->assertContains('Title with -default- here', $result);
+    }
+    /**
+    * test  child/parent template chain with nested block
+    */
+    public function testCompileBlockChildNested_010()
+    {
+        $result = $this->smarty->fetch('010_child_nested.tpl');
+        $this->assertContains('Title with -content from child- here', $result);
+    }
+    /**
+    * test  child/parent template chain with nested block and include
+    */
+    public function testCompileBlockChildNestedInclude_011()
+    {
+        $result = $this->smarty->fetch('011_grandchild_nested_include.tpl');
+        $this->assertContains('hello world', $result);
+    }
+    /**
+    * test  grandchild/child/parent template chain
+    */
+    public function testCompileBlockGrandChild_012()
+    {
+        $result = $this->smarty->fetch('012_grandchild.tpl');
+        $this->assertContains('Grandchild Page Title', $result);
+    }
+    /**
+    * test  grandchild/child/parent template chain prepend
+    */
+    public function testCompileBlockGrandChildPrepend_013()
+    {
+        $result = $this->smarty->fetch('013_grandchild_prepend.tpl');
+        $this->assertContains('grandchild prepend - Page Title', $result);
+    }
+    /**
+    * test  grandchild/child/parent template chain with {$this->smarty.block.child}
+    */
+    public function testCompileBlockGrandChildSmartyChild_014()
+    {
+        $result = $this->smarty->fetch('014_grandchild_smartychild.tpl');
+        $this->assertContains('child title with - grandchild content - here', $result);
+    }
+    /**
+    * test  grandchild/child/parent template chain append
+    */
+    public function testCompileBlockGrandChildAppend_015()
+    {
+        $result = $this->smarty->fetch('015_grandchild_append.tpl');
+        $this->assertContains('Page Title - grandchild append', $result);
+    }
+    /**
+    * test  grandchild/child/parent template chain with nested block
+    */
+    public function testCompileBlockGrandChildNested_016()
+    {
+        $result = $this->smarty->fetch('016_grandchild_nested.tpl');
+        $this->assertContains('child title with -grandchild content- here', $result);
+    }
+    /**
+    * test  grandchild/child/parent template chain with nested {$this->smarty.block.child}
+    */
+    public function testCompileBlockGrandChildNested_017()
+    {
+        $result = $this->smarty->fetch('017_grandchild_nested.tpl');
+        $this->assertContains('child pre -grandchild content- child post', $result);
+    }
+    /**
+    * test  nested child block with hide
+    */
+    public function testCompileBlockChildNestedHide_018()
+    {
+        $result = $this->smarty->fetch('018_child_nested_hide.tpl');
+        $this->assertContains('nested block', $result);
+        $this->assertNotContains('should be hidden', $result);
+    }
+    /**
+    * test  nested child block with hide and auto_literal = false
+    */
+    public function testCompileBlockChildNestedHideAutoLiteralFalse_019()
+    {
+        $this->smarty->auto_literal = false;
+        $result = $this->smarty->fetch('019_child_nested_hide_autoliteral.tpl');
+        $this->assertContains('nested block', $result);
+        $this->assertNotContains('should be hidden', $result);
+    }
+    /**
+    * test  child/parent template chain starting in subtempates
+    */
+    public function testCompileBlockStartSubTemplates_020()
+    {
+        $result = $this->smarty->fetch('020_include_root.tpl');
+        $this->assertContains('page 1', $result);
+        $this->assertContains('page 2', $result);
+        $this->assertContains('page 3', $result);
+        $this->assertContains('block 1', $result);
+        $this->assertContains('block 2', $result);
+        $this->assertContains('block 3', $result);
+   }
+    /**
+    * test  grandchild/child/parent dependency test1
+    */
+    public function testCompileBlockGrandChildMustCompile_021_1()
+    {
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertFalse($tpl->isCached());
+        $result = $this->smarty->fetch($tpl);
+        $this->assertContains('Grandchild Page Title', $result);
+        $this->smarty->template_objects = null;
+        $tpl2 = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertTrue($tpl2->isCached());
+        $result = $this->smarty->fetch($tpl2);
+        $this->assertContains('Grandchild Page Title', $result);
+    }
+    /**
+    * test  grandchild/child/parent dependency test2
+    */
+    public function testCompileBlockGrandChildMustCompile_021_2()
+    {
+        touch($this->smarty->getTemplateDir(0) . '021_grandchild.tpl');
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertFalse($tpl->isCached());
+        $result = $this->smarty->fetch($tpl);
+        $this->assertContains('Grandchild Page Title', $result);
+        $this->smarty->template_objects = null;
+        $tpl2 = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertTrue($tpl2->isCached());
+        $result = $this->smarty->fetch($tpl2);
+        $this->assertContains('Grandchild Page Title', $result);
+    }
+    /**
+    * test  grandchild/child/parent dependency test3
+    */
+    public function testCompileBlockGrandChildMustCompile_021_3()
+    {
+        touch($this->smarty->getTemplateDir(0) . '021_child.tpl');
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertFalse($tpl->isCached());
+        $result = $this->smarty->fetch($tpl);
+        $this->assertContains('Grandchild Page Title', $result);
+        $this->smarty->template_objects = null;
+        $tpl2 = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertTrue($tpl2->isCached());
+        $result = $this->smarty->fetch($tpl2);
+        $this->assertContains('Grandchild Page Title', $result);
+    }
+    /**
+    * test  grandchild/child/parent dependency test4
+    */
+    public function testCompileBlockGrandChildMustCompile_021_4()
+    {
+        touch($this->smarty->getTemplateDir(0) . '021_parent.tpl');
+        $this->smarty->caching = true;
+        $this->smarty->cache_lifetime = 1000;
+        $tpl = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertFalse($tpl->isCached());
+        $result = $this->smarty->fetch($tpl);
+        $this->assertContains('Grandchild Page Title', $result);
+        $this->smarty->template_objects = null;
+        $tpl2 = $this->smarty->createTemplate('021_grandchild.tpl');
+        $this->assertTrue($tpl2->isCached());
+        $result = $this->smarty->fetch($tpl2);
+        $this->assertContains('Grandchild Page Title', $result);
+    }
+
+    /**
+     * test dirt in child templates
+     */
+    public function testDirt_022()
+    {
+        $result = $this->smarty->fetch('022_child.tpl');
+        $this->assertEquals('Page Title', $result);
+    }
+
+    /**
+     * test {strip} outside {block]
+     */
+    public function testChildStrip_023()
+    {
+        $result = $this->smarty->fetch('023_child.tpl');
+        $this->assertContains('<div id="header"><div>Demo</div></div>', $result);
+    }
+
+    /**
+     * test {$this->smarty.block.child} for not existing child {block]
+     */
+    public function testNotExistingChildBlock_024()
+    {
+        $result = $this->smarty->fetch('024_parent.tpl');
+        $this->assertContains('no >< child', $result);
+    }
+
+    /**
+     * test {$this->smarty.block.child} outside {block]
+     */
+    public function testSmartyBlockChildOutsideBlock_025()
+    {
+        try {
+            $result = $this->smarty->fetch('025_parent.tpl');
+        } catch (Exception $e) {
+            $this->assertContains('used outside', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for {$this->smarty.block.child} used outside {block} has not been raised.');
+    }
+
+    /**
+     * test {$this->smarty.block.parent} outside {block]
+     */
+    public function testSmartyBlockParentOutsideBlock_026()
+    {
+        try {
+            $result = $this->smarty->fetch('026_parent.tpl');
+        } catch (Exception $e) {
+            $this->assertContains('used outside', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for {$this->smarty.block.parent} used outside {block} has not been raised.');
+    }
+
+    /**
+     * test {$this->smarty.block.parent} in parent template
+     */
+    public function testSmartyBlockParentInParent_027()
+    {
+        try {
+            $result = $this->smarty->fetch('027_parent.tpl');
+        } catch (Exception $e) {
+            $this->assertContains('in parent template', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for illegal {$this->smarty.block.parent} in parent template has not been raised.');
+    }
+
+    /**
+     * test variable file name in {extends}
+     */
+    public function testVariableExtends_028()
+    {
+        $this->smarty->assign('foo','028_parent.tpl');
+        try {
+            $result = $this->smarty->fetch('028_child.tpl');
+        } catch (Exception $e) {
+            $this->assertContains('variable template file name not allowed', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for illegal variable template file name not been raised.');
+    }
+
+    /**
+     * test variable file name in {include}
+     */
+    public function testVariableExtends_029()
+    {
+        $this->smarty->assign('foo','helloworld.tpl');
+        try {
+            $result = $this->smarty->fetch('029_parent.tpl');
+        } catch (Exception $e) {
+            $this->assertContains('variable template file names not allow within {block} tags', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for illegal variable template file name not been raised.');
+    }
+
+    /**
+     * test nocache on different levels
+     */
+    public function testNocacheBlock_030_1()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->assign('b1','b1_1');
+        $this->smarty->assign('b3','b3_1');
+        $this->smarty->assign('b4','b4_1');
+        $this->smarty->assign('b5','b5_1');
+        $this->smarty->assign('b6','b6_1');
+        $result = $this->smarty->fetch('030_grandchild.tpl');
+        $this->assertContains('parent b1 b1_1*parent b2*grandchild b3 b3_1*include b3 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b4 b4_1*grandchild b4 b4_1**', $result);
+        $this->assertContains('child b5 b5_1*grandchild b5 b5_1**', $result);
+        $this->assertContains('child b61 b6_1*include 61 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b62 b6_1*include 62 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b63 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b64 b6_1*include b64 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('parent include b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('parent include2 grandchild b6 b6_1*', $result);
+    }
+
+    /**
+     * test nocache on different levels
+     */
+    public function testNocacheBlock_030_2()
+    {
+        $this->smarty->caching = 1;
+        $this->smarty->assign('b1','b1_2');
+        $this->smarty->assign('b3','b3_2');
+        $this->smarty->assign('b4','b4_2');
+        $this->smarty->assign('b5','b5_2');
+        $this->smarty->assign('b6','b6_2');
+        $result = $this->smarty->fetch('030_grandchild.tpl');
+        $this->assertContains('parent b1 b1_2*parent b2*grandchild b3 b3_2*include b3 b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('child b4 b4_1*grandchild b4 b4_2**', $result);
+        $this->assertContains('child b5 b5_2*grandchild b5 b5_2**', $result);
+        $this->assertContains('child b61 b6_1*include 61 b6_1*grandchild b6 b6_1*', $result);
+        $this->assertContains('child b62 b6_2*include 62 b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('child b63 b6_1*grandchild b6 b6_2*', $result);
+        $this->assertContains('child b64 b6_1*include b64 b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('parent include b6_2*grandchild b6 b6_2*', $result);
+        $this->assertContains('parent include2 grandchild b6 b6_2*', $result);
+    }
+}

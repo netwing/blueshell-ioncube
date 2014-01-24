@@ -1,29 +1,41 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Service\Command;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Common\Exception\UnexpectedValueException;
+use Guzzle\Http\Message\RequestInterface;
+
+/**
+ * A ClosureCommand is a command that allows dynamic commands to be created at runtime using a closure to prepare the
+ * request. A closure key and \Closure value must be passed to the command in the constructor. The closure must
+ * accept the command object as an argument.
+ */
+class ClosureCommand extends AbstractCommand
+{
+    /**
+     * {@inheritdoc}
+     * @throws InvalidArgumentException if a closure was not passed
+     */
+    protected function init()
+    {
+        if (!$this['closure']) {
+            throw new InvalidArgumentException('A closure must be passed in the parameters array');
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     * @throws UnexpectedValueException If the closure does not return a request
+     */
+    protected function build()
+    {
+        $closure = $this['closure'];
+        /** @var $closure \Closure */
+        $this->request = $closure($this, $this->operation);
+
+        if (!$this->request || !$this->request instanceof RequestInterface) {
+            throw new UnexpectedValueException('Closure command did not return a RequestInterface object');
+        }
+    }
+}

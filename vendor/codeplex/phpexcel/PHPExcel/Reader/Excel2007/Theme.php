@@ -1,37 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-gMQ14upB2RuPHfmb
+<?php
+/**
+ * PHPExcel
+ *
+ * Copyright (c) 2006 - 2012 PHPExcel
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Reader_Excel2007
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ * @license    http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt	LGPL
+ * @version    1.7.8, 2012-10-12
+ */
+
+
+/**
+ * PHPExcel_Reader_Excel2007_Theme
+ *
+ * @category   PHPExcel
+ * @package    PHPExcel_Reader_Excel2007
+ * @copyright  Copyright (c) 2006 - 2012 PHPExcel (http://www.codeplex.com/PHPExcel)
+ */
+class PHPExcel_Reader_Excel2007_Theme
+{
+	/**
+	 * Theme Name
+	 *
+	 * @var string
+	 */
+	private $_themeName;
+
+	/**
+	 * Colour Scheme Name
+	 *
+	 * @var string
+	 */
+	private $_colourSchemeName;
+
+	/**
+	 * Colour Map indexed by position
+	 *
+	 * @var array of string
+	 */
+	private $_colourMapValues;
+
+
+	/**
+	 * Colour Map
+	 *
+	 * @var array of string
+	 */
+	private $_colourMap;
+
+
+    /**
+     * Create a new PHPExcel_Theme
+	 *
+     */
+    public function __construct($themeName,$colourSchemeName,$colourMap)
+    {
+		// Initialise values
+    	$this->_themeName			= $themeName;
+		$this->_colourSchemeName	= $colourSchemeName;
+		$this->_colourMap			= $colourMap;
+    }
+
+	/**
+	 * Get Theme Name
+	 *
+	 * @return string
+	 */
+	public function getThemeName()
+	{
+		return $this->_themeName;
+	}
+
+    /**
+     * Get colour Scheme Name
+     *
+     * @return string
+     */
+    public function getColourSchemeName() {
+		return $this->_colourSchemeName;
+    }
+
+    /**
+     * Get colour Map Value by Position
+     *
+     * @return string
+     */
+    public function getColourByIndex($index=0) {
+    	if (isset($this->_colourMap[$index])) {
+			return $this->_colourMap[$index];
+		}
+		return null;
+    }
+
+	/**
+	 * Implement PHP __clone to create a deep clone, not just a shallow copy.
+	 */
+	public function __clone() {
+		$vars = get_object_vars($this);
+		foreach ($vars as $key => $value) {
+			if ((is_object($value)) && ($key != '_parent')) {
+				$this->$key = clone $value;
+			} else {
+				$this->$key = $value;
+			}
+		}
+	}
+}

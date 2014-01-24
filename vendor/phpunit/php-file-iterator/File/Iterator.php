@@ -1,68 +1,196 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-vfMCLMu0m4gp4R2QcG==
+<?php
+/**
+ * php-file-iterator
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package   File
+ * @author    Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @since     File available since Release 1.0.0
+ */
+
+/**
+ * FilterIterator implementation that filters files based on prefix(es) and/or
+ * suffix(es). Hidden files and files from hidden directories are also filtered.
+ *
+ * @author    Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version   Release: @package_version@
+ * @link      http://github.com/sebastianbergmann/php-file-iterator/tree
+ * @since     Class available since Release 1.0.0
+ */
+class File_Iterator extends FilterIterator
+{
+    const PREFIX = 0;
+    const SUFFIX = 1;
+
+    /**
+     * @var array
+     */
+    protected $suffixes = array();
+
+    /**
+     * @var array
+     */
+    protected $prefixes = array();
+
+    /**
+     * @var array
+     */
+    protected $exclude = array();
+
+    /**
+     * @var string
+     */
+    protected $basepath;
+
+    /**
+     * @param  Iterator $iterator
+     * @param  array    $suffixes
+     * @param  array    $prefixes
+     * @param  array    $exclude
+     * @param  string   $basepath
+     */
+    public function __construct(Iterator $iterator, array $suffixes = array(), array $prefixes = array(), array $exclude = array(), $basepath = NULL)
+    {
+        $exclude = array_filter(array_map('realpath', $exclude));
+
+        if ($basepath !== NULL) {
+            $basepath = realpath($basepath);
+        }
+
+        if ($basepath === FALSE) {
+            $basepath = NULL;
+        } else {
+            foreach ($exclude as &$_exclude) {
+                $_exclude = str_replace($basepath, '', $_exclude);
+            }
+        }
+
+        $this->prefixes = $prefixes;
+        $this->suffixes = $suffixes;
+        $this->exclude  = $exclude;
+        $this->basepath = $basepath;
+
+        parent::__construct($iterator);
+    }
+
+    /**
+     * @return boolean
+     */
+    public function accept()
+    {
+        $current  = $this->getInnerIterator()->current();
+        $filename = $current->getFilename();
+        $realpath = $current->getRealPath();
+
+        if ($this->basepath !== NULL) {
+            $realpath = str_replace($this->basepath, '', $realpath);
+        }
+
+        // Filter files in hidden directories.
+        if (preg_match('=/\.[^/]*/=', $realpath)) {
+            return FALSE;
+        }
+
+        return $this->acceptPath($realpath) &&
+               $this->acceptPrefix($filename) &&
+               $this->acceptSuffix($filename);
+    }
+
+    /**
+     * @param  string $path
+     * @return boolean
+     * @since  Method available since Release 1.1.0
+     */
+    protected function acceptPath($path)
+    {
+        foreach ($this->exclude as $exclude) {
+            if (strpos($path, $exclude) === 0) {
+                return FALSE;
+            }
+        }
+
+        return TRUE;
+    }
+
+    /**
+     * @param  string $filename
+     * @return boolean
+     * @since  Method available since Release 1.1.0
+     */
+    protected function acceptPrefix($filename)
+    {
+        return $this->acceptSubString($filename, $this->prefixes, self::PREFIX);
+    }
+
+    /**
+     * @param  string $filename
+     * @return boolean
+     * @since  Method available since Release 1.1.0
+     */
+    protected function acceptSuffix($filename)
+    {
+        return $this->acceptSubString($filename, $this->suffixes, self::SUFFIX);
+    }
+
+    /**
+     * @param  string  $filename
+     * @param  array   $subString
+     * @param  integer $type
+     * @return boolean
+     * @since  Method available since Release 1.1.0
+     */
+    protected function acceptSubString($filename, array $subStrings, $type)
+    {
+        if (empty($subStrings)) {
+            return TRUE;
+        }
+
+        $matched = FALSE;
+
+        foreach ($subStrings as $string) {
+            if (($type == self::PREFIX && strpos($filename, $string) === 0) ||
+                ($type == self::SUFFIX &&
+                 substr($filename, -1 * strlen($string)) == $string)) {
+                $matched = TRUE;
+                break;
+            }
+        }
+
+        return $matched;
+    }
+}

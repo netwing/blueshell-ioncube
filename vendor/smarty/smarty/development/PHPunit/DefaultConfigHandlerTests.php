@@ -1,68 +1,104 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-y7nFHud1lr+mQRnNYoV2JHhvshoBlHUM
+<?php
+/**
+* Smarty PHPunit tests deault template handler
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for block plugin tests
+*/
+class DefaultConfigHandlerTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+        $this->smarty->force_compile = true;
+        $this->smarty->disableSecurity();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    public function testUnknownConfig()
+    {
+        try {
+            $this->smarty->configLoad('foo.conf');
+            $this->assertEquals("123.4", $this->smarty->fetch('eval:{#Number#}'));
+        } catch (Exception $e) {
+            $this->assertContains('Unable to read config file', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for none existing config has not been raised.');
+    }
+
+    public function testRegisterNoneExistentHandlerFunction()
+    {
+        try {
+            $this->smarty->registerDefaultConfigHandler('foo');
+        } catch (Exception $e) {
+            $this->assertContains("Default config handler 'foo' not callable", $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for non-callable function has not been raised.');
+    }
+
+    public function testDefaultConfigHandlerReplacement()
+    {
+        $this->smarty->registerDefaultConfigHandler('my_config_handler');
+        $this->smarty->configLoad('foo.conf');
+        $this->assertEquals("bar", $this->smarty->fetch('eval:{#foo#}'));
+    }
+
+    public function testDefaultConfigHandlerReplacementByConfigFile()
+    {
+        $this->smarty->registerDefaultConfigHandler('my_config_handler_file');
+        $this->smarty->configLoad('foo.conf');
+        $this->assertEquals("123.4", $this->smarty->fetch('eval:{#Number#}'));
+    }
+
+    public function testDefaultConfigHandlerReturningFalse()
+    {
+        $this->smarty->registerDefaultConfigHandler('my_config_false');
+        try {
+            $this->smarty->configLoad('foo.conf');
+            $this->assertEquals("123.4", $this->smarty->fetch('eval:{#Number#}'));
+        } catch (Exception $e) {
+            $this->assertContains('Unable to read config file', $e->getMessage());
+
+            return;
+        }
+        $this->fail('Exception for none existing template has not been raised.');
+    }
+
+    public function testConfigResourceDb4()
+    {
+        $this->smarty->addPluginsDir(dirname(__FILE__)."/PHPunitplugins/");
+        $this->smarty->configLoad('db4:foo.conf');
+        $this->assertEquals("bar", $this->smarty->fetch('eval:{#foo#}'));
+    }
+
+}
+
+function my_config_handler ($resource_type, $resource_name, &$config_source, &$config_timestamp, Smarty $smarty)
+{
+    $output = "foo = 'bar'\n";
+    $config_source = $output;
+    $config_timestamp = time();
+
+    return true;
+}
+function my_config_handler_file ($resource_type, $resource_name, &$config_source, &$config_timestamp, Smarty $smarty)
+{
+    return $smarty->getConfigDir(0) . 'test.conf';
+}
+function my_config_false ($resource_type, $resource_name, &$config_source, &$config_timestamp, Smarty $smarty)
+{
+    return false;
+}

@@ -1,45 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * php-token-stream
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package    PHP_TokenStream
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @since      File available since Release 1.0.0
+ */
+
+if (!defined('TEST_FILES_PATH')) {
+    define(
+      'TEST_FILES_PATH',
+      dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR .
+      '_files' . DIRECTORY_SEPARATOR
+    );
+}
+
+require_once 'PHP/Token/Stream.php';
+
+/**
+ * Tests for the PHP_Token_NAMESPACE class.
+ *
+ * @package    PHP_TokenStream
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version    Release: @package_version@
+ * @link       http://github.com/sebastianbergmann/php-token-stream/
+ * @since      Class available since Release 1.0.0
+ */
+class PHP_Token_NamespaceTest extends PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers PHP_Token_NAMESPACE::getName
+     */
+    public function testGetName()
+    {
+        $tokenStream = new PHP_Token_Stream(
+          TEST_FILES_PATH . 'classInNamespace.php'
+        );
+
+        foreach ($tokenStream as $token) {
+            if ($token instanceof PHP_Token_NAMESPACE) {
+                $this->assertSame('Foo\\Bar', $token->getName());
+            }
+        }
+    }
+
+    public function testGetStartLineWithUnscopedNamespace()
+    {
+        $tokenStream = new PHP_Token_Stream(TEST_FILES_PATH . 'classInNamespace.php');
+        foreach($tokenStream as $token) {
+            if($token instanceOf PHP_Token_NAMESPACE) {
+                $this->assertSame(2, $token->getLine());
+            }
+        }
+    }
+
+    public function testGetEndLineWithUnscopedNamespace()
+    {
+        $tokenStream = new PHP_Token_Stream(TEST_FILES_PATH . 'classInNamespace.php');
+        foreach($tokenStream as $token) {
+            if($token instanceOf PHP_Token_NAMESPACE) {
+                $this->assertSame(2, $token->getEndLine());
+            }
+        }
+    }
+    public function testGetStartLineWithScopedNamespace()
+    {
+        $tokenStream = new PHP_Token_Stream(TEST_FILES_PATH . 'classInScopedNamespace.php');
+        foreach($tokenStream as $token) {
+            if($token instanceOf PHP_Token_NAMESPACE) {
+                $this->assertSame(2, $token->getLine());
+            }
+        }
+    }
+
+    public function testGetEndLineWithScopedNamespace()
+    {
+        $tokenStream = new PHP_Token_Stream(TEST_FILES_PATH . 'classInScopedNamespace.php');
+        foreach($tokenStream as $token) {
+            if($token instanceOf PHP_Token_NAMESPACE) {
+                $this->assertSame(8, $token->getEndLine());
+            }
+        }
+    }
+
+}

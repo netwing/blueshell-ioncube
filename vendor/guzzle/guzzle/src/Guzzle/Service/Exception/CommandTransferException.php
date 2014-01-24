@@ -1,52 +1,119 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPsg9VaOLL4Dgz3hhPJJ1qOCFBWBE7M/0POciRvbwUxG4sVCPKq7r9Yz+AAFcJpfe4LCLo8hg
-qm9T47roNqZ0PGO7RZxKujAGrfA+U7qXXrUVeymz/nX6sXe2nsaQL+rdvHEjYVkwyn1CtuqQMNyU
-cNXtdOw3sz8rYoNasIhpKoWhQduZ2mnMsM1I+RN5knjfx4OmKW1RQ1wiKsqkO5ZZVNT1eKN0i9sg
-4z/aLdYORDJMJwF+3HNmhr4euJltSAgiccy4GDnfT09UdRSTpccfW2NO0TXroRyY0WLaWc4gVZ7b
-ISyFXUURGBmHE6FFE68AhM7esARCirEumr5XAY4Cqkv6xyzrPoofFOFUuyoiP//qgYt5O2iVAVBR
-O/KUYlNVdfMgBLvugxZubvUr1QIDxZL3sHrxIL/EHDTb4YtMoEPCqKPWGdn9b2v30SEA0XY4k5xS
-XlGpCuTx4afex8f7D7t5LVNUCB/9CpkcM4JWJYMoPzHn3BwGPXmMaLKeIzZ1LmqM+KuGIKQow8ZL
-v3JIFr+yO2vb7g/HtCb99NTosai0SQIUQgLZXfhHpL5TOxROKagth/V1r5G8KUM/y12hCOgGDh+X
-77IrXr77ErQQ+0kET+p5J7JMt/QYD9JMJXKVp4d4aXDgyy5O5CRPL+/4ZoKbgDBG15XCeiJ0wqD5
-xvNIML1hKnYMiKhTnOLpoo5BUfFw4I1G0v0o9uYFUBG0N3yUv9KwLA5FGT5kTw5X4N2VBSBwfrNc
-8/jSmPFZRuVcOT7nbR4LcgKG6m50fZjfIXHcwPc5OOvjYiFUd5MtM3QO14iBj/0B7eaW7/A2K0IR
-r+m9Jt62Q4PjB9IT69KbLpSTOCwmxAfElFhtPuHhFk7TsdD+aHtiKc6H8GdYWF8QogRVU1CQN5Ix
-EdbPCVo3roSveoHSpaQIaSs7tr++mpCJGH2Vy5jwbUBVpXh68UNsBeMkPFW9iyTrMR63iDxBV1nE
-hOFjJFzT2120pnAhHVdTcA3ed9eXWXvMK1pDUgWR/MZE4TVW4XXeZ+xUkBxO6qnwnQFEpqFsOCEb
-CJicMHYSo+OSIS2NTnSPpuYmy34wndi4VN0Cb1epf9mPav3ZLrQi5gOfNBbbuTYXjNF/EdyIe8uz
-t493KMdh5c0s0NODzbprPT0qez0wCjGxzkZVZeafX+QeV4MUvc6yFfukpesugiQ6h8D4FnioKt96
-zuatDGl+0+h1DB2Geve1HPlD8WEcBBfi4YuIajgx/b+9FJAqZrNWkQnP6k7Nv8xj8qACqomK7cek
-o8dz2WejvjYQGAQiqy0KkaWhxUwnoAmSVCOcwO2Q2XaaXPOlqZxBjAZTWeLRBuJ6Tyv5PXaiYv+Y
-luuH7gNFWOXefN8AS4hOiI7QjJdMMUfnHce4oyWjQBHoQK2reaD3XAxDXkBDRwjkvfPrRjTRVxPQ
-Pjp3tNc8betNBb7iourwrYXcX+jYHcD5G8uV6HoO/AwmV3eiqLqs/r3oVGDeMuR9c2QgnDg4e1Dv
-i4Fw14KxytzIo+5R4uvi6t+taAMmDJUVUQeIDbmdlDv8c9cfaRa04zGD144YaBWP96pgy9YWXnbq
-/e5+EmTNUpx9QaoH04PV0f5dNx/oX/Dt/NX9CVrUmIiTGNGaN+1faNMX+5EFY6Yx8a2IRyZFgsUk
-UvUKsrF7XpDpEO7JSJ9cEla6qCuKvN0edVvq72nmHuOvkGHknkFMoRaqAYlRwtpec1vPOZ0lx6BU
-rGPi++iz12VNd7NGXCqcSz99yhO1ZirrH5raC1jZ/6D0fPHB76/Nl/PlZ730OdKPcQz4ZikdikJ0
-v1hdqTJuxZEer9CB2ulW1E1ofPrduCc02/ymqg00DMd3SanoQ4yL33+eeVUhMjODIzQGKVRPZsw/
-TPZyOFG60G0cz+qbVzqP7HUqXupFGNn7OPBoaMdM8VtHQsjXG0PeN2bzYMwfAKQw+Tbidf9/NNwu
-MSGOfISUqv7+jIZcS83PMfgL6wog3nX66jD/9atHn4zuMUyANlHY4//LGalbm/Vi+tuxqDD2V6Pq
-5zxfNyrufhD1EaHYOOst2x/T//4b3+Jgm/g85AGoTbYMXjP2AgF5/coCefk7Cp5yTmyAiFrpejjM
-jCQcMfZJg2dkB1Yfs56PEBjgCqK81HzL8dbLcQBkP8Di7YXuy5+gceSI2iHBRqahsOXfEDXaNVB1
-XhKHyeSX9oecQenRFyTQ72/j/b0XA4YCwXRI1U6jxGpOOHwcIANLDXUo/XZRLTPNg1ijkNqKOEQk
-Ifevxme73GsFf5M82rATCZqDo7neD9Xi91lXYgU49pZOQTtLINJjW/MSgkza2fynZnhEOhRM1A7N
-f+NxNpNgxdXDvd191jDmfm3P5udt5/ZCsisXOBPf3vwKCAaAIHkmAcUTp67ECi2b/CMUPZ8JxTNb
-hM/9sjQztz8o6l+t9VaFl1bGxYA+6hcarOEPu4ehme/auyxXfDhDwS/i6ol8w2VsP7irrUDzZZXw
-eHg1kfXg1QIjTspM6NUxl4JTsKCef+VRNvjbH7u+fYoUNsSltRMyb5haoKugaLQ/YhbUsKJtD1Qr
-GQpupAiWp0c4ZQZBc5fGTgWGTresaQYYyJUUzNQhXqR619XB/FnyEY27OQmnXdnN8XemIjfDSenL
-ix3lQx2O1pMwHom3RhvA9XMxrPQXf8rcmQDNq2upwlRGKA24ntAuDzNPSb8/TPkcBcn8oU3z5WsZ
-7khPHg3+ryQoFe9AEsy2SYTwXSlRh7L70Ea+5VFoScjYoA1ylmpzwWZ7zK1j7aoTt9TealTkVCYr
-vbpkSs0LT6ueSgdFjh6mX5hHm362pPBnHBOJ0CI8ZsOfiDyS6AQprCISlTM53c1LY9dVSGsXYMTI
-BR00oVi0Hh9QXEmvwmCB4SVJAZyZcT7YnPss5uxaNlTmUDloAcykiA6FqFlk8kP5p6INlFbdPXHy
-OUoSzUeced6EENH2S5aOnBCCi71DgUkcLPxBjghVuwzyhX0ehhVQJ1KVJ/5XD0b1u2s3U6+JNkOC
-fZNt7Drfm1+sQ9F/ecnzNZ7m7bCuPVzJSxCeauieAB7YsrtddMXvQsr3lJ5h0u9xMMDABRxqR53r
-Yl1ThctLod911MAs6VIp87Pzmu7fuhfBue/Kai/KfYG1cOUvcNbiC7mkMxBZ08k0cL0umIVTTpDk
-D17BQs9J3fMSOKB0v762xocbuWKaRbDNXgTymiAiNChdjf6JyydU4gJJQjGcisQ+NKhswH9NyIiP
-TPfo+lsLGEoluzqN2o+NQ3+5qrPQt6MbnevC/CLyRmKUj8nL5H7jf8RcrZuiKtS4Gf+ak+clkgxn
-mesMY/pwC727cqrmUqtts6x6nIRr5GVAfN/z3oA+/xWUI8xn4NHfaYZXsUqJt7qsbJbnbP5Fp9ge
-MqtklbDxFgcpe/xo+VFgN8U6RfGFC/iMxFhdhiSAn0zNWSmifBYdewfX5KRIMSYk9eNmapUZRuBW
-Dg4x9ls/Rcm/iJOv7gJ+Cdy3iAAiirRKab3lDgtlAhaAjH9ZUNZfKFZXaa40IIyos+cnW7Df2IuY
-8VTsAS+X1Fn5q4yDBKdoRnUnEOe8fBp9PYqnN6eXaOCF4qDrQ4rZRrRFnBzZmj377vW0OJYXXlOn
-WG==
+<?php
+
+namespace Guzzle\Service\Exception;
+
+use Guzzle\Http\Exception\MultiTransferException;
+use Guzzle\Service\Command\CommandInterface;
+
+/**
+ * Exception thrown when transferring commands in parallel
+ */
+class CommandTransferException extends MultiTransferException
+{
+    protected $successfulCommands = array();
+    protected $failedCommands = array();
+
+    /**
+     * Creates a new CommandTransferException from a MultiTransferException
+     *
+     * @param MultiTransferException $e Exception to base a new exception on
+     *
+     * @return self
+     */
+    public static function fromMultiTransferException(MultiTransferException $e)
+    {
+        $ce = new self($e->getMessage(), $e->getCode(), $e->getPrevious());
+        $ce->setSuccessfulRequests($e->getSuccessfulRequests());
+
+        $alreadyAddedExceptions = array();
+        foreach ($e->getFailedRequests() as $request) {
+            if ($re = $e->getExceptionForFailedRequest($request)) {
+                $alreadyAddedExceptions[] = $re;
+                $ce->addFailedRequestWithException($request, $re);
+            } else {
+                $ce->addFailedRequest($request);
+            }
+        }
+
+        // Add any exceptions that did not map to a request
+        if (count($alreadyAddedExceptions) < count($e)) {
+            foreach ($e as $ex) {
+                if (!in_array($ex, $alreadyAddedExceptions)) {
+                    $ce->add($ex);
+                }
+            }
+        }
+
+        return $ce;
+    }
+
+    /**
+     * Get all of the commands in the transfer
+     *
+     * @return array
+     */
+    public function getAllCommands()
+    {
+        return array_merge($this->successfulCommands, $this->failedCommands);
+    }
+
+    /**
+     * Add to the array of successful commands
+     *
+     * @param CommandInterface $command Successful command
+     *
+     * @return self
+     */
+    public function addSuccessfulCommand(CommandInterface $command)
+    {
+        $this->successfulCommands[] = $command;
+
+        return $this;
+    }
+
+    /**
+     * Add to the array of failed commands
+     *
+     * @param CommandInterface $command Failed command
+     *
+     * @return self
+     */
+    public function addFailedCommand(CommandInterface $command)
+    {
+        $this->failedCommands[] = $command;
+
+        return $this;
+    }
+
+    /**
+     * Get an array of successful commands
+     *
+     * @return array
+     */
+    public function getSuccessfulCommands()
+    {
+        return $this->successfulCommands;
+    }
+
+    /**
+     * Get an array of failed commands
+     *
+     * @return array
+     */
+    public function getFailedCommands()
+    {
+        return $this->failedCommands;
+    }
+
+    /**
+     * Get the Exception that caused the given $command to fail
+     *
+     * @param CommandInterface $command Failed command
+     *
+     * @return \Exception|null
+     */
+    public function getExceptionForFailedCommand(CommandInterface $command)
+    {
+        return $this->getExceptionForFailedRequest($command->getRequest());
+    }
+}

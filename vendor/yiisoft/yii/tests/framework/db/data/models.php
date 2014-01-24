@@ -1,305 +1,985 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-dY+749vChBMpo5kddEs4Qm==
+<?php
+
+/**
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ */
+class User extends CActiveRecord
+{
+	public $username2;
+
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function rules()
+	{
+		return array(
+			array('username, password, email', 'required'),
+			array('username, password', 'match', 'pattern'=>'/^[\d\w_]+$/'),
+			array('email', 'email'),
+			array('username', 'length', 'min'=>3, 'max'=>32),
+			array('password', 'length', 'min'=>6, 'max'=>32),
+		);
+	}
+
+	public function relations()
+	{
+		return array(
+			'roles'=>array(self::HAS_MANY,'Role','user_id'),
+			'groups'=>array(self::HAS_MANY,'Group',array('group_id'=>'id'),'through'=>'roles'),
+			'mentorships'=>array(self::HAS_MANY,'Mentorship','teacher_id','joinType'=>'INNER JOIN'),
+			'students'=>array(self::HAS_MANY,'User',array('student_id'=>'id'),'through'=>'mentorships','joinType'=>'INNER JOIN'),
+			'posts'=>array(self::HAS_MANY,'Post','author_id'),
+			'postsOrderDescFormat1'=>array(self::HAS_MANY,'Post','author_id','scopes'=>'orderDesc'),
+			'postsOrderDescFormat2'=>array(self::HAS_MANY,'Post','author_id','scopes'=>array('orderDesc')),
+			'postCount'=>array(self::STAT,'Post','author_id'),
+			/* For {@link CActiveRecordTest::testHasManyThroughHasManyWithCustomSelect()}: */
+			'mentorshipsCustomSelect'=>array(self::HAS_MANY,'Mentorship','teacher_id','select' => array('teacher_id', 'student_id')),
+			'studentsCustomSelect'=>array(self::HAS_MANY,'User',array('student_id'=>'id'),'through'=>'mentorshipsCustomSelect','select' => array('id', 'username')),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'users';
+	}
+
+	public function scopes()
+    {
+        return array(
+            'nonEmptyPosts'=>array(
+                'with'=>array(
+                    'posts'=>array(
+                        'condition'=>'posts.id is not NULL',
+                    ),
+                ),
+            ),
+        );
+    }
+}
+
+/**
+ * @property integer $teacher_id
+ * @property integer $student_id
+ * @property string $progress
+ */
+class Mentorship extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'mentorships';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $name
+ */
+class Group extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'roles'=>array(self::HAS_MANY,'Role','group_id'),
+			'users'=>array(self::HAS_MANY,'User',array('user_id'=>'id'),'through'=>'roles'),
+			'comments'=>array(self::HAS_MANY,'Comment',array('id'=>'author_id'),'through'=>'users'),
+			'description'=>array(self::HAS_ONE,'GroupDescription','group_id'),
+			/* Support for {@link CActiveRecordTest::testLazyLoadThroughRelationWithCondition()}: */
+			'rolesWhichEmptyByCondition'=>array(self::HAS_MANY,'Role','group_id','condition'=>'2=:compareValue','params'=>array(':compareValue'=>1)),
+			'usersWhichEmptyByCondition'=>array(self::HAS_MANY,'User',array('user_id'=>'id'),'through'=>'rolesWhichEmptyByCondition'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'groups';
+	}
+}
+
+/**
+ * @property integer $group_id
+ * @property string $name
+ */
+class GroupDescription extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'groups_descriptions';
+	}
+}
+
+/**
+ * @property integer $user_id
+ * @property integer $group_id
+ * @property string $name
+ */
+class Role extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'roles';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $title
+ * @property float $create_time
+ * @property integer $author_id
+ * @property string $content
+ */
+class Post extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'author'=>array(self::BELONGS_TO,'User','author_id'),
+			'firstComment'=>array(self::HAS_ONE,'Comment','post_id','order'=>'firstComment.content'),
+			'comments'=>array(self::HAS_MANY,'Comment','post_id','order'=>'comments.content DESC'),
+			'commentCount'=>array(self::STAT,'Comment','post_id'),
+			'categories'=>array(self::MANY_MANY,'Category','post_category(post_id,category_id)','order'=>'categories.id DESC'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'posts';
+	}
+
+	public function behaviors()
+	{
+		return array(
+			'PostScopesBehavior',
+		);
+	}
+
+	public function scopes()
+	{
+		return array(
+			'post23'=>array('condition'=>'posts.id=2 OR posts.id=3', 'alias'=>'posts', 'order'=>'posts.id'),
+			'post23A'=>array('condition'=>"$this->tableAlias.id=2 OR $this->tableAlias.id=3",'order'=>"$this->tableAlias.id"),
+			'post3'=>array('condition'=>'id=3'),
+			'postX'=>array('condition'=>'id=:id1 OR id=:id2', 'params'=>array(':id1'=>2, ':id2'=>3)),
+			'orderDesc'=>array('order'=>'posts.id DESC','alias'=>'posts'),
+		);
+	}
+
+	public function rules()
+	{
+		return array(
+			array('title', 'required'),
+		);
+	}
+
+	public function recent($limit=5)
+	{
+		$this->getDbCriteria()->mergeWith(array(
+			'order'=>'create_time DESC',
+			'limit'=>$limit,
+		));
+		return $this;
+	}
+
+	//used for relation model scopes test
+	public function p($id)
+	{
+		$this->getDbCriteria()->mergeWith(array(
+			'condition'=>'posts.id=?',
+			'params'=>array($id),
+		));
+		return $this;
+	}
+}
+
+class PostScopesBehavior extends CActiveRecordBehavior
+{
+	public function behaviorPost23()
+	{
+		$this->getOwner()->getDbCriteria()->mergeWith(array(
+			'condition'=>'posts.id=2 OR posts.id=3',
+			'alias'=>'posts',
+			'order'=>'posts.id',
+		));
+
+		return $this;
+	}
+
+	public function behaviorRecent($limit)
+	{
+		$this->getOwner()->getDbCriteria()->mergeWith(array(
+			'order'=>'create_time DESC',
+			'limit'=>$limit,
+		));
+
+		return $this;
+	}
+
+	//used for relation model scopes test
+	public function behaviorP($id)
+	{
+		$this->getOwner()->getDbCriteria()->mergeWith(array(
+			'condition'=>'posts.id=?',
+			'params'=>array($id),
+		));
+
+		return $this;
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $title
+ * @property float $create_time
+ * @property integer $author_id
+ * @property string $content
+ */
+class PostSpecial extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'posts';
+	}
+
+	public function defaultScope()
+	{
+		return array(
+			'condition'=>'posts.id=:id1 OR posts.id=:id2',
+			'params'=>array(':id1'=>2, ':id2'=>3),
+			'alias'=>'posts',
+		);
+	}
+
+	public function scopes()
+	{
+		return array(
+			'desc'=>array('order'=>'id DESC'),
+		);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ */
+class UserSpecial extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'posts'=>array(self::HAS_MANY,'PostSpecial','author_id'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'users';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $title
+ * @property float $create_time
+ * @property integer $author_id
+ * @property string $content
+ */
+class PostExt extends CActiveRecord
+{
+	public $title='default title';
+	public $id;
+
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'posts';
+	}
+
+	public function relations()
+	{
+		return array(
+			'comments'=>array(self::HAS_MANY,'Comment','post_id','order'=>'comments.content DESC','with'=>array('post'=>array('alias'=>'post'), 'author')),
+		);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $content
+ * @property integer $post_id
+ * @property integer $author_id
+ */
+class Comment extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'post'=>array(self::BELONGS_TO,'Post','post_id'),
+			'author'=>array(self::BELONGS_TO,'User','author_id'),
+			'postAuthor'=>array(self::HAS_ONE,'User',array('author_id'=>'id'),'through'=>'post'),
+			'postAuthorBelongsTo'=>array(self::BELONGS_TO,'User',array('author_id'=>'id'),'through'=>'post'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'comments';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $name
+ * @property integer $parent_id
+ */
+class Category extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'categories';
+	}
+
+	public function relations()
+	{
+		return array(
+			'posts'=>array(self::MANY_MANY, 'Post', 'post_category(post_id,category_id)'),
+			'parent'=>array(self::BELONGS_TO,'Category','parent_id'),
+			'children'=>array(self::HAS_MANY,'Category','parent_id'),
+			'nodes'=>array(self::HAS_MANY,'Category','parent_id','with'=>array('parent','children')),
+			'postCount'=>array(self::STAT, 'Post', 'post_category(post_id,category_id)'),
+		);
+	}
+}
+
+/**
+ * @property integer $key1
+ * @property integer $key2
+ * @property string $name
+ */
+class Order extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'items'=>array(self::HAS_MANY,'Item','col1, col2'),
+			'itemCount'=>array(self::STAT,'Item','col1, col2'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'orders';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $name
+ * @property integer $col1
+ * @property integer $col2
+ */
+class Item extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'order'=>array(self::BELONGS_TO,'Order','col1, col2','alias'=>'_order'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'items';
+	}
+}
+
+/**
+ * @property integer $int_col
+ * @property integer $int_col2
+ * @property string $char_col
+ * @property string $char_col2
+ * @property string $char_col3
+ * @property string $char_col4
+ * @property string $char_col5
+ * @property float $float_col
+ * @property float $float_col2
+ * @property string $blob_col
+ * @property float $numeric_col
+ * @property float $time
+ * @property integer $bool_col
+ * @property integer $bool_col2
+ * @property integer $null_col
+ */
+class ComplexType extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'types';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $class
+ * @property integer $parentID
+ * @property integer $ownerID
+ * @property string $title
+ */
+class Content extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'Content';
+	}
+
+	public function relations()
+	{
+		return array(
+			'parent'=>array(self::BELONGS_TO,'Content','parentID'),
+			'children'=>array(self::HAS_MANY,'Content','parentID'),
+			'owner'=>array(self::BELONGS_TO,'User','ownerID'),
+		);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property integer $authorID
+ * @property string $body
+ */
+class Article extends Content
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'Article';
+	}
+
+	public function relations()
+	{
+		return array(
+			'author'=>array(self::BELONGS_TO,'User','authorID'),
+			'comments'=>array(self::HAS_MANY,'ArticleComment','parentID'),
+		);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property integer $authorID
+ * @property string $body
+ */
+class ArticleComment extends Content
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'Comment';
+	}
+
+	public function relations()
+	{
+		return array(
+			'author'=>array(self::BELONGS_TO,'User','authorID'),
+			'article'=>array(self::BELONGS_TO,'Article','parentID'),
+		);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ */
+class UserNoFk extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'posts'=>array(self::HAS_MANY,'PostNoFk','author_id'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'users';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $title
+ * @property float $create_time
+ * @property integer $author_id
+ * @property string $content
+ */
+class PostNoFk extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'author'=>array(self::BELONGS_TO,'UserNoFk','author_id'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'posts_nofk';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ */
+class UserNoTogether extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'posts'=>array(self::HAS_MANY,'PostNoTogether','author_id','together'=>false,'joinType'=>'INNER JOIN'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'users';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $title
+ * @property float $create_time
+ * @property integer $author_id
+ * @property string $content
+ */
+class PostNoTogether extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'comments'=>array(self::HAS_MANY,'Comment','post_id','together'=>false,'joinType'=>'INNER JOIN'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'posts';
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $username
+ * @property string $password
+ * @property string $email
+ */
+class UserWithWrappers extends CActiveRecord
+{
+	private static $_counters=array();
+
+	private static $_beforeFindCriteria;
+
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'posts'=>array(self::HAS_MANY,'PostWithWrappers','author_id'),
+			'postsWithScope'=>array(self::HAS_MANY,'PostWithWrappers','author_id','scopes'=>array('replaceContent')),
+			'postCount'=>array(self::STAT,'PostWithWrappers','author_id'),
+			'comments'=>array(self::HAS_MANY,'CommentWithWrappers',array('id'=>'post_id'),'through'=>'posts')
+		);
+	}
+
+	public function tableName()
+	{
+		return 'users';
+	}
+
+	protected function beforeFind()
+	{
+		parent::beforeFind();
+		$this->incrementCounter(__FUNCTION__);
+
+		if (self::$_beforeFindCriteria!==null) {
+			$this->getDbCriteria()->mergeWith(self::$_beforeFindCriteria);
+		}
+	}
+
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$this->incrementCounter(__FUNCTION__);
+	}
+
+	protected function incrementCounter($wrapper)
+	{
+		if(isset(self::$_counters[$wrapper]))
+			self::$_counters[$wrapper]++;
+		else
+			self::$_counters[$wrapper]=1;
+	}
+
+	public static function getCounter($wrapper)
+	{
+		if(isset(self::$_counters[$wrapper]))
+		{
+			$result=self::$_counters[$wrapper];
+		}
+		else
+			$result=0;
+
+		self::clearCounters();
+
+		return $result;
+	}
+
+	public static function clearCounters()
+	{
+		self::$_counters=array();
+	}
+
+	public static function setBeforeFindCriteria($criteria)
+	{
+		self::$_beforeFindCriteria=(empty($criteria) ? null : $criteria);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $title
+ * @property float $create_time
+ * @property integer $author_id
+ * @property string $content
+ */
+class PostWithWrappers extends CActiveRecord
+{
+	private static $_counters=array();
+
+	private static $_beforeFindCriteria;
+
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'author'=>array(self::BELONGS_TO,'UserWithWrappers','author_id'),
+			'comments'=>array(self::HAS_MANY,'CommentWithWrappers','post_id','order'=>'comments.content DESC'),
+			'commentCount'=>array(self::STAT,'CommentWithWrappers','post_id'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'posts';
+	}
+
+	public function rules()
+	{
+		return array(
+			array('title', 'required'),
+		);
+	}
+
+	protected function beforeFind()
+	{
+		parent::beforeFind();
+		$this->incrementCounter(__FUNCTION__);
+
+		if (self::$_beforeFindCriteria!==null) {
+			$this->getDbCriteria()->mergeWith(self::$_beforeFindCriteria);
+		}
+	}
+
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$this->incrementCounter(__FUNCTION__);
+	}
+
+	public function scopes()
+	{
+		return array(
+			'rename'=>array(
+				'select'=>"'renamed post' AS title",
+			),
+			'replaceContent' => array(
+				'select'=>"'replaced content' AS content",
+			),
+		);
+	}
+
+	protected function incrementCounter($wrapper)
+	{
+		if(isset(self::$_counters[$wrapper]))
+			self::$_counters[$wrapper]++;
+		else
+			self::$_counters[$wrapper]=1;
+	}
+
+	public static function getCounter($wrapper)
+	{
+		if(isset(self::$_counters[$wrapper]))
+		{
+			$result=self::$_counters[$wrapper];
+		}
+		else
+			$result=0;
+
+		self::clearCounters();
+
+		return $result;
+	}
+
+	public static function clearCounters()
+	{
+		self::$_counters=array();
+	}
+
+	public static function setBeforeFindCriteria($criteria)
+	{
+		self::$_beforeFindCriteria=(empty($criteria) ? null : $criteria);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property string $content
+ * @property integer $post_id
+ * @property integer $author_id
+ */
+class CommentWithWrappers extends CActiveRecord
+{
+	private static $_counters=array();
+
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function relations()
+	{
+		return array(
+			'post'=>array(self::BELONGS_TO,'PostWithWrappers','post_id'),
+			'author'=>array(self::BELONGS_TO,'UserWithWrappers','author_id'),
+		);
+	}
+
+	public function tableName()
+	{
+		return 'comments';
+	}
+
+	protected function beforeFind()
+	{
+		parent::beforeFind();
+		$this->incrementCounter(__FUNCTION__);
+	}
+
+	protected function afterFind()
+	{
+		parent::afterFind();
+		$this->incrementCounter(__FUNCTION__);
+	}
+
+	protected function incrementCounter($wrapper)
+	{
+		if(isset(self::$_counters[$wrapper]))
+			self::$_counters[$wrapper]++;
+		else
+			self::$_counters[$wrapper]=1;
+	}
+
+	public static function getCounter($wrapper)
+	{
+		if(isset(self::$_counters[$wrapper]))
+		{
+			$result=self::$_counters[$wrapper];
+		}
+		else
+			$result=0;
+
+		self::clearCounters();
+
+		return $result;
+	}
+
+	public static function clearCounters()
+	{
+		self::$_counters=array();
+	}
+}
+
+/**
+ * @property integer $id
+ * @property integer $deleted
+ * @property string $name
+ */
+class UserWithDefaultScope extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'UserWithDefaultScope';
+	}
+
+	public function defaultScope()
+	{
+		$alias=$this->getTableAlias(false,false);
+
+		return array(
+			'condition'=>"{$alias}.deleted IS NULL",
+			'order'=>"{$alias}.name ASC",
+		);
+	}
+
+	public function relations()
+	{
+		return array(
+			'links'=>array(self::HAS_MANY,'UserWithDefaultScopeLink','from_id'),
+		);
+	}
+}
+
+/**
+ * @property integer $id
+ * @property integer $from_id
+ * @property integer $to_id
+ */
+class UserWithDefaultScopeLink extends CActiveRecord
+{
+	public static function model($class=__CLASS__)
+	{
+		return parent::model($class);
+	}
+
+	public function tableName()
+	{
+		return 'UserWithDefaultScopeLink';
+	}
+
+	public function relations()
+	{
+		return array(
+			'from_user'=>array(self::BELONGS_TO,'UserWithDefaultScope','from_id'),
+			'to_user'=>array(self::BELONGS_TO,'UserWithDefaultScope','to_id'),
+		);
+	}
+}

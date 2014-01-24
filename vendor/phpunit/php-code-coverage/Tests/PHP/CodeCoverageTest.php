@@ -1,175 +1,560 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-XQW7DdZ8Ohx5i9rjPzsi9y4xbH/L9BsVQyOK
+<?php
+/**
+ * PHP_CodeCoverage
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      File available since Release 1.0.0
+ */
+
+if (!defined('TEST_FILES_PATH')) {
+    define(
+      'TEST_FILES_PATH',
+      dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR .
+      '_files' . DIRECTORY_SEPARATOR
+    );
+}
+
+require_once TEST_FILES_PATH . '../TestCase.php';
+
+require_once TEST_FILES_PATH . 'BankAccount.php';
+require_once TEST_FILES_PATH . 'BankAccountTest.php';
+
+/**
+ * Tests for the PHP_CodeCoverage class.
+ *
+ * @category   PHP
+ * @package    CodeCoverage
+ * @subpackage Tests
+ * @author     Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright  2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license    http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @link       http://github.com/sebastianbergmann/php-code-coverage
+ * @since      Class available since Release 1.0.0
+ */
+class PHP_CodeCoverageTest extends PHP_CodeCoverage_TestCase
+{
+    protected $coverage;
+    protected $getLinesToBeCovered;
+
+    protected function setUp()
+    {
+        $this->coverage = new PHP_CodeCoverage;
+
+        $this->getLinesToBeCovered = new ReflectionMethod(
+          'PHP_CodeCoverage', 'getLinesToBeCovered'
+        );
+
+        $this->getLinesToBeCovered->setAccessible(TRUE);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::__construct
+     * @covers PHP_CodeCoverage::filter
+     */
+    public function testConstructor()
+    {
+        $this->assertAttributeInstanceOf(
+          'PHP_CodeCoverage_Driver_Xdebug', 'driver', $this->coverage
+        );
+
+        $this->assertAttributeInstanceOf(
+          'PHP_CodeCoverage_Filter', 'filter', $this->coverage
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::__construct
+     * @covers PHP_CodeCoverage::filter
+     */
+    public function testConstructor2()
+    {
+        $filter   = new PHP_CodeCoverage_Filter;
+        $coverage = new PHP_CodeCoverage(NULL, $filter);
+
+        $this->assertAttributeInstanceOf(
+          'PHP_CodeCoverage_Driver_Xdebug', 'driver', $coverage
+        );
+
+        $this->assertSame($filter, $coverage->filter());
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::start
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testStartThrowsExceptionForInvalidArgument()
+    {
+        $this->coverage->start(NULL, array(), NULL);
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::stop
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testStopThrowsExceptionForInvalidArgument()
+    {
+        $this->coverage->stop(NULL);
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::append
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testAppendThrowsExceptionForInvalidArgument()
+    {
+        $this->coverage->append(array(), NULL);
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::setCacheTokens
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testSetCacheTokensThrowsExceptionForInvalidArgument()
+    {
+        $this->coverage->setCacheTokens(NULL);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::setCacheTokens
+     */
+    public function testSetCacheTokens()
+    {
+        $this->coverage->setCacheTokens(TRUE);
+        $this->assertAttributeEquals(TRUE, 'cacheTokens', $this->coverage);
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::setForceCoversAnnotation
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testSetForceCoversAnnotationThrowsExceptionForInvalidArgument()
+    {
+        $this->coverage->setForceCoversAnnotation(NULL);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::setForceCoversAnnotation
+     */
+    public function testSetForceCoversAnnotation()
+    {
+        $this->coverage->setForceCoversAnnotation(TRUE);
+        $this->assertAttributeEquals(
+          TRUE, 'forceCoversAnnotation', $this->coverage
+        );
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::setProcessUncoveredFilesFromWhitelist
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testSetProcessUncoveredFilesFromWhitelistThrowsExceptionForInvalidArgument()
+    {
+        $this->coverage->setProcessUncoveredFilesFromWhitelist(NULL);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::setProcessUncoveredFilesFromWhitelist
+     */
+    public function testSetProcessUncoveredFilesFromWhitelist()
+    {
+        $this->coverage->setProcessUncoveredFilesFromWhitelist(TRUE);
+        $this->assertAttributeEquals(
+          TRUE, 'processUncoveredFilesFromWhitelist', $this->coverage
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::setMapTestClassNameToCoveredClassName
+     */
+    public function testSetMapTestClassNameToCoveredClassName()
+    {
+        $this->coverage->setMapTestClassNameToCoveredClassName(TRUE);
+        $this->assertAttributeEquals(
+          TRUE, 'mapTestClassNameToCoveredClassName', $this->coverage
+        );
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::setMapTestClassNameToCoveredClassName
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testSetMapTestClassNameToCoveredClassNameThrowsExceptionForInvalidArgument()
+    {
+        $this->coverage->setMapTestClassNameToCoveredClassName(NULL);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::clear
+     */
+    public function testClear()
+    {
+        $this->coverage->clear();
+
+        $this->assertAttributeEquals(NULL, 'currentId', $this->coverage);
+        $this->assertAttributeEquals(array(), 'data', $this->coverage);
+        $this->assertAttributeEquals(array(), 'tests', $this->coverage);
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::start
+     * @covers PHP_CodeCoverage::stop
+     * @covers PHP_CodeCoverage::append
+     * @covers PHP_CodeCoverage::applyListsFilter
+     * @covers PHP_CodeCoverage::initializeFilesThatAreSeenTheFirstTime
+     * @covers PHP_CodeCoverage::applyCoversAnnotationFilter
+     * @covers PHP_CodeCoverage::getTests
+     */
+    public function testCollect()
+    {
+        $coverage = $this->getCoverageForBankAccount();
+
+        $this->assertEquals(
+          $this->getExpectedDataArrayForBankAccount(), $coverage->getData()
+        );
+
+        $this->assertEquals(
+          array(
+            'BankAccountTest::testBalanceIsInitiallyZero' => NULL,
+            'BankAccountTest::testBalanceCannotBecomeNegative' => NULL,
+            'BankAccountTest::testBalanceCannotBecomeNegative2' => NULL,
+            'BankAccountTest::testDepositWithdrawMoney' => NULL
+          ),
+          $coverage->getTests()
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getData
+     * @covers PHP_CodeCoverage::merge
+     */
+    public function testMerge()
+    {
+        $coverage = $this->getCoverageForBankAccountForFirstTwoTests();
+        $coverage->merge($this->getCoverageForBankAccountForLastTwoTests());
+
+        $this->assertEquals(
+          $this->getExpectedDataArrayForBankAccount(), $coverage->getData()
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getData
+     * @covers PHP_CodeCoverage::merge
+     */
+    public function testMerge2()
+    {
+        $coverage = new PHP_CodeCoverage(
+          $this->getMock('PHP_CodeCoverage_Driver_Xdebug'),
+          new PHP_CodeCoverage_Filter
+        );
+
+        $coverage->merge($this->getCoverageForBankAccount());
+
+        $this->assertEquals(
+          $this->getExpectedDataArrayForBankAccount(), $coverage->getData()
+        );
+    }
+
+    /**
+     * @covers       PHP_CodeCoverage::getLinesToBeCovered
+     * @covers       PHP_CodeCoverage::resolveCoversToReflectionObjects
+     * @dataProvider getLinesToBeCoveredProvider
+     */
+    public function testGetLinesToBeCovered($test, $lines)
+    {
+        if (strpos($test, 'Namespace') === 0) {
+            $expected = array(
+              TEST_FILES_PATH . 'NamespaceCoveredClass.php' => $lines
+            );
+        }
+
+        else if ($test === 'CoverageNoneTest') {
+            $expected = array();
+        }
+
+        else if ($test === 'CoverageNothingTest') {
+            $expected = false;
+        }
+
+        else if ($test === 'CoverageFunctionTest') {
+            $expected = array(
+              TEST_FILES_PATH . 'CoveredFunction.php' => $lines
+            );
+        }
+
+        else {
+            $expected = array(TEST_FILES_PATH . 'CoveredClass.php' => $lines);
+        }
+
+        $this->assertEquals(
+          $expected,
+          $this->getLinesToBeCovered->invoke(
+            $this->coverage, $test, 'testSomething'
+          )
+        );
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::getLinesToBeCovered
+     * @covers            PHP_CodeCoverage::resolveCoversToReflectionObjects
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testGetLinesToBeCovered2()
+    {
+        $this->getLinesToBeCovered->invoke(
+          $this->coverage, 'NotExistingCoveredElementTest', 'testOne'
+        );
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::getLinesToBeCovered
+     * @covers            PHP_CodeCoverage::resolveCoversToReflectionObjects
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testGetLinesToBeCovered3()
+    {
+        $this->getLinesToBeCovered->invoke(
+          $this->coverage, 'NotExistingCoveredElementTest', 'testTwo'
+        );
+    }
+
+    /**
+     * @covers            PHP_CodeCoverage::getLinesToBeCovered
+     * @covers            PHP_CodeCoverage::resolveCoversToReflectionObjects
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testGetLinesToBeCovered4()
+    {
+        $this->getLinesToBeCovered->invoke(
+          $this->coverage, 'NotExistingCoveredElementTest', 'testThree'
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getLinesToBeCovered
+     */
+    public function testGetLinesToBeCoveredSkipsNonExistantMethods()
+    {
+        $this->assertSame(
+          array(),
+          $this->getLinesToBeCovered->invoke(
+            $this->coverage,
+            'NotExistingCoveredElementTest',
+            'methodDoesNotExist'
+          )
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getLinesToBeCovered
+     * @expectedException PHP_CodeCoverage_Exception
+     */
+    public function testTwoCoversDefaultClassAnnoationsAreNotAllowed()
+    {
+        $this->getLinesToBeCovered->invoke(
+          $this->coverage,
+          'CoverageTwoDefaultClassAnnotations',
+          'testSomething'
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getLinesToBeCovered
+     */
+    public function testFunctionParenthesesAreAllowed()
+    {
+        $this->assertSame(
+          array(TEST_FILES_PATH . 'CoveredFunction.php' => range(2, 4)),
+          $this->getLinesToBeCovered->invoke(
+            $this->coverage,
+            'CoverageFunctionParenthesesTest',
+            'testSomething'
+          )
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getLinesToBeCovered
+     */
+    public function testFunctionParenthesesAreAllowedWithWhitespace()
+    {
+        $this->assertSame(
+          array(TEST_FILES_PATH . 'CoveredFunction.php' => range(2, 4)),
+          $this->getLinesToBeCovered->invoke(
+            $this->coverage,
+            'CoverageFunctionParenthesesWhitespaceTest',
+            'testSomething'
+          )
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getLinesToBeCovered
+     */
+    public function testMethodParenthesesAreAllowed()
+    {
+        $this->assertSame(
+          array(TEST_FILES_PATH . 'CoveredClass.php' => range(31, 35)),
+          $this->getLinesToBeCovered->invoke(
+            $this->coverage,
+            'CoverageMethodParenthesesTest',
+            'testSomething'
+          )
+        );
+    }
+
+    /**
+     * @covers PHP_CodeCoverage::getLinesToBeCovered
+     */
+    public function testMethodParenthesesAreAllowedWithWhitespace()
+    {
+        $this->assertSame(
+          array(TEST_FILES_PATH . 'CoveredClass.php' => range(31, 35)),
+          $this->getLinesToBeCovered->invoke(
+            $this->coverage,
+            'CoverageMethodParenthesesWhitespaceTest',
+            'testSomething'
+          )
+        );
+    }
+
+    public function getLinesToBeCoveredProvider()
+    {
+        return array(
+          array(
+            'CoverageNoneTest',
+            array()
+          ),
+          array(
+            'CoverageClassExtendedTest',
+            array_merge(range(19, 36), range(2, 17))
+          ),
+          array(
+            'CoverageClassTest',
+            range(19, 36)
+          ),
+          array(
+            'CoverageMethodTest',
+            range(31, 35)
+          ),
+          array(
+            'CoverageMethodOneLineAnnotationTest',
+            range(31, 35)
+          ),
+          array(
+            'CoverageNotPrivateTest',
+            array_merge(range(25, 29), range(31, 35))
+          ),
+          array(
+            'CoverageNotProtectedTest',
+            array_merge(range(21, 23), range(31, 35))
+          ),
+          array(
+            'CoverageNotPublicTest',
+            array_merge(range(21, 23), range(25, 29))
+          ),
+          array(
+            'CoveragePrivateTest',
+            range(21, 23)
+          ),
+          array(
+            'CoverageProtectedTest',
+            range(25, 29)
+          ),
+          array(
+            'CoveragePublicTest',
+            range(31, 35)
+          ),
+          array(
+            'CoverageFunctionTest',
+            range(2, 4)
+          ),
+          array(
+            'NamespaceCoverageClassExtendedTest',
+            array_merge(range(21, 38), range(4, 19))
+          ),
+          array(
+            'NamespaceCoverageClassTest',
+            range(21, 38)
+          ),
+          array(
+            'NamespaceCoverageMethodTest',
+            range(33, 37)
+          ),
+          array(
+            'NamespaceCoverageNotPrivateTest',
+            array_merge(range(27, 31), range(33, 37))
+          ),
+          array(
+            'NamespaceCoverageNotProtectedTest',
+            array_merge(range(23, 25), range(33, 37))
+          ),
+          array(
+            'NamespaceCoverageNotPublicTest',
+            array_merge(range(23, 25), range(27, 31))
+          ),
+          array(
+            'NamespaceCoveragePrivateTest',
+            range(23, 25)
+          ),
+          array(
+            'NamespaceCoverageProtectedTest',
+            range(27, 31)
+          ),
+          array(
+            'NamespaceCoveragePublicTest',
+            range(33, 37)
+          ),
+          array(
+            'NamespaceCoverageCoversClassTest',
+            array_merge(range(23, 25), range(27, 31), range(33, 37), range(6, 8), range(10, 13), range(15, 18))
+          ),
+          array(
+            'NamespaceCoverageCoversClassPublicTest',
+            range(33, 37)
+          ),
+          array(
+            'CoverageNothingTest',
+            false
+          )
+        );
+    }
+}

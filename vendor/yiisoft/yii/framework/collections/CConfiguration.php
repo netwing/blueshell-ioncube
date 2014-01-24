@@ -1,45 +1,100 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPmo/WRrNW7goEWuKdfqovEl7pNj/tYgAUe6igO16LsYi42nGAqcAiSiWOClLIF5Tufnw14fN
-0HtaBcaA6R0Iy4pQhEO/qmUcDtcz45utM7do4yQFE8Rffr6zmj5i9njrItKPgOH1OWVQ0CeIIGYd
-oD6XjaGqik5wI5bPVGJ2BfmGZi+TMXxDnunAUCT+BH5ncKgsMFbwFqOZMT2t5jx0T1lI7NV8C8qZ
-GOOR4v3I1eavGHpQwwWrhr4euJltSAgiccy4GDnfT7TRKjRJlkPJlvXQLTXxBy5A7e35SI8e0VEB
-ZPrkoL/R6z/P6MVT36eDDwVeh1GwiOhSOZEa02AOe7c3PcIPxCo0GnC4WSwDPhzLl6zMJuKp1vuG
-QYIw6zGp35RcfdqOBD/PlOuUDGQ2K3UinOtlcxMbTQ3qhD5NU7xAHk0sgMJCsmc2ZftlJy7EbzTY
-4YDBPOi6Xs5T+l9oXZUzfEmJR8UUESc0c87AZXeAgq8NWy3rVrOBnVDjCzcmHVd0IxjR/TsEQIZM
-e8z3DleHzil5XjdvS/aOvJ90AnnlITnpIsWjB3BMSFG0AGRtoKrDgIrhK+nWCDo/ofGhQCMn+cv8
-Jm5mNOagYnGQISjvumtoBcgoQ129tRx6VJt/8jittlJjwbHauoL3OyePSj/QE/PDL6QHQyoouRly
-Qc5LI8YX594sw7IeZwIleeJ2OFpl+JzTTL6fRXVH5G7gj+oOZp0Vp6EiUMYM587QcnnxfBE1y8Py
-luYiydzUYZfJAQ1d8kAV6nrcYbkWWeP6M25L3z3PxMIublLNv81LzYYs7yvoPNToeyRtE63iwHet
-fHEVfX1bql7/VwJhChtOZx1zXpPLi8YmNooqWcXSEF53q93/MKzxfT/2Arx2CrNbmgB7cG1/9Cyd
-fSzVHY9yJbwPnml1N2ltfvJ7iqrjLJvkQ4v8Z23bM5VaQClF4uZtxncynwvVTaHwYFbaLcMwIV/y
-ZLMFWlh8/DUP0c7nPLMBeLsAoQAiMlmwjrFYX9Pw4fgac2kgpVf0TuWwT9vvEBk6aX+9qfnjvgNg
-3XSKHiLCIydW0KAoO0OK7KrT0d+fqqkG6Fvs9RB9RJavEQkv86sYd+mlk8vtRu239fbYJx5mJVpH
-1cw00ldSXdCKbtL7Fv2WjVtEmUpf9RJTK3yObrm4J9LnRkFfeEcv6vgSNuD60H6dKTF37HC9C9mW
-+gAZ009qOaUyymNuOX2sYzopXKy9iEKuDHy78vPgHYX8BDbAYrUsdPAJodjbWs2L1J6G03uUBdnB
-UgDjk84eJ4rPVFKTblEfPtZmgxejpMJnsibU/wGx81aBmqaVmKumVuD7pU0ZItKLLmDS99PTUyBo
-mMis24Ldk5roKktwhuhMBUhX2NfD2ccvajfZ6FCg26xYuDwTMwAXl89vpyKmbplf0DDYs8Z7LWTS
-1zhOGbFz8dJVmuoS/ipg/U5d0X2+wGoyEZRY6D3vZfcIQAF3M+QP48fFhXJkwnzl2NX2MCIMj6qh
-cHQZ0vIT3PTD7p3S0chW7rTogOjjPZuvOceRKhunNSkJys10WxCKipzYHbeCllPo2wEq0Yv9Zl2/
-B2ZQ8NsuKoH3Zutk14FfGepjA+FPr497JCHG0oe2wKK0dNb6n2U+Vkmr9aalDZ9cbJ0+4Sw6jtW5
-o6HIUPUOTL0bRFj0hgMsNFVywUOv/CsbAJ2zghcpBR5U3A0lLK6St75Waas1yf1VQPYicS9lOiNu
-+luK1yRZEft7SfM0/0ZVsmwclOVErotaPqMHkhOzdQkdIa0dORyWA1AQdt4ddmzFmz2cyx9Z13DG
-8Q5ebDHeLEHtAaBMMClS7iw1Laax4yYBc+362QtzG5Mb+eCIQvlG1p8PjYbazuIQXfMoGTmBNF+Y
-YtCL/y+zUgvvoN9Kmh9rJY9B0Ke3sxpKQ3KpJ7uQ4OdPLJfYQIJWpCiPsg1bQClDfQiFH/CsesBi
-0Q4DXuVtoY+ukuOihBt2f81wSHkceX7QDcJ7ciQ+wrHCse6tSlyzv3H0i+P2XcEWzq1DXpyHjSKQ
-8Q9ffj5BaVsYRzokGwHU+NvhJusZtKoR98gspNCtHVmXv2HABRwl1DM8x+bbFzdkl8ulOoKmKLXf
-9A28CAmS0QkjJcaxnn3jdBHa1YWfv3HKO3FHpdv8dtVxP1lLrTFUXi5XpR3bnvCKDirUnQpu22jT
-e9e3KmolvNrOkhlNJgQ2TyXZOqsXjnm2MWFBvmiwQY5FE6+O945oVF/+GKZ28SDAyYZW6RxOo7pr
-d+bkLU5WLuQho5UHJG0rfLfxIpHD0+F5OziwhKjYGTu5FnTAgAZ9fT51+SysPp7usC2R1aQLrd/q
-jqoYFQvwTT9G3id4b7NrgTylcMlF3XvkaAnLXvz0n/cM+I4TjIyV0bJGSaxQ9I7q0WFK05JizO0u
-XwjJCgwMDHrL3AM7dbROoGVR7PcvpG5aWNpKUpYt8mTQvgYfhbGb8Eq6iA7MhgGYWt5cKaNwK7d8
-ZjKtNbfh+rsllZUQ+sbUrOvRVeSt5u4/riY/ByHOgrPirVgm1+iKD/xeBl2v2nrRO9L4ScZyE6F5
-C5Br485+8EQw4DqimFfj9PQUcXLyaEa/yWcMg4mdvHhC0rcq1o5s7in0S/ewWOYlmDnTmN+jG/qo
-//v2eKFdiDtiU9pnXtfKAMM1Qe+1l0p7IQ5s7k4C6fQbG7PEq7X3l0F8znR/DTP8pxiUwAmzl9Iy
-DvQuqYFpo9sfUVWasoGh0IPGfnh5xAk0ne5T9QJOj0e9UTLdHHJOcGRTHgfcHwpsu3qbdWN8zzPF
-0rM4asU8cvDYgdTI/50ulqR0BN8qmEqR9US2y0ghxzbjQjqc6EcJdPLd3nPrlER2epzxVmD4VXfn
-zkOm97IUMfYzlL+Rw/8WKuOtIK+BK0RjqU2rtt5HxYjNrlhfm29siHP9uEyfU9Ki28JcxVnaJlt7
-rLiYfEzzil755bmn42tz/Y1wM1DdPsHjgIH06B4cAmjieP47c6nnQDRfm1AE40/d8mkR/nKRtXOs
-W5gPtX0IWygAR27BVV3C6YnWAzzM0RxDoGkW4F4YBHRRGXuDikV93LyYKAIr37pN0Y0Lg/7LZLFy
-2W3k3fhA4YkR1SrSsvvzaN33zAzw4tIMOtjVDtLpAhYkI9JjO1hhENJoMjDZmy1XDyUEegOrTOu=
+<?php
+/**
+ * This file contains classes implementing configuration feature.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+
+/**
+ * CConfiguration represents an array-based configuration.
+ *
+ * It can be used to initialize an object's properties.
+ *
+ * The configuration data may be obtained from a PHP script. For example,
+ * <pre>
+ * return array(
+ *     'name'=>'My Application',
+ *     'defaultController'=>'index',
+ * );
+ * </pre>
+ * Use the following code to load the above configuration data:
+ * <pre>
+ * $config=new CConfiguration('path/to/config.php');
+ * </pre>
+ *
+ * To apply the configuration to an object, call {@link applyTo()}.
+ * Each (key,value) pair in the configuration data is applied
+ * to the object like: $object->$key=$value.
+ *
+ * Since CConfiguration extends from {@link CMap}, it can be
+ * used like an associative array. See {@link CMap} for more details.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.collections
+ * @since 1.0
+ */
+class CConfiguration extends CMap
+{
+	/**
+	 * Constructor.
+	 * @param mixed $data if string, it represents a config file (a PHP script returning the configuration as an array);
+	 * If array, it is config data.
+	 */
+	public function __construct($data=null)
+	{
+		if(is_string($data))
+			parent::__construct(require($data));
+		else
+			parent::__construct($data);
+	}
+
+	/**
+	 * Loads configuration data from a file and merges it with the existing configuration.
+	 *
+	 * A config file must be a PHP script returning a configuration array (like the following)
+	 * <pre>
+	 * return array
+	 * (
+	 *     'name'=>'My Application',
+	 *     'defaultController'=>'index',
+	 * );
+	 * </pre>
+	 *
+	 * @param string $configFile configuration file path (if using relative path, be aware of what is the current path)
+	 * @see mergeWith
+	 */
+	public function loadFromFile($configFile)
+	{
+		$data=require($configFile);
+		if($this->getCount()>0)
+			$this->mergeWith($data);
+		else
+			$this->copyFrom($data);
+	}
+
+	/**
+	 * Saves the configuration into a string.
+	 * The string is a valid PHP expression representing the configuration data as an array.
+	 * @return string the string representation of the configuration
+	 */
+	public function saveAsString()
+	{
+		return str_replace("\r",'',var_export($this->toArray(),true));
+	}
+
+	/**
+	 * Applies the configuration to an object.
+	 * Each (key,value) pair in the configuration data is applied
+	 * to the object like: $object->$key=$value.
+	 * @param object $object object to be applied with this configuration
+	 */
+	public function applyTo($object)
+	{
+		foreach($this->toArray() as $key=>$value)
+			$object->$key=$value;
+	}
+}

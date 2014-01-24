@@ -1,36 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jos/20==
+<?php
+
+namespace Guzzle\Plugin\Backoff;
+
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Exception\HttpException;
+
+/**
+ * Strategy that will invoke a closure to determine whether or not to retry with a delay
+ */
+class CallbackBackoffStrategy extends AbstractBackoffStrategy
+{
+    /** @var \Closure|array|mixed Callable method to invoke */
+    protected $callback;
+
+    /** @var bool Whether or not this strategy makes a retry decision */
+    protected $decision;
+
+    /**
+     * @param \Closure|array|mixed     $callback Callable method to invoke
+     * @param bool                     $decision Set to true if this strategy makes a backoff decision
+     * @param BackoffStrategyInterface $next     The optional next strategy
+     *
+     * @throws InvalidArgumentException
+     */
+    public function __construct($callback, $decision, BackoffStrategyInterface $next = null)
+    {
+        if (!is_callable($callback)) {
+            throw new InvalidArgumentException('The callback must be callable');
+        }
+        $this->callback = $callback;
+        $this->decision = (bool) $decision;
+        $this->next = $next;
+    }
+
+    public function makesDecision()
+    {
+        return $this->decision;
+    }
+
+    protected function getDelay($retries, RequestInterface $request, Response $response = null, HttpException $e = null)
+    {
+        return call_user_func($this->callback, $retries, $request, $response, $e);
+    }
+}

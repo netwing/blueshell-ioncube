@@ -1,164 +1,378 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-8WQEMhhDVgJJHuGi
+<?php
+
+namespace Guzzle\Service\Command;
+
+use Guzzle\Common\Collection;
+use Guzzle\Common\Exception\InvalidArgumentException;
+use Guzzle\Http\Message\Response;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Curl\CurlHandle;
+use Guzzle\Service\Client;
+use Guzzle\Service\ClientInterface;
+use Guzzle\Service\Description\Operation;
+use Guzzle\Service\Description\OperationInterface;
+use Guzzle\Service\Description\ValidatorInterface;
+use Guzzle\Service\Description\SchemaValidator;
+use Guzzle\Service\Exception\CommandException;
+use Guzzle\Service\Exception\ValidationException;
+
+/**
+ * Command object to handle preparing and processing client requests and responses of the requests
+ */
+abstract class AbstractCommand extends Collection implements CommandInterface
+{
+    // @deprecated: Option used to specify custom headers to add to the generated request
+    const HEADERS_OPTION = 'command.headers';
+    // @deprecated: Option used to add an onComplete method to a command
+    const ON_COMPLETE = 'command.on_complete';
+    // @deprecated: Option used to change the entity body used to store a response
+    const RESPONSE_BODY = 'command.response_body';
+
+    // Option used to add request options to the request created by a command
+    const REQUEST_OPTIONS = 'command.request_options';
+    // command values to not count as additionalParameters
+    const HIDDEN_PARAMS = 'command.hidden_params';
+    // Option used to disable any pre-sending command validation
+    const DISABLE_VALIDATION = 'command.disable_validation';
+    // Option used to override how a command result will be formatted
+    const RESPONSE_PROCESSING = 'command.response_processing';
+    // Different response types that commands can use
+    const TYPE_RAW = 'raw';
+    const TYPE_MODEL = 'model';
+    const TYPE_NO_TRANSLATION = 'no_translation';
+
+    /** @var ClientInterface Client object used to execute the command */
+    protected $client;
+
+    /** @var RequestInterface The request object associated with the command */
+    protected $request;
+
+    /** @var mixed The result of the command */
+    protected $result;
+
+    /** @var OperationInterface API information about the command */
+    protected $operation;
+
+    /** @var mixed callable */
+    protected $onComplete;
+
+    /** @var ValidatorInterface Validator used to prepare and validate properties against a JSON schema */
+    protected $validator;
+
+    /**
+     * @param array|Collection   $parameters Collection of parameters to set on the command
+     * @param OperationInterface $operation Command definition from description
+     */
+    public function __construct($parameters = array(), OperationInterface $operation = null)
+    {
+        parent::__construct($parameters);
+        $this->operation = $operation ?: $this->createOperation();
+        foreach ($this->operation->getParams() as $name => $arg) {
+            $currentValue = $this[$name];
+            $configValue = $arg->getValue($currentValue);
+            // If default or static values are set, then this should always be updated on the config object
+            if ($currentValue !== $configValue) {
+                $this[$name] = $configValue;
+            }
+        }
+
+        $headers = $this[self::HEADERS_OPTION];
+        if (!$headers instanceof Collection) {
+            $this[self::HEADERS_OPTION] = new Collection((array) $headers);
+        }
+
+        // You can set a command.on_complete option in your parameters to set an onComplete callback
+        if ($onComplete = $this['command.on_complete']) {
+            unset($this['command.on_complete']);
+            $this->setOnComplete($onComplete);
+        }
+
+        // Set the hidden additional parameters
+        if (!$this[self::HIDDEN_PARAMS]) {
+            $this[self::HIDDEN_PARAMS] = array(
+                self::HEADERS_OPTION,
+                self::RESPONSE_PROCESSING,
+                self::HIDDEN_PARAMS,
+                self::REQUEST_OPTIONS
+            );
+        }
+
+        $this->init();
+    }
+
+    /**
+     * Custom clone behavior
+     */
+    public function __clone()
+    {
+        $this->request = null;
+        $this->result = null;
+    }
+
+    /**
+     * Execute the command in the same manner as calling a function
+     *
+     * @return mixed Returns the result of {@see AbstractCommand::execute}
+     */
+    public function __invoke()
+    {
+        return $this->execute();
+    }
+
+    public function getName()
+    {
+        return $this->operation->getName();
+    }
+
+    /**
+     * Get the API command information about the command
+     *
+     * @return OperationInterface
+     */
+    public function getOperation()
+    {
+        return $this->operation;
+    }
+
+    public function setOnComplete($callable)
+    {
+        if (!is_callable($callable)) {
+            throw new InvalidArgumentException('The onComplete function must be callable');
+        }
+
+        $this->onComplete = $callable;
+
+        return $this;
+    }
+
+    public function execute()
+    {
+        if (!$this->client) {
+            throw new CommandException('A client must be associated with the command before it can be executed.');
+        }
+
+        return $this->client->execute($this);
+    }
+
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    public function setClient(ClientInterface $client)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    public function getRequest()
+    {
+        if (!$this->request) {
+            throw new CommandException('The command must be prepared before retrieving the request');
+        }
+
+        return $this->request;
+    }
+
+    public function getResponse()
+    {
+        if (!$this->isExecuted()) {
+            $this->execute();
+        }
+
+        return $this->request->getResponse();
+    }
+
+    public function getResult()
+    {
+        if (!$this->isExecuted()) {
+            $this->execute();
+        }
+
+        if (null === $this->result) {
+            $this->process();
+            // Call the onComplete method if one is set
+            if ($this->onComplete) {
+                call_user_func($this->onComplete, $this);
+            }
+        }
+
+        return $this->result;
+    }
+
+    public function setResult($result)
+    {
+        $this->result = $result;
+
+        return $this;
+    }
+
+    public function isPrepared()
+    {
+        return $this->request !== null;
+    }
+
+    public function isExecuted()
+    {
+        return $this->request !== null && $this->request->getState() == 'complete';
+    }
+
+    public function prepare()
+    {
+        if (!$this->isPrepared()) {
+            if (!$this->client) {
+                throw new CommandException('A client must be associated with the command before it can be prepared.');
+            }
+
+            // If no response processing value was specified, then attempt to use the highest level of processing
+            if (!isset($this[self::RESPONSE_PROCESSING])) {
+                $this[self::RESPONSE_PROCESSING] = self::TYPE_MODEL;
+            }
+
+            // Notify subscribers of the client that the command is being prepared
+            $this->client->dispatch('command.before_prepare', array('command' => $this));
+
+            // Fail on missing required arguments, and change parameters via filters
+            $this->validate();
+            // Delegate to the subclass that implements the build method
+            $this->build();
+
+            // Add custom request headers set on the command
+            if ($headers = $this[self::HEADERS_OPTION]) {
+                foreach ($headers as $key => $value) {
+                    $this->request->setHeader($key, $value);
+                }
+            }
+
+            // Add any curl options to the request
+            if ($options = $this[Client::CURL_OPTIONS]) {
+                $this->request->getCurlOptions()->overwriteWith(CurlHandle::parseCurlConfig($options));
+            }
+
+            // Set a custom response body
+            if ($responseBody = $this[self::RESPONSE_BODY]) {
+                $this->request->setResponseBody($responseBody);
+            }
+
+            $this->client->dispatch('command.after_prepare', array('command' => $this));
+        }
+
+        return $this->request;
+    }
+
+    /**
+     * Set the validator used to validate and prepare command parameters and nested JSON schemas. If no validator is
+     * set, then the command will validate using the default {@see SchemaValidator}.
+     *
+     * @param ValidatorInterface $validator Validator used to prepare and validate properties against a JSON schema
+     *
+     * @return self
+     */
+    public function setValidator(ValidatorInterface $validator)
+    {
+        $this->validator = $validator;
+
+        return $this;
+    }
+
+    public function getRequestHeaders()
+    {
+        return $this[self::HEADERS_OPTION];
+    }
+
+    /**
+     * Initialize the command (hook that can be implemented in subclasses)
+     */
+    protected function init() {}
+
+    /**
+     * Create the request object that will carry out the command
+     */
+    abstract protected function build();
+
+    /**
+     * Hook used to create an operation for concrete commands that are not associated with a service description
+     *
+     * @return OperationInterface
+     */
+    protected function createOperation()
+    {
+        return new Operation(array('name' => get_class($this)));
+    }
+
+    /**
+     * Create the result of the command after the request has been completed.
+     * Override this method in subclasses to customize this behavior
+     */
+    protected function process()
+    {
+        $this->result = $this[self::RESPONSE_PROCESSING] != self::TYPE_RAW
+            ? DefaultResponseParser::getInstance()->parse($this)
+            : $this->request->getResponse();
+    }
+
+    /**
+     * Validate and prepare the command based on the schema and rules defined by the command's Operation object
+     *
+     * @throws ValidationException when validation errors occur
+     */
+    protected function validate()
+    {
+        // Do not perform request validation/transformation if it is disable
+        if ($this[self::DISABLE_VALIDATION]) {
+            return;
+        }
+
+        $errors = array();
+        $validator = $this->getValidator();
+        foreach ($this->operation->getParams() as $name => $schema) {
+            $value = $this[$name];
+            if (!$validator->validate($schema, $value)) {
+                $errors = array_merge($errors, $validator->getErrors());
+            } elseif ($value !== $this[$name]) {
+                // Update the config value if it changed and no validation errors were encountered
+                $this->data[$name] = $value;
+            }
+        }
+
+        // Validate additional parameters
+        $hidden = $this[self::HIDDEN_PARAMS];
+
+        if ($properties = $this->operation->getAdditionalParameters()) {
+            foreach ($this->toArray() as $name => $value) {
+                // It's only additional if it isn't defined in the schema
+                if (!$this->operation->hasParam($name) && !in_array($name, $hidden)) {
+                    // Always set the name so that error messages are useful
+                    $properties->setName($name);
+                    if (!$validator->validate($properties, $value)) {
+                        $errors = array_merge($errors, $validator->getErrors());
+                    } elseif ($value !== $this[$name]) {
+                        $this->data[$name] = $value;
+                    }
+                }
+            }
+        }
+
+        if (!empty($errors)) {
+            $e = new ValidationException('Validation errors: ' . implode("\n", $errors));
+            $e->setErrors($errors);
+            throw $e;
+        }
+    }
+
+    /**
+     * Get the validator used to prepare and validate properties. If no validator has been set on the command, then
+     * the default {@see SchemaValidator} will be used.
+     *
+     * @return ValidatorInterface
+     */
+    protected function getValidator()
+    {
+        if (!$this->validator) {
+            $this->validator = SchemaValidator::getInstance();
+        }
+
+        return $this->validator;
+    }
+}

@@ -1,68 +1,86 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-MLMoYeZJaG==
+<?php
+namespace Codeception\Command;
+
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+
+class GenerateStepObject extends Base
+{
+    protected $template = <<<EOF
+<?php
+%s
+%s %sSteps extends %s
+{
+%s
+}
+EOF;
+
+    protected $actionTemplate = <<<EOF
+    function %s()
+    {
+        \$I = \$this;
+
+    }
+
+EOF;
+
+
+    protected function configure()
+     {
+         $this->setDefinition(array(
+
+             new InputArgument('suite', InputArgument::REQUIRED, 'Suite where for StepObject'),
+             new InputArgument('step', InputArgument::REQUIRED, 'StepObject name'),
+             new InputOption('config', 'c', InputOption::VALUE_OPTIONAL, 'Use custom path for config'),
+             new InputOption('force', '',InputOption::VALUE_NONE, 'skip verification question'),
+         ));
+         parent::configure();
+     }
+
+     public function getDescription() {
+         return 'Generates empty StepObject class';
+     }
+
+    public function execute(InputInterface $input, OutputInterface $output)
+    {
+        $suite = $input->getArgument('suite');
+        $step = $input->getArgument('step');
+        $conf = $this->getSuiteConfig($suite, $input->getOption('config'));
+
+        $guy = $conf['class_name'];
+
+        $class = $this->getClassName($step);
+        $class = $this->removeSuffix($class, 'Steps');
+        $ns = $this->getNamespaceString($conf['namespace'].'\\'.$guy . '\\' .$class);
+        $ns = ltrim($ns, '\\');
+
+        $extended_class = '\\'.ltrim('\\'.$conf['namespace'].'\\'.$guy, '\\');
+
+        $path = $this->buildPath($conf['path'].'/_steps/', $class);
+        $filename = $this->completeSuffix($class, 'Steps');
+        $filename = $path.$filename;
+
+        $dialog = $this->getHelperSet()->get('dialog');
+        $actions = "";
+        if (!$input->getOption('force')) {
+            do {
+                $action = $dialog->ask($output, "Add action to StepObject class (ENTER to exit): ", null);
+                if ($action) $actions .= sprintf($this->actionTemplate, $action);
+            } while ($action);
+        }
+
+        $res = $this->save($filename, sprintf($this->template, $ns, 'class', $class, $extended_class, $actions));
+        
+        $this->introduceAutoloader($conf['path'].'/'.$conf['bootstrap'], 'Steps', '_steps');
+
+        if (!$res) {
+            $output->writeln("<error>StepObject $filename already exists</error>");
+            exit;
+        }
+        $output->writeln("<info>StepObject was created in $filename</info>");
+    }
+
+}

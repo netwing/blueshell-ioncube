@@ -1,87 +1,238 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-WQX3f/yrZDsMBBbqmSSB
+<?php
+/**
+ * CDataProvider is a base class that implements the {@link IDataProvider} interface.
+ *
+ * Derived classes mainly need to implement three methods: {@link fetchData},
+ * {@link fetchKeys} and {@link calculateTotalItemCount}.
+ *
+ * @property string $id The unique ID that uniquely identifies the data provider among all data providers.
+ * @property CPagination $pagination The pagination object. If this is false, it means the pagination is disabled.
+ * @property CSort $sort The sorting object. If this is false, it means the sorting is disabled.
+ * @property array $data The list of data items currently available in this data provider.
+ * @property array $keys The list of key values corresponding to {@link data}. Each data item in {@link data}
+ * is uniquely identified by the corresponding key value in this array.
+ * @property integer $itemCount The number of data items in the current page.
+ * @property integer $totalItemCount Total number of possible data items.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web
+ * @since 1.1
+ */
+abstract class CDataProvider extends CComponent implements IDataProvider
+{
+	private $_id;
+	private $_data;
+	private $_keys;
+	private $_totalItemCount;
+	private $_sort;
+	private $_pagination;
+
+	/**
+	 * Fetches the data from the persistent data storage.
+	 * @return array list of data items
+	 */
+	abstract protected function fetchData();
+	/**
+	 * Fetches the data item keys from the persistent data storage.
+	 * @return array list of data item keys.
+	 */
+	abstract protected function fetchKeys();
+	/**
+	 * Calculates the total number of data items.
+	 * @return integer the total number of data items.
+	 */
+	abstract protected function calculateTotalItemCount();
+
+	/**
+	 * Returns the ID that uniquely identifies the data provider.
+	 * @return string the unique ID that uniquely identifies the data provider among all data providers.
+	 */
+	public function getId()
+	{
+		return $this->_id;
+	}
+
+	/**
+	 * Sets the provider ID.
+	 * @param string $value the unique ID that uniquely identifies the data provider among all data providers.
+	 */
+	public function setId($value)
+	{
+		$this->_id=$value;
+	}
+
+	/**
+	 * Returns the pagination object.
+	 * @param string $className the pagination object class name. Parameter is available since version 1.1.13.
+	 * @return CPagination|false the pagination object. If this is false, it means the pagination is disabled.
+	 */
+	public function getPagination($className='CPagination')
+	{
+		if($this->_pagination===null)
+		{
+			$this->_pagination=new $className;
+			if(($id=$this->getId())!='')
+				$this->_pagination->pageVar=$id.'_page';
+		}
+		return $this->_pagination;
+	}
+
+	/**
+	 * Sets the pagination for this data provider.
+	 * @param mixed $value the pagination to be used by this data provider. This could be a {@link CPagination} object
+	 * or an array used to configure the pagination object. If this is false, it means the pagination should be disabled.
+	 *
+	 * You can configure this property same way as a component:
+	 * <pre>
+	 * array(
+	 *     'class' => 'MyPagination',
+	 *     'pageSize' => 20,
+	 * ),
+	 * </pre>
+	 */
+	public function setPagination($value)
+	{
+		if(is_array($value))
+		{
+			if(isset($value['class']))
+			{
+				$pagination=$this->getPagination($value['class']);
+				unset($value['class']);
+			}
+			else
+				$pagination=$this->getPagination();
+
+			foreach($value as $k=>$v)
+				$pagination->$k=$v;
+		}
+		else
+			$this->_pagination=$value;
+	}
+
+	/**
+	 * Returns the sort object.
+	 * @param string $className the sorting object class name. Parameter is available since version 1.1.13.
+	 * @return CSort|false the sorting object. If this is false, it means the sorting is disabled.
+	 */
+	public function getSort($className='CSort')
+	{
+		if($this->_sort===null)
+		{
+			$this->_sort=new $className;
+			if(($id=$this->getId())!='')
+				$this->_sort->sortVar=$id.'_sort';
+		}
+		return $this->_sort;
+	}
+
+	/**
+	 * Sets the sorting for this data provider.
+	 * @param mixed $value the sorting to be used by this data provider. This could be a {@link CSort} object
+	 * or an array used to configure the sorting object. If this is false, it means the sorting should be disabled.
+	 *
+	 * You can configure this property same way as a component:
+	 * <pre>
+	 * array(
+	 *     'class' => 'MySort',
+	 *     'attributes' => array('name', 'weight'),
+	 * ),
+	 * </pre>
+	 */
+	public function setSort($value)
+	{
+		if(is_array($value))
+		{
+			if(isset($value['class']))
+			{
+				$sort=$this->getSort($value['class']);
+				unset($value['class']);
+			}
+			else
+				$sort=$this->getSort();
+
+			foreach($value as $k=>$v)
+				$sort->$k=$v;
+		}
+		else
+			$this->_sort=$value;
+	}
+
+	/**
+	 * Returns the data items currently available.
+	 * @param boolean $refresh whether the data should be re-fetched from persistent storage.
+	 * @return array the list of data items currently available in this data provider.
+	 */
+	public function getData($refresh=false)
+	{
+		if($this->_data===null || $refresh)
+			$this->_data=$this->fetchData();
+		return $this->_data;
+	}
+
+	/**
+	 * Sets the data items for this provider.
+	 * @param array $value put the data items into this provider.
+	 */
+	public function setData($value)
+	{
+		$this->_data=$value;
+	}
+
+	/**
+	 * Returns the key values associated with the data items.
+	 * @param boolean $refresh whether the keys should be re-calculated.
+	 * @return array the list of key values corresponding to {@link data}. Each data item in {@link data}
+	 * is uniquely identified by the corresponding key value in this array.
+	 */
+	public function getKeys($refresh=false)
+	{
+		if($this->_keys===null || $refresh)
+			$this->_keys=$this->fetchKeys();
+		return $this->_keys;
+	}
+
+	/**
+	 * Sets the data item keys for this provider.
+	 * @param array $value put the data item keys into this provider.
+	 */
+	public function setKeys($value)
+	{
+		$this->_keys=$value;
+	}
+
+	/**
+	 * Returns the number of data items in the current page.
+	 * This is equivalent to <code>count($provider->getData())</code>.
+	 * When {@link pagination} is set false, this returns the same value as {@link totalItemCount}.
+	 * @param boolean $refresh whether the number of data items should be re-calculated.
+	 * @return integer the number of data items in the current page.
+	 */
+	public function getItemCount($refresh=false)
+	{
+		return count($this->getData($refresh));
+	}
+
+	/**
+	 * Returns the total number of data items.
+	 * When {@link pagination} is set false, this returns the same value as {@link itemCount}.
+	 * @param boolean $refresh whether the total number of data items should be re-calculated.
+	 * @return integer total number of possible data items.
+	 */
+	public function getTotalItemCount($refresh=false)
+	{
+		if($this->_totalItemCount===null || $refresh)
+			$this->_totalItemCount=$this->calculateTotalItemCount();
+		return $this->_totalItemCount;
+	}
+
+	/**
+	 * Sets the total number of data items.
+	 * This method is provided in case when the total number cannot be determined by {@link calculateTotalItemCount}.
+	 * @param integer $value the total number of data items.
+	 * @since 1.1.1
+	 */
+	public function setTotalItemCount($value)
+	{
+		$this->_totalItemCount=$value;
+	}
+}

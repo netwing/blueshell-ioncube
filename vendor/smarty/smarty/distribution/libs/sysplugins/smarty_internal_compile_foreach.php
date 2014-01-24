@@ -1,118 +1,230 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Compile Foreach
+ *
+ * Compiles the {foreach} {foreachelse} {/foreach} tags
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Uwe Tews
+ */
+
+/**
+ * Smarty Internal Plugin Compile Foreach Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Foreach extends Smarty_Internal_CompileBase
+{
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $required_attributes = array('from', 'item');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $optional_attributes = array('name', 'key');
+    /**
+     * Attribute definition: Overwrites base class.
+     *
+     * @var array
+     * @see Smarty_Internal_CompileBase
+     */
+    public $shorttag_order = array('from','item','key','name');
+
+    /**
+     * Compiles code for the {foreach} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        $tpl = $compiler->template;
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        $from = $_attr['from'];
+        $item = $_attr['item'];
+        if (!strncmp("\$_smarty_tpl->tpl_vars[$item]", $from, strlen($item) + 24)) {
+            $compiler->trigger_template_error("item variable {$item} may not be the same variable as at 'from'", $compiler->lex->taglineno);
+        }
+
+        if (isset($_attr['key'])) {
+            $key = $_attr['key'];
+        } else {
+            $key = null;
+        }
+
+        $this->openTag($compiler, 'foreach', array('foreach', $compiler->nocache, $item, $key));
+        // maybe nocache because of nocache variables
+        $compiler->nocache = $compiler->nocache | $compiler->tag_nocache;
+
+        if (isset($_attr['name'])) {
+            $name = $_attr['name'];
+            $has_name = true;
+            $SmartyVarName = '$smarty.foreach.' . trim($name, '\'"') . '.';
+        } else {
+            $name = null;
+            $has_name = false;
+        }
+        $ItemVarName = '$' . trim($item, '\'"') . '@';
+        // evaluates which Smarty variables and properties have to be computed
+        if ($has_name) {
+            $usesSmartyFirst = strpos($tpl->source->content, $SmartyVarName . 'first') !== false;
+            $usesSmartyLast = strpos($tpl->source->content, $SmartyVarName . 'last') !== false;
+            $usesSmartyIndex = strpos($tpl->source->content, $SmartyVarName . 'index') !== false;
+            $usesSmartyIteration = strpos($tpl->source->content, $SmartyVarName . 'iteration') !== false;
+            $usesSmartyShow = strpos($tpl->source->content, $SmartyVarName . 'show') !== false;
+            $usesSmartyTotal = strpos($tpl->source->content, $SmartyVarName . 'total') !== false;
+        } else {
+            $usesSmartyFirst = false;
+            $usesSmartyLast = false;
+            $usesSmartyTotal = false;
+            $usesSmartyShow = false;
+        }
+
+        $usesPropFirst = $usesSmartyFirst || strpos($tpl->source->content, $ItemVarName . 'first') !== false;
+        $usesPropLast = $usesSmartyLast || strpos($tpl->source->content, $ItemVarName . 'last') !== false;
+        $usesPropIndex = $usesPropFirst || strpos($tpl->source->content, $ItemVarName . 'index') !== false;
+        $usesPropIteration = $usesPropLast || strpos($tpl->source->content, $ItemVarName . 'iteration') !== false;
+        $usesPropShow = strpos($tpl->source->content, $ItemVarName . 'show') !== false;
+        $usesPropTotal = $usesSmartyTotal || $usesSmartyShow || $usesPropShow || $usesPropLast || strpos($tpl->source->content, $ItemVarName . 'total') !== false;
+        // generate output code
+        $output = "<?php ";
+        $output .= " \$_smarty_tpl->tpl_vars[$item] = new Smarty_Variable; \$_smarty_tpl->tpl_vars[$item]->_loop = false;\n";
+        if ($key != null) {
+            $output .= " \$_smarty_tpl->tpl_vars[$key] = new Smarty_Variable;\n";
+        }
+        $output .= " \$_from = $from; if (!is_array(\$_from) && !is_object(\$_from)) { settype(\$_from, 'array');}\n";
+        if ($usesPropTotal) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->total= \$_smarty_tpl->_count(\$_from);\n";
+        }
+        if ($usesPropIteration) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->iteration=0;\n";
+        }
+        if ($usesPropIndex) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->index=-1;\n";
+        }
+        if ($usesPropShow) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->show = (\$_smarty_tpl->tpl_vars[$item]->total > 0);\n";
+        }
+        if ($has_name) {
+            if ($usesSmartyTotal) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['total'] = \$_smarty_tpl->tpl_vars[$item]->total;\n";
+            }
+            if ($usesSmartyIteration) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['iteration']=0;\n";
+            }
+            if ($usesSmartyIndex) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['index']=-1;\n";
+            }
+            if ($usesSmartyShow) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['show']=(\$_smarty_tpl->tpl_vars[$item]->total > 0);\n";
+            }
+        }
+        $output .= "foreach (\$_from as \$_smarty_tpl->tpl_vars[$item]->key => \$_smarty_tpl->tpl_vars[$item]->value) {\n\$_smarty_tpl->tpl_vars[$item]->_loop = true;\n";
+        if ($key != null) {
+            $output .= " \$_smarty_tpl->tpl_vars[$key]->value = \$_smarty_tpl->tpl_vars[$item]->key;\n";
+        }
+        if ($usesPropIteration) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->iteration++;\n";
+        }
+        if ($usesPropIndex) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->index++;\n";
+        }
+        if ($usesPropFirst) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->first = \$_smarty_tpl->tpl_vars[$item]->index === 0;\n";
+        }
+        if ($usesPropLast) {
+            $output .= " \$_smarty_tpl->tpl_vars[$item]->last = \$_smarty_tpl->tpl_vars[$item]->iteration === \$_smarty_tpl->tpl_vars[$item]->total;\n";
+        }
+        if ($has_name) {
+            if ($usesSmartyFirst) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['first'] = \$_smarty_tpl->tpl_vars[$item]->first;\n";
+            }
+            if ($usesSmartyIteration) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['iteration']++;\n";
+            }
+            if ($usesSmartyIndex) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['index']++;\n";
+            }
+            if ($usesSmartyLast) {
+                $output .= " \$_smarty_tpl->tpl_vars['smarty']->value['foreach'][$name]['last'] = \$_smarty_tpl->tpl_vars[$item]->last;\n";
+            }
+        }
+        $output .= "?>";
+
+        return $output;
+    }
+}
+
+/**
+ * Smarty Internal Plugin Compile Foreachelse Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Foreachelse extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {foreachelse} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+
+        list($openTag, $nocache, $item, $key) = $this->closeTag($compiler, array('foreach'));
+        $this->openTag($compiler, 'foreachelse', array('foreachelse', $nocache, $item, $key));
+
+        return "<?php }\nif (!\$_smarty_tpl->tpl_vars[$item]->_loop) {\n?>";
+    }
+
+}
+
+/**
+ * Smarty Internal Plugin Compile Foreachclose Class
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ */
+class Smarty_Internal_Compile_Foreachclose extends Smarty_Internal_CompileBase
+{
+    /**
+     * Compiles code for the {/foreach} tag
+     *
+     * @param  array  $args      array with attributes from parser
+     * @param  object $compiler  compiler object
+     * @param  array  $parameter array with compilation parameter
+     * @return string compiled code
+     */
+    public function compile($args, $compiler, $parameter)
+    {
+        // check and get attributes
+        $_attr = $this->getAttributes($compiler, $args);
+        // must endblock be nocache?
+        if ($compiler->nocache) {
+            $compiler->tag_nocache = true;
+        }
+
+        list($openTag, $compiler->nocache, $item, $key) = $this->closeTag($compiler, array('foreach', 'foreachelse'));
+
+        return "<?php } ?>";
+    }
+
+}

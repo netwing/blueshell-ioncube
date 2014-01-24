@@ -1,78 +1,167 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CViewAction class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CViewAction represents an action that displays a view according to a user-specified parameter.
+ *
+ * By default, the view being displayed is specified via the <code>view</code> GET parameter.
+ * The name of the GET parameter can be customized via {@link viewParam}.
+ * If the user doesn't provide the GET parameter, the default view specified by {@link defaultView}
+ * will be displayed.
+ *
+ * Users specify a view in the format of <code>path.to.view</code>, which translates to the view name
+ * <code>BasePath/path/to/view</code> where <code>BasePath</code> is given by {@link basePath}.
+ *
+ * Note, the user specified view can only contain word characters, dots and dashes and
+ * the first letter must be a word letter.
+ *
+ * @property string $requestedView The name of the view requested by the user.
+ * This is in the format of 'path.to.view'.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.web.actions
+ * @since 1.0
+ */
+class CViewAction extends CAction
+{
+	/**
+	 * @var string the name of the GET parameter that contains the requested view name. Defaults to 'view'.
+	 */
+	public $viewParam='view';
+	/**
+	 * @var string the name of the default view when {@link viewParam} GET parameter is not provided by user. Defaults to 'index'.
+	 * This should be in the format of 'path.to.view', similar to that given in
+	 * the GET parameter.
+	 * @see basePath
+	 */
+	public $defaultView='index';
+	/**
+	 * @var string the name of the view to be rendered. This property will be set
+	 * once the user requested view is resolved.
+	 */
+	public $view;
+	/**
+	 * @var string the base path for the views. Defaults to 'pages'.
+	 * The base path will be prefixed to any user-specified page view.
+	 * For example, if a user requests for <code>tutorial.chap1</code>, the corresponding view name will
+	 * be <code>pages/tutorial/chap1</code>, assuming the base path is <code>pages</code>.
+	 * The actual view file is determined by {@link CController::getViewFile}.
+	 * @see CController::getViewFile
+	 */
+	public $basePath='pages';
+	/**
+	 * @var mixed the name of the layout to be applied to the views.
+	 * This will be assigned to {@link CController::layout} before the view is rendered.
+	 * Defaults to null, meaning the controller's layout will be used.
+	 * If false, no layout will be applied.
+	 */
+	public $layout;
+	/**
+	 * @var boolean whether the view should be rendered as PHP script or static text. Defaults to false.
+	 */
+	public $renderAsText=false;
+
+	private $_viewPath;
+
+
+	/**
+	 * Returns the name of the view requested by the user.
+	 * If the user doesn't specify any view, the {@link defaultView} will be returned.
+	 * @return string the name of the view requested by the user.
+	 * This is in the format of 'path.to.view'.
+	 */
+	public function getRequestedView()
+	{
+		if($this->_viewPath===null)
+		{
+			if(!empty($_GET[$this->viewParam]) && is_string($_GET[$this->viewParam]))
+				$this->_viewPath=$_GET[$this->viewParam];
+			else
+				$this->_viewPath=$this->defaultView;
+		}
+		return $this->_viewPath;
+	}
+
+	/**
+	 * Resolves the user-specified view into a valid view name.
+	 * @param string $viewPath user-specified view in the format of 'path.to.view'.
+	 * @return string fully resolved view in the format of 'path/to/view'.
+	 * @throw CHttpException if the user-specified view is invalid
+	 */
+	protected function resolveView($viewPath)
+	{
+		// start with a word char and have word chars, dots and dashes only
+		if(preg_match('/^\w[\w\.\-]*$/',$viewPath))
+		{
+			$view=strtr($viewPath,'.','/');
+			if(!empty($this->basePath))
+				$view=$this->basePath.'/'.$view;
+			if($this->getController()->getViewFile($view)!==false)
+			{
+				$this->view=$view;
+				return;
+			}
+		}
+		throw new CHttpException(404,Yii::t('yii','The requested view "{name}" was not found.',
+			array('{name}'=>$viewPath)));
+	}
+
+	/**
+	 * Runs the action.
+	 * This method displays the view requested by the user.
+	 * @throws CHttpException if the view is invalid
+	 */
+	public function run()
+	{
+		$this->resolveView($this->getRequestedView());
+		$controller=$this->getController();
+		if($this->layout!==null)
+		{
+			$layout=$controller->layout;
+			$controller->layout=$this->layout;
+		}
+
+		$this->onBeforeRender($event=new CEvent($this));
+		if(!$event->handled)
+		{
+			if($this->renderAsText)
+			{
+				$text=file_get_contents($controller->getViewFile($this->view));
+				$controller->renderText($text);
+			}
+			else
+				$controller->render($this->view);
+			$this->onAfterRender(new CEvent($this));
+		}
+
+		if($this->layout!==null)
+			$controller->layout=$layout;
+	}
+
+	/**
+	 * Raised right before the action invokes the render method.
+	 * Event handlers can set the {@link CEvent::handled} property
+	 * to be true to stop further view rendering.
+	 * @param CEvent $event event parameter
+	 */
+	public function onBeforeRender($event)
+	{
+		$this->raiseEvent('onBeforeRender',$event);
+	}
+
+	/**
+	 * Raised right after the action invokes the render method.
+	 * @param CEvent $event event parameter
+	 */
+	public function onAfterRender($event)
+	{
+		$this->raiseEvent('onAfterRender',$event);
+	}
+}

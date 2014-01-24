@@ -1,40 +1,120 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * php-file-iterator
+ *
+ * Copyright (c) 2009-2013, Sebastian Bergmann <sebastian@phpunit.de>.
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *   * Redistributions of source code must retain the above copyright
+ *     notice, this list of conditions and the following disclaimer.
+ *
+ *   * Redistributions in binary form must reproduce the above copyright
+ *     notice, this list of conditions and the following disclaimer in
+ *     the documentation and/or other materials provided with the
+ *     distribution.
+ *
+ *   * Neither the name of Sebastian Bergmann nor the names of his
+ *     contributors may be used to endorse or promote products derived
+ *     from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ * FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ * COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+ * INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+ * BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ * ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @package   File
+ * @author    Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @since     File available since Release 1.1.0
+ */
+
+/**
+ * Factory Method implementation that creates a File_Iterator that operates on
+ * an AppendIterator that contains an RecursiveDirectoryIterator for each given
+ * path.
+ *
+ * @author    Sebastian Bergmann <sebastian@phpunit.de>
+ * @copyright 2009-2013 Sebastian Bergmann <sebastian@phpunit.de>
+ * @license   http://www.opensource.org/licenses/BSD-3-Clause  The BSD 3-Clause License
+ * @version   Release: @package_version@
+ * @link      http://github.com/sebastianbergmann/php-file-iterator/tree
+ * @since     Class available since Release 1.1.0
+ */
+class File_Iterator_Factory
+{
+    /**
+     * @param  array|string $paths
+     * @param  array|string $suffixes
+     * @param  array|string $prefixes
+     * @param  array        $exclude
+     * @return AppendIterator
+     */
+    public function getFileIterator($paths, $suffixes = '', $prefixes = '', array $exclude = array())
+    {
+        if (is_string($paths)) {
+            $paths = array($paths);
+        }
+
+        $_paths = array();
+
+        foreach ($paths as $path) {
+            if ($locals = glob($path, GLOB_ONLYDIR)) {
+                $_paths = array_merge($_paths, $locals);
+            } else {
+                $_paths[] = $path;
+            }
+        }
+
+        $paths = $_paths;
+        unset($_paths);
+
+        if (is_string($prefixes)) {
+            if ($prefixes != '') {
+                $prefixes = array($prefixes);
+            } else {
+                $prefixes = array();
+            }
+        }
+
+        if (is_string($suffixes)) {
+            if ($suffixes != '') {
+                $suffixes = array($suffixes);
+            } else {
+                $suffixes = array();
+            }
+        }
+
+        $iterator = new AppendIterator;
+
+        foreach ($paths as $path) {
+            if (is_dir($path)) {
+                $iterator->append(
+                  new File_Iterator(
+                    new RecursiveIteratorIterator(
+                      new RecursiveDirectoryIterator($path, RecursiveDirectoryIterator::FOLLOW_SYMLINKS)
+                    ),
+                    $suffixes,
+                    $prefixes,
+                    $exclude,
+                    $path
+                  )
+                );
+            }
+        }
+
+        return $iterator;
+    }
+}

@@ -1,43 +1,85 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-PY1Y7hnfu+xi
+<?php
+
+namespace Guzzle\Plugin\Cookie\CookieJar;
+
+use Guzzle\Plugin\Cookie\Cookie;
+use Guzzle\Http\Message\RequestInterface;
+use Guzzle\Http\Message\Response;
+
+/**
+ * Interface for persisting cookies
+ */
+interface CookieJarInterface extends \Countable, \IteratorAggregate
+{
+    /**
+     * Remove cookies currently held in the Cookie cookieJar.
+     *
+     * Invoking this method without arguments will empty the whole Cookie cookieJar.  If given a $domain argument only
+     * cookies belonging to that domain will be removed. If given a $domain and $path argument, cookies belonging to
+     * the specified path within that domain are removed. If given all three arguments, then the cookie with the
+     * specified name, path and domain is removed.
+     *
+     * @param string $domain Set to clear only cookies matching a domain
+     * @param string $path   Set to clear only cookies matching a domain and path
+     * @param string $name   Set to clear only cookies matching a domain, path, and name
+     *
+     * @return CookieJarInterface
+     */
+    public function remove($domain = null, $path = null, $name = null);
+
+    /**
+     * Discard all temporary cookies.
+     *
+     * Scans for all cookies in the cookieJar with either no expire field or a true discard flag. To be called when the
+     * user agent shuts down according to RFC 2965.
+     *
+     * @return CookieJarInterface
+     */
+    public function removeTemporary();
+
+    /**
+     * Delete any expired cookies
+     *
+     * @return CookieJarInterface
+     */
+    public function removeExpired();
+
+    /**
+     * Add a cookie to the cookie cookieJar
+     *
+     * @param Cookie $cookie Cookie to add
+     *
+     * @return bool Returns true on success or false on failure
+     */
+    public function add(Cookie $cookie);
+
+    /**
+     * Add cookies from a {@see Guzzle\Http\Message\Response} object
+     *
+     * @param Response         $response Response object
+     * @param RequestInterface $request  Request that received the response
+     */
+    public function addCookiesFromResponse(Response $response, RequestInterface $request = null);
+
+    /**
+     * Get cookies matching a request object
+     *
+     * @param RequestInterface $request Request object to match
+     *
+     * @return array
+     */
+    public function getMatchingCookies(RequestInterface $request);
+
+    /**
+     * Get all of the matching cookies
+     *
+     * @param string $domain          Domain of the cookie
+     * @param string $path            Path of the cookie
+     * @param string $name            Name of the cookie
+     * @param bool   $skipDiscardable Set to TRUE to skip cookies with the Discard attribute.
+     * @param bool   $skipExpired     Set to FALSE to include expired
+     *
+     * @return array Returns an array of Cookie objects
+     */
+    public function all($domain = null, $path = null, $name = null, $skipDiscardable = false, $skipExpired = true);
+}

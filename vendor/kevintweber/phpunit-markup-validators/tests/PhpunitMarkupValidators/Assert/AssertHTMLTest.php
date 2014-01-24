@@ -1,31 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the PhpunitMarkupValidators package.
+ *
+ * (c) Kevin Weber <kevintweber@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace PhpunitMarkupValidators\Assert;
+
+use kevintweber\PhpunitMarkupValidators\Assert\AssertHTML;
+
+class AssertHTMLTest extends \PHPUnit_Framework_TestCase
+{
+    /**
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML::IsValidMarkup
+     */
+    public function testIsValidMarkup()
+    {
+        // Test valid HTML markup.
+        AssertHTML::IsValidMarkup("<div><span>Whoa</span></div>",
+                                  "Valid HTML fragment.");
+
+        // Test invalid HTML markup.
+        try {
+            AssertHTML::IsValidMarkup("<div><span>Whoa<p>Bad</span></div></p>",
+                                      "Invalid HTML fragment.");
+        }
+        catch (\PHPUnit_Framework_AssertionFailedError $e) {
+            return;
+        }
+
+        $this->fail();
+    }
+
+    /**
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML::IsValidFile
+     */
+    public function testIsValidFile()
+    {
+        // Test valid HTML 4.01 file.
+        AssertHTML::IsValidFile(realpath(__DIR__ . "/../../files/HTML4_Valid.html"),
+                                "Valid HTML 4.01 file.");
+
+        // Test invalid HTML 4.01 file.
+        try {
+            AssertHTML::IsValidFile(realpath(__DIR__ . "/../../files/HTML4_Invalid.html"),
+                                    "Invalid HTML 4.01 file.");
+        }
+        catch (\PHPUnit_Framework_AssertionFailedError $e) {
+            return;
+        }
+
+        $this->fail();
+    }
+
+    /**
+     * @covers kevintweber\PhpunitMarkupValidators\Assert\AssertHTML::IsValidUrl
+     */
+    public function testIsValidUrl()
+    {
+        // Test valid HTML url.
+        AssertHTML::IsValidUrl("http://www.w3.org/TR/1999/REC-html401-19991224/",
+                               "Valid HTML url.");
+    }
+}

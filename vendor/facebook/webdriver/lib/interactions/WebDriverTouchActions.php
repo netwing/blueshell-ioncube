@@ -1,55 +1,126 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+// Copyright 2004-present Facebook. All Rights Reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//   http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+/**
+ * WebDriver action builder for touch events
+ */
+class WebDriverTouchActions {
+
+  /**
+   * @var WebDriverTouchScreen
+   */
+  protected $touchScreen;
+
+  /**
+   * @var WebDriver
+   */
+  protected $driver;
+
+  /**
+   * @var WebDriverKeyboard
+   */
+  protected $keyboard;
+
+  /**
+   * @var WebDriverMouse
+   */
+  protected $mouse;
+
+  /**
+   * @var WebDriverCompositeAction
+   */
+  protected $action;
+
+  public function __construct(WebDriver $driver) {
+    $this->driver = $driver;
+    $this->keyboard = $driver->getKeyboard();
+    $this->mouse = $driver->getMouse();
+    $this->touchScreen = $driver->getTouch();
+    $this->action = new WebDriverCompositeAction();
+  }
+
+  public function tap(WebDriverElement $element) {
+    $this->action->addAction(
+      new WebDriverTapAction($this->touchScreen, $element)
+    );
+    return $this;
+  }
+
+  public function down($x, $y) {
+    $this->action->addAction(
+      new WebDriverDownAction($this->touchScreen, $x, $y)
+    );
+    return $this;
+  }
+
+  public function up($x, $y) {
+    $this->action->addAction(
+      new WebDriverUpAction($this->touchScreen, $x, $y)
+    );
+    return $this;
+  }
+
+  public function move($x, $y) {
+    $this->action->addAction(
+      new WebDriverMoveAction($this->touchScreen, $x, $y)
+    );
+    return $this;
+  }
+
+  public function scroll($x, $y) {
+    $this->action->addAction(
+      new WebDriverScrollAction($this->touchScreen, $x, $y)
+    );
+    return $this;
+  }
+
+  public function scrollFromElement(WebDriverElement $element, $x, $y) {
+    $this->action->addAction(
+      new WebDriverScrollFromElementAction($this->touchScreen, $element, $x, $y)
+    );
+    return $this;
+  }
+
+  public function doubleTap(WebDriverElement $element) {
+    $this->action->addAction(
+      new WebDriverDoubleTapAction($this->touchScreen, $element)
+    );
+    return $this;
+  }
+
+  public function longPress(WebDriverElement $element) {
+    $this->action->addAction(
+      new WebDriverLongPressAction($this->touchScreen, $element)
+    );
+    return $this;
+  }
+
+  public function flick($x, $y) {
+    $this->action->addAction(
+      new WebDriverFlickAction($this->touchScreen, $x, $y)
+    );
+    return $this;
+  }
+
+  public function flickFromElement(WebDriverElement $element, $x, $y, $speed) {
+    $this->action->addAction(
+      new WebDriverFlickFromElementAction(
+        $this->touchScreen, $element, $x, $y, $speed
+      )
+    );
+    return $this;
+  }
+
+}

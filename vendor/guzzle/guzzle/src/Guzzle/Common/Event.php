@@ -1,33 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+namespace Guzzle\Common;
+
+use Symfony\Component\EventDispatcher\Event as SymfonyEvent;
+
+/**
+ * Default event for Guzzle notifications
+ */
+class Event extends SymfonyEvent implements ToArrayInterface, \ArrayAccess, \IteratorAggregate
+{
+    /** @var array */
+    private $context;
+
+    /**
+     * @param array $context Contextual information
+     */
+    public function __construct(array $context = array())
+    {
+        $this->context = $context;
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->context);
+    }
+
+    public function offsetGet($offset)
+    {
+        return isset($this->context[$offset]) ? $this->context[$offset] : null;
+    }
+
+    public function offsetSet($offset, $value)
+    {
+        $this->context[$offset] = $value;
+    }
+
+    public function offsetExists($offset)
+    {
+        return isset($this->context[$offset]);
+    }
+
+    public function offsetUnset($offset)
+    {
+        unset($this->context[$offset]);
+    }
+
+    public function toArray()
+    {
+        return $this->context;
+    }
+}

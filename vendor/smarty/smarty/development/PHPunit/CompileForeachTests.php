@@ -1,124 +1,199 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPs6LdhKrI6Ewr5OBbloKsYo7NIW9Y6qvtAwi2/R7jG3DVjsoh6Il085EGMm0Wyn3fOml/zJQ
-Ltt43m/uCWDAIKN6FnRZKHd7jYAGNHus0cqhx8PoOY5tiYTXuaCscps5ECbQrg/Wia5eTa9Mja7O
-7ZGuJ3h/sTiSO2F2Rk/gT4D+jkIdaTznFtNJQvfdOze0c/tuvfI5890gg7lJGHhIE2+EXXsuUcdr
-i0a2ALaZJNsmbEEcnVEUhr4euJltSAgiccy4GDnfT5vWmjsRlm5m5tCofzW3r+T99YAIUFa6JQxy
-sBINSOXM6kVxpiKO5SOKr+5Rb8Sqq01i4AdlzH0oYMGzs5e90d69zDGOfXurypT9UXebPgxSmD0c
-rv7rn8NuXMyM4eHVd2ORV6N1+wqtS2w5bhitD3H77oXi/v1iPTAWM6sAZOX2NLUg6wgF4Rv8szfk
-Ucg28w2fzzQ0OIiTfPHJXaH6lW9+lE49wIomMQaU0OG5D0oPAyfkhJQEl+tXcUaR0j+kv6U08Lym
-Wwr8pkfqFmMsplcwsZWas3Y36cdxaTde1WL/TtxWXQQ6vwmOhUTg+k6DDuV2mhgm5swVt5mITIKr
-vefIdwEmdThxmU9ozsWXK+v3M6I+R1J/oLPTrtxY9ZYwP9RFNGaXM7cSpVWpwZS1i3Dd5Rw6CvsL
-hkUHwYuSS8soloy2QP2atlCbVFGX01DKyyD5iZPGYgh83tqpBwr1YTGOQcvBd4Wz98UHzjZIDz2s
-GJLeYvQY9c8gItiSQ2NmpUgDCZG6JJjBj4MmP2wDbv1i2EeJolRvHReGq3Ed+sXAK1RVfSE1ob0A
-E/bZzC6TVA8phOm0U70wRmf0K6FXWL9+G1jmY+Kwtzx2BFJ7q6A00ehmpHGMkY+s7VtrN0LAZtnT
-mG69nlpJg24vUo1UvM3hPM4FpcPP0eddyyli30JWDMXTyZ6DFWaknGkyR2D1vTafKvGAO6MlQcwj
-Tg1uDvwTONjhXHAsOjvcPIiQyf5dgySnNhYqE7dpLUWanbDN5HsYUscOdHAmeHFHp0K8bEdiWPGo
-Y5UsmWn88p2v2mH55rAbm/b6mWRaywrHr63v97qcgoawYmEcqnmoRu0LAvafahvUtJYHY5Co5TFe
-Ah/4vy21PnYLmXbjEaWE8mnb17M2ezN08ifG2wahWYZKrteMYnGBLXNXl10W9ED4VaRsZEM99nLf
-HR0r+s20k5YMSd6hwlWukg7DSkQwgrANUcOFePqnwH8jqgJK8Loz7A+5OOT1n6yNTPjV1+v941Fy
-0Sru00lufirw/CFF5kJ0loX93t1q240Ca382v4wkmETh1yCgpqyXWpkqH7YPaXERPggKdKotrnPm
-mXlAK3GjvIP/b2hciVJA/Obk4YBe45+qZ5OKQkAqeeKC8kS+7tADefynB0sdpdaWRlnswbN0gBux
-au2OTbAwdsYYMioAWTBfuFYMkdvKJHzf4uAXV1ZVqSjrrAjV4iG9eskZY4cO9PHp0CMBhMftt3XU
-wf5gYSGuwd5KwdbTxSKorne3aQ1CQYvb5aFM5tCspXNcUtFmvymMuX8Cl6o7XLgVNs77Gx2ZYBjL
-Uar7EmjqIJ68HdV2ef9CH1F8gW/c/noridAvU88J8XfzYj6BLFvmgcsKsvaU1i92v2qltkes8v44
-Ycx//KvfDGypSbm5GYf/f7TYFgQ9mhsZsjunQWsiBAWl3wlkJTPdxEiKyc3VjMeb8knRH9BMO2ng
-UfhBknEOKqfoxOlyARcJC2QAH1wqtTyRM/F9x6qIXHS/fMdRqy0poqFpGTchG3DeaA6m1UXZEzX/
-pxXp5qzrlNsHFTld0ZDJnqDr+8Cv2lsBKcZqh8wl2WnD44OU6OVJFnYYwjY6yQ5mG0KF4Rr+jGBp
-LuIZxLOlH7xjUwq6bVxAfmuJgQAWK65OAbW9+dDM8mRhxOUSxqBlpyW9d01YsmJBoBFxpqT/YZ14
-Y8zNhlLnt4EIs84OCrH+I+YkbxCG7TsfVG9NFW33QV+d1XDdidc3ppvtDJO9eZ4NvdflDIV++SrB
-weU+ThHk6XUkYGISiMIFJQbu4Y5DohaHbtSqNr463NSHiOiDhHqnB1emyX6k92XqE0obU1rqLH+N
-B2YQ5xN7qZdwwlvYXkUIpIUUI82WCjauusx2Vi5iwGKF0FsrVuqwpYR/rNjEc3Zkh5GQ+1AHMQQ9
-WA5cpdmDnkt1gA0S+LKDiga+GUkeNTG53E9X8EqsGBnUmqxUDeaMW1vbP8WN/D0PGiC80eDh3gX9
-a+FsVbGUitvAebOvVYg56Bm7uxWpsDqHlfYZXF4ojFehXqh2lz+pXsV2MjrJud81O3dDKfq+lYdT
-9407Jp7s1tDd5cld/MdEmVfc6EEZx98PODgbiOT+Dzk98SBSu1RVdjY2iypAQtjjMuNswZrjaCFw
-WgG9ypuQD13ypBJcMSj4feZGBOI+V9h6Lkg7f22lbnzCWWptskNBGPopXt2LHopjhkh6IByXy/Og
-+50/sEUnVkIrVkS81X35Aj2p45o3wNKprj6UqVB8r1Z7DmkiEXHywON81Gv7Ag53QkZID9YzTD1G
-KWHRT3lOzXQGTW19S8C8M6/V8raARcANKxRqZDFXyRNMf2aWrgCwG+E22BJFK+HZe128tiFzAFQG
-LYx33eWsK+o9tnZgTTFWzXlB1Ic+3oyHufPI/7cYZjKiKK1J+c94/vWuyTELpZdljJN08TZdgxYU
-p/m2ChulVTnMSglqO8tLxlgiJ4hAg7OcbURkg85d8IV5fMimJrnuXjf7f+LV2YTMlZd8sZxqq/6e
-QetxOqM07mkhYxW7Heije5kl0kysiksIQNiXxDb8p61CJtfJ63+Z61UosedVUIo6Ko7xerj1Foh0
-s2k0ZKt/fuLzWSh3MQwVPBO1NNLbWO2Kslpc1huIFXt037rQu03CW56HmXNvX73HVe+7cSx9AE0M
-/TVYOjTW6qtPAHq0b8OMWw8tDN8V8zhXZifGJ8l+Vg1szj5pUSDE/uMRhaUGlBZU8QB3H6oSCqqe
-WbVjWFxU2NLn4YuiaPZei6/uSYNBVUeJCmj4TeWQqQEKBi4PlzGI/4NTvmOLH6xCj3R5rOS8JvJN
-acTWq1GYiAZhNdRu9/mlPpryfOFxSQZxJcw2We+LJ0AoZo+hGO4EOEz9/GLwb+I/EtOn4illATAV
-xyWN8NZNF+eUcPC1ECTWl1ocxLzMtspzQ+tMf9yb91h5CSsQMpqs3K61Joo8GXr4qWFoymjkxvqM
-iYbxUPIEivN6ZjU17x7cIGsgZVvG4p2Z8RgoAlnbHc4+XGGftBVL6bGBINwY5EkqnY7tOLCTH12A
-ybUeA1zhXGL3eDNOTExfr0EN9Jt7o9JBXjCTR0E0wXN+2stLZwaYhcb9/n8kBBw9sEk5ebi8uDEa
-W+ZXP9Zi+T9gTNh4bsfDa3Dfrhh1R5gESG6V8j+gK6DcgcwZzVoYhzodZrOFqgkQm6Oh0mpbgS/f
-kKmRJDwqXwJE0+Pb3ChcloaDQIgAbUECst6i+i6zc9e1CbKwivwI97anS4AgZ3aAWKGxjDLmiGXd
-LVR7kW4/SSOSFok+aT6mY9lzwkoqszKYr1u3EExyNtBFYE5OOBu91MD0NcC/1CbxaZ6XLWaS2XKb
-nW7mr8RvixuYiBmtuGZGcq0xmHA7nErBvd7kt5GQG+324woYlqW9E1LYVhDYnRHF9e7gUR8k/mKi
-jKz3tpjPenmd4x2Z8m62BnF8SpIISpIkMiVhiAIni21cl9xP47xq7bLRzcBOrE2k+xyiFHECtaIm
-08Nn3g+MFSTjJCwO9YoSK3kCiQvEvDZoitDhuR/gddHpfOeJZRbl1cAhpFdceqp2tcSV6LHtqM5V
-dlOSGUvHmI9IeJKGgSiukM+uTm9ci8GD54I4dIxH086iK7oaNrRpZfLI/UbnV9ZyavBrne/KeEkd
-06kxsDkwccmagKX+2mXP92kq5771Jabb09z65EW8DEi9N8t2b3epPYsMXc02ICNahIcMubZ/5Vz2
-5Z45vFDb41rLPsS5yM7KCgdvfBw7ojZ5+nVu18JHcLTjWTBlyVvHKVGsaqtfNW/amQPa2Sf7L2gU
-6QROc7AUE0Zl0j2TzYntQ5LkKCT07IfF4fkojOkkBKoxezFDxxc6lmGchQuQS9Ok4Nomw18TUdqB
-s/NExNnWRptkd7VVUu3hB1MSnKeKf52X897MXiDqb6w8UaWdvPMQTVOCs290Y6HR3RRqSUEFvYgd
-bHWjhYFUykNM9GAAz+JNbr5myf1tFNvLjteIiMh0XLWU7PhIkOvLd0yB+Ovn7SPiGqCp82ng0c/b
-4f6iuWfzGI04Cf1aIcgUyOzcbUmMhB/iVrVyUg2jVuWgsZIpKAdZroNrWlSLVta5sad/1r64SNOc
-o8wjx6+JySWbPidsuE+NVzN+ZgqS/nsghohVAFFu3K+oirOkLtBqmArD6jA8DMFyxU/c957dwOV8
-zV0IJghmoAesXX14bTYQ7w2sAqjwJfEYFNHz91NBs8D1uy70ZDvXtnrW3MWZIYYh+11joqaxBcts
-a/CTlv6hSm/VK0BAdGG9FiTCmwXM/7wzaKFmE3ZYJGIuy2hSnRFJTM1PRw8SrolfkkgPkDOAXdE4
-27BY2MD31U3wm+enDQXxJpHP5k6AdYX2lG/hCbiLaMPWrUErJknf3QQE4fByrNk70TosyKfi91o5
-oHYQ0WsG6lVsHArdFUhQqx3h12Ft3uZ79IionE8ZnjnErLtZeOLt/io7P9lZrAXeg6jXd+QWq2Uc
-7NfwFgpUZXlNMb8NkCODL+btBS/0MvmlcVA8Ia1AOcYXdQLFOjl5wcXKBO+ZbBdTDCn2h8m10kbJ
-O8NUhOqPhnRf1PxsBLgrUuP3ydGrxkGenK36GP4hU+zDfOlG0PqV/o0sN3XYbopotK35hfcT8rwa
-inLS1I3TyrbhoF16h8HFtJZxMNrY6qtJbi8QtXhvmzStNTYdvI4CSmb3RQg9inaAZsQ1jBElBybq
-/Xn586H/q1fpo7REoh8/P2v8Oq0ilERsNJ9HabyuaW09sKnQ7mZUDKPy9PrFq2ACrAWolwzgJMaJ
-R/kFBfgh7rt0LwLn9uz2zyHvwqrAywhcIigdnwch+U6Wr1oXt6EA+5CRqEJHkBikj+CInSGABQVy
-dM+MHrQuk0hhYLLCXCajzyK+Hryp3MXBu0B58AxBNGk69UwVD5rYWTQ8FsY8Ag31SQBb81E03ouN
-7hF2bj2kHXe5lJz+SCw+66yc2Y96YieY4ydTCaev9bY19ULSVsX0LYtZh+o0BSjOoZihodZMRKoB
-qJTr2Qqsw9wPCV2/zEiPeBxU8C8Y3Hkmn+yWSfVtvlzj6Q+EKMs1HCu5hWEQfEOFHifiVg0OUGVq
-YazwD0C4XOX83OBA+onGEHWEuE1OhmtxZkeUo8tg0LZ+s2CNPODbknn9RtfKmbk24bPBS1PDN1He
-BtML0psqD/Di4jktF/68zNhXPE1Mg2ZEzYqeBh6rvd4Mdp8X5gWiqg95kix2ys8QYEOGETwbAQ5T
-5wquJ9zygkatlj2/IOR9WKIsshlHC6Vvlkb8eCa/xflS7BKNUa1nQrZCTfSoubwZZjMpsP1ZAoGx
-1qjQlKlG7vPkFarpUyWz91N+gj7O1gPe1xBuzlF6kAmvPfcBKpqVijdbpEEtWakohUvxxDVuqTif
-6YFFagFMiTtiuXfaDfrSCL32JBKCMPeEHNcZ7n890LOuiEMEnwk9+H3PmbpieRff4gkIkvwUxA47
-oGBa9HdTvIpgoz0Tel/apkfQubmImAizpNb9eEWf7PY8ltJwHIeOUc1JyV6LnBQr8wyrAEfjN6Rp
-GQwse5gFj7M7hd9air9Cd1ecyhSa6CCAMb7J6mKYHf898tx3EuwEcKvuElWf5tMaIb4OQmRuPSm+
-j4/mu44Er7i9uqE0k2nUsOMW8u8rMYM121AyBGbGtbJ+a8gRJLfVi7BFgr2g72C8xweIClNbNvlP
-ZGoifYVEqBqYdSrh+b0lpkNpYeW2/k4r2uT12azk5biUQeGaDCdXKrhMcpC9WNyZRc9T3emMPKnQ
-gjtgcKNm+OGpJ/psU9jJ53ytVfQ0DJS2HGolElIq1MQMVrEWVTrdJw6ZJ1/2qsgRcSBLKxjSdnVC
-JQQiXi4asFziEo7YTOuPY4ojcU89+8nDjNf7TSZ+2lBcsToHYu2DCfJJarCo0SAz+NDJFrx/ze02
-a482NYBCwgf6wYC/oCUl1NTtS+zYdp/SrmugIOs3426pbua9kAI4JwHqef96est03lrd96dx24So
-pyYc3ty2dlfwGug1QJgjFI3wdtOmadLHg2SaIWdUyNYYQudiSFBl04VXxevRqe256R2pDkZ4gZlT
-rBnNuWr63VsvOMgoEvnxluKJ41lHaLa1IiDLL41zZ+uvKPXo/ES1ih3CumQPcUWCYe8pFlKh2byX
-OMhMv/Ojt5dMdlvMoau8hN3szFajE895Mg6ah3k2oMYwT23mpeY20+RrYUf/1NEnK2QvDm6uboOz
-e+tBMHxrsJ5HKU6h/ktW+RB6F/s8SEIhrLL6CMkjL4/lLGEevvEh81WnrcXbjAHzwyHnzoDvMqoI
-qQjQhn6FQEcHZCmnvuFvrjVsdUf8XFPivjlumAmxnCf8HN4a6Kl13npLab4t1RFNoElLDGL+xoqh
-r/eUXjV5PRiTB4Xluf7Gt8mvs2Hy9hM4JZFExk9USk32O+BBWF1YY3uqoIke/9H6gsETOo5PdGxZ
-EujmgcflQZ0bRQRUO73tHtWcj8kNQlEE+UwYcpYtMULUotHBVCWbbg2CfMGUabOIFGlo3mAPJo3i
-Jh3KPGl/l5+DG0IB7u5gXBWAuMbQvmtHYvCJzWetQ8YzvazFalJfFkrjWuXFa2YPjMWT8akli+Uu
-Yfrp6l8a0CFQW/H3SNnAkluEKsK5M42+237UmQAto3kOoitSvMHi8xl88aaOaoOZ25chK1fej6R5
-wC+MIhr+S8owUsDYSKEl8wk4/AW/braFS6J4LBUvpA+/DI4hh9AXXskcl1nVQ1sIxtfkv2gIUtPA
-gfcZvQjud759tKGmRSFPGC1k5sKQtOteoncz5uHuSYSloNUGXnncSBElEFUZpENA8GcL5W0wNg1b
-BEPmzsvzNrX/ZMx/3D1Vdp7s00UyjB2FZsGbnfU6h4HQYNr6MOT2u4IGc68Rivbw1EF/nqYM7u+z
-Lp0AcfXz9Yx/Q68eKvFm44ZxEDgN1UMu/8NnirOh92CGPVF5LAvH/se5a+bhWSHzScQn+19p2qKF
-CBoXn2qts2UvdR5ZUsSH186WQN/wUVOzVIAj96CLAVUhTzouMiAckD0I0UdTdgd7NQW7+KjoEsUn
-ljZ2oQDM/CpvV8DQphL8+LtI8+6AfHuqX47IcSviawY4ZhfcfY7Y4k9p0EiFehcKOa0Q0doZTLvG
-jMLKGKZEkekJQedg1Hu567YE+zXpXr9fZ1DW9X6hVMNjba2Si/qY53b+9cCq5g+NCJCBZ/xoHmnn
-re3e82es0T0aILBoTPAEuLli+2rN9cvkxD3tMZtGjPunrA912/yRJeQctPaV8SbqaZTx8TOPCQ5i
-bPI5YVZWT9GXAENKVSnt8ffuO7tKmgZzxd2Kr+eeiQudXwkCeGqiLDBUMULZU/24P0tE+ttXB45l
-+xHmvl5MYk/vf9kSq9ylUr3gjNJW3esXB7Ej/54GcFV/4ZT9B6WMoTTXFbl6UQnKtWttfqo9qwfT
-fgeO85QasWwEik6qY2veqQZuEyN+R1BnmxeXjpEHJakI9yKzMykebQx6uDuudOJtHmnR+Au6Cocj
-kr1Sk1qvLh30sVQfFiyBBsYKwL5K1o/TW2Bg1lA9Mbh+BQzpLqIqYE8I1raGT0Zw8jaII2eBxonu
-IwEzWp7jJhyeOfv1o/WznR8OrmLgBMnuAD202QKVr5MIDA3uqUaFBGHIULNsskKweASE8VgbyU2O
-/0mVqdcYZf0EjghuV8O3mPeJozxurJN8v/ntEDlMrNI1Qld/ifQvBLe19m4w9QMVjv0oY3igdCsY
-is++C04vykC+U0YlibT7fXHpU3U6QTaX2ytRt9MMCG8NoL1E1eRq36rCcg1YzT/sP0g4ls7q+wVK
-HuUVZAkXNw29940zOJ31WaXdPMQusBxe06p3XG/4uVKvinFNptJsbiKUXqis3m9VVci1QL/4Fq6U
-DohpUQehJA9S4lQeSFn8BSM0NOfabcChbTtU4vdEm/84UtJHR2i+CYWsKsXz7R5FddiJhhkiiAb+
-gAr9dGQh1Xwnkx/E7MrtX5lqBVa7bnJBPnShhJYQO9f+g3Gwex4OY5QLLYz0/ZUs1vLHIoKqSYs6
-78OdNqxcXG47/uqistPUEal7DQZbpE0Aa9POydYICzQ7I2yEaZULUYF8Hy57PzFQeLXg3uzST8Qi
-aAUmD6uIGT8nxoX9SFgajVFfJxG52qQ0jeoJVf6pDr7oQyZ01ku4k4Iv1JaelMP5ZSeFkQEjugct
-ebjlvviRFiuUg52wOii54Utv+Pk+RoW7zJbY9pVQPW5hthRNRsclu9SNkC778vY/H28KvkZ40rGe
-Q3fCKlKl8y+UFQFpXOVD5g50Zn3/ytfEZKxuQpIGa+ID3TIOV0byd9y/JH04jnNWe192rXxz1yJv
-HLDZGnFDAiGHpu0TJaBcGTn9cfPMLCV6LVwWlsUY6rmXQfjSfnPkdcaOxWo2eFuFk9z22bcowAvk
-TtOXCKItyAsDnRGK5kDuRxDMZlB1FP2mvztIB4I5dW4+rHMxoaQZXpX1l/xWiozJQfeeG+RwePaZ
-GPUkppALcmntmxGctAMSAAjCfG6h5D5myC7Ink9mACneij83Aka9AaxOXIsAh5oEx3dqYGOTVWvy
-O6r+Q3DLm+wx2UpH1RsWwwBGMK5Hquya+w1MjGlRMaiM8MmxCJ62TeLSlYX1JDSo4vYx01aLR5ok
-oHBmHgvEGCs3aP9+EAUfHlVXf5jdFQDKVbqkdo0pKFVtx6GUax27XosRSUy/gc/+7Wj+YCX+ZMCB
-xLomqoi17LDiBFXpjncdKxFGHSd1C2xZPrCOhpQJWtXlAn1ROBppRg77D5rjzvitP2c+bfZFk9LG
-uAMYn7d9kA/uI1Tq13O6XsP4+oQQgFckPIcJ/5oGwAQdwWW+
+<?php
+/**
+* Smarty PHPunit tests compilation of {foreach} tag
+*
+* @package PHPunit
+* @author Uwe Tews
+*/
+
+/**
+* class for {foreach} tag tests
+*/
+class CompileForeachTests extends PHPUnit_Framework_TestCase
+{
+    public function setUp()
+    {
+        $this->smarty = SmartyTests::$smarty;
+        SmartyTests::init();
+    }
+
+    static function isRunnable()
+    {
+        return true;
+    }
+
+    /**
+    * test {foreach} tag
+    */
+    public function testForeach()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{foreach item=x from=$foo}{$x}{/foreach}');
+        $this->assertEquals("0123456789", $this->smarty->fetch($tpl));
+    }
+    public function testForeachBreak()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{foreach item=x from=$foo}{if $x == 2}{break}{/if}{$x}{/foreach}');
+        $this->assertEquals("01", $this->smarty->fetch($tpl));
+    }
+    public function testForeachContinue()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{foreach item=x from=$foo}{if $x == 2}{continue}{/if}{$x}{/foreach}');
+        $this->assertEquals("013456789", $this->smarty->fetch($tpl));
+    }
+    public function testForeachNotElse()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{foreach item=x from=$foo}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("0123456789", $this->smarty->fetch($tpl));
+    }
+    public function testForeachElse()
+    {
+         $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x from=$foo}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("else", $this->smarty->fetch($tpl));
+    }
+    public function testForeachKey()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x key=y from=[9,8,7,6,5,4,3,2,1,0]}{$y}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("09182736455463728190", $this->smarty->fetch($tpl));
+    }
+    public function testForeachKeyProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x from=[9,8,7,6,5,4,3,2,1,0]}{$x@key}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("09182736455463728190", $this->smarty->fetch($tpl));
+    }
+    public function testForeachTotal()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[0,1,2,3,4,5,6,7,8,9]}{$x}{foreachelse}else{/foreach}total{$smarty.foreach.foo.total}');
+        $this->assertEquals("0123456789total10", $this->smarty->fetch($tpl));
+    }
+    public function testForeachTotalProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x from=[0,1,2,3,4,5,6,7,8,9]}{$x}{foreachelse}else{/foreach}total{$x@total}');
+        $this->assertEquals("0123456789total10", $this->smarty->fetch($tpl));
+    }
+    public function testForeachIndexIteration()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[0,1,2,3,4,5,6,7,8,9]}{$smarty.foreach.foo.index}{$smarty.foreach.foo.iteration}{foreachelse}else{/foreach}');
+        $this->assertEquals("011223344556677889910", $this->smarty->fetch($tpl));
+    }
+    public function testForeachIndexIterationProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x from=[0,1,2,3,4,5,6,7,8,9]}{$x@index}{$x@iteration}{foreachelse}else{/foreach}');
+        $this->assertEquals("011223344556677889910", $this->smarty->fetch($tpl));
+    }
+    public function testForeachFirstLast()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[0,1,2,3,4,5,6,7,8,9]}{if $smarty.foreach.foo.first}first{/if}{if $smarty.foreach.foo.last}last{/if}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("first012345678last9", $this->smarty->fetch($tpl));
+    }
+    public function testForeachFirstLastProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[0,1,2,3,4,5,6,7,8,9]}{if $x@first}first{/if}{if $x@last}last{/if}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("first012345678last9", $this->smarty->fetch($tpl));
+    }
+    public function testForeachShowTrue()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[0,1]}{$x}{foreachelse}else{/foreach}{if $smarty.foreach.foo.show}show{else}noshow{/if}');
+        $this->assertEquals("01show", $this->smarty->fetch($tpl));
+    }
+    public function testForeachShowTrueProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[0,1]}{$x}{foreachelse}else{/foreach}{if $x@show}show{else}noshow{/if}');
+        $this->assertEquals("01show", $this->smarty->fetch($tpl));
+    }
+    public function testForeachShowFalse()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[]}{$x}{foreachelse}else{/foreach}{if $smarty.foreach.foo.show}show{else} noshow{/if}');
+        $this->assertEquals("else noshow", $this->smarty->fetch($tpl));
+    }
+    public function testForeachShowFalseProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach item=x name=foo from=[]}{$x}{foreachelse}else{/foreach}{if $x@show}show{else} noshow{/if}');
+        $this->assertEquals("else noshow", $this->smarty->fetch($tpl));
+    }
+    public function testForeachShorttags()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{foreach [9,8,7,6,5,4,3,2,1,0] x y foo}{$y}{$x}{foreachelse}else{/foreach}total{$smarty.foreach.foo.total}');
+        $this->assertEquals("09182736455463728190total10", $this->smarty->fetch($tpl));
+    }
+    /**
+    * test {foreach $foo as $x} tag
+    */
+    public function testNewForeach()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{foreach $foo as $x}{$x}{/foreach}');
+        $this->assertEquals("0123456789", $this->smarty->fetch($tpl));
+    }
+    public function testNewForeachNotElse()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[0,1,2,3,4,5,6,7,8,9]}{foreach $foo as $x}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("0123456789", $this->smarty->fetch($tpl));
+    }
+    public function testNewForeachElse()
+    {
+        $this->smarty->error_reporting  = error_reporting() & ~(E_NOTICE|E_USER_NOTICE);
+        $tpl = $this->smarty->createTemplate('eval:{foreach $foo as $x}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("else", $this->smarty->fetch($tpl));
+    }
+    public function testNewForeachKey()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[9,8,7,6,5,4,3,2,1,0]}{foreach $foo as $y=>$x}{$y}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("09182736455463728190", $this->smarty->fetch($tpl));
+    }
+    public function testNewForeachKeyProperty()
+    {
+        $tpl = $this->smarty->createTemplate('eval:{assign var=foo value=[9,8,7,6,5,4,3,2,1,0]}{foreach $foo as $x}{$x@key}{$x}{foreachelse}else{/foreach}');
+        $this->assertEquals("09182736455463728190", $this->smarty->fetch($tpl));
+    }
+    /*
+    *  test foreach and nocache
+    */
+    public function testForeachNocacheVar1()
+    {
+        $this->smarty->caching = true;
+        $tpl = $this->smarty->createTemplate('string:{foreach $foo as $x}{$x} {/foreach}');
+        $tpl->assign('foo',array(1,2),true);
+        $this->assertFalse($this->smarty->isCached($tpl));
+        $this->assertEquals("1 2 ", $this->smarty->fetch($tpl));
+    }
+    public function testForeachNocacheVar2()
+    {
+        $this->smarty->caching = true;
+        $tpl = $this->smarty->createTemplate('string:{foreach $foo as $x}{$x} {/foreach}');
+        $tpl->assign('foo',array(9,8),true);
+        $this->assertTrue($this->smarty->isCached($tpl));
+        $this->assertEquals("9 8 ", $this->smarty->fetch($tpl));
+    }
+    public function testForeachNocacheTag1()
+    {
+        $this->smarty->caching = true;
+        $tpl = $this->smarty->createTemplate('string:{foreach $foo as $x nocache}{$x} {/foreach}');
+        $tpl->assign('foo',array(1,2));
+        $this->assertFalse($this->smarty->isCached($tpl));
+        $this->assertEquals("1 2 ", $this->smarty->fetch($tpl));
+    }
+    public function testForeachNocacheTag2()
+    {
+        $this->smarty->caching = true;
+        $tpl = $this->smarty->createTemplate('string:{foreach $foo as $x nocache}{$x} {/foreach}');
+        $tpl->assign('foo',array(9,8));
+        $this->assertTrue($this->smarty->isCached($tpl));
+        $this->assertEquals("9 8 ", $this->smarty->fetch($tpl));
+    }
+    public function testForeachCache1()
+    {
+        $this->smarty->caching = true;
+        $tpl = $this->smarty->createTemplate('string:{foreach $foo as $x name=bar}{$x} {/foreach}');
+        $tpl->assign('foo',array(1,2));
+        $this->assertFalse($this->smarty->isCached($tpl));
+        $this->assertEquals("1 2 ", $this->smarty->fetch($tpl));
+    }
+    public function testForeachCache2()
+    {
+        $this->smarty->caching = true;
+        $tpl = $this->smarty->createTemplate('string:{foreach $foo as $x name=bar}{$x} {/foreach}');
+        $tpl->assign('foo',array(9,8));
+        $this->assertTrue($this->smarty->isCached($tpl));
+        $this->assertEquals("1 2 ", $this->smarty->fetch($tpl));
+    }
+}

@@ -1,245 +1,249 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-182jdPg/b5WNaW==
+<?php
+/**
+ * Message translations.
+ *
+ * This file is automatically generated by 'yiic message' command.
+ * It contains the localizable messages extracted from source code.
+ * You may modify this file by translating the extracted messages.
+ *
+ * Each array element represents the translation (value) of a message (key).
+ * If the value is empty, the message is considered as not translated.
+ * Messages that no longer need translation will have their translations
+ * enclosed between a pair of '@@' marks.
+ *
+ * NOTE, this file must be saved in UTF-8 encoding.
+ */
+return array (
+  'Alias "{alias}" is invalid. Make sure it points to an existing PHP file and the file is readable.' => '"{alias}" மாற்றுப்பெயர் சரியானது இல்லை. சரியான PHP கோப்புக்கு சுட்டிக்காட்டப்பட்டிருக்கிறதா என்று பார்க்கவும்.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory.' => '"{alias}" மாற்றுப்பெயர் சரியானது இல்லை. சரியான கோர்வைக்கு சுட்டிக்காட்டப்பட்டிருக்கிறதா என்று பார்க்கவும்.',
+  'Application Log' => 'பயன்பாட்டின் தடங்கள்',
+  'CDbConnection failed to open the DB connection.' => 'CDbConnection ஆல் தகவல்தளத்தை திறக்க இயலவில்லை.',
+  'CDbTestFixture.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbTestFixture.connectionID "{id}" சரியானது இல்லை. CDbConnection இன் ID க்கு சுட்டிக்காட்டப்பட்டிருக்கிறதா என்று பார்க்கவும்.',
+  'CTypedMap<{type}> can only hold objects of {type} class.' => 'CTypedMap<{type}> ஆல் {type} உடற்கூறுகளை மட்டுமே கொண்டிருக்க இயலும்.',
+  'CWinCache requires PHP wincache extension to be loaded.' => 'CWinCache PHP இன் wincache நீட்சியைச் சார்ந்து இருக்கின்றது.',
+  'CWinCache user cache is disabled. Please set wincache.ucenabled to On in your php.ini.' => 'CWinCache பயனாளர் சேமிப்பு முடக்கப்பட்டுள்ளது. உங்களின் php.ini கோப்பில் wincache.ucenabled செயலிலுள்ளதா என்று சரிபார்க்கவும்.',
+  'Failed to initialize the mcrypt module.' => 'mcrypt நீட்சியை செயலாக்க இயலவில்லை.',
+  'Failed to set unsafe attribute "{attribute}".' => 'பாதுகாப்பில்லாத "{attribute}" ஐ கொடுக்க இயலாது.',
+  'GD and FreeType PHP extensions are required.' => 'PHP இன் GD மற்றும் FreeType நீட்சிகள் வேண்டும்.',
+  'Resetting PK sequence is not supported.' => 'PK வரிசையை மாற்றுவது செயலாக்க இயலாது.',
+  'Setting integrity check is not supported.' => 'கெடுதலில்லாமை சரிபார்ப்பை செயலாக்க இயலாது.',
+  'The "range" property must be specified with a list of values.' => '"range" தண்மை மதிப்பு வரிசைகளைக் கொண்டிருக்க வேண்டும்.',
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" or "ccccc".' => 'வாரத்தின் கிழமையைக் குறிக்கும் மாதிரி "E", "EE", "EEE", "EEEE", "EEEEE", "e", "ee", "eee", "eeee", "eeeee", "c", "cccc" அல்லது "ccccc" ஆக இருக்க வேண்டும்.',
+  'The pattern for month must be "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" or "LLLL".' => 'மாதத்தைக் குறிக்கும் மாதிரி "M", "MM", "MMM", "MMMM", "L", "LL", "LLL" அல்லது "LLLL" ஆக இருக்க வேண்டும்.',
+  'The requested view "{name}" was not found.' => 'நீங்கள் வேண்டிய "{name}" காட்சி காணக் கிடைக்கவில்லை.',
+  'Unable to import "{alias}". Please check your server configuration to make sure you are allowed to change PHP include_path.' => '"{alias}" ஐ பதிவிறக்க இயலவில்லை. PHP இன் include_path ஐ உங்களால் மாற்ற முடியுமா என்று உங்களின் வழங்கியின் பண்புகளில் சரிபார்க்கவும்.',
+  'Unknown type "{type}".' => 'தெரியாத "{type}" வகை.',
+  'Your request is invalid.' => 'உங்களின் வேண்டுகோள் சரியானது இல்லை.',
+  '{attribute} cannot accept more than {limit} files.' => '{limit} கோப்புகளுக்கு மேல் {attribute} ஏற்றுக்கொள்ளாது.',
+  '{attribute} is in the list.' => '{attribute} வரிசையிலுள்ளது.',
+  '{className} does not support flushValues() functionality.' => '{className} உடற்கூறு flushValues() பயன்பாட்டை கொண்டிருக்கவில்லை.',
+  'CMultiFileUpload.name is required.' => 'CMultiFileUpload.name முக்கியமானது.',
+  'CSecurityManager.validation must be either "MD5" or "SHA1".' => 'CSecurityManager.validation இன் மதிப்பு "MD5" அல்லது "SHA1" ஆக இருக்க வேண்டும்.',
+  'Column "{column} does not exist in table "{table}".' => '"{table}" பட்டியலில் "{column}" விவரம் இல்லை.',
+  0 => 0,
+  'The pattern for day of the week must be "E", "EE", "EEE", "EEEE" or "EEEEE".' => 'வாரத்தின் கிழமையைக் குறிக்கும் மாதிரி "E", "EE", "EEE", "EEEE" அல்லது "EEEEE" ஆக இருக்க வேண்டும்.',
+  'The pattern for month must be "M", "MM", "MMM", or "MMMM".' => 'மாதத்தைக் குறிக்கும் மாதிரி "M", "MM", "MMM", அல்லது "MMMM" ஆக இருக்க வேண்டும்.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". The foreign key does not point to either joining table.' => 'ActiveRecord இன் "{class}" உடற்கூறிலுள்ள "{relation}" சார்பு தவறான "{key}" அயல் குறியீட்டுடன் (foreign key) வரையறுக்கப்பட்டிருக்கின்றது. இந்த அயல் குறியீடு இணைக்கப்படும் எந்த பட்டியலையும் குறிப்பிடவில்லை.',
+  'The requested view "{name}" is not found.' => 'நீங்கள் வேண்டிய "{name}" காட்சி இந்த தளத்தில் இல்லை.',
+  '{className} does not support flush() functionality.' => 'flush() செயலை {className} ஒத்துக்கொள்ளாது.',
+  '"{path}" is not a valid directory.' => '"{path}" சரியான கோப்புத் தொகுப்பு இல்லை.',
+  '&lt; Previous' => '&lt; முந்தையது',
+  '&lt;&lt; First' => '&lt;&lt; முதலாவது',
+  'Active Record requires a "db" CDbConnection application component.' => 'ActiveRecord இயங்க "தகவல் தள" CDbConnection அங்கத்தின் இணைப்பு இருக்க வேண்டும்.',
+  'Active record "{class}" has an invalid configuration for relation "{relation}". It must specify the relation type, the related active record class and the foreign key.' => 'ActiveRecord "{class}" தவறாக அமைக்கப்பட்ட "{relation}" சார்பைக் கொண்டுள்ளது. சார்பு வகை, சார்ந்துள்ள ActiveRecord class மற்றும் அயல் சாவி (Foreign Key) கொடுத்திருக்க வேண்டும்.',
+  'Active record "{class}" is trying to select an invalid column "{column}". Note, the column must exist in the table or be an expression with alias.' => 'ActiveRecord "{class}" தவறான "{column}" விவரத்தை தேர்ந்தெடுக்க முயற்சிக்கின்றது. குறிப்பு: தேர்ந்தெடுக்கும் விவரம் பட்டியலில் இருப்பதாகவோ அல்லது பட்டியலிலுள்ள வேறொரு விவரத்திற்கு மாற்றுப் பெயராகவோ இருத்தல் வேண்டும்.',
+  'Active record class "{class}" does not have a scope named "{scope}".' => 'ActiveRecord இன் "{class}" கூட்டுறுப்பு "{scope}" என்ற செயல்மட்டத்தை வரையறுக்கவில்லை.',
+  'Alias "{alias}" is invalid. Make sure it points to an existing directory or file.' => 'மாற்றுப்பெயர் "{alias}" தவறானது. கொடுத்துள்ள மாற்றுப்பெயர் ஏதோ ஒரு கோப்பையோ அல்லது கோர்வையையோ குறிப்பிடுகின்றதா என்று சோதித்துப் பார்க்கவும்.',
+  'Application base path "{path}" is not a valid directory.' => 'தளத்தின் அடிப்படை முகவரி "{path}" ஒரு கோர்வையைக் குறிக்கவில்லை.',
+  'Application runtime path "{path}" is not valid. Please make sure it is a directory writable by the Web server process.' => 'தளத்தின் இயங்கு நேர முகவரி "{path}" தவறானது. இந்த முகவரி இணைய வழங்குதளத்தால் எழுதப்படக்கூடிய கோர்வையைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
+  'Authorization item "{item}" has already been assigned to user "{user}".' => 'அனுமதியளிக்கும் "{item}" பொருளில் ஏற்கனவே "{user}" பயனாளருக்கு அனுமதியளிக்கப்பட்டுள்ளது.',
+  'Base path "{path}" is not a valid directory.' => 'தளத்தின் அடிப்படை முகவரி "{path}" சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'CApcCache requires PHP apc extension to be loaded.' => 'PHP-இன் apc உள்ளிணைப்பு இருந்தால்தான் CApcCache இயங்க முடியும்.',
+  'CAssetManager.basePath "{path}" is invalid. Please make sure the directory exists and is writable by the Web server process.' => 'CAssetManager.basePath முகவரி "{path}" தவறானது. இந்த முகவரி இணைய வழங்குதளத்தால் எழுதப்படக்கூடிய கோர்வையைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
+  'CCacheHttpSession.cacheID is invalid. Please make sure "{id}" refers to a valid cache application component.' => 'CCacheHttpSession.cacheID தவறாக உள்ளது. குறியீடு "{id}" சரியான சேமிப்பு (cache) அங்கத்தைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
+  'CCaptchaValidator.action "{id}" is invalid. Unable to find such an action in the current controller.' => 'CCaptchaValidator.action இன் "{id}" தவறானது. தற்போதைய கட்டுப்பாட்டில் அத்தகைய செயல் குறிப்பிடப்படவில்லை.',
+  'CDbAuthManager.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbAuthManager.connectionID இன் "{id}" தவறானது. அது CDbConnection அங்கத்தின் குறியீட்டைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
+  'CDbCache.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbCache.connectionID இன் "{id}" தவறானது. அது CDbConnection அங்கத்தின் குறியீட்டைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
+  'CDbCacheDependency.sql cannot be empty.' => 'CDbCacheDependency.sql காலியாக இருக்கக்கூடாது.',
+  'CDbCommand failed to execute the SQL statement: {error}' => 'CDbCommand ஆல் கொடுத்த SQL கட்டளையை செயல்படுத்த முடியவில்லை: {error}',
+  'CDbCommand failed to prepare the SQL statement: {error}' => 'CDbCommand ஆல் கொடுத்த SQL கட்டளையை தயார்படுத்த முடியவில்லை: {error}',
+  'CDbConnection does not support reading schema for {driver} database.' => 'CDbConnection இணைப்பு {driver} இயக்கி செயல்படுத்தும் தகவல் தளத்தின் அடிக்கூறை (schema) படிக்க இயலாது.',
+  'CDbConnection failed to open the DB connection: {error}' => 'CDbConnection ஆல் தகவல் தளத்திற்கு இணைப்பை உருவாக்க முடியவில்லை: {error}',
+  'CDbConnection is inactive and cannot perform any DB operations.' => 'CDbConnection இயங்கும் நிலையில் இல்லாததால் எந்த தகவல்தள செயலையும் செய்ய இயலாது.',
+  'CDbConnection.connectionString cannot be empty.' => 'CDbConnection.connectionString காலியாக இருக்கக்கூடாது.',
+  'CDbDataReader cannot rewind. It is a forward-only reader.' => 'CDbDataReader பின்னோக்கி படிக்காது. முன்னோக்கி படிக்க மட்டுமே வரையறுக்கப்பட்டுள்ளது.',
+  'CDbHttpSession.connectionID "{id}" is invalid. Please make sure it refers to the ID of a CDbConnection application component.' => 'CDbHttpSession.connectionID இன் "{id}" தவறானது. அது CDbConnection அங்கத்தின் குறியீட்டைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
+  'CDbLogRoute.connectionID "{id}" does not point to a valid CDbConnection application component.' => 'CDbLogRoute.connectionID இன் "{id}" சரியான CDbConnection அங்கத்தின் குறியீட்டைக் குறிக்கவில்லை.',
+  'CDbMessageSource.connectionID is invalid. Please make sure "{id}" refers to a valid database application component.' => 'CDbMessageSource.connectionID தவறானது. "{id}" சரியான தகவல்தள அங்கத்தைக் குறிக்கின்றதா என்று சோதிக்கவும்.',
+  'CDbTransaction is inactive and cannot perform commit or roll back operations.' => 'CDbTransaction செயலில் இல்லாததால் கட்டளைக் குழுக்களை இயக்கவோ திருப்பி விடவோ இயலாது.',
+  'CDirectoryCacheDependency.directory cannot be empty.' => 'CDirectoryCacheDependency.directory காலியாக இருக்கக்கூடாது.',
+  'CEAcceleratorCache requires PHP eAccelerator extension to be loaded, enabled or compiled with the "--with-eaccelerator-shared-memory" option.' => 'CEAcceleratorCache ஐ செயலாக்க PHP இன் eAccelerator உள்ளிணைப்பு செயலாக்கப்பட்டோ, இயங்குநிலையிலோ அல்லது "--with-eaccelerator-shared-memory" அமைப்பின்மூலம் ஒன்றாக்கப்பட்டோ இருக்க வேண்டும்.',
+  'CFileCacheDependency.fileName cannot be empty.' => 'CFileCacheDependency.fileName காலியாக இருக்கக்கூடாது.',
+  'CFileLogRoute.logPath "{path}" does not point to a valid directory. Make sure the directory exists and is writable by the Web server process.' => 'CFileLogRoute.logPath இன் "{path}" முகவரி சரியான கோர்வையைக் குறிக்கவில்லை. இந்த முகவரி இணைய வழங்குதளத்தால் எழுதப்படக்கூடிய கோர்வையைக் குறிக்கின்றதா என்று சரிபார்க்கவும்.',
+  'CFilterChain can only take objects implementing the IFilter interface.' => 'CFilterChain ஆல் IFilter இடைமுகப்பை வரையறுத்துள்ள பொருட்களை மட்டும்தான் உபயோகிக்க முடியும்.',
+  'CFlexWidget.baseUrl cannot be empty.' => 'CFlexWidget.baseUrl காலியாக இருக்கக்கூடாது.',
+  'CFlexWidget.name cannot be empty.' => 'CFlexWidget.name காலியாக இருக்கக்கூடாது.',
+  'CGlobalStateCacheDependency.stateName cannot be empty.' => 'CGlobalStateCacheDependency.stateName காலியாக இருக்கக்கூடாது.',
+  'CHttpCookieCollection can only hold CHttpCookie objects.' => 'CHttpCookieCollection ஆல் CHttpCookie பொருட்களை மட்டும்தான் உள்ளடக்க முடியும்.',
+  'CHttpRequest is unable to determine the entry script URL.' => 'CHttpRequest ஆல் உள்நுழை நிரலின் முகவரியை கண்டுபிடிக்க இயலவில்லை.',
+  'CHttpRequest is unable to determine the path info of the request.' => 'CHttpRequest ஆல் வேண்டுகோளின் சரியான முகவரியை நிர்ணயிக்க முடியவில்லை.',
+  'CHttpRequest is unable to determine the request URI.' => 'CHttpRequest ஆல் வேண்டுகோளின் சரியான முகவரியை நிர்ணயிக்க முடியவில்லை.',
+  'CHttpSession.cookieMode can only be "none", "allow" or "only".' => 'CHttpSession.cookieMode இல் "none", "allow" அல்லது "only" மதிப்புகளை மட்டுமே இருத்தல் வேண்டும்.',
+  'CHttpSession.gcProbability "{value}" is invalid. It must be an integer between 0 and 100.' => 'CHttpSession.gcProbability இன் "{value}" மதிப்பு தவறானது. மதிப்பு 0 முதல் 100 வரையிலான எண்ணாக மட்டுமே இருக்க வேண்டும்.',
+  'CHttpSession.savePath "{path}" is not a valid directory.' => 'CHttpSession.savePath முகவரி "{path}" சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'CMemCache server configuration must be an array.' => 'CMemCache இன் வழங்குதள அமைப்புகள் அடுக்குகளாக (array) மட்டுமே இருக்க வேண்டும்.',
+  'CMemCache server configuration must have "host" value.' => 'CMemCache இன் வழங்குதள அமைப்புகள் "host" மதிப்பை கொண்டிருக்க வேண்டும்.',
+  'CProfileLogRoute found a mismatching code block "{token}". Make sure the calls to Yii::beginProfile() and Yii::endProfile() be properly nested.' => 'பொருந்தாத "{token}" நிரல் குழுவை CProfileLogRoute கண்டுபிடித்துள்ளது. Yii::beginProfile() மற்றும் Yii::endProfile() அழைப்புகள் ஒழுங்கான சங்கிலியில் அமைந்துள்ளதா என்று சரிபார்க்கவும்.',
+  'CProfileLogRoute.report "{report}" is invalid. Valid values include "summary" and "callstack".' => 'CProfileLogRoute.report இன் "{report}" தவறானது. "summary" மற்றும் "callstack" மட்டுமே சரியான மதிப்புகள்.',
+  'CSecurityManager requires PHP mcrypt extension to be loaded in order to use data encryption feature.' => 'PHP இன் mcrypt உள்ளிணைப்பு இருந்தால்தான் CSecurityManager இன் தகவல் உருமாற்று வசதியை பயன்படுத்த முடியும்.',
+  'CSecurityManager.encryptionKey cannot be empty.' => 'CSecurityManager.encryptionKey காலியாக இருக்கக்கூடாது.',
+  'CSecurityManager.validationKey cannot be empty.' => 'CSecurityManager.validationKey காலியாக இருக்கக்கூடாது.',
+  'CTypedList<{type}> can only hold objects of {type} class.' => 'CTypedList<{type}> ஆல் {type} வகை பொருட்களை மட்டுமே உட்கொள்ள முடியும்.',
+  'CUrlManager.UrlFormat must be either "path" or "get".' => 'CUrlManager.UrlFormat இன் மதிப்பு "path" அல்லது "get" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'CXCache requires PHP XCache extension to be loaded.' => 'PHP இன் XCache உள்ளிணைப்பு இருந்தால்தான் CXCache ஆல் இயங்க முடியும்.',
+  'CZendDataCache requires PHP Zend Data Cache extension to be loaded.' => 'PHP இன் Zend Data Cache உள்ளிணைப்பு இருந்தால்தான் CZendDataCache ஆல் இயங்க முடியும்.',
+  'Cannot add "{child}" as a child of "{name}". A loop has been detected.' => '"{name}" இன் வாரிசாக "{child}" ஐ சேர்க்க முடியாது. ஒரு சுழற்சி கண்டுபிடிக்கப்பட்டுள்ளது.',
+  'Cannot add "{child}" as a child of "{parent}". A loop has been detected.' => '"{parent}" இன் வாரிசாக "{child}" ஐ சேர்க்க முடியாது. ஒரு சுழற்சி கண்டுபிடிக்கப்பட்டுள்ளது.',
+  'Cannot add "{name}" as a child of itself.' => '"{name}" இன் வாரிசாக அதையே சேர்க்க முடியாது.',
+  'Cannot add an item of type "{child}" to an item of type "{parent}".' => '"{parent}" வகை பொருளுடன் "{child}" வகை பொருளை சேர்க்க முடியாது.',
+  'Column name must be either a string or an array.' => 'பட்டியல் விவரத்தின் பெயர் எழுத்துக்கள் அல்லது அடுக்காக மட்டுமே இருக்க வேண்டும்.',
+  'Either "{parent}" or "{child}" does not exist.' => '"{parent}" அல்லது "{child}" இல்லை.',
+  'Error: Table "{table}" does not have a primary key.' => '"{table}" பட்டியலில் தலைப்புக் குறி (Primary Key) இல்லை.',
+  'Error: Table "{table}" has a composite primary key which is not supported by crud command.' => '"{table}" பட்டியல் பலமதிப்பு கொண்ட தலைப்புக் குறியைக் (Primary Key) கொண்டுள்ளதால் அதில் crud கட்டளையை பயன்படுத்த முடியாது.',
+  'Event "{class}.{event}" is attached with an invalid handler "{handler}".' => '"{class}.{event}" நிகழ்ச்சி தவறான "{handler}" கையாளுநரைக் கொண்டுள்ளது.',
+  'Event "{class}.{event}" is not defined.' => '"{class}.{event}" நிகழ்ச்சி வரையறுக்கப்படவில்லை.',
+  'Extension path "{path}" does not exist.' => 'உள்ளிணைப்பின் முகவரி "{path}" சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'Failed to write the uploaded file "{file}" to disk.' => 'பதிவேற்றிய "{file}" கோப்பை தரவட்டில் எழுத முடியவில்லை.',
+  'File upload was stopped by extension.' => 'கோப்பின் பதிவேற்றல் உள்ளிணைப்பால் நிறுத்தப்பட்டுவிட்டது.',
+  'Filter "{filter}" is invalid. Controller "{class}" does have the filter method "filter{filter}".' => '"{filter}" வடிகட்டி தவறானது. "{class}" கட்டுப்பாட்டில் "filter{filter}" என்கிற வரையறை இல்லை.',
+  'Get a new code' => 'வேறு எழுத்துக்கள் கொடு',
+  'Go to page: ' => 'பக்கத்திற்கு செல்: ',
+  'Invalid MO file revision: {revision}.' => 'MO கோப்பு சரிபார்ப்பு {revision} தவறானது.',
+  'Invalid MO file: {file} (magic: {magic}).' => 'MO கோப்பின் {file} (magic: {magic}) தவறானது.',
+  'Invalid enumerable value "{value}". Please make sure it is among ({enum}).' => 'தொடர் மதிப்பு "{value}" தவறானது. அது ({enum}) தொடர் மதிப்பிற்குள் கொடுக்கப்பட்டுள்ளதா என்று சோதிக்கவும்.',
+  'Invalid operator "{operator}".' => 'செயலாக்கி "{operator}" தவறானது.',
+  'Last &gt;&gt;' => 'கடைசி &gt;&gt;',
+  'List data must be an array or an object implementing Traversable.' => 'வரிசை மதிப்பு Traversable ஐ வரையறுத்துள்ள அடுக்கு (array) அல்லது பொருளாக (object) இருக்க வேண்டும்.',
+  'List index "{index}" is out of bound.' => 'வரிசை சுட்டி "{index}" எல்லைக்குள் இல்லை.',
+  'Login Required' => 'நுழைந்திருக்க வேண்டும்',
+  'Map data must be an array or an object implementing Traversable.' => 'வரைபட மதிப்பு Traversable ஐ வரையறுத்துள்ள அடுக்கு (array) அல்லது பொருளாக (object) இருக்க வேண்டும்.',
+  'Missing the temporary folder to store the uploaded file "{file}".' => 'பதிவேற்றிய "{file}" கோப்பை சேமிக்க தற்காலிக கோர்வை இல்லை.',
+  'Next &gt;' => 'அடுத்தது &gt;',
+  'No columns are being updated for table "{table}".' => '"{table}" பட்டியலின் எந்த விவரமும் புதுப்பிக்கப்படவில்லை.',
+  'No counter columns are being updated for table "{table}".' => '"{table}" பட்டியலின் எந்த பின்னோக்கு விவரமும் புதுப்பிக்கப்படவில்லை.',
+  'Object configuration must be an array containing a "class" element.' => 'பொருளின் அமைப்புகள் "class" ஐக் கொண்டுள்ள அடுக்காக (array) இருக்க வேண்டும்.',
+  'Please fix the following input errors:' => 'தயவு செய்து கீழுள்ள உள்ளீட்டுப் பிழைகளை சரிசெய்யவும்:',
+  'Property "{class}.{property}" is not defined.' => '"{class}.{property}" தண்மை வரையறுக்கப்படவில்லை.',
+  'Property "{class}.{property}" is read only.' => '"{class}.{property}" தண்மை படிக்க மட்டுமே வரையறுக்கப்பட்டுள்ளது.',
+  'Queue data must be an array or an object implementing Traversable.' => 'நீள்வரிசை மதிப்பு Traversable ஐ வரையறுத்துள்ள அடுக்கு (array) அல்லது பொருளாக (object) இருக்க வேண்டும்.',
+  'Relation "{name}" is not defined in active record class "{class}".' => '"{name}" சார்பு "{class}" கூட்டில் இல் வரையறுக்கப்படவில்லை.',
+  'Stack data must be an array or an object implementing Traversable.' => 'நீள்அடுக்கு மதிப்பு Traversable ஐ வரையறுத்துள்ள அடுக்கு (array) அல்லது பொருளாக (object) இருக்க வேண்டும்.',
+  'Table "{table}" does not exist.' => 'பட்டியல் "{table}" காணவில்லை.',
+  'Table "{table}" does not have a column named "{column}".' => '"{table}" பட்டியலில் "{column}" விவரம் வரையறுக்கப்படவில்லை.',
+  'The "filter" property must be specified with a valid callback.' => '"filter" தண்மை ஒழுங்கான மறுஅழைப்பைக் (callback) கொண்டிருக்க வேண்டும்.',
+  'The "pattern" property must be specified with a valid regular expression.' => '"pattern" தண்மை முறையான regular expression உடன் வரையறுக்கப்பட்டிருக்க வேண்டும்.',
+  'The CSRF token could not be verified.' => 'CSRF டோக்கனை சரிபார்க்க இயலவில்லை.',
+  'The STAT relation "{name}" cannot have child relations.' => 'STAT இன் சார்பு "{name}" சார்பு வாரிசுகளை கொண்டிருக்க முடியாது.',
+  'The URL pattern "{pattern}" for route "{route}" is not a valid regular expression.' => 'முகவரியின் "{route}" வழிக்கான "{pattern}" மாதிரி ஓழங்கான regular expression இல்லை.',
+  'The active record cannot be deleted because it is new.' => 'தற்போதைய தகவல் பதிவு புதியதாக இருப்பதால் அதை நீக்க இயலாது.',
+  'The active record cannot be inserted to database because it is not new.' => 'தற்போதைய தகவல் பதிவு பதியதாக இல்லாததால் தகவல் தளத்திற்குள் நுழைக்க இயலாது.',
+  'The active record cannot be updated because it is new.' => 'தற்போதைய தகவல் பதிவு புதியதாக இருப்பதால் அதைப் புதுப்பிக்க இயலாது.',
+  'The asset "{asset}" to be published does not exist.' => 'பதிப்பிக்க வேண்டிய "{asset}" சொத்து கிடைக்கவில்லை.',
+  'The command path "{path}" is not a valid directory.' => 'கட்டளையின் "{path}" முகவரி சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'The controller path "{path}" is not a valid directory.' => 'கட்டுப்பாட்டின் "{path}" முகவரி சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'The file "{file}" cannot be uploaded. Only files with these extensions are allowed: {extensions}.' => '"{file}" கோப்பை பதிவேற்ற முடியவில்லை. {extensions} வகை கோப்புகளை மட்டுமே பதிவேற்ற இயலும்.',
+  'The file "{file}" is too large. Its size cannot exceed {limit} bytes.' => '"{file}" கோப்பு பெரியதாக உள்ளது. இதன் அளவு {limit} பைட்டுகளைத் தாண்டி இருக்கக்கூடாது.',
+  'The file "{file}" is too small. Its size cannot be smaller than {limit} bytes.' => '"{file}" கோப்பு சிறியதாக உள்ளது. இதன் அளவு {limit} பைட்டுகளை விட குறைவாக இருக்கக்கூடாது.',
+  'The file "{file}" was only partially uploaded.' => '"{file}" கோப்பின் ஒரு பகுதி மட்டுமே பதிவேற்றப்பட்டுள்ளது.',
+  'The first element in a filter configuration must be the filter class.' => 'வடிகட்டியை வரையறுக்கும் அமைப்புகளில் முதன்மையாக வடிகட்டியின் கூட்டு இருத்தல் வேண்டும்.',
+  'The item "{name}" does not exist.' => '"{name}" கிடைக்கவில்லை.',
+  'The item "{parent}" already has a child "{child}".' => '"{parent}" ஏற்கனவே ஒரு "{child}" வாரிசைக் கொண்டுள்ளது.',
+  'The layout path "{path}" is not a valid directory.' => 'கட்டமைப்பின் "{path}" முகவரி சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'The list is read only.' => 'வரிசை படிக்க மட்டுமே.',
+  'The map is read only.' => 'வரைபடம் படிக்க மட்டுமே.',
+  'The module path "{path}" is not a valid directory.' => 'உட்கூறு (module) முகவரி "{path}" சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'The pattern for 12 hour format must be "h" or "hh".' => '12 மணி நேரத்திற்கான மாதிரி "h" அல்லது "hh" ஐ மட்டுமே கொண்டிருக்க வேண்டும்.',
+  'The pattern for 24 hour format must be "H" or "HH".' => '24 மணி நேரத்திற்கான மாதிரி "H" அல்லது "HH" ஐ மட்டுமே கொண்டிருக்க வேண்டும்.',
+  'The pattern for AM/PM marker must be "a".' => 'காலை மாலைக்கான மாதிரி "a" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for day in month must be "F".' => 'கிழமைக்கான மாதிரி "F" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for day in year must be "D", "DD" or "DDD".' => 'வருடத்தின் நாளுக்கான மாதிரி "D", "DD" அல்லது "DDD" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for day of the month must be "d" or "dd".' => 'மாதத்தின் நாளுக்கான மாதிரி "d" அல்லது "dd" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for era must be "G", "GG", "GGG", "GGGG" or "GGGGG".' => 'யுகத்திற்கான மாதிரி "G", "GG", "GGG", "GGGG" அல்லது "GGGGG" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for hour in AM/PM must be "K" or "KK".' => 'காலை மாலை நேரத்திற்கான மாதிரி "K" அல்லது "KK" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for hour in day must be "k" or "kk".' => 'நாளின் நேரத்திற்கான மாதிரி "k" அல்லது "kk" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for minutes must be "m" or "mm".' => 'நிமிடங்களுக்கான மாதிரி "m" அல்லது "mm" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for seconds must be "s" or "ss".' => 'நொடிக்கான மாதிரி "s" அல்லது "ss" ஆக மட்டுமே இருக்க வெண்டும்.',
+  'The pattern for time zone must be "z" or "v".' => 'நேரப் பிரதேசத்திற்கான மாதிரி "z" அல்லது "v" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for week in month must be "W".' => 'மாதத்திலுள்ள வாரத்திற்கான மாதிரி "W" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The pattern for week in year must be "w".' => 'வருடத்திலுள்ள வாரத்திற்கான மாதிரி "w" ஆக மட்டுமே இருக்க வேண்டும்.',
+  'The queue is empty.' => 'நீள்வரிசை காலியாக உள்ளது.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly. The join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{relation}" சார்பு சரியாக வரையறுக்கப்படவில்லை. அயல் குறியீட்டில் (foreign key) குறிப்பிடப்பட்டுள்ள "{joinTable}" பட்டியல் தகவல்தளத்தில் இல்லை.',
+  'The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{relation}" சார்பு சரியாக வரையறுக்கப்படவில்லை: அயல் குறியீட்டில் (foreign key) குறிப்பிடப்பட்டுள்ள "{joinTable}" பட்டியல் தகவல்தளத்தில் இல்லை.',
+  'The relation "{relation}" in active record class "{class}" is specified with a foreign key "{key}" that does not point to the parent table "{table}".' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{relation}" சார்பு மூல பட்டியல் "{table}" ஐக் குறிக்காத "{key}" அயல் குறியீட்டுடன் (foreign key) வரையறுக்கப்பட்டுள்ளது.',
+  'The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{relation}" சார்பு முற்றுப்பெறாத அயல் குறியீட்டுடன் (foreign key) வரையறுக்கப்பட்டிருக்கின்றது. அயல் குறியீடு இணைக்கப்படும் இரண்டு பட்டியலிலுமுள்ள விவரங்களை குறித்திருக்க வேண்டும்.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key "{key}". There is no such column in the table "{table}".' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{relation}" சார்பு தவறான அயல் குறியீட்டுடன் (foreign key) வரையறுக்கப்பட்டிருக்கின்றது. "{table}" பட்டியலில் அந்தக் குறியீட்டிலிருக்கும் விவரம் எதுவும் இல்லை.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{relation}" சார்பு தவறான அயல் குறியீட்டுடன் (foreign key) வரையறுக்கப்பட்டிருக்கின்றது. அந்தக் குறியீட்டிலிருக்கும் விவரம் அது குறிக்கும் "{table}" பட்டியலில் உள்ள தலைப்பு குறியீட்டுகளுடன் (primary keys) பொருந்தியிருக்க வேண்டும்.',
+  'The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The format of the foreign key must be "joinTable(fk1,fk2,...)".' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{relation}" சார்பு தவறான அயல் குறியீட்டுடன் (foreign key) வரையறுக்கப்பட்டிருக்கின்றது. அயல் குறியீட்டு முறை "joinTable(fk1,fk2,...)" ஆக இருக்க வேண்டும்.',
+  'The stack is empty.' => 'நீள்அடுக்கு காலியாக உள்ளது.',
+  'The system is unable to find the requested action "{action}".' => 'நீங்கள் வேண்டிய "{action}" செயல் இந்த தளத்தில் இல்லை.',
+  'The system view path "{path}" is not a valid directory.' => 'தளத்தின் பார்வை முகவரி "{path}" சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'The table "{table}" for active record class "{class}" cannot be found in the database.' => 'ActiveRecord இன் "{class}" கூட்டிலுள்ள "{table}" பட்டியல் தகவல்தளத்தில் இல்லை.',
+  'The value for the column "{column}" is not supplied when querying the table "{table}".' => '"{table}" பட்டியலை வினவும் போது தலைப்பு குறியீடு "{key}" இன் மதிப்பு வழங்கப்படவில்லை.',
+  'The verification code is incorrect.' => 'பாதுகாப்பு எழுத்துக்கள் சரியாக கொடுக்கப்படவில்லை.',
+  'The view path "{path}" is not a valid directory.' => 'பார்வை முகவரி "{path}" சரியான கோர்வையைக் குறிக்கவில்லை.',
+  'Theme directory "{directory}" does not exist.' => 'ஒப்பனையின் "{directory}" கோர்வை தளத்தில் இல்லை.',
+  'This content requires the <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a>.' => 'இந்தப் பகுதியைக் காட்ட <a href="http://www.adobe.com/go/getflash/">Adobe Flash Player</a> வேண்டும்.',
+  'Unable to add an item whose name is the same as an existing item.' => 'நீங்கள் சேர்க்க விரும்பும் பொருளின் பெயர் ஏற்கனவே வேறொரு பொருளுக்குக் கொடுக்கப்பட்டுள்ளது.',
+  'Unable to change the item name. The name "{name}" is already used by another item.' => 'உங்கள் பொருளின் பெயரை "{name}" ஆக மாற்ற முடியவில்லை. அது வேறொரு பொருளுக்கு ஏற்கனவே கொடுக்கப்பட்டுள்ளது.',
+  'Unable to create application state file "{file}". Make sure the directory containing the file exists and is writable by the Web server process.' => 'தளத்தின் நிலைக் கோப்பு "{file}" ஐ உருவாக்க முடியவில்லை. இந்த கோப்பைக் கொண்டுள்ள கோர்வை இணைய வழங்குதளத்தால் எழுதப்படக்கூடியதாக இருக்கின்றதா என்று சரிபார்க்கவும்.',
+  'Unable to lock file "{file}" for reading.' => '"{file}" கோப்பை படிப்பதற்காக முடக்க இயலவில்லை.',
+  'Unable to lock file "{file}" for writing.' => '"{file}" கோப்பை எழுதுவதற்காக முடக்க இயலவில்லை.',
+  'Unable to read file "{file}".' => '"{file}" கோப்பை படிக்க இயலவில்லை.',
+  'Unable to replay the action "{object}.{method}". The method does not exist.' => '"{object}.{method}" செயலை திரும்பவும் செயல்படுத்த முடியவில்லை. செயலைக் காணவில்லை.',
+  'Unable to resolve the request "{route}".' => 'நீங்கள் வேண்டிய "{route}" வழித்தடத்தை சரிபார்க்க இயலவில்லை.',
+  'Unable to write file "{file}".' => '"{file}" கோப்பில் எழுத இயலவில்லை.',
+  'Unknown authorization item "{name}".' => '"{name}" அனுமதியைக் காணவில்லை.',
+  'Unrecognized locale "{locale}".' => 'மொழிக்குறியீடு "{locale}" சரியானது இல்லை.',
+  'View file "{file}" does not exist.' => '"{file}" கோப்பு கிடைக்கவில்லை.',
+  'Yii application can only be created once.' => 'Yii அங்கத்தை ஒருமுறைதான் உருவாக்க முடியும்.',
+  'You are not authorized to perform this action.' => 'இந்தச் செயலை செய்யும் அதிகாரம் உங்களுக்கு வழங்கப்படவில்லை.',
+  'Your request is not valid.' => 'உங்களின் விருப்பம் தவறானது.',
+  '{attribute} "{value}" has already been taken.' => '{attribute} விவரத்திற்கு தாங்கள் கொடுத்த "{value}" மதிப்பு ஏற்கனவே கொடுக்கப்பட்டுள்ளது.',
+  '{attribute} "{value}" is invalid.' => '{attribute} விவரத்தின் "{value}" மதிப்பு தவறானது.',
+  '{attribute} cannot be blank.' => '{attribute} காலியாக இருக்கக்கூடாது.',
+  '{attribute} is invalid.' => '{attribute} சரியாக இல்லை.',
+  '{attribute} is not a valid URL.' => '{attribute} சரியான முகவரி இல்லை.',
+  '{attribute} is not a valid email address.' => '{attribute} சரியான மின்னஞ்சல் முகவரி இல்லை.',
+  '{attribute} is not in the list.' => '{attribute} விவரம் வரிசையில் இல்லை.',
+  '{attribute} is of the wrong length (should be {length} characters).' => '{attribute} அளவு தவறாக உள்ளது ({length} எழுத்துக்கள் மட்டும்).',
+  '{attribute} is too big (maximum is {max}).' => '{attribute} அளவு அதிகமாக உள்ளது (அதிகபட்சம் {max} எழுத்துக்கள் மட்டும்).',
+  '{attribute} is too long (maximum is {max} characters).' => '{attribute} அளவு அதிகமாக நீண்டுள்ளது (அதிகபட்சம் {max} எழுத்துக்கள் மட்டும்).',
+  '{attribute} is too short (minimum is {min} characters).' => '{attribute} அளவு குறைவாக உள்ளது (குறைந்தபட்சம் {min} எழுத்துக்கள்)',
+  '{attribute} is too small (minimum is {min}).' => '{attribute} அளவு மிகவும் குறைவாக உள்ளது (குறைந்தபட்சம் {min} எழுத்துக்கள்)',
+  '{attribute} must be a number.' => '{attribute} ஒரு எண்ணாக இருக்க வேண்டும்',
+  '{attribute} must be an integer.' => '{attribute} ஒரு புள்ளியற்ற எண்ணாக இருக்க வேண்டும்.',
+  '{attribute} must be either {true} or {false}.' => '{attribute} விவரத்தின் மதிப்பு {true} அல்லது {false} ஆகத்தான் இருக்க வேண்டும்.',
+  '{attribute} must be greater than "{compareValue}".' => '{attribute} இன் மதிப்பு "{compareValue}" ஐ விட பெரியதாக இருக்க வேண்டும்.',
+  '{attribute} must be greater than or equal to "{compareValue}".' => '{attribute} இன் மதிப்பு "{compareValue}" ஐ விட பெரியதாகவோ அல்லது சமமாகவோ இருக்க வேண்டும்.',
+  '{attribute} must be less than "{compareValue}".' => '{attribute} இன் மதிப்பு "{compareValue}" ஐ விட சிறியதாக இருக்க வேண்டும்.',
+  '{attribute} must be less than or equal to "{compareValue}".' => '{attribute} இன் மதிப்பு "{compareValue}" ஐ விட சிறியதாகவோ அல்லது சமமாகவோ இருக்க வேண்டும்.',
+  '{attribute} must be repeated exactly.' => '{attribute} சரியாக திருப்பி அடித்திருக்க வேண்டும்.',
+  '{attribute} must be {type}.' => '{attribute} இன் மதிப்பு {type} வகையாக இருக்க வேண்டும்.',
+  '{attribute} must be {value}.' => '{attribute} இன் மதிப்பு {value} ஆக இருக்க வேண்டும்.',
+  '{attribute} must not be equal to "{compareValue}".' => '{attribute} இன் மதிப்பு "{compareValue}" க்கு சமமாக இருக்கக்கூடாது.',
+  '{className} does not support add() functionality.' => 'add() செயலை {className} ஒத்துக்கொள்ளாது.',
+  '{className} does not support delete() functionality.' => 'delete() செயலை {className} ஒத்துக்கொள்ளாது.',
+  '{className} does not support get() functionality.' => 'get() செயலை {className} ஒத்துக்கொள்ளாது.',
+  '{className} does not support set() functionality.' => 'set() செயலை {className} ஒத்துக்கொள்ளாது.',
+  '{class} does not have a method named "{name}".' => '"{name}" செயலை {class} கொண்டிருக்கவில்லை.',
+  '{class} does not have relation "{name}".' => '"{name}" சார்பை {class} கொண்டிருக்கவில்லை.',
+  '{class} does not support fetching all table names.' => 'அனைத்து பட்டியலையும் வேண்டுவதை {class} ஒத்துக்கொள்ளாது.',
+  '{class} has an invalid validation rule. The rule must specify attributes to be validated and the validator name.' => '{class} தவறான சரிபார்ப்புக் கொள்கையைக் கொண்டுள்ளது. சரியான கொள்கை சரிபார்க்க வேண்டிய விவரங்களையும் சரிபார்ப்பவரின் பெயரையும் கொண்டிருக்க வேண்டும்.',
+  '{class} must specify "model" and "attribute" or "name" property values.' => '"model" மற்றும் "attribute" அல்லது "name" தண்மை மதிப்புகளை {class} கொண்டிருக்க வேண்டும்.',
+  '{class}.allowAutoLogin must be set true in order to use cookie-based authentication.' => '{class}.allowAutoLogin இயங்கு நிலையிலிருந்தால்தான் குக்கீக்களின் மூலம் அனுமதியளிக்க இயலும்.',
+  '{class}::authenticate() must be implemented.' => '{class}::authenticate() கண்டிப்பாக வரையறுக்கப்பட்டிருக்க வேண்டும்.',
+  '{controller} cannot find the requested view "{view}".' => '{controller} கட்டுப்பாட்டால் நீங்கள் வேண்டிய "{view}" பார்வையை கண்டுபிடிக்க இயலவில்லை.',
+  '{controller} contains improperly nested widget tags in its view "{view}". A {widget} widget does not have an endWidget() call.' => '{controller} கட்டுப்பாடு தனது "{view}" பார்வையில் தவறாக அமைக்கப்பட்ட கருவிக் குறிகளை கொண்டுள்ளது. ஒரு {widget} கருவி endWidget() அழைப்பு இல்லாமல் இருக்கின்றது.',
+  '{controller} has an extra endWidget({id}) call in its view.' => '{controller} கட்டுப்பாடு அதிகமான endWidget({id}) அழைப்பை கொண்டுள்ளது.',
+  '{widget} cannot find the view "{view}".' => '{widget} கருவியால் "{view}" பார்வையை காண இயலவில்லை.',
+);

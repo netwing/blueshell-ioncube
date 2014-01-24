@@ -1,294 +1,509 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * CldrCommand class file.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+/**
+ * CldrCommand converts the locale data from the {@link http://www.unicode.org/cldr/ CLDR project}
+ * to PHP scripts so that they can be more easily used in PHP programming.
+ *
+ * The script respects locale inheritance so that the PHP data for a child locale
+ * will contain all its parents' locale data if they are not specified in the child locale.
+ * Therefore, to import the data for a locale, only the PHP script for that particular locale
+ * needs to be included.
+ *
+ * Note, only the data relevant to number and date formatting are extracted.
+ * Each PHP script file is named as the corresponding locale ID in lower case.
+ *
+ * @author Qiang Xue <qiang.xue@gmail.com>
+ * @package system.build
+ * @since 1.0
+ */
+class CldrCommand extends CConsoleCommand
+{
+	protected $pluralRules = array();
+
+	public function getHelp()
+	{
+		return <<<EOD
+USAGE
+  build cldr <data-path>
+
+DESCRIPTION
+  This command converts the locale data from the CLDR project
+  to PHP scripts so that they can be more easily used in PHP programming.
+
+  The script respects locale inheritance so that the PHP data for
+  a child locale will contain all its parent locale data if they are
+  not specified in the child locale. Therefore, to import the data
+  for a locale, only the PHP script for that particular locale needs
+  to be included.
+
+  Note, only the data relevant to number and date formatting are extracted.
+  Each PHP script file is named as the corresponding locale ID in lower case.
+
+  The resulting PHP scripts are created under the same directory that
+  contains the original CLDR data.
+
+PARAMETERS
+ * data-path: required, the original CLDR data directory. This
+   directory should contain "main" subdirectory with hundreds of XML files
+   and "supplemental" subdirectory with "plurals.xml".
+
+EOD;
+	}
+
+	/**
+	 * Execute the action.
+	 * @param array command line parameters specific for this command
+	 */
+	public function run($args)
+	{
+		if(!isset($args[0]))
+		{
+			$cldrPath = dirname(__FILE__).'/../temp';
+			$args[0] = $cldrPath.'/common';
+			//$this->usageError('the CLDR data directory is not specified.');
+		}
+		if(!is_dir($basePath=$args[0]))
+		{
+			if (!mkdir($basePath, 0777, true))
+			{
+				$this->usageError("Directory '$basePath' can not be created.");
+			}
+			//$this->usageError("Directory '$basePath' does not exist.");
+		}
+		if(!is_dir($path=$basePath.DIRECTORY_SEPARATOR.'main'))
+		{
+			// look for zip file
+			if(!is_file($zipFile=$cldrPath.'/core.zip')) {
+				// download latest core.zip file
+				$latestUrl = 'http://www.unicode.org/Public/cldr/latest/core.zip';
+				$ch = curl_init($latestUrl);
+				$fp = fopen($zipFile, "w");
+				curl_setopt($ch, CURLOPT_FILE, $fp);
+				curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+				curl_setopt($ch, CURLOPT_HEADER, FALSE);
+				if (curl_exec($ch)===FALSE)
+				{
+					$this->usageError("Failed to download from '$latestUrl'.");
+				};
+				curl_close($ch);
+				fclose($fp);
+			}
+			// unzip file
+			$zip = new ZipArchive;
+			if ($zip->open($zipFile) === TRUE)
+			{
+				$zip->extractTo($cldrPath);
+				$zip->close();
+			}
+			else
+			{
+				$this->usageError("Failed to unzip '$zipFile'.");
+			}
+		}
+
+		if(!is_file($pluralFile=$basePath.DIRECTORY_SEPARATOR.'supplemental'.DIRECTORY_SEPARATOR.'plurals.xml'))
+			$this->usageError("File '$pluralFile' does not exist.");
+
+		// parse plural.xml before locale files
+		$pluralXml = simplexml_load_file($pluralFile);
+		$this->parsePluralRules($pluralXml);
+
+		// collect XML files to be processed
+		$options=array(
+			'exclude'=>array('.gitignore'),
+			'fileTypes'=>array('xml'),
+			'level'=>0,
+		);
+		$files=CFileHelper::findFiles(realpath($path),$options);
+		$sourceFiles=array();
+		foreach($files as $file)
+			$sourceFiles[basename($file)]=$file;
+
+		// sort by file name so that inheritances can be processed properly
+		ksort($sourceFiles);
+
+		// process root first because it is inherited by all
+		if(isset($sourceFiles['root.xml']))
+		{
+			$this->process($sourceFiles['root.xml']);
+			unset($sourceFiles['root.xml']);
+
+			foreach($sourceFiles as $sourceFile)
+				$this->process($sourceFile);
+
+			// clean up temporary files
+			function rrmdir($path)
+			{
+				return is_file($path)?
+					@unlink($path):
+					array_map('rrmdir',glob($path.'/*'))==@rmdir($path);
+			}
+			rrmdir($cldrPath);
+		}
+		else
+			die('Unable to find the required root.xml under CLDR "main" data directory.');
+	}
+
+	protected function process($path)
+	{
+		$source=basename($path);
+		echo "processing $source...";
+
+		$dir=dirname($path);
+		$locale=substr($source,0,-4);
+		$target=$locale.'.php';
+
+		$i18nDataPath = dirname(__FILE__).'/../../framework/i18n/data';
+
+		// retrieve parent data first
+		if(($pos=strrpos($locale,'_'))!==false)
+			$data=require($i18nDataPath.DIRECTORY_SEPARATOR.strtolower(substr($locale,0,$pos)).'.php');
+		else if($locale!=='root')
+			$data=require($i18nDataPath.DIRECTORY_SEPARATOR.'root.php');
+		else
+			$data=array();
+
+		$xml=simplexml_load_file($path);
+
+		$this->parseVersion($xml,$data);
+
+		$this->parseNumberSymbols($xml,$data);
+		$this->parseNumberFormats($xml,$data);
+		$this->parseCurrencySymbols($xml,$data);
+
+		$this->parseLanguages($xml,$data);
+		$this->parseScripts($xml,$data);
+		$this->parseTerritories($xml,$data);
+
+		$this->parseMonthNames($xml,$data);
+		$this->parseWeekDayNames($xml,$data);
+		$this->parseEraNames($xml,$data);
+
+		$this->parseDateFormats($xml,$data);
+		$this->parseTimeFormats($xml,$data);
+		$this->parseDateTimeFormat($xml,$data);
+		$this->parsePeriodNames($xml,$data);
+
+		$this->parseOrientation($xml,$data);
+
+		$this->addPluralRules($data, $locale);
+
+		$data=str_replace("\r",'',var_export($data,true));
+		$locale=substr(basename($path),0,-4);
+		$content=<<<EOD
+/**
+ * Locale data for '$locale'.
+ *
+ * This file is automatically generated by yiic cldr command.
+ *
+ * Copyright © 1991-2007 Unicode, Inc. All rights reserved.
+ * Distributed under the Terms of Use in http://www.unicode.org/copyright.html.
+ *
+ * @copyright 2008-2013 Yii Software LLC (http://www.yiiframework.com/license/)
+ */
+return $data;
+EOD;
+
+		file_put_contents($i18nDataPath.DIRECTORY_SEPARATOR.strtolower($locale).'.php',"<?php\n".$content."\n");
+
+		echo "done.\n";
+	}
+
+	protected function parseVersion($xml,&$data)
+	{
+		preg_match('/[\d\.]+/',(string)$xml->identity->version['number'],$matches);
+		$data['version']=$matches[0];
+	}
+
+	protected function parseNumberSymbols($xml,&$data)
+	{
+		foreach($xml->xpath('/ldml/numbers/symbols/*') as $symbol)
+		{
+			$name=$symbol->getName();
+			if(!isset($data['numberSymbols'][$name]) || (string)$symbol['draft']==='')
+				$data['numberSymbols'][$name]=(string)$symbol;
+		}
+	}
+
+	protected function parseNumberFormats($xml,&$data)
+	{
+		$pattern=$xml->xpath('/ldml/numbers/decimalFormats/decimalFormatLength/decimalFormat/pattern');
+		if(isset($pattern[0]))
+			$data['decimalFormat']=(string)$pattern[0];
+		$pattern=$xml->xpath('/ldml/numbers/scientificFormats/scientificFormatLength/scientificFormat/pattern');
+		if(isset($pattern[0]))
+			$data['scientificFormat']=(string)$pattern[0];
+		$pattern=$xml->xpath('/ldml/numbers/percentFormats/percentFormatLength/percentFormat/pattern');
+		if(isset($pattern[0]))
+			$data['percentFormat']=(string)$pattern[0];
+		$pattern=$xml->xpath('/ldml/numbers/currencyFormats/currencyFormatLength/currencyFormat/pattern');
+		if(isset($pattern[0]))
+			$data['currencyFormat']=(string)$pattern[0];
+	}
+
+	protected function parseCurrencySymbols($xml,&$data)
+	{
+		$currencies=$xml->xpath('/ldml/numbers/currencies/currency');
+		foreach($currencies as $currency)
+		{
+			if((string)$currency->symbol!='')
+				$data['currencySymbols'][(string)$currency['type']]=(string)$currency->symbol;
+		}
+	}
+
+	protected function parseLanguages($xml,&$data)
+	{
+		$languages=$xml->xpath('/ldml/localeDisplayNames/languages/language');
+		foreach($languages as $language)
+		{
+			if((string)$language!='')
+				$data['languages'][strtolower(str_replace('-','_',(string)$language['type']))]=(string)$language;
+		}
+	}
+
+	protected function parseScripts($xml,&$data)
+	{
+		$scripts=$xml->xpath('/ldml/localeDisplayNames/scripts/script');
+		foreach($scripts as $script)
+		{
+			if((string)$script!='')
+				$data['scripts'][strtolower(str_replace('-','_',(string)$script['type']))]=(string)$script;
+		}
+	}
+
+	protected function parseTerritories($xml,&$data)
+	{
+		$territories=$xml->xpath('/ldml/localeDisplayNames/territories/territory');
+		foreach($territories as $territory)
+		{
+			if((string)$territory!='')
+				$data['territories'][strtolower(str_replace('-','_',(string)$territory['type']))]=(string)$territory;
+		}
+	}
+
+	protected function parseMonthNames($xml,&$data)
+	{
+		$monthTypes=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/months/monthContext[@type=\'format\']/monthWidth');
+		if(is_array($monthTypes))
+		{
+			foreach($monthTypes as $monthType)
+			{
+				$names=array();
+				foreach($monthType->xpath('month') as $month)
+					$names[(string)$month['type']]=(string)$month;
+				if($names!==array())
+					foreach($names as $type=>$name)
+						$data['monthNames'][(string)$monthType['type']][$type]=$name;
+			}
+		}
+
+		if(!isset($data['monthNames']['abbreviated']))
+			$data['monthNames']['abbreviated']=$data['monthNames']['wide'];
+
+		$monthTypes=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/months/monthContext[@type=\'stand-alone\']/monthWidth');
+		if(is_array($monthTypes))
+		{
+			foreach($monthTypes as $monthType)
+			{
+				$names=array();
+				foreach($monthType->xpath('month') as $month)
+					$names[(string)$month['type']]=(string)$month;
+				if($names!==array())
+					foreach($names as $type=>$name)
+						$data['monthNamesSA'][(string)$monthType['type']][$type]=$name;
+			}
+		}
+	}
+
+	protected function parseWeekDayNames($xml,&$data)
+	{
+		static $mapping=array(
+			'sun'=>0,
+			'mon'=>1,
+			'tue'=>2,
+			'wed'=>3,
+			'thu'=>4,
+			'fri'=>5,
+			'sat'=>6,
+		);
+		$dayTypes=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/days/dayContext[@type=\'format\']/dayWidth');
+		if(is_array($dayTypes))
+		{
+			foreach($dayTypes as $dayType)
+			{
+				$names=array();
+				foreach($dayType->xpath('day') as $day)
+					$names[$mapping[(string)$day['type']]]=(string)$day;
+				if($names!==array())
+					$data['weekDayNames'][(string)$dayType['type']]=$names;
+			}
+		}
+
+		if(!isset($data['weekDayNames']['abbreviated']))
+			$data['weekDayNames']['abbreviated']=$data['weekDayNames']['wide'];
+
+		$dayTypes=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/days/dayContext[@type=\'stand-alone\']/dayWidth');
+		if(is_array($dayTypes))
+		{
+			foreach($dayTypes as $dayType)
+			{
+				$names=array();
+				foreach($dayType->xpath('day') as $day)
+					$names[$mapping[(string)$day['type']]]=(string)$day;
+				if($names!==array())
+					$data['weekDayNamesSA'][(string)$dayType['type']]=$names;
+			}
+		}
+	}
+
+	protected function parsePeriodNames($xml,&$data)
+	{
+		$am=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/dayPeriods/dayPeriodContext[@type=\'format\']/dayPeriodWidth[@type=\'wide\']/dayPeriod[@type=\'am\']');
+		if(is_array($am) && isset($am[0]))
+			$data['amName']=(string)$am[0];
+		$pm=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/dayPeriods/dayPeriodContext[@type=\'format\']/dayPeriodWidth[@type=\'wide\']/dayPeriod[@type=\'pm\']');
+		if(is_array($pm) && isset($pm[0]))
+			$data['pmName']=(string)$pm[0];
+	}
+
+	protected function parseEraNames($xml,&$data)
+	{
+		$era=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/eras/eraAbbr');
+		if(is_array($era) && isset($era[0]))
+		{
+			foreach($era[0]->xpath('era') as $e)
+				$data['eraNames']['abbreviated'][(string)$e['type']]=(string)$e;
+		}
+
+		$era=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/eras/eraNames');
+		if(is_array($era) && isset($era[0]))
+		{
+			foreach($era[0]->xpath('era') as $e)
+				$data['eraNames']['wide'][(string)$e['type']]=(string)$e;
+		}
+		else if(!isset($data['eraNames']['wide']))
+			$data['eraNames']['wide']=$data['eraNames']['abbreviated'];
+
+		$era=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/eras/eraNarrow');
+		if(is_array($era) && isset($era[0]))
+		{
+			foreach($era[0]->xpath('era') as $e)
+				$data['eraNames']['narrow'][(string)$e['type']]=(string)$e;
+		}
+		else if(!isset($data['eraNames']['narrow']))
+			$data['eraNames']['narrow']=$data['eraNames']['abbreviated'];
+	}
+
+	protected function parseDateFormats($xml,&$data)
+	{
+		$types=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/dateFormats/dateFormatLength');
+		if(is_array($types))
+		{
+			foreach($types as $type)
+			{
+				$pattern=$type->xpath('dateFormat/pattern');
+				$data['dateFormats'][(string)$type['type']]=(string)$pattern[0];
+			}
+		}
+	}
+
+	protected function parseTimeFormats($xml,&$data)
+	{
+		$types=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/timeFormats/timeFormatLength');
+		if(is_array($types))
+		{
+			foreach($types as $type)
+			{
+				$pattern=$type->xpath('timeFormat/pattern');
+				$data['timeFormats'][(string)$type['type']]=(string)$pattern[0];
+			}
+		}
+	}
+
+	protected function parseDateTimeFormat($xml,&$data)
+	{
+		$types=$xml->xpath('/ldml/dates/calendars/calendar[@type=\'gregorian\']/dateTimeFormats/dateTimeFormatLength');
+		if(is_array($types) && isset($types[0]))
+		{
+			$picked = $types[0];
+			foreach($types as $element) {
+				$attrs = $element->attributes();
+				if($attrs['type'] == 'medium')
+				{
+					$picked = $element;
+					break;
+				}
+			}
+			$pattern=$picked->xpath('dateTimeFormat/pattern');
+			$data['dateTimeFormat']=(string)$pattern[0];
+		}
+	}
+
+	protected function parseOrientation($xml,&$data)
+	{
+		$orientation=$xml->xpath('/ldml/layout/orientation[@characters=\'right-to-left\']');
+		if(!empty($orientation))
+			$data['orientation']='rtl';
+		else if(!isset($data['orientation']))
+			$data['orientation']='ltr';
+	}
+
+	/**
+	 * @see http://cldr.unicode.org/index/cldr-spec/plural-rules
+	 */
+	protected function parsePluralRules($xml)
+	{
+		echo "Processing plural.xml...";
+		$patterns = array(
+			'/\s+is\s+not\s+/i'=>'!=', //is not
+			'/\s+is\s+/i'=>'==', //is
+			'/n\s+mod\s+(\d+)/i'=>'fmod(n,$1)', //mod (CLDR's "mod" is "fmod()", not "%")
+			'/^(.*?)\s+not\s+(?:in|within)\s+(\d+)\.\.(\d+)/i'=>'($1<$2||$1>$3)', //not in, not within
+			'/^(.*?)\s+within\s+(\d+)\.\.(\d+)/i'=>'($1>=$2&&$1<=$3)', //within
+			'/^(.*?)\s+in\s+(\d+)\.\.(\d+)/i'=>'($1>=$2&&$1<=$3&&fmod($1,1)==0)', //in
+		);
+		foreach($xml->plurals->pluralRules as $node)
+		{
+			$attributes=$node->attributes();
+			$locales=explode(' ',$attributes['locales']);
+			$rules=array();
+
+			if(!empty($node->pluralRule))
+			{
+				foreach($node->pluralRule as $rule)
+				{
+					$expr_or=preg_split('/\s+or\s+/i', $rule);
+					foreach ($expr_or as $key_or => $val_or)
+					{
+						$expr_and=preg_split('/\s+and\s+/i', $val_or);
+						$expr_and=preg_replace(array_keys($patterns), array_values($patterns), $expr_and);
+						$expr_or[$key_or]=implode('&&', $expr_and);
+					}
+					$rules[]=implode('||', $expr_or);
+				}
+				//append last rule to match "other"
+				$rules[] = 'true';
+				foreach ($locales as $locale)
+				{
+					$this->pluralRules[$locale] = $rules;
+				}
+			}
+
+		}
+		echo "Done.\n";
+	}
+
+	protected function addPluralRules(&$data, $locale)
+	{
+		if (!empty($this->pluralRules[$locale]))
+			$data['pluralRules']=$this->pluralRules[$locale];
+	}
+}

@@ -1,59 +1,131 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/*
+ * This file is part of the PhpunitMarkupValidators package.
+ *
+ * (c) Kevin Weber <kevintweber@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace kevintweber\PhpunitMarkupValidators\Assert;
+
+use kevintweber\PhpunitMarkupValidators\Connector\CSSConnector;
+use kevintweber\PhpunitMarkupValidators\Connector\CSSW3CConnector;
+use kevintweber\PhpunitMarkupValidators\Constraint\GenericConstraint;
+
+/**
+ * A validator for CSS
+ */
+class AssertCSS extends \PHPUnit_Framework_Assert
+{
+    /**
+     * Asserts that the CSS string is valid.
+     *
+     * @param string         $css        The markup to be validated.
+     * @param string         $message    Test message.
+     * @param HTMLConnector  $connector  A connector to a CSS validation service.
+     */
+    public static function IsValidMarkup($css,
+                                         $message = '',
+                                         CSSConnector $connector = null)
+    {
+        // Check that $css is a string.
+        if (empty($css) || !is_string($css)) {
+            throw \PHPUnit_Util_InvalidArgumentHelper::factory(
+                1, 'string'
+                );
+        }
+
+        // Assign connector if there isn't one already.
+        if ($connector === null) {
+            $connector = new CSSW3CConnector();
+        }
+
+        // Validate the css.
+        $connector->setInput($css);
+        $response = $connector->execute('markup');
+
+        // Tell PHPUnit of the results.
+        $constraint = new GenericConstraint($connector);
+        self::assertThat($response, $constraint, $message);
+    }
+
+    /**
+     * Asserts that the CSS file is valid.
+     *
+     * @param string         $path       The file path to be validated.
+     * @param string         $message    Test message.
+     * @param HTMLConnector  $connector  A connector to a CSS validation service.
+     */
+    public static function IsValidFile($path,
+                                       $message = '',
+                                       CSSConnector $connector = null)
+    {
+        // Check that $path is exists.
+        if (!file_exists($path)) {
+            throw new \PHPUnit_Framework_Exception(
+                sprintf('File "%s" does not exist.' . "\n", $path)
+                );
+        }
+
+        // Get file contents.
+        $css = file_get_contents($path);
+        if ($css === false) {
+            throw new \PHPUnit_Framework_Exception(
+                sprintf('Cannot read file "%s".' . "\n", $path)
+                );
+        }
+
+        // Assign connector if there isn't one already.
+        if ($connector === null) {
+            $connector = new CSSW3CConnector();
+        }
+
+        // Validate the css.
+        $connector->setInput($css);
+        $response = $connector->execute('file');
+
+        // Tell PHPUnit of the results.
+        $constraint = new GenericConstraint($connector);
+        self::assertThat($response, $constraint, $message);
+    }
+
+    /**
+     * Asserts that the CSS url is valid.
+     *
+     * @param string         $url        The url to be validated.
+     * @param string         $message    Test message.
+     * @param HTMLConnector  $connector  A connector to a CSS validation service.
+     */
+    public static function IsValidUrl($url,
+                                      $message = '',
+                                      CSSConnector $connector = null)
+    {
+        // Check that $url is a string.
+        if (empty($url) || !is_string($url)) {
+            throw \PHPUnit_Util_InvalidArgumentHelper::factory(
+                1, 'string'
+                );
+        }
+
+        // Check that $url is a valid url.
+        if (filter_var($url, FILTER_VALIDATE_URL) === false) {
+            throw new \PHPUnit_Framework_Exception("Url is not valid.\n");
+        }
+
+        // Assign connector if there isn't one already.
+        if ($connector === null) {
+            $connector = new CSSW3CConnector();
+        }
+
+        // Validate the css.
+        $connector->setInput($url);
+        $response = $connector->execute('url');
+
+        // Tell PHPUnit of the results.
+        $constraint = new GenericConstraint($connector);
+        self::assertThat($response, $constraint, $message);
+    }
+}

@@ -1,54 +1,182 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-K4vrrO8UdwFg1BWrL30Fb8TchEUr8/vri0==
+<?php
+
+/*
+ * This file is part of the Symfony package.
+ *
+ * (c) Fabien Potencier <fabien@symfony.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Symfony\Component\CssSelector\Parser;
+
+use Symfony\Component\CssSelector\Exception\InternalErrorException;
+use Symfony\Component\CssSelector\Exception\SyntaxErrorException;
+
+/**
+ * CSS selector token stream.
+ *
+ * This component is a port of the Python cssselector library,
+ * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
+ *
+ * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
+ */
+class TokenStream
+{
+    /**
+     * @var Token[]
+     */
+    private $tokens = array();
+
+    /**
+     * @var boolean
+     */
+    private $frozen = false;
+
+    /**
+     * @var Token[]
+     */
+    private $used = array();
+
+    /**
+     * @var int
+     */
+    private $cursor = 0;
+
+    /**
+     * @var Token|null
+     */
+    private $peeked = null;
+
+    /**
+     * @var boolean
+     */
+    private $peeking = false;
+
+    /**
+     * Pushes a token.
+     *
+     * @param Token $token
+     *
+     * @return TokenStream
+     */
+    public function push(Token $token)
+    {
+        $this->tokens[] = $token;
+
+        return $this;
+    }
+
+    /**
+     * Freezes stream.
+     *
+     * @return TokenStream
+     */
+    public function freeze()
+    {
+        $this->frozen = true;
+
+        return $this;
+    }
+
+    /**
+     * Returns next token.
+     *
+     * @throws InternalErrorException If there is no more token
+     *
+     * @return Token
+     */
+    public function getNext()
+    {
+        if ($this->peeking) {
+            $this->peeking = false;
+            $this->used[] = $this->peeked;
+
+            return $this->peeked;
+        }
+
+        if (!isset($this->tokens[$this->cursor])) {
+            throw new InternalErrorException('Unexpected token stream end.');
+        }
+
+        return $this->tokens[$this->cursor ++];
+    }
+
+    /**
+     * Returns peeked token.
+     *
+     * @return Token
+     */
+    public function getPeek()
+    {
+        if (!$this->peeking) {
+            $this->peeked = $this->getNext();
+            $this->peeking = true;
+        }
+
+        return $this->peeked;
+    }
+
+    /**
+     * Returns used tokens.
+     *
+     * @return Token[]
+     */
+    public function getUsed()
+    {
+        return $this->used;
+    }
+
+    /**
+     * Returns nex identifier token.
+     *
+     * @throws SyntaxErrorException If next token is not an identifier
+     *
+     * @return string The identifier token value
+     */
+    public function getNextIdentifier()
+    {
+        $next = $this->getNext();
+
+        if (!$next->isIdentifier()) {
+            throw SyntaxErrorException::unexpectedToken('identifier', $next);
+        }
+
+        return $next->getValue();
+    }
+
+    /**
+     * Returns nex identifier or star delimiter token.
+     *
+     * @throws SyntaxErrorException If next token is not an identifier or a star delimiter
+     *
+     * @return null|string The identifier token value or null if star found
+     */
+    public function getNextIdentifierOrStar()
+    {
+        $next = $this->getNext();
+
+        if ($next->isIdentifier()) {
+            return $next->getValue();
+        }
+
+        if ($next->isDelimiter(array('*'))) {
+            return null;
+        }
+
+        throw SyntaxErrorException::unexpectedToken('identifier or "*"', $next);
+    }
+
+    /**
+     * Skips next whitespace if any.
+     */
+    public function skipWhitespace()
+    {
+        $peek = $this->getPeek();
+
+        if ($peek->isWhitespace()) {
+            $this->getNext();
+        }
+    }
+}

@@ -1,70 +1,174 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * PEAR_Sniffs_WhiteSpace_ObjectOperatorIndentSniff.
+ *
+ * PHP version 5
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+
+/**
+ * PEAR_Sniffs_WhiteSpace_ObjectOperatorIndentSniff.
+ *
+ * Checks that object operators are indented 4 spaces if they are the first
+ * thing on a line.
+ *
+ * @category  PHP
+ * @package   PHP_CodeSniffer
+ * @author    Greg Sherwood <gsherwood@squiz.net>
+ * @copyright 2006-2012 Squiz Pty Ltd (ABN 77 084 670 600)
+ * @license   https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt BSD Licence
+ * @version   Release: @package_version@
+ * @link      http://pear.php.net/package/PHP_CodeSniffer
+ */
+class PEAR_Sniffs_WhiteSpace_ObjectOperatorIndentSniff implements PHP_CodeSniffer_Sniff
+{
+
+    /**
+     * The number of spaces code should be indented.
+     *
+     * @var int
+     */
+    public $indent = 4;
+
+
+    /**
+     * Returns an array of tokens this test wants to listen for.
+     *
+     * @return array
+     */
+    public function register()
+    {
+        return array(T_OBJECT_OPERATOR);
+
+    }//end register()
+
+
+    /**
+     * Processes this test, when one of its tokens is encountered.
+     *
+     * @param PHP_CodeSniffer_File $phpcsFile All the tokens found in the document.
+     * @param int                  $stackPtr  The position of the current token
+     *                                        in the stack passed in $tokens.
+     *
+     * @return void
+     */
+    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    {
+        $tokens = $phpcsFile->getTokens();
+
+        // Make sure this is the first object operator in a chain of them.
+        $varToken = $phpcsFile->findPrevious(T_WHITESPACE, ($stackPtr - 1), null, true);
+        if ($varToken === false || $tokens[$varToken]['code'] !== T_VARIABLE) {
+            return;
+        }
+
+        // Make sure this is a chained call.
+        $next = $phpcsFile->findNext(
+            T_OBJECT_OPERATOR,
+            ($stackPtr + 1),
+            null,
+            false,
+            null,
+            true
+        );
+
+        if ($next === false) {
+            // Not a chained call.
+            return;
+        }
+
+        // Determine correct indent.
+        for ($i = ($varToken - 1); $i >= 0; $i--) {
+            if ($tokens[$i]['line'] !== $tokens[$varToken]['line']) {
+                $i++;
+                break;
+            }
+        }
+
+        $requiredIndent = 0;
+        if ($i >= 0 && $tokens[$i]['code'] === T_WHITESPACE) {
+            $requiredIndent = strlen($tokens[$i]['content']);
+        }
+
+        $requiredIndent += $this->indent;
+
+        // Determine the scope of the original object operator.
+        $origBrackets = null;
+        if (isset($tokens[$stackPtr]['nested_parenthesis']) === true) {
+            $origBrackets = $tokens[$stackPtr]['nested_parenthesis'];
+        }
+
+        $origConditions = null;
+        if (isset($tokens[$stackPtr]['conditions']) === true) {
+            $origConditions = $tokens[$stackPtr]['conditions'];
+        }
+
+        // Check indentation of each object operator in the chain.
+        // If the first object operator is on a different line than
+        // the variable, make sure we check its indentation too.
+        if ($tokens[$stackPtr]['line'] > $tokens[$varToken]['line']) {
+            $next = $stackPtr;
+        }
+
+        while ($next !== false) {
+            // Make sure it is in the same scope, otherwise don't check indent.
+            $brackets = null;
+            if (isset($tokens[$next]['nested_parenthesis']) === true) {
+                $brackets = $tokens[$next]['nested_parenthesis'];
+            }
+
+            $conditions = null;
+            if (isset($tokens[$next]['conditions']) === true) {
+                $conditions = $tokens[$next]['conditions'];
+            }
+
+            if ($origBrackets === $brackets && $origConditions === $conditions) {
+                // Make sure it starts a line, otherwise dont check indent.
+                $indent = $tokens[($next - 1)];
+                if ($indent['code'] === T_WHITESPACE) {
+                    if ($indent['line'] === $tokens[$next]['line']) {
+                        $foundIndent = strlen($indent['content']);
+                    } else {
+                        $foundIndent = 0;
+                    }
+
+                    if ($foundIndent !== $requiredIndent) {
+                        $error = 'Object operator not indented correctly; expected %s spaces but found %s';
+                        $data  = array(
+                                  $requiredIndent,
+                                  $foundIndent,
+                                 );
+                        $phpcsFile->addError($error, $next, 'Incorrect', $data);
+                    }
+                }
+
+                // It cant be the last thing on the line either.
+                $content = $phpcsFile->findNext(T_WHITESPACE, ($next + 1), null, true);
+                if ($tokens[$content]['line'] !== $tokens[$next]['line']) {
+                    $error = 'Object operator must be at the start of the line, not the end';
+                    $phpcsFile->addError($error, $next, 'StartOfLine');
+                }
+            }//end if
+
+            $next = $phpcsFile->findNext(
+                T_OBJECT_OPERATOR,
+                ($next + 1),
+                null,
+                false,
+                null,
+                true
+            );
+        }//end while
+
+    }//end process()
+
+
+}//end class
+
 ?>
-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

@@ -1,46 +1,62 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-K6l890132jd9jVALGuyZSBdyIeYF
+<?php
+
+/*
+ * This file is part of the Monolog package.
+ *
+ * (c) Jordi Boggiano <j.boggiano@seld.be>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace Monolog\Handler\SyslogUdp;
+
+class UdpSocket
+{
+    const DATAGRAM_MAX_LENGTH = 2048;
+
+    public function __construct($ip, $port = 514)
+    {
+        $this->ip = $ip;
+        $this->port = $port;
+        $this->socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+    }
+
+    public function write($line, $header = "")
+    {
+        $remaining = $line;
+        while (!is_null($remaining)) {
+            list($chunk, $remaining) = $this->splitLineIfNessesary($remaining, $header);
+            $this->send($chunk);
+        }
+    }
+
+    public function close()
+    {
+        socket_close($this->socket);
+    }
+
+    protected function send($chunk)
+    {
+        socket_sendto($this->socket, $chunk, strlen($chunk), $flags = 0, $this->ip, $this->port);
+    }
+
+    protected function splitLineIfNessesary($line, $header)
+    {
+        if ($this->shouldSplitLine($line, $header)) {
+            $chunkSize = self::DATAGRAM_MAX_LENGTH - strlen($header);
+            $chunk = $header . substr($line, 0, $chunkSize);
+            $remaining = substr($line, $chunkSize);
+        } else {
+            $chunk = $header . $line;
+            $remaining = null;
+        }
+
+        return array($chunk, $remaining);
+    }
+
+    protected function shouldSplitLine($remaining, $header)
+    {
+        return strlen($header.$remaining) > self::DATAGRAM_MAX_LENGTH;
+    }
+}

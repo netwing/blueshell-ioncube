@@ -1,131 +1,393 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+ * Smarty Internal Plugin Templateparser Parsetrees
+ *
+ * These are classes to build parsetrees in the template parser
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @author Thue Kristensen
+ * @author Uwe Tews
+ */
+
+/**
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+abstract class _smarty_parsetree
+{
+    /**
+     * Parser object
+     * @var object
+     */
+    public $parser;
+    /**
+     * Buffer content
+     * @var mixed
+     */
+    public $data;
+
+    /**
+     * Return buffer
+     *
+     * @return string buffer content
+     */
+    abstract public function to_smarty_php();
+
+}
+
+/**
+ * A complete smarty tag.
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+class _smarty_tag extends _smarty_parsetree
+{
+    /**
+     * Saved block nesting level
+     * @var int
+     */
+    public $saved_block_nesting;
+
+    /**
+     * Create parse tree buffer for Smarty tag
+     *
+     * @param object $parser parser object
+     * @param string $data   content
+     */
+    public function __construct($parser, $data)
+    {
+        $this->parser = $parser;
+        $this->data = $data;
+        $this->saved_block_nesting = $parser->block_nesting_level;
+    }
+
+    /**
+     * Return buffer content
+     *
+     * @return string content
+     */
+    public function to_smarty_php()
+    {
+        return $this->data;
+    }
+
+    /**
+     * Return complied code that loads the evaluated outout of buffer content into a temporary variable
+     *
+     * @return string template code
+     */
+    public function assign_to_var()
+    {
+        $var = sprintf('$_tmp%d', ++Smarty_Internal_Templateparser::$prefix_number);
+        $this->parser->compiler->prefix_code[] = sprintf('<?php ob_start();?>%s<?php %s=ob_get_clean();?>', $this->data, $var);
+
+        return $var;
+    }
+
+}
+
+/**
+ * Code fragment inside a tag.
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+class _smarty_code extends _smarty_parsetree
+{
+    /**
+     * Create parse tree buffer for code fragment
+     *
+     * @param object $parser parser object
+     * @param string $data   content
+     */
+    public function __construct($parser, $data)
+    {
+        $this->parser = $parser;
+        $this->data = $data;
+    }
+
+    /**
+     * Return buffer content in parentheses
+     *
+     * @return string content
+     */
+    public function to_smarty_php()
+    {
+        return sprintf("(%s)", $this->data);
+    }
+
+}
+
+/**
+ * Double quoted string inside a tag.
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+class _smarty_doublequoted extends _smarty_parsetree
+{
+    /**
+     * Create parse tree buffer for double quoted string subtrees
+     *
+     * @param object            $parser  parser object
+     * @param _smarty_parsetree $subtree parsetree buffer
+     */
+    public function __construct($parser, _smarty_parsetree $subtree)
+    {
+        $this->parser = $parser;
+        $this->subtrees[] = $subtree;
+        if ($subtree instanceof _smarty_tag) {
+            $this->parser->block_nesting_level = count($this->parser->compiler->_tag_stack);
+        }
+    }
+
+    /**
+     * Append buffer to subtree
+     *
+     * @param _smarty_parsetree $subtree parsetree buffer
+     */
+    public function append_subtree(_smarty_parsetree $subtree)
+    {
+        $last_subtree = count($this->subtrees) - 1;
+        if ($last_subtree >= 0 && $this->subtrees[$last_subtree] instanceof _smarty_tag && $this->subtrees[$last_subtree]->saved_block_nesting < $this->parser->block_nesting_level) {
+            if ($subtree instanceof _smarty_code) {
+                $this->subtrees[$last_subtree]->data .= '<?php echo ' . $subtree->data . ';?>';
+            } elseif ($subtree instanceof _smarty_dq_content) {
+                $this->subtrees[$last_subtree]->data .= '<?php echo "' . $subtree->data . '";?>';
+            } else {
+                $this->subtrees[$last_subtree]->data .= $subtree->data;
+            }
+        } else {
+            $this->subtrees[] = $subtree;
+        }
+        if ($subtree instanceof _smarty_tag) {
+            $this->parser->block_nesting_level = count($this->parser->compiler->_tag_stack);
+        }
+    }
+
+    /**
+     * Merge subtree buffer content together
+     *
+     * @return string compiled template code
+     */
+    public function to_smarty_php()
+    {
+        $code = '';
+        foreach ($this->subtrees as $subtree) {
+            if ($code !== "") {
+                $code .= ".";
+            }
+            if ($subtree instanceof _smarty_tag) {
+                $more_php = $subtree->assign_to_var();
+            } else {
+                $more_php = $subtree->to_smarty_php();
+            }
+
+            $code .= $more_php;
+
+            if (!$subtree instanceof _smarty_dq_content) {
+                $this->parser->compiler->has_variable_string = true;
+            }
+        }
+
+        return $code;
+    }
+
+}
+
+/**
+ * Raw chars as part of a double quoted string.
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+class _smarty_dq_content extends _smarty_parsetree
+{
+    /**
+     * Create parse tree buffer with string content
+     *
+     * @param object $parser parser object
+     * @param string $data   string section
+     */
+    public function __construct($parser, $data)
+    {
+        $this->parser = $parser;
+        $this->data = $data;
+    }
+
+    /**
+     * Return content as double quoted string
+     *
+     * @return string doubled quoted string
+     */
+    public function to_smarty_php()
+    {
+        return '"' . $this->data . '"';
+    }
+
+}
+
+/**
+ * Template element
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+class _smarty_template_buffer extends _smarty_parsetree
+{
+    /**
+     * Array of template elements
+     *
+     * @var array
+     */
+    public $subtrees = Array();
+
+    /**
+     * Create root of parse tree for template elements
+     *
+     * @param object $parser parse object
+     */
+    public function __construct($parser)
+    {
+        $this->parser = $parser;
+    }
+
+    /**
+     * Append buffer to subtree
+     *
+     * @param _smarty_parsetree $subtree
+     */
+    public function append_subtree(_smarty_parsetree $subtree)
+    {
+        $this->subtrees[] = $subtree;
+    }
+
+    /**
+     * Sanitize and merge subtree buffers together
+     *
+     * @return string template code content
+     */
+    public function to_smarty_php()
+    {
+        $code = '';
+        for ($key = 0, $cnt = count($this->subtrees); $key < $cnt; $key++) {
+            if ($key + 2 < $cnt) {
+                if ($this->subtrees[$key] instanceof _smarty_linebreak && $this->subtrees[$key + 1] instanceof _smarty_tag && $this->subtrees[$key + 1]->data == '' && $this->subtrees[$key + 2] instanceof _smarty_linebreak) {
+                    $key = $key + 1;
+                    continue;
+                }
+                if (substr($this->subtrees[$key]->data, -1) == '<' && $this->subtrees[$key + 1]->data == '' && substr($this->subtrees[$key + 2]->data, -1) == '?') {
+                    $key = $key + 2;
+                    continue;
+                }
+            }
+            if (substr($code, -1) == '<') {
+                $subtree = $this->subtrees[$key]->to_smarty_php();
+                if (substr($subtree, 0, 1) == '?') {
+                    $code = substr($code, 0, strlen($code) - 1) . '<<?php ?>?' . substr($subtree, 1);
+                } elseif ($this->parser->asp_tags && substr($subtree, 0, 1) == '%') {
+                    $code = substr($code, 0, strlen($code) - 1) . '<<?php ?>%' . substr($subtree, 1);
+                } else {
+                    $code .= $subtree;
+                }
+                continue;
+            }
+            if ($this->parser->asp_tags && substr($code, -1) == '%') {
+                $subtree = $this->subtrees[$key]->to_smarty_php();
+                if (substr($subtree, 0, 1) == '>') {
+                    $code = substr($code, 0, strlen($code) - 1) . '%<?php ?>>' . substr($subtree, 1);
+                } else {
+                    $code .= $subtree;
+                }
+                continue;
+            }
+            if (substr($code, -1) == '?') {
+                $subtree = $this->subtrees[$key]->to_smarty_php();
+                if (substr($subtree, 0, 1) == '>') {
+                    $code = substr($code, 0, strlen($code) - 1) . '?<?php ?>>' . substr($subtree, 1);
+                } else {
+                    $code .= $subtree;
+                }
+                continue;
+            }
+            $code .= $this->subtrees[$key]->to_smarty_php();
+        }
+
+        return $code;
+    }
+
+}
+
+/**
+ * template text
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+class _smarty_text extends _smarty_parsetree
+{
+    /**
+     * Create template text buffer
+     *
+     * @param object $parser parser object
+     * @param string $data   text
+     */
+    public function __construct($parser, $data)
+    {
+        $this->parser = $parser;
+        $this->data = $data;
+    }
+
+    /**
+     * Return buffer content
+     *
+     * @return strint text
+     */
+    public function to_smarty_php()
+    {
+        return $this->data;
+    }
+
+}
+
+/**
+ * template linebreaks
+ *
+ * @package Smarty
+ * @subpackage Compiler
+ * @ignore
+ */
+class _smarty_linebreak extends _smarty_parsetree
+{
+    /**
+     * Create buffer with linebreak content
+     *
+     * @param object $parser parser object
+     * @param string $data   linebreak string
+     */
+    public function __construct($parser, $data)
+    {
+        $this->parser = $parser;
+        $this->data = $data;
+    }
+
+    /**
+     * Return linebrak
+     *
+     * @return string linebreak
+     */
+    public function to_smarty_php()
+    {
+        return $this->data;
+    }
+
+}

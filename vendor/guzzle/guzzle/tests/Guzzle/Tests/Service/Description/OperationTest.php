@@ -1,197 +1,308 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-lwIx+3tahDO7WRe=
+<?php
+
+namespace Guzzle\Tests\Service\Description;
+
+use Guzzle\Service\Description\Operation;
+use Guzzle\Service\Description\Parameter;
+use Guzzle\Service\Description\ServiceDescription;
+
+/**
+ * @covers Guzzle\Service\Description\Operation
+ */
+class OperationTest extends \Guzzle\Tests\GuzzleTestCase
+{
+    public static function strtoupper($string)
+    {
+        return strtoupper($string);
+    }
+
+    public function testOperationIsDataObject()
+    {
+        $c = new Operation(array(
+            'name'               => 'test',
+            'summary'            => 'doc',
+            'notes'              => 'notes',
+            'documentationUrl'   => 'http://www.example.com',
+            'httpMethod'         => 'POST',
+            'uri'                => '/api/v1',
+            'responseClass'      => 'array',
+            'responseNotes'      => 'returns the json_decoded response',
+            'deprecated'         => true,
+            'parameters'         => array(
+                'key' => array(
+                    'required'  => true,
+                    'type'      => 'string',
+                    'maxLength' => 10
+                ),
+                'key_2' => array(
+                    'required' => true,
+                    'type'     => 'integer',
+                    'default'  => 10
+                )
+            )
+        ));
+
+        $this->assertEquals('test', $c->getName());
+        $this->assertEquals('doc', $c->getSummary());
+        $this->assertEquals('http://www.example.com', $c->getDocumentationUrl());
+        $this->assertEquals('POST', $c->getHttpMethod());
+        $this->assertEquals('/api/v1', $c->getUri());
+        $this->assertEquals('array', $c->getResponseClass());
+        $this->assertEquals('returns the json_decoded response', $c->getResponseNotes());
+        $this->assertTrue($c->getDeprecated());
+        $this->assertEquals('Guzzle\\Service\\Command\\OperationCommand', $c->getClass());
+        $this->assertEquals(array(
+            'key' => new Parameter(array(
+                'name'      => 'key',
+                'required'  => true,
+                'type'      => 'string',
+                'maxLength' => 10,
+                'parent'    => $c
+            )),
+            'key_2' => new Parameter(array(
+                'name'     => 'key_2',
+                'required' => true,
+                'type'     => 'integer',
+                'default'  => 10,
+                'parent'   => $c
+            ))
+        ), $c->getParams());
+
+        $this->assertEquals(new Parameter(array(
+            'name'     => 'key_2',
+            'required' => true,
+            'type'     => 'integer',
+            'default'  => 10,
+            'parent'   => $c
+        )), $c->getParam('key_2'));
+
+        $this->assertNull($c->getParam('afefwef'));
+        $this->assertArrayNotHasKey('parent', $c->getParam('key_2')->toArray());
+    }
+
+    public function testAllowsConcreteCommands()
+    {
+        $c = new Operation(array(
+            'name' => 'test',
+            'class' => 'Guzzle\\Service\\Command\ClosureCommand',
+            'parameters' => array(
+                'p' => new Parameter(array(
+                    'name' => 'foo'
+                ))
+            )
+        ));
+        $this->assertEquals('Guzzle\\Service\\Command\ClosureCommand', $c->getClass());
+    }
+
+    public function testConvertsToArray()
+    {
+        $data = array(
+            'name'             => 'test',
+            'class'            => 'Guzzle\\Service\\Command\ClosureCommand',
+            'summary'          => 'test',
+            'documentationUrl' => 'http://www.example.com',
+            'httpMethod'       => 'PUT',
+            'uri'              => '/',
+            'parameters'       => array('p' => array('name' => 'foo'))
+        );
+        $c = new Operation($data);
+        $toArray = $c->toArray();
+        unset($data['name']);
+        $this->assertArrayHasKey('parameters', $toArray);
+        $this->assertInternalType('array', $toArray['parameters']);
+
+        // Normalize the array
+        unset($data['parameters']);
+        unset($toArray['parameters']);
+
+        $data['responseType'] = 'primitive';
+        $data['responseClass'] = 'array';
+        $this->assertEquals($data, $toArray);
+    }
+
+    public function testDeterminesIfHasParam()
+    {
+        $command = $this->getTestCommand();
+        $this->assertTrue($command->hasParam('data'));
+        $this->assertFalse($command->hasParam('baz'));
+    }
+
+    public function testReturnsParamNames()
+    {
+        $command = $this->getTestCommand();
+        $this->assertEquals(array('data'), $command->getParamNames());
+    }
+
+    protected function getTestCommand()
+    {
+        return new Operation(array(
+            'parameters' => array(
+                'data' => new Parameter(array(
+                    'type' => 'string'
+                ))
+            )
+        ));
+    }
+
+    public function testCanBuildUpCommands()
+    {
+        $c = new Operation(array());
+        $c->setName('foo')
+            ->setClass('Baz')
+            ->setDeprecated(false)
+            ->setSummary('summary')
+            ->setDocumentationUrl('http://www.foo.com')
+            ->setHttpMethod('PUT')
+            ->setResponseNotes('oh')
+            ->setResponseClass('string')
+            ->setUri('/foo/bar')
+            ->addParam(new Parameter(array(
+                'name' => 'test'
+            )));
+
+        $this->assertEquals('foo', $c->getName());
+        $this->assertEquals('Baz', $c->getClass());
+        $this->assertEquals(false, $c->getDeprecated());
+        $this->assertEquals('summary', $c->getSummary());
+        $this->assertEquals('http://www.foo.com', $c->getDocumentationUrl());
+        $this->assertEquals('PUT', $c->getHttpMethod());
+        $this->assertEquals('oh', $c->getResponseNotes());
+        $this->assertEquals('string', $c->getResponseClass());
+        $this->assertEquals('/foo/bar', $c->getUri());
+        $this->assertEquals(array('test'), $c->getParamNames());
+    }
+
+    public function testCanRemoveParams()
+    {
+        $c = new Operation(array());
+        $c->addParam(new Parameter(array('name' => 'foo')));
+        $this->assertTrue($c->hasParam('foo'));
+        $c->removeParam('foo');
+        $this->assertFalse($c->hasParam('foo'));
+    }
+
+    public function testAddsNameToParametersIfNeeded()
+    {
+        $command = new Operation(array('parameters' => array('foo' => new Parameter(array()))));
+        $this->assertEquals('foo', $command->getParam('foo')->getName());
+    }
+
+    public function testContainsApiErrorInformation()
+    {
+        $command = $this->getOperation();
+        $this->assertEquals(1, count($command->getErrorResponses()));
+        $arr = $command->toArray();
+        $this->assertEquals(1, count($arr['errorResponses']));
+        $command->addErrorResponse(400, 'Foo', 'Baz\\Bar');
+        $this->assertEquals(2, count($command->getErrorResponses()));
+        $command->setErrorResponses(array());
+        $this->assertEquals(0, count($command->getErrorResponses()));
+    }
+
+    public function testHasNotes()
+    {
+        $o = new Operation(array('notes' => 'foo'));
+        $this->assertEquals('foo', $o->getNotes());
+        $o->setNotes('bar');
+        $this->assertEquals('bar', $o->getNotes());
+    }
+
+    public function testHasData()
+    {
+        $o = new Operation(array('data' => array('foo' => 'baz', 'bar' => 123)));
+        $o->setData('test', false);
+        $this->assertEquals('baz', $o->getData('foo'));
+        $this->assertEquals(123, $o->getData('bar'));
+        $this->assertNull($o->getData('wfefwe'));
+        $this->assertEquals(array(
+            'parameters'    => array(),
+            'class'         => 'Guzzle\Service\Command\OperationCommand',
+            'data'          => array('foo' => 'baz', 'bar' => 123, 'test' => false),
+            'responseClass' => 'array',
+            'responseType'  => 'primitive'
+        ), $o->toArray());
+    }
+
+    public function testHasServiceDescription()
+    {
+        $s = new ServiceDescription();
+        $o = new Operation(array(), $s);
+        $this->assertSame($s, $o->getServiceDescription());
+    }
+
+    /**
+     * @expectedException Guzzle\Common\Exception\InvalidArgumentException
+     */
+    public function testValidatesResponseType()
+    {
+        $o = new Operation(array('responseClass' => 'array', 'responseType' => 'foo'));
+    }
+
+    public function testInfersResponseType()
+    {
+        $o = $this->getOperation();
+        $o->setServiceDescription(new ServiceDescription(array('models' => array('Foo' => array()))));
+        $this->assertEquals('primitive', $o->getResponseType());
+        $this->assertEquals('primitive', $o->setResponseClass('boolean')->getResponseType());
+        $this->assertEquals('primitive', $o->setResponseClass('array')->getResponseType());
+        $this->assertEquals('primitive', $o->setResponseClass('integer')->getResponseType());
+        $this->assertEquals('primitive', $o->setResponseClass('string')->getResponseType());
+        $this->assertEquals('class', $o->setResponseClass('foo')->getResponseType());
+        $this->assertEquals('class', $o->setResponseClass(__CLASS__)->getResponseType());
+        $this->assertEquals('model', $o->setResponseClass('Foo')->getResponseType());
+    }
+
+    public function testHasResponseType()
+    {
+        // infers in the constructor
+        $o = new Operation(array('responseClass' => 'array'));
+        $this->assertEquals('primitive', $o->getResponseType());
+        // Infers when set
+        $o = new Operation();
+        $this->assertEquals('primitive', $o->getResponseType());
+        $this->assertEquals('model', $o->setResponseType('model')->getResponseType());
+    }
+
+    public function testHasAdditionalParameters()
+    {
+        $o = new Operation(array(
+            'additionalParameters' => array(
+                'type' => 'string', 'name' => 'binks'
+            ),
+            'parameters' => array(
+                'foo' => array('type' => 'integer')
+            )
+        ));
+        $this->assertEquals('string', $o->getAdditionalParameters()->getType());
+        $arr = $o->toArray();
+        $this->assertEquals(array(
+            'type' => 'string'
+        ), $arr['additionalParameters']);
+    }
+
+    /**
+     * @return Operation
+     */
+    protected function getOperation()
+    {
+        return new Operation(array(
+            'name'       => 'OperationTest',
+            'class'      => get_class($this),
+            'parameters' => array(
+                'test'          => array('type' => 'object'),
+                'bool_1'        => array('default' => true, 'type' => 'boolean'),
+                'bool_2'        => array('default' => false),
+                'float'         => array('type' => 'numeric'),
+                'int'           => array('type' => 'integer'),
+                'date'          => array('type' => 'string'),
+                'timestamp'     => array('type' => 'string'),
+                'string'        => array('type' => 'string'),
+                'username'      => array('type' => 'string', 'required' => true, 'filters' => 'strtolower'),
+                'test_function' => array('type' => 'string', 'filters' => __CLASS__ . '::strtoupper')
+            ),
+            'errorResponses' => array(
+                array('code' => 503, 'reason' => 'InsufficientCapacity', 'class' => 'Guzzle\\Exception\\RuntimeException')
+            )
+        ));
+    }
+}

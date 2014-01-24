@@ -1,84 +1,158 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-q3QGyNkvHDFRSXBf8YnDyIkWznmDrNEXq6+euW==
+<?php
+
+/**
+ * MySQL CacheResource
+ *
+ * CacheResource Implementation based on the Custom API to use
+ * MySQL as the storage resource for Smarty's output caching.
+ *
+ * Table definition:
+ * <pre>CREATE TABLE IF NOT EXISTS `output_cache` (
+ *   `id` CHAR(40) NOT NULL COMMENT 'sha1 hash',
+ *   `name` VARCHAR(250) NOT NULL,
+ *   `cache_id` VARCHAR(250) NULL DEFAULT NULL,
+ *   `compile_id` VARCHAR(250) NULL DEFAULT NULL,
+ *   `modified` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+ *   `content` LONGTEXT NOT NULL,
+ *   PRIMARY KEY (`id`),
+ *   INDEX(`name`),
+ *   INDEX(`cache_id`),
+ *   INDEX(`compile_id`),
+ *   INDEX(`modified`)
+ * ) ENGINE = InnoDB;</pre>
+ *
+ * @package CacheResource-examples
+ * @author Rodney Rehm
+ */
+class Smarty_CacheResource_Mysql extends Smarty_CacheResource_Custom
+{
+    // PDO instance
+    protected $db;
+    protected $fetch;
+    protected $fetchTimestamp;
+    protected $save;
+
+    public function __construct()
+    {
+        try {
+            $this->db = new PDO("mysql:dbname=test;host=127.0.0.1", "smarty");
+        } catch (PDOException $e) {
+            throw new SmartyException('Mysql Resource failed: ' . $e->getMessage());
+        }
+        $this->fetch = $this->db->prepare('SELECT modified, content FROM output_cache WHERE id = :id');
+        $this->fetchTimestamp = $this->db->prepare('SELECT modified FROM output_cache WHERE id = :id');
+        $this->save = $this->db->prepare('REPLACE INTO output_cache (id, name, cache_id, compile_id, content)
+            VALUES  (:id, :name, :cache_id, :compile_id, :content)');
+    }
+
+    /**
+     * fetch cached content and its modification time from data source
+     *
+     * @param  string  $id         unique cache content identifier
+     * @param  string  $name       template name
+     * @param  string  $cache_id   cache id
+     * @param  string  $compile_id compile id
+     * @param  string  $content    cached content
+     * @param  integer $mtime      cache modification timestamp (epoch)
+     * @return void
+     */
+    protected function fetch($id, $name, $cache_id, $compile_id, &$content, &$mtime)
+    {
+        $this->fetch->execute(array('id' => $id));
+        $row = $this->fetch->fetch();
+        $this->fetch->closeCursor();
+        if ($row) {
+            $content = $row['content'];
+            $mtime = strtotime($row['modified']);
+        } else {
+            $content = null;
+            $mtime = null;
+        }
+    }
+
+    /**
+     * Fetch cached content's modification timestamp from data source
+     *
+     * @note implementing this method is optional. Only implement it if modification times can be accessed faster than loading the complete cached content.
+     * @param  string          $id         unique cache content identifier
+     * @param  string          $name       template name
+     * @param  string          $cache_id   cache id
+     * @param  string          $compile_id compile id
+     * @return integer|boolean timestamp (epoch) the template was modified, or false if not found
+     */
+    protected function fetchTimestamp($id, $name, $cache_id, $compile_id)
+    {
+        $this->fetchTimestamp->execute(array('id' => $id));
+        $mtime = strtotime($this->fetchTimestamp->fetchColumn());
+        $this->fetchTimestamp->closeCursor();
+
+        return $mtime;
+    }
+
+    /**
+     * Save content to cache
+     *
+     * @param  string       $id         unique cache content identifier
+     * @param  string       $name       template name
+     * @param  string       $cache_id   cache id
+     * @param  string       $compile_id compile id
+     * @param  integer|null $exp_time   seconds till expiration time in seconds or null
+     * @param  string       $content    content to cache
+     * @return boolean      success
+     */
+    protected function save($id, $name, $cache_id, $compile_id, $exp_time, $content)
+    {
+        $this->save->execute(array(
+            'id' => $id,
+            'name' => $name,
+            'cache_id' => $cache_id,
+            'compile_id' => $compile_id,
+            'content' => $content,
+        ));
+
+        return !!$this->save->rowCount();
+    }
+
+    /**
+     * Delete content from cache
+     *
+     * @param  string       $name       template name
+     * @param  string       $cache_id   cache id
+     * @param  string       $compile_id compile id
+     * @param  integer|null $exp_time   seconds till expiration or null
+     * @return integer      number of deleted caches
+     */
+    protected function delete($name, $cache_id, $compile_id, $exp_time)
+    {
+        // delete the whole cache
+        if ($name === null && $cache_id === null && $compile_id === null && $exp_time === null) {
+            // returning the number of deleted caches would require a second query to count them
+            $query = $this->db->query('TRUNCATE TABLE output_cache');
+
+            return -1;
+        }
+        // build the filter
+        $where = array();
+        // equal test name
+        if ($name !== null) {
+            $where[] = 'name = ' . $this->db->quote($name);
+        }
+        // equal test compile_id
+        if ($compile_id !== null) {
+            $where[] = 'compile_id = ' . $this->db->quote($compile_id);
+        }
+        // range test expiration time
+        if ($exp_time !== null) {
+            $where[] = 'modified < DATE_SUB(NOW(), INTERVAL ' . intval($exp_time) . ' SECOND)';
+        }
+        // equal test cache_id and match sub-groups
+        if ($cache_id !== null) {
+            $where[] = '(cache_id = '. $this->db->quote($cache_id)
+                . ' OR cache_id LIKE '. $this->db->quote($cache_id .'|%') .')';
+        }
+        // run delete query
+        $query = $this->db->query('DELETE FROM output_cache WHERE ' . join(' AND ', $where));
+
+        return $query->rowCount();
+    }
+}

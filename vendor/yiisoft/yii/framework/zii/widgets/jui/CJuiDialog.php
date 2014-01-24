@@ -1,42 +1,85 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPvoNLMUQUwv8ToR0H05aTZKBp9wd9ev4nCLJcdRvcGdwOrjznw9ONs2eDQdUwhbj6MoLs13z
-/Z1iZUU28D2Ynqt0joBc9Dxx+W71FHh1unxSrPyzErhXZQfYBg/QACWhtscoAArDjmpJzrKRuLki
-M5BMxkrHT4il2EGt31mdh+piVOwGTIAVROtShXGDEP42ONed3O5nZwqLVSrfDYKceJXLCXruEMEd
-OcMCYuKk9vKu79ZEQol+AAzHAE4xzt2gh9fl143SQNJINsZSHF40qRCBQB7OOsTACGsifEtTv4hL
-3A+E9qZuaVXlyKDmZ/W3357i24zgaM06Zt3Uq6097zTV2G9J1LsyW0xJQwZGHISQXz309k4wsmP6
-aUSNYshjoWiPtK/kIrMrGfzdWov5zPan14Uvf0qkbnQDZOF22E9C74+UjPesPNbj+1Xw5Xb+1RnF
-wgRLailXQQ/OqtvEGfAfbDgNgEUNSps/naynCs4+ZhDCH6MnXOAG0DqBlK8uGTiKTglIfISsQuaD
-TOt1KDM9GOUK7kkra+VFcxMzdThdBb+bg6R7zFG4dfMw4UTfqmS9XQpeKuQO+e5s6jZ5ncSzFIs0
-edPhJBZeAORQVm2yLnzswQyHkkDKlBX8/us//yS9o/qM5iR9p5LJLc7R0ZKejO5w5NcFoBq80JRv
-cVqTkcdzjTPWfWPL0GV8rdHjaVBCdNhqeCbZ/zeY7cSDeqx9kqgZMIvzqBBoYhpJr10Da1K2WLCi
-7ar5SDpCiqeTk9WHW2m7h8Lyw5BEZrkbC82BQLo6RWJwPo/4TbOIz7mt205iBHvKTeA1/ahrEhP0
-8ZlgsHCmMHPWzVeAetjCLiVjMlLL7WMCWsUbJffga5kB1MWs4+yXNxEbwB7IQpOGJYxthFHHposO
-gfkeNBims3LyIZli6Nfb7vqC/lbTZQAk4FBdOMzS1b8GD44PXwU9/ABm4n0MDWmm2c/4H73/VUks
-/g94+bpe8ipcmHmCJjVIWNDnM68V7vYlXV9TwLgRRRPnL4LoO4cJ8/B2FxH3itfJbUWGwkKDTUEn
-XdMsH5Zf4ipUFVyImqw07LB05IQfDEAELi/e/67eNll0kZVrcEpfop5YHa9G0fy8MDlIXFFN53lS
-2DrWr03fvUxzBBSMxhpmhp6K27fnBHUoKd1Cs/YFKLpj2/3mR0agx3B5EbCnrlDW/fWQjnbp56yN
-S4wmEbIkQ/vjUdkD2xBMn9KKNj8d2qOvcUm5MBWjdwy1+yGtSlgoD8EBe5E6zwXuKigAcsz+tLlV
-DK/q1dQIeL75wh5h9u42lQPlKJRSDfot7V/v62XVmQPg7BOLl1bJMFu/Z+iG2G0TIGMjzRhurLDB
-YxgnJ90niOC7MLQ+Yq1FVGbkhPHqiU7WNA2Mte0N8VUYfjJIVQ+fcs7ljCOhpGf08Uo4rpe15v04
-46CCjn2XFKmUB1NmEjbJfX41ntwJclJ24EzMjSKKT/IRUviG6dL82xZR08MSeqIZh5noZL1o1Ykv
-9v7vYNZUxojOynZiR95ClRMM8DNhlGmMKAuf59L2SLZpAHbNchasvbil2mxDhwp1DnqwAcPUt6G0
-4+CeK9hazssuDYYUSyHyMbTxIgtJyg9vL/hPh0xtzrsRkpHXWwTyiHfIXd+ZnTtnI312siu6/oga
-0rUJNDIGK+Tb10b89jTAb8NVCab4+bp4gs3rV8mqFbcnw5Ixx3B/LfAZ4Xll43hloY0074pI/pKB
-JZydxX8Tm0Er89TZldvaa99FJM5wkyQlSOjGcemvpDhysx82BYKo/WM90F1qJ3+2WxpY60+Wv4o5
-sI/bs1pPilQbp0W4v1RUQGrjzp3GEl8JQz3iw3Ha/KHTwgAI4HHkdtJ6FnXUqnt2RCGQMzDOSUA7
-Goewf81I7oqsofqTTthexuMx100T0uhkGiX2uoa+TzVgQgHXltilyXUMHZvw87CVR3U6uvz8O7Iz
-wdEAz5Pn06fDzIHTuT1MKTbDdWd57EdazJTvtKFYJ8NZFYRlfT92at8k1nfqYle4PWpQkYijKcT5
-s4SdP8VwnASNzAu09Dy0jITmvPSRqLhTB4mSCbxE8CsV2Qau4hBrkcz3EKQtLTI9/LGrulomA5Dq
-/suFuHLssVa5BLmCf/KrJWTYOV3lTcjZUyBjJ3K1KUvNl9VnFuMdgt5Y2hYpyi4mA72XrvV+qFAz
-UIYfq4GG2V27lYLkxaXh09eA1epxtRkezeatZ16YzWuxlqH7uSbsT2Df4bHhICb78yfMvJaYWacS
-oWP6VQUpDm6i56/9Nh3EmKxqQjmfJtVS+4pFwVM8Sk3S5oitCW6UWEGb+Qu2hrmTBIu9CSqL9vAM
-6/z28gMvrZC7YtQ+JUVhTNnY1wfMPdub+MGebusp2BB8/gkyLwx0H9TLZkBcbaaQJQK6gaC6Xn79
-AEshjlhas8ZSbuVvvHkFWiylV8Bhw25t3+XnogUb7XPNZH5QO7SoX5QTNx+RUs2hOk71PHOkMhEG
-XA6iQBYmkI4NlzNPegeAAACBKAlKB88QzT3tQu66ncMuBsakXjYugQRL0kImyzUQuIZtR6PMBzJ2
-onTDPM4zimc2iTJ9g2gl7E1PAT9BO5vpkPaW+vcjIpQQrKKY0QVbfV3hLwUinIk6HA1kAMaGmaDi
-HE08XeGwxmFAXZ/sVMC7SktPLI0IC5eAo3qSbVGzQmyQhMfHk3/5CwfDlLdwcmf2yP+h73C2HOH5
-ugOnq/mmpnU4M9qWP2mGOq8I0kZ3nX8d/+YiBmTsZ0iLI05jTqxariEtwd7kIMruYjrRdf5sH0GK
-IPPvekH2zG3/tt6245VMaT31kW9hX8AmdQyCIAqMWj9tPn7HLkP3fbZkkoAziu7IfomtAOJ0WTPq
-z0XxAzIK3TqVGMK2J+MapXf5sBYS7uMcP7x1mWCcg5bHclTQ7itGjxE+3wGZpv9O
+<?php
+/**
+ * CJuiDialog class file.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @link http://www.yiiframework.com/
+ * @copyright 2008-2013 Yii Software LLC
+ * @license http://www.yiiframework.com/license/
+ */
+
+Yii::import('zii.widgets.jui.CJuiWidget');
+
+/**
+ * CJuiDialog displays a dialog widget.
+ *
+ * CJuiDialog encapsulates the {@link http://jqueryui.com/dialog/ JUI Dialog}
+ * plugin.
+ *
+ * To use this widget, you may insert the following code in a view:
+ * <pre>
+ * $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+ *     'id'=>'mydialog',
+ *     // additional javascript options for the dialog plugin
+ *     'options'=>array(
+ *         'title'=>'Dialog box 1',
+ *         'autoOpen'=>false,
+ *     ),
+ * ));
+ *
+ *     echo 'dialog content here';
+ *
+ * $this->endWidget('zii.widgets.jui.CJuiDialog');
+ *
+ * // the link that may open the dialog
+ * echo CHtml::link('open dialog', '#', array(
+ *    'onclick'=>'$("#mydialog").dialog("open"); return false;',
+ * ));
+ * </pre>
+ *
+ * By configuring the {@link options} property, you may specify the options
+ * that need to be passed to the JUI dialog plugin. Please refer to
+ * the {@link http://api.jqueryui.com/dialog/ JUI Dialog API} documentation
+ * for possible options (name-value pairs) and
+ * {@link http://jqueryui.com/dialog/ JUI Dialog page} for general description
+ * and demo.
+ *
+ * @author Sebastian Thierer <sebathi@gmail.com>
+ * @package zii.widgets.jui
+ * @since 1.1
+ */
+class CJuiDialog extends CJuiWidget
+{
+	/**
+	 * @var string the name of the container element that contains all panels. Defaults to 'div'.
+	 */
+	public $tagName='div';
+
+	/**
+	 * Renders the open tag of the dialog.
+	 * This method also registers the necessary javascript code.
+	 */
+	public function init()
+	{
+		parent::init();
+
+		$id=$this->getId();
+		if(isset($this->htmlOptions['id']))
+			$id=$this->htmlOptions['id'];
+		else
+			$this->htmlOptions['id']=$id;
+
+		$options=CJavaScript::encode($this->options);
+		Yii::app()->getClientScript()->registerScript(__CLASS__.'#'.$id,"jQuery('#{$id}').dialog($options);");
+
+		echo CHtml::openTag($this->tagName,$this->htmlOptions)."\n";
+	}
+
+	/**
+	 * Renders the close tag of the dialog.
+	 */
+	public function run()
+	{
+		echo CHtml::closeTag($this->tagName);
+	}
+}
