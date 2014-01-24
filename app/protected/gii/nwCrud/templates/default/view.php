@@ -1,32 +1,38 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * The following variables are available in this template:
+ * - $this: the CrudCode object
+ */
 ?>
-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
+<?php echo "<?php\n"; ?>
+/* @var $this <?php echo $this->getControllerClass(); ?> */
+/* @var $model <?php echo $this->getModelClass(); ?> */
+
+<?php echo "\$this->pageTitle = Yii::t('app', 'Update " . $this->pluralize($this->class2name($this->modelClass)) . "');\n"; ?>
+
+<?php
+$nameColumn=$this->guessNameColumn($this->tableSchema->columns);
+$label=$this->pluralize($this->class2name($this->modelClass));
+echo "\$this->breadcrumbs=array(
+	'$label'=>array('index'),
+	\$model->{$nameColumn},
+);\n";
+?>
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage <?php echo $this->modelClass; ?>'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Create <?php echo $this->modelClass; ?>'), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update <?php echo $this->modelClass; ?>'), 'url'=>array('update', 'id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>)),
+	array('label'=>Yii::t('app', 'Delete <?php echo $this->modelClass; ?>'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>),'confirm'=>'Are you sure you want to delete this item?')),
+);
+?>
+
+<?php echo "<?php"; ?> $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+<?php
+foreach($this->tableSchema->columns as $column)
+	echo "\t\t'".$column->name."',\n";
+?>
+	),
+)); ?>

@@ -1,65 +1,69 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("anagrafica","W");
+$tot1=0;
+$tot2=0;
+$tot3=0;
+$tot4=0;
+$tot5=0;
+$tot6=0;
+if (array_key_exists("cliente_id",$_POST)) {
+	$delete="DELETE FROM ".$tabelle['clienti']." WHERE cliente_id='".$_POST['cliente_id']."'";
+	$result = $sql->delete_query($delete);
+	if ($result) {
+		Yii::app()->user->setFlash('success', Yii::t('app', 'Client deleted successfully.'));
+	} else {
+		Yii::app()->user->setFlash('success', Yii::t('app', 'An error occured'));
+	}
+	header("Location:clienti.php");
+	exit();
+} elseif (array_key_exists("id",$_GET)) {
+	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['contratti']." WHERE contratto_anagrafica1='".$_GET['id']."' OR contratto_anagrafica2='".$_GET['id']."'";
+	$result=$sql->select_query($select);
+	$tot1=mysql_result($result,0,'tot');
+	// Totale delle ricorrenze del cliente nei contratti
+	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['presenze']." WHERE presenza_cliente='".$_GET['id']."'";
+	$result=$sql->select_query($select);
+	$tot2=mysql_result($result,0,'tot');
+	// Totale delle ricorrenze del cliente nelle presenze
+	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['clienti_note']." WHERE cliente_nota_cliente_id='".$_GET['id']."'";
+	$result=$sql->select_query($select);
+	$tot3=mysql_result($result,0,'tot');
+	// Totale delle ricorrenze del cliente nelle note
+	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['fatture']." WHERE fattura_cliente_id='".$_GET['id']."'";
+	$result=$sql->select_query($select);
+	$tot4=mysql_result($result,0,'tot');
+	// Totale delle ricorrenze del cliente nelle fatture
+	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['barche_trasferimenti']." WHERE barca_trasferimento_da='".$_GET['id']."' OR barca_trasferimento_a='".$_GET['id']."'";
+	$result=$sql->select_query($select);
+	$tot5=mysql_result($result,0,'tot');
+	// Totale delle ricorrenze del cliente nei trasferimenti delle imbarcazioni
+	$select="SELECT COUNT(*) AS tot FROM ".$tabelle['barche']." WHERE barca_proprietario='".$_GET['id']."'";
+	$result=$sql->select_query($select);
+	$tot6=mysql_result($result,0,'tot');
+	// Totale delle ricorrenze del cliente nelle imbarcazioni
+	if ($tot1==0 and $tot2==0 and $tot3==0)
+	{
+		$messaggio =  '<div class="alert alert-success">'
+				   .  Yii::t('app', 'This client was unused in the system and can be safely deleted.')
+				   .  '</div>';
+		$elimina = true;
+	}
+	else
+	{
+		$messaggio = '<div class="alert alert-info">' 
+				   . Yii::t('app', 'This client was in {count1} contract, {count2} presence, {count3} notes, {count4} invoices, {count5} vector transfers, {count6} as vectors owner', 
+				   		array('{count1}' => $tot1, '{count2}' => $tot2, '{count3}' => $tot3, '{count4}' => $tot4, '{count5}' => $tot5, '{count6}' => $tot6))
+				   . '</div>'; 
+		$messaggio.= '<div class="alert alert-danger">' . Yii::t('app', 'This client cannot be deleted.') . '</div>';
+
+		$elimina = false;
+	}
+
+	require_once "views/client/delete.php";
+
+} else {
+	header("Location:clienti.php");
+	exit();
+}
 ?>
-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
-yeSjij6kWr2gxcH5R0==

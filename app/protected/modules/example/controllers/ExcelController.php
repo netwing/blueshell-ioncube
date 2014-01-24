@@ -1,49 +1,71 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-2QrNFlFNt1C9hVwYlia=
+<?php
+
+class ExcelController extends Controller
+{
+	public function actionDownload()
+	{
+        define('EOL',(PHP_SAPI == 'cli') ? PHP_EOL : '<br />');
+
+        // Import PHPExcel and resolve problem with autoloader conflict
+        /*
+        spl_autoload_unregister(array('YiiBase','autoload'));
+        require_once Yii::getPathOfAlias('webroot.vendor.codeplex.phpexcel') . DIRECTORY_SEPARATOR . "PHPExcel.php";
+        spl_autoload_register(array('PHPExcel_Autoloader', 'Load'), true, true);
+        spl_autoload_register(array('YiiBase','autoload')); 
+        */
+        
+        // Create new PHPExcel object
+        $objPHPExcel = new PHPExcel();
+
+        // Set document properties
+        $objPHPExcel->getProperties()->setCreator("Maarten Balliauw")
+                                     ->setLastModifiedBy("Maarten Balliauw")
+                                     ->setTitle("PHPExcel Test Document")
+                                     ->setSubject("PHPExcel Test Document")
+                                     ->setDescription("Test document for PHPExcel, generated using PHP classes.")
+                                     ->setKeywords("office PHPExcel php")
+                                     ->setCategory("Test result file");
+
+
+        // Add some data
+        $objPHPExcel->setActiveSheetIndex(0)
+                    ->setCellValue('A1', 'Hello')
+                    ->setCellValue('B2', 'world!')
+                    ->setCellValue('C1', 'Hello')
+                    ->setCellValue('D2', 'world!');
+
+        // Miscellaneous glyphs, UTF-8
+        $objPHPExcel->setActiveSheetIndex(0)
+                    ->setCellValue('A4', 'Miscellaneous glyphs')
+                    ->setCellValue('A5', 'éàèùâêîôûëïüÿäöüç');
+
+
+        $objPHPExcel->getActiveSheet()->setCellValue('A8',"Hello\nWorld");
+        $objPHPExcel->getActiveSheet()->getRowDimension(8)->setRowHeight(-1);
+        $objPHPExcel->getActiveSheet()->getStyle('A8')->getAlignment()->setWrapText(true);
+
+
+        // Rename worksheet
+        $objPHPExcel->getActiveSheet()->setTitle('Simple');
+
+
+        // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+        $objPHPExcel->setActiveSheetIndex(0);
+
+
+        // Save Excel 2007 file
+        $callStartTime = microtime(true);
+
+        $filename = "Example1.xlsx";
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+
+        $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel2007');
+        $objWriter->save("php://output");
+        Yii::app()->end();
+        
+    }
+
+}

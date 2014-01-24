@@ -1,54 +1,115 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+
+<?php
+/* @var $this InvoiceTypeController */
+/* @var $model InvoiceType */
+
+$this->pageTitle = Yii::t('app', 'Manage Invoice Types');
+
+$this->breadcrumbs=array(
+	'Invoice Types'=>array('index'),
+	'Manage',
+);
+
+$this->menu=array(
+	array('label' => Yii::t('app', 'Manage InvoiceType'), 'url'=>array('admin')),
+	array('label' => Yii::t('app', 'Create InvoiceType'), 'url'=>array('create')),
+);
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#invoice-type-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 ?>
-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
-9wEY46qfkhKOfb8=
+
+<p>
+<?php echo Yii::t('app', 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.'); ?></p>
+
+<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-default')); ?>
+<div class="search-form" style="display:none">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'invoice-type-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'rowCssClass'   => array(),
+	'itemsCssClass' => 'table table-hover table-bordered',
+	'pagerCssClass'     => "col-md-12 text-right",
+	'pager'             => array(
+	    'header'                => '',
+	    'internalPageCssClass'  => '',
+	    'firstPageCssClass'     => '',
+	    'lastPageCssClass'      => '',
+	    'selectedPageCssClass'  => 'active',
+	    'htmlOptions'   => array(
+	        'class'     => 'pagination pagination-sm',
+	    )
+	),
+	'columns'=>array(
+        'name' => array(
+            'header' => Yii::t('app', 'Name'),
+            'value' => '$data',
+            'type'  => 'textColor',
+        ),
+		'type:invoiceType',
+		'prefix',
+		'year_restart:booleanString',
+		'sort_order',
+		'enabled:booleanIcon',
+    // Show a column with 3 icons as buttons
+    array(
+        'class'         => 'zii.widgets.grid.CButtonColumn',
+        'htmlOptions'   => array('style' => 'white-space: nowrap'),
+        'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
+        'buttons'       => array(
+            'view'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
+                'label'         => '<i class="fa fa-eye"></i>',
+                'imageUrl'      => false,
+            ),
+            'update'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
+                'label'         => '<i class="fa fa-pencil"></i>',
+                'imageUrl'      => false,
+            ),
+            'delete'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
+                'label'         => '<i class="fa fa-times"></i>',
+                'imageUrl'      => false,
+            )
+        )
+    ),
+    /*
+    // Show a column with dropdown actions
+    array( 'header'=>'Action', 'type'=>'raw',
+        'value'=>'\'
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Action <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="\' . Yii::app()->createUrl("/admin/user/update", array("id" => $data->id)) . \'">Edit \' . $data->id . \'</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+            \'', 
+        ),    
+    */
+	),
+)); ?>
+

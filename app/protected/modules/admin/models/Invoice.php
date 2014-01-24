@@ -1,132 +1,284 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-lLMIXmW=
+<?php
+
+Yii::import('application.modules.admin.models.base.BaseInvoice');
+
+class Invoice extends BaseInvoice
+{
+
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+        return array_merge(parent::relations(), array(
+            // DB relation
+            'customer' => array(self::BELONGS_TO, 'Customer', 'customer_id'),
+            // Stats
+            'net_total' => array(self::STAT, 'InvoiceRow', 'invoice_id', 'select' => 'SUM(total_no_vat)'),
+            'vat_total' => array(self::STAT, 'InvoiceRow', 'invoice_id', 'select' => 'SUM(vat_value)'),
+            'discount_total' => array(self::STAT, 'InvoiceRow', 'invoice_id', 'select' => 'SUM(discount_value)'),
+            'total' => array(self::STAT, 'InvoiceRow', 'invoice_id', 'select' => 'SUM(total)'),
+        ));
+    }
+
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules()
+    {
+        return array_merge(parent::rules(), array(
+            array('status_id', 'default', 'value' => '2', 'on' => 'insert'),
+            array('year', 'safe'),
+        ));
+    } 
+
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels()
+    {
+        return array_merge(parent::attributeLabels(), array(
+            'customer.cliente_nominativo' => Yii::t('app', 'Customer'),
+            'status.name' => Yii::t('app', 'Invoice status'),
+            'type.name' => Yii::t('app', 'Invoice type'),
+            'total' => Yii::t('app', 'Total'),
+        ));
+    }
+
+    /**
+     * @return array of available scopes
+     */
+    public function scopes()
+    {
+        return array(
+            'paid' => array(
+                // Add a condition
+                'with'=> array(
+                    // Use "status" relation defined in BaseInvoice
+                    "status" => array(
+                        'condition'=> "status.paid = 1",
+                    ),
+                )
+            ),
+            'unpaid' => array(
+                // Add a condition
+                'with'=> array(
+                    // Use "status" relation defined in BaseInvoice
+                    "status" => array(
+                        'condition'=> "status.unpaid = 1",
+                    ),
+                )
+            ),
+            'cancelled' => array(
+                // Add a condition
+                'with'=> array(
+                    // Use "status" relation defined in BaseInvoice
+                    "status" => array(
+                        'condition'=> "status.cancelled = 1",
+                    ),
+                )
+            ),
+            'income' => array(
+                // Add a condition
+                'with'=> array(
+                    // USe "type" relations defined in BaseInvoice
+                    "type"  => array(
+                        'condition'=> "type.type = 'INCOME'",  
+                    ),
+                )
+            ),
+            'outcome' => array(
+                // Add a condition
+                'with'=> array(
+                    // USe "type" relations defined in BaseInvoice
+                    "type"  => array(
+                        'condition'=> "type.type = 'INCOME'",  
+                    ),
+                )
+            ),
+        );
+    }
+
+    /**
+     * Virtual attribute Year
+     */
+    public function getYear()
+    {
+        return ($this->date !== null and $this->date != '0000-00-00') ? strftime("%Y", strtotime($this->date)) : null;
+    }
+
+    /**
+     * Virtual attribute Year
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
+    }
+
+
+    /**
+     * Parameterized named scope
+     * Get model in year
+     */
+    public function onYear($year = null)
+    {
+        if ($year === null) {
+            return $this;
+        }
+
+        $this->getDbCriteria()->addCondition("YEAR(`" . $this->getTableAlias() . '`.`date`) = ' . (int) $year);
+        return $this;
+    }
+
+    /**
+     * Get year for customer
+     */
+    public static function getYears($customer_id = 0)
+    {
+        $cmd = Yii::app()->db->createCommand()
+                ->selectDistinct('YEAR(date) AS year')
+                ->from('{{invoice}}')
+                ->where('customer_id = :id', array(':id' => $customer_id));
+        $years = $cmd->queryColumn();
+
+        $years = array_unique($years);
+        rsort($years);
+        if (count($years) > 0) {
+            $years = array_combine($years, $years);
+        } else {
+            $years = array();
+        }
+
+        return $years;
+    }
+
+    /**
+     * Total billed for order
+     * @return float of total billed
+     */
+    public function getTotalBilledForOrder($order_id)
+    {
+        $result = 0;
+        foreach ($this->invoiceRows as $row) {
+            if ($row->order_detail_id) {
+                if ($row->orderDetail->order_id == $order_id) {
+                    $result+= $row->total;
+                }
+            }
+        }
+
+        return (float) $result;
+    }
+
+    /** 
+     * AfterSave event
+     */
+    public function afterSave()
+    {
+        // If no invoice number and status was one of paid
+        if ($this->status->paid) {
+
+            // If not date paid, set it
+            if (!$this->date_paid or $date_paid = '0000-00-00') {
+                $attributes = array();
+                $attributes['date_paid'] = strftime("%Y-%m-%d", time());
+                $this->saveAttributes($attributes);
+            }
+
+            // If no invoice number, create it
+            if ((int) $this->invoice_number === 0) {
+                // Set invoice_number sequentially
+                $this->assignNextInvoiceNumber();
+            }
+        }
+
+        return parent::afterSave();
+    }  
+
+
+    /**
+     * Assign next invoice number to this invoice
+     * @return void
+     */
+    public function assignNextInvoiceNumber()
+    {
+        // Get invoice type
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'invoice_number > 0';
+        $criteria->compare('type_id', $this->type_id);
+        // If count reset every year
+        if ($this->type->year_restart) {
+            if ($this->date_paid and $this->date_paid != '0000-00-00') {
+                $year = strftime("%Y", strtotime($this->date_paid));
+                $criteria->compare(new CDbExpression('YEAR(date_paid)'), $year);
+            } else {
+                $year = strftime("%Y", strtotime($this->date));
+                $criteria->compare(new CDbExpression('YEAR(date)'), $year);
+            }
+        }
+        $criteria->order = 'invoice_number DESC';
+        $highest_invoice = Invoice::model()->find($criteria);
+        // If not found, it's first invoice
+        if ($highest_invoice === null) {
+            $attributes['invoice_number'] = 1;
+        } else {
+            $attributes['invoice_number'] = (int) $highest_invoice->invoice_number + 1;
+        }
+
+        $this->saveAttributes($attributes);
+    }
+
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
+     */
+    public function search()
+    {
+        // @todo Please modify the following code to remove attributes that should not be searched.
+
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('id',$this->id,true);
+        $criteria->compare('customer_id',$this->customer_id,false);
+        $criteria->compare('invoice_number',$this->invoice_number,true);
+        $criteria->compare('date',$this->date,true);
+        $criteria->compare('status_id',$this->status_id,true);
+        $criteria->compare('type_id',$this->type_id,true);
+        $criteria->compare('due_date',$this->due_date,true);
+        $criteria->compare('date_paid',$this->date_paid,true);
+        $criteria->compare('payment_method',$this->payment_method,true);
+        $criteria->compare('notes',$this->notes,true);
+        $criteria->compare('create_time',$this->create_time,true);
+        $criteria->compare('update_time',$this->update_time,true);
+
+        $criteria->order = "date DESC";
+
+        if ($this->year) {
+            $criteria->addCondition("YEAR(`" . $this->getTableAlias() . '`.`date`) = ' . (int) $this->year);
+        }
+
+        return new CActiveDataProvider($this, array(
+            'criteria'=>$criteria,
+        ));
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return Invoice the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
+
+}

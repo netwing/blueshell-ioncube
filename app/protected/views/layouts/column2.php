@@ -1,29 +1,51 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPuzqZsDbt7DKPC8QGB0wLtgKgupIUZAPWkP0+jEcyLX7RSePzQ/HSGDXay19Na8Y/fagNrJD
-UeD1Bx6i150QsWkf74DmOo1k/D+tqSLUdHQLAFB/m2ESBTieJx1hPxa5UTwhKqgdbXK3RflXn2o1
-04e6adkJEY6vEaUIPBnfH6LT2svUVw3RPkTMiyyGVXtwS9lUPJhQkXCS0inpSCHOH6YS4+ORrlOp
-SK0aexh8ORvcbC3p9sxFx0tFCa/KkqKESEYXfZaJzuHuO62lCGB3U83Aix5jDkp1PGuq+ZH4Jz+O
-w6gi2i5rSuLDCHaZylaKABVM023c/uwpSKTr+P4Q532b8DxHaGH9riykVylQGYADN2/y7nxzghDD
-7whjrd4W9vwOpxY2B2DbgPAngz2OiU6bWFp3EevEltA0YmA6EWlNUtMbSRuxCT84I0LnpswFD/Lk
-c3HJ7tA5azqFP/rgpCIsV1N1/M548/vBLZHqf8i0MI+VnYfoUo8mMUgvrwBXBEVAneaG9mRzMuFB
-mZ4JNf1BLFtS9Akm5efFp1IXfN79mJiTg2NRFY0B+8OXLaSCoH8VXvi20AeWa3SanY1ptFPmrcEn
-lBQXThUhQ7qmEdGGmyWAw8kLhaJkC0GIhWf24wqHCCxm/XBmZ8EkdWxff8aZd86285Vhu3kh2AIn
-urGoOTFjr5ER+Uo3f8DKEcBPXW2id7NZU7xmrB+O27LQf9ex2qX1MNcKlpvTBqNha7dNud4P2KGa
-vqoRZiT4BQNWDbKARqJ9gOTZ5sQW3N34b/CkD48vdghPIx2R995kQv1fal+SrMeDMs5mLwcG5c6t
-nGpB0/lYoPPa2sKQ4pwe6dSvXxddVkRYP4m63rxutNQLkMfU23TY1X4sosndw8qPdNwIr2SnWXYM
-X07rU473eF5p1RZmel2a5AT80jwzyKjHMAtB1EYcgJG3oGYSmT6OYpQUB9A/MwFk1eGizrpc80Fa
-bIF/fD3csTiwMvNtakK4WAhm0H9rThRY3cH8EL9aXgssa/l1q1WQmM4EPEalygD62sh5IKkCL1/o
-XaddQJN/IfIV7rPAj9cpV1xTP5G7n66hi/RNje93oXKKcZM8UHzCB/L/K/Ftbw4aNSYa9/x3Mo5D
-y/N2Se60pJMHCbd4fNG5NUZOZ/WQf0E9wUy49ay1tkO0CO1p2V+rbFZ8dVJhs0zzs5IuvCNZA11p
-Vz3plS0vxos+gLlDG//aqJ7CZE3gMl5U2S05s1SpRx49tYbTdKkLVsQB79l39X/DHvN39IeKfSGZ
-OfKv8wKj+o0Ho4t5HAYCDkD7NgLJkdwQ8DP7G8XUQeAGxIKzl9ehZX0OEwyPMSpm0nDTutpebcOW
-el+xU41+e4Vy+Hv/wGWr9Fqab1K0rI97WvzNnMsNFv45Ma/QOH7+zdJQknsG8XDGc9J4y+xuh409
-QH+fShHrVYEOsX6eenN+bwDGqAMv9gY8/jm+QyTDvLsJ2e8T5qWK+99i7HqTFuAfYcrjV0tsDKO0
-D+LlqryHVTVckXTmUK1ko71AVDkIAfpWfI9BiJtBiL6ZDGW+zoNnQ4NjJyEAVW15sRsHWBaMhGsJ
-eSz1TYBXZcxXgcW1TFapR5kFSexBEflMWXcM/af6PEhXig0/WGHRvuyA7JD9V9QiFuipYLaGDA9o
-w/0a8RDzjA35IgOiYbJnW/G1Aa8+pzAJ0tVNmLsrBIqn3oFD6JOME917jHAdy0orhDf4BeiFlQeC
-+3DPl1G+3cuPUuzkiSjhWZV3IWjPfIGEa33xP96Uvw/xMDguyOFWonV9e72oFV/RJE6x7HVTiYli
-wUmFxyinhvbUcZHdjVgSWNQB8rN2sGfVnSgvaGac/hP3icQKkj4FON8FGOmrtYGMXShF/TSNn51Q
-85w+Zb9DVT4XYQLGNOxMfB7ELfjL
+<?php /* @var $this Controller */ ?>
+<?php $this->beginContent('//layouts/main'); ?>
+
+<?php if(isset($this->breadcrumbs) and count($this->breadcrumbs) > 0): ?>
+<div class="row">
+    <div class="col-lg-12">
+    <?php 
+    $this->widget('zii.widgets.CBreadcrumbs', array(
+        'links'         => $this->breadcrumbs,
+        'tagName'       => 'ol',
+        'htmlOptions'   => array('class' => 'breadcrumb'),
+    )); 
+    ?>
+    </div>
+</div>
+<?php endif; ?>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2><?php echo $this->pageTitle; ?></h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 col-md-push-9">
+        <div id="sidebar">
+        <?php 
+            $this->widget('ext.netwing.bootstrap.widgets.Menu', array(
+                'encodeLabel'   => false,
+                'items' => $this->menu,
+                'htmlOptions'   => array('class' => 'list-group'),
+                'itemCssClass'  => 'list-group-item',
+            ));
+        ?>
+        </div>            
+
+        <?php 
+        foreach ($this->clips as $clipname => $clip) {
+            if (substr($clipname, 0, strlen('sidebar')) == 'sidebar') {
+                echo $clip;
+            }
+        }
+        ?>
+
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+        <?php echo $content; ?>
+    </div>
+</div>
+
+<?php $this->endContent(); ?>

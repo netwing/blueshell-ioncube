@@ -1,49 +1,38 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","W");
+if (!array_key_exists("id",$_GET))
+{
+	header("Location:index.php");
+	exit();
+}
+$contratto_id=$sql->pulisci($_GET['id']);
+$select="SELECT contratto_tipo FROM ".$tabelle['contratti']." WHERE contratto_id='".$contratto_id."'";
+$result=$sql->select_query($select);
+$contratto_tipo=mysql_result($result,0,'contratto_tipo');
+if ($contratto_tipo==4)
+{
+	// Recuperiamo le info sulla prenotazione
+	$select="SELECT contratto_anagrafica1,contratto_anagrafica2,contratto_tipo,contratto_barca,contratto_posto_barca,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,contratto_numero,contratto_gestione_tipo,contratto_gestione_percentuale,contratto_note,contratto_imponibile,contratto_totale,contratto_fatturato,contratto_fatturato_chiuso,contratto_sconto,contratto_ordine FROM ".$tabelle['contratti']." WHERE contratto_id='".$contratto_id."'";
+	$result=$sql->select_query($select);
+	$row=mysql_fetch_array($result);
+	extract($row);
+	// Inseriamo il contratto di affitto
+	$insert="INSERT INTO ".$tabelle['contratti']." (contratto_anagrafica1,contratto_anagrafica2,contratto_tipo,contratto_barca,contratto_posto_barca,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,contratto_numero,contratto_gestione_tipo,contratto_gestione_percentuale,contratto_note,contratto_imponibile,contratto_totale,contratto_fatturato,contratto_fatturato_chiuso,contratto_sconto,contratto_ordine)";
+	$insert.="VALUES ('".$contratto_anagrafica1."','".$contratto_anagrafica2."','1','".$contratto_barca."','".$contratto_posto_barca."','".$contratto_periodo."','".$contratto_data."','".$contratto_inizio."','".$contratto_fine."','".$contratto_numero."','".$contratto_gestione_tipo."','".$contratto_gestione_percentuale."','".$contratto_note."','".$contratto_imponibile."','".$contratto_totale."','".$contratto_fatturato."','".$contratto_fatturato_chiuso."','".$contratto_sconto."','".$contratto_ordine."') ";
+	$sql->insert_query($insert);
+	$update="UPDATE ".$tabelle['contratti']." SET contratto_fatturato_chiuso='1' WHERE contratto_id='".$contratto_id."'";
+	$sql->update_query($update);
+	$nuovo_id=$sql->insert_last_id;
+	// Trasferiamo le fatture dalla prenotazione all'affitto
+	$update="UPDATE blue_fatture SET fattura_contratto_id='".$nuovo_id."' WHERE fattura_contratto_id='".$contratto_id."'";
+	$sql->update_query($update);
+	header("Location:riepilogo.php?id=".$nuovo_id);
+	exit();
+}
+else
+{
+	header("Location:riepilogo.php?id".$contratto_id);
+	exit();
+}
 ?>
-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

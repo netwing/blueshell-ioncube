@@ -1,61 +1,76 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-r9aOLPch6+3E7W==
+<?php
+require_once("config.inc.php");
+$anni=$blue->presenze_anni();
+$anno=2005;
+if (array_key_exists('anno',$_POST))
+{
+	$anno=$_POST['anno'];
+}
+//$selnaz="SELECT cliente_nazione,nazione_nome,COUNT(*) AS totale FROM blue_clienti,blue_nazioni,blue_contratti WHERE nazione_id=cliente_nazione AND (cliente_id=contratto_anagrafica1 OR cliente_id=contratto_anagrafica2) AND LEFT(contratto_data,4)='".$anno."' GROUP BY cliente_nazione";
+$seldim="SELECT dimensione_id,dimensione_lunghezza,dimensione_larghezza,COUNT(*) AS totale FROM blue_dimensioni,blue_posti_barca,blue_presenze WHERE posto_barca_dimensioni=dimensione_id AND posto_barca_id=presenza_posto_barca AND (LEFT(presenza_arrivo,4)='".$anno."' OR LEFT(presenza_partenza,4)='".$anno."') GROUP BY posto_barca_dimensioni ORDER BY dimensione_lunghezza ASC, dimensione_larghezza ASC";
+$resdim=$sql->select_query($seldim);
+$stat1=array();
+$x=0;
+while ($row=mysql_fetch_array($resdim))
+{
+	$stat1[$row['dimensione_id']]=array('dimensioni'=>$row['dimensione_lunghezza']." x ".$row['dimensione_larghezza'],1=>0,2=>0,3=>0,4=>0,5=>0,6=>0,7=>0,8=>0,9=>0,10=>0,11=>0,12=>0,'tot'=>0);
+	$selcon="SELECT presenza_arrivo,presenza_partenza FROM blue_presenze,blue_posti_barca WHERE posto_barca_dimensioni='".$row['dimensione_id']."' AND presenza_posto_barca=posto_barca_id AND (LEFT(presenza_arrivo,4)='".$anno."' OR LEFT(presenza_partenza,4)='".$anno."')"; // AND (presenza_partenza>'0000-00-00' AND presenza_arrivo>'0000-00-00')";
+	$rescon=$sql->select_query($selcon);
+	while ($rowcon=mysql_fetch_array($rescon))
+	{
+		for ($i=1;$i<=12;$i++)
+		{
+			if (strlen($i)==1)
+			{
+				$j="0".$i;
+			}
+			else
+			{
+				$j=$i;
+			}
+			$gg=date('t',time(12,0,0,$i)); // giorni del mese
+			$im=$anno."-".$j."-01"; // Data di inizio mese
+			$fm=$anno."-".$j."-".$gg; // Data di fine mese
+			$ic=$rowcon['presenza_arrivo']; // Data di inizio contratto
+			if ($ic=='0000-00-00')
+			{
+				$ic=date("Y-m-d",time());
+			}
+			$fc=$rowcon['presenza_partenza']; // Data di fine contratto
+			if ($fc=='0000-00-00')
+			{
+				$fc=date("Y-m-d",time());
+			}
+			//Se inizia e finisce all'interno del mese attuale			
+			if ($ic>=$im AND $fc<=$fm)
+			{
+				$addgg=intval((strtotime($fc)-strtotime($ic))/86400);
+				$stat1[$row['dimensione_id']][$i]+=$addgg;
+				$stat1[$row['dimensione_id']]['tot']+=$addgg;
+			}
+			//Se inizia nel mese attuale ma finisce oltre
+			elseif ($ic>=$im AND $ic<=$fm AND $fc>=$fm)
+			{
+				$addgg=intval((strtotime($fm)-strtotime($ic))/86400);
+				$stat1[$row['dimensione_id']][$i]+=$addgg;
+				$stat1[$row['dimensione_id']]['tot']+=$addgg;
+			}
+			//Se inizia prima del mese attuale ma finisce in questo mese
+			elseif ($ic<=$im AND $fc<=$fm AND $fc>=$im)
+			{
+				$addgg=intval((strtotime($fc)-strtotime($im))/86400);
+				$stat1[$row['dimensione_id']][$i]+=$addgg;
+				$stat1[$row['dimensione_id']]['tot']+=$addgg;
+			}
+			//Se il contratto inizia e finisce oltre il mese attuale
+			elseif($ic<=$im AND $fc>=$fm)
+			{
+				$stat1[$row['dimensione_id']][$i]+=$gg;
+				$stat1[$row['dimensione_id']]['tot']+=$gg;
+			}
+		}
+	}
+}
+
+
+require_once "views/stats/stats2.php";

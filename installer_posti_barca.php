@@ -1,90 +1,131 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php require_once('config.inc.php'); ?>
+<?php
+$db = mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
+
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  if (PHP_VERSION < 6) {
+    $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  }
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? doubleval($theValue) : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+$editFormAction = $_SERVER['PHP_SELF'];
+if (isset($_SERVER['QUERY_STRING'])) {
+  $editFormAction .= "?" . htmlentities($_SERVER['QUERY_STRING']);
+}
+
+if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "form1")) {
+    for($k=$_POST['n_pb_da'];$k<=$_POST['n_pb_a'];$k++){    
+      $insertSQL = sprintf("INSERT INTO blue_posti_barca (posto_barca_pontile, posto_barca_numero, posto_barca_sequenziale, posto_barca_dimensioni, posto_barca_proprietario, posto_barca_proprietario_data, posto_barca_gestore, posto_barca_gestore_data, posto_barca_disponibile) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
+                           GetSQLValueString($_POST['pontili'], "int"),
+                           GetSQLValueString($k, "int"),
+                           GetSQLValueString($k, "int"),
+                           GetSQLValueString($_POST['dimensioni'], "int"),
+                           GetSQLValueString(1, "int"),
+                           GetSQLValueString("NOW()", "date"),
+                           GetSQLValueString(1, "int"),
+                           GetSQLValueString("NOW()", "date"),
+                           GetSQLValueString(1, "int"));
+    
+    
+      mysql_select_db($dbdata, $db);
+      $Result1 = mysql_query($insertSQL, $db) or die(mysql_error());
+    }
+}
+
+mysql_select_db($dbdata, $db);
+$query_pontili = "SELECT * FROM blue_pontili";
+$pontili = mysql_query($query_pontili, $db) or die(mysql_error());
+$row_pontili = mysql_fetch_assoc($pontili);
+$totalRows_pontili = mysql_num_rows($pontili);
+
+mysql_select_db($dbdata, $db);
+$query_dimensioni = "SELECT * FROM blue_dimensioni ORDER BY dimensione_lunghezza,dimensione_larghezza";
+$dimensioni = mysql_query($query_dimensioni, $db) or die(mysql_error());
+$row_dimensioni = mysql_fetch_assoc($dimensioni);
+$totalRows_dimensioni = mysql_num_rows($dimensioni);
 ?>
-HR+cPvh+IlGMQK/y+pNVruuvPRKJU77pkduQQVOJ3C6X7V3GOsAdj705N1sn9L2KqfgOyQ6mUnSa
-ApYNqhRBDCz8rOOVQ+5oTsWfI+fNoJU/1CF6cY3510bR7iYnB2RJqlFrXMVLxc8SvEgzSq6TVScV
-7PxyV0mqTIqChAdVQ7IDJoVLZDPCt11GdENhOmfr/55B/vNiZKQDuHHDEfv7TkpXwS63GH64u4r1
-/4f2WhkpOlgbD3BwpVJPXGtFCa/KkqKESEYXfZaJzuIWPvWcq0M7BHxB6Zrj4hh07DFnzjH991UO
-+74aRWm8UxYhKhjbLRtfYQEr4GhLY8/O3LIAs8bQPPG9rCDQv7gpFzzIKozLsxM8zdg+XzOhS6GR
-IkXjV3ZjgJZk+tDw74+3l5EMnjpI4cA6IGZ0iHLFK0qTL+3xr9mA7d9FtCF/YZrN4P+Hzk1tUvCm
-27wFtYjRyzB579TRbbTmM3NVKYyv/c9UESLgNMGe1bzimFTgCDFjHuJ0J05ncZ7mcSPItW7XNrIl
-kns+jE0VoLzpV5iVgxYrhwOSBHCazGOWao2mkARjI63Pd8ydAtmmjpY6vZ6tJbwZTkTdTUM1wyKY
-KiNdFsjVAXW0wFsArNsJaAWJUBz1fNGh/yhcV8PIwPVE/xch9v0puPgr22D54YXe873X4fhRtgCB
-8sCqi60O4FKlo76lHoDyJ0q7RScugHAzviTmdtXjttyhV9ciWKcsjUXaFzUdVMrY1qXY18hNvdVH
-8U/PxxTmhMnNYT2gVy82bu7E3qnjfdrniqBm6WjbCgNsCKQS0zXyFLfpTnS2brXGtFWNaHndPfAb
-1802eDaw7JdxDJ+22+z2PkXCaQaQeC6CHiN42td79qAEYhQK7jRClMr24XL+UtH2pueu0d8QxEqf
-OpdgpX3xHdOH38nYuM02O9qSbbqqCGcXzyzTci/af5T85AVavcsU8UwUdI9V0P35mqEaHIm5/+Uo
-0kICtN91bJ1T9r9GA7DY3VFqxdp844K1hCg5MZ6pZTs8k5cbRkdc3ywOR8tk15gg085+InWGYFiq
-hDUbbD7Evrj4UKNx6x+IesDcArrwxAeh2rYBM4wmk2RFhX+ZXShaJws9h5osCQUWn8o8Gas1E5Ok
-FPodX/5OX9numi7Hy093CoRJVCEnZJ5ZgE/ZRZH/ih5hyB7e54/b49uEgmnryNx0DJrp9rAtCPme
-8KTnYCpFWoWcKCBKvtaf4BeITRy2m1M8l2gTJkl2uJCXyvVlX4eJLena6SDiMsiYIZh99xv9zogs
-L0vHqzdAQ5qM2BGbPLgR1M2LfLRB20b90itDvy4BaeMM7HGzzZ/YBsODM5OsPtFotV/kLnXwzPsn
-RQbGMUty9wCDhDrg/4N+trjX5m0XH8wAITkj0/UG1DGpvrcl6NB6LaBdeXMToMq6V+tEx3Z+1S8c
-YCeF3EhaJ5mNBFL1t5Pbb3VoAO2fFQX3L+azFN4qJKuMIzsbZNBddNRfnzlw5D60IHWM/PdmmEtq
-mzcdOjSt7UezKbByLUGrIn2H+bByvzhnepBERTJ3YbGjX5g4Doy5O1JskB6K8fc9E8jOvzRMZPPw
-ZNWEGBblZyc2kEhg0gcduWcbJwu871VlAjQaC/luXrPpEp2G5QYDHLYEE4G0cpwv5gMYHbFNPtuo
-yr8k66NzheDR6H9F1mGh6BLMCcYF9MhtCBmNb0+JOMAo8NSWuSjE7MxwLzbk0yhb/OgTklWm3pdy
-1f6i2ynJGT1J0K6wtbImLKRrMjTmuZyc8BxPgg1z3b1yAF4qiP//aN4my5CApQSTg/pYeDzzrmK9
-k24656pSOsIMQYVdYosIxAK6SQuNPszPRzUFFxX+GuNZyjkR2EApHg4CYt2G4QrgsrwcLS6ds1C4
-Hv2D0b1PPrVMemthpWpUD3f7A/nR4fMf8FToXswo5ifPCKW216YM4YbQ00dK1iDZBjdXCz+Ghw5B
-XKA3HGACFeWS1XAKGhM6VtcXLT4Z8TGP8skiS+ZLo3R8x5IZJdhKTRRBxrbopwTyxhmC/7tR0joK
-xwe5BmBPJ9avvKKpjfSpTvILAkQVh09EER3u4xohyluYsEeMYl3MkKKazeT7j0TGvtiVwYSK+pu/
-2t3cO8IFoJxCmdGMsR1YXeBLo7GHRcA7q4QUz/R4Tw2qeozL6lgdvuwisWwZcTbj3b6sxZ0b4e+g
-hxS7qLQ3ZUPZVJ9MztSbdzkzY/3HyABq5hB8tw491eyl3uYi3KBlCF6ulBlZv5i7V1i5MAAQPpQv
-0/f/nE99hUUVCFeeFkSpYl1PaEDHEGIZ+vveBWYogGmjiJlqxi/xuKC+ZMcQxhuwidy+rxDTj1yG
-dsdzO5tEX/sNEnUuikxBqJOIskVxK4ed5ncG2JepKGjagY/ZzdaFmdWSLK5zsjyJfS9eaBcotMTX
-MlHtgwYjL+pl2mvpUNPgOyLFbv9mYOnFVAYlX/x7INR2B7SGcM+Znf3Z6IYoRldiwmXNMX+2QF1J
-OQKWecUVd7qIC+dSKlUlvdfF9dmCPFQmQGF2cIzNYx8kGTc+Dn4XhHS9PjqvuOw1J9YOyq03efJD
-uWEVDzHABTqdiDX9qVO+tu7nqtTPkrmPT62xGXIA3JPvygcs+O4sHwEuMsnMnAhz7RZ3zEIsZmT/
-8tiuoL13cq3+tIpFpi7RHEoyBU7nDOS43KnP2hI9LsluSWpeET6kh3xFW6GOWs9guqXXuqQMrW4W
-/yQEk6avIyUQCh6MAObDAtAg5CUL8+6OsWvqp/kdVQZRk2YdgTu1jnwZGOkhydT3hTtNL+0T1sWF
-xXpIU9RDUtokpatvHn57zIAprL9Re0uBZ4mDJuFqIMhZt8FqCrq1ctKekeQsyBXhE4OqlsWkf1vH
-TfMpM5Q0Z+s61irp1pRy/rIPuUywLOZUx2EHgqyVHyWW+mZcSXHmXcrWHLGpnuXXW6hqNIQFBOf+
-LlOWLgijOg4aA49sTsbwVgTTgIvh8PBRIaAk8CX8/bDzaUIzANGU0CiMj7TElCFpCA/15NfnrZbD
-5IwpxnkKIkxFKL2q5eNvhowocc/TZH+/0hSkb2TYeCKMuxkzy52LkSKtPJ7aJM+FYgnu4qemrBxh
-ACqoU6Q7Sl6BMWkpBSSpuXHz3LlSxhvdNYHiqqgmGOgSKE0FH1MOUvKSsz8wI0L7FrSCur58jvAN
-MC0kKOmf9pQyJiTUPMk7H2gS+FsOc98q0qIaXKeGniECUksgHF7WVRIefJe/RpbJDE9TRz3FkLh5
-Q2e4EEUArI2Yriko7focssoc/yNzJJITXkFl5IdgmeMjotQk9h6vRPYTYdqVlmvD80Il8yDr39B8
-sDFB8IddUg11M2cCNeEYZMar/KPfxFgD9HlBJP4SQgJa/Ks1oWnuEYne/RkLUHNg5gF4gA53jTs9
-Gik0MGHZmm2IcLCitIpCFY4VKyGCQ9l3j7bhm/FH864xUCcHyZz2jWTTQ4GRsBGo8XyZ6s7aZ9It
-wR51HIJBB5olQq91Rz8+nlwDH3Oo4QXdGFg7gdHof7RrXjW5RIKvjoXYTEK7MXjWEBBEE5Tiic5W
-JfzAb4NOshooq4i+dP7tlbQ2QiqQtp+DnOksA4IFA7/B/ZzeWC9csTwfBlG0VYSEkXE9v9Hf0Yds
-Y7wWCsmGk4BSHdKsj34ldNii1mQRyyuRSjPcS1BZcrLbuXGVfJDmI/NQIx02K/38yBx/+qnrV6Qb
-phvvuDukZ8e87CFXgjytjuiRw1AJ8Ood+YgPHePQ6rx2Ogn87XjpRbWCSlSOmXrbM1sCsSqMevRU
-NqpE0++xbP0bH2wmpdD6tdPIKwR2i0vt/E+39e+0A+OVtwnQeAGU7IVSIpixd1y4dbmAsBWEc7vr
-5nan5jdNata48ffa8q/5dsO4rhVlTI/ygRfA4SwiJMXLUEGsaqulBTc5qhnM4nstU0A0SOL+D+Ng
-1gfW56p8z/Y8RnJs4FRhZJ+4viJFTNicIRbxauzR8JrY2iSNIhIIh54fFnCJYVXLI8cVR+6Cecaw
-I3Joy+bAhs6lRnifv+hp+rztcZlNXCZpaELZJ9KBrUrtgRloWHT791Hn7zoPd6qP5jCpyorptAzW
-+szTla9LJCk3CQVIT7yvr4fIha1n30QipgEJbkwUmFroBqiLuvCuz5wicbSR47SrvNm14VceWLG8
-Nd6QUfWj+zSzl0YutjvLjKcNywE0THFjkg8JSev8NAl8X+7bct9FUprZMexkc3x5QHTTKvsSGkmN
-bh3wIPnxehS4kPWJ/s33b6+XLBE0WpwDZfsnAQ07TZNU250OkjTWvRqIzw/rOD6FJyQCjAQ6/bPB
-+z0qvbh1K9JB+eFhYNFD9qm3aYLTWZ2rPI/zr4bWP9TwBDpFq/zVkWp45Z/EALV6yIoicgr4Sasf
-DznVPOLb2Z7FYihRQu+7vIGgOHsI5A/akli34zb7qDkdTAy14vziG/v1DedZV4ENAKPgTP2Uqy0Z
-u5Gv2/vwqTCc+maW+z+ag++svIC7A5oG/G18Bz+Oyiw9VR5jnPRyIqqW7zlH2N2WwHtFvMt36RPn
-CrwBuCMppe7Y8sSVqyyG5y7esw+gkpbx7B+f8XCkAnACEgXheFKUYOfcTEpm1LgAAYApLCQRjZtD
-nnGIvKjtOSFcz+ZNvK38rKKbLODunFZ8dAAL6Iv3BqXW+MRTzBR1rHlmMU0EaKSKIJz/2BEFd+rN
-01/IEm+oCYWdysGkq5TgcTWGCpeVq4UFpOEeZ2nUOfI4kp360saMd8w2IYflB8uMbqdZI11IBmLv
-qL97QWGmK4W/lGZYysJDf2c550+SssNEwuEFhHarI8PPdeVqiIHQOgoX1I/Xn+xLz+UMlI7GG3gI
-y0flGncpXFkZfsL1q1ECVVBxYyCFjk9zR9JYbmd4VuVPmtRhhlmSimJQ3KqcHfKMC441Kdi33RDi
-N8HoRiazu01p6vNwSs86mvOnb1JFcJNeueqLRuAeAAyKOOBxS2K94AL9EL5rlTzuPA6iSZ9II+DV
-7f0YP5Xu00LBaURW+xGfD3KYKXIBjcRtYFZOtF6TGfboWi5qFR9+5INYh2ScWwNzNhU6L3ld4YpE
-x45ELgXfpEH4n4NpEwk6nL7bhqTGfiJbS7man54jHLJBLHgEXBrz6nzvIMe1SMTWBreJx0e+sxl2
-COp3r01nwPBwIpd/dLulHfmAsfI0bn2RIRws7yshafQRXnDZ6f/8/YuY1OELGRIsWdQoqrq1vTCT
-ElVLFjC8Mab17TehRL1oPTgklWDmo2P1cOTwYg+C2U4iwW3My+y7pKDgibLCjirJp5m/JTGU3bT4
-SVxJIchac3kQx2pQmXN3lFeg3F5tz1qWU9tnHXkKSFOKP51JS6KlGV7UEDF6WZq9YZCxXWOK0wE8
-hsWOcJgix8Qs0l5Oj6i8eYvAe0l3ajmTqunZfkSxaHOpmydFKCmZbpCS0XmU3TeVxdNZ6BOARqnl
-f1LhpMMMUgyVvXCaJq6VdEG9RIbNphOzeQIPaR5KssszXW+gICm7BVyG6QrE/ub7amRIGpsUTLyH
-sEEnK1eIBjvqs1IFfsY+Urgil7Vy2EKCn4HqVHtwfOgv+KfBWG1R2UFfejYukXSmrhM6KVQFQgq7
-yFDGkXhxu0mPKTE1ca39DRu4fMK+UobYgWkpPPIoVXBEjK+U369OOfCBtmYHVm0det+F50v2jQwl
-5/U3jEjB2nVJ9uFb2wGPXG+aesp11BEUZmyNn00x2GT4dPHw5A6AXuzoan13nZLJ2nUlTxALo7hx
-/uutqngUWKXnbLIIfxPgvoOIdPizmyxIlJ/Xo1LcP4DcUdw1680D1ht4jd4/cwqDKCBiY2rp4gic
-vY9zQdcT2bWYBbCwH7pIR8QrRx0AnAOoBc954wwCWI7972lbMkflxBP11ERgd4EkAKvQjXOh+1Y1
-RpyC33xlOk8FJwigstgf5XF/jgwCZtPfcYCifr42I23MJqKqYNJ6C7zfa5uRS5AYTvp2JT1TzG1/
-PVPT5XaLNw379sekj6Gj8xQ5Ri+KURjW4Ir7R/9uITBbxG6NGgzHMfewHQB0m8GeLCY+QQbEterJ
-/UOUbFUJgCdCBKe+V+3vPyVJUWonD/FBIh79EtdS8uwV/ciP/Q7+uzHjNJC/KtiJTBWJBYX8hedB
-XugV0kBNfEDVPj5Gzls+4IWpVV6tsIzpZFXt4fOFGwfba87LYj6zJwT18jmqVaVZZjgzFy+toyzM
-ZOOKbFTr+YhGgxIeGVncJ+Jsj3Zt6XX7OdNNDbXLv4I6aGJ7nWdo3+7fl8Df7xdWPWEFFJu2W/yS
-OFe/emdYAT1fgO6YEsHR3VhxGf2PSWC66QbndHl1WfmTYP2qhP+SDw1uI1jpBKtO2noVBx1y81W6
-5q15Kvp0CCnic+YqoME4mvPPKCfPES9fsyqFehCnvYtv4YO7pHTKTuH3k8tG6n9GFv2ItBGGm2gK
-Du8lmPfk5YT6vJlhA96rhtE8hA+RoXy0aW3kkRNz31Drk2S3tAOiHuvlTdcBKMI78syBbYVf6/iR
-yKavk7MbyVE9VW==
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Documento senza titolo</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="POST" action="<?php echo $editFormAction; ?>">
+  <input type="hidden" name="MM_insert" value="form1" />
+  <table width="500" border="0" cellspacing="0" cellpadding="5">
+    <tr>
+      <td>Seleziona pontile</td>
+      <td><select name="pontili" id="pontili">
+        <?php
+do {  
+?>
+        <option value="<?php echo $row_pontili['pontile_id']; ?>"><?php echo $row_pontili['pontile_nome']; ?></option>
+        <?php
+} while ($row_pontili = mysql_fetch_assoc($pontili));
+  $rows = mysql_num_rows($pontili);
+  if($rows > 0) {
+      mysql_data_seek($pontili, 0);
+      $row_pontili = mysql_fetch_assoc($pontili);
+  }
+?>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Seleziona dimensione</td>
+      <td><select name="dimensioni" id="dimensioni">
+        <?php
+do {  
+?>
+        <option value="<?php echo $row_dimensioni['dimensione_id']; ?>"><?php echo $row_dimensioni['dimensione_lunghezza']." x ".$row_dimensioni['dimensione_larghezza']; ?></option>
+        <?php
+} while ($row_dimensioni = mysql_fetch_assoc($dimensioni));
+  $rows = mysql_num_rows($dimensioni);
+  if($rows > 0) {
+      mysql_data_seek($dimensioni, 0);
+      $row_dimensioni = mysql_fetch_assoc($dimensioni);
+  }
+?>
+      </select></td>
+    </tr>
+    <tr>
+      <td>Inserisci numero posti barca da:</td>
+      <td><input name="n_pb_da" type="text" id="n_pb_da" size="3" /></td>
+    </tr>
+    <tr>
+      <td>Inserisci numero posti barca a:</td>
+      <td><input name="n_pb_a" type="text" id="n_pb_a" size="3" /></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right"><input type="submit" name="button" id="button" value="Inserisci posti nel pontile" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

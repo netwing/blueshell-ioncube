@@ -1,74 +1,122 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import("application.modules.admin.models.*");
+
+/**
+ * Class for bridging between old and new application
+ */
+class Bridge extends CApplicationComponent 
+{
+
+    public function orderFromContract($id)
+    {
+        $result = array();
+
+        $id = intval($id);
+
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'opened=:opened';
+        $criteria->order = "sort_order ASC";
+        $criteria->params = array(':opened' => 1);
+        $status = OrderStatus::model()->find($criteria);
+
+        $contract = Contract::model()->findByPk($id);
+
+        // If reservations, do not create order
+        if ($contract->type->reservation == 1) {
+            return $result;
+        }
+
+        // Check if row already exists
+        $order_detail = OrderDetail::model()->findByAttributes(array('contract_id' => $id));
+        
+        if ($order_detail) {
+
+            // Update with contract data
+            $order_detail->price = $contract->contratto_imponibile;
+            $order_detail->quantity = 1;
+            $order_detail->total_no_vat = $contract->contratto_imponibile;
+            $order_detail->vat = VAT_PERCENTAGE;
+            $order_detail->vat_value = ($contract->contratto_totale - $contract->contratto_imponibile);
+            $order_detail->discount = $contract->contratto_sconto;
+            $discount_value = $contract->contratto_totale / 100 * $contract->contratto_sconto;
+            $order_detail->discount_value = $discount_value;
+            $order_detail->total_vat = ($contract->contratto_totale - $contract->contratto_imponibile);
+            $order_detail->total = $contract->contratto_totale - $discount_value;
+            // Save
+            $order_detail->save();
+            // Return error if any
+            $result+= $order_detail->getErrors();
+
+        } else {
+
+            // Create a new order for this customer, of type "2"
+            $order = new Order();
+            $order->customer_id = $contract->contratto_anagrafica2;
+            if ($contract->contratto_tipo == "3") {
+                $order->customer_id = $contract->contratto_anagrafica1;
+            }
+            if ($contract->contratto_barca) {
+                $order->vector_id = $contract->contratto_barca;
+            }
+            $order->date = $contract->contratto_data;
+            $order->type_id = 2;
+            $order->status_id = $status->id;
+            $result+= $order->getErrors();
+
+            if ($order->save()) {
+                // Create a new row with contract_id
+                $order_detail = new OrderDetail();
+                $order_detail->order_id = (integer) $order->id;
+                $order_detail->contract_id = intval($_GET['id']);
+                $order_detail->price = (float) $contract->contratto_imponibile;
+                $order_detail->quantity = 1;
+                $order_detail->total_no_vat = (float) $contract->contratto_imponibile;
+                $order_detail->vat = VAT_PERCENTAGE;
+                $order_detail->vat_value = ((float) $contract->contratto_totale - (float) $contract->contratto_imponibile);
+                $order_detail->discount = (float) $contract->contratto_sconto;
+                $discount_value = $contract->contratto_totale / 100 * $contract->contratto_sconto;
+                $order_detail->discount_value = $discount_value;
+                $order_detail->total_vat = ($contract->contratto_totale - $contract->contratto_imponibile);
+                $order_detail->total = $contract->contratto_totale - $discount_value;
+                $order_detail->done = 1;
+
+                $order_detail->save();
+
+                $result+= $order_detail->getErrors();
+            }
+
+
+        }
+
+        return $result;
+    }
+
+    /**
+     * Render URL correct if in Yii app or in old app
+     */
+    public function menuUrl($route, $params = array())
+    {
+        $url = Yii::app()->createUrl($route, $params);
+        list($base, $query) = explode("?", $url);
+        $result = APPLICATION_BASE_URL . "/app/index.php?" . $query;
+        if (substr(Yii::app()->request->requestUri, 0, 4) == '/app') {
+            $result = Yii::app()->createUrl($route, $params);
+        }
+
+        return $result;
+    }
+ 
+    /**
+     * Render URL correct if in Yii app or in old app
+     */
+    public function oldUrl($route, $params = array())
+    {
+        $result = $route;
+        if (stripos(Yii::app()->request->requestUri, APPLICATION_BASE_URL . "/app/") !== false) {
+            $result = "../" . $route;
+        }
+
+        return $result;
+    }
+}

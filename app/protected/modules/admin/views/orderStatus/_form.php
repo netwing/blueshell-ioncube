@@ -1,88 +1,141 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this OrderStatusController */
+/* @var $model OrderStatus */
+/* @var $form CActiveForm */
 ?>
-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
-QNiqo6mpDdK7lxWNtzCH
+
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+    'id'=>'order-status-form',
+    // Please note: When you enable ajax validation, make sure the corresponding
+    // controller action is handling ajax validation correctly.
+    // There is a call to performAjaxValidation() commented in generated controller code.
+    // See class documentation of CActiveForm for details on this.
+    'enableClientValidation'=>false,
+    'enableAjaxValidation'=>false,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+    <p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
+</p>
+
+    <?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'name', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'name', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'name'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+   <div class="form-group">
+        <?php echo $form->labelEx($model, 'quote', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'quote', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'quote', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'quote'); ?>
+        <p class="help-block"><?php echo Yii::t('app', 'Set to "yes" if orders in this state should appear as a quote'); ?></p>
+        </div>
+    </div>
+
+   <div class="form-group">
+        <?php echo $form->labelEx($model, 'opened', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'opened', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'opened', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'opened'); ?>
+        <p class="help-block"><?php echo Yii::t('app', 'Set to "yes" if orders in this state should appear "opened"'); ?></p>
+        </div>
+    </div>
+
+   <div class="form-group">
+        <?php echo $form->labelEx($model, 'pending', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'pending', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'pending', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'pending'); ?>
+        <p class="help-block"><?php echo Yii::t('app', 'Set to "yes" if orders in this state should appear pending (to do for your staff)'); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'closed', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'closed', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'closed', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'closed'); ?>
+        <p class="help-block"><?php echo Yii::t('app', 'Set to "yes" if orders in this state should appear "closed"'); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'cancelled', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'cancelled', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'cancelled', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'cancelled'); ?>
+        <p class="help-block"><?php echo Yii::t('app', 'Set to "yes" if orders in this state should appear "cancelled"'); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <?php echo $form->labelEx($model, 'color', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'color', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'color'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'sort_order', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'sort_order', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'sort_order'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="reset" class="btn btn-warning">Reset</button>
+            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
+
+<?php Yii::app()->minicolors->register(); ?>
+<?php Yii::app()->clientScript->registerScript('OrderStatus_color_minicolor', '
+$("#OrderStatus_color").minicolors("create", {
+        defaultValue    : "' . $model->color . '",
+        theme           : "bootstrap",
+    });
+', CClientScript::POS_READY); ?>

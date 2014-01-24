@@ -1,29 +1,29 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this DimensionController */
+/* @var $model Dimension */
+
+$this->pageTitle = Yii::t('app', 'Update Dimensions');
+
+$this->breadcrumbs=array(
+	'Dimensions'=>array('index'),
+	$model->dimensione_id,
+);
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage Dimension'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Create Dimension'), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update Dimension'), 'url'=>array('update', 'id'=>$model->dimensione_id)),
+	array('label'=>Yii::t('app', 'Delete Dimension'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->dimensione_id),'confirm'=>'Are you sure you want to delete this item?','params'=> array('YII_CSRF_TOKEN' => Yii::app()->request->csrfToken))),
+);
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'dimensione_id',
+		'dimensione_lunghezza',
+		'dimensione_larghezza',
+		'dimensione_profondita',
+		'dimensione_tipo',
+	),
+)); ?>

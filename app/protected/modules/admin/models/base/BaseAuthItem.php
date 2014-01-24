@@ -1,57 +1,113 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Th9C2cLqDhqGVxzO
+<?php
+
+/**
+ * This is the model class for table "{{auth_item}}".
+ *
+ * The followings are the available columns in table '{{auth_item}}':
+ * @property string $name
+ * @property integer $type
+ * @property string $description
+ * @property string $bizrule
+ * @property string $data
+ *
+ * The followings are the available model relations:
+ * @property AuthAssignment[] $authAssignments
+ * @property AuthItemChild[] $authItemChildren
+ * @property AuthItemChild[] $authItemChildren1
+ */
+class BaseAuthItem extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{auth_item}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('name, type', 'required'),
+			array('type', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>64),
+			array('description, bizrule, data', 'safe'),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('name, type, description, bizrule, data', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'authAssignments' => array(self::HAS_MANY, 'AuthAssignment', 'itemname'),
+			'authItemChildren' => array(self::HAS_MANY, 'AuthItemChild', 'child'),
+			'authItemChildren1' => array(self::HAS_MANY, 'AuthItemChild', 'parent'),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'name' => Yii::t('app', 'Name'),
+			'type' => Yii::t('app', 'Type'),
+			'description' => Yii::t('app', 'Description'),
+			'bizrule' => Yii::t('app', 'Bizrule'),
+			'data' => Yii::t('app', 'Data'),
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('type',$this->type);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('bizrule',$this->bizrule,true);
+		$criteria->compare('data',$this->data,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return AuthItem the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+}

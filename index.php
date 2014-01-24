@@ -1,121 +1,190 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+if (!file_exists('config.inc.php')) {
+    echo '<h1>Missing configuration!</h1>';
+    echo '<h3>Please copy <code>config.inc.php.example</code> into <code>config.inc.php</code> 
+          and setup database connection parameters.</h3>';
+    exit(1);
+}
+require_once "config.inc.php";
+$blue->autentica_utente("principale", "R");
+
+// Controllo dell'autenticazione generica
+// require_once("marinara.php");
+$select_scadenze="SELECT scadenza_id,scadenza_data,scadenza_descrizione_breve,scadenza_descrizione_lunga,scadenza_file 
+                  FROM ".$tabelle['scadenze']." WHERE scadenza_status='Aperto' ORDER BY scadenza_data ASC";
+$result_scadenze=$sql->select_query($select_scadenze);
+// Carichiamo le scadenze inserite a mano
+
+$statpb=array(
+    'Liberi1' => 0,
+    'Liberi2' => 0,
+    'Affittati1' => 0,
+    'Affittati2' => 0,
+    'Venduti' => 0,
+    'Opzionati' => 0,
+    'Prenotati1' => 0,
+    'Prenotati2' => 0,
+    'Presenze' => 0
+);
+
+// Carichiamo i totali dei posti barca affittati, liberi, etc...
+$res = $sql->select_query(
+    "SELECT DISTINCT status, COUNT(*) AS totale FROM blue_posti_barca_status WHERE posto_barca!='' GROUP BY status"
+);
+
+while ($row=mysql_fetch_array($res)) {
+    switch ($row['status']) {
+        case "Affitto":
+            $statpb['Affittati1']+=$row['totale'];
+            break;
+        case "Affitto su Gestione":
+            $statpb['Affittati2']+=$row['totale'];
+            break;
+        case "Gestione":
+            $statpb['Liberi2']+=$row['totale'];
+            break;
+        case "Vendita":
+            $statpb['Venduti']+=$row['totale'];
+            break;
+        case "Opzione":
+            $statpb['Opzionati']+=$row['totale'];
+            break;
+        case "Prenotazione":
+            $statpb['Prenotati1']+=$row['totale'];
+            break;
+        case "Prenotazione su Gestione":
+            $statpb['Prenotati2']+=$row['totale'];
+            break;
+        default:
+        case "":
+            $statpb['Liberi1']+=$row['totale'];
+            break;
+    }
+}
+// Totale delle presenze
+$res2=$sql->select_query("SELECT COUNT(*) AS totale FROM blue_posti_barca_status WHERE presenza='1'");
+$statpb['Presenze']+=mysql_result($res2, 0, 'totale');
+
+// Totale delle opzioni
+$res3=$sql->select_query("SELECT COUNT(*) AS totale FROM blue_contratti WHERE contratto_tipo='13'");
+$statpb['Opzionati']=mysql_result($res3, 0, 'totale');
+//$statpb['Liberi1']+=$statpb['Opzionati'];
+
+$server_ip=$_SERVER["SERVER_NAME"];
+
+$portmap = true;
+if ($portmap) {
+    $regions_contract = new StdClass();
+    $regions_contract->pierStructure = new StdClass();
+    $regions_contract->pierStructure->disabled = false;
+
+    $regions_presence = new StdClass();
+    $regions_presence->pierStructure = new StdClass();
+    $regions_presence->pierStructure->disabled = false;
+
+    // Load portmap status and presence
+    $select = "SELECT pbs.*, c.*, b.* 
+               FROM " . $tabelle['posti_barca_status'] . " AS pbs
+               LEFT JOIN " . $tabelle['clienti'] . " AS c ON c.cliente_id = pbs.cliente
+               LEFT JOIN " . $tabelle['barche'] . " AS b ON b.barca_id = pbs.barca
+               ";
+    $result = $sql->select_query($select);
+    while ($r = mysql_fetch_assoc($result)) {
+        
+        if (strlen($r['posto_barca']) == 0) {
+            continue;
+        }
+
+        $object = new StdClass();
+        $object->tooltip = $r['status'];
+        $object->attr = new StdClass();
+        $object->attr->fill = "#000000";
+        $object->attr->href = "/posto_barca_dettagli.php?id=" . $r['posto_barca_id'];
+        $object->attr->cursor = "pointer";
+        switch ($r['status']) {
+
+            case '':
+                $object->attr->fill = "#FFFFFF";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Free') . "</h4>";
+                break;
+
+            case 'Affitto':
+                $object->attr->fill = "#FFFF00";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Rent') . " </h4>"
+                                 . "<p><strong>" . $r['cliente_nominativo'] . "</strong></p>";
+                break;
+
+            case 'Affitto su Gestione':
+                $object->attr->fill = "#FF9900";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Rent managed') . " </h4>"
+                                 . "<p><strong>" . $r['cliente_nominativo'] . "</strong></p>";
+                break;
+
+            case 'Gestione':
+                $object->attr->fill = "#FF00FF";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Managed') . " </h4>"
+                                 . "<p><strong>" . $r['cliente_nominativo'] . "</strong></p>";
+                break;
+
+            case 'Opzione':
+                $object->attr->fill = "#AAAAAA";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Optioned') . " </h4>"
+                                 . "<p><strong>" . $r['cliente_nominativo'] . "</strong></p>";
+                break;
+
+            case 'Prenotazione':
+                $object->attr->fill = "#00FFFF";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Reserved') . " </h4>"
+                                 . "<p><strong>" . $r['cliente_nominativo'] . "</strong></p>";
+                break;
+
+            case 'Vendita':
+                $object->attr->fill = "#FF0000";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Sell') . " </h4>"
+                                 . "<p><strong>" . $r['cliente_nominativo'] . "</strong></p>";
+                break;
+
+            default:
+                $object->attr->fill = "#000000";
+                $object->tooltip = "<h4>" . implode('', explode("_", $r['posto_barca'])) . " " . Yii::t('app', 'Status not managed') . " </h4>"
+                                 . "<p><strong>" . $r['cliente_nominativo'] . "</strong></p>";
+                break;
+
+        }
+        $regions_contract->$r['posto_barca'] = $object;
+
+        $object = new StdClass();
+        $object->tooltip = $r['presenza'];
+        $object->attr = new StdClass();
+        $object->attr->fill = "#000000";
+        $object->attr->href = "/posto_barca_dettagli.php?id=" . $r['posto_barca_id'];
+        $object->attr->cursor = "pointer";
+        switch ($r['presenza']) {
+
+            case '':
+                $object->attr->fill = "#00FF00";
+                $object->tooltip = Yii::t('app', 'Empty');
+                break;
+
+            case '1':
+                $object->attr->fill = "#FF0000";
+                $object->tooltip = Yii::t('app', 'Presence');
+                break;
+
+            default:
+                $object->attr->fill = "#000000";
+                $object->tooltip = Yii::t('app', 'Presence not managed') . " " . $r['presenza'];
+
+        }
+        $regions_presence->$r['posto_barca'] = $object;
+
+
+    }
+
+    $regions_contract = json_encode($regions_contract);
+    $regions_presence = json_encode($regions_presence);
+    // CVarDumper::dump($regions_contract, 10, true); exit;
+}
+
+require_once 'views/site/index.php';

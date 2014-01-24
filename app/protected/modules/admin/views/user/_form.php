@@ -1,73 +1,98 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php $form = $this->beginWidget('CActiveForm', array(
+    'id'=>'user-form',
+    'enableClientValidation'=>false,
+    'enableAjaxValidation'=>true,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+<p class="help-block">Fields with <span class="required">*</span> are required.</p>
+
+<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'name', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'name'); ?>
+        <p class="help-block"><?php echo Yii::t('form', 'The name for this user'); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'username', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php if ($model->isNewRecord): ?>
+            <?php echo $form->textField($model,'username', array('class' => 'form-control')); ?>
+            <?php echo $form->error($model,'username'); ?>
+            <p class="help-block"><?php echo Yii::t('form', 'The login name for this user'); ?></p>
+        <?php else: ?>
+            <?php echo $form->textField($model,'username', array('class' => 'form-control', 'disabled' => 'disabled')); ?>
+            <?php echo $form->error($model,'username'); ?>
+            <p class="help-block"><?php echo Yii::t('form', 'Username cannot be changed'); ?></p>
+        <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'password', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php if ($model->isNewRecord): ?>
+            <?php echo $form->passwordField($model,'password', array('class' => 'form-control')); ?>
+            <?php echo $form->error($model,'password'); ?>
+            <p class="help-block"><?php echo Yii::t('form', 'The login password for this user'); ?></p>
+        <?php else: ?>
+            <?php echo $form->passwordField($model,'password', array('class' => 'form-control disabled')); ?>
+            <?php echo $form->error($model,'password'); ?>
+            <p class="help-block"><?php echo Yii::t('form', 'Insert a new password or leave empty for no change'); ?></p>
+        <?php endif; ?>
+        </div>
+    </div>
+
+    <?php
+    $roles = Yii::app()->authManager->roles;
+    $my_roles = array();
+    foreach ($roles as $k => $v) {
+        $my_roles[$v->name] = $v->name . ": " . $v->description;
+    }
+    ?>
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'role', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php if ($model->isNewRecord or $model->username != 'administrator'): ?>
+            <?php echo $form->dropDownList($model, 'role', $my_roles, array(
+                'class' =>  'form-control',
+                'maxlength'=>255,
+                'multiple' => 'multiple',
+            )); ?>
+            <?php echo $form->error($model,'role'); ?>
+            <p class="help-block"><?php echo Yii::t('form', "Select one or more roles for this user."); ?></p>
+        <?php else: ?>
+            <?php echo $form->dropDownList($model, 'role', $my_roles, array(
+                'maxlength'=>255,
+                'multiple' => 'multiple',
+                'disabled'  => 'disabled',
+            )); ?>
+            <?php echo $form->error($model,'role'); ?>
+            <p class="help-block"><?php echo Yii::t('form', "Role for 'administrator' cannot be changed."); ?></p>
+        <?php endif; ?>
+        </div>
+    </div>
+
+    <?php Yii::app()->select2->register(); ?>
+    <?php Yii::app()->clientScript->registerScript('mount_script', 
+    '$("#User_role").select2({
+        asDropDownList: true, 
+        placeholder: "' . Yii::t('form', 'Type or select roles for this user.') . '",
+        tokenSeparators: [",", " "]
+    });', CClientScript::POS_READY); ?>
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="reset" class="btn btn-warning"><?php echo Yii::t('form', 'Reset'); ?></button>
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('form', 'Submit'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>

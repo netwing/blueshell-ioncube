@@ -1,50 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("anagrafica","R");
+$template = 'lettera_comunicazione.rtf';
+
+if (!array_key_exists("proprietari",$_POST) and !array_key_exists("affittuari",$_POST)) {
+	Yii::app()->user->setFlash('danger', Yii::t('app', 'You must select at least one between owners or renters'));
+	header("Location:clienti_comunicazioni.php");
+	exit;
+}
+
+// Recuperiamo info sulle date inserite
+if (array_key_exists("contratto_dal",$_POST) and $_POST['contratto_dal']!="" and array_key_exists("contratto_al",$_POST) and $_POST['contratto_al']!="") {
+	$inizio = $_POST['contratto_dal'];
+	$fine = $_POST['contratto_al'];
+}
+
+// Inizializziamo l'array che conterra i nostri dati
+$ricerca_sostituzione=array();
+
+if (array_key_exists("proprietari",$_POST)) {
+	$select_clienti="SELECT cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia FROM blue_contratti,blue_clienti WHERE cliente_rifiuta_comunicazioni='0' AND contratto_tipo=2 AND cliente_id=contratto_anagrafica2 GROUP BY contratto_anagrafica2 ORDER BY cliente_nominativo ASC";
+	// Query per recuperare le informazioni relative ai PROPRIETARI attuali
+	$result_clienti=$sql->select_query($select_clienti);
+	while ($row_clienti=mysql_fetch_array($result_clienti))
+	{
+		$ricerca_sostituzione[]=array(
+			"<NOMINATIVO>"=>$row_clienti['cliente_nominativo'],
+			"<INDIRIZZO>"=>$row_clienti['cliente_indirizzo'],
+			"<CAP>"=>$row_clienti['cliente_cap'],
+			"<CITTA>"=>$row_clienti['cliente_citta'],
+			"<PROVINCIA>"=>$row_clienti['cliente_provincia']								  
+		);
+	}
+}
+
+if (array_key_exists("affittuari",$_POST)) {
+	$select_clienti="SELECT cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia FROM blue_contratti,blue_clienti WHERE cliente_rifiuta_comunicazioni='0' AND contratto_tipo=1 AND cliente_id=contratto_anagrafica2 AND contratto_inizio>='".$inizio."' AND contratto_fine<='".$fine."' GROUP BY contratto_anagrafica2 ORDER BY cliente_nominativo";
+	// Query per recuperare le informazioni relative agl'AFFITTUARI compresi tra le date selezionate
+	$result_clienti=$sql->select_query($select_clienti);
+	while ($row_clienti=mysql_fetch_array($result_clienti)) {
+		$ricerca_sostituzione[]=array(
+			"<NOMINATIVO>"=>$row_clienti['cliente_nominativo'],
+			"<INDIRIZZO>"=>$row_clienti['cliente_indirizzo'],
+			"<CAP>"=>$row_clienti['cliente_cap'],
+			"<CITTA>"=>$row_clienti['cliente_citta'],
+			"<PROVINCIA>"=>$row_clienti['cliente_provincia']								  
+		);
+	}
+}
+
+$rtf = new RTF();
+$rtf->carica_template("template/" . $template);
+$rtf->rtf_multiplo($ricerca_sostituzione);
+$rtf->output(Yii::t('filename', 'Clients_Communications.doc'));

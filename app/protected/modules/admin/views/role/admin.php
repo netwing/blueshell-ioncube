@@ -1,39 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+Yii::app()->clientScript->registerScript('search', "
+    $('.search-button').click(function(){
+        $('.search-form').toggle();
+        return false;
+    });
+    $('.search-form form').submit(function(){
+        $('#auth-item-grid').yiiGridView('update', {
+            data: $(this).serialize()
+        });
+    return false;
+    });
+");
 ?>
-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
+
+<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn')); ?>
+<div class="search-form" style="display:none">
+    <?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+
+<?php $this->widget('zii.widgets.grid.CGridView',array(
+'id'            => 'user-grid',
+'dataProvider'  => $model->search(),
+'filter'        => $model,
+'rowCssClass'   => array(),
+'itemsCssClass' => 'table table-hover table-bordered',
+'pagerCssClass'     => "col-md-12 text-right",
+'pager'             => array(
+    'header'                => '',
+    'internalPageCssClass'  => '',
+    'firstPageCssClass'     => '',
+    'lastPageCssClass'      => '',
+    'selectedPageCssClass'  => 'active',
+    'htmlOptions'   => array(
+        'class'     => 'pagination pagination-sm',
+    )
+),
+'columns'       => array(
+    'name',
+    'description',
+    // Show a column with 3 icons as buttons
+    array(
+        'class'         => 'zii.widgets.grid.CButtonColumn',
+        'htmlOptions'   => array('style' => 'white-space: nowrap'),
+        'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
+        'buttons'       => array(
+            'view'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
+                'label'         => '<i class="fa fa-eye"></i>',
+                'imageUrl'      => false,
+            ),
+            'update'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
+                'label'         => '<i class="fa fa-pencil"></i>',
+                'imageUrl'      => false,
+            ),
+            'delete'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
+                'label'         => '<i class="fa fa-times"></i>',
+                'imageUrl'      => false,
+            )
+        )
+    ),
+),
+)); ?>

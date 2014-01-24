@@ -1,97 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-juQ2jCMEjFSlE8OwVAxApA7x
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("preferenze","W");
+$radio_scelte=array("N","R","W");
+$form->campi_testo=array("utente_username","utente_nominativo","utente_telefono","utente_email");
+$form->campi_radiobutton=array("utente_accesso_principale"=>$radio_scelte,"utente_accesso_contratti"=>$radio_scelte,"utente_accesso_anagrafica"=>$radio_scelte,"utente_accesso_imbarcazioni"=>$radio_scelte,"utente_accesso_posti_barca"=>$radio_scelte,"utente_accesso_documenti"=>$radio_scelte,"utente_accesso_fatture"=>$radio_scelte,"utente_accesso_template"=>$radio_scelte,"utente_accesso_listini"=>$radio_scelte,"utente_accesso_preferenze"=>$radio_scelte);
+$form->valori_default=array("utente_accesso_principale_N"=>'checked="checked"',"utente_accesso_contratti_N"=>'checked="checked"',"utente_accesso_anagrafica_N"=>'checked="checked"',"utente_accesso_imbarcazioni_N"=>'checked="checked"',"utente_accesso_posti_barca_N"=>'checked="checked"',"utente_accesso_documenti_N"=>'checked="checked"',"utente_accesso_fatture_N"=>'checked="checked"',"utente_accesso_template_N"=>'checked="checked"',"utente_accesso_listini_N"=>'checked="checked"',"utente_accesso_preferenze_N"=>'checked="checked"');
+$form->campi_obbligatori=array("utente_username");
+$form->inizializza();
+$submit="Inserisci";
+if (array_key_exists("id",$_GET) and $_GET['id']>0) {
+    $submit="Modifica";
+    $select="SELECT * FROM ".$tabelle['utenti']." WHERE utente_id='".intval($_GET['id'])."'";
+    $result=$sql->select_query($select);
+    $row=mysql_fetch_array($result);
+    $principale="utente_accesso_principale_".$row['utente_accesso_principale'];
+    $contratti="utente_accesso_contratti_".$row['utente_accesso_contratti'];
+    $anagrafica="utente_accesso_anagrafica_".$row['utente_accesso_anagrafica'];
+    $imbarcazioni="utente_accesso_imbarcazioni_".$row['utente_accesso_imbarcazioni'];
+    $posti_barca="utente_accesso_posti_barca_".$row['utente_accesso_posti_barca'];
+    $documenti="utente_accesso_documenti_".$row['utente_accesso_documenti'];
+    $fatture="utente_accesso_fatture_".$row['utente_accesso_fatture'];
+    $template="utente_accesso_template_".$row['utente_accesso_template'];
+    $listini="utente_accesso_listini_".$row['utente_accesso_listini'];
+    $preferenze="utente_accesso_preferenze_".$row['utente_accesso_preferenze']; 
+    $form->valori_default=array("utente_username"=>$row['utente_username'],"utente_nominativo"=>$row['utente_nominativo'],"utente_telefono"=>$row['utente_telefono'],"utente_email"=>$row['utente_email'],$principale=>'checked="checked"',$contratti=>'checked="checked"',$anagrafica=>'checked="checked"',$imbarcazioni=>'checked="checked"',$posti_barca=>'checked="checked"',$documenti=>'checked="checked"',$fatture=>'checked="checked"',$template=>'checked="checked"',$listini=>'checked="checked"',$preferenze=>'checked="checked"');
+    $form->inizializza();
+}
+if (array_key_exists("del",$_GET) and $_GET['del']!='' and $_GET['del']!=1) {
+    $id = intval($_GET['del']);
+    $delete = "DELETE FROM ".$tabelle['utenti']." WHERE utente_id!='1' AND utente_id='".$id."'";
+    $sql->delete_query($delete);
+}
+if (count($_POST)>0) {
+    $form->verifica();
+    if ($form->errore_form==false) {
+        foreach ($_POST as $k=>$v) {
+            $$k=$sql->pulisci($v);
+        }
+        if (array_key_exists('id', $_GET) and intval($_GET['id']) > 0) {
+            $update="UPDATE ".$tabelle['utenti']." SET utente_username='".$utente_username."',utente_nominativo='".$utente_nominativo."',utente_telefono='".$utente_telefono."',utente_email='".$utente_email."',utente_accesso_principale='".$utente_accesso_principale."',utente_accesso_contratti='".$utente_accesso_contratti."',utente_accesso_anagrafica='".$utente_accesso_anagrafica."',utente_accesso_imbarcazioni='".$utente_accesso_imbarcazioni."',utente_accesso_posti_barca='".$utente_accesso_posti_barca."',utente_accesso_fatture='".$utente_accesso_fatture."',utente_accesso_documenti='".$utente_accesso_documenti."',utente_accesso_listini='".$utente_accesso_listini."',utente_accesso_template='".$utente_accesso_template."',utente_accesso_preferenze='".$utente_accesso_preferenze."' WHERE utente_id='".intval($_GET['id'])."'";
+            $sql->update_query($update);
+            if ($utente_password!="")
+            {
+                $update="UPDATE ".$tabelle['utenti']." SET utente_password=MD5('".$utente_password."') WHERE utente_id='".intval($_GET['id'])."'";
+                $sql->update_query($update);
+            }
+            header("Location:preferenze_utenti.php");
+            exit;
+        } else {
+            $insert="INSERT INTO ".$tabelle['utenti']." (utente_username,utente_password,utente_nominativo,utente_telefono,utente_email,utente_accesso_principale,utente_accesso_contratti,utente_accesso_anagrafica,utente_accesso_imbarcazioni,utente_accesso_posti_barca,utente_accesso_fatture,utente_accesso_documenti,utente_accesso_listini,utente_accesso_template,utente_accesso_preferenze) VALUES ('".$utente_username."',MD5('".$utente_password."'),'".$utente_nominativo."','".$utente_telefono."','".$utente_email."','".$utente_accesso_principale."','".$utente_accesso_contratti."','".$utente_accesso_anagrafica."','".$utente_accesso_imbarcazioni."','".$utente_accesso_posti_barca."','".$utente_accesso_fatture."','".$utente_accesso_documenti."','".$utente_accesso_listini."','".$utente_accesso_template."','".$utente_accesso_preferenze."')";
+            $sql->insert_query($insert);
+            $form->valori_default=array("utente_accesso_principale_N"=>'checked="checked"',"utente_accesso_contratti_N"=>'checked="checked"',"utente_accesso_anagrafica_N"=>'checked="checked"',"utente_accesso_imbarcazioni_N"=>'checked="checked"',"utente_accesso_posti_barca_N"=>'checked="checked"',"utente_accesso_documenti_N"=>'checked="checked"',"utente_accesso_fatture_N"=>'checked="checked"',"utente_accesso_template_N"=>'checked="checked"',"utente_accesso_listini_N"=>'checked="checked"',"utente_accesso_preferenze_N"=>'checked="checked"');
+            $form->inizializza();
+            header("Location:preferenze_utenti.php");
+            exit;
+        }
+    }
+}
+$select_utenti="SELECT * FROM ".$tabelle['utenti']." ORDER BY utente_id ASC";
+$result_utenti=$sql->select_query($select_utenti);
+
+require_once "views/user/admin.php";

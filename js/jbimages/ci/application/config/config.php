@@ -1,36 +1,362 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-wGwq6Uei934ufyWchiafd4K=
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+/*
+|--------------------------------------------------------------------------
+| Base Site URL
+|--------------------------------------------------------------------------
+|
+| URL to your CodeIgniter root. Typically this will be your base URL,
+| WITH a trailing slash:
+|
+|	http://example.com/
+|
+| If this is not set then CodeIgniter will guess the protocol, domain and
+| path to your installation.
+|
+*/
+$config['base_url']	= '';
+
+/*
+|--------------------------------------------------------------------------
+| Index File
+|--------------------------------------------------------------------------
+|
+| Typically this will be your index.php file, unless you've renamed it to
+| something else. If you are using mod_rewrite to remove the page set this
+| variable so that it is blank.
+|
+*/
+$config['index_page'] = 'index.php';
+
+/*
+|--------------------------------------------------------------------------
+| URI PROTOCOL
+|--------------------------------------------------------------------------
+|
+| This item determines which server global should be used to retrieve the
+| URI string.  The default setting of 'AUTO' works for most servers.
+| If your links do not seem to work, try one of the other delicious flavors:
+|
+| 'AUTO'			Default - auto detects
+| 'PATH_INFO'		Uses the PATH_INFO
+| 'QUERY_STRING'	Uses the QUERY_STRING
+| 'REQUEST_URI'		Uses the REQUEST_URI
+| 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
+|
+*/
+$config['uri_protocol']	= 'AUTO';
+
+/*
+|--------------------------------------------------------------------------
+| URL suffix
+|--------------------------------------------------------------------------
+|
+| This option allows you to add a suffix to all URLs generated by CodeIgniter.
+| For more information please see the user guide:
+|
+| http://codeigniter.com/user_guide/general/urls.html
+*/
+
+$config['url_suffix'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Default Language
+|--------------------------------------------------------------------------
+|
+| This determines which set of language files should be used. Make sure
+| there is an available translation if you intend to use something other
+| than english.
+|
+*/
+$config['language']	= 'english';
+
+/*
+|--------------------------------------------------------------------------
+| Default Character Set
+|--------------------------------------------------------------------------
+|
+| This determines which character set is used by default in various methods
+| that require a character set to be provided.
+|
+*/
+$config['charset'] = 'UTF-8';
+
+/*
+|--------------------------------------------------------------------------
+| Enable/Disable System Hooks
+|--------------------------------------------------------------------------
+|
+| If you would like to use the 'hooks' feature you must enable it by
+| setting this variable to TRUE (boolean).  See the user guide for details.
+|
+*/
+$config['enable_hooks'] = FALSE;
+
+
+/*
+|--------------------------------------------------------------------------
+| Class Extension Prefix
+|--------------------------------------------------------------------------
+|
+| This item allows you to set the filename/classname prefix when extending
+| native libraries.  For more information please see the user guide:
+|
+| http://codeigniter.com/user_guide/general/core_classes.html
+| http://codeigniter.com/user_guide/general/creating_libraries.html
+|
+*/
+$config['subclass_prefix'] = 'MY_';
+
+
+/*
+|--------------------------------------------------------------------------
+| Allowed URL Characters
+|--------------------------------------------------------------------------
+|
+| This lets you specify with a regular expression which characters are permitted
+| within your URLs.  When someone tries to submit a URL with disallowed
+| characters they will get a warning message.
+|
+| As a security measure you are STRONGLY encouraged to restrict URLs to
+| as few characters as possible.  By default only these are allowed: a-z 0-9~%.:_-
+|
+| Leave blank to allow all characters -- but only if you are insane.
+|
+| DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
+|
+*/
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+
+
+/*
+|--------------------------------------------------------------------------
+| Enable Query Strings
+|--------------------------------------------------------------------------
+|
+| By default CodeIgniter uses search-engine friendly segment based URLs:
+| example.com/who/what/where/
+|
+| By default CodeIgniter enables access to the $_GET array.  If for some
+| reason you would like to disable it, set 'allow_get_array' to FALSE.
+|
+| You can optionally enable standard query string based URLs:
+| example.com?who=me&what=something&where=here
+|
+| Options are: TRUE or FALSE (boolean)
+|
+| The other items let you set the query string 'words' that will
+| invoke your controllers and its functions:
+| example.com/index.php?c=controller&m=function
+|
+| Please note that some of the helpers won't work as expected when
+| this feature is enabled, since CodeIgniter is designed primarily to
+| use segment based URLs.
+|
+*/
+$config['allow_get_array']		= TRUE;
+$config['enable_query_strings'] = FALSE;
+$config['controller_trigger']	= 'c';
+$config['function_trigger']		= 'm';
+$config['directory_trigger']	= 'd'; // experimental not currently in use
+
+/*
+|--------------------------------------------------------------------------
+| Error Logging Threshold
+|--------------------------------------------------------------------------
+|
+| If you have enabled error logging, you can set an error threshold to
+| determine what gets logged. Threshold options are:
+| You can enable error logging by setting a threshold over zero. The
+| threshold determines what gets logged. Threshold options are:
+|
+|	0 = Disables logging, Error logging TURNED OFF
+|	1 = Error Messages (including PHP errors)
+|	2 = Debug Messages
+|	3 = Informational Messages
+|	4 = All Messages
+|
+| For a live site you'll usually only enable Errors (1) to be logged otherwise
+| your log files will fill up very fast.
+|
+*/
+$config['log_threshold'] = 0;
+
+/*
+|--------------------------------------------------------------------------
+| Error Logging Directory Path
+|--------------------------------------------------------------------------
+|
+| Leave this BLANK unless you would like to set something other than the default
+| application/logs/ folder. Use a full server path with trailing slash.
+|
+*/
+$config['log_path'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Date Format for Logs
+|--------------------------------------------------------------------------
+|
+| Each item that is logged has an associated date. You can use PHP date
+| codes to set your own date formatting
+|
+*/
+$config['log_date_format'] = 'Y-m-d H:i:s';
+
+/*
+|--------------------------------------------------------------------------
+| Cache Directory Path
+|--------------------------------------------------------------------------
+|
+| Leave this BLANK unless you would like to set something other than the default
+| system/cache/ folder.  Use a full server path with trailing slash.
+|
+*/
+$config['cache_path'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Encryption Key
+|--------------------------------------------------------------------------
+|
+| If you use the Encryption class or the Session class you
+| MUST set an encryption key.  See the user guide for info.
+|
+*/
+$config['encryption_key'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Session Variables
+|--------------------------------------------------------------------------
+|
+| 'sess_cookie_name'		= the name you want for the cookie
+| 'sess_expiration'			= the number of SECONDS you want the session to last.
+|   by default sessions last 7200 seconds (two hours).  Set to zero for no expiration.
+| 'sess_expire_on_close'	= Whether to cause the session to expire automatically
+|   when the browser window is closed
+| 'sess_encrypt_cookie'		= Whether to encrypt the cookie
+| 'sess_use_database'		= Whether to save the session data to a database
+| 'sess_table_name'			= The name of the session database table
+| 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
+| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
+| 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
+|
+*/
+$config['sess_cookie_name']		= 'ci_session';
+$config['sess_expiration']		= 7200;
+$config['sess_expire_on_close']	= FALSE;
+$config['sess_encrypt_cookie']	= FALSE;
+$config['sess_use_database']	= FALSE;
+$config['sess_table_name']		= 'ci_sessions';
+$config['sess_match_ip']		= FALSE;
+$config['sess_match_useragent']	= TRUE;
+$config['sess_time_to_update']	= 300;
+
+/*
+|--------------------------------------------------------------------------
+| Cookie Related Variables
+|--------------------------------------------------------------------------
+|
+| 'cookie_prefix' = Set a prefix if you need to avoid collisions
+| 'cookie_domain' = Set to .your-domain.com for site-wide cookies
+| 'cookie_path'   =  Typically will be a forward slash
+| 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
+|
+*/
+$config['cookie_prefix']	= "";
+$config['cookie_domain']	= "";
+$config['cookie_path']		= "/";
+$config['cookie_secure']	= FALSE;
+
+/*
+|--------------------------------------------------------------------------
+| Global XSS Filtering
+|--------------------------------------------------------------------------
+|
+| Determines whether the XSS filter is always active when GET, POST or
+| COOKIE data is encountered
+|
+*/
+$config['global_xss_filtering'] = FALSE;
+
+/*
+|--------------------------------------------------------------------------
+| Cross Site Request Forgery
+|--------------------------------------------------------------------------
+| Enables a CSRF cookie token to be set. When set to TRUE, token will be
+| checked on a submitted form. If you are accepting user data, it is strongly
+| recommended CSRF protection be enabled.
+|
+| 'csrf_token_name' = The token name
+| 'csrf_cookie_name' = The cookie name
+| 'csrf_expire' = The number in seconds the token should expire.
+*/
+$config['csrf_protection'] = FALSE;
+$config['csrf_token_name'] = 'csrf_test_name';
+$config['csrf_cookie_name'] = 'csrf_cookie_name';
+$config['csrf_expire'] = 7200;
+
+/*
+|--------------------------------------------------------------------------
+| Output Compression
+|--------------------------------------------------------------------------
+|
+| Enables Gzip output compression for faster page loads.  When enabled,
+| the output class will test whether your server supports Gzip.
+| Even if it does, however, not all browsers support compression
+| so enable only if you are reasonably sure your visitors can handle it.
+|
+| VERY IMPORTANT:  If you are getting a blank page when compression is enabled it
+| means you are prematurely outputting something to your browser. It could
+| even be a line of whitespace at the end of one of your scripts.  For
+| compression to work, nothing can be sent before the output buffer is called
+| by the output class.  Do not 'echo' any values with compression enabled.
+|
+*/
+$config['compress_output'] = FALSE;
+
+/*
+|--------------------------------------------------------------------------
+| Master Time Reference
+|--------------------------------------------------------------------------
+|
+| Options are 'local' or 'gmt'.  This pref tells the system whether to use
+| your server's local time as the master 'now' reference, or convert it to
+| GMT.  See the 'date helper' page of the user guide for information
+| regarding date handling.
+|
+*/
+$config['time_reference'] = 'local';
+
+
+/*
+|--------------------------------------------------------------------------
+| Rewrite PHP Short Tags
+|--------------------------------------------------------------------------
+|
+| If your PHP installation does not have short tag support enabled CI
+| can rewrite the tags on-the-fly, enabling you to utilize that syntax
+| in your view files.  Options are TRUE or FALSE (boolean)
+|
+*/
+$config['rewrite_short_tags'] = FALSE;
+
+
+/*
+|--------------------------------------------------------------------------
+| Reverse Proxy IPs
+|--------------------------------------------------------------------------
+|
+| If your server is behind a reverse proxy, you must whitelist the proxy IP
+| addresses from which CodeIgniter should trust the HTTP_X_FORWARDED_FOR
+| header in order to properly identify the visitor's IP address.
+| Comma-delimited, e.g. '10.0.1.200,10.0.1.201'
+|
+*/
+$config['proxy_ips'] = '';
+
+
+/* End of file config.php */
+/* Location: ./application/config/config.php */

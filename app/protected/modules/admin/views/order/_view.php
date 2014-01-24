@@ -1,29 +1,34 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this OrderController */
+/* @var $data Order */
 ?>
-HR+cPoMEkmGuQW0hqJWk9zEqUQ1u0SufhXNIPBIiNdRQ1i1EXViLILp2h45LMNi6wtbhacacOy4q
-QYWt6ltd7Kob7T/P1uUGKQd8TWd8h21DLtawl+FSr8KQMdgUOFNXGOX8qxc0t5OehKWrELHc8stM
-2nH+lMrPLfki+P+tciID8enOJx2VVKrJr3MVSVIv+otMQgrh+KVn5nkRTyr1dT7KAehj7KwlS42Z
-ltuh2PbvzACaOGfTbDle3SyoJzIxHGvmwA6cEHFtX9DVKFKGDA7Vusvz3cqIki1r77dqZOZit/YA
-xa4vViN9e7fJJI8aSX04KFvxDawLA3qbpe5UH57jAhrYEBAeQS4qSowe1GX9c87fQ66TMc3RCPdo
-gjiCWPrV14v/2/1tJ+fKOq7huu73Zua02Nly14iiqY+mQClLp8vcaGKkZ9ZCqFIHlUzKQ78KyGu/
-WYlN42Ey/Xx2W7ukAm9Hneptiu8C/OTpHE0EX6s4nr1jXeB13rrEhQCFQ2+5cbmOPMHEk6N+Awwp
-KFz8DWkekLhBfIx5DfrUQ/l/FT7HPi9oSset2mfA+K6OgqNQaKkQns7jWCa/T5UODxXoBFqGcHdA
-LJxfCClin5iuJ0m3sP/yQ3ER872MZlo2D9vxk5bAb/4W9HSNDGhEbvsQqmtzQPltXdkgPD3QuiqY
-tWpb1cCqKvOBQ/zv29LXt1UhzUZyAb9U6qCPDB2rH8uJoPpmD0UZrstUOqnXtOwPSoWDwn+LrE39
-HUiuIzCMkuZ4PgP781hcM9urtdiWNxPiAKkOGjY5kn5j6hGx6KysgG2HACF9R1cmi8extcN9wtP2
-aKLjcp+fPjSJ85GeT7JoXYU+E508KwbsEsv2q19OldEDKrg//TLTmrcrK2vGRn8kgZ7kRpTNmO1s
-8zVZpetx3x+3McTnvhEVoVtjAoYmTbcJoPCHkwe0g+XuZ/sQfhBYp5EDK0Aa8DqExEy1REQ+VU65
-xqNfsm/f7irU3Yvtrrrssrfhww9gTUTOEfv4lF7D6e4B+0R1yrH93OswFn33viZJWdquO+NtnDGf
-KNJZBztjYy5ZViIrfjmllPC7oFhNYzu0+CLlEVPT9/DkKoMCU359u7LkjGBiNWrB+ecGrgAPwHkl
-OQicASTgySPzju/GC5A+nUtTkd6DekoPf0JdJUqawF6Rxq8cZSNn5yJH8xcH39McIJX2eDKs+q1m
-n08APz4ByLWHePEyHTtYDtiQWsblzDlO/ddyBMF3VLFRJMBQCX9RFePGddnpCHrJXyB8VEOTYjeJ
-Bz/e/UFYlqVYU/aRqLO0fqEyQhwhVBZCrSjwkYyCV9zZnfltcc1c/oJ5voez1rOGvvnuLyF4T2pG
-30iGaYQdpOesjZePgXYeUdpBcy7mbnkvbSxXHdMmVU/q4niU2XH1ozwuOuXAINgRz4V7Ad8fJAoe
-hNAaGiV3V6H8LT+DSfcha+pwWaiBGqK80l8LCbtkbQhUEejdCx4lUMn2Pg+O1XkOny9iJaUkp5eU
-Ht5RgLKIP7Q8QOjjDmyHfYqwfAU0cGPFAUVvS/WULahsYWgYcJXZoXw0W1MsML+4krb+CRFXuyhq
-srpsEGO/LKxmENCJblgeaSdsh4AUAgqmOYdrNfvos0vZHupiRFXk2qwoxvC0DOSvwTo/BJedeAiw
-gPiPLXQlRRDZxNgaHNktivlISzCEGp1YeFGmvwzuethWSNluBPA5GA4bHimEt3LQwxXD/XDvnb7+
-3L238WkZOJgifJ+jsDQgwMtMLX0evd2U+q5obQEZuAKpufMaXS0F+36AEDJ/oZg6it1uNES7epsv
-h84bWfbQBuTQ0G5MmbZOjviFy6goNuhMvyGKEltGS7q5HGoq55I0w32muBL5+qqviLbYN1oeJgxV
-QHEVTtAeZLzHq0==
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <?php echo CHtml::link(CHtml::encode($data->id), array('view','id'=>$data->id)); ?>
+        </h3>
+    </div>
+    <div class="panel-body">
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('customer_id')); ?>:</b>
+	<?php echo CHtml::encode($data->customer_id); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('date')); ?>:</b>
+	<?php echo CHtml::encode($data->date); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('status_id')); ?>:</b>
+	<?php echo CHtml::encode($data->status_id); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('notes')); ?>:</b>
+	<?php echo CHtml::encode($data->notes); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
+	<?php echo CHtml::encode($data->create_time); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
+	<?php echo CHtml::encode($data->update_time); ?><br />
+
+    </div>
+</div>
+

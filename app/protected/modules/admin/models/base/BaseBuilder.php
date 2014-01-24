@@ -1,56 +1,124 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-R2IefHbK/Aksq9+3gUEELj69kKvF+3C=
+<?php
+
+/**
+ * This is the model class for table "{{costruttori}}".
+ *
+ * The followings are the available columns in table '{{costruttori}}':
+ * @property string $costruttore_id
+ * @property string $costruttore_nome
+ */
+class BaseBuilder extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{costruttori}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('costruttore_nome', 'length', 'max'=>200),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('costruttore_id, costruttore_nome', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'costruttore_id' => Yii::t('app', 'Costruttore'),
+			'costruttore_nome' => Yii::t('app', 'Costruttore Nome'),
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('costruttore_id',$this->costruttore_id,true);
+		$criteria->compare('costruttore_nome',$this->costruttore_nome,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return Builder the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * Behavior for timestamp
+	 */
+	public function behaviors(){
+		return array(
+			'CTimestampBehavior' => array(
+				'class' => 'zii.behaviors.CTimestampBehavior',
+				// 'createAttribute' => 'create_time',
+				// 'updateAttribute' => 'update_time',
+			)
+		);
+	}
+
+	/**
+	 * Either attributes required (one or another)
+	 * Use like this: 
+	 * array('attributes1', 'either', 'other' => 'attributes2')
+	 */ 
+	public function either($attribute_name, $params)
+	{
+	    $field1 = $this->getAttributeLabel($attribute_name);
+	    $field2 = $this->getAttributeLabel($params['other']);
+	    if (empty($this->$attribute_name) && empty($this->$params['other'])) {
+	        $this->addError(
+	        	$attribute_name, 
+	        	Yii::t('app', "Either {field1} or {field2} is required.", array('{field1}' => $field1, '{field2}' => $field2)));
+	        return false;
+	    }
+	    return true;
+	}	 
+}

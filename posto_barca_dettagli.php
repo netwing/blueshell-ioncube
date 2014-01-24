@@ -1,55 +1,67 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-uBA1CpZ/rG==
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("posti_barca","R");
+
+if (array_key_exists('id', $_GET) === false) {
+    header("Location:index.php");
+    exit;
+}
+$posto_barca_id = intval($_GET['id']);
+
+$select_posto_barca = "SELECT pontile_codice,posto_barca_numero,posto_barca_disponibile 
+                       FROM blue_pontili,blue_posti_barca 
+                       WHERE posto_barca_id='" . $posto_barca_id . "' AND pontile_id=posto_barca_pontile";
+$result_posto_barca = $sql->select_query($select_posto_barca);
+
+$row_posto_barca = mysql_fetch_array($result_posto_barca);
+$posto_barca_nome = $row_posto_barca['pontile_codice'] . $row_posto_barca['posto_barca_numero'];
+$disponibile = $row_posto_barca['posto_barca_disponibile'];
+
+$elenco_tipi = $blue->elenco_tipi();
+$elenco_periodi = $blue->elenco_periodi();
+$elenco_barche = $blue->elenco_barche_con_lunghezza();
+
+$select_contratti = "SELECT contratto_id,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,
+                            contratto_tipo,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,
+                            contratto_totale,contratto_fatturato,contratto_sconto 
+                     FROM " . $tabelle['contratti'] . " 
+                     WHERE contratto_posto_barca='" . $posto_barca_id . "' 
+                     ORDER BY contratto_fine DESC, contratto_tipo ASC";
+
+$result_contratti = $sql->select_query($select_contratti);
+// Caricamento dell'elenco dei contratti di affitto, gestione e vendita sul posto barca
+//$select_prenotazioni="SELECT contratto_id,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,contratto_tipo,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,contratto_totale,contratto_fatturato FROM ".$tabelle['contratti']." WHERE contratto_posto_barca='".$posto_barca_id."' AND contratto_tipo='4' ORDER BY contratto_inizio DESC";
+//$result_prenotazioni=$sql->select_query($select_prenotazioni);
+// Caricamento dell'elenco dei contratti di affitto, gestione e vendita sul posto barca
+
+if (array_key_exists("presdel", $_GET)) {
+	$delete = "DELETE FROM " . $tabelle['presenze'] . " WHERE presenza_id='" . $_GET['presdel'] . "'";
+	$esit = $sql->delete_query($delete);
+    if ($esit) {
+        Yii::app()->user->setFlash("success", Yii::t('app', "Presence successfully deleted."));
+    } else {
+        Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured'));
+    }
+    header("Location:posto_barca_dettagli.php?id=" . $posto_barca_id);
+    exit;
+}
+
+$select_presenze = "SELECT presenza_id,presenza_posto_barca,presenza_barca,presenza_arrivo,presenza_partenza,cliente_nominativo 
+                    FROM " . $tabelle['presenze'] . ", " . $tabelle['clienti'] . " 
+                    WHERE cliente_id=presenza_cliente AND presenza_posto_barca='" . $posto_barca_id . "' 
+                    ORDER BY presenza_arrivo DESC";
+$result_presenze=$sql->select_query($select_presenze);
+$numrows_presenze=$sql->select_num_rows;
+
+// Caricamento delle presenze sul posto barca
+$select_presenza = "SELECT presenza_id,presenza_posto_barca,presenza_barca,presenza_arrivo,presenza_partenza,cliente_nominativo 
+                    FROM " . $tabelle['presenze'] . ", " . $tabelle['clienti'] . " 
+                    WHERE cliente_id=presenza_cliente AND presenza_posto_barca='".$posto_barca_id."' 
+                    AND presenza_arrivo<=NOW() AND (presenza_partenza>=NOW() OR presenza_partenza='0000-00-00')";
+$result_presenza=$sql->select_query($select_presenza);
+$presenza_attiva=false;
+if ($sql->select_num_rows>0) {
+	$presenza_attiva=true;
+}
+
+require_once "views/resource/view.php";

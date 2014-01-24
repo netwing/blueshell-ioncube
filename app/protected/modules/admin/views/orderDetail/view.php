@@ -1,36 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this OrderDetailController */
+/* @var $model OrderDetail */
+
+$this->pageTitle = Yii::t('app', 'Update Order Details');
+
+$this->breadcrumbs=array(
+	'Order Details'=>array('order/view', 'id' => $model->order_id),
+	$model->id,
+);
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage OrderDetail'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Create OrderDetail'), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update OrderDetail'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app', 'Delete OrderDetail'), 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>Yii::t('app', 'Back to order'), 'url'=>array('/admin/order/view', 'id'=>$model->order_id)),
+);
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'order_id' => array(
+			'name'	=> Yii::t('app', 'Order'),
+			'value'	=> $model->id . " - " . $model->order->customer->cliente_nominativo,
+		),
+		'product_id' => array(
+			'name'	=> Yii::t('app', 'Product'),
+			'value'	=> $model->product->name,
+		),
+		'notes',
+		'price',
+		'quantity',
+		'total_no_vat',
+		'vat',
+		'total_vat',
+		'discount',
+		'total',
+		'create_time',
+		'update_time',
+	),
+)); ?>

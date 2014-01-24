@@ -1,41 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-C3PX5q1Uwz/CP31udB9fqgBrqpu34whselBJ
+<?php
+
+Yii::import('application.modules.admin.models.base.BaseResourcePriceList');
+
+class ResourcePriceList extends BaseResourcePriceList
+{
+
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array_merge(parent::relations(), array(
+            // DB relation
+            'dimension' => array(self::BELONGS_TO, 'Dimension', 'listino_posto_barca_anno'),
+        ));
+    }
+
+    /**
+     * Parameterized named scope
+     * Get model in year
+     */
+    public function onYear($year = null)
+    {
+        if ($this->listino_posto_barca_anno === null) {
+            return $this;
+        }
+        $this->getDbCriteria()->addCondition('listino_posto_barca_anno = ' . (int) $this->listino_posto_barca_anno);
+        return $this;
+    }
+
+    /**
+     * Get year for ResourcePriceList
+     */
+    public static function getYears()
+    {
+        $cmd = Yii::app()->db->createCommand()
+                ->selectDistinct('listino_posto_barca_anno AS year')
+                ->from("{{listini_posti_barca}}");
+        $years = $cmd->queryColumn();
+
+        $years = array_unique($years);
+        rsort($years);
+        $years = array_combine($years, $years);
+
+        return $years;
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return ResourcePriceList the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
+
+    /**
+     * Behavior for timestamp
+     */
+    public function behaviors(){
+        return array(
+            // 'CTimestampBehavior' => array(
+                // 'class' => 'zii.behaviors.CTimestampBehavior',
+                // 'createAttribute' => 'create_time',
+                // 'updateAttribute' => 'update_time',
+            // )
+        );
+    }
+
+}

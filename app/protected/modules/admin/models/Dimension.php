@@ -1,54 +1,112 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('application.modules.admin.models.base.BaseDimension');
+
+class Dimension extends BaseDimension
+{
+
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array_merge(parent::relations(), array(
+            'resourcePriceLists' => array(self::HAS_MANY, 'ResourcePriceList', 'listino_posto_barca_dimensione'),
+        ));
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return Dimension the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
+
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
+     */
+    public function search()
+    {
+        // @todo Please modify the following code to remove attributes that should not be searched.
+
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('dimensione_lunghezza',$this->dimensione_lunghezza);
+        $criteria->compare('dimensione_larghezza',$this->dimensione_larghezza);
+        $criteria->compare('dimensione_profondita',$this->dimensione_profondita);
+
+        $criteria->order = "dimensione_lunghezza ASC, dimensione_larghezza ASC, dimensione_profondita ASC";
+
+        return new CActiveDataProvider($this, array(
+            'criteria'=>$criteria,
+        ));
+    }
+
+    /** 
+     * AfterSave event
+     */
+    public function afterSave()
+    {
+        if ($this->isNewRecord) {
+            $years = ResourcePriceList::getYears();
+            foreach ($years as $year) {
+                $price = new ResourcePriceList();
+                $price->listino_posto_barca_dimensione = $this->dimensione_id;
+                $price->listino_posto_barca_anno = $year;
+                $price->save();
+            }
+        }
+
+        return parent::afterSave();
+    } 
+
+    /** 
+     * AfterSave event
+     */
+    public function afterDelete()
+    {
+        $years = ResourcePriceList::getYears();
+        foreach ($years as $year) {
+            $price = ResourcePriceList::model()->findByAttributes(
+                array(
+                    'listino_posto_barca_dimensione' => $this->dimensione_id, 
+                    'listino_posto_barca_anno'       => $year, 
+                )
+            );
+            if ($price) {
+                $price->delete();
+            }
+        }
+
+        return parent::afterDelete();
+    } 
+
+    /**
+     * Behavior for timestamp
+     */
+    public function behaviors(){
+        return array(
+            // 'CTimestampBehavior' => array(
+                // 'class' => 'zii.behaviors.CTimestampBehavior',
+                // 'createAttribute' => 'create_time',
+                // 'updateAttribute' => 'update_time',
+            // )
+        );
+    }
+
+}

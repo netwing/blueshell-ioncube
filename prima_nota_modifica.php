@@ -1,58 +1,75 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-TvK=
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("fatture","W");
+
+$form->campi_testo = array("prima_nota_descrizione",
+                         "prima_nota_data",
+                         "prima_nota_categoria",
+                         "prima_nota_mezzo_scambio"
+                         );
+$form->campi_numero = array("prima_nota_entrata", "prima_nota_uscita");
+
+$form->campi_obbligatori=array("prima_nota_descrizione");
+
+// Se siamo in POST
+if (count($_POST) > 0) {
+
+	$form->verifica();
+	if ($form->errore_form === false)
+	{
+		foreach ($_POST as $k=>$v)
+		{
+			$$k=$sql->pulisci($v);
+		}
+		
+        if (array_key_exists("id", $_GET))
+		{
+            
+            $update = "UPDATE " . $tabelle['prima_nota'] . " SET prima_nota_descrizione='" . $prima_nota_descrizione . "', prima_nota_entrata='" . $prima_nota_entrata . "', prima_nota_uscita='" . $prima_nota_uscita . "', prima_nota_categoria='" . $prima_nota_categoria . "', prima_nota_mezzo_scambio='" . $prima_nota_mezzo_scambio . "' WHERE prima_nota_id='" . intval($_GET['id']) . "'";
+            $sql->update_query($update);
+            
+		} else {
+            
+            $insert = "INSERT INTO " . $tabelle['prima_nota'] . " (prima_nota_descrizione, prima_nota_data, prima_nota_entrata, prima_nota_uscita, prima_nota_categoria, prima_nota_mezzo_scambio) VALUES ('" . $prima_nota_descrizione . "', '" . $prima_nota_data . "', '" . $prima_nota_entrata . "', '" . $prima_nota_uscita . "', '" . $prima_nota_categoria . "', '" . $prima_nota_mezzo_scambio . "')";
+            $sql->insert_query($insert);
+            
+        }
+        header("Location:prima_nota.php");
+        exit;
+	}
+}
+
+if (array_key_exists('id', $_GET)) {
+    
+    $select = "SELECT * FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_id='" . intval($_GET['id']) . "'";
+    $result = $sql->select_query($select);
+    $row = mysql_fetch_array($result);
+    
+    $prima_nota_data = $row['prima_nota_data'];
+    
+    $form->valori_default = array("prima_nota_descrizione" => $row['prima_nota_descrizione'],
+                                  "prima_nota_data" => $row['prima_nota_data'],
+                                  "prima_nota_entrata" => $row['prima_nota_entrata'],
+                                  "prima_nota_uscita" => $row['prima_nota_uscita'],
+                                  "prima_nota_categoria" => $row['prima_nota_categoria'],
+                                  "prima_nota_mezzo_scambio" => $row['prima_nota_mezzo_scambio'],
+                            );
+    
+} else {
+
+    $data = strftime("%Y-%m-%d", time());
+    $prima_nota_data = $data;
+    
+}
+
+$form->inizializza();
+
+// Caricare elenco delle prime note
+$select_pn = "SELECT * FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_data=DATE(NOW()) ORDER BY prima_nota_data DESC, prima_nota_id DESC";
+$result_pn = $sql->select_query($select_pn);
+
+// Calcolare i totali del mese
+$select_totali_pn = "SELECT SUM(prima_nota_entrata) AS somma_entrata, SUM(prima_nota_uscita) AS somma_uscita FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_data=NOW() ORDER BY prima_nota_data DESC, prima_nota_id DESC";
+$result_totali_pn = $sql->select_query($select_totali_pn);
+
+require_once "views/transactions/update.php";

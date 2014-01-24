@@ -1,30 +1,35 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this SystemTemplateController */
+/* @var $model SystemTemplate */
+
+$this->pageTitle = Yii::t('app', 'Update System Templates');
+
+$this->breadcrumbs=array(
+	'System Templates'=>array('index'),
+	$model->name,
+);
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage SystemTemplate'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Copy SystemTemplate'), 'url'=>array('copy', 'id'=>$model->id, 'language' => $model->language)),
+	array('label'=>Yii::t('app', 'Update SystemTemplate'), 'url'=>array('update', 'id'=>$model->id, 'language' => $model->language)),
+	array('label'=>Yii::t('app', 'Delete SystemTemplate'), 
+		  'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id, 'language' => $model->language),'confirm'=>'Are you sure you want to delete this item?'),
+		  'visible' => ($model->language != "en"),
+	),
+
+);
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'id',
+		'name',
+		'description',
+		'text_content',
+		'html_content',
+		'create_time',
+		'update_time',
+	),
+)); ?>

@@ -1,29 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ContractTypeController */
+/* @var $data ContractType */
 ?>
-HR+cPmDVa4dmfMXkcUa5Qln6DXulqDELe78EvD59szWAIilzYHZUAYFmWCudJId+/xTjojV2NnGc
-xKF6Q4WOH/yHp/Gt5iF/EDiwvGlhBOh00S+yDGR6/GcTvDp6uDd+eoF+pRYrIuXYgcJjrLDEHrtW
-xxpcvSlYasFWALEjwR/syLyQchrExGWbVg6M/qUMUWpuDgh67qrNtRwXp+LWVi34JyneQtBOwRZX
-FzCTcnS1H/wm6rZaAdgXUGtFCa/KkqKESEYXfZaJzuHlREO/oINRAPlGZzjjvb++QTnnjsHu3U+6
-dlfqq0/D3ee6zlEP4nwik7K2UX6jMAT8ZwDQRt3frJgKfl6wQ0iNh9QWnmXAV76o7Zq3Cz94JMyW
-KBfWWZ/Ktx5L4TuVeKhinwQcQNPz5ok/LsdcB3BtPPq8MMXKgxwTSo8DwfNM7cDwkdDeXK73w6Io
-Kj8UkmmoLPEVYZP1dyxeUO7/zkAvW2NVpFlrEJYzJkDc6ttSRybaRtjdRLBmsf29gkGZQsBZdFjk
-/5Fw1yf+zWxGYx1Oqu0/Vbh8o1djUVMb93ssNcj1UlbApRuAI8TtyfQGYOT98f20DZLfoJjzX7tA
-z4RC/x2JLcpF1VxuOOhHIir6REYUrLS7/zepVHiMo9zByfjLe16xeERw3Z2/PZ2zL4xvzut1QFjp
-sokNIUGbKdUYLLPngLJqIgWdaBwiS7fD2aWR0iCfxas1tx5KCbKaz7Amgv/Bw7pjkl2KAUCBwvZd
-IZKLRmcYIPrFIepcSfnpJL8luUHcD6+Aggv6usEvIa5C1N7bdtQ2bb1Xkxhl/OJcglYRXJfCYomm
-8ATiEebL48MLidSZOJwHqR+4yYTrqvZy0tTaJNmC/vV8RCEd5wn+3Hok5jA19XnVUrskeAhyIj8+
-A5cRnCZqkiAGwFIg29t7wmZVX6GF6ULK6h8W7h9eNZQjU/J7PFc8oFAGeisqfj+u6yrcDX4tV1HO
-bSAm+gHqKdiUIhoN/blctp3gZIvc0092f7VWpHx3ZPlIvWMaeMl1Zfd5EM6+SeQ+KSW/N96n4aq3
-91qAem2ifyf3wuEhI7lzVEMiwB1KXJfLVtVX18ASN/zLwd/WgEg5wG/81O89E5L2DLOcJL/aKV5o
-O/y9Jp9VqBv6a9P0AoePGCMr49BlPtdWWQLdrmSGR36kBxGvyTuZ2CcQgO48k3d7I4kfc8z33Cr+
-rFalMOx3rHIQ/BoqKhfagy4G7cou36zFvRX9Q5116MZvtqx9KdDLT5Cb9Gg6Alcieebe16SLyJrO
-34bCchP3MkiE8L0ibwI6iIrlJoKtH51VnFCzVT1z7VyKvzxgTx4LB+gwFOf41RhRGmZgx+Lx1eIb
-luQq6rkaGwOR+aaeSuVSFnvv7fb6WYgcNEXRVfPC/HDhILFrm0vL8T9q+f3mDXL+Wbbp3n6qlUIA
-cq1/e7Veal2CbgNyCuJvBTB9sWHrAfPUQ23m4lAVIivT4hm6OLk3/w5ke3OOX8KgwD5dU7eWhdFe
-9BQvOl6IBmkYG6wEcFBqC43MvKk6bYFgLG+i3yarawbnpLUnlcNbI4/+dJAPOFd2eB8fbi8BylKr
-0U8At5w2V67Lk/CeMqXUFmAOhlTZBuFTwP/pUdZSzCo8AC67Tng8+WxUFxezd7lcsFGSMDct2LOh
-rSf0X8gphALTytMZ1VbTi3zqbMoR3m21vyvwz5ugn8v0q8CYQq+167BK5IlNYhiIPkkD63xFdY1i
-sUPFLcW0GedffkC1RswSwQmDfpuVi7tBsrqifHr2ilRBybodDp2HQQJY5UnYyz4orojtNUqzE47G
-cK/MjtaJQ2V7YhUlhZu13FEu/6PO0e3MA3k2pprKUH6QnRP6jNxJHLVfBRVrPbDtsVsKPQxs/YAh
-DAMgxHtJ9GME/9p7jOIkLvWxZ6ac63lmOlxJWX41MACKSfKZ
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <?php echo CHtml::link(CHtml::encode($data->contratto_tipo_id), array('view','id'=>$data->contratto_tipo_id)); ?>
+        </h3>
+    </div>
+    <div class="panel-body">
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('contratto_tipo_nome')); ?>:</b>
+	<?php echo CHtml::encode($data->contratto_tipo_nome); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('color')); ?>:</b>
+	<?php echo CHtml::encode($data->color); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('prefix')); ?>:</b>
+	<?php echo CHtml::encode($data->prefix); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('rent')); ?>:</b>
+	<?php echo CHtml::encode($data->rent); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('transit')); ?>:</b>
+	<?php echo CHtml::encode($data->transit); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('sell')); ?>:</b>
+	<?php echo CHtml::encode($data->sell); ?><br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('option')); ?>:</b>
+	<?php echo CHtml::encode($data->option); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('manage')); ?>:</b>
+	<?php echo CHtml::encode($data->manage); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('reservation')); ?>:</b>
+	<?php echo CHtml::encode($data->reservation); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('sort_order')); ?>:</b>
+	<?php echo CHtml::encode($data->sort_order); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
+	<?php echo CHtml::encode($data->create_time); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
+	<?php echo CHtml::encode($data->update_time); ?><br />
+
+	*/ ?>
+    </div>
+</div>
+

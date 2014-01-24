@@ -1,33 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ProductController */
+/* @var $model Product */
+
+$this->pageTitle = Yii::t('app', 'Update Products');
+
+$this->breadcrumbs=array(
+	'Products'=>array('index'),
+	$model->name,
+);
+
+$this->menu=array(
+	array('label'=>'Manage Product', 'url'=>array('admin')),
+	array('label'=>'Create Product', 'url'=>array('create')),
+	array('label'=>'Update Product', 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>'Delete Product', 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
+);
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'id',
+		'group_id' => array(
+			'label' => $model->getAttributeLabel('group_id'),
+			'value'	=> $model->group->name,
+		),
+		'sku',
+		'name',
+		'description',
+		'measure_unit',
+		'price',
+		'vat',
+		'work_time',
+		'enabled' => array(
+			'label'	=> $model->getAttributeLabel('enabled'),
+			'value'	=> $model->enabled,
+			'type' => 'booleanString',
+		),
+		'sort_order',
+		'create_time' => array(
+			'label'	=> $model->getAttributeLabel('create_time'),
+			'value'	=> $model->create_time,
+			'type' => 'Datetime',
+		),
+		'update_time' => array(
+			'label'	=> $model->getAttributeLabel('update_time'),
+			'value'	=> $model->update_time,
+			'type' => 'Datetime',
+		),
+	),
+)); ?>

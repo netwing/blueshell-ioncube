@@ -1,49 +1,44 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-zPaqjG==
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("documenti","R");
+if (!array_key_exists("contratto_fine_dal",$_POST) or !array_key_exists("contratto_fine_al",$_POST))
+{
+	header("Location:contratti_scadenze.php");
+	exit;
+}
+
+$inizio = $_POST['contratto_fine_dal'];
+$fine = $_POST['contratto_fine_al'];
+
+$select_contratti="SELECT contratto_id,contratto_fine,cliente_id,cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia,barca_nome,pontile_codice,posto_barca_id,posto_barca_numero FROM ".$tabelle['contratti'].",".$tabelle['clienti'].",".$tabelle['barche'].",".$tabelle['pontili'].",".$tabelle['posti_barca']." WHERE contratto_tipo='1' AND cliente_id=contratto_anagrafica2 AND barca_id=contratto_barca AND posto_barca_id=contratto_posto_barca AND pontile_id=posto_barca_pontile AND contratto_fine BETWEEN '".$inizio."' AND '".$fine."' AND cliente_rifiuta_comunicazioni=0";
+$result_contratti=$sql->select_query($select_contratti);
+$ricerca_sostituzione=array();
+while ($row_contratti=mysql_fetch_array($result_contratti))
+{
+	$cliente=$row_contratti['cliente_nominativo'];
+	$indirizzo=$row_contratti['cliente_indirizzo'];
+	$cap=$row_contratti['cliente_cap'];
+	$citta=$row_contratti['cliente_citta'];
+	$provincia=$row_contratti['cliente_provincia'];
+	$data = date("d-m-Y", time());
+	$pontile=$row_contratti['pontile_codice'];
+	$posto_barca=$row_contratti['posto_barca_numero'];
+	$barca=$row_contratti['barca_nome'];
+	$fine=$sql->data_ita($row_contratti['contratto_fine']);
+	$scadenza=$fine[0];
+	$ricerca_sostituzione[]=array("<NOMINATIVO>"=>$cliente,
+								  "<INDIRIZZO>"=>$indirizzo,
+								  "<CAP>"=>$cap,
+								  "<CITTA>"=>$citta,
+								  "<PROVINCIA>"=>$provincia,
+								  "<DATA>"=>$data,
+								  "<PONTILE>"=>$pontile,
+								  "<POSTO_BARCA>"=>$posto_barca,
+								  "<IMBARCAZIONE>"=>$barca,
+								  "<SCADENZA>"=>$scadenza
+								  );
+}
+$rtf=new RTF();
+$rtf->carica_template("template/lettera_scadenza.rtf");
+$rtf->rtf_multiplo($ricerca_sostituzione);
+$rtf->output("Lettere_Scadenza_Contratti.doc");

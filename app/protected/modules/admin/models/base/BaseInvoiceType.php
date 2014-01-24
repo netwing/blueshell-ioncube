@@ -1,82 +1,159 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * This is the model class for table "{{invoice_type}}".
+ *
+ * The followings are the available columns in table '{{invoice_type}}':
+ * @property string $id
+ * @property string $name
+ * @property string $description
+ * @property string $color
+ * @property string $type
+ * @property string $prefix
+ * @property integer $year_restart
+ * @property string $sort_order
+ * @property integer $enabled
+ * @property string $create_time
+ * @property string $update_time
+ *
+ * The followings are the available model relations:
+ * @property Invoice[] $invoices
+ */
+class BaseInvoiceType extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{invoice_type}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('year_restart, enabled', 'numerical', 'integerOnly'=>true),
+			array('name, color, prefix', 'length', 'max'=>255),
+			array('type', 'length', 'max'=>7),
+			array('sort_order', 'length', 'max'=>11),
+			array('description, create_time, update_time', 'safe'),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id, name, description, color, type, prefix, year_restart, sort_order, enabled, create_time, update_time', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'invoices' => array(self::HAS_MANY, 'Invoice', 'type_id'),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => Yii::t('app', 'ID'),
+			'name' => Yii::t('app', 'Name'),
+			'description' => Yii::t('app', 'Description'),
+			'color' => Yii::t('app', 'Color'),
+			'type' => Yii::t('app', 'Type'),
+			'prefix' => Yii::t('app', 'Prefix'),
+			'year_restart' => Yii::t('app', 'Year Restart'),
+			'sort_order' => Yii::t('app', 'Sort Order'),
+			'enabled' => Yii::t('app', 'Enabled'),
+			'create_time' => Yii::t('app', 'Create Time'),
+			'update_time' => Yii::t('app', 'Update Time'),
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('color',$this->color,true);
+		$criteria->compare('type',$this->type,true);
+		$criteria->compare('prefix',$this->prefix,true);
+		$criteria->compare('year_restart',$this->year_restart);
+		$criteria->compare('sort_order',$this->sort_order,true);
+		$criteria->compare('enabled',$this->enabled);
+		$criteria->compare('create_time',$this->create_time,true);
+		$criteria->compare('update_time',$this->update_time,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return InvoiceType the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * Behavior for timestamp
+	 */
+	public function behaviors(){
+		return array(
+			'CTimestampBehavior' => array(
+				'class' => 'zii.behaviors.CTimestampBehavior',
+				// 'createAttribute' => 'create_time',
+				// 'updateAttribute' => 'update_time',
+			)
+		);
+	}
+
+	/**
+	 * Either attributes required (one or another)
+	 * Use like this: 
+	 * array('attributes1', 'either', 'other' => 'attributes2')
+	 */ 
+	public function either($attribute_name, $params)
+	{
+	    $field1 = $this->getAttributeLabel($attribute_name);
+	    $field2 = $this->getAttributeLabel($params['other']);
+	    if (empty($this->$attribute_name) && empty($this->$params['other'])) {
+	        $this->addError(
+	        	$attribute_name, 
+	        	Yii::t('app', "Either {field1} or {field2} is required.", array('{field1}' => $field1, '{field2}' => $field2)));
+	        return false;
+	    }
+	    return true;
+	}	 
+}

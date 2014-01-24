@@ -1,31 +1,26 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","R");
+
+$inizio_dal = date("Y-m-d", time());
+$inizio_al = date("Y-m-d", time() + (60*60*24*30));
+$pontili = $blue->elenco_pontili();
+
+if (array_key_exists("id",$_GET)) {
+	$pontile=intval($_GET['id']);
+} else {
+	$pontile=0;
+}
+if (array_key_exists("nopb",$_GET)) {
+    Yii::app()->user->setFlash('warning', Yii::t('app', 'No enabled resources for selected group.'));
+    header("Location:report_partenze.php?id=" . $pontile);
+    exit;
+} elseif (array_key_exists("nopr",$_GET)) {
+    Yii::app()->user->setFlash('warning', Yii::t('app', 'No departures for selected group and dates.'));
+    header("Location:report_partenze.php?id=" . $pontile);
+    exit;
+} else {
+	$messaggio="";
+}
+
+require_once "views/resource/departure_report.php";

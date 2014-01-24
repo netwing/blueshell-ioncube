@@ -1,53 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OaDi1LqLgZW0uJu=
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/*
+| -------------------------------------------------------------------
+| SMILEYS
+| -------------------------------------------------------------------
+| This file contains an array of smileys for use with the emoticon helper.
+| Individual images can be used to replace multiple simileys.  For example:
+| :-) and :) use the same image replacement.
+|
+| Please see user guide for more info:
+| http://codeigniter.com/user_guide/helpers/smiley_helper.html
+|
+*/
+
+$smileys = array(
+
+//	smiley			image name						width	height	alt
+
+	':-)'			=>	array('grin.gif',			'19',	'19',	'grin'),
+	':lol:'			=>	array('lol.gif',			'19',	'19',	'LOL'),
+	':cheese:'		=>	array('cheese.gif',			'19',	'19',	'cheese'),
+	':)'			=>	array('smile.gif',			'19',	'19',	'smile'),
+	';-)'			=>	array('wink.gif',			'19',	'19',	'wink'),
+	';)'			=>	array('wink.gif',			'19',	'19',	'wink'),
+	':smirk:'		=>	array('smirk.gif',			'19',	'19',	'smirk'),
+	':roll:'		=>	array('rolleyes.gif',		'19',	'19',	'rolleyes'),
+	':-S'			=>	array('confused.gif',		'19',	'19',	'confused'),
+	':wow:'			=>	array('surprise.gif',		'19',	'19',	'surprised'),
+	':bug:'			=>	array('bigsurprise.gif',	'19',	'19',	'big surprise'),
+	':-P'			=>	array('tongue_laugh.gif',	'19',	'19',	'tongue laugh'),
+	'%-P'			=>	array('tongue_rolleye.gif',	'19',	'19',	'tongue rolleye'),
+	';-P'			=>	array('tongue_wink.gif',	'19',	'19',	'tongue wink'),
+	':P'			=>	array('raspberry.gif',		'19',	'19',	'raspberry'),
+	':blank:'		=>	array('blank.gif',			'19',	'19',	'blank stare'),
+	':long:'		=>	array('longface.gif',		'19',	'19',	'long face'),
+	':ohh:'			=>	array('ohh.gif',			'19',	'19',	'ohh'),
+	':grrr:'		=>	array('grrr.gif',			'19',	'19',	'grrr'),
+	':gulp:'		=>	array('gulp.gif',			'19',	'19',	'gulp'),
+	'8-/'			=>	array('ohoh.gif',			'19',	'19',	'oh oh'),
+	':down:'		=>	array('downer.gif',			'19',	'19',	'downer'),
+	':red:'			=>	array('embarrassed.gif',	'19',	'19',	'red face'),
+	':sick:'		=>	array('sick.gif',			'19',	'19',	'sick'),
+	':shut:'		=>	array('shuteye.gif',		'19',	'19',	'shut eye'),
+	':-/'			=>	array('hmm.gif',			'19',	'19',	'hmmm'),
+	'>:('			=>	array('mad.gif',			'19',	'19',	'mad'),
+	':mad:'			=>	array('mad.gif',			'19',	'19',	'mad'),
+	'>:-('			=>	array('angry.gif',			'19',	'19',	'angry'),
+	':angry:'		=>	array('angry.gif',			'19',	'19',	'angry'),
+	':zip:'			=>	array('zip.gif',			'19',	'19',	'zipper'),
+	':kiss:'		=>	array('kiss.gif',			'19',	'19',	'kiss'),
+	':ahhh:'		=>	array('shock.gif',			'19',	'19',	'shock'),
+	':coolsmile:'	=>	array('shade_smile.gif',	'19',	'19',	'cool smile'),
+	':coolsmirk:'	=>	array('shade_smirk.gif',	'19',	'19',	'cool smirk'),
+	':coolgrin:'	=>	array('shade_grin.gif',		'19',	'19',	'cool grin'),
+	':coolhmm:'		=>	array('shade_hmm.gif',		'19',	'19',	'cool hmm'),
+	':coolmad:'		=>	array('shade_mad.gif',		'19',	'19',	'cool mad'),
+	':coolcheese:'	=>	array('shade_cheese.gif',	'19',	'19',	'cool cheese'),
+	':vampire:'		=>	array('vampire.gif',		'19',	'19',	'vampire'),
+	':snake:'		=>	array('snake.gif',			'19',	'19',	'snake'),
+	':exclaim:'		=>	array('exclaim.gif',		'19',	'19',	'excaim'),
+	':question:'	=>	array('question.gif',		'19',	'19',	'question') // no comma after last item
+
+		);
+
+/* End of file smileys.php */
+/* Location: ./application/config/smileys.php */

@@ -1,91 +1,99 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-nH67+0==
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("imbarcazioni","W");
+if (!array_key_exists("id",$_GET)) {
+	header("Location:barca_inserimento.php?id=0");
+	exit;
+}
+$elenco_tipologie=$blue->elenco_tipologie();
+$k_elenco_tipologie=array_keys($elenco_tipologie);
+$elenco_nazioni=$blue->elenco_nazioni();
+$k_elenco_nazioni=array_keys($elenco_nazioni);
+$elenco_costruttori=$blue->elenco_costruttori();
+$k_elenco_costruttori=array_keys($elenco_costruttori);
+$elenco_assicurazioni=$blue->elenco_assicurazioni();
+$k_elenco_assicurazioni=array_keys($elenco_assicurazioni);
+$elenco_clienti=$blue->elenco_clienti();
+$k_elenco_clienti=array_keys($elenco_clienti);
+$form->campi_testo=array("barca_nome","barca_modello","barca_motore","barca_matricola_motore1","barca_matricola_motore2","barca_targa","barca_polizza","barca_caratteristiche","barca_colore","barca_note", "builder", "insurance_company");
+$form->campi_numero=array("barca_anno","barca_lunghezza","barca_larghezza","barca_pescaggio");
+$form->campi_data_unica=array("barca_scadenza_polizza");
+$form->campi_lista=array("barca_proprietario"=>$k_elenco_clienti,"barca_tipologia_barca"=>$k_elenco_tipologie,"country"=>$k_elenco_nazioni);
+$prop_default="barca_proprietario_".$_GET['id'];
+$form->valori_default=array($prop_default=>"selected=\"selected\"","country_it"=>"selected=\"selected\"","barca_tipologia_barca_1"=>"selected=\"selected\"");
+$form->campi_obbligatori=array("barca_nome","barca_proprietario", 'barca_tipologia_barca', 'barca_lunghezza');
+$form->inizializza();
+
+if (count($_POST)>0)
+{	
+	if (array_key_exists('response', $_GET)) {
+		if ($_GET['response'] == 'json') {
+			$form->errore_form = false;			
+		}
+	} else {
+		$form->verifica();
+	}
+	if ($form->errore_form === false) {
+		$barca_caratteristiche = "";
+		$barca_note = "";
+		foreach ($_POST as $k=>$v) {
+			$$k=$sql->pulisci($v, false);
+		}
+		$barca_lunghezza = @$sql->decimale_sql($barca_lunghezza);
+		$barca_larghezza = @$sql->decimale_sql($barca_larghezza);
+		$barca_pescaggio = @$sql->decimale_sql($barca_pescaggio);
+		/*
+		if (@$barca_costruttore_nuovo != '') {
+			$sql->insert_query("INSERT INTO blue_costruttori (costruttore_nome) VALUES ('".$barca_costruttore_nuovo."')");
+			$barca_costruttore=$sql->insert_last_id;
+		}
+		if (@$barca_assicurazione_nuova != '') {
+			$sql->insert_query("INSERT INTO blue_assicurazioni (assicurazione_nome) VALUES ('".$barca_assicurazione_nuova."')");
+			$barca_assicurazione=$sql->insert_last_id;
+		}
+		*/
+		@$insert="INSERT INTO ".$tabelle['barche']." (barca_nome,barca_tipologia_barca,country, barca_modello,barca_anno,barca_lunghezza,barca_larghezza,barca_pescaggio,barca_motore,barca_matricola_motore1,barca_matricola_motore2,barca_targa,barca_polizza,barca_scadenza_polizza,barca_caratteristiche,barca_colore,barca_proprietario,barca_note, builder, insurance_company) VALUES ('".$barca_nome."','".$barca_tipologia_barca."','".$country."', '".$barca_modello."','".$barca_anno."','".$barca_lunghezza."','".$barca_larghezza."','".$barca_pescaggio."','".$barca_motore."','".$barca_matricola_motore1."','".$barca_matricola_motore2."','".$barca_targa."','".$barca_polizza."','".$barca_scadenza_polizza."','".$barca_caratteristiche."','".$barca_colore."','".$barca_proprietario."','".$barca_note."', '" . $builder . "', '" . $insurance_company . "')";
+
+		$sql->insert_query($insert);
+		$lastid=$sql->insert_last_id;
+
+		if (array_key_exists('response', $_GET)) {
+			if ($_GET['response'] == 'json') {
+				echo intval($lastid);
+				exit;
+			}
+		}
+
+		if ($lastid) {
+			Yii::app()->user->setFlash("success", Yii::t('app', 'Vector created successfully.'));
+		} else {
+			Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured.'));
+			header("Location:barca_inserimento.php?id=" . intval($_GET['id']));
+			exit;
+		}
+
+		if (array_key_exists("procedere",$_POST) and $_POST['procedere']=="nuovo_contratto2") {
+			header("Location:nuovo_contratto2.php?selected=".$lastid."&cliente=".$barca_proprietario);
+			exit;
+		}
+		# Quando vengo dalla procedura di Nuovo Contratto
+		elseif (array_key_exists("procedere",$_POST) and $_POST['procedere']=="nuova_presenza2") {
+			header("Location:nuova_presenza2.php?selected=".$lastid."&cliente=".$barca_proprietario);
+			exit;
+		}
+		# Se vuole inserire un nuovo cliente
+		elseif (array_key_exists("procedere2",$_POST) and $_POST['procedere2']=="nuovo_cliente") {
+			header("Location:cliente_inserimento.php");
+			exit;
+		}
+		# Quando vengo dalla procedura di Nuova Presenza
+		else {
+			header("Location:cliente_visualizza.php?id=".$barca_proprietario);
+			exit;
+		}
+		# Quando inserisco una barca e basta
+	}
+}
+
+$action = "barca_inserimento.php?id=" . intval($_GET['id']);
+require_once "views/vector/create.php";

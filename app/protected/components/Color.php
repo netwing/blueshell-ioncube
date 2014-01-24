@@ -1,38 +1,52 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPzlBb2zJ5sq0Fdi130ccrxTaE+1k65526vciTUHe3US32FE0v8XCWpDTAAzHBX5Iv2xUS1p7
-CiPMCLlfPLCjZM5wQW7GdDlN9rRT8X45jsE5fD3Stgf2TKpAqtrdDYt+W6uDKFrHJjZDWbGD610J
-8o8r3sxO0AIHRTT5n4f6kxch9L8rwpDUXAjZpG7gjDrGOKerHvBApjCF8WlReAoTYKmUIa+2vPve
-xDrl4hOmFVRgJhvxQ7A83SyoJzIxHGvmwA6cEHFtXC9Q9n6RM6U0sIANS0MTORuAazP5yGjlmWOZ
-/2Vog8JQYH39Sux2BOoHfaeKmZtQADMeuvuIa/1OBtEZ7R4CpEcAk4VbsrpkA0Ftof3lFfI9n2B6
-aO76EldQsnxYFWiSf72ymirzph8ODLT9qsdEK+pa7XKkVibRltu9UXTknOuRR362KrZ+SXfKtA81
-15MhXxJntdeuLaWY+0FG6Ai7oS8mWRvfzOh1Hskig6zZ6LVBgZL63H2umlUzvXCzkFMwZVwagpit
-v43DSVs5kq6B0gEL54yBMX1pVNJu8IOe16ezkD31d3jmeDZB4YXWo5VZd+EYeJXkiGRBAqm40oaV
-+mxiw4ZTMW6qleTi3QrfrSApddiE84mY3eB5nSk0Af5lSHCkdDTqVEBiqdDg2a3+djYx+oxqBG+I
-3Oo3JjnEe4DUP1qxZUnH3OlpKjkmjG6XeANXV+t37DBrkpcKYLm4EymUhIsUQhAbohilHLeYjsym
-yF2xap/Z0ZZ9nweXIoTJ51zYjfdOdEV5wRcMWYRz4Tzurpsf2bOGcTp+y9CIx/sbf9rVZQClI7g8
-9fHUPpRE1V8OCroM9YI3dpAA+ZVdZYHpDu0p1EhgpkpCCcTfHUPamTNz02sA/aVH+9CedbCaN9p1
-gj+XWSh0vij/lhdswdl2W7Fufnykv/QmAKtVAaRYqfVWmRw9LjD0milNeAQOshpu8eK+44P180s4
-cPvdAcBRnjPTsjLHW3jK7dW6ejj4YIq39Ymd9oHIVjlia5nLMCT06n06DtLNCPHzHDAb1OA8UR4A
-KIIs9/eTfNAGQfaPV5qOLIJfpGOaGLq20mQr9BoPJ4rRg+siFaYl3e8KqyOjBgHPu10IRE70yQs9
-UK4fIvh9IwC3gR/1R4VVtJ25iPd5NDwAOSjnIaY22SGcGJHgzOrLp9q0uKhMpBAEpO8gM3X9OCjL
-JwOK3erxYS64Lywvb8flT4vZJGGrpcF8WGLKlneMZ0bYmq1T8lm314J+N7QT4zqUqyzPnZFNnBAG
-Ewhd3w8/B+j8BJkw3MRWdHzRszD+Gnuw7uUaPwQyv0WDOCPax99/hvwtlUIvxd0v9iovord2bPHD
-IS5Hi+t7XaC+NCjS4eJZAeMbxj3AsfrquLgwJAMBMKmWi6cQ6aEpSoTlcLmAmM2tVX7lgvO9Tqed
-LJ9EbF/MpAky0+FmbnlGeerDDfveC8gJ0bP4gtUb/vuq6zasL4zIikdqVme538OkFUQLZ+GVL7te
-H8VJqRIQJY8ORxJKoDo0BjOpCDSHDjOm2um2As6EzzrAW0wE4UZfNYEl0/Os17wpk564XbTGWQRb
-fGmLv6qZ8r/TFWVtrS7f6F0EFmOAXvM4ckHn6/TXeI422ruVQ7azAfDA2EHjHoiBD/Nzfc9hg0Ro
-jsEnz0fhpLYQVTq8KC7fhmoh8mvwqAafKknjhkc6m0FLBN69QfyZYFOXHGHvZ8PofhbHc+5ewf4m
-WXpNOKz2IzKOHbRYQHrAW/d/oPncMfsK3Tvm27Q20BnuiXhBKXotVIHE0SMzy2l22ZfNcSIlodda
-1X9gO2RSHDn8eJyAt3iWDzSfK6cnHC7j3n51vM7FUxhIKES3bniRdNk8SiyKQHE+5fX3EcHIh0C6
-TsK2rFbZR1BWespQQJDHzeDkx4fnPvx3y1addiXgUdVgeLzXHBl4tHxd0WcHpbohBgSWzg8ASv6u
-b8lCMQoi9/0VxJWilLVI2F5BL5eeQhiL5fEvZVLu4WARKZvH/fcGA3yvQf58fzW0WiPjNHY+ZI23
-Q8+7go2MTjk8tVmvHKy+c64q58OO4FjoBhD1HkCNspkB17xcx8Lk4PGKYeCrtiI8eqI/tEVJGH1y
-Dak5WnmlnkXsc/MPPDk2Ygys0osLn1ioAIR6LSUA6EDpIRjCJ4rnEzFYUq/pgZ1/oidnYQQ530oL
-LEMjrkI2YOsfR3ZrB/1fAV0NZTS61R3y1GWFi8jfsWExV4ZQpG/3pfBh2OfnVbUbDL+IN09ovYIp
-2QIAlSYdf0sUNY5GXEerWie16CgHKACVxUMEFfygNcaxCl7ycO2r9B/N+5DRD+XoQsGEJxifxxph
-Plx7oIDAzFOJRfnOSj9Gi57NJ+ITDVTO79MV5z5Syo0BpBqS5HDhmngMe3bhEhszEzUk3/5MdHQL
-w7WBSmz2xsEgDtQEJFgBCOdphtITwGQsjJt2IIhTc/zYAXlVZMdh4Dwm5mkLnD3L1H+jsPK7JlFI
-0+CJhgNCaqx2Dvn/xp6F3PA1OyTqbD6QZM9V+ih6ccdDVNmhsuzEEhJU3+1oMiaVud1YCBAbJhRz
-a7jrE4aU6jU7p1nBrAGPQtskrATMi7fI1eS=
+<?php
+
+class Color extends CApplicationComponent 
+{
+
+    static public function getContrastYIQ($hexcolor, $return = "hex")
+    {
+        $black = "#000";
+        $white = "#fff";
+        if ($return === "text") {
+            $black = "black";
+            $white = "white";
+        }
+        if ($return === "int") {
+            $black = 0;
+            $white = 255;
+        }
+        $hexcolor = trim($hexcolor, '#');
+        $r = hexdec(substr($hexcolor,0,2));
+        $g = hexdec(substr($hexcolor,2,2));
+        $b = hexdec(substr($hexcolor,4,2));
+        $yiq = (($r*299)+($g*587)+($b*114))/1000;
+        return ($yiq >= 128) ? $black : $white;
+    }
+
+    static public function getContrast50($hexcolor, $return = "hex")
+    {
+        $black = "#000";
+        $white = "#fff";
+        if ($return == "text") {
+            $black = "black";
+            $white = "white";
+        }
+        if ($return === "int") {
+            $black = 0;
+            $white = 255;
+        }
+        $hexcolor = trim($hexcolor, '#');
+        return (hexdec($hexcolor) > 0xffffff/2) ? $black : $white;
+    }
+
+    static public function getDecimal($hexcolor)
+    {
+        $hexcolor = trim($hexcolor, '#');
+        $r = hexdec(substr($hexcolor,0,2));
+        $g = hexdec(substr($hexcolor,2,2));
+        $b = hexdec(substr($hexcolor,4,2));
+
+        return array($r, $g, $b);        
+    }
+
+}

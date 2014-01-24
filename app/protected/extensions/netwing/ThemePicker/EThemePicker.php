@@ -1,63 +1,90 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+/**
+* @see CPortlet
+*/
+Yii::import('zii.widgets.CPortlet');
+/**
+* This is a simple portlet to choose theme
+* in controller::init() put 
+* @example
+* <pre>
+* Yii::import('ext.themepicker.EThemePicker'); 
+* EThemePicker::setTheme();
+* </pre>
+* @author David Constantine Kurushin <diavolonok@gmail.com>
+*
+*/
+class EThemePicker extends CPortlet
+{
+    /**
+    * @var string a title for the widget
+    */
+    public $title = null;
+ 
+    /**
+    * 
+    * @var string the default tag name of the container
+    */
+    public $tagName = 'div';
+
+    public $htmlOptions = array('class' => '');
+
+    /**
+    * @var array some html options for the dropdownlist
+    */
+    public $dropDownOptions = array(
+        'submit'    => '',
+        'csrf'      => true, 
+        'class'     => 'form-control input-sm themeSelector', 
+        'id'        => 'themeSelector',
+        'style'     => 'width: 150px;',        
+    );
+
+    public function init()
+    {
+        // Uncomment this line to show a title over the theme picker
+        // $this->title = Yii::t('app', 'Select theme');
+        parent::init();
+    }
+
+    /**
+    * (non-PHPdoc)
+    * @see CPortlet::renderContent()
+    */
+    protected function renderContent()
+    {
+        $themesList = array_combine(Yii::app()->themeManager->themeNames, Yii::app()->themeManager->themeNames);
+        echo CHtml::form('', 'post', array('class' => 'form-inline'));
+        echo CHtml::dropDownList('themeSelector' , Yii::app()->theme->name, $themesList, $this->dropDownOptions);
+        echo CHtml::endForm();
+    }
+
+    /**
+    * set the theme and save on cookie, or select from cookie
+    * this should be called from  CController::init or CController::beforeAction etc.
+    * @see CController::init() 
+    * @see CController::beforeAction()
+    * @param $cookieDays integer the amount of days the theme choice will be saved, default 180 days
+    */
+    public static function setTheme($cookieDays = 180)
+    {
+        if (!Yii::app() instanceof CWebApplication) { 
+            return;
+        }
+
+        if (Yii::app()->request->getPost('themeSelector') !== null && in_array($_POST['themeSelector'], Yii::app()->themeManager->themeNames, true)) {
+            Yii::app()->theme = $_POST['themeSelector'];
+            // Yii::setPathOfAlias('bootstrap.assets', Yii::getPathOfAlias('webroot.themes.' . $_POST['themeSelector'] . '.assets'));
+            $cookie = new CHttpCookie('theme', $_POST['themeSelector']);
+            $cookie->expire = time() + 60*60*24*$cookieDays; 
+            Yii::app()->request->cookies['theme'] = $cookie;
+        } else if(isset(Yii::app()->request->cookies['theme']) && in_array(Yii::app()->request->cookies['theme']->value, Yii::app()->themeManager->themeNames, true) ) {
+            Yii::app()->theme = Yii::app()->request->cookies['theme']->value;
+            // Yii::setPathOfAlias('bootstrap.assets', Yii::getPathOfAlias('webroot.themes.' . Yii::app()->request->cookies['theme']->value . '.assets'));
+        } else if(isset(Yii::app()->request->cookies['theme'])) {
+            //if we came to this point, the theme don't exists, so we better unset the cookie
+            unset(Yii::app()->request->cookies['theme']);
+            throw new CHttpException(400, Yii::t('app', 'Invalid request. Theme don\'t exist!'));
+        }
+    }
+}

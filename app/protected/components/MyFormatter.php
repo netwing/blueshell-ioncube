@@ -1,91 +1,191 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-L/DwujZ8LNNSdBRr+otrSPf3wRRF7fq+
+<?php
+
+class MyFormatter extends CLocalizedFormatter 
+{
+
+    // Localize to Yes everything evaluable as true; No for everything else
+    public function formatBooleanString($value)
+    {
+        if ($value) return Yii::t('app','Yes');
+        return Yii::t('app','No');
+    }
+
+    // Return green tick icon for true and red cross for false
+    public function formatBooleanIcon($value)
+    {
+        if ($value) {
+            $result = '<span class="text-success"><i class="fa fa-check"></i></span>';
+        } else {
+            $result = '<span class="text-danger"><i class="fa fa-times"></i></span>';
+        }
+        return $result;
+    }
+
+    // Localize INCOME and OUTCOME
+    public function formatInvoiceType($value)
+    {
+        return ($value == 'INCOME') ? Yii::t('app','Income') : Yii::t('app','Outcome');
+    }
+
+    /**
+     * Customer Link to detail
+     * @return string html ready to use
+     */
+    public function formatCustomerDetailLink(Customer $customer)
+    {
+        return '<a href="' . Yii::app()->createUrl("/admin/customer/detail", array("id" => $customer->cliente_id)) 
+                            . '">' . $customer->cliente_nominativo . '</a>';
+    }
+
+    /**
+     * Customer Link to detail #order
+     * @return string html ready to use
+     */
+    public function formatCustomerDetailOrderLink(Customer $customer)
+    {
+        return '<a href="' . Yii::app()->createUrl("/admin/customer/detail", array("id" => $customer->cliente_id, "#" => "order")) 
+                            . '">' . $customer->cliente_nominativo . '</a>';
+    }
+
+    /**
+     * Customer Link to detail #invoice
+     * @return string html ready to use
+     */
+    public function formatCustomerDetailInvoiceLink(Customer $customer)
+    {
+        return '<a href="' . Yii::app()->createUrl("/admin/customer/detail", array("id" => $customer->cliente_id, "#" => "invoice")) 
+                            . '">' . $customer->cliente_nominativo . '</a>';
+    }
+
+    // Return background-color and color for text
+    public function formatTextColor($value)
+    {
+        if (!is_object($value) and !is_array($value)) {
+            throw new Exception("Value for formatTextColor should be an object or an array.");
+        }
+        if (!isset($value['name'])) {
+            throw new Exception("Object or array passed as argument must contain a 'name' attribute.");   
+        }
+        if (!isset($value['color'])) {
+            throw new Exception("Object or array passed as argument must contain a 'color' attribute.");   
+        }
+
+        if ($value->color == "") {
+            $value->color = "#ffffff";
+        }
+
+        $result = '<span style="white-space: nowrap; font-weight: bold; padding: 3px; color:' . Color::getContrastYIQ($value->color) . '; background-color:' . $value->color . ';">'
+                . $value->name
+                . '</span>';
+
+        return $result;
+    }
+
+    public function formatCurrency($value)
+    {
+        defined("APPLICATION_CURRENCY") or define("APPLICATION_CURRENCY", "EUR");
+        return Yii::app()->numberFormatter->formatCurrency($value, APPLICATION_CURRENCY);
+    }
+
+    public function formatDecimal($value) 
+    {
+        return Yii::app()->numberFormatter->format('0.00', $value);
+    }
+
+    public function formatDate($value) 
+    {
+        $this->dateFormat = "medium";
+        if ($value === null or $value == "" or $value == "0000-00-00") {
+            return null;
+        }
+        return parent::formatDate($value);
+    }
+
+    public function formatDateShort($value) 
+    {
+        $this->dateFormat = "short";
+        if ($value === null or $value == "" or $value == "0000-00-00") {
+            return null;
+        }
+        return parent::formatDate($value);
+    }
+
+    public function formatDateLong($value) 
+    {
+        $this->dateFormat = "long";
+        if ($value === null or $value == "" or $value == "0000-00-00") {
+            return null;
+        }
+        return parent::formatDate($value);
+    }
+
+    public function formatDateFull($value) 
+    {
+        $this->dateFormat = "full";
+        if ($value === null or $value == "" or $value == "0000-00-00") {
+            return null;
+        }
+        return parent::formatDate($value);
+    }
+
+    public function formatTime($value) 
+    {
+        $this->timeFormat = "medium";
+        if ($value === null or $value == "") {
+            return null;
+        }
+        return parent::formatTime($value);
+    }
+
+    public function formatTimeShort($value) 
+    {
+        $this->timeFormat = "short";
+        if ($value === null or $value == "") {
+            return null;
+        }
+        return parent::formatTime($value);
+    }
+
+    public function formatTimeLong($value) 
+    {
+        $this->timeFormat = "long";
+        if ($value === null or $value == "") {
+            return null;
+        }
+        return parent::formatTime($value);
+    }
+
+    public function formatTimeFull($value) 
+    {
+        $this->timeFormat = "full";
+        if ($value === null or $value == "") {
+            return null;
+        }
+        return parent::formatTime($value);
+    }
+
+    public function formatDatetime($value) 
+    {
+        $this->dateFormat = "medium";
+        return parent::formatDatetime($value);
+    }
+
+    public function formatDatetimeShort($value) 
+    {
+        $this->dateFormat = "short";
+        return parent::formatDatetime($value);
+    }
+
+    public function formatDatetimeLong($value) 
+    {
+        $this->dateFormat = "long";
+        return parent::formatDatetime($value);
+    }
+
+    public function formatDatetimeFull($value) 
+    {
+        $this->dateFormat = "full";
+        return parent::formatDatetime($value);
+    }
+
+}

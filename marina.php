@@ -1,143 +1,201 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-zIwZbERok/gHhvU+6ngEhy1NedJz+Ya=
+<?php
+/*
+Questo file recupera una serie di dati tra clienti,barche e contratti ed aggiorna
+la tabella blue_posti_barca_status.
+Questa tabella viene usata dal Flash della HomePage per visualizzare lo status dei posti barca
+Non viene eseguito se richiamato da WEB
+*/
+if (PHP_SAPI !== 'cli') {
+	exit;
+}
+require_once("config.inc.php");
+error_reporting("E_ALL ~ E_NOTICE");
+// Carichiamo l'elenco dei tipi di contratti
+$tipi=$blue->elenco_tipi();
+$tipi['31']="Affitto su Gestione";
+$tipi['43']="Prenotazione su Gestione";
+$tipi['311']="Transito su Gestione";
+// Carichiamo l'elenco dei pontili
+$pontili=$blue->elenco_pontili();
+// Carichiamo l'elenco dei posti barca
+$pb=$blue->elenco_posti_barca_disponibili('_');
+$contratti=array();
+foreach ($pb as $k=>$v)
+{
+	$contratti[$k]=array('ana'=>'0','tipo'=>'0','barca'=>'0','posto'=>$k,'inizio'=>'','fine'=>'','presenza'=>'');
+}
+
+// Carichiamo i contratti di opzione NON al Marina - TIPO 13
+$selcon_opzioni="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='13' AND (contratto_fine='0000-00-00' OR contratto_fine>=NOW())  ORDER BY contratto_posto_barca ASC";
+$rescon_opzioni=$sql->select_query($selcon_opzioni);
+while ($rowcon=mysql_fetch_assoc($rescon_opzioni))
+{
+	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+	$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
+	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+	$contratti[$rowpre['posto']]['presenza']='0';
+}
+// Carichiamo i contratti di vendita NON al Marina - TIPO 2
+$selcon_vendite="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='2' AND (contratto_inizio<=NOW() AND (contratto_fine='0000-00-00' OR contratto_fine>=NOW()))  ORDER BY contratto_posto_barca ASC";
+$rescon_vendite=$sql->select_query($selcon_vendite);
+//echo $sql->select_num_rows;
+while ($rowcon=mysql_fetch_assoc($rescon_vendite))
+{
+	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+	$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
+	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+	$contratti[$rowpre['posto']]['presenza']='0';
+}
+// Carichiamo le gestioni - TIPO 3
+$selcon_gestioni="SELECT contratto_anagrafica1 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica1>1 AND contratto_tipo='3' AND (contratto_inizio<=NOW() AND(contratto_fine='0000-00-00' OR contratto_fine>=NOW()))  ORDER BY contratto_posto_barca ASC";
+$rescon_gestioni=$sql->select_query($selcon_gestioni);
+while ($rowcon=mysql_fetch_assoc($rescon_gestioni))
+{
+	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+	$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
+	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+	$contratti[$rowpre['posto']]['presenza']='0';
+}
+//print_r($contratti[1129]);
+// Carichiamo affitti e transiti (li consideriamo pressochè uguali) - TIPO 1 ED 11
+$selcon_affitti="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND (contratto_tipo='1' OR contratto_tipo='11') AND (contratto_inizio<=NOW() AND contratto_fine>=NOW())  ORDER BY contratto_posto_barca ASC";
+$rescon_affitti=$sql->select_query($selcon_affitti);
+while ($rowcon=mysql_fetch_assoc($rescon_affitti))
+{
+	$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+	
+	/*if ($rowcon['posto']==1129)
+	{
+		echo "Siamo nel tipo ".$contratti[$rowcon['posto']]['tipo']." e si aggiunge ".$rowcon['tipo'];
+		print_r($rowcon);
+	}
+	*/
+	// Se siamo in un Affitto sopra ad una gestione, lo segnaliamo con un tipo di contratto volante (31 dove 3 sta per gestione ed 1 per affitto, oppure 311 dove 3 sta per gestione ed 11 per transito)
+	if ($contratti[$rowcon['posto']]['tipo']=='3')
+	{
+		$contratti[$rowcon['posto']]['tipo'].=$rowcon['tipo'];
+	}
+	// Nel caso in cui ci siano due o piu' contratti sullo stesso PB, cosi' non si sovrascrive l'Affitto su Gestione
+	elseif ($contratti[$rowcon['posto']]['tipo']=='31')
+	{
+		// Non fare nulla...	
+	}
+	else
+	{
+		$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
+	}
+	$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+	$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+	$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+	$contratti[$rowpre['posto']]['presenza']='0';
+}
+# echo "\n\n";
+# print_r($contratti[795]);
+// Carichiamo le prenotazioni in cui ci siamo dentro - TIPO 4
+$selcon_prenot="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='4' AND contratto_inizio<=NOW() AND contratto_fine>=NOW() AND contratto_fatturato_chiuso='0' ORDER BY contratto_posto_barca ASC";
+$rescon_prenot=$sql->select_query($selcon_prenot);
+while ($rowcon=mysql_fetch_assoc($rescon_prenot))
+{
+	// Se sul PB non c'è un tubo, oppure una vendita o un'opzione, possiamo sovrascriverlo con una prenotazione
+	// In questo modo gli affitti in essere NON vengono sovrascritti dalle prenotazioni in cui siamo dentro 
+	if ($contratti[$rowcon['posto']]['tipo']==0 OR $contratti[$rowcon['posto']]['tipo']==2 OR $contratti[$rowcon['posto']]['tipo']==13)
+	{
+		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+		$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
+		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+		$contratti[$rowpre['posto']]['presenza']='0';
+	}
+	// Altrimenti, se sul PB c'è una gestione
+	elseif ($contratti[$rowcon['posto']]['tipo']==3)
+	{
+		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+		$contratti[$rowcon['posto']]['tipo']='43';
+		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+		$contratti[$rowpre['posto']]['presenza']='0';
+	}
+}
+
+// Carichiamo le prenotazioni future
+$selcon_prenot="SELECT contratto_anagrafica2 AS ana,contratto_tipo AS tipo,contratto_barca AS barca,contratto_posto_barca AS posto,contratto_inizio AS inizio,contratto_fine AS fine FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2>1 AND contratto_tipo='4' AND contratto_inizio>=NOW() AND contratto_fatturato_chiuso='0' ORDER BY contratto_posto_barca ASC";
+$rescon_prenot=$sql->select_query($selcon_prenot);
+while ($rowcon=mysql_fetch_assoc($rescon_prenot))
+{
+	// Se sul PB non c'è un tubo, oppure una vendita, oppure una gestione, possiamo sovrascriverlo con una prenotazione
+	// In questo modo gli affitti in essere NON vengono sovrascritti dalle prenotazioni future 
+	if ($contratti[$rowcon['posto']]['tipo']==0 OR $contratti[$rowcon['posto']]['tipo']==2 OR $contratti[$rowcon['posto']]['tipo']==13)
+	{
+		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+		$contratti[$rowcon['posto']]['tipo']=$rowcon['tipo'];
+		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+		$contratti[$rowpre['posto']]['presenza']='0';
+	}
+	elseif ($contratti[$rowcon['posto']]['tipo']==3)
+	{
+		$contratti[$rowcon['posto']]['ana']=$rowcon['ana'];
+		$contratti[$rowcon['posto']]['tipo']='43';
+		$contratti[$rowcon['posto']]['barca']=$rowcon['barca'];
+		$contratti[$rowcon['posto']]['inizio']=$rowcon['inizio'];
+		$contratti[$rowcon['posto']]['fine']=$rowcon['fine'];
+		$contratti[$rowpre['posto']]['presenza']='0';
+	}
+}
+
+
+// Staccato dai contratti, ma comunque collegato, carichiamo le presenze
+$selpre="SELECT presenza_posto_barca AS posto,presenza_cliente AS ana,presenza_barca AS barca,presenza_arrivo AS inizio,presenza_partenza AS fine FROM ".$tabelle['presenze']." WHERE presenza_arrivo<=NOW() AND (presenza_partenza='0000-00-00' OR presenza_partenza>=NOW()) ORDER BY presenza_posto_barca ASC";
+$respre=$sql->select_query($selpre);
+while ($rowpre=mysql_fetch_assoc($respre))
+{
+	$contratti[$rowpre['posto']]['ana']=$rowpre['ana'];
+	$contratti[$rowpre['posto']]['barca']=$rowpre['barca'];
+	$contratti[$rowpre['posto']]['inizio']=$rowpre['inizio'];
+	$contratti[$rowpre['posto']]['fine']=$rowpre['fine'];
+	$contratti[$rowpre['posto']]['presenza']='1';
+}
+
+// Tronchiamo la tabella appena prima di eseguire le INSERT
+$truncate="TRUNCATE TABLE ".$tabelle['posti_barca_status'];
+$sql->general_query($truncate);
+// Iniziamo l'inserimento
+$insert="INSERT INTO ".$tabelle['posti_barca_status']." (posto_barca, cliente, barca, inizio, fine, status, presenza, posto_barca_id) VALUES ";
+foreach ($contratti as $k=>$v)
+{
+	if (!array_key_exists($k,$pb))
+	{
+		continue;
+	}
+	$values="(";
+	$values.="'".$pb[$k]."',";
+	$values.="'".$v['ana']."',";
+	$values.="'".$v['barca']."',";
+	$values.="'".$v['inizio']."',";
+	$values.="'".$v['fine']."',";
+	$values.="'".ucfirst($tipi[$v['tipo']])."',";
+	$values.="'".$v['presenza']."', ";
+	$values.="'".$k."'";
+	$values.=")";
+	$sql->insert_query($insert.$values);
+}
+// Carichiamo le informazioni sulle dimensioni dei posti barca
+$select="SELECT pontile_codice,posto_barca_numero,dimensione_lunghezza,dimensione_larghezza FROM blue_pontili,blue_posti_barca,blue_dimensioni WHERE posto_barca_pontile=pontile_id AND dimensione_id=posto_barca_dimensioni ORDER BY posto_barca_id ASC";
+$result=$sql->select_query($select);
+while ($row=mysql_fetch_array($result))
+{
+	$lunghezza=number_format($row['dimensione_lunghezza'],2,",","");
+	$larghezza=number_format($row['dimensione_larghezza'],2,",","");
+	$dimensioni=$lunghezza." x ".$larghezza;
+	$update="UPDATE blue_posti_barca_status SET posto_barca_dimensioni='".$dimensioni."' WHERE posto_barca='".$row['pontile_codice'] . "_" . $row['posto_barca_numero']."'";
+	$sql->update_query($update);
+}

@@ -1,12 +1,6 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPzO214ELrVnqTBYHOC8kOv+xg5+c/DQbtQki0LD6mCSJ1IN7IzADW7Srtw1mwXuGClasMFJc
-VWAusWgrwrIav4/cHufaSCu0KtYBOZhtui8dhQADfQMY64FrKxfN7gYS8x1V//R/y9bUPsPaMYmv
-cO9bL3JpSXW2Vr9WGi1pu7cPnxUbzgGc5mZ9cE230Z5RCbHb+YvACKYU3Wtk/meujW27w46nyR5O
-TAfAyio0DISSDYliyki+3SyoJzIxHGvmwA6cEHFtXFrYXsB1rkWSG1hVRMsUORuw//N0mFXHeaNA
-vBv9ZkKz/RF28UfCEjEXyq4OZ19hx5OxeAeZkbHVIw6p/nCrYEz5bSXxFO4sxWre4vGsQW6l65Xy
-A+MOL4ilCmuvthcL5wLf48KaI+XVre6ifH/bEkyrzVVvkgHVhj2ViK/xxrm+PjPLY8SUWnP/nwAZ
-opHZeacufQTLjsoYdR23CiZwhgh1Vn2C0701nG7RVUKntPtoqrUWDdY2fheTRZ+QShdoEjRjx/g0
-jLRHEs3A7WY8x7vYbUKEVdMJHjKcbdbBi/nsOrOxjdoofdTDYDUNivqiQiw2K1wTuYvssRGqgt6Y
-Qc1Hqxji6tHSrZxtbCN7zKAcNIuBHqvwZXOXr4HHmvElmekYbW==
+<?php
+
+$lang['jb_blankpage_message'] = "The Upload process had not started, or started, but had not finished yet, or your browser could not reach the remote server.";
+
+/* End of file jbstrings_lang.php */
+/* Location: ./application/language/english/jbstrings_lang.php */

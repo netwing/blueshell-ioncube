@@ -1,55 +1,140 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+
+<?php
+/* @var $this CustomerController */
+/* @var $model Customer */
+
+$this->pageTitle = Yii::t('app', 'Manage Customers');
+
+$this->breadcrumbs=array(
+	'Customers'=>array('index'),
+	'Manage',
+);
+
+$this->menu=array(
+	array('label' => Yii::t('app', 'Manage Customer'), 'url'=>array('admin')),
+	array('label' => Yii::t('app', 'Create Customer'), 'url'=>array('create')),
+);
+
+Yii::app()->clientScript->registerScript('search', "
+$('.search-button').click(function(){
+	$('.search-form').toggle();
+	return false;
+});
+$('.search-form form').submit(function(){
+	$('#customer-grid').yiiGridView('update', {
+		data: $(this).serialize()
+	});
+	return false;
+});
+");
 ?>
-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
+
+<p>
+<?php echo Yii::t('app', 'You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.'); ?></p>
+
+<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button btn btn-default')); ?>
+<div class="search-form" style="display:none">
+<?php $this->renderPartial('_search',array(
+	'model'=>$model,
+)); ?>
+</div><!-- search-form -->
+
+<?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'customer-grid',
+	'dataProvider'=>$model->search(),
+	'filter'=>$model,
+	'rowCssClass'   => array(),
+	'itemsCssClass' => 'table table-hover table-bordered',
+	'pagerCssClass'     => "col-md-12 text-right",
+	'pager'             => array(
+	    'header'                => '',
+	    'internalPageCssClass'  => '',
+	    'firstPageCssClass'     => '',
+	    'lastPageCssClass'      => '',
+	    'selectedPageCssClass'  => 'active',
+	    'htmlOptions'   => array(
+	        'class'     => 'pagination pagination-sm',
+	    )
+	),
+	'columns'=>array(
+		'cliente_nominativo',
+		'cliente_tipo',
+		'cliente_nome',
+		'cliente_cognome',
+        'cliente_telefono1',
+		/*
+        'cliente_data_nascita',
+		'cliente_luogo_nascita',
+		'cliente_indirizzo',
+		'cliente_citta',
+		'cliente_cap',
+		'cliente_provincia',
+		'cliente_nazione',
+		'cliente_tipo_telefono1',
+		'cliente_telefono2',
+		'cliente_tipo_telefono2',
+		'cliente_telefono3',
+		'cliente_tipo_telefono3',
+		'cliente_email',
+		'cliente_codice_fiscale',
+		'cliente_partita_iva',
+		'cliente_documento',
+		'cliente_numero_documento',
+		'cliente_rifiuta_comunicazioni',
+		'cliente_note',
+		'data_inserimento_cliente',
+		*/
+    // Show a column with 3 icons as buttons
+    array(
+        'class'         => 'zii.widgets.grid.CButtonColumn',
+        'htmlOptions'   => array('style' => 'white-space: nowrap'),
+        'afterDelete'   => 'function(link,success,data) { if (success && data) alert(data); }',
+        'template'      => '{view} {update} {delete} {detail}',
+        'buttons'       => array(
+            'view'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'View')),
+                'label'         => '<i class="fa fa-eye"></i>',
+                'imageUrl'      => false,
+            ),
+            'update'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Update')),
+                'label'         => '<i class="fa fa-pencil"></i>',
+                'imageUrl'      => false,
+            ),
+            'delete'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Delete')),
+                'label'         => '<i class="fa fa-times"></i>',
+                'imageUrl'      => false,
+            ),
+            'detail'      => array(
+                'options'       => array('rel' => 'tooltip', 'data-toggle' => 'tooltip', 'title' => Yii::t('app', 'Details')),
+                'label'         => '<i class="fa fa-file-text"></i>',
+                'imageUrl'      => false,
+                'url'           => 'Yii::app()->createUrl("/admin/customer/detail", array("id" => $data->cliente_id))',
+                // 'visible'       => '($data->orderDetail)',
+            ),
+        )
+    ),
+    /*
+    // Show a column with dropdown actions
+    array( 'header'=>'Action', 'type'=>'raw',
+        'value'=>'\'
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Action <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="\' . Yii::app()->createUrl("/admin/user/update", array("id" => $data->id)) . \'">Edit \' . $data->id . \'</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </div>
+            \'', 
+        ),    
+    */
+	),
+)); ?>
+

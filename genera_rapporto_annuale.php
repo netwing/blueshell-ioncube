@@ -1,115 +1,185 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-b92UBTKcuBKHhU75noC=
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","R");
+
+$anno = date('Y',time());
+
+if (array_key_exists('date_year', $_POST)) {
+	$anno = $_POST['date_year'];
+}
+$spese=array();
+$totali=array();
+$totale_affitti=array();
+
+$periodi=$blue->elenco_periodi();
+unset($periodi[0]);
+$spese['condominiali'][99]=0;
+$spese['vendite'][99]=0;
+$spese['transiti'][99]=0;
+$spese['prenotazioni'][99]=0;
+$spese['varie'][99]=0;
+$spese['indefinite'][99]=0;
+$totale_affitti[99]=0;
+$totali[99]=0;
+foreach ($periodi as $k=>$v) {
+	$nomeaffitto="affitti ".$v;
+	for ($i=1;$i<=12;$i++) {
+		if (strlen($i)==1) {
+			$q='0'.$i;
+		} else {
+			$q=$i;
+		}
+		$spese[$nomeaffitto][$q]=0;
+		$spese[$nomeaffitto][99]=0;
+		$totale_affitti[$q]=0;
+		$totale_affitti[99]=0;
+	}
+}
+
+$spese['affitti'][99]=0;
+		
+for ($i=1; $i<=12; $i++) {
+	// Settiamo il numero del mese con lo zero davanti
+	if (strlen($i)==1) {
+		$q='0'.$i;
+	} else {
+		$q=$i;
+	}
+	
+	// Fattura di Spese Condominiali
+	$sel_spese="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE fattura_riga_descrizione LIKE '%condominiali%' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	if (true) {
+		$sel_spese="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE fattura_spese_condominiali='1' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	}
+
+	$res=$sql->select_query($sel_spese);
+	while ($row=mysql_fetch_array($res)) {
+		$spese['condominiali'][$q]=$row['totale'];
+		$spese['condominiali'][99]+=$row['totale'];
+	}
+	ksort($spese['condominiali']);
+	
+	// Fatture di Vendita
+	$sel_vendite="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE (fattura_riga_descrizione LIKE '%vendita%' OR fattura_riga_descrizione LIKE '%acquisto posto barca%' OR fattura_riga_descrizione LIKE '%acquisto pb%' OR fattura_riga_descrizione LIKE '%acquisto p.b.%') AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	if (true) {
+		$sel_vendite="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe,blue_contratti WHERE (contratto_tipo='2' OR contratto_tipo='13') AND contratto_id=fattura_contratto_id AND fattura_id=fattura_riga_fattura_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_data LIKE '".$anno."-".$q."%'";
+	}
+	$res=$sql->select_query($sel_vendite);
+	while ($row=mysql_fetch_array($res))
+	{
+		$spese['vendite'][$q]=$row['totale'];
+		$spese['vendite'][99]+=$row['totale'];
+	}
+	ksort($spese['vendite']);
+
+	// Fatture Non Definite
+	$sel_indefinite="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE (1=2) AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	if (true) {
+		$sel_indefinite="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE fattura_contratto_id=0 AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	}
+	$res=$sql->select_query($sel_indefinite);
+	while ($row=mysql_fetch_array($res))
+	{
+		$spese['indefinite'][$q]=$row['totale'];
+		$spese['indefinite'][99]+=$row['totale'];
+	}
+	ksort($spese['indefinite']);
+	
+	// Fatture dei Transiti
+	$sel_transito="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE fattura_riga_descrizione LIKE '%transito%' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	if (true) {
+		$sel_transito="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe,blue_contratti WHERE contratto_tipo='11' AND contratto_id=fattura_contratto_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";	}
+	$res=$sql->select_query($sel_transito);
+	while ($row=mysql_fetch_array($res)) {
+		$spese['transiti'][$q]=$row['totale'];
+		$spese['transiti'][99]+=$row['totale'];
+	}
+	ksort($spese['transiti']);	
+	
+	// Fatture delle Prenotazioni
+	$sel_transito="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE 1=2 AND fattura_riga_descrizione LIKE '%acconto%' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	if (true) {
+		$sel_transito="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe,blue_contratti WHERE contratto_tipo='4' AND contratto_id=fattura_contratto_id AND fattura_spese_condominiali='0' AND fattura_varie='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";	}
+	$res=$sql->select_query($sel_transito);
+	while ($row=mysql_fetch_array($res))
+	{
+		$spese['prenotazioni'][$q]=$row['totale'];
+		$spese['prenotazioni'][99]+=$row['totale'];
+	}
+	ksort($spese['prenotazioni']);
+	
+	// Fatture degli Affitti suddivisi per periodo
+	foreach ($periodi as $k=>$v)
+	{
+		$nomeaffitto="affitti ".$v;
+		$sel_affitti="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe,blue_contratti WHERE contratto_tipo='1' AND contratto_id=fattura_contratto_id AND contratto_periodo='".$k."' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+		$res=$sql->select_query($sel_affitti);
+		//$spese[$nomeaffitto][99]=0;
+		while ($row=mysql_fetch_array($res))
+		{
+			$spese[$nomeaffitto][$q]=$row['totale'];
+			$spese[$nomeaffitto][99]+=$row['totale'];
+			$totale_affitti[$q]+=$row['totale'];
+			$totale_affitti[99]+=$row['totale'];
+		}
+		ksort($spese[$nomeaffitto]);
+	}
+	
+	$sel_affitti="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE (fattura_riga_descrizione LIKE '%ormeggio%' OR fattura_riga_descrizione LIKE '%affitto%') AND fattura_contratto_id='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+	$res=$sql->select_query($sel_affitti);
+	while ($row=mysql_fetch_array($res))
+	{
+		$spese['affitti'][$q]=$row['totale'];
+		$spese['affitti'][99]+=$row['totale'];
+	}
+	ksort($spese['affitti']);
+	
+	
+	$sel_totali_x_mese="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture_righe,blue_fatture WHERE fattura_riga_fattura_id=fattura_id AND fattura_data like '".$anno."-".$q."-%'";
+	$res=$sql->select_query($sel_totali_x_mese);
+	while ($row=mysql_fetch_array($res))
+	{
+		$totali[$q]=$row['totale'];
+		$totali[99]+=$row['totale'];
+	}
+	ksort($totali);
+	
+	$spese['varie'][$q]=$totali[$q]-($spese['condominiali'][$q]+$spese['vendite'][$q]+$spese['transiti'][$q]+$spese['affitti'][$q]+$totale_affitti[$q]);
+	// Fattura di Varie
+	if (true) {
+		$sel_spese="SELECT SUM(fattura_riga_imponibile) AS totale FROM blue_fatture,blue_fatture_righe WHERE fattura_varie='1' AND fattura_spese_condominiali='0' AND fattura_id=fattura_riga_fattura_id AND fattura_data LIKE '".$anno."-".$q."%'";
+		$res=$sql->select_query($sel_spese);
+		while ($row=mysql_fetch_array($res))
+		{
+			$spese['varie'][$q]=$row['totale'];
+			$spese['varie'][99]+=$row['totale'];
+		}
+		ksort($spese['varie']);
+	}	
+}
+
+//$spese['varie'][99]=$totali[99]-($spese['condominiali'][99]+$spese['vendite'][99]+$spese['transiti'][99]+$spese['affitti'][99]+$totale_affitti[99]);
+
+$spese['totali']=$totali;
+$spese2=$spese;
+unset($spese2['affitti']);
+$excel="Voce\tGennaio\tFebbraio\tMarzo\tAprile\tMaggio\tGiugno\tLuglio\tAgosto\tSettembre\tOttobre\tNovembre\tDicembre\tTotale\n";
+
+foreach ($spese2 as $k=>$v)
+{
+	$excel.=$k."\t";
+	foreach ($v as $v2)
+	{
+		$excel.=number_format($v2,2,',','')."\t";
+	}
+	$excel.="\n";
+}
+/*echo "<pre>";
+print_r($spese);
+echo "</pre>";
+exit;
+*/
+header('Content-Type: application/xls');
+header("Content-Disposition: attachment; filename=Report_Annuale_".$anno.".xls");
+echo $excel;
+exit;

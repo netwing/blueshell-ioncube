@@ -1,47 +1,96 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-+Bfy0rdbVf6OuAZDIazCz32S8xuqNvBF
+<?php
+/**
+ * Select2 class file.
+ * @author Emanuele Deserti <emanuele.deserti@netwing.it>
+ * @copyright Copyright &copy; Emanuele Deserti 2013-
+ * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @package netwing
+ * @version 1.0.0
+ */
+
+/**
+ * Select2 component.
+ */
+class Select2 extends CApplicationComponent
+{
+    /**
+     * @var bool whether we should copy the asset file or directory even if it is already published before.
+     */
+    public $forceCopyAssets = false;
+
+    private $_assetsUrl;
+
+    /**
+     * Registers the Font awesome CSS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerCss($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'select2.css' : 'select2.css';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerCssFile($url);
+    }
+
+    /**
+     * Registers the Font awesome JS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerJs($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'select2.js' : 'select2.js';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerScriptFile($url, CClientScript::POS_END);
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllCss()
+    {
+        $this->registerCss();
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllJs()
+    {
+        $this->registerJs();
+    }
+
+    /**
+     * Registers all assets.
+     */
+    public function register()
+    {
+        $this->registerAllCss();
+        $this->registerAllJs();
+    }
+
+    /**
+     * Returns the url to the published assets folder.
+     * @return string the url.
+     */
+    protected function getAssetsUrl()
+    {
+        if (isset($this->_assetsUrl)) {
+            return $this->_assetsUrl;
+        } else {
+            // Save default exclude files
+            $excludeFiles = Yii::app()->assetManager->excludeFiles;
+            // Do not publish this files
+            Yii::app()->assetManager->excludeFiles = array_merge(
+                $excludeFiles, 
+                array('LICENSE', 'README.md', 'bower.json', 'release.sh')
+            );
+            $assetsPath = Yii::getPathOfAlias('bower.select2');
+            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
+            return $this->_assetsUrl = $assetsUrl;
+        }
+    }
+
+}

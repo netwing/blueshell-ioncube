@@ -1,29 +1,33 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+$this->pageTitle = Yii::t('app', 'View role {role}', array('{role}' => $model->name));
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView',array(
+    'htmlOptions' => array(
+        'class' => 'table table-striped table-condensed table-hover',
+    ),
+    'data'=>$model,
+    'attributes'=>array(
+		'name',
+		'description',
+    ),
+)); ?>
+
+<dl>
+<?php 
+$tasks = Yii::app()->authManager->tasks;
+$i = 0;
+foreach ($tasks as $task_name => $task): ?>
+
+    <dt><?php echo $task->description; ?></dt>
+    <dd>
+    <?php foreach ($task->children as $k => $v): ?>
+        <?php if (Yii::app()->authManager->hasItemChild($model->name, $v->name)): ?>
+            <span class="text-success"><i class="fa fa-check"></i> <?php echo $v->description; ?></span>
+        <?php else: ?>
+            <span class="text-muted"><i class="fa fa-ban"></i> <?php echo $v->description; ?></span>
+        <?php endif; ?>
+    <?php endforeach; ?>
+    </dd>
+<?php endforeach; ?>
+</dl> 

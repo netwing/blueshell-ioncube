@@ -1,107 +1,148 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+$dal = $_POST['dal'];
+$al = $_POST['al'];
+$blue->autentica_utente("contratti","R");
+
+// Raccogliamo tutti i contratti di gestione che alla data di inizio rapporto NON sono ancora scaduti
+$select="SELECT DISTINCT contratto_posto_barca,contratto_inizio,contratto_fine,contratto_gestione_percentuale,cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia FROM blue_contratti,blue_clienti WHERE cliente_id=contratto_anagrafica1 AND contratto_tipo='3' AND contratto_fine>='".$dal."'";
+$result=$sql->select_query($select);
+$roba=array();
+$i=0;
+while ($row=mysql_fetch_array($result))
+{
+	$pb=$blue->nome_posto_barca($row['contratto_posto_barca']);
+	$proprietario=$row['cliente_nominativo'];
+	$percentuale=$row['contratto_gestione_percentuale'];
+	$contratto_inizio=$sql->data_ita($row['contratto_inizio']);
+	$contratto_fine=$sql->data_ita($row['contratto_fine']);
+
+	// Inserite per comodita' nei calcoli
+	$gestione_inizio=$row['contratto_inizio'];
+	$gestione_fine=$row['contratto_fine'];
+	$durata_gestione=intval((strtotime($row['contratto_fine'])-strtotime($row['contratto_inizio']))/86400);
+	// Fine variabili aggiunte al volo
+	// echo "LA GESTIONE INIZIA IL ".$gestione_inizio." E FINISCE IL ".$gestione_fine." PER UN TOTALE DI ".$durata_gestione." GIORNI<br>";
+	$roba[$i]=array('<POSTOBARCA>'=>$pb[0]."/".$pb[1],'<NOMINATIVO>'=>$proprietario,'<INDIRIZZO>'=>$row['cliente_indirizzo'],'<CAP>'=>$row['cliente_cap'],'<CITTA>'=>$row['cliente_citta'],'<PROVINCIA>'=>$row['cliente_provincia'],'<PERC>'=>$percentuale,'<ANNO>'=>substr($dal, 0, 4),'<DATA>'=>strftime('%d %B %Y',time()),'<INIZIO-GESTIONE>'=>$contratto_inizio[0],'<FINE-GESTIONE>'=>$contratto_fine[0],'<TOTALE>'=>0);
+	$select2="SELECT contratto_inizio,contratto_fine,contratto_totale,contratto_fatturato,contratto_tipo FROM blue_contratti WHERE contratto_posto_barca='".$row['contratto_posto_barca']."' AND (contratto_tipo='1' OR contratto_tipo='11') AND (LEFT(contratto_inizio,4)='".substr($dal, 0, 4)."' OR LEFT(contratto_fine,4)='".substr($dal, 0, 4)."')";
+	$result2=$sql->select_query($select2);
+	$j=0;
+	while ($row2=mysql_fetch_array($result2))
+	{
+		$inizio=$row2['contratto_inizio'];
+		$fine=$row2['contratto_fine'];
+
+		// Variabili aggiunge per comodita' di calcolo
+		$affitto_inizio=$inizio;
+		$affitto_fine=$fine;
+		// Fine variabili di comodo
+		
+		switch($row2['contratto_tipo'])
+		{
+			case '1';
+			$tipo='Affitto';
+			break;
+			case '11';
+			$tipo='Transito';
+			break;
+		}
+		// Durata del contratto di affitto/transito
+		$durata_ts=strtotime($fine)-strtotime($inizio);
+		// Calcoliamo la durata in giorni del contratto
+		$durata_gg=intval($durata_ts/86400);
+		// Calcoliamo l'imponibile del fatturato
+		$fatturato=$row2['contratto_fatturato']/120*100;
+		if ($fatturato<=0)
+		{
+			$fatturato=$row2['contratto_totale']/120*100;
+		}
+
+		// Nel caso in cui il contratto DI AFFITTO inizi prima della data selezionata dall'utente togliamo i giorni prima in eccesso
+		if ($inizio<$dal)
+		{
+			$giorni_di_troppo=strtotime($dal)-strtotime($row2['contratto_inizio']);
+			$durata_ts=$durata_ts-$giorni_di_troppo;
+		}
+		// Nel caso in cui il contratto DI AFFITTO termini dopo la data selezionata dall'utente togliamo i giorni dopo in eccesso
+		if ($fine>$al)
+		{
+			$giorni_di_troppo=strtotime($row2['contratto_fine'])-strtotime($al);
+			$durata_ts=$durata_ts-$giorni_di_troppo;	
+		}
+
+		// L'affitto inizia tra la data selezionata e l'inizio della gestione (selezione 01-01-2005, affitto 01-02-2005, gestione 01-03-2005)
+		if (($dal<=$affitto_inizio) AND ($affitto_inizio<=$gestione_inizio))
+		{
+			// Togliamo i giorni tra l'inizio della gestione (maggiore) e l'inizio dell'affito (minore)
+			$giorni_di_troppo=strtotime($gestione_inizio)-strtotime($affitto_inizio);
+			$durata_ts=$durata_ts-$giorni_di_troppo;	
+		}
+		// L'affitto inizia prima della data selezionata e prima della gestione (selezione 01-01-2005, affitto 01-12-2004, gestione 01-03-2005) 
+		elseif(($dal>=$affitto_inizio) AND ($affitto_inizio<=$gestione_inizio))
+		{
+			// Togliamo i giorni dall'inizio della gestione (maggiore) all'inizio del periodo selezionato (minore)
+			$giorni_di_troppo=strtotime($gestione_inizio)-strtotime($dal);
+			$durata_ts=$durata_ts-$giorni_di_troppo;	
+			// NON agiamo sull'inizio dell'affitto perchè potrebbe essere molto prima
+		}
+
+		// L'affitto termina tra la data selezionata e la fine della gestione (selezione 31-12-2005, affitto 30-11-2005, gestione 31-10-2005)
+		if (($al>=$affitto_fine) AND ($affitto_fine>=$gestione_fine))
+		{
+			// Togliamo i giorni tra la fine dell'affitto (maggiore) e la fine della gestione (minore)
+			$giorni_di_troppo=strtotime($affitto_fine)-strtotime($gestione_fine);
+			$durata_ts=$durata_ts-$giorni_di_troppo;
+		}
+		// L'affitto termina dopo la data selezionata e dopo la fine della gestione (selezione 31-12-2005, affitto 31-01-2006, gestione 31-10-2005) 
+		elseif(($al<=$affitto_fine) AND ($affitto_fine>=$gestione_fine))
+		{
+			// Togliamo i giorni dalla fine della selezione (maggiore) alla fine della gestione (minore)
+			$giorni_di_troppo=strtotime($al)-strtotime($gestione_fine);
+			$durata_ts=$durata_ts-$giorni_di_troppo;	
+			// NON agiamo sulla fine dell'affitto perchè potrebbe essere molto dopo
+		}
+		$durata_gg2=intval($durata_ts/86400); // Calcoliamo la durata in giorni del contratto per il periodo che ci interessa
+		// echo "Questo affitto che va dal ".$affitto_inizio." al ".$affitto_fine." dura ".$durata_gg." giorni, ma utili ne rimangono ".$durata_gg2."<br />";
+		if ($fatturato>0 and $durata_gg2>0)
+		{
+			$j++;
+			$ricavo_giornaliero=$fatturato/$durata_gg; // Calcoliamo il fatturato giornaliero del contratto
+			$ricavo_periodo=round($ricavo_giornaliero*$durata_gg2,2); // Calcoliamo il fatturato per i giorni utili
+			$rendita=round($ricavo_periodo/100*$percentuale,2);
+			$inizio=$sql->data_ita($inizio);
+			$fine=$sql->data_ita($fine);
+			$roba[$i][]=array('<NUM>'=>$j,'<INIZIO>'=>$row2['contratto_inizio'],'<FINE>'=>$row2['contratto_fine'],'Fatturato'=>$row2['contratto_fatturato'],'Durata'=>$durata_gg,'<GIORNI-UTILI>'=>$durata_gg2,'<INCASSO>'=>$ricavo_periodo,'<RENDITA>'=>$rendita);
+			$roba[$i]['<TOTALE>']+=$rendita;
+			$roba_x_excel[]=array('Posto Barca'=>$pb[0]."/".$pb[1],'Proprietario'=>$proprietario,'Percentuale'=>$percentuale,'Dal'=>$row2['contratto_inizio'],'Al'=>$row2['contratto_fine'],'Durata'=>$durata_gg,'Fatturato'=>number_format($row2['contratto_fatturato'],2,',',''),'Durata Utile'=>$durata_gg2,'Fatturato Utile'=>number_format($ricavo_periodo,'2',',',''),'Rendita'=>number_format($rendita,'2',',',''),'Tipo di Contratto'=>$tipo);
+		}
+	}
+	$i++;
+}
+$excel="Rapporto Rendite dal ".$_POST['dal']." al ".$_POST['al']."\n";
+$excel.="Posto barca\tProprietario\tPercentuale\tInizio\tFine\tDurata\tIncasso\tGiorni Utili\tIncasso Utile\tRendita\tTipo di Contratto\n";
+if (array_key_exists("excel",$_POST))
+{
+	foreach ($roba_x_excel as $k=>$v)
+	{
+		$excel.=html_entity_decode(implode("\t",$v));
+		$excel.="\n";
+	}
+	header('Content-Type: application/xls');
+	header("Content-Disposition: attachment; filename=Report_Rendite.xls");
+	echo $excel;
+	exit;
+}
+else
+{	
+	$rtf=new RTF();
+	//$rtf->intestazioni=array("Codice","Contratto","Cliente","Barca","Posto Barca","Data","Dal","Al");
+	$rtf->carica_template("template/report_rendite.rtf");
+	$rtf->rtf_multiplo_multiriga($roba);
+/*	$rtf->contenuto_finale=str_replace("<DAL>",$_POST['dal'],$rtf->contenuto_finale);
+	$rtf->contenuto_finale=str_replace("<AL>",$_POST['al'],$rtf->contenuto_finale);
+	$rtf->contenuto_finale=str_replace("<TOTALE_UTILE>",number_format($totale_utile,2,",","."),$rtf->contenuto_finale);
+	$rtf->contenuto_finale=str_replace("<BOFEOF>","",$rtf->contenuto_finale);
+	$rtf->contenuto_finale=str_replace("<BOHEOH>","",$rtf->contenuto_finale);
+*/	$rtf->output("Report_Rendite.doc");
+}
 ?>
-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
-sJXJfnaxCQ6lqGzK

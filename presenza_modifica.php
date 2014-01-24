@@ -1,57 +1,55 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-NFrCS5kCHC8Yy3zQECkyYMZI2BalbQeoWD+t
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","W");
+if (!array_key_exists("id",$_GET)) {
+	header("Location:index.php");
+	exit;
+}
+$select="SELECT pontile_codice,posto_barca_numero,cliente_nominativo,presenza_barca,presenza_arrivo,presenza_partenza,presenza_posto_barca FROM ".$tabelle['presenze'].",".$tabelle['clienti'].",".$tabelle['posti_barca'].",".$tabelle['pontili']." WHERE presenza_id='".$_GET['id']."' AND cliente_id=presenza_cliente AND posto_barca_id=presenza_posto_barca AND pontile_id=posto_barca_pontile";
+$result=$sql->select_query($select);
+if ($sql->select_num_rows == 0) {
+	Yii::app()->user->setFlash('danger', Yii::t('app', "Presence not found."));
+	header("Location:/posti_barca.php");
+	exit;
+}
+$cliente=mysql_result($result,0,"cliente_nominativo");
+$barca=mysql_result($result,0,"presenza_barca");
+if ($barca!=0) {
+	$select_barca="SELECT barca_nome FROM blue_barche WHERE barca_id='".$barca."'";
+	$result_barca=$sql->select_query($select_barca);
+	$barca=mysql_result($result_barca,0,'barca_nome');
+} else {
+	$barca="Non Disponibile";
+}
+$arrivo=mysql_result($result,0,"presenza_arrivo");
+if ($arrivo == '0000-00-00') {
+    $arrivo = "";
+}
+$partenza=mysql_result($result,0,"presenza_partenza");
+if ($partenza == '0000-00-00') {
+	$partenza = "";
+}
+$posto_barca=mysql_result($result,0,"pontile_codice").mysql_result($result,0,"posto_barca_numero");
+$posto_barca_id=mysql_result($result,0,"presenza_posto_barca");
+$form->campi_testo=array("presenza_inizio","presenza_fine");
+$form->valori_default=array("presenza_inizio" => $arrivo, "presenza_fine" => $partenza);
+$form->campi_obbligatori=array("presenza_inizio");
+$form->inizializza();
+if (count($_POST) > 0) {
+	$form->verifica();
+	if ($form->errore_form===false) {
+        CVarDumper::dump($_POST, 1, true);
+		$arrivo = $_POST['presenza_inizio'];
+		if ($_POST['presenza_fine']!="") {		
+			$partenza = $_POST['presenza_fine'];
+		} else {
+			$partenza="0000-00-00";
+		}
+		$update="UPDATE ".$tabelle['presenze']." SET presenza_arrivo='".$arrivo."',presenza_partenza='".$partenza."' WHERE presenza_id='".$_GET['id']."'";
+		$sql->update_query($update);
+		header("Location:posto_barca_dettagli.php?id=".$posto_barca_id);
+		exit;
+	}
+}
+
+require_once "views/presence/update.php";

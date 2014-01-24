@@ -1,105 +1,178 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ContractTypeController */
+/* @var $model ContractType */
+/* @var $form CActiveForm */
 ?>
-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
+
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'contract-type-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+    'enableClientValidation'=>false,
+    'enableAjaxValidation'=>true,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+	<p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
+</p>
+
+	<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'contratto_tipo_nome', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'contratto_tipo_nome', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'contratto_tipo_nome'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <?php echo $form->labelEx($model, 'color', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'color', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'color'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'prefix', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'prefix', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'prefix'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <?php echo $form->labelEx($model, 'rent', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'rent', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'rent', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'rent'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>   
+
+        <?php echo $form->labelEx($model, 'transit', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'transit', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'transit', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'transit'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>   
+
+    </div>
+
+    <div class="form-group">
+
+        <?php echo $form->labelEx($model, 'sell', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'sell', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'sell', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'sell'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>   
+
+        <?php echo $form->labelEx($model, 'option', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'option', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'option', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'option'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>   
+
+    </div>
+
+    <div class="form-group">
+
+        <?php echo $form->labelEx($model, 'manage', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'manage', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'manage', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'manage'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>   
+
+        <?php echo $form->labelEx($model, 'reservation', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'reservation', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'reservation', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'reservation'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>   
+
+    </div>
+
+
+    <div class="form-group">
+
+        <?php echo $form->labelEx($model, 'sort_order', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'sort_order', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'sort_order'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'enabled', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-4">
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'enabled', array('value' => 1, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'Yes'); ?>
+        </label>
+        <label class="radio-inline">
+            <?php echo $form->radioButton($model, 'enabled', array('value' => 0, 'uncheckValue' => null)); ?> <?php echo Yii::t('app', 'No'); ?>
+        </label>
+        <?php echo $form->error($model,'enabled'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>   
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="reset" class="btn btn-warning">Reset</button>
+            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
+
+<?php Yii::app()->minicolors->register(); ?>
+<?php Yii::app()->clientScript->registerScript('ContractType_color_minicolor', '
+$("#ContractType_color").minicolors("create", {
+        defaultValue    : "' . $model->color . '",
+        theme           : "bootstrap",
+    });
+', CClientScript::POS_READY); ?>

@@ -1,48 +1,96 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-yoPvsJ5976ro3Orw1L00sxh0L2iCXw03PXE0
+<?php
+/**
+ * Select2 class file.
+ * @author Emanuele Deserti <emanuele.deserti@netwing.it>
+ * @copyright Copyright &copy; Emanuele Deserti 2013-
+ * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @package netwing
+ * @version 1.0.0
+ */
+
+/**
+ * Select2 component.
+ */
+class Minicolors extends CApplicationComponent
+{
+    /**
+     * @var bool whether we should copy the asset file or directory even if it is already published before.
+     */
+    public $forceCopyAssets = false;
+
+    private $_assetsUrl;
+
+    /**
+     * Registers the Font awesome CSS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerCss($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'jquery.minicolors.css' : 'jquery.minicolors.css';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerCssFile($url);
+    }
+
+    /**
+     * Registers the Font awesome JS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerJs($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'jquery.minicolors.js' : 'jquery.minicolors.js';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerScriptFile($url, CClientScript::POS_HEAD);
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllCss()
+    {
+        $this->registerCss();
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllJs()
+    {
+        $this->registerJs();
+    }
+
+    /**
+     * Registers all assets.
+     */
+    public function register()
+    {
+        $this->registerAllCss();
+        $this->registerAllJs();
+    }
+
+    /**
+     * Returns the url to the published assets folder.
+     * @return string the url.
+     */
+    protected function getAssetsUrl()
+    {
+        if (isset($this->_assetsUrl)) {
+            return $this->_assetsUrl;
+        } else {
+            // Save default exclude files
+            $excludeFiles = Yii::app()->assetManager->excludeFiles;
+            // Do not publish this files
+            Yii::app()->assetManager->excludeFiles = array_merge(
+                $excludeFiles, 
+                array('.bower.json', 'component.json', '.gitignore', 'index.html', 'readme.md', 'without-bootstrap.html')
+            );
+            $assetsPath = Yii::getPathOfAlias('bower.jquery-minicolors');
+            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
+            return $this->_assetsUrl = $assetsUrl;
+        }
+    }
+
+}

@@ -1,47 +1,94 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-dLkjO5EizNS/sG==
+<?php
+/**
+ * Calendar class file.
+ * @author Emanuele Deserti <emanuele.deserti@netwing.it>
+ * @copyright Copyright &copy; Emanuele Deserti 2013-
+ * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @package netwing
+ * @version 1.0.0
+ */
+
+/**
+ * Calendar component.
+ */
+class Calendar extends CApplicationComponent
+{
+    /**
+     * @var bool whether we should copy the asset file or directory even if it is already published before.
+     */
+    public $forceCopyAssets = false;
+
+    private $_assetsUrl;
+
+    /**
+     * Registers the Font awesome CSS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerCss($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'fullcalendar.css' : 'fullcalendar.css';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerCssFile($url);
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'fullcalendar.print.css' : 'fullcalendar.print.css';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerCssFile($url);
+    }
+
+    /**
+     * Registers the Font awesome JS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerJs($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'fullcalendar.js' : 'fullcalendar.min.js';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerScriptFile($url, CClientScript::POS_END);
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllCss()
+    {
+        $this->registerCss();
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllJs()
+    {
+        $this->registerJs();
+    }
+
+    /**
+     * Registers all assets.
+     */
+    public function register()
+    {
+        $this->registerAllCss();
+        $this->registerAllJs();
+    }
+
+    /**
+     * Returns the url to the published assets folder.
+     * @return string the url.
+     */
+    protected function getAssetsUrl()
+    {
+        if (isset($this->_assetsUrl)) {
+            return $this->_assetsUrl;
+        } else {
+            $assetsPath = Yii::getPathOfAlias('bower.fullcalendar');
+            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
+            return $this->_assetsUrl = $assetsUrl;
+        }
+    }
+
+}

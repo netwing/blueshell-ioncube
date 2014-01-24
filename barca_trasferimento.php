@@ -1,46 +1,38 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-APCnr0jUexPDFcC5
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("imbarcazioni","W");
+if (!array_key_exists("id",$_GET)) {
+	header("Location:barche.php");
+	exit();	
+}
+$get_id=intval($_GET['id']);
+// Definiamo l'id della barca passato via GET
+if (count($_POST) > 0) {
+	if (array_key_exists("cliente",$_POST)) {
+		$data = $_POST['trasferimento_data'];
+		$insert="INSERT INTO ".$tabelle['barche_trasferimenti']." (barca_trasferimento_barca,barca_trasferimento_da,barca_trasferimento_a,barca_trasferimento_data) VALUES ('".$get_id."','".$_POST['cliente_id']."','".$_POST['cliente']."','".$data."')";
+		$sql->insert_query($insert);
+		$update="UPDATE ".$tabelle['barche']." SET barca_proprietario='".$_POST['cliente']."' WHERE barca_id='".$get_id."'";
+		$sql->update_query($update);
+	}
+}
+// Questo se viene passato il form
+$elenco_clienti=$blue->elenco_clienti();
+// Carichiamo l'elenco dei clienti
+$select_nome="SELECT barca_nome, barca_lunghezza, cliente_id, cliente_nominativo FROM ".$tabelle['barche'].",".$tabelle['clienti']." WHERE barca_id='".$get_id."' AND cliente_id=barca_proprietario";
+$result=$sql->select_query($select_nome);
+$barca_nome=mysql_result($result,0,'barca_nome');
+$barca_lunghezza=mysql_result($result,0,'barca_lunghezza');
+$proprietario_nome=mysql_result($result,0,'cliente_nominativo');
+$cliente_id=mysql_result($result,0,'cliente_id');
+// Query per recuperare il nome della barca
+$select="SELECT * FROM ".$tabelle['barche_trasferimenti']." WHERE barca_trasferimento_barca='".$get_id."' ORDER BY barca_trasferimento_data DESC";
+$result=$sql->select_query($select);
+$elenco_trasferimenti=array();
+while ($row=mysql_fetch_array($result))
+{
+	$elenco_trasferimenti[]=$row;
+}
+// Query per recuperare le informazioni sui trasferimenti della barca.
+
+require_once "views/vector/transfer.php";

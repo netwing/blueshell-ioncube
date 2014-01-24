@@ -1,63 +1,56 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","R");
+$elenco_nazioni=$blue->elenco_nazioni();
+$elenco_tipi=$blue->elenco_tipi();
+$elenco_costruttori=$blue->elenco_costruttori();
+if (array_key_exists("id",$_GET) === false) {
+	header("Location:contratti.php");
+    exit;
+}
+$select_contratto="SELECT * FROM ".$tabelle['contratti']." WHERE contratto_id='" . intval($_GET['id']) . "'";
+$result_contratto=$sql->select_query($select_contratto);
+$row_contratto=mysql_fetch_array($result_contratto);
+$_SESSION['riepilogo']['contratto']=$row_contratto;
+
+// Raccogliamo i dettagli del contratto
+$select_dettagli="SELECT * FROM blue_contratti_dettagli WHERE contratto_dettaglio_contratto_id='" . intval($_GET['id']) . "'";
+$result_dettagli=$sql->select_query($select_dettagli);
+$row_dettagli=mysql_fetch_array($result_dettagli);
+$_SESSION['riepilogo']['contratto_dettagli']=$row_dettagli;
+
+// Controlliamo se da questa prenotazione e' gia' stato generato un contratto 
+$affitto_da_prenotazione=0;
+if ($row_contratto['contratto_tipo'] == 4) {
+	$select_adp="SELECT contratto_id FROM ".$tabelle['contratti']." WHERE contratto_tipo='1' AND contratto_anagrafica1='".$row_contratto['contratto_anagrafica1']."' AND contratto_anagrafica2='".$row_contratto['contratto_anagrafica2']."' AND contratto_inizio='".$row_contratto['contratto_inizio']."' AND contratto_fine='".$row_contratto['contratto_fine']."' AND contratto_posto_barca='".$row_contratto['contratto_posto_barca']."'";	
+	$result_adp=$sql->select_query($select_adp);
+	if ($sql->select_num_rows>0) {
+		$affitto_da_prenotazione=mysql_result($result_adp,0,'contratto_id');
+	}
+}
+
+if ($row_contratto['contratto_tipo']==3) {
+	$select_cliente="SELECT * FROM ".$tabelle['clienti']." WHERE cliente_id='".$row_contratto['contratto_anagrafica1']."'";
+}
+else {
+	$select_cliente="SELECT * FROM ".$tabelle['clienti']." WHERE cliente_id='".$row_contratto['contratto_anagrafica2']."'";
+}
+$result_cliente=$sql->select_query($select_cliente);
+$row_cliente=mysql_fetch_array($result_cliente);
+$_SESSION['riepilogo']['cliente']=$row_cliente;
+
+$select_barca="SELECT * FROM ".$tabelle['barche']." WHERE barca_id='".$row_contratto['contratto_barca']."'";
+$result_barca=$sql->select_query($select_barca);
+$row_barca=mysql_fetch_array($result_barca);
+$_SESSION['riepilogo']['barca']=$row_barca;
+
+$select_pontile="SELECT pontile_nome,pontile_codice,posto_barca_numero,dimensione_lunghezza,dimensione_larghezza FROM ".$tabelle['pontili'].",".$tabelle['posti_barca'].",".$tabelle['dimensioni']." WHERE pontile_id=posto_barca_pontile AND dimensione_id=posto_barca_dimensioni AND posto_barca_id='".$row_contratto['contratto_posto_barca']."'";
+$result_pontile=$sql->select_query($select_pontile);
+$row_pontile=mysql_fetch_array($result_pontile);
+$_SESSION['riepilogo']['pontile']=$row_pontile;
+
+// BEGIN YII APP INTEGRATION
+$bridge_results = Yii::app()->bridge->orderFromContract($row_contratto['contratto_id']);
+// END YII APP INTEGRATION
+
+require_once 'views/contract/view.php';

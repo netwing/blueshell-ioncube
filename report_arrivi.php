@@ -1,31 +1,28 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","R");
+
+$inizio_dal = date("Y-m-d", time());
+$inizio_al = date("Y-m-d", time()+(60*60*24*30));
+$pontili = $blue->elenco_pontili();
+if (array_key_exists("id", $_GET)) {
+	$pontile = intval($_GET['id']);
+} else {
+	$pontile = 0;
+}
+
+$messaggio = "";
+
+if (array_key_exists("nopb", $_GET)) {
+    Yii::app()->user->setFlash('warning', Yii::t('app', 'No enabled resources for selected group.'));
+    header("Location:report_arrivi.php?id=" . $pontile);
+    exit;
+} elseif (array_key_exists("nopr", $_GET)) {
+    Yii::app()->user->setFlash('warning', Yii::t('app', 'No arrivals for selected group and dates.'));
+    header("Location:report_arrivi.php?id=" . $pontile);
+    exit;
+} else {
+	$messaggio="";
+}
+
+require_once "views/resource/arrival_report.php";

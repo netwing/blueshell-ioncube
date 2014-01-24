@@ -1,32 +1,25 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-gGgV
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("anagrafica","W");
+$elenco_clienti=$blue->elenco_clienti();
+$form->campi_testo=array("nota_contenuto");
+// $form->campi_data_unica=array("nota_data");
+$form->campi_obbligatori=array("cliente", "nota_data", "nota_contenuto");
+$form->valori_default=array("nota_data"=>date("d-m-Y",time()));
+$form->inizializza();
+if (count($_POST)>0)
+{
+	$form->verifica();
+	if ($form->errore_form===false)
+	{
+		$nota_data = $_POST['nota_data'];
+		$nota_contenuto=$sql->pulisci($_POST['nota_contenuto']);
+		$nota_cliente=intval($_POST['cliente']);
+		$insert="INSERT INTO ".$tabelle['clienti_note']." (cliente_nota_cliente_id,cliente_nota_data,cliente_nota_contenuto) VALUES ('".$nota_cliente."','".$nota_data."','".$nota_contenuto."')";
+		$sql->insert_query($insert);
+		$form->valori_default=array("nota_data"=>date("d-m-Y",time()));
+		$form->inizializza();
+	}
+}
+
+require_once "views/client/add_note.php";

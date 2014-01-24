@@ -1,30 +1,27 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-SBG0Tcd1
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","R");
+
+$data_presenza = date("Y-m-d",time());
+$pontili = $blue->elenco_pontili();
+
+$messaggio = "";
+
+if (array_key_exists("id",$_GET)) {
+	$pontile = intval($_GET['id']);
+} else {
+	$pontile = 0;
+}
+if (array_key_exists("nopb",$_GET)) {
+    Yii::app()->user->setFlash('warning', Yii::t('app', 'No enabled resources for selected group.'));
+    header("Location:report_presenze.php?id=" . $pontile);
+    exit;
+} elseif (array_key_exists("nopr",$_GET)) {
+    Yii::app()->user->setFlash('warning', Yii::t('app', 'No presences for selected group and dates.'));
+    header("Location:report_presenze.php?id=" . $pontile);
+    exit;
+} else {
+    $messaggio = "";
+}
+
+require_once "views/resource/presence_report.php";

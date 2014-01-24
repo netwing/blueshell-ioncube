@@ -1,33 +1,28 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-eTLE/km8g4oG9lqrhAWAjRjVvmsN
+<?php
+require_once("config.inc.php");
+// Inclusione del file di configurazione generale
+$blue->autentica_utente("imbarcazioni","R");
+// Raccolta delle imbarcazioni con scadenza imminente nei contratti in essere...
+$select_polizze="SELECT barca_id,barca_nome,barca_proprietario,cliente_nominativo,barca_scadenza_polizza,contratto_tipo FROM ".$tabelle['barche'].",".$tabelle['clienti'].",".$tabelle['contratti']." WHERE barca_scadenza_polizza BETWEEN NOW()-INTERVAL 1 YEAR AND NOW()+INTERVAL 30 DAY AND cliente_id=barca_proprietario AND contratto_inizio<=NOW() AND contratto_fine>=NOW() AND barca_id=contratto_barca AND contratto_tipo!='4' GROUP BY barca_id ORDER BY barca_scadenza_polizza ASC";
+$result_polizze=$sql->select_query($select_polizze);
+// Carichiamo le polizze di assicurazione in scadenza
+$polizze=array();
+while($row_polizze=mysql_fetch_array($result_polizze))
+{
+	$data=$sql->data_ita($row_polizze['barca_scadenza_polizza']);
+	$row_polizze['barca_scadenza_polizza']=$data[0];
+	$polizze[]=$row_polizze;
+}
+// Eseguiamo lo stesso procedimento per le presenze
+$select_polizze="SELECT barca_id,barca_nome,barca_proprietario,cliente_nominativo,barca_scadenza_polizza FROM ".$tabelle['barche'].",".$tabelle['clienti'].",".$tabelle['presenze']." WHERE barca_scadenza_polizza BETWEEN NOW()-INTERVAL 1 YEAR AND NOW()+INTERVAL 30 DAY AND cliente_id=barca_proprietario AND presenza_arrivo<=NOW() AND (presenza_partenza>=NOW() OR presenza_partenza='0000-00-00') AND barca_id=presenza_barca GROUP BY barca_id ORDER BY barca_scadenza_polizza ASC";
+$result_polizze=$sql->select_query($select_polizze);
+// Carichiamo le polizze di assicurazione in scadenza
+//$polizze=array();
+while($row_polizze=mysql_fetch_array($result_polizze))
+{
+	$data=$sql->data_ita($row_polizze['barca_scadenza_polizza']);
+	$row_polizze['barca_scadenza_polizza']=$data[0];
+	$polizze[]=$row_polizze;
+}
+
+require_once "views/vector/expiring_insurance.php";

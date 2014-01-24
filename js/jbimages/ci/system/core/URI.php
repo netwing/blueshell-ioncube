@@ -1,200 +1,654 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-HIPmqdSEaGz6hKo+Ewhr43J4
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * URI Class
+ *
+ * Parses URIs and determines routing
+ *
+ * @package		CodeIgniter
+ * @subpackage	Libraries
+ * @category	URI
+ * @author		ExpressionEngine Dev Team
+ * @link		http://codeigniter.com/user_guide/libraries/uri.html
+ */
+class CI_URI {
+
+	/**
+	 * List of cached uri segments
+	 *
+	 * @var array
+	 * @access public
+	 */
+	var	$keyval			= array();
+	/**
+	 * Current uri string
+	 *
+	 * @var string
+	 * @access public
+	 */
+	var $uri_string;
+	/**
+	 * List of uri segments
+	 *
+	 * @var array
+	 * @access public
+	 */
+	var $segments		= array();
+	/**
+	 * Re-indexed list of uri segments
+	 * Starts at 1 instead of 0
+	 *
+	 * @var array
+	 * @access public
+	 */
+	var $rsegments		= array();
+
+	/**
+	 * Constructor
+	 *
+	 * Simply globalizes the $RTR object.  The front
+	 * loads the Router class early on so it's not available
+	 * normally as other classes are.
+	 *
+	 * @access	public
+	 */
+	function __construct()
+	{
+		$this->config =& load_class('Config', 'core');
+		log_message('debug', "URI Class Initialized");
+	}
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Get the URI String
+	 *
+	 * @access	private
+	 * @return	string
+	 */
+	function _fetch_uri_string()
+	{
+		if (strtoupper($this->config->item('uri_protocol')) == 'AUTO')
+		{
+			// Is the request coming from the command line?
+			if (php_sapi_name() == 'cli' or defined('STDIN'))
+			{
+				$this->_set_uri_string($this->_parse_cli_args());
+				return;
+			}
+
+			// Let's try the REQUEST_URI first, this will work in most situations
+			if ($uri = $this->_detect_uri())
+			{
+				$this->_set_uri_string($uri);
+				return;
+			}
+
+			// Is there a PATH_INFO variable?
+			// Note: some servers seem to have trouble with getenv() so we'll test it two ways
+			$path = (isset($_SERVER['PATH_INFO'])) ? $_SERVER['PATH_INFO'] : @getenv('PATH_INFO');
+			if (trim($path, '/') != '' && $path != "/".SELF)
+			{
+				$this->_set_uri_string($path);
+				return;
+			}
+
+			// No PATH_INFO?... What about QUERY_STRING?
+			$path =  (isset($_SERVER['QUERY_STRING'])) ? $_SERVER['QUERY_STRING'] : @getenv('QUERY_STRING');
+			if (trim($path, '/') != '')
+			{
+				$this->_set_uri_string($path);
+				return;
+			}
+
+			// As a last ditch effort lets try using the $_GET array
+			if (is_array($_GET) && count($_GET) == 1 && trim(key($_GET), '/') != '')
+			{
+				$this->_set_uri_string(key($_GET));
+				return;
+			}
+
+			// We've exhausted all our options...
+			$this->uri_string = '';
+			return;
+		}
+
+		$uri = strtoupper($this->config->item('uri_protocol'));
+
+		if ($uri == 'REQUEST_URI')
+		{
+			$this->_set_uri_string($this->_detect_uri());
+			return;
+		}
+		elseif ($uri == 'CLI')
+		{
+			$this->_set_uri_string($this->_parse_cli_args());
+			return;
+		}
+
+		$path = (isset($_SERVER[$uri])) ? $_SERVER[$uri] : @getenv($uri);
+		$this->_set_uri_string($path);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Set the URI String
+	 *
+	 * @access	public
+	 * @param 	string
+	 * @return	string
+	 */
+	function _set_uri_string($str)
+	{
+		// Filter out control characters
+		$str = remove_invisible_characters($str, FALSE);
+
+		// If the URI contains only a slash we'll kill it
+		$this->uri_string = ($str == '/') ? '' : $str;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Detects the URI
+	 *
+	 * This function will detect the URI automatically and fix the query string
+	 * if necessary.
+	 *
+	 * @access	private
+	 * @return	string
+	 */
+	private function _detect_uri()
+	{
+		if ( ! isset($_SERVER['REQUEST_URI']) OR ! isset($_SERVER['SCRIPT_NAME']))
+		{
+			return '';
+		}
+
+		$uri = $_SERVER['REQUEST_URI'];
+		if (strpos($uri, $_SERVER['SCRIPT_NAME']) === 0)
+		{
+			$uri = substr($uri, strlen($_SERVER['SCRIPT_NAME']));
+		}
+		elseif (strpos($uri, dirname($_SERVER['SCRIPT_NAME'])) === 0)
+		{
+			$uri = substr($uri, strlen(dirname($_SERVER['SCRIPT_NAME'])));
+		}
+
+		// This section ensures that even on servers that require the URI to be in the query string (Nginx) a correct
+		// URI is found, and also fixes the QUERY_STRING server var and $_GET array.
+		if (strncmp($uri, '?/', 2) === 0)
+		{
+			$uri = substr($uri, 2);
+		}
+		$parts = preg_split('#\?#i', $uri, 2);
+		$uri = $parts[0];
+		if (isset($parts[1]))
+		{
+			$_SERVER['QUERY_STRING'] = $parts[1];
+			parse_str($_SERVER['QUERY_STRING'], $_GET);
+		}
+		else
+		{
+			$_SERVER['QUERY_STRING'] = '';
+			$_GET = array();
+		}
+
+		if ($uri == '/' || empty($uri))
+		{
+			return '/';
+		}
+
+		$uri = parse_url($uri, PHP_URL_PATH);
+
+		// Do some final cleaning of the URI and return it
+		return str_replace(array('//', '../'), '/', trim($uri, '/'));
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Parse cli arguments
+	 *
+	 * Take each command line argument and assume it is a URI segment.
+	 *
+	 * @access	private
+	 * @return	string
+	 */
+	private function _parse_cli_args()
+	{
+		$args = array_slice($_SERVER['argv'], 1);
+
+		return $args ? '/' . implode('/', $args) : '';
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Filter segments for malicious characters
+	 *
+	 * @access	private
+	 * @param	string
+	 * @return	string
+	 */
+	function _filter_uri($str)
+	{
+		if ($str != '' && $this->config->item('permitted_uri_chars') != '' && $this->config->item('enable_query_strings') == FALSE)
+		{
+			// preg_quote() in PHP 5.3 escapes -, so the str_replace() and addition of - to preg_quote() is to maintain backwards
+			// compatibility as many are unaware of how characters in the permitted_uri_chars will be parsed as a regex pattern
+			if ( ! preg_match("|^[".str_replace(array('\\-', '\-'), '-', preg_quote($this->config->item('permitted_uri_chars'), '-'))."]+$|i", $str))
+			{
+				show_error('The URI you submitted has disallowed characters.', 400);
+			}
+		}
+
+		// Convert programatic characters to entities
+		$bad	= array('$',		'(',		')',		'%28',		'%29');
+		$good	= array('&#36;',	'&#40;',	'&#41;',	'&#40;',	'&#41;');
+
+		return str_replace($bad, $good, $str);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Remove the suffix from the URL if needed
+	 *
+	 * @access	private
+	 * @return	void
+	 */
+	function _remove_url_suffix()
+	{
+		if  ($this->config->item('url_suffix') != "")
+		{
+			$this->uri_string = preg_replace("|".preg_quote($this->config->item('url_suffix'))."$|", "", $this->uri_string);
+		}
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Explode the URI Segments. The individual segments will
+	 * be stored in the $this->segments array.
+	 *
+	 * @access	private
+	 * @return	void
+	 */
+	function _explode_segments()
+	{
+		foreach (explode("/", preg_replace("|/*(.+?)/*$|", "\\1", $this->uri_string)) as $val)
+		{
+			// Filter segments for security
+			$val = trim($this->_filter_uri($val));
+
+			if ($val != '')
+			{
+				$this->segments[] = $val;
+			}
+		}
+	}
+
+	// --------------------------------------------------------------------
+	/**
+	 * Re-index Segments
+	 *
+	 * This function re-indexes the $this->segment array so that it
+	 * starts at 1 rather than 0.  Doing so makes it simpler to
+	 * use functions like $this->uri->segment(n) since there is
+	 * a 1:1 relationship between the segment array and the actual segments.
+	 *
+	 * @access	private
+	 * @return	void
+	 */
+	function _reindex_segments()
+	{
+		array_unshift($this->segments, NULL);
+		array_unshift($this->rsegments, NULL);
+		unset($this->segments[0]);
+		unset($this->rsegments[0]);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Fetch a URI Segment
+	 *
+	 * This function returns the URI segment based on the number provided.
+	 *
+	 * @access	public
+	 * @param	integer
+	 * @param	bool
+	 * @return	string
+	 */
+	function segment($n, $no_result = FALSE)
+	{
+		return ( ! isset($this->segments[$n])) ? $no_result : $this->segments[$n];
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Fetch a URI "routed" Segment
+	 *
+	 * This function returns the re-routed URI segment (assuming routing rules are used)
+	 * based on the number provided.  If there is no routing this function returns the
+	 * same result as $this->segment()
+	 *
+	 * @access	public
+	 * @param	integer
+	 * @param	bool
+	 * @return	string
+	 */
+	function rsegment($n, $no_result = FALSE)
+	{
+		return ( ! isset($this->rsegments[$n])) ? $no_result : $this->rsegments[$n];
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Generate a key value pair from the URI string
+	 *
+	 * This function generates and associative array of URI data starting
+	 * at the supplied segment. For example, if this is your URI:
+	 *
+	 *	example.com/user/search/name/joe/location/UK/gender/male
+	 *
+	 * You can use this function to generate an array with this prototype:
+	 *
+	 * array (
+	 *			name => joe
+	 *			location => UK
+	 *			gender => male
+	 *		 )
+	 *
+	 * @access	public
+	 * @param	integer	the starting segment number
+	 * @param	array	an array of default values
+	 * @return	array
+	 */
+	function uri_to_assoc($n = 3, $default = array())
+	{
+		return $this->_uri_to_assoc($n, $default, 'segment');
+	}
+	/**
+	 * Identical to above only it uses the re-routed segment array
+	 *
+	 * @access 	public
+	 * @param 	integer	the starting segment number
+	 * @param 	array	an array of default values
+	 * @return 	array
+	 *
+	 */
+	function ruri_to_assoc($n = 3, $default = array())
+	{
+		return $this->_uri_to_assoc($n, $default, 'rsegment');
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Generate a key value pair from the URI string or Re-routed URI string
+	 *
+	 * @access	private
+	 * @param	integer	the starting segment number
+	 * @param	array	an array of default values
+	 * @param	string	which array we should use
+	 * @return	array
+	 */
+	function _uri_to_assoc($n = 3, $default = array(), $which = 'segment')
+	{
+		if ($which == 'segment')
+		{
+			$total_segments = 'total_segments';
+			$segment_array = 'segment_array';
+		}
+		else
+		{
+			$total_segments = 'total_rsegments';
+			$segment_array = 'rsegment_array';
+		}
+
+		if ( ! is_numeric($n))
+		{
+			return $default;
+		}
+
+		if (isset($this->keyval[$n]))
+		{
+			return $this->keyval[$n];
+		}
+
+		if ($this->$total_segments() < $n)
+		{
+			if (count($default) == 0)
+			{
+				return array();
+			}
+
+			$retval = array();
+			foreach ($default as $val)
+			{
+				$retval[$val] = FALSE;
+			}
+			return $retval;
+		}
+
+		$segments = array_slice($this->$segment_array(), ($n - 1));
+
+		$i = 0;
+		$lastval = '';
+		$retval  = array();
+		foreach ($segments as $seg)
+		{
+			if ($i % 2)
+			{
+				$retval[$lastval] = $seg;
+			}
+			else
+			{
+				$retval[$seg] = FALSE;
+				$lastval = $seg;
+			}
+
+			$i++;
+		}
+
+		if (count($default) > 0)
+		{
+			foreach ($default as $val)
+			{
+				if ( ! array_key_exists($val, $retval))
+				{
+					$retval[$val] = FALSE;
+				}
+			}
+		}
+
+		// Cache the array for reuse
+		$this->keyval[$n] = $retval;
+		return $retval;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Generate a URI string from an associative array
+	 *
+	 *
+	 * @access	public
+	 * @param	array	an associative array of key/values
+	 * @return	array
+	 */
+	function assoc_to_uri($array)
+	{
+		$temp = array();
+		foreach ((array)$array as $key => $val)
+		{
+			$temp[] = $key;
+			$temp[] = $val;
+		}
+
+		return implode('/', $temp);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Fetch a URI Segment and add a trailing slash
+	 *
+	 * @access	public
+	 * @param	integer
+	 * @param	string
+	 * @return	string
+	 */
+	function slash_segment($n, $where = 'trailing')
+	{
+		return $this->_slash_segment($n, $where, 'segment');
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Fetch a URI Segment and add a trailing slash
+	 *
+	 * @access	public
+	 * @param	integer
+	 * @param	string
+	 * @return	string
+	 */
+	function slash_rsegment($n, $where = 'trailing')
+	{
+		return $this->_slash_segment($n, $where, 'rsegment');
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Fetch a URI Segment and add a trailing slash - helper function
+	 *
+	 * @access	private
+	 * @param	integer
+	 * @param	string
+	 * @param	string
+	 * @return	string
+	 */
+	function _slash_segment($n, $where = 'trailing', $which = 'segment')
+	{
+		$leading	= '/';
+		$trailing	= '/';
+
+		if ($where == 'trailing')
+		{
+			$leading	= '';
+		}
+		elseif ($where == 'leading')
+		{
+			$trailing	= '';
+		}
+
+		return $leading.$this->$which($n).$trailing;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Segment Array
+	 *
+	 * @access	public
+	 * @return	array
+	 */
+	function segment_array()
+	{
+		return $this->segments;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Routed Segment Array
+	 *
+	 * @access	public
+	 * @return	array
+	 */
+	function rsegment_array()
+	{
+		return $this->rsegments;
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Total number of segments
+	 *
+	 * @access	public
+	 * @return	integer
+	 */
+	function total_segments()
+	{
+		return count($this->segments);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Total number of routed segments
+	 *
+	 * @access	public
+	 * @return	integer
+	 */
+	function total_rsegments()
+	{
+		return count($this->rsegments);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Fetch the entire URI string
+	 *
+	 * @access	public
+	 * @return	string
+	 */
+	function uri_string()
+	{
+		return $this->uri_string;
+	}
+
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Fetch the entire Re-routed URI string
+	 *
+	 * @access	public
+	 * @return	string
+	 */
+	function ruri_string()
+	{
+		return '/'.implode('/', $this->rsegment_array());
+	}
+
+}
+// END URI Class
+
+/* End of file URI.php */
+/* Location: ./system/core/URI.php */

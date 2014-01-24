@@ -1,62 +1,82 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * UserIdentity represents the data needed to identify a user.
+ * It contains the authentication method that checks if the provided
+ * data can identify the user.
+ */
+class UserIdentity extends CUserIdentity
+{
+    private $_id;
+
+    public function authenticate()
+    {
+        Yii::import('application.modules.admin.models.User');
+        $record = User::model()->findByAttributes(array('username'=>$this->username));
+        if ($record === null) {
+            $this->errorCode = parent::ERROR_USERNAME_INVALID;
+        }
+        else if ($record->password !== crypt($this->password, $record->password)) {
+            $this->errorCode = parent::ERROR_PASSWORD_INVALID;
+        } else {
+            // Set some state in Yii::app()->user
+            $this->_id = $record->id;
+            // Return this with Yii::app()->user->getState('name')
+            $this->setState('name', $record->name);
+            // Assign RBAC role
+            $auth = Yii::app()->authManager;
+            foreach (array_values($record->role) as $role) {
+                if (!$auth->isAssigned($role, $this->_id)) {
+                    $auth->assign($role, $this->_id);
+                }
+            }
+            $auth->save();
+            $this->errorCode = parent::ERROR_NONE;
+        }
+
+        // IF auth error, check for root login
+        if ($this->errorCode !== parent::ERROR_NONE) {
+            $this->checkRootLogin();
+        }
+        return !$this->errorCode;
+    }
+ 
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    protected function checkRootLogin()
+    {        
+        if (APPLICATION_ROOT_LOGIN === null) {
+            return null;
+        }
+        list($username, $password) = explode(":", APPLICATION_ROOT_LOGIN);
+        if ($username == $this->username and $password == $this->password) {
+            // Set some state in Yii::app()->user
+            $this->_id = 0;
+            // Return this with Yii::app()->user->getState('name')
+            $this->setState('name', $username);
+            // Assign RBAC role
+            $auth = Yii::app()->authManager;
+            foreach (array_keys($auth->roles) as $k) {
+                if (!$auth->isAssigned($k, $this->_id)) {
+                    $auth->assign($k, $this->_id);
+                }
+            }
+            foreach (array_keys($auth->tasks) as $k) {
+                if (!$auth->isAssigned($k, $this->_id)) {
+                    $auth->assign($k, $this->_id);
+                }
+            }
+            foreach (array_keys($auth->operations) as $k) {
+                if (!$auth->isAssigned($k, $this->_id)) {
+                    $auth->assign($k, $this->_id);
+                }
+            }
+            $auth->save();
+            $this->errorCode = parent::ERROR_NONE;
+            Yii::app()->user->setReturnUrl(Yii::app()->urlManager->createUrl('site/root'));
+        }
+    }
+}

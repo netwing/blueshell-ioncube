@@ -1,102 +1,172 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OtgFUa7aQvUOXuq4Tq9AUCslrAhmar46
+<?php
+
+/**
+ * @see CPortlet
+ */
+Yii::import('zii.widgets.CPortlet');
+
+/**
+ * This is a simple portlet to choose language from your messages directory
+ * in controller::init() put 
+ * @example
+ * <pre>
+ * Yii::import('ext.LanguagePicker.ELanguagePicker'); 
+ * EThemePicker::setLanguage();
+ * </pre>
+ * @author David Constantine Kurushin http://www.zend.com/en/store/education/certification/authenticate.php/ClientCandidateID/ZEND015209/RegistrationID/238001337
+ * @author Emanuele Deserti 
+ * @author Mirko Tebaldi
+ */
+class ELanguagePicker extends CPortlet
+{
+	/**
+	 * @var string a title for the widget
+	 */
+    public $title = 'Language Picker';
+    /**
+     * 
+     * @var string the default tag name of the container
+     */
+    public $tagName = 'div';
+
+    /**
+     * @var array associative array language_id => language name in actual and original locale
+     */
+    private static $_language_list = array();
+
+    /**
+     * @var array some html options for the dropdownlist
+     */
+    public $dropDownOptions = array(
+        'submit'=>'',
+        'csrf'=>true, 
+        'class'=>'form-control input-sm languageSelector' , 
+        'id'=>'languageSelector',
+        'style' => 'width: 150px',
+    );
+
+    /**
+     * Executed autotically when using "->widget" to create 
+     */
+    public function init()
+    {
+        $this->title = null; // Yii::t('language-picker', 'Language Picker');
+        
+        self::$_language_list = self::getLanguageList();
+        parent::init();
+    }
+
+ 	/**
+ 	 * (non-PHPdoc)
+     * Executed autotically when using "->widget" to create 
+ 	 * @see CPortlet::renderContent()
+ 	 */
+    protected function renderContent()
+    {
+        echo CHtml::form('', 'post', array('class' => 'form-inline'));
+        echo CHtml::dropDownList('languageSelector' , Yii::app()->getLanguage(), self::$_language_list, $this->dropDownOptions);
+        echo CHtml::endForm();
+    }
+    /**
+     * set the language and save on cookie, or select from cookie
+     * this should be called from  CController::init or CController::beforeAction etc.
+     * @see CController::init() 
+     * @see CController::beforeAction()
+     * @param $cookieDays integer the amount of days the language choice will be saved, default 180 days
+     */
+    public static function setLanguage($cookieDays = 180)
+    {
+
+        self::$_language_list = self::getLanguageList();        
+
+        $posted_language                = Yii::app()->request->getPost('languageSelector');
+        $posted_language_is_valid       = ($posted_language !== null);
+        $posted_language_is_available   = array_key_exists($posted_language, self::$_language_list );
+
+        // User posted a change language request
+        if($posted_language_is_valid and $posted_language_is_available ){
+            // echo " - Set By Post - <BR>";
+            Yii::app()->setLanguage($_POST['languageSelector']);
+            $cookie = new CHttpCookie('language', $_POST['languageSelector']);
+            $cookie->expire = time() + 60*60*24*$cookieDays; 
+            Yii::app()->request->cookies['language'] = $cookie;
+            return;
+        }
+
+        // No change langauge request - Lookup into cookies
+        $cookie_language                = Yii::app()->request->cookies['language'];
+        $cookie_language_is_valid       = (isset(Yii::app()->request->cookies['language']) and is_string($cookie_language->value)) ;
+        $cookie_language_is_available   = ($cookie_language_is_valid and array_key_exists($cookie_language->value, self::$_language_list));
+
+        // I've a valid language cookie AND language is supported
+        if( $cookie_language_is_available){
+            Yii::app()->setLanguage($cookie_language->value);
+            return;
+        }
+
+        // if we came to this point, the language is set in cookies, but doesn't exist, 
+        // so we better unset the cookie
+        if($cookie_language_is_valid){
+            unset(Yii::app()->request->cookies['language']);
+            throw new CHttpException(400, Yii::t('app', 'Invalid request. Translation don\'t exists!'));
+            Yii::app()->exit();
+        } 
+
+        // No post AND No cookie 
+        // So we set base application parameters like language
+        if (isset(Yii::app()->request)) {
+            if (isset(Yii::app()->request->preferredLanguage) and Yii::app()->request->preferredLanguage != "" ) {
+                Yii::app()->language = substr(Yii::app()->request->preferredLanguage,0,2);
+            }
+        }            
+
+    }
+
+    /**
+     * Iterates the messages directory and list the languages available
+     * @return array language_id => language description in actual and foreign language
+     */
+    public static function getLanguageList()
+    {
+
+    	$translations = array();
+    	$directoryIterator = new DirectoryIterator(Yii::app()->messages->basePath);
+    	foreach($directoryIterator as $item) {
+            if($item->isDir() && !$item->isDot()) {
+
+                $language_id =  $item->getFilename();
+                $locale_display_name = ucfirst(Yii::app()->locale->getLocaleDisplayName($language_id, 'languages'));
+                $other_locale = Yii::app()->getLocale($language_id);
+                $other_locale_display_name =  ucfirst($other_locale->getLocaleDisplayName($language_id, "languages"));
+
+                $translations[$language_id] = "$locale_display_name - $other_locale_display_name"; 
+            }
+        }
+        return $translations;
+    }
+
+    /**
+     * Iterates the messages directory and list the languages available
+     * @return array language_id => language description in actual and foreign language
+     */
+    public static function getSimpleLanguageList($first_null = false)
+    {
+        $translation = array();
+        if ($first_null === true) {
+            $translations = array('' => '');
+        }
+        $directoryIterator = new DirectoryIterator(Yii::app()->messages->basePath);
+        foreach($directoryIterator as $item) {
+            if($item->isDir() && !$item->isDot()) {
+
+                $language_id =  $item->getFilename();
+                $locale_display_name = ucfirst(Yii::app()->locale->getLocaleDisplayName($language_id, 'languages'));
+
+                $translations[$language_id] = "$locale_display_name"; 
+            }
+        }
+
+        return $translations;
+    }
+
+}

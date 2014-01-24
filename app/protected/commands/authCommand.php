@@ -1,45 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+
+class authCommand extends EConsoleCommand
+{
+    public function actionInitialize() 
+    {
+        
+        $this->printlnColor("********************************************************************************", self::FGB_WHITE);
+        $this->printlnColor("*                                                                              *", self::FGB_WHITE);
+        $this->printlnColor("*                         WRITING AUTHORIZATION RULES                          *", self::FGB_WHITE);
+        $this->printlnColor("*                                                                              *", self::FGB_WHITE);
+        $this->printlnColor("********************************************************************************", self::FGB_WHITE);        
+        $this->printlnColor("", self::FGB_WHITE);        
+        
+        $auth = Yii::app()->authManager;
+
+        // Create some roles
+        $admin = $auth->createRole('admin');
+        $staff = $auth->createRole('staff');
+        $user = $auth->createRole('user');
+        
+        // Create some tasks
+        $task1 = $auth->createTask('task1', "Un task");
+        $task2 = $auth->createTask('task2', "Un task");
+        $task3 = $auth->createTask('task3', "Un task");
+
+        // Create some operations
+        $auth->createOperation('task1_create');
+        $auth->createOperation('task1_read');
+        $auth->createOperation('task1_update');
+        $auth->createOperation('task1_delete');
+        $auth->createOperation('task2_create');
+        $auth->createOperation('task2_read');
+        $auth->createOperation('task2_update');
+        $auth->createOperation('task2_delete');
+        $auth->createOperation('task3_create');
+        $auth->createOperation('task3_read');
+        $auth->createOperation('task3_update');
+        $auth->createOperation('task3_delete');
+
+        $task1->addChild('task1_create');
+        $task1->addChild('task1_read');
+        $task1->addChild('task1_update');
+        $task1->addChild('task1_delete');
+
+        $task2->addChild('task2_create');
+        $task2->addChild('task2_read');
+        $task2->addChild('task2_update');
+        $task2->addChild('task2_delete');
+
+        $task3->addChild('task3_create');
+        $task3->addChild('task3_read');
+        $task3->addChild('task3_update');
+        $task3->addChild('task3_delete');
+
+        $user->addChild('task1');
+        $staff->addChild('task2');
+        $staff->addChild('task3');
+        $admin->addChild('user');
+        $admin->addChild('staff');
+
+        $auth->save();
+    }
+}
+
 ?>
-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

@@ -1,60 +1,178 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/*
+| -------------------------------------------------------------------
+| USER AGENT TYPES
+| -------------------------------------------------------------------
+| This file contains four arrays of user agent data.  It is used by the
+| User Agent Class to help identify browser, platform, robot, and
+| mobile device data.  The array keys are used to identify the device
+| and the array values are used to set the actual name of the item.
+|
+*/
+
+$platforms = array (
+					'windows nt 6.0'	=> 'Windows Longhorn',
+					'windows nt 5.2'	=> 'Windows 2003',
+					'windows nt 5.0'	=> 'Windows 2000',
+					'windows nt 5.1'	=> 'Windows XP',
+					'windows nt 4.0'	=> 'Windows NT 4.0',
+					'winnt4.0'			=> 'Windows NT 4.0',
+					'winnt 4.0'			=> 'Windows NT',
+					'winnt'				=> 'Windows NT',
+					'windows 98'		=> 'Windows 98',
+					'win98'				=> 'Windows 98',
+					'windows 95'		=> 'Windows 95',
+					'win95'				=> 'Windows 95',
+					'windows'			=> 'Unknown Windows OS',
+					'os x'				=> 'Mac OS X',
+					'ppc mac'			=> 'Power PC Mac',
+					'freebsd'			=> 'FreeBSD',
+					'ppc'				=> 'Macintosh',
+					'linux'				=> 'Linux',
+					'debian'			=> 'Debian',
+					'sunos'				=> 'Sun Solaris',
+					'beos'				=> 'BeOS',
+					'apachebench'		=> 'ApacheBench',
+					'aix'				=> 'AIX',
+					'irix'				=> 'Irix',
+					'osf'				=> 'DEC OSF',
+					'hp-ux'				=> 'HP-UX',
+					'netbsd'			=> 'NetBSD',
+					'bsdi'				=> 'BSDi',
+					'openbsd'			=> 'OpenBSD',
+					'gnu'				=> 'GNU/Linux',
+					'unix'				=> 'Unknown Unix OS'
+				);
+
+
+// The order of this array should NOT be changed. Many browsers return
+// multiple browser types so we want to identify the sub-type first.
+$browsers = array(
+					'Flock'				=> 'Flock',
+					'Chrome'			=> 'Chrome',
+					'Opera'				=> 'Opera',
+					'MSIE'				=> 'Internet Explorer',
+					'Internet Explorer'	=> 'Internet Explorer',
+					'Shiira'			=> 'Shiira',
+					'Firefox'			=> 'Firefox',
+					'Chimera'			=> 'Chimera',
+					'Phoenix'			=> 'Phoenix',
+					'Firebird'			=> 'Firebird',
+					'Camino'			=> 'Camino',
+					'Netscape'			=> 'Netscape',
+					'OmniWeb'			=> 'OmniWeb',
+					'Safari'			=> 'Safari',
+					'Mozilla'			=> 'Mozilla',
+					'Konqueror'			=> 'Konqueror',
+					'icab'				=> 'iCab',
+					'Lynx'				=> 'Lynx',
+					'Links'				=> 'Links',
+					'hotjava'			=> 'HotJava',
+					'amaya'				=> 'Amaya',
+					'IBrowse'			=> 'IBrowse'
+				);
+
+$mobiles = array(
+					// legacy array, old values commented out
+					'mobileexplorer'	=> 'Mobile Explorer',
+//					'openwave'			=> 'Open Wave',
+//					'opera mini'		=> 'Opera Mini',
+//					'operamini'			=> 'Opera Mini',
+//					'elaine'			=> 'Palm',
+					'palmsource'		=> 'Palm',
+//					'digital paths'		=> 'Palm',
+//					'avantgo'			=> 'Avantgo',
+//					'xiino'				=> 'Xiino',
+					'palmscape'			=> 'Palmscape',
+//					'nokia'				=> 'Nokia',
+//					'ericsson'			=> 'Ericsson',
+//					'blackberry'		=> 'BlackBerry',
+//					'motorola'			=> 'Motorola'
+
+					// Phones and Manufacturers
+					'motorola'			=> "Motorola",
+					'nokia'				=> "Nokia",
+					'palm'				=> "Palm",
+					'iphone'			=> "Apple iPhone",
+					'ipad'				=> "iPad",
+					'ipod'				=> "Apple iPod Touch",
+					'sony'				=> "Sony Ericsson",
+					'ericsson'			=> "Sony Ericsson",
+					'blackberry'		=> "BlackBerry",
+					'cocoon'			=> "O2 Cocoon",
+					'blazer'			=> "Treo",
+					'lg'				=> "LG",
+					'amoi'				=> "Amoi",
+					'xda'				=> "XDA",
+					'mda'				=> "MDA",
+					'vario'				=> "Vario",
+					'htc'				=> "HTC",
+					'samsung'			=> "Samsung",
+					'sharp'				=> "Sharp",
+					'sie-'				=> "Siemens",
+					'alcatel'			=> "Alcatel",
+					'benq'				=> "BenQ",
+					'ipaq'				=> "HP iPaq",
+					'mot-'				=> "Motorola",
+					'playstation portable'	=> "PlayStation Portable",
+					'hiptop'			=> "Danger Hiptop",
+					'nec-'				=> "NEC",
+					'panasonic'			=> "Panasonic",
+					'philips'			=> "Philips",
+					'sagem'				=> "Sagem",
+					'sanyo'				=> "Sanyo",
+					'spv'				=> "SPV",
+					'zte'				=> "ZTE",
+					'sendo'				=> "Sendo",
+
+					// Operating Systems
+					'symbian'				=> "Symbian",
+					'SymbianOS'				=> "SymbianOS",
+					'elaine'				=> "Palm",
+					'palm'					=> "Palm",
+					'series60'				=> "Symbian S60",
+					'windows ce'			=> "Windows CE",
+
+					// Browsers
+					'obigo'					=> "Obigo",
+					'netfront'				=> "Netfront Browser",
+					'openwave'				=> "Openwave Browser",
+					'mobilexplorer'			=> "Mobile Explorer",
+					'operamini'				=> "Opera Mini",
+					'opera mini'			=> "Opera Mini",
+
+					// Other
+					'digital paths'			=> "Digital Paths",
+					'avantgo'				=> "AvantGo",
+					'xiino'					=> "Xiino",
+					'novarra'				=> "Novarra Transcoder",
+					'vodafone'				=> "Vodafone",
+					'docomo'				=> "NTT DoCoMo",
+					'o2'					=> "O2",
+
+					// Fallback
+					'mobile'				=> "Generic Mobile",
+					'wireless'				=> "Generic Mobile",
+					'j2me'					=> "Generic Mobile",
+					'midp'					=> "Generic Mobile",
+					'cldc'					=> "Generic Mobile",
+					'up.link'				=> "Generic Mobile",
+					'up.browser'			=> "Generic Mobile",
+					'smartphone'			=> "Generic Mobile",
+					'cellphone'				=> "Generic Mobile"
+				);
+
+// There are hundreds of bots but these are the most common.
+$robots = array(
+					'googlebot'			=> 'Googlebot',
+					'msnbot'			=> 'MSNBot',
+					'slurp'				=> 'Inktomi Slurp',
+					'yahoo'				=> 'Yahoo',
+					'askjeeves'			=> 'AskJeeves',
+					'fastcrawler'		=> 'FastCrawler',
+					'infoseek'			=> 'InfoSeek Robot 1.0',
+					'lycos'				=> 'Lycos'
+				);
+
+/* End of file user_agents.php */
+/* Location: ./application/config/user_agents.php */

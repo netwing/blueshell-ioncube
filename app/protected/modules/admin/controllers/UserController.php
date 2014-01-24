@@ -1,92 +1,190 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class UserController extends Controller
+{
+    /**
+    * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+    * using two-column layout. See 'protected/views/layouts/column2.php'.
+    */
+    public $layout='//layouts/column2';
+
+    public $menu = array();
+
+    public function init()
+    {
+        parent::init();
+        $this->menu = array(
+            array('label' => Yii::t('menu', 'Manage users'),'url'=>array('/admin/user/admin')),
+            array('label' => Yii::t('menu', 'Create user'),'url'=>array('/admin/user/create')),
+            array('label' => Yii::t('menu', 'Manage roles'), 'url'=>array('/admin/role/admin')),
+            array('label' => Yii::t('menu', 'Create role'), 'url'=>array('/admin/role/create')),
+        );        
+    }
+
+    /**
+    * @return array action filters
+    */
+    public function filters()
+    {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+        );
+    }
+
+    /**
+    * Specifies the access control rules.
+    * This method is used by the 'accessControl' filter.
+    * @return array access control rules
+    */
+    public function accessRules()
+    {
+        return array(
+            array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('admin:user:read')),
+            array('allow', 'actions' => array('create'), 'roles' => array('admin:user:create')),
+            array('allow', 'actions' => array('update'), 'roles' => array('admin:user:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('admin:user:delete')),
+            array('deny', 'users'=>array('*')),
+        );
+    }
+
+    /**
+    * Displays a particular model.
+    * @param integer $id the ID of the model to be displayed
+    */
+    public function actionView($id)
+    {
+        $this->render('view',array(
+            'model'=>$this->loadModel($id),
+            ));
+    }
+
+    /**
+    * Creates a new model.
+    * If creation is successful, the browser will be redirected to the 'view' page.
+    */
+    public function actionCreate()
+    {
+        $model = new User('create');
+
+        // Uncomment the following line if AJAX validation is needed
+        $this->performAjaxValidation($model);
+
+        if(isset($_POST['User']))
+        {
+            $model->attributes = $_POST['User'];
+            if ($model->save()) {
+                $this->redirect(array('view', 'id' => $model->id));
+                Yii::app()->user->setFlash('success', Yii::t('app', 'User has been created.'));
+            }
+        }
+
+        $this->render('create',array(
+            'model' => $model,
+        ));
+    }
+
+    /**
+    * Updates a particular model.
+    * If update is successful, the browser will be redirected to the 'view' page.
+    * @param integer $id the ID of the model to be updated
+    */
+    public function actionUpdate($id)
+    {
+        $model=$this->loadModel($id);
+        $model->scenario = "update";
+
+        // Uncomment the following line if AJAX validation is needed
+        $this->performAjaxValidation($model);
+
+        if(isset($_POST['User']))
+        {
+            $model->attributes = $_POST['User'];
+            if($model->save()) {
+                $this->redirect(array('view','id'=>$model->id));
+            }
+        }
+
+        unset($model->password);
+        $this->render('update',array(
+            'model' => $model,
+        ));
+    }
+
+    /**
+    * Deletes a particular model.
+    * If deletion is successful, the browser will be redirected to the 'admin' page.
+    * @param integer $id the ID of the model to be deleted
+    */
+    public function actionDelete($id)
+    {
+        if (Yii::app()->request->isPostRequest) {
+
+            // we only allow deletion via POST request
+            $esit = $this->loadModel($id)->delete();
+            
+            // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+            if(!isset($_GET['ajax'])) {
+                $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            } else {
+                if ($esit === false) {
+                    echo Yii::t("app", "Unable to delete selected user");
+                }
+            }
+        }
+        else {
+            throw new CHttpException(400, 'Invalid request. Please do not repeat this request again.');
+        }
+    }
+
+    /**
+    * Lists all models.
+    */
+    public function actionIndex()
+    {
+        $dataProvider=new CActiveDataProvider('User');
+        $this->render('index',array(
+            'dataProvider'=>$dataProvider,
+            ));
+    }
+
+    /**
+    * Manages all models.
+    */
+    public function actionAdmin()
+    {
+        $model=new User('search');
+    $model->unsetAttributes();  // clear any default values
+    if(isset($_GET['User']))
+        $model->attributes=$_GET['User'];
+
+    $this->render('admin',array(
+        'model'=>$model,
+        ));
+    }
+
+    /**
+    * Returns the data model based on the primary key given in the GET variable.
+    * If the data model is not found, an HTTP exception will be raised.
+    * @param integer the ID of the model to be loaded
+    */
+    public function loadModel($id)
+    {
+        $model=User::model()->findByPk($id);
+        if($model===null)
+            throw new CHttpException(404,'The requested page does not exist.');
+        return $model;
+    }
+
+    /**
+    * Performs the AJAX validation.
+    * @param CModel the model to be validated
+    */
+    protected function performAjaxValidation($model)
+    {
+        if(isset($_POST['ajax']) && $_POST['ajax']==='user-form')
+        {
+            echo CActiveForm::validate($model);
+            Yii::app()->end();
+        }
+    }
+}

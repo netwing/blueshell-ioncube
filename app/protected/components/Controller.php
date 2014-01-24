@@ -1,32 +1,43 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-5b93gobA5TUrHgOIfG==
+<?php
+/**
+ * Controller is the customized base controller class.
+ * All controller classes for this application should extend from this base class.
+ */
+class Controller extends CController
+{
+	/**
+	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
+	 * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
+	 */
+	public $layout='//layouts/column1';
+	/**
+	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
+	 */
+	public $menu=array();
+	/**
+	 * @var array the breadcrumbs of the current page. The value of this property will
+	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
+	 * for more details on how to specify this property.
+	 */
+	public $breadcrumbs=array();
+
+	public function init() 	
+    {
+		parent::init();
+		Yii::import('ext.netwing.LanguagePicker.ELanguagePicker'); 
+   	    ELanguagePicker::setLanguage();
+
+        // If POST or GET ajax request, OR from command line REMOVE Yii::app->theme
+        if (Yii::app()->request->getParam('ajax', null) !== null or Yii::app()->request->isAjaxRequest or PHP_SAPI == 'cli') {
+            if (isset(Yii::app()->theme)) {
+                unset(Yii::app()->theme);
+            }
+        }
+
+        // If 'theme' do not exists in Yii::app()
+        if (isset(Yii::app()->theme)) {
+            Yii::import('ext.netwing.ThemePicker.EThemePicker');
+            EThemePicker::setTheme();
+        } 
+	}
+}

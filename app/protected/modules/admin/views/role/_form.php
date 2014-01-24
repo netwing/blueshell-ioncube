@@ -1,60 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php $form = $this->beginWidget('CActiveForm', array(
+    'id'=>'auth-item-form',
+    'enableClientValidation'=>true,
+    'enableAjaxValidation'=>true,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+<p class="help-block">Fields with <span class="required">*</span> are required.</p>
+
+<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'name', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php if ($model->isNewRecord): ?>
+            <?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
+            <?php echo $form->error($model,'name'); ?>
+            <p class="help-block"><?php echo Yii::t('form', 'The name for this role'); ?></p>
+        <?php else: ?>
+            <?php echo $form->textField($model,'name', array('class' => 'form-control', 'disabled' => 'disabled')); ?>
+            <?php echo $form->error($model,'name'); ?>
+            <p class="help-block"><?php echo Yii::t('form', 'Role name cannot be changed'); ?></p>
+        <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'description', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textArea($model,'description', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'description'); ?>
+        </div>
+    </div>
+
+    <?php if (!$model->isNewRecord): ?>
+    <p class="help-block"><?php echo Yii::t('form', 'Set permissions for this role.'); ?></p>
+
+        <?php 
+        $tasks = Yii::app()->authManager->tasks;
+        $i = 0;
+        foreach ($tasks as $task_name => $task): 
+            $operations = array();
+            $allowed = array();
+            foreach ($task->children as $k => $v) {
+                $operations[$v->name] = Yii::t('app', $v->description);
+                if (Yii::app()->authManager->hasItemChild($model->name, $v->name)) {
+                    $allowed[] = $v->name;
+                }
+            }
+            $i++;
+        ?>
+        <div class="form-group">
+        <?php echo CHtml::label(Yii::t('app', $task->description), "authChild" . $i, array('class' => 'col-lg-2 control-label')); ?>
+            <div class="col-lg-10">
+                <?php 
+                echo CHtml::checkBoxList("authChild" . $i, $allowed, $operations, array(
+                        'label' => $task->description, 
+                        'separator' => false,
+                        'labelOptions' => array('class' => 'checkbox-inline'),
+                        'template' => '{beginLabel} {input} {labelTitle} {endLabel}',
+                    )
+                ); 
+                ?>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="reset" class="btn btn-warning"><?php echo Yii::t('form', 'Reset'); ?></button>
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('form', 'Submit'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+

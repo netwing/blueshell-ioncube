@@ -1,39 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ProductGroupController */
+/* @var $model ProductGroup */
+/* @var $form CActiveForm */
 ?>
-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
+
+<div class="wide form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'action'=>Yii::app()->createUrl($this->route),
+	'method'=>'get',
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+)); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'id', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'name', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'name', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'description', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'description', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'enabled', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'enabled', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'sort_order', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'sort_order', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'create_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'create_time', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'update_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'update_time', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- search-form -->

@@ -1,84 +1,143 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this InvoiceRowController */
+/* @var $model InvoiceRow */
+/* @var $form CActiveForm */
 ?>
-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
-Ncxcsm==
+
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'invoice-row-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+    'enableClientValidation'=>false,
+    'enableAjaxValidation'=>true,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+	<p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
+</p>
+
+	<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'description', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-10">
+        <?php echo $form->textField($model, 'description', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'description'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'price', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'price', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
+        <?php echo $form->error($model,'price'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'quantity', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'quantity', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
+        <?php echo $form->error($model,'quantity'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'total_no_vat', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'total_no_vat', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
+        <?php echo $form->error($model,'total_no_vat'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'vat', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'vat', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
+        <?php echo $form->error($model,'vat'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'vat_value', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'vat_value', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
+        <?php echo $form->error($model,'vat_value'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'total_vat', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'total_vat', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'total_vat'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'discount', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'discount', array('class' => 'form-control', 'onkeyup' => 'calcTotal();')); ?>
+        <?php echo $form->error($model,'discount'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'discount_value', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'discount_value', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
+        <?php echo $form->error($model,'discount_value'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+
+        <?php echo $form->labelEx($model, 'total', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-2">
+        <?php echo $form->textField($model, 'total', array('class' => 'form-control', 'readonly' => 'readonly')); ?>
+        <?php echo $form->error($model,'total'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'notes', array('class' => 'col-md-2 control-label')); ?>
+        <div class="col-md-10">
+        <?php echo $form->textField($model, 'notes', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'notes'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="reset" class="btn btn-warning">Reset</button>
+            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
+
+<?php Yii::app()->clientScript->registerScript('form_functions',
+'function calcTotal() {
+    var total_no_vat = $("#InvoiceRow_price").val() * $("#InvoiceRow_quantity").val();
+    $("#InvoiceRow_total_no_vat").val(total_no_vat.toFixed(2));
+    var vat_value = total_no_vat / 100 * $("#InvoiceRow_vat").val();
+    $("#InvoiceRow_vat_value").val(vat_value.toFixed(2));
+    var total_vat = total_no_vat + vat_value;
+    $("#InvoiceRow_total_vat").val(total_vat.toFixed(2));
+    $("#InvoiceRow_total").val(total_vat.toFixed(2));
+
+    var discount_value = total_vat / 100 * $("#InvoiceRow_discount").val();
+    $("#InvoiceRow_discount_value").val(discount_value.toFixed(2));
+    var total = total_vat - discount_value;
+    $("#InvoiceRow_total").val(total.toFixed(2));
+
+    var total_work_time = $("#InvoiceRow_work_time").val() * $("#InvoiceRow_quantity").val();
+    $("#InvoiceRow_total_work_time").val(total_work_time.toFixed(2));
+
+    return true;
+}', CClientScript::POS_END); ?>

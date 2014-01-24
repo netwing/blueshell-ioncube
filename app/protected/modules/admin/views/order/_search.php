@@ -1,39 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this OrderController */
+/* @var $model Order */
+/* @var $form CActiveForm */
 ?>
-HR+cPwoTHF9pORt57YtHqIPzFxIpqPePPjeOkAgiXWgpxLmsAv0q1VTyhvJKlsU/UXgGvd5T1gSw
-5daEmox4++gipyjwbS4EERaJu7i3U86bmxn6nF5WBC4ndK/oXGF2gzk4lEVjIrGEz163f6Y6nCoP
-JGNLSbEmzOCPy4oje3FJUxeVP7Dt+btuMwSSVxbPIox/Y2xsd5GxTwAuYiSmOnrG1Ty3rm9ESdZH
-CZukirj5+YNmOvjhCtWh3SyoJzIxHGvmwA6cEHFtX6fZdQvmhydKTP6ygMtcNxuBnbz+dAY51g1w
-QvwSNTIrBo3yQO/q2QZPC8yfL5mdciJ6Sk7VlVuzBjpLE5cgKp7K9TAHg2J5+pctvb7SxxaAEyMQ
-lx/3RK+dODJbEsCc5KVqUCG+DirV+yjHh8qau+QxwrpSDOtCMK0xfm61O+mIlylX0Fv9baXz7b6y
-0t+bq8VEBQ3XieAqf7eNanWLh5wmVR6R7yvo6CMU95ZMbHgXBuy3FdSvFc1lPZxHzcrmOfKdtiM1
-T3agxayvk3OFJCDymM+RkNHh6ekJIJXIq7e8GUSjL5cU8phM14n7ipIlJzumGCTCj5EMh43NnMYT
-sQV/cM/Cvawn73hu5ydqSzeqBL4H87pjrTj/Yt+KgeM6Xm+F5PVNZj+4gj2DeRPJusaBXPSPFOvc
-i0/KzfbNBTYoNID9pd9wcBnrZ49SKdvjItPiZLdi6V7LTouva1Dt3wfNKJZC+l8+fysJW4/zVTX3
-Pj++dZDD8KXPBc4HZhKBNumr9VvaOkBxnCpWluDsPq1IlE9kOnuYY+Kq7mkZ/iif3yOFSx5AWtOL
-ubc6iglKB6hBG0sQjSx8e0dAxzxF8Fa6LiURQZwWVV63VX6tWlyrE/6tIBb5ilA1jnA1dmDOwx7I
-xbD/N5W86NUeNKcE6A6+fHVud/4VdERjy/bUARsy48Xjd5fk4NLf5skOAZJy+f16Tt9FENAAHTAl
-SqVjglfuHsrUUSvSTcODf+v8lZMLyy1BrUneM75C8U6JuSl+58nmNv9PZJIwiilLbUutKWcLxtU/
-JAE6oWa6xh+DpTkTLv+Dwj0AJbQRXtFLYu3vogkPa6FNDKxSs1hdT1G8hIoHcULktlLres/aNOet
-1sDV9u6x+xxqv15BDc9hRtDfpDwhtPkg+D9sWdUtVa/gaiZch0qtLYnmvqvhdto/DlZgWsRxio6d
-GfkP0/wnEH4t2AtwJUSUdXESMxIIr8ouMo6E1IZ9BqFUiUPY5NQ5sZiifQ8LX2FvlDVJ0gnCEa3G
-+HJW6vIlDQuXRBqae2cx12eEkugBPf5sHXHX5Ub3/+L/Ag4fM9bgmgIFS5LKUvTFZ87qYAuWfZHF
-PyCSsksZqM2yMN6Q2jSTZ6IDpXqAm3WTTQupO8+LQiMj4p2kA9A35U0xPNsv6IYZZ1KwVAZiT7t1
-xCet6cPNuA/4YtWu0miMTATupinm57Fvl5GmuiFwkgeByVLm8+KW+VW8DC0EQ+m0+ISPgisWXrwD
-BPFM6dmfie7N2WPrObUc9Q7IZDlccmwhLuqMOzoy6D/smdNnAw6GybxBwn6V1+m31bfz6DdcnHUl
-AMyDilADctshd8Kb/rsQe8Kv2CsUs6XtcsrsSpvxhQ2pPFPVKz2RexH7Rn7NVknLzKiLcfP/stdY
-aaG+Rzs5Kc0g/Jbalh/8GDnCOw+5Urjyjftppc0T/ZiKKXyv3glZduIiRby1n+ALHSdDYNAkGHsd
-jOqUnqRa5F+4odp0GX7q3rS8Yxg47/oL52vU31/wvVHjrdEpWajppyo2B/NTd5n4QoKT/gxiLgvK
-UbupGykF0h1fIT3N+2PQu20jsGxCfVCSdn1qnmIxx6sl+cizXjeO+XKR7CFsg4lwPrnBYN2HfZa9
-Cy48ZRBIaVnVrgnWTINvMvkXnq7oqTDhEjtlO3OliTOCFuRGjWv7gffQiohOfqEdtfOjDSf7BAQ+
-+9tXimY3KxG7wnNWxB8jAwvxLe8VQUXpFfGqSBDDA6EnPtKQeafk7IY0kKXIj51iWMmDvgDt/VAb
-nNuJwxQ258y3+Oq66RucwoYT6nS+WL5dhlaJWtOLOojuR7u+GmcYw7aFtkX4HlWz5hPnYE9km1sy
-cBHgbEtmw0eWIvFqnpPoSJtcyAQ9UifIZ9aONqUqaQdp+fZlIbw7Rqo9BbBY2/bfq6++uN4h/LFV
-1nC53ux7YSDrHg5VEjnUy4sF0bmAEz+K/WEK/94FoH/dMGlOb/tBSc5Oa20kew90JGxFU0G7y3TH
-ER/0JX5/pnLVRbEinhtFqP0rLS/4xxNFIdqgIKnXnW+LVfNuam1VILPLSS8xt2lK5CEVb5GR2Aca
-UCpv+eIxtqD7vrh1Z+SDwjCrfJBzlX/zOw13VKTbNe7cOgFfSJJWVXy7uJDILiUQ+s1yOgKpivJh
-CaeZYFUiAqjMzu0WK1QAh0oPPJfnhGzMsstiVm2357qzlY9zXkTngQZ4gY0UI+m9i9o2uUVkMtFi
-OR+W7DR8QPOj7UU4UIwvgc0tvqMHALQEmplxjBs8J8VJXKKowDOn8oOWFWR1HTdDE9fhxkvwa2W5
-XOwiJgp2LLUOzgvRygR/SC+4dthPY6k3MvRzUa9HRigZZkTzK1DmCKUJRFCJ7Kam9JU+I/XIQWGP
-arC6+Zac9EXIpsl1KxkVXPfc
+
+<div class="wide form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'action'=>Yii::app()->createUrl($this->route),
+	'method'=>'get',
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+)); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'id', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'customer_id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'customer_id', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'date', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'date', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'status_id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'status_id', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'notes', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'notes', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'create_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'create_time', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'update_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'update_time', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- search-form -->

@@ -1,29 +1,45 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('application.modules.admin.models.base.BaseVector');
+
+class Vector extends BaseVector
+{
+
+    /**
+     * @var integer vector id
+     * @soap
+     */
+    public $barca_id;
+     
+    /**
+     * @var string client complete name
+     * @soap
+     */
+    public $barca_nome;
+
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array_merge(parent::relations(), array(
+            'orders' => array(self::HAS_MANY, 'Order', 'vector_id'),
+            'exBuilder' => array(self::BELONGS_TO, 'Builder', 'barca_costruttore'),
+            'exInsuranceCompany' => array(self::BELONGS_TO, 'InsuranceCompany', 'barca_assicurazione'),
+        ));
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return Vector the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
+
+}

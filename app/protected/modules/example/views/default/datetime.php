@@ -1,59 +1,88 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-/s2iuJwtOA2UTm==
+<?php $this->pageTitle = "Date time test"; ?>
+
+<p>
+<strong>Short:</strong> <?php echo Yii::app()->format->dateShort("2013-06-01"); ?>  
+<strong>Medium:</strong> <?php echo Yii::app()->format->date("2013-06-01"); ?>  
+<strong>Long:</strong> <?php echo Yii::app()->format->dateLong("2013-06-01"); ?>  
+<strong>Full:</strong> <?php echo Yii::app()->format->dateFull("2013-06-01"); ?>  
+</p>
+
+<p>
+<strong>Short:</strong> <?php echo Yii::app()->format->timeShort("13:45:59"); ?>  
+<strong>Medium:</strong> <?php echo Yii::app()->format->time("13:45:59"); ?>  
+<strong>Long:</strong> <?php echo Yii::app()->format->timeLong("13:45:59"); ?>  
+<strong>Full:</strong> <?php echo Yii::app()->format->timeFull("13:45:59"); ?>
+</p>
+
+
+<?php $form = $this->beginWidget('CActiveForm', array(
+    'id' => 'datetime-form',
+    'enableAjaxValidation'  => true,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+    <p class="help-block">Fields with <span class="required">*</span> are required.</p>
+
+    <?php echo $form->errorSummary($model); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_date', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
+            'model' => $model,
+            'attribute' => 'my_date',
+        )); ?>
+        <?php echo $form->error($model,'my_date'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_another_date', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $datepicker = $this->widget('ext.netwing.widgets.JuiDatePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
+            'name' => 'my_another_date',
+            'value' => '2013-10-11',
+        )); ?>
+        <?php echo $form->error($model,'my_another_date'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_time', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
+            'model' => $model,
+            'attribute' => 'my_time',
+        )); ?>
+        <?php echo $form->error($model,'my_time'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model,'my_another_time', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php $timepicker = $this->widget('ext.netwing.widgets.JuiTimePicker', array(
+            'htmlOptions' => array('class' => 'form-control'),
+            'name' => 'my_another_time',
+            'value' => '18:29:59',
+        )); ?>
+        <?php echo $form->error($model,'my_another_time'); ?>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="reset" class="btn btn-warning"><?php echo Yii::t('form', 'Reset'); ?></button>
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('form', 'Submit'); ?></button>
+        </div>
+    </div>
+
+    <?php $this->endWidget(); ?>
+
+<?php if (count($_POST) > 0): ?>
+<?php CVarDumper::dump($_POST, 10, true); ?>
+<?php endif; ?>

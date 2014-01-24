@@ -1,29 +1,20 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("imbarcazioni","R");
+$elenco_nazioni=$blue->elenco_nazioni();
+$elenco_tipologie=$blue->elenco_tipologie();
+$elenco_costruttori=$blue->elenco_costruttori();
+$elenco_assicurazioni=$blue->elenco_assicurazioni();
+if (!array_key_exists("id",$_GET)) {
+	header("Location:index.php");
+	exit;
+}
+$select_barca="SELECT * FROM ".$tabelle['barche']." WHERE barca_id='".$_GET['id']."'";
+$result_barca=$sql->select_query($select_barca);
+$row_barca=mysql_fetch_array($result_barca);
+
+$select_cliente="SELECT cliente_nominativo FROM ".$tabelle['clienti']." WHERE cliente_id='".$row_barca['barca_proprietario']."'";
+$result_cliente=$sql->select_query($select_cliente);
+$row_cliente=mysql_fetch_array($result_cliente);
+
+require_once "views/vector/view.php";

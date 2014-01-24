@@ -1,46 +1,79 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-soEqlaD/K0==
+<?php
+
+/**
+ * LoginForm class.
+ * LoginForm is the data structure for keeping
+ * user login form data. It is used by the 'login' action of 'SiteController'.
+ */
+class LoginForm extends CFormModel
+{
+	public $username;
+	public $password;
+	public $rememberMe;
+
+	private $_identity;
+
+	/**
+	 * Declares the validation rules.
+	 * The rules state that username and password are required,
+	 * and password needs to be authenticated.
+	 */
+	public function rules()
+	{
+		return array(
+			// username and password are required
+			array('username, password', 'required'),
+			// rememberMe needs to be a boolean
+			array('rememberMe', 'boolean'),
+			// password needs to be authenticated
+			array('password', 'authenticate'),
+		);
+	}
+
+	/**
+	 * Declares attribute labels.
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'username'	=> Yii::t('app', 'Username'),
+			'password'	=> Yii::t('app', 'Password'),
+			'rememberMe' => Yii::t('app', 'Remember me next time'),
+		);
+	}
+
+	/**
+	 * Authenticates the password.
+	 * This is the 'authenticate' validator as declared in rules().
+	 */
+	public function authenticate($attribute,$params)
+	{
+		if(!$this->hasErrors())
+		{
+			$this->_identity=new UserIdentity($this->username,$this->password);
+			if(!$this->_identity->authenticate())
+				$this->addError('password','Incorrect username or password.');
+		}
+	}
+
+	/**
+	 * Logs in the user using the given username and password in the model.
+	 * @return boolean whether login is successful
+	 */
+	public function login()
+	{
+		if($this->_identity===null)
+		{
+			$this->_identity=new UserIdentity($this->username,$this->password);
+			$this->_identity->authenticate();
+		}
+		if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+		{
+			$duration=$this->rememberMe ? 3600*24*30 : 0; // 30 days
+			Yii::app()->user->login($this->_identity,$duration);
+			return true;
+		}
+		else
+			return false;
+	}
+}

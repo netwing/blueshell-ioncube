@@ -1,72 +1,123 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-OAUBSacqcWazg0==
+<?php
+
+// Load vendor
+require_once dirname(__FILE__) . "/vendor/autoload.php";
+
+require_once "app/init.php";
+
+// Definizione di alcune costanti utili in tutta l'applicazione
+defined("APPLICATION_NAME") or define("APPLICATION_NAME", "Blueshell");
+defined("APPLICATION_VERSION") or define("APPLICATION_VERSION", "2.0.0-alfa");
+define("ELEMENTI_PER_PAGINA", 20);
+
+define("DATABASE_HOST", $dbhost);
+define("DATABASE_USERNAME", $dbuser);
+define("DATABASE_PASSWORD", $dbpass);
+define("DATABASE_NAME", $dbdata);
+define("DATABASE_PREFIX", $dbprefix);
+
+if (isset($port_name)) {
+    define("APPLICATION_PORT_NAME", $port_name);
+}
+
+if (isset($base_url)) {
+    $base_url = rtrim($base_url, '/');
+    defined("APPLICATION_BASE_URL") or define("APPLICATION_BASE_URL", $base_url);
+}
+
+// Get license key from configuration
+define("LICENSE_KEY", $license_key);
+
+// Check writable path
+$my_path = array(
+    __DIR__ . "/app/protected/runtime",
+    __DIR__ . "/app/protected/runtime/temp",
+    __DIR__ . "/app/protected/runtime/templates_c",
+    __DIR__ . "/template",
+    __DIR__ . "/upload",
+);
+foreach ($my_path as $path) {
+    if (!file_exists($path)) {
+        if (@mkdir($path) === false) {
+            die($path . " must exists.");
+        }
+    }
+    if (!is_writable($path)) {
+        if (@chmod($path, 0777) === false) {
+            die($path . " must be writable by webserver.");
+        }
+    }    
+}
+
+// Avvio sessione
+// session_name("Blue");
+// session_start();
+
+// Impostazioni Locali
+// setlocale(LC_ALL,"it_IT.utf8"); // DA NON USARE MAI!!!
+
+$alfabeto=array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+// Array che contiene tutte le lettere dell'alfabeto
+
+$prefisso = DATABASE_PREFIX;
+$tabelle=array( 
+    'assicurazioni'         => $prefisso . 'assicurazioni',
+    'barche'                => $prefisso . 'barche',
+    'barche_trasferimenti'  => $prefisso . 'barche_trasferimenti',
+    'clienti'               => $prefisso . 'clienti',
+    'clienti_note'          => $prefisso . 'clienti_note',
+    'contratti'             => $prefisso . 'contratti',
+    'contratti_periodi'     => $prefisso . 'contratti_periodi',
+    'contratti_tipo'        => $prefisso . 'contratti_tipo',               
+    'costruttori'           => $prefisso . 'costruttori',
+    'dimensioni'            => $prefisso . 'dimensioni',
+    'nazioni'               => $prefisso . 'nazioni',
+    'pontili'               => $prefisso . 'pontili',
+    'pontili_tipo'          => $prefisso . 'pontili_tipo',
+    'posti_barca'           => $prefisso . 'posti_barca',
+    'tipologie_barche'      => $prefisso . 'tipologie_barche',
+    'scadenze'              => $prefisso . 'scadenze',
+    'utenti'                => $prefisso . 'utenti',
+    'posti_barca_status'    => $prefisso . 'posti_barca_status',
+    'listini_posti_barca'   => $prefisso . 'listini_posti_barca',
+    'listini_condominiali'  => $prefisso . 'listini_condominiali',
+    'listini_generici'      => $prefisso . 'listini_generici',
+    'fatture'               => $prefisso . 'fatture',
+    'fatture_righe'         => $prefisso . 'fatture_righe',
+    'presenze'              => $prefisso . 'presenze',
+    'prima_nota'            => $prefisso . 'prima_nota',
+);
+
+
+if (!isset($currency)) {
+    $currency = "EUR";
+}
+define("APPLICATION_CURRENCY", $currency);
+
+require_once "class/Mysql.php";
+require_once "class/Form.php";
+require_once "class/Blue.php";
+require_once "class/Rtf.php";
+
+$sql = new MySql($dbhost,$dbuser,$dbpass,$dbdata);
+$form = new Form($_POST);
+$blue = new Blue($dbhost,$dbuser,$dbpass,$dbdata);
+
+$sql->general_query("SET NAMES 'utf8'");
+
+$blue->tabelle=$tabelle;
+// Prefisso ed Array delle tabelle
+$blue->pagina_login="login.php";
+$blue->pagina_accesso_vietato="utente_accesso_vietato.php";
+// Definizione delle pagine per login ed accesso vietato
+
+if (isset($vat_percentage)) {
+    define("VAT_PERCENTAGE", $vat_percentage);
+} else {
+    define("VAT_PERCENTAGE", 0);
+}
+
+defined("APPLICATION_LOAD_WEBINTERFACE") or define("APPLICATION_LOAD_WEBINTERFACE", true);
+if (APPLICATION_LOAD_WEBINTERFACE) {
+    require_once "init_webinterface.inc.php";
+}

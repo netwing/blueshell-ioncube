@@ -1,52 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+
+$rtf=new RTF();
+
+$campi=array("<NOMINATIVO>"=>"Emanuele Deserti",
+			 "<INDIRIZZO>"=>"Via William Bertazzini, 10",
+			 "<CAP>"=>"44030",
+			 "<CITTA>"=>"Pontegradella",
+			 "<PROVINCIA>"=>"Ferrara",
+			 "<NUMERO_DOCUMENTO>"=>"935 F",
+			 "<DATA>"=>date("d-m-Y",time()),
+			 "<TIPO_DOCUMENTO>"=>"Fattura",
+			 "<CONDIZIONI_PAGAMENTO>"=>"Rimessa Diretta",
+			 "<CODICE_FISCALE>"=>"DSRMNL79R03D548A",
+			 "<PARTITA_IVA>"=>"012345678901",
+			 "<ALIQUOTA>"=>"21 %",
+			 "<IMPONIBILE>"=>"2000,00",
+			 "<IMPOSTA>"=>"400,00",
+			 "<TOTALE>"=>"2400,00",
+			 "<SPESE_TRASPORTO>"=>"100,00",
+			 "<SPESE_INCASSO>"=>"100,00",
+			 "<BOLLI>"=>"50,00",
+			 "<TOTALE_EURO>"=>"2650,00"
+			);
+$righe_fattura=array(0=>array("DESCRIZIONE","U","Q","LISTINO","SCONTO","TOTALE","IVA"),
+					 1=>array("DESCRIZIONE"=>"Ormeggio annuale dal 07/12/2004 al 06/12/2004 su pontile A/2","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
+					 2=>array("DESCRIZIONE"=>"BVeta","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
+					 3=>array("DESCRIZIONE"=>"gamma","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
+					 4=>array("DESCRIZIONE"=>"delta","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50"),
+					 5=>array("DESCRIZIONE"=>"omega","U"=>"anno","Q"=>"1","LISTINO"=>"2572,50","SCONTO"=>"","TOTALE"=>"3400,00","IVA"=>"512,50")
+					 );
+
+for ($i=1;$i<=9;$i++)
+{
+
+	if (array_key_exists($i,$righe_fattura) and count($righe_fattura[$i])>0)
+	{
+		foreach ($righe_fattura[$i] as $k=>$v)
+		{
+			$key="<".$k.$i.">";
+			$campi[$key]=$v;
+		}
+	}
+	else
+	{
+		foreach ($righe_fattura[0] as $k)
+		{
+			$key="<".$k.$i.">";
+			$campi[$key]="";
+		}
+	}
+}
+
+//print_r($campi);
+
+$chiavi=array_keys($campi);
+$valori=array_values($campi);
+$rtf=new RTF();
+$rtf->carica_template("template/fattura.rtf");
+$rtf->rtf_singolo($chiavi,$valori);
+// echo $rtf->contenuto_finale;
+$rtf->output("Fattura.doc");
 ?>
-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
-DK7f4OyUMk/bzVYLMAPEBg0DqxtLxPvN

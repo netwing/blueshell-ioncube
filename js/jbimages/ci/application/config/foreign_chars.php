@@ -1,33 +1,64 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/*
+| -------------------------------------------------------------------
+| Foreign Characters
+| -------------------------------------------------------------------
+| This file contains an array of foreign characters for transliteration
+| conversion used by the Text helper
+|
+*/
+$foreign_characters = array(
+	'/ä|æ|ǽ/' => 'ae',
+	'/ö|œ/' => 'oe',
+	'/ü/' => 'ue',
+	'/Ä/' => 'Ae',
+	'/Ü/' => 'Ue',
+	'/Ö/' => 'Oe',
+	'/À|Á|Â|Ã|Ä|Å|Ǻ|Ā|Ă|Ą|Ǎ/' => 'A',
+	'/à|á|â|ã|å|ǻ|ā|ă|ą|ǎ|ª/' => 'a',
+	'/Ç|Ć|Ĉ|Ċ|Č/' => 'C',
+	'/ç|ć|ĉ|ċ|č/' => 'c',
+	'/Ð|Ď|Đ/' => 'D',
+	'/ð|ď|đ/' => 'd',
+	'/È|É|Ê|Ë|Ē|Ĕ|Ė|Ę|Ě/' => 'E',
+	'/è|é|ê|ë|ē|ĕ|ė|ę|ě/' => 'e',
+	'/Ĝ|Ğ|Ġ|Ģ/' => 'G',
+	'/ĝ|ğ|ġ|ģ/' => 'g',
+	'/Ĥ|Ħ/' => 'H',
+	'/ĥ|ħ/' => 'h',
+	'/Ì|Í|Î|Ï|Ĩ|Ī|Ĭ|Ǐ|Į|İ/' => 'I',
+	'/ì|í|î|ï|ĩ|ī|ĭ|ǐ|į|ı/' => 'i',
+	'/Ĵ/' => 'J',
+	'/ĵ/' => 'j',
+	'/Ķ/' => 'K',
+	'/ķ/' => 'k',
+	'/Ĺ|Ļ|Ľ|Ŀ|Ł/' => 'L',
+	'/ĺ|ļ|ľ|ŀ|ł/' => 'l',
+	'/Ñ|Ń|Ņ|Ň/' => 'N',
+	'/ñ|ń|ņ|ň|ŉ/' => 'n',
+	'/Ò|Ó|Ô|Õ|Ō|Ŏ|Ǒ|Ő|Ơ|Ø|Ǿ/' => 'O',
+	'/ò|ó|ô|õ|ō|ŏ|ǒ|ő|ơ|ø|ǿ|º/' => 'o',
+	'/Ŕ|Ŗ|Ř/' => 'R',
+	'/ŕ|ŗ|ř/' => 'r',
+	'/Ś|Ŝ|Ş|Š/' => 'S',
+	'/ś|ŝ|ş|š|ſ/' => 's',
+	'/Ţ|Ť|Ŧ/' => 'T',
+	'/ţ|ť|ŧ/' => 't',
+	'/Ù|Ú|Û|Ũ|Ū|Ŭ|Ů|Ű|Ų|Ư|Ǔ|Ǖ|Ǘ|Ǚ|Ǜ/' => 'U',
+	'/ù|ú|û|ũ|ū|ŭ|ů|ű|ų|ư|ǔ|ǖ|ǘ|ǚ|ǜ/' => 'u',
+	'/Ý|Ÿ|Ŷ/' => 'Y',
+	'/ý|ÿ|ŷ/' => 'y',
+	'/Ŵ/' => 'W',
+	'/ŵ/' => 'w',
+	'/Ź|Ż|Ž/' => 'Z',
+	'/ź|ż|ž/' => 'z',
+	'/Æ|Ǽ/' => 'AE',
+	'/ß/'=> 'ss',
+	'/Ĳ/' => 'IJ',
+	'/ĳ/' => 'ij',
+	'/Œ/' => 'OE',
+	'/ƒ/' => 'f'
+);
+
+/* End of file foreign_chars.php */
+/* Location: ./application/config/foreign_chars.php */

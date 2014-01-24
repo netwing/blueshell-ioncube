@@ -1,77 +1,169 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class ContractTypeController extends Controller
+{
+	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+	public $layout='//layouts/column2';
+
+	/**
+	 * @var string the detault page title
+	 */
+	public $pageTitle = 'contractType';
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		// RBAC access control
+        return array(
+            array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('admin:contract:read')),
+            array('allow', 'actions' => array('create'), 'roles' => array('admin:contract:create')),
+            array('allow', 'actions' => array('update'), 'roles' => array('admin:contract:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('admin:contract:delete')),
+            array('deny', 'users'=>array('*')),
+        );
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreate()
+	{
+		$model=new ContractType;
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['ContractType']))
+		{
+			$model->attributes=$_POST['ContractType'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->contratto_tipo_id));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['ContractType']))
+		{
+			$model->attributes=$_POST['ContractType'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->contratto_tipo_id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDelete($id)
+	{
+		$this->loadModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$this->redirect(array('admin'));
+		$dataProvider=new CActiveDataProvider('ContractType');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new ContractType('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['ContractType']))
+			$model->attributes=$_GET['ContractType'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 * @param integer $id the ID of the model to be loaded
+	 * @return ContractType the loaded model
+	 * @throws CHttpException
+	 */
+	public function loadModel($id)
+	{
+		$model=ContractType::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+	/**
+	 * Performs the AJAX validation.
+	 * @param ContractType $model the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='contract-type-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
+}

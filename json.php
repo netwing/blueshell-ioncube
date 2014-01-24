@@ -1,244 +1,358 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-XaHrWjWI2QBR6YK0zPkoRZPyvm==
+<?php
+define("APPLICATION_LOAD_WEBINTERFACE", false);
+
+require_once "config.inc.php";
+$blue->autentica_utente("principale", "R");
+
+$json = array();
+if (!array_key_exists('s', $_GET)) {
+    $_GET['s'] = null;
+}
+
+if ($_GET['s'] == 'clients') {
+
+    // get results count
+    $sql = "SELECT COUNT(*) AS total
+            FROM {{clienti}} 
+            WHERE cliente_nominativo LIKE :search 
+            OR cliente_nome LIKE :search 
+            OR cliente_cognome LIKE :search";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':search', '%' . $_GET['q'] . '%', PDO::PARAM_STR);
+    $total = $command->queryScalar();
+
+    // get real results
+    $sql = "SELECT *
+            FROM {{clienti}} 
+            WHERE cliente_nominativo LIKE :search 
+            OR cliente_nome LIKE :search 
+            OR cliente_cognome LIKE :search 
+            LIMIT :start, :limit";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':search', '%' . $_GET['q'] . '%', PDO::PARAM_STR);
+    $command->bindValue(':limit', intval($_GET['page_limit']), PDO::PARAM_INT);
+    $command->bindValue(':start', intval(($_GET['page']-1)*10), PDO::PARAM_INT);
+    $rows = $command->queryAll();
+    $array = array();
+    foreach ($rows as $c) {
+        if (array_key_exists('format', $_GET)) {
+            if ($_GET['format'] == 'select2') {
+                $array[] = array(
+                    'id' => $c['cliente_id'], 
+                    'text' => "<strong>" . $c['cliente_nominativo'] . "</strong> (" . $c['cliente_nome'] . " " . $c['cliente_cognome'] . ")"
+                );
+            }
+        } else {
+            $array[] = $c;
+        }
+    }
+    
+    $json = new StdClass();
+    $json->total = $total;
+    $json->results = $array;
+}
+
+if ($_GET['s'] == 'client') {
+
+    // get real results
+    $sql = "SELECT *
+            FROM {{clienti}} 
+            WHERE cliente_id = :cliente_id";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':cliente_id', intval($_GET['id']), PDO::PARAM_INT);
+    $row = $command->queryRow();
+
+    if (array_key_exists('format', $_GET)) {
+        if ($_GET['format'] == 'select2') {
+            $json = array(
+                'id' => $row['cliente_id'], 
+                'text' => "<strong>" . $row['cliente_nominativo'] . "</strong> (" . $row['cliente_nome'] . " " . $row['cliente_cognome'] . ")"
+            );
+        }
+    } else {
+        $json = $row;
+
+        // get real results
+        $elenco_nazioni = $blue->elenco_nazioni();
+        $json['cliente_nazione_nome'] = $elenco_nazioni[$row['country']];
+
+    }
+
+}
+
+if ($_GET['s'] == 'client_vectors') {
+    // get real results
+    $sql = "SELECT *
+            FROM {{barche}} 
+            WHERE barca_proprietario = :barca_proprietario
+            ORDER BY barca_nome ASC";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':barca_proprietario', $_GET['client'], PDO::PARAM_INT);
+    $rows = $command->queryAll();
+    $array = array();
+    if (array_key_exists('first_null', $_GET)) {
+        $array = array(array('id' => 0, 'text' => Yii::t('app', 'Not available or not needed')));
+    }
+    foreach ($rows as $c) {
+        if (array_key_exists('format', $_GET)) {
+            if ($_GET['format'] == 'select2') {
+                $array[] = array(
+                    'id' => $c['barca_id'], 
+                    'text' => "<strong>" . $c['barca_nome'] . "</strong>"
+                );
+            }
+        } else {
+            $array[] = $c;
+        }
+    }
+    
+    $json = new StdClass();
+    $json->results = $array;
+
+}
+
+if ($_GET['s'] == 'vector') {
+
+    // get real results
+    $sql = "SELECT *
+            FROM {{barche}} 
+            WHERE barca_id = :barca_id";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':barca_id', intval($_GET['id']), PDO::PARAM_INT);
+    $row = $command->queryRow();
+
+    if (array_key_exists('format', $_GET)) {
+        if ($_GET['format'] == 'select2') {
+            $json = array(
+                'id' => $row['barca_id'], 
+                'text' => "<strong>" . $row['barca_nome'] . "</strong>",
+            );
+        }
+    } else {
+        $json = $row;
+    }
+
+}
+
+
+if ($_GET['s'] == 'resources') {
+    // get real results
+    $sql = "SELECT posto_barca_id,pontile_codice,posto_barca_numero 
+            FROM blue_posti_barca,blue_pontili 
+            WHERE pontile_id = posto_barca_pontile AND posto_barca_dimensioni = :posto_barca_dimensioni 
+            AND posto_barca_disponibile='1' ORDER BY posto_barca_pontile ASC, posto_barca_numero ASC";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':posto_barca_dimensioni', $_GET['dimension'], PDO::PARAM_INT);
+    $rows = $command->queryAll();
+    $array = array();
+    foreach ($rows as $row) {
+        $r = array(
+            'posto_barca_id' => $row['posto_barca_id'],
+            'posto_barca'    => $row['pontile_codice'] . $row['posto_barca_numero'],
+        );
+        $array[] = $r;
+    }
+    $json = $array;
+}
+
+if ($_GET['s'] == 'resources_prices') {
+
+    $anno_attuale = date('Y', time());
+    $sql = "SELECT costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale 
+            FROM blue_listini_posti_barca 
+            WHERE listino_posto_barca_dimensione = :listino_posto_barca_dimensione 
+            AND listino_posto_barca_anno = :anno";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':listino_posto_barca_dimensione', $_GET['dimension'], PDO::PARAM_INT);
+    $command->bindValue(':anno', $anno_attuale, PDO::PARAM_INT);
+    $rows = $command->queryAll();
+    $row = array_shift($rows);
+
+    if (is_array($row)) {
+        $row["costo_giornaliero"] = array('value' => $row["costo_giornaliero"], 'text' => "Giornaliero: " . $row['costo_giornaliero']);
+        $row["costo_e1"] = array('value' => $row["costo_e1"], 'text' => "Alta stagione 1 settimana: " . $row['costo_e1']);
+        $row["costo_e2"] = array('value' => $row["costo_e2"], 'text' => "Alta stagione 2 settimane: " . $row['costo_e2']);
+        $row["costo_em"] = array('value' => $row["costo_em"], 'text' => "Alta stagione mensile: " . $row['costo_em']);
+        $row["costo_es"] = array('value' => $row["costo_es"], 'text' => "Alta stagione stagionale: " . $row['costo_es']);
+        $row["costo_i1"] = array('value' => $row["costo_i1"], 'text' => "Bassa stagione 1 settimana: " . $row['costo_i1']);
+        $row["costo_i2"] = array('value' => $row["costo_i2"], 'text' => "Bassa stagione 2 settimane: " . $row['costo_i2']);
+        $row["costo_im"] = array('value' => $row["costo_im"], 'text' => "Basta stagione mensile: " . $row['costo_im']);
+        $row["costo_is"] = array('value' => $row["costo_is"], 'text' => "Basta stagione stagionale: " . $row['costo_is']);
+        $row["costo_annuale"] = array('value' => $row["costo_annuale"], 'text' => "Annuale: " . $row['costo_annuale']);
+    }
+
+    $json['prices_current_year'] = $row;
+
+    $anno_successivo = $anno_attuale + 1;
+    $sql = "SELECT costo_giornaliero,costo_e1,costo_e2,costo_em,costo_es,costo_i1,costo_i2,costo_im,costo_is,costo_annuale 
+            FROM blue_listini_posti_barca 
+            WHERE listino_posto_barca_dimensione = :listino_posto_barca_dimensione 
+            AND listino_posto_barca_anno = :anno";
+    $command = Yii::app()->db->createCommand($sql);
+    $command->bindValue(':listino_posto_barca_dimensione', $_GET['dimension'], PDO::PARAM_INT);
+    $command->bindValue(':anno', $anno_successivo, PDO::PARAM_INT);
+    $rows = $command->queryAll();
+    $row = array_shift($rows);
+    if (is_array($row)) {
+        $row["costo_giornaliero"] = array('value' => $row["costo_giornaliero"], 'text' => "Giornaliero: " . $row['costo_giornaliero']);
+        $row["costo_e1"] = array('value' => $row["costo_e1"], 'text' => "Alta stagione 1 settimana: " . $row['costo_e1']);
+        $row["costo_e2"] = array('value' => $row["costo_e2"], 'text' => "Alta stagione 2 settimane: " . $row['costo_e2']);
+        $row["costo_em"] = array('value' => $row["costo_em"], 'text' => "Alta stagione mensile: " . $row['costo_em']);
+        $row["costo_es"] = array('value' => $row["costo_es"], 'text' => "Alta stagione stagionale: " . $row['costo_es']);
+        $row["costo_i1"] = array('value' => $row["costo_i1"], 'text' => "Bassa stagione 1 settimana: " . $row['costo_i1']);
+        $row["costo_i2"] = array('value' => $row["costo_i2"], 'text' => "Bassa stagione 2 settimane: " . $row['costo_i2']);
+        $row["costo_im"] = array('value' => $row["costo_im"], 'text' => "Basta stagione mensile: " . $row['costo_im']);
+        $row["costo_is"] = array('value' => $row["costo_is"], 'text' => "Basta stagione stagionale: " . $row['costo_is']);
+        $row["costo_annuale"] = array('value' => $row["costo_annuale"], 'text' => "Annuale: " . $row['costo_annuale']);
+    }
+
+    $json['prices_next_year'] = $row;
+
+}
+
+if ($_GET['s'] == 'resource_status') {
+
+    $pb = intval($_GET['resource']);
+    
+    $fine = strftime("%Y-%m-%d", time());
+    if (array_key_exists('dal', $_GET)) {
+        if (is_string($_GET['dal'])) {
+            $fine = $_GET['dal'];
+        }
+    }
+    
+    $inizio = strftime("%Y-%m-%d", time());
+    if (array_key_exists('al', $_GET)) {
+        if (is_string($_GET['al'])) {
+            $inizio = $_GET['al'];
+        }
+    }
+
+    $res = $sql->select_query("SELECT posto_barca_proprietario,posto_barca_proprietario_data,posto_barca_gestore,posto_barca_gestore_data,posto_barca_gestore_data_fine FROM blue_posti_barca WHERE posto_barca_id='".$pb."'");
+    $prop_id = mysql_result($res,0,'posto_barca_proprietario');
+    $proprietario_data = mysql_result($res,0,'posto_barca_proprietario_data');
+    $prop=$sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$prop_id."'");
+    $proprietario=mysql_result($prop,0,'cliente_nominativo');
+    $json['owner'] = Yii::t('app', 'Owner') . ": <strong>" . $proprietario . "</strong> " . Yii::t('app', 'From') . " <strong>" . Yii::app()->format->formatDate($proprietario_data) . "</strong>";
+
+    $gest_dal = mysql_result($res, 0, 'posto_barca_gestore_data');
+    $gest_al = mysql_result($res, 0, 'posto_barca_gestore_data_fine');
+    $gest_id = mysql_result($res, 0, 'posto_barca_gestore');
+    $gest = $sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$gest_id."'");
+    $gestore=mysql_result($gest, 0, 'cliente_nominativo');
+
+    $json['manager'] = Yii::t('app', 'Manager') . ": <strong>" . $gestore . "</strong> " . Yii::t('app', 'From') . " <strong>" . Yii::app()->format->formatDate($gest_dal) . "</strong> ";
+    if ($gest_al != '0000-00-00') {
+        $json['manager'].= Yii::t('app', 'To')  . " <strong>" . Yii::app()->format->formatDate($gest_al) . "</strong>";
+    }
+    
+    $query = "SELECT contratto_id,contratto_anagrafica2,contratto_inizio,contratto_fine,contratto_tipo FROM blue_contratti WHERE contratto_posto_barca='".$pb."' AND (contratto_tipo=1 OR contratto_tipo=4 OR contratto_tipo=11) AND (contratto_inizio<='".$fine."' AND contratto_fine>='".$inizio."')";
+    $res=$sql->select_query($query);
+    $contratti='';
+    while ($r = mysql_fetch_array($res)) {
+        $dal = $r['contratto_inizio'];
+        $al = $r['contratto_fine'];
+        $rescli = $sql->select_query("SELECT cliente_nominativo FROM blue_clienti WHERE cliente_id='".$r['contratto_anagrafica2']."'");
+        $cli = mysql_result($rescli,0,'cliente_nominativo');
+        $contratti.= Yii::t('app', 'Current contract') . ' <a href="riepilogo.php?id=' . $r['contratto_id'] . '">' . $cli . '</a> (' . Yii::app()->format->formatDate($dal) . " - " . Yii::app()->format->formatDate($al) . ")";
+    }
+
+    $json['contract'] = $contratti;
+
+}
+
+if ($_GET['s'] == 'products') {
+
+    // get results count
+    $criteria = new CDbCriteria;
+    $criteria->compare('sku', $_GET['q'], true, 'OR');
+    $criteria->compare('name', $_GET['q'], true, 'OR');
+    require_once "app/protected/modules/admin/models/Product.php";
+    $total = Product::model()->count($criteria);
+
+    $criteria->limit = intval($_GET['page_limit']);
+    $criteria->offset = intval(($_GET['page']-1)*$criteria->limit);
+    $rows = Product::model()->findAll($criteria);
+
+    $array = array();
+    foreach ($rows as $c) {
+        if (array_key_exists('format', $_GET)) {
+            if ($_GET['format'] == 'select2') {
+                $array[] = array(
+                    'id' => $c->id, 
+                    'text' => "<strong>" . $c->sku . "</strong> " . $c->name,
+                );
+            }
+        } else {
+            $array[] = $c;
+        }
+    }
+    
+    $json = new StdClass();
+    $json->total = $total;
+    $json->results = $array;
+}
+
+if ($_GET['s'] == 'product') {
+
+    require_once "app/protected/modules/admin/models/Product.php";
+    $row = Product::model()->findByPk(intval($_GET['id']));
+
+    if (array_key_exists('format', $_GET)) {
+        if ($_GET['format'] == 'select2') {
+            $json = array(
+                'id' => $row->id, 
+                'text' => "<strong>" . $row->sku . "</strong> " . $row->name,
+            );
+        }
+    } else {
+        $json = $row;
+    }
+
+}
+
+if ($_GET['s'] == 'productDetail') {
+
+    require_once "app/protected/modules/admin/models/Product.php";
+    $row = Product::model()->findByPk(intval($_GET['id']));
+    $json = $row->attributes;
+    
+}
+
+if ($_GET['s'] == 'builder') {
+
+    require_once "app/protected/modules/admin/models/Vector.php";
+    $models = Vector::model()->findAll(array(
+        'select'=>'builder',
+        'distinct'=>true,
+        'condition' => "builder LIKE '%" . $_GET['term'] . "%'",
+    ));
+    foreach ($models as $model) {
+        $json[] = $model->builder;
+    }
+    
+}
+
+if ($_GET['s'] == 'insuranceCompany') {
+
+    require_once "app/protected/modules/admin/models/Vector.php";
+    $models = Vector::model()->findAll(array(
+        'select'=>'insurance_company',
+        'distinct'=>true,
+        'condition' => "insurance_company LIKE '%" . $_GET['term'] . "%'",
+    ));
+    foreach ($models as $model) {
+        $json[] = $model->insurance_company;
+    }
+
+}
+
+
+
+if ($_GET['s'] == null) {
+    $json = array('error' => 'You should pass at least one parameter: "s" with the name of the service you want to use');
+}
+
+header("Content-type: application/json");
+echo json_encode($json);
+Yii::app()->end();

@@ -1,76 +1,190 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class PresenceController extends Controller
+{
+	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+	public $layout='//layouts/column2';
+
+	/**
+	 * @var string the detault page title
+	 */
+	public $pageTitle = 'presence';
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		// RBAC access control
+        return array(
+            array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('admin:presence:read')),
+            array('allow', 'actions' => array('create'), 'roles' => array('admin:presence:create')),
+            array('allow', 'actions' => array('update'), 'roles' => array('admin:presence:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('admin:presence:delete')),
+            array('deny', 'users'=>array('*')),
+        );
+
+		// Simple access control list
+		/*
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+		*/
+
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreate()
+	{
+		$model=new Presence;
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Presence']))
+		{
+			$model->attributes=$_POST['Presence'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->presenza_id));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Presence']))
+		{
+			$model->attributes=$_POST['Presence'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->presenza_id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDelete($id)
+	{
+		$this->loadModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$dataProvider=new CActiveDataProvider('Presence');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new Presence('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Presence']))
+			$model->attributes=$_GET['Presence'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 * @param integer $id the ID of the model to be loaded
+	 * @return Presence the loaded model
+	 * @throws CHttpException
+	 */
+	public function loadModel($id)
+	{
+		$model=Presence::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+	/**
+	 * Performs the AJAX validation.
+	 * @param Presence $model the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='presence-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
+}

@@ -1,53 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-1BLVe0Lzl2d5Pu3kIxLQ2h4G3gcW
+<?php
+require_once("config.inc.php");
+if (count($_POST) > 0)
+{
+    if ($_POST['username']!="" and $_POST['password']!="")
+    {
+        $select="SELECT utente_id,utente_username,utente_nominativo,utente_accesso_principale,utente_accesso_contratti,utente_accesso_anagrafica,utente_accesso_imbarcazioni,utente_accesso_posti_barca,utente_accesso_documenti,utente_accesso_fatture,utente_accesso_template,utente_accesso_listini,utente_accesso_preferenze FROM ".$tabelle['utenti']." WHERE utente_username='".$_POST['username']."' AND utente_password='".md5($_POST['password'])."'";
+        $result=$sql->select_query($select);
+        if ($sql->select_num_rows==1)
+        {
+            $row=mysql_fetch_array($result);
+            $_SESSION['utente']=array();
+            $_SESSION['utente']['utente_id']=$row['utente_id'];
+            $_SESSION['utente']['utente_username'] = $row['utente_username'];
+            $_SESSION['utente']['utente_nominativo'] = $row['utente_nominativo'];
+            $_SESSION['utente']['principale']=$row['utente_accesso_principale'];
+            $_SESSION['utente']['contratti']=$row['utente_accesso_contratti'];
+            $_SESSION['utente']['anagrafica']=$row['utente_accesso_anagrafica'];
+            $_SESSION['utente']['imbarcazioni']=$row['utente_accesso_imbarcazioni'];
+            $_SESSION['utente']['posti_barca']=$row['utente_accesso_posti_barca'];
+            $_SESSION['utente']['documenti']=$row['utente_accesso_documenti'];
+            $_SESSION['utente']['fatture']=$row['utente_accesso_fatture'];
+            $_SESSION['utente']['template']=$row['utente_accesso_template'];
+            $_SESSION['utente']['listini']=$row['utente_accesso_listini'];
+            $_SESSION['utente']['preferenze']=$row['utente_accesso_preferenze'];
+            Yii::app()->user->setFlash('success', Yii::t('app', 'Login successful, welcome back.'));
+            header("Location:".$_GET['ritorno']);
+            exit;
+        } else {
+            Yii::app()->user->setFlash('danger', Yii::t('app', 'Username not found or invalid password.'));
+            header("Location:login.php?ritorno=" . $_GET['ritorno']);
+            exit;    
+        }
+    }
+}
+if (array_key_exists("logout",$_GET))
+{
+    unset($_SESSION['utente']);
+    session_destroy();
+    header("Location:index.php");
+    exit;
+}
+
+if (!array_key_exists('ritorno', $_GET)) {
+    header("Location:login.php?ritorno=index.php");
+    exit;
+}
+
+require_once "views/site/login.php";

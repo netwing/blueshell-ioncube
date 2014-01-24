@@ -1,62 +1,129 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * This is the model class for table "{{product_group}}".
+ *
+ * The followings are the available columns in table '{{product_group}}':
+ * @property string $id
+ * @property string $name
+ * @property string $description
+ * @property integer $enabled
+ * @property string $sort_order
+ * @property string $create_time
+ * @property string $update_time
+ *
+ * The followings are the available model relations:
+ * @property Product[] $products
+ */
+class BaseProductGroup extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{product_group}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('name', 'required'),
+			array('enabled', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>255),
+			array('sort_order', 'length', 'max'=>11),
+			array('description, create_time, update_time', 'safe'),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id, name, description, enabled, sort_order, create_time, update_time', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+			'products' => array(self::HAS_MANY, 'Product', 'group_id'),
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => Yii::t('app', 'ID'),
+			'name' => Yii::t('app', 'Name'),
+			'description' => Yii::t('app', 'Description'),
+			'enabled' => Yii::t('app', 'Enabled'),
+			'sort_order' => Yii::t('app', 'Sort Order'),
+			'create_time' => Yii::t('app', 'Create Time'),
+			'update_time' => Yii::t('app', 'Update Time'),
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('description',$this->description,true);
+		$criteria->compare('enabled',$this->enabled);
+		$criteria->compare('sort_order',$this->sort_order,true);
+		$criteria->compare('create_time',$this->create_time,true);
+		$criteria->compare('update_time',$this->update_time,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return ProductGroup the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * Behavior for timestamp
+	 */
+	public function behaviors(){
+		return array(
+			'CTimestampBehavior' => array(
+				'class' => 'zii.behaviors.CTimestampBehavior',
+				// 'createAttribute' => 'create_time',
+				// 'updateAttribute' => 'update_time',
+			)
+		);
+	}
+}

@@ -1,31 +1,39 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ContractTypeController */
+/* @var $model ContractType */
+
+$this->pageTitle = Yii::t('app', 'Update Contract Types');
+
+$this->breadcrumbs=array(
+	'Contract Types'=>array('index'),
+	$model->contratto_tipo_id,
+);
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage ContractType'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Create ContractType'), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update ContractType'), 'url'=>array('update', 'id'=>$model->contratto_tipo_id)),
+	array('label'=>Yii::t('app', 'Delete ContractType'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->contratto_tipo_id),'confirm'=>'Are you sure you want to delete this item?')),
+);
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'contratto_tipo_nome' => array(
+            'label' => $model->getAttributeLabel('contratto_tipo_nome'),
+            'value' => $model,
+            'type'  => 'textColor',
+		),
+		'prefix',
+		'rent:booleanString',
+		'transit:booleanString',
+		'sell:booleanString',
+		'option:booleanString',
+		'manage:booleanString',
+		'reservation:booleanString',
+		'sort_order',
+		'create_time:datetime',
+		'update_time:datetime',
+	),
+)); ?>

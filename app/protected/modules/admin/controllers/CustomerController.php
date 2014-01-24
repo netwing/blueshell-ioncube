@@ -1,116 +1,280 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPv4ARU8xnrNMrilumHTqkmFXTpT7iYYzsOwi9dO/8OTlRAyt+O97p/pXJS2BBluIVmv2jxjs
-b8Kmg5K22IViRbpNm90ma8FrZVClymA5+/WiTi2x3CoUH9h2iqrOB3jv5meBplZ1RCuVlaC7E+Bw
-W+PfmQvxuengiDjCihZ2iQoCiJLT8edUlT/XbRLSPQ9ngXuLLIqRJPn8bLWjV/+UzPxO1nY06zKx
-CdAZgAOQAj/GkMmgWatG3SyoJzIxHGvmwA6cEHFtXE5ahQvDQ/rEuS5sfct+kBzk/wrah8FVNTTJ
-GFRd2YgV1/g+p1VswoZKxG8mSD+H75us7j4xP5Ob5lPIy/uA1bojyVoqUMnq+YoGlrLR9eBl/ViW
-w4vvovAy8HgESJvvmENbR5k2hFhGKa8/nEM4N+ik7KhL4Qy9hF3L+zCeLXV8dkk8y4+GGx4MlUVb
-wxwbAsenXT9deh99P7bP/WOODT52S6ITDYdrL1FmUF4kpki/SDeK6rftqRsQ5EVloRiZYHSof6f4
-n6He8eVKXAJXDAEovQesOR5ogYsU0JzFSEFmG8mvegvGfzSUiIKjE1BjMLWFrybhDJFpICQFM95s
-1oopr0+zmwEbw8byMmv1c1AjPYeKT4QIGQbxxLoynVhtRWGWuhK7qo+Ao3D5hlop9A7nbkU8nK6E
-QHmpMgAk57TPrmWWoLfhvontzjLSoyFTwio+jK4+PDcE0RTxBrkL/c2QIZabOK5I1GIW9H6m04Ei
-aouFf9WML7EPBQhByirB4TnV1Qj8weNE42Qx8JhsKKVKHflwA/g9bcN5Ij0+IuNtgNpwvY3cxG9y
-33VVqYtJtkQgbC5b1r2/3jiKNaYo4wfIxlQUd6iWzlioyts8ZxXFrJCXwQaTvko3coS58xU/QDqp
-k/8AW0bguIQViqvKVGmE1QCLGqW/6pAkg6ivrqbJVpV/kbA4SPPpKAzixBFq0lr9UEcTy67CItVz
-79KPRMbGtVIi0J029w3MFYxLLEOY8qB5rJHZU5aF3DMvU74SzLAUdIJR3WRu10I8O6XZty0uN2+F
-yQihISevqdx2sCpM/4v9g9Bq3wwZNA75d/JGKwWCAze0PtkcxpxbY5MiePL2kT0Y1h80Faov5vGr
-+Mj1tui5JqTL+7RvSeY0H8ZZ+l4L6NTvkltVmvqNjY8nlKiEon07OVMs4gdI9TG48LIKfrN7OuM4
-bl7NQpRUdsQlkeGppdaDTtUkdR6sqOzm3p+xHbLMm/GINKCmng1HEfCKCGu13K+q14rUHIZ/MCL+
-McUUrn9GNIXUt9abq4Y1s/IhXng0QkxzUfn5gx/jvj4NlPhNU6lXqu/vpFfEQPrVFo7I+9ZKC3Mn
-APmD3zOA5kqsYf9shDi+UaIbDcVejpLnBOLhX/bnYVwnJNy+r2qGz2sFdFrSECRtfyJ2IqJkrgpr
-OD12gmfUuJIDrbaQqQv8OT19m4+RKZ2nEGsx6hWljP2rru8W/jGU5j6JN0Qd4/YOxRlpJnQjLX2H
-ZTTHVSpkKocnBQVaWAQ4duAiCvsuUkmw8dEQ+86hA2MRGCTJvrXX/OqLVO7UJWfnq5/zOPVaOWIL
-mYlqWcGcEMh80jbktA6rSWJ1/q7bFU0PvIpBc99NYZZ/6yH3t1UxnMQdGePivxQedCSSDlKHyaTr
-FRSHZG30deOz6m9tTox/fd+0GTjdaHOCo0mL51leeY9NEc6LZYR4iaxjpg+svSh5DCWpy4Wc7YzD
-qYJNPSKzRl2L5uxxKSc3GgR8+2RqLOwPxb1diLzmKInZzVeU66t1/24X1Gkz5R53u1Krl9yUAaRa
-PTKlkPnCWs0kNVWt0YrdAi5sCx4cRFaENokXtsAXpxEFD94crxj7Rd7mjT6UpaUrrvjZE6gxS+V4
-oZ+aRbvDUPYSrAl9/Qoc/gJM50AZIC+6/RbPGdKvUQ7i/h5Pyrg6KrwCQBN75xv1wRJlDgJqfamq
-vj2ivMtc807UYRLLxC06Lr4NtvyjGsl83TPcCRWldSmwbjhFREBf/CDyU3UJ8cOVuxQF2sLnMPCo
-h55NvRps0dFplT0TITfkp12DzS8qVqT1Ari947lkCPDbPh0Km7DWlu33c8yE7YYKVaCV/LBmGej9
-+cdQneZUrfUHu918f/GGdNW56uu8AQZDVey6CuxgNevBUqWI2xU9j4mXBNOZpsUnfhUb+G1YaKC+
-2zdN9tUI3N2auXdqzP1/FXnh2XSfGZJ2MrXoEIILVoffx7gtU3eRMbozc2wdiEucBpxV4A3aKfXf
-xe81KoWMiTE2wN1ZlSyehQk9CgmkhG+bMNJ5cXVBpqsP9j9nXnpOO+rRqwDLvR0cbQYAYZQ5RzqG
-nDERzs1ZNP6azMg0wvgbwcBntQOg/nGL+0dnK5MkKACQk3BKe1KART172GYvOcmOOlx4r3AlZEFD
-tcC9LfmnOFyLUF96uj4wmihG7r9+0Grgr56z/E9RvAQCDi0Mn0rEfU0xPXE0cAKPw5DQcAibC0bx
-R+8NZaFudjDOAiYluvtjpYl3q4VxQzddYfioQdou55/5vN2Klbta0oGzlFQNUSHT+VOMHP4/j/xL
-49HMzeaCwitCCO7qROQAlzKjowhe3D4UWbDhpBwBtJXGNr/WKLmPrKSQVqnvE2s1SBp/ok1/xW/g
-HY39CNNSM545gXpWkEUEtozqwrIoXBj5B13po9D5LRHRlaHjQEnW+glD51ZM0QSH3ox/59PdTTEU
-/VeQ2YLVz6zG/05qMWLBuaTxApj1svGogv9cvjIrXEelM3YdZ1kJUBESg7sQHuSdjtN5TZJGJ2k9
-JwmzrwUnW/bQWcpL+Y2qkaEPsYjn8wlsGzAIR/asaRoywwe3l2eaxc9QmQQclAO/D+FOUQHkQigS
-JxgaGcw4WUsQu35ot00J4AzNTE9qfATug1L4YQ70PG37WsVJRQcNU27bgesLGhd9BsDbX8u8lmzm
-SVXouHIqHwEDjEEWPMHoaPytpd2ri4y0w+wX2LgbNxb/9tCsOXGXR88hMo/Hb9HdMhQV+tUAmFQ+
-ZuY3OpVDZkJXrigqZhQyKWt+YAVRDF+4YkUy5vArRVdn31fq8qsaLxxg3G0iFe64S0a5u6n0Qw8d
-itZLx7z2RfysAq/RFO5Trq0eR061tCnL0c2u6joq6b++V3r52Jw8/6n7c/hB72fCPEKDOt0NTxBt
-DbpY/nSrYKyBFc/ECc+9HAvdPOjDH2JGyyX42+m4GaWgc152skyl3V9RJY58t/wAYh1AyLZFyuME
-Ik+mYxN1fzMWdh6fprImLYM0nmGna3yMNEnADZ9cpFhYEU6vnrN2PxSri9Jn5PGRLU8NKszyTp2w
-mIng64P+yRfi/QR73nXkxBrB53GdLjSuui0N+Ge0R6WESpQcRBuovzbxKIc+UvfnbaKA82nZkTHM
-VlaH9w2tD99Yif9hg16ep4cAlup02EvMy4swYiLWOHfnhHsReqWxQ9qcgcdWUIHjyRZHN/8GkTti
-Jjji2HLCVGXtpsi8yAmmjlq/9RTeRIIsLDeEhjkgDywlFwM84D9ppRdOkSCnSLMFZZrswndeJAmX
-zbpUg0AlJLkYUycs8QI0TsWVdmOrVo66I/taaFOvE93QqRbdpkvJwX+exG9lqMoW0OW/EIFymJRv
-RnBRv2gzCxoMyJGKEGaGd6WA1uEOLCfrqKFneNLMhfaRT13tJlLqWpTYqotnVPS/YGq0b5DV9qAA
-chIayKtoQTiP8CXTIOPUI8RL4rYlKYBWqNQjyGr9IyPgpKUAkZJ9LDdQYCbp7Jr4lnK4bJ24Kfyf
-egm85UPtpaRCdW2H925DELZHgAuIWCVvfy9z50N+4QMY8RVewf57/rYk2LE3QqoOwywW4xaOIhEH
-HTWXAoGQ/rmTpDVKWmQmX6MOtCBDfDqpmWQx1OCnhwK21xdCMlxSn3L9E8jhg9aMq6CiM00zeXix
-M1Xokd/OG0UMat3S+9K5932x0XGsJx89BPjzoajVRZunvNEaVX1C3h5vccdzo7vxZsIudBY0tTDO
-EmVYGaUKfZ9vFvqXbB85DOmk3EKKyZXw5dNHH/CPT/ZG6xhZK6L9nieUyD26a2fblaozrY5HN7jx
-ccM9TthJQclplrYCIqPvAULzwoULB6wni7oNDV+leRBvYN+ixDxu1eDiUvppMxNyquhjWjYEculR
-VD3dtDKrT7LWuK710zZncq2Al4BjHrfNQSODYzDlk6Swc0pVNSg7UdeJJJBx7CUd0tG36Rb82rOF
-4km9p5ThWn1l62NMbbYKW4647Mdjuw7+XtwD65y2Nx+jhynLd5rYahnqV3dFmHoyyS3ybB3jfRAW
-Gv0JPfAUDiFzYYTMPoM0aRLHMWQaARtXJ8v0XK8zB+Zph7KjP7JotNypL8h0vvewfRPEAZxyYK6y
-6aJ+193RnrM4sWJ442LBWAYtn+4N5+NYFcAQ6oVzDArMgSMcrVzbbGnbUrGU5BIirPY7Bm24+GvP
-46hR8SZjlDkCdl5wUbceX5A4TBqqZf3kVze0lQJ3IyNijZLQZZZBQcHC47CaIqLeVgxjBP0zDdam
-zEjdcZbomhJHCqVdWFBNNxDso+J8lQsSx70fUSmtdOX2A4hnSEBYoiNDSqsf78uv/K6/gLfwuDvQ
-LRKPyXgK2dImqcfl7+xmtiwj8C+qckvBR+Soxv9RAjU+K+IY9UZSp8x0EuBwfUA+qdKwpXuk1YBk
-MQW2TQ/c6YLzzYah89g3Bej1cF6eqKEI4lrnHMIqSpaE+BTAuUYUvPUm4EgpfhyVS26mm7QGjRgZ
-vi5eUVorVNUfx8TPBB72mB6ysh33fGtWmKH43lNIPlnHnktUFpDQnNNOhBw51KoEo5TXbh/x4Li8
-PSd+kjWTc5nndrO40inaXqCj5QXc25b/An1pP6w2UR+nneIDp4oJBQHBEJcRTAzlGOh3GsYUicV+
-GCqAoPTiJlH610/hjqCWS6pt9asXEFgoX7M9nLCWTQ4fjcURl5fRVhxQlA7SSGtFagsvsEfvnUzP
-KRUtxbn1wHdN4H2tFZud41ZK8ygwsWNwtmIfMtdFKwF7Z6fUdNktZfjFCTQof52fjBsb4nMDZAuF
-NqOHIf/aSIEbeCv0FLec6h7EBbYD2sOUnGILEsy3+/+hQxHTA1wcKLc9+qJYr/Fo3k/GSDtTQk96
-J3UDVChMGvm/6obFCcBvTK1B5F8rVZGxReEJCp0kK8OSZpDwX08b4bsMr+KbcnQ9M0dGMJyB8oL8
-s5SPvG8TMIi7dnGQsQ6HE7JYTh1x3rRw73WYdcISur5a/LjYhcEaZGrmHf96rbo+QUbMU0dHTsLV
-hZkYbmqz1RppWlXYdxDkkOwhXTPL5dfviLmY5Cacy+Rlxq3ytnFnJKnH0ZxenFat9qfdFzrraqLZ
-T9IUnQftssNuNQMWgJ8OF/pWWVz2ZtA1+vJYDNS8b9looMEdfPU0rLPYNv/Zv+Y9CaB3Qq2oYk4v
-7F/q/L32bKbvyOlu7fdM6PJyuv9Fv9F1YxmcdYqt/qitfNhw1PqjqpKTqW6UPCecBgTEKzW/hTqi
-ztZrHoN2Zwjx/8MdnEOHZmyrDELenyPXeM+xSg4Ss5kG3qAGmV0LxSFlRdVcuPFYQtkJT03NVqWW
-M6SBN2dNkbNSjHI2zU6AlTl71tBUSh3Vst/1Yi1vic3XKY+hG0vfci/qjurE+z042W4kzi1AvrHa
-Y2jT3mxhfQawqt7XLPMg+YKj0VpMz83Kq0F4ieretGbKdMYzWQDcg5cdJIj/NhGGG/gG+1OzflPY
-zoZFSGoZ3XfUyM90IR4sTk7MmPDKxQJwkTxbfstUV/IQEkNrL7/9IumOty5ZiyuKPbnIzVoZep2B
-AoR/T5wlIjh4/rBMXK+o9YeK/qCYdWkqg8EAIzZNSAI+9AhFaT+sNleUwaTpeBHAWLla69VfA9tV
-Pi0f6DZGGIDbXuNKK55S5NFfCrATfmEJXlvsa/h0ftK5KixdYWfXICA5fMNPIDCvlwD1G5xLyvPM
-UtmwZRC1BNOGFkV9FUtTbxQJwH0VdbzHYcbcN0dzDvLnb2PrK67aZOIKkf17DPRJ0y9nnGf+pdTp
-abs7QjlyqEp/Qa5PHIMTODGvIrZIG9iaGegksOCr+MbW2Kvrio+mqKr99Z4wt2rMJLrarm6qhERy
-izTFkoNW/gBCOw0Wphzz5cDTdMu7dmy3w99yDKaTJYrWNPpTpIqjtJ2Etmcm/s4ND1FGvR+i0hsT
-ScPZzicopmuBOc7AdIQ3hCCdsdcE0pNHypA+s5MzoWx3LJJHJtNQ8nVAU2ucIyp1ZfiL8uYMSnz3
-5JJakac7fjEB5LVHUwkggavCfR6azegUdHNZbDAbSPWdgZZaKTu3bqIe1xjX7/cis/rCP3P6nzf+
-/yZlHCUbQnvDw7h1Y3CWPMH22JVvNLzulfMAXMX8vx9fE7L9VeJDrLz4HiGLxQfR90hNZd8ToycU
-xeDRTK8fgfXpr/n5gd/uRwMLfTOoo7484t+KajcBfUekYVnwLknW8KcOrS0Z+frbG87VUuMI05uA
-CdI+ObblHwKE1KoPnQSQhTiHTjCMOMXtgxqF9w5QquvPsI4k9VpJrBZGdTmBfyZD/wrZKWTX6qFs
-OJD4x7sP94vSbwww7+3eOtd4Lsc2ZzLjjov5x5CsAWKzOax0bS5W8WRrxzg7zBJ7HssOZNDmYIre
-A7LJ/8xRn3ZawRalxWU/SkPOW2XLreBeWlvyN7hA+DDG9nZphepJyINCbb3sHFDLpqEbQq1z/66t
-Me5eTzY6i8Ikfe+pnlmjseOFVSR+ZrDrcfgYBG9srwPnqu8bq49+AoT/tz9zSqn5Vg9ERGyxx+pz
-rkrFqjC+NpGeohcA251R+0SaLD+KUYLxxsAU1z74IZeu2vr654BNN0RGlFOeqRk5otqmjpqt4nrT
-acSKe4Hq7z9miHFy/i3NYritzx96SVC1tOoFUIDPLpD9b3fpoE5lyVTLRlSujye/+o8UGCc4Fw0w
-QSsDNq3Eszz26/M5wB22kphE9YoDuSxv3T8aPabvyc9urPcUulSIMthMiN+MyHxEMuxkCePY3HHl
-Z2ihUifdSgGXVnxxIyDMpywNIgSMNgGm6ybYf5Ks6YAPIWDJ1dHXSmmit9MWzuSwaLTdt5fcwnop
-qJxFLz7JkSsRfxxgqOrLHI+8ebgqXiY8jjI2x28d7VZR6LmmORwe5Lv1SbYilOR2W/fyVfAH+jyZ
-TdAMnFurLS+E+yUP5l+uPeN8G7UB8nzhXpSIe5QoV69zNkTRPebwC7MlVyBhotC0AHPmS9Qkonn3
-wMI1jq+y4NKNoo7Yx8jgU/C8++rb2FpLGQXMmG/4BlJ3mDevePcw2NbQ7a0so0NOz8nsK0qJkUDI
-PtsdXHvs++9YU7ijK4KJ/rqPtLJkXtxoGptMlot5InnAox985OdOx3zrtKZFV9yEoa+WuAuXKiAf
-ViYJewRFoEyBYzeEiYnym8q4XwTYL0r8yvTV8wAqGLsy1kmO5vpspFS0Jsb71KgDUd93pDfCO/uE
-VxfJQFyaXvTB1ghCbDhPW3PBLnmbzz0VGlBAgl/jRJlW5rG0Qb9eWEHHp9prPCg0gNwpmVaZ66yW
-i1PoaSEMmX3W2mQZ/3rghQDe/zXU+Z0px3SnKKRCAq1Ne9Q8Y+d3SLtOGLyPvYrJd9V1x5T000q2
-ckOdeZYXcG9fUi3NsAxZiehggE6gTDF6sXFpjGVhvkNykxoJAw0AEX6w7yUwh5Upd9TFP1lUOtAo
-O/vbYAQ/TdpC5+S7nxnAEJM3AF5tXuBkNRODSRDpjvZzRqJ14Ied1Y16yivzb1HGj0i51SvqFWnn
-QP18MxnXGqQNChng0u0l+PQ56v5qMp8qm1wpmjfkhHOeV7hNbDxkRe6KeXBupOcDjiglabGE35UA
-73a11tY+JiloU3fQ/79CLHyONFwqPKLNkt22C5+M/HpnMzyVcq+dUr2hdm1jEFtSyn2QXNCaks0l
-CLOLtK8S+lrEPtMh/G0UCBMRDtRaR77BpUFGR2YyQ9GXsHAfWikPOJlUDD0aZRHFhRTyAVXmg/8i
-U+VCr+r6azca/ChJ850LkANfNRn+TnlW0VKvU2xLAcHsD99O4sduogwNGeCswUEOBTRxPKzvImIx
-K8FoaL8Y2BLQi9a9K3w+++6FozH4zjDjrTIae2jclRNAQzCKH6B0bnyaQaDCNPp+4AQ4v2EE7IEn
-4/hK/fvxARXC2LgmdY7X6fwCq7JfzEfCskYPJH7JOk5bpA2dM+Tf9ya7BLfkXE9dwaO07yGFl9m4
-czDi1xPMFN8zpz4Ng4roR6W05j5+YEE+9ekq/i/6ikmbWrsOy9CcEy7Hv4o4V1cN9rM/9cYiS7bU
-A3rP8ZDAu648ImQCJEzLQhx9fFlq/f/mM+1ZpS1zq+X0m2aijmQum3bp6tS6xXLV0d0YKDOJQrJN
-jNKlMfPsv4oj/NPW8JvePeK+7smYwYmzm0j/MmAXnlMfqIXe00qMQg3dw8tuOXBJg/9M5DscAEhN
-WwCH5IriwAi+cKC6xxjjdr+hjJlRiFOnBIK=
+<?php
+
+class CustomerController extends Controller
+{
+	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+	public $layout='//layouts/column2';
+
+	/**
+	 * @var string the detault page title
+	 */
+	public $pageTitle = 'customer';
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		// RBAC access control
+        return array(
+            array('allow', 'actions' => array('index', 'view', 'admin', 'detail'), 'roles' => array('admin:customer:read')),
+            array('allow', 'actions' => array('create'), 'roles' => array('admin:customer:create')),
+            array('allow', 'actions' => array('update'), 'roles' => array('admin:customer:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('admin:customer:delete')),
+            array('allow', 'actions' => array('invoiceAll'), 'roles' => array('admin:invoice:create')),
+            array('deny', 'users'=>array('*')),
+        );
+
+		// Simple access control list
+		/*
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+		*/
+
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+
+	/**
+	 * Displays detailed contract, order, invoice and presence for customer
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionDetail($id)
+	{
+		// $this->layout = "//layouts/column1";
+		if (Yii::app()->request->getParam('reset', null) !== null) {
+			$this->redirect(array('detail', 'id' => $id));
+		}
+		$model = $this->loadModel($id);
+
+		$contract = new Contract("search");
+		$contract->unsetAttributes();
+		$contract->contratto_anagrafica2 = (int) $id;
+		// $contract->onYear(Yii::app()->request->getParam('year', null));
+		if(isset($_GET['Contract'])) {
+			$contract->attributes = $_GET['Contract'];
+		}
+
+		$order = new Order("search");
+		$order->unsetAttributes();
+		$order->customer_id = (int) $id;
+		// $order->onYear(Yii::app()->request->getParam('year', null));
+		if(isset($_GET['Order'])) {
+			$order->attributes = $_GET['Order'];
+		}
+
+		$invoice = new Invoice("search");
+		$invoice->unsetAttributes();
+		$invoice->customer_id = (int) $id;
+		// $invoice->onYear(Yii::app()->request->getParam('year', null));
+		if(isset($_GET['Invoice'])) {
+			$invoice->attributes = $_GET['Invoice'];
+		}
+
+		$presence = new Presence("search");
+		$presence->unsetAttributes();
+		$presence->presenza_cliente = (int) $id;
+		// $presence->onYear(Yii::app()->request->getParam('year', null));
+		if(isset($_GET['Presence'])) {
+			$presence->attributes = $_GET['Presence'];
+		}
+
+		$this->render('detail',array(
+			'model' 	=> $model,
+			'contract'	=> $contract,
+			'order'		=> $order,
+			'invoice'	=> $invoice,
+			'presence'	=> $presence,
+		));
+
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreate()
+	{
+		$model=new Customer;
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Customer']))
+		{
+			$model->attributes=$_POST['Customer'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->cliente_id));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Customer']))
+		{
+			$model->attributes=$_POST['Customer'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->cliente_id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDelete($id)
+	{
+		$this->loadModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$this->redirect(array('admin'));
+		$dataProvider=new CActiveDataProvider('Customer');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new Customer('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Customer'])) {
+			$model->attributes=$_GET['Customer'];
+		}
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Create invoice for all orders with unbilled values
+	 * Then, merge all this invoice
+	 */
+	public function actionInvoiceAll($id, $number = 0)
+	{
+		$model = $this->loadModel($id);
+
+		// Invoice created
+		$invoice = null;
+
+		// Get all orders
+		foreach ($model->orders as $order) {
+			if ($invoice === null) {
+				$invoice = $order->toInvoice($number);
+				if ($invoice->hasErrors() === true) {
+					Yii::log("Unable to save invoice", 'error', 'admin.customer.invoiceAll');
+					Yii::log(print_r($invoice->getErrors(), true), 'error', 'admin.customer.invoiceAll');
+					Yii::app()->user->setFlash('danger', Yii::t('app', 'Unable to save invoice, required fields on customer are missing (like address or tax number).'));
+					$this->redirect(array('detail', 'id' => $model->id));
+				}
+
+			} else {
+				foreach ($order->orderDetails as $detail) {
+					$detail->addToInvoice($invoice);
+				}
+			}
+		}
+		Yii::app()->user->setFlash('success', Yii::t('app', 'Invoice has been created for all unbilled items.'));
+		$this->redirect(array('/admin/invoice/view', 'id' => $invoice->id));
+	}
+
+
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 * @param integer $id the ID of the model to be loaded
+	 * @return Customer the loaded model
+	 * @throws CHttpException
+	 */
+	public function loadModel($id)
+	{
+		$model=Customer::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+	/**
+	 * Performs the AJAX validation.
+	 * @param Customer $model the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='customer-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
+}

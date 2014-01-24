@@ -1,44 +1,97 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-4ghA/rSwAG==
+<?php
+/**
+* NRedis class file
+*
+* use and modify it as you wish
+* 
+* @author Emanuele Deserti <emanuele.deserti@netwing.it>
+* @license http://www.opensource.org/licenses/gpl-3.0.html
+*
+*/
+
+/**
+* NRedis uses Predis client as redis php client{@link https://github.com/nrk/predis predis}.
+*/
+class Redis
+{
+    /**
+    * @var Redis the Redis instance
+    */
+    protected $_redis = null;
+    /**
+    * @var array list of servers 
+    */
+    protected $_servers = array();
+
+    /**
+     * @var string predis path
+     */
+    private $predis_path = "vendor.predis.predis.lib.Predis";
+
+    /**
+    * @var string list of servers 
+    */
+    public $servers = array(
+        'host' => '127.0.0.1',
+        'port' => 6379
+    );
+
+    /**
+    * @var ID of database
+    */
+    public $database = 0;
+
+    /**
+    * @var Prefix for keys
+    */
+    public $prefix = "";
+
+    /**
+    * Initializes this application component.
+    * This method is required by the {@link IApplicationComponent} interface.
+    * It creates the redis instance and adds redis servers.
+    * @throws CException if redis extension is not loaded
+    */
+    public function init()
+    {
+        $this->getRedis();
+    }
+
+    /**
+    * @return mixed the redis instance (or redisd if {@link useRedisd} is true) used by this component.
+    */
+    public function getRedis()
+    {
+        if ($this->_redis!==null) {
+            return $this->_redis;
+        } 
+
+        // Disable Yii autoload
+        spl_autoload_unregister(array('YiiBase', 'autoload'));
+        // Start Redis connection
+        Yii::log('Opening Redis connection', CLogger::LEVEL_TRACE);
+        if (isset($this->prefix) and $this->prefix != "" and strlen($this->prefix) > 0) {
+            $this->_redis = new Predis\Client($this->servers, array('prefix' => $this->prefix));
+        } else {
+            $this->_redis = new Predis\Client($this->servers);
+        }
+
+        if (isset($this->database) and $this->database > 0) {
+            $this->_redis->SELECT($this->database);
+        }
+        // Re-enable Yii autoload
+        spl_autoload_register(array('YiiBase', 'autoload'));
+
+        return $this->_redis;
+    }
+
+    /**
+    * call unusual method
+    * */
+    public function __call($method,$args)
+    {
+        return call_user_func_array(array($this->_redis,$method),$args);
+    }
+
+}
+

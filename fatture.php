@@ -1,60 +1,49 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-YbQaRgnaqXEd
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("fatture","R");
+$elenco_clienti=$blue->elenco_clienti();
+$fattura_anno=date("Y",time());
+$fattura_mese=date("m",time());
+
+if (array_key_exists("anno",$_GET)) {
+	$_SESSION['gestione_fatture']['fattura_anno']=$_GET['anno'];
+}
+if (array_key_exists("gestione_fatture",$_SESSION) and array_key_exists("fattura_anno",$_SESSION['gestione_fatture'])) {
+	$fattura_anno=$_SESSION['gestione_fatture']['fattura_anno'];
+}
+if (array_key_exists("mese",$_GET)) {
+	$_SESSION['gestione_fatture']['fattura_mese']=$_GET['mese'];
+}
+if (array_key_exists("gestione_fatture",$_SESSION) and array_key_exists("fattura_mese",$_SESSION['gestione_fatture'])) {
+	$fattura_mese=$_SESSION['gestione_fatture']['fattura_mese'];
+}
+
+$select_anni="SELECT LEFT(fattura_data,4) AS anno FROM ".$tabelle['fatture']." WHERE LEFT(fattura_data,4)<>'0000' GROUP BY LEFT(fattura_data,4)";
+$result_anni=$sql->select_query($select_anni);
+$anni = array();
+while ($row_anni=mysql_fetch_array($result_anni)) {
+	if ($row_anni['anno'] == $fattura_anno) {
+		$anni[] = "<li role=\"presentation\"><a href=\"fatture.php?anno=".$row_anni['anno']."\"><strong>".$row_anni['anno']."</strong></a></li>";		
+	} else {
+		$anni[] = "<li role=\"presentation\"><a href=\"fatture.php?anno=".$row_anni['anno']."\">".$row_anni['anno']."</a></li>";
+	}
+}
+
+$elenco_mesi=array("01"=>"Gen","02"=>"Feb","03"=>"Mar","04"=>"Apr","05"=>"Mag","06"=>"Giu","07"=>"Lug","08"=>"Ago","09"=>"Set","10"=>"Ott","11"=>"Nov","12"=>"Dec");
+$mesi = array();
+foreach ($elenco_mesi as $k=>$v) {
+	if ($k == $fattura_mese) {
+		$mesi[] = "<li role=\"presentation\"><a href=\"fatture.php?mese=".$k."\"><strong>".$v."</strong></a></li>";
+	} else {
+		$mesi[] = "<li role=\"presentation\"><a href=\"fatture.php?mese=".$k."\">".$v."</a></li>";	
+	}
+}
+
+$periodo=$fattura_anno."-".$fattura_mese;
+$where_fattura="fattura_data LIKE '".$periodo."%'";
+$paginazione=$sql->paginazione_menu($tabelle['fatture'],$where_fattura);
+$limit=$sql->paginazione_valuta();
+$select_fatture="SELECT fattura_id,fattura_cliente_id,fattura_numero,fattura_data,SUM(fattura_riga_imponibile) AS fattura_imponibile,SUM(fattura_riga_totale) AS fattura_totale FROM ".$tabelle['fatture'].",".$tabelle['fatture_righe']." WHERE ".$where_fattura." AND fattura_riga_fattura_id=fattura_id GROUP BY fattura_id ORDER BY (fattura_numero + 0) ASC LIMIT ".$limit;
+$result_fatture=$sql->select_query($select_fatture);
+
+require_once "views/invoice/admin.php";

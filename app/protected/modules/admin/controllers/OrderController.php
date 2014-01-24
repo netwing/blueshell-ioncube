@@ -1,168 +1,337 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-9/hBjYzGylwZlUk3km==
+<?php
+
+class OrderController extends Controller
+{
+	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+	public $layout='//layouts/column2';
+
+	/**
+	 * @var string the detault page title
+	 */
+	public $pageTitle = 'order';
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		// RBAC access control
+        return array(
+            array('allow', 'actions' => array('index', 'view', 'admin', 'print'), 'roles' => array('admin:order:read')),
+            array('allow', 'actions' => array('create'), 'roles' => array('admin:order:create')),
+            array('allow', 'actions' => array('update'), 'roles' => array('admin:order:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('admin:order:delete')),
+            array('allow', 'actions' => array('toInvoice'), 'roles' => array('admin:invoice:create')),
+            array('deny', 'users'=>array('*')),
+        );
+
+		// Simple access control list
+		/*
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+		*/
+
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$model = $this->loadModel($id);
+		$details = $model->orderDetails;
+		foreach ($details as $detail) {
+			if ($detail->contract_id) {
+				// Copy flash messages
+				$flashes = Yii::app()->user->getFlashes();
+				foreach ($flashes as $k => $v) {
+					Yii::app()->user->setFlash($k, $v);
+				}
+				$this->redirect("../riepilogo.php?id=" . $detail->contract_id);
+			}
+		}
+		$this->render('view',array(
+			'model' => $model,
+		));
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreate()
+	{
+		$model=new Order;
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Order'])) {
+			$model->attributes=$_POST['Order'];
+			if($model->save()) {
+				$this->redirect(array('view','id'=>$model->id));
+			}
+		}
+
+		$model->date = strftime("%Y-%m-%d", time());
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['Order']))
+		{
+			$model->attributes=$_POST['Order'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model->id));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDelete($id)
+	{
+		try {
+			$this->loadModel($id)->delete();
+		} catch (CDbException $e) {
+			echo Yii::t('app', "Unable to delete this item, maybe it's connected to something else in application.");
+		}
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax'])) {
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		}
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$this->redirect(array('admin'));
+		$dataProvider=new CActiveDataProvider('Order');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new Order('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Order'])) {
+			$model->attributes=$_GET['Order'];
+		}
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Print order
+	 */
+	public function actionPrint($id, $output = "D")
+	{
+		// Load order model
+		$model = $this->loadModel($id);
+
+		// Init Smarty
+		$smarty = new Smarty();
+		Yii::registerAutoloader('smartyAutoload');
+		$smarty->setCompileDir(APPLICATION_PATH . "/runtime/templates_c");
+
+		// Load header template
+		$template = SystemTemplate::model()->findByPk(array('id' => 'PRINT_HEADER', 'language' => Yii::app()->language));
+		// English fallbacl
+		if (!$template) {
+			$template = SystemTemplate::model()->findByPk(array('id' => 'PRINT_HEADER', 'language' => "en"));
+		}
+		$header = $smarty->fetch('string:' . $template->html_content);
+
+		// Load footer template
+		$template = SystemTemplate::model()->findByPk(array('id' => 'PRINT_FOOTER', 'language' => Yii::app()->language));
+		// English fallbacl
+		if (!$template) {
+			$template = SystemTemplate::model()->findByPk(array('id' => 'PRINT_FOOTER', 'language' => "en"));
+		}
+		$smarty->assign("footer_date", Yii::app()->format->formatDateLong(time()));
+		$footer = $smarty->fetch('string:' . $template->html_content);
+
+		// Load template
+		$template = SystemTemplate::model()->findByPk(array('id' => 'PRINT_ORDER', 'language' => Yii::app()->language));
+		// English fallbacl
+		if (!$template) {
+			$template = SystemTemplate::model()->findByPk(array('id' => 'PRINT_ORDER', 'language' => "en"));
+		}
+
+		// Assign Smarty variables
+		$smarty->assign('header', $header);
+		$smarty->assign('footer', $footer);
+		$smarty->assign('order', $model);
+		$smarty->assign('background_color', $model->status->color);
+		$smarty->assign('foreground_color', Color::getContrastYIQ($model->status->color));
+		$smarty->assign('order_date', Yii::app()->format->formatDate($model->date));
+		$smarty->assign('order_work_date', Yii::app()->format->formatDate($model->work_date));
+		$smarty->assign('order_due_date', Yii::app()->format->formatDate($model->due_date));
+
+		// Get smarty output
+
+		$html = $smarty->fetch('string:' . $template->html_content);
+		// echo $html; exit;
+
+		// create new PDF document
+		$pdf = new MyPdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+		// set margins
+		$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+		$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+		$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+
+		// set auto page breaks
+		$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+
+		$pdf->setHtmlHeader($header);
+		$pdf->setHtmlFooter($footer);
+
+		// $pdf->SetPrintHeader(false);
+		// $pdf->SetPrintFooter(false);
+		$pdf->AddPage();
+
+		// output the HTML content
+		$pdf->writeHTML($html, true, false, true, false, '');	
+	
+		$pdf->setPage(1);
+
+		$status = $model->status->name;
+		$color = Color::getDecimal($model->status->color);
+		$text_color = Color::getContrastYIQ($model->status->color, "int");
+		$pdf->SetFillColor($color[0], $color[1], $color[2]);
+		$pdf->SetDrawColor($color[0]-30, $color[1]-30, $color[2]-30);
+		$pdf->SetXY(0,0);
+		$pdf->SetFont('freesans','B',28);
+		$pdf->SetTextColor($text_color);
+		$pdf->SetLineWidth(0.75);
+		$pdf->StartTransform();
+		$pdf->Rotate(-35, 90, 200);
+		$pdf->Cell(110, 18, strtoupper($status),'TB',0,'C','1');
+		$pdf->StopTransform();
+		$pdf->SetTextColor(0);
+		$pdf->SetFillColor(0, 0, 0);
+		$pdf->SetDrawColor(0, 0, 0);
+
+
+		$filename = "Order" . $model->id . ".pdf";
+		
+		$pdf->Output($filename, $output);
+
+        // Clean ending
+        Yii::app()->end();
+
+	}
+
+	/**
+	 * Create an invoice from order
+	 * If create is successful, the browser will be redirected to the 'view' page of invoice.
+	 * @param integer $id the ID of the model
+	 * @param integer $number if not null set a number for created invoice
+	 */
+	public function actionToInvoice($id, $n = null)
+	{
+		$model = $this->loadModel($id);
+
+		$invoice = $model->toInvoice((bool) $n);
+
+		if ($invoice->hasErrors() === true) {
+			Yii::log("Unable to save invoice", 'error', 'admin.order.toInvoice');
+			Yii::log(print_r($invoice->getErrors(), true), 'error', 'admin.order.toInvoice');
+			Yii::app()->user->setFlash('danger', Yii::t('app', 'Unable to save invoice, required fields on customer are missing (like address or tax number).'));
+			$this->redirect(array('view', 'id' => $model->id));
+		}
+		$this->redirect(array('/admin/invoice/view','id' => $invoice->id));
+
+	}
+
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 * @param integer $id the ID of the model to be loaded
+	 * @return Order the loaded model
+	 * @throws CHttpException
+	 */
+	public function loadModel($id)
+	{
+		$model=Order::model()->findByPk($id);
+		if($model===null) {
+			throw new CHttpException(404,'The requested page does not exist.');
+		}
+		return $model;
+	}
+
+	/**
+	 * Performs the AJAX validation.
+	 * @param Order $model the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='order-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
+}

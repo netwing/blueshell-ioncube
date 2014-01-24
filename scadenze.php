@@ -1,55 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("principale","R");
+$form->campi_testo = array("scadenza_data","scadenza_descrizione_breve","scadenza_descrizione_lunga","scadenza_file");
+$form->campi_obbligatori = array("scadenza_data","scadenza_descrizione_breve");
+$form->valori_default = array("scadenza_data" => strftime("%Y-%m-%d", strtotime("+7 days")));
+$tipi = array();
+$form->inizializza();
+
+if (count($_POST) > 0) {
+    $form->verifica();
+    $form->verifica_file(500000, $tipi, false);
+
+    if ($form->errore_form === false) {
+        $data_scadenza = $sql->pulisci($_POST['scadenza_data']);
+        $descrizione_breve = $sql->pulisci($_POST['scadenza_descrizione_breve']);
+        $descrizione_lunga = $sql->pulisci($_POST['scadenza_descrizione_lunga']);
+        $insert="INSERT INTO " . $tabelle['scadenze'] . " (scadenza_data,scadenza_descrizione_breve,scadenza_descrizione_lunga) 
+                 VALUES ('".$data_scadenza."','".$descrizione_breve."','".$descrizione_lunga."')";
+
+        $esit = $sql->insert_query($insert);
+        if ($esit === false) {
+            Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured.'));
+            header("Location:scadenze.php");
+            exit;
+        }
+        $lastid = $sql->insert_last_id;
+
+        if (count($_FILES) > 0) {
+            if (!file_exists("upload/")) {
+                throw new Exception("Upload directory do not exists!");
+            }
+            if (!is_writable("upload/")) {
+                throw new Exception("Upload directory was not writable!");   
+            }
+            $destinazione = $lastid . "_" . $_FILES['scadenza_file']['name'];
+            move_uploaded_file($_FILES['scadenza_file']['tmp_name'], "upload/".$destinazione);
+
+            $update = "UPDATE " . $tabelle['scadenze'] . " 
+                       SET scadenza_file='" . $_FILES['scadenza_file']['name'] . "' 
+                       WHERE scadenza_id='" . $lastid . "'";
+            $sql->update_query($update);
+        }
+
+        $form->valori_default=array();
+        $form->inizializza();
+        Yii::app()->user->setFlash("success", Yii::t('app', 'Deadline successfully saved.'));
+        header("Location:scadenze.php");
+        exit;
+
+    }
+}
+
+require_once "views/site/scadenze.php";

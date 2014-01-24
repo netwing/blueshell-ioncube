@@ -1,49 +1,66 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("posti_barca","R");
+
+$form->campi_testo=array("pontile_codice", "nome");
+$form->campi_obbligatori=array("pontile_codice");
+
+$form->valori_default=array("pontile_codice"=>"");
+$form->inizializza();
+
+
+// Se l'utente aggiunge un Posto Barca a questo pontile
+if (count($_POST)>0)
+{
+	$form->verifica();
+	if ($form->errore_form === false) {
+		foreach ($_POST as $k=>$v) {
+			$$k=$sql->pulisci($v);
+		}
+		
+		$pc=$_POST['pontile_codice'];
+		$nome=$_POST['nome'];
+		if ($nome=="")
+		{
+			$nome="Pontile ".$pc;
+			
+		}
+
+		// Check to avoid duplications of codes
+		$count_query="SELECT COUNT(*) as tot FROM ".$tabelle['pontili']." WHERE pontile_codice = '$pc' ";
+ 
+		$result=$sql->select_query($count_query);
+		$tot1=mysql_result($result,0,'tot');
+
+		if ($tot1 >0) {
+			Yii::app()->user->setFlash("danger", Yii::t('app', 'Resource group with this code already exists, please choose another code.'));
+		} else {
+			$insert="INSERT INTO ".$tabelle['pontili']." (pontile_nome,pontile_codice,pontile_tipo) VALUES ('".$nome."','".$pc."','1')";
+			$sql->insert_query($insert);
+			$lastid=$sql->insert_last_id;
+
+			if ($lastid) {
+				Yii::app()->user->setFlash("success", Yii::t('app', 'Resource group successfully created.'));
+			} else {
+				Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured.'));
+				header("Location:portili.php");
+				exit;
+			}	
+		}
+
+	}
+}
+
+//$select="SELECT * FROM ".$tabelle['pontili']." ORDER BY pontile_codice ASC";
+
+$select = "SELECT *, COUNT(pb.posto_barca_id) as 'posti_barca_conteggio'
+			FROM `blue_pontili` as p
+			LEFT join blue_posti_barca as pb
+			ON p.pontile_id = pb.posto_barca_pontile
+			GROUP BY (p.pontile_id)";
+$result_resource_group=$sql->select_query($select);
+
+$action = "pontili.php";
+require_once "views/resource_group/admin.php";
+
 ?>
-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
-AHLTO1NP/q5U2LplSEfa+SvvE3TYo+Ebi8VbpG==

@@ -1,73 +1,119 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ContractTypeController */
+/* @var $model ContractType */
+
+$this->pageTitle = Yii::t('app', 'Contact us');
+$this->breadcrumbs=array(
+	'Contact',
+);
+
 ?>
-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
-lJy9hmQc7FSYLP33nfgsI5ktS3L/Km==
+
+<?php 
+$this->beginClip('sidebar2'); 
+$this->beginWidget('zii.widgets.CPortlet', array(
+    'title' => '<strong>' . Yii::t('app', 'HELP US TO IMPROVE!') . '</strong>',
+    'htmlOptions' => array('class' => 'panel panel-default'),
+    'decorationCssClass' => 'panel-heading',
+    'titleCssClass' => 'panel-title',
+    'contentCssClass' => 'panel-body',
+)); ?>
+<p><?php echo Yii::t('app', "Our development team is always very responsive to requests that our clients ask us during use in order to continuously improve BlueShell and thus improve the management of your port."); ?></p>
+<p><?php echo Yii::t('app', "We have always based the development of this software by listening to the demands of direct operators of ports and treasure in the development of new functionality in order to enrich more and more functions BlueShell, giving the opportunity to our customers to use a tool more and more dedicated to their needs."); ?>
+<p><?php echo Yii::t('app', "If you'd like to report a request for a new feature or a change to an existing function, or you want to recommend to our team what features might be useful in our software, please fill out the form to the left."); ?>
+
+<p><?php echo Yii::t('app', "Our development team will evaluate the request in order to be able to implement BlueShell."); ?></p>
+
+<?php
+$this->endWidget();
+$this->endClip();
+?>
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'contract-type-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+	'enableClientValidation'=>true,
+	'clientOptions'=>array(
+		'validateOnSubmit'=>true,
+	),
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+	<p class="note">Fields with <span class="required">*</span> are required.</p>
+
+	<?php echo $form->errorSummary($model); ?>
+
+    <div class="form-group">
+		<?php echo $form->labelEx($model,'name',  array('class' => 'col-lg-2 control-label')); ?>
+		<div class="col-lg-10">
+		<?php echo $form->textField($model,'name', array('class' => 'form-control')); ?>
+		<?php echo $form->error($model,'name'); ?>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<?php echo $form->labelEx($model,'email',  array('class' => 'col-lg-2 control-label')); ?>
+		<div class="col-lg-10">
+		<?php echo $form->textField($model,'email', array('class' => 'form-control')); ?>
+		<?php echo $form->error($model,'email'); ?>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<?php echo $form->labelEx($model,'subject',  array('class' => 'col-lg-2 control-label')); ?>
+		<div class="col-lg-10">
+		<?php echo $form->textField($model,'subject', array('class' => 'form-control', 'size'=>60,'maxlength'=>128)); ?>
+		<?php echo $form->error($model,'subject'); ?>
+		</div>
+	</div>
+
+    <div class="form-group">
+		<?php echo $form->labelEx($model,'body',  array('class' => 'col-lg-2 control-label')); ?>
+		<div class="col-lg-10">
+		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50, 'class' => 'form-control',)); ?>
+		<?php echo $form->error($model,'body'); ?>
+		</div>
+	</div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <div id="myDropZone" class="dropzone">
+                <p><?php echo Yii::t('app', 'Drop here files'); ?></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+			<button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Submit'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->
+
+
+<?php Yii::app()->clientScript->registerCssFile('../css/dropzone.css'); ?>
+<?php Yii::app()->clientScript->registerScriptFile('../bower_components/dropzone/downloads/dropzone.js'); ?>
+
+
+<?php Yii::app()->clientScript->registerScript("dropzone-init", '
+Dropzone.autoDiscover = false;
+$("div#myDropZone").dropzone({ 
+    init: function() {
+        this.on("removedfile", function(file) { 
+            $.get( "' . $this->createUrl('/site/contact') . '", { delete: file.name } );
+        });
+    },
+    url: "' . $this->createUrl("/site/contact") . '", 
+    paramName: "file",
+    addRemoveLinks: true,
+});
+
+', CClientScript::POS_READY); ?>

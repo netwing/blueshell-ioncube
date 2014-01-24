@@ -1,63 +1,107 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPo7/nqv2ZgooTKFnss6gC4m1lb1EhacEY9QiBCWJTRC5QSSe8bbzNvxPBwbUjTEf1U2hSh0R
-NqXKP61yi7eW+K34zcldlzQNRsKoCLTp/LJAZMmzv9HOkFUj9ASltE0Y4FFSpt7hP7KHfAAIiTRc
-dbhtH6FjJQqtowa87HuzQOqLKR/l5L/43vdx2FngT1ncEtRFaP3S9WrTCmFhAfIXQmCAXZ4xU3jr
-V4Fh3hbMZ0X2eCJKntya3SyoJzIxHGvmwA6cEHFtX39WpKTTmV/hFB47+MqsxC4GXYJ1K2QXn4U+
-YhIS429x4Ex/8Gm1T2jiA8xysO5/rykUA/4eruiKS+2xIC8hYmK7t90+ahd3Ckx1qDDDFOOczVo9
-Z88J6WeOdARHQcAbf5h93n5HCzk0+8pNDvQRL/d3X5Hs8M1zundtNHpRMw6i5tRwiMNZg1R9c9oW
-Dktz94JP+YVDsMbRa1v1IpuDpmOC+O8c2hndzYc8ZyUlSAjlQDjoYJxUssDS3qtv0OhWnvI9W6b/
-BnpZztYTvGTJuSaez2LReKAwc2QUb+bh9vZl5zCggky1jO4hG1Y0dHFJM6Z58JC9c73xddPcaZBP
-EJTM7i20FHu5ylqgNb+UUYCDkgTuZr//EA2+IdWHAb+BxJDCzAZwzvTnobcQSIZ5jFYFwulDNL6X
-iKV1dfrrofQ7cslf/AyNtWudZLl7upIQOrFyCiejYHg90JTyGqOrKM1XAmRqqDthtdfcNWpZL29q
-PBfEuSOYmPWreZeEARIiMZ/SFOmboqCoiRtS/he8zVH8fv4Kb9UK6iXIigvuqiuOfFvYqqY0PGaW
-PP/RRtFGJkX1R2zwnZu6oaIcCuUic3N/YuQetVPqgkypHKLa4Ra3TSsxI7E2i4RmdMSqgJ1hI042
-DuKL6Y+KXZVIrp62CD+tv/aqgc/5kjnFF/svvHd51BV1/PIzcucMicD8tlkmhZxJrxWC0lNb3M7L
-lkA8DFQl40gagsFFGiqTKQZEa2ypIyhCHvSiTf9Lq64DlLfDIbJ85+U5GD6qAkpfOq1GcTNgPjWC
-Bq67hi2CHN6fqeFaQCzxnIdDGWPtCTkO7nVNqMgKLSkr/J248sXBj9CpTNBXrQTtObuf4TTKkmNU
-Xyh+M+MsPKFRwml8EaQbtwrQhwjZE96rX62hd1RYUj3FwiiGfuOwvMi3PmTBOq1eyL9G9kCLUi1R
-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
-Ebqm0MkmLHoz2W==
+<?php
+
+Yii::import('application.modules.admin.models.base.BaseUser');
+
+class User extends BaseUser
+{
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return AuthItem the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
+
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules()
+    {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('name, username, password', 'required', 'on' => 'create'),
+            array('role', 'required'),
+            array('name, username, password', 'length', 'max'=>255),
+            array('username', 'length', 'min'=>5),
+            array('password', 'length', 'min'=>8),
+            array('username', 'unique', 'on' => 'create'),
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            array('name, username', 'safe', 'on'=>'search'),
+        );
+    }
+
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+    public function search()
+    {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
+
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('name',$this->name,true);
+        $criteria->compare('username',$this->username,true);
+        $criteria->compare('role',$this->role,true);
+
+        return new CActiveDataProvider($this, array(
+            'criteria'=>$criteria,
+        ));
+    }
+
+    public function beforeSave()
+    {
+        // Force NO change to administrator user
+        if (!$this->isNewRecord) {
+            $curr = self::findByPk($this->id);
+            if ($curr->username == 'administrator') {
+                $this->username = "administrator";
+                $this->role = $curr->role;
+            }
+        }
+
+        if ($this->isNewRecord and strlen($this->password) > 0) {
+            $this->password = crypt($this->password);
+        }
+        // If no password on update, reset to original password
+        if (!$this->isNewRecord) {
+            if (strlen($this->password) == 0) {
+                $user = $this->findByPk($this->id);
+                $this->password = $user->password;
+            } else {
+                $this->password = crypt($this->password);       
+            }
+        }
+
+        if (!is_array($this->role)) {
+            $this->role = array();
+        }
+        $this->role = json_encode($this->role);
+
+
+        return parent::beforeSave();
+    }
+
+    public function afterFind()
+    {
+        $this->role = json_decode($this->role);
+        return parent::afterFind();
+    }
+
+    public function beforeDelete()
+    {
+        if (isset(Yii::app()->user)) {
+            if (Yii::app()->user->getId() == $this->id) {
+                return false;
+            }
+        }
+        return parent::beforeDelete();
+    }
+
+}

@@ -1,41 +1,38 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class WebUser extends CWebUser
+{
+    public function isAdmin()
+    {
+        return ($this->getState('role') == 'admin');
+    }
+
+    public function logout($destroySession = true)
+    {
+        $auth = Yii::app()->authManager;
+        $assigned_roles = $auth->getRoles(Yii::app()->user->id); //obtains all assigned roles for this user id
+        if(!empty($assigned_roles)) { //checks that there are assigned roles
+            foreach(array_keys($assigned_roles) as $n) {
+                $auth->revoke($n, Yii::app()->user->id);
+            }
+            $auth->save(); //again always save the result
+        }
+        // If root login
+        if (Yii::app()->user->id == 0) {
+            $roles = $auth->getRoles(Yii::app()->user->id);
+            foreach(array_keys($roles) as $n) {
+                $auth->revoke($n, Yii::app()->user->id);            
+            }
+            $tasks = $auth->getTasks(Yii::app()->user->id);
+            foreach(array_keys($tasks) as $n) {
+                $auth->revoke($n, Yii::app()->user->id);            
+            }
+            $operations = $auth->getOperations(Yii::app()->user->id);
+            foreach(array_keys($operations) as $n) {
+                $auth->revoke($n, Yii::app()->user->id);            
+            }
+            $auth->save(); //again always save the result
+        }
+        parent::logout();
+    }
+}

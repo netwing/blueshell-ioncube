@@ -1,69 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("contratti","R");
+$elenco_clienti=$blue->elenco_clienti();
+
+$elenco_barche=$blue->elenco_barche();
+
+$contratto_tipo=1;
+$contratto_anno=date("Y",time());
+$contratto_mese=date("m",time());
+
+if (array_key_exists("tipo",$_GET)) {
+	$_SESSION['gestione_contratti']['contratto_tipo']=$_GET['tipo'];
+}
+if (array_key_exists("gestione_contratti",$_SESSION) and array_key_exists("contratto_tipo",$_SESSION['gestione_contratti'])) {
+	$contratto_tipo=$_SESSION['gestione_contratti']['contratto_tipo'];
+}
+if (array_key_exists("anno",$_GET)) {
+	$_SESSION['gestione_contratti']['contratto_anno']=$_GET['anno'];
+}
+if (array_key_exists("gestione_contratti",$_SESSION) and array_key_exists("contratto_anno",$_SESSION['gestione_contratti'])) {
+	$contratto_anno=$_SESSION['gestione_contratti']['contratto_anno'];
+}
+$select_anni="SELECT LEFT(contratto_inizio,4) AS anno FROM ".$tabelle['contratti']." WHERE LEFT(contratto_inizio,4)<>'0000' GROUP BY LEFT(contratto_inizio,4)";
+$result_anni=$sql->select_query($select_anni);
+$anni = array();
+while ($row_anni=mysql_fetch_array($result_anni)) {
+	if ($row_anni['anno']==$contratto_anno) {
+		$anni[] = "<li role=\"presentation\"><a href=\"contratti.php?anno=".$row_anni['anno']."\"><strong>".$row_anni['anno']."</strong></a></li>";		
+	} else {
+		$anni[] = "<li role=\"presentation\"><a href=\"contratti.php?anno=".$row_anni['anno']."\">".$row_anni['anno']."</a></li>";
+	}
+}
+
+if (array_key_exists("mese",$_GET)) {
+	$_SESSION['gestione_contratti']['contratto_mese']=$_GET['mese'];
+}
+if (array_key_exists("gestione_contratti",$_SESSION) and array_key_exists("contratto_mese",$_SESSION['gestione_contratti'])) {
+	$contratto_mese=$_SESSION['gestione_contratti']['contratto_mese'];
+}
+$elenco_mesi=array("01"=>"Gen","02"=>"Feb","03"=>"Mar","04"=>"Apr","05"=>"Mag","06"=>"Giu","07"=>"Lug","08"=>"Ago","09"=>"Set","10"=>"Ott","11"=>"Nov","12"=>"Dec");
+$mesi = array();
+foreach ($elenco_mesi as $k=>$v) {
+	if ($k == $contratto_mese) {
+		$mesi[] = "<li role=\"presentation\"><a href=\"contratti.php?mese=".$k."\"><strong>".$v."</strong></a></li>";
+	} else {
+		$mesi[] = "<li role=\"presentation\"><a href=\"contratti.php?mese=".$k."\">".$v."</a></li>";	
+	}
+}
+
+$periodo=$contratto_anno."-".$contratto_mese;
+$where_contratto="contratto_tipo='".$contratto_tipo."' AND ((contratto_inizio<='".$periodo."-31' AND contratto_fine>='".$periodo."-01') OR (contratto_inizio='0000-00-00' AND contratto_fine='0000-00-00'))";
+$paginazione = $sql->paginazione_menu($tabelle['contratti'],$where_contratto);
+$limit=$sql->paginazione_valuta();
+$select_contratti="SELECT contratto_id,contratto_data,contratto_inizio,contratto_fine,contratto_totale,contratto_fatturato,contratto_sconto,contratto_posto_barca,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,pontile_codice,posto_barca_numero FROM ".$tabelle['contratti'].",".$tabelle['pontili'].",".$tabelle['posti_barca']." WHERE posto_barca_id=contratto_posto_barca AND pontile_id=posto_barca_pontile AND ".$where_contratto." ORDER BY contratto_posto_barca ASC LIMIT ".$limit;
+$result_contratti=$sql->select_query($select_contratti);
+
+// $blue->render("contratti/contratti.php");
+require_once "views/contract/contract.php";

@@ -1,29 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this InvoiceRowController */
+/* @var $model InvoiceRow */
+
+$this->pageTitle = Yii::t('app', 'Update Invoice Rows');
+
+$this->breadcrumbs=array(
+	'Invoice Rows'=>array('index'),
+	$model->id,
+);
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage InvoiceRow'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Create InvoiceRow'), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update InvoiceRow'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app', 'Delete InvoiceRow'), 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
+);
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'id',
+		'invoice_id',
+		'order_detail_id',
+		'description',
+		'price',
+		'quantity',
+		'total_no_vat',
+		'vat',
+		'vat_value',
+		'total_vat',
+		'discount',
+		'discount_value',
+		'total',
+		'notes',
+		'create_time',
+		'update_time',
+	),
+)); ?>

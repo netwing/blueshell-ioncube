@@ -1,84 +1,161 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+/**
+ * This is the model class for table "{{listini_posti_barca}}".
+ *
+ * The followings are the available columns in table '{{listini_posti_barca}}':
+ * @property string $listino_posto_barca_id
+ * @property integer $listino_posto_barca_dimensione
+ * @property integer $listino_posto_barca_anno
+ * @property string $costo_giornaliero
+ * @property string $costo_e1
+ * @property string $costo_e2
+ * @property string $costo_em
+ * @property string $costo_es
+ * @property string $costo_i1
+ * @property string $costo_i2
+ * @property string $costo_im
+ * @property string $costo_is
+ * @property string $costo_annuale
+ * @property string $costo_condominiale
+ */
+class BaseResourcePriceList extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return '{{listini_posti_barca}}';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('listino_posto_barca_dimensione, listino_posto_barca_anno', 'numerical', 'integerOnly'=>true),
+			array('costo_giornaliero, costo_e1, costo_e2, costo_em, costo_es, costo_i1, costo_i2, costo_im, costo_is, costo_annuale, costo_condominiale', 'length', 'max'=>10),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('listino_posto_barca_id, listino_posto_barca_dimensione, listino_posto_barca_anno, costo_giornaliero, costo_e1, costo_e2, costo_em, costo_es, costo_i1, costo_i2, costo_im, costo_is, costo_annuale, costo_condominiale', 'safe', 'on'=>'search'),
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'listino_posto_barca_id' => Yii::t('app', 'Listino Posto Barca'),
+			'listino_posto_barca_dimensione' => Yii::t('app', 'Listino Posto Barca Dimensione'),
+			'listino_posto_barca_anno' => Yii::t('app', 'Listino Posto Barca Anno'),
+			'costo_giornaliero' => Yii::t('app', 'Costo Giornaliero'),
+			'costo_e1' => Yii::t('app', 'Costo E1'),
+			'costo_e2' => Yii::t('app', 'Costo E2'),
+			'costo_em' => Yii::t('app', 'Costo Em'),
+			'costo_es' => Yii::t('app', 'Costo Es'),
+			'costo_i1' => Yii::t('app', 'Costo I1'),
+			'costo_i2' => Yii::t('app', 'Costo I2'),
+			'costo_im' => Yii::t('app', 'Costo Im'),
+			'costo_is' => Yii::t('app', 'Costo Is'),
+			'costo_annuale' => Yii::t('app', 'Costo Annuale'),
+			'costo_condominiale' => Yii::t('app', 'Costo Condominiale'),
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('listino_posto_barca_id',$this->listino_posto_barca_id,true);
+		$criteria->compare('listino_posto_barca_dimensione',$this->listino_posto_barca_dimensione);
+		$criteria->compare('listino_posto_barca_anno',$this->listino_posto_barca_anno);
+		$criteria->compare('costo_giornaliero',$this->costo_giornaliero,true);
+		$criteria->compare('costo_e1',$this->costo_e1,true);
+		$criteria->compare('costo_e2',$this->costo_e2,true);
+		$criteria->compare('costo_em',$this->costo_em,true);
+		$criteria->compare('costo_es',$this->costo_es,true);
+		$criteria->compare('costo_i1',$this->costo_i1,true);
+		$criteria->compare('costo_i2',$this->costo_i2,true);
+		$criteria->compare('costo_im',$this->costo_im,true);
+		$criteria->compare('costo_is',$this->costo_is,true);
+		$criteria->compare('costo_annuale',$this->costo_annuale,true);
+		$criteria->compare('costo_condominiale',$this->costo_condominiale,true);
+
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
+
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return ResourcePriceList the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
+
+	/**
+	 * Behavior for timestamp
+	 */
+	public function behaviors(){
+		return array(
+			'CTimestampBehavior' => array(
+				'class' => 'zii.behaviors.CTimestampBehavior',
+				// 'createAttribute' => 'create_time',
+				// 'updateAttribute' => 'update_time',
+			)
+		);
+	}
+
+	/**
+	 * Either attributes required (one or another)
+	 * Use like this: 
+	 * array('attributes1', 'either', 'other' => 'attributes2')
+	 */ 
+	public function either($attribute_name, $params)
+	{
+	    $field1 = $this->getAttributeLabel($attribute_name);
+	    $field2 = $this->getAttributeLabel($params['other']);
+	    if (empty($this->$attribute_name) && empty($this->$params['other'])) {
+	        $this->addError(
+	        	$attribute_name, 
+	        	Yii::t('app', "Either {field1} or {field2} is required.", array('{field1}' => $field1, '{field2}' => $field2)));
+	        return false;
+	    }
+	    return true;
+	}	 
+}

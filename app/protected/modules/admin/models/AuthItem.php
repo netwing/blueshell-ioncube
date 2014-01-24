@@ -1,41 +1,72 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('application.modules.admin.models.base.BaseAuthItem');
+
+class AuthItem extends BaseAuthItem
+{
+
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules()
+    {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('name', 'required'),
+            array('type', 'numerical', 'integerOnly'=>true),
+            array('name', 'length', 'max'=>64),
+            array('description, bizrule, data', 'safe'),
+            // The following rule is used by search().
+            // @todo Please remove those attributes that should not be searched.
+            array('name, type, description, bizrule, data', 'safe', 'on'=>'search'),
+        );
+    }
+
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     *
+     * Typical usecase:
+     * - Initialize the model fields with values from filter form.
+     * - Execute this method to get CActiveDataProvider instance which will filter
+     * models according to data in model fields.
+     * - Pass data provider to CGridView, CListView or any similar widget.
+     *
+     * @return CActiveDataProvider the data provider that can return the models
+     * based on the search/filter conditions.
+     */
+    public function search()
+    {
+        // @todo Please modify the following code to remove attributes that should not be searched.
+
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('name',$this->name,true);
+        $criteria->compare('type',$this->type);
+        $criteria->compare('description',$this->description,true);
+        $criteria->compare('bizrule',$this->bizrule,true);
+        $criteria->compare('data',$this->data,true);
+
+        return new CActiveDataProvider($this, array(
+            'criteria'=>$criteria,
+            /*
+            'pagination'=>array(
+                'pageSize'=>1,
+            ),
+            */            
+        ));
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return AuthItem the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
+
+}
+

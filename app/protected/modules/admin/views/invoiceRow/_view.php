@@ -1,29 +1,63 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this InvoiceRowController */
+/* @var $data InvoiceRow */
 ?>
-HR+cPw4iXBuYz7onBveHdG+gjOBCLv5Qi16GNVnSTkfc9rUTAJDrDzZtJWuBU1MzGz9QHOXOs3CI
-up5oQMfTCXfw7z5npT8OmYljf0tlzGkfDB9LH/Gue4Hi+jtwSo0p0EK6CWkXF+6E6DDQjgdXHqqc
-EmMUkYxV1McHJyKqmjA92gr7W+wJ9IZLaU9HKomBuy/OfmgfAV1A1aH02UeQM9UIEVYjt6BRPZyu
-3FR9LBt2J5kGNiFskvWckGtFCa/KkqKESEYXfZaJzuHhNkGxJjTVheRf7SrjDkp1Cl+ceZZNaj1r
-DGA1UgAkesxNB9CKLcrEUHLSo+Z1IBZBfTZUfXJEqq5hCXnQWiQ21xErvieeJwjd/V6+RZ/qNs2R
-MwJK5IkIB4oH1S1hI7E4CMf8znKl1v3oaK6eQYEIrdV6f2K+Bl+X1Ky8B88q8csjy8gJB6h5Wj/X
-Z6BOQyIBhhs32WpbR/S8oF0cR9JSTO5HYBAByblr8jix+6CatJxPWXeBD9zdAA6Mmd8Y/KfrSBuP
-5dqZvJgr78wMiK6VhPrwwq4MUjStMqhsmbr7PwU6TB5g0fJfoatKyXiTS0v9gdX4cef70f19jNjL
-t9AnMXkHzAZOLHRtIZ+3NSdX6L0qia15RNQqU+C4HSPDGoLn+u2LVfF9e3492GuYlOYUt1lDCebO
-6SC7NK7iL/5Nmhz8KIcDs/uB4CyKwTXbMchAH1pFFU4j85F35542gcZw3W68LaE1+Ucr7o6qzQfs
-LlX5wfff3kO0nob80PquuTrGYV03wVHDKwbR0AQsszI4Nrav8GxFf+7h7M6F92xakEUHkI8/8JFX
-E+Q1n57EXfnfvuoCX+3g/Hii6nZ5yfyFaz+/aE2K3mH6d7/TE9UixDEls3k0a3Gs0lRhiyL5hOH2
-ez4soJ6ohAB+Q9hYo2vTq6X46reVq/JEshObPgMr6fWISm2gkatxSjFhdKSee8JO40NPXhqd/6KL
-3hdKQwMECBkTR8dphJbl4/SZRJM3XSyowIsdCHi0Rm9sgFrOk1oLGcn/uryJjRwWgDuBBft+kZsY
-C21+FqRgaGT9Srbx1MgbshvxMBKripe3c1toIChik4g2qOBlvgAZEld7O1l+GcdHkegK1pyhFLBj
-/d7M/r91dbHHhSN0umpgyWP8lgoSDIScSEs9uGrDLHOzi3V6ONP2KV3rBFo3rSvhAeRhuHm26mHJ
-8nnBcDmpoE/yPM75FeNLBqp0CEMSoY0Ykr89psv78yAwsuHBtvNTxtnPs2E09zH2VRNBxkDoiBiP
-MUu2Q7XdaUKIxzvqIbzlm1h7SkgX/pj1HgAf741c7FEW7EG0ihgzv+OZEV4cdFZbSmeYCk+ZyHjN
-MQWo7kMaIri4RrqbyuXbok0qcAxErkWkbFYcU1Kx5gBnlKST8DCxrFXuu7DsSEUFJ8SV/ETVtyTx
-yQk9R1DT8k8dKD4+5G/xegHgBb5JZUX7DadmWlSOPxDZBckYbGuURAotqSWXEBOVMpi/LgLX+UD1
-p2WpOZbg0efZzJ7jIa8Rikiime8pIDZeBPkGLHXL1On9QIrG4+wQpQoe0YoCz5qFB+b1kHj8O64E
-IILnqSzAqwRfvsBFTyGfnKyXVAjHLtxZXOAcdp4iNXgzfR/036JJ0HCvote5FiwSlNeBKgad39S8
-uoectLLNinbkGNS8FuaflH8vfbgmMY7zhcYnbG3HkVVFW9NiiqerzHBmtPuZ0aDevm5Jh4EruisI
-lf5XGVv1Ui3hTMc6+q+7VxV6nSXCVbORiEB1qLF3rb801/Do+Wn/zjSpwj87ciudRYWk9PG6Ogdh
-hDRoiMV8x6VpFWTmopkitLHRVVwK6jE5FRjbgyxsMfUTQCjNGHeB/5c9SyLJIrRoLTx5FjUUJN8k
-GeSM0ITv48NecadFqLEbbrPY5mTcLqTjzOmkNe8SGz49E6WNILo+I60EkTjd/vgo
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <?php echo CHtml::link(CHtml::encode($data->id), array('view','id'=>$data->id)); ?>
+        </h3>
+    </div>
+    <div class="panel-body">
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('invoice_id')); ?>:</b>
+	<?php echo CHtml::encode($data->invoice_id); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('order_detail_id')); ?>:</b>
+	<?php echo CHtml::encode($data->order_detail_id); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
+	<?php echo CHtml::encode($data->description); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('price')); ?>:</b>
+	<?php echo CHtml::encode($data->price); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('quantity')); ?>:</b>
+	<?php echo CHtml::encode($data->quantity); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('total_no_vat')); ?>:</b>
+	<?php echo CHtml::encode($data->total_no_vat); ?><br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('vat')); ?>:</b>
+	<?php echo CHtml::encode($data->vat); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('vat_value')); ?>:</b>
+	<?php echo CHtml::encode($data->vat_value); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('total_vat')); ?>:</b>
+	<?php echo CHtml::encode($data->total_vat); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('discount')); ?>:</b>
+	<?php echo CHtml::encode($data->discount); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('discount_value')); ?>:</b>
+	<?php echo CHtml::encode($data->discount_value); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('total')); ?>:</b>
+	<?php echo CHtml::encode($data->total); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('notes')); ?>:</b>
+	<?php echo CHtml::encode($data->notes); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
+	<?php echo CHtml::encode($data->create_time); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
+	<?php echo CHtml::encode($data->update_time); ?><br />
+
+	*/ ?>
+    </div>
+</div>
+

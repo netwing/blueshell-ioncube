@@ -1,69 +1,183 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("documenti","R");
+$elenco_nazioni=$blue->elenco_nazioni();
+$elenco_tipologie=$blue->elenco_tipologie();
+$elenco_assicurazioni=$blue->elenco_assicurazioni();
+$select_prezzo="";
+$prezzo="";
+$totale="";
+
+$dal=$sql->data_ita($_SESSION['riepilogo']['contratto']['contratto_inizio']);
+$dal_ts=$dal[4];
+$dal=$dal[0];
+$al=$sql->data_ita($_SESSION['riepilogo']['contratto']['contratto_fine']);
+$al_ts=$al[4];
+$al=$al[0];
+$durata=intval(($al_ts-$dal_ts)/(60*60*24));
+$data=$sql->data_ita($_SESSION['riepilogo']['contratto']['contratto_data']);
+$data=$data[0];
 ?>
-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
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="stile.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<?php include("top.php"); ?>
+<table border="0" cellpadding="0" cellspacing="0" id="tabellaScheda">
+	<tr>
+		<td class="schedaCurvaTopLeft">&nbsp;</td>
+		<td class="schadaOmbraTop">&nbsp;</td>
+		<td class="schedaCurvaTopRight">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="schedaOmbraLeft">&nbsp;</td>
+		<td class="font10Px"><p><img src="img/top_contratti.gif" border="0" /></p>
+			<p>Verificare che i dati siano corretti e cliccare sul bottone stampa per avere l'anteprima di stampa</p>
+			<form action="template_contratto_gestione.php" method="post" name="form1" id="form1">
+				<p>Data del Contratto 
+					<input name="data" type="text" id="data" value="<?php echo $data; ?>">
+				</p>
+				<table width="700" border="0" cellpadding="2" cellspacing="2" class="font10Px">
+            	<tr>
+            		<td><strong>DATI RELATIVI AL CONTRATTO:</strong></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+            				<tr>
+            					<td width="150">Nome e Cognome / Ragione sociale </td>
+            					<td><input name="nominativo" type="text" id="nominativo" value="<?php echo $_SESSION['riepilogo']['cliente']['cliente_nominativo']; ?>"></td>
+           					</tr>
+            				</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+            				<tr>
+            					<td width="150">Indirizzo: </td>
+            					<td><input name="indirizzo" type="text" id="indirizzo" value="<?php echo $_SESSION['riepilogo']['cliente']['cliente_indirizzo']; ?>"></td>
+           					</tr>
+            				</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+            				<tr>
+            					<td width="150">Cap.</td>
+            					<td><input name="cap" type="text" id="cap" value="<?php echo $_SESSION['riepilogo']['cliente']['cliente_cap']; ?>"></td>
+           					</tr>
+            				</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+            				<tr>
+            					<td width="150">Naz. </td>
+            					<td><input name="nazione" type="text" id="nazione" value="<?php echo $elenco_nazioni[$_SESSION['riepilogo']['cliente']['country']]; ?>"></td>
+           					</tr>
+            				</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+            				<tr>
+            					<td width="150">Citt&agrave;</td>
+            					<td><input name="citta" type="text" id="citta" value="<?php echo $_SESSION['riepilogo']['cliente']['cliente_citta']; ?>" size="45"></td>
+           					</tr>
+            				</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+            				<tr>
+            					<td width="150">Partita Iva </td>
+            					<td><input name="partita_iva" type="text" id="partita_iva" value="<?php echo $_SESSION['riepilogo']['cliente']['cliente_partita_iva']; ?>"></td>
+           					</tr>
+            				</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+                    	<tr>
+                    		<td width="150">Codice Fiscale </td>
+                    		<td><input name="codice_fiscale" type="text" id="codice_fiscale" value="<?php echo $_SESSION['riepilogo']['cliente']['cliente_codice_fiscale']; ?>"></td>
+                    		</tr>
+                    	</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+            				<tr>
+            					<td width="150">Data del Contratto </td>
+            					<td><input name="data_contratto" type="text" id="data_contratto" value="<?php $contratto_data=$sql->data_ita($_SESSION['riepilogo']['contratto']['contratto_data']); echo $contratto_data[0]; ?>"></td>
+           					</tr>
+            				</table></td>
+           		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="0" cellspacing="0" class="font10Px">
+						<tr>
+							<td width="150">Percentuale di Gestione </td>
+							<td><input name="gestione_percentuale" type="text" id="gestione_percentuale" value="<?php echo $_SESSION['riepilogo']['contratto']['contratto_gestione_percentuale']; ?>"></td>
+						</tr>
+					</table></td>
+            		</tr>
+            	<tr>
+            		<td class="tratteggioSotto"><p>Il presente contratto avr&agrave; durata di anni 1 <br>
+            			con inizio
+                    				dal
+                    				<input name="dal" type="text" id="dal" value="<?php echo $dal; ?>">
+				e scadenza il
+				<input name="al" type="text" id="al" value="<?php echo $al; ?>">
+            				</p></td>
+           		</tr>
+            	<tr>
+            		<td align="right"><table width="100%"  border="0" cellpadding="5" cellspacing="0" class="font10Px">
+                    	<tr>
+                    	  <td class="tratteggioSotto"><strong>DATI RELATIVI ALL'ORMEGGIO </strong></td>
+                  	  </tr>
+                    	<tr>
+                    		<td class="tratteggioSotto"><table width="100%"  border="0" cellpadding="5" cellspacing="0" class="font10Px">
+                    				<tr>
+                    					<td width="160"><strong>Ormeggio assegnato:</strong></td>
+                    					<td><strong>Pontile
+                            						<input name="pontile" type="text" id="pontile" value="<?php echo $_SESSION['riepilogo']['pontile']['pontile_codice']; ?>" size="30">
+                    						</strong></td>
+                    					<td><strong>N&deg;
+                            						<input name="posto_barca" type="text" id="posto_barca" value="<?php echo $_SESSION['riepilogo']['pontile']['posto_barca_numero']; ?>" size="30">
+                    						</strong></td>
+           					  </tr>
+                    				<tr>
+                    					<td>&nbsp;</td>
+                    					<td>&nbsp;</td>
+                    					<td>&nbsp;</td>
+           					  </tr>
+                    				<tr>
+                    					<td><strong>Dimensioni</strong></td>
+                    					<td><strong>Lunghezza
+                    						<input name="lunghezza" type="text" id="lunghezza" value="<?php echo $_SESSION['riepilogo']['pontile']['dimensione_lunghezza']; ?>">
+                    					</strong></td>
+                    					<td><strong>Larghezza
+                    						<input name="larghezza" type="text" id="larghezza" value="<?php echo $_SESSION['riepilogo']['pontile']['dimensione_larghezza']; ?>">
+                    					</strong></td>
+           					  </tr>
+                    				</table>
+                        			<strong> </strong></td>
+                    		</tr>
+                    	</table></td>
+           		</tr>
+            	<tr>
+            		<td align="right"><input type="submit" name="Submit" value="STAMPA"></td>
+           		</tr>
+            	</table>
+			    <br>
+			<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="tratteggioSottoGrande">&nbsp;</td>
+              </tr>
+            </table>
+			<br>
+			</form>
+		</td>
+		<td class="schedaOmbraRight">&nbsp;</td>
+	</tr>
+	<tr>
+		<td class="schedaCurvaBottomLeft">&nbsp;</td>
+		<td class="schedaOmbraBottom">&nbsp;</td>
+		<td class="schedaCurvaBottomRight">&nbsp;</td>
+	</tr>
+</table>
+</body>
+</html>

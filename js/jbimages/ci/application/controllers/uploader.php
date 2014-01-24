@@ -1,71 +1,130 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-Hg64AV+CRLxJyWkWGqVriWoaEtsrWEfYlm==
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Uploader extends CI_Controller {
+	
+	/* Constructor */
+	
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->helper(array('jbimages','language'));
+		
+		// is_allowed is a helper function which is supposed to return False if upload operation is forbidden
+		// [See jbimages/is_alllowed.php] 
+		
+		if (is_allowed() === FALSE)
+		{
+			exit;
+		}
+		
+		// User configured settings
+		$this->config->load('uploader_settings', TRUE);
+	}
+	
+	/* Language set */
+	
+	private function _lang_set($lang)
+	{
+		// We accept any language set as lang_id in **_dlg.js
+		// Therefore an error will occur if language file doesn't exist
+		
+		$this->config->set_item('language', $lang);
+		$this->lang->load('jbstrings', $lang);
+	}
+	
+	/* Default upload routine */
+		
+	public function upload ($lang='english')
+	{
+		// Set language
+		$this->_lang_set($lang);
+		
+		// Get configuartion data (we fill up 2 arrays - $config and $conf)
+		
+		$conf['img_path']			= $this->config->item('img_path',		'uploader_settings');
+		$conf['allow_resize']		= $this->config->item('allow_resize',	'uploader_settings');
+		
+		$config['allowed_types']	= $this->config->item('allowed_types',	'uploader_settings');
+		$config['max_size']			= $this->config->item('max_size',		'uploader_settings');
+		$config['encrypt_name']		= $this->config->item('encrypt_name',	'uploader_settings');
+		$config['overwrite']		= $this->config->item('overwrite',		'uploader_settings');
+		$config['upload_path']		= $this->config->item('upload_path',	'uploader_settings');
+		
+		if (!$conf['allow_resize'])
+		{
+			$config['max_width']	= $this->config->item('max_width',		'uploader_settings');
+			$config['max_height']	= $this->config->item('max_height',		'uploader_settings');
+		}
+		else
+		{
+			$conf['max_width']		= $this->config->item('max_width',		'uploader_settings');
+			$conf['max_height']		= $this->config->item('max_height',		'uploader_settings');
+			
+			if ($conf['max_width'] == 0 and $conf['max_height'] == 0)
+			{
+				$conf['allow_resize'] = FALSE;
+			}
+		}
+		
+		// Load uploader
+		$this->load->library('upload', $config);
+		
+		if ($this->upload->do_upload()) // Success
+		{
+			// General result data
+			$result = $this->upload->data();
+			
+			// Shall we resize an image?
+			if ($conf['allow_resize'] and $conf['max_width'] > 0 and $conf['max_height'] > 0 and (($result['image_width'] > $conf['max_width']) or ($result['image_height'] > $conf['max_height'])))
+			{				
+				// Resizing parameters
+				$resizeParams = array
+				(
+					'source_image'	=> $result['full_path'],
+					'new_image'		=> $result['full_path'],
+					'width'			=> $conf['max_width'],
+					'height'		=> $conf['max_height']
+				);
+				
+				// Load resize library
+				$this->load->library('image_lib', $resizeParams);
+				
+				// Do resize
+				$this->image_lib->resize();
+			}
+			
+			// Add our stuff
+			$result['result']		= "file_uploaded";
+			$result['resultcode']	= 'ok';
+			$result['file_name']	= $conf['img_path'] . '/' . $result['file_name'];
+			
+			// Output to user
+			$this->load->view('ajax_upload_result', $result);
+		}
+		else // Failure
+		{
+			// Compile data for output
+			$result['result']		= $this->upload->display_errors(' ', ' ');
+			$result['resultcode']	= 'failed';
+			
+			// Output to user
+			$this->load->view('ajax_upload_result', $result);
+		}
+	}
+	
+	/* Blank Page (default source for iframe) */
+	
+	public function blank($lang='english')
+	{
+		$this->_lang_set($lang);
+		$this->load->view('blank');
+	}
+	
+	public function index($lang='english')
+	{
+		$this->blank($lang);
+	}
+}
+
+/* End of file uploader.php */
+/* Location: ./application/controllers/uploader.php */

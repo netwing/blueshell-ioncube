@@ -1,47 +1,268 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<style>
+.bs-docs-example {
+    position: relative;
+    margin: 15px 0;
+    padding: 39px 19px 14px;
+    background-color: 
+    #fff;
+    border: 1px solid 
+    #ddd;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.bs-docs-example::after {
+    content: "Example";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: 
+    #f5f5f5;
+    border: 1px solid 
+    #ddd;
+    color: 
+    #9da0a4;
+    -webkit-border-radius: 4px 0 4px 0;
+    -moz-border-radius: 4px 0 4px 0;
+    border-radius: 4px 0 4px 0;
+}    
+</style>
+
+<?php
+$this->breadcrumbs=array(
+	'Example' => array($this->module->id),
+    'Elements'
+);
 ?>
-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
-Jm==
+<div class="bs-docs-example">
+<h1>Justo Nullam Dapibus Venenatis Malesuada</h1>
+<h2>Justo Nullam Dapibus Venenatis Malesuada</h2>
+<h3>Justo Nullam Dapibus Venenatis Malesuada</h3>
+<h4>Justo Nullam Dapibus Venenatis Malesuada</h4>
+<h5>Justo Nullam Dapibus Venenatis Malesuada</h5>
+<h6>Justo Nullam Dapibus Venenatis Malesuada</h6>
+</div>
+
+<div class="bs-docs-example">
+<p class="text-muted">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p class="text-primary">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p class="text-success">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p class="text-info">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p class="text-warning">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+<p class="text-danger">Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+</div>
+
+<div class="bs-docs-example">
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+  <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+</blockquote>
+</div>
+
+<div class="bs-docs-example">
+<form role="form">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputFile">File input</label>
+    <input type="file" id="exampleInputFile">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</div>
+
+<div class="bs-docs-example">
+<form class="form-inline" role="form">
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail2">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword2">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Sign in</button>
+</form>
+</div>
+
+<div class="bs-docs-example">
+<form class="form-horizontal" role="form">
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Email</label>
+    <div class="col-lg-10">
+      <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword1" class="col-lg-2 control-label">Password</label>
+    <div class="col-lg-10">
+      <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <button type="submit" class="btn btn-default">Sign in</button>
+    </div>
+  </div>
+</form>
+</div>
+
+<div class="bs-docs-example">
+<!-- Standard gray button with gradient -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->
+<button type="button" class="btn btn-danger">Danger</button>
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="btn btn-link">Link</button>
+</div>
+
+<div class="bs-docs-example">
+<p>
+  <button type="button" class="btn btn-primary btn-lg">Large button</button>
+  <button type="button" class="btn btn-default btn-lg">Large button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary">Default button</button>
+  <button type="button" class="btn btn-default">Default button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-sm">Small button</button>
+  <button type="button" class="btn btn-default btn-sm">Small button</button>
+</p>
+<p>
+  <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
+  <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+</p></div>
+
+<div class="bs-docs-example">
+<div class="btn-group">
+  <button type="button" class="btn btn-default">Left</button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+</div>
+</div>
+
+<div class="bs-docs-example">
+<!-- Single button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Action <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+
+</div>
+
+<div class="bs-docs-example">
+
+<h3>Example heading <span class="label label-default">New</span></h3>
+
+<span class="label label-default">Default</span>
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+<span class="label label-info">Info</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span>
+
+<a href="#">Inbox <span class="badge">42</span></a>
+
+
+</div>
+
+<div class="bs-docs-example">
+<div class="progress">
+  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+    <span class="sr-only">40% Complete (success)</span>
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+    <span class="sr-only">20% Complete</span>
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+    <span class="sr-only">60% Complete (warning)</span>
+  </div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+    <span class="sr-only">80% Complete</span>
+  </div>
+</div>
+</div>
+
+<div class="bs-docs-example">
+<div class="alert alert-success">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
+<div class="alert alert-info">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
+<div class="alert alert-warning">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
+<div class="alert alert-danger">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</div>
+</div>
+
+
+<div class="bs-docs-example">
+<div class="panel panel-default">
+  <div class="panel-heading">Panel heading without title</div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>    
+</div>

@@ -1,90 +1,84 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("anagrafica","W");
+$elenco_nazioni=$blue->elenco_nazioni();
+$key_elenco_nazioni=array_keys($elenco_nazioni);
+$form->campi_testo=array("cliente_nominativo","cliente_nome","cliente_cognome","cliente_indirizzo","cliente_cap","cliente_citta","cliente_provincia","cliente_codice_fiscale","cliente_partita_iva","cliente_telefono1","cliente_telefono2","cliente_telefono3","cliente_email","cliente_numero_documento","cliente_note","cliente_luogo_nascita","cliente_data_nascita");
+// $form->campi_data=array('cliente_data_nascita'=>array('gg','mm','aaaa'));
+$form->campi_numero=array("cliente_telefono1","cliente_telefono2","cliente_telefono3");
+$form->campi_lista=array("country"=>$key_elenco_nazioni,"cliente_documento"=>array("Non disponibile", "CdI","Patente","Patente Nautica","Passaporto"),"cliente_tipo_telefono1"=>array("Abitazione","Cellulare","Ufficio","Fax"),"cliente_tipo_telefono2"=>array("Abitazione","Cellulare","Ufficio","Fax"),"cliente_tipo_telefono3"=>array("Abitazione","Cellulare","Ufficio","Fax"));
+$form->campi_obbligatori=array("cliente_nominativo","cliente_telefono1");
+$form->valori_default=array("cliente_data_nascita" => "", "country_it"=>"selected=\"selected\"","cliente_tipo_telefono1_Cellulare"=>"selected=\"selected\"","cliente_tipo_telefono2_Abitazione"=>"selected=\"selected\"","cliente_tipo_telefono3_Ufficio"=>"selected=\"selected\"");
+$form->inizializza();
+
+if (count($_POST)>0)
+{
+	if (array_key_exists('response', $_GET)) {
+		if ($_GET['response'] == 'json') {
+			$form->errore_form = false;			
+		}
+	} else {
+		$form->verifica();
+	}
+	$cliente_note = "";
+	if ($form->errore_form === false) {
+		foreach ($_POST as $k=>$v) {
+			$$k=$sql->pulisci($v);
+		}
+		$cliente_nome = @ucwords(strtolower($cliente_nome));
+		$cliente_cognome = @ucwords(strtolower($cliente_cognome));
+		$cliente_codice_fiscale = @strtoupper($cliente_codice_fiscale);
+		$cliente_partita_iva = @strtoupper($cliente_partita_iva);
+		@$insert = "INSERT INTO ".$tabelle['clienti']." (cliente_nominativo,cliente_nome,cliente_cognome,cliente_luogo_nascita,cliente_data_nascita,cliente_indirizzo,cliente_citta,cliente_cap,cliente_provincia,country,cliente_telefono1,cliente_tipo_telefono1,cliente_telefono2,cliente_tipo_telefono2,cliente_telefono3,cliente_tipo_telefono3,cliente_email,cliente_codice_fiscale,cliente_partita_iva,cliente_documento,cliente_numero_documento,cliente_note) VALUES ('". $cliente_nominativo."','". $cliente_nome."','". $cliente_cognome."','". $cliente_luogo_nascita."','". $cliente_data_nascita."','". $cliente_indirizzo."','". $cliente_citta."','". $cliente_cap."','". $cliente_provincia."','". $country."','". $cliente_telefono1."','". $cliente_tipo_telefono1."','". $cliente_telefono2."','". $cliente_tipo_telefono2."','". $cliente_telefono3."','". $cliente_tipo_telefono3."','". $cliente_email."','". $cliente_codice_fiscale."','". $cliente_partita_iva."','". $cliente_documento."','". $cliente_numero_documento."','". $cliente_note."')";
+		$sql->insert_query($insert);
+		$lastid=$sql->insert_last_id;
+		# Fine della procedura di insert
+
+		if ($lastid) {
+			Yii::app()->user->setFlash("success", Yii::t('app', 'Client created successfully.'));
+		} else {
+			Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured.'));
+			header("Location:clienti.php");
+			exit;
+		}
+
+		if (array_key_exists('response', $_GET)) {
+			if ($_GET['response'] == 'json') {
+				echo intval($lastid);
+				exit;
+			}
+		}
+
+		if (array_key_exists("procedere",$_POST) and $_POST['procedere']=="barca") {
+			header("Location:barca_inserimento.php?id=".$lastid);
+			exit;
+		} elseif (array_key_exists("procedere",$_POST) and $_POST['procedere']=="concludi") {
+			header("Location:clienti.php");
+			exit;
+		} elseif (array_key_exists("procedere",$_POST) and $_POST['procedere']=="nuovo_contratto1") {
+			header("Location:nuovo_contratto1.php?selected=".$lastid);
+			exit;
+		} elseif (array_key_exists("procedere",$_POST) and $_POST['procedere']=="nuova_presenza1") {
+			header("Location:nuova_presenza1.php?selected=".$lastid);
+			exit;
+		} elseif (array_key_exists("procedere",$_POST) and $_POST['procedere']=="nuovo") {
+			header("Location:cliente_inserimento.php");
+			exit;
+		} else {
+			header("Location:index.php");
+			exit;
+		}
+		# Fine della procedura per redirigere l'utente una volta effettuato l'inserimento dei dati del cliente
+	}
+}
+
+if (array_key_exists('response', $_GET)) {
+	if ($_GET['response'] == 'json') {
+		echo intval(-1);
+		exit;
+	}
+}
+
+
+$action = "cliente_inserimento.php";
+require_once "views/client/create.php";

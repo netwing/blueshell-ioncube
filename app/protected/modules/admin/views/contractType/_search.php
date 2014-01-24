@@ -1,54 +1,89 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ContractTypeController */
+/* @var $model ContractType */
+/* @var $form CActiveForm */
 ?>
-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
-tlI2isCowom=
+
+<div class="wide form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'action'=>Yii::app()->createUrl($this->route),
+	'method'=>'get',
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+)); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'contratto_tipo_id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'contratto_tipo_id', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'contratto_tipo_nome', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'contratto_tipo_nome', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'color', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'color', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'prefix', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'prefix', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'rent', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'rent', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'transit', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'transit', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'sell', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'sell', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'option', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'option', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'manage', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'manage', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'reservation', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'reservation', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'sort_order', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'sort_order', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'create_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'create_time', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'update_time', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'update_time', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- search-form -->

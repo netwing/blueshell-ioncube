@@ -1,49 +1,80 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this PresenceController */
+/* @var $model Presence */
+/* @var $form CActiveForm */
 ?>
-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
+
+<div class="form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'presence-form',
+	// Please note: When you enable ajax validation, make sure the corresponding
+	// controller action is handling ajax validation correctly.
+	// There is a call to performAjaxValidation() commented in generated controller code.
+	// See class documentation of CActiveForm for details on this.
+    'enableClientValidation'=>false,
+    'enableAjaxValidation'=>true,
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+	<p class="help-block"><?php echo Yii::t('app', 'Fields with <span class="required">*</span> are required.'); ?>
+</p>
+
+	<?php echo $form->errorSummary($model, null, null, array('class' => 'text-danger')); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_posto_barca', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'presenza_posto_barca', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'presenza_posto_barca'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_cliente', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'presenza_cliente', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'presenza_cliente'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_barca', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'presenza_barca', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'presenza_barca'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_arrivo', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'presenza_arrivo', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'presenza_arrivo'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_partenza', array('class' => 'col-lg-2 control-label')); ?>
+        <div class="col-lg-10">
+        <?php echo $form->textField($model, 'presenza_partenza', array('class' => 'form-control')); ?>
+        <?php echo $form->error($model,'presenza_partenza'); ?>
+        <p class="help-block"><?php echo Yii::t('app', ''); ?></p>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="reset" class="btn btn-warning">Reset</button>
+            <button type="submit" class="btn btn-primary"><?php echo ($model->isNewRecord) ? Yii::t('app', 'Create') : Yii::t('app', 'Save'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- form -->

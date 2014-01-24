@@ -1,51 +1,47 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("documenti","R");
+$anno=$_POST['anno'];
+$rendita=$_POST['anno']-1;
+$scadenza=$_POST['scadenza'];
+$select_contratti="SELECT contratto_id,contratto_data,cliente_id,cliente_nominativo,cliente_indirizzo,cliente_cap,cliente_citta,cliente_provincia,pontile_codice,posto_barca_id,posto_barca_numero,dimensione_lunghezza,dimensione_larghezza,costo_condominiale FROM ".$tabelle['contratti'].",".$tabelle['clienti'].",".$tabelle['pontili'].",".$tabelle['posti_barca'].",".$tabelle['listini_posti_barca'].",".$tabelle['dimensioni']." WHERE cliente_id>1 AND cliente_id=contratto_anagrafica2 AND posto_barca_id=contratto_posto_barca AND pontile_id=posto_barca_pontile AND dimensione_id=posto_barca_dimensioni AND listino_posto_barca_dimensione=dimensione_id AND listino_posto_barca_anno='".$anno."' AND contratto_tipo='2' AND (contratto_fine>NOW() OR contratto_fine='0000-00-00') GROUP BY contratto_posto_barca";
+$result_contratti=$sql->select_query($select_contratti);
+$ricerca_sostituzione=array();
+while ($row_contratti=mysql_fetch_array($result_contratti))
+{
+	$cliente=$row_contratti['cliente_nominativo'];
+	$indirizzo=$row_contratti['cliente_indirizzo'];
+	$cap=$row_contratti['cliente_cap'];
+	$citta=$row_contratti['cliente_citta'];
+	$provincia=$row_contratti['cliente_provincia'];
+	$data=date("d-m-Y",time());
+	$pontile=$row_contratti['pontile_codice'];
+	$posto_barca=$row_contratti['posto_barca_numero'];
+	$data_stipula=$sql->data_ita($row_contratti['contratto_data']);
+	$data_stipula=$data_stipula[0];
+	$costo=number_format($row_contratti['costo_condominiale'],2,",",".");
+	$dimensioni=$row_contratti['dimensione_lunghezza']." x ".$row_contratti['dimensione_larghezza'];
+	$ricerca_sostituzione[]=array("<NOMINATIVO>"=>$cliente,
+								  "<INDIRIZZO>"=>$indirizzo,
+								  "<CAP>"=>$cap,
+								  "<CITTA>"=>$citta,
+								  "<PROVINCIA>"=>$provincia,
+								  "<DATA>"=>$data,
+								  "<ANNO>"=>$anno,
+								  "<PONTILE>"=>$pontile,
+								  "<POSTO_BARCA>"=>$posto_barca,
+								  "<DIMENSIONI>"=>$dimensioni,
+								  "<DATA-STIPULA>"=>$data_stipula,
+								  "<COSTO>"=>$costo,
+								  "<SCADENZA>"=>$scadenza,
+								  "<RENDITA>"=>$rendita,
+								  );
+}
+/*echo "<pre>";
+print_r($ricerca_sostituzione);
+echo "</pre>";
+*/
+$rtf=new RTF();
+$rtf->carica_template("template/lettera_spese_condominiali.rtf");
+$rtf->rtf_multiplo($ricerca_sostituzione);
+$rtf->output("Lettere di Spesa Condominiale.doc");

@@ -1,54 +1,197 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/**
+ * This is the template for generating a controller class file for CRUD feature.
+ * The following variables are available in this template:
+ * - $this: the CrudCode object
+ */
 ?>
-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
+<?php echo "<?php\n"; ?>
+
+class <?php echo $this->controllerClass; ?> extends <?php echo $this->baseControllerClass."\n"; ?>
+{
+	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+	public $layout='//layouts/column2';
+
+	/**
+	 * @var string the detault page title
+	 */
+	public $pageTitle = '<?php echo $this->getControllerId(); ?>';
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		// RBAC access control
+        return array(
+            array('allow', 'actions' => array('index', 'view', 'admin'), 'roles' => array('<?php echo $this->getModule()->getId(); ?>:<?php echo $this->getControllerId(); ?>:read')),
+            array('allow', 'actions' => array('create'), 'roles' => array('<?php echo $this->getModule()->getId(); ?>:<?php echo $this->getControllerId(); ?>:create')),
+            array('allow', 'actions' => array('update'), 'roles' => array('<?php echo $this->getModule()->getId(); ?>:<?php echo $this->getControllerId(); ?>:update')),
+            array('allow', 'actions' => array('delete'), 'roles' => array('<?php echo $this->getModule()->getId(); ?>:<?php echo $this->getControllerId(); ?>:delete')),
+            array('deny', 'users'=>array('*')),
+        );
+
+		// Simple access control list
+		/*
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('create','update'),
+				'users'=>array('@'),
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array('admin','delete'),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+		*/
+
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionView($id)
+	{
+		$this->render('view',array(
+			'model'=>$this->loadModel($id),
+		));
+	}
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreate()
+	{
+		$model=new <?php echo $this->modelClass; ?>;
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['<?php echo $this->modelClass; ?>']))
+		{
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
+		}
+
+		$this->render('create',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Updates a particular model.
+	 * If update is successful, the browser will be redirected to the 'view' page.
+	 * @param integer $id the ID of the model to be updated
+	 */
+	public function actionUpdate($id)
+	{
+		$model=$this->loadModel($id);
+
+		// Uncomment the following line if AJAX validation is needed
+		$this->performAjaxValidation($model);
+
+		if(isset($_POST['<?php echo $this->modelClass; ?>']))
+		{
+			$model->attributes=$_POST['<?php echo $this->modelClass; ?>'];
+			if($model->save())
+				$this->redirect(array('view','id'=>$model-><?php echo $this->tableSchema->primaryKey; ?>));
+		}
+
+		$this->render('update',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDelete($id)
+	{
+		$this->loadModel($id)->delete();
+
+		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+		if(!isset($_GET['ajax']))
+			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$dataProvider=new CActiveDataProvider('<?php echo $this->modelClass; ?>');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+	}
+
+	/**
+	 * Manages all models.
+	 */
+	public function actionAdmin()
+	{
+		$model=new <?php echo $this->modelClass; ?>('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['<?php echo $this->modelClass; ?>']))
+			$model->attributes=$_GET['<?php echo $this->modelClass; ?>'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}
+
+	/**
+	 * Returns the data model based on the primary key given in the GET variable.
+	 * If the data model is not found, an HTTP exception will be raised.
+	 * @param integer $id the ID of the model to be loaded
+	 * @return <?php echo $this->modelClass; ?> the loaded model
+	 * @throws CHttpException
+	 */
+	public function loadModel($id)
+	{
+		$model=<?php echo $this->modelClass; ?>::model()->findByPk($id);
+		if($model===null)
+			throw new CHttpException(404,'The requested page does not exist.');
+		return $model;
+	}
+
+	/**
+	 * Performs the AJAX validation.
+	 * @param <?php echo $this->modelClass; ?> $model the model to be validated
+	 */
+	protected function performAjaxValidation($model)
+	{
+		if(isset($_POST['ajax']) && $_POST['ajax']==='<?php echo $this->class2id($this->modelClass); ?>-form')
+		{
+			echo CActiveForm::validate($model);
+			Yii::app()->end();
+		}
+	}
+}

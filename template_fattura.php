@@ -1,174 +1,195 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+$valute=array('listino','imponibile','totale','imponibile_fattura','imposta','totale_fattura');
+foreach($_POST as $k=>$v)
+{
+	if (get_magic_quotes_gpc()) {
+		$$k=stripslashes($v);
+	} else {
+		$$k=$v;
+	}
+	if (in_array($k,$valute)) {
+		$$k=str_replace(',','.',$$k);
+		$$k=number_format($$k,2,'.','');
+	}	
+}
+$campi=array("<NOMINATIVO>"=>$nominativo,
+			 "<INDIRIZZO>"=>$indirizzo,
+			 "<CAP>"=>$cap,
+			 "<CITTA>"=>$citta,
+			 "<NAZIONE>"=>$nazione,
+			 "<PROVINCIA>"=>$provincia,
+			 "<PARTITA_IVA>"=>$partita_iva,
+			 "<CODICE_FISCALE>"=>$codice_fiscale,
+			 "<NUMERO_DOCUMENTO>"=>$numero_documento,
+			 "<DATA>"=>$data_user,
+			 "<TIPO_DOCUMENTO>"=>$tipo_documento,
+			 "<CONDIZIONI_PAGAMENTO>"=>$condizioni_pagamento,
+
+			 "<DESCRIZIONE1>"=>$descrizione,
+			 "<U1>"=>$unita_misura,
+			 "<Q1>"=>$quantita,
+			 "<LISTINO1>"=>number_format($listino,2,",","."),
+			 "<SCONTO1>"=>$sconto,
+			 "<IMPONIBILE1>"=>number_format($imponibile,2,",","."),
+			 "<IVA1>"=>$iva,
+			 "<TOTALE1>"=>number_format($totale,2,",","."),
+			
+			 "<ALIQUOTA>"=>$aliquota,
+			 "<ESENTE_IVA>"=>$motivo_esente_iva,
+			 "<IMPONIBILE>"=>number_format($imponibile_fattura,2,",","."),
+			 "<IMPOSTA>"=>number_format($imposta,2,",","."),
+			 "<TOTALE>"=>number_format($totale_fattura,2,",","."),
+			 "<SPESE_TRASPORTO>"=>$spese_trasporto,
+			 "<SPESE_INCASSO>"=>$spese_incasso,
+			 "<BOLLI>"=>$bolli,
+			 "<TOTALE_EURO>"=>number_format(($totale_fattura+$spese_trasporto+$spese_incasso+$bolli),2,",",".")
+			);
+			
+if (array_key_exists('save', $_POST) and $_POST['save'] !== null) {
+	$fattura_cliente_id=$_SESSION['riepilogo']['cliente']['cliente_id'];
+	$fattura_contratto_id=$_SESSION['riepilogo']['contratto']['contratto_id'];
+	$fattura_numero=$sql->pulisci($numero_documento);
+	$fattura_data=$sql->data_sql($data);
+	$fattura_data=$fattura_data[0];
+	$fattura_condizioni_pagamento=$sql->pulisci($condizioni_pagamento);
+	$fattura_spese_incasso=$spese_incasso;
+	$fattura_spese_trasporto=$spese_trasporto;
+	$fattura_bolli=$bolli;
+	if (array_key_exists("esente_iva",$_POST))
+	{
+		$fattura_esente_iva=1;
+	}
+	else
+	{
+		$fattura_esente_iva=0;
+	}
+	$fattura_motivo_esente_iva=$sql->pulisci($motivo_esente_iva);
+	$descrizione=$sql->pulisci($descrizione);
+	if (array_key_exists("fattura_id",$_POST))
+	{
+		$update="UPDATE ".$tabelle['fatture']." SET fattura_cliente_id='".$fattura_cliente_id."',fattura_numero='".$fattura_numero."',fattura_data='".$fattura_data."',fattura_condizioni_pagamento='".$fattura_condizioni_pagamento."',fattura_spese_incasso='".$fattura_spese_incasso."',fattura_spese_trasporto='".$fattura_spese_trasporto."',fattura_bolli='".$fattura_bolli."',fattura_esente_iva='".$fattura_esente_iva."',fattura_motivo_esente_iva='".$fattura_motivo_esente_iva."',fattura_contratto_id='".$fattura_contratto_id."' WHERE fattura_id='".$_POST['fattura_id']."'";
+		$sql->update_query($update);
+		$select_righe_aggiornare="SELECT fattura_riga_id FROM ".$tabelle['fatture_righe']." WHERE fattura_riga_fattura_id='".$_POST['fattura_id']."'";
+		$result_righe_aggiornare=$sql->select_query($select_righe_aggiornare);
+		if ($sql->select_num_rows>0)
+		{
+			while ($row=mysql_fetch_array($result_righe_aggiornare))
+			{
+				$update="UPDATE ".$tabelle['fatture_righe']." SET fattura_riga_descrizione='".$descrizione."',fattura_riga_um='".$unita_misura."',fattura_riga_quantita='".$quantita."',fattura_riga_listino='".$listino."',fattura_riga_sconto='".$sconto."',fattura_riga_imponibile='".$imponibile."',fattura_riga_iva='".$iva."',fattura_riga_totale='".$totale."' WHERE fattura_riga_id='".$row['fattura_riga_id']."'";
+				$sql->update_query($update);
+			}
+		}
+		else
+		{
+			$insert="INSERT INTO ".$tabelle['fatture_righe']." (fattura_riga_fattura_id,fattura_riga_descrizione,fattura_riga_um,fattura_riga_quantita,fattura_riga_listino,fattura_riga_sconto,fattura_riga_imponibile,fattura_riga_iva,fattura_riga_totale) VALUES ('".$_POST['fattura_id']."','".$descrizione."','".$unita_misura."','".$quantita."','".$listino."','".$sconto."','".$imponibile."','".$iva."','".$totale."')";
+			$sql->insert_query($insert);
+			// Inserimento della riga di fatturazione
+		}
+	}
+	else
+	{
+		$insert="INSERT INTO ".$tabelle['fatture']." (fattura_cliente_id,fattura_numero,fattura_data,fattura_condizioni_pagamento,fattura_spese_incasso,fattura_spese_trasporto,fattura_bolli,fattura_esente_iva,fattura_motivo_esente_iva,fattura_contratto_id) VALUES ('".$fattura_cliente_id."','".$fattura_numero."','".$fattura_data."','".$fattura_condizioni_pagamento."','".$fattura_spese_incasso."','".$fattura_spese_trasporto."','".$fattura_bolli."','".$fattura_esente_iva."','".$fattura_motivo_esente_iva."','".$fattura_contratto_id."') ";
+		$sql->insert_query($insert);
+		$fattura_id=$sql->insert_last_id;
+		// Inserimento dei dati della fattura (cliente, numero del documento, data, info secondarie)
+		$insert="INSERT INTO ".$tabelle['fatture_righe']." (fattura_riga_fattura_id,fattura_riga_descrizione,fattura_riga_um,fattura_riga_quantita,fattura_riga_listino,fattura_riga_sconto,fattura_riga_imponibile,fattura_riga_iva,fattura_riga_totale) VALUES ('".$fattura_id."','".$descrizione."','".$unita_misura."','".$quantita."','".$listino."','".$sconto."','".$imponibile."','".$iva."','".$totale."')";
+		$sql->insert_query($insert);
+		// Inserimento della riga di fatturazione
+        
+        // INserimento della riga di prima nota
+        $insert = "INSERT INTO " . $tabelle['prima_nota'] . " (prima_nota_data, prima_nota_descrizione, prima_nota_fattura_id, prima_nota_entrata, prima_nota_uscita, prima_nota_categoria, prima_nota_mezzo_scambio)
+                   VALUES (NOW(), 'Fattura n. " . $fattura_numero . "', '" . $fattura_id . "', '" . $totale . "', 0, 'Incasso fattura', '')";
+        $sql->insert_query($insert);
+    
+    }
+	
+    // Se da stampa_fattura.php ci viene passato un fattura_id, eseguiamo un update invece di un insert
+	if (array_key_exists("aggiungi_aggiorna",$_POST))
+	{
+		if ($_POST['aggiungi_aggiorna']=="aggiungi")
+		{
+			$update="UPDATE ".$tabelle['contratti']." SET contratto_fatturato=contratto_fatturato+".$totale." WHERE contratto_id='".$_SESSION['riepilogo']['contratto']['contratto_id']."'";
+			$sql->update_query($update);
+		}
+		elseif ($_POST['aggiungi_aggiorna']=="aggiorna")
+		{
+			$update="UPDATE ".$tabelle['contratti']." SET contratto_fatturato=".$totale." WHERE contratto_id='".$_SESSION['riepilogo']['contratto']['contratto_id']."'";	
+			$sql->update_query($update);
+		}
+	}
+	// Questo per aggiornare il fatturato nella riga del contratto solo se l'attuale fatturato più quello nuovo non superano il totale del contratto
+	header("Location:stampa_fattura.php?id=".$fattura_id);
+	exit;
+	// Dopo il salvataggio della fattura, rispediamo l'utente alla pagina di stampa della fattura
+}
+elseif (array_key_exists('save_and_print', $_POST) and $_POST['save_and_print'] !== null) {
+	$fattura_cliente_id=$_SESSION['riepilogo']['cliente']['cliente_id'];
+	$fattura_contratto_id=$_SESSION['riepilogo']['contratto']['contratto_id'];	
+	$fattura_numero=$sql->pulisci($numero_documento);
+	$fattura_data=$sql->data_sql($data);
+	$fattura_data=$fattura_data[0];
+	$fattura_condizioni_pagamento=$sql->pulisci($condizioni_pagamento);
+	$fattura_spese_incasso=$spese_incasso;
+	$fattura_spese_trasporto=$spese_trasporto;
+	$fattura_bolli=$bolli;
+	if (array_key_exists("esente_iva",$_POST))
+	{
+		$fattura_esente_iva=1;
+	}
+	else
+	{
+		$fattura_esente_iva=0;
+	}
+	$fattura_motivo_esente_iva=$sql->pulisci($motivo_esente_iva);
+	$descrizione=$sql->pulisci($descrizione);
+	if (array_key_exists("fattura_id",$_POST))
+	{
+		$update="UPDATE ".$tabelle['fatture']." SET fattura_cliente_id='".$fattura_cliente_id."',fattura_numero='".$fattura_numero."',fattura_data='".$fattura_data."',fattura_condizioni_pagamento='".$fattura_condizioni_pagamento."',fattura_spese_incasso='".$fattura_spese_incasso."',fattura_spese_trasporto='".$fattura_spese_trasporto."',fattura_bolli='".$fattura_bolli."',fattura_esente_iva='".$fattura_esente_iva."',fattura_motivo_esente_iva='".$fattura_motivo_esente_iva."',fattura_contratto_id='".$fattura_contratto_id."' WHERE fattura_id='".$_POST['fattura_id']."'";
+		$sql->update_query($update);
+		$select_righe_aggiornare="SELECT fattura_riga_id FROM ".$tabelle['fatture_righe']." WHERE fattura_riga_fattura_id='".$_POST['fattura_id']."'";
+		$result_righe_aggiornare=$sql->select_query($select_righe_aggiornare);
+		while ($row=mysql_fetch_array($result_righe_aggiornare))
+		{
+			$update="UPDATE ".$tabelle['fatture_righe']." SET fattura_riga_descrizione='".$descrizione."',fattura_riga_um='".$unita_misura."',fattura_riga_quantita='".$quantita."',fattura_riga_listino='".$listino."',fattura_riga_sconto='".$sconto."',fattura_riga_imponibile='".$imponibile."',fattura_riga_iva='".$iva."',fattura_riga_totale='".$totale."' WHERE fattura_riga_id='".$row['fattura_riga_id']."'";
+			$sql->update_query($update);
+		}
+	}
+	else
+	{
+		$insert="INSERT INTO ".$tabelle['fatture']." (fattura_cliente_id,fattura_numero,fattura_data,fattura_condizioni_pagamento,fattura_spese_incasso,fattura_spese_trasporto,fattura_bolli,fattura_esente_iva,fattura_motivo_esente_iva,fattura_contratto_id) VALUES ('".$fattura_cliente_id."','".$fattura_numero."','".$fattura_data."','".$fattura_condizioni_pagamento."','".$fattura_spese_incasso."','".$fattura_spese_trasporto."','".$fattura_bolli."','".$fattura_esente_iva."','".$fattura_motivo_esente_iva."','".$fattura_contratto_id."') ";
+		$sql->insert_query($insert);
+		$fattura_id=$sql->insert_last_id;
+		// Inserimento dei dati della fattura (cliente, numero del documento, data, info secondarie)
+		$insert="INSERT INTO ".$tabelle['fatture_righe']." (fattura_riga_fattura_id,fattura_riga_descrizione,fattura_riga_um,fattura_riga_quantita,fattura_riga_listino,fattura_riga_sconto,fattura_riga_imponibile,fattura_riga_iva,fattura_riga_totale) VALUES ('".$fattura_id."','".$descrizione."','".$unita_misura."','".$quantita."','".$listino."','".$sconto."','".$imponibile."','".$iva."','".$totale."')";
+		$sql->insert_query($insert);
+		// Inserimento della riga di fatturazione
+        
+        // INserimento della riga di prima nota
+        $insert = "INSERT INTO " . $tabelle['prima_nota'] . " (prima_nota_data, prima_nota_descrizione, prima_nota_fattura_id, prima_nota_entrata, prima_nota_uscita, prima_nota_categoria, prima_nota_mezzo_scambio)
+                   VALUES (NOW(), 'Fattura n. " . $fattura_numero . "', '" . $fattura_id . "', '" . $totale . "', 0, 'Incasso fattura', '')";
+        $sql->insert_query($insert);
+	}
+	// Se da stampa_fattura.php ci viene passato un fattura_id, eseguiamo un update invece di un insert
+	if (array_key_exists("aggiungi_aggiorna",$_POST))
+	{
+		if ($_POST['aggiungi_aggiorna']=="aggiungi")
+		{	
+			$update="UPDATE ".$tabelle['contratti']." SET contratto_fatturato=contratto_fatturato+".$totale." WHERE contratto_id='".$_SESSION['riepilogo']['contratto']['contratto_id']."'";
+			$sql->update_query($update);
+		}
+		elseif ($_POST['aggiungi_aggiorna']=="aggiorna")
+		{
+			$update="UPDATE ".$tabelle['contratti']." SET contratto_fatturato=".$totale." WHERE contratto_id='".$_SESSION['riepilogo']['contratto']['contratto_id']."'";	
+			$sql->update_query($update);
+		}
+	}
+	// Questo per aggiornare il fatturato nella riga del contratto solo se l'attuale fatturato più quello nuovo non superano il totale del contratto
+	$chiavi=array_keys($campi);
+	$valori=array_values($campi);
+	$rtf=new RTF();
+	$rtf->carica_template("template/fattura.rtf");
+	$rtf->rtf_singolo($chiavi,$valori);
+	$rtf->output("Fattura.doc");
+}
 ?>
-HR+cPqtE8fNgYfVQvnYtjYoxgUDqYxqaKHI+LfciZeEuTEl14FWum++fKaxFkTTiWffwIGBINkt/
-v3CBOvQW07T7ENAiGNGoGukvfeHH6vrzTwJhpsHHRjSkItAtZZflb2tWq9fyyKrcenC4+/jRpTaD
-sCcn+VFD6sq0XgJ7mIQIq2mpCzKaZRgTEHfVyaV6VAEtiIu9zJES0MhoYLhdnbKuCoS1v85EeDad
-Im0uKlOVoqYy4Agtc8BT3SyoJzIxHGvmwA6cEHFtX0rb2scyAgrhQb+pVMs2bmb6/otxtY1YykyC
-+5dxRzkejfekBgeUADgbz0oNHz9+KIEzOxWaf32Zxw09bmcLELUCvPQxq0fERVKLBczySYMQWN5N
-RdZcAK9aZB2jXl55xERSX69YhIPjqJ/Lf2s86KzDlt1dXsIIo0jSOXIVaStCtC+b1LYUpNXwmbLi
-YLER7xWo4b0qDteg7Twm+yjBALOR4zPJYLp0NMl5Ziix1Plh3lZ6iGb3DbfXhrmFSQ6B7EqMTyLU
-1+8ntU9FT4ru/boGDDCFgmY4vw3wjx8b8N+629ZM5mfCxQG75Z8fKnMTQ9znanwAo9/mb9VdvVen
-JAuse76Aa7rjEObGL6z7qSIcn6J/owSXRatwzAfbL7eSEi/Y7HCMlEfBLH2XOfbanHwy4b1CRIm7
-yIigilEFypZV0/3i5srDXqyEkF+UID3QhjTU8jeIP/gnETVB4tr0IZ0GijosniAnr9FLpoKn+0uZ
-rPud1LF/jeBQR/uXLIxeTYv/6zyUSVr6SuT4pE9WPkK3TKDBpbv9uEFOrNE4R9VGcF20ZM97tozp
-IMh/ShfOBl9A+48sLzYeuHPc+j7OIdifNPBIapaaqgomneidaES1+JcDqZCDtyeEw6nnVqZpgVkF
-qY5ZRLcegQ0nsJsvIvQIZh6Jd+Us8g2FNPTmsWGHFV4UmLZWwWKta67rm9MAhwbTGGwp8hkPjHYF
-w6ZRfWVmue53Bl0KP+JQkDBHSeBTGDwLLeOwpiHdYNyXNi2qy9u/9IPO+ZLC4tUrGg3M62GE4vd4
-8tFz1qNYOd3WNYhrUiz3GgsjRWxoxuZnUvlgnfk8DZEktVl2TE8YyUXMOt/Fm/PPaRHkKzUQXHX2
-UNF2pzIcJpa3nApk9s/UDyXjZpj56lVPD3j76A9d4TkNuPwrTpLdvVaLMOkrWI5Rv5sNIKmJS98s
-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
-RMUtQW7fhbjXSj8=

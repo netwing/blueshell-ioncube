@@ -1,44 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-xQ37sUITM3T9M7xZPHeqFhk63pXv
+<?php
+/**
+ * FontAwesom class file.
+ * @author Emanuele Deserti <emanuele.deserti@netwing.it>
+ * @copyright Copyright &copy; Emanuele Deserti 2013-
+ * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @package netwing
+ * @version 1.0.0
+ */
+
+/**
+ * Font awesome component.
+ */
+class FontAwesome extends CApplicationComponent
+{
+    /**
+     * @var bool whether we should copy the asset file or directory even if it is already published before.
+     */
+    public $forceCopyAssets = false;
+
+    private $_assetsUrl;
+
+    /**
+     * Registers the Font awesome CSS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerCss($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'font-awesome.css' : 'font-awesome.min.css';
+            $url = $this->getAssetsUrl() . "/css/" . $fileName;
+        }
+        Yii::app()->clientScript->registerCssFile($url);
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllCss()
+    {
+        $this->registerCss();
+    }
+
+
+    /**
+     * Registers all assets.
+     */
+    public function register()
+    {
+        $this->registerAllCss();
+    }
+
+    /**
+     * Returns the url to the published assets folder.
+     * @return string the url.
+     */
+    protected function getAssetsUrl()
+    {
+        if (isset($this->_assetsUrl)) {
+            return $this->_assetsUrl;
+        } else {
+            // Save default exclude files
+            $excludeFiles = Yii::app()->assetManager->excludeFiles;
+            // Do not publish less, scss and src
+            Yii::app()->assetManager->excludeFiles = array_merge(
+                $excludeFiles, 
+                array('.git', 'gitignore', '.ruby-version', 'CONTRIBUTING.md', 'Gemfile', 'Gemfile.lock', 'README.md', '_config.yml', 'composer.json', 'less', 'package.json', 'scss', 'src')
+            );
+            $assetsPath = Yii::getPathOfAlias('bower.font-awesome');
+            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
+            // Reset default exclude files
+            Yii::app()->assetManager->excludeFiles = $excludeFiles;
+            return $this->_assetsUrl = $assetsUrl;
+        }
+    }
+
+}

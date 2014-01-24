@@ -1,33 +1,50 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this CustomerController */
+/* @var $model Customer */
+
+$this->pageTitle = Yii::t('app', 'Update Customers');
+
+$this->breadcrumbs=array(
+	'Customers'=>array('index'),
+	$model->cliente_id,
+);
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage Customer'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Create Customer'), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update Customer'), 'url'=>array('update', 'id'=>$model->cliente_id)),
+	array('label'=>Yii::t('app', 'Delete Customer'), 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->cliente_id),'confirm'=>'Are you sure you want to delete this item?')),
+);
 ?>
-HR+cPmFXFvy7I8JGobQglFlr5VEzRovsE8EFYhAikimxQ+Q5l4bxQrqJKqSGdMc+tzHpsyeQENe8
-wGjG+8LvglQDox0CFtaqj/hv/bOwltCBGOsPZQA6b76N5rGKtlX8UQ5hLCtZt+w2I/ZdjjDeXr2n
-TMqutGbify7YQecktuT1P83WeLhszDJkhJd5GRoSA1B5JKeAlPVHgZsva6NeBk2GaEaGZNwaBwy7
-7Aqn01EOBxB/Tk9/Fwt23SyoJzIxHGvmwA6cEHFtX6ver/1TOliBgrZPycrojByz/siO9McKFMPn
-qru4yRFO09EFFZd2hmdxIFWcf9pwWF5ks0GFncgtROmssn60tYwH1vNBc6vaWdi9zeTipnH7REyz
-axxhIqH+BSyY6duaS7gwmEsjqU/pfSNP1gAwiNl+ibHz1IOV3SnGhNp9HZ7O75QSg9Ju7vMnIfFZ
-bz9KGVULtrOYrqabo/K/+eQZR3w8K3ExoyEsmlJNADJT3pXL5ohL0mXgx0SOxcN+f3JCM+o7U0mf
-aE3M0LDnuJICK0AgDugUWEiKHiFsXxulIsLpfzgzjX3L9gwwXWH0kC+03y/djoYE5k6dOJl/3WU1
-B87XT/hxcshdQi6OR9gt22aIUJV/jpg7tn6n46dP4rzU6C3xWb5f7gy4JYVO5anHDXYWZQ0oiGr6
-TnQ7p/1OioGUulE/i66rIF2HGYm8pX6O24l8TrT1GB6Dd/JpnQyGyQ8/qKnwCWHjQU+DRP/ec5nw
-R2YdiUs8vim4dBFdFWN5hCAcRIsaSZDA7xfTeKyJLruFTR7I4z74MsEtgnYSjbqxEwne9eYy0Fhj
-JB6jkT1KRtcVJw7Qs6ocvizo7KUfTI9I5gbkBCUq9RzsgUWWNhlk9VC//ROC1X+7GUNYnQbf7Jwg
-S2dTpCOqSKUORBHht224FUnu+OPwWkzIhiV6ccyzcKypZny3RP0fZNTC6IGcHlpXOVzFRVoThO6L
-DIxqUYZSTogo7ykjJ/yIbMQlJuP8bDL3SNmTPvJGMdbezlc4hmUh7EHM41tui5zcSMhGCtTPiT2f
-63e/Jhz42Xrn37nmwrxSsN3rwIxfZVUO1QiQjYqqMgJEM0n+9e7z0LtOwWL89NDVC8Fofh7A/oaX
-hHZ3xkLsAjJwhvw4h8dEZEA+K8AQhBCiVK+WGk8NN+MSu9+D/C4hdOE4WB4jrIvlROmhnAMh5X2s
-frrubvpAs0hT1SNMzVs+goVGSSh6YA3I9cO/1IU+AQzLVIlzkqCcTE0rcd7YmNscHp6Sc0MdsKTZ
-1E1329AWxi01f5oEKwcMcnZNS1n+joS58PEPvNbuhka13tKuO7hLwvWLCJa66pYdMfz8ngyYRkMY
-JuET/4wukmSXnyJGNOApugof8ncR8UV1IG0ZUAC5mYTSUEJM8/VORikd8GjSkAGrf40gMH2rIUm3
-MlFoK1qG8g40kf5HYKmQlzBAkB4dI7RXgl/TaxpulHaaJAJWpaRj/76ciM98lXJ/nw3NStQ7T6hk
-VzxGx6wxzSFczxmmz/anwqMJaBzZoSqmvNu9xKUYG7PfdfvFCKVP39OnzdxbvFQOkkiFFxRpCPqA
-hOBjdo2xSVtUXjH4JUbGYklevQstUcWe90Q1siT2ccPb5I8zHAuRB/E46KvAW4D7GYui7K4ZJu3r
-nHRlPhj3NzKdDAMVgtYi/puKW0uzXj8kS6xswrjx3Wg1wWKJ9b76QBt1jSbG5brz0K52l/nZ88NN
-7ST8DQj3DS7ayhDNyb/angddVVqvLgZB9eixnPh2FxQpNRD+McWmbhfXvMmp5j5jPesky3zoo76O
-R0pnYH891yOKDf6wuOvJqahEtkgOrtukOB2QhEiM30DwpA9CUe9MAaALmukL4V1v8COKxbjOdael
-Qh87MFGhBCh4HmHenu1hC6K4bATRUjjo9ZyGLidNLFunB45t5zlgPUoNGCjIlqHqLyiE8uQxgjh8
-OzJ/71/AmmItv61HSlw6vqIwaGWEzwBP8hW4Rgn8V3rOk6VIlFVDm9xGw0tsd1zUwBbCNQpzKHWT
-bg7v4DTnODiAd+LwpTgqmehvHJVpXIoHdtUlKndsav3DY8uWdBbRMDmdJgCk+l5g7fT7C3C6T+Qk
-EuNaOoZPS6wrqwBx4jXHAo7LFjuQMRxP446VfN95O1CKYD5bWSzkw6pAFQV8aY4fy5xPGg42Xm+2
-QQV/KhbsmJ1FUhcELSwXsTe1OG==
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'cliente_id',
+		'cliente_nominativo',
+		'cliente_tipo',
+		'cliente_nome',
+		'cliente_cognome',
+		'cliente_data_nascita',
+		'cliente_luogo_nascita',
+		'cliente_indirizzo',
+		'cliente_citta',
+		'cliente_cap',
+		'cliente_provincia',
+		'cliente_nazione',
+		'cliente_telefono1',
+		'cliente_tipo_telefono1',
+		'cliente_telefono2',
+		'cliente_tipo_telefono2',
+		'cliente_telefono3',
+		'cliente_tipo_telefono3',
+		'cliente_email',
+		'cliente_codice_fiscale',
+		'cliente_partita_iva',
+		'cliente_documento',
+		'cliente_numero_documento',
+		'cliente_rifiuta_comunicazioni',
+		'cliente_note',
+		'data_inserimento_cliente',
+	),
+)); ?>

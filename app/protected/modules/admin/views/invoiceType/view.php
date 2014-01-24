@@ -1,30 +1,39 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this InvoiceTypeController */
+/* @var $model InvoiceType */
+
+$this->pageTitle = Yii::t('app', 'Update Invoice Types');
+
+$this->breadcrumbs=array(
+	'Invoice Types'=>array('index'),
+	$model->name,
+);
+
+$this->menu=array(
+	array('label'=>Yii::t('app', 'Manage InvoiceType'), 'url'=>array('admin')),
+	array('label'=>Yii::t('app', 'Create InvoiceType'), 'url'=>array('create')),
+	array('label'=>Yii::t('app', 'Update InvoiceType'), 'url'=>array('update', 'id'=>$model->id)),
+	array('label'=>Yii::t('app', 'Delete InvoiceType'), 'url'=>array('delete', 'id'=>$model->id), 'linkOptions'=>array('confirm'=>'Are you sure you want to delete this item?')),
+);
 ?>
-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
+
+<?php $this->widget('zii.widgets.CDetailView', array(
+	'data'=>$model,
+	'attributes'=>array(
+		'id',
+		'name',
+		'description',
+		'color' => array(
+			'label' => $model->getAttributeLabel("color"),
+			'value' => $model,
+			'type'	=> 'textColor',
+		),
+		'type:invoiceType',
+		'prefix',
+		'year_restart:booleanString',
+		'sort_order',
+		'enabled:booleanString',
+		'create_time:datetimeLong',
+		'update_time:datetimeLong',
+	),
+)); ?>

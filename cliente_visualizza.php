@@ -1,44 +1,42 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-cZyt0loSfih/VTvW
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("anagrafica","R");
+$elenco_nazioni=$blue->elenco_nazioni();
+if (!array_key_exists("id",$_GET))
+{
+	header("Location:index.php");
+}
+$select_cliente="SELECT * FROM ".$tabelle['clienti']." WHERE cliente_id='".$_GET['id']."'";
+$result_cliente=$sql->select_query($select_cliente);
+$row_cliente=mysql_fetch_array($result_cliente);
+# Carichiamo i dati del cliente
+
+$select_barca="SELECT barca_id,barca_nome, barca_lunghezza FROM ".$tabelle['barche']." WHERE barca_proprietario='".$_GET['id']."'";
+$result_barca=$sql->select_query($select_barca);
+# Carichiamo i dati sulle imbarcazioni
+
+if (array_key_exists("delfat",$_GET))
+{
+	$delete="DELETE FROM ".$tabelle['fatture']." WHERE fattura_id='".$_GET['delfat']."'";
+	$sql->delete_query($delete);
+	$delete="DELETE FROM ".$tabelle['fatture_righe']." WHERE fattura_riga_fattura_id='".$_GET['id']."'";
+	$sql->delete_query($delete);
+}
+# Se viene passato un parametro delfat, la fattura in questione viene cancellata
+
+if (array_key_exists("delnota",$_GET))
+{
+	$delete="DELETE FROM ".$tabelle['clienti_note']." WHERE cliente_nota_id='".$_GET['delnota']."'";
+	$sql->delete_query($delete);
+}
+// Se viene passato un parametro delnota, la nota in questione viene cancellata
+
+$select_fatture="SELECT fattura_id,fattura_numero,fattura_data FROM ".$tabelle['fatture']." WHERE fattura_cliente_id='".$_GET['id']."' ORDER BY fattura_data ASC";
+$result_fatture=$sql->select_query($select_fatture);
+# Carichiamo le fatture emesse per il cliente
+
+$select_note="SELECT cliente_nota_id,cliente_nota_data,cliente_nota_contenuto,cliente_nota_attiva FROM ".$tabelle['clienti_note']." WHERE cliente_nota_cliente_id='".$_GET['id']."'";
+$result_note=$sql->select_query($select_note);
+# Carichiamo le note inserite per quel cliente
+
+require_once "views/client/view.php";

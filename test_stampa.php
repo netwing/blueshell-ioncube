@@ -1,34 +1,44 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$valute=array('listino','imponibile','totale','imponibile_fattura','imposta','totale_fattura');
+
+$campi=array("<NOMINATIVO>"=>"Nominativo di Prova",
+			 "<INDIRIZZO>"=>"Via Milano, 1",
+			 "<CAP>"=>"00138",
+			 "<CITTA>"=>"Roma",
+			 "<NAZIONE>"=>"Italia",
+			 "<PROVINCIA>"=>"RM",
+			 "<PARTITA_IVA>"=>"0123456789123456",
+			 "<CODICE_FISCALE>"=>"ABCDEF12X56Q789X",
+			 "<NUMERO_DOCUMENTO>"=>"100",
+			 "<DATA>"=>date("d-m-Y",mktime()),
+			 "<TIPO_DOCUMENTO>"=>"Fattura",
+			 "<CONDIZIONI_PAGAMENTO>"=>"Rimessa Diretta",
+
+			 "<DESCRIZIONE1>"=>"Oggetto",
+			 "<U1>"=>"Kg",
+			 "<Q1>"=>"1",
+			 "<LISTINO1>"=>"1234,56",
+			 "<SCONTO1>"=>"0",
+			 "<IMPONIBILE1>"=>"2345,67",
+			 "<IVA1>"=>"20%",
+			 "<TOTALE1>"=>"5678,90",
+			
+			 "<ALIQUOTA>"=>"20%",
+			 "<ESENTE_IVA>"=>"",
+			 "<IMPONIBILE>"=>"2345,67",
+			 "<IMPOSTA>"=>"500",
+			 "<TOTALE>"=>"5678,90",
+			 "<SPESE_TRASPORTO>"=>"",
+			 "<SPESE_INCASSO>"=>"",
+			 "<BOLLI>"=>"",
+			 "<TOTALE_EURO>"=>"9999,99"
+			);
+			
+// Questo per aggiornare il fatturato nella riga del contratto solo se l'attuale fatturato più quello nuovo non superano il totale del contratto
+$chiavi=array_keys($campi);
+$valori=array_values($campi);
+$rtf=new RTF();
+$rtf->carica_template("template/fattura.rtf");
+$rtf->rtf_singolo($chiavi,$valori);
+$rtf->output("Fattura.doc");

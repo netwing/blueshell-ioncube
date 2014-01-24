@@ -1,83 +1,178 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+Yii::import('application.modules.admin.models.base.BaseCustomer');
+
+class Customer extends BaseCustomer
+{
+
+    /**
+     * @var integer client ID
+     * @soap
+     */
+    public $cliente_id;
+     
+    /**
+     * @var string client complete name
+     * @soap
+     */
+    public $cliente_nominativo;
+
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array_merge(parent::relations(), array(
+            'vectors' => array(self::HAS_MANY, 'Vector', 'barca_proprietario'),
+            'contracts' => array(self::HAS_MANY, 'Contract', 'contratto_anagrafica2'),
+            'orders' => array(self::HAS_MANY, 'Order', 'customer_id'),
+            'invoices' => array(self::HAS_MANY, 'Invoice', 'customer_id'),
+            // 'invoices_paid' => array(self::HAS_MANY, 'Invoice', 'customer_id', 'with' => array('paid')),
+            'presences' => array(self::HAS_MANY, 'Presence', 'presenza_cliente'),
+        ));
+    }
+
+    /**
+     * ID Virtual attributes
+     */
+    public function getId()
+    {
+        return $this->cliente_id;
+    }
+
+    /**
+     * Count of orders
+     * @return float of total billed
+     */
+    public function getOrdersCount()
+    {
+        $result = 0;
+        // Load all invoices
+        $orders = $this->orders;
+        foreach ($orders as $order) {
+            if ($order->type->show) {
+                $result++;
+            }
+        }
+
+        return (float) $result;
+    }
+    /**
+     * Total debt virtual attributes
+     * @return float of total billed
+     */
+    public function getTotalDebt()
+    {
+        $result = 0;
+        // Load all invoices
+        $orders = $this->orders;
+        foreach ($orders as $order) {
+            $result+= $order->total;
+        }
+
+        return (float) $result;
+    }
+
+    /**
+     * Total billed virtual attributes
+     * @return float of total billed
+     */
+    public function getTotalBilled()
+    {
+        $result = 0;
+        // Load all invoices
+        $invoices = $this->invoices(array('scopes'=>array('income', 'onYear' => Yii::app()->request->getParam('year', null))));
+        foreach ($invoices as $invoice) {
+            $result+= $invoice->total;
+        }
+
+        return (float) $result;
+    }
+
+    /**
+     * Total unbilled virtual attributes
+     * @return float of total billed
+     */
+    public function getTotalUnbilled()
+    {
+        $result = $this->getTotalDebt() - $this->getTotalBilled();
+        return (float) $result;
+    }
+
+    /**
+     * Total paid virtual attributes
+     * @return float of total billed
+     */
+    public function getTotalPaid()
+    {
+        $result = 0;
+        // Load all invoices
+        $invoices = $this->invoices(array('scopes'=>array('paid', 'income', 'onYear' => Yii::app()->request->getParam('year', null))));        
+        foreach ($invoices as $invoice) {
+            $result+= $invoice->total;
+        }
+
+        return (float) $result;
+    }
+
+    /**
+     * Total unpaid virtual attributes
+     * @return float of total billed
+     */
+    public function getTotalUnpaid()
+    {
+        $result = 0;
+        // Load all invoices
+        $invoices = $this->invoices(array('scopes'=>array('unpaid', 'income', 'onYear' => Yii::app()->request->getParam('year', null))));
+        foreach ($invoices as $invoice) {
+            $result+= $invoice->total;
+        }
+
+        return (float) $result;
+    }
+
+    /**
+     * Years of activity (contract, order and invoices)
+     */
+    public function getActivityYears()
+    {
+        $cmd = Yii::app()->db->createCommand()
+                ->selectDistinct('YEAR(contratto_data) AS year')
+                ->from('{{contratti}}')
+                ->where('contratto_anagrafica1 = :id OR contratto_anagrafica2 = :id', array(':id' => $this->id));
+        $contracts = $cmd->queryColumn();
+
+        $cmd = Yii::app()->db->createCommand()
+                ->selectDistinct('YEAR(date) AS year')
+                ->from('{{order}}')
+                ->where('customer_id = :id', array(':id' => $this->id));
+        $orders = $cmd->queryColumn();
+
+        $cmd = Yii::app()->db->createCommand()
+                ->selectDistinct('YEAR(date) AS year')
+                ->from('{{invoice}}')
+                ->where('customer_id = :id', array(':id' => $this->id));
+        $invoices = $cmd->queryColumn();
+
+        $years = array_merge($contracts, $orders, $invoices);
+        $years = array_unique($years);
+        rsort($years);
+
+        return $years;
+    }
+
+    /**
+     * Returns the static model of the specified AR class.
+     * Please note that you should have this exact method in all your CActiveRecord descendants!
+     * @param string $className active record class name.
+     * @return Customer the static model class
+     */
+    public static function model($className=__CLASS__)
+    {
+        return parent::model($className);
+    }
+
+
+}

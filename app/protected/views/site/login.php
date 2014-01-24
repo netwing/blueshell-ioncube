@@ -1,38 +1,77 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php $this->pageTitle = ""; ?>
+
+<div style="margin-bottom: 15px">
+    <a href="<?php echo Yii::app()->getHomeUrl(); ?>"><img src="../images/login.png" alt="BlueShell Login" class="img-responsive" style="margin: 0 auto" /></a>
+</div>
+
+<?php $form = $this->beginWidget('CActiveForm', array(
+    'id'=>'login-form',
+    'enableClientValidation'=>false,
+    'enableAjaxValidation'=>false,
+    'htmlOptions' => array('class' => 'form-signin well'),
+    'errorMessageCssClass' => 'text-danger'
+)); ?>
+
+    <div class="form-group">
+        <?php // echo $form->labelEx($model,'username', array('class' => 'control-label')); ?>
+        <?php echo $form->textField($model,'username', array('class' => 'form-control', 'placeholder' => Yii::t('app', 'Username'))); ?>
+        <?php echo $form->error($model,'username'); ?>
+        <?php // echo $form->labelEx($model,'password', array('class' => 'control-label')); ?>
+        <?php echo $form->passwordField($model,'password', array('class' => 'form-control', 'placeholder' => Yii::t('app', 'Password'))); ?>
+        <?php echo $form->error($model,'password'); ?>
+    </div>
+
+    <div class="form-group">
+        <div class="checkbox">
+        <?php echo $form->checkBox($model, 'rememberMe'); ?>
+        <?php echo $form->labelEx($model, 'rememberMe'); ?>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+<?php Yii::app()->clientScript->registerCss('login_css', 
+'.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin-heading {
+    text-align: center;
+}
+
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+'); ?>
+

@@ -1,66 +1,102 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+
+class DefaultController extends Controller
+{
+	public function actionIndex()
+	{
+		$this->render('index');
+	}
+
+    public function actionElements()
+    {
+        $this->render('elements');
+    }
+
+    public function actionMessages()
+    {
+        Yii::app()->user->setFlash('warning',
+            '<strong>Warning!</strong> Nulla vitae elit libero, a pharetra augue.');
+        Yii::app()->user->setFlash('info',
+            '<strong>Information!</strong> Nulla vitae elit libero, a pharetra augue.');
+        Yii::app()->user->setFlash('success',
+            '<strong>Success!</strong> Nulla vitae elit libero, a pharetra augue.');
+        Yii::app()->user->setFlash('danger',
+            '<strong>ERROR!</strong> Nulla vitae elit libero, a pharetra augue.');
+
+        $this->redirect(array("/example/default/index"));
+
+    }
+
+    public function actionDatetime()
+    {
+        $model = new MyForm();
+        $model->my_date = "2013-08-01";
+        $model->my_time = "13:15:00";
+        $this->render('datetime', array('model' => $model));   
+    }
+
+    public function actionCron()
+    {
+        $expression = "* * * * *";
+        $cron = Cron\CronExpression::factory($expression);
+        $this->render('cron', array('cron' => $cron));
+    }
+
+    public function actionCalendar()
+    {
+        $this->render('calendar');
+    }
+
+    public function actionNode()
+    {
+        $this->render('node');
+    }
+
+    public function actionDnd()
+    {
+        $this->render('dnd');
+    }
+
+    public function actionEmail($send = 0)
+    {
+        if ($send == 1) {
+            // require_once Yii::getPathOfAlias('webroot.vendor.swiftmailer.swiftmailer') . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "swift_required.php";
+
+            // Create the Transport the call setUsername() and setPassword()
+            $transport = Swift_SmtpTransport::newInstance(EMAIL_SMTP_SERVER, EMAIL_SMTP_PORT)
+                ->setUsername(EMAIL_SMTP_USERNAME)
+                ->setPassword(EMAIL_SMTP_PASSWORD)
+                ;
+
+            // Create the Mailer using your created Transport
+            $mailer = Swift_Mailer::newInstance($transport);
+
+            // Create the message
+            $message = Swift_Message::newInstance()
+                // Give the message a subject
+                ->setSubject('Your subject')
+                // Set the From address with an associative array
+                ->setFrom(array('john@doe.com' => 'John Doe'))
+                // Set the To addresses with an associative array
+                ->setTo(array('emanuele@deserti.net', 'emanuele.deserti@netwing.it' => 'Emanuele Deserti'))
+                // Give it a body
+                ->setBody('Here is the message itself')
+                // And optionally an alternative body
+                ->addPart('<q>Here is the message itself</q>', 'text/html')
+                // Optionally add any attachments
+                ->attach(Swift_Attachment::fromPath(Yii::getPathOfAlias('application.data') . DIRECTORY_SEPARATOR . "my-document.pdf"));
+                ;
+
+            if ($result = $mailer->send($message)) {
+                Yii::app()->user->setFlash('success', Yii::t('app', 'Email sent successfully'));
+            } else {
+                Yii::app()->user->setFlash('danger', Yii::t('app', 'Email error: ') . print_r($result, true));
+            }
+
+            $this->redirect(array("/example/default/email"));
+        }
+
+        $this->render('email');
+    }
+
+}

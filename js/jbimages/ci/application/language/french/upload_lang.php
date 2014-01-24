@@ -1,31 +1,22 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-mSPPPL+t4jHCBs3ADB2PTIArwXaZ0KEc29wfn0==
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
+
+$lang['upload_userfile_not_set'] = "Impossible de trouver une variable de type POST nomm&eacute;e userfile.";
+$lang['upload_file_exceeds_limit'] = "Le fichier envoy&eacute; d&eacute;passe la taille limite d&eacute;finie dans votre fichier de configuration PHP.";
+$lang['upload_file_exceeds_form_limit'] = "Le fichier charg&eacute; d&eacute;passe la taille limite d&eacute;finie par le formulaire de soumission.";
+$lang['upload_file_partial'] = "Le fichier n\'a &eacute;t&eacute; que partiellement envoy&eacute;.";
+$lang['upload_no_temp_directory'] = "Le dossier temporaire manque.";
+$lang['upload_unable_to_write_file'] = "Incapable d\'&eacute;crire le fichier sur disque.";
+$lang['upload_stopped_by_extension'] = "Le chargement du fichier a &eacute;t&eacute; arr&ecirc;t&eacute; par une extension.";
+$lang['upload_no_file_selected'] = "Vous n\'avez pas s&eacute;lectionn&eacute; de fichier &agrave; envoyer.";
+$lang['upload_invalid_filetype'] = "Le type de fichier que vous tentez d\'envoyer n\'est pas autoris&eacute;.";
+$lang['upload_invalid_filesize'] = "Le fichier que vous tentez d\'envoyer est plus gros que la taille autoris&eacute;e.";
+$lang['upload_invalid_dimensions'] = "L\'image que vous tentez d\'envoyer d&eacute;passe les valeurs maximales autoris&eacute;es pour la hauteur ou la largeur.";
+$lang['upload_destination_error'] = "Une erreur est survenue lors du d&eacute;placement du fichier envoy&eacute; vers sa destination finale.";
+$lang['upload_no_filepath'] = "Le chemin de destination semble invalide.";
+$lang['upload_no_file_types'] = "Vous n\'avez pas sp&eacute;cifi&eacute; les types de fichier autoris&eacute;s.";
+$lang['upload_bad_filename'] = "Un fichier avec le m&ecirc;me nom que celui que vous avez envoy&eacute; existe d&eacute;j&agrave; sur le serveur.";
+$lang['upload_not_writable'] = "Le r&eacute;pertoire de destination ne semble pas &ecirc;tre accessible en &eacute;criture.";
+
+
+/* End of file upload_lang.php */
+/* Location: ./application/language/french/upload_lang.php */

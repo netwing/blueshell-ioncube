@@ -1,32 +1,40 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+foreach($_POST as $k=>$v)
+{
+	if (get_magic_quotes_gpc())
+	{
+		$$k=stripslashes($v);
+	}
+	else
+	{
+		$$k=$v;
+	}
+}
+$campi=array("<LUNGHEZZA>"=>$lunghezza,
+			 "<LARGHEZZA>"=>$larghezza,
+			 "<DATA_CONTRATTO>"=>$data_contratto,
+			 "<PERC>"=>$gestione_percentuale,
+			 "<PERC_RES>"=>100-$gestione_percentuale,
+			 "<DAL>"=>$dal,
+			 "<AL>"=>$al,
+			 "<PONTILE>"=>$pontile,
+			 "<POSTO_BARCA>"=>$posto_barca,
+			 "<NOMINATIVO>"=>$nominativo,
+			 "<INDIRIZZO>"=>$indirizzo,
+			 "<CAP>"=>$cap,
+			 "<CITTA>"=>$citta,
+			 "<NAZIONE>"=>$nazione,
+			 "<PARTITA_IVA>"=>$partita_iva,
+			 "<CODICE_FISCALE>"=>$codice_fiscale,
+			 "<DAL>"=>$dal,
+			 "<AL>"=>$al,
+			 "<DATA>"=>$data
+			);
+$chiavi=array_keys($campi);
+$valori=array_values($campi);
+$rtf=new RTF();
+$rtf->carica_template("template/contratto_gestione.rtf");
+$rtf->rtf_singolo($chiavi,$valori);
+$rtf->output("Contratto di Gestione.doc");
 ?>
-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

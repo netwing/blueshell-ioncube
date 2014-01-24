@@ -1,58 +1,130 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="<?php echo (isset(Yii::app()->language)) ? Yii::app()->language : 'en'; ?>" />
+    <?php Yii::app()->bootstrap->register();  // Netwing Bootstrap ?>
+    <?php Yii::app()->fontAwesome->register();  // Netwing Font Awesome ?>
+    <?php Yii::app()->getClientScript()->registerCssFile('css/application.css'); ?>
+	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+    <style>
+    #mainsearchresults {
+        background-color: #FFF;
+        border: 1px solid #CCC;
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-shadow: 0px 0px 5px black; 
+        z-index: 1001;
+    }
+    </style>
+</head>
+
+<body>
+
+<?php $this->renderPartial('//layouts/menu'); ?>
+
+<div class="container" id="page">
+
+    <?php if (count(Yii::app()->user->getFlashes(false)) > 0): ?>
+    <div class="row">
+        <div class="col-lg-12">
+        <?php foreach (Yii::app()->user->getFlashes() as $k => $v): ?>
+        <div class="alert alert-<?php echo $k; ?> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <?php echo $v; ?></div>
+        <?php endforeach; ?>
+        </div>
+    </div>
+    <?php endif; ?>
+        
+    <?php echo $content; ?>
+
+<hr />
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <?php if (!Yii::app()->user->isGuest): ?>
+            <a href="<?php echo $this->createUrl("/site/contact"); ?>"><?php echo Yii::t('app', 'Contact us'); ?></a>
+            <?php endif; ?>
+            <?php // $this->widget('ext.ELanguagePicker', array()); ?><br />
+        </div>
+        <div class="col-xs-12 col-sm-4 col-sm-push-4 text-right">
+            <?php if (isset(Yii::app()->theme)): ?>
+                <?php // $this->widget('ext.netwing.ThemePicker.EThemePicker', array()); ?>
+            <?php endif; ?>
+            <?php $this->widget('ext.ELanguagePicker', array()); ?>
+            <br />
+        </div>
+        <div class="col-xs-12 col-sm-4 col-sm-pull-4" style="text-align: center">
+            Copyright &copy; <?php echo date('Y'); ?> by Netwing SRL, All Rights Reserved. 
+        </div>
+    </div>
+</div>
+
+<!-- Container for search results -->
+<div id="mainsearchresults" style="display: none" class="col-md-4">
+    &nbsp;
+</div>
+
+<?php Yii::app()->clientScript->registerScript('main_search', '
+
+/*
+$.ajax({
+    url:"rest/api/customer/5451",
+    type:"GET",
+    success:function(data) {
+      console.log(data);
+  },
+  error:function (xhr, ajaxOptions, thrownError){
+      console.log(xhr.responseText);
+  } 
+}); 
+*/
+var myAjax = undefined;
+$("#topNavbarMainSearch").on("keyup", function() {
+    var s = $("#topNavbarMainSearch").val();
+    if (s.length >= 3) {
+        if (myAjax !== undefined) {
+            $("#mainsearchresults").html("").hide();
+            myAjax.abort();
+        }
+        $("#mainsearchresults").position({
+            my:        "right top",
+            at:        "right bottom",
+            of:        $("#topNavbar"),
+            collision: "none"
+        })        
+        $("#mainsearchresults").html(\'<div style="text-align: center"><p><img src="images/loading.gif" alt="loading..." /></p></div>\').show();
+        myAjax = $.ajax({
+            url: "../mainsearch.php",
+            quietMillis: 500,
+            data: {"s": s}
+        }).done(function ( data ) {
+            $("#mainsearchresults").position({
+                my:        "right top",
+                at:        "right bottom",
+                of:        $("#topNavbar"),
+                collision: "none"
+            })        
+            $("#mainsearchresults").html(data).show();
+        });        
+    } else {
+        $("#mainsearchresults").html("").hide();
+    }
+})
+$("#topNavbarMainSearchReset").on("click", function() {
+    if (myAjax !== undefined) {
+        myAjax.abort();
+    }
+    $("#topNavbarMainSearch").val("");
+    $("#mainsearchresults").html("").hide();
+    return false;
+})
+');?>
+
+    <?php Yii::app()->getClientScript()->registerCoreScript( 'jquery.ui' ); ?>
+
+</body>
+</html>

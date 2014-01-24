@@ -1,98 +1,109 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php // <ERRORS><ERROR><DESCRIPTION>Your testing server do not has support for PHP pages</DESCRIPTION></ERROR>\n</ERRORS>
+
+$debug_to_file = false;
+
+function log_messages($error_message){
+		global $f, $debug_to_file;
+		if ($debug_to_file === true){
+				if (!is_resource($f)){
+						@ini_set('display_errors', 1);
+						@error_reporting(E_ALL);
+						$f = @fopen('log.txt', 'a');
+				}
+				if (is_resource($f)){
+						return @fwrite($f, $error_message."\n");
+				}
+		}
+		return false;
+}
+function create_error($error_msg = '', $line = -1){
+		if ($error_msg != ''){
+				return '<ERRORS><ERROR><DESCRIPTION>'.$error_msg.'</DESCRIPTION></ERROR></ERRORS>\n';
+		}else{
+				return '<ERRORS><ERROR><DESCRIPTION> Unidentified Connection Error at Line '.$line.'</DESCRIPTION></ERROR></ERRORS>\n';
+		}
+}
+
+log_messages("\n--------------------------------");
+// what parameters were sent ?!
+foreach($_POST as $key=>$value) {
+	 if (strtoupper($key) != 'PASSWORD'){
+	 		log_messages('$_POST["'.$key.'"] = \''.$value."';");
+	 }
+}
+// We need these information only once when the test button is hit
+if (isset($_POST['opCode']) && $_POST['opCode'] == 'IsOpen' ){
+		// What PHP version
+		log_messages("\nPHP-Version: ".phpversion());
+		// What OS System is running on
+		log_messages('PHP-OS: '.PHP_OS);
+		// How PHP is installed (CGI, ISAPI, FastCGI) 
+		// !!!! Major difference exists on these servers for $_ENV, $_SERVER
+		log_messages('PHP-SAPI-NAME: '.php_sapi_name());
+		// MySQL, mbstring modules are installed ?!
+		log_messages('PHP-Extensions: '.var_export(get_loaded_extensions(),true));
+}
+
+if(extension_loaded('mbstring'))
+{
+	$acceptCharsetHeader = 'Accept-Charset: ' . mb_internal_encoding();
+	header( $acceptCharsetHeader );
+	$head = '<html><head><meta http-equiv=\'Content-Type\' content=\'text/html; charset=' . mb_http_output() . '\'></head>';
+	echo $head;
+}else{
+	echo '<html><head></head>';
+}
+
+// Build connection object
+if (isset($_POST['Type']) && $_POST['Type'] == 'MYSQL')
+{
+	require("./mysql.php");
+	$oConn = new MySqlConnection(@$_POST['ConnectionString'], @$_POST['Timeout'], @$_POST['Host'], @$_POST['Database'], @$_POST['UserName'], @$_POST['Password']);
+	if (!isset($oConn) || $oConn == false){
+			log_messages("\n".'MySQL Connection Object initialisation failed'."\n\n".@$error);
+	}else{
+			log_messages("\n".'MySQL Connection Object Created'."\n\n");	
+	}
+}else{
+	 $error=create_error('The files from the _mmServerScripts folder are for the server model PHP-MySQL. You try to connect to a database using a different server model '.@$_POST['Type'].".\n\nPlease remove this folder outside the Dreamweaver environment on both local and testing machines and try again.",__LINE__);
+	 log_messages("\nError Sent:\n\n\t".@$error."\n\n\n");	 	
+	 echo $error.'</HTML>';
+	 return;
+}
+
+// Process opCode
+if (isset($oConn) && $oConn)
+{
+	$oConn->Open();
+
+	if ($_POST['opCode'] == 'IsOpen'){
+			$answer = $oConn->TestOpen();
+	}elseif (is_resource($oConn->connectionId) && $oConn->isOpen){
+
+		switch ($_POST['opCode']){
+				case 'GetTables': 				$answer = $oConn->GetTables(@$_POST['Database']); break;
+				case 'GetColsOfTable': 		$answer = $oConn->GetColumnsOfTable(@$_POST['TableName']); break;
+				case 'ExecuteSQL':				$answer = $oConn->ExecuteSQL(@$_POST['SQL'], @$_POST['MaxRows']); break;
+				case 'GetODBCDSNs':				$answer = $oConn->GetDatabaseList(); break;
+				case 'SupportsProcedure': $answer = $oConn->SupportsProcedure(); break;
+				case 'GetProviderTypes': 	$answer = $oConn->GetProviderTypes(); break;
+				case 'GetViews': 					$answer = $oConn->GetViews(); break;
+				case 'GetProcedures': 		$answer = $oConn->GetProcedures(); break;
+				case 'GetParametersOfProcedure': $answer = $oConn->GetParametersOfProcedure(@$_POST['ProcName']); break;
+				case 'ReturnsResultset': 	$answer = $oConn->ReturnsResultSet($_POST['RRProcName']); break;
+				case 'ExecuteSP': 				$answer = $oConn->ExecuteSP(@$_POST['ExecProcName'], 0, @$_POST['ExecProcParameters']); break;
+				case 'GetKeysOfTable': 		$answer = $oConn->GetPrimaryKeysOfTable(@$_POST['TableName']); break;
+				default: $answer = create_error('The \''.$_POST['opCode'].'\' command is not supported.');	break;
+		}
+	}
+
+	$oConn->Close();
+}else{
+	$answer = create_error('The Connection Module was not initialized properly for an unknown reason.');
+}
+
+log_messages("\nAnswer From Database:\n\n\t".@$answer."\n\n\n");
+echo $answer;
+
+echo '</html>';
 ?>
-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
-MG1bYEFGJ280vFidYTzTJwIVhUKmJ9y=

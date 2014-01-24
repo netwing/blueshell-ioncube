@@ -1,45 +1,92 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-kZKU+7q=
+<?php
+/**
+ * Timepicker class file.
+ * @author Emanuele Deserti <emanuele.deserti@netwing.it>
+ * @copyright Copyright &copy; Emanuele Deserti 2013-
+ * @license http://www.opensource.org/licenses/bsd-license.php New BSD License
+ * @package netwing
+ * @version 1.0.0
+ */
+
+/**
+ * Timepicker component.
+ */
+class Timepicker extends CApplicationComponent
+{
+    /**
+     * @var bool whether we should copy the asset file or directory even if it is already published before.
+     */
+    public $forceCopyAssets = false;
+
+    private $_assetsUrl;
+
+    /**
+     * Registers the Font awesome CSS.
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerCss($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'jquery-ui-timepicker-addon.css' : 'jquery-ui-timepicker-addon.min.css';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerCssFile($url);
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllCss()
+    {
+        $this->registerCss();
+    }
+
+    /**
+     * Registers the js file
+     * @param string $url the URL to the CSS file to register.
+     */
+    public function registerJs($url = null)
+    {
+        if ($url === null) {
+            $fileName = YII_DEBUG ? 'jquery-ui-timepicker-addon.js' : 'jquery-ui-timepicker-addon.min.js';
+            $url = $this->getAssetsUrl() . "/" . $fileName;
+        }
+        Yii::app()->clientScript->registerScriptFile($url, CClientScript::POS_END);
+    }
+
+    /**
+     * Registers all Bootstrap CSS files.
+     */
+    public function registerAllJs()
+    {
+        $this->registerJs();
+    }
+
+
+    /**
+     * Registers all assets.
+     */
+    public function register()
+    {
+        $this->registerAllCss();
+        $this->registerAllJs();
+    }
+
+    /**
+     * Returns the url to the published assets folder.
+     * @return string the url.
+     */
+    public function getAssetsUrl()
+    {
+        if (isset($this->_assetsUrl)) {
+            return $this->_assetsUrl;
+        } else {
+            // Save default exclude files
+            $excludeFiles = Yii::app()->assetManager->excludeFiles;
+            $assetsPath = Yii::getPathOfAlias('bower.jquery-timepicker-addon');
+            $assetsUrl = Yii::app()->assetManager->publish($assetsPath, true, -1, $this->forceCopyAssets);
+            return $this->_assetsUrl = $assetsUrl;
+        }
+    }
+
+}

@@ -1,35 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-g1454WMOg/ZKjl4WQTnWyW9N0NUffVYshG==
+<?php
+
+ini_set ('soap.wsdl_cache_enabled',0);
+
+class SoapController extends CController
+{
+
+    /**
+     * Define action handled by CWebServiceAction
+     */
+    public function actions()
+    {
+        return array(
+            'index'=>array(
+                'class'=>'CWebServiceAction',
+            ),
+        );
+    }
+ 
+    /** 
+     * @param string the username
+     * @param string the password
+     * @return boolean
+     * @soap
+     */
+    public function login($username, $password)
+    {   
+        $identity = new UserIdentity($username, $password);
+        $identity->authenticate();
+        if ($identity->errorCode == UserIdentity::ERROR_NONE) {
+            Yii::app()->user->login($identity, 3600);
+            return true;
+        }
+        else {
+            throw new SoapFault("Authentication error", "Unable to login with provided username and password.");
+        }
+        // $sessionKey = sha1(mt_rand());
+        // Yii::app()->cache->set('soap_sessionkey' . $sessionKey . Yii::app()->user->id, $name . ':' . $password, 1800);
+        // return $sessionKey;
+        return false;
+    } 
+
+    /**
+     * @return boolean current session is logged
+     * @soap
+     */
+    public function loggedIn()
+    {   
+        return !Yii::app()->user->isGuest;
+    } 
+
+
+    /**
+     * @throw SoapFault exception for not authorized
+     */
+    protected function accessDenied()
+    {
+        throw new SoapFault("Authorization error", "You are not authorized to perform this operation.");
+    }
+
+    /** 
+     * @return boolean
+     * @soap
+     */
+    public function index()
+    {   
+        return true;
+    }
+
+}

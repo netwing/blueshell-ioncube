@@ -1,29 +1,51 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this ProductController */
+/* @var $data Product */
 ?>
-HR+cPmKbcERh3s79vfCDnIwlddJaHP0VAjIQZVKowKrgCBxSPbE2jyf87wuQLOEl+O/3q4CDJ0kI
-U9LTUuKfeB5r5RJVgiN2uuT/+yneuwBz9npHDv4CzDsVEZ7QMj05fPzSN+IMy3lF2CyU5cRuXVSS
-NQ2V+uVXkBPHHPxvwBc8cDpKFJjxNKtDmkq6UNsr1/r0cUynqNNHAhfasrSNV0y+LOqHvSQ3/ZOY
-r2NSlZhZ7r4fopkQBHtjPaKDpp9FrBj53d3eeQOv4/U4eMUYFdOE+Dk0wxf0RJRimHF/6eOXozMj
-nuUucrTfZlyrqSbVIyqoz6BYCHWaCgZETEKuREWOk02dbffUxS/6riMhyowT0FQ2OU79n2NUD2eb
-db31oUFgbwPm/rPiFx0Tbls1sXsq0pSJ90O2YJNIrvr6S78WHZupxo57PrirhFXb0TQ0nPoRt0kN
-UOIKpfI2kBgezqVcAQXAurmw9llXXpEtSvlxFz6rWUnI2SxJdMWZXQ4zx3SboK9kthGnbBk9eLLC
-pTrPEQ1pB+QfebXoSbcSi6yY9bWqeVUNa3ZMYAbQwb5HQ5p5iV2C0pyNcc7epmTk4CN01FKDYzVP
-hlGLLxozZ5vU3CIVX4YyQguP/l+aJV/fSWV0zkcko+SuidDXAjC8MxjhYTjFMlaOsRF0P4/7LtrB
-mCgdAlauvyJ4VS7+mZGu8dYoDeSev0Bg01DsTPbuxzBbcv1x/apbXxaipNK1z3tmTX4iePippy8L
-CKIDkmDgEYGFNO2WU4ZCAExp2m/qD81hPc+mpLa2v2rS3Pbq/YFFo4g77XTe/M+YgGHQ7zg/3CCQ
-mRoce+0LyurQyxLI8rJTFkF8noIafOv1rYyfOL1KxpDY9xs2avIefF7LcSRNSPO1drECz095UVYd
-DuVY5MhbIzNmxD9QI1MqrYfRo21ua8xv/9ugVWFWgC90YMDgt1CDssaa1iMRJ+1Byhbk/meOS54X
-qFH6onv/9R2KkvepTungyN7fgbrSu8pB7awIHVC1ZBzpfRbwk3xVhNSeTE3lhkbfcMkPW7DX/UI+
-fskEJa2GKCzcflWYxLpaQtHe4L6OolSUGJNJ1o1MIRanVc2jHaW4/88d7oGG7bZ1szJO0LUnDyq9
-8BX8gTQJGplIh4DuS+oMKt1xVU8oamuUPFtjmYKLHobneHXx9wCeZvtDqkIvus8vtTDH3SdvSbJO
-u9QoM8dIVBZ6vp8EMddHOvzPibCGVw9bWkvmTqpF926fhfND9LcYo8f4mwOjqCVMtVdaFS+LlmOl
-BODNoGsDanQWm4j9ot56+h26+AbVVa3/57Dmx48xHi07hj1m4Bb8G6Rpwxs43yQjn6yRDoTy/I6a
-l1JbsjYEwsZtLJ324UFTWl7H/u32qeLGtfUVtEZbRhL84OYZ+rWTeTSms9N6Ycz7Ati8G580gfhS
-TVCqkikuViqB/++kqQO9QDPF7qVwR8XxyhUhp+jApC9IcBaBYB8AbNYLzWpAcyKELhO1zfCOsY9o
-cikcnWKEmnwcJmgHcEQJIySZaa0DQ6IP3hY0qZfb1tnJVF60SB09c9VYeIUhdtGp5Jup2i0IMOya
-+E7yrRnrzVNEoBBK1RCnxsaS/UiZ0n3DwXyqN1w6V0n4qjby2qxwujjCKUglWyGvQlRG1IUXN73Z
-ezX1sD5H6Fk9HSLw768SM2DJwFsATMw3hucC4vxZodRH9uc5t16SVfaLMQnvhpYGL2VsZTM5201x
-5YkGW8DCJOUs7m3+Car9HbFi+5msZqH4MKAYWu8z2lWzZ0m1pq6sPqnRJ5iVWdMUKGcxqDRzpPDI
-UTc53svnky4fbsTD+DK9uJzQjN4mmDf4y+pimXw7Ezasm7pWPORU0wZgucpKsqG8IW6JHJ26gPti
-M5L1+t4w5wo+ymAZcpJhRNjkBCNF+hp0ikXtymi=
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <?php echo CHtml::link(CHtml::encode($data->id), array('view','id'=>$data->id)); ?>
+        </h3>
+    </div>
+    <div class="panel-body">
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('group_id')); ?>:</b>
+	<?php echo CHtml::encode($data->group_id); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('sku')); ?>:</b>
+	<?php echo CHtml::encode($data->sku); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('name')); ?>:</b>
+	<?php echo CHtml::encode($data->name); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
+	<?php echo CHtml::encode($data->description); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('measure_unit')); ?>:</b>
+	<?php echo CHtml::encode($data->measure_unit); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('price')); ?>:</b>
+	<?php echo CHtml::encode($data->price); ?><br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('vat')); ?>:</b>
+	<?php echo CHtml::encode($data->vat); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('enabled')); ?>:</b>
+	<?php echo CHtml::encode($data->enabled); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('sort_order')); ?>:</b>
+	<?php echo CHtml::encode($data->sort_order); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
+	<?php echo CHtml::encode($data->create_time); ?><br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
+	<?php echo CHtml::encode($data->update_time); ?><br />
+
+	*/ ?>
+    </div>
+</div>
+

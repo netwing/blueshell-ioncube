@@ -1,126 +1,160 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-jNtKZDvXEG81uRZt9O+8
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("fatture","R");
+$elenco_nazioni=$blue->elenco_nazioni();
+$elenco_tipologie=$blue->elenco_tipologie();
+$elenco_assicurazioni=$blue->elenco_assicurazioni();
+$listino=0;
+$sconto=0;
+$imponibile=0;
+$iva=0;
+$totale=0;
+if (array_key_exists("id",$_GET)) {
+	$select_fattura="SELECT * FROM ".$tabelle['fatture']." WHERE fattura_id='".$_GET['id']."'";
+	$result_fattura=$sql->select_query($select_fattura);
+	$row_fattura=mysql_fetch_array($result_fattura);
+	$data = $row_fattura['fattura_data'];
+
+	$condizioni_pagamento=$row_fattura['fattura_condizioni_pagamento'];
+	$numero_documento=$row_fattura['fattura_numero'];
+	$spese_incasso=$row_fattura['fattura_spese_incasso'];
+	$spese_trasporto=$row_fattura['fattura_spese_trasporto'];
+	$bolli=$row_fattura['fattura_bolli'];
+	if ($row_fattura['fattura_esente_iva']=="1")
+	{
+		$esente_iva='checked="checked"';
+	}
+	else
+	{
+		$esente_iva="";
+	}
+	$motivo_esente_iva=$row_fattura['fattura_motivo_esente_iva'];	// Andiamo a recuperare i dati della fattura
+
+	// RECUPERIAMO info sul contratto
+	$select_contratto="SELECT * FROM ".$tabelle['contratti']." WHERE contratto_id='".$row_fattura['fattura_contratto_id']."'";
+	$result_contratto=$sql->select_query($select_contratto);
+	$row_contratto=mysql_fetch_array($result_contratto);
+	$_SESSION['riepilogo']['contratto']=$row_contratto;	
+
+	$select_cliente="SELECT * FROM ".$tabelle['clienti']." WHERE cliente_id='".$row_fattura['fattura_cliente_id']."'";
+	$result_cliente=$sql->select_query($select_cliente);
+	$row_cliente=mysql_fetch_array($result_cliente);
+	$_SESSION['riepilogo']['cliente']=$row_cliente;
+	// Andiamo a recuperare i dati del cliente
+
+	$select_fattura_righe="SELECT * FROM ".$tabelle['fatture_righe']." WHERE fattura_riga_fattura_id='".$_GET['id']."'";
+	$result_fattura_righe=$sql->select_query($select_fattura_righe);
+	$row_fattura_righe=mysql_fetch_array($result_fattura_righe);
+	$descrizione=$row_fattura_righe['fattura_riga_descrizione'];
+	$unita_misura=$row_fattura_righe['fattura_riga_um'];
+	$quantita=$row_fattura_righe['fattura_riga_quantita'];
+	$listino=$row_fattura_righe['fattura_riga_listino'];
+	//$listino=$row_fattura_righe['fattura_riga_imponibile']/100*(100+$row_fattura_righe['fattura_riga_sconto']);
+	$imponibile=$row_fattura_righe['fattura_riga_imponibile'];
+	$sconto=$row_fattura_righe['fattura_riga_sconto'];
+	$iva=$row_fattura_righe['fattura_riga_iva'];
+	$aliquota=$iva;
+	$totale=$row_fattura_righe['fattura_riga_totale'];
+	$imponibile_fattura=$imponibile;
+	$imposta=number_format($totale-$imponibile,2,".","");
+	$totale_fattura=$totale;
+	# Andiamo a recuperare le righe della fattura (per ora viene presa solo la prima)
+}
+elseif (array_key_exists("cli",$_GET))
+{
+	$select_cliente="SELECT * FROM ".$tabelle['clienti']." WHERE cliente_id='".intval($_GET['cli'])."'";
+	$result_cliente=$sql->select_query($select_cliente);
+	$row_cliente=mysql_fetch_array($result_cliente);
+	$_SESSION['riepilogo']['cliente']=$row_cliente;
+	# Andiamo a recuperare i dati del cliente
+	$select_numdoc="SELECT MAX(fattura_numero+0) AS fattura_numero FROM ".$tabelle['fatture']." WHERE LEFT(fattura_data,4)='".date("Y",time())."'";
+	$result_numdoc=$sql->select_query($select_numdoc);
+	$numero_documento=mysql_result($result_numdoc,0,"fattura_numero");
+	$numero_documento++;
+	# Definiamo il numero documento in base all'ultimo doc inserito e lo incrementiamo di 1
+	$spese_trasporto="";
+	$spese_incasso="";
+	$bolli="";
+	$data = date("Y-m-d",time());
+	$descrizione="";
+	$select_prezzo="";
+	$listino="";
+	$imponibile="";
+	$totale="";
+	$imposta="";
+	$sconto="";
+	$totale_fattura=$totale;
+	$unita_misura="";
+	$iva = VAT_PERCENTAGE;
+	$aliquota = VAT_PERCENTAGE;
+	$quantita="1";
+	$condizioni_pagamento="";
+	$esente_iva="";
+	$motivo_esente_iva="";
+} else {
+	// print_r($_SESSION['riepilogo']['contratto']);
+	$select_prezzo="";
+	$listino=$_SESSION['riepilogo']['contratto']['contratto_totale'];
+	$totale=$_SESSION['riepilogo']['contratto']['contratto_totale'];
+	$sconto=$_SESSION['riepilogo']['contratto']['contratto_sconto'];
+	if ($sconto>0)
+	{
+		$totale=$totale-round($totale/100*$sconto,2);
+	}
+	$imposta=$totale-round($totale/ (100 + VAT_PERCENTAGE)*100,2);
+	$unita_misura="";
+	$iva = VAT_PERCENTAGE;
+	$aliquota = VAT_PERCENTAGE;
+	$imponibile=$totale-$imposta;
+	$imponibile_fattura=$imponibile;
+	$totale_fattura=$totale;
+	$quantita="1";
+	$condizioni_pagamento="";
+	$esente_iva="";
+	$motivo_esente_iva="";
+	$select_numdoc="SELECT MAX(fattura_numero+0) AS fattura_numero FROM ".$tabelle['fatture']." WHERE LEFT(fattura_data,4)='".date("Y",time())."'";
+	$result_numdoc=$sql->select_query($select_numdoc);
+	$numero_documento=mysql_result($result_numdoc,0,"fattura_numero");
+	$numero_documento++;
+	# Definiamo il numero documento in base all'ultimo doc inserito e lo incrementiamo di 1
+	$spese_trasporto="";
+	$spese_incasso="";
+	$bolli="";
+	$data = date("Y-m-d",time());
+	
+	$dal=$sql->data_ita($_SESSION['riepilogo']['contratto']['contratto_inizio']);
+	$dal_ts=$dal[4];
+	$dal=$dal[0];
+	$al=$sql->data_ita($_SESSION['riepilogo']['contratto']['contratto_fine']);
+	$al_ts=$al[4];
+	$al=$al[0];
+	$durata=intval(($al_ts-$dal_ts)/(60*60*24));
+	
+	switch ($_SESSION['riepilogo']['contratto']['contratto_tipo'])
+	{
+		case "1";
+		$descrizione="Ormeggio dal ".$dal." al ".$al." su Pontile ".$_SESSION['riepilogo']['pontile']['pontile_codice']."/".$_SESSION['riepilogo']['pontile']['posto_barca_numero'];
+		break;
+		case "2";
+		$descrizione="Acquisto posto barca Pontile ".$_SESSION['riepilogo']['pontile']['pontile_codice']."/".$_SESSION['riepilogo']['pontile']['posto_barca_numero'];
+		$descrizione2="Spese condominiali sul Pontile ".$_SESSION['riepilogo']['pontile']['pontile_codice']."/".$_SESSION['riepilogo']['pontile']['posto_barca_numero'];
+		break;
+		case "3";
+		$descrizione="Gestione posto barca Pontile ".$_SESSION['riepilogo']['pontile']['pontile_codice']."/".$_SESSION['riepilogo']['pontile']['posto_barca_numero'];
+		break;
+		case "4";
+		$descrizione="Ormeggio dal ".$dal." al ".$al." su Pontile ".$_SESSION['riepilogo']['pontile']['pontile_codice']."/".$_SESSION['riepilogo']['pontile']['posto_barca_numero'];
+		break;		
+		case "11";
+		$descrizione="Ormeggio dal ".$dal." al ".$al." su Pontile ".$_SESSION['riepilogo']['pontile']['pontile_codice']."/".$_SESSION['riepilogo']['pontile']['posto_barca_numero'];
+		break;		
+		default;
+		$descrizione="Inserire la descrizione";
+		break;
+	}
+	$select_listino="SELECT listino_posto_barca_anno,costo_condominiale FROM ".$tabelle['listini_posti_barca'].",".$tabelle['posti_barca']." WHERE listino_posto_barca_dimensione=posto_barca_dimensioni AND posto_barca_id='".$_SESSION['riepilogo']['contratto']['contratto_posto_barca']."' ORDER BY listino_posto_barca_anno";
+	$result_listino=$sql->select_query($select_listino);
+	# Raccogliamo i costi sui listini
+}
+
+require_once "views/invoice/print.php"; 

@@ -1,62 +1,59 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("fatture","R");
+// $elenco_clienti=$blue->elenco_clienti();
+$pn_anno=date("Y",time());
+$pn_mese=date("m",time());
+
+// Elminare un record di prima nota
+if (array_key_exists('delete', $_GET)) {
+    
+    $id = intval($_GET['delete']);
+    $delete = "DELETE FROM " . $tabelle['prima_nota'] . " WHERE prima_nota_id='" . $id . "'";
+    $result = $sql->delete_query($delete);
+    header("Location: prima_nota.php");
+    exit();
+}
+
+$select_anni="SELECT LEFT(prima_nota_data,4) AS anno FROM ".$tabelle['prima_nota']." WHERE LEFT(prima_nota_data,4)<>'0000' GROUP BY LEFT(prima_nota_data,4)";
+$result_anni=$sql->select_query($select_anni);
+$anni = array();
+while ($row_anni=mysql_fetch_array($result_anni)) {
+    $anni[] = "<li role=\"presentation\"><a href=\"prima_nota.php?anno=".$row_anni['anno']."\">".$row_anni['anno']."</a></li>";
+}
+
+$elenco_mesi=array("01"=>"Gen","02"=>"Feb","03"=>"Mar","04"=>"Apr","05"=>"Mag","06"=>"Giu","07"=>"Lug","08"=>"Ago","09"=>"Set","10"=>"Ott","11"=>"Nov","12"=>"Dec");
+$mesi = array();
+foreach ($elenco_mesi as $k=>$v) {
+	$mesi[] = "<li role=\"presentation\"><a href=\"prima_nota.php?mese=".$k."\">".$v."</a></li>";
+}
+
+if (array_key_exists("anno",$_GET))
+{
+	$_SESSION['gestione_prima_nota']['fattura_anno']=$_GET['anno'];
+}
+if (array_key_exists("gestione_prima_nota",$_SESSION) and array_key_exists("fattura_anno",$_SESSION['gestione_prima_nota']))
+{
+	$pn_anno=$_SESSION['gestione_prima_nota']['fattura_anno'];
+}
+if (array_key_exists("mese",$_GET))
+{
+	$_SESSION['gestione_prima_nota']['fattura_mese']=$_GET['mese'];
+}
+if (array_key_exists("gestione_prima_nota",$_SESSION) and array_key_exists("fattura_mese",$_SESSION['gestione_prima_nota']))
+{
+	$pn_mese=$_SESSION['gestione_prima_nota']['fattura_mese'];
+}
+$periodo = $pn_anno."-".$pn_mese;
+$where_pn = "prima_nota_data LIKE '".$periodo."%'";
+$paginazione = $sql->paginazione_menu($tabelle['prima_nota'], $where_pn);
+$limit = $sql->paginazione_valuta();
+$select_pn = "SELECT * FROM " . $tabelle['prima_nota'] . " WHERE " . $where_pn . " ORDER BY prima_nota_data ASC LIMIT " . $limit;
+$result_pn = $sql->select_query($select_pn);
+
+// Calcolare i totali del mese
+$select_totali_pn = "SELECT SUM(prima_nota_entrata) AS somma_entrata, SUM(prima_nota_uscita) AS somma_uscita FROM " . $tabelle['prima_nota'] . " WHERE " . $where_pn;
+$result_totali_pn = $sql->select_query($select_totali_pn);
+
+require_once "views/transactions/admin.php";
+

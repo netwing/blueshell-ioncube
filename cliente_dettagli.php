@@ -1,75 +1,78 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+header("Location:app/index.php?r=/admin/customer/detail&id=" . intval($_GET['id']));
+exit;
+require_once("config.inc.php");
+$blue->autentica_utente("anagrafica","R");
+if (!array_key_exists("id",$_GET))
+{
+	header("Location:index.php");
+	exit;
+}
+if (array_key_exists("Collega",$_POST))
+{
+	// UPDATE totale di spese_condominali e varie
+	$sql->update_query("UPDATE blue_fatture SET fattura_spese_condominiali='0',fattura_varie='0' WHERE fattura_cliente_id='".$_GET['id']."'");
+	foreach ($_POST['fatture'] as $k=>$v)
+	{
+		$contratto_id=$_POST['contratti'][$k];
+		$update="UPDATE blue_fatture SET fattura_contratto_id='".$contratto_id."' WHERE fattura_id='".$v."'";
+		$sql->update_query($update);
+	}
+	if (array_key_exists("spese_condominiali",$_POST) AND count($_POST['spese_condominiali']>0))
+	{
+		foreach ($_POST['spese_condominiali'] as $k=>$v)
+		{
+			$sql->update_query("UPDATE blue_fatture SET fattura_spese_condominiali='1' WHERE fattura_id='".$k."'");
+		}
+	}
+	if (array_key_exists("varie",$_POST) AND count($_POST['varie']>0))
+	{
+		foreach ($_POST['varie'] as $k=>$v)
+		{
+			$sql->update_query("UPDATE blue_fatture SET fattura_varie='1' WHERE fattura_id='".$k."'");
+		}
+	}
+}
+$select_cliente="SELECT cliente_nominativo FROM ".$tabelle['clienti']." WHERE cliente_id='".$_GET['id']."'";
+$result_cliente=$sql->select_query($select_cliente);
+$cliente_nominativo=mysql_result($result_cliente,0,'cliente_nominativo');
+// Andiamo a recuperare il nome del cliente
+
+$elenco_tipi=$blue->elenco_tipi();
+$elenco_periodi=$blue->elenco_periodi();
+
+if (array_key_exists("delfat",$_GET))
+{
+	$delete="DELETE FROM ".$tabelle['fatture']." WHERE fattura_id='".$_GET['delfat']."'";
+	$sql->delete_query($delete);
+	$delete="DELETE FROM ".$tabelle['fatture_righe']." WHERE fattura_riga_fattura_id='".$_GET['id']."'";
+	$sql->delete_query($delete);
+}
+// Se viene passato un parametro delfat, la fattura in questione viene cancellata
+
+// $select_contratti="SELECT contratto_id,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,contratto_tipo,contratto_posto_barca,contratto_periodo,contratto_data,contratto_inizio,contratto_fine FROM ".$tabelle['contratti']." WHERE (contratto_anagrafica1='1' AND contratto_anagrafica2='".$_GET['id']."') OR (contratto_anagrafica1='".$_GET['id']."' AND contratto_anagrafica2='1') ORDER BY contratto_data DESC";
+$select_contratti="SELECT contratto_id,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,contratto_tipo,contratto_posto_barca,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,contratto_totale,contratto_fatturato,contratto_sconto FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2='".$_GET['id']."' OR (contratto_anagrafica1='".$_GET['id']."' AND contratto_tipo!=2) ORDER BY contratto_fine DESC,contratto_tipo ASC";
+if ($_GET['id']=='1')
+{
+	$select_contratti="SELECT contratto_id,contratto_anagrafica1,contratto_anagrafica2,contratto_barca,contratto_tipo,contratto_posto_barca,contratto_periodo,contratto_data,contratto_inizio,contratto_fine,contratto_totale,contratto_fatturato,contratto_sconto FROM ".$tabelle['contratti']." WHERE contratto_anagrafica2='1' ORDER BY contratto_fine DESC,contratto_tipo ASC";
+}
+$result_contratti=$sql->select_query($select_contratti);
+$contratti_combobox=$result_contratti;
+// Caricamento dell'elenco dei contratti del cliente
+
+$select_presenze="SELECT presenza_id,presenza_barca,presenza_posto_barca,presenza_arrivo,presenza_partenza FROM ".$tabelle['presenze']." WHERE presenza_cliente='".$_GET['id']."' ORDER BY presenza_partenza DESC";
+$result_presenze=$sql->select_query($select_presenze);
+// Caricamento delle presenze del cliente
+
+$select_fatture="SELECT fattura_id,fattura_numero,fattura_data,fattura_riga_descrizione,fattura_riga_totale,fattura_contratto_id,fattura_spese_condominiali,fattura_varie FROM ".$tabelle['fatture'].",".$tabelle['fatture_righe']." WHERE fattura_riga_fattura_id=fattura_id AND fattura_cliente_id='".$_GET['id']."' ORDER BY fattura_data DESC";
+$result_fatture=$sql->select_query($select_fatture);
+// Caricamento delle fatture del cliente
+
+// BEGIN YII APP INTEGRATION
+$customer = Customer::model()->findByPk((int) $_GET['id']);
+$controller = new Controller('BS1');
+$invoices = Invoice::model();
+$invoices->customer_id = $customer->cliente_id;
+// END YII APP INTEGRATION
+
+require_once "views/client/detail.php";

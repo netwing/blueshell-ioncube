@@ -1,43 +1,118 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-0qyPZSWNydIhHxt7pXGKCRnHxn1g
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/**
+ * CodeIgniter
+ *
+ * An open source application development framework for PHP 5.1.6 or newer
+ *
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
+ * @filesource
+ */
+
+// ------------------------------------------------------------------------
+
+/**
+ * CodeIgniter Benchmark Class
+ *
+ * This class enables you to mark points and calculate the time difference
+ * between them.  Memory consumption can also be displayed.
+ *
+ * @package		CodeIgniter
+ * @subpackage	Libraries
+ * @category	Libraries
+ * @author		ExpressionEngine Dev Team
+ * @link		http://codeigniter.com/user_guide/libraries/benchmark.html
+ */
+class CI_Benchmark {
+
+	/**
+	 * List of all benchmark markers and when they were added
+	 *
+	 * @var array
+	 */
+	var $marker = array();
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Set a benchmark marker
+	 *
+	 * Multiple calls to this function can be made so that several
+	 * execution points can be timed
+	 *
+	 * @access	public
+	 * @param	string	$name	name of the marker
+	 * @return	void
+	 */
+	function mark($name)
+	{
+		$this->marker[$name] = microtime();
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Calculates the time difference between two marked points.
+	 *
+	 * If the first parameter is empty this function instead returns the
+	 * {elapsed_time} pseudo-variable. This permits the full system
+	 * execution time to be shown in a template. The output class will
+	 * swap the real value for this variable.
+	 *
+	 * @access	public
+	 * @param	string	a particular marked point
+	 * @param	string	a particular marked point
+	 * @param	integer	the number of decimal places
+	 * @return	mixed
+	 */
+	function elapsed_time($point1 = '', $point2 = '', $decimals = 4)
+	{
+		if ($point1 == '')
+		{
+			return '{elapsed_time}';
+		}
+
+		if ( ! isset($this->marker[$point1]))
+		{
+			return '';
+		}
+
+		if ( ! isset($this->marker[$point2]))
+		{
+			$this->marker[$point2] = microtime();
+		}
+
+		list($sm, $ss) = explode(' ', $this->marker[$point1]);
+		list($em, $es) = explode(' ', $this->marker[$point2]);
+
+		return number_format(($em + $es) - ($sm + $ss), $decimals);
+	}
+
+	// --------------------------------------------------------------------
+
+	/**
+	 * Memory Usage
+	 *
+	 * This function returns the {memory_usage} pseudo-variable.
+	 * This permits it to be put it anywhere in a template
+	 * without the memory being calculated until the end.
+	 * The output class will swap the real value for this variable.
+	 *
+	 * @access	public
+	 * @return	string
+	 */
+	function memory_usage()
+	{
+		return '{memory_usage}';
+	}
+
+}
+
+// END CI_Benchmark class
+
+/* End of file Benchmark.php */
+/* Location: ./system/core/Benchmark.php */

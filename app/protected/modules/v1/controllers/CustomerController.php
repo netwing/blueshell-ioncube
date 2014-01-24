@@ -1,55 +1,103 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-2RhBFKXP
+<?php
+
+class CustomerController extends SoapController
+{
+
+    /**
+     * Define action handled by CWebServiceAction
+     */
+    public function actions()
+    {
+        return array(
+            'index'=>array(
+                'class'=>'CWebServiceAction',
+            ),
+        );
+    }
+ 
+    /**
+     * @param integer Customer id
+     * @return Customer customer object
+     * @soap
+     */
+    public function get($id)
+    {
+        if (Yii::app()->user->checkAccess('admin:customer:read') === false) {
+            $this->accessDenied();
+        }
+        $result = Customer::model()->findByPk((int) $id);
+        if (!$result) {
+            throw new SoapFault('NOT FOUND', 'Customer not found');
+        }
+
+        return $result;
+    }
+
+    /**
+     * @return integer total customer
+     * @soap
+     */
+    public function count()
+    {
+        if (Yii::app()->user->checkAccess('admin:customer:read') === false) {
+            $this->accessDenied();
+        }
+        $result = Customer::model()->count();
+        return $result;
+    }
+
+    /**
+     * @param integer Limit
+     * @param integer Offset
+     * @return Customer[] a list of customer object
+     * @soap
+     */
+    public function getList($limit, $offset)
+    {
+        if (Yii::app()->user->checkAccess('admin:customer:read') === false) {
+            $this->accessDenied();
+        }
+        $criteria = new CDbCriteria();
+        $criteria->limit = $limit;
+        $criteria->offset = $offset;
+        $total = Customer::model()->count();
+        $result = Customer::model()->findAll($criteria);
+        if (!$result) {
+            throw new SoapFault('NOT FOUND', 'Customer not found');
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param array Customer attributes
+     * @return Customer customer object
+     * @soap
+     */
+    public function create($attributes)
+    {        
+        if (Yii::app()->user->checkAccess('admin:customer:create') === false) {
+            $this->accessDenied();
+        }
+        $customer = new Customer();
+        $customer->attributes = $attributes;
+        if ($customer->validate() === false) {
+            $errors = $customer->getErrors();
+            $error = print_r(implode("; ", array_shift($errors)), true);
+            throw new SoapFault("Application error", $error);
+        }
+        $customer->save();
+        $result = $this->get($customer->cliente_id);
+        return $result;
+    }
+
+    /**
+     * @param integer Customer ID
+     * @return Vector[] a list of customer vector
+     * @soap
+     */
+    public function getVectors($id)
+    {
+        return Customer::model()->findByPk($id)->vectors;
+    }
+}

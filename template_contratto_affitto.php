@@ -1,49 +1,70 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+require_once("config.inc.php");
+foreach($_POST as $k=>$v)
+{
+	if (get_magic_quotes_gpc())
+	{
+		$$k=stripslashes($v);
+	}
+	else
+	{
+		$$k=$v;
+	}
+}
+$campi=array("<NOME>"=>$nome,
+			 "<MODELLO>"=>$modello,
+			 "<TIPO>"=>$tipo,
+			 "<BANDIERA>"=>$bandiera,
+			 "<LUNGHEZZA>"=>$lunghezza,
+			 "<LARGHEZZA>"=>$larghezza,
+			 "<STAZZA>"=>$stazza,
+			 "<PESCAGGIO>"=>$pescaggio,
+			 "<MOTORE>"=>$motore,
+			 "<MATRICOLA>"=>$matricola,
+			 "<PROPRIETARIO>"=>$proprietario,
+			 "<COMANDANTE>"=>$comandante,
+			 "<RECAPITO_TELEFONICO>"=>$recapito_telefonico,
+			 "<PROVENIENZA>"=>$provenienza,
+			 "<ARRIVO>"=>$arrivo,
+			 "<POLIZZA_ASSICURAZIONE>"=>$polizza_assicurazione,
+			 "<POLIZZA_NUMERO>"=>$polizza_numero,
+			 "<DAL>"=>$dal,
+			 "<AL>"=>$al,
+			 "<PREZZO>"=>$prezzo,
+			 "<IVA>"=>$iva,
+			 "<TOTALE>"=>$totale,
+			 "<PONTILE>"=>$pontile,
+			 "<POSTO_BARCA>"=>$posto_barca,
+			 "<NOMINATIVO>"=>$nominativo,
+			 "<NASCITADATA>"=>$nascitadata,
+			 "<NASCITALUOGO>"=>$nascitaluogo,
+			 "<INDIRIZZO>"=>$indirizzo,
+			 "<CAP>"=>$cap,
+			 "<CITTA>"=>$citta,
+			 "<NAZIONE>"=>$nazione,
+			 "<PARTITA_IVA>"=>$partita_iva,
+			 "<CODICE_FISCALE>"=>$codice_fiscale,
+			 "<TELEFONO1>"=>$telefono1,
+			 "<TELEFONO2>"=>$telefono2,
+			 "<EMAIL>"=>$email,
+			 "<DURATA>"=>$durata,
+			 "<DAL>"=>$dal,
+			 "<AL>"=>$al,
+			 "<DATA>"=>$data
+			);
+$chiavi=array_keys($campi);
+$valori=array_values($campi);
+$rtf=new RTF();
+if ($_POST['Submit']=='STAMPA CONTRATTO ITALIANO')
+{
+	$rtf->carica_template("template/contratto_affitto.rtf");
+	$nome_output="Contratto di Affitto.doc";
+}
+elseif ($_POST['Submit']=='STAMPA CONTRATTO INGLESE')
+{
+	$rtf->carica_template("template/contratto_affitto_inglese.rtf");
+	$nome_output="Supply Port Services Contract.doc";
+}
+$rtf->rtf_singolo($chiavi,$valori);
+$rtf->output($nome_output);
 ?>
-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
-lH2EMki=

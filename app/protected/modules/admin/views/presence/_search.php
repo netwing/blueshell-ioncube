@@ -1,37 +1,54 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
+<?php
+/* @var $this PresenceController */
+/* @var $model Presence */
+/* @var $form CActiveForm */
 ?>
-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
-TIHyf0WMRF1DJhgfk3L8Pua=
+
+<div class="wide form">
+
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'action'=>Yii::app()->createUrl($this->route),
+	'method'=>'get',
+    'htmlOptions'=>array('class'=>'form-horizontal well'),
+)); ?>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_id', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'presenza_id', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_posto_barca', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'presenza_posto_barca', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_cliente', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'presenza_cliente', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_barca', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'presenza_barca', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_arrivo', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'presenza_arrivo', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+    <div class="form-group">
+        <?php echo $form->labelEx($model, 'presenza_partenza', array('class' => 'col-lg-2 control-label')); ?>        <div class="col-lg-4">
+        <?php echo $form->textField($model, 'presenza_partenza', array('class' => 'form-control')); ?>        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-4">
+            <button type="submit" class="btn btn-primary"><?php echo Yii::t('app', 'Search'); ?></button>
+        </div>
+    </div>
+
+<?php $this->endWidget(); ?>
+
+</div><!-- search-form -->

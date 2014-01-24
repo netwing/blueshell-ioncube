@@ -1,65 +1,83 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-u6t9buUI3gyibRBpQAr7Md2O
+<?php
+
+Yii::import('system.gii.generators.model.ModelCode');
+
+class NwModelCode extends ModelCode
+{
+    public $baseModelPath;
+
+    public $baseModelClass;
+
+    /**
+     * Lists the template files.
+     * #MethodTracker
+     * This method is based on {@link ModelCode::requiredTemplates}, from version 1.1.7 (r3135). Changes:
+     * <ul>
+     * <li>Includes the base model.</li>
+     * </ul>
+     * @return array A list of required template filenames.
+     */
+    public function requiredTemplates() {
+        $array = parent::requiredTemplates();
+        $array[] = "base" . DIRECTORY_SEPARATOR . "model.php";
+        return $array;
+    }
+
+    public function prepare()
+    {
+        if (($pos = strrpos($this->tableName, '.')) !== false) {
+            $schema = substr($this->tableName, 0, $pos);
+            $tableName = substr($this->tableName, $pos + 1);
+        } else {
+            $schema = '';
+            $tableName = $this->tableName;
+        }
+        if ($tableName[strlen($tableName) - 1] === '*') {
+            $tables = Yii::app()->db->schema->getTables($schema);
+            if ($this->tablePrefix != '') {
+                foreach ($tables as $i => $table) {
+                    if (strpos($table->name, $this->tablePrefix) !== 0)
+                        unset($tables[$i]);
+                }
+            }
+        }
+        else {
+            $tables=array($this->getTableSchema($this->tableName));
+        }
+
+        $this->files = array();
+        $templatePath = $this->templatePath;
+
+        $this->relations = $this->generateRelations();
+
+        foreach ($tables as $table) {
+            $tableName = $this->removePrefix($table->name);
+            $className = $this->generateClassName($table->name);
+
+            $params = array(
+                'tableName'=>$schema==='' ? $tableName : $schema.'.'.$tableName,
+                'modelClass'=>$className,
+                'columns'=>$table->columns,
+                'labels'=>$this->generateLabels($table),
+                'rules'=>$this->generateRules($table),
+                'relations'=>isset($this->relations[$className]) ? $this->relations[$className] : array(),
+                'connectionId'=>$this->connectionId,
+            );
+
+            // Setup base model information.
+            $this->baseModelPath = $this->modelPath . '.base';
+            $this->baseModelClass = 'Base' . $className;
+            // Generate the model.
+            $this->files[] = new CCodeFile(
+                            Yii::getPathOfAlias($this->modelPath . '.' . $className) . '.php',
+                            $this->render($templatePath . DIRECTORY_SEPARATOR . 'model.php', $params)
+            );
+            // Generate the base model.
+            $this->files[] = new CCodeFile(
+                            Yii::getPathOfAlias($this->baseModelPath . '.' . $this->baseModelClass) . '.php',
+                            $this->render($templatePath . DIRECTORY_SEPARATOR . 'base' . DIRECTORY_SEPARATOR . 'model.php', $params)
+            );
+        }
+    }
+
+}

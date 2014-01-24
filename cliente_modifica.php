@@ -1,90 +1,61 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php
+require_once("config.inc.php");
+$blue->autentica_utente("anagrafica","W");
+if (!array_key_exists("id",$_GET))
+{
+	header("Location:index.php");
+}
+$elenco_nazioni=$blue->elenco_nazioni();
+$key_elenco_nazioni=array_keys($elenco_nazioni);
+$form->campi_testo=array("cliente_nominativo","cliente_nome","cliente_cognome","cliente_indirizzo","cliente_cap","cliente_citta","cliente_provincia","cliente_codice_fiscale","cliente_partita_iva","cliente_telefono1","cliente_telefono2","cliente_telefono3","cliente_email","cliente_numero_documento","cliente_note","cliente_luogo_nascita");
+$form->campi_numero=array("cliente_telefono1","cliente_telefono2","cliente_telefono3");
+$form->campi_lista=array("country"=>$key_elenco_nazioni,"cliente_documento"=>array("CdI","Patente","Patente Nautica","Passaporto"),"cliente_tipo_telefono1"=>array("Abitazione","Cellulare","Ufficio","Fax"),"cliente_tipo_telefono2"=>array("Abitazione","Cellulare","Ufficio","Fax"),"cliente_tipo_telefono3"=>array("Abitazione","Cellulare","Ufficio","Fax"));
+$form->campi_obbligatori=array("cliente_nominativo","cliente_telefono1");
+
+$select_cliente="SELECT cliente_id,cliente_nominativo,cliente_nome,cliente_cognome,cliente_data_nascita,cliente_luogo_nascita,cliente_indirizzo,cliente_citta,cliente_cap,cliente_provincia,country,cliente_telefono1,cliente_tipo_telefono1,cliente_telefono2,cliente_tipo_telefono2,cliente_telefono3,cliente_tipo_telefono3,cliente_email,cliente_codice_fiscale,cliente_partita_iva,cliente_documento,cliente_numero_documento,cliente_rifiuta_comunicazioni,cliente_note FROM ".$tabelle['clienti']." WHERE cliente_id='".$_GET['id']."'";
+$result_cliente=$sql->select_query($select_cliente);
+$row_cliente=mysql_fetch_array($result_cliente);
+// $nascita=explode("-",$row_cliente['cliente_data_nascita']);
+$default_nazione_cliente="country_".$row_cliente['country'];
+$default_documento_cliente="cliente_documento_".$row_cliente['cliente_documento'];
+$default_tipo_telefono1="cliente_tipo_telefono1_".$row_cliente['cliente_tipo_telefono1'];
+$default_tipo_telefono2="cliente_tipo_telefono2_".$row_cliente['cliente_tipo_telefono2'];
+$default_tipo_telefono3="cliente_tipo_telefono3_".$row_cliente['cliente_tipo_telefono3'];
+$form->valori_default=array("cliente_nominativo"=>$row_cliente['cliente_nominativo'],"cliente_nome"=>$row_cliente['cliente_nome'],"cliente_cognome"=>$row_cliente['cliente_cognome'],"cliente_luogo_nascita"=>$row_cliente['cliente_luogo_nascita'],"cliente_data_nascita" => $row_cliente['cliente_data_nascita'], "cliente_indirizzo"=>$row_cliente['cliente_indirizzo'],"cliente_citta"=>$row_cliente['cliente_citta'],"cliente_cap"=>$row_cliente['cliente_cap'],"cliente_provincia"=>$row_cliente['cliente_provincia'],$default_nazione_cliente=>"selected=\"selected\"","cliente_telefono1"=>$row_cliente['cliente_telefono1'],$default_tipo_telefono1=>"selected=\"selected\"","cliente_telefono2"=>$row_cliente['cliente_telefono2'],$default_tipo_telefono2=>"selected=\"selected\"","cliente_telefono3"=>$row_cliente['cliente_telefono3'],$default_tipo_telefono3=>"selected=\"selected\"","cliente_email"=>$row_cliente['cliente_email'],"cliente_codice_fiscale"=>$row_cliente['cliente_codice_fiscale'],"cliente_partita_iva"=>$row_cliente['cliente_partita_iva'],$default_documento_cliente=>"selected=\"selected\"","cliente_numero_documento"=>$row_cliente['cliente_numero_documento'],"cliente_note"=>$row_cliente['cliente_note']);
+$form->inizializza();
+if (count($_POST)>0)
+{
+	$form->verifica();
+	if ($form->errore_form===false) {
+		$cliente_note = "";
+		foreach ($_POST as $k=>$v)
+		{
+			$$k=$sql->pulisci($v);
+		}
+		$cliente_nome=ucwords(strtolower($cliente_nome));
+		$cliente_cognome=ucwords(strtolower($cliente_cognome));
+		$cliente_codice_fiscale=strtoupper($cliente_codice_fiscale);
+		$cliente_partita_iva=strtoupper($cliente_partita_iva);
+		$cliente_rifiuta_comunicazioni='0';
+		if (array_key_exists('cliente_rifiuta_comunicazioni',$_POST)) {
+			$cliente_rifiuta_comunicazioni='1';
+		}
+		$update="UPDATE ".$tabelle['clienti']." SET cliente_nominativo='".$cliente_nominativo."',cliente_nome='".$cliente_nome."',cliente_cognome='".$cliente_cognome."',cliente_luogo_nascita='".$cliente_luogo_nascita."',cliente_data_nascita='".$cliente_data_nascita."',cliente_indirizzo='".$cliente_indirizzo."',cliente_citta='".$cliente_citta."',cliente_cap='".$cliente_cap."',cliente_provincia='".$cliente_provincia."',cliente_telefono1='".$cliente_telefono1."',cliente_tipo_telefono1='".$cliente_tipo_telefono1."',cliente_telefono2='".$cliente_telefono2."',cliente_tipo_telefono2='".$cliente_tipo_telefono2."',cliente_telefono3='".$cliente_telefono3."',cliente_tipo_telefono3='".$cliente_tipo_telefono3."',cliente_email='".$cliente_email."',cliente_codice_fiscale='".$cliente_codice_fiscale."',cliente_partita_iva='".$cliente_partita_iva."',cliente_documento='".$cliente_documento."',cliente_numero_documento='".$cliente_numero_documento."',cliente_rifiuta_comunicazioni='".$cliente_rifiuta_comunicazioni."',cliente_note='".$cliente_note."' WHERE cliente_id='".$cliente_id."'";
+		$result = $sql->update_query($update);
+
+		if ($result) {
+			Yii::app()->user->setFlash("success", Yii::t('app', 'Client updated successfully.'));
+		} else {
+			Yii::app()->user->setFlash("danger", Yii::t('app', 'An error occured.'));
+			header("Location:clienti.php");
+			exit;
+		}
+
+		header("Location:clienti.php");
+		exit;
+		# Fine della procedura di update
+	}
+}
+
+$action = "cliente_modifica.php?id=" . intval($_GET['id']);
+require_once "views/client/update.php";

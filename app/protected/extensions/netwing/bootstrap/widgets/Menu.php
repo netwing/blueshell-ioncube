@@ -1,150 +1,301 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
-oN0LM51buuRMl73oIUzniCerQ23Aw4tFhuJQ22u=
+<?php
+
+/**
+ * Menu class file.
+ *
+ * @author Emanuele Deserti <emanuele.deserti@netwing.it>
+ * @link http://www.netwing.it/
+ * @copyright 2008-2013 Netwing SRL
+ * @license http://www.yiiframework.com/license/
+ */
+
+class Menu extends CWidget
+{
+
+    /**
+     * @var array list of menu items. Each menu item is specified as an array of name-value pairs.
+     * Possible option names include the following:
+     * <ul>
+     * <li>label: string, optional, specifies the menu item label. When {@link encodeLabel} is true, the label
+     * will be HTML-encoded. If the label is not specified, it defaults to an empty string.</li>
+     * <li>url: string or array, optional, specifies the URL of the menu item. It is passed to {@link CHtml::normalizeUrl}
+     * to generate a valid URL. If this is not set, the menu item will be rendered as a span text.</li>
+     * <li>visible: boolean, optional, whether this menu item is visible. Defaults to true.
+     * This can be used to control the visibility of menu items based on user permissions.</li>
+     * <li>items: array, optional, specifies the sub-menu items. Its format is the same as the parent items.</li>
+     * <li>active: boolean, optional, whether this menu item is in active state (currently selected).
+     * If a menu item is active and {@link activeClass} is not empty, its CSS class will be appended with {@link activeClass}.
+     * If this option is not set, the menu item will be set active automatically when the current request
+     * is triggered by {@link url}. Note that the GET parameters not specified in the 'url' option will be ignored.</li>
+     * <li>template: string, optional, the template used to render this menu item.
+     * When this option is set, it will override the global setting {@link itemTemplate}.
+     * Please see {@link itemTemplate} for more details. This option has been available since version 1.1.1.</li>
+     * <li>linkOptions: array, optional, additional HTML attributes to be rendered for the link or span tag of the menu item.</li>
+     * <li>itemOptions: array, optional, additional HTML attributes to be rendered for the container tag of the menu item.</li>
+     * <li>submenuOptions: array, optional, additional HTML attributes to be rendered for the container of the submenu if this menu item has one.
+     * When this option is set, the {@link submenuHtmlOptions} property will be ignored for this particular submenu.
+     * This option has been available since version 1.1.6.</li>
+     * </ul>
+     */
+    public $items=array();
+    /**
+     * @var string the template used to render an individual menu item. In this template,
+     * the token "{menu}" will be replaced with the corresponding menu link or text.
+     * If this property is not set, each menu will be rendered without any decoration.
+     * This property will be overridden by the 'template' option set in individual menu items via {@items}.
+     * @since 1.1.1
+     */
+    public $itemTemplate;
+    /**
+     * @var boolean whether the labels for menu items should be HTML-encoded. Defaults to true.
+     */
+    public $encodeLabel=true;
+    /**
+     * @var string the CSS class to be appended to the active menu item. Defaults to 'active'.
+     * If empty, the CSS class of menu items will not be changed.
+     */
+    public $activeCssClass='active';
+    /**
+     * @var boolean whether to automatically activate items according to whether their route setting
+     * matches the currently requested route. Defaults to true.
+     * @since 1.1.3
+     */
+    public $activateItems=true;
+    /**
+     * @var boolean whether to activate parent menu items when one of the corresponding child menu items is active.
+     * The activated parent menu items will also have its CSS classes appended with {@link activeCssClass}.
+     * Defaults to false.
+     */
+    public $activateParents=false;
+    /**
+     * @var boolean whether to hide empty menu items. An empty menu item is one whose 'url' option is not
+     * set and which doesn't contain visible child menu items. Defaults to true.
+     */
+    public $hideEmptyItems=true;
+    /**
+     * @var array HTML attributes for the menu's root container tag
+     */
+    public $htmlOptions=array();
+    /**
+     * @var array HTML attributes for the submenu's container tag.
+     */
+    public $submenuHtmlOptions=array();
+    /**
+     * @var string the HTML element name that will be used to wrap the label of all menu links.
+     * For example, if this property is set as 'span', a menu item may be rendered as
+     * &lt;li&gt;&lt;a href="url"&gt;&lt;span&gt;label&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+     * This is useful when implementing menu items using the sliding window technique.
+     * Defaults to null, meaning no wrapper tag will be generated.
+     * @since 1.1.4
+     */
+    public $linkLabelWrapper;
+    /**
+     * @var array HTML attributes for the links' wrap element specified in
+     * {@link linkLabelWrapper}.
+     * @since 1.1.13
+     */
+    public $linkLabelWrapperHtmlOptions=array();
+    /**
+     * @var string the CSS class that will be assigned to the first item in the main menu or each submenu.
+     * Defaults to null, meaning no such CSS class will be assigned.
+     * @since 1.1.4
+     */
+    public $firstItemCssClass;
+    /**
+     * @var string the CSS class that will be assigned to the last item in the main menu or each submenu.
+     * Defaults to null, meaning no such CSS class will be assigned.
+     * @since 1.1.4
+     */
+    public $lastItemCssClass;
+    /**
+     * @var string the CSS class that will be assigned to every item.
+     * Defaults to null, meaning no such CSS class will be assigned.
+     * @since 1.1.9
+     */
+    public $itemCssClass;
+
+    /**
+     * Initializes the menu widget.
+     * This method mainly normalizes the {@link items} property.
+     * If this method is overridden, make sure the parent implementation is invoked.
+     */
+    public function init()
+    {
+        if(isset($this->htmlOptions['id']))
+            $this->id=$this->htmlOptions['id'];
+        else
+            $this->htmlOptions['id']=$this->id;
+        if (!isset($this->htmlOptions['class'])) {
+            $this->htmlOptions['class'] = "list-group";
+        }
+        $route=$this->getController()->getRoute();
+        $this->items=$this->normalizeItems($this->items,$route,$hasActiveChild);
+    }
+
+    /**
+     * Calls {@link renderMenu} to render the menu.
+     */
+    public function run()
+    {
+        $this->renderMenu($this->items);
+    }
+
+    /**
+     * Renders the menu items.
+     * @param array $items menu items. Each menu item will be an array with at least two elements: 'label' and 'active'.
+     * It may have three other optional elements: 'items', 'linkOptions' and 'itemOptions'.
+     */
+    protected function renderMenu($items)
+    {
+        if(count($items))
+        {
+            echo CHtml::openTag('div',$this->htmlOptions)."\n";
+            $this->renderMenuRecursive($items);
+            echo CHtml::closeTag('div');
+        }
+    }
+
+    /**
+     * Recursively renders the menu items.
+     * @param array $items the menu items to be rendered recursively
+     */
+    protected function renderMenuRecursive($items)
+    {
+        $count=0;
+        $n=count($items);
+        foreach($items as $item)
+        {
+            $count++;
+            $options=isset($item['itemOptions']) ? $item['itemOptions'] : array();
+            $class=array('list-group-item');
+            if($item['active'] && $this->activeCssClass!='')
+                $class[]=$this->activeCssClass;
+            if($count===1 && $this->firstItemCssClass!==null)
+                $class[]=$this->firstItemCssClass;
+            if($count===$n && $this->lastItemCssClass!==null)
+                $class[]=$this->lastItemCssClass;
+            if($this->itemCssClass!==null)
+                $class[]=$this->itemCssClass;
+            if($class!==array())
+            {
+                if(empty($options['class']))
+                    $options['class']=implode(' ',$class);
+                else
+                    $options['class'].=' '.implode(' ',$class);
+            }
+
+            // echo CHtml::openTag('li', $options);
+            $item['linkOptions']['class'] = $options['class'];
+
+            $menu=$this->renderMenuItem($item);
+            if(isset($this->itemTemplate) || isset($item['template']))
+            {
+                $template=isset($item['template']) ? $item['template'] : $this->itemTemplate;
+                echo strtr($template,array('{menu}'=>$menu));
+            }
+            else
+                echo $menu;
+
+            if(isset($item['items']) && count($item['items']))
+            {
+                echo "\n".CHtml::openTag('ul',isset($item['submenuOptions']) ? $item['submenuOptions'] : $this->submenuHtmlOptions)."\n";
+                $this->renderMenuRecursive($item['items']);
+                echo CHtml::closeTag('ul')."\n";
+            }
+
+            // echo CHtml::closeTag('li')."\n";
+        }
+    }
+
+    /**
+     * Renders the content of a menu item.
+     * Note that the container and the sub-menus are not rendered here.
+     * @param array $item the menu item to be rendered. Please see {@link items} on what data might be in the item.
+     * @return string
+     * @since 1.1.6
+     */
+    protected function renderMenuItem($item)
+    {
+        if(isset($item['url']))
+        {
+            $label=$this->linkLabelWrapper===null ? $item['label'] : CHtml::tag($this->linkLabelWrapper, $this->linkLabelWrapperHtmlOptions, $item['label']);
+            return CHtml::link($label,$item['url'],isset($item['linkOptions']) ? $item['linkOptions'] : array());
+        }
+        else
+            return CHtml::tag('span',isset($item['linkOptions']) ? $item['linkOptions'] : array(), $item['label']);
+    }
+
+    /**
+     * Normalizes the {@link items} property so that the 'active' state is properly identified for every menu item.
+     * @param array $items the items to be normalized.
+     * @param string $route the route of the current request.
+     * @param boolean $active whether there is an active child menu item.
+     * @return array the normalized menu items
+     */
+    protected function normalizeItems($items,$route,&$active)
+    {
+        foreach($items as $i=>$item)
+        {
+            if(isset($item['visible']) && !$item['visible'])
+            {
+                unset($items[$i]);
+                continue;
+            }
+            if(!isset($item['label']))
+                $item['label']='';
+            if($this->encodeLabel)
+                $items[$i]['label']=CHtml::encode($item['label']);
+            $hasActiveChild=false;
+            if(isset($item['items']))
+            {
+                $items[$i]['items']=$this->normalizeItems($item['items'],$route,$hasActiveChild);
+                if(empty($items[$i]['items']) && $this->hideEmptyItems)
+                {
+                    unset($items[$i]['items']);
+                    if(!isset($item['url']))
+                    {
+                        unset($items[$i]);
+                        continue;
+                    }
+                }
+            }
+            if(!isset($item['active']))
+            {
+                if($this->activateParents && $hasActiveChild || $this->activateItems && $this->isItemActive($item,$route))
+                    $active=$items[$i]['active']=true;
+                else
+                    $items[$i]['active']=false;
+            }
+            elseif($item['active'])
+                $active=true;
+        }
+        return array_values($items);
+    }
+
+    /**
+     * Checks whether a menu item is active.
+     * This is done by checking if the currently requested URL is generated by the 'url' option
+     * of the menu item. Note that the GET parameters not specified in the 'url' option will be ignored.
+     * @param array $item the menu item to be checked
+     * @param string $route the route of the current request
+     * @return boolean whether the menu item is active
+     */
+    protected function isItemActive($item,$route)
+    {
+        if(isset($item['url']) && is_array($item['url']) && !strcasecmp(trim($item['url'][0],'/'),$route))
+        {
+            unset($item['url']['#']);
+            if(count($item['url'])>1)
+            {
+                foreach(array_splice($item['url'],1) as $name=>$value)
+                {
+                    if(!isset($_GET[$name]) || $_GET[$name]!=$value)
+                        return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+}

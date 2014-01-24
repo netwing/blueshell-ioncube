@@ -1,30 +1,24 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-HR+cPx/ekJPSC08v3Lui5R/iJrRTMY5F2zx+pfki7TpG9fUOklqW16VGdthBqQOZyHGDmvDDEdbu
-zC2nVuHhyca6JEfdiKncM2Ya9LRMVyRwcXrofvAzGG4cTrr1ae66wUoJbhuTR+iiAZb2J016CNao
-N/MilKeM+v9KL9Q3UeCzaKbcKIGb8wCilYFLMqiPOqbbWhgErY3dAq+Ewvcahc7oSWsAxOQeNcsC
-6iNrjN+VUZeKRCTS3AHd3SyoJzIxHGvmwA6cEHFtX2vUoCbfrCHKHvGyisrojByIql2xaadiSF/m
-hN5MJnPnV/x6Wy109fnhNHUu+0mebvW5BvpChjxeSkX04MFhJXoNRAhu/PDoNsTjGTQ6uxIYy81Z
-5hnPlR3lNIhTQb+5MDZ0Bsqq6P6ns0jyTW4bi0eehnewn5DyMS5MmBc2wIWLRPQ48Bc0VaaaJk7y
-yV0f11zobESfoeho+mU8QS9yjvKZu1y/BMGBnUmM87TkGhWIty+13sk2HozxgyTniejet0M/w7sK
-zIYVUcLraO+s2V5D89x8hxM5adXeMswrjgigkBz2dfAT2ncu86JnulMNGf8eaGSVhLNWmjEvdr5i
-o4MSYtP64bmOOoDkUF9c35G5aRD9Th2eCNV2EjgfpXkOQMtXvsMQC2UAYfuDbDfNvqIJpe4rBCvw
-okxILKUjJ7Tq9uMdRkybgDPNMvSuZU8M7gN+tdNryW429OKceQ3Ky54b1YqMQxRRkwner0R/FrL6
-KbWB6z2uPzkcU1PviSS6kjXScqr1QKO9LUrDEGdS4ftJ+xwmU1VvP+pv+oZo/DSlmDGoSLYSuxvG
-BGAZ+rG/fP/I6RaShPmMR0SxTfP8lqaTEDQrgX71UpK1agQdv2s/66apz37I6naL5aENsdOMUByg
-fc7sVVfUdyN02Akw5V3+hwlgsfOSKoMBqCqKW+YUQsaCOin098V3GTHa9gI1wGu41AoyLiW6NPee
-yKi25l+suNjZ1Vt1OnIRmt2gS+UCJwzqxYz9KENoLCTwnMdNT8zM3wFTG85p+xHJaHPGixBswBbd
-zvvivtubzn+84xZ3MC/B5Uzq5O6B9d30ejzSPPs+je2ZVBcrhgTYAwYFgMkSqxuu6lEn1I1t+4dj
-j1cYZMWznqGvFPU51Ecoukb13Be1gK4wwr32kxjUlZtWne7Nx+SvRiEZvOokNgu5UyzNeUDzVeP4
-nTD5jug0WL/gbGQxb/HfT+y3zwtH6a9o/rz9b3OLQTTJTlup5nl2NZQkTc3Wnztms46YRTdFxagp
-eis+am4j2ZZWKNJV8NQ2CwrW/ekGDurDezHQAuoHC8D4/oPCndkmT2uTJ6Y51W1nMApKXAKJ3bGb
-G0FV3DKUAGmtehX1sGbd+NN8QqOCiRJ9gVX6o8B37rykSV1ZwtUMWpQnbSZo5s4/T/k9IElXdMr7
-+Q5VR4ixEm06OD0IEFHs8bMW2iv6aqneX6uBEZ+p8MWQvRYrHjt2EF2sSKccJzqWgZLGFvPMJk+1
-cVyhMoPRR5+Wt0fYbX8xL7w1z+bHSNc10IGoznAQH8IoTQbS1M9lRXrc06cfBAkoXCJroHu1nFjr
-d2f2onRc0hCbwT+Y7oKcz/23QVoI9f+dzU9IQ2MyZJ7lzf+bUJConj9kuxxEhOZoox8ba175XgwK
-siavimhi2K5UmrRzNrWGTFfsQn+5IcTq5EmiElzRL2diNGxAzmbJCevicUrWbpOAZpfOh4g7O8DX
-orF7KeUQHrKzEamOAl/iLC959v4pe4d66yAEb3R20QWuwlt2CgoS3anyogfWmwWQX7UHM7Vx91bY
-t15p4zJA3NpAynHnnD8KM4GPxY5mNMCupdqx+ldtd9nGVZT23JqbCMP4P1XGK/LPXNBsRQq2AGyo
-PUzm90dijm/0niUFQzrHJTz8h9nV2IosG7HWdi2UrGzPO//a71JH9cYsvuwd1c/MUzel4ZD52okf
-p2buIqRZmUxPuy0oZionQtcRhW==
+<?php
+
+$lang['imglib_source_image_required'] = "You must specify a source image in your preferences.";
+$lang['imglib_gd_required'] = "The GD image library is required for this feature.";
+$lang['imglib_gd_required_for_props'] = "Your server must support the GD image library in order to determine the image properties.";
+$lang['imglib_unsupported_imagecreate'] = "Your server does not support the GD function required to process this type of image.";
+$lang['imglib_gif_not_supported'] = "GIF images are often not supported due to licensing restrictions.  You may have to use JPG or PNG images instead.";
+$lang['imglib_jpg_not_supported'] = "JPG images are not supported.";
+$lang['imglib_png_not_supported'] = "PNG images are not supported.";
+$lang['imglib_jpg_or_png_required'] = "The image resize protocol specified in your preferences only works with JPEG or PNG image types.";
+$lang['imglib_copy_error'] = "An error was encountered while attempting to replace the file.  Please make sure your file directory is writable.";
+$lang['imglib_rotate_unsupported'] = "Image rotation does not appear to be supported by your server.";
+$lang['imglib_libpath_invalid'] = "The path to your image library is not correct.  Please set the correct path in your image preferences.";
+$lang['imglib_image_process_failed'] = "Image processing failed.  Please verify that your server supports the chosen protocol and that the path to your image library is correct.";
+$lang['imglib_rotation_angle_required'] = "An angle of rotation is required to rotate the image.";
+$lang['imglib_writing_failed_gif'] = "GIF image.";
+$lang['imglib_invalid_path'] = "The path to the image is not correct.";
+$lang['imglib_copy_failed'] = "The image copy routine failed.";
+$lang['imglib_missing_font'] = "Unable to find a font to use.";
+$lang['imglib_save_failed'] = "Unable to save the image.  Please make sure the image and file directory are writable.";
+
+
+/* End of file imglib_lang.php */
+/* Location: ./system/language/english/imglib_lang.php */

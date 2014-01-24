@@ -1,53 +1,106 @@
-<?php //0046a
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo('Site error: the file <b>'.__FILE__.'</b> requires the ionCube PHP Loader '.basename($__ln).' to be installed by the website operator. If you are the website operator please use the <a href="http://www.ioncube.com/lw/">ionCube Loader Wizard</a> to assist with installation.');exit(199);
-?>
-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
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+/*
+| -------------------------------------------------------------------
+| MIME TYPES
+| -------------------------------------------------------------------
+| This file contains an array of mime types.  It is used by the
+| Upload class to help identify allowed file types.
+|
+*/
+
+$mimes = array(	'hqx'	=>	'application/mac-binhex40',
+				'cpt'	=>	'application/mac-compactpro',
+				'csv'	=>	array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 'application/vnd.msexcel'),
+				'bin'	=>	'application/macbinary',
+				'dms'	=>	'application/octet-stream',
+				'lha'	=>	'application/octet-stream',
+				'lzh'	=>	'application/octet-stream',
+				'exe'	=>	array('application/octet-stream', 'application/x-msdownload'),
+				'class'	=>	'application/octet-stream',
+				'psd'	=>	'application/x-photoshop',
+				'so'	=>	'application/octet-stream',
+				'sea'	=>	'application/octet-stream',
+				'dll'	=>	'application/octet-stream',
+				'oda'	=>	'application/oda',
+				'pdf'	=>	array('application/pdf', 'application/x-download'),
+				'ai'	=>	'application/postscript',
+				'eps'	=>	'application/postscript',
+				'ps'	=>	'application/postscript',
+				'smi'	=>	'application/smil',
+				'smil'	=>	'application/smil',
+				'mif'	=>	'application/vnd.mif',
+				'xls'	=>	array('application/excel', 'application/vnd.ms-excel', 'application/msexcel'),
+				'ppt'	=>	array('application/powerpoint', 'application/vnd.ms-powerpoint'),
+				'wbxml'	=>	'application/wbxml',
+				'wmlc'	=>	'application/wmlc',
+				'dcr'	=>	'application/x-director',
+				'dir'	=>	'application/x-director',
+				'dxr'	=>	'application/x-director',
+				'dvi'	=>	'application/x-dvi',
+				'gtar'	=>	'application/x-gtar',
+				'gz'	=>	'application/x-gzip',
+				'php'	=>	'application/x-httpd-php',
+				'php4'	=>	'application/x-httpd-php',
+				'php3'	=>	'application/x-httpd-php',
+				'phtml'	=>	'application/x-httpd-php',
+				'phps'	=>	'application/x-httpd-php-source',
+				'js'	=>	'application/x-javascript',
+				'swf'	=>	'application/x-shockwave-flash',
+				'sit'	=>	'application/x-stuffit',
+				'tar'	=>	'application/x-tar',
+				'tgz'	=>	array('application/x-tar', 'application/x-gzip-compressed'),
+				'xhtml'	=>	'application/xhtml+xml',
+				'xht'	=>	'application/xhtml+xml',
+				'zip'	=>  array('application/x-zip', 'application/zip', 'application/x-zip-compressed'),
+				'mid'	=>	'audio/midi',
+				'midi'	=>	'audio/midi',
+				'mpga'	=>	'audio/mpeg',
+				'mp2'	=>	'audio/mpeg',
+				'mp3'	=>	array('audio/mpeg', 'audio/mpg', 'audio/mpeg3', 'audio/mp3'),
+				'aif'	=>	'audio/x-aiff',
+				'aiff'	=>	'audio/x-aiff',
+				'aifc'	=>	'audio/x-aiff',
+				'ram'	=>	'audio/x-pn-realaudio',
+				'rm'	=>	'audio/x-pn-realaudio',
+				'rpm'	=>	'audio/x-pn-realaudio-plugin',
+				'ra'	=>	'audio/x-realaudio',
+				'rv'	=>	'video/vnd.rn-realvideo',
+				'wav'	=>	array('audio/x-wav', 'audio/wave', 'audio/wav'),
+				'bmp'	=>	array('image/bmp', 'image/x-windows-bmp'),
+				'gif'	=>	'image/gif',
+				'jpeg'	=>	array('image/jpeg', 'image/pjpeg'),
+				'jpg'	=>	array('image/jpeg', 'image/pjpeg'),
+				'jpe'	=>	array('image/jpeg', 'image/pjpeg'),
+				'png'	=>	array('image/png',  'image/x-png'),
+				'tiff'	=>	'image/tiff',
+				'tif'	=>	'image/tiff',
+				'css'	=>	'text/css',
+				'html'	=>	'text/html',
+				'htm'	=>	'text/html',
+				'shtml'	=>	'text/html',
+				'txt'	=>	'text/plain',
+				'text'	=>	'text/plain',
+				'log'	=>	array('text/plain', 'text/x-log'),
+				'rtx'	=>	'text/richtext',
+				'rtf'	=>	'text/rtf',
+				'xml'	=>	'text/xml',
+				'xsl'	=>	'text/xml',
+				'mpeg'	=>	'video/mpeg',
+				'mpg'	=>	'video/mpeg',
+				'mpe'	=>	'video/mpeg',
+				'qt'	=>	'video/quicktime',
+				'mov'	=>	'video/quicktime',
+				'avi'	=>	'video/x-msvideo',
+				'movie'	=>	'video/x-sgi-movie',
+				'doc'	=>	'application/msword',
+				'docx'	=>	array('application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/zip'),
+				'xlsx'	=>	array('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/zip'),
+				'word'	=>	array('application/msword', 'application/octet-stream'),
+				'xl'	=>	'application/excel',
+				'eml'	=>	'message/rfc822',
+				'json' => array('application/json', 'text/json')
+			);
+
+
+/* End of file mimes.php */
+/* Location: ./application/config/mimes.php */
