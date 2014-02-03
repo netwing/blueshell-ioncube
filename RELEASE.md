@@ -1,6 +1,6 @@
-Release 2.1.1
+Release 2.1.2
 =======
 
 **Changelog**
 
-- Fix in dimension and resources price list
+- Updated italian translations
