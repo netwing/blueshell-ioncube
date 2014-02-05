@@ -1,6 +1,6 @@
-Release 2.1.2
+Release 2.2.0
 =======
 
 **Changelog**
 
-- Updated italian translations
+- Some improvements
