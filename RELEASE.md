@@ -1,6 +1,6 @@
-Release 2.2.1
+Release 2.2.2
 =======
 
 **Changelog**
 
-- Various bugfix
+- Config select if show corner ribbon in invoice and order

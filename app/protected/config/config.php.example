@@ -8,12 +8,13 @@
 // *** COSTANTS DEFINITION ***
 // ***************************
 
-// Application timezone
+// Application constant
 define('APPLICATION_TIMEZONE', 'Europe/London');
 define("APPLICATION_COMPANY_NAME", "Company name");
 define("APPLICATION_COMPANY_EMAIL", "company@example.com");
 define("APPLICATION_LICENSE_KEY", "");
 define("APPLICATION_BASE_URL", "");
+define("VAT_PERCENTAGE", 0);
 
 // LOG rotation
 // Define how much big a log file can become before rotate
@@ -68,6 +69,13 @@ define("APPLICATION_ROOT_LOGIN", null);
 // *********************
 // *** CONFIGURATION ***
 // *********************
+
+// Invoice corner ribbon
+$invoice_corner_ribbon = true;
+
+// Order corner ribbon
+$order_corner_ribbon = true;
+
 // Config debug and trace level FOR WEBAPP
 $yii_debug = true;
 $yii_trace_level = 1;
