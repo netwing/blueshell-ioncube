@@ -1,6 +1,6 @@
-Release 2.2.2
+Release 2.2.3
 =======
 
 **Changelog**
 
-- Config select if show corner ribbon in invoice and order
+- Fix in invoice date paid update
