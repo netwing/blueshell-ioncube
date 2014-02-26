@@ -11,7 +11,7 @@ Build status
 Requirements
 ------------
 
-PHP >= 5.3
+PHP >= 5.4
 
 MySQL >= 5
 
@@ -26,4 +26,12 @@ Clone git repository in desired folder with command (directory must be empty):
     php composer.phar install
     bower install
 
+In case of error for permissions from `bower` you can use:
+
+    HOME=~/tmp bower install
+
+Where `~/tmp` should be a writable directory for current user.
+
 Copy `config.inc.php.example` in `config.inc.php` and change database connection parameters.
+Copy `app/protected/config/config.php.example` in `app/protected/config/config.php` and change database connection parameters.
+

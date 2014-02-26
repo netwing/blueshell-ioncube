@@ -14,8 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": ">=3.0.0",
-    "bootswatch": ">=3.0.0",
+    "bootstrap": "~3.1.0",
+    "bootswatch": "~3.1.0",
     "jquery": ">=1.10.0",
     "jquery-ui": ">=1.10",
     "font-awesome": ">=4.0.0",
@@ -24,8 +24,8 @@
     "select2": ">=3.4.0",
     "fullcalendar": ">=1.6.4",
     "highcharts": ">=v3.0.5",
-    "tinymce": ">=4.0.0",
-    "dropzone": "*"
+    "dropzone": "*",
+    "jquery-timeago": ">=1.3.1"
   },
   "resolutions": {
     "jquery-ui": ">=1.10"

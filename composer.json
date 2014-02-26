@@ -8,10 +8,14 @@
         "codeplex/phpexcel": "1.7.*",
         "swiftmailer/swiftmailer": "5.0.*",
         "smarty/smarty": "3.1.*",
-        "predis/predis": "0.8.*"
+        "predis/predis": "0.8.*",
+        "starship/restfullyii": "dev-master",
+        "guzzle/guzzle": "~3.7",
+        "sammaye/auditrail2": "1.3.0",
+        "phpspec/php-diff": "v1.0.2"
     },
     "require-dev": {
-        "codeception/codeception": "1.8.*",
+        "codeception/codeception": "1.8.*@dev",
         "netwing/selenium-server-standalone": "2.*",
         "kevintweber/phpunit-markup-validators": "*",
         "squizlabs/php_codesniffer": "1.*",

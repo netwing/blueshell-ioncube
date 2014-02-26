@@ -1,6 +1,12 @@
-Release 2.2.3
+Release 2.3.0
 =======
 
 **Changelog**
 
-- Fix in invoice date paid update
+- Major changes in contracts and invoice administration
+
+**How to update**
+
+    git pull origin master
+    ./app/protected/yiic migrate
+

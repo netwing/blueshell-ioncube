@@ -3,4 +3,4 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 # otherwise forward it to index.php
-RewriteRule . index.php
+RewriteRule . index.php [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]

@@ -1,3 +1,22 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700&subset=latin,latin-ext);
+
+body {
+    font-family: 'Open Sans', Times, Arial, sans-serif;
+}
+
+h1,h2 {
+    font-family: 'Open Sans', Times, Arial, sans-serif !important;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+}
+
+div.container-full {
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
 .grid-view .table .filters > td .filter-container select {
   margin-bottom: 0;
   width: 100%;

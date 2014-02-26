@@ -70,12 +70,6 @@ define("APPLICATION_ROOT_LOGIN", null);
 // *** CONFIGURATION ***
 // *********************
 
-// Invoice corner ribbon
-$invoice_corner_ribbon = true;
-
-// Order corner ribbon
-$order_corner_ribbon = true;
-
 // Config debug and trace level FOR WEBAPP
 $yii_debug = true;
 $yii_trace_level = 1;
@@ -83,3 +77,16 @@ $yii_trace_level = 1;
 // Config debug and trace level FOR CONSOLE
 $yiic_debug = true;
 $yiic_trace_level = 0;
+
+// Invoice corner ribbon
+$invoice_corner_ribbon = true;
+
+// Order corner ribbon
+$order_corner_ribbon = true;
+
+// Invoice proforma subsystem
+$invoice_proforma = false;
+
+// Docs username and password
+$docs_username = "blueshell";
+$docs_password = "blueshell";
