@@ -1,14 +1,16 @@
-Release 2.3.0
+Release 2.4.1
 =======
 
 **Changelog**
 
-- Major changes in contracts and invoice administration
-- Added payment methods and rules managament
-- Multiple port map
+- Gravatar
+- Audit trail for orders
+- Deposit invoice management
 
 **How to update**
 
     git pull origin master
     ./app/protected/yiic migrate
+    bower install
+    php composer.phar install
 
