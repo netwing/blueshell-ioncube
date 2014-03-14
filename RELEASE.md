@@ -1,4 +1,4 @@
-Release 2.4.1
+Release 2.5.0
 =======
 
 **Changelog**
@@ -6,6 +6,8 @@ Release 2.4.1
 - Gravatar
 - Audit trail for orders
 - Deposit invoice management
+- Supply column and consumption via REST interface
+- New price list management
 
 **How to update**
 
