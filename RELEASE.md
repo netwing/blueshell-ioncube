@@ -1,13 +1,9 @@
-Release 2.5.0
+Release 2.5.1
 =======
 
 **Changelog**
 
-- Gravatar
-- Audit trail for orders
-- Deposit invoice management
-- Supply column and consumption via REST interface
-- New price list management
+- Enable/disable invoice number edit by configuration parameter
 
 **How to update**
 
