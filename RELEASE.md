@@ -11,4 +11,3 @@ Release 2.5.2
     git pull origin master
     ./app/protected/yiic migrate
 
-
