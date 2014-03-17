@@ -1,14 +1,14 @@
-Release 2.5.1
+Release 2.5.2
 =======
 
 **Changelog**
 
-- Enable/disable invoice number edit by configuration parameter
+- Contract type: descriptive text used by contract and order
+- Various bugfix
 
 **How to update**
 
     git pull origin master
     ./app/protected/yiic migrate
-    bower install
-    php composer.phar install
+
 
