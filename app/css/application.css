@@ -2,13 +2,17 @@
 
 body {
     font-family: 'Open Sans', Times, Arial, sans-serif;
+    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #ffffff;    
 }
 
-h1,h2 {
-    font-family: 'Open Sans', Times, Arial, sans-serif !important;
-    font-weight: 300;
-    text-transform: uppercase;
-    border-bottom: 1px solid #ccc;
+div.well h1, 
+div.well h2,
+div.well h3 {
+    margin: 0 !important;
+    color: #999;
 }
 
 div.container-full {
@@ -69,6 +73,10 @@ a.navbar-brand {
     padding: 10px;
 }
 
+table.table {
+    background-color: white;
+}
+
 table.table caption {
     text-align: left;
     font-weight: bold;
@@ -76,8 +84,87 @@ table.table caption {
     padding-bottom: 10px;
 }
 
+table.table thead tr {
+    background-color: #EEE;
+}
+
+table.table thead tr th,
+table.table thead tr th a:link,
+table.table thead tr th a:visited {
+    color: #333;
+}
+
+table.table thead tr th a:hover {
+    color: #0e64a2;
+    text-decoration: none;
+}
+
+table.table tbody tr td:last-child {
+    text-align: right;
+    width: 0;
+}
 
 .navbar-default .navbar-toggle .fa-bars {
     background-color: inherit;
     color: #FFFFFF;
+}
+
+#mainsearchresults {
+    background-color: #FFF;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0px 0px 5px black; 
+    z-index: 1001;
+}
+
+.table-responsive {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+
+.list-group-item-small {
+    padding: 5px 10px;
+}
+
+.panel-body-custom {
+    /* background-color: #fcfcfc; */
+}
+
+.table-striped > tbody > tr:nth-child(even) > td,
+.table-striped > tbody > tr:nth-child(even) > th {
+  background-color: #f6f6f6;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+  background-color: #fff;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+  background-color: #f6ffcf;
+}
+
+.div-pager {
+    padding-left: 1px !important;
+}
+
+div.panel-default div.panel-heading .panel-title {
+    color: #555;
+    font-weight: bold;
+}
+
+a.search-button {
+    margin-bottom: 10px;
+}
+div.search-form {
+    padding-top: 10px;
 }
