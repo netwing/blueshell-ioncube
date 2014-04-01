@@ -1,16 +1,10 @@
-Release 2.6.0
+Release 2.6.1
 =======
 
 **Changelog**
 
-- New customer management
-- New vector management
-- A new improved and consistent user interface
-- Small bugfixex
+- Fix critical error on contract creation
 
 **How to update**
 
-    git pull origin master
-    ./app/protected/yiic migrate
-    php composer.phar install
-    HOME=~/tmp bower install
+    nothing to do
