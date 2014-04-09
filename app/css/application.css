@@ -94,9 +94,14 @@ table.table thead tr th a:visited {
     color: #333;
 }
 
-table.table thead tr th a:hover {
+table.table thead tr th a:link {
     color: #0e64a2;
     text-decoration: none;
+}
+
+table.table thead tr th a:hover {
+    color: #0e64a2;
+    text-decoration: underline;
 }
 
 table.table tbody tr td:last-child {
@@ -168,3 +173,29 @@ a.search-button {
 div.search-form {
     padding-top: 10px;
 }
+
+a.sort-link.asc:after {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f0aa";
+    margin-left: 3px;
+}
+
+a.sort-link.desc:after {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f0ab";
+    margin-left: 3px;
+}
+
+

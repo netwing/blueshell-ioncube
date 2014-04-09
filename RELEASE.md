@@ -1,10 +1,15 @@
-Release 2.6.1
+Release 2.6.5
 =======
 
 **Changelog**
 
-- Fix critical error on contract creation
+- Hook and event system
+- Custom columns on customer and vector tables
+- Sorting column in invoice table
+
 
 **How to update**
 
-    nothing to do
+    ./app/protected/yiic migrate
+    php composer.phar install
+
