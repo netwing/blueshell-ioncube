@@ -1,15 +1,13 @@
-Release 2.7.0
+Release 2.7.1
 =======
 
 **Changelog**
 
-- Multiple planymetry
-- New contract management with multiple details
-- Fix major error in invoice calculations
-- Many more improvements
+- Minor layout fix
 
 **How to update**
 
     ./app/protected/yiic migrate
     php composer.phar install --no-dev
+    HOME=~/tmp bower install 
 
