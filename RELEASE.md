@@ -1,15 +1,15 @@
-Release 2.6.5
+Release 2.7.0
 =======
 
 **Changelog**
 
-- Hook and event system
-- Custom columns on customer and vector tables
-- Sorting column in invoice table
-
+- Multiple planymetry
+- New contract management with multiple details
+- Fix major error in invoice calculations
+- Many more improvements
 
 **How to update**
 
     ./app/protected/yiic migrate
-    php composer.phar install
+    php composer.phar install --no-dev
 

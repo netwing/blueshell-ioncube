@@ -4,18 +4,49 @@
 // If you want to override any configuration
 // rewrite only what you want to change and put in $config
 
+// *********************
+// *** CONFIGURATION ***
+// *********************
+
+// Config debug and trace level FOR WEBAPP
+$yii_debug = false;
+$yii_trace_level = 0;
+
+// Config debug and trace level FOR CONSOLE
+$yiic_debug = true;
+$yiic_trace_level = 0;
+
 // ***************************
 // *** COSTANTS DEFINITION ***
 // ***************************
 
-// Application constant
+// Application timezone
 define('APPLICATION_TIMEZONE', 'Europe/London');
+// Company name
 define("APPLICATION_COMPANY_NAME", "Company name");
-define("APPLICATION_COMPANY_EMAIL", "company@example.com");
+// Company email
+define("APPLICATION_COMPANY_EMAIL", "info@example.com");
+// License Key
 define("APPLICATION_LICENSE_KEY", "");
+// Base url
 define("APPLICATION_BASE_URL", "");
-define("VAT_PERCENTAGE", 0);
+// VAT Percentage to use
+define("VAT_PERCENTAGE", 22);
+// Show map or not
 define("APPLICATION_SHOW_MAP", true);
+
+// Database connection
+// This user must be created on MySQL 
+// and granted all privileges on database
+define('DB_HOST', "localhost"); // Set this to NULL to disable database connection
+define('DB_DATABASE_NAME', "database");
+define('DB_USERNAME', "username");
+define('DB_PASSWORD', "password");
+define('DB_TABLE_PREFIX', "blue_");
+define('DB_EMULATE_PREPARE', true);
+define('DB_CHARSET', "utf8");
+define('DB_ENABLE_PARAM_LOGGING', true);
+define('DB_ENABLE_PROFILING', true);
 
 // LOG rotation
 // Define how much big a log file can become before rotate
@@ -29,32 +60,19 @@ define('LOG_QUERY_ENABLED', false);
 define('LOG_DEBUG_ENABLED', false);
 define('LOG_TOOLBAR_ENABLED', false);
 
-// Database connection
-// This user must be created on MySQL 
-// and granted all privileges on database
-define('DB_HOST', "localhost"); // Set this to NULL to disable database connection
-define('DB_DATABASE_NAME', "dbname");
-define('DB_USERNAME', "username");
-define('DB_PASSWORD', "password");
-define('DB_TABLE_PREFIX', "prefix_");
-define('DB_EMULATE_PREPARE', true);
-define('DB_CHARSET', "utf8");
-define('DB_ENABLE_PARAM_LOGGING', true);
-define('DB_ENABLE_PROFILING', true);
-
 // Email sending parameters
-define("EMAIL_SMTP_SERVER", null);
+define("EMAIL_SMTP_SERVER", 'mail.example.com');
 define("EMAIL_SMTP_PORT", 25);
-define("EMAIL_SMTP_USERNAME", null);
-define("EMAIL_SMTP_PASSWORD", null);
+define("EMAIL_SMTP_USERNAME", 'username@example.com');
+define("EMAIL_SMTP_PASSWORD", 'password');
 
 // REDIS Key-Value caching engine 
 // You need a running Redis server on host and port
 // you also need to know which database ID use
-define('REDIS_HOST', 'localhost'); // Set this to NULL to disable redis connection
+define('REDIS_HOST', null); // Set this to NULL to disable redis connection
 define('REDIS_PORT', 6379);
-define('REDIS_DATABASE', 0);
-define('REDIS_KEY_PREFIX', 'YIIAPP:');
+define('REDIS_DATABASE', 1);
+define('REDIS_KEY_PREFIX', 'BLUESHELL:');
 
 // Node.js socket.io configuration
 // URL of node server at which the browser must connect
@@ -65,19 +83,7 @@ define("NODE_PORT", null);
 // APPLICATION settings
 define("APPLICATION_ALARM_EMAIL", "info@netwing.it");
 // Username:password for root login (Superadministrator without limit) set to null to disable
-define("APPLICATION_ROOT_LOGIN", null);
-
-// *********************
-// *** CONFIGURATION ***
-// *********************
-
-// Config debug and trace level FOR WEBAPP
-$yii_debug = true;
-$yii_trace_level = 1;
-
-// Config debug and trace level FOR CONSOLE
-$yiic_debug = true;
-$yiic_trace_level = 0;
+define("APPLICATION_ROOT_LOGIN", "root:root");
 
 // Application parameters
 $application_parameters = array(
@@ -87,8 +93,14 @@ $application_parameters = array(
         'password'  => 'blueshell',
     ),
     // General app parameters
-    'invoice_corner_ribbon'     => true,
-    'order_corner_ribbon'       => true,
-    'invoice_proforma'          => true,
-    'invoice_edit_number'       => true,
+    'invoice_corner_ribbon'         => true,
+    'order_corner_ribbon'           => true,
+    'invoice_proforma'              => true,
+    'invoice_edit_number'           => true,
+    'invoice_deposit_before_row'    => true,
+    'hooks'  => array(
+        'metodo' => array(
+            'enabled'   => true,
+        )
+    )
 );
