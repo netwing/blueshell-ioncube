@@ -1,9 +1,9 @@
-Release 2.7.3
+Release 2.7.4
 =======
 
 **Changelog**
 
-- Major fix in Calculation component to prevent division by zero
+- Major fix in Calculation to address a PHP major bug in floatval locale awareness
 
 **How to update**
 
