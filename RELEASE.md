@@ -1,9 +1,10 @@
-Release 2.7.4
+Release 2.7.5
 =======
 
 **Changelog**
 
-- Major fix in Calculation to address a PHP major bug in floatval locale awareness
+- Minor fix in translations
+- Minor fix in calculation component
 
 **How to update**
 
