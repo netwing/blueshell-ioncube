@@ -1,9 +1,9 @@
-Release 2.7.1
+Release 2.7.2
 =======
 
 **Changelog**
 
-- Minor layout fix
+- Minor fix in migration script
 
 **How to update**
 
