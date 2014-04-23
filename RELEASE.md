@@ -1,9 +1,9 @@
-Release 2.7.2
+Release 2.7.3
 =======
 
 **Changelog**
 
-- Minor fix in migration script
+- Major fix in Calculation component to prevent division by zero
 
 **How to update**
 
