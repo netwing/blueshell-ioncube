@@ -1,10 +1,10 @@
-Release 2.7.5
+Release 2.7.6
 =======
 
 **Changelog**
 
-- Minor fix in translations
-- Minor fix in calculation component
+- Fix crash in contract print
+- Fix crash in deposit invoice generation
 
 **How to update**
 
