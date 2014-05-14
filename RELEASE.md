@@ -1,10 +1,10 @@
-Release 2.7.6
+Release 2.7.7
 =======
 
 **Changelog**
 
-- Fix crash in contract print
-- Fix crash in deposit invoice generation
+- Fix crash in map view
+- Some field in resource form now will be mandatory
 
 **How to update**
 

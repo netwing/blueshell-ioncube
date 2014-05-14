@@ -24,5 +24,11 @@
     "minimum-stability": "stable",
     "config": {
         "process-timeout": 3600
-    }
+    },
+    "repositories": [
+       {
+            "type": "vcs",
+            "url": "https://github.com/lordlele/restfullyii"
+       }
+    ]    
 }
