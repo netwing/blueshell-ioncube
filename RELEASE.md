@@ -1,10 +1,10 @@
-Release 2.7.7
+Release 2.7.8
 =======
 
 **Changelog**
 
-- Fix crash in map view
-- Some field in resource form now will be mandatory
+- Fix error in deposit invoice from order
+- Fix error in deposit invoice from contract
 
 **How to update**
 
