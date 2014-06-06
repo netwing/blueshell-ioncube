@@ -14,9 +14,9 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.1.0",
-    "bootswatch": "~3.1.0",
-    "jquery": ">=1.10.0",
+    "bootstrap": "~3.1",
+    "bootswatch": "~3.1",
+    "jquery": ">=1.10",
     "jquery-ui": ">=1.10",
     "font-awesome": ">=4.0.0",
     "jquery-minicolors": ">=2.1.1",
@@ -26,10 +26,10 @@
     "highcharts": ">=v3.0.5",
     "dropzone": "*",
     "jquery-timeago": ">=1.3.1",
-    "jquery-autosize": "~1.18.0",
-    "x-editable": "~1.5.0"
-  },
-  "resolutions": {
-    "jquery-ui": ">=1.10"
+    "jquery-autosize": "~1.18",
+    "x-editable": "~1.5",
+    "fancybox": "~2.1",
+    "snap.svg": "*",
+    "jquery-mousewheel": "~3"
   }
 }

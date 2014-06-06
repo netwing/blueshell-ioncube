@@ -32,6 +32,8 @@ define("APPLICATION_LICENSE_KEY", "");
 define("APPLICATION_BASE_URL", "");
 // VAT Percentage to use
 define("VAT_PERCENTAGE", 22);
+// Default currency
+define("APPLICATION_CURRENCY", "EUR");
 // Show map or not
 define("APPLICATION_SHOW_MAP", true);
 
@@ -98,9 +100,56 @@ $application_parameters = array(
     'invoice_proforma'              => true,
     'invoice_edit_number'           => true,
     'invoice_deposit_before_row'    => true,
-    'hooks'  => array(
+    'map_presence_colors'           => array(
+        'default'                   => "#fff",
+        'arrival'                   => "#f00",
+        'departure'                 => "#0f0",
+        'presence'                  => "#00f",
+        'arrival+departure'         => "#ff0",
+    ),
+    'modules' => array(
         'metodo' => array(
-            'enabled'   => true,
-        )
-    )
+            // Set to load hooks.php file inside module
+            'hooks' => true,
+            // Database connection
+            'sqlsrv' => array(
+                'class'                 => 'CDbConnection',
+                'connectionString'      => 'odbc:Driver=FreeTDS; Server=ipaddress-or-servername\CONNECTIONNAME; Database=DATABASENAME; UID=USERNAME; PWD=PASSWORD;',
+                'emulatePrepare'        => true,
+                'charset'               => 'utf8',
+                'tablePrefix'           => "x_",
+                'enableParamLogging'    => true,
+                'enableProfiling'       => true,
+                'initSQLs'              => array(
+                    'SET ANSI_WARNINGS OFF',
+                    'SET ANSI_NULLS ON',
+                    'USE DEMO_METODO',
+                ),
+                // 'schemaCacheID'         => 'cache',
+                'schemaCachingDuration' =>  1,
+            ),
+            // Admin database connection
+            'sqlsrvsa' => array(
+                'class'                 => 'CDbConnection',
+                'connectionString'      => 'odbc:Driver=FreeTDS; Server=ipaddress-or-servername\CONNECTIONNAME; Database=DATABASENAME; UID=USERNAME; PWD=PASSWORD;',
+                'emulatePrepare'        => true,
+                'charset'               => 'utf8',
+                'tablePrefix'           => "x_",
+                'enableParamLogging'    => true,
+                'enableProfiling'       => true,
+                'initSQLs'              => array(
+                    'SET ANSI_WARNINGS OFF',
+                    'SET ANSI_NULLS ON',
+                    'USE DEMO_METODO',
+                ),
+                // 'schemaCacheID'         => 'cache',
+                'schemaCachingDuration' =>  1,
+            ),
+            // PARAMS
+            'params' => array(
+                // Database username for read/write operations
+                'database_username' => 'USERNAME',
+            )
+        ),
+    ),
 );

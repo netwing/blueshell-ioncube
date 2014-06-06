@@ -198,4 +198,7 @@ a.sort-link.desc:after {
     margin-left: 3px;
 }
 
+.dropzone {
+    border: 1px dashed #999 !important;
+}
 

@@ -1,14 +1,15 @@
-Release 2.7.8
+Release 2.8.0
 =======
 
 **Changelog**
 
-- Fix error in deposit invoice from order
-- Fix error in deposit invoice from contract
+- Global attachments management
+- Global hint managament
+- General improvement
+- Invoice transaction tracking
 
 **How to update**
 
     ./app/protected/yiic migrate
     php composer.phar install --no-dev
-    HOME=~/tmp bower install 
-
+    HOME=~/tmp bower install
