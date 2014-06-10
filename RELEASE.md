@@ -1,11 +1,10 @@
-Release 2.8.1
+Release 2.8.2
 =======
 
 **Changelog**
 
-- Minor fix in attachment thumbnail preview
-- Handle missing attachment file
-- Fix in correct order creation from quote
+- Redirect to moorings if not map enabled
+- Fix error in new map creation
 
 **How to update**
 

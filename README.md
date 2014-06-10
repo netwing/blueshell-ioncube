@@ -35,8 +35,3 @@ Where `~/tmp` should be a writable directory for current user.
 Copy `config.inc.php.example` in `config.inc.php` and change database connection parameters.
 Copy `app/protected/config/config.php.example` in `app/protected/config/config.php` and change database connection parameters.
 
-Download from private repo
---------------------------
-
-    curl -sL --user "lordlele:a0957e1e7340e525202e276df9b90c40c0aa2aeb" https://github.com/netwing/blueshell/archive/develop.zip > develop1.zip
-
