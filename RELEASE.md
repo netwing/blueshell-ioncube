@@ -1,10 +1,9 @@
-Release 2.8.2
+Release 2.8.3
 =======
 
 **Changelog**
 
-- Redirect to moorings if not map enabled
-- Fix error in new map creation
+- Fix logo in main menu
 
 **How to update**
 
