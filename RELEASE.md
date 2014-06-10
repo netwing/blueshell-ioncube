@@ -1,12 +1,11 @@
-Release 2.8.0
+Release 2.8.1
 =======
 
 **Changelog**
 
-- Global attachments management
-- Global hint managament
-- General improvement
-- Invoice transaction tracking
+- Minor fix in attachment thumbnail preview
+- Handle missing attachment file
+- Fix in correct order creation from quote
 
 **How to update**
 
