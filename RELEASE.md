@@ -1,9 +1,10 @@
-Release 2.8.3
+Release 2.8.4
 =======
 
 **Changelog**
 
-- Fix logo in main menu
+- Fix order sorting
+- Fix a major crash in order view if not vector selected
 
 **How to update**
 
