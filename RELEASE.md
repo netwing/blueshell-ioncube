@@ -1,10 +1,9 @@
-Release 2.8.4
+Release 2.8.5
 =======
 
 **Changelog**
 
-- Fix order sorting
-- Fix a major crash in order view if not vector selected
+- Fix in invoice creation from contract
 
 **How to update**
 
