@@ -4,9 +4,13 @@ Blueshell
 Build status
 ------------
 
-**Master branch:** ![master-badge](https://circleci.com/gh/netwing/blueshell/tree/master.png?circle-token=388880fe02f1c2ede00e3743f7be13691cd5f908)
+**Master branch** 
 
-**Develop branch:** ![develop-badge](https://circleci.com/gh/netwing/blueshell/tree/develop.png?circle-token=388880fe02f1c2ede00e3743f7be13691cd5f908)
+![master-badge](https://circleci.com/gh/netwing/blueshell/tree/master.png?circle-token=388880fe02f1c2ede00e3743f7be13691cd5f908)
+
+**Develop branch** 
+
+![develop-badge](https://circleci.com/gh/netwing/blueshell/tree/develop.png?circle-token=388880fe02f1c2ede00e3743f7be13691cd5f908)
 
 Requirements
 ------------
@@ -15,7 +19,7 @@ PHP >= 5.4
 
 MySQL >= 5
 
-Node JS
+Node JS + Socket.io
 
 Quickstart
 ----------

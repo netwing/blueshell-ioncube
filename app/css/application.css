@@ -1,12 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700&subset=latin,latin-ext);
 
-body {
-    font-family: 'Open Sans', Times, Arial, sans-serif;
-    /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
-    line-height: 1.42857143;
-    color: #333;
-    background-color: #ffffff;    
-}
 
 div.well h1, 
 div.well h2,
@@ -164,7 +156,6 @@ table.table tbody tr td:last-child {
 
 div.panel-default div.panel-heading .panel-title {
     color: #555;
-    font-weight: bold;
 }
 
 a.search-button {
@@ -199,6 +190,10 @@ a.sort-link.desc:after {
 }
 
 .dropzone {
-    border: 1px dashed #999 !important;
+    border: 3px dashed #ccc !important;
+    border-radius: 0px !important;
 }
 
+span.fc-header-title h2 {
+    font-size: 2rem;
+}

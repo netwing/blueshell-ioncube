@@ -28,6 +28,8 @@ define("APPLICATION_COMPANY_NAME", "Company name");
 define("APPLICATION_COMPANY_EMAIL", "info@example.com");
 // License Key
 define("APPLICATION_LICENSE_KEY", "");
+// Host
+define("APPLICATION_HTTP_HOST", "http://mydomain.tld");
 // Base url
 define("APPLICATION_BASE_URL", "");
 // VAT Percentage to use
@@ -101,12 +103,41 @@ $application_parameters = array(
     'invoice_edit_number'           => true,
     'invoice_deposit_before_row'    => true,
     'map_presence_colors'           => array(
-        'default'                   => "#fff",
-        'arrival'                   => "#f00",
-        'departure'                 => "#0f0",
-        'presence'                  => "#00f",
-        'arrival+departure'         => "#ff0",
+        'default'                   => "#e8ebe8",
+        'arrival'                   => "#ebaaa5",
+        'departure'                 => "#afff9a",
+        'presence'                  => "#acb4ff",
+        'arrival+departure'         => "#fff7a7",
     ),
+    'email' => array(
+        'sender'        => array(
+            'address'   => 'email@example.com',
+            'host'      => 'mail.example.com',
+            'port'      => 25,
+            'username'  => 'username',
+            'password'  => 'password',
+        ),
+        'receiver'      => array(
+            'address'   => 'email@example.com',
+            'host'      => 'mail.example.com',
+            'port'      => 143,
+            'username'  => 'username',
+            'password'  => 'password',
+        ),
+        // 'send_cc' => 'emanuele.deserti@gmail.com',
+        // 'send_bcc' => 'asda@example.com',
+    ),
+    'sms' => array(
+        'sender'            => array(
+            'id'            => 'SENDERID',
+            'url'           => 'http://app.daduu.com/send',
+            'url_status'    => 'http://app.daduu.com/status',
+            'url_credit'    => 'http://app.daduu.com/credit',
+            'username'      => 'username',
+            'password'      => 'password',
+            'timeout'       => 10,
+        ),
+    ),    
     'modules' => array(
         'metodo' => array(
             // Set to load hooks.php file inside module
