@@ -1,0 +1,18 @@
+<?php
+/**
+ * Array of cronjob configured in application
+ * Parameters for each cronjob:
+ *   - enabled: true (without this, job will be skipped)
+ *   - expression: crontab expression
+ *   - command: command to execute (relative do protected/commands directory)
+ *   - parameters: parameters for command (will be saved in database)
+ */
+return array(
+    array(
+        'expression'    => '* * * * *',
+        'command'       => 'example',
+        'name'          => 'An example',
+        'parameters'    => array('a' => 1, 'b' => 2, 'c' => 3),
+        'enabled'       => false,
+    ),
+);
