@@ -1,4 +1,4 @@
-Release 2.9.5
+Release 2.9.6
 =============
 
 Changelog
