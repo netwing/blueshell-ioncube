@@ -1,20 +1,10 @@
-Release 2.9.6
+Release 2.9.7
 =============
 
 Changelog
 ---------
 
-- Calendar with order, work, contract, alert
-- Node integration for comment in realtime
-- Fix in map creation and update
-- Background job
-- Central notifications system with node.js and socket.io
-- Cron job
-- Keyboard shortcut
-- Send email to customer from his profile, contracts, orders and invoices
-- Send SMS to customer from his profile, contracts, orders and invoices
-- Real and class dimension for resources
-- Contract with contractor differnt from vector owner
+- Removed Redis PHP extensions.so
 
 How to update
 -------------
